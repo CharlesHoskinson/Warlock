@@ -1,0 +1,11 @@
+# V19 family-query lock correction
+
+Frozen V17, reduction V18, live cancellation V16 and failed collector V2 remain unchanged. V19 inherits the exact V17 runtime and removes only the actor-local read-only family-query mutex. The receipt/atomic native-effect reservation lock and keeper private lock remain. No native acceptance is claimed.
+
+The retained deterministic CPU counterexample uses the actual V17 endpoint, fresh-family, watchdog deadline and Keeper.register lock sites. Endpoint holds family_query_lock while its helper registration needs manager.lock; watchdog holds manager.lock while deadline settlement needs family_query_lock. The native V2 evidence is compatible with this cycle (exact endpoint displayed, no cleanup queued, no errors, forced service stop), but no surviving native thread stacks prove its actual lock ownership.
+
+Both ordinary Desktop.family_trace and NativeDesktop.family_query_local are threading.local. The family planner, active-window observation, paint order and evidence use call-local inputs and per-thread evidence. There is no shared mutable family cache needing the mutex. Concurrent read-only query results must remain bound to their own calling thread; neither result can gain authority through another query's evidence. Each complete before/native/after identity guard, native relation validation, draw order and fresh active witness remains exact. Query timeouts/retry budgets remain unchanged.
+
+No query holds an actor-local family mutex while waiting for the shared reservation lock. A watchdog already holding the shared RLock may register its own read-only helper reentrantly, finish its unchanged exact guarded effect/cleanup, then release that lock so the endpoint query may proceed. A completed endpoint query still rechecks exact current record/receipt/member scope before any native effect. Stale/malformed/changed/closed/reused observations remain refusals. There is no changed 2s deadline, forged cleanup ACK or endpoint/tolerance relaxation. Atomic per-member native effects remain under the same shared lock, and uncertain helper/effect/renderer boundaries retain quarantine.
+
+This repair does not establish bounded atomic native-call latency, physical cadence, reduction validation acceptance or current-user cancellation. Original baseline/reversal/raster/retirement acceptance remains required.

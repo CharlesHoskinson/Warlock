@@ -1,0 +1,40 @@
+{
+  "result": "SOURCE_BUILD_PAIR_READY_FOR_ROOT_REVIEW",
+  "created": "2026-10-02T20:46:44.641068+00:00",
+  "stage": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal",
+  "sourceClosure": "source-ready-inputs-final-v1.json",
+  "sourceClosureSHA256": "35dea348f4836bfa7a2ca2cfe65c9481eb55ff11e9b6044c40e199eedc474310",
+  "inputs": 63830,
+  "links": 13879,
+  "directories": 1370,
+  "coreSourceReadySHA256": "0235a02ae77f5e144b93e036bf6013d0d0da0954130a184448a5ef4154b2373a",
+  "rootCoreReviewSHA256": "aa2ddb76e002daaa9a98d3d500dd9117696c0b9ea8076c3996cbe340e81eeeec",
+  "pairMetadataSHA256": "2f7cebf018a0d65e9d1d2c849aa2db666651aa38625342e29ac652bf791e3e19",
+  "actualCPU": {
+    "pair": 14,
+    "originalA3": 43,
+    "hostKernelAndInverse": 5
+  },
+  "hostFormal": {
+    "named": 13,
+    "traces": 2000
+  },
+  "probeSHA256": "cb2828cd9ad93500e0e4ea26a3ec4272d6b8fcc7a0f666369c991adaa4f29762",
+  "probeDependencies": 603,
+  "wholeSourceInverses": "inverses",
+  "hostDelta": "host-whole-methods.diff",
+  "runnerDelta": "runner-selector-binding.diff",
+  "hostObservation": "proposed/host_observation.py",
+  "normalEvidenceRelation": "FINAL_HANDOFF.md",
+  "freezer": "proposed/freeze_packet.py",
+  "originalPin14Unchanged": true,
+  "nativeAuthorized": false,
+  "nativeAccepted": false,
+  "mainWrites": false,
+  "freezePerformed": false,
+  "remaining": [
+    "Root complete pair/freeze review and fresh QA promotion with exact copied probe selector",
+    "Root-only original14 native run",
+    "Separate native MAX/ordinary/exclusive/scroll/transfer/input policy regression"
+  ]
+}

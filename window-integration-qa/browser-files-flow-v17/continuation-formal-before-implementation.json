@@ -1,0 +1,43 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/continuation_diagnostic.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Running as unit: qa-harness-8aeeee3f607a4122bdbb5381cb2eefe2.scope; invocation ID: 309af8e04360498e87c960bfef2e7782\n"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/continuation_diagnostic_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  continuation_diagnostic_test\n    ok matchingOriginalOracleTest passed 1 test(s)\n    ok ackNotDeliveryTest passed 1 test(s)\n    ok retainedNoDeliveryRefusedTest passed 1 test(s)\n    ok wrongTextRefusedTest passed 1 test(s)\n    ok wrongCaretRefusedTest passed 1 test(s)\n    ok missingTrustedInputRefusedTest passed 1 test(s)\n    ok coreAndSeatSeparateEvidenceTest passed 1 test(s)\n    ok absentSeatNeverRepairedFromCoreTest passed 1 test(s)\n    ok staleWindowRefusedTest passed 1 test(s)\n    ok staleSessionRefusedTest passed 1 test(s)\n    ok readErrorRevokesTest passed 1 test(s)\n    ok lifetimeChangeRevokesTest passed 1 test(s)\n\n  12 passing (333ms)\n",
+      "stderr": "Running as unit: qa-harness-5b64ef41f86a4ec2b3d12938097e9a43.scope; invocation ID: c313cf37bc44424090dd46be69701756\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/continuation_diagnostic.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (747ms at 2677 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": "Running as unit: qa-harness-ef73deb3e973495e83fb822bd401bb56.scope; invocation ID: c146f667ffcf49c0ad1944fe995c3f5c\n"
+    }
+  ],
+  "runtimePythonStillExactV16": true,
+  "oldProbeStillExact": true,
+  "nativeGuiExecuted": false
+}

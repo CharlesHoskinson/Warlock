@@ -1,0 +1,32 @@
+{
+  "result": "authorized",
+  "rootSourceReview": "/home/hoskinson/window-integration-qa/thumbnail-v10-root-source-review-v1.json",
+  "rootSourceReviewSHA256": "b5722faf92f2efa64f8b3cf53d450185f73d3b7aa70a19236e9c3738e07faa7f",
+  "frozenManifest": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v10/frozen-inputs.json",
+  "frozenManifestSHA256": "bcabc3433ce35d76a9fb403fc9dac9f4c6f5444b0e14e83108a213ee688811d9",
+  "inputs": 19732,
+  "modes": 19732,
+  "links": 287,
+  "actualFreeze": {
+    "session": 17496,
+    "exitCode": 0,
+    "scope": "qa-harness-15ed2af43d7749ad870c8204ed1cb87a"
+  },
+  "sourceProof": {
+    "pythonTests": 395,
+    "quintNamedScenarios": 377,
+    "models": 34,
+    "samples": 2000,
+    "steps": 100,
+    "bindingTests": 52
+  },
+  "originalBaselineRequired": 38,
+  "originalFaultsRequired": 34,
+  "fault34Authorized": false,
+  "originalAssertionsAndDeadlinesPreserved": true,
+  "rootOnlyNative": true,
+  "mainGUIChangesAuthorized": false,
+  "mainConfigChangesAuthorized": false,
+  "crashHandoffFivePreserved": true,
+  "attempt": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v10/attempt-baseline-1"
+}

@@ -1,0 +1,46 @@
+{
+  "updatedUTC": "2026-10-01T14:44:48.217812+00:00",
+  "handoff": "/home/hoskinson/Documents/crash-noise/HANDOFF-codex-window-qa.md",
+  "handoffSHA256": "e905e5fe7cc7b23fb9735b85b8d24a6ba136bbd9c83a4778d63a9729c918ee18",
+  "allFiveApplied": true,
+  "changes": {
+    "core": "Unique qa-harness user scope; inherited exact core1:1 via prlimit (systemd261 scope LimitCORE unsupported); --backtrace explicit only",
+    "xwayland": "Explicitly disabled in nested Wayland configs; actual option false",
+    "parent": "Explicit verified live owned private Weston parent; actually mapped mandatory Wayland Aquamarine; no DRM/libseat fallback",
+    "environment": "Unrestricted launch; owned nonsymlink0700 /run/user/$UID/wqa/<4hex>; accessible render nodes verified",
+    "teardownAndABI": "Owned clients exit before native unload/Hyprland/Weston/bus; private AT-SPI transport/liveManager guard before key calls; no X/Legacy fallback"
+  },
+  "actualScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-10724e23f0264db8aaca9aa4b89ddf29.scope",
+    "coreLimit": 1
+  },
+  "actualRenderNodes": [
+    "/dev/dri/renderD128",
+    "/dev/dri/renderD129"
+  ],
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "allIndependentCleanupAndSourceChecks": {
+    "all3280FrozenFilesExact": true,
+    "all6FrozenLinksExact": true,
+    "all18MainPreservationChecks": true,
+    "normalOwnedFixtureShutdown": true,
+    "privateClientsGoneBeforeUnload": true,
+    "bothNativeModulesUnloadedNormally": true,
+    "allRecordedProcessIdentitiesGone": true,
+    "privateRuntimeGone": true,
+    "noCleanupErrorsOrUnexpectedSurvivors": true,
+    "archivedParentTransportHealthy": true
+  },
+  "nativeCampaignAccepted": false,
+  "retainedFailure": "RuntimeError(\"Actual private Qt session failed:AssertionError('actual logical IPC cursor arrives before owner click')\")",
+  "evidence": {
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v7/attempt-1/report.json": "a68069dd7481ac3007ada2dcd9577b5c4906fd2298dcf44fe23ef265a743e861",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v7/attempt-1/root-completion.json": "92449cf92743da258bd4ac77dc107ebee87f91dffb9ccb7a422f6d2849854830"
+  },
+  "protectedInstallationsUntouched": [
+    "crash-watch override",
+    "installed grim",
+    "installed gnome-keyring"
+  ]
+}

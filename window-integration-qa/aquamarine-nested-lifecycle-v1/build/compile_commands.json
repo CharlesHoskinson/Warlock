@@ -1,0 +1,200 @@
+[
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/allocator/Allocator.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/allocator/Allocator.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/allocator/Allocator.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/allocator/Allocator.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/allocator/DRMDumb.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/allocator/DRMDumb.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/allocator/DRMDumb.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/allocator/DRMDumb.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/allocator/GBM.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/allocator/GBM.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/allocator/GBM.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/allocator/GBM.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/allocator/Swapchain.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/allocator/Swapchain.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/allocator/Swapchain.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/allocator/Swapchain.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/Backend.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Backend.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Backend.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/Backend.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/FrameScheduler.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/FrameScheduler.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/FrameScheduler.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/FrameScheduler.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/Headless.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Headless.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Headless.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/Headless.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/Logger.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Logger.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Logger.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/Logger.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/Null.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Null.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Null.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/Null.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/Session.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Session.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Session.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/Session.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/Wayland.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Wayland.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Wayland.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/Wayland.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/drm/AsyncCommit.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/AsyncCommit.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/AsyncCommit.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/drm/AsyncCommit.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/drm/CommitThread.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/CommitThread.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/CommitThread.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/drm/CommitThread.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/drm/DRM.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/DRM.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/DRM.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/drm/DRM.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/drm/Math.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/Math.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/Math.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/drm/Math.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/drm/Props.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/Props.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/Props.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/drm/Props.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/drm/Renderer.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/Renderer.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/Renderer.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/drm/Renderer.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/drm/impl/Atomic.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/impl/Atomic.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/impl/Atomic.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/drm/impl/Atomic.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/backend/drm/impl/Legacy.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/impl/Legacy.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/drm/impl/Legacy.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/backend/drm/impl/Legacy.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/buffer/Buffer.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/buffer/Buffer.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/buffer/Buffer.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/buffer/Buffer.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/input/Input.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/input/Input.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/input/Input.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/input/Input.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/misc/Attachment.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/misc/Attachment.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/misc/Attachment.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/misc/Attachment.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/output/Output.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/output/Output.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/output/Output.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/output/Output.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/output/OutputTiming.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/output/OutputTiming.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/output/OutputTiming.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/output/OutputTiming.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/utils/FormatUtils.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/utils/FormatUtils.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/utils/FormatUtils.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/utils/FormatUtils.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/src/utils/Shared.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/utils/Shared.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/utils/Shared.cpp",
+  "output": "CMakeFiles/aquamarine.dir/src/utils/Shared.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/protocols/wayland.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/protocols/wayland.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/protocols/wayland.cpp",
+  "output": "CMakeFiles/aquamarine.dir/protocols/wayland.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/protocols/xdg-shell.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/protocols/xdg-shell.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/protocols/xdg-shell.cpp",
+  "output": "CMakeFiles/aquamarine.dir/protocols/xdg-shell.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_HAS_LIBINPUT_PLUGINS -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -Daquamarine_EXPORTS -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./protocols -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/aquamarine.dir/protocols/linux-dmabuf-v1.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/protocols/linux-dmabuf-v1.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/protocols/linux-dmabuf-v1.cpp",
+  "output": "CMakeFiles/aquamarine.dir/protocols/linux-dmabuf-v1.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/simpleWindow.dir/tests/SimpleWindow.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/tests/SimpleWindow.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/tests/SimpleWindow.cpp",
+  "output": "CMakeFiles/simpleWindow.dir/tests/SimpleWindow.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/attachments.dir/tests/Attachments.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/tests/Attachments.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/tests/Attachments.cpp",
+  "output": "CMakeFiles/attachments.dir/tests/Attachments.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/include -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/output.dir/tests/Output.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/tests/Output.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/tests/Output.cpp",
+  "output": "CMakeFiles/output.dir/tests/Output.cpp.o"
+},
+{
+  "directory": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/build",
+  "command": "/usr/bin/c++ -DAQUAMARINE_VERSION=\\\"0.15.0\\\" -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./src/backend/drm -I/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/./include -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -O3 -DNDEBUG -std=gnu++23 -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -o CMakeFiles/commitThread.dir/tests/CommitThread.cpp.o -c /home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/tests/CommitThread.cpp",
+  "file": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/tests/CommitThread.cpp",
+  "output": "CMakeFiles/commitThread.dir/tests/CommitThread.cpp.o"
+}
+]

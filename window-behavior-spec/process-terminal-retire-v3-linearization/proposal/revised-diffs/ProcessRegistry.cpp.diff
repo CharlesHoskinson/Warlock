@@ -1,0 +1,75 @@
+--- /home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/ProcessRegistry.cpp
++++ /home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/proposal/revised-desired/ProcessRegistry.cpp
+@@ -3,6 +3,7 @@
+ #include <QMetaMethod>
+ #include <qqml.h>
+ #include <set>
++#include <algorithm>
+ #include "MappingWitness.hpp"
+ #include <QPromise>
+ #include <QFutureWatcher>
+@@ -88,8 +89,45 @@
+   stable(r,true);if(r->started||r->exited||r->out||r->err||r->fault)throw Refused("Actual invocation occurred during observer arm");return lease;
+  }catch(...){for(const auto&c:r->connections)QObject::disconnect(c);delete r->relay;const auto it=rows.find(process);if(it!=rows.end()&&it->second==r)rows.erase(it);throw;}
+ }
+-void ProcessRegistry::drainFaults(){requireOwnerThread();if(QThread::currentThread()!=thread)throw Refused("Fault queue owning thread differs");std::deque<std::pair<QObject*,uint64_t>>pending;{std::lock_guard lock(faultMutex);pending.swap(queuedFaults);}auto invalidate=[](const std::shared_ptr<Invocation>&r){r->fault=true;r->kernel=false;r->accepted=false;r->normalLife=false;r->failure="Actual matched-lease wrong-thread callback contained";r->evidence.insert("failure",r->failure);};if(faultOverflow.exchange(false))for(const auto&[_,r]:rows)invalidate(r);for(const auto&[p,lease]:pending){const auto it=rows.find(p);if(it!=rows.end()&&it->second->lease==lease)invalidate(it->second);}}
+-void ProcessRegistry::callback(QObject*p,uint64_t lease,int kind,int code,QProcess::ExitStatus status){if(QThread::currentThread()!=thread){{std::lock_guard lock(faultMutex);if(queuedFaults.size()>=CAPACITY)faultOverflow.store(true);else queuedFaults.emplace_back(p,lease);}QMetaObject::invokeMethod(context,[this]{try{drainFaults();}catch(...){}},Qt::QueuedConnection);return;}const auto actualSignalTime=std::chrono::steady_clock::now();std::shared_ptr<Invocation>r;try{drainFaults();r=find(p,lease);if(!r)return;if(kind==0&&!r->started)r->signalTime=actualSignalTime;if(kind==1)r->evidence.insert("actualNativeExitSignal",QVariantMap{{"monotonicNanoseconds",qlonglong(actualSignalTime.time_since_epoch().count())},{"microsecondsFromStarted",qlonglong(std::chrono::duration_cast<std::chrono::microseconds>(actualSignalTime-r->signalTime).count())},{"exitCode",code},{"normalExit",status==QProcess::NormalExit}});event(p,lease,kind,code,status);}catch(const std::exception&e){if(r){r->fault=true;r->kernel=false;r->accepted=false;r->normalLife=false;r->failure=QString::fromUtf8(e.what());r->evidence.insert("failure",r->failure);}}catch(...){if(r){r->fault=true;r->kernel=false;r->accepted=false;r->normalLife=false;r->failure="Unknown actual callback failure";}}}
++void ProcessRegistry::changed(const std::shared_ptr<Invocation>&r){
++ // Mere queued re-query opportunity. All proof remains in guarded state().
++ const auto selected=rows.find(r->arm.process);if(selected==rows.end()||selected->second!=r||selected->second->lease!=r->lease||!r->arm.changed)return;
++ try{r->arm.changed(r->lease);}catch(...){} // Missing hint never supplies authority.
++}
++QVariantMap ProcessRegistry::retire(const ProcessRetireScope&scope){
++ requireOwnerThread();drainFaults();if(!scope.engine||!scope.provider||!scope.lease||scope.lease>=SAFE_MAX||!scope.sourceGuard)throw Refused("Complete native terminal-retire scope required");
++ auto r=find(scope.objects[3],scope.lease);if(!r)throw Refused("Exact selected terminal lease required");
++ auto bound=[&]{const auto current=rows.find(scope.objects[3]);if(current==rows.end()||current->second!=r||r->lease!=scope.lease||r->arm.engine!=scope.engine||r->arm.provider!=scope.provider||r->objects!=scope.objects)throw Refused("Terminal-retire selected tuple/lease changed");};
++ auto invalidate=[&]{const auto selected=rows.find(scope.objects[3]);if(selected!=rows.end()&&selected->second==r&&r->lease==scope.lease){r->fault=true;r->kernel=false;r->accepted=false;r->normalLife=false;}};
++ auto boundary=[&]{drainFaults();bound();if(r->fault)throw Refused("Terminal record faulted at owning-thread boundary");};
++ auto guarded=[&]{bound();try{boundary();scope.sourceGuard();boundary();stable(r,false);boundary();}catch(...){invalidate();throw;}};
++ auto closedNow=[&]{bound();try{boundary();const bool value=lifecycle(r);boundary();return value&&!r->fault;}catch(...){invalidate();throw;}};
++ auto receiptNow=[&]{bound();try{boundary();r->arm.receiptGuard(r->stdoutBytes,r->stderrBytes,r->witness,r->code);boundary();}catch(...){invalidate();throw;}};
++ guarded();const bool closed=closedNow();bound();if(!closed)throw Refused("Actual normal terminal actor closure required");
++ receiptNow();guarded();
++ const auto actualPID=r->pid.read(r->arm.process);guarded();if(actualPID.isValid()&&!actualPID.isNull()){invalidate();throw Refused("Actual terminal Process still has an invocation");}
++ // Reserve before mutation; neither a getter nor a caller can supply closure.
++ history.reserve(history.size()+1);
++ QVariantMap result{{"schema","qml-pin-process-lifecycle-v1"},{"lease",qulonglong(r->lease)},{"terminalRetired",true},{"normalLifecycle",true},{"current",false},{"kernelBound",false},{"complete",false},{"historicalKernelProof",true},{"workerJoined",true},{"nativeWrites",0},{"automaticRetries",0}};
++ guarded();if(!closedNow())throw Refused("Terminal actor closure changed");bound();receiptNow();guarded();
++ // Disconnect can run native disconnectNotify. Recheck after each callback,
++ // never erase or fault a different reentrant lease.
++ for(const auto&connection:r->connections){QObject::disconnect(connection);guarded();}
++ if(!closedNow())throw Refused("Terminal closure changed across disconnect callbacks");receiptNow();guarded();
++ // The queue and row removal share one admission linearization. No getters,
++ // Qt disconnects, notifications or child/worker controls are called while locked.
++ {
++  std::lock_guard admission(faultMutex);bound();
++  const bool matchedPending=std::any_of(queuedFaults.begin(),queuedFaults.end(),[&](const auto&fault){return fault.first==scope.objects[3]&&fault.second==scope.lease;});
++  if(matchedPending||faultOverflow.load()||r->fault){invalidate();throw Refused("Matched pending fault/overflow forbids terminal retirement");}
++  if(!r->job||!r->job->joined||!r->started||!r->historical||!r->exited||!r->normal||!r->out||!r->err||!r->gone)throw Refused("Terminal closure lost before admission commit");
++  const auto selected=rows.find(r->arm.process);
++  r->current=false;r->kernel=false;r->accepted=false;r->normalLife=true;r->receipt=true;history.push_back(r);rows.erase(selected);
++ }
++ return result;
++}
++void ProcessRegistry::drainFaults(){requireOwnerThread();if(QThread::currentThread()!=thread)throw Refused("Fault queue owning thread differs");std::deque<std::pair<QObject*,uint64_t>>pending;{std::lock_guard lock(faultMutex);pending.swap(queuedFaults);}auto invalidate=[this](const std::shared_ptr<Invocation>&r){r->fault=true;r->kernel=false;r->accepted=false;r->normalLife=false;r->failure="Actual matched-lease wrong-thread callback contained";r->evidence.insert("failure",r->failure);changed(r);};if(faultOverflow.exchange(false))for(const auto&[_,r]:rows)invalidate(r);for(const auto&[p,lease]:pending){const auto it=rows.find(p);if(it!=rows.end()&&it->second->lease==lease)invalidate(it->second);}}
++void ProcessRegistry::callback(QObject*p,uint64_t lease,int kind,int code,QProcess::ExitStatus status){if(QThread::currentThread()!=thread){{std::lock_guard lock(faultMutex);if(queuedFaults.size()>=CAPACITY)faultOverflow.store(true);else queuedFaults.emplace_back(p,lease);}QMetaObject::invokeMethod(context,[this]{try{drainFaults();}catch(...){}},Qt::QueuedConnection);return;}const auto actualSignalTime=std::chrono::steady_clock::now();std::shared_ptr<Invocation>r;try{drainFaults();r=find(p,lease);if(!r)return;if(kind==0&&!r->started)r->signalTime=actualSignalTime;if(kind==1)r->evidence.insert("actualNativeExitSignal",QVariantMap{{"monotonicNanoseconds",qlonglong(actualSignalTime.time_since_epoch().count())},{"microsecondsFromStarted",qlonglong(std::chrono::duration_cast<std::chrono::microseconds>(actualSignalTime-r->signalTime).count())},{"exitCode",code},{"normalExit",status==QProcess::NormalExit}});event(p,lease,kind,code,status);}catch(const std::exception&e){if(r){r->fault=true;r->kernel=false;r->accepted=false;r->normalLife=false;r->failure=QString::fromUtf8(e.what());r->evidence.insert("failure",r->failure);}}catch(...){if(r){r->fault=true;r->kernel=false;r->accepted=false;r->normalLife=false;r->failure="Unknown actual callback failure";}}if(r)changed(r);}
+ void ProcessRegistry::event(QObject*p,uint64_t lease,int kind,int code,QProcess::ExitStatus status){
+  auto r=find(p,lease);if(!r)return;r->accepted=false;r->normalLife=false;stable(r,false);
+  if(kind==0){if(r->started)throw Refused("Duplicate actual started");r->started=true;const auto raw=r->pid.read(p);stable(r,false);const auto pid=processPID(raw);r->evidence.insert("observedProcessId",pid);
+@@ -107,12 +145,13 @@
+   if(!job->watcher->isFinished())return;job->finished=true;const int joined=pthread_tryjoin_np(job->id,nullptr);if(joined==EBUSY){job->pollQueued=true;QTimer::singleShot(1,context,[this,r]{finishJob(r);});return;}if(joined)throw Refused("Actual nonblocking worker join refused");job->joined=true;
+   if(job->watcher->future().resultCount()!=1)throw Refused("Exactly one native worker result required");const auto outcome=job->watcher->result();r->evidence.insert("workerCollection",outcome.evidence);r->evidence.insert("workerComplete",outcome.complete);r->evidence.insert("workerFailure",outcome.failure);r->evidence.insert("workerNormalJoined",true);
+   const auto current=rows.find(r->arm.process);if(current==rows.end()||current->second!=r||current->second->lease!=outcome.lease){job->delivered=true;return;}if(job->delivered)throw Refused("Duplicate current readonly worker result");job->delivered=true;
+-  if(std::chrono::steady_clock::now()>job->work->deadline||outcome.completedAt>job->work->deadline){r->fault=true;r->failure="Original worker delivery deadline expired";return;}
++  if(std::chrono::steady_clock::now()>job->work->deadline||outcome.completedAt>job->work->deadline){r->fault=true;r->failure="Original worker delivery deadline expired";changed(r);return;}
+   if(!outcome.complete)throw Refused(outcome.failure.toStdString());if(outcome.witness.pid!=r->witness.pid||outcome.witness.start!=r->witness.start||outcome.lease!=r->lease)throw Refused("Actual worker original live child/lease differs");
+-  if(r->fault)return;stable(r,false);r->witness=outcome.witness;r->historical=true;r->evidence.insert("historicalActorKernel",outcome.witness.value());r->evidence.insert("kernelProvedWhileLive",true);stable(r,false);
+-  if(!r->current){r->kernel=false;return;}
++  if(r->fault){changed(r);return;}stable(r,false);r->witness=outcome.witness;r->historical=true;r->evidence.insert("historicalActorKernel",outcome.witness.value());r->evidence.insert("kernelProvedWhileLive",true);stable(r,false);
++  if(!r->current){r->kernel=false;changed(r);return;}
+   try{stable(r,true);r->kernel=true;r->evidence.insert("committedKernel",outcome.witness.value());stable(r,true);}catch(const std::exception&e){r->current=false;r->kernel=false;r->failure=QString::fromUtf8(e.what());stable(r,false);}
+  }catch(const std::exception&e){r->fault=true;r->kernel=false;r->accepted=false;r->normalLife=false;r->failure=QString::fromUtf8(e.what());r->evidence.insert("failure",r->failure);}catch(...){r->fault=true;r->kernel=false;r->accepted=false;r->normalLife=false;r->failure="Unknown worker result failure";}
++ changed(r);
+ }
+ QPointer<QObject> ProcessRegistry::diagnosticWorker(QObject*p,uint64_t lease){requireOwnerThread();drainFaults();const auto r=find(p,lease);if(!r||!r->job||!r->job->created||!r->job->watcher)throw Refused("Exact registered worker diagnostic required");stable(r,false);QPointer<QObject>selected=r->job->watcher;stable(r,false);if(selected.isNull()||selected.data()!=r->job->watcher||selected->thread()!=thread)throw Refused("Readonly worker diagnostic allocation changed");return selected;}
+ QVariantMap ProcessRegistry::terminalInventory(){requireOwnerThread();drainFaults();QVariantList records;bool joined=true;auto add=[&](const std::shared_ptr<Invocation>&r){auto j=r->job;if(j&&!j->joined){joined=false;if(j->watcher&&j->watcher->isFinished()&&!j->pollQueued)finishJob(r);if(j->joined)joined=true;}records<<QVariantMap{{"workerCreated",r->job&&r->job->created},{"workerFinished",r->job&&r->job->finished},{"workerJoined",r->job&&r->job->joined},{"lease",qulonglong(r->lease)},{"started",r->started},{"pid",r->witness.pid},{"start",r->witness.start},{"exitObserved",r->exited},{"normalExit",r->normal},{"stdoutEOF",r->out},{"stderrEOF",r->err},{"workerCreated",j&&j->created},{"workerFinished",j&&j->finished},{"workerJoined",j&&j->joined},{"kernelBound",r->kernel},{"historicalKernelProof",r->historical},{"complete",r->accepted},{"fault",r->fault},{"failure",r->failure}};};for(const auto&r:history)add(r);for(const auto&[_,r]:rows)add(r);joined=true;for(const auto&v:records)if(v.toMap()["workerCreated"].toBool()&&!v.toMap()["workerJoined"].toBool())joined=false;return {{"records",records},{"allWorkersJoined",joined},{"pendingDestroyedObserverJobs",qulonglong(pendingDestroyedJobs().size())},{"forcedWorkers",0},{"detachedWorkers",0}};}

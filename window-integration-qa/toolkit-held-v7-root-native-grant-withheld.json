@@ -1,0 +1,10 @@
+{
+  "updatedUTC": "2026-10-02T01:28:23.960479+00:00",
+  "nativeAuthorizedForFrozenV7": false,
+  "nativeLaunched": false,
+  "sourceReview": "/home/hoskinson/window-integration-qa/toolkit-held-v7-root-source-review.json",
+  "preflight": "/home/hoskinson/window-integration-qa/toolkit-held-v7-root-preflight.json",
+  "counterexample": "Actual prologue increments extra ordinal to3 before refusal for bound2; Quint Evaluate(3) retainedordinal2 and thus permits Cleanup unreachable under actual ordinal gate. Model must preserve real extra ordinal and permanent failure/quarantine; no actual extra evaluation observed in nativeV7 because no run.",
+  "next": "FreshV8 faithful formal boundary; V7 immutable, no runtime extra guard/budget relaxation",
+  "fullWindowsParityAccepted": false
+}

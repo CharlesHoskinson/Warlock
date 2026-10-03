@@ -1,0 +1,53 @@
+{
+  "sourceHandoff": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/source-handoff-v22.json",
+  "sourceHandoffSHA256": "75107ea31f5940148f24d1df745dc50e4f2e339e75618ffe881218804a9561c2",
+  "localSources": 775,
+  "allLocalBytesAndDeclaredModesChecked": true,
+  "fullClosure": {
+    "freeze": false,
+    "inputs": 17412,
+    "modes": 17412,
+    "links": 287,
+    "manifestSHA256": null,
+    "sourceHandoffSHA256": "75107ea31f5940148f24d1df745dc50e4f2e339e75618ffe881218804a9561c2",
+    "nativeLaunch": false
+  },
+  "offline": {
+    "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/bounded-source-typed-final-offline-checkpoint.json",
+    "sha256": "b87c31a45e0075acb742f612285a03b60bcc0fe50ab881018c8723a89cd6fb22",
+    "pythonTests": 388,
+    "quintNamedScenarios": 383,
+    "quintModels": 33,
+    "samplesPerModel": 2000,
+    "steps": 100,
+    "extraBoundedValidPathSamples": 2000
+  },
+  "measurement": {
+    "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/v22-source-typed-history-measurement-final.json",
+    "sha256": "a40c3b1f9b63f0a9549bcc46f840f9ed0c761c11c3d7836b76464d0904ac4894",
+    "genuineQueries": 1031,
+    "archivedRows": 1024,
+    "originalQueryTimeoutSeconds": 1,
+    "actualMaintenanceTimeoutSeconds": 1,
+    "sourceUnchanged": true,
+    "fullAuditAndNormalClose": true,
+    "concurrentFullCPUSuite": true,
+    "unlimitedHistoryAccepted": false
+  },
+  "inverses": {
+    "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/closure_tools/source-inverse-final.json",
+    "sha256": "9081e4032fe437ed96e6b8c3987a49acb7f6ce063f4ec4664f9b7c33a70189bf",
+    "checks": 311,
+    "inheritedTopSources": 131,
+    "existingChangedFiles": [
+      "readonly_ipc.py",
+      "test_readonly_longevity.py"
+    ],
+    "allOriginalAssertionsAndDeadlinesUnchanged": true,
+    "nativeEffectRecoveryFilesExact": true
+  },
+  "stageHeldUnchanged": true,
+  "rootFreezePending": true,
+  "nativeLaunch": false,
+  "nativeAccepted": false
+}

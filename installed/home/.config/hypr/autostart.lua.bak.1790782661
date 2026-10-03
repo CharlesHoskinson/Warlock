@@ -1,0 +1,7 @@
+-- Extra autostart processes.
+-- o.launch_on_start("my-service")
+
+-- Load the hyprbars title-bar plugin, then reload so looknfeel.lua can configure it.
+hl.on("hyprland.start", function()
+  hl.exec_cmd("hyprctl plugin load /usr/lib/libhyprbars.so && hyprctl reload")
+end)

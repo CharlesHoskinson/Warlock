@@ -1,0 +1,29 @@
+{
+  "result": "source-component-ready",
+  "packet": "/home/hoskinson/window-integration-qa/pin-frontend-qa-v1/source-controller-inputs-v1.json",
+  "packetSHA256": "e8f366806d33b76fa08f85373703065d9e9030689aafb5b8a6ee2dac6620ffdc",
+  "inputs": 54636,
+  "modes": 54636,
+  "links": 13875,
+  "focusedCommands": 10,
+  "CPUControllerAndAuthorityTests": 31,
+  "physicalDriverTests": 10,
+  "adapterTests": 18,
+  "formalNamed": 31,
+  "models": 3,
+  "formalTracesEach": 2000,
+  "sourceUnchangedDuringSuite": true,
+  "inverseSourceChecksSeparate": true,
+  "wholeNativeCampaignReady": false,
+  "nativeRunnable": false,
+  "missingActualAuthorities": [
+    "QQmlEngine/object lifetime provider",
+    "transient actual helper/QML normal-exit registry",
+    "complete private B host/wrapper and full case matrix"
+  ],
+  "rootReviewPending": true,
+  "nativeLaunch": false,
+  "mainChanges": false,
+  "frozen": false,
+  "fullWindowsParityAccepted": false
+}

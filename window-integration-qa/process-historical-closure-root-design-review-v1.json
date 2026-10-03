@@ -1,0 +1,32 @@
+{
+  "result": "pass",
+  "reviewed": "2026-10-02T20:43:31.455482+00:00",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/process-historical-closure-v1/CONTRACT.md": {
+      "sha256": "45823b87eb6cc8d4f50b2931bf79f2d0591e765a410f656b70f8390064f83f5b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-historical-closure-v1/historical_closure.qnt": {
+      "sha256": "36d6f5d694a4de45ac2b08aef39d04d8098887137bb6bce92d0feb717addd53e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-historical-closure-v1/prove_before.py": {
+      "sha256": "faa611e64bae42458bb4bbbbf9a0d86866adce4477dc415adbc54d53d1021232",
+      "mode": 420
+    }
+  },
+  "formalReportSHA256": "eddda6edf1ae55660075b5eb1a52163f9e417f4a0537092787c169ba285d657d",
+  "namedScenarios": 24,
+  "traces": 2000,
+  "maxSteps": 100,
+  "authorizedScope": "Fresh correction separating complete historical actor closure from current UI action authority, preserving all actor/source/context/lease/receipt/exit/EOF/gone/join/budget guards and unique result delivery; first native notification after owner poll may account once, duplicates fault; old lease inert.",
+  "runtimeAccepted": false,
+  "nativeAuthorized": false,
+  "reliabilityAccepted": false,
+  "limits": [
+    "Historical actor closure cannot authorize a current action",
+    "Actor/source retirement still refuses closure/rearm",
+    "Actual production Registry counterexample replay and narrow source inverse review required",
+    "Old sparse baseline failure remains unresolved"
+  ]
+}

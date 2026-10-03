@@ -1,0 +1,1 @@
+V1:22 named PASS, random invariant FAIL before runtime. Initial Tick before Begin made invariant deadline==10 incorrectly assume absolute zero clock. V2 stores actual begunAt and requires deadline==begunAt+10. No deadline reset or runtime source change. V1 model/log/report retained unchanged.

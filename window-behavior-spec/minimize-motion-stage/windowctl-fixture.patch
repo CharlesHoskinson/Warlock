@@ -1,0 +1,19 @@
+--- a/window-integration-qa/test_windowctl.py
++++ b/window-integration-qa/test_windowctl.py
+@@ -83,13 +83,15 @@
+         preview.write_text("#!/bin/sh\nexit 0\n")
+         preview.chmod(0o755)
+         shutil.copy2(WINDOWCTL, self.root / "home/.local/bin/hypr-windowctl")
++        core=WINDOWCTL.with_name("hypr-windowctl-core")
++        if core.exists():shutil.copy2(core,self.root / "home/.local/bin/hypr-windowctl-core")
+         self.state_path = self.root / "state.json"
+         self.state_path.write_text(json.dumps({"clients": clients, "active": active,
+                                               "workspace": workspace, "dispatches": []}))
+         self.env = dict(os.environ, PATH=str(self.root / "bin") + ":" + os.environ["PATH"],
+                         HOME=str(self.root / "home"), XDG_CONFIG_HOME=str(self.root / "home/.config"),
+                         XDG_RUNTIME_DIR=str(self.root / "runtime"),
+-                        WINDOWCTL_MOCK_STATE=str(self.state_path))
++                        WINDOWCTL_MOCK_STATE=str(self.state_path), HYPR_WINDOWCTL_MOTION="0")
+ 
+     def run(self, *args, expected=0):
+         result = subprocess.run([str(WINDOWCTL), *args], env=self.env,

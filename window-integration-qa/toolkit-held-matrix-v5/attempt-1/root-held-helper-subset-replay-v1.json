@@ -1,0 +1,28 @@
+{
+  "result": "pass",
+  "scope": "Actual registered helper subset only; original full held failure unchanged",
+  "rawArchiveIntegrity": true,
+  "actualRegisteredHelpersNormal": true,
+  "compositorOperationCount": 6,
+  "queryRoles": [
+    "qs"
+  ],
+  "serviceRegistered": false,
+  "fullWorkloadAccepted": false,
+  "hostUnexpectedDescendants": [
+    {
+      "pid": 1817687,
+      "start": "12198152",
+      "pgid": 1817251
+    },
+    {
+      "pid": 1817691,
+      "start": "12198153",
+      "pgid": 1817251
+    }
+  ],
+  "allRecordedUnexpectedOriginalsGone": true,
+  "unexpectedAttributionAccepted": false,
+  "nativeCommands": false,
+  "mainWrites": false
+}

@@ -1,0 +1,33 @@
+           PID: 2460508 (test_max_action)
+           TID: 2460508 (test_max_action)
+           UID: 1000 (hoskinson)
+           GID: 1000 (hoskinson)
+        Signal: 6 (ABRT) si_code: SI_TKILL
+     Timestamp: Fri 2026-10-02 08:04:14 MDT (3min 0s ago)
+  Command Line: cpu-tests/test_max_action
+    Executable: /home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/test_max_action
+ Control Group: /user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\x2dterminal\x2dexec-709acf58.scope
+          Unit: user@1000.service
+     User Unit: app-Hyprland-xdg\x2dterminal\x2dexec-709acf58.scope
+         Slice: user-1000.slice
+     Owner UID: 1000 (hoskinson)
+       Boot ID: c8675de33db04a0ebfe8cbe818f81ef0
+    Machine ID: 8ef74211da1f4de1a8469b59750a7a51
+      Hostname: hosk
+       Storage: /var/lib/systemd/coredump/core.test_max_action.1000.c8675de33db04a0ebfe8cbe818f81ef0.2460508.1790949854000000.zst (present)
+  Size on Disk: 53K
+       Message: Process 2460508 (test_max_action) of user 1000 dumped core.
+                
+                Stack trace of thread 2460508:
+                #0  0x000075b3c7e9a17c n/a (libc.so.6 + 0x9a17c)
+                #1  0x000075b3c7e3e5d0 raise (libc.so.6 + 0x3e5d0)
+                #2  0x000075b3c7e25685 abort (libc.so.6 + 0x25685)
+                #3  0x000075b3c7e26704 n/a (libc.so.6 + 0x26704)
+                #4  0x000075b3c7ea482c n/a (libc.so.6 + 0xa482c)
+                #5  0x000075b3c7ea4844 n/a (libc.so.6 + 0xa4844)
+                #6  0x000059ee76573eb8 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv (test_max_action + 0x6eb8)
+                #7  0x000059ee76572bcb _Z22originalRegressionMainv (test_max_action + 0x5bcb)
+                #8  0x000059ee765732e2 main (test_max_action + 0x62e2)
+                #9  0x000075b3c7e27781 n/a (libc.so.6 + 0x27781)
+                #10 0x0000000000000065 n/a (n/a + 0x0)
+                ELF object binary architecture: AMD x86-64

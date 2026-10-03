@@ -1,0 +1,19 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_readonly_longevity.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/test_readonly_longevity.py
+@@ -282,12 +282,12 @@
+ 
+     def test_live_postdisk_confirmation_reference_cannot_be_reclaimed(self):
+         reached = threading.Event(); release = threading.Event(); errors = []
+-        original = self.reader.authority
+-        def blocked():
++        original = self.reader._current_authority
++        def blocked(*,borrow=False):
+             if threading.current_thread().name == 'held-result' and self.reader.rows and self.row()['outcome'] == 'complete':
+                 reached.set(); release.wait(2)
+-            return original()
+-        self.reader.authority = blocked
++            return original(borrow=borrow)
++        self.reader._current_authority = blocked
+         def worker():
+             try: self.query(timeout=2)
+             except BaseException as e: errors.append(e)

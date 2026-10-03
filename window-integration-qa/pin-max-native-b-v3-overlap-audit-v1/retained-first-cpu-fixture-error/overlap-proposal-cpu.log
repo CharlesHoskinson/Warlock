@@ -1,0 +1,23 @@
+test_absent_wrong_typed_or_unreachable_peer_surface_refuses (__main__.Tests.test_absent_wrong_typed_or_unreachable_peer_surface_refuses) ... ok
+test_complete_AST_inverse_only_changes_overlap_operand (__main__.Tests.test_complete_AST_inverse_only_changes_overlap_operand) ... ok
+test_original_whole_body_refuses_raw_empty_override (__main__.Tests.test_original_whole_body_refuses_raw_empty_override) ... ok
+test_proposed_whole_body_requires_next_actual_witness (__main__.Tests.test_proposed_whole_body_requires_next_actual_witness) ... ERROR
+
+======================================================================
+ERROR: test_proposed_whole_body_requires_next_actual_witness (__main__.Tests.test_proposed_whole_body_requires_next_actual_witness)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-integration-qa/pin-max-native-b-v3-overlap-audit-v1/test_overlap_proposal.py", line 36, in test_proposed_whole_body_requires_next_actual_witness
+    with self.assertRaises(NextWitnessRequired):c.coexistence_case(case,{})
+                                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/hoskinson/window-integration-qa/pin-max-native-b-v3-overlap-audit-v1/minimal_controller.py.proposed", line 380, in coexistence_case
+    winner=self.raw('current actual protected band witness',lambda:self.query('pin_stack_state'))
+  File "/home/hoskinson/window-integration-qa/pin-max-native-b-v3-overlap-audit-v1/minimal_controller.py.proposed", line 40, in raw
+    require(not self.blocked and len(self.trace)<4096,'bounded current source-only review protocol')
+                ^^^^^^^^^^^^
+AttributeError: 'MinimalController' object has no attribute 'blocked'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.048s
+
+FAILED (errors=1)

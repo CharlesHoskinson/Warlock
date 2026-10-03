@@ -1,0 +1,45 @@
+{
+  "result": "pass",
+  "runtimeDisposalGuardChanged": false,
+  "records": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "actor_disposal_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  actor_disposal_test\n    ok unresolvedNativeCannotDrainOrDisposeTest passed 1 test(s)\n    ok physicalExitCannotReplaceSemanticDrainTest passed 1 test(s)\n    ok actualReturnedNativeAllowsNormalRendererDrainTest passed 1 test(s)\n    ok prematureSemanticReturnCannotAllowDisposalTest passed 1 test(s)\n    ok faultKeepsRendererAndCapturesQuarantinedTest passed 1 test(s)\n    ok missingInventoryKeepsCapturesQuarantinedTest passed 1 test(s)\n    ok liveRendererCannotBeDisposedTest passed 1 test(s)\n    ok idleHealthyRendererMayDrainAndDisposeTest passed 1 test(s)\n\n  8 passing (373ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "actor_disposal.qnt",
+        "--invariant",
+        "allProps",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20261003",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1942ms at 1030 traces/second).\nUse --seed=0x1383567 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "retainedAssemblyFailures": [
+    "actor-disposal-formal-before-guard-v1.json",
+    "actor-disposal-formal-before-guard-v2.json",
+    "actor-disposal-formal-before-guard-v3.json"
+  ],
+  "sourceSHA256": {
+    "actor_disposal.qnt": "61caf4a0d29dcb2bf822c4bef789d0e64aba37076e9589654e9e0b15807d5206",
+    "actor_disposal_test.qnt": "2243616fcc5ab52daf87e8357b76e761502ff57431ea8cfee89b47b6d10b67aa"
+  }
+}

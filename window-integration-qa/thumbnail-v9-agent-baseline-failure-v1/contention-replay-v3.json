@@ -1,0 +1,99 @@
+{
+  "scope": "reachable kernel contention only; native attempt lock holder and exact site unproved",
+  "result": "pass",
+  "writerRaw": {
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "failure": {
+    "type": "BlockingIOError",
+    "errno": 11,
+    "message": "[Errno 11] Resource temporarily unavailable"
+  },
+  "refusalElapsedNs": 6048175,
+  "rendererAtObservation": {
+    "job": "eed73ddae1764049b45a110009b0066a",
+    "kind": "renderer",
+    "actor": 17,
+    "phase": "released",
+    "ownership": {
+      "pid": 1856056,
+      "start": 16747666,
+      "uid": 1000,
+      "producer": {
+        "device": 1,
+        "inode": 635265,
+        "size": 16288,
+        "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+        "seals": 15
+      },
+      "launcher": {
+        "device": 32,
+        "inode": 72938,
+        "size": 14424,
+        "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+        "seals": null
+      },
+      "script": {
+        "device": 1,
+        "inode": 635266,
+        "size": 2738,
+        "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+        "seals": 15
+      },
+      "argv": [
+        "/usr/bin/python3.14",
+        "/proc/self/fd/4",
+        "6",
+        "10",
+        "5",
+        "[\"/proc/self/fd/5\"]",
+        "elf",
+        "-1"
+      ],
+      "scriptFD": 4,
+      "producerFD": 5,
+      "targetArgv": [
+        "/proc/self/fd/5"
+      ],
+      "mode": "elf",
+      "interpreter": null,
+      "policy": "linux-x86_64-group-confinement-v1",
+      "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+      "environment": {
+        "XDG_RUNTIME_DIR": "/tmp/tmpjsr6kj97",
+        "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+        "WAYLAND_DISPLAY": "never-connect"
+      }
+    }
+  },
+  "writer": {
+    "argv": [
+      "/usr/bin/bash",
+      "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/payload/home/.local/bin/hypr-window-preview",
+      "capture-both",
+      "0xbb02",
+      "0"
+    ],
+    "sourceSHA256": "123206521803a61fbcef58abb25922b9d53bbdae0a90e1d408e9d6d58f31d177",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "fixtureBoundary": "unchanged production script with explicit CPU-only hyprctl JSON and PNG export fixtures; real shell flock, ImageMagick and filesystem"
+  },
+  "writerPixels": {
+    "0xbb02-1.png": "bd27e16701dd43cf5a5963130301e405ef74925581c342f4c878b36b7a96ff62",
+    "0xbb02-0.png": "bd27e16701dd43cf5a5963130301e405ef74925581c342f4c878b36b7a96ff62"
+  },
+  "batchPixels": {
+    "0xcc03-1.png": "6619f9de82c4579e0c6bd745be9c4eff2c5664aa775caf36c19d12a736dd0e46",
+    "0xcc03-0.png": "6619f9de82c4579e0c6bd745be9c4eff2c5664aa775caf36c19d12a736dd0e46",
+    "0xbb02-1.png": "743a9de15de40e5eea4044fde7ae67b064f758b8eca955650cd44a98051c61f6",
+    "0xbb02-0.png": "743a9de15de40e5eea4044fde7ae67b064f758b8eca955650cd44a98051c61f6",
+    "0xaa01-1.png": "3dc21943004714bac17efeff8edd8397c4cb55b1db09c4c9e735cb29a3811ddd",
+    "0xaa01-0.png": "3dc21943004714bac17efeff8edd8397c4cb55b1db09c4c9e735cb29a3811ddd"
+  },
+  "keeperNormalStop": true,
+  "rendererExitCode": 0
+}

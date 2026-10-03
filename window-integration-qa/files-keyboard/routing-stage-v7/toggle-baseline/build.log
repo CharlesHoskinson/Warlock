@@ -1,0 +1,41 @@
+-- The CXX compiler identification is GNU 16.2.1
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE
+-- Found OpenGL: /usr/lib/libOpenGL.so
+-- Found WrapOpenGL: TRUE
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Found XKB: /usr/lib/libxkbcommon.so (found suitable version "1.13.2", minimum required is "0.9.0")
+CMake Warning at /usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:339 (message):
+  This project is using headers of the QuickPrivate module and will therefore
+  be tied to this specific Qt module build version.  Running this project
+  against other versions of the Qt modules may crash at any arbitrary point.
+  This is not a bug, but a result of using Qt internals.  You have been
+  warned!
+
+  You can disable this warning by setting QT_NO_PRIVATE_MODULE_WARNING to ON.
+Call Stack (most recent call first):
+  /usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateConfig.cmake:58 (_qt_internal_show_private_module_warning)
+  /usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)
+  CMakeLists.txt:4 (find_package)
+
+
+-- Configuring done (0.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/toggle-baseline/fixture-keys/build
+[  0%] Built target fixturekeys_autogen_timestamp_deps
+[ 25%] Automatic MOC for target fixturekeys
+[ 25%] Built target fixturekeys_autogen
+[ 75%] Building CXX object CMakeFiles/fixturekeys.dir/fixturekeys_autogen/mocs_compilation.cpp.o
+[ 75%] Building CXX object CMakeFiles/fixturekeys.dir/keys.cpp.o
+[100%] Linking CXX shared module libfixturekeys.so
+[100%] Built target fixturekeys

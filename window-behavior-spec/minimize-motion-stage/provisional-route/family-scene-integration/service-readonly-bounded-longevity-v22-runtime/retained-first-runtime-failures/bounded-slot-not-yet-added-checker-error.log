@@ -1,0 +1,12 @@
+Running as unit: qa-harness-2398bbf8819e4602aa08295003fd5e01.scope; invocation ID: 09ca79e9bb3a47169f9734f63737f66f
+test_unregistered_borrow_slots_are_bounded_before_new_connection (unittest.loader._FailedTest.test_unregistered_borrow_slots_are_bounded_before_new_connection) ... ERROR
+
+======================================================================
+ERROR: test_unregistered_borrow_slots_are_bounded_before_new_connection (unittest.loader._FailedTest.test_unregistered_borrow_slots_are_bounded_before_new_connection)
+----------------------------------------------------------------------
+AttributeError: type object 'BoundedReadTests' has no attribute 'test_unregistered_borrow_slots_are_bounded_before_new_connection'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

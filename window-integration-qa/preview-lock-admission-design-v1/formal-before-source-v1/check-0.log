@@ -1,0 +1,16 @@
+[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:4:20
+  4:  action free(a:int)=fire(Acquire({address:a,reply:Free}))
+                        ^
+
+
+ Error [QNT000]: extraneous input ')' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:4:56
+  4:  action free(a:int)=fire(Acquire({address:a,reply:Free}))
+                                                            ^
+
+error: parsing failed

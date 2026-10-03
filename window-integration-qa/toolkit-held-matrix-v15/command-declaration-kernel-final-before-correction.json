@@ -1,0 +1,86 @@
+{
+  "result": "pass",
+  "records": [
+    {
+      "command": [
+        "/usr/bin/pkg-config",
+        "--cflags",
+        "--libs",
+        "Qt6Core"
+      ],
+      "exitCode": 0,
+      "stdout": "-I/usr/include/qt6/QtCore -I/usr/include/qt6 -DQT_CORE_LIB -I/usr/lib/qt6/mkspecs/linux-g++ -lQt6Core\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++20",
+        "-fPIC",
+        "-O2",
+        "-o",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/command-declaration-kernel",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/command-declaration-kernel.cpp",
+        "-I/usr/include/qt6/QtCore",
+        "-I/usr/include/qt6",
+        "-DQT_CORE_LIB",
+        "-I/usr/lib/qt6/mkspecs/linux-g++",
+        "-lQt6Core"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/command-declaration-kernel"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"QCoreOnly\":true,\"actualKernelArgv\":[\"/usr/bin/python3\",\"-IS\",\"-c\",\"import sys;print('ready',flush=True);sys.stdin.read()\",\"submitted-original\"],\"actualPID\":4014326,\"actualQuickshellExecuted\":false,\"declarationAtStarted\":[\"/usr/bin/python3\",\"-IS\",\"-c\",\"import sys;print('ready',flush=True);sys.stdin.read()\",\"declared-next\"],\"declarationChangedAtStarted\":true,\"exitCode\":0,\"exitStatus\":0,\"kernelArgvPreserved\":true,\"stderr\":\"\",\"stdout\":\"ready\\n\",\"submittedDeclaration\":[\"/usr/bin/python3\",\"-IS\",\"-c\",\"import sys;print('ready',flush=True);sys.stdin.read()\",\"submitted-original\"]}\n",
+      "stderr": ""
+    }
+  ],
+  "actual": {
+    "QCoreOnly": true,
+    "actualKernelArgv": [
+      "/usr/bin/python3",
+      "-IS",
+      "-c",
+      "import sys;print('ready',flush=True);sys.stdin.read()",
+      "submitted-original"
+    ],
+    "actualPID": 4014326,
+    "actualQuickshellExecuted": false,
+    "declarationAtStarted": [
+      "/usr/bin/python3",
+      "-IS",
+      "-c",
+      "import sys;print('ready',flush=True);sys.stdin.read()",
+      "declared-next"
+    ],
+    "declarationChangedAtStarted": true,
+    "exitCode": 0,
+    "exitStatus": 0,
+    "kernelArgvPreserved": true,
+    "stderr": "",
+    "stdout": "ready\n",
+    "submittedDeclaration": [
+      "/usr/bin/python3",
+      "-IS",
+      "-c",
+      "import sys;print('ready',flush=True);sys.stdin.read()",
+      "submitted-original"
+    ]
+  },
+  "primarySourceSHA256": "61af633eb2b0b58872a2d7c57f06d5781332e971d243e01f93b6871b9587c98a",
+  "primaryChecks": {
+    "declaredPropertyMutable": true,
+    "activeGuard": true,
+    "copiesLaunchArguments": true,
+    "startsCopiedArguments": true
+  },
+  "binarySHA256": "55b5bc13c62c2a19c6c2a89c7722451f8097e8edfb9e0b682482f68d196d91ce",
+  "nativeGuiLaunch": false,
+  "actualQuickshellExecuted": false,
+  "markerRuntimeNotChanged": true
+}

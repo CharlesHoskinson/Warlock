@@ -1,0 +1,105 @@
+{
+  "scope": "read-only exact B04 first titlebar pin failure; no unpin/normal-return observation",
+  "actualSourceInputs": {
+    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/frozen-inputs.json": {
+      "sha256": "66e08491e144661659fcfd25cb8961509b00895f01e20a387ccf9e85c1597c5f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/report.json": {
+      "sha256": "16f6f9ed4bc4faa95ab90e0dd5abaa980918cff38948db90b41a1b8b9fbdca9b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/native/campaign-b-trace.json": {
+      "sha256": "6735a5c3e408358c479f56bcedc14822159d42c37b2a9047061f3dde7b0e2785",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/controller/minimal_controller.py": {
+      "sha256": "1921a912c510fe558ee6aa09e44637115e93e2ac2891f938affed5348c8163ca",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/pin-max-native-b-v2-root-failure-v1.json": {
+      "sha256": "c3857f9db485a651d28a9413d7bc722bd2066a8e189a2683e3390f3ee3e71224",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v2-build/src/campaign_b_observer.cpp": {
+      "sha256": "67943775b1d569e03734b4b53544f20830e05820506d5578cf3e2c6df8a6ef26",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/pin/NativePinState.cpp": {
+      "sha256": "4f4ba5401f9b4434af93631916dfdea9282f4206541edf6bee1840eacf6dd305",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/config/shared/actions/ConfigActions.cpp": {
+      "sha256": "76cf0ca80c693514456629c42edc22bb590337f6a85aaf4801c347f425c82f94",
+      "mode": 420
+    }
+  },
+  "maximum": {
+    "traceIndex": 270,
+    "sequence": "15",
+    "observedNs": "195610579320440"
+  },
+  "before": {
+    "sequence": "16",
+    "observedNs": "195613879315766"
+  },
+  "after": {
+    "sequence": "17",
+    "observedNs": "195618332259559"
+  },
+  "conservationDifferences": {
+    "restoreOrigin": {
+      "maximum": false,
+      "before": false,
+      "after": true
+    },
+    "restoreManaged": {
+      "maximum": false,
+      "before": false,
+      "after": true
+    }
+  },
+  "other18ExactlyEqual": [
+    "internalMode",
+    "clientMode",
+    "floating",
+    "logicalBox",
+    "visualBox",
+    "restoreValid",
+    "restoreGeneration",
+    "restoreLogicalBox",
+    "restoreVisualBox",
+    "restoreFloating",
+    "restoreLayoutHandled",
+    "restoreTarget",
+    "restoreLayoutTarget",
+    "restoreSpace",
+    "target",
+    "space",
+    "workspace",
+    "output"
+  ],
+  "actualPinnedTransition": [
+    false,
+    true
+  ],
+  "sourceMapping": [
+    "observer275\u2013276 restoreOrigin/restoreManaged = snapshot.pinOrigin/pinManaged",
+    "ConfigActions265\u2013267 m_pinned=wantPin; native-intent setOrigin(window,wantPin)",
+    "NativePinState147\u2013155 exact current record pinOrigin=pinned; pinManaged=true"
+  ],
+  "sourceDefinedExpectedFirstPinMarkers": {
+    "restoreOrigin": true,
+    "restoreManaged": true
+  },
+  "sourceDefinedExpectedUnpinFinalMarkers": {
+    "restoreOrigin": false,
+    "restoreManaged": true
+  },
+  "latterNotNativeObserved": true,
+  "geometryAnimationDifferenceObserved": false,
+  "productInvariantBugEstablished": false,
+  "classification": "prior QA equality mistakenly included intentional pin-origin/sticky-management markers; actual other18 context conserved",
+  "frozenPacketsChanged": false,
+  "nativeExecutedByAgent": false
+}

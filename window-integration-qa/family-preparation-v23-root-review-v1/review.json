@@ -1,0 +1,68 @@
+{
+  "result": "pass",
+  "sourceReadySHA256": "df126ad3da6c354ddd24ae9834ba2fcd0fb42983012b18f60cba93804d603d27",
+  "manifest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/manifest-family-preparation-v23.json",
+  "manifestSHA256": "0d2b7b231eaa26c6618783b1cb2305c2a989586b3a7cb371716e2d67603c82e2",
+  "inputs": 15238,
+  "modes": 15238,
+  "links": 158,
+  "independentPythonTests": 9,
+  "fullProof": {
+    "pythonTests": 359,
+    "named": 296,
+    "models": 32,
+    "samplesPerModel": 2000,
+    "stepsPerSample": 100,
+    "sha256": "b01c57cb72a22d54bbc6bafd96bcedd4fcb76df0635d3b6d5482b58104ad3933"
+  },
+  "soleInheritedProductDelta": "batch_preview.py",
+  "exactOtherInheritedSources": 133,
+  "reviewedFullContractAndPatchAndNineCases": true,
+  "actualGatedCleanupReceiptReplayReviewed": true,
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_staging_reservation"
+      ],
+      "cwd": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23",
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-root-review-v1/independent-staging-cpu.log",
+      "sha256": "25b30b5f4c3820550fe4ef6c2ab713bdbf3c7dbdcd0269433c372efa42f96462"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/freeze_staging_preparation.py",
+        "--freeze"
+      ],
+      "cwd": "/home/hoskinson",
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-root-review-v1/freeze.log",
+      "sha256": "2faa1b873696326d2c0c27759161d899e8e230ad187c8f8396227fd0c7e90d35"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/freeze_staging_preparation.py",
+        "--verify"
+      ],
+      "cwd": "/home/hoskinson",
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-root-review-v1/verify.log",
+      "sha256": "2faa1b873696326d2c0c27759161d899e8e230ad187c8f8396227fd0c7e90d35"
+    }
+  ],
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-d5783cb3ee784f59a70baa743f1b3093.scope",
+    "coreLimit": 1
+  },
+  "nativeAccepted": false,
+  "mainChanged": false
+}

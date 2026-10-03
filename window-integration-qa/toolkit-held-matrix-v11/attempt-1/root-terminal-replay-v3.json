@@ -1,0 +1,50 @@
+{
+  "result": "fail",
+  "checks": {
+    "terminalReportRetainsActualFailure": true,
+    "completeFrozenBytesModesLinks": true,
+    "exactSourceManifest": true,
+    "all18MainPreservation": true,
+    "mainWritesAbsent": true,
+    "allFourExactVariants": false,
+    "qt-wayland:all13ExactCases": false,
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": false,
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": false,
+    "qt-wayland:exactQSReadinessAndExplicitNormalQuit": true,
+    "qt-wayland:normalQSAndService": true,
+    "qt-wayland:nativeUnloadNormalOrdered": true,
+    "qt-wayland:hostRuntimeCleanup": true,
+    "qt-wayland:rawHelpersNormalExact": false,
+    "qt-wayland:allRecordedOriginalIdentitiesGone": true,
+    "qt-wayland:bothGenuineShellPreviewReceipts": false
+  },
+  "errors": {
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 193, in check\n    try:self.checks[name]=fn() is True\n                          ~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 210, in <lambda>\n    for kind in ('pointer','keyboard'):self.check(prefix+kind+'LegalBalancedActualTransitionsNormalEOF',lambda kind=kind:input_replay(variant['cleanup'][kind],kind,wheel_proof(stage,frozen,variant) if kind=='pointer' and any(row['command'].split()[0]=='wheel' for row in variant['cleanup'][kind]['trace']) else None))\n                                                                                                                                      ~~~~~~~~~~~~~~~~~~^^^^^^\nKeyError: 'pointer'\n",
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 193, in check\n    try:self.checks[name]=fn() is True\n                          ~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 210, in <lambda>\n    for kind in ('pointer','keyboard'):self.check(prefix+kind+'LegalBalancedActualTransitionsNormalEOF',lambda kind=kind:input_replay(variant['cleanup'][kind],kind,wheel_proof(stage,frozen,variant) if kind=='pointer' and any(row['command'].split()[0]=='wheel' for row in variant['cleanup'][kind]['trace']) else None))\n                                                                                                                                      ~~~~~~~~~~~~~~~~~~^^^^^^\nKeyError: 'keyboard'\n"
+  },
+  "inventory": [
+    {
+      "variant": "qt-wayland",
+      "reachedCases": 0,
+      "retainedResult": "fail",
+      "errors": {
+        "error": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/run_native.py\", line 84, in variant_run\n    evaluations.complete(initial_ticket)\n    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/evaluation_setup.py\", line 156, in complete\n    if terminal_closure(last,observer.evaluation_keys(ticket),allow_refused=ticket['terminalAuthority']) and count==ticket['count'] and not pending_helper_processes(self.config):\n       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/evaluation_setup.py\", line 79, in terminal_closure\n    if any(observer.still_live(row) for row in identities):return False\n       ^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/evaluation_setup.py\", line 79, in <genexpr>\n    if any(observer.still_live(row) for row in identities):return False\n           ~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/helper_observer.py\", line 37, in still_live\n    actual = process(row['pid'])\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/helper_observer.py\", line 30, in process\n    fields = (path / 'stat').read_text().rsplit(')', 1)[1].split()\n             ~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 788, in read_text\n    return f.read()\n           ~~~~~~^^\nProcessLookupError: [Errno 3] No such process\n"
+      }
+    }
+  ],
+  "sourceManifestSHA256": "9545bdaec2988f8d2835f1282f5769a03e7f100c1f1092b5eb56b65c1edea07a",
+  "sourceCount": 23908,
+  "modeCount": 23908,
+  "linkCount": 332,
+  "actualReachedCases": 0,
+  "expectedCases": 52,
+  "producerResult": "fail",
+  "nativeCommands": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false,
+  "fullHeld52ReplayAccepted": false,
+  "replayLimitations": [
+    "Historical geometry/pin and native IPC command timing are accepted only where actual samples are retained; gate booleans alone do not supply missing observations."
+  ],
+  "auditorSourceSHA256": "cc787853b6ec5686b7c5e09e27f397eef906ef6863a49aa6001766daf904e454"
+}

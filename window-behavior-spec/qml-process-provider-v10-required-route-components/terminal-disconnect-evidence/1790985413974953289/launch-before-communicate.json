@@ -1,0 +1,123 @@
+{
+  "GUI": false,
+  "nativePinEffectAccepted": false,
+  "actualQSProcessAccepted": false,
+  "helperWaitSleepOrRetryAdded": false,
+  "originalEachHelperTransactionSeconds": 2,
+  "fixtureSource": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/frontend/test_capture.py",
+  "fixtureSourceSHA256": "9c15c3b1a5212ad282d090eee465dc49b8287a1a286761802f34d4525702e4e3",
+  "inertServerVariantSource": "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/two_capture_server.py",
+  "inertServerVariantSHA256": "c3f5c398c2fd8e60995d9989e4bc31601476d0e8510124865323b86ccecef170",
+  "command": [
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/cpu-terminal-required-routes"
+  ],
+  "config": {
+    "version": 1,
+    "runtime": "/tmp/tmpiv1n6ez0",
+    "selectors": {
+      "HOME": "/tmp/tmpiv1n6ez0/home",
+      "XDG_RUNTIME_DIR": "/tmp/tmpiv1n6ez0",
+      "HYPRLAND_INSTANCE_SIGNATURE": "testsession",
+      "WAYLAND_DISPLAY": "cpu-no-wayland",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/tmp/tmpiv1n6ez0/bus",
+      "WINDOW_PIN_NATIVE_CONFIG": "/tmp/tmpiv1n6ez0/home/pin-config.json"
+    },
+    "entry": {
+      "path": "/tmp/tmpiv1n6ez0/home/pin_helper.py",
+      "sha256": "30cf295bbc3032b10996e9b6db7c602f6044d38cf73d4eb6ef917e72dd80f0f2"
+    },
+    "interpreter": {
+      "path": "/usr/bin/python3.14",
+      "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+    },
+    "requestRoots": [
+      {
+        "identity": {
+          "pid": 1772879,
+          "start": "20788684",
+          "parent": 1772868,
+          "pgid": 1772868
+        },
+        "argv": [
+          "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/cpu-terminal-required-routes"
+        ],
+        "executable": "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/cpu-terminal-required-routes",
+        "executableSHA256": "2544241b588883d893c6e2f7c669361603c2e6e7dccfb9e21dc0ec70bf5c683e",
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1d908c2f5af64508b17b6e4d788e047a.scope\n",
+        "environment": {
+          "PATH": "/usr/bin"
+        },
+        "role": "harness"
+      }
+    ],
+    "compositor": {
+      "identity": {
+        "pid": 1772878,
+        "start": "20788681",
+        "parent": 1772868,
+        "pgid": 1772868
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "-I",
+        "-S",
+        "/tmp/tmpiv1n6ez0/home/server.py",
+        "/tmp/tmpiv1n6ez0/hypr/testsession/.socket.sock",
+        "/tmp/tmpiv1n6ez0/home/inert-mapped-cpu-fixture.bin",
+        "/tmp/tmpiv1n6ez0/home/ready",
+        "/tmp/tmpiv1n6ez0/home/reply.json",
+        "/tmp/tmpiv1n6ez0/home/stop"
+      ],
+      "executable": "/usr/bin/python3.14",
+      "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1d908c2f5af64508b17b6e4d788e047a.scope\n",
+      "environment": {
+        "PATH": "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path:/home/hoskinson/.codex/tmp/arg0/codex-arg0myPzKw:/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path:/home/hoskinson/.codex/tmp/arg0/codex-arg00eUFId:/home/hoskinson/.codex/packages/app-server-daemon/releases/0.159.3-x86_64-unknown-linux-musl/codex-path:/home/hoskinson/.codex/tmp/arg0/codex-arg0UKwy92:/home/hoskinson/.codex/packages/app-server-daemon/releases/0.159.2-x86_64-unknown-linux-musl/codex-path:/home/hoskinson/.codex/tmp/arg0/codex-arg0otyuRP:/home/hoskinson/.codex/packages/app-server-daemon/releases/0.158.0-x86_64-unknown-linux-musl/codex-path:/home/hoskinson/.codex/tmp/arg0/codex-arg0tK1oak:/home/hoskinson/.local/share/mise/installs/codex/0.159.2/codex-path:/home/hoskinson/.local/share/mise/installs/claude/latest:/home/hoskinson/.local/share/mise/installs/codex/latest/bin:/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin:/home/hoskinson/.local/share/mise/installs/node/latest/bin:/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin:/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin:/home/hoskinson/.local/share/mise/installs/pi/latest/pi:/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin:/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins:/home/hoskinson/.local/share/mise/shims:/usr/share/omarchy/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/hoskinson/.local/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+      }
+    },
+    "socket": {
+      "path": "/tmp/tmpiv1n6ez0/hypr/testsession/.socket.sock",
+      "identity": [
+        57,
+        1434339
+      ]
+    },
+    "module": {
+      "path": "/tmp/tmpiv1n6ez0/home/inert-mapped-cpu-fixture.bin",
+      "sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+      "mode": 384
+    },
+    "evidenceDirectory": "/tmp/tmpiv1n6ez0/home/evidence",
+    "captureEntry": {
+      "path": "/tmp/tmpiv1n6ez0/home/pin_capture.py",
+      "sha256": "31bcc600f7d9d51a365ca50639445696b6f2db9fc5487a011fe70b4f5287f84a"
+    }
+  },
+  "configSHA256": "19be2cc7ebf83a4344f3bbc9575691c7e512ad31124111c6b59330d8ec712964",
+  "actualRequester": {
+    "identity": {
+      "pid": 1772879,
+      "start": "20788684",
+      "parent": 1772868,
+      "pgid": 1772868
+    },
+    "argv": [
+      "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/cpu-terminal-required-routes"
+    ],
+    "executable": "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/cpu-terminal-required-routes",
+    "executableSHA256": "2544241b588883d893c6e2f7c669361603c2e6e7dccfb9e21dc0ec70bf5c683e",
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1d908c2f5af64508b17b6e4d788e047a.scope\n",
+    "environment": {
+      "PATH": "/usr/bin"
+    },
+    "role": "harness"
+  },
+  "helperSource": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/frontend/pin_capture.py",
+  "helperSourceSHA256": "31bcc600f7d9d51a365ca50639445696b6f2db9fc5487a011fe70b4f5287f84a",
+  "exactHelperCommand": [
+    "/tmp/tmpiv1n6ez0/home/pin_capture.py",
+    "capture",
+    "{\"address\": \"0x1234\", \"stableId\": \"abcd\", \"pid\": 123}"
+  ],
+  "evidenceDirectory": "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/terminal-disconnect-evidence/1790985413974953289"
+}

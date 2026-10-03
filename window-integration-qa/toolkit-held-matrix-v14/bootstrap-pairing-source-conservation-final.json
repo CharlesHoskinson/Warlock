@@ -1,0 +1,58 @@
+{
+  "result": "pass",
+  "baseFrozenManifestSHA256": "218544206b351eaf7196a031ffbb95cb3242987ae7456b76d3b8f041eb2cdd2f",
+  "exactFileCount": 391,
+  "changedExisting": [
+    {
+      "path": "ROOT_REVIEW.md",
+      "oldSHA256": "3924bc54afb0182f0bf476471b1618951f99eba12224a708631b20cabada665e",
+      "newSHA256": "24b3eb168b07a8ee0c04561f0ed38f9fd631938a6359e0502f3719acea24f830"
+    },
+    {
+      "path": "freeze_packet.py",
+      "oldSHA256": "00f026acebf062535d1bb2afb0e8b23584ffe8e387f6ddb40dfebbc0b23c83c3",
+      "newSHA256": "e76da953747a042070ae0bb55180e5b90cddf9eb5330e1bd0288e0c8b8bd622e"
+    },
+    {
+      "path": "matrix.json",
+      "oldSHA256": "1f2f7e4702bdb2ad3e6e0843d52ee1a4e0b072b407ac693d2c76fa3bae002d47",
+      "newSHA256": "c812945ba32d1da7f8aa271df1ba8301df3ac35a6b4ec244bd44f3aa986fc1c3"
+    },
+    {
+      "path": "native-pointer-wheel/build-report.json",
+      "oldSHA256": "ab9e852dd16c75034f939c187bf5d840a9b32aa7085e6fdce7aaca081fbaa080",
+      "newSHA256": "c2899bd47929f02069c169df59425a958b881b0e28bcbf78bf0b60cab823e2bf"
+    },
+    {
+      "path": "offline_review.py",
+      "oldSHA256": "24f52463673c01935701ee268ef6518dcc5597bcf48151a64b7cd523a46a03cd",
+      "newSHA256": "6fef03f7dbf54b2a7337375a3d9da2afad4aa931613affa47234952e27457214"
+    },
+    {
+      "path": "prepare_matrix.py",
+      "oldSHA256": "c804225c7e29c41ac97d8eb97a1cb186076c464bf3cea27178deb42e9b20a6ed",
+      "newSHA256": "e39a0e670e407d20531676e93a004453f28e832042a087e1cf62cd83dad1f356"
+    },
+    {
+      "path": "test_output_host.py",
+      "oldSHA256": "e8040ad91b8060d236dfc1525425c16045dff4df1da695105a3879541bf6767a",
+      "newSHA256": "24927be0dc60afb1c75b6cccf462345f92244b14c2c44fadc8b266702c6b2e19"
+    },
+    {
+      "path": "test_output_readiness.py",
+      "oldSHA256": "87a0cc609e7ed196ba208588a4f4a9d341ea05568dd61a4fe8aea3e9a1b3f585",
+      "newSHA256": "66270f424cd3c23299d4db161ea317a6c07fb3c7e077736da850465f223e9727"
+    },
+    {
+      "path": "test_preview_evidence.py",
+      "oldSHA256": "8384856382f4d7b81597ad69122ef9ce47e04ed0768081b2da2fa6bfe670551a",
+      "newSHA256": "84b0000469ece66be4ab7e97dc0dfff0acd5f5e98db9c396b3fc4c681325d04a"
+    }
+  ],
+  "allModesExact": true,
+  "runnerUnchanged": true,
+  "controllerOracleUnchanged": true,
+  "sourceOnly": true,
+  "nativeLaunch": false,
+  "mainChanges": false
+}

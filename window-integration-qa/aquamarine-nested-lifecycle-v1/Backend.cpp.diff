@@ -1,0 +1,72 @@
+--- v1/Backend.cpp
++++ lifecycle-v1/Backend.cpp
+@@ -14,6 +14,8 @@
+ #include <unistd.h>
+ 
+ #include "Logger.hpp"
++#include "NestedLifecycle.hpp"
++#include <cstdlib>
+ 
+ using namespace Hyprutils::Memory;
+ using namespace Hyprutils::OS;
+@@ -58,23 +60,45 @@
+ }
+ 
+ Hyprutils::Memory::CSharedPointer<CBackend> Aquamarine::CBackend::create(const std::vector<SBackendImplementationOptions>& backends, const SBackendOptions& options) {
++    const auto selection = NestedPolicy::selection(std::getenv("AQ_BACKENDS"));
++    if (selection == NestedPolicy::Selection::Invalid)
++        return nullptr;
++    auto selectedBackends = backends;
++    if (selection == NestedPolicy::Selection::Wayland) {
++        selectedBackends.clear();
++        SBackendImplementationOptions parent;
++        parent.backendType = AQ_BACKEND_WAYLAND;
++        parent.backendRequestMode = AQ_BACKEND_REQUEST_MANDATORY;
++        selectedBackends.push_back(parent);
++        // Explicit headless outputs are auxiliary; a failed parent remains fatal.
++        for (const auto& candidate : backends) {
++            if (candidate.backendType == AQ_BACKEND_HEADLESS) {
++                auto auxiliary = candidate;
++                auxiliary.backendRequestMode = AQ_BACKEND_REQUEST_IF_AVAILABLE;
++                selectedBackends.push_back(auxiliary);
++                break;
++            }
++        }
++    }
+     auto backend = SP<CBackend>(new CBackend());
+ 
+     backend->options               = options;
+     backend->logger                = Hyprutils::Memory::makeShared<CLogger>();
+-    backend->implementationOptions = backends;
++    backend->implementationOptions = selectedBackends;
+     backend->self                  = backend;
+ 
+     backend->logger->m_loggerConnection = options.logConnection;
+     backend->logger->m_logFn            = options.logFunction;
+     backend->logger->updateLevels();
+ 
+-    if (backends.size() <= 0)
++    if (selectedBackends.size() <= 0)
+         return nullptr;
+ 
+     backend->log(AQ_LOG_DEBUG, "Creating an Aquamarine backend!");
+-
+-    for (auto const& b : backends) {
++    if (selection == NestedPolicy::Selection::Wayland)
++        backend->log(AQ_LOG_DEBUG, "Private AQ_BACKENDS=wayland: mandatory parent, no DRM or libseat backend");
++
++    for (auto const& b : selectedBackends) {
+         if (b.backendType == AQ_BACKEND_WAYLAND) {
+             auto ref = SP<CWaylandBackend>(new CWaylandBackend(backend));
+             backend->implementations.emplace_back(ref);
+@@ -305,6 +329,10 @@
+ }
+ 
+ void Aquamarine::CBackend::onNewGpu(std::string path) {
++    if (NestedPolicy::selection(std::getenv("AQ_BACKENDS")) != NestedPolicy::Selection::Unspecified) {
++        log(AQ_LOG_DEBUG, "Private explicit backend selection: ignoring native GPU backend notification");
++        return;
++    }
+     const auto primary    = std::ranges::find_if(implementations, [](SP<IBackendImplementation> value) { return value->type() == Aquamarine::AQ_BACKEND_DRM; });
+     const auto primaryDrm = primary != implementations.end() ? ((Aquamarine::CDRMBackend*)(*primary).get())->self.lock() : nullptr;
+ 

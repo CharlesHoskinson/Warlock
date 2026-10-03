@@ -1,0 +1,23 @@
+--- V3/private_host_test.py
++++ V4/private_host_test.py
+@@ -32,10 +32,18 @@
+  def test_explicit_signed_orca_prefix_refuses_private_home_substitute(self):
+   with patch.dict(os.environ,{'ORCA_QA_READER_ROOT':'/private/home'},clear=True):
+    with self.assertRaisesRegex(RuntimeError,'prefix'):g.reader_entry()
+- def test_pointer_case_oracles_unchanged_except_non_input_readiness(self):
++ def test_every_prior_pointer_oracle_retained_exactly(self):
++  import ast
+   source=Path(r.__file__).parent
+-  self.assertEqual(hashlib.sha256((source/'native-fixture/pointer_cases.py').read_text().replace("    c['producer_ready'](keyboard,here/'pointer-keyboard.log','pointer keyboard')\n",'').replace("    c['producer_ready'](pointer,here/'actual-native-pointer.log','actual pointer')\n",'').encode()).hexdigest(),'659b7ca69fcc2b20f43dc66d25b3a51b8c117b90272395018bf42b79ec027392')
++  prior=source.parent/'pointer-private-host-v3/native-fixture/pointer_cases.py'
++  def checks(path):
++   return [ast.dump(n,include_attributes=False) for n in ast.walk(ast.parse(path.read_text())) if isinstance(n,ast.Call) and isinstance(n.func,ast.Name) and n.func.id=='check']
++  before,after=checks(prior),checks(source/'native-fixture/pointer_cases.py')
++  self.assertGreater(len(before),60)
++  for oracle in before:self.assertIn(oracle,after)
+   self.assertEqual(hashlib.sha256((source/'native-fixture/popup_geometry.py').read_bytes()).hexdigest(),'ae8098f52e7961ef1035d2c6a800c5d7e0f709c4c6838b12e9c0ceedcefbb76c')
++  for name in ['policy_cases.py','lifecycle_cases.py']:
++   self.assertEqual((source/'native-fixture'/name).read_bytes(),(source.parent/'pointer-private-host-v3/native-fixture'/name).read_bytes())
+  def test_full_policy_and_lifecycle_modules_import_with_real_run(self):
+   for name in ('policy_cases.py','lifecycle_cases.py'):
+    module=r.load_additional(name);self.assertTrue(callable(module.run));self.assertEqual(Path(module.__file__).parent,Path(r.__file__).parent/'native-fixture')

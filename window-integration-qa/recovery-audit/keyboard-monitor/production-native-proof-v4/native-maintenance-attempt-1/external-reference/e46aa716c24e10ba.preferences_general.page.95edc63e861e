@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_general" xml:lang="eo">
+  <info>
+    <title type="sort">1. Ĝenerala</title>
+    <title type="link">Ĝenerala</title>
+    <desc>Agordi la fundamentajn kondutojn de <app>Orko</app></desc>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_voice"/>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Ĝeneralaj Preferaĵoj</title>
+  <section id="keyboardlayout">
+    <info>
+      <desc>Preferaĵa dialogkesta opcio por elekti kiun klavaran aranĝon de <app>Orko</app> uzi, labortablan aŭ tekkomputilan.</desc>
+    </info>
+    <title>Klavara Aranĝo</title>
+    <p>La <gui>Klavara Aranĝo</gui> radikbutona grupo permesas al vi specifi ĉu vi laboros sur labortabla (t.e. kun numera klavareto) aŭ tekkomputila klavaro. Kiun aranĝon vi elektas determinos kaj la <key>Orko Modifier</key> kaj ankaŭ nombron da klavkombinojn por efektivigi <app>Orko</app> komandojn.</p>
+    <p>Defaŭlta valoro: <gui>Labortablo</gui></p>
+  </section>
+  <section id="presenttooltips">
+    <info>
+      <desc>Preferaĵa dialogkesta opcio por ebligi prezentadon de ilsugestiloj kiuj aperas kiel rezulto de musa svebado.</desc>
+    </info>
+    <title>Prezenti Ilsugestilojn</title>
+    <p>Kiam markita, tiu ĉi opcio diros al <app>Orko</app> prezenti informon pri ilsugestiloj kiam ili aperas kiel rezulto de musa svebado. Specifaj agoj por devigi aperon de ilsugestiloj, kiel premado de <keyseq> <key>Ctrl</key><key>F1</key></keyseq> kiam objekto havas fokuson, ĉiam rezultigos en prezentado de ilsugestiloj, sendepende de tiu ĉi agordo.</p>
+    <p>Defaŭlta valoro: nemarkita</p>
+  </section>
+  <section id="objectundermouse">
+    <info>
+      <desc>Preferaĵa dialogkesta opcio por ebligi prezentadon de la objekto sub la musa montrilo.</desc>
+    </info>
+    <title>Paroldiri Objekton Sub Muso</title>
+    <p>Kiam markita, tiu ĉi opcio diros al <app>Orko</app> prezenti informon pri la objekto sub la musa montrilo dum vi movas ĝin ĉirkaŭ la ekrano uzante la <link xref="howto_mouse_review">Musa Revizio</link> trajton de <app>Orko</app>.</p>
+    <p>Defaŭlta valoro: nemarkita</p>
+  </section>
+  <section id="timeanddate">
+    <info>
+      <desc>Preferaĵa dialogkestaj opcioj por personecigi la tempajn kaj datajn formatojn uzatajn de <app>Orko</app>.</desc>
+    </info>
+    <title>Tempoformato kaj Datformato</title>
+    <p>La <gui>Tempoformato</gui> kaj <gui>Datformato</gui> kombinujoj permesas al vi specifi kiel <app>Orko</app> paroldiros kaj brajlos la tempon kaj la daton.</p>
+    <p>Defaŭlta valoro: uzi la sisteman lokalan formaton por ĉiu el ili</p>
+  </section>
+  <section id="navigation_in_say_all">
+    <info>
+      <desc>Preferaĵa dialogkestaj opcioj por ebligi reigadon, rapidan antaŭeniron, kaj strukturan navigadon dum Diri Ĉion.</desc>
+    </info>
+    <title>Navigado en Diri Ĉion</title>
+    <p>La Diri Ĉion trajto de <app>Orko</app> paroldiras dokumentan enhavon de via aktuala loko ĝis la fino de la dokumento. Defaŭlte, premado de ajna klavo interrompos la prezentadon de Diri Ĉion. Tamen, se vi markas la <gui>Ebligi reigadon kaj rapidan antaŭeniron en Diri Ĉion</gui> markobulonon, <key>Up</key> kaj <key>Down</key> povas esti uzataj dum Diri Ĉion por rapide movi ene de la dokumento por reaŭdi ion kio estis ĵus legita aŭ preterpasi tekston de neniu intereso sen neceso restarigi Diri Ĉion.</p>
+    <p>Se vi legas dokumenton en aplikaĵo kiu havas subtenon por struktura navigado, kaj vi markis la <gui>Ebligi strukturan navigadon en Diri Ĉion</gui> markobulonon, vi povas uzi la subtenatajn strukturajn navigadkomandojn simile: <key>H</key>/<keyseq><key>Shift</key> <key>H</key></keyseq> daŭrigas legadon de la venonta/antaŭa titolo, <key>P</key>/<keyseq><key>Shift</key><key>P</key></keyseq> daŭrigas legadon de la venonta/antaŭa paragrafo, <key>T</key>/<keyseq><key>Shift</key> <key>T</key></keyseq> daŭrigas legadon de la venonta/antaŭa tabelo, kaj tiel plu.</p>
+    <p>Defaŭlta valoro: nemarkita</p>
+  </section>
+  <section id="say_all_announce_context">
+    <title>Anonci Kuntekstan Informon en Diri Ĉion</title>
+    <p><app>Orko</app> opcie povas provizi pli da informo pri la paroldirota dokumenta enhavo, kiel anonci kiam vi eniras kaj eliras blokcitaĵon, liston, tabelon, aŭ alian ujon. Ĉu tiuj ĉi anoncoj estas farataj aŭ ne povas esti agordita sendepende per la sekvaj markobutonoj:</p>
+    <list>
+      <item><p>Anonci blokcitaĵojn en Diri Ĉion</p></item>
+      <item><p>Anonci formularojn en Diri Ĉion</p></item>
+      <item><p>Anonci ŝildomerkojn en Diri Ĉion</p></item>
+      <item><p>Anonci listojn en Diri Ĉion</p></item>
+      <item><p>Anonci panelojn en Diri Ĉion</p></item>
+      <item><p>Anonci tabelojn en Diri Ĉion</p></item>
+    </list>
+    <p>Defaŭlta valoro: markita</p>
+    <note style="note">
+      <p>Ĉu <app>Orko</app> faras tiujn ĉi anoncojn dum navigado aŭ ne estas ankaŭ agordebla. Vi trovos similajn markobulonojn sur la <gui>Parolo</gui> paĝo. Por pli da informo, vidu <link xref="preferences_speech#spoken_context">Paroldirota Kunteksto</link>.</p>
+    </note>
+  </section>
+  <section id="say_all_by">
+   <info>
+      <desc>Preferaĵa dialogkesta opcio por personecigi la Diri Ĉion prezentadon de <app>Orko</app>.</desc>
+   </info>
+   <title>Diri Ĉion Per</title>
+   <p>La <gui>Diri Ĉion Per</gui> kombinujo permesas al vi specifi ĉu <app>Orko</app> paroldiras po unu frazon aŭ po unu linion dum "Diri Ĉion" de dokumento.</p>
+    <p>Defaŭlta valoro: <gui>Frazo</gui></p>
+  </section>
+  <section id="profiles">
+    <info>
+      <desc>Preferaĵa dialogkestaj opcioj por administri agordajn profilojn.</desc>
+    </info>
+    <title>Profiloj</title>
+    <p>La grupo de kontroloj <gui>Profiloj</gui>, kiu aperas ĉe la malsupro de la paĝo <gui>Ĝenerala</gui>, ebligas al vi prizorgi kaj uzi plurajn agordojn.</p>
+   <list>
+      <item>
+        <p>La kombokesto <gui>Aktiva Profilo</gui> montras la nunan profilon kaj permesas al vi elekti alian profilon por ŝargi.</p>
+      </item>
+      <item>
+        <p>La butono <gui>Ŝargi</gui> igos <app>Orko</app> ŝargi la profilon indikitan en la kombokesto <gui>Aktiva Profilo</gui>.</p>
+      </item>
+      <item>
+        <p>La butono <gui>Konservi Kiel</gui> permesas al vi konservi la aktualan aron da opcioj el la dialogo de agordoj al nomita profilo.</p>
+      </item>
+      <item>
+        <p>La kombokesto <gui>Startiga Profilo</gui> permesas al vi elekti la profilon kiu aŭtomate ŝargiĝu ĉiufoje kiam vi lanĉas <app>Orko</app>.</p>
+      </item>
+    </list>
+  </section>
+  <section id="progress_bar_updates">
+    <title>Ĝisdatigoj de Progresobaro</title>
+    <section id="progress_bar_updates_speak">
+      <title>Paroli ĝisdatigojn</title>
+      <p>Se la markobutono <gui>Paroli ĝisdatigojn</gui> estas markita, <app>Orko</app> periode parolados la staton de progresobaroj.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="progress_bar_updates_braille">
+      <title>Brajlaj ĝisdatigoj</title>
+      <p>Se la markobutono <gui>Brajlaj ĝisdatigoj</gui> estas markita, <app>Orko</app> periode montros la staton de progresobaroj sur via refreŝebla brajla ekrano.</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+    </section>
+    <section id="progress_bar_updates_beep">
+      <title>Blipaj ĝisdatigoj</title>
+      <p>Se la markobutono <gui>Blipaj ĝisdatigoj</gui> estas markita, <app>Orko</app> periode eligas blipojn, kiuj kreskas en tonalto laŭ kiam la valoro de la progresobaro kreskas.</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+    </section>
+    <section id="progress_bar_updates_frequency">
+      <title>Ofteco (sekundoj)</title>
+      <p>Ĉi tiu turnbutono determinas kiom ofte aperadas ĝisdatigoj.</p>
+      <p>Defaŭlta valoro: 10</p>
+    </section>
+    <section id="progress_bar_updates_restrict">
+      <title>Aplikiĝas al</title>
+      <p>Ĉi tiu kombokesto permesas al vi kontroli kiuj progresobaroj montriĝu, supozante ke la prezentado de progresobar-ĝisdatigoj estis ebligita. La ebloj estas <gui>Ĉiuj</gui>, <gui>Aplikaĵo</gui>, kaj <gui>Fenestro</gui>.</p>
+      <p>Elekti <gui>Ĉiuj</gui> igos <app>Orko</app> prezenti ĝisdatigojn por ĉiuj progresobaroj, sendepende de kie la progresobaroj troviĝas.</p>
+      <p>Elekti <gui>Aplikaĵo</gui> igos <app>Orko</app> prezenti ĝisdatigojn de progresobaroj en la aktiva aplikaĵo, eĉ se ili ne troviĝas en la aktiva fenestro.</p>
+      <p>Elekti <gui>Fenestro</gui> igos <app>Orko</app> prezenti ĝisdatigojn nur por progresobaroj en la aktiva fenestro.</p>
+      <p>Defaŭlta valoro: <gui>Aplikaĵo</gui></p>
+    </section>
+  </section>
+</page>

@@ -1,0 +1,22 @@
+{
+  "nativeExecuted": false,
+  "oldFixedSources": 1363,
+  "changed": [
+    "core/src/desktop/state/ViewHitTester.cpp",
+    "core/src/desktop/state/pin/CorePolicyBuild.hpp",
+    "core/src/managers/input/InputManager.cpp",
+    "helper/pin_helper.py"
+  ],
+  "wholePreimages": "v2-inverses",
+  "missingSourceFiles": [],
+  "movedInheritedCPUBinary": {
+    "original": "plugin/test-pin-action",
+    "retained": "retained-v2-plugin-binaries/test-pin-action",
+    "sha256": "ebfde61603b44ec03e8348ebd8e019a1a24fb8e985b34da683e7a1b17fa7b28c"
+  },
+  "allOtherBytesExact": true,
+  "sourceIdentityDelta": [
+    "src/desktop/state/ViewHitTester.cpp",
+    "src/managers/input/InputManager.cpp"
+  ]
+}

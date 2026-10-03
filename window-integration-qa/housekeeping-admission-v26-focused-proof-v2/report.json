@@ -1,0 +1,375 @@
+{
+  "result": "pass",
+  "tests": 14,
+  "failures": 0,
+  "errors": 0,
+  "sourceUnchanged": true,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/focused_gate.py": {
+      "sha256": "ea2bd45cd2ec95745cb15939ef38364ad3804f62d76239808bc0186897760a26",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/test_housekeeping_admission.py": {
+      "sha256": "64c0d55c37185dda30eebb75cfb5a36a297e7eda1c458c4a80343a64b063f017",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py": {
+      "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py": {
+      "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/test_actor_resources.py": {
+      "sha256": "ce016e51f0dde51b541483a15ae6bffb0fdacf0f19cd022065075568a902bca5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py": {
+      "sha256": "8e8935b83496aa85a16dd939e9961cee2bfcbcadd8d92bcbc8d335bcd353b11b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py": {
+      "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_commands.py": {
+      "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py": {
+      "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/test_readonly_ipc.py": {
+      "sha256": "ac6f67078081c4893ee2e49d7dcc4ad45a3b55ca7cee83d2c7654a133dc28820",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/test_scene_controller.py": {
+      "sha256": "22e97f7440ca476eb659f3e329e8123e6ab69c9f8edc913326c07f2895456bd6",
+      "mode": 420
+    }
+  },
+  "cpuEvidence": [
+    {
+      "case": "actual-RuntimeService-housekeeping-error-latch",
+      "housekeepingErrors": [
+        {
+          "timeNs": 178731731752366,
+          "operation": "cache",
+          "error": "Expecting property name enclosed in double quotes: line 1 column 3 (char 2)"
+        }
+      ],
+      "journal": {
+        "housekeepingErrors": [
+          {
+            "error": "Expecting property name enclosed in double quotes: line 1 column 3 (char 2)",
+            "operation": "cache",
+            "timeNs": 178731731752366
+          }
+        ],
+        "pending": [],
+        "scenes": [],
+        "session": "cpu-readonly",
+        "snapshot": 1,
+        "version": 1
+      },
+      "fixturePersistWritesOwnedJournalStore": true
+    },
+    {
+      "case": "actual-ready-before-admission",
+      "admissionWaitMs": 720.270189,
+      "releaseNs": 178733690827172,
+      "rows": [
+        {
+          "id": "e4fa9cbcc1e04110856b2d426d6e9449",
+          "actor": null,
+          "thread": 4122848,
+          "fd": 7,
+          "fdIdentity": [
+            10,
+            41150339
+          ],
+          "issuerSHA256": "fdded0089c72048a829e6d90da4872b72181d2c995fe761194d5d8f16d184b0b",
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "registeredNs": 178733693204655,
+          "closed": true,
+          "published": true,
+          "outcome": "complete",
+          "evidence": {
+            "completeServerEOF": true,
+            "replyBytes": 2,
+            "replySHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "peer": {
+              "pid": 4122218,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "socketIdentity": [
+              57,
+              1358478
+            ]
+          },
+          "error": null,
+          "finishedNs": 178733695809023
+        },
+        {
+          "id": "2416f63d34494ee891d0c17ed2331033",
+          "actor": null,
+          "thread": 4122848,
+          "fd": 7,
+          "fdIdentity": [
+            10,
+            41159097
+          ],
+          "issuerSHA256": "fdded0089c72048a829e6d90da4872b72181d2c995fe761194d5d8f16d184b0b",
+          "request": "/repl print(hl.plugin.hyprbars.window_families())",
+          "requestSHA256": "c5d8f3018c7230350348b9984331e3ee57559ede5926b4b9928dc0fcf553a504",
+          "registeredNs": 178733698696995,
+          "closed": true,
+          "published": true,
+          "outcome": "complete",
+          "evidence": {
+            "completeServerEOF": true,
+            "replyBytes": 2,
+            "replySHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "peer": {
+              "pid": 4122218,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "socketIdentity": [
+              57,
+              1358478
+            ]
+          },
+          "error": null,
+          "finishedNs": 178733701143293
+        },
+        {
+          "id": "21b81ed9a32a47108f19a68fb9e49ff9",
+          "actor": null,
+          "thread": 4122848,
+          "fd": 7,
+          "fdIdentity": [
+            10,
+            41153395
+          ],
+          "issuerSHA256": "fdded0089c72048a829e6d90da4872b72181d2c995fe761194d5d8f16d184b0b",
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "registeredNs": 178733704831581,
+          "closed": true,
+          "published": true,
+          "outcome": "complete",
+          "evidence": {
+            "completeServerEOF": true,
+            "replyBytes": 2,
+            "replySHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "peer": {
+              "pid": 4122218,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "socketIdentity": [
+              57,
+              1358478
+            ]
+          },
+          "error": null,
+          "finishedNs": 178733707325545
+        }
+      ],
+      "cpuCommitResults": [
+        {
+          "identity": [
+            "0xaa01",
+            "aa01",
+            41
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 178733690981898
+        },
+        {
+          "identity": [
+            "0xbb02",
+            "bb02",
+            42
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 178733691011502
+        },
+        {
+          "identity": [
+            "0xcc03",
+            "cc03",
+            43
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 178733691019548
+        }
+      ],
+      "nativeEffectsFixture": true
+    },
+    {
+      "case": "healthy",
+      "totalMs": 26.721945,
+      "registeredToFinishedMs": [
+        3.345788,
+        3.040153,
+        3.550659
+      ],
+      "rows": [
+        {
+          "id": "847139ca058f459fa61b9f7c603ede97",
+          "actor": null,
+          "thread": 4122218,
+          "fd": 7,
+          "fdIdentity": [
+            10,
+            41147383
+          ],
+          "issuerSHA256": "fe2c0de17a1be7f9ff362bed8f5dd07d3eec654b351fae202b6091c191a87855",
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "registeredNs": 178734116225077,
+          "closed": true,
+          "published": true,
+          "outcome": "complete",
+          "evidence": {
+            "completeServerEOF": true,
+            "replyBytes": 2,
+            "replySHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "peer": {
+              "pid": 4122218,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "socketIdentity": [
+              57,
+              1358544
+            ]
+          },
+          "error": null,
+          "finishedNs": 178734119570865
+        },
+        {
+          "id": "6b80ca0b15a242aab9bab6ed733f51b0",
+          "actor": null,
+          "thread": 4122218,
+          "fd": 7,
+          "fdIdentity": [
+            10,
+            41159119
+          ],
+          "issuerSHA256": "fe2c0de17a1be7f9ff362bed8f5dd07d3eec654b351fae202b6091c191a87855",
+          "request": "/repl print(hl.plugin.hyprbars.window_families())",
+          "requestSHA256": "c5d8f3018c7230350348b9984331e3ee57559ede5926b4b9928dc0fcf553a504",
+          "registeredNs": 178734123754380,
+          "closed": true,
+          "published": true,
+          "outcome": "complete",
+          "evidence": {
+            "completeServerEOF": true,
+            "replyBytes": 2,
+            "replySHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "peer": {
+              "pid": 4122218,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "socketIdentity": [
+              57,
+              1358544
+            ]
+          },
+          "error": null,
+          "finishedNs": 178734126794533
+        },
+        {
+          "id": "d9094aabb9044342811eb43eab17a6ce",
+          "actor": null,
+          "thread": 4122218,
+          "fd": 7,
+          "fdIdentity": [
+            10,
+            41155450
+          ],
+          "issuerSHA256": "fe2c0de17a1be7f9ff362bed8f5dd07d3eec654b351fae202b6091c191a87855",
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "registeredNs": 178734131684405,
+          "closed": true,
+          "published": true,
+          "outcome": "complete",
+          "evidence": {
+            "completeServerEOF": true,
+            "replyBytes": 2,
+            "replySHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "peer": {
+              "pid": 4122218,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "socketIdentity": [
+              57,
+              1358544
+            ]
+          },
+          "error": null,
+          "finishedNs": 178734135235064
+        }
+      ]
+    },
+    {
+      "case": "actual-native-ready-between-observations",
+      "source": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py",
+      "sourceSHA256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b",
+      "lineGate": 242,
+      "gatingIsExplicitCPUFixture": true,
+      "cpuCommitResults": [
+        {
+          "identity": [
+            "0xaa01",
+            "aa01",
+            41
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 178734795024819
+        },
+        {
+          "identity": [
+            "0xbb02",
+            "bb02",
+            42
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 178734795060997
+        },
+        {
+          "identity": [
+            "0xcc03",
+            "cc03",
+            43
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 178734795076131
+        }
+      ]
+    }
+  ],
+  "log": "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-focused-proof-v2/cpu.log",
+  "logSHA256": "eea919473ca117843d1b1bceab51967aeea18c41de4042668aca78e703e2da1c",
+  "wallSeconds": 5.569428418006282,
+  "scope": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-0ebcd46d92c84c7292da735cb607f4f9.scope",
+  "originalQueryTimeoutSeconds": 0.6,
+  "nativeAccepted": false,
+  "mainChanged": false
+}

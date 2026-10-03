@@ -1,0 +1,24 @@
+{
+  "nativeGUIStarted": false,
+  "actualLibrary": "/usr/lib/libhyprutils.so.0.14.2",
+  "probeSHA256": "53b63e102b0cf6c92c9152de6a0fc1f23cb810b5dabad64a6dafbe03ef677fc6",
+  "checks": [
+    {
+      "mode": "file",
+      "liveFileBytes": 0,
+      "actualStdoutBeforeClose": null,
+      "afterCloseBytes": 134,
+      "exitCode": 0,
+      "pass_": true
+    },
+    {
+      "mode": "stdout",
+      "liveFileBytes": 0,
+      "actualStdoutBeforeClose": "DEBUG ]: Private AQ_BACKENDS=wayland: mandatory parent, no DRM or libseat backend\n",
+      "afterCloseBytes": 134,
+      "exitCode": 0,
+      "pass_": true
+    }
+  ],
+  "actualLibrarySHA256": "c33f3d8d6fbe66b0c308bcd9782cde55e142777f9e61398d3e2624f2a63a7811"
+}

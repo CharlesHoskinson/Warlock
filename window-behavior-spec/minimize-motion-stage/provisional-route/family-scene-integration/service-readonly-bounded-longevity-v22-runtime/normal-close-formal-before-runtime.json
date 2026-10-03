@@ -1,0 +1,54 @@
+{
+  "named": 8,
+  "samples": 2000,
+  "steps": 100,
+  "sourceSHA256": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/readonly_current_close.qnt": "a2fd0a4fe6be8657398821d248c6c0b34e199d4994ff9fe30bfd0052ca6c60a6",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/readonly_current_close_test.qnt": "a2b261de30ce29bf323fab56f2f61703979cf7404fb020b1c12a0cf92c379326",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/readonly_ipc.py": "b3bba60a79341059cb48b9943938873ad396f4c2c97e78cda2d39f5758aef660",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/readonly_current.py": "6ebdf9176a01b456a9f4f97ead5b5e2d3993146225dc481dc9aebdd631305dad"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "readonly_current_close_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/normal-close-before-runtime-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "readonly_current_close_test.qnt",
+        "--backend=rust",
+        "--seed=2026100222"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/normal-close-before-runtime-1.log",
+      "sha256": "cbb479290c985ac9846b787900e4a8a5909f74268f8d331417f77d8ceedd48a8"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "readonly_current_close.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100222",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/normal-close-before-runtime-2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "passed": true,
+  "beforeRotationCloseGuard": true,
+  "nativeLaunch": false
+}

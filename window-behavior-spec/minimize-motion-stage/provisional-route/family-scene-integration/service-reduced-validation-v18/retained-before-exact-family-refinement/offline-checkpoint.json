@@ -1,0 +1,1007 @@
+{
+  "version": "family-service-reduced-validation-v18-offline",
+  "productionChanged": false,
+  "nativeLaunch": false,
+  "headlessCpuKernelTests": true,
+  "nativeRecoveryAccepted": false,
+  "staleFamilyCancellationSourceImplemented": true,
+  "currentUserCancellationIngressImplemented": false,
+  "pythonTests": 324,
+  "quintNamedScenarios": 227,
+  "quintModels": 24,
+  "quintSamplesPerModel": 2000,
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exitCode": 0,
+      "log": "check-00.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_scene_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-01.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_scene_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-02.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_scene.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-03.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_destination_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-04.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_destination_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-05.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_destination.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-06.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "transport_dispatch_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-07.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "transport_dispatch_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-08.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "transport_dispatch.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-09.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-10.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_registry_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-11.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_registry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-12.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "ingress_context_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-13.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "ingress_context_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-14.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "ingress_context.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-15.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "persistent_atlas_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-16.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "persistent_atlas_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-17.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "persistent_atlas.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-18.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "pending_direction_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-19.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "pending_direction_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-20.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "pending_direction.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-21.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "runtime_lifecycle_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-22.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "runtime_lifecycle_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-23.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "runtime_lifecycle.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-24.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "receipt_visual_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-25.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "receipt_visual_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-26.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "receipt_visual.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-27.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "native_composition_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-28.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "native_composition_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-29.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "native_composition.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-30.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "ipc_guard_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-31.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "ipc_guard_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-32.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "ipc_guard.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-33.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "actor_resources_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-34.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "actor_resources_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-35.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "actor_resources.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-36.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_order_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-37.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_order_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-38.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_order.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-39.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "gesture_capture_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-40.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "gesture_capture_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-41.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "gesture_capture.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-42.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "responsive_preparation_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-43.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "responsive_preparation_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-44.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "responsive_preparation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-45.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "native_recovery_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-46.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "native_recovery_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-47.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "native_recovery.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-48.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_ownership_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-49.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_ownership_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-50.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_ownership.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-51.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "helper_closure_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-52.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "helper_closure_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-53.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "helper_closure.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-54.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_constant_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-55.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_constant_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-56.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_constant.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-57.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "runtime_lease_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-58.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "runtime_lease_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-59.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "runtime_lease.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-60.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_cancel_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-61.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_cancel_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-62.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_cancel.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-63.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "renderer_terminal_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-64.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "renderer_terminal_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-65.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "renderer_terminal.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-66.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "reduction_validation_v18_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-67.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "reduction_validation_v18_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-68.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "reduction_validation_v18.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-69.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "legacy_fixture_ready_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-70.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "legacy_fixture_ready_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-71.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "legacy_fixture_ready.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-72.log"
+    }
+  ],
+  "sourceSHA256": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/CANCELLATION_CONTRACT.md": "6db0b5076300d4270872d7c3bd2af5c7cdb0dcf289f1b5f701644d1504bfea54",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/CANCELLATION_SOURCE_REVIEW.md": "eb52befded092ab2ee68b7054e6f7eeb43d729fa52ebb12d1a06e802b5f225b3",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/CONTRACT.md": "20f78ff6233467bce46bcba59df861e11783244dd3620d5bb2b762ebf9eca2fc",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/GESTURE_CONTRACT.md": "28e149135c0ccf8f8e3a7a737891e8a32b46db18835f8539346a653eb9a5b18f",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/HELPER_CLOSURE_CONTRACT.md": "c963b2655d767f3ed6ccbcf30c65b48ff46eb89e2d3d713a5a386d8cc44efaa2",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/LEGACY_FIXTURE_READINESS_CONTRACT.md": "7631a7e4af9a9f2ef4e36ece47b1a2dc6ae302021d806e3d3b7c6aab1eab5757",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/NATIVE_ENTRYPOINT.md": "b7115256dcea7f3700a49659d2e47aa87d680c6ae3f2c9ea9b16f7eaa6a44364",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/ORDERING_CONTRACT.md": "249d8e35a02b8e485149d5cb8be85c147a9d2b08f99ef061e77524cf7cdaf000",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/RECOVERY_CONTRACT.md": "cd8f17c154421f385d9b740cf6b1a7ed5a0bcab3860a66b4cf614a93dda2088f",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/RECOVERY_OWNERSHIP_CONTRACT.md": "37b380620b6f4bcc3198f4affc47f63562940eec8da99e4f348942dc1dacfc18",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/REDUCTION_VALIDATION_CONTRACT.md": "9b7cf4013d00e79223bf134c274001ee1dce640796d5413021c4ed2961d48a17",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/RESOURCE_CONTRACT.md": "05cce76091863d80b765741a86edfe75950a1bac65ae113d3e9d4a5e1b31a0da",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/RESPONSIVE_PREPARATION_CONTRACT.md": "d43219c124119842a3772c84374551f55b71d7446e4ef433a3c9a053ac319ed1",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/ROOT_REVIEW_REQUEST_V18.md": "8d0494f40a26e8b5ac06fc6a7511eaa2293421524b2844de46b9dbdf5b1569ac",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/SOURCE_REVIEW.md": "d0454ab55edb6b91441f8d2931dcfdb44470f6ab700470f0810d617b2107ede7",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/V17_TERMINAL_CONTRACT.md": "e32b3b5a6d123ec4aba06dd088c0650d80444990ec2397b576cf8963366e8751",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/actor_resources.qnt": "91cbcce02b1bbb4e17e179ef208ddf80e80df4685c6482b8cb61d5876cc2e317",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/actor_resources_test.qnt": "c6461d117bf346cdad078513c4ccfb782a143737275a8b14e317b3f209ef595b",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/check_offline.py": "692afe5a02268e530e6caff02804020e52a5908645204034da6039cac7df9809",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/collect_reduced_validation.py": "81d1512491171cfa983a5ad6daac62b2dc4f84cef6bd9965f5a312ce9ae17db5",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/context_provider.py": "0e3daea910a49f44e63c6321859dd8598c4e610d16e1cc445070602e5bec1b78",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/direction.py": "486f57b77d0d34fa8ef23f7906a4c8728c614beba6ebe4c267afe8e623c20c35",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/family_destination.qnt": "6e7c0df9e7816fa620c13990da70fccb4367bfdb54575e343350cb1ff4a1fd83",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/family_destination_test.qnt": "f7b286ce9443b69cd2ada54a0e4e1aee007ee024a8583aa9536f7455e20176ee",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/family_order.py": "0792d94a67ddb5b8181d54487b048b990a2cc879ece3d981ed30d4b0d4a2ec54",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/family_order.qnt": "a2d4be04904800cead8e7d06312338e983b7c9deb005484b0d7efe5bd1109d25",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/family_order_test.qnt": "44222437bc25a1840d8451c0256fa4148430cdb34fde6f23f3ffe4d94f3beb3f",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/family_registry.qnt": "f5e9769df7bea01f167190a4b50b640bc2b409b6dc88efbdf63055dda7e43b49",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/family_registry_test.qnt": "92c5c0854eb7616346f63353333f65590f77c9cc664b33d6c37bd14d95c6c637",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/family_scene.qnt": "7b1fd7739efeff5925751fd2ca12977b832ddca044cb08de17bc1005c455f1f1",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/family_scene_test.qnt": "d8b1b2927f1fd3d2100af0cbc7ecf45677b4a00801198933f3e81644ed2ce674",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/final_reduced_gate.py": "f2d6bec64d2a23ea250094861f70c4b80d5c425bd412b39bae6f641b6a368b33",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/fixture_legacy_ready.py": "6ec3ef9763ef7c90d5f9a1f942637545d8296aa72c2ea2c77be23c997f7ce23c",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/freeze_recovery.py": "aee233e55edcf853a0f1604533b2a3046169bd82e5df3b9b6905b1ff9b0bc8cf",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/gesture_capture.qnt": "85ffe1d5570b350e59ab0dfb7e0c430b8e4577edcb0627b96ca01c9582dae8e1",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/gesture_capture_test.qnt": "cdbfbc57878aa921346c4bb2c26055850f82d7fc87f3c06af1fb91bd6f0d6e1b",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/helper_closure.qnt": "171908cb4db926ad371c0f0fa06317e908ff1326d73bdc32c70e7926294f1340",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/helper_closure_test.qnt": "649f268b976bde8339c9f4da5c473a952f0569e07ecae0c3cd21badc4678640f",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/helper_keeper.py": "c91aa65faaa04c8351af159000b14fa9f18f7db3a2151af2375a662ad3527252",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/helper_policy.py": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/helper_supervisor.py": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/ingress_context.qnt": "702e7e2fcb3f9d63e3653afd73eafdfec85bf50cd24f2881ad4344a11e16f023",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/ingress_context_test.qnt": "b828e3101cf1566ed45b7f454d6bcfa0af4a04cd3717ca3ff239760725214cd8",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/ipc_guard.qnt": "a6b974ffe4059d6e212fba2d4e613a58eaa00fbb8b623623197d6e17360e3046",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/ipc_guard_test.qnt": "d3958dadcdb511c5b5542d1f99e530824bfc564ab1b152e3d66f38d58ed911f1",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/legacy_fixture_ready.qnt": "122a0bf01d3099727747923ea299e8bdf0d7901d4c3e39889e56b558c5464eeb",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/legacy_fixture_ready_test.qnt": "12627338c71ccd717207114acb4b74b076659d2154e856cc939f98334b941700",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/native_composition.qnt": "9f65bd2314f3dddf57565434610708bf8fdc61bd624d75d4de87735aa0171e65",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/native_composition_test.qnt": "647cd0cebaed4cf463b57be33d1ba17dc7a0ef5b447c251b8904e72ef0fff807",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/native_desktop.py": "57e5c08bc6dd51aa67772f3fe4e8a1355be560fe5f0ac08d7190d87350b6967f",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/native_recovery.qnt": "51e763f2125f0caffe438861a891000eb9af31c40bd86c63e083dfa51d08d8cb",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/native_recovery_test.qnt": "ef7facf9ea92b7aecc60e476fbb659ea9d64e371cd2c35282ecd4b38bee4f804",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/native_runtime.py": "cdbea12848711199b606020df254d469f052bee6f6e22e82a2f6331cd195e124",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/owned_commands.py": "f5b37f859bc37211ce39e3ca5ec0c0dd1ad36d05bd9e1518c6525f553d1585ab",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/owned_launch.py": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/pending_direction.qnt": "ccd3b49807fa4b4063044edb5aae77c6b273ae9a7982e74eb22aaee4ff8d3b53",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/pending_direction_test.qnt": "6c8a4cbc461e0a2d36417b2714a4306073d6046d0566b710f429633be2d84e12",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/persistent_atlas.qnt": "789a8f3682d612091ab60e58f3a5e3f100f0b49556bd56a397284656f6e60934",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/persistent_atlas_test.qnt": "e91850f4abde58f984e3dbd27042324ab87a0efb1c06ea6ffe53f0ab7b31a25d",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/pipe_transport.py": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/production_motion_6d9.py": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/prove_legacy_fixture_reuse.py": "5852325503fd54e97ca633b6ba584df13514b1ef5a0019905991b233a9b9c7f4",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/receipt_visual.qnt": "359386bd7a4fc2aeb1ced50627f0e7240695e06cdff1c39a66a3c40fb714c309",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/receipt_visual_test.qnt": "6a99b6accb257f828d364fdc3d05f5e0818658b63ab5e38e6d25a9a6e1959cc3",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/recovery_cancel.py": "8647a336a7b83ec5de7d60f63ccb0436f7b684f85879e43c7ae8f21ff499b219",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/recovery_cancel.qnt": "7986f30a1a3e1b8f8b0df069d33a97eee9461a61e6b3cf8a23286df2a84aab31",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/recovery_cancel_test.qnt": "642dc742d8e7f41062c5cfcb7334054def008e771c20b04d9c038e38bd99394b",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/recovery_constant.qnt": "e2890690010c36e0a1783c3bbb8adc42b9efeaf9e8b1b110b8e556bc7635be08",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/recovery_constant_test.qnt": "2134b3ad035549fbd28e716e35a2431868137313e00969b8cbdcb6cdea2e8882",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/recovery_intent.py": "e725b6cc54d2268e81b9e52cd2c24e4632a2ec6f99b357872dadf90d76e2ce66",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/recovery_ownership.qnt": "d7a834da3c7747b4b48b68c5a8e0453465a571a2e47ffa4afa15ce816c795b8e",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/recovery_ownership_test.qnt": "12d8dcbf89537d88b5cb5031385e23c3d5a4a8b065544111a1c58aa7592420cf",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/recovery_resources.py": "133edcf7b92aaa2f521af90922c571d1637ab8e8c9536a7cf57a6475fa18ce02",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/recovery_runtime.py": "2884966768def980be00afc1469c473380b428ba5ec0586c50a50470e90f3df7",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/reduced_observation_formal_review.py": "ac8b5fbf66b7d81f688eb10f2694315a360a0acf8b79b2c033977d87f271a911",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/reduced_validation_formal_review.py": "58ebde53a1c9f2babc62bd760f741dd63ac0783026a0f2f8cdfbaed6a8662d2a",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/reduction_validation_v18.qnt": "3fb6d15057a4fb0921f2981516eddfe8c478b7e680cc0a5bd59f57990dcfef00",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/reduction_validation_v18_test.qnt": "654a5a4d3b51f55a63ac2352517c3c3189a6632f0175bafb7338a1abaedefd32",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/renderer_terminal.qnt": "24cd7c94cfb96e1ce629732607ae7db7dcb67bec250ed23fe4b8f01a7ef26ea8",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/renderer_terminal_test.qnt": "10acec5bbbb533cb832219db42398aa80bdaea1c404901235b3efce40f7d3dae",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/responsive_preparation.qnt": "146f2cbffa7ff4b8fa8ed10637343910b2051944376e5ab1c66dfeea8b9dbd0d",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/responsive_preparation_test.qnt": "660a0a9d12869e1950839c70a34329e32994d529cf340fbc4476821bd843365a",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/retained-before-observation-correction-scene_controller.py": "8ff77c1611cbe683e8e1a6a63d067fd3c9299bdd7c17d3793568bf5d8bc67ab4",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/retained-before-observation-correction-scene_manager.py": "ac08fb7128f73a8e6a604a60ee4e70b3c6672339b05cb1bc49700a66771590cb",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/retained-initial-reduced-validation-test.py": "e66907553b345f668def1837acbb25b19b53a9a2a76c43e6d16d2fa626230ed8",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/retained-reduced-validation-contract.md": "ade3d552a346bb02a06afdf97905e76b409d4382ef8ce8f7bf569190610328a3",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/retained-reduction_validation.qnt": "12803d4361b2ea5cee19e9381d7009cf6fe165072707df8f90bb1e72e39839a4",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/retained-reduction_validation_test.qnt": "be7aa8776bf8b11e997a73685c8a7dec93564672e733988e066c315c0ef3518c",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/runtime_fixture.py": "385d01079b0607d9e6f4519d99cae1fda9f0438e5696b79e55273265a9ddfa8a",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/runtime_lease.qnt": "d74f2fa8b561a60e378eea74cf7e1969c0ad9299262b9cee39c7ac5657f0dfb7",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/runtime_lease_test.qnt": "622068ca229c8b50d457d1674bedd13b65d3c8431f58576fd470c9dfd9efc7f6",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/runtime_lifecycle.qnt": "d912775efd0da4e84700b2a85bd6f7d165525488f80ccecb06cd4a80633eae25",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/runtime_lifecycle_test.qnt": "decd75fdf892d132f6657940cc15efb483f770115881fb30e64a68abae652f16",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/scene_controller.py": "77bf976f641ba1bce895dfec51f59f8755529761fdc6370079a385e4385a8206",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/scene_manager.py": "3f2f3aa5e2f0f1a2dd108acccfa4372761dda966d672741556b8b709bf8edd41",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/service_runtime.py": "f5bf28fb23429d612149d8537683929b257674aeccd732188ae6d221168b88bf",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/snapshot_cache.py": "21f0d47313c053964fd8e81736843d8b62ecadab5eee3ebba80ef5801e8bf8ee",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/socket_frontend.py": "0ea4c81cbf975104bb4ae17f9a8807f4af74a974a793a4b36a0aac7569c2647f",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_actor_resources.py": "1940daa0c4f0b28f559db387d6cc3c1c90e8781621d009b20650cef1740177bb",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_capture_lease.py": "e301c95d2fc7ac21fb91118493b9323f0acddfb89080251f91959ce74ad05607",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_context_provider.py": "32fdddb492653f08a3bee1d2145903417f6a7fe90e3d0ad89469736672a2c950",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_family_order.py": "c08c2a8d0660204627aa671b347e7429f86e536cf7650ab62a4c98d267ad269b",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_gesture_retirement.py": "d1b8cac3bb3fcd14281703177a7c92ad79179170ad8696752d350d5237b11e7b",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_helper_keeper.py": "13fca934e7766a777c3983f39924b990c0f08a0273adc5fb82e0f47efc7131bd",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_helper_policy.py": "2eb1a33831a29ffcbf210196f32ec9c57bec3b999b3367aea95c2a972db975ce",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_helper_supervisor.py": "203b8d0fe92158cb2f0661630a81ebc569c9602437d5e58a70bb24e83438b480",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_ingress_context.py": "04a7c158a2c430b3967da74366b3ac73a62d57b4c37fce93f50e1cb08b077e82",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_ipc_complete_probe.py": "ba53f204516a3ca7a2d8764951d261a2aa4c0de2e47ca11fb881cac42546d62f",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_legacy_fixture_ready.py": "4f5af53c4c5468c2a6b3aeb6b77650ca68ef1981359f94c137584c5905a0ddd4",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_native_runtime.py": "75728cd42743ec3251e92ff4a2624760bf5472c070d50bb9ea22ae3ddd243140",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_owned_commands.py": "6f6a8e4945d6c9a827563b2ea4a23a3804295401eeed29c4e7b7ebf98bd1e448",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_pending_direction.py": "c621906e5e6e4d7d4fb9ccd0cd81e25e48ff519868576a9a780ee7a00bbe2fea",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_pipe_transport.py": "fcd791e2165b92b1d5878e4678785071290cb96febdb75f50d9501fcb565981d",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_receipt_visual.py": "c0d4fa8fc4b063ab450a5ad18a043edbb3334487fd3a7a822c20841e8f7d952e",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_recovery_cancel.py": "c37e14e5b901ba1aeeb8648ae74cb72334f8c4d51ee5f4ace44900907891c4a1",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_recovery_factory.py": "ee35d43cce72ad7910995783a6e098e18f5e43a4434ca04d8c317d3e48136dc9",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_recovery_intent.py": "a0f0e98c45c6bd480d1e52ba046299a23ee8feb5736cbc07b0bdbb3a110ccbb1",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_recovery_resources.py": "49dab4475036cd07596083be925b5f447078adc54a1122ec21f201dba4f6bce8",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_recovery_runtime.py": "659ae465410feac5c53ff1e47991cca1a7ea7d4447594449b6cf92d19ca456c1",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_reduced_validation.py": "cee874d26d017b0fcce55d4e4c6a1524e40fcd2350c2ba93143e490aff164199",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_renderer_terminal.py": "f3feb52b8c264224ca98d243ccb4d5dfcb823fd7d3e9c4bc5a89498112c0b083",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_responsive_preparation.py": "f79a3f2f6bb409c8fc6bc5943a6c54d1e79a8d39160a5b0449fe46f867e9497d",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_runtime_lease.py": "f23ffaba806f3530c3e9c0808c1931c8999c173a34cc1133749836969dbe6a6d",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_scene_controller.py": "22e97f7440ca476eb659f3e329e8123e6ab69c9f8edc913326c07f2895456bd6",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_scene_manager.py": "461f4740fe823791f7c0c2d0e9fc5d9e091744015bd621a0adf9e4f578dfc6d9",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_service_runtime.py": "a7149de0f8b6328696bfd86c02f7f72e616a3bd42a3c87efa5e420f88c57fe6c",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_snapshot_cache.py": "655003df776a41314101248404b2cf88c48ae054cb4b5f49a64852fb7a0e032a",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_socket_frontend.py": "5cde825dffd77ebc9684cf9a55e48ffa8b23ec9eb08c57242b7096c437902f2b",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_split_destination.py": "74a8edc4ec3c64e166e02c80d5a4713bd5171a6de62a5fa7754c39b2856c1041",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/timeout_adapter.py": "14ccc4078364fdced5a8fa9a499567dd0e2eb592ff1b7f88ad38a39743e9e165",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/transport_dispatch.qnt": "a4e2106254f26ae9ae3b303b64bba683323664732b6c9ab03c0f371756644ad0",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/transport_dispatch_test.qnt": "7762ae6395d615c792b14e13f3885947acfb47b287b8134e77de972b08c59b14",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/visual_retirement.py": "0bd2513fec9ae3d0c9008ec8f789dce99670cc643a91b7a87b7346baefa40c84"
+  },
+  "sourceUnchangedDuringProof": true,
+  "scope": "frozen reviewed V17 inheritance; pending validation receipt retained under reduction; exact old visual cancel binding/ACK then fresh Scene/token and atomic pending context rebind; uncertainty/resources quarantined; source-only unpaired, real native reduced-setting and ordinary baseline campaigns remain pending"
+}

@@ -1,0 +1,19 @@
+--- installed-helper6d9/hypr-window-motion
++++ staged-presentation-helper/hypr-window-motion
+@@ -642,6 +642,7 @@
+                 if rect['x']<left or rect['y']<top or rect['x']+rect['width']>right or rect['y']+rect['height']>bottom:
+                     Path(image).unlink(missing_ok=True)
+                     raise ValueError('decorated rectangle spans outputs')
++            atlas_digest=hashlib.sha256(Path(image).read_bytes()).hexdigest()
+             with self.lock:
+                 if self.pending.get(address) is not record:
+                     Path(image).unlink(missing_ok=True)
+@@ -649,7 +650,7 @@
+                 if self.matching(identity) is None:
+                     self.drop(record)
+                     return token
+-                record.update(image=image, rect=rect, target=target, phase='loading', previewReady=True, deadline=time.monotonic()+1.2)
++                record.update(image=image, atlasDigest=atlas_digest, rect=rect, target=target, phase='loading', previewReady=True, deadline=time.monotonic()+1.2)
+                 self.journal()
+             record['profile']['beginSent']=time.monotonic()
+             if not self.desktop.ipc('motionBegin', record):

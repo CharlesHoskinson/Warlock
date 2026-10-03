@@ -1,0 +1,46 @@
+{
+  "reader": "Official Arch Orca 50.2",
+  "output": "silent QA factory",
+  "checks": [
+    {
+      "name": "native controls reader compatibility",
+      "passed": false,
+      "error": "AssertionError('timeout: Orca focus Restore')",
+      "reader_state": {
+        "focus": null,
+        "active_window": null,
+        "navigator": null
+      }
+    },
+    {
+      "name": "Task View reader compatibility",
+      "passed": false,
+      "error": "AssertionError('timeout: Orca focus Orca reader QA one')",
+      "reader_state": {
+        "focus": null,
+        "active_window": null,
+        "navigator": null
+      }
+    },
+    {
+      "name": "taskbar reader compatibility",
+      "passed": false,
+      "error": "AssertionError('timeout: reader taskbar preview focus')",
+      "reader_state": {
+        "focus": null,
+        "active_window": null,
+        "navigator": null
+      }
+    },
+    {
+      "name": "reader QA preserves existing user native window identities",
+      "passed": true
+    }
+  ],
+  "failures": [
+    "native controls reader compatibility",
+    "Task View reader compatibility",
+    "taskbar reader compatibility"
+  ],
+  "result": "fail"
+}

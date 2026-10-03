@@ -1,0 +1,75 @@
+--- immutable-V2/core/src/desktop/state/ViewHitTester.cpp
++++ actual-V3/core/src/desktop/state/ViewHitTester.cpp
+@@ -143,14 +143,21 @@
+         if (Fullscreen::controller()->hasFullscreen(PWORKSPACE) && !(properties & SKIP_FULLSCREEN_PRIORITY) && !ONLY_PRIORITY) {
+             const auto FS_WINDOW = Fullscreen::controller()->getFullscreenWindow(PWORKSPACE);
+ 
+-            if (!FS_WINDOW || Desktop::Pin::effective(FS_WINDOW))
++            if (!FS_WINDOW)
+                 return nullptr;
+ 
+-            // for maximized windows, don't return a window if we are not directly on it.
+-            if (!Fullscreen::controller()->isFullscreen(FS_WINDOW, Fullscreen::FSMODE_MAXIMIZED) || FS_WINDOW->getWindowBoxUnified(properties).containsPoint(pos))
+-                return Fullscreen::controller()->getFullscreenWindow(PWORKSPACE);
+-            else
+-                return nullptr;
++            if (Desktop::Pin::effective(FS_WINDOW)) {
++                // A protected native MAX was already subject to every band hit
++                // guard. A miss must not block the existing ordinary scans.
++                if (!Fullscreen::controller()->isFullscreen(FS_WINDOW, Fullscreen::FSMODE_MAXIMIZED))
++                    return nullptr;
++            } else {
++                // Preserve native priority for ordinary MAX and exclusive FS.
++                if (!Fullscreen::controller()->isFullscreen(FS_WINDOW, Fullscreen::FSMODE_MAXIMIZED) || FS_WINDOW->getWindowBoxUnified(properties).containsPoint(pos))
++                    return Fullscreen::controller()->getFullscreenWindow(PWORKSPACE);
++                else
++                    return nullptr;
++            }
+         }
+ 
+         auto found = floating(false);
+--- immutable-V2/core/src/managers/input/InputManager.cpp
++++ actual-V3/core/src/managers/input/InputManager.cpp
+@@ -12,6 +12,7 @@
+ #include "../../desktop/view/WLSurface.hpp"
+ #include "../../desktop/state/FocusState.hpp"
+ #include "../../desktop/state/WindowState.hpp"
++#include "../../desktop/state/pin/NativePinState.hpp"
+ #include "../../protocols/CursorShape.hpp"
+ #include "../../protocols/IdleInhibit.hpp"
+ #include "../../protocols/RelativePointer.hpp"
+@@ -551,8 +552,13 @@
+                         if (pFoundWindow != PWINDOWIDEAL)
+                             pFoundWindow = PWINDOWIDEAL;
+ 
+-                        if (!(pFoundWindow && (pFoundWindow->m_isFloating && pFoundWindow->isAllowedOverFullscreen())))
+-                            pFoundWindow = Fullscreen::controller()->getFullscreenWindow(PWORKSPACE);
++                        if (!(pFoundWindow && (Desktop::Pin::effective(pFoundWindow) || (pFoundWindow->m_isFloating && pFoundWindow->isAllowedOverFullscreen())))) {
++                            const auto FS_WINDOW = Fullscreen::controller()->getFullscreenWindow(PWORKSPACE);
++                            // Keep the filtered ideal, including null, after an
++                            // excluded protected owner. Do not revive its hit.
++                            if (!Desktop::Pin::effective(FS_WINDOW))
++                                pFoundWindow = FS_WINDOW;
++                        }
+                     }
+                 }
+             }
+--- immutable-V2/core/src/desktop/state/pin/CorePolicyBuild.hpp
++++ actual-V3/core/src/desktop/state/pin/CorePolicyBuild.hpp
+@@ -1,4 +1,4 @@
+ #pragma once
+ namespace Desktop::Pin {
+-    inline constexpr const char* NATIVE_PIN_CORE_SOURCE_ID = "b0df9dafe65595cee9ea5780f61a8fca07126f41a8c836bd83d27a87645f75ef";
++    inline constexpr const char* NATIVE_PIN_CORE_SOURCE_ID = "59a1485d5f900db177414814bae9577898d687d17f2dc6a533ecec40a21590d3";
+ }
+--- immutable-V2/helper/pin_helper.py
++++ actual-V3/helper/pin_helper.py
+@@ -2,7 +2,7 @@
+ """Candidate exact-owner pin CLI; imports do not contact or alter a desktop."""
+ from pathlib import Path
+ import base64,hashlib,json,os,re,socket,stat,struct,sys,time
+-EXPECTED_CORE_SOURCE_ID="b0df9dafe65595cee9ea5780f61a8fca07126f41a8c836bd83d27a87645f75ef"
++EXPECTED_CORE_SOURCE_ID="59a1485d5f900db177414814bae9577898d687d17f2dc6a533ecec40a21590d3"
+ class Refused(RuntimeError):pass
+ class Uncertain(Refused):pass
+ FIELDS={'address','stableId','pid','session','compositorPid','compositorStart','incarnation','epoch','generation'}

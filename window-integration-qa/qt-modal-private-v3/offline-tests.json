@@ -1,0 +1,42 @@
+{
+  "result": "pass",
+  "offlineTests": 8,
+  "stdout": "",
+  "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.009s\n\nOK\n",
+  "nativeLaunch": false,
+  "plannedToolkitFeatures": [
+    "real public Qt6.11.2 native Wayland same-process owner/peer",
+    "Qt WindowModal agrees with actual native owner/modal metadata",
+    "same QApplication independent peer stays actionable",
+    "window-modal owner body refuses callback and routes to child",
+    "window-modal owner caption routes child without geometry change",
+    "actual Qt dialog button receives native click",
+    "nested Qt/native modal parent chain agrees",
+    "owner input routes deepest Qt modal",
+    "intermediate dialog input refuses callback and routes deepest",
+    "deepest Qt modal receives its real native callback",
+    "same QApplication peer remains usable with nested WindowModal",
+    "Qt family minimize excludes independent same-process peer",
+    "Qt family restore retains deepest native modal focus",
+    "restored nested Qt dialog stays actionable",
+    "normal nested destruction restores surviving dialog action/focus",
+    "closing modal restores actual owner button action",
+    "fresh Qt modal lifetime has valid captured parent",
+    "destroying Qt owner destroys its own modal and removes native family metadata",
+    "independent same-process peer survives owner hierarchy destruction"
+  ],
+  "plannedHostGates": [
+    "private host actual DMA-BUF probe succeeded",
+    "only exact private1600x1000 scale1 output exists",
+    "private Xwayland explicitly disabled",
+    "private child has no configuration errors or existing clients/plugins",
+    "actual exact production v18 native module mapped privately",
+    "native modal focus and family APIs published privately"
+  ],
+  "plannedCounts": {
+    "toolkitFeatures": 19,
+    "hostGates": 6
+  },
+  "byteIdenticalPublicFixtureSHA256": "e74f73fbf86a7c30deb47d89a3cfe240b19c545c04b465986c430b35a50b92c8",
+  "freezeStatus": "Held: root found private AQ backend-selection/configure ordering gaps after bootstrap proof. Final healthy transport prerequisite and fresh adapter pending."
+}

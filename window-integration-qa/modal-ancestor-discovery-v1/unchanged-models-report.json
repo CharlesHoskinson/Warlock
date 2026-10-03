@@ -1,0 +1,58 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/modal-ancestor-discovery-v1/native-candidate/atlas_coordinates_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  atlas_coordinates_test\n    ok projectionWithoutDamageNormalizationCannotPublishTest passed 1 test(s)\n    ok clippingWithoutRoundingNormalizationCannotPublishTest passed 1 test(s)\n    ok normalizedAtlasDoesNotMoveNativeWindowTest passed 1 test(s)\n\n  3 passing (23ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/modal-ancestor-discovery-v1/native-candidate/atlas_coordinates.qnt",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--invariant=allProps",
+        "--out",
+        "/home/hoskinson/window-integration-qa/modal-ancestor-discovery-v1/atlas_coordinates-random.json"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/modal-ancestor-discovery-v1/native-candidate/caption_cache_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  caption_cache_test\n    ok scaleChangesWithoutResizeInvalidateRasterTest passed 1 test(s)\n    ok fixedGeometryMovementReusesExactRasterTest passed 1 test(s)\n    ok resizeReturnCannotRetainWrongDimensionsTest passed 1 test(s)\n    ok titleAndConfigurationChangeRasterKeyTest passed 1 test(s)\n    ok exportRestoresExactPriorTextureAndKeyTest passed 1 test(s)\n    ok restoredNormalRasterRevalidatedBeforeDrawingTest passed 1 test(s)\n    ok nestedExportCannotReplaceNormalSnapshotTest passed 1 test(s)\n    ok exportNeverMutatesOtherDecorationTest passed 1 test(s)\n\n  8 passing (190ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/modal-ancestor-discovery-v1/native-candidate/caption_cache.qnt",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--invariant=allProps",
+        "--out",
+        "/home/hoskinson/window-integration-qa/modal-ancestor-discovery-v1/caption_cache-random.json"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "nativeLaunched": false
+}

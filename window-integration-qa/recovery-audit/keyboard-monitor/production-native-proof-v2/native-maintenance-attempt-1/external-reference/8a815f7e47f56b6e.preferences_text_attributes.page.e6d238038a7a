@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_text_attributes" xml:lang="eo">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_web"/>
+    <link type="seealso" xref="howto_text_attributes"/>
+    <title type="sort">8. Tekstaj Atributoj</title>
+    <title type="link">Tekstaj Atributoj</title>
+    <desc>Agordi kiu formatado estas prezentata</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Preferoj de Tekstoatributoj</title>
+  <p>La termino "tekstoatributoj" rilatas al ĉiuj tiparoj, stiloj, aliniado kaj aliaj formatadoj rilataj al donita signo aŭ serio da signoj. La paĝo <gui>Tekstoatributoj</gui> de <app>Orko</app> permesas al vi agordi, kiujn tekstoatributojn <app>Orko</app> prezentados en parolo, kune kun la ordo en kiu ili devus esti prezentitaj, kaj kiujn <app>Orko</app> indikos en brajlo.</p>
+  <section id="table">
+    <title>La tabelo de tekstoatributoj</title>
+    <p>La tabelo de tekstoatributoj estas kie vi specifas, kiuj atributoj prezentiĝos kaj ne prezentiĝos kaj en kiaj kondiĉoj. Ĉiu vico konsistas el kvar kolumnoj.</p>
+    <list>
+      <item>
+        <p><gui>Nomo de Atributo</gui>: La nomo de la tekstoatributo.</p>
+      </item>
+      <item>
+        <p><gui>Paroli</gui>: Marku ĉi tiun markobutonon se vi volas, ke <app>Orko</app> parolu ĉi tiun atributon kiam vi premas <keyseq><key>Orko Modifier</key><key>F</key></keyseq>.</p>
+      </item>
+      <item>
+        <p><gui>Marki en brajlo</gui>: Marku ĉi tiun markobutonon se vi volas, ke <app>Orko</app> "substreku" ĉi tiun atributon sur via brajla ekrano.</p>
+      </item>
+      <item>
+        <p><gui>Prezenti Krom Se</gui>: Ĉi tiu redaktebla kampo permesas al vi specifi kiam ebligita atributo ne estas interesa.</p>
+        <p>Ekzemple, defaŭlte la tekstoatributo "substreko" havas valoron "nenio". Ĉi tio igos <app>Orko</app> informi vin pri substrekteksto tiom longe kiom la teksto estas efektive substreka. Se vi ĉiam volas, ke ĉi tiu atributo estu parolata sendepende de ĉu la teksto estas substreka aŭ ne, la kolumno <gui>Prezenti krom se</gui> devas esti malplena por substreko. Aldone, vi devas certigi, ke la kolumno <gui>Paroli</gui> por substreko estas markita.</p>
+      </item>
+    </list>
+  </section>
+  <section id="reset">
+     <title>Malfari ŝanĝojn</title>
+     <p>Sub la listo de tekstoatributoj, estas butono <gui>Restarigi</gui> (<keyseq><key>Alt</key><key>R</key></keyseq>) kiu restarigados la valorojn de la tabelo al tio, kio ili estis kiam la dialogo unue estis montrita.</p>
+  </section>
+  <section id="rearranging">
+     <title>Rearanĝi la ordon de prezentado</title>
+     <p>Kiam vi komence malfermas la paĝon <gui>Tekstoatributoj</gui>, ĉiuj viaj ebligitaj atributoj estas metitaj ĉe la supro de la tabelo en la ordo laŭ kiu ili estos parolataj. Estas kvar butonoj kiuj povas esti uzataj por rearanĝi la ordon de prezentado.</p>
+    <list>
+      <item>
+        <p><gui>Movi al supro</gui> (<keyseq><key>Alt</key><key>T</key></keyseq>): movas la elektitan atributon al la supro de la listo.</p>
+      </item>
+      <item>
+        <p><gui>Movi supren</gui> (<keyseq><key>Alt</key><key>U</key></keyseq>): movas la elektitan atributon unu vicon supren.</p>
+      </item>
+      <item>
+        <p><gui>Movi malsupren</gui> (<keyseq><key>Alt</key><key>D</key></keyseq>): movas la elektitan atributon unu vicon malsupren.</p>
+      </item>
+      <item>
+        <p><gui>Movi al fundo</gui> (<keyseq><key>Alt</key><key>B</key></keyseq>): movas la elektitan atributon al la fundo de la listo.</p>
+      </item>
+    </list>
+  </section>
+  <section id="braille_indicator">
+    <title>Opcioj por Agordi Brajlan "Substrekigon" por Formatado</title>
+    <p>Sub la prembutonoj estas la grupo de radibutonoj <gui>Brajla Indikilo</gui>. Ĉi tie vi povas elekti la ĉelon aŭ ĉelojn uzotajn por indiki tekston kiu havas almenaŭ unu el la precizigitaj atributoj.</p>
+    <list>
+      <item>
+        <p><gui>Nenio</gui>: Ne substreki tekstoatributojn en brajlo (la defaŭlto)</p>
+      </item>
+      <item>
+        <p><gui>Punkto 7</gui>: Substreki tekstoatributojn nur kun Punkto 7</p>
+      </item>
+      <item>
+        <p><gui>Punkto 8</gui>: Substreki tekstoatributojn nur kun Punkto 8</p>
+      </item>
+      <item>
+        <p><gui>Punktoj 7 kaj 8</gui>: Substreki tekstoatributojn kun ambaŭ Punkto 7 kaj Punkto 8</p>
+      </item>
+    </list>
+  </section>
+</page>

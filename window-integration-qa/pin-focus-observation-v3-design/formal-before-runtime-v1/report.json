@@ -1,0 +1,48 @@
+{
+  "result": "pass",
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/pin-focus-observation-v3-design/focus_observation.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/pin-focus-observation-v3-design/formal-before-runtime-v1/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/pin-focus-observation-v3-design/focus_observation.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/pin-focus-observation-v3-design/formal-before-runtime-v1/test.log",
+      "sha256": "cad312c7c10d12fa66feae3157eca5997ff7580e1ffe4898a8ad818f937b29d2"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/pin-focus-observation-v3-design/focus_observation.qnt",
+        "--invariant=safe",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/pin-focus-observation-v3-design/formal-before-runtime-v1/run.log",
+      "sha256": "e938a8fd6cc00956173c2bed8053f71bd3768781952c01979556a06bed5e59ea"
+    }
+  ],
+  "sourceSHA256": {
+    "/home/hoskinson/window-integration-qa/pin-focus-observation-v3-design/CONTRACT.md": "a4060290d32bd8c38b8626ab6f818c372cee4611fcdbb40a87d77505b9d9b66e",
+    "/home/hoskinson/window-integration-qa/pin-focus-observation-v3-design/focus_observation.qnt": "3ff92d9b0b10d5b6117c8f4eb700f04704afa7037f6408ec74c7a8b319ab4238",
+    "/home/hoskinson/window-integration-qa/pin-focus-observation-v3-design/prove.py": "6b5c2fb10295529de0e8fe90d1b0b6c44febfeb96399a48fd8dcc9d611751690"
+  },
+  "sourceUnchanged": true,
+  "runtimeChanged": false,
+  "nativeAccepted": false
+}

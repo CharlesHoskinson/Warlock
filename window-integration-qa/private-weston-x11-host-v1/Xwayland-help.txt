@@ -1,0 +1,103 @@
+use: X [:<display>] [option]
+-a #                   default pointer acceleration (factor)
+-ac                    disable access control restrictions
+-audit int             set audit trail level
+-auth file             select authorization file
+-br                    create root window with black background
++bs                    enable any backing store support
+-bs                    disable any backing store support
++byteswappedclients    Allow clients with endianess different to that of the server
+-byteswappedclients    Prohibit clients with endianess different to that of the server
+-c                     turns off key-click
+c #                    key-click volume (0-100)
+-cc int                default color visual class
+-nocursor              disable the cursor
+-core                  generate core dump on fatal error
+-displayfd fd          file descriptor to write display number to when ready to connect
+-dpi int               screen resolution in dots per inch
+-dpms                  disables VESA DPMS monitor control
+-deferglyphs [none|all|16] defer loading of [no|all|16-bit] glyphs
+-f #                   bell base (0-100)
+-fakescreenfps #       fake screen default fps (1-600)
+-fp string             default font path
+-help                  prints message with these options
++iglx                  Allow creating indirect GLX contexts
+-iglx                  Prohibit creating indirect GLX contexts (default)
+-I                     ignore all remaining arguments
+-ld int                limit data space to N Kb
+-lf int                limit number of open files to N
+-ls int                limit stack space to N Kb
+-nolock                disable the locking mechanism
+-maxclients n          set maximum number of clients (power of two)
+-nolisten string       don't listen on protocol
+-listen string         listen on protocol
+-noreset               don't reset after last client exists
+-background [none]     create root window with no background
+-reset                 reset after last client exists
+-p #                   screen-saver pattern duration (minutes)
+-pn                    accept failure to listen on all ports
+-nopn                  reject failure to listen on all ports
+-r                     turns off auto-repeat
+r                      turns on auto-repeat 
+-render [default|mono|gray|color] set render color alloc policy
+-retro                 start with classic stipple and cursor
+-s #                   screen-saver timeout (minutes)
+-seat string           seat to run on
+-t #                   default pointer threshold (pixels/t)
+-terminate [delay]     terminate at server reset (optional delay in sec)
+-tst                   disable testing extensions
+ttyxx                  server started from init on /dev/ttyxx
+v                      video blanking for screen-saver
+-v                     screen-saver without video blanking
+-wr                    create root window with white background
+-maxbigreqsize         set maximal bigrequest size 
++xinerama              Enable XINERAMA extension
+-xinerama              Disable XINERAMA extension
+-dumbSched             Disable smart scheduling and threaded input, enable old behavior
+-schedInterval int     Set scheduler interval in msec
+-sigstop               Enable SIGSTOP based startup
++extension name        Enable extension
+-extension name        Disable extension
+ Only the following extensions can be run-time enabled/disabled:
+	Generic Event Extension
+	SHAPE
+	MIT-SHM
+	XTEST
+	SECURITY
+	XINERAMA
+	XFIXES
+	RENDER
+	RANDR
+	COMPOSITE
+	DAMAGE
+	MIT-SCREEN-SAVER
+	DOUBLE-BUFFER
+	RECORD
+	DPMS
+	X-Resource
+	XVideo
+	XVideo-MotionCompensation
+	GLX
+[+-]accessx [ timeout [ timeout_mask [ feedback [ options_mask] ] ] ]
+                       enable/disable accessx key sequences
+-ardelay               set XKB autorepeat delay
+-arinterval            set XKB autorepeat interval
+-rootless              run rootless, requires wm support
+-fullscreen            run fullscreen when rootful
+-geometry WxH          set Xwayland window size when rootful
+-hidpi                 adjust to output scale when rootful
+-host-grab             disable host keyboard shortcuts when rootful
+-nokeymap              ignore keymap from the Wayland compositor
+-output                specify which output to use for fullscreen when rootful
+-wm fd                 create X client for wm on given fd
+-initfd fd             add given fd as a listen socket for initialization clients
+-listenfd fd           add given fd as a listen socket
+-listen fd             deprecated, use "-listenfd" instead
+-shm                   use shared memory for passing buffers
+-glamor [gl|es|off]    use given API for Glamor acceleration. Incompatible with -shm option
+-verbose [n]           verbose startup messages
+-version               show the server version and exit
+-noTouchPointerEmulation  disable touch pointer emulation
+-force-xrandr-emulation   force non-native modes to be exposed when viewporter is not exposed by the compositor
+-decorate              add decorations to Xwayland when rootful
+-enable-ei-portal      use the XDG portal for input emulation

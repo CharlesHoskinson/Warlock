@@ -1,0 +1,69 @@
+{
+  "version": "reduced-validation-v18-final-source-handoff-v5",
+  "sourceReady": true,
+  "frozen": false,
+  "stage": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18",
+  "readyPath": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/source-ready-v18-family-v5.json",
+  "readySHA256": "73af95bcb0f7c0c507a658243434ee5c51399f8e404f35083819d33b45b23c0b",
+  "offlinePath": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/offline-family-checkpoint-v5.json",
+  "offlineSHA256": "3e4c4cd0b1807855cddcc4b004b18705b6196d45f2cbc78e12e55b06bf1daf66",
+  "finalGatePath": "/home/hoskinson/window-integration-qa/reduced-validation-v18-final-family-gate-v5.json",
+  "finalGateSHA256": "5079cbd8e7014490f5afa7c8e35bdcf8fe300f08d9abf0350ded1dcdb9877dfa",
+  "counts": {
+    "inputs": 13625,
+    "modes": 13625,
+    "links": 158,
+    "python": 329,
+    "named": 254,
+    "models": 27,
+    "tracesPerModel": 2000,
+    "steps": 100,
+    "actualCommandsExit0": 82
+  },
+  "rootReviewRequest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/ROOT_REVIEW_REQUEST_V18_FINAL_V5.md",
+  "changedInheritedFiles": [
+    "scene_controller.py",
+    "scene_manager.py",
+    "test_pipe_transport.py",
+    "test_socket_frontend.py",
+    "check_offline.py",
+    "test_renderer_terminal.py"
+  ],
+  "newProductFile": "visual_retirement.py",
+  "productScope": "only fresh controller/manager visual-cancellation state and unvalidated exact member expectations; ordinary runtime/helper/Keeper/native/recovery sources exact V17",
+  "fixtureScope": "legacy selected-environment ready receipt, context worker completion and actual pipe failure receipt, original deadlines/outcome assertions retained",
+  "checks": {
+    "fullCurrentBytesModesLinksExact": true,
+    "currentProofSourcesExact": true,
+    "oneConstructorInverseReconstructsPrevious324Epoch": true,
+    "correctedCPUCounterexampleHasZeroPostACKFakeEffects": true,
+    "allFailedAndSuccessfulProofEpochsRetained": true
+  },
+  "runtimeSourceSHA256": {
+    "scene_controller.py": "b7c6396ef91b0c6dca9b8bb2caf7b9e5a75db90ab94f20f499b3c8c2fcfa6a4f",
+    "scene_manager.py": "3f2f3aa5e2f0f1a2dd108acccfa4372761dda966d672741556b8b709bf8edd41",
+    "visual_retirement.py": "0bd2513fec9ae3d0c9008ec8f789dce99670cc643a91b7a87b7346baefa40c84"
+  },
+  "freezeCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/collect_reduced_validation_family_v5.py",
+    "--freeze"
+  ],
+  "verifyCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/collect_reduced_validation_family_v5.py",
+    "--verify"
+  ],
+  "rootOnlyFreeze": true,
+  "nativeLaunch": false,
+  "mainChanged": false,
+  "productionDeployed": false,
+  "nativeAccepted": false,
+  "fullParityAccepted": false,
+  "remaining": [
+    "Root independent full source/closure review and freeze",
+    "Explicit fresh pairing; no implicit V19/V20/V21/performance merge",
+    "Actual ordinary baseline and user-toggleable reduced setting",
+    "Real old-visual cancellation ACK/latest receipt/context/fresh metadata/native effects and full lifecycle/source/main preservation"
+  ]
+}

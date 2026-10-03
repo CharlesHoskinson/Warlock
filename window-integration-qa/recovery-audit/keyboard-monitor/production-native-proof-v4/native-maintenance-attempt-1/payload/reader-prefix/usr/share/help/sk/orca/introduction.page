@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_setting_up_orca"/>
+    <title type="sort">1. Vitajte v Orca</title>
+    <desc>Predstavenie čítačky obrazovky <app>Orca</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Vitajte v Orca</title>
+  <p><app>Orca</app> je bezplatná čítačka obrazovky s otvoreným zdrojovým kódom, ktorá je flexibilná a rozšíriteľná a poskytuje prístup ku grafickej pracovnej ploche prostredníctvom reči a obnoviteľného braillovho písma.</p>
+  <p><app>Orca</app> spolupracuje s aplikáciami a nástrojovými sadami, ktoré podporujú rozhranie poskytovateľa služieb asistenčnej technológie (AT-SPI), čo je primárna infraštruktúra asistenčnej technológie pre Linux a Solaris. Medzi aplikácie a nástrojové sady podporujúce AT-SPI patria Gtk+, Qt, Java Swing, LibreOffice, Gecko, WebKitGtk a Chrome/Chromium.</p>
+  <section id="launching">
+    <title>Spustenie <app>Orca</app></title>
+    <p>Na spustenie <app>Orca</app>:</p>
+    <list>
+      <item>
+        <p>Spôsob konfigurácie automatického spúšťania <app>Orca</app> ako vašej preferovanej čítačky obrazovky bude závisieť od toho, ktoré pracovné prostredie používate.</p>
+      </item>
+      <item>
+        <p>Na zapnutie a vypnutie <app>Orca</app> v GNOME stlačte <keyseq><key>Super</key><key>Alt</key><key>S</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Do terminálu alebo do dialógového okna <gui>Spustiť</gui> zadajte <cmd>orca</cmd> spolu s akýmikoľvek voliteľnými parametrami a potom stlačte <key>Return</key>.</p>
+      </item>
+    </list>
+  </section>
+    <section id="loadtime">
+      <title>Možnosti pri spustení</title>
+      <p>Nasledujúce možnosti je možné zadať pri spustení <app>Orca</app> v okne terminálu alebo v dialógovom okne <gui>Spustiť</gui>:</p>
+      <list>
+        <item>
+          <p><cmd>-h</cmd>, <cmd>--help</cmd>: Zobraziť správu pomocníka</p>
+        </item>
+        <item>
+          <p><cmd>-v</cmd>, <cmd>--version</cmd>: Zobraziť verziu <app>Orca</app></p>
+        </item>
+        <item>
+          <p><cmd>-s</cmd>, <cmd>--setup</cmd>: Nastaviť používateľské predvoľby</p>
+        </item>
+        <item>
+          <p><cmd>-u</cmd>, <cmd>--user-prefs=<em>dirname</em></cmd>: Použiť <em>dirname</em> ako alternatívny adresár pre používateľské predvoľby</p>
+        </item>
+        <item>
+          <p><cmd>-e</cmd>, <cmd>--enable=<em>option</em></cmd>: Vynútiť použitie možnosti, kde <em>option</em> môže byť jedna z nasledujúcich:</p>
+          <list>
+            <item><p><cmd>speech</cmd></p></item>
+            <item><p><cmd>braille</cmd></p></item>
+            <item><p><cmd>braille-monitor</cmd></p></item>
+          </list>
+        </item>
+        <item>
+          <p><cmd>-d</cmd>, <cmd>--disable=<em>option</em></cmd>: Zabrániť použitiu možnosti, kde <em>option</em> môže byť jedna z nasledujúcich:</p>
+          <list>
+            <item><p><cmd>speech</cmd></p></item>
+            <item><p><cmd>braille</cmd></p></item>
+            <item><p><cmd>braille-monitor</cmd></p></item>
+          </list>
+        </item>
+        <item>
+            <p><cmd>-p</cmd>, <cmd>--profile=<em>filename</em></cmd>: Importovať profil z daného súboru profilu <app>Orca</app></p>
+        </item>
+        <item>
+          <p><cmd>-r</cmd>, <cmd>--replace</cmd>: Nahradiť aktuálne bežiacu inštanciu <app>Orca</app></p>
+        </item>
+        <item>
+          <p><cmd>-l</cmd>, <cmd>--list-apps</cmd>: Vypísať známe bežiace aplikácie</p>
+        </item>
+        <item>
+          <p><cmd>--debug</cmd>: Odoslať ladiaci výstup do debug-YYYY-MM-DD-HH:MM:SS.out</p>
+        </item>
+        <item>
+          <p><cmd>--debug-file=<em>filename</em></cmd>: Odoslať ladiaci výstup do zadaného súboru</p>
+        </item>
+      </list>
+    </section>
+
+</page>

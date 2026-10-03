@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_text_attributes" xml:lang="sk">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_web"/>
+    <link type="seealso" xref="howto_text_attributes"/>
+    <title type="sort">8. Atribúty textu</title>
+    <title type="link">Atribúty textu</title>
+    <desc>Konfigurácia zobrazeného formátovania</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Predvoľby atribútov textu</title>
+  <p>Pojem „atribúty textu“ sa vzťahuje na všetky fonty, štýly, zarovnania a iné formátovania spojené s daným znakom alebo sériou znakov. Stránka <gui>Atribúty textu</gui> v <app>Orca</app> vám umožňuje prispôsobiť, ktoré atribúty textu <app>Orca</app> prečíta, spolu s poradím, v akom sa majú čítať a ktoré z nich <app>Orca</app> označí v braillovom písme.</p>
+  <section id="table">
+    <title>Tabuľka atribútov textu</title>
+    <p>V tabuľke atribútov textu určujete, ktoré atribúty sa budú a nebudú zobrazovať a za akých podmienok. Každý riadok sa skladá zo štyroch stĺpcov.</p>
+    <list>
+      <item>
+        <p><gui>Názov atribútu</gui>: Názov atribútu textu.</p>
+      </item>
+      <item>
+        <p><gui>Čítať</gui>: Začiarknite toto políčko, ak chcete, aby <app>Orca</app> prečítala tento atribút po stlačení <keyseq><key>Modifikátor Orca</key><key>F</key></keyseq>.</p>
+      </item>
+      <item>
+        <p><gui>Označiť v braillovom písme</gui>: Začiarknite toto políčko, ak chcete, aby <app>Orca</app> „podčiarkla“ tento atribút na vašom braillskom zobrazovači.</p>
+      </item>
+      <item>
+        <p><gui>Zobraziť, pokiaľ nie</gui>: Toto upraviteľné pole vám umožňuje určiť, kedy povolený atribút nie je zaujímavý.</p>
+        <p>Napríklad, predvolene má textový atribút „podčiarknutie“ hodnotu „none“. To spôsobí, že <app>Orca</app> vás informuje o podčiarknutom texte, pokiaľ je text skutočne podčiarknutý. Ak chcete, aby sa tento atribút čítal vždy bez ohľadu na to, či je text podčiarknutý alebo nie, stĺpec <gui>Zobraziť, pokiaľ nie</gui> by mal byť pre podčiarknutie prázdny. Okrem toho by ste sa mali uistiť, že stĺpec <gui>Čítať</gui> pre podčiarknutie je začiarknutý.</p>
+      </item>
+    </list>
+  </section>
+  <section id="reset">
+     <title>Vrátenie zmien</title>
+     <p>Pod zoznamom atribútov textu sa nachádza tlačidlo <gui>Obnoviť</gui> (<keyseq><key>Alt</key><key>R</key></keyseq>), ktoré obnoví hodnoty v tabuľke na stav, v akom boli pri prvom zobrazení dialógu.</p>
+  </section>
+  <section id="rearranging">
+     <title>Zmena poradia zobrazenia</title>
+     <p>Keď prvýkrát zobrazíte stránku <gui>Atribúty textu</gui>, všetky vaše povolené atribúty sú umiestnené na začiatku tabuľky v poradí, v akom budú čítané. Na zmenu poradia zobrazenia sú k dispozícii štyri tlačidlá.</p>
+    <list>
+      <item>
+        <p><gui>Presunúť na začiatok</gui> (<keyseq><key>Alt</key><key>T</key></keyseq>): presunie vybraný atribút na začiatok zoznamu.</p>
+      </item>
+      <item>
+        <p><gui>Presunúť hore</gui> (<keyseq><key>Alt</key><key>U</key></keyseq>): presunie vybraný atribút o jeden riadok vyššie.</p>
+      </item>
+      <item>
+        <p><gui>Presunúť dole</gui> (<keyseq><key>Alt</key><key>D</key></keyseq>): presunie vybraný atribút o jeden riadok nižšie.</p>
+      </item>
+      <item>
+        <p><gui>Presunúť na koniec</gui> (<keyseq><key>Alt</key><key>B</key></keyseq>): presunie vybraný atribút na koniec zoznamu.</p>
+      </item>
+    </list>
+  </section>
+  <section id="braille_indicator">
+    <title>Možnosti konfigurácie „podčiarknutia“ v braillovom písme pre formátovanie</title>
+    <p>Pod tlačidlami sa nachádza skupina prepínačov <gui>Indikátor braillovho písma</gui>. Tu môžete vybrať bunku alebo bunky, ktoré sa použijú na označenie textu, ktorý má aspoň jeden zo zadaných atribútov.</p>
+    <list>
+      <item>
+        <p><gui>Žiadne</gui>: Nepodčiarkovať atribúty textu v braillovom písme (predvolené)</p>
+      </item>
+      <item>
+        <p><gui>Bodka 7</gui>: Podčiarknuť atribúty textu iba bodkou 7</p>
+      </item>
+      <item>
+        <p><gui>Bodka 8</gui>: Podčiarknuť atribúty textu iba bodkou 8</p>
+      </item>
+      <item>
+        <p><gui>Bodky 7 a 8</gui>: Podčiarknuť atribúty textu bodkami 7 aj 8</p>
+      </item>
+    </list>
+  </section>
+</page>

@@ -1,0 +1,140 @@
+{
+  "result": "source-ready root review/native pending",
+  "stage": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15",
+  "sourceReady": {
+    "path": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/source-ready.json",
+    "sha256": "0ffea334af9cd5b6130aec43dde259d32f5bacde43f3366fad4f350992f7dc0a",
+    "inputs": 26280,
+    "modes": 26280,
+    "links": 342
+  },
+  "proofs": {
+    "offline-review-v15-final.json": "27e9f3de4d9647f6d93abaca39bb136d0403c349d923fc47fffcb938494550a9",
+    "final-offline-source-stable-v2.json": "839cffb15a5ee4584b11f93873e4708ed4888bb5f42753e4816f7fbd4c94fb8e",
+    "arm-lock-deadline-formal-before-runtime.json": "783d2e145bda0547b3e5e944274f09a3c7fef6484881f94b0a5c1e384481eba8",
+    "arm-lock-kernel-final-before-runtime.json": "6a42ae29dc37c4e84dae6ae3ba7a4d0df4dbf420898aafa0062fe36fa1d9e57e",
+    "arm-kernel-counterexample-before-runtime.json": "2ed01edb9b3ac499272cd80573a21758212e0ef94b82ce12de98f708936242fe",
+    "arm-kernel-repaired-publication-final.json": "b793123e6261f2c8616c688f3052644cb857d84fe7148d6baac9b1d2cf2c6fdc",
+    "terminal-receipts-formal-before-runtime.json": "8a207b2de009a50d463bebe2b1b46cec90c881ff3a561c65e96f57eb4849370c",
+    "terminal-service-final-formal-before-correction.json": "7d0d3ea64392085cb0ca15adfc0ad870929c88787f390dda069f1510dbaa6edf",
+    "command-declaration-formal-before-correction.json": "e69baf8fad05e7c9095584139cc51cfa33c6daea4ff5d189649e2aed0cb78526",
+    "command-declaration-kernel-final-before-correction.json": "3a967120dfe9f05e377e98cd7773a573529964ad648f78958599bacdc433d2c9",
+    "command-probe-inputs.json": "877151bf35711e82cfcf9a78a598a413e222b1547f43666b7d20f65e19dc3292"
+  },
+  "reviewedSources": {
+    "evaluation_setup.py": {
+      "sha256": "1c08882cb9b311bd152f1c9414610f3d1f3793bb6ba3a25646a416707f961554",
+      "mode": 420
+    },
+    "run_native.py": {
+      "sha256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+      "mode": 420
+    },
+    "private_shell.py": {
+      "sha256": "ed594bd55d05ae72cf9b0887f6eca86174f6a5615b25eb9b5f7a480a5870e134",
+      "mode": 420
+    },
+    "arm_lock.py": {
+      "sha256": "1fd6e1c88c9365736e4afbcfb88e36aae31d7992341ff856f902f248f85dcd35",
+      "mode": 420
+    },
+    "arm_observation.py": {
+      "sha256": "33509b607bcb2f8aadfa2ef556b2684ca31613a6d27566a1cba938c6b481172a",
+      "mode": 420
+    },
+    "terminal_drain.py": {
+      "sha256": "da967663a179da79f7bf947b1ae7c2dd2b82e5152fcaefac6b28e4503a007bc2",
+      "mode": 420
+    },
+    "terminal_qml.py": {
+      "sha256": "afcf5f2772046317fbb92a200f933e7aa99a7a6f7b8221b6b56dd53311ca180c",
+      "mode": 420
+    },
+    "source_conservation.py": {
+      "sha256": "8575a15e91144717c52c335e7556b6fcd16ead447d75168659eda5be94642298",
+      "mode": 420
+    },
+    "source-delta-v15.json": {
+      "sha256": "33af82d9c3eb295903472b3468b815ddde9c2221d74aca337219ec15f7d6654d",
+      "mode": 384
+    },
+    "payload-manifest.json": {
+      "sha256": "999fec50cf89328a6f4e2b781055edad3ac839671af262835c411670ae581622",
+      "mode": 420
+    },
+    "payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.qml": {
+      "sha256": "f76ff4d5d8ccc5797c289bd381223b64d613052e1be59e671549c64a14bd8e42",
+      "mode": 384
+    },
+    "freeze_packet.py": {
+      "sha256": "9acb4b8defc0bc652f3e98275e8becb451fb45a8425ad5f68111a6f941cde91e",
+      "mode": 420
+    },
+    "offline_review.py": {
+      "sha256": "91c9a767d3c90dcdcb78df30035595cf1900f12496ec149b93ca11a4f9730e15",
+      "mode": 420
+    },
+    "final_gate.py": {
+      "sha256": "980340d986d593b6f7931be4aa72413419c7309f77759ec2f0da4166b016c11f",
+      "mode": 420
+    }
+  },
+  "exactV14": {
+    "matrix.json": true,
+    "held_controller.py": true,
+    "held_route.py": true,
+    "observations.py": true,
+    "frontend_route.py": true,
+    "input_control.py": true,
+    "helper_observer.py": true,
+    "helper_setup.py": true,
+    "qs_lifecycle.py": true,
+    "evaluation_tickets.qnt": true,
+    "BOUNDARY_REFINEMENT_CONTRACT.md": true
+  },
+  "checks": {
+    "harnessTests": 206,
+    "frontendTests": 18,
+    "evaluationAuditorTests": 12,
+    "wheelTests": 16,
+    "formalModels": 16,
+    "namedFormal": 190,
+    "formalSamples": 32000,
+    "formalSteps": 100,
+    "inertParsers": 2,
+    "sourceClosureChecks": 9,
+    "changedSourcesDuringProof": [],
+    "childIdentity": {
+      "pid": 4073770,
+      "start": "14921836",
+      "pgid": 4073760,
+      "parent": 4073760
+    },
+    "actualChildGone": true
+  },
+  "changes": [
+    "Same original8s absolute arm deadline, nonblocking journal acquisition, exact pending-helper retry, hard authority/malformed/nonzero refusal and raw predicate evidence",
+    "Private normal-teardown-only nonce/ack quiesce/drain; genuine Process generation/PID/normal-exit receipts and strict actual helper PIDstart/normal0 closure before unchanged normal QS quit",
+    "Separate mutable command declarations preserved as evidence; actual helper/frontend argv guards unchanged, no invented OS argv or PIDstart"
+  ],
+  "limitations": [
+    "Whole52 native/source/main/lifecycle acceptance remains pending",
+    "Actual V14 arm failure branch remains unclassified; own CPU counterexample proves source race only",
+    "Exact V14 post-QS-quit EPIPE attribution retained; historical V10 cause remains unknown",
+    "Diagnostic marker/ptrace scheduling does not confer frame timing acceptance"
+  ],
+  "rootCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+    "--output",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1"
+  ],
+  "rootCwd": "/home/hoskinson",
+  "sourceHold": true,
+  "nativeLaunched": false,
+  "mainChanges": false,
+  "fullWindowsParityAccepted": false
+}

@@ -1,0 +1,76 @@
+{
+  "sourceOnly": true,
+  "nativeAuthorized": false,
+  "freezeAuthorized": false,
+  "currentCollectorUnchanged": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v4",
+  "currentFrozen": {
+    "sha256": "21aaa4a4af53e6d59f19a2fbab8bef157f7eb779d67a50ad70368946ba700732",
+    "mode": 384
+  },
+  "proposalFiles": {
+    "INTENDED_SCOPE_EXTENSION.diff": {
+      "sha256": "f63d6664fcbfed3221bd701a461bf3abb8bf453ed2cc36773ba652d54b395331",
+      "mode": 420
+    },
+    "SCOPE.md": {
+      "sha256": "59ccecc4dff2a83c4a61181a7f2bea1b3252b5516586c82c4e096047c6cd46cc",
+      "mode": 420
+    },
+    "SOURCE_ORIGINS.json": {
+      "sha256": "4d2596a9e1825a5eed675313c1cc65b4c3bdeda4ac5439dc9f60deaaaac14564",
+      "mode": 420
+    },
+    "WITNESS_MAPPING.json": {
+      "sha256": "3c9b1ab6ad2756d8d6ee656aa63d2e4b90891c275fc963ae7e2cd05ceb61a072",
+      "mode": 420
+    },
+    "retained-first-prototype/MASK_SCOPE.md": {
+      "sha256": "b16914d8f6d67fd6e0010dcec9f100ba0a3b3d053d1dcc24a367778ec56f1ebe",
+      "mode": 420
+    },
+    "retained-first-prototype/PROPOSAL_READY.json": {
+      "sha256": "598d7f1fb494393d6c9af6eb4eee6aceffdf5dc957b6baded64f65a513203b37",
+      "mode": 420
+    },
+    "retained-first-prototype/SCOPE_EXTENSION.diff": {
+      "sha256": "623a4cc63540905a2a75b0dea5d403d56a59678ff7acfb934ff24085c94f1812",
+      "mode": 420
+    },
+    "retained-first-prototype/campaign_b.qnt": {
+      "sha256": "69c6925423ccc41f1d03103f5a0e587b93eb097ed04e5f0fb4e632ac9bc6acc5",
+      "mode": 420
+    },
+    "retained-first-prototype/formal-design-final.json": {
+      "sha256": "d5added406d0a2fbb56e4db2db95c94a083d368777058ede0d0f4fa46e1b1415",
+      "mode": 420
+    },
+    "retained-first-prototype/formal-final-0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "retained-first-prototype/formal-final-1.log": {
+      "sha256": "0167c90c8dc6f209aa1f51ee7046015ecc52e0ef40287f0e50f474bb3737a768",
+      "mode": 420
+    },
+    "retained-first-prototype/formal-final-2.log": {
+      "sha256": "36d61723023ddbc7a5b39898383cb701507076cad78d4a078dee1e41223a7ad7",
+      "mode": 420
+    },
+    "retained-first-prototype/mask_cases.py": {
+      "sha256": "af19acf4a62219c82c4412f203e5c329f744eed0ece0890d6a1992887798006d",
+      "mode": 420
+    }
+  },
+  "onlyIntendedCollectorChanges": "three fixed case validators + separate new methods/explicit four-case runner, none applied",
+  "productCoreObserverBuildModelChanges": false,
+  "approvedDesign35Unchanged": true,
+  "originalTwelveBodiesUnchanged": true,
+  "noNativeAcceptanceForCurrentLiveRunClaimed": true,
+  "fullCampaignBAccepted": false,
+  "fullParityAccepted": false,
+  "requiresReview": [
+    "next source fragment + exact current geometry scope",
+    "producer/controller/normal closure case extension",
+    "future full source/proof/host union before any grant"
+  ]
+}

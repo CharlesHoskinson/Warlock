@@ -1,0 +1,52 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a079ba00f3d1492fb8f89784be2595ed.scope",
+    "coreLimit": 1
+  },
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/retained_family_scope_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/retained_family_scope_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  retained_family_scope_test\n    ok sameCompleteFreshFamilyMayCommitTest passed 1 test(s)\n    ok closedNoncapturedMemberRefusesTest passed 1 test(s)\n    ok sameCountPIDReuseRefusesTest passed 1 test(s)\n    ok foreignAddedMemberRefusesTest passed 1 test(s)\n    ok oldWorkerCannotSupplyFreshFamilyTest passed 1 test(s)\n    ok pendingContextCannotBorrowScopeTest passed 1 test(s)\n    ok successorKeepsOriginalExpectedFamilyTest passed 1 test(s)\n    ok exactAckDoesNotValidateOldDataTest passed 1 test(s)\n    ok changedAfterReadCannotCommitTest passed 1 test(s)\n    ok actualOldClearedExpectationCounterexampleTest passed 1 test(s)\n    ok validatedFreshReobservationOfChangedScopeRefusesTest passed 1 test(s)\n\n  11 passing (499ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/retained_family_scope.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (5055ms at 396 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "runtimeUnchangedBeforeCorrection": true,
+  "sourceSHA256": {
+    "scene_controller.py": "77bf976f641ba1bce895dfec51f59f8755529761fdc6370079a385e4385a8206",
+    "scene_manager.py": "3f2f3aa5e2f0f1a2dd108acccfa4372761dda966d672741556b8b709bf8edd41",
+    "visual_retirement.py": "0bd2513fec9ae3d0c9008ec8f789dce99670cc643a91b7a87b7346baefa40c84"
+  },
+  "exactTupleSetsNotMemberCounts": true,
+  "nativeLaunch": false
+}

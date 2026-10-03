@@ -1,0 +1,69 @@
+{
+  "result": "fail",
+  "fullFrozenBytesModesLinks": true,
+  "sourceManifestSHA256": "3b46fa64cfcb74d996b93386a8581121b77f840393bc6b918a914126e38c106e",
+  "producerResult": "fail",
+  "rows": [
+    {
+      "variant": "qt-wayland",
+      "case": "move-escape",
+      "producerCaseResult": "pass",
+      "retirementExpected": true,
+      "evidenceIntegrity": true,
+      "artifact": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1/qt-wayland/case-1/retirement-observation.json",
+      "artifactSHA256": "ca609346d7b8b40a33a3993fd2d3501d96ca28f9993abe77aea7ed3e24a58c28",
+      "independentFocusBefore": true,
+      "independentFocusAfter": true,
+      "coreRetired": true,
+      "groupsPreserved": true,
+      "actualRawHoldPreserved": true,
+      "escapeSpecificTheftObserved": false
+    },
+    {
+      "variant": "qt-wayland",
+      "case": "move-reload",
+      "producerCaseResult": "pass",
+      "retirementExpected": true,
+      "evidenceIntegrity": true,
+      "artifact": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1/qt-wayland/case-2/retirement-observation.json",
+      "artifactSHA256": "8cfaaf9a66d90366e011754329f45697f197979de1c92539b821700e724185aa",
+      "independentFocusBefore": true,
+      "independentFocusAfter": true,
+      "coreRetired": true,
+      "groupsPreserved": true,
+      "actualRawHoldPreserved": true,
+      "escapeSpecificTheftObserved": false
+    },
+    {
+      "variant": "qt-wayland",
+      "case": "move-unload-reload",
+      "producerCaseResult": "pass",
+      "retirementExpected": true,
+      "evidenceIntegrity": true,
+      "artifact": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1/qt-wayland/case-3/retirement-observation.json",
+      "artifactSHA256": "c5374000fddceb22364d44ceecf2c84dcbe926728feaf759c8799fd721878d92",
+      "independentFocusBefore": true,
+      "independentFocusAfter": true,
+      "coreRetired": true,
+      "groupsPreserved": true,
+      "actualRawHoldPreserved": true,
+      "escapeSpecificTheftObserved": false
+    },
+    {
+      "variant": "qt-wayland",
+      "case": "move-minimize-preview",
+      "producerCaseResult": "fail",
+      "retirementExpected": true,
+      "evidenceIntegrity": false,
+      "retirementEvidenceMissing": true
+    }
+  ],
+  "retainedRetirementCount": 3,
+  "allReplayedIndependentFocusPreserved": true,
+  "fullHeld52Accepted": false,
+  "nativeCommands": false,
+  "mainWrites": false,
+  "boundary": "Retained retirement evidence and focus attribution only; full workload/genuine input/lifecycle remain independently required",
+  "auditorSHA256": "619ba22ebca2bc3ed97663952086c983314fa94eac2f0cd131acacf806dfe375",
+  "readerSHA256": "5d35dd6a4f31e71073faa44241d0368055523787040c3842436345236d2fc011"
+}

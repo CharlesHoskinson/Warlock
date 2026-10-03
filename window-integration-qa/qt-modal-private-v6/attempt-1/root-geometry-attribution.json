@@ -1,0 +1,44 @@
+{
+  "scope": "PrivateQtV6 stale-layout baseline target diagnosis; no modal-routing attribution",
+  "reportSHA256": "6c5358fc790d464dc5f025911d9d461b8a76aae2b1344245340a498581a8b2ee",
+  "baselinePoint": [
+    110,
+    400
+  ],
+  "capturedBeforeButtonClient": [
+    11,
+    460,
+    751,
+    22
+  ],
+  "actualAfterButtonClient": [
+    11,
+    139,
+    438,
+    22
+  ],
+  "actualNativeSurfaceBox": [
+    100,
+    250,
+    460,
+    300
+  ],
+  "actualClientExtent": [
+    460,
+    300
+  ],
+  "actualGlobalButtonBox": [
+    111,
+    389,
+    438,
+    22
+  ],
+  "chosenPointInsideActualButton": false,
+  "callbackCounts": [
+    0,
+    0
+  ],
+  "nativeHitAndPointerOwnerIdentityMatch": true,
+  "qtPressObserved": true,
+  "rootConclusion": "Baseline maps stale layout by scaling; actual button begins x111 while chosen point x110 is outside. Require current configured client/layout dimensions before targeting; retain campaign failure."
+}

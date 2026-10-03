@@ -1,0 +1,111 @@
+{
+  "updatedUTC": "2026-10-02T03:48:36.712439+00:00",
+  "result": "startup-failure-retained",
+  "reportSHA256": "00ffffe1f6cba9e3a0f84e132d25b856bc97e243d36f8b874d9b16b1bd83f8d2",
+  "manifestSHA256": "489706d93adee673b4b1849ef5d63f30851be9eb9b3a13c4e4dce4fd48991cd3",
+  "preservationChecks": {
+    "all42660FrozenBytesModesExact": true,
+    "all13770FrozenLinksExact": true,
+    "all18MainChecksPass": true,
+    "allActualRecordedLifetimesGone": true,
+    "privateRuntimeActuallyGone": true,
+    "noUnexpectedRemainingOrCleanupErrors": true,
+    "noBrowserFilesFlowEverStarted": true
+  },
+  "allPreservationChecks": true,
+  "actualOriginalOutputGate": {
+    "name": "only exact private1600x1000 scale1 output exists",
+    "passed": false,
+    "outputs": []
+  },
+  "ipcReadiness": [
+    {
+      "path": "/run/user/1000/wqa/51a5/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790912550_2127725002/.socket.sock",
+      "socket": {
+        "path": "/run/user/1000/wqa/51a5/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790912550_2127725002/.socket.sock",
+        "uid": 1000,
+        "device": 84,
+        "inode": 373460
+      },
+      "peer": {
+        "pid": 2582185,
+        "uid": 1000,
+        "gid": 1000
+      },
+      "request": "j/version",
+      "replyBytes": 714,
+      "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+      "completeServerEOF": true,
+      "version": {
+        "branch": "v0.56.2",
+        "commit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+        "version": "0.56.2",
+        "dirty": false,
+        "commit_message": "[gha] Nix: update inputs",
+        "commit_date": "Wed Aug 5 14:13:21 2026",
+        "tag": "v0.56.2",
+        "commits": "7661",
+        "buildAquamarine": "0.15.0",
+        "buildHyprlang": "0.6.8",
+        "buildHyprutils": "0.14.1",
+        "buildHyprcursor": "0.1.13",
+        "buildHyprgraphics": "0.5.1",
+        "systemAquamarine": "0.15.0",
+        "systemHyprlang": "0.6.8",
+        "systemHyprutils": "0.14.2",
+        "systemHyprcursor": "0.1.13",
+        "systemHyprgraphics": "0.5.1",
+        "abiHash": "efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6",
+        "flags": []
+      }
+    }
+  ],
+  "actualOutputConfigureSeen": false,
+  "originalParentTransportAcceptance": {
+    "passed": false,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": false,
+    "forbiddenDiagnostics": []
+  },
+  "fullOriginalTerminalAuditUnavailableBecauseFlowNeverStarted": true,
+  "original15FeatureChecksExecuted": 0,
+  "actualBrowserFilesAccepted": false,
+  "processes": [
+    {
+      "pid": 2581780,
+      "start": "13502088",
+      "gone": true
+    },
+    {
+      "pid": 2581786,
+      "start": "13502093",
+      "gone": true
+    },
+    {
+      "pid": 2582185,
+      "start": "13502287",
+      "gone": true
+    },
+    {
+      "pid": 2581780,
+      "start": "13502088",
+      "gone": true
+    },
+    {
+      "pid": 2581786,
+      "start": "13502093",
+      "gone": true
+    },
+    {
+      "pid": 2582185,
+      "start": "13502287",
+      "gone": true
+    }
+  ],
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-b272cf2cbece4286bfefae27bb9ac3d7.scope",
+    "coreLimit": 1
+  },
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_structural_navigation" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <link type="next" xref="howto_tables"/>
+    <title type="sort">3. Štrukturálna navigácia</title>
+    <desc>Presun podľa nadpisov a iných prvkov</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Štrukturálna navigácia</title>
+  <p>Funkcia Štrukturálna navigácia v <app>Orca</app> vám umožňuje navigovať medzi prvkami v dokumente. Medzi typy prvkov, podľa ktorých môžete navigovať, patria:</p>
+  <list>
+    <item><p>Nadpisy a iné textové bloky</p></item>
+    <item><p>Ovládacie prvky formulárov</p></item>
+    <item><p>Odkazy</p></item>
+    <item><p>Zoznamy a položky zoznamu</p></item>
+    <item><p>Orientačné body, oddeľovače a kotvy</p></item>
+    <item><p>Tabuľky a bunky tabuliek</p></item>
+  </list>
+  <p>Úplný zoznam jednotlivých prvkov a ich priradených klávesových skratiek nájdete v časti <link xref="commands_structural_navigation">Príkazy štrukturálnej navigácie</link>.</p>
+  <section id="applications">
+      <title>Podporované aplikácie</title>
+      <p>Aktuálne je Štrukturálna navigácia plne implementovaná pre webový obsah, vrátane pomocníka, ktorý práve čítaš. Podpora Štrukturálnej navigácie pre bunky tabuliek v aplikácii <app>Orca</app> je taktiež implementovaná v <app>OpenOffice Writer</app> a <app>LibreOffice Writer</app>. Implementácia zvyšných objektov Štrukturálnej navigácie v týchto kancelárskych balíkoch si však vyžaduje zmeny, ktoré musia vykonať ich vlastní vývojári. Podobné úsilie bude potrebné aj zo strany vývojárov aplikácie <app>Evince</app>, ak sa má Štrukturálna navigácia podporovať aj tam.</p>
+      <note style="tip">
+        <title>Nezabudnite zapnúť štrukturálnu navigáciu!</title>
+        <p>V závislosti od toho, kde sa nachádzate, môže byť potrebné pred použitím štrukturálnej navigácie ju výslovne zapnúť.</p>
+      </note>
+      <section id="toggling_required">
+        <title>Kedy je potrebné zapnúť štrukturálnu navigáciu</title>
+        <p>Na webových stránkach nie je zvyčajne potrebné explicitne zapínať štrukturálnu navigáciu, pretože vaša interakcia s dokumentom pozostáva väčšinou z čítania jeho obsahu. Preto niet pochýb o tom, či kláves 'H', ktorý ste práve stlačili, mal byť príkazom na písanie alebo navigačným príkazom.</p>
+        <p>Na druhej strane, v upraviteľných dokumentoch, ako sú tie v <app>OpenOffice</app> a <app>LibreOffice</app>, je pre <app>Orca</app> oveľa ťažšie presne predpovedať, čo očakávate, že sa stane po stlačení 'H'. Preto pred použitím akéhokoľvek príkazu štrukturálnej navigácie v upraviteľnom dokumente musíte najprv zapnúť štrukturálnu navigáciu stlačením <keyseq><key>Modifikátor Orca</key><key>Z</key></keyseq>. Keď dokončíte navigáciu a ste pripravení pokračovať v písaní, znova stlačte <keyseq><key>Modifikátor Orca</key><key>Z</key></keyseq>, aby ste štrukturálnu navigáciu vypnuli.</p>
+      </section>
+  </section>
+  <section id="settings">
+    <title>Dostupné nastavenia</title>
+    <p>Okrem vyššie uvedených príkazov má <app>Orca</app> množstvo konfigurovateľných možností dostupných špeciálne pre aplikácie, v ktorých existuje podpora štrukturálnej navigácie.</p>
+    <steps>
+      <title>Konfigurácia štrukturálnej navigácie</title>
+      <item>
+        <p>Zamerajte aplikáciu, pre ktorú má <app>Orca</app> podporu štrukturálnej navigácie.</p>
+      </item>
+      <item>
+        <p>Otvorte dialógové okno <link xref="preferences">Predvoľby Orca</link> pre aktuálnu aplikáciu stlačením <keyseq> <key>Ctrl</key><key>Modifikátor Orca</key><key>Medzerník</key> </keyseq>.</p>
+      </item>
+      <item>
+        <p>Prejdite na poslednú stránku dialógového okna, ktorá by mala byť pomenovaná podľa názvu vašej aktuálnej aplikácie.</p>
+      </item>
+      <item>
+        <p>Preskúmajte a zmeňte nastavenia podľa vlastného uváženia.</p>
+      </item>
+      <item>
+        <p>Stlačte tlačidlo <gui>OK</gui>.</p>
+      </item>
+    </steps>
+  </section>
+</page>

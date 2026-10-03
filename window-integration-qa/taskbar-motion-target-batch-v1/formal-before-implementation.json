@@ -1,0 +1,37 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/motion_targets.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  motion_targets\n    ok completeFamilyTest passed 1 test(s)\n    ok duplicateRefusedTest passed 1 test(s)\n    ok oversizedRefusedTest passed 1 test(s)\n    ok malformedRefusedTest passed 1 test(s)\n    ok missingMemberRefusedTest passed 1 test(s)\n    ok fabricatedTargetRefusedTest passed 1 test(s)\n    ok changedAllocationRefusedTest passed 1 test(s)\n    ok engineReloadRefusedTest passed 1 test(s)\n    ok staleMemberRefusedTest passed 1 test(s)\n    ok staleOutputRefusedTest passed 1 test(s)\n    ok noFakeBulkAccountingTest passed 1 test(s)\n    ok noOverrideAuthorityTest passed 1 test(s)\n\n  12 passing (704ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/motion_targets.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (2780ms at 719 traces/second).\nUse --seed=0x1415bfa --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/CONTRACT.md": "744e35e11107b779564b5ac3f30389698f0c760b2b13056417426b2afaceeb91",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/motion_targets.qnt": "1386a6729bb71e8c3c650917b37149b7a72649ee350fc053a3cf93dd5b9eaecb"
+  },
+  "sourceUnchanged": true,
+  "runtimeAbsent": true,
+  "nativeExecuted": false
+}

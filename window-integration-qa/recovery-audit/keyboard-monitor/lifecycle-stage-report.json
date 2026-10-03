@@ -1,0 +1,28 @@
+{
+  "kind": "frozen private v6 retirement/adoption/reader reconnect stage",
+  "mainDeployment": false,
+  "nativeLifecycleProved": false,
+  "formalTests": 6,
+  "formalSamples": 2000,
+  "formalSteps": 100,
+  "adapterControlFlowTests": 6,
+  "dependencies": {
+    "service_lifecycle.qnt": "ec601bb5f2d85a69daf835771913aa9b1dd8a25ab8aa0afc1d0df9e36825a10c",
+    "service_lifecycle_test.qnt": "353800412b487db636e684041ab64c7e953689de6d428b39de3c003e181c94c5",
+    "SERVICE_CONTRACT.md": "b83bc1abc925acc6ef6fea8384e142ca5f2351a0aa77b38da6a433c0d217f1db",
+    "reader_reconnect.py": "44104e35161517de9ad56e567f41badecfcdc5063cb0e2adfcf3c8176735712f",
+    "reader_reconnect_test.py": "d417218c8e7d390f67c4c24d20e21e467dfe217cfe63d38fa321deffe1168d35",
+    "reconnect_reader_entry.py": "f5d3de1a9d02302d17bbcbeafcbcae130629a02a14d904d648a0b0c18b8cdea6",
+    "native_probe_lifecycle.py": "1b8305e8053af47f74e298fcb4e44d6a7efbf4fe0ec1a07a8a404b7257ebab66",
+    "native-fixture/lifecycle_cases.py": "08ffb5fa082f98cd6b7e775a1ca94f8dca257ae4e7bee8e2f5654a0f2a320940",
+    "native-fixture/lifecycle_client.py": "e3ad765e3d2ff73cac4c11ab255ead581e373326fb8b477a1a7bcfab4a52ce43",
+    "native/plugin-v6.cpp": "c4c201f1572abaa9a6d1147c72b5d71ff7f6ac49b763a4c402b5b3dfc3823e6e",
+    "native/libkeyboard-monitor-private-v6.so": "362c13ceb091ecbf9ed824ebe767201d877f04316320a33658a05a39037189f9",
+    "native/key_policy.hpp": "4d6fa06baea24fdac69069a4ccfa02c62827359bc94f9027ff0bab4ac8c80983",
+    "native/xkb_helpers.hpp": "8e084f002f82d996ad44dc100f01ba9e33e763189ba6872890f722b60d96b895",
+    "native-fixture/native-input": "0da1f97985ff94579b7a52a9a344d0f72ce801147fc61ab9cf1a9e84145d4e48",
+    "native-fixture/native-input.c": "6f7c96842d2230a7100e2cdb79d49a42e54196c1f2bc5d1f623b737ed99e9791",
+    "LIFECYCLE_REVIEW.md": "0336a1212b86440a2e654b8f89f1a925c4758fd0a4ce82b9115adbc7dcb260b4",
+    "native/v5-to-v6.diff": "c13f3b1a06191f7d0b6af1c21d4bc068add95b2c6783a444e4e93420b3ccc59f"
+  }
+}

@@ -1,0 +1,94 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v3/Renderer.cpp
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v4/Renderer.cpp
+@@ -46,7 +46,7 @@
+         wl_surface* surface=nullptr;zwlr_layer_surface_v1* layer=nullptr;wp_viewport* viewport=nullptr;
+         wp_fractional_scale_v1* fractional=nullptr;wl_egl_window* window=nullptr;EGLSurface egl=EGL_NO_SURFACE;wl_callback* callback=nullptr;
+         int bufferWidth=0,bufferHeight=0;uint64_t outstanding=0;
+-        Rect from;bool endpointPresented=false;
++        Rect from;bool endpointPresented=false,clearCommitted=false;
+     };
+     struct Feedback {Renderer* owner;Output* output;uint64_t generation;Frame frame;struct wp_presentation_feedback* proxy;bool sync=false,mismatch=false;};
+     wl_display* display=nullptr;wl_registry* registry=nullptr;wl_compositor* compositor=nullptr;
+@@ -60,7 +60,7 @@
+     QJsonObject waitingRetarget;std::vector<Output*> required;
+     uint64_t startedNs=0,durationNs=400000000;bool running=false,readySent=false,endpointSent=false,quit=false,announced=false,surfacesEnabled=true,swapping=false;
+     std::string deferredCancel;uint64_t routeAcceptedNs=0,endpointHeldNs=0;
+-    size_t uploadCount=0;bool backendSupported=false;QByteArray input;
++    size_t uploadCount=0,transparentCommitCount=0;bool backendSupported=false;QByteArray input;
+     static GLuint compile(GLenum type,const char* source){GLuint s=glCreateShader(type);glShaderSource(s,1,&source,nullptr);glCompileShader(s);GLint ok=0;glGetShaderiv(s,GL_COMPILE_STATUS,&ok);if(!ok){glDeleteShader(s);throw std::runtime_error("GPU shader compilation failed");}return s;}
+     void initializeEGL(){
+         eglDisplay=eglGetPlatformDisplay(EGL_PLATFORM_WAYLAND_KHR,display,nullptr);
+@@ -82,8 +82,9 @@
+         const auto vendor=safe(eglQueryString(eglDisplay,EGL_VENDOR));
+         const auto renderer=safe(reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
+         const auto version=safe(reinterpret_cast<const char*>(glGetString(GL_VERSION)));
+-        const bool material=reviewedInstalledMesaMaterial();
+-        emitEvent({{"event","backendObserved"},{"eglVendor",qs(vendor)},{"renderer",qs(renderer)},{"version",qs(version)},{"eglVersion",qs(safe(eglQueryString(eglDisplay,EGL_VERSION)))},{"nativeAuthority",false},{"reviewed",reviewedGPUBackend(vendor,version,renderer) && material},{"mappedMaterialMatches",material}});
++        const auto proofs=installedMesaMaterialProofs();QJsonArray materials;bool material=true;
++        for(const auto& proof:proofs){materials.append(proof.json());material=material&&proof.matches;}
++        emitEvent({{"event","backendObserved"},{"eglVendor",qs(vendor)},{"renderer",qs(renderer)},{"version",qs(version)},{"eglVersion",qs(safe(eglQueryString(eglDisplay,EGL_VERSION)))},{"nativeAuthority",false},{"reviewed",reviewedGPUBackend(vendor,version,renderer) && material},{"mappedMaterialMatches",material},{"materials",materials}});
+         if(!reviewedGPUBackend(vendor,version,renderer)||!material)throw std::runtime_error("unreviewed EGL commit backend; no route authority");
+         backendSupported=true;
+         emitEvent({{"event","gpu"},{"eglVendor",qs(vendor)},{"renderer",qs(renderer)},{"version",reinterpret_cast<const char*>(glGetString(GL_VERSION))}});
+@@ -99,7 +100,7 @@
+         if(o.viewport){wp_viewport_destroy(o.viewport);o.viewport=nullptr;}
+         if(o.layer){zwlr_layer_surface_v1_destroy(o.layer);o.layer=nullptr;}
+         if(o.surface){wl_surface_destroy(o.surface);o.surface=nullptr;}
+-        o.configured=false;
++        o.configured=false;o.clearCommitted=false;
+     }
+     void cancel(const std::string& reason){
+         const bool was=ledger.isActive()||!required.empty();auto token=waitingRetarget.isEmpty()?ledger.token():waitingRetarget["token"].toString().toStdString();ledger.cancel();running=false;waitingRetarget={};
+@@ -110,7 +111,7 @@
+         if(was)emitEvent({{"event","cancelled"},{"token",qs(token)},{"reason",qs(reason)},{"nativeAuthority",false}});
+     }
+     void changed(Output& o){
+-        o.generation=++generationSerial;
++        o.generation=++generationSerial;o.clearCommitted=false;
+         if(ledger.isActive())cancel("output generation changed");
+         announced=false;
+     }
+@@ -186,11 +187,15 @@
+         auto i=feedbacks.find(number);if(i!=feedbacks.end()){wp_presentation_feedback_destroy(i->second->proxy);feedbacks.erase(i);}
+         notifyAuthority();
+     }
++    bool needsDraw(const Output& o)const{
++        if(!o.alive||!o.configured||!o.frameReady||o.outstanding||o.endpointPresented)return false;
++        return !o.clearCommitted||(ledger.isActive()&&std::find(required.begin(),required.end(),&o)!=required.end());
++    }
+     void draw(Output& o,double p){
+-        if(!o.alive||!o.configured||!o.frameReady||o.outstanding||o.endpointPresented)return;
++        if(!needsDraw(o))return;
++        const bool active=ledger.isActive()&&std::find(required.begin(),required.end(),&o)!=required.end();
+         if(!makeCurrent(o)){cancel("eglMakeCurrent failed");return;}
+         glViewport(0,0,o.bufferWidth,o.bufferHeight);glDisable(GL_SCISSOR_TEST);glClearColor(0,0,0,0);glClear(GL_COLOR_BUFFER_BIT);
+-        const bool active=ledger.isActive()&&std::find(required.begin(),required.end(),&o)!=required.end();
+         Rect rect=o.from;
+         if(active){
+             rect=interpolate(o.from,target,p);const GLfloat left=2*(rect.x-o.x)/o.width-1,right=2*(rect.x+rect.width-o.x)/o.width-1;
+@@ -225,6 +230,7 @@
+             emitEvent({{"event","swap"},{"success",success},{"token",qs(submittedScene->token)},{"digest",qs(submittedScene->digest)},{"stableId",qs(submittedScene->identity.stable)},{"pid",double(submittedScene->identity.pid)},{"output",qs(submittedScene->output)},{"generation",double(submittedScene->generation)},{"sequence",QString::number(number)},{"rectangle",rectangleJson(submittedScene->rectangle)},{"progress",submittedScene->progress},{"uploadCount",int(uploadCount)}});
+         }
+         if(!success){cancel("eglSwapBuffers failed; authority retired");return;}
++        if(!active){o.clearCommitted=true;++transparentCommitCount;}
+         notifyAuthority();
+     }
+     void applyRetarget(){
+@@ -241,7 +247,7 @@
+         auto kind=j["command"].toString();
+         if(kind=="state"){
+             QJsonArray records;for(const auto& p:ledger.records()){const auto& f=p.frame;records.append(QJsonObject{{"token",qs(f.token)},{"stableId",qs(f.identity.stable)},{"pid",double(f.identity.pid)},{"digest",qs(f.digest)},{"output",qs(f.output)},{"generation",double(f.generation)},{"sequence",QString::number(f.sequence)},{"submittedNs",QString::number(f.submittedNs)},{"timestampNs",QString::number(p.timestampNs)},{"outputSequence",QString::number(p.compositorSequence)},{"rectangle",rectangleJson(f.rectangle)},{"progress",f.progress},{"endpoint",f.endpoint}});}
+-            emitEvent({{"event","state"},{"active",ledger.isActive()},{"token",qs(ledger.token())},{"nativeReady",ledger.nativeReady()},{"nativeEndpoint",ledger.nativeEndpoint()},{"pending",int(ledger.pendingCount())},{"uploadCount",int(uploadCount)},{"records",records}});return;
++            emitEvent({{"event","state"},{"observationId",j["observationId"]},{"transparentCommitCount",int(transparentCommitCount)},{"active",ledger.isActive()},{"token",qs(ledger.token())},{"nativeReady",ledger.nativeReady()},{"nativeEndpoint",ledger.nativeEndpoint()},{"pending",int(ledger.pendingCount())},{"uploadCount",int(uploadCount)},{"records",records}});return;
+         }
+         if(kind=="prepareOutputs"){if(ledger.isActive())throw std::invalid_argument("route already active");surfacesEnabled=true;announced=false;return;}
+         if(kind=="stop"){cancel("renderer shutdown");quit=true;return;}
+@@ -351,7 +357,7 @@
+             if(ledger.isActive()&&((!running&&now-routeAcceptedNs>2000000000ULL)||(endpointHeldNs&&now-endpointHeldNs>2000000000ULL)))cancel("controller handshake deadline expired");
+             while(wl_display_prepare_read(display)!=0)if(wl_display_dispatch_pending(display)<0)throw std::runtime_error("owned pending dispatch failed");
+             if(wl_display_flush(display)<0&&errno!=EAGAIN)throw std::runtime_error("owned display flush failed");
+-            pollfd fds[]={{wl_display_get_fd(display),POLLIN,0},{STDIN_FILENO,POLLIN,0}};int count=poll(fds,2,20);if(count<0&&errno!=EINTR)throw std::runtime_error("owned display poll failed");
++            pollfd fds[]={{wl_display_get_fd(display),POLLIN,0},{STDIN_FILENO,POLLIN,0}};int count=poll(fds,2,ledger.isActive()?20:1000);if(count<0&&errno!=EINTR)throw std::runtime_error("owned display poll failed");
+             if(fds[0].revents&POLLIN){if(wl_display_read_events(display)<0)throw std::runtime_error("owned display read failed");}else wl_display_cancel_read(display);
+             if(fds[0].revents&(POLLHUP|POLLERR))throw std::runtime_error("owned display disconnected");
+             if(wl_display_dispatch_pending(display)<0)throw std::runtime_error("owned display callback failed");

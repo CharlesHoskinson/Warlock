@@ -1,0 +1,243 @@
+{
+  "scope": "Isolated copied Files on native Wayland; Wayland virtual-keyboard Qt keyboard plus actual Orca focus/navigation/press actions; silent speech log",
+  "checks": [
+    {
+      "name": "native minimum330x320",
+      "passed": true
+    },
+    {
+      "name": "real Orca native Wayland loop ready",
+      "passed": true
+    },
+    {
+      "name": "Orca recognizes actual named Home button",
+      "passed": true
+    },
+    {
+      "name": "virtual-keyboard Tab produces actual Orca button focus",
+      "passed": true,
+      "readerState": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Show hidden files",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+          "app": "quickshell",
+          "text": null,
+          "object_path": "/org/a11y/atspi/accessible/2147483674",
+          "app_bus": ":1.156"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "text": null,
+          "object_path": "/org/a11y/atspi/accessible/2147483898",
+          "app_bus": ":1.156"
+        },
+        "navigator": null
+      }
+    },
+    {
+      "name": "virtual-keyboard Return activates existing View",
+      "passed": true
+    },
+    {
+      "name": "virtual-keyboard arrow moves real file row reader focus",
+      "passed": true
+    },
+    {
+      "name": "virtual-keyboard next file arrow retains named reader focus",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "physicalHardwareProved": false,
+  "inputSource": "wtype Wayland virtual-keyboard protocol, routed through the compositor to the copied Qt window",
+  "fixtureIdentity": [
+    "0x5a02aef99790",
+    "180003f2",
+    3571645
+  ],
+  "focusTrace": [
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Home",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "text": null,
+        "object_path": "/org/a11y/atspi/accessible/2147483653",
+        "app_bus": ":1.156"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "text": null,
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.156"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Show list",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "text": null,
+        "object_path": "/org/a11y/atspi/accessible/2147483665",
+        "app_bus": ":1.156"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "text": null,
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.156"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "subfolder",
+        "role": "list item",
+        "identity": "QGuiApplication.ProxiedWindow.FileArea.row",
+        "app": "quickshell",
+        "text": null,
+        "object_path": "/org/a11y/atspi/accessible/2147483964",
+        "app_bus": ":1.156"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "text": null,
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.156"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "alpha-long-file-name-to-test-eliding.txt",
+        "role": "list item",
+        "identity": "QGuiApplication.ProxiedWindow.FileArea.row",
+        "app": "quickshell",
+        "text": null,
+        "object_path": "/org/a11y/atspi/accessible/2147483966",
+        "app_bus": ":1.156"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "text": null,
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.156"
+      },
+      "navigator": null
+    }
+  ],
+  "error": "AssertionError('Orca focus Rename')",
+  "fixtureCleanup": [
+    {
+      "name": "reader",
+      "pid": 3571785,
+      "ownNewSession": true,
+      "forcedKill": false,
+      "exitCode": 0,
+      "exited": true
+    },
+    {
+      "name": "copiedFiles",
+      "pid": 3571645,
+      "ownNewSession": true,
+      "forcedKill": false,
+      "exitCode": -15,
+      "exited": true
+    }
+  ],
+  "preservation": {
+    "originalCanonicalClients": false,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "allFourCatalogBytes": true,
+    "originalFullUiState": true,
+    "sharedReaderProfileBytes": true,
+    "originalProcessStart": true,
+    "clipboardAndPrimaryRawAndMimeHashes": true,
+    "catalogBytes": true,
+    "dashboardBytes": true,
+    "originalExplorerPublicState": true,
+    "originalExplorerPID": true,
+    "originalExplorerHidden": true,
+    "a11yFlags": true,
+    "a11ySocketConnectivity": true,
+    "readerEnabledProperty": true,
+    "originalOutputs": true,
+    "originalPlugins": true,
+    "originalKeyboardStates": true,
+    "frozenDependencies": true,
+    "fixturesNormalShutdown": true,
+    "fixturesExited": true,
+    "responsiveManifestBytes": true
+  },
+  "catalogImmediatelyAfterCleanup": {
+    "virtual-desktops.json": {
+      "exactBytes": true,
+      "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0"
+    },
+    "taskbar-settings.json": {
+      "exactBytes": true,
+      "expectedSHA256": null,
+      "actualSHA256": null
+    },
+    "taskbar-order.json": {
+      "exactBytes": true,
+      "expectedSHA256": null,
+      "actualSHA256": null
+    },
+    "taskbar-session-order.json": {
+      "exactBytes": true,
+      "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    }
+  },
+  "catalogNaturalSettling": {
+    "/home/hoskinson/.config/omarchy/virtual-desktops.json": {
+      "exactBytes": true,
+      "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0"
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-settings.json": {
+      "exactBytes": true,
+      "expectedSHA256": null,
+      "actualSHA256": null
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-order.json": {
+      "exactBytes": true,
+      "expectedSHA256": null,
+      "actualSHA256": null
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-session-order.json": {
+      "exactBytes": true,
+      "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    }
+  },
+  "result": "fail"
+}

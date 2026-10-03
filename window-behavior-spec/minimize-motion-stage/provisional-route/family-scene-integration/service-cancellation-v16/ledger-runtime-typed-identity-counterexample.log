@@ -1,0 +1,15 @@
+test_boolean_actor_in_journal_cannot_alias_typed_actor (test_actor_ledger.ActorLedgerKernelTests.test_boolean_actor_in_journal_cannot_alias_typed_actor) ... FAIL
+
+======================================================================
+FAIL: test_boolean_actor_in_journal_cannot_alias_typed_actor (test_actor_ledger.ActorLedgerKernelTests.test_boolean_actor_in_journal_cannot_alias_typed_actor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-cancellation-v16/runtime/test_actor_ledger.py", line 242, in test_boolean_actor_in_journal_cannot_alias_typed_actor
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.214s
+
+FAILED (failures=1)

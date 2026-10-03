@@ -1,0 +1,207 @@
+#!/usr/bin/env python3
+"""Receive Linux LauncherEntry badges/progress; forget disconnected publishers."""
+import fcntl
+import json
+import math
+import os
+from pathlib import Path
+import re
+import tempfile
+
+from gi.repository import Gio, GLib
+
+RUNTIME = Path(os.getenv('XDG_RUNTIME_DIR', str(Path.home() / '.cache')))
+STATE = RUNTIME / 'hypr-taskbar-launcher.json'
+APP_URI = re.compile(r'^application://([A-Za-z0-9_.+-]+)\.desktop$')
+OBJECT_PATH = re.compile(r'^/(?:[A-Za-z0-9_]+(?:/[A-Za-z0-9_]+)*)?$')
+BOOLS = {'count-visible', 'progress-visible', 'urgent', 'updating'}
+DEFAULT = {'count': 0, 'count-visible': False, 'progress': 0.0,
+           'progress-visible': False, 'urgent': False, 'updating': False,
+           'quicklist': '', 'quicklistItems': []}
+
+
+class Entries:
+    def __init__(self):
+        self.publishers = {}
+        self.serial = 0
+
+    def update(self, sender, uri, properties):
+        match = APP_URI.fullmatch(uri) if isinstance(uri, str) else None
+        if not match or not isinstance(properties, dict) or not sender.startswith(':'):
+            return False
+        values = {}
+        for key, value in properties.items():
+            if key in BOOLS and type(value) is bool:
+                values[key] = value
+            elif key == 'count' and type(value) is int:
+                values[key] = max(0, min(value, 2**63 - 1))
+            elif key == 'progress' and type(value) in (int, float) and math.isfinite(value):
+                values[key] = max(0.0, min(float(value), 1.0))
+            elif key == 'quicklist' and isinstance(value, str) and (not value or OBJECT_PATH.fullmatch(value)):
+                values[key] = value
+        if not values:
+            return False
+        app = match.group(1)
+        previous = self.publishers.get((sender, app), {})
+        merged = dict(previous.get('properties', DEFAULT), **values)
+        if 'quicklist' in values and values['quicklist'] != previous.get('properties', {}).get('quicklist'):
+            merged['quicklistItems'] = []
+        if previous.get('properties') == merged:
+            return False
+        self.serial += 1
+        if previous:
+            previous.update(serial=self.serial, properties=merged)
+        else:
+            self.publishers[sender, app] = {'serial': self.serial, 'properties': merged}
+        return True
+
+    def disconnect(self, sender):
+        keys = [key for key in self.publishers if key[0] == sender]
+        for key in keys:
+            del self.publishers[key]
+        return bool(keys)
+
+    def snapshot(self):
+        selected = {}
+        for (sender, app), entry in self.publishers.items():
+            if app not in selected or selected[app]['serial'] < entry['serial']:
+                selected[app] = dict(entry, sender=sender)
+        return {app: dict(entry['properties'], sender=entry['sender']) for app, entry in selected.items()}
+
+
+def menu_items(layout):
+    """Keep submenu context and visibility/enabled semantics for app actions."""
+    result = []
+    def visit(node, prefix='', ancestor_enabled=True, root=False):
+        identifier, props, children = node
+        if not props.get('visible', True):
+            return
+        enabled = ancestor_enabled and props.get('enabled', True)
+        label = str(props.get('label', '')).replace('__', '\0').replace('_', '').replace('\0', '_')
+        title = prefix + label
+        if not root and label and not children and props.get('type') != 'separator':
+            result.append({'id': identifier, 'label': ('✓ ' if props.get('toggle-state') == 1 else '') + title,
+                           'enabled': bool(enabled)})
+        for child in children:
+            visit(child, title + ' › ' if not root and label else prefix, enabled)
+    visit(layout, root=True)
+    return result
+
+
+class Quicklists:
+    def __init__(self, connection, entries):
+        self.connection, self.entries = connection, entries
+        self.pending = {}
+        self.dirty = set()
+
+    def show(self, app):
+        entry = self.entries.snapshot().get(app, {})
+        if not entry.get('quicklist'):
+            return
+        sender, path = entry['sender'], entry['quicklist']
+        def ready(connection, result, user_data):
+            try:
+                connection.call_finish(result)
+            except GLib.Error:
+                pass
+            self.refresh(sender, app)
+        self.connection.call(sender, path, 'com.canonical.dbusmenu', 'AboutToShow',
+                             GLib.Variant('(i)', (0,)), None,
+                             Gio.DBusCallFlags.NONE, 3000, None, ready, None)
+
+    def refresh(self, sender, app):
+        key = (sender, app)
+        entry = self.entries.publishers.get(key)
+        path = entry['properties'].get('quicklist', '') if entry else ''
+        if not path:
+            return
+        if key in self.pending:
+            self.dirty.add(key)
+            return
+        # Record the exact publication, so a reply from a disconnected sender
+        # or a replaced menu path cannot recreate stale menu entries.
+        self.pending[key] = (path, entry)
+        def ready(connection, result, user_data):
+            target, original = self.pending.pop(key)
+            try:
+                reply = connection.call_finish(result)
+                current = self.entries.publishers.get(key)
+                if current is original and current['properties'].get('quicklist') == target:
+                    _, layout = reply.unpack()
+                    current['properties']['quicklistItems'] = menu_items(layout)
+                    save(self.entries)
+            except (GLib.Error, ValueError, TypeError):
+                pass
+            if key in self.dirty:
+                self.dirty.remove(key)
+                self.refresh(sender, app)
+        self.connection.call(sender, path, 'com.canonical.dbusmenu', 'GetLayout',
+                             GLib.Variant('(iias)', (0, -1, [])), GLib.VariantType('(u(ia{sv}av))'),
+                             Gio.DBusCallFlags.NONE, 3000, None, ready, None)
+
+
+def save(entries):
+    fd, temporary = tempfile.mkstemp(prefix='.hypr-taskbar-launcher.', dir=RUNTIME)
+    try:
+        with os.fdopen(fd, 'w') as out:
+            json.dump(entries.snapshot(), out, allow_nan=False)
+        os.replace(temporary, STATE)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+
+
+def run():
+    RUNTIME.mkdir(parents=True, exist_ok=True)
+    with (RUNTIME / '.hypr-taskbar-launcher.lock').open('a') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        entries = Entries()
+        save(entries)
+        connection = Gio.bus_get_sync(Gio.BusType.SESSION, None)
+        quicklists = Quicklists(connection, entries)
+
+        def update(bus, sender, path, interface, signal, parameters, user_data):
+            if parameters.get_type_string() == '(sa{sv})':
+                uri, properties = parameters.unpack()
+                if entries.update(sender, uri, properties):
+                    save(entries)
+                match = APP_URI.fullmatch(uri)
+                if match and 'quicklist' in properties:
+                    quicklists.refresh(sender, match.group(1))
+
+        def owner_changed(bus, sender, path, interface, signal, parameters, user_data):
+            name, old, new = parameters.unpack()
+            if name.startswith(':') and old and not new and entries.disconnect(name):
+                save(entries)
+
+        def menu_changed(bus, sender, path, interface, signal, parameters, user_data):
+            for (owner, app), entry in list(entries.publishers.items()):
+                if owner == sender and entry['properties'].get('quicklist') == path:
+                    quicklists.refresh(sender, app)
+
+        connection.signal_subscribe(None, 'com.canonical.Unity.LauncherEntry', 'Update',
+                                    None, None, Gio.DBusSignalFlags.NONE, update, None)
+        connection.signal_subscribe('org.freedesktop.DBus', 'org.freedesktop.DBus',
+                                    'NameOwnerChanged', '/org/freedesktop/DBus', None,
+                                    Gio.DBusSignalFlags.NONE, owner_changed, None)
+        for signal in ('LayoutUpdated', 'ItemsPropertiesUpdated'):
+            connection.signal_subscribe(None, 'com.canonical.dbusmenu', signal, None,
+                                        None, Gio.DBusSignalFlags.NONE, menu_changed, None)
+        def taskbar_method(bus, sender, path, interface, method, parameters, invocation):
+            quicklists.show(parameters.unpack()[0])
+            invocation.return_value(GLib.Variant('()', ()))
+        info = Gio.DBusNodeInfo.new_for_xml('<node><interface name="org.omarchy.Taskbar">'
+                '<method name="QuicklistShow"><arg type="s" direction="in"/></method>'
+                '</interface></node>')
+        connection.register_object('/org/omarchy/Taskbar', info.interfaces[0], taskbar_method, None, None)
+        Gio.bus_own_name_on_connection(connection, 'org.omarchy.Taskbar',
+                                      Gio.BusNameOwnerFlags.DO_NOT_QUEUE, None, None)
+        # Acquiring the well-known name asks libunity applications to republish
+        # their current properties. Never replace another shell owning it.
+        Gio.bus_own_name_on_connection(connection, 'com.canonical.Unity',
+                                      Gio.BusNameOwnerFlags.DO_NOT_QUEUE, None, None)
+        GLib.MainLoop().run()
+
+
+if __name__ == '__main__':
+    run()

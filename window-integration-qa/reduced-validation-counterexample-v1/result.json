@@ -1,0 +1,133 @@
+{
+  "scope": "Unmodified staged SceneManager/ManagedController/SceneController with inherited deterministic Desktop/Transport CPU fixtures; no compositor/native/real user command execution",
+  "sourceHashes": {
+    "scene_manager.py": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+    "scene_controller.py": "459135eec7abd238b9366c775cec39df72d75312b6a2ef6850cb1fdf655a7ba5",
+    "test_scene_controller.py": "22e97f7440ca476eb659f3e329e8123e6ab69c9f8edc913326c07f2895456bd6",
+    "direction.py": "486f57b77d0d34fa8ef23f7906a4c8728c614beba6ebe4c267afe8e623c20c35"
+  },
+  "observations": [
+    {
+      "phase": "accepted-and-validation-blocked",
+      "reply": {
+        "ok": true,
+        "accepted": true,
+        "token": "2b1ec259e0f0-1",
+        "completed": false,
+        "receipt": 1,
+        "actor": 1,
+        "contextPending": false
+      },
+      "token": "2b1ec259e0f0-1",
+      "validated": false,
+      "contextPending": false,
+      "commits": []
+    },
+    {
+      "phase": "reduction-watchdog",
+      "currentNone": true,
+      "historyTokens": [
+        "2b1ec259e0f0-1"
+      ],
+      "commits": [],
+      "sent": [],
+      "profile": {
+        "receivedNs": 118475725465101,
+        "reservedNs": 118475725465181,
+        "ingressCommand": "minimize",
+        "contextPending": false,
+        "managerReceipt": 1,
+        "metadataStartNs": 118475725749059,
+        "cleanupQueuedNs": 118475725854543,
+        "settlementReason": "reduced during motion",
+        "cleanupAckNs": 118475725857952
+      }
+    },
+    {
+      "phase": "validation-worker-finished",
+      "currentNone": true,
+      "commits": [],
+      "sent": [],
+      "nativeFixtureWindows": [
+        {
+          "address": "0xaa01",
+          "stableId": "aa01",
+          "pid": 41,
+          "at": [
+            100,
+            100
+          ],
+          "size": [
+            300,
+            200
+          ],
+          "mapped": true,
+          "pinned": true,
+          "workspace": {
+            "name": "1"
+          }
+        },
+        {
+          "address": "0xbb02",
+          "stableId": "bb02",
+          "pid": 42,
+          "at": [
+            150,
+            150
+          ],
+          "size": [
+            250,
+            160
+          ],
+          "mapped": true,
+          "pinned": false,
+          "workspace": {
+            "name": "1"
+          }
+        },
+        {
+          "address": "0xcc03",
+          "stableId": "cc03",
+          "pid": 43,
+          "at": [
+            200,
+            200
+          ],
+          "size": [
+            200,
+            120
+          ],
+          "mapped": true,
+          "pinned": false,
+          "workspace": {
+            "name": "1"
+          }
+        }
+      ],
+      "ingressHistory": [
+        {
+          "receipt": 1,
+          "actor": 1,
+          "identity": [
+            "0xaa01",
+            "aa01",
+            41
+          ],
+          "receivedNs": 118475725456226,
+          "finishedNs": 118475725835239,
+          "token": "2b1ec259e0f0-1",
+          "activated": true
+        }
+      ]
+    }
+  ],
+  "acceptedReceipt": true,
+  "validationBeforeReduction": false,
+  "requestRetiredBeforeValidation": true,
+  "lateWorkerCannotComplete": true,
+  "fixtureNativeStateUnchanged": true,
+  "actualNativeWrites": false,
+  "actualGuiModified": false,
+  "counterexampleEstablished": true,
+  "physicalReducedMotionAccepted": false
+}

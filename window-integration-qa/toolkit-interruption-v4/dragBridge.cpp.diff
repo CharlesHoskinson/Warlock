@@ -1,0 +1,50 @@
+--- window-integration-qa/toolkit-interruption-v3/native-candidate/dragBridge.cpp
++++ window-integration-qa/toolkit-interruption-v4/native-candidate/dragBridge.cpp
+@@ -9,6 +9,7 @@
+ #include <hyprland/src/desktop/view/Group.hpp>
+ #include <hyprland/src/helpers/MiscFunctions.hpp>
+ #include <hyprland/src/config/lua/ConfigManager.hpp>
++#include <hyprland/src/config/lua/objects/LuaWindow.hpp>
+ #include <hyprland/src/layout/supplementary/DragController.hpp>
+ #include <hyprland/src/layout/LayoutManager.hpp>
+ #include <hyprland/src/managers/eventLoop/EventLoopManager.hpp>
+@@ -316,6 +317,39 @@
+     return 2;
+ }
+ 
++int luaWindowLifetime(lua_State* state) {
++    // Use the public native Lua wrapper/equality, never its userdata layout.
++    // Close emits before mapped is cleared; do not recover by string address.
++    if (lua_gettop(state) != 1 || lua_type(state, 1) != LUA_TUSERDATA || !lua_getmetatable(state, 1)) {
++        lua_pushnil(state); return 1;
++    }
++    const int suppliedMetatable = lua_gettop(state);
++    for (const auto& owner : Desktop::windowState()->windows()) {
++        if (!owner)
++            continue;
++        Config::Lua::Objects::CLuaWindow::push(state, owner);
++        const int candidate = lua_gettop(state);
++        if (!lua_getmetatable(state, candidate)) {
++            lua_pop(state, 1);
++            continue;
++        }
++        const bool nativeMetatable = lua_rawequal(state, suppliedMetatable, -1);
++        lua_pop(state, 1);
++        const bool exactNativeObject = nativeMetatable && lua_compare(state, 1, candidate, LUA_OPEQ);
++        lua_pop(state, 1);
++        if (!exactNativeObject)
++            continue;
++        const auto address = std::format("0x{:x}", reinterpret_cast<uintptr_t>(owner.get()));
++        const auto stableID = std::format("{:x}", owner->m_stableID);
++        lua_pushlstring(state, address.data(), address.size());
++        lua_pushlstring(state, stableID.data(), stableID.size());
++        lua_pushinteger(state, owner->getPID());
++        return 3;
++    }
++    lua_pushnil(state);
++    return 1;
++}
++
+ int luaFileDragActive(lua_State* state) {
+     // Public compositor state only; no payload or clipboard access.
+     lua_pushboolean(state, PROTO::data && PROTO::data->dndActive());

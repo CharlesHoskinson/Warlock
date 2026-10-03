@@ -1,0 +1,47 @@
+test_actual_private_journal_and_owned_capture_settle_complete_family (test_recovery_runtime.RecoveryTests.test_actual_private_journal_and_owned_capture_settle_complete_family) ... ok
+test_captured_known_focus_is_retained_when_pending_overlays_same_receipt (test_recovery_runtime.RecoveryTests.test_captured_known_focus_is_retained_when_pending_overlays_same_receipt) ... FAIL
+test_completed_callback_is_idempotent (test_recovery_runtime.RecoveryTests.test_completed_callback_is_idempotent) ... ok
+test_crash_after_member_write_keeps_original_toggle_resolution (test_recovery_runtime.RecoveryTests.test_crash_after_member_write_keeps_original_toggle_resolution) ... ok
+test_duplicate_fresh_clients_quarantine_without_native_effect (test_recovery_runtime.RecoveryTests.test_duplicate_fresh_clients_quarantine_without_native_effect) ... ok
+test_each_fresh_member_must_have_latest_exact_owner (test_recovery_runtime.RecoveryTests.test_each_fresh_member_must_have_latest_exact_owner) ... ok
+test_fresh_reused_member_cannot_receive_old_endpoint (test_recovery_runtime.RecoveryTests.test_fresh_reused_member_cannot_receive_old_endpoint) ... ok
+test_malformed_unrelated_anchor_refuses_before_resource_or_journal_change (test_recovery_runtime.RecoveryTests.test_malformed_unrelated_anchor_refuses_before_resource_or_journal_change) ... ok
+test_mid_settlement_family_change_preserves_first_result_and_refuses_rest (test_recovery_runtime.RecoveryTests.test_mid_settlement_family_change_preserves_first_result_and_refuses_rest) ... ok
+test_missing_actual_lease_binding_refuses_before_old_resource_mutation (test_recovery_runtime.RecoveryTests.test_missing_actual_lease_binding_refuses_before_old_resource_mutation) ... ok
+test_missing_helper_ownership_refuses_before_source_disposal (test_recovery_runtime.RecoveryTests.test_missing_helper_ownership_refuses_before_source_disposal) ... ok
+test_old_keeper_nonce_swap_refuses_before_disposal (test_recovery_runtime.RecoveryTests.test_old_keeper_nonce_swap_refuses_before_disposal) ... ok
+test_output_change_during_observation_quarantines_endpoint (test_recovery_runtime.RecoveryTests.test_output_change_during_observation_quarantines_endpoint) ... FAIL
+test_prepared_endpoint_swap_refuses_before_native_resume (test_recovery_runtime.RecoveryTests.test_prepared_endpoint_swap_refuses_before_native_resume) ... ok
+test_unfinished_native_export_refuses_even_with_empty_old_groups (test_recovery_runtime.RecoveryTests.test_unfinished_native_export_refuses_even_with_empty_old_groups) ... ok
+test_unknown_actor_material_preserves_all_files_and_pending (test_recovery_runtime.RecoveryTests.test_unknown_actor_material_preserves_all_files_and_pending) ... ok
+
+======================================================================
+FAIL: test_captured_known_focus_is_retained_when_pending_overlays_same_receipt (test_recovery_runtime.RecoveryTests.test_captured_known_focus_is_retained_when_pending_overlays_same_receipt)
+----------------------------------------------------------------------
+ValueError: cancellation requires actual bound RuntimeLease verification
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v15/test_recovery_runtime.py", line 137, in test_captured_known_focus_is_retained_when_pending_overlays_same_receipt
+    with self.assertRaisesRegex(ValueError,'captured recovery focus differs'):NativeRecovery(factory,store=store,desktop=d,lease_verify=lambda:None).recover(body)
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "captured recovery focus differs" does not match "cancellation requires actual bound RuntimeLease verification"
+
+======================================================================
+FAIL: test_output_change_during_observation_quarantines_endpoint (test_recovery_runtime.RecoveryTests.test_output_change_during_observation_quarantines_endpoint)
+----------------------------------------------------------------------
+ValueError: outputs changed during cancellation observation
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v15/test_recovery_runtime.py", line 117, in test_output_change_during_observation_quarantines_endpoint
+    with self.assertRaisesRegex(ValueError,'changed during recovery observation'):NativeRecovery(factory,store=store,desktop=d,lease_verify=lambda:None).recover(body)
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "changed during recovery observation" does not match "outputs changed during cancellation observation"
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.470s
+
+FAILED (failures=2)

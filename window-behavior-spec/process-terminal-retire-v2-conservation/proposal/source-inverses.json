@@ -1,0 +1,90 @@
+{
+  "result": "pass",
+  "checks": {
+    "RegistryFullInverseExact": true,
+    "Registry_arm_Exact": true,
+    "Registry_event_Exact": true,
+    "Registry_stable_Exact": true,
+    "Registry_state_Exact": true,
+    "Registry_cancel_Exact": true,
+    "Registry_lifecycle_Exact": true,
+    "Registry_terminalInventory_Exact": true,
+    "NativeProcessFullInverseExact": true,
+    "ProviderFullInverseExact": true,
+    "NativeHeaderInverseExact": true,
+    "ProviderHeaderInverseExact": true,
+    "RegistryHeaderInverseExact": true,
+    "QmlFullInverseExact": true,
+    "KnownV7AndFrontendBaselineExact": true,
+    "PolicyFileNotProposedForModification": true,
+    "NoUnapprovedPrivateRegistryCall": true
+  },
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/NativeProcess.cpp": {
+      "sha256": "16b02f7b8857bb7cf09f8340be29e7fe01f695a0900ddcdcffb2cf8027a25eb0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v2-conservation/proposal/desired/NativeProcess.cpp": {
+      "sha256": "472354b6352558e972f6670db476cf95e08a038521c23c6b0e73f53b4a425bd0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/NativeProcess.hpp": {
+      "sha256": "2da0e35ac047c02819127cbd9e65dc6b90d9103d7664c9c933da43150f7d371f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v2-conservation/proposal/desired/NativeProcess.hpp": {
+      "sha256": "ce07661dd4ad34d103304c1e14a26434d28bb5bafb1bc1e3b8e6b0f6bcc3cb5e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/frontend/widget_v66/PinWindowMenu.qml": {
+      "sha256": "c4816d46872f03035f8c8ba81c43f75c294de09e26e446db64afd50c1fa79345",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v2-conservation/proposal/desired/PinWindowMenu.qml": {
+      "sha256": "e39d8ac4ecf56d16325133a3078d230b1e88833bfbf9b34851054eca760ddf52",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/ProcessRegistry.cpp": {
+      "sha256": "0f6a28664b47bf0c9912034d8034ea941e62054191f9c9d095638367f7d4bb45",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v2-conservation/proposal/desired/ProcessRegistry.cpp": {
+      "sha256": "4cd20d109a6b5d51a0deba9b57ab46f3a87ecb82f364226e19745f734103ce69",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/ProcessRegistry.hpp": {
+      "sha256": "e7fe4e42d452d777e16a658616e990c0eab837d4ac2029c28b901628f1b7d6f0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v2-conservation/proposal/desired/ProcessRegistry.hpp": {
+      "sha256": "e807c919256192c5974087d1277ad7b6846297a13024d9a1850aed012246ed7c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/Provider.cpp": {
+      "sha256": "98244e69d5185fd31c71f198ecd8f65fe404e401d160184e212614a02bfa7ad1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v2-conservation/proposal/desired/Provider.cpp": {
+      "sha256": "af4c045e11adea1c945d88708e159b736d719c2a249399b6fe3c607cb35d0c38",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/Provider.hpp": {
+      "sha256": "05d87c5d424ad458392771b4e4f57670032df9fbe449084de9d7cf25494c4f76",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v2-conservation/proposal/desired/Provider.hpp": {
+      "sha256": "53bc8d1cd3e6e8458fd0f6c799faef789cb84557f3c7ee53c5c6651f69f492c6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/frontend/widget_v66/PinMenu.js": {
+      "sha256": "e53903405a3dc828b51259056d24bd9772e4da9c5142f86b572a78274515192a",
+      "mode": 420
+    }
+  },
+  "sourceReconstructionOnly": true,
+  "compiled": false,
+  "runtimeExecuted": false,
+  "installedQS": false,
+  "GUI": false,
+  "reliabilityAccepted": false
+}

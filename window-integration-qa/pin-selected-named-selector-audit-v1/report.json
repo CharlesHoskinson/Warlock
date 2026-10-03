@@ -1,0 +1,279 @@
+{
+  "scope": "only approved35/transfer20/hit24 recorded source+named log audit; no reruns or broad ancestry audit",
+  "selected": [
+    {
+      "claim": "design35",
+      "inputs": {
+        "/home/hoskinson/window-behavior-spec/pin-maximized-native-policy-v1-design/campaign_b.qnt": {
+          "sha256": "69c6925423ccc41f1d03103f5a0e587b93eb097ed04e5f0fb4e632ac9bc6acc5",
+          "mode": 420
+        },
+        "/home/hoskinson/window-behavior-spec/pin-maximized-native-policy-v1-design/formal-design-final.json": {
+          "sha256": "d5added406d0a2fbb56e4db2db95c94a083d368777058ede0d0f4fa46e1b1415",
+          "mode": 420
+        },
+        "/home/hoskinson/window-behavior-spec/pin-maximized-native-policy-v1-design/formal-final-1.log": {
+          "sha256": "0167c90c8dc6f209aa1f51ee7046015ecc52e0ef40287f0e50f474bb3737a768",
+          "mode": 420
+        }
+      },
+      "exactRecordedArgv": [
+        "quint",
+        "test",
+        "campaign_b.qnt",
+        "--match",
+        "^(ordinaryConservation|nativeMaxReturn|protectedBandPhysicalFocus|excludedRemainsExcluded|actualScrollingRestore|truthfulTransfer|maxModeChangeRefused|maxReturnChangeRefused|peerChangeRefused|inheritedChildBitRefused|orderWithoutPresentationRefused|coreWithoutSeatRefused|seatWithoutCoreRefused|hitMismatchRefused|excludedWinnerRefused|inputRevivalRefused|geometryWithoutScrollOwnershipRefused|staleScrollRefusalWithUnpin|staleScrollCannotClaimRestore|staleScrollTrappedPinRefused|publicDispatchAckNotTransferWitness|partialTransferTruthfulRefusal|partialTransferFalseSuccessRefused|untruthfulActualModesRefused|syntheticRollbackRefused|replacementWriteRefused|modelSeedNotNativeReachability|setupAckNotPhysicalInput|missingRawNeverAccepts|missingPostConfirmationRefused|ownerReplacementRevokes|sourceReplacementRevokes|sessionReplacementRevokes|episodeReplacementRevokes|refusedConnectionCannotRevive)$",
+        "--max-samples",
+        "1"
+      ],
+      "sourceRunNames": [
+        "ordinaryConservation",
+        "nativeMaxReturn",
+        "protectedBandPhysicalFocus",
+        "excludedRemainsExcluded",
+        "actualScrollingRestore",
+        "truthfulTransfer",
+        "maxModeChangeRefused",
+        "maxReturnChangeRefused",
+        "peerChangeRefused",
+        "inheritedChildBitRefused",
+        "orderWithoutPresentationRefused",
+        "coreWithoutSeatRefused",
+        "seatWithoutCoreRefused",
+        "hitMismatchRefused",
+        "excludedWinnerRefused",
+        "inputRevivalRefused",
+        "geometryWithoutScrollOwnershipRefused",
+        "staleScrollRefusalWithUnpin",
+        "staleScrollCannotClaimRestore",
+        "staleScrollTrappedPinRefused",
+        "publicDispatchAckNotTransferWitness",
+        "partialTransferTruthfulRefusal",
+        "partialTransferFalseSuccessRefused",
+        "untruthfulActualModesRefused",
+        "syntheticRollbackRefused",
+        "replacementWriteRefused",
+        "modelSeedNotNativeReachability",
+        "setupAckNotPhysicalInput",
+        "missingRawNeverAccepts",
+        "missingPostConfirmationRefused",
+        "ownerReplacementRevokes",
+        "sourceReplacementRevokes",
+        "sessionReplacementRevokes",
+        "episodeReplacementRevokes",
+        "refusedConnectionCannotRevive"
+      ],
+      "actualLogPassedNames": [
+        "ordinaryConservation",
+        "nativeMaxReturn",
+        "protectedBandPhysicalFocus",
+        "excludedRemainsExcluded",
+        "actualScrollingRestore",
+        "truthfulTransfer",
+        "maxModeChangeRefused",
+        "maxReturnChangeRefused",
+        "peerChangeRefused",
+        "inheritedChildBitRefused",
+        "orderWithoutPresentationRefused",
+        "coreWithoutSeatRefused",
+        "seatWithoutCoreRefused",
+        "hitMismatchRefused",
+        "excludedWinnerRefused",
+        "inputRevivalRefused",
+        "geometryWithoutScrollOwnershipRefused",
+        "staleScrollRefusalWithUnpin",
+        "staleScrollCannotClaimRestore",
+        "staleScrollTrappedPinRefused",
+        "publicDispatchAckNotTransferWitness",
+        "partialTransferTruthfulRefusal",
+        "partialTransferFalseSuccessRefused",
+        "untruthfulActualModesRefused",
+        "syntheticRollbackRefused",
+        "replacementWriteRefused",
+        "modelSeedNotNativeReachability",
+        "setupAckNotPhysicalInput",
+        "missingRawNeverAccepts",
+        "missingPostConfirmationRefused",
+        "ownerReplacementRevokes",
+        "sourceReplacementRevokes",
+        "sessionReplacementRevokes",
+        "episodeReplacementRevokes",
+        "refusedConnectionCannotRevive"
+      ],
+      "actualPassingCount": 35,
+      "defaultSuffixWouldSelect": 0,
+      "anchoredSelectorExplicitlyBypassesDefault": true,
+      "declaredCountNotUsedAsEvidence": true,
+      "affectedByDefaultNamePredicate": false
+    },
+    {
+      "claim": "transfer20",
+      "inputs": {
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/pin_transfer_refinement.qnt": {
+          "sha256": "f4d6f5a522545cbaf48cc84503ada8bbf14ebf35b63e55fdcd07b84aa06ba4bc",
+          "mode": 420
+        },
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/proof/transfer-refinement-before-implementation.json": {
+          "sha256": "86228058dde2b37c6ccb8e2d45cb1deb2224c29e2a05f244999979125f37997f",
+          "mode": 420
+        },
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/proof/transfer-refinement-before-implementation-1.log": {
+          "sha256": "14de42a8263a08c79014323d8e3e1ca679ce2786bdd9beb27d903494c208d550",
+          "mode": 420
+        }
+      },
+      "exactRecordedArgv": [
+        "quint",
+        "test",
+        "pin_transfer_refinement.qnt",
+        "--max-samples=1",
+        "--match",
+        "^(staleReturnCannotPromote|changedGenerationCannotPromote|positiveTransfer|missingHandlerRetained|closeBeforeFinish|replaceBeforeFinish|staleOutputBeforeFinish|nativeRefusalRetained|staleReturnUnpin|failedTransferUnpin|closedUnpinRefused|replacedUnpinRefused|oldGenerationUnpinRefused|freshGenerationUnpin|wrongOwnerUnpinRefused|wrongTargetUnpinRefused|repeatUnpinNoFurtherWrite|changedGeometryNotRestored|refusedReselectedOriginalKeepsQuarantine|refusedReselectedOriginalCanOnlyUnpin)$"
+      ],
+      "sourceRunNames": [
+        "staleReturnCannotPromote",
+        "changedGenerationCannotPromote",
+        "positiveTransfer",
+        "missingHandlerRetained",
+        "closeBeforeFinish",
+        "replaceBeforeFinish",
+        "staleOutputBeforeFinish",
+        "nativeRefusalRetained",
+        "staleReturnUnpin",
+        "failedTransferUnpin",
+        "closedUnpinRefused",
+        "replacedUnpinRefused",
+        "oldGenerationUnpinRefused",
+        "freshGenerationUnpin",
+        "wrongOwnerUnpinRefused",
+        "wrongTargetUnpinRefused",
+        "repeatUnpinNoFurtherWrite",
+        "changedGeometryNotRestored",
+        "refusedReselectedOriginalKeepsQuarantine",
+        "refusedReselectedOriginalCanOnlyUnpin"
+      ],
+      "actualLogPassedNames": [
+        "staleReturnCannotPromote",
+        "changedGenerationCannotPromote",
+        "positiveTransfer",
+        "missingHandlerRetained",
+        "closeBeforeFinish",
+        "replaceBeforeFinish",
+        "staleOutputBeforeFinish",
+        "nativeRefusalRetained",
+        "staleReturnUnpin",
+        "failedTransferUnpin",
+        "closedUnpinRefused",
+        "replacedUnpinRefused",
+        "oldGenerationUnpinRefused",
+        "freshGenerationUnpin",
+        "wrongOwnerUnpinRefused",
+        "wrongTargetUnpinRefused",
+        "repeatUnpinNoFurtherWrite",
+        "changedGeometryNotRestored",
+        "refusedReselectedOriginalKeepsQuarantine",
+        "refusedReselectedOriginalCanOnlyUnpin"
+      ],
+      "actualPassingCount": 20,
+      "defaultSuffixWouldSelect": 0,
+      "anchoredSelectorExplicitlyBypassesDefault": true,
+      "declaredCountNotUsedAsEvidence": true,
+      "affectedByDefaultNamePredicate": false
+    },
+    {
+      "claim": "hit24",
+      "inputs": {
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/retained-approved-hit-audit/hit_fallback.qnt": {
+          "sha256": "b94e53cc84fc29b51c53204ab6bf5cdbe7abf41d30193d64ed84dc5e31a9cbba",
+          "mode": 420
+        },
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/retained-approved-hit-audit/formal-before-runtime-v3.json": {
+          "sha256": "91a0adf9ef3bad3ebd2a6d761d179fa91007fa1453b4b16ddd8e49d2666757c9",
+          "mode": 420
+        },
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/retained-approved-hit-audit/formal-final-v3-1.log": {
+          "sha256": "90aaf060b754f65564be676dfacf2fe09cdded4e8f36cf5ec54d8fac1579ea3d",
+          "mode": 420
+        }
+      },
+      "exactRecordedArgv": [
+        "quint",
+        "test",
+        "hit_fallback.qnt",
+        "--max-samples=1",
+        "--match",
+        "^(ignoredProtectedOldCounterexample|ignoredProtectedFallsThrough|inputRefusalDoesNotReviveProtected|outsideProtectedUsesEligibleOrdinary|nofocusOrdinaryStillRefuses|ordinaryMaxConserved|exclusiveConserved|noFullscreenConserved|skipPriorityConserved|onlyPriorityConserved|floatingOnlyConserved|protectedBandWinnerPreserved|protectedTiledPointerOldCounterexample|protectedTiledPointerWinnerPreserved|nullProtectedPointerRemainsNull|ordinaryMaxPointerConserved|exclusivePointerConserved|protectedExclusivePriorityConserved|protectedExclusivePointerConserved|layerPriorityPreserved|ordinaryMaxProtectedTiledOldCounterexample|ordinaryMaxProtectedTiledWinnerPreserved|specialWorkspaceSelectionConserved|ordinaryAllowedFloatingConserved)$"
+      ],
+      "sourceRunNames": [
+        "ignoredProtectedOldCounterexample",
+        "ignoredProtectedFallsThrough",
+        "inputRefusalDoesNotReviveProtected",
+        "outsideProtectedUsesEligibleOrdinary",
+        "nofocusOrdinaryStillRefuses",
+        "ordinaryMaxConserved",
+        "exclusiveConserved",
+        "noFullscreenConserved",
+        "skipPriorityConserved",
+        "onlyPriorityConserved",
+        "floatingOnlyConserved",
+        "protectedBandWinnerPreserved",
+        "protectedTiledPointerOldCounterexample",
+        "protectedTiledPointerWinnerPreserved",
+        "nullProtectedPointerRemainsNull",
+        "ordinaryMaxPointerConserved",
+        "exclusivePointerConserved",
+        "protectedExclusivePriorityConserved",
+        "protectedExclusivePointerConserved",
+        "layerPriorityPreserved",
+        "ordinaryMaxProtectedTiledOldCounterexample",
+        "ordinaryMaxProtectedTiledWinnerPreserved",
+        "specialWorkspaceSelectionConserved",
+        "ordinaryAllowedFloatingConserved"
+      ],
+      "actualLogPassedNames": [
+        "ignoredProtectedOldCounterexample",
+        "ignoredProtectedFallsThrough",
+        "inputRefusalDoesNotReviveProtected",
+        "outsideProtectedUsesEligibleOrdinary",
+        "nofocusOrdinaryStillRefuses",
+        "ordinaryMaxConserved",
+        "exclusiveConserved",
+        "noFullscreenConserved",
+        "skipPriorityConserved",
+        "onlyPriorityConserved",
+        "floatingOnlyConserved",
+        "protectedBandWinnerPreserved",
+        "protectedTiledPointerOldCounterexample",
+        "protectedTiledPointerWinnerPreserved",
+        "nullProtectedPointerRemainsNull",
+        "ordinaryMaxPointerConserved",
+        "exclusivePointerConserved",
+        "protectedExclusivePriorityConserved",
+        "protectedExclusivePointerConserved",
+        "layerPriorityPreserved",
+        "ordinaryMaxProtectedTiledOldCounterexample",
+        "ordinaryMaxProtectedTiledWinnerPreserved",
+        "specialWorkspaceSelectionConserved",
+        "ordinaryAllowedFloatingConserved"
+      ],
+      "actualPassingCount": 24,
+      "defaultSuffixWouldSelect": 0,
+      "anchoredSelectorExplicitlyBypassesDefault": true,
+      "declaredCountNotUsedAsEvidence": true,
+      "affectedByDefaultNamePredicate": false
+    }
+  ],
+  "installedDefaultPredicate": {
+    "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/@informalsystems/quint/dist/src/cliHelpers.js",
+    "sha256": "6014561f50c050ca948c042a97133668ccecf885b31189942b1e037aca6bd706",
+    "mode": 420,
+    "line": 132,
+    "source": "return name.endsWith('Test');"
+  },
+  "result": "unaffected three selected named claims: actual anchored35/20/24 outcomes verified",
+  "sixScenarioAuditNotPerformed": true,
+  "producer14CorrectionOwnedByRoot": true,
+  "invariantCPUAndNativeClaimsNotAuditedOrChanged": true,
+  "frozenPacketsUnchanged": true,
+  "nativeExecuted": false
+}

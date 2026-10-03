@@ -1,0 +1,597 @@
+{
+  "result": "source-supported-bootstrap-hypothesis-with-actual-libwayland-counterexample",
+  "actualNativeCampaignAccepted": false,
+  "actualFailedCompositorWireCauseProved": false,
+  "nativeLaunch": false,
+  "mainChanges": false,
+  "mainFailedObservationsCause": "unclassified; no restoration writes",
+  "actualDeadlineRemains15": true,
+  "actualEmptyExactPeerFullEOFObservations": 137,
+  "successfulAndFailedStartupLogs": [
+    {
+      "stage": "toolkit-held-matrix-v10",
+      "parentSocket": {
+        "path": "/run/user/1000/wqa/c28d/weston-host",
+        "pid": 2351278,
+        "uid": 1000,
+        "gid": 1000,
+        "device": 84,
+        "inode": 361720
+      },
+      "child": {
+        "pid": 2351294,
+        "start": "13203574",
+        "pgid": 2351294,
+        "name": "hyprland",
+        "command": [
+          "/usr/bin/Hyprland",
+          "--config",
+          "/run/user/1000/wqa/c28d/hyprland.lua"
+        ],
+        "log": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/attempt-1/qt-wayland/host/hyprland.log"
+      },
+      "runtimeGone": true,
+      "events": [
+        {
+          "line": 302,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: initialized"
+        },
+        {
+          "line": 892,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: wm_capabilities received"
+        },
+        {
+          "line": 893,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: stage toplevel configure 1600x1000 until surface ACK"
+        },
+        {
+          "line": 894,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: configure surface with 1"
+        },
+        {
+          "line": 938,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: stage toplevel configure 1600x1000 until surface ACK"
+        },
+        {
+          "line": 939,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: configure surface with 3"
+        }
+      ],
+      "rendererHeadlessEnabled": true
+    },
+    {
+      "stage": "toolkit-held-matrix-v11",
+      "parentSocket": {
+        "path": "/run/user/1000/wqa/9676/weston-host",
+        "pid": 2714933,
+        "uid": 1000,
+        "gid": 1000,
+        "device": 84,
+        "inode": 377006
+      },
+      "child": {
+        "pid": 2715021,
+        "start": "13606155",
+        "pgid": 2715021,
+        "name": "hyprland",
+        "command": [
+          "/usr/bin/Hyprland",
+          "--config",
+          "/run/user/1000/wqa/9676/hyprland.lua"
+        ],
+        "log": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/attempt-1/qt-wayland/host/hyprland.log"
+      },
+      "runtimeGone": true,
+      "events": [
+        {
+          "line": 302,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: initialized"
+        },
+        {
+          "line": 870,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: wm_capabilities received"
+        },
+        {
+          "line": 871,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: stage toplevel configure 1600x1000 until surface ACK"
+        },
+        {
+          "line": 872,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: configure surface with 1"
+        },
+        {
+          "line": 938,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: stage toplevel configure 1600x1000 until surface ACK"
+        },
+        {
+          "line": 939,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: configure surface with 3"
+        }
+      ],
+      "rendererHeadlessEnabled": true
+    },
+    {
+      "stage": "toolkit-held-matrix-v12",
+      "parentSocket": {
+        "path": "/run/user/1000/wqa/e0b7/weston-host",
+        "pid": 2897892,
+        "uid": 1000,
+        "gid": 1000,
+        "device": 84,
+        "inode": 383216
+      },
+      "child": {
+        "pid": 2898012,
+        "start": "13783882",
+        "pgid": 2898012,
+        "name": "hyprland",
+        "command": [
+          "/usr/bin/Hyprland",
+          "--config",
+          "/run/user/1000/wqa/e0b7/hyprland.lua"
+        ],
+        "log": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/attempt-1/qt-wayland/host/hyprland.log"
+      },
+      "runtimeGone": true,
+      "events": [
+        {
+          "line": 302,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: initialized"
+        },
+        {
+          "line": 873,
+          "text": "\u001b[1;33mWARN \u001b[0m]: [FallbackStateKeeper] Launch timeout of 2000ms exceeded, entering fallback state."
+        }
+      ],
+      "rendererHeadlessEnabled": true
+    },
+    {
+      "stage": "toolkit-held-matrix-v13",
+      "parentSocket": {
+        "path": "/run/user/1000/wqa/5a4c/weston-host",
+        "pid": 3136453,
+        "uid": 1000,
+        "gid": 1000,
+        "device": 84,
+        "inode": 389456
+      },
+      "child": {
+        "pid": 3136919,
+        "start": "13975568",
+        "pgid": 3136919,
+        "name": "hyprland",
+        "command": [
+          "/usr/bin/Hyprland",
+          "--config",
+          "/run/user/1000/wqa/5a4c/hyprland.lua"
+        ],
+        "log": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/attempt-1/qt-wayland/host/hyprland.log"
+      },
+      "runtimeGone": true,
+      "events": [
+        {
+          "line": 302,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: initialized"
+        },
+        {
+          "line": 871,
+          "text": "\u001b[1;33mWARN \u001b[0m]: [FallbackStateKeeper] Launch timeout of 2000ms exceeded, entering fallback state."
+        }
+      ],
+      "rendererHeadlessEnabled": true
+    },
+    {
+      "stage": "browser-files-flow-v19",
+      "parentSocket": {
+        "path": "/run/user/1000/wqa/3e93/weston-host",
+        "pid": 2819870,
+        "uid": 1000,
+        "gid": 1000,
+        "device": 84,
+        "inode": 380046
+      },
+      "child": {
+        "pid": 2820019,
+        "start": "13702943",
+        "pgid": 2820019,
+        "name": "hyprland",
+        "command": [
+          "/usr/bin/Hyprland",
+          "--config",
+          "/run/user/1000/wqa/3e93/hyprland.lua"
+        ],
+        "log": "/home/hoskinson/window-integration-qa/browser-files-flow-v19/attempt-1/host/hyprland.log"
+      },
+      "runtimeGone": true,
+      "events": [
+        {
+          "line": 302,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: initialized"
+        },
+        {
+          "line": 870,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: wm_capabilities received"
+        },
+        {
+          "line": 871,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: stage toplevel configure 1600x1000 until surface ACK"
+        },
+        {
+          "line": 872,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: configure surface with 1"
+        },
+        {
+          "line": 938,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: stage toplevel configure 1600x1000 until surface ACK"
+        },
+        {
+          "line": 939,
+          "text": "\u001b[1;32mDEBUG \u001b[0mfrom aquamarine ]: Output WAYLAND-1: configure surface with 3"
+        }
+      ],
+      "rendererHeadlessEnabled": true
+    }
+  ],
+  "primarySourceEvidence": [
+    {
+      "line": 178,
+      "text": "    wl_display_roundtrip(waylandState.display);"
+    },
+    {
+      "line": 179,
+      "text": ""
+    },
+    {
+      "line": 180,
+      "text": "    if (!waylandState.xdg || !waylandState.compositor || !waylandState.seat || !waylandState.dmabuf || waylandState.dmabufFailed || !waylandState.shm) {"
+    },
+    {
+      "line": 181,
+      "text": "        backend->log(AQ_LOG_ERROR, \"Wayland backend cannot start: Missing protocols\");"
+    },
+    {
+      "line": 182,
+      "text": "        return false;"
+    },
+    {
+      "line": 183,
+      "text": "    }"
+    },
+    {
+      "line": 184,
+      "text": ""
+    },
+    {
+      "line": 185,
+      "text": "    if (!dispatchEvents())"
+    },
+    {
+      "line": 186,
+      "text": "        return false;"
+    },
+    {
+      "line": 187,
+      "text": ""
+    },
+    {
+      "line": 188,
+      "text": "    createOutput();"
+    },
+    {
+      "line": 189,
+      "text": ""
+    },
+    {
+      "line": 190,
+      "text": "    return true;"
+    },
+    {
+      "line": 191,
+      "text": "}"
+    },
+    {
+      "line": 192,
+      "text": ""
+    },
+    {
+      "line": 193,
+      "text": "int Aquamarine::CWaylandBackend::drmFD() {"
+    },
+    {
+      "line": 194,
+      "text": "    return drmState.fd;"
+    },
+    {
+      "line": 223,
+      "text": "std::vector<Hyprutils::Memory::CSharedPointer<SPollFD>> Aquamarine::CWaylandBackend::pollFDs() {"
+    },
+    {
+      "line": 224,
+      "text": "    if (!waylandState.display)"
+    },
+    {
+      "line": 225,
+      "text": "        return {};"
+    },
+    {
+      "line": 226,
+      "text": ""
+    },
+    {
+      "line": 227,
+      "text": "    return {makeShared<SPollFD>(wl_display_get_fd(waylandState.display), [this]() { dispatchEvents(); })};"
+    },
+    {
+      "line": 228,
+      "text": "}"
+    },
+    {
+      "line": 229,
+      "text": ""
+    },
+    {
+      "line": 230,
+      "text": "bool Aquamarine::CWaylandBackend::dispatchEvents() {"
+    },
+    {
+      "line": 231,
+      "text": "    const auto transportAlive = [this]() {"
+    },
+    {
+      "line": 232,
+      "text": "        if (wl_display_get_error(waylandState.display) == 0)"
+    },
+    {
+      "line": 233,
+      "text": "            return true;"
+    },
+    {
+      "line": 234,
+      "text": "        backend->log(AQ_LOG_CRITICAL, \"Wayland parent transport failed; invalidating every nested output\");"
+    },
+    {
+      "line": 235,
+      "text": "        if (NestedPolicy::selection(std::getenv(\"AQ_BACKENDS\")) == NestedPolicy::Selection::Wayland)"
+    },
+    {
+      "line": 236,
+      "text": "            backend->ready = false;"
+    },
+    {
+      "line": 237,
+      "text": "        for (const auto& output : outputs) {"
+    },
+    {
+      "line": 238,
+      "text": "            if (const auto state = outputLifecycle.find(output.get()); state != outputLifecycle.end())"
+    },
+    {
+      "line": 239,
+      "text": "                state->second->destroy();"
+    },
+    {
+      "line": 240,
+      "text": "            output->needsFrame = false;"
+    },
+    {
+      "line": 241,
+      "text": "            output->waylandState.frameCallback.reset();"
+    },
+    {
+      "line": 242,
+      "text": "            output->sched.invalidate();"
+    },
+    {
+      "line": 243,
+      "text": "        }"
+    },
+    {
+      "line": 244,
+      "text": "        return false;"
+    },
+    {
+      "line": 245,
+      "text": "    };"
+    },
+    {
+      "line": 246,
+      "text": "    if (!transportAlive())"
+    },
+    {
+      "line": 247,
+      "text": "        return false;"
+    },
+    {
+      "line": 248,
+      "text": "    wl_display_flush(waylandState.display);"
+    },
+    {
+      "line": 249,
+      "text": ""
+    },
+    {
+      "line": 250,
+      "text": "    if (wl_display_prepare_read(waylandState.display) == 0) {"
+    },
+    {
+      "line": 251,
+      "text": "        wl_display_read_events(waylandState.display);"
+    },
+    {
+      "line": 252,
+      "text": "        wl_display_dispatch_pending(waylandState.display);"
+    },
+    {
+      "line": 253,
+      "text": "    } else"
+    },
+    {
+      "line": 254,
+      "text": "        wl_display_dispatch(waylandState.display);"
+    },
+    {
+      "line": 255,
+      "text": ""
+    },
+    {
+      "line": 628,
+      "text": "    waylandState.xdgToplevel->sendSetTitle(std::format(\"aquamarine - {}\", name).c_str());"
+    },
+    {
+      "line": 629,
+      "text": "    waylandState.xdgToplevel->sendSetAppId(\"aquamarine\");"
+    },
+    {
+      "line": 630,
+      "text": ""
+    },
+    {
+      "line": 631,
+      "text": "    auto inputRegion = makeShared<CCWlRegion>(backend->waylandState.compositor->sendCreateRegion());"
+    },
+    {
+      "line": 632,
+      "text": "    inputRegion->sendAdd(0, 0, INT32_MAX, INT32_MAX);"
+    },
+    {
+      "line": 633,
+      "text": ""
+    },
+    {
+      "line": 634,
+      "text": "    waylandState.surface->sendSetInputRegion(inputRegion.get());"
+    },
+    {
+      "line": 635,
+      "text": "    waylandState.surface->sendAttach(nullptr, 0, 0);"
+    },
+    {
+      "line": 636,
+      "text": "    waylandState.surface->sendCommit();"
+    },
+    {
+      "line": 637,
+      "text": ""
+    },
+    {
+      "line": 638,
+      "text": "    inputRegion->sendDestroy();"
+    },
+    {
+      "line": 639,
+      "text": ""
+    },
+    {
+      "line": 640,
+      "text": "    backend->backend->log(AQ_LOG_DEBUG, std::format(\"Output {}: initialized\", name));"
+    },
+    {
+      "line": 641,
+      "text": "}"
+    },
+    {
+      "line": 642,
+      "text": ""
+    },
+    {
+      "line": 770,
+      "text": ""
+    },
+    {
+      "line": 771,
+      "text": "    waylandState.surface->sendCommit();"
+    },
+    {
+      "line": 772,
+      "text": "    waylandState.surfaceSize = STATE.buffer->size;"
+    },
+    {
+      "line": 773,
+      "text": ""
+    },
+    {
+      "line": 774,
+      "text": "    // Flush immediately: commit() runs from the consumer's render path, outside"
+    },
+    {
+      "line": 775,
+      "text": "    // dispatchEvents() (which flushes only at its top). Without this the buffer commit and"
+    },
+    {
+      "line": 776,
+      "text": "    // frame request sit unflushed, the host never sends wl_callback.done, the fd never"
+    },
+    {
+      "line": 777,
+      "text": "    // becomes readable, and the frame loop deadlocks."
+    },
+    {
+      "line": 778,
+      "text": "    wl_display_flush(backend->waylandState.display);"
+    },
+    {
+      "line": 779,
+      "text": ""
+    }
+  ],
+  "clientDiagnosticCompositorNameIsEnvironmentOnly": {
+    "line": 116,
+    "source": "getenv(XDG_CURRENT_DESKTOP); not kernel/protocol peer identity"
+  },
+  "actualCPUCounterexample": [
+    {
+      "case": "real-initial-null-surface-commit-queue",
+      "serverReadableBeforeFlush": 0,
+      "clientReadableBeforeFlush": 0,
+      "flushReturn": 92,
+      "flushErrno": 0,
+      "wireBytes": 92,
+      "messages": 5,
+      "lastSurfaceObject": 4,
+      "lastOpcode": 6,
+      "wireHex": "0100000001000c00020000000200000000002800010000000e000000776c5f636f6d706f7369746f7200000006000000030000000300000000000c000400000004000000010014000000000000000000000000000400000006000800",
+      "noServerImplemented": true,
+      "noNativeGUI": true
+    },
+    {
+      "case": "real-full-owned-socket-flush-refusal",
+      "filledBytes": 8128,
+      "flushReturn": -1,
+      "flushErrno": 11,
+      "noNativeGUI": true
+    },
+    {
+      "case": "real-closed-owned-peer-flush-refusal",
+      "flushReturn": -1,
+      "flushErrno": 32,
+      "noNativeGUI": true
+    }
+  ],
+  "sourceWitnesses": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/attempt-1/qt-wayland/host/host-evidence.json": "599fbc32b666d064af42b1a06a6eeae0427773fda90af03b2a252964235ff1f9",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/attempt-1/qt-wayland/host/hyprland.log": "b596db0ddcf156a0059c1b0d971b1d82687dc43084f7e2608739597cc89583ae",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/attempt-1/qt-wayland/host/weston-renderer.log": "8533a3e75a5ab197ffbcebe05ed35560c1e6a2dd349a34360279bae381ed34b7",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/attempt-1/qt-wayland/host/host-evidence.json": "fb8ffe94afe57e85a7188dfa86f45399f03b06a98069bc060511dba7b7ac8541",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/attempt-1/qt-wayland/host/hyprland.log": "aa6b4b57a8544aa6c32323a3a50be8299cb346002cec701bab2709fdd54cff72",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/attempt-1/qt-wayland/host/weston-renderer.log": "18051dfe765e635dc2904bd6393fc4037e402b6891710952c39097e30253451a",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/attempt-1/qt-wayland/host/host-evidence.json": "4fe89f9d6e92d3856a7ac0d92a8132c68a587e6e17676eb7a2e529abd9e11b9e",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/attempt-1/qt-wayland/host/hyprland.log": "79203c545db3cec520a6a7f26e614b58cb78e9ef9fcfc0fd8f21cf0e55328751",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/attempt-1/qt-wayland/host/weston-renderer.log": "8b7abfb25c602e93e0d5d64231e16fef9c769283885fecc34ccad15973cb8eab",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/attempt-1/qt-wayland/host/host-evidence.json": "62a991326ef9299717f2af975bfc984e8f15ef757a2a024b12c8a18c6bea70d2",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/attempt-1/qt-wayland/host/hyprland.log": "689641f7afba7c078cb929be63f5c2a209fe75bcac3d0da73ee35b409de3ea40",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/attempt-1/qt-wayland/host/weston-renderer.log": "a687a30abaa2e9c12814ca1077f046da10bcd060e3fe98526d5393fc31509bf2",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v19/attempt-1/host/host-evidence.json": "4bbe4ef4c35ce568a1254b53d63b64f294cd931aeda7fc47927cb96fc9fb7e31",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v19/attempt-1/host/hyprland.log": "4a95b16240009588cb9c44de3e70a0cfb0baf66f3dc6c19ea182ab331c802fe9",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v19/attempt-1/host/weston-renderer.log": "053017806f37a72d004b74b45167d3987b11de4d8a145319a588cce7bcebceca",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Wayland.cpp": "30f8bfac8f81fe667335aeb8f00ab424aa98bd54329ba1c45d19a344d15ff300",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/weston_host.py": "0bb343488eb4c04ef53af2550f01a35cc737888bfec797208431f799a28c5d27",
+    "/home/hoskinson/window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/attempt-1/qt-wayland/host/output-readiness-evidence.json": "424e5faf2890948d4fe020344039bb7eaf1bc09974400292744f87c8294235fe",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/frozen-inputs.json": "218544206b351eaf7196a031ffbb95cb3242987ae7456b76d3b8f041eb2cdd2f"
+  },
+  "limits": [
+    "No captured actual failed child initial wire bytes/syscalls; no scheduling/CPU-starvation inference.",
+    "CPU fixture deliberately implements no server. It proves actual libwayland buffered marshalling/flush, not complete Weston/AQ protocol integration.",
+    "Existing correct parent socket witness is a setup observation; failure wire attribution remains bounded until fresh root-owned integration."
+  ]
+}

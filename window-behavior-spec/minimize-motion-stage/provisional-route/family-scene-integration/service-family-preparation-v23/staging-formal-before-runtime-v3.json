@@ -1,0 +1,53 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-bf40119960eb4b2a9ee5073a0daa02a6.scope",
+    "coreLimit": 1
+  },
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/staging_reservation_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/staging_reservation_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  staging_reservation_test\n    ok unrelatedCleanupReturnsWhileActualScanPendingTest passed 1 test(s)\n    ok exactStagingEpochReleaseRefusesTest passed 1 test(s)\n    ok stagingEpochPreventsDisposeTest passed 1 test(s)\n    ok duplicateEpochCannotReserveTwiceTest passed 1 test(s)\n    ok staleReservationCannotCommitForeignMaterialTest passed 1 test(s)\n    ok exactValidatedMaterialCommitsTest passed 1 test(s)\n    ok failedMaterialCannotPublishTest passed 1 test(s)\n    ok abortCannotFreeLiveScanMaterialTest passed 1 test(s)\n    ok combined64CapacityRefusesNewStageTest passed 1 test(s)\n    ok helperCannotBeginBeforeAllStagesFinishTest passed 1 test(s)\n    ok unknownOwnedGroupKeepsExactEpochProtectedTest passed 1 test(s)\n    ok unknownGroupCannotAuthorizeAnotherStageTest passed 1 test(s)\n    ok unrelatedOldEpochCleanupSurvivesQuarantineTest passed 1 test(s)\n    ok oldReadHoldingLifecycleReproducesActualCounterexampleTest passed 1 test(s)\n    ok replacedReservationCannotBorrowValidatedMaterialTest passed 1 test(s)\n    ok staleReservationCannotAuthorizeNormalDisposeTest passed 1 test(s)\n\n  16 passing (800ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/staging_reservation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (5155ms at 388 traces/second).\nUse --seed=0x13e4f1e --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "runtimeUnchangedBeforeCorrection": true,
+  "sourceSHA256": {
+    "batch_preview.py": "adec7073a1ab80af04ab511393aa433e67eb44b31bf0adf647b9afd348f24c10",
+    "native_desktop.py": "31ace97dda5342519aa749c4dcd01dbd70b425b79b507639a543cf9a2c00ba19",
+    "scene_controller.py": "3b47325e7e86b06492ef59576159482c6036297aeafdcb46875cf590d1844657"
+  },
+  "baseManifestSHA256": "e616b23b7c397cc767ce91e855a4520dd42311c97087797b332772ba63d1fc5e",
+  "formalScope": "explicit staging claim and material scan lock ownership; exact release/dispose refusal; unknown group and combined64 cap; old locked scan counterexample retained",
+  "nativeLaunch": false
+}

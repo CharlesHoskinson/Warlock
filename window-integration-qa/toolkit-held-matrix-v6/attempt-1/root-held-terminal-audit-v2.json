@@ -1,0 +1,54 @@
+{
+  "result": "fail",
+  "checks": {
+    "terminalReportRetainsActualFailure": true,
+    "completeFrozenBytesModesLinks": true,
+    "exactSourceManifest": true,
+    "all18MainPreservation": true,
+    "mainWritesAbsent": true,
+    "allFourExactVariants": false,
+    "qt-wayland:all13ExactCases": false,
+    "qt-wayland:move-escape:nativeReplay": true,
+    "qt-wayland:move-escape:normalPublicQuit": true,
+    "qt-wayland:move-reload:nativeReplay": true,
+    "qt-wayland:move-reload:normalPublicQuit": true,
+    "qt-wayland:move-unload-reload:nativeReplay": false,
+    "qt-wayland:move-unload-reload:normalPublicQuit": true,
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:exactQSReadinessAndExplicitNormalQuit": true,
+    "qt-wayland:normalQSAndService": true,
+    "qt-wayland:nativeUnloadNormalOrdered": true,
+    "qt-wayland:hostRuntimeCleanup": false,
+    "qt-wayland:rawHelpersNormalExact": false,
+    "qt-wayland:allRecordedOriginalIdentitiesGone": true,
+    "qt-wayland:bothGenuineShellPreviewReceipts": false
+  },
+  "errors": {},
+  "inventory": [
+    {
+      "variant": "qt-wayland",
+      "reachedCases": 3,
+      "retainedResult": "fail",
+      "errors": {
+        "error": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/run_native.py\", line 113, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/held_controller.py\", line 112, in run\n    else:ack=route.interrupt(end,target,current_geometry)\n             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/held_route.py\", line 164, in interrupt\n    generation=self.next_generation()\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/held_route.py\", line 176, in next_generation\n    return self.wait(register,'All prior exact helper lifetimes normally retire before generation')\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/held_route.py\", line 97, in wait\n    def wait(self,*args,**kwargs):return wait(*args,**kwargs)\n                                         ~~~~^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/held_route.py\", line 21, in wait\n    value=function()\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/held_route.py\", line 174, in register\n    try:return helper_setup.register_load_generation(self.env,self.config)\n               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/helper_setup.py\", line 202, in register_load_generation\n    if any(row['event']=='refused' for row in events):raise RuntimeError('Refused helper cannot authorize another load')\n                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Refused helper cannot authorize another load\n",
+        "helperAcceptanceError": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/run_native.py\", line 113, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/held_controller.py\", line 112, in run\n    else:ack=route.interrupt(end,target,current_geometry)\n             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/held_route.py\", line 164, in interrupt\n    generation=self.next_generation()\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/held_route.py\", line 176, in next_generation\n    return self.wait(register,'All prior exact helper lifetimes normally retire before generation')\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/held_route.py\", line 97, in wait\n    def wait(self,*args,**kwargs):return wait(*args,**kwargs)\n                                         ~~~~^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/held_route.py\", line 21, in wait\n    value=function()\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/held_route.py\", line 174, in register\n    try:return helper_setup.register_load_generation(self.env,self.config)\n               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/helper_setup.py\", line 202, in register_load_generation\n    if any(row['event']=='refused' for row in events):raise RuntimeError('Refused helper cannot authorize another load')\n                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Refused helper cannot authorize another load\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/run_native.py\", line 175, in variant_run\n    report['completedHelpers']=helper_setup.wait_and_archive(config,output/'completed-helpers.json',expect_harness=expectation['harnessSnapshotAttempted'],expect_service=expectation['serviceRegistered'])\n                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/helper_setup.py\", line 259, in wait_and_archive\n    raise RuntimeError('Unregistered/refused helper attempt observed')\nRuntimeError: Unregistered/refused helper attempt observed\n"
+      }
+    }
+  ],
+  "sourceManifestSHA256": "29b5dc5274f440b6bcf35b88027eadff01fa74f876cdff10d19c9a607ecec9ac",
+  "sourceCount": 21804,
+  "modeCount": 21804,
+  "linkCount": 327,
+  "actualReachedCases": 3,
+  "expectedCases": 52,
+  "producerResult": "fail",
+  "nativeCommands": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false,
+  "fullHeld52ReplayAccepted": false,
+  "replayLimitations": [
+    "Historical geometry/pin and native IPC command timing are accepted only where actual samples are retained; gate booleans alone do not supply missing observations."
+  ],
+  "auditorSourceSHA256": "5d35dd6a4f31e71073faa44241d0368055523787040c3842436345236d2fc011"
+}

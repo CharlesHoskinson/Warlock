@@ -1,0 +1,34 @@
+test_all_body_boolean_aliases (__main__.DecodeFaults.test_all_body_boolean_aliases) ... ok
+test_all_fixed_masks_and_ignore_positive (__main__.DecodeFaults.test_all_fixed_masks_and_ignore_positive) ... ok
+test_duplicate_raw_json_keys (__main__.DecodeFaults.test_duplicate_raw_json_keys) ... ok
+test_generation_and_sequence_overflow (__main__.DecodeFaults.test_generation_and_sequence_overflow) ... ok
+test_group_inventory_cannot_hide_reuse (__main__.DecodeFaults.test_group_inventory_cannot_hide_reuse) ... ok
+test_hit_kind_and_mask_are_request_bound (__main__.DecodeFaults.test_hit_kind_and_mask_are_request_bound) ... ok
+test_hit_stimulus_positive (__main__.DecodeFaults.test_hit_stimulus_positive) ... ok
+test_ignore_cannot_select_replacement (__main__.DecodeFaults.test_ignore_cannot_select_replacement) ... ok
+test_metadata_cannot_smuggle_hit_stimulus (__main__.DecodeFaults.test_metadata_cannot_smuggle_hit_stimulus) ... ok
+test_native_mode_scalar_aliases (__main__.DecodeFaults.test_native_mode_scalar_aliases) ... ok
+test_non_json_constants_and_bad_utf8 (__main__.DecodeFaults.test_non_json_constants_and_bad_utf8) ... ok
+test_partial_and_changed_post_observation (__main__.DecodeFaults.test_partial_and_changed_post_observation) ... ok
+test_pointer_canonical_and_positive_scope (__main__.DecodeFaults.test_pointer_canonical_and_positive_scope) ... ok
+test_primitive_bool_int_float_aliases (__main__.DecodeFaults.test_primitive_bool_int_float_aliases) ... ok
+test_pure_metadata_positive (__main__.DecodeFaults.test_pure_metadata_positive) ... ok
+test_refusal_with_partial_before_not_usable (__main__.DecodeFaults.test_refusal_with_partial_before_not_usable) ... ok
+test_response_size_bound (__main__.DecodeFaults.test_response_size_bound) ... ok
+test_restore_scope_replacement (__main__.DecodeFaults.test_restore_scope_replacement) ... ok
+test_root_lifetime_session_replacement (__main__.DecodeFaults.test_root_lifetime_session_replacement) ... ok
+test_scalar_numeric_alias_nonfinite_and_shape (__main__.DecodeFaults.test_scalar_numeric_alias_nonfinite_and_shape) ... ok
+test_scroll_complete_bounds_and_scalar_types (__main__.DecodeFaults.test_scroll_complete_bounds_and_scalar_types) ... ok
+test_scroll_selected_row_scope_and_duplicate (__main__.DecodeFaults.test_scroll_selected_row_scope_and_duplicate) ... ok
+test_scrolling_complete_current_positive (__main__.DecodeFaults.test_scrolling_complete_current_positive) ... ok
+test_selected_public_replacement (__main__.DecodeFaults.test_selected_public_replacement) ... ok
+test_source_policy_replacement (__main__.DecodeFaults.test_source_policy_replacement) ... ok
+test_transfer_accepted_positive (__main__.DecodeFaults.test_transfer_accepted_positive) ... ok
+test_transfer_cannot_bless_unknown_or_typed_aliases (__main__.DecodeFaults.test_transfer_cannot_bless_unknown_or_typed_aliases) ... ok
+test_transfer_refused_retained_non_success (__main__.DecodeFaults.test_transfer_refused_retained_non_success) ... ok
+test_unknown_extra_and_missing_fields (__main__.DecodeFaults.test_unknown_extra_and_missing_fields) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.014s
+
+OK

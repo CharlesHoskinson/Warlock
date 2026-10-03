@@ -1,0 +1,23 @@
+{
+  "result": "pass",
+  "checks": {
+    "plainCppNotificationOnly": true,
+    "noSignalThreadOrJoinInNotification": true,
+    "realForeignSignalAtOutsideSourceGuard": true,
+    "requiresActualSignalReturnedAndThreadJoined": true,
+    "explicitNoSignalAtDisconnectClaim": true,
+    "noDirectCallbackInChangedScenario": true,
+    "persistTypedBaselineBeforeHook": true,
+    "fixtureHasNoBaseQObjectMethodCall": true,
+    "taggedDefaultBaseIsEmpty": true,
+    "driverPreservesBeforeCommunicateMetadata": true,
+    "driverPreservesTimeoutStdoutStderr": true,
+    "driverDurableBeforeCleanup": true,
+    "driverExactNewSelector": true,
+    "noProductionSourceProposed": true,
+    "driverPythonAST": true
+  },
+  "checksAreSourceOnly": true,
+  "runtimeBuilt": false,
+  "runtimeExecuted": false
+}

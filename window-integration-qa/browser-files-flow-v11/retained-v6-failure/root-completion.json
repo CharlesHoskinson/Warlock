@@ -1,0 +1,199 @@
+{
+  "updatedUTC": "2026-10-01T22:57:45.800209+00:00",
+  "reportSHA256": "5c02b049fadb6e24849b94e5693e365abf53a00ff5a44502b03514fb72af70e8",
+  "manifestSHA256": "77faa162955c71d9c18fc86ffdff991a7bfefdebd5c58ad4935917c1495584ae",
+  "fileCount": 40086,
+  "linkCount": 13758,
+  "independentChecks": {
+    "allFrozenBytesModesExact": true,
+    "allFrozenLinksExact": true,
+    "all18MainPreserved": true,
+    "allRecordedPIDStartGone": true,
+    "privateRuntimeGone": true,
+    "noUnexpectedOrRemainingHelpers": true,
+    "normalBrowserAndNoForcedCleanup": true,
+    "nativeProbeAndPluginUnloadedNormally": true,
+    "healthyArchivedParentTransport": true,
+    "actualPrivateBusActivationPolicyVerified": true,
+    "initialRangeDiagnosticIndependentlyReplayed": true,
+    "actualBrowserPrivateBusPIDBindingIndependentlyReplayed": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "privateBrowserFilesAccepted": false,
+  "processes": [
+    {
+      "pid": 1595132,
+      "start": "11784194",
+      "gone": true
+    },
+    {
+      "pid": 1595137,
+      "start": "11784198",
+      "gone": true
+    },
+    {
+      "pid": 1595188,
+      "start": "11784258",
+      "gone": true
+    },
+    {
+      "pid": 1595132,
+      "start": "11784194",
+      "gone": true
+    },
+    {
+      "pid": 1595137,
+      "start": "11784198",
+      "gone": true
+    },
+    {
+      "pid": 1595188,
+      "start": "11784258",
+      "gone": true
+    },
+    {
+      "pid": 1595499,
+      "start": "11784568",
+      "gone": true
+    },
+    {
+      "pid": 1595512,
+      "start": "11784590",
+      "gone": true
+    },
+    {
+      "pid": 1595513,
+      "start": "11784590",
+      "gone": true
+    },
+    {
+      "pid": 1595515,
+      "start": "11784592",
+      "gone": true
+    },
+    {
+      "pid": 1595545,
+      "start": "11784597",
+      "gone": true
+    },
+    {
+      "pid": 1595543,
+      "start": "11784597",
+      "gone": true
+    },
+    {
+      "pid": 1595603,
+      "start": "11784607",
+      "gone": true
+    },
+    {
+      "pid": 1595607,
+      "start": "11784607",
+      "gone": true
+    },
+    {
+      "pid": 1595580,
+      "start": "11784600",
+      "gone": true
+    },
+    {
+      "pid": 1595709,
+      "start": "11784729",
+      "gone": true
+    },
+    {
+      "pid": 1595746,
+      "start": "11784745",
+      "gone": true
+    },
+    {
+      "pid": 1595724,
+      "start": "11784745",
+      "gone": true
+    },
+    {
+      "pid": 1595725,
+      "start": "11784745",
+      "gone": true
+    },
+    {
+      "pid": 1595726,
+      "start": "11784745",
+      "gone": true
+    },
+    {
+      "pid": 1595727,
+      "start": "11784745",
+      "gone": true
+    },
+    {
+      "pid": 1595728,
+      "start": "11784745",
+      "gone": true
+    },
+    {
+      "pid": 1595758,
+      "start": "11784749",
+      "gone": true
+    },
+    {
+      "pid": 1595759,
+      "start": "11784750",
+      "gone": true
+    },
+    {
+      "pid": 1595763,
+      "start": "11784750",
+      "gone": true
+    },
+    {
+      "pid": 1595499,
+      "start": "11784568",
+      "gone": true
+    },
+    {
+      "pid": 1595709,
+      "start": "11784729",
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "environmentObservations": [
+    {
+      "name": "browser",
+      "identity": {
+        "pid": 1595499,
+        "start": "11784568",
+        "ppid": 1594998,
+        "pgid": 1595499
+      },
+      "bytes": 10166,
+      "nonzeroBytes": 0,
+      "initialRangeMatches": false,
+      "currentLibcSelectorsProved": false
+    },
+    {
+      "name": "files",
+      "identity": {
+        "pid": 1595709,
+        "start": "11784729",
+        "ppid": 1594998,
+        "pgid": 1595709
+      },
+      "bytes": 10293,
+      "nonzeroBytes": 10072,
+      "initialRangeMatches": true,
+      "currentLibcSelectorsProved": false
+    }
+  ],
+  "failure": "RuntimeError('Actual disk mapping absent from frozen closure:/usr/lib/gvfs/libgvfscommon.so')",
+  "rawOwnedProcessEvidenceSHA256": "d8cda4df1977333c0a4ebad7ec74c3d9a527f6953e4ebd32c9f29da012f5049d",
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false
+}

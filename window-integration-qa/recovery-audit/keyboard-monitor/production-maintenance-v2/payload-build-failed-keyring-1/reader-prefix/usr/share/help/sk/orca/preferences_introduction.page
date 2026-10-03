@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_introduction" xml:lang="sk">
+  <info>
+    <title type="sort">0. Úvod do predvolieb <app>Orca</app></title>
+    <title type="link">Úvod do predvolieb <app>Orca</app></title>
+    <link type="guide" xref="preferences"/>
+    <link type="next" xref="preferences_general"/>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Úvod do predvolieb <app>Orca</app></title>
+  <section id="orca">
+    <title>Predvoľby Orca</title>
+    <p>Predvoľby Orca vám umožňujú prispôsobiť funkcie v <app>Orca</app>, ktoré sa vzťahujú na všetky aplikácie. Príkladom predvoľby Orca je ozvena, pretože ozvena sa vzťahuje na všetky aplikácie.</p>
+    <p>Všimnite si, že predvoľby Orca je možné prispôsobiť pre jednotlivé aplikácie. Napríklad môžete nastaviť predvolenú ozvenu na slová a potom nastaviť ozvenu pre Pidgin na žiadnu. Po vykonaní tohto nastavenia by <app>Orca</app> vždy ozvala každé slovo, ktoré zadáte, pokiaľ by ste neboli v Pidgine.</p>
+    <note style="tip">
+      <title>Klávesové skratky na vstup do dialógových okien predvolieb</title>
+      <list>
+        <item>
+          <p><keyseq><key>Modifikátor Orca</key><key>Medzerník</key></keyseq>: Predvoľby <app>Orca</app></p>
+        </item>
+        <item>
+          <p><keyseq><key>Ctrl</key><key>Modifikátor Orca</key><key>Medzerník</key> </keyseq>: Predvoľby <app>Orca</app> pre aktuálnu aplikáciu</p>
+        </item>
+      </list>
+    </note>
+  </section>
+  <section id="application_unique">
+    <title>Predvoľby špecifické pre aplikáciu</title>
+      <p>Na rozdiel od predvolieb Orca existujú predvoľby špecifické pre aplikáciu. Tieto predvoľby vám umožňujú prispôsobiť funkcie <app>Orca</app>, ktoré sa vzťahujú iba na určité prostredia, ako sú webové stránky alebo chatovacie aplikácie. V dôsledku toho nájdete tieto možnosti dostupné iba v dialógových oknách predvolieb špecifických pre aplikáciu a iba pre tie aplikácie, na ktoré sa tieto možnosti vzťahujú.</p>
+  </section>
+</page>

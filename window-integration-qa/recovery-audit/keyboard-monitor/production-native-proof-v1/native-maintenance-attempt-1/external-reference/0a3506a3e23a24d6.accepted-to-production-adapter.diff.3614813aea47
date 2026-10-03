@@ -1,0 +1,27 @@
+--- accepted/capability_adapter.py
++++ production/capability_adapter.py
+@@ -124,24 +124,3 @@
+             if self.gio.DBusError.get_remote_error(error)!='org.freedesktop.a11y.UnknownToplevel':
+                 raise
+ 
+-def install_private(report=None):
+-    """Explicit isolated-test bootstrap. Does not import MouseReviewer."""
+-    import os,json
+-    from pathlib import Path
+-    from private_runtime_guard import checked_runtime
+-    runtime=checked_runtime()
+-    import gi
+-    gi.require_version('Atspi','2.0')
+-    from gi.repository import Atspi,Gio,GLib
+-    from orca import ax_device_manager
+-    session=Gio.bus_get_sync(Gio.BusType.SESSION,None)
+-    transport=PublicTransport(session,GLib,Gio)
+-    def quiet(connection,owner):
+-        # This interface is private proof instrumentation, absent in production.
+-        value=connection.call_sync('org.freedesktop.a11y.Manager','/org/freedesktop/a11y/Manager',
+-            'org.omarchy.KeyboardMonitorProbe','State',None,None,Gio.DBusCallFlags.NONE,500,None)
+-        state=json.loads(value.unpack()[0])
+-        return (state.get('quiescent') is True and state.get('unloadQuiescent') is True
+-                and state.get('retiring') is False and state.get('callerPreReplay') is True
+-                and transport.manager_owner()==owner)
+-    return CapabilityAdapter(Atspi,ax_device_manager.get_manager(),transport,quiet,report).install()

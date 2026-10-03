@@ -1,0 +1,19 @@
+{
+  "upstreamURL": "https://raw.githubusercontent.com/hyprwm/Hyprland/v0.56.2/src/desktop/state/ViewHitTester.cpp",
+  "baseProductionSource": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/cross-output-design/native-atlas-v18",
+  "candidateOnly": true,
+  "globalHitHookUnchanged": true,
+  "changedNativeFiles": [
+    "ancestorHit.cpp",
+    "ancestorHit.hpp",
+    "familyBridge.cpp",
+    "Makefile",
+    "modalRegionAuthority.hpp",
+    "test_modal_region.cpp"
+  ],
+  "removedEligibility": "Only isShadowedByModal excludes; ordinary stacking/workspace/fullscreen/noFocus/input checks retained.",
+  "bodyInputAuthority": "Wayland windowSurfaceAt; X11 actual root resource at(current-position scaled by m_X11SurfaceScaledBy,true), selected by shared protocol dispatcher.",
+  "decorationAuthority": "Outside actual root surface and inside reserved decoration extent.",
+  "mainLoaded": false,
+  "rejectedV1Preserved": true
+}

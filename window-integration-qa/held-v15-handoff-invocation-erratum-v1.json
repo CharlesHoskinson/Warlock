@@ -1,0 +1,19 @@
+{
+  "result": "handoff invocation erratum; frozen source unchanged",
+  "cause": "Agent handoff used --output; frozen run_native parser requires --attempt. Root retained argparse-only exit2 before native.",
+  "originalHandoffSHA256": "890fb157e1715ebc587229607a8d639aec8caf4ad58a6dea68d796afa2189be2",
+  "sourceSHA256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+  "frozenManifestSHA256": "3b46fa64cfcb74d996b93386a8581121b77f840393bc6b918a914126e38c106e",
+  "correctRootCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+    "--attempt",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1"
+  ],
+  "cwd": "/home/hoskinson",
+  "nativeLaunchedHere": false,
+  "fullWindowsParityAccepted": false
+}

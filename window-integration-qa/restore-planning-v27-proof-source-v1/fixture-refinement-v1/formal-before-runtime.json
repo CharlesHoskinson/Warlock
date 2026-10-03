@@ -1,0 +1,84 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-70e50f6cf3ae4b2c8e9bf1efd881224c.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "refusal_fixture_test.qnt"
+      ],
+      "exitCode": 0,
+      "seconds": 2.3821889460086823,
+      "log": "/home/hoskinson/window-integration-qa/restore-planning-v27-proof-source-v1/fixture-refinement-v1/formal-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "refusal_fixture_test.qnt",
+        "--backend=rust",
+        "--seed=2026100227"
+      ],
+      "exitCode": 0,
+      "seconds": 2.691032353002811,
+      "log": "/home/hoskinson/window-integration-qa/restore-planning-v27-proof-source-v1/fixture-refinement-v1/formal-1.log",
+      "sha256": "27f7ec0dc50b85f8e6dbc2226b9d9e2aeff793681279e2ce64585547ee3ea8d5",
+      "mode": 384
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "refusal_fixture.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100227",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "seconds": 3.645809901005123,
+      "log": "/home/hoskinson/window-integration-qa/restore-planning-v27-proof-source-v1/fixture-refinement-v1/formal-2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    }
+  ],
+  "named": 8,
+  "samples": 2000,
+  "steps": 100,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/restore-planning-v27-proof-source-v1/fixture-refinement-v1/failed-epoch1-test_restore_planning.py": {
+      "sha256": "b14869c563b31d8388039f557c563457a363365fc225abd99f7f38423f39ca65",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-v27-proof-source-v1/fixture-refinement-v1/failed-epoch1-fixture_restore_planning.py": {
+      "sha256": "f259e2646ca386737d9ccf24a1b34fe3c060f62a1a6b672899ba45ca88553d38",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-v27-proof-source-v1/fixture-refinement-v1/CONTRACT.md": {
+      "sha256": "21e62453a38cc9b84e9dceea99b71b5064e476ef9eb3f907c5b8794255d8276b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-v27-proof-source-v1/fixture-refinement-v1/refusal_fixture.qnt": {
+      "sha256": "e55529d2e7de31282aab7802d36f033b58fbcb3c82d9d5819bcea804837845bc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-v27-proof-source-v1/fixture-refinement-v1/refusal_fixture_test.qnt": {
+      "sha256": "e1d0ddb9fdeb56bd9d41f35177b2be03314e1cb7a5c615d0a9349df982966d54",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-v27-proof-source-v1/fixture-refinement-v1/formal_driver.py": {
+      "sha256": "0844d17c5091db3d4b55b180ef3ba9912000cd53e0fbf02bd4f4ba8dea9a8e65",
+      "mode": 420
+    }
+  },
+  "sourceUnchanged": true,
+  "runtimeApplied": false
+}

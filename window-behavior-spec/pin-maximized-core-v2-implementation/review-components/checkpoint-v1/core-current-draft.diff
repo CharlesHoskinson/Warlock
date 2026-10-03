@@ -1,0 +1,1422 @@
+diff --git i/src/animation/WorkspaceAnimationController.cpp w/src/animation/WorkspaceAnimationController.cpp
+index 9d695874..8532f387 100644
+--- i/src/animation/WorkspaceAnimationController.cpp
++++ w/src/animation/WorkspaceAnimationController.cpp
+@@ -1,3 +1,4 @@
++#include "../desktop/state/pin/NativePinState.hpp"
+ #include "WorkspaceAnimationController.hpp"
+ 
+ #include "../Compositor.hpp"
+@@ -162,8 +163,11 @@ void Animation::Workspace::setFullscreenFadeAnimation(PHLWORKSPACE ws, eAnimatio
+ 
+         w->updateFullscreenInputState();
+ 
+-        if (w->m_pinned)
++        if (Desktop::Pin::effective(w)) {
++            *w->alpha(WINDOW_ALPHA_FULLSCREEN) = 1.F;
++            w->updateFullscreenInputState();
+             continue;
++        }
+ 
+         // If there are several covering FS windows layered ontop of each other, needed to ensure FS windows are not stuck being invisible below the topmost
+         if (TOPMOST_COVERING_FS_WINDOW == w) {
+@@ -213,7 +217,7 @@ void Animation::Workspace::overrideFullscreenFadeAmount(PHLWORKSPACE ws, float f
+         if (w->m_workspace != ws)
+             continue;
+ 
+-        if (w->m_pinned || Fullscreen::controller()->isFullscreen(w))
++        if (Desktop::Pin::effective(w) || Fullscreen::controller()->isFullscreen(w))
+             continue;
+ 
+         *w->alpha(WINDOW_ALPHA_FULLSCREEN) = fade;
+diff --git i/src/config/shared/actions/ConfigActions.cpp w/src/config/shared/actions/ConfigActions.cpp
+index cf388167..9b9bfa58 100644
+--- i/src/config/shared/actions/ConfigActions.cpp
++++ w/src/config/shared/actions/ConfigActions.cpp
+@@ -1,3 +1,4 @@
++#include "../../../desktop/state/pin/NativePinState.hpp"
+ #include "ConfigActions.hpp"
+ #include "../parserUtils/ParserUtils.hpp"
+ #include "../../../desktop/state/FocusState.hpp"
+@@ -71,20 +72,27 @@ static void switchToWindow(PHLWINDOW PWINDOWTOCHANGETO, bool forceFSCycle = fals
+ 
+     if (PLASTWINDOW && PLASTWINDOW->m_workspace == PWINDOWTOCHANGETO->m_workspace &&
+         (Fullscreen::controller()->isFullscreen(PLASTWINDOW) && !Fullscreen::controller()->layoutManagedFS(PLASTWINDOW)))
+-        Desktop::focusState()->fullWindowFocus(PWINDOWTOCHANGETO, Desktop::FOCUS_REASON_SWITCH_TO_WINDOW_HARD, nullptr, forceFSCycle);
++        Desktop::focusState()->fullWindowFocusResult(PWINDOWTOCHANGETO, Desktop::FOCUS_REASON_SWITCH_TO_WINDOW_HARD, nullptr, forceFSCycle);
+     else {
+         updateRelativeCursorCoords();
+-        Desktop::focusState()->fullWindowFocus(PWINDOWTOCHANGETO, Desktop::FOCUS_REASON_SWITCH_TO_WINDOW_SOFT, nullptr, forceFSCycle);
+-        PWINDOWTOCHANGETO->warpCursor();
++        const auto result = Desktop::focusState()->fullWindowFocusResult(PWINDOWTOCHANGETO, Desktop::FOCUS_REASON_SWITCH_TO_WINDOW_SOFT, nullptr, forceFSCycle);
++        if (!result.accepted || !Desktop::focusState()->acceptsResult(result))
++            return;
++        const auto acceptedTarget = result.target;
++        acceptedTarget->warpCursor();
+ 
+         if (*PNOWARPS == 0 || *PFOLLOWMOUSE < 2) {
+-            g_pInputManager->m_forcedFocus = PWINDOWTOCHANGETO;
++            if (!Desktop::focusState()->acceptsResult(result))
++                return;
++            g_pInputManager->m_forcedFocus = acceptedTarget;
+             g_pInputManager->simulateMouseMovement();
+             g_pInputManager->m_forcedFocus.reset();
+         }
+ 
+-        if (PLASTWINDOW && PLASTWINDOW->m_monitor != PWINDOWTOCHANGETO->m_monitor) {
+-            const auto PNEWMON = PWINDOWTOCHANGETO->m_monitor.lock();
++        if (PLASTWINDOW && PLASTWINDOW->m_monitor != acceptedTarget->m_monitor) {
++            if (!Desktop::focusState()->acceptsResult(result))
++                return;
++            const auto PNEWMON = acceptedTarget->m_monitor.lock();
+             Desktop::focusState()->rawMonitorFocus(PNEWMON);
+         }
+     }
+@@ -227,7 +235,8 @@ ActionResult Actions::pinWindow(eTogglableAction action, std::optional<PHLWINDOW
+     if (!window)
+         return {};
+ 
+-    if (!window->m_isFloating || Fullscreen::controller()->isFullscreen(window))
++    const bool NATIVE_MAX_PIN = Desktop::Pin::state()->admits(window);
++    if (!NATIVE_MAX_PIN && (!window->m_isFloating || Fullscreen::controller()->isFullscreen(window)))
+         return actionError("Window does not qualify to be pinned", eActionErrorLevel::WARNING, eActionErrorCode::INVALID_STATE);
+ 
+     bool wantPin = false;
+@@ -244,7 +253,7 @@ ActionResult Actions::pinWindow(eTogglableAction action, std::optional<PHLWINDOW
+     if (!PMONITOR)
+         return actionError("Window has no monitor", eActionErrorLevel::WARNING, eActionErrorCode::INVALID_STATE);
+ 
+-    if (!PMONITOR->m_activeWorkspace || !PMONITOR->m_activeWorkspace->m_space)
++    if (!NATIVE_MAX_PIN && (!PMONITOR->m_activeWorkspace || !PMONITOR->m_activeWorkspace->m_space))
+         return actionError("Monitor has no active workspace", eActionErrorLevel::WARNING, eActionErrorCode::INVALID_STATE);
+ 
+     const auto LAYOUTTARGET = window->layoutTarget();
+@@ -252,15 +261,19 @@ ActionResult Actions::pinWindow(eTogglableAction action, std::optional<PHLWINDOW
+         return actionError("Window has no layout target", eActionErrorLevel::WARNING, eActionErrorCode::INVALID_STATE);
+ 
+     window->m_pinned = wantPin;
++    if (NATIVE_MAX_PIN)
++        Desktop::Pin::state()->setOrigin(window, wantPin);
+     window->updateFullscreenInputState();
+     *window->alpha(Desktop::View::WINDOW_ALPHA_FULLSCREEN) = window->isBlockedByFullscreen() ? 0.F : 1.F;
+ 
+-    LAYOUTTARGET->assignToSpace(PMONITOR->m_activeWorkspace->m_space);
++    if (!NATIVE_MAX_PIN)
++        LAYOUTTARGET->assignToSpace(PMONITOR->m_activeWorkspace->m_space);
+     window->m_ruleApplicator->propertiesChanged(Desktop::Rule::RULE_PROP_PINNED);
+ 
+     const auto PWORKSPACE = window->m_workspace;
+-    PWORKSPACE->m_lastFocusedWindow =
+-        Desktop::viewState()->hitTest().windowAt(g_pInputManager->getMouseCoordsInternal(), Desktop::View::RESERVED_EXTENTS | Desktop::View::INPUT_EXTENTS);
++    if (!NATIVE_MAX_PIN)
++        PWORKSPACE->m_lastFocusedWindow =
++            Desktop::viewState()->hitTest().windowAt(g_pInputManager->getMouseCoordsInternal(), Desktop::View::RESERVED_EXTENTS | Desktop::View::INPUT_EXTENTS);
+ 
+     g_pEventManager->postEvent(SHyprIPCEvent{.event = "pin", .data = std::format("{:x},{}", rc<uintptr_t>(window.get()), sc<int>(window->m_pinned))});
+     Event::bus()->m_events.window.pin.emit(window);
+diff --git i/src/desktop/state/FocusState.cpp w/src/desktop/state/FocusState.cpp
+index 172da082..e68f7c3f 100644
+--- i/src/desktop/state/FocusState.cpp
++++ w/src/desktop/state/FocusState.cpp
+@@ -1,3 +1,4 @@
++#include "pin/NativePinState.hpp"
+ #include "FocusState.hpp"
+ #include "../view/Window.hpp"
+ #include "../../Compositor.hpp"
+@@ -70,27 +71,95 @@ static SFullscreenWorkspaceFocusResult onFullscreenWorkspaceFocusWindow(PHLWINDO
+     return {};
+ }
+ 
+-void CFocusState::fullWindowFocus(PHLWINDOW pWindow, eFocusReason reason, SP<CWLSurfaceResource> surface, bool forceFSCycle) {
+-    if (pWindow) {
+-        if (!pWindow->m_workspace)
+-            return;
++void CFocusState::fullWindowFocus(PHLWINDOW window, eFocusReason reason, SP<CWLSurfaceResource> surface, bool forceFSCycle) {
++    fullWindowFocusResult(window, reason, surface, forceFSCycle);
++}
+ 
++static bool routesExplicitModal(eFocusReason reason) {
++    return Desktop::isHardInputFocusReason(reason) || reason == FOCUS_REASON_DISPATCH_FOCUSWINDOW || reason == FOCUS_REASON_SWITCH_TO_WINDOW_SOFT;
++}
++
++SWindowFocusResult CFocusState::fullWindowFocusResult(PHLWINDOW pWindow, eFocusReason reason, SP<CWLSurfaceResource> surface, bool forceFSCycle) {
++    SWindowFocusResult result;
++    result.requested = pWindow;
++    result.coreBefore = window();
++    result.seatBefore = g_pSeatManager->m_state.keyboardFocus.lock();
++    static auto PMODALPARENTBLOCKING = CConfigValue<Config::INTEGER>("general:modal_parent_blocking");
++    PHLWINDOW routeRoot = pWindow;
++
++    if (pWindow && !pWindow->m_workspace)
++        return result;
++    if (pWindow && *PMODALPARENTBLOCKING && routesExplicitModal(reason)) {
++        // Preserve the requested owner's refusal policy before selecting a native descendant.
++        if (pWindow->m_ruleApplicator->noFocus().valueOrDefault())
++            return result;
++        pWindow = Pin::deepestModal(pWindow);
++        if (!pWindow)
++            return result;
++        if (pWindow != result.requested)
++            surface.reset();
++    }
++
++    if (pWindow) {
+         const auto FSWINDOW = Fullscreen::controller()->getFullscreenWindow(pWindow->m_workspace);
+-        if (FSWINDOW && !Fullscreen::controller()->layoutManagedFS(FSWINDOW)) {
+-            const auto RESULT = onFullscreenWorkspaceFocusWindow(pWindow, forceFSCycle);
+-            if (RESULT.overrideFocusWindow)
+-                pWindow = RESULT.overrideFocusWindow;
++        const bool PROTECTED_MAX = FSWINDOW && FSWINDOW->m_pinned && Fullscreen::controller()->getFullscreenModes(FSWINDOW).internal == Fullscreen::FSMODE_MAXIMIZED;
++        if (FSWINDOW && !Fullscreen::controller()->layoutManagedFS(FSWINDOW) && !PROTECTED_MAX) {
++            const auto decision = onFullscreenWorkspaceFocusWindow(pWindow, forceFSCycle);
++            if (decision.overrideFocusWindow) {
++                routeRoot = decision.overrideFocusWindow;
++                pWindow = routeRoot;
++                surface.reset();
++                if (*PMODALPARENTBLOCKING && routesExplicitModal(reason)) {
++                    pWindow = Pin::deepestModal(routeRoot);
++                    if (!pWindow)
++                        return result;
++                    if (pWindow != routeRoot) {
++                        const auto finalDecision = onFullscreenWorkspaceFocusWindow(pWindow, forceFSCycle);
++                        if (finalDecision.overrideFocusWindow)
++                            return result;
++                    }
++                }
++            }
+         }
+     }
+ 
+-    static auto PMODALPARENTBLOCKING = CConfigValue<Config::INTEGER>("general:modal_parent_blocking");
+-
+-    if (*PMODALPARENTBLOCKING && pWindow && pWindow->m_xdgSurface && pWindow->m_xdgSurface->m_toplevel && pWindow->m_xdgSurface->m_toplevel->anyChildModal()) {
+-        Log::logger->log(Log::DEBUG, "Refusing focus to window shadowed by modal dialog");
+-        return;
+-    }
++    if (*PMODALPARENTBLOCKING && pWindow && pWindow->m_xdgSurface && pWindow->m_xdgSurface->m_toplevel && pWindow->m_xdgSurface->m_toplevel->anyChildModal())
++        return result;
+ 
++    result.target = pWindow;
++    result.routeRoot = routeRoot;
++    result.modalRoute = routeRoot && *PMODALPARENTBLOCKING && routesExplicitModal(reason);
++    result.expectedSurface = pWindow ? (surface ? surface : pWindow->wlSurface()->resource()) : nullptr;
+     rawWindowFocus(pWindow, reason, surface);
++    // Raw focus can publish a core owner before rawSurfaceFocus refuses. Retain actual observations before acceptance.
++    result.coreAfter = window();
++    result.coreSurfaceAfter = this->surface();
++    result.seatAfter = g_pSeatManager->m_state.keyboardFocus.lock();
++    result.keyboardPresent = !!g_pSeatManager->m_keyboard;
++    const bool ROUTE_CURRENT = !routeRoot || !*PMODALPARENTBLOCKING || !routesExplicitModal(reason) || Pin::deepestModal(routeRoot) == pWindow;
++    result.accepted = ROUTE_CURRENT && acceptsResult(result);
++    result.partial = !result.accepted && (result.coreBefore != result.coreAfter || result.seatBefore != result.seatAfter);
++    return result;
++}
++
++bool CFocusState::acceptsResult(const SWindowFocusResult& result) const {
++    const auto target = result.target;
++    const auto expected = result.expectedSurface;
++    if (!target || !expected || !expected->good() || !Pin::state()->live(target) || !validMapped(target) || target->isHidden() || target->m_ruleApplicator->noFocus().valueOrDefault())
++        return false;
++    if (result.requested && (!Pin::state()->live(result.requested) || !validMapped(result.requested) || result.requested->m_ruleApplicator->noFocus().valueOrDefault()))
++        return false;
++    if (result.modalRoute && (!Pin::state()->live(result.routeRoot) || !validMapped(result.routeRoot) || result.routeRoot->m_ruleApplicator->noFocus().valueOrDefault() || Pin::deepestModal(result.routeRoot) != target))
++        return false;
++    if (target->m_isX11 && target->isX11OverrideRedirect() && (!target->m_xwaylandSurface || !target->m_xwaylandSurface->wantsFocus()))
++        return false;
++    const bool unlocked = !g_pSessionLockManager->isSessionLocked() || g_pSessionLockManager->isSurfaceSessionLock(expected);
++    const bool layerAllows = target->priorityFocus() || g_pInputManager->m_exclusiveLSes.empty();
++    const bool seatAllows = !g_pSeatManager->m_seatGrab || g_pSeatManager->m_seatGrab->accepts(expected);
++    const bool ownerCurrent = target->m_workspace && target->m_workspace->isVisible() && target->wlSurface()->resource() == expected;
++    return Pin::acceptsFocus({.coreOwnerExact = m_focusWindow == target, .coreSurfaceExact = m_focusSurface == expected,
++        .seatSurfaceExact = g_pSeatManager->m_state.keyboardFocus == expected, .keyboardPresent = !!g_pSeatManager->m_keyboard,
++        .guardsCurrent = unlocked && layerAllows && seatAllows, .ownerCurrent = ownerCurrent});
+ }
+ 
+ void CFocusState::rawWindowFocus(PHLWINDOW pWindow, eFocusReason reason, SP<CWLSurfaceResource> surface) {
+@@ -155,7 +224,13 @@ void CFocusState::rawWindowFocus(PHLWINDOW pWindow, eFocusReason reason, SP<CWLS
+     if (m_focusWindow.lock() == pWindow && g_pSeatManager->m_state.keyboardFocus == surface && g_pSeatManager->m_state.keyboardFocus)
+         return;
+ 
+-    if (pWindow->m_pinned)
++    if (pWindow->m_pinned && Pin::state()->maxOrigin(pWindow)) {
++        const auto ownMonitor = pWindow->m_monitor.lock();
++        if (ownMonitor && ownMonitor->m_activeWorkspace && ownMonitor->m_activeWorkspace->m_space) {
++            pWindow->layoutTarget()->assignToSpace(ownMonitor->m_activeWorkspace->m_space);
++            rawMonitorFocus(ownMonitor);
++        }
++    } else if (pWindow->m_pinned)
+         pWindow->m_workspace = m_focusMonitor->m_activeWorkspace;
+ 
+     const auto PMONITOR = pWindow->m_monitor.lock();
+diff --git i/src/desktop/state/FocusState.hpp w/src/desktop/state/FocusState.hpp
+index 927ebdb1..a20442a1 100644
+--- i/src/desktop/state/FocusState.hpp
++++ w/src/desktop/state/FocusState.hpp
+@@ -29,6 +29,22 @@ namespace Desktop {
+ 
+     bool isHardInputFocusReason(eFocusReason r);
+ 
++    struct SWindowFocusResult {
++        PHLWINDOW requested;
++        PHLWINDOW target;
++        PHLWINDOW routeRoot;
++        bool modalRoute = false;
++        PHLWINDOW coreBefore;
++        PHLWINDOW coreAfter;
++        SP<CWLSurfaceResource> expectedSurface;
++        SP<CWLSurfaceResource> coreSurfaceAfter;
++        SP<CWLSurfaceResource> seatBefore;
++        SP<CWLSurfaceResource> seatAfter;
++        bool keyboardPresent = false;
++        bool accepted = false;
++        bool partial = false;
++    };
++
+     class CFocusState {
+       public:
+         CFocusState();
+@@ -39,6 +55,8 @@ namespace Desktop {
+         CFocusState(const CFocusState&) = delete;
+ 
+         void                   fullWindowFocus(PHLWINDOW w, eFocusReason reason, SP<CWLSurfaceResource> surface = nullptr, bool forceFSCycle = false);
++        SWindowFocusResult     fullWindowFocusResult(PHLWINDOW w, eFocusReason reason, SP<CWLSurfaceResource> surface = nullptr, bool forceFSCycle = false);
++        bool                   acceptsResult(const SWindowFocusResult& result) const;
+         void                   rawWindowFocus(PHLWINDOW w, eFocusReason reason, SP<CWLSurfaceResource> surface = nullptr);
+         void                   rawSurfaceFocus(SP<CWLSurfaceResource> s, PHLWINDOW pWindowOwner = nullptr);
+         void                   rawMonitorFocus(PHLMONITOR m);
+diff --git i/src/desktop/state/ViewHitTester.cpp w/src/desktop/state/ViewHitTester.cpp
+index 1b7ecdc7..7f3bd3b0 100644
+--- i/src/desktop/state/ViewHitTester.cpp
++++ w/src/desktop/state/ViewHitTester.cpp
+@@ -1,3 +1,4 @@
++#include "pin/NativePinState.hpp"
+ #include "ViewHitTester.hpp"
+ #include "FocusState.hpp"
+ #include "ViewStateTracker.hpp"
+@@ -49,12 +50,15 @@ PHLWINDOW CViewHitTester::windowAt(const Vector2D& pos, uint16_t properties, PHL
+     };
+ 
+     // pinned windows on top of floating regardless
+-    if (properties & ALLOW_FLOATING) {
+-        for (auto const& w : WINDOWS | std::views::reverse) {
++    {
++        const auto PROTECTED_BAND = Desktop::Pin::band();
++        for (auto const& w : PROTECTED_BAND | std::views::reverse) {
++            if ((w->m_isFloating && !(properties & ALLOW_FLOATING)) || (!w->m_isFloating && (properties & FLOATING_ONLY)))
++                continue;
+             if (ONLY_PRIORITY && !w->priorityFocus())
+                 continue;
+ 
+-            if (w->m_isFloating && w->m_isMapped && w->acceptsInput() && !w->m_X11ShouldntFocus && w->m_pinned && !w->m_ruleApplicator->noFocus().valueOrDefault() &&
++            if (w->m_isMapped && w->acceptsInput() && !w->m_X11ShouldntFocus && Desktop::Pin::effective(w) && !w->m_ruleApplicator->noFocus().valueOrDefault() &&
+                 w != ignoreWindow && !isShadowedByModal(w)) {
+                 const auto BB  = w->getWindowBoxUnified(properties);
+                 CBox       box = BB.copy().expand(!w->isX11OverrideRedirect() ? BORDER_GRAB_AREA : 0);
+@@ -93,7 +97,7 @@ PHLWINDOW CViewHitTester::windowAt(const Vector2D& pos, uint16_t properties, PHL
+                         continue;
+                 }
+ 
+-                if (w->m_isFloating && w->m_isMapped && w->m_workspace->isVisible() && w->acceptsInput() && !w->m_pinned && !w->m_ruleApplicator->noFocus().valueOrDefault() &&
++                if (w->m_isFloating && w->m_isMapped && w->m_workspace->isVisible() && w->acceptsInput() && !Desktop::Pin::effective(w) && !w->m_ruleApplicator->noFocus().valueOrDefault() &&
+                     w != ignoreWindow && (!aboveFullscreen || w->isAllowedOverFullscreen()) && !isShadowedByModal(w)) {
+                     // OR windows should add focus to parent
+                     if (w->m_X11ShouldntFocus && !w->isX11OverrideRedirect())
+@@ -139,7 +143,7 @@ PHLWINDOW CViewHitTester::windowAt(const Vector2D& pos, uint16_t properties, PHL
+         if (Fullscreen::controller()->hasFullscreen(PWORKSPACE) && !(properties & SKIP_FULLSCREEN_PRIORITY) && !ONLY_PRIORITY) {
+             const auto FS_WINDOW = Fullscreen::controller()->getFullscreenWindow(PWORKSPACE);
+ 
+-            if (!FS_WINDOW)
++            if (!FS_WINDOW || Desktop::Pin::effective(FS_WINDOW))
+                 return nullptr;
+ 
+             // for maximized windows, don't return a window if we are not directly on it.
+@@ -164,7 +168,7 @@ PHLWINDOW CViewHitTester::windowAt(const Vector2D& pos, uint16_t properties, PHL
+             if (!w->m_workspace)
+                 continue;
+ 
+-            if (!w->m_isX11 && !w->m_isFloating && w->m_isMapped && w->workspaceID() == WSPID && w->acceptsInput() && !w->m_X11ShouldntFocus &&
++            if (!w->m_isX11 && !Desktop::Pin::effective(w) && !w->m_isFloating && w->m_isMapped && w->workspaceID() == WSPID && w->acceptsInput() && !w->m_X11ShouldntFocus &&
+                 !w->m_ruleApplicator->noFocus().valueOrDefault() && w != ignoreWindow && !isShadowedByModal(w)) {
+                 if (w->hasPopupAt(pos))
+                     return w;
+@@ -181,7 +185,7 @@ PHLWINDOW CViewHitTester::windowAt(const Vector2D& pos, uint16_t properties, PHL
+             if (!w->m_workspace)
+                 continue;
+ 
+-            if (!w->m_isFloating && w->m_isMapped && w->workspaceID() == WSPID && w->acceptsInput() && !w->m_X11ShouldntFocus && !w->m_ruleApplicator->noFocus().valueOrDefault() &&
++            if (!Desktop::Pin::effective(w) && !w->m_isFloating && w->m_isMapped && w->workspaceID() == WSPID && w->acceptsInput() && !w->m_X11ShouldntFocus && !w->m_ruleApplicator->noFocus().valueOrDefault() &&
+                 w != ignoreWindow && !isShadowedByModal(w)) {
+                 CBox box = (properties & USE_PROP_TILED) ? w->getWindowBoxUnified(properties) : w->layoutBox();
+                 if ((properties & INPUT_EXTENTS) && BORDER_GRAB_AREA > 0 && !w->isX11OverrideRedirect()) {
+diff --git i/src/desktop/view/Window.cpp w/src/desktop/view/Window.cpp
+index 8836f73b..97cdffe4 100644
+--- i/src/desktop/view/Window.cpp
++++ w/src/desktop/view/Window.cpp
+@@ -1,3 +1,4 @@
++#include "../state/pin/NativePinState.hpp"
+ #include <algorithm>
+ #include <array>
+ #include <cmath>
+@@ -953,7 +954,7 @@ bool CWindow::isAllowedOverFullscreen() const {
+     if (!m_workspace)
+         return false;
+ 
+-    if (m_self == Fullscreen::controller()->getFullscreenWindow(m_workspace, true) || m_pinned || m_allowedOverFullscreen)
++    if (m_self == Fullscreen::controller()->getFullscreenWindow(m_workspace, true) || Desktop::Pin::effective(m_self.lock()) || m_allowedOverFullscreen)
+         return true;
+ 
+     const auto FSWINDOW = Fullscreen::controller()->getFullscreenWindow(m_workspace);
+@@ -1202,7 +1203,7 @@ void CWindow::setAnimationsToMove() {
+ 
+ void CWindow::onWorkspaceAnimUpdate() {
+     // clip box for animated offsets
+-    if (!m_isFloating || m_pinned || Fullscreen::controller()->isFullscreen(m_self.lock())) {
++    if (!m_isFloating || Desktop::Pin::effective(m_self.lock()) || Fullscreen::controller()->isFullscreen(m_self.lock())) {
+         m_floatingOffset = Vector2D(0, 0);
+         return;
+     }
+@@ -2287,7 +2288,7 @@ void CWindow::mapWindow() {
+         m_closeableSince = Time::steadyNow() + std::chrono::years(10 /* Should be enough, no? */);
+ 
+     // disallow tiled pinned
+-    if (m_pinned && !m_isFloating)
++    if (m_pinned && !m_isFloating && !Desktop::Pin::state()->maxOrigin(m_self.lock()))
+         m_pinned = false;
+ 
+     CVarList2 WORKSPACEARGS = CVarList2(std::move(requestedWorkspace), 0, ' ', false, false);
+diff --git i/src/layout/algorithm/floating/default/DefaultFloatingAlgorithm.cpp w/src/layout/algorithm/floating/default/DefaultFloatingAlgorithm.cpp
+index 44b52319..3170f271 100644
+--- i/src/layout/algorithm/floating/default/DefaultFloatingAlgorithm.cpp
++++ w/src/layout/algorithm/floating/default/DefaultFloatingAlgorithm.cpp
+@@ -1,3 +1,4 @@
++#include "../../../../desktop/state/pin/NativePinState.hpp"
+ #include "DefaultFloatingAlgorithm.hpp"
+ 
+ #include "../../Algorithm.hpp"
+@@ -191,7 +192,9 @@ CBox CDefaultFloatingAlgorithm::fitBoxInWorkArea(const CBox& box, SP<ITarget> t)
+ }
+ 
+ void CDefaultFloatingAlgorithm::removeTarget(SP<ITarget> target) {
+-    target->rememberFloatingSize(target->position().size());
++    const auto RESTORE = Desktop::Pin::state()->snapshot(target->window());
++    if (!Desktop::Pin::state()->transferring(target->window()))
++        target->rememberFloatingSize(RESTORE.valid && RESTORE.pinManaged ? RESTORE.box.logicalBox.size() : target->position().size());
+     m_datas.erase(target);
+ }
+ 
+diff --git i/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.cpp w/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.cpp
+index 17f6f520..c5c652b2 100644
+--- i/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.cpp
++++ w/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.cpp
+@@ -15,6 +15,8 @@
+ #include "../../../../config/supplementary/propRefresher/PropRefresher.hpp"
+ #include <hyprutils/utils/ScopeGuard.hpp>
+ #include <optional>
++#include <cmath>
++#include "../../../../desktop/state/pin/NativePinState.hpp"
+ 
+ using namespace Fullscreen;
+ using namespace Fullscreen::ScrollingFullscreenHandler;
+@@ -85,9 +87,11 @@ bool CScrollingFullscreenHandler::hasFullscreen(const std::optional<bool> coveri
+ }
+ 
+ SP<Layout::ITarget> CScrollingFullscreenHandler::getFullscreen(const std::optional<bool> covering) {
+-    for (const auto& e : m_fsTargets) {
+-        if (const auto TARGET = e.first.lock(); isFullscreen(TARGET, std::nullopt, covering))
+-            return TARGET;
++    for (const auto mode : {FSMODE_FULLSCREEN, FSMODE_MAXIMIZED}) {
++        for (const auto& w : Desktop::windowState()->windows() | std::views::reverse) {
++            if (validMapped(w) && w->m_target && isFullscreen(w->m_target, mode, covering))
++                return w->m_target;
++        }
+     }
+     return nullptr;
+ }
+@@ -133,6 +137,14 @@ eFullscreenRequestResult CScrollingFullscreenHandler::requestFullscreen(const SF
+     if (!currentCol)
+         return FULLSCREEN_REQUEST_FAILED;
+ 
++    if (request.currentMode == FSMODE_NONE && REQUESTED_MODE != FSMODE_NONE) {
++        auto& state = m_fsTargets[TARGET];
++        SNativeScrollRestore restore{.column = currentCol, .width = currentCol->getColumnWidth(), .offset = m_scrollingAlgorithm->m_scrollingData->controller->getOffset()};
++        for (const auto& row : currentCol->targetDatas)
++            restore.rows.push_back({.data = row, .size = currentCol->getTargetSize(row)});
++        state.nativeRestore = std::move(restore);
++    }
++
+     // lambda for expelling if there is more than one target in a column when FSing a target.
+     const auto expelIfMoreThanOneTargetInColDuringFS = [&]() -> void {
+         if (currentCol && currentCol->targetDatas.size() > 1) {
+@@ -194,6 +206,13 @@ eFullscreenRequestResult CScrollingFullscreenHandler::requestFullscreen(const SF
+         if (!currentCol || currentCol->targetDatas.size() > 1)
+             return FULLSCREEN_REQUEST_FAILED;
+ 
++        if (const auto it = m_fsTargets.find(TARGET); it != m_fsTargets.end() && it->second.nativeRestore) {
++            auto& restore = *it->second.nativeRestore;
++            if (const auto original = restore.column.lock(); original && original != currentCol && restore.remaining.empty()) {
++                for (const auto& row : original->targetDatas)
++                    restore.remaining.push_back({.data = row, .size = original->getTargetSize(row)});
++            }
++        }
+         currentCol->setColumnWidth(fullscreenColumnWidth());
+ 
+         m_scrollingAlgorithm->m_scrollingData->centerOrFitCol(currentCol);
+@@ -229,6 +248,13 @@ eFullscreenRequestResult CScrollingFullscreenHandler::requestFullscreen(const SF
+         if (!currentCol || currentCol->targetDatas.size() > 1)
+             return FULLSCREEN_REQUEST_FAILED;
+ 
++        if (const auto it = m_fsTargets.find(TARGET); it != m_fsTargets.end() && it->second.nativeRestore) {
++            auto& restore = *it->second.nativeRestore;
++            if (const auto original = restore.column.lock(); original && original != currentCol && restore.remaining.empty()) {
++                for (const auto& row : original->targetDatas)
++                    restore.remaining.push_back({.data = row, .size = original->getTargetSize(row)});
++            }
++        }
+         currentCol->setColumnWidth(1.F);
+ 
+         m_scrollingAlgorithm->m_scrollingData->centerOrFitCol(currentCol);
+@@ -244,10 +270,13 @@ eFullscreenRequestResult CScrollingFullscreenHandler::requestFullscreen(const SF
+     if (request.currentMode == FSMODE_FULLSCREEN)
+         m_scrollingAlgorithm->m_scrollingData->controller->adjustOffset(MONITOR->logicalBox().x - WORKSPACE->m_space->workArea().x);
+ 
++    const auto nativeRecord = Desktop::Pin::state()->snapshot(WINDOW);
++    const bool RESTORE_NATIVE = nativeRecord.valid && nativeRecord.pinManaged && nativeMaxRestoreValid(TARGET);
+     // UnFS target
+     setTargetFullscreenModeInternal(TARGET, FSMODE_NONE);
+     setNoMembersAboveFullscreen();
+-    m_scrollingAlgorithm->m_scrollingData->centerOrFitCol(currentCol);
++    if (!RESTORE_NATIVE)
++        m_scrollingAlgorithm->m_scrollingData->centerOrFitCol(currentCol);
+     return (REQUESTED_MODE == FSMODE_NONE && !isFullscreen(TARGET, std::nullopt, std::nullopt)) ? FULLSCREEN_REQUEST_LAYOUT_HANDLED : FULLSCREEN_REQUEST_FAILED;
+ }
+ 
+@@ -326,7 +355,7 @@ void CScrollingFullscreenHandler::setNoMembersAboveFullscreen() {
+         const auto MONITOR   = WORKSPACE->m_monitor;
+ 
+         for (auto const& w : Desktop::windowState()->windows()) {
+-            if (w && w->m_workspace == getSpace()->workspace() && !isFullscreen(w->m_target) && !w->m_pinned) {
++            if (w && w->m_workspace == getSpace()->workspace() && !isFullscreen(w->m_target) && !Desktop::Pin::effective(w)) {
+                 w->m_allowedOverFullscreen = !SET;
+                 w->updateFullscreenInputState();
+             }
+@@ -417,7 +446,7 @@ void CScrollingFullscreenHandler::setNoMembersAboveFullscreen() {
+                 if (!w || w->m_workspace != getSpace()->workspace())
+                     continue;
+ 
+-                if (w != COVERING_FULLSCREEN_WINDOW && !w->m_pinned) {
++                if (w != COVERING_FULLSCREEN_WINDOW && !Desktop::Pin::effective(w)) {
+                     // If it the window was hidden when the UNDERLYING_FS_WINDOW was FSed, or it is a tiled window; it remains hidden. else, it is allowed ontop of it
+                     w->m_allowedOverFullscreen = w->m_isFloating && !m_fullscreenWindowHidingState.hiddenFloatingWindowsUnderFSWindow.contains(w);
+                     w->updateFullscreenInputState();
+@@ -456,7 +485,7 @@ void CScrollingFullscreenHandler::syncFullscreenTargets() {
+     Hyprutils::Utils::CScopeGuard guard([this] { m_syncingFullscreenTargets = false; });
+ 
+     // to prevent a rehash
+-    std::vector<std::pair<WP<Layout::ITarget>, SFullscreenMode>> toInsert;
++    std::vector<std::pair<WP<Layout::ITarget>, SFullscreenScrollState>> toInsert;
+ 
+     for (auto it = m_fsTargets.begin(); it != m_fsTargets.end();) {
+ 
+@@ -546,7 +575,11 @@ void CScrollingFullscreenHandler::removeFsTarget(SP<Layout::ITarget> target, con
+         return;
+     }
+ 
+-    if (ITR->second.restoreColumnWidth.has_value()) {
++    const auto native = target->window() ? Desktop::Pin::state()->snapshot(target->window()) : Desktop::Pin::SNativeMaxProjection{};
++    const bool nativeExit = native.valid && native.pinManaged && ITR->second.mode.internal == FSMODE_NONE;
++    if (nativeExit && ITR->second.nativeRestore)
++        restoreNative(target, *ITR->second.nativeRestore);
++    if (!nativeExit && ITR->second.restoreColumnWidth.has_value()) {
+         const auto TDATA = m_scrollingAlgorithm->dataFor(target, true);
+         if (TDATA && TDATA->column)
+             TDATA->column->setColumnWidth(ITR->second.restoreColumnWidth.value());
+@@ -649,7 +682,7 @@ void CScrollingFullscreenHandler::saveCurrentFsAndAllHiddenFloatingWindows(PHLWI
+         if (!w || w->m_workspace != getSpace()->workspace())
+             continue;
+ 
+-        if (w != fullscreenWindow && !w->m_pinned && w->m_isFloating)
++        if (w != fullscreenWindow && !Desktop::Pin::effective(w) && w->m_isFloating)
+             m_fullscreenWindowHidingState.hiddenFloatingWindowsUnderFSWindow.emplace(w);
+     }
+ }
+@@ -740,3 +773,53 @@ float CScrollingFullscreenHandler::getTargetColumnWidthBeforeFullscreenOrMaximis
+ 
+     return WINITR->second.restoreColumnWidth.value_or(0.5F);
+ }
++
++bool CScrollingFullscreenHandler::restoreValid(SP<Layout::ITarget> target, const SNativeScrollRestore& restore) const {
++    const auto column = restore.column.lock();
++    const auto data = m_scrollingAlgorithm->dataFor(target, true);
++    if (!target || target->space() != getSpace() || !data || !data->column || !column || column->scrollingData != m_scrollingAlgorithm->m_scrollingData ||
++        m_scrollingAlgorithm->m_scrollingData->idx(column) < 0 || !std::isfinite(restore.width) || restore.width <= 0.F || !std::isfinite(restore.offset) || restore.rows.empty())
++        return false;
++    const auto& current = column == data->column ? restore.rows : restore.remaining;
++    if (column->targetDatas.size() != current.size())
++        return false;
++    for (size_t i = 0; i < current.size(); ++i) {
++        const auto row = current[i].data.lock();
++        if (!row || !row->target || column->targetDatas[i] != row || !std::isfinite(current[i].size) || current[i].size <= 0.F ||
++            (column != data->column && column->getTargetSize(i) != current[i].size))
++            return false;
++    }
++    bool containsSelected = false;
++    for (const auto& saved : restore.rows) {
++        const auto row = saved.data.lock();
++        if (!row || !row->target || row->target->space() != getSpace() || !std::isfinite(saved.size) || saved.size <= 0.F)
++            return false;
++        if (row == data)
++            containsSelected = true;
++    }
++    return containsSelected;
++}
++
++bool CScrollingFullscreenHandler::nativeMaxRestoreValid(SP<Layout::ITarget> target) {
++    const auto it = m_fsTargets.find(target);
++    return it != m_fsTargets.end() && it->second.nativeRestore && isFullscreen(target, FSMODE_MAXIMIZED, std::nullopt) && restoreValid(target, *it->second.nativeRestore);
++}
++
++bool CScrollingFullscreenHandler::restoreNative(SP<Layout::ITarget> target, const SNativeScrollRestore& restore) {
++    if (!restoreValid(target, restore))
++        return false;
++    const auto data = m_scrollingAlgorithm->dataFor(target, true);
++    const auto original = restore.column.lock();
++    const auto current = data->column.lock();
++    const auto layoutTarget = data->target.lock();
++    if (original != current) {
++        const auto index = std::ranges::find_if(restore.rows, [&](const auto& row) { return row.data == data; }) - restore.rows.begin();
++        current->remove(layoutTarget);
++        original->add(data, sc<int>(index) - 1);
++    }
++    original->setColumnWidth(restore.width);
++    for (size_t i = 0; i < restore.rows.size(); ++i)
++        original->setTargetSize(i, restore.rows[i].size);
++    m_scrollingAlgorithm->m_scrollingData->controller->setOffset(restore.offset);
++    return true;
++}
+diff --git i/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.hpp w/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.hpp
+index 96e23143..115ef894 100644
+--- i/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.hpp
++++ w/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.hpp
+@@ -15,9 +15,23 @@ namespace Layout::Tiled {
+ 
+ namespace Fullscreen::ScrollingFullscreenHandler {
+ 
++    struct SNativeScrollRow {
++        WP<Layout::Tiled::SScrollingTargetData> data;
++        float size = 0.F;
++    };
++
++    struct SNativeScrollRestore {
++        WP<Layout::Tiled::SColumnData> column;
++        std::vector<SNativeScrollRow> rows;
++        std::vector<SNativeScrollRow> remaining;
++        float width = 0.F;
++        double offset = 0.;
++    };
++
+     struct SFullscreenScrollState {
+         SFullscreenMode      mode;
+         std::optional<float> restoreColumnWidth = std::nullopt;
++        std::optional<SNativeScrollRestore> nativeRestore;
+     };
+ 
+     class CScrollingFullscreenHandler : public IFullscreenHandler {
+@@ -39,6 +53,8 @@ namespace Fullscreen::ScrollingFullscreenHandler {
+         virtual SP<Layout::ITarget> getFullscreen(const std::optional<bool> covering = true);
+         virtual SFullscreenMode     getFullscreenModes(SP<Layout::ITarget> target);
+ 
++        virtual bool nativeMaxRestoreValid(SP<Layout::ITarget> target);
++
+         // FS Request
+ 
+         virtual eFullscreenRequestResult requestFullscreen(const SFullscreenRequest& request);
+@@ -99,6 +115,8 @@ namespace Fullscreen::ScrollingFullscreenHandler {
+         bool  columnCoversWorkArea(SP<Layout::Tiled::SColumnData> col) const;
+         void  updateFullscreenFade(bool coversMonitor);
+ 
++        bool restoreValid(SP<Layout::ITarget> target, const SNativeScrollRestore& restore) const;
++        bool restoreNative(SP<Layout::ITarget> target, const SNativeScrollRestore& restore);
+         float getTargetColumnWidthBeforeFullscreenOrMaximise(const SP<Layout::ITarget> target);
+     };
+ }
+diff --git i/src/layout/target/Target.cpp w/src/layout/target/Target.cpp
+index b4021f81..39c048e4 100644
+--- i/src/layout/target/Target.cpp
++++ w/src/layout/target/Target.cpp
+@@ -65,6 +65,10 @@ CBox ITarget::position() const {
+     return m_box.logicalBox;
+ }
+ 
++STargetBox ITarget::geometrySnapshot() const {
++    return m_box;
++}
++
+ void ITarget::rememberFloatingSize(const Vector2D& size) {
+     m_floatingSize = size;
+ }
+diff --git i/src/layout/target/Target.hpp w/src/layout/target/Target.hpp
+index ca55a9ea..6df9b8fb 100644
+--- i/src/layout/target/Target.hpp
++++ w/src/layout/target/Target.hpp
+@@ -45,6 +45,7 @@ namespace Layout {
+         virtual void                                                setPositionGlobal(const STargetBox& box, uint8_t flags = TARGET_UPDATE_NONE);
+         void                                                        setPositionGlobal(const CBox& box, uint8_t flags = TARGET_UPDATE_NONE);
+         virtual CBox                                                position() const;
++        STargetBox                                                  geometrySnapshot() const;
+         virtual void                                                assignToSpace(const SP<CSpace>& space, std::optional<Vector2D> focalPoint = std::nullopt);
+         virtual void                                                setSpaceGhost(const SP<CSpace>& space);
+         virtual SP<CSpace>                                          space() const;
+diff --git i/src/layout/target/WindowGroupTarget.cpp w/src/layout/target/WindowGroupTarget.cpp
+index 02145e26..07855936 100644
+--- i/src/layout/target/WindowGroupTarget.cpp
++++ w/src/layout/target/WindowGroupTarget.cpp
+@@ -1,4 +1,5 @@
+ #include "WindowGroupTarget.hpp"
++#include "../../desktop/state/pin/NativePinState.hpp"
+ 
+ #include "../space/Space.hpp"
+ #include "../algorithm/Algorithm.hpp"
+@@ -36,10 +37,14 @@ void CWindowGroupTarget::updatePos(uint8_t flags) {
+ }
+ 
+ void CWindowGroupTarget::assignToSpace(const SP<CSpace>& space, std::optional<Vector2D> focalPoint) {
+-    ITarget::assignToSpace(space, focalPoint);
+-
+-    if (space)
++    const auto transfer = Desktop::Pin::state()->beginTransfer(window(), space);
++    if (transfer && space)
+         m_group->updateWorkspace(space->workspace());
++    ITarget::assignToSpace(space, focalPoint);
++    if (space && !transfer)
++        m_group->updateWorkspace(space->workspace());
++    if (transfer)
++        Desktop::Pin::state()->finishTransfer(*transfer);
+ }
+ 
+ bool CWindowGroupTarget::floating() {
+diff --git i/src/layout/target/WindowTarget.cpp w/src/layout/target/WindowTarget.cpp
+index 461ce098..d85ede0f 100644
+--- i/src/layout/target/WindowTarget.cpp
++++ w/src/layout/target/WindowTarget.cpp
+@@ -1,3 +1,4 @@
++#include "../../desktop/state/pin/NativePinState.hpp"
+ #include "WindowTarget.hpp"
+ 
+ #include "../space/Space.hpp"
+@@ -262,6 +263,7 @@ void CWindowTarget::assignToSpace(const SP<CSpace>& space, std::optional<Vector2
+         return;
+     }
+ 
++    const auto transfer = Desktop::Pin::state()->beginTransfer(m_window.lock(), space);
+     m_window->m_layoutFlags = {};
+ 
+     // keep the ref here so that moveToWorkspace doesn't unref the workspace
+@@ -273,6 +275,8 @@ void CWindowTarget::assignToSpace(const SP<CSpace>& space, std::optional<Vector2
+ 
+     // layout and various update fns want the target to already have m_workspace set
+     ITarget::assignToSpace(space, focalPoint);
++    if (transfer)
++        Desktop::Pin::state()->finishTransfer(*transfer);
+ 
+     m_window->updateToplevel();
+     m_window->updateWindowDecos();
+@@ -289,7 +293,8 @@ void CWindowTarget::setFloating(bool x) {
+     m_window->m_layoutFlags = {};
+ 
+     m_window->m_isFloating = x;
+-    m_window->m_pinned     = false;
++    if (!Desktop::Pin::state()->maxOrigin(m_window.lock()))
++        m_window->m_pinned = false;
+ 
+     m_window->m_ruleApplicator->propertiesChanged(Desktop::Rule::RULE_PROP_FLOATING);
+ }
+diff --git i/src/managers/fullscreen/FullscreenController.cpp w/src/managers/fullscreen/FullscreenController.cpp
+index e55a9440..42b22e62 100644
+--- i/src/managers/fullscreen/FullscreenController.cpp
++++ w/src/managers/fullscreen/FullscreenController.cpp
+@@ -1,3 +1,5 @@
++#include "../../desktop/state/pin/NativePinState.hpp"
++#include "../../desktop/state/WindowState.hpp"
+ #include "FullscreenController.hpp"
+ 
+ #include "../../managers/fullscreen/handler/FullscreenHandler.hpp"
+@@ -34,36 +36,8 @@ bool CFullscreenController::isFullscreen(const PHLWINDOW window, const std::opti
+         !isFullscreen(window, std::nullopt, covering);
+     }
+ 
+-    /* Error Correction - try once */
+-    const auto returnBoolAfterErrorCorrection = [&](const WP<Fullscreen::IFullscreenHandler> FS_HANDLER, const WP<Desktop::View::CWindow> FS_WINDOW) -> bool {
+-        if (!FS_WINDOW || !FS_WINDOW->m_target)
+-            return false;
+-
+-        const auto FS_TARGET     = FS_HANDLER->getFullscreen(covering);
+-        const auto INTERNAL_MODE = FS_HANDLER->getFullscreenModes(window->m_target).internal;
+-
+-        if (FS_TARGET && FS_WINDOW == FS_TARGET->window() && INTERNAL_MODE != FSMODE_NONE && (!mode.has_value() || INTERNAL_MODE == mode.value()))
+-            return true;
+-        else {
+-            FS_HANDLER->syncFullscreenTargets();
+-            return FS_HANDLER->isFullscreen(window->m_target, mode, covering);
+-        }
+-        return false;
+-    };
+-
+     const auto FS_HANDLER = getFsHandler(window);
+-
+-    if (!FS_HANDLER) {
+-        Log::logger->log(Log::ERR, "window {} doesn't have FS handler assinged. This should never happen", window->m_title);
+-        return false;
+-    }
+-
+-    const auto IS_FS = FS_HANDLER->isFullscreen(window->m_target, mode, covering);
+-
+-    if (IS_FS)
+-        return returnBoolAfterErrorCorrection(FS_HANDLER, window);
+-
+-    return false;
++    return FS_HANDLER && FS_HANDLER->isFullscreen(window->m_target, mode, covering);
+ }
+ 
+ SFullscreenMode CFullscreenController::getFullscreenModes(const PHLWINDOW window) {
+@@ -388,6 +362,12 @@ void CFullscreenController::setFullscreenMode(const PHLWINDOW window, std::optio
+             targetInternalMode = targetClientMode;
+     }
+ 
++    // Capture the owning normal layout box before publishing either native or client MAX state.
++    // Special workspaces keep their ordinary fullscreen policy and cannot enter native pin admission.
++    if (stateChanged && targetInternalMode == FSMODE_MAXIMIZED && OLD_FS_MODES.internal == FSMODE_NONE && !window->onSpecialWorkspace() &&
++        !Desktop::Pin::state()->capture(window, layoutAware.value_or(WAS_LAYOUT_HANDLED)))
++        return;
++
+     /*
+         Handling Pinned windows - allow_pin_fullscreen
+         Pinned windows can only be floating, therefore it is guaranteed that they will use the same FS handler within the workspace
+@@ -397,12 +377,13 @@ void CFullscreenController::setFullscreenMode(const PHLWINDOW window, std::optio
+     std::optional<bool> pinnedWindowRequetsInternalFS                  = std::nullopt;
+ 
+     static auto         PALLOWPINFULLSCREEN = CConfigValue<Config::INTEGER>("binds:allow_pin_fullscreen");
+-    if (*PALLOWPINFULLSCREEN && !window->m_pinFullscreened && window->m_pinned && !WINDOW_IS_ALREADY_INTERNAL_FS_HANDLER_AGNOSTIC)
++    if (*PALLOWPINFULLSCREEN && !window->m_pinFullscreened && window->m_pinned && (!WINDOW_IS_ALREADY_INTERNAL_FS_HANDLER_AGNOSTIC ||
++        (OLD_FS_MODES.internal == FSMODE_MAXIMIZED && targetInternalMode == FSMODE_FULLSCREEN && Desktop::Pin::state()->maxOrigin(window))))
+         pinnedWindowRequetsInternalFS = true;
+     if (*PALLOWPINFULLSCREEN && window->m_pinFullscreened && WINDOW_IS_ALREADY_INTERNAL_FS_HANDLER_AGNOSTIC && !window->m_pinned && targetInternalMode == FSMODE_NONE)
+         pinnedWindowRequetsInternalFS = false;
+ 
+-    if (HANDLE_PINNED_WINDOW) {
++    if (HANDLE_PINNED_WINDOW && !Desktop::Pin::retainsMaxPin(window->m_pinned, OLD_FS_MODES.internal, targetInternalMode, targetClientMode)) {
+ 
+         if (pinnedWindowRequetsInternalFS.value_or(false)) {
+             window->m_pinned          = false;
+@@ -452,7 +433,8 @@ void CFullscreenController::setWindowFullscreenModeInternal(const PHLWINDOW wind
+ 
+         // Layout FS handling allows for layering a floating FS winow ontop of a tiled one. Default does not.
+         const auto COVERING_FS_WINDOW = Fullscreen::controller()->getFullscreenWindow(WORKSPACE, true);
+-        if (!Fullscreen::controller()->layoutManagedFS(COVERING_FS_WINDOW))
++        const bool PROTECTED_MAX_PEER = COVERING_FS_WINDOW && COVERING_FS_WINDOW->m_pinned && getFullscreenModes(COVERING_FS_WINDOW).internal == FSMODE_MAXIMIZED;
++        if (!Fullscreen::controller()->layoutManagedFS(COVERING_FS_WINDOW) && !Desktop::Pin::preservesProtectedPeer(PROTECTED_MAX_PEER, mode))
+             setFullscreenMode(COVERING_FS_WINDOW, FSMODE_NONE);
+     }
+ 
+@@ -474,8 +456,10 @@ void CFullscreenController::setWindowFullscreenModeInternal(const PHLWINDOW wind
+     // Internal mode must be set by the handlers, not set here because last FS mode should be made available
+     const eFullscreenRequestResult FULLSCREEN_REQUEST_RESULT =
+         WINDOW_FS_HANDLER->requestFullscreen({.target = window->m_target, .currentMode = WINDOW_FS_MODE.internal, .mode = mode});
++    if (FULLSCREEN_REQUEST_RESULT == FULLSCREEN_REQUEST_FAILED)
++        return;
+ 
+-    if (mode == FSMODE_NONE && window->m_isFloating)
++    if (mode == FSMODE_NONE && window->m_isFloating && !Desktop::Pin::state()->snapshot(window).pinManaged)
+         // If window group, use the group target to set all member windows
+         ALGORITHM->recenter(window->layoutTarget());
+ 
+@@ -501,6 +485,9 @@ void CFullscreenController::setWindowFullscreenModeInternal(const PHLWINDOW wind
+                                                                                                       Layout::RECALCULATE_REASON_TOGGLE_LAYOUT_HANDLED_FULLSCREEN);
+     WORKSPACE->forceReportSizesToWindows();
+ 
++    if (mode == FSMODE_NONE && WINDOW_FS_MODE.internal != FSMODE_NONE && Desktop::Pin::state()->snapshot(window).pinManaged)
++        Desktop::Pin::state()->restore(window);
++
+     g_pInputManager->recheckIdleInhibitorStatus();
+ }
+ 
+diff --git i/src/managers/fullscreen/FullscreenController.hpp w/src/managers/fullscreen/FullscreenController.hpp
+index 06f5101a..3ac03ba0 100644
+--- i/src/managers/fullscreen/FullscreenController.hpp
++++ w/src/managers/fullscreen/FullscreenController.hpp
+@@ -5,6 +5,8 @@
+ #include <optional>
+ #include <unordered_set>
+ 
++namespace Desktop::Pin { class CNativePinState; }
++
+ namespace Fullscreen {
+ 
+     class IFullscreenHandler;
+@@ -90,6 +92,7 @@ namespace Fullscreen {
+         bool m_windowPosSettingQueued = false;
+ 
+       private:
++        friend class Desktop::Pin::CNativePinState;
+         struct SFsHandlersForWorkspace {
+             const WP<IFullscreenHandler> TILED_FS_HANDLER;
+             const WP<IFullscreenHandler> TILED_DEFAULT_FS_HANDLER;
+diff --git i/src/managers/fullscreen/handler/FullscreenHandler.cpp w/src/managers/fullscreen/handler/FullscreenHandler.cpp
+index fef3881a..70bb166c 100644
+--- i/src/managers/fullscreen/handler/FullscreenHandler.cpp
++++ w/src/managers/fullscreen/handler/FullscreenHandler.cpp
+@@ -1,4 +1,5 @@
+ #include "FullscreenHandler.hpp"
++#include "../../../desktop/state/pin/NativePinState.hpp"
+ 
+ #include "../../../managers/fullscreen/FullscreenController.hpp"
+ 
+@@ -46,6 +47,9 @@ bool IFullscreenHandler::isFullscreen(SP<Layout::ITarget> target, const std::opt
+             return false;
+     }
+ 
++    if (target->space() != getSpace())
++        return false;
++
+     const auto& ITR = m_fsTargets.find(target);
+ 
+     if (ITR == m_fsTargets.end())
+@@ -55,13 +59,16 @@ bool IFullscreenHandler::isFullscreen(SP<Layout::ITarget> target, const std::opt
+ }
+ 
+ bool IFullscreenHandler::hasFullscreen(const std::optional<bool> covering) {
+-    return std::ranges::any_of(m_fsTargets, [&](const auto& e) { return (e.first && e.second.internal != FSMODE_NONE); });
++    return !!getFullscreen(covering);
+ }
+ 
+ SP<Layout::ITarget> IFullscreenHandler::getFullscreen(const std::optional<bool> covering) {
+-    for (const auto& e : m_fsTargets) {
+-        if (e.first && e.second.internal != FSMODE_NONE)
+-            return e.first.lock();
++    // Exclusive ownership wins. Within one native mode use actual compositor z order, never hash iteration order.
++    for (const auto mode : {FSMODE_FULLSCREEN, FSMODE_MAXIMIZED}) {
++        for (const auto& w : Desktop::windowState()->windows() | std::views::reverse) {
++            if (validMapped(w) && w->m_target && isFullscreen(w->m_target, mode, covering))
++                return w->m_target;
++        }
+     }
+     return nullptr;
+ }
+@@ -77,6 +84,9 @@ SFullscreenMode IFullscreenHandler::getFullscreenModes(SP<Layout::ITarget> targe
+             return {};
+     }
+ 
++    if (target->space() != getSpace())
++        return {};
++
+     const auto ITR = m_fsTargets.find(target);
+ 
+     if (ITR == m_fsTargets.end())
+@@ -84,6 +94,10 @@ SFullscreenMode IFullscreenHandler::getFullscreenModes(SP<Layout::ITarget> targe
+     return ITR->second;
+ }
+ 
++bool IFullscreenHandler::nativeMaxRestoreValid(SP<Layout::ITarget> target) {
++    return isFullscreen(target, FSMODE_MAXIMIZED, std::nullopt);
++}
++
+ eFullscreenRequestResult IFullscreenHandler::requestFullscreen(const SFullscreenRequest& request) {
+     if (!request.target || !request.target->window() || !request.target->workspace() || !request.target->workspace()->m_monitor)
+         return FULLSCREEN_REQUEST_FAILED;
+@@ -203,12 +217,15 @@ void IFullscreenHandler::syncTargetSizeAndPosition() {
+ 
+     // Expected Dimensions logic must be the same as updatePos(), and setting dimensions code must be the same as in setTargetSizeAndPosition(). Keep in sync
+ 
+-    const auto FS_TARGET            = getFullscreen(true);
++    for (const auto& window : Desktop::windowState()->windows()) {
++    const auto FS_TARGET = window ? window->m_target : nullptr;
++    if (!isFullscreen(FS_TARGET, std::nullopt, std::nullopt))
++        continue;
+     const auto TARGET_INTERNAL_MODE = getFullscreenModes(FS_TARGET).internal;
+ 
+     // If not FS, let the layout's recalculate() handle window pos/size
+     if (!FS_TARGET || !FS_TARGET->window() || !FS_TARGET->workspace() || !FS_TARGET->workspace()->m_monitor || TARGET_INTERNAL_MODE == FSMODE_NONE)
+-        return;
++        continue;
+ 
+     const auto WORKSPACE = FS_TARGET->workspace();
+     const auto MONITOR   = WORKSPACE->m_monitor.lock();
+@@ -253,6 +270,7 @@ void IFullscreenHandler::syncTargetSizeAndPosition() {
+             LAYOUT_TARGET->setPositionGlobal(WORKSPACE->m_space->workArea(FS_TARGET->floating()));
+         }
+     }
++    }
+ }
+ 
+ void IFullscreenHandler::setNoMembersAboveFullscreen() {
+@@ -266,7 +284,7 @@ void IFullscreenHandler::setNoMembersAboveFullscreen() {
+     const bool SET = hasFullscreen(true);
+ 
+     for (auto const& w : Desktop::windowState()->windows()) {
+-        if (w && w->m_workspace == getSpace()->workspace() && !isFullscreen(w->m_target) && !w->m_pinned) {
++        if (w && w->m_workspace == getSpace()->workspace() && !isFullscreen(w->m_target) && !Desktop::Pin::effective(w)) {
+             w->m_allowedOverFullscreen = !SET;
+             w->updateFullscreenInputState();
+         }
+@@ -292,7 +310,7 @@ void IFullscreenHandler::syncFullscreenTargets() {
+         // Rigorously check if WP<> is valid as WP<> randomly segfaults sometimes without this
+         const auto TARGET = !it->first.expired() && it->first.valid() && it->first ? it->first.lock() : nullptr;
+ 
+-        if (!TARGET || !TARGET->window() || (!isFullscreen(TARGET) && it->second.client == FSMODE_NONE)) {
++        if (!TARGET || !TARGET->window() || TARGET->space() != getSpace() || (!isFullscreen(TARGET) && it->second.client == FSMODE_NONE)) {
+             const auto NEXT = std::next(it);
+             removeFsTarget(TARGET, true);
+             it = NEXT;
+diff --git i/src/managers/fullscreen/handler/FullscreenHandler.hpp w/src/managers/fullscreen/handler/FullscreenHandler.hpp
+index c1a0988d..13df7109 100644
+--- i/src/managers/fullscreen/handler/FullscreenHandler.hpp
++++ w/src/managers/fullscreen/handler/FullscreenHandler.hpp
+@@ -38,6 +38,8 @@ namespace Fullscreen {
+ 
+         virtual SFullscreenMode     getFullscreenModes(SP<Layout::ITarget> target);
+ 
++        virtual bool nativeMaxRestoreValid(SP<Layout::ITarget> target);
++
+         // FS Request
+ 
+         virtual eFullscreenRequestResult requestFullscreen(const SFullscreenRequest& request);
+diff --git i/src/managers/screenshare/ScreenshareFrame.cpp w/src/managers/screenshare/ScreenshareFrame.cpp
+index c74adcb9..c486aed4 100644
+--- i/src/managers/screenshare/ScreenshareFrame.cpp
++++ w/src/managers/screenshare/ScreenshareFrame.cpp
+@@ -1,3 +1,4 @@
++#include "../../desktop/state/pin/NativePinState.hpp"
+ #include "ScreenshareManager.hpp"
+ #include "../../pointer/PointerManager.hpp"
+ #include "../input/InputManager.hpp"
+@@ -275,7 +276,7 @@ void CScreenshareFrame::renderMonitor() {
+         if UNLIKELY (!PWORKSPACE && w->alphaValue(WINDOW_ALPHA_FADE) * w->alphaValue(WINDOW_ALPHA_FULLSCREEN) != 0.f)
+             continue;
+ 
+-        const auto renderOffset     = PWORKSPACE && !w->m_pinned ? PWORKSPACE->m_renderOffset->value() : Vector2D{};
++        const auto renderOffset     = PWORKSPACE && !Desktop::Pin::effective(w) ? PWORKSPACE->m_renderOffset->value() : Vector2D{};
+         const auto REALSIZE         = w->size(Desktop::View::IGeometric::GEOMETRIC_CURRENT);
+         const auto REALPOS          = w->position(Desktop::View::IGeometric::GEOMETRIC_CURRENT) + renderOffset;
+         const auto noScreenShareBox = CBox{REALPOS.x, REALPOS.y, std::max(REALSIZE.x, 5.0), std::max(REALSIZE.y, 5.0)}
+diff --git i/src/output/Monitor.cpp w/src/output/Monitor.cpp
+index e69d8dda..540b9643 100644
+--- i/src/output/Monitor.cpp
++++ w/src/output/Monitor.cpp
+@@ -1,3 +1,4 @@
++#include "../desktop/state/pin/NativePinState.hpp"
+ #include "Monitor.hpp"
+ #include "../helpers/MiscFunctions.hpp"
+ #include "../macros.hpp"
+@@ -1475,13 +1476,14 @@ void CMonitor::changeWorkspace(const PHLWORKSPACE& pWorkspace, bool internal, bo
+         Animation::Workspace::startAnimation(pWorkspace, Animation::Workspace::ANIMATION_TYPE_IN, ANIMTOLEFT, false, ANIMSTYLE);
+ 
+         // move pinned windows
+-        for (auto const& w : Desktop::windowState()->windows()) {
+-            if (w->m_workspace == POLDWORKSPACE && w->m_pinned)
++        const auto PROTECTED_MEMBERS = Desktop::Pin::band();
++        for (auto const& w : PROTECTED_MEMBERS) {
++            if (Desktop::Pin::state()->live(w) && validMapped(w) && w->m_workspace == POLDWORKSPACE && w->m_monitor == m_self && w->layoutTarget())
+                 w->layoutTarget()->assignToSpace(pWorkspace->m_space);
+         }
+ 
+         if (!noFocus && !Desktop::focusState()->monitor()->m_activeSpecialWorkspace &&
+-            !(Desktop::focusState()->window() && Desktop::focusState()->window()->m_pinned && Desktop::focusState()->window()->m_monitor == m_self)) {
++            !(Desktop::focusState()->window() && Desktop::Pin::effective(Desktop::focusState()->window()) && Desktop::focusState()->window()->m_monitor == m_self)) {
+             static auto PFOLLOWMOUSE = CConfigValue<Config::INTEGER>("input:follow_mouse");
+             auto pWindow = Fullscreen::controller()->hasFullscreen(pWorkspace) ? Fullscreen::controller()->getFullscreenWindow(pWorkspace) : pWorkspace->getLastFocusedWindow();
+ 
+@@ -1580,7 +1582,7 @@ void CMonitor::setSpecialWorkspace(const PHLWORKSPACE& pWorkspace) {
+ 
+         g_layoutManager->recalculateMonitor(m_self.lock(), Layout::CLayoutManager::RECALCULATE_MONITOR_REASON_TOGGLE_SPECIAL_WORKSPACE);
+ 
+-        if (!(Desktop::focusState()->window() && Desktop::focusState()->window()->m_pinned && Desktop::focusState()->window()->m_monitor == m_self)) {
++        if (!(Desktop::focusState()->window() && Desktop::Pin::effective(Desktop::focusState()->window()) && Desktop::focusState()->window()->m_monitor == m_self)) {
+             if (const auto PLAST = m_activeWorkspace->getLastFocusedWindow(); PLAST)
+                 Desktop::focusState()->fullWindowFocus(PLAST, Desktop::FOCUS_REASON_TOGGLE_SPECIAL_WORKSPACE);
+             else
+@@ -1678,7 +1680,7 @@ void CMonitor::setSpecialWorkspace(const PHLWORKSPACE& pWorkspace) {
+ 
+     g_layoutManager->recalculateMonitor(m_self.lock(), Layout::CLayoutManager::RECALCULATE_MONITOR_REASON_TOGGLE_SPECIAL_WORKSPACE);
+ 
+-    if (!(Desktop::focusState()->window() && Desktop::focusState()->window()->m_pinned && Desktop::focusState()->window()->m_monitor == m_self)) {
++    if (!(Desktop::focusState()->window() && Desktop::Pin::effective(Desktop::focusState()->window()) && Desktop::focusState()->window()->m_monitor == m_self)) {
+         if (const auto PLAST = pWorkspace->getLastFocusedWindow(); PLAST)
+             Desktop::focusState()->fullWindowFocus(PLAST, Desktop::FOCUS_REASON_TOGGLE_SPECIAL_WORKSPACE);
+         else
+diff --git i/src/protocols/XDGShell.cpp w/src/protocols/XDGShell.cpp
+index d3d2f4d7..59864376 100644
+--- i/src/protocols/XDGShell.cpp
++++ w/src/protocols/XDGShell.cpp
+@@ -1,3 +1,4 @@
++#include "../desktop/state/pin/NativePinState.hpp"
+ #include "XDGShell.hpp"
+ #include "XDGDialog.hpp"
+ #include <algorithm>
+@@ -326,9 +327,9 @@ void CXDGToplevelResource::setNewParent(SP<CXDGToplevelResource> newParent) {
+     m_parent = newParent;
+     if (m_parent) {
+         m_parent->m_children.emplace_back(m_self);
+-        if (m_parent->m_window && m_parent->m_window->m_pinned)
+-            m_self->m_window->m_pinned = true;
++        // Family protection is derived by native PinState; child pin intent remains independent.
+     }
++    Desktop::Pin::state()->refreshFamily();
+     LOGM(Log::DEBUG, "Toplevel {:x} sets parent to {:x}{}", (uintptr_t)this, (uintptr_t)newParent.get(), (oldParent ? std::format(" (was {:x})", (uintptr_t)oldParent.get()) : ""));
+ }
+ 
+@@ -563,8 +564,7 @@ CXDGSurfaceResource::CXDGSurfaceResource(SP<CXdgSurface> resource_, SP<CXDGWMBas
+ 
+         PHLWINDOW createdWindow = Desktop::View::CWindow::create(m_self.lock());
+ 
+-        if (RESOURCE->m_parent && RESOURCE->m_parent->m_window->m_pinned)
+-            createdWindow->m_pinned = true;
++        // A parent pin protects the modal family without copying its independent intent.
+ 
+         for (auto const& p : m_popups) {
+             if (!p)
+diff --git i/src/render/OpenGL.cpp w/src/render/OpenGL.cpp
+index baee1ad2..c2036bb9 100644
+--- i/src/render/OpenGL.cpp
++++ w/src/render/OpenGL.cpp
+@@ -1,3 +1,4 @@
++#include "../desktop/state/pin/NativePinState.hpp"
+ #include <GLES3/gl32.h>
+ #include <cstdint>
+ #include <hyprgraphics/color/Color.hpp>
+@@ -2416,7 +2417,7 @@ void CHyprOpenGLImpl::renderRoundedShadow(const CBox& box, int round, float roun
+                 CBox       scaledWindowBox = WINDOWBOX.value();
+ 
+                 const auto PWORKSPACE = PWINDOW->m_workspace;
+-                if (PWORKSPACE && !PWINDOW->m_pinned)
++                if (PWORKSPACE && !Desktop::Pin::effective(PWINDOW))
+                     scaledWindowBox.translate(PWORKSPACE->m_renderOffset->value());
+ 
+                 scaledWindowBox.translate(PWINDOW->m_floatingOffset);
+diff --git i/src/render/Renderer.cpp w/src/render/Renderer.cpp
+index 249f0843..9b044bd1 100644
+--- i/src/render/Renderer.cpp
++++ w/src/render/Renderer.cpp
+@@ -1,3 +1,4 @@
++#include "../desktop/state/pin/NativePinState.hpp"
+ #include "Renderer.hpp"
+ #include "../Compositor.hpp"
+ #include "../helpers/math/Math.hpp"
+@@ -234,7 +235,7 @@ bool IHyprRenderer::shouldRenderWindow(PHLWINDOW pWindow, PHLMONITOR pMonitor) {
+     if (!pWindow->m_workspace)
+         return false;
+ 
+-    if (pWindow->m_pinned)
++    if (Desktop::Pin::effective(pWindow))
+         return true;
+ 
+     // if the window is being moved to a workspace that is not invisible, and the alpha is > 0.F, render it.
+@@ -301,7 +302,7 @@ bool IHyprRenderer::shouldRenderWindow(PHLWINDOW pWindow) {
+     if (!pWindow->m_workspace)
+         return false;
+ 
+-    if (pWindow->m_pinned || PWORKSPACE->m_forceRendering)
++    if (Desktop::Pin::effective(pWindow) || PWORKSPACE->m_forceRendering)
+         return true;
+ 
+     if (PWORKSPACE && PWORKSPACE->isVisible())
+@@ -343,7 +344,7 @@ void IHyprRenderer::renderWorkspaceWindowsFullscreen(PHLMONITOR pMonitor, PHLWOR
+         if (w->alphaValue(WINDOW_ALPHA_FADE) * w->alphaValue(WINDOW_ALPHA_FULLSCREEN) == 0.f)
+             continue;
+ 
+-        if (Fullscreen::controller()->isFullscreen(w))
++        if (Fullscreen::controller()->isFullscreen(w) || Desktop::Pin::effective(w))
+             continue;
+ 
+         windows.emplace_back(w);
+@@ -397,7 +398,7 @@ void IHyprRenderer::renderWorkspaceWindowsFullscreen(PHLMONITOR pMonitor, PHLWOR
+         if (w->m_monitor == pWorkspace->m_monitor && pWorkspace->m_isSpecialWorkspace != w->onSpecialWorkspace())
+             continue;
+ 
+-        if (shouldRenderWindow(w, pMonitor))
++        if (!Desktop::Pin::effective(w) && shouldRenderWindow(w, pMonitor))
+             renderWindow(w, pMonitor, time, Fullscreen::controller()->getFullscreenModes(pWorkspace).internal != Fullscreen::FSMODE_FULLSCREEN, RENDER_PASS_ALL);
+ 
+         if (w->m_workspace != pWorkspace)
+@@ -412,7 +413,7 @@ void IHyprRenderer::renderWorkspaceWindowsFullscreen(PHLMONITOR pMonitor, PHLWOR
+     // then render windows over fullscreen.
+     for (auto const& w : Desktop::windowState()->windows()) {
+         const bool shouldSkipWindow = w->workspaceID() != pWorkspaceWindow->workspaceID() || !w->m_isFloating || !w->shouldRenderOverFullscreen() || !w->m_isMapped ||
+-            Fullscreen::controller()->isFullscreen(w);
++            Fullscreen::controller()->isFullscreen(w) || Desktop::Pin::effective(w);
+ 
+         if (shouldSkipWindow)
+             continue;
+@@ -441,7 +442,7 @@ void IHyprRenderer::renderWorkspaceWindows(PHLMONITOR pMonitor, PHLWORKSPACE pWo
+     windows.reserve(Desktop::windowState()->windows().size());
+ 
+     for (auto const& w : Desktop::windowState()->windows()) {
+-        const bool isNotRenderable = w->isHidden() || !w->m_isMapped;
++        const bool isNotRenderable = w->isHidden() || !w->m_isMapped || Desktop::Pin::effective(w);
+ 
+         if (isNotRenderable)
+             continue;
+@@ -505,7 +506,7 @@ void IHyprRenderer::renderWorkspaceWindows(PHLMONITOR pMonitor, PHLWORKSPACE pWo
+         if (!w)
+             continue;
+ 
+-        if (!w->m_isFloating || w->m_pinned)
++        if (!w->m_isFloating || Desktop::Pin::effective(w))
+             continue;
+ 
+         // some things may force us to ignore the special/not special disparity
+@@ -559,7 +560,7 @@ void IHyprRenderer::renderWindow(PHLWINDOW pWindow, PHLMONITOR pMonitor, const T
+     TRACY_GPU_ZONE("RenderWindow");
+ 
+     const auto  PWORKSPACE = pWindow->m_workspace;
+-    const auto  REALPOS    = pWindow->position(Desktop::View::IGeometric::GEOMETRIC_CURRENT) + (pWindow->m_pinned ? Vector2D{} : PWORKSPACE->m_renderOffset->value());
++    const auto  REALPOS    = pWindow->position(Desktop::View::IGeometric::GEOMETRIC_CURRENT) + (Desktop::Pin::effective(pWindow) ? Vector2D{} : PWORKSPACE->m_renderOffset->value());
+     static auto PDIMAROUND = CConfigValue<Config::FLOAT>("decoration:dim_around");
+ 
+     CSurfacePassElement::SRenderData renderdata = {pMonitor, time};
+@@ -591,7 +592,7 @@ void IHyprRenderer::renderWindow(PHLWINDOW pWindow, PHLMONITOR pMonitor, const T
+     renderdata.surface   = pWindow->wlSurface()->resource();
+     renderdata.dontRound = Fullscreen::controller()->getFullscreenModes(pWindow).internal == Fullscreen::FSMODE_FULLSCREEN;
+     renderdata.fadeAlpha = pWindow->alphaValue(WINDOW_ALPHA_FADE) * pWindow->alphaValue(WINDOW_ALPHA_FULLSCREEN) * pWindow->alphaValue(WINDOW_ALPHA_LAYOUT) *
+-        (pWindow->m_pinned || USE_WORKSPACE_FADE_ALPHA ? 1.f : PWORKSPACE->m_alpha->value()) *
++        (Desktop::Pin::effective(pWindow) || USE_WORKSPACE_FADE_ALPHA ? 1.f : PWORKSPACE->m_alpha->value()) *
+         (USE_WORKSPACE_FADE_ALPHA ? pWindow->alphaValue(WINDOW_ALPHA_MOVE_TO_WORKSPACE) : 1.F) * pWindow->alphaValue(WINDOW_ALPHA_MOVE_FROM_WORKSPACE);
+     renderdata.alpha         = pWindow->alphaValue(WINDOW_ALPHA_ACTIVE);
+     renderdata.decorate      = decorate && !pWindow->m_X11DoesntWantBorders && Fullscreen::controller()->getFullscreenModes(pWindow).internal != Fullscreen::FSMODE_FULLSCREEN;
+@@ -630,7 +631,7 @@ void IHyprRenderer::renderWindow(PHLWINDOW pWindow, PHLMONITOR pMonitor, const T
+     renderdata.pos.y += pWindow->m_floatingOffset.y;
+ 
+     // if window is floating and we have a slide animation, clip it to its full bb
+-    if (!ignorePosition && pWindow->m_isFloating && !Fullscreen::controller()->isFullscreen(pWindow) && PWORKSPACE->m_renderOffset->isBeingAnimated() && !pWindow->m_pinned) {
++    if (!ignorePosition && pWindow->m_isFloating && !Fullscreen::controller()->isFullscreen(pWindow) && PWORKSPACE->m_renderOffset->isBeingAnimated() && !Desktop::Pin::effective(pWindow)) {
+         CRegion rg =
+             pWindow->getFullWindowBoundingBox().translate(-pMonitor->m_position + PWORKSPACE->m_renderOffset->value() + pWindow->m_floatingOffset).scale(pMonitor->m_scale).round();
+         renderdata.clipBox = rg.getExtents();
+@@ -721,7 +722,7 @@ void IHyprRenderer::renderWindow(PHLWINDOW pWindow, PHLMONITOR pMonitor, const T
+             passRedirect.reset();
+ 
+             CBox currentBox = pWindow->getFullWindowBoundingBox();
+-            currentBox.translate((pWindow->m_pinned ? Vector2D{} : PWORKSPACE->m_renderOffset->value()) + pWindow->m_floatingOffset - pMonitor->m_position);
++            currentBox.translate((Desktop::Pin::effective(pWindow) ? Vector2D{} : PWORKSPACE->m_renderOffset->value()) + pWindow->m_floatingOffset - pMonitor->m_position);
+ 
+             SMotionBlurData windowMotionBlur;
+             if (!standalone && !m_bRenderingSnapshot) {
+@@ -1213,19 +1214,10 @@ void IHyprRenderer::renderAllClientsForWorkspace(PHLMONITOR pMonitor, PHLWORKSPA
+             renderWorkspaceWindows(pMonitor, ws.lock(), time);
+     }
+ 
+-    // pinned always above
+-    for (auto const& w : Desktop::windowState()->windows()) {
+-        if (w->isHidden() && !w->m_isMapped)
+-            continue;
+-
+-        if (!w->m_pinned || !w->m_isFloating)
+-            continue;
+-
+-        if (!shouldRenderWindow(w, pMonitor))
+-            continue;
+-
+-        // render the bad boy
+-        renderWindow(w, pMonitor, time, true, RENDER_PASS_ALL);
++    // One native protected-family band. Parent precedes modal/transient descendants; independent bits remain untouched.
++    for (const auto& w : Desktop::Pin::band()) {
++        if (shouldRenderWindow(w, pMonitor))
++            renderWindow(w, pMonitor, time, true, RENDER_PASS_ALL);
+     }
+ 
+     Event::bus()->m_events.render.stage.emit(RENDER_POST_WINDOWS);
+@@ -2760,7 +2752,7 @@ void IHyprRenderer::damageSurface(SP<CWLSurfaceResource> pSurface, double x, dou
+ void IHyprRenderer::damageWindow(PHLWINDOW pWindow, bool forceFull) {
+     CBox       windowBox        = pWindow->getFullWindowBoundingBox();
+     const auto PWINDOWWORKSPACE = pWindow->m_workspace;
+-    if (PWINDOWWORKSPACE && PWINDOWWORKSPACE->m_renderOffset->isBeingAnimated() && !pWindow->m_pinned)
++    if (PWINDOWWORKSPACE && PWINDOWWORKSPACE->m_renderOffset->isBeingAnimated() && !Desktop::Pin::effective(pWindow))
+         windowBox.translate(PWINDOWWORKSPACE->m_renderOffset->value());
+     windowBox.translate(pWindow->m_floatingOffset);
+ 
+diff --git i/src/render/decorations/CHyprBorderDecoration.cpp w/src/render/decorations/CHyprBorderDecoration.cpp
+index 693fd951..1fc857a0 100644
+--- i/src/render/decorations/CHyprBorderDecoration.cpp
++++ w/src/render/decorations/CHyprBorderDecoration.cpp
+@@ -1,3 +1,4 @@
++#include "../../desktop/state/pin/NativePinState.hpp"
+ #include "CHyprBorderDecoration.hpp"
+ #include "../../Compositor.hpp"
+ #include "../../config/ConfigValue.hpp"
+@@ -42,7 +43,7 @@ CBox CHyprBorderDecoration::assignedBoxGlobal() {
+     if (!PWORKSPACE)
+         return box;
+ 
+-    const auto WORKSPACEOFFSET = PWORKSPACE && !m_window->m_pinned ? PWORKSPACE->m_renderOffset->value() : Vector2D();
++    const auto WORKSPACEOFFSET = PWORKSPACE && !Desktop::Pin::effective(m_window.lock()) ? PWORKSPACE->m_renderOffset->value() : Vector2D();
+     return box.translate(WORKSPACEOFFSET);
+ }
+ 
+diff --git i/src/render/decorations/CHyprDropShadowDecoration.cpp w/src/render/decorations/CHyprDropShadowDecoration.cpp
+index 6ff3a3e4..92b111cf 100644
+--- i/src/render/decorations/CHyprDropShadowDecoration.cpp
++++ w/src/render/decorations/CHyprDropShadowDecoration.cpp
+@@ -1,3 +1,4 @@
++#include "../../desktop/state/pin/NativePinState.hpp"
+ #include "CHyprDropShadowDecoration.hpp"
+ 
+ #include <algorithm>
+@@ -53,7 +54,7 @@ void CHyprDropShadowDecoration::damageEntire() {
+ 
+     const auto PWORKSPACE  = PWINDOW->m_workspace;
+     const auto applyOffset = [&](CBox& b) {
+-        if (PWORKSPACE && PWORKSPACE->m_renderOffset->isBeingAnimated() && !PWINDOW->m_pinned)
++        if (PWORKSPACE && PWORKSPACE->m_renderOffset->isBeingAnimated() && !Desktop::Pin::effective(PWINDOW))
+             b.translate(PWORKSPACE->m_renderOffset->value());
+         b.translate(PWINDOW->m_floatingOffset);
+     };
+@@ -134,7 +135,7 @@ SShadowRenderData CHyprDropShadowDecoration::getRenderData(PHLMONITOR pMonitor,
+     const auto  CORRECTIONOFFSET = (BORDERSIZE * (M_SQRT2 - 1) * std::max(2.0 - ROUNDINGPOWER, 0.0));
+     const auto  ROUNDING         = ROUNDINGBASE > 0 ? (ROUNDINGBASE + BORDERSIZE) - CORRECTIONOFFSET : 0;
+     const auto  PWORKSPACE       = PWINDOW->m_workspace;
+-    const auto  WORKSPACEOFFSET  = PWORKSPACE && !PWINDOW->m_pinned ? PWORKSPACE->m_renderOffset->value() : Vector2D();
++    const auto  WORKSPACEOFFSET  = PWORKSPACE && !Desktop::Pin::effective(PWINDOW) ? PWORKSPACE->m_renderOffset->value() : Vector2D();
+ 
+     // draw the shadow
+     CBox fullBox = m_lastWindowBoxWithDecos;
+diff --git i/src/render/decorations/CHyprGroupBarDecoration.cpp w/src/render/decorations/CHyprGroupBarDecoration.cpp
+index 1a03f3d1..ced61f36 100644
+--- i/src/render/decorations/CHyprGroupBarDecoration.cpp
++++ w/src/render/decorations/CHyprGroupBarDecoration.cpp
+@@ -1,3 +1,4 @@
++#include "../../desktop/state/pin/NativePinState.hpp"
+ #include "CHyprGroupBarDecoration.hpp"
+ #include "../../Compositor.hpp"
+ #include "../../config/ConfigValue.hpp"
+@@ -530,7 +531,7 @@ CBox CHyprGroupBarDecoration::assignedBoxGlobal() {
+ 
+     const auto PWORKSPACE = m_window->m_workspace;
+ 
+-    if (PWORKSPACE && !m_window->m_pinned)
++    if (PWORKSPACE && !Desktop::Pin::effective(m_window.lock()))
+         box.translate(PWORKSPACE->m_renderOffset->value());
+ 
+     return box.round();
+diff --git i/src/state/WorkspacePlacementController.cpp w/src/state/WorkspacePlacementController.cpp
+index 6404529a..61cdcd64 100644
+--- i/src/state/WorkspacePlacementController.cpp
++++ w/src/state/WorkspacePlacementController.cpp
+@@ -1,3 +1,4 @@
++#include "../desktop/state/pin/NativePinState.hpp"
+ #include "WorkspacePlacementController.hpp"
+ 
+ #include "MonitorState.hpp"
+@@ -152,10 +153,38 @@ void CWorkspacePlacementController::swapActiveWorkspaces(PHLMONITOR pMonitorA, P
+     const auto PWORKSPACEA = pMonitorA->m_activeWorkspace;
+     const auto PWORKSPACEB = pMonitorB->m_activeWorkspace;
+ 
++    struct SProtectedTransfer {
++        PHLWINDOW owner;
++        PHLWINDOW parent;
++        PHLWORKSPACE source;
++        PHLMONITOR monitor;
++        PHLWORKSPACE destination;
++    };
++    std::vector<SProtectedTransfer> protectedTransfers;
++    for (const auto& w : Desktop::Pin::band()) {
++        if (w->m_workspace == PWORKSPACEA && w->m_monitor == pMonitorA)
++            protectedTransfers.push_back({w, w->parent(), PWORKSPACEA, pMonitorA, PWORKSPACEB});
++        else if (w->m_workspace == PWORKSPACEB && w->m_monitor == pMonitorB)
++            protectedTransfers.push_back({w, w->parent(), PWORKSPACEB, pMonitorB, PWORKSPACEA});
++    }
++    PWORKSPACEB->m_monitor = pMonitorA;
++    PWORKSPACEB->m_events.monitorChanged.emit();
+     PWORKSPACEA->m_monitor = pMonitorB;
+     PWORKSPACEA->m_events.monitorChanged.emit();
++    for (const auto& item : protectedTransfers) {
++        if (!Desktop::Pin::state()->live(item.owner) || !validMapped(item.owner) || item.owner->m_workspace != item.source || item.owner->m_monitor != item.monitor ||
++            item.owner->parent() != item.parent || !item.owner->layoutTarget())
++            continue;
++        if (item.parent && (!Desktop::Pin::state()->live(item.parent) || !validMapped(item.parent)))
++            continue;
++        item.owner->layoutTarget()->assignToSpace(item.destination->m_space);
++    }
++    const auto wasProtected = [&](PHLWINDOW w) { return std::ranges::any_of(protectedTransfers, [&](const auto& item) { return item.owner == w; }); };
++
+ 
+     for (auto const& w : Desktop::windowState()->windows()) {
++        if (wasProtected(w))
++            continue;
+         if (w->m_workspace == PWORKSPACEA) {
+             if (w->m_pinned) {
+                 w->m_workspace = PWORKSPACEB;
+@@ -163,22 +192,22 @@ void CWorkspacePlacementController::swapActiveWorkspaces(PHLMONITOR pMonitorA, P
+             }
+ 
+             w->m_monitor = pMonitorB;
++            Desktop::Pin::state()->rebaseOutput(w);
+ 
+             // additionally, move floating and fs windows manually
+             if (w->m_isFloating)
+                 w->layoutTarget()->setPositionGlobal(w->layoutTarget()->position().translate(-pMonitorA->m_position + pMonitorB->m_position));
+ 
+-            if (Fullscreen::controller()->isFullscreen(w))
++            if (Fullscreen::controller()->isFullscreen(w) && !Desktop::Pin::state()->synchronize(w))
+                 w->setBox({pMonitorB->m_position, pMonitorB->m_size});
+ 
+             w->updateToplevel();
+         }
+     }
+ 
+-    PWORKSPACEB->m_monitor = pMonitorA;
+-    PWORKSPACEB->m_events.monitorChanged.emit();
+-
+     for (auto const& w : Desktop::windowState()->windows()) {
++        if (wasProtected(w))
++            continue;
+         if (w->m_workspace == PWORKSPACEB) {
+             if (w->m_pinned) {
+                 w->m_workspace = PWORKSPACEA;
+@@ -186,12 +215,13 @@ void CWorkspacePlacementController::swapActiveWorkspaces(PHLMONITOR pMonitorA, P
+             }
+ 
+             w->m_monitor = pMonitorA;
++            Desktop::Pin::state()->rebaseOutput(w);
+ 
+             // additionally, move floating and fs windows manually
+             if (w->m_isFloating)
+                 w->layoutTarget()->setPositionGlobal(w->layoutTarget()->position().translate(-pMonitorB->m_position + pMonitorA->m_position));
+ 
+-            if (Fullscreen::controller()->isFullscreen(w))
++            if (Fullscreen::controller()->isFullscreen(w) && !Desktop::Pin::state()->synchronize(w))
+                 w->setBox({pMonitorA->m_position, pMonitorA->m_size});
+ 
+             w->updateToplevel();
+@@ -290,11 +320,17 @@ void CWorkspacePlacementController::moveWorkspaceToMonitor(PHLWORKSPACE pWorkspa
+             POLDMON->changeWorkspace(nextWorkspaceOnMonitorID, false, true, true);
+     }
+ 
++    const auto protectedBeforeMove = Desktop::Pin::band();
+     // move the workspace
+     pWorkspace->m_monitor = pMonitor;
+     pWorkspace->m_space->recheckWorkArea();
+     pWorkspace->m_events.monitorChanged.emit();
+ 
++    const auto stickyDestination = State::workspaceState()->query().id(nextWorkspaceOnMonitorID).run();
++    for (const auto& w : protectedBeforeMove) {
++        if (Desktop::Pin::state()->live(w) && validMapped(w) && w->m_workspace == pWorkspace && w->m_monitor == POLDMON && w->layoutTarget() && stickyDestination)
++            w->layoutTarget()->assignToSpace(stickyDestination->m_space);
++    }
+     for (auto const& w : Desktop::windowState()->windows()) {
+         if (w->m_workspace == pWorkspace) {
+             if (w->m_pinned) {
+@@ -303,6 +339,7 @@ void CWorkspacePlacementController::moveWorkspaceToMonitor(PHLWORKSPACE pWorkspa
+             }
+ 
+             w->m_monitor = pMonitor;
++            Desktop::Pin::state()->rebaseOutput(w);
+ 
+             // additionally, move floating and fs windows manually
+             if (w->m_isMapped && !w->isHidden()) {
+@@ -310,7 +347,7 @@ void CWorkspacePlacementController::moveWorkspaceToMonitor(PHLWORKSPACE pWorkspa
+                     if (w->m_isFloating)
+                         w->layoutTarget()->setPositionGlobal(w->layoutTarget()->position().translate(-POLDMON->m_position + pMonitor->m_position));
+ 
+-                    if (Fullscreen::controller()->isFullscreen(w))
++                    if (Fullscreen::controller()->isFullscreen(w) && !Desktop::Pin::state()->synchronize(w))
+                         w->setBox({pMonitor->m_position, pMonitor->m_size});
+                 } else
+                     w->layoutTarget()->setPositionGlobal(

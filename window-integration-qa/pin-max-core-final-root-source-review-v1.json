@@ -1,0 +1,35 @@
+{
+  "result": "actual-source-and-build-reviewed",
+  "sourceReadySHA256": "a1672c217a6c61c8c5b48bd9eed245d4778fcf4119ed8d34957bf984f0051a4e",
+  "closureSHA256": "eafdca71e486f23cf6cdb1201ae6b191025ceec2fd7b4b1547370da0dffc014a",
+  "verifiedFiles": 4683,
+  "verifiedDirectories": 705,
+  "verifiedLinks": 2,
+  "completePolicyDiffLinesRead": 2891,
+  "actualChangedRuntimeFilesReviewed": 43,
+  "externalClosureChecks": {
+    "final-review/build-input-output-closure.json:tools": 7,
+    "final-review/build-input-output-closure.json:linkInputs": 108,
+    "final-review/compiler-and-linked-library-closure.json:compilerComponents": 5,
+    "final-review/compiler-and-linked-library-closure.json:libraries": 173,
+    "final-review/core-object-freshness.json:dependencies": 2211,
+    "final-review/plugin-dependency-freshness.json:dependencies": 799
+  },
+  "strongUndefinedSymbols": 467,
+  "unresolvedSymbols": [],
+  "owningCPUChecks": 33,
+  "owningCPULimit": "Null native window/space adapters exercise actual scrolling/controller/handler objects; no actual native window admission proved.",
+  "policyCPUChecks": 38,
+  "upstreamCPU": 270,
+  "pluginCPU": 311,
+  "helperCPU": 72,
+  "nativeAuthorized": false,
+  "nativeAccepted": false,
+  "remaining": [
+    "Resolve demonstrated protected fullscreen hit fallthrough review before acceptance",
+    "Fresh exact core/plugin/helper host pairing",
+    "Original native Pin14",
+    "Native ordinary/MAX/exclusive/scroll focus/restore/coexist/transfer regressions",
+    "All other full parity gates and deployment"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "result": "pass-with-implementation-obligations",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-244b3fc652014f9eb9a37046233c856f.scope",
+    "coreLimit": 1
+  },
+  "checks": {
+    "sourceUnchanged": true,
+    "formalReplayPass": true,
+    "actualUnchangedControllerCounterexample": true,
+    "currentModelIsAbstract": true,
+    "contextPendingNotPromotedByAck": true
+  },
+  "sourceHashes": {
+    "/home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/REPAIR_CONTRACT.md": "ade3d552a346bb02a06afdf97905e76b409d4382ef8ce8f7bf569190610328a3",
+    "/home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt": "12803d4361b2ea5cee19e9381d7009cf6fe165072707df8f90bb1e72e39839a4",
+    "/home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation_test.qnt": "be7aa8776bf8b11e997a73685c8a7dec93564672e733988e066c315c0ef3518c",
+    "/home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/probe.py": "abc233610daa80e7528f27f2e2395dfcb2a3bcb103870bff97a44c855542b119",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/scene_controller.py": "459135eec7abd238b9366c775cec39df72d75312b6a2ef6850cb1fdf655a7ba5",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/scene_manager.py": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/direction.py": "486f57b77d0d34fa8ef23f7906a4c8728c614beba6ebe4c267afe8e623c20c35",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_scene_controller.py": "22e97f7440ca476eb659f3e329e8123e6ab69c9f8edc913326c07f2895456bd6"
+  },
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/reduced-validation-independent-review-v1/probe.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"acceptedReceipt\": true, \"requestRetiredBeforeValidation\": true, \"lateWorkerCannotComplete\": true, \"fixtureNativeStateUnchanged\": true, \"counterexampleEstablished\": true, \"actualNativeWrites\": false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  reduction_validation_test\n    ok reductionPreservesBlockedInitialReceiptTest passed 1 test(s)\n    ok validatedInitialReducedRequestCompletesTest passed 1 test(s)\n    ok duplicateWatchdogCannotDuplicateCommitTest passed 1 test(s)\n    ok reductionQueuesExactOldVisualTest passed 1 test(s)\n    ok prematureValidationCannotPassRetirementTest passed 1 test(s)\n    ok cancelAckPreservesReceiptRequiresFreshTokenTest passed 1 test(s)\n    ok oldValidationAfterAckRefusedTest passed 1 test(s)\n    ok freshValidationAfterAckSettlesLatestTest passed 1 test(s)\n    ok newerReceiptRetainsOldRetirementTest passed 1 test(s)\n    ok oldAckCannotSupplyNewContextTest passed 1 test(s)\n    ok latestContextAndFreshValidationOnlyTest passed 1 test(s)\n    ok reductionOffCannotReviveOldVisualTest passed 1 test(s)\n    ok offAfterAckNeedsFreshAnimationPreparationTest passed 1 test(s)\n    ok wrongAckRetainsSourcesTest passed 1 test(s)\n    ok deadlineIsExplicitFailureNotReductionTest passed 1 test(s)\n    ok scopeLossCannotCommitTest passed 1 test(s)\n\n  16 passing (746ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (962ms at 2079 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "counterexampleSHA256": "1c8cadcf2702422886128f3d27d2a4d688b37b418f85b84d876e7c2f11831496",
+  "nativeLaunch": false,
+  "controllerModelEdits": false,
+  "obligations": [
+    "Separate visual-retirement ownership from current user receipt: exact old renderer token, complete ordered members/source paths, transport authority, cancel-queued/ack flags and latest receipt must be independent.",
+    "Reduced pending validation without visual keeps current Scene/context/deadline alive; no settle/cleanup/native effects. Existing explicit failure, deadline, supersession and uncertainty policies remain.",
+    "ManagedController contextPending early-return must still permit visual-only suppression, while forbidding prepare/native effects until latest context completes. Reduction off cannot retarget canceled visual.",
+    "On exact authenticated cancel ACK, preserve latest receipt, symbolic Direction and original receipt deadline/contextPending; replace internal Scene/generation atomically. Same-object token mutation leaves stale workers authoritative.",
+    "Atomically update manager pending ingress provisional Scene reference/internal token when replacing an internally restarted Scene; preserve receipt/intent/owner maps and original accepted receipt identity.",
+    "Guard every worker/native/capture/seed boundary against outstanding visual retirement and stale captured generation, including retire_gestures, apply_destination and late family/destination query replies.",
+    "Cancel ACK is closure only: fresh identity/family/scope/destination/context evidence required before commit or native effects. Never reuse previous.accepted_operation as authority for latest unvalidated receipt.",
+    "Latest successor must inherit old retirement object and capture ownership without duplicate cancel or retarget. Stale ready/endpoint/fatal/cancel events cannot settle/clear latest receipt.",
+    "Capture disposal waits exact cancel ACK or existing independently authenticated normal renderer closure. Generic transport loss cannot fabricate cancellation completion.",
+    "Model abstracts exact identities/transport/generation and assumes NewRequest visual transfer; concrete formal refinement must represent cancel send failure, context response generation, stale worker replies, supersession after queued ACK and reduction toggle racing renderer events.",
+    "Replay blocked metadata counterexample plus contextPending/no-visual/provisional visual/newer receipts/wrong+duplicate ACK/old callbacks/reduction reversals/deadline/closed member/transport error; preserve original baseline/strict native gates."
+  ]
+}

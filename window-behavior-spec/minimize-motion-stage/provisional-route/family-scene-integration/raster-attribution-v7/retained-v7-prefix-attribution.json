@@ -1,0 +1,4601 @@
+{
+  "scope": "retained-prefix attribution only",
+  "nativeLaunch": false,
+  "GPUOperation": false,
+  "oracleChanged": false,
+  "toleranceChanged": false,
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/report.json": "91910b36f135bd936ce52114343a2523820b207dd6f527b4fb651506a2371acc",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/fixture-0-WAYLAND-1.json": "46ea1ef25205c2ac9c956366f205c3e09deca9255a3c1d7d0acc0fed3c51ebb4",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/comparison-raw-0-WAYLAND-1.json": "7d3e02484baef088c09afc477a0c9fbd00ba3bdd049d0a404be6d57e61ba287f",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/presented-0-WAYLAND-1.json": "fc6655b05a519bc31206a9555baa18abe126b3fd55244312bf8b1eb6faf2832b",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-0-WAYLAND-1-0.json": "fd9859e510a7f21f35b33c6482f5ff634ecfd457c911001f5ed73dcb91ffdbf7",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1-13-0-rgba.png": "aba57a29476d4955230b9e54ffe3e5e5cb49f3f9f1a8c9cdf32836df7bc96e2e",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1-13-0-native-rgba.png": "aba57a29476d4955230b9e54ffe3e5e5cb49f3f9f1a8c9cdf32836df7bc96e2e",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-0-WAYLAND-1-1.json": "9f5deeb50272a88fe51131d6c8dd1ab81fc67d8d4a3f1bd9b036e4e81eacbdd2",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1-13-1-rgba.png": "d69e0d06aa06ada4c637b3f3e142746b57887e36a4f2500535ef478bd9607551",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1-13-1-native-rgba.png": "d69e0d06aa06ada4c637b3f3e142746b57887e36a4f2500535ef478bd9607551",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-0-WAYLAND-1-2.json": "7c6558f7d4c70380ce80eb5d8d7c874db3eaaa4d7f6b8aa8ce40157b7be231df",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1-13-2-rgba.png": "2daa4254b4b90af30850b1c6e9264e791c4992dd4def1656e01529b16c4eba3d",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1-13-2-native-rgba.png": "2daa4254b4b90af30850b1c6e9264e791c4992dd4def1656e01529b16c4eba3d",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-0-WAYLAND-1-3.json": "b0ff4a6b51a4b6052b8d98b0c9dc16d001096e4b90d804e78d981431d650e200",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1-13-3-rgba.png": "5e0b491548f42979b0eaf9ee40bbce1bd33ce65c16cc90d51959e93b5b5a91d1",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1-13-3-native-rgba.png": "5e0b491548f42979b0eaf9ee40bbce1bd33ce65c16cc90d51959e93b5b5a91d1",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-0-WAYLAND-1-4.json": "f1b6989314d3e146288b1100ef90b32eeadcc0f1330056ae71ffcb83da86ec6b",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1-13-4-rgba.png": "3c8bbe16d26de02ee5cd137b93cf4f02c021839986b8263cbc20af9c6e6cac90",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1-13-4-native-rgba.png": "3c8bbe16d26de02ee5cd137b93cf4f02c021839986b8263cbc20af9c6e6cac90",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-0-WAYLAND-1-5.json": "28b87598feeb5eb52fe390e6398a5485b6acec3d8cd125c1e4ec6db3b46218ff",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1-13-5-rgba.png": "3c8bbe16d26de02ee5cd137b93cf4f02c021839986b8263cbc20af9c6e6cac90",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1-13-5-native-rgba.png": "3c8bbe16d26de02ee5cd137b93cf4f02c021839986b8263cbc20af9c6e6cac90",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/fixture-0-ORACLE-SECOND.json": "1abf1c86b527f3e5d271870468ae39eda76657632de79cfbe839caec8e245987",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/comparison-raw-0-ORACLE-SECOND.json": "2e84e20ee6cd65320a971823ade52a01558424d0dffe3780972aa8479db2c6ce",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/presented-0-ORACLE-SECOND.json": "40ff108d01045533dc8c27bb81a5eefe81f62f863dc301c0ca9b43e99f418ad7",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-0-ORACLE-SECOND-0.json": "89ab3bfc99220f5c622d6e8087ebe147415bf8925feb464c216fd51629a38f85",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-2-14-0-rgba.png": "0f08dd8b55844c8411ae2d2a08f3abcd2758afd7a13a551a26f0475bdd84f8c1",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-2-14-0-native-rgba.png": "0f08dd8b55844c8411ae2d2a08f3abcd2758afd7a13a551a26f0475bdd84f8c1",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-0-ORACLE-SECOND-1.json": "9b4fe9d4540ab41bb4c1fc8d9131b70ffb00c8babf5ff3f38b7313ded30cb612",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-2-14-1-rgba.png": "356f21c71dab2f8d043ad0175858013c2b99c81edf341d091b75f748bbaca199",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-2-14-1-native-rgba.png": "356f21c71dab2f8d043ad0175858013c2b99c81edf341d091b75f748bbaca199",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-0-ORACLE-SECOND-2.json": "69c1693b90388efd0ba04856a2e84b3923ba4f0d79cefa67843d648e2dfc78e1",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-2-14-2-rgba.png": "9f47f770e143181662fa661f5d49873e9d4d5a373270a71a7f24653319d661a3",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-2-14-2-native-rgba.png": "9f47f770e143181662fa661f5d49873e9d4d5a373270a71a7f24653319d661a3",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-0-ORACLE-SECOND-3.json": "c00823b157d995324baa402d14a8750797ab0f040d07f0bd8e9aa5e1c01d1eb1",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-2-14-3-rgba.png": "9beca312130810b7b21674880a4842ec3077531c4d00d2205c0d3e91bcd9e947",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-2-14-3-native-rgba.png": "9beca312130810b7b21674880a4842ec3077531c4d00d2205c0d3e91bcd9e947",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-0-ORACLE-SECOND-4.json": "a6c71ded5898cebe301faee2bc74dc74a2a4d499f458e17cd80f9050d08a2f24",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-2-14-4-rgba.png": "4f14b253640f85b0d3c86900b41373b241a251b805b87d928124648ff65a9486",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-2-14-4-native-rgba.png": "4f14b253640f85b0d3c86900b41373b241a251b805b87d928124648ff65a9486",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-0-ORACLE-SECOND-5.json": "2ae73cf6933cd711769201111c700f19d9f452be19fa9439d3855184725f533d",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-2-14-5-rgba.png": "6babf2c09e2689132f3a745924bf0dcec0cb7e8a8a7c121cc2e04d194ee610b1",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-2-14-5-native-rgba.png": "6babf2c09e2689132f3a745924bf0dcec0cb7e8a8a7c121cc2e04d194ee610b1",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/fixture-1-WAYLAND-1.json": "062cae89b2747f957fffc79f7a85367ab910d2a45611e19fce69ee30f58389ba",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/comparison-raw-1-WAYLAND-1.json": "0a9c2e1d754a6bee915bc4c3b530130e98e99bde49a384c95a858ed9350f7e46",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/presented-1-WAYLAND-1.json": "1992953afd89ac376699beb981bbac20bfac4dbb0220a3b444f8cf32efe585fa",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-1-WAYLAND-1-0.json": "ed2588025a088d5e7487ed1836e7b22e094dd886d96f6a283fb93ffa9c0a303b",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1566-13-0-rgba.png": "b68b2e37399feed41554e02923079eb39b23cdcadbb6dd1f51bde077ee3fe960",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1566-13-0-native-rgba.png": "b68b2e37399feed41554e02923079eb39b23cdcadbb6dd1f51bde077ee3fe960",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-1-WAYLAND-1-1.json": "391badcc70d0051d0c1619aded21d5cf14cefa299aeec61cb86f3b042c81f7da",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1566-13-1-rgba.png": "b68b2e37399feed41554e02923079eb39b23cdcadbb6dd1f51bde077ee3fe960",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1566-13-1-native-rgba.png": "b68b2e37399feed41554e02923079eb39b23cdcadbb6dd1f51bde077ee3fe960",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-1-WAYLAND-1-2.json": "2852f14c7b60aad815ddb49ccea9665020db850e1d6b973c912a47d01cb10615",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1566-13-2-rgba.png": "b68b2e37399feed41554e02923079eb39b23cdcadbb6dd1f51bde077ee3fe960",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1566-13-2-native-rgba.png": "b68b2e37399feed41554e02923079eb39b23cdcadbb6dd1f51bde077ee3fe960",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/fixture-1-ORACLE-SECOND.json": "326e12c90cafbfbc8f07fdeaf8e42942be05aa1e8b44579f6b8ff341dcfcb2b2",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/comparison-raw-1-ORACLE-SECOND.json": "c28749a6d825f98c55eb95fbad095ab634aa599bd9fd92492ce8d292265b0a59",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/presented-1-ORACLE-SECOND.json": "9a3c28b31f4a8f7cdc435a993b688d9aa5f789d25cbdbdc49b3096af8d040ada",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-1-ORACLE-SECOND-0.json": "326863a761cb4403962fdbb0361d27568cb8c208ee74e7c0005b051cfbd37c57",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1567-14-0-rgba.png": "afc25ee458ba5c74cb828a40e5605dd7e7b7c1dcf47130c0ed2064cefec897d6",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1567-14-0-native-rgba.png": "afc25ee458ba5c74cb828a40e5605dd7e7b7c1dcf47130c0ed2064cefec897d6",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-1-ORACLE-SECOND-1.json": "40a2330cdee7d5f9b004456c6cefdac5b7f91a88975d8084001c7daf8fcbdcf9",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1567-14-1-rgba.png": "2d274bea6b5c464b925905e930fde8986b85dc70e1593d393bb1d0dbae16f3d2",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1567-14-1-native-rgba.png": "2d274bea6b5c464b925905e930fde8986b85dc70e1593d393bb1d0dbae16f3d2",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/causal-1-ORACLE-SECOND-2.json": "da2214193b3744bbaee28c627c5d793c00aae4be6da70c97dc5695393b56e409",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1567-14-2-rgba.png": "46eeab54595c0cbbc6803d73167cc454259d7fd4ededc2a91ebb8a6760625d76",
+    "/home/hoskinson/window-integration-qa/family-raster-causal-v7/attempt-1/owned-readbacks/causal-1567-14-2-native-rgba.png": "46eeab54595c0cbbc6803d73167cc454259d7fd4ededc2a91ebb8a6760625d76",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/raster-attribution-v7/audit_prefixes.py": "5f536a33dfbb6c87c4dbd557747ed837dc066f1b3f66e3018818068b71651726",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-causal-v5/verify_causal.py": "bda6e1afa12702ef988619783463ad9d66a518371c2217309130aa02de15196a",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/raster-attribution-v6/audit_pixels.py": "89453d3f6487a99ed6f9d120d1a0c3962960a492e5bbfe61d2a41906b88bc906"
+  },
+  "bindings": [
+    {
+      "scene": "0-WAYLAND-1",
+      "kind": "constant-control",
+      "prefixCount": 0,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "3a81632ebe6fa6197cedcfac5d494485f7b850b2b112c61ffd34916687250a9a",
+          "expectedSHA256": "3a81632ebe6fa6197cedcfac5d494485f7b850b2b112c61ffd34916687250a9a"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "3a81632ebe6fa6197cedcfac5d494485f7b850b2b112c61ffd34916687250a9a",
+          "expectedSHA256": "3a81632ebe6fa6197cedcfac5d494485f7b850b2b112c61ffd34916687250a9a"
+        },
+        "tolerance": 0
+      }
+    },
+    {
+      "scene": "0-WAYLAND-1",
+      "kind": "constant-control",
+      "prefixCount": 0,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4",
+          "expectedSHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4",
+          "expectedSHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4"
+        },
+        "tolerance": 0
+      }
+    },
+    {
+      "scene": "0-WAYLAND-1",
+      "kind": "constant-control",
+      "prefixCount": 0,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "89fd0f121a35e324bac99c5c6c399212e7198724c8452bc8442129d161afc53d",
+          "expectedSHA256": "89fd0f121a35e324bac99c5c6c399212e7198724c8452bc8442129d161afc53d"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "89fd0f121a35e324bac99c5c6c399212e7198724c8452bc8442129d161afc53d",
+          "expectedSHA256": "89fd0f121a35e324bac99c5c6c399212e7198724c8452bc8442129d161afc53d"
+        },
+        "tolerance": 0
+      }
+    },
+    {
+      "scene": "0-WAYLAND-1",
+      "kind": "member-prefix",
+      "prefixCount": 1,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "f33fbc0bdfe3b9b4ba19927f8b2490edb658a9846ba1027dc81b764f96142f85",
+          "expectedSHA256": "f33fbc0bdfe3b9b4ba19927f8b2490edb658a9846ba1027dc81b764f96142f85"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "f33fbc0bdfe3b9b4ba19927f8b2490edb658a9846ba1027dc81b764f96142f85",
+          "expectedSHA256": "f33fbc0bdfe3b9b4ba19927f8b2490edb658a9846ba1027dc81b764f96142f85"
+        },
+        "tolerance": 0
+      }
+    },
+    {
+      "scene": "0-WAYLAND-1",
+      "kind": "member-prefix",
+      "prefixCount": 2,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0",
+          "expectedSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0",
+          "expectedSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0"
+        },
+        "tolerance": 0
+      }
+    },
+    {
+      "scene": "0-WAYLAND-1",
+      "kind": "member-prefix",
+      "prefixCount": 3,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0",
+          "expectedSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0",
+          "expectedSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0"
+        },
+        "tolerance": 0
+      }
+    },
+    {
+      "scene": "0-ORACLE-SECOND",
+      "kind": "constant-control",
+      "prefixCount": 0,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "5399f7de0d3c178f063db51e13f470eb0b744e032301b7a5226b5e262e85dd06",
+          "expectedSHA256": "5399f7de0d3c178f063db51e13f470eb0b744e032301b7a5226b5e262e85dd06"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "5399f7de0d3c178f063db51e13f470eb0b744e032301b7a5226b5e262e85dd06",
+          "expectedSHA256": "5399f7de0d3c178f063db51e13f470eb0b744e032301b7a5226b5e262e85dd06"
+        },
+        "tolerance": 0
+      }
+    },
+    {
+      "scene": "0-ORACLE-SECOND",
+      "kind": "constant-control",
+      "prefixCount": 0,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "918f1aa87fb87ec3a31bfa6013eb86db825a2d28eeb1b20b07f77597b6a073c0",
+          "expectedSHA256": "918f1aa87fb87ec3a31bfa6013eb86db825a2d28eeb1b20b07f77597b6a073c0"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "918f1aa87fb87ec3a31bfa6013eb86db825a2d28eeb1b20b07f77597b6a073c0",
+          "expectedSHA256": "918f1aa87fb87ec3a31bfa6013eb86db825a2d28eeb1b20b07f77597b6a073c0"
+        },
+        "tolerance": 0
+      }
+    },
+    {
+      "scene": "0-ORACLE-SECOND",
+      "kind": "constant-control",
+      "prefixCount": 0,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "da5023caa4b9c9751ad6d9e2e507a54d9f16eb13dc726a0c810e4142a861b9f5",
+          "expectedSHA256": "da5023caa4b9c9751ad6d9e2e507a54d9f16eb13dc726a0c810e4142a861b9f5"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 0,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 0,
+          "firstFailures": [],
+          "actualSHA256": "da5023caa4b9c9751ad6d9e2e507a54d9f16eb13dc726a0c810e4142a861b9f5",
+          "expectedSHA256": "da5023caa4b9c9751ad6d9e2e507a54d9f16eb13dc726a0c810e4142a861b9f5"
+        },
+        "tolerance": 0
+      }
+    },
+    {
+      "scene": "0-ORACLE-SECOND",
+      "kind": "member-prefix",
+      "prefixCount": 1,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 1,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 1,
+          "firstFailures": [],
+          "actualSHA256": "9fb906737f92392b5a6838e540952f02a43c20e8deb5cc1f213f0b333c1cfbe6",
+          "expectedSHA256": "46494c5bf25bb8efefd33e3d485bcb370f02d4a006d079ce2ec619ef8a9324e0"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 1,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 1,
+          "firstFailures": [],
+          "actualSHA256": "9fb906737f92392b5a6838e540952f02a43c20e8deb5cc1f213f0b333c1cfbe6",
+          "expectedSHA256": "46494c5bf25bb8efefd33e3d485bcb370f02d4a006d079ce2ec619ef8a9324e0"
+        },
+        "tolerance": 1
+      }
+    },
+    {
+      "scene": "0-ORACLE-SECOND",
+      "kind": "member-prefix",
+      "prefixCount": 2,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 1,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 1,
+          "firstFailures": [],
+          "actualSHA256": "a633d82e01b5258cf2fa2b54cb6354b2bdcbe6076e50449d4975b1c0c324721c",
+          "expectedSHA256": "aafb6da641211cd64509762cee9fcdd77e7abdd61c29a669512e0b4ca2bb7946"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 1,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 1,
+          "firstFailures": [],
+          "actualSHA256": "a633d82e01b5258cf2fa2b54cb6354b2bdcbe6076e50449d4975b1c0c324721c",
+          "expectedSHA256": "aafb6da641211cd64509762cee9fcdd77e7abdd61c29a669512e0b4ca2bb7946"
+        },
+        "tolerance": 1
+      }
+    },
+    {
+      "scene": "0-ORACLE-SECOND",
+      "kind": "member-prefix",
+      "prefixCount": 3,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": false,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 1,
+          "badPixels": 7,
+          "badChannels": 8,
+          "maxChannelError": 2,
+          "firstFailures": [
+            {
+              "x": 48,
+              "y": 107,
+              "errors": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "x": 65,
+              "y": 107,
+              "errors": [
+                0,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "x": 65,
+              "y": 108,
+              "errors": [
+                2,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "x": 23,
+              "y": 109,
+              "errors": [
+                2,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "x": 23,
+              "y": 110,
+              "errors": [
+                2,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "x": 23,
+              "y": 111,
+              "errors": [
+                2,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "x": 23,
+              "y": 112,
+              "errors": [
+                2,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "actualSHA256": "a89b9216dbf99444bcb1ff65218ff622e6fb819937bfe1369d18e3db95bfc3d1",
+          "expectedSHA256": "875bbb8a143d61066cdcc674801b544a12e8ccb962d806e44d863d1a13f4ec0b"
+        },
+        "nativeRGBA": {
+          "passed": false,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 1,
+          "badPixels": 7,
+          "badChannels": 8,
+          "maxChannelError": 2,
+          "firstFailures": [
+            {
+              "x": 48,
+              "y": 107,
+              "errors": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "x": 65,
+              "y": 107,
+              "errors": [
+                0,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "x": 65,
+              "y": 108,
+              "errors": [
+                2,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "x": 23,
+              "y": 109,
+              "errors": [
+                2,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "x": 23,
+              "y": 110,
+              "errors": [
+                2,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "x": 23,
+              "y": 111,
+              "errors": [
+                2,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "x": 23,
+              "y": 112,
+              "errors": [
+                2,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "actualSHA256": "a89b9216dbf99444bcb1ff65218ff622e6fb819937bfe1369d18e3db95bfc3d1",
+          "expectedSHA256": "875bbb8a143d61066cdcc674801b544a12e8ccb962d806e44d863d1a13f4ec0b"
+        },
+        "tolerance": 1
+      }
+    },
+    {
+      "scene": "1-WAYLAND-1",
+      "kind": "member-prefix",
+      "prefixCount": 1,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 1,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 1,
+          "firstFailures": [],
+          "actualSHA256": "5b3d0fe17f31ab6ae8935c97d846cc0d5d538c7aa0ae38442e391b4860e13d8b",
+          "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 1,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 1,
+          "firstFailures": [],
+          "actualSHA256": "5b3d0fe17f31ab6ae8935c97d846cc0d5d538c7aa0ae38442e391b4860e13d8b",
+          "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+        },
+        "tolerance": 1
+      }
+    },
+    {
+      "scene": "1-WAYLAND-1",
+      "kind": "member-prefix",
+      "prefixCount": 2,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 1,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 1,
+          "firstFailures": [],
+          "actualSHA256": "5b3d0fe17f31ab6ae8935c97d846cc0d5d538c7aa0ae38442e391b4860e13d8b",
+          "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 1,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 1,
+          "firstFailures": [],
+          "actualSHA256": "5b3d0fe17f31ab6ae8935c97d846cc0d5d538c7aa0ae38442e391b4860e13d8b",
+          "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+        },
+        "tolerance": 1
+      }
+    },
+    {
+      "scene": "1-WAYLAND-1",
+      "kind": "member-prefix",
+      "prefixCount": 3,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 1,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 1,
+          "firstFailures": [],
+          "actualSHA256": "5b3d0fe17f31ab6ae8935c97d846cc0d5d538c7aa0ae38442e391b4860e13d8b",
+          "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 76800,
+          "channelsCompared": 307200,
+          "tolerance": 1,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 1,
+          "firstFailures": [],
+          "actualSHA256": "5b3d0fe17f31ab6ae8935c97d846cc0d5d538c7aa0ae38442e391b4860e13d8b",
+          "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+        },
+        "tolerance": 1
+      }
+    },
+    {
+      "scene": "1-ORACLE-SECOND",
+      "kind": "member-prefix",
+      "prefixCount": 1,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": true,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 1,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 1,
+          "firstFailures": [],
+          "actualSHA256": "581717e5645f292431b9aed3ce186c74bc80df89c028ccc45a481c9d901169ba",
+          "expectedSHA256": "fb828db9f30046e4d0953edc95b08c34c44392131d6de7b19c876402d795da09"
+        },
+        "nativeRGBA": {
+          "passed": true,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 1,
+          "badPixels": 0,
+          "badChannels": 0,
+          "maxChannelError": 1,
+          "firstFailures": [],
+          "actualSHA256": "581717e5645f292431b9aed3ce186c74bc80df89c028ccc45a481c9d901169ba",
+          "expectedSHA256": "fb828db9f30046e4d0953edc95b08c34c44392131d6de7b19c876402d795da09"
+        },
+        "tolerance": 1
+      }
+    },
+    {
+      "scene": "1-ORACLE-SECOND",
+      "kind": "member-prefix",
+      "prefixCount": 2,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": false,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 1,
+          "badPixels": 1,
+          "badChannels": 1,
+          "maxChannelError": 2,
+          "firstFailures": [
+            {
+              "x": 73,
+              "y": 166,
+              "errors": [
+                2,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "actualSHA256": "f9fbf8356b37528b5879aaba86dd16bee0444f4a8a01c717bdbb92d2631ea4c0",
+          "expectedSHA256": "cebd4a226263b01427bcff23b732d5b2ebb943d7d85949dc133ce5d292c4934b"
+        },
+        "nativeRGBA": {
+          "passed": false,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 1,
+          "badPixels": 1,
+          "badChannels": 1,
+          "maxChannelError": 2,
+          "firstFailures": [
+            {
+              "x": 73,
+              "y": 166,
+              "errors": [
+                2,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "actualSHA256": "f9fbf8356b37528b5879aaba86dd16bee0444f4a8a01c717bdbb92d2631ea4c0",
+          "expectedSHA256": "cebd4a226263b01427bcff23b732d5b2ebb943d7d85949dc133ce5d292c4934b"
+        },
+        "tolerance": 1
+      }
+    },
+    {
+      "scene": "1-ORACLE-SECOND",
+      "kind": "member-prefix",
+      "prefixCount": 3,
+      "comparison": {
+        "nativeAuthority": false,
+        "presentationProofForPrefix": false,
+        "fullRGBACompared": true,
+        "readFormatCompleteEquality": true,
+        "RGBA": {
+          "passed": false,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 1,
+          "badPixels": 2,
+          "badChannels": 2,
+          "maxChannelError": 2,
+          "firstFailures": [
+            {
+              "x": 73,
+              "y": 166,
+              "errors": [
+                2,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "x": 57,
+              "y": 176,
+              "errors": [
+                0,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "actualSHA256": "2d40520747e858a18e857a7c065da5f39b640d87a6d4357a2c37ef322c7d92d8",
+          "expectedSHA256": "67bc54fdf089074395f098cbb14514f672279366fcd17a00dcbd5a25df6c0a56"
+        },
+        "nativeRGBA": {
+          "passed": false,
+          "pixelsCompared": 172800,
+          "channelsCompared": 691200,
+          "tolerance": 1,
+          "badPixels": 2,
+          "badChannels": 2,
+          "maxChannelError": 2,
+          "firstFailures": [
+            {
+              "x": 73,
+              "y": 166,
+              "errors": [
+                2,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "x": 57,
+              "y": 176,
+              "errors": [
+                0,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "actualSHA256": "2d40520747e858a18e857a7c065da5f39b640d87a6d4357a2c37ef322c7d92d8",
+          "expectedSHA256": "67bc54fdf089074395f098cbb14514f672279366fcd17a00dcbd5a25df6c0a56"
+        },
+        "tolerance": 1
+      }
+    }
+  ],
+  "failedFinalPixels": [
+    {
+      "scene": "0-ORACLE-SECOND",
+      "pixel": [
+        48,
+        107
+      ],
+      "idealReferenceRGBA": [
+        74,
+        168,
+        62,
+        255
+      ],
+      "actualFinalPrefixRGBA": [
+        76,
+        169,
+        62,
+        255
+      ],
+      "accumulatedDelta": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "stages": [
+        {
+          "prefixCount": 1,
+          "identity": [
+            "abc1",
+            948703
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exactSample": {
+            "identity": [
+              "abc1",
+              948703
+            ],
+            "sampleCoordinates": [
+              "479/6",
+              "235/6"
+            ],
+            "weights": [
+              "5/6",
+              "1/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  79,
+                  39
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  79,
+                  40
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "1/36"
+              },
+              {
+                "pixel": [
+                  80,
+                  39
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  80,
+                  40
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "5/36"
+              }
+            ],
+            "sampleRGBA": [
+              "1876/9",
+              "67/3",
+              "134/3",
+              "255"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "1876/9",
+              "67/3",
+              "134/3",
+              "255"
+            ],
+            "quantizedRGBA": [
+              208,
+              22,
+              45,
+              255
+            ]
+          },
+          "exactOverActualPrevious": [
+            "1876/9",
+            "67/3",
+            "134/3",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            208,
+            22,
+            45,
+            255
+          ],
+          "actualPrefixRGBA": [
+            208,
+            22,
+            45,
+            255
+          ],
+          "newPerDrawDelta": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "prefixCount": 2,
+          "identity": [
+            "abc2",
+            948704
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            208,
+            22,
+            45,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc2",
+              948704
+            ],
+            "sampleCoordinates": [
+              "287/6",
+              "91/6"
+            ],
+            "weights": [
+              "5/6",
+              "1/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  47,
+                  15
+                ],
+                "RGBA": [
+                  6,
+                  81,
+                  24,
+                  192
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  47,
+                  16
+                ],
+                "RGBA": [
+                  16,
+                  216,
+                  64,
+                  255
+                ],
+                "weight": "1/36"
+              },
+              {
+                "pixel": [
+                  48,
+                  15
+                ],
+                "RGBA": [
+                  16,
+                  216,
+                  64,
+                  255
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  48,
+                  16
+                ],
+                "RGBA": [
+                  3,
+                  41,
+                  12,
+                  48
+                ],
+                "weight": "5/36"
+              }
+            ],
+            "sampleRGBA": [
+              "461/36",
+              "3113/18",
+              "461/9",
+              "435/2"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "461/36",
+              "3113/18",
+              "461/9",
+              "435/2"
+            ],
+            "quantizedRGBA": [
+              13,
+              173,
+              51,
+              218
+            ]
+          },
+          "exactOverActualPrevious": [
+            "26557/612",
+            "53911/306",
+            "17699/306",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            43,
+            176,
+            58,
+            255
+          ],
+          "actualPrefixRGBA": [
+            44,
+            176,
+            58,
+            255
+          ],
+          "newPerDrawDelta": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "prefixCount": 3,
+          "identity": [
+            "abc3",
+            948705
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            44,
+            176,
+            58,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc3",
+              948705
+            ],
+            "sampleCoordinates": [
+              "143/6",
+              "19/6"
+            ],
+            "weights": [
+              "5/6",
+              "1/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  23,
+                  3
+                ],
+                "RGBA": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  23,
+                  4
+                ],
+                "RGBA": [
+                  181,
+                  96,
+                  60,
+                  192
+                ],
+                "weight": "1/36"
+              },
+              {
+                "pixel": [
+                  24,
+                  3
+                ],
+                "RGBA": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  24,
+                  4
+                ],
+                "RGBA": [
+                  240,
+                  128,
+                  80,
+                  255
+                ],
+                "weight": "5/36"
+              }
+            ],
+            "sampleRGBA": [
+              "1381/36",
+              "184/9",
+              "115/9",
+              "163/4"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "1381/36",
+              "184/9",
+              "115/9",
+              "163/4"
+            ],
+            "quantizedRGBA": [
+              38,
+              20,
+              13,
+              41
+            ]
+          },
+          "exactOverActualPrevious": [
+            "230509/3060",
+            "128764/765",
+            "94109/1530",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            75,
+            168,
+            62,
+            255
+          ],
+          "actualPrefixRGBA": [
+            76,
+            169,
+            62,
+            255
+          ],
+          "newPerDrawDelta": [
+            1,
+            1,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "0-ORACLE-SECOND",
+      "pixel": [
+        65,
+        107
+      ],
+      "idealReferenceRGBA": [
+        93,
+        56,
+        33,
+        255
+      ],
+      "actualFinalPrefixRGBA": [
+        93,
+        56,
+        35,
+        255
+      ],
+      "accumulatedDelta": [
+        0,
+        0,
+        2,
+        0
+      ],
+      "stages": [
+        {
+          "prefixCount": 1,
+          "identity": [
+            "abc1",
+            948703
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exactSample": {
+            "identity": [
+              "abc1",
+              948703
+            ],
+            "sampleCoordinates": [
+              "547/6",
+              "235/6"
+            ],
+            "weights": [
+              "1/6",
+              "1/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  91,
+                  39
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  91,
+                  40
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  92,
+                  39
+                ],
+                "RGBA": [
+                  16,
+                  16,
+                  16,
+                  255
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  92,
+                  40
+                ],
+                "RGBA": [
+                  16,
+                  16,
+                  16,
+                  255
+                ],
+                "weight": "1/36"
+              }
+            ],
+            "sampleRGBA": [
+              "1004/9",
+              "43/3",
+              "26",
+              "255"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "1004/9",
+              "43/3",
+              "26",
+              "255"
+            ],
+            "quantizedRGBA": [
+              112,
+              14,
+              26,
+              255
+            ]
+          },
+          "exactOverActualPrevious": [
+            "1004/9",
+            "43/3",
+            "26",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            112,
+            14,
+            26,
+            255
+          ],
+          "actualPrefixRGBA": [
+            112,
+            14,
+            26,
+            255
+          ],
+          "newPerDrawDelta": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "prefixCount": 2,
+          "identity": [
+            "abc2",
+            948704
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            112,
+            14,
+            26,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc2",
+              948704
+            ],
+            "sampleCoordinates": [
+              "355/6",
+              "91/6"
+            ],
+            "weights": [
+              "1/6",
+              "1/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  59,
+                  15
+                ],
+                "RGBA": [
+                  3,
+                  41,
+                  12,
+                  48
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  59,
+                  16
+                ],
+                "RGBA": [
+                  4,
+                  54,
+                  16,
+                  128
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  60,
+                  15
+                ],
+                "RGBA": [
+                  3,
+                  41,
+                  12,
+                  48
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  60,
+                  16
+                ],
+                "RGBA": [
+                  4,
+                  54,
+                  16,
+                  128
+                ],
+                "weight": "1/36"
+              }
+            ],
+            "sampleRGBA": [
+              "19/6",
+              "259/6",
+              "38/3",
+              "184/3"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "19/6",
+              "259/6",
+              "38/3",
+              "184/3"
+            ],
+            "quantizedRGBA": [
+              3,
+              43,
+              13,
+              61
+            ]
+          },
+          "exactOverActualPrevious": [
+            "134989/1530",
+            "82313/1530",
+            "24796/765",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            88,
+            54,
+            32,
+            255
+          ],
+          "actualPrefixRGBA": [
+            88,
+            54,
+            33,
+            255
+          ],
+          "newPerDrawDelta": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "prefixCount": 3,
+          "identity": [
+            "abc3",
+            948705
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            88,
+            54,
+            33,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc3",
+              948705
+            ],
+            "sampleCoordinates": [
+              "211/6",
+              "19/6"
+            ],
+            "weights": [
+              "1/6",
+              "1/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  35,
+                  3
+                ],
+                "RGBA": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  35,
+                  4
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  36,
+                  3
+                ],
+                "RGBA": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  36,
+                  4
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "1/36"
+              }
+            ],
+            "sampleRGBA": [
+              "15/2",
+              "4",
+              "5/2",
+              "8"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "15/2",
+              "4",
+              "5/2",
+              "8"
+            ],
+            "quantizedRGBA": [
+              8,
+              4,
+              3,
+              8
+            ]
+          },
+          "exactOverActualPrevious": [
+            "47297/510",
+            "4786/85",
+            "5859/170",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            93,
+            56,
+            34,
+            255
+          ],
+          "actualPrefixRGBA": [
+            93,
+            56,
+            35,
+            255
+          ],
+          "newPerDrawDelta": [
+            0,
+            0,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "0-ORACLE-SECOND",
+      "pixel": [
+        65,
+        108
+      ],
+      "idealReferenceRGBA": [
+        122,
+        73,
+        44,
+        255
+      ],
+      "actualFinalPrefixRGBA": [
+        120,
+        74,
+        42,
+        255
+      ],
+      "accumulatedDelta": [
+        -2,
+        1,
+        -2,
+        0
+      ],
+      "stages": [
+        {
+          "prefixCount": 1,
+          "identity": [
+            "abc1",
+            948703
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exactSample": {
+            "identity": [
+              "abc1",
+              948703
+            ],
+            "sampleCoordinates": [
+              "547/6",
+              "239/6"
+            ],
+            "weights": [
+              "1/6",
+              "5/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  91,
+                  39
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  91,
+                  40
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  92,
+                  39
+                ],
+                "RGBA": [
+                  16,
+                  16,
+                  16,
+                  255
+                ],
+                "weight": "1/36"
+              },
+              {
+                "pixel": [
+                  92,
+                  40
+                ],
+                "RGBA": [
+                  16,
+                  16,
+                  16,
+                  255
+                ],
+                "weight": "5/36"
+              }
+            ],
+            "sampleRGBA": [
+              "1564/9",
+              "21",
+              "118/3",
+              "255"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "1564/9",
+              "21",
+              "118/3",
+              "255"
+            ],
+            "quantizedRGBA": [
+              174,
+              21,
+              39,
+              255
+            ]
+          },
+          "exactOverActualPrevious": [
+            "1564/9",
+            "21",
+            "118/3",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            174,
+            21,
+            39,
+            255
+          ],
+          "actualPrefixRGBA": [
+            173,
+            21,
+            39,
+            255
+          ],
+          "newPerDrawDelta": [
+            -1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "prefixCount": 2,
+          "identity": [
+            "abc2",
+            948704
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            173,
+            21,
+            39,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc2",
+              948704
+            ],
+            "sampleCoordinates": [
+              "355/6",
+              "95/6"
+            ],
+            "weights": [
+              "1/6",
+              "5/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  59,
+                  15
+                ],
+                "RGBA": [
+                  3,
+                  41,
+                  12,
+                  48
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  59,
+                  16
+                ],
+                "RGBA": [
+                  4,
+                  54,
+                  16,
+                  128
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  60,
+                  15
+                ],
+                "RGBA": [
+                  3,
+                  41,
+                  12,
+                  48
+                ],
+                "weight": "1/36"
+              },
+              {
+                "pixel": [
+                  60,
+                  16
+                ],
+                "RGBA": [
+                  4,
+                  54,
+                  16,
+                  128
+                ],
+                "weight": "5/36"
+              }
+            ],
+            "sampleRGBA": [
+              "23/6",
+              "311/6",
+              "46/3",
+              "344/3"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "23/6",
+              "311/6",
+              "46/3",
+              "344/3"
+            ],
+            "quantizedRGBA": [
+              4,
+              52,
+              15,
+              115
+            ]
+          },
+          "exactOverActualPrevious": [
+            "151531/1530",
+            "32329/510",
+            "9383/255",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            99,
+            63,
+            37,
+            255
+          ],
+          "actualPrefixRGBA": [
+            99,
+            64,
+            36,
+            255
+          ],
+          "newPerDrawDelta": [
+            0,
+            1,
+            -1,
+            0
+          ]
+        },
+        {
+          "prefixCount": 3,
+          "identity": [
+            "abc3",
+            948705
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            99,
+            64,
+            36,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc3",
+              948705
+            ],
+            "sampleCoordinates": [
+              "211/6",
+              "23/6"
+            ],
+            "weights": [
+              "1/6",
+              "5/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  35,
+                  3
+                ],
+                "RGBA": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  35,
+                  4
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  36,
+                  3
+                ],
+                "RGBA": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "weight": "1/36"
+              },
+              {
+                "pixel": [
+                  36,
+                  4
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "5/36"
+              }
+            ],
+            "sampleRGBA": [
+              "75/2",
+              "20",
+              "25/2",
+              "40"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "75/2",
+              "20",
+              "25/2",
+              "40"
+            ],
+            "quantizedRGBA": [
+              38,
+              20,
+              13,
+              40
+            ]
+          },
+          "exactOverActualPrevious": [
+            "4113/34",
+            "3772/51",
+            "1457/34",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            121,
+            74,
+            43,
+            255
+          ],
+          "actualPrefixRGBA": [
+            120,
+            74,
+            42,
+            255
+          ],
+          "newPerDrawDelta": [
+            -1,
+            0,
+            -1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "0-ORACLE-SECOND",
+      "pixel": [
+        23,
+        109
+      ],
+      "idealReferenceRGBA": [
+        108,
+        114,
+        52,
+        255
+      ],
+      "actualFinalPrefixRGBA": [
+        110,
+        114,
+        52,
+        255
+      ],
+      "accumulatedDelta": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "stages": [
+        {
+          "prefixCount": 1,
+          "identity": [
+            "abc1",
+            948703
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exactSample": {
+            "identity": [
+              "abc1",
+              948703
+            ],
+            "sampleCoordinates": [
+              "379/6",
+              "81/2"
+            ],
+            "weights": [
+              "1/6",
+              "1/2"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  63,
+                  40
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "5/12"
+              },
+              {
+                "pixel": [
+                  63,
+                  41
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "5/12"
+              },
+              {
+                "pixel": [
+                  64,
+                  40
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "1/12"
+              },
+              {
+                "pixel": [
+                  64,
+                  41
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "1/12"
+              }
+            ],
+            "sampleRGBA": [
+              "392/3",
+              "14",
+              "28",
+              "255"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "392/3",
+              "14",
+              "28",
+              "255"
+            ],
+            "quantizedRGBA": [
+              131,
+              14,
+              28,
+              255
+            ]
+          },
+          "exactOverActualPrevious": [
+            "392/3",
+            "14",
+            "28",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            131,
+            14,
+            28,
+            255
+          ],
+          "actualPrefixRGBA": [
+            131,
+            14,
+            28,
+            255
+          ],
+          "newPerDrawDelta": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "prefixCount": 2,
+          "identity": [
+            "abc2",
+            948704
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            131,
+            14,
+            28,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc2",
+              948704
+            ],
+            "sampleCoordinates": [
+              "187/6",
+              "33/2"
+            ],
+            "weights": [
+              "1/6",
+              "1/2"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  31,
+                  16
+                ],
+                "RGBA": [
+                  8,
+                  108,
+                  32,
+                  128
+                ],
+                "weight": "5/12"
+              },
+              {
+                "pixel": [
+                  31,
+                  17
+                ],
+                "RGBA": [
+                  8,
+                  108,
+                  32,
+                  128
+                ],
+                "weight": "5/12"
+              },
+              {
+                "pixel": [
+                  32,
+                  16
+                ],
+                "RGBA": [
+                  6,
+                  81,
+                  24,
+                  192
+                ],
+                "weight": "1/12"
+              },
+              {
+                "pixel": [
+                  32,
+                  17
+                ],
+                "RGBA": [
+                  6,
+                  81,
+                  24,
+                  192
+                ],
+                "weight": "1/12"
+              }
+            ],
+            "sampleRGBA": [
+              "23/3",
+              "207/2",
+              "92/3",
+              "416/3"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "23/3",
+              "207/2",
+              "92/3",
+              "416/3"
+            ],
+            "quantizedRGBA": [
+              8,
+              104,
+              31,
+              139
+            ]
+          },
+          "exactOverActualPrevious": [
+            "51584/765",
+            "168127/1530",
+            "33232/765",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            67,
+            110,
+            43,
+            255
+          ],
+          "actualPrefixRGBA": [
+            68,
+            109,
+            44,
+            255
+          ],
+          "newPerDrawDelta": [
+            1,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "prefixCount": 3,
+          "identity": [
+            "abc3",
+            948705
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            68,
+            109,
+            44,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc3",
+              948705
+            ],
+            "sampleCoordinates": [
+              "43/6",
+              "9/2"
+            ],
+            "weights": [
+              "1/6",
+              "1/2"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  7,
+                  4
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "5/12"
+              },
+              {
+                "pixel": [
+                  7,
+                  5
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "5/12"
+              },
+              {
+                "pixel": [
+                  8,
+                  4
+                ],
+                "RGBA": [
+                  120,
+                  64,
+                  40,
+                  128
+                ],
+                "weight": "1/12"
+              },
+              {
+                "pixel": [
+                  8,
+                  5
+                ],
+                "RGBA": [
+                  120,
+                  64,
+                  40,
+                  128
+                ],
+                "weight": "1/12"
+              }
+            ],
+            "sampleRGBA": [
+              "115/2",
+              "92/3",
+              "115/6",
+              "184/3"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "115/2",
+              "92/3",
+              "115/6",
+              "184/3"
+            ],
+            "quantizedRGBA": [
+              58,
+              31,
+              19,
+              61
+            ]
+          },
+          "exactOverActualPrevious": [
+            "9823/90",
+            "86789/765",
+            "80453/1530",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            109,
+            113,
+            53,
+            255
+          ],
+          "actualPrefixRGBA": [
+            110,
+            114,
+            52,
+            255
+          ],
+          "newPerDrawDelta": [
+            1,
+            1,
+            -1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "0-ORACLE-SECOND",
+      "pixel": [
+        23,
+        110
+      ],
+      "idealReferenceRGBA": [
+        108,
+        114,
+        52,
+        255
+      ],
+      "actualFinalPrefixRGBA": [
+        110,
+        114,
+        52,
+        255
+      ],
+      "accumulatedDelta": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "stages": [
+        {
+          "prefixCount": 1,
+          "identity": [
+            "abc1",
+            948703
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exactSample": {
+            "identity": [
+              "abc1",
+              948703
+            ],
+            "sampleCoordinates": [
+              "379/6",
+              "247/6"
+            ],
+            "weights": [
+              "1/6",
+              "1/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  63,
+                  41
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  63,
+                  42
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  64,
+                  41
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  64,
+                  42
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "1/36"
+              }
+            ],
+            "sampleRGBA": [
+              "392/3",
+              "14",
+              "28",
+              "255"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "392/3",
+              "14",
+              "28",
+              "255"
+            ],
+            "quantizedRGBA": [
+              131,
+              14,
+              28,
+              255
+            ]
+          },
+          "exactOverActualPrevious": [
+            "392/3",
+            "14",
+            "28",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            131,
+            14,
+            28,
+            255
+          ],
+          "actualPrefixRGBA": [
+            131,
+            14,
+            28,
+            255
+          ],
+          "newPerDrawDelta": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "prefixCount": 2,
+          "identity": [
+            "abc2",
+            948704
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            131,
+            14,
+            28,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc2",
+              948704
+            ],
+            "sampleCoordinates": [
+              "187/6",
+              "103/6"
+            ],
+            "weights": [
+              "1/6",
+              "1/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  31,
+                  17
+                ],
+                "RGBA": [
+                  8,
+                  108,
+                  32,
+                  128
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  31,
+                  18
+                ],
+                "RGBA": [
+                  8,
+                  108,
+                  32,
+                  128
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  32,
+                  17
+                ],
+                "RGBA": [
+                  6,
+                  81,
+                  24,
+                  192
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  32,
+                  18
+                ],
+                "RGBA": [
+                  6,
+                  81,
+                  24,
+                  192
+                ],
+                "weight": "1/36"
+              }
+            ],
+            "sampleRGBA": [
+              "23/3",
+              "207/2",
+              "92/3",
+              "416/3"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "23/3",
+              "207/2",
+              "92/3",
+              "416/3"
+            ],
+            "quantizedRGBA": [
+              8,
+              104,
+              31,
+              139
+            ]
+          },
+          "exactOverActualPrevious": [
+            "51584/765",
+            "168127/1530",
+            "33232/765",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            67,
+            110,
+            43,
+            255
+          ],
+          "actualPrefixRGBA": [
+            68,
+            109,
+            44,
+            255
+          ],
+          "newPerDrawDelta": [
+            1,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "prefixCount": 3,
+          "identity": [
+            "abc3",
+            948705
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            68,
+            109,
+            44,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc3",
+              948705
+            ],
+            "sampleCoordinates": [
+              "43/6",
+              "31/6"
+            ],
+            "weights": [
+              "1/6",
+              "1/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  7,
+                  5
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  7,
+                  6
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  8,
+                  5
+                ],
+                "RGBA": [
+                  120,
+                  64,
+                  40,
+                  128
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  8,
+                  6
+                ],
+                "RGBA": [
+                  120,
+                  64,
+                  40,
+                  128
+                ],
+                "weight": "1/36"
+              }
+            ],
+            "sampleRGBA": [
+              "115/2",
+              "92/3",
+              "115/6",
+              "184/3"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "115/2",
+              "92/3",
+              "115/6",
+              "184/3"
+            ],
+            "quantizedRGBA": [
+              58,
+              31,
+              19,
+              61
+            ]
+          },
+          "exactOverActualPrevious": [
+            "9823/90",
+            "86789/765",
+            "80453/1530",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            109,
+            113,
+            53,
+            255
+          ],
+          "actualPrefixRGBA": [
+            110,
+            114,
+            52,
+            255
+          ],
+          "newPerDrawDelta": [
+            1,
+            1,
+            -1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "0-ORACLE-SECOND",
+      "pixel": [
+        23,
+        111
+      ],
+      "idealReferenceRGBA": [
+        108,
+        114,
+        52,
+        255
+      ],
+      "actualFinalPrefixRGBA": [
+        110,
+        114,
+        52,
+        255
+      ],
+      "accumulatedDelta": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "stages": [
+        {
+          "prefixCount": 1,
+          "identity": [
+            "abc1",
+            948703
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exactSample": {
+            "identity": [
+              "abc1",
+              948703
+            ],
+            "sampleCoordinates": [
+              "379/6",
+              "251/6"
+            ],
+            "weights": [
+              "1/6",
+              "5/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  63,
+                  41
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  63,
+                  42
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  64,
+                  41
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "1/36"
+              },
+              {
+                "pixel": [
+                  64,
+                  42
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "5/36"
+              }
+            ],
+            "sampleRGBA": [
+              "392/3",
+              "14",
+              "28",
+              "255"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "392/3",
+              "14",
+              "28",
+              "255"
+            ],
+            "quantizedRGBA": [
+              131,
+              14,
+              28,
+              255
+            ]
+          },
+          "exactOverActualPrevious": [
+            "392/3",
+            "14",
+            "28",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            131,
+            14,
+            28,
+            255
+          ],
+          "actualPrefixRGBA": [
+            131,
+            14,
+            28,
+            255
+          ],
+          "newPerDrawDelta": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "prefixCount": 2,
+          "identity": [
+            "abc2",
+            948704
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            131,
+            14,
+            28,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc2",
+              948704
+            ],
+            "sampleCoordinates": [
+              "187/6",
+              "107/6"
+            ],
+            "weights": [
+              "1/6",
+              "5/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  31,
+                  17
+                ],
+                "RGBA": [
+                  8,
+                  108,
+                  32,
+                  128
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  31,
+                  18
+                ],
+                "RGBA": [
+                  8,
+                  108,
+                  32,
+                  128
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  32,
+                  17
+                ],
+                "RGBA": [
+                  6,
+                  81,
+                  24,
+                  192
+                ],
+                "weight": "1/36"
+              },
+              {
+                "pixel": [
+                  32,
+                  18
+                ],
+                "RGBA": [
+                  6,
+                  81,
+                  24,
+                  192
+                ],
+                "weight": "5/36"
+              }
+            ],
+            "sampleRGBA": [
+              "23/3",
+              "207/2",
+              "92/3",
+              "416/3"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "23/3",
+              "207/2",
+              "92/3",
+              "416/3"
+            ],
+            "quantizedRGBA": [
+              8,
+              104,
+              31,
+              139
+            ]
+          },
+          "exactOverActualPrevious": [
+            "51584/765",
+            "168127/1530",
+            "33232/765",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            67,
+            110,
+            43,
+            255
+          ],
+          "actualPrefixRGBA": [
+            68,
+            109,
+            44,
+            255
+          ],
+          "newPerDrawDelta": [
+            1,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "prefixCount": 3,
+          "identity": [
+            "abc3",
+            948705
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            68,
+            109,
+            44,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc3",
+              948705
+            ],
+            "sampleCoordinates": [
+              "43/6",
+              "35/6"
+            ],
+            "weights": [
+              "1/6",
+              "5/6"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  7,
+                  5
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "5/36"
+              },
+              {
+                "pixel": [
+                  7,
+                  6
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "25/36"
+              },
+              {
+                "pixel": [
+                  8,
+                  5
+                ],
+                "RGBA": [
+                  120,
+                  64,
+                  40,
+                  128
+                ],
+                "weight": "1/36"
+              },
+              {
+                "pixel": [
+                  8,
+                  6
+                ],
+                "RGBA": [
+                  120,
+                  64,
+                  40,
+                  128
+                ],
+                "weight": "5/36"
+              }
+            ],
+            "sampleRGBA": [
+              "115/2",
+              "92/3",
+              "115/6",
+              "184/3"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "115/2",
+              "92/3",
+              "115/6",
+              "184/3"
+            ],
+            "quantizedRGBA": [
+              58,
+              31,
+              19,
+              61
+            ]
+          },
+          "exactOverActualPrevious": [
+            "9823/90",
+            "86789/765",
+            "80453/1530",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            109,
+            113,
+            53,
+            255
+          ],
+          "actualPrefixRGBA": [
+            110,
+            114,
+            52,
+            255
+          ],
+          "newPerDrawDelta": [
+            1,
+            1,
+            -1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "0-ORACLE-SECOND",
+      "pixel": [
+        23,
+        112
+      ],
+      "idealReferenceRGBA": [
+        108,
+        114,
+        52,
+        255
+      ],
+      "actualFinalPrefixRGBA": [
+        110,
+        114,
+        52,
+        255
+      ],
+      "accumulatedDelta": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "stages": [
+        {
+          "prefixCount": 1,
+          "identity": [
+            "abc1",
+            948703
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exactSample": {
+            "identity": [
+              "abc1",
+              948703
+            ],
+            "sampleCoordinates": [
+              "379/6",
+              "85/2"
+            ],
+            "weights": [
+              "1/6",
+              "1/2"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  63,
+                  42
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "5/12"
+              },
+              {
+                "pixel": [
+                  63,
+                  43
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "5/12"
+              },
+              {
+                "pixel": [
+                  64,
+                  42
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "1/12"
+              },
+              {
+                "pixel": [
+                  64,
+                  43
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "1/12"
+              }
+            ],
+            "sampleRGBA": [
+              "392/3",
+              "14",
+              "28",
+              "255"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "392/3",
+              "14",
+              "28",
+              "255"
+            ],
+            "quantizedRGBA": [
+              131,
+              14,
+              28,
+              255
+            ]
+          },
+          "exactOverActualPrevious": [
+            "392/3",
+            "14",
+            "28",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            131,
+            14,
+            28,
+            255
+          ],
+          "actualPrefixRGBA": [
+            131,
+            14,
+            28,
+            255
+          ],
+          "newPerDrawDelta": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "prefixCount": 2,
+          "identity": [
+            "abc2",
+            948704
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            131,
+            14,
+            28,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc2",
+              948704
+            ],
+            "sampleCoordinates": [
+              "187/6",
+              "37/2"
+            ],
+            "weights": [
+              "1/6",
+              "1/2"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  31,
+                  18
+                ],
+                "RGBA": [
+                  8,
+                  108,
+                  32,
+                  128
+                ],
+                "weight": "5/12"
+              },
+              {
+                "pixel": [
+                  31,
+                  19
+                ],
+                "RGBA": [
+                  8,
+                  108,
+                  32,
+                  128
+                ],
+                "weight": "5/12"
+              },
+              {
+                "pixel": [
+                  32,
+                  18
+                ],
+                "RGBA": [
+                  6,
+                  81,
+                  24,
+                  192
+                ],
+                "weight": "1/12"
+              },
+              {
+                "pixel": [
+                  32,
+                  19
+                ],
+                "RGBA": [
+                  6,
+                  81,
+                  24,
+                  192
+                ],
+                "weight": "1/12"
+              }
+            ],
+            "sampleRGBA": [
+              "23/3",
+              "207/2",
+              "92/3",
+              "416/3"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "23/3",
+              "207/2",
+              "92/3",
+              "416/3"
+            ],
+            "quantizedRGBA": [
+              8,
+              104,
+              31,
+              139
+            ]
+          },
+          "exactOverActualPrevious": [
+            "51584/765",
+            "168127/1530",
+            "33232/765",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            67,
+            110,
+            43,
+            255
+          ],
+          "actualPrefixRGBA": [
+            68,
+            109,
+            44,
+            255
+          ],
+          "newPerDrawDelta": [
+            1,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "prefixCount": 3,
+          "identity": [
+            "abc3",
+            948705
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            68,
+            109,
+            44,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc3",
+              948705
+            ],
+            "sampleCoordinates": [
+              "43/6",
+              "13/2"
+            ],
+            "weights": [
+              "1/6",
+              "1/2"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  7,
+                  6
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "5/12"
+              },
+              {
+                "pixel": [
+                  7,
+                  7
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "5/12"
+              },
+              {
+                "pixel": [
+                  8,
+                  6
+                ],
+                "RGBA": [
+                  120,
+                  64,
+                  40,
+                  128
+                ],
+                "weight": "1/12"
+              },
+              {
+                "pixel": [
+                  8,
+                  7
+                ],
+                "RGBA": [
+                  120,
+                  64,
+                  40,
+                  128
+                ],
+                "weight": "1/12"
+              }
+            ],
+            "sampleRGBA": [
+              "115/2",
+              "92/3",
+              "115/6",
+              "184/3"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "115/2",
+              "92/3",
+              "115/6",
+              "184/3"
+            ],
+            "quantizedRGBA": [
+              58,
+              31,
+              19,
+              61
+            ]
+          },
+          "exactOverActualPrevious": [
+            "9823/90",
+            "86789/765",
+            "80453/1530",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            109,
+            113,
+            53,
+            255
+          ],
+          "actualPrefixRGBA": [
+            110,
+            114,
+            52,
+            255
+          ],
+          "newPerDrawDelta": [
+            1,
+            1,
+            -1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "1-ORACLE-SECOND",
+      "pixel": [
+        73,
+        166
+      ],
+      "idealReferenceRGBA": [
+        212,
+        90,
+        45,
+        255
+      ],
+      "actualFinalPrefixRGBA": [
+        214,
+        90,
+        45,
+        255
+      ],
+      "accumulatedDelta": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "stages": [
+        {
+          "prefixCount": 1,
+          "identity": [
+            "abc1",
+            948703
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exactSample": {
+            "identity": [
+              "abc1",
+              948703
+            ],
+            "sampleCoordinates": [
+              "9413/118",
+              "3397/118"
+            ],
+            "weights": [
+              "91/118",
+              "93/118"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  79,
+                  28
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "675/13924"
+              },
+              {
+                "pixel": [
+                  79,
+                  29
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "2511/13924"
+              },
+              {
+                "pixel": [
+                  80,
+                  28
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "2275/13924"
+              },
+              {
+                "pixel": [
+                  80,
+                  29
+                ],
+                "RGBA": [
+                  224,
+                  24,
+                  48,
+                  255
+                ],
+                "weight": "8463/13924"
+              }
+            ],
+            "sampleRGBA": [
+              "11704/59",
+              "1254/59",
+              "2508/59",
+              "255"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "11704/59",
+              "1254/59",
+              "2508/59",
+              "255"
+            ],
+            "quantizedRGBA": [
+              198,
+              21,
+              43,
+              255
+            ]
+          },
+          "exactOverActualPrevious": [
+            "11704/59",
+            "1254/59",
+            "2508/59",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            198,
+            21,
+            43,
+            255
+          ],
+          "actualPrefixRGBA": [
+            199,
+            21,
+            43,
+            255
+          ],
+          "newPerDrawDelta": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "prefixCount": 2,
+          "identity": [
+            "abc2",
+            948704
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            199,
+            21,
+            43,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc2",
+              948704
+            ],
+            "sampleCoordinates": [
+              "2113/46",
+              "2689/382"
+            ],
+            "weights": [
+              "43/46",
+              "15/382"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  45,
+                  7
+                ],
+                "RGBA": [
+                  120,
+                  80,
+                  24,
+                  128
+                ],
+                "weight": "1101/17572"
+              },
+              {
+                "pixel": [
+                  45,
+                  8
+                ],
+                "RGBA": [
+                  6,
+                  81,
+                  24,
+                  192
+                ],
+                "weight": "45/17572"
+              },
+              {
+                "pixel": [
+                  46,
+                  7
+                ],
+                "RGBA": [
+                  120,
+                  80,
+                  24,
+                  128
+                ],
+                "weight": "15781/17572"
+              },
+              {
+                "pixel": [
+                  46,
+                  8
+                ],
+                "RGBA": [
+                  6,
+                  81,
+                  24,
+                  192
+                ],
+                "weight": "645/17572"
+              }
+            ],
+            "sampleRGBA": [
+              "22065/191",
+              "30575/382",
+              "24",
+              "24928/191"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "22065/191",
+              "30575/382",
+              "24",
+              "24928/191"
+            ],
+            "quantizedRGBA": [
+              116,
+              80,
+              24,
+              131
+            ]
+          },
+          "exactOverActualPrevious": [
+            "10358198/48705",
+            "2931753/32470",
+            "2191331/48705",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            213,
+            90,
+            45,
+            255
+          ],
+          "actualPrefixRGBA": [
+            214,
+            90,
+            45,
+            255
+          ],
+          "newPerDrawDelta": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "prefixCount": 3,
+          "identity": [
+            "abc3",
+            948705
+          ],
+          "covered": false,
+          "actualPreviousPrefixRGBA": [
+            214,
+            90,
+            45,
+            255
+          ],
+          "exactSample": null,
+          "exactOverActualPrevious": [
+            "214",
+            "90",
+            "45",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            214,
+            90,
+            45,
+            255
+          ],
+          "actualPrefixRGBA": [
+            214,
+            90,
+            45,
+            255
+          ],
+          "newPerDrawDelta": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "1-ORACLE-SECOND",
+      "pixel": [
+        57,
+        176
+      ],
+      "idealReferenceRGBA": [
+        111,
+        109,
+        51,
+        255
+      ],
+      "actualFinalPrefixRGBA": [
+        111,
+        111,
+        52,
+        255
+      ],
+      "accumulatedDelta": [
+        0,
+        2,
+        1,
+        0
+      ],
+      "stages": [
+        {
+          "prefixCount": 1,
+          "identity": [
+            "abc1",
+            948703
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exactSample": {
+            "identity": [
+              "abc1",
+              948703
+            ],
+            "sampleCoordinates": [
+              "23119/354",
+              "13391/354"
+            ],
+            "weights": [
+              "109/354",
+              "293/354"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  65,
+                  37
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "14945/125316"
+              },
+              {
+                "pixel": [
+                  65,
+                  38
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "71785/125316"
+              },
+              {
+                "pixel": [
+                  66,
+                  37
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "6649/125316"
+              },
+              {
+                "pixel": [
+                  66,
+                  38
+                ],
+                "RGBA": [
+                  112,
+                  12,
+                  24,
+                  255
+                ],
+                "weight": "31937/125316"
+              }
+            ],
+            "sampleRGBA": [
+              "112",
+              "12",
+              "24",
+              "255"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "112",
+              "12",
+              "24",
+              "255"
+            ],
+            "quantizedRGBA": [
+              112,
+              12,
+              24,
+              255
+            ]
+          },
+          "exactOverActualPrevious": [
+            "112",
+            "12",
+            "24",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            112,
+            12,
+            24,
+            255
+          ],
+          "actualPrefixRGBA": [
+            112,
+            12,
+            24,
+            255
+          ],
+          "newPerDrawDelta": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "prefixCount": 2,
+          "identity": [
+            "abc2",
+            948704
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            112,
+            12,
+            24,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc2",
+              948704
+            ],
+            "sampleCoordinates": [
+              "1473/46",
+              "5889/382"
+            ],
+            "weights": [
+              "1/46",
+              "159/382"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  32,
+                  15
+                ],
+                "RGBA": [
+                  8,
+                  108,
+                  32,
+                  128
+                ],
+                "weight": "10035/17572"
+              },
+              {
+                "pixel": [
+                  32,
+                  16
+                ],
+                "RGBA": [
+                  6,
+                  81,
+                  24,
+                  192
+                ],
+                "weight": "7155/17572"
+              },
+              {
+                "pixel": [
+                  33,
+                  15
+                ],
+                "RGBA": [
+                  8,
+                  108,
+                  32,
+                  128
+                ],
+                "weight": "223/17572"
+              },
+              {
+                "pixel": [
+                  33,
+                  16
+                ],
+                "RGBA": [
+                  6,
+                  81,
+                  24,
+                  192
+                ],
+                "weight": "159/17572"
+              }
+            ],
+            "sampleRGBA": [
+              "1369/191",
+              "36963/382",
+              "5476/191",
+              "29536/191"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "1369/191",
+              "36963/382",
+              "5476/191",
+              "29536/191"
+            ],
+            "quantizedRGBA": [
+              7,
+              97,
+              29,
+              155
+            ]
+          },
+          "exactOverActualPrevious": [
+            "2496023/48705",
+            "3295207/32470",
+            "618812/16235",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            51,
+            101,
+            38,
+            255
+          ],
+          "actualPrefixRGBA": [
+            51,
+            102,
+            39,
+            255
+          ],
+          "newPerDrawDelta": [
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "prefixCount": 3,
+          "identity": [
+            "abc3",
+            948705
+          ],
+          "covered": true,
+          "actualPreviousPrefixRGBA": [
+            51,
+            102,
+            39,
+            255
+          ],
+          "exactSample": {
+            "identity": [
+              "abc3",
+              948705
+            ],
+            "sampleCoordinates": [
+              "1469/198",
+              "4255/834"
+            ],
+            "weights": [
+              "83/198",
+              "85/834"
+            ],
+            "taps": [
+              {
+                "pixel": [
+                  7,
+                  5
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "86135/165132"
+              },
+              {
+                "pixel": [
+                  7,
+                  6
+                ],
+                "RGBA": [
+                  45,
+                  24,
+                  15,
+                  48
+                ],
+                "weight": "9775/165132"
+              },
+              {
+                "pixel": [
+                  8,
+                  5
+                ],
+                "RGBA": [
+                  120,
+                  64,
+                  40,
+                  128
+                ],
+                "weight": "62167/165132"
+              },
+              {
+                "pixel": [
+                  8,
+                  6
+                ],
+                "RGBA": [
+                  120,
+                  64,
+                  40,
+                  128
+                ],
+                "weight": "7055/165132"
+              }
+            ],
+            "sampleRGBA": [
+              "5045/66",
+              "4036/99",
+              "5045/198",
+              "8072/99"
+            ],
+            "previousRGBA": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "sourceOverRGBA": [
+              "5045/66",
+              "4036/99",
+              "5045/198",
+              "8072/99"
+            ],
+            "quantizedRGBA": [
+              76,
+              41,
+              25,
+              82
+            ]
+          },
+          "exactOverActualPrevious": [
+            "110021/990",
+            "54526/495",
+            "875323/16830",
+            "255"
+          ],
+          "nearestOverActualPreviousRGBA": [
+            111,
+            110,
+            52,
+            255
+          ],
+          "actualPrefixRGBA": [
+            111,
+            111,
+            52,
+            255
+          ],
+          "newPerDrawDelta": [
+            0,
+            1,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "maximumNewPerDrawChannelDeltaAtFailedCoordinates": 1,
+  "inference": "At all nine retained final failing coordinates, each new draw differs by at most one channel unit from exact rational sampling/source-over using the ACTUAL preceding prefix. Consecutive differences accumulate beyond the unchanged full-reference bound. This is not proof uniquely distinguishing textured sampling, blend or attachment arithmetic; it is not a replacement acceptance reference. All original failed comparisons remain failed. Prefixes themselves have no presentation or native authority."
+}

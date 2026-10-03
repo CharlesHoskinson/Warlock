@@ -1,0 +1,81 @@
+{
+  "checks": [
+    {
+      "command": [
+        "./test-readback-image"
+      ],
+      "exitCode": 0,
+      "log": "readback-check-00.log"
+    },
+    {
+      "command": [
+        "./test-commit-ledger"
+      ],
+      "exitCode": 0,
+      "log": "readback-check-01.log"
+    },
+    {
+      "command": [
+        "./test-family-scene"
+      ],
+      "exitCode": 0,
+      "log": "readback-check-02.log"
+    },
+    {
+      "command": [
+        "./test-backend-policy"
+      ],
+      "exitCode": 0,
+      "log": "readback-check-03.log"
+    },
+    {
+      "command": [
+        "./test-library-material"
+      ],
+      "exitCode": 0,
+      "log": "readback-check-04.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "readback_attribution_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "readback-check-05.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "readback_attribution_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "readback-check-06.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "readback_attribution.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "readback-check-07.log"
+    }
+  ],
+  "cppChecks": {
+    "readbackImage": 10,
+    "ledger": 80,
+    "familyActualConsumer": 73,
+    "backend": 20,
+    "material": 34
+  },
+  "quintNamedScenarios": 4,
+  "quintSamples": 2000,
+  "nativeLaunch": false,
+  "actualReadbackObserved": false
+}

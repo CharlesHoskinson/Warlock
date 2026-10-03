@@ -1,0 +1,115 @@
+{
+  "result": "pass",
+  "named": 24,
+  "models": 2,
+  "samplesPerModel": 2000,
+  "steps": 100,
+  "checks": [
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/preparation_profile_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/restore-span-diagnostic-formal-v2/preparation_profile-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/preparation_profile_test.qnt",
+        "--backend=rust",
+        "--seed=2026100711"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/restore-span-diagnostic-formal-v2/preparation_profile-test.log",
+      "sha256": "a3a1bdcca2e5562e29ab502a93ff355c8a5b0109b6fd42e1d85080b64d6da729",
+      "named": 12
+    },
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/preparation_profile.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100711",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/restore-span-diagnostic-formal-v2/preparation_profile-run.log",
+      "sha256": "33496d66288ad6253d91123ad3ec7731b4ef93af53774196cb950dcf49385d97"
+    },
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/span_source_binding_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/restore-span-diagnostic-formal-v2/span_source_binding-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/span_source_binding_test.qnt",
+        "--backend=rust",
+        "--seed=2026100711"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/restore-span-diagnostic-formal-v2/span_source_binding-test.log",
+      "sha256": "71f430806416c8795381a77d6a4df1f89c18e1282715b7ced2410324873e3495",
+      "named": 12
+    },
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/span_source_binding.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100711",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/restore-span-diagnostic-formal-v2/span_source_binding-run.log",
+      "sha256": "15a5cc83fa82640d02168762bd8340a7791e8d2942491184bc7a8b6755e669d5"
+    }
+  ],
+  "formalBeforeRuntime": true,
+  "nativeLaunch": false,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/preparation_profile.qnt": {
+      "sha256": "aad07eac412e253a5c519e2760c4f9b5c626f5393f592020f0577c4289ee53f7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/preparation_profile_test.qnt": {
+      "sha256": "ba4004f334963fcf9a6dda39236b870989fa50deefc0c8a5aba4da335c589c2b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/CAUSAL_SPAN_CONTRACT.md": {
+      "sha256": "ec20d987a04a7932c45ef7644bd979a82bd1cf9947a24526a941006461372a1a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/span_source_binding.qnt": {
+      "sha256": "e0f39590a1c6554189ffaea04671cc3da17fd2387456f32df25cc20ded4b9d60",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/span_source_binding_test.qnt": {
+      "sha256": "d0af9bcb1714c37394cbc6de3a9e46fbf03b6ace99c3ea70b3e3df04e4a511cd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/run_formal.py": {
+      "sha256": "399f780cc257370d7bb8fcdb8453251f12c2a2bd58299e6300b8224b63a207b2",
+      "mode": 420
+    }
+  }
+}

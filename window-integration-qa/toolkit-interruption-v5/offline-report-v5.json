@@ -1,0 +1,205 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-9bbcfba49e8d497bba3877cfd207f3db.scope",
+    "coreLimit": 1
+  },
+  "coreLimits": [
+    1,
+    1
+  ],
+  "commands": [
+    {
+      "label": "source",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_source",
+        "test_ownership_source"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/offline-source.log",
+      "logSHA256": "4736529f591dc1dc9995b6d55ca9e30dff4eaa257c4e60ffcd6f6562abe37cbc"
+    },
+    {
+      "label": "atlas-cache-protocol",
+      "command": [
+        "python3",
+        "run_helpers.py"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/offline-atlas-cache-protocol.log",
+      "logSHA256": "ee790eab6b192f86c2c75fe2fe730b17afbcbdeb40e37cdeb909910e07eae913"
+    },
+    {
+      "label": "exact-gesture-cancellation",
+      "command": [
+        "python3",
+        "run_authority_helpers.py"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/offline-exact-gesture-cancellation.log",
+      "logSHA256": "99e98f4e6a8766561b983520ff37e875a7ca55afa399cf01b41dc2988493cfee"
+    },
+    {
+      "label": "actual-lua-native-getter",
+      "command": [
+        "python3",
+        "run_lua_lifetime.py"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/offline-actual-lua-native-getter.log",
+      "logSHA256": "b8a6247284b2b651488f40e47bf564c3b336855b5a5f4ca093a163010ba7407a"
+    },
+    {
+      "label": "ownership-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "ownership_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/offline-ownership-typecheck.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "ownership-named",
+      "command": [
+        "quint",
+        "test",
+        "ownership_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/offline-ownership-named.log",
+      "logSHA256": "6177c02f7e8979a08c4b608b48225ed80e35426419df24c96d26827b35206e27"
+    },
+    {
+      "label": "ownership-model",
+      "command": [
+        "quint",
+        "run",
+        "ownership.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=2026100105",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/offline-ownership-model.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "interruption-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "interruption_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/offline-interruption-typecheck.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "interruption-named",
+      "command": [
+        "quint",
+        "test",
+        "interruption_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/offline-interruption-named.log",
+      "logSHA256": "ebd72cd8f077ea5cb17cae34f19ed91aec511cc5d558ac864a101840b7cbde53"
+    },
+    {
+      "label": "interruption-model",
+      "command": [
+        "quint",
+        "run",
+        "interruption.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/offline-interruption-model.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "sourceSHA256": {
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/interruption.qnt": "c39bf90dcb1766ba2112a598010de8f29e39a468c0b8577c0d9b2b14d593ffaa",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/interruption_test.qnt": "bd4990c232a93b82138232c81ea385a8a2a6c274d7163786269500f0e72601ec",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/test_source.py": "2f75137deb490f13ba58ca8400eb3eaa608438103073490c7ebd22d9bcbc1b4d",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/run_helpers.py": "3488ddc600752b4f2842d276691359c32f4e14e59ec4af447da5fdba2e9cf020",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/run_authority_helpers.py": "3435cb179268d88638c60ab9a9d508c80ac3b490192b64a726bd52d3b4743cfb",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/run_lua_lifetime.py": "52b9ba1ca35bb5d152e70402d560960529d284ba3da17b465998b3e77f24dee9",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/build_candidate.py": "627f976ead03913b9765371662ee716c06b41692bb1d2df529b1d1de3a3dec57",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/ownership.qnt": "ab98e652c6222f4d127c1bbab16862b08d5c0bb5c3d3e9053701d4644623ff65",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/ownership_test.qnt": "fdaa62d0c2f055284ccf095f02c7af05be8f0e4b702d4b744fe846ea596019e4",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/run_retirement_ownership.py": "4da9f126934544d43ac21bf64ba167bf902132c15d91b3446b5532156f48473f",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/test_ownership_source.py": "131d42c0144a48495f76ba37b7116c27889ce6597535cbd06fb9e66af02d2ed0",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/run_offline_v5.py": "ee056de810810cd1b682a33b884775153edca19b64be571988662588ed436721",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/BarPassElement.cpp": "0e607597b130ec8277fb301b2b97b0fcde977a64e2163b53024907e4b4476fe7",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/barDeco.cpp": "4b68477742d544ab954743348af063a7b7d61415931cdea7e7ded794bf29267e",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/dragBridge.cpp": "130868c4eda7ef6fd9e683f2a9ef8272548d72fca5f4e004f059a95e983a9a19",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/familyBridge.cpp": "eb8c7215d1f123e20be11c070482de768582e84e4d07e7453a2d53b1a610b67d",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/main.cpp": "9e6957e2db4048d06f13193357d364828d9226cc6e75b123f8af06737c36f4e1",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/BarPassElement.hpp": "9a460848366edc61c55500f5577180d10f383b65022b3952648efe3b4e7208f8",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/barDeco.hpp": "b5f9dd911761738c597e272e8c6702751ae60fa360b56f5540d8e06efc0efb63",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/dragBridge.hpp": "56df53c0d3fc343838cafad69eca92987742286578ca12d6d59155ec9729a0f8",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/familyBridge.hpp": "3543dc46226c03337cac712cc4fc856c50b37b07d2e0341d19d6c71ee67a1fa8",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/globals.hpp": "4a4d25fdcd2d2845df9d05abf9b9306a8f95f4d29654e3bc1049a6c59a796cd5",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/snapshotBridge.hpp": "2153c5d39df74695fd631508a1f4fcf4f2fb02f0e7f476b6cc7d6983b0a4cad4",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/snapshotBridge.cpp": "bf83de4b0d7d1b444c90a0d0de4936fdbffcf48ae28bdfec0b8dd78966abae32",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/atlasRenderer.hpp": "3ed9d71824a0dc70df1e1d7655dabec1e50884bebce7fd23612dd79d5c8dc278",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/atlasRenderer.cpp": "727866d8e5f0139355c627edd3d23fcbc1d4bbea3be73465687bfa41eed457b3",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/atlas_coordinates.qnt": "a422c337f52ebabd6855dcd2c43beb29b39ba2c51866cb908b3173edd78ac0c8",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/atlas_coordinates_test.qnt": "64d103361386e5a13914b51ff712f38ca741dec0f7fd98b5631fa0c568995bf8",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/atlasCoordinates.hpp": "32950ba8eecdbf6a6e925570ad52eda103a6b46436d83f6588c6e52d709beb22",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/test_atlas_coordinates.cpp": "cf7aa77aad715ad3815564e77300816d6a81b22df2cfc1b15ac38ccebff76fc3",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/atlasAdapter.hpp": "ea7168a5ed9435e76ef8dffc58a36c7398e2b33d05cb77412630697e281a0a02",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/atlasAdapter.cpp": "f1d2de8ef06b997dfc7bfd1074714922d0dbde3b9cde766943ba1dd786fcdff8",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/caption_cache.qnt": "551dd43ba1f728524e20e438ad1ae671756c975405b73ac7a6a7a4415c3bdf6b",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/caption_cache_test.qnt": "48b80b92f33a46a2efb18e25bdcbefe5fbc66ed54a07abc6a6a581d729e4d698",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/captionCache.hpp": "a21c13585faf1e26694e172cf3ad49ca56f5191317e1fbb1cdbba73ccb5357f8",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/test_caption_cache.cpp": "d5ee50bd1b9b23ae2c28c065c7a58e97dd4eef7c087467a581395c0afa7ee74b",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/installed-snap.lua": "b62ab10975f9591bad85a9f836492114267110dfed73d65382411167c6f5b6e2",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/installed-pin.lua": "02d577ce52b4652fdaed116150387b4309f16a73f3159223e159c0be6e8cb478",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/modal_probe_gtk.py": "2f26eaf282d5cbf044c2ca2369ba5834fa75c5c06240778094d95496bdd9df8a",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/ancestorHit.hpp": "415c0533cc9e785498d78037b5a47a758976971a0ab46870f32492819343a355",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/ancestorHit.cpp": "5c83ade6d97be46f692e204006cde90fead3b1532718351b9f36528b0dbb2c5f",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/modalRegionAuthority.hpp": "71f0b52b87c0bca13130ab72d6d5c0571855892c1ce2a3c40779abdcf9473997",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/test_modal_region.cpp": "b601bea50a369db790ac673f6e3c28f4bfff3e1f42d19cd88c016ccb9afd4117",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/primary/DragController.cpp": "02560e7a38902cd400c3fa1b229eb6ba2c9494750413116b9277f5e8a818b62c",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/primary/KeybindManager.cpp": "8d8f35fc84c4a2f8de63ac2bf6f6531c651c6fa6d37b1aac7c8fc5d9342d4e40",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/primary/ViewHitTester.cpp": "1bcc02a03db80b0519e516b41b3e0d0e70df08d6aa50b006b6a4362854524a09",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/primary/InputManager.cpp": "feedf32e2e3d23aeaed7a02ef4ab94be2d66f4b22873b3166026da1e9ece4765",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/primary/FocusState.cpp": "9b971362bba97f200f0ef786237deed6b7b863066590d243cac11787e2a56ebd",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/primary/Window.cpp": "d735d454cc4b7983f19626514d310669047da46780c509ffae68ccf072211ded",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/primary/Group.cpp": "f34fec0891e69e0a1b67901e8d1b6b1a1ae8a47eccc92313c2b41660961cd385",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/primary/LuaWindow.cpp": "0755621ac698e5afa4bdb2e65e8475d3b7ee7a766e9389de05c797b3ae6d5ced",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/primary/LuaEventHandler.cpp": "1440283026b910ac91e1aa0652c07cbc0cb3fe7e517d6ce9a27a83c21b4f74e1",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/ownership-build/corrected.cpp": "7bc4d5cb5f62fbf0d5634c20a6d2db023b72efe46c13ea9b642baf2d75ce90d2",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/ownership-build/frozen-v20-counterexample.cpp": "8064ac4c6d4e739b53d9a09b6763e52ed56dad915abe16eef1b318a767598077"
+  },
+  "sourceUnchangedDuringProof": true,
+  "sourceGates": 22,
+  "ownershipNamed": 9,
+  "interruptionNamed": 19,
+  "models": 2,
+  "samplesPerModel": 2000,
+  "exactGestureAssertions": 33,
+  "nativeLuaGetterScenarios": 8,
+  "atlasChecks": 72,
+  "cacheChecks": 38,
+  "protocolChecks": 17,
+  "ownershipProof": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/ownership-report.json",
+  "ownershipProofSHA256": "34516d5e7ae8f7006955c4af068a2d242fbf218046e1997e11d8421fd5379025",
+  "nativeGUIExecuted": false,
+  "mainChanged": false,
+  "remaining": "root source review and actual idle/held/pending/retirement native controls"
+}

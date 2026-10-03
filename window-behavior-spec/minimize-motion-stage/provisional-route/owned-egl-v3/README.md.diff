@@ -1,0 +1,34 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl/README.md
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v3/README.md
+@@ -88,17 +88,17 @@
+ opaque client tested; exact installed theme/inactive colors and translucent
+ client backdrop equivalence are not claimed.
+ 
+-## Fresh v2 offline and native review packet
++## Fresh v3 offline and native review packet
+ 
+-`checkpoint-v2.json` and `native-manifest-v2.json` supersede the retained v1
++`checkpoint-v3.json` and `native-manifest-v3.json` supersede the retained v1
+ checkpoint; the v1 files and pre-repair source checkpoints remain evidence.
+-Current offline gates are 80 ledger, 20 actual command-consumer, 15 backend
++Current offline gates are 80 ledger, 20 actual command-consumer, 20 backend, eight mapped material
+ checks, five observer tests and 13 formal scenarios / 2,000 traces of 100 steps.
+ 
+ The proposed private command (GUI slot required, not executed here) is:
+ 
+ ```sh
+-python3 /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl/nested_owned_egl_smoke.py --output /home/hoskinson/.cache/window-owned-egl-private-v2
++python3 /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v3/nested_owned_egl_smoke.py --output /home/hoskinson/.cache/window-owned-egl-private-v3
+ ```
+ 
+ The private fixture uses the frozen V18 atlas source in a separate compositor,
+@@ -119,3 +119,9 @@
+ missing protocols, and source close/reuse through the service. Service/family,
+ real taskbar endpoints and reduced-motion integration remain open. No fixture
+ telemetry is labeled proof of actual pixels without its independent screenshot.
++
++The v2 native attempt is retained at `.cache/window-owned-egl-private-v2`: it
++refused the backend before upload/readiness and preserved all12 main-state gates.
++Actual runtime backend classification remains unobserved until v3 emits its
++`backendObserved` event; the Arch build label is a source-backed compatibility
++allowance, not a retrospective classification of that failed attempt.

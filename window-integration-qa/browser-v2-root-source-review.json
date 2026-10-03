@@ -1,0 +1,34 @@
+{
+  "updatedUTC": "2026-10-01T21:48:48.081896+00:00",
+  "manifestSHA256": "3091e1992b293245174628e8ca73f9c54e543a00dc5bdef9cb05791255218c40",
+  "all39970BytesAndModesExact": true,
+  "all13758LinksExact": true,
+  "sameReviewedV1GuardAndFlowSources": [
+    "private_session.py",
+    "browser_exec.py",
+    "network_guard.py",
+    "cdp_readonly.py",
+    "runtime_inputs.py",
+    "main_observer.py",
+    "main_observations.py",
+    "compose.html",
+    "private_desktop.py"
+  ],
+  "reviewed": [
+    "exact private compositor PIDstart socket/env selectors before browserexec",
+    "independent user/network namespace UID1000 lo-only no routes",
+    "fresh profile HOME/XDG/TMPDIR no mainprofile/network/reused process",
+    "actualrenderer seccomp NoNewPrivs and network separation required",
+    "CDP fixed readonlyDOM query allowlist noCDP input",
+    "actualnative trusted text/interiorcaret/exposedFiles originalcallback/caption return and continuation",
+    "exactFiles PIDconfigid and allocation/nativegeometry coherence",
+    "allowneddescendantdisk mappings mustmatch freeze; unreadableisfailure",
+    "newV21 actualmodule/rootreview closure",
+    "normal pointerEOF FilesPIDclose Browserclose then nativesunload then privatehost",
+    "originalenv mainRO observers18checks sourceclosure unchanged"
+  ],
+  "nativeAccepted": false,
+  "mainWrites": false,
+  "physicalHardwareAccepted": false,
+  "fullWindowsParityAccepted": false
+}

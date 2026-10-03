@@ -1,0 +1,69 @@
+{
+  "scope": "offline regressions/source-backed raster-state policy; no observed GL context or native screenshot",
+  "nativeLaunch": false,
+  "productionChanged": false,
+  "checks": [
+    {
+      "command": [
+        "./test-commit-ledger"
+      ],
+      "exitCode": 0,
+      "log": "offline-00.log"
+    },
+    {
+      "command": [
+        "./test-family-scene"
+      ],
+      "exitCode": 0,
+      "log": "offline-01.log"
+    },
+    {
+      "command": [
+        "./test-backend-policy"
+      ],
+      "exitCode": 0,
+      "log": "offline-02.log"
+    },
+    {
+      "command": [
+        "./test-library-material"
+      ],
+      "exitCode": 0,
+      "log": "offline-03.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "raster_state_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "offline-04.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "raster_state_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "offline-05.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "raster_state.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "offline-06.log"
+    }
+  ],
+  "namedScenarios": 4,
+  "modelSamples": 2000,
+  "actualGLStateObserved": false
+}

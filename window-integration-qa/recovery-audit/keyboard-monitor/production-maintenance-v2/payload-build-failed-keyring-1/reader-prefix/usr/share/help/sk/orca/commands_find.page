@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_find" xml:lang="sk">
+  <info>
+    <link type="next" xref="commands_mouse"/>
+    <link type="guide" xref="commands#reviewing_screen_contents"/>
+    <link type="seealso" xref="howto_orca_find"/>
+    <title type="sort">2. Hľadanie v Orca</title>
+    <title type="link">Hľadanie v Orca</title>
+    <desc>Príkazy na vyhľadávanie obsahu okna</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Príkazy na hľadanie v Orca</title>
+  <p>Funkcia <link xref="howto_orca_find">Hľadanie</link> v <app>Orca</app> vám umožňuje vyhľadávať prvky v kontexte <link xref="howto_flat_review">Plochého prehliadania</link>, ktoré sa nachádzajú v aktuálnom okne.</p>
+  <list>
+    <item>
+      <p>Otvoriť dialógové okno Hľadanie <app>Orca</app>:</p>
+      <list>
+        <item>
+          <p>Stolný počítač: <keyseq><key>KP Delete</key></keyseq></p>
+        </item>
+        <item>
+          <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>Ľavá zátvorka</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Posunúť ploché prehliadanie na ďalší výskyt reťazca:</p>
+      <list>
+        <item>
+          <p>Stolný počítač: <keyseq><key>Modifikátor Orca</key><key>KP Delete</key></keyseq></p>
+        </item>
+        <item>
+          <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>Pravá zátvorka</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Posunúť ploché prehliadanie na predchádzajúci výskyt reťazca:</p>
+      <list>
+        <item>
+          <p>Stolný počítač: <keyseq> <key>Modifikátor Orca</key><key>Shift</key><key>KP Delete</key> </keyseq></p>
+        </item>
+        <item>
+          <p>Prenosný počítač: <keyseq> <key>Modifikátor Orca</key><key>Ctrl</key><key>Pravá zátvorka</key> </keyseq></p>
+        </item>
+      </list>
+    </item>
+  </list>
+</page>

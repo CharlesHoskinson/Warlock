@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Private local draft QA</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+</head><body><h1>Private local draft QA</h1><label>Local sandbox draft<textarea id="draft" rows="12" cols="55" spellcheck="false"></textarea></label>
+<button id="local-check" type="button">Local callback check</button><p>No submit or network action.</p>
+<script>
+'use strict';
+window.qaEvents=[];window.qaClicks=0;
+for (const type of ['input','focus','blur','keydown','keyup','click']) document.addEventListener(type,event=>{
+ window.qaEvents.push({type, trusted:event.isTrusted,target:event.target.id,
+  value:event.target.id==='draft'?event.target.value:null,
+  selection:event.target.id==='draft'?[event.target.selectionStart,event.target.selectionEnd]:null,time:performance.now()});
+ if(window.qaEvents.length>512) window.qaEvents.shift();
+},true);
+document.getElementById('local-check').addEventListener('click',()=>{window.qaClicks++;});
+// The observer reads these fields; it must never call focus() or assign value.
+window.qaPointerMoves=[];window.qaPointerSequence=0;
+document.addEventListener('pointermove',event=>{
+ window.qaPointerMoves.push({sequence:++window.qaPointerSequence,type:event.type,
+  trusted:event.isTrusted,pointerType:event.pointerType,pointerId:event.pointerId,
+  primary:event.isPrimary,buttons:event.buttons,
+  modifiers:[event.altKey,event.ctrlKey,event.metaKey,event.shiftKey],
+  client:[event.clientX,event.clientY],timestamp:event.timeStamp,handled:performance.now()});
+ if(window.qaPointerMoves.length>128) window.qaPointerMoves.shift();
+},true);
+</script></body></html>

@@ -1,0 +1,114 @@
+--- frozen-v2/pipe_transport.py
++++ review-v3/pipe_transport.py
+@@ -14,13 +14,16 @@
+         self.lock=threading.Lock()
+         self.condition=threading.Condition(self.lock)
+         self.messages=queue.Queue(maxsize=256)
++        self.callbacks=queue.Queue(maxsize=256)
++        self.failure_thread=None
+         self.output_snapshot=[]
+         self.events=[]
+         self.errors=[]
+         self.closed=False
+         self.closing=False
+         self.failed=False
+-        self.threads=[threading.Thread(target=fn,daemon=True) for fn in (self.write,self.read,self.read_errors)]
++        self.close_error=None
++        self.threads=[threading.Thread(target=fn,daemon=True) for fn in (self.write,self.read,self.read_errors,self.dispatch_callbacks)]
+         for thread in self.threads:thread.start()
+     def set_callback(self,callback):self.callback=callback
+     def outputs(self):
+@@ -44,12 +47,35 @@
+         if len(encoded)>1048576:raise ValueError('renderer command exceeds bound')
+         if self.closed or self.failed:raise BrokenPipeError('renderer transport closed')
+         try:self.messages.put_nowait(encoded)
+-        except queue.Full:raise BrokenPipeError('renderer transport queue exhausted')
++        except queue.Full:
++            self.fail('renderer command queue exhausted')
++            raise BrokenPipeError('renderer transport queue exhausted')
+     def fail(self,reason):
+         with self.lock:
+             if self.failed or self.closed or self.closing:return
+             self.failed=True
+-        self.failure(reason)
++            self.condition.notify_all()
++        # Failure is distinct from normal shutdown. Retire visual resources
++        # before native settlement; never make the drain thread call native code.
++        if self.process.poll() is None:
++            try:self.process.terminate()
++            except ProcessLookupError:pass
++        self.failure_thread=threading.Thread(target=self.failure,args=(reason,),daemon=True)
++        self.failure_thread.start()
++    def dispatch_callbacks(self):
++        try:
++            while True:
++                if self.failed:return
++                event=self.callbacks.get()
++                if event is None:return
++                try:
++                    if not self.failed:self.callback(event)
++                finally:self.callbacks.task_done()
++        except Exception as error:self.fail('native callback dispatch: '+str(error))
++    def queue_callback(self,event):
++        if self.failed:return
++        try:self.callbacks.put_nowait(event)
++        except queue.Full:self.fail('native callback queue exhausted')
+     def write(self):
+         try:
+             while True:
+@@ -71,7 +97,7 @@
+                     elif event.get('event')=='cancelled':self.output_snapshot=[];self.condition.notify_all()
+                 # Presentation logs are drained continuously; only transaction
+                 # events acquire the native controller callback lock.
+-                if event.get('event') in ('ready','endpoint','cancelled'):self.callback(event)
++                if event.get('event') in ('ready','endpoint','cancelled'):self.queue_callback(event)
+                 elif event.get('event') in ('fatal','rejected'):self.fail('renderer '+str(event))
+             self.fail('renderer event pipe closed')
+         except Exception as error:self.fail('event pipe: '+str(error))
+@@ -79,17 +105,38 @@
+         for line in self.process.stderr:
+             with self.lock:self.errors.append(line);self.errors=self.errors[-128:]
+     def close(self,timeout=3):
+-        if self.closed:return self.process.returncode
++        if self.closed:
++            if self.close_error:raise RuntimeError(self.close_error)
++            return self.process.returncode
++        deadline=time.monotonic()+timeout
+         self.closing=True
+-        if not self.failed:self.send({'command':'stop'})
+-        try:code=self.process.wait(timeout=timeout)
++        problems=[]
++        if not self.failed:
++            try:self.send({'command':'stop'})
++            except Exception as error:problems.append('stop command: '+str(error))
++        try:code=self.process.wait(timeout=max(0,deadline-time.monotonic()))
+         except subprocess.TimeoutExpired:
+             self.process.kill();self.process.wait()
+             code=self.process.returncode
++            problems.append('renderer required forced shutdown')
++        # EOF must be consumed before appending the dispatch sentinel: final
++        # callbacks cannot be silently queued behind a supposedly normal close.
++        for thread in self.threads[1:3]:thread.join(timeout=max(0,deadline-time.monotonic()))
++        if any(t.is_alive() for t in self.threads[1:3]):problems.append('renderer drain remained active after exit')
++        try:self.messages.put_nowait(None)
++        except queue.Full:problems.append('command queue remained full during shutdown')
++        try:self.callbacks.put_nowait(None)
++        except queue.Full:
++            problems.append('callback queue remained full during shutdown')
++        self.threads[-1].join(timeout=max(0,deadline-time.monotonic()))
++        if self.threads[-1].is_alive():problems.append('native callback dispatch remained active after renderer exit')
++        for stream in (self.process.stdin,self.process.stdout,self.process.stderr):stream.close()
++        self.threads[0].join(timeout=.2)
++        if code!=0:problems.append('renderer failed normal shutdown: '+str(code))
++        if self.failed:problems.append('renderer transport had already failed')
+         self.closed=True
+-        try:self.messages.put_nowait(None)
+-        except queue.Full:pass
+-        for stream in (self.process.stdin,self.process.stdout,self.process.stderr):stream.close()
+-        for thread in self.threads:thread.join(timeout=.2)
+-        if code!=0:raise RuntimeError('renderer failed normal shutdown: '+str(code))
++        if problems:
++            self.failed=True
++            self.close_error='; '.join(problems)
++            raise RuntimeError(self.close_error)
+         return code

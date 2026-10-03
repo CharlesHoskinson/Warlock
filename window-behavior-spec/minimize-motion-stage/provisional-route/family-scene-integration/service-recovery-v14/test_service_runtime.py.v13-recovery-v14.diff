@@ -1,0 +1,17 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_service_runtime.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v14/test_service_runtime.py
+@@ -157,9 +157,12 @@
+         finally:
+             if child.poll() is None:child.terminate();child.wait(timeout=3)
+             child.stdout.close();child.stderr.close()
+-    def test_normal_cleanup_never_removes_replaced_owner_record(self):
++    def test_lease_owner_loss_refuses_normal_cleanup_and_preserves_foreign_record(self):
+         r=self.create();foreign={'pid':os.getpid(),'start':process_start(os.getpid()),'session':'private-session','nonce':'foreign','socket':None}
+-        atomic_write(self.root/'owner.json',json.dumps(foreign).encode());r.close()
++        atomic_write(self.root/'owner.json',json.dumps(foreign).encode())
++        with self.assertRaisesRegex(RuntimeError,'owner PID/start/nonce'):r.close()
++        self.assertTrue(r.manager.persistence_failed)
++        os.close(r.lease.fd);r.lease.fd=None
+         self.assertEqual(json.loads((self.root/'owner.json').read_text()),foreign)
+ 
+ if __name__=='__main__':unittest.main()

@@ -1,0 +1,26 @@
+[
+  {
+    "old": "from continuation_evidence import ContinuationEvidence\n",
+    "new": "from continuation_evidence import ContinuationEvidence\nfrom physical_driver_evidence import PhysicalDriverEvidence\n"
+  },
+  {
+    "old": " continuation_trace=None\n browser=",
+    "new": " continuation_trace=None\n physical_trace=None\n browser="
+  },
+  {
+    "old": "   result=subprocess.run(['/usr/bin/wtype','-d','20','--',text],env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,timeout=12)",
+    "new": "   result=physical_trace.run([str(B/'physical-keyboard'),'-d','20','--',text],driver_env,12)"
+  },
+  {
+    "old": "   result=continuation_trace.run_wtype(['/usr/bin/wtype','-d','20','--',text],env)",
+    "new": "   result=physical_trace.run([str(B/'physical-keyboard'),'-d','20','--',text],driver_env,12,continuation_trace.run_wtype)"
+  },
+  {
+    "old": "  text='private-draft-'",
+    "new": "  driver_env=dict(env,WINDOW_QA_COMPOSITOR_PID=str(host_evidence['compositorPID']),WINDOW_QA_COMPOSITOR_START=str(host_evidence['compositorStart']))\n  physical_trace=PhysicalDriverEvidence(out/'physical-driver-evidence.json',obs,native,browser.pid,owned_roots['browser']['start'],identities['browser'],target_guard)\n  text='private-draft-'"
+  },
+  {
+    "old": "  caret_command=subprocess.run(['/usr/bin/wtype','-d','20','-k','Left','-k','Left','-k','Left'],env=env,capture_output=True,text=True,timeout=8)",
+    "new": "  caret_command=physical_trace.run([str(B/'physical-keyboard'),'-d','20','-k','Left','-k','Left','-k','Left'],driver_env,8)"
+  }
+]

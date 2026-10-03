@@ -1,0 +1,52 @@
+module interruption {
+ type Box={x:int,y:int,w:int,h:int}
+ type PressArg={role:int,epoch:int,kind:int}
+ type MotionArg={role:int,epoch:int,generation:int,dx:int,dy:int}
+ type Identity={role:int,epoch:int}
+ type Event=Press(PressArg)|Motion(MotionArg)|Focus(int)|Release|Escape|Reload|Minimize|Restore|Close(int)|Open(int)|Pin(bool)|Preview(Identity)
+ type State={alive:Set[int],epochs:int->int,boxes:int->Box,pins:int->bool,
+  focus:int,held:bool,capture:int,captureEpoch:int,generation:int,captureGeneration:int,kind:int,origin:Box,
+  minimized:bool,savedBoxes:int->Box,savedPins:int->bool,previewEpochs:int->int,
+  stale:bool,beforeBoxes:int->Box,beforePins:int->bool,beforeFocus:int,changed:Set[int],lastCapture:int}
+ var s:State
+ pure val FAMILY=Set(0,1,2)
+ pure val ROLES=Set(0,1,2,3)
+ pure val BASE=Map(0->{x:100,y:250,w:460,h:300},1->{x:260,y:310,w:320,h:180},2->{x:330,y:350,w:240,h:140},3->{x:1000,y:300,w:460,h:300})
+ pure val PINS=Map(0->true,1->false,2->true,3->false)
+ pure def deepest(live:Set[int]):int=if(live.contains(2))2 else if(live.contains(1))1 else if(live.contains(0))0 else -1
+ pure def valid(role:int,epoch:int,state:State):bool=ROLES.contains(role) and state.alive.contains(role) and state.epochs.get(role)==epoch
+ pure def permitted(role:int,state:State):bool=role==3 or role==deepest(state.alive)
+ action init=s'={alive:ROLES,epochs:Map(0->1,1->1,2->1,3->1),boxes:BASE,pins:PINS,focus:2,held:false,capture:-1,captureEpoch:0,generation:1,captureGeneration:0,kind:0,origin:BASE.get(0),minimized:false,savedBoxes:BASE,savedPins:PINS,previewEpochs:Map(0->0,1->0,2->0,3->0),stale:false,beforeBoxes:BASE,beforePins:PINS,beforeFocus:2,changed:Set(),lastCapture:-1}
+ action fire(e:Event):bool={
+  val b={...s,stale:false,beforeBoxes:s.boxes,beforePins:s.pins,beforeFocus:s.focus,changed:Set(),lastCapture:s.capture}
+  s'=match e {
+   | Press(p)=>if(not(valid(p.role,p.epoch,s)) or s.held or (p.role!=3 and s.minimized) or not(Set(1,2).contains(p.kind))) {...b,stale:true} else if(not(permitted(p.role,s))) {...b,held:true,focus:deepest(s.alive)} else {...b,held:true,capture:p.role,captureEpoch:p.epoch,captureGeneration:s.generation,kind:p.kind,origin:s.boxes.get(p.role),focus:p.role}
+   | Motion(m)=>if(s.capture<0 or not(s.held) or m.role!=s.capture or m.epoch!=s.captureEpoch or m.generation!=s.captureGeneration or s.generation!=s.captureGeneration or not(valid(m.role,m.epoch,s))) {...b,stale:true} else {
+       val box=if(s.kind==1){...s.origin,x:s.origin.x+m.dx,y:s.origin.y+m.dy} else {...s.origin,w:if(s.origin.w+m.dx<40)40 else s.origin.w+m.dx,h:if(s.origin.h+m.dy<40)40 else s.origin.h+m.dy}
+       {...b,boxes:s.boxes.put(s.capture,box),changed:Set(s.capture)} }
+   | Focus(role)=>if(s.alive.contains(role) and (role==3 or not(s.minimized))) {...b,focus:if(role==3)3 else deepest(s.alive)} else {...b,stale:true}
+   | Release=>{...b,held:false,capture:-1,kind:0}
+   | Escape=>{...b,boxes:if(s.capture>=0 and valid(s.capture,s.captureEpoch,s))s.boxes.put(s.capture,s.origin) else s.boxes,capture:-1,kind:0}
+   | Reload=>{...b,boxes:if(s.capture>=0 and valid(s.capture,s.captureEpoch,s))s.boxes.put(s.capture,s.origin) else s.boxes,capture:-1,kind:0,generation:s.generation+1}
+   | Minimize=>if(s.minimized or not(s.alive.contains(0))) {...b,stale:true} else {...b,minimized:true,savedBoxes:s.boxes,savedPins:s.pins,previewEpochs:s.epochs,capture:if(s.capture>=0 and FAMILY.contains(s.capture))-1 else s.capture,kind:if(s.capture>=0 and FAMILY.contains(s.capture))0 else s.kind,focus:if(s.alive.contains(3))3 else -1}
+   | Restore=>if(not(s.minimized)) {...b,stale:true} else {...b,minimized:false,boxes:ROLES.mapBy(role=>if(FAMILY.contains(role) and s.alive.contains(role) and s.epochs.get(role)==s.previewEpochs.get(role))s.savedBoxes.get(role) else s.boxes.get(role)),pins:ROLES.mapBy(role=>if(FAMILY.contains(role) and s.alive.contains(role) and s.epochs.get(role)==s.previewEpochs.get(role))s.savedPins.get(role) else s.pins.get(role)),focus:deepest(s.alive)}
+   | Close(role)=>if(not(ROLES.contains(role))) {...b,stale:true} else {
+       val closed=if(role==3)Set(3) else FAMILY.filter(id=>id>=role)
+       {...b,alive:s.alive.exclude(closed),epochs:ROLES.mapBy(id=>if(closed.contains(id))s.epochs.get(id)+1 else s.epochs.get(id)),capture:if(closed.contains(s.capture))-1 else s.capture,kind:if(closed.contains(s.capture))0 else s.kind,focus:if(closed.contains(s.focus))-1 else s.focus} }
+   | Open(role)=>if(not(ROLES.contains(role)) or s.alive.contains(role) or (role==1 and not(s.alive.contains(0))) or (role==2 and not(s.alive.contains(1)))) {...b,stale:true} else {...b,alive:s.alive.union(Set(role)),epochs:s.epochs.put(role,s.epochs.get(role)+1),boxes:s.boxes.put(role,BASE.get(role)),pins:s.pins.put(role,false)}
+   | Pin(pin)=>{...b,pins:ROLES.mapBy(role=>if(FAMILY.contains(role) and s.alive.contains(role))pin else s.pins.get(role)),savedPins:if(s.minimized)ROLES.mapBy(role=>if(FAMILY.contains(role) and s.alive.contains(role))pin else s.savedPins.get(role)) else s.savedPins}
+   | Preview(id)=>if(not(valid(id.role,id.epoch,s)) or not(FAMILY.contains(id.role)) or not(s.minimized) or s.previewEpochs.get(id.role)!=id.epoch) {...b,stale:true} else {...b,minimized:false,focus:deepest(s.alive),boxes:ROLES.mapBy(role=>if(FAMILY.contains(role) and s.alive.contains(role) and s.epochs.get(role)==s.previewEpochs.get(role))s.savedBoxes.get(role) else s.boxes.get(role)),pins:ROLES.mapBy(role=>if(FAMILY.contains(role) and s.alive.contains(role) and s.epochs.get(role)==s.previewEpochs.get(role))s.savedPins.get(role) else s.pins.get(role))}
+  }
+ }
+ val liveCapture=s.capture>=0 implies (s.held and valid(s.capture,s.captureEpoch,s) and s.generation==s.captureGeneration and (s.capture==3 or not(s.minimized)))
+ val staleRefusal=s.stale implies (s.boxes==s.beforeBoxes and s.pins==s.beforePins and s.focus==s.beforeFocus)
+ val exactMotion=s.changed.size()>0 implies s.changed==Set(s.lastCapture)
+ val noPeerPinMutation=s.pins.get(3)==PINS.get(3)
+ val noInvalidBoxes=ROLES.forall(role=>s.boxes.get(role).w>=40 and s.boxes.get(role).h>=40)
+ val allProps=liveCapture and staleRefusal and exactMotion and noPeerPinMutation and noInvalidBoxes
+ action step={
+  nondet role=ROLES.oneOf()
+  nondet e=Set(Press({role:role,epoch:s.epochs.get(role),kind:1}),Press({role:role,epoch:s.epochs.get(role)-1,kind:2}),Press({role:role,epoch:s.epochs.get(role),kind:2}),Motion({role:role,epoch:s.epochs.get(role),generation:s.generation,dx:50,dy:30}),Motion({role:role,epoch:s.epochs.get(role)-1,generation:s.generation-1,dx:-200,dy:-200}),Focus(role),Release,Escape,Reload,Minimize,Restore,Close(role),Open(role),Pin(true),Pin(false),Preview({role:role,epoch:s.epochs.get(role)}),Preview({role:role,epoch:s.epochs.get(role)-1})).oneOf()
+  fire(e)
+ }
+}

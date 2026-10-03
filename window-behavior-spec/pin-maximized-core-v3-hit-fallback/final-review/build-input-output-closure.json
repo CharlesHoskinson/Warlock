@@ -1,0 +1,824 @@
+{
+  "corePolicyBuild": "59a1485d5f900db177414814bae9577898d687d17f2dc6a533ecec40a21590d3",
+  "tools": {
+    "/usr/bin/c++": {
+      "sha256": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9",
+      "mode": 493,
+      "size": 1738072,
+      "mtimeNs": 1786392286000000000
+    },
+    "/usr/bin/g++": {
+      "sha256": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9",
+      "mode": 493,
+      "size": 1738072,
+      "mtimeNs": 1786392286000000000
+    },
+    "/usr/bin/as": {
+      "sha256": "3dfdf6007545ea36176c350eef201d1ece55c347a182697bb5f9bac815a1f34b",
+      "mode": 493,
+      "size": 879712,
+      "mtimeNs": 1786462112000000000
+    },
+    "/usr/bin/ld": {
+      "sha256": "4d83828f709f0eade25bcae2f4a2508c47db2f01b58daaca5c1c4cefce897847",
+      "mode": 493,
+      "size": 1611760,
+      "mtimeNs": 1786462112000000000
+    },
+    "/usr/bin/cmake": {
+      "sha256": "d4d49ade081c102d0e236aeda537659f20c55af6090d81de20d37920f98ce86c",
+      "mode": 493,
+      "size": 11918360,
+      "mtimeNs": 1788209891000000000
+    },
+    "/usr/bin/make": {
+      "sha256": "9018663161af324a74326c035cfd05408cba13a26c1f6b801cf5f3195f2bee40",
+      "mode": 493,
+      "size": 282480,
+      "mtimeNs": 1775912092000000000
+    },
+    "/usr/bin/pkgconf": {
+      "sha256": "6b445a4786f5ac89bfcbf0aeab5ee80b10cafb8aebeb0d5e24237f99545423fe",
+      "mode": 493,
+      "size": 51400,
+      "mtimeNs": 1788555574000000000
+    }
+  },
+  "linkInputs": {
+    "/usr/bin/c++": {
+      "sha256": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9",
+      "mode": 493,
+      "size": 1738072,
+      "mtimeNs": 1786392286000000000
+    },
+    "/usr/lib/libxcb-icccm.so.4.0.0": {
+      "sha256": "cd64c092e6a82c24d0683b48825d565dae99a720620d17ac9be832fca6fe60da",
+      "mode": 493,
+      "size": 22328,
+      "mtimeNs": 1720640280000000000
+    },
+    "/usr/lib/libxcb-composite.so.0.0.0": {
+      "sha256": "f5661cd0a79c64f58a011ece466fe882838ee9dcc90dc46024eb69dcb0fef95d",
+      "mode": 493,
+      "size": 14312,
+      "mtimeNs": 1713208352000000000
+    },
+    "/usr/lib/libxcb-xfixes.so.0.0.0": {
+      "sha256": "dad274e042c86866ac9b624a47c2f46648a291dbc1e11f8c906cd355ce60e38f",
+      "mode": 493,
+      "size": 34792,
+      "mtimeNs": 1713208352000000000
+    },
+    "/usr/lib/libxcb-render.so.0.0.0": {
+      "sha256": "402feded6ecab1d6070a3cd0ce0e2b69efe32d849a90c535cdf93948b34c451f",
+      "mode": 493,
+      "size": 59368,
+      "mtimeNs": 1713208352000000000
+    },
+    "/usr/lib/libxcb-res.so.0.0.0": {
+      "sha256": "459daabff705663f6721bb15d8c5615f4d4d16af7028d684c072f7535a080f79",
+      "mode": 493,
+      "size": 18400,
+      "mtimeNs": 1713208352000000000
+    },
+    "/usr/lib/libxcb-errors.so.0.0.0": {
+      "sha256": "0562876ae0b46688df279267bdd96ead7b83e6f7cf27e6e6f9af229845b14bbb",
+      "mode": 493,
+      "size": 38864,
+      "mtimeNs": 1720270166000000000
+    },
+    "/usr/lib/libxcb.so.1.1.0": {
+      "sha256": "40df5eff95408b67d969e559f2689b3e50e6151251b1f4e03608ce5cd9c9a133",
+      "mode": 493,
+      "size": 169984,
+      "mtimeNs": 1713208352000000000
+    },
+    "/usr/lib/libaquamarine.so.0.15.0": {
+      "sha256": "3b418953be482141ddcdc8ae93da7e79bfeebf5ff8e6e8ae136fe8a46a1b7389",
+      "mode": 493,
+      "size": 1400792,
+      "mtimeNs": 1788500198000000000
+    },
+    "/usr/lib/libhyprlang.so.0.6.8": {
+      "sha256": "51f1d29b396ed6320cbe74a9d13fd35841438cf51c3b76029a513ce33a1aa927",
+      "mode": 493,
+      "size": 280632,
+      "mtimeNs": 1784365390000000000
+    },
+    "/usr/lib/libhyprutils.so.0.14.2": {
+      "sha256": "c33f3d8d6fbe66b0c308bcd9782cde55e142777f9e61398d3e2624f2a63a7811",
+      "mode": 493,
+      "size": 493712,
+      "mtimeNs": 1788779051000000000
+    },
+    "/usr/lib/libhyprcursor.so.0.1.13": {
+      "sha256": "e0cb58445eec56de5c9fceec49b01e4d487fb748ba49ab0f597515b8290b8fe9",
+      "mode": 493,
+      "size": 391232,
+      "mtimeNs": 1784365750000000000
+    },
+    "/usr/lib/libhyprgraphics.so.0.5.1": {
+      "sha256": "a092f858f943d739b8cc8fc792c3034b3e42b0ea34bdb212d9d0b426070846e4",
+      "mode": 493,
+      "size": 215088,
+      "mtimeNs": 1784371652000000000
+    },
+    "/usr/lib/libxkbcommon.so.0.13.2": {
+      "sha256": "e475adbf5abd181b1bdfdeba70ad4d501cb296bbf05b13e8649fd71b3989ee07",
+      "mode": 493,
+      "size": 383144,
+      "mtimeNs": 1780200774000000000
+    },
+    "/usr/lib/libuuid.so.1.3.0": {
+      "sha256": "7881e0279d5ce79b0d8ace923e94df9b543bc8dd8152df0894358b862e1725be",
+      "mode": 493,
+      "size": 34976,
+      "mtimeNs": 1788341811000000000
+    },
+    "/usr/lib/libwayland-server.so.0.26.0": {
+      "sha256": "7e89d8a177a78343a7cf92e3c1c756dc98a437489de4861ff6de907c7e48af89",
+      "mode": 493,
+      "size": 84776,
+      "mtimeNs": 1786306565000000000
+    },
+    "/usr/lib/libpangocairo-1.0.so.0.5800.2": {
+      "sha256": "e5e08c1444829436f85dbef91897578b7f3740107ac55a86e24458d55c99af88",
+      "mode": 493,
+      "size": 71688,
+      "mtimeNs": 1786013031000000000
+    },
+    "/usr/lib/libpango-1.0.so.0.5800.2": {
+      "sha256": "ea03a7e253f59f3876282947e23880e3ac313ec28e5de314c9ccbd124289978d",
+      "mode": 493,
+      "size": 450312,
+      "mtimeNs": 1786013031000000000
+    },
+    "/usr/lib/libcairo.so.2.11804.4": {
+      "sha256": "f64d0a970ce4bbc63afad18fe2d6ff18ef0b4d4f88aade037f3dc3e68026d63f",
+      "mode": 493,
+      "size": 1293032,
+      "mtimeNs": 1741599011000000000
+    },
+    "/usr/lib/libharfbuzz.so.0.61440.0": {
+      "sha256": "ea4f2a4d4593dd5645cf3b5c856b0e22fb72c2b515f331b3243886649e9639a1",
+      "mode": 493,
+      "size": 1302640,
+      "mtimeNs": 1787795386000000000
+    },
+    "/usr/lib/libpixman-1.so.0.46.4": {
+      "sha256": "97d04f1a534e26e26cf993a350b13ddc33fa4f9741444b08c27bc04582c70fd8",
+      "mode": 493,
+      "size": 714800,
+      "mtimeNs": 1753030477000000000
+    },
+    "/usr/lib/libXcursor.so.1.0.2": {
+      "sha256": "2c789c94ecd3a8e7a364c18856de6d713d317eafad6154d7657ab68761089e00",
+      "mode": 493,
+      "size": 47048,
+      "mtimeNs": 1730878554000000000
+    },
+    "/usr/lib/libdrm.so.2.134.0": {
+      "sha256": "8b97afc5e15a07442768b302660cf844b0962623f8dcecbaebccadf288c611b1",
+      "mode": 493,
+      "size": 92104,
+      "mtimeNs": 1780210732000000000
+    },
+    "/usr/lib/libinput.so.10.13.0": {
+      "sha256": "9e8eb024885dc1710e08848b84cc620a72e1b3841102e11a5894c825f4bcb75d",
+      "mode": 493,
+      "size": 461840,
+      "mtimeNs": 1780539889000000000
+    },
+    "/usr/lib/libeis.so.1.6.0": {
+      "sha256": "94c8b1f2765a6932a458700fd7bb6d49ab98b625a9af4bd7afcc728b2ad94367",
+      "mode": 493,
+      "size": 129056,
+      "mtimeNs": 1778887645000000000
+    },
+    "/usr/lib/libgbm.so.1.0.0": {
+      "sha256": "9ff0105801e62ed4335e036eee25c4d42421668b4887d77ee35c400db389d8f6",
+      "mode": 493,
+      "size": 18416,
+      "mtimeNs": 1788399625000000000
+    },
+    "/usr/lib/libgio-2.0.so.0.8800.3": {
+      "sha256": "3cc245fc1d3071b164d544cda090a529eed9f6e37ca2fec0373b15a924bb83cc",
+      "mode": 493,
+      "size": 1949024,
+      "mtimeNs": 1785337036000000000
+    },
+    "/usr/lib/libgobject-2.0.so.0.8800.3": {
+      "sha256": "27bf7b1dbd23e444f8d7a24daeb6b1f094c02860af2ae255f2e6c9b1d4465f49",
+      "mode": 493,
+      "size": 399456,
+      "mtimeNs": 1785337036000000000
+    },
+    "/usr/lib/libglib-2.0.so.0.8800.3": {
+      "sha256": "a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+      "mode": 493,
+      "size": 1449352,
+      "mtimeNs": 1785337036000000000
+    },
+    "/usr/lib/libre2.so.11.0.0": {
+      "sha256": "91b79997a549d11cd1577a7a0298239164aa4bf3f1e3b91d9e69630dd374bdbc",
+      "mode": 493,
+      "size": 575720,
+      "mtimeNs": 1787226583000000000
+    },
+    "/usr/lib/libabsl_log_internal_check_op.so.2608.0.0": {
+      "sha256": "8aed613dd335592bba2770a646e123515d476083ccbe0010806a8dd4186bae5b",
+      "mode": 493,
+      "size": 34792,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_leak_check.so.2608.0.0": {
+      "sha256": "18c76a1ec236bc24310f94141b132715411883805df823d33302cfa7d412e691",
+      "mode": 493,
+      "size": 13992,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_log_internal_conditions.so.2608.0.0": {
+      "sha256": "406968a350a30e13250a8b643e3cd634ba09c9a711105456378c6c9d3cd466cf",
+      "mode": 493,
+      "size": 14072,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_log_internal_message.so.2608.0.0": {
+      "sha256": "a92c6c19778e69229888db61a87278a92154484c7d37552c178562037d3fd6f6",
+      "mode": 493,
+      "size": 59456,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_examine_stack.so.2608.0.0": {
+      "sha256": "c4c48ae0f73af290d030e7c7f90cf2ec8584630a9d762d45d1c5277e476211a8",
+      "mode": 493,
+      "size": 14216,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_log_internal_format.so.2608.0.0": {
+      "sha256": "a52cfa4d0a44f567e0c65dfe39e51cec2c97b82e07691b46760479841f1f0001",
+      "mode": 493,
+      "size": 14224,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_log_internal_nullguard.so.2608.0.0": {
+      "sha256": "7d8f52ca8d99cfec4d517951698c66f723c16d0119b6e533d143aa8477f10706",
+      "mode": 493,
+      "size": 13992,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_log_internal_structured_proto.so.2608.0.0": {
+      "sha256": "bfa67232cd09b5007cc5fb622c1f5743d68e30b2a8af06630f5f357a82e1ba87",
+      "mode": 493,
+      "size": 14080,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_log_internal_log_sink_set.so.2608.0.0": {
+      "sha256": "b449a9a4352ba3759ce281e5ccfc8239da08d5a6c63cd2b98d078dfc79c50fbe",
+      "mode": 493,
+      "size": 18568,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_log_internal_globals.so.2608.0.0": {
+      "sha256": "f9fd6faf9d188e953f1d7cf4c4a4e5e52b95030b7767201684a9a77e6f10a29c",
+      "mode": 493,
+      "size": 14232,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_log_globals.so.2608.0.0": {
+      "sha256": "58b0f59483b865619858068186ad1ecdda65c1f72f1ab986050edead6a3e7ef6",
+      "mode": 493,
+      "size": 18448,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_log_sink.so.2608.0.0": {
+      "sha256": "266a1eb56fd0a8f0a59b09e00526e128a9fa95af32c86f75bca9787a5a9653d2",
+      "mode": 493,
+      "size": 14288,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_log_entry.so.2608.0.0": {
+      "sha256": "858dcc5bf5fd2d22029ad453d69a4d17f590f14603750bdd2075db339fd5d740",
+      "mode": 493,
+      "size": 18400,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_log_internal_proto.so.2608.0.0": {
+      "sha256": "0bb9d0dbdea048f91a70ba777170fb5ac6486b1baa9ee0e0945db11d0563022d",
+      "mode": 493,
+      "size": 14152,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_strerror.so.2608.0.0": {
+      "sha256": "1064137d20a25fed8aa39439a68cfb0c4b7db77e583ee3be22d430ea5bfdf2aa",
+      "mode": 493,
+      "size": 14304,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_vlog_config_internal.so.2608.0.0": {
+      "sha256": "a610ec461f776c021fde0eca9c60467b583dfb3d6d23a6bf9b0d399515ddab97",
+      "mode": 493,
+      "size": 30704,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_log_internal_fnmatch.so.2608.0.0": {
+      "sha256": "5ca87f869118b68747d901d27b77b04be21bf05f9973a449b87922d16d1263fb",
+      "mode": 493,
+      "size": 14224,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_flags_internal.so.2608.0.0": {
+      "sha256": "4dd353f6cda6dd346c31987d05841054bb9300d5646f995ca4dd76773e536be7",
+      "mode": 493,
+      "size": 38976,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_flags_marshalling.so.2608.0.0": {
+      "sha256": "b9525e3c2d0348128f3132bed155cfec92246f15f9a65b12a07c360020514518",
+      "mode": 493,
+      "size": 42984,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_flags_reflection.so.2608.0.0": {
+      "sha256": "2185a41fd20a9d8d3bb25d033571eab7aba9c3a7f7afde6bd9a2922a5d6a588f",
+      "mode": 493,
+      "size": 43072,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_flags_private_handle_accessor.so.2608.0.0": {
+      "sha256": "905813d05d6cb4a50c960e12bf42a07566152052c48f8b5d908330ba99670b56",
+      "mode": 493,
+      "size": 14160,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_flags_commandlineflag.so.2608.0.0": {
+      "sha256": "bbad08728c63233f2cab1d6f1151ae712d89723582731c477ab0a4044be1f7f5",
+      "mode": 493,
+      "size": 14304,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_flags_commandlineflag_internal.so.2608.0.0": {
+      "sha256": "8acc251a379d1177b491c5a596ee22fa0e19cb13575f83089e70c9439a3ab835",
+      "mode": 493,
+      "size": 14312,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_flags_config.so.2608.0.0": {
+      "sha256": "39aef9b14c71fd65196a5375beb9c73232f32a7dd35d120ed0f6a69227ec5a06",
+      "mode": 493,
+      "size": 22584,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_flags_program_name.so.2608.0.0": {
+      "sha256": "9177a0cd9ad185d263d32c55e79cd1226c5c8bd775aa6bf8c13cf5f5acc6590c",
+      "mode": 493,
+      "size": 14312,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_raw_hash_set.so.2608.0.0": {
+      "sha256": "f0ef532f17e04c58b7a03749e2333a3c256a036fabe55711cb7d64f06342af5c",
+      "mode": 493,
+      "size": 42960,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_cord.so.2608.0.0": {
+      "sha256": "da41e37539942e0257e4fa2025d7b72e3447aba798b4cf2e86f1999941fce2c0",
+      "mode": 493,
+      "size": 96224,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_cordz_info.so.2608.0.0": {
+      "sha256": "1096628494ebae80087f93679e38cf375a42a747bfb8b7f7569d3fbd03ec5784",
+      "mode": 493,
+      "size": 22584,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_cord_internal.so.2608.0.0": {
+      "sha256": "16e37350812dab7ea63d049520ea6675ed7bd11f7a6d3de438e6836c31a8701b",
+      "mode": 493,
+      "size": 55264,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_cordz_functions.so.2608.0.0": {
+      "sha256": "1b7cb4f25de49ff5f576379346394581af3e02d9796ae168e2c3d81640c8e301",
+      "mode": 493,
+      "size": 14296,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_cordz_handle.so.2608.0.0": {
+      "sha256": "5b314a9e42b2bc6afc248500a8a79791ec47b9c6ce8e5305d048dc8e2e1ec625",
+      "mode": 493,
+      "size": 14384,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_crc_cord_state.so.2608.0.0": {
+      "sha256": "5a3d54f1dc7280897ea8967b4bf63d5725f8475a4ffd17140479349bfa95d851",
+      "mode": 493,
+      "size": 22512,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_crc32c.so.2608.0.0": {
+      "sha256": "463b0ca2740f764349abcac750c4c463a42887dc70e3d7835329ec9eab7229b7",
+      "mode": 493,
+      "size": 18480,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_crc_internal.so.2608.0.0": {
+      "sha256": "a212e3c3d7cc5c06bc62d5fc43293fefb513b76aab5e268c82b2806c7de93dec",
+      "mode": 493,
+      "size": 18480,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_base_cpu_detect.so.2608.0.0": {
+      "sha256": "26984d134fe2d67f5bef9f9c5f74016eff1a4a404d572e71b5da7beef516c44a",
+      "mode": 493,
+      "size": 14224,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_hashtablez_sampler.so.2608.0.0": {
+      "sha256": "0d7eab85fc581ac6e3a324baa32916fce42d2932a648b411e8e99e41243bb6fd",
+      "mode": 493,
+      "size": 18416,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_exponential_biased.so.2608.0.0": {
+      "sha256": "8acf18277a8429897044ab8f14bf991fd74b41b55c96d8273581b3ec0757511b",
+      "mode": 493,
+      "size": 14224,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_hash.so.2608.0.0": {
+      "sha256": "b22dff85657e932992dc0c0469488065cc186c7fc39ff8b2c437ccdb19d1d22b",
+      "mode": 493,
+      "size": 14128,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_city.so.2608.0.0": {
+      "sha256": "0754d548c6d68e47c0c83177dfbfefedb11366e656e219bdb87c29bcad5d5e98",
+      "mode": 493,
+      "size": 13984,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_str_format_internal.so.2608.0.0": {
+      "sha256": "133198aebd522f30bcfe37ddc545de69ae140347babf21f7e3faa9c328154c49",
+      "mode": 493,
+      "size": 120816,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_synchronization.so.2608.0.0": {
+      "sha256": "eaf783670b946fe9ef486605b8ad0b15cd64947055a96cc6ff842fc6d9ee709b",
+      "mode": 493,
+      "size": 59512,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_graphcycles_internal.so.2608.0.0": {
+      "sha256": "19cad5948166d8b5d9a5cb2d63f09fcf3a344840f0e82eddfc30e427678be809",
+      "mode": 493,
+      "size": 30696,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_kernel_timeout_internal.so.2608.0.0": {
+      "sha256": "819ac2d6ad9e8346afafa7ece408e9089dcc5a277943552fd70906b28f9af7c3",
+      "mode": 493,
+      "size": 14232,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_stacktrace.so.2608.0.0": {
+      "sha256": "70dd7230e9ce37f873e0bb54ce91afa3b3139e5cf33ac4b97f7e78d063928c05",
+      "mode": 493,
+      "size": 14144,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_symbolize.so.2608.0.0": {
+      "sha256": "0eca17b1acc93636f66154bae21cbebc679fbbf6b24159036194f75927f27e10",
+      "mode": 493,
+      "size": 30696,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_debugging_internal.so.2608.0.0": {
+      "sha256": "1b829833e321f1c1b7cc36a2ab2a38854ff5bcb3eace9097b2753f0f90f36d8f",
+      "mode": 493,
+      "size": 22520,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_demangle_internal.so.2608.0.0": {
+      "sha256": "8f503eb24f41235d395ec99d3e0952e30e40789453de0ea00b008e26f92b9ab4",
+      "mode": 493,
+      "size": 51256,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_demangle_rust.so.2608.0.0": {
+      "sha256": "ee8f25be93c051353629bc2456d679834e8bfbf964be81af50b5d7872be1a2e2",
+      "mode": 493,
+      "size": 22408,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_decode_rust_punycode.so.2608.0.0": {
+      "sha256": "73d4dacb830dbcbdfdb6de7429f8a533ae022b1184f2e4cb02f1f8937c556ebf",
+      "mode": 493,
+      "size": 14152,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_utf8_for_code_point.so.2608.0.0": {
+      "sha256": "01a45af5b32f3eb27defd20c1cfee3df387a05615173fbb4f33b727a847eecc3",
+      "mode": 493,
+      "size": 14000,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_malloc_internal.so.2608.0.0": {
+      "sha256": "3201e3be384f57133412c2e71c4c2802582d82d4a74611c276bce116181d2fe9",
+      "mode": 493,
+      "size": 22584,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_time.so.2608.0.0": {
+      "sha256": "148d849d1c495cab8fe271a0835b12f9360a55f74377b3efc7636743af21f5dd",
+      "mode": 493,
+      "size": 75816,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_civil_time.so.2608.0.0": {
+      "sha256": "6e47ec6474f87a400fdfe2d4be34096c350e9933ed1050c050aec889a2615064",
+      "mode": 493,
+      "size": 26592,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_strings.so.2608.0.0": {
+      "sha256": "efdfdfc88c32220057feb660ce841965dda3da1197d4f9708511380fc27ae848",
+      "mode": 493,
+      "size": 149480,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_strings_internal.so.2608.0.0": {
+      "sha256": "b96bb375e9b70d341313c9d42989d23a62e415c09000148c364887622ce59279",
+      "mode": 493,
+      "size": 18488,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_hardening.so.2608.0.0": {
+      "sha256": "73144e69f24fa36a543bf0c14bcebc39d11e54097fa1abf97f23dcd116e5ea25",
+      "mode": 493,
+      "size": 13984,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_int128.so.2608.0.0": {
+      "sha256": "90d57b0ac0124b362f688410c9b88bf5068913300c5c3df886260b7588d861a3",
+      "mode": 493,
+      "size": 22496,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_source_location.so.2608.0.0": {
+      "sha256": "7c1c32856b250f64f3fb61133efc46ba93bfac932af1b2aaf246a76f3e2f5cff",
+      "mode": 493,
+      "size": 13912,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_throw_delegate.so.2608.0.0": {
+      "sha256": "c69240bdb4bc8e74ce86e31554749fb2c306dc00196b838d273d8d8f6744ea3c",
+      "mode": 493,
+      "size": 18336,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_time_zone.so.2608.0.0": {
+      "sha256": "e0137398be730d751e6c75fc6ab3c9ce37e83f252d23f577cea27d7bd4807594",
+      "mode": 493,
+      "size": 108608,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_tracing_internal.so.2608.0.0": {
+      "sha256": "873e46b34eb12597e02caeafef6f0e9df21b54aa11db23be8cc153d2e126cd21",
+      "mode": 493,
+      "size": 13992,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_base.so.2608.0.0": {
+      "sha256": "aaa819ecb33a12007b208e77d5ee8ee1232f43889e001ca298835ee9c7fbf5bf",
+      "mode": 493,
+      "size": 18496,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/librt.a": {
+      "sha256": "f0a17a43c74d2fe5474fa2fd29c8f14799e777d7d75a2cc4d11c20a6e7b161c5",
+      "mode": 420,
+      "size": 8,
+      "mtimeNs": 1786390742000000000
+    },
+    "/usr/lib/libabsl_raw_logging_internal.so.2608.0.0": {
+      "sha256": "2493f7f39d50633f75a4d55e9c59340d2d1c0f5a2b96b6ae5918b4232ee79cc9",
+      "mode": 493,
+      "size": 14280,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_log_severity.so.2608.0.0": {
+      "sha256": "dd9203002303dceec6d9c50cc0fbc83fe574c74556f34a8840ddc3d3a2370696",
+      "mode": 493,
+      "size": 14216,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libabsl_spinlock_wait.so.2608.0.0": {
+      "sha256": "374dace6df1fe274ccae67b3e669525608465900b983c2a7cb8bb75f206bc0ce",
+      "mode": 493,
+      "size": 14144,
+      "mtimeNs": 1788124335000000000
+    },
+    "/usr/lib/libmuparser.so.2.3.5": {
+      "sha256": "33a5b4bd115f1f28555658b8222224782a4af6d5a0796551fa061f3232746bbf",
+      "mode": 493,
+      "size": 527160,
+      "mtimeNs": 1771107174000000000
+    },
+    "/usr/lib/liblcms2.so.2.0.19": {
+      "sha256": "64f255d5716940bfa2a2c890abd801019b081dd587ab1af0c921c5741f26ec2b",
+      "mode": 493,
+      "size": 435264,
+      "mtimeNs": 1778059945000000000
+    },
+    "/usr/lib/liblua.so.5.5.1": {
+      "sha256": "b1c359fd0a6dff7121c173d56b45236a09c6c0b99783b594d0cff2054a03931e",
+      "mode": 493,
+      "size": 301000,
+      "mtimeNs": 1785824098000000000
+    },
+    "/usr/lib/libEGL.so.1.1.0": {
+      "sha256": "89d5d0f68f7e42397544db26347c24a893be2e08b81406e8e8714803c29db03b",
+      "mode": 493,
+      "size": 67536,
+      "mtimeNs": 1749858906000000000
+    },
+    "/usr/lib/libGLESv2.so.2.1.0": {
+      "sha256": "341a5154f501b2b06330161efedecd0ef111fe76b8ce5d092528545c7c714133",
+      "mode": 493,
+      "size": 63512,
+      "mtimeNs": 1749858906000000000
+    },
+    "/usr/lib/libGLX.so.0.0.0": {
+      "sha256": "4eca76728c640b67b1ed656a22b53d3734c100ba4f992aecd705d2e70bfe743a",
+      "mode": 493,
+      "size": 133064,
+      "mtimeNs": 1749858906000000000
+    },
+    "/usr/lib/libOpenGL.so.0.0.0": {
+      "sha256": "5ec13550cb78002495db99017a034c810e0a61facc9c289091420ba1edbd441e",
+      "mode": 493,
+      "size": 145432,
+      "mtimeNs": 1749858906000000000
+    },
+    "/usr/lib/libglslang-default-resource-limits.so.16.4.0": {
+      "sha256": "63f765739ba442df9717aa2b6604ecb005e4a5721f1fd7d4925c3434c715fd35",
+      "mode": 493,
+      "size": 38808,
+      "mtimeNs": 1785258555000000000
+    },
+    "/usr/lib/libSPIRV.so.16.4.0": {
+      "sha256": "bfd6697b2c423e060b410bf09d3f6deb86f68cf39580440150a9430b7a0f9f5d",
+      "mode": 493,
+      "size": 13896,
+      "mtimeNs": 1785258555000000000
+    },
+    "/usr/lib/libglslang.so.16.4.0": {
+      "sha256": "0426c31ff9c196910013aef27f192f82a1d4db5d0b49654c409b067d26c06af2",
+      "mode": 493,
+      "size": 3832568,
+      "mtimeNs": 1785258555000000000
+    },
+    "/usr/lib/libSPIRV-Tools-opt.so": {
+      "sha256": "1046640e5545652ecfefa828280c99879771c829eb68d0475118859347ad05b2",
+      "mode": 493,
+      "size": 2602960,
+      "mtimeNs": 1785257217000000000
+    },
+    "/usr/lib/libSPIRV-Tools.so": {
+      "sha256": "e12f83159f86b969b6fc5c3668a670f15038d3182b510ac04fce68e833b7be2a",
+      "mode": 493,
+      "size": 1948368,
+      "mtimeNs": 1785257217000000000
+    }
+  },
+  "buildInputs": {
+    "build-core-make/CMakeCache.txt": {
+      "sha256": "71be6371862069a9d23381aeb443652d3eb4a431aa307ed2a39c4257b7d35c4c",
+      "mode": 420,
+      "size": 110472,
+      "mtimeNs": 1790970210949492636
+    },
+    "build-core-make/compile_commands.json": {
+      "sha256": "a56ce0f8bea1703980372a8a2d4919c144e3a1190e5e33aa5ba587d0d62d2241",
+      "mode": 420,
+      "size": 995334,
+      "mtimeNs": 1790970211215496851
+    },
+    "build-core-make/start/CMakeFiles/start-hyprland.dir/link.txt": {
+      "sha256": "b5b9fa4ba172837ff89e8f59b58f3046086bb2bb29b046c32bb2c96b567ff175",
+      "mode": 420,
+      "size": 317,
+      "mtimeNs": 1790970211203496661
+    },
+    "build-core-make/start/CMakeFiles/start-hyprland.dir/flags.make": {
+      "sha256": "b74814bbab49dbd002e1fd21f59d8d2875b36951019348b8a3e564e0c00d6630",
+      "mode": 420,
+      "size": 1110,
+      "mtimeNs": 1790970211205419302
+    },
+    "build-core-make/hyprctl/CMakeFiles/hyprctl.dir/link.txt": {
+      "sha256": "e71ae6a91deb1cc66fba45bc80fef46d1421ee6097245057f0ffa561dcf27f21",
+      "mode": 420,
+      "size": 2724,
+      "mtimeNs": 1790970211199496597
+    },
+    "build-core-make/hyprctl/CMakeFiles/hyprctl.dir/flags.make": {
+      "sha256": "6c4453fb8a5c5fb82594836a114910719f1f6eda17df12b62994f86695f46787",
+      "mode": 420,
+      "size": 1149,
+      "mtimeNs": 1790970211200990760
+    },
+    "build-core-make/subprojects/udis86/udcli/CMakeFiles/udcli.dir/link.txt": {
+      "sha256": "c829e2479a7f5b8cc14f57f2c6ed417d5ac426607e6974f38ef1138d65193b47",
+      "mode": 420,
+      "size": 144,
+      "mtimeNs": 1790970211181106243
+    },
+    "build-core-make/subprojects/udis86/udcli/CMakeFiles/udcli.dir/flags.make": {
+      "sha256": "b010cd55c5b5cf81a09657cfdeb6b488ae83d34dde50d73e4d6f09305e87d153",
+      "mode": 420,
+      "size": 465,
+      "mtimeNs": 1790970211181560194
+    },
+    "build-core-make/subprojects/udis86/libudis86/CMakeFiles/libudis86.dir/link.txt": {
+      "sha256": "24a0f063a9efd4e9559d74c22dff86f883a93cdf57f5ed193b9f50030b811ca0",
+      "mode": 420,
+      "size": 280,
+      "mtimeNs": 1790970211176496233
+    },
+    "build-core-make/subprojects/udis86/libudis86/CMakeFiles/libudis86.dir/flags.make": {
+      "sha256": "e6835d9093450d74233b2e1cc456d9c7cb21af2f866a282027c3515f68bd8224",
+      "mode": 420,
+      "size": 397,
+      "mtimeNs": 1790970211178019141
+    },
+    "build-core-make/CMakeFiles/4.4.3/CMakeCXXCompiler.cmake": {
+      "sha256": "17269e520756b2ff689990747838335919f33b789df4b6562d89390250a7162d",
+      "mode": 420,
+      "size": 6247,
+      "mtimeNs": 1790970207583439206
+    },
+    "build-core-make/CMakeFiles/hyprland_lib.dir/link.txt": {
+      "sha256": "4c2206b9a6003ba1af45f7060eb77efd179955076e6702a30c1faf02bf41ffc0",
+      "mode": 420,
+      "size": 29272,
+      "mtimeNs": 1790970211119495330
+    },
+    "build-core-make/CMakeFiles/hyprland_lib.dir/flags.make": {
+      "sha256": "4f5613150af648dbd3cc25616e58f19ab3525078f3a280e0a2ce8aa53f527b81",
+      "mode": 420,
+      "size": 108923,
+      "mtimeNs": 1790970211139932268
+    },
+    "build-core-make/CMakeFiles/Hyprland.dir/link.txt": {
+      "sha256": "39bba8cde61dd259d52d7090a312f2eb7573d6c3b870283f37eba3d45346fda0",
+      "mode": 420,
+      "size": 3622,
+      "mtimeNs": 1790970211152495853
+    },
+    "build-core-make/CMakeFiles/Hyprland.dir/flags.make": {
+      "sha256": "cc014427d3e07941010c9d0b693789a6fee9e5acd70862070486439e8dcaef30",
+      "mode": 420,
+      "size": 1625,
+      "mtimeNs": 1790970211153879392
+    }
+  },
+  "outputs": {
+    "build-core-make/Hyprland": {
+      "sha256": "8b18c39ec980a5d9e8fa27018a70fc104617562e008d75113f2c7c1c50a3bbbc",
+      "mode": 493,
+      "size": 19729408,
+      "mtimeNs": 1790971745252959328
+    },
+    "build-core-make/libhyprland_lib.a": {
+      "sha256": "e4a2b5d19855c33dbf2eacf577499cb7620f9fef44de74d4dbee73cf57aa4977",
+      "mode": 420,
+      "size": 91569288,
+      "mtimeNs": 1790971736731877173
+    },
+    "plugin/hyprbars-native-max-core-v2-candidate.so": {
+      "sha256": "0c9084e237194faf91e61fc7a8bba9fc17e6862dc3dd0082a9af1d8fbaeecbc9",
+      "mode": 493,
+      "size": 1182288,
+      "mtimeNs": 1790971873865283973
+    }
+  },
+  "coreCommand": [
+    "cmake",
+    "--build",
+    "build-core-make",
+    "--parallel",
+    "2"
+  ],
+  "pluginCommand": [
+    "make"
+  ],
+  "coreSession": 57713,
+  "pluginSession": 73151,
+  "coreExit": 0,
+  "pluginExit": 0,
+  "nativeExecuted": false
+}

@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "result": "SOURCE_AND_BUILD_READY_FOR_ROOT_REVIEW",
+  "created": "2026-10-02T14:50:33.950450+00:00",
+  "stage": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation",
+  "sourceClosure": "SOURCE_READY_INPUTS.json",
+  "sourceClosureSHA256": "eafdca71e486f23cf6cdb1201ae6b191025ceec2fd7b4b1547370da0dffc014a",
+  "files": 4683,
+  "links": 2,
+  "directories": 705,
+  "corePolicyBuild": "b0df9dafe65595cee9ea5780f61a8fca07126f41a8c836bd83d27a87645f75ef",
+  "coreELFBuildID": "5ec914c64df540038d925659a5109c646bcad582",
+  "outputs": {
+    "build-core-make/Hyprland": {
+      "sha256": "1cffd4a542255556e685f926a7f7016f6e51f2d4fb880747192e96d43a3835ba",
+      "mode": 493,
+      "size": 19733456,
+      "mtimeNs": 1790951601445258725
+    },
+    "build-core-make/libhyprland_lib.a": {
+      "sha256": "ae10f6c3694a17778aae33e38567d5547467f7639cd2ac5f84c231f316debd37",
+      "mode": 420,
+      "size": 91566536,
+      "mtimeNs": 1790951599528251561
+    },
+    "plugin/hyprbars-native-max-core-v2-candidate.so": {
+      "sha256": "e4d0ba73bd8985aaf0525ee99dc17973928501b0ecfef1cb80f57d196b138738",
+      "mode": 493,
+      "size": 1182288,
+      "mtimeNs": 1790951773385848522
+    }
+  },
+  "sourceInverse": "final-review/complete-source-inverse-mapping.json",
+  "actualDiff": "final-review/complete-policy.diff",
+  "actualFieldABI": "final-review/ACTUAL_SOURCE_FIELD_ABI_MAPPING.md",
+  "gate": "final-review/final-gate.json",
+  "nativeAuthorized": false,
+  "nativeAccepted": false,
+  "installedChanged": false,
+  "fullParityAccepted": false,
+  "remaining": [
+    "Root source review and immutable freeze",
+    "Original unchanged Pin14 actual native campaign",
+    "Actual native MAX/restore/coexistence/transfer/scroll/focus reachability",
+    "Original focus/Seat/cursor/refusal policy and independent child-pin observations"
+  ]
+}

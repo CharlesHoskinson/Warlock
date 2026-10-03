@@ -1,0 +1,42 @@
+#!/bin/bash
+# Open the Files explorer (Quickshell app in ~/.local/share/omarchy-files).
+# Usage: omarchy-files [path|home|coll:images|coll:recent|...]   (default: home)
+APP="$HOME/.local/share/omarchy-files"
+target="${1:-home}"
+
+# Bring Files to the current desktop through the identity-guarded window
+# backend, preserving minimized pin/geometry state and modal-family behavior.
+summon() {
+  local pid addr ws cur stable
+  # Re-resolve the pid on every poll: on a cold start `qs -d` forks, so the pid
+  # seen first (or not yet registered) is not the one that owns the window.
+  for _ in $(seq 30); do
+    pid=$(pgrep -f "^qs -p $APP( |$)" | head -1)
+    if [ -n "$pid" ]; then
+      read -r addr ws stable < <(hyprctl -j clients | jq -r --argjson p "$pid" \
+        '.[] | select(.pid == $p and .title == "Files") | "\(.address) \(.workspace.name) \(.stableId // "")"' | head -1)
+      [ -n "$addr" ] && break
+    fi
+    sleep 0.1
+  done
+  [[ $addr =~ ^0x[0-9a-fA-F]+$ && -n $stable ]] || return 1
+  cur=$(hyprctl -j monitors | jq -r '.[] | select(.focused) | .activeWorkspace.name')
+  [[ $cur =~ ^[0-9]+$ ]] || return 1
+  # Recover any explorer left in the old scratchpad before moving it. The
+  # backend clears its saved state; unrelated special workspaces stay open.
+  if [[ $ws == special:scratchpad ]]; then
+    hypr-windowctl restore "$addr" "$stable" "$pid" >/dev/null || return $?
+  fi
+  if [ "$ws" != "$cur" ]; then
+    hypr-desktops move "$addr" "$cur" "$stable" "$pid" >/dev/null || return $?
+  fi
+  hypr-windowctl restore "$addr" "$stable" "$pid" >/dev/null
+}
+
+if qs -p "$APP" ipc call files open "$target" >/dev/null 2>&1; then
+  summon
+  exit $?
+fi
+# Not running yet: start it (daemonized) opened at the target.
+FILES_OPEN="$target" setsid qs -p "$APP" -d >/dev/null 2>&1 < /dev/null &
+summon

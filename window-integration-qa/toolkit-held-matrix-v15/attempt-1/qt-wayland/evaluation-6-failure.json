@@ -1,0 +1,84 @@
+{
+  "ticket": {
+    "serial": 6,
+    "nonce": "1bfd9a52e7501df79d730c469de88ead",
+    "kind": "native-unload",
+    "count": 1,
+    "relayOrdinal": 0,
+    "command": [
+      "plugin",
+      "unload",
+      "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/hyprbars-v22-interruption-candidate.so"
+    ],
+    "root": {
+      "identity": {
+        "pid": 4189359,
+        "start": "15050925",
+        "pgid": 4189359,
+        "parent": 1275790
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+        "--attempt",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1"
+      ],
+      "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+      "sourceSHA256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+      "executable": "/usr/bin/python3.14",
+      "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+    },
+    "compositor": {
+      "pid": 4189956,
+      "start": "15051687"
+    },
+    "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448",
+    "configuration": {
+      "path": "/run/user/1000/wqa/356c/hyprland.lua",
+      "sha256": "9c4db4ce73dc9ba2058c6f1f91fc4d5f6a18483d1fef6ff87aa1df4f1cad8d52",
+      "identity": [
+        84,
+        429499,
+        1000,
+        33152,
+        2279,
+        1790928043424082938,
+        1790928043424082938
+      ],
+      "completeEOF": true
+    },
+    "artifact": {
+      "path": "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/hyprbars-v22-interruption-candidate.so",
+      "sha256": "92a7c9bc1e4416dfd5eb2d1aab28a6bac1cbd5153e2e5ecdcbedd2bcdf046fb6",
+      "identity": [
+        58,
+        1007684,
+        1000,
+        33261,
+        934736,
+        1790900294139620021,
+        1790900294140738805
+      ],
+      "completeEOF": true
+    },
+    "armIPC": {
+      "request": "j/version",
+      "completeServerEOF": true,
+      "peer": {
+        "pid": 4189956,
+        "uid": 1000,
+        "gid": 1000
+      },
+      "socketIdentity": [
+        84,
+        429510,
+        1000
+      ],
+      "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d"
+    },
+    "armedNs": 1790928069387298275,
+    "terminalAuthority": true
+  },
+  "events": [],
+  "accepted": false
+}

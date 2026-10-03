@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_flat_review" xml:lang="sr">
+  <info>
+    <link type="next" xref="commands_find"/>
+    <link type="guide" xref="commands#reviewing_screen_contents"/>
+    <link type="seealso" xref="howto_flat_review"/>
+    <title type="sort">1. Раван преглед</title>
+    <title type="link">Раван преглед</title>
+    <desc>Наредбе за просторни преглед прозора</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Наредбе равног прегледа</title>
+  <p>Оркине наредбе <link xref="howto_flat_review">равног прегледа</link> су осмишљене за просторни преглед елемената приказаних на екрану. Оне такође омогућавају читање тренутног реда, речи и знака приликом кретања кроз текст документа. Већина ових наредби је „додељена“ тастерима пречица. Погледајте <link xref="howto_key_bindings">Мењање пречица тастера</link> за податке о томе како да доделите недодељене наредбе.</p>
+  <section id="line">
+    <title>Наредбе за преглед по редовима</title>
+    <list>
+      <item>
+        <p>Први ред (положај „почетка“):</p>
+        <list>
+          <item><p>Стони рачунар: <keyseq><key>Оркин измењивач</key><key>КП 7</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Оркин измењивач</key><key>Цтрл</key><key>У</key></keyseq></p></item>
+        </list>
+      </item>
+      <item>
+        <p>Претходни ред:</p>
+        <list>
+          <item><p>Стони рачунар: <keyseq><key>КП 7</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>U</key></keyseq></p></item>
+        </list>
+      </item>
+      <item>
+        <p>Тренутни ред:</p>
+        <list>
+          <item><p>Стони рачунар: <keyseq><key>KP 8</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>I</key></keyseq></p></item>
+        </list>
+      </item>
+        <item><p>Изговори тренутни ред:</p>
+        <list>
+          <item><p>Стони рачунар: <keyseq><key>KP 8</key></keyseq> (двоструки клик)</p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>I</key></keyseq> (двоструки клик)</p></item>
+        </list>
+      </item>
+      <item><p>Изговори тренутни ред фонетски:</p>
+        <list>
+          <item><p>Стони рачунар: <keyseq><key>KP 8</key></keyseq> (троструки клик)</p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>I</key></keyseq> (троструки клик)</p></item>
+        </list>
+      </item>
+      <item><p>Следећи ред:</p>
+        <list>
+          <item><p>Стони рачунар: <keyseq><key>KP 9</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>O</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Последњи ред (положај „крај“):</p>
+        <list>
+          <item><p>Стони рачунар: <keyseq><key>Измењивач Орке</key><key>KP 9</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>Ctrl</key><key>O</key></keyseq></p></item>
+        </list>
+      </item>
+    </list>
+  </section>
+  <section id="word">
+    <title>Наредбе за преглед по речима</title>
+    <list>
+      <item><p>Реч изнад:</p>
+        <list>
+          <item><p>Стони рачунар: <keyseq><key>Измењивач Орке</key><key>KP 4</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>Ctrl</key><key>J</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Претходна реч:</p>
+        <list>
+          <item><p>Радна површина: <keyseq><key>КП 4</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>J</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Тренутна реч:</p>
+        <list>
+          <item><p>Радна површина: <keyseq><key>КП 5</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>K</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Изговори тренутну реч слово по слово:</p>
+        <list>
+          <item><p>Радна површина: <keyseq><key>КП 5</key></keyseq> (двоструки клик)</p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>K</key></keyseq> (двоструки клик)</p></item>
+        </list>
+      </item>
+      <item><p>Фонетски изговори тренутну реч:</p>
+        <list>
+          <item><p>Радна површина: <keyseq><key>КП 5</key></keyseq> (троструки клик)</p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>K</key></keyseq> (троструки клик)</p></item>
+        </list>
+      </item>
+      <item><p>Следећа реч:</p>
+        <list>
+          <item><p>Радна површина: <keyseq><key>КП 6</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>L</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Реч испод:</p>
+        <list>
+          <item><p>Радна површина: <keyseq><key>Измењивач Орке</key><key>КП 6</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>Ctrl</key><key>L</key></keyseq></p></item>
+        </list>
+      </item>
+    </list>
+  </section>
+  <section id="character">
+    <title>Наредбе за преглед по знаку</title>
+    <list>
+      <item><p>Претходни знак:</p>
+        <list>
+          <item><p>Радна површина: <keyseq><key>БТ 1</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>M</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Тренутни знак:</p>
+        <list>
+          <item><p>Радна површина: <keyseq><key>БТ 2</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>Зарез</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Фонетски изговори тренутни знак:</p>
+        <list>
+          <item><p>Радна површина: <keyseq><key>БТ 2</key></keyseq> (двоклик)</p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>Зарез</key></keyseq> (двоклик)</p></item>
+        </list>
+      </item>
+      <item><p>Изговори Јуникод вредност тренутног знака:</p>
+        <list>
+          <item><p>Радна површина: <keyseq><key>БТ 2</key></keyseq> (троклик)</p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>Зарез</key></keyseq> (троклик)</p></item>
+        </list>
+      </item>
+      <item><p>Следећи знак:</p>
+        <list>
+          <item><p>Радна површина: <keyseq><key>БТ 3</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>Тачка</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Последњи знак у тренутној линији:</p>
+        <list>
+          <item><p>Радна површина: <keyseq><key>Измењивач Орке</key><key>БТ 1</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>Ctrl</key><key>M</key></keyseq></p></item>
+        </list>
+      </item>
+    </list>
+  </section>
+  <section id="other">
+    <title>Додатне наредбе</title>
+    <list>
+      <item><p>Укључи/искључи раван преглед (освежава контекст равног прегледа):</p>
+        <list>
+          <item><p>Радна површина: <keyseq><key>Измењивач Орке</key><key>БТ Минус</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>P</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Прегледај тренутку ставку/елемент:</p>
+        <list>
+          <item><p>Стони рачунар: <keyseq><key>Измењивач Орке</key><key>БТ 5</key></keyseq></p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>Ctrl</key><key>K</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Користите „Изговори све“ за преглед тренутног прозорчета или прозора:</p>
+        <list>
+          <item><p>Стони рачунар: <key>БТ плус</key> (двоструки клик)</p></item>
+          <item><p>Преносни рачунар: <keyseq><key>Измењивач Орке</key><key>Тачка-зарез</key></keyseq> (двоструки клик)</p></item>
+        </list>
+      </item>
+      <item>
+      <p>Копирај садржај под равним прегледом у оставу: (није додељено)</p>
+      </item>
+      <item>
+        <p>Прикачи садржај под равним прегледом у оставу: (није додељено)</p>
+      </item>
+      <item><p>Премести раван преглед на доњу леву страну: (није додељено)</p></item>
+      <item><p>Прикажи садржај равног прегледа: (није додељено)</p></item>
+      <item><p>Промени ограничавање равног прегледа на тренутни објекат: (није додељено)</p></item>
+    </list>
+  </section>
+</page>

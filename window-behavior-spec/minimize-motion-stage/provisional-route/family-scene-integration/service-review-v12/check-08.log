@@ -1,0 +1,9 @@
+
+  transport_dispatch_test
+    ok blockedCallbackStillDrainsFramesTest passed 1 test(s)
+    ok supersededQueuedCallbackHasNoNativeEffectTest passed 1 test(s)
+    ok exhaustionRetiresActorWithoutNativeEffectTest passed 1 test(s)
+    ok zeroExitWhileCallbackBlockedIsNotNormalTest passed 1 test(s)
+    ok cleanDrainedShutdownIsNormalTest passed 1 test(s)
+
+  5 passing (90ms)

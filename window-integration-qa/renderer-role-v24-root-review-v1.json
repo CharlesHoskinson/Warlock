@@ -1,0 +1,26 @@
+{
+  "time": "2026-10-02T11:18:29.963712+00:00",
+  "result": "source-approved-for-freeze-and-fresh-collector-pairing",
+  "handoff": "/home/hoskinson/window-integration-qa/renderer-role-v24-source-handoff-v1.json",
+  "handoffSHA256": "281ff7368d277f8139751df4583781f0bd53c05efacbf337ba70d96a3cde8112",
+  "referencedArtifactsVerified": [
+    "sourceReady",
+    "frozenBaseManifest",
+    "sourceConservation",
+    "formalBeforeRuntime",
+    "proof",
+    "focusedKernelProof",
+    "actualAdapterProof",
+    "freezer"
+  ],
+  "actualProofCommandsVerified": 100,
+  "pythonTests": 377,
+  "quintNamed": 332,
+  "quintModels": 33,
+  "focusedKernelTests": 18,
+  "actualAdapterLockCases": 2,
+  "onlyApprovedTwoRuntimeFilesChanged": true,
+  "nativeAccepted": false,
+  "mainChanged": false,
+  "next": "Freeze source, pair collector preserving V7 failure and V8 terminal component, original38 native baseline."
+}

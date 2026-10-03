@@ -1,0 +1,16 @@
+--- immutable-lifecycle-v1/Wayland.cpp
++++ fresh-bootstrap-v2/Wayland.cpp
+@@ -186,6 +186,13 @@
+         return false;
+ 
+     createOutput();
++    // Initial empty xdg commit is queued after dispatchEvents() above. Flush it
++    // before returning: no parent readability may arrive until this is sent.
++    // Any negative result (including EAGAIN) refuses mandatory private startup.
++    if (wl_display_flush(waylandState.display) < 0) {
++        backend->log(AQ_LOG_ERROR, std::format("Wayland initial output flush failed: errno {}", errno));
++        return false;
++    }
+ 
+     return true;
+ }

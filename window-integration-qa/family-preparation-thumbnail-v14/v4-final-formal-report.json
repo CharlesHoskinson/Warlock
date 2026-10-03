@@ -1,0 +1,416 @@
+{
+  "result": "pass",
+  "models": 8,
+  "named": 72,
+  "samplesPerModel": 2000,
+  "stepsPerSample": 100,
+  "sourceSHA256": {
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/actual_service_binding.qnt": "2cae8ff6809417f263cdf384eb2a25f7ab264c2dfa254cc47397a20c67903288",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/actual_service_binding_test.qnt": "a32c73f647f8fddd2abe5367e401ec53c6d97e9a31d932e52d003980719e17d4",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/recovery_collection.qnt": "4c2aa548dea38d7562c5db0303f315adaead26f1b19f629801f586df3153fa24",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/recovery_collection_test.qnt": "6a21b61146b32867e8f6664d70a0c28542824f28a19b1225465cbf3beb837f8c",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/reversal.qnt": "5d956a4cddb8b592860c1af331a77fe1fec384c0f3423834ec486585486d0fc8",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/helper_lifecycle.qnt": "60b55937111914b6e1483b96f8ebb91f522d9e879a4d0a7a64a3088ba2619fae",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/query_lifecycle.qnt": "8c2ef24906d86a45903d66f1127e01cf884161f8c69c57b7c0be92e8a5c4cd45",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/service_queries.qnt": "bd30cbb22f2b1e7c4ce70286204ebfa63d4272c9efc25e4bc5ad5a228319e937",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/capture_lifecycle.qnt": "fa38546a401f4964431518aea60eea4518fcaff9815fe5210d8ecb3f915b5abd",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/service_restart.qnt": "51812ecb7de0ef512f5b99e9ea20142aa993f1740b373fd0d239ea5cdf695973",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/service_restart_test.qnt": "e9cecc3e907991cc136eb4ac5d601f8ca733cee151c0b27b05e76bc1f7824677"
+  },
+  "sourceUnchanged": true,
+  "results": [
+    {
+      "model": "helper_lifecycle",
+      "checks": [
+        {
+          "command": [
+            "quint",
+            "typecheck",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/helper_lifecycle.qnt"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-helper_lifecycle-0.log",
+          "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsedNs": 1815866055,
+          "named": 0
+        },
+        {
+          "command": [
+            "quint",
+            "test",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/helper_lifecycle.qnt",
+            "--backend=rust",
+            "--seed=2026100304"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-helper_lifecycle-1.log",
+          "logSHA256": "c898ddac670b5eb8615062df128568bf3c9a2b18a58e5cbcd78fe01ddccb5674",
+          "elapsedNs": 1958025871,
+          "named": 4
+        },
+        {
+          "command": [
+            "quint",
+            "run",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/helper_lifecycle.qnt",
+            "--invariant=invariant",
+            "--max-samples=2000",
+            "--max-steps=100",
+            "--backend=rust",
+            "--seed=2026100304",
+            "--verbosity=1"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-helper_lifecycle-2.log",
+          "logSHA256": "94e2c46c82a5b18ed9dea3dfab0863aebe2c78da702064e7f2c9e175b3308c65",
+          "elapsedNs": 5988089630,
+          "named": 0
+        }
+      ]
+    },
+    {
+      "model": "query_lifecycle",
+      "checks": [
+        {
+          "command": [
+            "quint",
+            "typecheck",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/query_lifecycle.qnt"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-query_lifecycle-0.log",
+          "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsedNs": 2046400290,
+          "named": 0
+        },
+        {
+          "command": [
+            "quint",
+            "test",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/query_lifecycle.qnt",
+            "--backend=rust",
+            "--seed=2026100304"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-query_lifecycle-1.log",
+          "logSHA256": "794bd6c5643ac9e5cd44999e44475047e82e2d67a9edb59ffdb74a1ba769aa63",
+          "elapsedNs": 2264044455,
+          "named": 4
+        },
+        {
+          "command": [
+            "quint",
+            "run",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/query_lifecycle.qnt",
+            "--invariant=invariant",
+            "--max-samples=2000",
+            "--max-steps=100",
+            "--backend=rust",
+            "--seed=2026100304",
+            "--verbosity=1"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-query_lifecycle-2.log",
+          "logSHA256": "44a3fce6dfd7cd9dfc79f3503664290e5426ee9cbb7271eb1aed8e87d4541421",
+          "elapsedNs": 6064897286,
+          "named": 0
+        }
+      ]
+    },
+    {
+      "model": "capture_lifecycle",
+      "checks": [
+        {
+          "command": [
+            "quint",
+            "typecheck",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/capture_lifecycle.qnt"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-capture_lifecycle-0.log",
+          "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsedNs": 1933375434,
+          "named": 0
+        },
+        {
+          "command": [
+            "quint",
+            "test",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/capture_lifecycle.qnt",
+            "--backend=rust",
+            "--seed=2026100304"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-capture_lifecycle-1.log",
+          "logSHA256": "96f54f42387375ae2a1213ebec7dba08789b687cc30f8a89f483a6adbfac71c1",
+          "elapsedNs": 1871627479,
+          "named": 4
+        },
+        {
+          "command": [
+            "quint",
+            "run",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/capture_lifecycle.qnt",
+            "--invariant=invariant",
+            "--max-samples=2000",
+            "--max-steps=100",
+            "--backend=rust",
+            "--seed=2026100304",
+            "--verbosity=1"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-capture_lifecycle-2.log",
+          "logSHA256": "daf4fac476a3d5e87e65db4275794b4bae40cc25d79ded1ea07e25f52a42a157",
+          "elapsedNs": 4328943221,
+          "named": 0
+        }
+      ]
+    },
+    {
+      "model": "service_queries",
+      "checks": [
+        {
+          "command": [
+            "quint",
+            "typecheck",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/service_queries.qnt"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-service_queries-0.log",
+          "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsedNs": 1850857391,
+          "named": 0
+        },
+        {
+          "command": [
+            "quint",
+            "test",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/service_queries.qnt",
+            "--backend=rust",
+            "--seed=2026100304"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-service_queries-1.log",
+          "logSHA256": "2662634241de7f556c93c7e750309fdc6e8c4d2948fb8b69186efa43109b6551",
+          "elapsedNs": 2169182333,
+          "named": 4
+        },
+        {
+          "command": [
+            "quint",
+            "run",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/service_queries.qnt",
+            "--invariant=invariant",
+            "--max-samples=2000",
+            "--max-steps=100",
+            "--backend=rust",
+            "--seed=2026100304",
+            "--verbosity=1"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-service_queries-2.log",
+          "logSHA256": "c1ae48eef5b38115b69c0fc08c71a4c03d107b964d0ce6d32e3e87f58c1d0490",
+          "elapsedNs": 5681960434,
+          "named": 0
+        }
+      ]
+    },
+    {
+      "model": "reversal",
+      "checks": [
+        {
+          "command": [
+            "quint",
+            "typecheck",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/reversal.qnt"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-reversal-0.log",
+          "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsedNs": 2273265216,
+          "named": 0
+        },
+        {
+          "command": [
+            "quint",
+            "test",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/reversal.qnt",
+            "--backend=rust",
+            "--seed=2026100304"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-reversal-1.log",
+          "logSHA256": "f7236d0d8474418eea8c8b61d0598203858c2938c1a0dc798b5848f77b20d180",
+          "elapsedNs": 2275506267,
+          "named": 6
+        },
+        {
+          "command": [
+            "quint",
+            "run",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/reversal.qnt",
+            "--invariant=invariant",
+            "--max-samples=2000",
+            "--max-steps=100",
+            "--backend=rust",
+            "--seed=2026100304",
+            "--verbosity=1"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-reversal-2.log",
+          "logSHA256": "33f5c5eb2464e92b0558cfe586c55ae520c6efc00a5b02ec7b8e01f9738fe9d3",
+          "elapsedNs": 4018604315,
+          "named": 0
+        }
+      ]
+    },
+    {
+      "model": "service_restart",
+      "checks": [
+        {
+          "command": [
+            "quint",
+            "typecheck",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/service_restart_test.qnt"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-service_restart-0.log",
+          "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsedNs": 1688641831,
+          "named": 0
+        },
+        {
+          "command": [
+            "quint",
+            "test",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/service_restart_test.qnt",
+            "--backend=rust",
+            "--seed=2026100304"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-service_restart-1.log",
+          "logSHA256": "0a1512dd86cd4f0601d9f49c878e0e689883e1f5d42ecae4104d3def21b8f364",
+          "elapsedNs": 1988326560,
+          "named": 6
+        },
+        {
+          "command": [
+            "quint",
+            "run",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/service_restart.qnt",
+            "--invariant=allProps",
+            "--max-samples=2000",
+            "--max-steps=100",
+            "--backend=rust",
+            "--seed=2026100304",
+            "--verbosity=1"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-service_restart-2.log",
+          "logSHA256": "1e1ec103615848d8958cb4580f3f4aa2368ca5664cbc023b99a45fb8af5851f4",
+          "elapsedNs": 2901674072,
+          "named": 0
+        }
+      ]
+    },
+    {
+      "model": "recovery_collection",
+      "checks": [
+        {
+          "command": [
+            "quint",
+            "typecheck",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/recovery_collection_test.qnt"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-recovery_collection-0.log",
+          "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsedNs": 3831428551,
+          "named": 0
+        },
+        {
+          "command": [
+            "quint",
+            "test",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/recovery_collection_test.qnt",
+            "--backend=rust",
+            "--seed=2026100304"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-recovery_collection-1.log",
+          "logSHA256": "01d2ba783c686264b8e6add9034e70a4ce651f2c6abfc6056a65a368bffc3b4c",
+          "elapsedNs": 6885326843,
+          "named": 19
+        },
+        {
+          "command": [
+            "quint",
+            "run",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/recovery_collection.qnt",
+            "--invariant=allProps",
+            "--max-samples=2000",
+            "--max-steps=100",
+            "--backend=rust",
+            "--seed=2026100304",
+            "--verbosity=1"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-recovery_collection-2.log",
+          "logSHA256": "40d5ef80a6285cabbc4df4dbf9f0791476f3803b38b90102ef714c5b26d06575",
+          "elapsedNs": 9148858103,
+          "named": 0
+        }
+      ]
+    },
+    {
+      "model": "actual_service_binding",
+      "checks": [
+        {
+          "command": [
+            "quint",
+            "typecheck",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/actual_service_binding_test.qnt"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-actual_service_binding-0.log",
+          "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsedNs": 3466029937,
+          "named": 0
+        },
+        {
+          "command": [
+            "quint",
+            "test",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/actual_service_binding_test.qnt",
+            "--backend=rust",
+            "--seed=2026100304"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-actual_service_binding-1.log",
+          "logSHA256": "479f601dcc9199c23bd5fba0b590bfc4aa787b752b8a1c9d9b421e6293afbf65",
+          "elapsedNs": 6837293504,
+          "named": 25
+        },
+        {
+          "command": [
+            "quint",
+            "run",
+            "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/actual_service_binding.qnt",
+            "--invariant=allProps",
+            "--max-samples=2000",
+            "--max-steps=100",
+            "--backend=rust",
+            "--seed=2026100304",
+            "--verbosity=1"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/v4-final-actual_service_binding-2.log",
+          "logSHA256": "00f428f2ce1465775aeae71cc0122a277af527e4781d5b3f820652f0d621586e",
+          "elapsedNs": 5896281152,
+          "named": 0
+        }
+      ]
+    }
+  ],
+  "nativeLaunch": false
+}

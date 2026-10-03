@@ -1,0 +1,153 @@
+{
+  "helper_observer.py": {
+    "oldSHA256": "4f19c27d8ab7c5f210544156855cc29e5221e32fd6967065d972fb0315322809",
+    "hunks": [
+      {
+        "oldRange": [
+          292,
+          292
+        ],
+        "old": "",
+        "new": "def load_delegate_diagnostic(config,wrapper,ancestry):\n    \"\"\"Exact private evidence source only after the original query authorization.\"\"\"\n    import types\n    settings=config['delegateDiagnostic'];path=Path(settings['source']);home=Path(config['log']).parent\n    if path!=home/'.local/bin/delegate_diagnostics.py' or Path(settings['directory'])!=home/'delegate-diagnostics':raise RuntimeError('Exact private diagnostic paths required')\n    regular(path,0o700);witness=material_witness(path,131072);data=path.read_bytes()\n    if len(data)>131072 or witness!=material_witness(path,131072) or witness['sha256']!=settings['sourceSHA256'] or digest_bytes(data)!=settings['sourceSHA256']:raise RuntimeError('Exact reviewed observer bytes changed')\n    module=types.ModuleType('_owned_delegate_diagnostics');module.__file__=str(path);exec(compile(data,str(path),'exec'),module.__dict__)\n    parent=ancestry[0];qs=ancestry[1]\n    if wrapper['parent']!=parent['pid'] or any(qs[k]!=config['queryRoots']['qs']['identity'][k] for k in ('pid','start','pgid')):raise RuntimeError('Exact diagnostic snapshot/QS lineage required')\n    actual=Path(config['actual'])\n    if not actual.read_bytes().startswith(b'#!/usr/bin/env python3\\n'):raise RuntimeError('Exact actual backend interpreter chain required')\n    executable=Path('/usr/bin/python3').resolve();env_executable=Path('/usr/bin/env').resolve()\n    chain=[dict(executable=str(env_executable),executableSHA256=digest(env_executable),argv=['/usr/bin/env','python3',str(actual),'list','--json']),dict(executable=str(executable),executableSHA256=digest(executable),argv=['python3',str(actual),'list','--json'])]\n    journal=module.Journal(Path(settings['directory'])/(str(wrapper['pid'])+'-'+str(wrapper['start'])+'.jsonl'))\n    return module,journal,parent,qs,chain\n\n\n"
+      },
+      {
+        "oldRange": [
+          356,
+          356
+        ],
+        "old": "",
+        "new": "    diagnostic=None;diagnostic_journal=None;diagnostic_observer=None;diagnostic_summary=None\n"
+      },
+      {
+        "oldRange": [
+          357,
+          357
+        ],
+        "old": "",
+        "new": "        if query_kind=='qs' and kind=='snap':diagnostic,diagnostic_journal,diagnostic_parent,diagnostic_qs,diagnostic_chain=load_delegate_diagnostic(config,wrapper,ancestry)\n"
+      },
+      {
+        "oldRange": [
+          389,
+          389
+        ],
+        "old": "",
+        "new": "                    if diagnostic is not None:\n                        regular(config['delegateDiagnostic']['source'],0o700)\n                        if digest(config['delegateDiagnostic']['source'])!=config['delegateDiagnostic']['sourceSHA256']:os._exit(126)\n                        diagnostic.child_bootstrap()\n"
+      },
+      {
+        "oldRange": [
+          394,
+          394
+        ],
+        "old": "",
+        "new": "            if diagnostic is not None:diagnostic_observer=diagnostic.Observer(diagnostic_journal,delegate,diagnostic_parent,diagnostic_qs,diagnostic_chain,dict(operation=key,args=args,wrapper=wrapper,actual=config['actual'],actualSHA256=config['actualSHA256'],observerSHA256=config['delegateDiagnostic']['sourceSHA256'],sourceGuardBeforeGate=True))\n"
+      },
+      {
+        "oldRange": [
+          399,
+          399
+        ],
+        "old": "",
+        "new": "                            'diagnosticLog':str(diagnostic_journal.path) if diagnostic_journal is not None else None,\n"
+      },
+      {
+        "oldRange": [
+          402,
+          403
+        ],
+        "old": "        _, status = os.waitpid(child, 0)\n",
+        "new": "        if diagnostic_observer is not None:status,diagnostic_summary=diagnostic_observer.run()\n        else:_, status = os.waitpid(child, 0)\n"
+      },
+      {
+        "oldRange": [
+          408,
+          409
+        ],
+        "old": "                            'exitCode': code, 'timeNs': time.time_ns()})\n",
+        "new": "                            'exitCode': code, 'timeNs': time.time_ns(),\n                            'diagnostic':diagnostic_summary})\n"
+      },
+      {
+        "oldRange": [
+          414,
+          414
+        ],
+        "old": "",
+        "new": "        if diagnostic_journal is not None:diagnostic_journal.close()\n"
+      }
+    ]
+  },
+  "helper_setup.py": {
+    "oldSHA256": "a83583a15fd35bb8cb3b3ed79a43065f1e95c4cfff18b7c60a44f9a81b46224b",
+    "hunks": [
+      {
+        "oldRange": [
+          31,
+          31
+        ],
+        "old": "",
+        "new": "\ndef diagnostic_material(config):\n    home=Path(config['log']).parent;settings=config['delegateDiagnostic']\n    source=home/'.local/bin/delegate_diagnostics.py';directory=home/'delegate-diagnostics'\n    if settings['source']!=str(source) or settings['directory']!=str(directory):raise RuntimeError('Exact private diagnostic material required')\n    observer.regular(source,0o700)\n    if observer.digest(source)!=settings['sourceSHA256']:raise RuntimeError('Exact diagnostic source changed')\n    info=directory.lstat()\n    if not stat.S_ISDIR(info.st_mode) or info.st_uid!=os.getuid() or stat.S_IMODE(info.st_mode)!=0o700:raise RuntimeError('Exact private diagnostic directory required')\n    return directory\n\ndef diagnostic_path(config,event):\n    directory=diagnostic_material(config);identity=event['wrapper']\n    expected=directory/(str(identity['pid'])+'-'+str(identity['start'])+'.jsonl')\n    if event.get('diagnosticLog')!=str(expected):raise RuntimeError('Exact authorized diagnostic log differs')\n    return expected\n\ndef diagnostic_records(path):\n    fd=os.open(path,os.O_RDONLY|os.O_NOFOLLOW|os.O_CLOEXEC)\n    with os.fdopen(fd,'rb') as stream:data,identity=archive_descriptor(stream,path)\n    if len(data)>33554432 or (data and not data.endswith(b'\\n')):raise RuntimeError('Bounded complete diagnostic JSONL required')\n    rows=[json.loads(line) for line in data.splitlines()]\n    if len(rows)>2048 or any(not isinstance(row,dict) or row.get('index')!=index for index,row in enumerate(rows)):raise RuntimeError('Complete ordered diagnostic records required')\n    return data,identity,rows\n\ndef verify_diagnostic(config,start,terminal):\n    path=diagnostic_path(config,start);data,identity,rows=diagnostic_records(path)\n    summary=terminal.get('diagnostic')\n    if not isinstance(summary,dict) or summary.get('path')!=str(path) or summary.get('complete') is not True or summary.get('normalOriginalWait') is not True or summary.get('errors')!=[] or summary.get('exitCode')!=terminal['exitCode'] or summary.get('productFdRoutingChanged') is not False:raise RuntimeError('Exact complete delegate diagnostic required')\n    if not rows or rows[0]['event']!='observer-bound' or rows[-1]['event']!='delegate-wait-terminal':raise RuntimeError('Exact diagnostic boundary records required')\n    bound=rows[0];end=rows[-1]\n    if bound['delegate']!=start['delegate'] or bound['parent']!=start['ancestry'][0] or bound['qs']!=start['ancestry'][1] or bound['metadata']['operation']!=start['operation'] or bound['metadata']['actualSHA256']!=start['actualSHA256'] or bound['metadata']['observerSHA256']!=config['delegateDiagnostic']['sourceSHA256']:raise RuntimeError('Exact diagnostic source/lifetime binding differs')\n    if end['identity']!=start['delegate'] or end['complete'] is not True or end['errors']!=[] or end['normalOriginalWait'] is not True or end['exitCode']!=terminal['exitCode'] or os.waitstatus_to_exitcode(end['rawWaitStatus'])!=terminal['exitCode']:raise RuntimeError('Exact original delegate wait differs')\n    allowed={'observer-bound','bootstrap-stop','bootstrap-syscall-return','backend-exec','stdio-write-entry','stdio-write-return','genuine-signal-forward','delegate-wait-terminal'}\n    if any(row['event'] not in allowed for row in rows):raise RuntimeError('Unknown/error diagnostic event')\n    execs=[row for row in rows if row['event']=='backend-exec']\n    if [row['execOrdinal'] for row in execs]!=[0,1] or end['execChain']!=2:raise RuntimeError('Exact backend exec chain incomplete')\n    actual=start['actual'];expected=[(str(Path('/usr/bin/env').resolve()),['/usr/bin/env','python3',actual,'list','--json']),(str(Path('/usr/bin/python3').resolve()),['python3',actual,'list','--json'])]\n    if any(row['identity']!=start['delegate'] or row['stdio']!=bound['stdio'] or (row['executable'],row['argv'])!=target for row,target in zip(execs,expected)):raise RuntimeError('Exact diagnostic exec/stdio identity differs')\n    if any(type(row.get('monotonicNs')) is not int or type(row.get('utcNs')) is not int for row in rows) or any(left['monotonicNs']>right['monotonicNs'] for left,right in zip(rows,rows[1:])):raise RuntimeError('Exact chronological diagnostic observations required')\n    entries={row['index']:row for row in rows if row['event']=='stdio-write-entry'};returned=set()\n    for row in rows:\n        if row['event']!='stdio-write-return':continue\n        key=row['entry']\n        if key not in entries or key in returned or key>=row['index']:raise RuntimeError('Exact stdio entry/return pairing required')\n        entry=entries[key];raw=bytes.fromhex(entry['offeredBytesHex']);value=row['kernelReturn'];error=value<0\n        if entry.get('fdWitness')!=bound['stdio'].get(str(entry['fd'])) or entry['fd'] not in (1,2) or entry['nr'] not in (1,20) or entry['fd']!=row['fd'] or entry['nr']!=row['nr'] or len(raw)>1048576 or sum(entry['vectorLengths'])!=len(raw) or hashlib.sha256(raw).hexdigest()!=entry['offeredSHA256'] or type(value) is not int or value>len(raw) or row['kernelIsError']!=error or row['errno']!=(-value if error else None) or row['offeredCount']!=len(raw) or row['deliveredCount']!=(0 if error else value):raise RuntimeError('Exact original stdio bytes/return required')\n        returned.add(key)\n    if returned!=set(entries) or end['stdioSyscalls']!=len(entries) or summary['stdioSyscalls']!=len(entries):raise RuntimeError('Incomplete original stdio observations')\n    return dict(path=str(path),sha256=hashlib.sha256(data).hexdigest(),identity=identity,records=len(rows),stdioSyscalls=len(entries),completeEOF=True,exitCode=terminal['exitCode'],schedulingPerturbed=True,nativeTimingAccepted=False)\n\ndef diagnostic_completeness(config,events):\n    starts=[row for row in events if row['event']=='started'];ends=[row for row in events if row['event']=='terminal'];proof=[]\n    for start in starts:\n        selected=start.get('queryRoot')=='qs' and start['helper']=='snap'\n        if not selected:\n            if start.get('diagnosticLog') is not None:raise RuntimeError('Unexpected delegated diagnostic role')\n            continue\n        matches=[row for row in ends if row['operation']==start['operation'] and row['wrapper']==start['wrapper'] and row['delegate']==start['delegate']]\n        if len(matches)!=1:raise RuntimeError('Exact diagnostic terminal missing/duplicated')\n        if observer.still_live(start['wrapper']) or observer.still_live(start['delegate']):raise RuntimeError('Exact diagnostic processes still active')\n        proof.append(verify_diagnostic(config,start,matches[0]))\n    expected={Path(row['path']) for row in proof}\n    if set(diagnostic_material(config).iterdir())!=expected:raise RuntimeError('Extra or missing diagnostic invocation')\n    return dict(complete=True,invocations=proof,observedQSQueries=len(proof),schedulingPerturbed=True,nativeTimingAccepted=False)\n\ndef archive_diagnostics(config,events,destination):\n    directory=diagnostic_material(config);result=[];expected=set()\n    for event in events:\n        if event['event']=='started' and event.get('queryRoot')=='qs' and event['helper']=='snap':expected.add(diagnostic_path(config,event))\n    destination.mkdir(mode=0o700)\n    for path in sorted(set(directory.iterdir())|expected):\n        row=dict(source=str(path),expected=path in expected,completeEOF=False)\n        try:\n            fd=os.open(path,os.O_RDONLY|os.O_NOFOLLOW|os.O_CLOEXEC)\n            with os.fdopen(fd,'rb') as stream:\n                before=os.fstat(stream.fileno())\n                if not stat.S_ISREG(before.st_mode) or before.st_uid!=os.getuid() or stat.S_IMODE(before.st_mode)!=0o600 or before.st_size>33554432:raise RuntimeError('Unsafe bounded diagnostic archive')\n                data=stream.read(33554433);after=os.fstat(stream.fileno());named=path.lstat()\n            complete=len(data)==before.st_size and archive_witness(before)==archive_witness(after)==archive_witness(named)\n            fd=os.open(destination/path.name,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)\n            with os.fdopen(fd,'wb') as stream:stream.write(data)\n            row.update(archive=str(destination/path.name),sha256=hashlib.sha256(data).hexdigest(),sourceBefore=list(archive_witness(before)),sourceAfter=list(archive_witness(after)),sourceNamed=list(archive_witness(named)),completeEOF=complete)\n            if not complete:raise RuntimeError('Diagnostic archival source changed/truncated; raw bytes retained without acceptance')\n            if data and not data.endswith(b'\\n'):raise RuntimeError('Truncated diagnostic JSONL; raw bytes retained')\n            records=[json.loads(line) for line in data.splitlines()]\n            if len(records)>2048 or any(not isinstance(record,dict) or record.get('index')!=index for index,record in enumerate(records)):raise RuntimeError('Diagnostic index incomplete; raw bytes retained')\n            row['records']=len(records)\n        except Exception as error:row['error']=repr(error)\n        result.append(row)\n    write_json(destination/'archive.json',dict(logs=result,normalLifecycleAccepted=False,sourceSHA256=config['delegateDiagnostic']['sourceSHA256']))\n    return result\n"
+      },
+      {
+        "oldRange": [
+          68,
+          68
+        ],
+        "old": "",
+        "new": "    result['delegateDiagnostics']=archive_diagnostics(config,events,destination/'delegate-diagnostics')\n"
+      },
+      {
+        "oldRange": [
+          114,
+          115
+        ],
+        "old": "    config={'instance':env['HYPRLAND_INSTANCE_SIGNATURE'],\n",
+        "new": "    diagnostic_source=home/'.local/bin/delegate_diagnostics.py'\n    shutil.copyfile(B/'delegate_diagnostics.py',diagnostic_source);diagnostic_source.chmod(0o700)\n    diagnostic_directory=home/'delegate-diagnostics';diagnostic_directory.mkdir(mode=0o700)\n    config={'delegateDiagnostic':{'source':str(diagnostic_source),'sourceSHA256':observer.digest(diagnostic_source),'directory':str(diagnostic_directory)},\n            'instance':env['HYPRLAND_INSTANCE_SIGNATURE'],\n"
+      },
+      {
+        "oldRange": [
+          276,
+          276
+        ],
+        "old": "",
+        "new": "            result['delegateDiagnosticCompleteness']=diagnostic_completeness(config,events)\n"
+      }
+    ]
+  },
+  "qs_lifecycle.py": {
+    "oldSHA256": "1b7fdb5612503101e50e9f6ede3ea432c0e6b1f480b9712498dedef943314bd4",
+    "hunks": [
+      {
+        "oldRange": [
+          56,
+          57
+        ],
+        "old": "  self.guard();start=time.monotonic_ns();record=dict(role=role,command=command,startedNs=start,qsIdentity=self.identity,nativeOutcomeNotInferred=True)\n",
+        "new": "  self.guard();start=time.monotonic_ns();record=dict(role=role,command=command,startedNs=start,startedUtcNs=time.time_ns(),qsIdentity=self.identity,nativeOutcomeNotInferred=True)\n"
+      },
+      {
+        "oldRange": [
+          61,
+          62
+        ],
+        "old": "   result=subprocess.CompletedProcess(command,child.returncode,stdout,stderr);record.update(returncode=result.returncode,stdout=stdout,stderr=stderr,completedNs=time.monotonic_ns(),originalProbeGone=not proc.still_live(record['processIdentity']))\n",
+        "new": "   result=subprocess.CompletedProcess(command,child.returncode,stdout,stderr);record.update(returncode=result.returncode,stdout=stdout,stderr=stderr,completedNs=time.monotonic_ns(),completedUtcNs=time.time_ns(),originalProbeGone=not proc.still_live(record['processIdentity']))\n"
+      },
+      {
+        "oldRange": [
+          65,
+          66
+        ],
+        "old": "   record.update(error=repr(error),returncode=child.returncode,stdout=stdout,stderr=stderr,completedNs=time.monotonic_ns());self.records.append(record);raise\n",
+        "new": "   record.update(error=repr(error),returncode=child.returncode,stdout=stdout,stderr=stderr,completedNs=time.monotonic_ns(),completedUtcNs=time.time_ns());self.records.append(record);raise\n"
+      },
+      {
+        "oldRange": [
+          103,
+          104
+        ],
+        "old": "  return dict(exitCode=0,exactOriginalGone=True,normalQuit=True,selectedInstance=instance,records=self.records)\n",
+        "new": "  return dict(exitCode=0,exactOriginalGone=True,normalQuit=True,exitObservedNs=time.monotonic_ns(),exitObservedUtcNs=time.time_ns(),selectedInstance=instance,records=self.records)\n"
+      }
+    ]
+  }
+}

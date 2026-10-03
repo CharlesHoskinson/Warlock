@@ -1,0 +1,51 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-fe63a18458ff4007abc0c149e1922e30.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/delegate_observer.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/delegate_observer_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  delegate_observer_test\n    ok exactOwnedSuccessfulWriteWaitTest passed 1 test(s)\n    ok unauthorizedSourceRefusesTest passed 1 test(s)\n    ok unrelatedChildRefusesTest passed 1 test(s)\n    ok changedSourceRefusesTest passed 1 test(s)\n    ok unknownStopCannotNormalizeNormalExitTest passed 1 test(s)\n    ok genuineSignalForwardDoesNotMutateSyscallTest passed 1 test(s)\n    ok nonzeroDelegateExitRemainsFailTest passed 1 test(s)\n    ok incompleteWritePayloadRefusesTest passed 1 test(s)\n    ok oversizedWriteRefusesTest passed 1 test(s)\n    ok unknownFdRoutingRefusesTest passed 1 test(s)\n    ok unpairedSyscallReturnRefusesTest passed 1 test(s)\n    ok pendingWriteCannotInferTerminalReceiptTest passed 1 test(s)\n    ok malformedExecRefusesTest passed 1 test(s)\n    ok wrongWaitCannotSupplyNormalTerminalTest passed 1 test(s)\n    ok detachAfterObserverErrorRetainsFailureTest passed 1 test(s)\n    ok actualWaitEndsSamplingTest passed 1 test(s)\n\n  16 passing (151ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/delegate_observer.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (186ms at 10753 traces/second).\nUse --seed=0x145b07d --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "nativeLaunch": false,
+  "runtimeImplemented": false,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/DELEGATE_OBSERVER_CONTRACT.md": "e6bc6fe776d4d657098c63c4211eece6f457a9c6972f46dfe3f2e20b07b53e86",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/delegate_observer.qnt": "c9bd3f70146af3f1f9a4bf91b0345ce355a126a2e025a9b770d73dec270c4dc7",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/delegate_observer_test.qnt": "cf0bff1d38d183faae293200f33c65078f783ac24cd474b3c6618098ef1d7ad6"
+  }
+}

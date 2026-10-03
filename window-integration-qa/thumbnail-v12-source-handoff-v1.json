@@ -1,0 +1,79 @@
+{
+  "result": "source-ready",
+  "candidate": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12",
+  "inputs": 21745,
+  "modes": 21745,
+  "links": 287,
+  "artifacts": {
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-source-ready-v1.json": {
+      "sha256": "357dcc3c475f23e1a87e4070b38d59eff2777dd36c578ff4737f1a178bfa99f7",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-pairing-proposal-v1/freeze_collector_v12_v2.py": {
+      "sha256": "dd06a1beeca8b4720e45db6ab09010375a5524fb48625bd29eeff53de0e31879",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-pairing-proposal-v1/source-conservation.json": {
+      "sha256": "a52350c783bf5df1e2c70bc0734209f0b352a17bf718eb87f3eb78cc0e30cea7",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-pairing-proposal-v1/required-proof-confirmation.json": {
+      "sha256": "92d415a2a5c85f0850d592d46b7d0c1159fc615c687dd297d617c093b3ed3541",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-pairing-proposal-v1/intended-source-map.json": {
+      "sha256": "c2eff584db918d5f588907edb19576d66ffef486860653f93fa42ec8d8973d71",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/report.json": {
+      "sha256": "6ee8d278995be6a3cb9d927d0e881db8b356935aebe7e5b93925d536ffa41e6c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/manifest-restore-planning-v27.json": {
+      "sha256": "54857ba311e2862e37037195283cf98b6fba8bb286cb33d32e92685671304e40",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/source-ready-v27.json": {
+      "sha256": "e2ae883d241edf4c8c38cc00185bf07f0310d766de366100b797e70ff279747a",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-v27-root-source-review-v1.json": {
+      "sha256": "f7e612ce21ce4c7785668325bbde44e9ce95b6ab3979136f59a387a4cf968d9c",
+      "mode": 384
+    }
+  },
+  "sourceChanges": [
+    "module_binding.py",
+    "native_faults.py"
+  ],
+  "conservation": "459 inherited regular files:457 exact+2 service selectors; whole native integration/D3/helper observer exact; whole fault runner inverse exact",
+  "proof": {
+    "pythonTests": 169,
+    "quintNamedScenarios": 205,
+    "quintModels": 14,
+    "samplesPerModel": 2000,
+    "stepsPerSample": 100,
+    "commands": 43,
+    "all43OriginalCommandsExact": true,
+    "sourceHashesModesExact": 456,
+    "session": 20912,
+    "terminalExitCode": 0
+  },
+  "collection": {
+    "session": 3268,
+    "terminalExitCode": 0,
+    "scope": "qa-harness-2accc955e09549bd903c0ae2129c15c8"
+  },
+  "retainedInitialCopyFailure": "/home/hoskinson/window-integration-qa/thumbnail-v12-pairing-proposal-v1/initial-copy-conservation-failure.json",
+  "completedCopies": "/home/hoskinson/window-integration-qa/thumbnail-v12-pairing-proposal-v1/retained-copy-completion.json",
+  "nativeTupleChanged": false,
+  "freezeWritten": false,
+  "nativeLaunch": false,
+  "mainChanged": false,
+  "original38Accepted": false,
+  "original34Accepted": false,
+  "sourceHold": true,
+  "rootFreezeCommandTemplate": "/usr/bin/python3 /home/hoskinson/window-integration-qa/qa_run.py -- /usr/bin/python3 -B /home/hoskinson/window-integration-qa/thumbnail-v12-pairing-proposal-v1/freeze_collector_v12_v2.py --freeze --review ABSOLUTE_ROOT_PASS_REVIEW --evidence /home/hoskinson/window-integration-qa/thumbnail-v12-source-ready-v1.json 357dcc3c475f23e1a87e4070b38d59eff2777dd36c578ff4737f1a178bfa99f7",
+  "rootVerifyCommand": "/usr/bin/python3 /home/hoskinson/window-integration-qa/qa_run.py -- /usr/bin/python3 -B /home/hoskinson/window-integration-qa/thumbnail-v12-pairing-proposal-v1/freeze_collector_v12_v2.py --verify",
+  "originalBaselineInvocationAfterRootGrant": "/usr/bin/python3 /home/hoskinson/window-integration-qa/qa_run.py -- /usr/bin/python3 -B /home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/native_integration.py --attempt /home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1"
+}

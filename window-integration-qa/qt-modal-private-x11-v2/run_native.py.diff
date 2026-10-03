@@ -1,0 +1,63 @@
+--- accepted V9/run_native.py
++++ fresh X11/run_native.py
+@@ -2,7 +2,7 @@
+ """Reviewed private Qt compatibility only: main observations never write."""
+ from pathlib import Path
+ import argparse,hashlib,importlib.util,json,os,re,subprocess,sys
+-QA=Path('/home/hoskinson/window-integration-qa');HOST=QA/'private-weston-aq-host-v4';B=Path(__file__).resolve().parent
++QA=Path('/home/hoskinson/window-integration-qa');HOST=QA/'private-weston-x11-host-v1';B=Path(__file__).resolve().parent
+ sys.path.insert(0,str(QA))
+ from qa_launch import require_qa_scope
+ from private_session import run_session
+@@ -48,11 +48,11 @@
+  scope=require_qa_scope();main_env=dict(os.environ);original_environment=dict(main_env)
+  output=args.attempt.resolve();assert output.parent==B and output.name.startswith('attempt-');os.umask(0o077);output.mkdir(mode=0o700)
+  frozen=(B/'frozen-inputs.json').read_bytes();snapshot=output/'main-before.json';captured=None;host=None;session_report=None
+- report={'scope':'Private Weston headless GL→Hyprland Wayland, public Qt6.11.2 same QApplication WindowModal toolkit compatibility','result':'pending','nativeMainInputProved':False,'physicalHardwareProved':False,'mainGUIWrites':False,'mainRestorationWrites':False,'candidateOnly':True,'productionDeployment':False,'scopeEvidence':scope,'sourceManifestSHA256':sha(B/'frozen-inputs.json'),'hostChecks':[],'toolkitFeatureGates':[],'commandAcknowledgements':[],'mainPreservation':{},'cleanup':{}}
++ report={'scope':'Private Weston headless GL→Hyprland Wayland, public Qt6.11.2 X11/XCB same QApplication WindowModal toolkit compatibility','result':'pending','nativeMainInputProved':False,'physicalHardwareProved':False,'mainGUIWrites':False,'mainRestorationWrites':False,'candidateOnly':True,'productionDeployment':False,'scopeEvidence':scope,'sourceManifestSHA256':sha(B/'frozen-inputs.json'),'hostChecks':[],'toolkitFeatureGates':[],'commandAcknowledgements':[],'mainPreservation':{},'cleanup':{}}
+  def gate(name,value,**details):report['hostChecks'].append({'name':name,'passed':bool(value),**details});assert value,name
+  try:
+   captured=observer('capture',output/'before-main',main_env,snapshot)
+-  spec=importlib.util.spec_from_file_location('_qt_private_weston_host_v4',HOST/'weston_host.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
++  spec=importlib.util.spec_from_file_location('_qt_private_x11_weston_host_v1',HOST/'weston_host.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+   host=module.PrivateHyprSession(output/'host',main_env,width=1600,height=1000,nested_lua=(B/'nested-qt.lua').read_bytes(),dri_prime='pci-0000_00_02_0',mesa_vendor=True)
+   with host as session:
+    loaded=False;probe_loaded=False
+@@ -60,7 +60,8 @@
+     gate('private host actual DMA-BUF probe succeeded',bool(session.evidence.get('actualDmabuf')),probe=session.evidence.get('actualDmabuf'))
+     gate('only exact private1600x1000 scale1 output exists',len(session.data('monitors'))==1 and all(session.data('monitors')[0].get(k)==v for k,v in {'width':1600,'height':1000,'scale':1,'x':0,'y':0,'transform':0}.items()),outputs=session.data('monitors'))
+     xwayland=json.loads(session.ctl('getoption','xwayland:enabled','-j'))
+-    gate('private Xwayland explicitly disabled',xwayland.get('bool') is False,option=xwayland)
++    x11=session.evidence.get('x11',{});setups=x11.get('readOnlySetup',[])
++    gate('explicit owned private Xwayland with real authenticated/refused setup',xwayland.get('bool') is True and len(setups)==2 and setups[0]['status']==0 and setups[1]['status']==1 and x11['server']['ppid']==session.evidence['compositorPID'],option=xwayland,authority=x11)
+     gate('private child has no configuration errors or existing clients/plugins',not session.ctl('configerrors').strip() and session.data('clients')==[] and session.data('plugin','list')==[])
+     aq_maps=module.original.mapped_files(session.evidence['compositorPID'])
+     gate('actual exact lifecycle Aquamarine module mapped only in private child',aq_maps['files'].get(str(AQ))==sha(AQ),mappedSHA256=aq_maps['files'].get(str(AQ)))
+@@ -77,8 +78,9 @@
+     probe_state=json.loads(session.ctl('repl','print(hl.plugin.qt_modal_probe.state())'))
+     gate('exact private read-only modal diagnostics mapped and callable',probe_maps['files'].get(str(PROBE))==sha(PROBE) and isinstance(probe_state,dict) and 'seatGrab' in probe_state,mappedSHA256=probe_maps['files'].get(str(PROBE)),initialState=probe_state)
+     session_report=run_session(session.env,output/'qt',main_env,session.evidence,session.guard)
+-    report['toolkitFeatureGates']=session_report['checks'];report['commandAcknowledgements']=session_report.get('commandAcknowledgements',[]);report['cleanup']['qt']=session_report['preservation']
++    report['x11ProtocolGates']=session_report.get('x11ProtocolGates',[]);report['toolkitFeatureGates']=session_report['checks'];report['commandAcknowledgements']=session_report.get('commandAcknowledgements',[]);report['cleanup']['qt']=session_report['preservation']
+     if session_report['result']!='pass':raise RuntimeError('Actual private Qt session failed:'+str(session_report.get('error')))
++    assert len(report['x11ProtocolGates'])==1 and all(row['passed'] for row in report['x11ProtocolGates'])
+     assert len(session_report['checks'])==EXPECTED_TOOLKIT_GATES and all(row['passed'] for row in session_report['checks'])
+    finally:
+     # Every owned Qt/pointer/motion client must have exited before native unload/host teardown.
+@@ -95,6 +97,7 @@
+       if not report['cleanup']['pluginUnloadedNormally']:raise RuntimeError('Private native plugin did not unload')
+      except Exception as error:report['cleanup']['pluginUnloadError']=repr(error);raise
+   report['cleanup']['host']=session.evidence
++  if not session.evidence.get('x11ServerGoneOnCompositorDisconnect') or not session.evidence.get('x11DisplayArtifactsGone') or session.evidence.get('x11CredentialCleanupErrors'):raise RuntimeError('Private X11 component/authority cleanup failed')
+   if not session.evidence.get('runtimeGone') or session.evidence.get('cleanupErrors') or session.evidence.get('unexpectedInnerDescendants') or session.evidence.get('remainingDescendants'):raise RuntimeError('Private host lifecycle failed')
+   archives=[row for row in session.evidence.get('archivedRuntime',[]) if Path(row['archive']).name=='hyprland.log']
+   if len(archives)!=1:raise RuntimeError('Exact owned archived compositor log required')
+@@ -112,7 +115,7 @@
+   report['mainPreservation']['frozenManifestBytes']=(B/'frozen-inputs.json').read_bytes()==frozen
+   try:verify();report['mainPreservation']['allFrozenInputsExact']=True
+   except Exception as error:report['sourceError']=repr(error);report['mainPreservation']['allFrozenInputsExact']=False
+-  passed_toolkit=len(report['toolkitFeatureGates'])==EXPECTED_TOOLKIT_GATES and all(row['passed'] for row in report['toolkitFeatureGates'])
++  passed_toolkit=len(report.get('x11ProtocolGates',[]))==1 and all(row['passed'] for row in report['x11ProtocolGates']) and len(report['toolkitFeatureGates'])==EXPECTED_TOOLKIT_GATES and all(row['passed'] for row in report['toolkitFeatureGates'])
+   report['result']='pass' if captured and not report.get('error') and not report.get('mainObservationError') and passed_toolkit and len(report['hostChecks'])==EXPECTED_HOST_GATES and all(row['passed'] for row in report['hostChecks']) and all(report['mainPreservation'].values()) else 'fail'
+   write_private(output/'report.json',report)
+  print(json.dumps({'result':report['result'],'toolkitFeatureGates':len(report['toolkitFeatureGates']),'toolkitFeaturePassed':sum(row['passed'] for row in report['toolkitFeatureGates']),'hostGates':len(report['hostChecks']),'commandAcknowledgements':len(report['commandAcknowledgements']),'mainPreservation':report['mainPreservation'],'reportSHA256':sha(output/'report.json'),'error':report.get('error')}))

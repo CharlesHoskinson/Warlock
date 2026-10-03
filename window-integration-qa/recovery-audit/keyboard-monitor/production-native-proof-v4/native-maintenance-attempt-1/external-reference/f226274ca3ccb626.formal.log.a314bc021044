@@ -1,0 +1,14 @@
+
+  maintenance
+    ok defaultPassiveTest passed 1 test(s)
+    ok staleNonceRefusalTest passed 1 test(s)
+    ok heldRefusalPreservesTest passed 1 test(s)
+    ok lockRefusalPreservesTest passed 1 test(s)
+    ok trueRetirementTest passed 1 test(s)
+    ok normalUnloadTest passed 1 test(s)
+    ok sameArtifactReloadNewNonceTest passed 1 test(s)
+    ok enabledIntentPreservedTest passed 1 test(s)
+
+  8 passing (249ms)
+[ok] No violation found (1759ms at 1137 traces/second).
+Use --seed=0x153a98d --backend=rust to reproduce.

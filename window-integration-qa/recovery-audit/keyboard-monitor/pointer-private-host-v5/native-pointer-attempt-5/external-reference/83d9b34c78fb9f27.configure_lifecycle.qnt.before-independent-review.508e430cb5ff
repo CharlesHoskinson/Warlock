@@ -1,0 +1,24 @@
+module configure_lifecycle {
+  var ack: bool
+  var published: bool
+  var dead: bool
+  var illegalBuffer: bool
+  var buffers: int
+  action init = all { ack'=false, published'=false, dead'=false, illegalBuffer'=false, buffers'=0 }
+  action stage = all { ack'=ack, published'=published, dead'=dead, illegalBuffer'=illegalBuffer, buffers'=buffers }
+  action acknowledge = all { ack'=ack or not(dead), published'=published, dead'=dead, illegalBuffer'=illegalBuffer, buffers'=buffers }
+  action announce = all { ack'=ack, published'=published or (ack and not(dead)), dead'=dead, illegalBuffer'=illegalBuffer, buffers'=buffers }
+  action buffer = all { ack'=ack, published'=published, dead'=dead, illegalBuffer'=illegalBuffer or false, buffers'=if (ack and published and not(dead)) buffers+1 else buffers }
+  action destroy = all { ack'=ack, published'=published, dead'=true, illegalBuffer'=illegalBuffer, buffers'=buffers }
+  action frame = all { ack'=ack, published'=published, dead'=dead, illegalBuffer'=illegalBuffer, buffers'=buffers }
+  action step = any {stage, acknowledge, announce, buffer, destroy, frame}
+  val safe = not(illegalBuffer) and (not(published) or ack)
+  action check(p: bool) = all { assert(p), ack'=ack, published'=published, dead'=dead, illegalBuffer'=illegalBuffer, buffers'=buffers }
+  run initialCommitRefusedTest = init.then(buffer).then(check(buffers==0 and not(published)))
+  run toplevelDoesNotPublishTest = init.then(stage).then(frame).then(buffer).then(check(buffers==0 and not(ack)))
+  run ackAloneDoesNotCommitTest = init.then(acknowledge).then(buffer).then(check(buffers==0))
+  run acknowledgedPublicationAllowsBufferTest = init.then(acknowledge).then(announce).then(buffer).then(check(buffers==1))
+  run destroyedOutputCannotReappearTest = init.then(destroy).then(acknowledge).then(announce).then(buffer).then(check(dead and not(published) and buffers==0))
+  run repeatedConfigureStaysUsableTest = init.then(acknowledge).then(announce).then(buffer).then(stage).then(acknowledge).then(announce).then(buffer).then(check(buffers==2))
+  run publishedDestructionRefusesMoreTest = init.then(acknowledge).then(announce).then(buffer).then(destroy).then(buffer).then(check(buffers==1))
+}

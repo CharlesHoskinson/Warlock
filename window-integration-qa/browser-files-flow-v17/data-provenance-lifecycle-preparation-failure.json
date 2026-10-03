@@ -1,0 +1,32 @@
+{
+  "result": "fail",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v7/data_provenance_lifecycle_test.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: Record field name must be a string expression but is name: which\nGenerating record constraints for current,which,iadd(get(current, which), 1)\nGenerating constraints for 1\n\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v7/data_provenance_lifecycle.qnt:12:46\n  12:  action replace(which:str):bool=all{current'=current.with(which,current.get(which)+1),captured'=captured,saved'=saved,qualified'=qualified,accepted'=false}\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v7/data_provenance_lifecycle.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--verbosity=1"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: Record field name must be a string expression but is name: which\nGenerating record constraints for current,which,iadd(get(current, which), 1)\nGenerating constraints for 1\n\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v7/data_provenance_lifecycle.qnt:12:46\n  12:  action replace(which:str):bool=all{current'=current.with(which,current.get(which)+1),captured'=captured,saved'=saved,qualified'=qualified,accepted'=false}\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n"
+    }
+  ],
+  "authorityImplemented": false,
+  "nativeExecuted": false
+}

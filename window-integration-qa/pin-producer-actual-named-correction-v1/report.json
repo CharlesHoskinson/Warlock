@@ -1,0 +1,81 @@
+{
+  "result": "pass",
+  "schema": "actual-pin-producer-named-correction-v1",
+  "observedUTC": "2026-10-03T01:08:46.149745+00:00",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-aacf65f397fa489c878fbc11927c25ab.scope",
+    "coreLimit": 1
+  },
+  "command": [
+    "quint",
+    "test",
+    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v4/producer_closure.qnt",
+    "--backend=rust",
+    "--seed=2026100228",
+    "--match=^(exactNormal|noInputNoCredit|unknownRoleRefused|changedSourceRefused|runningClientRefused|missingRawRefused|badBeforeRefused|signalRefused|badHostRefused|reorderedStopsRefused|forceClientRefused|validReplacementRefused|faultCannotRevive|twoKnownClients)$"
+  ],
+  "cwd": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v4",
+  "exitCode": 0,
+  "elapsedSeconds": 1.7777878339984454,
+  "log": "/home/hoskinson/window-integration-qa/pin-producer-actual-named-correction-v1/named.log",
+  "logSHA256": "4ce0b9a81f8a3f70c7ee9e566c5150d8ce8e3b29ccb2a244835fea7cfa262653",
+  "model": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v4/producer_closure.qnt",
+  "sourceBefore": {
+    "sha256": "80baba7aa866171269068baa2b94c1589c279e16d25ac6c32fae42052cb0af57",
+    "mode": 420
+  },
+  "sourceAfter": {
+    "sha256": "80baba7aa866171269068baa2b94c1589c279e16d25ac6c32fae42052cb0af57",
+    "mode": 420
+  },
+  "sourceStable": true,
+  "expectedNames": [
+    "exactNormal",
+    "noInputNoCredit",
+    "unknownRoleRefused",
+    "changedSourceRefused",
+    "runningClientRefused",
+    "missingRawRefused",
+    "badBeforeRefused",
+    "signalRefused",
+    "badHostRefused",
+    "reorderedStopsRefused",
+    "forceClientRefused",
+    "validReplacementRefused",
+    "faultCannotRevive",
+    "twoKnownClients"
+  ],
+  "actualPassedNames": [
+    "exactNormal",
+    "noInputNoCredit",
+    "unknownRoleRefused",
+    "changedSourceRefused",
+    "runningClientRefused",
+    "missingRawRefused",
+    "badBeforeRefused",
+    "signalRefused",
+    "badHostRefused",
+    "reorderedStopsRefused",
+    "forceClientRefused",
+    "validReplacementRefused",
+    "faultCannotRevive",
+    "twoKnownClients"
+  ],
+  "actualNamedScenarios": 14,
+  "originalDefaultNamedScenariosExecuted": 0,
+  "originalFalseNamedClaim": 14,
+  "originalReportSHA256": "e6a5cc9920b38253773f9220e07d8cc2d42810c9e3099fa25a9f0fc72454075a",
+  "retainedInvariant": {
+    "samples": 2000,
+    "steps": 100,
+    "log": "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/producer-formal-final-2.log",
+    "sha256": "d4a3108a311abd98fee137ae3b55959d6b2473ad53ee2880b7274a98dd8ffde6",
+    "exitCode": 0
+  },
+  "invariantNewlyRun": false,
+  "historicalNamedBeforeClassifierClaim": false,
+  "productionSourceChanged": false,
+  "GUI": false,
+  "nativeAccepted": false,
+  "mainChanged": false
+}

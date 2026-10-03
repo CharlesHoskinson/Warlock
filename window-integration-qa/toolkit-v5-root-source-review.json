@@ -1,0 +1,28 @@
+{
+  "updatedUTC": "2026-10-01T21:42:15.630297+00:00",
+  "manifestSHA256": "b5a1363da1f0635ce21e05f961324c246bf31cb914993b798b2ff8eb00909e8a",
+  "all1354BytesAndModesExact": true,
+  "all129LinksExact": true,
+  "all936V4InputsPreserved": true,
+  "onlyReviewedNativeDelta": "expired-checked synchronous get() borrow of compositor unique-owned bars; no callbacks while borrowed",
+  "unchangedNativeSources": [
+    "barDeco.cpp",
+    "barDeco.hpp",
+    "main.cpp",
+    "dragBridge.hpp",
+    "installed-snap.lua"
+  ],
+  "reviewed": [
+    "unique CHyprBar construction and compositor ownership",
+    "core/Lua retirement completes before borrowing bars",
+    "destroying/nonexistent unique weak references skipped",
+    "getOwner locks shared window owner only",
+    "retireCaptionIntent callback-free local flags reset",
+    "genuine release/drop/focus semantics unchanged",
+    "actualHyprutils and Lua extracted API reproduces old assertion and corrected66checks",
+    "formal ownership model9cases+inherited19cases and2000samples each"
+  ],
+  "nativeAccepted": false,
+  "productionDeployed": false,
+  "mainWrites": false
+}

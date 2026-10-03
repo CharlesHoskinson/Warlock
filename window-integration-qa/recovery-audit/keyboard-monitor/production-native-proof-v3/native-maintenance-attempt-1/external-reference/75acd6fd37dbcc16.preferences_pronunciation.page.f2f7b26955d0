@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_pronunciation" xml:lang="sr">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_text_attributes"/>
+    <title type="sort">7. Изговор</title>
+    <title type="link">Изговор</title>
+    <desc>Дефинисање начина изговарања појединих речи</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Поставке изговора</title>
+  <p>Понекад ваш синтетизатор говора једноставно не изговори праву ствар за дату ниску. Можда бисте радије чули „laughing out loud“ уместо „LOL“, или „accessibility“ уместо „a11y“. Такође, може се десити да синтетизатор погрешно изговара неко име или технички термин.</p>
+  <p>Страница <gui>Изговор</gui> у прозорчету поставки <app>Орке</app> омогућава вам да додајете, уређујете и бришете уносе у <app>Оркином</app> речнику изговора.</p>
+  <p>Будући да је страница <gui>Изговор</gui> такође део поставки специфичних за апликацију, своје уносе можете прилагодити према потреби за сваку апликацију коју користите.</p>
+  <steps>
+    <title>Додавање новог уноса у речник</title>
+    <item>
+      <p>Притисните дугме <gui>Нови унос</gui> (<keyseq><key>Алт</key><key>N</key></keyseq>)</p>
+    </item>
+    <item>
+      <p>Унесите текст новог уноса и притисните <key>Enter</key> да завршите уређивање саме ниске.</p>
+    </item>
+    <item>
+      <p>Померите се на колону <gui>Ниска замене</gui> и притисните <key>Enter</key> да започнете уређивање.</p>
+    </item>
+    <item>
+      <p>Унесите текст који желите да буде изговорен уместо оригиналног и притисните <key>Enter</key> да завршите уређивање ниске замене.</p>
+    </item>
+  </steps>
+  <steps>
+  <title>Уређивање постојећег уноса у речнику</title>
+    <item>
+      <p>Померите се на ћелију коју желите да уредите и притисните <key>Enter</key> да започнете уређивање.</p>
+    </item>
+    <item>
+      <p>Извршите измене и затим притисните <key>Enter</key> да завршите уређивање.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Брисање постојећег уноса у речнику</title>
+    <item>
+      <p>Померите се на унос који желите да обришете.</p>
+    </item>
+    <item>
+      <p>Притисните дугме <gui>Обриши</gui> или <keyseq><key>Алт</key><key>D</key></keyseq>.</p>
+    </item>
+  </steps>
+</page>

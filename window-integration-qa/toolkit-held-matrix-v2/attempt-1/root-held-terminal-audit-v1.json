@@ -1,0 +1,51 @@
+{
+  "result": "fail",
+  "checks": {
+    "terminalReportRetainsActualFailure": true,
+    "completeFrozenBytesModesLinks": true,
+    "exactSourceManifest": true,
+    "all18MainPreservation": true,
+    "mainWritesAbsent": true,
+    "allFourExactVariants": false,
+    "qt-wayland:all13ExactCases": false,
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": false,
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": false,
+    "qt-wayland:normalQSAndService": false,
+    "qt-wayland:nativeUnloadNormalOrdered": false,
+    "qt-wayland:hostRuntimeCleanup": true,
+    "qt-wayland:rawHelpersNormalExact": false,
+    "qt-wayland:allRecordedOriginalIdentitiesGone": true,
+    "qt-wayland:bothGenuineShellPreviewReceipts": false
+  },
+  "errors": {
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v1/audit.py\", line 143, in check\n    try:self.checks[name]=fn() is True\n                          ~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v1/audit.py\", line 160, in <lambda>\n    for kind in ('pointer','keyboard'):self.check(prefix+kind+'LegalBalancedActualTransitionsNormalEOF',lambda kind=kind:input_replay(variant['cleanup'][kind],kind))\n                                                                                                                                      ~~~~~~~~~~~~~~~~~~^^^^^^\nKeyError: 'pointer'\n",
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v1/audit.py\", line 143, in check\n    try:self.checks[name]=fn() is True\n                          ~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v1/audit.py\", line 160, in <lambda>\n    for kind in ('pointer','keyboard'):self.check(prefix+kind+'LegalBalancedActualTransitionsNormalEOF',lambda kind=kind:input_replay(variant['cleanup'][kind],kind))\n                                                                                                                                      ~~~~~~~~~~~~~~~~~~^^^^^^\nKeyError: 'keyboard'\n",
+    "qt-wayland:normalQSAndService": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v1/audit.py\", line 143, in check\n    try:self.checks[name]=fn() is True\n                          ~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v1/audit.py\", line 161, in <lambda>\n    self.check(prefix+'normalQSAndService',lambda:all(variant['cleanup'][kind]['exitCode']==0 and variant['cleanup'][kind]['exactOriginalGone'] is True for kind in ('shell','service')) and not any(row.get('forcedTermination') or row.get('forcedKill') or row.get('error') for row in variant['cleanup'].values()))\n                                                  ^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v1/audit.py\", line 161, in <genexpr>\n    self.check(prefix+'normalQSAndService',lambda:all(variant['cleanup'][kind]['exitCode']==0 and variant['cleanup'][kind]['exactOriginalGone'] is True for kind in ('shell','service')) and not any(row.get('forcedTermination') or row.get('forcedKill') or row.get('error') for row in variant['cleanup'].values()))\n                                                      ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nKeyError: 'exitCode'\n"
+  },
+  "inventory": [
+    {
+      "variant": "qt-wayland",
+      "reachedCases": 0,
+      "retainedResult": "fail",
+      "errors": {
+        "error": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/run_native.py\", line 82, in variant_run\n    wait(lambda:ipc('shell','ping')=='ok','Actual QS IPC readiness before unchanged Snap load')\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/held_route.py\", line 21, in wait\n    value=function()\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/run_native.py\", line 82, in <lambda>\n    wait(lambda:ipc('shell','ping')=='ok','Actual QS IPC readiness before unchanged Snap load')\n                ~~~^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/run_native.py\", line 62, in ipc\n    session.guard();return subprocess.check_output([str(B/'payload/omarchy/bin/omarchy-shell'),*words],env=env,text=True,timeout=5).strip()\n                           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/subprocess.py\", line 473, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,\n           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n               **kwargs).stdout\n               ^^^^^^^^^\n  File \"/usr/lib/python3.14/subprocess.py\", line 578, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/payload/omarchy/bin/omarchy-shell', 'shell', 'ping']' returned non-zero exit status 1.\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/run_native.py\", line 191, in variant_run\n    if not(inputs_normal and fixtures_normal and roots_normal and all_helpers_gone):raise RuntimeError('Normal owned lifetimes/releases/helper disposal required before native unload')\n                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Normal owned lifetimes/releases/helper disposal required before native unload\n",
+        "helperAcceptanceError": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/run_native.py\", line 82, in variant_run\n    wait(lambda:ipc('shell','ping')=='ok','Actual QS IPC readiness before unchanged Snap load')\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/held_route.py\", line 21, in wait\n    value=function()\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/run_native.py\", line 82, in <lambda>\n    wait(lambda:ipc('shell','ping')=='ok','Actual QS IPC readiness before unchanged Snap load')\n                ~~~^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/run_native.py\", line 62, in ipc\n    session.guard();return subprocess.check_output([str(B/'payload/omarchy/bin/omarchy-shell'),*words],env=env,text=True,timeout=5).strip()\n                           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/subprocess.py\", line 473, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,\n           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n               **kwargs).stdout\n               ^^^^^^^^^\n  File \"/usr/lib/python3.14/subprocess.py\", line 578, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/payload/omarchy/bin/omarchy-shell', 'shell', 'ping']' returned non-zero exit status 1.\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/run_native.py\", line 172, in variant_run\n    report['completedHelpers']=helper_setup.wait_and_archive(config,output/'completed-helpers.json',expect_harness=True,expect_service=True)\n                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/helper_setup.py\", line 268, in wait_and_archive\n    raise RuntimeError('Exact registered helpers did not all finish normally')\nRuntimeError: Exact registered helpers did not all finish normally\n"
+      }
+    }
+  ],
+  "sourceManifestSHA256": "cbb66ebca91faace4dff00dd8dc731b53fcc21605431221282c0457d915d2f21",
+  "sourceCount": 20364,
+  "modeCount": 20364,
+  "linkCount": 320,
+  "actualReachedCases": 0,
+  "expectedCases": 52,
+  "producerResult": "fail",
+  "nativeCommands": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false,
+  "fullHeld52ReplayAccepted": false,
+  "replayLimitations": [
+    "Historical geometry/pin and native IPC command timing are accepted only where actual samples are retained; gate booleans alone do not supply missing observations."
+  ],
+  "auditorSourceSHA256": "1f65949843757ab6520cd7ffb59e8f9046a5b5073270e9533cbb3d077b770cad"
+}

@@ -1,0 +1,8 @@
+{
+  "freeze": false,
+  "runtimeChanged": false,
+  "error": "initial inventory stdout redirection was inside packet and therefore inventoried while empty; no manifest was written",
+  "retainedOutput": "/home/hoskinson/window-integration-qa/readonly-v21-preflight-capture-error-v1.json",
+  "retainedOutputSHA256": "9b5623a1c6034b2edcc35de26b42823f6ea2096be4f5cb836955fdd94f9cd50e",
+  "correction": "capture subsequent inventory stdout outside packet"
+}

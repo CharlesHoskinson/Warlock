@@ -1,0 +1,61 @@
+{
+  "updatedUTC": "2026-10-02T13:17:37.042027+00:00",
+  "result": "approved exact intended preview admission correction for fresh isolated implementation and actual proof",
+  "handoff": "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/source-handoff-final.json",
+  "handoffSHA256": "0f5036240522456b2da7b30aefd923949b4cfb39c88dda670e1df8bcc723daf5",
+  "verifiedBytesModes": 72,
+  "patch": {
+    "path": "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/intended-final.patch",
+    "sha256": "1e8c89cacdf9e39bc72e1eb5a460409aa9020e8f6f322458acfbcd2c009350d4"
+  },
+  "sourceMap": {
+    "path": "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/intended-source-map-final.json",
+    "sha256": "9c8eb1820798dd2dc4a18d117de016f0855da272b87e2026659763d7f2447ca2"
+  },
+  "formal": {
+    "report": {
+      "path": "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/formal-before-source-v2/report.json",
+      "sha256": "dd15c40f8185907a37d3f2b60ba5a055755aa9d601015e92a2228264d488573a"
+    },
+    "namedCases": 45,
+    "traces": 2000,
+    "maxSteps": 100,
+    "modelBoundary": "admission, guarded dispatch (not child exec G), owned closure, per-file/completed publication and guarded first-scene seed"
+  },
+  "independentConservation": {
+    "wholeNativeDesktopInverse": true,
+    "wholeSceneControllerInverse": true,
+    "wholeTestFixtureInverse": true,
+    "batchOriginalMethodsExact": [
+      "__init__",
+      "stage",
+      "discard",
+      "require_releasable",
+      "require_idle",
+      "require_disposable",
+      "_typed_equal",
+      "_renderer_matches",
+      "bind_renderer",
+      "_renderer_witness",
+      "_closed",
+      "check_family",
+      "write_exclusive",
+      "_reserve"
+    ]
+  },
+  "authorized": "Apply exact proposed4files in a fresh V24 derivative; run unchanged inherited tests plus actual writer/lock/deadline/replacement/receipt/closure kernel regressions. Preserve frozen V24/V9 and failures.",
+  "budgets": {
+    "sceneReceivedSeconds": 2,
+    "helperTimeoutSeconds": 1,
+    "readonlyHousekeepingSeconds": 0.6,
+    "deadlineReset": false
+  },
+  "acceptanceLimits": [
+    "No retrospective native errno11 callsite/holder proof.",
+    "Unknown helper closure keeps ownership/quarantine; cache expiry may leave valid partial OS cache files but gives no complete-publication/scene seed authority.",
+    "Source/formal proposal is not actual correction runtime success, native38 acceptance or full parity."
+  ],
+  "nativeGrant": false,
+  "fault34Grant": false,
+  "mainChanged": false
+}

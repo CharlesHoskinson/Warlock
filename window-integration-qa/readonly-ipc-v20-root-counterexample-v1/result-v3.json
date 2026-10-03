@@ -1,0 +1,18 @@
+{
+  "result": "counterexamples-confirmed",
+  "oldModelSHA256": "aae3478603d666a7b1c10e51b7dc46dcc21d9308809006fd796b19e8a28bc63b",
+  "command": [
+    "quint",
+    "test",
+    "/home/hoskinson/window-integration-qa/readonly-ipc-v20-root-counterexample-v1/counterexample_selected.qnt"
+  ],
+  "returncode": 1,
+  "stdout": "\n  peer_refusal_counterexample\n    ok oldWrongPeerCanReassertConsumedCounterexampleTest passed 1 test(s)\n    1) requiredWrongPeerTerminalRefusalTest failed after 1 test(s)\n    ok oldPartialReplyCanBeOverwrittenCounterexampleTest passed 1 test(s)\n    2) requiredPartialReplyTerminalRefusalTest failed after 1 test(s)\n\n  2 passing (445ms)\n  2 failed\n\n  1) requiredWrongPeerTerminalRefusalTest:\n       Error [QNT508]: Assertion failed\n        at /home/hoskinson/window-integration-qa/readonly-ipc-v20-root-counterexample-v1/counterexample_selected.qnt:3:32\n        3:  action check(p:bool):bool=all{assert(p),s'=s}\n                                          ^^^^^^^^^\n          at check(not(s.consumed)) (/home/hoskinson/window-integration-qa/readonly-ipc-v20-root-counterexample-v1/counterexample_selected.qnt:7:56)\n    Use --seed=0x6c5d00be6b2fbcf6 --match=requiredWrongPeerTerminalRefusalTest to repeat.\n  2) requiredPartialReplyTerminalRefusalTest:\n       Error [QNT508]: Assertion failed\n        at /home/hoskinson/window-integration-qa/readonly-ipc-v20-root-counterexample-v1/counterexample_selected.qnt:3:32\n        3:  action check(p:bool):bool=all{assert(p),s'=s}\n                                          ^^^^^^^^^\n          at check(not(s.consumed)) (/home/hoskinson/window-integration-qa/readonly-ipc-v20-root-counterexample-v1/counterexample_selected.qnt:10:61)\n    Use --seed=0x64640e43eed88943 --match=requiredPartialReplyTerminalRefusalTest to repeat.\n\n\n  Use --verbosity=3 to show executions.\n  Further debug with: quint test --verbosity=3 /home/hoskinson/window-integration-qa/readonly-ipc-v20-root-counterexample-v1/counterexample_selected.qnt\n",
+  "stderr": "error: Tests failed\n",
+  "passingActualModelReproductions": 2,
+  "failingRequiredTerminalRefusals": 2,
+  "priorZeroSelectedTestsRetained": true,
+  "priorCheckerExpectedWrongSummaryWord": true,
+  "sourceRuntimeChanged": false,
+  "nativeLaunched": false
+}

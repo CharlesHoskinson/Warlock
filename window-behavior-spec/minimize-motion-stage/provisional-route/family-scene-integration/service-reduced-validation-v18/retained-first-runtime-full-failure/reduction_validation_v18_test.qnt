@@ -1,0 +1,39 @@
+module reduction_validation_v18_test {
+ import reduction_validation_v18.* from "./reduction_validation_v18"
+ action check(p:bool):bool=all{assert(p),s'=s}
+ pure val old={receipt:2,token:2,generation:2}
+ pure val fresh={receipt:2,token:3,generation:3}
+ pure val visual={...none,token:2}
+ action cancel=moving.then(fire(ReduceOn)).then(fire(Watchdog))
+ run initialReductionKeepsAcceptedBlockedReceiptTest=init.then(fire(ReduceOn)).then(fire(Watchdog)).then(check(s.alive and s.receipt==1 and s.commits==0))
+ run initialFreshValidationMayReduceWithoutVisualTest=init.then(fire(ReduceOn)).then(fire(Validate({receipt:1,token:1,generation:1}))).then(fire(Watchdog)).then(check(s.commits==1 and s.lastCommitReceipt==1 and s.nativeDirection==1))
+ run visualReductionReservesOneExactCancelTest=cancel.then(check(s.alive and s.retirement==visual and s.cancelCount==1 and s.sources and s.commits==0))
+ run repeatedWatchdogDoesNotDuplicateCancelTest=cancel.then(fire(Watchdog)).then(fire(Watchdog)).then(check(s.cancelCount==1))
+ run pendingContextVisualStillCancelsTest=pendingContext.then(fire(ReduceOn)).then(fire(Watchdog)).then(check(s.contextPending and s.ingressGeneration==2 and s.cancelCount==1))
+ run latestValidationCannotPassPendingRetirementTest=cancel.then(fire(Validate(old))).then(check(s.validatedReceipt==0 and s.commits==0))
+ run exactAckCreatesFreshObjectTokenTest=cancel.then(fire(Ack(visual))).then(check(s.alive and s.receipt==2 and s.token==3 and s.generation==3 and s.validatedReceipt==0 and not(s.sources)))
+ run ackDoesNotValidateOrCommitTest=cancel.then(fire(Ack(visual))).then(fire(Watchdog)).then(check(s.commits==0 and s.nativeDirection==1))
+ run oldWorkerCannotValidateFreshObjectTest=cancel.then(fire(Ack(visual))).then(fire(OldWorker(old))).then(fire(Watchdog)).then(check(s.commits==0 and s.validatedReceipt==0))
+ run oldReadyAndEndpointCannotPromoteTest=cancel.then(fire(Ready(old))).then(fire(Endpoint(old))).then(fire(Ack(visual))).then(fire(Ready(old))).then(check(s.commits==0))
+ run freshValidationSettlesExactOriginalLatestDirectionTest=cancel.then(fire(Ack(visual))).then(fire(Validate(fresh))).then(fire(Watchdog)).then(check(s.commits==1 and s.lastCommitReceipt==2 and s.nativeDirection==0))
+ run contextPendingAckAtomicallyRebindsProvisionalObjectTest=pendingContext.then(fire(ReduceOn)).then(fire(Watchdog)).then(fire(Ack(visual))).then(check(s.contextPending and s.ingressGeneration==3 and s.generation==3 and s.validatedReceipt==0))
+ run contextMustRemainPendingAfterAckTest=pendingContext.then(fire(ReduceOn)).then(fire(Watchdog)).then(fire(Ack(visual))).then(fire(Validate(fresh))).then(check(s.validatedReceipt==0 and s.commits==0))
+ run currentContextThenFreshValidationCompletesTest=pendingContext.then(fire(ReduceOn)).then(fire(Watchdog)).then(fire(Ack(visual))).then(fire(Context(2))).then(fire(Validate(fresh))).then(fire(Watchdog)).then(check(s.commits==1 and s.nativeDirection==0))
+ run newerReceiptInheritsOldVisualBindingWithoutRetargetTest=cancel.then(fire(Request)).then(check(s.receipt==3 and s.token==3 and s.retirement==visual and s.visualToken==2 and s.cancelCount==1))
+ run twoSuccessorsCannotDuplicateCancelOrResetBindingTest=cancel.then(fire(Request)).then(fire(Request)).then(fire(Watchdog)).then(check(s.receipt==4 and s.retirement==visual and s.cancelCount==1 and s.visualToken==2))
+ run latestReceiptSurvivesAckAndNeedsItsOwnContextTest=cancel.then(fire(Request)).then(fire(Ack(visual))).then(fire(Context(2))).then(fire(Validate({receipt:3,token:4,generation:4}))).then(check(s.contextPending and s.commits==0 and s.receipt==3))
+ run latestContextAndFreshLatestDirectionOnlyTest=cancel.then(fire(Request)).then(fire(Ack(visual))).then(fire(Context(3))).then(fire(Validate({receipt:3,token:4,generation:4}))).then(fire(Watchdog)).then(check(s.commits==1 and s.lastCommitReceipt==3 and s.nativeDirection==1))
+ run reductionOffCannotReviveOldVisualTest=cancel.then(fire(ReduceOff)).then(fire(StartVisual)).then(check(s.visualToken==2 and s.cancelCount==1 and s.retirement==visual))
+ run offAfterAckNeedsNewValidationAndSeedTest=cancel.then(fire(ReduceOff)).then(fire(Ack(visual))).then(fire(StartVisual)).then(check(s.visualToken==0))
+ run offFreshPreparationUsesNewTokenTest=cancel.then(fire(ReduceOff)).then(fire(Ack(visual))).then(fire(Validate(fresh))).then(fire(StartVisual)).then(fire(Ready(fresh))).then(check(s.commits==1 and s.nativeDirection==0 and s.visualToken==3))
+ run wrongTokenAckCannotDisposeTest=cancel.then(fire(Ack({...visual,token:1}))).then(check(s.sources and s.releases==0 and s.retirement==visual))
+ run wrongOrderedMembersAckCannotDisposeTest=cancel.then(fire(Ack({...visual,members:99}))).then(check(s.sources and s.releases==0))
+ run wrongSourceDigestsAckCannotDisposeTest=cancel.then(fire(Ack({...visual,sources:99}))).then(check(s.sources and s.releases==0))
+ run wrongRootSessionTransportAckCannotDisposeTest=cancel.then(fire(Ack({...visual,root:99}))).then(fire(Ack({...visual,session:99}))).then(fire(Ack({...visual,transport:99}))).then(check(s.sources and s.releases==0))
+ run duplicateAckCannotReplaceObjectTwiceTest=cancel.then(fire(Ack(visual))).then(fire(Ack(visual))).then(check(s.generation==3 and s.token==3 and s.releases==1))
+ run queueFailureLatchesAndCannotBeAcknowledgedTest=cancel.then(fire(QueueFailure)).then(fire(Ack(visual))).then(fire(Request)).then(fire(Context(3))).then(check(s.uncertain and s.error and s.sources and s.retirement==visual and s.commits==0))
+ run transportUncertaintyCannotBeClearedByAckOrSuccessorTest=cancel.then(fire(TransportFailure)).then(fire(Ack(visual))).then(fire(Request)).then(fire(Context(3))).then(fire(Validate({receipt:3,token:3,generation:3}))).then(check(s.error and s.uncertain and s.sources and s.acked and s.commits==0))
+ run exactAckDoesNotResetOriginalDeadlineTest=cancel.then(fire(Tick)).then(fire(Tick)).then(fire(Ack(visual))).then(check(s.elapsed==2 and s.receiptDeadline==10))
+ run explicitDeadlineStillEndsUnvalidatedReceiptTest=init.then(fire(ReduceOn)).then(fire(Watchdog)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(Deadline)).then(check(not(s.alive) and s.error and s.commits==0))
+ run lostScopeCannotGainNativeAuthorityAfterAckTest=cancel.then(fire(LoseScope)).then(fire(Ack(visual))).then(fire(Validate(old))).then(fire(Watchdog)).then(check(s.error and not(s.scopeAlive) and s.commits==0))
+}

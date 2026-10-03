@@ -1,0 +1,27 @@
+{
+  "result": "fail",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-69e9a44565574958a02b881b2771042b.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/process_observation.qnt"
+      ],
+      "exitCode": 1,
+      "stdout": "[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type\n",
+      "stderr": "\n Error [QNT000]: mismatched input '=' expecting ':'\n\n  at /home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/process_observation.qnt:11:37\n  11:  action register(kind:int,errno:int)=s'=if(kind==0 and errno==0)\n                                          ^\n\n\n Error [QNT000]: extraneous input 'else' expecting {<EOF>, 'module', DOCCOMMENT}\n\n  at /home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/process_observation.qnt:12:42\n  12:    {...s,registered:true,accepted:false} else {...s,registrationRefused:true,accepted:false}\n                                               ^^^^\n\nerror: parsing failed\n"
+    }
+  ],
+  "sources": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/helper_observer.py": "5d31aeff84ed68f8fe30e02c27394155f4efebac030ce7290262a1772ca5b1d8",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/process_observation.qnt": "1b72bbb80c9a18266dc5ca301dd816d50fff9f753a2553d76f456ba84b2bb640",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/process_observation_test.qnt": "bb1f329d5b2e34e2a8bb7912c3ef1dfd6f663a514353df3c356c96f51dd830f3",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/PROCESS_OBSERVATION_CONTRACT.md": "2d253e7c746b8ea747386fc28274f9704d2f11e7975ee7174158db086c50e772"
+  },
+  "nativeLaunch": false,
+  "runtimeChanged": false
+}

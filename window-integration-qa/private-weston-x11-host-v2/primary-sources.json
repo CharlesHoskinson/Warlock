@@ -1,0 +1,25 @@
+{
+  "Server.cpp": {
+    "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/v0.56.2/src/xwayland/Server.cpp",
+    "sha256": "423f74075f84e301def6405292a1fe6ab0c96da221f7c39f23efed615edfb568"
+  },
+  "Xwayland-help.txt": {
+    "command": [
+      "/usr/bin/Xwayland",
+      "-help"
+    ],
+    "serverStarted": false,
+    "qaScope": "qa-harness-645bad435a8546b48e58105277f348a6.scope",
+    "sha256": "8612c17299883d4d33e1c302bdcdccd3e3c4c7852cc5f89daba48ff6ccfb59eb"
+  },
+  "upstreamAuthentication": "No -auth added by official Server.cpp; fresh guarded PATH launcher adds actual owned authority.",
+  "FsUtils.cpp": {
+    "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/v0.56.2/src/helpers/fs/FsUtils.cpp",
+    "sha256": "5e0d73e0ed89fde329ac7ab000b260a52c0cfd621c3235109216b2eeff171a41"
+  },
+  "XWayland.cpp": {
+    "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/v0.56.2/src/xwayland/XWayland.cpp",
+    "sha256": "5f6f1762ceefa00d9ad0be7f9c70cd03615395d40d3ec47654c2956a83389053"
+  },
+  "actualPredicateRegression": "exact official function compiled; mode0700 stops false before fallback, mode0755 returns true; wrapper never executed"
+}

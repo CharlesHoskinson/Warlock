@@ -1,0 +1,5 @@
+{
+  "sha256": "b88b9196d351430a52fed5771ce93ef450dbe8860a432406078fb41a9d9ecc46",
+  "predicate": "colon==npos || node!=s.st_ino || maj!=major(s.st_dev) || min!=minor(s.st_dev)",
+  "mappingAuthorityUnchanged": true
+}

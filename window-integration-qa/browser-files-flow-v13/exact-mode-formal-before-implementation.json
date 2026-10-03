@@ -1,0 +1,32 @@
+{
+  "beforeRuntimeChange": true,
+  "modePredicateStill600": true,
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v9/data_provenance_proposal_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  data_provenance_proposal_test\n    ok exactDataTest passed 1 test(s)\n    ok executableRefusedTest passed 1 test(s)\n    ok writableVmaRefusedTest passed 1 test(s)\n    ok unownedConsumerRefusedTest passed 1 test(s)\n    ok unrelatedProducerRefusedTest passed 1 test(s)\n    ok wrongPeerRefusedTest passed 1 test(s)\n    ok staleLifetimeRefusedTest passed 1 test(s)\n    ok changedFdRefusedTest passed 1 test(s)\n    ok missingFdRefusedTest passed 1 test(s)\n    ok wrongUidModeRefusedTest passed 1 test(s)\n    ok ordinaryDiskRefusedTest passed 1 test(s)\n    ok arbitraryDeletedPathRefusedTest passed 1 test(s)\n    ok unboundedUnpinnedRefusedTest passed 1 test(s)\n    ok offsetOrRangeRefusedTest passed 1 test(s)\n    ok ambiguousMountRefusedTest passed 1 test(s)\n    ok writableProducerFdRefusedTest passed 1 test(s)\n    ok mode600RefusedTest passed 1 test(s)\n    ok mode400RefusedTest passed 1 test(s)\n    ok mode200RefusedTest passed 1 test(s)\n    ok setuidRefusedTest passed 1 test(s)\n    ok setgidRefusedTest passed 1 test(s)\n    ok stickyRefusedTest passed 1 test(s)\n    ok allSpecialAndPermissionsRefusedTest passed 1 test(s)\n\n  23 passing (260ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v9/data_provenance_proposal.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (686ms at 2915 traces/second).\nUse --seed=0x1722972 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "result": "pass"
+}

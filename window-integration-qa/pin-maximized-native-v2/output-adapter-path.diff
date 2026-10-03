@@ -1,0 +1,11 @@
+--- original-A3/private_output_host.py
++++ proposed/private_output_host.py
+@@ -2,7 +2,7 @@
+ from pathlib import Path
+ import importlib.util,time
+ from types import SimpleNamespace
+-QA=Path(__file__).resolve().parent.parent
++QA=Path('/home/hoskinson/window-integration-qa')
+ spec=importlib.util.spec_from_file_location('_held_output_accepted_aq_v4',QA/'private-weston-aq-host-v4/weston_host.py')
+ accepted=importlib.util.module_from_spec(spec);spec.loader.exec_module(accepted)
+ original=accepted.original

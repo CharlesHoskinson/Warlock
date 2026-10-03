@@ -1,0 +1,301 @@
+{
+  "result": "exact scope refusal after ACK",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-581919dce40d4e4e9876bc6cda894fd0.scope",
+    "coreLimit": 1
+  },
+  "actualControllerSources": {
+    "scene_controller.py": "b7c6396ef91b0c6dca9b8bb2caf7b9e5a75db90ab94f20f499b3c8c2fcfa6a4f",
+    "scene_manager.py": "3f2f3aa5e2f0f1a2dd108acccfa4372761dda966d672741556b8b709bf8edd41",
+    "visual_retirement.py": "0bd2513fec9ae3d0c9008ec8f789dce99670cc643a91b7a87b7346baefa40c84"
+  },
+  "acceptedReceipt": 2,
+  "originalFamily": [
+    [
+      "0xaa01",
+      "aa01",
+      41
+    ],
+    [
+      "0xbb02",
+      "bb02",
+      42
+    ],
+    [
+      "0xcc03",
+      "cc03",
+      43
+    ]
+  ],
+  "closedMember": [
+    "0xcc03",
+    "cc03",
+    43
+  ],
+  "exactVisualACK": true,
+  "freshObjectCreated": true,
+  "freshInitialMembers": [
+    {
+      "address": "0xaa01",
+      "stableId": "aa01",
+      "pid": 41,
+      "at": [
+        100,
+        100
+      ],
+      "size": [
+        300,
+        200
+      ],
+      "mapped": true,
+      "pinned": true,
+      "workspace": {
+        "name": "1"
+      },
+      "parent": "",
+      "parentStableId": "",
+      "modal": false
+    },
+    {
+      "address": "0xbb02",
+      "stableId": "bb02",
+      "pid": 42,
+      "at": [
+        150,
+        150
+      ],
+      "size": [
+        250,
+        160
+      ],
+      "mapped": true,
+      "pinned": false,
+      "workspace": {
+        "name": "1"
+      },
+      "parent": "0xaa01",
+      "parentStableId": "aa01",
+      "modal": true
+    },
+    {
+      "address": "0xcc03",
+      "stableId": "cc03",
+      "pid": 43,
+      "at": [
+        200,
+        200
+      ],
+      "size": [
+        200,
+        120
+      ],
+      "mapped": true,
+      "pinned": false,
+      "workspace": {
+        "name": "1"
+      },
+      "parent": "0xbb02",
+      "parentStableId": "bb02",
+      "modal": true
+    }
+  ],
+  "actualPostACKFakeNativeEffects": [],
+  "retainedHistoryProfile": {
+    "receivedNs": 141317435668132,
+    "reservedNs": 141317435668517,
+    "ingressCommand": "restore",
+    "contextPending": false,
+    "managerReceipt": 2,
+    "contextAcceptedNs": 141317435743530,
+    "retiredVisualAck": {
+      "token": "85fa6fc215c8-2",
+      "controllerSession": "85fa6fc215c8",
+      "receiptAtReservation": 2,
+      "members": [
+        {
+          "address": "0xaa01",
+          "stableId": "aa01",
+          "pid": 41,
+          "at": [
+            100,
+            100
+          ],
+          "size": [
+            300,
+            200
+          ],
+          "mapped": true,
+          "pinned": true,
+          "workspace": {
+            "name": "1"
+          },
+          "parent": "",
+          "parentStableId": "",
+          "modal": false
+        },
+        {
+          "address": "0xbb02",
+          "stableId": "bb02",
+          "pid": 42,
+          "at": [
+            150,
+            150
+          ],
+          "size": [
+            250,
+            160
+          ],
+          "mapped": true,
+          "pinned": false,
+          "workspace": {
+            "name": "1"
+          },
+          "parent": "0xaa01",
+          "parentStableId": "aa01",
+          "modal": true
+        },
+        {
+          "address": "0xcc03",
+          "stableId": "cc03",
+          "pid": 43,
+          "at": [
+            200,
+            200
+          ],
+          "size": [
+            200,
+            120
+          ],
+          "mapped": true,
+          "pinned": false,
+          "workspace": {
+            "name": "1"
+          },
+          "parent": "0xbb02",
+          "parentStableId": "bb02",
+          "modal": true
+        }
+      ],
+      "sources": [
+        {
+          "stableId": "aa01",
+          "pid": 41,
+          "nativeRect": {
+            "x": 100,
+            "y": 100,
+            "width": 300,
+            "height": 200
+          },
+          "atlasRect": {
+            "x": 100,
+            "y": 100,
+            "width": 300,
+            "height": 200
+          },
+          "iconRect": {
+            "x": 10,
+            "y": 700,
+            "width": 28,
+            "height": 28
+          },
+          "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+          "path": "/unused/85fa6fc215c8-1.png",
+          "insets": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "pixels": [
+            300,
+            200
+          ],
+          "captureScale": 1
+        },
+        {
+          "stableId": "bb02",
+          "pid": 42,
+          "nativeRect": {
+            "x": 150,
+            "y": 150,
+            "width": 250,
+            "height": 160
+          },
+          "atlasRect": {
+            "x": 150,
+            "y": 150,
+            "width": 250,
+            "height": 160
+          },
+          "iconRect": {
+            "x": 10,
+            "y": 700,
+            "width": 28,
+            "height": 28
+          },
+          "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+          "path": "/unused/85fa6fc215c8-1.png",
+          "insets": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "pixels": [
+            250,
+            160
+          ],
+          "captureScale": 1
+        },
+        {
+          "stableId": "cc03",
+          "pid": 43,
+          "nativeRect": {
+            "x": 200,
+            "y": 200,
+            "width": 200,
+            "height": 120
+          },
+          "atlasRect": {
+            "x": 200,
+            "y": 200,
+            "width": 200,
+            "height": 120
+          },
+          "iconRect": {
+            "x": 10,
+            "y": 700,
+            "width": 28,
+            "height": 28
+          },
+          "digest": "2222222222222222222222222222222222222222222222222222222222222222",
+          "path": "/unused/85fa6fc215c8-1.png",
+          "insets": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "pixels": [
+            200,
+            120
+          ],
+          "captureScale": 1
+        }
+      ],
+      "attempted": true,
+      "queued": true,
+      "acknowledged": true,
+      "uncertain": false,
+      "error": null
+    },
+    "visualRetirementFreshToken": true,
+    "metadataStartNs": 141317436938475,
+    "failure": "fresh family scope changed; replacement scene required",
+    "cleanupQueuedNs": 141317437302053,
+    "settlementReason": "request rejected: fresh family scope changed; replacement scene required",
+    "cleanupAckNs": 141317437314835
+  },
+  "nativeCommands": false,
+  "fixtureScope": "actual controllers, fake Desktop effects and explicit authenticated-transport standin; no GUI/kernel native evidence"
+}

@@ -1,0 +1,40 @@
+{
+  "result": "pass",
+  "sourceSHA256": {
+    "/home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/CONTRACT.md": "29cd97390da9317006e8bb5e4bd0d02e8cb74fb135f1b50f9ff5f18dc87367f4",
+    "/home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt": "5dc295c3810f49595d877c971d8eaa716c08fe225558805b70e93fa241e2c8cc",
+    "/home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/prove.py": "909927dfbf3c88caa64154f1021718ed21fe89cd08e2d5656f85a374aab3e92c",
+    "/home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/initial-popup-model.qnt": "a320974e8891ea5dc9c7491da6bef065a43cbd7ee36df7b66733645b09ce395d"
+  },
+  "sourceUnchanged": true,
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  pin_popup\n    ok exactPopupTest passed 1 test(s)\n    ok separateMenuVisualParentUnneededTest passed 1 test(s)\n    ok sameContentNativeRootAllowedTest passed 1 test(s)\n    ok menuDeathTest passed 1 test(s)\n    ok rowDeathTest passed 1 test(s)\n    ok popupDeathTest passed 1 test(s)\n    ok attachedDeathTest passed 1 test(s)\n    ok contentDeathTest passed 1 test(s)\n    ok windowDeathTest passed 1 test(s)\n    ok nativeRootDeathTest passed 1 test(s)\n    ok rowReuseTest passed 1 test(s)\n    ok windowReuseTest passed 1 test(s)\n    ok staleCallbackTest passed 1 test(s)\n    ok reloadTest passed 1 test(s)\n    ok newMenuTest passed 1 test(s)\n    ok cancelTest passed 1 test(s)\n    ok otherOwnerTest passed 1 test(s)\n    ok layoutTest passed 1 test(s)\n    ok disabledTest passed 1 test(s)\n    ok hiddenTest passed 1 test(s)\n    ok missingAttachedTest passed 1 test(s)\n    ok differentAttachedPopupTest passed 1 test(s)\n    ok differentAttachedContentTest passed 1 test(s)\n    ok shadowedContentAliasNotAuthorityTest passed 1 test(s)\n    ok falseRowAncestryTest passed 1 test(s)\n    ok wrongWindowTest passed 1 test(s)\n    ok wrongNativeRootTest passed 1 test(s)\n    ok missingNativeInputTest passed 1 test(s)\n    ok sourceFaultTest passed 1 test(s)\n    ok contextFaultTest passed 1 test(s)\n    ok wrongThreadTest passed 1 test(s)\n    ok loaderResetTest passed 1 test(s)\n    ok callerNonceCannotGrantTest passed 1 test(s)\n    ok lexicalFaultTest passed 1 test(s)\n    ok wrongPopupOwnerTest passed 1 test(s)\n\n  35 passing (5817ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (5384ms at 371 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "popupRuntimeImplemented": false,
+  "nativeLaunch": false,
+  "rootReviewRequiredBeforeRuntime": true
+}

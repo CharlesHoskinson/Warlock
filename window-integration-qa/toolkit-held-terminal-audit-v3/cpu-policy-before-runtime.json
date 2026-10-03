@@ -1,0 +1,26 @@
+{
+  "result": "pass",
+  "cases": [
+    "literal-positive",
+    "literal-negative",
+    "held-refuses",
+    "released-pair",
+    "unauthorized",
+    "keyboard",
+    "missing-sync",
+    "interposed-command",
+    "duplicate-detent",
+    "malformed-'wheel 0'",
+    "malformed-'wheel 2'",
+    "malformed-'wheel -2'",
+    "malformed-'wheel 1.0'",
+    "malformed-'wheel +1'",
+    "malformed-'wheel 1 extra'",
+    "malformed-'wheel  1'",
+    "malformed-' wheel 1'",
+    "malformed-'wheel 1 '",
+    "changed-lifetime"
+  ],
+  "nativeLaunch": false,
+  "runtimeImplemented": false
+}

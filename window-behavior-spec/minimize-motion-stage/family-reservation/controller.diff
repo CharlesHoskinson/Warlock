@@ -1,0 +1,199 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/family-intent/hypr-window-motion	2026-10-01 00:05:53.250783575 -0600
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/family-reservation/hypr-window-motion	2026-10-01 00:23:22.888093119 -0600
+@@ -328,12 +328,32 @@
+         self.family_batches = []
+         self.latest = {}
+         self.results = {}
++        self.events = []
+         self.shutdown = False
+         self.sequence = 0
+         self.session = uuid.uuid4().hex[:12]
+         self.last_activity = time.monotonic()
+         self.last_janitor = 0
+ 
++    def audit(self,event,**details):
++        with self.lock:
++            self.events.append(dict(event=event,time=time.monotonic(),**details))
++            del self.events[:-128]
++
++    def commit(self,operation,window,preview_ready=False,token='',reason=''):
++        identity=key(window)
++        token=token or self.latest.get(identity,'')
++        self.audit('commitStart',token=token,operation=operation,identity=list(identity),reason=reason,
++                   workspace=window.get('workspace',{}).get('name'),pinned=bool(window.get('pinned')))
++        try:self.desktop.commit(operation,window,preview_ready)
++        except (OSError,ValueError,subprocess.SubprocessError) as error:
++            self.audit('commitFailed',token=token,identity=list(identity),error=str(error));raise
++        try:
++            after=self.matching(identity)
++            native={'workspace':after.get('workspace',{}).get('name'),'pinned':bool(after.get('pinned')),'rect':rectangle(after)} if after else None
++        except (OSError,ValueError,subprocess.SubprocessError):native=None
++        self.audit('commitDone',token=token,operation=operation,identity=list(identity),native=native)
++
+     def matching(self, identity):
+         return next((w for w in self.desktop.clients() if key(w) == identity and w.get('mapped', True)), None)
+ 
+@@ -356,7 +376,7 @@
+             try:
+                 window = self.matching(tuple(record['identity']))
+                 if window:
+-                    self.desktop.commit(record['operation'], window, True)
++                    self.commit(record['operation'], window, True)
+             except (OSError, ValueError, subprocess.SubprocessError):
+                 pass
+             for visual in record.get('oldVisuals',[])+([record.get('frozenVisual')] if record.get('frozenVisual') else [])+([record] if record.get('target') else []):
+@@ -371,7 +391,7 @@
+         for identity in focuses:
+             window=self.matching(identity)
+             if window and window.get('workspace', {}).get('name') != 'special:win-minimized':
+-                try:self.desktop.commit('restore',window,True)
++                try:self.commit('restore',window,True)
+                 except (OSError,ValueError,subprocess.SubprocessError):pass
+         self.journal()
+ 
+@@ -429,19 +449,31 @@
+                       'familyStart':family_start,'familyDone':family_done}
+             trace=getattr(self.desktop,'family_trace',None)
+             if trace is not None and getattr(trace,'evidence',None):metadata['familyEvidence']=trace.evidence
+-            # Pause every currently validated family route before preparing any
+-            # snapshot/desktop/icon. Newer member intents supersede this plan.
+-            for member in members:
+-                own_reservation=reservation if reservation and member['address']==address else None
+-                with self.lock:
++            # Relation metadata certifies membership. Workspace/no-op decisions
++            # require current member snapshots under the callback lock. Reserve
++            # every member before any peer IPC can let an older endpoint run.
++            with self.lock:
++                fresh={key(item):item for item in self.desktop.clients() if item.get('mapped',True)}
++                if any(key(member) not in fresh for member in members):
++                    raise ValueError('family member identity changed after relation query')
++                members=[fresh[key(member)] for member in members]
++                for member in members:
++                    own_reservation=reservation if reservation and member['address']==address else None
+                     current=self.pending.get(member['address'])
+                     if not own_reservation and current and current.get('profile',{}).get('received',0)>received:
+                         plans.append((member,None,current['token']));continue
+                     if not own_reservation:
+                         own_reservation=self.reserve(command if len(members)==1 else operation,member,received)
++                    plans.append((member,own_reservation,None))
++                metadata['familyPlan']=[{'identity':list(key(member)),'workspace':member.get('workspace',{}).get('name'),
++                    'pinned':bool(member.get('pinned')),'rect':rectangle(member),
++                    'token':own[0]['token'] if own else superseded or '',
++                    'decision':'reserved' if own else 'superseded' if superseded else 'current-endpoint'}
++                    for member,own,superseded in plans]
++                self.audit('familyPlan',operation=operation,received=received,members=metadata['familyPlan'])
++            for member,own_reservation,superseded in plans:
+                 if own_reservation and 'freezeSent' not in own_reservation[0]['profile']:
+                     self.freeze(*own_reservation)
+-                plans.append((member,own_reservation,None))
+             for member,own_reservation,superseded in plans:
+                 if superseded is not None:result.append(superseded)
+                 elif own_reservation is None:result.append('')
+@@ -470,7 +502,7 @@
+             if previous:
+                 try:
+                     current=self.matching(tuple(record['identity']))
+-                    if current:self.desktop.commit(previous['operation'],current,bool(previous.get('previewReady')))
++                    if current:self.commit(previous['operation'],current,bool(previous.get('previewReady')))
+                     self.latest[tuple(record['identity'])]=previous['token']
+                 except (OSError,ValueError,subprocess.SubprocessError):pass
+             self.drop(record)
+@@ -488,7 +520,7 @@
+             if any(w is not None and w.get('workspace', {}).get('name') == 'special:win-minimized' for w in windows):
+                 continue
+             focus=self.matching(batch['focus'])
+-            if focus:self.desktop.commit('restore',focus,True)
++            if focus:self.commit('restore',focus,True)
+ 
+     def reserve(self, operation, window, received=None):
+         address = window['address']
+@@ -506,7 +538,7 @@
+                 return None
+             if operation == 'restore' and window.get('workspace', {}).get('name') != 'special:win-minimized' and not previous:
+                 self.latest[identity]=''
+-                self.desktop.commit('restore', window)
++                self.commit('restore', window)
+                 return None
+             token = self.token()
+             self.latest[identity]=token
+@@ -646,7 +678,7 @@
+                 return {'ok': True}
+             if record['operation'] == 'minimize':
+                 try:
+-                    self.desktop.commit('minimize', window, True)
++                    self.commit('minimize', window, True,record['token'],'ready')
+                 except (OSError,ValueError,subprocess.SubprocessError) as error:
+                     return self.failure(record,error)
+             record['phase'] = 'running'
+@@ -663,13 +695,29 @@
+     def drop(self, record):
+         if self.pending.get(record['identity'][0]) is not record:
+             return
+-        del self.pending[record['identity'][0]]
++        record['phase']='cleaning'
++        record['cleanupStarted']=time.monotonic()
+         self.journal()
+-        for visual in record.get('oldVisuals',[])+([record.get('frozenVisual')] if record.get('frozenVisual') else [])+([record] if record.get('target') else []):
+-            try:self.desktop.ipc('motionCancel',visual)
+-            except (OSError,ValueError,subprocess.SubprocessError):pass
++        # Current held/running pixels are cancelled first; duplicate frozen and
++        # current payloads need only one call. Completion includes cleanup ACKs.
++        visuals=([record] if record.get('target') else [])+([record.get('frozenVisual')] if record.get('frozenVisual') else [])+record.get('oldVisuals',[])
++        seen=set()
++        for visual in visuals:
++            signature=(visual['token'],tuple(visual['identity']))
++            if signature in seen:continue
++            seen.add(signature)
++            self.audit('cancelStart',token=visual['token'],identity=visual['identity'])
++            try:
++                ack=self.desktop.ipc('motionCancel',visual)
++                self.audit('cancelDone',token=visual['token'],identity=visual['identity'],ack=bool(ack))
++            except (OSError,ValueError,subprocess.SubprocessError) as error:
++                self.audit('cancelFailed',token=visual['token'],identity=visual['identity'],error=str(error))
+         for image in record.get('oldImages', []) + ([record['image']] if record.get('image') else []):
+             Path(image).unlink(missing_ok=True)
++        self.audit('cleanupDone',token=record['token'],identity=record['identity'])
++        if self.pending.get(record['identity'][0]) is record:
++            del self.pending[record['identity'][0]]
++            self.journal()
+ 
+     def failure(self, record, error):
+         result={'ok':False,'error':'native window operation failed: '+str(error)}
+@@ -686,7 +734,7 @@
+             window = self.matching(tuple(record['identity']))
+             if window:
+                 try:
+-                    self.desktop.commit(record['operation'], window, record['previewReady'])
++                    self.commit(record['operation'], window, record['previewReady'],record['token'],'settle')
+                 except (OSError,ValueError,subprocess.SubprocessError) as error:
+                     return self.failure(record,error)
+             self.drop(record)
+@@ -725,6 +773,9 @@
+             method = request['method']
+             if method == 'request':
+                 result = CONTROLLER.request(*request['args'],single=bool(request.get('single',False)))
++            elif method=='diagnostics':
++                with CONTROLLER.lock:
++                    result={'ok':True,'events':CONTROLLER.events[-min(128,max(1,int(request.get('limit',128)))):]}
+             elif method=='shutdown':
+                 with CONTROLLER.lock:
+                     for record in list(CONTROLLER.pending.values()):CONTROLLER.settle(record['token'])
+@@ -802,7 +853,7 @@
+     with connection:
+         connection.sendall((json.dumps(payload)+'\n').encode())
+         with connection.makefile('r') as stream:
+-            answer=stream.readline(65536)
++            answer=stream.readline(1048576)
+             if not answer:raise OSError('motion service disconnected after request submission')
+             return json.loads(answer)
+ 
+@@ -830,6 +881,9 @@
+                     result={'ok':False,'error':'motion operation did not settle'}
+                     break
+                 if tokens:time.sleep(.02)
++    elif sys.argv[1:2]==['diagnostics']:
++        result=send({'method':'diagnostics'})
++        print(json.dumps(result))
+     elif sys.argv[1:2]==['stop']:
+         result=send({'method':'shutdown'})
+     elif sys.argv[1:2] and sys.argv[1] in ('ready', 'done', 'fail') and len(sys.argv) == 3:

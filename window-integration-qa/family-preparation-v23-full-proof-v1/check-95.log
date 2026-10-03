@@ -1,0 +1,20 @@
+
+  staging_reservation_test
+    ok unrelatedCleanupReturnsWhileActualScanPendingTest passed 1 test(s)
+    ok exactStagingEpochReleaseRefusesTest passed 1 test(s)
+    ok stagingEpochPreventsDisposeTest passed 1 test(s)
+    ok duplicateEpochCannotReserveTwiceTest passed 1 test(s)
+    ok staleReservationCannotCommitForeignMaterialTest passed 1 test(s)
+    ok exactValidatedMaterialCommitsTest passed 1 test(s)
+    ok failedMaterialCannotPublishTest passed 1 test(s)
+    ok abortCannotFreeLiveScanMaterialTest passed 1 test(s)
+    ok combined64CapacityRefusesNewStageTest passed 1 test(s)
+    ok helperCannotBeginBeforeAllStagesFinishTest passed 1 test(s)
+    ok unknownOwnedGroupKeepsExactEpochProtectedTest passed 1 test(s)
+    ok unknownGroupCannotAuthorizeAnotherStageTest passed 1 test(s)
+    ok unrelatedOldEpochCleanupSurvivesQuarantineTest passed 1 test(s)
+    ok oldReadHoldingLifecycleReproducesActualCounterexampleTest passed 1 test(s)
+    ok replacedReservationCannotBorrowValidatedMaterialTest passed 1 test(s)
+    ok staleReservationCannotAuthorizeNormalDisposeTest passed 1 test(s)
+
+  16 passing (1024ms)

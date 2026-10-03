@@ -1,0 +1,24 @@
+test_failed_durability_latches_after_memory_transition (test_actor_ledger.ActorLedgerFaultTests.test_failed_durability_latches_after_memory_transition) ... ok
+test_uncertainty_cannot_be_cleared_by_matching_return (test_actor_ledger.ActorLedgerFaultTests.test_uncertainty_cannot_be_cleared_by_matching_return) ... ok
+test_complete_group_does_not_prove_native_semantic_return (test_actor_ledger.ActorLedgerKernelTests.test_complete_group_does_not_prove_native_semantic_return) ... ok
+test_frozen_actor_new_gate_refused_other_actor_still_runs (test_actor_ledger.ActorLedgerKernelTests.test_frozen_actor_new_gate_refused_other_actor_still_runs) ... ok
+test_new_current_receipt_revokes_existing_witness (test_actor_ledger.ActorLedgerKernelTests.test_new_current_receipt_revokes_existing_witness) ... ok
+test_owner_nonce_replacement_refuses_without_whole_keeper_stop (test_actor_ledger.ActorLedgerKernelTests.test_owner_nonce_replacement_refuses_without_whole_keeper_stop) ... ok
+test_selected_actor_attests_while_other_actor_group_stays_live (test_actor_ledger.ActorLedgerKernelTests.test_selected_actor_attests_while_other_actor_group_stays_live) ... ok
+test_service_durable_actor_history_precedes_actual_release (test_actor_ledger.ActorLedgerKernelTests.test_service_durable_actor_history_precedes_actual_release) ... FAIL
+
+======================================================================
+FAIL: test_service_durable_actor_history_precedes_actual_release (test_actor_ledger.ActorLedgerKernelTests.test_service_durable_actor_history_precedes_actual_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-cancellation-v16/runtime/test_actor_ledger.py", line 176, in test_service_durable_actor_history_precedes_actual_release
+    self.assertTrue(any(row['jobs'].get(selected.job, {}).get('phase') == 'gated'
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        for row in self.actor_records))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.406s
+
+FAILED (failures=1)

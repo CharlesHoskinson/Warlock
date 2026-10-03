@@ -1,0 +1,144 @@
+--- readback-v4/Renderer.cpp
++++ causal-v5/Renderer.cpp
+@@ -3,6 +3,7 @@
+ #include "BackendPolicy.hpp"
+ #include "LibraryMaterial.hpp"
+ #include "ReadbackImage.hpp"
++#include "CausalImage.hpp"
+ #include <QByteArray>
+ #include <QCryptographicHash>
+ #include <QJsonArray>
+@@ -65,7 +66,9 @@
+     QJsonObject waitingRetarget;std::vector<Output*> required;
+     uint64_t startedNs=0,durationNs=400000000;bool running=false,readySent=false,endpointSent=false,quit=false,announced=false,surfacesEnabled=true,swapping=false;
+     std::string deferredCancel;uint64_t routeAcceptedNs=0,endpointHeldNs=0;
+-    int readbackDirectory=-1;std::set<std::string> readbackSamples;
++    int readbackDirectory=-1;std::set<std::string> readbackSamples,causalSamples;
++    bool causalFixture=false;std::array<GLuint,3> controlTextures{};std::set<uint64_t> controlledGenerations;
++    struct CausalObservation {std::string kind;size_t prefix=0;std::vector<int> controls;std::vector<unsigned char> rgba,nativeRGBA;unsigned nativeFormat=0,nativeType=0;std::string nativeBytesDigest;};
+     size_t uploadCount=0,transparentCommitCount=0;bool backendSupported=false,rasterFixture=false;double sampleProgress=0;QByteArray input;
+     static GLuint compile(GLenum type,const char* source){GLuint s=glCreateShader(type);glShaderSource(s,1,&source,nullptr);glCompileShader(s);GLint ok=0;glGetShaderiv(s,GL_COMPILE_STATUS,&ok);if(!ok){glDeleteShader(s);throw std::runtime_error("GPU shader compilation failed");}return s;}
+     void initializeEGL(){
+@@ -216,6 +219,58 @@
+         if(!o.alive||!o.configured||!o.frameReady||o.outstanding||o.endpointPresented)return false;
+         return !o.clearCommitted||(ledger.isActive()&&std::find(required.begin(),required.end(),&o)!=required.end());
+     }
++    void drawQuad(Output& o,const Rect& rect,GLuint texture){
++        const GLfloat left=2*(rect.x-o.x)/o.width-1,right=2*(rect.x+rect.width-o.x)/o.width-1;
++        const GLfloat top=1-2*(rect.y-o.y)/o.height,bottom=1-2*(rect.y+rect.height-o.y)/o.height;
++        const GLfloat positions[]={left,top,right,top,left,bottom,right,bottom},uv[]={0,0,1,0,0,1,1,1};
++        glBindTexture(GL_TEXTURE_2D,texture);glVertexAttribPointer(positionLocation,2,GL_FLOAT,GL_FALSE,0,positions);glVertexAttribPointer(uvLocation,2,GL_FLOAT,GL_FALSE,0,uv);glDrawArrays(GL_TRIANGLE_STRIP,0,4);
++    }
++    static std::string byteDigest(const std::vector<unsigned char>& bytes){return QCryptographicHash::hash(QByteArray(reinterpret_cast<const char*>(bytes.data()),bytes.size()),QCryptographicHash::Sha256).toHex().toStdString();}
++    CausalObservation observeCausal(Output& o,const std::string& kind,size_t prefix=0,std::vector<int> controls={}){
++        CausalObservation result;result.kind=kind;result.prefix=prefix;result.controls=std::move(controls);
++        GLint format=0,type=0,pack=0;glGetIntegerv(GL_IMPLEMENTATION_COLOR_READ_FORMAT,&format);glGetIntegerv(GL_IMPLEMENTATION_COLOR_READ_TYPE,&type);glGetIntegerv(GL_PACK_ALIGNMENT,&pack);
++        if(glGetError()!=GL_NO_ERROR)throw std::runtime_error("causal read pair inspection failed");
++        OwnedCausal::validateReadPair(format,type);result.nativeFormat=format;result.nativeType=type;
++        const uint64_t count=uint64_t(o.bufferWidth)*o.bufferHeight*4;
++        const auto read=[&](unsigned f,unsigned t){
++            std::vector<unsigned char> bytes(count);glPixelStorei(GL_PACK_ALIGNMENT,1);glReadPixels(0,0,o.bufferWidth,o.bufferHeight,f,t,bytes.data());const auto error=glGetError();glPixelStorei(GL_PACK_ALIGNMENT,pack);const auto restored=glGetError();
++            if(error!=GL_NO_ERROR||restored!=GL_NO_ERROR)throw std::runtime_error("causal read/pack restore failed");return bytes;
++        };
++        result.rgba=OwnedReadback::topLeftRows(read(GL_RGBA,GL_UNSIGNED_BYTE),o.bufferWidth,o.bufferHeight);
++        auto native=read(format,type);result.nativeBytesDigest=byteDigest(native);
++        result.nativeRGBA=OwnedReadback::topLeftRows(OwnedCausal::nativeToRGBA(std::move(native),format,type),o.bufferWidth,o.bufferHeight);
++        return result;
++    }
++    void initializeControls(){
++        if(controlTextures[0])return;
++        GLint unpack=0;glGetIntegerv(GL_UNPACK_ALIGNMENT,&unpack);glPixelStorei(GL_UNPACK_ALIGNMENT,1);glGenTextures(3,controlTextures.data());
++        for(size_t i=0;i<controlTextures.size();++i){glBindTexture(GL_TEXTURE_2D,controlTextures[i]);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_CLAMP_TO_EDGE);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_CLAMP_TO_EDGE);glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,1,1,0,GL_RGBA,GL_UNSIGNED_BYTE,OwnedCausal::controls()[i].data());}
++        const auto uploaded=glGetError();glPixelStorei(GL_UNPACK_ALIGNMENT,unpack);const auto restored=glGetError();
++        if(uploaded!=GL_NO_ERROR||restored!=GL_NO_ERROR)throw std::runtime_error("constant control texture upload failed");
++        emitEvent({{"event","diagnosticControlsUploaded"},{"textureCount",3},{"familyUploadCount",int(uploadCount)},{"sourceProof",false},{"nativeAuthority",false}});
++    }
++    void observeControls(Output& o,std::vector<CausalObservation>& records){
++        if(controlledGenerations.contains(o.generation))return;
++        initializeControls();const Rect whole{double(o.x),double(o.y),double(o.width),double(o.height)};
++        for(const auto& order:{std::vector<int>{1},std::vector<int>{0,1},std::vector<int>{0,1,2}}){
++            glClearColor(0,0,0,0);glClear(GL_COLOR_BUFFER_BIT);
++            for(int index:order)drawQuad(o,whole,controlTextures[index]);
++            if(glGetError()!=GL_NO_ERROR)throw std::runtime_error("constant control draw failed");
++            records.push_back(observeCausal(o,"constant-control",0,order));
++        }
++        controlledGenerations.insert(o.generation);
++        glClearColor(0,0,0,0);glClear(GL_COLOR_BUFFER_BIT);
++    }
++    void publishCausal(Output& o,const Frame& frame,const std::vector<CausalObservation>& records){
++        for(size_t i=0;i<records.size();++i){const auto& r=records[i];
++            const auto stem="causal-"+std::to_string(frame.sequence)+"-"+std::to_string(frame.generation)+"-"+std::to_string(i);
++            OwnedReadback::publishPNG(readbackDirectory,stem+"-rgba.png",o.bufferWidth,o.bufferHeight,r.rgba);
++            OwnedReadback::publishPNG(readbackDirectory,stem+"-native-rgba.png",o.bufferWidth,o.bufferHeight,r.nativeRGBA);
++            QJsonArray prefix,controls;for(size_t n=0;n<r.prefix;++n)prefix.append(membersJson({frame.members.at(n)}).at(0));
++            for(int index:r.controls){QJsonArray color;for(auto channel:OwnedCausal::controls().at(index))color.append(int(channel));controls.append(QJsonObject{{"index",index},{"premultipliedRGBA",color}});}
++            emitEvent({{"event","ownedCausalReadback"},{"kind",qs(r.kind)},{"token",qs(frame.token)},{"digest",qs(frame.digest)},{"stableId",qs(frame.identity.stable)},{"pid",double(frame.identity.pid)},{"sequence",QString::number(frame.sequence)},{"output",qs(frame.output)},{"generation",double(frame.generation)},{"progress",frame.progress},{"members",membersJson(frame.members)},{"prefixCount",int(r.prefix)},{"prefixMembers",prefix},{"controls",controls},{"bufferWidth",frame.bufferWidth},{"bufferHeight",frame.bufferHeight},{"logicalOutput",rectangleJson(Rect{double(o.x),double(o.y),double(o.width),double(o.height)})},{"rgbaFilename",qs(stem+"-rgba.png")},{"nativeRGBAFilename",qs(stem+"-native-rgba.png")},{"rgbaSHA256",qs(byteDigest(r.rgba))},{"nativeRGBASHA256",qs(byteDigest(r.nativeRGBA))},{"nativeBytesSHA256",qs(r.nativeBytesDigest)},{"nativeFormat",double(r.nativeFormat)},{"nativeType",double(r.nativeType)},{"allReadFormatBytesEqual",r.rgba==r.nativeRGBA},{"readError",0},{"encoding","premultiplied-RGBA8-top-left"},{"nativeAuthority",false},{"presentationProof",false}});
++        }
++    }
+     void diagnosticReadback(Output& o,const Frame& frame){
+         if(readbackDirectory<0)return;
+         const auto sample=frame.token+":"+std::to_string(frame.generation)+":"+std::to_string(frame.progress);
+@@ -244,15 +299,24 @@
+         if(glIsEnabled(GL_DITHER)==GL_TRUE){cancel("owned raster dithering state changed");return;}
+         glViewport(0,0,o.bufferWidth,o.bufferHeight);glDisable(GL_SCISSOR_TEST);glClearColor(0,0,0,0);glClear(GL_COLOR_BUFFER_BIT);
+         auto members=active?ledger.sceneRectangles(o.name,p):std::vector<MemberFrame>{};
++        const auto observedToken=ledger.token();const auto observedGeneration=o.generation;
++        std::vector<CausalObservation> causalRecords;bool observe=false;
++        if(active&&causalFixture){
++            OwnedCausal::boundedSampleBytes(o.bufferWidth,o.bufferHeight,members.size());
++            const auto sample=ledger.token()+":"+std::to_string(o.generation)+":"+std::to_string(p);
++            if(!causalSamples.contains(sample)){
++                if(causalSamples.size()>=128)throw std::runtime_error("causal held sample count exceeded");
++                causalSamples.insert(sample);observe=true;
++            }
++        }
+         if(active){
+             if(members.size()!=familyTextures.size()){cancel("complete family textures unavailable");return;}
+             glEnable(GL_BLEND);glBlendFunc(GL_ONE,GL_ONE_MINUS_SRC_ALPHA);glUseProgram(shader);glActiveTexture(GL_TEXTURE0);glUniform1i(glGetUniformLocation(shader,"atlas"),0);
+             glEnableVertexAttribArray(positionLocation);glEnableVertexAttribArray(uvLocation);
++            if(observe)observeControls(o,causalRecords);
+             for(size_t i=0;i<members.size();++i){const auto& rect=members[i].rectangle;
+-                const GLfloat left=2*(rect.x-o.x)/o.width-1,right=2*(rect.x+rect.width-o.x)/o.width-1;
+-                const GLfloat top=1-2*(rect.y-o.y)/o.height,bottom=1-2*(rect.y+rect.height-o.y)/o.height;
+-                const GLfloat positions[]={left,top,right,top,left,bottom,right,bottom},uv[]={0,0,1,0,0,1,1,1};
+-                glBindTexture(GL_TEXTURE_2D,familyTextures[i]);glVertexAttribPointer(positionLocation,2,GL_FLOAT,GL_FALSE,0,positions);glVertexAttribPointer(uvLocation,2,GL_FLOAT,GL_FALSE,0,uv);glDrawArrays(GL_TRIANGLE_STRIP,0,4);
++                drawQuad(o,rect,familyTextures[i]);
++                if(observe){if(glGetError()!=GL_NO_ERROR)throw std::runtime_error("real prefix draw failed");causalRecords.push_back(observeCausal(o,"member-prefix",i+1));}
+             }
+             glDisableVertexAttribArray(positionLocation);glDisableVertexAttribArray(uvLocation);
+         }
+@@ -264,7 +328,8 @@
+         uint64_t number=0;std::optional<Frame> submittedScene;
+         if(active){
+             auto frame=ledger.prepareFamily(o.name,o.generation,p,monotonicNs(),o.bufferWidth,o.bufferHeight);if(!frame){cancel("frame ledger rejected submission");return;}
+-            number=frame->sequence;submittedScene=*frame;diagnosticReadback(o,*frame);auto f=std::make_unique<Feedback>(Feedback{this,&o,o.generation,*frame,wp_presentation_feedback(presentation,o.surface),false,false});
++            if(!causalRecords.empty()&&(frame->token!=observedToken||frame->generation!=observedGeneration||frame->members!=members||frame->bufferWidth!=o.bufferWidth||frame->bufferHeight!=o.bufferHeight))throw std::runtime_error("causal observed draw differs from named immutable frame");
++            number=frame->sequence;submittedScene=*frame;publishCausal(o,*frame,causalRecords);diagnosticReadback(o,*frame);auto f=std::make_unique<Feedback>(Feedback{this,&o,o.generation,*frame,wp_presentation_feedback(presentation,o.surface),false,false});
+             static const wp_presentation_feedback_listener feedbackListener={
+                 [](void* p,struct wp_presentation_feedback*,wl_output* output){auto& f=*static_cast<Feedback*>(p);if(output==f.output->proxy)f.sync=true;else f.mismatch=true;},
+                 [](void* p,struct wp_presentation_feedback*,uint32_t hi,uint32_t lo,uint32_t ns,uint32_t,uint32_t seqhi,uint32_t seqlo,uint32_t){auto& f=*static_cast<Feedback*>(p);f.owner->feedbackDone(f,((uint64_t(hi)<<32)|lo)*1000000000+ns,(uint64_t(seqhi)<<32)|seqlo);},
+@@ -403,7 +468,8 @@
+         }
+     }
+ public:
+-    explicit Renderer(bool diagnostic=false,const std::string& readback=""):rasterFixture(diagnostic){
++    explicit Renderer(bool diagnostic=false,const std::string& readback="",bool causal=false):causalFixture(causal),rasterFixture(diagnostic){
++        if(causal&&(!diagnostic||readback.empty()))throw std::invalid_argument("causal observations require owned raster readback directory");
+         if(!readback.empty()){
+             if(!diagnostic)throw std::invalid_argument("readback only available in raster diagnostic mode");
+             struct stat before{};if(lstat(readback.c_str(),&before)||!S_ISDIR(before.st_mode)||before.st_uid!=getuid()||(before.st_mode&0777)!=0700)throw std::invalid_argument("readback directory must be private existing owned non-symlink directory");
+@@ -449,11 +515,12 @@
+ #ifndef OWNED_EGL_OFFLINE_TEST
+ int main(int argc,char** argv){
+     if(argc==2&&std::string(argv[1])=="--describe"){emitEvent({{"status","staged prototype"},{"protocols",QJsonArray{"layer-shell","presentation","viewporter","xdg-output","fractional-scale"}},{"namespace","hoskinson-window-motion"},{"nativeTested",false},{"serviceIntegrated",false}});return 0;}
+-    try{bool diagnostic=false;std::string readback;
++    try{bool diagnostic=false,causal=false;std::string readback;
+         if(argc==2&&std::string(argv[1])=="--raster-fixture")diagnostic=true;
+         else if(argc==4&&std::string(argv[1])=="--raster-fixture"&&std::string(argv[2])=="--readback-dir"){diagnostic=true;readback=argv[3];}
++        else if(argc==4&&std::string(argv[1])=="--raster-fixture"&&std::string(argv[2])=="--causal-readback-dir"){diagnostic=true;causal=true;readback=argv[3];}
+         else if(argc!=1)throw std::invalid_argument("unknown producer option");
+-        Renderer r(diagnostic,readback);r.run();return 0;}catch(const std::exception& e){emitEvent({{"event","fatal"},{"reason",e.what()},{"nativeAuthority",false}});return 1;}
++        Renderer r(diagnostic,readback,causal);r.run();return 0;}catch(const std::exception& e){emitEvent({{"event","fatal"},{"reason",e.what()},{"nativeAuthority",false}});return 1;}
+ }
+ 
+ #endif

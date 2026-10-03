@@ -1,0 +1,1586 @@
+{
+  "phase": "terminal-post-disk",
+  "capturedRaw": {
+    "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/attempt-baseline-1/actual-terminal-binding.json",
+    "sha256": "e37eefe4c88f9d7f173212e1662dbf918af70bafae4c139d5d98c7c75dbbdf80",
+    "identity": {
+      "device": 58,
+      "inode": 35513034,
+      "size": 398699,
+      "mode": 384,
+      "uid": 1000,
+      "gid": 1000
+    }
+  },
+  "errors": [],
+  "owner": {
+    "pid": 1995611,
+    "start": 21048760,
+    "uid": 1000,
+    "nonce": "2c68c39e026a472dbd7aaabe2b3b42b2",
+    "session": "efb50993780079460b0cbed1363e2166a2de1d9f_1790988008_1873330624",
+    "root": "/run/user/1000/wqa/f7e2/hypr-window-motion/qa-family-service",
+    "rootIdentity": [
+      84,
+      641786
+    ],
+    "lockIdentity": [
+      84,
+      641787
+    ],
+    "compositorPID": 1994531,
+    "compositorStart": 21048142
+  },
+  "ledgerToken": "8636d5d0008f7563f53336a21239e2f2d2323ea028d893c21b0a6838d696fbea",
+  "moduleToken": "3fb530316b7cdbf865d2fd0d5d94741c0a1bf4c9c67cd8b65c8deb9c0432ae62",
+  "terminalBatchConfirmation": [
+    {
+      "actor": 1,
+      "batch": {
+        "instanceID": 131747490520368,
+        "commandsID": 131747465496848,
+        "root": "/run/user/1000/wqa/f7e2/hypr-window-motion/qa-family-service/actors/actor-1-89fe6e9ed5bf473ebd3b4822510e725f",
+        "preview": "/run/user/1000/wqa/f7e2/hypr-window-previews"
+      },
+      "relations": {
+        "batchClass": true,
+        "batchCommands": true,
+        "batchRoot": true,
+        "batchPreview": true,
+        "batchActor": true,
+        "finisherFunction": true,
+        "finisherOwner": true,
+        "batchCallback.stage": true,
+        "batchCallback.finish": true,
+        "batchCallback.discard": true,
+        "batchCallback.require_releasable": true,
+        "batchCallback.require_disposable": true
+      },
+      "callbacks": {
+        "controller.event": {
+          "functionID": 131747490182624,
+          "boundOwnerID": 131747490524400,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_manager.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_manager.py",
+            "before": {
+              "device": 58,
+              "inode": 35073224,
+              "size": 20290,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f"
+          }
+        },
+        "controller.prepare": {
+          "functionID": 131747491575968,
+          "boundOwnerID": 131747490524400,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_controller.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_controller.py",
+            "before": {
+              "device": 58,
+              "inode": 35073223,
+              "size": 24738,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "aaf111982a67fa9d713b078e7241ccab3ef5ad087e49bd6b04448bd7b70079cc"
+          }
+        },
+        "controller.commit_members": {
+          "functionID": 131747491576144,
+          "boundOwnerID": 131747490524400,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_controller.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_controller.py",
+            "before": {
+              "device": 58,
+              "inode": 35073223,
+              "size": 24738,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "aaf111982a67fa9d713b078e7241ccab3ef5ad087e49bd6b04448bd7b70079cc"
+          }
+        },
+        "controller.transport_failure": {
+          "functionID": 131747490182448,
+          "boundOwnerID": 131747490524400,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_manager.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_manager.py",
+            "before": {
+              "device": 58,
+              "inode": 35073224,
+              "size": 20290,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f"
+          }
+        },
+        "native.bind_controller": {
+          "functionID": 131747488433248,
+          "boundOwnerID": 131747519501216,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 35073393,
+              "size": 20989,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b"
+          }
+        },
+        "failure.bind": {
+          "functionID": 131747489815312,
+          "boundOwnerID": 131747490523056,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 35073393,
+              "size": 20989,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b"
+          }
+        },
+        "desktop.commit": {
+          "functionID": 131747489816544,
+          "boundOwnerID": 131747490517344,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 35073393,
+              "size": 20989,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b"
+          }
+        },
+        "desktop.clients": {
+          "functionID": 131747469446480,
+          "boundOwnerID": 131747490522720,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/production_motion_6d9.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/production_motion_6d9.py",
+            "before": {
+              "device": 58,
+              "inode": 35073221,
+              "size": 51974,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa"
+          }
+        },
+        "commands.run": {
+          "functionID": 131747491638512,
+          "boundOwnerID": 131747465496848,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/owned_commands.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/owned_commands.py",
+            "before": {
+              "device": 58,
+              "inode": 35073257,
+              "size": 16520,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "6f348647be1f8cbcaae2d0582543b6359968c681a0dd711f9be9802fd8b4f1a3"
+          }
+        },
+        "reader.query": {
+          "functionID": 131747469457392,
+          "boundOwnerID": 131747490515664,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/readonly_ipc.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/readonly_ipc.py",
+            "before": {
+              "device": 58,
+              "inode": 35073316,
+              "size": 19577,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b"
+          }
+        },
+        "runtime.persist": {
+          "functionID": 131747489813024,
+          "boundOwnerID": 131747490513648,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/service_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/service_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 35073225,
+              "size": 17931,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f"
+          }
+        },
+        "desktop.finish_capture_previews": {
+          "functionID": 131747490176112,
+          "boundOwnerID": 131747490517344,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_desktop.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_desktop.py",
+            "before": {
+              "device": 58,
+              "inode": 35073219,
+              "size": 28276,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "e10e83de40ffb3bd3c824a7515066390ecd7c8916454e2fd366451f06521c461"
+          }
+        },
+        "batch.stage": {
+          "functionID": 131747490169776,
+          "boundOwnerID": 131747490520368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch.finish": {
+          "functionID": 131747490173296,
+          "boundOwnerID": 131747490520368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch.discard": {
+          "functionID": 131747490169952,
+          "boundOwnerID": 131747490520368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch.require_releasable": {
+          "functionID": 131747490170128,
+          "boundOwnerID": 131747490520368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch.require_disposable": {
+          "functionID": 131747490170480,
+          "boundOwnerID": 131747490520368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch.bind_renderer": {
+          "functionID": 131747490171008,
+          "boundOwnerID": 131747490520368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch._closed": {
+          "functionID": 131747490171360,
+          "boundOwnerID": 131747490520368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch._renderer_matches": {
+          "functionID": 131747490170832,
+          "boundOwnerID": 131747490520368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch._typed_equal": {
+          "functionID": 131747490170656,
+          "boundOwnerID": 131747519501216,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch._renderer_witness": {
+          "functionID": 131747490171184,
+          "boundOwnerID": 131747519501216,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        }
+      },
+      "renderer": {
+        "stable": {
+          "bindingID": 131747465712960,
+          "transportID": 131747490523392,
+          "launchID": 131747490523728,
+          "processID": 131747465498128,
+          "keeperID": 131747490514992,
+          "job": "0c72645da0dd4a8f98ebf628708b90c0",
+          "actor": 1,
+          "ownership": {
+            "pid": 1995681,
+            "start": 21048887,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 774713,
+              "size": 504432,
+              "sha256": "06185baacd8316adec369ec5453699e8da054bb057f30242d43dc8607ced1865",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 774714,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/7",
+              "10",
+              "13",
+              "9",
+              "[\"/proc/self/fd/9\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 7,
+            "producerFD": 9,
+            "targetArgv": [
+              "/proc/self/fd/9"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/run/user/1000/wqa/f7e2",
+              "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790988008_1873330624",
+              "WAYLAND_DISPLAY": "wayland-1"
+            }
+          },
+          "producerSHA256": "06185baacd8316adec369ec5453699e8da054bb057f30242d43dc8607ced1865",
+          "environment": {
+            "XDG_RUNTIME_DIR": "/run/user/1000/wqa/f7e2",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790988008_1873330624",
+            "WAYLAND_DISPLAY": "wayland-1"
+          },
+          "keeperRoot": "/run/user/1000/wqa/f7e2/hypr-window-motion/qa-family-service",
+          "keeperRootIdentity": [
+            84,
+            641786
+          ],
+          "keeperNonce": "2cd14501d5f8402fb298bcf5c44ef793",
+          "keeperPID": 1995662,
+          "keeperStart": 21048846
+        },
+        "lifecycle": {
+          "terminalObservation": true,
+          "rendererReturncode": 0,
+          "transportClosed": true,
+          "transportClosing": true,
+          "transportFailed": false,
+          "transportCloseError": null,
+          "launchClosed": true,
+          "keeperClosed": true,
+          "keeperReturncode": 0,
+          "keeperPhase": "closed",
+          "keeperTerminal": {
+            "allGroupsEmpty": true,
+            "closedNs": 198377657091701,
+            "jobs": [
+              {
+                "groupEmpty": true,
+                "job": "9a760256818f4d648342124482ea7aa6",
+                "normalCompletion": true,
+                "pid": 1995697,
+                "start": 21048918
+              },
+              {
+                "groupEmpty": true,
+                "job": "5d57f27851694b5899750dfeba28c8cd",
+                "normalCompletion": true,
+                "pid": 1995700,
+                "start": 21048931
+              },
+              {
+                "groupEmpty": true,
+                "job": "7a1bd1112fe7490094461d1a3445ce68",
+                "normalCompletion": true,
+                "pid": 1995711,
+                "start": 21048947
+              },
+              {
+                "groupEmpty": true,
+                "job": "c7e34e7d91ee4eb7b520206a4d5eb4da",
+                "normalCompletion": true,
+                "pid": 1995744,
+                "start": 21048966
+              },
+              {
+                "groupEmpty": true,
+                "job": "10f83418cfd149f1b5c2b22e72513f8f",
+                "normalCompletion": true,
+                "pid": 1995777,
+                "start": 21048987
+              },
+              {
+                "groupEmpty": true,
+                "job": "6841b4afe794425286e540862d90dca7",
+                "normalCompletion": true,
+                "pid": 1995785,
+                "start": 21049000
+              },
+              {
+                "groupEmpty": true,
+                "job": "7447d55eac8a4deeb3f79bbae9ee0688",
+                "normalCompletion": true,
+                "pid": 1995833,
+                "start": 21049021
+              },
+              {
+                "groupEmpty": true,
+                "job": "7c55f429979d40dcafeafce72c4fd6ea",
+                "normalCompletion": true,
+                "pid": 1995847,
+                "start": 21049035
+              },
+              {
+                "groupEmpty": true,
+                "job": "b9a0963d105945dab4b8c519677f887e",
+                "normalCompletion": true,
+                "pid": 1995875,
+                "start": 21049070
+              },
+              {
+                "groupEmpty": true,
+                "job": "c2d8d34982c840c1bf525ca029b0ecca",
+                "normalCompletion": true,
+                "pid": 1995904,
+                "start": 21049090
+              },
+              {
+                "groupEmpty": true,
+                "job": "69a624a052814a36bca938c027fea840",
+                "normalCompletion": true,
+                "pid": 1995931,
+                "start": 21049109
+              },
+              {
+                "groupEmpty": true,
+                "job": "608cefc56b6a447bb2bb032ba1dc0c58",
+                "normalCompletion": true,
+                "pid": 1995966,
+                "start": 21049136
+              },
+              {
+                "groupEmpty": true,
+                "job": "1cc6b83211b34d1db2c2747350130340",
+                "normalCompletion": true,
+                "pid": 1995994,
+                "start": 21049151
+              },
+              {
+                "groupEmpty": true,
+                "job": "12c3d6bdd4ed46e4a7224b86b2f1a003",
+                "normalCompletion": true,
+                "pid": 1996012,
+                "start": 21049166
+              },
+              {
+                "groupEmpty": true,
+                "job": "0c72645da0dd4a8f98ebf628708b90c0",
+                "normalCompletion": true,
+                "pid": 1995681,
+                "start": 21048887
+              },
+              {
+                "groupEmpty": true,
+                "job": "799bacb5da1b410bb2c320b09c97b7a9",
+                "normalCompletion": true,
+                "pid": 1996444,
+                "start": 21049425
+              },
+              {
+                "groupEmpty": true,
+                "job": "8efb7035a9f54acd8b30b80ac4aaf6ec",
+                "normalCompletion": true,
+                "pid": 1996495,
+                "start": 21049454
+              },
+              {
+                "groupEmpty": true,
+                "job": "31e4ee6a2a8b472fa3b1df0cf3f386da",
+                "normalCompletion": true,
+                "pid": 1996502,
+                "start": 21049471
+              },
+              {
+                "groupEmpty": true,
+                "job": "9d2e4c07a37e41ba864b7daba1b0b7b9",
+                "normalCompletion": true,
+                "pid": 1996503,
+                "start": 21049471
+              },
+              {
+                "groupEmpty": true,
+                "job": "0fcb7a30cea84e77af8b857488985f60",
+                "normalCompletion": true,
+                "pid": 1996501,
+                "start": 21049471
+              },
+              {
+                "groupEmpty": true,
+                "job": "789458f3bc50425aa4686abcb5c7e66b",
+                "normalCompletion": true,
+                "pid": 1996527,
+                "start": 21049489
+              },
+              {
+                "groupEmpty": true,
+                "job": "836416cdb63b41729521f2a13302dcec",
+                "normalCompletion": true,
+                "pid": 1996545,
+                "start": 21049507
+              },
+              {
+                "groupEmpty": true,
+                "job": "5ac080aebf884784b1c1d8a6ad4c3d11",
+                "normalCompletion": true,
+                "pid": 1996552,
+                "start": 21049520
+              },
+              {
+                "groupEmpty": true,
+                "job": "4c38dee916984f6691db7279df2301f5",
+                "normalCompletion": true,
+                "pid": 1996559,
+                "start": 21049530
+              },
+              {
+                "groupEmpty": true,
+                "job": "3e5d904cd46643a39f0a395b2c3cc159",
+                "normalCompletion": true,
+                "pid": 1996573,
+                "start": 21049543
+              },
+              {
+                "groupEmpty": true,
+                "job": "e9778d59ec3e4b018233419973570048",
+                "normalCompletion": true,
+                "pid": 1996603,
+                "start": 21049559
+              },
+              {
+                "groupEmpty": true,
+                "job": "88d2057b999d4176b050f38975bd2025",
+                "normalCompletion": true,
+                "pid": 1996621,
+                "start": 21049571
+              },
+              {
+                "groupEmpty": true,
+                "job": "7ba32e2c81a84781b227914e3e5f7fa5",
+                "normalCompletion": true,
+                "pid": 1996640,
+                "start": 21049582
+              },
+              {
+                "groupEmpty": true,
+                "job": "39e18457bf8244e4a9ab2ece36b24b0c",
+                "normalCompletion": true,
+                "pid": 1996659,
+                "start": 21049601
+              },
+              {
+                "groupEmpty": true,
+                "job": "0dce4e6301bb43c0944bfeae4aa38391",
+                "normalCompletion": true,
+                "pid": 1996673,
+                "start": 21049636
+              },
+              {
+                "groupEmpty": true,
+                "job": "b120588d06dc4761bcc64a874fbe144d",
+                "normalCompletion": true,
+                "pid": 1996703,
+                "start": 21049654
+              },
+              {
+                "groupEmpty": true,
+                "job": "b4aabf513d8f49ef8fa9d6bdb0a1f7a1",
+                "normalCompletion": true,
+                "pid": 1996736,
+                "start": 21049673
+              },
+              {
+                "groupEmpty": true,
+                "job": "9085fe1571684088a2447e889ece9cf6",
+                "normalCompletion": true,
+                "pid": 1996777,
+                "start": 21049694
+              },
+              {
+                "groupEmpty": true,
+                "job": "92d71ce596f7425f9cadfad296a91c8b",
+                "normalCompletion": true,
+                "pid": 1996782,
+                "start": 21049705
+              },
+              {
+                "groupEmpty": true,
+                "job": "dd5c7e59ff714560aca62f509fbc3fd8",
+                "normalCompletion": true,
+                "pid": 1996786,
+                "start": 21049717
+              },
+              {
+                "groupEmpty": true,
+                "job": "10fd0562a23645b59afcdc158bd37629",
+                "normalCompletion": true,
+                "pid": 1996369,
+                "start": 21049387
+              }
+            ],
+            "keeperPID": 1995662,
+            "keeperStart": 21048846,
+            "nonce": "2cd14501d5f8402fb298bcf5c44ef793",
+            "normalStop": true,
+            "registrations": 36,
+            "rootIdentity": [
+              84,
+              641786
+            ],
+            "servicePID": 1995611,
+            "serviceStart": 21048760
+          }
+        },
+        "relations": {
+          "bindingShape": true,
+          "rendererClasses": true,
+          "rendererObjectChain": true,
+          "rendererActorJob": true,
+          "rendererPopenPID": true,
+          "rendererSelectedMaterial": true,
+          "rendererOwnership": true,
+          "keeperOwnedContext": true,
+          "rendererNormalClose": true,
+          "rendererRegistrationRetired": true,
+          "keeperNormalStop": true,
+          "rendererGuard.bind_renderer": true,
+          "rendererGuard._closed": true,
+          "rendererGuard._renderer_matches": true,
+          "rendererGuard._typed_equal": true,
+          "rendererGuard._renderer_witness": true
+        },
+        "errors": []
+      }
+    },
+    {
+      "actor": 2,
+      "batch": {
+        "instanceID": 131747465500368,
+        "commandsID": 131747489716144,
+        "root": "/run/user/1000/wqa/f7e2/hypr-window-motion/qa-family-service/actors/actor-2-c7b2fb9bea144ff1bd6f63922aa2753d",
+        "preview": "/run/user/1000/wqa/f7e2/hypr-window-previews"
+      },
+      "relations": {
+        "batchClass": true,
+        "batchCommands": true,
+        "batchRoot": true,
+        "batchPreview": true,
+        "batchActor": true,
+        "finisherFunction": true,
+        "finisherOwner": true,
+        "batchCallback.stage": true,
+        "batchCallback.finish": true,
+        "batchCallback.discard": true,
+        "batchCallback.require_releasable": true,
+        "batchCallback.require_disposable": true
+      },
+      "callbacks": {
+        "controller.event": {
+          "functionID": 131747490182624,
+          "boundOwnerID": 131747465501968,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_manager.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_manager.py",
+            "before": {
+              "device": 58,
+              "inode": 35073224,
+              "size": 20290,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f"
+          }
+        },
+        "controller.prepare": {
+          "functionID": 131747491575968,
+          "boundOwnerID": 131747465501968,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_controller.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_controller.py",
+            "before": {
+              "device": 58,
+              "inode": 35073223,
+              "size": 24738,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "aaf111982a67fa9d713b078e7241ccab3ef5ad087e49bd6b04448bd7b70079cc"
+          }
+        },
+        "controller.commit_members": {
+          "functionID": 131747491576144,
+          "boundOwnerID": 131747465501968,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_controller.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_controller.py",
+            "before": {
+              "device": 58,
+              "inode": 35073223,
+              "size": 24738,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "aaf111982a67fa9d713b078e7241ccab3ef5ad087e49bd6b04448bd7b70079cc"
+          }
+        },
+        "controller.transport_failure": {
+          "functionID": 131747490182448,
+          "boundOwnerID": 131747465501968,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_manager.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_manager.py",
+            "before": {
+              "device": 58,
+              "inode": 35073224,
+              "size": 20290,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f"
+          }
+        },
+        "native.bind_controller": {
+          "functionID": 131747490093840,
+          "boundOwnerID": 131747519501216,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 35073393,
+              "size": 20989,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b"
+          }
+        },
+        "failure.bind": {
+          "functionID": 131747489815312,
+          "boundOwnerID": 131747465501648,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 35073393,
+              "size": 20989,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b"
+          }
+        },
+        "desktop.commit": {
+          "functionID": 131747489816544,
+          "boundOwnerID": 131747465497808,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 35073393,
+              "size": 20989,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b"
+          }
+        },
+        "desktop.clients": {
+          "functionID": 131747488432192,
+          "boundOwnerID": 131747490528768,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/production_motion_6d9.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/production_motion_6d9.py",
+            "before": {
+              "device": 58,
+              "inode": 35073221,
+              "size": 51974,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa"
+          }
+        },
+        "commands.run": {
+          "functionID": 131747491638512,
+          "boundOwnerID": 131747489716144,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/owned_commands.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/owned_commands.py",
+            "before": {
+              "device": 58,
+              "inode": 35073257,
+              "size": 16520,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "6f348647be1f8cbcaae2d0582543b6359968c681a0dd711f9be9802fd8b4f1a3"
+          }
+        },
+        "reader.query": {
+          "functionID": 131747469457392,
+          "boundOwnerID": 131747490515664,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/readonly_ipc.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/readonly_ipc.py",
+            "before": {
+              "device": 58,
+              "inode": 35073316,
+              "size": 19577,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b"
+          }
+        },
+        "runtime.persist": {
+          "functionID": 131747489813024,
+          "boundOwnerID": 131747490513648,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/service_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/service_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 35073225,
+              "size": 17931,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f"
+          }
+        },
+        "desktop.finish_capture_previews": {
+          "functionID": 131747490176112,
+          "boundOwnerID": 131747465497808,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_desktop.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_desktop.py",
+            "before": {
+              "device": 58,
+              "inode": 35073219,
+              "size": 28276,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "e10e83de40ffb3bd3c824a7515066390ecd7c8916454e2fd366451f06521c461"
+          }
+        },
+        "batch.stage": {
+          "functionID": 131747490169776,
+          "boundOwnerID": 131747465500368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch.finish": {
+          "functionID": 131747490173296,
+          "boundOwnerID": 131747465500368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch.discard": {
+          "functionID": 131747490169952,
+          "boundOwnerID": 131747465500368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch.require_releasable": {
+          "functionID": 131747490170128,
+          "boundOwnerID": 131747465500368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch.require_disposable": {
+          "functionID": 131747490170480,
+          "boundOwnerID": 131747465500368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch.bind_renderer": {
+          "functionID": 131747490171008,
+          "boundOwnerID": 131747465500368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch._closed": {
+          "functionID": 131747490171360,
+          "boundOwnerID": 131747465500368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch._renderer_matches": {
+          "functionID": 131747490170832,
+          "boundOwnerID": 131747465500368,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch._typed_equal": {
+          "functionID": 131747490170656,
+          "boundOwnerID": 131747519501216,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        },
+        "batch._renderer_witness": {
+          "functionID": 131747490171184,
+          "boundOwnerID": 131747519501216,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 35073392,
+              "size": 25743,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746"
+          }
+        }
+      },
+      "renderer": {
+        "stable": {
+          "bindingID": 131747472593664,
+          "transportID": 131747465503888,
+          "launchID": 131747462676112,
+          "processID": 131747490307888,
+          "keeperID": 131747490514992,
+          "job": "10fd0562a23645b59afcdc158bd37629",
+          "actor": 2,
+          "ownership": {
+            "pid": 1996369,
+            "start": 21049387,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 772719,
+              "size": 504432,
+              "sha256": "06185baacd8316adec369ec5453699e8da054bb057f30242d43dc8607ced1865",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 772720,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/7",
+              "10",
+              "13",
+              "9",
+              "[\"/proc/self/fd/9\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 7,
+            "producerFD": 9,
+            "targetArgv": [
+              "/proc/self/fd/9"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/run/user/1000/wqa/f7e2",
+              "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790988008_1873330624",
+              "WAYLAND_DISPLAY": "wayland-1"
+            }
+          },
+          "producerSHA256": "06185baacd8316adec369ec5453699e8da054bb057f30242d43dc8607ced1865",
+          "environment": {
+            "XDG_RUNTIME_DIR": "/run/user/1000/wqa/f7e2",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790988008_1873330624",
+            "WAYLAND_DISPLAY": "wayland-1"
+          },
+          "keeperRoot": "/run/user/1000/wqa/f7e2/hypr-window-motion/qa-family-service",
+          "keeperRootIdentity": [
+            84,
+            641786
+          ],
+          "keeperNonce": "2cd14501d5f8402fb298bcf5c44ef793",
+          "keeperPID": 1995662,
+          "keeperStart": 21048846
+        },
+        "lifecycle": {
+          "terminalObservation": true,
+          "rendererReturncode": 0,
+          "transportClosed": true,
+          "transportClosing": true,
+          "transportFailed": false,
+          "transportCloseError": null,
+          "launchClosed": true,
+          "keeperClosed": true,
+          "keeperReturncode": 0,
+          "keeperPhase": "closed",
+          "keeperTerminal": {
+            "allGroupsEmpty": true,
+            "closedNs": 198377657091701,
+            "jobs": [
+              {
+                "groupEmpty": true,
+                "job": "9a760256818f4d648342124482ea7aa6",
+                "normalCompletion": true,
+                "pid": 1995697,
+                "start": 21048918
+              },
+              {
+                "groupEmpty": true,
+                "job": "5d57f27851694b5899750dfeba28c8cd",
+                "normalCompletion": true,
+                "pid": 1995700,
+                "start": 21048931
+              },
+              {
+                "groupEmpty": true,
+                "job": "7a1bd1112fe7490094461d1a3445ce68",
+                "normalCompletion": true,
+                "pid": 1995711,
+                "start": 21048947
+              },
+              {
+                "groupEmpty": true,
+                "job": "c7e34e7d91ee4eb7b520206a4d5eb4da",
+                "normalCompletion": true,
+                "pid": 1995744,
+                "start": 21048966
+              },
+              {
+                "groupEmpty": true,
+                "job": "10f83418cfd149f1b5c2b22e72513f8f",
+                "normalCompletion": true,
+                "pid": 1995777,
+                "start": 21048987
+              },
+              {
+                "groupEmpty": true,
+                "job": "6841b4afe794425286e540862d90dca7",
+                "normalCompletion": true,
+                "pid": 1995785,
+                "start": 21049000
+              },
+              {
+                "groupEmpty": true,
+                "job": "7447d55eac8a4deeb3f79bbae9ee0688",
+                "normalCompletion": true,
+                "pid": 1995833,
+                "start": 21049021
+              },
+              {
+                "groupEmpty": true,
+                "job": "7c55f429979d40dcafeafce72c4fd6ea",
+                "normalCompletion": true,
+                "pid": 1995847,
+                "start": 21049035
+              },
+              {
+                "groupEmpty": true,
+                "job": "b9a0963d105945dab4b8c519677f887e",
+                "normalCompletion": true,
+                "pid": 1995875,
+                "start": 21049070
+              },
+              {
+                "groupEmpty": true,
+                "job": "c2d8d34982c840c1bf525ca029b0ecca",
+                "normalCompletion": true,
+                "pid": 1995904,
+                "start": 21049090
+              },
+              {
+                "groupEmpty": true,
+                "job": "69a624a052814a36bca938c027fea840",
+                "normalCompletion": true,
+                "pid": 1995931,
+                "start": 21049109
+              },
+              {
+                "groupEmpty": true,
+                "job": "608cefc56b6a447bb2bb032ba1dc0c58",
+                "normalCompletion": true,
+                "pid": 1995966,
+                "start": 21049136
+              },
+              {
+                "groupEmpty": true,
+                "job": "1cc6b83211b34d1db2c2747350130340",
+                "normalCompletion": true,
+                "pid": 1995994,
+                "start": 21049151
+              },
+              {
+                "groupEmpty": true,
+                "job": "12c3d6bdd4ed46e4a7224b86b2f1a003",
+                "normalCompletion": true,
+                "pid": 1996012,
+                "start": 21049166
+              },
+              {
+                "groupEmpty": true,
+                "job": "0c72645da0dd4a8f98ebf628708b90c0",
+                "normalCompletion": true,
+                "pid": 1995681,
+                "start": 21048887
+              },
+              {
+                "groupEmpty": true,
+                "job": "799bacb5da1b410bb2c320b09c97b7a9",
+                "normalCompletion": true,
+                "pid": 1996444,
+                "start": 21049425
+              },
+              {
+                "groupEmpty": true,
+                "job": "8efb7035a9f54acd8b30b80ac4aaf6ec",
+                "normalCompletion": true,
+                "pid": 1996495,
+                "start": 21049454
+              },
+              {
+                "groupEmpty": true,
+                "job": "31e4ee6a2a8b472fa3b1df0cf3f386da",
+                "normalCompletion": true,
+                "pid": 1996502,
+                "start": 21049471
+              },
+              {
+                "groupEmpty": true,
+                "job": "9d2e4c07a37e41ba864b7daba1b0b7b9",
+                "normalCompletion": true,
+                "pid": 1996503,
+                "start": 21049471
+              },
+              {
+                "groupEmpty": true,
+                "job": "0fcb7a30cea84e77af8b857488985f60",
+                "normalCompletion": true,
+                "pid": 1996501,
+                "start": 21049471
+              },
+              {
+                "groupEmpty": true,
+                "job": "789458f3bc50425aa4686abcb5c7e66b",
+                "normalCompletion": true,
+                "pid": 1996527,
+                "start": 21049489
+              },
+              {
+                "groupEmpty": true,
+                "job": "836416cdb63b41729521f2a13302dcec",
+                "normalCompletion": true,
+                "pid": 1996545,
+                "start": 21049507
+              },
+              {
+                "groupEmpty": true,
+                "job": "5ac080aebf884784b1c1d8a6ad4c3d11",
+                "normalCompletion": true,
+                "pid": 1996552,
+                "start": 21049520
+              },
+              {
+                "groupEmpty": true,
+                "job": "4c38dee916984f6691db7279df2301f5",
+                "normalCompletion": true,
+                "pid": 1996559,
+                "start": 21049530
+              },
+              {
+                "groupEmpty": true,
+                "job": "3e5d904cd46643a39f0a395b2c3cc159",
+                "normalCompletion": true,
+                "pid": 1996573,
+                "start": 21049543
+              },
+              {
+                "groupEmpty": true,
+                "job": "e9778d59ec3e4b018233419973570048",
+                "normalCompletion": true,
+                "pid": 1996603,
+                "start": 21049559
+              },
+              {
+                "groupEmpty": true,
+                "job": "88d2057b999d4176b050f38975bd2025",
+                "normalCompletion": true,
+                "pid": 1996621,
+                "start": 21049571
+              },
+              {
+                "groupEmpty": true,
+                "job": "7ba32e2c81a84781b227914e3e5f7fa5",
+                "normalCompletion": true,
+                "pid": 1996640,
+                "start": 21049582
+              },
+              {
+                "groupEmpty": true,
+                "job": "39e18457bf8244e4a9ab2ece36b24b0c",
+                "normalCompletion": true,
+                "pid": 1996659,
+                "start": 21049601
+              },
+              {
+                "groupEmpty": true,
+                "job": "0dce4e6301bb43c0944bfeae4aa38391",
+                "normalCompletion": true,
+                "pid": 1996673,
+                "start": 21049636
+              },
+              {
+                "groupEmpty": true,
+                "job": "b120588d06dc4761bcc64a874fbe144d",
+                "normalCompletion": true,
+                "pid": 1996703,
+                "start": 21049654
+              },
+              {
+                "groupEmpty": true,
+                "job": "b4aabf513d8f49ef8fa9d6bdb0a1f7a1",
+                "normalCompletion": true,
+                "pid": 1996736,
+                "start": 21049673
+              },
+              {
+                "groupEmpty": true,
+                "job": "9085fe1571684088a2447e889ece9cf6",
+                "normalCompletion": true,
+                "pid": 1996777,
+                "start": 21049694
+              },
+              {
+                "groupEmpty": true,
+                "job": "92d71ce596f7425f9cadfad296a91c8b",
+                "normalCompletion": true,
+                "pid": 1996782,
+                "start": 21049705
+              },
+              {
+                "groupEmpty": true,
+                "job": "dd5c7e59ff714560aca62f509fbc3fd8",
+                "normalCompletion": true,
+                "pid": 1996786,
+                "start": 21049717
+              },
+              {
+                "groupEmpty": true,
+                "job": "10fd0562a23645b59afcdc158bd37629",
+                "normalCompletion": true,
+                "pid": 1996369,
+                "start": 21049387
+              }
+            ],
+            "keeperPID": 1995662,
+            "keeperStart": 21048846,
+            "nonce": "2cd14501d5f8402fb298bcf5c44ef793",
+            "normalStop": true,
+            "registrations": 36,
+            "rootIdentity": [
+              84,
+              641786
+            ],
+            "servicePID": 1995611,
+            "serviceStart": 21048760
+          }
+        },
+        "relations": {
+          "bindingShape": true,
+          "rendererClasses": true,
+          "rendererObjectChain": true,
+          "rendererActorJob": true,
+          "rendererPopenPID": true,
+          "rendererSelectedMaterial": true,
+          "rendererOwnership": true,
+          "keeperOwnedContext": true,
+          "rendererNormalClose": true,
+          "rendererRegistrationRetired": true,
+          "keeperNormalStop": true,
+          "rendererGuard.bind_renderer": true,
+          "rendererGuard._closed": true,
+          "rendererGuard._renderer_matches": true,
+          "rendererGuard._typed_equal": true,
+          "rendererGuard._renderer_witness": true
+        },
+        "errors": []
+      }
+    }
+  ]
+}

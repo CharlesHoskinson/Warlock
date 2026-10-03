@@ -1,0 +1,368 @@
+{
+  "scope": "Actual independent native editable/cursor/selection/Value calls on offscreen Qt TextInput/TextEdit; no reader/compositor claim",
+  "checks": [
+    {
+      "name": "actual native fixture completed normally",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/visible/delete preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/visible/insert preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/visible/replace preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/visible/selection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/visible/addSelection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/visible/removeSelection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/visible/cursor preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/visible/setValue preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/hidden/delete refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/hidden/insert refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/hidden/replace refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/hidden/selection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/hidden/addSelection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/hidden/removeSelection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/hidden/cursor refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/hidden/setValue refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/disabled/delete refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/disabled/insert refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/disabled/replace refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/disabled/selection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/disabled/addSelection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/disabled/removeSelection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/disabled/cursor refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/disabled/setValue refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/modalBackground/delete refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/modalBackground/insert refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/modalBackground/replace refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/modalBackground/selection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/modalBackground/addSelection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/modalBackground/removeSelection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/modalBackground/cursor refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/modalBackground/setValue refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/readOnly/delete refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/readOnly/insert refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/readOnly/replace refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/readOnly/selection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/readOnly/addSelection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/readOnly/removeSelection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/readOnly/cursor preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "PathBar.input/readOnly/setValue refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/visible/delete preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/visible/insert preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/visible/replace preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/visible/selection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/visible/addSelection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/visible/removeSelection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/visible/cursor preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/visible/setValue preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/hidden/delete refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/hidden/insert refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/hidden/replace refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/hidden/selection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/hidden/addSelection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/hidden/removeSelection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/hidden/cursor refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/hidden/setValue refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/disabled/delete refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/disabled/insert refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/disabled/replace refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/disabled/selection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/disabled/addSelection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/disabled/removeSelection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/disabled/cursor refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/disabled/setValue refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/modalBackground/delete refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/modalBackground/insert refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/modalBackground/replace refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/modalBackground/selection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/modalBackground/addSelection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/modalBackground/removeSelection refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/modalBackground/cursor refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/modalBackground/setValue refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/readOnly/delete refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/readOnly/insert refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/readOnly/replace refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/readOnly/selection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/readOnly/addSelection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/readOnly/removeSelection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/readOnly/cursor preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "QA.TextEdit/readOnly/setValue refuses mutation",
+      "passed": true
+    },
+    {
+      "name": "Prompt.input/modalOwner/delete preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "Prompt.input/modalOwner/insert preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "Prompt.input/modalOwner/replace preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "Prompt.input/modalOwner/selection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "Prompt.input/modalOwner/addSelection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "Prompt.input/modalOwner/removeSelection preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "Prompt.input/modalOwner/cursor preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "Prompt.input/modalOwner/setValue preserves native positive behavior",
+      "passed": true
+    },
+    {
+      "name": "destroyed peer is defunct",
+      "passed": true
+    }
+  ],
+  "result": "pass",
+  "baselineSha256": "e1460d76aaa8155adc198f47858c20e38f3c6a16921296bfdc32dcdfe5083c9b",
+  "traceSha256": "e9612e3d73349ca352e74a59f5844c0ad0acc5bc7310c3a8b6376c7f9f824f66"
+}

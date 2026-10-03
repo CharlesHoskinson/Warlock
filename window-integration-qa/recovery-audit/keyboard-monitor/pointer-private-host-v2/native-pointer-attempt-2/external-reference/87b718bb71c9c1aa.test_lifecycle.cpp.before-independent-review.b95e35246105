@@ -1,0 +1,34 @@
+#include "candidate/src/backend/NestedLifecycle.hpp"
+#include <cassert>
+#include <iostream>
+int main() {
+ using namespace Aquamarine::NestedPolicy;
+ assert(selection(nullptr)==Selection::Unspecified);
+ assert(selection("wayland")==Selection::Wayland);
+ for (const char* value : {"", "drm", "headless", "WAYLAND", "wayland,drm", "wayland "}) assert(selection(value)==Selection::Invalid);
+ ConfigureLifecycle state;
+ assert(!state.bufferAllowed()); assert(!state.announce());
+ state.stageSize(320,240); assert(state.width==320&&state.height==240); assert(!state.bufferAllowed());
+ assert(state.acknowledge()); assert(!state.bufferAllowed());
+ assert(state.announce()); assert(state.bufferAllowed()); assert(!state.announce());
+ state.stageSize(480,360); assert(state.acknowledge()); assert(!state.announce()); assert(state.bufferAllowed());
+ assert(state.width==480&&state.height==360);
+ state.destroy(); assert(!state.acknowledge()); assert(!state.announce()); assert(!state.bufferAllowed());
+ state.stageSize(1,1); assert(state.width==480&&state.height==360);
+ ConfigureLifecycle dead; dead.destroy(); assert(!dead.acknowledge()); assert(!dead.announce());
+ ConfigureLifecycle fallback; fallback.stageSize(0,0); assert(fallback.width==1280&&fallback.height==720);
+ // Exhaustive six-event sequences (46,656) check the real helper, including destruction/reconfigure.
+ for (unsigned trace=0;trace<46656;trace++) {
+   unsigned actions=trace; ConfigureLifecycle actual; bool ack=false,published=false,destroyed=false;
+   for(int step=0;step<6;step++) {
+     unsigned event=actions%6; actions/=6;
+     if(event==0) actual.stageSize(step+1,step+2);
+     if(event==1) {assert(actual.acknowledge()==!destroyed);if(!destroyed)ack=true;}
+     if(event==2) {bool allowed=ack&&!published&&!destroyed;assert(actual.announce()==allowed);if(allowed)published=true;}
+     if(event==3||event==4) assert(actual.bufferAllowed()==(ack&&published&&!destroyed));
+     if(event==5) {actual.destroy();destroyed=true;}
+     assert(actual.bufferAllowed()==(ack&&published&&!destroyed));
+   }
+ }
+ std::cout << "selection/lifecycle boundaries and 46656 exhaustive event traces passed\n";
+}

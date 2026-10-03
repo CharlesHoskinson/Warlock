@@ -1,0 +1,24 @@
+{
+  "result": "fail",
+  "runtimeDisposalGuardChanged": false,
+  "records": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "actor_disposal_test.qnt"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: Expected [nativePending,physicalGone,faulted,completeInventory,rendererLive,disposed,disposalAuthorized] and [] to be the same\nTrying to unify entities ['nativePending', 'physicalGone', 'faulted', 'completeInventory', 'rendererLive', 'disposed', 'disposalAuthorized'] and []\nTrying to unify Read[_v349] & Update['nativePending', 'physicalGone', 'faulted', 'completeInventory', 'rendererLive', 'disposed', 'disposalAuthorized'] and Read['rendererLive', 'disposed']\nTrying to unify (Read[_v347] & Update[_v348], Read[_v349] & Update[_v348]) => Read[_v350] & Update[_v348] and (Read[_v336] & Update['nativePending', 'physicalGone', 'faulted', 'completeInventory', 'rendererLive', 'disposed', 'disposalAuthorized'], Read['rendererLive', 'disposed']) => _e86\nTrying to infer effect for operator application in then(then(then(then(init, fire(Fault)), fire(RendererDrain)), fire(Dispose)), assert(and(rendererLive, not(disposed))))\n\n\n  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-actor-keeper-dev-v1/actor_disposal_test.qnt:16:54\n  16:   run faultKeepsRendererAndCapturesQuarantinedTest = init.then(fire(Fault))\n                                                           ^^^^^^^^^^^^^^^^^^^^^^\n  17:     .then(fire(RendererDrain)).then(fire(Dispose))\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  18:     .then(assert(rendererLive and not(disposed)))\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n"
+    }
+  ],
+  "retainedAssemblyFailures": [
+    "actor-disposal-formal-before-guard-v1.json",
+    "actor-disposal-formal-before-guard-v2.json"
+  ],
+  "sourceSHA256": {
+    "actor_disposal.qnt": "61caf4a0d29dcb2bf822c4bef789d0e64aba37076e9589654e9e0b15807d5206",
+    "actor_disposal_test.qnt": "8c9dc95769fec01806dc7f6944238fa1072099714274a71d058478aa4f1e85f6"
+  }
+}

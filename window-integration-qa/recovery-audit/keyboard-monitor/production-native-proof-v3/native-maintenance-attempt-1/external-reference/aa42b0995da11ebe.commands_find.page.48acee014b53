@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_find" xml:lang="kk">
+  <info>
+    <link type="next" xref="commands_mouse"/>
+    <link type="guide" xref="commands#reviewing_screen_contents"/>
+    <link type="seealso" xref="howto_orca_find"/>
+    <title type="sort">2. Orca іздеуі</title>
+    <title type="link">Orca іздеуі</title>
+    <desc>Терезе мазмұнын іздеу командалары</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Orca іздеу командалары</title>
+  <p><app>Orca</app> бағдарламасының <link xref="howto_orca_find">Іздеу мүмкіндігі</link> ағымдағы терезеде орналасқан элементтерді <link xref="howto_flat_review">Жалпақ шолу</link> контекстінен іздеуге мүмкіндік береді.</p>
+  <list>
+    <item>
+      <p><app>Orca</app> іздеу сұхбат терезесін ашу:</p>
+      <list>
+        <item>
+          <p>Жұмыс үстелі: <keyseq><key>KP Delete</key></keyseq></p>
+        </item>
+        <item>
+          <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Left Bracket</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Жалпақ шолуды жолдың келесі данасына жылжыту:</p>
+      <list>
+        <item>
+          <p>Жұмыс үстелі: <keyseq><key>Orca модификаторы</key><key>KP Delete</key></keyseq></p>
+        </item>
+        <item>
+          <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Right Bracket</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Жалпақ шолуды жолдың алдыңғы данасына жылжыту:</p>
+      <list>
+        <item>
+          <p>Жұмыс үстелі: <keyseq> <key>Orca модификаторы</key><key>Shift</key><key>KP Delete</key> </keyseq></p>
+        </item>
+        <item>
+          <p>Ноутбук: <keyseq> <key>Orca модификаторы</key><key>Ctrl</key><key>Right Bracket</key> </keyseq></p>
+        </item>
+      </list>
+    </item>
+  </list>
+</page>

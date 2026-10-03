@@ -1,0 +1,175 @@
+{
+  "updatedUTC": "2026-10-01T15:01:38.423200+00:00",
+  "reportSHA256": "a3e8c1b92cee64e17107a812ff33b0e71907f0d573d03d9380544d43bbfe6736",
+  "independentSafetySourceAndCleanupChecks": {
+    "all356OriginalLocalInputsExact": true,
+    "all356ActualCopiedInputsExact": true,
+    "all2915ExternalInputsExact": true,
+    "all121LinksExact": true,
+    "all19MainPreservationAndLifecycleChecks": true,
+    "normalQuiescentPluginUnload": true,
+    "ownedRuntimeGone": true,
+    "hostCleanupNoErrorsOrSurvivors": true,
+    "allRecordedPrivateProcessIdentitiesGone": true,
+    "archivedMandatoryParentTransportHealthy": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "normalFixtureLifecycleAccepted": false,
+  "unexpectedPrivateDescendantsRetained": [
+    {
+      "pid": 615210,
+      "start": "8913496",
+      "pgid": 614967
+    },
+    {
+      "pid": 615217,
+      "start": "8913497",
+      "pgid": 614967
+    },
+    {
+      "pid": 615223,
+      "start": "8913497",
+      "pgid": 614967
+    },
+    {
+      "pid": 615234,
+      "start": "8913498",
+      "pgid": 614967
+    },
+    {
+      "pid": 615241,
+      "start": "8913500",
+      "pgid": 614967
+    },
+    {
+      "pid": 615247,
+      "start": "8913500",
+      "pgid": 614967
+    },
+    {
+      "pid": 615256,
+      "start": "8913503",
+      "pgid": 614967
+    }
+  ],
+  "allRecordedProcessesGone": [
+    {
+      "pid": 615014,
+      "start": "8913201",
+      "gone": true
+    },
+    {
+      "pid": 615052,
+      "start": "8913214",
+      "gone": true
+    },
+    {
+      "pid": 615063,
+      "start": "8913215",
+      "gone": true
+    },
+    {
+      "pid": 615073,
+      "start": "8913217",
+      "gone": true
+    },
+    {
+      "pid": 615074,
+      "start": "8913217",
+      "gone": true
+    },
+    {
+      "pid": 615078,
+      "start": "8913223",
+      "gone": true
+    },
+    {
+      "pid": 615133,
+      "start": "8913249",
+      "gone": true
+    },
+    {
+      "pid": 615140,
+      "start": "8913256",
+      "gone": true
+    },
+    {
+      "pid": 615144,
+      "start": "8913272",
+      "gone": true
+    },
+    {
+      "pid": 615181,
+      "start": "8913431",
+      "gone": true
+    },
+    {
+      "pid": 615203,
+      "start": "8913488",
+      "gone": true
+    },
+    {
+      "pid": 615365,
+      "start": "8913548",
+      "gone": true
+    },
+    {
+      "pid": 614967,
+      "start": "8913002",
+      "gone": true
+    },
+    {
+      "pid": 614968,
+      "start": "8913005",
+      "gone": true
+    },
+    {
+      "pid": 614977,
+      "start": "8913060",
+      "gone": true
+    },
+    {
+      "pid": 615210,
+      "start": "8913496",
+      "gone": true
+    },
+    {
+      "pid": 615217,
+      "start": "8913497",
+      "gone": true
+    },
+    {
+      "pid": 615223,
+      "start": "8913497",
+      "gone": true
+    },
+    {
+      "pid": 615234,
+      "start": "8913498",
+      "gone": true
+    },
+    {
+      "pid": 615241,
+      "start": "8913500",
+      "gone": true
+    },
+    {
+      "pid": 615247,
+      "start": "8913500",
+      "gone": true
+    },
+    {
+      "pid": 615256,
+      "start": "8913503",
+      "gone": true
+    }
+  ],
+  "normalNativeUnload": true,
+  "all19PreservationChecks": true,
+  "reachedFeatureChecks": 78,
+  "reachedFeaturePassed": 78,
+  "fullCampaignAccepted": false,
+  "retainedPrimaryFailure": "AssertionError('actual Orca popup AX child: None')",
+  "policyAndLifecycleCampaignsReached": false,
+  "physicalHardwareAccepted": false
+}

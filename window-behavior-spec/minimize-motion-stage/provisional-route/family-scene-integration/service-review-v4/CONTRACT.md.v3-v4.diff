@@ -1,0 +1,29 @@
+--- frozen-v3/CONTRACT.md
++++ review-v4/CONTRACT.md
+@@ -129,3 +129,26 @@
+ schedules native settlement separately. Failed shutdown is never reported as a
+ normal accepted exit. A normal close requires callback dispatch to finish within
+ the stated bound, not merely a renderer process exit.
++
++## Multiple families and global reservation authority
++
++Each exact captured ID/PID receives a globally ordered request receipt. Known
++native family members route to their existing actor; PID equality has no routing
++meaning. If two unknown peers create separate actors before enrichment, only a
++complete fresh native graph may reconcile them. A family claim succeeds only
++when no exact member has a newer accepted receipt. It atomically revokes all
++older overlapping actors before destination, readiness or native commit effects.
++An old queued callback or obsolete enrichment cannot reclaim those members.
++
++The registry and each controller use the same reservation lock, including the
++complete native effect transaction. Allocating a new receipt cannot interleave
++between peers' native commits. Fresh metadata and captures run outside that lock.
++Retiring an overlapping visual actor queues exact-token cancellation and retains
++its temporary files until its own acknowledgement or confirmed process failure;
++retirement confers no native settlement authority. Cleanup cannot delete current
++sources. Family mappings survive normal minimize cleanup so the same actor's
++persistent exact-identity cached snapshot remains available for hidden restore.
++
++Membership/geometry replacement and an authoritative desktop-context provider
++remain separate required work. The manager cannot turn caller-supplied context
++into proof of current native desktop/output identity.

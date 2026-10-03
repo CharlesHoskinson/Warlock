@@ -1,0 +1,153 @@
+{
+  "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790892503_2035427417",
+  "compositor": {
+    "pid": 1445174,
+    "start": "11497608"
+  },
+  "socket": "/run/user/1000/wqa/a2f7/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790892503_2035427417/.socket.sock",
+  "socketIdentity": [
+    84,
+    291339,
+    1000
+  ],
+  "versionSHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+  "helpers": {
+    "snap": {
+      "wrapper": "/run/user/1000/wqa/a2f7/taskbar-home/.local/bin/hypr-snap-groups",
+      "wrapperSHA256": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+      "actual": "/run/user/1000/wqa/a2f7/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "invocation": "/run/user/1000/wqa/a2f7/taskbar-home/.local/bin/hypr-snap-groups"
+    },
+    "shell": {
+      "wrapper": "/run/user/1000/wqa/a2f7/taskbar-home/.local/bin/omarchy-shell",
+      "wrapperSHA256": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+      "actual": "/run/user/1000/wqa/a2f7/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "invocation": "omarchy-shell"
+    }
+  },
+  "log": "/run/user/1000/wqa/a2f7/taskbar-home/helper-events.jsonl",
+  "allowed": [
+    "hydrate",
+    "inactive-fileDrag",
+    "forget-closed:0x60719d658800:18000000:1445546",
+    "forget-closed:0x60719dbc9d10:18000002:1445546",
+    "forget-closed:0x60719e073fb0:18000003:1445546",
+    "forget-closed:0x60719d809170:18000001:1445546"
+  ],
+  "queryTaskbar": {
+    "path": "/run/user/1000/wqa/a2f7/taskbar-home/.local/bin/hypr-taskbar",
+    "sha256": "58215e6cb07b364988a0d5c38e9a4f63d7803e2b7f78481ea3a7104fa55f02e1",
+    "python": "/usr/bin/python3",
+    "pythonSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+  },
+  "queryEnvironment": {
+    "HOME": "/run/user/1000/wqa/a2f7/taskbar-home",
+    "PATH": "/run/user/1000/wqa/a2f7/taskbar-home/.local/bin:/home/hoskinson/window-integration-qa/family-service-taskbar-v8/payload/omarchy/bin:/usr/bin",
+    "XDG_RUNTIME_DIR": "/run/user/1000/wqa/a2f7",
+    "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790892503_2035427417",
+    "OMARCHY_PATH": "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/payload/omarchy",
+    "WINDOW_QA_HELPER_CONFIG": "/run/user/1000/wqa/a2f7/taskbar-home/helper-config.json"
+  },
+  "queryRoots": {
+    "qs": {
+      "identity": {
+        "pid": 1445208,
+        "start": "11497696",
+        "pgid": 1445208,
+        "parent": 1445039
+      },
+      "argv": [
+        "/usr/bin/qs",
+        "-p",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/payload/omarchy/shell"
+      ],
+      "config": "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/payload/omarchy/shell",
+      "executable": "/usr/bin/quickshell",
+      "executableSHA256": "2dc99382c032710fe495ed115cdee9dc9c69bdb3a21af4d86a9a8ea16733069b",
+      "configSHA256": "4a4b7694e5b9e0bd952ce0efa2d6dc2cea44cdfa98cc2f442e40fe41cbc1beab"
+    },
+    "harness": {
+      "identity": {
+        "pid": 1445039,
+        "start": "11497465",
+        "pgid": 1445039,
+        "parent": 1275790
+      },
+      "argv": [
+        "python3",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/native_integration.py",
+        "--attempt",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/attempt-1"
+      ],
+      "source": "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/native_integration.py",
+      "sourceSHA256": "953d7b1189ec9b505787d3a16e524c6f101d411d7714aedb854b476be955d095",
+      "executable": "/usr/bin/python3.14",
+      "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+    },
+    "service": {
+      "identity": {
+        "pid": 1445757,
+        "start": "11497921",
+        "pgid": 1445757,
+        "parent": 1445039
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/service_observer.py",
+        "--root",
+        "/run/user/1000/wqa/a2f7/hypr-window-motion/qa-family-service",
+        "--session",
+        "efb50993780079460b0cbed1363e2166a2de1d9f_1790892503_2035427417",
+        "--pid",
+        "1445174",
+        "--start",
+        "11497608",
+        "--display",
+        "wayland-1",
+        "--producer",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-readback-v4/hypr-motion-renderer-staged",
+        "--producer-sha256",
+        "fa1c3e5b3d61d06abc09dee438b62bcbd066df0bbd7582acfec509299a40bd64",
+        "--core",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/payload/home/.local/bin/hypr-windowctl-core",
+        "--core-sha256",
+        "30232bb4ffbfca0f0a34dd677ea4bc9fc53f8828bf75c662ce8a0ec15f35db3a",
+        "--evidence",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/attempt-1/service-evidence.json"
+      ],
+      "executable": "/usr/bin/python3.14",
+      "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "source": "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/service_observer.py",
+      "sourceSHA256": "6f2ced491a07a68fee4d674971ec574f69d8da9981255911ea0dab8eaedee158",
+      "sources": {
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/native_desktop.py": "76c601f706c3431987b5c31603931e326f50e367e9ff2bc98db7a7f82bd1466f",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/production_motion_6d9.py": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/scene_controller.py": "8410ba83b9598c81d69e95759f1592fcb95a018b900d83bb6360d103cffaf90c",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/native_runtime.py": "12e791d3e483547d37f49a2dcac6c0dfbc0d7d367ff0ad3ea248e1e60293bd21",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/context_provider.py": "0e3daea910a49f44e63c6321859dd8598c4e610d16e1cc445070602e5bec1b78",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/service_runtime.py": "d48e1c3133bf84bd4a9fc3539060e05ce83c8c90f36b023bb5aeca6da832b615"
+      }
+    }
+  },
+  "serviceMembers": [
+    {
+      "address": "0x60719d658800",
+      "stableId": "18000000",
+      "pid": 1445546
+    },
+    {
+      "address": "0x60719dbc9d10",
+      "stableId": "18000002",
+      "pid": 1445546
+    },
+    {
+      "address": "0x60719e073fb0",
+      "stableId": "18000003",
+      "pid": 1445546
+    }
+  ],
+  "serviceTargetLimitPerMember": 2,
+  "serviceRefreshLimit": 3
+}

@@ -1,0 +1,21 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v14/recovery_resources.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v15-frozen-v2/recovery_resources.py
+@@ -169,7 +169,7 @@
+     finally:os.close(pidfd)
+ 
+ 
+-def dispose_directory(row,*,renderer_gone):
++def dispose_directory(row,*,renderer_gone,inspection_only=False):
+     if renderer_gone is not True:raise ValueError('renderer lifetime closure required before directory disposal')
+     if not isinstance(row,dict) or set(row)!={'path','parentIdentity','identity'}:raise ValueError('complete actor directory ownership required')
+     if type(row['path']) is not str:raise ValueError('typed actor path required')
+@@ -199,6 +199,9 @@
+         for name,expected in entries.items():
+             s=os.stat(name,dir_fd=child,follow_symlinks=False)
+             if (s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns,s.st_ctime_ns)!=expected:raise ValueError('actor material changed during disposal')
++        named=os.stat(path.name,dir_fd=parent,follow_symlinks=False)
++        if [named.st_dev,named.st_ino]!=row['identity']:raise ValueError('actor name replaced before disposal')
++        if inspection_only:return {'directoryGone':False,'inspected':True,'captureFiles':len(entries)}
+         for name in entries:os.unlink(name,dir_fd=child)
+         named=os.stat(path.name,dir_fd=parent,follow_symlinks=False)
+         if [named.st_dev,named.st_ino]!=row['identity']:raise ValueError('actor name replaced before disposal')

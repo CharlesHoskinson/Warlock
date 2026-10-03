@@ -1,0 +1,36 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_focus.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pin_focus\n    ok exactBothRoutesCompleteTest passed 1 test(s)\n    ok changedCoreRefusesPartialTest passed 1 test(s)\n    ok sameCoreWrongSeatRefusesTest passed 1 test(s)\n    ok noObservationNoCompleteTest passed 1 test(s)\n    ok noRefocusOrRetryTest passed 1 test(s)\n    ok changedBeforeCallNoNativeAuthorityTest passed 1 test(s)\n    ok duplicateBeginCannotRebaselineTest passed 1 test(s)\n\n  7 passing (420ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_focus.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (2185ms at 915 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "pin_focus.qnt": "f59d77a7a882686a5575ef947e125ba1130a6914acc083ab0e1d96a5ec62b59f",
+    "FOCUS_PRESERVATION_CONTRACT.md": "9dd857f24b8f3f3e14fbd3d6c5895e88c64c3e7473661d9fa9f4925b3bb30836"
+  },
+  "implementationUnchanged": true,
+  "nativeExecuted": false
+}

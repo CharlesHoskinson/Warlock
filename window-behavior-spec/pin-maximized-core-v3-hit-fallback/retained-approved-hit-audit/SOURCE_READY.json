@@ -1,0 +1,260 @@
+{
+  "result": "DESIGN_AND_EXACT_SOURCE_CPU_COUNTEREXAMPLE_READY",
+  "files": {
+    "HIT_FALLBACK_CONTRACT.md": {
+      "sha256": "6f18c34becffce694cbd912a422a842f82b31c5a06810f979aeb21958c9bfcdc",
+      "mode": 420,
+      "size": 4494
+    },
+    "InputManager.cpp-full-TU-syntax.log": {
+      "sha256": "cd453f4d2e61c4f68b7aad25d40e240c1aa8de4347bb3e68858d5f066d958475",
+      "mode": 420,
+      "size": 3031
+    },
+    "REVIEW_REQUEST.md": {
+      "sha256": "a7b29f790ec6588ea85904a2cf4c7ce7447cec765624561fea9e4901f21189a7",
+      "mode": 420,
+      "size": 2972
+    },
+    "ViewHitTester.cpp-full-TU-syntax.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420,
+      "size": 0
+    },
+    "actual-TU-compile-check.json": {
+      "sha256": "0d7375d3052c199a2f3089b942a189a593d4a4913d4b10ed37d2b80cd5000b44",
+      "mode": 420,
+      "size": 4334
+    },
+    "adapter": {
+      "sha256": "4bf626318f4969cb925adf63d68bea664b7fe59aadbc97b01b02a9dff3c10ed0",
+      "mode": 493,
+      "size": 67496
+    },
+    "adapter-matrix.cpp": {
+      "sha256": "88fb606f1670187345461b39899534496f07198a74c0bfed7bcf78c46717f149",
+      "mode": 420,
+      "size": 8212
+    },
+    "adapter-original": {
+      "sha256": "803b0aea90b96a87bfa2145330c2cb1e18050d64b6a05b156cf736d27c3b5395",
+      "mode": 493,
+      "size": 71616
+    },
+    "adapter-proposed": {
+      "sha256": "ef1a420c00a6b865cbc6a5a00b125e7dedb606e09055c6069eb85fc120b7c1c3",
+      "mode": 493,
+      "size": 71616
+    },
+    "adapter.cpp": {
+      "sha256": "7a8bdb4d14eda2dbd5bf8becd617cbf17a5ae219fc87ee6961e19466c87519a6",
+      "mode": 420,
+      "size": 7035
+    },
+    "compile.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420,
+      "size": 0
+    },
+    "formal-before-runtime-v3.json": {
+      "sha256": "91a0adf9ef3bad3ebd2a6d761d179fa91007fa1453b4b16ddd8e49d2666757c9",
+      "mode": 420,
+      "size": 2828
+    },
+    "formal-before-runtime.json": {
+      "sha256": "6a44a6ec5904368172df5a0d771ad0e4465812bd6cbf44f83005b69922f53cde",
+      "mode": 420,
+      "size": 1211
+    },
+    "formal-final-0.log": {
+      "sha256": "70697eab62aeb1961ee83d5c11a2eee2dff5710e9e27c3030f033f8ae793bc0d",
+      "mode": 420,
+      "size": 849
+    },
+    "formal-final-v3-0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420,
+      "size": 0
+    },
+    "formal-final-v3-1.log": {
+      "sha256": "90aaf060b754f65564be676dfacf2fe09cdded4e8f36cf5ec54d8fac1579ea3d",
+      "mode": 420,
+      "size": 1343
+    },
+    "formal-final-v3-2.log": {
+      "sha256": "57b519cf896a9fb54f2b1a5df50c62ca057885335af11beccf4a5db1976298f8",
+      "mode": 420,
+      "size": 34532
+    },
+    "formal-typecheck.log": {
+      "sha256": "1f35f2ae59f3f784a4cbc5bb7d8d3920e040c98a5f4e38268545f89c592a1389",
+      "mode": 420,
+      "size": 768
+    },
+    "hit_fallback.qnt": {
+      "sha256": "b94e53cc84fc29b51c53204ab6bf5cdbe7abf41d30193d64ed84dc5e31a9cbba",
+      "mode": 420,
+      "size": 6192
+    },
+    "intended/InputManager.cpp": {
+      "sha256": "7de486a9f08d98fb5c8b0455043d4e527161ecb80618d92c6e8a498c593072a8",
+      "mode": 420,
+      "size": 99266
+    },
+    "intended/ViewHitTester.cpp": {
+      "sha256": "c5a9dc872c0fad54fe124b5280f6fa6ad00c5bd21ff7da569a4a1eec14e4f9bb",
+      "mode": 420,
+      "size": 16352
+    },
+    "intended/max-pointer-selection.cpp.inc": {
+      "sha256": "18d45b5d3ee4ba86058cd0fe5050f28be2b80a43fbdef477760ad9337c32daf0",
+      "mode": 420,
+      "size": 2232
+    },
+    "intended/windowAt.cpp.inc": {
+      "sha256": "4bc3907bfbf3ce4dc79f927f9f83f968c660810f37bfd62f6f5afd7842507f88",
+      "mode": 420,
+      "size": 11480
+    },
+    "intended-policy-without-required-include.diff": {
+      "sha256": "fcf4a0c955b6f38dbf25725cb40f1e36bcc9474b8a7ce8e94b83c9b3e3c707c3",
+      "mode": 420,
+      "size": 2827
+    },
+    "intended-policy.diff": {
+      "sha256": "20ac41eb9cc238c24db7eee7630241dc424553ff00c80ce005d4eea404f9011b",
+      "mode": 420,
+      "size": 3176
+    },
+    "matrix-commands.json": {
+      "sha256": "d8f75941fbd54bcc13a2bf3061c59381944432ef9aac765b87825ba1bf2683b6",
+      "mode": 420,
+      "size": 1420
+    },
+    "matrix-original-compile.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420,
+      "size": 0
+    },
+    "matrix-original-run.log": {
+      "sha256": "02cb3f5511b4815a07b5ed10ba032a5ec313eaa0ae10f238b5edd3ff3572c6ed",
+      "mode": 420,
+      "size": 973
+    },
+    "matrix-proposed-compile.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420,
+      "size": 0
+    },
+    "matrix-proposed-run.log": {
+      "sha256": "587ff2c9a281f4a73c7264accc8bfe0f5766f168b6a864d2ecdf653920fd6e30",
+      "mode": 420,
+      "size": 1025
+    },
+    "matrix-verification.json": {
+      "sha256": "deab3d04180b160590f3de9d4159d3b57f6e4e7e8ad7d7430bfc26a87b21ac06",
+      "mode": 420,
+      "size": 3339
+    },
+    "max-pointer-selection-exact.cpp.inc": {
+      "sha256": "3e1fef5527f52158531e3214b5b19abda16c35731d9a66b02576eca7553430fd",
+      "mode": 420,
+      "size": 1865
+    },
+    "retained/DragController.cpp": {
+      "sha256": "02560e7a38902cd400c3fa1b229eb6ba2c9494750413116b9277f5e8a818b62c",
+      "mode": 436,
+      "size": 18504
+    },
+    "retained/FullscreenHandler.cpp": {
+      "sha256": "efb7676e5006aed1b973775837ce43a6ae605ecdc73af2fd2e3394f846c9e47e",
+      "mode": 420,
+      "size": 15447
+    },
+    "retained/InputManager.cpp": {
+      "sha256": "feedf32e2e3d23aeaed7a02ef4ab94be2d66f4b22873b3166026da1e9ece4765",
+      "mode": 436,
+      "size": 98845
+    },
+    "retained/KeybindManager.cpp": {
+      "sha256": "8d8f35fc84c4a2f8de63ac2bf6f6531c651c6fa6d37b1aac7c8fc5d9342d4e40",
+      "mode": 436,
+      "size": 39334
+    },
+    "retained/NativePinState.cpp": {
+      "sha256": "4f4ba5401f9b4434af93631916dfdea9282f4206541edf6bee1840eacf6dd305",
+      "mode": 420,
+      "size": 24907
+    },
+    "retained/ViewHitTester.cpp": {
+      "sha256": "f12f665083555db42a3ebbf21302734495b2e373cc9e6a21c84261c7b7771411",
+      "mode": 420,
+      "size": 16001
+    },
+    "retained/Window.cpp": {
+      "sha256": "6ee11dd9a94c2d5f592d2ccdd25f49bd37e4b1f6ac6b79da10b4f499f6b4483a",
+      "mode": 436,
+      "size": 124381
+    },
+    "retained/Window.hpp": {
+      "sha256": "1f60b8ff0bc6b5a48af5c03cb2cac1108db677efc70b4424b56ef6f1f2d1cc81",
+      "mode": 436,
+      "size": 23988
+    },
+    "retained-first-model-effect-failure/HIT_FALLBACK_CONTRACT.md": {
+      "sha256": "ee2e48bae6d742550314d6d0640765fc94b7caf921c418d88afb09e0ce089969",
+      "mode": 420,
+      "size": 3987
+    },
+    "retained-first-model-effect-failure/formal-typecheck.log": {
+      "sha256": "1f35f2ae59f3f784a4cbc5bb7d8d3920e040c98a5f4e38268545f89c592a1389",
+      "mode": 420,
+      "size": 768
+    },
+    "retained-first-model-effect-failure/hit_fallback.qnt": {
+      "sha256": "21c2ce5389a7a932e282c941682021c245c42d5d1d2d3f35a530780caf8a4e72",
+      "mode": 420,
+      "size": 4288
+    },
+    "retained-second-model-effect-failure/formal-before-runtime.json": {
+      "sha256": "6a44a6ec5904368172df5a0d771ad0e4465812bd6cbf44f83005b69922f53cde",
+      "mode": 420,
+      "size": 1211
+    },
+    "retained-second-model-effect-failure/formal-final-0.log": {
+      "sha256": "70697eab62aeb1961ee83d5c11a2eee2dff5710e9e27c3030f033f8ae793bc0d",
+      "mode": 420,
+      "size": 849
+    },
+    "retained-second-model-effect-failure/hit_fallback.qnt": {
+      "sha256": "264a9dc2672ca644a3fc3ac432e739bd8d7237e079e57916dba192c48afa9d76",
+      "mode": 420,
+      "size": 4833
+    },
+    "run.log": {
+      "sha256": "78cfe0ca666d2d7a4937a7456a80ffcf1655a8fef39675344aa8b9a92e78863b",
+      "mode": 420,
+      "size": 535
+    },
+    "source-preimages.json": {
+      "sha256": "0ac704fe10052aa4abed4068959ed4494be88fe15587a7981ac59c567ac85ce4",
+      "mode": 420,
+      "size": 2518
+    },
+    "windowAt-exact.cpp.inc": {
+      "sha256": "5af2ea4207214f866a96bdff04592a14d98062cbcc2963281a4273013f5f5ef3",
+      "mode": 420,
+      "size": 11129
+    }
+  },
+  "named": 24,
+  "boundedTraces": 2000,
+  "originalMatrixCases": 26,
+  "proposedMatrixCases": 26,
+  "conserved": 18,
+  "intendedSelectionFixes": 8,
+  "productRuntimeEdited": false,
+  "nativeAuthorized": false,
+  "nativeAccepted": false,
+  "V2Immutable": true
+}

@@ -1,0 +1,52 @@
+{
+  "result": "fail",
+  "checks": {
+    "terminalReportRetainsActualFailure": true,
+    "completeFrozenBytesModesLinks": true,
+    "exactSourceManifest": true,
+    "all18MainPreservation": true,
+    "mainWritesAbsent": true,
+    "allFourExactVariants": false,
+    "qt-wayland:all13ExactCases": false,
+    "qt-wayland:move-escape:nativeReplay": false,
+    "qt-wayland:move-escape:normalPublicQuit": true,
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:exactQSReadinessAndExplicitNormalQuit": true,
+    "qt-wayland:normalQSAndService": true,
+    "qt-wayland:nativeUnloadNormalOrdered": true,
+    "qt-wayland:hostRuntimeCleanup": false,
+    "qt-wayland:rawHelpersNormalExact": false,
+    "qt-wayland:allRecordedOriginalIdentitiesGone": true,
+    "qt-wayland:bothGenuineShellPreviewReceipts": false
+  },
+  "errors": {
+    "qt-wayland:move-escape:nativeReplay": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/audit.py\", line 169, in check\n    try:self.checks[name]=fn() is True\n                          ~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/audit.py\", line 184, in <lambda>\n    self.check(prefix+case.get('case','unidentified')+':nativeReplay',lambda case=case,index=index:case_replay(case,wanted[index],toolkit))\n                                                                                                   ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/audit.py\", line 69, in case_replay\n    trace=case['trace'];gates=case['gates'];initial=one(trace,'label','case baseline')['native'];press=one(trace,'label','actual press');target=press['target'];focus=one(trace,'label','separate WM focus intervention')['native'];peer=focus['nativeFocus']\n                                                    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/audit.py\", line 65, in one\n    if len(hits)!=1:raise ValueError('One exact '+value+' observation required')\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: One exact case baseline observation required\n"
+  },
+  "inventory": [
+    {
+      "variant": "qt-wayland",
+      "reachedCases": 1,
+      "retainedResult": "fail",
+      "errors": {
+        "error": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/run_native.py\", line 113, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n        ~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/held_route.py\", line 88, in prepare\n    self.fixture.command('open');self.wait(lambda:'child' in self.fixture.state()['windows'],'Actual public child creation');self.arrange('child',[260,310,320,180])\n                                                                                                                             ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/held_route.py\", line 61, in arrange\n    window=self.window(role);x,y,width,height=rectangle;address=json.dumps('address:'+window['address'])\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/held_route.py\", line 56, in window\n    if len(matches)!=1:raise RuntimeError('One exact actual mapped fixture window required: '+role)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: One exact actual mapped fixture window required: child\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/run_native.py\", line 202, in variant_run\n    health=module('_held_transport',QA/'qt-modal-private-v9/run_native.py').transport_log_gate([Path(session.evidence['hyprland']['log']).read_text(),(output/'host/weston-renderer.log').read_text()])\n           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/run_native.py\", line 18, in module\n    spec=importlib.util.spec_from_file_location(name,path);result=importlib.util.module_from_spec(spec);spec.loader.exec_module(result);return result\n                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^\n  File \"<frozen importlib._bootstrap_external>\", line 759, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 491, in _call_with_frames_removed\n  File \"/home/hoskinson/window-integration-qa/qt-modal-private-v9/run_native.py\", line 8, in <module>\n    from private_session import run_session\nModuleNotFoundError: No module named 'private_session'\n",
+        "helperAcceptanceError": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/run_native.py\", line 113, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n        ~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/held_route.py\", line 88, in prepare\n    self.fixture.command('open');self.wait(lambda:'child' in self.fixture.state()['windows'],'Actual public child creation');self.arrange('child',[260,310,320,180])\n                                                                                                                             ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/held_route.py\", line 61, in arrange\n    window=self.window(role);x,y,width,height=rectangle;address=json.dumps('address:'+window['address'])\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/held_route.py\", line 56, in window\n    if len(matches)!=1:raise RuntimeError('One exact actual mapped fixture window required: '+role)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: One exact actual mapped fixture window required: child\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/run_native.py\", line 172, in variant_run\n    report['completedHelpers']=helper_setup.wait_and_archive(config,output/'completed-helpers.json',expect_harness=True,expect_service=True)\n                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/helper_setup.py\", line 248, in wait_and_archive\n    raise RuntimeError('Unregistered/refused helper attempt observed')\nRuntimeError: Unregistered/refused helper attempt observed\n"
+      }
+    }
+  ],
+  "sourceManifestSHA256": "223858b3b98f47c48383d31d68c38a365661a850e3605fa1e2027c4d6a77ec0c",
+  "sourceCount": 20680,
+  "modeCount": 20680,
+  "linkCount": 320,
+  "actualReachedCases": 1,
+  "expectedCases": 52,
+  "producerResult": "fail",
+  "nativeCommands": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false,
+  "fullHeld52ReplayAccepted": false,
+  "replayLimitations": [
+    "Historical geometry/pin and native IPC command timing are accepted only where actual samples are retained; gate booleans alone do not supply missing observations."
+  ],
+  "auditorSourceSHA256": "5d35dd6a4f31e71073faa44241d0368055523787040c3842436345236d2fc011"
+}

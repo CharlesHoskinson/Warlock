@@ -1,0 +1,23 @@
+module modal_pointer_test {
+  import modal_pointer.* from "./modal_pointer"
+  run ownerClickFocusesChildWithoutDeliveryTest = init.then(fire(Focus(2))).then(fire(Press({visual:1,override:false})))
+    .then(all {assert(s.keyboard==3 and s.blocked and s.delivered==0 and allProps),fire(Release)})
+    .then(all {assert(not(s.blocked) and s.delivered==0 and allProps),fire(Focus(2))})
+  run unrelatedClickDeliveredTest = init.then(fire(Press({visual:2,override:false})))
+    .then(all {assert(s.keyboard==2 and s.delivered==2 and not(s.blocked) and allProps),fire(Release)})
+  run overlayAndGrabKeepInputTest = init.then(fire(Focus(2))).then(fire(Press({visual:1,override:true})))
+    .then(all {assert(s.keyboard==2 and s.delivered==4 and not(s.blocked) and allProps),fire(Release)})
+  run releaseAfterDialogCloseConsumedTest = init.then(fire(Press({visual:1,override:false}))).then(fire(Modal(false)))
+    .then(all {assert(s.blocked),fire(Release)})
+    .then(all {assert(not(s.blocked) and s.delivered==0 and allProps),fire(Press({visual:1,override:false}))})
+    .then(all {assert(s.keyboard==1 and s.delivered==1 and allProps),fire(Release)})
+  run programmaticFocusRedirectTest = init.then(fire(Focus(2))).then(fire(Focus(1)))
+    .then(all {assert(s.keyboard==3 and allProps),fire(Focus(2))})
+  run hoverKeepsUnrelatedKeyboardTest = init.then(fire(Focus(2))).then(fire(Hover(1)))
+    .then(all {assert(s.keyboard==2 and s.pointer==1 and allProps),fire(Hover(3))})
+  run reopenedDialogUnderStationaryPointerGetsFirstClickTest = init.then(fire(Modal(false))).then(fire(Hover(1)))
+    .then(fire(Modal(true))).then(fire(Press({visual:3,override:false})))
+    .then(all {assert(s.keyboard==3 and s.pointer==3 and s.delivered==3 and allProps),fire(Release)})
+  run overlayOverNewDialogKeepsPointerOwnershipTest = init.then(fire(Hover(2))).then(fire(Press({visual:3,override:true})))
+    .then(all {assert(s.pointer==2 and s.delivered==4 and allProps),fire(Release)})
+}

@@ -1,0 +1,100 @@
+{
+  "checks": [
+    {
+      "name": "legacy copied app has nontrivial Home history",
+      "passed": true
+    },
+    {
+      "name": "snapshot is imported before backing window can map",
+      "passed": true
+    },
+    {
+      "name": "actual legacy reload retains exact same PID",
+      "passed": true
+    },
+    {
+      "name": "legacy history and public state unchanged",
+      "passed": true
+    },
+    {
+      "name": "FILES_OPEN home cannot resurrect hidden migrated explorer",
+      "passed": true
+    },
+    {
+      "name": "legacy reload leaves no mapped copied client",
+      "passed": true
+    },
+    {
+      "name": "hidden source reload creates no popup client",
+      "passed": true
+    },
+    {
+      "name": "hidden source reload creates no popup layer",
+      "passed": true
+    },
+    {
+      "name": "future snapshot carries absolute clipboard and selection",
+      "passed": true
+    },
+    {
+      "name": "narrow future snapshot retains requested overlays",
+      "passed": true
+    },
+    {
+      "name": "future snapshot includes pending prompt and dashboard filter",
+      "passed": true
+    },
+    {
+      "name": "future persistent reload preserves same PID",
+      "passed": true
+    },
+    {
+      "name": "future persistent reload preserves public UI history/selection/clipboard/preferences",
+      "passed": true
+    },
+    {
+      "name": "future persistent reload retains absolute clipboard and selection",
+      "passed": true
+    },
+    {
+      "name": "future persistent reload keeps prompt payload/text/selection",
+      "passed": true
+    },
+    {
+      "name": "narrow future reload preserves geometry and requested overlays",
+      "passed": true
+    },
+    {
+      "name": "future persistent reload retains dashboard filter and hidden state",
+      "passed": true
+    },
+    {
+      "name": "successful source reload has no configuration error",
+      "passed": true
+    },
+    {
+      "name": "future hidden reload creates no popup client",
+      "passed": true
+    },
+    {
+      "name": "future hidden reload creates no popup layer",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "platform": "main-Wayland",
+  "exitCode": -15,
+  "result": "pass",
+  "preservation": {
+    "originalClientsGeometries": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "catalogBytes": true,
+    "dashboardBytes": true,
+    "originalExplorerPublicState": true,
+    "clipboardAndPrimaryRawBytesAndMIMEHashes": true,
+    "accessibilityFlags": true,
+    "originalExplorerPID": true
+  }
+}

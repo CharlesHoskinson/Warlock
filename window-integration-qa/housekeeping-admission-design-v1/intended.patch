@@ -1,0 +1,35 @@
+--- a/native_runtime.py
++++ b/native_runtime.py
+@@ -234,9 +234,12 @@
+         self.guard.verify()
+         from owned_commands import OwnedCommands
+         commands=getattr(self,'housekeeping_commands',None) or OwnedCommands(self.keeper,self.guard.env,readonly=self.readonly)
+-        def clients():return json.loads(commands.check_output(['hyprctl','clients','-j'],env=self.guard.env,text=True,timeout=.6))
++        def query(arguments):
++            with self.journal_lock:
++                return json.loads(commands.check_output(arguments,env=self.guard.env,text=True,timeout=.6))
++        def clients():return query(['hyprctl','clients','-j'])
+         before=clients()
+-        native=json.loads(commands.check_output(['hyprctl','repl','print(hl.plugin.hyprbars.window_families())'],env=self.guard.env,text=True,timeout=.6))
++        native=query(['hyprctl','repl','print(hl.plugin.hyprbars.window_families())'])
+         after=clients();live=complete_live_identities(before,native,after)
+         self.guard.verify()
+         self.shared_cache.prune(live,complete=True,nonblocking=True)
+--- a/test_actor_resources.py
++++ b/test_actor_resources.py
+@@ -173,6 +173,7 @@
+             metadata={'whole':True,'canonical':True,'identity':list(key(w)),'clientSize':w['size'],'rect':rectangle(w),'insets':dict(left=0,top=0,right=0,bottom=0),'pixels':w['size']}
+             cache.publish(w,metadata,png(*w['size']))
+         factory=NativeFactory.__new__(NativeFactory);factory.desktops=[];factory.shared_cache=cache
++        factory.journal_lock=__import__('threading').RLock()
+         calls=[]
+         class Guard:
+             env={'SELECTED_PRIVATE':'yes'}
+@@ -191,6 +192,7 @@
+         w=Desktop().windows[0];metadata={'whole':True,'canonical':True,'identity':list(key(w)),'clientSize':w['size'],'rect':rectangle(w),'insets':dict(left=0,top=0,right=0,bottom=0),'pixels':w['size']}
+         cache.publish(w,metadata,png(*w['size']));before={p.name:p.read_bytes() for p in cache.root.iterdir()}
+         factory=NativeFactory.__new__(NativeFactory);factory.desktops=[];factory.shared_cache=cache
++        factory.journal_lock=__import__('threading').RLock()
+         class Guard:
+             env={}
+             def verify(self):pass

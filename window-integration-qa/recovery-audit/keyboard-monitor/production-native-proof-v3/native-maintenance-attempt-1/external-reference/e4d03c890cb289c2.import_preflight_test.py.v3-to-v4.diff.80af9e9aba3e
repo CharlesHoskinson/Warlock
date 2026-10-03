@@ -1,0 +1,25 @@
+--- V3/import_preflight_test.py
++++ V4/import_preflight_test.py
+@@ -6,6 +6,7 @@
+  def copied(self,root):
+   fixture=root/'native-fixture';fixture.mkdir();source=Path(__file__).resolve().parent/'native-fixture'
+   for name in ('pointer_cases.py','popup_geometry.py','policy_cases.py','lifecycle_cases.py'):shutil.copy2(source/name,fixture/name)
++  shutil.copy2(source.parent/'ax_wire_trace.py',root/'ax_wire_trace.py')
+   return fixture
+  def test_exact_runner_owned_copied_import_without_fixture_search_path(self):
+   with tempfile.TemporaryDirectory() as directory:
+@@ -26,4 +27,14 @@
+   with tempfile.TemporaryDirectory() as directory:
+    root=Path(directory);fixture=self.copied(root);helper=fixture/'popup_geometry.py';helper.rename(root/'other.py');helper.symlink_to(root/'other.py')
+    with self.assertRaises(AssertionError):runner.import_preflight(root)
++ def test_missing_copied_ax_monitor_parser_refused(self):
++  with tempfile.TemporaryDirectory() as directory:
++   root=Path(directory);self.copied(root);(root/'ax_wire_trace.py').unlink()
++   with patch.object(runner,'execute',side_effect=AssertionError('native must not run')) as native:
++    with self.assertRaises(AssertionError):runner.import_preflight(root)
++    native.assert_not_called()
++ def test_symlink_copied_ax_monitor_parser_refused(self):
++  with tempfile.TemporaryDirectory() as directory:
++   root=Path(directory);self.copied(root);helper=root/'ax_wire_trace.py';helper.rename(root/'other.py');helper.symlink_to(root/'other.py')
++   with self.assertRaises(AssertionError):runner.import_preflight(root)
+ if __name__=='__main__':unittest.main()

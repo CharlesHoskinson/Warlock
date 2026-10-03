@@ -1,0 +1,149 @@
+--- ../reversal-freeze/hypr-window-motion	2026-09-30 23:33:14.711333557 -0600
++++ hypr-window-motion	2026-10-01 00:05:53.250783575 -0600
+@@ -46,6 +46,48 @@
+     return dict(zip(('x', 'y', 'width', 'height'), values))
+ 
+ 
++def native_family_plan(window, windows, native):
++    if not isinstance(native,list):raise ValueError('native family snapshot is not a list')
++    records={}
++    for record in native:
++        if not isinstance(record,dict) or not record.get('address') or record['address'] in records:
++            raise ValueError('invalid/duplicate native family identity')
++        records[record['address']]=record
++    mapped=[w for w in windows if w.get('mapped',True)]
++    if {key(w) for w in mapped}!={key(r) for r in records.values()}:
++        raise ValueError('native/client mapped identity coverage changed')
++    enriched=[dict(w,**{field:records[w['address']].get(field) for field in ('parent','parentStableId','modal')}) for w in mapped]
++    lookup={w['address']:w for w in enriched}
++    target=lookup.get(window['address'])
++    if target is None or key(target)!=key(window):raise ValueError('native family target identity changed')
++    owner=target;visited=set()
++    while owner.get('parent'):
++        if owner['address'] in visited:raise ValueError('native transient relation cycle')
++        visited.add(owner['address'])
++        parent=lookup.get(owner['parent'])
++        if not parent or owner.get('parentStableId')!=str(parent['stableId']):
++            raise ValueError('native family parent identity changed')
++        owner=parent
++    # Validate only the selected ancestors and their descendants. An unrelated
++    # app's malformed/dangling transient edge cannot invalidate this family.
++    members=[owner];selected={owner['address']}
++    for parent in members:
++        for child in enriched:
++            if child.get('parent')!=parent['address']:continue
++            if child.get('parentStableId')!=str(parent['stableId']):
++                raise ValueError('native family descendant parent identity changed')
++            if child['address'] in selected:raise ValueError('native transient relation cycle')
++            members.append(child);selected.add(child['address'])
++    members.sort(key=lambda w:(w['address']!=owner['address'],w.get('focusHistoryID',999)))
++    focus=owner;visited=set()
++    while focus['address'] not in visited:
++        visited.add(focus['address'])
++        children=[w for w in members if w.get('modal') and w.get('parent')==focus['address'] and w.get('parentStableId')==str(focus['stableId'])]
++        if not children:break
++        focus=min(children,key=lambda w:w.get('focusHistoryID',999))
++    return members,focus
++
++
+ class BasicDesktop:
+     def clients(self):
+         return json.loads(subprocess.check_output(['hyprctl', 'clients', '-j'], text=True, timeout=2))
+@@ -137,17 +179,34 @@
+                        env=env, check=True, stdout=subprocess.DEVNULL, timeout=8)
+ 
+     def family(self, window, windows, single=False):
+-        helper = HOME / '.local/bin/hypr-window-family'
+-        if single or not helper.exists():
+-            return [window], window
+-        result = json.loads(subprocess.check_output([str(helper), window['address']], input=json.dumps(windows), text=True, timeout=2))
+-        return result['windows'], result['focus']
++        if single:return [window],window
++        errors=[]
++        for attempt in range(3):
++            try:
++                before=self.clients()
++                if not any(key(w)==key(window) and w.get('mapped',True) for w in before):raise ValueError('family target identity changed')
++                raw=subprocess.check_output(['hyprctl','repl','print(hl.plugin.hyprbars.window_families())'],text=True,stderr=subprocess.DEVNULL,timeout=.6)
++                native=json.loads(raw)
++                after=self.clients()
++                if {key(w) for w in before if w.get('mapped',True)}!={key(w) for w in after if w.get('mapped',True)}:
++                    raise ValueError('client identities changed around native family query')
++                current=next((w for w in after if key(w)==key(window) and w.get('mapped',True)),None)
++                if current is None:raise ValueError('family target identity changed')
++                members,focus=native_family_plan(current,after,native)
++                trace=getattr(self,'family_trace',None)
++                if trace is not None:trace.evidence={'attempts':attempt+1,'native':native,'members':[list(key(w)) for w in members],'focus':list(key(focus))}
++                return members,focus
++            except (OSError,ValueError,KeyError,TypeError,subprocess.SubprocessError) as error:
++                errors.append(str(error))
++                if attempt<2:time.sleep(.02)
++        raise ValueError('native family relation query failed; entire request rejected: '+ '; '.join(errors))
+ 
+ 
+ class Desktop(BasicDesktop):
+     def __init__(self):
+         # Serializes cache PNG/metadata pairs and janitor with active captures.
+         self.snapshot_lock=threading.RLock()
++        self.family_trace=threading.local()
+ 
+     @staticmethod
+     def validate_snapshot(metadata,native=None):
+@@ -368,6 +427,8 @@
+             plans=[]
+             metadata={'received':received,'clientsStart':client_start,'clientsDone':client_done,
+                       'familyStart':family_start,'familyDone':family_done}
++            trace=getattr(self.desktop,'family_trace',None)
++            if trace is not None and getattr(trace,'evidence',None):metadata['familyEvidence']=trace.evidence
+             # Pause every currently validated family route before preparing any
+             # snapshot/desktop/icon. Newer member intents supersede this plan.
+             for member in members:
+@@ -397,9 +458,24 @@
+             return {'ok': True, 'tokens': result}
+         except (OSError,ValueError,subprocess.SubprocessError):
+             if reservation:
+-                with self.lock:self.drop(reservation[0])
++                self.reject_reservation(*reservation)
+             raise
+ 
++    def reject_reservation(self,record,previous):
++        with self.lock:
++            if self.pending.get(record['identity'][0]) is not record:return
++            # The new request was not accepted after family validation. Finish
++            # the previously accepted single-member intent with a fresh exact
++            # identity check; its family peers retain their previous intents.
++            if previous:
++                try:
++                    current=self.matching(tuple(record['identity']))
++                    if current:self.desktop.commit(previous['operation'],current,bool(previous.get('previewReady')))
++                    self.latest[tuple(record['identity'])]=previous['token']
++                except (OSError,ValueError,subprocess.SubprocessError):pass
++            self.drop(record)
++            self.finish_families()
++
+     def finish_families(self):
+         for batch in list(self.family_batches):
+             if any(self.lookup(token) for token in batch['tokens'] if token):
+@@ -484,6 +560,7 @@
+         if reservation is None:return ''
+         record,previous=reservation
+         address=window['address'];identity=key(window);token=record['token'];operation=record['operation']
++        record['nativeWindow']=window;record['nativeRect']=rectangle(window)
+         with self.lock:
+             if self.pending.get(address) is not record:return token
+             if profile:record['profile'].update(profile)
+@@ -588,11 +665,9 @@
+             return
+         del self.pending[record['identity'][0]]
+         self.journal()
+-        try:
+-            for visual in record.get('oldVisuals',[])+([record.get('frozenVisual')] if record.get('frozenVisual') else [])+([record] if record.get('target') else []):
+-                self.desktop.ipc('motionCancel', visual)
+-        except (OSError, ValueError, subprocess.SubprocessError):
+-            pass
++        for visual in record.get('oldVisuals',[])+([record.get('frozenVisual')] if record.get('frozenVisual') else [])+([record] if record.get('target') else []):
++            try:self.desktop.ipc('motionCancel',visual)
++            except (OSError,ValueError,subprocess.SubprocessError):pass
+         for image in record.get('oldImages', []) + ([record['image']] if record.get('image') else []):
+             Path(image).unlink(missing_ok=True)
+ 

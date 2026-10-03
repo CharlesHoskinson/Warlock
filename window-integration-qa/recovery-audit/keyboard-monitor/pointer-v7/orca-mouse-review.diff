@@ -1,0 +1,114 @@
+--- official-Orca-50.2/orca/mouse_review.py
++++ Omarchy-Orca-compat/orca/mouse_review.py
+@@ -429,6 +429,8 @@
+         self._handler_ids: dict[int, Wnck.Screen] = {}
+         self._event_listener: Atspi.EventListener = Atspi.EventListener.new(self._listener)
+         self._pointer_moved_id = None
++        self._device_epoch: int = 0
++        self._dbus_registered: bool = False
+         self._device: Atspi.Device = None
+         self.in_mouse_event: bool = False
+         self._event_queue: deque = deque()
+@@ -465,10 +467,45 @@
+             debug.print_message(debug.LEVEL_INFO, msg, True)
+             return
+ 
++        self._register_dbus_commands()
++
++    def _register_dbus_commands(self) -> None:
++        """Register once when the real pointer backend becomes available."""
++
++        if self._dbus_registered:
++            return
+         msg = "MOUSE REVIEW: Registering D-Bus commands."
+         debug.print_message(debug.LEVEL_INFO, msg, True)
+         controller = dbus_service.get_remote_controller()
+         controller.register_decorated_module("MouseReviewer", self)
++        self._dbus_registered = True
++
++    def refresh_device(self, device: Atspi.Device | None) -> bool:
++        """Refresh the actual AT-SPI device, preserving the enabled request.
++
++        Omarchy Orca compat: callers use this public lifecycle method instead
++        of assigning cached private device fields or replacing the reviewer.
++        Capability negotiation uses the supplied device's actual public API.
++        """
++
++        if not self._use_atspi:
++            return self._mouse_review_capable
++        requested = self.get_is_enabled()
++        self.deactivate()
++        self._device = device
++        self._mouse_review_capable = False
++        if device is not None:
++            try:
++                caps = device.get_capabilities()
++                caps = device.set_capabilities(caps | Atspi.DeviceCapability.POINTER_MONITOR)
++                self._mouse_review_capable = bool(caps & Atspi.DeviceCapability.POINTER_MONITOR)
++            except Exception:
++                debug.print_exception(debug.LEVEL_WARNING)
++        if self._mouse_review_capable:
++            self._register_dbus_commands()
++            if requested:
++                self.activate()
++        return self._mouse_review_capable
+ 
+     def set_up_commands(self) -> None:
+         """Sets up commands with CommandManager."""
+@@ -502,6 +539,9 @@
+     def activate(self) -> None:
+         """Activates mouse review."""
+ 
++        if self._active:
++            return
++
+         if not self._mouse_review_capable:
+             if self._use_atspi:
+                 msg = "MOUSE REVIEW ERROR: Not supported by AT-SPI device"
+@@ -524,6 +564,7 @@
+ 
+         if self._use_atspi:
+             self._pointer_moved_id = self._device.connect("pointer-moved", self._on_pointer_moved)
++            self._active = True
+         else:
+             self._event_listener.register("mouse:abs")
+             screen = Wnck.Screen.get_default()  # pylint: disable=no-value-for-parameter
+@@ -552,6 +593,7 @@
+     def deactivate(self) -> None:
+         """Deactivates mouse review."""
+ 
++        self._device_epoch += 1
+         if self._use_atspi:
+             if self._pointer_moved_id is not None:
+                 self._device.disconnect(self._pointer_moved_id)
+@@ -570,6 +612,7 @@
+             self._windows = []
+             self._all_windows = []
+         self._event_queue.clear()
++        self._current_mouse_over = _ItemContext()
+         self._active = False
+ 
+     def get_current_item(self):
+@@ -872,7 +915,9 @@
+             self._event_queue.append(event)
+             GLib.timeout_add(50, self._process_event_deprecated)
+ 
+-    def _process_event(self) -> None:
++    def _process_event(self, epoch: int | None = None) -> None:
++        if not self._active or (epoch is not None and epoch != self._device_epoch):
++            return
+         if not self._event_queue:
+             return
+ 
+@@ -895,8 +940,10 @@
+     def _on_pointer_moved(self, _device, obj, x, y) -> None:
+         """Listener for pointer-moved events from devices."""
+ 
++        if not self._active or _device != self._device:
++            return
+         self._event_queue.append([obj, x, y])
+-        GLib.timeout_add(50, self._process_event)
++        GLib.timeout_add(50, self._process_event, self._device_epoch)
+ 
+ 
+ _reviewer = MouseReviewer()

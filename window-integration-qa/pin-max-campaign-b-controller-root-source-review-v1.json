@@ -1,0 +1,25 @@
+{
+  "schema": "root-pin-campaign-b-controller-review-v1",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7e09f8e261c0499f8a7226befc8ba0eb.scope",
+    "coreLimit": 1
+  },
+  "observedUTC": "2026-10-02T23:25:47.971768+00:00",
+  "sourceReadySHA256": "c0a0d295bf69335a0fd442371f69e44c4169778df6fb8541c2dbcc64a73fc5a2",
+  "sourceInputsSHA256": "728048f15f5e78ff70e6614d430eb865e7a1545c24b9926763360b4e03f7a0f0",
+  "pairSHA256": "6516acd8fbfd2dbf521e6f9ad1c4d4f8a8ee93093d74609920d8059224f59de5",
+  "files": 64618,
+  "links": 13883,
+  "directories": 1472,
+  "allBytesModesLinksDirectoriesMatch": true,
+  "fullAAncestorConserved": 64116,
+  "wholeObserverConserved": 1316,
+  "fullDesignConserved": 68,
+  "originalA3Conserved": 31,
+  "productDeltas": [],
+  "reviewed": "Complete controller and all final deltas; runner/freezer/host/producer classifier and actual focused CPU cases; fourteen-case closure model and prior B design; source/ABI observer reviews.",
+  "approved": "Freeze exact packet, then one root serial private B01\u2013B12 component attempt after exact frozen/pair grant.",
+  "nativeExecuted": false,
+  "fullCampaignBAccepted": false,
+  "fullParityAccepted": false
+}

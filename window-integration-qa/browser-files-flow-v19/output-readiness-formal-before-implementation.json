@@ -1,0 +1,46 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v19/output_readiness.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v19/output_readiness_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  output_readiness_test\n    ok exactReadyNoFeatureCreditTest passed 1 test(s)\n    ok emptyThenExactSameDeadlineTest passed 1 test(s)\n    ok emptyNeverReadyTest passed 1 test(s)\n    ok deadlineNoRestartTest passed 1 test(s)\n    ok fallbackWrongTerminalTest passed 1 test(s)\n    ok malformedTerminalTest passed 1 test(s)\n    ok nonListTerminalTest passed 1 test(s)\n    ok missingBeforeAuthorityTest passed 1 test(s)\n    ok changedAfterAuthorityTest passed 1 test(s)\n    ok foreignPeerTest passed 1 test(s)\n    ok missingEOFTest passed 1 test(s)\n    ok oversizedReplyTest passed 1 test(s)\n    ok changeRevokesReadyTest passed 1 test(s)\n    ok timeCannotGoBackwardTest passed 1 test(s)\n    ok expirationRevokesReadyTest passed 1 test(s)\n\n  15 passing (1058ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v19/output_readiness.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (4208ms at 475 traces/second).\nUse --seed=0x1415bf9 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "runtimeStillExactFrozenB18": {
+    "run_native.py": "150f5f59fb1b4c785e635a2cca5f0c3b18323da326b25731f28c1bfd82ced1df",
+    "private_bus_host.py": "060505066365dbd1b4dc4e0083fe6f86824fce28a272f48f4605c2e3028aaacb",
+    "private_session.py": "21b0bbf43db3a2c8be90978729c250e79645a8cbd1b355194d95d84d3fafa626"
+  },
+  "nativeGuiExecuted": false
+}

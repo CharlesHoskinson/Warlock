@@ -1,0 +1,132 @@
+{
+  "result": "pass",
+  "protocolTests": 10,
+  "namedFormalScenarios": 3,
+  "randomSamples": 2000,
+  "randomSteps": 100,
+  "requestedSeed": 20260930,
+  "actualPipeSubprocessCases": 3,
+  "actualNamespaceProbe": true,
+  "nativeGuiExecuted": false,
+  "browserExecuted": false,
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v1/test_protocol.py"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "test_dom_needs_exact_session (__main__.Protocol.test_dom_needs_exact_session) ... ok\ntest_event_before_reply (__main__.Protocol.test_event_before_reply) ... ok\ntest_external_ipv4_refused (__main__.Protocol.test_external_ipv4_refused) ... ok\ntest_external_ipv6_refused (__main__.Protocol.test_external_ipv6_refused) ... ok\ntest_fragmented_actual_reply (__main__.Protocol.test_fragmented_actual_reply) ... ok\ntest_mutation_refused_before_any_write (__main__.Protocol.test_mutation_refused_before_any_write) ... ok\ntest_no_external_route (__main__.Protocol.test_no_external_route) ... ok\ntest_public_query_result_not_ack (__main__.Protocol.test_public_query_result_not_ack) ... ok\ntest_wrong_command_reply_refused (__main__.Protocol.test_wrong_command_reply_refused) ... ok\ntest_wrong_session_refused (__main__.Protocol.test_wrong_session_refused) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.003s\n\nOK\n"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v1/draft_focus_test.qnt"
+      ],
+      "exit": 0,
+      "stdout": "\n  draft_focus_test\n    ok exposedFilesRaisesWithoutLosingDraftTest passed 1 test(s)\n    ok privateReloadPreservesIndependentDraftTest passed 1 test(s)\n    ok staleFilesPeerCannotRaiseTest passed 1 test(s)\n\n  3 passing (31ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v1/draft_focus.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--verbosity=1"
+      ],
+      "exit": 0,
+      "stdout": "[ok] No violation found (534ms at 3745 traces/second).\nUse --seed=0x138351e --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "subprocessProofs": {
+    "namespace-report.json": {
+      "sha256": "67f02ca1212e1346e03aaf95532a8e95fd3e88c225cd439657c4ca792f4829ac",
+      "report": {
+        "result": "pass",
+        "scope": {
+          "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7b0f68ec77294d7dbdbce7c7e92b69c6.scope",
+          "coreLimit": 1
+        },
+        "parentNetNamespace": "net:[4026531833]",
+        "returncode": 0,
+        "stdout": "{\"scope\": {\"cgroup\": \"0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7b0f68ec77294d7dbdbce7c7e92b69c6.scope\", \"coreLimit\": 1}, \"network\": {\"ipv4\": \"\", \"ipv6\": \"00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo\\n00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo\\n\", \"parentNetNamespace\": \"net:[4026531833]\", \"netNamespace\": \"net:[4026533448]\", \"uid\": 1000, \"interfaces\": [\"lo\"]}, \"browserExecuted\": false}\n",
+        "stderr": "",
+        "browserExecuted": false,
+        "child": {
+          "scope": {
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7b0f68ec77294d7dbdbce7c7e92b69c6.scope",
+            "coreLimit": 1
+          },
+          "network": {
+            "ipv4": "",
+            "ipv6": "00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo\n00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo\n",
+            "parentNetNamespace": "net:[4026531833]",
+            "netNamespace": "net:[4026533448]",
+            "uid": 1000,
+            "interfaces": [
+              "lo"
+            ]
+          },
+          "browserExecuted": false
+        }
+      }
+    },
+    "pipe-fd-report-2.json": {
+      "sha256": "b4130dda0371186ef3e0d2355c1ed58b17870dbb88b754563ccd4eeb34c13cb4",
+      "report": {
+        "scope": {
+          "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-0cef417cc4e0438d80de48d053a4bfa9.scope",
+          "coreLimit": 1
+        },
+        "cases": [
+          {
+            "name": "original",
+            "passed": true,
+            "returncode": 0,
+            "readwriteDescriptors": [
+              3,
+              4
+            ]
+          },
+          {
+            "name": "destination-swap",
+            "passed": true,
+            "returncode": 0,
+            "readwriteDescriptors": [
+              3,
+              4
+            ]
+          },
+          {
+            "name": "high",
+            "passed": true,
+            "returncode": 0,
+            "readwriteDescriptors": [
+              3,
+              4
+            ]
+          }
+        ],
+        "browserExecuted": false
+      }
+    }
+  },
+  "loader": {
+    "result": "pass",
+    "files": 4776,
+    "symlinks": 1546,
+    "traces": 101,
+    "sourceSHA256": "05eea15491c32fddf0844ad0fef1e5450bbcf96ddb72a591a88d605eee443e1b"
+  },
+  "pythonCompile": true,
+  "nativeFeatureGatesPending": 15,
+  "hostGatesPending": 10,
+  "qmlLint": "actual exit0 in core1 scope qa-harness-6f14764b7aec4e2a93d2838198ca2d16; syntax parsing only, qs.Commons/unqualified warnings (no QML runtime proof)"
+}

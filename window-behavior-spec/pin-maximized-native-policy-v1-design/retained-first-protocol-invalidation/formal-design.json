@@ -1,0 +1,87 @@
+{
+  "modelSHA256": "46a0bf780236a40c3b70e72819268c9e38de4f7e93cef88407297133b66dadc9",
+  "names": [
+    "ordinaryConservation",
+    "nativeMaxReturn",
+    "protectedBandPhysicalFocus",
+    "excludedRemainsExcluded",
+    "actualScrollingRestore",
+    "truthfulTransfer",
+    "maxModeChangeRefused",
+    "maxReturnChangeRefused",
+    "peerChangeRefused",
+    "inheritedChildBitRefused",
+    "orderWithoutPresentationRefused",
+    "coreWithoutSeatRefused",
+    "seatWithoutCoreRefused",
+    "hitMismatchRefused",
+    "excludedWinnerRefused",
+    "inputRevivalRefused",
+    "geometryWithoutScrollOwnershipRefused",
+    "staleScrollRefusalWithUnpin",
+    "staleScrollCannotClaimRestore",
+    "staleScrollTrappedPinRefused",
+    "publicDispatchAckNotTransferWitness",
+    "partialTransferTruthfulRefusal",
+    "partialTransferFalseSuccessRefused",
+    "untruthfulActualModesRefused",
+    "syntheticRollbackRefused",
+    "replacementWriteRefused",
+    "modelSeedNotNativeReachability",
+    "setupAckNotPhysicalInput",
+    "missingRawNeverAccepts",
+    "missingPostConfirmationRefused",
+    "ownerReplacementRevokes",
+    "sourceReplacementRevokes",
+    "sessionReplacementRevokes",
+    "episodeReplacementRevokes",
+    "refusedConnectionCannotRevive"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "quint",
+        "typecheck",
+        "campaign_b.qnt"
+      ],
+      "returncode": 0,
+      "log": "formal-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "quint",
+        "test",
+        "campaign_b.qnt",
+        "--match",
+        "^(ordinaryConservation|nativeMaxReturn|protectedBandPhysicalFocus|excludedRemainsExcluded|actualScrollingRestore|truthfulTransfer|maxModeChangeRefused|maxReturnChangeRefused|peerChangeRefused|inheritedChildBitRefused|orderWithoutPresentationRefused|coreWithoutSeatRefused|seatWithoutCoreRefused|hitMismatchRefused|excludedWinnerRefused|inputRevivalRefused|geometryWithoutScrollOwnershipRefused|staleScrollRefusalWithUnpin|staleScrollCannotClaimRestore|staleScrollTrappedPinRefused|publicDispatchAckNotTransferWitness|partialTransferTruthfulRefusal|partialTransferFalseSuccessRefused|untruthfulActualModesRefused|syntheticRollbackRefused|replacementWriteRefused|modelSeedNotNativeReachability|setupAckNotPhysicalInput|missingRawNeverAccepts|missingPostConfirmationRefused|ownerReplacementRevokes|sourceReplacementRevokes|sessionReplacementRevokes|episodeReplacementRevokes|refusedConnectionCannotRevive)$",
+        "--max-samples",
+        "1"
+      ],
+      "returncode": 0,
+      "log": "formal-1.log",
+      "sha256": "3de12008dcc04a6af88f9334b62ba5dd92b4fec203942b915e63207367aff7c5"
+    },
+    {
+      "argv": [
+        "quint",
+        "run",
+        "campaign_b.qnt",
+        "--invariant",
+        "allProps",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "2202"
+      ],
+      "returncode": 1,
+      "log": "formal-2.log",
+      "sha256": "f7c53dbaa5f5230d65e72d5410ae8cc3ac28586907869b7661177d09bb6cf0a2"
+    }
+  ],
+  "allPass": false,
+  "nativeReachabilityProved": false,
+  "runtimeImplemented": false
+}

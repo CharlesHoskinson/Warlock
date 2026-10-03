@@ -1,0 +1,40 @@
+g++ -std=c++20 -O2 -fPIC -Wall -Wextra -Wno-misleading-indentation Renderer.cpp layer-shell-protocol.o presentation-protocol.o viewporter-protocol.o xdg-output-protocol.o fractional-scale-protocol.o xdg-shell-protocol.o -o hypr-motion-renderer-staged -I/usr/include/qt6/QtCore -I/usr/include/qt6 -DQT_CORE_LIB -I/usr/lib/qt6/mkspecs/linux-g++ -I/usr/include/libpng16 -lQt6Core -lpng16 -lEGL -lGLESv2 -lwayland-egl -lwayland-client -lm
+g++ -std=c++20 -O2 -fPIC -Wall -Wextra -Wno-misleading-indentation test_family_scene.cpp layer-shell-protocol.o presentation-protocol.o viewporter-protocol.o xdg-output-protocol.o fractional-scale-protocol.o xdg-shell-protocol.o -o test-family-scene -I/usr/include/qt6/QtCore -I/usr/include/qt6 -DQT_CORE_LIB -I/usr/lib/qt6/mkspecs/linux-g++ -I/usr/include/libpng16 -lQt6Core -lpng16 -lEGL -lGLESv2 -lwayland-egl -lwayland-client -lm
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonarray.h:8,
+                 from /usr/include/qt6/QtCore/QJsonArray:1,
+                 from LibraryMaterial.hpp:4,
+                 from Renderer.cpp:4:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/map:67,
+                 from CommitLedger.hpp:5,
+                 from Renderer.cpp:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonarray.h:8,
+                 from /usr/include/qt6/QtCore/QJsonArray:1,
+                 from LibraryMaterial.hpp:4,
+                 from Renderer.cpp:4,
+                 from test_family_scene.cpp:2:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/map:67,
+                 from CommitLedger.hpp:5,
+                 from Renderer.cpp:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+g++ -std=c++20 -O2 -fPIC -Wall -Wextra -Wno-misleading-indentation test_readback_image.cpp -o test-readback-image -I/usr/include/qt6/QtCore -I/usr/include/qt6 -DQT_CORE_LIB -I/usr/lib/qt6/mkspecs/linux-g++ -I/usr/include/libpng16 -lQt6Core -lpng16 -lEGL -lGLESv2 -lwayland-egl -lwayland-client -lm

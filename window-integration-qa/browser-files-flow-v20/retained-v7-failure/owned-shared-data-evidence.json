@@ -1,0 +1,79 @@
+[
+  {
+    "phase": "both actual clients initialized",
+    "accepted": false,
+    "mappings": {},
+    "scope": "Captured owned batch plus before/after copied Files and private compositor maps; not global or continuous inspection",
+    "consumerBefore": {
+      "pid": 1719159,
+      "start": "12016746",
+      "uids": [
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-74ec76071b144fa1adaf413fe7a85b74.scope\n",
+      "exe": "/usr/bin/quickshell",
+      "exeSHA256": "2dc99382c032710fe495ed115cdee9dc9c69bdb3a21af4d86a9a8ea16733069b",
+      "mountNamespace": "mnt:[4026531832]"
+    },
+    "producerBefore": {
+      "pid": 1718880,
+      "start": "12016288",
+      "uids": [
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-74ec76071b144fa1adaf413fe7a85b74.scope\n",
+      "exe": "/usr/bin/Hyprland",
+      "exeSHA256": "da8fcacf347bcbed83edc40108c6e2298da095e22246bd764e9bb382786cebb2",
+      "mountNamespace": "mnt:[4026531832]"
+    },
+    "privatePeerBefore": {
+      "path": "/run/user/1000/wqa/9dd7/wayland-1",
+      "pid": 1718880,
+      "uid": 1000,
+      "gid": 1000,
+      "device": 84,
+      "inode": 312583
+    },
+    "consumerRawMapsSHA256": "ba0f4a05b90cd2c86d8f7d8319926310512ecabfe26ad9ade6302ff70bf66885",
+    "consumerMapsBeforeSHA256": "ba0f4a05b90cd2c86d8f7d8319926310512ecabfe26ad9ade6302ff70bf66885",
+    "producerMapsBeforeSHA256": "cf675a1dbcadb03475032410fe9d972a02dea79706c6b36b0cfc37d4aae028a7",
+    "mountBefore": {
+      "id": 35,
+      "device": 33,
+      "root": "/",
+      "path": "/dev/shm",
+      "type": "tmpfs",
+      "source": "tmpfs",
+      "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+    },
+    "observations": [
+      {
+        "mapping": {
+          "line": "794f51653000-794f51654000 r--p 00000000 00:21 76230                      /dev/shm/4817f376-8e4f-4163-9d9c-77ef5ec6ae18 (deleted)",
+          "begin": 133381574963200,
+          "end": 133381574967296,
+          "offset": 0,
+          "permissions": "r--p",
+          "device": 33,
+          "inode": 76230,
+          "path": "/dev/shm/4817f376-8e4f-4163-9d9c-77ef5ec6ae18 (deleted)"
+        },
+        "accepted": false,
+        "matchingProducerFDs": [
+          32
+        ]
+      }
+    ],
+    "error": {
+      "type": "RuntimeError",
+      "errno": null,
+      "error": "Producer FD regular/UID/full mode/unlink/size/device differs"
+    }
+  }
+]

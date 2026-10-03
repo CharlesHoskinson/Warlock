@@ -1,0 +1,66 @@
+{
+  "manifest": {
+    "compiled": true,
+    "loaded": false,
+    "nativeAcceptance": false,
+    "files": [
+      {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/cross-output-design/nested_atlas_v17_smoke.py",
+        "sha256": "b89ce3737fd81b0a9bf8605bbcda71deea42e51846a5c1d3103df2ae94977ab8"
+      },
+      {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/cross-output-design/nested-stable.lua",
+        "sha256": "a7c0fe2060347c99d52d4ef7fb05098d12fc9381facde3887c16c5964705cb6b"
+      },
+      {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/cross-output-design/normal_frame_control.py",
+        "sha256": "d16337e178f2b6cd6f2a4044e2015e479449e5f4e9526efefaf8a803bada9648"
+      },
+      {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/cross-output-design/nested_preservation.py",
+        "sha256": "c579d169e9b7093331fd4b78d015cc9fbbcd38c9ceb3772aef1bd0f5056fc54d"
+      },
+      {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/cross-output-design/snapshot_fixture.py",
+        "sha256": "a68e7fa85b3d5f4824fa1c9031d3340a30cc7d1650da6c1250ff1077aca16bc5"
+      },
+      {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/cross-output-design/native-atlas-v17/hyprbars-v17-atlas-candidate.so",
+        "sha256": "41583095565cdf10ac6688fb10a0db0082edca49fa341f0005e52ba72d69419b"
+      },
+      {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/cross-output-design/native-atlas-v17/build-report.json",
+        "sha256": "d1cf9a272d870fc32b77454a00513eeacf92a784a4db4d795e92a8d8f38b8376"
+      }
+    ]
+  },
+  "manifestSHA256": "9b0b218dd742868c798a578954074170f28c02865cb061a7b15e2384790449a5",
+  "buildSources": {
+    "BarPassElement.cpp": "0e607597b130ec8277fb301b2b97b0fcde977a64e2163b53024907e4b4476fe7",
+    "barDeco.cpp": "7af76f29c98605f0e9e3cb8a49722642fa0923500576d546f90c18fb14af747d",
+    "dragBridge.cpp": "714a29c82aa33e9d9b1ac0ca077341513b3864618b5c12ceef6bb0174bfbadfe",
+    "familyBridge.cpp": "43a72e1ceed238ef31af2c38c95583acbf5dead4a7c9749ff708fc7960581264",
+    "main.cpp": "b5a93677a2a227280e9feff05d08421c4410aa037d3d5fa6eee2833f09bad3a2",
+    "BarPassElement.hpp": "9a460848366edc61c55500f5577180d10f383b65022b3952648efe3b4e7208f8",
+    "barDeco.hpp": "cfbbaa834ddc746eba0773a538deaa94a5c1f64b1e871c0e5b290d96cef31ba6",
+    "dragBridge.hpp": "006f8acd642a67f51d4f5c6fda50b221f5b08637636a6069117b3fbca8a5845d",
+    "familyBridge.hpp": "3543dc46226c03337cac712cc4fc856c50b37b07d2e0341d19d6c71ee67a1fa8",
+    "globals.hpp": "4a4d25fdcd2d2845df9d05abf9b9306a8f95f4d29654e3bc1049a6c59a796cd5",
+    "Makefile": "28cbfc1092b1ddfcf1d31c2e274315cf1991a4886c7491367d2aa3e9bb5b2fa3",
+    "snapshotBridge.hpp": "2153c5d39df74695fd631508a1f4fcf4f2fb02f0e7f476b6cc7d6983b0a4cad4",
+    "snapshotBridge.cpp": "bf83de4b0d7d1b444c90a0d0de4936fdbffcf48ae28bdfec0b8dd78966abae32",
+    "atlasRenderer.hpp": "3ed9d71824a0dc70df1e1d7655dabec1e50884bebce7fd23612dd79d5c8dc278",
+    "atlasRenderer.cpp": "34bdd22af3f2ed22817ef71ca4b5912cc0aa8de0468f30571d6b7821d5ce2d52",
+    "atlas_coordinates.qnt": "a422c337f52ebabd6855dcd2c43beb29b39ba2c51866cb908b3173edd78ac0c8",
+    "atlas_coordinates_test.qnt": "64d103361386e5a13914b51ff712f38ca741dec0f7fd98b5631fa0c568995bf8",
+    "atlasCoordinates.hpp": "32950ba8eecdbf6a6e925570ad52eda103a6b46436d83f6588c6e52d709beb22",
+    "test_atlas_coordinates.cpp": "cf7aa77aad715ad3815564e77300816d6a81b22df2cfc1b15ac38ccebff76fc3",
+    "atlasAdapter.hpp": "ea7168a5ed9435e76ef8dffc58a36c7398e2b33d05cb77412630697e281a0a02",
+    "atlasAdapter.cpp": "f1d2de8ef06b997dfc7bfd1074714922d0dbde3b9cde766943ba1dd786fcdff8",
+    "captionCache.hpp": "a21c13585faf1e26694e172cf3ad49ca56f5191317e1fbb1cdbba73ccb5357f8",
+    "CACHE_CONTRACT.md": "9759a1fea5d7ea8e76867bea9761a64c91ff1beeee6d51b7e44fadc10cc40dec",
+    "caption_cache.qnt": "551dd43ba1f728524e20e438ad1ae671756c975405b73ac7a6a7a4415c3bdf6b",
+    "caption_cache_test.qnt": "48b80b92f33a46a2efb18e25bdcbefe5fbc66ed54a07abc6a6a581d729e4d698",
+    "test_caption_cache.cpp": "d5ee50bd1b9b23ae2c28c065c7a58e97dd4eef7c087467a581395c0afa7ee74b"
+  }
+}

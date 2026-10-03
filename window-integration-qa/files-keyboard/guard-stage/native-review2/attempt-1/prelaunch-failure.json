@@ -1,0 +1,13 @@
+{
+  "result": "prelaunch-fail",
+  "error": "AttributeError: PosixPath object has no attribute socket; prestate socket pathname shadows imported socket module",
+  "fixturesLaunched": [],
+  "fixtureCleanup": [],
+  "fixturesExited": true,
+  "assistiveSessionEntered": false,
+  "virtualKeyboardCommandsExecuted": 0,
+  "catalogWrites": false,
+  "nativePreservationGates": "Not run; before-state accessibility/socket capture failed. No GUI/input/flag mutation occurred. Do not classify as a native pass.",
+  "frozenInputsUnchanged": true,
+  "guiSlotReleased": true
+}

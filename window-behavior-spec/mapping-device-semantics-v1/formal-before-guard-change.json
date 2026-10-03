@@ -1,0 +1,39 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/CONTRACT.md": "5ae1c7fed0e3dedfceb85d522a69d13b76a8ffb24a855f79f890d03d94addb81",
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/mapping_device.qnt": "d4510fb39c71ae688b61d150dd7938cc715c8d821272cf32d6fcd98807d11118",
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/prove_before.py": "a3d235562aa227616a12273ce211f2d70e135b02b125118696820960c72e9ea4"
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/mapping_device.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  mapping_device\n    ok exactBoundedBtrfsAgreementTest passed 1 test(s)\n    ok afterWithoutBeforeTest passed 1 test(s)\n    ok beforeWithoutAfterTest passed 1 test(s)\n    ok diagnosticNoAuthorityTest passed 1 test(s)\n    ok staleEpochTest passed 1 test(s)\n    ok consumerReplacementDuringReadTest passed 1 test(s)\n    ok consumerReplacementAfterReadTest passed 1 test(s)\n    ok startReplacementDuringReadTest passed 1 test(s)\n    ok startReplacementAfterReadTest passed 1 test(s)\n    ok parentReplacementDuringReadTest passed 1 test(s)\n    ok parentReplacementAfterReadTest passed 1 test(s)\n    ok groupReplacementDuringReadTest passed 1 test(s)\n    ok groupReplacementAfterReadTest passed 1 test(s)\n    ok uidReplacementDuringReadTest passed 1 test(s)\n    ok uidReplacementAfterReadTest passed 1 test(s)\n    ok exeReplacementDuringReadTest passed 1 test(s)\n    ok exeReplacementAfterReadTest passed 1 test(s)\n    ok argvReplacementDuringReadTest passed 1 test(s)\n    ok argvReplacementAfterReadTest passed 1 test(s)\n    ok cgroupReplacementDuringReadTest passed 1 test(s)\n    ok cgroupReplacementAfterReadTest passed 1 test(s)\n    ok namespaceReplacementDuringReadTest passed 1 test(s)\n    ok namespaceReplacementAfterReadTest passed 1 test(s)\n    ok fdAllocationReplacementDuringReadTest passed 1 test(s)\n    ok fdAllocationReplacementAfterReadTest passed 1 test(s)\n    ok fdDeviceReplacementDuringReadTest passed 1 test(s)\n    ok fdDeviceReplacementAfterReadTest passed 1 test(s)\n    ok inodeReplacementDuringReadTest passed 1 test(s)\n    ok inodeReplacementAfterReadTest passed 1 test(s)\n    ok fullModeReplacementDuringReadTest passed 1 test(s)\n    ok fullModeReplacementAfterReadTest passed 1 test(s)\n    ok gidReplacementDuringReadTest passed 1 test(s)\n    ok gidReplacementAfterReadTest passed 1 test(s)\n    ok nlinkReplacementDuringReadTest passed 1 test(s)\n    ok nlinkReplacementAfterReadTest passed 1 test(s)\n    ok sizeReplacementDuringReadTest passed 1 test(s)\n    ok sizeReplacementAfterReadTest passed 1 test(s)\n    ok mtimeReplacementDuringReadTest passed 1 test(s)\n    ok mtimeReplacementAfterReadTest passed 1 test(s)\n    ok flagsReplacementDuringReadTest passed 1 test(s)\n    ok flagsReplacementAfterReadTest passed 1 test(s)\n    ok fdTargetReplacementDuringReadTest passed 1 test(s)\n    ok fdTargetReplacementAfterReadTest passed 1 test(s)\n    ok mountIDReplacementDuringReadTest passed 1 test(s)\n    ok mountIDReplacementAfterReadTest passed 1 test(s)\n    ok mountLineReplacementDuringReadTest passed 1 test(s)\n    ok mountLineReplacementAfterReadTest passed 1 test(s)\n    ok subvolumeReplacementDuringReadTest passed 1 test(s)\n    ok subvolumeReplacementAfterReadTest passed 1 test(s)\n    ok hashReplacementDuringReadTest passed 1 test(s)\n    ok hashReplacementAfterReadTest passed 1 test(s)\n    ok mapRangeReplacementDuringReadTest passed 1 test(s)\n    ok mapRangeReplacementAfterReadTest passed 1 test(s)\n    ok mapOffsetReplacementDuringReadTest passed 1 test(s)\n    ok mapOffsetReplacementAfterReadTest passed 1 test(s)\n    ok mapProtectionReplacementDuringReadTest passed 1 test(s)\n    ok mapProtectionReplacementAfterReadTest passed 1 test(s)\n    ok mapDeviceReplacementDuringReadTest passed 1 test(s)\n    ok mapDeviceReplacementAfterReadTest passed 1 test(s)\n    ok mapInodeReplacementDuringReadTest passed 1 test(s)\n    ok mapInodeReplacementAfterReadTest passed 1 test(s)\n    ok mapPathReplacementDuringReadTest passed 1 test(s)\n    ok mapPathReplacementAfterReadTest passed 1 test(s)\n    ok mapFilesTargetReplacementDuringReadTest passed 1 test(s)\n    ok mapFilesTargetReplacementAfterReadTest passed 1 test(s)\n    ok notBtrfsRefusalTest passed 1 test(s)\n    ok missingStatxMaskRefusalTest passed 1 test(s)\n    ok missingMountRefusalTest passed 1 test(s)\n    ok ambiguousMountRefusalTest passed 1 test(s)\n    ok wrongMountDeviceRefusalTest passed 1 test(s)\n    ok wrongSubvolumeRefusalTest passed 1 test(s)\n    ok wrongMapInodeRefusalTest passed 1 test(s)\n    ok wrongFDDeviceRefusalTest passed 1 test(s)\n    ok wrongFullModeRefusalTest passed 1 test(s)\n    ok wrongHashRefusalTest passed 1 test(s)\n    ok deletedMappingRefusalTest passed 1 test(s)\n    ok missingMapFilesRefusalTest passed 1 test(s)\n    ok refusedReadlinkRefusalTest passed 1 test(s)\n    ok OPathRefusalTest passed 1 test(s)\n    ok writableFDRefusalTest passed 1 test(s)\n    ok changedIdentityRefusalTest passed 1 test(s)\n    ok changedVMARefusalTest passed 1 test(s)\n    ok changedMountNamespaceRefusalTest passed 1 test(s)\n    ok missingDeclaredSourceRefusalTest passed 1 test(s)\n\n  84 passing (8859ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/mapping_device.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (6616ms at 302 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceUnchanged": true,
+  "mappingPredicateChanged": false,
+  "GUI": false,
+  "rootReviewBeforeRuntime": true
+}

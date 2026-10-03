@@ -1,0 +1,51 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-0ad853379459490887974982d5cb0e42.scope",
+    "coreLimit": 1
+  },
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/context_completion_fixture_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/context_completion_fixture_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  context_completion_fixture_test\n    ok emptyPendingCueCanPrecedeActiveCompletionTest passed 1 test(s)\n    ok genuineLatestCompleteOutcomePassesTest passed 1 test(s)\n    ok oldWorkerCannotFinishLatestReceiptTest passed 1 test(s)\n    ok currentAbsentFailureCannotPassOriginalEffectsTest passed 1 test(s)\n    ok queueFailureDoesNotCountAsNativeCompletionTest passed 1 test(s)\n    ok wholeTwoSecondWaitExpiresWithoutResetTest passed 1 test(s)\n    ok lateCompletionCannotBorrowNewDeadlineTest passed 1 test(s)\n    ok originalThreeMemberEffectsRemainRequiredTest passed 1 test(s)\n\n  8 passing (325ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/context_completion_fixture.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1821ms at 1098 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "runtimeUnchangedBeforeCorrection": true,
+  "sourceSHA256": {
+    "test_socket_frontend.py": "5cde825dffd77ebc9684cf9a55e48ffa8b23ec9eb08c57242b7096c437902f2b"
+  },
+  "allOriginalOutcomeAssertionsRemainExact": true,
+  "originalDeadlineSeconds": 2,
+  "nativeLaunch": false
+}

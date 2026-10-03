@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_where_am_i" xml:lang="eo">
+  <info>
+    <link type="next" xref="commands_time_date_notifications"/>
+    <link type="guide" xref="commands#getting_started"/>
+    <link type="seealso" xref="howto_whereami"/>
+    <title type="sort">3. Kie Mi Estas</title>
+    <title type="link">Kie Mi Estas</title>
+    <desc>Komandoj por scii vian lokon</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Komandoj por Kie Mi Estas</title>
+  <p>La funkcio Kie Mi Estas de <app>Orko</app> donas al vi kontekstsensivajn detalojn pri via aktuala loko. Ekzemple, en tabeloj, Kie Mi Estas donos al vi detalojn pri la tabelĉelo en kiu vi estas, sed en teksto ĝi prezentos la aktualan linion kune kun iu ajn teksto kiu hazarde estas elektita. La plena listo de tio, kion vi povas atendi ke <app>Orko</app> prezentados, estas trovebla en la <link xref="howto_whereami">Enkonduko al Kie Mi Estas</link>.</p>
+  <p><app>Orko</app> provizas la jenajn komandojn Kie Mi Estas:</p>
+  <list>
+    <item>
+      <p>Plenumi bazan Kie Mi Estas:</p>
+      <list>
+        <item>
+          <p>Labortablo: <key>KP Enter</key></p>
+        </item>
+        <item>
+          <p>Tekkomputilo: <keyseq><key>Orko Modifier</key><key>Return</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Plenumi detalan Kie Mi Estas:</p>
+      <list>
+        <item>
+          <p>Labortablo: <key>KP Enter</key> (duoble klakita)</p>
+        </item>
+        <item>
+          <p>Tekkomputilo: <keyseq><key>Orko Modifier</key><key>Return</key></keyseq> (duoble klakita)</p>
+        </item>
+      </list>
+    </item>
+  </list>
+  <p>Aldone al la specifaj komandoj Kie Mi Estas, <app>Orko</app> havas pliajn komandojn rilatajn al ricevado de informo pri via aktuala loko:</p>
+  <list>
+    <item>
+      <p>Prezenti la titolbreton:</p>
+      <list>
+        <item>
+          <p>Labortablo: <keyseq><key>Orko Modifier</key><key>KP Enter</key></keyseq></p>
+        </item>
+        <item>
+          <p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Slash</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Prezenti la statusan breton:</p>
+      <list>
+        <item>
+          <p>Labortablo: <keyseq><key>Orko Modifier</key><key>KP Enter</key></keyseq> (duoble klakita)</p>
+        </item>
+        <item>
+          <p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Slash</key></keyseq> (duoble klakita)</p>
+        </item>
+        <item>
+          <p>Prezenti grandecon kaj lokon de la aktuala objekto en pikseloj: (neligita)</p>
+        </item>
+      </list>
+    </item>
+  </list>
+</page>

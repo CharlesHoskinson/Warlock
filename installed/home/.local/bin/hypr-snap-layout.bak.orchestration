@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+address=$(hyprctl activewindow -j | jq -r '.address // empty')
+[[ $address =~ ^0x[[:xdigit:]]+$ ]] || exit 0
+
+selection=$(omarchy menu select 'Snap layout' \
+  'Maximize' 'Left half' 'Right half' \
+  'Top left' 'Top right' 'Bottom left' 'Bottom right') || exit 0
+
+case "$selection" in
+  Maximize) zone=maximize ;;
+  'Left half') zone=left ;;
+  'Right half') zone=right ;;
+  'Top left') zone=top_left ;;
+  'Top right') zone=top_right ;;
+  'Bottom left') zone=bottom_left ;;
+  'Bottom right') zone=bottom_right ;;
+  *) exit 0 ;;
+esac
+
+hyprctl eval "hypr_snap_zone(\"$zone\", \"$address\")" >/dev/null

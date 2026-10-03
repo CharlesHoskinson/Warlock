@@ -1,0 +1,13 @@
+{
+  "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_pipe_transport.py",
+  "oldSHA256": "fcd791e2165b92b1d5878e4678785071290cb96febdb75f50d9501fcb565981d",
+  "proposedSHA256": "81b70b7035acb8241a53eaf9288901f17d31ac505be22dd9ac21935303ddfeb6",
+  "acceptedV19Source": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/test_pipe_transport.py",
+  "acceptedV19SHA256": "81b70b7035acb8241a53eaf9288901f17d31ac505be22dd9ac21935303ddfeb6",
+  "oldLiteral": "self.wait(lambda:self.t.failed);self.assertEqual(len(self.failures),1)",
+  "proposedLiteral": "self.wait(lambda:self.t.failed and self.failures);self.assertEqual(len(self.failures),1)",
+  "wholeOriginalFileReconstructedExactly": true,
+  "original2sWaitAndExactlyOneAndBrokenPipeErrorAssertionsExact": true,
+  "productChanged": false,
+  "nativeLaunch": false
+}

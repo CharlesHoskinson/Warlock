@@ -1,0 +1,62 @@
+--- /home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v4/run_native.py
++++ /home/hoskinson/window-integration-qa/pin-native-input-components-v1/run_native.py
+@@ -13,7 +13,7 @@
+ sys.path.insert(0,str(QA))
+ from qa_launch import require_qa_scope
+ sys.path.insert(0,str(B/'controller'))
+-from minimal_controller import MinimalController
++from block_controller import BlockController,CASES
+ 
+ def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+ def verify(path):
+@@ -30,17 +30,20 @@
+  return packet
+ 
+ def main():
+- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--source-check',action='store_true');ap.add_argument('--preflight',action='store_true');ap.add_argument('--attempt',type=Path);a=ap.parse_args()
++ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--source-check',action='store_true');ap.add_argument('--preflight',action='store_true');ap.add_argument('--attempt',type=Path);ap.add_argument('--component',choices=list(CASES));a=ap.parse_args()
+  path=B/('SOURCE_INPUTS.json'if a.source_check else'frozen-inputs.json');packet=verify(path)
+  if a.source_check or a.preflight:
+   print(json.dumps(dict(result='pass',inputs=len(packet['inputs']),links=len(packet['symlinks']),directories=len(packet['directoryModes']),nativeLaunched=False)));return 0
+  if a.attempt is None:ap.error('Explicit fresh root-authorized --attempt required')
++ if a.component is None:ap.error('Explicit independent --component B11, B12 or B11+B12 required')
++ selectedCases=list(CASES[a.component])
+  scope=require_qa_scope();grant=json.loads((B/'ROOT_NATIVE_GRANT.json').read_bytes())
+  if grant.get('nativeAuthorized')is not True or grant.get('manifestSHA256')!=sha(path)or grant.get('pairSHA256')!=sha(B/'PAIR_READY.json'):raise ValueError('Exact root source/native grant required')
++ if type(grant.get('componentCases'))is not list or grant['componentCases']!=selectedCases:raise ValueError('Exact root independent component grant required')
+  pair=pair_binding.read_pair(B/'PAIR_READY.json');output=a.attempt.absolute()
+  if output.resolve()!=output or output.parent!=B or not re.fullmatch(r'attempt-[1-9][0-9]*',output.name):raise ValueError('Exact fresh private component attempt required')
+  os.umask(0o077);output.mkdir(mode=0o700);main_env=dict(os.environ);manifest=path.read_bytes();snapshot=output/'main-before.json'
+- report=dict(result='pending',scope=scope,campaign='B01–B12 bounded actual components',hostChecks=[],mainPreservation={},bindingChecks=[],original14Credit=False,fullCampaignBAccepted=False,fullWindowsParityAccepted=False,componentIncrementAccepted=False,sourceManifestSHA256=sha(path),mainGUIWrites=False,mainRestorationWrites=False)
++ report=dict(result='pending',scope=scope,campaign='B11/B12 independent native-block/noFocus components',componentCases=selectedCases,originalTwelveCaseIncrementAccepted=False,hostChecks=[],mainPreservation={},bindingChecks=[],original14Credit=False,fullCampaignBAccepted=False,fullWindowsParityAccepted=False,componentIncrementAccepted=False,sourceManifestSHA256=sha(path),mainGUIWrites=False,mainRestorationWrites=False)
+  host=controller=before=None
+  def persist():original.persist(output/'report.json',report)
+  def gate(name,ok,**details):
+@@ -50,6 +53,7 @@
+   before=original.observer('capture',output/'before-main',main_env,snapshot)
+   api=private_output_host.adapt(original.module('_b_reviewed_host',B/'host/candidate_host.py'))
+   lua=(QA/'browser-files-flow-v20/nested-qt.lua').read_bytes()+(V2/'private-controls.lua').read_bytes()
++  lua+=(B/'monocle-component.lua').read_bytes()
+   keyboard='/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard'
+   lua+=('\nhl.permission({binary='+json.dumps(keyboard)+',type="keyboard",mode="allow"})\n').encode()
+   host=api.PrivateHyprSession(output/'host',main_env,1600,1000,lua,dri_prime='pci-0000_00_02_0',mesa_vendor=True);host.host.b_frozen=packet
+@@ -69,8 +73,8 @@
+      if session.ctl('plugin','load',p).strip()!='ok':raise RuntimeError('Exact matching source-bound QA module load refused: '+key)
+      loaded.append((key,p));maps=api.original.mapped_files(session.evidence['compositorPID'])
+      gate('Exact matching '+key+' actually mapped',maps['files'].get(p)==packet['inputs'][p])
+-    native=output/'native';native.mkdir(mode=0o700);controller=MinimalController(session,native,B/'PAIR_READY.json',packet)
+-    controller.attest('before-B-first-phase');report['components']=controller.run_first_phase();persist()
++    native=output/'native';native.mkdir(mode=0o700);controller=BlockController(session,native,B/'PAIR_READY.json',packet)
++    controller.attest('before-independent-native-components');report['components']=controller.run_components(a.component);persist()
+    finally:
+     # Controller closes each genuine Qt actor in its per-case finally; an
+     # uncertain failed cleanup cannot be replaced with host forced cleanup.
+@@ -98,7 +102,7 @@
+   try:verify(path);report['mainPreservation']['allFrozenInputsExact']=True
+   except BaseException:report['mainPreservation']['allFrozenInputsExact']=False;report['sourceError']=traceback.format_exc()
+   results=report.get('components',{}).get('actualComponentResults',[])
+-  report['componentIncrementAccepted']=bool(before and not report.get('error')and not report.get('mainObserverError')and not report.get('controllerBlocked')and len(results)==12 and [r.get('case')for r in results]==['B%02d'%n for n in range(1,13)]and report.get('normalHostClosure',{}).get('normal')is True and all(r['passed']is True for r in report['hostChecks'])and all(report['mainPreservation'].values()))
++  report['componentIncrementAccepted']=bool(before and not report.get('error')and not report.get('mainObserverError')and not report.get('controllerBlocked')and len(results)==len(selectedCases)and [r.get('case')for r in results]==selectedCases and report.get('components',{}).get('originalTwelveCaseIncrementAccepted')is Falseand report.get('normalHostClosure',{}).get('normal')is True and all(r['passed']is True for r in report['hostChecks'])and all(report['mainPreservation'].values()))
+   report['result']='pass'if report['componentIncrementAccepted']else'fail';persist()
+  print(json.dumps(dict(result=report['result'],componentIncrementAccepted=report['componentIncrementAccepted'],fullCampaignBAccepted=False,original14Credit=False,reportSHA256=sha(output/'report.json'),error=report.get('error'))));return int(report['result']!='pass')
+ if __name__=='__main__':raise SystemExit(main())

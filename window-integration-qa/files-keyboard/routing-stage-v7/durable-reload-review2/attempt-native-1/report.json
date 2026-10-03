@@ -1,0 +1,209 @@
+{
+  "scope": "Exact durable native URL, copied same-PID responsive-to-keyboard reload; no main input or operations",
+  "platform": "main Wayland",
+  "checks": [
+    {
+      "name": "baseline initialized hidden before map",
+      "passed": true
+    },
+    {
+      "name": "hidden Home has actual three-entry history",
+      "passed": true
+    },
+    {
+      "name": "copied baseline has never mapped",
+      "passed": true
+    },
+    {
+      "name": "same copied PID/start/instance after exact durable reload",
+      "passed": true
+    },
+    {
+      "name": "candidate imports snapshot before backing map",
+      "passed": true
+    },
+    {
+      "name": "full Home state exact with empty optional focus identity",
+      "passed": true
+    },
+    {
+      "name": "public Home state exact",
+      "passed": true
+    },
+    {
+      "name": "FILES_OPEN home did not reopen copied explorer",
+      "passed": true
+    },
+    {
+      "name": "actual process loaded exact durable native SO",
+      "passed": true
+    },
+    {
+      "name": "all 15 executed candidate QML files exact production bytes",
+      "passed": true
+    },
+    {
+      "name": "candidate reload never maps a copied client",
+      "passed": true
+    },
+    {
+      "name": "real hidden snapshot carries prompt/absolute selection/clipboard",
+      "passed": true
+    },
+    {
+      "name": "copied uninstantiated witness has frozen initial bytes",
+      "passed": true
+    },
+    {
+      "name": "only copied witness changed to frozen final bytes",
+      "passed": true
+    },
+    {
+      "name": "generic persistent reload exact full state",
+      "passed": true
+    },
+    {
+      "name": "generic persistent reload exact public state",
+      "passed": true
+    },
+    {
+      "name": "generic persistent reload same PID/start/instance",
+      "passed": true
+    },
+    {
+      "name": "hidden reload has no focus target to steal",
+      "passed": true
+    },
+    {
+      "name": "rich hidden reload has no mapped copied client",
+      "passed": true
+    },
+    {
+      "name": "no migration snapshot file required",
+      "passed": true
+    }
+  ],
+  "preservation": {
+    "ownedFixtureNormalExit": true,
+    "ownedFixtureGone": true,
+    "allStableClientFields": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "typedClipboardAndPrimary": true,
+    "a11ySocketFlagsAndReaderEnabled": true,
+    "outputs": true,
+    "plugins": true,
+    "keyboardStates": true,
+    "fourCatalogNaturalBytes": true,
+    "dashboardBytes": true,
+    "originalFilesProcess": true,
+    "originalFilesPublicState": true,
+    "originalFilesFullUi": true,
+    "originalFilesHidden": true,
+    "actualExecutedAppInputsExact": true,
+    "durableNativeAssetsExact": true,
+    "frozenManifestBytes": true,
+    "allFrozenInputsExact": true
+  },
+  "result": "pass",
+  "bootstrapOnlyChange": "var o = Quickshell.env(\"FILES_OPEN\") -> empty in copied baseline only",
+  "sourceManifestSHA256": "bc9aefce52100d4b4457f07a0ea3b7119f88ff7f9d914ddb7780805e7732a2fb",
+  "sourcePlanSHA256": "f3f6c11f21cc80623377a624a25070fe521d5fecfff5d10062b4c35ace9da71f",
+  "durableUrl": "/home/hoskinson/.local/share/omarchy-files-native/WindowAccessibilityV6_routing_20261001",
+  "copiedOnlyReloadWitness": {
+    "path": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/durable-reload-review2/attempt-native-1/app/ReloadWitness.qml",
+    "initialSHA256": "e81029e20dea24d405cd9550fcc1b757c4846552b1378b2b65e06f35600443c2",
+    "finalSHA256": "5a1a18432831be9b0c88b31b6a17dde288c7da3d4cb5b7e80fa8678e30606ce5",
+    "uninstantiated": true,
+    "productSourceMutation": false,
+    "actualFinalSHA256": "5a1a18432831be9b0c88b31b6a17dde288c7da3d4cb5b7e80fa8678e30606ce5"
+  },
+  "fixtureIdentity": {
+    "pid": 3949234,
+    "start": "7397805",
+    "instance": "y8nc25v58mt"
+  },
+  "cleanup": {
+    "pid": 3949234,
+    "exitCode": -15,
+    "forcedKill": false,
+    "gone": true,
+    "exactOwnedMembers": [
+      {
+        "pid": 3949234,
+        "start": "7397805"
+      }
+    ],
+    "remainingOwnedMembers": []
+  },
+  "preservationDetails": {
+    "currentTitleHashesBefore": {
+      "0x5a02aee429f0": "5d48eac09d17489ce011af63b5d37700a395e24810b96bfc3f21976c904cce18",
+      "0x5a02b0cc9280": "a7b8aa98953e573ee61bb4e66d1206f8e4dfba0730b657472f7db8da97049000",
+      "0x5a02afd20bd0": "ba54ce4108ca94191c50dbcd0a737446b3a1def86105fea87a457cfa02e0cddd",
+      "0x5a02afa13e90": "102607aba0aca07600ed90354604dd4f2164a9ea9a674a5727b90bdfc8f648ab"
+    },
+    "currentTitleHashesAfter": {
+      "0x5a02aee429f0": "5d48eac09d17489ce011af63b5d37700a395e24810b96bfc3f21976c904cce18",
+      "0x5a02b0cc9280": "a7b8aa98953e573ee61bb4e66d1206f8e4dfba0730b657472f7db8da97049000",
+      "0x5a02afd20bd0": "539fb1bd18f16eda330f1669d426315f69eb763ddce11c33e42f0801bc687bb6",
+      "0x5a02afa13e90": "102607aba0aca07600ed90354604dd4f2164a9ea9a674a5727b90bdfc8f648ab"
+    },
+    "catalogNaturalComparison": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": {
+        "exactBytes": true,
+        "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+        "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0"
+      },
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": {
+        "exactBytes": true,
+        "expectedSHA256": null,
+        "actualSHA256": null
+      },
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": {
+        "exactBytes": true,
+        "expectedSHA256": null,
+        "actualSHA256": null
+      },
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": {
+        "exactBytes": true,
+        "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+        "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+      }
+    },
+    "stableFields": [
+      "address",
+      "pid",
+      "stableId",
+      "at",
+      "size",
+      "workspace",
+      "pinned",
+      "fullscreen",
+      "fullscreenClient",
+      "grouped",
+      "tags",
+      "floating",
+      "monitor",
+      "mapped",
+      "hidden",
+      "visible",
+      "acceptsInput",
+      "class",
+      "initialClass",
+      "initialTitle",
+      "xwayland",
+      "pinFullscreened",
+      "fullscreenHandler",
+      "allowedOverFullscreen",
+      "swallowing",
+      "inhibitingIdle",
+      "xdgTag",
+      "xdgDescription",
+      "contentType",
+      "tearingHint"
+    ]
+  },
+  "elapsedSeconds": 2.420809068993549
+}

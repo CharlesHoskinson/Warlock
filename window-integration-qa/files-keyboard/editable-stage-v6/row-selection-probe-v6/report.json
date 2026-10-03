@@ -1,0 +1,242 @@
+{
+  "scope": "Actual Qt key events on copied V6 list/grid focus, selection and prompt payload; private session bus; no new reader/compositor test",
+  "trace": [
+    {
+      "event": "list initial",
+      "cur": -1,
+      "sel": [],
+      "focus": "Explorer.keys",
+      "focusIdentity": "main",
+      "prompt": {
+        "visible": false,
+        "title": "",
+        "hint": "",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "OK",
+        "mode": "",
+        "payload": null,
+        "text": "",
+        "cursor": 0,
+        "selectionStart": 0,
+        "selectionEnd": 0,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "list Down 1",
+      "cur": 0,
+      "sel": [
+        "subfolder"
+      ],
+      "focus": "FileArea.row",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/editable-stage-v6/isolated-home/fixture/subfolder",
+      "prompt": {
+        "visible": false,
+        "title": "",
+        "hint": "",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "OK",
+        "mode": "",
+        "payload": null,
+        "text": "",
+        "cursor": 0,
+        "selectionStart": 0,
+        "selectionEnd": 0,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "list Down 2",
+      "cur": 1,
+      "sel": [
+        "subfolder"
+      ],
+      "focus": "FileArea.row",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/editable-stage-v6/isolated-home/fixture/alpha-long-file-name-to-test-eliding.txt",
+      "prompt": {
+        "visible": false,
+        "title": "",
+        "hint": "",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "OK",
+        "mode": "",
+        "payload": null,
+        "text": "",
+        "cursor": 0,
+        "selectionStart": 0,
+        "selectionEnd": 0,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "list Down 3",
+      "cur": 2,
+      "sel": [
+        "subfolder"
+      ],
+      "focus": "FileArea.row",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/editable-stage-v6/isolated-home/fixture/beta.txt",
+      "prompt": {
+        "visible": false,
+        "title": "",
+        "hint": "",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "OK",
+        "mode": "",
+        "payload": null,
+        "text": "",
+        "cursor": 0,
+        "selectionStart": 0,
+        "selectionEnd": 0,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "list F2",
+      "cur": 2,
+      "sel": [
+        "subfolder"
+      ],
+      "focus": "FileArea.row",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/editable-stage-v6/isolated-home/fixture/beta.txt",
+      "prompt": {
+        "visible": false,
+        "title": "",
+        "hint": "",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "OK",
+        "mode": "",
+        "payload": null,
+        "text": "",
+        "cursor": 0,
+        "selectionStart": 0,
+        "selectionEnd": 0,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "grid initial",
+      "cur": 2,
+      "sel": [],
+      "focus": "Explorer.keys",
+      "focusIdentity": "main",
+      "prompt": {
+        "visible": false,
+        "title": "",
+        "hint": "",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "OK",
+        "mode": "",
+        "payload": null,
+        "text": "",
+        "cursor": 0,
+        "selectionStart": 0,
+        "selectionEnd": 0,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "grid Down 1",
+      "cur": 3,
+      "sel": [
+        "image.svg"
+      ],
+      "focus": "FileArea.gr",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/editable-stage-v6/isolated-home/fixture/image.svg",
+      "prompt": {
+        "visible": false,
+        "title": "",
+        "hint": "",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "OK",
+        "mode": "",
+        "payload": null,
+        "text": "",
+        "cursor": 0,
+        "selectionStart": 0,
+        "selectionEnd": 0,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "grid Down 2",
+      "cur": 3,
+      "sel": [
+        "image.svg"
+      ],
+      "focus": "FileArea.gr",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/editable-stage-v6/isolated-home/fixture/image.svg",
+      "prompt": {
+        "visible": false,
+        "title": "",
+        "hint": "",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "OK",
+        "mode": "",
+        "payload": null,
+        "text": "",
+        "cursor": 0,
+        "selectionStart": 0,
+        "selectionEnd": 0,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "grid Down 3",
+      "cur": 3,
+      "sel": [
+        "image.svg"
+      ],
+      "focus": "FileArea.cl",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/editable-stage-v6/isolated-home/fixture/image.svg",
+      "prompt": {
+        "visible": false,
+        "title": "",
+        "hint": "",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "OK",
+        "mode": "",
+        "payload": null,
+        "text": "",
+        "cursor": 0,
+        "selectionStart": 0,
+        "selectionEnd": 0,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "grid F2",
+      "cur": 3,
+      "sel": [
+        "image.svg"
+      ],
+      "focus": "FileArea.cl",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/editable-stage-v6/isolated-home/fixture/image.svg",
+      "prompt": {
+        "visible": false,
+        "title": "",
+        "hint": "",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "OK",
+        "mode": "",
+        "payload": null,
+        "text": "",
+        "cursor": 0,
+        "selectionStart": 0,
+        "selectionEnd": 0,
+        "scroll": 0
+      }
+    }
+  ],
+  "exitCode": -15
+}

@@ -1,0 +1,40 @@
+{
+  "suite": "v62 native AX activation through motion frontend",
+  "checks": [
+    {
+      "name": "AX app press minimizes exact active identity through activate",
+      "passed": true
+    },
+    {
+      "name": "minimized app remains semantically exposed",
+      "passed": true
+    },
+    {
+      "name": "AX app press restores minimized exact identity and focus",
+      "passed": true
+    },
+    {
+      "name": "AX restore preserves original native geometry",
+      "passed": true,
+      "geometry": [
+        450,
+        263,
+        700,
+        500
+      ]
+    },
+    {
+      "name": "AX inactive app press raises exact window without minimizing",
+      "passed": true
+    },
+    {
+      "name": "native user identities preserved",
+      "passed": true
+    },
+    {
+      "name": "desktop catalog byte-for-byte preserved",
+      "passed": true
+    }
+  ],
+  "result": "pass"
+}

@@ -1,0 +1,41 @@
+{
+  "result": "fail",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-b975b096f47f4e3a84df22b7e46554df.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/renderer_collector_binding_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/formal-before-pairing-v1/check-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/renderer_collector_binding_test.qnt",
+        "--backend=rust"
+      ],
+      "exitCode": 1,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/formal-before-pairing-v1/check-1.log",
+      "sha256": "3a252af8bc1ee68f55ffd29050724dd3bd79be42aa83a2233705c4687e00757a"
+    }
+  ],
+  "models": {
+    "renderer_collector_binding.qnt": "c02ef8b9350f7173d2682e446ff2c9edec581ddaf5206981ca3cb02168440fc5",
+    "renderer_collector_binding_test.qnt": "cd316ef68d9821098302babf1b89963daa3c5593e9133425ae3dd663c80b92ef",
+    "RENDERER_COLLECTOR_BINDING_CONTRACT.md": "bb7faa7ec949d1b74141183e25eaffc97d97b15f2bc991dcf88727f06910c966"
+  },
+  "inheritedV8Untouched": true,
+  "inheritedV8InputCount": 439,
+  "selectedV24ManifestSHA256": "b017d8d2a126f76c637429fffc2d77d510161fb89d3f3826795abb47d30b9f2c",
+  "runtimeEdited": false,
+  "nativeLaunch": false,
+  "nativeAccepted": false
+}

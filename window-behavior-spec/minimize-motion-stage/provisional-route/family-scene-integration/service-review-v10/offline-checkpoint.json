@@ -1,0 +1,348 @@
+{
+  "version": "family-service-v10-offline",
+  "productionChanged": false,
+  "nativeLaunch": false,
+  "pythonTests": 112,
+  "quintNamedScenarios": 61,
+  "quintModels": 10,
+  "quintSamplesPerModel": 2000,
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exitCode": 0,
+      "log": "check-00.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_scene_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-01.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_scene_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-02.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_scene.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-03.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_destination_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-04.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_destination_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-05.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_destination.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-06.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "transport_dispatch_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-07.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "transport_dispatch_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-08.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "transport_dispatch.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-09.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-10.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-11.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_registry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-12.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "ingress_context_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-13.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "ingress_context_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-14.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "ingress_context.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-15.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "persistent_atlas_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-16.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "persistent_atlas_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-17.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "persistent_atlas.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-18.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "pending_direction_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-19.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "pending_direction_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-20.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "pending_direction.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-21.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "runtime_lifecycle_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-22.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "runtime_lifecycle_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-23.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "runtime_lifecycle.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-24.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "receipt_visual_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-25.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "receipt_visual_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-26.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "receipt_visual.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-27.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "native_composition_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-28.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "native_composition_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-29.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "native_composition.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-30.log"
+    }
+  ],
+  "changedExistingSources": [
+    "CONTRACT.md",
+    "pipe_transport.py",
+    "scene_manager.py"
+  ],
+  "newSemanticSources": [
+    "native_runtime.py",
+    "test_native_runtime.py",
+    "native_composition.qnt",
+    "native_composition_test.qnt"
+  ],
+  "scope": "explicit guarded native composition entrypoint; actual idle/fake FD/socket/AF_UNIX tests only, no compositor/renderer launch; unresolved recovery/real native raster/cadence remain open"
+}

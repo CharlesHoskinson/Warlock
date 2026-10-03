@@ -1,0 +1,27 @@
+{
+  "schema": "root-promoted-pin-b-native-failure-v2",
+  "observedUTC": "2026-10-02T23:57:48.025974+00:00",
+  "report": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/report.json",
+  "reportSHA256": "16f6f9ed4bc4faa95ab90e0dd5abaa980918cff38948db90b41a1b8b9fbdca9b",
+  "traceSHA256": "6735a5c3e408358c479f56bcedc14822159d42c37b2a9047061f3dde7b0e2785",
+  "frozenSHA256": "66e08491e144661659fcfd25cb8961509b00895f01e20a387ccf9e85c1597c5f",
+  "result": "fail",
+  "completedCases": [
+    "B01",
+    "B02",
+    "B03"
+  ],
+  "firstFailure": "B04 immediate MAX conservation after genuine titlebar pin",
+  "causeNotYetEstablished": true,
+  "recordedHostChecks": 10,
+  "allRecordedHostChecksPassed": true,
+  "mainPreservationChecks": 18,
+  "allMainPreservationPassed": true,
+  "clientsBeforeUnload": 0,
+  "allThreeModulesNormallyUnloaded": true,
+  "separateBNormalClosure": true,
+  "privateRuntimeGone": true,
+  "noCleanupErrorsOrUnknownDescendants": true,
+  "fullBParityAccepted": false,
+  "mainChanged": false
+}

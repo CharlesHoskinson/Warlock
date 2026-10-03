@@ -1,0 +1,39 @@
+{
+  "checks": {
+    "189800": true,
+    "189801": true,
+    "189814": true,
+    "189896": true,
+    "runtimeGone": true,
+    "noUnexpectedDescendants": true,
+    "noRemainingDescendants": true,
+    "noCleanupErrors": true,
+    "normalProducerExit": true,
+    "all15MainChecks": true,
+    "window-integration-qa/family-raster-oracle-v2/frozen-inputs.json": true,
+    "window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-checkpoint-v1.json": true,
+    "window-integration-qa/private-weston-aq-host-v2/frozen-inputs.json": true,
+    "window-integration-qa/aquamarine-version-guard-v1/frozen-inputs.json": true
+  },
+  "sources": {
+    "window-integration-qa/family-raster-oracle-v2/frozen-inputs.json": {
+      "sha256": "99bbf510fa258e03a20f0f0372edc203ad16b1e43a29e1ab5f0a8b6dafa65eac",
+      "inputs": 22
+    },
+    "window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-checkpoint-v1.json": {
+      "sha256": "c5cc88b04f7705c8d958115c742187d5f16fd079d9e37df432e28ac64e1e6f81",
+      "inputs": 77
+    },
+    "window-integration-qa/private-weston-aq-host-v2/frozen-inputs.json": {
+      "sha256": "c3e4950c9b4245afd6491ac7ad04e23ab1ba4555922f68547c6956035eaafefa",
+      "inputs": 9
+    },
+    "window-integration-qa/aquamarine-version-guard-v1/frozen-inputs.json": {
+      "sha256": "abd1f3818e8fdee2683deea4312cbd1d1a3da2ecd305a459e5a7f0762076ed14",
+      "inputs": 727
+    }
+  },
+  "rasterAccepted": false,
+  "failure": "WAYLAND-1 lacks presented feedback; parent reports unconfigured xdg_surface; no pixel comparison executed",
+  "result": "cleanup-and-preservation-pass"
+}

@@ -1,0 +1,13 @@
+# Browser / copied Files V9 exact shared-data mode
+
+Fresh derivative of immutable V8 diagnostic failure. No native execution or main writes by this agent.
+
+Root's actual V8 initial shared-data observation captured one exact compositor FD32, inode76787/device33, regular st_mode32768/fullMode0000, UID1000, nlink0, size2960. Its read-only fdinfo has flags688128/mount35/inode76787. The copied Files VMA is r--p, 4096 bytes, offset0. All seven other metadata conjuncts were true; only fullMode600 was false, and no metadata diagnostic read/parse errors occurred. The retained raw base64 blocks and hashes are independently replayed in v9-mode-contract-evidence.json. This establishes the cause of that initial metadata failure, not completion of the later before/after provenance or app-input flow.
+
+Tagged v0.56.2 primary allocateSHMFilePair creates a mode0600 object, opens its RO FD, unlinks it, calls fchmod(fd,0), then truncates to the requested size. Bounded disassembly of the exact installed executable independently confirms the fchmod argument zero and requested ftruncate size. The installed behavior and actual metadata support requiring exact final fullMode0000. Exact tagged-source/build equality or keymap contents are not claimed.
+
+The formal integer mode contract and 23 named cases plus 2,000×100 traces passed before runtime implementation. V9 changes the single shared-data full-mode requirement from 0600 to 0000 and labels its diagnostic conjunct fullModeZero. Permission-bearing modes and every special bit refuse. No mode set is accepted. All other producer/consumer lifetime, kernel peer, mount, device/inode, FD inventory/read-only access, VMA offset/size, no-executable-alias, before/after snapshots and post-disk-validation confirmation checks remain unchanged. Raw stat/target/fdinfo/mount and read failures remain persisted before validation.
+
+runtime_inputs.py, private_session.py, browser_exec.py, network_guard.py, bus_authority.py and cdp_readonly.py remain byte-identical to V7/V8. Strict missing/unreadable/new/deleted code refusal, the copied Files original callbacks, real retained draft/caret/continuation, genuine release/reload and all three mapping checkpoints remain required. No shared-memory contents are read. All observations are scoped to captured owned maps and fresh Files/compositor snapshots, not global or continuous inspection.
+
+Offline tests include 30 real kernel two-process data fixtures, exact mode0000 positive provenance, actual mode0600 refusal and isolated setuid/setgid/sticky bit refusals. All inherited suites and formal temporal replacement cases are retained. Native outcome remains pending root's full source review and exclusive private native run; frozen V8 failure remains unchanged.

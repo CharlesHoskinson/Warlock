@@ -1,0 +1,15 @@
+
+  family_query_test
+    ok retainedOldMutexCycleTest passed 1 test(s)
+    ok correctedQueryCannotHoldFamilyWhileWaitingForManagerTest passed 1 test(s)
+    ok watchdogCanFinishBeforeWaitingEndpointHelperTest passed 1 test(s)
+    ok endpointCanFinishAfterUnchangedWatchdogDeadlineTest passed 1 test(s)
+    ok currentExactCompletedObservationRetainsEffectGuardTest passed 1 test(s)
+    ok replacedReceiptDuringReadOnlyQueryCannotWriteTest passed 1 test(s)
+    ok closedOrChangedFamilyObservationCannotWriteTest passed 1 test(s)
+    ok incompleteQueryCannotWriteTest passed 1 test(s)
+    ok oneThreadCannotOverwriteOtherEvidenceTest passed 1 test(s)
+    ok threadEvidenceTracksItsOwnCurrentObservationTest passed 1 test(s)
+    ok noWholeKeeperStopOrNewEndpointNeededToResolveTest passed 1 test(s)
+
+  11 passing (897ms)

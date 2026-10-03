@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_pronunciation" xml:lang="kk">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_text_attributes"/>
+    <title type="sort">7. Айтылуы</title>
+    <title type="link">Айтылуы</title>
+    <desc>Белгілі бір сөздердің қалай айтылатынын анықтау</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Айтылу баптаулары</title>
+  <p>Кейде сөйлеу синтезаторы белгілі бір жол үшін дұрыс нәрсені айтпайды. Сіз "LOL" орнына "күлкіден жарылу" немесе "a11y" орнына "қолжетімділік" дегенді естігенді қалауыңыз мүмкін. Немесе синтезатор қате айтатын есім немесе техникалық термин болуы мүмкін.</p>
+  <p><app>Orca</app> баптаулары сұхбат терезесінің <gui>Айтылуы</gui> беті <app>Orca</app>-ның айтылу сөздігіне жазбаларды қосуға, түзетуге және өшіруге мүмкіндік береді.</p>
+  <p><gui>Айтылуы</gui> беті сондай-ақ қолданбаға тән баптаулардың бөлігі болғандықтан, сіз пайдаланатын әрбір қолданба үшін жазбаларыңызды қажетінше теңшей аласыз.</p>
+  <steps>
+    <title>Сөздіктің жаңа жазбасын қосу</title>
+    <item>
+      <p><gui>Жаңа жазба</gui> батырмасын басыңыз (<keyseq><key>Alt</key><key>N</key></keyseq>)</p>
+    </item>
+    <item>
+      <p>Жаңа жазба мәтінін теріп, нақты жолды түзетуді аяқтау үшін <key>Return</key> пернесін басыңыз.</p>
+    </item>
+    <item>
+      <p><gui>Алмастыру жолы</gui> бағанына өтіп, түзетуді бастау үшін <key>Return </key> пернесін басыңыз.</p>
+    </item>
+    <item>
+      <p>Оның орнына дыбысталғанын қалайтын мәтінді теріп, алмастыру жолын түзетуді аяқтау үшін <key> Return</key> пернесін басыңыз.</p>
+    </item>
+  </steps>
+  <steps>
+  <title>Сөздіктің бар жазбасын түзету</title>
+    <item>
+      <p>Түзеткіңіз келетін ұяшыққа өтіп, түзетуді бастау үшін <key>Return</key> пернесін басыңыз.</p>
+    </item>
+    <item>
+      <p>Өзгерістеріңізді енгізіп, түзетуді аяқтау үшін <key>Return</key> пернесін басыңыз.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Сөздіктің бар жазбасын өшіру</title>
+    <item>
+      <p>Өшіргіңіз келетін жазбаға өтіңіз.</p>
+    </item>
+    <item>
+      <p><gui>Өшіру</gui> батырмасын немесе <keyseq><key>Alt</key><key>D</key></keyseq> басыңыз.</p>
+    </item>
+  </steps>
+</page>

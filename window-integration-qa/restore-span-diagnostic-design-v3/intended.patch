@@ -1,0 +1,303 @@
+--- service_observer.py
++++ service_observer.py
+@@ -27,7 +27,9 @@
+ sys.path.insert(0, str(QA))
+ from qa_launch import require_qa_scope, verify_runtime
+ 
+-from module_binding import SERVICE, capture as capture_binding, bind_owner, linked_actor, archive_final, data_probe
++from preparation_profile import BoundaryProfile
++from causal_profile_sources import selected_sources
++from module_binding import MANIFEST, SERVICE, capture as capture_binding, bind_owner, linked_actor, archive_final, data_probe
+ sys.path.insert(0, str(SERVICE))
+ import native_runtime
+ from service_runtime import RuntimeService, process_start
+@@ -216,13 +218,29 @@
+             poll_failures.append(traceback.format_exc())
+     poller = threading.Thread(target=poll_actual_events, name='readonly-reversal-events', daemon=True)
+     poller.start()
++    timing = None
++    timing_failure = None
++    timing_complete = False
+     try:
++        timing = BoundaryProfile(selected_sources(SERVICE, json.loads(MANIFEST.read_text()), __file__,
++                                 json.loads((Path(__file__).parent/'frozen-inputs.json').read_text())))
++        timing.install()
+         service.run()
+     except BaseException:
+         failure = traceback.format_exc()
++        if not service.closed:
++            service.close()
+     finally:
+         poll_stop.set()
+         poller.join(timeout=3)
++        if timing is not None and timing.installed:
++            try:
++                trace = timing.stop_and_save(evidence.parent/'actual-preparation-timing.json')
++                timing_complete = trace['traceComplete']
++                if not timing_complete:
++                    timing_failure = 'incomplete causal span observation'
++            except BaseException:
++                timing_failure = traceback.format_exc()
+     module_after=capture_binding(evidence.parent/'actual-modules-after.json','after',previous=module_before)
+     terminal_binding=archive_final(factory,service,evidence.parent/'actual-terminal-binding.json',module_after)
+     records = []
+@@ -247,6 +265,9 @@
+            'readonlyEventObserverFailures':poll_failures,
+            'readonlyEventObserverStopped':not poller.is_alive(),
+            'readonlyEventObserverTimingPerturbation':True,
++           'causalSpanTimingPerturbation':True,
++           'causalSpanFailure':timing_failure,
++           'causalSpanTraceComplete':timing_complete,
+            'serviceClosed': service.closed,
+            'compositorIPCProbe': guard.ipc_observation,
+            'records': records, 'transports': transports,
+@@ -284,7 +305,7 @@
+     with evidence.open('x') as output:
+         json.dump(row, output, indent=2); output.write('\n')
+     evidence.chmod(0o600)
+-    return int(failure is not None or service.failure is not None)
++    return int(failure is not None or service.failure is not None or timing_failure is not None)
+ 
+ 
+ if __name__ == '__main__':
+--- /dev/null
++++ causal_profile_sources.py
+@@ -0,0 +1,30 @@
++"""Explicit diagnostic path/qualname selection; no product methods replaced."""
++from pathlib import Path
++
++TARGETS={
++ 'scene_controller':('SceneController.prepare','SceneController.fresh','SceneController.commit_members','SceneController.watchdog','SceneController.settle'),
++ 'native_desktop':('NativeDesktop.plan_destinations','NativeDesktop.plan_destinations.<locals>.plan','NativeDesktop.plan_destinations.<locals>.guard','NativeDesktop.plan_destination','NativeDesktop.apply_destination','NativeDesktop.refresh_destination','NativeDesktop.capture_source','NativeDesktop._capture_source_impl','NativeDesktop.target','NativeDesktop.retire_gestures','NativeDesktop.finish_capture_previews'),
++ 'production_motion_6d9':('BasicDesktop.capture','BasicDesktop.clients','BasicDesktop.ipc','BasicDesktop.target','BasicDesktop.reduced','BasicDesktop.monitors','Desktop.capture','Desktop.capture_locked','Desktop.check_current','Desktop.publish_crop'),
++ 'owned_commands':('OwnedCommands.run','OwnedCommands.check_output'),
++ 'owned_launch':('OwnedLaunch.__init__','OwnedLaunch.complete'),
++ 'helper_supervisor':('Keeper.register','Keeper.complete','Keeper.exchange'),
++ 'readonly_ipc':('ReadonlyIPC.query',),
++ 'snapshot_cache':('SnapshotCache.restore','SnapshotCache.publish'),
++ 'batch_preview':('BatchPreviews.stage','BatchPreviews.finish'),
++ 'pipe_transport':('PipeTransport.ensure_outputs','PipeTransport.send'),
++ 'service_runtime':('RuntimeService.persist',)}
++OBSERVER=('ObservedFactory.retain_source','ObservedFactory.retain_cache_pair','ObservedFactory.__call__.<locals>.capture_and_observe')
++
++def selected_sources(service,service_manifest,observer_path,collector_manifest):
++ if sum(map(len,TARGETS.values()))+len(OBSERVER)>64:
++  raise ValueError('finite bounded diagnostic selection required')
++ result={str(service/(name+'.py')):{
++  'sha256':service_manifest['inputs'][str(service/(name+'.py'))],
++  'mode':service_manifest['inputModes'][str(service/(name+'.py'))],
++  'symbols':list(symbols),
++ } for name,symbols in TARGETS.items()}
++ observer=str(Path(observer_path).resolve())
++ result[observer]={'sha256':collector_manifest['inputs'][observer],
++                   'mode':collector_manifest['inputModes'][observer],
++                   'symbols':list(OBSERVER)}
++ return result
+--- /dev/null
++++ preparation_profile.py
+@@ -0,0 +1,205 @@
++"""Bounded call-boundary observation. No product method or result is replaced."""
++import hashlib
++import json
++import os
++from pathlib import Path
++import stat
++import sys
++import threading
++import time
++
++
++TARGETS = {
++    'scene_controller': ('SceneController.prepare', 'SceneController.fresh', 'SceneController.commit_members', 'SceneController.watchdog', 'SceneController.settle'),
++    'native_desktop': ('NativeDesktop.capture_source', 'NativeDesktop._capture_source_impl', 'NativeDesktop.retire_gestures'),
++    'production_motion_6d9': ('Desktop.check_current', 'Desktop.clients', 'Desktop.target', 'Desktop.ipc', 'Desktop.publish_crop', 'Desktop.validate_snapshot'),
++    'native_runtime': ('NativeSession.verify', 'NativeFactory.__call__', 'PinnedNativeDesktop.commit'),
++    'owned_commands': ('OwnedCommands.run', 'SealedFile.__init__'),
++    'owned_launch': ('OwnedLaunch.__init__', 'OwnedLaunch.complete'),
++    'helper_supervisor': ('Keeper.register', 'Keeper.released', 'Keeper.complete', 'Keeper.verify', 'Keeper.exchange'),
++    'timeout_adapter': ('prepare',),
++    'recovery_resources': ('material_fd', 'material_path'),
++    'service_runtime': ('RuntimeService.persist',),
++    'snapshot_cache': ('SnapshotCache.publish', 'SnapshotCache.restore'),
++    'readonly_ipc': ('ReadonlyIPC.query',),
++    'pipe_transport': ('PipeTransport.ensure_outputs', 'PipeTransport.send'),
++}
++
++
++def selected_sources(service, manifest):
++    return {str(service / (name + '.py')): {
++        'sha256': manifest['inputs'][str(service / (name + '.py'))],
++        'mode': manifest['inputModes'][str(service / (name + '.py'))],
++        'symbols': list(symbols),
++    } for name, symbols in TARGETS.items()}
++
++
++class BoundaryProfile:
++    def __init__(self, sources, *, max_events=16384):
++        if type(max_events) is not int or not 2 <= max_events <= 65536:
++            raise ValueError('bounded event capacity required')
++        self.sources = sources
++        self.allowed = {p: frozenset(row['symbols']) for p, row in sources.items()}
++        self.max_events = max_events
++        self.lock = threading.RLock()
++        self.hook = self._profile
++        self.active = False
++        self.installed = False
++        self.stopped = False
++        self.serial = 0
++        self.frames = {}
++        self.stacks = {}
++        self.events = []
++        self.errors = []
++        self.started_ns = None
++        self.stopped_ns = None
++        self.source_stable = True
++        self.source_observations = []
++
++    def _fault(self, text):
++        if not self.errors:
++            self.errors.append(text[:1024])
++
++    def _sources(self):
++        for name, expected in self.sources.items():
++            path = Path(name)
++            before = path.lstat()
++            data = path.read_bytes()
++            after = path.lstat()
++            token = lambda s: (s.st_dev, s.st_ino, s.st_size, s.st_mtime_ns, s.st_ctime_ns, stat.S_IMODE(s.st_mode))
++            actual = hashlib.sha256(data).hexdigest()
++            valid = (path.is_absolute() and path.resolve() == path and stat.S_ISREG(before.st_mode)
++                     and before.st_uid == os.getuid() and not before.st_mode & 0o022
++                     and token(before) == token(after) and actual == expected['sha256']
++                     and stat.S_IMODE(before.st_mode) == expected['mode'])
++            self.source_observations.append({'path': name, 'sha256': actual, 'identity': list(token(after)), 'matched': valid})
++            if not valid:
++                self.source_stable = False
++                raise ValueError('observed target source changed: ' + name)
++
++    def install(self):
++        if self.installed or self.stopped or self.errors:
++            raise RuntimeError('observer installs once')
++        if sys.getprofile() is not None or threading.getprofile() is not None:
++            self._fault('preexisting current/global thread profiling hook')
++            raise RuntimeError(self.errors[0])
++        self._sources()
++        self.started_ns = time.monotonic_ns()
++        self.installed = self.active = True
++        # Existing and future service workers are covered. Product callables,
++        # bound owners, code objects and source paths remain untouched.
++        threading.setprofile_all_threads(self.hook)
++        return self
++
++    def _details(self, frame):
++        local = frame.f_locals
++        result = {}
++        for name in ('actor', 'number', 'index', 'timeout', 'force', 'operation', 'kind', 'job', 'scene_token'):
++            value = local.get(name)
++            if type(value) in (int, float, bool, str) and (not isinstance(value, str) or len(value) <= 256):
++                result[name] = value
++        for name in ('args', 'argv'):
++            value = local.get(name)
++            if type(value) in (list, tuple) and len(value) <= 32 and all(type(v) is str and len(v) <= 8192 for v in value):
++                result[name] = list(value)
++        window = local.get('window')
++        if type(window) is dict:
++            result['window'] = {k: window[k] for k in ('address', 'stableId', 'pid')
++                                if k in window and type(window[k]) in (str, int)}
++        request = local.get('request')
++        if type(request) is bytes and len(request) <= 64:
++            result['request'] = request.decode('ascii', errors='replace')
++        return result
++
++    def _profile(self, frame, event, arg):
++        if event not in ('call', 'return') or not self.active:
++            return
++        code = frame.f_code
++        symbols = self.allowed.get(code.co_filename)
++        if symbols is None or code.co_qualname not in symbols:
++            return
++        # Profiler errors cannot escape into the original product function.
++        try:
++            with self.lock:
++                if not self.active or self.errors:
++                    return
++                if len(self.events) >= self.max_events:
++                    self._fault('event capacity exhausted; timing evidence incomplete')
++                    return
++                thread = threading.get_native_id()
++                key = (thread, id(frame))
++                now = time.monotonic_ns()
++                stack = self.stacks.setdefault(thread, [])
++                if event == 'call':
++                    if key in self.frames:
++                        raise RuntimeError('duplicate active frame boundary')
++                    self.serial += 1
++                    row = {'event': 'call', 'id': self.serial, 'thread': thread,
++                           'parent': stack[-1] if stack else None,
++                           'path': code.co_filename, 'symbol': code.co_qualname,
++                           'codeObjectID': id(code), 'timeNs': now,
++                           'details': self._details(frame)}
++                    self.frames[key] = row
++                    stack.append(row['id'])
++                else:
++                    start = self.frames.get(key)
++                    if start is None or not stack or stack[-1] != start['id']:
++                        raise RuntimeError('unmatched call-return boundary')
++                    row = {'event': 'return', 'id': start['id'], 'thread': thread,
++                           'timeNs': now, 'durationNs': now - start['timeNs'],
++                           'successClaimed': False}
++                    del self.frames[key]
++                    stack.pop()
++                self.events.append(row)
++        except BaseException as failure:
++            with self.lock:
++                self._fault(type(failure).__name__ + ': ' + str(failure))
++
++    def stop(self):
++        if not self.installed or self.stopped:
++            raise RuntimeError('installed observation stops once')
++        self.active = False
++        if sys.getprofile() is not self.hook or threading.getprofile() is not self.hook:
++            self._fault('profiling hook changed during observation')
++        threading.setprofile_all_threads(None)
++        self.stopped_ns = time.monotonic_ns()
++        self.stopped = True
++        self.installed = False
++        try:
++            self._sources()
++        except BaseException as failure:
++            self.source_stable = False
++            self._fault(type(failure).__name__ + ': ' + str(failure))
++
++    def save(self, destination):
++        if not self.stopped:
++            raise RuntimeError('stop observation before evidence disk write')
++        with self.lock:
++            row = {'version': 1, 'observerSourceSHA256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
++                   'pid': os.getpid(), 'startedNs': self.started_ns, 'stoppedNs': self.stopped_ns,
++                   'sources': self.sources, 'sourceObservations': self.source_observations,
++                   'sourceStable': self.source_stable, 'maxEvents': self.max_events,
++                   'events': self.events, 'openSpans': list(self.frames.values()), 'errors': self.errors,
++                   'traceComplete': not self.errors and self.source_stable and not self.frames,
++                   'timingPerturbed': True, 'monotonicClock': True,
++                   'callableReplacement': False, 'returnOrExceptionReplacement': False,
++                   'returnEventProvesSuccess': False, 'nativeAuthority': False,
++                   'originalBaselineAccepted': False, 'physicalCadenceAccepted': False,
++                   'fullWindowsParityAccepted': False}
++            data = (json.dumps(row, indent=2) + '\n').encode()
++        path = Path(destination)
++        fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW | os.O_CLOEXEC, 0o600)
++        with os.fdopen(fd, 'wb') as output:
++            output.write(data); output.flush(); os.fsync(output.fileno())
++        parent = os.open(path.parent, os.O_RDONLY | os.O_DIRECTORY | os.O_CLOEXEC)
++        try:
++            os.fsync(parent)
++        finally:
++            os.close(parent)
++        if path.read_bytes() != data:
++            raise ValueError('timing evidence disk confirmation changed')
++        return row
++
++    def stop_and_save(self, destination):
++        self.stop()
++        return self.save(destination)

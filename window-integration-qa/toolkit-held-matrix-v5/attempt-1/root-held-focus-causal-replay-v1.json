@@ -1,0 +1,2007 @@
+{
+  "result": "pre-Escape-native-focus-theft-confirmed",
+  "originalHeldResult": "fail",
+  "completeFrozenClosureExact": true,
+  "actualBeforeEscapeSourceFocusConfirmed": true,
+  "sourceIdentity": {
+    "address": "0x6066ee7eaf40",
+    "mapped": true,
+    "hidden": false,
+    "visible": true,
+    "acceptsInput": true,
+    "at": [
+      330,
+      350
+    ],
+    "size": [
+      240,
+      140
+    ],
+    "workspace": {
+      "id": 1,
+      "name": "1"
+    },
+    "floating": true,
+    "monitor": 0,
+    "class": "qt-window-modal-fixture",
+    "title": "Qt WindowModal QA nested",
+    "initialClass": "qt-window-modal-fixture",
+    "initialTitle": "Qt WindowModal QA nested",
+    "pid": 1817453,
+    "xwayland": false,
+    "pinned": false,
+    "pinFullscreened": false,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "fullscreenHandler": "default",
+    "allowedOverFullscreen": true,
+    "grouped": [],
+    "tags": [],
+    "swallowing": "0x0",
+    "focusHistoryID": 1,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": "",
+    "contentType": "none",
+    "tearingHint": false,
+    "stableId": "18000003"
+  },
+  "peerIdentity": {
+    "address": "0x6066ee0d5ab0",
+    "stableId": "18000001",
+    "pid": 1817453,
+    "modal": false,
+    "mapped": true,
+    "hidden": false,
+    "acceptsInput": true,
+    "surfaceBox": [
+      1000,
+      300,
+      460,
+      300
+    ]
+  },
+  "observations": {
+    "actual press": {
+      "label": "actual press",
+      "native": {
+        "cursor": [
+          450,
+          337
+        ],
+        "hitOwner": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            330,
+            350,
+            240,
+            140
+          ]
+        },
+        "pointerOwner": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            330,
+            350,
+            240,
+            140
+          ]
+        },
+        "pointerSurfacePresent": true,
+        "nativeFocus": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            330,
+            350,
+            240,
+            140
+          ]
+        },
+        "modalTarget": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            330,
+            350,
+            240,
+            140
+          ]
+        },
+        "historyOldToNew": [
+          {
+            "address": "0x6066ee14ea00",
+            "stableId": "18000000",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              100,
+              250,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee963860",
+            "stableId": "18000002",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              260,
+              310,
+              320,
+              180
+            ]
+          },
+          {
+            "address": "0x6066ee0d5ab0",
+            "stableId": "18000001",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              1000,
+              300,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee7eaf40",
+            "stableId": "18000003",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              330,
+              350,
+              240,
+              140
+            ]
+          }
+        ],
+        "windows": [
+          {
+            "address": "0x6066ee14ea00",
+            "stableId": "18000000",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              100,
+              250,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee0d5ab0",
+            "stableId": "18000001",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              1000,
+              300,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee963860",
+            "stableId": "18000002",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              260,
+              310,
+              320,
+              180
+            ]
+          },
+          {
+            "address": "0x6066ee7eaf40",
+            "stableId": "18000003",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              330,
+              350,
+              240,
+              140
+            ]
+          }
+        ],
+        "sessionLocked": false,
+        "exclusiveLayers": 0,
+        "clickMode": 0,
+        "constrained": false,
+        "heldButtons": false,
+        "seatGrab": false,
+        "captured": false,
+        "dnd": false,
+        "dragTarget": false,
+        "coreDragTarget": null,
+        "coreDragTargetType": -1,
+        "coreDragMode": -1,
+        "coreExclusiveDeviceGrab": false,
+        "signalDownButtonIds": [
+          272
+        ],
+        "groups": [
+          {
+            "head": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "current": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "members": [
+              {
+                "address": "0x6066ee0d5ab0",
+                "stableId": "18000001",
+                "pid": 1817453,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  1000,
+                  300,
+                  460,
+                  300
+                ]
+              }
+            ],
+            "locked": false,
+            "denied": false
+          }
+        ],
+        "decorationAllocations": [
+          {
+            "window": {
+              "address": "0x6066ee14ea00",
+              "stableId": "18000000",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                100,
+                250,
+                460,
+                300
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              99,
+              225,
+              462,
+              24
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              999,
+              275,
+              462,
+              24
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "name": "GroupBar",
+            "type": 0,
+            "flags": 1,
+            "box": [
+              999,
+              254,
+              462,
+              21
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee963860",
+              "stableId": "18000002",
+              "pid": 1817453,
+              "modal": true,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                260,
+                310,
+                320,
+                180
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              259,
+              285,
+              322,
+              24
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee7eaf40",
+              "stableId": "18000003",
+              "pid": 1817453,
+              "modal": true,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                330,
+                350,
+                240,
+                140
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              329,
+              325,
+              242,
+              24
+            ]
+          }
+        ],
+        "layers": [
+          {
+            "address": "0x6066ed2950c0",
+            "pid": 1817285,
+            "namespace": "omarchy-bar",
+            "mapped": true,
+            "visible": true,
+            "box": [
+              0,
+              0,
+              1600,
+              26
+            ]
+          }
+        ],
+        "pointerLayerOwner": null
+      },
+      "target": {
+        "address": "0x6066ee7eaf40",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          330,
+          350
+        ],
+        "size": [
+          240,
+          140
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "qt-window-modal-fixture",
+        "title": "Qt WindowModal QA nested",
+        "initialClass": "qt-window-modal-fixture",
+        "initialTitle": "Qt WindowModal QA nested",
+        "pid": 1817453,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000003"
+      },
+      "point": [
+        450.0,
+        337.0
+      ]
+    },
+    "separate WM focus intervention": {
+      "label": "separate WM focus intervention",
+      "commandACK": "ok\n",
+      "native": {
+        "cursor": [
+          1230,
+          450
+        ],
+        "hitOwner": {
+          "address": "0x6066ee0d5ab0",
+          "stableId": "18000001",
+          "pid": 1817453,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            1000,
+            300,
+            460,
+            300
+          ]
+        },
+        "pointerOwner": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            365,
+            375,
+            240,
+            140
+          ]
+        },
+        "pointerSurfacePresent": true,
+        "nativeFocus": {
+          "address": "0x6066ee0d5ab0",
+          "stableId": "18000001",
+          "pid": 1817453,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            1000,
+            300,
+            460,
+            300
+          ]
+        },
+        "modalTarget": {
+          "address": "0x6066ee0d5ab0",
+          "stableId": "18000001",
+          "pid": 1817453,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            1000,
+            300,
+            460,
+            300
+          ]
+        },
+        "historyOldToNew": [
+          {
+            "address": "0x6066ee14ea00",
+            "stableId": "18000000",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              100,
+              250,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee963860",
+            "stableId": "18000002",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              260,
+              310,
+              320,
+              180
+            ]
+          },
+          {
+            "address": "0x6066ee7eaf40",
+            "stableId": "18000003",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              365,
+              375,
+              240,
+              140
+            ]
+          },
+          {
+            "address": "0x6066ee0d5ab0",
+            "stableId": "18000001",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              1000,
+              300,
+              460,
+              300
+            ]
+          }
+        ],
+        "windows": [
+          {
+            "address": "0x6066ee14ea00",
+            "stableId": "18000000",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              100,
+              250,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee0d5ab0",
+            "stableId": "18000001",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              1000,
+              300,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee963860",
+            "stableId": "18000002",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              260,
+              310,
+              320,
+              180
+            ]
+          },
+          {
+            "address": "0x6066ee7eaf40",
+            "stableId": "18000003",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              365,
+              375,
+              240,
+              140
+            ]
+          }
+        ],
+        "sessionLocked": false,
+        "exclusiveLayers": 0,
+        "clickMode": 0,
+        "constrained": false,
+        "heldButtons": false,
+        "seatGrab": false,
+        "captured": false,
+        "dnd": false,
+        "dragTarget": true,
+        "coreDragTarget": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            365,
+            375,
+            240,
+            140
+          ]
+        },
+        "coreDragTargetType": 0,
+        "coreDragMode": 0,
+        "coreExclusiveDeviceGrab": false,
+        "signalDownButtonIds": [
+          272
+        ],
+        "groups": [
+          {
+            "head": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "current": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "members": [
+              {
+                "address": "0x6066ee0d5ab0",
+                "stableId": "18000001",
+                "pid": 1817453,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  1000,
+                  300,
+                  460,
+                  300
+                ]
+              }
+            ],
+            "locked": false,
+            "denied": false
+          }
+        ],
+        "decorationAllocations": [
+          {
+            "window": {
+              "address": "0x6066ee14ea00",
+              "stableId": "18000000",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                100,
+                250,
+                460,
+                300
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              99,
+              225,
+              462,
+              24
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              999,
+              275,
+              462,
+              24
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "name": "GroupBar",
+            "type": 0,
+            "flags": 1,
+            "box": [
+              999,
+              254,
+              462,
+              21
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee963860",
+              "stableId": "18000002",
+              "pid": 1817453,
+              "modal": true,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                260,
+                310,
+                320,
+                180
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              259,
+              285,
+              322,
+              24
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee7eaf40",
+              "stableId": "18000003",
+              "pid": 1817453,
+              "modal": true,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                365,
+                375,
+                240,
+                140
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              364,
+              350,
+              242,
+              24
+            ]
+          }
+        ],
+        "layers": [
+          {
+            "address": "0x6066ed2950c0",
+            "pid": 1817285,
+            "namespace": "omarchy-bar",
+            "mapped": true,
+            "visible": true,
+            "box": [
+              0,
+              0,
+              1600,
+              26
+            ]
+          }
+        ],
+        "pointerLayerOwner": null
+      },
+      "featureEvidence": true
+    },
+    "actual negative group drop region": {
+      "label": "actual negative group drop region",
+      "requested": [
+        1230.0,
+        264.5
+      ],
+      "native": {
+        "cursor": [
+          1230,
+          264.5
+        ],
+        "hitOwner": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            1110,
+            278,
+            240,
+            140
+          ]
+        },
+        "pointerOwner": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            1110,
+            278,
+            240,
+            140
+          ]
+        },
+        "pointerSurfacePresent": true,
+        "nativeFocus": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            1110,
+            278,
+            240,
+            140
+          ]
+        },
+        "modalTarget": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            1110,
+            278,
+            240,
+            140
+          ]
+        },
+        "historyOldToNew": [
+          {
+            "address": "0x6066ee14ea00",
+            "stableId": "18000000",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              100,
+              250,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee963860",
+            "stableId": "18000002",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              260,
+              310,
+              320,
+              180
+            ]
+          },
+          {
+            "address": "0x6066ee0d5ab0",
+            "stableId": "18000001",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              1000,
+              300,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee7eaf40",
+            "stableId": "18000003",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              1110,
+              278,
+              240,
+              140
+            ]
+          }
+        ],
+        "windows": [
+          {
+            "address": "0x6066ee14ea00",
+            "stableId": "18000000",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              100,
+              250,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee0d5ab0",
+            "stableId": "18000001",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              1000,
+              300,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee963860",
+            "stableId": "18000002",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              260,
+              310,
+              320,
+              180
+            ]
+          },
+          {
+            "address": "0x6066ee7eaf40",
+            "stableId": "18000003",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              1110,
+              278,
+              240,
+              140
+            ]
+          }
+        ],
+        "sessionLocked": false,
+        "exclusiveLayers": 0,
+        "clickMode": 0,
+        "constrained": false,
+        "heldButtons": false,
+        "seatGrab": false,
+        "captured": false,
+        "dnd": false,
+        "dragTarget": true,
+        "coreDragTarget": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            1110,
+            278,
+            240,
+            140
+          ]
+        },
+        "coreDragTargetType": 0,
+        "coreDragMode": 0,
+        "coreExclusiveDeviceGrab": false,
+        "signalDownButtonIds": [
+          272
+        ],
+        "groups": [
+          {
+            "head": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "current": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "members": [
+              {
+                "address": "0x6066ee0d5ab0",
+                "stableId": "18000001",
+                "pid": 1817453,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  1000,
+                  300,
+                  460,
+                  300
+                ]
+              }
+            ],
+            "locked": false,
+            "denied": false
+          }
+        ],
+        "decorationAllocations": [
+          {
+            "window": {
+              "address": "0x6066ee14ea00",
+              "stableId": "18000000",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                100,
+                250,
+                460,
+                300
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              99,
+              225,
+              462,
+              24
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              999,
+              275,
+              462,
+              24
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "name": "GroupBar",
+            "type": 0,
+            "flags": 1,
+            "box": [
+              999,
+              254,
+              462,
+              21
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee963860",
+              "stableId": "18000002",
+              "pid": 1817453,
+              "modal": true,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                260,
+                310,
+                320,
+                180
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              259,
+              285,
+              322,
+              24
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee7eaf40",
+              "stableId": "18000003",
+              "pid": 1817453,
+              "modal": true,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1110,
+                278,
+                240,
+                140
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              1109,
+              253,
+              242,
+              24
+            ]
+          }
+        ],
+        "layers": [
+          {
+            "address": "0x6066ed2950c0",
+            "pid": 1817285,
+            "namespace": "omarchy-bar",
+            "mapped": true,
+            "visible": true,
+            "box": [
+              0,
+              0,
+              1600,
+              26
+            ]
+          }
+        ],
+        "pointerLayerOwner": null
+      },
+      "tolerance": 0.5
+    },
+    "before actual nonrelease interruption": {
+      "label": "before actual nonrelease interruption",
+      "native": {
+        "cursor": [
+          1230,
+          264.5
+        ],
+        "hitOwner": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            1110,
+            278,
+            240,
+            140
+          ]
+        },
+        "pointerOwner": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            1110,
+            278,
+            240,
+            140
+          ]
+        },
+        "pointerSurfacePresent": true,
+        "nativeFocus": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            1110,
+            278,
+            240,
+            140
+          ]
+        },
+        "modalTarget": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            1110,
+            278,
+            240,
+            140
+          ]
+        },
+        "historyOldToNew": [
+          {
+            "address": "0x6066ee14ea00",
+            "stableId": "18000000",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              100,
+              250,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee963860",
+            "stableId": "18000002",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              260,
+              310,
+              320,
+              180
+            ]
+          },
+          {
+            "address": "0x6066ee0d5ab0",
+            "stableId": "18000001",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              1000,
+              300,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee7eaf40",
+            "stableId": "18000003",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              1110,
+              278,
+              240,
+              140
+            ]
+          }
+        ],
+        "windows": [
+          {
+            "address": "0x6066ee14ea00",
+            "stableId": "18000000",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              100,
+              250,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee0d5ab0",
+            "stableId": "18000001",
+            "pid": 1817453,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              1000,
+              300,
+              460,
+              300
+            ]
+          },
+          {
+            "address": "0x6066ee963860",
+            "stableId": "18000002",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              260,
+              310,
+              320,
+              180
+            ]
+          },
+          {
+            "address": "0x6066ee7eaf40",
+            "stableId": "18000003",
+            "pid": 1817453,
+            "modal": true,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              1110,
+              278,
+              240,
+              140
+            ]
+          }
+        ],
+        "sessionLocked": false,
+        "exclusiveLayers": 0,
+        "clickMode": 0,
+        "constrained": false,
+        "heldButtons": false,
+        "seatGrab": false,
+        "captured": false,
+        "dnd": false,
+        "dragTarget": true,
+        "coreDragTarget": {
+          "address": "0x6066ee7eaf40",
+          "stableId": "18000003",
+          "pid": 1817453,
+          "modal": true,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            1110,
+            278,
+            240,
+            140
+          ]
+        },
+        "coreDragTargetType": 0,
+        "coreDragMode": 0,
+        "coreExclusiveDeviceGrab": false,
+        "signalDownButtonIds": [
+          272
+        ],
+        "groups": [
+          {
+            "head": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "current": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "members": [
+              {
+                "address": "0x6066ee0d5ab0",
+                "stableId": "18000001",
+                "pid": 1817453,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  1000,
+                  300,
+                  460,
+                  300
+                ]
+              }
+            ],
+            "locked": false,
+            "denied": false
+          }
+        ],
+        "decorationAllocations": [
+          {
+            "window": {
+              "address": "0x6066ee14ea00",
+              "stableId": "18000000",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                100,
+                250,
+                460,
+                300
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              99,
+              225,
+              462,
+              24
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              999,
+              275,
+              462,
+              24
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee0d5ab0",
+              "stableId": "18000001",
+              "pid": 1817453,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1000,
+                300,
+                460,
+                300
+              ]
+            },
+            "name": "GroupBar",
+            "type": 0,
+            "flags": 1,
+            "box": [
+              999,
+              254,
+              462,
+              21
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee963860",
+              "stableId": "18000002",
+              "pid": 1817453,
+              "modal": true,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                260,
+                310,
+                320,
+                180
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              259,
+              285,
+              322,
+              24
+            ]
+          },
+          {
+            "window": {
+              "address": "0x6066ee7eaf40",
+              "stableId": "18000003",
+              "pid": 1817453,
+              "modal": true,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                1110,
+                278,
+                240,
+                140
+              ]
+            },
+            "name": "Hyprbar",
+            "type": 4,
+            "flags": 3,
+            "box": [
+              1109,
+              253,
+              242,
+              24
+            ]
+          }
+        ],
+        "layers": [
+          {
+            "address": "0x6066ed2950c0",
+            "pid": 1817285,
+            "namespace": "omarchy-bar",
+            "mapped": true,
+            "visible": true,
+            "box": [
+              0,
+              0,
+              1600,
+              26
+            ]
+          }
+        ],
+        "pointerLayerOwner": null
+      },
+      "public": {
+        "activeWindow": "peer",
+        "commandEpoch": 2,
+        "pid": 1817453,
+        "platform": "wayland",
+        "qtVersion": "6.11.2",
+        "windows": {
+          "child": {
+            "active": false,
+            "buttonClient": [
+              11,
+              79,
+              298,
+              22
+            ],
+            "buttonGlobal": [
+              11,
+              79,
+              298,
+              22
+            ],
+            "clicks": 0,
+            "enabled": true,
+            "geometryGlobal": [
+              0,
+              0,
+              320,
+              180
+            ],
+            "layoutGeometry": [
+              0,
+              0,
+              320,
+              180
+            ],
+            "modality": 1,
+            "native": true,
+            "transientParentTitle": "Qt WindowModal QA owner",
+            "visible": true
+          },
+          "nested": {
+            "active": false,
+            "buttonClient": [
+              11,
+              59,
+              218,
+              22
+            ],
+            "buttonGlobal": [
+              11,
+              59,
+              218,
+              22
+            ],
+            "clicks": 0,
+            "enabled": true,
+            "geometryGlobal": [
+              0,
+              0,
+              240,
+              140
+            ],
+            "layoutGeometry": [
+              0,
+              0,
+              240,
+              140
+            ],
+            "modality": 1,
+            "native": true,
+            "transientParentTitle": "Qt WindowModal QA child",
+            "visible": true
+          },
+          "owner": {
+            "active": false,
+            "buttonClient": [
+              11,
+              139,
+              438,
+              22
+            ],
+            "buttonGlobal": [
+              11,
+              139,
+              438,
+              22
+            ],
+            "clicks": 0,
+            "enabled": true,
+            "geometryGlobal": [
+              0,
+              0,
+              460,
+              300
+            ],
+            "layoutGeometry": [
+              0,
+              0,
+              460,
+              300
+            ],
+            "modality": 0,
+            "native": true,
+            "transientParentTitle": "",
+            "visible": true
+          },
+          "peer": {
+            "active": true,
+            "buttonClient": [
+              11,
+              139,
+              438,
+              22
+            ],
+            "buttonGlobal": [
+              11,
+              139,
+              438,
+              22
+            ],
+            "clicks": 0,
+            "enabled": true,
+            "geometryGlobal": [
+              0,
+              0,
+              460,
+              300
+            ],
+            "layoutGeometry": [
+              0,
+              0,
+              460,
+              300
+            ],
+            "modality": 0,
+            "native": true,
+            "transientParentTitle": "",
+            "visible": true
+          },
+          "source": {
+            "active": false,
+            "buttonClient": [
+              11,
+              59,
+              218,
+              22
+            ],
+            "buttonGlobal": [
+              11,
+              59,
+              218,
+              22
+            ],
+            "clicks": 0,
+            "enabled": true,
+            "geometryGlobal": [
+              0,
+              0,
+              240,
+              140
+            ],
+            "layoutGeometry": [
+              0,
+              0,
+              240,
+              140
+            ],
+            "modality": 1,
+            "native": true,
+            "transientParentTitle": "Qt WindowModal QA child",
+            "visible": true
+          }
+        }
+      },
+      "timeNs": 109861315871068
+    }
+  },
+  "escapeInput": {
+    "command": "key 1 1",
+    "pid": 1817433,
+    "start": "12198055",
+    "sentNs": 109861320235242,
+    "nativeOutcomeNotInferred": true
+  },
+  "afterRetirementRawSnapshotRetained": false,
+  "escapeSpecificFocusTheftAccepted": false,
+  "qtDelayedModalCauseAccepted": false,
+  "sourceHashes": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v5/held_controller.py": "a59fd033cf73c27375f853f7f4b3f947eb98aeaaa50d0050323ae33af4260cd9",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v5/observations.py": "13818450d5bdfd6e5644ad32d397617b210ef9090584067c2135c40aed714384",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/dragBridge.cpp": "130868c4eda7ef6fd9e683f2a9ef8272548d72fca5f4e004f059a95e983a9a19",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/familyBridge.cpp": "eb8c7215d1f123e20be11c070482de768582e84e4d07e7453a2d53b1a610b67d",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/barDeco.cpp": "4b68477742d544ab954743348af063a7b7d61415931cdea7e7ded794bf29267e",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/primary/InputManager.cpp": "feedf32e2e3d23aeaed7a02ef4ab94be2d66f4b22873b3166026da1e9ece4765",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/primary/KeybindManager.cpp": "8d8f35fc84c4a2f8de63ac2bf6f6531c651c6fa6d37b1aac7c8fc5d9342d4e40",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/primary/DragController.cpp": "02560e7a38902cd400c3fa1b229eb6ba2c9494750413116b9277f5e8a818b62c"
+  },
+  "sourcePath": "InputManager moves captured geometry then native hit-test/FFM may raw-focus that same dragged source; V21 fullFocus cancellation guard applies only within dragEnd",
+  "policy": "Preserve original deliberate WM retained-target intervention; genuine keyboard cancels before keybindings. No oracle redefinition.",
+  "nativeCommands": false,
+  "mainWrites": false,
+  "fullHeld52Accepted": false,
+  "replaySourceSHA256": "38bfccd61325fba30ee1fc686f5e67dcea55ccb5564750dc7883fbd5d27b6d3b"
+}

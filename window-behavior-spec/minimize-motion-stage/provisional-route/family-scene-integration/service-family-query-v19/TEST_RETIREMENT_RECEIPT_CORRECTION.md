@@ -1,0 +1,5 @@
+# Bounded inherited retirement test correction
+
+The exact ordinary SceneManager.reap_idle calls factory.retired before removing the retiring actor and persisting. The inherited housekeeping test stops its single3s wait solely on the callback flag, then asserts the as-yet-unpublished empty retiringActors journal. Root reviewed this ordering and authorized V19's predicate to require callback flag AND actual checksum-verified durable empty retiringActors within that same original3s deadline. All assertions stay. Product SceneManager/RuntimeService/lifecycle/resource/cancel code is exact V17.
+
+A fresh actual RuntimeService/private Unix API and fsynced journal regression delays the retirement callback after its flag is recorded. The previous durable journal still has retiringActors=[1], so the combined predicate refuses completion. Releasing the callback allows normal publication, exact receipt count and no resource errors. This is test-only completion evidence, separate from the sole NativeDesktop mutex removal. Original failures remain retained.

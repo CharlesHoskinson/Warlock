@@ -1,0 +1,56 @@
+{
+  "named": 15,
+  "samples": 2000,
+  "steps": 100,
+  "sourceSHA256": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/current_dataset_shape.qnt": "79b749cf3035ed483d587006b3535f9c648a9e7e176a4dc3f68ca65a23695cdb",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/current_dataset_shape_test.qnt": "288f4c20637855fd633533e35b2a167dc2807ac6ef94c34e33e0fbe31b9e65d4",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/readonly_ipc.py": "f301a46aad3ae50c80840e08429e51e836198b0d120b9b8498c50e5363ff8c2a",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/readonly_current.py": "dbb5527924777a70be4d9a1b4ae279347be61f3460fc5f295e060c7ded6ee382",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/retained-before-current-source-type-correction/current-source-float-counterexample.json": "0c08d0722a1e5682dc8240bf5ba024d68819ebbc33aa635f4968266f2f23c711"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "current_dataset_shape_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/current-source-shape-before-runtime-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "current_dataset_shape_test.qnt",
+        "--backend=rust",
+        "--seed=2026100224"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/current-source-shape-before-runtime-1.log",
+      "sha256": "69822c6c557d242a2c17c81be348ac1ef00c1351db1e6828b098e273aeedd46e"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "current_dataset_shape.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100224",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/current-source-shape-before-runtime-2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "sourceUnchanged": true,
+  "historicalProjectionBindingTypedExplicit": true,
+  "historicalShapeNeverNativeReturnedBytesAuthority": true,
+  "nativeLaunch": false
+}

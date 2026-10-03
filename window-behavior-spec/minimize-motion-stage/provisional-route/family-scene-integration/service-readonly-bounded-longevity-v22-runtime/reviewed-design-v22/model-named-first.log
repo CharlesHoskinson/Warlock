@@ -1,0 +1,264 @@
+
+  bounded_read_authority_test
+    ok freshActualConnectionRequiredTest passed 1 test(s)
+    1) ordinaryCurrentOwnerDataTest failed after 1 test(s)
+    ok fullStartupRequiredTest passed 1 test(s)
+    ok newLifetimeCannotUsePartialHistoryTest passed 1 test(s)
+    ok allOwnerValidReplacementsRefuseTest passed 1 test(s)
+    ok allBindingFDValidReplacementsRefuseTest passed 1 test(s)
+    ok oPathCannotBindTest passed 1 test(s)
+    ok executableAnchorCannotBindTest passed 1 test(s)
+    ok incompleteSealsCannotBindTest passed 1 test(s)
+    ok wrongDataRoleCannotBindTest passed 1 test(s)
+    ok allTipValidReplacementsRefuseTest passed 1 test(s)
+    2) borrowedProofReplacementRefusesTest failed after 1 test(s)
+    3) badPeerAfterReplyNeverOverwritesFailureTest failed after 1 test(s)
+    4) partialThenValidReplyNeverOverwritesFailureTest failed after 1 test(s)
+    5) connectionRefusalDoesNotPreventFreshIndependentQueryTest failed after 1 test(s)
+    6) deadlineAndPostDiskFailureRefuseTest failed after 1 test(s)
+    7) unpublishedRowCannotReclaimTest failed after 1 test(s)
+    8) heldRowCannotReclaimTest failed after 1 test(s)
+    9) pendingRowCannotReclaimTest failed after 1 test(s)
+    10) durableOwnAppendPreservesStableOwnerTest failed after 1 test(s)
+    11) heldIndependentQuerySurvivesAuthenticatedAppendTest failed after 1 test(s)
+    12) noAdoptionBeforeFileDurabilityTest failed after 1 test(s)
+    13) noAdoptionBeforeJournalDurabilityTest failed after 1 test(s)
+    14) failedPublicationRetainsRowsTest failed after 1 test(s)
+    15) changedOwnerDuringPublicationRefusesTest failed after 1 test(s)
+    16) changedPredecessorDuringPublicationRefusesTest failed after 1 test(s)
+    17) workingSetBoundIndependentOfHistoryTest failed after 1 test(s)
+    18) olderAncestorDamageIsNotSilentlyClaimedCurrentTest failed after 1 test(s)
+    ok fullAuditRejectsAnyOlderDamageTest passed 1 test(s)
+    ok restartRejectsAnyOlderDamageTest passed 1 test(s)
+    ok sourceRefusalCannotBeClearedByGoodObservationTest passed 1 test(s)
+    19) releaseAfterFaultCannotClaimCompletionTest failed after 1 test(s)
+    20) capacityCheckedBeforeNewConnectionTest failed after 1 test(s)
+    21) previousBytesNeverSurviveLaterRefusalTest failed after 1 test(s)
+    22) dataAuthorityNeverWaivesNativeUncertaintyTest failed after 1 test(s)
+    ok wrongFDReadRoleCannotBindTest passed 1 test(s)
+    ok archiveFDCannotMasqueradeAsOwnerAnchorTest passed 1 test(s)
+    23) archiveNewTipCannotHaveWritableOwnerRoleTest failed after 1 test(s)
+
+  15 passing (30249ms)
+  23 failed
+
+  1) ordinaryCurrentOwnerDataTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:11:57)
+    Use --seed=0x78c3d5fe --match=ordinaryCurrentOwnerDataTest to repeat.
+  2) borrowedProofReplacementRefusesTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:21:64)
+    Use --seed=0x78c3d5fe --match=borrowedProofReplacementRefusesTest to repeat.
+  3) badPeerAfterReplyNeverOverwritesFailureTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:22:72)
+    Use --seed=0x78c3d5fe --match=badPeerAfterReplyNeverOverwritesFailureTest to repeat.
+  4) partialThenValidReplyNeverOverwritesFailureTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:23:76)
+    Use --seed=0x78c3d5fe --match=partialThenValidReplyNeverOverwritesFailureTest to repeat.
+  5) connectionRefusalDoesNotPreventFreshIndependentQueryTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:24:85)
+    Use --seed=0x78c3d5fe --match=connectionRefusalDoesNotPreventFreshIndependentQueryTest to repeat.
+  6) deadlineAndPostDiskFailureRefuseTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:25:65)
+    Use --seed=0x78c3d5fe --match=deadlineAndPostDiskFailureRefuseTest to repeat.
+  7) unpublishedRowCannotReclaimTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:26:60)
+    Use --seed=0x78c3d5fe --match=unpublishedRowCannotReclaimTest to repeat.
+  8) heldRowCannotReclaimTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:27:53)
+    Use --seed=0x78c3d5fe --match=heldRowCannotReclaimTest to repeat.
+  9) pendingRowCannotReclaimTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:28:56)
+    Use --seed=0x78c3d5fe --match=pendingRowCannotReclaimTest to repeat.
+  10) durableOwnAppendPreservesStableOwnerTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:29:69)
+    Use --seed=0x78c3d5fe --match=durableOwnAppendPreservesStableOwnerTest to repeat.
+  11) heldIndependentQuerySurvivesAuthenticatedAppendTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:30:80)
+    Use --seed=0x78c3d5fe --match=heldIndependentQuerySurvivesAuthenticatedAppendTest to repeat.
+  12) noAdoptionBeforeFileDurabilityTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:31:63)
+    Use --seed=0x78c3d5fe --match=noAdoptionBeforeFileDurabilityTest to repeat.
+  13) noAdoptionBeforeJournalDurabilityTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:32:66)
+    Use --seed=0x78c3d5fe --match=noAdoptionBeforeJournalDurabilityTest to repeat.
+  14) failedPublicationRetainsRowsTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:33:61)
+    Use --seed=0x78c3d5fe --match=failedPublicationRetainsRowsTest to repeat.
+  15) changedOwnerDuringPublicationRefusesTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:34:69)
+    Use --seed=0x78c3d5fe --match=changedOwnerDuringPublicationRefusesTest to repeat.
+  16) changedPredecessorDuringPublicationRefusesTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:35:75)
+    Use --seed=0x78c3d5fe --match=changedPredecessorDuringPublicationRefusesTest to repeat.
+  17) workingSetBoundIndependentOfHistoryTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:36:109)
+    Use --seed=0x78c3d5fe --match=workingSetBoundIndependentOfHistoryTest to repeat.
+  18) olderAncestorDamageIsNotSilentlyClaimedCurrentTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:38:107)
+    Use --seed=0x78c3d5fe --match=olderAncestorDamageIsNotSilentlyClaimedCurrentTest to repeat.
+  19) releaseAfterFaultCannotClaimCompletionTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:42:71)
+    Use --seed=0x78c3d5fe --match=releaseAfterFaultCannotClaimCompletionTest to repeat.
+  20) capacityCheckedBeforeNewConnectionTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:43:67)
+    Use --seed=0x78c3d5fe --match=capacityCheckedBeforeNewConnectionTest to repeat.
+  21) previousBytesNeverSurviveLaterRefusalTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:44:70)
+    Use --seed=0x78c3d5fe --match=previousBytesNeverSurviveLaterRefusalTest to repeat.
+  22) dataAuthorityNeverWaivesNativeUncertaintyTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:45:74)
+    Use --seed=0x78c3d5fe --match=dataAuthorityNeverWaivesNativeUncertaintyTest to repeat.
+  23) archiveNewTipCannotHaveWritableOwnerRoleTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt:33:105
+        33:  | Begin(i)=>if(s.bound and not(s.rows.keys().contains(i)) and s.rows.keys().size()<capacity){...b,rows:s.rows.set(i,{failed:false,phase:0,closed:false,published:false,held:true,borrow:s.latest}),queryWork:capacity+1} else {...b,fault:true}
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at fire(Begin(i)) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:5:31)
+          at connected(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:6:28)
+          at closed(i) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:8:28)
+          at finish(0) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt:48:73)
+    Use --seed=0x78c3d5fe --match=archiveNewTipCannotHaveWritableOwnerRoleTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 bounded_read_authority_test.qnt
+error: Tests failed

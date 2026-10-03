@@ -1,0 +1,66 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-05b262d515214e08858e933db5139ac4.scope",
+    "coreLimit": 1
+  },
+  "named": 18,
+  "names": [
+    "three_sources_seed",
+    "missing_cache_no_launch",
+    "missing_raw_no_launch",
+    "normal_return_required",
+    "nonzero_no_publish",
+    "native_change_refuses",
+    "material_change_refuses",
+    "slot_order_exact",
+    "no_identity_before_slots",
+    "no_source_before_publication",
+    "active_timeout_retains",
+    "gone_not_authority",
+    "failed_closed_cleanup",
+    "deadline_no_seed",
+    "cancel_no_seed",
+    "helper_return_not_seed",
+    "late_helper_closes_no_seed",
+    "partial_publication_not_source"
+  ],
+  "command": [
+    "quint",
+    "test",
+    "hidden_capture_test.qnt",
+    "--match=^(three_sources_seed|missing_cache_no_launch|missing_raw_no_launch|normal_return_required|nonzero_no_publish|native_change_refuses|material_change_refuses|slot_order_exact|no_identity_before_slots|no_source_before_publication|active_timeout_retains|gone_not_authority|failed_closed_cleanup|deadline_no_seed|cancel_no_seed|helper_return_not_seed|late_helper_closes_no_seed|partial_publication_not_source)$",
+    "--backend=rust",
+    "--seed=2026100229"
+  ],
+  "exitCode": 0,
+  "log": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/named-exact.log",
+  "logSHA256": "2baabfad22966b4595734e0fa4b7880b65167b1a7396f5aa2252ca2bc925e758",
+  "retainedInvariantProof": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal-before-runtime.json",
+  "samples": 2000,
+  "steps": 100,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/hidden_capture.qnt": {
+      "sha256": "9427768b5afc9ca5b2b7c502cb46c8d5aa22bf81e5b4af4925d37d63f33a0c8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/hidden_capture_test.qnt": {
+      "sha256": "796f0e2cb811aac5d8bc1b15ee5465bcced351649acd2cc3585bbd4cf3c6ecd3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal-before-runtime.json": {
+      "sha256": "3521b761f7a77f31e162efda31c9e6dcf9fdf798adcd4e191a235ba0ea8c3de3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal_driver.py": {
+      "sha256": "08378778bf5a49ffc4634d5b026616fa1c6172fb447b6df8c27bbb15d97f4f6a",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/named_driver.py": {
+      "sha256": "6b81f8024f4972c7c096e45eecc1a650d77a3f9d47c2c02156b72435eda87304",
+      "mode": 384
+    }
+  },
+  "correction": "Original default test selected zero named runs; only explicit anchored run names supply named authority. Broad match diagnostic is failed and supplies none.",
+  "runtimeApplied": false
+}

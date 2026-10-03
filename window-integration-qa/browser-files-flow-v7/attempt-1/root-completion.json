@@ -1,0 +1,199 @@
+{
+  "updatedUTC": "2026-10-01T23:37:09.066793+00:00",
+  "reportSHA256": "2be748738a92b37b960007592ff1dee5ac346a70d0792f3882168127d7035dc1",
+  "manifestSHA256": "7482dc84b2b61668e8857bcc1ecab393b87f505731fed3f36aa265ee65316443",
+  "fileCount": 40164,
+  "linkCount": 13770,
+  "independentChecks": {
+    "allFrozenBytesModesExact": true,
+    "allFrozenLinksExact": true,
+    "all18MainPreserved": true,
+    "allRecordedPIDStartGone": true,
+    "privateRuntimeGone": true,
+    "noUnexpectedOrRemainingHelpers": true,
+    "normalBrowserAndNoForcedCleanup": true,
+    "nativeProbeAndPluginUnloadedNormally": true,
+    "healthyArchivedParentTransport": true,
+    "actualPrivateBusActivationPolicyVerified": true,
+    "initialRangeDiagnosticIndependentlyReplayed": true,
+    "actualBrowserPrivateBusPIDBindingIndependentlyReplayed": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "privateBrowserFilesAccepted": false,
+  "processes": [
+    {
+      "pid": 1718664,
+      "start": "12016219",
+      "gone": true
+    },
+    {
+      "pid": 1718669,
+      "start": "12016222",
+      "gone": true
+    },
+    {
+      "pid": 1718880,
+      "start": "12016288",
+      "gone": true
+    },
+    {
+      "pid": 1718664,
+      "start": "12016219",
+      "gone": true
+    },
+    {
+      "pid": 1718669,
+      "start": "12016222",
+      "gone": true
+    },
+    {
+      "pid": 1718880,
+      "start": "12016288",
+      "gone": true
+    },
+    {
+      "pid": 1718998,
+      "start": "12016588",
+      "gone": true
+    },
+    {
+      "pid": 1719010,
+      "start": "12016610",
+      "gone": true
+    },
+    {
+      "pid": 1719011,
+      "start": "12016610",
+      "gone": true
+    },
+    {
+      "pid": 1719013,
+      "start": "12016612",
+      "gone": true
+    },
+    {
+      "pid": 1719040,
+      "start": "12016617",
+      "gone": true
+    },
+    {
+      "pid": 1719042,
+      "start": "12016617",
+      "gone": true
+    },
+    {
+      "pid": 1719075,
+      "start": "12016620",
+      "gone": true
+    },
+    {
+      "pid": 1719100,
+      "start": "12016626",
+      "gone": true
+    },
+    {
+      "pid": 1719101,
+      "start": "12016626",
+      "gone": true
+    },
+    {
+      "pid": 1719159,
+      "start": "12016746",
+      "gone": true
+    },
+    {
+      "pid": 1719172,
+      "start": "12016762",
+      "gone": true
+    },
+    {
+      "pid": 1719173,
+      "start": "12016762",
+      "gone": true
+    },
+    {
+      "pid": 1719174,
+      "start": "12016762",
+      "gone": true
+    },
+    {
+      "pid": 1719175,
+      "start": "12016762",
+      "gone": true
+    },
+    {
+      "pid": 1719176,
+      "start": "12016762",
+      "gone": true
+    },
+    {
+      "pid": 1719194,
+      "start": "12016763",
+      "gone": true
+    },
+    {
+      "pid": 1719207,
+      "start": "12016768",
+      "gone": true
+    },
+    {
+      "pid": 1719208,
+      "start": "12016768",
+      "gone": true
+    },
+    {
+      "pid": 1719212,
+      "start": "12016768",
+      "gone": true
+    },
+    {
+      "pid": 1718998,
+      "start": "12016588",
+      "gone": true
+    },
+    {
+      "pid": 1719159,
+      "start": "12016746",
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "environmentObservations": [
+    {
+      "name": "browser",
+      "identity": {
+        "pid": 1718998,
+        "start": "12016588",
+        "ppid": 1718574,
+        "pgid": 1718998
+      },
+      "bytes": 10167,
+      "nonzeroBytes": 0,
+      "initialRangeMatches": false,
+      "currentLibcSelectorsProved": false
+    },
+    {
+      "name": "files",
+      "identity": {
+        "pid": 1719159,
+        "start": "12016746",
+        "ppid": 1718574,
+        "pgid": 1719159
+      },
+      "bytes": 10294,
+      "nonzeroBytes": 10073,
+      "initialRangeMatches": true,
+      "currentLibcSelectorsProved": false
+    }
+  ],
+  "failure": "RuntimeError('Producer FD regular/UID/full mode/unlink/size/device differs')",
+  "rawOwnedProcessEvidenceSHA256": "b7370921e2fb79e359ac8996171a11f08be65489729c905e2e6a0ce2e853a382",
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false
+}

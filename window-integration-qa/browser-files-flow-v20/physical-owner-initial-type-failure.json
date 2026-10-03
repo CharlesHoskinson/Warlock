@@ -1,0 +1,33 @@
+{
+  "result": "fail",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_owner_test.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT200]: Using an action as an argument of `or` is only allowed in temporal definitions, but it is used in action `fire`. For alternative actions, use `any { ... }` instead.\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_owner.qnt:15:3\n  15:   ended'=ended or match e{|End(_)=>running|_=>false},\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n\n Error [QNT200]: action operators may only read and update state variables, but operator `step` performs temporal operations over variables 'ended', 'failed'. Use temporal instead.\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_owner.qnt:20:9\n  20:  action step={nondet b=Set(true,false).oneOf();nondet e=Set(Observe({...good,life:b}),Observe({...good,peer:b}),Observe({...good,seat:b}),Observe({...good,surface:b}),Observe({...good,core:b}),Observe({...good,selector:b}),Begin,End(0),End(1),Change).oneOf();fire(e)}\n              ^^^^\n\n\n Error [QNT000]: Expected [ended,failed] and [] to be the same\nTrying to unify entities ['ended', 'failed'] and []\nTrying to unify Read[_v451] & Update['ready', 'running', 'ended', 'accepted', 'failed'] and Read['failed', 'ready', 'running', 'ended'] & Temporal['ended', 'failed'] & Update['ready', 'running', 'accepted']\nTrying to unify (Read[_v449] & Update[_v450], Read[_v451] & Update[_v450]) => Read[_v452] & Update[_v450] and (Update['ready', 'running', 'ended', 'accepted', 'failed'], Read['failed', 'ready', 'running', 'ended'] & Temporal['ended', 'failed'] & Update['ready', 'running', 'accepted']) => _e114\nTrying to infer effect for operator application in then(init, fire(Observe(good)))\n\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_owner_test.qnt:9:18\n  9:  run changedLife=init.then(fire(Observe(good))).then(fire(Begin)).then(fire(End(0))).then(fire(Observe({...good,life:false}))).then(check(failed and not(accepted)))\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_owner.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT200]: Using an action as an argument of `or` is only allowed in temporal definitions, but it is used in action `fire`. For alternative actions, use `any { ... }` instead.\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_owner.qnt:15:3\n  15:   ended'=ended or match e{|End(_)=>running|_=>false},\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n\n Error [QNT200]: action operators may only read and update state variables, but operator `step` performs temporal operations over variables 'ended', 'failed'. Use temporal instead.\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_owner.qnt:20:9\n  20:  action step={nondet b=Set(true,false).oneOf();nondet e=Set(Observe({...good,life:b}),Observe({...good,peer:b}),Observe({...good,seat:b}),Observe({...good,surface:b}),Observe({...good,core:b}),Observe({...good,selector:b}),Begin,End(0),End(1),Change).oneOf();fire(e)}\n              ^^^^\n\nerror: typechecking failed\n"
+    }
+  ],
+  "nativeExecuted": false,
+  "wrapperAbsent": true,
+  "privateSessionExactB19": true
+}

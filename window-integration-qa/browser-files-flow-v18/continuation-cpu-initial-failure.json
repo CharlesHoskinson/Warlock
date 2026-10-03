@@ -1,0 +1,5 @@
+{
+  "retainedFailure": "Initial26 CPUtests: exact inverse source comparison failed because one-space trace reset was also a substring of the three-space reset; no runtime/formal/probe changed",
+  "correction": "Explicit line-start matching in source-only inverse projection",
+  "nativeGuiExecuted": false
+}

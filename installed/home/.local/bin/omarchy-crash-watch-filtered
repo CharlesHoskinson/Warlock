@@ -1,0 +1,164 @@
+#!/bin/bash
+
+# A copy of /usr/bin/omarchy-crash-watch (omarchy 4.0.4.legion-2) that also
+# knows where a crash came from, run in its place by
+# ~/.config/systemd/user/omarchy-crash-watch.service.d/override.conf.
+#
+# The stock watcher can only ignore by program name (OMARCHY_CRASH_IGNORE), but
+# test harnesses crash the same programs the desktop runs: a nested Hyprland and
+# its Xwayland, a test quickshell, a portal on a private bus. This copy also
+# skips a crash when:
+#   - a desktop-component program (Hyprland, Xwayland, quickshell/qs,
+#     xdg-desktop-portal*) crashed inside a terminal's scope. The desktop's own
+#     copies run under wayland-wm@hyprland.desktop.service or their own units,
+#     never in a terminal, so their crashes are still announced;
+#   - its command line or working directory is under one of the paths in
+#     OMARCHY_CRASH_IGNORE_PATHS (colon-separated; test harness directories);
+#   - the command line has --headless (a headless browser run by a tool);
+#   - node, npm or vitest crashed while working under OMARCHY_CRASH_DEV_DIR
+#     (dev lanes; a node or Electron app elsewhere is still announced).
+# Everything else follows the stock loop unchanged.
+#
+# After `omarchy update`, diff /usr/bin/omarchy-crash-watch against the version
+# above and carry any upstream change over. To undo, delete override.conf, then
+# `systemctl --user daemon-reload && systemctl --user restart omarchy-crash-watch`.
+#
+#   omarchy-crash-watch-filtered --classify   reads journal JSON entries on stdin
+#                                             and prints "announce" or "skip: why"
+
+set -uo pipefail
+
+# See systemd.journal-fields(7).
+readonly COREDUMP_MESSAGE_ID=fc2e22bc6ee647b6b90729ab34a250b1
+
+# nf-md-robot_dead, escaped so this file reads without a Nerd Font.
+readonly CRASH_GLYPH=$'\U000f16a1'
+
+# Crash loops dump core repeatedly, so announce each program at most once a
+# window.
+readonly dedupe_seconds=${OMARCHY_CRASH_DEDUPE_SECONDS:-60}
+
+# Extended regex of process names never worth announcing.
+readonly ignore_pattern=${OMARCHY_CRASH_IGNORE:-}
+
+readonly ignore_paths=${OMARCHY_CRASH_IGNORE_PATHS:-$HOME/window-integration-qa:$HOME/window-behavior-spec:$HOME/.cache/ms-playwright}
+readonly dev_dir=${OMARCHY_CRASH_DEV_DIR:-$HOME/src}
+readonly desktop_components='^(Hyprland|Xwayland|quickshell|qs|xdg-desktop-portal.*)$'
+# systemd escapes "-" in the scope name as the literal text \x2d.
+readonly terminal_scope='^app-.*-xdg\\x2dterminal\\x2dexec-.*\.scope$'
+
+declare -A last_notified
+
+under() { # under <path> <dir>: is path the dir itself or inside it?
+  [[ -n $2 && ( $1 == "$2" || $1 == "$2"/* ) ]]
+}
+
+# Prints why a crash is a test or dev-tool crash, or nothing if it isn't.
+provenance_skip() {
+  local name=$1 unit=$2 cmdline=$3 cwd=$4 dir arg
+
+  if [[ $name =~ $desktop_components && $unit =~ $terminal_scope ]]; then
+    echo "$name in a terminal scope"; return
+  fi
+
+  # A headless browser is always a tool (renderers, tests), never the desktop.
+  if [[ " $cmdline " == *" --headless"* ]]; then
+    echo "headless $name"; return
+  fi
+
+  IFS=: read -ra dirs <<<"$ignore_paths"
+  for dir in "${dirs[@]}"; do
+    [[ -n $dir ]] || continue
+    if under "$cwd" "$dir"; then echo "cwd under $dir"; return; fi
+    for arg in $cmdline; do
+      if under "$arg" "$dir"; then echo "command line under $dir"; return; fi
+    done
+  done
+
+  if [[ $name =~ ^(node|npm|vitest)$ ]] && under "$cwd" "$dev_dir"; then
+    echo "$name working under $dev_dir"; return
+  fi
+}
+
+fields() {
+  jq -r '[(._UID // "-"),
+          (.COREDUMP_COMM // "-"),
+          (.COREDUMP_PID // "-"),
+          (.COREDUMP_EXE // "-"),
+          (.COREDUMP_SIGNAL_NAME // "-"),
+          (.COREDUMP_USER_UNIT // .COREDUMP_UNIT // "-"),
+          (.COREDUMP_CWD // "-"),
+          (.COREDUMP_CMDLINE // "-")] | map(tostring | gsub("[\t\n]"; " ")) | join("\t")' <<<"$1" 2>/dev/null
+}
+
+announce() {
+  local comm=$1 pid=$2 exe=$3 signal=$4
+
+  # The shell owns org.freedesktop.Notifications, so a shell crash takes the
+  # notification server down with it and a toast sent into that gap is lost.
+  # Wait for the restarted shell to claim the name again: the crash least
+  # likely to be delivered is the one most worth reporting.
+  omarchy-notification-wait || return 1
+
+  # --exec rather than a libnotify action: the shell runs clicks from its own
+  # hint and never emits ActionInvoked. Keeps the default "omarchy-action" app
+  # name, the only one shouldBypassDnd() lets through. Crash details ride as
+  # discrete argv words, so a hostile process name can't be reparsed as a
+  # command. --exec consumes the rest of the line, so it comes last.
+  omarchy-notification-send \
+    --urgency critical \
+    --glyph "$CRASH_GLYPH" \
+    "Process crashed: $comm" \
+    "Click to diagnose with AI" \
+    --exec omarchy-agent-crash "$pid" "$comm" "$exe" "$signal"
+}
+
+classify=false
+[[ ${1:-} == --classify ]] && classify=true
+
+if [[ $classify == true ]]; then
+  source_cmd=(cat)
+else
+  # -n 0 so a restart does not re-announce crashes already dealt with.
+  source_cmd=(journalctl -f -n 0 -o json "MESSAGE_ID=$COREDUMP_MESSAGE_ID")
+fi
+
+"${source_cmd[@]}" 2>/dev/null |
+  while IFS= read -r entry; do
+    IFS=$'\t' read -r uid comm pid exe signal unit cwd cmdline < <(fields "$entry")
+
+    [[ $pid =~ ^[0-9]+$ ]] || continue
+
+    # comm is truncated to 15 characters, so prefer the executable's basename.
+    name=$comm
+    [[ $exe == /* ]] && name=${exe##*/}
+
+    why=$(provenance_skip "$name" "$unit" "$cmdline" "$cwd")
+    if [[ $classify == true ]]; then
+      printf '%s\t%s\t%s\n' "$name" "$pid" "${why:+skip: }${why:-announce}"
+      continue
+    fi
+    [[ -n $why ]] && continue
+
+    # The toast only offers a diagnosis, so it has nothing to offer until an
+    # agent is chosen. Checked per crash, not at startup, so picking one takes
+    # effect without restarting this service.
+    [[ -n $(omarchy-default-agent) ]] || continue
+
+    # Only this user's crashes; a daemon dumping core is a sysadmin's problem.
+    [[ $uid =~ ^[0-9]+$ ]] || continue
+    ((uid == UID)) || continue
+
+    [[ -n $ignore_pattern && $name =~ $ignore_pattern ]] && continue
+
+    # Never announce our own machinery, or it notifies about itself.
+    [[ $name == omarchy-crash-* || $name == omarchy-agent-* ]] && continue
+
+    now=$EPOCHSECONDS
+    (((now - ${last_notified[$name]:-0}) < dedupe_seconds)) && continue
+
+    # Only a delivered toast starts the dedupe window. A failed send that
+    # counted would suppress the rest of a crash loop for a minute, and
+    # `journalctl -n 0` never replays what was missed.
+    announce "$name" "$pid" "$exe" "$signal" && last_notified[$name]=$now
+  done

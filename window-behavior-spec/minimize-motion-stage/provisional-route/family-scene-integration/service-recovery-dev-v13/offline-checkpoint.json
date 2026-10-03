@@ -1,0 +1,694 @@
+{
+  "version": "family-service-recovery-dev-v13-offline",
+  "productionChanged": false,
+  "nativeLaunch": false,
+  "headlessCpuKernelTests": true,
+  "nativeRecoveryAccepted": false,
+  "pythonTests": 242,
+  "quintNamedScenarios": 136,
+  "quintModels": 19,
+  "quintSamplesPerModel": 2000,
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exitCode": 0,
+      "log": "check-00.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_scene_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-01.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_scene_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-02.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_scene.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-03.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_destination_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-04.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_destination_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-05.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_destination.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-06.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "transport_dispatch_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-07.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "transport_dispatch_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-08.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "transport_dispatch.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-09.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-10.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_registry_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-11.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_registry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-12.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "ingress_context_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-13.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "ingress_context_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-14.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "ingress_context.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-15.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "persistent_atlas_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-16.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "persistent_atlas_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-17.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "persistent_atlas.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-18.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "pending_direction_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-19.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "pending_direction_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-20.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "pending_direction.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-21.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "runtime_lifecycle_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-22.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "runtime_lifecycle_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-23.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "runtime_lifecycle.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-24.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "receipt_visual_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-25.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "receipt_visual_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-26.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "receipt_visual.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-27.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "native_composition_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-28.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "native_composition_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-29.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "native_composition.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-30.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "ipc_guard_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-31.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "ipc_guard_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-32.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "ipc_guard.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-33.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "actor_resources_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-34.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "actor_resources_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-35.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "actor_resources.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-36.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_order_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-37.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_order_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-38.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_order.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-39.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "gesture_capture_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-40.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "gesture_capture_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-41.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "gesture_capture.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-42.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "responsive_preparation_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-43.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "responsive_preparation_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-44.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "responsive_preparation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-45.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "native_recovery_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-46.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "native_recovery_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-47.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "native_recovery.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-48.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_ownership_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-49.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_ownership_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-50.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_ownership.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-51.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "helper_closure_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-52.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "helper_closure_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-53.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "helper_closure.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-54.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_constant_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-55.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_constant_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0,
+      "log": "check-56.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_constant.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-57.log"
+    }
+  ],
+  "scope": "responsive V13 inheritance; write-ahead renderer/helper ownership, exact keeper group closure, durable restart endpoint and source disposal adversaries; native recovery, physical cadence and deployment remain open"
+}

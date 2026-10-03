@@ -1,0 +1,10 @@
+--- /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v2/native-fixture/lifecycle_cases.py	2026-10-01 01:55:41.162527381 -0600
++++ /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v3/native-fixture/lifecycle_cases.py	2026-10-01 08:27:28.658223072 -0600
+@@ -76,6 +76,7 @@
+     producer=subprocess.Popen([str(here/'native-fixture/native-input')],env=env,stdin=subprocess.PIPE,
+         stdout=subprocess.PIPE,stderr=(here/'lifecycle-input.log').open('w'),text=True,start_new_session=True)
+     c['processes'].append(producer)
++    c['producer_ready'](producer,here/'lifecycle-input.log','lifecycle keyboard')
+     def send(lines):
+         producer.stdin.write(lines+'sync\n');producer.stdin.flush()
+         ready,_,_=select.select([producer.stdout],[],[],8);assert ready,'native producer timeout'

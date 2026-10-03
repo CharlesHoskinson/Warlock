@@ -1,0 +1,20 @@
+--- /home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/controller/minimal_controller.py
++++ /home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v3/controller/minimal_controller.py
+@@ -195,13 +195,16 @@
+    value=self.snapshot(self.capture(actor));return value if value['body']['internalMode']==1 and value['body']['restoreValid']is True else None
+   maximum=self.wait('actual owning native MAX',max_ready)
+   first,first_after=self.pin_titlebar(case,actor,1)if case=='B04'else self.pin_keyboard(case,actor,1)
+-  conserved=['internalMode','clientMode','floating','logicalBox','visualBox','restoreValid','restoreGeneration','restoreLogicalBox','restoreVisualBox','restoreFloating','restoreLayoutHandled','restoreTarget','restoreLayoutTarget','restoreSpace','restoreOrigin','restoreManaged','target','space','workspace','output']
++  conserved=['internalMode','clientMode','floating','logicalBox','visualBox','restoreValid','restoreGeneration','restoreLogicalBox','restoreVisualBox','restoreFloating','restoreLayoutHandled','restoreTarget','restoreLayoutTarget','restoreSpace','target','space','workspace','output']
+   require(all(self.decoder.exact(maximum['body'][k],first_after['owned']['body'][k])for k in conserved),'native MAX context conserved immediately after genuine pin')
++  require(first_after['owned']['body']['restoreOrigin']is True and first_after['owned']['body']['restoreManaged']is True,'exact native MAX pin-origin and managed markers immediately after genuine pin')
+   second,second_after=self.pin_titlebar(case,actor,2)if case=='B04'else self.pin_keyboard(case,actor,2)
+   require(all(self.decoder.exact(maximum['body'][k],second_after['owned']['body'][k])for k in conserved),'native MAX context conserved immediately after genuine unpin')
++  require(second_after['owned']['body']['restoreOrigin']is False and second_after['owned']['body']['restoreManaged']is True,'exact native MAX unpin-origin and managed markers immediately after genuine unpin')
+   require(first['after']['pinned']is True and second['after']['pinned']is False,'actual pin then unpin while native MAX')
+   current=self.snapshot(self.capture(actor))['body']
+   require(all(self.decoder.exact(maximum['body'][k],current[k])for k in conserved),'actual native mode/owning MAX conservation')
++  require(current['restoreOrigin']is False and current['restoreManaged']is True,'exact native MAX unpin-origin and managed markers at final observation')
+   self.setup('actual native MAX unset','hl.dsp.window.fullscreen({mode="maximized",action="unset",layout_aware=true,window='+target+'})')
+   def returned():
+    value=self.snapshot(self.capture(actor));return value if value['body']['internalMode']==0 else None

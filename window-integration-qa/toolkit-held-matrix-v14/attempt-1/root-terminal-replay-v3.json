@@ -1,0 +1,52 @@
+{
+  "result": "fail",
+  "checks": {
+    "terminalReportRetainsActualFailure": true,
+    "completeFrozenBytesModesLinks": true,
+    "exactSourceManifest": true,
+    "all18MainPreservation": false,
+    "mainWritesAbsent": true,
+    "allFourExactVariants": false,
+    "qt-wayland:all13ExactCases": false,
+    "qt-wayland:move-escape:nativeReplay": true,
+    "qt-wayland:move-escape:normalPublicQuit": true,
+    "qt-wayland:move-reload:nativeReplay": false,
+    "qt-wayland:move-reload:normalPublicQuit": true,
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:exactQSReadinessAndExplicitNormalQuit": true,
+    "qt-wayland:normalQSAndService": true,
+    "qt-wayland:nativeUnloadNormalOrdered": true,
+    "qt-wayland:hostRuntimeCleanup": true,
+    "qt-wayland:rawHelpersNormalExact": false,
+    "qt-wayland:allRecordedOriginalIdentitiesGone": true,
+    "qt-wayland:bothGenuineShellPreviewReceipts": false
+  },
+  "errors": {},
+  "inventory": [
+    {
+      "variant": "qt-wayland",
+      "reachedCases": 2,
+      "retainedResult": "fail",
+      "errors": {
+        "error": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/run_native.py\", line 113, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/held_controller.py\", line 112, in run\n    else:ack=route.interrupt(end,target,current_geometry)\n             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/held_route.py\", line 149, in interrupt\n    ticket=self.evaluations.arm('reload',['reload'])\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/evaluation_setup.py\", line 140, in arm\n    if observer.read_config(path)!=config or not terminal_closure(observer.rows(stream),allow_refused=terminal) or pending_helper_processes(config):raise RuntimeError('Prior helper boundary changed during arm')\n                                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Prior helper boundary changed during arm\n",
+        "helperAcceptanceError": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/run_native.py\", line 113, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/held_controller.py\", line 112, in run\n    else:ack=route.interrupt(end,target,current_geometry)\n             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/held_route.py\", line 149, in interrupt\n    ticket=self.evaluations.arm('reload',['reload'])\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/evaluation_setup.py\", line 140, in arm\n    if observer.read_config(path)!=config or not terminal_closure(observer.rows(stream),allow_refused=terminal) or pending_helper_processes(config):raise RuntimeError('Prior helper boundary changed during arm')\n                                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Prior helper boundary changed during arm\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/run_native.py\", line 175, in variant_run\n    report['completedHelpers']=helper_setup.wait_and_archive(config,output/'completed-helpers.json',expect_harness=expectation['harnessSnapshotAttempted'],expect_service=expectation['serviceRegistered'])\n                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/helper_setup.py\", line 368, in wait_and_archive\n    result = observer.summarize(events, config['allowed'], require_all,expect_harness,expected)\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/helper_observer.py\", line 483, in summarize\n    raise RuntimeError('Helper normal completion mismatch')\nRuntimeError: Helper normal completion mismatch\n"
+      }
+    }
+  ],
+  "sourceManifestSHA256": "06e69ce03f4914c4afc6864633d9141fa352e3598630c2af50d81e297eb78537",
+  "sourceCount": 25720,
+  "modeCount": 25720,
+  "linkCount": 342,
+  "actualReachedCases": 2,
+  "expectedCases": 52,
+  "producerResult": "fail",
+  "nativeCommands": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false,
+  "fullHeld52ReplayAccepted": false,
+  "replayLimitations": [
+    "Historical geometry/pin and native IPC command timing are accepted only where actual samples are retained; gate booleans alone do not supply missing observations."
+  ],
+  "auditorSourceSHA256": "cc787853b6ec5686b7c5e09e27f397eef906ef6863a49aa6001766daf904e454"
+}

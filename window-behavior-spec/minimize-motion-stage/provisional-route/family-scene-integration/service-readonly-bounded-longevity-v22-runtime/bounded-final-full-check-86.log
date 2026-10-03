@@ -1,0 +1,23 @@
+
+  readonly_predecessor_test
+    ok pendingAndUnpublishedRowsRetainedBeforeNewIssuerTest passed 1 test(s)
+    ok liveOldServiceCannotAuthorizeNewIssuerTest passed 1 test(s)
+    ok missingActualNewLeaseCannotSealTest passed 1 test(s)
+    ok wrongLeaseOwnerCannotSealTest passed 1 test(s)
+    ok partialDatasetCannotBeNormalizedTest passed 1 test(s)
+    ok pendingRowCannotBeDiscardedBySealTest passed 1 test(s)
+    ok invalidArchiveChainCannotBeSealedTest passed 1 test(s)
+    ok predecessorFileMustBeDurableTest passed 1 test(s)
+    ok stillValidDatasetReplacementCannotConfirmTest passed 1 test(s)
+    ok everyOtherValidIdentityReplacementCannotConfirmTest passed 1 test(s)
+    ok unconfirmedSealCannotReplaceOldJournalTest passed 1 test(s)
+    ok wrongPredecessorPointerCannotPublishTest passed 1 test(s)
+    ok failedNewJournalPublicationPreservesOldRowsTest passed 1 test(s)
+    ok crashBeforeNewPublicationKeepsFullOldDatasetTest passed 1 test(s)
+    ok crashAfterNewPublicationKeepsExactPredecessorTest passed 1 test(s)
+    ok everyBadRecoveryWitnessRefusesTest passed 1 test(s)
+    ok oldDataNeverSuppliesNewQueryResultTest passed 1 test(s)
+    ok refusalCannotBeClearedByGoodLaterSealTest passed 1 test(s)
+    ok verifiedOrphanResealRequiresFreshOwnerAndConfirmationTest passed 1 test(s)
+
+  19 passing (2270ms)

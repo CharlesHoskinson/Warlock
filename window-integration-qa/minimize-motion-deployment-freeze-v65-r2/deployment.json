@@ -1,0 +1,104 @@
+{
+  "before": [
+    {
+      "address": "0x5a02aee429f0",
+      "stableId": "18000005",
+      "pid": 4007,
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "at": [
+        945,
+        284
+      ],
+      "size": [
+        386,
+        444
+      ],
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02b0cc9280",
+      "stableId": "18000006",
+      "pid": 4311,
+      "workspace": {
+        "id": -98,
+        "name": "special:win-minimized"
+      },
+      "at": [
+        417,
+        71
+      ],
+      "size": [
+        1022,
+        890
+      ],
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02afd20bd0",
+      "stableId": "18000076",
+      "pid": 361074,
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "at": [
+        817,
+        206
+      ],
+      "size": [
+        700,
+        500
+      ],
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02afa13e90",
+      "stableId": "1800006a",
+      "pid": 252010,
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "at": [
+        26,
+        145
+      ],
+      "size": [
+        1002,
+        789
+      ],
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    }
+  ],
+  "checks": {
+    "sourceHashes": true,
+    "pairedDeployment": true,
+    "freezeFunction": true,
+    "originalClients": true,
+    "focus": true,
+    "cursor": true,
+    "configErrors": true
+  },
+  "sourceHashes": {
+    "hypr-window-motion": "6add5c333c639b4f926be4ff4c983e96f8c199ef8271de2859dad7b5478806fc",
+    "widget_v65/Windows.qml": "a433d17d414167d48cf99b630c5f9a39d0aa9cf2de545ae5ac09199ee1d0d712",
+    "widget_v65/WindowMotion.qml": "6812a49f86ff33c30a307a6d424ef2efb0514543339c16b9a915bf60c96f2a95"
+  },
+  "testsPending": true,
+  "result": "deployed; strict native freeze acceptance pending"
+}

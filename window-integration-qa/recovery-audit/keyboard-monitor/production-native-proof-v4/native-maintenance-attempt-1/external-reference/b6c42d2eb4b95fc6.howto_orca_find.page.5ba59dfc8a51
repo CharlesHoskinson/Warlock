@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_orca_find" xml:lang="eo">
+  <info>
+    <link type="guide" xref="index#reviewing"/>
+    <link type="next" xref="howto_mouse_review"/>
+    <title type="sort">3. Orko Find</title>
+    <desc>Serĉi objektojn en fenestro</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Orko Find</title>
+  <p>La funkcio Trovi de <app>Orko</app> estas serĉo bazita sur <link xref="howto_flat_review">Plata Revizio</link> destinita por helpi vin rapide trovi objektojn videblajn sur la ekrano en la aktuala fenestro.</p>
+  <note style="tip">
+    <title>Aktivigi Orko Find</title>
+      <p>Por malfermi la dialogon <gui>Trovi</gui> de Orko, uzu la jenan komandon surbaze de via elektita <link xref="howto_keyboard_layout">klavara aranĝo</link>:</p>
+      <list>
+        <item>
+          <p>Labortablo: <keyseq><key>KP Delete</key></keyseq></p>
+        </item>
+        <item>
+          <p>Tekomputilo: <keyseq><key>Orko Modifier</key><key>Left Bracket</key></keyseq></p>
+        </item>
+      </list>
+      <p>Por listo de pliaj taskoj kiujn vi povas plenumi, vidu la <link xref="commands_find">komandojn de Orko Find</link></p>
+  </note>
+  <p>Kiam vi aktivas Orko Find, vi estos metita en dialogkeston.</p>
+  <p>Ĉi tie vi povas specifi la jenajn erojn:</p>
+  <list>
+    <item>
+      <p>La tekston por trovi</p>
+    </item>
+    <item>
+      <p>La lokon de kiu komenci la serĉon, kiu povas esti aŭ la aktuala loko aŭ la supro de la fenestro</p>
+      <p>Defaŭlta valoro de <gui>Komenci de</gui>: <gui>Aktuala loko</gui></p>
+    </item>
+    <item>
+      <p>Ĉu oni konsideru majusklojn/minusklojn aŭ ne kiam serĉante kongruon</p>
+      <p>Defaŭlta valoro de <gui>Kongrui majusklojn/minusklojn</gui>: ne markita</p>
+    </item>
+    <item>
+      <p>Ĉu limigi kongruojn al tiuj kiuj kongruas la tutan vorton aŭ frazon aŭ ne</p>
+      <p>Defaŭlta valoro de <gui>Kongrui nur tutan vorton</gui>: ne markita</p>
+    </item>
+    <item>
+      <p>Ĉu la serĉo rigardu malsupren kaj/aŭ dekstren por la sekva kongruo aŭ supren kaj/aŭ maldekstren.</p>
+      <p>Defaŭlta valoro de <gui>Serĉi malantaŭen</gui>: ne markita</p>
+    </item>
+    <item>
+      <p>Ĉu la serĉo ciklumu al la supro/fundo de la fenestro aŭ ne se ne troviĝas kongruo de la startloko en la direkto de la serĉo.</p>
+      <p>Defaŭlta valoro de <gui>Ciklumi ĉirkaŭ</gui>: markita</p>
+    </item>
+  </list>
+  <p>Post plenumi serĉon, vi povas rapide serĉi la sekvan aŭ antaŭan kongruon sen devi reveni al la dialogkesto de Orko Find.</p>
+  <p>Ĉar ĝi estas funkcio de <link xref="howto_flat_review">Plata Revizio</link>, kiam estas kongruo, Plata Revizio aŭtomate aktiviĝos kaj la kongrua ero aŭ teksto fariĝos la aktuala revizio-ero. Rimarku ke la fokuso en la aplikaĵo ne estos modifita, nek la kursoro estos replasigita. Se vi bezonas plenumi ion el ĉi tiuj, vidu <link xref="commands_mouse">La Komandoj de Orko Rilataj al Muso/Montrilo</link>.</p>
+</page>

@@ -1,0 +1,209 @@
+{
+  "updatedUTC": "2026-10-02T02:17:19.444052+00:00",
+  "reportSHA256": "41a86f52ded93083ac196a517bc5930775596817f5bfd45b4389e4236233e9b0",
+  "manifestSHA256": "e77798d559f064354e3cbf5730917b9092ad57ed5937f7040dc29cd9b1733d11",
+  "fileCount": 41458,
+  "linkCount": 13770,
+  "independentChecks": {
+    "allFrozenBytesModesExact": true,
+    "allFrozenLinksExact": true,
+    "all18MainPreserved": true,
+    "allRecordedPIDStartGone": true,
+    "privateRuntimeGone": true,
+    "noUnexpectedOrRemainingHelpers": true,
+    "normalBrowserAndNoForcedCleanup": true,
+    "nativeProbeAndPluginUnloadedNormally": true,
+    "healthyArchivedParentTransport": true,
+    "actualPrivateBusActivationPolicyVerified": true,
+    "initialRangeDiagnosticIndependentlyReplayed": true,
+    "actualBrowserPrivateBusPIDBindingIndependentlyReplayed": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "privateBrowserFilesAccepted": false,
+  "processes": [
+    {
+      "pid": 2234395,
+      "start": "12984533",
+      "gone": true
+    },
+    {
+      "pid": 2234400,
+      "start": "12984536",
+      "gone": true
+    },
+    {
+      "pid": 2234414,
+      "start": "12984597",
+      "gone": true
+    },
+    {
+      "pid": 2234395,
+      "start": "12984533",
+      "gone": true
+    },
+    {
+      "pid": 2234400,
+      "start": "12984536",
+      "gone": true
+    },
+    {
+      "pid": 2234414,
+      "start": "12984597",
+      "gone": true
+    },
+    {
+      "pid": 2234529,
+      "start": "12984904",
+      "gone": true
+    },
+    {
+      "pid": 2234545,
+      "start": "12984927",
+      "gone": true
+    },
+    {
+      "pid": 2234542,
+      "start": "12984925",
+      "gone": true
+    },
+    {
+      "pid": 2234543,
+      "start": "12984926",
+      "gone": true
+    },
+    {
+      "pid": 2234633,
+      "start": "12984942",
+      "gone": true
+    },
+    {
+      "pid": 2234634,
+      "start": "12984943",
+      "gone": true
+    },
+    {
+      "pid": 2234571,
+      "start": "12984932",
+      "gone": true
+    },
+    {
+      "pid": 2234573,
+      "start": "12984932",
+      "gone": true
+    },
+    {
+      "pid": 2234607,
+      "start": "12984935",
+      "gone": true
+    },
+    {
+      "pid": 2234728,
+      "start": "12985065",
+      "gone": true
+    },
+    {
+      "pid": 2234761,
+      "start": "12985082",
+      "gone": true
+    },
+    {
+      "pid": 2234739,
+      "start": "12985081",
+      "gone": true
+    },
+    {
+      "pid": 2234740,
+      "start": "12985081",
+      "gone": true
+    },
+    {
+      "pid": 2234741,
+      "start": "12985081",
+      "gone": true
+    },
+    {
+      "pid": 2234742,
+      "start": "12985081",
+      "gone": true
+    },
+    {
+      "pid": 2234743,
+      "start": "12985081",
+      "gone": true
+    },
+    {
+      "pid": 2234774,
+      "start": "12985086",
+      "gone": true
+    },
+    {
+      "pid": 2234775,
+      "start": "12985086",
+      "gone": true
+    },
+    {
+      "pid": 2234779,
+      "start": "12985087",
+      "gone": true
+    },
+    {
+      "pid": 2236022,
+      "start": "12986616",
+      "gone": true
+    },
+    {
+      "pid": 2234529,
+      "start": "12984904",
+      "gone": true
+    },
+    {
+      "pid": 2234728,
+      "start": "12985065",
+      "gone": true
+    },
+    {
+      "pid": 2236022,
+      "start": "12986616",
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "environmentObservations": [
+    {
+      "name": "browser",
+      "identity": {
+        "pid": 2234529,
+        "start": "12984904",
+        "ppid": 2234102,
+        "pgid": 2234529
+      },
+      "bytes": 10167,
+      "nonzeroBytes": 0,
+      "initialRangeMatches": false,
+      "currentLibcSelectorsProved": false
+    },
+    {
+      "name": "files",
+      "identity": {
+        "pid": 2234728,
+        "start": "12985065",
+        "ppid": 2234102,
+        "pgid": 2234728
+      },
+      "bytes": 10294,
+      "nonzeroBytes": 10073,
+      "initialRangeMatches": true,
+      "currentLibcSelectorsProved": false
+    }
+  ],
+  "failure": "AssertionError('actual exposed Files click raises and invokes original callback 0')",
+  "rawOwnedProcessEvidenceSHA256": "477517603a10d583483424bd986df332e2fb1371ee42cc9e9ce3c3ce6564a4bf",
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false
+}

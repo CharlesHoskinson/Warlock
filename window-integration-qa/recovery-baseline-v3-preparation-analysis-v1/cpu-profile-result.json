@@ -1,0 +1,550 @@
+{
+  "cpuOnly": true,
+  "nativeLaunch": false,
+  "nativeLatencyCauseClaimed": false,
+  "singleCpuAffinity": 0,
+  "nativeCgroupQuotaReproduced": false,
+  "sourceManifestSHA256": "57ef24c0b73d80aa6b2de78366d7a40f21fefc4ca464928f5f6ef27524981b0e",
+  "runtimeSources": {
+    "helper_supervisor.py": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+    "helper_keeper.py": "c91aa65faaa04c8351af159000b14fa9f18f7db3a2151af2375a662ad3527252",
+    "owned_launch.py": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+    "owned_commands.py": "f5b37f859bc37211ce39e3ca5ec0c0dd1ad36d05bd9e1518c6525f553d1585ab",
+    "service_runtime.py": "f5bf28fb23429d612149d8537683929b257674aeccd732188ae6d221168b88bf"
+  },
+  "count": 24,
+  "rows": [
+    {
+      "beginNs": 125581256372477,
+      "endNs": 125581339923190,
+      "elapsedMs": 83.550713,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125581330412489,
+          "endNs": 125581332853422
+        },
+        {
+          "phase": "released",
+          "beginNs": 125581332863970,
+          "endNs": 125581333549729
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125581337625605,
+          "endNs": 125581339887096
+        }
+      ]
+    },
+    {
+      "beginNs": 125581339930085,
+      "endNs": 125581410147985,
+      "elapsedMs": 70.2179,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125581399578689,
+          "endNs": 125581401654714
+        },
+        {
+          "phase": "released",
+          "beginNs": 125581401664411,
+          "endNs": 125581402326469
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125581406476742,
+          "endNs": 125581410107925
+        }
+      ]
+    },
+    {
+      "beginNs": 125581410153990,
+      "endNs": 125581480461066,
+      "elapsedMs": 70.307076,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125581470388584,
+          "endNs": 125581472771871
+        },
+        {
+          "phase": "released",
+          "beginNs": 125581472780883,
+          "endNs": 125581473634319
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125581477691528,
+          "endNs": 125581480430853
+        }
+      ]
+    },
+    {
+      "beginNs": 125581480465791,
+      "endNs": 125581551529401,
+      "elapsedMs": 71.06361,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125581542339120,
+          "endNs": 125581544409461
+        },
+        {
+          "phase": "released",
+          "beginNs": 125581544417092,
+          "endNs": 125581545104287
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125581549269595,
+          "endNs": 125581551499455
+        }
+      ]
+    },
+    {
+      "beginNs": 125581551533511,
+      "endNs": 125581623167330,
+      "elapsedMs": 71.633819,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125581611161836,
+          "endNs": 125581613375984
+        },
+        {
+          "phase": "released",
+          "beginNs": 125581613383765,
+          "endNs": 125581614210940
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125581618556042,
+          "endNs": 125581623133467
+        }
+      ]
+    },
+    {
+      "beginNs": 125581623172350,
+      "endNs": 125581709512530,
+      "elapsedMs": 86.34018,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125581699631005,
+          "endNs": 125581701936771
+        },
+        {
+          "phase": "released",
+          "beginNs": 125581702026642,
+          "endNs": 125581702827969
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125581706792876,
+          "endNs": 125581709480903
+        }
+      ]
+    },
+    {
+      "beginNs": 125581709517545,
+      "endNs": 125581785949293,
+      "elapsedMs": 76.431748,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125581770670205,
+          "endNs": 125581772850892
+        },
+        {
+          "phase": "released",
+          "beginNs": 125581772858855,
+          "endNs": 125581773700578
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125581780324478,
+          "endNs": 125581785914736
+        }
+      ]
+    },
+    {
+      "beginNs": 125581785954238,
+      "endNs": 125581866891612,
+      "elapsedMs": 80.937374,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125581845502064,
+          "endNs": 125581847696722
+        },
+        {
+          "phase": "released",
+          "beginNs": 125581847704965,
+          "endNs": 125581848536744
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125581855145470,
+          "endNs": 125581866855471
+        }
+      ]
+    },
+    {
+      "beginNs": 125581866896453,
+      "endNs": 125581951318008,
+      "elapsedMs": 84.421555,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125581939335660,
+          "endNs": 125581941629840
+        },
+        {
+          "phase": "released",
+          "beginNs": 125581941638707,
+          "endNs": 125581942458611
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125581946866112,
+          "endNs": 125581951282576
+        }
+      ]
+    },
+    {
+      "beginNs": 125581951323473,
+      "endNs": 125582024615834,
+      "elapsedMs": 73.292361,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582013866598,
+          "endNs": 125582016147963
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582016156055,
+          "endNs": 125582016819886
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582022192167,
+          "endNs": 125582024586780
+        }
+      ]
+    },
+    {
+      "beginNs": 125582024620496,
+      "endNs": 125582087976194,
+      "elapsedMs": 63.355698,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582078315032,
+          "endNs": 125582080552023
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582080560186,
+          "endNs": 125582081291110
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582084939364,
+          "endNs": 125582087945405
+        }
+      ]
+    },
+    {
+      "beginNs": 125582087981072,
+      "endNs": 125582157481095,
+      "elapsedMs": 69.500023,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582148122864,
+          "endNs": 125582150375691
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582150386092,
+          "endNs": 125582151175006
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582155044811,
+          "endNs": 125582157452105
+        }
+      ]
+    },
+    {
+      "beginNs": 125582157485302,
+      "endNs": 125582228485175,
+      "elapsedMs": 70.999873,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582214465750,
+          "endNs": 125582218569695
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582218578885,
+          "endNs": 125582221209558
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582225589544,
+          "endNs": 125582228453278
+        }
+      ]
+    },
+    {
+      "beginNs": 125582228490189,
+      "endNs": 125582306759829,
+      "elapsedMs": 78.26964,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582290775113,
+          "endNs": 125582292963218
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582292971311,
+          "endNs": 125582293735047
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582297863986,
+          "endNs": 125582306723322
+        }
+      ]
+    },
+    {
+      "beginNs": 125582306764539,
+      "endNs": 125582387207632,
+      "elapsedMs": 80.443093,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582374489432,
+          "endNs": 125582377039240
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582377048057,
+          "endNs": 125582377838862
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582381723799,
+          "endNs": 125582387172758
+        }
+      ]
+    },
+    {
+      "beginNs": 125582387212730,
+      "endNs": 125582476504007,
+      "elapsedMs": 89.291277,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582461376553,
+          "endNs": 125582463517626
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582463525613,
+          "endNs": 125582464215785
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582468285519,
+          "endNs": 125582476471824
+        }
+      ]
+    },
+    {
+      "beginNs": 125582476509139,
+      "endNs": 125582556438660,
+      "elapsedMs": 79.929521,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582543639552,
+          "endNs": 125582545751682
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582545760072,
+          "endNs": 125582546463772
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582550617815,
+          "endNs": 125582556405472
+        }
+      ]
+    },
+    {
+      "beginNs": 125582556444017,
+      "endNs": 125582622260636,
+      "elapsedMs": 65.816619,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582612172785,
+          "endNs": 125582614323547
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582614332101,
+          "endNs": 125582615224006
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582619133494,
+          "endNs": 125582622230934
+        }
+      ]
+    },
+    {
+      "beginNs": 125582622265572,
+      "endNs": 125582689396892,
+      "elapsedMs": 67.13132,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582680630144,
+          "endNs": 125582682811469
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582682819508,
+          "endNs": 125582683501990
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582687092782,
+          "endNs": 125582689368731
+        }
+      ]
+    },
+    {
+      "beginNs": 125582689401481,
+      "endNs": 125582763816628,
+      "elapsedMs": 74.415147,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582755254628,
+          "endNs": 125582757374900
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582757383040,
+          "endNs": 125582758073148
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582761700823,
+          "endNs": 125582763789239
+        }
+      ]
+    },
+    {
+      "beginNs": 125582763820534,
+      "endNs": 125582830350162,
+      "elapsedMs": 66.529628,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582817375999,
+          "endNs": 125582819718081
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582819726306,
+          "endNs": 125582820433464
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582825448587,
+          "endNs": 125582830313426
+        }
+      ]
+    },
+    {
+      "beginNs": 125582830355018,
+      "endNs": 125582900159260,
+      "elapsedMs": 69.804242,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582890601113,
+          "endNs": 125582892810351
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582892817604,
+          "endNs": 125582893520831
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582897612474,
+          "endNs": 125582900128224
+        }
+      ]
+    },
+    {
+      "beginNs": 125582900163395,
+      "endNs": 125582968779227,
+      "elapsedMs": 68.615832,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125582957793301,
+          "endNs": 125582959956906
+        },
+        {
+          "phase": "released",
+          "beginNs": 125582959964850,
+          "endNs": 125582960686175
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125582964718248,
+          "endNs": 125582968746699
+        }
+      ]
+    },
+    {
+      "beginNs": 125582968783823,
+      "endNs": 125583033718227,
+      "elapsedMs": 64.934404,
+      "keeperPhases": [
+        {
+          "phase": "register",
+          "beginNs": 125583024809643,
+          "endNs": 125583026910829
+        },
+        {
+          "phase": "released",
+          "beginNs": 125583026919917,
+          "endNs": 125583027654778
+        },
+        {
+          "phase": "complete",
+          "beginNs": 125583031404892,
+          "endNs": 125583033690578
+        }
+      ]
+    }
+  ],
+  "sumMs": 1777.232653,
+  "meanMs": 74.05136054166667,
+  "journalPublications": 98,
+  "normalKeeperStop": true
+}

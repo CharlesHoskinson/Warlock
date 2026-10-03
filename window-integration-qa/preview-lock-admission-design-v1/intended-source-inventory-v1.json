@@ -1,0 +1,31 @@
+{
+  "runtimeEdited": false,
+  "selectedManifest": {
+    "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/manifest-family-preparation-v24.json",
+    "sha256": "b017d8d2a126f76c637429fffc2d77d510161fb89d3f3826795abb47d30b9f2c"
+  },
+  "intendedProductFiles": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py": {
+      "sha256": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250",
+      "mode": 420,
+      "delta": "selected errno busy-only deadline-preserving lock admission; standalone no-deadline immediate-refusal path exact"
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/native_desktop.py": {
+      "sha256": "31ace97dda5342519aa749c4dcd01dbd70b425b79b507639a543cf9a2c00ba19",
+      "mode": 420,
+      "delta": "pass explicit immutable deadline to batch without acquiring receipt/Keeper/lifecycle locks during admission"
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/scene_controller.py": {
+      "sha256": "3b47325e7e86b06492ef59576159482c6036297aeafdcb46875cf590d1844657",
+      "mode": 420,
+      "delta": "pass record.profile[receivedNs]+2000000000 unchanged to finisher"
+    }
+  },
+  "intendedFixtureCompatibility": {
+    "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/test_batch_preview.py",
+    "sha256": "d0b53f8ee63fbc270b7dfafe554d0bffba0263796b23c4c079da051abb7ad88d",
+    "delta": "three private test finisher callback signatures accept deadline_ns; all original assertions, timeouts, low-level busy refusal exact"
+  },
+  "inheritedExact": "every other V24 product authority, renderer/keeper guards, all original collector38/fault34 bodies and budgets",
+  "approvalRequiredBeforeRuntime": true
+}

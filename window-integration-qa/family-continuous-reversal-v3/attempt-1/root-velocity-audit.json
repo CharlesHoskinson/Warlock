@@ -1,0 +1,114 @@
+{
+  "result": "velocity-discontinuity-confirmed-in-current-accepted-private-source",
+  "scope": "Exact current ordinary producerV10 analytic trajectory checked against all actual presented member rectangles; not a physical subjective smoothness claim",
+  "sourceHashes": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/CommitLedger.hpp": "8ff5a3dd59098bdcbd2c0599eca2c7163d889c3775ada547d4f0143d2efc1182",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/Renderer.cpp": "c8827caec73f6889cb01b3396714e12c0c9320c760508c9d18bd35e6ea34316b",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/scene_controller.py": "459135eec7abd238b9366c775cec39df72d75312b6a2ef6850cb1fdf655a7ba5"
+  },
+  "durationSeconds": 0.22,
+  "reversals": [
+    {
+      "previousToken": "cd4ffa07e329-1",
+      "newToken": "cd4ffa07e329-2",
+      "actualDisplayedSequence": "14",
+      "actualProgress": 0.16729279545454545,
+      "sourceBackedVelocityBefore": [
+        {
+          "x": -225.0,
+          "y": -981.8181818181819,
+          "width": -2068.181818181818,
+          "height": -1450.0
+        },
+        {
+          "x": -952.2727272727273,
+          "y": -1254.5454545454545,
+          "width": -1431.8181818181818,
+          "height": -904.5454545454545
+        },
+        {
+          "x": -1270.4545454545455,
+          "y": -1436.3636363636363,
+          "width": -1068.1818181818182,
+          "height": -722.7272727272727
+        }
+      ],
+      "sourceBackedVelocityAfter": [
+        {
+          "x": 37.6408789772727,
+          "y": 164.25110826446289,
+          "width": 345.9919178719009,
+          "height": 242.574553409091
+        },
+        {
+          "x": 159.3083665805785,
+          "y": 209.8764161157025,
+          "width": 239.53286621900816,
+          "height": 151.32393770661153
+        },
+        {
+          "x": 212.53789240702474,
+          "y": 240.29328801652886,
+          "width": 178.69912241735543,
+          "height": 120.90706580578515
+        }
+      ],
+      "maxComponentJumpPixelsPerSecond": 2414.173736053719,
+      "continuousVelocity": false
+    },
+    {
+      "previousToken": "cd4ffa07e329-2",
+      "newToken": "cd4ffa07e329-3",
+      "actualDisplayedSequence": "16",
+      "actualProgress": 0.07457588636363637,
+      "sourceBackedVelocityBefore": [
+        {
+          "x": 37.6408789772727,
+          "y": 164.25110826446289,
+          "width": 345.9919178719009,
+          "height": 242.574553409091
+        },
+        {
+          "x": 159.3083665805785,
+          "y": 209.8764161157025,
+          "width": 239.53286621900816,
+          "height": 151.32393770661153
+        },
+        {
+          "x": 212.53789240702474,
+          "y": 240.29328801652886,
+          "width": 178.69912241735543,
+          "height": 120.90706580578515
+        }
+      ],
+      "sourceBackedVelocityAfter": [
+        {
+          "x": -190.16622293596376,
+          "y": -829.8162455387509,
+          "width": -1747.9925542598687,
+          "height": -1225.5156589206551
+        },
+        {
+          "x": -804.8449233350385,
+          "y": -1060.320758188404,
+          "width": -1210.1486914106786,
+          "height": -764.5066336213492
+        },
+        {
+          "x": -1073.7668547596338,
+          "y": -1213.9904332881727,
+          "width": -902.809341211141,
+          "height": -610.8369585215805
+        }
+      ],
+      "maxComponentJumpPixelsPerSecond": 2093.9844721317695,
+      "continuousVelocity": false
+    }
+  ],
+  "allActualPresentedRectanglesMatchLinearSource": true,
+  "positionAndLifecycleAcceptanceUnchanged": true,
+  "velocityContinuityAccepted": false,
+  "physicalCadenceAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "mainWrites": false
+}

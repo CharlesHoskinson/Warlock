@@ -1,0 +1,779 @@
+{
+  "retirement": {
+    "actor": 2,
+    "timeNs": 182033330448373,
+    "root": "/run/user/1000/wqa/74fb/hypr-window-motion/qa-family-service/actors/actor-2-b7bfd12e830a46eba81bd394a5254bb2",
+    "actorDirectoryGone": true,
+    "originalRetirementDelegatedOnce": true,
+    "productRegistryRemoved": true,
+    "observedControllerBindings": 1,
+    "rendererClosed": true,
+    "rendererExitCode": 0
+  },
+  "retainedEpochSources": [
+    {
+      "actor": 2,
+      "source": {
+        "stableId": "18000000",
+        "pid": 360183,
+        "digest": "6cb3e3dae177b8a6a6faaad18e466159f932687d7e2275b1bb77bfb50ab186d7",
+        "path": "/run/user/1000/wqa/74fb/hypr-window-motion/qa-family-service/actors/actor-2-b7bfd12e830a46eba81bd394a5254bb2/d8bc5981428c-1.png",
+        "nativeRect": {
+          "x": 100,
+          "y": 250,
+          "width": 460,
+          "height": 300
+        },
+        "atlasRect": {
+          "x": 93,
+          "y": 219,
+          "width": 474,
+          "height": 338
+        },
+        "iconRect": {
+          "x": 43.5,
+          "y": 3,
+          "width": 19,
+          "height": 19
+        },
+        "insets": {
+          "left": 7,
+          "top": 31,
+          "right": 7,
+          "bottom": 7
+        },
+        "pixels": [
+          474,
+          338
+        ],
+        "captureScale": 1.0,
+        "captureEpoch": "d8bc5981428c-1",
+        "sceneToken": "93803ed5081e-1",
+        "targetScreen": "WAYLAND-1"
+      },
+      "retainedPath": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-epochs/6cb3e3dae177b8a6a6faaad18e466159f932687d7e2275b1bb77bfb50ab186d7.png",
+      "bytes": 3860,
+      "sha256": "6cb3e3dae177b8a6a6faaad18e466159f932687d7e2275b1bb77bfb50ab186d7",
+      "sourceIdentity": {
+        "device": 84,
+        "inode": 580822,
+        "size": 3860,
+        "mtimeNs": 1790971680302331889,
+        "ctimeNs": 1790971680380332644
+      },
+      "captureCallbackDelegatedOnce": true,
+      "sourceResultUnchanged": true
+    }
+  ],
+  "cachePairsAtCapture": [
+    {
+      "actor": 2,
+      "sourceEpoch": "d8bc5981428c-1",
+      "sceneToken": "93803ed5081e-1",
+      "identity": [
+        "0x5ed6967d4370",
+        "18000000",
+        360183
+      ],
+      "returnedSourceDigest": "6cb3e3dae177b8a6a6faaad18e466159f932687d7e2275b1bb77bfb50ab186d7",
+      "cacheDigest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "files": [
+        {
+          "source": "/run/user/1000/wqa/74fb/hypr-window-motion/qa-family-service/snapshot-cache/full-18000000-360183.json",
+          "retainedPath": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-cache-pairs/9a091eef0f2955ad2e3a6035915a50d5ae6686e544eed1d69f2ea1c7993aafa7.json",
+          "sha256": "9a091eef0f2955ad2e3a6035915a50d5ae6686e544eed1d69f2ea1c7993aafa7",
+          "bytes": 567
+        },
+        {
+          "source": "/run/user/1000/wqa/74fb/hypr-window-motion/qa-family-service/snapshot-cache/full-18000000-360183-86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png",
+          "retainedPath": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-cache-pairs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png",
+          "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+          "bytes": 6280
+        }
+      ]
+    }
+  ],
+  "history": [
+    {
+      "token": "93803ed5081e-1",
+      "operation": "restore",
+      "requested": [
+        "0x5ed6967d4370",
+        "18000000",
+        360183
+      ],
+      "context": [
+        "efb50993780079460b0cbed1363e2166a2de1d9f_1790971663_1930574594",
+        [
+          [
+            "WAYLAND-1",
+            0,
+            0,
+            0,
+            1600,
+            1000,
+            1,
+            0,
+            1,
+            "1"
+          ]
+        ]
+      ],
+      "members": [
+        {
+          "address": "0x5ed6967d4370",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            100,
+            250
+          ],
+          "size": [
+            460,
+            300
+          ],
+          "workspace": {
+            "id": -98,
+            "name": "special:win-minimized"
+          },
+          "floating": true,
+          "monitor": 0,
+          "class": "qt-window-modal-fixture",
+          "title": "Qt WindowModal QA owner",
+          "initialClass": "qt-window-modal-fixture",
+          "initialTitle": "Qt WindowModal QA owner",
+          "pid": 360183,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 0,
+          "fullscreenClient": 0,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [],
+          "swallowing": "0x0",
+          "focusHistoryID": 3,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000000",
+          "parent": "",
+          "parentStableId": "",
+          "modal": false
+        },
+        {
+          "address": "0x5ed69724e740",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            260,
+            310
+          ],
+          "size": [
+            320,
+            180
+          ],
+          "workspace": {
+            "id": -98,
+            "name": "special:win-minimized"
+          },
+          "floating": true,
+          "monitor": 0,
+          "class": "qt-window-modal-fixture",
+          "title": "Qt WindowModal QA child",
+          "initialClass": "qt-window-modal-fixture",
+          "initialTitle": "Qt WindowModal QA child",
+          "pid": 360183,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 0,
+          "fullscreenClient": 0,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [],
+          "swallowing": "0x0",
+          "focusHistoryID": 1,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000002",
+          "parent": "0x5ed6967d4370",
+          "parentStableId": "18000000",
+          "modal": true
+        },
+        {
+          "address": "0x5ed696ef9680",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            330,
+            350
+          ],
+          "size": [
+            240,
+            140
+          ],
+          "workspace": {
+            "id": -98,
+            "name": "special:win-minimized"
+          },
+          "floating": true,
+          "monitor": 0,
+          "class": "qt-window-modal-fixture",
+          "title": "Qt WindowModal QA nested",
+          "initialClass": "qt-window-modal-fixture",
+          "initialTitle": "Qt WindowModal QA nested",
+          "pid": 360183,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 0,
+          "fullscreenClient": 0,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000003",
+          "parent": "0x5ed69724e740",
+          "parentStableId": "18000002",
+          "modal": true
+        }
+      ],
+      "sources": [],
+      "focus": [
+        "0x5ed696ef9680",
+        "18000003",
+        360183
+      ],
+      "validated": true,
+      "visual": false,
+      "running": false,
+      "ready": false,
+      "accepted_operation": "restore",
+      "previous": null,
+      "profile": {
+        "receivedNs": 182029701897383,
+        "reservedNs": 182029701898144,
+        "ingressCommand": "restore",
+        "contextPending": false,
+        "managerReceipt": 2,
+        "metadataStartNs": 182029706018292,
+        "gestureRetirementScope": [
+          [
+            "0x5ed6967d4370",
+            "18000000",
+            360183
+          ],
+          [
+            "0x5ed69724e740",
+            "18000002",
+            360183
+          ],
+          [
+            "0x5ed696ef9680",
+            "18000003",
+            360183
+          ]
+        ],
+        "gestureRetirementStartNs": 182029789653499,
+        "gestureRetirementReply": [
+          {
+            "identity": [
+              "0x5ed6967d4370",
+              "18000000",
+              360183
+            ],
+            "retired": false
+          },
+          {
+            "identity": [
+              "0x5ed69724e740",
+              "18000002",
+              360183
+            ],
+            "retired": false
+          },
+          {
+            "identity": [
+              "0x5ed696ef9680",
+              "18000003",
+              360183
+            ],
+            "retired": false
+          }
+        ],
+        "gestureRetirementFreshNs": 182029965739420,
+        "postRetirementFamily": [
+          {
+            "address": "0x5ed6967d4370",
+            "stableId": "18000000",
+            "pid": 360183,
+            "at": [
+              100,
+              250
+            ],
+            "size": [
+              460,
+              300
+            ],
+            "pinned": false,
+            "floating": true,
+            "fullscreen": 0,
+            "parent": "",
+            "parentStableId": "",
+            "modal": false
+          },
+          {
+            "address": "0x5ed69724e740",
+            "stableId": "18000002",
+            "pid": 360183,
+            "at": [
+              260,
+              310
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "pinned": false,
+            "floating": true,
+            "fullscreen": 0,
+            "parent": "0x5ed6967d4370",
+            "parentStableId": "18000000",
+            "modal": true
+          },
+          {
+            "address": "0x5ed696ef9680",
+            "stableId": "18000003",
+            "pid": 360183,
+            "at": [
+              330,
+              350
+            ],
+            "size": [
+              240,
+              140
+            ],
+            "pinned": false,
+            "floating": true,
+            "fullscreen": 0,
+            "parent": "0x5ed69724e740",
+            "parentStableId": "18000002",
+            "modal": true
+          }
+        ],
+        "resolvedDirection": "restore",
+        "familyDrawEvidence": {
+          "attempts": 1,
+          "native": [
+            {
+              "address": "0x5ed6967d4370",
+              "stableId": "18000000",
+              "pid": 360183,
+              "parent": "",
+              "parentStableId": "",
+              "modal": false
+            },
+            {
+              "address": "0x5ed696983ac0",
+              "stableId": "18000001",
+              "pid": 360183,
+              "parent": "",
+              "parentStableId": "",
+              "modal": false
+            },
+            {
+              "address": "0x5ed69724e740",
+              "stableId": "18000002",
+              "pid": 360183,
+              "parent": "0x5ed6967d4370",
+              "parentStableId": "18000000",
+              "modal": true
+            },
+            {
+              "address": "0x5ed696ef9680",
+              "stableId": "18000003",
+              "pid": 360183,
+              "parent": "0x5ed69724e740",
+              "parentStableId": "18000002",
+              "modal": true
+            }
+          ],
+          "members": [
+            [
+              "0x5ed6967d4370",
+              "18000000",
+              360183
+            ],
+            [
+              "0x5ed696ef9680",
+              "18000003",
+              360183
+            ],
+            [
+              "0x5ed69724e740",
+              "18000002",
+              360183
+            ]
+          ],
+          "focus": [
+            "0x5ed696ef9680",
+            "18000003",
+            360183
+          ],
+          "drawOrder": [
+            [
+              "0x5ed6967d4370",
+              "18000000",
+              360183
+            ],
+            [
+              "0x5ed69724e740",
+              "18000002",
+              360183
+            ],
+            [
+              "0x5ed696ef9680",
+              "18000003",
+              360183
+            ]
+          ],
+          "paintWitness": "WindowState-vector+native-render-plane+ancestor-constraints",
+          "activePaintIdentity": null
+        },
+        "metadataValidatedNs": 182031542944882,
+        "cleanupQueuedNs": 182032630228729,
+        "settlementReason": "controller deadline",
+        "cleanupAckNs": 182032636157681
+      },
+      "results": [
+        {
+          "identity": [
+            "0x5ed6967d4370",
+            "18000000",
+            360183
+          ],
+          "operation": "restore",
+          "reason": "controller deadline",
+          "committedNs": 182032096311928
+        },
+        {
+          "identity": [
+            "0x5ed69724e740",
+            "18000002",
+            360183
+          ],
+          "operation": "restore",
+          "reason": "controller deadline",
+          "committedNs": 182032362508636
+        },
+        {
+          "identity": [
+            "0x5ed696ef9680",
+            "18000003",
+            360183
+          ],
+          "operation": "restore",
+          "reason": "controller deadline",
+          "committedNs": 182032623536729
+        }
+      ],
+      "single": false,
+      "direction": {
+        "anchor": "restore",
+        "inverted": false,
+        "identity": null
+      }
+    }
+  ],
+  "rendererEvents": [
+    {
+      "error": 0,
+      "event": "shaderPrecision",
+      "observed": [
+        {
+          "kind": "low",
+          "precisionBits": 23,
+          "rangeMax": 127,
+          "rangeMin": 127,
+          "stage": "vertex"
+        },
+        {
+          "kind": "medium",
+          "precisionBits": 23,
+          "rangeMax": 127,
+          "rangeMin": 127,
+          "stage": "vertex"
+        },
+        {
+          "kind": "high",
+          "precisionBits": 23,
+          "rangeMax": 127,
+          "rangeMin": 127,
+          "stage": "vertex"
+        },
+        {
+          "kind": "low",
+          "precisionBits": 23,
+          "rangeMax": 127,
+          "rangeMin": 127,
+          "stage": "fragment"
+        },
+        {
+          "kind": "medium",
+          "precisionBits": 23,
+          "rangeMax": 127,
+          "rangeMin": 127,
+          "stage": "fragment"
+        },
+        {
+          "kind": "high",
+          "precisionBits": 23,
+          "rangeMax": 127,
+          "rangeMin": 127,
+          "stage": "fragment"
+        }
+      ],
+      "pixelProof": false,
+      "supported": true
+    },
+    {
+      "event": "samplingExperiment",
+      "fragmentSHA256": "eeff9248264975b7cd456d9e9399614f704f01bed6634b66c3cd23d579b2efa7",
+      "nativeAuthority": false,
+      "pixelProof": false,
+      "policy": "four-nearest-centers-highp-bilinear-v1",
+      "rasterDiagnostic": false
+    },
+    {
+      "copyFragmentSHA256": "ceae6422cafc16b2eafe0a7fa82402227127b51c6f6a0d9d0025d0b15153adc4",
+      "copyProgram": 6,
+      "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+      "event": "quantizedOverExperiment",
+      "fragmentSHA256": "eeff9248264975b7cd456d9e9399614f704f01bed6634b66c3cd23d579b2efa7",
+      "nativeAuthority": false,
+      "overProgram": 3,
+      "pixelProof": false,
+      "policy": "per-layer-explicit-over-nearest-rgba8-v1",
+      "rasterDiagnostic": false,
+      "vertexSHA256": "3b6f4b8d5d5ad76c48e9bfb22ae6dae0d97018fc21ea2b9b35a2e00d4e779612"
+    },
+    {
+      "event": "rasterPathSelected",
+      "nativeAuthority": false,
+      "path": "shader-per-layer-quantized-over",
+      "pixelProof": false,
+      "rasterDiagnostic": false,
+      "sampler": "four-nearest-centers-highp-bilinear"
+    },
+    {
+      "event": "renderPipelineSelected",
+      "explicitExperiment": false,
+      "manualSampling": true,
+      "nativeAuthority": false,
+      "pixelProof": false,
+      "quantizedOver": true,
+      "rasterDiagnostic": false,
+      "role": "production-default"
+    },
+    {
+      "eglVendor": "Mesa Project",
+      "eglVersion": "1.5",
+      "event": "backendObserved",
+      "mappedMaterialMatches": true,
+      "materials": [
+        {
+          "actualHash": "d7d313070226982467fd8984d943d84c7adeaf290b1705de7bf227fca3b392da",
+          "canonical": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+          "error": "",
+          "existingMaps": [
+            {
+              "buildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+              "device": "0:1e",
+              "end": "76af3081b000",
+              "error": "",
+              "inode": "110621",
+              "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+              "start": "76af30800000"
+            },
+            {
+              "buildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+              "device": "0:1e",
+              "end": "76af3289c000",
+              "error": "",
+              "inode": "110621",
+              "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+              "start": "76af3081b000"
+            },
+            {
+              "buildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+              "device": "0:1e",
+              "end": "76af33aee000",
+              "error": "",
+              "inode": "110621",
+              "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+              "start": "76af3289c000"
+            },
+            {
+              "buildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+              "device": "0:1e",
+              "end": "76af33c6c000",
+              "error": "",
+              "inode": "110621",
+              "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+              "start": "76af33aee000"
+            },
+            {
+              "buildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+              "device": "0:1e",
+              "end": "76af33caa000",
+              "error": "",
+              "inode": "110621",
+              "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+              "start": "76af33c6c000"
+            }
+          ],
+          "expectedBuildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+          "expectedHash": "d7d313070226982467fd8984d943d84c7adeaf290b1705de7bf227fca3b392da",
+          "matches": true,
+          "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+          "probe": {
+            "buildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+            "device": "0:1e",
+            "end": "76af365ac000",
+            "error": "",
+            "inode": "110621",
+            "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+            "start": "76af365ab000"
+          },
+          "statDevice": "0:20",
+          "statInode": "110621"
+        },
+        {
+          "actualHash": "15c06ccfe5054c95059f2526a284b8fb2d10c9000bbec20c531eb9d6815abc6d",
+          "canonical": "/usr/lib/libEGL_mesa.so.0.0.0",
+          "error": "",
+          "existingMaps": [
+            {
+              "buildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+              "device": "0:1e",
+              "end": "76af36a40000",
+              "error": "",
+              "inode": "110616",
+              "path": "/usr/lib/libEGL_mesa.so.0.0.0",
+              "start": "76af36a3a000"
+            },
+            {
+              "buildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+              "device": "0:1e",
+              "end": "76af36a7b000",
+              "error": "",
+              "inode": "110616",
+              "path": "/usr/lib/libEGL_mesa.so.0.0.0",
+              "start": "76af36a40000"
+            },
+            {
+              "buildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+              "device": "0:1e",
+              "end": "76af36a8e000",
+              "error": "",
+              "inode": "110616",
+              "path": "/usr/lib/libEGL_mesa.so.0.0.0",
+              "start": "76af36a7b000"
+            },
+            {
+              "buildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+              "device": "0:1e",
+              "end": "76af36a9b000",
+              "error": "",
+              "inode": "110616",
+              "path": "/usr/lib/libEGL_mesa.so.0.0.0",
+              "start": "76af36a8e000"
+            },
+            {
+              "buildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+              "device": "0:1e",
+              "end": "76af36a9c000",
+              "error": "",
+              "inode": "110616",
+              "path": "/usr/lib/libEGL_mesa.so.0.0.0",
+              "start": "76af36a9b000"
+            }
+          ],
+          "expectedBuildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+          "expectedHash": "15c06ccfe5054c95059f2526a284b8fb2d10c9000bbec20c531eb9d6815abc6d",
+          "matches": true,
+          "path": "/usr/lib/libEGL_mesa.so.0",
+          "probe": {
+            "buildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+            "device": "0:1e",
+            "end": "76af365ac000",
+            "error": "",
+            "inode": "110616",
+            "path": "/usr/lib/libEGL_mesa.so.0.0.0",
+            "start": "76af365ab000"
+          },
+          "statDevice": "0:20",
+          "statInode": "110616"
+        }
+      ],
+      "nativeAuthority": false,
+      "renderer": "Mesa Intel(R) Graphics (ARL)",
+      "reviewed": true,
+      "version": "OpenGL ES 3.2 Mesa 26.2.2-arch1.1"
+    },
+    {
+      "ditherAfter": false,
+      "ditherBefore": true,
+      "error": 0,
+      "event": "rasterState",
+      "pixelProof": false
+    },
+    {
+      "eglVendor": "Mesa Project",
+      "event": "gpu",
+      "renderer": "Mesa Intel(R) Graphics (ARL)",
+      "version": "OpenGL ES 3.2 Mesa 26.2.2-arch1.1"
+    },
+    {
+      "clockId": 1,
+      "event": "outputs",
+      "nativeAuthority": false,
+      "outputs": [
+        {
+          "generation": 6,
+          "height": 1000,
+          "name": "WAYLAND-1",
+          "pixelHeight": 1000,
+          "pixelWidth": 1600,
+          "refreshMilliHz": 60000,
+          "scale": 1,
+          "transform": 0,
+          "width": 1600,
+          "x": 0,
+          "y": 0
+        }
+      ]
+    }
+  ]
+}

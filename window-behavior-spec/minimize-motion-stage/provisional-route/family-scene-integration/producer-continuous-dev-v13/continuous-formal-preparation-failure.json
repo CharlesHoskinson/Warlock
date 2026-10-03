@@ -1,0 +1,31 @@
+{
+  "beforeRuntimeImplementation": true,
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/continuous_integration_test.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: Couldn't unify rec and oper\nTrying to unify { token: int, epoch: int, generation: int, order: int, active: bool, promoted: bool, running: bool, starts: int, issued: { token: int, epoch: int, generation: int, order: int, output: int, pos: int, vel: int }, hasIssue: bool, pending: { token: int, epoch: int, generation: int, order: int, output: int, pos: int, vel: int }, hasPending: bool, swapped: bool, early: bool, accepted: Set[int], origins: List[{ token: int, epoch: int, generation: int, order: int, output: int, pos: int, vel: int }], originPos: List[int], originVel: List[int], carryPos: List[int], carryVel: List[int], carried: bool, duration: int } and () => _t92\n\n\n  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/continuous_integration.qnt:11:17\n  11:  action init=s'=initial()\n                      ^^^^^^^^^\n\n\n Error [QNT000]: Can't unify different types of effects\nTrying to unify Pure and () => _e77\nTrying to infer effect for operator application in initial()\n\n\n  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/continuous_integration.qnt:11:17\n  11:  action init=s'=initial()\n                      ^^^^^^^^^\n\nerror: typechecking failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/continuous_integration.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: Couldn't unify rec and oper\nTrying to unify { token: int, epoch: int, generation: int, order: int, active: bool, promoted: bool, running: bool, starts: int, issued: { token: int, epoch: int, generation: int, order: int, output: int, pos: int, vel: int }, hasIssue: bool, pending: { token: int, epoch: int, generation: int, order: int, output: int, pos: int, vel: int }, hasPending: bool, swapped: bool, early: bool, accepted: Set[int], origins: List[{ token: int, epoch: int, generation: int, order: int, output: int, pos: int, vel: int }], originPos: List[int], originVel: List[int], carryPos: List[int], carryVel: List[int], carried: bool, duration: int } and () => _t92\n\n\n  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/continuous_integration.qnt:11:17\n  11:  action init=s'=initial()\n                      ^^^^^^^^^\n\n\n Error [QNT000]: Can't unify different types of effects\nTrying to unify Pure and () => _e77\nTrying to infer effect for operator application in initial()\n\n\n  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/continuous_integration.qnt:11:17\n  11:  action init=s'=initial()\n                      ^^^^^^^^^\n\nerror: typechecking failed\n"
+    }
+  ],
+  "result": "fail"
+}

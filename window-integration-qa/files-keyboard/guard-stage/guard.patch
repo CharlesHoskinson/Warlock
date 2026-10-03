@@ -1,0 +1,885 @@
+--- live/Ui/Btn.qml
++++ candidate/Ui/Btn.qml
+@@ -1,3 +1,4 @@
++import "file:///home/hoskinson/window-integration-qa/files-keyboard/guard-stage/WindowAccessibilityV5"
+ import QtQuick
+ import qs.Commons
+ 
+@@ -14,6 +15,24 @@
+   property bool primary: false
+   readonly property bool tinted: tint.a > 0
+   property string tip: ""
++  property string accessibleName: text.length ? text : tip
++  readonly property string actionIdentity: "control:"+accessibleName
++  property bool keyboardPressed: false
++  enabled: enabled2
++  activeFocusOnTab: true
++  Accessible.role: Accessible.Button
++  Accessible.name: accessibleName
++  Accessible.focusable: enabled2
++  Accessible.focused: activeFocus
++  Accessible.pressed: ma.pressed || keyboardPressed
++  Accessible.onPressAction: activate()
++  function activate() { if (enabled2 && ActionState.allowed(root)) clicked({button:Qt.LeftButton,modifiers:Qt.NoModifier,x:width/2,y:height/2}) }
++  Keys.onPressed: (e) => {
++    if (e.key === Qt.Key_Return || e.key === Qt.Key_Enter) { if (!e.isAutoRepeat) activate(); e.accepted=true }
++    else if (e.key === Qt.Key_Space) { keyboardPressed=true; e.accepted=true }
++  }
++  Keys.onReleased: (e) => { if (e.key === Qt.Key_Space) { if (keyboardPressed && !e.isAutoRepeat) { keyboardPressed=false; activate() }; e.accepted=true } }
++  onActiveFocusChanged: if (!activeFocus) keyboardPressed=false
+   signal clicked(var mouse)
+   implicitWidth: text.length ? caption.implicitWidth + (icon.length ? 19 : 0) + 20 : 30
+   implicitHeight: 30
+@@ -23,8 +42,8 @@
+     anchors.fill: parent
+     radius: Theme.radius
+     color: root.primary ? (ma.containsMouse ? Theme.fgBright : Theme.accent) : (root.active ? Theme.alpha(Theme.accent, 0.16) : (ma.containsMouse && root.enabled2 ? (root.tinted ? Theme.alpha(root.tint, 0.14) : Theme.hover) : "transparent"))
+-    border.width: root.bordered ? 1 : 0
+-    border.color: root.primary ? Theme.accent : (root.active ? Theme.accent : (root.tinted ? Theme.alpha(root.tint, ma.containsMouse ? 0.9 : 0.5) : (ma.containsMouse ? Theme.lineStrong : Theme.line)))
++    border.width: root.activeFocus ? 2 : (root.bordered ? 1 : 0)
++    border.color: root.activeFocus ? Theme.accent : root.primary ? Theme.accent : (root.active ? Theme.accent : (root.tinted ? Theme.alpha(root.tint, ma.containsMouse ? 0.9 : 0.5) : (ma.containsMouse ? Theme.lineStrong : Theme.line)))
+     Behavior on color { ColorAnimation { duration: Theme.dFast } }
+     Behavior on border.color { ColorAnimation { duration: Theme.dFast } }
+   }
+@@ -33,14 +52,15 @@
+     anchors.centerIn: parent
+     width: Math.max(0, Math.min(caption.implicitWidth + (root.icon.length ? 19 : 0), root.width - 20))
+     spacing: 6
+-    Ico { visible: root.icon.length; text: root.icon; size: 13; color: root.primary ? Theme.bg : (root.active ? Theme.accent : (root.tinted ? root.tint : Theme.fg)); anchors.verticalCenter: parent.verticalCenter }
+-    Label { id: caption; visible: root.text.length; width: Math.max(0, row.width - (root.icon.length ? 19 : 0)); text: root.text; font.bold: root.primary; color: root.primary ? Theme.bg : (root.active ? Theme.accent : (root.tinted ? root.tint : Theme.fg)); anchors.verticalCenter: parent.verticalCenter }
++    Ico { Accessible.ignored:true; visible: root.icon.length; text: root.icon; size: 13; color: root.primary ? Theme.bg : (root.active ? Theme.accent : (root.tinted ? root.tint : Theme.fg)); anchors.verticalCenter: parent.verticalCenter }
++    Label { id: caption; Accessible.ignored:true; visible: root.text.length; width: Math.max(0, row.width - (root.icon.length ? 19 : 0)); text: root.text; font.bold: root.primary; color: root.primary ? Theme.bg : (root.active ? Theme.accent : (root.tinted ? root.tint : Theme.fg)); anchors.verticalCenter: parent.verticalCenter }
+   }
+   MouseArea {
+     id: ma
+     anchors.fill: parent
+     hoverEnabled: true
+     cursorShape: Qt.PointingHandCursor
++    onPressed: root.forceActiveFocus()
+     onClicked: (m) => { if (root.enabled2) root.clicked(m) }
+   }
+ }
+--- live/Ui/Chip.qml
++++ candidate/Ui/Chip.qml
+@@ -1,3 +1,4 @@
++import "file:///home/hoskinson/window-integration-qa/files-keyboard/guard-stage/WindowAccessibilityV5"
+ import QtQuick
+ import qs.Commons
+ 
+@@ -6,6 +7,15 @@
+   property string text: ""
+   property string icon: ""
+   property bool active: false
++  activeFocusOnTab: true
++  readonly property string actionIdentity: "chip:"+text
++  Accessible.role: Accessible.Button
++  Accessible.name: text
++  Accessible.checkable: true
++  Accessible.checked: active
++  Accessible.focused: activeFocus
++  Accessible.onPressAction: if(ActionState.allowed(root)) clicked()
++  Keys.onPressed: (e) => { if(e.key===Qt.Key_Return || e.key===Qt.Key_Enter || e.key===Qt.Key_Space) { if(!e.isAutoRepeat && ActionState.allowed(root)) clicked(); e.accepted=true } }
+   signal clicked()
+   implicitWidth: r.implicitWidth + 22
+   implicitHeight: 26
+@@ -13,8 +23,8 @@
+     anchors.fill: parent
+     radius: Theme.radius
+     color: root.active ? Theme.accent : (ma.containsMouse ? Theme.hover : "transparent")
+-    border.width: 1
+-    border.color: root.active ? Theme.accent : Theme.line
++    border.width: root.activeFocus ? 2 : 1
++    border.color: root.activeFocus || root.active ? Theme.accent : Theme.line
+     Behavior on color { ColorAnimation { duration: Theme.dFast } }
+   }
+   Row {
+--- live/Ui/ContextMenu.qml
++++ candidate/Ui/ContextMenu.qml
+@@ -1,3 +1,4 @@
++import "file:///home/hoskinson/window-integration-qa/files-keyboard/guard-stage/WindowAccessibilityV5"
+ import QtQuick
+ import qs.Commons
+ 
+@@ -24,6 +25,7 @@
+   onHiChanged: {
+     var y = 0
+     for (var i = 0; i < hi; i++) y += items[i].sep ? 9 : 28
++    if (hi >= 0) Qt.callLater(function(){var row=menuRows.itemAt(hi);if(row && !row.modelData.disabled && !row.modelData.sep) row.forceActiveFocus()})
+     if (hi >= 0) menuScroll.contentY = Math.max(0, Math.min(menuScroll.contentHeight - menuScroll.height, y < menuScroll.contentY ? y : Math.max(menuScroll.contentY, y + 28 - menuScroll.height)))
+   }
+ 
+@@ -31,6 +33,8 @@
+ 
+   Rectangle {
+     id: card
++    Accessible.role: Accessible.PopupMenu
++    Accessible.name: "Actions"
+     x: Math.max(4, Math.min(root.px, root.width - width - 4))
+     y: Math.max(4, Math.min(root.py, root.height - height - 4))
+     width: Math.min(280, root.width - 8)
+@@ -47,7 +51,7 @@
+         for (var k = 0; k < n; k++) { i = (i + d + n) % n; if (!root.items[i].sep && !root.items[i].disabled) break }
+         root.hi = i; e.accepted = true
+       } else if (e.key === Qt.Key_Return || e.key === Qt.Key_Enter) {
+-        if (root.hi >= 0) { root.close(); root.chosen(root.items[root.hi].action) }
++        if (root.hi >= 0) { var action=root.items[root.hi].action; root.close(); root.chosen(action) }
+         e.accepted = true
+       }
+     }
+@@ -58,8 +62,17 @@
+       id: col
+       width: parent.width
+       Repeater {
++        id: menuRows
+         model: root.items
+         delegate: Item {
++          id: menuRow
++          readonly property string actionIdentity:"menu:"+modelData.action
++          enabled: !modelData.disabled && !modelData.sep
++          Accessible.role: Accessible.MenuItem
++          Accessible.name: modelData.label || ""
++          Accessible.ignored: !!modelData.sep
++          Accessible.onPressAction: { if(!ActionState.allowed(menuRow))return;var action=modelData.action; root.close();root.chosen(action) }
++          onActiveFocusChanged: if(activeFocus && root.hi!==index) root.hi=index
+           required property var modelData
+           required property int index
+           width: col.width
+@@ -86,7 +99,7 @@
+           MouseArea {
+             id: ma; anchors.fill: parent; hoverEnabled: true; enabled: !(!!modelData.sep) && !(!!modelData.disabled)
+             onEntered: root.hi = index
+-            onClicked: { root.close(); root.chosen(modelData.action) }
++            onClicked: { var action=modelData.action; root.close(); root.chosen(action) }
+           }
+         }
+       }
+--- live/Ui/Ico.qml
++++ candidate/Ui/Ico.qml
+@@ -3,6 +3,7 @@
+ 
+ // Nerd Font glyph.
+ Text {
++  Accessible.ignored: true
+   property int size: 14
+   font.family: Theme.font
+   font.pixelSize: size
+--- live/Ui/Prompt.qml
++++ candidate/Ui/Prompt.qml
+@@ -1,3 +1,4 @@
++import "file:///home/hoskinson/window-integration-qa/files-keyboard/guard-stage/WindowAccessibilityV5"
+ import QtQuick
+ import qs.Commons
+ 
+@@ -32,14 +33,24 @@
+       input.select(0, dot > 0 ? dot : input.text.length)
+     }
+   }
++  function cycleFocus(backward) {
++    var controls = confirmOnly ? [cancelBtn,acceptBtn] : [input,cancelBtn,acceptBtn]
++    var i=-1; for(var k=0;k<controls.length;k++) if(controls[k].activeFocus) { i=k; break }
++    controls[i<0 ? (backward ? controls.length-1 : 0) : (i+(backward ? controls.length-1 : 1))%controls.length].forceActiveFocus()
++  }
++  Keys.onPressed: (e) => {
++    if(e.key===Qt.Key_Tab || e.key===Qt.Key_Backtab) { cycleFocus(e.key===Qt.Key_Backtab || !!(e.modifiers & Qt.ShiftModifier)); e.accepted=true }
++  }
+   function close() { visible = false }
+-  function accept() { var t = input.text; close(); accepted(mode, t, payload) }
++  function accept() { if(!ActionState.allowed(acceptBtn))return;var t = input.text; close(); accepted(mode, t, payload) }
+ 
+   Rectangle { anchors.fill: parent; color: Theme.alpha(Theme.bgDarker, 0.72)
+     MouseArea { anchors.fill: parent; onClicked: root.close() } }
+ 
+   Rectangle {
+     id: card
++    Accessible.role: Accessible.Dialog
++    Accessible.name: root.title
+     anchors.centerIn: parent
+     width: Math.min(460, root.width - 24); height: Math.min(root.height - 24, body.implicitHeight + 36)
+     color: Theme.bg; border.color: root.danger ? Theme.red : Theme.accent; border.width: 1
+@@ -65,6 +76,11 @@
+         border.width: 1; border.color: input.activeFocus ? Theme.accent : Theme.line
+         TextInput {
+           id: input
++          readonly property string actionIdentity:"prompt:input"
++          Keys.onTabPressed: (e) => { root.cycleFocus(!!(e.modifiers & Qt.ShiftModifier)); e.accepted=true }
++          Keys.onBacktabPressed: (e) => {root.cycleFocus(true);e.accepted=true}
++          Accessible.name: root.title
++          Accessible.description: root.hint
+           anchors { fill: parent; leftMargin: 10; rightMargin: 10 }
+           verticalAlignment: TextInput.AlignVCenter
+           font.family: Theme.font; font.pixelSize: Theme.fsBody + 1
+@@ -78,8 +94,19 @@
+       }
+       Row {
+         anchors.right: parent.right; spacing: 8
+-        Btn { text: "Cancel"; onClicked: root.close() }
++        Btn { id: cancelBtn; Keys.onTabPressed: (e) => { root.cycleFocus(!!(e.modifiers & Qt.ShiftModifier)); e.accepted=true }
++          Keys.onBacktabPressed: (e) => {root.cycleFocus(true);e.accepted=true}; text: "Cancel"; onClicked: root.close() }
+         Rectangle {
++          id: acceptBtn
++          readonly property string actionIdentity:"prompt:accept"
++          activeFocusOnTab: true
++          Accessible.role: Accessible.Button
++          Accessible.name: root.okLabel
++          Keys.onTabPressed: (e) => { root.cycleFocus(!!(e.modifiers & Qt.ShiftModifier)); e.accepted=true }
++          Keys.onBacktabPressed: (e) => {root.cycleFocus(true);e.accepted=true}
++          Accessible.onPressAction: root.accept()
++          border.width: activeFocus ? 2 : 0; border.color: Theme.fgBright
++          Keys.onPressed: (e) => { if(e.key===Qt.Key_Return || e.key===Qt.Key_Enter || e.key===Qt.Key_Space) { if(!e.isAutoRepeat) root.accept(); e.accepted=true } }
+           width: okl.implicitWidth + 28; height: 30; color: root.danger ? Theme.red : Theme.accent
+           radius: Theme.radius
+           Label { id: okl; anchors.centerIn: parent; text: root.okLabel; color: Theme.bg; font.bold: true }
+--- live/explorer/Cell.qml
++++ candidate/explorer/Cell.qml
+@@ -1,3 +1,4 @@
++import "file:///home/hoskinson/window-integration-qa/files-keyboard/guard-stage/WindowAccessibilityV5"
+ import QtQuick
+ import qs.Commons
+ import qs.Ui
+@@ -6,18 +7,27 @@
+ // Chrome stays Omarchy-square: hairline frames, 2px accent selection ring.
+ Item {
+   id: cell
++  readonly property string actionIdentity:e ? "file:"+e.path : ""
+   property var e: ({})
+   property real cw: 200
+   property real th: 148
+   property bool sel: false
+   property bool cur: false
++  Accessible.role: Accessible.ListItem
++  Accessible.name: e.name || ""
++  Accessible.description: e.path || ""
++  Accessible.focusable: true
++  Accessible.selectable: true
++  Accessible.selected: sel
++  Accessible.onPressAction: if(ActionState.allowed(cell)) activated()
++  Accessible.onToggleAction: toggled()
+   signal pressed(int modifiers, int button, real x, real y)
+   signal activated()
+   signal toggled()
+ 
+   width: cw
+   height: th + 46
+-  readonly property bool hov: ma.containsMouse
++  readonly property bool hov: ma.containsMouse || activeFocus
+   readonly property string kind: e.isDir ? "folder" : Fs.kindOf(e)
+   readonly property color kcolor: Fs.colorFor(e)
+   property var pv: ({ count: -1, paths: [] })
+--- live/explorer/Dashboard.qml
++++ candidate/explorer/Dashboard.qml
+@@ -1,3 +1,4 @@
++import "file:///home/hoskinson/window-integration-qa/files-keyboard/guard-stage/WindowAccessibilityV5"
+ import QtQuick
+ import qs.Commons
+ import qs.Ui
+@@ -6,6 +7,10 @@
+ Item {
+   id: root
+   required property var ex
++  function ensureItem(item) {
++    var y=item.mapToItem(fl.contentItem,0,0).y
++    fl.contentY=Math.max(0,Math.min(fl.contentHeight-fl.height,y<fl.contentY ? y : Math.max(fl.contentY,y+item.height-fl.height)))
++  }
+   function scrollPosition() { return fl.contentY }
+   function restoreScroll(y) { fl.contentY = y }
+   property string kindFilter: "all"
+@@ -30,12 +35,32 @@
+   readonly property real cw: width - pad * 2
+   readonly property var media: Data.recentMedia
+ 
++  component MediaSlot: Loader {
++    id: slot
++    property var e: null
++    property bool big: false
++    readonly property string logicalPath:e ? e.path : ""
++    onLogicalPathChanged: { sourceComponent=null; if(logicalPath) Qt.callLater(function(){if(logicalPath)sourceComponent=tileComponent}) }
++    Component { id:tileComponent; MediaTile {e:slot.e;big:slot.big;width:slot.width;height:slot.height} }
++  }
+   component MediaTile: Rectangle {
+     id: mt
++    readonly property string actionIdentity:e ? "media:"+e.path : ""
++    activeFocusOnTab: true
++    enabled: !!e
++    Accessible.role: Accessible.Button
++    Accessible.name: e ? e.name : ""
++    Accessible.description: e ? e.path : ""
++    Accessible.onPressAction: {if(!ActionState.allowed(mt))return;var entry=e;if(entry) root.ex.revealEntry(entry)}
++    onActiveFocusChanged: if(activeFocus) root.ensureItem(mt)
++    Keys.onPressed: (event) => {
++      if(event.key===Qt.Key_Return || event.key===Qt.Key_Enter || event.key===Qt.Key_Space) {if(!event.isAutoRepeat && e) root.ex.revealEntry(e);event.accepted=true}
++      else if(event.key===Qt.Key_Menu || (event.key===Qt.Key_F10 && (event.modifiers & Qt.ShiftModifier))) {var p=mapToItem(root,0,height);root.ex.recentMenu(e,p.x,p.y);event.accepted=true}
++    }
+     property var e: null
+     property bool big: false
+     color: Theme.bgDark
+-    border.width: 1; border.color: tma.containsMouse ? Theme.accent : Theme.line
++    border.width: activeFocus ? 2 : 1; border.color: (activeFocus || tma.containsMouse) ? Theme.accent : Theme.line
+     clip: true
+     Item {
+       anchors.fill: parent
+@@ -84,7 +109,8 @@
+       spacing: 6
+       Repeater {
+         model: root.filters
+-        delegate: Chip { required property var modelData; text: modelData.label; icon: modelData.icon; active: root.kindFilter === modelData.id
++        delegate: Chip { id:filterChip; required property var modelData; text: modelData.label; icon: modelData.icon; active: root.kindFilter === modelData.id
++          onActiveFocusChanged: if(activeFocus) root.ensureItem(filterChip)
+           onClicked: root.kindFilter = modelData.id }
+       }
+     }
+@@ -97,7 +123,15 @@
+       readonly property real rightW: root.compact ? width : width - leftW - 16
+       height: root.compact ? 504 : 240
+       Section { width: hero.leftW; text: "Recent media"; note: "timeline  ›" }
+-      MouseArea { x: hero.leftW - 90; width: 90; height: 22; cursorShape: Qt.PointingHandCursor; onClicked: root.ex.go("coll:recent") }
++      Item {
++        id:timelineLink;readonly property string actionIdentity:"home:timeline";x:hero.leftW-90;width:90;height:22;activeFocusOnTab:true
++        Accessible.role:Accessible.Button;Accessible.name:"Recent media timeline"
++        Accessible.onPressAction:if(ActionState.allowed(timelineLink)) root.ex.go("coll:recent")
++        Keys.onPressed:(e)=>{if(e.key===Qt.Key_Return || e.key===Qt.Key_Enter || e.key===Qt.Key_Space){if(!e.isAutoRepeat)root.ex.go("coll:recent");e.accepted=true}}
++        onActiveFocusChanged:if(activeFocus)root.ensureItem(timelineLink)
++        Rectangle{anchors.fill:parent;color:"transparent";border.width:parent.activeFocus ? 2 : 0;border.color:Theme.accent}
++      MouseArea { anchors.fill:parent; width: 90; height: 22; cursorShape: Qt.PointingHandCursor; onClicked: root.ex.go("coll:recent") }
++      }
+       Section { x: root.compact ? 0 : hero.leftW + 16; y: root.compact ? 264 : 0; width: hero.rightW; text: "Smart collections" }
+ 
+       Item {
+@@ -106,11 +140,11 @@
+         readonly property real c1: Math.round(width * 0.46)
+         readonly property real c2: Math.round((width - c1 - 16) / 2)
+         Label { visible: root.media.length === 0; anchors.centerIn: parent; text: "Scanning your library…"; color: Theme.fgDim }
+-        MediaTile { visible: root.media.length > 0; e: root.media[0] || null; big: true; width: mos.c1; height: 208 }
+-        MediaTile { visible: root.media.length > 1; e: root.media[1] || null; x: mos.c1 + 8; width: mos.c2; height: 100 }
+-        MediaTile { visible: root.media.length > 2; e: root.media[2] || null; x: mos.c1 + 8; y: 108; width: mos.c2; height: 100 }
+-        MediaTile { visible: root.media.length > 3; e: root.media[3] || null; x: mos.c1 + 16 + mos.c2; width: mos.width - x; height: 100 }
+-        MediaTile { visible: root.media.length > 4; e: root.media[4] || null; x: mos.c1 + 16 + mos.c2; y: 108; width: mos.width - x; height: 100 }
++        MediaSlot { visible: root.media.length > 0; e: root.media[0] || null; big: true; width: mos.c1; height: 208 }
++        MediaSlot { visible: root.media.length > 1; e: root.media[1] || null; x: mos.c1 + 8; width: mos.c2; height: 100 }
++        MediaSlot { visible: root.media.length > 2; e: root.media[2] || null; x: mos.c1 + 8; y: 108; width: mos.c2; height: 100 }
++        MediaSlot { visible: root.media.length > 3; e: root.media[3] || null; x: mos.c1 + 16 + mos.c2; width: mos.width - x; height: 100 }
++        MediaSlot { visible: root.media.length > 4; e: root.media[4] || null; x: mos.c1 + 16 + mos.c2; y: 108; width: mos.width - x; height: 100 }
+       }
+       Column {
+         id: cg
+@@ -119,11 +153,19 @@
+         readonly property real chgt: (208 - 3 * 8) / 4
+         component CollCard: Rectangle {
+           id: cc
++          readonly property string actionIdentity:"home-collection:"+info.id
++          activeFocusOnTab: true
++          Accessible.role: Accessible.Button
++          Accessible.name: info ? info.name : ""
++          Accessible.description: info ? Data.collCount(info.id)+" items" : ""
++          Accessible.onPressAction: {if(!ActionState.allowed(cc))return;var id=info.id;root.ex.go("coll:"+id)}
++          onActiveFocusChanged: if(activeFocus) root.ensureItem(cc)
++          Keys.onPressed:(e)=>{if(e.key===Qt.Key_Return || e.key===Qt.Key_Enter || e.key===Qt.Key_Space){if(!e.isAutoRepeat)root.ex.go("coll:"+info.id);e.accepted=true}}
+           property var info: null
+           readonly property color kc: Theme.byKey(info.color)
+           height: cg.chgt
+           color: cma.containsMouse ? Theme.alpha(kc, 0.16) : Theme.alpha(Theme.fg, 0.03)
+-          border.width: 1; border.color: cma.containsMouse ? Theme.alpha(kc, 0.8) : Theme.line
++          border.width: activeFocus ? 2 : 1; border.color: (activeFocus || cma.containsMouse) ? Theme.alpha(kc, 0.8) : Theme.line
+           Behavior on color { ColorAnimation { duration: Theme.dFast } }
+           Rectangle { width: 2; height: parent.height; color: cc.kc }
+           Ico { x: 12; width: 18; height: parent.height; text: cc.info.glyph; size: 13; color: cc.kc }
+@@ -153,6 +195,18 @@
+         model: root.pinList
+         delegate: Item {
+           id: tile
++          readonly property string actionIdentity:"pin:"+modelData
++          activeFocusOnTab: true
++          Accessible.role: Accessible.Button
++          Accessible.name: modelData===Fs.home ? "Home" : Fs.base(modelData)
++          Accessible.description: modelData
++          Accessible.onPressAction: {if(!ActionState.allowed(tile))return;var path=modelData;root.ex.go(path)}
++          onActiveFocusChanged: if(activeFocus) root.ensureItem(tile)
++          Keys.onPressed:(e)=>{
++            if(e.key===Qt.Key_Return || e.key===Qt.Key_Enter || e.key===Qt.Key_Space){if(!e.isAutoRepeat)root.ex.go(modelData);e.accepted=true}
++            else if(e.key===Qt.Key_Menu || (e.key===Qt.Key_F10 && (e.modifiers & Qt.ShiftModifier))){var p=mapToItem(root,0,height);root.ex.pinMenu(modelData,p.x,p.y);e.accepted=true}
++          }
++          Rectangle{anchors.fill:parent;color:"transparent";border.width:tile.activeFocus ? 2 : 0;border.color:Theme.accent;z:2}
+           required property string modelData
+           required property int index
+           readonly property int cols: Math.max(1, Math.floor((pins.width + pins.spacing) / 150))
+@@ -186,6 +240,7 @@
+           y: 32; width: parent.width; height: parent.height - 32 - 52
+           usage: Data.usage; total: Data.usageTotal
+           onOpen: (p) => root.ex.go(p)
++          onEnsureVisible: (item) => root.ensureItem(item)
+           Label { visible: !Data.usage.length; anchors.centerIn: parent; text: "Measuring home directory…"; color: Theme.fgDim }
+         }
+         Item {
+@@ -206,11 +261,25 @@
+         Section { width: parent.width; text: "Recent files"; note: root.recentList.length + " files · 30 days" }
+         ListView {
+           id: rl
++          currentIndex:0
+           y: 32; width: parent.width; height: parent.height - 32
+           clip: true; model: root.recentList; boundsBehavior: Flickable.StopAtBounds
+           interactive: contentHeight > height
+           delegate: Item {
+             id: rr
++            readonly property string actionIdentity:"recent:"+modelData.path
++            activeFocusOnTab:index===rl.currentIndex
++            Accessible.role:Accessible.ListItem
++            Accessible.name:modelData.name
++            Accessible.description:modelData.path
++            Accessible.onPressAction:{if(!ActionState.allowed(rr))return;var entry=modelData;root.ex.openEntry(entry)}
++            onActiveFocusChanged:if(activeFocus){rl.currentIndex=index;rl.positionViewAtIndex(index,ListView.Contain);root.ensureItem(rr)}
++            Rectangle{anchors.fill:parent;color:"transparent";border.width:rr.activeFocus ? 2 : 0;border.color:Theme.accent;z:2}
++            Keys.onPressed:(e)=>{
++              if(e.key===Qt.Key_Up || e.key===Qt.Key_Down){var i=Math.max(0,Math.min(rl.count-1,index+(e.key===Qt.Key_Down ? 1 : -1)));rl.currentIndex=i;rl.positionViewAtIndex(i,ListView.Contain);Qt.callLater(function(){rl.forceLayout();var r=rl.itemAtIndex(i);if(r)r.forceActiveFocus()});e.accepted=true}
++              else if(e.key===Qt.Key_Return || e.key===Qt.Key_Enter || e.key===Qt.Key_Space){if(!e.isAutoRepeat)root.ex.openEntry(modelData);e.accepted=true}
++              else if(e.key===Qt.Key_Menu || (e.key===Qt.Key_F10 && (e.modifiers & Qt.ShiftModifier))){var p=mapToItem(root,0,height);root.ex.recentMenu(modelData,p.x,p.y);e.accepted=true}
++            }
+             required property var modelData
+             required property int index
+             width: rl.width; height: 38
+--- live/explorer/Detail.qml
++++ candidate/explorer/Detail.qml
+@@ -58,7 +58,7 @@
+       Item {
+         width: parent.width; height: 24
+         Label { text: "DETAILS"; height: parent.height; font.pixelSize: Theme.fsLabel; font.letterSpacing: 1.6; font.bold: true; color: Theme.fgDim }
+-        Btn { anchors.right: parent.right; width: 24; height: 24; icon: ""; bordered: false; onClicked: root.ex.closeDetail() }
++        Btn { anchors.right: parent.right; width: 24; height: 24; accessibleName: "Close details"; icon: ""; bordered: false; onClicked: root.ex.closeDetail() }
+       }
+ 
+       // preview
+--- live/explorer/Explorer.qml
++++ candidate/explorer/Explorer.qml
+@@ -1,3 +1,4 @@
++import "file:///home/hoskinson/window-integration-qa/files-keyboard/guard-stage/WindowAccessibilityV5"
+ import QtQuick
+ import Quickshell
+ import Quickshell.Io
+@@ -215,6 +216,7 @@
+     if (extend) { if (anchorIdx < 0) anchorIdx = cur < 0 ? 0 : cur; selectRange(anchorIdx, ni) }
+     else selectOnly(ni)
+     area.ensure(ni)
++    if(!filterInput.activeFocus) area.focusEntry(ni)
+   }
+   function selectAll() { if (shown.length) { selectRange(0, shown.length - 1); anchorIdx = 0 } }
+   function selectedEntries() { return shown.filter(function (e) { return sel[e.path] }) }
+@@ -460,11 +462,35 @@
+ 
+   function grab(path) { content.grabToImage(function (r) { r.saveToFile(path); console.log('[files] saved ' + path) }, Qt.size(content.width * 1.6, content.height * 1.6)) }
+   function focusMain() { keys.forceActiveFocus() }
++  function ensureSidebarItem(item) {
++    var y=item.mapToItem(sideBody,0,0).y
++    sidebarScroll.contentY=Math.max(0,Math.min(sidebarScroll.contentHeight-sidebarScroll.height,
++      y<sidebarScroll.contentY ? y : Math.max(sidebarScroll.contentY,y+item.height-sidebarScroll.height)))
++  }
++  function toggleSidebar() {
++    sidebarRequested=!sidebarRequested
++    if(sidebarRequested) Qt.callLater(function(){var first=collRepeater.itemAt(0);if(first) first.forceActiveFocus()})
++    else focusMain()
++  }
+ 
+   // ------------------------------------------------------------------ layout
++  function containsActionItem(scope,item) { while(item) {if(item===scope)return true;item=item.parent};return false }
++  function permitsAction(item) {
++    if(!visible || !backingWindowVisible)return false
++    if(prompt.visible)return containsActionItem(prompt,item)
++    if(ctx.visible)return containsActionItem(ctx,item)
++    if(lbOpen)return containsActionItem(lightbox,item)
++    return true
++  }
++  readonly property var focusedItem:contentItem.Window.window ? contentItem.Window.window.activeFocusItem : null
++  property string currentFocusIdentity:""
++  onFocusedItemChanged: {if(visible && backingWindowVisible){var key=ActionState.focusIdentity(contentItem);if(key)currentFocusIdentity=key}}
++  property string pendingFocusIdentity:""
++  Connections {target:ActionState;function onFocusRestored(identity,ok) {if(win.pendingFocusIdentity===identity)win.pendingFocusIdentity=""}}
+   function initializeUi(snapshot, storedEntries, storedShown) {
+     restoringUi = true
+     if (snapshot) {
++      currentFocusIdentity=snapshot.focusIdentity || ""
+       if (snapshot.windowWidth) implicitWidth = snapshot.windowWidth
+       if (snapshot.windowHeight) implicitHeight = snapshot.windowHeight
+       view = snapshot.view; cwd = snapshot.cwd; history = snapshot.history; hIdx = snapshot.hIdx
+@@ -490,6 +516,7 @@
+         if (snapshot.focus === "filter") filterInput.forceActiveFocus()
+         else if (snapshot.focus === "path" && snapshot.path && snapshot.path.editing) pathbar.restoreFocus()
+         else if (!prompt.visible && !ctx.visible && snapshot.visible) focusMain()
++        if(snapshot.visible && snapshot.focusIdentity) {pendingFocusIdentity=snapshot.focusIdentity;ActionState.restoreLater(contentItem,pendingFocusIdentity)}
+         restoringUi = false
+       })
+     }
+@@ -507,12 +534,15 @@
+       visible: visible, windowWidth: width, windowHeight: height,
+       fileScroll: area.scrollPosition(), dashboardScroll: dashboard.scrollPosition(),
+       sidebarScroll: sidebarScroll.contentY, detailScroll: detail.scrollPosition(), dashboardKind: dashboard.kindFilter,
++      focusIdentity: currentFocusIdentity,
+       focus: filterInput.activeFocus ? "filter" : pathbar.editing ? "path" : "main",
+       path: pathbar.exportUi(), prompt: prompt.exportUi(), menu: ctx.exportUi(), ctxTarget: ctxTarget })
+   }
+ 
+   Item {
+     id: content
++    property var actionOwner:win
++    Keys.forwardTo: [keys]
+     anchors.fill: parent
+     Rectangle { anchors.fill: parent; color: Theme.bg; z: -10 }
+ 
+@@ -525,29 +555,29 @@
+       Row {
+         id: nav
+         x: 14; y: 11; spacing: 4
+-        Btn { visible: !win.sidebarDocked; icon: ""; tip: "Collections and tree (Ctrl+B)"; active: win.sidebarRequested; onClicked: win.sidebarRequested = !win.sidebarRequested }
+-        Btn { icon: ""; active: win.view === "home"; onClicked: win.go("") }
++        Btn { visible: !win.sidebarDocked; icon: ""; tip: "Collections and tree (Ctrl+B)"; active: win.sidebarRequested; onClicked: win.toggleSidebar() }
++        Btn { accessibleName: "Home"; icon: ""; active: win.view === "home"; onClicked: win.go("") }
+         Rectangle { width: 1; height: 18; color: Theme.line; anchors.verticalCenter: parent.verticalCenter }
+-        Btn { icon: ""; enabled2: win.hIdx > 0; onClicked: win.back() }
+-        Btn { icon: ""; enabled2: win.hIdx < win.history.length - 1; onClicked: win.forward() }
+-        Btn { icon: ""; enabled2: win.view === "folder" && win.cwd !== "/"; onClicked: win.up() }
++        Btn { accessibleName: "Back"; icon: ""; enabled2: win.hIdx > 0; onClicked: win.back() }
++        Btn { accessibleName: "Forward"; icon: ""; enabled2: win.hIdx < win.history.length - 1; onClicked: win.forward() }
++        Btn { accessibleName: "Up"; icon: ""; enabled2: win.view === "folder" && win.cwd !== "/"; onClicked: win.up() }
+       }
+       Row {
+         id: tools
+         anchors { right: parent.right; rightMargin: 14 }
+         y: 11
+         spacing: 4
+-        Btn { icon: win.viewMode === "list" ? "" : ""; enabled2: win.view === "folder"; onClicked: win.viewMode = win.viewMode === "list" ? "grid" : "list" }
+-        Btn { icon: ""; enabled2: win.view === "folder"; onClicked: (m) => win.sortMenu(tools.x + x, toolbar.height) }
+-        Btn { icon: "\uf05a"; enabled2: win.view === "folder"; active: (win.detailDocked ? win.detailOpen : win.detailOverlayRequested) && win.view === "folder"; onClicked: win.toggleDetail() }
++        Btn { accessibleName: win.viewMode === "list" ? "Show grid" : "Show list"; icon: win.viewMode === "list" ? "" : ""; enabled2: win.view === "folder"; onClicked: win.viewMode = win.viewMode === "list" ? "grid" : "list" }
++        Btn { accessibleName: "Sort"; icon: ""; enabled2: win.view === "folder"; onClicked: (m) => win.sortMenu(tools.x + x, toolbar.height) }
++        Btn { accessibleName: "Details"; icon: "\uf05a"; enabled2: win.view === "folder"; active: (win.detailDocked ? win.detailOpen : win.detailOverlayRequested) && win.view === "folder"; onClicked: win.toggleDetail() }
+ 
+       }
+       Row {
+         id: extraTools
+         x: win.narrowToolbar ? toolbar.width - width - 14 : tools.x - width - 4
+         y: win.narrowToolbar ? 87 : 11; spacing: 4
+-        Btn { icon: win.showHidden ? "" : ""; active: win.showHidden; onClicked: win.showHidden = !win.showHidden }
+-        Btn { icon: win.view === "folder" ? (Data.isPinned(win.cwd) ? "" : "") : ""; active: win.view === "folder" && Data.isPinned(win.cwd)
++        Btn { accessibleName: "Show hidden files"; icon: win.showHidden ? "" : ""; active: win.showHidden; onClicked: win.showHidden = !win.showHidden }
++        Btn { accessibleName: win.view === "folder" ? (Data.isPinned(win.cwd) ? "Unpin folder" : "Pin folder") : "Refresh Home"; icon: win.view === "folder" ? (Data.isPinned(win.cwd) ? "" : "") : ""; active: win.view === "folder" && Data.isPinned(win.cwd)
+           onClicked: { if (win.view === "folder") Data.togglePin(win.cwd); else Data.refreshAll() } }
+       }
+       Rectangle {
+@@ -561,6 +591,9 @@
+         Ico { x: 8; width: 18; height: parent.height; text: ""; size: 12; color: filterInput.activeFocus ? Theme.accent : Theme.fgDim }
+         TextInput {
+           id: filterInput
++          readonly property string actionIdentity:"input:filter"
++          Accessible.name: "Filter files"
++          Accessible.description: "Control Return searches below this folder"
+           anchors { left: parent.left; leftMargin: 30; right: parent.right; rightMargin: 8; verticalCenter: parent.verticalCenter }
+           font.family: Theme.font; font.pixelSize: Theme.fsBody; color: Theme.fgBright
+           selectionColor: Theme.accent; selectedTextColor: Theme.bg; clip: true
+@@ -614,9 +647,22 @@
+         id: colls
+         y: 36; width: parent.width - 1
+         Repeater {
++          id: collRepeater
+           model: Data.collections
+           delegate: Item {
+             id: cr
++            readonly property string actionIdentity:"sidebar-collection:"+modelData.id
++            activeFocusOnTab: true
++            Accessible.role: Accessible.Button
++            Accessible.name: modelData.name
++            Accessible.description: "Collection, " + Data.collCount(modelData.id) + " items"
++            Accessible.onPressAction: { if(!ActionState.allowed(cr))return;var id=modelData.id; win.go("coll:"+id) }
++            Keys.onPressed: (e) => {
++              if(e.key===Qt.Key_Return || e.key===Qt.Key_Enter || e.key===Qt.Key_Space) { if(!e.isAutoRepeat) win.go("coll:"+modelData.id); e.accepted=true }
++              else if(e.key===Qt.Key_Up || e.key===Qt.Key_Down) {var i=index+(e.key===Qt.Key_Down ? 1 : -1);if(i>=collRepeater.count)tree.focusRow(0);else{var row=collRepeater.itemAt(Math.max(0,i));if(row)row.forceActiveFocus()};e.accepted=true}
++            }
++            onActiveFocusChanged: if(activeFocus) win.ensureSidebarItem(cr)
++            Rectangle { anchors.fill:parent; color:"transparent"; border.width:cr.activeFocus ? 2 : 0; border.color:Theme.accent; z:2 }
+             required property var modelData
+             readonly property bool on: win.collId === modelData.id
+             readonly property color kc: Theme.byKey(modelData.color)
+@@ -638,6 +684,7 @@
+         Label { x: 16; y: 10; height: 16; text: "TREE"; font.pixelSize: Theme.fsLabel; font.letterSpacing: 1.6; font.bold: true; color: Theme.fgDim }
+       }
+       Tree {
++        onFocusRequested:(item)=>win.ensureSidebarItem(item)
+         id: tree
+         anchors { top: treeHead.bottom; left: parent.left; right: parent.right; rightMargin: 1; bottom: parent.bottom; bottomMargin: 6 }
+         onNavigate: (p) => win.go(p)
+@@ -745,9 +792,12 @@
+   // ---------------------------------------------------------------- keyboard
+   Item {
+     id: keys
++    readonly property string actionIdentity:"main"
++    Accessible.ignored: true
+     anchors.fill: parent
+     focus: true
+     Keys.onPressed: (e) => {
++      if(prompt.visible || ctx.visible) {e.accepted=true;return}
+       var ctrl = e.modifiers & Qt.ControlModifier, shift = e.modifiers & Qt.ShiftModifier, alt = e.modifiers & Qt.AltModifier
+       var grid = win.viewMode === "grid"
+       if (win.lbOpen) {
+@@ -759,8 +809,12 @@
+         else if (e.key === Qt.Key_Return || e.key === Qt.Key_Enter) { win.openEntry(win.shown[win.lbIdx]); if (win.shown[win.lbIdx].isDir) win.lbOpen = false }
+         e.accepted = true; return
+       }
++      if(e.key===Qt.Key_Menu || (shift && e.key===Qt.Key_F10)) {
++        if(win.view==="folder") {if(win.cur>=0) win.rightClick(win.cur);ctx.openAt(14,toolbar.height+78,win.menuFor(win.cur))}
++        e.accepted=true;return
++      }
+       if (e.key === Qt.Key_Space && !ctrl && win.view === "folder") { win.openLightbox(); e.accepted = true; return }
+-      if (e.key === Qt.Key_B && ctrl) { if (!win.sidebarDocked) win.sidebarRequested = !win.sidebarRequested; e.accepted = true; return }
++      if (e.key === Qt.Key_B && ctrl) { if (!win.sidebarDocked) win.toggleSidebar(); e.accepted = true; return }
+       if (e.key === Qt.Key_I && ctrl) { win.toggleDetail(); e.accepted = true; return }
+       if ((e.key === Qt.Key_Plus || e.key === Qt.Key_Equal) && ctrl) { win.zoom = Math.min(300, win.zoom + 20); e.accepted = true; return }
+       if (e.key === Qt.Key_Minus && ctrl) { win.zoom = Math.max(110, win.zoom - 20); e.accepted = true; return }
+@@ -773,8 +827,8 @@
+       if (alt && e.key === Qt.Key_Home) { win.go(""); e.accepted = true; return }
+       if (e.key === Qt.Key_F5) { win.refresh(); Data.refreshAll(); e.accepted = true; return }
+       if (e.key === Qt.Key_Escape) {
+-        if (win.sidebarRequested) win.sidebarRequested = false
+-        else if (win.detailOverlayRequested) win.detailOverlayRequested = false
++        if (win.sidebarRequested) { win.sidebarRequested = false; win.focusMain() }
++        else if (win.detailOverlayRequested) { win.detailOverlayRequested = false; win.focusMain() }
+         else if (win.filter.length) win.filter = ""
+         else if (win.nsel) win.clearSel()
+         else if (win.searchLabel) win.go(win.cwd)
+--- live/explorer/FileArea.qml
++++ candidate/explorer/FileArea.qml
+@@ -1,3 +1,4 @@
++import "file:///home/hoskinson/window-integration-qa/files-keyboard/guard-stage/WindowAccessibilityV5"
+ import QtQuick
+ import qs.Commons
+ import qs.Ui
+@@ -39,6 +40,20 @@
+     } else listView.positionViewAtIndex(i, ListView.Contain)
+   }
+ 
++  function focusEntry(i) {
++    if(i<0 || i>=ex.shown.length) return
++    var path=ex.shown[i].path
++    ensure(i)
++    Qt.callLater(function(){
++      if(i>=ex.shown.length || ex.shown[i].path!==path) return
++      if(grid) {
++        gridList.forceLayout()
++        for(var r=0;r<rows.length;r++) if(rows[r].idx && rows[r].idx.indexOf(i)>=0) {
++          var row=gridList.itemAtIndex(r);if(row) row.focusEntry(i);break
++        }
++      } else { listView.forceLayout();var item=listView.itemAtIndex(i);if(item) item.forceActiveFocus() }
++    })
++  }
+   function scrollPosition() { return grid ? gridList.contentY : listView.contentY }
+ 
+   function scrollTo(y) { if (grid) gridList.contentY = y; else listView.contentY = y }
+@@ -86,7 +101,15 @@
+         { key: "kind", label: "KIND", w: area.wKind, off: area.wKind + 16 - 12 }
+       ]
+       delegate: Item {
++        id:sortHeader
++        readonly property string actionIdentity:"sort:"+modelData.key
+         required property var modelData
++        activeFocusOnTab: true
++        Accessible.role: Accessible.Button
++        Accessible.name: "Sort by " + modelData.key
++        Rectangle {anchors.fill:parent;color:"transparent";border.width:parent.activeFocus ? 1 : 0;border.color:Theme.accent;z:2}
++        Accessible.onPressAction: if(ActionState.allowed(sortHeader)) area.ex.setSort(modelData.key)
++        Keys.onPressed: (e) => { if(e.key===Qt.Key_Return || e.key===Qt.Key_Enter || e.key===Qt.Key_Space) {if(!e.isAutoRepeat) area.ex.setSort(modelData.key);e.accepted=true} }
+         height: header.height
+         visible: modelData.key === "name" || modelData.w > 0
+         x: modelData.key === "name" ? 52 : header.width - modelData.off
+@@ -117,6 +140,16 @@
+     add: Transition { NumberAnimation { property: "opacity"; from: 0; to: 1; duration: 140 } }
+     delegate: Item {
+       id: row
++      readonly property string actionIdentity:"file:"+modelData.path
++      activeFocusOnTab: index===Math.max(0,area.ex.cur)
++      Accessible.role: Accessible.ListItem
++      Accessible.name: modelData.name
++      Accessible.description: modelData.path
++      Accessible.selectable: true
++      Accessible.selected: sel
++      Rectangle {anchors.fill:parent;color:"transparent";border.width:row.activeFocus ? 1 : 0;border.color:Theme.accent;z:2}
++      Accessible.onPressAction: {if(!ActionState.allowed(row))return;var entry=modelData;area.ex.openEntry(entry)}
++      onActiveFocusChanged: if(activeFocus) {area.ex.cur=index;area.ex.kbd=true;area.ensure(index)}
+       required property var modelData
+       required property int index
+       width: listView.width; height: 34
+@@ -159,6 +192,7 @@
+     topMargin: 6; bottomMargin: 14
+     delegate: Item {
+       id: gr
++      function focusEntry(i) { var offset=modelData.idx ? modelData.idx.indexOf(i) : -1;var cell=offset<0 ? null : cellRepeater.itemAt(offset);if(cell) cell.forceActiveFocus() }
+       required property var modelData
+       required property int index
+       readonly property bool isHdr: modelData.h !== undefined
+@@ -174,9 +208,12 @@
+         visible: !gr.isHdr
+         x: area.pad; y: 0; spacing: area.gap
+         Repeater {
++          id: cellRepeater
+           model: gr.modelData.idx || []
+           delegate: Cell {
+             id: cl
++            activeFocusOnTab: modelData===Math.max(0,area.ex.cur)
++            onActiveFocusChanged: if(activeFocus) {area.ex.cur=modelData;area.ex.kbd=true;area.ensure(modelData)}
+             required property int modelData
+             readonly property var ent: area.ex.shown[modelData]
+             e: ent
+--- live/explorer/Lightbox.qml
++++ candidate/explorer/Lightbox.qml
+@@ -49,7 +49,7 @@
+       Ico { text: root.e ? Fs.iconFor(root.e) : ""; size: 16; color: root.e ? Fs.colorFor(root.e) : Theme.fg; anchors.verticalCenter: parent.verticalCenter }
+       Label { width: parent.width - 28; text: root.e ? root.e.name : ""; font.pixelSize: 15; font.bold: true; color: Theme.fgBright; anchors.verticalCenter: parent.verticalCenter }
+     }
+-    Btn { anchors { right: parent.right; rightMargin: 20; verticalCenter: parent.verticalCenter } icon: ""; onClicked: root.ex.lbOpen = false }
++    Btn { anchors { right: parent.right; rightMargin: 20; verticalCenter: parent.verticalCenter } accessibleName: "Close preview"; icon: ""; onClicked: root.ex.lbOpen = false }
+   }
+   // bottom bar
+   Item {
+@@ -60,6 +60,6 @@
+     Label { anchors { right: parent.right; rightMargin: 24 } y: 30; width: Math.max(0, parent.width - 130); color: Theme.fgDim; text: root.width < 600 ? "← → browse · Esc close" : "←  →  browse    Enter  open    Space / Esc  close" }
+   }
+   // arrows
+-  Btn { x: 24; anchors.verticalCenter: parent.verticalCenter; icon: ""; enabled2: root.ex.lbIdx > 0; onClicked: root.ex.lbMove(-1) }
+-  Btn { anchors { right: parent.right; rightMargin: 24; verticalCenter: parent.verticalCenter } icon: ""; enabled2: root.ex.lbIdx < root.ex.shown.length - 1; onClicked: root.ex.lbMove(1) }
++  Btn { x: 24; anchors.verticalCenter: parent.verticalCenter; accessibleName: "Previous file"; icon: ""; enabled2: root.ex.lbIdx > 0; onClicked: root.ex.lbMove(-1) }
++  Btn { anchors { right: parent.right; rightMargin: 24; verticalCenter: parent.verticalCenter } accessibleName: "Next file"; icon: ""; enabled2: root.ex.lbIdx < root.ex.shown.length - 1; onClicked: root.ex.lbMove(1) }
+ }
+--- live/explorer/PathBar.qml
++++ candidate/explorer/PathBar.qml
+@@ -1,3 +1,4 @@
++import "file:///home/hoskinson/window-integration-qa/files-keyboard/guard-stage/WindowAccessibilityV5"
+ import QtQuick
+ import qs.Commons
+ import qs.Ui
+@@ -139,6 +140,8 @@
+   Ico { visible: root.editing; text: ""; size: 12; color: Theme.accent; x: 10; anchors.verticalCenter: parent.verticalCenter }
+   TextInput {
+     id: input
++    readonly property string actionIdentity:"input:path"
++    Accessible.name: "Location"
+     visible: root.editing
+     anchors { left: parent.left; leftMargin: 32; right: parent.right; rightMargin: 10; verticalCenter: parent.verticalCenter }
+     font.family: Theme.font; font.pixelSize: Theme.fsBody + 1
+--- live/explorer/Tree.qml
++++ candidate/explorer/Tree.qml
+@@ -1,3 +1,4 @@
++import "file:///home/hoskinson/window-integration-qa/files-keyboard/guard-stage/WindowAccessibilityV5"
+ import QtQuick
+ import qs.Commons
+ import qs.Ui
+@@ -7,11 +8,17 @@
+   id: root
+   property bool showHidden: false
+   property string current: ""
++  signal focusRequested(var item)
+   signal navigate(string path)
+ 
+   ListModel { id: tm }
+   property alias model: tm
+ 
++  function focusRow(i) {
++    if(i<0 || i>=tm.count) return
++    list.currentIndex=i; list.positionViewAtIndex(i,ListView.Contain)
++    Qt.callLater(function(){var row=list.itemAtIndex(i);if(row) row.forceActiveFocus()})
++  }
+   function indexOfPath(p) { for (var i = 0; i < tm.count; i++) if (tm.get(i).path === p) return i; return -1 }
+ 
+   function init(then) {
+@@ -64,12 +71,39 @@
+ 
+   ListView {
+     id: list
++    Accessible.role: Accessible.Tree
++    Accessible.name: "Folders"
++    currentIndex: 0
+     anchors.fill: parent
+     clip: true
+     model: tm
+     boundsBehavior: Flickable.StopAtBounds
+     delegate: Item {
+       id: row
++      readonly property string actionIdentity:"tree:"+path
++      activeFocusOnTab: index===list.currentIndex
++      Accessible.role: Accessible.TreeItem
++      Accessible.name: name
++      Accessible.description: path + (expanded ? ", expanded" : ", collapsed")
++      Accessible.selectable: true
++      Accessible.selected: isCur
++      Accessible.onPressAction: { if(!ActionState.allowed(row))return;var p=path; root_.navigate(p) }
++      onActiveFocusChanged: if(activeFocus) { list.currentIndex=index;list.positionViewAtIndex(index,ListView.Contain);root_.focusRequested(row) }
++      Rectangle {anchors.fill:parent;color:"transparent";border.width:row.activeFocus ? 2 : 0;border.color:Theme.accent;z:2}
++      Keys.onPressed: (e) => {
++        if(e.key===Qt.Key_Up) root_.focusRow(index-1)
++        else if(e.key===Qt.Key_Down) root_.focusRow(index+1)
++        else if(e.key===Qt.Key_Home) root_.focusRow(0)
++        else if(e.key===Qt.Key_End) root_.focusRow(tm.count-1)
++        else if(e.key===Qt.Key_Right) { if(!expanded) root_.expand(index,null);else root_.focusRow(index+1) }
++        else if(e.key===Qt.Key_Left) {
++          if(expanded) root_.collapse(index)
++          else { for(var i=index-1;i>=0;i--) if(tm.get(i).depth<depth) {root_.focusRow(i);break} }
++        }
++        else if(e.key===Qt.Key_Return || e.key===Qt.Key_Enter || e.key===Qt.Key_Space) { if(!e.isAutoRepeat) root_.navigate(path) }
++        else return
++        e.accepted=true
++      }
+       required property int index
+       required property string path
+       required property string name
+@@ -84,7 +118,12 @@
+       Rectangle { anchors.fill: parent; color: row.isCur ? Theme.selection : (ma.containsMouse ? Theme.hover : "transparent") }
+       Rectangle { visible: row.isCur; width: 2; height: parent.height; color: Theme.accent }
+       Item {
++        onActiveFocusChanged:if(activeFocus)root_.focusRequested(chev)
+         id: chev
++        readonly property string actionIdentity:"tree-toggle:"+row.path
++        Accessible.role: Accessible.Button
++        Accessible.name: (row.expanded ? "Collapse " : "Expand ") + row.name
++        Accessible.onPressAction: { if(!ActionState.allowed(chev))return;var i=root_.indexOfPath(row.path); if(i>=0) root_.toggle(i) }
+         x: 10 + row.depth * 14; width: 18; height: parent.height
+         Ico { anchors.centerIn: parent; visible: !row.leaf && !row.loading; text: ""; size: 8; color: Theme.fgDim
+           rotation: row.expanded ? 90 : 0; Behavior on rotation { NumberAnimation { duration: Theme.dFast } } }
+--- live/explorer/Treemap.qml
++++ candidate/explorer/Treemap.qml
+@@ -1,3 +1,4 @@
++import "file:///home/hoskinson/window-integration-qa/files-keyboard/guard-stage/WindowAccessibilityV5"
+ import QtQuick
+ import qs.Commons
+ import qs.Ui
+@@ -9,6 +10,7 @@
+   property real total: 0
+   property var hovered: null
+   signal open(string path)
++  signal ensureVisible(var item)
+ 
+   function worst(row, side) {
+     var s = 0, mx = 0, mn = 1e18
+@@ -70,6 +72,14 @@
+     model: root.tiles
+     delegate: Rectangle {
+       id: t
++      readonly property string actionIdentity:"storage:"+modelData.path
++      activeFocusOnTab:true
++      Accessible.role:Accessible.Button
++      Accessible.name:modelData.name
++      Accessible.description:modelData.path + ", " + Fs.size(modelData.size)
++      Accessible.onPressAction:{if(!ActionState.allowed(t))return;var path=modelData.path;root.open(path)}
++      onActiveFocusChanged:if(activeFocus){root.hovered=modelData;root.ensureVisible(t)}
++      Keys.onPressed:(e)=>{if(e.key===Qt.Key_Return || e.key===Qt.Key_Enter || e.key===Qt.Key_Space){if(!e.isAutoRepeat)root.open(modelData.path);e.accepted=true}}
+       required property var modelData
+       readonly property bool hot: root.hovered === modelData
+       x: Math.round(modelData.x) + (modelData.level === 0 ? 0 : 0)
+@@ -79,7 +89,7 @@
+       z: modelData.level
+       color: modelData.level === 0 ? Theme.alpha(modelData.color, hot ? 0.24 : 0.13)
+                                    : Theme.alpha(modelData.color, hot ? 0.55 : 0.30)
+-      border.width: modelData.level === 0 ? 1 : 0
++      border.width:activeFocus ? 2 : (modelData.level === 0 ? 1 : 0)
+       border.color: Theme.alpha(modelData.color, hot ? 0.9 : 0.5)
+       Behavior on color { ColorAnimation { duration: Theme.dFast } }
+       Label {
+--- live/shell.qml
++++ candidate/shell.qml
+@@ -1,4 +1,5 @@
+ import QtQuick
++import "file:///home/hoskinson/window-integration-qa/files-keyboard/guard-stage/WindowAccessibilityV5"
+ import Quickshell
+ import Quickshell.Io
+ import "explorer"

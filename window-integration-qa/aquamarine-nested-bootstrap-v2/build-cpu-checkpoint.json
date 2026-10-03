@@ -1,0 +1,96 @@
+{
+  "result": "pass",
+  "records": [
+    {
+      "command": [
+        "/usr/bin/cmake",
+        "-S",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/candidate",
+        "-B",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/build",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_INSTALL_PREFIX=/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix",
+        "-DCMAKE_INSTALL_LIBDIR=lib"
+      ],
+      "exitCode": 0,
+      "stdout": "-- The C compiler identification is GNU 16.2.1\n-- The CXX compiler identification is GNU 16.2.1\n-- Detecting C compiler ABI info\n-- Detecting C compiler ABI info - done\n-- Check for working C compiler: /usr/bin/cc - skipped\n-- Detecting C compile features\n-- Detecting C compile features - done\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Found PkgConfig: /usr/bin/pkg-config (found version \"3.0.7\")\n-- Found OpenGL: /usr/lib/libOpenGL.so  found components: GLES3\n-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n-- Found Threads: TRUE\n-- Checking for modules 'libseat>=0.8.0;libinput>=1.26.0;wayland-client;wayland-protocols;hyprutils>=0.8.0;pixman-1;libdrm;gbm;libudev;libdisplay-info;hwdata'\n--   Found libseat, version 0.9.3\n--   Found libinput, version 1.31.3\n--   Found wayland-client, version 1.26.0\n--   Found wayland-protocols, version 1.49\n--   Found hyprutils, version 0.14.2\n--   Found pixman-1, version 0.46.4\n--   Found libdrm, version 2.4.134\n--   Found gbm, version 26.2.2-arch1.1\n--   Found libudev, version 261\n--   Found libdisplay-info, version 0.3.0\n--   Found hwdata, version 0.410\n-- Configuring aquamarine in Release\n-- Looking for sys/timerfd.h\n-- Looking for sys/timerfd.h - found\n-- Checking for module 'epoll-shim'\n--   Package 'epoll-shim' not found\n-- Found wayland-protocols at /usr/share/wayland-protocols\n-- Found wayland-scanner pkgdatadir at /usr/share/wayland\n-- Running /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/candidate/data/hwdata.sh < /usr/share/hwdata/pnp.ids\n-- Configuring done (1.9s)\n-- Generating done (0.1s)\n-- Build files have been written to: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/build\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/cmake",
+        "--build",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/build",
+        "--parallel",
+        "2"
+      ],
+      "exitCode": 0,
+      "stdout": "[  2%] Building CXX object CMakeFiles/aquamarine.dir/src/allocator/DRMDumb.cpp.o\n[  4%] Building CXX object CMakeFiles/aquamarine.dir/src/allocator/Allocator.cpp.o\n[  7%] Building CXX object CMakeFiles/aquamarine.dir/src/allocator/GBM.cpp.o\n[  9%] Building CXX object CMakeFiles/aquamarine.dir/src/allocator/Swapchain.cpp.o\n[ 12%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Backend.cpp.o\n[ 14%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/FrameScheduler.cpp.o\n[ 17%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Headless.cpp.o\n[ 19%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Logger.cpp.o\n[ 21%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Null.cpp.o\n[ 24%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Session.cpp.o\n[ 26%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Wayland.cpp.o\n[ 29%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/AsyncCommit.cpp.o\n[ 31%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/CommitThread.cpp.o\n[ 34%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/DRM.cpp.o\n[ 36%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/Math.cpp.o\n[ 39%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/Props.cpp.o\n[ 41%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/Renderer.cpp.o\n[ 43%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/impl/Atomic.cpp.o\n[ 46%] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/impl/Legacy.cpp.o\n[ 48%] Building CXX object CMakeFiles/aquamarine.dir/src/buffer/Buffer.cpp.o\n[ 51%] Building CXX object CMakeFiles/aquamarine.dir/src/input/Input.cpp.o\n[ 53%] Building CXX object CMakeFiles/aquamarine.dir/src/misc/Attachment.cpp.o\n[ 56%] Building CXX object CMakeFiles/aquamarine.dir/src/output/Output.cpp.o\n[ 58%] Building CXX object CMakeFiles/aquamarine.dir/src/output/OutputTiming.cpp.o\n[ 60%] Building CXX object CMakeFiles/aquamarine.dir/src/utils/FormatUtils.cpp.o\n[ 63%] Building CXX object CMakeFiles/aquamarine.dir/src/utils/Shared.cpp.o\n[ 65%] Building CXX object CMakeFiles/aquamarine.dir/protocols/wayland.cpp.o\n[ 68%] Building CXX object CMakeFiles/aquamarine.dir/protocols/xdg-shell.cpp.o\n[ 70%] Building CXX object CMakeFiles/aquamarine.dir/protocols/linux-dmabuf-v1.cpp.o\n[ 73%] Linking CXX shared library libaquamarine.so\n[ 80%] Built target aquamarine\n[ 82%] Building CXX object CMakeFiles/attachments.dir/tests/Attachments.cpp.o\n[ 85%] Building CXX object CMakeFiles/simpleWindow.dir/tests/SimpleWindow.cpp.o\n[ 87%] Linking CXX executable attachments\n[ 87%] Built target attachments\n[ 90%] Building CXX object CMakeFiles/output.dir/tests/Output.cpp.o\n[ 92%] Linking CXX executable output\n[ 92%] Built target output\n[ 95%] Building CXX object CMakeFiles/commitThread.dir/tests/CommitThread.cpp.o\n[ 97%] Linking CXX executable simpleWindow\n[ 97%] Built target simpleWindow\n[100%] Linking CXX executable commitThread\n[100%] Built target commitThread\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/cmake",
+        "--install",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/build"
+      ],
+      "exitCode": 0,
+      "stdout": "-- Install configuration: \"Release\"\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/lib/libaquamarine.so.0.15.0\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/lib/libaquamarine.so.14\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/lib/libaquamarine.so\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/allocator\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/allocator/Allocator.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/allocator/DRMDumb.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/allocator/GBM.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/allocator/Swapchain.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/backend\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/backend/Backend.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/backend/DRM.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/backend/FrameScheduler.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/backend/Headless.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/backend/Misc.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/backend/Null.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/backend/Session.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/backend/Wayland.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/backend/drm\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/backend/drm/Atomic.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/backend/drm/Legacy.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/buffer\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/buffer/Buffer.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/input\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/input/Input.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/misc\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/misc/Attachment.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/output\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/include/aquamarine/output/Output.hpp\n-- Installing: /home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/lib/pkgconfig/aquamarine.pc\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/test_lifecycle.cpp",
+        "-o",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/test-lifecycle-cpu"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/test-lifecycle-cpu"
+      ],
+      "exitCode": 0,
+      "stdout": "selection/lifecycle boundaries, staged sizes, reentrant-destruction/parent-loss helper states and 46656 exhaustive event traces passed\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/test_version.cpp",
+        "-o",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/test-version-cpu"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/test-version-cpu"
+      ],
+      "exitCode": 0,
+      "stdout": "72 actual C++ boundary/property checks PASS\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/check_wiring.py"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"result\": \"pass\",\n  \"checks\": [\n    {\n      \"name\": \"invalid explicit selection returns before backend construction\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"mandatory parent placed first and only explicit headless copied as auxiliary\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"failed mandatory startup clears implementations and returns false\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"late GPU explicit selection refused before DRM creation\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"toplevel only stages size, never publishes/frame-kicks\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"ACK sent before acknowledged state and deferred publication\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"configure deferred callback uses weak lifetime and poststate guard\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"shared public frame relay requires real lifecycle authority\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"idle frame guarded before scheduler frame emission\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"actual buffer commit refuses before snapshot/attach\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"destroy invalidates lifecycle before public destroy and callbacks\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"frame completion holds output and checks authority before present\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"parent error invalidates every lifecycle/scheduler and clears strict readiness\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"Wayland startup rejects real dispatch failure\",\n      \"passed\": true\n    }\n  ],\n  \"scope\": \"Structural source wiring only; real transport loss and callback reentrancy require native proof\",\n  \"sources\": {\n    \"/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/candidate/src/backend/Wayland.cpp\": \"4ceff7efb9a7d9564161104dded214abc601546c377475abf9912db2a1984f38\",\n    \"/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/candidate/src/backend/Backend.cpp\": \"7aab17d6e9b4ffa7ab3c3c8434832a387b48f3bb22be5310bea8036e70f8c41f\",\n    \"/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/candidate/src/backend/NestedLifecycle.hpp\": \"e2ce7bf808db125387ae7e1c1874e3db06cf61a9ccedfe097fd96bc94f10d3fc\"\n  }\n}\n",
+      "stderr": ""
+    }
+  ],
+  "nativeLoaded": false,
+  "nativeGUI": false,
+  "sourceSHA256": "4ceff7efb9a7d9564161104dded214abc601546c377475abf9912db2a1984f38"
+}

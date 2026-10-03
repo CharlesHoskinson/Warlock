@@ -1,0 +1,83 @@
+{
+  "scope": "approved exact marker oracle refinement only; no product/observer edits",
+  "parent": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2",
+  "parentFrozen": {
+    "sha256": "66e08491e144661659fcfd25cb8961509b00895f01e20a387ccf9e85c1597c5f",
+    "mode": 384
+  },
+  "rawFailureReport": {
+    "sha256": "16f6f9ed4bc4faa95ab90e0dd5abaa980918cff38948db90b41a1b8b9fbdca9b",
+    "mode": 384
+  },
+  "rootFailureAudit": {
+    "path": "/home/hoskinson/window-integration-qa/pin-max-native-b-v2-root-failure-v1.json",
+    "sha256": "c3857f9db485a651d28a9413d7bc722bd2066a8e189a2683e3390f3ee3e71224",
+    "mode": 384
+  },
+  "readOnlyMarkerAudit": {
+    "path": "/home/hoskinson/window-integration-qa/pin-max-native-b-v2-intent-marker-audit-v1/audit.json",
+    "sha256": "d434f7bffb8bc42867859dce0362fa3da96f855b9a406e8d09c386c99bdbecf7",
+    "mode": 420
+  },
+  "controllerPreimage": {
+    "sha256": "1921a912c510fe558ee6aa09e44637115e93e2ac2891f938affed5348c8163ca",
+    "mode": 420
+  },
+  "controllerCurrent": {
+    "sha256": "7d57856db44bc38fca71600854a34ee5320349cefe31412a566c3061721826f6",
+    "mode": 420
+  },
+  "testsPreimage": {
+    "sha256": "aa78571bcff89cf0b57ee81a082728c3a469d6f9d400ee3af594fb409f6b7067",
+    "mode": 420
+  },
+  "testsCurrent": {
+    "sha256": "576425abae3605806d6829228cf615e5be638a4fdd8d64131bdca35e5d4edc41",
+    "mode": 420
+  },
+  "pair": {
+    "sha256": "a0c5620c6bf57e50d0eb4d4036a37f106dd7a6d25a7f05e393fb7f52b9ff8c83",
+    "mode": 384
+  },
+  "CPU": {
+    "inherited": 16,
+    "new": 3,
+    "total": 19,
+    "log": {
+      "sha256": "df80b3ab9523254bec1a0ce97909f12d0baed392bf5040ea44c6c1bf37f0c6b3",
+      "mode": 420
+    }
+  },
+  "conservation": {
+    "sha256": "8ebd5d390c1d319abe0060bee754207860d5c0416d8d1186cfe9f0f5691172f8",
+    "mode": 420
+  },
+  "formalUnchanged": {
+    "named": 14,
+    "traces": 2000,
+    "maxSteps": 100,
+    "originalProofRetained": true,
+    "newFormalExpansionRequired": false
+  },
+  "runtimeDelta": [
+    "native_max_case conserved list omits only two intentional provenance markers",
+    "three exact typed phase predicates added"
+  ],
+  "intentSemantics": {
+    "afterPin": {
+      "restoreOrigin": true,
+      "restoreManaged": true
+    },
+    "afterUnpinAndFinal": {
+      "restoreOrigin": false,
+      "restoreManaged": true
+    }
+  },
+  "remaining18ImmediateConservation": true,
+  "oldProductBugClaim": false,
+  "priorOracleFieldClassificationMistaken": true,
+  "unpinAndReturnStillNativeUnobserved": true,
+  "nativeAuthorized": false,
+  "freezeAuthorized": false,
+  "fullCampaignBAccepted": false
+}

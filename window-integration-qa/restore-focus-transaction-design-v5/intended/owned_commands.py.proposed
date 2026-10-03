@@ -1,0 +1,235 @@
+"""Per-adapter subprocess facade with sealed helper source and durable jobs."""
+import fcntl
+import hashlib
+import os
+from pathlib import Path
+import shutil
+import stat
+import subprocess
+from recovery_resources import SEALS,material_fd
+
+class SealedFile:
+    def __init__(self,path):
+        self.original=str(Path(path).absolute());self.fd=None
+        source=os.open(path,os.O_RDONLY|os.O_CLOEXEC)
+        try:
+            before=os.fstat(source)
+            if not stat.S_ISREG(before.st_mode) or before.st_uid not in (0,os.getuid()) or before.st_mode&0o022 or not before.st_mode&0o111 or before.st_size>128*1024*1024:raise ValueError('selected helper executable material unsafe')
+            self.fd=os.memfd_create('motion-selected-helper',os.MFD_CLOEXEC|os.MFD_ALLOW_SEALING|getattr(os,'MFD_EXEC',0))
+            offset=0
+            while data:=os.pread(source,1048576,offset):
+                offset+=len(data);written=0
+                while written<len(data):written+=os.write(self.fd,data[written:])
+            after=os.fstat(source)
+            if (before.st_dev,before.st_ino,before.st_size,before.st_mtime_ns,before.st_ctime_ns)!=(after.st_dev,after.st_ino,after.st_size,after.st_mtime_ns,after.st_ctime_ns) or offset!=before.st_size:raise ValueError('helper source changed while sealing')
+            os.fchmod(self.fd,0o500);fcntl.fcntl(self.fd,fcntl.F_ADD_SEALS,SEALS);self.material=material_fd(self.fd,sealed=True)
+        except BaseException:self.close();raise
+        finally:os.close(source)
+    def close(self):
+        if self.fd is not None:os.close(self.fd);self.fd=None
+    def __enter__(self):return self
+    def __exit__(self,*args):self.close()
+
+class OwnedCommands:
+    PIPE=subprocess.PIPE;DEVNULL=subprocess.DEVNULL;STDOUT=subprocess.STDOUT
+    SubprocessError=subprocess.SubprocessError;CalledProcessError=subprocess.CalledProcessError;TimeoutExpired=subprocess.TimeoutExpired
+    def __init__(self,keeper,env,actor=None,*,readonly=None):self.keeper=keeper;self.env=dict(env);self.actor=actor;self.readonly=readonly
+    def classify(self,argv):
+        # IPC effects/exports require the service's durable returned completion;
+        # group closure alone cannot authorize replay of an unfinished native call.
+        if len(argv)>2 and argv[1]=='repl' and any(value in argv[2] for value in ('window_atlas(', 'window_snapshot(')):return 'native-export'
+        if len(argv)>1 and (argv[1] in ('minimize','restore','dispatch') or argv[1]=='repl' and (len(argv)==2 or 'retire_gesture_current' in argv[2])):return 'native-effect'
+        return 'helper'
+    def run(self,args,*,input=None,capture_output=False,timeout=None,check=False,**options):
+        from owned_launch import OwnedLaunch
+        if not isinstance(args,(list,tuple)) or not args or any(type(v) is not str for v in args):raise ValueError('exact helper argv required')
+        argv=list(args);env=options.pop('env',self.env)
+        if any(env.get(k)!=self.env[k] for k in ('XDG_RUNTIME_DIR','HYPRLAND_INSTANCE_SIGNATURE','WAYLAND_DISPLAY')):raise ValueError('helper selected session environment differs')
+        if self.readonly is not None:
+            result=self.readonly.run(argv,actor=self.actor,env=env,input=input,capture_output=capture_output,timeout=timeout,check=check,options=options)
+            if result is not None:return result
+        selected=shutil.which(argv[0],path=env.get('PATH')) if '/' not in argv[0] else argv[0]
+        if selected is None:raise FileNotFoundError(argv[0])
+        # Python/Bash adaptation retains the original full source path as argv0.
+        argv[0]=str(Path(selected).absolute())
+        if input is not None:
+            if 'stdin' in options:raise ValueError('input and stdin conflict')
+            options['stdin']=subprocess.PIPE
+        if capture_output:
+            if 'stdout' in options or 'stderr' in options:raise ValueError('capture output conflicts')
+            options.update(stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        from timeout_adapter import prepare
+        env,adapter=prepare(env)
+        with SealedFile(selected) as executable:
+            launch=OwnedLaunch(argv,env=env,keeper=self.keeper,kind=self.classify(argv),actor=self.actor,executable_fd=executable.fd,timeout_adapter=adapter,**options)
+        try:
+            stdout,stderr=launch.process.communicate(input,timeout=timeout)
+        except BaseException:
+            # A timed-out native call has no completion proof and stays in the
+            # durable job registry even after its direct leader is reaped.
+            launch.process.kill();launch.process.communicate();raise
+        finally:
+            if launch.process.poll() is not None:
+                for stream in (launch.process.stdin,launch.process.stdout,launch.process.stderr):
+                    if stream:stream.close()
+        if launch.process.returncode!=0 and self.classify(argv) in ('native-export','native-effect'):
+            # Returned failure can follow partial native work. Keep uncertain
+            # callback provenance so restart cannot waive that boundary.
+            result=subprocess.CompletedProcess(args,launch.process.returncode,stdout,stderr)
+            if check:result.check_returncode()
+            return result
+        launch.complete()
+        result=subprocess.CompletedProcess(args,launch.process.returncode,stdout,stderr)
+        if check:result.check_returncode()
+        return result
+    @staticmethod
+    def _focus_reply(buffer,expression,nonce,expected,completed):
+        """One exact echoed command, one typed response, one next CLI prompt."""
+        import json
+        if type(buffer) is not bytes or len(buffer)>1048576:raise ValueError('bounded focus output required')
+        echo=expression.encode('utf-8')+b'\n'
+        prefixes=(b'> '+echo,b'> \x1b[H\x1b[2J> '+echo)
+        prefix=next((value for value in prefixes if buffer.startswith(value)),None)
+        if prefix is None:
+            if any(value.startswith(buffer) for value in prefixes):return None
+            raise ValueError('focus CLI echo/prompt differs')
+        rest=buffer[len(prefix):]
+        end=rest.find(b'\n')
+        if end<0:
+            if len(rest)>4096:raise ValueError('focus receipt exceeds bound')
+            return None
+        def pairs(rows):
+            result={}
+            for name,value in rows:
+                if name in result:raise ValueError('duplicate focus receipt key')
+                result[name]=value
+            return result
+        try:receipt=json.loads(rest[:end].decode('utf-8'),object_pairs_hook=pairs,parse_constant=lambda value:(_ for _ in ()).throw(ValueError('nonfinite focus receipt')))
+        except (UnicodeError,json.JSONDecodeError) as error:raise ValueError('focus receipt is not exact JSON') from error
+        if (type(receipt) is not dict or set(receipt)!={'nonce','expected','completed','ok'}
+                or type(receipt['nonce']) is not str or receipt['nonce']!=nonce
+                or type(receipt['expected']) is not int or receipt['expected']!=expected
+                or type(receipt['completed']) is not int or receipt['completed']!=completed
+                or type(receipt['ok']) is not bool or receipt['ok'] is not True):raise ValueError('focus receipt nonce/ordered prefix/refusal differs')
+        tail=rest[end+1:]
+        if tail!=b'> ':
+            if b'> '.startswith(tail):return None
+            raise ValueError('focus response lacks exact next prompt')
+        return receipt,len(prefix)+end+1
+
+    def focus_transaction(self,owner,plans,*,nonce,record,current,deadline_ns):
+        import base64
+        import select
+        import time
+        from native_desktop import NativeDesktop
+        from native_runtime import PinnedNativeDesktop,NativeSession
+        from owned_launch import OwnedLaunch
+        from timeout_adapter import prepare
+        from copy import deepcopy
+        if type(self) is not OwnedCommands or self._focus_reply is not OwnedCommands._focus_reply:raise ValueError('canonical owned focus framing required')
+        if type(owner) not in (NativeDesktop,PinnedNativeDesktop) or owner.commands is not self:raise ValueError('exact native transaction owner required')
+        for name,canonical in (('_guard_destination',NativeDesktop._guard_destination),('_focus_pair_expression',NativeDesktop._focus_pair_expression)):
+            method=getattr(owner,name,None)
+            if getattr(method,'__func__',None) is not canonical or getattr(method,'__self__',None) is not owner:raise ValueError('exact native transaction guard/builder required')
+        session=getattr(owner,'session_guard',None)
+        if type(owner) is PinnedNativeDesktop and (type(session) is not NativeSession or getattr(session.verify,'__func__',None) is not NativeSession.verify):raise ValueError('exact inherited native session guard required')
+        if type(owner) is PinnedNativeDesktop:
+            from readonly_ipc import ReadonlyIPC
+            if type(self.readonly) is not ReadonlyIPC or self.readonly.guard is not session:raise ValueError('exact native source/lease issuer required')
+        if self.actor is None or type(deadline_ns) is not int or deadline_ns!=record.profile['receivedNs']+2000000000:raise ValueError('exact actor receipt deadline required')
+        if not isinstance(plans,list) or not 1<=len(plans)<=64:raise ValueError('bounded exact focus transaction required')
+        immutable=deepcopy(plans);expected=2*len(immutable);completed=0
+        expressions=[owner._focus_pair_expression(window,plan,nonce,expected,index*2) for index,(window,plan) in enumerate(immutable)]
+        packet=record.profile.get('ownedDestinationTransaction')
+        if type(packet) is not dict or type(packet.get('nonce')) is not str or type(packet.get('expected')) is not int or type(packet.get('deadlineNs')) is not int or packet.get('nonce')!=nonce or packet.get('expected')!=expected or packet.get('deadlineNs')!=deadline_ns or packet.get('identities')!=[list(__import__('scene_controller').key(window)) for window,plan in immutable]:raise ValueError('durable focus intent differs')
+        selected=shutil.which('hyprctl',path=self.env.get('PATH'))
+        if selected is None:raise FileNotFoundError('hyprctl')
+        if type(owner) is PinnedNativeDesktop:
+            from recovery_resources import material_path
+            if selected!=self.readonly.executable or material_path(selected)!=self.readonly.executable_material:raise ValueError('selected native CLI source differs')
+        argv=[str(Path(selected).absolute()),'repl'];env,adapter=prepare(self.env)
+        packet.update(expressions=expressions,expressionSHA256=[hashlib.sha256(expression.encode()).hexdigest() for expression in expressions])
+        output=bytearray();error_output=bytearray();buffer=b'';launch=None;stdout_eof=False;stderr_eof=False
+        def remaining():
+            if not current():raise ValueError('destination transaction superseded')
+            seconds=(deadline_ns-time.monotonic_ns())/1000000000
+            if seconds<=0:raise TimeoutError('original scene receipt deadline in focus transaction')
+            return min(2,seconds)
+        def observe():
+            nonlocal buffer,stdout_eof,stderr_eof
+            streams=[]
+            if not stdout_eof:streams.append(launch.process.stdout)
+            if not stderr_eof:streams.append(launch.process.stderr)
+            ready,_,_=select.select(streams,[],[],remaining())
+            if not ready:raise TimeoutError('original scene receipt deadline waiting for focus output')
+            for stream in ready:
+                data=os.read(stream.fileno(),65536)
+                if stream is launch.process.stdout:
+                    if not data:stdout_eof=True
+                    output.extend(data);buffer+=data
+                else:
+                    if not data:stderr_eof=True
+                    error_output.extend(data)
+                if len(output)+len(error_output)>1048576:raise ValueError('focus transcript exceeds bound')
+                if error_output:raise ValueError('focus transaction stderr lacks normal proof')
+        def session_check():
+            if session is not None:session.verify()
+        try:
+            remaining();session_check()
+            with SealedFile(selected) as executable:
+                if type(owner) is PinnedNativeDesktop and executable.material['sha256']!=self.readonly.executable_material['sha256']:raise ValueError('sealed native CLI bytes differ')
+                launch=OwnedLaunch(argv,env=env,keeper=self.keeper,kind='native-effect',actor=self.actor,
+                    executable_fd=executable.fd,timeout_adapter=adapter,
+                    stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+            packet['job']=launch.job;packet['ownership']=deepcopy(launch.ownership)
+            os.set_blocking(launch.process.stdin.fileno(),False)
+            for (window,plan),expression in zip(immutable,expressions,strict=True):
+                session_check();owner._guard_destination(window,plan);remaining()
+                data=(expression+'\n').encode();offset=0
+                while offset<len(data):
+                    _,ready,_=select.select([], [launch.process.stdin], [], remaining())
+                    if not ready:raise TimeoutError('original scene receipt deadline sending focus request')
+                    try:offset+=os.write(launch.process.stdin.fileno(),data[offset:])
+                    except BlockingIOError:continue
+                while True:
+                    parsed=self._focus_reply(buffer,expression,nonce,expected,completed+2)
+                    if parsed is not None:
+                        receipt,consumed=parsed;remaining();buffer=buffer[consumed:];completed=receipt['completed'];packet['completed']=completed
+                        break
+                    if stdout_eof:raise EOFError('focus process EOF before exact receipt/prompt')
+                    observe()
+                session_check()
+            # Receipt six must arrive before expiry. Normal final process drain
+            # uses only its remaining original budget, never the CLI's five s.
+            remaining();launch.process.stdin.close();launch.process.stdin=None
+            while not(stdout_eof and stderr_eof):observe()
+            launch.process.wait(timeout=remaining())
+            if launch.process.returncode!=0 or buffer!=b'> ' or error_output:raise ValueError('focus full EOF/normal result differs')
+            session_check()
+            for window,plan in immutable:owner._guard_destination(window,plan)
+            monitors=owner.base.monitors()
+            for window,plan in immutable:
+                expected_monitor=plan['monitor']
+                matches=[monitor for monitor in monitors if monitor.get('name')==expected_monitor['name']]
+                if len(matches)!=1 or any(type(matches[0].get(field)) is not type(expected_monitor[field]) or matches[0][field]!=expected_monitor[field] for field in ('id','name','x','y','width','height','scale','transform')):raise ValueError('destination output changed before normal completion')
+            if not current():raise ValueError('destination transaction superseded at completion')
+            launch.complete()
+            return [plan['monitor'] for window,plan in immutable]
+        except BaseException:
+            # Retain the native-effect job as uncertain; gone/exit0 is not a
+            # substitute for every typed prefix and post-effect guard.
+            if launch is not None and launch.process.poll() is None:launch.process.kill()
+            if launch is not None:
+                tail,errors=launch.process.communicate();output.extend(tail or b'');error_output.extend(errors or b'')
+            raise
+        finally:
+            packet.update(expressions=expressions,stdoutBase64=base64.b64encode(output[:1048576]).decode(),
+                stderrBase64=base64.b64encode(error_output[:1048576]).decode(),completed=completed,
+                normalComplete=bool(launch is not None and launch.closed))
+            if launch is not None:
+                for stream in (launch.process.stdin,launch.process.stdout,launch.process.stderr):
+                    if stream:stream.close()
+
+    def check_output(self,args,**options):
+        if 'stdout' in options:raise ValueError('check_output controls stdout')
+        return self.run(args,stdout=subprocess.PIPE,check=True,**options).stdout

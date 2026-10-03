@@ -1,0 +1,659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WnckPager: Libwnck Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Libwnck Reference Manual">
+<link rel="up" href="widgets.html" title="Part IV. Libwnck Widgets">
+<link rel="prev" href="WnckActionMenu.html" title="WnckActionMenu">
+<link rel="next" href="WnckSelector.html" title="WnckSelector">
+<meta name="generator" content="GTK-Doc V1.34.0 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#WnckPager.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#WnckPager.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#WnckPager.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#WnckPager.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="widgets.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="WnckActionMenu.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="WnckSelector.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="WnckPager"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="WnckPager.top_of_page"></a>WnckPager</span></h2>
+<p>WnckPager — a pager widget, showing the content of workspaces.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="WnckPager.stability-level"></a><h2>Stability Level</h2>
+<acronym title="Unstable interfaces are experimental or transitional. They are typically used to
+give outside developers early access to new or rapidly changing technology, or
+to provide an interim solution to a problem where a more general solution is
+anticipated. No claims are made about either source or binary compatibility from
+one minor release to the next.
+
+The Unstable interface level is a warning that these interfaces are  subject to
+change without warning and should not be used in unbundled products.
+
+Given such caveats, customer impact need not be a factor when considering
+incompatible changes to an Unstable interface in a major or minor release.
+Nonetheless, when such changes are introduced, the changes should still be
+mentioned in the release notes for the affected release.
+"><span class="acronym">Unstable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="WnckPager.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GtkWidget</span> *
+</td>
+<td class="function_name">
+<a class="link" href="WnckPager.html#wnck-pager-new" title="wnck_pager_new ()">wnck_pager_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GtkWidget</span> *
+</td>
+<td class="function_name">
+<a class="link" href="WnckPager.html#wnck-pager-new-with-handle" title="wnck_pager_new_with_handle ()">wnck_pager_new_with_handle</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="WnckPager.html#wnck-pager-set-orientation" title="wnck_pager_set_orientation ()">wnck_pager_set_orientation</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="WnckPager.html#wnck-pager-set-n-rows" title="wnck_pager_set_n_rows ()">wnck_pager_set_n_rows</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="WnckPager.html#wnck-pager-set-display-mode" title="wnck_pager_set_display_mode ()">wnck_pager_set_display_mode</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="WnckPager.html#wnck-pager-set-scroll-mode" title="wnck_pager_set_scroll_mode ()">wnck_pager_set_scroll_mode</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="WnckPager.html#wnck-pager-set-show-all" title="wnck_pager_set_show_all ()">wnck_pager_set_show_all</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="WnckPager.html#wnck-pager-set-shadow-type" title="wnck_pager_set_shadow_type ()">wnck_pager_set_shadow_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="WnckPager.html#wnck-pager-set-wrap-on-scroll" title="wnck_pager_set_wrap_on_scroll ()">wnck_pager_set_wrap_on_scroll</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="WnckPager.html#wnck-pager-get-wrap-on-scroll" title="wnck_pager_get_wrap_on_scroll ()">wnck_pager_get_wrap_on_scroll</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="WnckPager.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> *</td>
+<td class="property_name"><a class="link" href="WnckPager.html#WnckPager--handle" title="The “handle” property">handle</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="WnckPager.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="WnckPager.html#WnckPager-struct" title="struct WnckPager">WnckPager</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="WnckPager.html#WnckPagerDisplayMode" title="enum WnckPagerDisplayMode">WnckPagerDisplayMode</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="WnckPager.html#WnckPagerScrollMode" title="enum WnckPagerScrollMode">WnckPagerScrollMode</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="WnckPager.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GInitiallyUnowned
+        <span class="lineart">╰──</span> GtkWidget
+            <span class="lineart">╰──</span> WnckPager
+</pre>
+</div>
+<div class="refsect1">
+<a name="WnckPager.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+WnckPager implements
+ AtkImplementorIface and  GtkBuildable.</p>
+</div>
+<div class="refsect1">
+<a name="WnckPager.description"></a><h2>Description</h2>
+<p>A <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> shows a miniature view of the workspaces, representing managed
+windows by small rectangles, and allows the user to initiate various window
+manager actions by manipulating these representations. The <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> offers
+ways to move windows between workspaces and to change the current workspace.</p>
+<p>Alternatively, a <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> can be configured to only show the names of the
+workspace instead of their contents.</p>
+<p>The <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> is also responsible for setting the layout of the workspaces.
+Since only one application can be responsible for setting the layout on a
+screen, the <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> automatically tries to obtain the manager selection
+for the screen and only sets the layout if it owns the manager selection.
+See <a class="link" href="WnckPager.html#wnck-pager-set-orientation" title="wnck_pager_set_orientation ()"><code class="function">wnck_pager_set_orientation()</code></a> and <a class="link" href="WnckPager.html#wnck-pager-set-n-rows" title="wnck_pager_set_n_rows ()"><code class="function">wnck_pager_set_n_rows()</code></a> to change the
+layout.</p>
+</div>
+<div class="refsect1">
+<a name="WnckPager.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="wnck-pager-new"></a><h3>wnck_pager_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">GtkWidget</span> *
+wnck_pager_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<div class="warning"><p><code class="literal">wnck_pager_new</code> is deprecated and should not be used in newly-written code.</p></div>
+<p>Creates a new <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a>. The <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> will show the <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> of the
+<a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> it is on.</p>
+<div class="refsect3">
+<a name="wnck-pager-new.returns"></a><h4>Returns</h4>
+<p> a newly created <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-pager-new-with-handle"></a><h3>wnck_pager_new_with_handle ()</h3>
+<pre class="programlisting"><span class="returnvalue">GtkWidget</span> *
+wnck_pager_new_with_handle (<em class="parameter"><code><a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> *handle</code></em>);</pre>
+<p>Creates a new <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a>. The <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> will show the <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> of the
+<a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> it is on.</p>
+<div class="refsect3">
+<a name="wnck-pager-new-with-handle.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>handle</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="wnck-pager-new-with-handle.returns"></a><h4>Returns</h4>
+<p> a newly created <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-pager-set-orientation"></a><h3>wnck_pager_set_orientation ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+wnck_pager_set_orientation (<em class="parameter"><code><a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> *pager</code></em>,
+                            <em class="parameter"><code><span class="type">GtkOrientation</span> orientation</code></em>);</pre>
+<p>Tries to change the orientation of the layout of <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> on the
+<a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> <em class="parameter"><code>pager</code></em>
+ is watching. Since no more than one application should
+set this property of a <a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> at a time, setting the layout is not
+guaranteed to work.</p>
+<p>If <em class="parameter"><code>orientation</code></em>
+ is <code class="literal">GTK_ORIENTATION_HORIZONTAL</code>, the <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> will be
+laid out in rows, with the first <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> in the top left corner.</p>
+<p>If <em class="parameter"><code>orientation</code></em>
+ is <code class="literal">GTK_ORIENTATION_VERTICAL</code>, the <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> will be
+laid out in columns, with the first <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> in the top left corner.</p>
+<p>For example, if the layout contains one row, but the orientation of the
+layout is vertical, the <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> will display a column of <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a>.</p>
+<p>Note that setting the orientation will have an effect on the geometry
+management: if <em class="parameter"><code>orientation</code></em>
+ is <code class="literal">GTK_ORIENTATION_HORIZONTAL</code>,
+<code class="literal">GTK_SIZE_REQUEST_WIDTH_FOR_HEIGHT</code> will be used as request mode; if
+<em class="parameter"><code>orientation</code></em>
+ is <code class="literal">GTK_ORIENTATION_VERTICAL</code>, GTK_SIZE_REQUEST_HEIGHT_FOR_WIDTH
+will be used instead.</p>
+<p>If <em class="parameter"><code>pager</code></em>
+ has not been added to a widget hierarchy, the call will fail
+because <em class="parameter"><code>pager</code></em>
+ can't know the screen on which to modify the orientation.</p>
+<div class="refsect3">
+<a name="wnck-pager-set-orientation.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>orientation</p></td>
+<td class="parameter_description"><p>orientation to use for the layout of <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> on the
+<a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> <em class="parameter"><code>pager</code></em>
+is watching.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="wnck-pager-set-orientation.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the layout of <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> has been successfully
+changed or did not need to be changed, <code class="literal">FALSE</code> otherwise.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-pager-set-n-rows"></a><h3>wnck_pager_set_n_rows ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+wnck_pager_set_n_rows (<em class="parameter"><code><a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> *pager</code></em>,
+                       <em class="parameter"><code><span class="type">int</span> n_rows</code></em>);</pre>
+<p>Tries to change the number of rows in the layout of <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> on the
+<a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> <em class="parameter"><code>pager</code></em>
+ is watching. Since no more than one application should
+set this property of a <a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> at a time, setting the layout is not
+guaranteed to work.</p>
+<p>If <em class="parameter"><code>pager</code></em>
+ has not been added to a widget hierarchy, the call will fail
+because <em class="parameter"><code>pager</code></em>
+ can't know the screen on which to modify the layout.</p>
+<div class="refsect3">
+<a name="wnck-pager-set-n-rows.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_rows</p></td>
+<td class="parameter_description"><p>the number of rows to use for the layout of <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> on the
+<a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> <em class="parameter"><code>pager</code></em>
+is watching.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="wnck-pager-set-n-rows.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the layout of <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> has been successfully
+changed or did not need to be changed, <code class="literal">FALSE</code> otherwise.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-pager-set-display-mode"></a><h3>wnck_pager_set_display_mode ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+wnck_pager_set_display_mode (<em class="parameter"><code><a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> *pager</code></em>,
+                             <em class="parameter"><code><a class="link" href="WnckPager.html#WnckPagerDisplayMode" title="enum WnckPagerDisplayMode"><span class="type">WnckPagerDisplayMode</span></a> mode</code></em>);</pre>
+<p>Sets the display mode for <em class="parameter"><code>pager</code></em>
+ to <em class="parameter"><code>mode</code></em>
+.</p>
+<div class="refsect3">
+<a name="wnck-pager-set-display-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>mode</p></td>
+<td class="parameter_description"><p>a display mode.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-pager-set-scroll-mode"></a><h3>wnck_pager_set_scroll_mode ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+wnck_pager_set_scroll_mode (<em class="parameter"><code><a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> *pager</code></em>,
+                            <em class="parameter"><code><a class="link" href="WnckPager.html#WnckPagerScrollMode" title="enum WnckPagerScrollMode"><span class="type">WnckPagerScrollMode</span></a> scroll_mode</code></em>);</pre>
+<p>Sets <em class="parameter"><code>pager</code></em>
+ to react to input device scrolling in one of the
+available scroll modes.</p>
+<div class="refsect3">
+<a name="wnck-pager-set-scroll-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>scroll_mode</p></td>
+<td class="parameter_description"><p>a scroll mode.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.36</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-pager-set-show-all"></a><h3>wnck_pager_set_show_all ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+wnck_pager_set_show_all (<em class="parameter"><code><a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> *pager</code></em>,
+                         <em class="parameter"><code><span class="type">gboolean</span> show_all_workspaces</code></em>);</pre>
+<p>Sets <em class="parameter"><code>pager</code></em>
+ to display all <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> or not, according to
+<em class="parameter"><code>show_all_workspaces</code></em>
+.</p>
+<div class="refsect3">
+<a name="wnck-pager-set-show-all.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>show_all_workspaces</p></td>
+<td class="parameter_description"><p>whether to display all <a class="link" href="WnckWorkspace.html" title="WnckWorkspace"><span class="type">WnckWorkspace</span></a> in <em class="parameter"><code>pager</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-pager-set-shadow-type"></a><h3>wnck_pager_set_shadow_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+wnck_pager_set_shadow_type (<em class="parameter"><code><a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> *pager</code></em>,
+                            <em class="parameter"><code><span class="type">GtkShadowType</span> shadow_type</code></em>);</pre>
+<p>Sets the shadow type for <em class="parameter"><code>pager</code></em>
+ to <em class="parameter"><code>shadow_type</code></em>
+. The main use of this
+function is proper integration of <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> in panels with non-system
+backgrounds.</p>
+<div class="refsect3">
+<a name="wnck-pager-set-shadow-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>shadow_type</p></td>
+<td class="parameter_description"><p>a shadow type.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-pager-set-wrap-on-scroll"></a><h3>wnck_pager_set_wrap_on_scroll ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+wnck_pager_set_wrap_on_scroll (<em class="parameter"><code><a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> *pager</code></em>,
+                               <em class="parameter"><code><span class="type">gboolean</span> wrap_on_scroll</code></em>);</pre>
+<p>Sets the wrapping behavior of the <em class="parameter"><code>pager</code></em>
+. Setting it to <code class="literal">TRUE</code> will
+wrap arround to the start when scrolling over the end and vice
+versa. By default it is set to <code class="literal">FALSE</code>.</p>
+<div class="refsect3">
+<a name="wnck-pager-set-wrap-on-scroll.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>wrap_on_scroll</p></td>
+<td class="parameter_description"><p>a boolean.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.24.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-pager-get-wrap-on-scroll"></a><h3>wnck_pager_get_wrap_on_scroll ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+wnck_pager_get_wrap_on_scroll (<em class="parameter"><code><a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> *pager</code></em>);</pre>
+<div class="refsect3">
+<a name="wnck-pager-get-wrap-on-scroll.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>pager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="wnck-pager-get-wrap-on-scroll.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the <em class="parameter"><code>pager</code></em>
+wraps workspaces on a scroll event that
+hits a border, <code class="literal">FALSE</code> otherwise.</p>
+</div>
+<p class="since">Since: 3.24.0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="WnckPager.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="WnckPager-struct"></a><h3>struct WnckPager</h3>
+<pre class="programlisting">struct WnckPager;</pre>
+<p>The <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> struct contains only private fields and should not be
+directly accessed.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="WnckPagerDisplayMode"></a><h3>enum WnckPagerDisplayMode</h3>
+<p>Mode defining what a <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> will display.</p>
+<div class="refsect3">
+<a name="WnckPagerDisplayMode.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="WNCK-PAGER-DISPLAY-NAME:CAPS"></a>WNCK_PAGER_DISPLAY_NAME</p></td>
+<td class="enum_member_description">
+<p>the <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> will only display the names of the
+workspaces.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="WNCK-PAGER-DISPLAY-CONTENT:CAPS"></a>WNCK_PAGER_DISPLAY_CONTENT</p></td>
+<td class="enum_member_description">
+<p>the <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> will display a representation
+for each window in the workspaces.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="WnckPagerScrollMode"></a><h3>enum WnckPagerScrollMode</h3>
+<p>Mode defining in which order scrolling on a <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> will cycle through workspaces.</p>
+<div class="refsect3">
+<a name="WnckPagerScrollMode.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="WNCK-PAGER-SCROLL-2D:CAPS"></a>WNCK_PAGER_SCROLL_2D</p></td>
+<td class="enum_member_description">
+<p>given that the workspaces are set up in multiple rows,
+scrolling on the <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> will cycle through the workspaces as if on a
+2-dimensional map. Example cycling order with 2 rows and 4 workspaces: 1 3 2 4.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="WNCK-PAGER-SCROLL-1D:CAPS"></a>WNCK_PAGER_SCROLL_1D</p></td>
+<td class="enum_member_description">
+<p>the <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> will always cycle workspaces in a linear
+manner, irrespective of how many rows are configured. (Hint: Better for mice)
+Example cycling order with 2 rows and 4 workspaces: 1 2 3 4.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="WNCK-PAGER-SCROLL-NONE:CAPS"></a>WNCK_PAGER_SCROLL_NONE</p></td>
+<td class="enum_member_description">
+<p>the <a class="link" href="WnckPager.html" title="WnckPager"><span class="type">WnckPager</span></a> will not cycle workspaces. Since 3.40.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.36</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="WnckPager.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="WnckPager--handle"></a><h3>The <code class="literal">“handle”</code> property</h3>
+<pre class="programlisting">  “handle”                   <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> *</pre>
+<p>handle.</p>
+<p>Owner: WnckPager</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="WnckPager.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body>
+</html>

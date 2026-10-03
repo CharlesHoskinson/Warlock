@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_profiles" xml:lang="kk">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_documents"/>
+    <title type="sort">9. Профильдер</title>
+    <desc>Бірнеше конфигурацияны қолдау</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Профильдер</title>
+  <p>Orca профильдері қажетті баптауларға тез қол жеткізу үшін бірнеше конфигурацияны сақтауға және жүктеуге мүмкіндік береді.</p>
+  <steps>
+    <title>Жаңа профильді сақтау</title>
+    <item>
+      <p><link xref="preferences">Orca баптаулары</link> сұхбат терезесіне өтіңіз.</p>
+    </item>
+    <item>
+      <p>Қалаған баптауларды өзгертіңіз.</p>
+    </item>
+    <item>
+      <p><gui>Жалпы</gui> бетінде <gui>Басқаша сақтау</gui> батырмасын басыңыз.</p>
+    </item>
+    <item>
+      <p>Пайда болған <gui>Профильді басқаша сақтау</gui> сұхбат терезесіне жаңа профиль атын теріңіз.</p>
+    </item>
+    <item>
+      <p><gui>Профильді басқаша сақтау</gui> сұхбат терезесінде <gui>OK</gui> батырмасын басыңыз.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Бар профильді жүктеу</title>
+    <item>
+      <p><link xref="preferences">Orca баптаулары</link> сұхбат терезесіне өтіңіз.</p>
+    </item>
+    <item>
+      <p><gui>Жалпы</gui> бетінде <gui>Белсенді профиль</gui> құрама тізімінен жүктелетін профильді таңдаңыз.</p>
+    </item>
+    <item>
+      <p><gui>Жүктеу</gui> батырмасын басыңыз.</p>
+    </item>
+    <item>
+      <p>Сізден растау сұралады. <gui>Иә</gui> батырмасын басыңыз.</p>
+    </item>
+    <item>
+      <p><gui>OK</gui> батырмасын басыңыз.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Бар профильді өзгерту</title>
+    <item>
+      <p>Өзгерткіңіз келетін профильді жүктеу үшін жоғарыда сипатталған қадамдарды орындаңыз.</p>
+    </item>
+    <item>
+      <p>Жаңа профильді сақтау үшін жоғарыда сипатталған қадамдарды орындаңыз.</p>
+    </item>
+    <item>
+      <p>Жаңа профиль аты сұралғанда, ағымдағы профильмен бірдей атты теріңіз. <gui>OK</gui> батырмасын басқанда, сізге атаулар қайшылығы бар екені айтылады.</p>
+    </item>
+    <item>
+      <p>Бар профильді жаңа баптаулармен алмастырғыңыз келетінін растау үшін <gui>Иә</gui> батырмасын басыңыз.</p>
+    </item>
+  </steps>
+  <steps>
+    <title><gui>Іске қосылу профилін</gui> өзгерту</title>
+    <item>
+      <p><link xref="preferences">Orca баптаулары</link> сұхбат терезесіне өтіңіз.</p>
+    </item>
+    <item>
+      <p><gui>Жалпы</gui> бетінде <gui>Іске қосылу профилі</gui> құрама тізімінен жүктелетін профильді таңдаңыз.</p>
+    </item>
+    <item>
+      <p><gui>OK</gui> батырмасын басыңыз. Келесі жолы <app>Orca</app>-ны іске қосқанда, жаңадан таңдалған профиль пайдаланылады.</p>
+    </item>
+  </steps>
+</page>

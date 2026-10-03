@@ -1,0 +1,1320 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 0,
+      effectIds: [],
+      epoch: 1,
+      ids: [1, 2, 3],
+      observedEpoch: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 0,
+      effectIds: [],
+      epoch: 2,
+      ids: [1, 12, 3],
+      observedEpoch: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 0,
+      effectIds: [],
+      epoch: 2,
+      ids: [1, 12, 3],
+      observedEpoch: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 0,
+      effectIds: [],
+      epoch: 2,
+      ids: [1, 12, 3],
+      observedEpoch: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 2,
+      effectIds: [1, 12, 3],
+      epoch: 2,
+      ids: [1, 12, 3],
+      observedEpoch: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 2,
+      effectIds: [1, 12, 3],
+      epoch: 3,
+      ids: [1, 12, 13],
+      observedEpoch: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 2,
+      effectIds: [1, 12, 3],
+      epoch: 4,
+      ids: [1, 22, 13],
+      observedEpoch: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 2,
+      effectIds: [1, 12, 3],
+      epoch: 5,
+      ids: [1, 22, 13],
+      observedEpoch: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 5,
+      effectIds: [1, 22, 13],
+      epoch: 5,
+      ids: [1, 22, 13],
+      observedEpoch: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 5,
+      effectIds: [1, 22, 13],
+      epoch: 6,
+      ids: [1, 32, 13],
+      observedEpoch: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 5,
+      effectIds: [1, 22, 13],
+      epoch: 7,
+      ids: [1, 32, 23],
+      observedEpoch: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 5,
+      effectIds: [1, 22, 13],
+      epoch: 7,
+      ids: [1, 32, 23],
+      observedEpoch: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 7,
+      ids: [1, 32, 23],
+      observedEpoch: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 8,
+      ids: [1, 32, 23],
+      observedEpoch: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 8,
+      ids: [1, 32, 23],
+      observedEpoch: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 9,
+      ids: [1, 32, 33],
+      observedEpoch: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 10,
+      ids: [1, 32, 43],
+      observedEpoch: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 10,
+      ids: [1, 32, 43],
+      observedEpoch: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 10,
+      ids: [1, 32, 43],
+      observedEpoch: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 10,
+      ids: [1, 32, 43],
+      observedEpoch: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 11,
+      ids: [1, 32, 53],
+      observedEpoch: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 12,
+      ids: [1, 42, 53],
+      observedEpoch: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 13,
+      ids: [1, 52, 53],
+      observedEpoch: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 13,
+      ids: [1, 52, 53],
+      observedEpoch: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 13,
+      ids: [1, 52, 53],
+      observedEpoch: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 14,
+      ids: [11, 52, 53],
+      observedEpoch: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 15,
+      ids: [11, 52, 63],
+      observedEpoch: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 16,
+      ids: [21, 52, 63],
+      observedEpoch: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 16,
+      ids: [21, 52, 63],
+      observedEpoch: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 17,
+      ids: [21, 52, 63],
+      observedEpoch: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 18,
+      ids: [31, 52, 63],
+      observedEpoch: 0
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 7,
+      effectIds: [1, 32, 23],
+      epoch: 19,
+      ids: [31, 52, 63],
+      observedEpoch: 0
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 19,
+      effectIds: [31, 52, 63],
+      epoch: 19,
+      ids: [31, 52, 63],
+      observedEpoch: 0
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 19,
+      effectIds: [31, 52, 63],
+      epoch: 19,
+      ids: [31, 52, 63],
+      observedEpoch: 0
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 19,
+      effectIds: [31, 52, 63],
+      epoch: 20,
+      ids: [41, 52, 63],
+      observedEpoch: 0
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 19,
+      effectIds: [31, 52, 63],
+      epoch: 21,
+      ids: [51, 52, 63],
+      observedEpoch: 0
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 21,
+      effectIds: [51, 52, 63],
+      epoch: 21,
+      ids: [51, 52, 63],
+      observedEpoch: 0
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 21,
+      effectIds: [51, 52, 63],
+      epoch: 21,
+      ids: [51, 52, 63],
+      observedEpoch: 0
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 21,
+      effectIds: [51, 52, 63],
+      epoch: 21,
+      ids: [51, 52, 63],
+      observedEpoch: 0
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 21,
+      effectIds: [51, 52, 63],
+      epoch: 21,
+      ids: [51, 52, 63],
+      observedEpoch: 21
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 21,
+      effectIds: [51, 52, 63],
+      epoch: 21,
+      ids: [51, 52, 63],
+      observedEpoch: 21
+    }
+}
+
+[State 41]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 21,
+      effectIds: [51, 52, 63],
+      epoch: 21,
+      ids: [51, 52, 63],
+      observedEpoch: 21
+    }
+}
+
+[State 42]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 21,
+      effectIds: [51, 52, 63],
+      epoch: 22,
+      ids: [51, 52, 63],
+      observedEpoch: 21
+    }
+}
+
+[State 43]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 21,
+      effectIds: [51, 52, 63],
+      epoch: 22,
+      ids: [51, 52, 63],
+      observedEpoch: 21
+    }
+}
+
+[State 44]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 22,
+      effectIds: [51, 52, 63],
+      epoch: 22,
+      ids: [51, 52, 63],
+      observedEpoch: 21
+    }
+}
+
+[State 45]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 22,
+      effectIds: [51, 52, 63],
+      epoch: 22,
+      ids: [51, 52, 63],
+      observedEpoch: 21
+    }
+}
+
+[State 46]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 22,
+      effectIds: [51, 52, 63],
+      epoch: 23,
+      ids: [51, 52, 63],
+      observedEpoch: 21
+    }
+}
+
+[State 47]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 22,
+      effectIds: [51, 52, 63],
+      epoch: 23,
+      ids: [51, 52, 63],
+      observedEpoch: 21
+    }
+}
+
+[State 48]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 22,
+      effectIds: [51, 52, 63],
+      epoch: 24,
+      ids: [51, 52, 73],
+      observedEpoch: 21
+    }
+}
+
+[State 49]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 22,
+      effectIds: [51, 52, 63],
+      epoch: 24,
+      ids: [51, 52, 73],
+      observedEpoch: 24
+    }
+}
+
+[State 50]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 24,
+      effectIds: [51, 52, 73],
+      epoch: 24,
+      ids: [51, 52, 73],
+      observedEpoch: 24
+    }
+}
+
+[State 51]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 24,
+      effectIds: [51, 52, 73],
+      epoch: 25,
+      ids: [51, 62, 73],
+      observedEpoch: 24
+    }
+}
+
+[State 52]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 24,
+      effectIds: [51, 52, 73],
+      epoch: 26,
+      ids: [51, 62, 73],
+      observedEpoch: 24
+    }
+}
+
+[State 53]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 26,
+      effectIds: [51, 62, 73],
+      epoch: 26,
+      ids: [51, 62, 73],
+      observedEpoch: 24
+    }
+}
+
+[State 54]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 26,
+      effectIds: [51, 62, 73],
+      epoch: 27,
+      ids: [51, 62, 73],
+      observedEpoch: 24
+    }
+}
+
+[State 55]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 26,
+      effectIds: [51, 62, 73],
+      epoch: 28,
+      ids: [51, 62, 83],
+      observedEpoch: 24
+    }
+}
+
+[State 56]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 26,
+      effectIds: [51, 62, 73],
+      epoch: 29,
+      ids: [51, 72, 83],
+      observedEpoch: 24
+    }
+}
+
+[State 57]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 26,
+      effectIds: [51, 62, 73],
+      epoch: 30,
+      ids: [51, 82, 83],
+      observedEpoch: 24
+    }
+}
+
+[State 58]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 30,
+      effectIds: [51, 82, 83],
+      epoch: 30,
+      ids: [51, 82, 83],
+      observedEpoch: 24
+    }
+}
+
+[State 59]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 30,
+      effectIds: [51, 82, 83],
+      epoch: 30,
+      ids: [51, 82, 83],
+      observedEpoch: 30
+    }
+}
+
+[State 60]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 30,
+      effectIds: [51, 82, 83],
+      epoch: 31,
+      ids: [51, 82, 83],
+      observedEpoch: 30
+    }
+}
+
+[State 61]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 30,
+      effectIds: [51, 82, 83],
+      epoch: 31,
+      ids: [51, 82, 83],
+      observedEpoch: 30
+    }
+}
+
+[State 62]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 31,
+      ids: [51, 82, 83],
+      observedEpoch: 30
+    }
+}
+
+[State 63]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 31,
+      ids: [51, 82, 83],
+      observedEpoch: 30
+    }
+}
+
+[State 64]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 31,
+      ids: [51, 82, 83],
+      observedEpoch: 30
+    }
+}
+
+[State 65]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 31,
+      ids: [51, 82, 83],
+      observedEpoch: 30
+    }
+}
+
+[State 66]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 31,
+      ids: [51, 82, 83],
+      observedEpoch: 30
+    }
+}
+
+[State 67]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 31,
+      ids: [51, 82, 83],
+      observedEpoch: 30
+    }
+}
+
+[State 68]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 31,
+      ids: [51, 82, 83],
+      observedEpoch: 31
+    }
+}
+
+[State 69]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 32,
+      ids: [51, 82, 93],
+      observedEpoch: 31
+    }
+}
+
+[State 70]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 33,
+      ids: [51, 82, 93],
+      observedEpoch: 31
+    }
+}
+
+[State 71]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 34,
+      ids: [51, 82, 103],
+      observedEpoch: 31
+    }
+}
+
+[State 72]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 34,
+      ids: [51, 82, 103],
+      observedEpoch: 34
+    }
+}
+
+[State 73]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 34,
+      ids: [51, 82, 103],
+      observedEpoch: 34
+    }
+}
+
+[State 74]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 35,
+      ids: [51, 82, 103],
+      observedEpoch: 34
+    }
+}
+
+[State 75]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 35,
+      ids: [51, 82, 103],
+      observedEpoch: 34
+    }
+}
+
+[State 76]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 35,
+      ids: [51, 82, 103],
+      observedEpoch: 35
+    }
+}
+
+[State 77]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 36,
+      ids: [51, 82, 113],
+      observedEpoch: 35
+    }
+}
+
+[State 78]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 36,
+      ids: [51, 82, 113],
+      observedEpoch: 35
+    }
+}
+
+[State 79]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 36,
+      ids: [51, 82, 113],
+      observedEpoch: 35
+    }
+}
+
+[State 80]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 37,
+      ids: [51, 92, 113],
+      observedEpoch: 35
+    }
+}
+
+[State 81]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 38,
+      ids: [51, 92, 123],
+      observedEpoch: 35
+    }
+}
+
+[State 82]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 39,
+      ids: [51, 92, 133],
+      observedEpoch: 35
+    }
+}
+
+[State 83]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 40,
+      ids: [51, 92, 133],
+      observedEpoch: 35
+    }
+}
+
+[State 84]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 41,
+      ids: [51, 102, 133],
+      observedEpoch: 35
+    }
+}
+
+[State 85]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 41,
+      ids: [51, 102, 133],
+      observedEpoch: 35
+    }
+}
+
+[State 86]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 31,
+      effectIds: [51, 82, 83],
+      epoch: 42,
+      ids: [51, 102, 133],
+      observedEpoch: 35
+    }
+}
+
+[State 87]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 42,
+      effectIds: [51, 102, 133],
+      epoch: 42,
+      ids: [51, 102, 133],
+      observedEpoch: 35
+    }
+}
+
+[State 88]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 42,
+      effectIds: [51, 102, 133],
+      epoch: 42,
+      ids: [51, 102, 133],
+      observedEpoch: 35
+    }
+}
+
+[State 89]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 42,
+      effectIds: [51, 102, 133],
+      epoch: 43,
+      ids: [51, 112, 133],
+      observedEpoch: 35
+    }
+}
+
+[State 90]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 43,
+      effectIds: [51, 112, 133],
+      epoch: 43,
+      ids: [51, 112, 133],
+      observedEpoch: 35
+    }
+}
+
+[State 91]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 43,
+      effectIds: [51, 112, 133],
+      epoch: 44,
+      ids: [51, 112, 143],
+      observedEpoch: 35
+    }
+}
+
+[State 92]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 43,
+      effectIds: [51, 112, 133],
+      epoch: 44,
+      ids: [51, 112, 143],
+      observedEpoch: 35
+    }
+}
+
+[State 93]
+{
+  s:
+    {
+      effect: true,
+      effectEpoch: 44,
+      effectIds: [51, 112, 143],
+      epoch: 44,
+      ids: [51, 112, 143],
+      observedEpoch: 35
+    }
+}
+
+[State 94]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 44,
+      effectIds: [51, 112, 143],
+      epoch: 44,
+      ids: [51, 112, 143],
+      observedEpoch: 35
+    }
+}
+
+[State 95]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 44,
+      effectIds: [51, 112, 143],
+      epoch: 44,
+      ids: [51, 112, 143],
+      observedEpoch: 35
+    }
+}
+
+[State 96]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 44,
+      effectIds: [51, 112, 143],
+      epoch: 44,
+      ids: [51, 112, 143],
+      observedEpoch: 35
+    }
+}
+
+[State 97]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 44,
+      effectIds: [51, 112, 143],
+      epoch: 45,
+      ids: [51, 112, 153],
+      observedEpoch: 35
+    }
+}
+
+[State 98]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 44,
+      effectIds: [51, 112, 143],
+      epoch: 46,
+      ids: [51, 112, 163],
+      observedEpoch: 35
+    }
+}
+
+[State 99]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 44,
+      effectIds: [51, 112, 143],
+      epoch: 47,
+      ids: [61, 112, 163],
+      observedEpoch: 35
+    }
+}
+
+[State 100]
+{
+  s:
+    {
+      effect: false,
+      effectEpoch: 44,
+      effectIds: [51, 112, 143],
+      epoch: 47,
+      ids: [61, 112, 163],
+      observedEpoch: 35
+    }
+}
+
+[ok] No violation found (165ms at 12121 traces/second).
+Trace length statistics: max=101, min=101, average=101.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x7b15999f3ab9ab04 --backend=rust to reproduce.

@@ -1,0 +1,20 @@
+--- /dev/null
++++ candidate-v19/test_modal_region.cpp
+@@ -0,0 +1,17 @@
++#include "modalRegionAuthority.hpp"
++#include <cassert>
++#include <iostream>
++#include <limits>
++int main() {
++ int cases=0;
++ for(bool x11:{false,true}) for(bool region:{false,true}) for(double scale:{1.,1.5,2.}) {
++  int w=0,x=0;
++  const bool got=ModalRegionAuthority::bodyInput(x11,scale,[&]{++w;assert(!x11);return region;},[&](double actual){++x;assert(x11 && actual==scale);return region;});
++  assert(got==region && w==int(!x11) && x==int(x11));++cases;
++ }
++ for(double scale:{0.,-1.,std::numeric_limits<double>::infinity(),std::numeric_limits<double>::quiet_NaN()}) {
++  int called=0;assert(!ModalRegionAuthority::bodyInput(true,scale,[&]{++called;return true;},[&](double){++called;return true;}));assert(called==0);++cases;
++ }
++ int w=0,x=0;assert(ModalRegionAuthority::bodyInput(false,0.,[&]{++w;return true;},[&](double){++x;return false;}));assert(w==1 && x==0);++cases;
++ std::cout<<cases<<" actual mixed-protocol API selector/region/scale/callback checks PASS\n";
++}

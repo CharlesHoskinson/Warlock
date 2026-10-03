@@ -1,0 +1,26 @@
+{
+  "updatedUTC": "2026-10-01T22:23:40.567758+00:00",
+  "manifestSHA256": "12d529ddbd0404f6688ecd65c08fde0da5d176aefbe0ca73037813fd95f8fa15",
+  "all1621ProducerBytesModesExact": true,
+  "all49ProducerLinksExact": true,
+  "originalSamplerCausalOracleAndTargetVerifierUnchanged": true,
+  "reviewed": [
+    "bounded finite clipped coverage derived from original top-left half-open center expression by binary search",
+    "ordinary renderer path and shader unchanged; explicit diagnostic fullscreen over only",
+    "actual coverage and sample uniforms inspected componentwise before append",
+    "full viewport and actual vertex pointer/state/vector checked before full-screen draw",
+    "previous prefix preserved outside exact bounds and immutable sampler/program roles retained",
+    "control full-output rectangle and every frame member rectangle independently bound by current output generation",
+    "same token/output/sequence/extents plus18 actual defaulttarget copies/readpairs and44 originalpixels required",
+    "normal partial/full allocation teardown and ordinary resource path remain",
+    "no pixel diagnostic acceptance implies production cadence or native readiness"
+  ],
+  "consumerAssertions": 204,
+  "pythonChecks": 70,
+  "formalNamed": 46,
+  "formalModels": 5,
+  "samplesPerModel": 2000,
+  "nativeAccepted": false,
+  "productionAccepted": false,
+  "mainWrites": false
+}

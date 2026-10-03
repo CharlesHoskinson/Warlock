@@ -1,0 +1,469 @@
+{
+  "result": "failure-preserved-and-reviewed",
+  "nativeResult": "fail",
+  "nativeTerminalExitCode": 1,
+  "reportSHA256": "aa3123578c27ecdd6a0d9e2f0f1f2ddd5a0215012366dc89022c95bccbb7afce",
+  "manifestSHA256": "68a1996ac38b01635b0e91af59cf6c4214f6e4fe165446826f3f076e4b7662bf",
+  "checksPassed": 17,
+  "checksRecorded": 19,
+  "originalBaseline38Accepted": false,
+  "fault34Run": false,
+  "primaryFailure": "Actual complete native family restore timeout before metadata validation",
+  "originalDeadlineUnchanged": true,
+  "timingPerturbed": true,
+  "timingComplete": true,
+  "timingEvents": 2160,
+  "startedTerminalHelperPairs": 38,
+  "all38HelpersNormalZeroAndGone": true,
+  "helperRefusalObserved": false,
+  "failedHelperGateDoesNotProveAbnormalExit": true,
+  "serviceQueries": 5,
+  "harnessQueries": 1,
+  "clientsNormalZeroAndGone": 3,
+  "normalNativeUnload": true,
+  "mainPreservationPassed": 15,
+  "runtimeGone": true,
+  "unknownDescendants": 0,
+  "cleanupErrors": 0,
+  "completeFrozenInputsVerified": 22414,
+  "linksVerified": 287,
+  "selectedTimingSpans": [
+    {
+      "id": 37,
+      "thread": 1232293,
+      "parent": null,
+      "symbol": "SceneController.prepare",
+      "offsetMs": 353.205028,
+      "durationMs": 1428.707336
+    },
+    {
+      "id": 618,
+      "thread": 1233042,
+      "parent": null,
+      "symbol": "SceneController.prepare",
+      "offsetMs": 5671.202481,
+      "durationMs": 2152.378113
+    },
+    {
+      "id": 706,
+      "thread": 1233042,
+      "parent": 618,
+      "symbol": "NativeDesktop.plan_destinations",
+      "offsetMs": 6312.062325,
+      "durationMs": 421.668979
+    },
+    {
+      "id": 779,
+      "thread": 1233042,
+      "parent": 618,
+      "symbol": "NativeDesktop.apply_destination",
+      "offsetMs": 6734.790893,
+      "durationMs": 210.237897
+    },
+    {
+      "id": 808,
+      "thread": 1233042,
+      "parent": 618,
+      "symbol": "NativeDesktop.apply_destination",
+      "offsetMs": 6949.697385,
+      "durationMs": 261.424063
+    },
+    {
+      "id": 837,
+      "thread": 1233042,
+      "parent": 618,
+      "symbol": "NativeDesktop.apply_destination",
+      "offsetMs": 7213.571001,
+      "durationMs": 202.762912
+    },
+    {
+      "id": 876,
+      "thread": 1233042,
+      "parent": 618,
+      "symbol": "NativeDesktop.refresh_destination",
+      "offsetMs": 7454.058351,
+      "durationMs": 181.433067
+    },
+    {
+      "id": 899,
+      "thread": 1233042,
+      "parent": 618,
+      "symbol": "NativeDesktop.refresh_destination",
+      "offsetMs": 7637.618574,
+      "durationMs": 184.964867
+    }
+  ],
+  "artifacts": {
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/main-before.json": {
+      "sha256": "518402eff3fc4dfabe575d79422dfdd48398a343a497ea7560de4b0750ce7dcd",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/taskbar-shell.log": {
+      "sha256": "776cb63966d450ef993b64ba1f37eb6606d5bae2a071d10f6c9b51e6401e96fc",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/hydrate-helper.json": {
+      "sha256": "df75d552db3571805fe522f200c6b3ecda08bea53c77075fc3b98652b13affa7",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/qt-fixture.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-taskbar.png": {
+      "sha256": "7848bde4d52af506b7e9d57d35eda491e8fe1ca29ee04aa8867dff21541e8305",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/family-service.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-modules-before.json": {
+      "sha256": "292a2f3dcddd31df7e1c6eed4c1261f6eb4d47dd8b9088369de8804019561ec6",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-modules-before-confirmation.json": {
+      "sha256": "9313933f8bfe99e0f221bd50ed5cdbc1871b605545425eb4fa0de17fd02b5fc2",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-modules-at-owner-bind.json": {
+      "sha256": "2acfc70d9dc8769a1961e5c2335bc7b1bbd20fa4c7cf3e1a3aa95983c7c43b3e",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-modules-at-owner-bind-confirmation.json": {
+      "sha256": "ce9112f50c0353245d5fd7d837601d8574efa34d914b391bdc880130e299eeee",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-owner-binding.json": {
+      "sha256": "174dc126615607752b51c488d325fc9be167d1ce1a3923125c7e655f494fce28",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-modules-owner-post-disk.json": {
+      "sha256": "0442a051d60476de4af1e683fe3d9cf7178c9696cba3c3b68d2ede91f051fc9e",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-modules-owner-post-disk-confirmation.json": {
+      "sha256": "b5913686d292941056a1515b14991a4a1824e7a88e5dec4092875f448e7d8640",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-owner-binding-confirmation.json": {
+      "sha256": "ccb40e553f5058a90774689cd7e7a92abd30a3306e57b493a61a1c4e2adddd42",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-owned-data-probe.json": {
+      "sha256": "c34fd5d37b82710274eebab43b18a9a81170653fdeb85cd6cd515f344745c681",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-owned-data-probe-confirmation.json": {
+      "sha256": "cd9b69da8b4ca6f755884d43c3ed55e3da2f0af0ebfb4f55c844f6cb6aff4700",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-linked-actor-1.json": {
+      "sha256": "041f767aebf9c610ccb41e9b4d4ef836efee5ccdb9bd4c8fbf25bf8c627a71bc",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-linked-actor-1-confirmation.json": {
+      "sha256": "68f29f21d3384f27cba7b2fba24729a5e66e77a633a5bb49ebc055bcff6b170e",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-retirement-1.json": {
+      "sha256": "2238d35b52f3ec50dd71383a190e99580fc2591bff0b91f746139b424bba44ef",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-linked-actor-2.json": {
+      "sha256": "4018b69e424832d6725c7c52bb1ddc8345d901d831194d8c50dcf4560bde0c6e",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-linked-actor-2-confirmation.json": {
+      "sha256": "1b00c3404945bc7fccf536ce6a804c243263efa05257a57ea1de8ffe49d4ca07",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-retirement-2.json": {
+      "sha256": "80cc1551b55aff1bb5bb32b6faeca09782eb54a65abd0bb12c3ff70de506072b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-live-events.json": {
+      "sha256": "9db08c1e3f9928b0332746cf6a75854834e9d81864821227e953a990630753ee",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-preparation-timing.json": {
+      "sha256": "fb4b4bf2040305eb541a975a71044b403510e04f0b905c42253fa2ea5fdad614",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-modules-after.json": {
+      "sha256": "f16e553055f43d27026c70f426608febd5e5bc97c09464fd99bc69269d006db2",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-modules-after-confirmation.json": {
+      "sha256": "c64cb3127e39fca746318c4769acf83509bdbcc8fafa9539f5f43d7e1db33133",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-terminal-binding.json": {
+      "sha256": "b6301ba7f7578720fbe9e8afa9ffe7ecdd4b72ea764f48f43357e5834a3eb0c3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-modules-final-confirm.json": {
+      "sha256": "b5d4c224fb47ac9cf6240000d4497a112c7f5549dd3b07851f603b24f6dd143c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-modules-final-confirm-confirmation.json": {
+      "sha256": "5618fb5964186b643ac64e910bdd5653e6e15a3483aba4806cd456c7d2992b23",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/actual-terminal-binding-confirmation.json": {
+      "sha256": "7d1371e8354b670db7ef4e6121101f1b4d22b564587e5f2e48db98edab6a4eda",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-evidence.json": {
+      "sha256": "8f5db865dd5847d10abed565f3226c0407c6b8c501aaa41c4dd70d1712a4a78f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/completed-helpers.json": {
+      "sha256": "e18a2703b760cf0aa5002c6941cb2f25fcdbb15bfea46ca9bc1f1214283e0979",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/report.json": {
+      "sha256": "aa3123578c27ecdd6a0d9e2f0f1f2ddd5a0215012366dc89022c95bccbb7afce",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/before-main/clients-raw.json": {
+      "sha256": "bf6548c857075e9eb824a8c06b781eae5b1c8fa3ea143138a299ef32e0a5b9ae",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/before-main/files-state.json": {
+      "sha256": "cba8d229c58470f66a3f27d7ac7273ceca9fa3ef29657b73d7c07dd1974ad05f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/before-main/catalog-before.json": {
+      "sha256": "3ff553b6cf5c21b8db8923641e239bebf2b6048ee8250e61bfea0b256cb7a362",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/privateBus.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/weston.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/weston-renderer.log": {
+      "sha256": "ffe42b877d154f8b85d6e7a2dcc3bc98c9c7004d142a9044eda9216b524f88d6",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/dmabuf-probe.stdout": {
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/dmabuf-probe.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/hyprland.log": {
+      "sha256": "9fde6a8a5430697c99a5ed48afc9671ee5b0087d39e4893c701021597459dd7a",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/host-evidence.json": {
+      "sha256": "e96ba2a61d94e5a731805c4b82d49fe88d6e88ac2a057c4c6d6cd16693302165",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/qt/events.jsonl": {
+      "sha256": "afdaca191f5309f1c91bf9db0436099e492b4871ce05420fc3b67e9fa60e2810",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/qt/state.json": {
+      "sha256": "50f90edbddf9a1504611e7c839d4dcdb0deacdde38fcfacddcddcff701c3ceca",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/qt/command.json": {
+      "sha256": "364e29626dcce88d1bc1015444857da43c8b4dc6504255a1887af71339bddd23",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-epochs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png": {
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-epochs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png": {
+      "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-epochs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png": {
+      "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-cache-pairs/9344b1afc92ac5e3295e41ee54ce4b1c7af5c5b47222dd05ddaaa1688a7b0521.json": {
+      "sha256": "9344b1afc92ac5e3295e41ee54ce4b1c7af5c5b47222dd05ddaaa1688a7b0521",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-cache-pairs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png": {
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-cache-pairs/ac7b96fb7ab9255745729a83bf9627af7594fc0291fede62b112c019563f5eec.json": {
+      "sha256": "ac7b96fb7ab9255745729a83bf9627af7594fc0291fede62b112c019563f5eec",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-cache-pairs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png": {
+      "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-cache-pairs/5b539cf228ff57ebf265f2b1135530ffb1e38beb38c34cb02bf1bec43097fe11.json": {
+      "sha256": "5b539cf228ff57ebf265f2b1135530ffb1e38beb38c34cb02bf1bec43097fe11",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-cache-pairs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png": {
+      "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-atlases/full-18000000-1232078-86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png": {
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-atlases/full-18000000-1232078.json": {
+      "sha256": "9344b1afc92ac5e3295e41ee54ce4b1c7af5c5b47222dd05ddaaa1688a7b0521",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-atlases/full-18000002-1232078-26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png": {
+      "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-atlases/full-18000002-1232078.json": {
+      "sha256": "ac7b96fb7ab9255745729a83bf9627af7594fc0291fede62b112c019563f5eec",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-atlases/full-18000003-1232078-a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png": {
+      "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/service-atlases/full-18000003-1232078.json": {
+      "sha256": "5b539cf228ff57ebf265f2b1135530ffb1e38beb38c34cb02bf1bec43097fe11",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/terminal-helpers/helper-events.jsonl": {
+      "sha256": "7de704fde633883d6318ce1f6391cd48595057bd697fcfd89eaeaea109da7ca2",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/terminal-helpers/helper-config.json": {
+      "sha256": "94a82b63102b41535f2631134652dec316376be773e6c6f6053392ef3f1898d6",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/terminal-helpers/archive.json": {
+      "sha256": "c28bbd17990b28cf26123a72276e92f17a4f22a7a4a02307ca23ca5ac7215f57",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/after-main/clients-raw.json": {
+      "sha256": "5b6b9f5bac787aa7218749cb9fb2d75dd168586f40aad04dbc7df6abee355d57",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/after-main/files-state.json": {
+      "sha256": "cba8d229c58470f66a3f27d7ac7273ceca9fa3ef29657b73d7c07dd1974ad05f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/after-main/catalog-comparison.json": {
+      "sha256": "28f0ff4a5d14f2e349eaf1ca67257eb5e4c8ca388670f718ca86151864dc9a15",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/after-main/preservation.json": {
+      "sha256": "b38d225ccd0526cb03dde18ad780e725c3d1f0f0b2f512441b33ef708c31cbbf",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hyprland.lua": {
+      "sha256": "5578351d6d0332ecd422df4d06c202ebd4850672d95243ff2b1431cfc561bb32",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr-snap-groups/state.json": {
+      "sha256": "981c3add2f20bb26466b5a6a8a4684dd2c9c94a0b267351726dcf9c1bdcea3ba",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr-window-previews/0x62a262720fd0.json": {
+      "sha256": "edb74d3a39dc0c798e346d2c3233d2e84f990fd723bb1993a3900b11688ea588",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr-window-previews/0x62a262a87ad0.json": {
+      "sha256": "1abf3641f9bc859429eb97886476d3c485380541acd534bdb9cf06567c1629b0",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr-window-previews/0x62a2631f0450.json": {
+      "sha256": "c3526b1dab1f4c81b67b271185e34eff9db84c10fbb9ec73155a76d42ea48e29",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr-window-previews/0x62a2632136d0.json": {
+      "sha256": "ed66e098cd3080c0f2e6546f961378db936559258aca178a5939106363b9a324",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr-windowctl/0x62a262720fd0.monitor.json": {
+      "sha256": "e14c0c7a42d08f125a89045509ea16c8997481affdab9578a77c11ab0c31809b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr-windowctl/0x62a2631f0450.monitor.json": {
+      "sha256": "5c8a145f179e18707204d53a7a5407ebcce05f11852c0b58bb5af2b59412dde6",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr-windowctl/0x62a2632136d0.monitor.json": {
+      "sha256": "e30db91684d5bab5a8c07020c1dd305d776bcd82c63efebb42772991eae732b1",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/taskbar-home/helper-config.json": {
+      "sha256": "94a82b63102b41535f2631134652dec316376be773e6c6f6053392ef3f1898d6",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/taskbar-home/.config/omarchy/shell.json": {
+      "sha256": "c3dcdacec4c7d4b42c30b3ffbece6ef7946f579bba1ed0f1dac72dcfc71fe3b4",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/taskbar-home/.config/omarchy/taskbar-pins.json": {
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/taskbar-home/.config/omarchy/taskbar-session-order.json": {
+      "sha256": "a13542e28c2c829cc7f6049ddf60baabb1dc6435fa95701637a0f20f279d3143",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/taskbar-home/.config/omarchy/taskbar-settings.json": {
+      "sha256": "0c1a51f36542408c3b076f5a829cfac16bd82abb07ca3cd13c0f76731d210c3a",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/taskbar-home/.config/omarchy/plugins/hoskinson.windows/manifest.json": {
+      "sha256": "5380cf44ab03cf6a78f0423ae04a18e854b2490a2bce90287120eee4e126fcc1",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/quickshell/by-id/qeeqrxwamt/log.log": {
+      "sha256": "cd4165c799e435a88d33b4b4d6905fe1cee7d07afafdea7ca7e17597492903a5",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/quickshell/by-id/qeeqrxwamt/log.qslog": {
+      "sha256": "d4ba2cfd2461b4f4aa91cc1d97ffe12697b6c36956cfef2461962bd853ea0583",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr-window-motion/qa-family-service/journal.json": {
+      "sha256": "325dc351828f7fae6c770de27e4f2d17413052c95596e6fe9c317dcb6f1f520c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr-window-motion/qa-family-service/keeper-9f20d0e2dfd84cffb2cb7f1b8f5efdcb.json": {
+      "sha256": "d76e6124bbeb64d3c3bcddb8f1543a7176d4cdfef756faf8e1bda7fb2bbbcc44",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr-window-motion/qa-family-service/snapshot-cache/full-18000000-1232078.json": {
+      "sha256": "9344b1afc92ac5e3295e41ee54ce4b1c7af5c5b47222dd05ddaaa1688a7b0521",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr-window-motion/qa-family-service/snapshot-cache/full-18000002-1232078.json": {
+      "sha256": "ac7b96fb7ab9255745729a83bf9627af7594fc0291fede62b112c019563f5eec",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr-window-motion/qa-family-service/snapshot-cache/full-18000003-1232078.json": {
+      "sha256": "5b539cf228ff57ebf265f2b1135530ffb1e38beb38c34cb02bf1bec43097fe11",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790979901_229027238/hyprland.log": {
+      "sha256": "9105f74edba254e6c5e4952d8bd13c0fbb9987144e25ecc31d6bb6223a1cf082",
+      "mode": 384
+    }
+  },
+  "mainChanged": false,
+  "rootDiagnosticCorrections": [
+    "one SyntaxError and one absent optional-field KeyError in read-only projections did not edit evidence",
+    "preliminary helper-refusal inference corrected; raw38terminal exits all0"
+  ],
+  "hostNormalExitCodesProven": false,
+  "fullWindowsParityAccepted": false
+}

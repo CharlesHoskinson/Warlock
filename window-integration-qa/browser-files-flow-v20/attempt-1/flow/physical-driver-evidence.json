@@ -1,0 +1,2564 @@
+{
+  "scope": "Bounded private driver before/after observed Seat/core owner and owned Browser lifetime; not continuous input delivery or original feature acceptance",
+  "originalFeatureAcceptance": false,
+  "expectedBrowserIdentity": {
+    "address": "0x5653c897c050",
+    "stableId": "18000000",
+    "pid": 3281985
+  },
+  "browserPID": 3281985,
+  "browserStart": "14092066",
+  "selectors": {
+    "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+    "WAYLAND_DISPLAY": "wayland-1",
+    "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+  },
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical-keyboard",
+        "-d",
+        "20",
+        "--",
+        "private-draft-attempt-1-1d0d351b"
+      ],
+      "timeoutSeconds": 12,
+      "before": {
+        "monotonicNs": 128856091566244,
+        "startBefore": "14092066",
+        "selectorsBefore": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "clients": [
+          {
+            "address": "0x5653c8dec0d0",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              760,
+              220
+            ],
+            "size": [
+              700,
+              550
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "org.quickshell",
+            "title": "Files",
+            "initialClass": "org.quickshell",
+            "initialTitle": "Files",
+            "pid": 3282544,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000001"
+          },
+          {
+            "address": "0x5653c897c050",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              140,
+              100
+            ],
+            "size": [
+              930,
+              700
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "brave-browser",
+            "title": "Private local draft QA - Brave",
+            "initialClass": "brave-browser",
+            "initialTitle": "Private local draft QA - Brave",
+            "pid": 3281985,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000000"
+          }
+        ],
+        "native": {
+          "cursor": [
+            505.99999999999994,
+            427
+          ],
+          "hitOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerSurfacePresent": true,
+          "nativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "modalTarget": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "historyOldToNew": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "windows": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "sessionLocked": false,
+          "exclusiveLayers": 0,
+          "clickMode": 0,
+          "constrained": false,
+          "heldButtons": false,
+          "seatGrab": false,
+          "captured": false,
+          "dnd": false,
+          "dragTarget": false
+        },
+        "seatKeyboardRaw": "{\"keyboardSurfacePresent\":true,\"keyboardResourcePresent\":true,\"keyboardOwner\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"coreNativeFocus\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"keyboardPresent\":true,\"keyboardVirtual\":false,\"keymapPresent\":true,\"keymapOverridden\":false,\"activeLayout\":0,\"minKeycode\":9,\"maxKeycode\":709}",
+        "seatKeyboard": {
+          "keyboardSurfacePresent": true,
+          "keyboardResourcePresent": true,
+          "keyboardOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "coreNativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "keyboardPresent": true,
+          "keyboardVirtual": false,
+          "keymapPresent": true,
+          "keymapOverridden": false,
+          "activeLayout": 0,
+          "minKeycode": 9,
+          "maxKeycode": 709
+        },
+        "startAfter": "14092066",
+        "selectorsAfter": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "accepted": true
+      },
+      "after": {
+        "monotonicNs": 128857059855628,
+        "startBefore": "14092066",
+        "selectorsBefore": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "clients": [
+          {
+            "address": "0x5653c8dec0d0",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              760,
+              220
+            ],
+            "size": [
+              700,
+              550
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "org.quickshell",
+            "title": "Files",
+            "initialClass": "org.quickshell",
+            "initialTitle": "Files",
+            "pid": 3282544,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000001"
+          },
+          {
+            "address": "0x5653c897c050",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              140,
+              100
+            ],
+            "size": [
+              930,
+              700
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "brave-browser",
+            "title": "Private local draft QA - Brave",
+            "initialClass": "brave-browser",
+            "initialTitle": "Private local draft QA - Brave",
+            "pid": 3281985,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000000"
+          }
+        ],
+        "native": {
+          "cursor": [
+            505.99999999999994,
+            427
+          ],
+          "hitOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerSurfacePresent": true,
+          "nativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "modalTarget": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "historyOldToNew": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "windows": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "sessionLocked": false,
+          "exclusiveLayers": 0,
+          "clickMode": 0,
+          "constrained": false,
+          "heldButtons": false,
+          "seatGrab": false,
+          "captured": false,
+          "dnd": false,
+          "dragTarget": false
+        },
+        "seatKeyboardRaw": "{\"keyboardSurfacePresent\":true,\"keyboardResourcePresent\":true,\"keyboardOwner\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"coreNativeFocus\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"keyboardPresent\":true,\"keyboardVirtual\":false,\"keymapPresent\":true,\"keymapOverridden\":false,\"activeLayout\":0,\"minKeycode\":9,\"maxKeycode\":709}",
+        "seatKeyboard": {
+          "keyboardSurfacePresent": true,
+          "keyboardResourcePresent": true,
+          "keyboardOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "coreNativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "keyboardPresent": true,
+          "keyboardVirtual": false,
+          "keymapPresent": true,
+          "keymapOverridden": false,
+          "activeLayout": 0,
+          "minKeycode": 9,
+          "maxKeycode": 709
+        },
+        "startAfter": "14092066",
+        "selectorsAfter": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "accepted": true
+      },
+      "stdout": "{\"normalDestroyed\":true,\"pairCount\":32,\"extraKeys\":0,\"peerPID\":3281082,\"planEvidence\":{\"cpuOnly\":false,\"keymapSHA256\":\"bac3cf32ec492636e40269802a13285515e138069fa0405284397404599b11ee\",\"keymapBytes\":35572,\"plan\":[{\"symbol\":112,\"wire\":25,\"xkb\":33,\"name\":\"AD10\"},{\"symbol\":114,\"wire\":19,\"xkb\":27,\"name\":\"AD04\"},{\"symbol\":105,\"wire\":23,\"xkb\":31,\"name\":\"AD08\"},{\"symbol\":118,\"wire\":47,\"xkb\":55,\"name\":\"AB04\"},{\"symbol\":97,\"wire\":30,\"xkb\":38,\"name\":\"AC01\"},{\"symbol\":116,\"wire\":20,\"xkb\":28,\"name\":\"AD05\"},{\"symbol\":101,\"wire\":18,\"xkb\":26,\"name\":\"AD03\"},{\"symbol\":45,\"wire\":12,\"xkb\":20,\"name\":\"AE11\"},{\"symbol\":100,\"wire\":32,\"xkb\":40,\"name\":\"AC03\"},{\"symbol\":114,\"wire\":19,\"xkb\":27,\"name\":\"AD04\"},{\"symbol\":97,\"wire\":30,\"xkb\":38,\"name\":\"AC01\"},{\"symbol\":102,\"wire\":33,\"xkb\":41,\"name\":\"AC04\"},{\"symbol\":116,\"wire\":20,\"xkb\":28,\"name\":\"AD05\"},{\"symbol\":45,\"wire\":12,\"xkb\":20,\"name\":\"AE11\"},{\"symbol\":97,\"wire\":30,\"xkb\":38,\"name\":\"AC01\"},{\"symbol\":116,\"wire\":20,\"xkb\":28,\"name\":\"AD05\"},{\"symbol\":116,\"wire\":20,\"xkb\":28,\"name\":\"AD05\"},{\"symbol\":101,\"wire\":18,\"xkb\":26,\"name\":\"AD03\"},{\"symbol\":109,\"wire\":50,\"xkb\":58,\"name\":\"AB07\"},{\"symbol\":112,\"wire\":25,\"xkb\":33,\"name\":\"AD10\"},{\"symbol\":116,\"wire\":20,\"xkb\":28,\"name\":\"AD05\"},{\"symbol\":45,\"wire\":12,\"xkb\":20,\"name\":\"AE11\"},{\"symbol\":49,\"wire\":2,\"xkb\":10,\"name\":\"AE01\"},{\"symbol\":45,\"wire\":12,\"xkb\":20,\"name\":\"AE11\"},{\"symbol\":49,\"wire\":2,\"xkb\":10,\"name\":\"AE01\"},{\"symbol\":100,\"wire\":32,\"xkb\":40,\"name\":\"AC03\"},{\"symbol\":48,\"wire\":11,\"xkb\":19,\"name\":\"AE10\"},{\"symbol\":100,\"wire\":32,\"xkb\":40,\"name\":\"AC03\"},{\"symbol\":51,\"wire\":4,\"xkb\":12,\"name\":\"AE03\"},{\"symbol\":53,\"wire\":6,\"xkb\":14,\"name\":\"AE05\"},{\"symbol\":49,\"wire\":2,\"xkb\":10,\"name\":\"AE01\"},{\"symbol\":98,\"wire\":48,\"xkb\":56,\"name\":\"AB05\"}]}}\n",
+      "stderr": "",
+      "returncode": 0,
+      "pid": 3287675,
+      "identity": {
+        "pid": 3287675,
+        "start": "14097614"
+      },
+      "actualOwnedProcess": {
+        "identity": {
+          "pid": 3287675,
+          "start": "14097614"
+        },
+        "monotonicNs": 128856188636020,
+        "lifetimeBefore": true,
+        "errors": {},
+        "rawCmdlineBase64": "L2hvbWUvaG9za2luc29uL3dpbmRvdy1pbnRlZ3JhdGlvbi1xYS9icm93c2VyLWZpbGVzLWZsb3ctdjIwL3BoeXNpY2FsLWtleWJvYXJkAC1kADIwAC0tAHByaXZhdGUtZHJhZnQtYXR0ZW1wdC0xLTFkMGQzNTFiAA==",
+        "status": "Name:\tphysical-keyboa\nUmask:\t0077\nState:\tR (running)\nTgid:\t3287675\nNgid:\t0\nPid:\t3287675\nPPid:\t3279310\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t64\nGroups:\t998 1000 \nNStgid:\t3287675\nNSpid:\t3287675\nNSpgid:\t3279310\nNSsid:\t3279310\nKthread:\t0\nVmPeak:\t   12416 kB\nVmSize:\t   12416 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t    2060 kB\nVmRSS:\t    2060 kB\nRssAnon:\t     328 kB\nRssFile:\t    1732 kB\nRssShmem:\t       0 kB\nVmData:\t     692 kB\nVmStk:\t     140 kB\nVmExe:\t       8 kB\nVmLib:\t    7672 kB\nVmPTE:\t      56 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t1\nSigQ:\t12/253892\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000000000\nSigCgt:\t0000000000000000\nCapInh:\t0000000800000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tthread vulnerable\nSpeculationIndirectBranch:\tconditional enabled\nCpus_allowed:\tffffff\nCpus_allowed_list:\t0-23\nMems_allowed:\t00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t0\nnonvoluntary_ctxt_switches:\t3\nx86_Thread_features:\t\nx86_Thread_features_locked:\t\n",
+        "stat": "3287675 (physical-keyboa) R 3279310 3279310 3279310 0 -1 4194304 158 0 0 0 0 0 0 0 20 0 1 0 14097614 12713984 510 18446744073709551615 100738730606592 100738730613421 140733537255552 0 0 0 0 0 0 0 0 0 17 20 0 0 0 0 0 100738730658224 100738730660400 100738859819008 140733537265460 140733537265581 140733537265581 140733537275817 0\n",
+        "exe": "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical-keyboard",
+        "userNamespace": "user:[4026531837]",
+        "netNamespace": "net:[4026531833]",
+        "pidNamespace": "pid:[4026531836]",
+        "mountNamespace": "mnt:[4026531832]",
+        "lifetimeAfter": true,
+        "rawCmdlineBytes": 121,
+        "nulSplit": [
+          "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical-keyboard",
+          "-d",
+          "20",
+          "--",
+          "private-draft-attempt-1-1d0d351b",
+          ""
+        ],
+        "statusFields": {
+          "Name": "physical-keyboa",
+          "Umask": "0077",
+          "State": "R (running)",
+          "Tgid": "3287675",
+          "Ngid": "0",
+          "Pid": "3287675",
+          "PPid": "3279310",
+          "TracerPid": "0",
+          "Uid": "1000\t1000\t1000\t1000",
+          "Gid": "1000\t1000\t1000\t1000",
+          "FDSize": "64",
+          "Groups": "998 1000",
+          "NStgid": "3287675",
+          "NSpid": "3287675",
+          "NSpgid": "3279310",
+          "NSsid": "3279310",
+          "Kthread": "0",
+          "VmPeak": "12416 kB",
+          "VmSize": "12416 kB",
+          "VmLck": "0 kB",
+          "VmPin": "0 kB",
+          "VmHWM": "2060 kB",
+          "VmRSS": "2060 kB",
+          "RssAnon": "328 kB",
+          "RssFile": "1732 kB",
+          "RssShmem": "0 kB",
+          "VmData": "692 kB",
+          "VmStk": "140 kB",
+          "VmExe": "8 kB",
+          "VmLib": "7672 kB",
+          "VmPTE": "56 kB",
+          "VmSwap": "0 kB",
+          "HugetlbPages": "0 kB",
+          "CoreDumping": "0",
+          "THP_enabled": "1",
+          "untag_mask": "0xffffffffffffffff",
+          "Threads": "1",
+          "SigQ": "12/253892",
+          "SigPnd": "0000000000000000",
+          "ShdPnd": "0000000000000000",
+          "SigBlk": "0000000000000000",
+          "SigIgn": "0000000000000000",
+          "SigCgt": "0000000000000000",
+          "CapInh": "0000000800000000",
+          "CapPrm": "0000000000000000",
+          "CapEff": "0000000000000000",
+          "CapBnd": "000001ffffffffff",
+          "CapAmb": "0000000000000000",
+          "NoNewPrivs": "0",
+          "Seccomp": "0",
+          "Seccomp_filters": "0",
+          "Speculation_Store_Bypass": "thread vulnerable",
+          "SpeculationIndirectBranch": "conditional enabled",
+          "Cpus_allowed": "ffffff",
+          "Cpus_allowed_list": "0-23",
+          "Mems_allowed": "00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001",
+          "Mems_allowed_list": "0",
+          "voluntary_ctxt_switches": "0",
+          "nonvoluntary_ctxt_switches": "3",
+          "x86_Thread_features": "",
+          "x86_Thread_features_locked": ""
+        },
+        "exitedDuringObservation": false
+      },
+      "pidPathAbsentAfterWait": true,
+      "normalExit": true
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical-keyboard",
+        "-d",
+        "20",
+        "-k",
+        "Left",
+        "-k",
+        "Left",
+        "-k",
+        "Left"
+      ],
+      "timeoutSeconds": 8,
+      "before": {
+        "monotonicNs": 128857238634380,
+        "startBefore": "14092066",
+        "selectorsBefore": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "clients": [
+          {
+            "address": "0x5653c8dec0d0",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              760,
+              220
+            ],
+            "size": [
+              700,
+              550
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "org.quickshell",
+            "title": "Files",
+            "initialClass": "org.quickshell",
+            "initialTitle": "Files",
+            "pid": 3282544,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000001"
+          },
+          {
+            "address": "0x5653c897c050",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              140,
+              100
+            ],
+            "size": [
+              930,
+              700
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "brave-browser",
+            "title": "Private local draft QA - Brave",
+            "initialClass": "brave-browser",
+            "initialTitle": "Private local draft QA - Brave",
+            "pid": 3281985,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000000"
+          }
+        ],
+        "native": {
+          "cursor": [
+            505.99999999999994,
+            427
+          ],
+          "hitOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerSurfacePresent": true,
+          "nativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "modalTarget": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "historyOldToNew": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "windows": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "sessionLocked": false,
+          "exclusiveLayers": 0,
+          "clickMode": 0,
+          "constrained": false,
+          "heldButtons": false,
+          "seatGrab": false,
+          "captured": false,
+          "dnd": false,
+          "dragTarget": false
+        },
+        "seatKeyboardRaw": "{\"keyboardSurfacePresent\":true,\"keyboardResourcePresent\":true,\"keyboardOwner\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"coreNativeFocus\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"keyboardPresent\":true,\"keyboardVirtual\":false,\"keymapPresent\":true,\"keymapOverridden\":false,\"activeLayout\":0,\"minKeycode\":9,\"maxKeycode\":709}",
+        "seatKeyboard": {
+          "keyboardSurfacePresent": true,
+          "keyboardResourcePresent": true,
+          "keyboardOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "coreNativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "keyboardPresent": true,
+          "keyboardVirtual": false,
+          "keymapPresent": true,
+          "keymapOverridden": false,
+          "activeLayout": 0,
+          "minKeycode": 9,
+          "maxKeycode": 709
+        },
+        "startAfter": "14092066",
+        "selectorsAfter": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "accepted": true
+      },
+      "after": {
+        "monotonicNs": 128857398588408,
+        "startBefore": "14092066",
+        "selectorsBefore": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "clients": [
+          {
+            "address": "0x5653c8dec0d0",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              760,
+              220
+            ],
+            "size": [
+              700,
+              550
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "org.quickshell",
+            "title": "Files",
+            "initialClass": "org.quickshell",
+            "initialTitle": "Files",
+            "pid": 3282544,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000001"
+          },
+          {
+            "address": "0x5653c897c050",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              140,
+              100
+            ],
+            "size": [
+              930,
+              700
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "brave-browser",
+            "title": "Private local draft QA - Brave",
+            "initialClass": "brave-browser",
+            "initialTitle": "Private local draft QA - Brave",
+            "pid": 3281985,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000000"
+          }
+        ],
+        "native": {
+          "cursor": [
+            505.99999999999994,
+            427
+          ],
+          "hitOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerSurfacePresent": true,
+          "nativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "modalTarget": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "historyOldToNew": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "windows": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "sessionLocked": false,
+          "exclusiveLayers": 0,
+          "clickMode": 0,
+          "constrained": false,
+          "heldButtons": false,
+          "seatGrab": false,
+          "captured": false,
+          "dnd": false,
+          "dragTarget": false
+        },
+        "seatKeyboardRaw": "{\"keyboardSurfacePresent\":true,\"keyboardResourcePresent\":true,\"keyboardOwner\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"coreNativeFocus\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"keyboardPresent\":true,\"keyboardVirtual\":false,\"keymapPresent\":true,\"keymapOverridden\":false,\"activeLayout\":0,\"minKeycode\":9,\"maxKeycode\":709}",
+        "seatKeyboard": {
+          "keyboardSurfacePresent": true,
+          "keyboardResourcePresent": true,
+          "keyboardOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "coreNativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "keyboardPresent": true,
+          "keyboardVirtual": false,
+          "keymapPresent": true,
+          "keymapOverridden": false,
+          "activeLayout": 0,
+          "minKeycode": 9,
+          "maxKeycode": 709
+        },
+        "startAfter": "14092066",
+        "selectorsAfter": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "accepted": true
+      },
+      "stdout": "{\"normalDestroyed\":true,\"pairCount\":3,\"extraKeys\":0,\"peerPID\":3281082,\"planEvidence\":{\"cpuOnly\":false,\"keymapSHA256\":\"bac3cf32ec492636e40269802a13285515e138069fa0405284397404599b11ee\",\"keymapBytes\":35572,\"plan\":[{\"symbol\":65361,\"wire\":105,\"xkb\":113,\"name\":\"LEFT\"},{\"symbol\":65361,\"wire\":105,\"xkb\":113,\"name\":\"LEFT\"},{\"symbol\":65361,\"wire\":105,\"xkb\":113,\"name\":\"LEFT\"}]}}\n",
+      "stderr": "",
+      "returncode": 0,
+      "pid": 3287746,
+      "identity": {
+        "pid": 3287746,
+        "start": "14097725"
+      },
+      "actualOwnedProcess": {
+        "identity": {
+          "pid": 3287746,
+          "start": "14097725"
+        },
+        "monotonicNs": 128857296498447,
+        "lifetimeBefore": true,
+        "errors": {},
+        "rawCmdlineBase64": "L2hvbWUvaG9za2luc29uL3dpbmRvdy1pbnRlZ3JhdGlvbi1xYS9icm93c2VyLWZpbGVzLWZsb3ctdjIwL3BoeXNpY2FsLWtleWJvYXJkAC1kADIwAC1rAExlZnQALWsATGVmdAAtawBMZWZ0AA==",
+        "status": "Name:\tphysical-keyboa\nUmask:\t0077\nState:\tR (running)\nTgid:\t3287746\nNgid:\t0\nPid:\t3287746\nPPid:\t3279310\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t64\nGroups:\t998 1000 \nNStgid:\t3287746\nNSpid:\t3287746\nNSpgid:\t3279310\nNSsid:\t3279310\nKthread:\t0\nVmPeak:\t   12416 kB\nVmSize:\t   12416 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t    1948 kB\nVmRSS:\t    1948 kB\nRssAnon:\t     232 kB\nRssFile:\t    1716 kB\nRssShmem:\t       0 kB\nVmData:\t     692 kB\nVmStk:\t     140 kB\nVmExe:\t       8 kB\nVmLib:\t    7672 kB\nVmPTE:\t      56 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t1\nSigQ:\t12/253892\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000000000\nSigCgt:\t0000000000000000\nCapInh:\t0000000800000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tthread vulnerable\nSpeculationIndirectBranch:\tconditional enabled\nCpus_allowed:\tffffff\nCpus_allowed_list:\t0-23\nMems_allowed:\t00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t0\nnonvoluntary_ctxt_switches:\t4\nx86_Thread_features:\t\nx86_Thread_features_locked:\t\n",
+        "stat": "3287746 (physical-keyboa) R 3279310 3279310 3279310 0 -1 4194304 115 0 0 0 0 0 0 0 20 0 1 0 14097725 12713984 474 18446744073709551615 98180287541248 98180287548077 140733711646464 0 0 0 0 0 0 0 0 0 17 12 0 0 0 0 0 98180287592880 98180287595056 98180567433216 140733711652672 140733711652781 140733711652781 140733711663017 0\n",
+        "exe": "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical-keyboard",
+        "userNamespace": "user:[4026531837]",
+        "netNamespace": "net:[4026531833]",
+        "pidNamespace": "pid:[4026531836]",
+        "mountNamespace": "mnt:[4026531832]",
+        "lifetimeAfter": true,
+        "rawCmdlineBytes": 109,
+        "nulSplit": [
+          "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical-keyboard",
+          "-d",
+          "20",
+          "-k",
+          "Left",
+          "-k",
+          "Left",
+          "-k",
+          "Left",
+          ""
+        ],
+        "statusFields": {
+          "Name": "physical-keyboa",
+          "Umask": "0077",
+          "State": "R (running)",
+          "Tgid": "3287746",
+          "Ngid": "0",
+          "Pid": "3287746",
+          "PPid": "3279310",
+          "TracerPid": "0",
+          "Uid": "1000\t1000\t1000\t1000",
+          "Gid": "1000\t1000\t1000\t1000",
+          "FDSize": "64",
+          "Groups": "998 1000",
+          "NStgid": "3287746",
+          "NSpid": "3287746",
+          "NSpgid": "3279310",
+          "NSsid": "3279310",
+          "Kthread": "0",
+          "VmPeak": "12416 kB",
+          "VmSize": "12416 kB",
+          "VmLck": "0 kB",
+          "VmPin": "0 kB",
+          "VmHWM": "1948 kB",
+          "VmRSS": "1948 kB",
+          "RssAnon": "232 kB",
+          "RssFile": "1716 kB",
+          "RssShmem": "0 kB",
+          "VmData": "692 kB",
+          "VmStk": "140 kB",
+          "VmExe": "8 kB",
+          "VmLib": "7672 kB",
+          "VmPTE": "56 kB",
+          "VmSwap": "0 kB",
+          "HugetlbPages": "0 kB",
+          "CoreDumping": "0",
+          "THP_enabled": "1",
+          "untag_mask": "0xffffffffffffffff",
+          "Threads": "1",
+          "SigQ": "12/253892",
+          "SigPnd": "0000000000000000",
+          "ShdPnd": "0000000000000000",
+          "SigBlk": "0000000000000000",
+          "SigIgn": "0000000000000000",
+          "SigCgt": "0000000000000000",
+          "CapInh": "0000000800000000",
+          "CapPrm": "0000000000000000",
+          "CapEff": "0000000000000000",
+          "CapBnd": "000001ffffffffff",
+          "CapAmb": "0000000000000000",
+          "NoNewPrivs": "0",
+          "Seccomp": "0",
+          "Seccomp_filters": "0",
+          "Speculation_Store_Bypass": "thread vulnerable",
+          "SpeculationIndirectBranch": "conditional enabled",
+          "Cpus_allowed": "ffffff",
+          "Cpus_allowed_list": "0-23",
+          "Mems_allowed": "00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001",
+          "Mems_allowed_list": "0",
+          "voluntary_ctxt_switches": "0",
+          "nonvoluntary_ctxt_switches": "4",
+          "x86_Thread_features": "",
+          "x86_Thread_features_locked": ""
+        },
+        "exitedDuringObservation": false
+      },
+      "pidPathAbsentAfterWait": true,
+      "normalExit": true
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical-keyboard",
+        "-d",
+        "20",
+        "--",
+        "-continued0"
+      ],
+      "timeoutSeconds": 12,
+      "before": {
+        "monotonicNs": 128860217495291,
+        "startBefore": "14092066",
+        "selectorsBefore": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "clients": [
+          {
+            "address": "0x5653c8dec0d0",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              760,
+              220
+            ],
+            "size": [
+              700,
+              550
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "org.quickshell",
+            "title": "Files",
+            "initialClass": "org.quickshell",
+            "initialTitle": "Files",
+            "pid": 3282544,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000001"
+          },
+          {
+            "address": "0x5653c897c050",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              140,
+              100
+            ],
+            "size": [
+              930,
+              700
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "brave-browser",
+            "title": "Private local draft QA - Brave",
+            "initialClass": "brave-browser",
+            "initialTitle": "Private local draft QA - Brave",
+            "pid": 3281985,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000000"
+          }
+        ],
+        "native": {
+          "cursor": [
+            229.99999999999997,
+            88
+          ],
+          "hitOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerSurfacePresent": true,
+          "nativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "modalTarget": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "historyOldToNew": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "windows": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "sessionLocked": false,
+          "exclusiveLayers": 0,
+          "clickMode": 0,
+          "constrained": false,
+          "heldButtons": false,
+          "seatGrab": false,
+          "captured": false,
+          "dnd": false,
+          "dragTarget": false
+        },
+        "seatKeyboardRaw": "{\"keyboardSurfacePresent\":true,\"keyboardResourcePresent\":true,\"keyboardOwner\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"coreNativeFocus\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"keyboardPresent\":true,\"keyboardVirtual\":false,\"keymapPresent\":true,\"keymapOverridden\":false,\"activeLayout\":0,\"minKeycode\":9,\"maxKeycode\":709}",
+        "seatKeyboard": {
+          "keyboardSurfacePresent": true,
+          "keyboardResourcePresent": true,
+          "keyboardOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "coreNativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "keyboardPresent": true,
+          "keyboardVirtual": false,
+          "keymapPresent": true,
+          "keymapOverridden": false,
+          "activeLayout": 0,
+          "minKeycode": 9,
+          "maxKeycode": 709
+        },
+        "startAfter": "14092066",
+        "selectorsAfter": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "accepted": true
+      },
+      "after": {
+        "monotonicNs": 128860621480170,
+        "startBefore": "14092066",
+        "selectorsBefore": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "clients": [
+          {
+            "address": "0x5653c8dec0d0",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              760,
+              220
+            ],
+            "size": [
+              700,
+              550
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "org.quickshell",
+            "title": "Files",
+            "initialClass": "org.quickshell",
+            "initialTitle": "Files",
+            "pid": 3282544,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000001"
+          },
+          {
+            "address": "0x5653c897c050",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              140,
+              100
+            ],
+            "size": [
+              930,
+              700
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "brave-browser",
+            "title": "Private local draft QA - Brave",
+            "initialClass": "brave-browser",
+            "initialTitle": "Private local draft QA - Brave",
+            "pid": 3281985,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000000"
+          }
+        ],
+        "native": {
+          "cursor": [
+            229.99999999999997,
+            88
+          ],
+          "hitOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerSurfacePresent": true,
+          "nativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "modalTarget": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "historyOldToNew": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "windows": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "sessionLocked": false,
+          "exclusiveLayers": 0,
+          "clickMode": 0,
+          "constrained": false,
+          "heldButtons": false,
+          "seatGrab": false,
+          "captured": false,
+          "dnd": false,
+          "dragTarget": false
+        },
+        "seatKeyboardRaw": "{\"keyboardSurfacePresent\":true,\"keyboardResourcePresent\":true,\"keyboardOwner\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"coreNativeFocus\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"keyboardPresent\":true,\"keyboardVirtual\":false,\"keymapPresent\":true,\"keymapOverridden\":false,\"activeLayout\":0,\"minKeycode\":9,\"maxKeycode\":709}",
+        "seatKeyboard": {
+          "keyboardSurfacePresent": true,
+          "keyboardResourcePresent": true,
+          "keyboardOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "coreNativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "keyboardPresent": true,
+          "keyboardVirtual": false,
+          "keymapPresent": true,
+          "keymapOverridden": false,
+          "activeLayout": 0,
+          "minKeycode": 9,
+          "maxKeycode": 709
+        },
+        "startAfter": "14092066",
+        "selectorsAfter": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "accepted": true
+      },
+      "stdout": "{\"normalDestroyed\":true,\"pairCount\":11,\"extraKeys\":0,\"peerPID\":3281082,\"planEvidence\":{\"cpuOnly\":false,\"keymapSHA256\":\"bac3cf32ec492636e40269802a13285515e138069fa0405284397404599b11ee\",\"keymapBytes\":35572,\"plan\":[{\"symbol\":45,\"wire\":12,\"xkb\":20,\"name\":\"AE11\"},{\"symbol\":99,\"wire\":46,\"xkb\":54,\"name\":\"AB03\"},{\"symbol\":111,\"wire\":24,\"xkb\":32,\"name\":\"AD09\"},{\"symbol\":110,\"wire\":49,\"xkb\":57,\"name\":\"AB06\"},{\"symbol\":116,\"wire\":20,\"xkb\":28,\"name\":\"AD05\"},{\"symbol\":105,\"wire\":23,\"xkb\":31,\"name\":\"AD08\"},{\"symbol\":110,\"wire\":49,\"xkb\":57,\"name\":\"AB06\"},{\"symbol\":117,\"wire\":22,\"xkb\":30,\"name\":\"AD07\"},{\"symbol\":101,\"wire\":18,\"xkb\":26,\"name\":\"AD03\"},{\"symbol\":100,\"wire\":32,\"xkb\":40,\"name\":\"AC03\"},{\"symbol\":48,\"wire\":11,\"xkb\":19,\"name\":\"AE10\"}]}}\n",
+      "stderr": "",
+      "returncode": 0,
+      "normalExit": true
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical-keyboard",
+        "-d",
+        "20",
+        "--",
+        "-continued1"
+      ],
+      "timeoutSeconds": 12,
+      "before": {
+        "monotonicNs": 128917265875873,
+        "startBefore": "14092066",
+        "selectorsBefore": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "clients": [
+          {
+            "address": "0x5653c8dec0d0",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              760,
+              220
+            ],
+            "size": [
+              700,
+              550
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "org.quickshell",
+            "title": "Files",
+            "initialClass": "org.quickshell",
+            "initialTitle": "Files",
+            "pid": 3282544,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000001"
+          },
+          {
+            "address": "0x5653c897c050",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              140,
+              100
+            ],
+            "size": [
+              930,
+              700
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "brave-browser",
+            "title": "Private local draft QA - Brave",
+            "initialClass": "brave-browser",
+            "initialTitle": "Private local draft QA - Brave",
+            "pid": 3281985,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000000"
+          }
+        ],
+        "native": {
+          "cursor": [
+            229.99999999999997,
+            88
+          ],
+          "hitOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerSurfacePresent": true,
+          "nativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "modalTarget": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "historyOldToNew": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "windows": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "sessionLocked": false,
+          "exclusiveLayers": 0,
+          "clickMode": 0,
+          "constrained": false,
+          "heldButtons": false,
+          "seatGrab": false,
+          "captured": false,
+          "dnd": false,
+          "dragTarget": false
+        },
+        "seatKeyboardRaw": "{\"keyboardSurfacePresent\":true,\"keyboardResourcePresent\":true,\"keyboardOwner\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"coreNativeFocus\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"keyboardPresent\":true,\"keyboardVirtual\":false,\"keymapPresent\":true,\"keymapOverridden\":false,\"activeLayout\":0,\"minKeycode\":9,\"maxKeycode\":709}",
+        "seatKeyboard": {
+          "keyboardSurfacePresent": true,
+          "keyboardResourcePresent": true,
+          "keyboardOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "coreNativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "keyboardPresent": true,
+          "keyboardVirtual": false,
+          "keymapPresent": true,
+          "keymapOverridden": false,
+          "activeLayout": 0,
+          "minKeycode": 9,
+          "maxKeycode": 709
+        },
+        "startAfter": "14092066",
+        "selectorsAfter": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "accepted": true
+      },
+      "after": {
+        "monotonicNs": 128917696685758,
+        "startBefore": "14092066",
+        "selectorsBefore": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "clients": [
+          {
+            "address": "0x5653c8dec0d0",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              760,
+              220
+            ],
+            "size": [
+              700,
+              550
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "org.quickshell",
+            "title": "Files",
+            "initialClass": "org.quickshell",
+            "initialTitle": "Files",
+            "pid": 3282544,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000001"
+          },
+          {
+            "address": "0x5653c897c050",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              140,
+              100
+            ],
+            "size": [
+              930,
+              700
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": true,
+            "monitor": 0,
+            "class": "brave-browser",
+            "title": "Private local draft QA - Brave",
+            "initialClass": "brave-browser",
+            "initialTitle": "Private local draft QA - Brave",
+            "pid": 3281985,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000000"
+          }
+        ],
+        "native": {
+          "cursor": [
+            229.99999999999997,
+            88
+          ],
+          "hitOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerSurfacePresent": true,
+          "nativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "modalTarget": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "historyOldToNew": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "windows": [
+            {
+              "address": "0x5653c8dec0d0",
+              "stableId": "18000001",
+              "pid": 3282544,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5653c897c050",
+              "stableId": "18000000",
+              "pid": 3281985,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "sessionLocked": false,
+          "exclusiveLayers": 0,
+          "clickMode": 0,
+          "constrained": false,
+          "heldButtons": false,
+          "seatGrab": false,
+          "captured": false,
+          "dnd": false,
+          "dragTarget": false
+        },
+        "seatKeyboardRaw": "{\"keyboardSurfacePresent\":true,\"keyboardResourcePresent\":true,\"keyboardOwner\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"coreNativeFocus\":{\"address\":\"0x5653c897c050\",\"stableId\":\"18000000\",\"pid\":3281985,\"modal\":false,\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"surfaceBox\":[140,100,930,700]},\"keyboardPresent\":true,\"keyboardVirtual\":false,\"keymapPresent\":true,\"keymapOverridden\":false,\"activeLayout\":0,\"minKeycode\":9,\"maxKeycode\":709}",
+        "seatKeyboard": {
+          "keyboardSurfacePresent": true,
+          "keyboardResourcePresent": true,
+          "keyboardOwner": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "coreNativeFocus": {
+            "address": "0x5653c897c050",
+            "stableId": "18000000",
+            "pid": 3281985,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "keyboardPresent": true,
+          "keyboardVirtual": false,
+          "keymapPresent": true,
+          "keymapOverridden": false,
+          "activeLayout": 0,
+          "minKeycode": 9,
+          "maxKeycode": 709
+        },
+        "startAfter": "14092066",
+        "selectorsAfter": {
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/425f",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135"
+        },
+        "accepted": true
+      },
+      "stdout": "{\"normalDestroyed\":true,\"pairCount\":11,\"extraKeys\":0,\"peerPID\":3281082,\"planEvidence\":{\"cpuOnly\":false,\"keymapSHA256\":\"bac3cf32ec492636e40269802a13285515e138069fa0405284397404599b11ee\",\"keymapBytes\":35572,\"plan\":[{\"symbol\":45,\"wire\":12,\"xkb\":20,\"name\":\"AE11\"},{\"symbol\":99,\"wire\":46,\"xkb\":54,\"name\":\"AB03\"},{\"symbol\":111,\"wire\":24,\"xkb\":32,\"name\":\"AD09\"},{\"symbol\":110,\"wire\":49,\"xkb\":57,\"name\":\"AB06\"},{\"symbol\":116,\"wire\":20,\"xkb\":28,\"name\":\"AD05\"},{\"symbol\":105,\"wire\":23,\"xkb\":31,\"name\":\"AD08\"},{\"symbol\":110,\"wire\":49,\"xkb\":57,\"name\":\"AB06\"},{\"symbol\":117,\"wire\":22,\"xkb\":30,\"name\":\"AD07\"},{\"symbol\":101,\"wire\":18,\"xkb\":26,\"name\":\"AD03\"},{\"symbol\":100,\"wire\":32,\"xkb\":40,\"name\":\"AC03\"},{\"symbol\":49,\"wire\":2,\"xkb\":10,\"name\":\"AE01\"}]}}\n",
+      "stderr": "",
+      "returncode": 0,
+      "normalExit": true
+    }
+  ]
+}

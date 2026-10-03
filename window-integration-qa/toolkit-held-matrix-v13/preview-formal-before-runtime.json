@@ -1,0 +1,47 @@
+{
+  "nativeLaunch": false,
+  "formalBeforeRuntime": true,
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v9/preview_diagnostics.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v9/preview_diagnostics.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  preview_diagnostics\n    ok proposedDoesNotDeliverTest passed 1 test(s)\n    ok motionDoesNotGrantClickTest passed 1 test(s)\n    ok missingOwnerRefusesTest passed 1 test(s)\n    ok wrongCursorRefusesTest passed 1 test(s)\n    ok unrecordedSampleRefusesTest passed 1 test(s)\n    ok nativeOwnerCursorPermitOriginalClickTest passed 1 test(s)\n    ok failureRetainsTerminalTest passed 1 test(s)\n    ok invalidProposalNoMotionTest passed 1 test(s)\n\n  8 passing (110ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v9/preview_diagnostics.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=0"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "error: Invariant violated\n"
+    }
+  ],
+  "named": 8,
+  "samples": 2000,
+  "steps": 100,
+  "modelSHA256": "1e814117e1a31bd232d9f33a78d4e4c7febb939e5e7799ac6908d806b8697685",
+  "contractSHA256": "81dcf74918b1db5772d28e6d60598ad98c9edf3339a1dbc4e04a48c9e815a7a4",
+  "allPassed": false
+}

@@ -1,0 +1,44 @@
+--- /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v2/native_probe_pointer.py	2026-10-01 08:10:00.980394888 -0600
++++ /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v3/native_probe_pointer.py	2026-10-01 08:27:28.688588631 -0600
+@@ -8,6 +8,7 @@
+ from main_observer import MainObserver
+ import host_acceptance
+ import startup_reporting
++import producer_control
+ from gi.repository import GLib
+ STAGE=Path(__file__).resolve().parent
+ HERE=STAGE
+@@ -140,6 +141,7 @@
+     env,report=ctx['env'],ctx['report'];state=json.loads(manager(env,'State'))
+     check(report,'fresh policy manager has no inferred subscriptions',state['clients']==0 and state['quiescent'],state=state)
+     producer=subprocess.Popen([str(READER/'physical-commands/evdev-keyboard')],env=env,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,start_new_session=True);ctx['processes'].append(producer)
++    producer_control.ready(producer,report,label='no-reader evdev baseline')
+     def keys(codes):
+         for code in codes:producer.stdin.write(f'key {code} 1\nsleep 90\nkey {code} 0\nsleep 90\n')
+         producer.stdin.write('sync\n');producer.stdin.flush();ready,_,_=select.select([producer.stdout],[],[],10)
+@@ -210,6 +212,9 @@
+                 wait(lambda:command('gdbus','call','--address',ax_address,'--dest','org.freedesktop.DBus','--object-path','/org/freedesktop/DBus','--method','org.freedesktop.DBus.GetNameOwner','org.a11y.atspi.Registry',env=env),'actual private AX Registry')
+                 report['privateAccessibility']=dict(address=ax_address,socket=str(ax_socket),registryPID=registry.pid,launcherPID=accessibility_launcher.pid)
+                 ctx=dict(here=HERE,reader_root=READER,env=env,report=report,check=check,manager=manager,ctl=ctl,data=data,received=received,marker=marker,launch=launch,processes=processes,pid_stop=pid_stop,wait=wait,lib=LIB,runtime=runtime,config=config,ax_address=ax_address,foot=foot,foot_window=foot_window,deny_name=DENY_DEVICE)
++                def producer_ready(process,stderr_path,label):
++                    session.guard();return producer_control.ready(process,report,stderr_path,label)
++                ctx['producer_ready']=producer_ready
+                 report['phases']=[]
+                 for name,module in [('pointer',load_cases(HERE)),('policy',load_additional('policy_cases.py')),('lifecycle',load_additional('lifecycle_cases.py'))]:
+                     phase_checkpoint=len(processes);start=len(report['checks']);phase={'name':name,'started':time.monotonic(),'startCheck':start};report['phases'].append(phase)
+@@ -235,6 +240,7 @@
+                 except Exception as error:
+                     report['cleanupUnloadError']=repr(error);startup_reporting.failure(report,error,'normal-unload-cleanup')
+                 for p in reversed(processes):finish_fixture(p)
++                report['fixtureExitCodes']=[dict(pid=p.pid,exitCode=p.poll()) for p in processes]
+                 owned={row['pid'] for _,row in session.host.processes}
+                 leftover=[row for row in session.host.descendants() if row['pid'] not in owned]
+                 report['unexpectedPrivateClientSurvivors']=leftover
+@@ -260,6 +266,7 @@
+             report['terminalTransportError']=repr(error);startup_reporting.failure(report,error,'archived-terminal-transport')
+     try:
+         after=observer.capture();save_json(HERE/'main-after.json',after);report['after']=after;report['restoration']=observer.compare(before,after)
++        report['focusObservation']=dict(beforeIdentity=observer.focus_identity(before['focus']),afterIdentity=observer.focus_identity(after['focus']),beforeTitleSHA256=before.get('focusTitleSHA256'),afterTitleSHA256=after.get('focusTitleSHA256'))
+     except Exception as error:
+         report['restoration']={'mainReadOnlyObservationSucceeded':False};report['preservationError']=repr(error);startup_reporting.failure(report,error,'main-read-only-preservation')
+     report['restoration'].update(frozenDependencies=manifest_unchanged(manifest),fixtureProcessesGone=all(p.poll() is not None for p in processes),ownedRuntimeGone=bool(session and session.evidence.get('runtimeGone')),ownedInfrastructureGone=bool(session and not session.evidence.get('remainingDescendants') and not session.evidence.get('cleanupErrors') and not session.evidence.get('unexpectedInnerDescendants') and session.evidence.get('runtimeGone')))

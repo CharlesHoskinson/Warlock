@@ -1,0 +1,94 @@
+--- native/plugin-v2.cpp
++++ native/plugin-v3.cpp
+@@ -1,5 +1,6 @@
+ // Offline/private candidate only. This file has never been loaded on the main compositor.
+ #include "key_policy.hpp"
++#include "xkb_helpers.hpp"
+ #include <hyprland/src/plugins/PluginAPI.hpp>
+ #include <hyprland/src/Compositor.hpp>
+ #include <hyprland/src/devices/IKeyboard.hpp>
+@@ -37,6 +38,10 @@
+     bool passedDirty=false;
+     bool mapDirty=false;
+     bool lastPermission=true;
++    bool mapBaselinePending=false;
++    bool lockFiltering=false;
++    Mask mapBaseline;
++    std::map<std::pair<uint32_t,uint32_t>,uint32_t> lockBits;
+     std::map<uint32_t,uint32_t> lockRoutes;
+     std::map<uint32_t,Result> pending;
+     CHyprSignalListener removed,keymap;
+@@ -63,14 +68,28 @@
+         passedDirty=false;
+     }
+     void replaceMap(IKeyboard* kb) {
++        const auto previous=kb->m_modifiersState;
++        const auto priorCorrection=virtualMask.parity();
++        auto* next=kb->m_xkbKeymap;
++        const auto baselineLocks=kb->isVirtual()?remapModifiers(map,next,previous.locked):xkb_state_serialize_mods(kb->m_xkbState,XKB_STATE_MODS_LOCKED);
++        const auto remappedCorrection=remapModifiers(map,next,priorCorrection);
++        const auto baselineMask=kb->isVirtual()&&lockFiltering?remapModifiers(map,next,previous.locked|priorCorrection):0;
++        mapBaseline={remapModifiers(map,next,previous.depressed),remapModifiers(map,next,previous.latched),baselineLocks,0};
+         xkb_state_unref(passed);xkb_state_unref(captured);xkb_state_unref(lookup);xkb_keymap_unref(map);
+         map=xkb_keymap_ref(kb->m_xkbKeymap);passed=xkb_state_new(map);captured=xkb_state_new(map);lookup=xkb_state_new(map);
+         if(!passed||!captured||!lookup)throw std::runtime_error("XKB replacement allocation");
+         refreshPassed(kb);
++        xkb_state_update_mask(passed,mapBaseline.depressed,mapBaseline.latched,mapBaseline.locked,0,0,0);
+         for(auto key:policy.capturedKeys(reinterpret_cast<uintptr_t>(kb)))xkb_state_update_key(captured,key+8,XKB_KEY_DOWN);
+         xkb_state_update_mask(captured,xkb_state_serialize_mods(captured,XKB_STATE_MODS_DEPRESSED),0,0,0,0,kb->m_modifiersState.group);
+-        virtualMask=VirtualMaskGuard{};controlledLocks=0;lockRoutes.clear();pending.clear();mapDirty=false;
++        virtualMask.remapCorrection(remappedCorrection);controlledLocks=baselineMask;lockRoutes.clear();lockBits.clear();pending.clear();mapDirty=false;mapBaselinePending=kb->isVirtual();
+         policy.resetTaps();
++    }
++    uint32_t keyLockBits(uint32_t key,uint32_t group) {
++        const auto identity=std::pair{key,group};
++        if(auto it=lockBits.find(identity);it!=lockBits.end())return it->second;
++        const auto bits=KeyboardMonitor::keyLockBits(map,key,group);
++        lockBits.emplace(identity,bits);return bits;
+     }
+ };
+ std::map<IKeyboard*,std::unique_ptr<Device>> devices;
+@@ -138,7 +157,8 @@
+         if(auto it=devices.find(kb);it!=devices.end())it->second->passedDirty=true;
+         return original(kb,key,press);
+     }
+-    auto& d=getDevice(kb);if(d.passedDirty)d.refreshPassed(kb);const auto native=kb->m_modifiersState;
++    auto& d=getDevice(kb);if(d.passedDirty)d.refreshPassed(kb);auto native=kb->m_modifiersState;
++    if(d.mapBaselinePending){native.depressed=d.mapBaseline.depressed;native.latched=d.mapBaseline.latched;native.locked=d.mapBaseline.locked;native.group=d.mapBaseline.group;}
+     const auto rawDep=native.depressed|xkb_state_serialize_mods(d.captured,XKB_STATE_MODS_DEPRESSED);
+     xkb_state_update_mask(d.lookup,rawDep,native.latched,native.locked,0,0,native.group);
+     auto sym=xkb_state_key_get_one_sym(d.lookup,key+8);
+@@ -154,8 +174,10 @@
+     if(press?(!known&&!alreadyNative):(known||alreadyNative))
+         xkb_state_update_key(shadow,key+8,press?XKB_KEY_DOWN:XKB_KEY_UP);
+     const auto changedLocks=before^xkb_state_serialize_mods(shadow,XKB_STATE_MODS_LOCKED);
+-    if(press&&changedLocks)d.lockRoutes[key]=changedLocks;
+-    d.controlledLocks|=changedLocks|d.lockRoutes[key];
++    const auto semanticLocks=d.keyLockBits(key,native.group);
++    if(result.consumed&&semanticLocks)d.lockFiltering=true;
++    if(press&&semanticLocks)d.lockRoutes[key]=semanticLocks;
++    if(d.lockFiltering)d.controlledLocks|=changedLocks|d.lockRoutes[key];
+     if(!press)d.lockRoutes.erase(key);
+     if(result.consumed) {
+         xkb_state_update_mask(shadow,xkb_state_serialize_mods(shadow,XKB_STATE_MODS_DEPRESSED),xkb_state_serialize_mods(shadow,XKB_STATE_MODS_LATCHED),0,0,0,native.group);
+@@ -179,15 +201,19 @@
+     if(!kb||!kb->isVirtual()) {original(kb,depressed,latched,locked,group);return;}
+     auto it=devices.find(kb);
+     if(it==devices.end()){original(kb,depressed,latched,locked,group);return;}
+-    auto& d=*it->second;
++    if(!kb->m_xkbKeymap||!kb->m_xkbState){original(kb,depressed,latched,locked,group);return;}
++    // Modifier packets may be the first event after a virtual keymap change.
++    auto& d=getDevice(kb);
+     const auto captured=xkb_state_serialize_mods(d.captured,XKB_STATE_MODS_DEPRESSED);
+     const auto passed=xkb_state_serialize_mods(d.passed,XKB_STATE_MODS_DEPRESSED);
+     bool full=false;if(permitted(kb))for(const auto& [id,c]:policy.clients)full|=c.full;
+     auto n=kb->m_modifiersState;
+     auto filtered=d.virtualMask.filter({depressed,latched,locked,group},{n.depressed,n.latched,n.locked,n.group},captured&~passed,d.controlledLocks,full,xkb_state_serialize_mods(d.passed,XKB_STATE_MODS_LOCKED));
+     d.controlledLocks=0;
++    d.mapBaselinePending=false;
+     xkb_state_update_mask(d.passed,filtered.depressed,filtered.latched,filtered.locked,0,0,filtered.group);
+     original(kb,filtered.depressed,filtered.latched,filtered.locked,filtered.group);
++    if(d.virtualMask.parity()==0&&d.lockRoutes.empty()&&policy.capturedKeys(reinterpret_cast<uintptr_t>(kb)).empty())d.lockFiltering=false;
+ }
+ DBusHandlerResult dispatch(DBusConnection*,DBusMessage* m,void*) {
+     if(dbus_message_is_signal(m,DBUS_INTERFACE_DBUS,"NameOwnerChanged")) {

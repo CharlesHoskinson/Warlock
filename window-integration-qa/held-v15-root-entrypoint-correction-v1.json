@@ -1,0 +1,20 @@
+{
+  "classification": "Handoff entrypoint mismatch, no native launch",
+  "firstScope": "qa-harness-b3230dd1967b4c85b9661bf00b2afedf",
+  "exitCode": 2,
+  "handoffFlag": "--output",
+  "actualFlag": "--attempt",
+  "argparseError": "unrecognized arguments: --output",
+  "attemptDirectoryAbsent": true,
+  "candidateChanged": false,
+  "frozenSHA256": "3b46fa64cfcb74d996b93386a8581121b77f840393bc6b918a914126e38c106e",
+  "correctedCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+    "--attempt",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1"
+  ]
+}

@@ -1,0 +1,2166 @@
+{
+  "version": "service-readonly-longevity-v21-source-ready",
+  "sourceReady": true,
+  "frozen": false,
+  "nativeLaunch": false,
+  "nativeAccepted": false,
+  "mainChanged": false,
+  "productionDeployed": false,
+  "baseManifestSHA256": "d3d836eda0e2a25681df4ca80740ca94f8d2084ea1c48f8834293b740122c068",
+  "retainedFailedV5ManifestSHA256": "bbd142db7116de7e076df508dcb6d9b57ceda4d6cc5035cec7da6a5867b2e492",
+  "pythonTests": 357,
+  "named": 308,
+  "models": 30,
+  "samplesPerModel": 2000,
+  "steps": 100,
+  "initialFormal51BeforeRuntime": true,
+  "orphan19BeforeRefinement": true,
+  "startup12BeforeCorrection": true,
+  "offlineSHA256": "1a7d5681dfb20cdc2ce0c5a4ea459cebe1e1bcd2aee8c2a919a81b86a7264f9a",
+  "reviewRequestSHA256": "1b382b2e5e8ef59eb7993729a93eef9541ee8555484382e9a96c531afddcf476",
+  "closureToolsRegressionSHA256": "6ca405de67516b0e67b7e269461488a95dff424e7f400ea6304089a679276cce",
+  "actual640QueryGate": true,
+  "fullChainCostGrowsWithHistory": true,
+  "original38NativeBaselineAccepted": false,
+  "currentUserCancellationAccepted": false,
+  "actorLedgerLongevityImplemented": false,
+  "localSources": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/FIXTURE_COMPLETION_CONTRACT.md": {
+      "sha256": "0a356f342826974207a16051796e4eb1d437fc98f54f98f8c35b4b86b0368685",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/LEGACY_FIXTURE_READINESS_CONTRACT.md": {
+      "sha256": "7631a7e4af9a9f2ef4e36ece47b1a2dc6ae302021d806e3d3b7c6aab1eab5757",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/READONLY_IPC_CONTRACT.md": {
+      "sha256": "53e32adf0aa4840bd281e4d5174470db23e8ff396d3959e940295eedde1be827",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/READONLY_LONGEVITY_CONTRACT.md": {
+      "sha256": "445fca2842f9ca3caeb9c3bf7328080ffd85578ec17787e659420e41194ecde4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/ROOT_REVIEW_REQUEST.md": {
+      "sha256": "7c95fb89d982f8a66a0e000ff7d0917b64f16277e41887fe8687c93e768b670d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/V21_REVIEW_REQUEST.md": {
+      "sha256": "1b382b2e5e8ef59eb7993729a93eef9541ee8555484382e9a96c531afddcf476",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/actor_resources.qnt": {
+      "sha256": "91cbcce02b1bbb4e17e179ef208ddf80e80df4685c6482b8cb61d5876cc2e317",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/actor_resources_test.qnt": {
+      "sha256": "c6461d117bf346cdad078513c4ccfb782a143737275a8b14e317b3f209ef595b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/archival-initial-named.log": {
+      "sha256": "d46df0f7b6cd752ba7439cc95cc7e087c9f670b0230d6a62f0a060c0b077b148",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/archival-initial-run.log": {
+      "sha256": "cf5d507792a5b783542c87cb5a5bba5388243a4cf9f7ef660f8a27d8846225c4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/check_longevity_offline.py": {
+      "sha256": "ecf718663d6d9a940d39798a36009d7697bc95a9943c526735a442bc38ed26b5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/check_offline.py": {
+      "sha256": "e10f5748574bfa87294cfa076ee86ee943ff43ae59a99f11ccc892745c76a30b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/closure-tools-regression.json": {
+      "sha256": "6ca405de67516b0e67b7e269461488a95dff424e7f400ea6304089a679276cce",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/closure_tools/freeze_longevity.py": {
+      "sha256": "604c6e225572081cbe3717915c77d0438b16f2bdfa0f3f6efa1b75b10cc113cc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/context_provider.py": {
+      "sha256": "0e3daea910a49f44e63c6321859dd8598c4e610d16e1cc445070602e5bec1b78",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/direction.py": {
+      "sha256": "486f57b77d0d34fa8ef23f7906a4c8728c614beba6ebe4c267afe8e623c20c35",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/family_destination.qnt": {
+      "sha256": "6e7c0df9e7816fa620c13990da70fccb4367bfdb54575e343350cb1ff4a1fd83",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/family_destination_test.qnt": {
+      "sha256": "f7b286ce9443b69cd2ada54a0e4e1aee007ee024a8583aa9536f7455e20176ee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/family_order.py": {
+      "sha256": "0792d94a67ddb5b8181d54487b048b990a2cc879ece3d981ed30d4b0d4a2ec54",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/family_order.qnt": {
+      "sha256": "a2d4be04904800cead8e7d06312338e983b7c9deb005484b0d7efe5bd1109d25",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/family_order_test.qnt": {
+      "sha256": "44222437bc25a1840d8451c0256fa4148430cdb34fde6f23f3ffe4d94f3beb3f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/family_query.qnt": {
+      "sha256": "1bbf076049bdd54958c8590935ac93311159ac03a49cdfac922b61355d834d72",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/family_query_test.qnt": {
+      "sha256": "63572eab7dae3fdc1caea5b67456d9907e56c5357877a3394400c664145274cb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/family_registry.qnt": {
+      "sha256": "f5e9769df7bea01f167190a4b50b640bc2b409b6dc88efbdf63055dda7e43b49",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/family_registry_test.qnt": {
+      "sha256": "92c5c0854eb7616346f63353333f65590f77c9cc664b33d6c37bd14d95c6c637",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/family_scene.qnt": {
+      "sha256": "7b1fd7739efeff5925751fd2ca12977b832ddca044cb08de17bc1005c455f1f1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/family_scene_test.qnt": {
+      "sha256": "d8b1b2927f1fd3d2100af0cbc7ecf45677b4a00801198933f3e81644ed2ce674",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/fixture_completion.qnt": {
+      "sha256": "0b27a99e38a414dd593939a4c3c819ef7ad41bb733b94d5f7af760acc1127559",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/fixture_completion_test.qnt": {
+      "sha256": "bfc299ee6f62305406decd5fda1b11787632ab1ac86351ae00db40d79fc0ec9d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/fixture_legacy_ready.py": {
+      "sha256": "6ec3ef9763ef7c90d5f9a1f942637545d8296aa72c2ea2c77be23c997f7ce23c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/formal-and-runtime-history-bindings.json": {
+      "sha256": "d8628bbf01ce211652965d249a4349ea0f72e45bdc7ddb8e2fee5eee379f4856",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/freeze_family_query.py": {
+      "sha256": "52a7c70d58dc2088a6771b400cb81756c3e960b94ee45b7091f744642b3622ab",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/freeze_readonly_ipc.py": {
+      "sha256": "5f2a5359acfc1674e18073f7a1cd95e1923e5f71cde672d355a804c2f066f65d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/freeze_recovery.py": {
+      "sha256": "aee233e55edcf853a0f1604533b2a3046169bd82e5df3b9b6905b1ff9b0bc8cf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/gesture_capture.qnt": {
+      "sha256": "85ffe1d5570b350e59ab0dfb7e0c430b8e4577edcb0627b96ca01c9582dae8e1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/gesture_capture_test.qnt": {
+      "sha256": "cdbfbc57878aa921346c4bb2c26055850f82d7fc87f3c06af1fb91bd6f0d6e1b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/helper_closure.qnt": {
+      "sha256": "171908cb4db926ad371c0f0fa06317e908ff1326d73bdc32c70e7926294f1340",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/helper_closure_test.qnt": {
+      "sha256": "649f268b976bde8339c9f4da5c473a952f0569e07ecae0c3cd21badc4678640f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/helper_keeper.py": {
+      "sha256": "c91aa65faaa04c8351af159000b14fa9f18f7db3a2151af2375a662ad3527252",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/helper_policy.py": {
+      "sha256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/helper_supervisor.py": {
+      "sha256": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/ingress_context.qnt": {
+      "sha256": "702e7e2fcb3f9d63e3653afd73eafdfec85bf50cd24f2881ad4344a11e16f023",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/ingress_context_test.qnt": {
+      "sha256": "b828e3101cf1566ed45b7f454d6bcfa0af4a04cd3717ca3ff239760725214cd8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/inherited-frozen-v20-source.json": {
+      "sha256": "8c3cd76493e7ae9b53c955b5c676e17ed6f3e34abd77572f96a869e15db7f9d8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/ipc_guard.qnt": {
+      "sha256": "a6b974ffe4059d6e212fba2d4e613a58eaa00fbb8b623623197d6e17360e3046",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/ipc_guard_test.qnt": {
+      "sha256": "d3958dadcdb511c5b5542d1f99e530824bfc564ab1b152e3d66f38d58ed911f1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/legacy_fixture_ready.qnt": {
+      "sha256": "122a0bf01d3099727747923ea299e8bdf0d7901d4c3e39889e56b558c5464eeb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/legacy_fixture_ready_test.qnt": {
+      "sha256": "12627338c71ccd717207114acb4b74b076659d2154e856cc939f98334b941700",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-00.log": {
+      "sha256": "57e483967a816d2e6255045dd63c5b0bcb9b197fc2c18ecc0b52986290b13dda",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-01.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-02.log": {
+      "sha256": "26ab741e0b74c1468cb26fa6c958805553f409d5cee434f25fdebbe5ade125fb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-03.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-04.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-05.log": {
+      "sha256": "82ed2aa5256fdf47952513caca0adc9e47af154c0c26080fccfffe5e1adb0bbb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-06.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-07.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-08.log": {
+      "sha256": "44a98191b8372f332591a2210a6bf8046b4b6225524e1d8a34840c3bb47d5fa4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-09.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-10.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-11.log": {
+      "sha256": "7ba3da092d49b7f17abfa4704157ade9318fd1adb4b7667099ec330bf08f4822",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-12.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-13.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-14.log": {
+      "sha256": "de64ee4e426439729afe2ef247523f8d31d34995bbab3baf936aac57f877390a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-15.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-16.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-17.log": {
+      "sha256": "5f63a8ec67c72a1a46582d9ac3c37486f1a20d198e6599ada3016305049615a7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-18.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-19.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-20.log": {
+      "sha256": "2290bc3d0e959e28e6b9c4846d0193829d0b2ca20083cab067bc2e17f16567da",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-21.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-22.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-23.log": {
+      "sha256": "d9260915e950fbe30c32ac559842bfc2651af3c21bbf61770836020d1c48cd23",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-24.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-25.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-26.log": {
+      "sha256": "5ffa67e939f8551c2919c6dc2c29848b5e6b1b72ac8dcc08e45bd1f792555bdb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-27.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-28.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-29.log": {
+      "sha256": "49ce3282bd42d2945c66d694b2c3081e7592e0ffd4ca5d950416e132dfe6b85a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-30.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-31.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-32.log": {
+      "sha256": "eb589254b7984470b4cf00e239523cca8331311da6881277429d7833e6284bab",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-33.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-34.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-35.log": {
+      "sha256": "bf3b6d3d1f3397736d9e42a5028fe037fa57b009297ad11c2b0996649fd21ada",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-36.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-37.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-38.log": {
+      "sha256": "c685119c274b31e5b57d271d3abcdc8e29f48978e6da2158c36664f483960f9c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-39.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-40.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-41.log": {
+      "sha256": "411a2f8ac4f794f24b71fab490c723d011b264a733a4b681722417f1b6096e08",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-42.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-43.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-44.log": {
+      "sha256": "9859b045b6785b684e0fcba95b978de0a10940b81f31a0fa9f18a3076be01ec6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-45.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-46.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-47.log": {
+      "sha256": "00f4a2ac0c839201208de1cc9203bafc0b8cf24286329a44a307de457268c341",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-48.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-49.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-50.log": {
+      "sha256": "e70caeba8342060db50e7e73cd7472413ab95b33fd114bb35b075c20ce04a0c2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-51.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-52.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-53.log": {
+      "sha256": "c7d7d26621786c20c5d5f5a51f262bc27b2f695280cbab8dcc240e6635f36067",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-54.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-55.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-56.log": {
+      "sha256": "715b53aff3aadbeb5af6506a79fd08a480c5410d2e5d7c3bdf6182e0f96d99c6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-57.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-58.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-59.log": {
+      "sha256": "f3da2cb05a7878cd46bf7b7ea758f0bda88bfd230e43aa424c663ceae0f27934",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-60.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-61.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-62.log": {
+      "sha256": "acbe4c6f667cdfc00ac35e3dc3b199fd927064ab3cd4579dedca3096316b6bd5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-63.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-64.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-65.log": {
+      "sha256": "b5abdc3ce3fc3adfa66205e9d9fdbca86f780d16829b7930aebb9166d6c3224a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-66.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-67.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-68.log": {
+      "sha256": "257764891dfc02d78abaa653f69d41b743bb8ac1884d0a71cc059a29cfd29e0c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-69.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-70.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-71.log": {
+      "sha256": "bae4ee3026715ecb46bac76194ddfe199d54876c36b2c686bfd53fbb28fe8507",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-72.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-73.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-74.log": {
+      "sha256": "c8965652b6a09bdb74a7661867e17bcccfab94ece15977515d0318ea30715263",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-75.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-76.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-77.log": {
+      "sha256": "6d67ea0fefb108814b554ea3a0c6df4481d952107c5bce0c3473c2449e311bb6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-78.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-79.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-80.log": {
+      "sha256": "079458345dde2bb111202f9f95c2c948876f6134b0387edbb1c436a62fc4cafb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-81.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-82.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-83.log": {
+      "sha256": "f7bf135f0070626a3e1fe1549236e4dd1edc08e00a7d12783928f9344705bce6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-84.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-85.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-86.log": {
+      "sha256": "00456e46e17a749d9ee9279b279a48a3451f717e1ee21b70f108876a3b661ec2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-87.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-88.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-89.log": {
+      "sha256": "4e16b01e35a9f0671e98f565439622bf826f316f0d4daac05da589c737afdad5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-check-90.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-full-runner.log": {
+      "sha256": "ca049a78fb9754b87148becd6d2600c11408dd8e2edc1cf4ea141c037ef1a3b2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-final-offline-checkpoint.json": {
+      "sha256": "1a7d5681dfb20cdc2ce0c5a4ea459cebe1e1bcd2aee8c2a919a81b86a7264f9a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-first-runtime-tests.log": {
+      "sha256": "71b7840a67416ed94b52d02e06a806acd707c120fd375c8f2cbe2a01958f5154",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-formal-before-implementation.json": {
+      "sha256": "59788ee82b7a62348eaa173ec9a8adf8e911881afe816bce8fd10b45965c35a9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-00.log": {
+      "sha256": "e3e1c6a92c4868d16e66b8e269b35f1ea3cc9f787371b6f32bbebdb64a1edd3a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-01.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-02.log": {
+      "sha256": "89cd4e8551e43bbf7b1c50c69b7e5516366071b6c3136f872afca6c09fca46fb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-03.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-04.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-05.log": {
+      "sha256": "ee098e9ff98982513c9e10a7cb237ada25e53f04ddb78d2f67348772ca38e16d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-06.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-07.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-08.log": {
+      "sha256": "a76a3229316c78cf92010c3452c3939851f97cd22c725952c35b3ef048f2d6cc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-09.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-10.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-11.log": {
+      "sha256": "e879568394771d89c6a2104ff67616fcea6943c5fbd6e6b5c5d036e6423fe844",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-12.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-13.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-14.log": {
+      "sha256": "37b19653636f17ae28187fdb180d6b0d045a64ddcc17aad8319c86b5aa86a1fe",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-15.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-16.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-17.log": {
+      "sha256": "840ccf92caa8648217a58eaecbbb6e5b46ff5be0b902c74d0f3ab7f023b92046",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-18.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-19.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-20.log": {
+      "sha256": "8c100810f9b094aa4e45782ffd3d02b398992fd6bab5100184affd9700f47ac9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-21.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-22.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-23.log": {
+      "sha256": "471494ea42464db0ad432e62530ed8092be111c14034b0f2816932c9fab7b49f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-24.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-25.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-26.log": {
+      "sha256": "c99e477dced31ba282bfd7832e03f8e2be10047bb3cbe58123f181753c0dfdd6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-27.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-28.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-29.log": {
+      "sha256": "cdbefb9c6f600c38032153c58a1572944c7881464859e9a2a69a12000f6a6155",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-30.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-31.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-32.log": {
+      "sha256": "394583ffa440f5fc61c9727a71a33e4fd2783b1fdd3a2190be45d871e85ae271",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-33.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-34.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-35.log": {
+      "sha256": "187edd2f10e596a0485c0f2c0644c08cc753f1b3fc881fbaa32e7d21c81228e8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-36.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-37.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-38.log": {
+      "sha256": "9ef8f21dff05a273d0645f110c0c9222905e28d685e6e073cb95beda7407b418",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-39.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-40.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-41.log": {
+      "sha256": "aade44adb850388655da7e2791c2eba4df414e3e919b51352238b09e6865c816",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-42.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-43.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-44.log": {
+      "sha256": "b70ebcf67bfe4d94ac88676b150f122a691cade3ca262f13bb7f339264b9b642",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-45.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-46.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-47.log": {
+      "sha256": "897c1df623e4a10589e93bfe98ac79dbaaede03c46c3ac553c28ef3a3aebba91",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-48.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-49.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-50.log": {
+      "sha256": "6024f0bb42d1939bc90d6c2ecdb8908e932c7fad2b4bd74c5f6eec5c60370a72",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-51.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-52.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-53.log": {
+      "sha256": "16983fb6fbf03bb4786e0050098bb362d34d6a1a5ff469c8dfcc78f64c398176",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-54.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-55.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-56.log": {
+      "sha256": "4204de4d1e76b5b5140e53648541b44f775095029e63bf55dc906234ceee15f3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-57.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-58.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-59.log": {
+      "sha256": "6e3fc18d1b9a89b5529a7f8b0fe9b9b117d04bdfe6abd490009ce84d28e33fe3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-60.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-61.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-62.log": {
+      "sha256": "aa2e47f93f28650d7ee73d0ab4cb15be2234d29dffca6972c70768cab2826bb6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-63.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-64.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-65.log": {
+      "sha256": "6c13832893df8023ee187641e5b4dfe96005e989cfcf95479866b303d957720c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-66.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-67.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-68.log": {
+      "sha256": "a6cbfbe415299d029d72843dd3c517481a96a9070998118729d7ad837d15d505",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-69.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-70.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-71.log": {
+      "sha256": "3db5e3329fc21c0c26d8dd6e3699b7ecb8c20f19f23b36f088b1c1161788123a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-72.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-73.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-74.log": {
+      "sha256": "8628d3a65c5c299d3efb694e73620fd3e1ab3c5b86219bd830ea4e66b91828fb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-75.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-76.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-77.log": {
+      "sha256": "fadf5baaeedc478016a3d18488a96315a9036a9d85f8f93d55e2d0eed95fab42",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-78.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-79.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-80.log": {
+      "sha256": "bee1195d9861c236d7377ed5cf98417d66d32dea653535346ce528e1617abb9e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-81.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-82.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-83.log": {
+      "sha256": "7fcdfc24247ebe6cbcd9e440ec7a45d4b21c3c0dbbea9c5441921008678bc749",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-84.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-85.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-86.log": {
+      "sha256": "f4777d63b5cd403491fdb3774eb6752a541ee95e3bd7cb4769078d6f83bbd448",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-check-87.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-full-runner.log": {
+      "sha256": "60cea41da0c7aecc8a8e652e38a83674756e5c6c648bda1f0ff7149d51ff9c80",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-offline-checkpoint.json": {
+      "sha256": "170e12d47ab96619db83634e03ce41eed6d30f709e900cbd11bf0596fcca5618",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/longevity-stable-runtime-tests-v1.log": {
+      "sha256": "5fdf27a12d60bc2f36dbbef5470c0652d564c5ce1ea3637ab985bcfa9ef6416f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/native_composition.qnt": {
+      "sha256": "9f65bd2314f3dddf57565434610708bf8fdc61bd624d75d4de87735aa0171e65",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/native_composition_test.qnt": {
+      "sha256": "647cd0cebaed4cf463b57be33d1ba17dc7a0ef5b447c251b8904e72ef0fff807",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/native_desktop.py": {
+      "sha256": "48016634859ba0774a5e64991cd8696b75534db58b20003099e14b0f1c3cc1da",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/native_recovery.qnt": {
+      "sha256": "51e763f2125f0caffe438861a891000eb9af31c40bd86c63e083dfa51d08d8cb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/native_recovery_test.qnt": {
+      "sha256": "ef7facf9ea92b7aecc60e476fbb659ea9d64e371cd2c35282ecd4b38bee4f804",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/native_runtime.py": {
+      "sha256": "f4b5a0ba3d93f5d2cf3da650cfee5769194130f265ce3867cfbd26617df79957",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/orphan-refined-formal-before-runtime.json": {
+      "sha256": "21751e8fa7d24856dd6036859d94e185d36a922f3fb5154c274eb8a9d60563a4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/owned_commands.py": {
+      "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/owned_launch.py": {
+      "sha256": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/pending_direction.qnt": {
+      "sha256": "ccd3b49807fa4b4063044edb5aae77c6b273ae9a7982e74eb22aaee4ff8d3b53",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/pending_direction_test.qnt": {
+      "sha256": "6c8a4cbc461e0a2d36417b2714a4306073d6046d0566b710f429633be2d84e12",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/persistent_atlas.qnt": {
+      "sha256": "789a8f3682d612091ab60e58f3a5e3f100f0b49556bd56a397284656f6e60934",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/persistent_atlas_test.qnt": {
+      "sha256": "e91850f4abde58f984e3dbd27042324ab87a0efb1c06ea6ffe53f0ab7b31a25d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/pipe_transport.py": {
+      "sha256": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/predecessor-initial-named.log": {
+      "sha256": "3e139cfa58eb6cc7b9147128671a658d36d615ccbaad67cfce09cbf6fbba5af5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/production_motion_6d9.py": {
+      "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_archival-final-named.log": {
+      "sha256": "4e6ce80af55599481165cbcd4c1c3d570892af2310cb9e1df34997b095cf0203",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_archival-final-run.log": {
+      "sha256": "b15aa0495a5032661ac173ec43217ba93b0940ee1825041be873fcd0951dcd70",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_archival-final-typed.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_archival.qnt": {
+      "sha256": "8daafb229ad34d868de3ec5099378bed08a78a477dd940ac1cf5ab58a2eb79ff",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_archival_test.qnt": {
+      "sha256": "bdbbdec4cd51b9de0bf45dec2b0ba83bfc6138b28f3f164127707f4c6621595b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_archive.py": {
+      "sha256": "665ed976818430e9c46b76b107fc33377405b56d5275e2a9cb1b8ff3238eee3d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_ipc.py": {
+      "sha256": "2d63cdf0370142f75af10fb959b674e891c056870c896fbdf5042c45919f8dd1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_ipc.qnt": {
+      "sha256": "17fe3940457938fc471c7517a232da49e0426b25a7bdf2c458293c1c1c857b71",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_ipc_test.qnt": {
+      "sha256": "a3c9dabcee08960b21b0c4fa05ac143b8cf650eca711ec65540e4bbb061a32cf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_predecessor-final-named.log": {
+      "sha256": "37b1b5c81487116990687e6e08756c26f35fd8398205f6a65c53c2a09aa4e344",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_predecessor-final-run.log": {
+      "sha256": "7b347fa56d99a925a6a6c86c3387b2af14f39b84a968a96bbd0752fee1388418",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_predecessor-final-typed.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_predecessor.qnt": {
+      "sha256": "981edebc02eff5cc149b2b89d4e7d0030355a06c3aa58a91283643f271cf0a47",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_predecessor_test.qnt": {
+      "sha256": "27d5110534b1214a60e3f947ff1fc12bc33bd95dcbe0aa0fa8150fcd150a0bda",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_registry.qnt": {
+      "sha256": "2200fe845c0d72807247ec3c8b2e120a68f24e546078669da1a34a1ff257e9f9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_registry_test.qnt": {
+      "sha256": "a3ded4b91f4ba4ebb495204f2473723ac4fb393afbfaf5ddfd86df6f39a364a9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_startup.qnt": {
+      "sha256": "13ebfb71124269f57172372fcb905a35c0a0d8a0d2b4146058062c8c9ea830ca",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_startup_test.qnt": {
+      "sha256": "72b2c43976a237036ec5e7ad5e171ea78e2c363db73ba108c7f52f9a27607a29",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/receipt_visual.qnt": {
+      "sha256": "359386bd7a4fc2aeb1ced50627f0e7240695e06cdff1c39a66a3c40fb714c309",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/receipt_visual_test.qnt": {
+      "sha256": "6a99b6accb257f828d364fdc3d05f5e0818658b63ab5e38e6d25a9a6e1959cc3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/recovery_cancel.py": {
+      "sha256": "8647a336a7b83ec5de7d60f63ccb0436f7b684f85879e43c7ae8f21ff499b219",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/recovery_cancel.qnt": {
+      "sha256": "7986f30a1a3e1b8f8b0df069d33a97eee9461a61e6b3cf8a23286df2a84aab31",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/recovery_cancel_test.qnt": {
+      "sha256": "642dc742d8e7f41062c5cfcb7334054def008e771c20b04d9c038e38bd99394b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/recovery_constant.qnt": {
+      "sha256": "e2890690010c36e0a1783c3bbb8adc42b9efeaf9e8b1b110b8e556bc7635be08",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/recovery_constant_test.qnt": {
+      "sha256": "2134b3ad035549fbd28e716e35a2431868137313e00969b8cbdcb6cdea2e8882",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/recovery_intent.py": {
+      "sha256": "e725b6cc54d2268e81b9e52cd2c24e4632a2ec6f99b357872dadf90d76e2ce66",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/recovery_ownership.qnt": {
+      "sha256": "d7a834da3c7747b4b48b68c5a8e0453465a571a2e47ffa4afa15ce816c795b8e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/recovery_ownership_test.qnt": {
+      "sha256": "12d8dcbf89537d88b5cb5031385e23c3d5a4a8b065544111a1c58aa7592420cf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/recovery_resources.py": {
+      "sha256": "133edcf7b92aaa2f521af90922c571d1637ab8e8c9536a7cf57a6475fa18ce02",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/recovery_runtime.py": {
+      "sha256": "5c77942c9afdfbc87c8cc28a93d3285de191c66b1390d770859f22173cfae892",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/renderer_terminal.qnt": {
+      "sha256": "24cd7c94cfb96e1ce629732607ae7db7dcb67bec250ed23fe4b8f01a7ef26ea8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/renderer_terminal_test.qnt": {
+      "sha256": "10acec5bbbb533cb832219db42398aa80bdaea1c404901235b3efce40f7d3dae",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/responsive_preparation.qnt": {
+      "sha256": "146f2cbffa7ff4b8fa8ed10637343910b2051944376e5ab1c66dfeea8b9dbd0d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/responsive_preparation_test.qnt": {
+      "sha256": "660a0a9d12869e1950839c70a34329e32994d529cf340fbc4476821bd843365a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-orphan-refinement/READONLY_LONGEVITY_CONTRACT.md": {
+      "sha256": "1e029072608da87cd13d7d63a877607f23a93207c5e1e6c8f454cbdd62bfb59e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-orphan-refinement/native_runtime.py": {
+      "sha256": "dd62f690d527fcbbe9719ed0250dcc9011561f7f3c1320f386464afadd907b8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-orphan-refinement/readonly_archive.py": {
+      "sha256": "57702ce603875a652a1368be9c3b39f1298d4c131ad0bdc5c4989bc009bca7bd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-orphan-refinement/readonly_ipc.py": {
+      "sha256": "89abb25c478fedc9e83e5400475a6239cb94b5c429e50882682694a5f9accb0f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-orphan-refinement/readonly_predecessor.qnt": {
+      "sha256": "385f86dbcde3dc7f755b9bfe58a9d136d9a5215da9da2376e5983089bdc60371",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-orphan-refinement/readonly_predecessor_test.qnt": {
+      "sha256": "c28b3099d7a78152b7c44763c00084dee8002cb29bccd7234095ea893087e131",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-orphan-refinement/service_runtime.py": {
+      "sha256": "f8c34476e065e6312412df6778fcbdc6c5042c7a942c45810ba75742c93a8b0a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-orphan-refinement/test_readonly_longevity.py": {
+      "sha256": "acc44dc94ebda79742571cd9809da519a1382e62375187fcfb8306e6b4a944d3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/FIXTURE_COMPLETION_CONTRACT.md": {
+      "sha256": "0a356f342826974207a16051796e4eb1d437fc98f54f98f8c35b4b86b0368685",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/LEGACY_FIXTURE_READINESS_CONTRACT.md": {
+      "sha256": "7631a7e4af9a9f2ef4e36ece47b1a2dc6ae302021d806e3d3b7c6aab1eab5757",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/READONLY_IPC_CONTRACT.md": {
+      "sha256": "53e32adf0aa4840bd281e4d5174470db23e8ff396d3959e940295eedde1be827",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/READONLY_LONGEVITY_CONTRACT.md": {
+      "sha256": "c81f431488ef6114741e35298b89a6870fd8c1c9969e4df60678fe8b08c9a74f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/ROOT_REVIEW_REQUEST.md": {
+      "sha256": "7c95fb89d982f8a66a0e000ff7d0917b64f16277e41887fe8687c93e768b670d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/actor_resources.qnt": {
+      "sha256": "91cbcce02b1bbb4e17e179ef208ddf80e80df4685c6482b8cb61d5876cc2e317",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/actor_resources_test.qnt": {
+      "sha256": "c6461d117bf346cdad078513c4ccfb782a143737275a8b14e317b3f209ef595b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/check_longevity_offline.py": {
+      "sha256": "6d6e15adc98fd320b3fe7ef26ba1daf04a385bc595857b310ca902d198ad8393",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/check_offline.py": {
+      "sha256": "e10f5748574bfa87294cfa076ee86ee943ff43ae59a99f11ccc892745c76a30b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/context_provider.py": {
+      "sha256": "0e3daea910a49f44e63c6321859dd8598c4e610d16e1cc445070602e5bec1b78",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/direction.py": {
+      "sha256": "486f57b77d0d34fa8ef23f7906a4c8728c614beba6ebe4c267afe8e623c20c35",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/family_destination.qnt": {
+      "sha256": "6e7c0df9e7816fa620c13990da70fccb4367bfdb54575e343350cb1ff4a1fd83",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/family_destination_test.qnt": {
+      "sha256": "f7b286ce9443b69cd2ada54a0e4e1aee007ee024a8583aa9536f7455e20176ee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/family_order.py": {
+      "sha256": "0792d94a67ddb5b8181d54487b048b990a2cc879ece3d981ed30d4b0d4a2ec54",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/family_order.qnt": {
+      "sha256": "a2d4be04904800cead8e7d06312338e983b7c9deb005484b0d7efe5bd1109d25",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/family_order_test.qnt": {
+      "sha256": "44222437bc25a1840d8451c0256fa4148430cdb34fde6f23f3ffe4d94f3beb3f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/family_query.qnt": {
+      "sha256": "1bbf076049bdd54958c8590935ac93311159ac03a49cdfac922b61355d834d72",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/family_query_test.qnt": {
+      "sha256": "63572eab7dae3fdc1caea5b67456d9907e56c5357877a3394400c664145274cb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/family_registry.qnt": {
+      "sha256": "f5e9769df7bea01f167190a4b50b640bc2b409b6dc88efbdf63055dda7e43b49",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/family_registry_test.qnt": {
+      "sha256": "92c5c0854eb7616346f63353333f65590f77c9cc664b33d6c37bd14d95c6c637",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/family_scene.qnt": {
+      "sha256": "7b1fd7739efeff5925751fd2ca12977b832ddca044cb08de17bc1005c455f1f1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/family_scene_test.qnt": {
+      "sha256": "d8b1b2927f1fd3d2100af0cbc7ecf45677b4a00801198933f3e81644ed2ce674",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/fixture_completion.qnt": {
+      "sha256": "0b27a99e38a414dd593939a4c3c819ef7ad41bb733b94d5f7af760acc1127559",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/fixture_completion_test.qnt": {
+      "sha256": "bfc299ee6f62305406decd5fda1b11787632ab1ac86351ae00db40d79fc0ec9d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/fixture_legacy_ready.py": {
+      "sha256": "6ec3ef9763ef7c90d5f9a1f942637545d8296aa72c2ea2c77be23c997f7ce23c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/freeze_family_query.py": {
+      "sha256": "52a7c70d58dc2088a6771b400cb81756c3e960b94ee45b7091f744642b3622ab",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/freeze_readonly_ipc.py": {
+      "sha256": "5f2a5359acfc1674e18073f7a1cd95e1923e5f71cde672d355a804c2f066f65d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/freeze_recovery.py": {
+      "sha256": "aee233e55edcf853a0f1604533b2a3046169bd82e5df3b9b6905b1ff9b0bc8cf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/gesture_capture.qnt": {
+      "sha256": "85ffe1d5570b350e59ab0dfb7e0c430b8e4577edcb0627b96ca01c9582dae8e1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/gesture_capture_test.qnt": {
+      "sha256": "cdbfbc57878aa921346c4bb2c26055850f82d7fc87f3c06af1fb91bd6f0d6e1b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/helper_closure.qnt": {
+      "sha256": "171908cb4db926ad371c0f0fa06317e908ff1326d73bdc32c70e7926294f1340",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/helper_closure_test.qnt": {
+      "sha256": "649f268b976bde8339c9f4da5c473a952f0569e07ecae0c3cd21badc4678640f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/helper_keeper.py": {
+      "sha256": "c91aa65faaa04c8351af159000b14fa9f18f7db3a2151af2375a662ad3527252",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/helper_policy.py": {
+      "sha256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/helper_supervisor.py": {
+      "sha256": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/ingress_context.qnt": {
+      "sha256": "702e7e2fcb3f9d63e3653afd73eafdfec85bf50cd24f2881ad4344a11e16f023",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/ingress_context_test.qnt": {
+      "sha256": "b828e3101cf1566ed45b7f454d6bcfa0af4a04cd3717ca3ff239760725214cd8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/ipc_guard.qnt": {
+      "sha256": "a6b974ffe4059d6e212fba2d4e613a58eaa00fbb8b623623197d6e17360e3046",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/ipc_guard_test.qnt": {
+      "sha256": "d3958dadcdb511c5b5542d1f99e530824bfc564ab1b152e3d66f38d58ed911f1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/legacy_fixture_ready.qnt": {
+      "sha256": "122a0bf01d3099727747923ea299e8bdf0d7901d4c3e39889e56b558c5464eeb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/legacy_fixture_ready_test.qnt": {
+      "sha256": "12627338c71ccd717207114acb4b74b076659d2154e856cc939f98334b941700",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/longevity-offline-checkpoint.json": {
+      "sha256": "170e12d47ab96619db83634e03ce41eed6d30f709e900cbd11bf0596fcca5618",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/native_composition.qnt": {
+      "sha256": "9f65bd2314f3dddf57565434610708bf8fdc61bd624d75d4de87735aa0171e65",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/native_composition_test.qnt": {
+      "sha256": "647cd0cebaed4cf463b57be33d1ba17dc7a0ef5b447c251b8904e72ef0fff807",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/native_desktop.py": {
+      "sha256": "48016634859ba0774a5e64991cd8696b75534db58b20003099e14b0f1c3cc1da",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/native_recovery.qnt": {
+      "sha256": "51e763f2125f0caffe438861a891000eb9af31c40bd86c63e083dfa51d08d8cb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/native_recovery_test.qnt": {
+      "sha256": "ef7facf9ea92b7aecc60e476fbb659ea9d64e371cd2c35282ecd4b38bee4f804",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/native_runtime.py": {
+      "sha256": "dd62f690d527fcbbe9719ed0250dcc9011561f7f3c1320f386464afadd907b8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/owned_commands.py": {
+      "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/owned_launch.py": {
+      "sha256": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/pending_direction.qnt": {
+      "sha256": "ccd3b49807fa4b4063044edb5aae77c6b273ae9a7982e74eb22aaee4ff8d3b53",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/pending_direction_test.qnt": {
+      "sha256": "6c8a4cbc461e0a2d36417b2714a4306073d6046d0566b710f429633be2d84e12",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/persistent_atlas.qnt": {
+      "sha256": "789a8f3682d612091ab60e58f3a5e3f100f0b49556bd56a397284656f6e60934",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/persistent_atlas_test.qnt": {
+      "sha256": "e91850f4abde58f984e3dbd27042324ab87a0efb1c06ea6ffe53f0ab7b31a25d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/pipe_transport.py": {
+      "sha256": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/production_motion_6d9.py": {
+      "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/readonly_archival.qnt": {
+      "sha256": "8daafb229ad34d868de3ec5099378bed08a78a477dd940ac1cf5ab58a2eb79ff",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/readonly_archival_test.qnt": {
+      "sha256": "bdbbdec4cd51b9de0bf45dec2b0ba83bfc6138b28f3f164127707f4c6621595b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/readonly_archive.py": {
+      "sha256": "665ed976818430e9c46b76b107fc33377405b56d5275e2a9cb1b8ff3238eee3d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/readonly_ipc.py": {
+      "sha256": "efa7f156d2e502ac4cc7c975f22c39ddfd54217b3d28a50bfba056bf2b3cd721",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/readonly_ipc.qnt": {
+      "sha256": "17fe3940457938fc471c7517a232da49e0426b25a7bdf2c458293c1c1c857b71",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/readonly_ipc_test.qnt": {
+      "sha256": "a3c9dabcee08960b21b0c4fa05ac143b8cf650eca711ec65540e4bbb061a32cf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/readonly_predecessor.qnt": {
+      "sha256": "981edebc02eff5cc149b2b89d4e7d0030355a06c3aa58a91283643f271cf0a47",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/readonly_predecessor_test.qnt": {
+      "sha256": "27d5110534b1214a60e3f947ff1fc12bc33bd95dcbe0aa0fa8150fcd150a0bda",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/readonly_registry.qnt": {
+      "sha256": "2200fe845c0d72807247ec3c8b2e120a68f24e546078669da1a34a1ff257e9f9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/readonly_registry_test.qnt": {
+      "sha256": "a3ded4b91f4ba4ebb495204f2473723ac4fb393afbfaf5ddfd86df6f39a364a9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/receipt_visual.qnt": {
+      "sha256": "359386bd7a4fc2aeb1ced50627f0e7240695e06cdff1c39a66a3c40fb714c309",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/receipt_visual_test.qnt": {
+      "sha256": "6a99b6accb257f828d364fdc3d05f5e0818658b63ab5e38e6d25a9a6e1959cc3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/recovery_cancel.py": {
+      "sha256": "8647a336a7b83ec5de7d60f63ccb0436f7b684f85879e43c7ae8f21ff499b219",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/recovery_cancel.qnt": {
+      "sha256": "7986f30a1a3e1b8f8b0df069d33a97eee9461a61e6b3cf8a23286df2a84aab31",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/recovery_cancel_test.qnt": {
+      "sha256": "642dc742d8e7f41062c5cfcb7334054def008e771c20b04d9c038e38bd99394b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/recovery_constant.qnt": {
+      "sha256": "e2890690010c36e0a1783c3bbb8adc42b9efeaf9e8b1b110b8e556bc7635be08",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/recovery_constant_test.qnt": {
+      "sha256": "2134b3ad035549fbd28e716e35a2431868137313e00969b8cbdcb6cdea2e8882",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/recovery_intent.py": {
+      "sha256": "e725b6cc54d2268e81b9e52cd2c24e4632a2ec6f99b357872dadf90d76e2ce66",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/recovery_ownership.qnt": {
+      "sha256": "d7a834da3c7747b4b48b68c5a8e0453465a571a2e47ffa4afa15ce816c795b8e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/recovery_ownership_test.qnt": {
+      "sha256": "12d8dcbf89537d88b5cb5031385e23c3d5a4a8b065544111a1c58aa7592420cf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/recovery_resources.py": {
+      "sha256": "133edcf7b92aaa2f521af90922c571d1637ab8e8c9536a7cf57a6475fa18ce02",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/recovery_runtime.py": {
+      "sha256": "5c77942c9afdfbc87c8cc28a93d3285de191c66b1390d770859f22173cfae892",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/renderer_terminal.qnt": {
+      "sha256": "24cd7c94cfb96e1ce629732607ae7db7dcb67bec250ed23fe4b8f01a7ef26ea8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/renderer_terminal_test.qnt": {
+      "sha256": "10acec5bbbb533cb832219db42398aa80bdaea1c404901235b3efce40f7d3dae",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/responsive_preparation.qnt": {
+      "sha256": "146f2cbffa7ff4b8fa8ed10637343910b2051944376e5ab1c66dfeea8b9dbd0d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/responsive_preparation_test.qnt": {
+      "sha256": "660a0a9d12869e1950839c70a34329e32994d529cf340fbc4476821bd843365a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/runtime_fixture.py": {
+      "sha256": "385d01079b0607d9e6f4519d99cae1fda9f0438e5696b79e55273265a9ddfa8a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/runtime_lease.qnt": {
+      "sha256": "d74f2fa8b561a60e378eea74cf7e1969c0ad9299262b9cee39c7ac5657f0dfb7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/runtime_lease_test.qnt": {
+      "sha256": "622068ca229c8b50d457d1674bedd13b65d3c8431f58576fd470c9dfd9efc7f6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/runtime_lifecycle.qnt": {
+      "sha256": "d912775efd0da4e84700b2a85bd6f7d165525488f80ccecb06cd4a80633eae25",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/runtime_lifecycle_test.qnt": {
+      "sha256": "decd75fdf892d132f6657940cc15efb483f770115881fb30e64a68abae652f16",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/scene_controller.py": {
+      "sha256": "459135eec7abd238b9366c775cec39df72d75312b6a2ef6850cb1fdf655a7ba5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/scene_manager.py": {
+      "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/service_runtime.py": {
+      "sha256": "f8c34476e065e6312412df6778fcbdc6c5042c7a942c45810ba75742c93a8b0a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/snapshot_cache.py": {
+      "sha256": "21f0d47313c053964fd8e81736843d8b62ecadab5eee3ebba80ef5801e8bf8ee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/socket_frontend.py": {
+      "sha256": "0ea4c81cbf975104bb4ae17f9a8807f4af74a974a793a4b36a0aac7569c2647f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_actor_resources.py": {
+      "sha256": "4a7c1bd0d507aad67821e6edf68cb4719647208027819b7152a623ab70d8c05b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_capture_lease.py": {
+      "sha256": "e301c95d2fc7ac21fb91118493b9323f0acddfb89080251f91959ce74ad05607",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_context_provider.py": {
+      "sha256": "32fdddb492653f08a3bee1d2145903417f6a7fe90e3d0ad89469736672a2c950",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_family_order.py": {
+      "sha256": "c08c2a8d0660204627aa671b347e7429f86e536cf7650ab62a4c98d267ad269b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_family_query_concurrency.py": {
+      "sha256": "a345242b6e7cf850dfd46197dcd1f36793504444e18155c063adb8ae120009ab",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_frontend_completion.py": {
+      "sha256": "05e34a94adbed012df65e4962faba3a931d4b31f0974cdfbf8fe1efbec87edbc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_gesture_retirement.py": {
+      "sha256": "d1b8cac3bb3fcd14281703177a7c92ad79179170ad8696752d350d5237b11e7b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_helper_keeper.py": {
+      "sha256": "13fca934e7766a777c3983f39924b990c0f08a0273adc5fb82e0f47efc7131bd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_helper_policy.py": {
+      "sha256": "2eb1a33831a29ffcbf210196f32ec9c57bec3b999b3367aea95c2a972db975ce",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_helper_supervisor.py": {
+      "sha256": "203b8d0fe92158cb2f0661630a81ebc569c9602437d5e58a70bb24e83438b480",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_ingress_context.py": {
+      "sha256": "04a7c158a2c430b3967da74366b3ac73a62d57b4c37fce93f50e1cb08b077e82",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_ipc_complete_probe.py": {
+      "sha256": "ba53f204516a3ca7a2d8764951d261a2aa4c0de2e47ca11fb881cac42546d62f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_legacy_fixture_ready.py": {
+      "sha256": "4f5af53c4c5468c2a6b3aeb6b77650ca68ef1981359f94c137584c5905a0ddd4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_native_runtime.py": {
+      "sha256": "75728cd42743ec3251e92ff4a2624760bf5472c070d50bb9ea22ae3ddd243140",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_owned_commands.py": {
+      "sha256": "6f6a8e4945d6c9a827563b2ea4a23a3804295401eeed29c4e7b7ebf98bd1e448",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_pending_direction.py": {
+      "sha256": "c621906e5e6e4d7d4fb9ccd0cd81e25e48ff519868576a9a780ee7a00bbe2fea",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_pipe_transport.py": {
+      "sha256": "81b70b7035acb8241a53eaf9288901f17d31ac505be22dd9ac21935303ddfeb6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_readonly_ipc.py": {
+      "sha256": "7b198f84185e7eb763e32bc90fb8dc59e834d5b0db02e40a1790fcbb919d49e9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_readonly_longevity.py": {
+      "sha256": "e68f2c7b45eb0e1be279f2945f60264ae3c578d6e2aeff9b8ef60d9609eac5e2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_receipt_visual.py": {
+      "sha256": "c0d4fa8fc4b063ab450a5ad18a043edbb3334487fd3a7a822c20841e8f7d952e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_recovery_cancel.py": {
+      "sha256": "c37e14e5b901ba1aeeb8648ae74cb72334f8c4d51ee5f4ace44900907891c4a1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_recovery_factory.py": {
+      "sha256": "ee35d43cce72ad7910995783a6e098e18f5e43a4434ca04d8c317d3e48136dc9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_recovery_intent.py": {
+      "sha256": "a0f0e98c45c6bd480d1e52ba046299a23ee8feb5736cbc07b0bdbb3a110ccbb1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_recovery_resources.py": {
+      "sha256": "49dab4475036cd07596083be925b5f447078adc54a1122ec21f201dba4f6bce8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_recovery_runtime.py": {
+      "sha256": "659ae465410feac5c53ff1e47991cca1a7ea7d4447594449b6cf92d19ca456c1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_renderer_terminal.py": {
+      "sha256": "f3feb52b8c264224ca98d243ccb4d5dfcb823fd7d3e9c4bc5a89498112c0b083",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_responsive_preparation.py": {
+      "sha256": "f79a3f2f6bb409c8fc6bc5943a6c54d1e79a8d39160a5b0449fe46f867e9497d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_runtime_lease.py": {
+      "sha256": "f23ffaba806f3530c3e9c0808c1931c8999c173a34cc1133749836969dbe6a6d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_scene_controller.py": {
+      "sha256": "22e97f7440ca476eb659f3e329e8123e6ab69c9f8edc913326c07f2895456bd6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_scene_manager.py": {
+      "sha256": "461f4740fe823791f7c0c2d0e9fc5d9e091744015bd621a0adf9e4f578dfc6d9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_service_runtime.py": {
+      "sha256": "a7149de0f8b6328696bfd86c02f7f72e616a3bd42a3c87efa5e420f88c57fe6c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_snapshot_cache.py": {
+      "sha256": "655003df776a41314101248404b2cf88c48ae054cb4b5f49a64852fb7a0e032a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_socket_frontend.py": {
+      "sha256": "f83912985eb7b4c0eea2b6e74e39b456ba4aad3a3e462ff7628abb0d7398773e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/test_split_destination.py": {
+      "sha256": "74a8edc4ec3c64e166e02c80d5a4713bd5171a6de62a5fa7754c39b2856c1041",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/timeout_adapter.py": {
+      "sha256": "14ccc4078364fdced5a8fa9a499567dd0e2eb592ff1b7f88ad38a39743e9e165",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/transport_dispatch.qnt": {
+      "sha256": "a4e2106254f26ae9ae3b303b64bba683323664732b6c9ab03c0f371756644ad0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-before-startup-lineage/transport_dispatch_test.qnt": {
+      "sha256": "7762ae6395d615c792b14e13f3885947acfb47b287b8134e77de972b08c59b14",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-closure-checker-error.json": {
+      "sha256": "bbe51701c4412199cad735eaf893bb53bd80bea71d1ea3d187220095cb1c56a5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-frozen-v20/checkpoint-readonly-ipc-v20.json": {
+      "sha256": "3491b87c20a6374db70d562f2a4f5a518147927ac4a4dc2dd776e8561431b0af",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-frozen-v20/manifest-readonly-ipc-v20.json": {
+      "sha256": "d3d836eda0e2a25681df4ca80740ca94f8d2084ea1c48f8834293b740122c068",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-frozen-v20/source-handoff-v20.json": {
+      "sha256": "8f1a10a036c05055498271ecc21971a08146e14af02d4192da141fb9cf9350c0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-initial-archival-model/archival-initial-named.log": {
+      "sha256": "d46df0f7b6cd752ba7439cc95cc7e087c9f670b0230d6a62f0a060c0b077b148",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-initial-archival-model/archival-initial-run.log": {
+      "sha256": "cf5d507792a5b783542c87cb5a5bba5388243a4cf9f7ef660f8a27d8846225c4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-initial-archival-model/readonly_archival.qnt": {
+      "sha256": "538f74fd7c3037b80fa4737af7c8e0af3fa72d5833b88e530056c322c9d91305",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-initial-archival-model/readonly_archival_test.qnt": {
+      "sha256": "556b6e20bd0655fa99921cb4322439c29201b1868e3db9a95ea82d6869903571",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-initial-formal-parse-failure.json": {
+      "sha256": "42705905f6a983928a7a32621ff064b6a2339124b826eadd79e193fc70f4457d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-initial-predecessor-parse-failure.json": {
+      "sha256": "66b10da1658a9c53a2c9848782f28611fa33afd398d6716859851516f4c12142",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-initial-startup-model/readonly_startup.qnt": {
+      "sha256": "49c94ec53f0c549f13c8e8c6b1be933d551cc6fece22a9d49b7cfb6fde68c637",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-initial-startup-model/readonly_startup_test.qnt": {
+      "sha256": "54a9f5f598ca8c999ceb2f408216b54208a352395e723c211727c5c9bd4e8583",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-initial-startup-model/startup-before-runtime-0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-initial-startup-model/startup-before-runtime-1.log": {
+      "sha256": "6e2a91728a6de12d289c1ec1d0c82a4013a6f8b0bac2365a1b17afcb190824b6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-initial-startup-model/startup-before-runtime-2.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-initial-startup-model/startup-formal-before-runtime.json": {
+      "sha256": "2c66ad0b3442a4fdd38f75b1aa6e6b6139b539d90d1a9521913d1aaf460d3be0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-owned-target-fixture-error/startup-actual-keeper-test.log": {
+      "sha256": "70ce39a37b626aea4274ebb5767bffed33a3458617ae0f78d6e8ce6a53c349be",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-owned-target-fixture-error/test_readonly_longevity.py": {
+      "sha256": "6bdc42fbaf9f163b7be61bc88e85f6d7e7ed18ffea3483f39eb6415f7149c879",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-preflight-output-capture-error.json": {
+      "sha256": "876c8f9357d6af193e52a398a698ba536bd921b77921711a1bb28d98eccbdf72",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-startup-parse-error/readonly_startup.qnt": {
+      "sha256": "1e8b280952db6866f16931790091464f7045cc03be0094446db2c287574acb6f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-startup-parse-error/readonly_startup_test.qnt": {
+      "sha256": "72b2c43976a237036ec5e7ad5e171ea78e2c363db73ba108c7f52f9a27607a29",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-startup-parse-error/startup-final-before-runtime-0.log": {
+      "sha256": "5a1f2ebe5606956f72b6aee7b0581cd0c5758d051ea3c6313dca07404a3c66b7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-linked-actor-1-confirmation.json": {
+      "sha256": "5f77f4e2944126eae5338d79dad469ef39d50ad5cd683924a764d5a7c8cb57e5",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-linked-actor-1.json": {
+      "sha256": "cf5080d6645cb7e6d8680739d8a4f2cf167a7b8128bd2801c974ec385c7f9140",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-live-events.json": {
+      "sha256": "afd0599275533150b280fec731dd4500dac43c96cc4f332e640b153958a91489",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-modules-after-confirmation.json": {
+      "sha256": "8bc76d0674a9662d07a1f4b709855e555b38009ece2588b490e24130506e1559",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-modules-after.json": {
+      "sha256": "892e980553704033cd83142ca4ba69c6b07cea4aba4b4122e75299cc58403adb",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-modules-at-owner-bind-confirmation.json": {
+      "sha256": "5c60bb98c1467fbfb98628f1e450e9c5c76380f0179fc7392b4bc544685490f5",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-modules-at-owner-bind.json": {
+      "sha256": "b9163f908b2b8430c53b8aa069d695ce33d7489c3b427acf8b357a663f690314",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-modules-before-confirmation.json": {
+      "sha256": "b51fcd02d1c7ea2afd21ba5e5e636363c1e9eef67f226d7fc2b68ebd949464ec",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-modules-before.json": {
+      "sha256": "bb2726a2872cf412dae2352122adf35f1fc31aa5320301c36934217cfab4a4c2",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-modules-final-confirm-confirmation.json": {
+      "sha256": "afed90a6e72a9f2da83782aaa0394585b122b21ae8d79fa0766494d825c88816",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-modules-final-confirm.json": {
+      "sha256": "314738180defec06278d8924de921d85a886183b00aa92b1abf47783709ea033",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-modules-owner-post-disk-confirmation.json": {
+      "sha256": "c87a25381ba0f1ea8cc63c724b23165fef2482eb84eb845cd7a46a9ef4caba74",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-modules-owner-post-disk.json": {
+      "sha256": "7739bb9d6a9bb79c4d1ee631460dd90b528c24e442721c940d900f47f296d586",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-owned-data-probe-confirmation.json": {
+      "sha256": "61ac9a463266ec78b5e9f6ca5a44bf2b2f7faa4d1fff6cfec72b35be4a7eb4bc",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-owned-data-probe.json": {
+      "sha256": "9049f03b20861507dd9264109bf24bbfb1a679e978daf43830efa36327bedf1f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-owner-binding-confirmation.json": {
+      "sha256": "ac8d4cb4e94c8fe7d7d07cb7a66e96bb11c2160bab260a969db62674624cde15",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-owner-binding.json": {
+      "sha256": "c895bb252dae86d07a1087197e2af0f50890faf6c771eddabff2336fcda27e3e",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-taskbar.png": {
+      "sha256": "7848bde4d52af506b7e9d57d35eda491e8fe1ca29ee04aa8867dff21541e8305",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-terminal-binding-confirmation.json": {
+      "sha256": "06ca67208c9844bcb0b20b9264c57181f1ea914efd12ffb08adafc3e3f6eac67",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/actual-terminal-binding.json": {
+      "sha256": "28f4a357affc1cd533294bcec9d385a2265e717155a7a344b4324c86169c6311",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/completed-helpers.json": {
+      "sha256": "c78b5f2f1862e74c9dff015dfd653830cf7c7a610ccafce00260a972fb24e071",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/family-service.log": {
+      "sha256": "0e318fdd7f2edc8a7eee6f9b7f6ea84290edeeab14bfbc12e170087a51e0cc18",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/hydrate-helper.json": {
+      "sha256": "c337638991e21d67f46dbe1d7296ce77cd59d329791838994c584870f8bc16b4",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/main-before.json": {
+      "sha256": "0cab986ec2df43dad7a48b79c13b9cfc863d5524a43da856fd6e6c53edddd5b1",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/qt-fixture.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/report.json": {
+      "sha256": "3f1287a6b19879c4522888dc435f248334d4674ca6b157d287758113652d6381",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/service-retirement-1.json": {
+      "sha256": "924eedbd2ffedfc129fdbae29b7f17287f123760f447223db7b5f04d29e0b24f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/attempt-baseline-1/taskbar-shell.log": {
+      "sha256": "6d8dc2a6c8b424bf455fdee709b035f20530ee069fdebddd68aaff85e646c015",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure/frozen-inputs.json": {
+      "sha256": "bbd142db7116de7e076df508dcb6d9b57ceda4d6cc5035cec7da6a5867b2e492",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/retained-v5-failure-provenance.json": {
+      "sha256": "ed6e40a1e40651b133e58ba109e8beb80a51f0075dadc847cadc4b4488ad67ba",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/runtime_fixture.py": {
+      "sha256": "385d01079b0607d9e6f4519d99cae1fda9f0438e5696b79e55273265a9ddfa8a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/runtime_lease.qnt": {
+      "sha256": "d74f2fa8b561a60e378eea74cf7e1969c0ad9299262b9cee39c7ac5657f0dfb7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/runtime_lease_test.qnt": {
+      "sha256": "622068ca229c8b50d457d1674bedd13b65d3c8431f58576fd470c9dfd9efc7f6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/runtime_lifecycle.qnt": {
+      "sha256": "d912775efd0da4e84700b2a85bd6f7d165525488f80ccecb06cd4a80633eae25",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/runtime_lifecycle_test.qnt": {
+      "sha256": "decd75fdf892d132f6657940cc15efb483f770115881fb30e64a68abae652f16",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/scene_controller.py": {
+      "sha256": "459135eec7abd238b9366c775cec39df72d75312b6a2ef6850cb1fdf655a7ba5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/scene_manager.py": {
+      "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/service_runtime.py": {
+      "sha256": "fb7f427a79ed407559f3036d9f1ae8ad82520135dce19d6592cd2b3cca092de2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/snapshot_cache.py": {
+      "sha256": "21f0d47313c053964fd8e81736843d8b62ecadab5eee3ebba80ef5801e8bf8ee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/socket_frontend.py": {
+      "sha256": "0ea4c81cbf975104bb4ae17f9a8807f4af74a974a793a4b36a0aac7569c2647f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/source-inverse-v21.json": {
+      "sha256": "aae6833a3e6666fff426bac2a2d7b931828537a59b9f76a4a0f4fba18c0938d0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/stable-runtime-test-inputs-v1.json": {
+      "sha256": "0f844e003d438b751e3b4effe8bbd7ab779dcd9137060b62b2e0569acc831f47",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/stable-runtime-tests-v1.json": {
+      "sha256": "d3fa157752dcbf585e22761270204e3c1d1c3b1438485da075203abd9dab50f2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/startup-actual-keeper-test-corrected.log": {
+      "sha256": "ccfa0c23c2235f1ad797ac894f3d9f8a821a9a3cc2d49caea188362a351801d4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/startup-actual-keeper-test.log": {
+      "sha256": "70ce39a37b626aea4274ebb5767bffed33a3458617ae0f78d6e8ce6a53c349be",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/startup-before-runtime-0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/startup-before-runtime-1.log": {
+      "sha256": "6e2a91728a6de12d289c1ec1d0c82a4013a6f8b0bac2365a1b17afcb190824b6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/startup-before-runtime-2.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/startup-corrected-before-runtime-0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/startup-corrected-before-runtime-1.log": {
+      "sha256": "b8362addfa222052e2d52c5d4ca25660a6eab744c0d80a4991f03357872b6728",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/startup-corrected-before-runtime-2.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/startup-final-before-runtime-0.log": {
+      "sha256": "5a1f2ebe5606956f72b6aee7b0581cd0c5758d051ea3c6313dca07404a3c66b7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/startup-final-formal-before-runtime.json": {
+      "sha256": "6d794cd84083e0282149386d5ce395340bfe11b19179e5873f488287d4d3cee0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/startup-formal-before-runtime.json": {
+      "sha256": "2c66ad0b3442a4fdd38f75b1aa6e6b6139b539d90d1a9521913d1aaf460d3be0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_actor_resources.py": {
+      "sha256": "4a7c1bd0d507aad67821e6edf68cb4719647208027819b7152a623ab70d8c05b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_capture_lease.py": {
+      "sha256": "e301c95d2fc7ac21fb91118493b9323f0acddfb89080251f91959ce74ad05607",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_context_provider.py": {
+      "sha256": "32fdddb492653f08a3bee1d2145903417f6a7fe90e3d0ad89469736672a2c950",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_family_order.py": {
+      "sha256": "c08c2a8d0660204627aa671b347e7429f86e536cf7650ab62a4c98d267ad269b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_family_query_concurrency.py": {
+      "sha256": "a345242b6e7cf850dfd46197dcd1f36793504444e18155c063adb8ae120009ab",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_frontend_completion.py": {
+      "sha256": "05e34a94adbed012df65e4962faba3a931d4b31f0974cdfbf8fe1efbec87edbc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_gesture_retirement.py": {
+      "sha256": "d1b8cac3bb3fcd14281703177a7c92ad79179170ad8696752d350d5237b11e7b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_helper_keeper.py": {
+      "sha256": "13fca934e7766a777c3983f39924b990c0f08a0273adc5fb82e0f47efc7131bd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_helper_policy.py": {
+      "sha256": "2eb1a33831a29ffcbf210196f32ec9c57bec3b999b3367aea95c2a972db975ce",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_helper_supervisor.py": {
+      "sha256": "203b8d0fe92158cb2f0661630a81ebc569c9602437d5e58a70bb24e83438b480",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_ingress_context.py": {
+      "sha256": "04a7c158a2c430b3967da74366b3ac73a62d57b4c37fce93f50e1cb08b077e82",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_ipc_complete_probe.py": {
+      "sha256": "ba53f204516a3ca7a2d8764951d261a2aa4c0de2e47ca11fb881cac42546d62f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_legacy_fixture_ready.py": {
+      "sha256": "4f5af53c4c5468c2a6b3aeb6b77650ca68ef1981359f94c137584c5905a0ddd4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_native_runtime.py": {
+      "sha256": "75728cd42743ec3251e92ff4a2624760bf5472c070d50bb9ea22ae3ddd243140",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_owned_commands.py": {
+      "sha256": "6f6a8e4945d6c9a827563b2ea4a23a3804295401eeed29c4e7b7ebf98bd1e448",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_pending_direction.py": {
+      "sha256": "c621906e5e6e4d7d4fb9ccd0cd81e25e48ff519868576a9a780ee7a00bbe2fea",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_pipe_transport.py": {
+      "sha256": "81b70b7035acb8241a53eaf9288901f17d31ac505be22dd9ac21935303ddfeb6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_readonly_ipc.py": {
+      "sha256": "7b198f84185e7eb763e32bc90fb8dc59e834d5b0db02e40a1790fcbb919d49e9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_readonly_longevity.py": {
+      "sha256": "80aa5161abcdc5d9a14fe5974af87be43493ad33ad993495091454b22c20e0aa",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_receipt_visual.py": {
+      "sha256": "c0d4fa8fc4b063ab450a5ad18a043edbb3334487fd3a7a822c20841e8f7d952e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_recovery_cancel.py": {
+      "sha256": "c37e14e5b901ba1aeeb8648ae74cb72334f8c4d51ee5f4ace44900907891c4a1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_recovery_factory.py": {
+      "sha256": "ee35d43cce72ad7910995783a6e098e18f5e43a4434ca04d8c317d3e48136dc9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_recovery_intent.py": {
+      "sha256": "a0f0e98c45c6bd480d1e52ba046299a23ee8feb5736cbc07b0bdbb3a110ccbb1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_recovery_resources.py": {
+      "sha256": "49dab4475036cd07596083be925b5f447078adc54a1122ec21f201dba4f6bce8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_recovery_runtime.py": {
+      "sha256": "659ae465410feac5c53ff1e47991cca1a7ea7d4447594449b6cf92d19ca456c1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_renderer_terminal.py": {
+      "sha256": "f3feb52b8c264224ca98d243ccb4d5dfcb823fd7d3e9c4bc5a89498112c0b083",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_responsive_preparation.py": {
+      "sha256": "f79a3f2f6bb409c8fc6bc5943a6c54d1e79a8d39160a5b0449fe46f867e9497d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_runtime_lease.py": {
+      "sha256": "f23ffaba806f3530c3e9c0808c1931c8999c173a34cc1133749836969dbe6a6d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_scene_controller.py": {
+      "sha256": "22e97f7440ca476eb659f3e329e8123e6ab69c9f8edc913326c07f2895456bd6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_scene_manager.py": {
+      "sha256": "461f4740fe823791f7c0c2d0e9fc5d9e091744015bd621a0adf9e4f578dfc6d9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_service_runtime.py": {
+      "sha256": "a7149de0f8b6328696bfd86c02f7f72e616a3bd42a3c87efa5e420f88c57fe6c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_snapshot_cache.py": {
+      "sha256": "655003df776a41314101248404b2cf88c48ae054cb4b5f49a64852fb7a0e032a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_socket_frontend.py": {
+      "sha256": "f83912985eb7b4c0eea2b6e74e39b456ba4aad3a3e462ff7628abb0d7398773e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_split_destination.py": {
+      "sha256": "74a8edc4ec3c64e166e02c80d5a4713bd5171a6de62a5fa7754c39b2856c1041",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/timeout_adapter.py": {
+      "sha256": "14ccc4078364fdced5a8fa9a499567dd0e2eb592ff1b7f88ad38a39743e9e165",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/transport_dispatch.qnt": {
+      "sha256": "a4e2106254f26ae9ae3b303b64bba683323664732b6c9ab03c0f371756644ad0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/transport_dispatch_test.qnt": {
+      "sha256": "7762ae6395d615c792b14e13f3885947acfb47b287b8134e77de972b08c59b14",
+      "mode": 420
+    }
+  },
+  "createdUTC": "2026-10-02T08:43:51.064651+00:00"
+}

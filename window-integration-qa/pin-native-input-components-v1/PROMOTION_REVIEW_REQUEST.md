@@ -1,0 +1,9 @@
+# Location-only B first-increment derivative
+
+Actual failed V1 was refused by unchanged original PrivateWestonHost.__enter__ guard before any host/client/compositor launch. Zero native components accepted; all18 main/source/environment checks preserved. The complete original frozen64623 union, ready/input records, grant and raw actual failed attempt are retained at original literal paths and copied under retained-failed-b-v1 (grant never appears as this derivative's root grant).
+
+Runtime/controller/registry/observer/host/tests/model/proof bodies are byte/mode exact to V1. B/HERE derive actual module __file__ and now resolve QA/pin-max-native-campaign-b-v2, inside the unchanged inherited QA path guard. PAIR_READY adds exact promoted runtime source paths alongside original complete provenance; core/plugin/helper/old probe/new observer identities stay exact. The sole source change is freezer whole-union inclusion of failedV1 plus root review/freezer tools and raw failed attempt. PROMOTION.diff gives both whole-file inverses; original source/pair retained.
+
+No new semantic proof or optional test campaign: inherited16CPU/14named2000x100 proofs retained exact. Focused mechanical CPU verification checks same runtime/test bodies/modes, dynamic B/HERE actual location, original host guard source, old grant not reused, typed completed pair read/readelf and whole old64623 ancestry conservation. No GUI/build/load/freeze here. New root source review/freeze/grant required.
+
+After root review, exact freezer command remains import capture_packet; row=inventory(); publish(B/'frozen-inputs.json',row), with stdout external. It unions actual literal full failedV1 manifest, not only embeds its JSON. Native grant must bind new manifest/pair digests; no top ROOT_NATIVE_GRANT.json exists. First B increment same12 bodies and strict original budgets unchanged; B13–B16 draft deferred.

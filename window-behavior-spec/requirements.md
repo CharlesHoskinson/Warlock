@@ -1,0 +1,113 @@
+# Windows 11 window-management acceptance checklist
+
+The target is full Windows 11 window-management behavior on this Omarchy
+desktop. A working command alone does not complete a requirement: titlebar,
+pointer, keyboard, taskbar and desktop paths must agree, survive interrupted
+input, and preserve window identity. Full parity remains incomplete.
+
+## Current acceptance checkpoint — 2026-10-02
+
+Full window-management parity remains incomplete. The latest native recovery baseline is V10: 11 of the original 38 checks passed, one failed and 26 were unreached. Actual preview capture/cache/renderer presentation passed; housekeeping deadline and normal helper teardown acceptance failed. The corrected V26 service is frozen after 409 Python checks and 403 named Quint scenarios across 35 models, each with 2,000 bounded traces. Fresh B11 helper cleanup and collector pairing are in progress before a new unchanged native baseline; the 34 fault campaigns remain pending.
+
+Two MAX/pin click-targeting defects were reproduced and their exact correction was approved after 24 named Quint scenarios and whole-body CPU comparison. A clean V3 compositor build is in progress. Original14 pin checks and separate native MAX/exclusive/focus/scroll/transfer coverage remain required. The asynchronous source verifier still needs a complete live kernel witness from the unchanged fast helper and actual Registry negatives before popup input acceptance. Original52 held drag/resize/reload, reduced-motion/cancellation integration, display/cadence/accessibility, final combined regression and deployment remain open. See [PARITY_STATUS.md](PARITY_STATUS.md) for the current checklist.
+
+## Earlier acceptance checkpoints
+
+Latest acceptance: the repaired **default** renderer passes all 44 original
+image comparisons in isolated native QA. Fresh continuous family V3 passes all
+38 gates and independent source/presentation/native/lifecycle replay. Both
+reversals start from actual displayed interior frames; the former 334.778 ms
+stall is retained as failed evidence and the fresh equivalent request took
+1.393 ms. Independent replay confirms velocity jumps at both reversals. A fresh
+C1 renderer candidate now passes formal/numeric tests, native115 raster gates
+and all44 original image comparisons. Continuous family QA passes39 gates,
+including immutable displayed position/analyticvelocity origin checks and
+independent native causal, source and normal-lifecycle replay. Mixed-scale software QA passes11
+actual and13 replay/preservation checks. Physical cadence and deployment remain
+open.
+The fresh V22/HeldV10 candidate passes all 13 Qt Wayland held-input cases,
+including genuine scrolled-preview restore after move and resize. The whole
+52-case matrix failed at a helper query delegate exit 120; the other 39 cases
+remain unproved. V11 diagnostic QA stopped before its first case on a process
+observation race. V12 and V13 native attempts stop before clients or cases:
+V13 observes 137 exact-peer empty monitor replies through the unchanged
+15-second startup deadline. The private initial surface commit lacks an
+explicit flush; an actual libwayland socket counterexample supports a source
+hypothesis. The root-reviewed repair now starts the V14 native compositor with one exact output query within the original budget, and move/Escape passes. V14 stops in its second case while arming reload; the original 52-case campaign remains failed. A taskbar query subsequently writes after normal shell quit and fails with actual EPIPE/exit 120. The exact reload-arm predicate branch remains unclassified. Browser B19 passes exposed Files
+focus and draft/caret preservation, then fails continuation. Actual browser
+events identify the missing hyphen as physical Escape/keyCode 27 with no input
+event. B20's correct physical driver now passes the original 15 native features,
+all 18 main-session preservation checks, independent terminal replay and 22
+actual wire/DOM/caret checks. This closes the private Browser/Files scenario;
+production deployment and final merged regression remain pending.
+Recovery V19 fixes
+the independently reproduced source lock cycle. Fresh collector V3 exits and
+retires normally, but its original baseline fails because only two of three
+family captures complete before deadline fallback. Its baseline observer still selects V17 while the outer runner selects V19, so actual V19 runtime pairing is unverified. Fresh V20 is frozen after 328 Python checks, 244 named Quint cases across 27 models, root 24 CPU/kernel checks and 34 named cases/two independent model runs. Fresh collector V4 must attest actual loaded module paths and hashes. Its 512-query history bound also requires durable reclamation before steady-state production acceptance. Preparation performance,
+all 38 baseline checks, and real restart/fault tests remain open. A separate reduced-motion validation request-loss counterexample has a
+formal repair model; its runtime and responsive-observation integration remain
+pending. The pin helper now passes 32 CPU/kernel checks, 1,000 malformed-receipt
+mutations and two refined Quint models. These use synthetic receipts and prove
+no native pin effect. Persistent stacking, real per-window menu actions,
+pin lifetime, feedback and legacy/max policy, physical device/cadence/accessibility verification,
+final integrated regression and deployment remain open.
+See the latest checkpoint in [QA.md](QA.md).
+
+This checklist supersedes the historical [initial audit](requirements.initial-audit.md).
+Current evidence is in [QA.md](QA.md); [PARITY_STATUS.md](PARITY_STATUS.md)
+summarizes deployed features and unresolved acceptance work.
+
+References: Microsoft [titlebar guidance](https://learn.microsoft.com/en-us/windows/apps/design/basics/titlebar-design),
+[Snap](https://support.microsoft.com/en-us/windows/experience/snap-your-windows),
+[Snap-compatible app sizing](https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/ui/apply-snap-layout-menu),
+[shortcuts](https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec),
+[taskbar](https://support.microsoft.com/en-us/windows/experience/personalization/customize-the-taskbar-in-windows),
+[multitasking settings](https://support.microsoft.com/en-us/accessibility/windows/make-it-easier-to-focus-on-tasks),
+[Always On Top](https://learn.microsoft.com/en-us/windows/powertoys/always-on-top),
+[mouse behavior](https://support.microsoft.com/en-us/windows/hardware/input-devices/change-mouse-settings),
+and [motion](https://learn.microsoft.com/en-us/windows/apps/design/motion/).
+
+“Implemented” identifies deployed behavior with the listed bounded checks;
+it does not imply exhaustive application or device compatibility.
+
+| Area | Acceptance requirement | Current result / outstanding work |
+| --- | --- | --- |
+| Window identity and focus | Clicking a visible window raises that exact window; app drafts cannot obstruct unrelated windows; modal children remain attached to owners. | Ordinary controls plus 13 GTK modal input/family checks and 11 pinned/nested modal checks pass on both Wayland and XWayland, with main-desktop v13 regressions. Exposed-owner clicks focus its dialog; overlay/unrelated clicks remain usable and newly reopened dialogs receive their first click under a stationary pointer. V13 also passes 12 pinned-family desktop/input checks on each protocol, plus 13 isolated checks per protocol including repair of an already-split family after plugin reload. Candidate V19 also passes the unchanged Qt6.11.2 same-QApplication WindowModal owner/child/nested/independent-peer campaign on Wayland and authenticated XWayland (19 toolkit and 10 host gates each), including family minimize/restore and normal cleanup. V19 is private and uninstalled; broader real-app compatibility and production deployment remain open. |
+| Pointer and keyboard focus | Inactive windows under the pointer can scroll while typing remains in the active window; click changes focus and raises the hovered window. | Implemented with separated pointer/keyboard focus. Two-window GTK native wheel/key/click tests pass after persistent config reload. |
+| Titlebar controls | Close/minimize/maximize/restore/pin and double-click always target their owner, including a rapid focus change. | Partial. Native owning-release and first-click lifecycle regressions pass. Pin audit found asynchronous address-only commands and fade timers without lifetime proof; a synchronous owning-window prototype is compiled and awaiting native QA. |
+| Minimize and restore | Minimize retains desktop, pin, normal geometry and taskbar presence; restore returns that identity. No new scratchpad use. | Partial. Dedicated minimized workspace and stable identity checks preserve ordinary clients without scratchpad navigation. Strict Qt/GTK/pinned/maximized trials pass. The reproduced nested-modal rapid minimize–restore–minimize race is fixed by reserving every exact family member under one callback lock after refreshing native state. Installed 836 passes six native pinned-family paths, interior reversals and reduced motion; geometry and per-member pin state are preserved. Cross-output smooth animation remains open. |
+| Drag and resize | Titlebar move, border/corner resize, unsnap under pointer, release snapping and canceled drags never leave capture stuck. | Native titlebar, Alt and Super release paths and Lua geometry fuzz pass. Main-desktop trials verify held-edge pause, exact restore, Escape cancellation, snapped pointer anchoring and reload; isolated native trials verify maximize-to-snap and resize exclusion. Deployed v13 passes 14 caption paths, including first-movement press-offset retention, cross-window/focus identity, fractional unsnap and reload/cancel cleanup; native replay matches 410 states from 10 Quint traces. All four native corner releases are now checked; drag-start rectangle retention and canceled Snap Bar staging regressions pass. Audit found active resize cancellation/reload/unload and held-gesture minimize retirement were not covered by these checks. Fresh exact native lifetime move/resize cancellation and current-geometry retirement are staged; Fresh V22/HeldV10 passes all13 unchanged QtWayland cases, including move/resize Escape, reload/unload and genuine scrolled-preview minimize/restore. Independent12 native retirements and12 actual wheel receipts pass. The52-case campaign fails a Snap query helper delegate exit120; other39 GTK/Qt X11/GTK Wayland cases remain unrun. Full helper/lifecycle acceptance and original Brave/Files continuation proof remain open. |
+| Snap Layouts | Maximize hover and Win+Z expose halves, quarters, thirds/asymmetric layouts where usable at monitor scale. | Geometry and logical-width thresholds tested. Files Explorer now supports 330×320 and native half/quarter/third Snap: 120 copied layout cases, 42 native checks and same-process original UI migration pass. Physical monitor/popup interactions still need device QA. |
+| Snap Bar | Drag toward the top, choose a layout target and release into that exact zone. | Implemented; native held/drop checks pass. |
+| Snap Assist | Offer eligible other windows for free zones; exclude hidden/minimized and incompatible dialogs. | Implemented candidate chooser; native Wayland/XWayland modal eligibility, re-eligibility after close and actual picker/group formation pass. |
+| Snap Groups | Form complementary groups; recall from taskbar; reconcile close, move, workspace, monitor and geometry changes. | Implemented with model/backend replay and live custom-ratio recall. Virtual output removal passes; physical hotplug/session recovery remains open. |
+| Snap resizing | Shared separators resize all affected neighbors without overlap/off-screen placement; reject impossible minimum sizes. | Implemented; 1,000 randomized boundaries, four-quarter diagonal regression and live clamp checks pass. |
+| Window shortcuts | Win+arrows/Shift+arrows/M/Shift+M/Home/Z preserve state and geometry across all entry paths. | Implemented. Native virtual-monitor transfer preserves snapped/maximized state. Physical hotplug still needs QA. |
+| Alt+Tab | Visual MRU selection, hold/cycle/reverse, release commit and Escape cancel; current/all desktop scope follows configuration. | Native hold/release/reverse/cancel pass. Configured current/all scope, foreign desktop commit and captured identity pass; native Wayland/XWayland nested-modal filtering, physical Alt release, reverse selection and Escape cancellation pass. |
+| Task View | Thumbnail overview, keyboard navigation, desktop create/switch/close/rename/reorder, window drag including minimized windows and New desktop drop. | Implemented and exercised with real pointer input; saved QA evidence documents its limits. |
+| Desktop shortcuts | Win+Tab/Ctrl+D/F4/Left/Right operate on desktop order and close without losing visible/minimized windows. | Implemented; 165 installed-backend randomized operations pass; moved minimized windows retain updated display ownership. |
+| Titlebar Shake | Minimize other windows on that desktop, repeat to restore exactly that set, preserving prior minimized state. | Implemented; native reversal gesture, Lua fuzz and per-desktop integration tests pass. |
+| Taskbar launchers | Persistent app pin/unpin/order; zero-window launch; active/running/minimized highlights; grouping and combine modes. | Implemented, including existing running app identities. |
+| Taskbar previews | Per-window thumbnail even minimized; individual focus/close; Snap Group recall; stale identities never show another app's image. | Implemented through compositor toplevel buffers, checked live without restoring a minimized window. Icon/title fallback when no buffer is available. HeldV10 actual QtWayland move/resize preview restores pass through six real wheel detents each, exact visible source cards and unchanged frontend/family/cache/focus checks. Whole52/helper lifecycle and other toolkit variants remain open. |
+| Jump Lists | Right-click provides launch, app actions and recent files; dynamic app menus update and activate the publishing app. | Desktop actions/recent files plus LauncherEntry/DBusmenu quicklists deployed. Live import, lazy AboutToShow, update, disabled action rejection, click delivery and disconnect cleanup pass. Windows-only app APIs need corresponding Linux app support. |
+| Taskbar keyboard | Win+T and number/modified-number keys navigate, launch, focus and open app lists. | Implemented; native arrows, wheel in both menu modes, five rapid reopen cycles, Escape and outside-click dismissal pass. |
+| Show Desktop and Peek | Hide/restore only current-desktop windows; hover Peek restores exact opacity on exit/reload. | Implemented; per-desktop tests and compositor opacity 1→0.03→1 pass. |
+| Taskbar displays and scope | Pins/groups/previews behave across monitors and configured desktop scope; drag-hover navigation works. | Real QML current/all desktop and monitor filtering pass with a headless second output. Minimized home-display ownership, deleted workspace recreation, desktop retargeting and output-removal fallback also pass live. File drag hover now restores single minimized windows and selects exact grouped previews; real GTK file transfer, early exit and Escape cancellation pass. Cross-display GTK FileList dragging passes 11 acceptance assertions across eight paths and 11 restoration checks, including exact grouped selection, three real byte copies, Escape and removal during an open chooser. Physical-display visibility and other app compatibility remain open. |
+| App indicators | App urgency, unread count and progress appear on correct app, update independently, and clear stale publishers. | Implemented through Hyprland urgency and Linux LauncherEntry. Live QML and D-Bus fixtures pass; actual Brave downloads pass backend and live QML count/progress/completion/disconnect checks. A user-local wrapper supplies its optional launcher integration for future launches; other apps need protocol support. |
+| Corners and motion | Rounded floating/square snapped windows; smooth transitions including minimize/restore toward the taskbar; reduced motion consistently suppresses animation, including an already-running transition. | 27 physical 240 Hz cases across Foot, GTK4 and Qt Quick pass for caption drag, snap/maximize/restore, reversal and reduced/mid-reduction motion. 3,634 paired presentations show max display/active geometry gaps of 16.669/20.835 ms. Six Quint scenarios/2,000 samples check qualitative lifecycle semantics. Six further repaint cases across GTK4/Qt Quick/Brave under baseline and bounded load show no >33.4 ms observed content gap. The separate nine-scenario minimize model passes; deployed v18/widget65 whole-window snapshots include server decorations. Early displayed-frame freeze and strict interior reversal/reduction pass Qt Quick, GTK4, pinned Foot and maximized Foot trials (six paths each). Seventeen native export checks cover actual pixels, occlusion, output-edge clipping and identity guards. The exact-family race was reproduced and fixed in helper836; six strict pinned-family paths and freshQt regression pass. Native profiles still expose a visible pause while reversal preparation waits; continuous provisional reversal, cross-screen animation and other displays/rates remain open. Refresh misses are retained in the reports. Fresh GPU causal V7 retains all8 final images and18 prefix/control read pairs: constant controls pass exactly and both read formats match, but scaled translucent composition still exceeds the original one-channel bound at7+2 pixels. Native family ServiceV11/taskbar V3 reached actual minimize/restore and minimized previews, but missing transient source evidence and private shell/helper lifecycle gates keep that baseline failed. Fresh familyV4 subsequently passes all19 native/taskbar baseline gates with six retained actual source images and matched uploads/presentations/native commits, previews while minimized, exact geometry/pin/deepest-focus restoration and normal no-helper cleanup. V3 remains failed. Draw-order correction, rapid reversal, resource retirement/recovery and mixed-output raster/cadence acceptance remain open. The fresh explicit manual samplerV8 also fails unchanged limits at10+1 scaled pixels; root independently replayed all44 comparisons with original desktop/source/normal cleanup preserved. Those earlier failures remain retained. Fresh V12 diagnostic default-renderer QA passes all 44 original pixel comparisons, and continuous V3 ordinary-default family QA passes all 38 gates with both strict interior origins, exact native family commits and normal retirement. Those V12/V3 checks did not establish velocity continuity. Fresh C1V13 now passes115 default raster gates/all44 original image comparisons and continuousV4 passes39 actual gates with independent88-frame/2,112-component position/derivative replay, exact interior origins, source/native commits and normal lifecycle. Mixed-scale generated software sources also pass11 actual/13 replay checks. Genuine mixed native families, end-user reduced motion, physical cadence and deployment remain open. |
+| Accessibility | Assistive technology exposes named controls, selected/focused/checked states and actions equivalent to mouse/keyboard input; hidden or stale actions cannot affect another window. | Window menus pass 13 AT-SPI/native checks; taskbar/Task View pass 19 more, including standard ShowMenu, minimized preview restore, desktop create/move/switch/rename/reorder/close and hidden action rejection. Eight Quint scenarios plus 2,000 simulator samples cover action guards. Actual Orca passes 16 announcement/focus/navigation/native-action checks with V4 and persistent keyed delegates; focused controls normal shutdown also passes. Global reader commands in non-AT-SPI clients require a staged native keyboard monitor. FilesV7 named controls, hidden/stale action and editable-text authority, retained focus and keyboard routing are now deployed.48 broad actual reader gates,20 copied samePID reload gates and22 original migration/preservation gates pass, with source hashes fixed and existing user state preserved. Installed-source central QA passes58 Quint files,231 named scenarios and58,000 samples across29 models, plus164 actual copied Qt gates and12 source checks; all177 source hashes are unchanged. The private PointerV5 keyboard/pointer/Orca campaign passes all185 checks,19 desktop-preservation gates and strict normal lifecycle/no-helper cleanup; it includes negative-coordinate popup review and reader/service recovery. Its native monitor and signed-coordinate reader compatibility remain staged. Audible hardware synthesis, braille and physical reader command interception remain unverified. |
+| Session and failure recovery | No ghost windows/groups after close/restart, shell/compositor reload, monitor unplug, scale change or canceled input. | Stable IDs, thumbnail cleanup, shell reload and persisted snap geometry pass. Virtual scale change and output-removal recovery pass. An actual isolated compositor shutdown/restart passes eight checks, including exact normal restore geometry and foreign-session group cleanup. Main compositor restart and physical hotplug/device recovery remain open. |
+
+## Platform integration
+
+Linux app indicators and dynamic menus use the published
+[LauncherEntry protocol](https://wiki.ubuntu.com/Unity/LauncherAPI) and
+[DBusmenu interface](https://git.outfoxxed.me/quickshell/quickshell/src/commit/dbd1e18cf0b906549a84973d78d066a02585ce1b/src/dbus/dbusmenu/com.canonical.dbusmenu.xml).
+The shell receives application-published data; it cannot infer unread counts,
+download progress or arbitrary Windows application actions from a window title.
+Apps must expose their data through the corresponding Linux protocol.
+
+
+### Latest evidence — 2026-10-01T23:17:41.687649+00:00
+
+Continuous private family integration now passes all 38 gates and independent causal/preservation replay (V3). The original two strict interior reversals pass with the responsive V13 service and default V10 renderer. This closes that bounded integration gate only. The full requirements above remain in force; real widget preview/52 held cases, browser focus/drag, pin/legacy coverage, recovery, mixed outputs/velocity/cadence, physical accessibility and deployment remain open. See QA.md for exact evidence and retained failures.

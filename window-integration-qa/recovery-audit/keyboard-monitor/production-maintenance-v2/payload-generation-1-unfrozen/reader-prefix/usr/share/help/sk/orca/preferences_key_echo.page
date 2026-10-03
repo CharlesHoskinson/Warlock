@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_key_echo" xml:lang="sk">
+  <info>
+    <title type="link">Ozvena</title>
+    <title type="sort">4. Ozvena</title>
+    <desc>Konfigurácia toho, čo má oznamovať pri písaní</desc>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_key_bindings"/>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Predvoľby ozveny</title>
+  <section id="keyecho">
+    <title>Povoliť ozvenu klávesov</title>
+    <p>Nastavenie ozveny klávesov v Orca riadi, čo sa stane pri každom stlačení klávesu. Ak chcete povoliť ozvenu klávesov, začiarknite políčko „Povoliť ozvenu klávesov“. Umožní vám to zobraziť ďalšie začiarkavacie políčka, prostredníctvom ktorých si môžete presne vybrať, ktoré klávesy sa majú a nemajú ozývať, aby čo najlepšie vyhovovali vašim potrebám.</p>
+    <p>Predvolená hodnota: začiarknuté</p>  
+    <section id="keyecho_enable_alphanumeric">
+      <title>Povoliť abecedné klávesy</title>
+      <p>Táto možnosť riadi, či sa majú klávesy ako <key>a</key>, <key>b</key> a <key>c</key> pri stlačení čítať alebo nie.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="keyecho_enable_numeric">
+      <title>Povoliť číselné klávesy</title>
+      <p>Táto možnosť riadi, či sa majú klávesy ako <key>1</key>, <key>2</key> a <key>3</key> pri stlačení čítať alebo nie.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="keyecho_enable_punctuation">
+      <title>Povoliť klávesy interpunkcie</title>
+      <p>Táto možnosť riadi, či sa majú klávesy ako <key>%</key>, <key>;</key> a <key>?</key> pri stlačení čítať alebo nie.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="keyecho_enable_space">
+      <title>Povoliť medzerník</title>
+      <p>Táto možnosť riadi, či sa má <key>Medzerník</key> pri stlačení čítať alebo nie.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="keyecho_enable_modifier">
+      <title>Povoliť modifikačné klávesy</title>
+      <p>Táto možnosť riadi, či sa majú <key>Shift</key>, <key>Ctrl</key>, <key>Alt</key> a <key>Meta</key> pri stlačení čítať alebo nie.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="keyecho_enable_function">
+      <title>Povoliť funkčné klávesy</title>
+      <p>Táto možnosť riadi, či sa majú <key>F1</key> až <key>F12</key> pri stlačení čítať alebo nie.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="keyecho_enable_action">
+      <title>Povoliť akčné klávesy</title>
+      <p>Táto možnosť riadi, či sa majú <key>BackSpace</key>, <key>Delete</key>, <key>Return</key>, <key>Esc</key>, <key>Tab</key>, <key>Page Up</key>, <key>Page Down</key>, <key>Home</key> a <key>End</key> pri stlačení čítať alebo nie.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="keyecho_enable_navigation">
+      <title>Povoliť navigačné klávesy</title>
+      <p>Táto možnosť riadi, či sa majú <key>Vľavo</key>, <key>Vpravo</key>, <key>Hore</key> a <key>Dole</key> pri stlačení čítať alebo nie. Táto možnosť sa tiež vzťahuje na akúkoľvek kombináciu klávesov, pri ktorej je stlačený <key>Modifikátor Orca</key>, napríklad pri použití plochého prehliadania.</p>
+      <p>Predvolená hodnota: nezačiarknuté</p>
+    </section>
+    <section id="keyecho_enable_diacritical">
+      <title>Povoliť diakritické klávesy bez rozstupov</title>
+      <p>Táto možnosť riadi, či sa majú „mŕtve klávesy“ používané na generovanie písmen s diakritikou pri stlačení čítať alebo nie.</p>
+      <p>Predvolená hodnota: nezačiarknuté</p>
+    </section>
+  </section>
+  <section id="characterecho">
+    <title>Povoliť ozvenu po znakoch</title>
+    <p>Povolenie tejto možnosti spôsobí, že Orca zopakuje znak, ktorý ste práve zadali.</p>
+    <p>Hoci sa ozvena po znakoch javí ako veľmi podobná ozvene klávesov abecedných, číselných a interpunkčných, existujú dôležité rozdiely, najmä pokiaľ ide o písmená s diakritikou a iné symboly, pre ktoré neexistuje vyhradený kláves:</p>
+    <list>
+      <item>
+        <p>Ozvena klávesov spôsobí, že <app>Orca</app> oznámi to, čo ste práve <em>stlačili</em>.</p>
+      </item>
+      <item>
+        <p>Ozvena znakov spôsobí, že <app>Orca</app> oznámi to, čo bolo práve <em>zadané</em>.</p>
+      </item>
+    </list>
+    <p>Aby sa písmená s diakritikou čítali, keď ich píšete, mali by ste povoliť ozvenu znakov.</p>
+    <p>Predvolená hodnota: nezačiarknuté</p>
+    <note style="tip">
+      <title>Povolenie ozveny klávesov aj ozveny znakov</title>
+      <p>Ak sa vám páči ozvena klávesov a často píšete znaky s diakritikou, zvážte povolenie oboch. Logika ozveny znakov v <app>Orca</app> sa snaží filtrovať znaky, ktoré boli prečítané v dôsledku ozveny klávesov, čím minimalizuje pravdepodobnosť „dvojitého čítania“ pri písaní.</p>
+    </note>
+  </section>
+  <section id="wordandsentenceecho">
+    <title>Povoliť ozvenu po slovách a povoliť ozvenu po vetách</title>
+    <p>Začiarknutie políčka <gui>Povoliť ozvenu po slovách</gui> spôsobí, že <app>Orca</app> zopakuje slovo, ktoré ste práve zadali. Podobne začiarknutie políčka <gui>Povoliť ozvenu po vetách</gui> spôsobí, že <app>Orca</app> zopakuje vetu, ktorú ste práve zadali.</p>
+    <p>Predvolená hodnota: nezačiarknuté</p>
+  </section>
+</page>

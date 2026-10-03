@@ -1,0 +1,82 @@
+{
+  "scope": "Actual raw Qt attached toggleAction signal on copied gallery Cell; offscreen/private D-Bus, no reader proof",
+  "observations": [
+    {
+      "context": "visible",
+      "peer": {
+        "class": "Cell_QMLTYPE_16_QML_34",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "subfolder",
+        "objectAlive": true,
+        "valid": true
+      },
+      "signalInvoked": "true",
+      "selectionBefore": [],
+      "selectionAfter": [
+        "subfolder"
+      ],
+      "changed": true
+    },
+    {
+      "context": "hidden",
+      "peer": {
+        "class": "Cell_QMLTYPE_16_QML_34",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": true,
+        "name": "subfolder",
+        "objectAlive": true,
+        "valid": true
+      },
+      "signalInvoked": "true",
+      "selectionBefore": [],
+      "selectionAfter": [
+        "subfolder"
+      ],
+      "changed": true
+    },
+    {
+      "context": "disabled",
+      "peer": {
+        "class": "Cell_QMLTYPE_16_QML_34",
+        "disabled": true,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "subfolder",
+        "objectAlive": true,
+        "valid": true
+      },
+      "signalInvoked": "true",
+      "selectionBefore": [],
+      "selectionAfter": [
+        "subfolder"
+      ],
+      "changed": true
+    },
+    {
+      "context": "modalBackground",
+      "peer": {
+        "class": "Cell_QMLTYPE_16_QML_34",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "subfolder",
+        "objectAlive": true,
+        "valid": true
+      },
+      "signalInvoked": "true",
+      "selectionBefore": [],
+      "selectionAfter": [
+        "subfolder"
+      ],
+      "changed": true
+    }
+  ],
+  "exitCode": -15
+}

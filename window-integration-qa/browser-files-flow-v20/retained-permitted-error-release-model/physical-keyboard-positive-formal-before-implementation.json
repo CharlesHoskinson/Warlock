@@ -1,0 +1,38 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_keyboard_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  physical_keyboard_test\n    ok planBeforeConnectionRequiredTest passed 1 test(s)\n    ok denseEscapeAliasRefusedTest passed 1 test(s)\n    ok invalidTextNoSendTest passed 1 test(s)\n    ok peerMismatchNoSendTest passed 1 test(s)\n    ok changedLifetimeNoSendTest passed 1 test(s)\n    ok keymapBeforePressTest passed 1 test(s)\n    ok missingKeymapAckNoSendTest passed 1 test(s)\n    ok exactPairOrderTest passed 1 test(s)\n    ok duplicatePressRefusedTest passed 1 test(s)\n    ok releaseWithoutPressRefusedTest passed 1 test(s)\n    ok advanceHeldRefusedTest passed 1 test(s)\n    ok partialFailureNeverRetriesTest passed 1 test(s)\n    ok partialHoldCanOnlyCleanupSameReleaseTest passed 1 test(s)\n    ok finishCannotInventMissingCharacterTest passed 1 test(s)\n    ok exactlyElevenPairsCompleteOriginalPlanTest passed 1 test(s)\n\n  15 passing (1945ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_keyboard.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (5050ms at 396 traces/second).\nUse --seed=0x13b4241 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "physical_keyboard.qnt": "01e07398a885cce486579dafc6c8a466b94508930455c1c4a7da71e42ed3b024",
+    "physical_keyboard_test.qnt": "f7df6290a385bbbd02d7d3889d03a3a8aeda23484a91753b354ee196a48ec0d0",
+    "physical_code.qnt": "4118fe7a146478e8c70c741bdf578d3232ace1d2662d566d72eaf49a99c35e46",
+    "physical_code_test.qnt": "b8b61accbf270be8980c4006b9a81960ef3e8fd363960c7e22eac5f815950513"
+  },
+  "newDriverNotImplementedYet": true,
+  "nativeExecuted": false
+}

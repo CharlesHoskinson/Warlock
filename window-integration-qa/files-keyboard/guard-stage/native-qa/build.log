@@ -1,0 +1,33 @@
+-- The CXX compiler identification is GNU 16.2.1
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE
+-- Found OpenGL: /usr/lib/libOpenGL.so
+-- Found WrapOpenGL: TRUE
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Found XKB: /usr/lib/libxkbcommon.so (found suitable version "1.13.2", minimum required is "0.9.0")
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/hoskinson/window-integration-qa/files-keyboard/guard-stage/native-qa/fixture-keys/build
+[  0%] Built target fixturekeys_autogen_timestamp_deps
+[ 25%] Automatic MOC for target fixturekeys
+[ 25%] Built target fixturekeys_autogen
+[ 50%] Building CXX object CMakeFiles/fixturekeys.dir/fixturekeys_autogen/mocs_compilation.cpp.o
+[ 75%] Building CXX object CMakeFiles/fixturekeys.dir/keys.cpp.o
+[100%] Linking CXX shared module libfixturekeys.so
+[100%] Built target fixturekeys
+[  0%] Built target fixturekeys_autogen_timestamp_deps
+[ 25%] Automatic MOC for target fixturekeys
+[ 25%] Built target fixturekeys_autogen
+[ 50%] Building CXX object CMakeFiles/fixturekeys.dir/keys.cpp.o
+[ 75%] Linking CXX shared module libfixturekeys.so
+[100%] Built target fixturekeys

@@ -1,0 +1,11 @@
+--- V3/pointer_reader_entry.py
++++ V4/pointer_reader_entry.py
+@@ -2,7 +2,7 @@
+ import json,os,runpy,sys,time
+ from pathlib import Path
+ HERE=Path(__file__).resolve().parent
+-COMPAT=HERE/'mouse-review-v2/orca-compat'
++COMPAT=HERE/'mouse-review-signed-v3/orca-compat'
+ sys.path.insert(0,str(COMPAT))
+ from private_runtime_guard import checked_runtime,reader_entry
+ runtime=checked_runtime()

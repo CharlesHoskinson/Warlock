@@ -1,0 +1,243 @@
+{
+  "rows": [
+    {
+      "pid": 1755182,
+      "start": "20767580",
+      "pgid": 1755182,
+      "name": "privateBus",
+      "command": [
+        "/usr/bin/dbus-daemon",
+        "--session",
+        "--nofork",
+        "--address=unix:path=/run/user/1000/wqa/8fbb/bus"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/host/privateBus.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [
+        {
+          "pid": 1755182,
+          "signal": 15,
+          "sent": true,
+          "error": null
+        }
+      ],
+      "stopError": null
+    },
+    {
+      "pid": 1755185,
+      "start": "20767583",
+      "pgid": 1755185,
+      "name": "weston",
+      "command": [
+        "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston",
+        "--backend=headless",
+        "--renderer=gl",
+        "--shell=kiosk-shell.so",
+        "--fake-seat",
+        "--no-config",
+        "--socket=weston-host",
+        "--width=1600",
+        "--height=1000",
+        "--scale=1",
+        "--idle-time=0",
+        "--log=/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/host/weston-renderer.log"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/host/weston.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [
+        {
+          "pid": 1755185,
+          "signal": 15,
+          "sent": true,
+          "error": null
+        }
+      ],
+      "stopError": null
+    },
+    {
+      "pid": 1755209,
+      "start": "20767695",
+      "pgid": 1755209,
+      "name": "hyprland",
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland",
+        "--config",
+        "/run/user/1000/wqa/8fbb/hyprland.lua"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/host/hyprland.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [
+        {
+          "pid": 1755209,
+          "signal": 15,
+          "sent": true,
+          "error": null
+        }
+      ],
+      "stopError": null
+    },
+    {
+      "pid": 1756703,
+      "start": "20769436",
+      "pgid": 1756703,
+      "name": "pin-b01-qt-1",
+      "command": [
+        "/home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture",
+        "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/native/actors/B01/qt-1"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/host/pin-b01-qt-1.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 1756849,
+      "start": "20769699",
+      "pgid": 1756849,
+      "name": "pin-b01-key-1",
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--chord",
+        "super-p"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/host/pin-b01-key-1.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 1756965,
+      "start": "20770023",
+      "pgid": 1756965,
+      "name": "pin-b01-key-2",
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--chord",
+        "super-p"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/host/pin-b01-key-2.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 1757165,
+      "start": "20770270",
+      "pgid": 1757165,
+      "name": "pin-b02-qt-1",
+      "command": [
+        "/home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture",
+        "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/native/actors/B02/qt-1"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/host/pin-b02-qt-1.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 1757423,
+      "start": "20770692",
+      "pgid": 1757423,
+      "name": "pin-b02-pointer-1",
+      "command": [
+        "/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer",
+        "1600",
+        "1000"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/native/pin-b02-pointer-1.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 1757703,
+      "start": "20771235",
+      "pgid": 1757703,
+      "name": "pin-b03-qt-1",
+      "command": [
+        "/home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture",
+        "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/native/actors/B03/qt-1"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/host/pin-b03-qt-1.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 1759060,
+      "start": "20772476",
+      "pgid": 1759060,
+      "name": "pin-b04-qt-1",
+      "command": [
+        "/home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture",
+        "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/native/actors/B04/qt-1"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/host/pin-b04-qt-1.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 1760115,
+      "start": "20773455",
+      "pgid": 1760115,
+      "name": "pin-b04-pointer-1",
+      "command": [
+        "/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer",
+        "1600",
+        "1000"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/attempt-1/native/pin-b04-pointer-1.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    }
+  ],
+  "registeredStopOrder": [
+    "pin-b04-pointer-1",
+    "pin-b04-qt-1",
+    "pin-b03-qt-1",
+    "pin-b02-pointer-1",
+    "pin-b02-qt-1",
+    "pin-b01-key-2",
+    "pin-b01-key-1",
+    "pin-b01-qt-1",
+    "hyprland",
+    "weston",
+    "privateBus"
+  ],
+  "closeError": null,
+  "originalStopSeconds": 4,
+  "originalWaitSeconds": 4,
+  "scope": "observed host closure only; named bus termination distinguished",
+  "clientClosureBinding": {
+    "ok": false,
+    "error": "FileNotFoundError(2, 'No such file or directory')",
+    "beforeDelegatedClose": true,
+    "rows": [],
+    "sources": {}
+  },
+  "normal": false
+}

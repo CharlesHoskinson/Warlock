@@ -1,0 +1,45 @@
+{
+  "result": "pass",
+  "named": 8,
+  "samples": 2000,
+  "steps": 100,
+  "beforeOrderingCorrection": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-fd31919efc05490dafc86a08ea264f30.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/capture_finalization_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/capture-finalization-formal-0-v1.log",
+      "sha256": "eae359780b965143cf8dc20f4699e0bc8ffd4464ce291a41087fc48cdfc9d5e8"
+    },
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/capture_finalization.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261005",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/capture-finalization-formal-1-v1.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "sources": {
+    "capture_finalization.qnt": "9f0fbab9da1df171ec049a1197c0f7063e3af7b52e388c3a5eb0f483ba6b2c54",
+    "capture_finalization_test.qnt": "e962f27b93f618e2dde07c4bb1c23d3db9f99d648b92546c97b3d8e7faf1e139",
+    "native_desktop.py": "2018cf5b62f5f4e7c697aeccc17cac7d75432bd42be4327fecd4a55f81de3f1f",
+    "batch_preview.py": "adec7073a1ab80af04ab511393aa433e67eb44b31bf0adf647b9afd348f24c10"
+  },
+  "counterexample": "/home/hoskinson/window-integration-qa/batch-preview-capture-order-counterexample-v1.json"
+}

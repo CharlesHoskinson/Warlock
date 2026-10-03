@@ -1,0 +1,18 @@
+{
+  "result": "pass",
+  "scope": "Raw archive integrity only; failed held52 and absent helper lifecycle remain false",
+  "variants": [
+    {
+      "variant": "qt-wayland",
+      "rawHelperArchiveIntegrity": true,
+      "eventCount": 0,
+      "allArchivedOriginalIdentitiesGone": true,
+      "configSHA256": "2ea68127715050fc48f1d679b9799ffb56c4a3d1d7120cbb20d9889d6cdeacfc",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalFullHelperLifecycle": false,
+      "acceptanceNotInferredFromEmptyJournal": true
+    }
+  ],
+  "nativeCommands": false,
+  "sourceSHA256": "ab41f9f5d1b42e5098576978e57db7dc665bd8dd0d50f44e948d39a96d9a3d97"
+}

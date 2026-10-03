@@ -1,0 +1,907 @@
+{
+  "result": "PASS",
+  "sourceRecords": 180,
+  "nativeAuthorized": false,
+  "checks": [
+    {
+      "path": "primary/src/config/shared/actions/ConfigActions.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/config/shared/actions/ConfigActions.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/Workspace.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/Fadeout.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/Fadeout.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/FadingOutState.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/FadingOutState.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/FloatState.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/FloatState.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/FocusState.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/FocusState.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/GlobalWindowController.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/GlobalWindowController.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/LayerFadeout.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/LayerFadeout.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/LayerState.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/LayerState.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/OtherViewState.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/OtherViewState.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/PopupFadeout.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/PopupFadeout.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/ViewHitTester.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/ViewHitTester.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/ViewQuery.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/ViewQuery.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/ViewState.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/ViewState.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/ViewStateTracker.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/ViewStateTracker.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/WindowFadeout.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/WindowFadeout.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/WindowQuery.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/WindowQuery.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/WindowState.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/state/WindowState.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/view/Window.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/desktop/view/Window.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/algorithm/Algorithm.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/algorithm/Algorithm.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/algorithm/ModeAlgorithm.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/algorithm/ModeAlgorithm.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/algorithm/floating/default/DefaultFloatingAlgorithm.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/algorithm/floating/default/DefaultFloatingAlgorithm.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/space/Space.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/target/Target.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/target/Target.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/target/WindowGroupTarget.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/target/WindowGroupTarget.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/target/WindowTarget.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/layout/target/WindowTarget.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/managers/fullscreen/FullscreenController.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/managers/fullscreen/FullscreenController.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/managers/fullscreen/handler/FullscreenHandler.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/managers/fullscreen/handler/FullscreenHandler.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/output/Monitor.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/plugins/PluginAPI.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/protocols/XDGShell.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/protocols/XDGShell.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/render/Renderer.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "primary/src/state/WorkspacePlacementController.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin_lifetime.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin_action.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin_action_test.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin_transport.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin_transport_test.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/STACKING_FRONTEND_CONTRACT.md",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin_frontend.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin_frontend_test.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin_stacking.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin_stacking_test.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin_exception.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin-v25-strict-cpu-checkpoint.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin_capture.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin-v25-module-build-report.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/stable_representation.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin_focus.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/MAX_PIN_CORE_PROPOSAL.md",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/TITLEBAR_PIN_CONTRACT.md",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/pin_titlebar.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/BarPassElement.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/barDeco.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/dragBridge.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/familyBridge.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/main.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/BarPassElement.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/barDeco.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/dragBridge.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/familyBridge.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/globals.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/snapshotBridge.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/snapshotBridge.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/atlasRenderer.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/atlasRenderer.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/atlasCoordinates.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/test_atlas_coordinates.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/atlasAdapter.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/atlasAdapter.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/captionCache.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/test_caption_cache.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/ancestorHit.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/ancestorHit.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/modalRegionAuthority.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/test_modal_region.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/pinBridge.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/pinBridge.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/PinAction.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/test_pin_action.cpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/PinJson.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/PinLifetime.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/PinStacking.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-v25/native-candidate/PinBoundary.hpp",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/pin-native-qa-v1/source-ready.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/pin-native-qa-v1/source-ready-inputs.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/pin-input-episode-v2-component-handoff-v1.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/pin-helper-v1-root-source-handoff-v1.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/pin-focus-observation-v3-component-handoff-v1.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/pin-native-qa-v2/attempt-1/root-failure-audit-v1.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/CONTRACT.md",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/INPUT_EPISODE_CONTRACT.md",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/REQUIREMENTS.md",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/capture_packet.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/case-cpu-first-failure.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/case-formal-before-implementation.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/case_authority.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/check_episode_component.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/closure-first-failure.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/inherited-output-source.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/input-episode-v2-final.diff",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/input-episode-v2.diff",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/input_episode.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/native_cases.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/output_readiness.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/pin_case.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/pin_input_episode.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/pin_input_episode_test.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/private-controls.lua",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/private_output_host.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/prove_cases.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/retained-A1-input-authority-gap.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/retained-before-pending-observation/input-episode-v2.diff",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/retained-before-pending-observation/input_episode.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/retained-before-pending-observation/native_cases.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/retained-before-pending-observation/test_input_episode.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/run_native.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/test_case_authority.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/test_input_episode.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A2/test_native_trace.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/CONTRACT.md",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/INPUT_EPISODE_CONTRACT.md",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/REQUIREMENTS.md",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/capture_packet.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/case-cpu-first-failure.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/case-formal-before-implementation.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/case_authority.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/check_episode_component.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/closure-first-failure.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/inherited-output-source.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/input-episode-v2-final.diff",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/input-episode-v2.diff",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/input_episode.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/native_cases.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/output_readiness.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/pin_case.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/pin_input_episode.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/pin_input_episode_test.qnt",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/private-controls.lua",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/private_output_host.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/prove_cases.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/retained-A1-input-authority-gap.json",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/retained-before-pending-observation/input-episode-v2.diff",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/retained-before-pending-observation/input_episode.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/retained-before-pending-observation/native_cases.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/retained-before-pending-observation/test_input_episode.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/run_native.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/test_case_authority.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/test_focus_observation.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/test_input_episode.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    },
+    {
+      "path": "retained-qa/A3/test_native_trace.py",
+      "sourceBytesExact": true,
+      "declaredModeExact": true
+    }
+  ]
+}

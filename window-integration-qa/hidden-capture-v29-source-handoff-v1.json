@@ -1,0 +1,86 @@
+{
+  "result": "source-ready",
+  "candidate": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29",
+  "sourceReady": {
+    "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/source-ready-v29.json",
+    "sha256": "dc44eca8d84dbbc24c1593c59f9976f59968c494aa48aaae8114ec63084c9627",
+    "mode": 384
+  },
+  "inputCount": 23891,
+  "modeCount": 23891,
+  "linkCount": 288,
+  "source": {
+    "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/native_desktop.py",
+    "sha256": "8c0fe944ab9b4208c6f5a52ceeb536102f35e951677af5ff2ec935646a50554b",
+    "mode": 420
+  },
+  "proof": {
+    "path": "/home/hoskinson/window-integration-qa/hidden-capture-v29-full-proof-v1/report.json",
+    "sha256": "c0563187c726ddfc2a418be8f97fdac835c684fc33c07a5933a8769f8bf52d5e",
+    "mode": 384
+  },
+  "focusedProof": {
+    "path": "/home/hoskinson/window-integration-qa/hidden-capture-v29-focused-proof-v2/report.json",
+    "sha256": "c3962fae663e467cd6a03604005a16aac17485c29a58cc9c6846d6729112e2b2",
+    "mode": 384
+  },
+  "conservation": {
+    "path": "/home/hoskinson/window-integration-qa/hidden-capture-v29-proof-source-v1/conservation.json",
+    "sha256": "422e43827685d3589334d5248f22a380317afb0e7408a6300392e9903ef3dbbb",
+    "mode": 384
+  },
+  "freezer": {
+    "path": "/home/hoskinson/window-integration-qa/hidden-capture-v29-proof-source-v1/freeze_hidden_capture.py",
+    "sha256": "df2f3d4845ebfc6ae0a195559bda35463dc7af13cec229c2bd10db0fbf9646b5",
+    "mode": 420
+  },
+  "application": {
+    "path": "/home/hoskinson/window-integration-qa/hidden-capture-v29-proof-source-v1/application.json",
+    "sha256": "d282ac6adfdf5e59629dc2b5aecbc21d96262efc99f497b4b70cb961b9024e02",
+    "mode": 384
+  },
+  "rootApplicationGrant": {
+    "path": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-v3-root-application-grant-v1.json",
+    "sha256": "1d25c005dfc4d82b994f135d521057b124ba393324ed0b6183242b23bfa3451b",
+    "mode": 384
+  },
+  "pythonTests": 462,
+  "originalTests": 444,
+  "newTests": 18,
+  "actualNamedCoverageRetained": 503,
+  "modelsRetained": 39,
+  "formalNewlyRerun": false,
+  "allSourceStable": true,
+  "scopeExit": 0,
+  "collectScope": "qa-harness-269ff62dd0b14e2ba978787ba3afaf43",
+  "rootFreezeCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/hidden-capture-v29-proof-source-v1/freeze_hidden_capture.py",
+    "--freeze"
+  ],
+  "rootVerifyCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/hidden-capture-v29-proof-source-v1/freeze_hidden_capture.py",
+    "--verify"
+  ],
+  "frozen": false,
+  "nativeLaunch": false,
+  "installedChanged": false,
+  "original38Accepted": false,
+  "original34Accepted": false,
+  "nativePerformanceAccepted": false,
+  "firstFocusedFailureRetained": "/home/hoskinson/window-integration-qa/hidden-capture-v29-focused-proof-v1/report.json",
+  "fixturePreimage": "/home/hoskinson/window-integration-qa/hidden-capture-v29-fixture-schema-epoch-v1/epoch.json",
+  "limitations": [
+    "Native timing and original38/fault34 require root serial acceptance",
+    "grim is explicit nongraphical fixture",
+    "Unknown closure test uses actual Keeper.abort and is not normal-stop acceptance",
+    "B14 failure unchanged; unique late capture callsite unproved"
+  ]
+}

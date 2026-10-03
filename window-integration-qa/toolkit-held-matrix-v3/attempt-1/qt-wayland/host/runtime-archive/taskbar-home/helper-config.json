@@ -1,0 +1,87 @@
+{
+  "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790897504_443349656",
+  "compositor": {
+    "pid": 1708459,
+    "start": "11997695"
+  },
+  "socket": "/run/user/1000/wqa/b414/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790897504_443349656/.socket.sock",
+  "socketIdentity": [
+    84,
+    311780,
+    1000
+  ],
+  "versionSHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+  "helpers": {
+    "snap": {
+      "wrapper": "/run/user/1000/wqa/b414/taskbar-home/.local/bin/hypr-snap-groups",
+      "wrapperSHA256": "1dfd0c8e1ec16275a85d9b1c472fbc08e3f4c14e245018adb7f8dd1972788b77",
+      "actual": "/run/user/1000/wqa/b414/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "invocation": "/run/user/1000/wqa/b414/taskbar-home/.local/bin/hypr-snap-groups"
+    },
+    "shell": {
+      "wrapper": "/run/user/1000/wqa/b414/taskbar-home/.local/bin/omarchy-shell",
+      "wrapperSHA256": "1dfd0c8e1ec16275a85d9b1c472fbc08e3f4c14e245018adb7f8dd1972788b77",
+      "actual": "/run/user/1000/wqa/b414/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "invocation": "omarchy-shell"
+    }
+  },
+  "log": "/run/user/1000/wqa/b414/taskbar-home/helper-events.jsonl",
+  "allowed": [
+    "generation:1:hydrate",
+    "generation:1:inactive-fileDrag"
+  ],
+  "loadGeneration": 1,
+  "queryTaskbar": {
+    "path": "/run/user/1000/wqa/b414/taskbar-home/.local/bin/hypr-taskbar",
+    "sha256": "58215e6cb07b364988a0d5c38e9a4f63d7803e2b7f78481ea3a7104fa55f02e1",
+    "python": "/usr/bin/python3",
+    "pythonSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+  },
+  "queryEnvironment": {
+    "HOME": "/run/user/1000/wqa/b414/taskbar-home",
+    "PATH": "/run/user/1000/wqa/b414/taskbar-home/.local/bin:/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/payload/omarchy/bin:/usr/bin",
+    "XDG_RUNTIME_DIR": "/run/user/1000/wqa/b414",
+    "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790897504_443349656",
+    "OMARCHY_PATH": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/payload/omarchy",
+    "WINDOW_QA_HELPER_CONFIG": "/run/user/1000/wqa/b414/taskbar-home/helper-config.json"
+  },
+  "queryRoots": {
+    "qs": {
+      "identity": {
+        "pid": 1708496,
+        "start": "11997786",
+        "pgid": 1708496,
+        "parent": 1708330
+      },
+      "argv": [
+        "/usr/bin/qs",
+        "-p",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/payload/omarchy/shell"
+      ],
+      "config": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/payload/omarchy/shell",
+      "executable": "/usr/bin/quickshell",
+      "executableSHA256": "2dc99382c032710fe495ed115cdee9dc9c69bdb3a21af4d86a9a8ea16733069b",
+      "configSHA256": "4a4b7694e5b9e0bd952ce0efa2d6dc2cea44cdfa98cc2f442e40fe41cbc1beab"
+    },
+    "harness": {
+      "identity": {
+        "pid": 1708330,
+        "start": "11997521",
+        "pgid": 1708330,
+        "parent": 1275790
+      },
+      "argv": [
+        "python3",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/run_native.py",
+        "--attempt",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/attempt-1"
+      ],
+      "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/run_native.py",
+      "sourceSHA256": "d41f2a3e0123f4cfa1d23c3ee2f697a8f8cc8d852540bf2c6e00372f7b1e252e",
+      "executable": "/usr/bin/python3.14",
+      "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+    }
+  }
+}

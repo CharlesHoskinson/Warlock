@@ -1,0 +1,34 @@
+{
+  "result": "pass",
+  "records": [
+    {
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap_wire_cpu.c",
+        "-lwayland-client",
+        "-o",
+        "/home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap-wire-cpu"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap-wire-cpu"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"case\":\"real-initial-null-surface-commit-queue\",\"serverReadableBeforeFlush\":0,\"clientReadableBeforeFlush\":0,\"flushReturn\":92,\"flushErrno\":0,\"wireBytes\":92,\"messages\":5,\"lastSurfaceObject\":4,\"lastOpcode\":6,\"wireHex\":\"0100000001000c00020000000200000000002800010000000e000000776c5f636f6d706f7369746f7200000006000000030000000300000000000c000400000004000000010014000000000000000000000000000400000006000800\",\"noServerImplemented\":true,\"noNativeGUI\":true}\n{\"case\":\"real-full-owned-socket-flush-refusal\",\"filledBytes\":8128,\"flushReturn\":-1,\"flushErrno\":11,\"noNativeGUI\":true}\n{\"case\":\"real-closed-owned-peer-flush-refusal\",\"flushReturn\":-1,\"flushErrno\":32,\"noNativeGUI\":true}\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": "a6686acea6bedb10472800e604d3670bb425223c3f9b49473e651056d1b6fc0a",
+  "actualLibwaylandSHA256": "39c83ae7b73d22f18b4f81da14749c4535c304b7e62910a2f1aae682f279cc9d",
+  "failedActualCompositorWireCauseProved": false,
+  "nativeGUI": false
+}

@@ -1,0 +1,33 @@
+{
+  "result": "counterexample-confirmed",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1f34a6b342bd45cead0b3f7cfbab15a2.scope",
+    "coreLimit": 1
+  },
+  "nativeCommands": false,
+  "mainWrites": false,
+  "sourceOnly": true,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/evaluation_setup.py": "68a3176799add29342f52f4f13ce7c4e9019f2e580f9f44053af77794c223866",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/evaluation_tickets.qnt": "5f14bc797dd17546263acf9d820750851ec2ee097f01130e13660cb57f82175d",
+    "/home/hoskinson/window-integration-qa/toolkit-held-evaluation-audit-v1/cleanup_counterexample.qnt": "d6f4989a6dadba6e794e25e4829e438b0d9187efa94c9c704df91ca21fc46a02",
+    "/home/hoskinson/window-integration-qa/toolkit-held-evaluation-audit-v1/review_source.py": "7c2897b62f3ac2efe857de9d47ed34837498f5257441493ee919b6b08fda7687"
+  },
+  "actualLuaOrdinalAfterExtraEvaluation": 3,
+  "actualOrdinalGuard": "Unexpected extra actual Lua evaluation",
+  "actualTerminalArmBlockedBeforeUnload": true,
+  "formalCleanupReachableAfterExtraEvaluation": true,
+  "formal": {
+    "command": [
+      "quint",
+      "test",
+      "/home/hoskinson/window-integration-qa/toolkit-held-evaluation-audit-v1/cleanup_counterexample.qnt"
+    ],
+    "returncode": 0,
+    "stdout": "\n  cleanup_counterexample\n    ok loadHasTwoDistinctEvaluationSlotsTest passed 1 test(s)\n    ok extraEvaluationRefusesTest passed 1 test(s)\n    ok staleTicketCannotDelegateTest passed 1 test(s)\n    ok duplicateHydrateCannotDelegateTwiceTest passed 1 test(s)\n    ok supersededTimerCannotConsumeCurrentRelayTest passed 1 test(s)\n    ok currentContextRelayHasExactSlotTest passed 1 test(s)\n    ok incompletePriorCallbacksBlockFeatureArmTest passed 1 test(s)\n    ok refusedFeatureCannotAuthorizeNewFeatureTest passed 1 test(s)\n    ok failedFeatureStillAllowsBoundTerminalCleanupTest passed 1 test(s)\n    ok finalQueueMustFinishBeforeArchiveTest passed 1 test(s)\n    ok wrongRootCannotDelegateTest passed 1 test(s)\n    ok changedSourceCannotDelegateTest passed 1 test(s)\n    ok incompleteEOFNeverDelegatesTest passed 1 test(s)\n    ok duplicateTerminalRemainsFailureTest passed 1 test(s)\n    ok failedFeatureNormalFinalQueueDoesNotEraseFailureTest passed 1 test(s)\n    ok extraOrdinalStillAllowsCleanupInModelTest passed 1 test(s)\n\n  16 passing (963ms)\n",
+    "stderr": ""
+  },
+  "boundary": "No actual V7 extra evaluation observed. Expected clean-commit unload1/load2 remains source-backed. This source/model difference can prevent normal native unload after an unexpected evaluation even with normal owned input/client/helper closure.",
+  "postGateEvidenceBoundary": "Actual captured selectors are journaled at reservation. A separate post-gate snapshot is not retained; frozen guarded code path plus exact normal delegate terminal supplies that provenance.",
+  "stageMutated": false
+}

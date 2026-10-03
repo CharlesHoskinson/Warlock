@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/usr/bin/c++",
+    "-shared",
+    "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v2-build/build/observer.o",
+    "-Wl,--build-id=sha1",
+    "-Wl,-Map=/home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v2-build/build/observer.map",
+    "-Wl,-t",
+    "-o",
+    "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v2-build/build/libpin-campaign-b-observer.so",
+    "-ljson-c"
+  ],
+  "exitCode": 0,
+  "finishedNs": 190724072086579,
+  "log": {
+    "literalLink": null,
+    "mode": "0o600",
+    "mtimeNs": 1790980371182584328,
+    "resolved": "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v2-build/build/link.log",
+    "sha256": "ff2e0669159c81c06b5accc63ad0f6c6266d3bddb23c4df7a191953428cbe834",
+    "size": 1201
+  },
+  "startedNs": 190724008705272
+}

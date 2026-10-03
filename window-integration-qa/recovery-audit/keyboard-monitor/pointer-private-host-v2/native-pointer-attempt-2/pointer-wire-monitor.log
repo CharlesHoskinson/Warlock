@@ -1,0 +1,99 @@
+signal time=1790863895.741635 sender=org.freedesktop.DBus -> destination=:1.3 serial=2 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameAcquired
+   string ":1.3"
+signal time=1790863895.741662 sender=org.freedesktop.DBus -> destination=:1.3 serial=4 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameLost
+   string ":1.3"
+method return time=1790863895.808437 sender=org.freedesktop.DBus -> destination=:1.4 serial=1 reply_serial=1
+   string ":1.4"
+signal time=1790863895.808458 sender=org.freedesktop.DBus -> destination=(null destination) serial=5 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameOwnerChanged
+   string ":1.4"
+   string ""
+   string ":1.4"
+method return time=1790863895.809465 sender=org.freedesktop.DBus -> destination=:1.4 serial=3 reply_serial=2
+method call time=1790863895.810053 sender=:1.4 -> destination=org.freedesktop.DBus serial=3 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=GetNameOwner
+   string "org.freedesktop.a11y.Manager"
+method return time=1790863895.810063 sender=org.freedesktop.DBus -> destination=:1.4 serial=5 reply_serial=4
+method return time=1790863895.810065 sender=org.freedesktop.DBus -> destination=:1.4 serial=6 reply_serial=5
+method return time=1790863895.868394 sender=org.freedesktop.DBus -> destination=:1.5 serial=1 reply_serial=1
+   string ":1.5"
+signal time=1790863895.868417 sender=org.freedesktop.DBus -> destination=(null destination) serial=6 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameOwnerChanged
+   string ":1.5"
+   string ""
+   string ":1.5"
+method return time=1790863895.870227 sender=org.freedesktop.DBus -> destination=:1.5 serial=3 reply_serial=2
+method call time=1790863895.870236 sender=:1.5 -> destination=org.freedesktop.DBus serial=3 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=GetNameOwner
+   string "org.freedesktop.a11y.Manager"
+method return time=1790863895.870240 sender=org.freedesktop.DBus -> destination=:1.5 serial=5 reply_serial=4
+method call time=1790863895.870242 sender=:1.4 -> destination=org.freedesktop.DBus serial=6 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=RequestName
+   string "org.omarchy.PointerA.KeyboardMonitor"
+   uint32 4
+signal time=1790863895.870246 sender=org.freedesktop.DBus -> destination=(null destination) serial=9 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameOwnerChanged
+   string "org.omarchy.PointerA.KeyboardMonitor"
+   string ""
+   string ":1.4"
+method return time=1790863895.870251 sender=org.freedesktop.DBus -> destination=:1.4 serial=8 reply_serial=6
+   uint32 1
+method return time=1790863895.870254 sender=org.freedesktop.DBus -> destination=:1.5 serial=6 reply_serial=5
+method call time=1790863895.871835 sender=:1.5 -> destination=org.freedesktop.DBus serial=6 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=RequestName
+   string "org.omarchy.PointerB.KeyboardMonitor"
+   uint32 4
+signal time=1790863895.871847 sender=org.freedesktop.DBus -> destination=(null destination) serial=9 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameOwnerChanged
+   string "org.omarchy.PointerB.KeyboardMonitor"
+   string ""
+   string ":1.5"
+method return time=1790863895.871852 sender=org.freedesktop.DBus -> destination=:1.5 serial=8 reply_serial=6
+   uint32 1
+method return time=1790863895.876151 sender=org.freedesktop.DBus -> destination=:1.6 serial=1 reply_serial=1
+   string ":1.6"
+signal time=1790863895.876164 sender=org.freedesktop.DBus -> destination=(null destination) serial=7 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameOwnerChanged
+   string ":1.6"
+   string ""
+   string ":1.6"
+method return time=1790863895.876258 sender=org.freedesktop.DBus -> destination=:1.6 serial=3 reply_serial=2
+method return time=1790863895.876375 sender=org.freedesktop.DBus -> destination=:1.6 serial=4 reply_serial=3
+   array [
+      string "org.freedesktop.DBus"
+      string "org.omarchy.PointerA.KeyboardMonitor"
+      string "org.a11y.Bus"
+      string "org.omarchy.PointerB.KeyboardMonitor"
+      string ":1.4"
+      string ":1.5"
+      string ":1.1"
+      string ":1.6"
+      string ":1.2"
+   ]
+method call time=1790863895.876488 sender=:1.6 -> destination=org.freedesktop.DBus serial=4 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=GetNameOwner
+   string "org.omarchy.PointerA.KeyboardMonitor"
+method return time=1790863895.876498 sender=org.freedesktop.DBus -> destination=:1.6 serial=5 reply_serial=4
+   string ":1.4"
+method call time=1790863895.876664 sender=:1.6 -> destination=org.freedesktop.DBus serial=5 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=GetNameOwner
+   string "org.omarchy.PointerB.KeyboardMonitor"
+method return time=1790863895.876674 sender=org.freedesktop.DBus -> destination=:1.6 serial=6 reply_serial=5
+   string ":1.5"
+method return time=1790863895.877231 sender=:1.1 -> destination=:1.6 serial=7 reply_serial=6
+   string "unix:path=/run/user/1000/wqa/ca41/at-spi/bus"
+method call time=1790863895.878514 sender=:1.6 -> destination=org.freedesktop.DBus serial=7 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=RequestName
+   string "org.freedesktop.a11y.Manager"
+   uint32 4
+signal time=1790863895.878529 sender=org.freedesktop.DBus -> destination=(null destination) serial=9 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameOwnerChanged
+   string "org.freedesktop.a11y.Manager"
+   string ""
+   string ":1.6"
+method return time=1790863895.878534 sender=org.freedesktop.DBus -> destination=:1.6 serial=8 reply_serial=7
+   uint32 1
+method return time=1790863896.077051 sender=:1.6 -> destination=:1.5 serial=8 reply_serial=7
+signal time=1790863901.079168 sender=org.freedesktop.DBus -> destination=(null destination) serial=10 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameOwnerChanged
+   string "org.omarchy.PointerB.KeyboardMonitor"
+   string ":1.5"
+   string ""
+signal time=1790863901.079193 sender=org.freedesktop.DBus -> destination=(null destination) serial=11 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameOwnerChanged
+   string ":1.5"
+   string ":1.5"
+   string ""
+signal time=1790863906.082837 sender=org.freedesktop.DBus -> destination=(null destination) serial=12 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameOwnerChanged
+   string "org.omarchy.PointerA.KeyboardMonitor"
+   string ":1.4"
+   string ""
+signal time=1790863906.082868 sender=org.freedesktop.DBus -> destination=(null destination) serial=13 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameOwnerChanged
+   string ":1.4"
+   string ":1.4"
+   string ""

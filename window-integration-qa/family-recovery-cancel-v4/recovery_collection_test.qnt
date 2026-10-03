@@ -1,0 +1,27 @@
+module recovery_collection_test {
+ import recovery_collection.* from "./recovery_collection"
+ action check(p:bool):bool=all{assert(p),s'=s}
+ action close=fire(Archive({receipt:1,scope:1,source:1})).then(fire(OldClosure({service:true,keeper:true,renderer:true,uncertain:false})))
+ action observe=fire(Observe({receipt:1,scope:1,source:1,complete:true,stable:true}))
+ action ack=fire(Ack({receipt:1,durable:true,capturesPresent:true}))
+ action ready=fire(Baseline(true)).then(close).then(observe).then(ack).then(fire(Dispose)).then(fire(NewHelpers(true))).then(fire(Api)).then(fire(Lifecycle({main:true,normal:true,source:true,unload:true})))
+ run completeOriginalBaselineAndCancellationEvidenceMayReportTest=init.then(ready).then(fire(Report)).then(check(s.report and allProps))
+ run missingOriginalBaselineCannotReportTest=init.then(ready).then(fire(Baseline(false))).then(fire(Report)).then(check(not(s.report)))
+ run replacementReceiptCannotAcknowledgeTest=init.then(close).then(fire(Observe({receipt:2,scope:1,source:1,complete:true,stable:true}))).then(ack).then(check(not(s.ack)))
+ run replacementScopeCannotAcknowledgeTest=init.then(close).then(fire(Observe({receipt:1,scope:2,source:1,complete:true,stable:true}))).then(ack).then(check(not(s.ack)))
+ run replacementSourceCannotAcknowledgeTest=init.then(close).then(fire(Observe({receipt:1,scope:1,source:2,complete:true,stable:true}))).then(ack).then(check(not(s.ack)))
+ run uncertainNativeEffectRemainsQuarantineAfterGroupsEmptyTest=init.then(close).then(fire(OldClosure({service:true,keeper:true,renderer:true,uncertain:true}))).then(fire(OldClosure({service:true,keeper:true,renderer:true,uncertain:false}))).then(observe).then(ack).then(check(s.uncertain and not(s.ack)))
+ run missingKeeperTerminalCannotAcknowledgeTest=init.then(close).then(fire(OldClosure({service:true,keeper:false,renderer:true,uncertain:false}))).then(observe).then(ack).then(check(not(s.ack)))
+ run incompleteMembersCannotAcknowledgeTest=init.then(close).then(fire(Observe({receipt:1,scope:1,source:1,complete:false,stable:true}))).then(ack).then(check(not(s.ack)))
+ run noCapturesAtDurableAckCannotAuthorizeDisposalTest=init.then(close).then(observe).then(fire(Ack({receipt:1,durable:true,capturesPresent:false}))).then(fire(Dispose)).then(check(not(s.disposed)))
+ run failedAckFsyncCannotAuthorizeDisposalTest=init.then(close).then(observe).then(fire(Ack({receipt:1,durable:false,capturesPresent:true}))).then(fire(Dispose)).then(check(not(s.disposed)))
+ run missingNewHelperClosureCannotExposeApiTest=init.then(close).then(observe).then(ack).then(fire(Dispose)).then(fire(Api)).then(check(not(s.api)))
+ run forcedFixtureCleanupCannotClaimNormalAcceptanceTest=init.then(ready).then(fire(Lifecycle({main:true,normal:false,source:true,unload:true}))).then(fire(Report)).then(check(not(s.report)))
+ run missingMainPreservationCannotReportTest=init.then(ready).then(fire(Lifecycle({main:false,normal:true,source:true,unload:true}))).then(fire(Report)).then(check(not(s.report)))
+ run missingSourceClosureCannotReportTest=init.then(ready).then(fire(Lifecycle({main:true,normal:true,source:false,unload:true}))).then(fire(Report)).then(check(not(s.report)))
+ run missingNativeUnloadCannotReportTest=init.then(ready).then(fire(Lifecycle({main:true,normal:true,source:true,unload:false}))).then(fire(Report)).then(check(not(s.report)))
+ run expectedProductQuarantineCannotBecomeCancellationAcceptanceTest=init.then(ready).then(fire(Quarantine)).then(fire(Report)).then(check(not(s.report) and not(s.api)))
+ run laterMissingHelperProofRevokesApiAuthorityTest=init.then(ready).then(fire(NewHelpers(false))).then(fire(Api)).then(fire(Report)).then(check(not(s.api) and not(s.report)))
+ run lateUncertaintyRevokesApiAuthorityTest=init.then(ready).then(fire(OldClosure({service:true,keeper:true,renderer:true,uncertain:true}))).then(fire(Api)).then(fire(Report)).then(check(not(s.api) and not(s.report)))
+ run freshReplacementReceiptRevokesPartialAuthorityTest=init.then(ready).then(fire(Observe({receipt:2,scope:1,source:1,complete:true,stable:true}))).then(fire(Api)).then(fire(Report)).then(check(not(s.api) and not(s.report)))
+}

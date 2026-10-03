@@ -1,0 +1,86 @@
+{
+  "updatedUTC": "2026-10-02T05:50:10.590498+00:00",
+  "checks": {
+    "all355HandoffSourcesModesExact": true,
+    "stableFull328Python244Named27Models": true,
+    "95InheritedExactFourProductWiringTwoFixtureCorrections": true,
+    "actual34NamedTwoModels2000x100": true,
+    "allV19AndFailedV3AncestryAndTransitiveClosure": true,
+    "noNativeV19PairingClaimAndOriginal38GatePreserved": true,
+    "history512ProductionLongevityOpen": true
+  },
+  "records": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/readonly_ipc_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  readonly_ipc_test\n    ok actualClosedPublishedDataMayReturnTest passed 1 test(s)\n    ok unknownRequestCannotConnectTest passed 1 test(s)\n    ok failedRegistrationCannotSendTest passed 1 test(s)\n    ok wrongKernelPeerCannotBorrowDataTest passed 1 test(s)\n    ok partialReplyCannotReturnTest passed 1 test(s)\n    ok oversizedReplyCannotReturnTest passed 1 test(s)\n    ok undecodedReplyCannotReturnTest passed 1 test(s)\n    ok timeoutCannotResetForAnotherChunkTest passed 1 test(s)\n    ok actualDescriptorClosureRequiredTest passed 1 test(s)\n    ok completionPublicationRequiredTest passed 1 test(s)\n    ok everyReplacementBeforeConfirmRefusesTest passed 10000 test(s)\n    ok everyReplacementAfterConfirmInvalidatesTest passed 10000 test(s)\n    ok oldConnectionCannotBeReusedTest passed 1 test(s)\n    ok anotherConnectionInvalidatesPartialResultTest passed 1 test(s)\n    ok staleSourceCannotRegisterTest passed 1 test(s)\n    ok completeEOFCannotReplaceDurabilityTest passed 1 test(s)\n    ok crashNeverPromotesReadOnlyResultTest passed 1 test(s)\n    ok wrongPeerAfterValidReplyIsTerminalTest passed 1 test(s)\n    ok everyInvalidReplyCannotBeOverwrittenTest passed 10000 test(s)\n    ok wrongOwnerAfterValidReplyIsTerminalTest passed 1 test(s)\n    ok refusalMustBeDurablyClosedBeforeNextConnectionTest passed 1 test(s)\n    ok failedRefusalPublicationBlocksNewConnectionTest passed 1 test(s)\n    ok retainedHistoryCapacityRefusesBeforeConnectTest passed 1 test(s)\n    ok unknownErrorCannotBeClearedTest passed 1 test(s)\n\n  24 passing (21034ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/readonly_ipc.qnt",
+        "--invariant",
+        "allProps",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20261002",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (15091ms at 133 traces/second).\nUse --seed=0x13b4242 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/readonly_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  readonly_registry_test\n    ok healthyParallelQueriesHaveDistinctRetainedRowsTest passed 1 test(s)\n    ok oneRefusalCannotConsumeOtherQueryDataTest passed 1 test(s)\n    ok refusalBlocksNewConnectionUntilDurableClosureTest passed 1 test(s)\n    ok failedPublicationLatchesWholeServiceFaultTest passed 1 test(s)\n    ok retainedCapacityCannotForgetClosedRowsTest passed 1 test(s)\n    ok completedConnectionIDCannotBeReusedTest passed 1 test(s)\n    ok physicalClosureCannotReplacePublicationTest passed 1 test(s)\n    ok missingPerConnectionProofCannotReturnTest passed 1 test(s)\n    ok refusedRowNeverReturnsAfterPublicationTest passed 1 test(s)\n    ok registrationFaultCannotConnectTest passed 1 test(s)\n\n  10 passing (1083ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/readonly_registry.qnt",
+        "--invariant",
+        "allProps",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20261002",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (5034ms at 397 traces/second).\nUse --seed=0x13b4242 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "rootActualCPUAndKernelFocusedTests": 24,
+  "nativeLaunch": false,
+  "mainWrites": false,
+  "steadyStateProductionAccepted": false,
+  "counts": {
+    "inputs": 14618,
+    "modes": 14618,
+    "links": 158
+  },
+  "result": "pass",
+  "freezeApprovedForBoundedPrivateQA": true,
+  "sourceHandoffSHA256": "8f1a10a036c05055498271ecc21971a08146e14af02d4192da141fb9cf9350c0"
+}

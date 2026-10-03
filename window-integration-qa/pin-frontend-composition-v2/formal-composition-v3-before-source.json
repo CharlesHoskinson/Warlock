@@ -1,0 +1,65 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/COMPOSITION_CONTRACT_V3.md": {
+      "sha256": "61b3e12a2b3bcba9a9d75d01cfdf784d38f2d4e3f1f598d69f67cec5c371bdb3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/popup_layer_composition_v3.qnt": {
+      "sha256": "91c49c982adadcef9aa9f333b61b301359e4eec0db27f304ca2fe79b9835ee22",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/prove_composition_v3_before.py": {
+      "sha256": "26ade1cbe92aafd7aad4b6b847a516565012cb8c33a2fe13e8788830c06df8f6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-private-qs-route-plan-v1/source-plan-handoff.json": {
+      "sha256": "958050b473abb13082f1e14a126a3946937378fb3f30501f1b78059b4397c7c1",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/process-private-qs-plan-root-source-grant-v1.json": {
+      "sha256": "5668ed83dcc6bfbfdba15e4b3ba7cb88ebba4cf00a8482ffa3603fa202a92bff",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-native-qa-v2/input_episode.py": {
+      "sha256": "587ca83b1b635f77c8957cb3790bd560cafbd508fa72f4dab663433a0d23df07",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-frontend-qa-v1/frontend_case.qnt": {
+      "sha256": "06d2b5d9f830b9fc9196a5c02091d382d18e3bf65fa18822ec6ef92f07b9411a",
+      "mode": 420
+    }
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/popup_layer_composition_v3.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  popup_layer_composition_v3\n    ok pointerPositiveTest passed 1 test(s)\n    ok sourceSupportedContentRootAliasTest passed 1 test(s)\n    ok returnPositiveTest passed 1 test(s)\n    ok getterEpochChangeTest passed 1 test(s)\n    ok getterNativeWindowGenerationTest passed 1 test(s)\n    ok getterContextPresenceTest passed 1 test(s)\n    ok missingLexicalContextTest passed 1 test(s)\n    ok duplicateAllocationTest passed 1 test(s)\n    ok nullNativeWindowTest passed 1 test(s)\n    ok engineMetadataOnlyTest passed 1 test(s)\n    ok intentCannotReleaseTest passed 1 test(s)\n    ok pendingOnlyDownTest passed 1 test(s)\n    ok wrongSequenceTest passed 1 test(s)\n    ok wrongLayerTest passed 1 test(s)\n    ok wrongIntegerPointTest passed 1 test(s)\n    ok popupCancellationRefusedTest passed 1 test(s)\n    ok replacedPrefixTest passed 1 test(s)\n    ok wrongReturnSymbolTest passed 1 test(s)\n    ok missingKeyboardResourceTest passed 1 test(s)\n    ok stalePopupAfterInputTest passed 1 test(s)\n    ok changedOwnerAfterInputTest passed 1 test(s)\n    ok changedNonceAfterInputTest passed 1 test(s)\n    ok actualEpisodeCannotReplaceEffectTest passed 1 test(s)\n    ok invalidationAfterAcceptTest passed 1 test(s)\n\n  24 passing (984ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/popup_layer_composition_v3.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (4135ms at 484 traces/second).\nUse --seed=0x1415bfa --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceStable": true,
+  "inherited1518Conserved": true,
+  "implementationAbsent": true,
+  "GUI": false,
+  "models": 1
+}

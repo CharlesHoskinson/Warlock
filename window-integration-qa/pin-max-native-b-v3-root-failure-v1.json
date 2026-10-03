@@ -1,0 +1,30 @@
+{
+  "schema": "root-pin-b-v3-native-failure-v1",
+  "observedUTC": "2026-10-03T00:26:37.847289+00:00",
+  "report": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v3/attempt-1/report.json",
+  "reportSHA256": "3b813f65cb8dad718cf2c1a598a5f41c7bde14d385db7c18bfc771500eb895fc",
+  "traceSHA256": "b48ca945f0d58d1735566bbcfa1686a112c131d59e6dcbda867c84d430ec99a1",
+  "frozenSHA256": "58a26254c59faef87f42b2647a2c0e19385a97c24b80cbecd5bb7de77482a44c",
+  "result": "fail",
+  "completedCases": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06"
+  ],
+  "bothNativeMAXPinUnpinAndNormalReturnReached": true,
+  "firstFailure": "B07 overlap admission before physical click",
+  "causeNotEstablished": true,
+  "hostChecks": 10,
+  "mainPreservationChecks": 18,
+  "allChecksPassed": true,
+  "clientsBeforeUnload": 0,
+  "allModulesNormallyUnloaded": true,
+  "privateClosureNormal": true,
+  "privateRuntimeGone": true,
+  "noCleanupErrorsOrUnknownDescendants": true,
+  "fullBParityAccepted": false,
+  "mainChanged": false
+}

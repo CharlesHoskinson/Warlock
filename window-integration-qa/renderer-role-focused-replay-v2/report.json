@@ -1,0 +1,57 @@
+{
+  "result": "pass",
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "test_renderer_job_role",
+    "-v"
+  ],
+  "exitCode": 0,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-18a001946b0546d096bdb3dcb21916bc.scope",
+    "coreLimit": 1
+  },
+  "sources": {
+    "batch_preview.py": {
+      "sha256": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250",
+      "mode": 420
+    },
+    "native_runtime.py": {
+      "sha256": "2179e2a30c880d5ad88b5ae19b370485ac886979ba8834f182ddcfb59b2006d1",
+      "mode": 420
+    },
+    "test_renderer_job_role.py": {
+      "sha256": "bb4079de72f8d76f94716bc5303ddaf5dc0897e170493f31db8c4882adf49ffb",
+      "mode": 384
+    },
+    "renderer_role_cpu_fixture.c": {
+      "sha256": "788159ab19f42917c264c1f8f93545e492bcd99ab8592082e3b3c007a032a979",
+      "mode": 384
+    },
+    "pipe_transport.py": {
+      "sha256": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8",
+      "mode": 420
+    },
+    "owned_launch.py": {
+      "sha256": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+      "mode": 420
+    },
+    "owned_commands.py": {
+      "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba",
+      "mode": 420
+    },
+    "helper_supervisor.py": {
+      "sha256": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+      "mode": 420
+    },
+    "recovery_resources.py": {
+      "sha256": "133edcf7b92aaa2f521af90922c571d1637ab8e8c9536a7cf57a6475fa18ce02",
+      "mode": 420
+    }
+  },
+  "sourceUnchanged": true,
+  "logSHA256": "5ee0666913e7b66cbd2c8246d536b69254270d9e7f1947b200bf162fb0b0e65b",
+  "nativeLaunch": false,
+  "nativeAccepted": false
+}

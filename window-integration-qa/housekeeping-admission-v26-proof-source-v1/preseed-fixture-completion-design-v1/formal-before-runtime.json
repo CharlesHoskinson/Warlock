@@ -1,0 +1,91 @@
+{
+  "result": "pass",
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "preseed_completion_test.qnt"
+      ],
+      "exitCode": 0,
+      "seconds": 2.0704581970057916,
+      "log": "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/formal-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "preseed_completion_test.qnt",
+        "--backend=rust",
+        "--seed=20261002261"
+      ],
+      "exitCode": 0,
+      "seconds": 2.378078444977291,
+      "log": "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/formal-1.log",
+      "sha256": "df875d00a8c2346c953697eb8993761ade54fb670fae678d1bb83b92dc1cf66c"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "preseed_completion.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261002261",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "seconds": 4.49756545299897,
+      "log": "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/formal-2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "namedScenarios": 8,
+  "samples": 2000,
+  "steps": 100,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/replay.py": {
+      "sha256": "ffffe2e16a9f49bfee67c735b3358da6f74beca4871f1f2ac59b89cff22e1167",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/CONTRACT.md": {
+      "sha256": "b28612a91d8658979ed7b247664b0d03ebf128b582076b975dce75ef5b19503d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/preseed_completion.qnt": {
+      "sha256": "abc00517792ee9b214b975c81a19217cfe2c33483df4567dc05ed0d3c83aef5e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/preseed_completion_test.qnt": {
+      "sha256": "edfb0313407785cc371b8ee392f32d26596a29f0f6eefa12a5d3e7501c56f50b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/actual-counterexample.json": {
+      "sha256": "8a416fcac30a1cdb3251448b20c5b841b221ed04da807ec59e08c063b2033015",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/test_preview_admission.py.proposed": {
+      "sha256": "b79ce5a60a3de2cf666ee78e45d9094ba436920660351a4959c45308d9cfd678",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/intended.patch": {
+      "sha256": "cba1e3c7b0fc8c6c2a97574eb33235646e1c2332ead624cd90b309c3312a3045",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/intended-source-map.json": {
+      "sha256": "b15a4003e45912d4b9531cba4e2253973c1d295370de45f9127626ec23f9cc5f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/formal_gate.py": {
+      "sha256": "769408cdc7daede0421909537f0b91871e03484fa250d3a9bc65efde2aa264ab",
+      "mode": 384
+    }
+  },
+  "sourceUnchangedDuringFormal": true,
+  "runtimeApplied": false,
+  "nativeAccepted": false,
+  "scope": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-37a4f50438b74167a3e240ddac63cc65.scope"
+}

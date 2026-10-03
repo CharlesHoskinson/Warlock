@@ -1,0 +1,21 @@
+{
+  "result": "counterexample",
+  "sourceSHA256": "34c00b57fd612d7d078fb2c93cfee0b402081349d965e173ba03d2186b05c1cf",
+  "cases": 2,
+  "acceptedMalformed": [
+    {
+      "field": "floating",
+      "malformedBeforeValue": null,
+      "actual": "accepted-completion",
+      "expected": "Uncertain"
+    },
+    {
+      "field": "pid",
+      "malformedBeforeValue": true,
+      "actual": "accepted-completion",
+      "expected": "Uncertain"
+    }
+  ],
+  "nativeLaunch": false,
+  "mainWrites": false
+}

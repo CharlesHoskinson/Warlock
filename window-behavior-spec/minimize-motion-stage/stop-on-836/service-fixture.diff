@@ -1,0 +1,11 @@
+--- ../reversal-freeze/test_motion_service.py	2026-09-30 22:59:49.911105854 -0600
++++ test_motion_service.py	2026-10-01 00:00:52.145834418 -0600
+@@ -16,6 +16,8 @@
+   if cmd=='clients':print(json.dumps(s['windows']))
+   elif cmd=='activewindow':print(json.dumps({'address':s['active']}))
+   elif cmd=='monitors':print(json.dumps([{'id':0,'name':'DP-1','x':0,'y':0,'width':1920,'height':1080,'scale':1,'focused':True,'activeWorkspace':{'name':'1'}}]))
++  elif cmd=='repl':
++   print(json.dumps([dict(w,parent='' if i==0 else s['windows'][0]['address'],parentStableId='' if i==0 else s['windows'][0]['stableId'],modal=i>0) for i,w in enumerate(s['windows'])]))
+   elif cmd=='workspaces':print(json.dumps([{'name':'1','monitorID':0,'monitor':'DP-1'}]))
+   elif cmd=='dispatch':print('ok')
+   else:sys.exit(2)

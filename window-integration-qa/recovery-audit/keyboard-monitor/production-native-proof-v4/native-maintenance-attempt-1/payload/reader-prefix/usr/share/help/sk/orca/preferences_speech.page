@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_speech" xml:lang="sk">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_braille"/>
+    <title type="sort">2.1 Reč</title>
+    <title type="link">Reč</title>
+    <desc>Konfigurácia toho, čo sa bude čítať</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Predvoľby reči</title>
+  <section id="enable_speech">
+    <title>Povoliť reč</title>
+    <p>Začiarkavacie políčko <gui>Povoliť reč</gui> riadi, či <app>Orca</app> bude používať syntetizátor reči alebo nie. Používatelia používajúci iba braillovo písmo budú pravdepodobne chcieť zrušiť začiarknutie toto políčka.</p>
+    <p>Predvolená hodnota: začiarknuté</p>
+  </section>
+  <section id="verbosity">
+    <title>Ukecanosť</title>
+    <p>Nastavenie <gui>Ukecanosť</gui> určuje množstvo informácií, ktoré sa budú oznamovať v rôznych situáciách. Napríklad, ak je nastavené na podrobnú, a vy prejdete šípkami na slovo, ktoré je napísané nesprávne, <app>Orca</app> oznámi, že slovo je preklep. Keď je úroveň nastavená na stručnú, toto oznámenie sa neurobí.</p>
+    <p>Predvolená hodnota: <gui>Podrobná</gui></p>
+  </section>
+  <section id="punctuation_level">
+    <title>Úroveň interpunkcie</title>
+    <p>Skupina prepínačov <gui>Úroveň interpunkcie</gui> sa používa na úpravu množstva interpunkcie čítanej syntetizátorom. Dostupné úrovne sú <gui>Žiadna</gui>, <gui>Čiastočná</gui>, <gui>Väčšina</gui> a <gui>Všetka</gui>.</p>
+    <p>Predvolená hodnota: <gui>Väčšina</gui></p>
+    <section id="punctuation_level_none">
+      <title>Žiadna</title>
+      <p>Výber úrovne interpunkcie <gui>Žiadna</gui> by, ako očakávate, spôsobil, že sa žiadna interpunkcia neprečíta. Upozorňujeme však, že špeciálne symboly, ako sú dolné a horné indexy čísel, zlomky Unicode a odrážky, sa na tejto úrovni stále oznamujú, hoci niektorí môžu tieto typy symbolov považovať za interpunkciu.</p>
+    </section>
+    <section id="punctuation_level_some">
+      <title>Čiastočná</title>
+      <p>Výber úrovne interpunkcie <gui>Čiastočná</gui> spôsobí, že sa prečítajú všetky predtým spomenuté symboly. Okrem toho <app>Orca</app> prečíta známe matematické symboly, symboly mien a „^“, „@“, „/“, „&amp;“, „#“.</p>
+    </section>
+    <section id="punctuation_level_most">
+      <title>Väčšina</title>
+      <p>Výber úrovne interpunkcie <gui>Väčšina</gui> spôsobí, že sa prečítajú všetky predtým spomenuté symboly. Okrem toho <app>Orca</app> prečíta všetky ostatné známe interpunkčné symboly <em>okrem</em> „!“, „'", „,“, „.“, „?“.</p>
+    </section>
+    <section id="punctuation_level_all">
+      <title>Všetka</title>
+      <p>Výber úrovne interpunkcie <gui>Všetka</gui> spôsobí, že <app>Orca</app> prečíta všetky známe interpunkčné symboly, ako sa očakáva.</p>
+    </section>
+  </section>
+  <section id="spoken_context">
+    <title>Čítaný kontext</title>
+    <p>Nasledujúce položky riadia zobrazenie rôznych doplnkových, „systémových“ informácií o zameranej položke. Pretože pridružený text sa nezobrazuje na obrazovke, tieto informácie sa čítajú systémovým hlasom <app>Orca</app>.</p>
+    <section id="only_speak_displayed_text">
+      <title>Čítať iba zobrazený text</title>
+      <p>Začiarknutie tohto políčka spôsobí, že <app>Orca</app> bude čítať iba skutočný text zobrazený na obrazovke. Táto možnosť je určená predovšetkým pre používateľov so slabým zrakom a používateľov s vizuálnou poruchou učenia.</p>
+      <p>Predvolená hodnota: nezačiarknuté</p>
+      <note style="note">
+        <p>Nasledujúce položky nebudú dostupné na konfiguráciu, ak je začiarknuté políčko <gui>Čítať iba zobrazený text</gui>.</p>
+      </note>
+    </section>
+    <section id="speak_blank_lines">
+      <title>Čítať prázdne riadky</title>
+      <p>Ak je začiarknuté políčko <gui>Čítať prázdne riadky</gui>, <app>Orca</app> povie „prázdny“ vždy, keď prejdete šípkami na prázdny riadok. Ak nie je začiarknuté, <app>Orca</app> pri prechode na prázdny riadok nepovie nič.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="indentation_and_justification">
+      <title>Čítať odsadenie a zarovnanie</title>
+      <p>Pri práci s kódom alebo úprave iných dokumentov je často žiaduce byť si vedomý zarovnania a odsadenia. Začiarknutie políčka <gui>Čítať odsadenie a zarovnanie</gui> spôsobí, že <app>Orca</app> túto informáciu oznámi.</p>
+      <p>Predvolená hodnota: nezačiarknuté</p>
+    </section>
+    <section id="speak_misspelled_word_indicator">
+      <title>Čítať indikátor preklepu</title>
+      <p>Indikátor preklepu je červená zvlnená čiara, ktorá sa zobrazuje pod slovami s preklepom v upraviteľných textových poliach. Ak je začiarknuté <gui>Čítať indikátor preklepu</gui>, keď navigujete do slova s týmto indikátorom alebo nesprávne zadáte slovo, čo spôsobí zobrazenie tohto indikátora, <app>Orca</app> prečíta „preklep“.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="mnemonics">
+     <title>Čítať mnemonické klávesy objektov</title>
+      <p>Ak je začiarknuté políčko <gui>Čítať mnemonické klávesy objektov</gui>, <app>Orca</app> oznámi mnemonický kláves spojený so zameraným objektom (napríklad <keyseq><key>Alt</key><key>O</key> </keyseq> pre tlačidlo <gui>OK</gui>).</p>
+      <p>Predvolená hodnota: nezačiarknuté</p>
+    </section>
+    <section id="child_position">
+      <title>Čítať pozíciu podriadeného prvku</title>
+      <p>Začiarknutie políčka <gui>Čítať pozíciu podriadeného prvku</gui> spôsobí, že <app>Orca</app> oznámi pozíciu zameranej položky v ponukách, zoznamoch a stromoch (napr. „9 z 16“).</p>
+      <p>Predvolená hodnota: nezačiarknuté</p>
+    </section>
+    <section id="speak_tutorial_messages">
+      <title>Čítať výukové správy</title>
+      <p>Ak je začiarknuté políčko <gui>Čítať výukové správy</gui>, keď sa pohybujete medzi objektmi v rozhraní, <app>Orca</app> poskytne ďalšie informácie, napríklad ako interagovať s aktuálne zameraným objektom.</p>
+      <p>Predvolená hodnota: nezačiarknuté</p>
+    </section>
+    <section id="speak_description">
+      <title>Čítať popis</title>
+      <p>Ak je začiarknuté políčko <gui>Čítať popis</gui>, keď sa pohybujete medzi objektami v rozhraní, <app>Orca</app> prečíta prístupný popis okrem prístupného názvu objektu.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="system_messages_are_detailed">
+      <title>Systémové správy sú podrobné</title>
+      <p>Ak je začiarknuté <gui>Systémové správy sú podrobné</gui>, <app>Orca</app> vám bude čítať podrobné správy. Napríklad, ak použijete príkaz <app>Orca</app> na zmenu ozveny, <app>Orca</app> môže prečítať „Ozvena nastavená na slovo.“ Ak by ste uprednostnili kratšie správy, napríklad jednoducho „slovo“, mali by ste zrušiť začiarknutie tohto políčka.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="speak_colors_as_names">
+      <title>Čítať farby ako názvy</title>
+      <p>Ak je začiarknuté <gui>Čítať farby ako názvy</gui>, <app>Orca</app> bude popisovať farby a hľadať najbližší približný názov. Napríklad RGB 0, 27, 51 by bolo prečítané ako „polnočná modrá“. Ak by ste radšej počuli presnú hodnotu RGB, mali by ste zrušiť začiarknutie tohto políčka.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="announce_blockquotes_during_navigation">
+      <title>Oznamovať citácie počas navigácie</title>
+      <p>Ak je začiarknuté <gui>Oznamovať citácie počas navigácie</gui>, <app>Orca</app> vám oznámi, keď vstúpite do citácie alebo z nej vystúpite. Upozorňujeme, že toto nastavenie je nezávislé od toho, či sa toto oznámenie robí počas Prečítať všetko. Viac informácií nájdete v časti <link xref="preferences_general#say_all_announce_context">Oznamovať kontextové informácie v Prečítať všetko</link>.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="announce_forms_during_navigation">
+      <title>Oznamovať formuláre počas navigácie</title>
+      <p>Ak je začiarknuté <gui>Oznamovať formuláre počas navigácie</gui>, <app>Orca</app> vám oznámi, keď vstúpite do formulára alebo z neho vystúpite. Upozorňujeme, že toto nastavenie je špecifické pre formuláre, ktoré nie sú orientačnými bodmi ARIA. Zobrazenie orientačných bodov ARIA môžete konfigurovať prostredníctvom začiarkavacieho políčka <gui>Oznamovať orientačné body počas navigácie</gui>. Okrem toho si všimnite, že toto nastavenie je nezávislé od toho, či sa toto oznámenie robí počas Prečítať všetko. Viac informácií nájdete v časti <link xref="preferences_general#say_all_announce_context">Oznamovať kontextové informácie v Prečítať všetko</link>.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="announce_landmarks_during_navigation">
+      <title>Oznamovať orientačné body počas navigácie</title>
+      <p>Ak je začiarknuté <gui>Oznamovať orientačné body počas navigácie</gui>, <app>Orca</app> vám oznámi, keď vstúpite do orientačného bodu ARIA alebo z neho vystúpite. Upozorňujeme, že toto nastavenie je nezávislé od toho, či sa toto oznámenie robí počas Prečítať všetko. Viac informácií nájdete v časti <link xref="preferences_general#say_all_announce_context">Oznamovať kontextové informácie v Prečítať všetko</link>.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="announce_lists_during_navigation">
+      <title>Oznamovať zoznamy počas navigácie</title>
+      <p>Ak je začiarknuté <gui>Oznamovať zoznamy počas navigácie</gui>, <app>Orca</app> vám oznámi, keď vstúpite do zoznamu alebo z neho vystúpite. Upozorňujeme, že toto nastavenie je nezávislé od toho, či sa toto oznámenie robí počas Prečítať všetko. Viac informácií nájdete v časti <link xref="preferences_general#say_all_announce_context">Oznamovať kontextové informácie v Prečítať všetko</link>.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="announce_panels_during_navigation">
+      <title>Oznamovať panely počas navigácie</title>
+      <p>Ak je začiarknuté <gui>Oznamovať panely počas navigácie</gui>, <app>Orca</app> vám oznámi, keď vstúpite do panelu alebo z neho vystúpite. Upozorňujeme, že toto nastavenie je nezávislé od toho, či sa toto oznámenie robí počas Prečítať všetko. Viac informácií nájdete v časti <link xref="preferences_general#say_all_announce_context">Oznamovať kontextové informácie v Prečítať všetko</link>.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="announce_tables_during_navigation">
+      <title>Oznamovať tabuľky počas navigácie</title>
+      <p>Ak je začiarknuté <gui>Oznamovať tabuľky počas navigácie</gui>, <app>Orca</app> vám oznámi, keď vstúpite do tabuľky alebo z nej vystúpite. Upozorňujeme, že toto nastavenie je nezávislé od toho, či sa toto oznámenie robí počas Prečítať všetko. Viac informácií nájdete v časti <link xref="preferences_general#say_all_announce_context">Oznamovať kontextové informácie v Prečítať všetko</link>.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="speak_full_row_in_gui_tables">
+      <title>Čítať celý riadok v tabuľkách rozhrania</title>
+      <p>Ak je začiarknuté <gui>Čítať celý riadok v tabuľkách rozhrania</gui>, keď prechádzate hore a dole v tabuľkách aplikácií, ako je zoznam správ v priečinku Doručená pošta, <app>Orca</app> prečíta celý riadok. Ak by ste radšej počuli iba bunku s fokusom, mali by ste zrušiť začiarknutie tohto políčka.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="speak_full_row_in_document_tables">
+      <title>Čítať celý riadok v tabuľkách dokumentov</title>
+      <p>Ak je začiarknuté <gui>Čítať celý riadok v tabuľkách dokumentov</gui>, keď prechádzate hore a dole v tabuľkách, ako sú tie v <app>Writer</app> a webových dokumentoch, <app>Orca</app> prečíta celý riadok. Ak by ste radšej počuli iba bunku s fokusom, mali by ste zrušiť začiarknutie tohto políčka.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="speak_full_row_in_spreadsheets">
+      <title>Čítať celý riadok v tabuľkových procesoroch</title>
+      <p>Ak je začiarknuté <gui>Čítať celý riadok v tabuľkových procesoroch</gui>, keď prechádzate hore a dole v tabuľkových procesoroch, <app>Orca</app> prečíta celý riadok. Ak by ste radšej počuli iba bunku s fokusom, mali by ste zrušiť začiarknutie tohto políčka.</p>
+      <p>Predvolená hodnota: nezačiarknuté</p>
+    </section>
+  </section>
+</page>

@@ -1,0 +1,20 @@
+--- /home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/proposal/desired/PinWindowMenu.qml
++++ /home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/proposal/revised-desired/PinWindowMenu.qml
+@@ -107,8 +107,16 @@
+     }
+     function toggle() {
+         if(actionProcess.running) return;
++        var attemptedNonce=menuState.nonce;
++        var attemptedToken=menuState.token;
+         try {
+-            if(!retirePrevious(actionProcess,actionOut,actionErr,actionLease)) return;
++            var retired=false;try { retired=retirePrevious(actionProcess,actionOut,actionErr,actionLease); } catch(retirementError) {}
++            if(!retired) {
++                if(menuState.open && menuState.nonce===attemptedNonce && Policy.sameToken(menuState.token,attemptedToken) && menuState.status==="ready") {
++                    lastReceipt=null;menuState.status="refused-or-uncertain";sync();operationFinished(false);
++                }
++                return;
++            }
+             actionLease=0;
+             invocation=Policy.invoke(menuState);if(!invocation) return;sync();
+             actionPublished=false;actionExitSeen=false;actionOutDone=false;actionErrDone=false;actionCode=-1;

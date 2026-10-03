@@ -1,0 +1,6 @@
+{
+  "result": "source-preparation-failed",
+  "cause": "Derivative copy accidentally excluded nested retained frozen-inputs.json, not only root manifest",
+  "nativeExecuted": false,
+  "correctiveAction": "Restore exact retained nested packet files from unchanged V9; no oracle change"
+}

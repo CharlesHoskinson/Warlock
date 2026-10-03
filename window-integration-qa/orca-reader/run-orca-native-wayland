@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+qa_root=$(cd -- "$(dirname -- "$0")" && pwd)
+export ORCA_QA_LEGACY_GRAB_FIX=1
+export ORCA_QA_NATIVE_WAYLAND_MODIFIERS=1
+export GDK_BACKEND=wayland
+unset DISPLAY
+exec "$qa_root/run-orca" "$@"

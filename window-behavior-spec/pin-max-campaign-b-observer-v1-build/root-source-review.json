@@ -1,0 +1,21 @@
+{
+  "result": "pass",
+  "readySHA256": "37f498847b067372a6dadd8362e24077b97cd2a1b1462fd31589755a75080d4a",
+  "inputsVerified": 175,
+  "originsVerified": 47,
+  "reviewed": "full C++/decoder/schema/permitted calls and actual transitive owning getters",
+  "metadataReadOnly": true,
+  "queryHitIsNativeStimulus": true,
+  "nativeAuthority": false,
+  "compileAndCPUOnlyAuthorized": true,
+  "nativeAuthorized": false,
+  "limits": [
+    "same compositor thread, no yielding callbacks or setters",
+    "raw handler getter avoids controller mode synchronization",
+    "inherited hit query may correct unrelated stale fullscreen state",
+    "bounded decoder refusal never conveys partial success",
+    "compiler and full dependency/ABI closure still required",
+    "B24 and presentation/Seat/controller/output campaign remain unaccepted"
+  ],
+  "mainChanged": false
+}

@@ -1,0 +1,10 @@
+--- window-integration-qa/modal-ancestor-discovery-v2/native-candidate/main.cpp
++++ window-integration-qa/toolkit-interruption-v3/native-candidate/main.cpp
+@@ -272,6 +272,7 @@
+         HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "add_button", ::newLuaButton);
+     HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "drag_bridge", ::luaDragBridgeAvailable);
+     HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "file_drag_active", ::luaFileDragActive);
++    HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "retire_gesture_current", ::luaRetireGestureCurrent);
+     HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "window_families", ::luaWindowFamilies);
+     HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "window_snapshot", ::luaWholeWindowSnapshot);
+     HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "window_atlas", ::luaWindowAtlas);

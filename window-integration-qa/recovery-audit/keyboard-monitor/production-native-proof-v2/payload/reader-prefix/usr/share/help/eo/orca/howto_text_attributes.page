@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_text_attributes" xml:lang="eo">
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <link type="next" xref="howto_structural_navigation"/>
+    <title type="sort">2. Tekst-Atributoj</title>
+    <desc>Ekzaminante tekstan formatadon</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Tekstaj Atributoj</title>
+  <p>La termino "tekst-atributoj" rilatas al ĉiuj tiparoj, stiloj, vicigoj, kaj aliaj formatadoj asociitaj kun donita signo aŭ serio da signoj.</p>
+  <section id="obtaining">
+    <title>Akiri Formatajn Informojn</title>
+    <p>Kiam vi premas <keyseq><key>Orko Modifier</key><key>F</key> </keyseq>, <app>Orko</app> parolos konatajn tekst-atributajn informojn pri objekto. Krome, <app>Orko</app> opcie indikos tekst-atributojn en brajlo "substrekante" ilin dum vi navigas dokumenton.</p>
+    <p>Ĉar la nombro da tekst-atributoj estas granda, kaj ne ĉiu zorgas pri ĉiu atributo, la <link xref="preferences_text_attributes"> paĝo Tekst-Atributoj de la agord-dialogo</link> permesas al vi agordi kiujn tekst-atributojn <app>Orko</app> prezentos en parolo, kune kun la ordo en kiu ili devus esti prezentitaj, kaj kiujn <app>Orko</app> indikos en brajlo.</p>
+    <p>Ĉar la <link xref="preferences_text_attributes">paĝo Tekst-Atributoj</link> estas ankaŭ parto de la aplikaĵ-specifaj agordoj, vi povas agordi la prezentadon de tekst-atributoj laŭ bezono por ĉiu aplikaĵo kiun vi uzas.</p>
+  </section>
+  <section id="identifying_misspelled_words">
+    <title>Identigi Misliterumitajn Vortojn</title>
+    <p>Plej multaj aplikaĵoj kaj ilaroj indikas ke vorto estas misliterumita per substrekado de tiu vorto per ruĝa, ondanta linio. La ĉeesto de tiu linio estas tipe ekspozata al helpaj teknologioj kiel tekst-atributo. Rezulte, vi trovos literum-erarojn inter la tekst-atributoj kiujn vi povas elekti. Implicite, la literum-erara atributo estas ebligita por parolo kaj brajlo kaj tial estos prezentita kune kun ajna alia atributo kies indikon vi ebligis.</p>
+    <p>Aldone al alirado de la ĉeesto de literum-eraroj kiel tekst-atributo, se vi ebligis klavan eĥon kaj/aŭ vortan eĥon kaj tajpas vorton kiu estas misliterumita, kiam la literum-erara indiko aperas, <app>Orko</app> anoncas "misliterumita" por ke vi tuj iru reen kaj korektu la eraron.</p>
+    <p>Fine, kiam vi navigas ene de dokumento kaj la karetilo moviĝas en vorton kiu estas misliterumita, <app>Orko</app> anoncas la ĉeeston de la literum-eraro.</p>
+  </section>
+</page>

@@ -1,0 +1,949 @@
+{
+  "failure": null,
+  "serviceFailure": null,
+  "readonlyEventObserverFailures": [],
+  "readonlyEventObserverStopped": true,
+  "readonlyEventObserverTimingPerturbation": true,
+  "serviceClosed": true,
+  "compositorIPCProbe": {
+    "request": "j/version",
+    "replyBytes": 714,
+    "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+    "completeServerEOF": true,
+    "version": {
+      "branch": "v0.56.2",
+      "commit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+      "version": "0.56.2",
+      "dirty": false,
+      "commit_message": "[gha] Nix: update inputs",
+      "commit_date": "Wed Aug 5 14:13:21 2026",
+      "tag": "v0.56.2",
+      "commits": "7661",
+      "buildAquamarine": "0.15.0",
+      "buildHyprlang": "0.6.8",
+      "buildHyprutils": "0.14.1",
+      "buildHyprcursor": "0.1.13",
+      "buildHyprgraphics": "0.5.1",
+      "systemAquamarine": "0.15.0",
+      "systemHyprlang": "0.6.8",
+      "systemHyprutils": "0.14.2",
+      "systemHyprcursor": "0.1.13",
+      "systemHyprgraphics": "0.5.1",
+      "abiHash": "efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6",
+      "flags": []
+    },
+    "pid": 2851525,
+    "start": 13738050,
+    "socket": [
+      84,
+      381510
+    ]
+  },
+  "records": [
+    {
+      "actor": 1,
+      "history": [
+        {
+          "token": "953c674de096-1",
+          "operation": "minimize",
+          "requested": [
+            "0x5a73b1ecd4c0",
+            "18000000",
+            2852243
+          ],
+          "context": [
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790914907_999450847",
+            [
+              [
+                "WAYLAND-1",
+                0,
+                0,
+                0,
+                1600,
+                1000,
+                1,
+                0,
+                1,
+                "1"
+              ]
+            ]
+          ],
+          "members": [
+            {
+              "address": "0x5a73b1ecd4c0",
+              "mapped": true,
+              "hidden": false,
+              "visible": true,
+              "acceptsInput": true,
+              "at": [
+                100,
+                250
+              ],
+              "size": [
+                460,
+                300
+              ],
+              "workspace": {
+                "id": 1,
+                "name": "1"
+              },
+              "floating": true,
+              "monitor": 0,
+              "class": "qt-window-modal-fixture",
+              "title": "Qt WindowModal QA owner",
+              "initialClass": "qt-window-modal-fixture",
+              "initialTitle": "Qt WindowModal QA owner",
+              "pid": 2852243,
+              "xwayland": false,
+              "pinned": false,
+              "pinFullscreened": false,
+              "fullscreen": 0,
+              "fullscreenClient": 0,
+              "fullscreenHandler": "default",
+              "allowedOverFullscreen": true,
+              "grouped": [],
+              "tags": [],
+              "swallowing": "0x0",
+              "focusHistoryID": 3,
+              "inhibitingIdle": false,
+              "xdgTag": "",
+              "xdgDescription": "",
+              "contentType": "none",
+              "tearingHint": false,
+              "stableId": "18000000",
+              "parent": "",
+              "parentStableId": "",
+              "modal": false
+            },
+            {
+              "address": "0x5a73b2716300",
+              "mapped": true,
+              "hidden": false,
+              "visible": true,
+              "acceptsInput": true,
+              "at": [
+                260,
+                310
+              ],
+              "size": [
+                320,
+                180
+              ],
+              "workspace": {
+                "id": 1,
+                "name": "1"
+              },
+              "floating": true,
+              "monitor": 0,
+              "class": "qt-window-modal-fixture",
+              "title": "Qt WindowModal QA child",
+              "initialClass": "qt-window-modal-fixture",
+              "initialTitle": "Qt WindowModal QA child",
+              "pid": 2852243,
+              "xwayland": false,
+              "pinned": false,
+              "pinFullscreened": false,
+              "fullscreen": 0,
+              "fullscreenClient": 0,
+              "fullscreenHandler": "default",
+              "allowedOverFullscreen": true,
+              "grouped": [],
+              "tags": [],
+              "swallowing": "0x0",
+              "focusHistoryID": 1,
+              "inhibitingIdle": false,
+              "xdgTag": "",
+              "xdgDescription": "",
+              "contentType": "none",
+              "tearingHint": false,
+              "stableId": "18000002",
+              "parent": "0x5a73b1ecd4c0",
+              "parentStableId": "18000000",
+              "modal": true
+            },
+            {
+              "address": "0x5a73b25e6790",
+              "mapped": true,
+              "hidden": false,
+              "visible": true,
+              "acceptsInput": true,
+              "at": [
+                330,
+                350
+              ],
+              "size": [
+                240,
+                140
+              ],
+              "workspace": {
+                "id": 1,
+                "name": "1"
+              },
+              "floating": true,
+              "monitor": 0,
+              "class": "qt-window-modal-fixture",
+              "title": "Qt WindowModal QA nested",
+              "initialClass": "qt-window-modal-fixture",
+              "initialTitle": "Qt WindowModal QA nested",
+              "pid": 2852243,
+              "xwayland": false,
+              "pinned": false,
+              "pinFullscreened": false,
+              "fullscreen": 0,
+              "fullscreenClient": 0,
+              "fullscreenHandler": "default",
+              "allowedOverFullscreen": true,
+              "grouped": [],
+              "tags": [],
+              "swallowing": "0x0",
+              "focusHistoryID": 0,
+              "inhibitingIdle": false,
+              "xdgTag": "",
+              "xdgDescription": "",
+              "contentType": "none",
+              "tearingHint": false,
+              "stableId": "18000003",
+              "parent": "0x5a73b2716300",
+              "parentStableId": "18000002",
+              "modal": true
+            }
+          ],
+          "sources": [],
+          "focus": [
+            "0x5a73b25e6790",
+            "18000003",
+            2852243
+          ],
+          "validated": true,
+          "visual": false,
+          "running": false,
+          "ready": false,
+          "accepted_operation": "minimize",
+          "previous": null,
+          "profile": {
+            "receivedNs": 125269966770012,
+            "reservedNs": 125269966770678,
+            "ingressCommand": "minimize",
+            "contextPending": false,
+            "managerReceipt": 1,
+            "metadataStartNs": 125269968839804,
+            "gestureRetirementScope": [
+              [
+                "0x5a73b1ecd4c0",
+                "18000000",
+                2852243
+              ],
+              [
+                "0x5a73b2716300",
+                "18000002",
+                2852243
+              ],
+              [
+                "0x5a73b25e6790",
+                "18000003",
+                2852243
+              ]
+            ],
+            "gestureRetirementStartNs": 125270376478626,
+            "gestureRetirementReply": [
+              {
+                "identity": [
+                  "0x5a73b1ecd4c0",
+                  "18000000",
+                  2852243
+                ],
+                "retired": false
+              },
+              {
+                "identity": [
+                  "0x5a73b2716300",
+                  "18000002",
+                  2852243
+                ],
+                "retired": false
+              },
+              {
+                "identity": [
+                  "0x5a73b25e6790",
+                  "18000003",
+                  2852243
+                ],
+                "retired": false
+              }
+            ],
+            "gestureRetirementFreshNs": 125270853614102,
+            "postRetirementFamily": [
+              {
+                "address": "0x5a73b1ecd4c0",
+                "stableId": "18000000",
+                "pid": 2852243,
+                "at": [
+                  100,
+                  250
+                ],
+                "size": [
+                  460,
+                  300
+                ],
+                "pinned": false,
+                "floating": true,
+                "fullscreen": 0,
+                "parent": "",
+                "parentStableId": "",
+                "modal": false
+              },
+              {
+                "address": "0x5a73b2716300",
+                "stableId": "18000002",
+                "pid": 2852243,
+                "at": [
+                  260,
+                  310
+                ],
+                "size": [
+                  320,
+                  180
+                ],
+                "pinned": false,
+                "floating": true,
+                "fullscreen": 0,
+                "parent": "0x5a73b1ecd4c0",
+                "parentStableId": "18000000",
+                "modal": true
+              },
+              {
+                "address": "0x5a73b25e6790",
+                "stableId": "18000003",
+                "pid": 2852243,
+                "at": [
+                  330,
+                  350
+                ],
+                "size": [
+                  240,
+                  140
+                ],
+                "pinned": false,
+                "floating": true,
+                "fullscreen": 0,
+                "parent": "0x5a73b2716300",
+                "parentStableId": "18000002",
+                "modal": true
+              }
+            ],
+            "resolvedDirection": "minimize",
+            "familyDrawEvidence": {
+              "attempts": 1,
+              "native": [
+                {
+                  "address": "0x5a73b1ecd4c0",
+                  "stableId": "18000000",
+                  "pid": 2852243,
+                  "parent": "",
+                  "parentStableId": "",
+                  "modal": false
+                },
+                {
+                  "address": "0x5a73b1ed9c50",
+                  "stableId": "18000001",
+                  "pid": 2852243,
+                  "parent": "",
+                  "parentStableId": "",
+                  "modal": false
+                },
+                {
+                  "address": "0x5a73b2716300",
+                  "stableId": "18000002",
+                  "pid": 2852243,
+                  "parent": "0x5a73b1ecd4c0",
+                  "parentStableId": "18000000",
+                  "modal": true
+                },
+                {
+                  "address": "0x5a73b25e6790",
+                  "stableId": "18000003",
+                  "pid": 2852243,
+                  "parent": "0x5a73b2716300",
+                  "parentStableId": "18000002",
+                  "modal": true
+                }
+              ],
+              "members": [
+                [
+                  "0x5a73b1ecd4c0",
+                  "18000000",
+                  2852243
+                ],
+                [
+                  "0x5a73b25e6790",
+                  "18000003",
+                  2852243
+                ],
+                [
+                  "0x5a73b2716300",
+                  "18000002",
+                  2852243
+                ]
+              ],
+              "focus": [
+                "0x5a73b25e6790",
+                "18000003",
+                2852243
+              ],
+              "drawOrder": [
+                [
+                  "0x5a73b1ecd4c0",
+                  "18000000",
+                  2852243
+                ],
+                [
+                  "0x5a73b2716300",
+                  "18000002",
+                  2852243
+                ],
+                [
+                  "0x5a73b25e6790",
+                  "18000003",
+                  2852243
+                ]
+              ],
+              "paintWitness": "WindowState-vector+native-render-plane+ancestor-constraints",
+              "activePaintIdentity": null
+            },
+            "metadataValidatedNs": 125270855371373,
+            "cleanupQueuedNs": 125273800495007,
+            "settlementReason": "controller deadline",
+            "cleanupAckNs": 125273802609288
+          },
+          "results": [
+            {
+              "identity": [
+                "0x5a73b1ecd4c0",
+                "18000000",
+                2852243
+              ],
+              "operation": "minimize",
+              "reason": "controller deadline",
+              "committedNs": 125272887565891
+            },
+            {
+              "identity": [
+                "0x5a73b2716300",
+                "18000002",
+                2852243
+              ],
+              "operation": "minimize",
+              "reason": "controller deadline",
+              "committedNs": 125273353752825
+            },
+            {
+              "identity": [
+                "0x5a73b25e6790",
+                "18000003",
+                2852243
+              ],
+              "operation": "minimize",
+              "reason": "controller deadline",
+              "committedNs": 125273799305640
+            }
+          ],
+          "single": false,
+          "direction": {
+            "anchor": "minimize",
+            "inverted": false,
+            "identity": null
+          }
+        }
+      ],
+      "current": null,
+      "retired": []
+    }
+  ],
+  "transports": [
+    {
+      "pid": 2852650,
+      "start": 13738943,
+      "exitCode": 0,
+      "closed": true,
+      "failed": false,
+      "closeError": null,
+      "events": [
+        {
+          "error": 0,
+          "event": "shaderPrecision",
+          "observed": [
+            {
+              "kind": "low",
+              "precisionBits": 23,
+              "rangeMax": 127,
+              "rangeMin": 127,
+              "stage": "vertex"
+            },
+            {
+              "kind": "medium",
+              "precisionBits": 23,
+              "rangeMax": 127,
+              "rangeMin": 127,
+              "stage": "vertex"
+            },
+            {
+              "kind": "high",
+              "precisionBits": 23,
+              "rangeMax": 127,
+              "rangeMin": 127,
+              "stage": "vertex"
+            },
+            {
+              "kind": "low",
+              "precisionBits": 23,
+              "rangeMax": 127,
+              "rangeMin": 127,
+              "stage": "fragment"
+            },
+            {
+              "kind": "medium",
+              "precisionBits": 23,
+              "rangeMax": 127,
+              "rangeMin": 127,
+              "stage": "fragment"
+            },
+            {
+              "kind": "high",
+              "precisionBits": 23,
+              "rangeMax": 127,
+              "rangeMin": 127,
+              "stage": "fragment"
+            }
+          ],
+          "pixelProof": false,
+          "supported": true
+        },
+        {
+          "event": "samplingExperiment",
+          "fragmentSHA256": "eeff9248264975b7cd456d9e9399614f704f01bed6634b66c3cd23d579b2efa7",
+          "nativeAuthority": false,
+          "pixelProof": false,
+          "policy": "four-nearest-centers-highp-bilinear-v1",
+          "rasterDiagnostic": false
+        },
+        {
+          "copyFragmentSHA256": "ceae6422cafc16b2eafe0a7fa82402227127b51c6f6a0d9d0025d0b15153adc4",
+          "copyProgram": 6,
+          "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+          "event": "quantizedOverExperiment",
+          "fragmentSHA256": "eeff9248264975b7cd456d9e9399614f704f01bed6634b66c3cd23d579b2efa7",
+          "nativeAuthority": false,
+          "overProgram": 3,
+          "pixelProof": false,
+          "policy": "per-layer-explicit-over-nearest-rgba8-v1",
+          "rasterDiagnostic": false,
+          "vertexSHA256": "3b6f4b8d5d5ad76c48e9bfb22ae6dae0d97018fc21ea2b9b35a2e00d4e779612"
+        },
+        {
+          "event": "rasterPathSelected",
+          "nativeAuthority": false,
+          "path": "shader-per-layer-quantized-over",
+          "pixelProof": false,
+          "rasterDiagnostic": false,
+          "sampler": "four-nearest-centers-highp-bilinear"
+        },
+        {
+          "event": "renderPipelineSelected",
+          "explicitExperiment": false,
+          "manualSampling": true,
+          "nativeAuthority": false,
+          "pixelProof": false,
+          "quantizedOver": true,
+          "rasterDiagnostic": false,
+          "role": "production-default"
+        },
+        {
+          "eglVendor": "Mesa Project",
+          "eglVersion": "1.5",
+          "event": "backendObserved",
+          "mappedMaterialMatches": true,
+          "materials": [
+            {
+              "actualHash": "d7d313070226982467fd8984d943d84c7adeaf290b1705de7bf227fca3b392da",
+              "canonical": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+              "error": "",
+              "existingMaps": [
+                {
+                  "buildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+                  "device": "0:1e",
+                  "end": "7e3076e1b000",
+                  "error": "",
+                  "inode": "110621",
+                  "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+                  "start": "7e3076e00000"
+                },
+                {
+                  "buildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+                  "device": "0:1e",
+                  "end": "7e3078e9c000",
+                  "error": "",
+                  "inode": "110621",
+                  "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+                  "start": "7e3076e1b000"
+                },
+                {
+                  "buildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+                  "device": "0:1e",
+                  "end": "7e307a0ee000",
+                  "error": "",
+                  "inode": "110621",
+                  "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+                  "start": "7e3078e9c000"
+                },
+                {
+                  "buildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+                  "device": "0:1e",
+                  "end": "7e307a26c000",
+                  "error": "",
+                  "inode": "110621",
+                  "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+                  "start": "7e307a0ee000"
+                },
+                {
+                  "buildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+                  "device": "0:1e",
+                  "end": "7e307a2aa000",
+                  "error": "",
+                  "inode": "110621",
+                  "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+                  "start": "7e307a26c000"
+                }
+              ],
+              "expectedBuildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+              "expectedHash": "d7d313070226982467fd8984d943d84c7adeaf290b1705de7bf227fca3b392da",
+              "matches": true,
+              "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+              "probe": {
+                "buildId": "58549bc5c66cecb4a3972fe621d5756abbe548d6",
+                "device": "0:1e",
+                "end": "7e307cbac000",
+                "error": "",
+                "inode": "110621",
+                "path": "/usr/lib/libgallium-26.2.2-arch1.1.so",
+                "start": "7e307cbab000"
+              },
+              "statDevice": "0:20",
+              "statInode": "110621"
+            },
+            {
+              "actualHash": "15c06ccfe5054c95059f2526a284b8fb2d10c9000bbec20c531eb9d6815abc6d",
+              "canonical": "/usr/lib/libEGL_mesa.so.0.0.0",
+              "error": "",
+              "existingMaps": [
+                {
+                  "buildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+                  "device": "0:1e",
+                  "end": "7e307d040000",
+                  "error": "",
+                  "inode": "110616",
+                  "path": "/usr/lib/libEGL_mesa.so.0.0.0",
+                  "start": "7e307d03a000"
+                },
+                {
+                  "buildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+                  "device": "0:1e",
+                  "end": "7e307d07b000",
+                  "error": "",
+                  "inode": "110616",
+                  "path": "/usr/lib/libEGL_mesa.so.0.0.0",
+                  "start": "7e307d040000"
+                },
+                {
+                  "buildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+                  "device": "0:1e",
+                  "end": "7e307d08e000",
+                  "error": "",
+                  "inode": "110616",
+                  "path": "/usr/lib/libEGL_mesa.so.0.0.0",
+                  "start": "7e307d07b000"
+                },
+                {
+                  "buildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+                  "device": "0:1e",
+                  "end": "7e307d09b000",
+                  "error": "",
+                  "inode": "110616",
+                  "path": "/usr/lib/libEGL_mesa.so.0.0.0",
+                  "start": "7e307d08e000"
+                },
+                {
+                  "buildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+                  "device": "0:1e",
+                  "end": "7e307d09c000",
+                  "error": "",
+                  "inode": "110616",
+                  "path": "/usr/lib/libEGL_mesa.so.0.0.0",
+                  "start": "7e307d09b000"
+                }
+              ],
+              "expectedBuildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+              "expectedHash": "15c06ccfe5054c95059f2526a284b8fb2d10c9000bbec20c531eb9d6815abc6d",
+              "matches": true,
+              "path": "/usr/lib/libEGL_mesa.so.0",
+              "probe": {
+                "buildId": "6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac",
+                "device": "0:1e",
+                "end": "7e307cbac000",
+                "error": "",
+                "inode": "110616",
+                "path": "/usr/lib/libEGL_mesa.so.0.0.0",
+                "start": "7e307cbab000"
+              },
+              "statDevice": "0:20",
+              "statInode": "110616"
+            }
+          ],
+          "nativeAuthority": false,
+          "renderer": "Mesa Intel(R) Graphics (ARL)",
+          "reviewed": true,
+          "version": "OpenGL ES 3.2 Mesa 26.2.2-arch1.1"
+        },
+        {
+          "ditherAfter": false,
+          "ditherBefore": true,
+          "error": 0,
+          "event": "rasterState",
+          "pixelProof": false
+        },
+        {
+          "eglVendor": "Mesa Project",
+          "event": "gpu",
+          "renderer": "Mesa Intel(R) Graphics (ARL)",
+          "version": "OpenGL ES 3.2 Mesa 26.2.2-arch1.1"
+        },
+        {
+          "clockId": 1,
+          "event": "outputs",
+          "nativeAuthority": false,
+          "outputs": [
+            {
+              "generation": 6,
+              "height": 1000,
+              "name": "WAYLAND-1",
+              "pixelHeight": 1000,
+              "pixelWidth": 1600,
+              "refreshMilliHz": 60000,
+              "scale": 1,
+              "transform": 0,
+              "width": 1600,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "stderr": []
+    }
+  ],
+  "retainedEpochSources": [
+    {
+      "actor": 1,
+      "source": {
+        "stableId": "18000000",
+        "pid": 2852243,
+        "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+        "path": "/run/user/1000/wqa/2364/hypr-window-motion/qa-family-service/actors/actor-1-df8b5586e71c4fc2a69722c4867a9e58/d1fb9bcaa8dc-1.png",
+        "nativeRect": {
+          "x": 100,
+          "y": 250,
+          "width": 460,
+          "height": 300
+        },
+        "atlasRect": {
+          "x": 93,
+          "y": 219,
+          "width": 474,
+          "height": 338
+        },
+        "iconRect": {
+          "x": 43.5,
+          "y": 3,
+          "width": 19,
+          "height": 19
+        },
+        "insets": {
+          "left": 7,
+          "top": 31,
+          "right": 7,
+          "bottom": 7
+        },
+        "pixels": [
+          474,
+          338
+        ],
+        "captureScale": 1.0,
+        "captureEpoch": "d1fb9bcaa8dc-1",
+        "sceneToken": "953c674de096-1",
+        "targetScreen": "WAYLAND-1"
+      },
+      "retainedPath": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/attempt-baseline-1/service-epochs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png",
+      "bytes": 6280,
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "sourceIdentity": {
+        "device": 84,
+        "inode": 381813,
+        "size": 6280,
+        "mtimeNs": 1790914918436128243,
+        "ctimeNs": 1790914918908109845
+      },
+      "captureCallbackDelegatedOnce": true,
+      "sourceResultUnchanged": true
+    },
+    {
+      "actor": 1,
+      "source": {
+        "stableId": "18000002",
+        "pid": 2852243,
+        "digest": "091648bc04ec9a2b6df980bfd6b2b1020115e3920da21acd56f05e8105c58fca",
+        "path": "/run/user/1000/wqa/2364/hypr-window-motion/qa-family-service/actors/actor-1-df8b5586e71c4fc2a69722c4867a9e58/d1fb9bcaa8dc-2.png",
+        "nativeRect": {
+          "x": 260,
+          "y": 310,
+          "width": 320,
+          "height": 180
+        },
+        "atlasRect": {
+          "x": 253,
+          "y": 279,
+          "width": 334,
+          "height": 218
+        },
+        "iconRect": {
+          "x": 43.5,
+          "y": 3,
+          "width": 19,
+          "height": 19
+        },
+        "insets": {
+          "left": 7,
+          "top": 31,
+          "right": 7,
+          "bottom": 7
+        },
+        "pixels": [
+          334,
+          218
+        ],
+        "captureScale": 1.0,
+        "captureEpoch": "d1fb9bcaa8dc-2",
+        "sceneToken": "953c674de096-1",
+        "targetScreen": "WAYLAND-1"
+      },
+      "retainedPath": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/attempt-baseline-1/service-epochs/091648bc04ec9a2b6df980bfd6b2b1020115e3920da21acd56f05e8105c58fca.png",
+      "bytes": 380,
+      "sha256": "091648bc04ec9a2b6df980bfd6b2b1020115e3920da21acd56f05e8105c58fca",
+      "sourceIdentity": {
+        "device": 84,
+        "inode": 381944,
+        "size": 380,
+        "mtimeNs": 1790914921080389741,
+        "ctimeNs": 1790914921542257369
+      },
+      "captureCallbackDelegatedOnce": true,
+      "sourceResultUnchanged": true
+    }
+  ],
+  "retirements": [
+    {
+      "actor": 1,
+      "timeNs": 125274552944238,
+      "root": "/run/user/1000/wqa/2364/hypr-window-motion/qa-family-service/actors/actor-1-df8b5586e71c4fc2a69722c4867a9e58",
+      "actorDirectoryGone": true,
+      "originalRetirementDelegatedOnce": true,
+      "productRegistryRemoved": true,
+      "observedControllerBindings": 1,
+      "rendererClosed": true,
+      "rendererExitCode": 0
+    }
+  ],
+  "cachePairsAtCapture": [
+    {
+      "actor": 1,
+      "sourceEpoch": "d1fb9bcaa8dc-1",
+      "sceneToken": "953c674de096-1",
+      "identity": [
+        "0x5a73b1ecd4c0",
+        "18000000",
+        2852243
+      ],
+      "returnedSourceDigest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "cacheDigest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "files": [
+        {
+          "source": "/run/user/1000/wqa/2364/hypr-window-motion/qa-family-service/snapshot-cache/full-18000000-2852243.json",
+          "retainedPath": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/attempt-baseline-1/service-cache-pairs/c94bcad38a6dd6ea5fd8e6d65038bc8f806fedaa58e8adba764a248951560c10.json",
+          "sha256": "c94bcad38a6dd6ea5fd8e6d65038bc8f806fedaa58e8adba764a248951560c10",
+          "bytes": 569
+        },
+        {
+          "source": "/run/user/1000/wqa/2364/hypr-window-motion/qa-family-service/snapshot-cache/full-18000000-2852243-86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png",
+          "retainedPath": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/attempt-baseline-1/service-cache-pairs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png",
+          "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+          "bytes": 6280
+        }
+      ]
+    },
+    {
+      "actor": 1,
+      "sourceEpoch": "d1fb9bcaa8dc-2",
+      "sceneToken": "953c674de096-1",
+      "identity": [
+        "0x5a73b2716300",
+        "18000002",
+        2852243
+      ],
+      "returnedSourceDigest": "091648bc04ec9a2b6df980bfd6b2b1020115e3920da21acd56f05e8105c58fca",
+      "cacheDigest": "091648bc04ec9a2b6df980bfd6b2b1020115e3920da21acd56f05e8105c58fca",
+      "files": [
+        {
+          "source": "/run/user/1000/wqa/2364/hypr-window-motion/qa-family-service/snapshot-cache/full-18000002-2852243.json",
+          "retainedPath": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/attempt-baseline-1/service-cache-pairs/3d894ee58924ad77ca22bd059c97fd44a56dc7a01410b1b64e7c9f6b95b485b3.json",
+          "sha256": "3d894ee58924ad77ca22bd059c97fd44a56dc7a01410b1b64e7c9f6b95b485b3",
+          "bytes": 570
+        },
+        {
+          "source": "/run/user/1000/wqa/2364/hypr-window-motion/qa-family-service/snapshot-cache/full-18000002-2852243-091648bc04ec9a2b6df980bfd6b2b1020115e3920da21acd56f05e8105c58fca.png",
+          "retainedPath": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/attempt-baseline-1/service-cache-pairs/091648bc04ec9a2b6df980bfd6b2b1020115e3920da21acd56f05e8105c58fca.png",
+          "sha256": "091648bc04ec9a2b6df980bfd6b2b1020115e3920da21acd56f05e8105c58fca",
+          "bytes": 380
+        }
+      ]
+    }
+  ],
+  "observerBindingActors": [
+    1
+  ],
+  "productActorCountAfterStop": 0,
+  "productRetiringActorCountAfterStop": 0,
+  "productResourceErrors": [],
+  "nativeTargetOverrides": false,
+  "rasterAccepted": false,
+  "physicalCadenceAccepted": false,
+  "retainedCache": [
+    {
+      "name": "full-18000000-2852243-86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png",
+      "bytes": 6280,
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8"
+    },
+    {
+      "name": "full-18000000-2852243.json",
+      "bytes": 569,
+      "sha256": "c94bcad38a6dd6ea5fd8e6d65038bc8f806fedaa58e8adba764a248951560c10"
+    },
+    {
+      "name": "full-18000002-2852243-091648bc04ec9a2b6df980bfd6b2b1020115e3920da21acd56f05e8105c58fca.png",
+      "bytes": 380,
+      "sha256": "091648bc04ec9a2b6df980bfd6b2b1020115e3920da21acd56f05e8105c58fca"
+    },
+    {
+      "name": "full-18000002-2852243.json",
+      "bytes": 570,
+      "sha256": "3d894ee58924ad77ca22bd059c97fd44a56dc7a01410b1b64e7c9f6b95b485b3"
+    }
+  ]
+}

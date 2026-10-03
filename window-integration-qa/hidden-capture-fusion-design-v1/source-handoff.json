@@ -1,0 +1,763 @@
+{
+  "result": "proposal-ready",
+  "sources": {
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel_replay.py": {
+      "sha256": "21d2778e94153066280b312336eb2692aaef672a4fc903938605c972b99cc56f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-replay.json": {
+      "sha256": "22fb16452b7599674326c8b6c521c18720245741b4a19bf9743e18d96d77c98b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/CONTRACT.md": {
+      "sha256": "5be3a534dd006e37dab64f7bc258d43265fa27bd7b693df3591218236c608fc1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/hidden_capture.qnt": {
+      "sha256": "9427768b5afc9ca5b2b7c502cb46c8d5aa22bf81e5b4af4925d37d63f33a0c8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/hidden_capture_test.qnt": {
+      "sha256": "796f0e2cb811aac5d8bc1b15ee5465bcced351649acd2cc3585bbd4cf3c6ecd3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal_driver.py": {
+      "sha256": "08378778bf5a49ffc4634d5b026616fa1c6172fb447b6df8c27bbb15d97f4f6a",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal-0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal-1.log": {
+      "sha256": "090cc4daa782a08824e3d01e5d9f2aa8f595c713f615a5dcfd9fdc952d559828",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal-2.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal-before-runtime.json": {
+      "sha256": "3521b761f7a77f31e162efda31c9e6dcf9fdf798adcd4e191a235ba0ea8c3de3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/named_driver.py": {
+      "sha256": "6b81f8024f4972c7c096e45eecc1a650d77a3f9d47c2c02156b72435eda87304",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/named-exact.log": {
+      "sha256": "2baabfad22966b4595734e0fa4b7880b65167b1a7396f5aa2252ca2bc925e758",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal-complete.json": {
+      "sha256": "132b7cbfc00a985f39888cafd59a632b36d57addc96a932a65df65dd7c7b33c5",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/propose.py": {
+      "sha256": "20e0079c61243fe56b75cb7e60dc97db2a8576a926326907e1744aae58649650",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/native_desktop.py.proposed": {
+      "sha256": "79517ffb5d8f24216109cc96880af8a47279c2b645fb3d888625e31e697c678f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/intended.patch": {
+      "sha256": "817090d8b080793c00a22419bd4112c5df1241156f54344be6fa03996f95112c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/intended-source-map.json": {
+      "sha256": "691277ceeb94981fd04bd4a93f1a114df18be237d716d693c23a60f6fac36488",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/SOURCE_MAPPING.md": {
+      "sha256": "fcf38a7efdf60b5908e5f171c8a8db58791f8673382bc8a72dc3ed550a47a8c0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/collect_handoff.py": {
+      "sha256": "3c8cc3ceb186e1ee1216970214b3ee39b5e5ddb5b7a0ad25514daab727f6c861",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/0/raw.png": {
+      "sha256": "f1e536a57a26f86b3c2cf38b87f50257768e6ac418e0edb97c0bd2c390817e55",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/0/frame.png": {
+      "sha256": "bcbe224bd6acd4b2dcfe3416e2a8d63bdc272fbe7ca84318bee1211046c2186d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/0/old-thumb.png": {
+      "sha256": "bb38b62088f75b57a23751577822221bf33101fbb834acb31918e70f5c66c023",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/0/old-whole.png": {
+      "sha256": "bcbe224bd6acd4b2dcfe3416e2a8d63bdc272fbe7ca84318bee1211046c2186d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/0/new-thumb.png": {
+      "sha256": "bb38b62088f75b57a23751577822221bf33101fbb834acb31918e70f5c66c023",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/0/new-whole.png": {
+      "sha256": "bcbe224bd6acd4b2dcfe3416e2a8d63bdc272fbe7ca84318bee1211046c2186d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/1/raw.png": {
+      "sha256": "f1e536a57a26f86b3c2cf38b87f50257768e6ac418e0edb97c0bd2c390817e55",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/1/frame.png": {
+      "sha256": "39c403fc3cf6db85571f04da808c22666e57282294626ce987588a1251498006",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/1/old-thumb.png": {
+      "sha256": "fdc81e53f1f29c85d633b7d8ca6d218b405f8f9161ffb124f19e4070bcc8a7a9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/1/old-whole.png": {
+      "sha256": "39c403fc3cf6db85571f04da808c22666e57282294626ce987588a1251498006",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/1/new-thumb.png": {
+      "sha256": "fdc81e53f1f29c85d633b7d8ca6d218b405f8f9161ffb124f19e4070bcc8a7a9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/1/new-whole.png": {
+      "sha256": "39c403fc3cf6db85571f04da808c22666e57282294626ce987588a1251498006",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/2/raw.png": {
+      "sha256": "d92ca98f933bc27f93ee9c9201c1a1a135f6df5aff149df6ddaeb5af2cad7aa9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/2/frame.png": {
+      "sha256": "00fbf0cb743e368277283d86cd9357919ba98a3916bed044fc310437a143996b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/2/old-thumb.png": {
+      "sha256": "5ec35c201006624d2da57ce4a4aba77ecfc3c41ff52ac476416db109eef662d5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/2/old-whole.png": {
+      "sha256": "00fbf0cb743e368277283d86cd9357919ba98a3916bed044fc310437a143996b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/2/new-thumb.png": {
+      "sha256": "5ec35c201006624d2da57ce4a4aba77ecfc3c41ff52ac476416db109eef662d5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/2/new-whole.png": {
+      "sha256": "00fbf0cb743e368277283d86cd9357919ba98a3916bed044fc310437a143996b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/3/raw.png": {
+      "sha256": "519435c1b0d9ce1ebe83e21e99fad5f454aeb91f195864aff62add5c18edf0e8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/3/frame.png": {
+      "sha256": "1e3ef6d44a30f88410d775dc70efeb23e0a814a0eb01b24d536d27d6e2aa9611",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/3/old-thumb.png": {
+      "sha256": "54338bc48899473e822fe77c1fdc10f61492b9966619c0e23fc751a87122bde2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/3/old-whole.png": {
+      "sha256": "2b0f2c23b519d9d054c2b0d869da3004416989bcd4556697b23f3b45eb30fe2f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/3/new-thumb.png": {
+      "sha256": "54338bc48899473e822fe77c1fdc10f61492b9966619c0e23fc751a87122bde2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/3/new-whole.png": {
+      "sha256": "2b0f2c23b519d9d054c2b0d869da3004416989bcd4556697b23f3b45eb30fe2f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/4/raw.png": {
+      "sha256": "32f53469e6af5c394ce7a0b4b82aedfce4157fb99d1e57b7a963113982400407",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/4/frame.png": {
+      "sha256": "00fbf0cb743e368277283d86cd9357919ba98a3916bed044fc310437a143996b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/4/old-thumb.png": {
+      "sha256": "eea7abf136aadcf5bc00ce871cd19841b1df8058d8e6f278f49e6d5a10c58081",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/4/old-whole.png": {
+      "sha256": "00fbf0cb743e368277283d86cd9357919ba98a3916bed044fc310437a143996b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/4/new-thumb.png": {
+      "sha256": "9931a9ed2b6c144c0391e37fbf60efac5eefd81ce6473137bd4cb54be4a8ac73",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/4/new-whole.png": {
+      "sha256": "b242f03339050d15c615acee8b24c9a86686327fe945a386861e0973fcc70b41",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/5/raw.png": {
+      "sha256": "d399ac1ff87ffa6d82ed5d848b8dad5f0e6f9967bc793b4c6eb78ddf06b7e14b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/5/frame.png": {
+      "sha256": "b740a4ede5301e74723f57bf6c85692a2cdec543615cf03eddec5c4460bde665",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/5/old-thumb.png": {
+      "sha256": "16649f2f131d39b2058c1ce1fb1e79a9a14b2f6edd6effe8405d8dd14f75c322",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/5/old-whole.png": {
+      "sha256": "597bed3ef7866ddecf6f7697b1357da7120ecbdb15580fa773bb042cd63451c8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/5/new-thumb.png": {
+      "sha256": "16649f2f131d39b2058c1ce1fb1e79a9a14b2f6edd6effe8405d8dd14f75c322",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/5/new-whole.png": {
+      "sha256": "597bed3ef7866ddecf6f7697b1357da7120ecbdb15580fa773bb042cd63451c8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/6/raw.png": {
+      "sha256": "fade3b6f1d50ec4cd0b495dc17fb862482b092f3ed4fbeeded67cef4c0a63482",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/6/frame.png": {
+      "sha256": "efe74e8ee44517ec6a65e9d80f0a914fead38121577badcf85842d4e9bb5f716",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/6/old-thumb.png": {
+      "sha256": "bc54a3efbfc4f873d26deeedd1a4129b617abb536030db0f94ed372b90ba24dc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/6/old-whole.png": {
+      "sha256": "efe74e8ee44517ec6a65e9d80f0a914fead38121577badcf85842d4e9bb5f716",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/6/new-thumb.png": {
+      "sha256": "bc54a3efbfc4f873d26deeedd1a4129b617abb536030db0f94ed372b90ba24dc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/6/new-whole.png": {
+      "sha256": "efe74e8ee44517ec6a65e9d80f0a914fead38121577badcf85842d4e9bb5f716",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/7/raw.png": {
+      "sha256": "a32e987b6a73d61f0af9d1391b14625c9f3a8ed23fb2f73dfdd9f5b96e918b7d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/7/frame.png": {
+      "sha256": "53d9ee349b92bbd4a35893cf5b181ca4f16b1ef8dcffb659db1565a479efcd07",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/7/old-thumb.png": {
+      "sha256": "9b67abcb8143e311c3d1a6895c2ac0e627b160aa9ce13d53499e3acb99adb684",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/7/old-whole.png": {
+      "sha256": "ac2fb4583b7669c6e82fcc5f7af684fce5525cbcf37f4acdd47f8e6b5e2b3e22",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/7/new-thumb.png": {
+      "sha256": "9b67abcb8143e311c3d1a6895c2ac0e627b160aa9ce13d53499e3acb99adb684",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/7/new-whole.png": {
+      "sha256": "ac2fb4583b7669c6e82fcc5f7af684fce5525cbcf37f4acdd47f8e6b5e2b3e22",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/8/raw.png": {
+      "sha256": "f0524ae74330f542e71a16eb5ddf4c0cece3daa5feacbeada4d8504a4909623a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/8/frame.png": {
+      "sha256": "c936c1665eb93a824cc27bb245dc49033989019e55e9efb12c89c7887e71341a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/8/old-thumb.png": {
+      "sha256": "1f25bafdf7b753e17139fc5b0d41603270898dc32f6fc0a230bfb71710100faf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/8/old-whole.png": {
+      "sha256": "c936c1665eb93a824cc27bb245dc49033989019e55e9efb12c89c7887e71341a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/8/new-thumb.png": {
+      "sha256": "1f25bafdf7b753e17139fc5b0d41603270898dc32f6fc0a230bfb71710100faf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/8/new-whole.png": {
+      "sha256": "c936c1665eb93a824cc27bb245dc49033989019e55e9efb12c89c7887e71341a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/9/raw.png": {
+      "sha256": "f0524ae74330f542e71a16eb5ddf4c0cece3daa5feacbeada4d8504a4909623a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/9/frame.png": {
+      "sha256": "ce86cfc5a15702b6ba4aca4782f71e71d1b5c11f6be9e941b610aa997058ad49",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/9/old-thumb.png": {
+      "sha256": "a3957ffcfb3bf7ed93346f028f8f15d7089309c595ee92fe0de7fc350937fee1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/9/old-whole.png": {
+      "sha256": "ce86cfc5a15702b6ba4aca4782f71e71d1b5c11f6be9e941b610aa997058ad49",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/9/new-thumb.png": {
+      "sha256": "a3957ffcfb3bf7ed93346f028f8f15d7089309c595ee92fe0de7fc350937fee1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/9/new-whole.png": {
+      "sha256": "ce86cfc5a15702b6ba4aca4782f71e71d1b5c11f6be9e941b610aa997058ad49",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/10/raw.png": {
+      "sha256": "5082c394232339db1ccae5f8beaa0925ce131ca82628fe16ddd8d50ab84b53ab",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/10/frame.png": {
+      "sha256": "c936c1665eb93a824cc27bb245dc49033989019e55e9efb12c89c7887e71341a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/10/old-thumb.png": {
+      "sha256": "fa1afeaf4a8bb41ad96d848513b58e9b5e12d9c7e3b699bb7dd5b19ba4a34f28",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/10/old-whole.png": {
+      "sha256": "c936c1665eb93a824cc27bb245dc49033989019e55e9efb12c89c7887e71341a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/10/new-thumb.png": {
+      "sha256": "fa1afeaf4a8bb41ad96d848513b58e9b5e12d9c7e3b699bb7dd5b19ba4a34f28",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/10/new-whole.png": {
+      "sha256": "c936c1665eb93a824cc27bb245dc49033989019e55e9efb12c89c7887e71341a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/11/raw.png": {
+      "sha256": "2b7b290f55dc8c95fc1d5e222164b4ae5e2fdce21a0ef9b742474c5e80bd7cee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/11/frame.png": {
+      "sha256": "26e1bb8f571fdbc130dd6819c85f88396ac8c5ea5910ce6ef1b9c33e7ca18080",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/11/old-thumb.png": {
+      "sha256": "b6e92e360bf8f3a75b85d68af9b0c38f6b7e7cf80416811d94642047f56661a6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/11/old-whole.png": {
+      "sha256": "f3ea50427bb18d830cee3878553ea06b5e068765f37bbf9efab1561ec71259f4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/11/new-thumb.png": {
+      "sha256": "b6e92e360bf8f3a75b85d68af9b0c38f6b7e7cf80416811d94642047f56661a6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/11/new-whole.png": {
+      "sha256": "f3ea50427bb18d830cee3878553ea06b5e068765f37bbf9efab1561ec71259f4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/12/raw.png": {
+      "sha256": "c4dca4c9e2d207f861f80afd685298b4a7961e66e7ed48ad9035d440590d7818",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/12/frame.png": {
+      "sha256": "22fd72d5a333bb611914e7a13525d1edc3ba970420359dc18c0b92f4f9883924",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/12/old-thumb.png": {
+      "sha256": "6c136c3ed94f71895120d62c3cee38f9c4a49340e30b4574faa271ec5d2b65b0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/12/old-whole.png": {
+      "sha256": "22fd72d5a333bb611914e7a13525d1edc3ba970420359dc18c0b92f4f9883924",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/12/new-thumb.png": {
+      "sha256": "6c136c3ed94f71895120d62c3cee38f9c4a49340e30b4574faa271ec5d2b65b0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/12/new-whole.png": {
+      "sha256": "22fd72d5a333bb611914e7a13525d1edc3ba970420359dc18c0b92f4f9883924",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/13/raw.png": {
+      "sha256": "c4dca4c9e2d207f861f80afd685298b4a7961e66e7ed48ad9035d440590d7818",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/13/frame.png": {
+      "sha256": "26e1bb8f571fdbc130dd6819c85f88396ac8c5ea5910ce6ef1b9c33e7ca18080",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/13/old-thumb.png": {
+      "sha256": "a1c4f704a4e338dd6f150871ff7bd7d5f91b623ea7e385226f9ba0953505e5fb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/13/old-whole.png": {
+      "sha256": "83603d19644a220308751022968fb5687f370f23149530f221652df36c180a79",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/13/new-thumb.png": {
+      "sha256": "a1c4f704a4e338dd6f150871ff7bd7d5f91b623ea7e385226f9ba0953505e5fb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/13/new-whole.png": {
+      "sha256": "83603d19644a220308751022968fb5687f370f23149530f221652df36c180a79",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/14/raw.png": {
+      "sha256": "22d20b0eada740fd4cab2b2c8f0df4525a3ffb6986a4308baf77b02214bfc501",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/14/frame.png": {
+      "sha256": "22fd72d5a333bb611914e7a13525d1edc3ba970420359dc18c0b92f4f9883924",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/14/old-thumb.png": {
+      "sha256": "d492fe2e79bf4f313259506cc328476d3d6cff11892bdbdf2f22ab92c2d19640",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/14/old-whole.png": {
+      "sha256": "22fd72d5a333bb611914e7a13525d1edc3ba970420359dc18c0b92f4f9883924",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/14/new-thumb.png": {
+      "sha256": "d492fe2e79bf4f313259506cc328476d3d6cff11892bdbdf2f22ab92c2d19640",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/14/new-whole.png": {
+      "sha256": "22fd72d5a333bb611914e7a13525d1edc3ba970420359dc18c0b92f4f9883924",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/15/raw.png": {
+      "sha256": "9043e24b47117d567f0c38f2533a5fd68fe93f63d888a08892294f678fc8f623",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/15/frame.png": {
+      "sha256": "80c52213da7d32820b76e74ba4537198d7b3ea7e6b135b78442c068d71ba1de4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/15/old-thumb.png": {
+      "sha256": "f78892e7df94d19f0334dbb5a3b440221ec2323c75be8c72d4ed7688d9512eab",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/15/old-whole.png": {
+      "sha256": "af789d15571812ea98f5421f784c33165e6d08cf0e76d86da320e7a50dd26053",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/15/new-thumb.png": {
+      "sha256": "f78892e7df94d19f0334dbb5a3b440221ec2323c75be8c72d4ed7688d9512eab",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-fixtures/15/new-whole.png": {
+      "sha256": "af789d15571812ea98f5421f784c33165e6d08cf0e76d86da320e7a50dd26053",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v14-agent-causal-replay-v1/replay.py": {
+      "sha256": "f276e2193be370039957e1c740255482066efecf7d6c70b487454668918e04b2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v14-agent-causal-replay-v1/report.json": {
+      "sha256": "34c90bec753300e3e604d875ae7cd9c6cf6f4caa6cd2b0782359ce9d0b24f923",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v14-agent-formal-selection-audit-v1/audit.py": {
+      "sha256": "9082bec64f340da9342629a8bd60858dbaf38149851ee2016f2ceb3ea7e42bf3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v14-agent-formal-selection-audit-v1/report.json": {
+      "sha256": "4a205f42abeb732677608d895101ca10f3462d394cadc4bdceb2b4feb135c4dd",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-v6-actual-named-correction-v1/report.json": {
+      "sha256": "a70e9c06c9f3b455ff8c92b8663cfeedc0460df1a207c930be3591d87e19479b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-v6-actual-named-correction-v1/named.log": {
+      "sha256": "31227550b8c28dbdc86af160bfe30032e4b6df7d836bec224c7087e17db4127e",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/run_restore_v6_named_correction_v1.py": {
+      "sha256": "838a301e37679020434f89e693dadcef679488095938bd7f95383e2c96ce214a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v14-root-failure-audit-v1.json": {
+      "sha256": "e01aee0d6c5f57f1e4ed80932fb739922cf50eddeeb0e4031864617daa1f5a6e",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/attempt-baseline-1/report.json": {
+      "sha256": "21896199a9b159a3fe43c5d5a034d0ddb4c9532366b01e88fd2ad8979d4bd04c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/attempt-baseline-1/service-retirement-2.json": {
+      "sha256": "7485dde6047a4ccb5e6f171216912fbf26a0b66b6bb6f22bb6257b725a90de9f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/attempt-baseline-1/service-evidence.json": {
+      "sha256": "cf9c2cc3bf83e2fa3fa12eaaab4d3c497b8f31b21a7f16c065cbdbd54eaeb425",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/attempt-baseline-1/completed-helpers.json": {
+      "sha256": "5f99924f15a404798d1f9cb602835b623ecd9526c7d7cb4396f3054715aa5048",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/attempt-baseline-1/host/host-evidence.json": {
+      "sha256": "a7955a2cd32f205184222571e788eeca466e1e2a3a8c8cd3b3b3cf9fdae9bbb2",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/attempt-baseline-1/host/runtime-archive/hypr-window-motion/qa-family-service/journal.json": {
+      "sha256": "712e978c3d3e426cfc0c012c931e0a356fa13099aa1a3d01f86bc62890d60257",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/attempt-baseline-1/terminal-helpers/helper-events.jsonl": {
+      "sha256": "fd7342950606e4d831c7d450c146cf11eead255fdf0f7a9af34da0165b9e09a6",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/frozen-inputs.json": {
+      "sha256": "d0bb8b6e3fc5478509194046667366ca04a6aa96e93ea6018b1c7bed80f5efa6",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/capture_evidence.py": {
+      "sha256": "7d01fe5ffdbca33a3d3eaa4eafe2a925042414ef9fe3e65f895ec8f1acb19be6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_desktop.py": {
+      "sha256": "e10e83de40ffb3bd3c824a7515066390ecd7c8916454e2fd366451f06521c461",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/production_motion_6d9.py": {
+      "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/batch_preview.py": {
+      "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/scene_controller.py": {
+      "sha256": "aaf111982a67fa9d713b078e7241ccab3ef5ad087e49bd6b04448bd7b70079cc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/owned_commands.py": {
+      "sha256": "6f348647be1f8cbcaae2d0582543b6359968c681a0dd711f9be9802fd8b4f1a3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/attempt-baseline-1/service-epochs/acf1d702a835d78299cd93537df6727e26dc56b687eaf0252deaa7a938d81d19.png": {
+      "sha256": "acf1d702a835d78299cd93537df6727e26dc56b687eaf0252deaa7a938d81d19",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/attempt-baseline-1/service-epochs/7b44b4de092de87fb274d63a2467420abd78a72f60f59a43c6bc48297252272a.png": {
+      "sha256": "7b44b4de092de87fb274d63a2467420abd78a72f60f59a43c6bc48297252272a",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/attempt-baseline-1/service-epochs/4c84506718a518738c5424707a19974116528365a6e5315342496c20ba6e7f13.png": {
+      "sha256": "4c84506718a518738c5424707a19974116528365a6e5315342496c20ba6e7f13",
+      "mode": 384
+    },
+    "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/@informalsystems/quint/dist/src/cliHelpers.js": {
+      "sha256": "6014561f50c050ca948c042a97133668ccecf885b31189942b1e037aca6bd706",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v3/focus_transaction_test.qnt": {
+      "sha256": "fba824a9e8d19f4024eb19ce97ca054a152a18309a5954fc3836ba6793f9b82f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v3/formal-before-runtime.json": {
+      "sha256": "b2c83c8db1a7224c73122f71a1ba7710770263ef11d6a3288addcd023e7bda35",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v3/formal-1.log": {
+      "sha256": "ad7a882ec934131e35211101fc9a7c60fc0cf232fbb292eb6ede828816e79971",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v4/focus_transaction_test.qnt": {
+      "sha256": "03ff8221e064c9564b638af742a831d369b0aae5fbc5410d60367cbf0d7fa00b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v4/formal-before-runtime.json": {
+      "sha256": "3478163af87656ab409c03741f0108480642998512aefa7827a0cc35e3d5e1cd",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v4/formal-1.log": {
+      "sha256": "ad7a882ec934131e35211101fc9a7c60fc0cf232fbb292eb6ede828816e79971",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/focus_transaction_test.qnt": {
+      "sha256": "5d8643e26efe5a6e35d1662f1254e0b773d9da181a31d43d5f99e47142aa90bd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/formal-before-runtime.json": {
+      "sha256": "9400dbb66eb79c7a254c0a0fe522f2f0b59fa3aa032506d0422b65207a88fb7e",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/formal-1.log": {
+      "sha256": "ad7a882ec934131e35211101fc9a7c60fc0cf232fbb292eb6ede828816e79971",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/focus_transaction_test.qnt": {
+      "sha256": "8541fe17e93925dfeae1ac7a66528e03fece0a84f273ead8451a4e13ca2cb3a4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/formal-before-runtime.json": {
+      "sha256": "1b5edb69bb6d77be4a34444ee65de168fe6857ba597caa77baf1ae4f2253abd3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/formal-1.log": {
+      "sha256": "ad7a882ec934131e35211101fc9a7c60fc0cf232fbb292eb6ede828816e79971",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v14-cpu-proof-v1/report.json": {
+      "sha256": "8acac3c2c5a52ee81af0f4e6cb8a876dfbc51c584929a773c22dc03bf6da7eb3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/helper_lifecycle.qnt": {
+      "sha256": "60b55937111914b6e1483b96f8ebb91f522d9e879a4d0a7a64a3088ba2619fae",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/helper_lifecycle-test.log": {
+      "sha256": "3a7ca55c3fff8e9e6875f00a2b71b4357d2c330955823a39c484e4f36c5e6df4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/query_lifecycle.qnt": {
+      "sha256": "8c2ef24906d86a45903d66f1127e01cf884161f8c69c57b7c0be92e8a5c4cd45",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/query_lifecycle-test.log": {
+      "sha256": "026c9a35b35ecfd1ae58261408b8ec74f56eb8be1447d6fe9b1651cc091bf2d9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/capture_lifecycle.qnt": {
+      "sha256": "fa38546a401f4964431518aea60eea4518fcaff9815fe5210d8ecb3f915b5abd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/capture_lifecycle-test.log": {
+      "sha256": "7f3a27462ae1380b07ce809377c4bfb6bec03ecf3710bc0566f578dbece5b31b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/service_queries.qnt": {
+      "sha256": "bd30cbb22f2b1e7c4ce70286204ebfa63d4272c9efc25e4bc5ad5a228319e937",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/service_queries-test.log": {
+      "sha256": "fb8af97689fb763379d5dbd0b7d4cdfa48deaca297dab4dd10002cba62c9b9d2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/reversal.qnt": {
+      "sha256": "5d956a4cddb8b592860c1af331a77fe1fec384c0f3423834ec486585486d0fc8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/reversal-test.log": {
+      "sha256": "21a8ebf15e3af15e6103206dc3187822f3f24cbb7f8f35dcc70460421cac616b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/service_restart_test.qnt": {
+      "sha256": "e9cecc3e907991cc136eb4ac5d601f8ca733cee151c0b27b05e76bc1f7824677",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/service_restart-test.log": {
+      "sha256": "2fbf84e18e55c7c6715d1183559b0ed6533210f61566a84f8f17734a0bfb219b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/recovery_collection_test.qnt": {
+      "sha256": "6a21b61146b32867e8f6664d70a0c28542824f28a19b1225465cbf3beb837f8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/recovery_collection-test.log": {
+      "sha256": "93fcce4891e6e62959235df0d7ea8ffa2810eb0507505bb47638c92812738f81",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/actual_service_binding_test.qnt": {
+      "sha256": "d903f5bfef9a35fa3593f8a0704accc2bfc11daccf66b9144d4e9cbc9aea6762",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/actual_service_binding-test.log": {
+      "sha256": "195a14d6fcf26604967d72940fc6a9cd826df321a42f7d6ab1ecb96e8b9cc29d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/batch_service_binding_test.qnt": {
+      "sha256": "17159a606e67a448ed61c40bfdbffb04fd246b0708699a00d150097bd344c8f2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/batch_service_binding-test.log": {
+      "sha256": "88baffa1010b2cf51c7928f90b0b28f3b808f6895fa1ac9a804859f6dfc43c8a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/batch_callback_identity_test.qnt": {
+      "sha256": "b48b89f83923abaa2b2a2a3312701bda91686cf6f05ca5ad6d583a71c357e4a8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/batch_callback_identity-test.log": {
+      "sha256": "ca469320599a3d5b551d38ab9c18f38fb03b9e832ff4fca9a5a16ddecb92eaa2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/terminal_confirmation_test.qnt": {
+      "sha256": "6037267968725314723ca1eb3b54e9616267f58e9aefe68cf6e029056cb1455d",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/terminal_confirmation-test.log": {
+      "sha256": "8439acb6119c58a824581d26fd64acf3d547eed9317d9f9abb1189d6e9a147d4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/renderer_collector_binding_test.qnt": {
+      "sha256": "22fd59606b2669e6eac0864925753ad8c864aef356d9d523ae083a892b0e28e5",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/renderer_collector_binding-test.log": {
+      "sha256": "a4483407be0098f7aa26e50ea8fc5c412f7702d94d5364e9bdfb8372b389f4aa",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/closure_alias_identity_test.qnt": {
+      "sha256": "c232390de416e8ebbf77ea4123531462556106047b2ca39ef6145a8eb4f39e67",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/closure_alias_identity-test.log": {
+      "sha256": "66398aa55f84756a8b29b8e621f709d146ffd00a6aa6543574243303b39fffc9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/helper_failure_drain_test.qnt": {
+      "sha256": "91cb01dd482255e9824fa5be4c9030105c734fb5fed36c08126c220f2f8ee058",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/helper_failure_drain-test.log": {
+      "sha256": "479f9e1347f914e9e342a7a66c6f5932f4241b97b720c74c81087d6f1e1e67ad",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/parallel_planning_test.qnt": {
+      "sha256": "75f6860b8bd7b8eda2c13c0006af2fc77332e89a2f40f90720a47836aaf9d93f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/formal-1.log": {
+      "sha256": "4451a7e8810953493505319281b48cbe8ac36c00403409b3a4e120b49dbe72fb",
+      "mode": 384
+    }
+  },
+  "inputCount": 184,
+  "formal": {
+    "namedActuallyRun": 18,
+    "samples": 2000,
+    "steps": 100,
+    "report": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal-complete.json"
+  },
+  "pixels": {
+    "matrices": 16,
+    "exactComparisons": 32,
+    "report": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-replay.json"
+  },
+  "intendedPatch": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/intended.patch",
+  "intendedPatchSHA256": "817090d8b080793c00a22419bd4112c5df1241156f54344be6fa03996f95112c",
+  "runtimeApplied": false,
+  "ownedApplicationTestsExecuted": false,
+  "nativeAccepted": false,
+  "original38Accepted": false,
+  "original34Accepted": false,
+  "timingAcceptance": false,
+  "campaignB14RemainsFailed": true,
+  "newNativeGrant": false
+}

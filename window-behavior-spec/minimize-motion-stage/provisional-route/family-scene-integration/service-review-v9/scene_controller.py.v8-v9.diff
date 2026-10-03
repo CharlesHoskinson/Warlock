@@ -1,0 +1,42 @@
+--- service-review-v8/scene_controller.py
++++ service-review-v9/scene_controller.py
+@@ -75,7 +75,7 @@
+     def owns(self, record):
+         return self.current is record
+ 
+-    def request(self, command, address, stable_id, pid, *, context, single=False, direction=None):
++    def request(self, command, address, stable_id, pid, *, context, single=False, direction=None, defer_prepare=False):
+         if command not in ('minimize','restore','toggle','activate'):
+             raise ValueError('invalid motion operation')
+         captured = (address, str(stable_id), int(pid))
+@@ -99,17 +99,22 @@
+                 focus=previous.focus if previous else None,
+                 accepted_operation=previous.accepted_operation if previous else None,
+                 previous=previous, single=single, direction=direction,
+-                profile={'receivedNs':time.monotonic_ns(),'reservedNs':time.monotonic_ns(),'ingressCommand':command})
++                profile={'receivedNs':time.monotonic_ns(),'reservedNs':time.monotonic_ns(),'ingressCommand':command,'contextPending':defer_prepare})
+             self.current = record # ALL member authority changes atomically here.
+             self.write_journal()
+             if previous and previous.visual and record.sources and context == previous.context:
+-                self.transport.send({'command':'retarget','token':record.token,
+-                    'identities':ids(record.members),'operation':operation,
+-                    'durationMs':self.duration_ms})
+-                record.visual = True
+-                record.running = True # producer starts provisional retarget itself
+-                record.profile['retargetQueuedNs'] = time.monotonic_ns()
+-            self.workers.submit(self.prepare, record)
++                try:
++                    self.transport.send({'command':'retarget','token':record.token,
++                        'identities':ids(record.members),'operation':operation,
++                        'durationMs':self.duration_ms})
++                    record.visual = True
++                    record.running = True # producer starts provisional retarget itself
++                    record.profile['retargetQueuedNs'] = time.monotonic_ns()
++                except Exception as error:
++                    if not defer_prepare:raise
++                    record.profile['provisionalQueueFailure']=str(error)
++                self.write_journal()
++            if not defer_prepare:self.workers.submit(self.prepare, record)
+             return {'ok':True, 'accepted':True, 'token':record.token, 'completed':False}
+ 
+     def fresh(self, record):

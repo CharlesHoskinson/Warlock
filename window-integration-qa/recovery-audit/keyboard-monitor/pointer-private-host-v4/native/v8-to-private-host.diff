@@ -1,0 +1,19 @@
+--- frozen-plugin-v8.cpp
++++ fresh-plugin-v8-host.cpp
+@@ -1,5 +1,6 @@
+ // Offline/private candidate only. This file has never been loaded on the main compositor.
+ #include "key_policy.hpp"
++#include "private_runtime.hpp"
+ #include "xkb_helpers.hpp"
+ #include "PointerLocatorState.hpp"
+ #include "PointerNotificationFence.hpp"
+@@ -318,8 +319,7 @@
+     handle=h;
+     const char* enabled=getenv("HYPR_A11Y_BRIDGE_PRIVATE");const char* runtime=getenv("XDG_RUNTIME_DIR");
+     const char* address=getenv("DBUS_SESSION_BUS_ADDRESS");
+-    struct stat st{};
+-    if(!enabled||std::string(enabled)!="1"||!runtime||!std::string(runtime).starts_with("/tmp/kbn-")||stat(runtime,&st)||st.st_uid!=getuid()||(st.st_mode&0777)!=0700)
++    if(!enabled||std::string(enabled)!="1"||!PrivateRuntime::allowed(runtime))
+         throw std::runtime_error("candidate restricted to explicit private keyboard-native runtime");
+     const auto expected=std::string("unix:path=")+runtime+"/bus";
+     const auto configured=address?std::string(address):std::string();

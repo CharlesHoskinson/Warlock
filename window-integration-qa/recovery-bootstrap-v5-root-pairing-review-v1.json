@@ -1,0 +1,27 @@
+{
+  "result": "pass",
+  "sourceChanges": [
+    "native_integration.py",
+    "native_faults.py"
+  ],
+  "inheritedCheckASTExact": true,
+  "selectedHost": "/home/hoskinson/window-integration-qa/private-weston-aq-bootstrap-host-v5/weston_host.py",
+  "selectedHostSHA256": "61eaa572b923c31e622dbc7f2c7b8b293beda90bca4c933b2789ce65bb3d7aa6",
+  "actualSelectedAQ": "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2",
+  "actualSelectedLibrary": "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/lib/libaquamarine.so.0.15.0",
+  "actualSelectedLibrarySHA256": "4ee1f9958ec83a9d2774f760ba66f90f1d646d1c198dd49d9dfbf1763c2fd296",
+  "fullInputCount": 16043,
+  "fullModeCount": 16043,
+  "fullLinkCount": 287,
+  "allV4BytesModesLinksPreserved": true,
+  "nestedManifestsCopied": [
+    "retained-baseline-v3/frozen-inputs.json",
+    "retained-collector-v1/frozen-inputs.json",
+    "retained-collector-v1/source-ready.json",
+    "retained-recovery-collector-v3/frozen-inputs.json"
+  ],
+  "nativeLaunch": false,
+  "nativeGrant": false,
+  "freezeWritten": false,
+  "mandatoryNext": "verify/freeze/preflight exact V5; serial original baseline38 before any faults"
+}

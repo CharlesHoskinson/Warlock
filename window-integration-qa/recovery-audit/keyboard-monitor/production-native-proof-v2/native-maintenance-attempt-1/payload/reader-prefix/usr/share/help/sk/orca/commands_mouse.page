@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_mouse" xml:lang="sk">
+  <info>
+    <link type="next" xref="commands_live_regions"/>
+    <link type="guide" xref="commands#reviewing_screen_contents"/>
+    <title type="sort">3. Vzťahujúce sa na myš/ukazovateľ</title>
+    <title type="link">Vzťahujúce sa na myš/ukazovateľ</title>
+    <link type="seealso" xref="howto_flat_review"/>
+    <link type="seealso" xref="howto_mouse_review"/>
+    <desc>Príkazy na manipuláciu s ukazovateľom</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Príkazy týkajúce sa myši/ukazovateľa</title>
+  <p><app>Orca</app> poskytuje niekoľko príkazov, ktoré možno použiť na manipuláciu s ukazovateľom myši a čítanie obsahu pod ním. Všetky príkazy sú priradené ku klávesovým skratkám okrem jednej výnimky: Prepnutie režimu prehliadania myši. Informácie o tom, ako tento príkaz priradiť ku skratke, nájdete v časti <link xref="howto_key_bindings">Úprava klávesových skratiek</link>.</p>
+  <note style="tip">
+    <p>Nižšie uvidíte niekoľko odkazov na „KP“. Všetky klávesy „KP“ sa nachádzajú na numerickej klávesnici. Všimnete si tiež, že existujú rôzne klávesové skratky v závislosti od toho, či používate stolný alebo prenosný počítač – alebo presnejšie, či používate rozloženie klávesnice pre stolný počítač alebo prenosný počítač v <app>Orca</app>. Ďalšie informácie nájdete v téme <link xref="howto_keyboard_layout">Rozloženie klávesnice</link>.</p>
+  </note>
+  <list>
+    <item>
+      <p>Kliknúť ľavým tlačidlom na aktuálnu položku:</p>
+      <list>
+        <item><p>Stolný počítač: <keyseq><key>KP Divide</key></keyseq></p></item>
+        <item><p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>7</key></keyseq></p></item>
+      </list>
+    </item>
+    <item>
+      <p>Kliknúť pravým tlačidlom na aktuálnu položku:</p>
+      <list>
+        <item><p>Stolný počítač: <keyseq><key>KP Multiply</key></keyseq></p></item>
+        <item><p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>8</key></keyseq></p></item>
+      </list>
+    </item>
+    <item>
+      <p>Nasmerovať ukazovateľ na aktuálnu položku:</p>
+      <list>
+        <item><p>Stolný počítač: <keyseq><key>Modifikátor Orca</key><key>KP Divide</key></keyseq></p></item>
+        <item><p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>9</key></keyseq></p></item>
+      </list>
+    </item>
+    <item>
+      <p>Presunúť fokus do alebo preč od aktuálneho objektu pod kurzorom (len web):</p>
+      <list>
+        <item><p>Stolný počítač: <keyseq><key>Modifikátor Orca</key><key>KP Multiply</key></keyseq></p></item>
+        <item><p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>0</key></keyseq></p></item>
+      </list>
+    </item>
+    <item>
+      <p>Povoliť/zakázať režim prehliadania myši: (Nepriradené)</p>
+    </item>
+  </list>
+</page>

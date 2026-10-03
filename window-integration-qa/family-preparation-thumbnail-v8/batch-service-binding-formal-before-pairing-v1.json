@@ -1,0 +1,44 @@
+{
+  "result": "pass",
+  "named": 16,
+  "samples": 2000,
+  "steps": 100,
+  "beforeCollectorRuntimeChange": true,
+  "nativeGrant": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-d5ca692a1bc94b529efa44fa12957f1a.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/batch_service_binding_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/batch-service-binding-formal-0-v1.log",
+      "sha256": "a9f215ac2b86ab2239c8a091ba37aeb2e96a0fe7c88cd4dd3e719239bed55210"
+    },
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/batch_service_binding.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261006",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/batch-service-binding-formal-1-v1.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "sources": {
+    "batch_service_binding.qnt": "24fafd5c923e28f999a1b79cbc326395c6ff01a4b0318358f6d0a193464fcd95",
+    "batch_service_binding_test.qnt": "17159a606e67a448ed61c40bfdbffb04fd246b0708699a00d150097bd344c8f2",
+    "BATCH_SERVICE_PAIRING_CONTRACT.md": "c304ae5a908800358c3d7bce4d212b2ff329b885b1a733bbd77598b84d6cb559"
+  }
+}

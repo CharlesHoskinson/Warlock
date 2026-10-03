@@ -1,0 +1,58 @@
+{
+  "result": "source-review-pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-continuous-reversal-v2/reversal.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  reversal\n    ok oldFeedbackBecomesDisplayedOriginTest passed 1 test(s)\n    ok provisionalRetargetHasNoAuthorityTest passed 1 test(s)\n    ok oldReceiptCannotCommitTest passed 1 test(s)\n    ok currentValidatedReceiptCanCommitTest passed 1 test(s)\n    ok secondReversalRetainsSourcesTest passed 1 test(s)\n    ok shutdownRevokesAuthorityTest passed 1 test(s)\n\n  6 passing (61ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-continuous-reversal-v2/reversal.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (430ms at 4651 traces/second).\nUse --seed=0x153a921 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "namedScenarios": 6,
+  "samples": 2000,
+  "maxSteps": 100,
+  "allOfflineTests": 72,
+  "parserProbes": 2,
+  "serviceManifestSHA256": "2a2aac11a562bae6b98c254f77384ffc505e05fb9e881b5f0936386d0f27467a",
+  "serviceInputCount": 3126,
+  "serviceModeCount": 3126,
+  "serviceLinks": 138,
+  "serviceOffline": {
+    "pythonTests": 187,
+    "quintNamed": 98,
+    "quintModels": 15,
+    "samplesEach": 2000
+  },
+  "reviewed": [
+    "Slow fresh/active/planning/refresh/reduced observations moved outside receipt lock",
+    "Latest record and complete member ownership rechecked after each slow phase",
+    "Native family retirement/focus/commit exclusion remains",
+    "Worker-local family query evidence prevents shared witness overwrite",
+    "Original strict interior origin and every original38 acceptance gates unchanged",
+    "Clients-first deferred native unload handles failed feature gates",
+    "Full prior V1 source and actual stall failure retained"
+  ],
+  "remainingRisk": "Destination apply still contains exact client reads and focus dispatch under lock; actual strict native reversal required",
+  "mainWrites": false,
+  "nativeAccepted": false,
+  "fullWindowsParityAccepted": false
+}

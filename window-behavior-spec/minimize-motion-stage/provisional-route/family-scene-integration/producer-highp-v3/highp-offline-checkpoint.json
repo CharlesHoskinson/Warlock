@@ -1,0 +1,87 @@
+{
+  "checks": [
+    {
+      "command": [
+        "./test-commit-ledger"
+      ],
+      "exitCode": 0,
+      "log": "highp-offline-00.log"
+    },
+    {
+      "command": [
+        "./test-family-scene"
+      ],
+      "exitCode": 0,
+      "log": "highp-offline-01.log"
+    },
+    {
+      "command": [
+        "./test-backend-policy"
+      ],
+      "exitCode": 0,
+      "log": "highp-offline-02.log"
+    },
+    {
+      "command": [
+        "./test-library-material"
+      ],
+      "exitCode": 0,
+      "log": "highp-offline-03.log"
+    },
+    {
+      "command": [
+        "glslangValidator",
+        "-S",
+        "vert",
+        "atlas.vert"
+      ],
+      "exitCode": 0,
+      "log": "highp-offline-04.log"
+    },
+    {
+      "command": [
+        "glslangValidator",
+        "-S",
+        "frag",
+        "atlas.frag"
+      ],
+      "exitCode": 0,
+      "log": "highp-offline-05.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "shader_precision_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "highp-offline-06.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "shader_precision_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "highp-offline-07.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "shader_precision.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "highp-offline-08.log"
+    }
+  ],
+  "actualGLStateObserved": false,
+  "nativeShaderCompiled": false,
+  "nativePixelProof": false,
+  "scope": "syntax/model/regression gates only"
+}

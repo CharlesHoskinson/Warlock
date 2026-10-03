@@ -1,0 +1,3843 @@
+{
+  "kind": "private PointerLocator/real GTK/Omarchy Orca compat navigation",
+  "checks": [
+    {
+      "name": "private config errors absent",
+      "pass_": true
+    },
+    {
+      "name": "independent protocol caller A ready",
+      "pass_": true,
+      "client": {
+        "ready": true,
+        "uniqueName": ":1.5",
+        "name": "org.omarchy.PointerA.KeyboardMonitor"
+      }
+    },
+    {
+      "name": "independent protocol caller B ready",
+      "pass_": true,
+      "client": {
+        "ready": true,
+        "uniqueName": ":1.6",
+        "name": "org.omarchy.PointerB.KeyboardMonitor"
+      }
+    },
+    {
+      "name": "A owns actual monitor registration",
+      "pass_": true
+    },
+    {
+      "name": "B owns actual monitor registration",
+      "pass_": true
+    },
+    {
+      "name": "external registered caller explicitly requests full capture",
+      "pass_": true
+    },
+    {
+      "name": "actual fresh public factory uses official Manager device",
+      "pass_": true,
+      "device": {
+        "ready": true,
+        "backend": "AtspiDeviceA11yManager",
+        "ownUnique": ":1.9",
+        "owner": ":1.9"
+      }
+    },
+    {
+      "name": "actual held capability probe refuses without dropping registration",
+      "pass_": true,
+      "result": {
+        "before": ":1.9",
+        "after": ":1.9",
+        "sameActualDevice": true,
+        "pass_": false,
+        "error": "held, dirty, unknown or already replayed pointer probe refused"
+      }
+    },
+    {
+      "name": "held capability refusal keeps real Foot bytes suppressed",
+      "pass_": true
+    },
+    {
+      "name": "external capture removed only after real release",
+      "pass_": true
+    },
+    {
+      "name": "same actual fresh device probes after real quiescence",
+      "pass_": true,
+      "result": {
+        "before": ":1.9",
+        "after": ":1.9",
+        "sameActualDevice": true,
+        "pass_": true,
+        "value": 13
+      }
+    },
+    {
+      "name": "actual successful capability bootstrap primes exactly one query",
+      "pass_": true,
+      "pending": 1
+    },
+    {
+      "name": "first construction motion reaches actual cursor and consumes one shot before callback pump",
+      "pass_": true,
+      "cursor": {
+        "x": 12,
+        "y": 12
+      },
+      "requested": [
+        12,
+        12
+      ],
+      "pending": 0
+    },
+    {
+      "name": "first construction motion rearms via official callback before GObject observer",
+      "pass_": true,
+      "result": {
+        "pass_": true,
+        "state": {
+          "retiring": false,
+          "unloadQuiescent": true,
+          "registrations": 3,
+          "clients": 1,
+          "devices": 1,
+          "quiescent": true,
+          "callerPreReplay": true,
+          "pointerPending": 1,
+          "nativeInputProved": false
+        },
+        "gobjectObserverInstalled": false,
+        "sameActualDevice": true
+      }
+    },
+    {
+      "name": "second early motion reaches actual cursor and consumes rearmed one shot before callback pump",
+      "pass_": true,
+      "cursor": {
+        "x": 14,
+        "y": 14
+      },
+      "requested": [
+        14,
+        14
+      ],
+      "pending": 0
+    },
+    {
+      "name": "second early motion retains official query signal chain",
+      "pass_": true,
+      "result": {
+        "pass_": true,
+        "state": {
+          "retiring": false,
+          "unloadQuiescent": true,
+          "registrations": 3,
+          "clients": 1,
+          "devices": 1,
+          "quiescent": true,
+          "callerPreReplay": true,
+          "pointerPending": 1,
+          "nativeInputProved": false
+        },
+        "gobjectObserverInstalled": false,
+        "sameActualDevice": true
+      }
+    },
+    {
+      "name": "initial private bridge quiescent retirement",
+      "pass_": true
+    },
+    {
+      "name": "real compat reader starts before Manager with pointer disabled",
+      "pass_": true,
+      "reader": {
+        "time": 72584.648722546,
+        "identity": "Omarchy Orca compat",
+        "mouseSource": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v7d/native-pointer-attempt-4/mouse-review-v2/orca-compat/orca/mouse_review.py",
+        "epoch": 0,
+        "appliedEpoch": -1,
+        "owner": "",
+        "backend": "AtspiDeviceLegacy",
+        "watch": true,
+        "full": false,
+        "paused": false,
+        "mouseEnabled": false,
+        "currentItem": null,
+        "commands": [
+          [
+            "advance_live_politeness",
+            false,
+            true,
+            false
+          ],
+          [
+            "appPreferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "bypass_mode_toggle",
+            true,
+            true,
+            false
+          ],
+          [
+            "changeNumberStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_next_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_previous_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_buddy_typing",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_message_histories",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_room_name_prefix",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_atspi_app_cache",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "container_end",
+            false,
+            false,
+            false
+          ],
+          [
+            "container_start",
+            false,
+            false,
+            false
+          ],
+          [
+            "contractedBrailleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleCapitalizationStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleDebugLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleKeyEchoHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSettingsProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSpeakingPunctuationLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSynthesizerHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_browse_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_focus_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "end_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "end_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "enterLearnModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findNextHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findPreviousHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewAppendHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewCopyHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewSayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewToggleRestrictHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "getStatusBarHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "getTitleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "last_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "leftClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "list_blockquotes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_checkboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_clickables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_comboboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_entries",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_form_fields",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_iframes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_images",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_landmarks",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_large_objects",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_list_items",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_lists",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_paragraphs",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_radio_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_tables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_unvisited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_visited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "object_navigator_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_next",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_perform_action",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_previous",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_toggle_simplify",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "panBrailleLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "panBrailleRightHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "preferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentCurrentProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentDateHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentSizeAndPositionHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentTimeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_battery_status",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cell_formula",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_clipboard_contents",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cpu_and_memory_usage",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_default_button",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_last_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "previous_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "readCharAttributesHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewAboveHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBelowHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBottomLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentAccessibleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndOfLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewHomeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewUnicodeCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "rightClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "routePointerToItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "sayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "showContentsHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "show_actions_list",
+            true,
+            true,
+            false
+          ],
+          [
+            "show_notification_list",
+            false,
+            true,
+            false
+          ],
+          [
+            "shutdownHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "start_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "start_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "structural_navigator_mode_cycle",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_beginning_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_bottom_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_end_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_first",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_last",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_left",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_right",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_top_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_navigator_toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleFlatReviewModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleMouseReviewHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSilenceSpeechHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleSpeakingIndentationJustificationHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSpeechVerbosityHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleTableCellReadModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_braille_monitor",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_keyboard_layout",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_layout_mode",
+            false,
+            false,
+            false
+          ],
+          [
+            "toggle_live_region_presentation",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_live_region_support",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_presentation_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_sleep_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_speech_monitor",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIBasicHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIDetailedHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmILinkHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "whereAmISelectionHandler",
+            true,
+            true,
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "name": "real compat reader reconstructs public device and capabilities",
+      "pass_": true,
+      "reader": {
+        "time": 72584.751302778,
+        "identity": "Omarchy Orca compat",
+        "mouseSource": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v7d/native-pointer-attempt-4/mouse-review-v2/orca-compat/orca/mouse_review.py",
+        "epoch": 1,
+        "appliedEpoch": 1,
+        "owner": ":1.15",
+        "backend": "AtspiDeviceA11yManager",
+        "watch": true,
+        "full": false,
+        "paused": false,
+        "mouseEnabled": false,
+        "currentItem": null,
+        "commands": [
+          [
+            "advance_live_politeness",
+            false,
+            true,
+            false
+          ],
+          [
+            "appPreferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "bypass_mode_toggle",
+            true,
+            true,
+            false
+          ],
+          [
+            "changeNumberStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_next_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_previous_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_buddy_typing",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_message_histories",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_room_name_prefix",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_atspi_app_cache",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "container_end",
+            false,
+            false,
+            false
+          ],
+          [
+            "container_start",
+            false,
+            false,
+            false
+          ],
+          [
+            "contractedBrailleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleCapitalizationStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleDebugLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleKeyEchoHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSettingsProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSpeakingPunctuationLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSynthesizerHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_browse_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_focus_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "end_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "end_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "enterLearnModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findNextHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findPreviousHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewAppendHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewCopyHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewSayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewToggleRestrictHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "getStatusBarHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "getTitleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "last_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "leftClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "list_blockquotes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_checkboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_clickables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_comboboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_entries",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_form_fields",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_iframes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_images",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_landmarks",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_large_objects",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_list_items",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_lists",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_paragraphs",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_radio_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_tables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_unvisited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_visited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "object_navigator_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_next",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_perform_action",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_previous",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_toggle_simplify",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "panBrailleLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "panBrailleRightHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "preferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentCurrentProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentDateHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentSizeAndPositionHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentTimeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_battery_status",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cell_formula",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_clipboard_contents",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cpu_and_memory_usage",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_default_button",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_last_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "previous_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "readCharAttributesHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewAboveHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBelowHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBottomLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentAccessibleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndOfLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewHomeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewUnicodeCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "rightClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "routePointerToItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "sayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "showContentsHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "show_actions_list",
+            true,
+            true,
+            false
+          ],
+          [
+            "show_notification_list",
+            false,
+            true,
+            false
+          ],
+          [
+            "shutdownHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "start_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "start_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "structural_navigator_mode_cycle",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_beginning_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_bottom_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_end_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_first",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_last",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_left",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_right",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_top_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_navigator_toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleFlatReviewModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleMouseReviewHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSilenceSpeechHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleSpeakingIndentationJustificationHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSpeechVerbosityHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleTableCellReadModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_braille_monitor",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_keyboard_layout",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_layout_mode",
+            false,
+            false,
+            false
+          ],
+          [
+            "toggle_live_region_presentation",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_live_region_support",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_presentation_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_sleep_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_speech_monitor",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIBasicHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIDetailedHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmILinkHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "whereAmISelectionHandler",
+            true,
+            true,
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "name": "real GTK AX singleton peers carry verified distinct identities",
+      "pass_": true,
+      "a": {
+        "name": "Pointer peer A",
+        "role": "frame",
+        "pid": 3894484,
+        "app_bus": ":1.6",
+        "object_path": "/org/omarchy/PointerPeerA/a11y/b4a7a73e_4f77_49c2_a0be_c81e64c60517",
+        "children": [
+          {
+            "name": "",
+            "role": "panel",
+            "pid": 3894484,
+            "app_bus": ":1.6",
+            "object_path": "/org/omarchy/PointerPeerA/a11y/7179ce42_274d_4cd7_a71c_3c9a1bc861d6"
+          }
+        ]
+      },
+      "b": {
+        "name": "Pointer peer B",
+        "role": "frame",
+        "pid": 3894569,
+        "app_bus": ":1.7",
+        "object_path": "/org/omarchy/PointerPeerB/a11y/d2993cd8_926b_4ab0_a7de_6b76d4b1b99a",
+        "children": [
+          {
+            "name": "",
+            "role": "panel",
+            "pid": 3894569,
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/23fef663_6672_4897_be76_1501c3037ec0"
+          },
+          {
+            "name": "",
+            "role": "grouping",
+            "pid": 3894569,
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/31d0d719_bb83_449a_9f19_ca4821028958"
+          }
+        ]
+      }
+    },
+    {
+      "name": "unauthorized QueryPointer denied",
+      "pass_": true
+    },
+    {
+      "name": "unauthorized caller receives no pointer notification",
+      "pass_": true
+    },
+    {
+      "name": "A reacquires actual registration",
+      "pass_": true
+    },
+    {
+      "name": "actual independent focus and hover setup established before query",
+      "pass_": true,
+      "focus": {
+        "address": "0x56299cea1e40",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          520,
+          80
+        ],
+        "size": [
+          360,
+          240
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.PointerPeerB",
+        "title": "Pointer peer B",
+        "initialClass": "org.omarchy.PointerPeerB",
+        "initialTitle": "Pointer peer B",
+        "pid": 3894569,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000004"
+      },
+      "cursor": {
+        "x": 228,
+        "y": 121
+      },
+      "requested": [
+        228.125,
+        121.375
+      ],
+      "actualA": {
+        "address": "0x56299d2b29d0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          48,
+          80
+        ],
+        "size": [
+          360,
+          240
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.PointerPeerA",
+        "title": "Pointer peer A",
+        "initialClass": "org.omarchy.PointerPeerA",
+        "initialTitle": "Pointer peer A",
+        "pid": 3894484,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000003"
+      }
+    },
+    {
+      "name": "hover mapping is independent of keyboard focus",
+      "pass_": true,
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/b4a7a73e_4f77_49c2_a0be_c81e64c60517"
+          },
+          180.125,
+          41.375
+        ]
+      },
+      "focus": {
+        "address": "0x56299cea1e40",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          520,
+          80
+        ],
+        "size": [
+          360,
+          240
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.PointerPeerB",
+        "title": "Pointer peer B",
+        "initialClass": "org.omarchy.PointerPeerB",
+        "initialTitle": "Pointer peer B",
+        "pid": 3894569,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000004"
+      }
+    },
+    {
+      "name": "fractional output query returns logical client relative doubles",
+      "pass_": true,
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/b4a7a73e_4f77_49c2_a0be_c81e64c60517"
+          },
+          180.125,
+          41.375
+        ]
+      },
+      "requested": [
+        228.125,
+        121.375
+      ],
+      "window": {
+        "address": "0x56299d2b29d0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          48,
+          80
+        ],
+        "size": [
+          360,
+          240
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.PointerPeerA",
+        "title": "Pointer peer A",
+        "initialClass": "org.omarchy.PointerPeerA",
+        "initialTitle": "Pointer peer A",
+        "pid": 3894484,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000003"
+      },
+      "monitor": {
+        "id": 0,
+        "name": "WAYLAND-1",
+        "description": "",
+        "make": "",
+        "model": "",
+        "serial": "",
+        "width": 1280,
+        "height": 800,
+        "physicalWidth": 0,
+        "physicalHeight": 0,
+        "refreshRate": 60.0,
+        "x": 0,
+        "y": 0,
+        "activeWorkspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "specialWorkspace": {
+          "id": 0,
+          "name": ""
+        },
+        "reserved": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "scale": 1.25,
+        "transform": 0,
+        "focused": true,
+        "dpmsStatus": true,
+        "vrr": false,
+        "solitary": "0",
+        "solitaryBlockedBy": [
+          "NOTIFICATION",
+          "WINDOWED",
+          "CANDIDATE"
+        ],
+        "activelyTearing": false,
+        "tearingBlockedBy": [
+          "NOT_TORN",
+          "USER",
+          "SUPPORT",
+          "CANDIDATE",
+          "HW_CURSOR"
+        ],
+        "directScanoutTo": "0",
+        "directScanoutBlockedBy": [
+          "USER",
+          "CANDIDATE"
+        ],
+        "disabled": false,
+        "currentFormat": "XRGB8888",
+        "mirrorOf": "none",
+        "availableModes": [],
+        "colorManagementPreset": "srgb",
+        "sdrBrightness": 1,
+        "sdrSaturation": 1,
+        "sdrMinLuminance": 0.2,
+        "sdrMaxLuminance": 80,
+        "hardwareCursorsInUse": true
+      }
+    },
+    {
+      "name": "same pixel native fractional motion sends directed one shot",
+      "pass_": true,
+      "a": [
+        {
+          "time": 72586.018971278,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "b": []
+    },
+    {
+      "name": "second motion without query sends no second notification",
+      "pass_": true
+    },
+    {
+      "name": "repeated queries coalesce to exactly one later signal",
+      "pass_": true
+    },
+    {
+      "name": "registration replacement discards stale pending signal",
+      "pass_": false,
+      "before": [
+        {
+          "time": 72586.018971278,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 72586.202327386,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 72586.018971278,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 72586.202327386,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 72586.295943956,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "start": {
+        "event": "actual-registration-churn-start",
+        "monotonic": 72586.293831987,
+        "wall": 1790850405.8970942,
+        "baseline": [
+          {
+            "time": 72586.018971278,
+            "sender": ":1.15",
+            "path": "/org/freedesktop/a11y/Manager",
+            "signal": "PointerPositionChanged",
+            "parameters": []
+          },
+          {
+            "time": 72586.202327386,
+            "sender": ":1.15",
+            "path": "/org/freedesktop/a11y/Manager",
+            "signal": "PointerPositionChanged",
+            "parameters": []
+          }
+        ],
+        "query": {
+          "id": null,
+          "pass_": true,
+          "value": [
+            {
+              "app-dbus-name": ":1.6",
+              "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/b4a7a73e_4f77_49c2_a0be_c81e64c60517"
+            },
+            180.625,
+            41.375
+          ]
+        }
+      },
+      "end": {
+        "event": "actual-registration-churn-end",
+        "monotonic": 72586.349233474,
+        "wall": 1790850405.9524958,
+        "signals": [
+          {
+            "time": 72586.018971278,
+            "sender": ":1.15",
+            "path": "/org/freedesktop/a11y/Manager",
+            "signal": "PointerPositionChanged",
+            "parameters": []
+          },
+          {
+            "time": 72586.202327386,
+            "sender": ":1.15",
+            "path": "/org/freedesktop/a11y/Manager",
+            "signal": "PointerPositionChanged",
+            "parameters": []
+          },
+          {
+            "time": 72586.295943956,
+            "sender": ":1.15",
+            "path": "/org/freedesktop/a11y/Manager",
+            "signal": "PointerPositionChanged",
+            "parameters": []
+          }
+        ],
+        "cursor": {
+          "x": 228,
+          "y": 121
+        }
+      },
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/b4a7a73e_4f77_49c2_a0be_c81e64c60517"
+          },
+          180.625,
+          41.375
+        ]
+      }
+    }
+  ],
+  "restoration": {
+    "originalHiddenFilesExactProcessAndState": true,
+    "frozenDependencies": true,
+    "keyboards": true,
+    "originalClients": true,
+    "originalClientStates": true,
+    "mainPlugins": true,
+    "focus": true,
+    "cursor": true,
+    "a11y": true,
+    "readerDisabled": true,
+    "catalogBytes": true,
+    "outputs": true,
+    "fixturesExited": true,
+    "configErrors": true
+  },
+  "nativeInputProved": false,
+  "nativePointerProved": false,
+  "widerPolicyInputProved": false,
+  "physicalHardwareProved": false,
+  "before": {
+    "files": {
+      "pid": 667402,
+      "instance": "yyaefmu6mt",
+      "processStart": "1275224",
+      "visible": false,
+      "publicSHA256": "f084cf1a9cd3ecfd38972157356a638a7c7ac85f81e158d00d34cb1d5d2d23fe",
+      "uiSHA256": "e86930348c5f26f410acc6e055f47c2ae11b99f09e8555d0b8144fb971da0dba"
+    },
+    "clientStates": [
+      {
+        "address": "0x5a02aee429f0",
+        "pid": 4007,
+        "stableId": "18000005",
+        "at": [
+          945,
+          284
+        ],
+        "size": [
+          386,
+          444
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "floating": true,
+        "monitor": 0
+      },
+      {
+        "address": "0x5a02b0cc9280",
+        "pid": 4311,
+        "stableId": "18000006",
+        "at": [
+          417,
+          71
+        ],
+        "size": [
+          1022,
+          890
+        ],
+        "workspace": {
+          "id": -98,
+          "name": "special:win-minimized"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "grouped": [],
+        "tags": [
+          "chromium-based-browser*"
+        ],
+        "floating": true,
+        "monitor": 0
+      },
+      {
+        "address": "0x5a02afa13e90",
+        "pid": 252010,
+        "stableId": "1800006a",
+        "at": [
+          26,
+          145
+        ],
+        "size": [
+          1002,
+          789
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "floating": true,
+        "monitor": 0
+      },
+      {
+        "address": "0x5a02afd20bd0",
+        "pid": 361074,
+        "stableId": "18000076",
+        "at": [
+          817,
+          206
+        ],
+        "size": [
+          700,
+          500
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "floating": true,
+        "monitor": 0
+      }
+    ],
+    "clients": [
+      [
+        "0x5a02aee429f0",
+        4007,
+        "18000005"
+      ],
+      [
+        "0x5a02b0cc9280",
+        4311,
+        "18000006"
+      ],
+      [
+        "0x5a02afd20bd0",
+        361074,
+        "18000076"
+      ],
+      [
+        "0x5a02afa13e90",
+        252010,
+        "1800006a"
+      ]
+    ],
+    "focus": [
+      "0x5a02afa13e90",
+      252010,
+      "1800006a"
+    ],
+    "cursor": {
+      "x": 527,
+      "y": 539
+    },
+    "a11y": {
+      "dev": 84,
+      "inode": 91312,
+      "connects": true
+    },
+    "readerStatus": "(<false>,)",
+    "catalogHashes": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    },
+    "catalogBackup": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v7d/native-pointer-attempt-4/catalog-before.json"
+  },
+  "private": {
+    "pid": 3893919,
+    "signature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790850400_1911734054",
+    "runtime": "/tmp/kbn-i5esn1l4",
+    "config": "/tmp/kbn-i5esn1l4/hyprland.lua"
+  },
+  "privateAccessibility": {
+    "address": "unix:path=/tmp/kbn-i5esn1l4/at-spi/bus",
+    "socket": "/tmp/kbn-i5esn1l4/at-spi/bus",
+    "registryPID": 3894025,
+    "launcherPID": 3894003
+  },
+  "result": "failed",
+  "error": "AssertionError('registration replacement discards stale pending signal')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v7d/native_probe_pointer.py\", line 180, in execute\n    cases.run(dict(here=HERE,reader_root=READER,env=env,report=report,check=check,manager=manager,\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        ctl=ctl,data=data,received=received,marker=marker,launch=launch,processes=processes,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        pid_stop=pid_stop,wait=wait,lib=LIB,runtime=runtime,config=config,ax_address=ax_address,foot=foot,foot_window=foot_window))\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v7d/native-pointer-attempt-4/native-fixture/pointer_cases.py\", line 178, in run\n    check('registration replacement discards stale pending signal',len(after_churn)==na,\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        before=before_churn,after=after_churn,release=released,reclaim=reclaimed,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        start=churn_start,end=churn_end,query=armed)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v7d/native-pointer-attempt-4/native-fixture/pointer_cases.py\", line 7, in <lambda>\n    check=lambda name,ok,**details:c['check'](c['report'],name,ok,**details)\n                                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v7d/native_probe_pointer.py\", line 44, in check\n    if not ok:raise AssertionError(name)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: registration replacement discards stale pending signal\n",
+  "cleanupUnloadQuiescent": true,
+  "cleanupNormalUnloadResult": "ok",
+  "privateDescendantCleanup": {
+    "before": [],
+    "remaining": []
+  },
+  "terminalBytes": "",
+  "catalogComparison": {
+    "/home/hoskinson/.config/omarchy/virtual-desktops.json": {
+      "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-settings.json": {
+      "expectedSHA256": null,
+      "actualSHA256": null,
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-order.json": {
+      "expectedSHA256": null,
+      "actualSHA256": null,
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-session-order.json": {
+      "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "exactBytes": true
+    }
+  },
+  "mainKeyboardComparison": {
+    "before": [
+      {
+        "address": "0x5a02b0b335a0",
+        "name": "video-bus",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d38ea0",
+        "name": "ideapad-extra-buttons",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d76090",
+        "name": "video-bus-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afcd3dd0",
+        "name": "ite-tech.-inc.-ite-device(8258)-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d8f5f0",
+        "name": "ite-tech.-inc.-ite-device(8258)-wireless-radio-control",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02ae1c49c0",
+        "name": "hda-intel-pch-headphone",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afb42100",
+        "name": "power-button",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02af2ea440",
+        "name": "power-button-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afaa1ad0",
+        "name": "at-translated-set-2-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b04bf700",
+        "name": "hl-virtual-keyboard-fcitx5",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": true
+      }
+    ],
+    "after": [
+      {
+        "address": "0x5a02b0b335a0",
+        "name": "video-bus",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d38ea0",
+        "name": "ideapad-extra-buttons",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d76090",
+        "name": "video-bus-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afcd3dd0",
+        "name": "ite-tech.-inc.-ite-device(8258)-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d8f5f0",
+        "name": "ite-tech.-inc.-ite-device(8258)-wireless-radio-control",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02ae1c49c0",
+        "name": "hda-intel-pch-headphone",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afb42100",
+        "name": "power-button",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02af2ea440",
+        "name": "power-button-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afaa1ad0",
+        "name": "at-translated-set-2-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b04bf700",
+        "name": "hl-virtual-keyboard-fcitx5",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": true
+      }
+    ]
+  },
+  "originalFilesComparison": {
+    "before": {
+      "pid": 667402,
+      "instance": "yyaefmu6mt",
+      "processStart": "1275224",
+      "visible": false,
+      "publicSHA256": "f084cf1a9cd3ecfd38972157356a638a7c7ac85f81e158d00d34cb1d5d2d23fe",
+      "uiSHA256": "e86930348c5f26f410acc6e055f47c2ae11b99f09e8555d0b8144fb971da0dba"
+    },
+    "after": {
+      "pid": 667402,
+      "instance": "yyaefmu6mt",
+      "processStart": "1275224",
+      "visible": false,
+      "publicSHA256": "f084cf1a9cd3ecfd38972157356a638a7c7ac85f81e158d00d34cb1d5d2d23fe",
+      "uiSHA256": "e86930348c5f26f410acc6e055f47c2ae11b99f09e8555d0b8144fb971da0dba"
+    }
+  }
+}

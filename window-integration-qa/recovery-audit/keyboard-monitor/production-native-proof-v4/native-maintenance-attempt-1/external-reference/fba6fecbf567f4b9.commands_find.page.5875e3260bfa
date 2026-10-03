@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_find" xml:lang="eo">
+  <info>
+    <link type="next" xref="commands_mouse"/>
+    <link type="guide" xref="commands#reviewing_screen_contents"/>
+    <link type="seealso" xref="howto_orca_find"/>
+    <title type="sort">2. Orko-Serĉo</title>
+    <title type="link">Orko Find</title>
+    <desc>Komandoj por serĉi fenestran enhavon</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Orko-Serĉaj Komandoj</title>
+  <p>La <link xref="howto_orca_find">Serĉa funkcio</link> de <app>Orko</app> permesas al vi serĉi en la kunteksto de <link xref="howto_flat_review">Plata Revizio</link> elementojn situantajn en la aktuala fenestro.</p>
+  <list>
+    <item>
+      <p>Malfermi la Serĉ-dialogon de <app>Orko</app>:</p>
+      <list>
+        <item>
+          <p>Labortablo: <keyseq><key>KP Delete</key></keyseq></p>
+        </item>
+        <item>
+          <p>Tekomputilo: <keyseq><key>Orko Modifier</key><key>Left Bracket</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Movi platan revizion al la sekva okazo de ĉeno:</p>
+      <list>
+        <item>
+          <p>Labortablo: <keyseq><key>Orko Modifier</key><key>KP Delete</key></keyseq></p>
+        </item>
+        <item>
+          <p>Tekomputilo: <keyseq><key>Orko Modifier</key><key>Right Bracket</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Movi platan revizion al la antaŭa okazo de ĉeno:</p>
+      <list>
+        <item>
+          <p>Labortablo: <keyseq> <key>Orko Modifier</key><key>Shift</key><key>KP Delete</key> </keyseq></p>
+        </item>
+        <item>
+          <p>Tekomputilo: <keyseq> <key>Orko Modifier</key><key>Ctrl</key><key>Right Bracket</key> </keyseq></p>
+        </item>
+      </list>
+    </item>
+  </list>
+</page>

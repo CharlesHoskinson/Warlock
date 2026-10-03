@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_chat" xml:lang="id">
+  <info>
+    <link type="next" xref="commands_debugging"/>
+    <link type="guide" xref="commands#accessing_dynamic_information"/>
+    <link type="seealso" xref="preferences_chat"/>
+    <title type="sort">2. Obrolan</title>
+    <title type="link">Mengobrol</title>
+    <desc>Perintah untuk digunakan dengan klien IM dan IRC</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020, 2025.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Perintah Obrolan</title>
+  <p>Perintah berikut dapat digunakan untuk mengakses informasi dalam klien pesan instan dan Internet Relay Chat yang didukung oleh <app>Orca</app>. Anda akan melihat bahwa beberapa dari perintah ini "tidak diikat." Silakan lihat <link xref="howto_key_bindings"> Memodifikasi Pengikatan Tombol</link> untuk informasi tentang cara mengikat perintah ini ke penekanan tombol.</p>
+  <list>
+    <item>
+      <p>
+        Present previous chat room message: (Unbound)
+      </p>
+    </item>
+    <item>
+      <p>
+        Present next chat room message: (Unbound)
+      </p>
+    </item>
+    <item>
+      <p>
+        Enable/disable announcement of room name with messages: (Unbound)
+      </p>
+    </item>
+    <item>
+      <p>
+        Toggle chat room specific message histories: (unbound)
+      </p>
+    </item>
+    <item>
+      <p>Enable/disable announcement of buddy typing status: (Unbound)</p>
+    </item>
+    <item>
+      <p>Toggle room name presentation: (Unbound)</p>
+    </item>
+  </list>
+</page>

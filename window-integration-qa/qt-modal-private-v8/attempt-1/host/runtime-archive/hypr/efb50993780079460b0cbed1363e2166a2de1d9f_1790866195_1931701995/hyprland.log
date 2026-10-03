@@ -1,0 +1,1193 @@
+DEBUG ]: Old rlimit: soft -> 65536, hard -> 524288
+DEBUG ]: New rlimit: soft -> 524288, hard -> 524288
+WARN ]: WARNING: Hyprland is being launched without start-hyprland. This is highly advised against.
+DEBUG ]: Creating the EventLoopManager!
+DEBUG ]: Creating the KeybindManager!
+DEBUG ]: Creating the AnimationManager!
+DEBUG ]: Creating the DynamicPermissionManager!
+DEBUG ]: Creating the MonitorState!
+DEBUG ]: Creating the WorkspaceState!
+DEBUG ]: Creating the ConfigManager!
+DEBUG ]: [cfg] Config is either explicit or special.
+DEBUG ]: [cfg] Config is lua, loading lua mgr
+DEBUG ]: Creating the Error Overlay!
+DEBUG ]: Creating the LayoutManager!
+DEBUG ]: Creating the TokenManager!
+DEBUG ]: Creating the EventManager!
+DEBUG ]: Creating the PointerManager!
+DEBUG ]: Creating the AsyncResourceGatherer!
+DEBUG from aquamarine ]: Creating an Aquamarine backend!
+DEBUG from aquamarine ]: Private AQ_BACKENDS=wayland: mandatory parent, no DRM or libseat backend
+DEBUG from aquamarine ]: Starting the Aquamarine backend!
+DEBUG from aquamarine ]: Starting the Wayland backend!
+DEBUG from aquamarine ]: Connected to a wayland compositor: Hyprland
+DEBUG from aquamarine ]: Got registry at 0x60d6c322a210
+DEBUG from aquamarine ]: New wayland keyboard wl_keyboard
+DEBUG from aquamarine ]: New wayland pointer wl_pointer
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got main device
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got node /dev/dri/renderD129
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got done
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: opened node /dev/dri/renderD129 with fd 16
+DEBUG from aquamarine ]: Output WAYLAND-1: initialized
+DEBUG from aquamarine ]: reopenDRMNode: opening node /dev/dri/renderD129
+DEBUG from aquamarine ]: Created a GBM allocator with drm fd 17
+DEBUG ]: Instance Signature: efb50993780079460b0cbed1363e2166a2de1d9f_1790866195_1931701995
+DEBUG ]: Runtime directory: /run/user/1000/wqa/4026/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790866195_1931701995
+DEBUG ]: Hyprland PID: 589838
+DEBUG ]: ===== SYSTEM INFO: =====
+DEBUG ]: Hyprland 0.56.2 built from branch v0.56.2 at commit efb50993780079460b0cbed1363e2166a2de1d9f clean ([gha] Nix: update inputs).
+Date: Wed Aug 5 14:13:21 2026
+Tag: v0.56.2, commits: 7661
+
+Libraries:
+Hyprgraphics: built against 0.5.1, system has 0.5.1
+Hyprutils: built against 0.14.1, system has 0.14.2
+Hyprcursor: built against 0.1.13, system has 0.1.13
+Hyprlang: built against 0.6.8, system has 0.6.8
+Aquamarine: built against 0.15.0, system has 0.15.0
+
+Version ABI string: efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6
+no flags were set
+
+
+System Information:
+System name: Linux
+Node name: hosk
+Release: 7.2.7-1-omarchy
+Version: #1 SMP PREEMPT_DYNAMIC Sun, 27 Sep 2026 22:42:08 +0000
+
+Libraries:
+Hyprgraphics: built against 0.5.1, system has 0.5.1
+Hyprutils: built against 0.14.1, system has 0.14.2
+Hyprcursor: built against 0.1.13, system has 0.1.13
+Hyprlang: built against 0.6.8, system has 0.6.8
+Aquamarine: built against 0.15.0, system has 0.15.0
+
+
+
+GPU information: 
+00:02.0 VGA compatible controller [0300]: Intel Corporation Arrow Lake-S [Intel Graphics] [8086:7d67] (rev 06) (prog-if 00 [VGA controller])
+02:00.0 VGA compatible controller [0300]: NVIDIA Corporation GB203M / GN22-X11 [GeForce RTX 5090 Max-Q / Mobile] [10de:2c58] (rev a1) (prog-if 00 [VGA controller])
+80:14.5 Non-VGA unclassified device [0000]: Intel Corporation Device [8086:7f2f] (rev 10)
+NVRM version: NVIDIA UNIX Open Kernel Module for x86_64  615.71.09  Release Build  (root@archiso)  
+
+
+os-release: NAME="Omarchy"
+PRETTY_NAME="Omarchy"
+ID=omarchy
+ID_LIKE=arch
+BUILD_ID="4.0.4.legion"
+VERSION_ID="4.0.4.legion"
+ANSI_COLOR="38;2;158;206;106"
+HOME_URL="https://omarchy.org/"
+DOCUMENTATION_URL="https://learn.omacom.io/2/the-omarchy-manual"
+SUPPORT_URL="https://discord.gg/tXFUdasqhY"
+BUG_REPORT_URL="https://github.com/basecamp/omarchy/issues"
+LOGO=omarchy
+
+
+plugins:
+	unknown: not runtime
+
+Backend: sessionless
+
+Monitor info:
+
+State:
+
+configProvider: lua
+backend: wayland
+
+
+
+DEBUG ]: ========================
+DEBUG ]: 
+
+
+DEBUG ]: If you are crashing, or encounter any bugs, please consult https://wiki.hypr.land/Crashes-and-Bugs/
+
+
+DEBUG ]: 
+Current splash: It's not awesome, it's Hyprland!
+
+
+DEBUG ]: Running on DRMFD: 16
+DEBUG ]: Using RENDERNODEFD: 16
+DEBUG ]: DRM DisplayNode syncobj timeline support: yes
+DEBUG ]: DRM RenderNode syncobj timeline support: yes
+DEBUG ]: wl_display_add_socket for wayland-1 succeeded with 0
+DEBUG ]: Creating the CHyprOpenGLImpl!
+DEBUG ]: Supported EGL global extensions: (16) EGL_EXT_device_base EGL_EXT_device_enumeration EGL_EXT_device_query EGL_EXT_platform_base EGL_KHR_client_get_all_proc_addresses EGL_EXT_client_extensions EGL_KHR_debug EGL_EXT_platform_device EGL_EXT_explicit_device EGL_EXT_platform_wayland EGL_KHR_platform_wayland EGL_EXT_platform_x11 EGL_KHR_platform_x11 EGL_EXT_platform_xcb EGL_MESA_platform_gbm EGL_KHR_platform_gbm EGL_MESA_platform_surfaceless
+DEBUG ]: eglDeviceFromDRMFD: Using device /dev/dri/card0
+DEBUG ]: EGL: IMG_context_priority supported, requesting high
+DEBUG ]: EGL: EXT_create_context_robustness supported, requesting lose on reset
+DEBUG ]: EGL: Using KHR_context_flush_control
+DEBUG ]: EGL: Got a high priority context
+DEBUG ]: Creating the Hypr OpenGL Renderer!
+DEBUG ]: Using: OpenGL ES 3.2 Mesa 26.2.2-arch1.1
+DEBUG ]: Vendor: Intel
+DEBUG ]: Renderer: Mesa Intel(R) Graphics (ARL)
+DEBUG ]: Supported extensions: (167) GL_EXT_blend_minmax GL_EXT_multi_draw_arrays GL_EXT_texture_filter_anisotropic GL_EXT_texture_compression_s3tc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_format_BGRA8888 GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth24 GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_mapbuffer GL_OES_rgb8_rgba8 GL_OES_standard_derivatives GL_OES_stencil8 GL_OES_texture_3D GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_vertex_half_float GL_EXT_draw_instanced GL_EXT_texture_sRGB_decode GL_OES_EGL_image GL_OES_depth_texture GL_AMD_performance_monitor GL_OES_packed_depth_stencil GL_EXT_texture_type_2_10_10_10_REV GL_NV_conditional_render GL_OES_get_program_binary GL_APPLE_texture_max_level GL_EXT_discard_framebuffer GL_EXT_read_format_bgra GL_EXT_texture_storage GL_NV_pack_subimage GL_NV_texture_barrier GL_EXT_frag_depth GL_NV_fbo_color_attachments GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_array_object GL_OES_viewport_array GL_ANGLE_pack_reverse_row_order GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_EXT_occlusion_query_boolean GL_EXT_robustness GL_EXT_sRGB GL_EXT_texture_rg GL_EXT_unpack_subimage GL_NV_draw_buffers GL_NV_read_buffer GL_NV_read_depth GL_NV_read_depth_stencil GL_NV_read_stencil GL_APPLE_sync GL_EXT_draw_buffers GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_shadow_samplers GL_KHR_debug GL_KHR_robustness GL_KHR_texture_compression_astc_ldr GL_NV_generate_mipmap_sRGB GL_NV_pixel_buffer_object GL_OES_depth_texture_cube_map GL_OES_required_internalformat GL_OES_surfaceless_context GL_EXT_color_buffer_float GL_EXT_debug_label GL_EXT_sRGB_write_control GL_EXT_separate_shader_objects GL_EXT_shader_framebuffer_fetch GL_EXT_shader_group_vote GL_EXT_shader_implicit_conversions GL_EXT_shader_integer_mix GL_EXT_tessellation_point_size GL_EXT_tessellation_shader GL_INTEL_conservative_rasterization GL_INTEL_performance_query GL_ANDROID_extension_pack_es31a GL_EXT_base_instance GL_EXT_compressed_ETC1_RGB8_sub_texture GL_EXT_copy_image GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_gpu_shader5 GL_EXT_multi_draw_indirect GL_EXT_polygon_offset_clamp GL_EXT_primitive_bounding_box GL_EXT_render_snorm GL_EXT_shader_io_blocks GL_EXT_texture_border_clamp GL_EXT_texture_buffer GL_EXT_texture_cube_map_array GL_EXT_texture_norm16 GL_EXT_texture_view GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_KHR_context_flush_control GL_KHR_robust_buffer_access_behavior GL_NV_image_formats GL_NV_shader_noperspective_interpolation GL_OES_copy_image GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_gpu_shader5 GL_OES_primitive_bounding_box GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_io_blocks GL_OES_shader_multisample_interpolation GL_OES_tessellation_point_size GL_OES_tessellation_shader GL_OES_texture_border_clamp GL_OES_texture_buffer GL_OES_texture_cube_map_array GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_texture_view GL_EXT_blend_func_extended GL_EXT_buffer_storage GL_EXT_float_blend GL_EXT_geometry_point_size GL_EXT_geometry_shader GL_EXT_shader_samples_identical GL_EXT_texture_sRGB_R8 GL_KHR_no_error GL_KHR_texture_compression_astc_sliced_3d GL_NV_fragment_shader_interlock GL_OES_EGL_image_external_essl3 GL_OES_geometry_point_size GL_OES_geometry_shader GL_OES_shader_image_atomic GL_EXT_clear_texture GL_EXT_clip_cull_distance GL_EXT_conservative_depth GL_EXT_disjoint_timer_query GL_EXT_texture_compression_s3tc_srgb GL_MESA_shader_integer_functions GL_EXT_clip_control GL_EXT_color_buffer_half_float GL_EXT_memory_object GL_EXT_memory_object_fd GL_EXT_semaphore GL_EXT_semaphore_fd GL_EXT_texture_compression_bptc GL_EXT_texture_mirror_clamp_to_edge GL_KHR_parallel_shader_compile GL_NV_alpha_to_coverage_dither_control GL_EXT_EGL_image_storage GL_EXT_shader_framebuffer_fetch_non_coherent GL_EXT_texture_shadow_lod GL_INTEL_blackhole_render GL_MESA_framebuffer_flip_y GL_NV_compute_shader_derivatives GL_EXT_demote_to_helper_invocation GL_EXT_depth_clamp GL_EXT_texture_query_lod GL_KHR_shader_subgroup GL_MESA_sampler_objects GL_EXT_EGL_image_storage_compression GL_EXT_texture_storage_compression GL_MESA_bgra GL_MESA_texture_const_bandwidth GL_EXT_shader_clock 
+DEBUG ]: Supported EGL display extensions: (33) EGL_ANDROID_blob_cache EGL_ANDROID_native_fence_sync EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_IMG_context_priority EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_partial_update EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_image_dma_buf_export EGL_MESA_query_driver EGL_MESA_x11_native_visual_id 
+DEBUG ]: Supported DMA-BUF formats:
+DEBUG ]: EGL: GPU Supports Format AB4H (0x48344241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XB4H (0x48344258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AB48 (0x38344241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XB48 (0x38344258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AR30 (0x30335241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XR30 (0x30335258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AB30 (0x30334241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XB30 (0x30334258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AR24 (0x34325241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AB24 (0x34324241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XR24 (0x34325258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XB24 (0x34324258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AR15 (0x35315241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AR12 (0x32315241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format RG16 (0x36314752)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format R8 (0x20203852)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format R16 (0x20363152)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format GR88 (0x38385247)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format GR32 (0x32335247)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format R  H (0x48202052)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format R  F (0x46202052)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format GR H (0x48205247)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format GR F (0x46205247)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AB8F (0x46384241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format YUV9 (0x39565559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YU11 (0x31315559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YU12 (0x32315559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YU16 (0x36315559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YU24 (0x34325559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YVU9 (0x39555659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YV11 (0x31315659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YV12 (0x32315659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YV16 (0x36315659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YV24 (0x34325659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S010 (0x30313053)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S210 (0x30313253)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S410 (0x30313453)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S012 (0x32313053)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S212 (0x32313253)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S412 (0x32313453)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S016 (0x36313053)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S216 (0x36313253)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S416 (0x36313453)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV12 (0x3231564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV21 (0x3132564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format P010 (0x30313050)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format P012 (0x32313050)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format P016 (0x36313050)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format P030 (0x30333050)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV16 (0x3631564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV61 (0x3136564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV24 (0x3432564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV42 (0x3234564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format AYUV (0x56555941)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format XYUV (0x56555958)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y410 (0x30313459)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y412 (0x32313459)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y416 (0x36313459)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YUYV (0x56595559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YVYU (0x55595659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format UYVY (0x59565955)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format VYUY (0x59555956)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y210 (0x30313259)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y212 (0x32313259)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y216 (0x36313259)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: 65 formats found in total. Some modifiers may be omitted as they are external-only.
+DEBUG ]: Creating the HyprRenderer!
+DEBUG ]: Aq backend has no session, omitting full DRM node checks
+DEBUG ]: Primary DRM driver information: i915 v1.6.0 from 0 description Intel Graphics
+DEBUG ]: Creating the ProtocolManager!
+DEBUG ]: [IWaylandProtocol] Registered global [WLSeat]
+DEBUG ]: [IWaylandProtocol] Registered global [WLDataDevice]
+DEBUG ]: [IWaylandProtocol] Registered global [WLCompositor]
+DEBUG ]: [IWaylandProtocol] Registered global [WLSubcompositor]
+DEBUG ]: [IWaylandProtocol] Registered global [WLSHM]
+DEBUG ]: [IWaylandProtocol] Registered global [Viewporter]
+DEBUG ]: [IWaylandProtocol] Registered global [TearingControl]
+DEBUG ]: [IWaylandProtocol] Registered global [FractionalScale]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGOutput]
+DEBUG ]: [IWaylandProtocol] Registered global [CursorShape]
+DEBUG ]: [IWaylandProtocol] Registered global [IdleInhibit]
+DEBUG ]: [IWaylandProtocol] Registered global [RelativePointer]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGDecoration]
+DEBUG ]: [IWaylandProtocol] Registered global [AlphaModifier]
+DEBUG ]: [IWaylandProtocol] Registered global [GammaControl]
+DEBUG ]: [IWaylandProtocol] Registered global [ForeignToplevel]
+DEBUG ]: [IWaylandProtocol] Registered global [PointerGestures]
+DEBUG ]: [IWaylandProtocol] Registered global [ForeignToplevelWlr]
+DEBUG ]: [IWaylandProtocol] Registered global [ShortcutsInhibit]
+DEBUG ]: [IWaylandProtocol] Registered global [TextInputV1]
+DEBUG ]: [IWaylandProtocol] Registered global [TextInputV3]
+DEBUG ]: [IWaylandProtocol] Registered global [PointerConstraints]
+DEBUG ]: [IWaylandProtocol] Registered global [OutputPower]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGActivation]
+DEBUG ]: [IWaylandProtocol] Registered global [IdleNotify]
+DEBUG ]: [IWaylandProtocol] Registered global [IdleNotify]
+DEBUG ]: [IWaylandProtocol] Registered global [SessionLock]
+DEBUG ]: [IWaylandProtocol] Registered global [IMEv2]
+DEBUG ]: [IWaylandProtocol] Registered global [VirtualKeyboard]
+DEBUG ]: [IWaylandProtocol] Registered global [VirtualPointer]
+DEBUG ]: [IWaylandProtocol] Registered global [OutputManagement]
+DEBUG ]: [IWaylandProtocol] Registered global [ServerDecorationKDE]
+DEBUG ]: [IWaylandProtocol] Registered global [FocusGrab]
+DEBUG ]: [IWaylandProtocol] Registered global [TabletV2]
+DEBUG ]: [IWaylandProtocol] Registered global [LayerShell]
+DEBUG ]: [IWaylandProtocol] Registered global [Presentation]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGShell]
+DEBUG ]: [IWaylandProtocol] Registered global [DataDeviceWlr]
+DEBUG ]: [IWaylandProtocol] Registered global [PrimarySelection]
+DEBUG ]: [IWaylandProtocol] Registered global [XWaylandShell]
+DEBUG ]: [IWaylandProtocol] Registered global [ToplevelMapping]
+DEBUG ]: [IWaylandProtocol] Registered global [GlobalShortcuts]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGDialog]
+DEBUG ]: [IWaylandProtocol] Registered global [SinglePixel]
+DEBUG ]: [IWaylandProtocol] Registered global [SecurityContext]
+DEBUG ]: [IWaylandProtocol] Registered global [CTMControl]
+DEBUG ]: [IWaylandProtocol] Registered global [InputCapture]
+DEBUG ]: [IWaylandProtocol] Registered global [HyprlandSurface]
+DEBUG ]: [IWaylandProtocol] Registered global [ContentType]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGTag]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGBell]
+DEBUG ]: [IWaylandProtocol] Registered global [Hotkey]
+DEBUG ]: [IWaylandProtocol] Registered global [ExtWorkspace]
+DEBUG ]: [IWaylandProtocol] Registered global [ExtDataDevice]
+DEBUG ]: [IWaylandProtocol] Registered global [PointerWarp]
+DEBUG ]: [IWaylandProtocol] Registered global [Fifo]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGForeignExporter]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGForeignImporter]
+DEBUG ]: [IWaylandProtocol] Registered global [BackgroundEffect]
+DEBUG ]: [IWaylandProtocol] Registered global [CommitTiming]
+DEBUG ]: [IWaylandProtocol] Registered global [Screencopy]
+DEBUG ]: [IWaylandProtocol] Registered global [ToplevelExport]
+DEBUG ]: [IWaylandProtocol] Registered global [OutputImageCaptureSource]
+DEBUG ]: [IWaylandProtocol] Registered global [ForeignToplevelImageCaptureSource]
+DEBUG ]: [IWaylandProtocol] Registered global [ImageCopyCapture]
+DEBUG ]: [IWaylandProtocol] Registered global [ColorManagement]
+DEBUG ]: [IWaylandProtocol] Registered global [MesaDRM]
+DEBUG ]: [IWaylandProtocol] Registered global [LinuxDMABUF]
+DEBUG ]: Creating the SeatManager!
+DEBUG ]: Creating the SessionLockManager!
+DEBUG ]: Creating CHyprCtl
+DEBUG ]: Hypr socket started at /run/user/1000/wqa/4026/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790866195_1931701995/.socket.sock
+DEBUG ]: Creating the InputManager!
+DEBUG ]: Creating the XWaylandManager!
+DEBUG ]: Creating the Debug Overlay!
+DEBUG ]: Creating the NotificationOverlay!
+DEBUG ]: Creating the PluginSystem!
+DEBUG ]: Creating the DecorationPositioner!
+DEBUG ]: Creating the CursorManager!
+DEBUG ]: [hc] CHyprcursorManager: attempting to find theme from env
+DEBUG ]: [hc] themeNameFromEnv: env unset
+DEBUG ]: [hc] CHyprcursorManager: attempting to find any theme
+DEBUG ]: [hc] CHyprcursorManager: no themes matched
+ERR ]: Hyprcursor failed loading theme "", falling back to Xcursor.
+DEBUG ]: XCursor scanning theme default
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/default/index.theme
+DEBUG ]: XCursor theme default inherits Adwaita
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme AdwaitaLegacy
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/AdwaitaLegacy/index.theme
+DEBUG ]: XCursor theme AdwaitaLegacy inherits hicolor
+DEBUG ]: XCursor scanning theme hicolor
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/hicolor/index.theme
+DEBUG ]: XCursor already has a shape default loaded, skipping
+DEBUG ]: XCursor already has a shape context-menu loaded, skipping
+DEBUG ]: XCursor already has a shape help loaded, skipping
+DEBUG ]: XCursor already has a shape pointer loaded, skipping
+DEBUG ]: XCursor already has a shape progress loaded, skipping
+DEBUG ]: XCursor already has a shape wait loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name plus, skipping
+DEBUG ]: XCursor already has a shape crosshair loaded, skipping
+DEBUG ]: XCursor already has a shape text loaded, skipping
+DEBUG ]: XCursor already has a shape vertical-text loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-link, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape move loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-none, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name crossed_circle, skipping
+DEBUG ]: XCursor already has a shape grab loaded, skipping
+DEBUG ]: XCursor already has a shape grabbing loaded, skipping
+DEBUG ]: XCursor already has a shape e-resize loaded, skipping
+DEBUG ]: XCursor already has a shape n-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ne-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape s-resize loaded, skipping
+DEBUG ]: XCursor already has a shape se-resize loaded, skipping
+DEBUG ]: XCursor already has a shape sw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape w-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ew-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ns-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nesw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nwse-resize loaded, skipping
+DEBUG ]: XCursor already has a shape col-resize loaded, skipping
+DEBUG ]: XCursor already has a shape row-resize loaded, skipping
+DEBUG ]: XCursor already has a shape all-scroll loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-in loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-out loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape all-resize loaded, skipping
+DEBUG ]: [hc] CHyprcursorManager: attempting to find theme from env
+DEBUG ]: [hc] themeNameFromEnv: env unset
+DEBUG ]: [hc] CHyprcursorManager: attempting to find any theme
+DEBUG ]: [hc] CHyprcursorManager: no themes matched
+ERR ]: Hyprcursor failed loading theme "", falling back to Xcursor.
+DEBUG ]: XCursor scanning theme default
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/default/index.theme
+DEBUG ]: XCursor theme default inherits Adwaita
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme AdwaitaLegacy
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/AdwaitaLegacy/index.theme
+DEBUG ]: XCursor theme AdwaitaLegacy inherits hicolor
+DEBUG ]: XCursor scanning theme hicolor
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/hicolor/index.theme
+DEBUG ]: XCursor already has a shape default loaded, skipping
+DEBUG ]: XCursor already has a shape context-menu loaded, skipping
+DEBUG ]: XCursor already has a shape help loaded, skipping
+DEBUG ]: XCursor already has a shape pointer loaded, skipping
+DEBUG ]: XCursor already has a shape progress loaded, skipping
+DEBUG ]: XCursor already has a shape wait loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name plus, skipping
+DEBUG ]: XCursor already has a shape crosshair loaded, skipping
+DEBUG ]: XCursor already has a shape text loaded, skipping
+DEBUG ]: XCursor already has a shape vertical-text loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-link, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape move loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-none, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name crossed_circle, skipping
+DEBUG ]: XCursor already has a shape grab loaded, skipping
+DEBUG ]: XCursor already has a shape grabbing loaded, skipping
+DEBUG ]: XCursor already has a shape e-resize loaded, skipping
+DEBUG ]: XCursor already has a shape n-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ne-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape s-resize loaded, skipping
+DEBUG ]: XCursor already has a shape se-resize loaded, skipping
+DEBUG ]: XCursor already has a shape sw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape w-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ew-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ns-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nesw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nwse-resize loaded, skipping
+DEBUG ]: XCursor already has a shape col-resize loaded, skipping
+DEBUG ]: XCursor already has a shape row-resize loaded, skipping
+DEBUG ]: XCursor already has a shape all-scroll loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-in loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-out loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape all-resize loaded, skipping
+DEBUG ]: Creating the VersionKeeper!
+DEBUG ]: FsUtils::getDataHome: no hyprland data home, creating.
+DEBUG ]: Creating the DonationNag!
+DEBUG ]: Creating the WelcomeManager!
+DEBUG ]: [welcome] skipping, not autogen
+DEBUG ]: Creating the ANRManager!
+DEBUG ]: Starting XWayland
+DEBUG ]: XWayland has been disabled, cleaning up...
+DEBUG ]: Hyprland init finished.
+DEBUG ]: Running on WAYLAND_DISPLAY: wayland-1
+DEBUG ]: Hyprland is ready, running the event loop!
+DEBUG from aquamarine ]: backend: poll fd 14 for implementation wayland
+DEBUG from aquamarine ]: backend: poll fd 12 for implementation headless
+DEBUG from aquamarine ]: backend: poll fd 13 for idle
+DEBUG ]: New aquamarine keyboard with name wl_keyboard
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 60d6c34c0890's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard wl_keyboard
+DEBUG ]: Updated keymap fd to 40, keymap V1 to: 42
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "wl_keyboard"
+DEBUG ]: New keyboard created, pointers Hypr: 60d6c34c0890 and AQ: 60d6c323e630
+DEBUG ]: New aquamarine pointer with name wl_pointer
+DEBUG ]: Attached pointer wl_pointer to global
+DEBUG ]: New mouse created, pointer AQ: 60d6c323e8f0
+DEBUG from aquamarine ]: Output WAYLAND-1: wm_capabilities received
+DEBUG from aquamarine ]: Output WAYLAND-1: stage toplevel configure 1600x1000 until surface ACK
+DEBUG from aquamarine ]: Output WAYLAND-1: configure surface with 1
+DEBUG ]: New aquamarine output with name WAYLAND-1
+DEBUG ]: [CMonitorStateTracker] New monitor: WAYLAND-1
+DEBUG ]: Applying monitor rule for WAYLAND-1
+ERR ]: Monitor WAYLAND-1 has NO PREFERRED MODE
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1600, y: 1000] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1600, y: 1000] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1600, y: 1000] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: Swapchain: Reconfigured a swapchain to [Vector2D: x: 1600, y: 1000] XR24 of length 3
+DEBUG ]: CMonitorState::ensureBufferPresent: no buffer or mismatched format, attaching one from the swapchain for modeset being possible
+DEBUG ]: Monitor WAYLAND-1: requested 1600x1000@60.00Hz, using custom mode 1600x1000@0.00Hz
+DEBUG ]: output WAYLAND-1 succeeded basic test on format DRM_FORMAT_XRGB8888
+DEBUG ]: Starting ScreenshareManager
+DEBUG ]: Monitor WAYLAND-1 -> destroyed all render data
+DEBUG ]: CMonitor::updateVCGTRamps: skipping, no gamma ramp for output
+DEBUG ]: Monitor WAYLAND-1 data dump: res 1600x1000@60.00Hz, scale 1.00, transform 0, pos -1x-1, 10b 0
+WARN from aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+DEBUG ]: Added new monitor with name WAYLAND-1 at [-1, -1] with size [1600, 1000], pointer 60d6c323f030
+DEBUG ]: New monitor: WORKSPACEID 1, exists: 0
+DEBUG ]: checking if we have seen this monitor before: WAYLAND-1
+DEBUG ]: Monitor WAYLAND-1 was not on any workspace
+DEBUG from aquamarine ]: GBM: Automatically selected format AR24 for new GBM buffer
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 24, y: 24] and format AR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: GBM: Automatically selected format AR24 for new GBM buffer
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 24, y: 24] and format AR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: Swapchain: Reconfigured a swapchain to [Vector2D: x: 24, y: 24] AR24 of length 2
+DEBUG ]: Framebuffer "Monitor WAYLAND-1 blur FB" created, status 36053
+DEBUG ]: Shaders initialized successfully.
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: compiling feature set 1 for surface.frag
+DEBUG ]: [IWaylandProtocol] Registered global [WLOutput (WAYLAND-1)]
+DEBUG ]: arrangeMonitors: 1 to arrange
+DEBUG ]: arrangeMonitors: WAYLAND-1 explicit [0, 0]
+DEBUG ]: arrangeMonitors: WAYLAND-1 xwayland [0, 0]
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+WARN ]: [FallbackStateKeeper] Start fired, removing fallback timer
+DEBUG ]: Framebuffer "Monitor WAYLAND-1 workbuffer" created, status 36053
+DEBUG ]: compiling feature set 0 for passthru.frag
+WARN from aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+WARN ]: FIXME: color management protocol is enabled and outputs changed, check preferred image description changes
+DEBUG from aquamarine ]: Output WAYLAND-1: stage toplevel configure 1600x1000 until surface ACK
+DEBUG from aquamarine ]: Output WAYLAND-1: configure surface with 3
+DEBUG from aquamarine ]: [wayland] focus changed: WAYLAND-1
+WARN from aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+DEBUG ]: Hyprctl: new connection from pid 589694
+DEBUG ]: Hyprctl: new connection from pid 589864
+DEBUG ]: Hyprctl: new connection from pid 589865
+DEBUG ]: Hyprctl: new connection from pid 589866
+DEBUG ]: Hyprctl: new connection from pid 589867
+DEBUG ]: Hyprctl: new connection from pid 589868
+DEBUG ]: Hyprctl: new connection from pid 589869
+DEBUG ]: Hyprctl: new connection from pid 589870
+DEBUG ]: Hyprctl: new connection from pid 589871
+DEBUG ]: Hyprctl: new connection from pid 589872
+DEBUG ]: Hyprctl: new connection from pid 589873
+DEBUG ]: Hyprctl: new connection from pid 589874
+DEBUG ]: Hyprctl: new connection from pid 589875
+DEBUG ]: Hyprctl: new connection from pid 589876
+DEBUG ]: Hyprctl: new connection from pid 589892
+DEBUG ]: getAddressForTrampo: Allocating new page for hooks
+DEBUG ]: seekNewPageAddr: page 0x60d696cd5000 - 0x60d696e3f000
+DEBUG ]: seekNewPageAddr: page 0x60d696e3f000 - 0x60d6978f6000
+DEBUG ]: seekNewPageAddr: Anchored to hyprland at 0x60d696e3f000
+DEBUG ]: seekNewPageAddr: page 0x60d6978f6000 - 0x60d697b43000
+DEBUG ]: seekNewPageAddr: page 0x60d697b43000 - 0x60d697b67000
+DEBUG ]: seekNewPageAddr: page 0x60d697b67000 - 0x60d697c31000
+DEBUG ]: seekNewPageAddr: page 0x60d697c31000 - 0x60d697c41000
+DEBUG ]: seekNewPageAddr: page 0x60d6c3152000 - 0x60d6c69cb000
+DEBUG ]: seekNewPageAddr: found gap: 0x60d697c41000-0x60d6c3152000 (726732800 bytes)
+DEBUG ]: Attempted to allocate 0x60d697c41000, got 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c41000 for page at 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c41020 for page at 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c41040 for page at 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c41060 for page at 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c41080 for page at 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c410a0 for page at 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c410c0 for page at 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c410e0 for page at 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c41100 for page at 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c41120 for page at 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c41140 for page at 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c41160 for page at 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c41180 for page at 0x60d697c41000
+DEBUG ]: getAddressForTrampo: Returning addr 0x60d697c411a0 for page at 0x60d697c41000
+DEBUG ]:  [PluginSystem] Plugin hyprbars loaded. Handle: 60d6c41152f0, path: "/home/hoskinson/.local/lib/libhyprbars-controls-v18.so", author: "Vaxry", description: "A plugin to add title bars to windows.", version: "1.0"
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 1 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 589895
+DEBUG ]: Hyprctl: new connection from pid 589908
+DEBUG ]: Hyprctl: new connection from pid 589909
+DEBUG ]: Hyprctl: new connection from pid 589910
+DEBUG ]: Hyprctl: new connection from pid 589911
+DEBUG ]:  [PluginSystem] Plugin qt_modal_probe loaded. Handle: 60d6c343f070, path: "/home/hoskinson/window-integration-qa/qt-modal-private-v8/native-probe/libqt-modal-probe.so", author: "QA", description: "Private read-only Qt modal QA observation", version: "1"
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 2 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 589965
+DEBUG ]: Hyprctl: new connection from pid 589966
+DEBUG ]: Hyprctl: new connection from pid 589967
+DEBUG ]: Hyprctl: new connection from pid 589969
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 60d6c3faabd0
+DEBUG ]: [CWLDataDeviceProtocol] New datamgr resource bound at 60d6c34c6840
+DEBUG ]: [CWLDataDeviceManagerResource] New data device bound at 60d6c34d4420
+DEBUG ]: [CPrimarySelectionProtocol] New primary_seletion_manager at 60d6c34c11e0
+DEBUG ]: [CPrimarySelectionManager] New primary selection data device bound at 60d6c3471770
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 60d6c3591f90 (not xwayland)
+DEBUG ]: [CXDGShellProtocol] New xdg_wm_base at 60d6c34d3510
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 33 at 60d6c411af60
+DEBUG ]: [CWLCompositorResource] New wl_region with id 36 at 60d6c34d58c0
+DEBUG ]: [CXDGWMBase] New xdg_surface at 60d6c4080b20
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 60d6c34d3510 gets a toplevel 60d6c32d9050
+DEBUG ]: CWLSurface 60d6c322b930 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: Window 60d6c414acc0 set title to Qt WindowModal QA owner
+DEBUG ]: Window 60d6c414acc0 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 1600, y: 1000] for [Window 60d6c414acc0: title: "Qt WindowModal QA owner"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token ad827bfc-3d96-4c00-a821-e26941785de3
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 41 at 60d6c414b3f0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 44 at 60d6c34482b0
+DEBUG ]: [CXDGWMBase] New xdg_surface at 60d6c3fa3e80
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 60d6c34d3510 gets a toplevel 60d6c3229460
+DEBUG ]: CWLSurface 60d6c34727b0 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: Window 60d6c4118f80 set title to Qt WindowModal QA peer
+DEBUG ]: Window 60d6c4118f80 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 1600, y: 1000] for [Window 60d6c4118f80: title: "Qt WindowModal QA peer"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 60c32b2f-8a21-4590-8bae-c8f7a86adb6e
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 60d6c4080b20 requests geometry 0x0 1600x1000
+DEBUG ]: [CWLCompositorResource] New wl_region with id 44 at 60d6c324c4e0
+DEBUG ]: Set keyboard focus to surface 60d6c411af60, with [Window 60d6c414acc0: title: "Qt WindowModal QA owner"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 36.00000], window size: [1558.00000, 943.00000]
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 60d6c3fa3e80 requests geometry 0x0 1600x1000
+DEBUG ]: [CWLCompositorResource] New wl_region with id 51 at 60d6c3fa6680
+DEBUG ]: Set keyboard focus to surface 60d6c414b3f0, with [Window 60d6c4118f80: title: "Qt WindowModal QA peer"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 36.00000], window size: [773.00000, 943.00000]
+DEBUG ]: compiling feature set 16 for shadow.frag
+DEBUG ]: compiling feature set 0 for quad.frag
+DEBUG ]: compiling feature set 0 for surface.frag
+DEBUG ]: compiling feature set 8 for border.frag
+DEBUG ]: Hyprctl: new connection from pid 589978
+DEBUG ]: Hyprctl: new connection from pid 589980
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 60d6c4080b20 requests geometry 0x0 773x943
+DEBUG ]: [CWLCompositorResource] New wl_region with id 62 at 60d6c40fe5d0
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 60d6c3fa3e80 requests geometry 0x0 773x943
+DEBUG ]: [CWLCompositorResource] New wl_region with id 67 at 60d6c4463f70
+DEBUG ]: Hyprctl: new connection from pid 589981
+DEBUG ]: Hyprctl: new connection from pid 589982
+DEBUG ]: Hyprctl: new connection from pid 589983
+DEBUG ]: Hyprctl: new connection from pid 589984
+DEBUG ]: Hyprctl: new connection from pid 589986
+DEBUG ]: Hyprctl: new connection from pid 589988
+DEBUG ]: Hyprctl: new connection from pid 589990
+DEBUG ]: Hyprctl: new connection from pid 589991
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 60d6c3fa3e80 requests geometry 0x0 1558x943
+DEBUG ]: [CWLCompositorResource] New wl_region with id 55 at 60d6c40f3e60
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 60d6c4080b20 requests geometry 0x0 460x300
+DEBUG ]: [CWLCompositorResource] New wl_region with id 68 at 60d6c40f3e60
+DEBUG ]: Hyprctl: new connection from pid 589993
+DEBUG ]: Hyprctl: new connection from pid 589994
+DEBUG ]: Hyprctl: new connection from pid 589995
+DEBUG ]: Hyprctl: new connection from pid 589996
+DEBUG ]: Hyprctl: new connection from pid 589999
+DEBUG ]: Hyprctl: new connection from pid 590000
+DEBUG ]: Hyprctl: new connection from pid 590001
+DEBUG ]: Hyprctl: new connection from pid 590002
+DEBUG ]: Removing last node (dwindle)
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 60d6c3fa3e80 requests geometry 0x0 1600x1000
+DEBUG ]: [CWLCompositorResource] New wl_region with id 57 at 60d6c40f7590
+DEBUG ]: Hyprctl: new connection from pid 590003
+DEBUG ]: Hyprctl: new connection from pid 590004
+DEBUG ]: Hyprctl: new connection from pid 590005
+DEBUG ]: Hyprctl: new connection from pid 590006
+DEBUG ]: Hyprctl: new connection from pid 590007
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 60d6c3fa3e80 requests geometry 0x0 460x300
+DEBUG ]: [CWLCompositorResource] New wl_region with id 65 at 60d6c3231dc0
+DEBUG ]: Hyprctl: new connection from pid 590008
+DEBUG ]: Hyprctl: new connection from pid 590063
+DEBUG ]: Hyprctl: new connection from pid 590068
+DEBUG ]: Hyprctl: new connection from pid 590084
+DEBUG ]: Hyprctl: new connection from pid 590085
+DEBUG ]: [CVirtualPointerProtocol] New VPointer at id 3
+DEBUG ]: Attached pointer unknown-device to global
+DEBUG ]: New virtual mouse created
+DEBUG ]: Hyprctl: new connection from pid 590087
+DEBUG ]: Hyprctl: new connection from pid 590088
+DEBUG ]: Hyprctl: new connection from pid 590104
+DEBUG ]: Hyprctl: new connection from pid 590105
+DEBUG ]: Hyprctl: new connection from pid 590106
+DEBUG ]: Hyprctl: new connection from pid 590107
+DEBUG ]: Set keyboard focus to surface 60d6c411af60, with [Window 60d6c414acc0: title: "Qt WindowModal QA owner"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: cursorImage request: shape 1 -> default
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 590108
+DEBUG ]: Hyprctl: new connection from pid 590109
+DEBUG ]: Hyprctl: new connection from pid 590110
+DEBUG ]: Hyprctl: new connection from pid 590111
+DEBUG ]: Hyprctl: new connection from pid 590119
+DEBUG ]: Hyprctl: new connection from pid 590120
+DEBUG ]: Hyprctl: new connection from pid 590121
+DEBUG ]: Hyprctl: new connection from pid 590122
+DEBUG ]: Hyprctl: new connection from pid 590123
+DEBUG ]: Hyprctl: new connection from pid 590124
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 69 at 60d6c4879e80
+DEBUG ]: [CWLCompositorResource] New wl_region with id 71 at 60d6c4bd2c40
+DEBUG ]: [CXDGWMBase] New xdg_surface at 60d6c4bf0140
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 60d6c34d3510 gets a toplevel 60d6c48fc0b0
+DEBUG ]: CWLSurface 60d6c497d920 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: [CXDGToplevelResource] Toplevel 60d6c48fc0b0 sets parent to 60d6c32d9050
+DEBUG ]: Window 60d6c45a7250 set title to Qt WindowModal QA child
+DEBUG ]: Window 60d6c45a7250 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 60d6c45a7250: title: "Qt WindowModal QA child"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 59cf925e-6838-46a3-bc28-f2aceb894ed4
+DEBUG ]: compiling feature set 4 for surface.frag
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 60d6c4bf0140 requests geometry 0x0 320x180
+DEBUG ]: Set keyboard focus to surface 60d6c4879e80, with [Window 60d6c45a7250: title: "Qt WindowModal QA child"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [170.00000, 310.00000], window size: [320.00000, 180.00000]
+DEBUG ]: Hyprctl: new connection from pid 590125
+DEBUG ]: Hyprctl: new connection from pid 590126
+DEBUG ]: Hyprctl: new connection from pid 590127
+DEBUG ]: Hyprctl: new connection from pid 590128
+DEBUG ]: Hyprctl: new connection from pid 590129
+DEBUG ]: Hyprctl: new connection from pid 590130
+DEBUG ]: Hyprctl: new connection from pid 590131
+DEBUG ]: Hyprctl: new connection from pid 590132
+DEBUG ]: Hyprctl: new connection from pid 590133
+DEBUG ]: Hyprctl: new connection from pid 590134
+DEBUG ]: Hyprctl: new connection from pid 590135
+DEBUG ]: Hyprctl: new connection from pid 590136
+DEBUG ]: Hyprctl: new connection from pid 590137
+DEBUG ]: Hyprctl: new connection from pid 590138
+DEBUG ]: Hyprctl: new connection from pid 590139
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: cursorImage request: shape 1 -> default
+DEBUG ]: Hyprctl: new connection from pid 590140
+DEBUG ]: Hyprctl: new connection from pid 590141
+DEBUG ]: Hyprctl: new connection from pid 590142
+DEBUG ]: Hyprctl: new connection from pid 590143
+DEBUG ]: Set keyboard focus to surface 60d6c414b3f0, with [Window 60d6c4118f80: title: "Qt WindowModal QA peer"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 1c36a068-1488-4172-8c0c-1e293c113a8b
+DEBUG ]: Hyprctl: new connection from pid 590145
+DEBUG ]: Hyprctl: new connection from pid 590146
+DEBUG ]: Hyprctl: new connection from pid 590147
+DEBUG ]: Hyprctl: new connection from pid 590148
+DEBUG ]: Hyprctl: new connection from pid 590149
+DEBUG ]: Hyprctl: new connection from pid 590150
+DEBUG ]: Hyprctl: new connection from pid 590151
+DEBUG ]: Hyprctl: new connection from pid 590152
+DEBUG ]: Hyprctl: new connection from pid 590153
+DEBUG ]: Hyprctl: new connection from pid 590154
+DEBUG ]: Hyprctl: new connection from pid 590155
+DEBUG ]: Hyprctl: new connection from pid 590156
+DEBUG ]: Hyprctl: new connection from pid 590157
+DEBUG ]: Hyprctl: new connection from pid 590158
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 590159
+DEBUG ]: Hyprctl: new connection from pid 590160
+DEBUG ]: Hyprctl: new connection from pid 590161
+DEBUG ]: Hyprctl: new connection from pid 590162
+DEBUG ]: Hyprctl: new connection from pid 590170
+DEBUG ]: Hyprctl: new connection from pid 590171
+DEBUG ]: Hyprctl: new connection from pid 590172
+DEBUG ]: Hyprctl: new connection from pid 590173
+DEBUG ]: Hyprctl: new connection from pid 590174
+DEBUG ]: Hyprctl: new connection from pid 590175
+DEBUG ]: Hyprctl: new connection from pid 590176
+DEBUG ]: Hyprctl: new connection from pid 590177
+DEBUG ]: Pointer at 60d6c44f0110 removed
+DEBUG ]: [Window 60d6c45a7250: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] unmapped
+DEBUG ]: renderer: making a snapshot of 60d6c45a7250
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 60d6c45a7250
+DEBUG ]: renderer: rendered a snapshot of 60d6c45a7250
+DEBUG ]: renderer: made a snapshot of 60d6c45a7250
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: Unmapped was not focused, ignoring a refocus.
+DEBUG ]: [Window 60d6c45a7250: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 60d6c497d920 called destroy()
+DEBUG ]: [Window 60d6c4118f80: title: "Qt WindowModal QA peer", class: qt-window-modal-fixture] unmapped
+DEBUG ]: renderer: making a snapshot of 60d6c4118f80
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 60d6c4118f80
+DEBUG ]: renderer: rendered a snapshot of 60d6c4118f80
+DEBUG ]: renderer: made a snapshot of 60d6c4118f80
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: On closed window, new focused candidate is [Window 60d6c414acc0: title: "Qt WindowModal QA owner"]
+DEBUG ]: Set keyboard focus to surface 60d6c411af60, with [Window 60d6c414acc0: title: "Qt WindowModal QA owner"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: [Window 60d6c4118f80: title: "Qt WindowModal QA peer", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 60d6c34727b0 called destroy()
+DEBUG ]: [Window 60d6c414acc0: title: "Qt WindowModal QA owner", class: qt-window-modal-fixture] unmapped
+DEBUG ]: renderer: making a snapshot of 60d6c414acc0
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 60d6c414acc0
+DEBUG ]: renderer: rendered a snapshot of 60d6c414acc0
+DEBUG ]: renderer: made a snapshot of 60d6c414acc0
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: On closed window, new focused candidate is [Window nullptr]
+DEBUG ]: [Window 60d6c414acc0: title: "Qt WindowModal QA owner", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 60d6c322b930 called destroy()
+DEBUG ]: Cleanup: removed 3 fadeouts
+DEBUG ]: Hyprctl: new connection from pid 590178
+DEBUG ]: Hyprctl: new connection from pid 590179
+DEBUG ]: Hyprctl: new connection from pid 590180
+DEBUG ]: Hyprctl: new connection from pid 590181
+DEBUG ]:  [PluginSystem] Plugin qt_modal_probe unloaded.
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 3 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 590182
+DEBUG ]: Hyprctl: new connection from pid 590183
+ERR ]: failed to unregister plugin event for lua hyprbars.drag_start: event not found.
+ERR ]: failed to unregister plugin event for lua hyprbars.drag_finish: event not found.
+DEBUG ]:  [PluginSystem] Plugin hyprbars unloaded.
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 4 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 590184
+DEBUG ]: Hyprland received signal 15
+DEBUG ]: Hyprland is stopping!
+DEBUG ]: Kicked off the event loop! :(
+DEBUG ]: Monitor WAYLAND-1 -> destroyed all render data
+DEBUG ]: Destroying workspace ID 1
+DEBUG ]: Hyprland has reached the end.

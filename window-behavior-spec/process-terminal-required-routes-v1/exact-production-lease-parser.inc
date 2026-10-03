@@ -1,0 +1,6 @@
+QVariant leaseValue=rawLease;if(leaseValue.metaType()==QMetaType::fromType<QJSValue>()){const auto value=leaseValue.value<QJSValue>();if(!value.isNumber())throw Refused("Exact numeric terminal lease required");leaseValue=QVariant(value.toNumber());}sourceGuard();uint64_t lease=0;
+ if(leaseValue.metaType()==QMetaType::fromType<double>()){const auto n=leaseValue.toDouble();if(!std::isfinite(n)||n<=0||n>=double(SAFE_MAX)||n!=std::floor(n))throw Refused("Exact safe terminal lease required");lease=uint64_t(n);}
+ else if(leaseValue.metaType()==QMetaType::fromType<qulonglong>()||leaseValue.metaType()==QMetaType::fromType<uint>()){lease=leaseValue.toULongLong();}
+ else if(leaseValue.metaType()==QMetaType::fromType<qlonglong>()||leaseValue.metaType()==QMetaType::fromType<int>()){const auto n=leaseValue.toLongLong();if(n<=0)throw Refused("Positive terminal lease required");lease=uint64_t(n);}
+ else throw Refused("Numeric terminal lease type required; Boolean/string refused");
+ if(!lease||lease>=SAFE_MAX)throw Refused("Terminal lease representability refused");sourceGuard();

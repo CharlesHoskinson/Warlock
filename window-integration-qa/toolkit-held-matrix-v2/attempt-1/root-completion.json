@@ -1,0 +1,51 @@
+{
+  "result": "retained-precase-failure",
+  "reportSHA256": "63132af366b0aa6aade70eb4f34ff272e467cb61615d89d3ff07bc667dba1baa",
+  "sourceManifestSHA256": "cbb66ebca91faace4dff00dd8dc731b53fcc21605431221282c0457d915d2f21",
+  "allFrozenInputsExact": true,
+  "inputCount": 20364,
+  "modeCount": 20364,
+  "linkCount": 320,
+  "mainPreservation": {
+    "allStableClientFields": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "typedClipboardAndPrimary": true,
+    "a11ySocketFlagsAndReaderEnabled": true,
+    "outputs": true,
+    "plugins": true,
+    "keyboardStates": true,
+    "fourCatalogNaturalBytes": true,
+    "dashboardBytes": true,
+    "originalFilesProcess": true,
+    "originalFilesPublicState": true,
+    "originalFilesFullUi": true,
+    "originalFilesVisibility": true,
+    "OriginalEnvironmentUnchanged": true,
+    "AllFrozenInputsExact": true,
+    "SourceManifestUnchanged": true
+  },
+  "all18MainChecksPassed": true,
+  "actualCaseCount": 0,
+  "normalNativeUnload": false,
+  "allRecordedOriginalProcessesGone": true,
+  "privateRuntimeGone": true,
+  "forcedShellShutdown": {
+    "identity": {
+      "pid": 1635534,
+      "start": "11860404",
+      "pgid": 1635534,
+      "parent": 1635184
+    },
+    "normalLifecycle": false,
+    "forcedTermination": true,
+    "forcedKill": true
+  },
+  "featureAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "mainWrites": false,
+  "attribution": "Initial QS IPC ping raised before bounded wait could classify readiness; qs-list stdout not JSON during shutdown; no actual held case reached",
+  "scope": "qa-harness-72a6b4f2dc7543749b11eaf26b7ad39e",
+  "invocation": "3ef7a2a7fa6d45988ddf3bf94a63ed33"
+}

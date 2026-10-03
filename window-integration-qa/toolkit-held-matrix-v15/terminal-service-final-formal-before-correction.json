@@ -1,0 +1,50 @@
+{
+  "result": "pass",
+  "named": 9,
+  "samples": 2000,
+  "steps": 100,
+  "serviceGuardStillDraftBeforeCorrection": true,
+  "sourceHashes": {
+    "terminal_drain.py": "38cce63f8e2e8b32e685fee38e56834a1a6583cefc19b167300640a6696d8547",
+    "run_native.py": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+    "payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.qml": "d3f52ecfc810e309d3c7dcff30bf46784b569b0ab03692fafcd7a5c6626d4280"
+  },
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_terminal_authority.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_terminal_authority_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  service_terminal_authority_test\n    ok originalAttemptedStopIsInsufficientTest passed 1 test(s)\n    ok normalExactClosedServiceCanQuiesceTest passed 1 test(s)\n    ok capturedLiveServiceCannotQuiesceTest passed 1 test(s)\n    ok exactGoneWithoutNormalExitDoesNotQuiesceTest passed 1 test(s)\n    ok rendererResourceUnknownCannotQuiesceTest passed 1 test(s)\n    ok sourceRootMismatchAndUnknownExitRefuseTest passed 1 test(s)\n    ok verifiedNoServiceMayQuiesceTest passed 1 test(s)\n    ok notCreatedIsInsufficientWithoutObservedAbsenceTest passed 1 test(s)\n    ok laterUnknownRevokesAuthorityPreservesPhysicalQuiesceTest passed 1 test(s)\n\n  9 passing (305ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_terminal_authority.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1682ms at 1189 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "nativeLaunch": false
+}

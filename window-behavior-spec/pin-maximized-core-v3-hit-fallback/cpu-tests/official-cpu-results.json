@@ -1,0 +1,2942 @@
+{
+  "tests": 270,
+  "failures": 0,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-10-02T14:13:01Z",
+  "time": "0.014s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "Config",
+      "tests": 22,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "monitorParserName",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserDefaults",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 13,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserModeStandard",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 22,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserModeKeywords",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 38,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserModeOmitted",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 56,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserModeInvalid",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 63,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserPositionExplicit",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 69,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserPositionAuto",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 79,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserPositionOmitted",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 101,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserPositionAutoCenter",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 109,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserScaleValid",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 127,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserScaleOmitted",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 145,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserScaleInvalid",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 152,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserTransformValid",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 158,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserTransformInvalid",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 166,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserBitdepth",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 177,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserCM",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 187,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserVRR",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 201,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserSDRBrightness",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 220,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserICC",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 230,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserSetDisabled",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 240,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserSetMirror",
+          "file": "tests\/config\/MonitorParser.cpp",
+          "line": 246,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Config"
+        }
+      ]
+    },
+    {
+      "name": "ConfigLuaValueTypes",
+      "tests": 11,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "boolParseAndReset",
+          "file": "tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 63,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "boolBadType",
+          "file": "tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 86,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "intBooleanCastAndRangeAndMap",
+          "file": "tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 100,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "floatParseAndRange",
+          "file": "tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 132,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "stringValidatorAndEmptyPush",
+          "file": "tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 150,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "colorParseAndPush",
+          "file": "tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 179,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "vec2ParseValidateAndPush",
+          "file": "tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 202,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "expressionVec2AcceptsStringNumberAndTableForms",
+          "file": "tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 246,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "cssGapParseFormsAndRange",
+          "file": "tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 290,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "fontWeightParse",
+          "file": "tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 333,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "gradientParseAndPush",
+          "file": "tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 356,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        }
+      ]
+    },
+    {
+      "name": "ConfigLuaBindingsInternal",
+      "tests": 9,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "parseDirectionAliases",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 148,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "parseToggleAliases",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 160,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "argStrConvertsStringsAndNumbers",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 169,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "tableOptHelpersReadOptionalFields",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 182,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "selectorHelpersAcceptStringAndNumberSelectors",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 208,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "pushWindowUpvalAcceptsNumberAndStringSelectors",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 235,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "parseTableFieldMissingFieldAndPrefixedErrors",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 266,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "pluginBindingIsTableWithLoadFunction",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 288,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "pluginLuaFnIsUnloadedWithoutDanglingCall",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 305,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        }
+      ]
+    },
+    {
+      "name": "ConfigLuaRequire",
+      "tests": 6,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0.005s",
+      "testsuite": [
+        {
+          "name": "absolutePathLoadsAndTracksFile",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 351,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0.001s",
+          "classname": "ConfigLuaRequire"
+        },
+        {
+          "name": "relativePathResolvesFromConfigDirectory",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 375,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaRequire"
+        },
+        {
+          "name": "wildcardLoadsSortedTableAndTracksFilesAndDirectory",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 401,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaRequire"
+        },
+        {
+          "name": "wildcardNoMatchIsCatchableError",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 430,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaRequire"
+        },
+        {
+          "name": "normalModuleRequireStillUsesConfigDirectoryPackagePath",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 450,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaRequire"
+        },
+        {
+          "name": "packagePathPreservesLuaDefaultsAfterConfigDirectory",
+          "file": "tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 476,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaRequire"
+        }
+      ]
+    },
+    {
+      "name": "ConfigLuaUtils",
+      "tests": 4,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "fromGenericValueMapsSupportedTypes",
+          "file": "tests\/config\/lua\/LuaConfigUtils.cpp",
+          "line": 46,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaUtils"
+        },
+        {
+          "name": "fromGenericValueReturnsNullForUnsupportedType",
+          "file": "tests\/config\/lua\/LuaConfigUtils.cpp",
+          "line": 94,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaUtils"
+        },
+        {
+          "name": "fromGenericValueCopiesRefreshBits",
+          "file": "tests\/config\/lua\/LuaConfigUtils.cpp",
+          "line": 99,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaUtils"
+        },
+        {
+          "name": "typedAccessorsReadStoredValues",
+          "file": "tests\/config\/lua\/LuaConfigUtils.cpp",
+          "line": 107,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaUtils"
+        }
+      ]
+    },
+    {
+      "name": "ConfigLuaEventHandler",
+      "tests": 8,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "knownEventsContainsExpectedEntries",
+          "file": "tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 55,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "registerDispatchAndUnregister",
+          "file": "tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 62,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "registerUnknownEventReturnsNullopt",
+          "file": "tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 91,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "callbackLuaErrorDoesNotCrashDispatch",
+          "file": "tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 105,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "addCustomEventAndDispatchToLua",
+          "file": "tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 120,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "removingPluginEventUnregistersLuaEvent",
+          "file": "tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 149,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "addCustomEventDuplicateFails",
+          "file": "tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 162,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "removeNonexistentCustomEventFails",
+          "file": "tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 173,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        }
+      ]
+    },
+    {
+      "name": "ConfigLuaObjects",
+      "tests": 7,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "keybindCanToggleEnabledFromLua",
+          "file": "tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 61,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        },
+        {
+          "name": "workspaceRuleCanToggleEnabledFromLua",
+          "file": "tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 83,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        },
+        {
+          "name": "keybindExposesMetadataAndRemoveMethods",
+          "file": "tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 105,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        },
+        {
+          "name": "objectsAreReadOnlyFromLua",
+          "file": "tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 163,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        },
+        {
+          "name": "keybindSupportsEqAndToString",
+          "file": "tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 178,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        },
+        {
+          "name": "eventSubscriptionRemoveAndIsActive",
+          "file": "tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 210,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        },
+        {
+          "name": "eventSubscriptionSupportsEqAndToString",
+          "file": "tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 250,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        }
+      ]
+    },
+    {
+      "name": "ParserUtils",
+      "tests": 6,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "parseIntDecimal",
+          "file": "tests\/config\/shared\/ParserUtils.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ParserUtils"
+        },
+        {
+          "name": "parseIntHex",
+          "file": "tests\/config\/shared\/ParserUtils.cpp",
+          "line": 14,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ParserUtils"
+        },
+        {
+          "name": "parseIntBooleanStrings",
+          "file": "tests\/config\/shared\/ParserUtils.cpp",
+          "line": 20,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ParserUtils"
+        },
+        {
+          "name": "parseIntInvalid",
+          "file": "tests\/config\/shared\/ParserUtils.cpp",
+          "line": 30,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ParserUtils"
+        },
+        {
+          "name": "parseColor",
+          "file": "tests\/config\/shared\/ParserUtils.cpp",
+          "line": 37,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ParserUtils"
+        },
+        {
+          "name": "parseColorBad",
+          "file": "tests\/config\/shared\/ParserUtils.cpp",
+          "line": 53,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "ParserUtils"
+        }
+      ]
+    },
+    {
+      "name": "WorkspaceRuleManager",
+      "tests": 6,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "defaultWorkspaceMatchesMonitorName",
+          "file": "tests\/config\/shared\/WorkspaceRuleManager.cpp",
+          "line": 50,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceRuleManager"
+        },
+        {
+          "name": "defaultWorkspaceMatchesMonitorDescription",
+          "file": "tests\/config\/shared\/WorkspaceRuleManager.cpp",
+          "line": 60,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceRuleManager"
+        },
+        {
+          "name": "defaultWorkspaceMatchesMonitorShortDescription",
+          "file": "tests\/config\/shared\/WorkspaceRuleManager.cpp",
+          "line": 71,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceRuleManager"
+        },
+        {
+          "name": "defaultWorkspaceSkipsNonMatchingMonitor",
+          "file": "tests\/config\/shared\/WorkspaceRuleManager.cpp",
+          "line": 82,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceRuleManager"
+        },
+        {
+          "name": "disabledDefaultWorkspaceIsSkipped",
+          "file": "tests\/config\/shared\/WorkspaceRuleManager.cpp",
+          "line": 93,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceRuleManager"
+        },
+        {
+          "name": "replaceOrAddKeepsExistingSharedRule",
+          "file": "tests\/config\/shared\/WorkspaceRuleManager.cpp",
+          "line": 104,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceRuleManager"
+        }
+      ]
+    },
+    {
+      "name": "Desktop",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "reservedArea",
+          "file": "tests\/desktop\/Reserved.cpp",
+          "line": 6,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Desktop"
+        }
+      ]
+    },
+    {
+      "name": "BoolMatchEngine",
+      "tests": 10,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "truthyStringOne",
+          "file": "tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "truthyStringTrue",
+          "file": "tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 13,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "truthyStringYes",
+          "file": "tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 19,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "truthyStringOn",
+          "file": "tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 25,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "truthyCaseInsensitive",
+          "file": "tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 31,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "falsyStringZero",
+          "file": "tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 42,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "falsyStringFalse",
+          "file": "tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 48,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "falsyStringNo",
+          "file": "tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 54,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "falsyStringEmpty",
+          "file": "tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 60,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "falsyStringArbitrary",
+          "file": "tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 66,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        }
+      ]
+    },
+    {
+      "name": "IntMatchEngine",
+      "tests": 8,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "positiveInteger",
+          "file": "tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "zero",
+          "file": "tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 14,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "negativeInteger",
+          "file": "tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 20,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "invalidStringDefaultsToZero",
+          "file": "tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 26,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "emptyStringDefaultsToZero",
+          "file": "tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 32,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "leadingWhitespace",
+          "file": "tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 38,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "trailingNonDigits",
+          "file": "tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 43,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "largeValue",
+          "file": "tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 48,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        }
+      ]
+    },
+    {
+      "name": "RegexMatchEngine",
+      "tests": 9,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "exactMatch",
+          "file": "tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "wildcardPattern",
+          "file": "tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 14,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "fullMatchRequired",
+          "file": "tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 21,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "characterClass",
+          "file": "tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 28,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "negativePrefix",
+          "file": "tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 36,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "negativeWithWildcard",
+          "file": "tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 43,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "emptyPattern",
+          "file": "tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 50,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "dotMatchesSingleChar",
+          "file": "tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 56,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "alternation",
+          "file": "tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 64,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        }
+      ]
+    },
+    {
+      "name": "TagMatchEngine",
+      "tests": 7,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "matchesExistingTag",
+          "file": "tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        },
+        {
+          "name": "doesNotMatchMissingTag",
+          "file": "tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 16,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        },
+        {
+          "name": "emptyKeeper",
+          "file": "tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 24,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        },
+        {
+          "name": "negativeTagMatching",
+          "file": "tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 31,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        },
+        {
+          "name": "dynamicTagMatchesWithoutStrict",
+          "file": "tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 42,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        },
+        {
+          "name": "caseSensitive",
+          "file": "tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 50,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        },
+        {
+          "name": "tagRemoval",
+          "file": "tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 61,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        }
+      ]
+    },
+    {
+      "name": "EventBusCustomEvent",
+      "tests": 5,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "emitWithCorrectArgsSucceedsAndDelivers",
+          "file": "tests\/event\/EventBusCustomEvent.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "EventBusCustomEvent"
+        },
+        {
+          "name": "emitWithTooFewArgsFails",
+          "file": "tests\/event\/EventBusCustomEvent.cpp",
+          "line": 23,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "EventBusCustomEvent"
+        },
+        {
+          "name": "emitWithTooManyArgsFails",
+          "file": "tests\/event\/EventBusCustomEvent.cpp",
+          "line": 31,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "EventBusCustomEvent"
+        },
+        {
+          "name": "emitWithWrongArgTypeFails",
+          "file": "tests\/event\/EventBusCustomEvent.cpp",
+          "line": 39,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "EventBusCustomEvent"
+        },
+        {
+          "name": "listenerReceivesCorrectArgTypes",
+          "file": "tests\/event\/EventBusCustomEvent.cpp",
+          "line": 47,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "EventBusCustomEvent"
+        }
+      ]
+    },
+    {
+      "name": "Helpers",
+      "tests": 66,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "byteOperatorsIntegral",
+          "file": "tests\/helpers\/ByteOperations.cpp",
+          "line": 5,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "byteOperatorsFloating",
+          "file": "tests\/helpers\/ByteOperations.cpp",
+          "line": 13,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "byteOperatorsZero",
+          "file": "tests\/helpers\/ByteOperations.cpp",
+          "line": 20,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "byteConversionFunctions",
+          "file": "tests\/helpers\/ByteOperations.cpp",
+          "line": 27,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "byteOperatorsChain",
+          "file": "tests\/helpers\/ByteOperations.cpp",
+          "line": 35,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "cmTypeFromStringValid",
+          "file": "tests\/helpers\/CMType.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "cmTypeFromStringInvalid",
+          "file": "tests\/helpers\/CMType.cpp",
+          "line": 19,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "cmTypeToString",
+          "file": "tests\/helpers\/CMType.cpp",
+          "line": 27,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "cmTypeRoundTrip",
+          "file": "tests\/helpers\/CMType.cpp",
+          "line": 39,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorConstructorDefault",
+          "file": "tests\/helpers\/Color.cpp",
+          "line": 5,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorConstructorFloats",
+          "file": "tests\/helpers\/Color.cpp",
+          "line": 13,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorConstructorHex",
+          "file": "tests\/helpers\/Color.cpp",
+          "line": 21,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorGetAsHex",
+          "file": "tests\/helpers\/Color.cpp",
+          "line": 42,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorStripA",
+          "file": "tests\/helpers\/Color.cpp",
+          "line": 53,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorModifyA",
+          "file": "tests\/helpers\/Color.cpp",
+          "line": 66,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorEquality",
+          "file": "tests\/helpers\/Color.cpp",
+          "line": 79,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorConstants",
+          "file": "tests\/helpers\/Color.cpp",
+          "line": 90,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "directionFromCharValid",
+          "file": "tests\/helpers\/Direction.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "directionFromCharInvalid",
+          "file": "tests\/helpers\/Direction.cpp",
+          "line": 16,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "directionToString",
+          "file": "tests\/helpers\/Direction.cpp",
+          "line": 24,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "directionFromCharToString",
+          "file": "tests\/helpers\/Direction.cpp",
+          "line": 32,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "drmDevIDFromFDCharacterDevice",
+          "file": "tests\/helpers\/Drm.cpp",
+          "line": 9,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "drmDevIDFromFDRejectsRegularFiles",
+          "file": "tests\/helpers\/Drm.cpp",
+          "line": 23,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionBasicArithmetic",
+          "file": "tests\/helpers\/Expression.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionOrderOfOperations",
+          "file": "tests\/helpers\/Expression.cpp",
+          "line": 15,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionNegativeNumbers",
+          "file": "tests\/helpers\/Expression.cpp",
+          "line": 23,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionFloatingPoint",
+          "file": "tests\/helpers\/Expression.cpp",
+          "line": 30,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionWithVariables",
+          "file": "tests\/helpers\/Expression.cpp",
+          "line": 37,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionMultipleVariables",
+          "file": "tests\/helpers\/Expression.cpp",
+          "line": 45,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionInvalidInput",
+          "file": "tests\/helpers\/Expression.cpp",
+          "line": 54,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionZero",
+          "file": "tests\/helpers\/Expression.cpp",
+          "line": 62,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionVec2ParsesLegacyString",
+          "file": "tests\/helpers\/Expression.cpp",
+          "line": 69,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatDrmToShm",
+          "file": "tests\/helpers\/Format.cpp",
+          "line": 13,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatShmToDrm",
+          "file": "tests\/helpers\/Format.cpp",
+          "line": 18,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatDrmShmRoundTrip",
+          "file": "tests\/helpers\/Format.cpp",
+          "line": 23,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatIsFormatYUV",
+          "file": "tests\/helpers\/Format.cpp",
+          "line": 28,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatGetPixelFormatFromDRM",
+          "file": "tests\/helpers\/Format.cpp",
+          "line": 36,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatIsFormatOpaque",
+          "file": "tests\/helpers\/Format.cpp",
+          "line": 50,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatPixelsPerBlock",
+          "file": "tests\/helpers\/Format.cpp",
+          "line": 55,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatMinStride",
+          "file": "tests\/helpers\/Format.cpp",
+          "line": 61,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatShmBufferLayoutValid",
+          "file": "tests\/helpers\/Format.cpp",
+          "line": 69,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatDrmFormatName",
+          "file": "tests\/helpers\/Format.cpp",
+          "line": 87,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatAlphaFormat",
+          "file": "tests\/helpers\/Format.cpp",
+          "line": 93,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathWlTransformToHyprutils",
+          "file": "tests\/helpers\/MathTransform.cpp",
+          "line": 10,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathWlTransformToHyprutilsInvalid",
+          "file": "tests\/helpers\/MathTransform.cpp",
+          "line": 21,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathInvertTransformNonRotated",
+          "file": "tests\/helpers\/MathTransform.cpp",
+          "line": 28,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathInvertTransformRotated",
+          "file": "tests\/helpers\/MathTransform.cpp",
+          "line": 36,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathInvertTransformFlippedRotated",
+          "file": "tests\/helpers\/MathTransform.cpp",
+          "line": 42,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathInvertTransformDoubleInvert",
+          "file": "tests\/helpers\/MathTransform.cpp",
+          "line": 48,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathComposeTransformIdentity",
+          "file": "tests\/helpers\/MathTransform.cpp",
+          "line": 58,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathComposeTransformRotation",
+          "file": "tests\/helpers\/MathTransform.cpp",
+          "line": 67,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "escapeJSONStringsBasic",
+          "file": "tests\/helpers\/MiscFunctions.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "escapeJSONStringsSpecialChars",
+          "file": "tests\/helpers\/MiscFunctions.cpp",
+          "line": 12,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "isDirectionString",
+          "file": "tests\/helpers\/MiscFunctions.cpp",
+          "line": 22,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "normalizeAngleRadInRange",
+          "file": "tests\/helpers\/MiscFunctions.cpp",
+          "line": 44,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "normalizeAngleRadNegative",
+          "file": "tests\/helpers\/MiscFunctions.cpp",
+          "line": 50,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "normalizeAngleRadLarge",
+          "file": "tests\/helpers\/MiscFunctions.cpp",
+          "line": 55,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "stringToPercentagePercent",
+          "file": "tests\/helpers\/MiscFunctions.cpp",
+          "line": 62,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "stringToPercentageAbsolute",
+          "file": "tests\/helpers\/MiscFunctions.cpp",
+          "line": 69,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "truthyTrue",
+          "file": "tests\/helpers\/MiscFunctions.cpp",
+          "line": 77,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "truthyFalse",
+          "file": "tests\/helpers\/MiscFunctions.cpp",
+          "line": 88,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "transferFunctionFromStringNamed",
+          "file": "tests\/helpers\/TransferFunction.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "transferFunctionFromStringNumeric",
+          "file": "tests\/helpers\/TransferFunction.cpp",
+          "line": 15,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "transferFunctionFromStringInvalid",
+          "file": "tests\/helpers\/TransferFunction.cpp",
+          "line": 22,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "transferFunctionToString",
+          "file": "tests\/helpers\/TransferFunction.cpp",
+          "line": 29,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "transferFunctionRoundTrip",
+          "file": "tests\/helpers\/TransferFunction.cpp",
+          "line": 37,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "Helpers"
+        }
+      ]
+    },
+    {
+      "name": "DamageRing",
+      "tests": 29,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "setSizeMarksDamageEntire",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 9,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "setSizeSameSizeNoChange",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 17,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "setSizeNewSizeReDamages",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 27,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "setSizeZeroSize",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 36,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageReturnsTrueForRegionInsideSize",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 46,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageReturnsTrueForBoxInsideSize",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 55,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageReturnsFalseForEmptyRegion",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 63,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageReturnsFalseForInvalidBox",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 72,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageReturnsFalseForRegionOutsideSize",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 84,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageClipsRegionToSize",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 94,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageSetsHasChanged",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 105,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageEntireSetsHasChanged",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 119,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageEntireOnZeroSizeDoesNotSetHasChanged",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 129,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "rotateClearsCurrentDamage",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 140,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "rotatePreservesCurrentAsPreviousForNextFrame",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 148,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "rotateMultipleTimes",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 162,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageAge0ReturnsFullScreen",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 176,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageNegativeAgeReturnsFullScreen",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 186,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageExceedsRingLengthReturnsFullScreen",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 195,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageAge1ReturnCurrentOnly",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 205,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageAge2AccumulatesOnePreviousFrame",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 217,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageAccumulatesUpToRingLength",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 233,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageCoalescesWhenTooManyRects",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 250,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageEmptyRingReturnsEmptyForValidAge",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 278,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "hasChangedFalseInitially",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 293,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "hasChangedTrueAfterDamage",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 299,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "hasChangedFalseAfterRotate",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 309,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "hasChangedTrueAfterDamageEntire",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 317,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "hasChangedFalseAfterDamageOutsideBounds",
+          "file": "tests\/helpers\/DamageRing.cpp",
+          "line": 326,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        }
+      ]
+    },
+    {
+      "name": "TagKeeper",
+      "tests": 19,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "applyTagSetAddsTag",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagSetReturnsFalseIfAlreadySet",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 13,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagUnsetRemovesTag",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 21,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagUnsetReturnsFalseIfNotSet",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 28,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagToggleSetsWhenAbsent",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 35,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagToggleUnsetsWhenPresent",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 41,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagDynamicAppendsStar",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 50,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagDynamicDoesNotDoubleAppendStar",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 57,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedReturnsFalseWhenEmpty",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 66,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedExactMatch",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 71,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedMatchesDynamicWhenNotStrict",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 80,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedStrictDoesNotMatchDynamic",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 86,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedStrictMatchesExact",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 92,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedNegativeInvertsResult",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 100,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedNegativeWithDynamic",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 108,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "removeDynamicTagRemovesStarVariant",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 116,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "removeDynamicTagReturnsFalseIfNoDynamic",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 123,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "removeDynamicTagOnEmpty",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 130,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "getTagsReturnsAllStoredTags",
+          "file": "tests\/helpers\/TagKeeper.cpp",
+          "line": 137,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        }
+      ]
+    },
+    {
+      "name": "MonitorPositionController",
+      "tests": 9,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "explicitPositionsAreAppliedFirst",
+          "file": "tests\/state\/MonitorPositionController.cpp",
+          "line": 134,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "autoRightPlacesAfterRightmostEdge",
+          "file": "tests\/state\/MonitorPositionController.cpp",
+          "line": 150,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "autoLeftPlacesBeforeLeftmostEdge",
+          "file": "tests\/state\/MonitorPositionController.cpp",
+          "line": 162,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "autoDownPlacesBelowLowestEdge",
+          "file": "tests\/state\/MonitorPositionController.cpp",
+          "line": 174,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "autoUpPlacesAboveHighestEdge",
+          "file": "tests\/state\/MonitorPositionController.cpp",
+          "line": 186,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "autoCenterRightCentersVertically",
+          "file": "tests\/state\/MonitorPositionController.cpp",
+          "line": 198,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "autoCenterDownCentersHorizontally",
+          "file": "tests\/state\/MonitorPositionController.cpp",
+          "line": 210,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "xwaylandPositionsUseLogicalSizeByDefault",
+          "file": "tests\/state\/MonitorPositionController.cpp",
+          "line": 222,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "xwaylandPositionsUseTransformedSizeWhenForceZeroScaling",
+          "file": "tests\/state\/MonitorPositionController.cpp",
+          "line": 239,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        }
+      ]
+    },
+    {
+      "name": "MonitorQueryCore",
+      "tests": 14,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "queryById",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 126,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "queryByName",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 134,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "queryByDescriptionPrefix",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 142,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "queryByVectorInsideBox",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 152,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "closestMonitorForVectorOutsideAllBoxes",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 160,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "directionLookupRight",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 168,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "directionLookupChoosesLongestIntersection",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 176,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "configCurrentReturnsRelativeMonitor",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 185,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "configDirectionUsesRelativeMonitor",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 193,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "configRelativePositiveWraps",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 201,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "configRelativeNegativeWraps",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 211,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "configNumericId",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 220,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "configSelectorSkipsNoOutput",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 228,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "selectorQueryUsesInterfaceMatcher",
+          "file": "tests\/state\/MonitorQueryCore.cpp",
+          "line": 238,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        }
+      ]
+    },
+    {
+      "name": "WorkspaceQueryCore",
+      "tests": 14,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T14:13:01Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "queryById",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 17,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "queryByName",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 26,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "queryByNameString",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 35,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "queryByNumericString",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 44,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "queryByPlainNameString",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 53,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "queryBySpecialString",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 62,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "inertWorkspacesAreIgnored",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 72,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "invalidLookupReturnsNullopt",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 81,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "specialIdsMatchWorkspaceRange",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 90,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "newSpecialIDUsesHighestExistingSpecial",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 97,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "newSpecialIDUsesStartWhenNoneExist",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 108,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "nextAvailableNamedWorkspaceUsesExistingNamedWorkspaces",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 116,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "nextAvailableNamedWorkspaceIncludesPersistentRules",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 126,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "idOutOfBoundsIgnoresSpecialAndInertWorkspaces",
+          "file": "tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 135,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T14:13:01Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        }
+      ]
+    }
+  ]
+}

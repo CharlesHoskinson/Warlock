@@ -1,0 +1,5 @@
+{
+  "nativeExecuted": false,
+  "error": "Ancestral alias literal target changed",
+  "cause": "Some inherited map descriptors declare referent byte/mode rows through symlink paths without a literal-link entry. Original A3 add() separately captured current links. Preserve existing literal declarations and record current previously undeclared links, without inventing a historical target claim."
+}

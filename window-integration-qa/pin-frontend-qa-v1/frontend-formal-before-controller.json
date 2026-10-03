@@ -1,0 +1,37 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/pin-frontend-qa-v1/frontend_case.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  frontend_case\n    ok genuineFrontendTest passed 1 test(s)\n    ok diagnosticCannotOpenTest passed 1 test(s)\n    ok directNativeCannotInputTest passed 1 test(s)\n    ok wrongMemberCaptureRefusedTest passed 1 test(s)\n    ok wrongLayerRefusedTest passed 1 test(s)\n    ok disabledRowRefusedTest passed 1 test(s)\n    ok wrongKeyboardRouteRefusedTest passed 1 test(s)\n    ok missingReleaseRefusedTest passed 1 test(s)\n    ok malformedReceiptRefusedTest passed 1 test(s)\n    ok helperUncertainRefusedTest passed 1 test(s)\n    ok generationChangeRefusedTest passed 1 test(s)\n    ok peerMutationRefusedTest passed 1 test(s)\n    ok separateFocusRoutesRequiredTest passed 1 test(s)\n    ok staleReceiptAfterReopenRefusedTest passed 1 test(s)\n    ok noRetryTest passed 1 test(s)\n\n  15 passing (1364ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/pin-frontend-qa-v1/frontend_case.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (3406ms at 587 traces/second).\nUse --seed=0x14468d6 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "/home/hoskinson/window-integration-qa/pin-frontend-qa-v1/frontend_case.qnt": "06d2b5d9f830b9fc9196a5c02091d382d18e3bf65fa18822ec6ef92f07b9411a",
+    "/home/hoskinson/window-integration-qa/pin-frontend-qa-v1/FRONTEND_OBSERVATION_CONTRACT.md": "0e6ec74f732e6d28b6f8a2e7f4a5c05f54783d4375223245559f419196dd5927"
+  },
+  "sourceUnchanged": true,
+  "controllerAbsent": true,
+  "nativeExecuted": false
+}

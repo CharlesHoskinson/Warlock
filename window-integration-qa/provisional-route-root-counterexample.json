@@ -1,0 +1,22 @@
+{
+  "sourceSHA256": "5b472180c8ee61f1de308b2f70e1e604df64b3bedcab8fb9f2236058679a2441",
+  "observed": {
+    "recentAccepted": true,
+    "olderFrameAccepted": true,
+    "arbitraryRectangleMarkedReady": true,
+    "nativeEvents": [
+      {
+        "kind": "ready",
+        "token": "session-1",
+        "identity": [
+          "0x10",
+          "abc",
+          123
+        ],
+        "operation": "minimize"
+      }
+    ],
+    "frameAfterCloseAccepted": true
+  },
+  "productionTouched": false
+}

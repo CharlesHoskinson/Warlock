@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_key_bindings" xml:lang="sk">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_pronunciation"/>
+    <link type="seealso" xref="howto_key_bindings"/>
+    <title type="sort">6. Klávesové skratky</title>
+    <title type="link">Klávesové skratky</title>
+    <desc>Konfigurácia klávesových skratiek <app>Orca</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Predvoľby klávesových skratiek</title>
+  <section id="orca_modifier_keys">
+    <title>Modifikačné klávesy Orca</title>
+    <p>Rozbaľovací zoznam <gui>Modifikačné klávesy čítačky obrazovky</gui> vám umožňuje vybrať, ktorý kláves alebo klávesy budú slúžiť ako modifikátor Orca. Dostupné možnosti sú:</p>
+    <list>
+      <item>
+        <p><gui>KP_Insert</gui> (rovnaký kláves ako <key>0</key> na numerickej klávesnici)</p></item>
+      <item><p><gui>Insert</gui></p></item>
+      <item><p><gui>Insert, KP_Insert</gui></p></item>
+      <item><p><gui>Caps_Lock</gui></p></item>
+    </list>
+  </section>
+  <section id="key_bindings_table">
+    <title>Tabuľka klávesových skratiek</title>
+    <p>Tabuľka klávesových skratiek poskytuje zoznam operácií <app>Orca</app> a klávesov, ktoré sú k nim priradené.</p>
+    <list>
+      <item>
+        <p>Stĺpec <gui>Príkaz</gui> obsahuje popis príkazu <app>Orca</app>, ktorý sa má vykonať.</p>
+      </item>
+      <item>
+        <p>Stĺpec <gui>Klávesová skratka</gui> obsahuje klávesovú skratku aktuálne priradenú k príkazu <app>Orca</app>. Hodnotu tohto stĺpca môžete upraviť stlačením <key>Return</key>, stlačením klávesov pre nové priradenie a opätovným stlačením <key>Return</key>.</p>
+      </item>
+      <item>
+        <p>Stĺpec <gui>Zmenené</gui> slúži ako indikátor toho, čo bolo zmenené, a ako spôsob obnovenia predvolených priradení spojených s daným príkazom.</p>
+      </item>
+    </list>
+    <p>Pod zoznamom klávesových skratiek <app>Orca</app> nájdete skupinu „nepriradených“ príkazov. Sú to príkazy, ktoré považujeme za veľmi užitočné pre niektorých používateľov, ale nie sú potrebné pre väčšinu používateľov. Namiesto „vyčerpávania“ klávesovej skratky pre takéto príkazy sme ich predvolene ponechali nepriradené. Na konci zoznamu sú priradenia pre braillovo písmo, určené na použitie s obnoviteľným braillskym zobrazovačom.</p>
+  </section>
+</page>

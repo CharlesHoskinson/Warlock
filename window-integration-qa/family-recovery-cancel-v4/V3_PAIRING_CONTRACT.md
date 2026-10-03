@@ -1,0 +1,5 @@
+# V3 exact pairing contract
+
+This fresh collector retains immutable V2 and its failed actual baseline. Runtime integration only pairs the independently reviewed frozen service-family-query-v19; producer default V10 and native Toolkit V21 remain unchanged. The collector inherits all V2 declared bytes, modes and links, plus all V19 closure. Original38 baseline checks, timeouts, routes, observations,15 main checks and normal lifecycle are unchanged. Original fault checks and original same-packet successful baseline precondition remain unchanged; no fault launch is authorized by a failed baseline. No reduced/current-receipt/C1 pairing or production deployment is claimed.
+
+Only native_integration service path/manifest/checkpoint/digest and freeze ancestry, plus native_faults exact service-name guard differ. Every other copied byte is exact V2. The formal family-query proof precedes the V19 implementation; root35 CPU/kernel tests and full304/191/23x2000 source proof are retained. Native behavior still requires actual proof.

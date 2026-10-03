@@ -1,0 +1,56 @@
+Read-only diagnosis under diagnose-crash skill. No core extracted.
+           PID: 2387334 (qs)
+           TID: 2387334 (qs)
+           UID: 1000 (hoskinson)
+           GID: 1000 (hoskinson)
+        Signal: 11 (SEGV) si_code: SI_TKILL
+     Timestamp: Wed 2026-09-30 21:20:00 MDT (8min ago)
+  Command Line: qs -p /home/hoskinson/.local/share/hypr-window-controls -d -n
+    Executable: /usr/bin/quickshell
+ Control Group: /user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\x2dterminal\x2dexec-709acf58.scope
+          Unit: user@1000.service
+     User Unit: app-Hyprland-xdg\x2dterminal\x2dexec-709acf58.scope
+         Slice: user-1000.slice
+     Owner UID: 1000 (hoskinson)
+       Boot ID: c8675de33db04a0ebfe8cbe818f81ef0
+    Machine ID: 8ef74211da1f4de1a8469b59750a7a51
+      Hostname: hosk
+       Storage: /var/lib/systemd/coredump/core.qs.1000.c8675de33db04a0ebfe8cbe818f81ef0.2387334.1790824800000000.zst (present)
+  Size on Disk: 6.2M
+       Message: Process 2387334 (qs) of user 1000 dumped core.
+                
+                Stack trace of thread 2387334:
+                #0  0x00007963a029a17c n/a (libc.so.6 + 0x9a17c)
+                #1  0x00007963a023e5d0 raise (libc.so.6 + 0x3e5d0)
+                #2  0x000061fe3c64d389 n/a (quickshell + 0x124389)
+                #3  0x00007963a023e6f0 n/a (libc.so.6 + 0x3e6f0)
+                #4  0x00007963a1bcc5d5 _ZN12QInputMethod6commitEv (libQt6Gui.so.6 + 0x1cc5d5)
+                #5  0x00007963a27a1246 _ZN26QQuickDeliveryAgentPrivate17clearFocusInScopeEP10QQuickItemS1_N2Qt11FocusReasonE6QFlagsINS_11FocusOptionEE (libQt6Quick.so.6 + 0x3a1246)
+                #6  0x00007963a257fc1d _ZN10QQuickItem13setParentItemEPS_ (libQt6Quick.so.6 + 0x17fc1d)
+                #7  0x00007963a258069d _ZN10QQuickItemD1Ev (libQt6Quick.so.6 + 0x18069d)
+                #8  0x000061fe3c66690a n/a (quickshell + 0x13d90a)
+                #9  0x00007963a0bde5fa _ZN14QObjectPrivate14deleteChildrenEv (libQt6Core.so.6 + 0x1de5fa)
+                #10 0x00007963a0be63d6 _ZN7QObjectD2Ev (libQt6Core.so.6 + 0x1e63d6)
+                #11 0x000061fe3c751ef6 n/a (quickshell + 0x228ef6)
+                #12 0x00007963a0bde5fa _ZN14QObjectPrivate14deleteChildrenEv (libQt6Core.so.6 + 0x1de5fa)
+                #13 0x00007963a0be63d6 _ZN7QObjectD2Ev (libQt6Core.so.6 + 0x1e63d6)
+                #14 0x000061fe3c5e79a0 n/a (quickshell + 0xbe9a0)
+                #15 0x00007963a0bde5fa _ZN14QObjectPrivate14deleteChildrenEv (libQt6Core.so.6 + 0x1de5fa)
+                #16 0x00007963a0be63d6 _ZN7QObjectD2Ev (libQt6Core.so.6 + 0x1e63d6)
+                #17 0x000061fe3c87b453 n/a (quickshell + 0x352453)
+                #18 0x000061fe3c82703f n/a (quickshell + 0x2fe03f)
+                #19 0x000061fe3c60660a n/a (quickshell + 0xdd60a)
+                #20 0x000061fe3c5f6020 n/a (quickshell + 0xcd020)
+                #21 0x000061fe3c5fbcf0 n/a (quickshell + 0xd2cf0)
+                #22 0x000061fe3c5e4491 n/a (quickshell + 0xbb491)
+                #23 0x00007963a0227781 n/a (libc.so.6 + 0x27781)
+                #24 0x00007963a02278b9 __libc_start_main (libc.so.6 + 0x278b9)
+                #25 0x000061fe3c5e7085 n/a (quickshell + 0xbe085)
+                ELF object binary architecture: AMD x86-64
+
+Memory at audit:
+               total        used        free      shared  buff/cache   available
+Mem:            62Gi        14Gi        24Gi       2.9Gi        28Gi        47Gi
+Swap:          124Gi       1.5Gi       122Gi
+
+Confirmed trigger: exact QA controls shutdown while keyboard focus existed; native QInputMethod::commit during QQuickItem focus/destruction. No custom bridge frame appears, which does not establish causality/exoneration. Main shell/application data preserved. A safe normal shutdown regression remains required.

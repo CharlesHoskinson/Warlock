@@ -1,0 +1,97 @@
+{
+  "identity": {
+    "pid": 1918427,
+    "start": "12384171",
+    "pgid": 1918427,
+    "parent": 1918230
+  },
+  "ready": true,
+  "killSent": true,
+  "records": [
+    {
+      "role": "startup-ping",
+      "command": [
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/payload/omarchy/bin/omarchy-shell",
+        "shell",
+        "ping"
+      ],
+      "startedNs": 111721793947671,
+      "qsIdentity": {
+        "pid": 1918427,
+        "start": "12384171",
+        "pgid": 1918427,
+        "parent": 1918230
+      },
+      "nativeOutcomeNotInferred": true,
+      "processIdentity": {
+        "pid": 1918432,
+        "start": "12384175",
+        "pgid": 1918432,
+        "parent": 1918230
+      },
+      "returncode": 0,
+      "stdout": "ok\n",
+      "stderr": "",
+      "completedNs": 111721935147956,
+      "originalProbeGone": true
+    },
+    {
+      "role": "instance-selection",
+      "command": [
+        "/usr/bin/qs",
+        "--no-color",
+        "list",
+        "-a",
+        "-j"
+      ],
+      "startedNs": 111725073651753,
+      "qsIdentity": {
+        "pid": 1918427,
+        "start": "12384171",
+        "pgid": 1918427,
+        "parent": 1918230
+      },
+      "nativeOutcomeNotInferred": true,
+      "processIdentity": {
+        "pid": 1919419,
+        "start": "12384503",
+        "pgid": 1919419,
+        "parent": 1918230
+      },
+      "returncode": 0,
+      "stdout": "[\n    {\n        \"config_path\": \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/payload/omarchy/shell/shell.qml\",\n        \"id\": \"n94518c89mt\",\n        \"launch_time\": \"2026-10-01T18:36:08\",\n        \"pid\": 1918427,\n        \"shell_id\": \"8a5ea0e52c6d1047b74c9bf9f6f8263b\"\n    }\n]\n",
+      "stderr": "",
+      "completedNs": 111725098250067,
+      "originalProbeGone": true
+    },
+    {
+      "role": "normal-kill",
+      "command": [
+        "/usr/bin/qs",
+        "--no-color",
+        "kill",
+        "--pid",
+        "1918427"
+      ],
+      "startedNs": 111725109190148,
+      "qsIdentity": {
+        "pid": 1918427,
+        "start": "12384171",
+        "pgid": 1918427,
+        "parent": 1918230
+      },
+      "nativeOutcomeNotInferred": true,
+      "processIdentity": {
+        "pid": 1919426,
+        "start": "12384507",
+        "pgid": 1919426,
+        "parent": 1918230
+      },
+      "returncode": 0,
+      "stdout": "Killed n94518c89mt\n",
+      "stderr": "",
+      "completedNs": 111725158493537,
+      "originalProbeGone": true
+    }
+  ]
+}

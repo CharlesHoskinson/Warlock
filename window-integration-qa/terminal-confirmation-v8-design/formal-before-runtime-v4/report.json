@@ -1,0 +1,29 @@
+{
+  "result": "pass",
+  "checks": [
+    {
+      "label": "typecheck",
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/terminal-confirmation-v8-design/formal-before-runtime-v4/typecheck.log"
+    },
+    {
+      "label": "test",
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/terminal-confirmation-v8-design/formal-before-runtime-v4/test.log"
+    },
+    {
+      "label": "run",
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/terminal-confirmation-v8-design/formal-before-runtime-v4/run.log"
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/terminal-confirmation-v8-design/CONTRACT.md": "f1f5a80d765ed915e54a2a2e59dff722fd0b1f044d2d1c03daf3a209b27aae5c",
+    "/home/hoskinson/window-integration-qa/terminal-confirmation-v8-design/terminal_confirmation.qnt": "431396169b238bdc2b82282584e77c0b9c9b61284f727453f0e479c1bdf3e923",
+    "/home/hoskinson/window-integration-qa/terminal-confirmation-v8-design/terminal_confirmation_test.qnt": "6037267968725314723ca1eb3b54e9616267f58e9aefe68cf6e029056cb1455d",
+    "/home/hoskinson/window-integration-qa/terminal-confirmation-v8-design/prove.py": "93ccbc9fc5a80332f70e1a6f5840ee0f69e2b0b9fcf70519f9c20c35e8361b52",
+    "/home/hoskinson/window-integration-qa/terminal-confirmation-v8-design/probe_v7.py": "7b1c9356815b15e660d5a488be078d68f12af51bcf86fdabe74002fef0467034"
+  },
+  "runtimeChanged": false,
+  "nativeGrant": false
+}

@@ -1,0 +1,71 @@
+{
+  "missingStableCount": 32,
+  "missingStableExactList": [
+    "/usr/lib/dri/iHD_drv_video.so",
+    "/usr/lib/gbm/dri_gbm.so",
+    "/usr/lib/gconv/gconv-modules.cache",
+    "/usr/lib/gio/modules/libdconfsettings.so",
+    "/usr/lib/gio/modules/libgvfsdbus.so",
+    "/usr/lib/gvfs/libgvfscommon.so",
+    "/usr/lib/libFcitx5Qt6DBusAddons.so.5.1.15",
+    "/usr/lib/libLLVM.so.22.1",
+    "/usr/lib/libdrm_amdgpu.so.1.134.0",
+    "/usr/lib/libdrm_intel.so.1.134.0",
+    "/usr/lib/libedit.so.0.0.78",
+    "/usr/lib/libigdgmm.so.12.10.0",
+    "/usr/lib/libpciaccess.so.0.11.1",
+    "/usr/lib/libsensors.so.5.0.0",
+    "/usr/lib/libva-drm.so.2.2400.0",
+    "/usr/lib/libva.so.2.2400.0",
+    "/usr/lib/libxcb-dri3.so.0.1.0",
+    "/usr/lib/libxcb-present.so.0.0.0",
+    "/usr/lib/libxshmfence.so.1.0.0",
+    "/usr/lib/locale/C.utf8/LC_ADDRESS",
+    "/usr/lib/locale/C.utf8/LC_COLLATE",
+    "/usr/lib/locale/C.utf8/LC_CTYPE",
+    "/usr/lib/locale/C.utf8/LC_IDENTIFICATION",
+    "/usr/lib/locale/C.utf8/LC_MEASUREMENT",
+    "/usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES",
+    "/usr/lib/locale/C.utf8/LC_MONETARY",
+    "/usr/lib/locale/C.utf8/LC_NAME",
+    "/usr/lib/locale/C.utf8/LC_NUMERIC",
+    "/usr/lib/locale/C.utf8/LC_PAPER",
+    "/usr/lib/locale/C.utf8/LC_TELEPHONE",
+    "/usr/lib/locale/C.utf8/LC_TIME",
+    "/usr/share/glib-2.0/schemas/gschemas.compiled"
+  ],
+  "countCorrection": "Earlier33 was a counting error; exact list is32, with no linked resolved path excluded. All missing paths resolve to themselves.",
+  "missingElfSeeds": 18,
+  "deletedMappings": [
+    {
+      "identity": {
+        "pid": 1595499,
+        "start": "11784568",
+        "ppid": 1594998,
+        "pgid": 1595499
+      },
+      "line": "7e01e2200000-7e01e2600000 rw-s 00000000 00:54 303075                     /run/user/1000/wqa/f0a5/browser-profile/BrowserMetrics/BrowserMetrics-6ABEE50D-18586B.pma (deleted)",
+      "path": "/run/user/1000/wqa/f0a5/browser-profile/BrowserMetrics/BrowserMetrics-6ABEE50D-18586B.pma (deleted)",
+      "permissions": "rw-s",
+      "device": "00:54",
+      "inode": 303075
+    },
+    {
+      "identity": {
+        "pid": 1595709,
+        "start": "11784729",
+        "ppid": 1594998,
+        "pgid": 1595709
+      },
+      "line": "7135fb207000-7135fb208000 r--p 00000000 00:21 74563                      /dev/shm/58bfd51c-effe-4d75-8b70-7a9664122c14 (deleted)",
+      "path": "/dev/shm/58bfd51c-effe-4d75-8b70-7a9664122c14 (deleted)",
+      "permissions": "r--p",
+      "device": "00:21",
+      "inode": 74563
+    }
+  ],
+  "retainedRawSHA256": "9eed8e1afe3eee8dce892a31a209351e192bd1261f38c799c0019bdbca79f094",
+  "rootEnumerationSHA256": "7a624ef5922b6b2cfb7f83b3aa1bb90aec1add6b23bc4b84dd265a329badfe14",
+  "nativeExecuted": false,
+  "actualV7OutcomePending": true
+}

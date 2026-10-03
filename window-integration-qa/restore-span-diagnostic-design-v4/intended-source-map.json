@@ -1,0 +1,127 @@
+{
+  "result": "source-proposal",
+  "onlyInheritedFileChanged": "service_observer.py",
+  "wholeOriginalObserverInverseExact": true,
+  "originalNativeIntegrationFaultHelperD3MethodsUntouched": true,
+  "profileCoreByteExact": true,
+  "profileCoreSHA256": "95389a8cf596a3247d3555bec12ed7f6d0ca508c63f3b783d8ca8b49af3b691b",
+  "originalObserverSHA256": "9ea62c79ef8eca627df3d588a9f4d61022d58403124ecd8f98c5d85698a1a98b",
+  "intendedPatchSHA256": "f148b1dfbb2021bd2063732669d8b6b60519b75f0afccbc31e9fa84e753dbed5",
+  "files": {
+    "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v4/intended-files/preparation_profile.py": {
+      "sha256": "95389a8cf596a3247d3555bec12ed7f6d0ca508c63f3b783d8ca8b49af3b691b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v4/intended-files/causal_profile_sources.py": {
+      "sha256": "00c210e7cbd0abb7647e8d7e4c78993af78e2419178050ac3c6a6b97bd3e6865",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v4/intended-files/service_observer.py": {
+      "sha256": "9a2cf7af0af2e85573708696daa3bb7f586daf1537523a3bfb9267e262c5b408",
+      "mode": 420
+    }
+  },
+  "sourceSymbolInventory": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/scene_controller.py": {
+      "sha256": "7c8039b5acc1cc1333d72566558d09a5c6162f8495c436dc522e0d23d1a368b7",
+      "symbols": [
+        "SceneController.prepare",
+        "SceneController.fresh",
+        "SceneController.commit_members",
+        "SceneController.watchdog",
+        "SceneController.settle"
+      ]
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/native_desktop.py": {
+      "sha256": "1710013ef0fe5e05da92ab0b8ca95ff024d94eba7f0aeff6b7ab6fc6a1c19dba",
+      "symbols": [
+        "NativeDesktop.plan_destinations",
+        "NativeDesktop.plan_destinations.<locals>.plan",
+        "NativeDesktop.plan_destinations.<locals>.guard",
+        "NativeDesktop.plan_destination",
+        "NativeDesktop.apply_destination",
+        "NativeDesktop.refresh_destination",
+        "NativeDesktop.capture_source",
+        "NativeDesktop._capture_source_impl",
+        "NativeDesktop.target",
+        "NativeDesktop.retire_gestures",
+        "NativeDesktop.finish_capture_previews"
+      ]
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/production_motion_6d9.py": {
+      "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+      "symbols": [
+        "BasicDesktop.capture",
+        "BasicDesktop.clients",
+        "BasicDesktop.ipc",
+        "BasicDesktop.target",
+        "BasicDesktop.reduced",
+        "BasicDesktop.monitors",
+        "Desktop.capture",
+        "Desktop.capture_locked",
+        "Desktop.check_current",
+        "Desktop.publish_crop"
+      ]
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/owned_commands.py": {
+      "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba",
+      "symbols": [
+        "OwnedCommands.run",
+        "OwnedCommands.check_output"
+      ]
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/owned_launch.py": {
+      "sha256": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+      "symbols": [
+        "OwnedLaunch.__init__",
+        "OwnedLaunch.complete"
+      ]
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/helper_supervisor.py": {
+      "sha256": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+      "symbols": [
+        "Keeper.register",
+        "Keeper.complete",
+        "Keeper.exchange"
+      ]
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/readonly_ipc.py": {
+      "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+      "symbols": [
+        "ReadonlyIPC.query"
+      ]
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/snapshot_cache.py": {
+      "sha256": "21f0d47313c053964fd8e81736843d8b62ecadab5eee3ebba80ef5801e8bf8ee",
+      "symbols": [
+        "SnapshotCache.restore",
+        "SnapshotCache.publish"
+      ]
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/batch_preview.py": {
+      "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746",
+      "symbols": [
+        "BatchPreviews.stage",
+        "BatchPreviews.finish"
+      ]
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/pipe_transport.py": {
+      "sha256": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8",
+      "symbols": [
+        "PipeTransport.ensure_outputs",
+        "PipeTransport.send"
+      ]
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/service_runtime.py": {
+      "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f",
+      "symbols": [
+        "RuntimeService.persist"
+      ]
+    }
+  },
+  "baselineApplied": false,
+  "nativeLaunch": false,
+  "extraV2CodeProjectionNotSelected": true,
+  "setupFailureCleanupOnly": true,
+  "originalRunExceptionCloseSemanticsUnchanged": true
+}

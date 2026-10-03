@@ -1,0 +1,32 @@
+{
+  "updatedUTC": "2026-10-02T02:03:57.510646+00:00",
+  "reviewPassed": true,
+  "scope": "Definite stale/incompatible-family recovery source only",
+  "independentReviewSHA256": "a931901528168baaae62c35c736620131bb1fe95f5e492e8ad5401f6e450bdaa",
+  "candidateHashes": {
+    "recovery_runtime.py": "8baacd6ae76560a83f3fea4a77ed19cd9709b01e770fd2bd5e1313546fcf0469",
+    "recovery_cancel.py": "8647a336a7b83ec5de7d60f63ccb0436f7b684f85879e43c7ae8f21ff499b219",
+    "recovery_resources.py": "ab45ef7ba90371dfab94c95414280ebd3cb45de09b0e98f0ec9b5b6c0d7d3733",
+    "CANCELLATION_CONTRACT.md": "6db0b5076300d4270872d7c3bd2af5c7cdb0dcf289f1b5f701644d1504bfea54",
+    "recovery_cancel.qnt": "7986f30a1a3e1b8f8b0df069d33a97eee9461a61e6b3cf8a23286df2a84aab31",
+    "recovery_cancel_test.qnt": "642dc742d8e7f41062c5cfcb7334054def008e771c20b04d9c038e38bd99394b",
+    "offline-checkpoint.json": "ff8e21c09ae7d283c81283b883783359526a2dcc4fbdea0816f1cc1ceca580b7",
+    "CANCELLATION_SOURCE_REVIEW.md": "eb52befded092ab2ee68b7054e6f7eeb43d729fa52ebb12d1a06e802b5f225b3"
+  },
+  "rootReadFullCancellationHelperRuntimeDiffAndResourcesDiff": true,
+  "independentChecks": 15,
+  "independentCpuKernelTests": 55,
+  "producerProof": {
+    "python": 288,
+    "namedQuint": 170,
+    "models": 21,
+    "tracesPerModel": 2000
+  },
+  "ordinaryNativeKeeperPlannerRendererOraclesExactV14Reviewed": true,
+  "uncertainUnfinishedNativeEffectStillQuarantined": true,
+  "durableCancellationBeforeDisposalIncludingPartialResultsReviewed": true,
+  "nativeAuthorized": false,
+  "nativeRecoveryAccepted": false,
+  "mainWrites": false,
+  "pending": "Reviewed frozen closure and real baseline/service-loss/restart/native no-write/source-disposal campaign; explicit current receipt live cancellation remains separate."
+}

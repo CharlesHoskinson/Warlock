@@ -1,0 +1,99 @@
+{
+  "version": "held-v8-preview-read-only-attribution-v1",
+  "nativeLaunch": false,
+  "stageChanged": false,
+  "actualClipAttributionAccepted": false,
+  "featureFailurePreserved": true,
+  "evaluationGuardChanged": false,
+  "actualCase": "move-minimize-preview",
+  "actualCaseResult": "fail",
+  "originalError": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/run_native.py\", line 110, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/held_controller.py\", line 132, in run\n    if end=='minimize-preview':route.restore_frontend(target,current_geometry)\n                               ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/held_route.py\", line 186, in restore_frontend\n    def restore_frontend(self,target,geometry):return self.frontend.restore(self,target,geometry)\n                                                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/frontend_route.py\", line 98, in restore\n    before_click=route.wait(lambda:arrived('hoskinson-taskbar-popup'),'Actual pointer enters exact preview card layer')\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/held_route.py\", line 97, in wait\n    def wait(self,*args,**kwargs):return wait(*args,**kwargs)\n                                         ~~~~^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/held_route.py\", line 25, in wait\n    raise TimeoutError(label+(': '+last if last else ''))\nTimeoutError: Actual pointer enters exact preview card layer\n",
+  "actualPassedCases": [
+    "move-escape",
+    "move-reload",
+    "move-unload-reload"
+  ],
+  "actualFourthGates": [
+    {
+      "name": "Actual public and native backend loaded exact frozen modules",
+      "passed": true
+    },
+    {
+      "name": "Actual public three-member modal family metadata matches exact native parent lifetimes",
+      "passed": true
+    },
+    {
+      "name": "Held real gesture captured exact lifetime mode type and raw signal",
+      "passed": true
+    },
+    {
+      "name": "Actual held gesture changed source geometry only",
+      "passed": true
+    },
+    {
+      "name": "Real held minimize capture seed native presentation and cache retirement",
+      "passed": true
+    },
+    {
+      "name": "Exactly one genuine harness taskbar snapshot verifies real complete family previews",
+      "passed": true
+    },
+    {
+      "name": "Actual nonrelease retirement preserves groups raw hold and independent focus",
+      "passed": true
+    },
+    {
+      "name": "Genuine release creates no group insertion or public callback leak",
+      "passed": true
+    }
+  ],
+  "pointerLifetime": {
+    "pid": 2171004,
+    "start": "12863979",
+    "pgid": 2171004,
+    "parent": 2170579
+  },
+  "pointerNormalEOF": true,
+  "actualLastTwoMotions": [
+    {
+      "command": "absolute 53 13 1600 1000",
+      "pid": 2171004,
+      "start": "12863979",
+      "sentNs": 116526059039216,
+      "nativeOutcomeNotInferred": true
+    },
+    {
+      "command": "absolute 170 637.5 1600 1000",
+      "pid": 2171004,
+      "start": "12863979",
+      "sentNs": 116526094392552,
+      "nativeOutcomeNotInferred": true
+    }
+  ],
+  "actualPreviewClickOccurred": false,
+  "normalNativeUnload": true,
+  "sourceSHA256": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/attempt-1/qt-wayland/case-4/report.json": "72bb25f7cf8e6363a6e3279f342420dfb7edb4d87e61c2671d855b31d6c36b1d",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/attempt-1/qt-wayland/report.json": "1fccac83609f44aac45787861fcd52412b63e2a9b5b9254ad03212c3176863de",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/frontend_route.py": "f2de7659de4fc259b78f40c2eab8679b13a71e2c1c4886494fdb2f9a2d6638fe",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/input_control.py": "6a34ac27637f4ab2bc81892c9cc93fcde29ac22918b91e25e3114018260d8bc5",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/TaskbarPopup.qml": "f517a32d2d604348e17c9a3c2776cff8b98f389564967482122a4923a2bb5dc7",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.qml": "a433d17d414167d48cf99b630c5f9a39d0aa9cf2de545ae5ac09199ee1d0d712",
+    "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v4/native-fixture/native-pointer.c": "df5f1b3f3de78b79a0973e0f63438157433c6c460c550a7e3f03045843d5887a"
+  },
+  "retainedActualBasis": {
+    "previewQMLProposal": false,
+    "actualPreviewCardBounds": false,
+    "actualClippedViewportBounds": false,
+    "arrivalPollNativeSnapshots": false
+  },
+  "sourceFacts": [
+    "Native pointer parses four doubles, checks finite bounds, encodes each coordinate/extents by llround(value*10000).",
+    "TaskbarPopup is a screen-sized PanelWindow whose hover input mask is card, while card uses contentWidth/contentHeight.",
+    "Windows.qml caps contentHeight460, clips the Flickable, reports all item positions, and exposes popupScrollY/viewportHeight/contentHeight.",
+    "frontend_route.item_point bounds the item center only against the entire native layer allocation and does not check clipped card visibility.",
+    "frontend_route records preview click authority only after actual arrival; timeout prevented recording its proposal/current native/QML basis."
+  ],
+  "boundedConclusion": "V8 establishes actual commanded point and strict arrival timeout with no click. The fullscreen-layer/clipped-card mismatch is a concrete source risk; retained evidence does not establish actual viewport at failure or which arrival conjunct failed. Fresh V9 is evidence-only, preserves motions/actions/oracles, and captures actual bounds before decisions.",
+  "rootInvocationAuditBoundary": "Parent reports V8 bare python3 argv made exact external evaluation audit refuse source/argv; preserve strict auditor, and use reviewed absolute /usr/bin/python3 for future root invocation."
+}

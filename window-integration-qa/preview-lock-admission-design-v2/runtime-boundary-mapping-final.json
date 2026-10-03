@@ -1,0 +1,52 @@
+{
+  "result": "pass",
+  "runtimeApplied": false,
+  "selectedManifestSHA256": "b017d8d2a126f76c637429fffc2d77d510161fb89d3f3826795abb47d30b9f2c",
+  "threeProductFiles": [
+    "batch_preview.py",
+    "native_desktop.py",
+    "scene_controller.py"
+  ],
+  "fixtureSignatureChanges": 2,
+  "frozenV1InputsExact": 30,
+  "sceneWholeFileInverse": true,
+  "batchPriorMethodConservationReport": "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/source-conservation-v1.json",
+  "mapping": {
+    "sorted-address-order": {
+      "model": "Acquire address==nextAddress; Busy resets nextAddress1",
+      "source": "BatchPreviews._preview_locks tuple(sorted(addresses)), ordered for-address loop, attempt ExitStack closes all descriptors on busy before sleep"
+    },
+    "admission": {
+      "model": "Commit records admittedAt",
+      "source": "_preview_locks current/deadline check after complete flock set and exact inode/path recheck before transfer to admitted ExitStack"
+    },
+    "dispatch": {
+      "model": "Launch records dispatchedAt, helperOwned true; does not model child G",
+      "source": "finish _check_preview_locks/_closed/current under _receipt_guard, _remaining before commands.run; unchanged OwnedCommands/OwnedLaunch then control actual child execution"
+    },
+    "closure": {
+      "model": "NormalClosure independent of authority; UnknownClosure latches quarantine; expiry never magically removes helperOwned",
+      "source": "unchanged OwnedLaunch.complete/Keeper.complete and finish result int0/_closed plus unchanged except quarantine"
+    },
+    "publication": {
+      "model": "BeginPublication/ReplaceOne/FinishPublication separate; current/deadline required each boundary",
+      "source": "finish _receipt_guard protects current; exact original pinned.check; _remaining before each path.replace and before final pending.pop commit"
+    },
+    "seed": {
+      "model": "SeedEntry current/deadline after Published; original helper normal closed",
+      "source": "SceneController first capture path owns/family/digest checks and new original2s check under controller.lock before record.sources/visual and seed"
+    },
+    "receiptWait": {
+      "model": "ReceiptWait may hold no addresses or complete set, never partial/receipt/Keeper/lifecycle",
+      "source": "_receipt_guard acquire(timeout=remaining) with exact post-acquisition ns check; new admission loop sleep occurs after attempt ExitStack exits; inherited capture_lock remains unchanged"
+    }
+  },
+  "inputSHA256": {
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/intended-final.patch": "1e8c89cacdf9e39bc72e1eb5a460409aa9020e8f6f322458acfbcd2c009350d4",
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/intended-source-map-final.json": "9c8eb1820798dd2dc4a18d117de016f0855da272b87e2026659763d7f2447ca2",
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/prepare_intended_final.py": "29bf451aab7d9ab7c2f61fc8dc37d12ea595100b409c258fe8962f14f31759e0",
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/preview_admission.qnt": "bfa6b330fecbad709393f64efd3f1958e756898e37258d30a472d0b7b11b212b",
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/preview_admission_test.qnt": "e3986d805e83666d3cdd9a081f3d25df2567fd25b6ff8e454895ca48b2a8037d",
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/ADMISSION_CONTRACT.md": "0dae840231237a5f40bc6b751c7ac3d3f8a11e9e38d53de9b4e36d655c1dbcac"
+  }
+}

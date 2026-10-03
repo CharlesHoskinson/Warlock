@@ -1,0 +1,57 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/CONTRACT.md": "417f1eb55a57d9af6f2492952a3c40f3248de6bb432de5ef36935d173aaa5726",
+    "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/source_scope.qnt": "71c2c8a149131d3e845cc8cb239a7df6c30beac92d9e357b0b0e292f6507ec9a",
+    "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/prove_before.py": "75e709cb0d5c9161f1e3cbc3ba18293c7b55bf4ac408a95d66cdd9b1c1a616ba",
+    "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/source_relevance.py": "15f7d3a1c19ce9f305ac6441451e34cbf09bc65b19ddb944232412c1bc31fc91",
+    "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/attribution.py": "e113438c7388d6cc2d669de6b2dec074105bafa03d0a0c86d38153ffa90ac374",
+    "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/test_reference_graph.py": "99ca3c3f71e82819dcbdb9b486823f8e146ac0d309c4d0c018bf9c2033283cd5"
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/source_scope.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  source_scope\n    ok exactMappedAndLaunchSourcesTest passed 1 test(s)\n    ok mappedAliasChangeRefusesTest passed 1 test(s)\n    ok declaredLauncherAliasChangeRefusesTest passed 1 test(s)\n    ok unrelatedInventoryAliasNotClaimedTest passed 1 test(s)\n    ok unknownNewMappedSourceRefusesTest passed 1 test(s)\n    ok sourceFDHashModeMountChangeRefusesTest passed 1 test(s)\n    ok declaredGraphReplacementRefusesTest passed 1 test(s)\n    ok rootPIDStartReplacementRefusesTest passed 1 test(s)\n    ok missingBeforeAliasProofRefusesTest passed 1 test(s)\n    ok missingAfterAliasProofRefusesTest passed 1 test(s)\n    ok newImageAfterOldAliasScopeRefusesTest passed 1 test(s)\n    ok freshNewImageCompleteScopeCanOnlyDiscardTest passed 1 test(s)\n    ok whollyFreshEpochAfterDiscardPositiveTest passed 1 test(s)\n    ok newImageAliasChangeCannotDiscardTest passed 1 test(s)\n    ok discardClearsAllCurrentProofTest passed 1 test(s)\n    ok deadChildCannotCreateSourceProofTest passed 1 test(s)\n    ok expiredBudgetCannotCreateSourceProofTest passed 1 test(s)\n    ok callerCannotChooseAliasRelevanceTest passed 1 test(s)\n    ok missingNamedFDProofCannotUseAliasAloneTest passed 1 test(s)\n\n  19 passing (1801ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/source_scope.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (2091ms at 956 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4",
+        "-p",
+        "test_reference_graph.py"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n"
+    }
+  ],
+  "sourceUnchanged": true,
+  "mappingPredicateChanged": false,
+  "GUI": false,
+  "rootReviewBeforeRuntime": true
+}

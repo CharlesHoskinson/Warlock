@@ -1,0 +1,22 @@
+
+ Error [QNT099]: Found cyclic declarations. Use fold and foldl instead of recursion
+
+  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_startup.qnt:20:9
+  20:  action step={nondet yes=Set(true,false).oneOf();nondet n=Set(1,2,3).oneOf();val p={owner:2,root:1,source:1,pointer:n,complete:yes,durable:yes};nondet e=Set(Lease(2),Seal(p),PublishHelper(p),Bind(p),Crash,ValidatePending(p),NativeRecover(yes),Query,Refuse).oneOf();fire(e)}
+              ^^^^
+
+
+ Error [QNT099]: Found cyclic declarations. Use fold and foldl instead of recursion
+
+  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_startup.qnt:8:33
+  8:  action fire(e:Event):bool={val b={...b,bytes:false};s'=if(s.fault)b else match e {
+                                     ^
+
+
+ Error [QNT099]: Found cyclic declarations. Use fold and foldl instead of recursion
+
+  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_startup.qnt:8:9
+  8:  action fire(e:Event):bool={val b={...b,bytes:false};s'=if(s.fault)b else match e {
+             ^^^^
+
+error: parsing failed

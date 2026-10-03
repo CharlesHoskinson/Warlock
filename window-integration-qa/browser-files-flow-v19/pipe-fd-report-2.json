@@ -1,0 +1,36 @@
+{
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-0cef417cc4e0438d80de48d053a4bfa9.scope",
+    "coreLimit": 1
+  },
+  "cases": [
+    {
+      "name": "original",
+      "passed": true,
+      "returncode": 0,
+      "readwriteDescriptors": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "destination-swap",
+      "passed": true,
+      "returncode": 0,
+      "readwriteDescriptors": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "high",
+      "passed": true,
+      "returncode": 0,
+      "readwriteDescriptors": [
+        3,
+        4
+      ]
+    }
+  ],
+  "browserExecuted": false
+}

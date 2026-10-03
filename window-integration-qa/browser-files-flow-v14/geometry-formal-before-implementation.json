@@ -1,0 +1,103 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/viewport_geometry_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  viewport_geometry_test\n    ok exactPairTest passed 1 test(s)\n    ok beforePairRefusedTest passed 1 test(s)\n    ok syntheticRefusedTest passed 1 test(s)\n    ok staleSequenceRefusedTest passed 1 test(s)\n    ok wrongTranslationRefusedTest passed 1 test(s)\n    ok buttonsRefusedTest passed 1 test(s)\n    ok wrongLifetimeRefusedTest passed 1 test(s)\n    ok sessionChangeRevokesTest passed 1 test(s)\n    ok layoutChangeRevokesTest passed 1 test(s)\n    ok surfaceChangeRevokesTest passed 1 test(s)\n    ok basisChangeRevokesTest passed 1 test(s)\n    ok focusOrDraftChangeRefusedTest passed 1 test(s)\n    ok wrongHitRefusedTest passed 1 test(s)\n    ok nonfiniteRefusedTest passed 1 test(s)\n    ok outOfBoundsRefusedTest passed 1 test(s)\n    ok duplicatePointRefusedTest passed 1 test(s)\n    ok touchRefusedTest passed 1 test(s)\n    ok nonprimaryRefusedTest passed 1 test(s)\n    ok invalidationRevokesTest passed 1 test(s)\n    ok modifierRefusedTest passed 1 test(s)\n    ok captureRefusedTest passed 1 test(s)\n    ok oldQueuedTimestampRefusedTest passed 1 test(s)\n    ok unpreparedRefusedTest passed 1 test(s)\n    ok timeOriginReplacementRevokesTest passed 1 test(s)\n\n  24 passing (691ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/viewport_geometry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (1103ms at 1813 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/coordinate_representation_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  coordinate_representation_test\n    ok integerExactTest passed 10000 test(s)\n    ok halfAwayTest passed 10000 test(s)\n    ok belowHalfTest passed 10000 test(s)\n    ok aboveHalfTest passed 10000 test(s)\n    ok fractionalExactTest passed 10000 test(s)\n    ok zeroDenominatorRefusedTest passed 10000 test(s)\n    ok surfaceEdgeRefusedTest passed 10000 test(s)\n    ok integerInteriorTest passed 10000 test(s)\n    ok fractionalCommandNotInteriorAuthorityTest passed 10000 test(s)\n\n  9 passing (1389ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/coordinate_representation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (420ms at 4762 traces/second).\nUse --seed=0x13e4f1e --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/pointer_syntax_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pointer_syntax_test\n    ok exactIntegersTest passed 1 test(s)\n    ok fractionalFirstRefusedTest passed 1 test(s)\n    ok fractionalSecondRefusedTest passed 1 test(s)\n    ok missingFirstRefusedTest passed 1 test(s)\n    ok missingSecondRefusedTest passed 1 test(s)\n    ok extraTokenRefusedTest passed 1 test(s)\n    ok nonfiniteRefusedTest passed 1 test(s)\n    ok booleanRefusedTest passed 1 test(s)\n    ok negativeRefusedTest passed 1 test(s)\n    ok xExtentRefusedTest passed 1 test(s)\n    ok yExtentRefusedTest passed 1 test(s)\n    ok injectionTextRefusedTest passed 1 test(s)\n\n  12 passing (76ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/pointer_syntax.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (617ms at 3241 traces/second).\nUse --seed=0x13e4f1e --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "nativeExecuted": false,
+  "runtimeStillExactFrozenV13": true,
+  "namedCases": 45,
+  "models": 3,
+  "randomTracesPerModel": 2000,
+  "maxSteps": 100,
+  "sourceSHA256": {
+    "V14_GEOMETRY_CONTRACT.md": "9779460d6c2eefb2622e442189ef0f12f95aa93d77ab8e9110cfcc4b13ecc31e",
+    "viewport_geometry.qnt": "01904330a32a70be9e6c2374e940a5f48653e97fe73848b0bde3456217a890b4",
+    "viewport_geometry_test.qnt": "c5682084683d639ffba0f5544ab674d0e7ee630e8bb68831bfdb328ab86992fb",
+    "coordinate_representation.qnt": "914e260a498079bd6f01a813688a122a6adc8fd7b74463cccd6d52663bfee75b",
+    "coordinate_representation_test.qnt": "9bcb24dd9a380cf36c934a03e73d1970f4e853923d8357030f8051e75cdb13e4",
+    "pointer_syntax.qnt": "3e82785fa58f6b5eba95207ee8dcd3cf315f4858a8695ddcfb8f8c274a3fc9e2",
+    "pointer_syntax_test.qnt": "f3e6d0245a029f7bddc9f2a8612cda112cbd9e202eb1138662f1be777f3400fd",
+    "private_session.py": "4351a20bb62645df2a8b41972d7de692039eef2c079bd2f6533340315d9300e4",
+    "compose.html": "2f59cfe679c48691ff82b245a8f299953b934367992e5fa04f06ac7d25c17638",
+    "cdp_readonly.py": "8f544e6604aba21c37f2fea5b762326c3dc99067ac9de7d93502706c03949d63"
+  },
+  "preparationFailuresRetained": [
+    "Missing assignment parentheses QNT000",
+    "Undefined abs QNT404",
+    "Annotated action parameter missing bool return QNT parser error"
+  ]
+}

@@ -1,0 +1,62 @@
+Date: 2026-10-01 MDT
+[08:41:55.020] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[08:41:55.020] Command line: /home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston --backend=headless --renderer=gl --shell=kiosk-shell.so --fake-seat --no-config --socket=weston-host --width=1600 --height=1000 --scale=1 --idle-time=0 --log=/home/hoskinson/window-integration-qa/qt-modal-private-v7/attempt-1/host/weston-renderer.log
+[08:41:55.020] OS: Linux, 7.2.7-1-omarchy, #1 SMP PREEMPT_DYNAMIC Sun, 27 Sep 2026 22:42:08 +0000, x86_64
+[08:41:55.020] Flight recorder: enabled, scopes subscribed: log
+[08:41:55.020] Starting with no config file.
+[08:41:55.020] Output repaint window is 7 ms maximum.
+[08:41:55.020] Loading module '/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15/headless-backend.so'
+[08:41:55.024] Loading module '/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15/gl-renderer.so'
+[08:41:55.039] Using rendering device: /dev/dri/renderD129
+[08:41:55.042] EGL version: 1.5
+[08:41:55.042] EGL vendor: Mesa Project
+[08:41:55.042] EGL client APIs: OpenGL OpenGL_ES 
+[08:41:55.042] EGL features:
+               EGL Wayland extension: no
+               context priority: yes
+               buffer age: no
+               partial update: yes
+               swap buffers with damage: no
+               configless context: yes
+               surfaceless context: yes
+               dmabuf support: modifiers
+               fence sync: yes (native, wait)
+[08:41:55.043] GL version: OpenGL ES 3.2 Mesa 26.2.2-arch1.1
+[08:41:55.043] GLSL version: OpenGL ES GLSL ES 3.20
+[08:41:55.043] GL vendor: Intel
+[08:41:55.043] GL renderer: Mesa Intel(R) Graphics (ARL)
+[08:41:55.049] GL ES 3.2 - renderer features:
+               read-back format: ARGB8888
+               glReadPixels supports y-flip: yes
+               glReadPixels supports PBO: yes
+               wl_shm 10 bpc formats: yes
+               wl_shm 16 bpc formats: yes
+               wl_shm half-float formats: yes
+               internal R and RG formats: yes
+               OES_EGL_image_external: yes
+               GPU timeline: yes
+               Texture immutability: yes
+               Required precision: yes
+[08:41:55.049] Using GL renderer
+[08:41:55.049] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[08:41:55.049] Color manager: no-op
+                 protocol support: no
+[08:41:55.049] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[08:41:55.049] Output 'headless' using color profile: stock sRGB color profile
+[08:41:55.050] Output 'headless' enabled with head(s) headless
+[08:41:55.050] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: yes
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: yes
+               color operations: yes
+               color representation: yes
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[08:41:55.050] Loading module '/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/weston/kiosk-shell.so'
+[08:42:02.158] caught signal 15

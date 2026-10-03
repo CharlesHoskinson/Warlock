@@ -1,0 +1,96 @@
+--- V23/batch_preview.py
++++ intended-V24/batch_preview.py
+@@ -20,6 +20,10 @@
+ import zlib
+ from owned_commands import OwnedCommands
+ from scene_controller import key, rectangle
++from pipe_transport import PipeTransport
++from owned_launch import OwnedLaunch
++from helper_supervisor import Keeper
++from recovery_resources import checked_renderer, verify_process, process_start
+ 
+ EPOCH=re.compile(r'[0-9a-f]{12}-[1-9][0-9]{0,14}')
+ ADDRESS=re.compile(r'0x[0-9a-f]+')
+@@ -98,6 +102,7 @@
+         self.pending={};self.active=False;self.quarantined=False;self.retained_folder=None
+         self.lock=threading.RLock();self.active_epochs=set()
+         self.staging={};self.staging_serial=0
++        self.renderer_binding=None
+     def stage(self,window,epoch,image,metadata):
+         image=Path(image)
+         if image!=self.root/(epoch+'.png') or not ADDRESS.fullmatch(window['address']):raise ValueError('exact pending crop path/identity required')
+@@ -142,11 +147,62 @@
+             self.require_idle()
+             if self.staging:raise ValueError('staging crops prevent normal disposal')
+             if self.pending:raise ValueError('pending crops prevent normal disposal')
++    def _renderer_matches(self,binding):
++        # Only in-memory exact-object/registration comparisons under keeper lock.
++        transport=binding['transport'];launch=binding['launch'];process=binding['process'];keeper=binding['keeper']
++        expected={'job':binding['job'],'kind':'renderer','actor':binding['actor'],'phase':'released','ownership':binding['ownership']}
++        row=keeper.jobs.get(binding['job'])
++        return (type(transport) is PipeTransport and type(launch) is OwnedLaunch and type(keeper) is Keeper
++            and self.commands.keeper is keeper and type(self.commands.actor) is int and self.commands.actor==binding['actor']
++            and {k:self.commands.env.get(k) for k in binding['environment']}==binding['environment']
++            and transport.owned_launch is launch and transport.process is process and launch.process is process and launch.keeper is keeper
++            and launch.job==binding['job'] and launch.ownership==binding['ownership']
++            and type(row) is dict and type(row.get('actor')) is int and row==expected and keeper.children.get(binding['job']) is process
++            and not launch.closed and not transport.closed and not transport.closing and not transport.failed and process.returncode is None)
++    def bind_renderer(self,transport,producer_sha256):
++        # NativeFactory supplies its actual transport and reviewed selected digest.
++        if type(transport) is not PipeTransport or type(producer_sha256) is not str or not re.fullmatch('[0-9a-f]{64}',producer_sha256):
++            raise ValueError('exact selected renderer binding required')
++        launch=transport.owned_launch;keeper=self.commands.keeper
++        if (type(launch) is not OwnedLaunch or type(keeper) is not Keeper or type(self.commands.actor) is not int
++                or self.commands.actor<1 or launch.keeper is not keeper):raise ValueError('exact renderer owner objects required')
++        ownership=deepcopy(launch.ownership)
++        checked_renderer(ownership)
++        environment={k:self.commands.env[k] for k in ('XDG_RUNTIME_DIR','HYPRLAND_INSTANCE_SIGNATURE','WAYLAND_DISPLAY')}
++        if ownership['producer']['sha256']!=producer_sha256 or ownership['environment']!=environment:
++            raise ValueError('renderer selected producer/session differs')
++        binding={'transport':transport,'launch':launch,'process':transport.process,'keeper':keeper,
++            'job':launch.job,'actor':self.commands.actor,'ownership':ownership,'producerSHA256':producer_sha256,'environment':environment}
++        keeper.verify()
++        if transport.process.poll() is not None or process_start(ownership['pid'])!=ownership['start']:
++            raise ValueError('renderer binding lifetime unavailable')
++        # No open/read/hash/check/close/process observation holds either lock.
++        with self.lock,keeper.lock:
++            self.require_idle()
++            if self.renderer_binding is not None or self.pending or self.staging:raise ValueError('renderer binding must precede preparation exactly once')
++            if not self._renderer_matches(binding):raise ValueError('renderer registered ownership differs')
++            self.renderer_binding=binding
+     def _closed(self):
+         keeper=self.commands.keeper
++        keeper.verify() # Source/process I/O stays outside the registry lock.
+         with keeper.lock:
+-            keeper.verify()
+-            return not any(row.get('actor')==self.commands.actor for row in keeper.jobs.values())
++            own=[deepcopy(row) for row in keeper.jobs.values() if row.get('actor')==self.commands.actor]
++            binding=self.renderer_binding
++            if binding is None:return not own
++            if len(own)!=1 or not self._renderer_matches(binding):return False
++            before=own[0]
++        # Exemption authenticates the actual executed sealed producer, not kind.
++        checked_renderer(binding['ownership'])
++        if binding['ownership']['producer']['sha256']!=binding['producerSHA256']:return False
++        if verify_process(binding['ownership'])!='executed':return False
++        process=binding['process'];ownership=binding['ownership']
++        if process.poll() is not None or Path(f"/proc/{ownership['pid']}/cmdline").read_bytes().split(b'\0')[:-1]!=[v.encode() for v in ownership['targetArgv']]:return False
++        if process_start(ownership['pid'])!=ownership['start']:return False
++        keeper.verify()
++        with keeper.lock:
++            current=[row for row in keeper.jobs.values() if row.get('actor')==self.commands.actor]
++            return (self.renderer_binding is binding and len(current)==1 and current[0]==before
++                and self._renderer_matches(binding))
+     @staticmethod
+     def check_family(members,clients):
+         live={key(w):w for w in clients if w.get('mapped',True)}
+--- V23/native_runtime.py
++++ intended-V24/native_runtime.py
+@@ -197,6 +197,7 @@
+                 def acquired(ownership):
+                     resource['renderer']=ownership;resource['phase']='gated';self.publish_resource()
+                 transport=PipeTransport(executable.path,env=self.guard.env,failure=binding,pass_fds=(executable.fd,),launch_record=acquired,keeper=self.keeper,actor=number)
++            desktop.preview_batch.bind_renderer(transport,self.producer_hash)
+             resource['phase']='launched';self.publish_resource()
+             transport.bind_controller=lambda controller:binding.bind(controller.transport_failure)
+             self.desktops.append(desktop)

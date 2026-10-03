@@ -1,0 +1,38 @@
+--- frozen-v2/CONTRACT.md
++++ review-v3/CONTRACT.md
+@@ -97,3 +97,35 @@
+ must prepare fresh output surfaces/generations and seed a new complete scene.
+ The old cancellation ACK can release only old source files that are absent from
+ the newer scene, and has no permission to settle or delete the newer request.
++
++## Capture lease ownership
++
++Every successful member capture remains in a local lease until the complete
++current scene transfers that exact source list into its record. Partial capture,
++output preparation failure, fresh family/geometry rejection or supersession
++releases all locally leased member PNGs. This includes failures after every
++capture has succeeded but before record assignment. A released older lease
++cannot delete files transferred into the newer scene. Persistent exact-identity
++full atlas caches are distinct from these temporary epoch PNGs.
++
++## Callback observations do not block visual supersession
++
++A presentation callback collects its fresh native family observation outside the
++reservation lock. A new input can reserve and queue its retained-scene reversal
++while that lookup waits. The callback then reacquires the lock and checks the
++same scene object, exact epoch/vector, sources and policy before any native effect.
++An obsolete observation never minimizes, restores, starts, follows focus or
++switches a desktop. Only the actual per-member native commit transaction holds
++the reservation lock; endpoint metadata lookup cannot freeze new visual input.
++
++## Transport drain and native callback dispatch
++
++The stdout reader drains and validates producer events independently of native
++operations. A separate serialized callback worker processes only transaction
++events through a bounded queue; stale queued epochs are rechecked by the
++controller. A blocked family/native lookup cannot stop presentation/event drain
++or the producer's output pipe. Queue exhaustion, malformed output, unexpected
++EOF or write failure truthfully fails the actor, removes its surfaces, and
++schedules native settlement separately. Failed shutdown is never reported as a
++normal accepted exit. A normal close requires callback dispatch to finish within
++the stated bound, not merely a renderer process exit.

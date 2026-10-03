@@ -1,0 +1,29 @@
+{
+  "kind": "private Omarchy Orca signed pointer compat v3",
+  "nativeLaunched": false,
+  "deployment": false,
+  "formal": {
+    "named": 8,
+    "samples": 2000,
+    "maxSteps": 100,
+    "seed": 20461006,
+    "pass": true
+  },
+  "actualSourceTests": {
+    "count": 22,
+    "oldCounterexampleReproduced": true,
+    "pass": true
+  },
+  "pythonSourceCompile": true,
+  "actualPublicSignalTypes": [
+    "AtspiAccessible",
+    "guint",
+    "guint"
+  ],
+  "actualRuntime": [],
+  "unchangedPriorPrivateV3": true,
+  "parentManifestSHA256": "12d377f453f6d5979122edb5f8e702fe904614d4a7c20f3820f7ab3a27c7b07f",
+  "retainedFailedReportSHA256": "a3e8c1b92cee64e17107a812ff33b0e71907f0d573d03d9380544d43bbfe6736",
+  "nativePopupAXGatePending": true,
+  "portalNoAutoloadGatePending": true
+}

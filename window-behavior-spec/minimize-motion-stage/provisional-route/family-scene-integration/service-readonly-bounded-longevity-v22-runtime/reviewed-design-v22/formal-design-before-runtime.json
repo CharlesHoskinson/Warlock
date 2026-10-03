@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "named": 52,
+  "samples": 2000,
+  "steps": 100,
+  "runs": 2,
+  "sourceSHA256": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority.qnt": "0a89ae316dc5c887a624280e57919ec2cc183f4ec5d0f832a69008346ceb3b96",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/bounded_read_authority_test.qnt": "7525b8fa53d98865011dcb48439d25b0115e7150d6ced54aa218657f53863835",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/BOUNDED_AUTHORITY_CONTRACT.md": "dbaca50e7bfd3478bb603817dac9d46ea8fd8c1bee5617f9e1c6afd998b95f7f"
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "bounded_read_authority_test.qnt"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 8.45737249701051,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/design-formal-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "bounded_read_authority_test.qnt",
+        "--backend=rust",
+        "--seed=2026100222"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 51.11964393599192,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/design-formal-1.log",
+      "sha256": "a37cd0a9f52384f8d324ecb2cc1dc3fdd5d914ee139b2f0ab72b008034892a11"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "bounded_read_authority.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100222",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 12.146915956021985,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/design-formal-2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "bounded_read_authority.qnt",
+        "--step=validStep",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100223",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 15.803143250988796,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22/design-formal-3.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "runtimeCopied": false,
+  "runtimeChanged": false,
+  "nativeLaunch": false,
+  "scopeReviewPending": true,
+  "sourceUnchanged": true,
+  "passed": true
+}

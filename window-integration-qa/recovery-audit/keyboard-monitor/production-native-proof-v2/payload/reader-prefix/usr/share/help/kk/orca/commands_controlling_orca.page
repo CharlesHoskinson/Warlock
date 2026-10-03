@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_controlling_orca" xml:lang="kk">
+  <info>
+    <link type="next" xref="commands_where_am_i"/>
+    <link type="guide" xref="commands#getting_started"/>
+    <title type="sort">1. Orca-ны басқару және пайдалануды үйрену</title>
+    <title type="link">Orca-ны басқару және пайдалануды үйрену</title>
+    <desc><app>Orca</app> бағдарламасымен әрекеттесу командалары</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Orca-ны басқару және пайдалануды үйрену</title>
+  <section id="controlling">
+    <title><app>Orca</app>-ны басқару командалары</title>
+    <p>Келесі командаларды <app>Orca</app> баптаулар сұхбат терезесіне өту, <app>Orca</app>-ны қосу және сөндіру, сондай-ақ қол жеткізілетін қолданба ішіндегі жарлықтар қайшылығын болдырмау үшін <app>Orca</app> командаларын айналып өту үшін пайдалануға болады.</p>
+    <list>
+      <item>
+        <p>Қолдау көрсетілетін жұмыс үстелі орталарында <app>Orca</app>-ны қосу және сөндіру: <keyseq><key>Super</key><key>Alt</key><key>S</key></keyseq>.</p>
+        <note style="tip">
+           <p>Егер сіз <app>Orca</app>-ны қосу және сөндіру командасы жоқ басқа жұмыс үстелі ортасында пайдалансаңыз, <app>Orca</app>-дан шығу командасы пайдалы болуы мүмкін. Бұл команда әдепкі бойынша тағайындалмаған. Тағайындалмаған командаларды тағайындау туралы ақпаратты <link xref="howto_key_bindings">Пернелер тіркесімдерін өзгерту</link> бөлімінен қараңыз.</p>
+        </note>
+      </item>
+      <item>
+        <p><link xref="preferences">Orca баптаулары</link> сұхбат терезесі: <keyseq><key>Orca модификаторы</key><key>Бос орын</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Фокусталған қолданбаға арналған Orca баптаулары сұхбат терезесі: <keyseq><key>Ctrl</key><key>Orca модификаторы</key><key>Бос орын</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Барлық Orca командалық пернелерін ауыстыру: <keyseq><key>Alt&gt;</key><key>BackSpace</key></keyseq></p>
+      </item>
+      <item>
+        <p>Пернетақта жаймасын ауыстыру: (Тағайындалмаған)</p>
+      </item>
+      <item>
+        <p>Келесі перне жаңғырығы деңгейіне ауысу: (Тағайындалмаған)</p>
+      </item>
+      <item>
+        <p>Экрандық диктордан шығу: (Тағайындалмаған)</p>
+      </item>
+    </list>
+  </section>
+  <section id="braille_keyboard_bindings">
+    <title>Брайль командалары</title>
+    <p>Келесі командаларды Orca-ның Брайль шығысын басқару және теңшеу үшін пайдалануға болады.</p>
+    <list>
+      <item>
+        <p>Брайль дисплейін солға жылжыту: (Тағайындалмаған)</p>
+      </item>
+      <item>
+        <p>Брайль дисплейін оңға жылжыту: (Тағайындалмаған)</p>
+      </item>
+      <item>
+        <p>Қысқартылған Брайльді қосу және сөндіру: (Тағайындалмаған)</p>
+      </item>
+    </list>
+  </section>
+  <section id="learning">
+    <title><app>Orca</app> пайдалануды үйренуге арналған командалар</title>
+    <p>Үйрену режимінде <app>Orca</app> сіз басқан әрбір перне туралы және сол пернеге тағайындалған кез келген байланысты <app>Orca</app> командасы туралы хабарлайды. Бұл режимде сіз сондай-ақ пайдалануға болатын барлық <app>Orca</app> командалары бар жарлықтар тізімін ала аласыз.</p>
+    <list>
+      <item>
+        <p>Үйрену режиміне кіру: <keyseq><key>Orca модификаторы</key><key>H</key></keyseq></p>
+      </item>
+      <item>
+        <p>Үйрену режимінен шығу: <keyseq><key>Esc</key></keyseq></p>
+      </item>
+    </list>
+  </section>
+</page>

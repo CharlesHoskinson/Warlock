@@ -1,0 +1,19 @@
+--- window-integration-qa/toolkit-interruption-v3/native-candidate/installed-snap.lua
++++ window-integration-qa/toolkit-interruption-v4/native-candidate/installed-snap.lua
+@@ -560,7 +560,15 @@
+       snapped[w.address] = nil
+       if drag_address == w.address then hypr_snap_drag_cancel(w.address) end
+       if release_normal and release_normal.address == w.address then release_normal = nil end
+-      hl.exec_cmd(controls_bin .. "hypr-snap-groups unsnap " .. w.address)
++      local lifetime = hl.plugin.hyprbars and hl.plugin.hyprbars.window_lifetime
++      if lifetime then
++        local address, stable, pid = lifetime(w)
++        if type(address)=="string" and address:match("^0x[0-9a-f]+$") and
++           type(stable)=="string" and stable:match("^[0-9a-f]+$") and
++           type(pid)=="number" and pid>0 and pid==math.floor(pid) then
++          hl.exec_cmd(string.format("%shypr-snap-groups forget-closed %s %s %d", controls_bin, address, stable, pid))
++        end
++      end
+     end
+   end)
+   hl.on("window.fullscreen", function(w)

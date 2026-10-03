@@ -1,0 +1,42 @@
+{
+  "phase": "QA-owned-data-probe",
+  "errors": [],
+  "usable": false,
+  "nativeAuthority": false,
+  "ownerToken": "fba125b4f5dec962c8a951e779dc359c4e276a7ba42f5e63edfb2a26d64dab0d",
+  "row": {
+    "id": "d12da45c58ff41e8a498aa36159f1df0",
+    "actor": null,
+    "thread": 946679,
+    "fd": 6,
+    "fdIdentity": [
+      10,
+      44247397
+    ],
+    "issuerSHA256": "700656d324a9b862f75badf94f3cf7d484a9db378835907da161a8e0b1d83684",
+    "request": "j/clients",
+    "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+    "registeredNs": 187404457619914,
+    "closed": true,
+    "published": true,
+    "outcome": "complete",
+    "evidence": {
+      "completeServerEOF": true,
+      "replyBytes": 3594,
+      "replySHA256": "f5e4b09cd6b8b398cc69c3e2be4d953f2d6ace92c0fa04affdc6e66a309b0fff",
+      "peer": {
+        "pid": 945553,
+        "uid": 1000,
+        "gid": 1000
+      },
+      "socketIdentity": [
+        84,
+        599682
+      ]
+    },
+    "error": null,
+    "finishedNs": 187404459441801
+  },
+  "replySHA256": "f5e4b09cd6b8b398cc69c3e2be4d953f2d6ace92c0fa04affdc6e66a309b0fff",
+  "replyBytes": 3594
+}

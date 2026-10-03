@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "sourceOnly": true,
+  "runtimeImplemented": false,
+  "nativeAuthorized": false,
+  "freezeAuthorized": false,
+  "proposalFiles": {
+    "CONTRACT.md": {
+      "sha256": "567cf1dab1f4ce84e3d2dd2569800a70a99f34650554152a0bac8f18f545ad0b",
+      "mode": 420
+    },
+    "DESIGN_READY.json": {
+      "sha256": "349d4589b405a3b44e66c8c53c7ca00d726807d4ef12107c45b6a89d67e17863",
+      "mode": 420
+    },
+    "FORMAL_PROOF.json": {
+      "sha256": "0e9833898f07de99080261bea64e1b9473d4941b3bb8f3a3d00fc8a04b76fdd3",
+      "mode": 420
+    },
+    "PRODUCER_NAMED_CORRECTION_DRIVER.json": {
+      "sha256": "8051cca5cbbd3c3ca7eab0907e76080a48bf97b1d65c4f307d181744e67688c2",
+      "mode": 420
+    },
+    "SOURCE_ORIGINS.json": {
+      "sha256": "b788feb88b29ba8965a1fa793ae601455254dc89c41ddb79d55c275a2fdf4d1b",
+      "mode": 420
+    },
+    "formal-0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "formal-1.log": {
+      "sha256": "ddc2227d574df1f1fda20d159319873d0ec8b2dc7798cd4480af7906260388df",
+      "mode": 420
+    },
+    "formal-2.log": {
+      "sha256": "1147f37449399870c9c114c879dee021ebeff639c9b67d85eeb6ab56294ff442",
+      "mode": 420
+    },
+    "input_block.qnt": {
+      "sha256": "bab5212c8d081b8954b4a5504cebbb3775b6facc37e85f957577e269f8fab895",
+      "mode": 420
+    },
+    "retained-first-model-parse-failure/FORMAL_PROOF.json": {
+      "sha256": "8215ad25970cc61a397682595bb575c7322a506ee964424d8b58aec2c47a0bbf",
+      "mode": 420
+    },
+    "retained-first-model-parse-failure/formal-0.log": {
+      "sha256": "8020bb82911cd8eea34939169c552f43e852b3ca5e16c4e623b97f7d8b672972",
+      "mode": 420
+    },
+    "retained-first-model-parse-failure/input_block.qnt": {
+      "sha256": "2491498815118fe652d290b45b315035d2aa60292d856a826468f51351e501af",
+      "mode": 420
+    },
+    "retained-first-model-parse-failure/run_formal.py": {
+      "sha256": "a8ba29e85e0dcba61a545a49ecbc613e9737833deab15b57c7bb9d41b09d6600",
+      "mode": 420
+    },
+    "retained-first-proof-command-error.json": {
+      "sha256": "af1c05497d014b434cb1c01c93aa19b9b08f8bef556f8aef0ff16e34ab1a8414",
+      "mode": 420
+    },
+    "run_formal.py": {
+      "sha256": "a8ba29e85e0dcba61a545a49ecbc613e9737833deab15b57c7bb9d41b09d6600",
+      "mode": 420
+    }
+  },
+  "sourceOrigins": {
+    "sha256": "b788feb88b29ba8965a1fa793ae601455254dc89c41ddb79d55c275a2fdf4d1b",
+    "mode": 420
+  },
+  "protocolFormal": {
+    "actualNamed": 14,
+    "exactExplicitMatch": true,
+    "actualPassedNames": [
+      "falsePropertyDoesNotBlock",
+      "declarationAckNotNativeBlock",
+      "actualIsolatedBlockAccepted",
+      "noPhysicalInputRefused",
+      "noCurrentConfirmationRefused",
+      "revivedOwnerHitRefused",
+      "ownerCoreRefused",
+      "ownerSeatRefused",
+      "ownerCallbackRefused",
+      "hiddenNotIsolated",
+      "replacementRevokes",
+      "nativeClearRevokesOldBlock",
+      "sourceReplacementRevokes",
+      "lateDeclarationCannotRebindOldObservation"
+    ],
+    "boundedTracesRequested": 2000,
+    "maxSteps": 100,
+    "proof": {
+      "sha256": "0e9833898f07de99080261bea64e1b9473d4941b3bb8f3a3d00fc8a04b76fdd3",
+      "mode": 420
+    }
+  },
+  "firstCollectorSyntaxAndModelParseFailuresRetained": true,
+  "currentBv4FrozenUnchanged": true,
+  "originalInputFalseAndNonrevivalGatesRemain": true,
+  "original4sUnchanged": true,
+  "rootCorrectedProducerNamedBeforeImplementationClaimFalse": true,
+  "fullCampaignBAccepted": false,
+  "fullParityAccepted": false,
+  "nativeReachabilityProved": false,
+  "requiredNextReview": [
+    "exact source-selected monotonic native blocker phase and mapped/unhidden/noFocusFalse/current membership",
+    "separate B12 availability without all12 credit",
+    "future exact CPU/current-source/full ancestor+root correction union before native grant"
+  ],
+  "retainedFirstDescriptor": {
+    "path": "/home/hoskinson/window-behavior-spec/pin-native-input-block-v1-design/DESIGN_READY.json",
+    "sha256": "349d4589b405a3b44e66c8c53c7ca00d726807d4ef12107c45b6a89d67e17863",
+    "mode": 420
+  },
+  "requiredRootNamedCorrectionDriver": {
+    "path": "/home/hoskinson/window-integration-qa/run_pin_producer_named_correction_v1.py",
+    "sha256": "60d5f28c993e108ce4d99b67a40f81faad0e7becec498cbbf0848af427677aba",
+    "mode": 420
+  },
+  "additionalPublicAPIWitness": "actual guarded public workspaces.tiledLayout typeid strong owning algorithm; no numeric reason inference"
+}

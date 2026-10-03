@@ -1,0 +1,30 @@
+{
+  "updatedUTC": "2026-10-02T02:40:11.532386+00:00",
+  "result": "fail",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: mismatched input ',' expecting {'->', '=>', ')'}\n\n  at /home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt:6:72\n  6:   type Event = ReduceOn | ReduceOff | Watchdog | Context | Validate(int,int)\n                                                                            ^\n\n\n Error [QNT000]: mismatched input ',' expecting {'->', '=>', ')'}\n\n  at /home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt:7:58\n  7:     | Ack(int) | NewRequest | StartVisual | Presented(int,int) | LoseScope\n                                                              ^\n\n\n Error [QNT000]: mismatched input ',' expecting {'->', '=>', ')'}\n\n  at /home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt:8:30\n  8:     | Deadline | OldReady(int,int)\n                                  ^\n\n\n Error [QNT008]: Reserved keyword 'match' cannot be used as an identifier.\n\n  at /home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt:22:40\n  22:   action fire(e:Event):bool = s'=match e {\n                                             ^\n\n\n Error [QNT000]: extraneous input 'e' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}\n\n  at /home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt:22:40\n  22:   action fire(e:Event):bool = s'=match e {\n                                             ^\n\n\n Error [QNT000]: extraneous input '|' expecting {<EOF>, 'module', DOCCOMMENT}\n\n  at /home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt:24:5\n  24:     | ReduceOff => {...s,reduced:false}\n          ^\n\n\n Error [QNT404]: Name 'match' not found\n\n  at /home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt:22:34\n  22:   action fire(e:Event):bool = s'=match e {\n                                       ^^^^^\n\nerror: parsing failed\n"
+    }
+  ],
+  "models": 1,
+  "named": 16,
+  "samples": 2000,
+  "steps": 100,
+  "sourceOnly": true,
+  "productChanged": false,
+  "nativeExecuted": false,
+  "hashes": {
+    "REPAIR_CONTRACT.md": "ade3d552a346bb02a06afdf97905e76b409d4382ef8ce8f7bf569190610328a3",
+    "reduction_validation.qnt": "c1eae9c06e23029d8aff2b8b28eaa1ffba427727582fdb87245389a484904f44",
+    "reduction_validation_test.qnt": "bae0cbd763721ac82ae4b53c428f681efc918be5c458fa95803565d3faab127d",
+    "probe.py": "abc233610daa80e7528f27f2e2395dfcb2a3bcb103870bff97a44c855542b119",
+    "result.json": "b2989f43710bec5b238cb98f59b39097616ec82a3bf011904ae7514f55744b19"
+  }
+}

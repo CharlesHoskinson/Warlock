@@ -1,0 +1,8 @@
+{
+  "updatedUTC": "2026-10-01T19:17:10.933743+00:00",
+  "result": "prelaunch-review-refused",
+  "nativeLaunch": false,
+  "failure": "QA reader treated checksummed journal envelope as raw body; actual JournalStore writes body+sha256. FreshV3 will read through unchanged actual JournalStore and require minimized visual cleanup before baseline restore.",
+  "frozenManifestSHA256": "1650f8be982808eae06bc0d9ceb0de1d448a0cb9195b89be0a9d774ee07bf1c2",
+  "actualJournalSourceSHA256": "56803123fffb5b472825a2c431ccf7a516a1d2cacebe3bf46236cfbfeb675eaa"
+}

@@ -1,0 +1,205 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Window operations for the Omarchy taskbar. Addresses come from Hyprland, but
+# validate them before embedding them in a Lua dispatcher expression.
+command=${1:-}
+address=${2:-}
+expected_identity=${3:-}
+expected_pid=${4:-}
+state_dir="${XDG_RUNTIME_DIR:-$HOME/.cache}/hypr-windowctl"
+mkdir -p "$state_dir"
+
+clients=$(hyprctl clients -j)
+active=$(hyprctl activewindow -j)
+active_address=$(jq -r '.address // empty' <<<"$active")
+
+if [[ $command == restore-all ]]; then
+  return_workspace=$(hyprctl monitors -j | jq -r '[.[] | select(.focused) | .activeWorkspace.name][0] // "1"')
+  [[ $return_workspace =~ ^[0-9]+$ ]] || exit 4
+  batch_file="$state_dir/minimize-all-$return_workspace"
+  if [[ -f $batch_file ]]; then
+    last_restored=""
+    while read -r candidate identity; do
+      if [[ $candidate =~ ^0x[[:xdigit:]]+$ ]] &&
+         jq -e --arg a "$candidate" --arg id "${identity:-}" \
+           'any(.[]; .address == $a and .workspace.name == "special:win-minimized" and ($id == "" or (.stableId // "") == $id))' \
+           <<<"$clients" >/dev/null; then
+        if "$0" restore "$candidate"; then last_restored=$candidate; fi
+      fi
+    done <"$batch_file"
+    rm -f "$batch_file"
+    hyprctl dispatch "hl.dsp.focus({ workspace = \"$return_workspace\" })" >/dev/null
+    if [[ $last_restored =~ ^0x[[:xdigit:]]+$ ]] &&
+       jq -e --arg a "$last_restored" --arg ws "$return_workspace" \
+         'any(.[]; .address == $a and (.workspace.name == $ws or .pinned == true))' \
+         <<<"$(hyprctl clients -j)" >/dev/null; then
+      hyprctl dispatch "hl.dsp.focus({ window = \"address:$last_restored\" })" >/dev/null
+    fi
+  fi
+  exit 0
+fi
+
+if [[ $command == minimize-all || $command == minimize-others ]]; then
+  if [[ $command == minimize-others ]]; then
+    # Title-bar Shake supplies its owner explicitly. Focus can move before an
+    # asynchronous compositor command reaches this script.
+    [[ -n $address ]] && active_address=$address
+    [[ $active_address =~ ^0x[[:xdigit:]]+$ ]] || exit 2
+    owner=$(jq -c --arg a "$active_address" '.[] | select(.address == $a)' <<<"$clients" | head -n 1)
+    [[ -n $owner ]] || exit 3
+  fi
+  focused_workspace=$(hyprctl monitors -j | jq -r '[.[] | select(.focused) | .activeWorkspace.name][0] // "1"')
+  if [[ $command == minimize-others ]] && [[ $(jq -r '.pinned' <<<"$owner") != true ]]; then
+    focused_workspace=$(jq -r '.workspace.name' <<<"$owner")
+  fi
+  active_family="$active_address"
+  if [[ $command == minimize-others && -x $HOME/.local/bin/hypr-window-family ]]; then
+    active_family=$("$HOME/.local/bin/hypr-window-family" "$active_address" <<<"$clients" | jq -r '.windows[].address')
+  fi
+  [[ $focused_workspace =~ ^[0-9]+$ ]] || exit 4
+  batch_file="$state_dir/$command-$focused_workspace"
+  if [[ $command == minimize-others && -f $batch_file ]]; then
+    while read -r candidate identity; do
+      if [[ $candidate =~ ^0x[[:xdigit:]]+$ ]] &&
+         jq -e --arg a "$candidate" --arg id "${identity:-}" \
+           'any(.[]; .address == $a and .workspace.name == "special:win-minimized" and ($id == "" or (.stableId // "") == $id))' \
+           <<<"$clients" >/dev/null; then
+        "$0" restore "$candidate" || true
+      fi
+    done <"$batch_file"
+    rm -f "$batch_file"
+    hyprctl dispatch "hl.dsp.focus({ window = \"address:$active_address\" })" >/dev/null
+    exit 0
+  fi
+  # Win+M and Win+Home operate on the current desktop. Do not hide windows
+  # belonging to another workspace while the user is working here. Pinned
+  # windows are visible on this desktop even if their home workspace differs.
+  mapfile -t addresses < <(jq -r --arg ws "$focused_workspace" \
+    '.[] | select(.mapped and ((.workspace.name == $ws) or (.pinned == true))) | .address' <<<"$clients")
+  [[ -f $batch_file ]] || : >"$batch_file"
+  for candidate in "${addresses[@]}"; do
+    if [[ $command == minimize-others ]] && grep -Fxq "$candidate" <<<"$active_family"; then continue; fi
+    [[ $candidate == "$active_address" ]] && continue
+    identity=$(jq -r --arg a "$candidate" '.[] | select(.address == $a) | .stableId // ""' <<<"$clients")
+    printf '%s %s\n' "$candidate" "$identity" >>"$batch_file"
+    "$0" minimize "$candidate" || true
+  done
+  if [[ $command == minimize-all && $active_address =~ ^0x[[:xdigit:]]+$ ]] &&
+     printf '%s\n' "${addresses[@]}" | grep -Fxq "$active_address"; then
+    identity=$(jq -r --arg a "$active_address" '.[] | select(.address == $a) | .stableId // ""' <<<"$clients")
+    printf '%s %s\n' "$active_address" "$identity" >>"$batch_file"
+    "$0" minimize "$active_address" || true
+  fi
+  exit 0
+fi
+
+if [[ -z $address ]]; then
+  address=$active_address
+fi
+[[ $address =~ ^0x[[:xdigit:]]+$ ]] || exit 2
+
+window=$(jq -c --arg address "$address" '.[] | select(.address == $address)' <<<"$clients" | head -n 1)
+[[ -n $window ]] || exit 3
+if [[ -n $expected_identity ]]; then
+  [[ $(jq -r '.stableId // ""' <<<"$window") == "$expected_identity" ]] || exit 3
+fi
+if [[ -n $expected_pid ]]; then
+  [[ $expected_pid =~ ^[0-9]+$ ]] || exit 2
+  [[ $(jq -r '.pid // ""' <<<"$window") == "$expected_pid" ]] || exit 3
+fi
+workspace=$(jq -r '.workspace.name // empty' <<<"$window")
+state_file="$state_dir/$address"
+
+dispatch() { hyprctl dispatch "$1" >/dev/null; }
+active_workspace() {
+  hyprctl monitors -j | jq -r '[.[] | select(.focused) | .activeWorkspace.name][0] // "1"'
+}
+
+if [[ ${HYPR_WINDOWCTL_FAMILY_SINGLE:-0} != 1 && -x $HOME/.local/bin/hypr-window-family ]] &&
+   [[ $command == minimize || $command == restore || $command == toggle ]]; then
+  family_plan=$("$HOME/.local/bin/hypr-window-family" "$address" <<<"$clients")
+  if [[ $(jq '.windows | length' <<<"$family_plan") -gt 1 ]]; then
+    family_command=$command
+    if [[ $family_command == toggle ]]; then
+      if [[ $workspace == special:win-minimized || $workspace == special:scratchpad ]]; then family_command=restore; else family_command=minimize; fi
+    fi
+    while IFS=$'\t' read -r member member_identity member_pid; do
+      HYPR_WINDOWCTL_FAMILY_SINGLE=1 "$0" "$family_command" "$member" "$member_identity" "$member_pid"
+    done < <(jq -r '.windows[] | [.address, .stableId, .pid] | @tsv' <<<"$family_plan")
+    if [[ $family_command == restore ]]; then
+      read -r focus_address focus_identity focus_pid < <(jq -r '.focus | [.address,.stableId,.pid] | @tsv' <<<"$family_plan")
+      HYPR_WINDOWCTL_FAMILY_SINGLE=1 "$0" restore "$focus_address" "$focus_identity" "$focus_pid"
+    fi
+    exit 0
+  fi
+fi
+
+case "$command" in
+  minimize)
+    [[ $workspace != special:* ]] || exit 0
+    [[ $workspace =~ ^[0-9]+$ ]] || exit 4
+    "$HOME/.local/bin/hypr-window-preview" capture-both "$address" 0 || true
+    was_pinned=$(jq -r 'if .pinned then "1" else "0" end' <<<"$window")
+    identity=$(jq -r '.stableId // ""' <<<"$window")
+    if [[ -n $identity ]]; then
+      printf '%s %s %s\n' "$workspace" "$was_pinned" "$identity" >"$state_file"
+    else
+      printf '%s %s\n' "$workspace" "$was_pinned" >"$state_file"
+    fi
+    jq -n --argjson window "$window" --argjson monitors "$(hyprctl monitors -j)" \
+      '{pid:$window.pid, stableId:$window.stableId, homeWorkspace:$window.workspace.name,
+        monitorName:([$monitors[] | select(.id == $window.monitor) | .name][0] // "")}' \
+      >"$state_file.monitor.json.tmp"
+    mv -f "$state_file.monitor.json.tmp" "$state_file.monitor.json"
+    if [[ $was_pinned == 1 ]]; then
+      dispatch "hl.dsp.window.pin({ window = \"address:$address\" })"
+    fi
+    dispatch "hl.dsp.window.move({ workspace = \"special:win-minimized\", follow = false, window = \"address:$address\" })"
+    ;;
+  restore)
+    if [[ $workspace == special:win-minimized || $workspace == special:scratchpad ]]; then
+      destination=""
+      was_pinned=0
+      identity=""
+      if [[ -f $state_file ]]; then read -r destination was_pinned identity <"$state_file" || true; fi
+      current_identity=$(jq -r '.stableId // ""' <<<"$window")
+      if [[ -n $identity && $identity != "$current_identity" ]]; then
+        destination=""
+        was_pinned=0
+      fi
+      [[ $destination =~ ^[0-9]+$ ]] || destination=$(active_workspace)
+      [[ $destination =~ ^[0-9]+$ ]] || exit 4
+      known_workspace=$(hyprctl workspaces -j 2>/dev/null | jq -r --arg ws "$destination" '[.[] | select(.name == $ws)] | length' || true)
+      if [[ $known_workspace == 0 && -f $state_file.monitor.json ]]; then
+        home_monitor=$(jq -r --argjson window "$window" --arg ws "$destination" \
+          'select(.homeWorkspace == $ws and .pid == $window.pid and .stableId == $window.stableId) | .monitorName // empty' \
+          "$state_file.monitor.json" 2>/dev/null || true)
+        if [[ -n $home_monitor ]] && hyprctl monitors -j | jq -e --arg name "$home_monitor" 'any(.[]; .name == $name)' >/dev/null; then
+          monitor_literal=$(jq -Rn --arg name "$home_monitor" '$name')
+          dispatch "hl.dsp.focus({ monitor = $monitor_literal })"
+        fi
+      fi
+      dispatch "hl.dsp.window.move({ workspace = \"$destination\", follow = false, window = \"address:$address\" })"
+      rm -f "$state_file" "$state_file.monitor.json"
+      dispatch "hl.dsp.focus({ workspace = \"$destination\" })"
+      if [[ $was_pinned == 1 ]]; then
+        dispatch "hl.dsp.window.pin({ window = \"address:$address\" })"
+      fi
+    elif [[ $workspace =~ ^[0-9]+$ ]]; then
+      dispatch "hl.dsp.focus({ workspace = \"$workspace\" })"
+    else
+      exit 4
+    fi
+    dispatch "hl.dsp.focus({ window = \"address:$address\" })"
+    dispatch "hl.dsp.window.alter_zorder({ mode = \"top\", window = \"address:$address\" })"
+    ;;
+  toggle)
+    if [[ $workspace == special:win-minimized || $workspace == special:scratchpad ]]; then
+      exec "$0" restore "$address"
+    else
+      exec "$0" minimize "$address"
+    fi
+    ;;
+  *) exit 2 ;;
+esac

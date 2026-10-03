@@ -1,0 +1,3276 @@
+{
+  "phase": "terminal-binding",
+  "errors": [
+    {
+      "type": "ValueError",
+      "message": "complete closed actual query proof required"
+    }
+  ],
+  "usable": false,
+  "moduleToken": "b2a4018b2ca295f1a173babbadbeeec495211c90f2609d1470e5234ec88a179b",
+  "owner": {
+    "pid": 4136227,
+    "start": 14987595,
+    "uid": 1000,
+    "nonce": "54e70b944d8c4b2b8fa9e5ae814afe0f",
+    "session": "efb50993780079460b0cbed1363e2166a2de1d9f_1790927394_405881097",
+    "root": "/run/user/1000/wqa/989f/hypr-window-motion/qa-family-service",
+    "rootIdentity": [
+      84,
+      427117
+    ],
+    "lockIdentity": [
+      84,
+      427118
+    ],
+    "compositorPID": 4134639,
+    "compositorStart": 14986725
+  },
+  "ownerToken": "cded8f4349c65a8c64b5d4973c45cf591c60cbc75d23bd67e45c4f20047f5ff1",
+  "ledger": {
+    "version": 1,
+    "issuer": {
+      "pid": 4136227,
+      "start": 14987595,
+      "uid": 1000,
+      "root": "/run/user/1000/wqa/989f/hypr-window-motion/qa-family-service",
+      "rootIdentity": [
+        84,
+        427117
+      ],
+      "lockIdentity": [
+        84,
+        427118
+      ],
+      "nonce": "54e70b944d8c4b2b8fa9e5ae814afe0f",
+      "session": "efb50993780079460b0cbed1363e2166a2de1d9f_1790927394_405881097",
+      "environment": {
+        "XDG_RUNTIME_DIR": "/run/user/1000/wqa/989f",
+        "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790927394_405881097",
+        "WAYLAND_DISPLAY": "wayland-1"
+      },
+      "compositorPID": 4134639,
+      "compositorStart": 14986725,
+      "socket": "/run/user/1000/wqa/989f/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790927394_405881097/.socket.sock",
+      "socketIdentity": [
+        84,
+        426920
+      ],
+      "adapter": {
+        "device": 58,
+        "inode": 4422404,
+        "size": 19577,
+        "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+        "seals": null
+      },
+      "sessionSource": {
+        "device": 58,
+        "inode": 4358000,
+        "size": 20873,
+        "sha256": "a690e79fcb1231debce7a66fe7712d31942db6301fce79bc92effaa453a35c73",
+        "seals": null
+      },
+      "executable": "/usr/bin/hyprctl",
+      "executableMaterial": {
+        "device": 32,
+        "inode": 114194,
+        "size": 272680,
+        "sha256": "2780a8bb56494917a725f817c9cf70fb5cc2f39aac5abc62ecf2e619a1f13ec5",
+        "seals": null
+      }
+    },
+    "history": [
+      {
+        "id": "89dce2e4e9eb495c92e9ba8c2673f3c3",
+        "actor": null,
+        "thread": 4136227,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28085821
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137756924954536,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137756932235897
+      },
+      {
+        "id": "6e41af7fc937461b932d7429605c431d",
+        "actor": 1,
+        "thread": 4136368,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28077743
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137757391681930,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137757399942584
+      },
+      {
+        "id": "8c15d63654bf48f8af31aa73d6932295",
+        "actor": 1,
+        "thread": 4136368,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28081696
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/monitors",
+        "requestSHA256": "34cf7412fa83cccf31a4572ee100f7669e36c20f9494ade82d2d5b094df61e9c",
+        "registeredNs": 137757412612471,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 1066,
+          "replySHA256": "9863266ffe31f621230d9047f5400f17e664eb7627f36629df8eb47848580aa4",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137757422922681
+      },
+      {
+        "id": "5a2d540f1433467d8260d0dc2b6a0d2a",
+        "actor": 1,
+        "thread": 4136368,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28081708
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/monitors",
+        "requestSHA256": "34cf7412fa83cccf31a4572ee100f7669e36c20f9494ade82d2d5b094df61e9c",
+        "registeredNs": 137757521027131,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 1075,
+          "replySHA256": "e5b6f3bf3e8c5b1ab1963943c1876b71e9603858f8f88a42c3b4b7bbcc941e7f",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137757537928832
+      },
+      {
+        "id": "31deac8702194fe98310e68115ab8556",
+        "actor": 1,
+        "thread": 4136368,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28071817
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137757557630286,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137757567739885
+      },
+      {
+        "id": "34688d7539664d6c9f09f9bf027acdf3",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28082615
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137757604283220,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137757619890335
+      },
+      {
+        "id": "970190ac466d48bfbf10846cbbe50438",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28085856
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137757634625989,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137757647029967
+      },
+      {
+        "id": "511a62eb62604fed9a135bb37a17b329",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28072902
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "/repl print(hl.plugin.hyprbars.window_families())",
+        "requestSHA256": "c5d8f3018c7230350348b9984331e3ee57559ede5926b4b9928dc0fcf553a504",
+        "registeredNs": 137757662319103,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 487,
+          "replySHA256": "ede3e840ca5aee9593d0f343a3fa548dc95729bd0cea524e300456a2dc68d22f",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137757674855830
+      },
+      {
+        "id": "ac9810ba51c949cdb4b8a3d9228ad560",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28063650
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137757690407863,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137757701133132
+      },
+      {
+        "id": "eebd15f3f32d4ab9b3c840a731fa9c38",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28078831
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137757858120115,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137757867289269
+      },
+      {
+        "id": "2ef6ce144218488aada171ca626805d8",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28078845
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137757878891264,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137757887154842
+      },
+      {
+        "id": "e1f956a15c254eb688ad62c7efa399bf",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28088576
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "/repl print(hl.plugin.hyprbars.window_families())",
+        "requestSHA256": "c5d8f3018c7230350348b9984331e3ee57559ede5926b4b9928dc0fcf553a504",
+        "registeredNs": 137757903674369,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 487,
+          "replySHA256": "ede3e840ca5aee9593d0f343a3fa548dc95729bd0cea524e300456a2dc68d22f",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137757917354448
+      },
+      {
+        "id": "ed8504699b0147c59d89ae822b647dd7",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28088589
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137757935021031,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137757948813155
+      },
+      {
+        "id": "7d2ccf4dedf6475f98de51cd8cb832c4",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 7,
+        "fdIdentity": [
+          10,
+          28082621
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137757994222722,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137758038377508
+      },
+      {
+        "id": "0c76d1cf13874e3fa092391aca343646",
+        "actor": null,
+        "thread": 4136324,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28084635
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137757997763747,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137758024807056
+      },
+      {
+        "id": "cc6ef0bde3254c89b34c92b374e4efe1",
+        "actor": null,
+        "thread": 4136324,
+        "fd": 12,
+        "fdIdentity": [
+          10,
+          28069834
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "/repl print(hl.plugin.hyprbars.window_families())",
+        "requestSHA256": "c5d8f3018c7230350348b9984331e3ee57559ede5926b4b9928dc0fcf553a504",
+        "registeredNs": 137758070486933,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 487,
+          "replySHA256": "ede3e840ca5aee9593d0f343a3fa548dc95729bd0cea524e300456a2dc68d22f",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137758086969255
+      },
+      {
+        "id": "2583629e8a2b47658880c3ba6f309df6",
+        "actor": null,
+        "thread": 4136324,
+        "fd": 12,
+        "fdIdentity": [
+          10,
+          28076725
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137758105478303,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137758124573414
+      },
+      {
+        "id": "9ceccaf22749423c9a9d83f4d5798f34",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28081733
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137758524601718,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137758539029986
+      },
+      {
+        "id": "476c267f4a4343be8e309b5d3fcab66c",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 7,
+        "fdIdentity": [
+          10,
+          28063695
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137758562067426,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137758578283997
+      },
+      {
+        "id": "1723f0d3a0e6401d8a30924e4824a136",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 7,
+        "fdIdentity": [
+          10,
+          28068787
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137758776140004,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137758792566378
+      },
+      {
+        "id": "10a73a0fafa7455d88b0515e09726b3d",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28085879
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137758809055252,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137758822284682
+      },
+      {
+        "id": "41104e9eed344bb789c255636819fe5f",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28081747
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137758855374519,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137758870278484
+      },
+      {
+        "id": "c3499169c784496ebf6c202db8fbf15b",
+        "actor": null,
+        "thread": 4136324,
+        "fd": 12,
+        "fdIdentity": [
+          10,
+          28083945
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137759187067768,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137759206741524
+      },
+      {
+        "id": "c4d7ba90fcc74648b7c885f608b1ce36",
+        "actor": null,
+        "thread": 4136324,
+        "fd": 12,
+        "fdIdentity": [
+          10,
+          28086637
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "/repl print(hl.plugin.hyprbars.window_families())",
+        "requestSHA256": "c5d8f3018c7230350348b9984331e3ee57559ede5926b4b9928dc0fcf553a504",
+        "registeredNs": 137759229252402,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 487,
+          "replySHA256": "ede3e840ca5aee9593d0f343a3fa548dc95729bd0cea524e300456a2dc68d22f",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137759268575221
+      },
+      {
+        "id": "824a1f0de9354a27ae4ed751d90636e3",
+        "actor": null,
+        "thread": 4136324,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28082625
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137759287616593,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137759323017704
+      },
+      {
+        "id": "1941eb9cc3b94126975d011af0fa3b29",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28074610
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137759344308572,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137759366248443
+      },
+      {
+        "id": "7dbda1b2dd584924957165f180097486",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 7,
+        "fdIdentity": [
+          10,
+          28071844
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137759386687355,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137759406168271
+      },
+      {
+        "id": "3bd9d091f6d840d4b134ed0f50596002",
+        "actor": 1,
+        "thread": 4136227,
+        "fd": 9,
+        "fdIdentity": [
+          10,
+          28067838
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137759623080769,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137759645901856
+      },
+      {
+        "id": "fb0856d0762d4aa397dd625cb0d5e8f3",
+        "actor": 1,
+        "thread": 4136227,
+        "fd": 9,
+        "fdIdentity": [
+          10,
+          28083970
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137759668135455,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137759679660543
+      },
+      {
+        "id": "5d015862e36d4aedbad88640bc35f5b3",
+        "actor": 1,
+        "thread": 4136227,
+        "fd": 9,
+        "fdIdentity": [
+          10,
+          28083984
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "/repl print(hl.plugin.hyprbars.window_families())",
+        "requestSHA256": "c5d8f3018c7230350348b9984331e3ee57559ede5926b4b9928dc0fcf553a504",
+        "registeredNs": 137759696527651,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 487,
+          "replySHA256": "ede3e840ca5aee9593d0f343a3fa548dc95729bd0cea524e300456a2dc68d22f",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137759710325158
+      },
+      {
+        "id": "2189e2e6f38242c3a6fb61d607af69d6",
+        "actor": 1,
+        "thread": 4136227,
+        "fd": 9,
+        "fdIdentity": [
+          10,
+          28087490
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137759730272379,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3598,
+          "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137759751759738
+      },
+      {
+        "id": "f9428a417a064c2fb90bcd830f62a74c",
+        "actor": 1,
+        "thread": 4136227,
+        "fd": 10,
+        "fdIdentity": [
+          10,
+          28089415
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137761022369681,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3664,
+          "replySHA256": "0f5d1843aececd4a40593fff2c84871a96bdcbbfbbe1accfbac42706d83c7898",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137761044590561
+      },
+      {
+        "id": "e78642c34d5244daa7003148218b719d",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 7,
+        "fdIdentity": [
+          10,
+          28070716
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137759622378921,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3664,
+          "replySHA256": "0f5d1843aececd4a40593fff2c84871a96bdcbbfbbe1accfbac42706d83c7898",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137761126854055
+      },
+      {
+        "id": "f49c904eae914a71af261fb16955e155",
+        "actor": null,
+        "thread": 4136324,
+        "fd": 9,
+        "fdIdentity": [
+          10,
+          28073638
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137760367946927,
+        "closed": true,
+        "published": true,
+        "outcome": "refused",
+        "evidence": {
+          "completeServerEOF": false,
+          "replyBytes": 0,
+          "replySHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "peer": null,
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": {
+          "type": "TimeoutError",
+          "message": "read-only complete reply absolute deadline"
+        },
+        "finishedNs": 137761109311292
+      },
+      {
+        "id": "0416ac46604542d6ac39a912c0b6310d",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28082723
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137761178951429,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3664,
+          "replySHA256": "0f5d1843aececd4a40593fff2c84871a96bdcbbfbbe1accfbac42706d83c7898",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137761202699511
+      },
+      {
+        "id": "602b6aa06ae04642aa1adee1acfe4d21",
+        "actor": 1,
+        "thread": 4136434,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          28071924
+        ],
+        "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 137761239975330,
+        "closed": true,
+        "published": true,
+        "outcome": "complete",
+        "evidence": {
+          "completeServerEOF": true,
+          "replyBytes": 3664,
+          "replySHA256": "0f5d1843aececd4a40593fff2c84871a96bdcbbfbbe1accfbac42706d83c7898",
+          "peer": {
+            "pid": 4134639,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            426920
+          ]
+        },
+        "error": null,
+        "finishedNs": 137761262238921
+      }
+    ],
+    "fault": false
+  },
+  "ledgerToken": "5a1fd4e5e3499e50cecc974da39f69a95c399bc8b608e68ab7c38ec8c9c87847",
+  "journal": {
+    "actorLimit": 64,
+    "actorResources": [
+      {
+        "actor": 1,
+        "directory": {
+          "identity": [
+            84,
+            427131
+          ],
+          "parentIdentity": [
+            84,
+            427129
+          ],
+          "path": "/run/user/1000/wqa/989f/hypr-window-motion/qa-family-service/actors/actor-1-b5030e3ffff141a1b4c8918561241a5c"
+        },
+        "outcome": {
+          "directoryGone": true,
+          "normalRetirement": true,
+          "oldLifetimeGone": true
+        },
+        "phase": "closed",
+        "renderer": {
+          "argv": [
+            "/usr/bin/python3.14",
+            "/proc/self/fd/7",
+            "10",
+            "13",
+            "9",
+            "[\"/proc/self/fd/9\"]",
+            "elf",
+            "-1"
+          ],
+          "environment": {
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790927394_405881097",
+            "WAYLAND_DISPLAY": "wayland-1",
+            "XDG_RUNTIME_DIR": "/run/user/1000/wqa/989f"
+          },
+          "interpreter": null,
+          "launcher": {
+            "device": 32,
+            "inode": 72938,
+            "seals": null,
+            "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+            "size": 14424
+          },
+          "mode": "elf",
+          "pid": 4136334,
+          "policy": "linux-x86_64-group-confinement-v1",
+          "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+          "producer": {
+            "device": 1,
+            "inode": 596164,
+            "seals": 15,
+            "sha256": "06185baacd8316adec369ec5453699e8da054bb057f30242d43dc8607ced1865",
+            "size": 504432
+          },
+          "producerFD": 9,
+          "script": {
+            "device": 1,
+            "inode": 596165,
+            "seals": 15,
+            "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+            "size": 2738
+          },
+          "scriptFD": 7,
+          "start": 14987712,
+          "targetArgv": [
+            "/proc/self/fd/9"
+          ],
+          "uid": 1000
+        }
+      }
+    ],
+    "actorSerial": 1,
+    "failure": null,
+    "helperOwnership": {
+      "jobs": [],
+      "keeper": {
+        "argv": [
+          "/usr/bin/python3.14",
+          "/proc/self/fd/6",
+          "5",
+          "{\"nonce\":\"e98f1b8c5e6a45149b5f5f1fb8e65e6e\",\"root\":\"/run/user/1000/wqa/989f/hypr-window-motion/qa-family-service\",\"root_identity\":[84,427117],\"service_pid\":4136227,\"service_start\":14987595}"
+        ],
+        "environment": {
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790927394_405881097",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/989f"
+        },
+        "launcher": {
+          "device": 32,
+          "inode": 72938,
+          "seals": null,
+          "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+          "size": 14424
+        },
+        "nonce": "e98f1b8c5e6a45149b5f5f1fb8e65e6e",
+        "phase": "closed",
+        "pid": 4136313,
+        "root": "/run/user/1000/wqa/989f/hypr-window-motion/qa-family-service",
+        "rootIdentity": [
+          84,
+          427117
+        ],
+        "script": {
+          "device": 1,
+          "inode": 597050,
+          "seals": 15,
+          "sha256": "82d17836a702a4849ad4eac791bb3806a54a6779cb8e3443886e47218a215119",
+          "size": 9030
+        },
+        "scriptFD": 6,
+        "servicePID": 4136227,
+        "serviceStart": 14987595,
+        "start": 14987680,
+        "terminal": {
+          "allGroupsEmpty": true,
+          "closedNs": 137761648608331,
+          "jobs": [
+            {
+              "groupEmpty": true,
+              "job": "76b2115fcfab4ea1ba26015038098675",
+              "normalCompletion": true,
+              "pid": 4136449,
+              "start": 14987768
+            },
+            {
+              "groupEmpty": true,
+              "job": "28d64718be4d4e3f8f239470934a3fa0",
+              "normalCompletion": true,
+              "pid": 4136495,
+              "start": 14987802
+            },
+            {
+              "groupEmpty": true,
+              "job": "54fbfe1c17a342deb4e5ccc230423638",
+              "normalCompletion": true,
+              "pid": 4136521,
+              "start": 14987833
+            },
+            {
+              "groupEmpty": true,
+              "job": "97c1dc7f31484851aa0ea3e6d2227599",
+              "normalCompletion": true,
+              "pid": 4136540,
+              "start": 14987855
+            },
+            {
+              "groupEmpty": true,
+              "job": "59cb8d93cd554c738b27666a645e4116",
+              "normalCompletion": true,
+              "pid": 4136578,
+              "start": 14987885
+            },
+            {
+              "groupEmpty": true,
+              "job": "8dbfac4d9b8d4825a29894936bc4a666",
+              "normalCompletion": true,
+              "pid": 4136600,
+              "start": 14987913
+            },
+            {
+              "groupEmpty": true,
+              "job": "d636fbd25c64485baa3093d7fa88b6e2",
+              "normalCompletion": true,
+              "pid": 4136624,
+              "start": 14987939
+            },
+            {
+              "groupEmpty": true,
+              "job": "259fea6eb70a4128b36a6e32e02c2497",
+              "normalCompletion": true,
+              "pid": 4136685,
+              "start": 14987974
+            },
+            {
+              "groupEmpty": true,
+              "job": "9fca395ef1504c97981faab71f489afd",
+              "normalCompletion": true,
+              "pid": 4136870,
+              "start": 14988019
+            },
+            {
+              "groupEmpty": true,
+              "job": "8c29cc433fcb4e08b8382199e47480be",
+              "normalCompletion": true,
+              "pid": 4136982,
+              "start": 14988050
+            },
+            {
+              "groupEmpty": true,
+              "job": "92c33dfdb79648ec8cb9fca99cbf2f61",
+              "normalCompletion": true,
+              "pid": 4136334,
+              "start": 14987712
+            }
+          ],
+          "keeperPID": 4136313,
+          "keeperStart": 14987680,
+          "nonce": "e98f1b8c5e6a45149b5f5f1fb8e65e6e",
+          "normalStop": true,
+          "registrations": 11,
+          "rootIdentity": [
+            84,
+            427117
+          ],
+          "servicePID": 4136227,
+          "serviceStart": 14987595
+        },
+        "uid": 1000
+      }
+    },
+    "housekeepingErrors": [
+      {
+        "error": "read-only complete reply absolute deadline",
+        "operation": "cache",
+        "timeNs": 137761141715295
+      }
+    ],
+    "ingressHistory": [
+      {
+        "activated": true,
+        "actor": 1,
+        "finishedNs": 137757593848835,
+        "identity": [
+          "0x59945473a560",
+          "18000000",
+          4135853
+        ],
+        "receipt": 1,
+        "receivedNs": 137757378468704,
+        "token": "e52ce3d43e8f-1"
+      }
+    ],
+    "liveActors": [],
+    "managerClosed": true,
+    "pending": [],
+    "readonlyOwnership": {
+      "fault": false,
+      "history": [
+        {
+          "actor": null,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28085821
+          ],
+          "finishedNs": 137756932235897,
+          "id": "89dce2e4e9eb495c92e9ba8c2673f3c3",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137756924954536,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136227
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28077743
+          ],
+          "finishedNs": 137757399942584,
+          "id": "6e41af7fc937461b932d7429605c431d",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757391681930,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136368
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 1066,
+            "replySHA256": "9863266ffe31f621230d9047f5400f17e664eb7627f36629df8eb47848580aa4",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28081696
+          ],
+          "finishedNs": 137757422922681,
+          "id": "8c15d63654bf48f8af31aa73d6932295",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757412612471,
+          "request": "j/monitors",
+          "requestSHA256": "34cf7412fa83cccf31a4572ee100f7669e36c20f9494ade82d2d5b094df61e9c",
+          "thread": 4136368
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 1075,
+            "replySHA256": "e5b6f3bf3e8c5b1ab1963943c1876b71e9603858f8f88a42c3b4b7bbcc941e7f",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28081708
+          ],
+          "finishedNs": 137757537928832,
+          "id": "5a2d540f1433467d8260d0dc2b6a0d2a",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757521027131,
+          "request": "j/monitors",
+          "requestSHA256": "34cf7412fa83cccf31a4572ee100f7669e36c20f9494ade82d2d5b094df61e9c",
+          "thread": 4136368
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28071817
+          ],
+          "finishedNs": 137757567739885,
+          "id": "31deac8702194fe98310e68115ab8556",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757557630286,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136368
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28082615
+          ],
+          "finishedNs": 137757619890335,
+          "id": "34688d7539664d6c9f09f9bf027acdf3",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757604283220,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28085856
+          ],
+          "finishedNs": 137757647029967,
+          "id": "970190ac466d48bfbf10846cbbe50438",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757634625989,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 487,
+            "replySHA256": "ede3e840ca5aee9593d0f343a3fa548dc95729bd0cea524e300456a2dc68d22f",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28072902
+          ],
+          "finishedNs": 137757674855830,
+          "id": "511a62eb62604fed9a135bb37a17b329",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757662319103,
+          "request": "/repl print(hl.plugin.hyprbars.window_families())",
+          "requestSHA256": "c5d8f3018c7230350348b9984331e3ee57559ede5926b4b9928dc0fcf553a504",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28063650
+          ],
+          "finishedNs": 137757701133132,
+          "id": "ac9810ba51c949cdb4b8a3d9228ad560",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757690407863,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28078831
+          ],
+          "finishedNs": 137757867289269,
+          "id": "eebd15f3f32d4ab9b3c840a731fa9c38",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757858120115,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28078845
+          ],
+          "finishedNs": 137757887154842,
+          "id": "2ef6ce144218488aada171ca626805d8",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757878891264,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 487,
+            "replySHA256": "ede3e840ca5aee9593d0f343a3fa548dc95729bd0cea524e300456a2dc68d22f",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28088576
+          ],
+          "finishedNs": 137757917354448,
+          "id": "e1f956a15c254eb688ad62c7efa399bf",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757903674369,
+          "request": "/repl print(hl.plugin.hyprbars.window_families())",
+          "requestSHA256": "c5d8f3018c7230350348b9984331e3ee57559ede5926b4b9928dc0fcf553a504",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28088589
+          ],
+          "finishedNs": 137757948813155,
+          "id": "ed8504699b0147c59d89ae822b647dd7",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757935021031,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 7,
+          "fdIdentity": [
+            10,
+            28082621
+          ],
+          "finishedNs": 137758038377508,
+          "id": "7d2ccf4dedf6475f98de51cd8cb832c4",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757994222722,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": null,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28084635
+          ],
+          "finishedNs": 137758024807056,
+          "id": "0c76d1cf13874e3fa092391aca343646",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137757997763747,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136324
+        },
+        {
+          "actor": null,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 487,
+            "replySHA256": "ede3e840ca5aee9593d0f343a3fa548dc95729bd0cea524e300456a2dc68d22f",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 12,
+          "fdIdentity": [
+            10,
+            28069834
+          ],
+          "finishedNs": 137758086969255,
+          "id": "cc6ef0bde3254c89b34c92b374e4efe1",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137758070486933,
+          "request": "/repl print(hl.plugin.hyprbars.window_families())",
+          "requestSHA256": "c5d8f3018c7230350348b9984331e3ee57559ede5926b4b9928dc0fcf553a504",
+          "thread": 4136324
+        },
+        {
+          "actor": null,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 12,
+          "fdIdentity": [
+            10,
+            28076725
+          ],
+          "finishedNs": 137758124573414,
+          "id": "2583629e8a2b47658880c3ba6f309df6",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137758105478303,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136324
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28081733
+          ],
+          "finishedNs": 137758539029986,
+          "id": "9ceccaf22749423c9a9d83f4d5798f34",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137758524601718,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 7,
+          "fdIdentity": [
+            10,
+            28063695
+          ],
+          "finishedNs": 137758578283997,
+          "id": "476c267f4a4343be8e309b5d3fcab66c",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137758562067426,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 7,
+          "fdIdentity": [
+            10,
+            28068787
+          ],
+          "finishedNs": 137758792566378,
+          "id": "1723f0d3a0e6401d8a30924e4824a136",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137758776140004,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28085879
+          ],
+          "finishedNs": 137758822284682,
+          "id": "10a73a0fafa7455d88b0515e09726b3d",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137758809055252,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28081747
+          ],
+          "finishedNs": 137758870278484,
+          "id": "41104e9eed344bb789c255636819fe5f",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137758855374519,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": null,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 12,
+          "fdIdentity": [
+            10,
+            28083945
+          ],
+          "finishedNs": 137759206741524,
+          "id": "c3499169c784496ebf6c202db8fbf15b",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137759187067768,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136324
+        },
+        {
+          "actor": null,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 487,
+            "replySHA256": "ede3e840ca5aee9593d0f343a3fa548dc95729bd0cea524e300456a2dc68d22f",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 12,
+          "fdIdentity": [
+            10,
+            28086637
+          ],
+          "finishedNs": 137759268575221,
+          "id": "c4d7ba90fcc74648b7c885f608b1ce36",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137759229252402,
+          "request": "/repl print(hl.plugin.hyprbars.window_families())",
+          "requestSHA256": "c5d8f3018c7230350348b9984331e3ee57559ede5926b4b9928dc0fcf553a504",
+          "thread": 4136324
+        },
+        {
+          "actor": null,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28082625
+          ],
+          "finishedNs": 137759323017704,
+          "id": "824a1f0de9354a27ae4ed751d90636e3",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137759287616593,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136324
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28074610
+          ],
+          "finishedNs": 137759366248443,
+          "id": "1941eb9cc3b94126975d011af0fa3b29",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137759344308572,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 7,
+          "fdIdentity": [
+            10,
+            28071844
+          ],
+          "finishedNs": 137759406168271,
+          "id": "7dbda1b2dd584924957165f180097486",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137759386687355,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 9,
+          "fdIdentity": [
+            10,
+            28067838
+          ],
+          "finishedNs": 137759645901856,
+          "id": "3bd9d091f6d840d4b134ed0f50596002",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137759623080769,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136227
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 9,
+          "fdIdentity": [
+            10,
+            28083970
+          ],
+          "finishedNs": 137759679660543,
+          "id": "fb0856d0762d4aa397dd625cb0d5e8f3",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137759668135455,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136227
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 487,
+            "replySHA256": "ede3e840ca5aee9593d0f343a3fa548dc95729bd0cea524e300456a2dc68d22f",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 9,
+          "fdIdentity": [
+            10,
+            28083984
+          ],
+          "finishedNs": 137759710325158,
+          "id": "5d015862e36d4aedbad88640bc35f5b3",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137759696527651,
+          "request": "/repl print(hl.plugin.hyprbars.window_families())",
+          "requestSHA256": "c5d8f3018c7230350348b9984331e3ee57559ede5926b4b9928dc0fcf553a504",
+          "thread": 4136227
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3598,
+            "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 9,
+          "fdIdentity": [
+            10,
+            28087490
+          ],
+          "finishedNs": 137759751759738,
+          "id": "2189e2e6f38242c3a6fb61d607af69d6",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137759730272379,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136227
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3664,
+            "replySHA256": "0f5d1843aececd4a40593fff2c84871a96bdcbbfbbe1accfbac42706d83c7898",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 10,
+          "fdIdentity": [
+            10,
+            28089415
+          ],
+          "finishedNs": 137761044590561,
+          "id": "f9428a417a064c2fb90bcd830f62a74c",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137761022369681,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136227
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3664,
+            "replySHA256": "0f5d1843aececd4a40593fff2c84871a96bdcbbfbbe1accfbac42706d83c7898",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 7,
+          "fdIdentity": [
+            10,
+            28070716
+          ],
+          "finishedNs": 137761126854055,
+          "id": "e78642c34d5244daa7003148218b719d",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137759622378921,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": null,
+          "closed": true,
+          "error": {
+            "message": "read-only complete reply absolute deadline",
+            "type": "TimeoutError"
+          },
+          "evidence": {
+            "completeServerEOF": false,
+            "peer": null,
+            "replyBytes": 0,
+            "replySHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 9,
+          "fdIdentity": [
+            10,
+            28073638
+          ],
+          "finishedNs": 137761109311292,
+          "id": "f49c904eae914a71af261fb16955e155",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "refused",
+          "published": true,
+          "registeredNs": 137760367946927,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136324
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3664,
+            "replySHA256": "0f5d1843aececd4a40593fff2c84871a96bdcbbfbbe1accfbac42706d83c7898",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28082723
+          ],
+          "finishedNs": 137761202699511,
+          "id": "0416ac46604542d6ac39a912c0b6310d",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137761178951429,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        },
+        {
+          "actor": 1,
+          "closed": true,
+          "error": null,
+          "evidence": {
+            "completeServerEOF": true,
+            "peer": {
+              "gid": 1000,
+              "pid": 4134639,
+              "uid": 1000
+            },
+            "replyBytes": 3664,
+            "replySHA256": "0f5d1843aececd4a40593fff2c84871a96bdcbbfbbe1accfbac42706d83c7898",
+            "socketIdentity": [
+              84,
+              426920
+            ]
+          },
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            28071924
+          ],
+          "finishedNs": 137761262238921,
+          "id": "602b6aa06ae04642aa1adee1acfe4d21",
+          "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+          "outcome": "complete",
+          "published": true,
+          "registeredNs": 137761239975330,
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "thread": 4136434
+        }
+      ],
+      "issuer": {
+        "adapter": {
+          "device": 58,
+          "inode": 4422404,
+          "seals": null,
+          "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+          "size": 19577
+        },
+        "compositorPID": 4134639,
+        "compositorStart": 14986725,
+        "environment": {
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790927394_405881097",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/989f"
+        },
+        "executable": "/usr/bin/hyprctl",
+        "executableMaterial": {
+          "device": 32,
+          "inode": 114194,
+          "seals": null,
+          "sha256": "2780a8bb56494917a725f817c9cf70fb5cc2f39aac5abc62ecf2e619a1f13ec5",
+          "size": 272680
+        },
+        "lockIdentity": [
+          84,
+          427118
+        ],
+        "nonce": "54e70b944d8c4b2b8fa9e5ae814afe0f",
+        "pid": 4136227,
+        "root": "/run/user/1000/wqa/989f/hypr-window-motion/qa-family-service",
+        "rootIdentity": [
+          84,
+          427117
+        ],
+        "session": "efb50993780079460b0cbed1363e2166a2de1d9f_1790927394_405881097",
+        "sessionSource": {
+          "device": 58,
+          "inode": 4358000,
+          "seals": null,
+          "sha256": "a690e79fcb1231debce7a66fe7712d31942db6301fce79bc92effaa453a35c73",
+          "size": 20873
+        },
+        "socket": "/run/user/1000/wqa/989f/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790927394_405881097/.socket.sock",
+        "socketIdentity": [
+          84,
+          426920
+        ],
+        "start": 14987595,
+        "uid": 1000
+      },
+      "version": 1
+    },
+    "receipts": [],
+    "recoveryHistory": [],
+    "recoveryIntent": {
+      "anchors": [],
+      "events": [],
+      "receipts": []
+    },
+    "recoveryVersion": 1,
+    "resourceErrors": [],
+    "retiringActors": [],
+    "scenes": [],
+    "serial": 1,
+    "session": "efb50993780079460b0cbed1363e2166a2de1d9f_1790927394_405881097",
+    "snapshot": 140,
+    "version": 1
+  },
+  "actors": [
+    {
+      "phase": "actor-linked",
+      "actor": 1,
+      "errors": [],
+      "callbacks": {
+        "controller.event": {
+          "functionID": 138936830406928,
+          "boundOwnerID": 138936824704240,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/scene_manager.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/scene_manager.py",
+            "before": {
+              "device": 58,
+              "inode": 4358005,
+              "size": 20290,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f"
+          }
+        },
+        "controller.prepare": {
+          "functionID": 138936830309680,
+          "boundOwnerID": 138936824704240,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/scene_controller.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/scene_controller.py",
+            "before": {
+              "device": 58,
+              "inode": 4358004,
+              "size": 22828,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "459135eec7abd238b9366c775cec39df72d75312b6a2ef6850cb1fdf655a7ba5"
+          }
+        },
+        "controller.commit_members": {
+          "functionID": 138936830309856,
+          "boundOwnerID": 138936824704240,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/scene_controller.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/scene_controller.py",
+            "before": {
+              "device": 58,
+              "inode": 4358004,
+              "size": 22828,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "459135eec7abd238b9366c775cec39df72d75312b6a2ef6850cb1fdf655a7ba5"
+          }
+        },
+        "controller.transport_failure": {
+          "functionID": 138936830406752,
+          "boundOwnerID": 138936824704240,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/scene_manager.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/scene_manager.py",
+            "before": {
+              "device": 58,
+              "inode": 4358005,
+              "size": 20290,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f"
+          }
+        },
+        "native.bind_controller": {
+          "functionID": 138936816784080,
+          "boundOwnerID": 138936858547104,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/native_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/native_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 4358000,
+              "size": 20873,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "a690e79fcb1231debce7a66fe7712d31942db6301fce79bc92effaa453a35c73"
+          }
+        },
+        "failure.bind": {
+          "functionID": 138936830465600,
+          "boundOwnerID": 138936824702896,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/native_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/native_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 4358000,
+              "size": 20873,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "a690e79fcb1231debce7a66fe7712d31942db6301fce79bc92effaa453a35c73"
+          }
+        },
+        "desktop.commit": {
+          "functionID": 138936830466832,
+          "boundOwnerID": 138936824697520,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/native_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/native_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 4358000,
+              "size": 20873,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "a690e79fcb1231debce7a66fe7712d31942db6301fce79bc92effaa453a35c73"
+          }
+        },
+        "desktop.clients": {
+          "functionID": 138936824757440,
+          "boundOwnerID": 138936824701552,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py",
+            "before": {
+              "device": 58,
+              "inode": 4358002,
+              "size": 51974,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa"
+          }
+        },
+        "commands.run": {
+          "functionID": 138936824391888,
+          "boundOwnerID": 138936824629520,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/owned_commands.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/owned_commands.py",
+            "before": {
+              "device": 58,
+              "inode": 4358038,
+              "size": 5619,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba"
+          }
+        },
+        "reader.query": {
+          "functionID": 138936824389952,
+          "boundOwnerID": 138936824695840,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/readonly_ipc.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/readonly_ipc.py",
+            "before": {
+              "device": 58,
+              "inode": 4422404,
+              "size": 19577,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b"
+          }
+        },
+        "runtime.persist": {
+          "functionID": 138936830463312,
+          "boundOwnerID": 138936824693824,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/service_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/service_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 4358006,
+              "size": 17931,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f"
+          }
+        }
+      },
+      "relations": {
+        "desktop": true,
+        "transport": true,
+        "controller": true,
+        "controllerDesktop": true,
+        "controllerTransport": true,
+        "eventOwner": true,
+        "eventFunction": true,
+        "ownedCommands": true,
+        "readonly": true,
+        "productionCommands": true,
+        "baseClass": true,
+        "failureBinding": true,
+        "failureClosure": true
+      },
+      "usable": true,
+      "production": {
+        "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py",
+        "source": {
+          "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py",
+          "fd": 7,
+          "before": {
+            "device": 58,
+            "inode": 4358002,
+            "size": 51974,
+            "mode": 420,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "after": {
+            "device": 58,
+            "inode": 4358002,
+            "size": 51974,
+            "mode": 420,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "namedBefore": {
+            "device": 58,
+            "inode": 4358002,
+            "size": 51974,
+            "mode": 420,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "namedAfter": {
+            "device": 58,
+            "inode": 4358002,
+            "size": 51974,
+            "mode": 420,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+          "error": null
+        },
+        "callables": [
+          {
+            "symbol": "BasicDesktop.active",
+            "objectID": 138936824757264,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "BasicDesktop.capture",
+            "objectID": 138936824755680,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "BasicDesktop.clients",
+            "objectID": 138936824757440,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "BasicDesktop.commit",
+            "objectID": 138936824755504,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "BasicDesktop.family",
+            "objectID": 138936824755328,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "BasicDesktop.ipc",
+            "objectID": 138936824756560,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "BasicDesktop.monitors",
+            "objectID": 138936824756208,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "BasicDesktop.reduced",
+            "objectID": 138936824757088,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "BasicDesktop.select_destination",
+            "objectID": 138936824755856,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "BasicDesktop.source_screen",
+            "objectID": 138936824756032,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "BasicDesktop.target",
+            "objectID": 138936824756384,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.__init__",
+            "objectID": 138936824753920,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.audit",
+            "objectID": 138936824753744,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.commit",
+            "objectID": 138936824753568,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.drop",
+            "objectID": 138936824751280,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.failure",
+            "objectID": 138936824751104,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.finish_families",
+            "objectID": 138936824752336,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.freeze",
+            "objectID": 138936824751984,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.journal",
+            "objectID": 138936824753040,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.lookup",
+            "objectID": 138936824751632,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.matching",
+            "objectID": 138936824753392,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.prepare",
+            "objectID": 138936824751808,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.ready",
+            "objectID": 138936824751456,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.recover",
+            "objectID": 138936824752864,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.reject_reservation",
+            "objectID": 138936824752512,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.request",
+            "objectID": 138936824752688,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.reserve",
+            "objectID": 138936824752160,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.settle",
+            "objectID": 138936824750928,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.token",
+            "objectID": 138936824753216,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Controller.watchdog",
+            "objectID": 138936824750752,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Desktop.__init__",
+            "objectID": 138936824755152,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Desktop.capture",
+            "objectID": 138936824754448,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Desktop.capture_locked",
+            "objectID": 138936824754272,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Desktop.check_current",
+            "objectID": 138936824754800,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Desktop.janitor",
+            "objectID": 138936824754096,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Desktop.publish_crop",
+            "objectID": 138936824754624,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Desktop.validate_snapshot",
+            "objectID": 138936824754976,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "Handler.handle",
+            "objectID": 138936824750576,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "daemon",
+            "objectID": 138936816779328,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "key",
+            "objectID": 138936816780560,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "main",
+            "objectID": 138936824750048,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "native_family_plan",
+            "objectID": 138936816779680,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "rectangle",
+            "objectID": 138936816780032,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "send",
+            "objectID": 138936824750400,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          },
+          {
+            "symbol": "stop",
+            "objectID": 138936824750224,
+            "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/production_motion_6d9.py"
+          }
+        ]
+      },
+      "ownerToken": "cded8f4349c65a8c64b5d4973c45cf591c60cbc75d23bd67e45c4f20047f5ff1",
+      "disk": {
+        "path": "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/attempt-baseline-1/actual-linked-actor-1.json",
+        "sha256": "42a8d86472334e4261568001ee5b9187ba954e4c89f1f35b982f3513ab7563b8",
+        "identity": {
+          "device": 58,
+          "inode": 8372594,
+          "size": 21768,
+          "mode": 384,
+          "uid": 1000,
+          "gid": 1000
+        }
+      },
+      "confirmation": {
+        "path": "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/attempt-baseline-1/actual-linked-actor-1-confirmation.json",
+        "sha256": "63e9f89d037d336ccd515b30e0e28941cbb633681ea976262bd6ca056fd463f7",
+        "identity": {
+          "device": 58,
+          "inode": 8372603,
+          "size": 8548,
+          "mode": 384,
+          "uid": 1000,
+          "gid": 1000
+        }
+      }
+    }
+  ]
+}

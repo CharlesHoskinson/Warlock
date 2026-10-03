@@ -1,0 +1,2290 @@
+{
+  "result": "pass",
+  "inheritedFiles": 454,
+  "exactFiles": 452,
+  "changed": [
+    "module_binding.py",
+    "native_faults.py"
+  ],
+  "files": {
+    "BATCH_CALLBACK_IDENTITY_CONTRACT.md": {
+      "oldSHA256": "15e321c0a505e126505cd405e1cc3df7f352a7d66a39866d981cc258f16fc2c9",
+      "newSHA256": "15e321c0a505e126505cd405e1cc3df7f352a7d66a39866d981cc258f16fc2c9",
+      "mode": 420
+    },
+    "BATCH_SERVICE_PAIRING_CONTRACT.md": {
+      "oldSHA256": "c304ae5a908800358c3d7bce4d212b2ff329b885b1a733bbd77598b84d6cb559",
+      "newSHA256": "c304ae5a908800358c3d7bce4d212b2ff329b885b1a733bbd77598b84d6cb559",
+      "mode": 420
+    },
+    "CACHE_PAIR_REPRESENTATION.md": {
+      "oldSHA256": "d417bedacb26253c09aefad0bf49b69658b6411d746e998fbc5ab9913a658d4e",
+      "newSHA256": "d417bedacb26253c09aefad0bf49b69658b6411d746e998fbc5ab9913a658d4e",
+      "mode": 420
+    },
+    "COLLECTION_CONTRACT.md": {
+      "oldSHA256": "ee98a7dd57cfeada33959d98763d13cc17de5d6a5b71e4bb74909be7290e26f3",
+      "newSHA256": "ee98a7dd57cfeada33959d98763d13cc17de5d6a5b71e4bb74909be7290e26f3",
+      "mode": 420
+    },
+    "CONTRACT.md": {
+      "oldSHA256": "52fe8c2c5fe936cf86d10a631dd28d4f553b82b90f76173d89cb4073dc602f66",
+      "newSHA256": "52fe8c2c5fe936cf86d10a631dd28d4f553b82b90f76173d89cb4073dc602f66",
+      "mode": 420
+    },
+    "FAILED_ACCEPTANCE_RETIREMENT.md": {
+      "oldSHA256": "6712642bb8a31673acf6930ea6545860bbc84a91d6f58ef9229635ae8421add9",
+      "newSHA256": "6712642bb8a31673acf6930ea6545860bbc84a91d6f58ef9229635ae8421add9",
+      "mode": 420
+    },
+    "HELPER_OBSERVER_CONTRACT.md": {
+      "oldSHA256": "077d2da261495f946f84acd9e62f9f4bbcab3bc4852fb9893daaed3cbb055859",
+      "newSHA256": "077d2da261495f946f84acd9e62f9f4bbcab3bc4852fb9893daaed3cbb055859",
+      "mode": 420
+    },
+    "LEDGER_LONGEVITY_REQUIREMENT.md": {
+      "oldSHA256": "af1c20e284dbb5c74cb9c6f26155be962c5670b9ab6bd305bdd0d9e4b312ab27",
+      "newSHA256": "af1c20e284dbb5c74cb9c6f26155be962c5670b9ab6bd305bdd0d9e4b312ab27",
+      "mode": 420
+    },
+    "NATIVE_FOLLOWON_CONTRACT.md": {
+      "oldSHA256": "b31b9104c1d8471dccb1cbeaddac112cceaa8831b88cb7b1cbf2fe7756faf65d",
+      "newSHA256": "b31b9104c1d8471dccb1cbeaddac112cceaa8831b88cb7b1cbf2fe7756faf65d",
+      "mode": 420
+    },
+    "ROOT_REVIEW_REQUEST-inherited-v3.md": {
+      "oldSHA256": "3736037f429a7c5ecb807de6adca657dadd018a0c2db9f5e896fd336d1478a96",
+      "newSHA256": "3736037f429a7c5ecb807de6adca657dadd018a0c2db9f5e896fd336d1478a96",
+      "mode": 420
+    },
+    "ROOT_REVIEW_REQUEST.md": {
+      "oldSHA256": "0e5f26457a5fa50f437436571e474a6c93fa9db34b504affefdc8dc2dc79e429",
+      "newSHA256": "0e5f26457a5fa50f437436571e474a6c93fa9db34b504affefdc8dc2dc79e429",
+      "mode": 420
+    },
+    "SOURCE_BINDING_CLARIFICATION.md": {
+      "oldSHA256": "f73115cdeb06700c2608a962fd2dc43a06e42f699d4c23648532305e66939fe7",
+      "newSHA256": "f73115cdeb06700c2608a962fd2dc43a06e42f699d4c23648532305e66939fe7",
+      "mode": 420
+    },
+    "TERMINAL_CONFIRMATION_CONTRACT.md": {
+      "oldSHA256": "f1f5a80d765ed915e54a2a2e59dff722fd0b1f044d2d1c03daf3a209b27aae5c",
+      "newSHA256": "f1f5a80d765ed915e54a2a2e59dff722fd0b1f044d2d1c03daf3a209b27aae5c",
+      "mode": 384
+    },
+    "V2_FREEZER_CORRECTION.md": {
+      "oldSHA256": "ad8da830bd7f6edf6c57cb1f421b19105560ae1881d38169177344f89ea6b1bf",
+      "newSHA256": "ad8da830bd7f6edf6c57cb1f421b19105560ae1881d38169177344f89ea6b1bf",
+      "mode": 420
+    },
+    "V3_PAIRING_CONTRACT.md": {
+      "oldSHA256": "17345daee30c52e4c77da1a4b345d05cea35e7bfcc67f3cc05f522b00920213e",
+      "newSHA256": "17345daee30c52e4c77da1a4b345d05cea35e7bfcc67f3cc05f522b00920213e",
+      "mode": 420
+    },
+    "V4_ACTUAL_BINDING_CONTRACT.md": {
+      "oldSHA256": "c428af812d5b4c3e503da50aeb5e23401e9c74ecafbdb261ccc35de7eaf1e774",
+      "newSHA256": "c428af812d5b4c3e503da50aeb5e23401e9c74ecafbdb261ccc35de7eaf1e774",
+      "mode": 420
+    },
+    "V5_BOOTSTRAP_PAIRING_CONTRACT.md": {
+      "oldSHA256": "1f0590545b9bf04034132516cc1619048ab60e95605979765e1f5c6fb41bbc7e",
+      "newSHA256": "1f0590545b9bf04034132516cc1619048ab60e95605979765e1f5c6fb41bbc7e",
+      "mode": 384
+    },
+    "actual-binding-before-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "actual-binding-before-1.log": {
+      "oldSHA256": "96ac18ef78475ed2441e10fd80604bf642385f8f7bab1cdfefe4f30f7880d990",
+      "newSHA256": "96ac18ef78475ed2441e10fd80604bf642385f8f7bab1cdfefe4f30f7880d990",
+      "mode": 420
+    },
+    "actual-binding-before-2.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "actual-binding-cpu-final-2.log": {
+      "oldSHA256": "51e9f57581271beed044a5e35d008b7dd8a356f3fa11b332b513213d97945fb4",
+      "newSHA256": "51e9f57581271beed044a5e35d008b7dd8a356f3fa11b332b513213d97945fb4",
+      "mode": 420
+    },
+    "actual-binding-cpu-final.log": {
+      "oldSHA256": "c27a2ca4fb325d7a5b84aba059e60495ae4e1dad32a4a0be8935c4705a26a1d9",
+      "newSHA256": "c27a2ca4fb325d7a5b84aba059e60495ae4e1dad32a4a0be8935c4705a26a1d9",
+      "mode": 420
+    },
+    "actual-binding-final-formal-before-implementation.json": {
+      "oldSHA256": "8c20d5c8212ed873e416deba561238be161819b1cd67a477e8fdde7595864744",
+      "newSHA256": "8c20d5c8212ed873e416deba561238be161819b1cd67a477e8fdde7595864744",
+      "mode": 420
+    },
+    "actual-binding-formal-before-implementation.json": {
+      "oldSHA256": "06198bb980b378cf00bb57f5efc957ffacc2d9e852d570a02cb1eabf04c3aca6",
+      "newSHA256": "06198bb980b378cf00bb57f5efc957ffacc2d9e852d570a02cb1eabf04c3aca6",
+      "mode": 420
+    },
+    "actual-binding-typed-before-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "actual-binding-typed-before-1.log": {
+      "oldSHA256": "65ab536da6e13dd6d7fc76a2c8b5c4fa5adbb341b783013b26a0367b1594fe34",
+      "newSHA256": "65ab536da6e13dd6d7fc76a2c8b5c4fa5adbb341b783013b26a0367b1594fe34",
+      "mode": 420
+    },
+    "actual-binding-typed-before-2.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "actual_service_binding.qnt": {
+      "oldSHA256": "80562409042afc04c6a233d167f7047c9f1fdba8f630b8d3ddb0a1b28bb32b2c",
+      "newSHA256": "80562409042afc04c6a233d167f7047c9f1fdba8f630b8d3ddb0a1b28bb32b2c",
+      "mode": 420
+    },
+    "actual_service_binding_test.qnt": {
+      "oldSHA256": "d903f5bfef9a35fa3593f8a0704accc2bfc11daccf66b9144d4e9cbc9aea6762",
+      "newSHA256": "d903f5bfef9a35fa3593f8a0704accc2bfc11daccf66b9144d4e9cbc9aea6762",
+      "mode": 420
+    },
+    "batch-service-binding-formal-0-v1.log": {
+      "oldSHA256": "a9f215ac2b86ab2239c8a091ba37aeb2e96a0fe7c88cd4dd3e719239bed55210",
+      "newSHA256": "a9f215ac2b86ab2239c8a091ba37aeb2e96a0fe7c88cd4dd3e719239bed55210",
+      "mode": 420
+    },
+    "batch-service-binding-formal-1-v1.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "batch-service-binding-formal-before-pairing-v1.json": {
+      "oldSHA256": "05efe7b2fdc2c2dab462490a14ca9dd1c2e590bd698cf36b213af6b95436fc2a",
+      "newSHA256": "05efe7b2fdc2c2dab462490a14ca9dd1c2e590bd698cf36b213af6b95436fc2a",
+      "mode": 420
+    },
+    "batch_callback_identity.qnt": {
+      "oldSHA256": "10a46b0008af8e3b68b6f148c42b015cb8075ade346edc3e906c623aa7f7a15c",
+      "newSHA256": "10a46b0008af8e3b68b6f148c42b015cb8075ade346edc3e906c623aa7f7a15c",
+      "mode": 420
+    },
+    "batch_callback_identity_test.qnt": {
+      "oldSHA256": "b48b89f83923abaa2b2a2a3312701bda91686cf6f05ca5ad6d583a71c357e4a8",
+      "newSHA256": "b48b89f83923abaa2b2a2a3312701bda91686cf6f05ca5ad6d583a71c357e4a8",
+      "mode": 420
+    },
+    "batch_service_binding.qnt": {
+      "oldSHA256": "24fafd5c923e28f999a1b79cbc326395c6ff01a4b0318358f6d0a193464fcd95",
+      "newSHA256": "24fafd5c923e28f999a1b79cbc326395c6ff01a4b0318358f6d0a193464fcd95",
+      "mode": 420
+    },
+    "batch_service_binding_test.qnt": {
+      "oldSHA256": "17159a606e67a448ed61c40bfdbffb04fd246b0708699a00d150097bd344c8f2",
+      "newSHA256": "17159a606e67a448ed61c40bfdbffb04fd246b0708699a00d150097bd344c8f2",
+      "mode": 420
+    },
+    "capture_evidence.py": {
+      "oldSHA256": "7d01fe5ffdbca33a3d3eaa4eafe2a925042414ef9fe3e65f895ec8f1acb19be6",
+      "newSHA256": "7d01fe5ffdbca33a3d3eaa4eafe2a925042414ef9fe3e65f895ec8f1acb19be6",
+      "mode": 420
+    },
+    "capture_lifecycle.qnt": {
+      "oldSHA256": "fa38546a401f4964431518aea60eea4518fcaff9815fe5210d8ecb3f915b5abd",
+      "newSHA256": "fa38546a401f4964431518aea60eea4518fcaff9815fe5210d8ecb3f915b5abd",
+      "mode": 420
+    },
+    "closure-correction-proof.json": {
+      "oldSHA256": "4783e078e3ca851beebff5ab243bd383b1ae85552a2b6fe0f5cbf41eb051d0e9",
+      "newSHA256": "4783e078e3ca851beebff5ab243bd383b1ae85552a2b6fe0f5cbf41eb051d0e9",
+      "mode": 420
+    },
+    "collection-final-formal-before-root-peer-review.json": {
+      "oldSHA256": "de42d508a969ef42640ae4efe56fb6acaecc6188709f5297f4b1ea6f1436b8e5",
+      "newSHA256": "de42d508a969ef42640ae4efe56fb6acaecc6188709f5297f4b1ea6f1436b8e5",
+      "mode": 420
+    },
+    "collection-final-formal.json": {
+      "oldSHA256": "0ca75e93756172d6a9e58d94751d77eeeef4783767e2f21e6303a096bee63a4e",
+      "newSHA256": "0ca75e93756172d6a9e58d94751d77eeeef4783767e2f21e6303a096bee63a4e",
+      "mode": 420
+    },
+    "collection-formal-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "collection-formal-1.log": {
+      "oldSHA256": "b29510c8b9e9d28ed76f2893d5aea600ff83c56f90ad362ff15064f9e5e96aa3",
+      "newSHA256": "b29510c8b9e9d28ed76f2893d5aea600ff83c56f90ad362ff15064f9e5e96aa3",
+      "mode": 420
+    },
+    "collection-formal-2.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "collection-formal-before-implementation.json": {
+      "oldSHA256": "68f61ce61743d218735e64b5dd9ad476b183e0dbf0f9c04adcda855386ee720c",
+      "newSHA256": "68f61ce61743d218735e64b5dd9ad476b183e0dbf0f9c04adcda855386ee720c",
+      "mode": 420
+    },
+    "collection-formal-before-private-bus-gate.json": {
+      "oldSHA256": "26535ce4caaf50eb977e02051182ba0a8a136fa30a4d7240abd6dc1ec81e78c6",
+      "newSHA256": "26535ce4caaf50eb977e02051182ba0a8a136fa30a4d7240abd6dc1ec81e78c6",
+      "mode": 420
+    },
+    "collection-initial-formal-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "collection-initial-formal-1.log": {
+      "oldSHA256": "1d4b0e8e0e1db08420cdb87879f6439724e43658662ec240b4a7b003e7507e02",
+      "newSHA256": "1d4b0e8e0e1db08420cdb87879f6439724e43658662ec240b4a7b003e7507e02",
+      "mode": 420
+    },
+    "collection-initial-formal-2.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "collection-initial-formal-before-implementation.json": {
+      "oldSHA256": "a2c13f6f4fee3d7e6f104c449f5eb953bd5ca34e86f6ce5a5438a43f5c963742",
+      "newSHA256": "a2c13f6f4fee3d7e6f104c449f5eb953bd5ca34e86f6ce5a5438a43f5c963742",
+      "mode": 420
+    },
+    "collector-runtime-inherited-v3.json": {
+      "oldSHA256": "409ce4a66315e53ddf662569bdbd17d1a92fa97b88ded06da2810b31c204e3f7",
+      "newSHA256": "409ce4a66315e53ddf662569bdbd17d1a92fa97b88ded06da2810b31c204e3f7",
+      "mode": 420
+    },
+    "exec_gate.py": {
+      "oldSHA256": "fba80e877ed4275cb51cf401166ffd35d20711f5464bbe241735d10903c97314",
+      "newSHA256": "fba80e877ed4275cb51cf401166ffd35d20711f5464bbe241735d10903c97314",
+      "mode": 420
+    },
+    "final-formal-capture_lifecycle-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "final-formal-capture_lifecycle-test.log": {
+      "oldSHA256": "40cd0d8b32819071260986a0e1ee589fd31bca8c81ab244f12158d989c54f595",
+      "newSHA256": "40cd0d8b32819071260986a0e1ee589fd31bca8c81ab244f12158d989c54f595",
+      "mode": 420
+    },
+    "final-formal-capture_lifecycle-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "final-formal-helper_lifecycle-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "final-formal-helper_lifecycle-test.log": {
+      "oldSHA256": "fac441f1568bb1ec897e2d8730d7226181fc9b0ec444f94c2172462f9957714f",
+      "newSHA256": "fac441f1568bb1ec897e2d8730d7226181fc9b0ec444f94c2172462f9957714f",
+      "mode": 420
+    },
+    "final-formal-helper_lifecycle-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "final-formal-query_lifecycle-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "final-formal-query_lifecycle-test.log": {
+      "oldSHA256": "192dbbf8e2d27917ab07e6457d678014b36220e1a115848fc0af7174020000fe",
+      "newSHA256": "192dbbf8e2d27917ab07e6457d678014b36220e1a115848fc0af7174020000fe",
+      "mode": 420
+    },
+    "final-formal-query_lifecycle-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "final-formal-recovery_collection-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "final-formal-recovery_collection-test.log": {
+      "oldSHA256": "6ca7306fa9a8cd1aa0f531691ab7998110c1ab679c0d2837803ce150f0cc16f5",
+      "newSHA256": "6ca7306fa9a8cd1aa0f531691ab7998110c1ab679c0d2837803ce150f0cc16f5",
+      "mode": 420
+    },
+    "final-formal-recovery_collection-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "final-formal-reversal-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "final-formal-reversal-test.log": {
+      "oldSHA256": "c6d92e3a7564d64b6f41079ebdf3d26ad38bde5d51fbc0fc85a99fcc6511c614",
+      "newSHA256": "c6d92e3a7564d64b6f41079ebdf3d26ad38bde5d51fbc0fc85a99fcc6511c614",
+      "mode": 420
+    },
+    "final-formal-reversal-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "final-formal-service_queries-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "final-formal-service_queries-test.log": {
+      "oldSHA256": "cfd73e3f7a806ffd70d03bb662e06c957cc5a9c4ed372ca376a5399bad29a5cf",
+      "newSHA256": "cfd73e3f7a806ffd70d03bb662e06c957cc5a9c4ed372ca376a5399bad29a5cf",
+      "mode": 420
+    },
+    "final-formal-service_queries-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "final-formal-service_restart-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "final-formal-service_restart-test.log": {
+      "oldSHA256": "888106f68bc6e34bba22d1ec64a717c69319c27087fb6773734ff4d1bd91afca",
+      "newSHA256": "888106f68bc6e34bba22d1ec64a717c69319c27087fb6773734ff4d1bd91afca",
+      "mode": 420
+    },
+    "final-formal-service_restart-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "formal-final-v8.json": {
+      "oldSHA256": "7d5551ee3b135110ed9d7664c30995f6b1120be61b0b22b206d019aaf2ec2804",
+      "newSHA256": "7d5551ee3b135110ed9d7664c30995f6b1120be61b0b22b206d019aaf2ec2804",
+      "mode": 420
+    },
+    "freezer-v2-regression.json": {
+      "oldSHA256": "b35f016cfc0c1ea51bfa0dcbf60f39213dc7221fc2d132ed036e6f15b46ccf51",
+      "newSHA256": "b35f016cfc0c1ea51bfa0dcbf60f39213dc7221fc2d132ed036e6f15b46ccf51",
+      "mode": 420
+    },
+    "helper_lifecycle.qnt": {
+      "oldSHA256": "60b55937111914b6e1483b96f8ebb91f522d9e879a4d0a7a64a3088ba2619fae",
+      "newSHA256": "60b55937111914b6e1483b96f8ebb91f522d9e879a4d0a7a64a3088ba2619fae",
+      "mode": 420
+    },
+    "helper_observer.py": {
+      "oldSHA256": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+      "newSHA256": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+      "mode": 420
+    },
+    "helper_setup.py": {
+      "oldSHA256": "3eb460716b8580c692b59508c9012d450b4ee7798c1e7486af558d4bc7eaf8cd",
+      "newSHA256": "3eb460716b8580c692b59508c9012d450b4ee7798c1e7486af558d4bc7eaf8cd",
+      "mode": 420
+    },
+    "inherited-v5-copy-v1.json": {
+      "oldSHA256": "1fe376474d32ab911e6cb5efdab3cd896c8ee6d6879c9a00d3e35b206ad6d0a5",
+      "newSHA256": "1fe376474d32ab911e6cb5efdab3cd896c8ee6d6879c9a00d3e35b206ad6d0a5",
+      "mode": 420
+    },
+    "intended-pairing-v7-v1.diff": {
+      "oldSHA256": "494cdb975b257da9a21bed59d2711d44ee995a5a5d2e5863281d69d02fa596cb",
+      "newSHA256": "494cdb975b257da9a21bed59d2711d44ee995a5a5d2e5863281d69d02fa596cb",
+      "mode": 384
+    },
+    "module_binding.py": {
+      "oldSHA256": "30fa8d51035d1a2fb7bbeeec6e6c80fcac4e789d8f7d3eab05ef366c1f583c07",
+      "newSHA256": "b8ebd54412e94b9f811ca1782c03472f82a53d9369b2bd528eb8b97f2794c363",
+      "mode": 420
+    },
+    "native_faults.py": {
+      "oldSHA256": "3bd7f7115a0d3ebbf2b4b7e8574ab354b77cb6dda74f8984d4faf1d56f0c06f1",
+      "newSHA256": "862dcf9380b4f05a033f3d7160ba638a7f7e86c25733271f1f62e0483902e6b6",
+      "mode": 420
+    },
+    "native_integration.py": {
+      "oldSHA256": "464f6c6c2d7264a0b86275996242973a217115cef9e1737c0e0f3e479ed39093",
+      "newSHA256": "464f6c6c2d7264a0b86275996242973a217115cef9e1737c0e0f3e479ed39093",
+      "mode": 493
+    },
+    "offline-cache-review.json": {
+      "oldSHA256": "8262ca67a9446a77ece91c17a6072cb074c057df864f645d51e5981dd51db8a6",
+      "newSHA256": "8262ca67a9446a77ece91c17a6072cb074c057df864f645d51e5981dd51db8a6",
+      "mode": 420
+    },
+    "original-baseline-check-equality-before-v17.json": {
+      "oldSHA256": "66ac5a1c245c6958ea6112c940e3f70cd736c757baa42fe06116dc19f0fee910",
+      "newSHA256": "66ac5a1c245c6958ea6112c940e3f70cd736c757baa42fe06116dc19f0fee910",
+      "mode": 420
+    },
+    "original-baseline-check-equality.json": {
+      "oldSHA256": "3718b2427a88fa619a43df95c13008c9022e9ccc2f8b8b274ca8dcfdfdfc79e0",
+      "newSHA256": "3718b2427a88fa619a43df95c13008c9022e9ccc2f8b8b274ca8dcfdfdfc79e0",
+      "mode": 420
+    },
+    "payload-manifest.json": {
+      "oldSHA256": "ee2109d83a86d05c55c328173dde9e851d5baf10c072d1ae5edbf597cfa03b7f",
+      "newSHA256": "ee2109d83a86d05c55c328173dde9e851d5baf10c072d1ae5edbf597cfa03b7f",
+      "mode": 420
+    },
+    "peer-formal-capture_lifecycle-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "peer-formal-capture_lifecycle-test.log": {
+      "oldSHA256": "fd13feb42260a91db26a158d8a1cfa03e8907be7bc5d6fc10b7d46f396941818",
+      "newSHA256": "fd13feb42260a91db26a158d8a1cfa03e8907be7bc5d6fc10b7d46f396941818",
+      "mode": 420
+    },
+    "peer-formal-capture_lifecycle-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "peer-formal-helper_lifecycle-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "peer-formal-helper_lifecycle-test.log": {
+      "oldSHA256": "a26c919f9bdf8d439853615ce1f1b812e19e654d6bc917eeefbfc509a648ac83",
+      "newSHA256": "a26c919f9bdf8d439853615ce1f1b812e19e654d6bc917eeefbfc509a648ac83",
+      "mode": 420
+    },
+    "peer-formal-helper_lifecycle-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "peer-formal-query_lifecycle-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "peer-formal-query_lifecycle-test.log": {
+      "oldSHA256": "fa20320380e663f1995238f9e90eb85c4184dfeca903d7f0dc0cdd9772d6e1f2",
+      "newSHA256": "fa20320380e663f1995238f9e90eb85c4184dfeca903d7f0dc0cdd9772d6e1f2",
+      "mode": 420
+    },
+    "peer-formal-query_lifecycle-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "peer-formal-recovery_collection-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "peer-formal-recovery_collection-test.log": {
+      "oldSHA256": "8aa4606bf144b30050e5311c90ef62c4c2a8092c9ded8ac374d05031d7f08f28",
+      "newSHA256": "8aa4606bf144b30050e5311c90ef62c4c2a8092c9ded8ac374d05031d7f08f28",
+      "mode": 420
+    },
+    "peer-formal-recovery_collection-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "peer-formal-reversal-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "peer-formal-reversal-test.log": {
+      "oldSHA256": "2399f95617df967f88785cde919822bcab412c5d827627698f8f1c5b32515d27",
+      "newSHA256": "2399f95617df967f88785cde919822bcab412c5d827627698f8f1c5b32515d27",
+      "mode": 420
+    },
+    "peer-formal-reversal-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "peer-formal-service_queries-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "peer-formal-service_queries-test.log": {
+      "oldSHA256": "03e397d5580352a9cec82838c77e4c857c3a69ef595728423f45e7505aaae6c8",
+      "newSHA256": "03e397d5580352a9cec82838c77e4c857c3a69ef595728423f45e7505aaae6c8",
+      "mode": 420
+    },
+    "peer-formal-service_queries-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "peer-formal-service_restart-run.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "peer-formal-service_restart-test.log": {
+      "oldSHA256": "888106f68bc6e34bba22d1ec64a717c69319c27087fb6773734ff4d1bd91afca",
+      "newSHA256": "888106f68bc6e34bba22d1ec64a717c69319c27087fb6773734ff4d1bd91afca",
+      "mode": 420
+    },
+    "peer-formal-service_restart-typecheck.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "private_shell.py": {
+      "oldSHA256": "673847b93cbf129bed84cb2f0c42c7c9df9c1f873f25fbb1e310087cb6b4d5c4",
+      "newSHA256": "673847b93cbf129bed84cb2f0c42c7c9df9c1f873f25fbb1e310087cb6b4d5c4",
+      "mode": 420
+    },
+    "query_lifecycle.qnt": {
+      "oldSHA256": "8c2ef24906d86a45903d66f1127e01cf884161f8c69c57b7c0be92e8a5c4cd45",
+      "newSHA256": "8c2ef24906d86a45903d66f1127e01cf884161f8c69c57b7c0be92e8a5c4cd45",
+      "mode": 420
+    },
+    "recovery-collector-final-focused.log": {
+      "oldSHA256": "ca0ced17e914bf23d84a181006a15a722b5b9dae3f0c6bfcd9bac61d372914b8",
+      "newSHA256": "ca0ced17e914bf23d84a181006a15a722b5b9dae3f0c6bfcd9bac61d372914b8",
+      "mode": 420
+    },
+    "recovery-collector-focused.log": {
+      "oldSHA256": "85b724854f8c080c42665c7282681cd636eb15028137ef283dee252a02104a9c",
+      "newSHA256": "85b724854f8c080c42665c7282681cd636eb15028137ef283dee252a02104a9c",
+      "mode": 420
+    },
+    "recovery-collector-peer-focused.log": {
+      "oldSHA256": "40b4e42143e6e3ac08ab7669be7c0db841229a56aa222343ab1968b5f7d69653",
+      "newSHA256": "40b4e42143e6e3ac08ab7669be7c0db841229a56aa222343ab1968b5f7d69653",
+      "mode": 420
+    },
+    "recovery-final-offline-report.json": {
+      "oldSHA256": "a30e8c3314cd9141318144ddd68221abe818914b8e66d70b2643e63c5bd078f2",
+      "newSHA256": "a30e8c3314cd9141318144ddd68221abe818914b8e66d70b2643e63c5bd078f2",
+      "mode": 420
+    },
+    "recovery-observer-cpu.log": {
+      "oldSHA256": "4f87df4672a322aa1d03ba8079785bfc8b20587ae9c29d264b2ba96274e7874f",
+      "newSHA256": "4f87df4672a322aa1d03ba8079785bfc8b20587ae9c29d264b2ba96274e7874f",
+      "mode": 420
+    },
+    "recovery-offline-report.json": {
+      "oldSHA256": "8eb7ea28acd58ff77e3b38ed26d9889574eafcb2fec34afe4fb99bfa4497f783",
+      "newSHA256": "8eb7ea28acd58ff77e3b38ed26d9889574eafcb2fec34afe4fb99bfa4497f783",
+      "mode": 420
+    },
+    "recovery-peer-final-offline-report.json": {
+      "oldSHA256": "e8bc77d86703e3c210e421dcb50bd7dd0f94da415e8593040ebe611485e37af0",
+      "newSHA256": "e8bc77d86703e3c210e421dcb50bd7dd0f94da415e8593040ebe611485e37af0",
+      "mode": 420
+    },
+    "recovery_collection.qnt": {
+      "oldSHA256": "4c2aa548dea38d7562c5db0303f315adaead26f1b19f629801f586df3153fa24",
+      "newSHA256": "4c2aa548dea38d7562c5db0303f315adaead26f1b19f629801f586df3153fa24",
+      "mode": 420
+    },
+    "recovery_collection_test.qnt": {
+      "oldSHA256": "6a21b61146b32867e8f6664d70a0c28542824f28a19b1225465cbf3beb837f8c",
+      "newSHA256": "6a21b61146b32867e8f6664d70a0c28542824f28a19b1225465cbf3beb837f8c",
+      "mode": 420
+    },
+    "recovery_evidence.py": {
+      "oldSHA256": "567f006269e72f81a2e6f6e528eed8699159557dcc00582c70a114fc45296b61",
+      "newSHA256": "567f006269e72f81a2e6f6e528eed8699159557dcc00582c70a114fc45296b61",
+      "mode": 420
+    },
+    "recovery_observer.py": {
+      "oldSHA256": "27ab7d8106d433b5f648dc127047fe18a9c95f922e9bbefbc08047184295ded7",
+      "newSHA256": "27ab7d8106d433b5f648dc127047fe18a9c95f922e9bbefbc08047184295ded7",
+      "mode": 420
+    },
+    "restart-formal-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "restart-formal-1.log": {
+      "oldSHA256": "ad25a9897c9aa9b262af3ee70807f1e407ffccc6b697cf444acf729f9475babd",
+      "newSHA256": "ad25a9897c9aa9b262af3ee70807f1e407ffccc6b697cf444acf729f9475babd",
+      "mode": 420
+    },
+    "restart-formal-2.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "restart-formal-before-implementation.json": {
+      "oldSHA256": "25d32d3df5a0448e321afe3bedc2dd7cd549afbc3508abde231b469c6ca840b2",
+      "newSHA256": "25d32d3df5a0448e321afe3bedc2dd7cd549afbc3508abde231b469c6ca840b2",
+      "mode": 420
+    },
+    "retained-before-probe-source-closure-preflight.json": {
+      "oldSHA256": "04c887df2dac3c94a5c73c2a148a84addcfaeab90015c6bf3b6cd881ffc87241",
+      "newSHA256": "04c887df2dac3c94a5c73c2a148a84addcfaeab90015c6bf3b6cd881ffc87241",
+      "mode": 420
+    },
+    "retained-initial-actor-attestation-failure.json": {
+      "oldSHA256": "5169f7997e415faea41ff13568ff2e73b2ce8a0998b7e80017b1af240ff9a973",
+      "newSHA256": "5169f7997e415faea41ff13568ff2e73b2ce8a0998b7e80017b1af240ff9a973",
+      "mode": 420
+    },
+    "retained-source-ready-v3.json": {
+      "oldSHA256": "f67915c7e5366b14bf48ff2ada6dcff1543ea369e5051dd2cf6ab8723b7b5529",
+      "newSHA256": "f67915c7e5366b14bf48ff2ada6dcff1543ea369e5051dd2cf6ab8723b7b5529",
+      "mode": 420
+    },
+    "retained-v4-source-ready.json": {
+      "oldSHA256": "60115fdf6ba9410e4b80ef69029f056b7c85f42f6fadc1c638cfd28b9e77c57c",
+      "newSHA256": "60115fdf6ba9410e4b80ef69029f056b7c85f42f6fadc1c638cfd28b9e77c57c",
+      "mode": 384
+    },
+    "retained-v6-root-source-review.json": {
+      "oldSHA256": "c5ea22a817b45aa1984eb1e45053a3c377859f3c5c21b8049bc5848516b60f4c",
+      "newSHA256": "c5ea22a817b45aa1984eb1e45053a3c377859f3c5c21b8049bc5848516b60f4c",
+      "mode": 420
+    },
+    "reversal.qnt": {
+      "oldSHA256": "5d956a4cddb8b592860c1af331a77fe1fec384c0f3423834ec486585486d0fc8",
+      "newSHA256": "5d956a4cddb8b592860c1af331a77fe1fec384c0f3423834ec486585486d0fc8",
+      "mode": 420
+    },
+    "run_collector_v7_cpu.py": {
+      "oldSHA256": "aaa7ff53f8b0783291ba4cf3ec5e148b441ecf1afa914ef903cae0ac799bbbbb",
+      "newSHA256": "aaa7ff53f8b0783291ba4cf3ec5e148b441ecf1afa914ef903cae0ac799bbbbb",
+      "mode": 420
+    },
+    "run_collector_v7_proof.py": {
+      "oldSHA256": "5b8dee5b0f02535e83067973f3d4611c9ff62c12a1eb21bada8af7efc33f20ab",
+      "newSHA256": "5b8dee5b0f02535e83067973f3d4611c9ff62c12a1eb21bada8af7efc33f20ab",
+      "mode": 420
+    },
+    "run_collector_v8_cpu.py": {
+      "oldSHA256": "aaa7ff53f8b0783291ba4cf3ec5e148b441ecf1afa914ef903cae0ac799bbbbb",
+      "newSHA256": "aaa7ff53f8b0783291ba4cf3ec5e148b441ecf1afa914ef903cae0ac799bbbbb",
+      "mode": 420
+    },
+    "run_collector_v8_proof.py": {
+      "oldSHA256": "aecf190a8784e03db8da48b6c195dc27d24396b07d35560dc01ec63caaa7936c",
+      "newSHA256": "aecf190a8784e03db8da48b6c195dc27d24396b07d35560dc01ec63caaa7936c",
+      "mode": 420
+    },
+    "run_native.py": {
+      "oldSHA256": "749030749a8e28311d0083eba114bf8d3048764f316617ab06d52b711e41cf93",
+      "newSHA256": "749030749a8e28311d0083eba114bf8d3048764f316617ab06d52b711e41cf93",
+      "mode": 420
+    },
+    "run_offline.py": {
+      "oldSHA256": "a76b81b1078a114309076e1a79cd8eb16ef8ce34bd592c226b09339f3b757102",
+      "newSHA256": "a76b81b1078a114309076e1a79cd8eb16ef8ce34bd592c226b09339f3b757102",
+      "mode": 420
+    },
+    "run_source_formal.py": {
+      "oldSHA256": "681f17a5b82d0fb85aae6900b871c6e6b06574c49f21c1eaee341e6b9fb8c23a",
+      "newSHA256": "681f17a5b82d0fb85aae6900b871c6e6b06574c49f21c1eaee341e6b9fb8c23a",
+      "mode": 420
+    },
+    "service_observer.py": {
+      "oldSHA256": "9ea62c79ef8eca627df3d588a9f4d61022d58403124ecd8f98c5d85698a1a98b",
+      "newSHA256": "9ea62c79ef8eca627df3d588a9f4d61022d58403124ecd8f98c5d85698a1a98b",
+      "mode": 420
+    },
+    "service_queries.qnt": {
+      "oldSHA256": "bd30cbb22f2b1e7c4ce70286204ebfa63d4272c9efc25e4bc5ad5a228319e937",
+      "newSHA256": "bd30cbb22f2b1e7c4ce70286204ebfa63d4272c9efc25e4bc5ad5a228319e937",
+      "mode": 420
+    },
+    "service_recovery_observer.py": {
+      "oldSHA256": "07b546f574bd5972b1c20d229c0a7d914745517640db4eb95f277fdf65b83856",
+      "newSHA256": "07b546f574bd5972b1c20d229c0a7d914745517640db4eb95f277fdf65b83856",
+      "mode": 420
+    },
+    "service_restart.qnt": {
+      "oldSHA256": "51812ecb7de0ef512f5b99e9ea20142aa993f1740b373fd0d239ea5cdf695973",
+      "newSHA256": "51812ecb7de0ef512f5b99e9ea20142aa993f1740b373fd0d239ea5cdf695973",
+      "mode": 420
+    },
+    "service_restart_test.qnt": {
+      "oldSHA256": "e9cecc3e907991cc136eb4ac5d601f8ca733cee151c0b27b05e76bc1f7824677",
+      "newSHA256": "e9cecc3e907991cc136eb4ac5d601f8ca733cee151c0b27b05e76bc1f7824677",
+      "mode": 420
+    },
+    "source-pairing-v7-plan-v1.json": {
+      "oldSHA256": "06ee604d9c3306e56cb47fe109aae4bb6a54c41a581e5bd90cfed71f4e947650",
+      "newSHA256": "06ee604d9c3306e56cb47fe109aae4bb6a54c41a581e5bd90cfed71f4e947650",
+      "mode": 384
+    },
+    "source-ready-before-root-peer-review.json": {
+      "oldSHA256": "3b22ffb0cab305fdcfdc019a48d65e499e56c2d3f22012df5f075b093752444b",
+      "newSHA256": "3b22ffb0cab305fdcfdc019a48d65e499e56c2d3f22012df5f075b093752444b",
+      "mode": 420
+    },
+    "source-ready-inherited-v1.json": {
+      "oldSHA256": "2c40e04b5073b8b0f4933aa59467930763d0c6c421a016363916a232485003c7",
+      "newSHA256": "2c40e04b5073b8b0f4933aa59467930763d0c6c421a016363916a232485003c7",
+      "mode": 420
+    },
+    "source-review-v3.json": {
+      "oldSHA256": "56f4aab744d155da57f7440cc5d2fc4c09e71358024e07b721203f53ad4408cf",
+      "newSHA256": "56f4aab744d155da57f7440cc5d2fc4c09e71358024e07b721203f53ad4408cf",
+      "mode": 420
+    },
+    "stable-final-formal-00.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "stable-final-formal-01.log": {
+      "oldSHA256": "360ed098bab77dcc94f015fe087f2edd189327dc975d495aceae1df7dfc4885a",
+      "newSHA256": "360ed098bab77dcc94f015fe087f2edd189327dc975d495aceae1df7dfc4885a",
+      "mode": 420
+    },
+    "stable-final-formal-02.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "stable-final-formal-03.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "stable-final-formal-04.log": {
+      "oldSHA256": "192dbbf8e2d27917ab07e6457d678014b36220e1a115848fc0af7174020000fe",
+      "newSHA256": "192dbbf8e2d27917ab07e6457d678014b36220e1a115848fc0af7174020000fe",
+      "mode": 420
+    },
+    "stable-final-formal-05.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "stable-final-formal-06.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "stable-final-formal-07.log": {
+      "oldSHA256": "4469d4109ce419e67d6921e1c62378d546ec8bffea058751f42a5ee369e520bd",
+      "newSHA256": "4469d4109ce419e67d6921e1c62378d546ec8bffea058751f42a5ee369e520bd",
+      "mode": 420
+    },
+    "stable-final-formal-08.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "stable-final-formal-09.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "stable-final-formal-10.log": {
+      "oldSHA256": "6023596b0f587f3601e0fbd0f35c5df8eb6f3db0cf823a256188a8e941845d6d",
+      "newSHA256": "6023596b0f587f3601e0fbd0f35c5df8eb6f3db0cf823a256188a8e941845d6d",
+      "mode": 420
+    },
+    "stable-final-formal-11.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "stable-final-formal-12.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "stable-final-formal-13.log": {
+      "oldSHA256": "78ca65ac4ee0557a91fd4793f570ed826cbdecf7b041ad55555c69976e681bc7",
+      "newSHA256": "78ca65ac4ee0557a91fd4793f570ed826cbdecf7b041ad55555c69976e681bc7",
+      "mode": 420
+    },
+    "stable-final-formal-14.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "stable-final-formal-15.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "stable-final-formal-16.log": {
+      "oldSHA256": "e550042336589266518cc1e7901043211c8e5784f03ab746dd6c33e260aa6525",
+      "newSHA256": "e550042336589266518cc1e7901043211c8e5784f03ab746dd6c33e260aa6525",
+      "mode": 420
+    },
+    "stable-final-formal-17.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "stable-final-formal-18.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "stable-final-formal-19.log": {
+      "oldSHA256": "b52383c69c4a9cfc5546e0bb1baf64d0fe0f596f00d48d41833cd01f424d4fb6",
+      "newSHA256": "b52383c69c4a9cfc5546e0bb1baf64d0fe0f596f00d48d41833cd01f424d4fb6",
+      "mode": 420
+    },
+    "stable-final-formal-20.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "terminal-confirmation-plan.json": {
+      "oldSHA256": "cbb3a8ff18cc2c83725d6cd18751f81cfac7ad5e36ae63f2933daf0c33877263",
+      "newSHA256": "cbb3a8ff18cc2c83725d6cd18751f81cfac7ad5e36ae63f2933daf0c33877263",
+      "mode": 420
+    },
+    "terminal-confirmation-v8.diff": {
+      "oldSHA256": "8f61b20a21f3a1465e85c7cc5a00389f42903dc31b967568ac0ffd7514187912",
+      "newSHA256": "8f61b20a21f3a1465e85c7cc5a00389f42903dc31b967568ac0ffd7514187912",
+      "mode": 420
+    },
+    "terminal_confirmation.qnt": {
+      "oldSHA256": "431396169b238bdc2b82282584e77c0b9c9b61284f727453f0e479c1bdf3e923",
+      "newSHA256": "431396169b238bdc2b82282584e77c0b9c9b61284f727453f0e479c1bdf3e923",
+      "mode": 384
+    },
+    "terminal_confirmation_test.qnt": {
+      "oldSHA256": "6037267968725314723ca1eb3b54e9616267f58e9aefe68cf6e029056cb1455d",
+      "newSHA256": "6037267968725314723ca1eb3b54e9616267f58e9aefe68cf6e029056cb1455d",
+      "mode": 384
+    },
+    "test_actual_binding.py": {
+      "oldSHA256": "87b95e4b9c32f5b067a53b0a6e99f29047a7330c97be3de451728847391ce4bb",
+      "newSHA256": "87b95e4b9c32f5b067a53b0a6e99f29047a7330c97be3de451728847391ce4bb",
+      "mode": 420
+    },
+    "test_batch_binding.py": {
+      "oldSHA256": "1d57b926c9e3571343b37a22dd1742c5985570297a5405d78d5e2b573fe6ecfb",
+      "newSHA256": "1d57b926c9e3571343b37a22dd1742c5985570297a5405d78d5e2b573fe6ecfb",
+      "mode": 420
+    },
+    "test_capture_evidence.py": {
+      "oldSHA256": "f7c01ae25e297375685ef0f5b04641ba3a9f8528628b0cb633b48d5577d8a94e",
+      "newSHA256": "f7c01ae25e297375685ef0f5b04641ba3a9f8528628b0cb633b48d5577d8a94e",
+      "mode": 420
+    },
+    "test_failure_archive.py": {
+      "oldSHA256": "cb54d0a39a64fad2504c27dee1da718182ef76c86d89980d47030115ce345cd2",
+      "newSHA256": "cb54d0a39a64fad2504c27dee1da718182ef76c86d89980d47030115ce345cd2",
+      "mode": 420
+    },
+    "test_freezer_v2.py": {
+      "oldSHA256": "271ffdad0c255c24386d88ba117fdf7e82549526fc0d25f2536e308adf988644",
+      "newSHA256": "271ffdad0c255c24386d88ba117fdf7e82549526fc0d25f2536e308adf988644",
+      "mode": 420
+    },
+    "test_helpers.py": {
+      "oldSHA256": "d74f17cc867e8df9d4d2b66f6401496d57210e6b42bab1c53f02e99518f8033a",
+      "newSHA256": "d74f17cc867e8df9d4d2b66f6401496d57210e6b42bab1c53f02e99518f8033a",
+      "mode": 420
+    },
+    "test_observer.py": {
+      "oldSHA256": "eff3c1773834f0c2a0b747256e246daf629022ba7493c1709217c9ca2439dbd5",
+      "newSHA256": "eff3c1773834f0c2a0b747256e246daf629022ba7493c1709217c9ca2439dbd5",
+      "mode": 420
+    },
+    "test_packaging.py": {
+      "oldSHA256": "8da3e1fe659cfb88ed95219cbafcd6fad42db5b5aba2d8b2ab7233788093aa8f",
+      "newSHA256": "8da3e1fe659cfb88ed95219cbafcd6fad42db5b5aba2d8b2ab7233788093aa8f",
+      "mode": 420
+    },
+    "test_query_roles.py": {
+      "oldSHA256": "3dadcbdaf7977f0fedcaffbf50572aa5f24d562731de9c949d968418380c4b19",
+      "newSHA256": "3dadcbdaf7977f0fedcaffbf50572aa5f24d562731de9c949d968418380c4b19",
+      "mode": 420
+    },
+    "test_recovery_observer.py": {
+      "oldSHA256": "b93106e8271c2635f5a5d00ffa664bf7b2b92142a2e2a9b95066973a817933c1",
+      "newSHA256": "b93106e8271c2635f5a5d00ffa664bf7b2b92142a2e2a9b95066973a817933c1",
+      "mode": 420
+    },
+    "test_recovery_restart.py": {
+      "oldSHA256": "66e0b8273110c81217addede7a31e9b0a5939b2518f911c58db41a7d9387f9b2",
+      "newSHA256": "66e0b8273110c81217addede7a31e9b0a5939b2518f911c58db41a7d9387f9b2",
+      "mode": 420
+    },
+    "test_reversal.py": {
+      "oldSHA256": "9eeea44a1a8ec43824ab901bd0595dd942ee676c40acf461bce5641a5ac7bb29",
+      "newSHA256": "9eeea44a1a8ec43824ab901bd0595dd942ee676c40acf461bce5641a5ac7bb29",
+      "mode": 420
+    },
+    "test_service_queries.py": {
+      "oldSHA256": "3a0d4de96ce0eeb1bebda0bf94118d0bafe1d185b9f743221e4cb54283fbd4ac",
+      "newSHA256": "3a0d4de96ce0eeb1bebda0bf94118d0bafe1d185b9f743221e4cb54283fbd4ac",
+      "mode": 420
+    },
+    "test_terminal_confirmation.py": {
+      "oldSHA256": "2042c562eb5242c29910f69e1c40ba252b7e992572ba317cab1874f5317c9c01",
+      "newSHA256": "2042c562eb5242c29910f69e1c40ba252b7e992572ba317cab1874f5317c9c01",
+      "mode": 384
+    },
+    "test_v6_helpers.py": {
+      "oldSHA256": "960f164084377be2efd5271f2f7ebf82df111fadb9f6716589ddcb80049c7810",
+      "newSHA256": "960f164084377be2efd5271f2f7ebf82df111fadb9f6716589ddcb80049c7810",
+      "mode": 420
+    },
+    "v4-final-actual_service_binding-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "v4-final-actual_service_binding-1.log": {
+      "oldSHA256": "479f601dcc9199c23bd5fba0b590bfc4aa787b752b8a1c9d9b421e6293afbf65",
+      "newSHA256": "479f601dcc9199c23bd5fba0b590bfc4aa787b752b8a1c9d9b421e6293afbf65",
+      "mode": 420
+    },
+    "v4-final-actual_service_binding-2.log": {
+      "oldSHA256": "00f428f2ce1465775aeae71cc0122a277af527e4781d5b3f820652f0d621586e",
+      "newSHA256": "00f428f2ce1465775aeae71cc0122a277af527e4781d5b3f820652f0d621586e",
+      "mode": 420
+    },
+    "v4-final-capture_lifecycle-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "v4-final-capture_lifecycle-1.log": {
+      "oldSHA256": "96f54f42387375ae2a1213ebec7dba08789b687cc30f8a89f483a6adbfac71c1",
+      "newSHA256": "96f54f42387375ae2a1213ebec7dba08789b687cc30f8a89f483a6adbfac71c1",
+      "mode": 420
+    },
+    "v4-final-capture_lifecycle-2.log": {
+      "oldSHA256": "daf4fac476a3d5e87e65db4275794b4bae40cc25d79ded1ea07e25f52a42a157",
+      "newSHA256": "daf4fac476a3d5e87e65db4275794b4bae40cc25d79ded1ea07e25f52a42a157",
+      "mode": 420
+    },
+    "v4-final-formal-report.json": {
+      "oldSHA256": "bb384d2b4383990448a2e0c564ad48c76874cca926068622ee1080bb2aec36ac",
+      "newSHA256": "bb384d2b4383990448a2e0c564ad48c76874cca926068622ee1080bb2aec36ac",
+      "mode": 420
+    },
+    "v4-final-helper_lifecycle-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "v4-final-helper_lifecycle-1.log": {
+      "oldSHA256": "c898ddac670b5eb8615062df128568bf3c9a2b18a58e5cbcd78fe01ddccb5674",
+      "newSHA256": "c898ddac670b5eb8615062df128568bf3c9a2b18a58e5cbcd78fe01ddccb5674",
+      "mode": 420
+    },
+    "v4-final-helper_lifecycle-2.log": {
+      "oldSHA256": "94e2c46c82a5b18ed9dea3dfab0863aebe2c78da702064e7f2c9e175b3308c65",
+      "newSHA256": "94e2c46c82a5b18ed9dea3dfab0863aebe2c78da702064e7f2c9e175b3308c65",
+      "mode": 420
+    },
+    "v4-final-query_lifecycle-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "v4-final-query_lifecycle-1.log": {
+      "oldSHA256": "794bd6c5643ac9e5cd44999e44475047e82e2d67a9edb59ffdb74a1ba769aa63",
+      "newSHA256": "794bd6c5643ac9e5cd44999e44475047e82e2d67a9edb59ffdb74a1ba769aa63",
+      "mode": 420
+    },
+    "v4-final-query_lifecycle-2.log": {
+      "oldSHA256": "44a3fce6dfd7cd9dfc79f3503664290e5426ee9cbb7271eb1aed8e87d4541421",
+      "newSHA256": "44a3fce6dfd7cd9dfc79f3503664290e5426ee9cbb7271eb1aed8e87d4541421",
+      "mode": 420
+    },
+    "v4-final-recovery_collection-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "v4-final-recovery_collection-1.log": {
+      "oldSHA256": "01d2ba783c686264b8e6add9034e70a4ce651f2c6abfc6056a65a368bffc3b4c",
+      "newSHA256": "01d2ba783c686264b8e6add9034e70a4ce651f2c6abfc6056a65a368bffc3b4c",
+      "mode": 420
+    },
+    "v4-final-recovery_collection-2.log": {
+      "oldSHA256": "40d5ef80a6285cabbc4df4dbf9f0791476f3803b38b90102ef714c5b26d06575",
+      "newSHA256": "40d5ef80a6285cabbc4df4dbf9f0791476f3803b38b90102ef714c5b26d06575",
+      "mode": 420
+    },
+    "v4-final-reversal-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "v4-final-reversal-1.log": {
+      "oldSHA256": "f7236d0d8474418eea8c8b61d0598203858c2938c1a0dc798b5848f77b20d180",
+      "newSHA256": "f7236d0d8474418eea8c8b61d0598203858c2938c1a0dc798b5848f77b20d180",
+      "mode": 420
+    },
+    "v4-final-reversal-2.log": {
+      "oldSHA256": "33f5c5eb2464e92b0558cfe586c55ae520c6efc00a5b02ec7b8e01f9738fe9d3",
+      "newSHA256": "33f5c5eb2464e92b0558cfe586c55ae520c6efc00a5b02ec7b8e01f9738fe9d3",
+      "mode": 420
+    },
+    "v4-final-service_queries-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "v4-final-service_queries-1.log": {
+      "oldSHA256": "2662634241de7f556c93c7e750309fdc6e8c4d2948fb8b69186efa43109b6551",
+      "newSHA256": "2662634241de7f556c93c7e750309fdc6e8c4d2948fb8b69186efa43109b6551",
+      "mode": 420
+    },
+    "v4-final-service_queries-2.log": {
+      "oldSHA256": "c1ae48eef5b38115b69c0fc08c71a4c03d107b964d0ce6d32e3e87f58c1d0490",
+      "newSHA256": "c1ae48eef5b38115b69c0fc08c71a4c03d107b964d0ce6d32e3e87f58c1d0490",
+      "mode": 420
+    },
+    "v4-final-service_restart-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "v4-final-service_restart-1.log": {
+      "oldSHA256": "0a1512dd86cd4f0601d9f49c878e0e689883e1f5d42ecae4104d3def21b8f364",
+      "newSHA256": "0a1512dd86cd4f0601d9f49c878e0e689883e1f5d42ecae4104d3def21b8f364",
+      "mode": 420
+    },
+    "v4-final-service_restart-2.log": {
+      "oldSHA256": "1e1ec103615848d8958cb4580f3f4aa2368ca5664cbc023b99a45fb8af5851f4",
+      "newSHA256": "1e1ec103615848d8958cb4580f3f4aa2368ca5664cbc023b99a45fb8af5851f4",
+      "mode": 420
+    },
+    "v4-final-stable-offline-report.json": {
+      "oldSHA256": "6a1bb8b80a035f52efa43d9db63308c0aa57953428b62ba1a949cafe3cfbf168",
+      "newSHA256": "6a1bb8b80a035f52efa43d9db63308c0aa57953428b62ba1a949cafe3cfbf168",
+      "mode": 420
+    },
+    "v4-offline-final-report.json": {
+      "oldSHA256": "880a502080f1fad58e6dabcf709fb50919ec898b62e5f312b2d4d2675f8538c4",
+      "newSHA256": "880a502080f1fad58e6dabcf709fb50919ec898b62e5f312b2d4d2675f8538c4",
+      "mode": 420
+    },
+    "v4-offline-report.json": {
+      "oldSHA256": "e928d233af976f74cb9c8c938a55ff25707e93d92bf11f8e5b08ee7c198b7845",
+      "newSHA256": "e928d233af976f74cb9c8c938a55ff25707e93d92bf11f8e5b08ee7c198b7845",
+      "mode": 420
+    },
+    "v4-probe-final-stable-offline-report.json": {
+      "oldSHA256": "1181b9ed400a6f2a0eeaf326b34e5f05a615fd129a4bd28604c689847072ef77",
+      "newSHA256": "1181b9ed400a6f2a0eeaf326b34e5f05a615fd129a4bd28604c689847072ef77",
+      "mode": 420
+    },
+    "v4-source-closure-preflight.json": {
+      "oldSHA256": "f3e3698318b98c1e96562c7ee84160c475c6711da612c6b59f9cedcb91368af9",
+      "newSHA256": "f3e3698318b98c1e96562c7ee84160c475c6711da612c6b59f9cedcb91368af9",
+      "mode": 420
+    },
+    "v4-source-final-offline-report.json": {
+      "oldSHA256": "c9d9131a1ff7bfc404f9eb15fae9d345c7837be4d067911b4041f3c5b9a291b7",
+      "newSHA256": "c9d9131a1ff7bfc404f9eb15fae9d345c7837be4d067911b4041f3c5b9a291b7",
+      "mode": 420
+    },
+    "verify_reversal.py": {
+      "oldSHA256": "0bce792c511f78c029eb843e7de3c4a5615d2ebaeeadad96943a7dd4e6d21ae5",
+      "newSHA256": "0bce792c511f78c029eb843e7de3c4a5615d2ebaeeadad96943a7dd4e6d21ae5",
+      "mode": 420
+    },
+    "collector_v9_closure.py": {
+      "oldSHA256": "3ef9b46881587023d642cee353ed84b4bf8de6eb9e264bfbaf1448980e1c0742",
+      "newSHA256": "3ef9b46881587023d642cee353ed84b4bf8de6eb9e264bfbaf1448980e1c0742",
+      "mode": 384
+    },
+    "renderer_binding_fixture.py": {
+      "oldSHA256": "3c079e146d580f9c26b24b8e61d2bb2e97f948653cc7b017bd2b9a9fde3b1256",
+      "newSHA256": "3c079e146d580f9c26b24b8e61d2bb2e97f948653cc7b017bd2b9a9fde3b1256",
+      "mode": 384
+    },
+    "reviewed-thumbnail-v9-root-intended-source-review-v1.json": {
+      "oldSHA256": "2882aa270919e5aae0a1d8623fd64a1f5556661c15586be72289728b58492225",
+      "newSHA256": "2882aa270919e5aae0a1d8623fd64a1f5556661c15586be72289728b58492225",
+      "mode": 384
+    },
+    "reviewed-source-handoff-v1.json": {
+      "oldSHA256": "3d462b4baae512d7fdc21ca00b01249c9e4c3242b9b6f293229db4ed9bce2641",
+      "newSHA256": "3d462b4baae512d7fdc21ca00b01249c9e4c3242b9b6f293229db4ed9bce2641",
+      "mode": 384
+    },
+    "test_renderer_collector_binding.py": {
+      "oldSHA256": "e76a71d39d68c17a25e56c40ac12990591a31454f2d9200e0762f09ede62bb60",
+      "newSHA256": "e76a71d39d68c17a25e56c40ac12990591a31454f2d9200e0762f09ede62bb60",
+      "mode": 420
+    },
+    "renderer_collector_binding.qnt": {
+      "oldSHA256": "793001c9d5f3179d28aae1535aede4661bb2940b6e4138a5bbed0e63c300a1af",
+      "newSHA256": "793001c9d5f3179d28aae1535aede4661bb2940b6e4138a5bbed0e63c300a1af",
+      "mode": 384
+    },
+    "renderer_collector_binding_test.qnt": {
+      "oldSHA256": "22fd59606b2669e6eac0864925753ad8c864aef356d9d523ae083a892b0e28e5",
+      "newSHA256": "22fd59606b2669e6eac0864925753ad8c864aef356d9d523ae083a892b0e28e5",
+      "mode": 384
+    },
+    "RENDERER_COLLECTOR_BINDING_CONTRACT.md": {
+      "oldSHA256": "47364134a32bc42c2c59127ad58131e0d558cab311f31269e4e88970d75f07a5",
+      "newSHA256": "47364134a32bc42c2c59127ad58131e0d558cab311f31269e4e88970d75f07a5",
+      "mode": 384
+    },
+    "run_collector_v9_cpu.py": {
+      "oldSHA256": "aaa7ff53f8b0783291ba4cf3ec5e148b441ecf1afa914ef903cae0ac799bbbbb",
+      "newSHA256": "aaa7ff53f8b0783291ba4cf3ec5e148b441ecf1afa914ef903cae0ac799bbbbb",
+      "mode": 384
+    },
+    "run_collector_v9_proof.py": {
+      "oldSHA256": "aa617c491d09087ef757d47f5eef122d2509e144af96cd97099c327e4fab3092",
+      "newSHA256": "aa617c491d09087ef757d47f5eef122d2509e144af96cd97099c327e4fab3092",
+      "mode": 384
+    },
+    "test_collector_closure_alias.py": {
+      "oldSHA256": "3dbb5d14a11bf990aa3f20e9c3b7ebe23d3f1569335335c2bd7130eef2747764",
+      "newSHA256": "3dbb5d14a11bf990aa3f20e9c3b7ebe23d3f1569335335c2bd7130eef2747764",
+      "mode": 384
+    },
+    "closure_alias_identity.qnt": {
+      "oldSHA256": "8899aca6e5c47efd207a8590fd3ae96c5d577afff96443602f444e819cd19029",
+      "newSHA256": "8899aca6e5c47efd207a8590fd3ae96c5d577afff96443602f444e819cd19029",
+      "mode": 384
+    },
+    "closure_alias_identity_test.qnt": {
+      "oldSHA256": "c232390de416e8ebbf77ea4123531462556106047b2ca39ef6145a8eb4f39e67",
+      "newSHA256": "c232390de416e8ebbf77ea4123531462556106047b2ca39ef6145a8eb4f39e67",
+      "mode": 384
+    },
+    "CLOSURE_ALIAS_CONTRACT.md": {
+      "oldSHA256": "2720059d49b7b3113bb7e9daff6f164f4ee5770c047a1f70e2adfc3416f05bc2",
+      "newSHA256": "2720059d49b7b3113bb7e9daff6f164f4ee5770c047a1f70e2adfc3416f05bc2",
+      "mode": 384
+    },
+    "reviewed-closure-alias-root-source-review-v1.json": {
+      "oldSHA256": "0910502428600fb7920df33bae2053d54801df10fc63387828d2cef4431f7a3e",
+      "newSHA256": "0910502428600fb7920df33bae2053d54801df10fc63387828d2cef4431f7a3e",
+      "mode": 384
+    },
+    "retained-baseline-v3/frozen-inputs.json": {
+      "oldSHA256": "09ecd52991db0581e1dfb5b777b37a8ae50a925b982be29304193485b8a20aee",
+      "newSHA256": "09ecd52991db0581e1dfb5b777b37a8ae50a925b982be29304193485b8a20aee",
+      "mode": 384
+    },
+    "retained-baseline-v3/root-source-review-v3.json": {
+      "oldSHA256": "be59317c5cd7291740738a15fa7f353219090d659d5fe82fd8865fa72df142ed",
+      "newSHA256": "be59317c5cd7291740738a15fa7f353219090d659d5fe82fd8865fa72df142ed",
+      "mode": 384
+    },
+    "retained-binding-boolean-model/actual-binding-before-0.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "retained-binding-boolean-model/actual-binding-before-1.log": {
+      "oldSHA256": "96ac18ef78475ed2441e10fd80604bf642385f8f7bab1cdfefe4f30f7880d990",
+      "newSHA256": "96ac18ef78475ed2441e10fd80604bf642385f8f7bab1cdfefe4f30f7880d990",
+      "mode": 420
+    },
+    "retained-binding-boolean-model/actual-binding-before-2.log": {
+      "oldSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "newSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "retained-binding-boolean-model/actual-binding-formal-before-implementation.json": {
+      "oldSHA256": "06198bb980b378cf00bb57f5efc957ffacc2d9e852d570a02cb1eabf04c3aca6",
+      "newSHA256": "06198bb980b378cf00bb57f5efc957ffacc2d9e852d570a02cb1eabf04c3aca6",
+      "mode": 420
+    },
+    "retained-binding-boolean-model/actual_service_binding.qnt": {
+      "oldSHA256": "609c30e637f4e5606d02bbd58267b84c1c34af33ca3e22fb990f7e21f5274691",
+      "newSHA256": "609c30e637f4e5606d02bbd58267b84c1c34af33ca3e22fb990f7e21f5274691",
+      "mode": 420
+    },
+    "retained-binding-boolean-model/actual_service_binding_test.qnt": {
+      "oldSHA256": "acec5e957525c5d26e22b75059c0c83cf0d3b031457308819ddb4e0cf4738f8b",
+      "newSHA256": "acec5e957525c5d26e22b75059c0c83cf0d3b031457308819ddb4e0cf4738f8b",
+      "mode": 420
+    },
+    "retained-collector-v1/frozen-inputs.json": {
+      "oldSHA256": "5b47484c89fd7183f7ea9c4586134f932b6a96e82845aa6e1fc1941c9ed6f286",
+      "newSHA256": "5b47484c89fd7183f7ea9c4586134f932b6a96e82845aa6e1fc1941c9ed6f286",
+      "mode": 384
+    },
+    "retained-collector-v1/root-freeze-rejection.json": {
+      "oldSHA256": "0c0102c4e2e5d8716e241f10a9f71aea325b82b640ef95a2794ba538ac30558d",
+      "newSHA256": "0c0102c4e2e5d8716e241f10a9f71aea325b82b640ef95a2794ba538ac30558d",
+      "mode": 420
+    },
+    "retained-collector-v1/source-ready.json": {
+      "oldSHA256": "2c40e04b5073b8b0f4933aa59467930763d0c6c421a016363916a232485003c7",
+      "newSHA256": "2c40e04b5073b8b0f4933aa59467930763d0c6c421a016363916a232485003c7",
+      "mode": 420
+    },
+    "retained-recovery-collector-v3/frozen-inputs.json": {
+      "oldSHA256": "e41e787f2d8c64997f7df7e285f324af82d8ce465ccb131ad0d3a566ac348be7",
+      "newSHA256": "e41e787f2d8c64997f7df7e285f324af82d8ce465ccb131ad0d3a566ac348be7",
+      "mode": 384
+    },
+    "retained-recovery-collector-v3/recovery-v3-root-observer-pairing-discrepancy-v1.json": {
+      "oldSHA256": "983a744e8bd10175d5d2b283124319016647d62cc28d315331ce22a6242d4815",
+      "newSHA256": "983a744e8bd10175d5d2b283124319016647d62cc28d315331ce22a6242d4815",
+      "mode": 384
+    },
+    "payload/retained-accessibility/libwindowaccessibility.so": {
+      "oldSHA256": "3e79329aa2c9b4008cbf7bd39b859fc6f578a89a03ac10cfb01b9b4f6e67c46a",
+      "newSHA256": "3e79329aa2c9b4008cbf7bd39b859fc6f578a89a03ac10cfb01b9b4f6e67c46a",
+      "mode": 448
+    },
+    "payload/retained-accessibility/qmldir": {
+      "oldSHA256": "5d76d3579d026745b301a7a4cc7cea945f6b46c9264dae1e4da2d274745ecca8",
+      "newSHA256": "5d76d3579d026745b301a7a4cc7cea945f6b46c9264dae1e4da2d274745ecca8",
+      "mode": 384
+    },
+    "payload/omarchy/bin/omarchy-shell": {
+      "oldSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "newSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "mode": 448
+    },
+    "payload/omarchy/shell/README.md": {
+      "oldSHA256": "86680c50254992cdb1c8453847f9d7be845e6b5350346738ee95245ae6b8013d",
+      "newSHA256": "86680c50254992cdb1c8453847f9d7be845e6b5350346738ee95245ae6b8013d",
+      "mode": 384
+    },
+    "payload/omarchy/shell/shell.qml": {
+      "oldSHA256": "4a4b7694e5b9e0bd952ce0efa2d6dc2cea44cdfa98cc2f442e40fe41cbc1beab",
+      "newSHA256": "4a4b7694e5b9e0bd952ce0efa2d6dc2cea44cdfa98cc2f442e40fe41cbc1beab",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Commons/Border.qml": {
+      "oldSHA256": "b98c82530126fc10a287845e8df574ae26fa05b6064d93451d93d0ee9c3f7166",
+      "newSHA256": "b98c82530126fc10a287845e8df574ae26fa05b6064d93451d93d0ee9c3f7166",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Commons/BorderGeometry.js": {
+      "oldSHA256": "8b99fb8d32a2f4ccb72f09a1c6421771d7329555c59bff69d181f1218033c85d",
+      "newSHA256": "8b99fb8d32a2f4ccb72f09a1c6421771d7329555c59bff69d181f1218033c85d",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Commons/Color.qml": {
+      "oldSHA256": "cc9b62e2eaf8c307aa02206d9320c3d0ca349cf8feed452a6eddf387adaa5320",
+      "newSHA256": "cc9b62e2eaf8c307aa02206d9320c3d0ca349cf8feed452a6eddf387adaa5320",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Commons/Style.qml": {
+      "oldSHA256": "f5901092617ae62645597199270afd4dfb0644d596bdfff16e1834fca6ad7243",
+      "newSHA256": "f5901092617ae62645597199270afd4dfb0644d596bdfff16e1834fca6ad7243",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Commons/Util.qml": {
+      "oldSHA256": "6894c63190973b5dbe50b13b3f7a99dd5770e143699f3aae1650fb65ca3ebe9b",
+      "newSHA256": "6894c63190973b5dbe50b13b3f7a99dd5770e143699f3aae1650fb65ca3ebe9b",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Commons/qmldir": {
+      "oldSHA256": "5593fa25d33b1e2d3ed8628ca2e0dce5074497608f2bad6652689e390727e5e8",
+      "newSHA256": "5593fa25d33b1e2d3ed8628ca2e0dce5074497608f2bad6652689e390727e5e8",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/BarIconButton.qml": {
+      "oldSHA256": "bae9894d021655105b67d4ae7dec734bcd36ebf3b17a4aaef2c462e0cfa0c874",
+      "newSHA256": "bae9894d021655105b67d4ae7dec734bcd36ebf3b17a4aaef2c462e0cfa0c874",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/BarIndicator.qml": {
+      "oldSHA256": "5ed0ecd4be63cbe51a732900ffe7a06ed02f89e176207a42258021d2631e6d4a",
+      "newSHA256": "5ed0ecd4be63cbe51a732900ffe7a06ed02f89e176207a42258021d2631e6d4a",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/BarWidget.qml": {
+      "oldSHA256": "8be00e2553a486b3dbfcb4f99de976035f323c4061b993dbc1842c75ff8b9022",
+      "newSHA256": "8be00e2553a486b3dbfcb4f99de976035f323c4061b993dbc1842c75ff8b9022",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/BorderOverlay.qml": {
+      "oldSHA256": "c0aaf4f8a080712bf8dce2360d496ba1a63dcacb982a0fd9ed15bc51be333d66",
+      "newSHA256": "c0aaf4f8a080712bf8dce2360d496ba1a63dcacb982a0fd9ed15bc51be333d66",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/BorderSurface.qml": {
+      "oldSHA256": "e17d8150d0b0e60f431bd6df5e661f5d9fe1f5eec9c2e2420f6eff2179a45baf",
+      "newSHA256": "e17d8150d0b0e60f431bd6df5e661f5d9fe1f5eec9c2e2420f6eff2179a45baf",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/Button.qml": {
+      "oldSHA256": "fda48672cc11dba109acea1cc98eb4b29746e5ce09f90a47f487b776ff99e799",
+      "newSHA256": "fda48672cc11dba109acea1cc98eb4b29746e5ce09f90a47f487b776ff99e799",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/ButtonGroup.qml": {
+      "oldSHA256": "4af792f394534b7d61b270fcb44203bba8d88ed25f8822e0b90e456e35487542",
+      "newSHA256": "4af792f394534b7d61b270fcb44203bba8d88ed25f8822e0b90e456e35487542",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/ConfirmDialog.qml": {
+      "oldSHA256": "969cafe0580acb66d47947b7b6e9fa5103e1911b3a7dee03b84f2b154afc2762",
+      "newSHA256": "969cafe0580acb66d47947b7b6e9fa5103e1911b3a7dee03b84f2b154afc2762",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/CursorSurface.qml": {
+      "oldSHA256": "27844a40fbe378e84c0aea35654dd8b396afb7e331c86be80852e1529da4f5b2",
+      "newSHA256": "27844a40fbe378e84c0aea35654dd8b396afb7e331c86be80852e1529da4f5b2",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/Dropdown.qml": {
+      "oldSHA256": "6e2b847a33f5dedb96f65757d284f40b90073b3b34fd31abb84b2d471814fc5c",
+      "newSHA256": "6e2b847a33f5dedb96f65757d284f40b90073b3b34fd31abb84b2d471814fc5c",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/KeyboardPanel.qml": {
+      "oldSHA256": "96245f2da8d38baa0017caa285d596c485bd19a3a4d2cd1675bee9d84ffba42d",
+      "newSHA256": "96245f2da8d38baa0017caa285d596c485bd19a3a4d2cd1675bee9d84ffba42d",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/MultiSelect.qml": {
+      "oldSHA256": "ed85c2bf48ca17a059611b582d3d650eb2a1ad37cff2b700ca0c6c441a4c52df",
+      "newSHA256": "ed85c2bf48ca17a059611b582d3d650eb2a1ad37cff2b700ca0c6c441a4c52df",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/NumberField.qml": {
+      "oldSHA256": "b3584b513ee720f9f3e0f098d19ca1b129a02270c140528455d88fe04e2f2c8b",
+      "newSHA256": "b3584b513ee720f9f3e0f098d19ca1b129a02270c140528455d88fe04e2f2c8b",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/OpticalGlyph.qml": {
+      "oldSHA256": "293e2863c7ff18998a7aea651fa952a564a860df125bf8900b7e739500b3c352",
+      "newSHA256": "293e2863c7ff18998a7aea651fa952a564a860df125bf8900b7e739500b3c352",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/Panel.qml": {
+      "oldSHA256": "e6588b3d7c1075d68c6392d028483fcc5d4d2bcb29180758fe265a957cbdc71d",
+      "newSHA256": "e6588b3d7c1075d68c6392d028483fcc5d4d2bcb29180758fe265a957cbdc71d",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/PanelActionButton.qml": {
+      "oldSHA256": "6c94ff62997f18d1712a741e8ae24ed98a6fa5c6350b266c631ff92f26cffdc7",
+      "newSHA256": "6c94ff62997f18d1712a741e8ae24ed98a6fa5c6350b266c631ff92f26cffdc7",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/PanelController.qml": {
+      "oldSHA256": "4c08895559a2a7634f6513cb08eda6e05f6ac0bf3d940085229d594b2f383108",
+      "newSHA256": "4c08895559a2a7634f6513cb08eda6e05f6ac0bf3d940085229d594b2f383108",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/PanelHero.qml": {
+      "oldSHA256": "bf0753e69c91c906b8f1e1a46cfbbd4326228e9d9abde1b4007ee86c0bf78f05",
+      "newSHA256": "bf0753e69c91c906b8f1e1a46cfbbd4326228e9d9abde1b4007ee86c0bf78f05",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/PanelKeyCatcher.qml": {
+      "oldSHA256": "76abaf157317ea260b81591a614460dfbc7173f545963be25558ed5a8cddedb4",
+      "newSHA256": "76abaf157317ea260b81591a614460dfbc7173f545963be25558ed5a8cddedb4",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/PanelSectionHeader.qml": {
+      "oldSHA256": "ede63ff97dd3d4d2198b771cbb33dcd07b7026d64d92f1c624e71465d000115d",
+      "newSHA256": "ede63ff97dd3d4d2198b771cbb33dcd07b7026d64d92f1c624e71465d000115d",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/PanelSeparator.qml": {
+      "oldSHA256": "667cd49e89c5911fbe564904720b3d4073057e0b6fa38f03e55fa5949ccd195c",
+      "newSHA256": "667cd49e89c5911fbe564904720b3d4073057e0b6fa38f03e55fa5949ccd195c",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/PanelSlider.qml": {
+      "oldSHA256": "aa8fcf167324ff9eb60a219f037004482adbe2a30369af123d53956a81a93068",
+      "newSHA256": "aa8fcf167324ff9eb60a219f037004482adbe2a30369af123d53956a81a93068",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/PanelToolTip.qml": {
+      "oldSHA256": "5520685c2d160002cb4bd62c9e5da193003c071fca69b90e6012ebf0c8ee4ca3",
+      "newSHA256": "5520685c2d160002cb4bd62c9e5da193003c071fca69b90e6012ebf0c8ee4ca3",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/PluginBarApi.qml": {
+      "oldSHA256": "91964a42b92c58476a4f961df35148d4c94071344ef1a69eab1563d1496705a7",
+      "newSHA256": "91964a42b92c58476a4f961df35148d4c94071344ef1a69eab1563d1496705a7",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/PointerMoveGate.qml": {
+      "oldSHA256": "6f494aadb3b7963c35167cf1b07505c237f27ef07e4fd386f7d041ec302af51a",
+      "newSHA256": "6f494aadb3b7963c35167cf1b07505c237f27ef07e4fd386f7d041ec302af51a",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/PopupCard.qml": {
+      "oldSHA256": "b3751c78dba9d3b6383c072c915c3d1ecf5e2227cc8417127323077df1f0af5a",
+      "newSHA256": "b3751c78dba9d3b6383c072c915c3d1ecf5e2227cc8417127323077df1f0af5a",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/ScreenMoveRemap.qml": {
+      "oldSHA256": "ae09782672877502015e517c6f58565cf79b82e0aa1dc56ee5655989863ad8a7",
+      "newSHA256": "ae09782672877502015e517c6f58565cf79b82e0aa1dc56ee5655989863ad8a7",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/SearchableDropdown.qml": {
+      "oldSHA256": "a30cff5297ba595235ead18c956b1268d140b3962375b5ed14d98f6ed0eecc10",
+      "newSHA256": "a30cff5297ba595235ead18c956b1268d140b3962375b5ed14d98f6ed0eecc10",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/SpeedTestOverlay.qml": {
+      "oldSHA256": "f7b37ccf6e641c3a607d91b824f7df15aac6177e5004462718842c686325af48",
+      "newSHA256": "f7b37ccf6e641c3a607d91b824f7df15aac6177e5004462718842c686325af48",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/TextField.qml": {
+      "oldSHA256": "b3ad72f56f86c2df164e347d64205c099f77c5fb90933fabea3b0f2a9e2b3778",
+      "newSHA256": "b3ad72f56f86c2df164e347d64205c099f77c5fb90933fabea3b0f2a9e2b3778",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/Toggle.qml": {
+      "oldSHA256": "158aaa84cf1fff771b932bb1c79e00be19bee1bfeef2d27bfbd8aa4f1c416e6b",
+      "newSHA256": "158aaa84cf1fff771b932bb1c79e00be19bee1bfeef2d27bfbd8aa4f1c416e6b",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/ToggleSwitch.qml": {
+      "oldSHA256": "6bfae25396c1d03979efd9a27130e03f11edc2c7062d1f0c0c252b30e60a9898",
+      "newSHA256": "6bfae25396c1d03979efd9a27130e03f11edc2c7062d1f0c0c252b30e60a9898",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/WidgetButton.qml": {
+      "oldSHA256": "a3cc74adca517b73a176eae0f93e976c24a3ec73b4b5855340b61b1ed2dcd08f",
+      "newSHA256": "a3cc74adca517b73a176eae0f93e976c24a3ec73b4b5855340b61b1ed2dcd08f",
+      "mode": 384
+    },
+    "payload/omarchy/shell/Ui/qmldir": {
+      "oldSHA256": "1c8f878acd5eafa6e3932325f76a205b1c0fc800f210ca071eee2409fee5d22b",
+      "newSHA256": "1c8f878acd5eafa6e3932325f76a205b1c0fc800f210ca071eee2409fee5d22b",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/README.md": {
+      "oldSHA256": "64ec181622f52da4811b2b5cf543e15bc10882e90e58d85c62c20bf20ce14458",
+      "newSHA256": "64ec181622f52da4811b2b5cf543e15bc10882e90e58d85c62c20bf20ce14458",
+      "mode": 384
+    },
+    "payload/omarchy/shell/services/AppLibrary.qml": {
+      "oldSHA256": "68dd83a2141e9a8eda01a9ec5e2fbaaecf5d02d969178512cc6fec118fa23a31",
+      "newSHA256": "68dd83a2141e9a8eda01a9ec5e2fbaaecf5d02d969178512cc6fec118fa23a31",
+      "mode": 384
+    },
+    "payload/omarchy/shell/services/AppSearch.js": {
+      "oldSHA256": "bbc4965f7b46932bd7127b5d921b977679f2a892e6bd9672f29049d340821bd7",
+      "newSHA256": "bbc4965f7b46932bd7127b5d921b977679f2a892e6bd9672f29049d340821bd7",
+      "mode": 384
+    },
+    "payload/omarchy/shell/services/AuthServiceStore.js": {
+      "oldSHA256": "f47026ea2b8a0f23d5d4b3f0a9f47f60e94d7d81d2930b4486334c92575c8ccc",
+      "newSHA256": "f47026ea2b8a0f23d5d4b3f0a9f47f60e94d7d81d2930b4486334c92575c8ccc",
+      "mode": 384
+    },
+    "payload/omarchy/shell/services/BarWidgetRegistry.qml": {
+      "oldSHA256": "e59391d65904febf95399748c3866b6065d2cfceb9a15cc7c28a72eef6356799",
+      "newSHA256": "e59391d65904febf95399748c3866b6065d2cfceb9a15cc7c28a72eef6356799",
+      "mode": 384
+    },
+    "payload/omarchy/shell/services/PluginAppLibraryApi.qml": {
+      "oldSHA256": "4b1592243c63c0e589e3324f9d596378d0ab1808233dec11d4d68134f3052117",
+      "newSHA256": "4b1592243c63c0e589e3324f9d596378d0ab1808233dec11d4d68134f3052117",
+      "mode": 384
+    },
+    "payload/omarchy/shell/services/PluginBarStateApi.qml": {
+      "oldSHA256": "3dfeb7819106378f76912aa3a428ca5fe4212f5f19dc5b7aa851d46feaf7037b",
+      "newSHA256": "3dfeb7819106378f76912aa3a428ca5fe4212f5f19dc5b7aa851d46feaf7037b",
+      "mode": 384
+    },
+    "payload/omarchy/shell/services/PluginBarWidgetRegistryApi.qml": {
+      "oldSHA256": "7afdd10d35f373e35ccaabd5625e1c6eb606467ccc4f4454bd6432486f0b1627",
+      "newSHA256": "7afdd10d35f373e35ccaabd5625e1c6eb606467ccc4f4454bd6432486f0b1627",
+      "mode": 384
+    },
+    "payload/omarchy/shell/services/PluginFirstPartyServiceApi.qml": {
+      "oldSHA256": "bae758ce27a11a84d68b11f6f192d6270f3dd1a6663b408338a92402bd42f5a4",
+      "newSHA256": "bae758ce27a11a84d68b11f6f192d6270f3dd1a6663b408338a92402bd42f5a4",
+      "mode": 384
+    },
+    "payload/omarchy/shell/services/PluginRegistry.qml": {
+      "oldSHA256": "8466127c53037b80b582544610b0bdf78a86764e4f037a3b9ce360d107359803",
+      "newSHA256": "8466127c53037b80b582544610b0bdf78a86764e4f037a3b9ce360d107359803",
+      "mode": 384
+    },
+    "payload/omarchy/shell/services/PluginRegistryApi.qml": {
+      "oldSHA256": "c00fec41303c4b5975a6e7fb00b78c125f5daaf0eb9eecc1dd45b4d155984e91",
+      "newSHA256": "c00fec41303c4b5975a6e7fb00b78c125f5daaf0eb9eecc1dd45b4d155984e91",
+      "mode": 384
+    },
+    "payload/omarchy/shell/services/PluginShellApi.qml": {
+      "oldSHA256": "ff0cb5ec5fcdda0b21af447b11f07a24e065a3557796639364109aaa2ce5c763",
+      "newSHA256": "ff0cb5ec5fcdda0b21af447b11f07a24e065a3557796639364109aaa2ce5c763",
+      "mode": 384
+    },
+    "payload/omarchy/shell/services/hidden-entries.sh": {
+      "oldSHA256": "ca3675606d94935c808f6487e967f757be273c4c3b48a99d633c2e70feebd85b",
+      "newSHA256": "ca3675606d94935c808f6487e967f757be273c4c3b48a99d633c2e70feebd85b",
+      "mode": 448
+    },
+    "payload/omarchy/shell/plugins/agents/Agent.qml": {
+      "oldSHA256": "9fa9a8650ecbc2f2f691b01da7419fa0620b6066c423eea8d50f6253ddf6f4e3",
+      "newSHA256": "9fa9a8650ecbc2f2f691b01da7419fa0620b6066c423eea8d50f6253ddf6f4e3",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/agents/Main.qml": {
+      "oldSHA256": "fc61e5e06325dd6eb3d100b1f3eead4c6ed8b62b58bda209c70a82084e23f3c7",
+      "newSHA256": "fc61e5e06325dd6eb3d100b1f3eead4c6ed8b62b58bda209c70a82084e23f3c7",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/agents/Panel.qml": {
+      "oldSHA256": "0e5ecdb45eaff618963851c16a1f5066307c13195526890d2cbb6ddb5a1aa7c1",
+      "newSHA256": "0e5ecdb45eaff618963851c16a1f5066307c13195526890d2cbb6ddb5a1aa7c1",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/agents/README.md": {
+      "oldSHA256": "34160fb26e62609839b6b0019a5d79fdd31b4f8f48c148eaf7fec3372c2a910e",
+      "newSHA256": "34160fb26e62609839b6b0019a5d79fdd31b4f8f48c148eaf7fec3372c2a910e",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/agents/manifest.json": {
+      "oldSHA256": "11bbc83df813fc5862a2ca34399486f19772ebdffe56ee1fe5dde9265a40703f",
+      "newSHA256": "11bbc83df813fc5862a2ca34399486f19772ebdffe56ee1fe5dde9265a40703f",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/background/Background.qml": {
+      "oldSHA256": "505c7d4af8323bdb201cd816aa8332248dcfd4c056ec8f64b5c0a2ae1776c58a",
+      "newSHA256": "505c7d4af8323bdb201cd816aa8332248dcfd4c056ec8f64b5c0a2ae1776c58a",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/background/manifest.json": {
+      "oldSHA256": "f1e3eeb5ebd67738bb3a6ed24cfefe831d0fd5785c7d85f8b050c18788b8f265",
+      "newSHA256": "f1e3eeb5ebd67738bb3a6ed24cfefe831d0fd5785c7d85f8b050c18788b8f265",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/Bar.qml": {
+      "oldSHA256": "9874c0f36271840b43002890ae333c83097df7f4cff0bade81536a41ed83590b",
+      "newSHA256": "9874c0f36271840b43002890ae333c83097df7f4cff0bade81536a41ed83590b",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/BarModel.js": {
+      "oldSHA256": "908f30edce60dcba46d2039ba3d501fd0faa35fa1f90b7dbda69439288f8a8d0",
+      "newSHA256": "908f30edce60dcba46d2039ba3d501fd0faa35fa1f90b7dbda69439288f8a8d0",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/README.md": {
+      "oldSHA256": "566f36439f8a90eeb56cf1e23b66cae972e9f47d4de9b0ee25b5f531bb1f3c27",
+      "newSHA256": "566f36439f8a90eeb56cf1e23b66cae972e9f47d4de9b0ee25b5f531bb1f3c27",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/manifest.json": {
+      "oldSHA256": "cdb1e824279ff44d8e48d8aea4e17a4dd9c115d6cc8d3ddf5c964fba12b143bb",
+      "newSHA256": "cdb1e824279ff44d8e48d8aea4e17a4dd9c115d6cc8d3ddf5c964fba12b143bb",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/clipboard/Clipboard.qml": {
+      "oldSHA256": "7fcc8abf8ba142d81c79e265a662769e4c101826b4716ef8a976ee333cbbfa81",
+      "newSHA256": "7fcc8abf8ba142d81c79e265a662769e4c101826b4716ef8a976ee333cbbfa81",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/clipboard/ClipboardHistory.js": {
+      "oldSHA256": "57d467477e146f636bb5639dd9badf3bce178eff56bb79acdee8be08b48382c8",
+      "newSHA256": "57d467477e146f636bb5639dd9badf3bce178eff56bb79acdee8be08b48382c8",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/clipboard/capture.sh": {
+      "oldSHA256": "513af53f2c89aac4c4dbf96835c9a31b8f2731668524f4cd37862fa3208f598b",
+      "newSHA256": "513af53f2c89aac4c4dbf96835c9a31b8f2731668524f4cd37862fa3208f598b",
+      "mode": 448
+    },
+    "payload/omarchy/shell/plugins/clipboard/manifest.json": {
+      "oldSHA256": "13a7a3b174a333a8c0ec91a586b35617fbb70e03e0124f63916c3783fb64ca75",
+      "newSHA256": "13a7a3b174a333a8c0ec91a586b35617fbb70e03e0124f63916c3783fb64ca75",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/dev-gallery/GalleryPanel.qml": {
+      "oldSHA256": "4fa15562d85fd021a7cfe46474e0bdda4b063c3f4f56c6c61dbb5148b6f5aaa8",
+      "newSHA256": "4fa15562d85fd021a7cfe46474e0bdda4b063c3f4f56c6c61dbb5148b6f5aaa8",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/dev-gallery/manifest.json": {
+      "oldSHA256": "5e17304ee1689c76240cf66850981cc6d6411bffc2608cad3b93dbb12135e86a",
+      "newSHA256": "5e17304ee1689c76240cf66850981cc6d6411bffc2608cad3b93dbb12135e86a",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/emojis/EmojiSearch.js": {
+      "oldSHA256": "6d27be1181c3e79f149e0b2b0385826ff3037fe68ed4488160c7ada1b4a77e15",
+      "newSHA256": "6d27be1181c3e79f149e0b2b0385826ff3037fe68ed4488160c7ada1b4a77e15",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/emojis/Emojis.qml": {
+      "oldSHA256": "ff49e2e8174e0c0925d76c9b686f4de1e7297aa256c9dcc7320ed00c39dafeda",
+      "newSHA256": "ff49e2e8174e0c0925d76c9b686f4de1e7297aa256c9dcc7320ed00c39dafeda",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/emojis/emojis.json": {
+      "oldSHA256": "48c9e885e2c1b948170d0508e34433fb5d15ad1946d171a12f746005c6f8664f",
+      "newSHA256": "48c9e885e2c1b948170d0508e34433fb5d15ad1946d171a12f746005c6f8664f",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/emojis/manifest.json": {
+      "oldSHA256": "6d4873361e50ff25318f103db4d52d79bdfcb090a705ab71ea3b5c4ae466b7b4",
+      "newSHA256": "6d4873361e50ff25318f103db4d52d79bdfcb090a705ab71ea3b5c4ae466b7b4",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/image-picker/ImagePicker.qml": {
+      "oldSHA256": "0bcb5e97a06f5dd14ce8265b16039f01cb5a1e99f64d01165e66786a1aa175e0",
+      "newSHA256": "0bcb5e97a06f5dd14ce8265b16039f01cb5a1e99f64d01165e66786a1aa175e0",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/image-picker/ImagePickerModel.js": {
+      "oldSHA256": "2eecf32b70811d0a39981e351ebe9843384aaf97b43dad1216651d2535a9a5da",
+      "newSHA256": "2eecf32b70811d0a39981e351ebe9843384aaf97b43dad1216651d2535a9a5da",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/image-picker/list.sh": {
+      "oldSHA256": "6f6b800fba3c5c3b98a80dfa6b1606fb14b69d3ca37035a8c163135a7d74ce5b",
+      "newSHA256": "6f6b800fba3c5c3b98a80dfa6b1606fb14b69d3ca37035a8c163135a7d74ce5b",
+      "mode": 448
+    },
+    "payload/omarchy/shell/plugins/image-picker/manifest.json": {
+      "oldSHA256": "b255a60b42c927b1d6e191ca5a70a30fb537601a1a13b95c4bcc0646f7d6f64b",
+      "newSHA256": "b255a60b42c927b1d6e191ca5a70a30fb537601a1a13b95c4bcc0646f7d6f64b",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/lock/LockView.qml": {
+      "oldSHA256": "9b174cf3ba8569dede528968be38994491ac73d9ca708f7e9451beeec7b4d066",
+      "newSHA256": "9b174cf3ba8569dede528968be38994491ac73d9ca708f7e9451beeec7b4d066",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/lock/Service.qml": {
+      "oldSHA256": "3f0a265a09f7957e8f5d74666595d3136ec64899c414426190460f9e2098e701",
+      "newSHA256": "3f0a265a09f7957e8f5d74666595d3136ec64899c414426190460f9e2098e701",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/lock/manifest.json": {
+      "oldSHA256": "58af8610a79045dfc09b541a5c2fdfd2e8886624549a49114ba424b4833cc546",
+      "newSHA256": "58af8610a79045dfc09b541a5c2fdfd2e8886624549a49114ba424b4833cc546",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/menu/BarWidget.qml": {
+      "oldSHA256": "ad201156483711ba77ec97303183bc02922248e97ac0c0b8ea30d250e57cd0af",
+      "newSHA256": "ad201156483711ba77ec97303183bc02922248e97ac0c0b8ea30d250e57cd0af",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/menu/Menu.qml": {
+      "oldSHA256": "0154d0ec3855fbb48aa06eaa724a19f3c07c377494d4a3de65daed2d7d9100e3",
+      "newSHA256": "0154d0ec3855fbb48aa06eaa724a19f3c07c377494d4a3de65daed2d7d9100e3",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/menu/MenuModel.js": {
+      "oldSHA256": "ff6b265ca477d0d04297b0d9a5d9715960069db6da44603160d329e087e55fd8",
+      "newSHA256": "ff6b265ca477d0d04297b0d9a5d9715960069db6da44603160d329e087e55fd8",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/menu/manifest.json": {
+      "oldSHA256": "2cf1fe472ac75116c221a01999864bc2227f567ab42d6b61565b96551a44c060",
+      "newSHA256": "2cf1fe472ac75116c221a01999864bc2227f567ab42d6b61565b96551a44c060",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/notifications/NotificationLogic.js": {
+      "oldSHA256": "99e82df6524ee1ee1d52673b2a1496f62b14b220288f186c41fd8deed77a69bd",
+      "newSHA256": "99e82df6524ee1ee1d52673b2a1496f62b14b220288f186c41fd8deed77a69bd",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/notifications/Service.qml": {
+      "oldSHA256": "11665542e70df80ccd3c785a6143dee2daefd2082e4f75c740adc2c9947cf7c2",
+      "newSHA256": "11665542e70df80ccd3c785a6143dee2daefd2082e4f75c740adc2c9947cf7c2",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/notifications/manifest.json": {
+      "oldSHA256": "82ed1a26f0040ddff78dd0ed1f12c5e4b49929ec5d0efc7ea62bedabbf48e910",
+      "newSHA256": "82ed1a26f0040ddff78dd0ed1f12c5e4b49929ec5d0efc7ea62bedabbf48e910",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/osd/Osd.qml": {
+      "oldSHA256": "a139b64d45f89a6b55ebcbd1233347f75b541b020e24b4286d6e00a6d5f5c50c",
+      "newSHA256": "a139b64d45f89a6b55ebcbd1233347f75b541b020e24b4286d6e00a6d5f5c50c",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/osd/OsdModel.js": {
+      "oldSHA256": "ad8cc27c204587a9aac9a7ec0513c72a1a33fe6e83090ee91b4e2c2bfe5fe35c",
+      "newSHA256": "ad8cc27c204587a9aac9a7ec0513c72a1a33fe6e83090ee91b4e2c2bfe5fe35c",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/osd/manifest.json": {
+      "oldSHA256": "a000056d0e7e372b2a46960a24fa578ab39a20cfd620d423688536fe68b40054",
+      "newSHA256": "a000056d0e7e372b2a46960a24fa578ab39a20cfd620d423688536fe68b40054",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/polkit/PolkitAgent.qml": {
+      "oldSHA256": "dfd8e994bd774b9d6d5375f1380a51db1813ce2c060a37c3519c75f0c089dde6",
+      "newSHA256": "dfd8e994bd774b9d6d5375f1380a51db1813ce2c060a37c3519c75f0c089dde6",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/polkit/PolkitModel.js": {
+      "oldSHA256": "29c0b96b25fea18d8dcc1e61912f8906ff75c599b07f9bf8b0f8cc4f6fb985c9",
+      "newSHA256": "29c0b96b25fea18d8dcc1e61912f8906ff75c599b07f9bf8b0f8cc4f6fb985c9",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/polkit/manifest.json": {
+      "oldSHA256": "fad96d75efce40fc60cb131321daebc91a9268e5709333f19e452b43f43ce8f7",
+      "newSHA256": "fad96d75efce40fc60cb131321daebc91a9268e5709333f19e452b43f43ce8f7",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/reminders/ReminderFlow.qml": {
+      "oldSHA256": "1ffb380e1b3d85539aae8b9407d271bd9e42ae936d3d853b543afcfd714c3857",
+      "newSHA256": "1ffb380e1b3d85539aae8b9407d271bd9e42ae936d3d853b543afcfd714c3857",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/reminders/ReminderFlowModel.js": {
+      "oldSHA256": "fd3135f84e7a549db9ba4d9259336f5ef587ed72d60c7b8e888bf7284604f97a",
+      "newSHA256": "fd3135f84e7a549db9ba4d9259336f5ef587ed72d60c7b8e888bf7284604f97a",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/reminders/manifest.json": {
+      "oldSHA256": "b8eba9cd89a59d458516c2e93c5a6fba12312774379a9687dc1038e8d211d376",
+      "newSHA256": "b8eba9cd89a59d458516c2e93c5a6fba12312774379a9687dc1038e8d211d376",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/services/battery/BatteryModel.js": {
+      "oldSHA256": "f6d8d07487d50fe16d104348c832b17fa0b789c00a5c94288d4971c80e768e57",
+      "newSHA256": "f6d8d07487d50fe16d104348c832b17fa0b789c00a5c94288d4971c80e768e57",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/services/battery/Service.qml": {
+      "oldSHA256": "5557460d74ad329c53dea5850cf8178af106a0e47e09ef7963ce25f4fc2d1b45",
+      "newSHA256": "5557460d74ad329c53dea5850cf8178af106a0e47e09ef7963ce25f4fc2d1b45",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/services/battery/manifest.json": {
+      "oldSHA256": "bf6cc1c9eaca2b6830cff592230677d20a26698a79830f273b11380a59bc2899",
+      "newSHA256": "bf6cc1c9eaca2b6830cff592230677d20a26698a79830f273b11380a59bc2899",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/services/idle/IdleModel.js": {
+      "oldSHA256": "58226a67d5fc2f33b1a23b55cb32764a8b2091cc94c4d02af1b67f369440b9b8",
+      "newSHA256": "58226a67d5fc2f33b1a23b55cb32764a8b2091cc94c4d02af1b67f369440b9b8",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/services/idle/Service.qml": {
+      "oldSHA256": "50f5c81e2e94fab32395a5bc3cce982e30a10ab1b3f56cc58f29055951518a51",
+      "newSHA256": "50f5c81e2e94fab32395a5bc3cce982e30a10ab1b3f56cc58f29055951518a51",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/services/idle/manifest.json": {
+      "oldSHA256": "bb8a5f55257dc49c2b7632304dad19aa12bbc7ad641828f09481909232f30a6f",
+      "newSHA256": "bb8a5f55257dc49c2b7632304dad19aa12bbc7ad641828f09481909232f30a6f",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/services/media/BarWidget.qml": {
+      "oldSHA256": "05b9bca8673facb447d7b10b513865c80b5de7dc61828efc41026de4bb960d42",
+      "newSHA256": "05b9bca8673facb447d7b10b513865c80b5de7dc61828efc41026de4bb960d42",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/services/media/MediaModel.js": {
+      "oldSHA256": "663eeb35c2ecd4488395259a7047d7a12089fa7d9dfaf918e3e15d54ebfdf627",
+      "newSHA256": "663eeb35c2ecd4488395259a7047d7a12089fa7d9dfaf918e3e15d54ebfdf627",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/services/media/Service.qml": {
+      "oldSHA256": "92237e82b280903dae296d9e876532058083299a65459e2bf3cacce3be644139",
+      "newSHA256": "92237e82b280903dae296d9e876532058083299a65459e2bf3cacce3be644139",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/services/media/manifest.json": {
+      "oldSHA256": "7d31e2e9cb8476fca4703e44b29e0e5faed4f44ed0565b58ecd7b36a78757cd0",
+      "newSHA256": "7d31e2e9cb8476fca4703e44b29e0e5faed4f44ed0565b58ecd7b36a78757cd0",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/services/nightlight/NightlightModel.js": {
+      "oldSHA256": "2273119d8dbc2a0c2b6faf76d5786c521f910b98c06dee6603ec1237737db8e1",
+      "newSHA256": "2273119d8dbc2a0c2b6faf76d5786c521f910b98c06dee6603ec1237737db8e1",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/services/nightlight/Service.qml": {
+      "oldSHA256": "721cd63d2404859918e28f92420e87369328c26fcef7df821443baa16d0b1897",
+      "newSHA256": "721cd63d2404859918e28f92420e87369328c26fcef7df821443baa16d0b1897",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/services/nightlight/manifest.json": {
+      "oldSHA256": "af58d98507b745efc437747f1288670b638d9450c973769722ab5a34b6b2b87e",
+      "newSHA256": "af58d98507b745efc437747f1288670b638d9450c973769722ab5a34b6b2b87e",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/audio/Model.js": {
+      "oldSHA256": "9e15d94b2076b039418339ea4e5f4bd305d80d8129a53fd6d3dfb67d1817e4b0",
+      "newSHA256": "9e15d94b2076b039418339ea4e5f4bd305d80d8129a53fd6d3dfb67d1817e4b0",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/audio/Panel.qml": {
+      "oldSHA256": "831efaa29097d06abed31480a9e54208552e3f4e529a5c4ecca9255b12c5a7b1",
+      "newSHA256": "831efaa29097d06abed31480a9e54208552e3f4e529a5c4ecca9255b12c5a7b1",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/audio/manifest.json": {
+      "oldSHA256": "8322d00019751f81d80c8748be736b380d8cb375721806aa8987ee5200b6e487",
+      "newSHA256": "8322d00019751f81d80c8748be736b380d8cb375721806aa8987ee5200b6e487",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/bluetooth/Model.js": {
+      "oldSHA256": "b34f3259c6553f20ce37619d2f390cd3293303266f89f2a6df0b6810da384417",
+      "newSHA256": "b34f3259c6553f20ce37619d2f390cd3293303266f89f2a6df0b6810da384417",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/bluetooth/Panel.qml": {
+      "oldSHA256": "f51654a00e3bfe5d6ccfd42bbd972d9436f70a27d152baa43ccdcbd8c66e1225",
+      "newSHA256": "f51654a00e3bfe5d6ccfd42bbd972d9436f70a27d152baa43ccdcbd8c66e1225",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/bluetooth/manifest.json": {
+      "oldSHA256": "c15c51ab8a6cb82df8ebe3a5195b8d69c69d2ff9bbd00d748204d81a3ddc1d8a",
+      "newSHA256": "c15c51ab8a6cb82df8ebe3a5195b8d69c69d2ff9bbd00d748204d81a3ddc1d8a",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/clock/BarWidget.qml": {
+      "oldSHA256": "cfcdaeedc4ae5832b37271a84bb92ee762301022e2443a0f769992fa792acf28",
+      "newSHA256": "cfcdaeedc4ae5832b37271a84bb92ee762301022e2443a0f769992fa792acf28",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/clock/Model.js": {
+      "oldSHA256": "4d1182e294e46779452e3cb9d15d1fbbafe441883c8179679840a1108b55248a",
+      "newSHA256": "4d1182e294e46779452e3cb9d15d1fbbafe441883c8179679840a1108b55248a",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/clock/Panel.qml": {
+      "oldSHA256": "396d98c9696a64977166be99d3b70c102ca20ac30f41e073fe1d168fde61de75",
+      "newSHA256": "396d98c9696a64977166be99d3b70c102ca20ac30f41e073fe1d168fde61de75",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/clock/manifest.json": {
+      "oldSHA256": "81d320cae7a86c14f961cf3586dbfeecbe689cd002e0a37a502a01c6da781d26",
+      "newSHA256": "81d320cae7a86c14f961cf3586dbfeecbe689cd002e0a37a502a01c6da781d26",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/disk-speedtest/Panel.qml": {
+      "oldSHA256": "b9cffa6c2036a9d3ca1bc53999e62a19ae2577339602239f44dc462fdecc198c",
+      "newSHA256": "b9cffa6c2036a9d3ca1bc53999e62a19ae2577339602239f44dc462fdecc198c",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/disk-speedtest/manifest.json": {
+      "oldSHA256": "038287260f646ab66b23d17acd4ba68f611b92b076dcfa9df569abdbd1f1891f",
+      "newSHA256": "038287260f646ab66b23d17acd4ba68f611b92b076dcfa9df569abdbd1f1891f",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/dropbox/DropboxIcon.qml": {
+      "oldSHA256": "3367632df6a80998e377a085483deb61175bf572138db81bd8f71423d06ca349",
+      "newSHA256": "3367632df6a80998e377a085483deb61175bf572138db81bd8f71423d06ca349",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/dropbox/Model.js": {
+      "oldSHA256": "3f4eefeafefbd360766069ca7e05cb89bdff9b36322c80178b221163e3d956f8",
+      "newSHA256": "3f4eefeafefbd360766069ca7e05cb89bdff9b36322c80178b221163e3d956f8",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/dropbox/Panel.qml": {
+      "oldSHA256": "4bc3b9660fd84e57c170004e0840495aa5d95c6cf1be0f891b9b58e6cc232d7a",
+      "newSHA256": "4bc3b9660fd84e57c170004e0840495aa5d95c6cf1be0f891b9b58e6cc232d7a",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/dropbox/Service.qml": {
+      "oldSHA256": "7bfdb9cbedcb374adf150453f918f36468b5ab4c600d0c990f6a61324d6900ae",
+      "newSHA256": "7bfdb9cbedcb374adf150453f918f36468b5ab4c600d0c990f6a61324d6900ae",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/dropbox/manifest.json": {
+      "oldSHA256": "03860bd138fd4dc87a2a683444018d506e542b408d43618866ae9010ba32f094",
+      "newSHA256": "03860bd138fd4dc87a2a683444018d506e542b408d43618866ae9010ba32f094",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/dropbox/status.py": {
+      "oldSHA256": "32a9be54c2149622bb96c2fc0742f490ea75f637bac13f07255c7c0095fcf835",
+      "newSHA256": "32a9be54c2149622bb96c2fc0742f490ea75f637bac13f07255c7c0095fcf835",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/monitor/Model.js": {
+      "oldSHA256": "9dd9cb7f7dc11f16e571a48bf2a7c51be75ddaef3d4d5f35c511be8f91ecd2ec",
+      "newSHA256": "9dd9cb7f7dc11f16e571a48bf2a7c51be75ddaef3d4d5f35c511be8f91ecd2ec",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/monitor/Panel.qml": {
+      "oldSHA256": "2f3f95e5fc75af2af1f1af418a65469c37714b2bec38cfd2206bdd3f1f1b0e69",
+      "newSHA256": "2f3f95e5fc75af2af1f1af418a65469c37714b2bec38cfd2206bdd3f1f1b0e69",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/monitor/manifest.json": {
+      "oldSHA256": "d79086c49ae4a4bf377421f0d48cb4149b2a86974dae253e2ad8bf8abd0538fa",
+      "newSHA256": "d79086c49ae4a4bf377421f0d48cb4149b2a86974dae253e2ad8bf8abd0538fa",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/network/Model.js": {
+      "oldSHA256": "344c5d34397840e3a059ddfacb2ce3281b7dafea0d0adcc050e03f6648fe4185",
+      "newSHA256": "344c5d34397840e3a059ddfacb2ce3281b7dafea0d0adcc050e03f6648fe4185",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/network/Panel.qml": {
+      "oldSHA256": "84d81680cfd2e06b4f07d40129c7e40e6e173e9d4794471c003e14a8f1b1e693",
+      "newSHA256": "84d81680cfd2e06b4f07d40129c7e40e6e173e9d4794471c003e14a8f1b1e693",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/network/manifest.json": {
+      "oldSHA256": "cd18affe2e42fb65bf5fe624d78d843876d5bdb3e097ce954ee92dd327fe5419",
+      "newSHA256": "cd18affe2e42fb65bf5fe624d78d843876d5bdb3e097ce954ee92dd327fe5419",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/power/Model.js": {
+      "oldSHA256": "5ed21781bcd315742b8eda1aa72f415f72217a38e03c659fe40095ed939f7ed2",
+      "newSHA256": "5ed21781bcd315742b8eda1aa72f415f72217a38e03c659fe40095ed939f7ed2",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/power/Panel.qml": {
+      "oldSHA256": "560e17a5144d3e2ea1e0ad36c2aec563909b535551e1e66e061f5fb25f1d4ec0",
+      "newSHA256": "560e17a5144d3e2ea1e0ad36c2aec563909b535551e1e66e061f5fb25f1d4ec0",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/power/manifest.json": {
+      "oldSHA256": "7e1a3d83a1ffd85f4a9ee2df9ccfd2cb63de794f100c5e2ec11156be7df83bb5",
+      "newSHA256": "7e1a3d83a1ffd85f4a9ee2df9ccfd2cb63de794f100c5e2ec11156be7df83bb5",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/speedtest/Panel.qml": {
+      "oldSHA256": "f1b3ebc595cebe8ecd7d5302a1ae3b8fe2517fd136368a721bd684499f9ad15b",
+      "newSHA256": "f1b3ebc595cebe8ecd7d5302a1ae3b8fe2517fd136368a721bd684499f9ad15b",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/speedtest/manifest.json": {
+      "oldSHA256": "9f5840bbac773f7897d20f329ff7f30e55ac3d5cd8834cc7c6b735f5593b6ef8",
+      "newSHA256": "9f5840bbac773f7897d20f329ff7f30e55ac3d5cd8834cc7c6b735f5593b6ef8",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/tailscale/Model.js": {
+      "oldSHA256": "fa8837858942d32bc5d2a6c28bfaef8003f83fd7d7f58148d2e6d25d7b4bd643",
+      "newSHA256": "fa8837858942d32bc5d2a6c28bfaef8003f83fd7d7f58148d2e6d25d7b4bd643",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/tailscale/Panel.qml": {
+      "oldSHA256": "c1f343ba875e49031fd4133bc4bba224980207f08a991b9882f3c3ac8c70f5df",
+      "newSHA256": "c1f343ba875e49031fd4133bc4bba224980207f08a991b9882f3c3ac8c70f5df",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/tailscale/README.md": {
+      "oldSHA256": "aaa4285a80d41a63b089773479d0772e67d72e2c47d577dab7d5736041ad5e84",
+      "newSHA256": "aaa4285a80d41a63b089773479d0772e67d72e2c47d577dab7d5736041ad5e84",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/tailscale/Service.qml": {
+      "oldSHA256": "ebf79b1e95c4268de7d40cfd69a25e6fb67306d1caa4c13b1684468668f81d7e",
+      "newSHA256": "ebf79b1e95c4268de7d40cfd69a25e6fb67306d1caa4c13b1684468668f81d7e",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/tailscale/TailscaleIcon.qml": {
+      "oldSHA256": "f3e35a849425b3400891726ca06a12681853a17599ccb66da2a788c0e0261beb",
+      "newSHA256": "f3e35a849425b3400891726ca06a12681853a17599ccb66da2a788c0e0261beb",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/tailscale/manifest.json": {
+      "oldSHA256": "523813d1e469f20bdf595900f4a74608375fcd69f48f3dcc971d8cfbb7c8743d",
+      "newSHA256": "523813d1e469f20bdf595900f4a74608375fcd69f48f3dcc971d8cfbb7c8743d",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/weather/BarWidget.qml": {
+      "oldSHA256": "ab3e32b97cf37847ff880a44013133eef9b9f04fe7258b692b30e7b24c6de4ca",
+      "newSHA256": "ab3e32b97cf37847ff880a44013133eef9b9f04fe7258b692b30e7b24c6de4ca",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/weather/Model.js": {
+      "oldSHA256": "66d2aa5e81bfe12b1b1b53b499a09968bc9ad660d066bc60af9b18102e836d17",
+      "newSHA256": "66d2aa5e81bfe12b1b1b53b499a09968bc9ad660d066bc60af9b18102e836d17",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/weather/Panel.qml": {
+      "oldSHA256": "47e38b979a578b662428844d11707d29db7f7933fdf60b69bc955429fdf5c201",
+      "newSHA256": "47e38b979a578b662428844d11707d29db7f7933fdf60b69bc955429fdf5c201",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/weather/manifest.json": {
+      "oldSHA256": "74a2a679dfab7df793d24d96322bdad8f087385756bd8f1c0cd63aef9243a87c",
+      "newSHA256": "74a2a679dfab7df793d24d96322bdad8f087385756bd8f1c0cd63aef9243a87c",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/wifiqr/Model.js": {
+      "oldSHA256": "a5e771a51c034aaa84c46ebf3b6740eb58d5cbf0d14b3ae62dcf73a5f7bde1a1",
+      "newSHA256": "a5e771a51c034aaa84c46ebf3b6740eb58d5cbf0d14b3ae62dcf73a5f7bde1a1",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/wifiqr/Panel.qml": {
+      "oldSHA256": "5c76a02e2e766260f17edc697b82cc7c055b694f5e181fc9808a72b92a5d5beb",
+      "newSHA256": "5c76a02e2e766260f17edc697b82cc7c055b694f5e181fc9808a72b92a5d5beb",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/panels/wifiqr/manifest.json": {
+      "oldSHA256": "9d71877a2112500dc1bb7b834bb08f9d75204a11e734c4b46b8b0ce1997cfb78",
+      "newSHA256": "9d71877a2112500dc1bb7b834bb08f9d75204a11e734c4b46b8b0ce1997cfb78",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/notifications/components/NotificationCard.qml": {
+      "oldSHA256": "3f023446cfe26b9f70570d7088baab31e56ca374c4a206a7c098b09d36cdff3d",
+      "newSHA256": "3f023446cfe26b9f70570d7088baab31e56ca374c4a206a7c098b09d36cdff3d",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/indicators/Dictation.qml": {
+      "oldSHA256": "581498154ecbfaa64dcc0612dbac417968b8567404c0cabb13fa092f339c7ac6",
+      "newSHA256": "581498154ecbfaa64dcc0612dbac417968b8567404c0cabb13fa092f339c7ac6",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/indicators/Dnd.qml": {
+      "oldSHA256": "ef3dfda58d9a874d304d6c7742508535957d99e388d2140ca90d14f1b29050d1",
+      "newSHA256": "ef3dfda58d9a874d304d6c7742508535957d99e388d2140ca90d14f1b29050d1",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/indicators/NightLight.qml": {
+      "oldSHA256": "9a7d5dbbcf5f2b1612d673cef8fba26c53584364e12b43935f1d02a66fb404d2",
+      "newSHA256": "9a7d5dbbcf5f2b1612d673cef8fba26c53584364e12b43935f1d02a66fb404d2",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/indicators/Reminder.qml": {
+      "oldSHA256": "51cef554abf4b4b28692cee73add20e2c34bd9883bfed74be10b5334d73f7c7b",
+      "newSHA256": "51cef554abf4b4b28692cee73add20e2c34bd9883bfed74be10b5334d73f7c7b",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/indicators/ScreenRecording.qml": {
+      "oldSHA256": "e336f4e14e0875fe56cb0c1008799506eb5023051c80e530b9e1f35fedbce2df",
+      "newSHA256": "e336f4e14e0875fe56cb0c1008799506eb5023051c80e530b9e1f35fedbce2df",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/indicators/StayAwake.qml": {
+      "oldSHA256": "0701f2231d292af5ab500cb7be574222d0be82a7831eb8188da038f2347bdd13",
+      "newSHA256": "0701f2231d292af5ab500cb7be574222d0be82a7831eb8188da038f2347bdd13",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/ActiveWindow.manifest.json": {
+      "oldSHA256": "b329d7bbec36086c2f72f904029229b71d4c3ad3afb96ce0ff3cf05b9eda9b80",
+      "newSHA256": "b329d7bbec36086c2f72f904029229b71d4c3ad3afb96ce0ff3cf05b9eda9b80",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/ActiveWindow.qml": {
+      "oldSHA256": "e53bbf968f78a9c4748c1872d6b34e1914070fc170641730bc2f7b4bce4e0173",
+      "newSHA256": "e53bbf968f78a9c4748c1872d6b34e1914070fc170641730bc2f7b4bce4e0173",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/Indicators.manifest.json": {
+      "oldSHA256": "3eea8a52c46d7e2436f8967abb4347d56163f7cef622caf0fe2d69bf6858d59b",
+      "newSHA256": "3eea8a52c46d7e2436f8967abb4347d56163f7cef622caf0fe2d69bf6858d59b",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/Indicators.qml": {
+      "oldSHA256": "f64fc3a122d71e6cc1f9a8b8284416df29cac070306fa6df55e9f1053fe4cf65",
+      "newSHA256": "f64fc3a122d71e6cc1f9a8b8284416df29cac070306fa6df55e9f1053fe4cf65",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/KeyboardLayout.manifest.json": {
+      "oldSHA256": "51613070b3b2774c4b7ab4a7c5b2b52319a030f5350485e95dba62fae819723a",
+      "newSHA256": "51613070b3b2774c4b7ab4a7c5b2b52319a030f5350485e95dba62fae819723a",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/KeyboardLayout.qml": {
+      "oldSHA256": "9a80f7e73da4c2c280268d1e9152045697cf1c4f118e2be5cb32a43c07e8f6bb",
+      "newSHA256": "9a80f7e73da4c2c280268d1e9152045697cf1c4f118e2be5cb32a43c07e8f6bb",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/KeyboardLayoutModel.js": {
+      "oldSHA256": "722e0e4eeaac0fa01660175d2da7fc6a2ba5f2b01d71843a8c731591979d2c2d",
+      "newSHA256": "722e0e4eeaac0fa01660175d2da7fc6a2ba5f2b01d71843a8c731591979d2c2d",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/Microphone.manifest.json": {
+      "oldSHA256": "58f9f212d3a840bc4ebe276076ec37ba19977f96808e8a8c2ce00aa2a35b8055",
+      "newSHA256": "58f9f212d3a840bc4ebe276076ec37ba19977f96808e8a8c2ce00aa2a35b8055",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/Microphone.qml": {
+      "oldSHA256": "29b9aa5143074c8cbcaee32bbff291204e5358c8fb07bb2e82f53f84a2568dad",
+      "newSHA256": "29b9aa5143074c8cbcaee32bbff291204e5358c8fb07bb2e82f53f84a2568dad",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/Spacer.manifest.json": {
+      "oldSHA256": "760ef0a8c95587453907b621ca04ec7349311a154fb5d1b86bac9b1fa3a370fa",
+      "newSHA256": "760ef0a8c95587453907b621ca04ec7349311a154fb5d1b86bac9b1fa3a370fa",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/Spacer.qml": {
+      "oldSHA256": "85abd1cd06755e57194b86d30df9c31e7521e5c91f5a663d9cd6420b9e91c545",
+      "newSHA256": "85abd1cd06755e57194b86d30df9c31e7521e5c91f5a663d9cd6420b9e91c545",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/SystemUpdate.manifest.json": {
+      "oldSHA256": "daf0806360b5c8ffd71a0d08d9ef0e0f69048ea85c4b10f45b4a8e30b4601328",
+      "newSHA256": "daf0806360b5c8ffd71a0d08d9ef0e0f69048ea85c4b10f45b4a8e30b4601328",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/SystemUpdate.qml": {
+      "oldSHA256": "d615dbfb9c9cfd1557f98db1e78a812ba81847209ca87b98dc1f6539aa8fb3de",
+      "newSHA256": "d615dbfb9c9cfd1557f98db1e78a812ba81847209ca87b98dc1f6539aa8fb3de",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/Tray.manifest.json": {
+      "oldSHA256": "ece62a8a728bf5903b344f293711379df62088b94532237ca42f432c84230fb2",
+      "newSHA256": "ece62a8a728bf5903b344f293711379df62088b94532237ca42f432c84230fb2",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/Tray.qml": {
+      "oldSHA256": "6566c548c76e56315589a126965eb686a6be812b1106d618045fee01a5095dd0",
+      "newSHA256": "6566c548c76e56315589a126965eb686a6be812b1106d618045fee01a5095dd0",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/TrayModel.js": {
+      "oldSHA256": "925a879daf505071608094664c7c53679eaa77b74c169434be026499ccf6c27e",
+      "newSHA256": "925a879daf505071608094664c7c53679eaa77b74c169434be026499ccf6c27e",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/Workspaces.manifest.json": {
+      "oldSHA256": "4f381b91cd9e6306870e7ac03ce10ad20248178b45c7cd5d738fda6924df5da3",
+      "newSHA256": "4f381b91cd9e6306870e7ac03ce10ad20248178b45c7cd5d738fda6924df5da3",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/bar/widgets/Workspaces.qml": {
+      "oldSHA256": "d0509e734d76d3c8cb68502a657ebae52e66bcc06988f2930567d67004f28325",
+      "newSHA256": "d0509e734d76d3c8cb68502a657ebae52e66bcc06988f2930567d67004f28325",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/agents/assets/claude.svg": {
+      "oldSHA256": "0df6dad23995f5a76c6db8cc2a4e646ff45bd7a0626ef98662a7025646e5eea1",
+      "newSHA256": "0df6dad23995f5a76c6db8cc2a4e646ff45bd7a0626ef98662a7025646e5eea1",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/agents/assets/codex-light.svg": {
+      "oldSHA256": "dc510dda4e7e43c214e6a5a023b9909bc645b45f2fdde537ee6d6b09f1bbc111",
+      "newSHA256": "dc510dda4e7e43c214e6a5a023b9909bc645b45f2fdde537ee6d6b09f1bbc111",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/agents/assets/codex.svg": {
+      "oldSHA256": "f1aeeba6d631feca31129bbc06ac7f813078d6bafa3837061e0ead173f36b857",
+      "newSHA256": "f1aeeba6d631feca31129bbc06ac7f813078d6bafa3837061e0ead173f36b857",
+      "mode": 384
+    },
+    "payload/omarchy/shell/plugins/agents/assets/fireworks.svg": {
+      "oldSHA256": "842f35cc7d5f20f8a6f08fddc78f206812a3b9f2c104e09916a5f536058941ed",
+      "newSHA256": "842f35cc7d5f20f8a6f08fddc78f206812a3b9f2c104e09916a5f536058941ed",
+      "mode": 384
+    },
+    "payload/omarchy/config/omarchy/shell.json": {
+      "oldSHA256": "c3dcdacec4c7d4b42c30b3ffbece6ef7946f579bba1ed0f1dac72dcfc71fe3b4",
+      "newSHA256": "c3dcdacec4c7d4b42c30b3ffbece6ef7946f579bba1ed0f1dac72dcfc71fe3b4",
+      "mode": 384
+    },
+    "payload/home/.local/bin/hypr-desktop": {
+      "oldSHA256": "5c92109eeb9076d2bb56e5f089209b7a394c5abe0b03634effbe572808e71246",
+      "newSHA256": "5c92109eeb9076d2bb56e5f089209b7a394c5abe0b03634effbe572808e71246",
+      "mode": 448
+    },
+    "payload/home/.local/bin/hypr-snap-groups": {
+      "oldSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "newSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "mode": 448
+    },
+    "payload/home/.local/bin/hypr-taskbar": {
+      "oldSHA256": "58215e6cb07b364988a0d5c38e9a4f63d7803e2b7f78481ea3a7104fa55f02e1",
+      "newSHA256": "58215e6cb07b364988a0d5c38e9a4f63d7803e2b7f78481ea3a7104fa55f02e1",
+      "mode": 448
+    },
+    "payload/home/.local/bin/hypr-window-family": {
+      "oldSHA256": "a06514a67f2affb8b9da3c4339635717a143160e08c867d6bddab8a50f8bb5cf",
+      "newSHA256": "a06514a67f2affb8b9da3c4339635717a143160e08c867d6bddab8a50f8bb5cf",
+      "mode": 448
+    },
+    "payload/home/.local/bin/hypr-window-menu": {
+      "oldSHA256": "40cc927d71c2558e2fd64079cb7b6fc4a32a4a956d33cadaad20271f342cd327",
+      "newSHA256": "40cc927d71c2558e2fd64079cb7b6fc4a32a4a956d33cadaad20271f342cd327",
+      "mode": 448
+    },
+    "payload/home/.local/bin/hypr-window-motion": {
+      "oldSHA256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+      "newSHA256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+      "mode": 448
+    },
+    "payload/home/.local/bin/hypr-window-preview": {
+      "oldSHA256": "123206521803a61fbcef58abb25922b9d53bbdae0a90e1d408e9d6d58f31d177",
+      "newSHA256": "123206521803a61fbcef58abb25922b9d53bbdae0a90e1d408e9d6d58f31d177",
+      "mode": 448
+    },
+    "payload/home/.local/bin/hypr-windowctl": {
+      "oldSHA256": "172044a0884756593665d2c794764418943b600eacd8f65c9d7ca8af60f0a8be",
+      "newSHA256": "172044a0884756593665d2c794764418943b600eacd8f65c9d7ca8af60f0a8be",
+      "mode": 448
+    },
+    "payload/home/.local/bin/hypr-windowctl-core": {
+      "oldSHA256": "30232bb4ffbfca0f0a34dd677ea4bc9fc53f8828bf75c662ce8a0ec15f35db3a",
+      "newSHA256": "30232bb4ffbfca0f0a34dd677ea4bc9fc53f8828bf75c662ce8a0ec15f35db3a",
+      "mode": 448
+    },
+    "payload/home/.local/state/omarchy/current/theme/colors.toml": {
+      "oldSHA256": "8b5f53ba35b9305aafa72776dd56ea2029faaf29015e2e42db5e19ef698a8e0e",
+      "newSHA256": "8b5f53ba35b9305aafa72776dd56ea2029faaf29015e2e42db5e19ef698a8e0e",
+      "mode": 384
+    },
+    "payload/home/.local/state/omarchy/current/theme/shell.toml": {
+      "oldSHA256": "1343b48a969352eddb145e5acff00a8505d30f4f4007c4234d593b9d4b4a053b",
+      "newSHA256": "1343b48a969352eddb145e5acff00a8505d30f4f4007c4234d593b9d4b4a053b",
+      "mode": 384
+    },
+    "payload/home/.local/share/hypr-window-controls/window_state.py": {
+      "oldSHA256": "cffedb3a79ef3e0965e64adc8ae4a2ad89ebaeb2325a638d5eb2711037951530",
+      "newSHA256": "cffedb3a79ef3e0965e64adc8ae4a2ad89ebaeb2325a638d5eb2711037951530",
+      "mode": 384
+    },
+    "payload/home/.config/omarchy/shell.json": {
+      "oldSHA256": "c3dcdacec4c7d4b42c30b3ffbece6ef7946f579bba1ed0f1dac72dcfc71fe3b4",
+      "newSHA256": "c3dcdacec4c7d4b42c30b3ffbece6ef7946f579bba1ed0f1dac72dcfc71fe3b4",
+      "mode": 384
+    },
+    "payload/home/.config/omarchy/taskbar-pins.json": {
+      "oldSHA256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "newSHA256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "mode": 384
+    },
+    "payload/home/.config/omarchy/taskbar-settings.json": {
+      "oldSHA256": "0c1a51f36542408c3b076f5a829cfac16bd82abb07ca3cd13c0f76731d210c3a",
+      "newSHA256": "0c1a51f36542408c3b076f5a829cfac16bd82abb07ca3cd13c0f76731d210c3a",
+      "mode": 384
+    },
+    "payload/home/.config/omarchy/plugins/hoskinson.windows/manifest.json": {
+      "oldSHA256": "5380cf44ab03cf6a78f0423ae04a18e854b2490a2bce90287120eee4e126fcc1",
+      "newSHA256": "5380cf44ab03cf6a78f0423ae04a18e854b2490a2bce90287120eee4e126fcc1",
+      "mode": 384
+    },
+    "payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/TaskbarPopup.qml": {
+      "oldSHA256": "f517a32d2d604348e17c9a3c2776cff8b98f389564967482122a4923a2bb5dc7",
+      "newSHA256": "f517a32d2d604348e17c9a3c2776cff8b98f389564967482122a4923a2bb5dc7",
+      "mode": 384
+    },
+    "payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/WindowMotion.qml": {
+      "oldSHA256": "6812a49f86ff33c30a307a6d424ef2efb0514543339c16b9a915bf60c96f2a95",
+      "newSHA256": "6812a49f86ff33c30a307a6d424ef2efb0514543339c16b9a915bf60c96f2a95",
+      "mode": 384
+    },
+    "payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.diff": {
+      "oldSHA256": "184c3a8cbd875ea57dca095f40c4376c01c2e0766143e9a4783c766831f8db76",
+      "newSHA256": "184c3a8cbd875ea57dca095f40c4376c01c2e0766143e9a4783c766831f8db76",
+      "mode": 384
+    },
+    "payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.qml": {
+      "oldSHA256": "a433d17d414167d48cf99b630c5f9a39d0aa9cf2de545ae5ac09199ee1d0d712",
+      "newSHA256": "a433d17d414167d48cf99b630c5f9a39d0aa9cf2de545ae5ac09199ee1d0d712",
+      "mode": 384
+    }
+  },
+  "copiedSymlinks": {},
+  "wholeBaselineMainByteExact": true,
+  "wholeArchiveQueryRecoveryExact": true,
+  "originalBaselineRequired": 38,
+  "originalFaultRequired": 34,
+  "originalDeadlinesAndAssertionsExact": true,
+  "proposalConservationSHA256": "81121119bb6e9a378ccda73e66b45f63ecc65da25989c1278cdd33a7bb958c4a",
+  "nativeAccepted": false,
+  "mainChanged": false
+}

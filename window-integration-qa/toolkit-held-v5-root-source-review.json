@@ -1,0 +1,24 @@
+{
+  "updatedUTC": "2026-10-02T00:04:22.738749+00:00",
+  "result": "root-source-review-pass",
+  "sourceReadySHA256": "4a023be37dba7f3ec666e4a800b80c3c71f342759ca4fe312df1a938cf807a3d",
+  "inputCount": 21349,
+  "linkCount": 326,
+  "unchangedActualOracleModules": [
+    "held_controller.py",
+    "input_control.py"
+  ],
+  "frontendOnlyAddsSnapshotAttemptObservations": true,
+  "exactBackendFunctionASTUnchanged": true,
+  "original52MatrixIdenticalAfterPathAndDescriptiveLabelNormalization": true,
+  "reviewed": [
+    "fresh exact Qt platform/Wayland dependency byte/mode/link closure",
+    "guarded actual maps and module candidates retained before unchanged backend assertion",
+    "partial helper workload derived from registered service and actual snapshot attempt",
+    "full workload still requires actual service and successful harness snapshot",
+    "five crash handoff protections"
+  ],
+  "reviewPreparationIssue": "Initial whole frontend equality refused; exact two added snapshot-attempt bookkeeping statements reviewed and removed only for comparison; native gates unchanged",
+  "nativeAccepted": false,
+  "mainWrites": false
+}

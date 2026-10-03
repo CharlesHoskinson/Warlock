@@ -1,0 +1,16 @@
+--- V3/build_private_packet.py
++++ V4/build_private_packet.py
+@@ -26,6 +26,13 @@
+         if not path.is_symlink() or str(path.readlink())!=expected:raise RuntimeError('Loader link changed: '+str(path))
+         if str(path) in links and links[str(path)]!=expected:raise RuntimeError('Conflicting link')
+         links[str(path)]=expected
++    signed=STAGE.parent/'mouse-review-signed-v3'
++    signed_manifest=signed/'frozen-inputs.json';add(signed_manifest)
++    signed_row=json.loads(signed_manifest.read_text())
++    for name,value in signed_row['local'].items():
++        add(signed/name,value)
++        if digest(STAGE/'mouse-review-signed-v3'/name)!=value:raise RuntimeError('Copied signed compat source changed: '+name)
++    for name,value in signed_row['external'].items():add(name,value)
+     original=json.loads((STAGE/'v8c-original-manifest.json').read_text())
+     for name,value in original['externalDependencies'].items():add(name,value)
+     base=QA/'private-weston-host-v2';base_manifest=base/'host-stage-report.json';add(base_manifest)

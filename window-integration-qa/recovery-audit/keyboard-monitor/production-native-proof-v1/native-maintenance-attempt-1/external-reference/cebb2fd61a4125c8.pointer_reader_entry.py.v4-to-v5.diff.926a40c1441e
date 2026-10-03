@@ -1,0 +1,20 @@
+--- V4/pointer_reader_entry.py
++++ V5/pointer_reader_entry.py
+@@ -6,7 +6,7 @@
+ sys.path.insert(0,str(COMPAT))
+ from private_runtime_guard import checked_runtime,reader_entry
+ runtime=checked_runtime()
+-from gi.repository import GLib
++from gi.repository import GLib,Gio
+ from capability_adapter import install_private
+ events=Path(os.environ['POINTER_READER_EVENTS']);state=Path(os.environ['POINTER_READER_STATE'])
+ def report(event,**fields):
+@@ -33,7 +33,7 @@
+     current=describe(reviewer.get_current_item())
+     value=dict(time=time.monotonic(),identity='Omarchy Orca compat',mouseSource=str(mouse_review.__file__),
+         epoch=adapter.epoch,appliedEpoch=adapter.applied_epoch,owner=adapter.owner,
+-        backend=device.__gtype__.name if device else None,watch=adapter.watch_requested,
++        backend=device.__gtype__.name if device else None,vfsType=Gio.Vfs.get_default().__gtype__.name,watch=adapter.watch_requested,
+         full=adapter.full_requested,paused=adapter.pause_requested,mouseEnabled=reviewer.get_is_enabled(),
+         currentItem=current,commands=sorted((c.get_name(),c.is_active(),c.is_enabled(),c.is_suspended()) for c in commands.values()))
+     state.write_text(json.dumps(value));state.chmod(0o600)

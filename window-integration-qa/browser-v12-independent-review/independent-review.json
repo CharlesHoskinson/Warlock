@@ -1,0 +1,369 @@
+{
+  "result": "contract-scope-supported-formal-refinement-incomplete",
+  "sourceStageOnly": true,
+  "rootSourcesUnchanged": true,
+  "sourceSHA256": {
+    "V12_CONTRACT.md": "17793c9015356f9aa28e14e86d0c838d65bce87dfbaffa0c333fd78ece6dfcf2",
+    "runtime_metrics.qnt": "267c74f4435f26b16bd28698738130f6544ce50fd69b83850978b985e4bf9606",
+    "runtime_metrics_test.qnt": "a45cf180c7274937d525860915149d58a24c588f2d31e9b25d9a4fb19c3bb467",
+    "metrics-formal-before-implementation.json": "fec2f95f7a11945345ba267b3435eacaa41509bbefbd0141b9b292af87a73b8e",
+    "metrics_diagnostic.py": "6a4f3cdb72adc5e0fc3bd042390c526b7dbfffb0378f7b3dd278696b27d56d0b",
+    "retained-v11-failure/root-metrics-attribution.json": "16bc138da4032b0d6a794d26420c395fc4431169231266ddfba20bb6d45d47c7"
+  },
+  "projectionCounterexamples": [
+    {
+      "changed": [
+        "fdNumber"
+      ],
+      "concreteBefore": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "concreteAfter": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 8,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "abstractWitnessesEqual": true,
+      "modelVerifyAndConfirmCanAcceptBoth": true
+    },
+    {
+      "changed": [
+        "inode"
+      ],
+      "concreteBefore": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "concreteAfter": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322539,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "abstractWitnessesEqual": true,
+      "modelVerifyAndConfirmCanAcceptBoth": true
+    },
+    {
+      "changed": [
+        "device"
+      ],
+      "concreteBefore": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "concreteAfter": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 85,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "abstractWitnessesEqual": true,
+      "modelVerifyAndConfirmCanAcceptBoth": true
+    },
+    {
+      "changed": [
+        "mountID"
+      ],
+      "concreteBefore": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "concreteAfter": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 347,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "abstractWitnessesEqual": true,
+      "modelVerifyAndConfirmCanAcceptBoth": true
+    },
+    {
+      "changed": [
+        "profileInode"
+      ],
+      "concreteBefore": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "concreteAfter": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 82,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "abstractWitnessesEqual": true,
+      "modelVerifyAndConfirmCanAcceptBoth": true
+    },
+    {
+      "changed": [
+        "parentInode"
+      ],
+      "concreteBefore": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "concreteAfter": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 83,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "abstractWitnessesEqual": true,
+      "modelVerifyAndConfirmCanAcceptBoth": true
+    },
+    {
+      "changed": [
+        "rawMapsHash"
+      ],
+      "concreteBefore": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "concreteAfter": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-B",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "abstractWitnessesEqual": true,
+      "modelVerifyAndConfirmCanAcceptBoth": true
+    },
+    {
+      "changed": [
+        "mappingLine"
+      ],
+      "concreteBefore": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "concreteAfter": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-B",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "abstractWitnessesEqual": true,
+      "modelVerifyAndConfirmCanAcceptBoth": true
+    },
+    {
+      "changed": [
+        "fullFlags"
+      ],
+      "concreteBefore": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "concreteAfter": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 2,
+        "target": "owned-A"
+      },
+      "abstractWitnessesEqual": true,
+      "modelVerifyAndConfirmCanAcceptBoth": true
+    },
+    {
+      "changed": [
+        "target"
+      ],
+      "concreteBefore": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-A"
+      },
+      "concreteAfter": {
+        "rootPID": 1847929,
+        "rootStart": 77,
+        "fdNumber": 7,
+        "device": 84,
+        "inode": 322538,
+        "mountID": 346,
+        "profileInode": 80,
+        "parentInode": 81,
+        "rawMapsHash": "batch-A",
+        "mappingLine": "line-A",
+        "fullFlags": 524290,
+        "target": "owned-B"
+      },
+      "abstractWitnessesEqual": true,
+      "modelVerifyAndConfirmCanAcceptBoth": true
+    }
+  ],
+  "counterexampleCount": 10,
+  "nativeExecuted": false,
+  "runtimeAuthorityGranted": false,
+  "modelInvariantViolationClaimed": false
+}

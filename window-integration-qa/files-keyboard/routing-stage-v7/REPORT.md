@@ -1,0 +1,27 @@
+# Files V7 keyboard routing and reader observation candidate
+
+Prepared source only. Original Files PID667402 remains hidden and untouched. All ten operation scripts and fileops.qnt match the live responsive baseline. No operation semantics changed. This candidate retains the V6 guarded native binary under a fresh routing URL and changes keyboard routing in Explorer/FileArea/Cell plus the raw gallery Toggle guard.
+
+## Preserved failures
+
+Frozen V6 native-review3 attempt-1 failed after seven acceptance checks. Real Orca debug/speech observed the Rename text focus, while the private observer used the ambiguous get_text_iface().get_text alias and raised TypeError. It also announced the previous folder selection after alpha-row focus. The original attempt/report/source remain immutable. The terminal title preservation gate failed: foot PID361074, stableId18000076, address0x5a02afd20bd0, start844971, had a title hash difference while every other canonical field matched. No title was reset and no failed gate was reclassified as pass.
+
+Actual offscreen V6 row-selection counterexample is retained at ../editable-stage-v6/row-selection-probe-v6/report.json. Down moved focus/cur but retained the previous selected folder. Its final diagnostic key was F1, explicitly classified separately; actual native-review3 F2/debug/speech is the rename-payload evidence. Official Qt QQuickListView::keyPressEvent changes currentIndex and accepts arrows without Explorer selection updates (~/src/qtdeclarative-accessibility/src/quick/items/qquicklistview.cpp:3644).
+
+Raw Qt attached gallery toggleAction accepted hidden/disabled/modal-background selection changes on retained alive current peers. toggle-baseline/report-current-peer.json preserves that counterexample. The earlier report.json lost the peer after visible activation and is preserved as a lifetime-boundary probe, not refusal evidence.
+
+## Fresh implementation and offline evidence
+
+File list/grid containers and focused delegates forward into the existing Explorer command handler before native ListView interception. Existing plain selection, Shift ranges, text-editing precedence, modal traps and file actions are preserved. Gallery Accessible.onToggleAction now checks the same ActionState.allowed authority as Press.
+
+Actual330x320 copied Qt list/grid Home/Down events give agreeing focus/cur/selection; actual Qt.Key_F2 captures the selected beta file; Shift-Down selects its range. Corrected raw Toggle still works visible and refuses hidden/disabled/modal background peers. routing-report.json passes14 gates. offscreen-keys-report.json passes58 broader keyboard/focus gates. The prior responsive120 geometry evidence is inherited: no layout geometry is changed in this routing patch. The exact V6 native binary retains90 text-authority gates over88 actual native calls. See MODEL.md for29 named focus cases plus2,000×100 seed20260930 and inherited12 text-authority cases.
+
+The new private observation adapter calls the exact public Atspi.Text.get_text(obj,0,Atspi.Text.get_character_count(obj)), matching official Orca ax_text.py. Optional text failure retains basic focus role/name/bus/path rather than erasing identity. Two adapter unit cases, one actual-source private socket helper case and three frozen/private-attempt/read-only catalog cases and one actual-source stable client projection case pass. These unit checks are not actual reader compatibility evidence.
+
+## Next reviewed native attempt
+
+native-review4/run_native.py requires a fresh exclusive0700 attempt and frozen source/runner/profile/read-only reader/tool manifest before launch and after cleanup. No output is overwritten. Real silent Orca ObjectNavigator actions target exact bus/object-path peers for gallery/tree/Home collections/pin/media/recent/storage/details/menus and existing sandbox rename; real reader edited-text query and WhereAmI utterance are required. Explicit logical file focus plus actual virtual Home chooses the existing first sandbox directory for gallery/context actions. Keyboard selection and F2 payload are checked before rename. The input is wtype Wayland virtual keyboard through the compositor; physical hardware is not claimed. The sandbox-only xdg-open executable reads actual target bytes and records its hash; no default-association application GUI claim.
+
+All four catalogs are backed up privately and observed naturally after cleanup with a bounded four-second settling period. No catalog writes. Complete captured stable client fields (including class, initialTitle, mapped/hidden/visible/input/xdg/content metadata), original full UI/public/PID/start/hidden, focus/cursor/layers, clipboard/primary perMIME hashes, dashboard, reader profile, a11y flags/ReaderEnabled/socket connectivity, outputs/plugins/keyboard state, source locks and normal owned fixture cleanup must pass. The desktop/plugin baseline is captured at execution, including current v18. Raw before/after clients are retained privately. Current app-owned title hashes are observed separately because root identified the Codex terminal animated spinner; stable fields remain exact. The previous V6 strict-title failed gate remains unchanged.
+
+Production deployment and durable native URL reload remain pending actual reader pass and root review. deployment-prepared/plan.json uses a fresh destination, exact-PID root-owned atomic coalesced QML replacement, PersistentProperties same-PID full UI equality, hidden-before-map, baseline source locks and retained rollback backups. No deployment has occurred.

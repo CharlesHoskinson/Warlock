@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_flat_review" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#reviewing"/>
+    <link type="next" xref="howto_orca_find"/>
+    <title type="sort">2. Ploché prehliadanie</title>
+    <desc>Priestorové skúmanie okna</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Ploché prehliadanie</title>
+  <p>Funkcia Ploché prehliadanie v <app>Orca</app> vám umožňuje priestorovo preskúmať obsah, text aj widgety, aktívneho okna. V tomto režime <app>Orca</app> zaobchádza s oknom, akoby to bolo dvojrozmerné pole textu, čom eliminuje akúkoľvek predstavu o hierarchii widgetov alebo inom logickom zoskupení v okne.</p>
+  <p>„Sploštený“ obsah, známy aj ako kontext plochého prehliadania, možno <link xref="commands_flat_review">prehliadať</link> po riadkoch, slovách, znakoch a objektoch. Okrem toho môžete vykonať ľavý alebo pravý klik na prehliadaný objekt. Napokon môžete použiť funkciu <link xref="howto_orca_find">Hľadanie v Orca</link>, založenú na plochom prehliadaní, na vyhľadávanie v obsahu aktívneho okna.</p>
+  <p>Keďže kontext plochého prehliadania je priestorovým znázornením obsahu aktívneho okna, vytvorí sa pri prvom vstupe do plochého prehliadania a obsahuje iba tie objekty, ktoré sú viditeľné. V dôsledku toho nebudete môcť pomocou plochého prehliadania pristupovať k položkám, ktoré sú v okne, ale aktuálne sú mimo obrazovky. Okrem toho, ak sa obsah okna zmení sám od seba, kontext plochého prehliadania sa automaticky neaktualizuje. Nový kontext môžete vytvoriť vypnutím a opätovným zapnutím plochého prehliadania.</p>
+  <p>Nakoniec, ploché prehliadanie je svojou povahou režim, ktorý nemožno používať súčasne so sledovaním fokusu v <app>Orca</app>. Ak ste teda v plochom prehliadaní a následne použijete navigačné príkazy aplikácie na presun kurzora alebo zameranie iného objektu, automaticky opustíte ploché prehliadanie.</p>
+</page>

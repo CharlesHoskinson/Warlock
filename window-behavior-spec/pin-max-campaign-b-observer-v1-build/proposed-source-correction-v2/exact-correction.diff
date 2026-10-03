@@ -1,0 +1,87 @@
+--- reviewed/campaign_b_observer.cpp
++++ proposed/campaign_b_observer.cpp
+@@ -1,21 +1,22 @@
+ // Draft for exact source review. No build/load authority. No setters or event hooks.
+-#include <hyprland/src/plugins/PluginAPI.hpp>
+-#include <hyprland/src/desktop/state/WindowState.hpp>
+-#include <hyprland/src/desktop/state/ViewState.hpp>
+-#include <hyprland/src/desktop/state/FocusState.hpp>
+-#include <hyprland/src/desktop/state/pin/NativePinState.hpp>
+-#include <hyprland/src/desktop/view/Window.hpp>
+-#include <hyprland/src/desktop/view/Group.hpp>
+-#include <hyprland/src/desktop/Workspace.hpp>
+-#include <hyprland/src/layout/algorithm/Algorithm.hpp>
+-#include <hyprland/src/layout/algorithm/tiled/scrolling/ScrollingAlgorithm.hpp>
+-#include <hyprland/src/layout/algorithm/tiled/scrolling/ScrollTapeController.hpp>
+-#include <hyprland/src/layout/target/Target.hpp>
+-#include <hyprland/src/layout/space/Space.hpp>
+-#include <hyprland/src/managers/fullscreen/FullscreenController.hpp>
+-#include <hyprland/src/managers/fullscreen/handler/FullscreenHandler.hpp>
+-#include <hyprland/src/managers/input/InputManager.hpp>
+-#include <hyprland/src/output/Monitor.hpp>
++#include <plugins/PluginAPI.hpp>
++#include <desktop/state/WindowState.hpp>
++#include <desktop/state/ViewState.hpp>
++#include <desktop/state/FocusState.hpp>
++#include <desktop/state/pin/NativePinState.hpp>
++#include <desktop/view/Window.hpp>
++#include <desktop/view/Group.hpp>
++#include <desktop/Workspace.hpp>
++#include <layout/algorithm/Algorithm.hpp>
++#include <layout/algorithm/FloatingAlgorithm.hpp>
++#include <layout/algorithm/tiled/scrolling/ScrollingAlgorithm.hpp>
++#include <layout/algorithm/tiled/scrolling/ScrollTapeController.hpp>
++#include <layout/target/Target.hpp>
++#include <layout/space/Space.hpp>
++#include <managers/fullscreen/FullscreenController.hpp>
++#include <managers/fullscreen/handler/FullscreenHandler.hpp>
++#include <managers/input/InputManager.hpp>
++#include <output/Monitor.hpp>
+ #include <json-c/json.h>
+ #include <charconv>
+ #include <chrono>
+@@ -205,6 +206,26 @@
+     put(row.get(), "reason", text(outcome->reason));
+     return row;
+ }
++static WP<Fullscreen::IFullscreenHandler> rawHandler(const PHLWINDOW& window, const SP<Layout::CAlgorithm>& algorithm) {
++    if (!window || !algorithm || !algorithm->tiledAlgo() || !algorithm->floatingAlgo())
++        throw std::runtime_error("Complete strong owning fullscreen algorithms required");
++    // Same selection as getFsHandler(window), via getFullscreenHandlerName and
++    // layoutManagedFS: floating always owns its raw handler; otherwise choose the
++    // default when it reports covering fullscreen or any client mode, else layout.
++    const auto layout   = algorithm->tiledAlgo()->getFSHandler();
++    const auto fallback = algorithm->tiledAlgo()->IModeAlgorithm::getFSHandler();
++    const auto floating = algorithm->floatingAlgo()->getFSHandler();
++    if (!layout || !fallback || !floating)
++        throw std::runtime_error("Current raw owning fullscreen handlers required");
++    if (window->m_isFloating)
++        return floating;
++    const auto name = fallback->isFullscreen(window->m_target) || fallback->getFullscreenModes(window->m_target).client != Fullscreen::FSMODE_NONE ?
++        fallback->getFullscreenHandlerName() :
++        layout->getFullscreenHandlerName();
++    if (name == Fullscreen::FULLSCREEN_HANDLER_NONE)
++        throw std::runtime_error("Unknown owning fullscreen handler classification");
++    return (name & Fullscreen::FULLSCREEN_HANDLER_LAYOUT) ? layout : fallback;
++}
+ static Json snapshot(const PHLWINDOW& window) {
+     const auto target    = window->layoutTarget();
+     const auto space     = target ? target->space() : nullptr;
+@@ -218,7 +239,7 @@
+     if (!output || workspace->m_monitor != output || !nativeTarget)
+         throw std::runtime_error("Exact current output/native target required");
+     const auto current = Desktop::Pin::state()->snapshot(window);
+-    const auto handler = Fullscreen::controller()->getFsHandler(window);
++    const auto handler = rawHandler(window, algorithm);
+     if (!handler)
+         throw std::runtime_error("Current owning fullscreen handler required");
+     // Borrow the unique handler beneath the strongly retained owning algorithm. Never lock it.
+@@ -278,7 +299,7 @@
+     if (window->layoutTarget() != target || target->space() != space || space->algorithm() != algorithm || space->workspace() != workspace || window->m_workspace != workspace ||
+         window->m_monitor != output || workspace->m_monitor != output || window->m_group != groupOwner || window->m_target != nativeTarget)
+         throw std::runtime_error("Owning scope changed during read");
+-    const auto postHandler = Fullscreen::controller()->getFsHandler(window);
++    const auto postHandler = rawHandler(window, algorithm);
+     if (!postHandler || postHandler != handler)
+         throw std::runtime_error("Owning fullscreen handler changed during read");
+     const auto postModes   = postHandler->getFullscreenModes(nativeTarget);

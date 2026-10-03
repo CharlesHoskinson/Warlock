@@ -1,0 +1,50 @@
+{
+  "phase": "QA-owned-data-post-disk",
+  "errors": [],
+  "capturedRaw": {
+    "path": "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/attempt-baseline-1/actual-owned-data-probe.json",
+    "sha256": "90888dd9c801fc6cfb6d71398a251365d06a051c0ee95a709847aaae3e4f6fa8",
+    "identity": {
+      "device": 58,
+      "inode": 8372531,
+      "size": 1149,
+      "mode": 384,
+      "uid": 1000,
+      "gid": 1000
+    }
+  },
+  "ownerToken": "cded8f4349c65a8c64b5d4973c45cf591c60cbc75d23bd67e45c4f20047f5ff1",
+  "row": {
+    "id": "89dce2e4e9eb495c92e9ba8c2673f3c3",
+    "actor": null,
+    "thread": 4136227,
+    "fd": 6,
+    "fdIdentity": [
+      10,
+      28085821
+    ],
+    "issuerSHA256": "d00520739b333044c3af26622c1f917a38e9f3d5da668cb922bf95cdf1ba126b",
+    "request": "j/clients",
+    "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+    "registeredNs": 137756924954536,
+    "closed": true,
+    "published": true,
+    "outcome": "complete",
+    "evidence": {
+      "completeServerEOF": true,
+      "replyBytes": 3598,
+      "replySHA256": "47902fcc670925b38faf9b9dfaf0dc05aaf24de8b4b2a8df503bfe11c4132009",
+      "peer": {
+        "pid": 4134639,
+        "uid": 1000,
+        "gid": 1000
+      },
+      "socketIdentity": [
+        84,
+        426920
+      ]
+    },
+    "error": null,
+    "finishedNs": 137756932235897
+  }
+}

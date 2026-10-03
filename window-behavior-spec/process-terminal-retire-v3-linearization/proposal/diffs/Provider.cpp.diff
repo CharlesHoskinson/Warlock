@@ -1,0 +1,13 @@
+--- /home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/Provider.cpp
++++ /home/hoskinson/window-behavior-spec/process-terminal-retire-v2-conservation/proposal/desired/Provider.cpp
+@@ -59,6 +59,10 @@
+  try{const auto a=source();Lifetime::verifyQuickshellProcess();Lifetime::Registry::shared().bindCore(engine.data(),this,actualQuickshell);auto spec=Lifetime::nativeProcessArm(engine.data(),this,menu,row,popup,process,out,err,role,originalJSON,a);const auto lease=Lifetime::ProcessRegistry::shared().arm(std::move(spec));stable(a);return {{"schema","qml-pin-process-lifecycle-v1"},{"lease",qulonglong(lease)},{"armed",true},{"nativeWrites",0},{"automaticRetries",0}};}
+  catch(const std::exception&e){return {{"schema","qml-pin-process-lifecycle-v1"},{"error",QString::fromUtf8(e.what())}};}
+ }
++QVariantMap ObjectLifetimeProvider::retireProcess(QObject*menu,QObject*row,QObject*popup,QObject*process,QObject*out,QObject*err,const QVariant&lease,QObject*actualQuickshell){
++ try{const auto a=source();Lifetime::verifyQuickshellProcess();Lifetime::Registry::shared().bindCore(engine.data(),this,actualQuickshell);const auto scope=Lifetime::nativeProcessRetireScope(engine.data(),this,menu,row,popup,process,out,err,lease,a);auto result=Lifetime::ProcessRegistry::shared().retire(scope);stable(a);return result;}
++ catch(const std::exception&e){return {{"schema","qml-pin-process-lifecycle-v1"},{"error",QString::fromUtf8(e.what())},{"nativeWrites",0},{"automaticRetries",0}};}
++}
+ QVariantMap ObjectLifetimeProvider::processState(QObject*process,QObject*actualQuickshell){
+  try{const auto a=source();Lifetime::verifyQuickshellProcess();Lifetime::Registry::shared().bindCore(engine.data(),this,actualQuickshell);auto state=Lifetime::ProcessRegistry::shared().state(process);stable(a);state.insert("schema","qml-pin-process-lifecycle-v1");state.insert("processId",a.pid);state.insert("processStart",a.start);return state;}
+  catch(const std::exception&e){return {{"schema","qml-pin-process-lifecycle-v1"},{"error",QString::fromUtf8(e.what())}};}

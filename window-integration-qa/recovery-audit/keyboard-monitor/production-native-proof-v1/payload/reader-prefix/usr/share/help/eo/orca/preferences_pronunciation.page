@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_pronunciation" xml:lang="eo">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_text_attributes"/>
+    <title type="sort">7. Elparolo</title>
+    <title type="link">Elparolo</title>
+    <desc>Difini kiel specifaj vortoj estu elparolataj</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Agordoj de Elparolo</title>
+  <p>Foje via parola sintezilo simple ne diras la ĝustan aferon por donita ĉeno. Vi eble preferas aŭdi "ridante laŭte" anstataŭ "LOL," aŭ "alirebleco" anstataŭ "a11y". Aŭ povas ekzisti nomo aŭ teknika termino kiun la sintezilo misparolas.</p>
+  <p>La paĝo <gui>Elparolo</gui> de la dialogo de agordoj de <app>Orko</app> permesas al vi aldoni, redakti kaj forigi enigojn en la elparola vortaro de <app>Orko</app>.</p>
+  <p>Ĉar la paĝo <gui>Elparolo</gui> ankaŭ estas parto de la aplikaĵo-specifaj agordoj, vi povas personigi viajn enigojn laŭ bezono por ĉiu aplikaĵo kiun vi uzas.</p>
+  <steps>
+    <title>Aldoni novan vortarenigon</title>
+    <item>
+      <p>Premu la butonon <gui>Nova Enigo</gui> (<keyseq><key>Alt</key><key>N</key></keyseq>)</p>
+    </item>
+    <item>
+      <p>Tajpu la tekston de la nova enigo kaj premu <key>Return</key> por fini redaktadon de la efektiva ĉeno.</p>
+    </item>
+    <item>
+      <p>Movu al la kolumno <gui>Anstataŭa Ĉeno</gui> kaj premu <key>Return </key> por komenci redaktadon.</p>
+    </item>
+    <item>
+      <p>Tajpu la tekston, kiun vi volas, ke estu parolata anstataŭe, kaj premu <key> Return</key> por fini redaktadon de la anstataŭa ĉeno.</p>
+    </item>
+  </steps>
+  <steps>
+  <title>Redaktado de ekzistanta vortaroeniro</title>
+    <item>
+      <p>Movu al la ĉelo, kiun vi volas redakti, kaj premu <key>Return</key> por komenci redaktadon.</p>
+    </item>
+    <item>
+      <p>Faru viajn ŝanĝojn kaj poste premu <key>Return</key> por fini redaktadon.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Forviŝado de ekzistanta vortaroeniro</title>
+    <item>
+      <p>Movu al la eniro, kiun vi volas forviŝi.</p>
+    </item>
+    <item>
+      <p>Premu la butonon <gui>Forviŝi</gui> aŭ <keyseq><key>Alt</key><key>D</key></keyseq>.</p>
+    </item>
+  </steps>
+</page>

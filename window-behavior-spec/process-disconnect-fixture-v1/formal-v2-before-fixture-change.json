@@ -1,0 +1,52 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/process-terminal-v8-first-disconnect-failure-handoff-v1.json": {
+      "sha256": "27afb2961ea36447e19debc22e9f204fab6c20bbbd7d424514ee102f1a31be0a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-disconnect-fixture-v1/CONTRACT_V2.md": {
+      "sha256": "f2e7af6b917578725946ef77cca06d7ca7e7f8b97562ce035af8ac60a950b6af",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-disconnect-fixture-v1/disconnect_fixture_v2.qnt": {
+      "sha256": "b717dc27bce8aa028ea3c0a15c75b378dae0d9f6b47b186d9ea68a6c3e67d054",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-disconnect-fixture-v1/prove_before_v2.py": {
+      "sha256": "9272d15935d8db96f8a8faa9012aa7f5c65f3909f001ffc920200e88a8250dae",
+      "mode": 420
+    }
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/process-disconnect-fixture-v1/disconnect_fixture_v2.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  disconnect_fixture\n    ok notificationContainsNoQObjectEmissionTest passed 1 test(s)\n    ok originalInsideNotificationDeadlockRetainedTest passed 1 test(s)\n    ok persistedBaselineRequiredBeforePlainHookTest passed 1 test(s)\n    ok genuineSignalAtOutsideSourceBoundaryQueuesTest passed 1 test(s)\n    ok currentFaultAfterSourceBoundaryRefusesRetirementTest passed 1 test(s)\n    ok admittedUndrainedSignalCannotPassFinalCommitTest passed 1 test(s)\n    ok missingActualSignalCannotBecomeJoinOrProofTest passed 1 test(s)\n    ok notificationCannotJoinDiagnosticThreadTest passed 1 test(s)\n    ok diagnosticHasNoHelperControlOrSuccessTest passed 1 test(s)\n\n  9 passing (244ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/process-disconnect-fixture-v1/disconnect_fixture_v2.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (644ms at 3106 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "failedV8Exact": true,
+  "sourceStable": true,
+  "runtimeChanged": false,
+  "GUI": false
+}

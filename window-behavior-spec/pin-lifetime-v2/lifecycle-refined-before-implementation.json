@@ -1,0 +1,46 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_action.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_action_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pin_action_test\n    ok fullPinTest passed 1 test(s)\n    ok floatFailureVisiblePartialTest passed 1 test(s)\n    ok floatFailureBeforeMutationTest passed 1 test(s)\n    ok pinFailureRetainsFloatTest passed 1 test(s)\n    ok pinFailureAfterMutationTest passed 1 test(s)\n    ok raiseFailureRetainsActualPinTest passed 1 test(s)\n    ok raiseClosureCallbackRefusesSuccessTest passed 1 test(s)\n    ok raiseMinimizeCallbackKeepsPinIntentTest passed 1 test(s)\n    ok raiseReloadCallbackRefusesSuccessTest passed 1 test(s)\n    ok floatClosureCallbackRefusesPinTest passed 1 test(s)\n    ok floatMinimizeCallbackRefusesPinTest passed 1 test(s)\n    ok pinClosureCallbackRefusesRaiseTest passed 1 test(s)\n    ok sameOwnerReentryRefusedTest passed 1 test(s)\n    ok sameOwnerReentryDoesNotRedirectOuterIntentTest passed 1 test(s)\n    ok focusCannotRedirectOwnerTest passed 1 test(s)\n    ok independentlyPinnedPeerPreservedTest passed 1 test(s)\n    ok fullscreenRefusedBeforeFloatTest passed 1 test(s)\n    ok fullscreenCallbackAfterFloatRefusedTest passed 1 test(s)\n    ok staleAddressRefusedTest passed 1 test(s)\n    ok staleStableIdRefusedTest passed 1 test(s)\n    ok stalePidRefusedTest passed 1 test(s)\n    ok staleSessionRefusedTest passed 1 test(s)\n    ok reloadChangesEpochNotCompositorSessionTest passed 1 test(s)\n    ok closedReusedAddressOldIdentityRefusedTest passed 1 test(s)\n    ok partialActionNoSuccessfulFeedbackTest passed 1 test(s)\n    ok latestGenerationRejectsOldFeedbackTest passed 1 test(s)\n    ok reducedMotionRetiresFeedbackTest passed 1 test(s)\n    ok minimizeRetiresFeedbackAndKeepsIntentTest passed 1 test(s)\n    ok reloadRetiresFeedbackTest passed 1 test(s)\n    ok closeRetiresFeedbackTest passed 1 test(s)\n    ok unpinBeforeMinimizeRemainsUnpinnedTest passed 1 test(s)\n    ok sameAddressStablePidNewLifetimeOldTokenRefusedTest passed 1 test(s)\n    ok freshReusedLifetimeTokenAcceptedTest passed 1 test(s)\n    ok callbackPinIntentAfterFloatRefusesOverrideTest passed 1 test(s)\n    ok callbackTileAfterPinRefusesSuccessTest passed 1 test(s)\n    ok normalTransferPreservesCapturedLifetimeAndPeerTest passed 1 test(s)\n    ok specialTransferRefusesRemainingActionTest passed 1 test(s)\n    ok callbackCloseReuseBeforeFinishRejectsOldLeaseTest passed 1 test(s)\n    ok reducedNewOperationKeepsSuccessWithoutFeedbackTest passed 1 test(s)\n    ok unloadedPluginOldTokenRefusesSameCompositorTest passed 1 test(s)\n    ok unloadedPluginFreshTokenAcceptedTest passed 1 test(s)\n    ok closeWhileCoreMappedCannotReacquireTest passed 1 test(s)\n    ok genuineOpenNewGenerationOldTokenRefusedTest passed 1 test(s)\n    ok genuineOpenFreshTokenAllowedTest passed 1 test(s)\n    ok closeQueriesNeverEraseRetirementTest passed 1 test(s)\n    ok externalPinChangeRetiresFeedbackTest passed 1 test(s)\n    ok tileFloatReturnCannotReviveFeedbackTest passed 1 test(s)\n    ok fullscreenRetiresImmediatelyTest passed 1 test(s)\n    ok rapidMinimizeRestoreRetirementTest passed 1 test(s)\n    ok peerPinChangePreservesOwnerFeedbackTest passed 1 test(s)\n    ok normalTransferRetainsFeedbackTest passed 1 test(s)\n    ok specialReturnCannotReviveFeedbackTest passed 1 test(s)\n    ok duplicateOpeningDoesNotChangeLifetimeTest passed 1 test(s)\n\n  53 passing (66651ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_action.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (5206ms at 384 traces/second).\nUse --seed=0x13b4241 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "nativeStillExact41Checkpoint": {
+    "native-candidate/pinBridge.cpp": "0bcfd2446f448bb9f053a46ec2d6f34ea762cb174fef8a3d0cfad71595a06ef0",
+    "native-candidate/pinBridge.hpp": "336ae384c2f9856e1acb87cb49fce62cc1d668175e21f205d517038b99fa0aba",
+    "native-candidate/PinAction.hpp": "26264089ca579205429d42451688f29cb9f99c9d65b70bbd01d5f30298c9f643"
+  },
+  "nativeExecuted": false
+}

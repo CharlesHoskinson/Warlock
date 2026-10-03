@@ -1,0 +1,82 @@
+.pragma library
+// Offline prototype shared by output fragments. Integrating code supplies
+// fresh identity/family/native-geometry proof and actual presented rectangles.
+function clone(value) { return JSON.parse(JSON.stringify(value)) }
+function sameIdentity(a,b) { return Array.isArray(a) && Array.isArray(b) && a.length===3 && b.length===3 && a.every(function(v,i){return v===b[i]}) }
+function sameRect(a,b) { return validRect(a) && validRect(b) && ['x','y','width','height'].every(function(k){return a[k]===b[k]}) }
+function validRect(r) { return r && ['x','y','width','height'].every(function(k){return Number.isFinite(r[k])}) && r.width>0 && r.height>0 }
+function mix(a,b,p) {
+    var q=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2
+    var r={};['x','y','width','height'].forEach(function(k){r[k]=a[k]+(b[k]-a[k])*q});return r
+}
+function GlobalRoute(seed) {
+    if(!Array.isArray(seed.identity) || seed.identity.length!==3 || !/^0x[a-f0-9]+$/i.test(seed.identity[0]) || !/^[a-f0-9]+$/i.test(seed.identity[1]) || !Number.isSafeInteger(seed.identity[2]) || seed.identity[2]<=0 || !validRect(seed.nativeRect) || !/^[a-f0-9]{12}-[1-9][0-9]*$/.test(seed.token) || ['minimize','restore'].indexOf(seed.operation)<0 || !/^[a-f0-9]{64}$/.test(seed.digest))throw Error('invalid route seed identity/token/native geometry/digest')
+    if(!seed.completeAtlas || !validRect(seed.full) || !validRect(seed.icon) || !validRect(seed.current) || !seed.digest || !sameIdentity(seed.identity,seed.atlasIdentity))throw Error('incomplete or foreign atlas')
+    if(!Array.isArray(seed.outputs) || !seed.outputs.every(function(o){return typeof o==='string' && o.length>0}) || !Number.isSafeInteger(seed.topology) || seed.topology<0 || !seed.outputs.length || (new Set(seed.outputs)).size!==seed.outputs.length || seed.outputs.indexOf(seed.destination)<0)throw Error('invalid output participants/destination')
+    this.identity=clone(seed.identity);this.nativeRect=clone(seed.nativeRect);this.full=clone(seed.full);this.icon=clone(seed.icon)
+    this.digest=seed.digest;this.outputs=seed.outputs.slice();this.destination=seed.destination;this.topology=seed.topology
+    this.token=seed.token;this.acceptedOperation=seed.operation;this.operation=seed.operation;this.current=clone(seed.current)
+    this.from=clone(seed.current);this.to=clone(seed.operation==='minimize'?seed.icon:seed.full)
+    this.phase='running';this.validated=true;this.elapsed=0;this.duration=seed.operation==='minimize'?190:230
+    this.progress=0;this.ready={};this.endReady={};this.readySent=false;this.doneSent=false;this.events=[];this.frames=[];this.submissions={};this.lastSubmitted={};this.presented={}
+}
+GlobalRoute.prototype.reserve=function(request) {
+    if(this.phase==='cancelled' || !this.digest || !sameIdentity(request.identity,this.identity) || request.previousToken!==this.token || ['minimize','restore'].indexOf(request.operation)<0)return false
+    var old=this.token.split('-'),next=request.token.split('-')
+    if(next[0]!==old[0] || !Number.isSafeInteger(Number(next[1])) || Number(next[1])<=Number(old[1]))return false
+    this.token=request.token;this.operation=request.operation;this.from=clone(this.current)
+    this.to=clone(request.operation==='minimize'?this.icon:this.full);this.elapsed=0;this.progress=0;this.duration=request.operation==='minimize'?190:230
+    this.phase='provisional';this.validated=false;this.ready={};this.endReady={};this.submissions={};this.lastSubmitted={};this.presented={};this.readySent=false;this.doneSent=false
+    return true
+}
+GlobalRoute.prototype.tick=function(deltaMs) {
+    if(!Number.isFinite(deltaMs) || deltaMs<0)throw Error('invalid frame time')
+    if(['provisional','running','rollback'].indexOf(this.phase)<0)return
+    this.elapsed+=deltaMs;this.progress=Math.min(1,this.elapsed/this.duration)
+    this.current=mix(this.from,this.to,this.progress)
+    // A provisional endpoint never produces a native ready/done signal.
+}
+GlobalRoute.prototype.promote=function(proof) {
+    if(this.phase!=='provisional' || !sameIdentity(proof.identity,this.identity) || proof.token!==this.token || proof.familyValidated!==true || !sameRect(proof.nativeRect,this.nativeRect) || proof.digest!==this.digest || proof.topology!==this.topology)return false
+    this.validated=true;this.phase='running';this.acceptedOperation=this.operation;this.completeIfPresented();return true
+}
+GlobalRoute.prototype.reject=function(proof) {
+    if(this.phase!=='provisional' || !sameIdentity(proof.identity,this.identity) || proof.token!==this.token || proof.priorIntentFreshlyValidated!==true)return false
+    this.from=clone(this.current);this.operation=this.acceptedOperation;this.to=clone(this.operation==='minimize'?this.icon:this.full)
+    this.phase='rollback';this.validated=true;this.elapsed=0;this.progress=0;this.ready={};this.endReady={};this.submissions={};this.lastSubmitted={};this.presented={};this.readySent=false;this.doneSent=false
+    return true
+}
+// Only the in-process renderer probe may register submissions. A route's
+// expected digest/rect is not evidence that pixels were actually rendered.
+GlobalRoute.prototype.submit=function(frame) {
+    if(['provisional','running','rollback'].indexOf(this.phase)<0 || frame.token!==this.token || !sameIdentity(frame.identity,this.identity) || frame.digest!==this.digest || frame.topology!==this.topology || this.outputs.indexOf(frame.output)<0 || !sameRect(frame.rect,this.current) || !Number.isSafeInteger(frame.sequence) || frame.sequence<=0 || !Number.isFinite(frame.time))return false
+    var previous=this.lastSubmitted[frame.output]
+    if(previous && (frame.sequence<=previous.sequence || frame.time<previous.time))return false
+    var ledger=this.submissions[frame.output] || []
+    ledger.push(clone(frame));if(ledger.length>128)ledger.shift()
+    this.submissions[frame.output]=ledger;this.lastSubmitted[frame.output]=clone(frame);return true
+}
+GlobalRoute.prototype.present=function(frame) {
+    if(['provisional','running','rollback'].indexOf(this.phase)<0)return false
+    var ledger=this.submissions[frame.output] || [],submitted=ledger.find(function(f){return f.sequence===frame.sequence}),previous=this.presented[frame.output]
+    if(!submitted || frame.sequence!==submitted.sequence || frame.token!==this.token || frame.topology!==this.topology || !sameIdentity(frame.identity,this.identity) || frame.digest!==submitted.digest || !sameRect(frame.rect,submitted.rect) || !Number.isFinite(frame.time) || frame.time<submitted.time || (previous && (frame.sequence<=previous.sequence || frame.time<=previous.time)))return false
+    this.presented[frame.output]=clone(frame)
+    this.submissions[frame.output]=ledger.filter(function(f){return f.sequence>frame.sequence})
+    this.frames.push({output:frame.output,token:frame.token,sequence:frame.sequence,time:frame.time,rect:clone(frame.rect),phase:this.phase,observedDigest:frame.digest,observedIdentity:clone(frame.identity)});if(this.frames.length>512)this.frames.shift()
+    this.ready[frame.output]=true;this.endReady[frame.output]=sameRect(frame.rect,this.to)
+    this.completeIfPresented();return true
+}
+GlobalRoute.prototype.completeIfPresented=function() {
+    if(!this.validated || !this.outputs.every(function(o){return this.ready[o]},this))return
+    if(!this.readySent) {this.readySent=true;this.events.push({kind:this.phase==='rollback'?'rollbackReady':'ready',token:this.token,identity:clone(this.identity),operation:this.operation})}
+    if(this.progress===1 && this.outputs.every(function(o){return this.endReady[o]},this) && !this.doneSent) {
+        this.doneSent=true;this.events.push({kind:this.phase==='rollback'?'rollbackDone':'done',token:this.token,identity:clone(this.identity),operation:this.operation});this.phase='idle'
+    }
+}
+GlobalRoute.prototype.removeOutput=function(output) {
+    if(this.outputs.indexOf(output)<0)return false
+    this.phase='cancelled';this.ready={};this.endReady={};this.submissions={};this.lastSubmitted={};this.presented={};this.validated=false
+    this.events.push({kind:'needsFreshSettlement',token:this.token,identity:clone(this.identity),previouslyAcceptedOperation:this.acceptedOperation});return true
+}
+GlobalRoute.prototype.close=function() {this.phase='cancelled';this.validated=false;this.digest='';this.ready={};this.endReady={};this.submissions={};this.lastSubmitted={};this.presented={}}
+if(typeof module!=='undefined')module.exports={GlobalRoute:GlobalRoute}

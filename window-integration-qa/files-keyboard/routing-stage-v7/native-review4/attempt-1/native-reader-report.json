@@ -1,0 +1,1739 @@
+{
+  "scope": "Isolated copied Files on native Wayland; Wayland virtual-keyboard Qt keyboard plus actual Orca focus/navigation/press actions; silent speech log",
+  "checks": [
+    {
+      "name": "native minimum330x320",
+      "passed": true
+    },
+    {
+      "name": "real Orca native Wayland loop ready",
+      "passed": true
+    },
+    {
+      "name": "Orca recognizes actual named Home button",
+      "passed": true
+    },
+    {
+      "name": "virtual-keyboard Tab produces actual Orca button focus",
+      "passed": true,
+      "readerState": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Show hidden files",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483674",
+          "app_bus": ":1.171"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483898",
+          "app_bus": ":1.171"
+        },
+        "navigator": null
+      }
+    },
+    {
+      "name": "virtual-keyboard Return activates existing View",
+      "passed": true
+    },
+    {
+      "name": "virtual-keyboard arrow moves real file row reader focus",
+      "passed": true
+    },
+    {
+      "name": "virtual-keyboard next file arrow retains named reader focus",
+      "passed": true
+    },
+    {
+      "name": "actual focused row navigation selects its logical file",
+      "passed": true
+    },
+    {
+      "name": "virtual-keyboard F2 opens named text prompt",
+      "passed": true
+    },
+    {
+      "name": "actual keyboard F2 captures focused selected file",
+      "passed": true
+    },
+    {
+      "name": "native prompt Tab traps at text input",
+      "passed": true
+    },
+    {
+      "name": "native prompt Escape preserves fixture files",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToParent",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToFirstChild",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "actual Orca ObjectNavigator reaches Sort",
+      "passed": true,
+      "readerState": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Sort",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483668",
+          "app_bus": ":1.171"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483898",
+          "app_bus": ":1.171"
+        },
+        "navigator": {
+          "name": "Sort",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483668",
+          "app_bus": ":1.171"
+        }
+      }
+    },
+    {
+      "name": "real Orca command PerformAction",
+      "passed": true
+    },
+    {
+      "name": "actual Orca press opens existing Sort menu",
+      "passed": true
+    },
+    {
+      "name": "menu arrow gives real named reader row focus",
+      "passed": true
+    },
+    {
+      "name": "compact sidebar reader focus follows collection",
+      "passed": true
+    },
+    {
+      "name": "Home filter has actual button reader role",
+      "passed": true
+    },
+    {
+      "name": "virtual-keyboard Home filter Tab announces next name",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToParent",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToFirstChild",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "actual Orca navigator reaches exact file:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review4/attempt-1/home/fixture/subfolder",
+      "passed": true
+    },
+    {
+      "name": "real Orca command PerformAction",
+      "passed": true
+    },
+    {
+      "name": "gallery actual reader directory press",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToParent",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToFirstChild",
+      "passed": true
+    },
+    {
+      "name": "actual Orca navigator reaches exact Tree.chev",
+      "passed": true
+    },
+    {
+      "name": "real Orca command PerformAction",
+      "passed": true
+    },
+    {
+      "name": "tree actual reader branch toggle announces changed state",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToParent",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToFirstChild",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "actual Orca navigator reaches exact Tree.row",
+      "passed": false
+    }
+  ],
+  "failures": [
+    "actual Orca navigator reaches exact Tree.row"
+  ],
+  "physicalHardwareProved": false,
+  "inputSource": "wtype Wayland virtual-keyboard protocol, routed through the compositor to the copied Qt window",
+  "clientComparison": "All captured stable compositor fields match strictly. App-owned current title hashes are observed separately; the Codex terminal animates its title. Prior V6 strict-title failure remains unchanged.",
+  "titleHashesBefore": {
+    "0x5a02aee429f0": "5d48eac09d17489ce011af63b5d37700a395e24810b96bfc3f21976c904cce18",
+    "0x5a02b0cc9280": "a7b8aa98953e573ee61bb4e66d1206f8e4dfba0730b657472f7db8da97049000",
+    "0x5a02afd20bd0": "8fcf39d31751c2069ec210be18e49457e75b5ddc83891e80a27246c3632f9205",
+    "0x5a02afa13e90": "102607aba0aca07600ed90354604dd4f2164a9ea9a674a5727b90bdfc8f648ab"
+  },
+  "fixtureIdentity": [
+    "0x5a02b0290ca0",
+    "180003f5",
+    3732029
+  ],
+  "focusTrace": [
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Home",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483653",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Show list",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483665",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "subfolder",
+        "role": "list item",
+        "identity": "QGuiApplication.ProxiedWindow.FileArea.row",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483964",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "alpha-long-file-name-to-test-eliding.txt",
+        "role": "list item",
+        "identity": "QGuiApplication.ProxiedWindow.FileArea.row",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483966",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Rename",
+        "role": "text",
+        "identity": "QGuiApplication.ProxiedWindow.Prompt.card.Prompt.input",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483731",
+        "app_bus": ":1.171",
+        "text": "alpha-long-file-name-to-test-eliding.txt"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Cancel",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Prompt.card.Prompt.cancelBtn",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483734",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Rename",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Prompt.card.Prompt.acceptBtn",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483735",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Rename",
+        "role": "text",
+        "identity": "QGuiApplication.ProxiedWindow.Prompt.card.Prompt.input",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483731",
+        "app_bus": ":1.171",
+        "text": "alpha-long-file-name-to-test-eliding.txt"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483668",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Name",
+        "role": "menu item",
+        "identity": "QGuiApplication.ProxiedWindow.ContextMenu.card.ContextMenu.menuRow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483972",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483668",
+        "app_bus": ":1.171"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Recent activity",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483773",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483668",
+        "app_bus": ":1.171"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "All",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483935",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483668",
+        "app_bus": ":1.171"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Documents",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483936",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483668",
+        "app_bus": ":1.171"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "subfolder",
+        "role": "list item",
+        "identity": "QGuiApplication.ProxiedWindow.FileArea.gr.FileArea.cl",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483992",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483668",
+        "app_bus": ":1.171"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Collapse Home",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483836",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": {
+        "error": "GLib.Error('No such object path '/org/a11y/atspi/accessible/2147483992'', 'atspi_error', 1)"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Home",
+        "role": "table cell",
+        "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483838",
+        "app_bus": ":1.171"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483898",
+        "app_bus": ":1.171"
+      },
+      "navigator": {
+        "name": "Expand Home",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483836",
+        "app_bus": ":1.171"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "target": "file:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review4/attempt-1/home/fixture/subfolder",
+      "observed": {
+        "description": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review4/attempt-1/home/fixture/subfolder",
+        "height": 82,
+        "invisible": false,
+        "logicalIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review4/attempt-1/home/fixture/subfolder",
+        "name": "subfolder",
+        "role": 34,
+        "valid": true,
+        "width": 302,
+        "x": 14,
+        "y": 206
+      },
+      "readerFocus": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "subfolder",
+          "role": "list item",
+          "identity": "QGuiApplication.ProxiedWindow.FileArea.gr.FileArea.cl",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483992",
+          "app_bus": ":1.171"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483898",
+          "app_bus": ":1.171"
+        },
+        "navigator": {
+          "name": "Sort",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483668",
+          "app_bus": ":1.171"
+        }
+      }
+    },
+    {
+      "target": "Tree.chev",
+      "observed": {
+        "description": "",
+        "height": 26,
+        "invisible": false,
+        "logicalIdentity": "tree-toggle:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review4/attempt-1/home",
+        "name": "Collapse Home",
+        "role": 43,
+        "valid": true,
+        "width": 18,
+        "x": 10,
+        "y": 268
+      },
+      "readerFocus": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Collapse Home",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483836",
+          "app_bus": ":1.171"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483898",
+          "app_bus": ":1.171"
+        },
+        "navigator": {
+          "error": "GLib.Error('No such object path '/org/a11y/atspi/accessible/2147483992'', 'atspi_error', 1)"
+        }
+      }
+    }
+  ],
+  "error": "AssertionError('actual Orca navigator reaches exact Tree.row')",
+  "fixtureCleanup": [
+    {
+      "name": "reader",
+      "pid": 3732173,
+      "ownNewSession": true,
+      "forcedKill": false,
+      "exitCode": 0,
+      "exited": true
+    },
+    {
+      "name": "copiedFiles",
+      "pid": 3732029,
+      "ownNewSession": true,
+      "forcedKill": false,
+      "exitCode": -15,
+      "exited": true
+    }
+  ],
+  "preservation": {
+    "originalStableClientFields": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "allFourCatalogBytes": true,
+    "originalFullUiState": true,
+    "sharedReaderProfileBytes": true,
+    "originalProcessStart": true,
+    "clipboardAndPrimaryRawAndMimeHashes": true,
+    "catalogBytes": true,
+    "dashboardBytes": true,
+    "originalExplorerPublicState": true,
+    "originalExplorerPID": true,
+    "originalExplorerHidden": true,
+    "a11yFlags": true,
+    "a11ySocketConnectivity": true,
+    "readerEnabledProperty": true,
+    "originalOutputs": true,
+    "originalPlugins": true,
+    "originalKeyboardStates": true,
+    "reviewedManifestBytes": true,
+    "frozenDependencies": true,
+    "fixturesNormalShutdown": true,
+    "fixturesExited": true,
+    "responsiveManifestBytes": true
+  },
+  "titleHashesAfter": {
+    "0x5a02aee429f0": "5d48eac09d17489ce011af63b5d37700a395e24810b96bfc3f21976c904cce18",
+    "0x5a02b0cc9280": "a7b8aa98953e573ee61bb4e66d1206f8e4dfba0730b657472f7db8da97049000",
+    "0x5a02afd20bd0": "8fcf39d31751c2069ec210be18e49457e75b5ddc83891e80a27246c3632f9205",
+    "0x5a02afa13e90": "102607aba0aca07600ed90354604dd4f2164a9ea9a674a5727b90bdfc8f648ab"
+  },
+  "catalogImmediatelyAfterCleanup": {
+    "virtual-desktops.json": {
+      "exactBytes": true,
+      "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0"
+    },
+    "taskbar-settings.json": {
+      "exactBytes": true,
+      "expectedSHA256": null,
+      "actualSHA256": null
+    },
+    "taskbar-order.json": {
+      "exactBytes": true,
+      "expectedSHA256": null,
+      "actualSHA256": null
+    },
+    "taskbar-session-order.json": {
+      "exactBytes": false,
+      "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "actualSHA256": "eaccd170cd144d071c19c5d86f86616df4066eeeac24fb482c6376bf43033183"
+    }
+  },
+  "catalogNaturalSettling": {
+    "/home/hoskinson/.config/omarchy/virtual-desktops.json": {
+      "exactBytes": true,
+      "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0"
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-settings.json": {
+      "exactBytes": true,
+      "expectedSHA256": null,
+      "actualSHA256": null
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-order.json": {
+      "exactBytes": true,
+      "expectedSHA256": null,
+      "actualSHA256": null
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-session-order.json": {
+      "exactBytes": true,
+      "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    }
+  },
+  "result": "fail"
+}

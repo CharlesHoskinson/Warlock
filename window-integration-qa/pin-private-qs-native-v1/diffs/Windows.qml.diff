@@ -1,0 +1,10 @@
+--- /home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend/Windows.qml
++++ /home/hoskinson/window-integration-qa/pin-private-qs-native-v1/frontend-observation/Windows.qml
+@@ -92,6 +92,7 @@
+     function motionCancel(encoded:string):bool { return root.motionDispatch("cancel",JSON.parse(encoded)) }
+     function motionState():string { return JSON.stringify(windowMotion.requests) }
+     function pinMenuState():string { return JSON.stringify(pinMenu.diagnosticState()) }
++    function pinTypedRetirementRefusal(kind:string):string { return JSON.stringify(pinMenu.observeTypedRetirementRefusal(kind)) }
+     function motionVisualState():string {
+       var items=root.bar && typeof root.bar.moduleWidgets==="function" ? root.bar.moduleWidgets(root.moduleName) : [root]
+       var result=[]

@@ -1,0 +1,47 @@
+{
+  "result": "pass",
+  "command": [
+    "/home/hoskinson/.local/share/mise/installs/node/latest/bin/node",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/test_qml_diagnostic_v2.js",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend/PinWindowMenu.qml"
+  ],
+  "exitCode": 0,
+  "stdout": "[{\"scenario\":\"open\",\"value\":{\"nonce\":1,\"open\":true,\"status\":\"ready\",\"publicIdentity\":{\"address\":\"0x123\",\"stableId\":\"18000000\",\"pid\":7},\"captured\":{},\"sent\":false,\"invocation\":null,\"receipt\":null,\"layerNamespace\":\"hoskinson-pin-window-menu\",\"button\":{\"x\":0,\"y\":0,\"width\":220,\"height\":30,\"visible\":true,\"enabled\":true,\"label\":\"Toggle pin\"},\"popupBefore\":{\"schema\":\"qml-popup-lifetime-v1\",\"engineGeneration\":1,\"engineEpoch\":1,\"providerGeneration\":1,\"processId\":11,\"processStart\":\"777\",\"configSHA256\":\"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\",\"relationship\":\"lexical-pin-popup-existing-attached-native-content\",\"nativeWindowBound\":true,\"diagnostics\":{},\"allocations\":{\"menu\":1,\"row\":2,\"popup\":3,\"attached\":4,\"content\":5,\"window\":6,\"nativeRoot\":7},\"contexts\":{\"menu\":{\"generation\":11,\"present\":true,\"enginePresent\":true},\"row\":{\"generation\":12,\"present\":true,\"enginePresent\":true},\"popup\":{\"generation\":13,\"present\":true,\"enginePresent\":true},\"attached\":{\"generation\":0,\"present\":false,\"enginePresent\":false},\"content\":{\"generation\":0,\"present\":false,\"enginePresent\":false},\"window\":{\"generation\":0,\"present\":false,\"enginePresent\":false},\"nativeRoot\":{\"generation\":0,\"present\":false,\"enginePresent\":false}}},\"popupAfter\":{\"schema\":\"qml-popup-lifetime-v1\",\"engineGeneration\":1,\"engineEpoch\":1,\"providerGeneration\":1,\"processId\":11,\"processStart\":\"777\",\"configSHA256\":\"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\",\"relationship\":\"lexical-pin-popup-existing-attached-native-content\",\"nativeWindowBound\":true,\"diagnostics\":{},\"allocations\":{\"menu\":1,\"row\":2,\"popup\":3,\"attached\":4,\"content\":5,\"window\":6,\"nativeRoot\":7},\"contexts\":{\"menu\":{\"generation\":11,\"present\":true,\"enginePresent\":true},\"row\":{\"generation\":12,\"present\":true,\"enginePresent\":true},\"popup\":{\"generation\":13,\"present\":true,\"enginePresent\":true},\"attached\":{\"generation\":0,\"present\":false,\"enginePresent\":false},\"content\":{\"generation\":0,\"present\":false,\"enginePresent\":false},\"window\":{\"generation\":0,\"present\":false,\"enginePresent\":false},\"nativeRoot\":{\"generation\":0,\"present\":false,\"enginePresent\":false}}},\"engineBefore\":{\"schema\":\"qml-engine-metadata-v1\",\"kind\":\"metadata-only; no widget/input authority\",\"engineGeneration\":1,\"engineEpoch\":1,\"providerGeneration\":1,\"processId\":11,\"processStart\":\"777\",\"configSHA256\":\"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\"},\"engineAfter\":{\"schema\":\"qml-engine-metadata-v1\",\"kind\":\"metadata-only; no widget/input authority\",\"engineGeneration\":1,\"engineEpoch\":1,\"providerGeneration\":1,\"processId\":11,\"processStart\":\"777\",\"configSHA256\":\"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\"}},\"exactLexicalArguments\":true,\"sourceBoundFunction\":true,\"controlledDataNotNativeAuthority\":true},{\"scenario\":\"closed\",\"value\":{\"nonce\":1,\"open\":false,\"status\":\"ready\",\"publicIdentity\":{\"address\":\"0x123\",\"stableId\":\"18000000\",\"pid\":7},\"captured\":{},\"sent\":false,\"invocation\":null,\"receipt\":null,\"layerNamespace\":\"hoskinson-pin-window-menu\",\"button\":{\"x\":0,\"y\":0,\"width\":220,\"height\":30,\"visible\":true,\"enabled\":true,\"label\":\"Toggle pin\"},\"popupBefore\":null,\"popupAfter\":null,\"engineBefore\":{\"schema\":\"qml-engine-metadata-v1\",\"kind\":\"metadata-only; no widget/input authority\",\"engineGeneration\":1,\"engineEpoch\":1,\"providerGeneration\":1,\"processId\":11,\"processStart\":\"777\",\"configSHA256\":\"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\"},\"engineAfter\":{\"schema\":\"qml-engine-metadata-v1\",\"kind\":\"metadata-only; no widget/input authority\",\"engineGeneration\":1,\"engineEpoch\":1,\"providerGeneration\":1,\"processId\":11,\"processStart\":\"777\",\"configSHA256\":\"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\"}},\"exactLexicalArguments\":true,\"sourceBoundFunction\":true,\"controlledDataNotNativeAuthority\":true},{\"scenario\":\"getter-mutation\",\"value\":{\"nonce\":1,\"open\":true,\"status\":\"ready\",\"publicIdentity\":{\"address\":\"0x123\",\"stableId\":\"18000000\",\"pid\":7},\"captured\":{},\"sent\":false,\"invocation\":null,\"receipt\":null,\"layerNamespace\":\"hoskinson-pin-window-menu\",\"button\":{\"x\":0,\"y\":0,\"width\":220,\"height\":30,\"visible\":true,\"enabled\":true,\"label\":\"Toggle pin\"},\"popupBefore\":{\"schema\":\"qml-popup-lifetime-v1\",\"engineGeneration\":1,\"engineEpoch\":1,\"providerGeneration\":1,\"processId\":11,\"processStart\":\"777\",\"configSHA256\":\"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\",\"relationship\":\"lexical-pin-popup-existing-attached-native-content\",\"nativeWindowBound\":true,\"diagnostics\":{},\"allocations\":{\"menu\":1,\"row\":2,\"popup\":3,\"attached\":4,\"content\":5,\"window\":6,\"nativeRoot\":7},\"contexts\":{\"menu\":{\"generation\":11,\"present\":true,\"enginePresent\":true},\"row\":{\"generation\":12,\"present\":true,\"enginePresent\":true},\"popup\":{\"generation\":13,\"present\":true,\"enginePresent\":true},\"attached\":{\"generation\":0,\"present\":false,\"enginePresent\":false},\"content\":{\"generation\":0,\"present\":false,\"enginePresent\":false},\"window\":{\"generation\":0,\"present\":false,\"enginePresent\":false},\"nativeRoot\":{\"generation\":0,\"present\":false,\"enginePresent\":false}}},\"popupAfter\":{\"schema\":\"qml-popup-lifetime-v1\",\"engineGeneration\":1,\"engineEpoch\":1,\"providerGeneration\":1,\"processId\":11,\"processStart\":\"777\",\"configSHA256\":\"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\",\"relationship\":\"lexical-pin-popup-existing-attached-native-content\",\"nativeWindowBound\":true,\"diagnostics\":{},\"allocations\":{\"menu\":1,\"row\":2,\"popup\":3,\"attached\":4,\"content\":5,\"window\":60,\"nativeRoot\":7},\"contexts\":{\"menu\":{\"generation\":11,\"present\":true,\"enginePresent\":true},\"row\":{\"generation\":12,\"present\":true,\"enginePresent\":true},\"popup\":{\"generation\":13,\"present\":true,\"enginePresent\":true},\"attached\":{\"generation\":0,\"present\":false,\"enginePresent\":false},\"content\":{\"generation\":0,\"present\":false,\"enginePresent\":false},\"window\":{\"generation\":0,\"present\":false,\"enginePresent\":false},\"nativeRoot\":{\"generation\":0,\"present\":false,\"enginePresent\":false}}},\"engineBefore\":{\"schema\":\"qml-engine-metadata-v1\",\"kind\":\"metadata-only; no widget/input authority\",\"engineGeneration\":1,\"engineEpoch\":1,\"providerGeneration\":1,\"processId\":11,\"processStart\":\"777\",\"configSHA256\":\"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\"},\"engineAfter\":{\"schema\":\"qml-engine-metadata-v1\",\"kind\":\"metadata-only; no widget/input authority\",\"engineGeneration\":1,\"engineEpoch\":1,\"providerGeneration\":1,\"processId\":11,\"processStart\":\"777\",\"configSHA256\":\"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\"}},\"exactLexicalArguments\":true,\"sourceBoundFunction\":true,\"controlledDataNotNativeAuthority\":true}]",
+  "stderr": "",
+  "checks": [
+    {
+      "name": "open raw metadata",
+      "passed": true
+    },
+    {
+      "name": "normal full raw popup tuple",
+      "passed": true
+    },
+    {
+      "name": "closed raw metadata",
+      "passed": true
+    },
+    {
+      "name": "closed menu metadata has no popup authority",
+      "passed": true
+    },
+    {
+      "name": "getter-mutation raw metadata",
+      "passed": true
+    },
+    {
+      "name": "real JS getter mutation refused by new decoder",
+      "passed": true
+    }
+  ],
+  "sourceSHA256": {
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend/PinWindowMenu.qml": "e1b890a6f501f9863bc0513894b04a746aadca02a57c07333cee3746d08bc9b2",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/test_qml_diagnostic_v2.js": "b9fa392983133a33da5a68d3ee0ac72e494f623d73b7bfb1086494b6f2865846",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/popup_authority.py": "f1d5dc41babad3efb390812c81a763b121eb8c2d49283be7f0235bb4e558be16",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/run_qml_js_cpu_v2.py": "b31d213e9e95d862b2fe7a54d983758286cdf8b6b0699e9bbde9607a6990633c"
+  },
+  "sourceStable": true,
+  "exactQMLFunctionExecutedAsJS": true,
+  "actualQtQSNativeSemantics": false,
+  "GUI": false
+}

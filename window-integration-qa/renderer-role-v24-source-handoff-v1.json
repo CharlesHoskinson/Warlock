@@ -1,0 +1,57 @@
+{
+  "status": "source-ready-root-review-freeze-pending",
+  "stage": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24",
+  "sourceReady": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/source-ready-v24.json",
+  "sourceReadySHA256": "5078c6c57802f2530cff319e8f824957b5953d704ca207f8ae68ccac654a0fe6",
+  "inputs": 17693,
+  "modes": 17693,
+  "links": 287,
+  "frozenBaseManifest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/manifest-family-preparation-v23.json",
+  "frozenBaseManifestSHA256": "0d2b7b231eaa26c6618783b1cb2305c2a989586b3a7cb371716e2d67603c82e2",
+  "sourceConservation": "/home/hoskinson/window-integration-qa/renderer-role-v24-source-conservation-v1.json",
+  "sourceConservationSHA256": "88a8e96566b789f521ac06e1aa6fc827cbd3cb7bbaa72cf1ed022dfe670d227d",
+  "formalBeforeRuntime": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/renderer-role-formal-before-runtime-v3.json",
+  "formalBeforeRuntimeSHA256": "414cb0ea71b107704447b8b687065bdd91c5f6a0945f39dcdbb09c142f6a75e8",
+  "proof": "/home/hoskinson/window-integration-qa/family-preparation-v24-full-proof-replay-v2/report.json",
+  "proofSHA256": "c1aebeed6570601b398a7e65d6eade890d88af496033e1184ae655ac3e106661",
+  "pythonTests": 377,
+  "quintNamedScenarios": 332,
+  "quintModels": 33,
+  "samplesPerModel": 2000,
+  "stepsPerSample": 100,
+  "originalCommandsExecuted": 100,
+  "focusedKernelProof": "/home/hoskinson/window-integration-qa/renderer-role-focused-replay-v2/report.json",
+  "focusedKernelProofSHA256": "3b52017597a8db77f5d029fbffc6324de8cff3ac237ba08b1fb8211137feba56",
+  "actualAdapterProof": "/home/hoskinson/window-integration-qa/renderer-role-adapter-lock-replay-v1/report.json",
+  "actualAdapterProofSHA256": "040acae681a915ae2a7fea2fc61742b72e8492321f0aef1ce71ce6ecccd96bae",
+  "retainedFailedOrderingChecker": "/home/hoskinson/window-integration-qa/family-preparation-v24-full-proof-v1/report.json",
+  "originalFailedNativeV7Preserved": true,
+  "orderingFailureAdditivelyReplayed": true,
+  "optionalFullRerunPerformed": false,
+  "changedProductSources": [
+    "batch_preview.py",
+    "native_runtime.py"
+  ],
+  "runtimeSHA256": {
+    "native_runtime.py": "2179e2a30c880d5ad88b5ae19b370485ac886979ba8834f182ddcfb59b2006d1",
+    "batch_preview.py": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250"
+  },
+  "freezer": "/home/hoskinson/window-integration-qa/renderer-role-v24-closure-preparation-v1/freeze_renderer_preparation.py",
+  "freezerSHA256": "9daa5f8ba3f2be0d4b9aa3b3afd0d1a14aeac00f36843382bdfba04ebcb10c6d",
+  "freezeCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/renderer-role-v24-closure-preparation-v1/freeze_renderer_preparation.py",
+    "--freeze"
+  ],
+  "verifyCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/renderer-role-v24-closure-preparation-v1/freeze_renderer_preparation.py",
+    "--verify"
+  ],
+  "rootNativeBaseline38Pending": true,
+  "rootNativeFault34Pending": true,
+  "nativeAccepted": false,
+  "nativeLaunch": false,
+  "mainChanged": false,
+  "sourceStable": true
+}

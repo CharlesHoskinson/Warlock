@@ -1,0 +1,41 @@
+{
+  "result": "pass actual owned kernel counterexample",
+  "observations": {
+    "configBeforeSpawn": true,
+    "quietBeforeSpawn": true,
+    "identity": {
+      "pid": 3610385,
+      "start": "14381637",
+      "pgid": 3610367,
+      "parent": 3610367
+    },
+    "exactPendingAfterAuth": [
+      {
+        "identity": {
+          "pid": 3610385,
+          "start": "14381637",
+          "pgid": 3610367,
+          "parent": 3610367
+        },
+        "argv": [
+          "/usr/bin/python3",
+          "/tmp/tmpwkgesxn8/exact-owned-entry"
+        ],
+        "exactEntry": true,
+        "exactCompositorShell": false
+      }
+    ],
+    "error": "Prior helper boundary changed during arm"
+  },
+  "configurationUnchanged": true,
+  "prospectiveTicketUnpublished": true,
+  "helperExitedNormally": true,
+  "ipcRequests": [
+    "j/version"
+  ],
+  "selectedIPCFullEOF": true,
+  "originalEvaluationSourceSHA256": "68a3176799add29342f52f4f13ce7c4e9019f2e580f9f44053af77794c223866",
+  "cpuFixtureOnly": true,
+  "actualV14ArmBranchProved": false,
+  "nativeLaunch": false
+}

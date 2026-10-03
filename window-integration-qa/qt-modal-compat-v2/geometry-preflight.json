@@ -1,0 +1,36 @@
+{
+  "result": "pass",
+  "scope": "Pure logical-coordinate fixture preflight, no native/input/Qt run",
+  "checks": [
+    {
+      "name": "physical2560x1600/scale1.6 yields exact logical1600x1000",
+      "passed": true
+    },
+    {
+      "name": "all four actual planned native rectangles fit logical output",
+      "passed": true
+    },
+    {
+      "name": "fractional noninteger logical extent refused before native launch",
+      "passed": true
+    },
+    {
+      "name": "rotated output refused before native launch",
+      "passed": true
+    },
+    {
+      "name": "nonorigin output refused before native launch",
+      "passed": true
+    },
+    {
+      "name": "multiple outputs refused before native launch",
+      "passed": true
+    },
+    {
+      "name": "nonpositive scale refused before native launch",
+      "passed": true
+    }
+  ],
+  "original188InputsExact": true,
+  "compiledFixtureByteIdentical": true
+}

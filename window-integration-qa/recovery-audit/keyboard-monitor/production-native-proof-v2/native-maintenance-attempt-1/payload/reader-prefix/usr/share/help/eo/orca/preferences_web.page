@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_web" xml:lang="eo">
+  <info>
+    <link type="guide" xref="preferences#application"/>
+    <link type="next" xref="preferences_table_navigation"/>
+    <title type="sort">1. Reta Navigado</title>
+    <title type="link">Reta Navigado</title>
+    <desc>Agordi la subtenon de <app>Orko</app> por <app>Firefox</app>, <app>Thunderbird</app>, kaj <app>Chrome</app>/<app>Chromium</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Preferoj de Reta Navigado</title>
+  <section id="page_navigation">
+    <title>Paĝa Navigado</title>
+    <p>La grupo de kontroliloj <gui>Paĝa Navigado</gui> ebligas al vi agordi kiel <app>Orko</app> prezentas tekston kaj alian enhavon, kaj interagi kun tiu enhavo.</p>
+    <section id="page_navigation_control_caret">
+      <title>Kontroli karetan navigadon</title>
+      <p>Ĉi tiu markobutono ŝaltas/malŝaltas la karetan navigadon de <app>Orko</app>. Kiam ĝi estas ŝaltita, <app>Orko</app> prenas kontrolon de la kareto dum vi navigas per sagoj en paĝo; kiam ĝi estas malŝaltita, la propra kareta navigado de la retumilo estas aktiva.</p>
+      <p>Defaŭlta valoro: markita</p>
+      <note style="tip">
+        <title>Ĉi tiun agordon eblas ŝalti/malŝalti interagante</title>
+        <p>Por ŝalti/malŝalti ĉi tiun agordon interagante sen konservi ĝin, uzu <keyseq><key>Orko Modifier</key><key>F12</key></keyseq>.</p>
+       </note>
+    </section>
+    <section id="page_navigation_focus_caret">
+      <title>Aŭtomata fokusa reĝimo dum kareta navigado</title>
+      <p>Se ĉi tiu markobutono estas markita, <app>Orko</app> aŭtomate ŝaltos fokusan reĝimon kiam vi uzas komandojn de kareta navigado por navigi al formularkampo. Ekzemple, premado de <key>Down</key> permesus al vi eniri enigkampon, sed post kiam vi faris tion, Orko ŝanĝiĝus al fokusa reĝimo kaj postaj premiĝoj de <key>Down</key> estus kontrolataj de la retumilo kaj ne de Orko. Se ĉi tiu markobutono ne estas markita, <app>Orko</app> daŭrus kontroli kio okazas kiam vi premas <key>Down</key>, tiel ebligante al vi moviĝi per sagoj el la enigkampo kaj daŭrigi legadon.</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+      <note style="tip">
+        <title>Mane ŝanĝi inter foliuma reĝimo kaj fokusa reĝimo</title>
+        <p>Por komenci aŭ ĉesi interagi kun la fokusita formularkampo, uzu <keyseq><key>Orko Modifier</key><key>A</key></keyseq> por ŝanĝi inter foliuma reĝimo kaj fokusa reĝimo.</p>
+       </note>
+    </section>
+    <section id="page_navigation_structural">
+      <title>Ebligi strukturan navigadon</title>
+      <p>Ĉi tiu markobutono ŝaltas/malŝaltas la <link xref="howto_structural_navigation">Strukturan Navigadon</link> de <app>Orko</app>. Struktura Navigado permesas al vi navigi per elementoj kiel titoloj, ligiloj kaj formularkampoj.</p>
+      <p>Defaŭlta valoro: markita</p>
+      <note style="tip">
+        <title>Ĉi tiun agordon eblas ŝalti/malŝalti interagante</title>
+        <p>Por ŝalti/malŝalti ĉi tiun agordon interagante sen konservi ĝin, uzu <keyseq><key>Orko Modifier</key><key>Z</key></keyseq>.</p>
+       </note>
+    </section>
+    <section id="page_navigation_focus_structural">
+      <title>Aŭtomata fokusa reĝimo dum struktura navigado</title>
+      <p>Se ĉi tiu markobutono estas markita, <app>Orko</app> aŭtomate ŝaltos fokusan reĝimon kiam vi uzas komandojn de struktura navigado por navigi al formularkampo. Ekzemple, premado de <key>E</key> por movi al la sekva enigkampo movus fokuson tien kaj ankaŭ ŝaltus fokusan reĝimon por ke via sekva premo de <key>E</key> tajpus "e" en tiu enigkampo. Se ĉi tiu markobutono ne estas markita, tiam <app>Orko</app> lasos vin en foliuma reĝimo kaj via sekva premo de <key>E</key> movus vin al la sekva enigkampo en la paĝo.</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+      <note style="tip">
+        <title>Mane ŝanĝi inter foliuma reĝimo kaj fokusa reĝimo</title>
+        <p>Por komenci aŭ ĉesi interagi kun la fokusita formularkampo, uzu <keyseq><key>Orko Modifier</key><key>A</key></keyseq> por ŝanĝi inter foliuma reĝimo kaj fokusa reĝimo.</p>
+       </note>
+    </section>
+    <section id="page_navigation_focus_native">
+      <title>Aŭtomata fokusa reĝimo dum propra navigado</title>
+      <p>Se ĉi tiu markobutono estas markita, <app>Orko</app> aŭtomate ŝaltos fokusan reĝimon kiam vi uzas proprajn navigadkomandojn de la retumilo por navigi al formularkampo. Ekzemple, premado de <key>Tab</key> por movi al la sekva enigkampo movus fokuson tien kaj ankaŭ ŝaltus fokusan reĝimon por ke via sekva premo de <key>E</key> tajpus "e" en tiu enigkampo. Se ĉi tiu markobutono ne estas markita, tiam <app>Orko</app> lasos vin en foliuma reĝimo kaj via sekva premo de <key>E</key> movus vin al la sekva enigkampo en la paĝo.</p>
+      <p>Defaŭlta valoro: markita</p>
+      <note style="tip">
+        <title>Mane ŝanĝi inter foliuma reĝimo kaj fokusa reĝimo</title>
+        <p>Por komenci aŭ ĉesi interagi kun la fokusita formularkampo, uzu <keyseq><key>Orko Modifier</key><key>A</key></keyseq> por ŝanĝi inter foliuma reĝimo kaj fokusa reĝimo.</p>
+       </note>
+    </section>
+    <section id="page_navigation_speak">
+      <title>Aŭtomate komenci paroli paĝon kiam ĝi estas unue ŝargata</title>
+      <p>Se ĉi tiu markobutono estas markita, <app>Orko</app> faros Diri Ĉion sur la ĵus malfermita retpaĝo aŭ retmesaĝo.</p>
+      <p>Defaŭlta valoro: markita por Firefox; ne markita por Thunderbird</p>
+    </section>
+    <section id="page_navigation_summary">
+      <title>Prezenti resumon de paĝo kiam ĝi estas unue ŝargata</title>
+      <p>Se ĉi tiu markobutono estas markita, <app>Orko</app> resumos detalojn pri la ĵus malfermita retpaĝo aŭ retmesaĝo, kiel la nombro de titoloj, landmarkoj kaj ligiloj.</p>
+      <p>Defaŭlta valoro: markita por Firefox; ne markita por Thunderbird</p>
+    </section>
+    <section id="page_navigation_layout_mode">
+      <title>Ebligi aranĝreĝimon por enhavo</title>
+      <p>Se ĉi tiu markobutono estas markita, la kareta navigado de <app>Orko</app> respektos la ekranan aranĝon de la enhavo kaj prezentados la tutan linion, inkluzive ajnajn ligilojn aŭ formularkampojn en tiu linio. Se ĉi tiu markobutono ne estas markita, <app>Orko</app> traktos objektojn kiel ligilojn kaj formularkampojn kvaŭaŭ ili estus en apartaj linioj, kaj por prezentado kaj por navigado.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+  </section>
+  <section id="table_options">
+    <title>Opcioj de Tabelo</title>
+    <note>
+      <p>Por lerni pli pri la opcioj de <app>Orko</app> por navigi ene de tabeloj, vidu <link xref="preferences_table_navigation">Preferoj de Tabela Navigado</link>.</p>
+    </note>
+  </section>
+  <section id="find_options">
+    <title>Opcioj de Serĉo</title>
+    <p>La grupo de kontroliloj <gui>Opcioj de Serĉo</gui> permesas al vi agordi kiel <app>Orko</app> prezentas la rezultojn de serĉo farita per la enkonstruita serĉofunkcieco de la aplikaĵo.</p>
+    <section id="find_options_speak_during_find">
+      <title>Paroli rezultojn dum serĉo</title>
+      <p>Se ĉi tiu markobutono estas markita, <app>Orko</app> legos la linion kiu kongruas kun via aktuala serĉdemando.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="find_options_speak_changed_lines_during_find">
+      <title>Paroli nur ŝanĝitajn liniojn dum serĉo</title>
+      <p>Se ĉi tiu markobutono estas markita, <app>Orko</app> ne prezentados la kongruantan linion se ĝi estas la sama linio kiel la antaŭa kongruo. Ĉi tiu opcio estas desegnita por malhelpi "babilecon" sur linio kun multaj aperoj de la ĉeno kiun vi serĉas.</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+    </section>
+    <section id="find_options_minimum_match_length">
+      <title>Minimuma longo de kongruinta teksto</title>
+      <p>Ĉi tiu redaktebla girbotono estas kie vi povas specifi la nombron da signoj kiuj devas kongrui antaŭ ol <app>Orko</app> anoncas la kongruantan linion. Ĉi tiu opcio estas ankaŭ desegnita por malhelpi "babilecon" ĉar estas multaj kongruoj kiam vi unue komencas tajpi la ĉenon kiun vi serĉas.</p>
+      <p>Defaŭlta valoro: 4</p>
+    </section>
+  </section>
+</page>

@@ -1,0 +1,27 @@
+--- module_binding.py
++++ module_binding.py
+@@ -11,10 +11,10 @@
+ import sys
+ import time
+ 
+-SERVICE=Path('/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27')
+-MANIFEST=SERVICE/'manifest-restore-planning-v27.json'
++SERVICE=Path('/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28')
++MANIFEST=SERVICE/'manifest-restore-focus-transaction-v28.json'
+ # Exact independently reviewed/frozen V24; GUI acceptance remains separate.
+-MANIFEST_SHA256='54857ba311e2862e37037195283cf98b6fba8bb286cb33d32e92685671304e40'
++MANIFEST_SHA256='30303eb8b2dac6f3407155d5619e2a828e134b410ce70c141488ed2493e94eb3'
+ MODULES=('native_runtime','service_runtime','native_desktop','scene_manager','scene_controller','pipe_transport','context_provider','recovery_runtime','recovery_resources','recovery_cancel','readonly_ipc','owned_commands','helper_supervisor','owned_launch','helper_policy','timeout_adapter','snapshot_cache','production_motion_6d9','batch_preview')
+ LINKS=(('native_runtime','NativeDesktop','native_desktop','NativeDesktop'),('native_runtime','PipeTransport','pipe_transport','PipeTransport'),('native_runtime','RuntimeService','service_runtime','RuntimeService'),('native_runtime','NativeContextProvider','context_provider','NativeContextProvider'),('service_runtime','SceneManager','scene_manager','SceneManager'),('scene_manager','SceneController','scene_controller','SceneController'),('native_desktop','BatchPreviews','batch_preview','BatchPreviews'),('native_desktop','OwnedCommands','owned_commands','OwnedCommands'),('batch_preview','key','scene_controller','key'),('batch_preview','rectangle','scene_controller','rectangle'),('batch_preview','PipeTransport','pipe_transport','PipeTransport'),('batch_preview','OwnedLaunch','owned_launch','OwnedLaunch'),('batch_preview','Keeper','helper_supervisor','Keeper'),('batch_preview','checked_renderer','recovery_resources','checked_renderer'),('batch_preview','verify_process','recovery_resources','verify_process'),('batch_preview','process_start','recovery_resources','process_start'))
+ 
+--- native_faults.py
++++ native_faults.py
+@@ -18,7 +18,7 @@
+     if not args.attempt:
+         parser.error('explicit fresh --attempt required')
+     require_qa_scope(); verify()
+-    if SERVICE.name!='service-restore-planning-v27':raise ValueError('Reviewed corrected terminal candidate pairing required before native faults')
++    if SERVICE.name!='service-restore-focus-transaction-v28':raise ValueError('Reviewed corrected terminal candidate pairing required before native faults')
+     baseline=json.loads(args.baseline.read_text())
+     if args.baseline.resolve().parent.parent!=B or not args.baseline.parent.name.startswith('attempt-'):raise ValueError('Owned original baseline attempt required')
+     validate_baseline(baseline,sha(B/'frozen-inputs.json'))

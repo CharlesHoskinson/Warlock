@@ -1,0 +1,311 @@
+{
+  "result": "fail",
+  "GUI": false,
+  "nativeAcceptance": false,
+  "keeperNormalTerminal": {
+    "allGroupsEmpty": true,
+    "closedNs": 183395881867660,
+    "jobs": [
+      {
+        "groupEmpty": true,
+        "job": "bde7fe99592e4e6b8ca7f454a0263118",
+        "normalCompletion": true,
+        "pid": 534532,
+        "start": 19551492
+      },
+      {
+        "groupEmpty": true,
+        "job": "ccfd2b4f8b5349ceb2551127a44771ae",
+        "normalCompletion": true,
+        "pid": 534538,
+        "start": 19551500
+      },
+      {
+        "groupEmpty": true,
+        "job": "2dfbb2e88491425cbf15b88c58c49b1b",
+        "normalCompletion": true,
+        "pid": 534547,
+        "start": 19551510
+      },
+      {
+        "groupEmpty": true,
+        "job": "e046e0cbebe34ef1b556ae6c711d1fed",
+        "normalCompletion": true,
+        "pid": 534549,
+        "start": 19551519
+      },
+      {
+        "groupEmpty": true,
+        "job": "556d2ebb86da47938cc8a8b5add9da13",
+        "normalCompletion": true,
+        "pid": 534559,
+        "start": 19551528
+      },
+      {
+        "groupEmpty": true,
+        "job": "64d6b811de4444c9a0596a9abfaf2d10",
+        "normalCompletion": true,
+        "pid": 534562,
+        "start": 19551536
+      },
+      {
+        "groupEmpty": true,
+        "job": "2b2ca1d195d941b1838a027e09701c63",
+        "normalCompletion": true,
+        "pid": 534566,
+        "start": 19551545
+      },
+      {
+        "groupEmpty": true,
+        "job": "d2bcd587a7604a5d947bd4c6444296a1",
+        "normalCompletion": true,
+        "pid": 534574,
+        "start": 19551554
+      },
+      {
+        "groupEmpty": true,
+        "job": "3922343b30e04074ad6682cc7c205a3d",
+        "normalCompletion": true,
+        "pid": 534578,
+        "start": 19551563
+      },
+      {
+        "groupEmpty": true,
+        "job": "7503710d7ede43d6a40afed4c207e447",
+        "normalCompletion": true,
+        "pid": 534595,
+        "start": 19551576
+      }
+    ],
+    "keeperPID": 533807,
+    "keeperStart": 19551256,
+    "nonce": "81325a3f93af4c5f909b7bab8c2e35d9",
+    "normalStop": true,
+    "registrations": 10,
+    "rootIdentity": [
+      57,
+      1403527
+    ],
+    "servicePID": 533765,
+    "serviceStart": 19551191
+  },
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/restore-planning-concurrency-v1/replay.py": {
+      "sha256": "d77a2e6ba07d788db6147bb41c89e14323995202fe471068e355d31f533c5147",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/manifest-housekeeping-admission-v26.json": {
+      "sha256": "e98809f3cee21c3fc8a0447c98c76915cc3083df2ac1090f1531c7fa3b25a1b2",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py": {
+      "sha256": "bccbb7611d730b7103f2d9aaebf05b0ac4f66a2824b1ee42ad2cb45a6f0a0ba1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py": {
+      "sha256": "8e8935b83496aa85a16dd939e9961cee2bfcbcadd8d92bcbc8d335bcd353b11b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_commands.py": {
+      "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_launch.py": {
+      "sha256": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py": {
+      "sha256": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py": {
+      "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py": {
+      "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py": {
+      "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py": {
+      "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/test_readonly_ipc.py": {
+      "sha256": "ac6f67078081c4893ee2e49d7dcc4ad45a3b55ca7cee83d2c7654a133dc28820",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/test_scene_controller.py": {
+      "sha256": "22e97f7440ca476eb659f3e329e8123e6ab69c9f8edc913326c07f2895456bd6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/src/debug/HyprCtl.cpp": {
+      "sha256": "798b7c6c4c1684557842463d46ac99c96629be4179e0e461dca77670247b91fa",
+      "mode": 436
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/hyprctl/src/main.cpp": {
+      "sha256": "f6b0d1fcfc6695194c70964250591a35ffe90274309303d8f5fd0ac6f8c1c93f",
+      "mode": 436
+    },
+    "/usr/bin/hyprctl": {
+      "sha256": "2780a8bb56494917a725f817c9cf70fb5cc2f39aac5abc62ecf2e619a1f13ec5",
+      "mode": 493
+    }
+  },
+  "sourceUnchanged": true,
+  "observations": [
+    {
+      "wire": "j/clients",
+      "startNs": 183392688494579,
+      "replyNs": 183392688595706,
+      "reply": "[{\"address\": \"0xaa01\", \"stableId\": \"aa01\", \"pid\": 41, \"at\": [100, 100], \"size\": [300, 200], \"mapped\": true, \"pinned\": true, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xbb02\", \"stableId\": \"bb02\", \"pid\": 42, \"at\": [150, 150], \"size\": [250, 160], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xcc03\", \"stableId\": \"cc03\", \"pid\": 43, \"at\": [200, 200], \"size\": [200, 120], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}]"
+    },
+    {
+      "wire": "j/monitors",
+      "startNs": 183392702817316,
+      "replyNs": 183393053125956,
+      "reply": "[{\"id\": 0, \"name\": \"CPU-1\", \"focused\": true, \"x\": 0, \"y\": 0, \"width\": 1600, \"height\": 1000, \"scale\": 1}]"
+    },
+    {
+      "wire": "j/workspaces",
+      "startNs": 183393072050551,
+      "replyNs": 183393422816387,
+      "reply": "[{\"name\":\"1\",\"monitorID\":0,\"monitor\":\"CPU-1\"}]"
+    },
+    {
+      "wire": "j/clients",
+      "startNs": 183393439868950,
+      "replyNs": 183393439952917,
+      "reply": "[{\"address\": \"0xaa01\", \"stableId\": \"aa01\", \"pid\": 41, \"at\": [100, 100], \"size\": [300, 200], \"mapped\": true, \"pinned\": true, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xbb02\", \"stableId\": \"bb02\", \"pid\": 42, \"at\": [150, 150], \"size\": [250, 160], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xcc03\", \"stableId\": \"cc03\", \"pid\": 43, \"at\": [200, 200], \"size\": [200, 120], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}]"
+    },
+    {
+      "wire": "j/monitors",
+      "startNs": 183393454641781,
+      "replyNs": 183393804828380,
+      "reply": "[{\"id\": 0, \"name\": \"CPU-1\", \"focused\": true, \"x\": 0, \"y\": 0, \"width\": 1600, \"height\": 1000, \"scale\": 1}]"
+    },
+    {
+      "wire": "j/workspaces",
+      "startNs": 183393818971561,
+      "replyNs": 183394169078396,
+      "reply": "[{\"name\":\"1\",\"monitorID\":0,\"monitor\":\"CPU-1\"}]"
+    },
+    {
+      "wire": "j/clients",
+      "startNs": 183394186407114,
+      "replyNs": 183394186529944,
+      "reply": "[{\"address\": \"0xaa01\", \"stableId\": \"aa01\", \"pid\": 41, \"at\": [100, 100], \"size\": [300, 200], \"mapped\": true, \"pinned\": true, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xbb02\", \"stableId\": \"bb02\", \"pid\": 42, \"at\": [150, 150], \"size\": [250, 160], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xcc03\", \"stableId\": \"cc03\", \"pid\": 43, \"at\": [200, 200], \"size\": [200, 120], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}]"
+    },
+    {
+      "wire": "j/monitors",
+      "startNs": 183394204511602,
+      "replyNs": 183394554856186,
+      "reply": "[{\"id\": 0, \"name\": \"CPU-1\", \"focused\": true, \"x\": 0, \"y\": 0, \"width\": 1600, \"height\": 1000, \"scale\": 1}]"
+    },
+    {
+      "wire": "j/workspaces",
+      "startNs": 183394567933416,
+      "replyNs": 183394918061769,
+      "reply": "[{\"name\":\"1\",\"monitorID\":0,\"monitor\":\"CPU-1\"}]"
+    },
+    {
+      "wire": "j/clients",
+      "startNs": 183394931749521,
+      "replyNs": 183394931834880,
+      "reply": "[{\"address\": \"0xaa01\", \"stableId\": \"aa01\", \"pid\": 41, \"at\": [100, 100], \"size\": [300, 200], \"mapped\": true, \"pinned\": true, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xbb02\", \"stableId\": \"bb02\", \"pid\": 42, \"at\": [150, 150], \"size\": [250, 160], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xcc03\", \"stableId\": \"cc03\", \"pid\": 43, \"at\": [200, 200], \"size\": [200, 120], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}]"
+    },
+    {
+      "wire": "j/clients",
+      "startNs": 183394946800233,
+      "replyNs": 183394946879876,
+      "reply": "[{\"address\": \"0xaa01\", \"stableId\": \"aa01\", \"pid\": 41, \"at\": [100, 100], \"size\": [300, 200], \"mapped\": true, \"pinned\": true, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xbb02\", \"stableId\": \"bb02\", \"pid\": 42, \"at\": [150, 150], \"size\": [250, 160], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xcc03\", \"stableId\": \"cc03\", \"pid\": 43, \"at\": [200, 200], \"size\": [200, 120], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}]"
+    },
+    {
+      "wire": "/dispatch hl.dsp.focus({ monitor = \"CPU-1\" })",
+      "startNs": 183395039104837,
+      "replyNs": 183395039124165,
+      "reply": "ok"
+    },
+    {
+      "wire": "/dispatch hl.dsp.focus({ workspace = \"1\" })",
+      "startNs": 183395124749564,
+      "replyNs": 183395124768133,
+      "reply": "ok"
+    },
+    {
+      "wire": "j/clients",
+      "startNs": 183395136470692,
+      "replyNs": 183395136550369,
+      "reply": "[{\"address\": \"0xaa01\", \"stableId\": \"aa01\", \"pid\": 41, \"at\": [100, 100], \"size\": [300, 200], \"mapped\": true, \"pinned\": true, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xbb02\", \"stableId\": \"bb02\", \"pid\": 42, \"at\": [150, 150], \"size\": [250, 160], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xcc03\", \"stableId\": \"cc03\", \"pid\": 43, \"at\": [200, 200], \"size\": [200, 120], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}]"
+    },
+    {
+      "wire": "/dispatch hl.dsp.focus({ monitor = \"CPU-1\" })",
+      "startNs": 183395221525764,
+      "replyNs": 183395221542241,
+      "reply": "ok"
+    },
+    {
+      "wire": "/dispatch hl.dsp.focus({ workspace = \"1\" })",
+      "startNs": 183395296377128,
+      "replyNs": 183395296394081,
+      "reply": "ok"
+    },
+    {
+      "wire": "j/clients",
+      "startNs": 183395309980867,
+      "replyNs": 183395310055167,
+      "reply": "[{\"address\": \"0xaa01\", \"stableId\": \"aa01\", \"pid\": 41, \"at\": [100, 100], \"size\": [300, 200], \"mapped\": true, \"pinned\": true, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xbb02\", \"stableId\": \"bb02\", \"pid\": 42, \"at\": [150, 150], \"size\": [250, 160], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xcc03\", \"stableId\": \"cc03\", \"pid\": 43, \"at\": [200, 200], \"size\": [200, 120], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}]"
+    },
+    {
+      "wire": "/dispatch hl.dsp.focus({ monitor = \"CPU-1\" })",
+      "startNs": 183395395353963,
+      "replyNs": 183395395372112,
+      "reply": "ok"
+    },
+    {
+      "wire": "/dispatch hl.dsp.focus({ workspace = \"1\" })",
+      "startNs": 183395481793728,
+      "replyNs": 183395481812819,
+      "reply": "ok"
+    },
+    {
+      "wire": "CPU_REFRESH",
+      "startNs": 183395566318218,
+      "replyNs": 183395566329477,
+      "reply": "true"
+    },
+    {
+      "wire": "CPU_REFRESH",
+      "startNs": 183395659928615,
+      "replyNs": 183395659944420,
+      "reply": "true"
+    },
+    {
+      "wire": "CPU_REFRESH",
+      "startNs": 183395753665644,
+      "replyNs": 183395753686192,
+      "reply": "true"
+    },
+    {
+      "wire": "j/clients",
+      "startNs": 183395776336780,
+      "replyNs": 183395776415556,
+      "reply": "[{\"address\": \"0xaa01\", \"stableId\": \"aa01\", \"pid\": 41, \"at\": [100, 100], \"size\": [300, 200], \"mapped\": true, \"pinned\": true, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xbb02\", \"stableId\": \"bb02\", \"pid\": 42, \"at\": [150, 150], \"size\": [250, 160], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xcc03\", \"stableId\": \"cc03\", \"pid\": 43, \"at\": [200, 200], \"size\": [200, 120], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}]"
+    },
+    {
+      "wire": "j/clients",
+      "startNs": 183395793089302,
+      "replyNs": 183395793153494,
+      "reply": "[{\"address\": \"0xaa01\", \"stableId\": \"aa01\", \"pid\": 41, \"at\": [100, 100], \"size\": [300, 200], \"mapped\": true, \"pinned\": true, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xbb02\", \"stableId\": \"bb02\", \"pid\": 42, \"at\": [150, 150], \"size\": [250, 160], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}, {\"address\": \"0xcc03\", \"stableId\": \"cc03\", \"pid\": 43, \"at\": [200, 200], \"size\": [200, 120], \"mapped\": true, \"pinned\": false, \"workspace\": {\"name\": \"special:win-minimized\"}}]"
+    },
+    {
+      "wire": "[[BATCH]]dispatch one;dispatch two;dispatch three",
+      "startNs": 183395878813280,
+      "replyNs": 183395878830737,
+      "reply": "ok"
+    }
+  ]
+}

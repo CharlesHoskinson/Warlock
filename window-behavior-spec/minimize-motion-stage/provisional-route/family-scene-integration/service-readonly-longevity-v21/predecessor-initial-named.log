@@ -1,0 +1,22 @@
+
+ Error [QNT200]: pure def operators may not interact with state variables, but operator `valid` reads variables 's'. Use def instead.
+
+  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_predecessor.qnt:7:11
+  7:  pure def valid(p:Witness):bool=p.owner==s.owner and p.owner>1 and p.root==s.root and p.source==s.source and p.dataset==s.dataset and p.previous==s.previous and p.file==s.file and p.root>0 and p.source>0 and p.dataset>0 and p.previous>0 and p.file>0 and p.complete and p.chain and p.rowsEqual and p.durable
+               ^^^^^
+
+
+ Error [QNT200]: pure def operators may not interact with state variables, but operator `same` reads variables 's'. Use def instead.
+
+  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_predecessor.qnt:8:11
+  8:  pure def same(p:Witness):bool=p.owner==s.capturedOwner and p.root==s.capturedRoot and p.source==s.capturedSource and p.dataset==s.capturedDataset and p.previous==s.capturedPrevious and p.file==s.capturedFile
+               ^^^^
+
+
+ Error [QNT204]: the outermost expression in a nondet definition must be either 'oneOf' or 'apalache::generate'
+
+  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_predecessor.qnt:21:87
+  21:  action step={nondet yes=Set(true,false).oneOf();nondet n=Set(1,2,3).oneOf();nondet w={owner:2,root:n,source:1,dataset:1,previous:1,file:1,complete:yes,chain:yes,rowsEqual:yes,durable:yes};nondet e=Set(Acquire({owner:2,root:1,oldTerminal:yes}),Seal(w),Confirm(w),Replace({root:1,source:1,dataset:n,previous:1,file:1}),PublishNew({owner:2,pointer:n,durable:yes}),Crash,Recover({chain:yes,pointer:yes,namespace:yes}),UseOld,Refuse).oneOf();fire(e)}
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

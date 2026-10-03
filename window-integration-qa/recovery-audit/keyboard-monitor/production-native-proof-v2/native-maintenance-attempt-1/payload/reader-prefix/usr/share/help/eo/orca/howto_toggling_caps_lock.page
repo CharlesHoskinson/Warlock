@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_toggling_caps_lock" xml:lang="eo">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_key_bindings"/>
+    <title type="sort">7. CapsLock en la Aranĝo Tekomputilo</title>
+    <desc>Ŝalti/malŝalti ĝin kiam ĝi estas la <key>Orko Modifier</key></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>CapsLock en la Aranĝo Tekomputilo</title>
+  <p>Orko havas du klavajn aranĝojn: Labortablo kaj Tekomputilo. La aranĝo kiun vi elektas influas kiun klavon oni uzas kiel Orko-Modifilo. Se vi uzas la aranĝon Tekomputilo, la implica Orko-Modifilo estos <key>CapsLock</key>. Se vi uzas la Aranĝon Tekomputilo de <app>Orko</app> kaj volas ŝlosi aŭ malŝlosi <key>CapsLock</key>, vi povas fari tion aŭ per premado de <key>CapsLock</key> dufoje (postulas at-spi2-version 2.32 aŭ pli postan), aŭ per la sekvaj paŝoj:</p>
+  <steps>
+    <title>Ŝalti/malŝalti CapsLock en la Aranĝo Tekomputilo</title>
+    <item>
+      <p>Premu la Preteriran komandon, <keyseq><key>Orko Modifier</key><key>BackSpace</key> </keyseq>, por diri al <app>Orko</app> ke la sekva komando estas ignorenda.</p>
+    </item>
+    <item>
+      <p>Premu <key>CapsLock</key> por ŝalti/malŝalti ĝian ŝlositan staton.</p>
+    </item>
+  </steps>
+</page>

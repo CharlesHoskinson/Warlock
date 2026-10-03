@@ -1,0 +1,29 @@
+{
+  "updatedUTC": "2026-10-02T01:49:54.456235+00:00",
+  "records": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "test_viewport_witness",
+        "test_geometry_source"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "....................................\n----------------------------------------------------------------------\nRan 36 tests in 0.061s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/run_native.py",
+        "--preflight"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"preflight\": \"pass\", \"files\": 41111, \"symlinks\": 13770, \"manifestSHA256\": \"7607911bd1787a8316c31b1f2d22e4c316a4e10dbe926d2b2c0897325bf4ab32\", \"nativeLaunch\": false}\n",
+      "stderr": ""
+    }
+  ],
+  "passed": true,
+  "nativeLaunch": false
+}

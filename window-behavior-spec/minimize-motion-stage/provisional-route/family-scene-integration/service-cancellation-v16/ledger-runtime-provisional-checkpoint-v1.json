@@ -1,0 +1,50 @@
+{
+  "version": "V16-ledger-provisional-1",
+  "cpuOnly": true,
+  "nativeLaunch": false,
+  "apiWired": false,
+  "restartWired": false,
+  "nativeSemanticCallerHookWired": false,
+  "productPairable": false,
+  "beforeRuntimeLedgerProof": {
+    "named": 25,
+    "samples": 2000,
+    "maxSteps": 100
+  },
+  "beforeRoleRefinementProof": {
+    "named": 10,
+    "samples": 2000,
+    "maxSteps": 100
+  },
+  "actualCpuKernelTests": 33,
+  "runtimeTestLog": "ledger-runtime-tests-04.log",
+  "inheritedProductChanges": {
+    "helper_keeper.py": "1e2c3bad2bc4d10c2b4bd6353b4cdabf267d06bce8c48c734ce30620ad060dec",
+    "helper_supervisor.py": "91628fb829a907ff5be7dc466c1640484e2b04012bae02e9fe366d24bdb9dd07"
+  },
+  "newRuntime": [
+    "keeper_actor_ledger.py"
+  ],
+  "newTests": [
+    "test_actor_ledger.py"
+  ],
+  "allOtherInheritedPythonExact": true,
+  "sourceSHA256": {
+    "runtime/keeper_actor_ledger.py": "25d99ce8c7cc1cb0b87fde7fd398ef51c21e87a082120b3262679b99a02d7579",
+    "runtime/helper_keeper.py": "1e2c3bad2bc4d10c2b4bd6353b4cdabf267d06bce8c48c734ce30620ad060dec",
+    "runtime/helper_supervisor.py": "91628fb829a907ff5be7dc466c1640484e2b04012bae02e9fe366d24bdb9dd07",
+    "runtime/test_actor_ledger.py": "a44d12cfdf0f4d933a068fa43aeeb1e47e411effd0b0a8f3f06a3b4357b14029",
+    "ledger-formal-before-implementation.json": "45903d5119eaf9483da08278b75c1d19c20fcee686ab277da371951bd16bd130",
+    "role-formal-before-implementation.json": "dbb76a35355b247c0f33f7a764a1fbc3c33ebf312bd72077c3fc93f90412d980",
+    "ledger-runtime-tests-04.log": "ffd272224a77794e4f74caeec5f47a6ffb2422edb89a709fd75e26beef242c7f",
+    "runtime-inherited-v17.json": "832cd91968d17e78940d11ed9dd345e3f0d9d20a27fbbfb6fdeb28aa5159c054"
+  },
+  "remaining": [
+    "fixed approved readonly cancellation inspection vocabulary/ownership",
+    "actual guarded native semantic result caller records",
+    "current receipt private API/controller drain/source ACK ordering",
+    "fresh immutable restart nonsettlement validation",
+    "reviewed V19 mutex repair integration only after current source assessment"
+  ],
+  "recordedNs": 1790915389854955051
+}

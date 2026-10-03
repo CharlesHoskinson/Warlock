@@ -1,0 +1,22 @@
+{
+  "updatedUTC": "2026-10-01T23:52:08.637206+00:00",
+  "result": "exact-failure-attributed",
+  "evidenceSHA256": "c37547e7dea7b6ba77c9341b905f698de1e2bb8b4fa7880bf392c1dea055911a",
+  "producerPID": 1760520,
+  "producerFD": 32,
+  "device": 33,
+  "inode": 76787,
+  "actualFullMode": 0,
+  "expectedFullMode": 384,
+  "dataSize": 2960,
+  "onlyFailedRecordedConjunct": "fullMode600",
+  "otherSevenRecordedConjuncts": true,
+  "rawFdinfoAndMountHashesReplayed": true,
+  "readonlySameInodeMountReplayed": true,
+  "beforeOnly": true,
+  "afterOrPostDiskAuthorityProved": false,
+  "sourceBackedExplanation": "Installed Hyprland allocateSHMFilePair unlinks and calls fchmod(fd,0) before ftruncate; fresh exact mode0000 contract required",
+  "all18MainAndNormalCleanup": true,
+  "browserFocusAccepted": false,
+  "mainWrites": false
+}

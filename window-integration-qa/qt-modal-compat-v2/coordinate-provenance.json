@@ -1,0 +1,28 @@
+{
+  "scope": "Read actual helper, protocol XML, and local official compositor source. Native output-to-cursor mapping still requires actual IPC observation during authorized execution. No GUI or input execution performed.",
+  "sources": [
+    {
+      "path": "/home/hoskinson/.local/share/hypr-window-controls/qa/virtual_pointer.c",
+      "sha256": "81df29f1208435c5c3afe5b0157194a82fc822fcc773b1430d030b3232e307e4"
+    },
+    {
+      "path": "/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer.xml",
+      "sha256": "3ff6d540be0bc5228195bf072bde42117ea17945a5c2061add5d3cf97d6bb524"
+    },
+    {
+      "path": "/home/hoskinson/src/hyprland-motion-audit/src/protocols/VirtualPointer.cpp",
+      "sha256": "a07b12a920fe46beab3840245b818b474a376aa736b566069014d8eb4fd82fb1"
+    }
+  ],
+  "helperContract": "The move command passes integer x/y and argv width/height to motion_absolute unchanged, followed by frame and display roundtrip.",
+  "protocolContract": "x ranges from zero to x_extent, y from zero to y_extent.",
+  "compositorContract": "VirtualPointer.cpp checks nonzero extents and emits x/xExtent,y/yExtent normalized absolute coordinates.",
+  "fixtureContract": "Use exact physical-size/scale logical extents, send motion alone, retain actual hyprctl cursorpos observations before any button and refuse unless within 0.5 logical pixel.",
+  "compiledFixtureSHA256": "e74f73fbf86a7c30deb47d89a3cfe240b19c545c04b465986c430b35a50b92c8",
+  "priorFrozenManifest": {
+    "path": "/home/hoskinson/window-integration-qa/qt-modal-compat/frozen-inputs.json",
+    "sha256": "9480a4272be1aab894b144867732349a3faafc293c26623126f86eeb1b795ab4",
+    "inputs": 188,
+    "neverExecuted": true
+  }
+}

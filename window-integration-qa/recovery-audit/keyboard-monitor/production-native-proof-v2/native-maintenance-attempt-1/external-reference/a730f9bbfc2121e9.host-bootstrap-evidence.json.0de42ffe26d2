@@ -1,0 +1,65 @@
+{
+  "source": "/home/hoskinson/window-integration-qa/qt-modal-private-v4/attempt-1/report.json",
+  "sourceSHA256": "429f21bbc1991a4072fd615103f0396306489e0ee1f1127f51f6874dbad9b456",
+  "evidence": {
+    "runtime": "/run/user/1000/wqa/b4da",
+    "signature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790861778_523373298",
+    "compositorPID": 348649,
+    "sockets": [
+      {
+        "path": "/run/user/1000/wqa/b4da/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790861778_523373298/.socket.sock",
+        "uid": 1000,
+        "device": 84,
+        "inode": 223183
+      },
+      {
+        "path": "/run/user/1000/wqa/b4da/wayland-1",
+        "uid": 1000,
+        "device": 84,
+        "inode": 223182
+      }
+    ],
+    "ipcReadiness": [
+      {
+        "path": "/run/user/1000/wqa/b4da/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790861778_523373298/.socket.sock",
+        "socket": {
+          "path": "/run/user/1000/wqa/b4da/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790861778_523373298/.socket.sock",
+          "uid": 1000,
+          "device": 84,
+          "inode": 223183
+        },
+        "peer": {
+          "pid": 348649,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "request": "j/version",
+        "replyBytes": 714,
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "completeServerEOF": true,
+        "version": {
+          "branch": "v0.56.2",
+          "commit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+          "version": "0.56.2",
+          "dirty": false,
+          "commit_message": "[gha] Nix: update inputs",
+          "commit_date": "Wed Aug 5 14:13:21 2026",
+          "tag": "v0.56.2",
+          "commits": "7661",
+          "buildAquamarine": "0.15.0",
+          "buildHyprlang": "0.6.8",
+          "buildHyprutils": "0.14.1",
+          "buildHyprcursor": "0.1.13",
+          "buildHyprgraphics": "0.5.1",
+          "systemAquamarine": "0.15.0",
+          "systemHyprlang": "0.6.8",
+          "systemHyprutils": "0.14.2",
+          "systemHyprcursor": "0.1.13",
+          "systemHyprgraphics": "0.5.1",
+          "abiHash": "efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6",
+          "flags": []
+        }
+      }
+    ]
+  }
+}

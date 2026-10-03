@@ -1,0 +1,20 @@
+--- service-review-v10/test_native_runtime.py
++++ service-review-v11/test_native_runtime.py
+@@ -42,6 +42,17 @@
+         d=self.root/'hypr'/'chosen';d.mkdir(parents=True);paths=(d/'.socket.sock',self.root/'wayland-test');sockets=[]
+         for path in paths:
+             s=socket.socket(socket.AF_UNIX,socket.SOCK_STREAM);s.bind(str(path));s.listen(10);self.addCleanup(s.close);sockets.append(s)
++        stop=threading.Event();sockets[0].settimeout(.1)
++        def ipc():
++            while not stop.is_set():
++                try:c,_=sockets[0].accept()
++                except socket.timeout:continue
++                except OSError:return
++                with c:
++                    request=c.recv(1024)
++                    if request==b'j/version':c.sendall(b'{"tag":"fixture-version"}')
++        t=threading.Thread(target=ipc,daemon=True);t.start()
++        self.addCleanup(lambda:(stop.set(),t.join(1)))
+         return paths,sockets
+     def env(self):return {'XDG_RUNTIME_DIR':str(self.root),'HYPRLAND_INSTANCE_SIGNATURE':'chosen','WAYLAND_DISPLAY':'wayland-test'}
+     def test_actual_two_socket_peers_match_selected_pid_start(self):

@@ -1,0 +1,353 @@
+{
+  "observation": {
+    "allReadFormatBytesEqual": true,
+    "bufferHeight": 360,
+    "bufferWidth": 480,
+    "controls": [],
+    "digest": "61820e6803b438f186795f00d4ac8757beccc874aa93367bad6ac6582dff4834",
+    "encoding": "premultiplied-RGBA8-top-left",
+    "event": "ownedCausalReadback",
+    "generation": 14,
+    "kind": "member-prefix",
+    "logicalOutput": {
+      "height": 240,
+      "width": 320,
+      "x": 320,
+      "y": 0
+    },
+    "members": [
+      {
+        "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+        "pid": 1416659,
+        "rectangle": {
+          "height": 80,
+          "width": 96,
+          "x": 272,
+          "y": 32
+        },
+        "stableId": "abc1"
+      },
+      {
+        "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+        "pid": 1416660,
+        "rectangle": {
+          "height": 48,
+          "width": 72,
+          "x": 304,
+          "y": 56
+        },
+        "stableId": "abc2"
+      },
+      {
+        "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+        "pid": 1416661,
+        "rectangle": {
+          "height": 32,
+          "width": 48,
+          "x": 328,
+          "y": 68
+        },
+        "stableId": "abc3"
+      }
+    ],
+    "nativeAuthority": false,
+    "nativeBytesSHA256": "b1839857f06b689267257fcf1a9798608136ea3f4eab3dcf87fee0bb79b136e5",
+    "nativeFormat": 32993,
+    "nativeRGBAFilename": "causal-2-14-3-native-rgba.png",
+    "nativeRGBASHA256": "46494c5bf25bb8efefd33e3d485bcb370f02d4a006d079ce2ec619ef8a9324e0",
+    "nativeType": 5121,
+    "observedPrefixCount": 1,
+    "output": "ORACLE-SECOND",
+    "pid": 1416659,
+    "prefixCount": 1,
+    "prefixMembers": [
+      {
+        "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+        "pid": 1416659,
+        "rectangle": {
+          "height": 80,
+          "width": 96,
+          "x": 272,
+          "y": 32
+        },
+        "stableId": "abc1"
+      }
+    ],
+    "prefixTexture": 10,
+    "presentationProof": false,
+    "progress": 0,
+    "readError": 0,
+    "readFramebuffer": 0,
+    "readTargetCopy": {
+      "attachedTexture": 0,
+      "attachmentType": 0,
+      "blend": false,
+      "extentUniform": [
+        480,
+        360
+      ],
+      "framebuffer": 0,
+      "inspectionError": 0,
+      "magFilter": 9728,
+      "minFilter": 9728,
+      "program": 6,
+      "texture": 10,
+      "unit": 1,
+      "wrapS": 33071,
+      "wrapT": 33071
+    },
+    "rgbaFilename": "causal-2-14-3-rgba.png",
+    "rgbaSHA256": "46494c5bf25bb8efefd33e3d485bcb370f02d4a006d079ce2ec619ef8a9324e0",
+    "sequence": "2",
+    "stableId": "abc1",
+    "token": "abcdef123456-1"
+  },
+  "comparison": {
+    "nativeAuthority": false,
+    "presentationProofForPrefix": false,
+    "fullRGBACompared": true,
+    "readFormatCompleteEquality": true,
+    "RGBA": {
+      "passed": true,
+      "pixelsCompared": 172800,
+      "channelsCompared": 691200,
+      "tolerance": 1,
+      "badPixels": 0,
+      "badChannels": 0,
+      "maxChannelError": 0,
+      "firstFailures": [],
+      "actualSHA256": "46494c5bf25bb8efefd33e3d485bcb370f02d4a006d079ce2ec619ef8a9324e0",
+      "expectedSHA256": "46494c5bf25bb8efefd33e3d485bcb370f02d4a006d079ce2ec619ef8a9324e0"
+    },
+    "nativeRGBA": {
+      "passed": true,
+      "pixelsCompared": 172800,
+      "channelsCompared": 691200,
+      "tolerance": 1,
+      "badPixels": 0,
+      "badChannels": 0,
+      "maxChannelError": 0,
+      "firstFailures": [],
+      "actualSHA256": "46494c5bf25bb8efefd33e3d485bcb370f02d4a006d079ce2ec619ef8a9324e0",
+      "expectedSHA256": "46494c5bf25bb8efefd33e3d485bcb370f02d4a006d079ce2ec619ef8a9324e0"
+    },
+    "tolerance": 1
+  },
+  "targetBinding": {
+    "sequence": "2",
+    "output": "ORACLE-SECOND",
+    "generation": 14,
+    "kind": "member-prefix",
+    "observedPrefixCount": 1,
+    "prefixTexture": 10,
+    "readFramebuffer": 0,
+    "actualCausalTargetBound": true,
+    "pixelProof": false,
+    "nativeAuthority": false
+  },
+  "binding": {
+    "fullReadback": {
+      "bufferHeight": 360,
+      "bufferWidth": 480,
+      "digest": "61820e6803b438f186795f00d4ac8757beccc874aa93367bad6ac6582dff4834",
+      "eglConfig": {
+        "alpha": 8,
+        "blue": 8,
+        "buffer": 32,
+        "colorBufferType": 12430,
+        "configId": 51,
+        "green": 8,
+        "nativeVisualId": 875713089,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "eglSurface": {
+        "height": 360,
+        "width": 480
+      },
+      "encoding": "premultiplied-RGBA8-top-left",
+      "event": "ownedFramebufferReadback",
+      "filename": "owned-2-14.png",
+      "generation": 14,
+      "glBuffer": {
+        "alpha": 8,
+        "blue": 8,
+        "framebuffer": 0,
+        "green": 8,
+        "readFormat": 32993,
+        "readType": 5121,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "members": [
+        {
+          "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+          "pid": 1416659,
+          "rectangle": {
+            "height": 80,
+            "width": 96,
+            "x": 272,
+            "y": 32
+          },
+          "stableId": "abc1"
+        },
+        {
+          "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+          "pid": 1416660,
+          "rectangle": {
+            "height": 48,
+            "width": 72,
+            "x": 304,
+            "y": 56
+          },
+          "stableId": "abc2"
+        },
+        {
+          "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+          "pid": 1416661,
+          "rectangle": {
+            "height": 32,
+            "width": 48,
+            "x": 328,
+            "y": 68
+          },
+          "stableId": "abc3"
+        }
+      ],
+      "nativeAuthority": false,
+      "output": "ORACLE-SECOND",
+      "pid": 1416659,
+      "presentationProof": false,
+      "progress": 0,
+      "rawSHA256": "be040326d119090baa22377995bfd0cba5329d76ab419d4ee1ef87eb96d3d265",
+      "readError": 0,
+      "sequence": "2",
+      "stableId": "abc1",
+      "token": "abcdef123456-1"
+    },
+    "swap": {
+      "batchNs": "102327579744284",
+      "bufferHeight": 360,
+      "bufferWidth": 480,
+      "digest": "61820e6803b438f186795f00d4ac8757beccc874aa93367bad6ac6582dff4834",
+      "drawDoneNs": "102327603516181",
+      "drawStartedNs": "102327579744405",
+      "event": "swap",
+      "generation": 14,
+      "lastFrameCallbackNs": "102327579704224",
+      "members": [
+        {
+          "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+          "pid": 1416659,
+          "rectangle": {
+            "height": 80,
+            "width": 96,
+            "x": 272,
+            "y": 32
+          },
+          "stableId": "abc1"
+        },
+        {
+          "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+          "pid": 1416660,
+          "rectangle": {
+            "height": 48,
+            "width": 72,
+            "x": 304,
+            "y": 56
+          },
+          "stableId": "abc2"
+        },
+        {
+          "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+          "pid": 1416661,
+          "rectangle": {
+            "height": 32,
+            "width": 48,
+            "x": 328,
+            "y": 68
+          },
+          "stableId": "abc3"
+        }
+      ],
+      "output": "ORACLE-SECOND",
+      "pid": 1416659,
+      "progress": 0,
+      "rectangle": {
+        "height": 80,
+        "width": 104,
+        "x": 272,
+        "y": 32
+      },
+      "sequence": "2",
+      "stableId": "abc1",
+      "success": true,
+      "swapReturnedNs": "102327805963287",
+      "swapStartedNs": "102327805923263",
+      "token": "abcdef123456-1",
+      "uploadCount": 3
+    },
+    "presented": {
+      "accepted": true,
+      "bufferHeight": 360,
+      "bufferWidth": 480,
+      "digest": "61820e6803b438f186795f00d4ac8757beccc874aa93367bad6ac6582dff4834",
+      "endpoint": false,
+      "event": "presented",
+      "feedbackDeliveredNs": "102327806701817",
+      "generation": 14,
+      "members": [
+        {
+          "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+          "pid": 1416659,
+          "rectangle": {
+            "height": 80,
+            "width": 96,
+            "x": 272,
+            "y": 32
+          },
+          "stableId": "abc1"
+        },
+        {
+          "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+          "pid": 1416660,
+          "rectangle": {
+            "height": 48,
+            "width": 72,
+            "x": 304,
+            "y": 56
+          },
+          "stableId": "abc2"
+        },
+        {
+          "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+          "pid": 1416661,
+          "rectangle": {
+            "height": 32,
+            "width": 48,
+            "x": 328,
+            "y": 68
+          },
+          "stableId": "abc3"
+        }
+      ],
+      "output": "ORACLE-SECOND",
+      "outputSequence": "0",
+      "pid": 1416659,
+      "progress": 0,
+      "rectangle": {
+        "height": 80,
+        "width": 104,
+        "x": 272,
+        "y": 32
+      },
+      "sequence": "2",
+      "stableId": "abc1",
+      "submittedNs": "102327603518757",
+      "timestampNs": "102327806534199",
+      "token": "abcdef123456-1"
+    }
+  }
+}

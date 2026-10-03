@@ -1,0 +1,9389 @@
+{
+  "kind": "private native bridge/official Orca on non-AT-SPI Foot",
+  "checks": [
+    {
+      "name": "private config errors absent",
+      "pass_": true
+    },
+    {
+      "name": "actual official reader predates service in Legacy",
+      "pass_": true,
+      "reader": {
+        "time": 64628.231896554,
+        "epoch": 0,
+        "appliedEpoch": -1,
+        "owner": "",
+        "backend": "AtspiDeviceLegacy",
+        "watch": true,
+        "full": false,
+        "paused": false,
+        "learn": false,
+        "commands": [
+          [
+            "advance_live_politeness",
+            false,
+            true,
+            false
+          ],
+          [
+            "appPreferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "bypass_mode_toggle",
+            true,
+            true,
+            false
+          ],
+          [
+            "changeNumberStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_next_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_previous_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_buddy_typing",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_message_histories",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_room_name_prefix",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_atspi_app_cache",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "container_end",
+            false,
+            false,
+            false
+          ],
+          [
+            "container_start",
+            false,
+            false,
+            false
+          ],
+          [
+            "contractedBrailleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleCapitalizationStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleDebugLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleKeyEchoHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSettingsProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSpeakingPunctuationLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSynthesizerHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_browse_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_focus_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "end_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "end_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "enterLearnModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findNextHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findPreviousHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewAppendHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewCopyHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewSayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewToggleRestrictHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "getStatusBarHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "getTitleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "last_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "leftClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "list_blockquotes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_checkboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_clickables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_comboboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_entries",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_form_fields",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_iframes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_images",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_landmarks",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_large_objects",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_list_items",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_lists",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_paragraphs",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_radio_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_tables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_unvisited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_visited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "object_navigator_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_next",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_perform_action",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_previous",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_toggle_simplify",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "panBrailleLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "panBrailleRightHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "preferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentCurrentProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentDateHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentSizeAndPositionHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentTimeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_battery_status",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cell_formula",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_clipboard_contents",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cpu_and_memory_usage",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_default_button",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_last_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "previous_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "readCharAttributesHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewAboveHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBelowHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBottomLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentAccessibleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndOfLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewHomeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewUnicodeCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "rightClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "routePointerToItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "sayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "showContentsHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "show_actions_list",
+            true,
+            true,
+            false
+          ],
+          [
+            "show_notification_list",
+            false,
+            true,
+            false
+          ],
+          [
+            "shutdownHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "start_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "start_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "structural_navigator_mode_cycle",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_beginning_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_bottom_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_end_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_first",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_last",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_left",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_right",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_top_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_navigator_toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleFlatReviewModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleMouseReviewHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSilenceSpeechHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleSpeakingIndentationJustificationHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSpeechVerbosityHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleTableCellReadModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_braille_monitor",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_keyboard_layout",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_layout_mode",
+            false,
+            false,
+            false
+          ],
+          [
+            "toggle_live_region_presentation",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_live_region_support",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_presentation_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_sleep_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_speech_monitor",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIBasicHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIDetailedHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmILinkHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "whereAmISelectionHandler",
+            true,
+            true,
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "name": "registration caller A starts before bridge",
+      "pass_": true,
+      "client": {
+        "ready": true,
+        "name": "org.omarchy.NativeLifecycle.KeyboardMonitor",
+        "uniqueName": ":1.4"
+      }
+    },
+    {
+      "name": "registration caller B starts before bridge",
+      "pass_": true,
+      "client": {
+        "ready": true,
+        "name": "org.omarchy.NativeLifecycle.KeyboardMonitor",
+        "uniqueName": ":1.5"
+      }
+    },
+    {
+      "name": "owner churn overlaps native adoption interval",
+      "pass_": true,
+      "start": 64628.376398799,
+      "end": 64628.429231977
+    },
+    {
+      "name": "actual Legacy reader transitions through public factory",
+      "pass_": true,
+      "reader": {
+        "time": 64628.547025785,
+        "epoch": 1,
+        "appliedEpoch": 1,
+        "owner": ":1.6",
+        "backend": "AtspiDeviceA11yManager",
+        "watch": true,
+        "full": false,
+        "paused": false,
+        "learn": false,
+        "commands": [
+          [
+            "advance_live_politeness",
+            false,
+            true,
+            false
+          ],
+          [
+            "appPreferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "bypass_mode_toggle",
+            true,
+            true,
+            false
+          ],
+          [
+            "changeNumberStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_next_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_previous_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_buddy_typing",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_message_histories",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_room_name_prefix",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_atspi_app_cache",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "container_end",
+            false,
+            false,
+            false
+          ],
+          [
+            "container_start",
+            false,
+            false,
+            false
+          ],
+          [
+            "contractedBrailleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleCapitalizationStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleDebugLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleKeyEchoHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSettingsProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSpeakingPunctuationLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSynthesizerHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_browse_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_focus_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "end_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "end_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "enterLearnModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findNextHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findPreviousHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewAppendHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewCopyHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewSayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewToggleRestrictHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "getStatusBarHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "getTitleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "last_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "leftClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "list_blockquotes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_checkboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_clickables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_comboboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_entries",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_form_fields",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_iframes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_images",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_landmarks",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_large_objects",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_list_items",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_lists",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_paragraphs",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_radio_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_tables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_unvisited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_visited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "object_navigator_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_next",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_perform_action",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_previous",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_toggle_simplify",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "panBrailleLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "panBrailleRightHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "preferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentCurrentProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentDateHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentSizeAndPositionHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentTimeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_battery_status",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cell_formula",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_clipboard_contents",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cpu_and_memory_usage",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_default_button",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_last_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "previous_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "readCharAttributesHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewAboveHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBelowHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBottomLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentAccessibleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndOfLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewHomeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewUnicodeCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "rightClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "routePointerToItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "sayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "showContentsHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "show_actions_list",
+            true,
+            true,
+            false
+          ],
+          [
+            "show_notification_list",
+            false,
+            true,
+            false
+          ],
+          [
+            "shutdownHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "start_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "start_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "structural_navigator_mode_cycle",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_beginning_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_bottom_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_end_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_first",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_last",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_left",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_right",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_top_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_navigator_toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleFlatReviewModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleMouseReviewHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSilenceSpeechHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleSpeakingIndentationJustificationHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSpeechVerbosityHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleTableCellReadModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_braille_monitor",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_keyboard_layout",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_layout_mode",
+            false,
+            false,
+            false
+          ],
+          [
+            "toggle_live_region_presentation",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_live_region_support",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_presentation_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_sleep_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_speech_monitor",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIBasicHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIDetailedHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmILinkHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "whereAmISelectionHandler",
+            true,
+            true,
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "name": "startup registration old owner denied",
+      "pass_": true
+    },
+    {
+      "name": "startup current owner explicitly watches",
+      "pass_": true
+    },
+    {
+      "name": "global command after startup adoption enters real learn mode",
+      "pass_": true,
+      "utterances": [
+        {
+          "time": 64628.886137146,
+          "kind": "speech",
+          "text": "Entering learn mode.  Press any key to hear its function.  To view the screen reader's documentation, press F1. To get a list of the screen reader's shortcuts, press F2. To exit learn mode, press the escape key.",
+          "voice": {
+            "established": false
+          }
+        }
+      ],
+      "reader": {
+        "time": 64629.248068283,
+        "epoch": 1,
+        "appliedEpoch": 1,
+        "owner": ":1.6",
+        "backend": "AtspiDeviceA11yManager",
+        "watch": true,
+        "full": true,
+        "paused": false,
+        "learn": true,
+        "commands": [
+          [
+            "advance_live_politeness",
+            false,
+            true,
+            false
+          ],
+          [
+            "appPreferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "bypass_mode_toggle",
+            true,
+            true,
+            false
+          ],
+          [
+            "changeNumberStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_next_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_previous_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_buddy_typing",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_message_histories",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_room_name_prefix",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_atspi_app_cache",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "container_end",
+            false,
+            false,
+            false
+          ],
+          [
+            "container_start",
+            false,
+            false,
+            false
+          ],
+          [
+            "contractedBrailleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleCapitalizationStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleDebugLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleKeyEchoHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSettingsProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSpeakingPunctuationLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSynthesizerHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_browse_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_focus_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "end_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "end_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "enterLearnModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findNextHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findPreviousHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewAppendHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewCopyHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewSayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewToggleRestrictHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "getStatusBarHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "getTitleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "last_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "leftClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "list_blockquotes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_checkboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_clickables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_comboboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_entries",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_form_fields",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_iframes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_images",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_landmarks",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_large_objects",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_list_items",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_lists",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_paragraphs",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_radio_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_tables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_unvisited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_visited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "object_navigator_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_next",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_perform_action",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_previous",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_toggle_simplify",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "panBrailleLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "panBrailleRightHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "preferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentCurrentProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentDateHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentSizeAndPositionHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentTimeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_battery_status",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cell_formula",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_clipboard_contents",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cpu_and_memory_usage",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_default_button",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_last_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "previous_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "readCharAttributesHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewAboveHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBelowHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBottomLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentAccessibleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndOfLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewHomeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewUnicodeCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "rightClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "routePointerToItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "sayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "showContentsHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "show_actions_list",
+            true,
+            true,
+            false
+          ],
+          [
+            "show_notification_list",
+            false,
+            true,
+            false
+          ],
+          [
+            "shutdownHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "start_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "start_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "structural_navigator_mode_cycle",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_beginning_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_bottom_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_end_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_first",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_last",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_left",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_right",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_top_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_navigator_toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleFlatReviewModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleMouseReviewHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSilenceSpeechHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleSpeakingIndentationJustificationHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSpeechVerbosityHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleTableCellReadModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_braille_monitor",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_keyboard_layout",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_layout_mode",
+            false,
+            false,
+            false
+          ],
+          [
+            "toggle_live_region_presentation",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_live_region_support",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_presentation_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_sleep_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_speech_monitor",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIBasicHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIDetailedHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmILinkHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "whereAmISelectionHandler",
+            true,
+            true,
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "name": "startup native command has exact directed down up packets",
+      "pass_": true,
+      "packets": [
+        {
+          "time": 64628.796170561,
+          "released": false,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        },
+        {
+          "time": 64628.875539363,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 64628.955541811,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 64629.035873666,
+          "released": true,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        }
+      ]
+    },
+    {
+      "name": "startup real command consumes terminal bytes",
+      "pass_": true,
+      "before": "",
+      "after": ""
+    },
+    {
+      "name": "held key PrepareUnload false",
+      "pass_": true,
+      "state": {
+        "retiring": false,
+        "unloadQuiescent": false,
+        "registrations": 2,
+        "clients": 2,
+        "devices": 1,
+        "quiescent": false,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "false retirement preserves explicit subscriptions",
+      "pass_": true,
+      "state": {
+        "retiring": false,
+        "unloadQuiescent": false,
+        "registrations": 2,
+        "clients": 2,
+        "devices": 1,
+        "quiescent": false,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "dirty Caps parity rejects unload",
+      "pass_": true,
+      "state": {
+        "retiring": false,
+        "unloadQuiescent": false,
+        "registrations": 2,
+        "clients": 2,
+        "devices": 1,
+        "quiescent": true,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "dirty Num parity rejects unload",
+      "pass_": true,
+      "state": {
+        "retiring": false,
+        "unloadQuiescent": false,
+        "registrations": 2,
+        "clients": 2,
+        "devices": 1,
+        "quiescent": true,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "real Caps Num reconciliation restores unload quiescence",
+      "pass_": true,
+      "state": {
+        "retiring": false,
+        "unloadQuiescent": true,
+        "registrations": 2,
+        "clients": 2,
+        "devices": 1,
+        "quiescent": true,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "quiescent real learn-mode service retirement succeeds",
+      "pass_": true
+    },
+    {
+      "name": "retired service rejects watch",
+      "pass_": true,
+      "result": {
+        "id": 53,
+        "pass": false,
+        "error": "GLib.Error('GDBus.Error:org.freedesktop.a11y.ServiceRetired: service incarnation is not accepting subscriptions', 'g-io-error-quark', 36)"
+      }
+    },
+    {
+      "name": "retired service rejects grab",
+      "pass_": true,
+      "result": {
+        "id": 54,
+        "pass": false,
+        "error": "GLib.Error('GDBus.Error:org.freedesktop.a11y.ServiceRetired: service incarnation is not accepting subscriptions', 'g-io-error-quark', 36)"
+      }
+    },
+    {
+      "name": "retired service rejects grabs",
+      "pass_": true,
+      "result": {
+        "id": 55,
+        "pass": false,
+        "error": "GLib.Error('GDBus.Error:org.freedesktop.a11y.ServiceRetired: service incarnation is not accepting subscriptions', 'g-io-error-quark', 36)"
+      }
+    },
+    {
+      "name": "retired service rejects unwatch",
+      "pass_": true,
+      "result": {
+        "id": 56,
+        "pass": false,
+        "error": "GLib.Error('GDBus.Error:org.freedesktop.a11y.ServiceRetired: service incarnation is not accepting subscriptions', 'g-io-error-quark', 36)"
+      }
+    },
+    {
+      "name": "retired service rejects ungrab",
+      "pass_": true,
+      "result": {
+        "id": 57,
+        "pass": false,
+        "error": "GLib.Error('GDBus.Error:org.freedesktop.a11y.ServiceRetired: service incarnation is not accepting subscriptions', 'g-io-error-quark', 36)"
+      }
+    },
+    {
+      "name": "retirement cannot recreate clients",
+      "pass_": true,
+      "state": {
+        "retiring": true,
+        "unloadQuiescent": true,
+        "registrations": 2,
+        "clients": 0,
+        "devices": 1,
+        "quiescent": true,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "actual service restart preserves requested learn full grab",
+      "pass_": true,
+      "reader": {
+        "time": 64630.853436267,
+        "epoch": 3,
+        "appliedEpoch": 3,
+        "owner": ":1.20",
+        "backend": "AtspiDeviceA11yManager",
+        "watch": true,
+        "full": true,
+        "paused": false,
+        "learn": true,
+        "commands": [
+          [
+            "advance_live_politeness",
+            false,
+            true,
+            false
+          ],
+          [
+            "appPreferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "bypass_mode_toggle",
+            true,
+            true,
+            false
+          ],
+          [
+            "changeNumberStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_next_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_previous_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_buddy_typing",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_message_histories",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_room_name_prefix",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_atspi_app_cache",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "container_end",
+            false,
+            false,
+            false
+          ],
+          [
+            "container_start",
+            false,
+            false,
+            false
+          ],
+          [
+            "contractedBrailleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleCapitalizationStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleDebugLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleKeyEchoHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSettingsProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSpeakingPunctuationLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSynthesizerHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_browse_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_focus_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "end_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "end_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "enterLearnModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findNextHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findPreviousHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewAppendHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewCopyHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewSayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewToggleRestrictHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "getStatusBarHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "getTitleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "last_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "leftClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "list_blockquotes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_checkboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_clickables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_comboboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_entries",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_form_fields",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_iframes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_images",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_landmarks",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_large_objects",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_list_items",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_lists",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_paragraphs",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_radio_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_tables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_unvisited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_visited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "object_navigator_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_next",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_perform_action",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_previous",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_toggle_simplify",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "panBrailleLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "panBrailleRightHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "preferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentCurrentProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentDateHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentSizeAndPositionHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentTimeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_battery_status",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cell_formula",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_clipboard_contents",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cpu_and_memory_usage",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_default_button",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_last_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "previous_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "readCharAttributesHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewAboveHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBelowHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBottomLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentAccessibleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndOfLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewHomeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewUnicodeCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "rightClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "routePointerToItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "sayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "showContentsHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "show_actions_list",
+            true,
+            true,
+            false
+          ],
+          [
+            "show_notification_list",
+            false,
+            true,
+            false
+          ],
+          [
+            "shutdownHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "start_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "start_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "structural_navigator_mode_cycle",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_beginning_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_bottom_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_end_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_first",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_last",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_left",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_right",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_top_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_navigator_toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleFlatReviewModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleMouseReviewHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSilenceSpeechHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleSpeakingIndentationJustificationHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSpeechVerbosityHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleTableCellReadModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_braille_monitor",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_keyboard_layout",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_layout_mode",
+            false,
+            false,
+            false
+          ],
+          [
+            "toggle_live_region_presentation",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_live_region_support",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_presentation_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_sleep_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_speech_monitor",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIBasicHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIDetailedHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmILinkHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "whereAmISelectionHandler",
+            true,
+            true,
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "name": "restart preserves active suspended command configuration",
+      "pass_": true,
+      "before": [
+        [
+          "advance_live_politeness",
+          false,
+          true,
+          false
+        ],
+        [
+          "appPreferencesSettingsHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "bypass_mode_toggle",
+          true,
+          true,
+          false
+        ],
+        [
+          "changeNumberStyleHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "chat_next_message",
+          false,
+          true,
+          false
+        ],
+        [
+          "chat_previous_message",
+          false,
+          true,
+          false
+        ],
+        [
+          "chat_toggle_buddy_typing",
+          false,
+          true,
+          false
+        ],
+        [
+          "chat_toggle_message_histories",
+          false,
+          true,
+          false
+        ],
+        [
+          "chat_toggle_room_name_prefix",
+          false,
+          true,
+          false
+        ],
+        [
+          "clear_atspi_app_cache",
+          false,
+          true,
+          false
+        ],
+        [
+          "clear_dynamic_column_headers_row",
+          true,
+          true,
+          false
+        ],
+        [
+          "clear_dynamic_row_headers_column",
+          true,
+          true,
+          false
+        ],
+        [
+          "container_end",
+          false,
+          false,
+          false
+        ],
+        [
+          "container_start",
+          false,
+          false,
+          false
+        ],
+        [
+          "contractedBrailleHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "cycleCapitalizationStyleHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "cycleDebugLevelHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "cycleKeyEchoHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "cycleSettingsProfileHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "cycleSpeakingPunctuationLevelHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "cycleSynthesizerHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "decreaseSpeechPitchHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "decreaseSpeechRateHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "decreaseSpeechVolumeHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "enable_sticky_browse_mode",
+          true,
+          true,
+          false
+        ],
+        [
+          "enable_sticky_focus_mode",
+          true,
+          true,
+          false
+        ],
+        [
+          "end_of_file",
+          false,
+          false,
+          false
+        ],
+        [
+          "end_of_line",
+          false,
+          false,
+          false
+        ],
+        [
+          "enterLearnModeHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "findHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "findNextHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "findPreviousHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "flatReviewAppendHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "flatReviewCopyHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "flatReviewSayAllHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "flatReviewToggleRestrictHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "getStatusBarHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "getTitleHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "increaseSpeechPitchHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "increaseSpeechRateHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "increaseSpeechVolumeHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "last_live_region",
+          false,
+          false,
+          false
+        ],
+        [
+          "leftClickReviewItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "list_blockquotes",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_buttons",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_checkboxes",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_clickables",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_comboboxes",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_entries",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_form_fields",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings_level_1",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings_level_2",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings_level_3",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings_level_4",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings_level_5",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings_level_6",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_iframes",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_images",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_landmarks",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_large_objects",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_links",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_list_items",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_lists",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_paragraphs",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_radio_buttons",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_tables",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_unvisited_links",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_visited_links",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_blockquote",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_button",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_character",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_checkbox",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_clickable",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_combobox",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_entry",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_form_field",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading_level_1",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading_level_2",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading_level_3",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading_level_4",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading_level_5",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading_level_6",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_iframe",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_image",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_landmark",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_large_object",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_line",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_link",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_list",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_list_item",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_live_region",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_paragraph",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_radio_button",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_separator",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_table",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_unvisited_link",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_visited_link",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_word",
+          false,
+          false,
+          false
+        ],
+        [
+          "object_navigator_down",
+          true,
+          true,
+          false
+        ],
+        [
+          "object_navigator_next",
+          true,
+          true,
+          false
+        ],
+        [
+          "object_navigator_perform_action",
+          true,
+          true,
+          false
+        ],
+        [
+          "object_navigator_previous",
+          true,
+          true,
+          false
+        ],
+        [
+          "object_navigator_toggle_simplify",
+          true,
+          true,
+          false
+        ],
+        [
+          "object_navigator_up",
+          true,
+          true,
+          false
+        ],
+        [
+          "panBrailleLeftHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "panBrailleRightHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "preferencesSettingsHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "presentCurrentProfileHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "presentDateHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "presentSizeAndPositionHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "presentTimeHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "present_battery_status",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_cell_formula",
+          true,
+          true,
+          false
+        ],
+        [
+          "present_clipboard_contents",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_cpu_and_memory_usage",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_default_button",
+          true,
+          true,
+          false
+        ],
+        [
+          "present_last_notification",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_next_live_region_message",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_next_notification",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_previous_live_region_message",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_previous_notification",
+          false,
+          true,
+          false
+        ],
+        [
+          "previous_blockquote",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_button",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_character",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_checkbox",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_clickable",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_combobox",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_entry",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_form_field",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading_level_1",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading_level_2",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading_level_3",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading_level_4",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading_level_5",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading_level_6",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_iframe",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_image",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_landmark",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_large_object",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_line",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_link",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_list",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_list_item",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_live_region",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_paragraph",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_radio_button",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_separator",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_table",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_unvisited_link",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_visited_link",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_word",
+          false,
+          false,
+          false
+        ],
+        [
+          "readCharAttributesHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewAboveHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewBelowHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewBottomLeftHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "reviewCurrentAccessibleHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewCurrentCharacterHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewCurrentItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewCurrentLineHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewEndHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewEndOfLineHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewHomeHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewNextCharacterHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewNextItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewNextLineHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewPhoneticCurrentItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewPhoneticCurrentLineHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewPreviousCharacterHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewPreviousItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewPreviousLineHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewSpellCurrentCharacterHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewSpellCurrentItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewSpellCurrentLineHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewUnicodeCurrentCharacterHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "rightClickReviewItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "routePointerToItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "sayAllHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "set_dynamic_column_headers_row",
+          true,
+          true,
+          false
+        ],
+        [
+          "set_dynamic_row_headers_column",
+          true,
+          true,
+          false
+        ],
+        [
+          "showContentsHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "show_actions_list",
+          true,
+          true,
+          false
+        ],
+        [
+          "show_notification_list",
+          false,
+          true,
+          false
+        ],
+        [
+          "shutdownHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "start_of_file",
+          false,
+          false,
+          false
+        ],
+        [
+          "start_of_line",
+          false,
+          false,
+          false
+        ],
+        [
+          "structural_navigator_mode_cycle",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_beginning_of_row",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_bottom_of_column",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_down",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_end_of_row",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_first",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_last",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_left",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_right",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_top_of_column",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_up",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_navigator_toggle_enabled",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggleFlatReviewModeHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggleMouseReviewHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "toggleSilenceSpeechHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggleSpeakingIndentationJustificationHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "toggleSpeechVerbosityHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggleTableCellReadModeHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggle_braille_monitor",
+          false,
+          true,
+          false
+        ],
+        [
+          "toggle_enabled",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggle_keyboard_layout",
+          false,
+          true,
+          false
+        ],
+        [
+          "toggle_layout_mode",
+          false,
+          false,
+          false
+        ],
+        [
+          "toggle_live_region_presentation",
+          false,
+          true,
+          false
+        ],
+        [
+          "toggle_live_region_support",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggle_presentation_mode",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggle_sleep_mode",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggle_speech_monitor",
+          true,
+          true,
+          false
+        ],
+        [
+          "whereAmIBasicHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "whereAmIDetailedHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "whereAmILinkHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "whereAmISelectionHandler",
+          true,
+          true,
+          false
+        ]
+      ],
+      "after": [
+        [
+          "advance_live_politeness",
+          false,
+          true,
+          false
+        ],
+        [
+          "appPreferencesSettingsHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "bypass_mode_toggle",
+          true,
+          true,
+          false
+        ],
+        [
+          "changeNumberStyleHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "chat_next_message",
+          false,
+          true,
+          false
+        ],
+        [
+          "chat_previous_message",
+          false,
+          true,
+          false
+        ],
+        [
+          "chat_toggle_buddy_typing",
+          false,
+          true,
+          false
+        ],
+        [
+          "chat_toggle_message_histories",
+          false,
+          true,
+          false
+        ],
+        [
+          "chat_toggle_room_name_prefix",
+          false,
+          true,
+          false
+        ],
+        [
+          "clear_atspi_app_cache",
+          false,
+          true,
+          false
+        ],
+        [
+          "clear_dynamic_column_headers_row",
+          true,
+          true,
+          false
+        ],
+        [
+          "clear_dynamic_row_headers_column",
+          true,
+          true,
+          false
+        ],
+        [
+          "container_end",
+          false,
+          false,
+          false
+        ],
+        [
+          "container_start",
+          false,
+          false,
+          false
+        ],
+        [
+          "contractedBrailleHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "cycleCapitalizationStyleHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "cycleDebugLevelHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "cycleKeyEchoHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "cycleSettingsProfileHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "cycleSpeakingPunctuationLevelHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "cycleSynthesizerHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "decreaseSpeechPitchHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "decreaseSpeechRateHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "decreaseSpeechVolumeHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "enable_sticky_browse_mode",
+          true,
+          true,
+          false
+        ],
+        [
+          "enable_sticky_focus_mode",
+          true,
+          true,
+          false
+        ],
+        [
+          "end_of_file",
+          false,
+          false,
+          false
+        ],
+        [
+          "end_of_line",
+          false,
+          false,
+          false
+        ],
+        [
+          "enterLearnModeHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "findHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "findNextHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "findPreviousHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "flatReviewAppendHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "flatReviewCopyHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "flatReviewSayAllHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "flatReviewToggleRestrictHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "getStatusBarHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "getTitleHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "increaseSpeechPitchHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "increaseSpeechRateHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "increaseSpeechVolumeHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "last_live_region",
+          false,
+          false,
+          false
+        ],
+        [
+          "leftClickReviewItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "list_blockquotes",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_buttons",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_checkboxes",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_clickables",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_comboboxes",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_entries",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_form_fields",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings_level_1",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings_level_2",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings_level_3",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings_level_4",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings_level_5",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_headings_level_6",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_iframes",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_images",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_landmarks",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_large_objects",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_links",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_list_items",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_lists",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_paragraphs",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_radio_buttons",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_tables",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_unvisited_links",
+          false,
+          false,
+          false
+        ],
+        [
+          "list_visited_links",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_blockquote",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_button",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_character",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_checkbox",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_clickable",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_combobox",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_entry",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_form_field",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading_level_1",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading_level_2",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading_level_3",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading_level_4",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading_level_5",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_heading_level_6",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_iframe",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_image",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_landmark",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_large_object",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_line",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_link",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_list",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_list_item",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_live_region",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_paragraph",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_radio_button",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_separator",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_table",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_unvisited_link",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_visited_link",
+          false,
+          false,
+          false
+        ],
+        [
+          "next_word",
+          false,
+          false,
+          false
+        ],
+        [
+          "object_navigator_down",
+          true,
+          true,
+          false
+        ],
+        [
+          "object_navigator_next",
+          true,
+          true,
+          false
+        ],
+        [
+          "object_navigator_perform_action",
+          true,
+          true,
+          false
+        ],
+        [
+          "object_navigator_previous",
+          true,
+          true,
+          false
+        ],
+        [
+          "object_navigator_toggle_simplify",
+          true,
+          true,
+          false
+        ],
+        [
+          "object_navigator_up",
+          true,
+          true,
+          false
+        ],
+        [
+          "panBrailleLeftHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "panBrailleRightHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "preferencesSettingsHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "presentCurrentProfileHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "presentDateHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "presentSizeAndPositionHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "presentTimeHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "present_battery_status",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_cell_formula",
+          true,
+          true,
+          false
+        ],
+        [
+          "present_clipboard_contents",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_cpu_and_memory_usage",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_default_button",
+          true,
+          true,
+          false
+        ],
+        [
+          "present_last_notification",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_next_live_region_message",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_next_notification",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_previous_live_region_message",
+          false,
+          true,
+          false
+        ],
+        [
+          "present_previous_notification",
+          false,
+          true,
+          false
+        ],
+        [
+          "previous_blockquote",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_button",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_character",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_checkbox",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_clickable",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_combobox",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_entry",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_form_field",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading_level_1",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading_level_2",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading_level_3",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading_level_4",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading_level_5",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_heading_level_6",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_iframe",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_image",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_landmark",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_large_object",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_line",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_link",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_list",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_list_item",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_live_region",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_paragraph",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_radio_button",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_separator",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_table",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_unvisited_link",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_visited_link",
+          false,
+          false,
+          false
+        ],
+        [
+          "previous_word",
+          false,
+          false,
+          false
+        ],
+        [
+          "readCharAttributesHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewAboveHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewBelowHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewBottomLeftHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "reviewCurrentAccessibleHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewCurrentCharacterHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewCurrentItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewCurrentLineHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewEndHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewEndOfLineHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewHomeHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewNextCharacterHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewNextItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewNextLineHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewPhoneticCurrentItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewPhoneticCurrentLineHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewPreviousCharacterHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewPreviousItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewPreviousLineHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewSpellCurrentCharacterHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewSpellCurrentItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewSpellCurrentLineHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "reviewUnicodeCurrentCharacterHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "rightClickReviewItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "routePointerToItemHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "sayAllHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "set_dynamic_column_headers_row",
+          true,
+          true,
+          false
+        ],
+        [
+          "set_dynamic_row_headers_column",
+          true,
+          true,
+          false
+        ],
+        [
+          "showContentsHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "show_actions_list",
+          true,
+          true,
+          false
+        ],
+        [
+          "show_notification_list",
+          false,
+          true,
+          false
+        ],
+        [
+          "shutdownHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "start_of_file",
+          false,
+          false,
+          false
+        ],
+        [
+          "start_of_line",
+          false,
+          false,
+          false
+        ],
+        [
+          "structural_navigator_mode_cycle",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_beginning_of_row",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_bottom_of_column",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_down",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_end_of_row",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_first",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_last",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_left",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_right",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_top_of_column",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_cell_up",
+          true,
+          true,
+          false
+        ],
+        [
+          "table_navigator_toggle_enabled",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggleFlatReviewModeHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggleMouseReviewHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "toggleSilenceSpeechHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggleSpeakingIndentationJustificationHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "toggleSpeechVerbosityHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggleTableCellReadModeHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggle_braille_monitor",
+          false,
+          true,
+          false
+        ],
+        [
+          "toggle_enabled",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggle_keyboard_layout",
+          false,
+          true,
+          false
+        ],
+        [
+          "toggle_layout_mode",
+          false,
+          false,
+          false
+        ],
+        [
+          "toggle_live_region_presentation",
+          false,
+          true,
+          false
+        ],
+        [
+          "toggle_live_region_support",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggle_presentation_mode",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggle_sleep_mode",
+          true,
+          true,
+          false
+        ],
+        [
+          "toggle_speech_monitor",
+          true,
+          true,
+          false
+        ],
+        [
+          "whereAmIBasicHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "whereAmIDetailedHandler",
+          true,
+          true,
+          false
+        ],
+        [
+          "whereAmILinkHandler",
+          false,
+          true,
+          false
+        ],
+        [
+          "whereAmISelectionHandler",
+          true,
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "name": "fixture watcher explicitly resubscribes after actual restart",
+      "pass_": true
+    },
+    {
+      "name": "replayed full grab receives real key and consumes bytes",
+      "pass_": true,
+      "before": "",
+      "after": ""
+    },
+    {
+      "name": "replayed full grab has exact native paired key packets",
+      "pass_": true,
+      "packets": [
+        {
+          "time": 64630.906117207,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 64630.956402178,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        }
+      ]
+    },
+    {
+      "name": "clean surviving device Caps Num enabled",
+      "pass_": true,
+      "devices": [
+        {
+          "address": "0x589ef96c9ca0",
+          "name": "wl_keyboard",
+          "rules": "",
+          "model": "",
+          "layout": "us",
+          "variant": "",
+          "options": "",
+          "active_layout_index": 0,
+          "active_keymap": "English (US)",
+          "capsLock": false,
+          "numLock": false,
+          "main": false
+        },
+        {
+          "address": "0x589efa32f9b0",
+          "name": "hl-virtual-keyboard-native-input",
+          "rules": "",
+          "model": "",
+          "layout": "us",
+          "variant": "",
+          "options": "",
+          "active_layout_index": 0,
+          "active_keymap": "English (US)",
+          "capsLock": true,
+          "numLock": true,
+          "main": true
+        }
+      ]
+    },
+    {
+      "name": "clean surviving virtual device permits normal retirement",
+      "pass_": true
+    },
+    {
+      "name": "surviving accepted Caps lock preserved without bridge",
+      "pass_": true,
+      "before": "",
+      "after": "41"
+    },
+    {
+      "name": "surviving accepted Caps Num preserved after reload",
+      "pass_": true,
+      "devices": [
+        {
+          "address": "0x589ef96c9ca0",
+          "name": "wl_keyboard",
+          "rules": "",
+          "model": "",
+          "layout": "us",
+          "variant": "",
+          "options": "",
+          "active_layout_index": 0,
+          "active_keymap": "English (US)",
+          "capsLock": false,
+          "numLock": false,
+          "main": false
+        },
+        {
+          "address": "0x589efa32f9b0",
+          "name": "hl-virtual-keyboard-native-input",
+          "rules": "",
+          "model": "",
+          "layout": "us",
+          "variant": "",
+          "options": "",
+          "active_layout_index": 0,
+          "active_keymap": "English (US)",
+          "capsLock": true,
+          "numLock": true,
+          "main": true
+        }
+      ]
+    },
+    {
+      "name": "same surviving device Caps bytes remain uppercase after reload",
+      "pass_": true
+    },
+    {
+      "name": "replayed selected command works after second restart",
+      "pass_": true
+    },
+    {
+      "name": "final private retirement quiescent",
+      "pass_": true
+    }
+  ],
+  "restoration": {
+    "originalHiddenFilesExactProcessAndState": true,
+    "frozenDependencies": true,
+    "keyboards": true,
+    "originalClients": true,
+    "originalClientStates": true,
+    "mainPlugins": true,
+    "focus": true,
+    "cursor": true,
+    "a11y": true,
+    "readerDisabled": true,
+    "catalogBytes": true,
+    "outputs": true,
+    "fixturesExited": true,
+    "configErrors": true
+  },
+  "nativeInputProved": true,
+  "widerPolicyInputProved": false,
+  "physicalHardwareProved": false,
+  "before": {
+    "files": {
+      "pid": 667402,
+      "instance": "yyaefmu6mt",
+      "processStart": "1275224",
+      "visible": false,
+      "publicSHA256": "f084cf1a9cd3ecfd38972157356a638a7c7ac85f81e158d00d34cb1d5d2d23fe",
+      "uiSHA256": "e86930348c5f26f410acc6e055f47c2ae11b99f09e8555d0b8144fb971da0dba"
+    },
+    "clientStates": [
+      {
+        "address": "0x5a02aee429f0",
+        "pid": 4007,
+        "stableId": "18000005",
+        "at": [
+          945,
+          284
+        ],
+        "size": [
+          386,
+          444
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "floating": true,
+        "monitor": 0
+      },
+      {
+        "address": "0x5a02b0cc9280",
+        "pid": 4311,
+        "stableId": "18000006",
+        "at": [
+          417,
+          71
+        ],
+        "size": [
+          1022,
+          890
+        ],
+        "workspace": {
+          "id": -98,
+          "name": "special:win-minimized"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "grouped": [],
+        "tags": [
+          "chromium-based-browser*"
+        ],
+        "floating": true,
+        "monitor": 0
+      },
+      {
+        "address": "0x5a02afa13e90",
+        "pid": 252010,
+        "stableId": "1800006a",
+        "at": [
+          26,
+          145
+        ],
+        "size": [
+          1002,
+          789
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "floating": true,
+        "monitor": 0
+      },
+      {
+        "address": "0x5a02afd20bd0",
+        "pid": 361074,
+        "stableId": "18000076",
+        "at": [
+          817,
+          206
+        ],
+        "size": [
+          700,
+          500
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "floating": true,
+        "monitor": 0
+      }
+    ],
+    "clients": [
+      [
+        "0x5a02aee429f0",
+        4007,
+        "18000005"
+      ],
+      [
+        "0x5a02b0cc9280",
+        4311,
+        "18000006"
+      ],
+      [
+        "0x5a02afd20bd0",
+        361074,
+        "18000076"
+      ],
+      [
+        "0x5a02afa13e90",
+        252010,
+        "1800006a"
+      ]
+    ],
+    "focus": [
+      "0x5a02afa13e90",
+      252010,
+      "1800006a"
+    ],
+    "cursor": {
+      "x": 527,
+      "y": 539
+    },
+    "a11y": {
+      "dev": 84,
+      "inode": 91312,
+      "connects": true
+    },
+    "readerStatus": "(<false>,)",
+    "catalogHashes": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    },
+    "catalogBackup": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/native-lifecycle-attempt-1/catalog-before.json"
+  },
+  "private": {
+    "pid": 3474773,
+    "signature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790842446_122317229",
+    "runtime": "/tmp/kbn-s8pkpoe3",
+    "config": "/tmp/kbn-s8pkpoe3/hyprland.lua"
+  },
+  "adoptionChurn": {
+    "loadStart": 64628.376398799,
+    "loadEnd": 64628.429231977,
+    "operations": [
+      {
+        "time": 64628.376993711,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.377848067,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.378417131,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.379029561,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.384756114,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.384995376,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.385174181,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.385777332,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.391817218,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.392362146,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.392899572,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.393699987,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.399948134,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.400724556,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.401660662,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.402779158,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.40849732,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.409103811,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.409656437,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.410156622,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.416028638,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.417276731,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.418040668,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.418844227,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.424910468,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.425517006,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.426025737,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.426976874,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.433022428,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.433786942,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.434287384,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.434995515,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.441399202,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.442184568,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.44278214,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.443750984,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.450036765,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.450793027,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.451199319,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.452370551,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.458572366,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.459064356,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.459601082,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.460774136,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.466796169,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.467267168,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.46764557,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.468758565,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.474795887,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.475257438,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.475688077,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.476588814,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.482710266,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.483350747,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.483746192,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.484655628,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.490821213,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.491483849,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.492139893,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.493283813,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.498975552,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.499483294,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.499825294,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.500760818,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.506971583,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.507433635,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.507847986,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.508773124,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.515047172,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.515456501,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.515764537,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.516672293,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.522976467,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.523480284,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.523735309,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.525126877,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.531212566,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.531897654,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.532389667,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.533230733,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.539234271,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.539792154,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.540179491,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.541100824,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.54721163,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.547671993,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.548101565,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.548671019,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.554370918,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.554801353,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.555177911,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.555853138,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.561779364,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.562229246,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.562535809,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.563328159,
+        "caller": ":1.4",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.569318259,
+        "caller": ":1.4",
+        "operation": "release"
+      },
+      {
+        "time": 64628.569789438,
+        "caller": ":1.5",
+        "operation": "claim"
+      },
+      {
+        "time": 64628.57039148,
+        "caller": ":1.5",
+        "operation": "release"
+      },
+      {
+        "time": 64628.571054021,
+        "caller": ":1.4",
+        "operation": "claim"
+      }
+    ]
+  },
+  "serviceRestartInputProved": true,
+  "reconnectEvents": [
+    {
+      "time": 64628.238041814,
+      "event": "reconnected",
+      "epoch": 0,
+      "owner": "",
+      "backend": "AtspiDeviceLegacy",
+      "full": false,
+      "paused": false,
+      "commands": 219
+    },
+    {
+      "time": 64628.446694784,
+      "event": "reconnected",
+      "epoch": 1,
+      "owner": ":1.6",
+      "backend": "AtspiDeviceA11yManager",
+      "full": false,
+      "paused": false,
+      "commands": 219
+    },
+    {
+      "time": 64630.737607114,
+      "event": "reconnected",
+      "epoch": 2,
+      "owner": "",
+      "backend": "AtspiDeviceLegacy",
+      "full": true,
+      "paused": false,
+      "commands": 219
+    },
+    {
+      "time": 64630.840022762,
+      "event": "reconnected",
+      "epoch": 3,
+      "owner": ":1.20",
+      "backend": "AtspiDeviceA11yManager",
+      "full": true,
+      "paused": false,
+      "commands": 219
+    },
+    {
+      "time": 64631.931713722,
+      "event": "reconnected",
+      "epoch": 4,
+      "owner": "",
+      "backend": "AtspiDeviceLegacy",
+      "full": false,
+      "paused": false,
+      "commands": 219
+    },
+    {
+      "time": 64632.200600929,
+      "event": "reconnected",
+      "epoch": 5,
+      "owner": ":1.22",
+      "backend": "AtspiDeviceA11yManager",
+      "full": false,
+      "paused": false,
+      "commands": 219
+    }
+  ],
+  "result": "pass",
+  "terminalBytes": "4141",
+  "catalogComparison": {
+    "/home/hoskinson/.config/omarchy/virtual-desktops.json": {
+      "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-settings.json": {
+      "expectedSHA256": null,
+      "actualSHA256": null,
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-order.json": {
+      "expectedSHA256": null,
+      "actualSHA256": null,
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-session-order.json": {
+      "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "exactBytes": true
+    }
+  },
+  "mainKeyboardComparison": {
+    "before": [
+      {
+        "address": "0x5a02b0b335a0",
+        "name": "video-bus",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d38ea0",
+        "name": "ideapad-extra-buttons",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d76090",
+        "name": "video-bus-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afcd3dd0",
+        "name": "ite-tech.-inc.-ite-device(8258)-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d8f5f0",
+        "name": "ite-tech.-inc.-ite-device(8258)-wireless-radio-control",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02ae1c49c0",
+        "name": "hda-intel-pch-headphone",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afb42100",
+        "name": "power-button",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02af2ea440",
+        "name": "power-button-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afaa1ad0",
+        "name": "at-translated-set-2-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b04bf700",
+        "name": "hl-virtual-keyboard-fcitx5",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": true
+      }
+    ],
+    "after": [
+      {
+        "address": "0x5a02b0b335a0",
+        "name": "video-bus",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d38ea0",
+        "name": "ideapad-extra-buttons",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d76090",
+        "name": "video-bus-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afcd3dd0",
+        "name": "ite-tech.-inc.-ite-device(8258)-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d8f5f0",
+        "name": "ite-tech.-inc.-ite-device(8258)-wireless-radio-control",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02ae1c49c0",
+        "name": "hda-intel-pch-headphone",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afb42100",
+        "name": "power-button",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02af2ea440",
+        "name": "power-button-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afaa1ad0",
+        "name": "at-translated-set-2-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b04bf700",
+        "name": "hl-virtual-keyboard-fcitx5",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": true
+      }
+    ]
+  },
+  "originalFilesComparison": {
+    "before": {
+      "pid": 667402,
+      "instance": "yyaefmu6mt",
+      "processStart": "1275224",
+      "visible": false,
+      "publicSHA256": "f084cf1a9cd3ecfd38972157356a638a7c7ac85f81e158d00d34cb1d5d2d23fe",
+      "uiSHA256": "e86930348c5f26f410acc6e055f47c2ae11b99f09e8555d0b8144fb971da0dba"
+    },
+    "after": {
+      "pid": 667402,
+      "instance": "yyaefmu6mt",
+      "processStart": "1275224",
+      "visible": false,
+      "publicSHA256": "f084cf1a9cd3ecfd38972157356a638a7c7ac85f81e158d00d34cb1d5d2d23fe",
+      "uiSHA256": "e86930348c5f26f410acc6e055f47c2ae11b99f09e8555d0b8144fb971da0dba"
+    }
+  }
+}

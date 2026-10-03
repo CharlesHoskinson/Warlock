@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="eo">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_setting_up_orca"/>
+    <title type="sort">1. Bonvenon al Orko</title>
+    <desc>Prezentante la ekranan leganton <app>Orko</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Bonvenon al Orko</title>
+  <p><app>Orko</app> estas libera, malferm-koda, fleksebla kaj etendebla ekrana leganto kiu provizas aliron al la grafika labortablo per parolo kaj refreŝigebla brajlo.</p>
+  <p><app>Orko</app> laboras kun aplikaĵoj kaj ilaroj kiuj subtenas la Interfacon de Helpa-Teknologia Servo-Provizanto (AT-SPI), kiu estas la ĉefa helpa-teknologia infrastrukturo por Linux kaj Solaris. Aplikaĵoj kaj ilaroj kiuj subtenas la AT-SPI inkluzivas Gtk+, Qt, Java Swing, LibreOffice, Gecko, WebKitGtk, kaj Chrome/Chromium.</p>
+  <section id="launching">
+    <title>Lanĉi <app>Orko</app></title>
+    <p>Por lanĉi <app>Orko</app>:</p>
+    <list>
+      <item>
+        <p>La metodo por agordi <app>Orko</app> por aŭtomate lanĉiĝi kiel via preferata ekrana leganto dependos de kiun labortablan medion vi uzas.</p>
+      </item>
+      <item>
+        <p>Por ŝalti/malŝalti <app>Orko</app> en GNOME, premu <keyseq><key>Super</key><key>Alt</key><key>S</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Tajpu <cmd>orca</cmd>, kune kun laŭvolaj parametroj, en terminalfenestro aŭ ene de la dialogo <gui>Ruli</gui> kaj poste premu <key>Return</key>.</p>
+      </item>
+    </list>
+  </section>
+    <section id="loadtime">
+      <title>Opcioj ĉe Ŝargado</title>
+      <p>La sekvaj opcioj povas esti specifitaj dum lanĉado de <app>Orko</app> en terminalfenestro aŭ ene de la dialogo <gui>Ruli</gui>:</p>
+      <list>
+        <item>
+          <p><cmd>-h</cmd>, <cmd>--help</cmd>: Montri la helpan mesaĝon</p>
+        </item>
+        <item>
+          <p><cmd>-v</cmd>, <cmd>--version</cmd>: Montri la version de <app>Orko</app></p>
+        </item>
+        <item>
+          <p><cmd>-s</cmd>, <cmd>--setup</cmd>: Agordi uzanto-preferojn</p>
+        </item>
+        <item>
+          <p><cmd>-u</cmd>, <cmd>--user-prefs=<em>dirname</em></cmd>: Uzi <em>dirname</em> kiel alternativan dosierujon por uzanto-preferoj</p>
+        </item>
+        <item>
+          <p><cmd>-e</cmd>, <cmd>--enable=<em>option</em></cmd>: Devigi uzon de opcio, kie la <em>option</em> povas esti unu el la sekvaj:</p>
+          <list>
+            <item><p><cmd>speech</cmd></p></item>
+            <item><p><cmd>braille</cmd></p></item>
+            <item><p><cmd>braille-monitor</cmd></p></item>
+          </list>
+        </item>
+        <item>
+          <p><cmd>-d</cmd>, <cmd>--disable=<em>opcio</em></cmd>: Malebligi la uzadon de opcio, kie la <em>opcio</em> povas esti unu el la sekvaj:</p>
+          <list>
+            <item><p><cmd>speech</cmd></p></item>
+            <item><p><cmd>braille</cmd></p></item>
+            <item><p><cmd>braille-monitor</cmd></p></item>
+          </list>
+        </item>
+        <item>
+            <p><cmd>-p</cmd>, <cmd>--profile=<em>dosiernomo</em></cmd>: Importi profilon el donita <app>Orko</app> profildosiero</p>
+        </item>
+        <item>
+          <p><cmd>-r</cmd>, <cmd>--replace</cmd>: Anstataŭigi nuntempe funkciantan <app>Orko</app></p>
+        </item>
+        <item>
+          <p><cmd>-l</cmd>, <cmd>--list-apps</cmd>: Presi la konatajn ruliĝantajn aplikaĵojn</p>
+        </item>
+        <item>
+          <p><cmd>--debug</cmd>: Sendi sencimigan eliron al debug-YYYY-MM-DD-HH:MM:SS.out</p>
+        </item>
+        <item>
+          <p><cmd>--debug-file=<em>dosiernomo</em></cmd>: Sendi sencimigan eliron al la specifita dosiero</p>
+        </item>
+      </list>
+    </section>
+
+</page>

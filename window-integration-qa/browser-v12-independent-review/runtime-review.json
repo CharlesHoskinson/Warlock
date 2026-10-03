@@ -1,0 +1,52 @@
+{
+  "result": "source-review-pass",
+  "nativeAccepted": false,
+  "nativeExecuted": false,
+  "mainWrites": false,
+  "rootSourcesUnchanged": true,
+  "sourceSHA256": {
+    "V12_CONTRACT.md": "17793c9015356f9aa28e14e86d0c838d65bce87dfbaffa0c333fd78ece6dfcf2",
+    "runtime_metrics.qnt": "0f15611bd7fd3f54b938a2d2bd09e63bd2b07f3f41900512da91efcbd516887d",
+    "runtime_metrics_test.qnt": "ddfab8ac860b977939e6e89fb3755af2185641135e478bc3dcda62dc159b5a5e",
+    "metrics-formal-identity-before-implementation.json": "67877ce9b763fbf9271716037411bb0353ff1b74d0958bb3d981bbdd8dcf4749",
+    "owned_metrics_data.py": "eb65d3c17e0875c07a300ab2f4d65595d1dc71f65c90f6296869cea8b2ea7f74",
+    "test_owned_metrics_data.py": "1a02acc6b2ffa0d001b835c1bda76f98bef1d1cbda609e1e14e477fdbb067903",
+    "runtime_inputs.py": "4b18ec031e0e15f7f8a5c225a70c812e38c5d47f2638c6904459f012b80f7356",
+    "mapping_evidence.py": "29560e771758b740121f1041212f79fb94c387245c8d6d6111e14b8f4febc436",
+    "private_session.py": "4351a20bb62645df2a8b41972d7de692039eef2c079bd2f6533340315d9300e4",
+    "METRICS_SOURCE_REVIEW.md": "2f31658ffc9388a1f44b89d58acc3b8e73efbb1d51741539e397830636add27f"
+  },
+  "formalNamedCases": 50,
+  "formalRandomTraces": 2000,
+  "formalMaxSteps": 100,
+  "tests": {
+    "command": [
+      "/usr/bin/python3",
+      "-m",
+      "unittest",
+      "test_owned_metrics_data"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "...............................\n----------------------------------------------------------------------\nRan 31 tests in 0.632s\n\nOK\n"
+  },
+  "reviewedProperties": [
+    "explicit target/noOPath and immutable identity tokens",
+    "epoch invalidation and verify/confirm replacement coverage",
+    "two complete raw/error samples precede acceptance",
+    "one matching root FD with exact regular/full0600/uid/nlink0/4MiB/O_RDWR/noOPath flags/device/inode/mount/target",
+    "exact runtime/profile/parent objects and confirmed parent retained across phases",
+    "fresh root/compositor VMA and executable alias checks plus complete captured owned batch",
+    "captured root PID/start/raw maps hash/exact line classifier binding",
+    "absence/new candidate transition refusal",
+    "confirm revokes first; missing/replaced VMA or FD and partial/changed proofs stay unusable",
+    "explicit accepted+confirmed+usable success gate before caller returns",
+    "strict generic disk/code/original Files source/input/lifecycle gates retained"
+  ],
+  "limits": [
+    "bounded observed owned snapshots; no continuous/global unchanged-object proof",
+    "mutable contents/timestamps/FD position excluded",
+    "classification during ordinary disk validation is provisional; only post-disk confirmation permits input",
+    "no source-branch/histogram semantic/native focus acceptance from this review"
+  ]
+}

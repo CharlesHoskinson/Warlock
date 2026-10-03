@@ -1,0 +1,560 @@
+{
+  "kind": "private session bus ABI with actual official Orca factory and public AT-SPI clients",
+  "nativeInputProved": false,
+  "checks": [
+    {
+      "name": "default no subscriptions and reader state false",
+      "pass_": true
+    },
+    {
+      "name": "unregistered sender denied",
+      "pass_": true
+    },
+    {
+      "name": "independent unique callers registered",
+      "pass_": true,
+      "registrations": {
+        "clients": {
+          ":1.2": {
+            "registrations": [
+              "org.gnome.Orca.KeyboardMonitor"
+            ],
+            "watched": true,
+            "grabbed": false,
+            "modifiers": [
+              65509
+            ],
+            "keystrokes": [
+              [
+                104,
+                0
+              ],
+              [
+                104,
+                16
+              ],
+              [
+                104,
+                2
+              ],
+              [
+                104,
+                18
+              ]
+            ]
+          },
+          ":1.3": {
+            "registrations": [
+              "org.example.ABIReader.KeyboardMonitor"
+            ],
+            "watched": true,
+            "grabbed": false,
+            "modifiers": [
+              65509
+            ],
+            "keystrokes": [
+              [
+                104,
+                0
+              ],
+              [
+                104,
+                16
+              ],
+              [
+                104,
+                2
+              ],
+              [
+                104,
+                18
+              ]
+            ]
+          }
+        },
+        "readerEnabled": false,
+        "nativeInputImplemented": false
+      }
+    },
+    {
+      "name": "official Orca factory selects DeviceA11yManager",
+      "pass_": true,
+      "device": {
+        "appID": "org.gnome.Orca",
+        "deviceType": "AtspiDeviceA11yManager",
+        "officialOrcaFactory": true,
+        "events": [],
+        "nativeInputClaim": false,
+        "grabID": 1,
+        "mappedCapsModifier": 32768,
+        "grabAllReturned": true
+      }
+    },
+    {
+      "name": "other application ID selects same protocol backend",
+      "pass_": true,
+      "device": {
+        "appID": "org.example.ABIReader",
+        "deviceType": "AtspiDeviceA11yManager",
+        "officialOrcaFactory": false,
+        "events": [],
+        "nativeInputClaim": false,
+        "grabID": 1,
+        "mappedCapsModifier": 32768,
+        "grabAllReturned": true
+      }
+    },
+    {
+      "name": "actual Atspi SetKeyGrabs keysym and lock variants",
+      "pass_": true
+    },
+    {
+      "name": "buuuq ABI decodes key down/up and custom modifier",
+      "pass_": true,
+      "reports": {
+        "orca": {
+          "appID": "org.gnome.Orca",
+          "deviceType": "AtspiDeviceA11yManager",
+          "officialOrcaFactory": true,
+          "events": [
+            {
+              "pressed": true,
+              "args": [
+                66,
+                65509,
+                32768,
+                ""
+              ]
+            },
+            {
+              "pressed": true,
+              "args": [
+                43,
+                104,
+                32768,
+                "h"
+              ]
+            },
+            {
+              "pressed": false,
+              "args": [
+                43,
+                104,
+                32768,
+                "h"
+              ]
+            },
+            {
+              "pressed": false,
+              "args": [
+                66,
+                65509,
+                0,
+                ""
+              ]
+            }
+          ],
+          "nativeInputClaim": false,
+          "grabID": 1,
+          "mappedCapsModifier": 32768,
+          "grabAllReturned": true
+        },
+        "generic": {
+          "appID": "org.example.ABIReader",
+          "deviceType": "AtspiDeviceA11yManager",
+          "officialOrcaFactory": false,
+          "events": [
+            {
+              "pressed": true,
+              "args": [
+                66,
+                65509,
+                32768,
+                ""
+              ]
+            },
+            {
+              "pressed": true,
+              "args": [
+                43,
+                104,
+                32768,
+                "h"
+              ]
+            },
+            {
+              "pressed": false,
+              "args": [
+                43,
+                104,
+                32768,
+                "h"
+              ]
+            },
+            {
+              "pressed": false,
+              "args": [
+                66,
+                65509,
+                0,
+                ""
+              ]
+            }
+          ],
+          "nativeInputClaim": false,
+          "grabID": 1,
+          "mappedCapsModifier": 32768,
+          "grabAllReturned": true
+        }
+      }
+    },
+    {
+      "name": "all client state cleared on D-Bus exit",
+      "pass_": true
+    },
+    {
+      "name": "signals explicitly targeted to registered unique clients",
+      "pass_": true
+    },
+    {
+      "name": "GrabKeyboard and UngrabKeyboard actual public calls",
+      "pass_": true
+    }
+  ],
+  "serviceEvents": [
+    {
+      "event": "ready",
+      "name": "org.freedesktop.a11y.Manager",
+      "time": 55078.078731781
+    },
+    {
+      "event": "denied",
+      "sender": ":1.1",
+      "method": "WatchKeyboard",
+      "time": 55078.09103297
+    },
+    {
+      "event": "method",
+      "sender": ":1.2",
+      "registrations": [
+        "org.gnome.Orca.KeyboardMonitor"
+      ],
+      "method": "WatchKeyboard",
+      "arguments": [],
+      "state": {
+        "registrations": [
+          "org.gnome.Orca.KeyboardMonitor"
+        ],
+        "watched": true,
+        "grabbed": false,
+        "modifiers": [],
+        "keystrokes": []
+      },
+      "time": 55078.15060571
+    },
+    {
+      "event": "method",
+      "sender": ":1.2",
+      "registrations": [
+        "org.gnome.Orca.KeyboardMonitor"
+      ],
+      "method": "GrabKeyboard",
+      "arguments": [],
+      "state": {
+        "registrations": [
+          "org.gnome.Orca.KeyboardMonitor"
+        ],
+        "watched": true,
+        "grabbed": true,
+        "modifiers": [],
+        "keystrokes": []
+      },
+      "time": 55078.151735915
+    },
+    {
+      "event": "method",
+      "sender": ":1.2",
+      "registrations": [
+        "org.gnome.Orca.KeyboardMonitor"
+      ],
+      "method": "UngrabKeyboard",
+      "arguments": [],
+      "state": {
+        "registrations": [
+          "org.gnome.Orca.KeyboardMonitor"
+        ],
+        "watched": true,
+        "grabbed": false,
+        "modifiers": [],
+        "keystrokes": []
+      },
+      "time": 55078.152795515
+    },
+    {
+      "event": "method",
+      "sender": ":1.2",
+      "registrations": [
+        "org.gnome.Orca.KeyboardMonitor"
+      ],
+      "method": "SetKeyGrabs",
+      "arguments": [
+        [
+          65509
+        ],
+        [
+          [
+            104,
+            0
+          ],
+          [
+            104,
+            16
+          ],
+          [
+            104,
+            2
+          ],
+          [
+            104,
+            18
+          ]
+        ]
+      ],
+      "state": {
+        "registrations": [
+          "org.gnome.Orca.KeyboardMonitor"
+        ],
+        "watched": true,
+        "grabbed": false,
+        "modifiers": [
+          65509
+        ],
+        "keystrokes": [
+          [
+            104,
+            0
+          ],
+          [
+            104,
+            16
+          ],
+          [
+            104,
+            2
+          ],
+          [
+            104,
+            18
+          ]
+        ]
+      },
+      "time": 55078.162382909
+    },
+    {
+      "event": "method",
+      "sender": ":1.3",
+      "registrations": [
+        "org.example.ABIReader.KeyboardMonitor"
+      ],
+      "method": "WatchKeyboard",
+      "arguments": [],
+      "state": {
+        "registrations": [
+          "org.example.ABIReader.KeyboardMonitor"
+        ],
+        "watched": true,
+        "grabbed": false,
+        "modifiers": [],
+        "keystrokes": []
+      },
+      "time": 55078.242328065
+    },
+    {
+      "event": "method",
+      "sender": ":1.3",
+      "registrations": [
+        "org.example.ABIReader.KeyboardMonitor"
+      ],
+      "method": "GrabKeyboard",
+      "arguments": [],
+      "state": {
+        "registrations": [
+          "org.example.ABIReader.KeyboardMonitor"
+        ],
+        "watched": true,
+        "grabbed": true,
+        "modifiers": [],
+        "keystrokes": []
+      },
+      "time": 55078.243775196
+    },
+    {
+      "event": "method",
+      "sender": ":1.3",
+      "registrations": [
+        "org.example.ABIReader.KeyboardMonitor"
+      ],
+      "method": "UngrabKeyboard",
+      "arguments": [],
+      "state": {
+        "registrations": [
+          "org.example.ABIReader.KeyboardMonitor"
+        ],
+        "watched": true,
+        "grabbed": false,
+        "modifiers": [],
+        "keystrokes": []
+      },
+      "time": 55078.244694457
+    },
+    {
+      "event": "method",
+      "sender": ":1.3",
+      "registrations": [
+        "org.example.ABIReader.KeyboardMonitor"
+      ],
+      "method": "SetKeyGrabs",
+      "arguments": [
+        [
+          65509
+        ],
+        [
+          [
+            104,
+            0
+          ],
+          [
+            104,
+            16
+          ],
+          [
+            104,
+            2
+          ],
+          [
+            104,
+            18
+          ]
+        ]
+      ],
+      "state": {
+        "registrations": [
+          "org.example.ABIReader.KeyboardMonitor"
+        ],
+        "watched": true,
+        "grabbed": false,
+        "modifiers": [
+          65509
+        ],
+        "keystrokes": [
+          [
+            104,
+            0
+          ],
+          [
+            104,
+            16
+          ],
+          [
+            104,
+            2
+          ],
+          [
+            104,
+            18
+          ]
+        ]
+      },
+      "time": 55078.253817381
+    },
+    {
+      "event": "fabricatedABIPacket",
+      "packet": [
+        false,
+        0,
+        65509,
+        0,
+        66
+      ],
+      "directedRecipients": [
+        ":1.2",
+        ":1.3"
+      ],
+      "time": 55078.305547524
+    },
+    {
+      "event": "fabricatedABIPacket",
+      "packet": [
+        false,
+        0,
+        104,
+        104,
+        43
+      ],
+      "directedRecipients": [
+        ":1.2",
+        ":1.3"
+      ],
+      "time": 55078.306525655
+    },
+    {
+      "event": "fabricatedABIPacket",
+      "packet": [
+        true,
+        0,
+        104,
+        104,
+        43
+      ],
+      "directedRecipients": [
+        ":1.2",
+        ":1.3"
+      ],
+      "time": 55078.307415592
+    },
+    {
+      "event": "fabricatedABIPacket",
+      "packet": [
+        true,
+        0,
+        65509,
+        0,
+        66
+      ],
+      "directedRecipients": [
+        ":1.2",
+        ":1.3"
+      ],
+      "time": 55078.308224267
+    },
+    {
+      "event": "clientRemoved",
+      "sender": ":1.2",
+      "name": "org.gnome.Orca.KeyboardMonitor",
+      "time": 55078.374285552
+    },
+    {
+      "event": "clientRemoved",
+      "sender": ":1.3",
+      "name": "org.example.ABIReader.KeyboardMonitor",
+      "time": 55078.375191257
+    }
+  ],
+  "result": "pass",
+  "processErrors": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/abi_service.py:66: DeprecationWarning: Gio.DBusConnection.register_object is deprecated\n  for interface in node.interfaces:bus.register_object(PATH,interface,method,None,None)\n",
+  "privateProcessExit": 0,
+  "privateLogs": "",
+  "mainPreservation": {
+    "a11ySocket": true,
+    "readerStatus": true
+  },
+  "mainBefore": {
+    "a11y": {
+      "exists": true,
+      "dev": 84,
+      "inode": 91312,
+      "connects": true
+    },
+    "readerStatus": "(<false>,)"
+  }
+}

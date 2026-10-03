@@ -1,0 +1,25 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer/Renderer.cpp
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-no-dither-v2/Renderer.cpp
+@@ -88,6 +88,14 @@
+         for(const auto& proof:proofs){materials.append(proof.json());material=material&&proof.matches;}
+         emitEvent({{"event","backendObserved"},{"eglVendor",qs(vendor)},{"renderer",qs(renderer)},{"version",qs(version)},{"eglVersion",qs(safe(eglQueryString(eglDisplay,EGL_VERSION)))},{"nativeAuthority",false},{"reviewed",reviewedGPUBackend(vendor,version,renderer) && material},{"mappedMaterialMatches",material},{"materials",materials}});
+         if(!reviewedGPUBackend(vendor,version,renderer)||!material)throw std::runtime_error("unreviewed EGL commit backend; no route authority");
++        const bool ditherBefore=glIsEnabled(GL_DITHER)==GL_TRUE;
++        const auto inspectionError=glGetError();
++        if(inspectionError!=GL_NO_ERROR)throw std::runtime_error("raster state inspection failed before source upload");
++        glDisable(GL_DITHER);
++        const bool ditherAfter=glIsEnabled(GL_DITHER)==GL_TRUE;
++        const auto policyError=glGetError();
++        emitEvent({{"event","rasterState"},{"ditherBefore",ditherBefore},{"ditherAfter",ditherAfter},{"error",double(policyError)},{"pixelProof",false}});
++        if(ditherAfter||policyError!=GL_NO_ERROR)throw std::runtime_error("deterministic raster state unavailable; no source upload");
+         backendSupported=true;
+         emitEvent({{"event","gpu"},{"eglVendor",qs(vendor)},{"renderer",qs(renderer)},{"version",reinterpret_cast<const char*>(glGetString(GL_VERSION))}});
+     }
+@@ -200,6 +208,7 @@
+         const bool active=ledger.isActive()&&std::find(required.begin(),required.end(),&o)!=required.end();
+         const auto drawStartedNs=monotonicNs();
+         if(!makeCurrent(o)){cancel("eglMakeCurrent failed");return;}
++        if(glIsEnabled(GL_DITHER)==GL_TRUE){cancel("owned raster dithering state changed");return;}
+         glViewport(0,0,o.bufferWidth,o.bufferHeight);glDisable(GL_SCISSOR_TEST);glClearColor(0,0,0,0);glClear(GL_COLOR_BUFFER_BIT);
+         auto members=active?ledger.sceneRectangles(o.name,p):std::vector<MemberFrame>{};
+         if(active){

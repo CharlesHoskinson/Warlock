@@ -1,0 +1,17 @@
+{
+  "sourceManifest": "/home/hoskinson/window-integration-qa/family-recovery-bootstrap-v5/frozen-inputs.json",
+  "sourceManifestSHA256": "bbd142db7116de7e076df508dcb6d9b57ceda4d6cc5035cec7da6a5867b2e492",
+  "sourceReview": "/home/hoskinson/window-integration-qa/recovery-bootstrap-v5-root-pairing-review-v1.json",
+  "preflight": "/home/hoskinson/window-integration-qa/recovery-bootstrap-v5-root-frozen-preflight-v1.json",
+  "authorizedScope": "one fresh isolated original38 baseline; no fault campaign until exact same-packet original baseline and bindings/normal cleanup/main15 accepted",
+  "rootSoleNativeOwner": true,
+  "launcher": "/usr/bin/python3 /home/hoskinson/window-integration-qa/qa_run.py -- /usr/bin/python3 /home/hoskinson/window-integration-qa/family-recovery-bootstrap-v5/run_native.py --mode baseline --attempt /home/hoskinson/window-integration-qa/family-recovery-bootstrap-v5/attempt-baseline-1",
+  "originalChecksUnchanged": true,
+  "sourceCallerDeadlineUnchanged": true,
+  "allFiveCrashHandoffSafeguardsChecked": true,
+  "mainWritesAllowed": false,
+  "restorationWritesAllowed": false,
+  "productionDeployment": false,
+  "fullParityAccepted": false,
+  "perActorCancellationCandidatePaired": false
+}

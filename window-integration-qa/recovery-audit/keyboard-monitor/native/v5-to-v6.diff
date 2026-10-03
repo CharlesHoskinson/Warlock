@@ -1,0 +1,123 @@
+diff --git 1/native/plugin-v5.cpp 2/native/plugin-v6.cpp
+index 86304c9..a439cbe 100644
+--- 1/native/plugin-v5.cpp
++++ 2/native/plugin-v6.cpp
+@@ -23,6 +23,8 @@ constexpr auto PATH="/org/freedesktop/a11y/Manager";
+ constexpr auto IFACE="org.freedesktop.a11y.KeyboardMonitor";
+ HANDLE handle=nullptr;
+ Policy policy;
++bool retiring=false;
++bool initializing=true;
+ DBusConnection* bus=nullptr;
+ wl_event_source* timer=nullptr;
+ std::map<std::string,std::string> registrations;
+@@ -94,7 +96,12 @@ struct Device {
+ };
+ std::map<IKeyboard*,std::unique_ptr<Device>> devices;
+ uint64_t clockMs(){return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now().time_since_epoch()).count();}
+-bool interested(){return !policy.clients.empty();}
++bool interested(){return !retiring&&!policy.clients.empty();}
++bool unloadQuiescent() {
++    if(!policy.quiescent())return false;
++    for(const auto& [kb,d]:devices)if(kb->isVirtual()&&(d->virtualMask.parity()!=0||d->controlledLocks!=0||!d->lockRoutes.empty()||d->mapBaselinePending))return false;
++    return true;
++}
+ bool permitted(IKeyboard* kb){return kb&&kb->m_enabled&&kb->m_allowed&&(!kb->isVirtual()||!g_pInputManager->shouldIgnoreVirtualKeyboard(kb->m_self.lock()));}
+ void removeDevice(IKeyboard* kb){policy.removeDevice(reinterpret_cast<uintptr_t>(kb));devices.erase(kb);}
+ Device& getDevice(IKeyboard* kb) {
+@@ -215,7 +222,7 @@ void onMask(IKeyboard* kb,uint32_t depressed,uint32_t latched,uint32_t locked,ui
+     if(d.virtualMask.parity()==0&&d.lockRoutes.empty()&&policy.capturedKeys(reinterpret_cast<uintptr_t>(kb)).empty())d.lockFiltering=false;
+ }
+ DBusHandlerResult dispatch(DBusConnection*,DBusMessage* m,void*) {
+-    if(dbus_message_is_signal(m,DBUS_INTERFACE_DBUS,"NameOwnerChanged")) {
++    if(dbus_message_is_signal(m,DBUS_INTERFACE_DBUS,"NameOwnerChanged")&&dbus_message_has_sender(m,DBUS_SERVICE_DBUS)) {
+         const char *name=nullptr,*old=nullptr,*owner=nullptr;
+         if(dbus_message_get_args(m,nullptr,DBUS_TYPE_STRING,&name,DBUS_TYPE_STRING,&old,DBUS_TYPE_STRING,&owner,DBUS_TYPE_INVALID)) {
+             if(monitorName(name)){registrations.erase(name);if(*owner)registrations[name]=owner;prune(old);policy.resetTaps();}
+@@ -231,15 +238,16 @@ DBusHandlerResult dispatch(DBusConnection*,DBusMessage* m,void*) {
+     }
+     if(dbus_message_has_interface(m,"org.omarchy.KeyboardMonitorProbe")) {
+         if(dbus_message_has_member(m,"PrepareUnload")) {
+-            dbus_bool_t ready=policy.quiescent();if(ready)policy.stop();
++            dbus_bool_t ready=unloadQuiescent();if(ready){retiring=true;policy.stop();}
+             auto* r=dbus_message_new_method_return(m);dbus_message_append_args(r,DBUS_TYPE_BOOLEAN,&ready,DBUS_TYPE_INVALID);send(r);return DBUS_HANDLER_RESULT_HANDLED;
+         }
+         if(dbus_message_has_member(m,"State")) {
+-            const auto value=std::string("{\"clients\":")+std::to_string(policy.clients.size())+",\"devices\":"+std::to_string(devices.size())+",\"quiescent\":"+(policy.quiescent()?"true":"false")+",\"nativeInputProved\":false}";
++            const auto value=std::string("{\"retiring\":")+(retiring?"true":"false")+",\"unloadQuiescent\":"+(unloadQuiescent()?"true":"false")+",\"registrations\":"+std::to_string(registrations.size())+",\"clients\":"+std::to_string(policy.clients.size())+",\"devices\":"+std::to_string(devices.size())+",\"quiescent\":"+(policy.quiescent()?"true":"false")+",\"nativeInputProved\":false}";
+             const char* s=value.c_str();auto* r=dbus_message_new_method_return(m);dbus_message_append_args(r,DBUS_TYPE_STRING,&s,DBUS_TYPE_INVALID);send(r);return DBUS_HANDLER_RESULT_HANDLED;
+         }
+     }
+     if(!dbus_message_has_interface(m,IFACE)) {error(m,DBUS_ERROR_UNKNOWN_INTERFACE,"keyboard-only staged service");return DBUS_HANDLER_RESULT_HANDLED;}
++    if(retiring||initializing){error(m,"org.freedesktop.a11y.ServiceRetired","service incarnation is not accepting subscriptions");return DBUS_HANDLER_RESULT_HANDLED;}
+     if(!registered(sender)){error(m,DBUS_ERROR_ACCESS_DENIED,"caller must own its KeyboardMonitor registration");return DBUS_HANDLER_RESULT_HANDLED;}
+     auto& c=policy.clients[sender];
+     if(dbus_message_has_member(m,"WatchKeyboard")&&dbus_message_has_signature(m,""))c.watch=true;
+@@ -294,14 +302,52 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE h) {
+         bus=dbus_bus_get_private(DBUS_BUS_SESSION,&err);
+         if(!bus){std::string why=err.message?err.message:"private D-Bus unavailable";dbus_error_free(&err);throw std::runtime_error(why);}
+         dbus_connection_set_exit_on_disconnect(bus,false);
+-        // Control-plane calls during init; never used by a key route.
+-        const int result=dbus_bus_request_name(bus,"org.freedesktop.a11y.Manager",DBUS_NAME_FLAG_DO_NOT_QUEUE,&err);
+-        if(result!=DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER)throw std::runtime_error("manager already owned or unavailable");
++        // Subscribe before snapshot; never infer client policy from names.
++        // The service name is claimed only after bounded owner reconciliation.
++        retiring=false;initializing=true;
+         dbus_bus_add_match(bus,"type='signal',sender='org.freedesktop.DBus',interface='org.freedesktop.DBus',member='NameOwnerChanged'",&err);
+         if(dbus_error_is_set(&err)){std::string why=err.message;dbus_error_free(&err);throw std::runtime_error(why);}
+-        dbus_connection_add_filter(bus,dispatch,nullptr,nullptr);
+-        // The isolated trial starts official clients only after this service.
+-        // Adoption of preexisting registrations remains an explicit startup gate.
++        if(!dbus_connection_add_filter(bus,dispatch,nullptr,nullptr))throw std::runtime_error("D-Bus filter allocation");
++        const auto deadline=clockMs()+1500;
++        auto call=[&](const char* method,const char* arg=nullptr) {
++            if(clockMs()>=deadline)throw std::runtime_error("registration adoption deadline");
++            auto* request=dbus_message_new_method_call(DBUS_SERVICE_DBUS,DBUS_PATH_DBUS,DBUS_INTERFACE_DBUS,method);
++            if(!request)throw std::runtime_error("registration request allocation");
++            if(arg)dbus_message_append_args(request,DBUS_TYPE_STRING,&arg,DBUS_TYPE_INVALID);
++            auto* response=dbus_connection_send_with_reply_and_block(bus,request,std::min<uint64_t>(500,deadline-clockMs()),&err);
++            dbus_message_unref(request);
++            if(!response&&dbus_error_is_set(&err)&&dbus_error_has_name(&err,DBUS_ERROR_NAME_HAS_NO_OWNER)){dbus_error_free(&err);return response;}
++            if(!response){std::string why=err.message?err.message:"registration response unavailable";dbus_error_free(&err);throw std::runtime_error(why);}
++            return response;
++        };
++        auto* namesReply=call("ListNames");
++        char** names=nullptr;int count=0;
++        if(!dbus_message_get_args(namesReply,&err,DBUS_TYPE_ARRAY,DBUS_TYPE_STRING,&names,&count,DBUS_TYPE_INVALID)){
++            dbus_message_unref(namesReply);dbus_error_free(&err);throw std::runtime_error("invalid registration enumeration");
++        }
++        std::vector<std::string> candidates;
++        for(int i=0;i<count;++i)if(monitorName(names[i]))candidates.emplace_back(names[i]);
++        dbus_free_string_array(names);dbus_message_unref(namesReply);
++        if(candidates.size()>256)throw std::runtime_error("registration adoption budget exceeded");
++        for(const auto& name:candidates) {
++            auto* response=call("GetNameOwner",name.c_str());if(!response)continue;
++            const char* owner=nullptr;
++            if(dbus_message_get_args(response,nullptr,DBUS_TYPE_STRING,&owner,DBUS_TYPE_INVALID)&&owner&&*owner)registrations[name]=owner;
++            dbus_message_unref(response);
++        }
++        // Signals queued around synchronous snapshots restore their bus order
++        // before availability. Floods fail initialization rather than stall.
++        unsigned dispatches=0;
++        do {
++            dbus_connection_read_write(bus,0);
++            while(dbus_connection_get_dispatch_status(bus)==DBUS_DISPATCH_DATA_REMAINS) {
++                if(++dispatches>1024||clockMs()>=deadline)throw std::runtime_error("owner reconciliation budget exceeded");
++                dbus_connection_dispatch(bus);
++            }
++        } while(dbus_connection_read_write(bus,0)&&dbus_connection_get_dispatch_status(bus)==DBUS_DISPATCH_DATA_REMAINS);
++        const int result=dbus_bus_request_name(bus,"org.freedesktop.a11y.Manager",DBUS_NAME_FLAG_DO_NOT_QUEUE,&err);
++        if(result!=DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER)throw std::runtime_error("manager already owned or unavailable");
++        initializing=false;
+         hook(pressedHook,"_ZN9IKeyboard13updatePressedEjb",reinterpret_cast<void*>(onPressed));
+         hook(keyHook,"_ZN13CInputManager13onKeyboardKeyERKN9IKeyboard9SKeyEventEN9Hyprutils6Memory14CSharedPointerIS0_EE",reinterpret_cast<void*>(onKey));
+         hook(maskHook,"_ZN9IKeyboard15updateModifiersEjjjj",reinterpret_cast<void*>(onMask));
+@@ -312,7 +358,7 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE h) {
+         for(auto* entry:{pressedHook,keyHook,maskHook})if(entry)HyprlandAPI::removeFunctionHook(handle,entry);
+         pressedHook=keyHook=maskHook=nullptr;cleanup();throw;
+     }
+-    return {"keyboard-monitor-private","Exact ABI keyboard monitor isolated candidate","local parity QA","0.1-staged"};
++    return {"keyboard-monitor-private","Exact ABI keyboard monitor isolated candidate","local parity QA","0.6-private-retirement"};
+ }
+ APICALL EXPORT void PLUGIN_EXIT() {
+     // PrepareUnload is the normal quiescence precondition. Accepted keys stay

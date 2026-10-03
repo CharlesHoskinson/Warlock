@@ -1,0 +1,207 @@
+{
+  "result": "pass",
+  "sourceReadySHA256": "0ffea334af9cd5b6130aec43dde259d32f5bacde43f3366fad4f350992f7dc0a",
+  "sourceReadyInputs": 26280,
+  "sourceReadyModes": 26280,
+  "sourceReadyLinks": 342,
+  "sourceStable": true,
+  "exactV14": [
+    "matrix.json",
+    "held_controller.py",
+    "held_route.py",
+    "observations.py",
+    "frontend_route.py",
+    "input_control.py",
+    "helper_observer.py",
+    "helper_setup.py",
+    "qs_lifecycle.py",
+    "evaluation_tickets.qnt",
+    "BOUNDARY_REFINEMENT_CONTRACT.md"
+  ],
+  "fullEvaluatorRunnerPackagerInverse": true,
+  "fullQMLInverse": true,
+  "original52MatrixUnchanged": true,
+  "originalBudgetsUnchanged": true,
+  "focusedCPU": 40,
+  "namedQuint": 59,
+  "sampledQuint": 10000,
+  "models": 5,
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "test_arm_lock_candidate",
+        "test_arm_publication",
+        "test_terminal_drain",
+        "-v"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/held-v15-root-focused-0-v1.log",
+      "logSHA256": "7c4e68448a71053cdb0ef44845c0d170ea18822cc49af8b890061b6e86e64a06",
+      "tests": 0,
+      "CPU": "40",
+      "skipped": false
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/held-v15-root-focused-1-v1.log",
+      "logSHA256": "bbae48041fedcab7ea4aec3b21cc923b868d8acafb216dadcb05c129428e1f4e",
+      "tests": 18,
+      "CPU": null,
+      "skipped": false
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/held-v15-root-focused-2-v1.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests": 0,
+      "CPU": null,
+      "skipped": false
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/terminal_query_drain_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/held-v15-root-focused-3-v1.log",
+      "logSHA256": "7c73b66e5ba6c5d9cbff153ea77a08562b2fe05410aef04b216de7ae2c7aaee8",
+      "tests": 17,
+      "CPU": null,
+      "skipped": false
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/terminal_query_drain.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/held-v15-root-focused-4-v1.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests": 0,
+      "CPU": null,
+      "skipped": false
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/terminal_process_receipts_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/held-v15-root-focused-5-v1.log",
+      "logSHA256": "ff569ed8a30de2f5464582ba23cd85096eed0eb58de04ed89a0d9b6fe32a2fbd",
+      "tests": 10,
+      "CPU": null,
+      "skipped": false
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/terminal_process_receipts.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/held-v15-root-focused-6-v1.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests": 0,
+      "CPU": null,
+      "skipped": false
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_terminal_authority_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/held-v15-root-focused-7-v1.log",
+      "logSHA256": "65c80ebcd8e4ab41c3d111440a3ad980146d1d458affef9af0ef67c9affadb6b",
+      "tests": 9,
+      "CPU": null,
+      "skipped": false
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_terminal_authority.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/held-v15-root-focused-8-v1.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests": 0,
+      "CPU": null,
+      "skipped": false
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/command_declaration_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/held-v15-root-focused-9-v1.log",
+      "logSHA256": "11e89ea33c4b10a52dc401ab1ecf7ac1e1c859758837eb758299ea8ef0735a32",
+      "tests": 5,
+      "CPU": null,
+      "skipped": false
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/command_declaration.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/held-v15-root-focused-10-v1.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests": 0,
+      "CPU": null,
+      "skipped": false
+    }
+  ],
+  "nativeLaunch": false,
+  "mainChanged": false,
+  "fullWindowsParityAccepted": false
+}

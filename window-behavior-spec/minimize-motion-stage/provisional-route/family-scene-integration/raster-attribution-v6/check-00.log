@@ -1,0 +1,13 @@
+test_clamped_corner_preserves_alpha_and_rgb (test_pixel_arithmetic.PixelArithmeticTests.test_clamped_corner_preserves_alpha_and_rgb) ... ok
+test_equal_bilinear_corner_weights (test_pixel_arithmetic.PixelArithmeticTests.test_equal_bilinear_corner_weights) ... ok
+test_exact_texel_center_identity (test_pixel_arithmetic.PixelArithmeticTests.test_exact_texel_center_identity) ... ok
+test_float32_cpu_vertices_are_explicit_not_gpu_precision_assumption (test_pixel_arithmetic.PixelArithmeticTests.test_float32_cpu_vertices_are_explicit_not_gpu_precision_assumption) ... ok
+test_float32_cpu_vertices_preserve_exact_aligned_edges (test_pixel_arithmetic.PixelArithmeticTests.test_float32_cpu_vertices_preserve_exact_aligned_edges) ... ok
+test_normative_half_quantization_not_fitted_to_gpu (test_pixel_arithmetic.PixelArithmeticTests.test_normative_half_quantization_not_fitted_to_gpu) ... ok
+test_premultiplied_source_over_ordered_quantization (test_pixel_arithmetic.PixelArithmeticTests.test_premultiplied_source_over_ordered_quantization) ... ok
+test_transparent_source_preserves_destination (test_pixel_arithmetic.PixelArithmeticTests.test_transparent_source_preserves_destination) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK

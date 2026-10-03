@@ -1,0 +1,24 @@
+{
+  "result": "pass",
+  "commit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+  "sources": {
+    "src/desktop/state/ViewQuery.cpp": {
+      "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/desktop/state/ViewQuery.cpp",
+      "status": 200,
+      "copy": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/primary/src/desktop/state/ViewQuery.cpp",
+      "sha256": "10acb6240350d3fcb07544ab34279bd050984f02b1087d2d4a1febe4d2cbf1cc",
+      "mode": 420,
+      "existingInverseExact": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/src/desktop/state/ViewQuery.cpp"
+    }
+  },
+  "actualCoreELFCommand": [
+    "/usr/bin/readelf",
+    "-d",
+    "/usr/bin/Hyprland"
+  ],
+  "actualCoreLuaDependencies": [
+    "0x0000000000000001 (NEEDED)             Shared library: [liblua.so.5.5]"
+  ],
+  "sourceVersionCorrespondenceOnly": true,
+  "compilerReproducibilityProven": false
+}

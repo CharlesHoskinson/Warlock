@@ -1,0 +1,55 @@
+test_complete_exact_observation (test_verify_sampling.SamplerConfiguration.test_complete_exact_observation) ... ok
+test_duplicate_texture_cannot_attest_two_sources (test_verify_sampling.SamplerConfiguration.test_duplicate_texture_cannot_attest_two_sources) ... ok
+test_missing_family_and_control_records (test_verify_sampling.SamplerConfiguration.test_missing_family_and_control_records) ... ok
+test_native_window_extent_is_not_source_extent (test_verify_sampling.SamplerConfiguration.test_native_window_extent_is_not_source_extent) ... ok
+test_numeric_booleans_are_invalid_getters (test_verify_sampling.SamplerConfiguration.test_numeric_booleans_are_invalid_getters) ... ok
+test_one_pixel_control_never_substitutes_family (test_verify_sampling.SamplerConfiguration.test_one_pixel_control_never_substitutes_family) ... ok
+test_pixels_and_presentation_are_separate (test_verify_sampling.SamplerConfiguration.test_pixels_and_presentation_are_separate) ... ok
+test_queried_state_and_errors (test_verify_sampling.SamplerConfiguration.test_queried_state_and_errors) ... ok
+test_stale_source_digest (test_verify_sampling.SamplerConfiguration.test_stale_source_digest) ... ok
+test_sticky_control_uniform (test_verify_sampling.SamplerConfiguration.test_sticky_control_uniform) ... ok
+test_wrong_fragment_is_not_experiment (test_verify_sampling.SamplerConfiguration.test_wrong_fragment_is_not_experiment) ... ok
+test_changed_actual_full_raw_digest_refused (test_verify_causal.BindingTests.test_changed_actual_full_raw_digest_refused) ... ok
+test_changed_member_order_refused (test_verify_causal.BindingTests.test_changed_member_order_refused) ... ok
+test_changed_prefix_digest_refused (test_verify_causal.BindingTests.test_changed_prefix_digest_refused) ... ok
+test_equivalent_reordered_rectangle_keys_accepted (test_verify_causal.BindingTests.test_equivalent_reordered_rectangle_keys_accepted) ... ok
+test_false_declared_read_format_equality_refused (test_verify_causal.BindingTests.test_false_declared_read_format_equality_refused) ... ok
+test_missing_swap_success_refused (test_verify_causal.BindingTests.test_missing_swap_success_refused) ... ok
+test_native_read_pair_must_match_actual_query (test_verify_causal.BindingTests.test_native_read_pair_must_match_actual_query) ... ok
+test_partial_or_out_of_range_prefix_refused (test_verify_causal.BindingTests.test_partial_or_out_of_range_prefix_refused) ... ok
+test_predetermined_constant_controls_complete_exact_images (test_verify_causal.BindingTests.test_predetermined_constant_controls_complete_exact_images) ... ok
+test_prefix_does_not_substitute_for_actual_full_presentation (test_verify_causal.BindingTests.test_prefix_does_not_substitute_for_actual_full_presentation) ... ok
+test_retained_actual_full_prefix_error_is_preserved (test_verify_causal.BindingTests.test_retained_actual_full_prefix_error_is_preserved) ... ok
+test_stale_sequence_refused_before_pixels (test_verify_causal.BindingTests.test_stale_sequence_refused_before_pixels) ... ok
+test_symlink_evidence_refused (test_verify_causal.BindingTests.test_symlink_evidence_refused) ... ok
+test_wrong_scene_token_suffix_refused (test_verify_causal.BindingTests.test_wrong_scene_token_suffix_refused) ... ok
+test_all_over_programs_swapped_rejects (test_quantized_gate.Gate.test_all_over_programs_swapped_rejects) ... ok
+test_compiled_program_roles_must_be_distinct_and_typed (test_quantized_gate.Gate.test_compiled_program_roles_must_be_distinct_and_typed) ... ok
+test_complete_actual_configuration_never_claims_pixels (test_quantized_gate.Gate.test_complete_actual_configuration_never_claims_pixels) ... ok
+test_copy_feedback_attachment_rejects (test_quantized_gate.Gate.test_copy_feedback_attachment_rejects) ... ok
+test_copy_wrong_destination_rejects (test_quantized_gate.Gate.test_copy_wrong_destination_rejects) ... ok
+test_default_target_not_final_prefix_rejects (test_quantized_gate.Gate.test_default_target_not_final_prefix_rejects) ... ok
+test_different_buffer_extent_rejects (test_quantized_gate.Gate.test_different_buffer_extent_rejects) ... ok
+test_different_final_pass_program_rejects (test_quantized_gate.Gate.test_different_final_pass_program_rejects) ... ok
+test_final_copy_blended_rejects (test_quantized_gate.Gate.test_final_copy_blended_rejects) ... ok
+test_final_copy_program_swapped_rejects (test_quantized_gate.Gate.test_final_copy_program_swapped_rejects) ... ok
+test_hardware_linear_selection_cannot_masquerade_as_experiment (test_quantized_gate.Gate.test_hardware_linear_selection_cannot_masquerade_as_experiment) ... ok
+test_later_frame_without_controls_still_has_complete_family (test_quantized_gate.Gate.test_later_frame_without_controls_still_has_complete_family) ... ok
+test_missing_or_duplicate_configuration_rejects (test_quantized_gate.Gate.test_missing_or_duplicate_configuration_rejects) ... ok
+test_old_local_sequence_rejects (test_quantized_gate.Gate.test_old_local_sequence_rejects) ... ok
+test_old_output_generation_rejects (test_quantized_gate.Gate.test_old_output_generation_rejects) ... ok
+test_partial_family_prefix_rejects (test_quantized_gate.Gate.test_partial_family_prefix_rejects) ... ok
+test_prefix_copy_program_swapped_rejects (test_quantized_gate.Gate.test_prefix_copy_program_swapped_rejects) ... ok
+test_previous_prefix_changed_mid_group_rejects (test_quantized_gate.Gate.test_previous_prefix_changed_mid_group_rejects) ... ok
+test_reordered_source_digests_rejects (test_quantized_gate.Gate.test_reordered_source_digests_rejects) ... ok
+test_same_attachment_read_write_rejects (test_quantized_gate.Gate.test_same_attachment_read_write_rejects) ... ok
+test_same_bytes_unknown_source_texture_rejects (test_quantized_gate.Gate.test_same_bytes_unknown_source_texture_rejects) ... ok
+test_source_must_not_alias_prefix_attachment (test_quantized_gate.Gate.test_source_must_not_alias_prefix_attachment) ... ok
+test_unquantized_or_multisampled_state_rejects (test_quantized_gate.Gate.test_unquantized_or_multisampled_state_rejects) ... ok
+test_wrong_compiled_shader_hash_rejects (test_quantized_gate.Gate.test_wrong_compiled_shader_hash_rejects) ... ok
+test_wrong_control_order_or_boolean_index_rejects (test_quantized_gate.Gate.test_wrong_control_order_or_boolean_index_rejects) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 4.242s
+
+OK

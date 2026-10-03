@@ -1,0 +1,23 @@
+{
+  "result": "pass",
+  "ready": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/source-ready-v23.json",
+  "readySHA256": "df126ad3da6c354ddd24ae9834ba2fcd0fb42983012b18f60cba93804d603d27",
+  "inputs": 15238,
+  "modes": 15238,
+  "links": 158,
+  "fullFrozenV22InputsModesLinksRetained": true,
+  "baseManifestSHA256": "e616b23b7c397cc767ce91e855a4520dd42311c97087797b332772ba63d1fc5e",
+  "proof": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/report.json",
+  "proofSHA256": "b01c57cb72a22d54bbc6bafd96bcedd4fcb76df0635d3b6d5482b58104ad3933",
+  "formalBeforeRuntime": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/staging-formal-before-runtime-v3.json",
+  "formalSHA256": "ecb43776105d7fb7d245f3efa041b0569dbdffda2a5b8d3644b22bd6a23c0266",
+  "sourcePlanSHA256": "9b60027694ed20c6d51daf7274f4ddeabe0c0fc7d63fd35c7eeeabc83ac095fd",
+  "batchPreviewSHA256": "875e9e25973458691607503a5293db423b8a6510dfc856f22c99a9121c6037de",
+  "changedInheritedSources": [
+    "batch_preview.py"
+  ],
+  "nativeAccepted": false,
+  "mainChanged": false,
+  "freezeCommand": "/usr/bin/python3 -B /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/freeze_staging_preparation.py --freeze",
+  "verifyCommand": "/usr/bin/python3 -B /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/freeze_staging_preparation.py --verify"
+}

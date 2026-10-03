@@ -1,0 +1,1257 @@
+{
+  "configuration": {
+    "policy": "per-layer-explicit-over-nearest-rgba8-v1",
+    "sequence": "1",
+    "output": "WAYLAND-1",
+    "generation": 13,
+    "familyPassCount": 3,
+    "controlPassCount": 6,
+    "actualConfigurationGate": true,
+    "sampling": {
+      "policy": "four-nearest-centers-highp-bilinear-v1",
+      "familyTextureCount": 3,
+      "controlTextureCount": 3,
+      "actualGetterGate": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    "pixelProof": false,
+    "nativeAuthority": false
+  },
+  "actualEvent": {
+    "bufferHeight": 240,
+    "bufferWidth": 320,
+    "event": "quantizedOverFrameConfigured",
+    "finalCopy": {
+      "attachedTexture": 0,
+      "attachmentType": 0,
+      "blend": false,
+      "extentUniform": [
+        320,
+        240
+      ],
+      "framebuffer": 0,
+      "inspectionError": 0,
+      "magFilter": 9728,
+      "minFilter": 9728,
+      "program": 6,
+      "texture": 5,
+      "unit": 1,
+      "wrapS": 33071,
+      "wrapT": 33071
+    },
+    "generation": 13,
+    "logicalOutput": {
+      "height": 240,
+      "width": 320,
+      "x": 0,
+      "y": 0
+    },
+    "members": [
+      {
+        "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+        "pid": 1504804,
+        "rectangle": {
+          "height": 80,
+          "width": 96,
+          "x": 272,
+          "y": 32
+        },
+        "stableId": "abc1"
+      },
+      {
+        "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+        "pid": 1504805,
+        "rectangle": {
+          "height": 48,
+          "width": 72,
+          "x": 304,
+          "y": 56
+        },
+        "stableId": "abc2"
+      },
+      {
+        "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+        "pid": 1504806,
+        "rectangle": {
+          "height": 32,
+          "width": 48,
+          "x": 328,
+          "y": 68
+        },
+        "stableId": "abc3"
+      }
+    ],
+    "nativeAuthority": false,
+    "output": "WAYLAND-1",
+    "passes": [
+      {
+        "attachedTexture": 5,
+        "attachmentType": 5890,
+        "bits": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "blend": false,
+        "controlIndex": 1,
+        "coverageInspectionError": 0,
+        "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+        "coverageUniform": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "extentUniform": [
+          320,
+          240
+        ],
+        "fullscreenPositions": [
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "inspectionError": 0,
+        "logicalOutput": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "magFilter": 9728,
+        "minFilter": 9728,
+        "pixels": [
+          1,
+          1
+        ],
+        "prefixCopy": {
+          "attachedTexture": 5,
+          "attachmentType": 5890,
+          "blend": false,
+          "extentUniform": [
+            320,
+            240
+          ],
+          "framebuffer": 2,
+          "inspectionError": 0,
+          "magFilter": 9728,
+          "minFilter": 9728,
+          "program": 6,
+          "texture": 4,
+          "unit": 1,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "prefixCount": 1,
+        "prefixUnit": 1,
+        "readTexture": 4,
+        "readTextureBinding": 4,
+        "sampleRectUniform": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "samples": 0,
+        "shaderProgram": 3,
+        "sourceDigest": "",
+        "sourceRectangle": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "sourceTexture": 7,
+        "sourceTextureBinding": 7,
+        "sourceUnit": 0,
+        "vertexState": {
+          "buffer": 0,
+          "enabled": 1,
+          "inspectionError": 0,
+          "normalized": 0,
+          "size": 2,
+          "stride": 0,
+          "type": 5126
+        },
+        "viewport": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "wrapS": 33071,
+        "wrapT": 33071,
+        "writeFramebuffer": 2,
+        "writeTexture": 5
+      },
+      {
+        "attachedTexture": 5,
+        "attachmentType": 5890,
+        "bits": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "blend": false,
+        "controlIndex": 0,
+        "coverageInspectionError": 0,
+        "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+        "coverageUniform": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "extentUniform": [
+          320,
+          240
+        ],
+        "fullscreenPositions": [
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "inspectionError": 0,
+        "logicalOutput": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "magFilter": 9728,
+        "minFilter": 9728,
+        "pixels": [
+          1,
+          1
+        ],
+        "prefixCopy": {
+          "attachedTexture": 5,
+          "attachmentType": 5890,
+          "blend": false,
+          "extentUniform": [
+            320,
+            240
+          ],
+          "framebuffer": 2,
+          "inspectionError": 0,
+          "magFilter": 9728,
+          "minFilter": 9728,
+          "program": 6,
+          "texture": 4,
+          "unit": 1,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "prefixCount": 1,
+        "prefixUnit": 1,
+        "readTexture": 4,
+        "readTextureBinding": 4,
+        "sampleRectUniform": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "samples": 0,
+        "shaderProgram": 3,
+        "sourceDigest": "",
+        "sourceRectangle": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "sourceTexture": 6,
+        "sourceTextureBinding": 6,
+        "sourceUnit": 0,
+        "vertexState": {
+          "buffer": 0,
+          "enabled": 1,
+          "inspectionError": 0,
+          "normalized": 0,
+          "size": 2,
+          "stride": 0,
+          "type": 5126
+        },
+        "viewport": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "wrapS": 33071,
+        "wrapT": 33071,
+        "writeFramebuffer": 2,
+        "writeTexture": 5
+      },
+      {
+        "attachedTexture": 4,
+        "attachmentType": 5890,
+        "bits": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "blend": false,
+        "controlIndex": 1,
+        "coverageInspectionError": 0,
+        "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+        "coverageUniform": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "extentUniform": [
+          320,
+          240
+        ],
+        "fullscreenPositions": [
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "inspectionError": 0,
+        "logicalOutput": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "magFilter": 9728,
+        "minFilter": 9728,
+        "pixels": [
+          1,
+          1
+        ],
+        "prefixCopy": {
+          "attachedTexture": 4,
+          "attachmentType": 5890,
+          "blend": false,
+          "extentUniform": [
+            320,
+            240
+          ],
+          "framebuffer": 1,
+          "inspectionError": 0,
+          "magFilter": 9728,
+          "minFilter": 9728,
+          "program": 6,
+          "texture": 5,
+          "unit": 1,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "prefixCount": 2,
+        "prefixUnit": 1,
+        "readTexture": 5,
+        "readTextureBinding": 5,
+        "sampleRectUniform": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "samples": 0,
+        "shaderProgram": 3,
+        "sourceDigest": "",
+        "sourceRectangle": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "sourceTexture": 7,
+        "sourceTextureBinding": 7,
+        "sourceUnit": 0,
+        "vertexState": {
+          "buffer": 0,
+          "enabled": 1,
+          "inspectionError": 0,
+          "normalized": 0,
+          "size": 2,
+          "stride": 0,
+          "type": 5126
+        },
+        "viewport": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "wrapS": 33071,
+        "wrapT": 33071,
+        "writeFramebuffer": 1,
+        "writeTexture": 4
+      },
+      {
+        "attachedTexture": 5,
+        "attachmentType": 5890,
+        "bits": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "blend": false,
+        "controlIndex": 0,
+        "coverageInspectionError": 0,
+        "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+        "coverageUniform": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "extentUniform": [
+          320,
+          240
+        ],
+        "fullscreenPositions": [
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "inspectionError": 0,
+        "logicalOutput": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "magFilter": 9728,
+        "minFilter": 9728,
+        "pixels": [
+          1,
+          1
+        ],
+        "prefixCopy": {
+          "attachedTexture": 5,
+          "attachmentType": 5890,
+          "blend": false,
+          "extentUniform": [
+            320,
+            240
+          ],
+          "framebuffer": 2,
+          "inspectionError": 0,
+          "magFilter": 9728,
+          "minFilter": 9728,
+          "program": 6,
+          "texture": 4,
+          "unit": 1,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "prefixCount": 1,
+        "prefixUnit": 1,
+        "readTexture": 4,
+        "readTextureBinding": 4,
+        "sampleRectUniform": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "samples": 0,
+        "shaderProgram": 3,
+        "sourceDigest": "",
+        "sourceRectangle": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "sourceTexture": 6,
+        "sourceTextureBinding": 6,
+        "sourceUnit": 0,
+        "vertexState": {
+          "buffer": 0,
+          "enabled": 1,
+          "inspectionError": 0,
+          "normalized": 0,
+          "size": 2,
+          "stride": 0,
+          "type": 5126
+        },
+        "viewport": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "wrapS": 33071,
+        "wrapT": 33071,
+        "writeFramebuffer": 2,
+        "writeTexture": 5
+      },
+      {
+        "attachedTexture": 4,
+        "attachmentType": 5890,
+        "bits": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "blend": false,
+        "controlIndex": 1,
+        "coverageInspectionError": 0,
+        "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+        "coverageUniform": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "extentUniform": [
+          320,
+          240
+        ],
+        "fullscreenPositions": [
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "inspectionError": 0,
+        "logicalOutput": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "magFilter": 9728,
+        "minFilter": 9728,
+        "pixels": [
+          1,
+          1
+        ],
+        "prefixCopy": {
+          "attachedTexture": 4,
+          "attachmentType": 5890,
+          "blend": false,
+          "extentUniform": [
+            320,
+            240
+          ],
+          "framebuffer": 1,
+          "inspectionError": 0,
+          "magFilter": 9728,
+          "minFilter": 9728,
+          "program": 6,
+          "texture": 5,
+          "unit": 1,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "prefixCount": 2,
+        "prefixUnit": 1,
+        "readTexture": 5,
+        "readTextureBinding": 5,
+        "sampleRectUniform": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "samples": 0,
+        "shaderProgram": 3,
+        "sourceDigest": "",
+        "sourceRectangle": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "sourceTexture": 7,
+        "sourceTextureBinding": 7,
+        "sourceUnit": 0,
+        "vertexState": {
+          "buffer": 0,
+          "enabled": 1,
+          "inspectionError": 0,
+          "normalized": 0,
+          "size": 2,
+          "stride": 0,
+          "type": 5126
+        },
+        "viewport": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "wrapS": 33071,
+        "wrapT": 33071,
+        "writeFramebuffer": 1,
+        "writeTexture": 4
+      },
+      {
+        "attachedTexture": 5,
+        "attachmentType": 5890,
+        "bits": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "blend": false,
+        "controlIndex": 2,
+        "coverageInspectionError": 0,
+        "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+        "coverageUniform": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "extentUniform": [
+          320,
+          240
+        ],
+        "fullscreenPositions": [
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "inspectionError": 0,
+        "logicalOutput": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "magFilter": 9728,
+        "minFilter": 9728,
+        "pixels": [
+          1,
+          1
+        ],
+        "prefixCopy": {
+          "attachedTexture": 5,
+          "attachmentType": 5890,
+          "blend": false,
+          "extentUniform": [
+            320,
+            240
+          ],
+          "framebuffer": 2,
+          "inspectionError": 0,
+          "magFilter": 9728,
+          "minFilter": 9728,
+          "program": 6,
+          "texture": 4,
+          "unit": 1,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "prefixCount": 3,
+        "prefixUnit": 1,
+        "readTexture": 4,
+        "readTextureBinding": 4,
+        "sampleRectUniform": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "samples": 0,
+        "shaderProgram": 3,
+        "sourceDigest": "",
+        "sourceRectangle": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "sourceTexture": 8,
+        "sourceTextureBinding": 8,
+        "sourceUnit": 0,
+        "vertexState": {
+          "buffer": 0,
+          "enabled": 1,
+          "inspectionError": 0,
+          "normalized": 0,
+          "size": 2,
+          "stride": 0,
+          "type": 5126
+        },
+        "viewport": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "wrapS": 33071,
+        "wrapT": 33071,
+        "writeFramebuffer": 2,
+        "writeTexture": 5
+      },
+      {
+        "attachedTexture": 5,
+        "attachmentType": 5890,
+        "bits": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "blend": false,
+        "controlIndex": -1,
+        "coverageInspectionError": 0,
+        "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+        "coverageUniform": [
+          272,
+          32,
+          320,
+          112
+        ],
+        "extentUniform": [
+          320,
+          240
+        ],
+        "fullscreenPositions": [
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "inspectionError": 0,
+        "logicalOutput": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "magFilter": 9728,
+        "minFilter": 9728,
+        "pixels": [
+          96,
+          80
+        ],
+        "prefixCopy": {
+          "attachedTexture": 5,
+          "attachmentType": 5890,
+          "blend": false,
+          "extentUniform": [
+            320,
+            240
+          ],
+          "framebuffer": 2,
+          "inspectionError": 0,
+          "magFilter": 9728,
+          "minFilter": 9728,
+          "program": 6,
+          "texture": 4,
+          "unit": 1,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "prefixCount": 1,
+        "prefixUnit": 1,
+        "readTexture": 4,
+        "readTextureBinding": 4,
+        "sampleRectUniform": [
+          272,
+          32,
+          96,
+          80
+        ],
+        "samples": 0,
+        "shaderProgram": 3,
+        "sourceDigest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+        "sourceRectangle": {
+          "height": 80,
+          "width": 96,
+          "x": 272,
+          "y": 32
+        },
+        "sourceTexture": 1,
+        "sourceTextureBinding": 1,
+        "sourceUnit": 0,
+        "vertexState": {
+          "buffer": 0,
+          "enabled": 1,
+          "inspectionError": 0,
+          "normalized": 0,
+          "size": 2,
+          "stride": 0,
+          "type": 5126
+        },
+        "viewport": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "wrapS": 33071,
+        "wrapT": 33071,
+        "writeFramebuffer": 2,
+        "writeTexture": 5
+      },
+      {
+        "attachedTexture": 4,
+        "attachmentType": 5890,
+        "bits": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "blend": false,
+        "controlIndex": -1,
+        "coverageInspectionError": 0,
+        "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+        "coverageUniform": [
+          304,
+          56,
+          320,
+          104
+        ],
+        "extentUniform": [
+          320,
+          240
+        ],
+        "fullscreenPositions": [
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "inspectionError": 0,
+        "logicalOutput": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "magFilter": 9728,
+        "minFilter": 9728,
+        "pixels": [
+          72,
+          48
+        ],
+        "prefixCopy": {
+          "attachedTexture": 4,
+          "attachmentType": 5890,
+          "blend": false,
+          "extentUniform": [
+            320,
+            240
+          ],
+          "framebuffer": 1,
+          "inspectionError": 0,
+          "magFilter": 9728,
+          "minFilter": 9728,
+          "program": 6,
+          "texture": 5,
+          "unit": 1,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "prefixCount": 2,
+        "prefixUnit": 1,
+        "readTexture": 5,
+        "readTextureBinding": 5,
+        "sampleRectUniform": [
+          304,
+          56,
+          72,
+          48
+        ],
+        "samples": 0,
+        "shaderProgram": 3,
+        "sourceDigest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+        "sourceRectangle": {
+          "height": 48,
+          "width": 72,
+          "x": 304,
+          "y": 56
+        },
+        "sourceTexture": 2,
+        "sourceTextureBinding": 2,
+        "sourceUnit": 0,
+        "vertexState": {
+          "buffer": 0,
+          "enabled": 1,
+          "inspectionError": 0,
+          "normalized": 0,
+          "size": 2,
+          "stride": 0,
+          "type": 5126
+        },
+        "viewport": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "wrapS": 33071,
+        "wrapT": 33071,
+        "writeFramebuffer": 1,
+        "writeTexture": 4
+      },
+      {
+        "attachedTexture": 5,
+        "attachmentType": 5890,
+        "bits": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "blend": false,
+        "controlIndex": -1,
+        "coverageInspectionError": 0,
+        "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+        "coverageUniform": [
+          320,
+          68,
+          320,
+          100
+        ],
+        "extentUniform": [
+          320,
+          240
+        ],
+        "fullscreenPositions": [
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "inspectionError": 0,
+        "logicalOutput": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "magFilter": 9728,
+        "minFilter": 9728,
+        "pixels": [
+          48,
+          32
+        ],
+        "prefixCopy": {
+          "attachedTexture": 5,
+          "attachmentType": 5890,
+          "blend": false,
+          "extentUniform": [
+            320,
+            240
+          ],
+          "framebuffer": 2,
+          "inspectionError": 0,
+          "magFilter": 9728,
+          "minFilter": 9728,
+          "program": 6,
+          "texture": 4,
+          "unit": 1,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "prefixCount": 3,
+        "prefixUnit": 1,
+        "readTexture": 4,
+        "readTextureBinding": 4,
+        "sampleRectUniform": [
+          328,
+          68,
+          48,
+          32
+        ],
+        "samples": 0,
+        "shaderProgram": 3,
+        "sourceDigest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+        "sourceRectangle": {
+          "height": 32,
+          "width": 48,
+          "x": 328,
+          "y": 68
+        },
+        "sourceTexture": 3,
+        "sourceTextureBinding": 3,
+        "sourceUnit": 0,
+        "vertexState": {
+          "buffer": 0,
+          "enabled": 1,
+          "inspectionError": 0,
+          "normalized": 0,
+          "size": 2,
+          "stride": 0,
+          "type": 5126
+        },
+        "viewport": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "wrapS": 33071,
+        "wrapT": 33071,
+        "writeFramebuffer": 2,
+        "writeTexture": 5
+      }
+    ],
+    "pixelProof": false,
+    "policy": "per-layer-explicit-over-nearest-rgba8-v1",
+    "sequence": "1",
+    "token": "abcdef123456-1"
+  },
+  "binding": {
+    "readback": {
+      "bufferHeight": 240,
+      "bufferWidth": 320,
+      "digest": "6c20c1b0d26d9bf4e6ba81bef20894817dabc56dea4cd1575411f4b9a14b661f",
+      "eglConfig": {
+        "alpha": 8,
+        "blue": 8,
+        "buffer": 32,
+        "colorBufferType": 12430,
+        "configId": 51,
+        "green": 8,
+        "nativeVisualId": 875713089,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "eglSurface": {
+        "height": 240,
+        "width": 320
+      },
+      "encoding": "premultiplied-RGBA8-top-left",
+      "event": "ownedFramebufferReadback",
+      "filename": "owned-1-13.png",
+      "generation": 13,
+      "glBuffer": {
+        "alpha": 8,
+        "blue": 8,
+        "framebuffer": 0,
+        "green": 8,
+        "readFormat": 32993,
+        "readType": 5121,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "members": [
+        {
+          "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+          "pid": 1504804,
+          "rectangle": {
+            "height": 80,
+            "width": 96,
+            "x": 272,
+            "y": 32
+          },
+          "stableId": "abc1"
+        },
+        {
+          "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+          "pid": 1504805,
+          "rectangle": {
+            "height": 48,
+            "width": 72,
+            "x": 304,
+            "y": 56
+          },
+          "stableId": "abc2"
+        },
+        {
+          "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+          "pid": 1504806,
+          "rectangle": {
+            "height": 32,
+            "width": 48,
+            "x": 328,
+            "y": 68
+          },
+          "stableId": "abc3"
+        }
+      ],
+      "nativeAuthority": false,
+      "output": "WAYLAND-1",
+      "pid": 1504804,
+      "presentationProof": false,
+      "progress": 0,
+      "rawSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0",
+      "readError": 0,
+      "sequence": "1",
+      "stableId": "abc1",
+      "token": "abcdef123456-1"
+    },
+    "swap": {
+      "batchNs": "104019738244363",
+      "bufferHeight": 240,
+      "bufferWidth": 320,
+      "digest": "6c20c1b0d26d9bf4e6ba81bef20894817dabc56dea4cd1575411f4b9a14b661f",
+      "drawDoneNs": "104019757502991",
+      "drawStartedNs": "104019738244618",
+      "event": "swap",
+      "generation": 13,
+      "lastFrameCallbackNs": "104019732575149",
+      "members": [
+        {
+          "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+          "pid": 1504804,
+          "rectangle": {
+            "height": 80,
+            "width": 96,
+            "x": 272,
+            "y": 32
+          },
+          "stableId": "abc1"
+        },
+        {
+          "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+          "pid": 1504805,
+          "rectangle": {
+            "height": 48,
+            "width": 72,
+            "x": 304,
+            "y": 56
+          },
+          "stableId": "abc2"
+        },
+        {
+          "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+          "pid": 1504806,
+          "rectangle": {
+            "height": 32,
+            "width": 48,
+            "x": 328,
+            "y": 68
+          },
+          "stableId": "abc3"
+        }
+      ],
+      "output": "WAYLAND-1",
+      "pid": 1504804,
+      "progress": 0,
+      "rectangle": {
+        "height": 80,
+        "width": 104,
+        "x": 272,
+        "y": 32
+      },
+      "sequence": "1",
+      "stableId": "abc1",
+      "success": true,
+      "swapReturnedNs": "104019923406598",
+      "swapStartedNs": "104019923365699",
+      "token": "abcdef123456-1",
+      "uploadCount": 3
+    },
+    "presented": {
+      "accepted": true,
+      "bufferHeight": 240,
+      "bufferWidth": 320,
+      "digest": "6c20c1b0d26d9bf4e6ba81bef20894817dabc56dea4cd1575411f4b9a14b661f",
+      "endpoint": false,
+      "event": "presented",
+      "feedbackDeliveredNs": "104020159121002",
+      "generation": 13,
+      "members": [
+        {
+          "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+          "pid": 1504804,
+          "rectangle": {
+            "height": 80,
+            "width": 96,
+            "x": 272,
+            "y": 32
+          },
+          "stableId": "abc1"
+        },
+        {
+          "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+          "pid": 1504805,
+          "rectangle": {
+            "height": 48,
+            "width": 72,
+            "x": 304,
+            "y": 56
+          },
+          "stableId": "abc2"
+        },
+        {
+          "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+          "pid": 1504806,
+          "rectangle": {
+            "height": 32,
+            "width": 48,
+            "x": 328,
+            "y": 68
+          },
+          "stableId": "abc3"
+        }
+      ],
+      "output": "WAYLAND-1",
+      "outputSequence": "0",
+      "pid": 1504804,
+      "progress": 0,
+      "rectangle": {
+        "height": 80,
+        "width": 104,
+        "x": 272,
+        "y": 32
+      },
+      "sequence": "1",
+      "stableId": "abc1",
+      "submittedNs": "104019757505596",
+      "timestampNs": "104019933850117",
+      "token": "abcdef123456-1"
+    }
+  },
+  "expectedShaderSHA256": [
+    "eeff9248264975b7cd456d9e9399614f704f01bed6634b66c3cd23d579b2efa7",
+    "ceae6422cafc16b2eafe0a7fa82402227127b51c6f6a0d9d0025d0b15153adc4"
+  ]
+}

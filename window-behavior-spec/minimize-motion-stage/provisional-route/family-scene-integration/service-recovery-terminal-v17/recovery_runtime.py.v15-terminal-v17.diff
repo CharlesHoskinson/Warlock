@@ -1,0 +1,24 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v15-frozen-v2/recovery_runtime.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-terminal-v17/recovery_runtime.py
+@@ -275,8 +275,8 @@
+         if any(lease[k]!=proof['lease'][k] for k in ('root','rootIdentity','lockIdentity')):raise ValueError('acknowledged cancellation runtime/root/lock changed')
+         for row in self.body['actorResources']:
+             if row['renderer'] is not None:
+-                from recovery_resources import process_start
+-                if process_start(row['renderer']['pid'])==row['renderer']['start']:raise ValueError('cancelled old renderer lifetime remains live')
++                from recovery_resources import renderer_terminal_state
++                if renderer_terminal_state(row['renderer'])['oldLifetimeGone'] is not True:raise ValueError('cancelled old renderer lifetime remains live')
+         for row in self.body['actorResources']:dispose_directory(row['directory'],renderer_gone=row['outcome'].get('oldLifetimeGone'),inspection_only=True)
+         observations=cancellation.observe(self,plan)
+         self.finish_queries();self.current()
+@@ -336,8 +336,8 @@
+         if recovery['state'] not in ('closing-resources','prepared','settling','completed'):raise ValueError('invalid durable recovery phase')
+         for row in self.body['actorResources']:
+             if row['phase'] in ('retired','closed') and row['renderer'] is not None:
+-                from recovery_resources import process_start
+-                if process_start(row['renderer']['pid'])==row['renderer']['start']:raise ValueError('durable terminal actor still has old live renderer lifetime')
++                from recovery_resources import renderer_terminal_state
++                if renderer_terminal_state(row['renderer'])['oldLifetimeGone'] is not True:raise ValueError('durable terminal actor still has old live renderer lifetime')
+             if row['phase'] in ('retired','closed'):continue
+             self.current()
+             outcome=self.retire(row['renderer'],expected_environment=self.environment) if row['renderer'] is not None else {'oldLifetimeGone':True,'signaled':False,'forced':False}

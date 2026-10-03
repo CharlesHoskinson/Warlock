@@ -1,0 +1,11 @@
+
+  recovery_constant_test
+    ok incompleteFamilyCannotPrepareTest passed 1 test(s)
+    ok newerOwnerCannotPrepareTest passed 1 test(s)
+    ok endpointMustBeDurableBeforeWriteTest passed 1 test(s)
+    ok crashAfterWriteCannotRetoggleEndpointTest passed 1 test(s)
+    ok crashRequiresFreshCompleteOwnershipTest passed 1 test(s)
+    ok nativeWriteWithoutReturnedResultCannotClearTest passed 1 test(s)
+    ok durableResultAndObservedEndpointCanClearTest passed 1 test(s)
+
+  7 passing (375ms)

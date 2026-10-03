@@ -1,0 +1,108 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/CONTRACT.md": {
+      "sha256": "3c60f2ce9b0ffb916c2e4a32399b4da95f857dc71bc45023afc57b2caebef04d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/SOURCE_API_REVIEW.md": {
+      "sha256": "c03d6a282b2d1e33215c6af3523da74a4c09660ad366f53194cb90a19b7b907c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/qml_lifetime.qnt": {
+      "sha256": "dfe8250976b1431dd68f3957887c6d234185166c161769698e83bafab6dfda8e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/prove_before.py": {
+      "sha256": "04e3f19ee0e58a1dfe1bbd799da31334694a94be8b0ba0e4132e6319c8b53a1b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/initial-model.qnt": {
+      "sha256": "a938703973cbfd6b376db53d07a9e9774a029a2cf079fb6944b9925cfdc924ef",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/initial-contract.md": {
+      "sha256": "55b016cdc3165466750033f394771f0cf592cd5b8b8a9095f0993104a47d647d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/initial-prove-before.py": {
+      "sha256": "37a5fab469806bea944defa4f3f389ff73c758b1630ea6d238acfdb92c8fa655",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/formal-before-runtime.json": {
+      "sha256": "571b5ba4752aa6d3494f17677743e2b0b23ca8def166b779ea48273d8a4868c5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/refined-v2-model.qnt": {
+      "sha256": "8959e2d5032e6a504ddd49bf8ece174a7ee223c9adc63355d3884ecc77d25afb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/refined-v2-contract.md": {
+      "sha256": "55b016cdc3165466750033f394771f0cf592cd5b8b8a9095f0993104a47d647d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/refined-v2-prove.py": {
+      "sha256": "82c4276419c534b3de236e24989f521b3219039f5f770d0e95114a0874af80ee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/formal-refined-before-runtime.json": {
+      "sha256": "55c96e36a764aaa3106a6dd417a848f803406b7d452c893c6f7ae6e326d64d32",
+      "mode": 420
+    },
+    "/usr/include/qt6/QtQml/qqmlengine.h": {
+      "sha256": "5adb9ef0b6df8895de915b9f2e7710d049dd36432159eecca2e83a8616c03f02",
+      "mode": 420
+    },
+    "/usr/include/qt6/QtQml/qqml.h": {
+      "sha256": "5b8d760914cea8f632a2865ec8c5f0534ad8b7493906f89d4f960e9d8d560b70",
+      "mode": 420
+    },
+    "/usr/include/qt6/QtCore/qpointer.h": {
+      "sha256": "37610b4a3be3c516c1d894c93403de212b44a939c086131d55796f326965af1f",
+      "mode": 420
+    },
+    "/usr/include/bits/dlfcn.h": {
+      "sha256": "1580d0227b8fe5d335769a5091bbc399440b94d803b4789552b062eccfb8fdf1",
+      "mode": 420
+    },
+    "/usr/lib/qt6/qml/Quickshell/quickshell-core.qmltypes": {
+      "sha256": "644dca19bedcdfbc9fbd3db999fb51a3d3c7ce65db564ae3800e7870e2e298bd",
+      "mode": 420
+    }
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/qml_lifetime.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  qml_lifetime\n    ok genuineSameEngineObjectsTest passed 1 test(s)\n    ok missingLoaderRefusedTest passed 1 test(s)\n    ok failedLoaderPinRefusedTest passed 1 test(s)\n    ok crossEngineDelegateRefusedTest passed 1 test(s)\n    ok wrongAncestryRefusedTest passed 1 test(s)\n    ok contextChangeBetweenSnapshotsRefusedTest passed 1 test(s)\n    ok widgetDestructionBetweenSnapshotsRefusedTest passed 1 test(s)\n    ok delegateDestructionBetweenSnapshotsRefusedTest passed 1 test(s)\n    ok widgetAddressSlotReuseRefusesOldTest passed 1 test(s)\n    ok delegateAddressSlotReuseRefusesOldTest passed 1 test(s)\n    ok lateOldDestroyedCallbackCannotRetireNewTest passed 1 test(s)\n    ok currentDestroyedCallbackRetiresTest passed 1 test(s)\n    ok engineDestructionRefusesOldTest passed 1 test(s)\n    ok engineAddressSlotReuseNeverResetsTest passed 1 test(s)\n    ok actualSingletonRecreationRefusesOldTest passed 1 test(s)\n    ok observedReloadRefusesOldTest passed 1 test(s)\n    ok newSnapshotAfterObservedReloadTest passed 1 test(s)\n    ok loaderResetCannotRestartEpochTest passed 1 test(s)\n    ok sourceReplacementRefusesTest passed 1 test(s)\n    ok processReplacementRefusesTest passed 1 test(s)\n    ok wrongThreadRefusesTest passed 1 test(s)\n    ok callerNonceInstanceIdLayerCannotGrantTest passed 1 test(s)\n    ok representabilityExhaustionNeverWrapsTest passed 1 test(s)\n    ok absentDelegateRefusedTest passed 1 test(s)\n    ok widgetCannotBeItsOwnDelegateTest passed 1 test(s)\n    ok queryDoesNotIncrementGenerationsTest passed 1 test(s)\n    ok fakeQuickshellSingletonCannotGrantTest passed 1 test(s)\n    ok actualCoreDestructionRecreationRefusesOldTest passed 1 test(s)\n    ok missingActualCoreSignalSourceRefusesTest passed 1 test(s)\n\n  29 passing (13096ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/qml_lifetime.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (6427ms at 311 traces/second).\nUse --seed=0x14468d6 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceUnchanged": true,
+  "runtimeImplemented": false,
+  "runtimeLoaded": false,
+  "rootReviewRequiredBeforeRuntime": true,
+  "nativeLaunch": false,
+  "mainChanges": false,
+  "privateGUIAccepted": false,
+  "batchConsumerAccepted": false
+}

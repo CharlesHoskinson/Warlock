@@ -1,0 +1,64 @@
+{
+  "result": "source-stage-handoff-ready",
+  "nativeExecutedByAgent": false,
+  "mainWrites": false,
+  "sourcePackets": {
+    "family-raster-c1-v13": "f958d8dce3b7f60641d961d903c30c1701b9d6f7443aba31ce63fd668003998e",
+    "family-continuous-c1-v4": "585f38c248a43775da64dc3136ec831c65a1df31e08b57c5b9827d1373dc8134",
+    "producer-c1-software-cases-v1": "993dc8781f80346fb1dd7bb0d15fe4c90e0379c4390560420994cd319c00ab99"
+  },
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-p",
+        "test_*.py"
+      ],
+      "cwd": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "...................................................................................................\n----------------------------------------------------------------------\nRan 99 tests in 1.512s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/native_integration.py",
+        "--preflight"
+      ],
+      "cwd": "/home/hoskinson/window-integration-qa",
+      "returncode": 0,
+      "stdout": "{\"preflight\": \"pass\", \"inputs\": 8433, \"links\": 146, \"nativeLaunch\": false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/producer-c1-software-cases-v1/run_software.py"
+      ],
+      "cwd": "/home/hoskinson/window-integration-qa",
+      "returncode": 0,
+      "stdout": "{\"preflight\": \"pass\", \"nativeLaunch\": false, \"inputs\": 8478}\n",
+      "stderr": ""
+    }
+  ],
+  "ordinaryPythonTests": 99,
+  "diagnosticPythonTests": 83,
+  "newC1AuditTests": 21,
+  "sourcePreservationTests": 6,
+  "formalNamedCases": 16,
+  "formalRandomTraces": 4000,
+  "formalMaxSteps": 100,
+  "softwareSourceParsed": true,
+  "packetsUnchanged": true,
+  "nativeC1VelocityAccepted": false,
+  "physicalCadenceAccepted": false,
+  "rootReportedDiagnosticOutcome": "115-check PASS; independent44 replay pending at handoff",
+  "sequence": [
+    "family-raster-c1-v13",
+    "family-continuous-c1-v4",
+    "producer-c1-software-cases-v1"
+  ]
+}

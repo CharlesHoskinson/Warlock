@@ -1,0 +1,53 @@
+{
+  "result": "fail",
+  "checks": {
+    "terminalReportRetainsActualFailure": true,
+    "completeFrozenBytesModesLinks": true,
+    "exactSourceManifest": true,
+    "all18MainPreservation": false,
+    "mainWritesAbsent": true,
+    "allFourExactVariants": false,
+    "qt-wayland:all13ExactCases": false,
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": false,
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": false,
+    "qt-wayland:exactQSReadinessAndExplicitNormalQuit": false,
+    "qt-wayland:normalQSAndService": false,
+    "qt-wayland:nativeUnloadNormalOrdered": false,
+    "qt-wayland:hostRuntimeCleanup": true,
+    "qt-wayland:rawHelpersNormalExact": false,
+    "qt-wayland:allRecordedOriginalIdentitiesGone": true,
+    "qt-wayland:bothGenuineShellPreviewReceipts": false
+  },
+  "errors": {
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 193, in check\n    try:self.checks[name]=fn() is True\n                          ~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 210, in <lambda>\n    for kind in ('pointer','keyboard'):self.check(prefix+kind+'LegalBalancedActualTransitionsNormalEOF',lambda kind=kind:input_replay(variant['cleanup'][kind],kind,wheel_proof(stage,frozen,variant) if kind=='pointer' and any(row['command'].split()[0]=='wheel' for row in variant['cleanup'][kind]['trace']) else None))\n                                                                                                                                      ~~~~~~~~~~~~~~~~~~^^^^^^\nKeyError: 'pointer'\n",
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 193, in check\n    try:self.checks[name]=fn() is True\n                          ~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 210, in <lambda>\n    for kind in ('pointer','keyboard'):self.check(prefix+kind+'LegalBalancedActualTransitionsNormalEOF',lambda kind=kind:input_replay(variant['cleanup'][kind],kind,wheel_proof(stage,frozen,variant) if kind=='pointer' and any(row['command'].split()[0]=='wheel' for row in variant['cleanup'][kind]['trace']) else None))\n                                                                                                                                      ~~~~~~~~~~~~~~~~~~^^^^^^\nKeyError: 'keyboard'\n",
+    "qt-wayland:exactQSReadinessAndExplicitNormalQuit": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 193, in check\n    try:self.checks[name]=fn() is True\n                          ~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 211, in <lambda>\n    self.check(prefix+'exactQSReadinessAndExplicitNormalQuit',lambda:qs_replay(variant,stage,js(folder/'qs-lifecycle.json')))\n                                                                                             ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 19, in js\n    def js(path):return json.loads(read(path))\n                                   ~~~~^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 9, in read\n    path=Path(path);fd=os.open(path,os.O_RDONLY|os.O_NOFOLLOW|os.O_CLOEXEC);data=bytearray()\n                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/attempt-1/qt-wayland/qs-lifecycle.json'\n",
+    "qt-wayland:normalQSAndService": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 193, in check\n    try:self.checks[name]=fn() is True\n                          ~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 212, in <lambda>\n    self.check(prefix+'normalQSAndService',lambda:all(variant['cleanup'][kind]['exitCode']==0 and variant['cleanup'][kind]['exactOriginalGone'] is True for kind in ('shell','service') if (kind=='shell' or any(row['role']=='held-service' for row in variant['processes']))) and not any(row.get('forcedTermination') or row.get('forcedKill') or row.get('error') for row in variant['cleanup'].values()))\n                                                  ^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 212, in <genexpr>\n    self.check(prefix+'normalQSAndService',lambda:all(variant['cleanup'][kind]['exitCode']==0 and variant['cleanup'][kind]['exactOriginalGone'] is True for kind in ('shell','service') if (kind=='shell' or any(row['role']=='held-service' for row in variant['processes']))) and not any(row.get('forcedTermination') or row.get('forcedKill') or row.get('error') for row in variant['cleanup'].values()))\n                                                      ~~~~~~~~~~~~~~~~~~^^^^^^\nKeyError: 'shell'\n",
+    "qt-wayland:rawHelpersNormalExact": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 193, in check\n    try:self.checks[name]=fn() is True\n                          ~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 215, in <lambda>\n    self.check(prefix+'rawHelpersNormalExact',lambda:self.helpers(folder,variant))\n                                                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 236, in helpers\n    archive=js(folder/'terminal-helpers/archive.json');cfg_raw=read(folder/'terminal-helpers/helper-config.json');log_raw=read(folder/'terminal-helpers/helper-events.jsonl');config=json.loads(cfg_raw);events=[json.loads(line) for line in log_raw.splitlines() if line.strip()]\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 19, in js\n    def js(path):return json.loads(read(path))\n                                   ~~~~^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 9, in read\n    path=Path(path);fd=os.open(path,os.O_RDONLY|os.O_NOFOLLOW|os.O_CLOEXEC);data=bytearray()\n                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/attempt-1/qt-wayland/terminal-helpers/archive.json'\n"
+  },
+  "inventory": [
+    {
+      "variant": "qt-wayland",
+      "reachedCases": 0,
+      "retainedResult": "fail",
+      "errors": {
+        "error": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/run_native.py\", line 68, in variant_run\n    report['exactOutputReadiness']=output_readiness.collect(session,output/'host/output-readiness-evidence.json')\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/output_readiness.py\", line 65, in collect\n    rows=json.loads(raw.decode('utf-8'));row['actualOutputs']=rows;row['completedMonotonic']=clock();persist();remaining(deadline,clock)\n                                                                                                               ~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/output_readiness.py\", line 10, in remaining\n    if not numeric(now) or now<0 or now>=deadline:raise RuntimeError('Original private child startup deadline expired')\n                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Original private child startup deadline expired\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/run_native.py\", line 221, in variant_run\n    if not health['passed']:raise RuntimeError('Actual mandatory parent transport failed')\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Actual mandatory parent transport failed\n"
+      }
+    }
+  ],
+  "sourceManifestSHA256": "218544206b351eaf7196a031ffbb95cb3242987ae7456b76d3b8f041eb2cdd2f",
+  "sourceCount": 24771,
+  "modeCount": 24771,
+  "linkCount": 332,
+  "actualReachedCases": 0,
+  "expectedCases": 52,
+  "producerResult": "fail",
+  "nativeCommands": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false,
+  "fullHeld52ReplayAccepted": false,
+  "replayLimitations": [
+    "Historical geometry/pin and native IPC command timing are accepted only where actual samples are retained; gate booleans alone do not supply missing observations."
+  ],
+  "auditorSourceSHA256": "cc787853b6ec5686b7c5e09e27f397eef906ef6863a49aa6001766daf904e454"
+}

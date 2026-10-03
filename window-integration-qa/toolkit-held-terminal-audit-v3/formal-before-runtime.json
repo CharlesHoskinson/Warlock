@@ -1,0 +1,51 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-dafec3e844bf450484e2ee3594640639.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/wheel_input.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/wheel_input_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  wheel_input_test\n    ok authenticatedReleasedWheelSyncTest passed 1 test(s)\n    ok heldWheelRefusesTest passed 1 test(s)\n    ok unauthenticatedWheelRefusesTest passed 1 test(s)\n    ok keyboardWheelRefusesTest passed 1 test(s)\n    ok malformedLiteralRefusesTest passed 1 test(s)\n    ok missingSyncRefusesTest passed 1 test(s)\n    ok changedLifetimeSyncRefusesTest passed 1 test(s)\n    ok interposedCommandRefusesTest passed 1 test(s)\n    ok duplicateWheelBeforeSyncRefusesTest passed 1 test(s)\n\n  9 passing (59ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/wheel_input.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (258ms at 7752 traces/second).\nUse --seed=0x14bd170 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "nativeLaunch": false,
+  "runtimeImplemented": false,
+  "sources": {
+    "CONTRACT.md": "8da42a711b08c48569f59ba7507b8b12581bf24991b5a14ddbf2b6c6f1cca98b",
+    "wheel_input.qnt": "f96b9060fcffeb2994d956c6ee972f77371b15b15d9a9d53b0f821470aa31bfe",
+    "wheel_input_test.qnt": "d07d28dbb8097d782c62a70e3b6066a2bec05f86c0765aae18ee655fb0c5fb6f"
+  }
+}

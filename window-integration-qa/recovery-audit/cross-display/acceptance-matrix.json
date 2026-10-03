@@ -1,0 +1,119 @@
+{
+  "result": "pass",
+  "claim": "actual native GTK drag across physical plus temporary fractional headless output; no physical cable hotplug claim",
+  "paths": [
+    {
+      "name": "direct native cross-display transfer",
+      "pass": true,
+      "checks": [
+        "actual FileList copy target",
+        "direct cross-display baseline owns destination output"
+      ]
+    },
+    {
+      "name": "leave before destination dwell",
+      "pass": true,
+      "checks": [
+        "leave remote taskbar before dwell preserves minimized target"
+      ]
+    },
+    {
+      "name": "singleton taskbar restore and native copy",
+      "pass": true,
+      "checks": [
+        "remote singleton restore retains destination identity and display",
+        "actual FileList copy target"
+      ]
+    },
+    {
+      "name": "remote grouped chooser without activation",
+      "pass": true,
+      "checks": [
+        "remote group chooser preserves both minimized destinations"
+      ]
+    },
+    {
+      "name": "exact remote preview peer and native copy",
+      "pass": true,
+      "checks": [
+        "remote preview restores exact peer only",
+        "actual FileList copy peer"
+      ]
+    },
+    {
+      "name": "native Escape and later motion",
+      "pass": true,
+      "checks": [
+        "cancel preserves minimized destinations and clears remote hover"
+      ]
+    },
+    {
+      "name": "active destination output removal",
+      "pass": true,
+      "checks": [
+        "output removal drops orphan widget and preserves unselected minimized clients"
+      ]
+    },
+    {
+      "name": "COPY payload preservation",
+      "pass": true,
+      "checks": [
+        "copy action preserves source bytes and never requests deletion"
+      ]
+    }
+  ],
+  "acceptanceAssertions": 11,
+  "restorationChecks": {
+    "clientIdentities": true,
+    "clientWorkspaceAndPinned": true,
+    "outputs": true,
+    "catalogBytes": true,
+    "focus": true,
+    "cursor": true,
+    "a11y": true,
+    "dragCleared": true,
+    "configErrors": true,
+    "fixtureProcessesExited": true,
+    "clientGeometry": true
+  },
+  "nativeCopies": [
+    {
+      "destination": "target",
+      "bytes": 262166,
+      "sha256": "b002780c5fbf3b1cef1fab39ab213606e0c342175f95fbf01d59a87fbd3819f2",
+      "nativeType": "Gdk.FileList"
+    },
+    {
+      "destination": "target",
+      "bytes": 262166,
+      "sha256": "b002780c5fbf3b1cef1fab39ab213606e0c342175f95fbf01d59a87fbd3819f2",
+      "nativeType": "Gdk.FileList"
+    },
+    {
+      "destination": "peer",
+      "bytes": 262166,
+      "sha256": "b002780c5fbf3b1cef1fab39ab213606e0c342175f95fbf01d59a87fbd3819f2",
+      "nativeType": "Gdk.FileList"
+    }
+  ],
+  "diagnosticTransientRetries": 5,
+  "fixtureCorrectionEvidence": [
+    "native-cross-display-first-attempt.json",
+    "native-cross-display-second-attempt.json",
+    "native-cross-display-third-attempt.json",
+    "native-cross-display-fourth-attempt.json",
+    "native-cross-display-fifth-attempt.json",
+    "native-cross-display-sixth-attempt.json"
+  ],
+  "corrections": [
+    "Wait queued virtual-pointer sleeps before asserting dwell.",
+    "Retry and record transient read-only IPC Target not found during monitor ownership updates.",
+    "Emit real nonzero native motion into source before button-down and into restored receiver before release; focus warp may already place pointer at chosen center.",
+    "Use fresh disposable source for independent output-removal scenario."
+  ],
+  "sourceHashes": {
+    "native_cross_display.py": "75a382c4f6aec74c7734b11953736e5f0e469c001892c6db089e479ca2755e37",
+    "filelist_probe_gtk.py": "2e824fc8df71fb2ab5ed2237e6b1df343b500d1c4de65e35f1bc3eea5a72682a",
+    "stage_diagnostics.py": "833558f24f1d7370a0d880ee02a02058f8ce07bce7b725fc301924a4f09aa855"
+  }
+}

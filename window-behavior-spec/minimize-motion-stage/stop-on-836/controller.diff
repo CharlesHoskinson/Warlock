@@ -1,0 +1,42 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/family-reservation/hypr-window-motion	2026-10-01 00:23:22.888093119 -0600
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/stop-on-836/hypr-window-motion	2026-10-01 00:40:21.419121446 -0600
+@@ -858,6 +858,30 @@
+             return json.loads(answer)
+ 
+ 
++def stop():
++    try:
++        return send({'method':'shutdown'})
++    except (FileNotFoundError,ConnectionRefusedError):
++        # No request bytes were transmitted. Do not start/recover a daemon to
++        # stop an already idle service, or discard accepted journal records.
++        if not ROOT.exists():return {'ok':True,'idle':True}
++        try:
++            with (ROOT/'daemon.lock').open('a') as lock:
++                fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
++                try:pending=json.loads((ROOT/'pending.json').read_text())
++                except FileNotFoundError:pending=[]
++                if pending!=[]:raise ValueError('motion service has pending recovery; shutdown cannot report idle')
++                try:pid=int((ROOT/'daemon.pid').read_text())
++                except FileNotFoundError:pid=None
++                if pid:
++                    try:os.kill(pid,0)
++                    except ProcessLookupError:pass
++                    else:raise ValueError('motion daemon exists without a listener; shutdown cannot report idle')
++                return {'ok':True,'idle':True}
++        except (OSError,ValueError) as error:
++            return {'ok':False,'error':'motion shutdown failed: '+str(error)}
++
++
+ def main():
+     if sys.argv[1:2] == ['daemon']:
+         daemon()
+@@ -885,7 +909,7 @@
+         result=send({'method':'diagnostics'})
+         print(json.dumps(result))
+     elif sys.argv[1:2]==['stop']:
+-        result=send({'method':'shutdown'})
++        result=stop()
+     elif sys.argv[1:2] and sys.argv[1] in ('ready', 'done', 'fail') and len(sys.argv) == 3:
+         result = send({'method': sys.argv[1], 'token': sys.argv[2]},start=True)
+     else:

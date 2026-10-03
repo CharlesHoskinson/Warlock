@@ -1,0 +1,14 @@
+--- /home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/Provider.hpp
++++ /home/hoskinson/window-behavior-spec/process-terminal-retire-v2-conservation/proposal/desired/Provider.hpp
+@@ -10,8 +10,11 @@
+  explicit ObjectLifetimeProvider(QQmlEngine*e):engine(e){}
+  Q_INVOKABLE QVariantMap engineScope();
+  Q_INVOKABLE QVariantMap armProcess(QObject*menu,QObject*row,QObject*popup,QObject*process,QObject*out,QObject*err,const QString&role,const QString&originalJSON,QObject*actualQuickshell);
++ Q_INVOKABLE QVariantMap retireProcess(QObject*menu,QObject*row,QObject*popup,QObject*process,QObject*out,QObject*err,const QVariant&lease,QObject*actualQuickshell);
+  Q_INVOKABLE QVariantMap processState(QObject*process,QObject*actualQuickshell);
+  Q_INVOKABLE QVariantMap cancelProcess(QObject*process,QObject*actualQuickshell);
+  Q_INVOKABLE QVariantMap observePopup(QQuickItem*menu,QQuickItem*row,QObject*popup,QObject*actualQuickshell);
+  Q_INVOKABLE QVariantMap observe(QQuickItem*widget,QQuickItem*delegate,QObject*actualQuickshell);
++signals:
++ void processLifecycleChanged(QObject*process,qulonglong lease);
+ };

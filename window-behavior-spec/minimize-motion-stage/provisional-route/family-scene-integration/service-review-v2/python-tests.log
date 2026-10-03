@@ -1,0 +1,25 @@
+test_atomic_native_commit_prevents_peer_callback_reservation_race (test_scene_controller.SceneTests.test_atomic_native_commit_prevents_peer_callback_reservation_race) ... ok
+test_changed_native_geometry_does_not_replace_retained_pixels (test_scene_controller.SceneTests.test_changed_native_geometry_does_not_replace_retained_pixels) ... ok
+test_context_change_switches_destination_before_retarg_expansion (test_scene_controller.SceneTests.test_context_change_switches_destination_before_retarg_expansion) ... ok
+test_fresh_reduced_initial_request_commits_without_renderer (test_scene_controller.SceneTests.test_fresh_reduced_initial_request_commits_without_renderer) ... ok
+test_fresh_relation_failure_never_truncates_to_singleton (test_scene_controller.SceneTests.test_fresh_relation_failure_never_truncates_to_singleton) ... ok
+test_obsolete_restore_metadata_cannot_switch_any_destination (test_scene_controller.SceneTests.test_obsolete_restore_metadata_cannot_switch_any_destination) ... ok
+test_peer_reuse_removes_native_authority (test_scene_controller.SceneTests.test_peer_reuse_removes_native_authority) ... ok
+test_reduce_during_unvalidated_reversal_settles_previous_accepted_intent (test_scene_controller.SceneTests.test_reduce_during_unvalidated_reversal_settles_previous_accepted_intent) ... ok
+test_reduce_mid_running_settles_complete_latest_family (test_scene_controller.SceneTests.test_reduce_mid_running_settles_complete_latest_family) ... ok
+test_request_after_endpoint_before_cancel_ack_seeds_fresh_scene (test_scene_controller.SceneTests.test_request_after_endpoint_before_cancel_ack_seeds_fresh_scene) ... ok
+test_same_captured_identity_can_supersede_initial_pending_family (test_scene_controller.SceneTests.test_same_captured_identity_can_supersede_initial_pending_family) ... ok
+test_same_pid_foreign_peer_is_not_in_family (test_scene_controller.SceneTests.test_same_pid_foreign_peer_is_not_in_family) ... ok
+test_seed_complete_family_ready_and_endpoint (test_scene_controller.SceneTests.test_seed_complete_family_ready_and_endpoint) ... ok
+test_third_intent_retargets_before_blocked_metadata_and_reuses_all_pixels (test_scene_controller.SceneTests.test_third_intent_retargets_before_blocked_metadata_and_reuses_all_pixels) ... ok
+test_unvalidated_deadline_cannot_commit_requested_restore (test_scene_controller.SceneTests.test_unvalidated_deadline_cannot_commit_requested_restore) ... ok
+test_wrong_snapshot_digest_event_has_no_native_authority (test_scene_controller.SceneTests.test_wrong_snapshot_digest_event_has_no_native_authority) ... ok
+test_malformed_event_retires_transport_once (test_pipe_transport.TransportTests.test_malformed_event_retires_transport_once) ... ok
+test_nonfinite_and_unbounded_commands_reject_before_wire (test_pipe_transport.TransportTests.test_nonfinite_and_unbounded_commands_reject_before_wire) ... ok
+test_nonzero_shutdown_cannot_be_accepted_as_cleanup (test_pipe_transport.TransportTests.test_nonzero_shutdown_cannot_be_accepted_as_cleanup) ... ok
+test_persistent_ordered_json_pipe_and_normal_exit (test_pipe_transport.TransportTests.test_persistent_ordered_json_pipe_and_normal_exit) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.169s
+
+OK

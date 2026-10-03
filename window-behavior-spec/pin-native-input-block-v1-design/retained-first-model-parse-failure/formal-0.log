@@ -1,0 +1,16 @@
+[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/window-behavior-spec/pin-native-input-block-v1-design/input_block.qnt:19:36
+  19:   action nativeCurrent(hidden:bool)={s'=s.with("block",2).with("hidden",hidden)
+                                         ^
+
+
+ Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/window-behavior-spec/pin-native-input-block-v1-design/input_block.qnt:21:3
+  21:   action input(hit:int,core:int,seat:int,callback:bool)={s'=s.with("physical",true)
+        ^^^^^^
+
+error: parsing failed

@@ -1,0 +1,51 @@
+{
+  "status": "installed and running after guarded restart; all preservation checks pass",
+  "reproducedInstalledBug": {
+    "reproduced": true,
+    "selectedStream": "nested (newest socket)",
+    "queryDefaultTarget": "main",
+    "queryEnvironment": [
+      {
+        "args": [
+          "clients",
+          "-j"
+        ],
+        "signature": ""
+      },
+      {
+        "args": [
+          "activewindow",
+          "-j"
+        ],
+        "signature": ""
+      }
+    ],
+    "resultingFalseMainUrgency": {
+      "0x123": {
+        "pid": 42,
+        "stableId": "main-id"
+      }
+    },
+    "cachedStateChangedBeforeAmbiguityResolved": true
+  },
+  "quintScenarioTests": 6,
+  "quintSamples": 2000,
+  "quintMaxSteps": 100,
+  "quintTraces": 10,
+  "candidateActualDaemonTests": 6,
+  "candidateExistingEOFReconnectFocusRegressionTests": 1,
+  "sourceHashes": {
+    "live": "565776b1e128efef4cb482b834a8300bbfbb63ec59c195c25ee2b768fa00c83a",
+    "candidate": "b544917f44fcc4786fcc0b4eca922bbc4c3df00b9b4b1f92a220d4c6fcb10b5e"
+  },
+  "remainingUntested": [
+    "main compositor restart (existing apps preserved)",
+    "physical cable hotplug/output visibility",
+    "additional independent native app publishers",
+    "absence-env invocation against real simultaneous compositors (isolated mocked process/socket test covers exact selection bug)"
+  ],
+  "installedActualDaemonSelectionTests": 6,
+  "installedEOFReconnectFocusRegressionTests": 1,
+  "runningPID": 2850234,
+  "deploymentReport": "deployment-report.json"
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_chat" xml:lang="kk">
+  <info>
+    <link type="guide" xref="preferences#application"/>
+    <link type="next" xref="preferences_spellcheck"/>
+    <title type="sort">3. Чат</title>
+    <title type="link">Чат</title>
+    <desc><app>Orca</app>-ның IM және IRC қолдауын теңшеу</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Чат баптаулары</title>
+  <p>Келесі опциялар лезде хабар алмасу және интернет релелік чат клиенттеріне қол жеткізуді қамтамасыз ету кезінде <app>Orca</app> әрекетін теңшеуге мүмкіндік береді.</p>
+  <section id="speak_name">
+    <title>Чат бөлмесінің атын дыбыстау</title>
+    <p>Егер бұл жалауша белгіленсе, <app>Orca</app> кіріс хабарлардың алдына, егер олар ағымдағы фокусталған сөйлесуден келмесе, олар келген бөлменің немесе серіктестің атын қосады.</p>
+    <p>Әдепкі мәні: белгіленбеген</p>
+  </section>
+  <section id="announce_typing">
+    <title>Серіктестеріңіз мәтін теріп жатқанда хабарлау</title>
+    <p>Егер бұл жалауша белгіленсе және <app>Orca</app>-да серіктесіңіздің мәтін теріп жатқанын анықтайтын жеткілікті ақпарат болса, <app>Orca</app> мәтін теру күйіндегі өзгерістерді хабарлайды.</p>
+    <p>Әдепкі мәні: белгіленбеген</p>
+  </section>
+  <section id="message_histories">
+    <title>Чат бөлмесіне тән хабарлар тарихын қамтамасыз ету</title>
+    <p>Егер бұл жалауша белгіленсе, <app>Orca</app>-ның соңғы хабарларды қарап шығу командалары тек ағымдағы фокусталған сөйлесуге ғана қолданылады. Әйтпесе, тарихта олардың қай сөйлесуден келгеніне қарамастан ең соңғы хабарлар болады.</p>
+    <p>Әдепкі мәні: белгіленбеген</p>
+  </section>
+  <section id="speak_messages_from">
+    <title>Келесіден келген хабарларды дыбыстау</title>
+    <p>Бұл радио батырмалар тобы <app>Orca</app>-ның кіріс хабарды қандай жағдайларда сізге ұсынатынын басқаруға мүмкіндік береді. Таңдауларыңыз:</p>
+    <list>
+      <item>
+        <p><gui>Барлық арналар</gui></p>
+      </item>
+      <item>
+        <p><gui>Арна терезесі белсенді болса ғана</gui></p>
+      </item>
+      <item>
+        <p><gui>Кез келген чат терезесі белсенді болғанда барлық арналар</gui></p>
+      </item>
+    </list>
+    <p>Әдепкі мәні: барлық арналар</p>
+  </section>
+</page>

@@ -1,0 +1,65 @@
+{
+  "result": "fail",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking_test.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: Couldn't unify set and list\nTrying to unify Set[_t14] and List[int]\nTrying to unify (Set[_t14], _t14) => bool and (List[int], t_w_413) => _t15\n\n\n  at /home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking.qnt:5:84\n  5:  pure def promote(order:List[int],members:List[int]):List[int]=order.select(w=>not(members.contains(w))).concat(members)\n                                                                                        ^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: Couldn't unify set and list\nTrying to unify Set[_t0] and List[int]\nTrying to unify (Set[_t0], _t0) => bool and (List[int], t_w_120) => _t1\n\n\n  at /home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking.qnt:5:84\n  5:  pure def promote(order:List[int],members:List[int]):List[int]=order.select(w=>not(members.contains(w))).concat(members)\n                                                                                        ^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_frontend_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pin_frontend_test\n    ok actualCapturedOwnerTest passed 1 test(s)\n    ok noCaptureNoInvokeTest passed 1 test(s)\n    ok noAuthorityCaptureTest passed 1 test(s)\n    ok refocusNeverRedirectsTest passed 1 test(s)\n    ok dismissedNoActionTest passed 1 test(s)\n    ok oldMenuReplyCannotEnableNewTest passed 1 test(s)\n    ok wrongMemberReplyNoActionTest passed 1 test(s)\n    ok oldLifetimeNoWriteTest passed 1 test(s)\n    ok reloadNoWriteTest passed 1 test(s)\n    ok duplicateInvokeOneSendTest passed 1 test(s)\n    ok failureAckNoRetryTest passed 1 test(s)\n    ok actualCompleteTest passed 1 test(s)\n\n  12 passing (1082ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_frontend.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (2901ms at 689 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking.qnt": "18eacc56e0ac59e36cf9b997f25ea4d27c920fbbfbafbc695601ade8dfba0a0e",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking_test.qnt": "5a08b1d99379c67f75c18be71f73e96d9108326872d4c967216b9c3df7ebb8eb",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_frontend.qnt": "5bad139122398b91059ff7dbb42f8a7bc98a6a235e5ed1c208b7f81f4e8fcc0b",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_frontend_test.qnt": "95655d29c3462295df3c5e25c3b68fe31761c22dbf16a830c4c901e5dc12fd5c",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/STACKING_FRONTEND_CONTRACT.md": "ff55cda4988be724eed3901f49cbb296e47b9f05aace8ffaa6cf03a633fb80b9"
+  },
+  "newStackImplementationAbsent": true,
+  "frontendImplementationAbsent": true,
+  "nativeExecuted": false
+}

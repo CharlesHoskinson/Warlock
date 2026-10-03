@@ -1,0 +1,72 @@
+{
+  "updatedUTC": "2026-10-02T01:27:26.395715+00:00",
+  "result": "accepted-bounded-data-witness; full-browser-flow-remains-failed",
+  "reportSHA256": "df614caa108c53d17b77db55da4eb2f0a73d9f4c3ba1095ebb5c6ada03f678bd",
+  "rawMetricsSHA256": "ea2a46fa9e6a260b2ca9128b28ea3543a9e42e4bbf28545c124b83c3f3626329",
+  "rootTerminalSHA256": "ac081f9f7c993c1da473d4c298923c6d903678cc25e45bf97c79e7f3ae42a851",
+  "actualProofReplays": [
+    {
+      "line": "799ffa600000-799ffaa00000 rw-s 00000000 00:54 339098                     /run/user/1000/wqa/01c9/browser-profile/BrowserMetrics/BrowserMetrics-6ABF0652-1F4431.pma (deleted)",
+      "phase": "both actual clients initialized",
+      "afterDisk": false,
+      "fd": 7,
+      "device": 84,
+      "inode": 339098,
+      "parentState": "absentENOENT",
+      "fullMode": 33152,
+      "fullFlags": 32770,
+      "size": 4194304,
+      "exactFDVMAAndAnchorsAccepted": true
+    },
+    {
+      "line": "799ffa600000-799ffaa00000 rw-s 00000000 00:54 339098                     /run/user/1000/wqa/01c9/browser-profile/BrowserMetrics/BrowserMetrics-6ABF0652-1F4431.pma (deleted)",
+      "phase": "both actual clients initialized",
+      "afterDisk": true,
+      "fd": 7,
+      "device": 84,
+      "inode": 339098,
+      "parentState": "absentENOENT",
+      "fullMode": 33152,
+      "fullFlags": 32770,
+      "size": 4194304,
+      "exactFDVMAAndAnchorsAccepted": true
+    }
+  ],
+  "layoutSamples": 105,
+  "uniqueGeometry": {
+    "surfaceBox": [
+      140,
+      100,
+      930,
+      700
+    ],
+    "inner": [
+      890,
+      563
+    ],
+    "outer": [
+      930,
+      700
+    ],
+    "rect": [
+      135.953125,
+      79.875,
+      461,
+      222
+    ],
+    "ratio": 1,
+    "screen": [
+      0,
+      0
+    ],
+    "ready": false
+  },
+  "layoutFailure": "Old guard requires innerWidth equal native surface width; actual890 differs from930. Inset origin not determined by width difference. Wayland DOM screen diagnostic only.",
+  "inputFeaturesAccepted": false,
+  "actualUnlinkActorProved": false,
+  "historicalAbsentParentProved": false,
+  "installedChromiumBranchProved": false,
+  "mainWrites": false,
+  "physicalHardwareAccepted": false,
+  "fullWindowsParityAccepted": false
+}

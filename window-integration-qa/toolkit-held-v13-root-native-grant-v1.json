@@ -1,0 +1,29 @@
+{
+  "updatedUTC": "2026-10-02T05:01:08.502841+00:00",
+  "result": "pass",
+  "sourceReadySHA256": "a54842fb915d56cc2b33b1766bdc1cf96645f478e646763e7b78826330c46fda",
+  "manifestSHA256": "218544206b351eaf7196a031ffbb95cb3242987ae7456b76d3b8f041eb2cdd2f",
+  "allReadyClosureExact": true,
+  "inputs": 24771,
+  "links": 332,
+  "rootFocusedActualTests": 28,
+  "offlineSHA256": "8fc5732f88f7ccb5a94c5f29d3199e7d65a836e4255c02dba62e55bbba099782",
+  "formalBeforeRuntimeSHA256": "f31d4e3b503afc5241734bfd0c5f7415d85ca2367f08d2e1992e95b19f7eedba",
+  "reviewed": "Entire ROOT_REVIEW, selected-host adapter, collector and original-runner inverse; original52 actions/budgets/strict feature oracle unchanged",
+  "preflightTerminal": 0,
+  "nativeAuthorized": true,
+  "rootSoleSerialGuiOwner": true,
+  "mainWritesAuthorized": false,
+  "crashHandoffAllFiveApplied": true,
+  "original52Accepted": false,
+  "fullWindowsParityAccepted": false,
+  "exactCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/run_native.py",
+    "--attempt",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/attempt-1"
+  ]
+}

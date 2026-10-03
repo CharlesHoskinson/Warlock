@@ -1,0 +1,18 @@
+{
+  "result": "pass",
+  "tests": 18,
+  "output": "test_authority_reject_truncated_changed_role (test_offline.X11Tests.test_authority_reject_truncated_changed_role) ... ok\ntest_bad_config_refused (test_offline.X11Tests.test_bad_config_refused) ... ok\ntest_base_config_stays_disabled (test_offline.X11Tests.test_base_config_stays_disabled) ... ok\ntest_cookie_binary_roundtrip (test_offline.X11Tests.test_cookie_binary_roundtrip) ... ok\ntest_effective_config_x11_only (test_offline.X11Tests.test_effective_config_x11_only) ... ok\ntest_import_no_launch (test_offline.X11Tests.test_import_no_launch) ... ok\ntest_launcher_bad_core_refuses_before_exec (test_offline.X11Tests.test_launcher_bad_core_refuses_before_exec) ... ok\ntest_launcher_missing_scope_refuses_before_exec (test_offline.X11Tests.test_launcher_missing_scope_refuses_before_exec) ... ok\ntest_main_or_remote_display_refused (test_offline.X11Tests.test_main_or_remote_display_refused) ... ok\ntest_private_file_symlink_and_mode_refusal (test_offline.X11Tests.test_private_file_symlink_and_mode_refusal) ... ok\ntest_setup_cookie_padding (test_offline.X11Tests.test_setup_cookie_padding) ... ok\ntest_setup_oversize_refused (test_offline.X11Tests.test_setup_oversize_refused) ... ok\ntest_setup_refusal_not_success (test_offline.X11Tests.test_setup_refusal_not_success) ... ok\ntest_setup_success_real_fragment_reads (test_offline.X11Tests.test_setup_success_real_fragment_reads) ... ok\ntest_setup_truncation_refused (test_offline.X11Tests.test_setup_truncation_refused) ... ok\ntest_setup_without_cookie (test_offline.X11Tests.test_setup_without_cookie) ... ok\ntest_unapproved_flags_refused (test_offline.X11Tests.test_unapproved_flags_refused) ... ok\ntest_upstream_args (test_offline.X11Tests.test_upstream_args) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 0.003s\n\nOK\n",
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-645bad435a8546b48e58105277f348a6.scope",
+    "coreLimit": 1
+  },
+  "coreLimits": [
+    1,
+    1
+  ],
+  "nativeServersLaunched": false,
+  "nativeClientsLaunched": false,
+  "helpOnly": true,
+  "XwaylandSHA256": "bd46ee40517f2de8ff9c4793df09c786b8e84622ea6276fb5a1714ad974adfac",
+  "XwaylandHelpSHA256": "8612c17299883d4d33e1c302bdcdccd3e3c4c7852cc5f89daba48ff6ccfb59eb"
+}

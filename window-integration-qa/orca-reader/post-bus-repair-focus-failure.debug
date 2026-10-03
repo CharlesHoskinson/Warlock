@@ -1,0 +1,1447 @@
+21:10:51.698948 - INFO: Preparing to launch.
+21:10:51.699126 - REMOTE CONTROLLER: Service not ready; queuing decorated registration for QAObservation.
+21:10:51.699699 - ORCA: Attempt to load orca-customizations from /home/hoskinson/window-integration-qa/orca-reader/data/orca/orca-customizations.py succeeded.
+21:10:51.699759 - ORCA: Invalid speech server factory: silent_factory
+21:10:51.715322 - INFO: About to launch Orca.
+21:10:51.717761 - ORCA: Accessibility enabled: true
+21:10:51.719495 - GSETTINGS REGISTRY: No dconf settings found; proceeding with migration.
+21:10:51.719549 - GSETTINGS REGISTRY: Migrating 'live-regions' settings to GSettings.
+21:10:51.719583 - GSETTINGS REGISTRY: Schema org.gnome.Orca.LiveRegions loaded
+21:10:51.719629 - GSETTINGS REGISTRY: Migrating 'sound' settings to GSettings.
+21:10:51.719642 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Sound loaded
+21:10:51.719665 - GSETTINGS REGISTRY: Migrating 'structural-navigation' settings to GSettings.
+21:10:51.719675 - GSETTINGS REGISTRY: Schema org.gnome.Orca.StructuralNavigation loaded
+21:10:51.719696 - GSETTINGS REGISTRY: Migrating 'say-all' settings to GSettings.
+21:10:51.719704 - GSETTINGS REGISTRY: Schema org.gnome.Orca.SayAll loaded
+21:10:51.719720 - GSETTINGS REGISTRY: Migrating 'caret-navigation' settings to GSettings.
+21:10:51.719727 - GSETTINGS REGISTRY: Schema org.gnome.Orca.CaretNavigation loaded
+21:10:51.719740 - GSETTINGS REGISTRY: Migrating 'table-navigation' settings to GSettings.
+21:10:51.719747 - GSETTINGS REGISTRY: Schema org.gnome.Orca.TableNavigation loaded
+21:10:51.719763 - GSETTINGS REGISTRY: Migrating 'document' settings to GSettings.
+21:10:51.719771 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Document loaded
+21:10:51.719803 - GSETTINGS REGISTRY: Migrating 'speech' settings to GSettings.
+21:10:51.719810 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Speech loaded
+21:10:51.719824 - GSETTINGS REGISTRY: Migrating 'voice' settings to GSettings.
+21:10:51.719830 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Voice loaded
+21:10:51.719844 - GSETTINGS REGISTRY: Migrating 'typing-echo' settings to GSettings.
+21:10:51.719851 - GSETTINGS REGISTRY: Schema org.gnome.Orca.TypingEcho loaded
+21:10:51.719866 - GSETTINGS REGISTRY: Migrating 'chat' settings to GSettings.
+21:10:51.719873 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Chat loaded
+21:10:51.719886 - GSETTINGS REGISTRY: Migrating 'flat-review' settings to GSettings.
+21:10:51.719894 - GSETTINGS REGISTRY: Schema org.gnome.Orca.FlatReview loaded
+21:10:51.719906 - GSETTINGS REGISTRY: Migrating 'mouse-review' settings to GSettings.
+21:10:51.719912 - GSETTINGS REGISTRY: Schema org.gnome.Orca.MouseReview loaded
+21:10:51.719927 - GSETTINGS REGISTRY: Migrating 'spellcheck' settings to GSettings.
+21:10:51.719933 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Spellcheck loaded
+21:10:51.719946 - GSETTINGS REGISTRY: Migrating 'system-information' settings to GSettings.
+21:10:51.719952 - GSETTINGS REGISTRY: Schema org.gnome.Orca.SystemInformation loaded
+21:10:51.719964 - GSETTINGS REGISTRY: Migrating 'text-attributes' settings to GSettings.
+21:10:51.719970 - GSETTINGS REGISTRY: Schema org.gnome.Orca.TextAttributes loaded
+21:10:51.719988 - GSETTINGS REGISTRY: Migrating 'braille' settings to GSettings.
+21:10:51.719995 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Braille loaded
+21:10:51.720008 - GSETTINGS REGISTRY: Migrating 'keybindings' settings to GSettings.
+21:10:51.720015 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Keybindings loaded
+21:10:51.720027 - GSETTINGS REGISTRY: Schema org.gnome.Orca.ProfileMetadata loaded
+21:10:51.720099 - ORCA: Loading User Settings
+21:10:51.720108 - EVENT MANAGER: Pause queueing: True. Clear queue: True. Loading user settings.
+21:10:51.720125 - INPUT EVENT MANAGER: Pause queueing: True. Loading user settings.
+21:10:51.720403 - DEFAULT: Setting up commands for None
+21:10:51.720759 - DEFAULT: Braille bindings unavailable.
+21:10:51.720801 - BRAILLE PRESENTER: Commands set up.
+21:10:51.720814 - NOTIFICATION PRESENTER: Commands set up.
+21:10:51.720822 - CLIPBOARD PRESENTER: Commands set up.
+21:10:51.720825 - COMMAND MANAGER: Setting up commands.
+21:10:51.720852 - SAY ALL PRESENTER: Commands set up.
+21:10:51.720859 - TYPING ECHO PRESENTER: Commands set up.
+21:10:51.720891 - SPEECH MANAGER: Commands set up.
+21:10:51.720941 - SPEECH PRESENTER: Commands set up.
+21:10:51.720978 - SLEEP MODE MANAGER: Commands set up.
+21:10:51.721000 - SYSTEM INFORMATION PRESENTER: Commands set up.
+21:10:51.721066 - OBJECT NAVIGATOR: Commands set up.
+21:10:51.721104 - GSETTINGS REGISTRY: Schema org.gnome.Orca.CaretNavigation loaded
+21:10:51.721126 - GSETTINGS SCHEMA HANDLE: caret-navigation/enabled not set [profile:default]
+21:10:51.721132 - GSETTINGS REGISTRY: caret-navigation/enabled using default value = True
+21:10:51.721173 - CARET NAVIGATOR: Commands set up. Suspended: False
+21:10:51.721744 - STRUCTURAL NAVIGATOR: Commands set up. Suspended: False
+21:10:51.721773 - TABLE NAVIGATOR: Commands set up.
+21:10:51.721787 - DOCUMENT PRESENTER: Commands set up.
+21:10:51.721811 - LIVE REGION PRESENTER: Commands set up.
+21:10:51.721819 - LEARN MODE PRESENTER: Commands set up.
+21:10:51.721825 - MOUSE REVIEW: Commands set up.
+21:10:51.721832 - ACTION PRESENTER: Commands set up.
+21:10:51.721861 - FLAT REVIEW PRESENTER: Braille bindings unavailable.
+21:10:51.721991 - FLAT REVIEW PRESENTER: Commands set up.
+21:10:51.722014 - FLAT REVIEW FINDER: Commands set up.
+21:10:51.722054 - WHERE AM I PRESENTER: Commands set up.
+21:10:51.722063 - DEBUGGING TOOLS MANAGER: Commands set up.
+21:10:51.722073 - CHAT PRESENTER: Commands set up.
+21:10:51.722080 - PROFILE MANAGER: Commands set up.
+21:10:51.722089 - BRAILLE: Setting up key ranges.
+21:10:51.722110 - BRAILLE: Initializing. Callback: None
+21:10:51.722114 - BRAILLE: Initialization failed: BrlApi is not defined.
+21:10:51.722118 - BRAILLE: Not setting up key ranges: BrlAPI not running.
+21:10:51.722124 - DEFAULT: Commands set up: 219 keyboard commands
+21:10:51.722130 - SCRIPT: default (module=orca.scripts.default) initialized
+21:10:51.722141 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Keybindings loaded
+21:10:51.722161 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.722165 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.722169 - COMMAND MANAGER: Setting keyboard layout is_desktop to True.
+21:10:51.722193 - GSETTINGS SCHEMA HANDLE: keybindings/entries no dict values set
+21:10:51.722198 - GSETTINGS REGISTRY: keybindings/entries using default value = {}
+21:10:51.722203 - COMMAND MANAGER: No user overrides to apply
+21:10:51.722206 - COMMAND MANAGER: Device not ready, skipping grab updates.
+21:10:51.722209 - COMMAND MANAGER: Keyboard layout set to desktop.
+21:10:51.722214 - PRESENTATION MANAGER: Starting presenters
+21:10:51.722248 - SPEECH MANAGER: start_speech. Script: None Event: None notify_user: False
+21:10:51.722252 - SPEECH MANAGER: Initializing server
+21:10:51.722265 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Speech loaded
+21:10:51.722278 - GSETTINGS SCHEMA HANDLE: speech/speech-server-factory not set [profile:default]
+21:10:51.722281 - GSETTINGS REGISTRY: speech/speech-server-factory using default value = 'speechdispatcherfactory'
+21:10:51.722971 - ERROR: Speech Dispatcher is not available
+21:10:51.722982 - SPEECH MANAGER: No speech server for factory: speechdispatcherfactory
+21:10:51.723124 - SPEECH MANAGER: Using speech server factory: silent_factory
+21:10:51.723147 - GSETTINGS SCHEMA HANDLE: speech/synthesizer not set [profile:default]
+21:10:51.723163 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Voice loaded
+21:10:51.723180 - GSETTINGS SCHEMA HANDLE: voice/established not set [profile:default]
+21:10:51.723192 - GSETTINGS SCHEMA HANDLE: voice/rate not set [profile:default]
+21:10:51.723202 - GSETTINGS SCHEMA HANDLE: voice/pitch not set [profile:default]
+21:10:51.723210 - GSETTINGS SCHEMA HANDLE: voice/volume not set [profile:default]
+21:10:51.723221 - GSETTINGS SCHEMA HANDLE: voice/family-name not set [profile:default]
+21:10:51.723229 - GSETTINGS SCHEMA HANDLE: voice/family-lang not set [profile:default]
+21:10:51.723236 - GSETTINGS SCHEMA HANDLE: voice/family-dialect not set [profile:default]
+21:10:51.723248 - GSETTINGS SCHEMA HANDLE: voice/family-gender not set [profile:default]
+21:10:51.723256 - GSETTINGS SCHEMA HANDLE: voice/family-variant not set [profile:default]
+21:10:51.723274 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+21:10:51.723278 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+21:10:51.723289 - GSETTINGS SCHEMA HANDLE: speech/capitalization-style not set [profile:default]
+21:10:51.723292 - GSETTINGS REGISTRY: speech/capitalization-style using default value = 'none'
+21:10:51.723298 - SPEECH MANAGER: Server initialized
+21:10:51.723306 - GSETTINGS REGISTRY: braille/enabled runtime override = False
+21:10:51.723313 - GSETTINGS REGISTRY: sound/enabled runtime override = False
+21:10:51.723327 - GSETTINGS REGISTRY: Schema org.gnome.Orca.MouseReview loaded
+21:10:51.723339 - GSETTINGS SCHEMA HANDLE: mouse-review/enabled not set [profile:default]
+21:10:51.723344 - GSETTINGS REGISTRY: mouse-review/enabled using default value = False
+21:10:51.723350 - ORCA MODIFIER MANAGER: Refreshing Orca modifiers: Loading user settings.
+21:10:51.723361 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.723364 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.723372 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:10:51.723376 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+21:10:51.723385 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.723388 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.723395 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:10:51.723399 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+21:10:51.723438 - INPUT EVENT MANAGER: No device to add grab for Insert
+21:10:51.723457 - INPUT EVENT MANAGER: No device to add grab for KP_Insert
+21:10:51.723464 - ORCA MODIFIER MANAGER: No stored xmodmap found
+21:10:51.731351 - ORCA MODIFIER MANAGER: Creating Orca xmodmap
+21:10:51.731396 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.731405 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.731418 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:10:51.731423 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+21:10:51.731433 - EVENT MANAGER: Pause queueing: False. Clear queue: False. User settings loaded.
+21:10:51.731438 - INPUT EVENT MANAGER: Pause queueing: False. User settings loaded.
+21:10:51.731443 - ORCA: User Settings Loaded
+21:10:51.731465 - DEBUGGING TOOLS MANAGER: Orca version 50.2 (rev 56a193527), AT-SPI2 version: 2.60.6, Session: wayland Hyprland
+21:10:51.737324 - DEBUGGING TOOLS MANAGER: Desktop has 5 app(s):
+21:10:51.741093 -   1. pid: 1803       xdg-desktop-portal-gtk    /usr/lib/xdg-desktop-portal-gtk 
+21:10:51.744414 -   2. pid: 24457      quickshell                quickshell -n -p /usr/share/omarchy/shell 
+21:10:51.747856 -   3. pid: 2007238    qs                        qs -p /home/hoskinson/.local/share/hypr-window-controls -d -n 
+21:10:51.751045 -   4. pid: 1546       udiskie                   /usr/bin/python /usr/bin/udiskie --automount --no-notify --no-tray 
+21:10:51.754062 -   5. pid: 667402     qs                        qs -p /home/hoskinson/.local/share/omarchy-files -d 
+21:10:51.754089 - ORCA: Running under systemd: True
+21:10:51.754100 - REMOTE CONTROLLER: Attempting to start D-Bus service.
+21:10:51.754161 - REMOTE CONTROLLER: SessionMessageBus acquired: :1.27562
+21:10:51.755242 - REMOTE CONTROLLER: Service started name=org.gnome.Orca.Service path=/org/gnome/Orca/Service.
+21:10:51.755258 - REMOTE CONTROLLER: Processing 25 pending module registrations.
+21:10:51.755271 - REMOTE CONTROLLER: Processing pending registration for LiveRegionPresenter.
+21:10:51.755340 - REMOTE CONTROLLER: Processing pending registration for SoundPresenter.
+21:10:51.755433 - DBUS SERVICE: OrcaModuleDBusInterface for SoundPresenter initialized with 0 command(s), 0 parameterized command(s), 5 getter(s), 5 setter(s).
+21:10:51.755601 - DBUS SERVICE: Successfully published SoundPresenter at /org/gnome/Orca/Service/SoundPresenter.
+21:10:51.755612 - REMOTE CONTROLLER: Successfully registered 10 commands/getters/setters for module SoundPresenter.
+21:10:51.755618 - REMOTE CONTROLLER: Processing pending registration for StructuralNavigator.
+21:10:51.756042 - DBUS SERVICE: OrcaModuleDBusInterface for StructuralNavigator initialized with 85 command(s), 0 parameterized command(s), 4 getter(s), 4 setter(s).
+21:10:51.756211 - DBUS SERVICE: Successfully published StructuralNavigator at /org/gnome/Orca/Service/StructuralNavigator.
+21:10:51.756220 - REMOTE CONTROLLER: Successfully registered 93 commands/getters/setters for module StructuralNavigator.
+21:10:51.756226 - REMOTE CONTROLLER: Processing pending registration for SayAllPresenter.
+21:10:51.756341 - DBUS SERVICE: OrcaModuleDBusInterface for SayAllPresenter initialized with 3 command(s), 0 parameterized command(s), 10 getter(s), 10 setter(s).
+21:10:51.756484 - DBUS SERVICE: Successfully published SayAllPresenter at /org/gnome/Orca/Service/SayAllPresenter.
+21:10:51.756492 - REMOTE CONTROLLER: Successfully registered 23 commands/getters/setters for module SayAllPresenter.
+21:10:51.756497 - REMOTE CONTROLLER: Processing pending registration for CaretNavigator.
+21:10:51.756581 - DBUS SERVICE: OrcaModuleDBusInterface for CaretNavigator initialized with 12 command(s), 0 parameterized command(s), 3 getter(s), 3 setter(s).
+21:10:51.756715 - DBUS SERVICE: Successfully published CaretNavigator at /org/gnome/Orca/Service/CaretNavigator.
+21:10:51.756723 - REMOTE CONTROLLER: Successfully registered 18 commands/getters/setters for module CaretNavigator.
+21:10:51.756728 - REMOTE CONTROLLER: Processing pending registration for TableNavigator.
+21:10:51.756805 - DBUS SERVICE: OrcaModuleDBusInterface for TableNavigator initialized with 15 command(s), 0 parameterized command(s), 2 getter(s), 2 setter(s).
+21:10:51.756937 - DBUS SERVICE: Successfully published TableNavigator at /org/gnome/Orca/Service/TableNavigator.
+21:10:51.756945 - REMOTE CONTROLLER: Successfully registered 19 commands/getters/setters for module TableNavigator.
+21:10:51.756950 - REMOTE CONTROLLER: Processing pending registration for DocumentPresenter.
+21:10:51.757063 - DBUS SERVICE: OrcaModuleDBusInterface for DocumentPresenter initialized with 3 command(s), 0 parameterized command(s), 10 getter(s), 7 setter(s).
+21:10:51.757198 - DBUS SERVICE: Successfully published DocumentPresenter at /org/gnome/Orca/Service/DocumentPresenter.
+21:10:51.757205 - REMOTE CONTROLLER: Successfully registered 20 commands/getters/setters for module DocumentPresenter.
+21:10:51.757210 - REMOTE CONTROLLER: Processing pending registration for SpeechPresenter.
+21:10:51.757477 - DBUS SERVICE: OrcaModuleDBusInterface for SpeechPresenter initialized with 5 command(s), 0 parameterized command(s), 33 getter(s), 33 setter(s).
+21:10:51.757611 - DBUS SERVICE: Successfully published SpeechPresenter at /org/gnome/Orca/Service/SpeechPresenter.
+21:10:51.757618 - REMOTE CONTROLLER: Successfully registered 71 commands/getters/setters for module SpeechPresenter.
+21:10:51.757624 - REMOTE CONTROLLER: Processing pending registration for SpeechManager.
+21:10:51.757871 - DBUS SERVICE: OrcaModuleDBusInterface for SpeechManager initialized with 14 command(s), 1 parameterized command(s), 18 getter(s), 15 setter(s).
+21:10:51.758011 - DBUS SERVICE: Successfully published SpeechManager at /org/gnome/Orca/Service/SpeechManager.
+21:10:51.758019 - REMOTE CONTROLLER: Successfully registered 48 commands/getters/setters for module SpeechManager.
+21:10:51.758025 - REMOTE CONTROLLER: Processing pending registration for TypingEchoPresenter.
+21:10:51.758148 - DBUS SERVICE: OrcaModuleDBusInterface for TypingEchoPresenter initialized with 1 command(s), 0 parameterized command(s), 14 getter(s), 14 setter(s).
+21:10:51.758374 - DBUS SERVICE: Successfully published TypingEchoPresenter at /org/gnome/Orca/Service/TypingEchoPresenter.
+21:10:51.758382 - REMOTE CONTROLLER: Successfully registered 29 commands/getters/setters for module TypingEchoPresenter.
+21:10:51.758388 - REMOTE CONTROLLER: Processing pending registration for SleepModeManager.
+21:10:51.758420 - DBUS SERVICE: OrcaModuleDBusInterface for SleepModeManager initialized with 1 command(s), 0 parameterized command(s), 0 getter(s), 0 setter(s).
+21:10:51.758552 - DBUS SERVICE: Successfully published SleepModeManager at /org/gnome/Orca/Service/SleepModeManager.
+21:10:51.758559 - REMOTE CONTROLLER: Successfully registered 1 commands/getters/setters for module SleepModeManager.
+21:10:51.758565 - REMOTE CONTROLLER: Processing pending registration for ActionPresenter.
+21:10:51.758596 - DBUS SERVICE: OrcaModuleDBusInterface for ActionPresenter initialized with 1 command(s), 0 parameterized command(s), 0 getter(s), 0 setter(s).
+21:10:51.758722 - DBUS SERVICE: Successfully published ActionPresenter at /org/gnome/Orca/Service/ActionPresenter.
+21:10:51.758728 - REMOTE CONTROLLER: Successfully registered 1 commands/getters/setters for module ActionPresenter.
+21:10:51.758733 - REMOTE CONTROLLER: Processing pending registration for ChatPresenter.
+21:10:51.758804 - DBUS SERVICE: OrcaModuleDBusInterface for ChatPresenter initialized with 5 command(s), 0 parameterized command(s), 5 getter(s), 5 setter(s).
+21:10:51.758934 - DBUS SERVICE: Successfully published ChatPresenter at /org/gnome/Orca/Service/ChatPresenter.
+21:10:51.758941 - REMOTE CONTROLLER: Successfully registered 15 commands/getters/setters for module ChatPresenter.
+21:10:51.758946 - REMOTE CONTROLLER: Processing pending registration for ClipboardPresenter.
+21:10:51.758986 - DBUS SERVICE: OrcaModuleDBusInterface for ClipboardPresenter initialized with 1 command(s), 0 parameterized command(s), 0 getter(s), 0 setter(s).
+21:10:51.759107 - DBUS SERVICE: Successfully published ClipboardPresenter at /org/gnome/Orca/Service/ClipboardPresenter.
+21:10:51.759114 - REMOTE CONTROLLER: Successfully registered 1 commands/getters/setters for module ClipboardPresenter.
+21:10:51.759119 - REMOTE CONTROLLER: Processing pending registration for FlatReviewPresenter.
+21:10:51.759231 - DBUS SERVICE: OrcaModuleDBusInterface for FlatReviewPresenter initialized with 33 command(s), 0 parameterized command(s), 1 getter(s), 1 setter(s).
+21:10:51.759363 - DBUS SERVICE: Successfully published FlatReviewPresenter at /org/gnome/Orca/Service/FlatReviewPresenter.
+21:10:51.759370 - REMOTE CONTROLLER: Successfully registered 35 commands/getters/setters for module FlatReviewPresenter.
+21:10:51.759375 - REMOTE CONTROLLER: Processing pending registration for NotificationPresenter.
+21:10:51.759415 - DBUS SERVICE: OrcaModuleDBusInterface for NotificationPresenter initialized with 4 command(s), 0 parameterized command(s), 0 getter(s), 0 setter(s).
+21:10:51.759539 - DBUS SERVICE: Successfully published NotificationPresenter at /org/gnome/Orca/Service/NotificationPresenter.
+21:10:51.759546 - REMOTE CONTROLLER: Successfully registered 4 commands/getters/setters for module NotificationPresenter.
+21:10:51.759552 - REMOTE CONTROLLER: Processing pending registration for ObjectNavigator.
+21:10:51.759600 - DBUS SERVICE: OrcaModuleDBusInterface for ObjectNavigator initialized with 6 command(s), 0 parameterized command(s), 0 getter(s), 0 setter(s).
+21:10:51.759722 - DBUS SERVICE: Successfully published ObjectNavigator at /org/gnome/Orca/Service/ObjectNavigator.
+21:10:51.759728 - REMOTE CONTROLLER: Successfully registered 6 commands/getters/setters for module ObjectNavigator.
+21:10:51.759733 - REMOTE CONTROLLER: Processing pending registration for ProfileManager.
+21:10:51.759786 - DBUS SERVICE: OrcaModuleDBusInterface for ProfileManager initialized with 2 command(s), 0 parameterized command(s), 3 getter(s), 2 setter(s).
+21:10:51.759907 - DBUS SERVICE: Successfully published ProfileManager at /org/gnome/Orca/Service/ProfileManager.
+21:10:51.759913 - REMOTE CONTROLLER: Successfully registered 7 commands/getters/setters for module ProfileManager.
+21:10:51.759919 - REMOTE CONTROLLER: Processing pending registration for SpellCheckPresenter.
+21:10:51.759990 - DBUS SERVICE: OrcaModuleDBusInterface for SpellCheckPresenter initialized with 0 command(s), 0 parameterized command(s), 3 getter(s), 3 setter(s).
+21:10:51.760113 - DBUS SERVICE: Successfully published SpellCheckPresenter at /org/gnome/Orca/Service/SpellCheckPresenter.
+21:10:51.760119 - REMOTE CONTROLLER: Successfully registered 6 commands/getters/setters for module SpellCheckPresenter.
+21:10:51.760125 - REMOTE CONTROLLER: Processing pending registration for SystemInformationPresenter.
+21:10:51.760182 - DBUS SERVICE: OrcaModuleDBusInterface for SystemInformationPresenter initialized with 4 command(s), 0 parameterized command(s), 4 getter(s), 2 setter(s).
+21:10:51.760309 - DBUS SERVICE: Successfully published SystemInformationPresenter at /org/gnome/Orca/Service/SystemInformationPresenter.
+21:10:51.760317 - REMOTE CONTROLLER: Successfully registered 10 commands/getters/setters for module SystemInformationPresenter.
+21:10:51.760322 - REMOTE CONTROLLER: Processing pending registration for TextAttributeManager.
+21:10:51.760361 - DBUS SERVICE: OrcaModuleDBusInterface for TextAttributeManager initialized with 0 command(s), 0 parameterized command(s), 2 getter(s), 2 setter(s).
+21:10:51.760484 - DBUS SERVICE: Successfully published TextAttributeManager at /org/gnome/Orca/Service/TextAttributeManager.
+21:10:51.760491 - REMOTE CONTROLLER: Successfully registered 4 commands/getters/setters for module TextAttributeManager.
+21:10:51.760496 - REMOTE CONTROLLER: Processing pending registration for WhereAmIPresenter.
+21:10:51.760545 - DBUS SERVICE: OrcaModuleDBusInterface for WhereAmIPresenter initialized with 11 command(s), 0 parameterized command(s), 0 getter(s), 0 setter(s).
+21:10:51.760670 - DBUS SERVICE: Successfully published WhereAmIPresenter at /org/gnome/Orca/Service/WhereAmIPresenter.
+21:10:51.760677 - REMOTE CONTROLLER: Successfully registered 11 commands/getters/setters for module WhereAmIPresenter.
+21:10:51.760682 - REMOTE CONTROLLER: Processing pending registration for BraillePresenter.
+21:10:51.760892 - DBUS SERVICE: OrcaModuleDBusInterface for BraillePresenter initialized with 1 command(s), 0 parameterized command(s), 26 getter(s), 25 setter(s).
+21:10:51.761020 - DBUS SERVICE: Successfully published BraillePresenter at /org/gnome/Orca/Service/BraillePresenter.
+21:10:51.761027 - REMOTE CONTROLLER: Successfully registered 52 commands/getters/setters for module BraillePresenter.
+21:10:51.761032 - REMOTE CONTROLLER: Processing pending registration for CommandManager.
+21:10:51.761115 - DBUS SERVICE: OrcaModuleDBusInterface for CommandManager initialized with 1 command(s), 0 parameterized command(s), 3 getter(s), 3 setter(s).
+21:10:51.761243 - DBUS SERVICE: Successfully published CommandManager at /org/gnome/Orca/Service/CommandManager.
+21:10:51.761250 - REMOTE CONTROLLER: Successfully registered 7 commands/getters/setters for module CommandManager.
+21:10:51.761255 - REMOTE CONTROLLER: Processing pending registration for QAObservation.
+21:10:51.761286 - DBUS SERVICE: OrcaModuleDBusInterface for QAObservation initialized with 0 command(s), 0 parameterized command(s), 1 getter(s), 0 setter(s).
+21:10:51.761406 - DBUS SERVICE: Successfully published QAObservation at /org/gnome/Orca/Service/QAObservation.
+21:10:51.761412 - REMOTE CONTROLLER: Successfully registered 1 commands/getters/setters for module QAObservation.
+21:10:51.761440 - REMOTE CONTROLLER: Registration complete. Summary: 24 modules, 209 module commands, 147 module getters, 136 module setters, 6 system commands. Total handlers: 498.
+21:10:51.761479 - GSETTINGS SCHEMA HANDLE: speech/enable not set [profile:default]
+21:10:51.761485 - GSETTINGS REGISTRY: speech/enable using default value = True
+21:10:51.761503 - GSETTINGS SCHEMA HANDLE: speech/messages-are-detailed not set [profile:default]
+21:10:51.761508 - GSETTINGS REGISTRY: speech/messages-are-detailed using default value = True
+21:10:51.761522 - GSETTINGS SCHEMA HANDLE: speech/only-speak-displayed-text not set [profile:default]
+21:10:51.761532 - GSETTINGS REGISTRY: speech/only-speak-displayed-text using default value = False
+21:10:51.761560 - GSETTINGS SCHEMA HANDLE: voice/established not set [profile:default]
+21:10:51.761576 - GSETTINGS SCHEMA HANDLE: voice/rate not set [profile:default]
+21:10:51.761588 - GSETTINGS SCHEMA HANDLE: voice/pitch not set [profile:default]
+21:10:51.761599 - GSETTINGS SCHEMA HANDLE: voice/volume not set [profile:default]
+21:10:51.761615 - GSETTINGS SCHEMA HANDLE: voice/family-name not set [profile:default]
+21:10:51.761626 - GSETTINGS SCHEMA HANDLE: voice/family-lang not set [profile:default]
+21:10:51.761636 - GSETTINGS SCHEMA HANDLE: voice/family-dialect not set [profile:default]
+21:10:51.761647 - GSETTINGS SCHEMA HANDLE: voice/family-gender not set [profile:default]
+21:10:51.761657 - GSETTINGS SCHEMA HANDLE: voice/family-variant not set [profile:default]
+21:10:51.761675 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+21:10:51.761681 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+21:10:51.761728 - SPEECH PRESENTER: Adjusting 'Screen reader on.' from None start_offset: None
+21:10:51.761741 - GSETTINGS SCHEMA HANDLE: speech/repeated-character-limit not set [profile:default]
+21:10:51.761746 - GSETTINGS REGISTRY: speech/repeated-character-limit using default value = 4
+21:10:51.761858 - GSETTINGS SCHEMA HANDLE: speech/use-pronunciation-dictionary not set [profile:default]
+21:10:51.761866 - GSETTINGS REGISTRY: speech/use-pronunciation-dictionary using default value = True
+21:10:51.761921 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Pronunciations loaded
+21:10:51.761943 - GSETTINGS SCHEMA HANDLE: pronunciations/entries no dict values set
+21:10:51.761950 - GSETTINGS REGISTRY: pronunciations/entries using default value = {}
+21:10:51.761960 - SPEECH PRESENTER: Adjusted text: 'Screen reader on.'
+21:10:51.761968 - SPEECH: Speak 'Screen reader on.' acss: {'established': False}
+21:10:51.761975 - SPEECH OUTPUT: 'Screen reader on.' {'established': False}
+21:10:51.762480 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x751f79dbdd30>
+21:10:51.762523 - GSETTINGS SCHEMA HANDLE: speech/capitalization-style not set [profile:default]
+21:10:51.762533 - GSETTINGS REGISTRY: speech/capitalization-style using default value = 'none'
+21:10:51.762772 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x751f79dbdd30>
+21:10:51.762808 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+21:10:51.762818 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+21:10:51.762830 - GSETTINGS REGISTRY: braille/enabled runtime override = False
+21:10:51.762837 - BRAILLE PRESENTER: Braille is disabled.
+21:10:51.762846 - EVENT MANAGER: Activating <unknown>.<module>:373 > orca._activate_services:248 > event_manager.activate:85
+21:10:51.767434 - INPUT EVENT MANAGER: Starting key watcher.
+21:10:51.767496 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.767506 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.767521 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:10:51.767531 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+21:10:51.767638 - INPUT EVENT MANAGER: Grab id for Insert: 1
+21:10:51.767657 - INPUT EVENT MANAGER: Grab id for KP_Insert: 2
+21:10:51.767664 - EVENT MANAGER: Activated
+21:10:51.767671 - SCRIPT MANAGER: Activating <unknown>.<module>:373 > orca._activate_services:249 > script_manager.activate:56
+21:10:51.767995 - EVENT MANAGER: Registering listeners for: default (module=orca.scripts.default)
+21:10:51.768005 - EVENT MANAGER: registering listener for: document:attributes-changed
+21:10:51.768363 - EVENT MANAGER: registering listener for: document:load-complete
+21:10:51.769448 - EVENT MANAGER: registering listener for: document:load-stopped
+21:10:51.770260 - EVENT MANAGER: registering listener for: document:page-changed
+21:10:51.771036 - EVENT MANAGER: registering listener for: document:reload
+21:10:51.771508 - EVENT MANAGER: registering listener for: mouse:button
+21:10:51.771969 - EVENT MANAGER: registering listener for: object:active-descendant-changed
+21:10:51.772453 - EVENT MANAGER: registering listener for: object:announcement
+21:10:51.772867 - EVENT MANAGER: registering listener for: object:attributes-changed
+21:10:51.773294 - EVENT MANAGER: registering listener for: object:children-changed:add
+21:10:51.773674 - EVENT MANAGER: registering listener for: object:children-changed:remove
+21:10:51.774081 - EVENT MANAGER: registering listener for: object:column-reordered
+21:10:51.774493 - EVENT MANAGER: registering listener for: object:property-change:accessible-description
+21:10:51.774809 - EVENT MANAGER: registering listener for: object:property-change:accessible-name
+21:10:51.775066 - EVENT MANAGER: registering listener for: object:property-change:accessible-value
+21:10:51.775567 - EVENT MANAGER: registering listener for: object:row-reordered
+21:10:51.776042 - EVENT MANAGER: registering listener for: object:selection-changed
+21:10:51.776479 - EVENT MANAGER: registering listener for: object:state-changed:active
+21:10:51.776829 - EVENT MANAGER: registering listener for: object:state-changed:busy
+21:10:51.776947 - EVENT MANAGER: registering listener for: object:state-changed:checked
+21:10:51.777027 - EVENT MANAGER: registering listener for: object:state-changed:expanded
+21:10:51.777099 - EVENT MANAGER: registering listener for: object:state-changed:focused
+21:10:51.777168 - EVENT MANAGER: registering listener for: object:state-changed:indeterminate
+21:10:51.777236 - EVENT MANAGER: registering listener for: object:state-changed:invalid-entry
+21:10:51.777574 - EVENT MANAGER: registering listener for: object:state-changed:pressed
+21:10:51.777826 - EVENT MANAGER: registering listener for: object:state-changed:selected
+21:10:51.778160 - EVENT MANAGER: registering listener for: object:state-changed:sensitive
+21:10:51.778475 - EVENT MANAGER: registering listener for: object:state-changed:showing
+21:10:51.778740 - EVENT MANAGER: registering listener for: object:text-attributes-changed
+21:10:51.778978 - EVENT MANAGER: registering listener for: object:text-caret-moved
+21:10:51.779214 - EVENT MANAGER: registering listener for: object:text-changed:delete
+21:10:51.779303 - EVENT MANAGER: registering listener for: object:text-changed:insert
+21:10:51.779402 - EVENT MANAGER: registering listener for: object:text-selection-changed
+21:10:51.779458 - EVENT MANAGER: registering listener for: object:value-changed
+21:10:51.779708 - EVENT MANAGER: registering listener for: window:activate
+21:10:51.779767 - EVENT MANAGER: registering listener for: window:create
+21:10:51.780048 - EVENT MANAGER: registering listener for: window:deactivate
+21:10:51.780107 - EVENT MANAGER: registering listener for: window:destroy
+21:10:51.780203 - SCRIPT MANAGER: Setting active script to default (module=orca.scripts.default) reason: activate
+21:10:51.780221 - DEFAULT: Activating script for None
+21:10:51.780437 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x751f79dbdd30>
+21:10:51.780468 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+21:10:51.780473 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+21:10:51.780556 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x751f79dbdd30>
+21:10:51.780575 - GSETTINGS SCHEMA HANDLE: speech/capitalization-style not set [profile:default]
+21:10:51.780580 - GSETTINGS REGISTRY: speech/capitalization-style using default value = 'none'
+21:10:51.780771 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x751f79dbdd30>
+21:10:51.780787 - GSETTINGS SCHEMA HANDLE: speech/synthesizer not set [profile:default]
+21:10:51.780812 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+21:10:51.780818 - CARET NAVIGATOR: Commands suspended: False: script activation, no prior state
+21:10:51.780834 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.780843 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.780852 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:10:51.780857 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+21:10:51.780897 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+21:10:51.780902 - STRUCTURAL NAVIGATOR: Suspended: False: script activation, no prior state
+21:10:51.780912 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.780916 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.780924 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:10:51.780928 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+21:10:51.780970 - STRUCTURAL NAVIGATOR: Setting mode for default (module=orca.scripts.default) to NavigationMode.OFF
+21:10:51.780984 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+21:10:51.780995 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.780999 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.781006 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:10:51.781009 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+21:10:51.781052 - CARET NAVIGATOR: Setting enabled state for default (module=orca.scripts.default) to False
+21:10:51.781067 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+21:10:51.781077 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.781081 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.781088 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:10:51.781091 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+21:10:51.781117 - GSETTINGS REGISTRY: Schema org.gnome.Orca.TableNavigation loaded
+21:10:51.781136 - GSETTINGS SCHEMA HANDLE: table-navigation/enabled not set [profile:default]
+21:10:51.781140 - GSETTINGS REGISTRY: table-navigation/enabled using default value = True
+21:10:51.781144 - TABLE NAVIGATOR: Refreshing enabled state for active app: True.
+21:10:51.781153 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.781157 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.781164 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:10:51.781168 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+21:10:51.781181 - COMMAND MANAGER: Activating commands: activated default (module=orca.scripts.default)
+21:10:51.781259 - GSETTINGS SCHEMA HANDLE: keybindings/entries no dict values set
+21:10:51.781267 - GSETTINGS REGISTRY: keybindings/entries using default value = {}
+21:10:51.781272 - COMMAND MANAGER: No user overrides to apply
+21:10:51.781329 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.781334 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.781341 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:10:51.781344 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+vvvvv COMMAND MANAGER: Grab diff: activated default (module=orca.scripts.default) (old: 77, new: 77) vvvvv
+21:10:51.783142 -   Added (77):
+21:10:51.783160 -     Orca+KP_Divide: routePointerToItemHandler
+21:10:51.783165 -     KP_Divide: leftClickReviewItemHandler
+21:10:51.783169 -     KP_Multiply: rightClickReviewItemHandler
+21:10:51.783174 -     Orca+space: preferencesSettingsHandler
+21:10:51.783180 -     Orca+Control+space: appPreferencesSettingsHandler
+21:10:51.783183 -     KP_Add: sayAllHandler
+21:10:51.783187 -     Orca+s: toggleSilenceSpeechHandler
+21:10:51.783191 -     Orca+v: toggleSpeechVerbosityHandler
+21:10:51.783195 -     Orca+F11: toggleTableCellReadModeHandler
+21:10:51.783199 -     Orca+Shift+d: toggle_speech_monitor
+21:10:51.783203 -     Alt+BackSpace: bypass_mode_toggle
+21:10:51.783207 -     Alt+Control+Shift+q: toggle_sleep_mode
+21:10:51.783211 -     Orca+t: presentTimeHandler
+21:10:51.783215 -     Orca+t x2: presentDateHandler
+21:10:51.783219 -     Orca+Control+Up: object_navigator_up
+21:10:51.783223 -     Orca+Control+Down: object_navigator_down
+21:10:51.783227 -     Orca+Control+Right: object_navigator_next
+21:10:51.783230 -     Orca+Control+Left: object_navigator_previous
+21:10:51.783234 -     Orca+Control+Return: object_navigator_perform_action
+21:10:51.783238 -     Orca+Control+s: object_navigator_toggle_simplify
+21:10:51.783242 -     Orca+F12: toggle_enabled
+21:10:51.783246 -     Orca+z: structural_navigator_mode_cycle
+21:10:51.783250 -     Orca+Shift+t: table_navigator_toggle_enabled
+21:10:51.783254 -     Alt+Shift+Left: table_cell_left
+21:10:51.783257 -     Alt+Shift+Right: table_cell_right
+21:10:51.783261 -     Alt+Shift+Up: table_cell_up
+21:10:51.783266 -     Alt+Shift+Down: table_cell_down
+21:10:51.783270 -     Alt+Shift+Home: table_cell_first
+21:10:51.783274 -     Alt+Shift+End: table_cell_last
+21:10:51.783278 -     Orca+Alt+Shift+Left: table_cell_beginning_of_row
+21:10:51.783282 -     Orca+Alt+Shift+Right: table_cell_end_of_row
+21:10:51.783286 -     Orca+Alt+Shift+Up: table_cell_top_of_column
+21:10:51.783290 -     Orca+Alt+Shift+Down: table_cell_bottom_of_column
+21:10:51.783293 -     Orca+Shift+r: set_dynamic_column_headers_row
+21:10:51.783297 -     Orca+Shift+r x2: clear_dynamic_column_headers_row
+21:10:51.783301 -     Orca+Shift+c: set_dynamic_row_headers_column
+21:10:51.783305 -     Orca+Shift+c x2: clear_dynamic_row_headers_column
+21:10:51.783308 -     Orca+a: toggle_presentation_mode
+21:10:51.783312 -     Orca+a x2: enable_sticky_focus_mode
+21:10:51.783316 -     Orca+a x3: enable_sticky_browse_mode
+21:10:51.783320 -     Orca+backslash: toggle_live_region_support
+21:10:51.783324 -     Orca+h: enterLearnModeHandler
+21:10:51.783327 -     Orca+Shift+a: show_actions_list
+21:10:51.783330 -     KP_Subtract: toggleFlatReviewModeHandler
+21:10:51.783334 -     Orca+KP_Home: reviewHomeHandler
+21:10:51.783338 -     Orca+KP_Page_Up: reviewEndHandler
+21:10:51.783341 -     KP_Home: reviewPreviousLineHandler
+21:10:51.783344 -     KP_Up: reviewCurrentLineHandler
+21:10:51.783347 -     KP_Page_Up: reviewNextLineHandler
+21:10:51.783350 -     KP_Up x2: reviewSpellCurrentLineHandler
+21:10:51.783352 -     KP_Up x3: reviewPhoneticCurrentLineHandler
+21:10:51.783356 -     Orca+KP_End: reviewEndOfLineHandler
+21:10:51.783359 -     KP_Left: reviewPreviousItemHandler
+21:10:51.783362 -     KP_Begin: reviewCurrentItemHandler
+21:10:51.783365 -     KP_Right: reviewNextItemHandler
+21:10:51.783368 -     KP_Begin x2: reviewSpellCurrentItemHandler
+21:10:51.783371 -     KP_Begin x3: reviewPhoneticCurrentItemHandler
+21:10:51.783375 -     KP_End: reviewPreviousCharacterHandler
+21:10:51.783378 -     KP_Down: reviewCurrentCharacterHandler
+21:10:51.783381 -     KP_Down x2: reviewSpellCurrentCharacterHandler
+21:10:51.783384 -     KP_Down x3: reviewUnicodeCurrentCharacterHandler
+21:10:51.783387 -     KP_Page_Down: reviewNextCharacterHandler
+21:10:51.783391 -     Orca+KP_Begin: reviewCurrentAccessibleHandler
+21:10:51.783394 -     Orca+KP_Left: reviewAboveHandler
+21:10:51.783398 -     Orca+KP_Right: reviewBelowHandler
+21:10:51.783401 -     KP_Add x2: flatReviewSayAllHandler
+21:10:51.783404 -     KP_Delete: findHandler
+21:10:51.783408 -     Orca+KP_Delete: findNextHandler
+21:10:51.783413 -     Orca+Shift+KP_Delete: findPreviousHandler
+21:10:51.783416 -     Orca+f: readCharAttributesHandler
+21:10:51.783420 -     Orca+KP_Enter: getTitleHandler
+21:10:51.783424 -     Orca+KP_Enter x2: getStatusBarHandler
+21:10:51.783427 -     Orca+e: present_default_button
+21:10:51.783431 -     Orca+equal: present_cell_formula
+21:10:51.783438 -     KP_Enter: whereAmIBasicHandler
+21:10:51.783442 -     KP_Enter x2: whereAmIDetailedHandler
+21:10:51.783446 -     Orca+Shift+Up: whereAmISelectionHandler
+^^^^^ COMMAND MANAGER: Diff completed in 0.0021s. Removed 0, added 77, transferred 0 ^^^^^
+
+21:10:51.783472 - GSETTINGS SCHEMA HANDLE: speech/enable not set [profile:default]
+21:10:51.783476 - GSETTINGS REGISTRY: speech/enable using default value = True
+21:10:51.783479 - SPEECH MANAGER: Speech is enabled.
+21:10:51.783513 - SPEECH MANAGER: start_speech. Script: None Event: None notify_user: False
+21:10:51.783518 - SPEECH MANAGER: Initializing server
+21:10:51.783521 - SPEECH MANAGER: Already initialized
+21:10:51.783533 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.783536 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.783541 - COMMAND MANAGER: Setting keyboard layout is_desktop to True.
+21:10:51.783601 - GSETTINGS SCHEMA HANDLE: keybindings/entries no dict values set
+21:10:51.783605 - GSETTINGS REGISTRY: keybindings/entries using default value = {}
+21:10:51.783608 - COMMAND MANAGER: No user overrides to apply
+21:10:51.783652 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.783656 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.783663 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:10:51.783666 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+vvvvv COMMAND MANAGER: Grab diff: keyboard layout change (old: 77, new: 77) vvvvv
+21:10:51.783681 -   No grab changes
+^^^^^ COMMAND MANAGER: Diff completed in 0.0000s. Removed 0, added 0, transferred 0 ^^^^^
+
+21:10:51.783689 - COMMAND MANAGER: Keyboard layout set to desktop.
+21:10:51.783699 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:10:51.783702 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:10:51.783709 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:10:51.783712 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+21:10:51.783716 - SCRIPT MANAGER: Activated
+21:10:51.792205 - AXObject: Clearing AT-SPI cache on [window (0x751f79cd9780)]  Recursive: False.  Reason: Checking if window can be the active window
+21:10:51.795239 - AXUtilities: [window (0x751f79cd9780)]  from [application: 'xdg-desktop-portal-gtk' (0x751f79cd9080)]  lacks active state
+21:10:51.795983 - AXUtilities: Unable to find active window from [[application: 'xdg-desktop-portal-gtk' (0x751f79cd9080)] ]
+21:10:51.796009 - CLIPBOARD PRESENTER: Activating
+21:10:51.797435 - CLIPBOARD PRESENTER: Could not access klipper interface: The name is not activatable
+21:10:51.797760 - CLIPBOARD PRESENTER: Could not access GPaste interface: The name is not activatable
+21:10:51.797964 - CLIPBOARD PRESENTER: Using Gtk.Clipboard as fallback.
+21:10:51.797974 - CLIPBOARD PRESENTER: Activated
+21:10:51.797989 - SYSTEMD: Sending: READY=1
+21:10:51.798003 - ORCA: Starting Atspi main event loop
+
+21:10:51.800496 - EVENT MANAGER: object:children-changed:add for [desktop frame: 'main' (0x751f79cdb300)]  in  (5, 0, [application: 'orca' (0x751f79cdb300)])
+21:10:51.800544 - FOCUS MANAGER: Locus of focus is None
+21:10:51.800858 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+21:10:51.800909 - EVENT MANAGER: Queueing object:children-changed:add for [desktop frame: 'main' (0x751f79e583c0)]  in  (5, 0, [application: 'orca' (0x751f79dd8a80)])
+21:10:51.800928 - EVENT MANAGER: App for event source is None
+21:10:51.800949 - SCRIPT MANAGER: Getting script for None [desktop frame: 'main' (0x751f79ddaa00)] 
+21:10:51.801146 - SCRIPT MANAGER: Script is app script default (module=orca.scripts.default)
+21:10:51.801187 - EVENT MANAGER: object:children-changed:add for [desktop frame: 'main' (0x751f79c99980)]  in  (5, 0, [application: 'orca' (0x751f79def200)]) has priority level: 6
+21:10:51.801226 - EVENT MANAGER: Queued object:children-changed:add for [desktop frame: 'main' (0x751f79cd84c0)]  in  (5, 0, [application: 'orca' (0x751f79c99380)]) priority: 6, counter: 0
+21:10:51.801292 - EVENT MANAGER: Dequeueing object:children-changed:add for [desktop frame: 'main' (0x751f79c99380)]  in  (5, 0, [application: 'orca' (0x751f79e31a00)])
+21:10:51.801323 - EVENT MANAGER: Dequeued object:children-changed:add for [desktop frame: 'main' (0x751f79cd8140)]  in  (5, 0, [application: 'orca' (0x751f79c99380)]) priority: 6, counter: 0
+
+vvvvv START PRIORITY-6 OBJECT EVENT OBJECT:CHILDREN-CHANGED:ADD (queue size: 0) vvvvv
+21:10:51.803253 - EVENT SOURCE:
+                  app='' name='main' role='desktop frame' axid='None' id=0x751f79f903c0
+                  description=''
+                  help=''
+                  locale=''
+                  states=''
+                  relations=''
+                  actions=''
+                  interfaces='Component'
+                  attributes=''
+                  text=''
+                  path=[-1]
+                  
+                  EVENT ANY DATA:
+                  name='orca' role='application' axid='' id=0x751f79f903c0
+                  description=''
+                  help=''
+                  locale='C.UTF-8'
+                  states=''
+                  relations=''
+                  actions=''
+                  interfaces='Collection'
+                  attributes=''
+                  text=''
+                  path=[-1]
+                  
+21:10:51.803281 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+21:10:51.803300 - FOCUS MANAGER: Locus of focus is None
+21:10:51.803328 - EVENT MANAGER: Getting script for event for None [desktop frame: 'main' (0x751f79dd8500)] 
+21:10:51.803347 - SCRIPT MANAGER: Getting script for None [desktop frame: 'main' (0x751f79dd8500)] 
+21:10:51.803395 - SCRIPT MANAGER: Script is app script default (module=orca.scripts.default)
+21:10:51.803410 - EVENT MANAGER: Script for event is default (module=orca.scripts.default)
+21:10:51.803415 - EVENT MANAGER: Processing object:children-changed:add: script for event is active
+21:10:51.803425 - AXUtilitiesRelation: Clearing local cache. Reason: children-changed event.
+21:10:51.803431 - AXObject: Clearing local cache. Reason: children-changed event.
+21:10:51.803437 - AXUtilitiesRelation: Clearing local cache. Reason: children-changed event.
+21:10:51.803444 - AXUtilitiesEvent: Clearing local cache. Reason: children-changed event.
+21:10:51.803452 - AXUtilitiesSelection: Clearing cache. Reason: children-changed event.
+TOTAL PROCESSING TIME: 0.0021
+^^^^^ FINISHED PRIORITY-6 OBJECT EVENT OBJECT:CHILDREN-CHANGED:ADD ^^^^^
+
+21:10:51.838218 - FOCUS MANAGER: Locus of focus is None
+21:10:51.838241 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:51.839035 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:52.109153 - FOCUS MANAGER: Locus of focus is None
+21:10:52.109204 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:52.109993 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:52.211089 - FOCUS MANAGER: Locus of focus is None
+21:10:52.211141 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:52.211886 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:52.312956 - FOCUS MANAGER: Locus of focus is None
+21:10:52.313001 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:52.313675 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:52.414824 - FOCUS MANAGER: Locus of focus is None
+21:10:52.414869 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:52.415654 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:52.517022 - FOCUS MANAGER: Locus of focus is None
+21:10:52.517060 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:52.517694 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:52.619150 - FOCUS MANAGER: Locus of focus is None
+21:10:52.619193 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:52.619987 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:52.721070 - FOCUS MANAGER: Locus of focus is None
+21:10:52.721119 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:52.721905 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:52.822869 - FOCUS MANAGER: Locus of focus is None
+21:10:52.822908 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:52.823572 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:52.924575 - FOCUS MANAGER: Locus of focus is None
+21:10:52.924610 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:52.925234 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:53.026260 - FOCUS MANAGER: Locus of focus is None
+21:10:53.026304 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:53.026947 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:53.127841 - FOCUS MANAGER: Locus of focus is None
+21:10:53.127874 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:53.128466 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:53.229512 - FOCUS MANAGER: Locus of focus is None
+21:10:53.229561 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:53.230375 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:53.331295 - FOCUS MANAGER: Locus of focus is None
+21:10:53.331343 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:53.332145 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:53.433061 - FOCUS MANAGER: Locus of focus is None
+21:10:53.433091 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:53.433652 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:53.534730 - FOCUS MANAGER: Locus of focus is None
+21:10:53.534778 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:53.535621 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:53.636806 - FOCUS MANAGER: Locus of focus is None
+21:10:53.636853 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:53.637962 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:53.664566 - GENERATOR: Clearing cache.
+21:10:53.738997 - FOCUS MANAGER: Locus of focus is None
+21:10:53.739026 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:53.739636 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:53.840660 - FOCUS MANAGER: Locus of focus is None
+21:10:53.840692 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:53.841284 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:53.942091 - FOCUS MANAGER: Locus of focus is None
+21:10:53.942123 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:53.942699 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:54.043605 - FOCUS MANAGER: Locus of focus is None
+21:10:54.043637 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:54.044211 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:54.145068 - FOCUS MANAGER: Locus of focus is None
+21:10:54.145101 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:54.145688 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:54.246655 - FOCUS MANAGER: Locus of focus is None
+21:10:54.246687 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:54.247271 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:54.303759 - FOCUS MANAGER: Focus and window are unknown
+21:10:54.303809 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+21:10:54.348056 - FOCUS MANAGER: Locus of focus is None
+21:10:54.348085 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:54.348690 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:54.449808 - FOCUS MANAGER: Locus of focus is None
+21:10:54.449850 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:54.450678 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:54.551904 - FOCUS MANAGER: Locus of focus is None
+21:10:54.551950 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:54.552719 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:54.653768 - FOCUS MANAGER: Locus of focus is None
+21:10:54.653806 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:54.654477 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:54.755486 - FOCUS MANAGER: Locus of focus is None
+21:10:54.755522 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:54.756140 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:54.857111 - FOCUS MANAGER: Locus of focus is None
+21:10:54.857145 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:54.857755 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:54.958658 - FOCUS MANAGER: Locus of focus is None
+21:10:54.958692 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:54.959300 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:55.060312 - FOCUS MANAGER: Locus of focus is None
+21:10:55.060344 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:55.060924 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:55.161900 - FOCUS MANAGER: Locus of focus is None
+21:10:55.161934 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:55.162532 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:55.263572 - FOCUS MANAGER: Locus of focus is None
+21:10:55.263609 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:55.264252 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:55.365382 - FOCUS MANAGER: Locus of focus is None
+21:10:55.365423 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:55.366186 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:55.467394 - FOCUS MANAGER: Locus of focus is None
+21:10:55.467445 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:55.468231 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:55.569185 - FOCUS MANAGER: Locus of focus is None
+21:10:55.569221 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:55.569847 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:55.664760 - GENERATOR: Clearing cache.
+21:10:55.670779 - FOCUS MANAGER: Locus of focus is None
+21:10:55.670809 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:55.671458 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:55.772594 - FOCUS MANAGER: Locus of focus is None
+21:10:55.772639 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:55.773405 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:55.874368 - FOCUS MANAGER: Locus of focus is None
+21:10:55.874406 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:55.875017 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:55.975832 - FOCUS MANAGER: Locus of focus is None
+21:10:55.975865 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:55.976550 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:56.077501 - FOCUS MANAGER: Locus of focus is None
+21:10:56.077536 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:56.078134 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:56.179081 - FOCUS MANAGER: Locus of focus is None
+21:10:56.179121 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:56.179808 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:56.281024 - FOCUS MANAGER: Locus of focus is None
+21:10:56.281069 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:56.281891 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:56.382905 - FOCUS MANAGER: Locus of focus is None
+21:10:56.382939 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:56.383542 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:56.484488 - FOCUS MANAGER: Locus of focus is None
+21:10:56.484526 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:56.485159 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:56.586175 - FOCUS MANAGER: Locus of focus is None
+21:10:56.586218 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:56.589617 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:56.690711 - FOCUS MANAGER: Locus of focus is None
+21:10:56.690757 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:56.691542 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:56.792543 - FOCUS MANAGER: Locus of focus is None
+21:10:56.792585 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:56.793367 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:56.894271 - FOCUS MANAGER: Locus of focus is None
+21:10:56.894308 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:56.894941 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:56.995758 - FOCUS MANAGER: Locus of focus is None
+21:10:56.995790 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:56.996386 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:57.097266 - FOCUS MANAGER: Locus of focus is None
+21:10:57.097300 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:57.097906 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:57.199122 - FOCUS MANAGER: Locus of focus is None
+21:10:57.199168 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:57.199937 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:57.301066 - FOCUS MANAGER: Locus of focus is None
+21:10:57.301099 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:57.301706 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:57.402592 - FOCUS MANAGER: Locus of focus is None
+21:10:57.402624 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:57.403200 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:57.504231 - FOCUS MANAGER: Locus of focus is None
+21:10:57.504279 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:57.505006 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:57.606023 - FOCUS MANAGER: Locus of focus is None
+21:10:57.606078 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:57.606879 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:57.664976 - GENERATOR: Clearing cache.
+21:10:57.707745 - FOCUS MANAGER: Locus of focus is None
+21:10:57.707789 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:57.708570 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:57.809390 - FOCUS MANAGER: Locus of focus is None
+21:10:57.809439 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:57.810217 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:57.911022 - FOCUS MANAGER: Locus of focus is None
+21:10:57.911071 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:57.911864 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:58.012881 - FOCUS MANAGER: Locus of focus is None
+21:10:58.012925 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:58.013698 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:58.114373 - FOCUS MANAGER: Locus of focus is None
+21:10:58.114410 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:58.114957 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:58.215951 - FOCUS MANAGER: Locus of focus is None
+21:10:58.215996 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:58.216757 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:58.317869 - FOCUS MANAGER: Locus of focus is None
+21:10:58.317916 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:58.318669 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:58.419795 - FOCUS MANAGER: Locus of focus is None
+21:10:58.419828 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:58.420419 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:58.521189 - FOCUS MANAGER: Locus of focus is None
+21:10:58.521225 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:58.521842 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:58.622814 - FOCUS MANAGER: Locus of focus is None
+21:10:58.622848 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:58.623444 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:58.724403 - FOCUS MANAGER: Locus of focus is None
+21:10:58.724439 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:58.725059 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:58.826000 - FOCUS MANAGER: Locus of focus is None
+21:10:58.826035 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:58.826629 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:58.927745 - FOCUS MANAGER: Locus of focus is None
+21:10:58.927784 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:58.928481 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:59.029500 - FOCUS MANAGER: Locus of focus is None
+21:10:59.029545 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:59.030307 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:59.131227 - FOCUS MANAGER: Locus of focus is None
+21:10:59.131267 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:59.131864 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:59.232670 - FOCUS MANAGER: Locus of focus is None
+21:10:59.232701 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:59.233273 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:59.334092 - FOCUS MANAGER: Locus of focus is None
+21:10:59.334129 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:59.334790 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:59.435849 - FOCUS MANAGER: Locus of focus is None
+21:10:59.435883 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:59.436491 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:59.537463 - FOCUS MANAGER: Locus of focus is None
+21:10:59.537509 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:59.538288 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:59.639141 - FOCUS MANAGER: Locus of focus is None
+21:10:59.639183 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:59.640425 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:59.665133 - GENERATOR: Clearing cache.
+21:10:59.741286 - FOCUS MANAGER: Locus of focus is None
+21:10:59.741328 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:59.742008 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:59.843084 - FOCUS MANAGER: Locus of focus is None
+21:10:59.843119 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:59.843730 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:10:59.945042 - FOCUS MANAGER: Locus of focus is None
+21:10:59.945081 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:10:59.945710 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:00.046721 - FOCUS MANAGER: Locus of focus is None
+21:11:00.046749 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:00.047260 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:00.148329 - FOCUS MANAGER: Locus of focus is None
+21:11:00.148362 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:00.148878 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:00.533823 - FOCUS MANAGER: Locus of focus is None
+21:11:00.533867 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:00.534583 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:00.636003 - FOCUS MANAGER: Locus of focus is None
+21:11:00.636052 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:00.636829 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:00.738302 - FOCUS MANAGER: Locus of focus is None
+21:11:00.738346 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:00.739103 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:00.840440 - FOCUS MANAGER: Locus of focus is None
+21:11:00.840489 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:00.841258 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:00.942381 - FOCUS MANAGER: Locus of focus is None
+21:11:00.942421 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:00.943136 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:01.044061 - FOCUS MANAGER: Locus of focus is None
+21:11:01.044093 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:01.044716 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:01.145544 - FOCUS MANAGER: Locus of focus is None
+21:11:01.145576 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:01.146144 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:01.247087 - FOCUS MANAGER: Locus of focus is None
+21:11:01.247126 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:01.247774 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:01.348918 - FOCUS MANAGER: Locus of focus is None
+21:11:01.349009 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:01.349820 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:01.450856 - FOCUS MANAGER: Locus of focus is None
+21:11:01.450902 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:01.451640 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:01.552570 - FOCUS MANAGER: Locus of focus is None
+21:11:01.552603 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:01.553233 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:01.654117 - FOCUS MANAGER: Locus of focus is None
+21:11:01.654160 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:01.654978 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:01.665265 - GENERATOR: Clearing cache.
+21:11:01.756080 - FOCUS MANAGER: Locus of focus is None
+21:11:01.756123 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:01.756952 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:01.858074 - FOCUS MANAGER: Locus of focus is None
+21:11:01.858120 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:01.858871 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:01.959926 - FOCUS MANAGER: Locus of focus is None
+21:11:01.959957 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:01.960553 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:02.061533 - FOCUS MANAGER: Locus of focus is None
+21:11:02.061566 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:02.062148 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:02.163119 - FOCUS MANAGER: Locus of focus is None
+21:11:02.163160 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:02.163844 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:02.264884 - FOCUS MANAGER: Locus of focus is None
+21:11:02.264917 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:02.265507 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:02.366455 - FOCUS MANAGER: Locus of focus is None
+21:11:02.366487 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:02.367062 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:02.467806 - FOCUS MANAGER: Locus of focus is None
+21:11:02.467840 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:02.468419 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:02.569786 - FOCUS MANAGER: Locus of focus is None
+21:11:02.569829 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:02.570657 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:02.671851 - FOCUS MANAGER: Locus of focus is None
+21:11:02.671894 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:02.672674 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:02.773872 - FOCUS MANAGER: Locus of focus is None
+21:11:02.773922 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:02.774685 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:02.875887 - FOCUS MANAGER: Locus of focus is None
+21:11:02.875939 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:02.876735 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:02.977858 - FOCUS MANAGER: Locus of focus is None
+21:11:02.977915 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:02.979403 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:03.080407 - FOCUS MANAGER: Locus of focus is None
+21:11:03.080453 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:03.081209 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:03.182188 - FOCUS MANAGER: Locus of focus is None
+21:11:03.182230 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:03.182994 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:03.283775 - FOCUS MANAGER: Locus of focus is None
+21:11:03.283811 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:03.284416 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:03.385315 - FOCUS MANAGER: Locus of focus is None
+21:11:03.385383 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:03.386091 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:03.487100 - FOCUS MANAGER: Locus of focus is None
+21:11:03.487146 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:03.487916 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:03.588893 - FOCUS MANAGER: Locus of focus is None
+21:11:03.588931 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:03.589605 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:03.665366 - GENERATOR: Clearing cache.
+21:11:03.690715 - FOCUS MANAGER: Locus of focus is None
+21:11:03.690745 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:03.691385 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:03.792343 - FOCUS MANAGER: Locus of focus is None
+21:11:03.792377 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:03.792951 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:03.894057 - FOCUS MANAGER: Locus of focus is None
+21:11:03.894089 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:03.894673 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:03.995800 - FOCUS MANAGER: Locus of focus is None
+21:11:03.995833 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:03.996419 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:04.097386 - FOCUS MANAGER: Locus of focus is None
+21:11:04.097423 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:04.098081 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:04.199148 - FOCUS MANAGER: Locus of focus is None
+21:11:04.199193 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:04.199948 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:04.300932 - FOCUS MANAGER: Locus of focus is None
+21:11:04.300972 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:04.301704 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:04.402848 - FOCUS MANAGER: Locus of focus is None
+21:11:04.402897 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:04.403672 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:04.504634 - FOCUS MANAGER: Locus of focus is None
+21:11:04.504669 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:04.505297 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:04.606216 - FOCUS MANAGER: Locus of focus is None
+21:11:04.606250 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:04.606850 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:04.707819 - FOCUS MANAGER: Locus of focus is None
+21:11:04.707856 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:04.708463 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:04.809362 - FOCUS MANAGER: Locus of focus is None
+21:11:04.809398 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:04.810004 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:04.910995 - FOCUS MANAGER: Locus of focus is None
+21:11:04.911032 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:04.911672 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:05.012644 - FOCUS MANAGER: Locus of focus is None
+21:11:05.012677 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:05.013253 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:05.114231 - FOCUS MANAGER: Locus of focus is None
+21:11:05.114271 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:05.114897 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:05.215926 - FOCUS MANAGER: Locus of focus is None
+21:11:05.215963 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:05.216607 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:05.318214 - FOCUS MANAGER: Locus of focus is None
+21:11:05.318261 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:05.319024 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:05.420582 - FOCUS MANAGER: Locus of focus is None
+21:11:05.420634 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:05.421413 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:05.522778 - FOCUS MANAGER: Locus of focus is None
+21:11:05.522827 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:05.523630 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:05.625241 - FOCUS MANAGER: Locus of focus is None
+21:11:05.625286 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:05.626037 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:05.665478 - GENERATOR: Clearing cache.
+21:11:05.727832 - FOCUS MANAGER: Locus of focus is None
+21:11:05.727869 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:05.728671 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:05.830173 - FOCUS MANAGER: Locus of focus is None
+21:11:05.830205 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:05.830837 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:05.932269 - FOCUS MANAGER: Locus of focus is None
+21:11:05.932303 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:05.932922 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:06.034504 - FOCUS MANAGER: Locus of focus is None
+21:11:06.034536 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:06.035716 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:06.137338 - FOCUS MANAGER: Locus of focus is None
+21:11:06.137380 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:06.138090 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:06.239856 - FOCUS MANAGER: Locus of focus is None
+21:11:06.239901 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:06.240691 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:06.342357 - FOCUS MANAGER: Locus of focus is None
+21:11:06.342391 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:06.343205 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:06.444735 - FOCUS MANAGER: Locus of focus is None
+21:11:06.444766 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:06.445332 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:06.546940 - FOCUS MANAGER: Locus of focus is None
+21:11:06.546975 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:06.547601 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:06.649423 - FOCUS MANAGER: Locus of focus is None
+21:11:06.649470 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:06.650249 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:06.751779 - FOCUS MANAGER: Locus of focus is None
+21:11:06.751815 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:06.752439 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:06.854132 - FOCUS MANAGER: Locus of focus is None
+21:11:06.854165 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:06.854764 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:06.956403 - FOCUS MANAGER: Locus of focus is None
+21:11:06.956436 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:06.957028 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:07.058637 - FOCUS MANAGER: Locus of focus is None
+21:11:07.058677 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:07.059420 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:07.161164 - FOCUS MANAGER: Locus of focus is None
+21:11:07.161209 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:07.161979 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:07.263742 - FOCUS MANAGER: Locus of focus is None
+21:11:07.263815 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:07.265316 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:07.366970 - FOCUS MANAGER: Locus of focus is None
+21:11:07.367009 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:07.367679 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:07.469304 - FOCUS MANAGER: Locus of focus is None
+21:11:07.469363 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:07.470486 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:07.571889 - FOCUS MANAGER: Locus of focus is None
+21:11:07.571941 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:07.572720 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:07.665611 - GENERATOR: Clearing cache.
+21:11:07.673917 - FOCUS MANAGER: Locus of focus is None
+21:11:07.673953 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:07.674753 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:07.776149 - FOCUS MANAGER: Locus of focus is None
+21:11:07.776199 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:07.777101 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:07.878412 - FOCUS MANAGER: Locus of focus is None
+21:11:07.878461 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:07.879240 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:07.980223 - FOCUS MANAGER: Locus of focus is None
+21:11:07.980277 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:07.981052 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:08.082284 - FOCUS MANAGER: Locus of focus is None
+21:11:08.082327 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:08.083085 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:08.184245 - FOCUS MANAGER: Locus of focus is None
+21:11:08.184287 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:08.184969 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:08.286214 - FOCUS MANAGER: Locus of focus is None
+21:11:08.286254 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:08.286942 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:08.388121 - FOCUS MANAGER: Locus of focus is None
+21:11:08.388156 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:08.388796 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:08.490051 - FOCUS MANAGER: Locus of focus is None
+21:11:08.490092 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:08.491028 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:08.592309 - FOCUS MANAGER: Locus of focus is None
+21:11:08.592352 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:08.593127 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:09.002922 - FOCUS MANAGER: Locus of focus is None
+21:11:09.002975 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:09.003792 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:09.104846 - FOCUS MANAGER: Locus of focus is None
+21:11:09.104888 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:09.105556 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:09.206880 - FOCUS MANAGER: Locus of focus is None
+21:11:09.206914 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:09.207458 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:09.308526 - FOCUS MANAGER: Locus of focus is None
+21:11:09.308555 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:09.309040 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:09.410273 - FOCUS MANAGER: Locus of focus is None
+21:11:09.410302 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:09.410781 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:09.512182 - FOCUS MANAGER: Locus of focus is None
+21:11:09.512226 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:09.512835 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:09.613882 - FOCUS MANAGER: Locus of focus is None
+21:11:09.613914 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:09.614447 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:09.665755 - GENERATOR: Clearing cache.
+21:11:09.715646 - FOCUS MANAGER: Locus of focus is None
+21:11:09.715680 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:09.716306 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:09.817430 - FOCUS MANAGER: Locus of focus is None
+21:11:09.817472 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:09.818129 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:09.919507 - FOCUS MANAGER: Locus of focus is None
+21:11:09.919544 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:09.920100 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:10.021241 - FOCUS MANAGER: Locus of focus is None
+21:11:10.021289 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:10.021763 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:10.122988 - FOCUS MANAGER: Locus of focus is None
+21:11:10.123019 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:10.123504 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:10.224461 - FOCUS MANAGER: Locus of focus is None
+21:11:10.224490 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:10.224954 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:10.325870 - FOCUS MANAGER: Locus of focus is None
+21:11:10.325899 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:10.326376 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:10.427641 - FOCUS MANAGER: Locus of focus is None
+21:11:10.427669 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:10.428126 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:10.529319 - FOCUS MANAGER: Locus of focus is None
+21:11:10.529349 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:10.529836 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:10.631076 - FOCUS MANAGER: Locus of focus is None
+21:11:10.631111 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:10.631684 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:10.732987 - FOCUS MANAGER: Locus of focus is None
+21:11:10.733027 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:10.733660 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:10.835115 - FOCUS MANAGER: Locus of focus is None
+21:11:10.835146 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:10.835643 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:10.937080 - FOCUS MANAGER: Locus of focus is None
+21:11:10.937111 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:10.937603 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:11.039152 - FOCUS MANAGER: Locus of focus is None
+21:11:11.039180 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:11.039665 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:11.141179 - FOCUS MANAGER: Locus of focus is None
+21:11:11.141211 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:11.141732 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:11.243048 - FOCUS MANAGER: Locus of focus is None
+21:11:11.243076 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:11.243569 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:11.344676 - FOCUS MANAGER: Locus of focus is None
+21:11:11.344709 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:11.345216 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:11.446316 - FOCUS MANAGER: Locus of focus is None
+21:11:11.446346 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:11.446831 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:11.547796 - FOCUS MANAGER: Locus of focus is None
+21:11:11.547845 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:11.548679 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:11.649585 - FOCUS MANAGER: Locus of focus is None
+21:11:11.649637 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:11.650466 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:11.665883 - GENERATOR: Clearing cache.
+21:11:11.751562 - FOCUS MANAGER: Locus of focus is None
+21:11:11.751596 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:11.752394 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:11.853426 - FOCUS MANAGER: Locus of focus is None
+21:11:11.853459 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:11.854202 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:11.955117 - FOCUS MANAGER: Locus of focus is None
+21:11:11.955154 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:11.955918 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:12.056806 - FOCUS MANAGER: Locus of focus is None
+21:11:12.056841 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:12.057566 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:12.158453 - FOCUS MANAGER: Locus of focus is None
+21:11:12.158489 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:12.159196 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:12.260221 - FOCUS MANAGER: Locus of focus is None
+21:11:12.260253 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:12.260847 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:12.361794 - FOCUS MANAGER: Locus of focus is None
+21:11:12.361828 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:12.362916 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:12.463978 - FOCUS MANAGER: Locus of focus is None
+21:11:12.464019 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:12.464780 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:12.566133 - FOCUS MANAGER: Locus of focus is None
+21:11:12.566211 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:12.567614 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:12.668940 - FOCUS MANAGER: Locus of focus is None
+21:11:12.669003 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:12.670153 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:12.771481 - FOCUS MANAGER: Locus of focus is None
+21:11:12.771539 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:12.772621 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:12.873810 - FOCUS MANAGER: Locus of focus is None
+21:11:12.873849 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:12.874510 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:12.975570 - FOCUS MANAGER: Locus of focus is None
+21:11:12.975604 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:12.976206 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:13.077354 - FOCUS MANAGER: Locus of focus is None
+21:11:13.077429 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:13.078207 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:13.179050 - FOCUS MANAGER: Locus of focus is None
+21:11:13.179086 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:13.179696 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:13.280745 - FOCUS MANAGER: Locus of focus is None
+21:11:13.280782 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:13.281407 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:13.382525 - FOCUS MANAGER: Locus of focus is None
+21:11:13.382569 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:13.383360 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:13.484387 - FOCUS MANAGER: Locus of focus is None
+21:11:13.484430 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:13.485119 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:13.586017 - FOCUS MANAGER: Locus of focus is None
+21:11:13.586052 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:13.586650 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:13.666182 - GENERATOR: Clearing cache.
+21:11:13.687614 - FOCUS MANAGER: Locus of focus is None
+21:11:13.687644 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:13.688269 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:13.789030 - FOCUS MANAGER: Locus of focus is None
+21:11:13.789063 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:13.789659 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:13.890624 - FOCUS MANAGER: Locus of focus is None
+21:11:13.890660 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:13.891293 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:13.992150 - FOCUS MANAGER: Locus of focus is None
+21:11:13.992183 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:13.992793 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:14.093685 - FOCUS MANAGER: Locus of focus is None
+21:11:14.093719 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:14.094313 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:14.195220 - FOCUS MANAGER: Locus of focus is None
+21:11:14.195255 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:14.195874 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:14.297138 - FOCUS MANAGER: Locus of focus is None
+21:11:14.297183 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:14.298026 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:14.399217 - FOCUS MANAGER: Locus of focus is None
+21:11:14.399278 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:14.400153 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:14.500975 - FOCUS MANAGER: Locus of focus is None
+21:11:14.501019 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:14.501768 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:14.602961 - FOCUS MANAGER: Locus of focus is None
+21:11:14.603003 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:14.603763 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:14.705045 - FOCUS MANAGER: Locus of focus is None
+21:11:14.705091 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:14.706022 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:14.807097 - FOCUS MANAGER: Locus of focus is None
+21:11:14.807146 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:14.808226 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:14.850396 - FOCUS MANAGER: Locus of focus is None
+21:11:14.850436 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:14.851173 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:14.909513 - FOCUS MANAGER: Locus of focus is None
+21:11:14.909566 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:14.910327 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:15.011369 - FOCUS MANAGER: Locus of focus is None
+21:11:15.011417 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:15.012273 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:15.113509 - FOCUS MANAGER: Locus of focus is None
+21:11:15.113549 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:15.114277 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:15.215547 - FOCUS MANAGER: Locus of focus is None
+21:11:15.215596 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:15.216399 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:15.317555 - FOCUS MANAGER: Locus of focus is None
+21:11:15.317594 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:15.318740 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:15.419950 - FOCUS MANAGER: Locus of focus is None
+21:11:15.419986 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:15.420601 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:15.521749 - FOCUS MANAGER: Locus of focus is None
+21:11:15.521785 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:15.522394 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:15.623562 - FOCUS MANAGER: Locus of focus is None
+21:11:15.623595 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:15.624182 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:15.666444 - GENERATOR: Clearing cache.
+21:11:15.725135 - FOCUS MANAGER: Locus of focus is None
+21:11:15.725170 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:15.725838 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:15.826997 - FOCUS MANAGER: Locus of focus is None
+21:11:15.827030 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:15.827631 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:15.928757 - FOCUS MANAGER: Locus of focus is None
+21:11:15.928792 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:15.929404 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:16.030618 - FOCUS MANAGER: Locus of focus is None
+21:11:16.030658 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:16.031385 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:16.132675 - FOCUS MANAGER: Locus of focus is None
+21:11:16.132721 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:16.133480 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:16.234590 - FOCUS MANAGER: Locus of focus is None
+21:11:16.234623 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:16.235297 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:16.336398 - FOCUS MANAGER: Locus of focus is None
+21:11:16.336433 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:16.337034 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:16.438085 - FOCUS MANAGER: Locus of focus is None
+21:11:16.438118 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:16.438714 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:16.539883 - FOCUS MANAGER: Locus of focus is None
+21:11:16.539917 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:16.540518 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:16.641573 - FOCUS MANAGER: Locus of focus is None
+21:11:16.641607 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:16.642207 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:16.743428 - FOCUS MANAGER: Locus of focus is None
+21:11:16.743463 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:16.744055 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:16.845144 - FOCUS MANAGER: Locus of focus is None
+21:11:16.845177 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:16.845765 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:16.946989 - FOCUS MANAGER: Locus of focus is None
+21:11:16.947030 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:16.947815 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:17.048953 - FOCUS MANAGER: Locus of focus is None
+21:11:17.048997 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+21:11:17.049748 - DBUS SERVICE: Getter 'State' returned: {"focus": null, "active_window": null, "navigator": null}
+21:11:17.461430 - ORCA: GLib handler received shutdown signal
+21:11:17.461479 - ORCA: Shutting down
+21:11:17.461507 - PRESENTATION MANAGER: Interrupting presentation
+21:11:17.461575 - SPEECH MANAGER: interrupt_speech. Script: None Event: None notify_user: False
+21:11:17.461807 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x751f79dbdd30>
+21:11:17.461931 - BRAILLE: Kill flash message orca.shutdown:118 > presentation_manager.interrupt_presentation:88 > braille_presenter.kill_flash:1829 > braille.kill_flash:2182
+21:11:17.462742 - GSETTINGS SCHEMA HANDLE: speech/enable not set [profile:default]
+21:11:17.462756 - GSETTINGS REGISTRY: speech/enable using default value = True
+21:11:17.462777 - GSETTINGS SCHEMA HANDLE: speech/messages-are-detailed not set [profile:default]
+21:11:17.462784 - GSETTINGS REGISTRY: speech/messages-are-detailed using default value = True
+21:11:17.462799 - GSETTINGS SCHEMA HANDLE: speech/only-speak-displayed-text not set [profile:default]
+21:11:17.462805 - GSETTINGS REGISTRY: speech/only-speak-displayed-text using default value = False
+21:11:17.462822 - GSETTINGS SCHEMA HANDLE: voice/established not set [profile:default]
+21:11:17.462836 - GSETTINGS SCHEMA HANDLE: voice/rate not set [profile:default]
+21:11:17.462848 - GSETTINGS SCHEMA HANDLE: voice/pitch not set [profile:default]
+21:11:17.462859 - GSETTINGS SCHEMA HANDLE: voice/volume not set [profile:default]
+21:11:17.462873 - GSETTINGS SCHEMA HANDLE: voice/family-name not set [profile:default]
+21:11:17.462884 - GSETTINGS SCHEMA HANDLE: voice/family-lang not set [profile:default]
+21:11:17.462896 - GSETTINGS SCHEMA HANDLE: voice/family-dialect not set [profile:default]
+21:11:17.462906 - GSETTINGS SCHEMA HANDLE: voice/family-gender not set [profile:default]
+21:11:17.462916 - GSETTINGS SCHEMA HANDLE: voice/family-variant not set [profile:default]
+21:11:17.462936 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+21:11:17.462942 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+21:11:17.462977 - SPEECH PRESENTER: Adjusting 'Screen reader off.' from None start_offset: None
+21:11:17.462991 - GSETTINGS SCHEMA HANDLE: speech/repeated-character-limit not set [profile:default]
+21:11:17.462996 - GSETTINGS REGISTRY: speech/repeated-character-limit using default value = 4
+21:11:17.463016 - GSETTINGS SCHEMA HANDLE: speech/use-pronunciation-dictionary not set [profile:default]
+21:11:17.463021 - GSETTINGS REGISTRY: speech/use-pronunciation-dictionary using default value = True
+21:11:17.463038 - SPEECH PRESENTER: Adjusted text: 'Screen reader off.'
+21:11:17.463048 - SPEECH: Speak 'Screen reader off.' acss: {'established': False}
+21:11:17.463055 - SPEECH OUTPUT: 'Screen reader off.' {'established': False}
+21:11:17.463331 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x751f79dbdd30>
+21:11:17.463366 - GSETTINGS SCHEMA HANDLE: speech/capitalization-style not set [profile:default]
+21:11:17.463375 - GSETTINGS REGISTRY: speech/capitalization-style using default value = 'none'
+21:11:17.463572 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x751f79dbdd30>
+21:11:17.463605 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+21:11:17.463613 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+21:11:17.463624 - GSETTINGS REGISTRY: braille/enabled runtime override = False
+21:11:17.463631 - BRAILLE PRESENTER: Braille is disabled.
+21:11:17.463640 - REMOTE CONTROLLER: Attempting to shut down D-Bus service.
+21:11:17.463647 - DBUS SERVICE: Releasing D-Bus resources for service.
+21:11:17.463653 - DBUS SERVICE: Shutting down and unpublishing module SleepModeManager from main service.
+21:11:17.463704 - DBUS SERVICE: Shutting down and unpublishing module SpeechPresenter from main service.
+21:11:17.463721 - DBUS SERVICE: Shutting down and unpublishing module ClipboardPresenter from main service.
+21:11:17.463734 - DBUS SERVICE: Shutting down and unpublishing module CommandManager from main service.
+21:11:17.463746 - DBUS SERVICE: Shutting down and unpublishing module ObjectNavigator from main service.
+21:11:17.463759 - DBUS SERVICE: Shutting down and unpublishing module StructuralNavigator from main service.
+21:11:17.463772 - DBUS SERVICE: Shutting down and unpublishing module CaretNavigator from main service.
+21:11:17.463784 - DBUS SERVICE: Shutting down and unpublishing module DocumentPresenter from main service.
+21:11:17.463796 - DBUS SERVICE: Shutting down and unpublishing module SpeechManager from main service.
+21:11:17.463807 - DBUS SERVICE: Shutting down and unpublishing module NotificationPresenter from main service.
+21:11:17.463818 - DBUS SERVICE: Shutting down and unpublishing module TextAttributeManager from main service.
+21:11:17.463829 - DBUS SERVICE: Shutting down and unpublishing module TableNavigator from main service.
+21:11:17.463841 - DBUS SERVICE: Shutting down and unpublishing module SoundPresenter from main service.
+21:11:17.463852 - DBUS SERVICE: Shutting down and unpublishing module ChatPresenter from main service.
+21:11:17.463862 - DBUS SERVICE: Shutting down and unpublishing module SystemInformationPresenter from main service.
+21:11:17.463880 - DBUS SERVICE: Shutting down and unpublishing module FlatReviewPresenter from main service.
+21:11:17.463891 - DBUS SERVICE: Shutting down and unpublishing module ProfileManager from main service.
+21:11:17.463900 - DBUS SERVICE: Shutting down and unpublishing module SpellCheckPresenter from main service.
+21:11:17.463911 - DBUS SERVICE: Shutting down and unpublishing module TypingEchoPresenter from main service.
+21:11:17.463921 - DBUS SERVICE: Shutting down and unpublishing module BraillePresenter from main service.
+21:11:17.463930 - DBUS SERVICE: Shutting down and unpublishing module ActionPresenter from main service.
+21:11:17.463939 - DBUS SERVICE: Shutting down and unpublishing module WhereAmIPresenter from main service.
+21:11:17.463949 - DBUS SERVICE: Shutting down and unpublishing module SayAllPresenter from main service.
+21:11:17.463960 - DBUS SERVICE: Shutting down and unpublishing module QAObservation from main service.
+21:11:17.464439 - REMOTE CONTROLLER: D-Bus service shut down.
+21:11:17.464463 - ORCA MODIFIER MANAGER: Unsetting Orca modifiers: Shutting down.
+21:11:17.467718 - ORCA MODIFIER MANAGER: Original xmodmap restored
+21:11:17.467807 - EVENT MANAGER: Pause queueing: True. Clear queue: True. Shutting down.
+21:11:17.467825 - INPUT EVENT MANAGER: Pause queueing: True. Shutting down.
+21:11:17.467833 - SCRIPT MANAGER: Deactivating <unknown>.<module>:373 > orca._glib_shutdown_handler:182 > orca.shutdown:129 > script_manager.deactivate:70
+21:11:17.468149 - EVENT MANAGER: De-registering listeners for: default (module=orca.scripts.default)
+21:11:17.468159 - EVENT MANAGER: deregistering listener for: document:attributes-changed
+21:11:17.468508 - EVENT MANAGER: deregistering listener for: document:load-complete
+21:11:17.469016 - EVENT MANAGER: deregistering listener for: document:load-stopped
+21:11:17.469368 - EVENT MANAGER: deregistering listener for: document:page-changed
+21:11:17.469764 - EVENT MANAGER: deregistering listener for: document:reload
+21:11:17.470205 - EVENT MANAGER: deregistering listener for: mouse:button
+21:11:17.470417 - EVENT MANAGER: deregistering listener for: object:active-descendant-changed
+21:11:17.470710 - EVENT MANAGER: deregistering listener for: object:announcement
+21:11:17.471005 - EVENT MANAGER: deregistering listener for: object:attributes-changed
+21:11:17.471611 - EVENT MANAGER: deregistering listener for: object:children-changed:add
+21:11:17.471962 - EVENT MANAGER: deregistering listener for: object:children-changed:remove
+21:11:17.472610 - EVENT MANAGER: deregistering listener for: object:column-reordered
+21:11:17.472834 - EVENT MANAGER: deregistering listener for: object:property-change:accessible-description
+21:11:17.472897 - EVENT MANAGER: deregistering listener for: object:property-change:accessible-name
+21:11:17.472949 - EVENT MANAGER: deregistering listener for: object:property-change:accessible-value
+21:11:17.473001 - EVENT MANAGER: deregistering listener for: object:row-reordered
+21:11:17.473041 - EVENT MANAGER: deregistering listener for: object:selection-changed
+21:11:17.473081 - EVENT MANAGER: deregistering listener for: object:state-changed:active
+21:11:17.473121 - EVENT MANAGER: deregistering listener for: object:state-changed:busy
+21:11:17.473164 - EVENT MANAGER: deregistering listener for: object:state-changed:checked
+21:11:17.473204 - EVENT MANAGER: deregistering listener for: object:state-changed:expanded
+21:11:17.473243 - EVENT MANAGER: deregistering listener for: object:state-changed:focused
+21:11:17.473282 - EVENT MANAGER: deregistering listener for: object:state-changed:indeterminate
+21:11:17.473319 - EVENT MANAGER: deregistering listener for: object:state-changed:invalid-entry
+21:11:17.473356 - EVENT MANAGER: deregistering listener for: object:state-changed:pressed
+21:11:17.473394 - EVENT MANAGER: deregistering listener for: object:state-changed:selected
+21:11:17.473433 - EVENT MANAGER: deregistering listener for: object:state-changed:sensitive
+21:11:17.473470 - EVENT MANAGER: deregistering listener for: object:state-changed:showing
+21:11:17.473510 - EVENT MANAGER: deregistering listener for: object:text-attributes-changed
+21:11:17.473545 - EVENT MANAGER: deregistering listener for: object:text-caret-moved
+21:11:17.473581 - EVENT MANAGER: deregistering listener for: object:text-changed:delete
+21:11:17.473619 - EVENT MANAGER: deregistering listener for: object:text-changed:insert
+21:11:17.473655 - EVENT MANAGER: deregistering listener for: object:text-selection-changed
+21:11:17.473692 - EVENT MANAGER: deregistering listener for: object:value-changed
+21:11:17.473727 - EVENT MANAGER: deregistering listener for: window:activate
+21:11:17.473763 - EVENT MANAGER: deregistering listener for: window:create
+21:11:17.473799 - EVENT MANAGER: deregistering listener for: window:deactivate
+21:11:17.473835 - EVENT MANAGER: deregistering listener for: window:destroy
+21:11:17.473909 - SCRIPT MANAGER: Deactivating default (module=orca.scripts.default) reason: deactivate
+21:11:17.473944 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:11:17.473950 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:11:17.473954 - COMMAND MANAGER: Setting keyboard layout is_desktop to True.
+21:11:17.474032 - GSETTINGS SCHEMA HANDLE: keybindings/entries no dict values set
+21:11:17.474037 - GSETTINGS REGISTRY: keybindings/entries using default value = {}
+21:11:17.474040 - COMMAND MANAGER: No user overrides to apply
+21:11:17.474082 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:11:17.474086 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:11:17.474094 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:11:17.474099 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+vvvvv COMMAND MANAGER: Grab diff: keyboard layout change (old: 77, new: 77) vvvvv
+21:11:17.474118 -   No grab changes
+^^^^^ COMMAND MANAGER: Diff completed in 0.0000s. Removed 0, added 0, transferred 0 ^^^^^
+
+21:11:17.474128 - COMMAND MANAGER: Keyboard layout set to desktop.
+21:11:17.474139 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+21:11:17.474143 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+21:11:17.474149 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+21:11:17.474152 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+21:11:17.474157 - SCRIPT MANAGER: Deactivated
+21:11:17.474161 - EVENT MANAGER: Deactivating <unknown>.<module>:373 > orca._glib_shutdown_handler:182 > orca.shutdown:130 > event_manager.deactivate:98
+21:11:17.474393 - INPUT EVENT MANAGER: Stopping key watcher.
+21:11:17.474427 - EVENT MANAGER: Deactivated
+21:11:17.474433 - CLIPBOARD PRESENTER: Deactivating
+21:11:17.474728 - CLIPBOARD PRESENTER: Deactivated
+21:11:17.474738 - PRESENTATION MANAGER: Shutting down presenters
+21:11:17.475023 - SPEECH MANAGER: shutdown_speech. Script: None Event: None notify_user: False
+21:11:17.475735 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x751f79dbdd30>
+21:11:17.475754 - BRAILLE: Attempting braille shutdown.
+21:11:17.475763 - BRAILLE: Braille was not running.
+21:11:17.475773 - SYSTEMD: Sending: STOPPING=1
+21:11:17.475786 - ORCA: Quitting Atspi main event loop
+21:11:17.475798 - ORCA: Shutdown complete

@@ -1,0 +1,19 @@
+{
+  "result": "fail",
+  "actualTests": 14,
+  "passed": 13,
+  "failed": 1,
+  "scope": "qa-harness-5b72cdb06c244d72943d9d5d120e08cc",
+  "invocation": "041c597ab25c4051ac76144a15975925",
+  "processExitCode": 1,
+  "wallSecondsReported": 5.745,
+  "failure": "test_changed_complete_family_refuses_prune_between_real_queries: closed helper incorrectly expected replyBytes=2 for explicit nonempty59byte native family response",
+  "observedAssertion": "AssertionError: 59 != 2",
+  "rawToolOutputRetainedInConversation": true,
+  "fullStdoutFileAvailable": false,
+  "failedTestSourceSHA256": "ed92289536fc9c56cf8d62c7b215e5aba34dcc951db5c10b8d3c9c2825fd172f",
+  "runtimeSourceSHA256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b",
+  "productCorrectionRequired": false,
+  "coverageAndNoPruneAssertionsPassed": true,
+  "nativeAccepted": false
+}

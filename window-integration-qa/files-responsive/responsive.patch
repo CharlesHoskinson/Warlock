@@ -1,0 +1,909 @@
+--- a/Ui/Btn.qml
++++ b/Ui/Btn.qml
+@@ -15,7 +15,7 @@
+   readonly property bool tinted: tint.a > 0
+   property string tip: ""
+   signal clicked(var mouse)
+-  implicitWidth: text.length ? row.implicitWidth + 20 : 30
++  implicitWidth: text.length ? caption.implicitWidth + (icon.length ? 19 : 0) + 20 : 30
+   implicitHeight: 30
+   opacity: enabled2 ? 1 : 0.35
+ 
+@@ -31,9 +31,10 @@
+   Row {
+     id: row
+     anchors.centerIn: parent
++    width: Math.max(0, Math.min(caption.implicitWidth + (root.icon.length ? 19 : 0), root.width - 20))
+     spacing: 6
+     Ico { visible: root.icon.length; text: root.icon; size: 13; color: root.primary ? Theme.bg : (root.active ? Theme.accent : (root.tinted ? root.tint : Theme.fg)); anchors.verticalCenter: parent.verticalCenter }
+-    Label { visible: root.text.length; text: root.text; font.bold: root.primary; color: root.primary ? Theme.bg : (root.active ? Theme.accent : (root.tinted ? root.tint : Theme.fg)); anchors.verticalCenter: parent.verticalCenter }
++    Label { id: caption; visible: root.text.length; width: Math.max(0, row.width - (root.icon.length ? 19 : 0)); text: root.text; font.bold: root.primary; color: root.primary ? Theme.bg : (root.active ? Theme.accent : (root.tinted ? root.tint : Theme.fg)); anchors.verticalCenter: parent.verticalCenter }
+   }
+   MouseArea {
+     id: ma
+--- a/Ui/ContextMenu.qml
++++ b/Ui/ContextMenu.qml
+@@ -12,12 +12,20 @@
+   anchors.fill: parent
+   z: 100
+ 
++  function exportUi() { return { visible: visible, items: items, px: px, py: py, hi: hi, scroll: menuScroll.contentY } }
++  function restoreUi(s) { items=s.items; px=s.px; py=s.py; hi=s.hi; visible=s.visible; if(visible) Qt.callLater(function(){menuScroll.contentY=s.scroll;card.forceActiveFocus()}) }
++
+   function openAt(x, y, its) {
+-    items = its; px = x; py = y; visible = true; hi = -1
++    items = its; px = x; py = y; visible = true; hi = -1; menuScroll.contentY = 0
+     card.forceActiveFocus()
+   }
+   function close() { visible = false }
+   property int hi: -1
++  onHiChanged: {
++    var y = 0
++    for (var i = 0; i < hi; i++) y += items[i].sep ? 9 : 28
++    if (hi >= 0) menuScroll.contentY = Math.max(0, Math.min(menuScroll.contentHeight - menuScroll.height, y < menuScroll.contentY ? y : Math.max(menuScroll.contentY, y + 28 - menuScroll.height)))
++  }
+ 
+   MouseArea { anchors.fill: parent; acceptedButtons: Qt.AllButtons; onPressed: root.close() }
+ 
+@@ -25,8 +33,8 @@
+     id: card
+     x: Math.max(4, Math.min(root.px, root.width - width - 4))
+     y: Math.max(4, Math.min(root.py, root.height - height - 4))
+-    width: 232
+-    height: col.implicitHeight + 8
++    width: Math.min(280, root.width - 8)
++    height: Math.min(root.height - 8, col.implicitHeight + 8)
+     color: Theme.bg
+     border.color: Theme.accent
+     border.width: 1
+@@ -43,9 +51,12 @@
+         e.accepted = true
+       }
+     }
++    Flickable {
++      id: menuScroll; anchors.fill: parent; anchors.margins: 4; clip: true
++      contentWidth: width; contentHeight: col.implicitHeight; boundsBehavior: Flickable.StopAtBounds
+     Column {
+       id: col
+-      x: 4; y: 4; width: parent.width - 8
++      width: parent.width
+       Repeater {
+         model: root.items
+         delegate: Item {
+@@ -80,5 +91,13 @@
+         }
+       }
+     }
++    }
++    Rectangle {
++      anchors.right: parent.right; anchors.rightMargin: 2; width: 3
++      visible: menuScroll.contentHeight > menuScroll.height
++      height: Math.max(24, menuScroll.height * menuScroll.height / Math.max(1, menuScroll.contentHeight))
++      y: menuScroll.y + (menuScroll.height - height) * menuScroll.contentY / Math.max(1, menuScroll.contentHeight - menuScroll.height)
++      color: Theme.alpha(Theme.fg, 0.28)
++    }
+   }
+ }
+--- a/Ui/Prompt.qml
++++ b/Ui/Prompt.qml
+@@ -15,6 +15,9 @@
+   visible: false
+   anchors.fill: parent
+   z: 200
++
++  function exportUi() { return { visible: visible, title: title, hint: hint, confirmOnly: confirmOnly, danger: danger, okLabel: okLabel, mode: mode, payload: payload, text: input.text, cursor: input.cursorPosition, selectionStart: input.selectionStart, selectionEnd: input.selectionEnd, scroll: promptScroll.contentY } }
++  function restoreUi(s) { title=s.title; hint=s.hint; confirmOnly=s.confirmOnly; danger=s.danger; okLabel=s.okLabel; mode=s.mode; payload=s.payload; input.text=s.text; visible=s.visible; if(visible) Qt.callLater(function(){promptScroll.contentY=s.scroll; (root.confirmOnly ? card : input).forceActiveFocus(); if(!root.confirmOnly) {input.cursorPosition=s.cursor;input.select(s.selectionStart,s.selectionEnd)}}) }
+ 
+   function ask(mode, title, initial, payload, opts) {
+     root.mode = mode; root.title = title; root.payload = payload
+@@ -38,7 +41,7 @@
+   Rectangle {
+     id: card
+     anchors.centerIn: parent
+-    width: 460; height: body.implicitHeight + 36
++    width: Math.min(460, root.width - 24); height: Math.min(root.height - 24, body.implicitHeight + 36)
+     color: Theme.bg; border.color: root.danger ? Theme.red : Theme.accent; border.width: 1
+     radius: Theme.radius
+     focus: root.visible && root.confirmOnly
+@@ -47,9 +50,13 @@
+       else if (e.key === Qt.Key_Return || e.key === Qt.Key_Enter) { root.accept(); e.accepted = true }
+     }
+     MouseArea { anchors.fill: parent }
++    Flickable {
++      id: promptScroll
++      anchors.fill: parent; anchors.margins: 18; clip: true
++      contentWidth: width; contentHeight: body.implicitHeight; boundsBehavior: Flickable.StopAtBounds
+     Column {
+       id: body
+-      x: 18; y: 18; width: parent.width - 36; spacing: 12
++      width: parent.width; spacing: 12
+       Label { width: parent.width; text: root.title; font.pixelSize: Theme.fsHead; color: Theme.fgBright; font.bold: true; wrapMode: Text.Wrap; elide: Text.ElideNone }
+       Label { visible: root.hint.length; width: parent.width; text: root.hint; color: Theme.fgDim; wrapMode: Text.Wrap; elide: Text.ElideNone }
+       Rectangle {
+@@ -80,5 +87,13 @@
+         }
+       }
+     }
++    }
++    Rectangle {
++      anchors.right: parent.right; anchors.rightMargin: 4; width: 3
++      visible: promptScroll.contentHeight > promptScroll.height
++      height: Math.max(24, promptScroll.height * promptScroll.height / Math.max(1, promptScroll.contentHeight))
++      y: promptScroll.y + (promptScroll.height - height) * promptScroll.contentY / Math.max(1, promptScroll.contentHeight - promptScroll.height)
++      color: Theme.alpha(Theme.fg, 0.28)
++    }
+   }
+ }
+--- a/Ui/Section.qml
++++ b/Ui/Section.qml
+@@ -7,7 +7,7 @@
+   property string text: ""
+   property string note: ""
+   height: 22
+-  Label { id: t; text: root.text.toUpperCase(); font.pixelSize: Theme.fsLabel; font.letterSpacing: 1.6; font.bold: true; color: Theme.fgDim; height: parent.height }
+-  Rectangle { anchors { left: t.right; leftMargin: 10; right: n.left; rightMargin: root.note ? 10 : 0; verticalCenter: parent.verticalCenter } height: 1; color: Theme.line }
+-  Label { id: n; anchors.right: parent.right; text: root.note; font.pixelSize: Theme.fsSmall; color: Theme.fgDim; height: parent.height }
++  Label { id: t; width: Math.min(implicitWidth, root.width); text: root.text.toUpperCase(); font.pixelSize: Theme.fsLabel; font.letterSpacing: 1.6; font.bold: true; color: Theme.fgDim; height: parent.height }
++  Rectangle { x: t.width + 10; width: Math.max(0, n.x - x - 10); anchors.verticalCenter: parent.verticalCenter; height: 1; color: Theme.line }
++  Label { id: n; width: Math.max(0, Math.min(implicitWidth, root.width - t.width - 24)); anchors.right: parent.right; text: root.note; font.pixelSize: Theme.fsSmall; color: Theme.fgDim; height: parent.height }
+ }
+--- a/explorer/Dashboard.qml
++++ b/explorer/Dashboard.qml
+@@ -6,6 +6,8 @@
+ Item {
+   id: root
+   required property var ex
++  function scrollPosition() { return fl.contentY }
++  function restoreScroll(y) { fl.contentY = y }
+   property string kindFilter: "all"
+   readonly property string q: ex.filter.toLowerCase()
+ 
+@@ -23,7 +25,8 @@
+     return (kindFilter === "all" || Fs.kindOf(e) === kindFilter) && (!q || e.name.toLowerCase().indexOf(q) >= 0)
+   })
+ 
+-  readonly property int pad: 28
++  readonly property bool compact: width < 900
++  readonly property int pad: compact ? 14 : 28
+   readonly property real cw: width - pad * 2
+   readonly property var media: Data.recentMedia
+ 
+@@ -67,14 +70,17 @@
+     // ---- header
+     Column {
+       id: head
+-      x: root.pad; y: 22
++      x: root.pad; y: 16; width: root.compact ? root.cw : Math.max(150, root.cw - filters.width - 20)
+       spacing: 2
+-      Label { text: "Home"; font.pixelSize: Theme.fsTitle + 4; font.bold: true; color: Theme.fgBright }
+-      Label { text: (envq.user) + "  ·  " + Qt.formatDate(new Date(), "dddd d MMMM"); font.pixelSize: Theme.fsSmall + 1; color: Theme.fgDim }
++      Label { width: parent.width; text: "Home"; font.pixelSize: root.compact ? 24 : Theme.fsTitle + 4; font.bold: true; color: Theme.fgBright }
++      Label { width: parent.width; text: (envq.user) + "  ·  " + Qt.formatDate(new Date(), "dddd d MMMM"); font.pixelSize: Theme.fsSmall + 1; color: Theme.fgDim }
+     }
+     QtObject { id: envq; readonly property string user: Fs.home.split("/").pop() }
+-    Row {
+-      anchors { right: parent.right; rightMargin: root.pad; verticalCenter: head.verticalCenter }
++    Flow {
++      id: filters
++      x: root.compact ? root.pad : fl.width - width - root.pad
++      y: root.compact ? head.y + head.height + 12 : head.y + 10
++      width: root.compact ? root.cw : 690
+       spacing: 6
+       Repeater {
+         model: root.filters
+@@ -86,13 +92,13 @@
+     // ---- recent media mosaic + smart collection counters
+     Item {
+       id: hero
+-      x: root.pad; y: 86; width: root.cw
+-      readonly property real leftW: Math.round(width * 0.60)
+-      readonly property real rightW: width - leftW - 16
+-      height: 32 + 208
++      x: root.pad; y: Math.max(head.y + head.height, filters.y + filters.height) + 20; width: root.cw
++      readonly property real leftW: root.compact ? width : Math.round(width * 0.60)
++      readonly property real rightW: root.compact ? width : width - leftW - 16
++      height: root.compact ? 504 : 240
+       Section { width: hero.leftW; text: "Recent media"; note: "timeline  ›" }
+       MouseArea { x: hero.leftW - 90; width: 90; height: 22; cursorShape: Qt.PointingHandCursor; onClicked: root.ex.go("coll:recent") }
+-      Section { x: hero.leftW + 16; width: hero.rightW; text: "Smart collections" }
++      Section { x: root.compact ? 0 : hero.leftW + 16; y: root.compact ? 264 : 0; width: hero.rightW; text: "Smart collections" }
+ 
+       Item {
+         id: mos
+@@ -108,7 +114,7 @@
+       }
+       Column {
+         id: cg
+-        x: hero.leftW + 16; y: 32; width: hero.rightW; spacing: 8
++        x: root.compact ? 0 : hero.leftW + 16; y: root.compact ? 296 : 32; width: hero.rightW; spacing: 8
+         readonly property real cwid: (width - 8) / 2
+         readonly property real chgt: (208 - 3 * 8) / 4
+         component CollCard: Rectangle {
+@@ -121,7 +127,7 @@
+           Behavior on color { ColorAnimation { duration: Theme.dFast } }
+           Rectangle { width: 2; height: parent.height; color: cc.kc }
+           Ico { x: 12; width: 18; height: parent.height; text: cc.info.glyph; size: 13; color: cc.kc }
+-          Label { x: 38; width: parent.width - 38 - 50; height: parent.height; text: cc.info.name; color: Theme.fgBright }
++          Label { x: 38; width: Math.max(25, parent.width - 38 - 40); height: parent.height; text: cc.info.name; color: Theme.fgBright }
+           Label { anchors.right: parent.right; anchors.rightMargin: 12; height: parent.height; text: Data.collCount(cc.info.id)
+             font.pixelSize: 16; font.bold: true; color: Theme.fgBright }
+           MouseArea { id: cma; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor; onClicked: root.ex.go("coll:" + cc.info.id) }
+@@ -149,7 +155,7 @@
+           id: tile
+           required property string modelData
+           required property int index
+-          readonly property int cols: Math.max(2, Math.floor((pins.width + pins.spacing) / 150))
++          readonly property int cols: Math.max(1, Math.floor((pins.width + pins.spacing) / 150))
+           width: Math.floor((pins.width - (cols - 1) * pins.spacing) / cols); height: 56
+           Rectangle { anchors.fill: parent; color: tma.containsMouse ? Theme.alpha(Theme.accent, 0.10) : Theme.alpha(Theme.fg, 0.03)
+             border.width: 1; border.color: tma.containsMouse ? Theme.accent : Theme.line
+@@ -168,12 +174,12 @@
+     Item {
+       id: lower
+       x: root.pad; y: pins.y + pins.height + 22
+-      width: root.cw; height: 330
+-      readonly property real leftW: Math.round(width * 0.56)
++      width: root.cw; height: root.compact ? 352 + recentPanel.height : 330
++      readonly property real leftW: root.compact ? width : Math.round(width * 0.56)
+ 
+       Item {
+         id: stor
+-        width: lower.leftW - 14; height: parent.height
++        width: root.compact ? lower.width : lower.leftW - 14; height: 330
+         Section { width: parent.width; text: "Storage"; note: Data.usageLoading && !Data.usage.length ? "scanning…" : "Home · " + Fs.size(Data.usageTotal) }
+         Treemap {
+           id: tmap
+@@ -195,7 +201,8 @@
+       }
+ 
+       Item {
+-        x: lower.leftW; width: parent.width - lower.leftW; height: parent.height
++        id: recentPanel
++        x: root.compact ? 0 : lower.leftW; y: root.compact ? 352 : 0; width: root.compact ? lower.width : parent.width - lower.leftW; height: root.compact ? Math.max(80, Math.min(330, 32 + root.recentList.length * 38)) : 330
+         Section { width: parent.width; text: "Recent files"; note: root.recentList.length + " files · 30 days" }
+         ListView {
+           id: rl
+--- a/explorer/Detail.qml
++++ b/explorer/Detail.qml
+@@ -5,6 +5,8 @@
+ // Slide-in inspector: large preview, facts (dimensions / duration / pages via meta.sh), quick actions.
+ Rectangle {
+   id: root
++  function scrollPosition() { return detailScroll.contentY }
++  function restoreScroll(y) { detailScroll.contentY = y }
+   required property var ex
+   color: Theme.bgDark
+   clip: true
+@@ -42,6 +44,7 @@
+   function dur(s) { s = Math.round(parseFloat(s)); if (!isFinite(s)) return ""; return Math.floor(s / 60) + ":" + (s % 60 < 10 ? "0" : "") + (s % 60) }
+ 
+   Flickable {
++    id: detailScroll
+     anchors.fill: parent; anchors.leftMargin: 1
+     contentHeight: col.implicitHeight + 28
+     clip: true
+@@ -55,12 +58,12 @@
+       Item {
+         width: parent.width; height: 24
+         Label { text: "DETAILS"; height: parent.height; font.pixelSize: Theme.fsLabel; font.letterSpacing: 1.6; font.bold: true; color: Theme.fgDim }
+-        Btn { anchors.right: parent.right; width: 24; height: 24; icon: ""; bordered: false; onClicked: root.ex.detailOpen = false }
++        Btn { anchors.right: parent.right; width: 24; height: 24; icon: ""; bordered: false; onClicked: root.ex.closeDetail() }
+       }
+ 
+       // preview
+       Rectangle {
+-        width: parent.width; height: 210
++        width: parent.width; height: root.height < 420 ? 130 : 210
+         color: Theme.bgDarker
+         border.width: 1; border.color: Theme.line
+         clip: true
+@@ -173,4 +176,5 @@
+       }
+     }
+   }
++  ScrollBar_ { view: detailScroll; visible: detailScroll.contentHeight > detailScroll.height }
+ }
+--- a/explorer/Explorer.qml
++++ b/explorer/Explorer.qml
+@@ -11,10 +11,11 @@
+ //  - keyboard focus is normal (no exclusive grab), so it never traps input.
+ FloatingWindow {
+   id: win
++  reloadableId: "files-explorer-window-v1"
+   title: "Files"
+   implicitWidth: 1320
+   implicitHeight: 800
+-  minimumSize: Qt.size(900, 560)
++  minimumSize: Qt.size(330, 320)
+   color: Theme.bg
+   visible: false
+   // Closing the window (X / compositor close) must reset `visible`, otherwise
+@@ -22,6 +23,7 @@
+   onClosed: visible = false
+ 
+   // ------------------------------------------------------------------ state
++  property bool restoringUi: false
+   property string view: "home"            // "home" | "folder"
+   property string cwd: Fs.home
+   property var history: [""]               // "" = Home dashboard
+@@ -39,6 +41,15 @@
+   property string collId: ""              // non-empty => showing a smart collection
+   property int zoom: 200                  // grid card width
+   property bool detailOpen: true
++  property bool sidebarRequested: false
++  property bool detailOverlayRequested: false
++  readonly property bool narrowToolbar: content.width < 600
++  readonly property bool compactToolbar: content.width < 1000
++  readonly property bool sidebarDocked: content.width >= 900
++  readonly property bool detailDocked: main.width >= 650
++  onSidebarDockedChanged: if (!restoringUi) sidebarRequested = false
++  onDetailDockedChanged: if (!restoringUi) detailOverlayRequested = false
++  onNselChanged: if (!nsel) detailOverlayRequested = false
+   property bool lbOpen: false
+   property int lbIdx: -1
+   property var sel: ({})
+@@ -75,6 +86,7 @@
+     win.requestActivate && win.requestActivate()
+   }
+   function go(target, fromHistory) {
++    sidebarRequested = false; detailOverlayRequested = false
+     target = target === undefined || target === "" ? "" : (String(target).indexOf("coll:") === 0 ? target : Fs.norm(target))
+     if (fromHistory !== true) {
+       var h = history.slice(0, hIdx + 1)
+@@ -170,8 +182,8 @@
+     for (var j = 0; j < entries.length; j++) if (entries[j].hidden) hiddenCount++
+   }
+   property int hiddenCount: 0
+-  onFilterChanged: { if (view === "folder") rebuild(); if (filter.length === 0) filterInput.text = ""; else if (filterInput.text !== filter) filterInput.text = filter }
+-  onShowHiddenChanged: { rebuild(); tree.showHidden = showHidden; tree.init(function () { tree.reveal(cwd) }) }
++  onFilterChanged: { if (!restoringUi && view === "folder") rebuild(); if (filter.length === 0) filterInput.text = ""; else if (filterInput.text !== filter) filterInput.text = filter }
++  onShowHiddenChanged: { tree.showHidden = showHidden; if (!restoringUi) { rebuild(); tree.init(function () { tree.reveal(cwd) }) } }
+   function setSort(k) { if (sortKey === k) sortAsc = !sortAsc; else { sortKey = k; sortAsc = k === "name" || k === "kind" } rebuild() }
+ 
+   // --------------------------------------------------------------- selection
+@@ -319,7 +331,11 @@
+     lbIdx = Math.max(0, Math.min(shown.length - 1, lbIdx + d))
+     selectOnly(lbIdx); area.ensure(lbIdx)
+   }
+-  function toggleDetail() { detailOpen = !detailOpen }
++  function toggleDetail() {
++    if (detailDocked) detailOpen = !detailOpen
++    else { detailOverlayRequested = !detailOverlayRequested; if (detailOverlayRequested) detailOpen = true }
++  }
++  function closeDetail() { detailOpen = false; detailOverlayRequested = false }
+ 
+   // ----------------------------------------------------------------- menus
+   function menuFor(idx) {
+@@ -427,7 +443,7 @@
+       case "coll": go("coll:" + arg); return "ok"
+       case "zoom": zoom = Math.max(110, Math.min(300, Number(arg))); return String(zoom)
+       case "lightbox": if (arg === "off") lbOpen = false; else openLightbox(); return String(lbOpen)
+-      case "detail": detailOpen = arg ? arg === "on" : !detailOpen; return String(detailOpen)
++      case "detail": detailOpen = arg ? arg === "on" : !detailOpen; detailOverlayRequested = detailOpen && !detailDocked; return String(detailOpen)
+       case "selidx": selectOnly(Number(arg)); area.ensure(Number(arg)); return "ok"
+       case "scroll": area.scrollTo(Number(arg)); return "ok"
+       case "close": ctx.close(); prompt.close(); return "ok"
+@@ -446,7 +462,54 @@
+   function focusMain() { keys.forceActiveFocus() }
+ 
+   // ------------------------------------------------------------------ layout
+-  Component.onCompleted: { tree.init(null) }
++  function initializeUi(snapshot, storedEntries, storedShown) {
++    restoringUi = true
++    if (snapshot) {
++      if (snapshot.windowWidth) implicitWidth = snapshot.windowWidth
++      if (snapshot.windowHeight) implicitHeight = snapshot.windowHeight
++      view = snapshot.view; cwd = snapshot.cwd; history = snapshot.history; hIdx = snapshot.hIdx
++      filter = snapshot.filter; searchLabel = snapshot.searchLabel; errorText = snapshot.errorText || ""
++      showHidden = snapshot.showHidden; sortKey = snapshot.sortKey; sortAsc = snapshot.sortAsc; viewMode = snapshot.viewMode
++      collId = snapshot.collId; zoom = snapshot.zoom; detailOpen = snapshot.detailOpen
++      entries = JSON.parse(storedEntries || "[]"); shown = JSON.parse(storedShown || "[]")
++      sel = snapshot.sel; nsel = snapshot.nsel; cur = snapshot.cur; anchorIdx = snapshot.anchorIdx; kbd = snapshot.kbd
++      clip = snapshot.clip; lbIdx = snapshot.lbIdx; lbOpen = snapshot.lbOpen
++      pendingSelect = snapshot.pendingSelect || ""; hiddenCount = snapshot.hiddenCount || 0
++      sidebarRequested = !!snapshot.sidebarRequested
++      detailOverlayRequested = !!snapshot.detailOverlayRequested
++      if (snapshot.prompt) prompt.restoreUi(snapshot.prompt)
++      if (snapshot.menu) { ctxTarget = snapshot.ctxTarget; ctx.restoreUi(snapshot.menu) }
++      visible = snapshot.visible
++      Qt.callLater(function () {
++        area.scrollTo(snapshot.fileScroll || 0); dashboard.restoreScroll(snapshot.dashboardScroll || 0)
++        sidebarScroll.contentY = snapshot.sidebarScroll || 0; detail.restoreScroll(snapshot.detailScroll || 0)
++        dashboard.kindFilter = snapshot.dashboardKind || "all"
++        sidebarRequested = !!snapshot.sidebarRequested && !sidebarDocked
++        detailOverlayRequested = !!snapshot.detailOverlayRequested && !detailDocked
++        if (snapshot.path) pathbar.restoreUi(snapshot.path)
++        if (snapshot.focus === "filter") filterInput.forceActiveFocus()
++        else if (snapshot.focus === "path" && snapshot.path && snapshot.path.editing) pathbar.restoreFocus()
++        else if (!prompt.visible && !ctx.visible && snapshot.visible) focusMain()
++        restoringUi = false
++      })
++    }
++    loading = false
++    tree.init(function () { if (win.view === "folder" && !win.collId) tree.reveal(win.cwd) })
++    if (!snapshot) restoringUi = false
++  }
++  function exportUi() {
++    return JSON.stringify({ version: 2, view: view, cwd: cwd, history: history, hIdx: hIdx,
++      filter: filter, searchLabel: searchLabel, errorText: errorText, showHidden: showHidden,
++      sortKey: sortKey, sortAsc: sortAsc, viewMode: viewMode, collId: collId, zoom: zoom, detailOpen: detailOpen,
++      sel: sel, nsel: nsel, cur: cur, anchorIdx: anchorIdx, kbd: kbd, clip: clip,
++      lbIdx: lbIdx, lbOpen: lbOpen, pendingSelect: pendingSelect, hiddenCount: hiddenCount,
++      sidebarRequested: sidebarRequested, detailOverlayRequested: detailOverlayRequested,
++      visible: visible, windowWidth: width, windowHeight: height,
++      fileScroll: area.scrollPosition(), dashboardScroll: dashboard.scrollPosition(),
++      sidebarScroll: sidebarScroll.contentY, detailScroll: detail.scrollPosition(), dashboardKind: dashboard.kindFilter,
++      focus: filterInput.activeFocus ? "filter" : pathbar.editing ? "path" : "main",
++      path: pathbar.exportUi(), prompt: prompt.exportUi(), menu: ctx.exportUi(), ctxTarget: ctxTarget })
++  }
+ 
+   Item {
+     id: content
+@@ -457,11 +520,12 @@
+     Item {
+       id: toolbar
+       z: 20
+-      width: parent.width; height: 52
++      width: parent.width; height: win.narrowToolbar ? 128 : (win.compactToolbar ? 92 : 52)
+       Rectangle { anchors.bottom: parent.bottom; width: parent.width; height: 1; color: Theme.line }
+       Row {
+         id: nav
+-        x: 14; anchors.verticalCenter: parent.verticalCenter; spacing: 4
++        x: 14; y: 11; spacing: 4
++        Btn { visible: !win.sidebarDocked; icon: ""; tip: "Collections and tree (Ctrl+B)"; active: win.sidebarRequested; onClicked: win.sidebarRequested = !win.sidebarRequested }
+         Btn { icon: ""; active: win.view === "home"; onClicked: win.go("") }
+         Rectangle { width: 1; height: 18; color: Theme.line; anchors.verticalCenter: parent.verticalCenter }
+         Btn { icon: ""; enabled2: win.hIdx > 0; onClicked: win.back() }
+@@ -470,19 +534,27 @@
+       }
+       Row {
+         id: tools
+-        anchors { right: parent.right; rightMargin: 14; verticalCenter: parent.verticalCenter }
++        anchors { right: parent.right; rightMargin: 14 }
++        y: 11
+         spacing: 4
+         Btn { icon: win.viewMode === "list" ? "" : ""; enabled2: win.view === "folder"; onClicked: win.viewMode = win.viewMode === "list" ? "grid" : "list" }
+         Btn { icon: ""; enabled2: win.view === "folder"; onClicked: (m) => win.sortMenu(tools.x + x, toolbar.height) }
+-        Btn { icon: "\uf05a"; enabled2: win.view === "folder"; active: win.detailOpen && win.view === "folder"; onClicked: win.toggleDetail() }
++        Btn { icon: "\uf05a"; enabled2: win.view === "folder"; active: (win.detailDocked ? win.detailOpen : win.detailOverlayRequested) && win.view === "folder"; onClicked: win.toggleDetail() }
++
++      }
++      Row {
++        id: extraTools
++        x: win.narrowToolbar ? toolbar.width - width - 14 : tools.x - width - 4
++        y: win.narrowToolbar ? 87 : 11; spacing: 4
+         Btn { icon: win.showHidden ? "" : ""; active: win.showHidden; onClicked: win.showHidden = !win.showHidden }
+         Btn { icon: win.view === "folder" ? (Data.isPinned(win.cwd) ? "" : "") : ""; active: win.view === "folder" && Data.isPinned(win.cwd)
+           onClicked: { if (win.view === "folder") Data.togglePin(win.cwd); else Data.refreshAll() } }
+       }
+       Rectangle {
+         id: filterBox
+-        anchors { right: tools.left; rightMargin: 12; verticalCenter: parent.verticalCenter }
+-        width: filterInput.activeFocus || win.filter.length ? 250 : 190; height: 32
++        x: win.narrowToolbar ? 14 : (win.compactToolbar ? toolbar.width - width - 14 : extraTools.x - width - 12)
++        y: win.narrowToolbar ? 87 : (win.compactToolbar ? 49 : 10)
++        width: win.narrowToolbar ? toolbar.width - extraTools.width - 40 : (win.compactToolbar ? Math.min(250, (toolbar.width - 40) / 2) : (filterInput.activeFocus || win.filter.length ? 250 : 190)); height: 32
+         color: filterInput.activeFocus ? Theme.bgDark : "transparent"
+         border.width: 1; border.color: filterInput.activeFocus ? Theme.accent : Theme.line
+         Behavior on width { NumberAnimation { duration: Theme.dMed; easing.type: Easing.OutCubic } }
+@@ -509,11 +581,14 @@
+             }
+           }
+         }
+-        Label { visible: filterInput.text.length === 0; x: 30; height: parent.height; text: win.view === "home" ? "Search pinned & recent" : "Filter  ·  Ctrl+↵ deep"; color: Theme.fgDim; font.pixelSize: Theme.fsSmall + 1 }
++        Label { visible: filterInput.text.length === 0; x: 30; width: parent.width - 38; height: parent.height; text: win.view === "home" ? "Search pinned & recent" : "Filter  ·  Ctrl+↵ deep"; color: Theme.fgDim; font.pixelSize: Theme.fsSmall + 1 }
+       }
+       PathBar {
+         id: pathbar
+-        anchors { left: nav.right; leftMargin: 14; right: filterBox.left; rightMargin: 12; verticalCenter: parent.verticalCenter }
++        x: win.compactToolbar ? 14 : nav.x + nav.width + 14
++        y: win.compactToolbar ? 49 : 10
++        width: win.narrowToolbar ? toolbar.width - 28 : filterBox.x - x - 12
++        popupMaxHeight: content.height - (toolbar.y + y + height) - status.height - 8
+         path: win.curPath; label: win.collId ? "Collections   ›   " + (win.collInfo ? win.collInfo.name : "") : win.searchLabel
+         icon: win.collId && win.collInfo ? win.collInfo.glyph : ""
+         onNavigate: (p) => win.go(p)
+@@ -524,9 +599,16 @@
+     // ---- sidebar
+     Rectangle {
+       id: side
+-      y: toolbar.height; width: 244; height: parent.height - toolbar.height - status.height
++      y: toolbar.height; width: Math.min(244, content.width - 24); height: parent.height - toolbar.height - status.height
++      z: win.sidebarDocked ? 0 : 30
++      visible: win.sidebarDocked || win.sidebarRequested
+       color: Theme.bgDark
+       Rectangle { anchors.right: parent.right; width: 1; height: parent.height; color: Theme.line }
++      Flickable {
++        id: sidebarScroll
++        anchors.fill: parent; contentWidth: width; contentHeight: sideBody.height
++        clip: true; boundsBehavior: Flickable.StopAtBounds
++        Item { id: sideBody; width: parent.width; height: Math.max(side.height, treeHead.y + treeHead.height + 126)
+       Label { x: 16; y: 14; height: 16; text: "COLLECTIONS"; font.pixelSize: Theme.fsLabel; font.letterSpacing: 1.6; font.bold: true; color: Theme.fgDim }
+       Column {
+         id: colls
+@@ -560,12 +642,22 @@
+         anchors { top: treeHead.bottom; left: parent.left; right: parent.right; rightMargin: 1; bottom: parent.bottom; bottomMargin: 6 }
+         onNavigate: (p) => win.go(p)
+       }
++        }
++      }
++      ScrollBar_ { view: sidebarScroll; visible: sidebarScroll.contentHeight > sidebarScroll.height }
++    }
++
++    Rectangle {
++      x: 0; y: toolbar.height; width: content.width; height: side.height; z: 25
++      visible: !win.sidebarDocked && win.sidebarRequested
++      color: Theme.alpha(Theme.bgDarker, 0.55)
++      MouseArea { anchors.fill: parent; onClicked: win.sidebarRequested = false }
+     }
+ 
+     // ---- main area
+     Item {
+       id: main
+-      x: side.width; y: toolbar.height; width: parent.width - side.width; height: side.height
++      x: win.sidebarDocked ? side.width : 0; y: toolbar.height; width: parent.width - x; height: side.height
+       clip: true
+       Dashboard { id: dashboard; anchors.fill: parent; ex: win; visible: win.view === "home"; opacity: visible ? 1 : 0
+         Behavior on opacity { NumberAnimation { duration: Theme.dMed } } }
+@@ -573,18 +665,24 @@
+         id: area
+         ex: win
+         anchors { left: parent.left; top: parent.top; bottom: parent.bottom }
+-        width: main.width - (win.view === "folder" ? detail.width * detail.prog : 0)
++        width: main.width - (win.detailDocked && win.view === "folder" ? detail.width * detail.prog : 0)
+         visible: win.view === "folder"
+         opacity: win.loading && win.entries.length === 0 ? 0.4 : 1
+         Behavior on opacity { NumberAnimation { duration: Theme.dFast } }
+         onContextRequested: (x, y, i) => ctx.openAt(x + main.x, y + main.y, win.menuFor(i))
+       }
++      Rectangle {
++        anchors.fill: parent; z: 1
++        visible: !win.detailDocked && detail.visible
++        color: Theme.alpha(Theme.bgDarker, 0.55)
++        MouseArea { anchors.fill: parent; onClicked: win.detailOverlayRequested = false }
++      }
+       Detail {
+-        id: detail
++        id: detail; z: 2
+         ex: win
+-        width: 300; height: parent.height
++        width: Math.min(300, main.width - 20); height: parent.height
+         x: main.width - width * prog
+-        property real prog: (win.detailOpen && win.nsel > 0 && win.view === "folder") ? 1 : 0
++        property real prog: (win.detailOpen && (win.detailDocked || win.detailOverlayRequested) && win.nsel > 0 && win.view === "folder") ? 1 : 0
+         Behavior on prog { NumberAnimation { duration: Theme.dMed; easing.type: Easing.OutCubic } }
+         visible: prog > 0
+       }
+@@ -596,8 +694,8 @@
+       y: parent.height - height; width: parent.width; height: 26; color: Theme.bgDark
+       Rectangle { width: parent.width; height: 1; color: Theme.line }
+       Row {
+-        x: 14; height: parent.height; spacing: 14
+-        Label { height: parent.height; font.pixelSize: Theme.fsSmall + 1; color: Theme.fg
++        id: statusLeft; x: 14; width: status.width - statusExtra.width - 42; height: parent.height; spacing: 14
++        Label { width: Math.max(100, statusLeft.width - (filterStatus.visible ? filterStatus.width + 14 : 0) - (clipboardStatus.visible ? clipboardStatus.width + 14 : 0)); height: parent.height; font.pixelSize: Theme.fsSmall + 1; color: Theme.fg
+           text: {
+             if (win.view === "home") return Data.pins.length + " pinned  ·  " + Data.recents.length + " recent files"
+             var nd = 0, nf = 0, bytes = 0
+@@ -609,17 +707,18 @@
+             }
+             return win.shown.length + " items  ·  " + nd + " folders, " + nf + " files" + (nf ? "  ·  " + Fs.size(bytes) : "")
+           } }
+-        Label { visible: win.filter.length > 0 && win.view === "folder"; height: parent.height; font.pixelSize: Theme.fsSmall + 1; color: Theme.accent; text: "filter: " + win.filter }
+-        Label { visible: win.clip.paths.length > 0; height: parent.height; font.pixelSize: Theme.fsSmall + 1; color: Theme.yellow
++        Label { id: filterStatus; width: Math.min(160, implicitWidth); visible: status.width >= 1100 && win.filter.length > 0 && win.view === "folder"; height: parent.height; font.pixelSize: Theme.fsSmall + 1; color: Theme.accent; text: "filter: " + win.filter }
++        Label { id: clipboardStatus; width: Math.min(150, implicitWidth); visible: status.width >= 1000 && win.clip.paths.length > 0; height: parent.height; font.pixelSize: Theme.fsSmall + 1; color: Theme.yellow
+           text: (win.clip.cut ? " " : " ") + win.clip.paths.length + " on clipboard" }
+       }
+       Row {
++        id: statusExtra
+         anchors.right: parent.right; anchors.rightMargin: 14; height: parent.height; spacing: 14
+-        Label { visible: win.view === "folder" && win.hiddenCount > 0; height: parent.height; font.pixelSize: Theme.fsSmall + 1; color: Theme.fgDim
++        Label { visible: status.width >= 900 && win.view === "folder" && win.hiddenCount > 0; height: parent.height; font.pixelSize: Theme.fsSmall + 1; color: Theme.fgDim
+           text: win.showHidden ? win.hiddenCount + " hidden shown" : win.hiddenCount + " hidden" }
+-        Label { visible: win.view === "folder"; height: parent.height; font.pixelSize: Theme.fsSmall + 1; color: Theme.fgDim
++        Label { visible: status.width >= 700 && win.view === "folder"; height: parent.height; font.pixelSize: Theme.fsSmall + 1; color: Theme.fgDim
+           text: "sort " + win.sortKey + (win.sortAsc ? " ↑" : " ↓") }
+-        Label { height: parent.height; font.pixelSize: Theme.fsSmall + 1; color: Theme.fgDim
++        Label { visible: status.width >= 600; height: parent.height; font.pixelSize: Theme.fsSmall + 1; color: Theme.fgDim
+           text: Fs.size(Math.max(0, Data.diskSize - Data.diskUsed)) + " free" }
+       }
+     }
+@@ -628,10 +727,10 @@
+     Rectangle {
+       id: toastBox
+       anchors { horizontalCenter: parent.horizontalCenter; bottom: status.top; bottomMargin: 14 }
+-      width: toastText.implicitWidth + 32; height: 34; opacity: 0
++      width: Math.min(parent.width - 24, toastText.implicitWidth + 32); height: 34; opacity: 0
+       color: Theme.bg; border.color: Theme.accent; border.width: 1; z: 150
+       Behavior on opacity { NumberAnimation { duration: Theme.dMed } }
+-      Label { id: toastText; anchors.centerIn: parent; color: Theme.fgBright }
++      Label { id: toastText; anchors.centerIn: parent; width: Math.min(implicitWidth, parent.width - 32); color: Theme.fgBright }
+       Timer { id: toastTimer; interval: 2400; onTriggered: toastBox.opacity = 0 }
+     }
+ 
+@@ -661,6 +760,7 @@
+         e.accepted = true; return
+       }
+       if (e.key === Qt.Key_Space && !ctrl && win.view === "folder") { win.openLightbox(); e.accepted = true; return }
++      if (e.key === Qt.Key_B && ctrl) { if (!win.sidebarDocked) win.sidebarRequested = !win.sidebarRequested; e.accepted = true; return }
+       if (e.key === Qt.Key_I && ctrl) { win.toggleDetail(); e.accepted = true; return }
+       if ((e.key === Qt.Key_Plus || e.key === Qt.Key_Equal) && ctrl) { win.zoom = Math.min(300, win.zoom + 20); e.accepted = true; return }
+       if (e.key === Qt.Key_Minus && ctrl) { win.zoom = Math.max(110, win.zoom - 20); e.accepted = true; return }
+@@ -673,7 +773,9 @@
+       if (alt && e.key === Qt.Key_Home) { win.go(""); e.accepted = true; return }
+       if (e.key === Qt.Key_F5) { win.refresh(); Data.refreshAll(); e.accepted = true; return }
+       if (e.key === Qt.Key_Escape) {
+-        if (win.filter.length) win.filter = ""
++        if (win.sidebarRequested) win.sidebarRequested = false
++        else if (win.detailOverlayRequested) win.detailOverlayRequested = false
++        else if (win.filter.length) win.filter = ""
+         else if (win.nsel) win.clearSel()
+         else if (win.searchLabel) win.go(win.cwd)
+         e.accepted = true; return
+--- a/explorer/FileArea.qml
++++ b/explorer/FileArea.qml
+@@ -7,12 +7,13 @@
+   id: area
+   required property var ex
+   readonly property bool grid: ex.viewMode === "grid"
+-  readonly property int pad: 20
++  readonly property int pad: width < 560 ? 14 : 20
++  readonly property bool compactHeader: width < 760
+   readonly property int gap: 12
+   readonly property real gw: Math.max(200, gridList.width)
+   readonly property int columns: Math.max(1, Math.floor((gw - 2 * pad + gap) / (ex.zoom + gap)))
+   readonly property real cw: Math.floor((gw - 2 * pad + gap) / columns - gap)
+-  readonly property real th: Math.round(cw * 0.72)
++  readonly property real th: Math.max(30, Math.min(Math.round(cw * 0.72), gridList.height - 52))
+   readonly property bool timeline: ex.collId === "recent"
+   signal contextRequested(real x, real y, int index)
+ 
+@@ -38,24 +39,28 @@
+     } else listView.positionViewAtIndex(i, ListView.Contain)
+   }
+ 
++  function scrollPosition() { return grid ? gridList.contentY : listView.contentY }
++
+   function scrollTo(y) { if (grid) gridList.contentY = y; else listView.contentY = y }
+ 
+   // ---- header: title, facts, zoom
+   Item {
+     id: fhead
+-    width: parent.width; height: 62
++    width: parent.width; height: area.compactHeader ? 78 : 62
+     Column {
+-      x: area.pad; anchors.verticalCenter: parent.verticalCenter; spacing: 2
+-      Label { text: area.ex.areaTitle; font.pixelSize: Theme.fsHead + 6; font.bold: true; color: Theme.fgBright; height: 26 }
+-      Label { text: area.ex.areaSub; font.pixelSize: Theme.fsSmall + 1; color: Theme.fgDim; height: 14 }
++      x: area.pad; y: area.compactHeader ? 5 : 10; width: area.compactHeader ? parent.width - 2 * area.pad : Math.max(100, parent.width - headerActions.width - 3 * area.pad); spacing: 2
++      Label { width: parent.width; text: area.ex.areaTitle; font.pixelSize: area.compactHeader ? 18 : Theme.fsHead + 6; font.bold: true; color: Theme.fgBright; height: area.compactHeader ? 22 : 26 }
++      Label { width: parent.width; text: area.ex.areaSub; font.pixelSize: Theme.fsSmall + 1; color: Theme.fgDim; height: 14 }
+     }
+     Row {
+-      anchors { right: parent.right; rightMargin: area.pad; verticalCenter: parent.verticalCenter }
++      id: headerActions
++      x: area.compactHeader ? area.pad : parent.width - width - area.pad
++      y: area.compactHeader ? 43 : 16
+       spacing: 10
+-      Ico { visible: area.grid; anchors.verticalCenter: parent.verticalCenter; text: "\uf03e"; size: 10; color: Theme.fgDim }
+-      Slider { visible: area.grid; anchors.verticalCenter: parent.verticalCenter; width: 120; from: 110; to: 300; value: area.ex.zoom
++      Ico { visible: area.grid && area.width >= 560; anchors.verticalCenter: parent.verticalCenter; text: "\uf03e"; size: 10; color: Theme.fgDim }
++      Slider { visible: area.grid && area.width >= 560; anchors.verticalCenter: parent.verticalCenter; width: 120; from: 110; to: 300; value: area.ex.zoom
+         onMoved: (v) => area.ex.zoom = Math.round(v) }
+-      Ico { visible: area.grid; anchors.verticalCenter: parent.verticalCenter; text: "\uf03e"; size: 16; color: Theme.fgDim }
++      Ico { visible: area.grid && area.width >= 560; anchors.verticalCenter: parent.verticalCenter; text: "\uf03e"; size: 16; color: Theme.fgDim }
+       Btn { visible: area.ex.canWrite; anchors.verticalCenter: parent.verticalCenter; icon: "\uf067"; text: "Folder"; onClicked: area.ex.newFolder() }
+       Btn { visible: area.ex.canWrite; anchors.verticalCenter: parent.verticalCenter; icon: "\uf067"; text: "File"; onClicked: area.ex.newFile() }
+     }
+@@ -63,9 +68,9 @@
+   }
+ 
+   // ---- column header (list mode)
+-  readonly property int wDate: 140
++  readonly property int wDate: width >= 650 ? 140 : 0
+   readonly property int wSize: 84
+-  readonly property int wKind: 72
++  readonly property int wKind: width >= 480 ? 72 : 0
+   Item {
+     id: header
+     visible: !area.grid
+@@ -83,6 +88,7 @@
+       delegate: Item {
+         required property var modelData
+         height: header.height
++        visible: modelData.key === "name" || modelData.w > 0
+         x: modelData.key === "name" ? 52 : header.width - modelData.off
+         width: modelData.key === "name" ? header.width - 52 - (area.wDate + area.wSize + area.wKind + 16) : modelData.w
+         Row {
+@@ -126,11 +132,11 @@
+         color: row.modelData.hidden ? Theme.fgDim : (row.modelData.isDir ? Theme.fgBright : Theme.fg)
+         font.bold: row.modelData.isDir && false
+       }
+-      Label { x: parent.width - (area.wDate + area.wSize + area.wKind + 16); width: area.wDate; height: parent.height
++      Label { visible: area.wDate > 0; x: parent.width - (area.wDate + area.wSize + area.wKind + 16); width: area.wDate; height: parent.height
+         text: Fs.date(row.modelData.mtime); color: Theme.fgDim; font.pixelSize: Theme.fsSmall + 1 }
+       Label { x: parent.width - (area.wSize + area.wKind + 16); width: area.wSize; height: parent.height
+         text: row.modelData.isDir ? "—" : Fs.size(row.modelData.size); color: Theme.fgDim; font.pixelSize: Theme.fsSmall + 1; horizontalAlignment: Text.AlignRight }
+-      Label { x: parent.width - (area.wKind + 16) + 12; width: area.wKind - 12; height: parent.height
++      Label { visible: area.wKind > 0; x: parent.width - (area.wKind + 16) + 12; width: Math.max(0, area.wKind - 12); height: parent.height
+         text: Fs.kindLabel(row.modelData); color: Theme.fgDim; font.pixelSize: Theme.fsSmall + 1 }
+       MouseArea {
+         id: ma; anchors.fill: parent; hoverEnabled: true; acceptedButtons: Qt.LeftButton | Qt.RightButton
+@@ -199,9 +205,9 @@
+   // Empty state
+   Column {
+     visible: area.ex.shown.length === 0 && !area.ex.loading
+-    anchors.centerIn: parent; spacing: 10
++    anchors.centerIn: parent; width: parent.width - 28; spacing: 10
+     Ico { anchors.horizontalCenter: parent.horizontalCenter; text: area.ex.filter.length ? "" : ""; size: 34; color: Theme.muted }
+-    Label { anchors.horizontalCenter: parent.horizontalCenter; color: Theme.fgDim
++    Label { width: parent.width; horizontalAlignment: Text.AlignHCenter; color: Theme.fgDim
+       text: area.ex.errorText.length ? area.ex.errorText : (area.ex.filter.length ? "No matches for “" + area.ex.filter + "”" : "This folder is empty") }
+   }
+ }
+--- a/explorer/Lightbox.qml
++++ b/explorer/Lightbox.qml
+@@ -23,7 +23,7 @@
+ 
+   Item {
+     id: stage
+-    anchors { fill: parent; topMargin: 64; bottomMargin: 76; leftMargin: 90; rightMargin: 90 }
++    anchors { fill: parent; topMargin: 64; bottomMargin: 76; leftMargin: root.width < 600 ? 62 : 90; rightMargin: root.width < 600 ? 62 : 90 }
+     Image {
+       id: big
+       anchors.fill: parent
+@@ -45,19 +45,19 @@
+   // top bar
+   Item {
+     width: parent.width; height: 52
+-    Row { x: 24; anchors.verticalCenter: parent.verticalCenter; spacing: 12
++    Row { x: 24; width: parent.width - 98; anchors.verticalCenter: parent.verticalCenter; spacing: 12
+       Ico { text: root.e ? Fs.iconFor(root.e) : ""; size: 16; color: root.e ? Fs.colorFor(root.e) : Theme.fg; anchors.verticalCenter: parent.verticalCenter }
+-      Label { text: root.e ? root.e.name : ""; font.pixelSize: 15; font.bold: true; color: Theme.fgBright; anchors.verticalCenter: parent.verticalCenter }
++      Label { width: parent.width - 28; text: root.e ? root.e.name : ""; font.pixelSize: 15; font.bold: true; color: Theme.fgBright; anchors.verticalCenter: parent.verticalCenter }
+     }
+     Btn { anchors { right: parent.right; rightMargin: 20; verticalCenter: parent.verticalCenter } icon: ""; onClicked: root.ex.lbOpen = false }
+   }
+   // bottom bar
+   Item {
+     anchors.bottom: parent.bottom; width: parent.width; height: 60
+-    Label { x: 24; height: parent.height; color: Theme.fgDim
++    Label { x: 24; y: 0; width: parent.width - 48; height: 24; color: Theme.fgDim
+       text: root.e ? (root.e.isDir ? "Folder" : Fs.size(root.e.size)) + "  ·  " + Fs.longDate(root.e.mtime) + "  ·  " + Fs.tilde(Fs.parent(root.e.path)) : "" }
+-    Label { anchors.centerIn: parent; text: (root.ex.lbIdx + 1) + " / " + root.ex.shown.length; color: Theme.fgBright; font.bold: true }
+-    Label { anchors { right: parent.right; rightMargin: 24 } height: parent.height; color: Theme.fgDim; text: "←  →  browse    Enter  open    Space / Esc  close" }
++    Label { x: 24; y: 30; text: (root.ex.lbIdx + 1) + " / " + root.ex.shown.length; color: Theme.fgBright; font.bold: true }
++    Label { anchors { right: parent.right; rightMargin: 24 } y: 30; width: Math.max(0, parent.width - 130); color: Theme.fgDim; text: root.width < 600 ? "← → browse · Esc close" : "←  →  browse    Enter  open    Space / Esc  close" }
+   }
+   // arrows
+   Btn { x: 24; anchors.verticalCenter: parent.verticalCenter; icon: ""; enabled2: root.ex.lbIdx > 0; onClicked: root.ex.lbMove(-1) }
+--- a/explorer/PathBar.qml
++++ b/explorer/PathBar.qml
+@@ -10,6 +10,7 @@
+   property string icon: ""
+   property string label: ""         // overrides breadcrumbs (search results)
+   property bool editing: false
++  property real popupMaxHeight: 216
+   signal navigate(string path)
+   signal editDone()
+   implicitHeight: 32
+@@ -17,6 +18,10 @@
+   property var cands: []
+   property int candIdx: -1
+   property string completing: ""    // the prefix candidates were computed for
++
++  function exportUi() { return { editing: editing, text: input.text, cursor: input.cursorPosition, cands: cands, candIdx: candIdx, completing: completing } }
++  function restoreUi(s) { input.text = s.text; cands = s.cands; candIdx = s.candIdx; completing = s.completing; editing = s.editing; input.cursorPosition = s.cursor }
++  function restoreFocus() { input.forceActiveFocus() }
+ 
+   function startEdit() {
+     input.text = root.path ? root.path + (root.path === "/" ? "" : "/") : Fs.home + "/"
+@@ -157,13 +162,18 @@
+     visible: root.editing && root.cands.length > 0
+     y: root.height + 2; x: 0
+     width: Math.min(root.width, 420)
+-    height: Math.min(root.cands.length, 8) * 26 + 8
++    height: Math.min(Math.min(root.cands.length, 8) * 26 + 8, Math.max(34, root.popupMaxHeight))
++    clip: true
+     color: Theme.bg; border.color: Theme.accent; border.width: 1
+     z: 50
++    Flickable {
++      id: completions; anchors.fill: parent; anchors.margins: 4
++      contentWidth: width; contentHeight: root.cands.length * 26; clip: true; boundsBehavior: Flickable.StopAtBounds
++      Connections { target: root; function onCandIdxChanged() { if (root.candIdx >= 0) completions.contentY = Math.max(0, Math.min(completions.contentHeight - completions.height, root.candIdx * 26)) } }
+     Column {
+-      x: 4; y: 4; width: parent.width - 8
++      width: parent.width
+       Repeater {
+-        model: root.cands.slice(0, 8)
++        model: root.cands
+         delegate: Rectangle {
+           required property string modelData
+           required property int index
+@@ -171,11 +181,10 @@
+           color: index === root.candIdx ? Theme.alpha(Theme.accent, 0.18) : "transparent"
+           Row { x: 8; spacing: 8; anchors.verticalCenter: parent.verticalCenter
+             Ico { text: ""; size: 12; color: Theme.accent; anchors.verticalCenter: parent.verticalCenter }
+-            Label { text: modelData; color: Theme.fgBright; anchors.verticalCenter: parent.verticalCenter } }
++            Label { width: parent.parent.width - 44; text: modelData; color: Theme.fgBright; anchors.verticalCenter: parent.verticalCenter } }
+         }
+       }
+     }
+-    Label { visible: root.cands.length > 8; anchors { right: parent.right; rightMargin: 8; bottom: parent.bottom; bottomMargin: 4 }
+-      text: "+" + (root.cands.length - 8); color: Theme.fgDim; font.pixelSize: Theme.fsSmall }
++    }
+   }
+ }
+--- a/shell.qml
++++ b/shell.qml
+@@ -8,6 +8,55 @@
+ // Thin host: the desktop widget (panel plugin) + the explorer (window plugin).
+ // Run:  qs -p <this dir>      Drive:  qs -p <dir> ipc call files open ~/Documents
+ ShellRoot {
++  // All initialization runs in reload order, before backing windows map.
++  property bool uiReady: false
++  property string migrationError: ""
++  property var initializationState: ({})
++  FileView { id: uiMigration; path: Quickshell.shellPath("ui-migration.json"); blockLoading: true; printErrors: false }
++  PersistentProperties {
++    id: uiPersist
++    reloadableId: "files-ui-persistence-v1"
++    property string uiJson: ""
++    property string entriesJson: "[]"
++    property string shownJson: "[]"
++    onLoaded: {
++      var resumed = uiJson.length > 0, restored = null
++      try {
++        if (resumed) restored = JSON.parse(uiJson)
++        else {
++          var text = uiMigration.text()
++          if (text) {
++            var m = JSON.parse(text)
++            if (m.targetPid === Quickshell.processId && m.targetInstance === Quickshell.instanceId) {
++              var s = m.legacyState
++              if (!s || s.view !== "home" || s.entries !== 0 || s.count !== 0 || s.sel.length || s.clip.length || s.lb || m.promptInfo !== "none" || m.visible !== false)
++                throw new Error("Legacy migration requires idle hidden Home, empty selection/clipboard, and no prompt")
++              restored = { version:2, view:s.view, cwd:s.cwd, history:s.hist, hIdx:s.hIdx,
++                filter:s.filter, searchLabel:s.searchLabel, errorText:"", showHidden:s.hidden,
++                sortKey:s.sort.slice(0,-1), sortAsc:s.sort.slice(-1)==="+", viewMode:s.mode, collId:s.coll,
++                zoom:s.zoom, detailOpen:s.detail, sel:({}), nsel:0, cur:s.cur, anchorIdx:-1, kbd:false,
++                clip:({paths:[],cut:s.cut}), lbIdx:-1, lbOpen:false, visible:false,
++                windowWidth:m.windowWidth || 1320, windowHeight:m.windowHeight || 800,
++                sidebarRequested:false, detailOverlayRequested:false }
++              resumed = true
++            }
++          }
++        }
++        explorer.initializeUi(restored, entriesJson, shownJson)
++        initializationState = { resumed:resumed, visible:explorer.visible, backingVisible:explorer.backingWindowVisible, historyLength:explorer.history.length, historyIndex:explorer.hIdx }
++        uiReady = true
++        if (!resumed) {
++          var o = Quickshell.env("FILES_OPEN")
++          if (o) explorer.openAt(o === "home" ? "" : o, "")
++        }
++      } catch (e) { migrationError = String(e); explorer.visible = false; console.error("[files] UI migration failed: " + e) }
++    }
++  }
++  Binding { target: uiPersist; property: "uiJson"; when: uiReady; value: explorer.exportUi() }
++  Binding { target: uiPersist; property: "entriesJson"; when: uiReady; value: JSON.stringify(explorer.entries) }
++  Binding { target: uiPersist; property: "shownJson"; when: uiReady; value: JSON.stringify(explorer.shown) }
++  Connections { target: Quickshell; function onReloadCompleted() { Quickshell.inhibitReloadPopup() } }
++
+   Widget {
+     id: widget
+     visible: Quickshell.env("FILES_WIDGET") === "1"
+@@ -24,10 +73,9 @@
+     function act(name: string, arg: string): string { return explorer.act(name, arg) }
+     function shot(which: string, path: string): void { if (which === "widget") widget.grab(path); else explorer.grab(path) }
+     function state(): string { return explorer.state() }
++    function uiState(): string { return explorer.exportUi() }
++    function migrationStatus(): string { return JSON.stringify({ready:uiReady,error:migrationError,pid:Quickshell.processId,instance:Quickshell.instanceId,initialization:initializationState}) }
+   }
+ 
+-  Component.onCompleted: {
+-    var o = Quickshell.env("FILES_OPEN")
+-    if (o) explorer.openAt(o === "home" ? "" : (o.indexOf("coll:") === 0 ? o : o), "")
+-  }
++
+ }

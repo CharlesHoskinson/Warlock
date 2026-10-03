@@ -1,0 +1,199 @@
+{
+  "updatedUTC": "2026-10-01T23:56:52.572253+00:00",
+  "reportSHA256": "d0ea8d2213e536a8a0ca910950a59cc0a564c967019f2de642e27a279de88633",
+  "manifestSHA256": "11cf0b67b191eafe809c190388d46426483c58f64e26dcd33d405b4890707742",
+  "fileCount": 40179,
+  "linkCount": 13770,
+  "independentChecks": {
+    "allFrozenBytesModesExact": true,
+    "allFrozenLinksExact": true,
+    "all18MainPreserved": true,
+    "allRecordedPIDStartGone": true,
+    "privateRuntimeGone": true,
+    "noUnexpectedOrRemainingHelpers": true,
+    "normalBrowserAndNoForcedCleanup": true,
+    "nativeProbeAndPluginUnloadedNormally": true,
+    "healthyArchivedParentTransport": true,
+    "actualPrivateBusActivationPolicyVerified": true,
+    "initialRangeDiagnosticIndependentlyReplayed": true,
+    "actualBrowserPrivateBusPIDBindingIndependentlyReplayed": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "privateBrowserFilesAccepted": false,
+  "processes": [
+    {
+      "pid": 1785288,
+      "start": "12140871",
+      "gone": true
+    },
+    {
+      "pid": 1785293,
+      "start": "12140874",
+      "gone": true
+    },
+    {
+      "pid": 1785304,
+      "start": "12140932",
+      "gone": true
+    },
+    {
+      "pid": 1785288,
+      "start": "12140871",
+      "gone": true
+    },
+    {
+      "pid": 1785293,
+      "start": "12140874",
+      "gone": true
+    },
+    {
+      "pid": 1785304,
+      "start": "12140932",
+      "gone": true
+    },
+    {
+      "pid": 1785424,
+      "start": "12141236",
+      "gone": true
+    },
+    {
+      "pid": 1785479,
+      "start": "12141258",
+      "gone": true
+    },
+    {
+      "pid": 1785480,
+      "start": "12141258",
+      "gone": true
+    },
+    {
+      "pid": 1785544,
+      "start": "12141267",
+      "gone": true
+    },
+    {
+      "pid": 1785547,
+      "start": "12141267",
+      "gone": true
+    },
+    {
+      "pid": 1785584,
+      "start": "12141270",
+      "gone": true
+    },
+    {
+      "pid": 1785491,
+      "start": "12141260",
+      "gone": true
+    },
+    {
+      "pid": 1785652,
+      "start": "12141278",
+      "gone": true
+    },
+    {
+      "pid": 1785653,
+      "start": "12141278",
+      "gone": true
+    },
+    {
+      "pid": 1785863,
+      "start": "12141407",
+      "gone": true
+    },
+    {
+      "pid": 1785896,
+      "start": "12141424",
+      "gone": true
+    },
+    {
+      "pid": 1785874,
+      "start": "12141423",
+      "gone": true
+    },
+    {
+      "pid": 1785875,
+      "start": "12141423",
+      "gone": true
+    },
+    {
+      "pid": 1785876,
+      "start": "12141423",
+      "gone": true
+    },
+    {
+      "pid": 1785877,
+      "start": "12141423",
+      "gone": true
+    },
+    {
+      "pid": 1785879,
+      "start": "12141423",
+      "gone": true
+    },
+    {
+      "pid": 1785908,
+      "start": "12141428",
+      "gone": true
+    },
+    {
+      "pid": 1785909,
+      "start": "12141428",
+      "gone": true
+    },
+    {
+      "pid": 1785913,
+      "start": "12141428",
+      "gone": true
+    },
+    {
+      "pid": 1785424,
+      "start": "12141236",
+      "gone": true
+    },
+    {
+      "pid": 1785863,
+      "start": "12141407",
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "environmentObservations": [
+    {
+      "name": "browser",
+      "identity": {
+        "pid": 1785424,
+        "start": "12141236",
+        "ppid": 1785138,
+        "pgid": 1785424
+      },
+      "bytes": 10167,
+      "nonzeroBytes": 0,
+      "initialRangeMatches": false,
+      "currentLibcSelectorsProved": false
+    },
+    {
+      "name": "files",
+      "identity": {
+        "pid": 1785863,
+        "start": "12141407",
+        "ppid": 1785138,
+        "pgid": 1785863
+      },
+      "bytes": 10294,
+      "nonzeroBytes": 10073,
+      "initialRangeMatches": true,
+      "currentLibcSelectorsProved": false
+    }
+  ],
+  "failure": "RuntimeError('Deleted mapped disk input:/run/user/1000/wqa/8932/browser-profile/BrowserMetrics/BrowserMetrics-6ABEF2FB-1B3E50.pma')",
+  "rawOwnedProcessEvidenceSHA256": "b14e0c4489d5ac139ba27b6cbaa35ae4677afd172f2636e1f3b887c39bc4c607",
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false
+}

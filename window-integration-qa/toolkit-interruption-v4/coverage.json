@@ -1,0 +1,14 @@
+{
+  "scope": "new real-toolkit combinations only; preparation, not native acceptance",
+  "accepted": {
+    "QtWayland": "../qt-modal-private-v9/attempt-1/report.json:19toolkit+10host",
+    "QtX11": "../qt-modal-private-x11-v2/attempt-1/report.json:19toolkit+10host",
+    "GTKLegacy": "../modal_probe_gtk.py:peer mode launches a separate process",
+    "NativeCaption": "../../window-behavior-spec/caption_drag.qnt and acceptedcaption14/410 replay requirements"
+  },
+  "uncovered": ["GTK same-process peer", "held modal move/resize exact owner", "Escape+held release fresh input", "private plugin reload midgesture", "minimize midgesture current geometry/pin destination", "closed captured modal+new lifetime stale callbacks", "mixed member pin snapshots + actual preview + deepest focus"],
+  "variants": ["Qt6Widgets-wayland", "Qt6Widgets-authenticated-xcb", "GTK4-wayland", "GTK4-authenticated-x11"],
+  "nativeExecution": false,
+  "physicalHardwareProved": false,
+  "productionChanges": false
+}

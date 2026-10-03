@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_keyboard_layout" xml:lang="kk">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_toggling_caps_lock"/>
+    <title type="sort">6. Пернетақта жаймасы</title>
+    <desc>Жұмыс үстелі немесе ноутбук жаймасын таңдау</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Пернетақта жаймасы</title>
+  <p>Orca-да екі пернетақта жаймасы бар: Жұмыс үстелі (яғни, сандық пернетақтасы бар) және Ноутбук. Таңдалған жайма қай перненің Orca модификаторы ретінде пайдаланылатынына әсер етеді.</p>
+  <list>
+    <item>
+      <p>Егер сіз Ноутбук жаймасын пайдалансаңыз, әдепкі Orca модификаторы <key>CapsLock</key> болады</p>
+    </item>
+    <item>
+      <p>Егер сіз Жұмыс үстелі жаймасын пайдалансаңыз, Orca модификаторы <key>Insert</key> және <key>KP_Insert</key> пернелері болады, соңғысы <key>KP_0</key> пернесімен бірдей.</p>
+    </item>
+  </list>
+  <p>Сондай-ақ, жайма <app>Orca</app>-ның бірқатар командаларымен, әсіресе Жалпақ шолу, Мен қайдамын және Барлығын айту салаларында байланысты пернелер тіркесімдерін анықтайды.</p>
+  <steps>
+    <title>Пернетақта жаймасын өзгерту</title>
+    <item>
+      <p><keyseq><key>Orca модификаторы</key><key>Бос орын</key></keyseq> пернелерін басу арқылы <link xref="preferences">Orca баптаулары</link> сұхбат терезесіне өтіңіз.</p>
+    </item>
+    <item>
+      <p><gui>Пернетақта жаймасы</gui> радио батырмалар тобына өтіңіз.</p>
+    </item>
+    <item>
+      <p>Бағдаршамен қажетті жаймаға өтіңіз.</p>
+    </item>
+    <item>
+      <p><gui>Іске асыру</gui> батырмасын басыңыз.</p>
+    </item>
+  </steps>
+</page>

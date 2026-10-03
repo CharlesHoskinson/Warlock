@@ -1,0 +1,47 @@
+{
+  "result": "pass",
+  "updatedUTC": "2026-10-02T00:56:30.422523+00:00",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "runtime_metrics_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  runtime_metrics_test\n    ok exactRuntimeDataTest passed 1 test(s)\n    ok beforeOnlyRefusedTest passed 1 test(s)\n    ok missingDiskConfirmationTest passed 1 test(s)\n    ok directConfirmationRefusedTest passed 1 test(s)\n    ok lifetimeReplacementRefusedTest passed 1 test(s)\n    ok laterReplacementInvalidatesTest passed 1 test(s)\n    ok duplicateFdRefusedTest passed 1 test(s)\n    ok readOnlyFdRefusedTest passed 1 test(s)\n    ok wrongModeRefusedTest passed 1 test(s)\n    ok specialModeRefusedTest passed 1 test(s)\n    ok linkedDiskRefusedTest passed 1 test(s)\n    ok executableAliasRefusedTest passed 1 test(s)\n    ok executableMappingRefusedTest passed 1 test(s)\n    ok wrongProfileRefusedTest passed 1 test(s)\n    ok wrongFilenameRefusedTest passed 1 test(s)\n    ok unownedBrowserRefusedTest passed 1 test(s)\n    ok unpinnedSourceRefusedTest passed 1 test(s)\n    ok wrongSizeRefusedTest passed 1 test(s)\n    ok wrongRangeRefusedTest passed 1 test(s)\n    ok staleSnapshotRefusedTest passed 1 test(s)\n    ok invalidationRemovesAuthorityTest passed 1 test(s)\n    ok fdNumberReplacementTest passed 1 test(s)\n    ok deviceTokenReplacementTest passed 1 test(s)\n    ok inodeTokenReplacementTest passed 1 test(s)\n    ok mountTokenReplacementTest passed 1 test(s)\n    ok profileTokenReplacementTest passed 1 test(s)\n    ok parentTokenReplacementTest passed 1 test(s)\n    ok rootTokenReplacementTest passed 1 test(s)\n    ok executableTokenReplacementTest passed 1 test(s)\n    ok snapshotTokenReplacementTest passed 1 test(s)\n    ok mappingTokenReplacementTest passed 1 test(s)\n    ok fullFlagsReplacementTest passed 1 test(s)\n    ok stalePartialAfterChangeTest passed 1 test(s)\n    ok staleConfirmedAfterChangeTest passed 1 test(s)\n    ok invalidatedGenerationCannotResumeTest passed 1 test(s)\n    ok fdNumberConfirmReplacementTest passed 1 test(s)\n    ok deviceTokenConfirmReplacementTest passed 1 test(s)\n    ok inodeTokenConfirmReplacementTest passed 1 test(s)\n    ok mountTokenConfirmReplacementTest passed 1 test(s)\n    ok profileTokenConfirmReplacementTest passed 1 test(s)\n    ok parentTokenConfirmReplacementTest passed 1 test(s)\n    ok rootTokenConfirmReplacementTest passed 1 test(s)\n    ok executableTokenConfirmReplacementTest passed 1 test(s)\n    ok snapshotTokenConfirmReplacementTest passed 1 test(s)\n    ok mappingTokenConfirmReplacementTest passed 1 test(s)\n    ok targetTokenConfirmReplacementTest passed 1 test(s)\n    ok fullFlagsConfirmReplacementTest passed 1 test(s)\n    ok pathFdRefusedTest passed 1 test(s)\n    ok mutableDataExcludedTest passed 1 test(s)\n    ok targetTokenReplacementTest passed 1 test(s)\n    ok exactDetachedParentTest passed 1 test(s)\n    ok parentPresentToAbsentTest passed 1 test(s)\n    ok parentAbsentToPresentConfirmTest passed 1 test(s)\n    ok detachedStalePartialInvalidatedTest passed 1 test(s)\n    ok detachedConfirmedChangedEpochTest passed 1 test(s)\n    ok absencePermissionErrorRefusedTest passed 1 test(s)\n    ok absenceUnknownErrorRefusedTest passed 1 test(s)\n    ok fabricatedHistoricalParentRefusedTest passed 1 test(s)\n    ok fabricatedHistoricalModeRefusedTest passed 1 test(s)\n    ok unknownParentStateRefusedTest passed 1 test(s)\n    ok symlinkParentRefusedTest passed 1 test(s)\n    ok danglingSymlinkParentRefusedTest passed 1 test(s)\n    ok specialParentRefusedTest passed 1 test(s)\n    ok detachedUnownedProfileRefusedTest passed 1 test(s)\n    ok detachedParentPathReplacementTest passed 1 test(s)\n    ok detachedLiveProfileReplacementTest passed 1 test(s)\n    ok detachedLiveRuntimeReplacementTest passed 1 test(s)\n    ok presentSpecialParentModeRefusedTest passed 1 test(s)\n\n  68 passing (3815ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "runtime_metrics.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (626ms at 3195 traces/second).\nUse --seed=0x156b5fd --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "namedScenarios": 68,
+  "randomTraces": 2000,
+  "maxSteps": 100,
+  "runtimeStillExactFrozenV12": true,
+  "newParentPolicyImplemented": false,
+  "nativeExecuted": false,
+  "contractSHA256": "4adb9dab5489497c2411a81a51027486fccb9b2fe7f3cc701482235bd8f7ccb7",
+  "sourceSHA256": {
+    "runtime_metrics.qnt": "a8674feca8599aeb02b7d3a81ec7d2b93f3e0c042122574919fc9a88b6d64df6",
+    "runtime_metrics_test.qnt": "23fd49e4b4042db32740b00c515239c306b54f3892bbc0975688771878a112b7",
+    "owned_metrics_data.py": "eb65d3c17e0875c07a300ab2f4d65595d1dc71f65c90f6296869cea8b2ea7f74",
+    "runtime_inputs.py": "4b18ec031e0e15f7f8a5c225a70c812e38c5d47f2638c6904459f012b80f7356",
+    "mapping_evidence.py": "29560e771758b740121f1041212f79fb94c387245c8d6d6111e14b8f4febc436",
+    "private_session.py": "4351a20bb62645df2a8b41972d7de692039eef2c079bd2f6533340315d9300e4"
+  },
+  "retainedFailureSHA256": "767b3556c3770d3b3a0ae780db7913fb0c36817822c9612228059cfd54a676cd"
+}

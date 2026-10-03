@@ -1,0 +1,238 @@
+{
+  "reader": "Official Arch Orca 50.2",
+  "output": "silent QA factory",
+  "checks": [
+    {
+      "name": "Orca announces native window menu initial focus",
+      "passed": true,
+      "utterances": [
+        "Window controls dialog",
+        "Restore.",
+        "Window controls dialog"
+      ]
+    },
+    {
+      "name": "native controls retain selected item as Orca focus",
+      "passed": false,
+      "reader_state": {
+        "focus": {
+          "name": "Window controls",
+          "role": "dialog",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": null
+      }
+    },
+    {
+      "name": "Orca ObjectNavigator traverses native menu siblings",
+      "passed": false,
+      "navigation": {
+        "name": "Right half",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.QQuickRectangle_QML_5",
+        "app": "quickshell"
+      }
+    },
+    {
+      "name": "Orca ObjectNavigator locates Minimize",
+      "passed": false
+    },
+    {
+      "name": "native controls reader compatibility",
+      "passed": false,
+      "error": "AssertionError('timeout: reader minimize action')",
+      "reader_state": {
+        "focus": {
+          "name": "Window controls",
+          "role": "dialog",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Upper right quarter",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.QQuickRectangle_QML_6",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "name": "Orca announces Task View selected window",
+      "passed": true,
+      "utterances": [
+        "frame",
+        "Task View",
+        "dialog",
+        "hoskinson@hosk:~",
+        "button.",
+        "Open window.",
+        "opens popup",
+        "claude code quint plugin - Google Search - Brave",
+        "button.",
+        "Minimized window.",
+        "opens popup",
+        "hosk: ~",
+        "button.",
+        "Open window.",
+        "opens popup",
+        "\u2834 Explain 6.1 access limitation | hoskinson",
+        "button.",
+        "Open window.",
+        "opens popup",
+        "Task View",
+        "dialog",
+        "Orca reader QA one",
+        "button.",
+        "Open window.",
+        "opens popup"
+      ]
+    },
+    {
+      "name": "Orca follows Task View keyboard mode into desktop tab",
+      "passed": true,
+      "reader_state": {
+        "focus": {
+          "name": "Desktop 1",
+          "role": "page tab",
+          "identity": "taskview-desktop:1",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Upper right quarter",
+          "role": "button",
+          "identity": "QQuickRectangle_QML_6",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "name": "Orca discovers Task View close button from window card",
+      "passed": true,
+      "navigation": {
+        "name": "Close Orca reader QA one",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.QQuickRectangle_QML_430.QQuickRectangle",
+        "app": "quickshell"
+      }
+    },
+    {
+      "name": "Orca activates exact Task View window through native action",
+      "passed": true
+    },
+    {
+      "name": "taskbar retains selected preview as Orca focus",
+      "passed": false,
+      "reader_state": {
+        "focus": {
+          "name": "Window previews",
+          "role": "dialog",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickFlickable",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Orca reader QA one",
+          "role": "button",
+          "identity": "taskview-window:1800037b",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "name": "Orca announces taskbar preview initial keyboard focus",
+      "passed": true,
+      "utterances": [
+        "frame",
+        "Window previews",
+        "dialog",
+        "Orca reader QA one",
+        "button.",
+        "Open window, preview available.",
+        "Window previews",
+        "dialog",
+        "Orca reader QA two",
+        "button.",
+        "Open window, preview available.",
+        "Orca reader QA one",
+        "button.",
+        "Open window, preview available."
+      ],
+      "focus": {
+        "name": "Orca reader QA one",
+        "role": "button",
+        "identity": "taskbar-window:1800037b",
+        "app": "quickshell"
+      }
+    },
+    {
+      "name": "Orca follows taskbar preview arrow navigation",
+      "passed": true,
+      "focus": {
+        "name": "Orca reader QA two",
+        "role": "button",
+        "identity": "taskbar-window:1800037c",
+        "app": "quickshell"
+      }
+    },
+    {
+      "name": "Orca finds taskbar preview close action",
+      "passed": true,
+      "navigation": {
+        "name": "Close Orca reader QA two",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.QQuickFlickable.QQuickRectangle_QML_386.QQuickRectangle",
+        "app": "quickshell"
+      }
+    },
+    {
+      "name": "Orca activates taskbar preview through native action",
+      "passed": true
+    },
+    {
+      "name": "Orca receives taskbar app actions menu focus",
+      "passed": true,
+      "focus": {
+        "name": "Restore all 2 windows",
+        "role": "menu item",
+        "identity": "QGuiApplication.ProxiedWindow.QQuickFlickable.QQuickRectangle_QML_384",
+        "app": "quickshell"
+      }
+    },
+    {
+      "name": "reader QA preserves existing user native window identities",
+      "passed": true
+    }
+  ],
+  "failures": [
+    "native controls retain selected item as Orca focus",
+    "Orca ObjectNavigator traverses native menu siblings",
+    "Orca ObjectNavigator locates Minimize",
+    "native controls reader compatibility",
+    "taskbar retains selected preview as Orca focus"
+  ],
+  "result": "fail"
+}

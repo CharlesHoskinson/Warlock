@@ -1,0 +1,87 @@
+{
+  "scope": "Copied Qt native interfaces, raw QML attached handlers and Qt keys on offscreen windows with isolated session D-Bus; no reader or physical compositor input claim",
+  "checks": [
+    {
+      "name": "fixture completed normally",
+      "passed": true
+    },
+    {
+      "name": "visible native action sanity",
+      "passed": true
+    },
+    {
+      "name": "hidden window retained native press",
+      "passed": true
+    },
+    {
+      "name": "hidden window raw retained QML activate",
+      "passed": true
+    },
+    {
+      "name": "prompt rejects retained background native and raw attached press",
+      "passed": true
+    },
+    {
+      "name": "prompt Ctrl B routing",
+      "passed": true
+    },
+    {
+      "name": "destroyed file delegate retained native peer",
+      "passed": true
+    },
+    {
+      "name": "hidden file row native and raw attached callback authority",
+      "passed": true
+    },
+    {
+      "name": "prompt Ctrl L stays inside prompt",
+      "passed": true
+    },
+    {
+      "name": "old media native peer is retired",
+      "passed": true
+    },
+    {
+      "name": "new media peer remains actionable",
+      "passed": true
+    },
+    {
+      "name": "same PID file focus and path survive actual reload",
+      "passed": true
+    },
+    {
+      "name": "hidden reload preserves identity without mapping",
+      "passed": true
+    },
+    {
+      "name": "deferred file restoration cannot override newer toolbar focus",
+      "passed": true
+    },
+    {
+      "name": "deferred file restoration cannot override newer Tab input",
+      "passed": true
+    },
+    {
+      "name": "deferred background restoration cannot override newer modal prompt",
+      "passed": true
+    },
+    {
+      "name": "focused compact tree is inside viewport",
+      "passed": true
+    },
+    {
+      "name": "actual Qt keyboard58",
+      "passed": true
+    },
+    {
+      "name": "actual geometry120",
+      "passed": true
+    },
+    {
+      "name": "QML parse26",
+      "passed": true
+    }
+  ],
+  "result": "pass",
+  "traceSha256": "90bceefb6d421bb8814d2f950dfa055ba907ba835faa1e41ad436f9d8d0526d9"
+}

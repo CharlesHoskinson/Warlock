@@ -1,0 +1,22 @@
+{
+  "schema": "root-disconnect-fixture-v2-source-review-v1",
+  "observedUTC": "2026-10-02T23:17:53.307439+00:00",
+  "handoffSHA256": "29d7ace603662128235c21cbb9464bd50b0ed6a8aa6ea66808174f5b6601f005",
+  "all1247InputBytesModesMatch": true,
+  "mismatches": [],
+  "reviewed": "V2 contract, implementation mapping, nine-case model, actual formal/source records, all3 exact diffs; actual V8 Registry disconnect/guard/admission source.",
+  "notificationPlainOnly": true,
+  "outsideSourceGuardOriginalPreserved": true,
+  "genuineSignalPlannedOutsideNotification": true,
+  "prehookDurableAcceptedBaselinePlanned": true,
+  "productionUnchanged": true,
+  "buildRunAuthorized": false,
+  "changesRequired": [
+    "Final report must publish exclusively with complete write/fsync",
+    "Receipt observation during failure must preserve raw/read/parse errors rather than losing original timeout and report"
+  ],
+  "firstFailureNormalCleanupAccepted": false,
+  "actualHangCauseProved": false,
+  "GUI": false,
+  "nativeAccepted": false
+}

@@ -1,0 +1,42 @@
+{
+  "result": "fail",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f05fdf7f5ebd43288f01bb8d57a11509.scope",
+    "coreLimit": 1
+  },
+  "coreLimits": [
+    1,
+    1
+  ],
+  "command": [
+    "c++",
+    "-std=c++23",
+    "-shared",
+    "-fPIC",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-MD",
+    "-MF",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/native-probe/probe.d",
+    "-I/usr/include/hyprland/protocols",
+    "-I/usr/include/hyprland",
+    "-I/usr/include/hyprland/src",
+    "-I/usr/include/libdrm",
+    "-I/usr/include/cairo",
+    "-I/usr/include/freetype2",
+    "-I/usr/include/libpng16",
+    "-I/usr/include/pixman-1",
+    "-I/usr/include/libei-1.0",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/native-probe/probe.cpp",
+    "-o",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/native-probe/libtoolkit-held-probe.so"
+  ],
+  "exitCode": 1,
+  "stdout": "",
+  "stderr": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/native-probe/probe.cpp: In function \u2018std::string {anonymous}::state()\u2019:\n/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/native-probe/probe.cpp:67:4: error: this \u2018if\u2019 clause does not guard... [-Werror=misleading-indentation]\n   67 |    if(!firstDecoration)decorations+=\",\";firstDecoration=false;\n      |    ^~\n/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/native-probe/probe.cpp:67:41: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018if\u2019\n   67 |    if(!firstDecoration)decorations+=\",\";firstDecoration=false;\n      |                                         ^~~~~~~~~~~~~~~\n/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/native-probe/probe.cpp:78:3: error: this \u2018if\u2019 clause does not guard... [-Werror=misleading-indentation]\n   78 |   if(!firstLayer)layers+=\",\";firstLayer=false;layers+=row;if(layer==pointerLayer)pointerOwner=row;\n      |   ^~\n/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/native-probe/probe.cpp:78:30: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018if\u2019\n   78 |   if(!firstLayer)layers+=\",\";firstLayer=false;layers+=row;if(layer==pointerLayer)pointerOwner=row;\n      |                              ^~~~~~~~~~\ncc1plus: all warnings being treated as errors\n",
+  "sourceDependencies": [],
+  "binarySHA256": null,
+  "nativeLoaded": false
+}

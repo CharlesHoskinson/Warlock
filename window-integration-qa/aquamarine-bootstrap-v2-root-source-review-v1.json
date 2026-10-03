@@ -1,0 +1,57 @@
+{
+  "updatedUTC": "2026-10-02T05:39:43.286745+00:00",
+  "mainWrites": false,
+  "nativeLaunch": false,
+  "checks": {
+    "full1562InputsModes214Links": true,
+    "soleSourceBlockExactInverse": true,
+    "exactHostSelectorInverses": true,
+    "actual12NamedQuint2000TracesAnd14WiringChecks": true
+  },
+  "records": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/bootstrap_lifecycle_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  bootstrap_lifecycle_test\n    ok originalPassiveReadableOnlyBootstrapDeadlockTest passed 1 test(s)\n    ok explicitInitialFlushParentConfigureAckThenPublishTest passed 1 test(s)\n    ok actualEagainMustRefuseStartupTest passed 1 test(s)\n    ok actualEpipeMustRefuseStartupTest passed 1 test(s)\n    ok unknownFlushErrorNeverGrantsOutputTest passed 1 test(s)\n    ok configureCannotPublishWithoutSurfaceAckTest passed 1 test(s)\n    ok ackCannotPrecedeConfigureTest passed 1 test(s)\n    ok parentLostBeforeFlushBlocksPublicationTest passed 1 test(s)\n    ok parentLostAfterAckBlocksQueuedPublicationTest passed 1 test(s)\n    ok incidentalParentTrafficCanMaskOriginalGapTest passed 1 test(s)\n    ok repeatedFlushNeverAnnouncesByItselfTest passed 1 test(s)\n    ok wrongOwnerNeverGrantsPublicationTest passed 1 test(s)\n\n  12 passing (1188ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/bootstrap_lifecycle.qnt",
+        "--invariant",
+        "allProps",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20261002",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (2717ms at 736 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/check_wiring.py"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"result\": \"pass\",\n  \"checks\": [\n    {\n      \"name\": \"invalid explicit selection returns before backend construction\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"mandatory parent placed first and only explicit headless copied as auxiliary\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"failed mandatory startup clears implementations and returns false\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"late GPU explicit selection refused before DRM creation\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"toplevel only stages size, never publishes/frame-kicks\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"ACK sent before acknowledged state and deferred publication\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"configure deferred callback uses weak lifetime and poststate guard\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"shared public frame relay requires real lifecycle authority\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"idle frame guarded before scheduler frame emission\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"actual buffer commit refuses before snapshot/attach\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"destroy invalidates lifecycle before public destroy and callbacks\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"frame completion holds output and checks authority before present\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"parent error invalidates every lifecycle/scheduler and clears strict readiness\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"Wayland startup rejects real dispatch failure\",\n      \"passed\": true\n    }\n  ],\n  \"scope\": \"Structural source wiring only; real transport loss and callback reentrancy require native proof\",\n  \"sources\": {\n    \"/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/candidate/src/backend/Wayland.cpp\": \"4ceff7efb9a7d9564161104dded214abc601546c377475abf9912db2a1984f38\",\n    \"/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/candidate/src/backend/Backend.cpp\": \"7aab17d6e9b4ffa7ab3c3c8434832a387b48f3bb22be5310bea8036e70f8c41f\",\n    \"/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/candidate/src/backend/NestedLifecycle.hpp\": \"e2ce7bf808db125387ae7e1c1874e3db06cf61a9ccedfe097fd96bc94f10d3fc\"\n  }\n}\n",
+      "stderr": ""
+    }
+  ],
+  "sourceReadySHA256": "c9446014c17bd0dedd5ac3e1f19945eef047a94b02c6d7187be80c3e4229af7a",
+  "result": "pass",
+  "nativeReady": false,
+  "actualFailedWireCauseProved": false
+}

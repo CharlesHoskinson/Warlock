@@ -1,0 +1,19 @@
+# Finite model to actual Registry
+
+Design reviewed before runtime at QA/process-historical-closure-root-design-review-v1.json SHA3eb334d41da84a452ced3e55ef6f675cd252edf0b17faa81a0c7753ff753d588. Original model24 proof remains unchanged. V4 source and original pending-cancel/context counterexamples are preserved in their own stage. V5 is a fresh derivative.
+
+`proof/provedLive/proofLease/joined`: the immutable kernel result contains complete wholly fresh original-child proof, one exact lease, completion time within Started+2s/16 epochs, and actual normal pthread_tryjoin_np. Before historical adoption, actual PID/start/lease are checked and full owner-thread `stable(r,false)` is called before and after storing the witness. Worker source/read-only FD/map/mount/alias/namespace/environment predicates are unchanged.
+
+`historical`: Invocation::historical denotes an adopted historical actor witness; output historicalKernelProof records this proof. This is a diagnostic past proof, not current UI/kernel authority. Current fault/source/actor checks can deny closure even when this historical diagnostic remains true.
+
+`authority`: Invocation::kernel / output kernelBound is current UI authority, committed only through stable(r,true) with original current consumer guard. Cancel clears current+kernel+acceptance. A consumer-only failure is distinguished by another complete stable(r,false); actor/source failure faults the record. No current authority is adopted from cancelled history.
+
+`normalClosure`: lifecycle requires historical proof, joined normal worker, exact original actor/source/Qt guards, actual normal exit, both individually bound EOFs, and kernelGone of original PID/start. State then validates strict actual durable receipt before normalLifecycle survives. Rearm repeats lifecycle and strict receipt/source checks before erasing/replacing the record. No previous source/actor uncertainty is waived. Source74 normal-life requirements are strengthened by validating receipt before rearm.
+
+`Notify/Poll`: genuine QFutureWatcher::finished is connected to finishJob(...,true). Polling calls the same function with false. The first current native notification is tracked separately from one unique actual result delivery and normal join; it is allowed after polling already joined/delivered. Another current notification faults. An exact old record/lease notification cannot modify the new record. Old still-unjoined jobs remain registered and are normally joined before ignoring their payload. Production QPromise adds exactly one result; CPU duplicate tests emit the actual native Qt notification on the guarded registered QObject and do not fabricate a second kernel result.
+
+`diagnosticWorker`: compiled read-only C++ method, not QML/Provider API. It requires owner/thread, exact registered object+lease, existing real job/watcher, full actor/source guards before/after, live guarded QObject and original owning thread. CPU tests use public Qt signal invocation on this object. They do not claim two OS worker outcomes or installed Quickshell signal behavior.
+
+Actual V5 gap replay uses one unchanged fast capture helper. Only after historical actor normal closure and immutable receipt does it rearm the same actual Process allocation (same exact command), then emit the old registered watcher notification and compare the entire new record before/after. This does not establish changed-command reuse: QML command changes before old closure validation are a separate frontend route concern. Source-bound actual QS collection and real UI remain root-only pending.
+
+Timing-only V4/V5 additions retain bounded Started-to-dispatch, worker entry/copy/bind and mapping elapsed observations. No timing is used as authority or to infer the earlier evidence-lost baseline failure. No helper controls/retries/relaunches/sleeps or longer budgets.

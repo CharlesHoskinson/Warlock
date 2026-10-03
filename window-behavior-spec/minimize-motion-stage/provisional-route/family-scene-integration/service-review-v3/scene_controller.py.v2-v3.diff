@@ -1,0 +1,99 @@
+--- frozen-v2/scene_controller.py
++++ review-v3/scene_controller.py
+@@ -138,6 +138,7 @@
+         return members, key(focus)
+ 
+     def prepare(self, record):
++        sources=[]
+         try:
+             record.profile['metadataStartNs'] = time.monotonic_ns()
+             members, focus = self.fresh(record)
+@@ -178,21 +179,13 @@
+                     return
+             # First scene capture may take time. Reversals above never take this
+             # path; their complete textures already belong to the renderer.
+-            sources=[]
+-            try:
+-                for i,member in enumerate(members):
+-                    with self.lock:
+-                        if not self.owns(record):
+-                            self.desktop.release_sources(sources)
+-                            return
+-                    sources.append(self.desktop.capture_source(member,record.token,i))
+-            except Exception:
+-                self.desktop.release_sources(sources)
+-                raise
++            for i,member in enumerate(members):
++                with self.lock:
++                    if not self.owns(record):return
++                sources.append(self.desktop.capture_source(member,record.token,i))
+             outputs=self.transport.ensure_outputs(force=bool(record.previous and 'cleanupQueuedNs' in record.previous.profile))
+             with self.lock:
+                 if not self.owns(record):
+-                    self.desktop.release_sources(sources)
+                     return
+                 fresh, focus = self.fresh(record)
+                 for member,source in zip(fresh,sources,strict=True):
+@@ -210,11 +203,16 @@
+         except Exception as error:
+             with self.lock:
+                 if self.owns(record):self.reject(record,str(error))
+-
+-    def commit_members(self, record, operation, reason):
++        finally:
++            if sources and record.sources is not sources:
++                self.desktop.release_sources(sources)
++
++    def commit_members(self, record, operation, reason, observation=None):
+         # Callback and reservation share this lock; latest intent cannot change
+         # halfway through this transaction. Core still guards each exact ID/PID.
+-        members, focus = self.fresh(record)
++        if not self.owns(record):raise ValueError('native callback was superseded')
++        members, focus = observation if observation is not None else self.fresh(record)
++        if {key(m) for m in members}!={key(m) for m in record.members}:raise ValueError('native observation scope changed')
+         if self.desktop.reduced() and not record.validated:
+             raise ValueError('unvalidated intent has no reduced-motion authority')
+         ordered = sorted(members,key=lambda m:operation=='restore' and key(m)==focus)
+@@ -237,27 +235,35 @@
+                     previous.profile['cleanupAckNs']=time.monotonic_ns()
+                     previous.previous=None
+                 return False
+-            if event.get('identities') != ids(record.members):
+-                return False
++            if event.get('identities') != ids(record.members):return False
+             kind = event.get('event')
+             expected_sources=[{k:s[k] for k in ('stableId','pid','digest')} for s in record.sources]
+-            if kind in ('ready','endpoint') and (not record.validated or not event.get('servicePromoted') or event.get('sourceDigests')!=expected_sources):
++            if kind in ('ready','endpoint') and (not record.validated or not event.get('servicePromoted') or event.get('sourceDigests')!=expected_sources):return False
++        # A presentation callback must not monopolize input reservation while
++        # collecting slow native relations. Its observation has no authority.
++        observation=None
++        if kind in ('ready','endpoint'):
++            try:observation=self.fresh(record)
++            except Exception as error:
++                with self.lock:
++                    if self.owns(record):self.reject(record,str(error))
+                 return False
++        with self.lock:
++            if not self.owns(record):return False
+             try:
+                 if kind=='ready':
+                     if record.ready:return True
+-                    if record.operation=='minimize':self.commit_members(record,'minimize','presented ready')
++                    if record.operation=='minimize':self.commit_members(record,'minimize','presented ready',observation)
+                     record.ready=True
+                     if not record.running:
+                         self.transport.send({'command':'start','token':record.token,'identities':ids(record.members)})
+                         record.running=True
+                     self.write_journal()
+                 elif kind=='endpoint':
+-                    if record.operation=='restore':self.commit_members(record,'restore','presented endpoint')
++                    if record.operation=='restore':self.commit_members(record,'restore','presented endpoint',observation)
+                     self.cleanup(record,'native handover complete')
+                 elif kind=='cancelled':
+-                    if 'cleanupQueuedNs' in record.profile:
+-                        self.finish_cleanup(record)
++                    if 'cleanupQueuedNs' in record.profile:self.finish_cleanup(record)
+                     else:
+                         record.visual=False
+                         self.settle(record,'renderer cancelled')

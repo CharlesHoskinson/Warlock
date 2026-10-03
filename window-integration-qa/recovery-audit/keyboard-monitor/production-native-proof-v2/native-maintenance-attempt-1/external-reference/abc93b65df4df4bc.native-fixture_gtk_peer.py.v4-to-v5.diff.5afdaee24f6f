@@ -1,0 +1,22 @@
+--- V4/native-fixture/gtk_peer.py
++++ V5/native-fixture/gtk_peer.py
+@@ -56,7 +56,7 @@
+             position=[surface.get_position_x(),surface.get_position_y()],
+             surfaceTransform=list(popover.get_surface_transform()),
+             button=dict(x=bounds.get_x(),y=bounds.get_y(),width=bounds.get_width(),height=bounds.get_height()))
+-    path.write_text(json.dumps(dict(pid=os.getpid(),tag=tag,windows=rows,popup=popup,pointerEvent=pointer_event)));path.chmod(0o600);return True
++    path.write_text(json.dumps(dict(pid=os.getpid(),tag=tag,vfsType=Gio.Vfs.get_default().__gtype__.name,windows=rows,popup=popup,pointerEvent=pointer_event)));path.chmod(0o600);return True
+ def command(source,condition):
+     global popover,popup_button
+     line=sys.stdin.readline()
+@@ -68,7 +68,9 @@
+         popover=Gtk.Popover();popup_button=Gtk.Button(label='Actual popup target '+tag)
+         popover.set_child(popup_button);popover.set_parent(buttons[0]);popover.set_position(Gtk.PositionType.TOP);track(popover);popover.popup()
+     elif op=='close-popover' and popover:popover.popdown();popover.unparent();popover=None
+-    elif op=='exit':app.quit();return False
++    elif op=='exit':
++        print(json.dumps(dict(pass_=True,operation=op)),flush=True)
++        app.quit();return False
+     snapshot();print(json.dumps(dict(pass_=True,operation=op)),flush=True);return True
+ GLib.io_add_watch(sys.stdin.fileno(),GLib.IO_IN,command)
+ GLib.timeout_add(100,snapshot)

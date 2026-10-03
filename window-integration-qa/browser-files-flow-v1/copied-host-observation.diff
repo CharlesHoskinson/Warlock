@@ -1,0 +1,35 @@
+--- /home/hoskinson/.local/share/omarchy-files/shell.qml
++++ /home/hoskinson/window-integration-qa/browser-files-flow-v1/files-app/shell.qml
+@@ -75,8 +75,32 @@
+     function shot(which: string, path: string): void { if (which === "widget") widget.grab(path); else explorer.grab(path) }
+     function state(): string { return explorer.state() }
+     function uiState(): string { return explorer.exportUi() }
++    function qaButtons(): string { return qaCollect() }
+     function migrationStatus(): string { return JSON.stringify({ready:uiReady,error:migrationError,pid:Quickshell.processId,instance:Quickshell.instanceId,initialization:initializationState}) }
+   }
+ 
+ 
++
++  // QA-only read-only observations. Signal listener does not replace/delegate handlers.
++  // Additional listeners can perturb timing: no cadence/raster claim.
++  property var qaObservedItems: []
++  property var qaClickEvents: []
++  function qaCollect() {
++    var rows=[], content=explorer.contentItem
++    function walk(o) {
++      if(o.accessibleName !== undefined && o.actionIdentity !== undefined && o.clicked !== undefined) {
++        if(qaObservedItems.indexOf(o)<0) {
++          qaObservedItems.push(o)
++          o.clicked.connect(function(mouse){
++            qaClickEvents.push({name:String(o.accessibleName),identity:String(o.actionIdentity),button:mouse.button,modifiers:mouse.modifiers,viewMode:explorer.viewMode,time:Date.now()})
++          })
++        }
++        var point=o.mapToItem(content,0,0)
++        rows.push({name:String(o.accessibleName),identity:String(o.actionIdentity),rect:[point.x,point.y,o.width,o.height],visible:o.visible,enabled:o.enabled,enabled2:o.enabled2,objectName:String(o.objectName)})
++      }
++      var children=o.children || [];for(var i=0;i<children.length;i++)walk(children[i])
++    }
++    walk(content)
++    return JSON.stringify({pid:Quickshell.processId,instance:Quickshell.instanceId,client:[content.width,content.height],visible:explorer.visible,backingVisible:explorer.backingWindowVisible,viewMode:explorer.viewMode,buttons:rows,clicks:qaClickEvents})
++  }
+ }

@@ -1,0 +1,12 @@
+{
+  "result": "failed",
+  "reportSHA256": "3117a6aef2d311024924d12b87e2900e9ee759ace725143ceb72019ee3a039a6",
+  "checks": 13,
+  "passedChecks": 12,
+  "all14PreservationPass": true,
+  "all237SourceHashesMatch": true,
+  "privateRuntimeAndCompositorGone": true,
+  "guiReleased": true,
+  "error": "AssertionError('first construction motion reaches actual cursor and consumes one shot before callback pump')",
+  "cleanupUnloadError": "CalledProcessError(1, ['gdbus', 'call', '--session', '--dest', 'org.freedesktop.a11y.Manager', '--object-path', '/org/freedesktop/a11y/Manager', '--method', 'org.omarchy.KeyboardMonitorProbe.PrepareUnload'])"
+}

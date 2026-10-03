@@ -1,0 +1,115 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/scene_controller.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/scene_controller.py
+@@ -164,8 +164,6 @@
+             active=self.desktop.active() if direction.anchor=='activate' else None
+             with self.lock:
+                 if not self.owns(record):return
+-                # The sampled relation and native state have no authority until
+-                # this reservation still owns every exact member.
+                 retire=getattr(self.desktop,'retire_gestures',None)
+                 if retire is not None:
+                     self.reserve_retirement_scope(record,members)
+@@ -178,12 +176,27 @@
+                         record.profile['gestureRetirementFailure']=getattr(error,'evidence',str(error))
+                         raise
+                     record.profile['gestureRetirementReply']=retired
+-                    members,focus=self.fresh(record)
++            # Read-only post-retirement relations must not hold the receipt
++            # lock: an in-flight reply cannot delay a retained visual retarget.
++            if retire is not None:
++                with self.lock:
++                    if not self.owns(record):return
++                members,focus=self.fresh(record)
++                witness=getattr(self.desktop,'family_evidence',None)
++                evidence=witness() if witness is not None else None
++                with self.lock:
++                    if not self.owns(record):return
+                     if {key(m) for m in members}!=before_scope:raise ValueError('exact family changed after gesture retirement')
+                     record.profile['gestureRetirementFreshNs']=time.monotonic_ns()
+                     record.profile['postRetirementFamily']=[{field:deepcopy(m.get(field)) for field in
+                         ('address','stableId','pid','at','size','pinned','floating','fullscreen','parent','parentStableId','modal')} for m in members]
+-                    active=self.desktop.active() if direction.anchor=='activate' else None
++                    direction=self.direction_for(record,members)
++                active=self.desktop.active() if direction.anchor=='activate' else None
++            else:
++                witness=getattr(self.desktop,'family_evidence',None)
++                evidence=witness() if witness is not None else None
++            with self.lock:
++                if not self.owns(record):return
+                 direction=self.direction_for(record,members)
+                 anchor=direction.identity or record.requested
+                 window=next((m for m in members if key(m)==anchor),None)
+@@ -191,18 +204,43 @@
+                 record.operation=direction.resolve(window,active)
+                 record.direction=Direction(record.operation)
+                 record.profile['resolvedDirection']=record.operation
+-                witness=getattr(self.desktop,'family_evidence',None)
+-                if witness is not None:record.profile['familyDrawEvidence']=witness()
++                if witness is not None:record.profile['familyDrawEvidence']=evidence
+                 self.validate_scope(record, members)
+-                if record.operation == 'restore':
+-                    # Irreversible destination effects belong to the current
+-                    # reservation. Hold ownership for the entire family switch.
+-                    for member in members:
+-                        if member.get('workspace',{}).get('name')=='special:win-minimized':
+-                            self.desktop.select_destination(member)
+-                reduced = self.desktop.reduced()
+-                record.members = members
+-                record.focus = focus
++                record.members=members;record.focus=focus
++                self.write_journal()
++            # Native adapters split slow metadata/refresh observations from
++            # the existing atomic family focus effect. Generic adapters keep
++            # their original synchronous effect API.
++            planner=getattr(self.desktop,'plan_destination',None)
++            plans=[]
++            if record.operation=='restore' and planner is not None:
++                if not callable(getattr(self.desktop,'apply_destination',None)) or not callable(getattr(self.desktop,'refresh_destination',None)):
++                    raise ValueError('complete split destination capability required')
++                for member in members:
++                    if member.get('workspace',{}).get('name')!='special:win-minimized':continue
++                    with self.lock:
++                        if not self.owns(record):return
++                    plan=planner(member)
++                    with self.lock:
++                        if not self.owns(record):return
++                    plans.append((member,plan))
++            with self.lock:
++                if not self.owns(record):return
++                if record.operation=='restore':
++                    if planner is not None:
++                        for member,plan in plans:self.desktop.apply_destination(member,plan)
++                    else:
++                        for member in members:
++                            if member.get('workspace',{}).get('name')=='special:win-minimized':self.desktop.select_destination(member)
++            for member,plan in plans:
++                with self.lock:
++                    if not self.owns(record):return
++                self.desktop.refresh_destination(member,plan)
++                with self.lock:
++                    if not self.owns(record):return
++            reduced=self.desktop.reduced()
++            with self.lock:
++                if not self.owns(record):return
+                 record.profile['metadataValidatedNs'] = time.monotonic_ns()
+                 record.validated = True
+                 record.accepted_operation = record.operation
+@@ -235,12 +273,13 @@
+                 sources.append(self.desktop.capture_source(member,record.token,i))
+             outputs=self.transport.ensure_outputs(force=bool(record.previous and 'cleanupQueuedNs' in record.previous.profile))
+             with self.lock:
+-                if not self.owns(record):
+-                    return
+-                fresh, focus = self.fresh(record)
+-                witness=getattr(self.desktop,'family_evidence',None)
++                if not self.owns(record):return
++            fresh, focus = self.fresh(record)
++            witness=getattr(self.desktop,'family_evidence',None)
++            evidence=witness() if witness is not None else None
++            with self.lock:
++                if not self.owns(record):return
+                 if witness is not None:
+-                    evidence=witness()
+                     if (not evidence or evidence.get('drawOrder')!=[list(key(m)) for m in fresh]
+                             or [key(m) for m in fresh]!=[key(m) for m in members]):raise ValueError('native draw order changed during capture; replacement scene required')
+                     record.profile['familyDrawEvidence']=evidence

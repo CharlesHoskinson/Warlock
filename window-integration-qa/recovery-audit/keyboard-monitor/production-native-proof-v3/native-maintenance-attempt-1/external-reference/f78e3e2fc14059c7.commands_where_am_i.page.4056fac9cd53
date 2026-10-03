@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_where_am_i" xml:lang="kk">
+  <info>
+    <link type="next" xref="commands_time_date_notifications"/>
+    <link type="guide" xref="commands#getting_started"/>
+    <link type="seealso" xref="howto_whereami"/>
+    <title type="sort">3. Мен қайдамын</title>
+    <title type="link">Мен қайдамын</title>
+    <desc>Орналасқан жеріңіз туралы білуге арналған командалар</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>"Мен қайдамын" командалары</title>
+  <p><app>Orca</app>-ның "Мен қайдамын" мүмкіндігі сізге ағымдағы орналасқан жеріңіз туралы контекстке байланысты мәліметтер береді. Мысалы, кестелерде "Мен қайдамын" сізге ағымдағы кесте ұяшығы туралы мәліметтер береді, ал мәтінде ол ағымдағы жолды және таңдалған кез келген мәтінді көрсетеді. <app>Orca</app> көрсететін ақпараттың толық тізімін <link xref="howto_whereami">"Мен қайдамын" мүмкіндігіне кіріспе</link> бөлімінен табуға болады.</p>
+  <p><app>Orca</app> келесі "Мен қайдамын" командаларын ұсынады:</p>
+  <list>
+    <item>
+      <p>Негізгі "Мен қайдамын" функциясын орындау:</p>
+      <list>
+        <item>
+          <p>Жұмыс үстелі: <key>KP Enter</key></p>
+        </item>
+        <item>
+          <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Return</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Толық "Мен қайдамын" функциясын орындау:</p>
+      <list>
+        <item>
+          <p>Жұмыс үстелі: <key>KP Enter</key> (екі рет шертілген)</p>
+        </item>
+        <item>
+          <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Return</key></keyseq> (екі рет шертілген)</p>
+        </item>
+      </list>
+    </item>
+  </list>
+  <p>Арнайы "Мен қайдамын" командаларынан басқа, <app>Orca</app>-да ағымдағы орналасқан жеріңіз туралы ақпарат алуға қатысты қосымша командалар бар:</p>
+  <list>
+    <item>
+      <p>Тақырып жолағын көрсету:</p>
+      <list>
+        <item>
+          <p>Жұмыс үстелі: <keyseq><key>Orca модификаторы</key><key>KP Enter</key></keyseq></p>
+        </item>
+        <item>
+          <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Slash</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Қалып-күй жолағын көрсету:</p>
+      <list>
+        <item>
+          <p>Жұмыс үстелі: <keyseq><key>Orca модификаторы</key><key>KP Enter</key></keyseq> (екі рет шертілген)</p>
+        </item>
+        <item>
+          <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Slash</key></keyseq> (екі рет шертілген)</p>
+        </item>
+        <item>
+          <p>Ағымдағы объектінің өлшемі мен орналасқан жерін пиксельмен көрсету: (Тағайындалмаған)</p>
+        </item>
+      </list>
+    </item>
+  </list>
+</page>

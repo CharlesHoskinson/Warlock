@@ -1,0 +1,14 @@
+{
+  "case": "frozen directory alias /lib -> usr/lib controls /usr/lib/a.so.2 ancestry",
+  "actual": [
+    "/usr/lib/a.so",
+    "/usr/lib/a.so.1"
+  ],
+  "expected": [
+    "/lib",
+    "/usr/lib/a.so",
+    "/usr/lib/a.so.1"
+  ],
+  "runtimePredicateChanged": false,
+  "GUI": false
+}

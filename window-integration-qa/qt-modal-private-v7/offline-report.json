@@ -1,0 +1,55 @@
+{
+  "result": "pass",
+  "testsRun": 25,
+  "output": "test_all_other_repl_arguments_are_expressions (test_cli_packaging.CliPackaging.test_all_other_repl_arguments_are_expressions) ... ok\ntest_old_comment_argument_refused_before_ipc (test_cli_packaging.CliPackaging.test_old_comment_argument_refused_before_ipc) ... ok\ntest_wrapped_exact_script_reaches_only_owned_ipc (test_cli_packaging.CliPackaging.test_wrapped_exact_script_reaches_only_owned_ipc) ... ok\ntest_all_broken_pipes_refused_without_waiver (test_offline.OfflineTests.test_all_broken_pipes_refused_without_waiver) ... ok\ntest_button_point_uses_client_bounds_and_native_origin (test_offline.OfflineTests.test_button_point_uses_client_bounds_and_native_origin) ... ok\ntest_clean_mandatory_configure_log (test_offline.OfflineTests.test_clean_mandatory_configure_log) ... ok\ntest_diagnostic_plugin_has_no_actor_or_hooks (test_offline.OfflineTests.test_diagnostic_plugin_has_no_actor_or_hooks) ... ok\ntest_different_client_surface_extent_refused (test_offline.OfflineTests.test_different_client_surface_extent_refused) ... ok\ntest_exact19_planned_toolkit_gates (test_offline.OfflineTests.test_exact19_planned_toolkit_gates) ... ok\ntest_files_absent_snapshot_without_starting_app (test_offline.OfflineTests.test_files_absent_snapshot_without_starting_app) ... ok\ntest_files_current_different_pid_and_visible (test_offline.OfflineTests.test_files_current_different_pid_and_visible) ... ok\ntest_fixture_byte_identical_and203_unchanged (test_offline.OfflineTests.test_fixture_byte_identical_and203_unchanged) ... ok\ntest_geometry_refresh_is_observation_only (test_offline.OfflineTests.test_geometry_refresh_is_observation_only) ... ok\ntest_invalid_button_bounds_refused (test_offline.OfflineTests.test_invalid_button_bounds_refused) ... ok\ntest_layout_must_finish_and_configured_extent_match (test_offline.OfflineTests.test_layout_must_finish_and_configured_extent_match) ... ok\ntest_main_target_and_state_escapes_refused (test_offline.OfflineTests.test_main_target_and_state_escapes_refused) ... ok\ntest_mandatory_marker_and_configure_both_required (test_offline.OfflineTests.test_mandatory_marker_and_configure_both_required) ... ok\ntest_multiple_instances_fail_without_selecting_first (test_offline.OfflineTests.test_multiple_instances_fail_without_selecting_first) ... ok\ntest_private_snapshot_roundtrip_retains_types (test_offline.OfflineTests.test_private_snapshot_roundtrip_retains_types) ... ok\ntest_quit_oracle_uses_events_and_exit (test_offline.OfflineTests.test_quit_oracle_uses_events_and_exit) ... ok\ntest_retained_raster_failed_guard_remains_refused (test_offline.OfflineTests.test_retained_raster_failed_guard_remains_refused) ... ok\ntest_retained_v6_stale_capture_generates_outside_point_then_new_refuses (test_offline.OfflineTests.test_retained_v6_stale_capture_generates_outside_point_then_new_refuses) ... ok\ntest_same_basename_distinct_private_runtime (test_offline.OfflineTests.test_same_basename_distinct_private_runtime) ... ok\ntest_strict_callback_and_focus_oracle_stays_joint (test_offline.OfflineTests.test_strict_callback_and_focus_oracle_stays_joint) ... ok\ntest_supported_portal_disable_only_fixture_env (test_offline.OfflineTests.test_supported_portal_disable_only_fixture_env) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 0.426s\n\nOK\n",
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-34f1ad6653b24464add0e59ca4fca9c3.scope",
+    "coreLimit": 1
+  },
+  "coreLimits": [
+    1,
+    1
+  ],
+  "actualHyprctlParser": [
+    {
+      "test": "test_cli_packaging.CliPackaging.test_old_comment_argument_refused_before_ipc",
+      "privateEndpoint": "/run/user/1000/wqa/9f6d/hypr/qa_parser_owned/.socket.sock",
+      "exitCode": 1,
+      "stdout": "usage: hyprctl [flags] <command> [args...|--help]\n\ncommands:\n    activewindow        \u2192 Gets the active window name and its properties\n    activeworkspace     \u2192 Gets the active workspace and its properties\n    animations          \u2192 Gets the current config'd info about animations\n                          and beziers\n    binds               \u2192 Lists all registered binds\n    clients             \u2192 Lists all windows with their properties\n    configerrors        \u2192 Lists all current config parsing errors\n    cursorpos           \u2192 Gets the current cursor position in global layout\n                          coordinates\n    decorations <window_regex> \u2192 Lists all decorations and their info\n    devices             \u2192 Lists all connected keyboards and mice\n    dismissnotify [amount] \u2192 Dismisses all or up to AMOUNT notifications\n    dispatch <dispatcher> [args] \u2192 Issue a dispatch to call a keybind\n                          dispatcher with arguments\n    eval <code>         \u2192 Issue a Lua string to execute\n    getoption <option>  \u2192 Gets the config option status (values)\n    globalshortcuts     \u2192 Lists all global shortcuts\n    hyprpaper ...       \u2192 Issue a hyprpaper request\n    hyprsunset ...      \u2192 Issue a hyprsunset request\n    instances           \u2192 Lists all running instances of Hyprland with\n                          their info\n    keyword <name> <value> \u2192 Issue a keyword to call a config keyword\n                          dynamically\n    kill                \u2192 Issue a kill to get into a kill mode, where you can\n                          kill an app by clicking on it. You can exit it\n                          with ESCAPE\n    layers              \u2192 Lists all the surface layers\n    layouts             \u2192 Lists all layouts available (including plugin'd ones)\n    monitors            \u2192 Lists active outputs with their properties,\n                          'monitors all' lists active and inactive outputs\n    notify ...          \u2192 Sends a notification using the built-in Hyprland\n                          notification system\n    output ...          \u2192 Allows you to add and remove fake outputs to your\n                          preferred backend\n    plugin ...          \u2192 Issue a plugin request\n    reload [config-only] \u2192 Issue a reload to force reload the config. Pass\n                          'config-only' to disable monitor reload\n    repl [code]         \u2192 Enter interactive Lua REPL mode (^D to exit)\n                          or issue a Lua string and print the result\n    rollinglog          \u2192 Prints tail of the log. Also supports -f/--follow\n                          option\n    setcursor <theme> <size> \u2192 Sets the cursor theme and reloads the cursor\n                          manager\n    seterror <color> <message...> \u2192 Sets the hyprctl error string. Color has\n                          the same format as in colors in config. Will reset\n                          when Hyprland's config is reloaded\n    setprop ...         \u2192 Sets a window property\n    getprop ...         \u2192 Gets a window property\n    splash              \u2192 Get the current splash\n    status              \u2192 Get internal status information\n    switchxkblayout ... \u2192 Sets the xkb layout index for a keyboard\n    systeminfo          \u2192 Get system info\n    version             \u2192 Prints the hyprland version, meaning flags, commit\n                          and branch of build.\n    workspacerules      \u2192 Lists all workspace rules\n    workspaces          \u2192 Lists all workspaces with their properties\n\nflags:\n    -j                  \u2192 Output in JSON\n    -r                  \u2192 Refresh state after issuing command (e.g. for\n                          updating variables)\n    --batch             \u2192 Execute a batch of commands, separated by ';'\n    --instance (-i)     \u2192 use a specific instance. Can be either signature or\n                          index in hyprctl instances (0, 1, etc)\n    --quiet (-q)        \u2192 Disable the output of hyprctl\n\n--help:\n    Can be used to print command's arguments that did not fit into this page\n    (three dots)\n",
+      "stderr": "",
+      "actualRequests": [],
+      "mainIPCContacted": false
+    },
+    {
+      "test": "test_cli_packaging.CliPackaging.test_wrapped_exact_script_reaches_only_owned_ipc",
+      "privateEndpoint": "/run/user/1000/wqa/aefc/hypr/qa_parser_owned/.socket.sock",
+      "exitCode": 0,
+      "stdout": "fixture-only-ok\n",
+      "stderr": "",
+      "actualRequests": [
+        "/repl do\n-- Applied only after the exact frozen native v18 plugin loads in the private child.\nhl.config({plugin={hyprbars={enabled=true,bar_height=24,bar_part_of_window=true}}})\n\nend"
+      ],
+      "mainIPCContacted": false
+    }
+  ],
+  "nativeCompositorLaunched": false,
+  "mainIPCContacted": false,
+  "old203Unchanged": true,
+  "oldV4FailurePreserved": true,
+  "qtWindowActionsAndLuaBodyUnchanged": true,
+  "qtObservationSourceChanged": true,
+  "oldV6FailurePreserved": true,
+  "configuredClientLayoutRequired": true,
+  "toolkitFeatureGatesPlanned": 19,
+  "hostGatesPlanned": 10,
+  "sourceHashes": {
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v7/run_native.py": "71d65d6cdfdf23bea10fe0070735bbdd4370553bc49970390ec15ba939f360f5",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v7/private_session.py": "8415137ceea6b3ebbcb72403d853f074faa2d924949bb30cba5b98a6b622691f",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v7/fixture.cpp": "de1cfc6634f8d57fcff2d9fc45f2034d8dd069b185b17d6f88eb015de11b9662",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v7/private-plugin.lua": "53f1e367f189409d4f997b4ac2996451801deeb515afadadb0f39f7751b95f87",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v7/test_cli_packaging.py": "21ad56dc756095a47429736d94b02d136f0e66935c7e157947da0b7fd90cf353",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v7/test_offline.py": "67f0db78da90f6ccccb17fce0d050cfd5dde1a3af7934912ac9f8f07c34d7c0e",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v7/contract.md": "ec6cc3f11dac306a7daf1c4a68fabe5fed780f38a82bf1bf42e78c592d4032fe",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v7/run_offline.py": "35ad07f30ff191fe5657975e76ce1219fcca1f80744cdaad0c992c37ded96b57"
+  }
+}

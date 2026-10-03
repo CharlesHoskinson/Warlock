@@ -1,0 +1,72 @@
+{
+  "scope": "Retained actual QtV8 modal ancestor hit filtering; no new native proof",
+  "originalReportSHA256": "b1c087aff8b10ea37e701c4c77f9577f588530f83fb00fb543346c86354ecb05",
+  "firstThreeFeaturesPassed": true,
+  "failedGate": {
+    "name": "window-modal owner body refuses callback and routes to child",
+    "passed": false,
+    "actualButtonPoint": [
+      116,
+      400
+    ],
+    "baselineVerified": true
+  },
+  "ownerBaseline": {
+    "point": [
+      116,
+      400
+    ],
+    "buttonClient": [
+      11,
+      139,
+      438,
+      22
+    ],
+    "nativeSurface": {
+      "address": "0x60d6c414acc0",
+      "stableId": "18000000",
+      "pid": 589968,
+      "modal": false,
+      "mapped": true,
+      "hidden": false,
+      "acceptsInput": true,
+      "surfaceBox": [
+        100,
+        250,
+        460,
+        300
+      ]
+    },
+    "before": 0,
+    "after": 1,
+    "passed": true
+  },
+  "blockedClickPoint": [
+    116,
+    400
+  ],
+  "beforeHit": null,
+  "afterHit": null,
+  "nativeFocus": {
+    "address": "0x60d6c4118f80",
+    "stableId": "18000001",
+    "pid": 589968,
+    "modal": false,
+    "mapped": true,
+    "hidden": false,
+    "acceptsInput": true,
+    "surfaceBox": [
+      1000,
+      300,
+      460,
+      300
+    ]
+  },
+  "upstreamCause": "general:modal_parent_blocking and XDG anyChildModal exclusion in windowAt; independent of acceptsInput",
+  "productionCause": "v18 modalButtonListener returns when filtered owner is null",
+  "sourceHashes": {
+    "primary": "1bcc02a03db80b0519e516b41b3e0d0e70df08d6aa50b006b6a4362854524a09",
+    "v18FamilyBridge": "43a72e1ceed238ef31af2c38c95583acbf5dead4a7c9749ff708fc7960581264"
+  },
+  "newCandidateNativeExecuted": false
+}

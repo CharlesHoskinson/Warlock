@@ -1,0 +1,29 @@
+test_controller.py: PASS
+test_whole_snapshot.py: PASS
+test_freeze.py: PASS
+test_motion_core.py: PASS
+test_motion_service.py: PASS
+test_native_motion_trial.py: PASS
+test_family_scope.py: PASS
+test_family_reservation.py: PASS
+test_fixture_pin_policy.py: PASS
+test_stop.py: PASS
+Python fixture syntax: PASS
+actual widget freeze JavaScript: PASS
+Windows.qml parser: PASS
+WindowMotion.qml parser: PASS
+TaskbarPopup.qml parser: PASS
+Bash helper syntax: PASS
+freeze contract typecheck: PASS
+freeze contract named scenarios: PASS
+freeze contract 2000 samples: PASS
+family scope typecheck: PASS
+family scope named scenarios: PASS
+family scope 2000 samples: PASS
+family commit ordering typecheck: PASS
+family commit ordering named scenarios: PASS
+family commit ordering 2000 samples: PASS
+idempotent stop typecheck: PASS
+idempotent stop named scenarios: PASS
+idempotent stop 2000 samples: PASS
+112 Python + 17 actual QML scenarios + 12 Quint scenarios/2000 samples PASS; /home/hoskinson/window-behavior-spec/minimize-motion-stage/stop-on-836/installed-offline-report.json

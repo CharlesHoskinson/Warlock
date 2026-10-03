@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Title-bar minimize uses the dedicated hidden workspace and taskbar restore.
+exec "$HOME/.local/bin/hypr-windowctl" toggle "$@"

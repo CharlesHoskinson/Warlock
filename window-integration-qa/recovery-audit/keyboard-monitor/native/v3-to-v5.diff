@@ -1,0 +1,29 @@
+--- native/plugin-v3.cpp
++++ native/plugin-v5.cpp
+@@ -159,10 +159,10 @@
+     }
+     auto& d=getDevice(kb);if(d.passedDirty)d.refreshPassed(kb);auto native=kb->m_modifiersState;
+     if(d.mapBaselinePending){native.depressed=d.mapBaseline.depressed;native.latched=d.mapBaseline.latched;native.locked=d.mapBaseline.locked;native.group=d.mapBaseline.group;}
+-    const auto rawDep=native.depressed|xkb_state_serialize_mods(d.captured,XKB_STATE_MODS_DEPRESSED);
+-    xkb_state_update_mask(d.lookup,rawDep,native.latched,native.locked,0,0,native.group);
+-    auto sym=xkb_state_key_get_one_sym(d.lookup,key+8);
+-    auto state=xkb_state_serialize_mods(d.lookup,XKB_STATE_MODS_EFFECTIVE);
++    uint32_t capturedLockBits=0;
++    for(auto held:policy.capturedKeys(reinterpret_cast<uintptr_t>(kb)))capturedLockBits|=d.keyLockBits(held,native.group);
++    const auto packet=packetBeforeKey(d.lookup,d.captured,{native.depressed,native.latched,native.locked,native.group},key,capturedLockBits);
++    const auto sym=packet.sym,state=packet.state;
+     const auto device=reinterpret_cast<uintptr_t>(kb);
+     const bool known=policy.known(device,key),alreadyNative=kb->getPressed(key);
+     auto result=policy.key(device,key,sym,state,press,clockMs(),std::max(kb->m_repeatDelay,1),alreadyNative);
+@@ -182,9 +182,8 @@
+     if(result.consumed) {
+         xkb_state_update_mask(shadow,xkb_state_serialize_mods(shadow,XKB_STATE_MODS_DEPRESSED),xkb_state_serialize_mods(shadow,XKB_STATE_MODS_LATCHED),0,0,0,native.group);
+     }
+-    // Emit observer state after non-locking modifier transition, with only
+-    // accepted lock state. Directed signal queueing never waits on a client.
+-    state=xkb_state_serialize_mods(d.passed,XKB_STATE_MODS_DEPRESSED)|xkb_state_serialize_mods(d.captured,XKB_STATE_MODS_DEPRESSED)|native.latched|native.locked;
++    // Consistent pre-event mask and lookup convention. Shadow transitions are
++    // for the next packet/filter only. Queueing never waits on a client.
+     event(result,!press,state,xkb_keysym_to_utf32(result.sym),key);
+     if(result.consumed)return false; // physical callback skips XKB update
+     return original(kb,key,press);

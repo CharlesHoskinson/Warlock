@@ -1,0 +1,6 @@
+{
+  "source": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/src/debug/HyprCtl.cpp",
+  "bodySHA256": "51cd1d3e2e5884741162301e30f8a1069466b4ed549f590908e99099825aaa70",
+  "exactBody": "static std::string dispatchBatch(eHyprCtlOutputFormat format, std::string request) {\n    // split by ; ignores ; inside [] and adds ; on last command\n\n    request                     = request.substr(9);\n    std::string       reply     = \"\";\n    const std::string DELIMITER = \"\\n\\n\\n\";\n    int               bracket   = 0;\n    size_t            idx       = 0;\n\n    for (size_t i = 0; i <= request.size(); ++i) {\n        char ch = (i < request.size()) ? request[i] : ';';\n        if (ch == '[')\n            ++bracket;\n        else if (ch == ']')\n            --bracket;\n        else if (ch == ';' && bracket == 0) {\n            if (idx < i)\n                reply += g_pHyprCtl->getReply(trim(request.substr(idx, i - idx))).append(DELIMITER);\n            idx = i + 1;\n            continue;\n        }\n    }\n\n    return reply.substr(0, std::max(sc<int>(reply.size() - DELIMITER.size()), 0));\n}",
+  "stubs": "Fixture getReply records command and returns an explicit second error; ASCII space trim used only for fixed generated six commands. Source function exact."
+}

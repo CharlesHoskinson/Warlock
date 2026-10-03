@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v3/proof_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v3/proof_lifecycle.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "output": "\n  proof_lifecycle\n    ok disabledNoProfileMutationTest passed 1 test(s)\n    ok passiveLoadPreservesFalseIntentTest passed 1 test(s)\n    ok falsePreparePreservesHeldTest passed 1 test(s)\n    ok falsePreparePreservesDirtyTest passed 1 test(s)\n    ok trueNormalUnloadTest passed 1 test(s)\n    ok reloadNewNonceTest passed 1 test(s)\n    ok privateEnabledRestartPreservesIntentTest passed 1 test(s)\n\n  7 passing (64ms)\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v3/proof_lifecycle.qnt",
+        "--invariant",
+        "safe",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20461012",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "output": "[ok] No violation found (381ms at 5249 traces/second).\nUse --seed=0x159c348 --backend=rust to reproduce.\n"
+    }
+  ],
+  "specSHA256": "334a304467671f69992581875ca3d643a5a0fe121bd7def8a5ac2c31459dc006",
+  "named": 7,
+  "samples": 2000,
+  "maxSteps": 100,
+  "seed": 20461012,
+  "nativeAccepted": false
+}

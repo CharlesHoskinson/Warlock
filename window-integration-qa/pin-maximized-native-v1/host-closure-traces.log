@@ -1,0 +1,1522 @@
+An example execution:
+
+[State 0]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: 0,
+      reaped: true,
+      registered: true,
+      role: 1,
+      term: true
+    }
+}
+
+[State 1]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: false,
+      rc: -15,
+      reaped: false,
+      registered: false,
+      role: 4,
+      term: true
+    }
+}
+
+[State 2]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: -15,
+      reaped: false,
+      registered: true,
+      role: 3,
+      term: false
+    }
+}
+
+[State 3]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: true,
+      rc: -9,
+      reaped: false,
+      registered: true,
+      role: 0,
+      term: false
+    }
+}
+
+[State 4]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: false,
+      rc: 1,
+      reaped: true,
+      registered: true,
+      role: 3,
+      term: true
+    }
+}
+
+[State 5]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: 1,
+      reaped: true,
+      registered: true,
+      role: 0,
+      term: true
+    }
+}
+
+[State 6]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: true,
+      rc: -15,
+      reaped: false,
+      registered: false,
+      role: 0,
+      term: false
+    }
+}
+
+[State 7]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: 0,
+      reaped: false,
+      registered: false,
+      role: 4,
+      term: true
+    }
+}
+
+[State 8]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: false,
+      rc: -6,
+      reaped: false,
+      registered: true,
+      role: 0,
+      term: false
+    }
+}
+
+[State 9]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: -15,
+      reaped: true,
+      registered: true,
+      role: 0,
+      term: false
+    }
+}
+
+[State 10]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: 1,
+      reaped: true,
+      registered: true,
+      role: 2,
+      term: true
+    }
+}
+
+[State 11]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: 1,
+      reaped: true,
+      registered: false,
+      role: 3,
+      term: false
+    }
+}
+
+[State 12]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: -9,
+      reaped: true,
+      registered: true,
+      role: 1,
+      term: true
+    }
+}
+
+[State 13]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: true,
+      rc: 1,
+      reaped: false,
+      registered: false,
+      role: 1,
+      term: true
+    }
+}
+
+[State 14]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: -6,
+      reaped: false,
+      registered: false,
+      role: 4,
+      term: true
+    }
+}
+
+[State 15]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: 1,
+      reaped: true,
+      registered: true,
+      role: 4,
+      term: false
+    }
+}
+
+[State 16]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: -9,
+      reaped: true,
+      registered: false,
+      role: 1,
+      term: true
+    }
+}
+
+[State 17]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: 0,
+      reaped: false,
+      registered: true,
+      role: 3,
+      term: true
+    }
+}
+
+[State 18]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: -15,
+      reaped: true,
+      registered: true,
+      role: 2,
+      term: false
+    }
+}
+
+[State 19]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: 0,
+      reaped: true,
+      registered: true,
+      role: 0,
+      term: false
+    }
+}
+
+[State 20]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: false,
+      rc: -9,
+      reaped: false,
+      registered: false,
+      role: 4,
+      term: true
+    }
+}
+
+[State 21]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: false,
+      rc: -9,
+      reaped: true,
+      registered: false,
+      role: 3,
+      term: true
+    }
+}
+
+[State 22]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: -6,
+      reaped: false,
+      registered: false,
+      role: 3,
+      term: false
+    }
+}
+
+[State 23]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: false,
+      rc: 0,
+      reaped: false,
+      registered: true,
+      role: 0,
+      term: false
+    }
+}
+
+[State 24]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: false,
+      rc: -9,
+      reaped: true,
+      registered: false,
+      role: 2,
+      term: false
+    }
+}
+
+[State 25]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: -9,
+      reaped: true,
+      registered: false,
+      role: 2,
+      term: true
+    }
+}
+
+[State 26]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: false,
+      rc: -6,
+      reaped: false,
+      registered: false,
+      role: 1,
+      term: false
+    }
+}
+
+[State 27]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: true,
+      rc: -15,
+      reaped: true,
+      registered: false,
+      role: 0,
+      term: false
+    }
+}
+
+[State 28]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: false,
+      rc: -6,
+      reaped: true,
+      registered: false,
+      role: 0,
+      term: false
+    }
+}
+
+[State 29]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: -6,
+      reaped: false,
+      registered: false,
+      role: 4,
+      term: true
+    }
+}
+
+[State 30]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: false,
+      rc: 1,
+      reaped: true,
+      registered: true,
+      role: 1,
+      term: true
+    }
+}
+
+[State 31]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: -6,
+      reaped: true,
+      registered: true,
+      role: 4,
+      term: false
+    }
+}
+
+[State 32]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: -15,
+      reaped: false,
+      registered: true,
+      role: 1,
+      term: false
+    }
+}
+
+[State 33]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: 0,
+      reaped: true,
+      registered: false,
+      role: 3,
+      term: false
+    }
+}
+
+[State 34]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: 0,
+      reaped: false,
+      registered: false,
+      role: 2,
+      term: true
+    }
+}
+
+[State 35]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: 0,
+      reaped: false,
+      registered: false,
+      role: 3,
+      term: false
+    }
+}
+
+[State 36]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: false,
+      rc: 1,
+      reaped: true,
+      registered: false,
+      role: 1,
+      term: false
+    }
+}
+
+[State 37]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: 0,
+      reaped: false,
+      registered: true,
+      role: 2,
+      term: false
+    }
+}
+
+[State 38]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: false,
+      rc: 0,
+      reaped: false,
+      registered: false,
+      role: 4,
+      term: true
+    }
+}
+
+[State 39]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: 0,
+      reaped: true,
+      registered: false,
+      role: 4,
+      term: true
+    }
+}
+
+[State 40]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: false,
+      rc: 0,
+      reaped: false,
+      registered: false,
+      role: 3,
+      term: false
+    }
+}
+
+[State 41]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: false,
+      rc: -15,
+      reaped: true,
+      registered: false,
+      role: 3,
+      term: true
+    }
+}
+
+[State 42]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: -15,
+      reaped: true,
+      registered: false,
+      role: 0,
+      term: true
+    }
+}
+
+[State 43]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: -6,
+      reaped: true,
+      registered: false,
+      role: 1,
+      term: true
+    }
+}
+
+[State 44]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: 1,
+      reaped: false,
+      registered: false,
+      role: 0,
+      term: false
+    }
+}
+
+[State 45]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: false,
+      rc: -9,
+      reaped: true,
+      registered: false,
+      role: 3,
+      term: false
+    }
+}
+
+[State 46]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: -6,
+      reaped: true,
+      registered: false,
+      role: 3,
+      term: false
+    }
+}
+
+[State 47]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: false,
+      rc: 0,
+      reaped: false,
+      registered: true,
+      role: 1,
+      term: true
+    }
+}
+
+[State 48]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: -6,
+      reaped: false,
+      registered: false,
+      role: 3,
+      term: true
+    }
+}
+
+[State 49]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: false,
+      rc: 0,
+      reaped: true,
+      registered: false,
+      role: 3,
+      term: false
+    }
+}
+
+[State 50]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: true,
+      rc: -15,
+      reaped: false,
+      registered: false,
+      role: 3,
+      term: true
+    }
+}
+
+[State 51]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: false,
+      rc: -15,
+      reaped: false,
+      registered: false,
+      role: 2,
+      term: true
+    }
+}
+
+[State 52]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: false,
+      rc: -6,
+      reaped: false,
+      registered: true,
+      role: 2,
+      term: false
+    }
+}
+
+[State 53]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: 1,
+      reaped: true,
+      registered: false,
+      role: 2,
+      term: false
+    }
+}
+
+[State 54]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: false,
+      rc: 1,
+      reaped: false,
+      registered: false,
+      role: 1,
+      term: true
+    }
+}
+
+[State 55]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: -6,
+      reaped: true,
+      registered: false,
+      role: 0,
+      term: true
+    }
+}
+
+[State 56]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: -15,
+      reaped: true,
+      registered: true,
+      role: 1,
+      term: false
+    }
+}
+
+[State 57]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: false,
+      rc: -9,
+      reaped: false,
+      registered: false,
+      role: 0,
+      term: true
+    }
+}
+
+[State 58]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: -15,
+      reaped: true,
+      registered: false,
+      role: 1,
+      term: true
+    }
+}
+
+[State 59]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: false,
+      rc: 0,
+      reaped: true,
+      registered: true,
+      role: 4,
+      term: false
+    }
+}
+
+[State 60]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: false,
+      rc: 1,
+      reaped: false,
+      registered: true,
+      role: 2,
+      term: false
+    }
+}
+
+[State 61]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: 0,
+      reaped: true,
+      registered: true,
+      role: 1,
+      term: false
+    }
+}
+
+[State 62]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: 1,
+      reaped: false,
+      registered: true,
+      role: 3,
+      term: true
+    }
+}
+
+[State 63]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: -6,
+      reaped: true,
+      registered: false,
+      role: 1,
+      term: true
+    }
+}
+
+[State 64]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: false,
+      rc: -15,
+      reaped: false,
+      registered: false,
+      role: 2,
+      term: true
+    }
+}
+
+[State 65]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: -15,
+      reaped: false,
+      registered: false,
+      role: 0,
+      term: false
+    }
+}
+
+[State 66]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: 1,
+      reaped: true,
+      registered: true,
+      role: 1,
+      term: false
+    }
+}
+
+[State 67]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: -6,
+      reaped: false,
+      registered: false,
+      role: 2,
+      term: true
+    }
+}
+
+[State 68]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: -6,
+      reaped: true,
+      registered: true,
+      role: 0,
+      term: true
+    }
+}
+
+[State 69]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: true,
+      rc: 0,
+      reaped: true,
+      registered: true,
+      role: 3,
+      term: true
+    }
+}
+
+[State 70]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: true,
+      rc: -6,
+      reaped: false,
+      registered: true,
+      role: 1,
+      term: true
+    }
+}
+
+[State 71]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: 0,
+      reaped: true,
+      registered: false,
+      role: 2,
+      term: true
+    }
+}
+
+[State 72]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: false,
+      rc: -15,
+      reaped: true,
+      registered: true,
+      role: 1,
+      term: false
+    }
+}
+
+[State 73]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: -6,
+      reaped: false,
+      registered: true,
+      role: 0,
+      term: true
+    }
+}
+
+[State 74]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: 0,
+      reaped: true,
+      registered: false,
+      role: 3,
+      term: false
+    }
+}
+
+[State 75]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: -9,
+      reaped: true,
+      registered: true,
+      role: 1,
+      term: true
+    }
+}
+
+[State 76]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: -15,
+      reaped: true,
+      registered: false,
+      role: 1,
+      term: true
+    }
+}
+
+[State 77]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: false,
+      rc: 1,
+      reaped: true,
+      registered: false,
+      role: 1,
+      term: true
+    }
+}
+
+[State 78]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: -15,
+      reaped: false,
+      registered: false,
+      role: 0,
+      term: false
+    }
+}
+
+[State 79]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: false,
+      rc: 1,
+      reaped: true,
+      registered: false,
+      role: 2,
+      term: false
+    }
+}
+
+[State 80]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: true,
+      rc: -6,
+      reaped: true,
+      registered: false,
+      role: 3,
+      term: true
+    }
+}
+
+[State 81]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: 1,
+      reaped: true,
+      registered: true,
+      role: 1,
+      term: true
+    }
+}
+
+[State 82]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: 1,
+      reaped: false,
+      registered: false,
+      role: 0,
+      term: true
+    }
+}
+
+[State 83]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: 1,
+      reaped: false,
+      registered: true,
+      role: 1,
+      term: false
+    }
+}
+
+[State 84]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: -6,
+      reaped: true,
+      registered: true,
+      role: 1,
+      term: true
+    }
+}
+
+[State 85]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: false,
+      rc: -6,
+      reaped: true,
+      registered: false,
+      role: 4,
+      term: false
+    }
+}
+
+[State 86]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: 1,
+      reaped: true,
+      registered: true,
+      role: 0,
+      term: true
+    }
+}
+
+[State 87]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: -15,
+      reaped: false,
+      registered: false,
+      role: 2,
+      term: false
+    }
+}
+
+[State 88]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: 0,
+      reaped: true,
+      registered: true,
+      role: 0,
+      term: true
+    }
+}
+
+[State 89]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: false,
+      rc: -9,
+      reaped: false,
+      registered: false,
+      role: 2,
+      term: true
+    }
+}
+
+[State 90]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: false,
+      rc: 0,
+      reaped: false,
+      registered: true,
+      role: 3,
+      term: true
+    }
+}
+
+[State 91]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: 1,
+      reaped: false,
+      registered: true,
+      role: 2,
+      term: true
+    }
+}
+
+[State 92]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: false,
+      rc: -6,
+      reaped: true,
+      registered: true,
+      role: 1,
+      term: false
+    }
+}
+
+[State 93]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: false,
+      rc: -15,
+      reaped: true,
+      registered: false,
+      role: 0,
+      term: true
+    }
+}
+
+[State 94]
+{
+  row:
+    {
+      error: true,
+      identity: false,
+      kill: true,
+      rc: 0,
+      reaped: false,
+      registered: true,
+      role: 3,
+      term: false
+    }
+}
+
+[State 95]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: -6,
+      reaped: false,
+      registered: true,
+      role: 3,
+      term: false
+    }
+}
+
+[State 96]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: 0,
+      reaped: true,
+      registered: false,
+      role: 1,
+      term: false
+    }
+}
+
+[State 97]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: 0,
+      reaped: true,
+      registered: true,
+      role: 1,
+      term: false
+    }
+}
+
+[State 98]
+{
+  row:
+    {
+      error: false,
+      identity: false,
+      kill: true,
+      rc: -9,
+      reaped: false,
+      registered: false,
+      role: 1,
+      term: true
+    }
+}
+
+[State 99]
+{
+  row:
+    {
+      error: true,
+      identity: true,
+      kill: false,
+      rc: -9,
+      reaped: true,
+      registered: false,
+      role: 1,
+      term: false
+    }
+}
+
+[State 100]
+{
+  row:
+    {
+      error: false,
+      identity: true,
+      kill: true,
+      rc: 1,
+      reaped: false,
+      registered: false,
+      role: 4,
+      term: false
+    }
+}
+
+[ok] No violation found (212ms at 9434 traces/second).
+Trace length statistics: max=101, min=101, average=101.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x55ac0b0ce9d7c335 --backend=rust to reproduce.

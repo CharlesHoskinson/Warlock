@@ -1,0 +1,34 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/whole-window/widget_v63/Windows.qml
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/whole-window/widget_v64/Windows.qml
+@@ -57,6 +57,17 @@
+     if (g.windows.length > 1) { openGroup(index, false); return }
+     activateIndex(index)
+   }
++  // Diagnostics only: inspecting other outputs must not move focus or activate a window.
++  function diagnosticState() {
++    var monitor=root.monitors.find(function(m) { return m.id===root.currentMonitor })
++    var bx=root.bar && root.bar.position==="right" && root.barScreen && root.barWindow ? root.barScreen.width-root.barWindow.width : 0
++    var by=root.bar && root.bar.position==="bottom" && root.barScreen && root.barWindow ? root.barScreen.height-root.barWindow.height : 0
++    return {screenName:root.barScreen ? root.barScreen.name : "", monitorGeometry:monitor ? {x:monitor.x,y:monitor.y,width:monitor.width/monitor.scale,height:monitor.height/monitor.scale} : null, barOffset:{x:bx,y:by}, barSize:{width:root.barWindow ? root.barWindow.width : 0,height:root.barWindow ? root.barWindow.height : 0}, fileDragActive:root.fileDragActive,fileDragOnTaskbar:root.fileDragOnTaskbar,fileDragStamp:root.fileDragStamp,filePreviewKey:root.filePreviewKey,dropSize:[taskDrop.width,taskDrop.height],dragEntries:root.dragEntries, dragGroupKey:root.dragGroupKey, dragActivated:root.dragActivated, taskbarItems:root.groups.map(function(g,i) { var item=taskRepeater.itemAt(i); var pos=item && root.barWindow ? item.mapToItem(root.barWindow.contentItem,0,0) : {x:0,y:0}; return {key:g.displayKey,x:pos.x,y:pos.y,width:root.widthFor(g),height:item ? item.height : 0,windows:g.windows.map(function(w) { return w.address })} }), previewItems:!root.menuMode && root.popupGroup ? root.popupGroup.windows.map(function(w,i) { var item=windowRepeater.itemAt(i); var pos=item && item.QsWindow.window ? item.mapToItem(null,0,0) : {x:0,y:0}; return {address:w.address,x:pos.x,y:pos.y,width:item ? item.width : 0,height:item ? item.height : 0} }) : [], groups:root.groups.length, wheelEvents:root.wheelEvents, currentMonitor:root.currentMonitor, selectedWindowIndex:root.selectedWindowIndex, popupScrollY:popupFlickable.contentY, popupViewportHeight:popupFlickable.height, popupContentHeight:popupFlickable.contentHeight, menuLabels:root.menuItems.map(function(item) { return item.label }), currentDesktop:root.currentDesktop, indicators:root.groups.map(function(g) { return {key:g.key, windows:g.windows.map(function(w) { return w.address }), launcher:g.launcher || {}, urgent:g.windows.some(function(w) { return w.urgent === true })} }), popupOpen:root.popupOpen, popupIndex:root.popupIndex, menuMode:root.menuMode, keyboardMode:root.keyboardMode, keyboardFocus:popupKeyCatcher.activeFocus, combineMode:root.taskbarSettings.combineMode || "always", displayMode:root.taskbarSettings.displayMode || "all", desktopScope:root.taskbarSettings.desktopScope || "all", switcherScope:root.taskbarSettings.switcherScope || "current"}
++  }
++  function diagnosticStates() {
++    var items=root.bar && typeof root.bar.moduleWidgets==="function" ? root.bar.moduleWidgets(root.moduleName) : [root]
++    return items.filter(function(item) { return item && typeof item.diagnosticState==="function" }).map(function(item) { return item.diagnosticState() })
++  }
+   IpcHandler {
+     target: "hoskinson.windows"
+     enabled: root.ipcOwner
+@@ -84,7 +95,12 @@
+       var items=root.bar && typeof root.bar.moduleWidgets==="function" ? root.bar.moduleWidgets(root.moduleName) : [root]
+       items.forEach(function(item) {if(item && item.externalFileDrag) item.externalFileDrag(active,x,y,monitor,stamp)})
+     }
+-    function state(): string { return JSON.stringify({fileDragActive:root.fileDragActive,fileDragOnTaskbar:root.fileDragOnTaskbar,fileDragStamp:root.fileDragStamp,filePreviewKey:root.filePreviewKey,dropSize:[taskDrop.width,taskDrop.height],dragEntries:root.dragEntries, dragGroupKey:root.dragGroupKey, dragActivated:root.dragActivated, taskbarItems:root.groups.map(function(g,i) { var item=taskRepeater.itemAt(i); var pos=item && root.barWindow ? item.mapToItem(root.barWindow.contentItem,0,0) : {x:0,y:0}; return {key:g.displayKey,x:pos.x,y:pos.y,width:root.widthFor(g),windows:g.windows.map(function(w) { return w.address })} }), previewItems:!root.menuMode && root.popupGroup ? root.popupGroup.windows.map(function(w,i) { var item=windowRepeater.itemAt(i); var pos=item && item.QsWindow.window ? item.mapToItem(null,0,0) : {x:0,y:0}; return {address:w.address,x:pos.x,y:pos.y,width:item ? item.width : 0,height:item ? item.height : 0} }) : [], groups:root.groups.length, wheelEvents:root.wheelEvents, currentMonitor:root.currentMonitor, selectedWindowIndex:root.selectedWindowIndex, popupScrollY:popupFlickable.contentY, popupViewportHeight:popupFlickable.height, popupContentHeight:popupFlickable.contentHeight, menuLabels:root.menuItems.map(function(item) { return item.label }), currentDesktop:root.currentDesktop, indicators:root.groups.map(function(g) { return {key:g.key, windows:g.windows.map(function(w) { return w.address }), launcher:g.launcher || {}, urgent:g.windows.some(function(w) { return w.urgent === true })} }), popupOpen:root.popupOpen, popupIndex:root.popupIndex, menuMode:root.menuMode, keyboardMode:root.keyboardMode, keyboardFocus:popupKeyCatcher.activeFocus, combineMode:root.taskbarSettings.combineMode || "always", displayMode:root.taskbarSettings.displayMode || "all", desktopScope:root.taskbarSettings.desktopScope || "all", switcherScope:root.taskbarSettings.switcherScope || "current"}) }
++    function state(): string { return JSON.stringify(root.diagnosticState()) }
++    function stateAll(): string { return JSON.stringify(root.diagnosticStates()) }
++    function stateForMonitor(monitor: int): string {
++      var states=root.diagnosticStates()
++      return JSON.stringify(states.find(function(item) { return item.currentMonitor===monitor }) || null)
++    }
+     function activate(number: int): void { root.activateIndex(number-1) }
+     function launch(number: int): void { var g=root.groups[number-1]; if(g && g.desktopId) root.taskbarAction("launch",g.desktopId) }
+     function menu(number: int): void { root.openGroup(number-1,true); root.keyboardMode=true }

@@ -1,0 +1,28 @@
+{
+  "updatedUTC": "2026-10-02T05:46:12.065201+00:00",
+  "result": "root private native grant",
+  "sourceReview": "/home/hoskinson/window-integration-qa/toolkit-held-v14-root-source-review-v1.json",
+  "sourceReviewSHA256": "81a4dfc867f7f8b4f95984cbfbee6a410fc69918796bde5691d88703dbb44046",
+  "manifestSHA256": "06e69ce03f4914c4afc6864633d9141fa352e3598630c2af50d81e297eb78537",
+  "sourceReadySHA256": "d87e3037d4e2b38760c614ce8ddd97c093cd79147c108d51f6746679f54403c0",
+  "preflightExitCode": 0,
+  "rootFocusedTests": 37,
+  "sourceInputs": 25720,
+  "sourceModes": 25720,
+  "links": 342,
+  "rootSoleNativeOwner": true,
+  "mainWrites": false,
+  "mainRestorationWrites": false,
+  "original52MatrixAnd15sDeadlinePreserved": true,
+  "crashHandoffAllFiveApplied": true,
+  "fullWindowsParityAccepted": false,
+  "command": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/run_native.py",
+    "--attempt",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/attempt-1"
+  ]
+}

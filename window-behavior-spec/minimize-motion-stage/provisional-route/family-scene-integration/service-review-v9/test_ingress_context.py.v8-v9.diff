@@ -1,0 +1,30 @@
+--- service-review-v8/test_ingress_context.py
++++ service-review-v9/test_ingress_context.py
+@@ -31,11 +31,11 @@
+         self.assertEqual(result['receipt'],new['receipt'])
+     def test_context_failure_retires_visual_but_cannot_settle_unvalidated_restore(self):
+         self.request();c=self.m.actors[0].controller;old=self.seeded(c);self.ready(c,old)
+-        before=list(self.d.commits);pending=self.reserve(2,'restore')
++        before=list(self.d.commits);pending=self.reserve(2,'restore');provisional=c.current
+         self.assertTrue(self.m.fail_ingress(pending['receipt'],'native output disappeared'))
+         self.assertIsNone(c.current);self.assertEqual(self.d.commits,before)
+         self.assertEqual(self.boundaries[0][1].sent[-1]['command'],'cancel')
+-        self.assertEqual(self.boundaries[0][1].sent[-1]['token'],old.token)
++        self.assertEqual(self.boundaries[0][1].sent[-1]['token'],provisional.token)
+         self.assertTrue(self.m.ingress_history[-1]['failed'])
+     def test_obsolete_context_failure_cannot_cancel_current_visual(self):
+         self.request();c=self.m.actors[0].controller;self.seeded(c)
+@@ -46,11 +46,11 @@
+         self.assertIs(c.current,latest);self.assertEqual(len(self.boundaries[0][1].sent),count)
+     def test_context_deadline_is_failure_never_native_completion(self):
+         self.request();c=self.m.actors[0].controller;old=self.seeded(c)
+-        pending=self.reserve(2)
++        pending=self.reserve(2);provisional=c.current
+         self.m.pending[pending['receipt']]['receivedNs']-=3000000000
+         self.m.watchdog()
+         self.assertIsNone(c.current);self.assertFalse(self.d.commits)
+         self.assertTrue(self.m.ingress_history[-1]['failed'])
+-        self.assertIn(old.token,c.retired)
++        self.assertIn(provisional.token,c.retired)
+ 
+ if __name__=='__main__':unittest.main()

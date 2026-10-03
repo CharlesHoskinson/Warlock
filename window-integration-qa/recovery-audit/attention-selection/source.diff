@@ -1,0 +1,60 @@
+--- /home/hoskinson/.local/bin/hypr-taskbar-attention
++++ /home/hoskinson/window-integration-qa/recovery-audit/attention-selection/hypr-taskbar-attention
+@@ -8,6 +8,7 @@
+ import re
+ import socket
+ import subprocess
++import sys
+ import tempfile
+ import time
+ 
+@@ -63,14 +64,35 @@
+ 
+ def event_socket_path(runtime, signature):
+     """Event and hyprctl queries must observe the same compositor instance."""
++    if not signature:
++        raise ValueError("Compositor instance must be resolved before opening an event stream")
++    return runtime / "hypr" / signature / ".socket2.sock"
++
++
++def compositor_instance():
++    """Prefer the session target; outside a session only a unique target is safe."""
++    signature = os.getenv("HYPRLAND_INSTANCE_SIGNATURE", "")
+     if signature:
+-        return runtime / "hypr" / signature / ".socket2.sock"
+-    candidates = list((runtime / "hypr").glob("*/.socket2.sock"))
+-    return max(candidates, key=lambda path: path.stat().st_mtime) if candidates else None
++        return signature
++    try:
++        instances = json.loads(subprocess.check_output(
++            ["hyprctl", "instances", "-j"], text=True, timeout=3))
++    except (subprocess.SubprocessError, ValueError, OSError) as error:
++        raise ValueError("Cannot resolve a unique compositor instance") from error
++    if not isinstance(instances, list) or len(instances) != 1:
++        raise ValueError("Cannot resolve a unique compositor instance")
++    row = instances[0]
++    signature = row.get("instance") if isinstance(row, dict) else None
++    if not isinstance(signature, str) or not signature:
++        raise ValueError("Unique compositor instance has no signature")
++    # Subsequent hyprctl calls and reconnects must share the selected stream.
++    os.environ["HYPRLAND_INSTANCE_SIGNATURE"] = signature
++    return signature
+ 
+ 
+ def run():
+-    signature = os.getenv("HYPRLAND_INSTANCE_SIGNATURE", "")
++    # Resolve before creating a lock or clearing a valid cached state.
++    signature = compositor_instance()
+     RUNTIME.mkdir(parents=True, exist_ok=True)
+     with (RUNTIME / ".hypr-taskbar-attention.lock").open("a") as lock:
+         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+@@ -106,4 +128,8 @@
+ 
+ 
+ if __name__ == "__main__":
+-    run()
++    try:
++        run()
++    except ValueError as error:
++        print(f"hypr-taskbar-attention: {error}", file=sys.stderr)
++        sys.exit(2)

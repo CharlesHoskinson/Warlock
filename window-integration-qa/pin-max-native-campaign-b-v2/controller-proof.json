@@ -1,0 +1,24 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/tests/test_controller_packet.py"
+      ],
+      "startedNs": 1790982969726516025,
+      "finishedNs": 1790982969891571830,
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/tests/final-cpu.log",
+      "logSHA256": "54ab5bd71b05b8a74b0568edaf7ff8b0cda30ecd32f9193779b5ce269670c155",
+      "cpuOnly": true
+    }
+  ],
+  "CPUCount": 16,
+  "noNativeCalls": true,
+  "noCandidateExecution": true,
+  "rootAcceptedObserverDecoderExact": true,
+  "actualReadPairAndReadelfPassed": true,
+  "originalBudgetsUnchanged": true,
+  "originalA14NeverInvoked": true
+}

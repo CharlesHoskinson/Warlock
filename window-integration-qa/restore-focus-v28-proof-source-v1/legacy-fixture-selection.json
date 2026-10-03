@@ -1,0 +1,13 @@
+{
+  "result": "pass",
+  "scope": "test-only explicit legacy CpuDesktop capability selection",
+  "originalFixtureWholeFileInverse": true,
+  "oldSHA256": "f259e2646ca386737d9ccf24a1b34fe3c060f62a1a6b672899ba45ca88553d38",
+  "newSHA256": "f8ba2c1e1243866d966e75877a614aadc58357545006141792758e79b7c2a2d0",
+  "mode": 420,
+  "originalAssertionsAndDeadlinesByteExact": true,
+  "newActualTransactionTests": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/test_focus_transaction.py",
+  "retainedFailedFullProof": "/home/hoskinson/window-integration-qa/restore-focus-v28-full-proof-v1/report.json",
+  "approval": "Root message: approved only apply_destinations=None and refresh_destinations=None on explicit legacy CpuDesktop; no production selection change",
+  "patch": "--- a/fixture_restore_planning.py\n+++ b/fixture_restore_planning.py\n@@ -15,6 +15,9 @@\n \n \n class CpuDesktop(NativeDesktop):\n+    # Explicit legacy CPU route retains six real jobs and three refreshes.\n+    apply_destinations=None\n+    refresh_destinations=None\n     retire_gestures=None\n     finish_capture_previews=None\n     family_evidence=None\n"
+}

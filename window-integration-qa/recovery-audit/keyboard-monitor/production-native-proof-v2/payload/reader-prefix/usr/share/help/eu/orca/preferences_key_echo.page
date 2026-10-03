@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_key_echo" xml:lang="eu">
+  <info>
+    <title type="link">Oihartzuna</title>
+    <title type="sort">4. Oihartzuna</title>
+    <desc>Idazten ari zaren heinean zer esaten den konfiguratzea</desc>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_key_bindings"/>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Oihartzunaren hobespenak</title>
+  <section id="keyecho">
+    <title>Gaitu teklen oihartzuna</title>
+    <p>
+      Orca's key echo setting controls what happens each time you press
+      a key. To enable key echo, check the "Enable key echo" checkbox.
+      Doing so causes additional checkboxes to become available through
+      which you can choose exactly which keys should and should not be
+      echoed to best suit your needs.
+    </p>
+    <p>Balio lehenetsia: markatuta</p>  
+    <section id="keyecho_enable_alphanumeric">
+      <title>Gaitu tekla alfabetikoak</title>
+      <p>Aukera honek kontrolatzen du ea <key>a</key>, <key>b</key>, <key>c</key> eta antzeko teklak esango diren ala ez sakatzen direnean.</p>
+      <p>Balio lehenetsia: markatuta</p>
+    </section>
+    <section id="keyecho_enable_numeric">
+      <title>Gaitu zenbakizko teklatuak</title>
+      <p>Aukera honek kontrolatzen du ea <key>1</key>, <key>2</key>, <key>3</key> eta antzeko teklak esango diren ala ez sakatzen direnean.</p>
+      <p>Balio lehenetsia: markatuta</p>
+    </section>
+    <section id="keyecho_enable_punctuation">
+      <title>Gaitu puntuazio-teklak</title>
+      <p>Aukera honek kontrolatzen du ea <key>%</key>, <key>;</key>, <key>?</key> eta antzeko teklak esango diren ala ez sakatzen direnean.</p>
+      <p>Balio lehenetsia: markatuta</p>
+    </section>
+    <section id="keyecho_enable_space">
+      <title>Gaitu zuriunea</title>
+      <p>Aukera honek kontrolatzen du ea <key>Zuriunea</key> esango den ala ez sakatzen denean.</p>
+      <p>Balio lehenetsia: markatuta</p>
+    </section>
+    <section id="keyecho_enable_modifier">
+      <title>Gaitu tekla aldatzaileak</title>
+      <p>Aukera honek kontrolatzen du ea <key>⇧</key>, <key>Ctrl</key>, <key>Alt</key> eta antzeko teklak esango diren ala ez sakatzen direnean.</p>
+      <p>Balio lehenetsia: markatuta</p>
+    </section>
+    <section id="keyecho_enable_function">
+      <title>Gaitu tekla aldatzaileak</title>
+      <p>Aukera honek kontrolatzen du ea <key>F1</key> eta <key>F12</key> arteko teklak esango diren ala ez sakatzen direnean.</p>
+      <p>Balio lehenetsia: markatuta</p>
+    </section>
+    <section id="keyecho_enable_action">
+      <title>Gaitu ekintza-teklak</title>
+      <p>
+        This option controls whether or not <key>BackSpace</key>, <key>Delete
+        </key>, <key>Return</key>, <key>Esc</key>, <key>Tab</key>, <key>Page
+        Up</key>, <key>Page Down</key>, <key>Home</key>, and <key>End</key>
+        should be spoken when pressed.
+      </p>
+      <p>Balio lehenetsia: markatuta</p>
+    </section>
+    <section id="keyecho_enable_navigation">
+      <title>Gaitu nabigazio-teklak</title>
+      <p>
+        This option controls whether or not <key>Left</key>, <key>Right</key>,
+        <key>Up</key>, and <key>Down</key> should be spoken when pressed. This
+        option also applies to any key combination in which <key>Orca
+        Modifier</key> is being held down, for instance when flat review is
+        being used.
+      </p>
+      <p>Balio lehenetsia: markatu gabe</p>
+    </section>
+    <section id="keyecho_enable_diacritical">
+      <title>Gaitu tarterik gabeko tekla diakritikoak</title>
+      <p>
+        This option controls whether or not "dead keys" used to generate
+        accented letters should be spoken when pressed.
+      </p>
+      <p>Balio lehenetsia: markatu gabe</p>
+    </section>
+  </section>
+  <section id="characterecho">
+    <title>Gaitu oihartzuna karaktere arabera</title>
+    <p>
+      Enabling this option causes Orca to echo the character
+      you just typed.
+    </p>
+    <p>
+      While echo by character seems quite similar to the key echo of
+      alphabetic, numeric, and punctuation keys, there are important differences,
+      especially with respect to accented letters and other symbols for which
+      there is no dedicated key:
+    </p>
+    <list>
+      <item>
+        <p>
+          Key echo causes <app>Orca</app> to announce what you just <em>
+          pressed</em>.
+        </p>
+      </item>
+      <item>
+        <p>
+          Character echo causes <app>Orca</app> to announce what was just
+          <em>inserted</em>.
+        </p>
+      </item>
+    </list>
+    <p>Hortaz, azentudun karaktereak idatzi ahala esan daitezen nahi baduzu, karaktere-oihartzuna gaitu behar duzu.</p>
+    <p>Balio lehenetsia: markatu gabe</p>
+    <note style="tip">
+      <title>Tekla-oihartzuna eta karaktere-oihartzuna gaitzea</title>
+      <p>
+        If you like key echo and you frequently type accented characters,
+        consider enabling both. <app>Orca</app>'s character echo logic
+        attempts to filter out characters which were spoken as a result
+        of key echo, thus minimizing the likelihood of "double speaking"
+        as you type.
+      </p>
+    </note>
+  </section>
+  <section id="wordandsentenceecho">
+    <title>Enable echo by word and Enable echo by sentence</title>
+    <p>
+      Checking the <gui>Enable echo by word</gui> checkbox causes
+      <app>Orca</app> to echo the word you just typed. Similarly,
+      checking the <gui>Enable echo by sentence</gui> checkbox causes
+      <app>Orca</app> to echo the sentence you just typed.
+    </p>
+    <p>Balio lehenetsia: markatu gabe</p>
+  </section>
+</page>

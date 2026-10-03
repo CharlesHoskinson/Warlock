@@ -1,0 +1,27 @@
+{
+  "result": "fail",
+  "packet": "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v4-popup/source-ready-inputs.json",
+  "packetSHA256": "3396967ba334923e05dc3f18610b4c60ca0f2bd90d1ce1913786a8219d80ebf0",
+  "inputs": 24858,
+  "modes": 24858,
+  "links": 13862,
+  "mismatch": [
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v4-popup/source_ready.py"
+  ],
+  "CPUChecks": 297,
+  "CPUCases": 12,
+  "popupCPUChecks": 60,
+  "formalBaseNamed": 29,
+  "formalPopupInitialNamed": 35,
+  "formalPopupContextNamed": 44,
+  "formalRandomTracesEach": 2000,
+  "formalSteps": 100,
+  "GUI": false,
+  "nativeLaunch": false,
+  "rootReviewPending": true,
+  "installedQSPopupAccepted": false,
+  "wholePinCampaignReady": false,
+  "ProcessRegistryImplemented": false,
+  "batchConsumerAccepted": false,
+  "frozen": false
+}

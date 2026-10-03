@@ -1,0 +1,39 @@
+{
+  "result": "pass",
+  "beforeAuditImplementation": true,
+  "nativeExecuted": false,
+  "namedCases": 10,
+  "randomTraces": 2000,
+  "maxSteps": 100,
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/c1_audit.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  c1_audit\n    ok exactDisplayedPairTest passed 1 test(s)\n    ok submittedOnlyRefusedTest passed 1 test(s)\n    ok swapOnlyRefusedTest passed 1 test(s)\n    ok failedSwapRefusedTest passed 1 test(s)\n    ok earlyFeedbackRefusedTest passed 1 test(s)\n    ok velocityChangeRefusedTest passed 1 test(s)\n    ok outputGenerationRefusedTest passed 1 test(s)\n    ok differentDurationRefusedTest passed 1 test(s)\n    ok differentStartRefusedTest passed 1 test(s)\n    ok closeRevokesTest passed 1 test(s)\n\n  10 passing (98ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/c1_audit.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (382ms at 5236 traces/second).\nUse --seed=0x156b5fd --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "C1_AUDIT_CONTRACT.md": "ef8ad1e03a053470a8469381b25ef27366bacc25ce685b770b9b48fec45f415d",
+    "c1_audit.qnt": "389d0294c4d94757d9de6be23ec11f90b984575828424ccb849adc5a380e3b69"
+  }
+}

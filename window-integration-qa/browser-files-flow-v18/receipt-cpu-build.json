@@ -1,0 +1,30 @@
+{
+  "command": [
+    "c++",
+    "-std=c++20",
+    "-O2",
+    "-fPIC",
+    "-pie",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v16/receipt_cpu.cpp",
+    "-o",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v16/receipt-cpu",
+    "-I/usr/include/qt6/QtQml",
+    "-I/usr/include/qt6",
+    "-DQT_QML_LIB",
+    "-I/usr/include/qt6/QtQmlIntegration",
+    "-DQT_QMLINTEGRATION_LIB",
+    "-I/usr/include/qt6/QtNetwork",
+    "-DQT_NETWORK_LIB",
+    "-I/usr/include/qt6/QtCore",
+    "-DQT_CORE_LIB",
+    "-I/usr/lib/qt6/mkspecs/linux-g++",
+    "-lQt6Qml",
+    "-lQt6Network",
+    "-lQt6Core"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "Running as unit: qa-harness-0311df0d7d5c433a9a7ed51e243d3455.scope; invocation ID: c351e726499a4d108a14ad747d3d9774\n",
+  "binarySHA256": "6931e2b481b1350d11cf2c13e1abbe6f95145b638f52838d034c7ad2692afe18",
+  "nativeGuiExecuted": false
+}

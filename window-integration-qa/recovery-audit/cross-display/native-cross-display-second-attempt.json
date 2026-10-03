@@ -1,0 +1,218 @@
+{
+  "checks": [
+    {
+      "name": "actual FileList copy target",
+      "pass_": true,
+      "event": {
+        "event": "drop",
+        "nativeType": "Gdk.FileList",
+        "uris": [
+          "file:///tmp/native-cross-display-0_s61f8p/copy%20payload%20with%20spaces.bin"
+        ],
+        "bytes": 262166,
+        "sha256": "b002780c5fbf3b1cef1fab39ab213606e0c342175f95fbf01d59a87fbd3819f2",
+        "copy": "/tmp/native-cross-display-0_s61f8p/target-copies/received-52477143118807.bin",
+        "x": 200.0,
+        "y": 130.0,
+        "time": 52477.14337517
+      }
+    },
+    {
+      "name": "direct cross-display baseline owns destination output",
+      "pass_": true
+    },
+    {
+      "name": "leave remote taskbar before dwell preserves minimized target",
+      "pass_": true
+    },
+    {
+      "name": "remote singleton restore retains destination identity and display",
+      "pass_": true
+    }
+  ],
+  "kind": "native physical plus temporary headless output; no physical hotplug claim",
+  "before": {
+    "monitors": [
+      {
+        "id": 0,
+        "name": "eDP-2",
+        "description": "Samsung Display Corp. ATNA60HU01-0",
+        "make": "Samsung Display Corp.",
+        "model": "ATNA60HU01-0 ",
+        "serial": "",
+        "width": 2560,
+        "height": 1600,
+        "physicalWidth": 340,
+        "physicalHeight": 220,
+        "refreshRate": 240.0,
+        "x": 0,
+        "y": 0,
+        "activeWorkspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "specialWorkspace": {
+          "id": 0,
+          "name": ""
+        },
+        "reserved": [
+          0,
+          26,
+          0,
+          0
+        ],
+        "scale": 1.6,
+        "transform": 0,
+        "focused": true,
+        "dpmsStatus": true,
+        "vrr": false,
+        "solitary": "0",
+        "solitaryBlockedBy": [
+          "WINDOWED",
+          "CANDIDATE"
+        ],
+        "activelyTearing": false,
+        "tearingBlockedBy": [
+          "NOT_TORN",
+          "USER",
+          "CANDIDATE"
+        ],
+        "directScanoutTo": "0",
+        "directScanoutBlockedBy": [
+          "USER",
+          "SW",
+          "CANDIDATE"
+        ],
+        "disabled": false,
+        "currentFormat": "XRGB8888",
+        "mirrorOf": "none",
+        "availableModes": [
+          "2560x1600@240.00Hz",
+          "2560x1600@60.00Hz"
+        ],
+        "colorManagementPreset": "srgb",
+        "sdrBrightness": 1,
+        "sdrSaturation": 1,
+        "sdrMinLuminance": 0.2,
+        "sdrMaxLuminance": 80,
+        "hardwareCursorsInUse": false
+      }
+    ],
+    "clients": [
+      [
+        "0x5a02aee429f0",
+        4007,
+        "18000005"
+      ],
+      [
+        "0x5a02b0cc9280",
+        4311,
+        "18000006"
+      ],
+      [
+        "0x5a02afd20bd0",
+        361074,
+        "18000076"
+      ],
+      [
+        "0x5a02afa13e90",
+        252010,
+        "1800006a"
+      ]
+    ],
+    "focus": [
+      "0x5a02afa13e90",
+      252010,
+      "1800006a"
+    ],
+    "cursor": {
+      "x": 527,
+      "y": 539
+    },
+    "a11y": {
+      "exists": true,
+      "dev": 84,
+      "inode": 91312,
+      "connects": true
+    },
+    "catalogHashes": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    }
+  },
+  "result": "fail",
+  "error": "AssertionError('actual native FileList destination copy')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/cross-display/native_cross_display.py\", line 150, in perform\n    self.drop(self.target,'target')\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/cross-display/native_cross_display.py\", line 106, in drop\n    drops=wait(lambda:[e for e in self.events(name) if e['event']=='drop'] if len([e for e in self.events(name) if e['event']=='drop'])>before else None,'actual native FileList destination copy')\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/cross-display/native_cross_display.py\", line 34, in wait\n    raise AssertionError(label)\nAssertionError: actual native FileList destination copy\n",
+  "events": {
+    "source": [
+      {
+        "event": "begin",
+        "time": 52476.522634163
+      },
+      {
+        "event": "end",
+        "delete": false,
+        "time": 52477.143704724
+      },
+      {
+        "event": "begin",
+        "time": 52477.994287036
+      },
+      {
+        "event": "cancel",
+        "time": 52479.692822946
+      },
+      {
+        "event": "end",
+        "delete": false,
+        "time": 52479.692881186
+      },
+      {
+        "event": "begin",
+        "time": 52480.200782748
+      },
+      {
+        "event": "cancel",
+        "time": 52482.400993795
+      },
+      {
+        "event": "end",
+        "delete": false,
+        "time": 52482.401044786
+      }
+    ],
+    "target": [
+      {
+        "event": "drop",
+        "nativeType": "Gdk.FileList",
+        "uris": [
+          "file:///tmp/native-cross-display-0_s61f8p/copy%20payload%20with%20spaces.bin"
+        ],
+        "bytes": 262166,
+        "sha256": "b002780c5fbf3b1cef1fab39ab213606e0c342175f95fbf01d59a87fbd3819f2",
+        "copy": "/tmp/native-cross-display-0_s61f8p/target-copies/received-52477143118807.bin",
+        "x": 200.0,
+        "y": 130.0,
+        "time": 52477.14337517
+      }
+    ],
+    "peer": []
+  },
+  "restoration": {
+    "clientIdentities": true,
+    "clientWorkspaceAndPinned": true,
+    "outputs": true,
+    "catalogBytes": true,
+    "focus": true,
+    "cursor": true,
+    "a11y": true,
+    "dragCleared": true,
+    "configErrors": true,
+    "fixtureProcessesExited": true,
+    "clientGeometry": true
+  },
+  "gtkErrors": "",
+  "diagnosticEmptyRetries": []
+}

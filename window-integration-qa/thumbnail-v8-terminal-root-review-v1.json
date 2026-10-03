@@ -1,0 +1,21 @@
+{
+  "result": "terminal-harness-component-pass",
+  "nativeReady": false,
+  "fullWindowsParityAccepted": false,
+  "harnessHandoff": "/home/hoskinson/window-integration-qa/thumbnail-v8-terminal-source-handoff-v1.json",
+  "harnessSHA256": "4a9bb60a64b884cbe87a747446757336e646600a588a7d06e16e1f8511aac5aa",
+  "proof": {
+    "pythonTests": 124,
+    "namedScenarios": 125,
+    "models": 11,
+    "samples": 2000,
+    "steps": 100
+  },
+  "reviewedRendererDesign": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/INTENDED_RENDERER_ROLE_PATCH-v2.diff",
+  "rendererDesignRuntimeApproval": false,
+  "remainingReviewIssues": [
+    "Require actual registered Popen type and its PID equal the authenticated ownership PID; coherent foreign Popen swaps currently evade object-only comparisons.",
+    "Require exact nested types for registry and launch ownership equality; ordinary Python dict equality accepts numeric bool/float aliases."
+  ],
+  "mainChanged": false
+}

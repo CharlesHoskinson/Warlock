@@ -1,0 +1,88 @@
+{
+  "updatedUTC": "2026-10-02T03:38:14.800235+00:00",
+  "reportSHA256": "829781c77e43bbff3469d3b41eca458bf78c66f7ae301dd93a624861972ef507",
+  "manifestSHA256": "58798f3e8a6de238ae949647678ba581c4d78ee7df7e8702d241205e28dc1b01",
+  "preservationChecks": {
+    "allFrozenBytesExact": true,
+    "allFrozenModesExact": true,
+    "allFrozenLinksExact": true,
+    "all15MainChecksExactAndPass": true,
+    "allRecordedLifetimesGone": true,
+    "runtimeActuallyGone": true,
+    "allClientsGoneBeforeUnload": true,
+    "nativeActuallyUnloaded": true,
+    "noRemainingDescendants": true,
+    "noUnexpectedDescendants": true,
+    "noCleanupErrors": true,
+    "parentTransportHealthy": true
+  },
+  "allPreservationChecks": true,
+  "allNormalClients": false,
+  "original38BaselineAccepted": false,
+  "checksReached": 11,
+  "checksPassed": 11,
+  "serviceEvidenceExists": false,
+  "forcedServiceTermination": true,
+  "forcedServiceKill": true,
+  "originalTerminalAuditorCannotAcceptWithoutServiceEvidence": true,
+  "faultCampaignAuthorized": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-84d3af7871664e01ac88faf45be1be1c.scope",
+    "coreLimit": 1
+  },
+  "processes": [
+    {
+      "pid": 2532657,
+      "start": "13462317",
+      "gone": true
+    },
+    {
+      "pid": 2533123,
+      "start": "13462489",
+      "gone": true
+    },
+    {
+      "pid": 2533304,
+      "start": "13462570",
+      "gone": true
+    },
+    {
+      "pid": 2532136,
+      "start": "13462051",
+      "gone": true
+    },
+    {
+      "pid": 2532137,
+      "start": "13462054",
+      "gone": true
+    },
+    {
+      "pid": 2532235,
+      "start": "13462182",
+      "gone": true
+    },
+    {
+      "pid": 2532136,
+      "start": "13462051",
+      "gone": true
+    },
+    {
+      "pid": 2532137,
+      "start": "13462054",
+      "gone": true
+    },
+    {
+      "pid": 2532235,
+      "start": "13462182",
+      "gone": true
+    }
+  ],
+  "parentTransport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false
+}

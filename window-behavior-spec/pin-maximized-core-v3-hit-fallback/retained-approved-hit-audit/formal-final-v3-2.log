@@ -1,0 +1,2027 @@
+An example execution:
+
+[State 0]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: false,
+      ordinary: 2,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 1]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: true,
+      special: true
+    }
+}
+
+[State 2]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 3]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 4]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: true
+    }
+}
+
+[State 5]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: true
+    }
+}
+
+[State 6]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: true,
+      skip: true,
+      special: true
+    }
+}
+
+[State 7]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: false,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: false,
+      skip: false,
+      special: true
+    }
+}
+
+[State 8]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: true
+    }
+}
+
+[State 9]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: false,
+      ordinary: 2,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: true,
+      skip: false,
+      special: true
+    }
+}
+
+[State 10]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: false,
+      ordinary: 0,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 11]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 12]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 13]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: false,
+      ordinary: 0,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: false
+    }
+}
+
+[State 14]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 15]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: true
+    }
+}
+
+[State 16]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 17]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: false,
+      ordinary: 2,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 18]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 19]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 20]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: false,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 21]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 22]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: false,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 23]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 24]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: true
+    }
+}
+
+[State 25]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 26]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 27]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 28]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: false,
+      ordinary: 0,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 29]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: true,
+      special: false
+    }
+}
+
+[State 30]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 31]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: false,
+      ordinary: 0,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 32]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 33]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 34]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 35]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 36]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: true,
+      skip: true,
+      special: true
+    }
+}
+
+[State 37]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 38]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 39]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 40]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: true
+    }
+}
+
+[State 41]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: false
+    }
+}
+
+[State 42]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 43]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: false,
+      skip: false,
+      special: true
+    }
+}
+
+[State 44]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 45]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: true,
+      special: false
+    }
+}
+
+[State 46]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: false,
+      ordinary: 0,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 47]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: true
+    }
+}
+
+[State 48]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 49]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 50]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: false
+    }
+}
+
+[State 51]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 52]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: false,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 53]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: false,
+      ordinary: 2,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 54]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: false,
+      ordinary: 2,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 55]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: false,
+      special: true
+    }
+}
+
+[State 56]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 57]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: false,
+      ordinary: 0,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: true,
+      special: true
+    }
+}
+
+[State 58]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: false,
+      skip: true,
+      special: false
+    }
+}
+
+[State 59]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 60]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: false,
+      ordinary: 2,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 61]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: false,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: true,
+      skip: true,
+      special: true
+    }
+}
+
+[State 62]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 63]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: false
+    }
+}
+
+[State 64]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: false,
+      ordinary: 2,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 65]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: false
+    }
+}
+
+[State 66]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 67]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 68]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: false,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 69]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 70]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 71]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: false,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 72]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 73]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[State 74]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: true,
+      skip: false,
+      special: true
+    }
+}
+
+[State 75]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 76]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: false,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 77]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 78]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: false
+    }
+}
+
+[State 79]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 80]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 81]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 82]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: false,
+      ordinary: 0,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 83]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 84]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: true,
+      skip: true,
+      special: true
+    }
+}
+
+[State 85]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: false,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 86]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 87]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: true
+    }
+}
+
+[State 88]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: true,
+      skip: true,
+      special: true
+    }
+}
+
+[State 89]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: false,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: true
+    }
+}
+
+[State 90]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 91]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: false,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: true
+    }
+}
+
+[State 92]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 93]
+{
+  request:
+    {
+      band: 3,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 94]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: false,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: true,
+      skip: false,
+      special: false
+    }
+}
+
+[State 95]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: false,
+      layer: true,
+      ordinary: 0,
+      ordinaryEligible: false,
+      priority: true,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 96]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 2,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: true,
+      ordinary: 1,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: true,
+      skip: true,
+      special: true
+    }
+}
+
+[State 97]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: false,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 2,
+      ordinaryEligible: true,
+      priority: false,
+      protectedFs: false,
+      skip: true,
+      special: true
+    }
+}
+
+[State 98]
+{
+  request:
+    {
+      band: 0,
+      bandEligible: true,
+      floatingOnly: true,
+      fs: 2,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: true,
+      ordinary: 3,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: true
+    }
+}
+
+[State 99]
+{
+  request:
+    {
+      band: 1,
+      bandEligible: true,
+      floatingOnly: false,
+      fs: 0,
+      idealFloatingAllowed: false,
+      idealProtected: true,
+      layer: false,
+      ordinary: 3,
+      ordinaryEligible: true,
+      priority: true,
+      protectedFs: true,
+      skip: true,
+      special: false
+    }
+}
+
+[State 100]
+{
+  request:
+    {
+      band: 2,
+      bandEligible: false,
+      floatingOnly: false,
+      fs: 1,
+      idealFloatingAllowed: true,
+      idealProtected: true,
+      layer: false,
+      ordinary: 1,
+      ordinaryEligible: false,
+      priority: false,
+      protectedFs: false,
+      skip: false,
+      special: false
+    }
+}
+
+[ok] No violation found (1144ms at 1748 traces/second).
+Trace length statistics: max=101, min=101, average=101.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x69fb69399403b5e0 --backend=rust to reproduce.

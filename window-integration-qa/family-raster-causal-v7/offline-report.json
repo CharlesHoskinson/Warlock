@@ -1,0 +1,51 @@
+{
+  "result": "pass",
+  "nativeLaunch": false,
+  "pythonChecks": 34,
+  "quintNamed": 7,
+  "quintSamples": 2000,
+  "quintSteps": 100,
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/home/hoskinson/window-integration-qa/family-raster-causal-v7",
+        "-p",
+        "test_*.py",
+        "-q"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-raster-causal-v7/offline-0.log",
+      "logSHA256": "cdc2fcc65d90cf496c4bff58a22ff2b49feed9b4bfe5792a12e72a5e30cfa393"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-raster-causal-v7/collection_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-raster-causal-v7/offline-1.log",
+      "logSHA256": "220cf113f6cd949438aabffe89cfa8d622863bbbf7e1a0241f1be4700a16c34c"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-raster-causal-v7/collection.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-raster-causal-v7/offline-2.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

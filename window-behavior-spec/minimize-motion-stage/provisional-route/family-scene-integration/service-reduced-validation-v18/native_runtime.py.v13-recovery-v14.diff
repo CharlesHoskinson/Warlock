@@ -1,0 +1,130 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/native_runtime.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v14/native_runtime.py
+@@ -1,4 +1,5 @@
+ """Explicit staged native composition. Importing does not create or launch anything."""
++from copy import deepcopy
+ import argparse
+ import hashlib
+ import fcntl
+@@ -133,7 +134,7 @@
+         self.session_guard.verify()
+         env=dict(self.session_guard.env,HYPR_WINDOWCTL_FAMILY_SINGLE='1',HYPR_WINDOWCTL_PREVIEW_READY='1' if preview_ready else '0')
+         with PinnedExecutable(self.production.CORE,self.core_hash) as executable:
+-            subprocess.run([executable.path,operation,window['address'],str(window['stableId']),str(window['pid'])],pass_fds=(executable.fd,),env=env,check=True,stdout=subprocess.DEVNULL,timeout=8)
++            self.commands.run([executable.path,operation,window['address'],str(window['stableId']),str(window['pid'])],pass_fds=(executable.fd,),env=env,check=True,stdout=subprocess.DEVNULL,timeout=8)
+ 
+ class NativeFactory:
+     def __init__(self,root,guard,*,producer,producer_hash,core,core_hash):
+@@ -143,31 +144,91 @@
+         for name in ('XDG_RUNTIME_DIR','HYPRLAND_INSTANCE_SIGNATURE','WAYLAND_DISPLAY'):
+             if os.environ.get(name)!=guard.env.get(name):raise ValueError('native adapter process environment differs from selected compositor')
+         self.producer=Path(producer);self.producer_hash=producer_hash;self.core=Path(core);self.core_hash=core_hash;self.desktops=[];self.shared_cache=None
++        self.resources={};self.resource_writer=None;self.helper_ownership=None;self.keeper=None;self.journal_lock=None;self.lease_verify=None
+         # Material proof now, again on each use. No process/actor constructed here.
+         for path,expected in ((producer,producer_hash),(core,core_hash)):
+             with PinnedExecutable(path,expected):pass
++    def bind_lease(self,verify):self.lease_verify=verify
++    def bind_journal(self,writer):
++        self.resource_writer=writer;self.journal_lock=writer.__self__.manager.lock
++        from helper_supervisor import Keeper
++        self.keeper=Keeper(self.root,self.guard.env,self.helper_changed,reservation_lock=self.journal_lock)
++    def helper_changed(self,body):
++        self.helper_ownership=body;self.publish_resource()
++    def helper_snapshot(self):return deepcopy(self.helper_ownership)
++    def close(self):
++        if self.keeper:
++            if self.keeper.jobs:
++                self.keeper.abort();raise RuntimeError('uncertain helper jobs required crash cleanup; normal service closure refused')
++            self.keeper.stop()
++    def resource_snapshot(self):
++        manager=self.resource_writer.__self__.manager
++        required={a.number for a in manager.actors+manager.retiring}
++        if self.helper_ownership:required.update(job['actor'] for job in self.helper_ownership['jobs'] if job['actor'] is not None)
++        live=[v for n,v in self.resources.items() if v['phase']!='closed' or n in required]
++        history=[v for n,v in self.resources.items() if v['phase']=='closed' and n not in required][-32:]
++        return deepcopy(live+history)
++    def publish_resource(self):
++        if self.resource_writer is None:raise RuntimeError('native actor requires durable resource journal before launch')
++        self.resource_writer()
+     def __call__(self,number):
+-        self.guard.verify();actors=self.root/'actors';actors.mkdir(mode=0o700,exist_ok=True);private_directory(actors)
+-        desktop=PinnedNativeDesktop(actors/f'actor-{number}-{uuid.uuid4().hex[:8]}',core=self.core,cache_root=self.root/'snapshot-cache',session_guard=self.guard,core_hash=self.core_hash)
+-        binding=FailureBinding()
+-        with PinnedExecutable(self.producer,self.producer_hash) as executable:
+-            transport=PipeTransport(executable.path,env=self.guard.env,failure=binding,pass_fds=(executable.fd,))
+-        transport.bind_controller=lambda controller:binding.bind(controller.transport_failure)
+-        self.desktops.append(desktop)
+-        self.shared_cache=desktop.shared_cache
+-        return desktop,transport
++        if self.lease_verify is None:raise ValueError('actual held runtime lease binding required')
++        self.lease_verify();self.guard.verify();actors=self.root/'actors';actors.mkdir(mode=0o700,exist_ok=True);private_directory(actors)
++        if self.resource_writer is None:raise RuntimeError('native actor requires durable resource journal before launch')
++        name=actors/f'actor-{number}-{uuid.uuid4().hex}'
++        parent=actors.stat()
++        resource={'actor':number,'phase':'reserved','directory':{'path':str(name),'parentIdentity':[parent.st_dev,parent.st_ino],'identity':None},'renderer':None}
++        self.resources[number]=resource;self.publish_resource()
++        from owned_commands import OwnedCommands
++        commands=OwnedCommands(self.keeper,self.guard.env,number)
++        desktop=transport=None
++        try:
++            desktop=PinnedNativeDesktop(name,core=self.core,cache_root=self.root/'snapshot-cache',session_guard=self.guard,core_hash=self.core_hash,commands=commands)
++            resource['directory']['identity']=list(desktop.directory_identity);resource['phase']='directory';self.publish_resource()
++            binding=FailureBinding()
++            with PinnedExecutable(self.producer,self.producer_hash) as executable:
++                def acquired(ownership):
++                    resource['renderer']=ownership;resource['phase']='gated';self.publish_resource()
++                transport=PipeTransport(executable.path,env=self.guard.env,failure=binding,pass_fds=(executable.fd,),launch_record=acquired,keeper=self.keeper,actor=number)
++            resource['phase']='launched';self.publish_resource()
++            transport.bind_controller=lambda controller:binding.bind(controller.transport_failure)
++            self.desktops.append(desktop)
++            self.shared_cache=desktop.shared_cache
++            return desktop,transport
++        except BaseException:
++            from recovery_resources import process_start as owned_start
++            stopped=resource['renderer'] is None or owned_start(resource['renderer']['pid'])!=resource['renderer']['start']
++            if transport is not None:
++                try:transport.close();stopped=True
++                except Exception:pass
++            if desktop is not None and stopped:
++                try:desktop.dispose()
++                except Exception:pass
++            raise
+     def context(self,request):
+         self.guard.verify()
+         if not self.desktops:raise RuntimeError('accepted request actor missing')
+         return NativeContextProvider(self.desktops[0],session=self.guard.session)(request)
+     def retired(self,number,desktop):
+-        self.desktops.remove(desktop)
++        with self.journal_lock:
++            from recovery_resources import process_start as resource_start
++            record=self.resources[number]
++            if record['renderer'] and resource_start(record['renderer']['pid'])==record['renderer']['start']:
++                raise RuntimeError('actor renderer lifetime still exists after normal retirement')
++            if Path(record['directory']['path']).exists():raise RuntimeError('actor directory still exists after normal retirement')
++            record['phase']='closed';record['outcome']={'oldLifetimeGone':True,'directoryGone':True,'normalRetirement':True}
++            self.publish_resource();self.desktops.remove(desktop)
++    def recover(self,previous):
++        from recovery_runtime import NativeRecovery
++        return NativeRecovery(self,lease_verify=self.lease_verify).recover(previous)
+     def housekeep(self):
+         if self.shared_cache is None:return
+         self.guard.verify()
+-        def clients():return json.loads(subprocess.check_output(['hyprctl','clients','-j'],env=self.guard.env,text=True,timeout=.6))
++        from owned_commands import OwnedCommands
++        commands=getattr(self,'housekeeping_commands',None) or OwnedCommands(self.keeper,self.guard.env)
++        def clients():return json.loads(commands.check_output(['hyprctl','clients','-j'],env=self.guard.env,text=True,timeout=.6))
+         before=clients()
+-        native=json.loads(subprocess.check_output(['hyprctl','repl','print(hl.plugin.hyprbars.window_families())'],env=self.guard.env,text=True,timeout=.6))
++        native=json.loads(commands.check_output(['hyprctl','repl','print(hl.plugin.hyprbars.window_families())'],env=self.guard.env,text=True,timeout=.6))
+         after=clients();live=complete_live_identities(before,native,after)
+         self.guard.verify()
+         self.shared_cache.prune(live,complete=True,nonblocking=True)
+@@ -208,7 +269,7 @@
+     for name in list(os.environ):
+         if name.startswith('HYPR_WINDOWCTL_'):del os.environ[name]
+     factory=NativeFactory(args.root,guard,producer=args.producer,producer_hash=args.producer_sha256,core=args.core,core_hash=args.core_sha256)
+-    service=RuntimeService(args.root,args.session,factory,factory.context)
++    service=RuntimeService(args.root,args.session,factory,factory.context,recovery=factory.recover)
+     signal.signal(signal.SIGTERM,lambda *_:service.stop_requested.set())
+     signal.signal(signal.SIGINT,lambda *_:service.stop_requested.set())
+     service.run()

@@ -1,0 +1,907 @@
+{
+  "result": "accepted-private-C1-family-causal-numeric-replay",
+  "artifactSHA256": {
+    "report.json": "39a85c66e4629d3c5dff2f24fd5b98c79591ec230d8bffeb1d4f1a7bcd810500",
+    "service-evidence.json": "1c31bc5bac22546a2d09218824176caeefae5f1e39af1b5b2997e3e706565c2c",
+    "c1-continuous-audit.json": "acda8a310e181ee415e9dfff0b10a4d87ceda1e42204438875e8fbf22df8dde3",
+    "service-retirement-1.json": "bc073a872f76f6fce1a888a4d843d2573fc03b49d2e6834e35f0beec338409c6",
+    "service-retirement-2.json": "22f272778e54464595101a817ad659c0cfdac7adbfa61a4917beadeafe758210",
+    "service-retirement-3.json": "2e0f5feef773184e327134fe646fa0a571d03d79e7281bfa41289089cedd649c",
+    "service-retirement-4.json": "d4cc1c8fb506568ef8332c064bb77f0e96ea6929323e56f6eca2f6f4ac6a94f7"
+  },
+  "all39Gates": true,
+  "allOriginal38NamesAndGatesPreserved": true,
+  "ordinaryDefaultSelections": [
+    {
+      "launchRole": "production-default",
+      "repairedDefault": true,
+      "actualModeSelectionGate": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "launchRole": "production-default",
+      "repairedDefault": true,
+      "actualModeSelectionGate": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "launchRole": "production-default",
+      "repairedDefault": true,
+      "actualModeSelectionGate": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "launchRole": "production-default",
+      "repairedDefault": true,
+      "actualModeSelectionGate": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    }
+  ],
+  "originalStrictReversal": {
+    "reversals": [
+      {
+        "token": "73a1f1e40580-2",
+        "origins": [
+          {
+            "origin": {
+              "generation": 6,
+              "members": [
+                {
+                  "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+                  "pid": 1992424,
+                  "rectangle": {
+                    "height": 327.16255442345977,
+                    "width": 458.5422014503893,
+                    "x": 91.31832741053687,
+                    "y": 211.66179233688814
+                  },
+                  "stableId": "18000000"
+                },
+                {
+                  "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+                  "pid": 1992424,
+                  "rectangle": {
+                    "height": 211.23933645852193,
+                    "width": 323.29844715796185,
+                    "x": 245.882618030454,
+                    "y": 269.6234013193571
+                  },
+                  "stableId": "18000002"
+                },
+                {
+                  "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+                  "pid": 1992424,
+                  "rectangle": {
+                    "height": 172.59826380354264,
+                    "width": 246.01630184800328,
+                    "x": 313.5044951766677,
+                    "y": 308.26447397433634
+                  },
+                  "stableId": "18000003"
+                }
+              ],
+              "output": "WAYLAND-1",
+              "rectangle": {
+                "height": 327.16255442345977,
+                "width": 477.86273777787903,
+                "x": 91.31832741053687,
+                "y": 211.66179233688814
+              },
+              "sequence": "13",
+              "timestampNs": "113154694834526"
+            },
+            "actualPresentedToken": "73a1f1e40580-1"
+          }
+        ],
+        "sourceReused": true
+      },
+      {
+        "token": "73a1f1e40580-3",
+        "origins": [
+          {
+            "origin": {
+              "generation": 6,
+              "members": [
+                {
+                  "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+                  "pid": 1992424,
+                  "rectangle": {
+                    "height": 315.1529233916371,
+                    "width": 441.4124769379149,
+                    "x": 89.45476397456437,
+                    "y": 203.52987916173547
+                  },
+                  "stableId": "18000000"
+                },
+                {
+                  "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+                  "pid": 1992424,
+                  "rectangle": {
+                    "height": 203.7474349684507,
+                    "width": 311.4394071108642,
+                    "x": 237.99541520547953,
+                    "y": 259.23262337332864
+                  },
+                  "stableId": "18000002"
+                },
+                {
+                  "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+                  "pid": 1992424,
+                  "rectangle": {
+                    "height": 166.61227216072191,
+                    "width": 237.16908149540663,
+                    "x": 302.98195011900486,
+                    "y": 296.36778618105745
+                  },
+                  "stableId": "18000003"
+                }
+              ],
+              "output": "WAYLAND-1",
+              "rectangle": {
+                "height": 315.15292339163705,
+                "width": 459.98005834177934,
+                "x": 89.45476397456437,
+                "y": 203.52987916173547
+              },
+              "sequence": "15",
+              "timestampNs": "113154727939345"
+            },
+            "actualPresentedToken": "73a1f1e40580-2"
+          }
+        ],
+        "sourceReused": true
+      }
+    ],
+    "sourceUploads": 3,
+    "displayedOriginsBound": true,
+    "rendererEvidenceAccepted": true,
+    "nativeCommitAccepted": false,
+    "physicalCadenceAccepted": false,
+    "fullWindowsParityAccepted": false
+  },
+  "C1Replay": {
+    "original": {
+      "reversals": [
+        {
+          "token": "73a1f1e40580-2",
+          "origins": [
+            {
+              "origin": {
+                "generation": 6,
+                "members": [
+                  {
+                    "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+                    "pid": 1992424,
+                    "rectangle": {
+                      "height": 327.16255442345977,
+                      "width": 458.5422014503893,
+                      "x": 91.31832741053687,
+                      "y": 211.66179233688814
+                    },
+                    "stableId": "18000000"
+                  },
+                  {
+                    "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+                    "pid": 1992424,
+                    "rectangle": {
+                      "height": 211.23933645852193,
+                      "width": 323.29844715796185,
+                      "x": 245.882618030454,
+                      "y": 269.6234013193571
+                    },
+                    "stableId": "18000002"
+                  },
+                  {
+                    "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+                    "pid": 1992424,
+                    "rectangle": {
+                      "height": 172.59826380354264,
+                      "width": 246.01630184800328,
+                      "x": 313.5044951766677,
+                      "y": 308.26447397433634
+                    },
+                    "stableId": "18000003"
+                  }
+                ],
+                "output": "WAYLAND-1",
+                "rectangle": {
+                  "height": 327.16255442345977,
+                  "width": 477.86273777787903,
+                  "x": 91.31832741053687,
+                  "y": 211.66179233688814
+                },
+                "sequence": "13",
+                "timestampNs": "113154694834526"
+              },
+              "actualPresentedToken": "73a1f1e40580-1"
+            }
+          ],
+          "sourceReused": true
+        },
+        {
+          "token": "73a1f1e40580-3",
+          "origins": [
+            {
+              "origin": {
+                "generation": 6,
+                "members": [
+                  {
+                    "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+                    "pid": 1992424,
+                    "rectangle": {
+                      "height": 315.1529233916371,
+                      "width": 441.4124769379149,
+                      "x": 89.45476397456437,
+                      "y": 203.52987916173547
+                    },
+                    "stableId": "18000000"
+                  },
+                  {
+                    "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+                    "pid": 1992424,
+                    "rectangle": {
+                      "height": 203.7474349684507,
+                      "width": 311.4394071108642,
+                      "x": 237.99541520547953,
+                      "y": 259.23262337332864
+                    },
+                    "stableId": "18000002"
+                  },
+                  {
+                    "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+                    "pid": 1992424,
+                    "rectangle": {
+                      "height": 166.61227216072191,
+                      "width": 237.16908149540663,
+                      "x": 302.98195011900486,
+                      "y": 296.36778618105745
+                    },
+                    "stableId": "18000003"
+                  }
+                ],
+                "output": "WAYLAND-1",
+                "rectangle": {
+                  "height": 315.15292339163705,
+                  "width": 459.98005834177934,
+                  "x": 89.45476397456437,
+                  "y": 203.52987916173547
+                },
+                "sequence": "15",
+                "timestampNs": "113154727939345"
+              },
+              "actualPresentedToken": "73a1f1e40580-2"
+            }
+          ],
+          "sourceReused": true
+        }
+      ],
+      "sourceUploads": 3,
+      "displayedOriginsBound": true,
+      "rendererEvidenceAccepted": true,
+      "nativeCommitAccepted": false,
+      "physicalCadenceAccepted": false,
+      "fullWindowsParityAccepted": false
+    },
+    "exactDisplayedOriginPairs": [
+      {
+        "newToken": "73a1f1e40580-2",
+        "actualPresentedToken": "73a1f1e40580-1",
+        "output": "WAYLAND-1",
+        "generation": 6,
+        "sequence": "13",
+        "originKinematics": {
+          "token": "73a1f1e40580-1",
+          "sequence": "13",
+          "output": "WAYLAND-1",
+          "generation": 6,
+          "epoch": "1",
+          "sampleNs": "113154678434675",
+          "startNs": "113154654109422",
+          "elapsedSeconds": 0.024325253,
+          "durationSeconds": 0.22,
+          "progress": 0.11056933181818182,
+          "endpoint": false,
+          "members": [
+            {
+              "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+              "pid": 1992424,
+              "rectangle": {
+                "height": 327.16255442345977,
+                "width": 458.5422014503893,
+                "x": 91.31832741053687,
+                "y": 211.66179233688814
+              },
+              "stableId": "18000000",
+              "velocity": [
+                -132.76406881727456,
+                -579.3341184753798,
+                -1220.3565921587863,
+                -855.5906657113248
+              ]
+            },
+            {
+              "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+              "pid": 1992424,
+              "rectangle": {
+                "height": 211.23933645852193,
+                "width": 323.29844715796185,
+                "x": 245.882618030454,
+                "y": 269.6234013193571
+              },
+              "stableId": "18000002",
+              "velocity": [
+                -561.9004528731115,
+                -740.2602624963187,
+                -844.8622561099289,
+                -533.7383776694471
+              ]
+            },
+            {
+              "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+              "pid": 1992424,
+              "rectangle": {
+                "height": 172.59826380354264,
+                "width": 246.01630184800328,
+                "x": 313.5044951766677,
+                "y": 308.26447397433634
+              },
+              "stableId": "18000003",
+              "velocity": [
+                -749.64762089754,
+                -847.5443585102779,
+                -630.2940640820104,
+                -426.4542816554879
+              ]
+            }
+          ]
+        },
+        "exactOriginPositionAndVelocity": true,
+        "analyticT0PairEqual": true,
+        "t0ActuallyPresentedClaimed": false
+      },
+      {
+        "newToken": "73a1f1e40580-3",
+        "actualPresentedToken": "73a1f1e40580-2",
+        "output": "WAYLAND-1",
+        "generation": 6,
+        "sequence": "15",
+        "originKinematics": {
+          "token": "73a1f1e40580-2",
+          "sequence": "15",
+          "output": "WAYLAND-1",
+          "generation": 6,
+          "epoch": "2",
+          "sampleNs": "113154711648260",
+          "startNs": "113154694971937",
+          "elapsedSeconds": 0.016676323,
+          "durationSeconds": 0.22,
+          "progress": 0.07580146818181818,
+          "endpoint": false,
+          "members": [
+            {
+              "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+              "pid": 1992424,
+              "rectangle": {
+                "height": 315.1529233916371,
+                "width": 441.4124769379149,
+                "x": 89.45476397456437,
+                "y": 203.52987916173547
+              },
+              "stableId": "18000000",
+              "velocity": [
+                -91.58473961231357,
+                -399.64250012645914,
+                -841.8395257293466,
+                -590.2127663904652
+              ]
+            },
+            {
+              "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+              "pid": 1992424,
+              "rectangle": {
+                "height": 203.7474349684507,
+                "width": 311.4394071108642,
+                "x": 237.99541520547953,
+                "y": 259.23262337332864
+              },
+              "stableId": "18000002",
+              "velocity": [
+                -387.61622118746845,
+                -510.6543057171423,
+                -582.8119793510862,
+                -368.1891552090989
+              ]
+            },
+            {
+              "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+              "pid": 1992424,
+              "rectangle": {
+                "height": 166.61227216072191,
+                "width": 237.16908149540663,
+                "x": 302.98195011900486,
+                "y": 296.36778618105745
+              },
+              "stableId": "18000003",
+              "velocity": [
+                -517.1299943765985,
+                -584.6621761109309,
+                -434.7962385635087,
+                -294.18128481531005
+              ]
+            }
+          ]
+        },
+        "exactOriginPositionAndVelocity": true,
+        "analyticT0PairEqual": true,
+        "t0ActuallyPresentedClaimed": false
+      }
+    ],
+    "analyticT0Pairs": 2,
+    "acceptedAnalyticSamples": 29,
+    "commonPlans": {
+      "73a1f1e40580-1": {
+        "start": 113154654109422,
+        "duration": 0.22,
+        "epoch": 1
+      },
+      "73a1f1e40580-2": {
+        "start": 113154694971937,
+        "duration": 0.22,
+        "epoch": 2
+      },
+      "73a1f1e40580-3": {
+        "start": 113154728080166,
+        "duration": 0.22,
+        "epoch": 3
+      }
+    },
+    "cadence": {
+      "WAYLAND-1": {
+        "timestampNs": [
+          113154444672571,
+          113154461279079,
+          113154478359311,
+          113154494762587,
+          113154527985836,
+          113154544927159,
+          113154561262413,
+          113154594549212,
+          113154611297744,
+          113154627938910,
+          113154661273763,
+          113154678138154,
+          113154694834526,
+          113154711492364,
+          113154727939345,
+          113154744837011,
+          113154761392674,
+          113154777908148,
+          113154794801110,
+          113154811240040,
+          113154828165396,
+          113154844678250,
+          113154861265935,
+          113154878189841,
+          113154911450968,
+          113154928071556,
+          113154944533801,
+          113154961403764,
+          113154977896604
+        ],
+        "gapsNs": [
+          16606508,
+          17080232,
+          16403276,
+          33223249,
+          16941323,
+          16335254,
+          33286799,
+          16748532,
+          16641166,
+          33334853,
+          16864391,
+          16696372,
+          16657838,
+          16446981,
+          16897666,
+          16555663,
+          16515474,
+          16892962,
+          16438930,
+          16925356,
+          16512854,
+          16587685,
+          16923906,
+          33261127,
+          16620588,
+          16462245,
+          16869963,
+          16492840
+        ]
+      }
+    },
+    "exactOriginPositionVelocityAccepted": true,
+    "analyticVelocityAccepted": true,
+    "nativeAuthorityGranted": false,
+    "physicalCadenceAccepted": false
+  },
+  "independentHermiteComponentChecks": 2112,
+  "allFourActorsAcceptedFrames": 88,
+  "exactCurrentNativeCommits": [
+    {
+      "actor": 1,
+      "token": "f1ef62d9891a-1",
+      "operation": "minimize",
+      "exactThreeNativeResults": [
+        {
+          "identity": [
+            "0x56a489c36610",
+            "18000000",
+            1992424
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 113151479399064
+        },
+        {
+          "identity": [
+            "0x56a489f902f0",
+            "18000002",
+            1992424
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 113151544178603
+        },
+        {
+          "identity": [
+            "0x56a48a46e8d0",
+            "18000003",
+            1992424
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 113151609876288
+        }
+      ],
+      "matchingActualPresentedFrames": 25,
+      "sourceUploadCount": 3
+    },
+    {
+      "actor": 2,
+      "token": "d075f77dc84e-1",
+      "operation": "restore",
+      "exactThreeNativeResults": [
+        {
+          "identity": [
+            "0x56a489c36610",
+            "18000000",
+            1992424
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 113153496756536
+        },
+        {
+          "identity": [
+            "0x56a489f902f0",
+            "18000002",
+            1992424
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 113153561862707
+        },
+        {
+          "identity": [
+            "0x56a48a46e8d0",
+            "18000003",
+            1992424
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 113153626780472
+        }
+      ],
+      "matchingActualPresentedFrames": 1,
+      "sourceUploadCount": 3
+    },
+    {
+      "actor": 3,
+      "token": "73a1f1e40580-3",
+      "operation": "minimize",
+      "exactThreeNativeResults": [
+        {
+          "identity": [
+            "0x56a489c36610",
+            "18000000",
+            1992424
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 113154817249396
+        },
+        {
+          "identity": [
+            "0x56a489f902f0",
+            "18000002",
+            1992424
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 113154849849846
+        },
+        {
+          "identity": [
+            "0x56a48a46e8d0",
+            "18000003",
+            1992424
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 113154882634993
+        }
+      ],
+      "matchingActualPresentedFrames": 14,
+      "sourceUploadCount": 3
+    },
+    {
+      "actor": 4,
+      "token": "16d459ec6342-1",
+      "operation": "restore",
+      "exactThreeNativeResults": [
+        {
+          "identity": [
+            "0x56a489c36610",
+            "18000000",
+            1992424
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 113157143103876
+        },
+        {
+          "identity": [
+            "0x56a489f902f0",
+            "18000002",
+            1992424
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 113157207740377
+        },
+        {
+          "identity": [
+            "0x56a48a46e8d0",
+            "18000003",
+            1992424
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 113157272706034
+        }
+      ],
+      "matchingActualPresentedFrames": 1,
+      "sourceUploadCount": 3
+    }
+  ],
+  "retainedSourceChecks": [
+    {
+      "actor": 1,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1/service-epochs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png",
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8"
+    },
+    {
+      "actor": 1,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1/service-epochs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png",
+      "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c"
+    },
+    {
+      "actor": 1,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1/service-epochs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png",
+      "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070"
+    },
+    {
+      "actor": 2,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1/service-epochs/244ebe2c017e9008a4b69c65badc9a34ec81ef6a160a4ceca1c683ac361bffe0.png",
+      "sha256": "244ebe2c017e9008a4b69c65badc9a34ec81ef6a160a4ceca1c683ac361bffe0"
+    },
+    {
+      "actor": 2,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1/service-epochs/8355c2104003fca6679c1202920f22f570df76570154a9e08fd9e083f8c7a214.png",
+      "sha256": "8355c2104003fca6679c1202920f22f570df76570154a9e08fd9e083f8c7a214"
+    },
+    {
+      "actor": 2,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1/service-epochs/04d11da39aad680ffd5b7f36a20d18de6f4ff6f74e16375e1ead911e56d9e44c.png",
+      "sha256": "04d11da39aad680ffd5b7f36a20d18de6f4ff6f74e16375e1ead911e56d9e44c"
+    },
+    {
+      "actor": 3,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1/service-epochs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png",
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8"
+    },
+    {
+      "actor": 3,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1/service-epochs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png",
+      "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c"
+    },
+    {
+      "actor": 3,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1/service-epochs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png",
+      "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070"
+    },
+    {
+      "actor": 4,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1/service-epochs/710619df8796bb32a3e93defddee1c1eaab4225058031fb40c5045f2a217b18f.png",
+      "sha256": "710619df8796bb32a3e93defddee1c1eaab4225058031fb40c5045f2a217b18f"
+    },
+    {
+      "actor": 4,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1/service-epochs/1cf8c873b353e6f9c10ec872b1f3bc6c92fbf7f9e5f00f62ea8768eaf7d7d7d1.png",
+      "sha256": "1cf8c873b353e6f9c10ec872b1f3bc6c92fbf7f9e5f00f62ea8768eaf7d7d7d1"
+    },
+    {
+      "actor": 4,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1/service-epochs/58960e9d7396a8ce2067f230fc8fa810a27d036467390a4e70743b7724ac435e.png",
+      "sha256": "58960e9d7396a8ce2067f230fc8fa810a27d036467390a4e70743b7724ac435e"
+    }
+  ],
+  "immutablePairChecks": [
+    {
+      "actor": 1,
+      "identity": [
+        "0x56a489c36610",
+        "18000000",
+        1992424
+      ],
+      "pointerSHA256": "a9023a33ff2b3c7a8e55d15cfc9021420d480709e253e9624426245f22639adf",
+      "pngSHA256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "completeExactPublishedPair": true
+    },
+    {
+      "actor": 1,
+      "identity": [
+        "0x56a489f902f0",
+        "18000002",
+        1992424
+      ],
+      "pointerSHA256": "5cf890e0c961bff1af21d2d47ca88d38a2b04b21937b9ba3f5b05a9d571c932e",
+      "pngSHA256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "completeExactPublishedPair": true
+    },
+    {
+      "actor": 1,
+      "identity": [
+        "0x56a48a46e8d0",
+        "18000003",
+        1992424
+      ],
+      "pointerSHA256": "733ce4da39159aaddb4873390acb4acf6096dc24c0b73226e40c6921ffbddf09",
+      "pngSHA256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+      "completeExactPublishedPair": true
+    },
+    {
+      "actor": 2,
+      "identity": [
+        "0x56a489c36610",
+        "18000000",
+        1992424
+      ],
+      "pointerSHA256": "a9023a33ff2b3c7a8e55d15cfc9021420d480709e253e9624426245f22639adf",
+      "pngSHA256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "completeExactPublishedPair": true
+    },
+    {
+      "actor": 2,
+      "identity": [
+        "0x56a489f902f0",
+        "18000002",
+        1992424
+      ],
+      "pointerSHA256": "5cf890e0c961bff1af21d2d47ca88d38a2b04b21937b9ba3f5b05a9d571c932e",
+      "pngSHA256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "completeExactPublishedPair": true
+    },
+    {
+      "actor": 2,
+      "identity": [
+        "0x56a48a46e8d0",
+        "18000003",
+        1992424
+      ],
+      "pointerSHA256": "733ce4da39159aaddb4873390acb4acf6096dc24c0b73226e40c6921ffbddf09",
+      "pngSHA256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+      "completeExactPublishedPair": true
+    },
+    {
+      "actor": 3,
+      "identity": [
+        "0x56a489c36610",
+        "18000000",
+        1992424
+      ],
+      "pointerSHA256": "b1f17f8ca5eaa405c6b8be4e25cc242c46224e4ea3aa38905664cc4dcba02626",
+      "pngSHA256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "completeExactPublishedPair": true
+    },
+    {
+      "actor": 3,
+      "identity": [
+        "0x56a489f902f0",
+        "18000002",
+        1992424
+      ],
+      "pointerSHA256": "bbef56768735a97b04056c8c52b8ba46ee6d38677ae7c00371b5a8ba1b4f80af",
+      "pngSHA256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "completeExactPublishedPair": true
+    },
+    {
+      "actor": 3,
+      "identity": [
+        "0x56a48a46e8d0",
+        "18000003",
+        1992424
+      ],
+      "pointerSHA256": "9964353c4eb8e3ce5159b1e3e19393a503efb4bf3965dcdcaabcf776243db313",
+      "pngSHA256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+      "completeExactPublishedPair": true
+    },
+    {
+      "actor": 4,
+      "identity": [
+        "0x56a489c36610",
+        "18000000",
+        1992424
+      ],
+      "pointerSHA256": "b1f17f8ca5eaa405c6b8be4e25cc242c46224e4ea3aa38905664cc4dcba02626",
+      "pngSHA256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "completeExactPublishedPair": true
+    },
+    {
+      "actor": 4,
+      "identity": [
+        "0x56a489f902f0",
+        "18000002",
+        1992424
+      ],
+      "pointerSHA256": "bbef56768735a97b04056c8c52b8ba46ee6d38677ae7c00371b5a8ba1b4f80af",
+      "pngSHA256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "completeExactPublishedPair": true
+    },
+    {
+      "actor": 4,
+      "identity": [
+        "0x56a48a46e8d0",
+        "18000003",
+        1992424
+      ],
+      "pointerSHA256": "9964353c4eb8e3ce5159b1e3e19393a503efb4bf3965dcdcaabcf776243db313",
+      "pngSHA256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+      "completeExactPublishedPair": true
+    }
+  ],
+  "baselineRestorePairsExact": true,
+  "continuousRestorePairsExact": true,
+  "actualRequestLatenciesMs": [
+    3.691653,
+    1.524192,
+    4.473955,
+    3.09546
+  ],
+  "frozenInputs": 8433,
+  "frozenLinks": 146,
+  "allEvidenceUnchanged": true,
+  "mainPreservationGeneralAuditOwner": "root",
+  "genuineWidgetPreviewAccepted": false,
+  "physicalCadenceAccepted": false,
+  "velocityContinuityAccepted": true,
+  "fullWindowsParityAccepted": false,
+  "productionDeployed": false,
+  "nativeExecutedByReviewer": false,
+  "mainWrites": false
+}

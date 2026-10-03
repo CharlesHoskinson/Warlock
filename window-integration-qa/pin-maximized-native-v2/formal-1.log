@@ -1,0 +1,88 @@
+
+  client_closure
+    1) good failed after 0 test(s)
+    2) known failed after 0 test(s)
+    3) normal failed after 0 test(s)
+    4) healthy failed after 0 test(s)
+    5) accepted failed after 0 test(s)
+    ok init passed 1 test(s)
+    6) check failed after 0 test(s)
+    ok step passed 1 test(s)
+    7) allProps failed after 1 test(s)
+    ok actualRegisteredClosedClient passed 1 test(s)
+    ok allSixKnownRoles passed 1 test(s)
+    ok originalBaseRowsRemainRequired passed 1 test(s)
+    ok arbitraryExtraRoleRefused passed 1 test(s)
+    ok currentLifetimeReplacementRefused passed 1 test(s)
+    ok commandReplacementRefused passed 1 test(s)
+    ok executableReplacementRefused passed 1 test(s)
+    ok runningBeforeDelegatedCloseRefused passed 1 test(s)
+    ok kernelLifetimeNotGoneRefused passed 1 test(s)
+    ok missingCleanupReceiptRefused passed 1 test(s)
+    ok cleanupNonzeroRefused passed 1 test(s)
+    ok clientTermIsNotNormal passed 1 test(s)
+    ok clientKillIsNotNormal passed 1 test(s)
+    ok clientSignalEvenZeroRefused passed 1 test(s)
+    ok forcedCaseCleanupRefused passed 1 test(s)
+    ok clientErrorRefused passed 1 test(s)
+    ok missingReapRefused passed 1 test(s)
+    ok missingCaseSourceRefused passed 1 test(s)
+    ok missingBoundRawReportRefused passed 1 test(s)
+    ok failedCaseCleanupRefused passed 1 test(s)
+    ok duplicateRegistryRefused passed 1 test(s)
+    ok missingRoleRefused passed 1 test(s)
+    ok fullReverseRegistryRequired passed 1 test(s)
+    ok beforeCloseObservationRequired passed 1 test(s)
+    ok noNewStopSemantics passed 1 test(s)
+    ok rawBeforePredicateRequired passed 1 test(s)
+
+  28 passing (954ms)
+  7 failed
+
+  1) good:
+      error: [QNT516] Rust evaluator exited with code 101
+      thread 'main' (811054) panicked at src/value.rs:630:18:
+      Expected boolean
+      note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    Use --seed=0x0 --match=good to repeat.
+  2) known:
+      error: [QNT516] Rust evaluator exited with code 101
+      thread 'main' (811055) panicked at src/value.rs:630:18:
+      Expected boolean
+      note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    Use --seed=0x0 --match=known to repeat.
+  3) normal:
+      error: [QNT516] Rust evaluator exited with code 101
+      thread 'main' (811056) panicked at src/value.rs:630:18:
+      Expected boolean
+      note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    Use --seed=0x0 --match=normal to repeat.
+  4) healthy:
+      error: [QNT516] Rust evaluator exited with code 101
+      thread 'main' (811057) panicked at src/value.rs:630:18:
+      Expected boolean
+      note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    Use --seed=0x0 --match=healthy to repeat.
+  5) accepted:
+      error: [QNT516] Rust evaluator exited with code 101
+      thread 'main' (811058) panicked at src/value.rs:630:18:
+      Expected boolean
+      note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    Use --seed=0x0 --match=accepted to repeat.
+  6) check:
+      error: [QNT516] Rust evaluator exited with code 101
+      thread 'main' (811060) panicked at src/value.rs:630:18:
+      Expected boolean
+      note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    Use --seed=0x0 --match=check to repeat.
+  7) allProps:
+       Error [QNT502]: Variable client not set
+        at /home/hoskinson/window-integration-qa/pin-maximized-native-v2/client_closure.qnt:38:26
+        38:  val allProps=all{normal(client) implies known(client),
+                                     ^^^^^^
+    Use --seed=0x9ab9f97f03db14fd --match=allProps to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 client_closure.qnt
+error: Tests failed

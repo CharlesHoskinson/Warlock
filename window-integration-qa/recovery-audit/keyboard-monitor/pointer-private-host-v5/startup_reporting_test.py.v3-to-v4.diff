@@ -1,0 +1,11 @@
+--- V3/startup_reporting_test.py
++++ V4/startup_reporting_test.py
+@@ -43,7 +43,7 @@
+   self.assertIn(b'debug={disable_logs=false,enable_stdout_logs=true}',r.config_bytes())
+  def test_actual_execute_early_failure_has_no_clients_and_preserves_primary(self):
+   with tempfile.TemporaryDirectory() as temp:
+-   root=Path(temp);logs=root/'owned-host';logs.mkdir();archive=logs/'hyprland.log';archive.write_text(self.good());(logs/'weston-renderer.log').write_text('private parent')
++   root=Path(temp);logs=root/'owned-host';logs.mkdir();archive=logs/'hyprland.log';archive.write_text(self.good());(logs/'weston-renderer.log').write_text('private parent');(logs/'privateBus.log').write_text('')
+    (root/'pointer-frozen-stage-report.json').write_text(json.dumps({'hostAdapter':str(r.HOST_ROOT)}))
+    class Session:
+     def __init__(self,**kwargs):

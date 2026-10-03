@@ -1,0 +1,32 @@
+{
+  "updatedUTC": "2026-10-02T02:00:08.684185+00:00",
+  "actualHarnessRoot": {
+    "identity": {
+      "pid": 2170579,
+      "start": "12863663",
+      "pgid": 2170579,
+      "parent": 1275790
+    },
+    "argv": [
+      "python3",
+      "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/run_native.py",
+      "--attempt",
+      "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/attempt-1"
+    ],
+    "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/run_native.py",
+    "sourceSHA256": "0c2a725547c108e5dea83ef7662ca47f9e2c222e52a29d5863bc6b23af5a982b",
+    "executable": "/usr/bin/python3.14",
+    "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+  },
+  "archiveSHA256": "2953ac7b99deb783f56533efe6e56bdcf62d05326126bbd795a9cf066c744863",
+  "rootInvocationMistake": true,
+  "expectedArgv0": "/usr/bin/python3",
+  "actualArgv0": "python3",
+  "effect": "Strict independent evaluation auditor rejects root argv0-to-executable resolution; this does not explain the separate preview pointer feature failure.",
+  "auditorUnchanged": true,
+  "nextRun": "Use exact absolute /usr/bin/python3 for both qa_run.py and run_native.py from reviewed command.",
+  "actualCallbackFailuresObserved": false,
+  "featureAcceptance": false,
+  "nativeCommands": false,
+  "mainWrites": false
+}

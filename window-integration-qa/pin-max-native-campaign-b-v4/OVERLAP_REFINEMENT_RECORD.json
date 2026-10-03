@@ -1,0 +1,77 @@
+{
+  "scope": "approved QA-only overlap-operand correction; no product/observer/core edit",
+  "parent": "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v3",
+  "parentFrozen": {
+    "sha256": "58a26254c59faef87f42b2647a2c0e19385a97c24b80cbecd5bb7de77482a44c",
+    "mode": 384
+  },
+  "rawFailure": {
+    "sha256": "3b813f65cb8dad718cf2c1a598a5f41c7bde14d385db7c18bfc771500eb895fc",
+    "mode": 384
+  },
+  "rootFailureAudit": {
+    "path": "/home/hoskinson/window-integration-qa/pin-max-native-b-v3-root-failure-v1.json",
+    "sha256": "5da374745d052fe43001631ac4e36782dc52ea6c0d556b45604525f2ec0e5bb4",
+    "mode": 384
+  },
+  "readOnlyAudit": {
+    "path": "/home/hoskinson/window-integration-qa/pin-max-native-b-v3-overlap-audit-v1/audit.json",
+    "sha256": "78627cfd1bac109fa8bc1abac5df489b107df18653986c9e30c5749c32752c0b",
+    "mode": 420
+  },
+  "transitiveGeometry": {
+    "sha256": "93c272339a2c5456216e1dd189b40d3c4bf737515581592ca99be64f47a2b4ae",
+    "mode": 420
+  },
+  "completeDiff": {
+    "sha256": "d5ba5f0913d27189e2121ec80f1a2b13f06638e4241699aec4a2ad7cc5b309b1",
+    "mode": 420
+  },
+  "sourceInverse": {
+    "sha256": "2ac2876c04475d7da5589a98afe5d6671d8c8b284a67810867bcd6373357c347",
+    "mode": 420
+  },
+  "controller": {
+    "sha256": "636aa7c26097a88e4105101bf8a1b095cb2f418b7cf5e5844d7eb58777446564",
+    "mode": 420
+  },
+  "pair": {
+    "sha256": "8c7c49f8cfa3b7f1473022f6582e0c1d0da3a377cc5998e8e8c1d6d65c99a683",
+    "mode": 384
+  },
+  "tests": {
+    "inherited19": {
+      "sha256": "7d47fd8096d34a87d0e70a436243141f75583f09ef8e94777974b02f8a5ab1c0",
+      "mode": 420
+    },
+    "new4CPUWholeBody": {
+      "sha256": "1569989bbd003074e8e3bb61b31afd578b6553ba5d7204ccf4b715632d7f995a",
+      "mode": 420
+    },
+    "newCPUActualSource": {
+      "sha256": "9a47d6c32d6148ca46d7ae5fad0979e03b410f97fba57503657bbf15d3c9133b",
+      "mode": 420
+    }
+  },
+  "allInherited19TestSourcesExact": true,
+  "onlyRuntimeDelta": "peer_box=self.qt_box(actor,'peer',peer)",
+  "originalOverlapRefusalAndAllLaterChecksExact": true,
+  "realPeerButtonOverlapRequired": true,
+  "logicalFallback": false,
+  "geometryCompensation": false,
+  "retry": false,
+  "deadlineChanges": false,
+  "producerFormalUnchanged": {
+    "named": 14,
+    "traces": 2000,
+    "maxSteps": 100
+  },
+  "approvedCampaignDesignUnchanged": {
+    "named": 35
+  },
+  "firstCPUFixtureErrorRetained": "/home/hoskinson/window-integration-qa/pin-max-native-b-v3-overlap-audit-v1/retained-first-cpu-fixture-error",
+  "nativeB07Accepted": false,
+  "fullCampaignBAccepted": false,
+  "nativeAuthorized": false,
+  "freezeAuthorized": false
+}

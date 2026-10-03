@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "designOnly": true,
+  "nativeLaunch": false,
+  "runtimeCopied": false,
+  "fd": 3,
+  "target": "/memfd:readonly-v22-design-only (deleted)",
+  "device": 1,
+  "inode": 609674,
+  "mode": 384,
+  "uid": 1000,
+  "size": 49,
+  "fullFlags": 32770,
+  "accessMode": 2,
+  "fdFlags": 1,
+  "seals": 47,
+  "attempts": [
+    {
+      "operation": "write",
+      "refused": true,
+      "errno": 1
+    },
+    {
+      "operation": "truncate",
+      "refused": true,
+      "errno": 1
+    },
+    {
+      "operation": "chmodExecute",
+      "refused": true,
+      "errno": 1
+    }
+  ],
+  "headerSHA256": {
+    "/usr/include/linux/memfd.h": "d06dd37df2ad2df29391c38239c1af6944efef8dc4040ed41833169cd4c4a3c9",
+    "/usr/include/linux/fcntl.h": "97a6f7544099b95d90b217acd59ec32301ef9f950d12532deed07eea50ab2356"
+  },
+  "doesNotClaimPROTEXECPrevention": true
+}

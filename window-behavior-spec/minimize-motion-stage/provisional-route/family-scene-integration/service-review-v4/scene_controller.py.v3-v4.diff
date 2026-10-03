@@ -1,0 +1,21 @@
+--- frozen-v3/scene_controller.py
++++ review-v4/scene_controller.py
+@@ -137,6 +137,10 @@
+                     raise ValueError('native geometry changed; replacement scene required')
+         return members, key(focus)
+ 
++    def validate_scope(self, record, members):
++        """Hook for an explicit shared family ownership registry."""
++        return None
++
+     def prepare(self, record):
+         sources=[]
+         try:
+@@ -149,6 +153,7 @@
+                     'minimize' if not minimized and self.desktop.active()==window['address'] else 'restore')
+             with self.lock:
+                 if not self.owns(record):return
++                self.validate_scope(record, members)
+                 if record.operation == 'restore':
+                     # Irreversible destination effects belong to the current
+                     # reservation. Hold ownership for the entire family switch.

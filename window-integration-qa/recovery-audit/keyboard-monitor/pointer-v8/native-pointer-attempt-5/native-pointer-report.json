@@ -1,0 +1,6122 @@
+{
+  "kind": "private PointerLocator/real GTK/Omarchy Orca compat navigation",
+  "checks": [
+    {
+      "name": "private config errors absent",
+      "pass_": true
+    },
+    {
+      "name": "independent protocol caller A ready",
+      "pass_": true,
+      "client": {
+        "ready": true,
+        "uniqueName": ":1.5",
+        "name": "org.omarchy.PointerA.KeyboardMonitor"
+      }
+    },
+    {
+      "name": "independent protocol caller B ready",
+      "pass_": true,
+      "client": {
+        "ready": true,
+        "uniqueName": ":1.6",
+        "name": "org.omarchy.PointerB.KeyboardMonitor"
+      }
+    },
+    {
+      "name": "A owns actual monitor registration",
+      "pass_": true
+    },
+    {
+      "name": "B owns actual monitor registration",
+      "pass_": true
+    },
+    {
+      "name": "external registered caller explicitly requests full capture",
+      "pass_": true
+    },
+    {
+      "name": "actual fresh public factory uses official Manager device",
+      "pass_": true,
+      "device": {
+        "ready": true,
+        "backend": "AtspiDeviceA11yManager",
+        "ownUnique": ":1.9",
+        "owner": ":1.9"
+      }
+    },
+    {
+      "name": "actual held capability probe refuses without dropping registration",
+      "pass_": true,
+      "result": {
+        "before": ":1.9",
+        "after": ":1.9",
+        "sameActualDevice": true,
+        "pass_": false,
+        "error": "held, dirty, unknown or already replayed pointer probe refused"
+      }
+    },
+    {
+      "name": "held capability refusal keeps real Foot bytes suppressed",
+      "pass_": true
+    },
+    {
+      "name": "external capture removed only after real release",
+      "pass_": true
+    },
+    {
+      "name": "same actual fresh device probes after real quiescence",
+      "pass_": true,
+      "result": {
+        "before": ":1.9",
+        "after": ":1.9",
+        "sameActualDevice": true,
+        "pass_": true,
+        "value": 13
+      }
+    },
+    {
+      "name": "actual successful capability bootstrap primes exactly one query",
+      "pass_": true,
+      "pending": 1
+    },
+    {
+      "name": "first construction motion reaches actual cursor and consumes one shot before callback pump",
+      "pass_": true,
+      "cursor": {
+        "x": 12,
+        "y": 12
+      },
+      "requested": [
+        12,
+        12
+      ],
+      "pending": 0
+    },
+    {
+      "name": "first construction motion rearms via official callback before GObject observer",
+      "pass_": true,
+      "result": {
+        "pass_": true,
+        "state": {
+          "retiring": false,
+          "unloadQuiescent": true,
+          "registrations": 3,
+          "clients": 1,
+          "devices": 1,
+          "quiescent": true,
+          "callerPreReplay": true,
+          "pointerPending": 1,
+          "pointerDeferred": 0,
+          "pointerFences": 0,
+          "pointerDiscarded": 0,
+          "pointerEmitted": 1,
+          "nativeInputProved": false
+        },
+        "gobjectObserverInstalled": false,
+        "sameActualDevice": true
+      }
+    },
+    {
+      "name": "second early motion reaches actual cursor and consumes rearmed one shot before callback pump",
+      "pass_": true,
+      "cursor": {
+        "x": 14,
+        "y": 14
+      },
+      "requested": [
+        14,
+        14
+      ],
+      "pending": 0
+    },
+    {
+      "name": "second early motion retains official query signal chain",
+      "pass_": true,
+      "result": {
+        "pass_": true,
+        "state": {
+          "retiring": false,
+          "unloadQuiescent": true,
+          "registrations": 3,
+          "clients": 1,
+          "devices": 1,
+          "quiescent": true,
+          "callerPreReplay": true,
+          "pointerPending": 1,
+          "pointerDeferred": 0,
+          "pointerFences": 0,
+          "pointerDiscarded": 0,
+          "pointerEmitted": 2,
+          "nativeInputProved": false
+        },
+        "gobjectObserverInstalled": false,
+        "sameActualDevice": true
+      }
+    },
+    {
+      "name": "initial private bridge quiescent retirement",
+      "pass_": true
+    },
+    {
+      "name": "real compat reader starts before Manager with pointer disabled",
+      "pass_": true,
+      "reader": {
+        "time": 74540.989518963,
+        "identity": "Omarchy Orca compat",
+        "mouseSource": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v8/native-pointer-attempt-5/mouse-review-v2/orca-compat/orca/mouse_review.py",
+        "epoch": 0,
+        "appliedEpoch": 0,
+        "owner": "",
+        "backend": "AtspiDeviceLegacy",
+        "watch": true,
+        "full": false,
+        "paused": false,
+        "mouseEnabled": false,
+        "currentItem": null,
+        "commands": [
+          [
+            "advance_live_politeness",
+            false,
+            true,
+            false
+          ],
+          [
+            "appPreferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "bypass_mode_toggle",
+            true,
+            true,
+            false
+          ],
+          [
+            "changeNumberStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_next_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_previous_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_buddy_typing",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_message_histories",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_room_name_prefix",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_atspi_app_cache",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "container_end",
+            false,
+            false,
+            false
+          ],
+          [
+            "container_start",
+            false,
+            false,
+            false
+          ],
+          [
+            "contractedBrailleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleCapitalizationStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleDebugLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleKeyEchoHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSettingsProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSpeakingPunctuationLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSynthesizerHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_browse_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_focus_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "end_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "end_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "enterLearnModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findNextHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findPreviousHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewAppendHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewCopyHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewSayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewToggleRestrictHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "getStatusBarHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "getTitleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "last_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "leftClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "list_blockquotes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_checkboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_clickables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_comboboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_entries",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_form_fields",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_iframes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_images",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_landmarks",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_large_objects",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_list_items",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_lists",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_paragraphs",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_radio_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_tables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_unvisited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_visited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "object_navigator_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_next",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_perform_action",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_previous",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_toggle_simplify",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "panBrailleLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "panBrailleRightHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "preferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentCurrentProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentDateHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentSizeAndPositionHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentTimeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_battery_status",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cell_formula",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_clipboard_contents",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cpu_and_memory_usage",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_default_button",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_last_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "previous_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "readCharAttributesHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewAboveHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBelowHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBottomLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentAccessibleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndOfLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewHomeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewUnicodeCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "rightClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "routePointerToItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "sayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "showContentsHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "show_actions_list",
+            true,
+            true,
+            false
+          ],
+          [
+            "show_notification_list",
+            false,
+            true,
+            false
+          ],
+          [
+            "shutdownHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "start_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "start_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "structural_navigator_mode_cycle",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_beginning_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_bottom_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_end_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_first",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_last",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_left",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_right",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_top_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_navigator_toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleFlatReviewModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleMouseReviewHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSilenceSpeechHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleSpeakingIndentationJustificationHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSpeechVerbosityHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleTableCellReadModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_braille_monitor",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_keyboard_layout",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_layout_mode",
+            false,
+            false,
+            false
+          ],
+          [
+            "toggle_live_region_presentation",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_live_region_support",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_presentation_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_sleep_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_speech_monitor",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIBasicHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIDetailedHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmILinkHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "whereAmISelectionHandler",
+            true,
+            true,
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "name": "real compat reader reconstructs public device and capabilities",
+      "pass_": true,
+      "reader": {
+        "time": 74541.083263107,
+        "identity": "Omarchy Orca compat",
+        "mouseSource": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v8/native-pointer-attempt-5/mouse-review-v2/orca-compat/orca/mouse_review.py",
+        "epoch": 1,
+        "appliedEpoch": 1,
+        "owner": ":1.15",
+        "backend": "AtspiDeviceA11yManager",
+        "watch": true,
+        "full": false,
+        "paused": false,
+        "mouseEnabled": false,
+        "currentItem": null,
+        "commands": [
+          [
+            "advance_live_politeness",
+            false,
+            true,
+            false
+          ],
+          [
+            "appPreferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "bypass_mode_toggle",
+            true,
+            true,
+            false
+          ],
+          [
+            "changeNumberStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_next_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_previous_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_buddy_typing",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_message_histories",
+            false,
+            true,
+            false
+          ],
+          [
+            "chat_toggle_room_name_prefix",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_atspi_app_cache",
+            false,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "clear_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "container_end",
+            false,
+            false,
+            false
+          ],
+          [
+            "container_start",
+            false,
+            false,
+            false
+          ],
+          [
+            "contractedBrailleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleCapitalizationStyleHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleDebugLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleKeyEchoHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSettingsProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSpeakingPunctuationLevelHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "cycleSynthesizerHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "decreaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_browse_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "enable_sticky_focus_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "end_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "end_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "enterLearnModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findNextHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "findPreviousHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewAppendHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewCopyHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "flatReviewSayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "flatReviewToggleRestrictHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "getStatusBarHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "getTitleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechPitchHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechRateHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "increaseSpeechVolumeHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "last_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "leftClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "list_blockquotes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_checkboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_clickables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_comboboxes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_entries",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_form_fields",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_headings_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_iframes",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_images",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_landmarks",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_large_objects",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_list_items",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_lists",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_paragraphs",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_radio_buttons",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_tables",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_unvisited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "list_visited_links",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "next_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "object_navigator_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_next",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_perform_action",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_previous",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_toggle_simplify",
+            true,
+            true,
+            false
+          ],
+          [
+            "object_navigator_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "panBrailleLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "panBrailleRightHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "preferencesSettingsHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentCurrentProfileHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentDateHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "presentSizeAndPositionHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "presentTimeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_battery_status",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cell_formula",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_clipboard_contents",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_cpu_and_memory_usage",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_default_button",
+            true,
+            true,
+            false
+          ],
+          [
+            "present_last_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_next_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_live_region_message",
+            false,
+            true,
+            false
+          ],
+          [
+            "present_previous_notification",
+            false,
+            true,
+            false
+          ],
+          [
+            "previous_blockquote",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_character",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_checkbox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_clickable",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_combobox",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_entry",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_form_field",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_1",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_2",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_3",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_4",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_5",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_heading_level_6",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_iframe",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_image",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_landmark",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_large_object",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_list_item",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_live_region",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_paragraph",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_radio_button",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_separator",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_table",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_unvisited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_visited_link",
+            false,
+            false,
+            false
+          ],
+          [
+            "previous_word",
+            false,
+            false,
+            false
+          ],
+          [
+            "readCharAttributesHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewAboveHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBelowHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewBottomLeftHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentAccessibleHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewEndOfLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewHomeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewNextLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPhoneticCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewPreviousLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewSpellCurrentLineHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "reviewUnicodeCurrentCharacterHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "rightClickReviewItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "routePointerToItemHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "sayAllHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_column_headers_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "set_dynamic_row_headers_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "showContentsHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "show_actions_list",
+            true,
+            true,
+            false
+          ],
+          [
+            "show_notification_list",
+            false,
+            true,
+            false
+          ],
+          [
+            "shutdownHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "start_of_file",
+            false,
+            false,
+            false
+          ],
+          [
+            "start_of_line",
+            false,
+            false,
+            false
+          ],
+          [
+            "structural_navigator_mode_cycle",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_beginning_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_bottom_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_down",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_end_of_row",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_first",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_last",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_left",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_right",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_top_of_column",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_cell_up",
+            true,
+            true,
+            false
+          ],
+          [
+            "table_navigator_toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleFlatReviewModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleMouseReviewHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSilenceSpeechHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleSpeakingIndentationJustificationHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggleSpeechVerbosityHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggleTableCellReadModeHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_braille_monitor",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_enabled",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_keyboard_layout",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_layout_mode",
+            false,
+            false,
+            false
+          ],
+          [
+            "toggle_live_region_presentation",
+            false,
+            true,
+            false
+          ],
+          [
+            "toggle_live_region_support",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_presentation_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_sleep_mode",
+            true,
+            true,
+            false
+          ],
+          [
+            "toggle_speech_monitor",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIBasicHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmIDetailedHandler",
+            true,
+            true,
+            false
+          ],
+          [
+            "whereAmILinkHandler",
+            false,
+            true,
+            false
+          ],
+          [
+            "whereAmISelectionHandler",
+            true,
+            true,
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "name": "real GTK AX singleton peers carry verified distinct identities",
+      "pass_": true,
+      "a": {
+        "name": "Pointer peer A",
+        "role": "frame",
+        "pid": 3996083,
+        "app_bus": ":1.6",
+        "object_path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf",
+        "children": [
+          {
+            "name": "",
+            "role": "panel",
+            "pid": 3996083,
+            "app_bus": ":1.6",
+            "object_path": "/org/omarchy/PointerPeerA/a11y/c3d30f3e_3f35_4e34_a78f_d0bc162d0e3f"
+          }
+        ]
+      },
+      "b": {
+        "name": "Pointer peer B",
+        "role": "frame",
+        "pid": 3996164,
+        "app_bus": ":1.7",
+        "object_path": "/org/omarchy/PointerPeerB/a11y/2fef21e4_5879_4bad_a4f5_d1c840f5f0e4",
+        "children": [
+          {
+            "name": "",
+            "role": "panel",
+            "pid": 3996164,
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/03522063_5f64_437d_a8f4_f9e45a57f8b9"
+          },
+          {
+            "name": "",
+            "role": "grouping",
+            "pid": 3996164,
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/41245c22_efba_4fec_9b12_85bdb6d7c781"
+          }
+        ]
+      }
+    },
+    {
+      "name": "unauthorized QueryPointer denied",
+      "pass_": true
+    },
+    {
+      "name": "unauthorized caller receives no pointer notification",
+      "pass_": true
+    },
+    {
+      "name": "A reacquires actual registration",
+      "pass_": true
+    },
+    {
+      "name": "actual independent focus and hover setup established before query",
+      "pass_": true,
+      "focus": {
+        "address": "0x5b989e537d20",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          520,
+          80
+        ],
+        "size": [
+          360,
+          240
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.PointerPeerB",
+        "title": "Pointer peer B",
+        "initialClass": "org.omarchy.PointerPeerB",
+        "initialTitle": "Pointer peer B",
+        "pid": 3996164,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000004"
+      },
+      "cursor": {
+        "x": 228,
+        "y": 121
+      },
+      "requested": [
+        228.125,
+        121.375
+      ],
+      "actualA": {
+        "address": "0x5b989d4b26e0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          48,
+          80
+        ],
+        "size": [
+          360,
+          240
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.PointerPeerA",
+        "title": "Pointer peer A",
+        "initialClass": "org.omarchy.PointerPeerA",
+        "initialTitle": "Pointer peer A",
+        "pid": 3996083,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000003"
+      }
+    },
+    {
+      "name": "hover mapping is independent of keyboard focus",
+      "pass_": true,
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          180.125,
+          41.375
+        ]
+      },
+      "focus": {
+        "address": "0x5b989e537d20",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          520,
+          80
+        ],
+        "size": [
+          360,
+          240
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.PointerPeerB",
+        "title": "Pointer peer B",
+        "initialClass": "org.omarchy.PointerPeerB",
+        "initialTitle": "Pointer peer B",
+        "pid": 3996164,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000004"
+      }
+    },
+    {
+      "name": "fractional output query returns logical client relative doubles",
+      "pass_": true,
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          180.125,
+          41.375
+        ]
+      },
+      "requested": [
+        228.125,
+        121.375
+      ],
+      "window": {
+        "address": "0x5b989d4b26e0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          48,
+          80
+        ],
+        "size": [
+          360,
+          240
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.PointerPeerA",
+        "title": "Pointer peer A",
+        "initialClass": "org.omarchy.PointerPeerA",
+        "initialTitle": "Pointer peer A",
+        "pid": 3996083,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000003"
+      },
+      "monitor": {
+        "id": 0,
+        "name": "WAYLAND-1",
+        "description": "",
+        "make": "",
+        "model": "",
+        "serial": "",
+        "width": 1280,
+        "height": 800,
+        "physicalWidth": 0,
+        "physicalHeight": 0,
+        "refreshRate": 60.0,
+        "x": 0,
+        "y": 0,
+        "activeWorkspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "specialWorkspace": {
+          "id": 0,
+          "name": ""
+        },
+        "reserved": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "scale": 1.25,
+        "transform": 0,
+        "focused": true,
+        "dpmsStatus": true,
+        "vrr": false,
+        "solitary": "0",
+        "solitaryBlockedBy": [
+          "NOTIFICATION",
+          "WINDOWED",
+          "CANDIDATE"
+        ],
+        "activelyTearing": false,
+        "tearingBlockedBy": [
+          "NOT_TORN",
+          "USER",
+          "SUPPORT",
+          "CANDIDATE",
+          "HW_CURSOR"
+        ],
+        "directScanoutTo": "0",
+        "directScanoutBlockedBy": [
+          "USER",
+          "CANDIDATE"
+        ],
+        "disabled": false,
+        "currentFormat": "XRGB8888",
+        "mirrorOf": "none",
+        "availableModes": [],
+        "colorManagementPreset": "srgb",
+        "sdrBrightness": 1,
+        "sdrSaturation": 1,
+        "sdrMinLuminance": 0.2,
+        "sdrMaxLuminance": 80,
+        "hardwareCursorsInUse": true
+      }
+    },
+    {
+      "name": "same pixel native fractional motion sends directed one shot",
+      "pass_": true,
+      "a": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "b": []
+    },
+    {
+      "name": "second motion without query sends no second notification",
+      "pass_": true
+    },
+    {
+      "name": "repeated queries coalesce to exactly one later signal",
+      "pass_": true
+    },
+    {
+      "name": "registration replacement discards stale pending signal",
+      "pass_": true,
+      "before": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "start": {
+        "event": "actual-registration-churn-start",
+        "monotonic": 74542.672850714,
+        "wall": 1790852362.2761128,
+        "baseline": [
+          {
+            "time": 74542.404642089,
+            "sender": ":1.15",
+            "path": "/org/freedesktop/a11y/Manager",
+            "signal": "PointerPositionChanged",
+            "parameters": []
+          },
+          {
+            "time": 74542.591733971,
+            "sender": ":1.15",
+            "path": "/org/freedesktop/a11y/Manager",
+            "signal": "PointerPositionChanged",
+            "parameters": []
+          }
+        ],
+        "query": {
+          "id": null,
+          "pass_": true,
+          "value": [
+            {
+              "app-dbus-name": ":1.6",
+              "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+            },
+            180.625,
+            41.375
+          ]
+        }
+      },
+      "end": {
+        "event": "actual-registration-churn-end",
+        "monotonic": 74542.737968292,
+        "wall": 1790852362.3412306,
+        "signals": [
+          {
+            "time": 74542.404642089,
+            "sender": ":1.15",
+            "path": "/org/freedesktop/a11y/Manager",
+            "signal": "PointerPositionChanged",
+            "parameters": []
+          },
+          {
+            "time": 74542.591733971,
+            "sender": ":1.15",
+            "path": "/org/freedesktop/a11y/Manager",
+            "signal": "PointerPositionChanged",
+            "parameters": []
+          }
+        ],
+        "cursor": {
+          "x": 228,
+          "y": 121
+        },
+        "bridge": {
+          "retiring": false,
+          "unloadQuiescent": true,
+          "registrations": 3,
+          "clients": 1,
+          "devices": 0,
+          "quiescent": true,
+          "callerPreReplay": false,
+          "pointerPending": 1,
+          "pointerDeferred": 0,
+          "pointerFences": 0,
+          "pointerDiscarded": 1,
+          "pointerEmitted": 8,
+          "nativeInputProved": false
+        }
+      },
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          180.625,
+          41.375
+        ]
+      }
+    },
+    {
+      "name": "fresh explicit query before owner churn 0",
+      "pass_": true,
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          180.875,
+          41.375
+        ]
+      }
+    },
+    {
+      "name": "actual owner churn retains exact prior notifications 0",
+      "pass_": true,
+      "before": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "bridge": {
+        "retiring": false,
+        "unloadQuiescent": true,
+        "registrations": 3,
+        "clients": 1,
+        "devices": 0,
+        "quiescent": true,
+        "callerPreReplay": false,
+        "pointerPending": 1,
+        "pointerDeferred": 0,
+        "pointerFences": 0,
+        "pointerDiscarded": 2,
+        "pointerEmitted": 9,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "fresh authorized query rearms once after churn 0",
+      "pass_": true
+    },
+    {
+      "name": "fresh explicit query before owner churn 1",
+      "pass_": true,
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          181.1875,
+          41.375
+        ]
+      }
+    },
+    {
+      "name": "actual owner churn retains exact prior notifications 1",
+      "pass_": true,
+      "before": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "bridge": {
+        "retiring": false,
+        "unloadQuiescent": true,
+        "registrations": 3,
+        "clients": 1,
+        "devices": 0,
+        "quiescent": true,
+        "callerPreReplay": false,
+        "pointerPending": 1,
+        "pointerDeferred": 0,
+        "pointerFences": 0,
+        "pointerDiscarded": 3,
+        "pointerEmitted": 12,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "fresh authorized query rearms once after churn 1",
+      "pass_": true
+    },
+    {
+      "name": "fresh explicit query before owner churn 2",
+      "pass_": true,
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          181.3125,
+          41.375
+        ]
+      }
+    },
+    {
+      "name": "actual owner churn retains exact prior notifications 2",
+      "pass_": true,
+      "before": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "bridge": {
+        "retiring": false,
+        "unloadQuiescent": true,
+        "registrations": 3,
+        "clients": 1,
+        "devices": 0,
+        "quiescent": true,
+        "callerPreReplay": false,
+        "pointerPending": 1,
+        "pointerDeferred": 0,
+        "pointerFences": 0,
+        "pointerDiscarded": 4,
+        "pointerEmitted": 15,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "fresh authorized query rearms once after churn 2",
+      "pass_": true
+    },
+    {
+      "name": "fresh explicit query before owner churn 3",
+      "pass_": true,
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          181.4375,
+          41.375
+        ]
+      }
+    },
+    {
+      "name": "actual owner churn retains exact prior notifications 3",
+      "pass_": true,
+      "before": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "bridge": {
+        "retiring": false,
+        "unloadQuiescent": true,
+        "registrations": 3,
+        "clients": 1,
+        "devices": 0,
+        "quiescent": true,
+        "callerPreReplay": false,
+        "pointerPending": 1,
+        "pointerDeferred": 0,
+        "pointerFences": 0,
+        "pointerDiscarded": 5,
+        "pointerEmitted": 18,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "fresh authorized query rearms once after churn 3",
+      "pass_": true
+    },
+    {
+      "name": "fresh explicit query before owner churn 4",
+      "pass_": true,
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          181.5625,
+          41.375
+        ]
+      }
+    },
+    {
+      "name": "actual owner churn retains exact prior notifications 4",
+      "pass_": true,
+      "before": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "bridge": {
+        "retiring": false,
+        "unloadQuiescent": true,
+        "registrations": 3,
+        "clients": 1,
+        "devices": 0,
+        "quiescent": true,
+        "callerPreReplay": false,
+        "pointerPending": 1,
+        "pointerDeferred": 0,
+        "pointerFences": 0,
+        "pointerDiscarded": 6,
+        "pointerEmitted": 21,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "fresh authorized query rearms once after churn 4",
+      "pass_": true
+    },
+    {
+      "name": "fresh explicit query before owner churn 5",
+      "pass_": true,
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          181.6875,
+          41.375
+        ]
+      }
+    },
+    {
+      "name": "actual owner churn retains exact prior notifications 5",
+      "pass_": true,
+      "before": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "bridge": {
+        "retiring": false,
+        "unloadQuiescent": true,
+        "registrations": 3,
+        "clients": 1,
+        "devices": 0,
+        "quiescent": true,
+        "callerPreReplay": false,
+        "pointerPending": 1,
+        "pointerDeferred": 0,
+        "pointerFences": 0,
+        "pointerDiscarded": 7,
+        "pointerEmitted": 24,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "fresh authorized query rearms once after churn 5",
+      "pass_": true
+    },
+    {
+      "name": "fresh explicit query before owner churn 6",
+      "pass_": true,
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          181.8125,
+          41.375
+        ]
+      }
+    },
+    {
+      "name": "actual owner churn retains exact prior notifications 6",
+      "pass_": true,
+      "before": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.868884561,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.868884561,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "bridge": {
+        "retiring": false,
+        "unloadQuiescent": true,
+        "registrations": 3,
+        "clients": 1,
+        "devices": 0,
+        "quiescent": true,
+        "callerPreReplay": false,
+        "pointerPending": 1,
+        "pointerDeferred": 0,
+        "pointerFences": 0,
+        "pointerDiscarded": 8,
+        "pointerEmitted": 27,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "fresh authorized query rearms once after churn 6",
+      "pass_": true
+    },
+    {
+      "name": "fresh explicit query before owner churn 7",
+      "pass_": true,
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          181.9375,
+          41.375
+        ]
+      }
+    },
+    {
+      "name": "actual owner churn retains exact prior notifications 7",
+      "pass_": true,
+      "before": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.868884561,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.066765204,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.868884561,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.066765204,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "bridge": {
+        "retiring": false,
+        "unloadQuiescent": true,
+        "registrations": 3,
+        "clients": 1,
+        "devices": 0,
+        "quiescent": true,
+        "callerPreReplay": false,
+        "pointerPending": 1,
+        "pointerDeferred": 0,
+        "pointerFences": 0,
+        "pointerDiscarded": 9,
+        "pointerEmitted": 30,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "fresh authorized query rearms once after churn 7",
+      "pass_": true
+    },
+    {
+      "name": "same actual caller owns independent monitor alias",
+      "pass_": true,
+      "reply": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      }
+    },
+    {
+      "name": "alias churn invalidates pointer authority despite surviving registration 0",
+      "pass_": true,
+      "before": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.868884561,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.066765204,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.260352442,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.868884561,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.066765204,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.260352442,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "bridge": {
+        "retiring": false,
+        "unloadQuiescent": true,
+        "registrations": 4,
+        "clients": 1,
+        "devices": 0,
+        "quiescent": true,
+        "callerPreReplay": false,
+        "pointerPending": 1,
+        "pointerDeferred": 0,
+        "pointerFences": 0,
+        "pointerDiscarded": 10,
+        "pointerEmitted": 33,
+        "nativeInputProved": false
+      },
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          182.0625,
+          41.375
+        ]
+      }
+    },
+    {
+      "name": "alias churn invalidates pointer authority despite surviving registration 1",
+      "pass_": true,
+      "before": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.868884561,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.066765204,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.260352442,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.868884561,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.066765204,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.260352442,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "bridge": {
+        "retiring": false,
+        "unloadQuiescent": true,
+        "registrations": 4,
+        "clients": 1,
+        "devices": 0,
+        "quiescent": true,
+        "callerPreReplay": false,
+        "pointerPending": 1,
+        "pointerDeferred": 0,
+        "pointerFences": 0,
+        "pointerDiscarded": 11,
+        "pointerEmitted": 34,
+        "nativeInputProved": false
+      },
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          182.625,
+          41.375
+        ]
+      }
+    },
+    {
+      "name": "alias churn invalidates pointer authority despite surviving registration 2",
+      "pass_": true,
+      "before": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.868884561,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.066765204,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.260352442,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.868884561,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.066765204,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.260352442,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "bridge": {
+        "retiring": false,
+        "unloadQuiescent": true,
+        "registrations": 4,
+        "clients": 1,
+        "devices": 0,
+        "quiescent": true,
+        "callerPreReplay": false,
+        "pointerPending": 1,
+        "pointerDeferred": 0,
+        "pointerFences": 0,
+        "pointerDiscarded": 12,
+        "pointerEmitted": 35,
+        "nativeInputProved": false
+      },
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          182.75,
+          41.375
+        ]
+      }
+    },
+    {
+      "name": "alias churn invalidates pointer authority despite surviving registration 3",
+      "pass_": true,
+      "before": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.868884561,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.066765204,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.260352442,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "after": [
+        {
+          "time": 74542.404642089,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.591733971,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74542.890921779,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.089107337,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.283174637,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.478440814,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.670453697,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74543.868884561,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.066765204,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        },
+        {
+          "time": 74544.260352442,
+          "sender": ":1.15",
+          "path": "/org/freedesktop/a11y/Manager",
+          "signal": "PointerPositionChanged",
+          "parameters": []
+        }
+      ],
+      "release": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "reclaim": {
+        "id": null,
+        "pass_": true,
+        "value": 1
+      },
+      "bridge": {
+        "retiring": false,
+        "unloadQuiescent": true,
+        "registrations": 4,
+        "clients": 1,
+        "devices": 0,
+        "quiescent": true,
+        "callerPreReplay": false,
+        "pointerPending": 1,
+        "pointerDeferred": 0,
+        "pointerFences": 0,
+        "pointerDiscarded": 13,
+        "pointerEmitted": 36,
+        "nativeInputProved": false
+      },
+      "query": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          182.875,
+          41.375
+        ]
+      }
+    },
+    {
+      "name": "real unexported Foot returns truthful UnknownToplevel",
+      "pass_": true,
+      "result": {
+        "id": null,
+        "pass_": false,
+        "error": "g-io-error-quark: GDBus.Error:org.freedesktop.a11y.UnknownToplevel: no verified unique accessibility toplevel (36)"
+      }
+    },
+    {
+      "name": "authorized Unknown arms exactly one later actual signal",
+      "pass_": true
+    },
+    {
+      "name": "same PID real multiwindow refuses active sibling ambiguity",
+      "pass_": true,
+      "result": {
+        "id": null,
+        "pass_": false,
+        "error": "g-io-error-quark: GDBus.Error:org.freedesktop.a11y.UnknownToplevel: no verified unique accessibility toplevel (36)"
+      },
+      "actualAX": [
+        {
+          "name": "pointer_reader_entry.py",
+          "role": "application",
+          "pid": 3996054,
+          "app_bus": ":1.3",
+          "object_path": "/org/a11y/atspi/accessible/root",
+          "children": []
+        },
+        {
+          "name": "xdg-desktop-portal-gtk",
+          "role": "application",
+          "pid": 3996114,
+          "app_bus": ":1.5",
+          "object_path": "/org/a11y/atspi/accessible/root",
+          "children": []
+        },
+        {
+          "name": "gtk_peer.py",
+          "role": "application",
+          "pid": 3996083,
+          "app_bus": ":1.6",
+          "object_path": "/org/a11y/atspi/accessible/root",
+          "children": [
+            {
+              "name": "Pointer peer A",
+              "role": "frame",
+              "pid": 3996083,
+              "app_bus": ":1.6",
+              "object_path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf",
+              "children": [
+                {
+                  "name": "",
+                  "role": "panel",
+                  "pid": 3996083,
+                  "app_bus": ":1.6",
+                  "object_path": "/org/omarchy/PointerPeerA/a11y/c3d30f3e_3f35_4e34_a78f_d0bc162d0e3f"
+                }
+              ]
+            },
+            {
+              "name": "Pointer peer A second",
+              "role": "frame",
+              "pid": 3996083,
+              "app_bus": ":1.6",
+              "object_path": "/org/omarchy/PointerPeerA/a11y/8b9f1fd7_c649_44b2_83d1_f64cacd26e36",
+              "children": [
+                {
+                  "name": "",
+                  "role": "panel",
+                  "pid": 3996083,
+                  "app_bus": ":1.6",
+                  "object_path": "/org/omarchy/PointerPeerA/a11y/27492697_d6b8_434b_9269_e794ddd01255"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gtk_peer.py",
+          "role": "application",
+          "pid": 3996164,
+          "app_bus": ":1.7",
+          "object_path": "/org/a11y/atspi/accessible/root",
+          "children": [
+            {
+              "name": "Pointer peer B",
+              "role": "frame",
+              "pid": 3996164,
+              "app_bus": ":1.7",
+              "object_path": "/org/omarchy/PointerPeerB/a11y/2fef21e4_5879_4bad_a4f5_d1c840f5f0e4",
+              "children": [
+                {
+                  "name": "",
+                  "role": "panel",
+                  "pid": 3996164,
+                  "app_bus": ":1.7",
+                  "object_path": "/org/omarchy/PointerPeerB/a11y/03522063_5f64_437d_a8f4_f9e45a57f8b9"
+                },
+                {
+                  "name": "",
+                  "role": "grouping",
+                  "pid": 3996164,
+                  "app_bus": ":1.7",
+                  "object_path": "/org/omarchy/PointerPeerB/a11y/41245c22_efba_4fec_9b12_85bdb6d7c781"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "closed sibling restores actual singleton mapping",
+      "pass_": true
+    },
+    {
+      "name": "moved client origin recomputes relative coordinates",
+      "pass_": true,
+      "result": {
+        "id": null,
+        "pass_": true,
+        "value": [
+          {
+            "app-dbus-name": ":1.6",
+            "toplevel-object-path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          180.125,
+          41.375
+        ]
+      },
+      "window": {
+        "address": "0x5b989d4b26e0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          96,
+          120
+        ],
+        "size": [
+          360,
+          240
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.PointerPeerA",
+        "title": "Pointer peer A",
+        "initialClass": "org.omarchy.PointerPeerA",
+        "initialTitle": "Pointer peer A",
+        "pid": 3996083,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000003"
+      }
+    },
+    {
+      "name": "actual reader pointer remains disabled before explicit enable",
+      "pass_": true
+    },
+    {
+      "name": "real public mouse enable succeeds",
+      "pass_": true
+    },
+    {
+      "name": "real official pointer-moved carries actual AX frame",
+      "pass_": true,
+      "events": [
+        {
+          "time": 74544.601907669,
+          "event": "actual-public-pointer-moved",
+          "accessible": {
+            "name": "Pointer peer A",
+            "role": "frame",
+            "app_bus": ":1.6",
+            "object_path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          "x": 182,
+          "y": 41
+        },
+        {
+          "time": 74544.704286866,
+          "event": "actual-public-pointer-moved",
+          "accessible": {
+            "name": "Pointer peer A",
+            "role": "frame",
+            "app_bus": ":1.6",
+            "object_path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          "x": 183,
+          "y": 41
+        },
+        {
+          "time": 74544.856727668,
+          "event": "actual-public-pointer-moved",
+          "accessible": {
+            "name": "Pointer peer A",
+            "role": "frame",
+            "app_bus": ":1.6",
+            "object_path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          "x": 180,
+          "y": 41
+        },
+        {
+          "time": 74545.285716524,
+          "event": "actual-public-pointer-moved",
+          "accessible": {
+            "name": "Pointer peer A",
+            "role": "frame",
+            "app_bus": ":1.6",
+            "object_path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          "x": 180,
+          "y": 41
+        },
+        {
+          "time": 74545.336006571,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "button",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/285f2c3d_85b3_47e7_8dd5_4c71fd55e5ff"
+          }
+        },
+        {
+          "time": 74545.351322781,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "button",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/285f2c3d_85b3_47e7_8dd5_4c71fd55e5ff"
+          }
+        },
+        {
+          "time": 74545.366345608,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "button",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/285f2c3d_85b3_47e7_8dd5_4c71fd55e5ff"
+          }
+        },
+        {
+          "time": 74545.381559089,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "button",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/285f2c3d_85b3_47e7_8dd5_4c71fd55e5ff"
+          }
+        },
+        {
+          "time": 74545.387423687,
+          "event": "actual-public-pointer-moved",
+          "accessible": {
+            "name": "Pointer peer B",
+            "role": "frame",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/2fef21e4_5879_4bad_a4f5_d1c840f5f0e4"
+          },
+          "x": 180,
+          "y": 81
+        },
+        {
+          "time": 74545.396540687,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "button",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/285f2c3d_85b3_47e7_8dd5_4c71fd55e5ff"
+          }
+        },
+        {
+          "time": 74545.411656423,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "button",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/285f2c3d_85b3_47e7_8dd5_4c71fd55e5ff"
+          }
+        },
+        {
+          "time": 74545.42673025,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "button",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/285f2c3d_85b3_47e7_8dd5_4c71fd55e5ff"
+          }
+        },
+        {
+          "time": 74545.458650291,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "label",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/a2cac2a7_9a94_4204_92cb_616977d2bfbc"
+          }
+        },
+        {
+          "time": 74545.473852056,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "label",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/a2cac2a7_9a94_4204_92cb_616977d2bfbc"
+          }
+        },
+        {
+          "time": 74545.489245155,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "label",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/a2cac2a7_9a94_4204_92cb_616977d2bfbc"
+          }
+        },
+        {
+          "time": 74545.50430484,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "label",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/a2cac2a7_9a94_4204_92cb_616977d2bfbc"
+          }
+        },
+        {
+          "time": 74545.519265094,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "label",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/a2cac2a7_9a94_4204_92cb_616977d2bfbc"
+          }
+        },
+        {
+          "time": 74545.523920544,
+          "event": "actual-public-pointer-moved",
+          "accessible": {
+            "name": "Pointer peer A",
+            "role": "frame",
+            "app_bus": ":1.6",
+            "object_path": "/org/omarchy/PointerPeerA/a11y/f741ef2d_353f_4436_9d70_9c22c487daaf"
+          },
+          "x": 180,
+          "y": 41
+        },
+        {
+          "time": 74545.534273556,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "label",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/a2cac2a7_9a94_4204_92cb_616977d2bfbc"
+          }
+        },
+        {
+          "time": 74545.590717829,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target A",
+            "role": "label",
+            "app_bus": ":1.6",
+            "object_path": "/org/omarchy/PointerPeerA/a11y/dcb017ea_76fb_4c97_8bb5_6cee4e0908d0"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Omarchy Orca compat navigates to actual GTK child and speaks it",
+      "pass_": true,
+      "current": [
+        {
+          "time": 74545.590717829,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target A",
+            "role": "label",
+            "app_bus": ":1.6",
+            "object_path": "/org/omarchy/PointerPeerA/a11y/dcb017ea_76fb_4c97_8bb5_6cee4e0908d0"
+          }
+        }
+      ],
+      "utterances": [
+        {
+          "time": 74545.590264497,
+          "kind": "speech",
+          "text": "Pointer target A",
+          "voice": {
+            "established": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "actual CSD toolkit hit and Orca AX child agree independently",
+      "pass_": true,
+      "toolkit": {
+        "time": 74545.609232848,
+        "widget_x": 180.125,
+        "widget_y": 81.375,
+        "actualPickedButton": "Pointer target B",
+        "native": "GtkApplicationWindow"
+      },
+      "reader": [
+        {
+          "time": 74545.731530087,
+          "event": "actual-public-current-item",
+          "accessible": {
+            "name": "Pointer target B",
+            "role": "label",
+            "app_bus": ":1.7",
+            "object_path": "/org/omarchy/PointerPeerB/a11y/a2cac2a7_9a94_4204_92cb_616977d2bfbc"
+          }
+        }
+      ],
+      "layout": {
+        "pid": 3996164,
+        "tag": "B",
+        "windows": [
+          {
+            "title": "Pointer peer B",
+            "width": 360,
+            "height": 240,
+            "decorated": true,
+            "surfaceTransform": [
+              0.0,
+              0.0
+            ],
+            "button": {
+              "x": 24.0,
+              "y": 71.0,
+              "width": 312.0,
+              "height": 20.0
+            }
+          }
+        ],
+        "popup": null,
+        "pointerEvent": {
+          "time": 74545.609232848,
+          "widget_x": 180.125,
+          "widget_y": 81.375,
+          "actualPickedButton": "Pointer target B",
+          "native": "GtkApplicationWindow"
+        }
+      }
+    }
+  ],
+  "restoration": {
+    "originalHiddenFilesExactProcessAndState": true,
+    "frozenDependencies": true,
+    "keyboards": true,
+    "originalClients": true,
+    "originalClientStates": true,
+    "mainPlugins": true,
+    "focus": true,
+    "cursor": true,
+    "a11y": true,
+    "readerDisabled": true,
+    "catalogBytes": true,
+    "outputs": true,
+    "fixturesExited": true,
+    "configErrors": true
+  },
+  "nativeInputProved": false,
+  "nativePointerProved": false,
+  "widerPolicyInputProved": false,
+  "physicalHardwareProved": false,
+  "before": {
+    "files": {
+      "pid": 667402,
+      "instance": "yyaefmu6mt",
+      "processStart": "1275224",
+      "visible": false,
+      "publicSHA256": "f084cf1a9cd3ecfd38972157356a638a7c7ac85f81e158d00d34cb1d5d2d23fe",
+      "uiSHA256": "dd2ed7a4e7362b8c2f3ccffeec303a3638be134b30c172b90faf08c5d1c652f9"
+    },
+    "clientStates": [
+      {
+        "address": "0x5a02aee429f0",
+        "pid": 4007,
+        "stableId": "18000005",
+        "at": [
+          945,
+          284
+        ],
+        "size": [
+          386,
+          444
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "floating": true,
+        "monitor": 0
+      },
+      {
+        "address": "0x5a02b0cc9280",
+        "pid": 4311,
+        "stableId": "18000006",
+        "at": [
+          417,
+          71
+        ],
+        "size": [
+          1022,
+          890
+        ],
+        "workspace": {
+          "id": -98,
+          "name": "special:win-minimized"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "grouped": [],
+        "tags": [
+          "chromium-based-browser*"
+        ],
+        "floating": true,
+        "monitor": 0
+      },
+      {
+        "address": "0x5a02afa13e90",
+        "pid": 252010,
+        "stableId": "1800006a",
+        "at": [
+          26,
+          145
+        ],
+        "size": [
+          1002,
+          789
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "floating": true,
+        "monitor": 0
+      },
+      {
+        "address": "0x5a02afd20bd0",
+        "pid": 361074,
+        "stableId": "18000076",
+        "at": [
+          817,
+          206
+        ],
+        "size": [
+          700,
+          500
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "floating": true,
+        "monitor": 0
+      }
+    ],
+    "clients": [
+      [
+        "0x5a02aee429f0",
+        4007,
+        "18000005"
+      ],
+      [
+        "0x5a02b0cc9280",
+        4311,
+        "18000006"
+      ],
+      [
+        "0x5a02afd20bd0",
+        361074,
+        "18000076"
+      ],
+      [
+        "0x5a02afa13e90",
+        252010,
+        "1800006a"
+      ]
+    ],
+    "focus": [
+      "0x5a02afa13e90",
+      252010,
+      "1800006a"
+    ],
+    "cursor": {
+      "x": 527,
+      "y": 539
+    },
+    "a11y": {
+      "dev": 84,
+      "inode": 91312,
+      "connects": true
+    },
+    "readerStatus": "(<false>,)",
+    "catalogHashes": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    },
+    "catalogBackup": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v8/native-pointer-attempt-5/catalog-before.json"
+  },
+  "private": {
+    "pid": 3995794,
+    "signature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790852357_438312001",
+    "runtime": "/tmp/kbn-l3h3r_9w",
+    "config": "/tmp/kbn-l3h3r_9w/hyprland.lua"
+  },
+  "privateAccessibility": {
+    "address": "unix:path=/tmp/kbn-l3h3r_9w/at-spi/bus",
+    "socket": "/tmp/kbn-l3h3r_9w/at-spi/bus",
+    "registryPID": 3995893,
+    "launcherPID": 3995875
+  },
+  "result": "failed",
+  "error": "AssertionError('actual GTK popup child under pointer: None')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v8/native_probe_pointer.py\", line 180, in execute\n    cases.run(dict(here=HERE,reader_root=READER,env=env,report=report,check=check,manager=manager,\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        ctl=ctl,data=data,received=received,marker=marker,launch=launch,processes=processes,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        pid_stop=pid_stop,wait=wait,lib=LIB,runtime=runtime,config=config,ax_address=ax_address,foot=foot,foot_window=foot_window))\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v8/native-pointer-attempt-5/native-fixture/pointer_cases.py\", line 253, in run\n    popup_hit=wait(lambda:r if (r:=read_json(peers['A']['layout']).get('pointerEvent')) and r['time']>=start and r['actualPickedButton']=='Actual popup target A' else None,'actual GTK popup child under pointer')\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v8/native_probe_pointer.py\", line 41, in wait\n    raise AssertionError(label+': '+str(last))\nAssertionError: actual GTK popup child under pointer: None\n",
+  "cleanupUnloadQuiescent": true,
+  "cleanupNormalUnloadResult": "ok",
+  "privateDescendantCleanup": {
+    "before": [],
+    "remaining": []
+  },
+  "terminalBytes": "",
+  "catalogComparison": {
+    "/home/hoskinson/.config/omarchy/virtual-desktops.json": {
+      "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-settings.json": {
+      "expectedSHA256": null,
+      "actualSHA256": null,
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-order.json": {
+      "expectedSHA256": null,
+      "actualSHA256": null,
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-session-order.json": {
+      "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "exactBytes": true
+    }
+  },
+  "mainKeyboardComparison": {
+    "before": [
+      {
+        "address": "0x5a02b0b335a0",
+        "name": "video-bus",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d38ea0",
+        "name": "ideapad-extra-buttons",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d76090",
+        "name": "video-bus-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afcd3dd0",
+        "name": "ite-tech.-inc.-ite-device(8258)-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d8f5f0",
+        "name": "ite-tech.-inc.-ite-device(8258)-wireless-radio-control",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02ae1c49c0",
+        "name": "hda-intel-pch-headphone",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afb42100",
+        "name": "power-button",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02af2ea440",
+        "name": "power-button-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afaa1ad0",
+        "name": "at-translated-set-2-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b04bf700",
+        "name": "hl-virtual-keyboard-fcitx5",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": true
+      }
+    ],
+    "after": [
+      {
+        "address": "0x5a02b0b335a0",
+        "name": "video-bus",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d38ea0",
+        "name": "ideapad-extra-buttons",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d76090",
+        "name": "video-bus-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afcd3dd0",
+        "name": "ite-tech.-inc.-ite-device(8258)-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d8f5f0",
+        "name": "ite-tech.-inc.-ite-device(8258)-wireless-radio-control",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02ae1c49c0",
+        "name": "hda-intel-pch-headphone",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afb42100",
+        "name": "power-button",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02af2ea440",
+        "name": "power-button-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afaa1ad0",
+        "name": "at-translated-set-2-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b04bf700",
+        "name": "hl-virtual-keyboard-fcitx5",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": true
+      }
+    ]
+  },
+  "originalFilesComparison": {
+    "before": {
+      "pid": 667402,
+      "instance": "yyaefmu6mt",
+      "processStart": "1275224",
+      "visible": false,
+      "publicSHA256": "f084cf1a9cd3ecfd38972157356a638a7c7ac85f81e158d00d34cb1d5d2d23fe",
+      "uiSHA256": "dd2ed7a4e7362b8c2f3ccffeec303a3638be134b30c172b90faf08c5d1c652f9"
+    },
+    "after": {
+      "pid": 667402,
+      "instance": "yyaefmu6mt",
+      "processStart": "1275224",
+      "visible": false,
+      "publicSHA256": "f084cf1a9cd3ecfd38972157356a638a7c7ac85f81e158d00d34cb1d5d2d23fe",
+      "uiSHA256": "dd2ed7a4e7362b8c2f3ccffeec303a3638be134b30c172b90faf08c5d1c652f9"
+    }
+  }
+}

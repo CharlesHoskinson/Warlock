@@ -1,0 +1,74 @@
+{
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-d999d4be89c2488488c4685c970e4f7e.scope",
+    "coreLimit": 1
+  },
+  "nativeGuiExecuted": false,
+  "nativeActorExecuted": false,
+  "testCompositorIsProtocolFixture": true,
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/native-frontend-adapter-v1/frontend_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  frontend_test\n    ok invalidIdentityRefusedTest passed 1 test(s)\n    ok verifiedAcceptedTest passed 1 test(s)\n    ok noEofUnknownNoRetryTest passed 1 test(s)\n    ok disconnectedNoFallbackTest passed 1 test(s)\n    ok explicitRejectedTest passed 1 test(s)\n    ok ambiguousReceiptTest passed 1 test(s)\n    ok postReceiptIdentityFaultTest passed 1 test(s)\n    ok postReceiptLogFaultTest passed 1 test(s)\n    ok duplicateAcceptedNoSendTest passed 1 test(s)\n\n  9 passing (150ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/native-frontend-adapter-v1/frontend.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (671ms at 2981 traces/second).\nUse --seed=0x1509bfe --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "/home/hoskinson/window-integration-qa/native-frontend-adapter-v1/test_frontend.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_actual_cli_delegates_v12_once_with_eof (__main__.Frontend.test_actual_cli_delegates_v12_once_with_eof) ... ok\ntest_ambiguous_acceptance_retained (__main__.Frontend.test_ambiguous_acceptance_retained) ... ok\ntest_config_builder_wrong_requester_argv_refused (__main__.Frontend.test_config_builder_wrong_requester_argv_refused) ... ok\ntest_explicit_cli (__main__.Frontend.test_explicit_cli) ... ok\ntest_explicit_server_refusal_retained (__main__.Frontend.test_explicit_server_refusal_retained) ... ok\ntest_extra_frame_uncertain_no_second_send (__main__.Frontend.test_extra_frame_uncertain_no_second_send) ... ok\ntest_foreign_path_refused (__main__.Frontend.test_foreign_path_refused) ... ok\ntest_missing_eof_uncertain_no_second_send (__main__.Frontend.test_missing_eof_uncertain_no_second_send) ... ok\ntest_missing_frame_uncertain_no_second_send (__main__.Frontend.test_missing_frame_uncertain_no_second_send) ... ok\ntest_no_inferred_target (__main__.Frontend.test_no_inferred_target) ... ok\ntest_noncanonical_identity (__main__.Frontend.test_noncanonical_identity) ... ok\ntest_post_receipt_log_failure_uncertain_not_refused (__main__.Frontend.test_post_receipt_log_failure_uncertain_not_refused) ... ok\ntest_post_send_config_change_uncertain (__main__.Frontend.test_post_send_config_change_uncertain) ... ok\ntest_post_send_socket_disappearance_uncertain (__main__.Frontend.test_post_send_socket_disappearance_uncertain) ... ok\ntest_private_entry_wrong_legacy_refused_before_replace (__main__.Frontend.test_private_entry_wrong_legacy_refused_before_replace) ... ok\ntest_private_path_symlink_refused (__main__.Frontend.test_private_path_symlink_refused) ... ok\ntest_real_cli_config_builder_and_private_entry (__main__.Frontend.test_real_cli_config_builder_and_private_entry) ... ok\ntest_stale_lifetime_refused_before_api_send (__main__.Frontend.test_stale_lifetime_refused_before_api_send) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 7.875s\n\nOK\n"
+    }
+  ],
+  "sourceChecks": {
+    "candidateAndBuilderImportWithoutSocketLaunch": true,
+    "allCandidateSourcesParse": true,
+    "unchangedV12RequestCalledExactlyOneSourceSite": true,
+    "noInputOrActorOrLegacyFallbackImports": true,
+    "readOnlyCurrentCompositorObservationOnly": true,
+    "directIsolatedNoSiteShebang": true,
+    "postSendFaultsUncertainNoRetry": true,
+    "ownedConfigEntryRootsSocketPeerEOFGuards": true,
+    "nativeAcceptanceNotCompletion": true
+  },
+  "pythonTests": 18,
+  "formalNamedCases": 9,
+  "formalSamples": 2000,
+  "formalSteps": 100,
+  "formalSeed": 20260930,
+  "mainWrites": false,
+  "productionDeployment": false,
+  "actualTaskbarClickProved": false,
+  "realMinimizeRestoreProved": false,
+  "backendBaseline": "Accepted frozen FamilyV8; direct API frontend limitation retained",
+  "sourceSHA256": {
+    "native_frontend.py": "db64ae0bde6c143cda177b34918383f4b4f6d68d565930f361f90abe434379d1",
+    "prepare_config.py": "25aa17fc34373e9a1710873b10bcf50980843c2ae4822daa67a61ea6f1db6ca9",
+    "test_frontend.py": "3130fe4f76b742a00c149766e7fff6803be2f06f743822afe10f78321d1f3ee0",
+    "frontend.qnt": "da8fcf3ce66272e4ba26376d92808cdb0239d1b3c0cc00a561bc09f0225f70d9",
+    "frontend_test.qnt": "e6408c6413327bcc4814a1ea852b487067f325d32c82b20ec025cee2d80a3c63"
+  },
+  "result": "pass"
+}

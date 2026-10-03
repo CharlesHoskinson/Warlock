@@ -1,0 +1,10 @@
+--- window-integration-qa/toolkit-interruption-v3/native-candidate/main.cpp
++++ window-integration-qa/toolkit-interruption-v4/native-candidate/main.cpp
+@@ -273,6 +273,7 @@
+     HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "drag_bridge", ::luaDragBridgeAvailable);
+     HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "file_drag_active", ::luaFileDragActive);
+     HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "retire_gesture_current", ::luaRetireGestureCurrent);
++    HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "window_lifetime", ::luaWindowLifetime);
+     HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "window_families", ::luaWindowFamilies);
+     HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "window_snapshot", ::luaWholeWindowSnapshot);
+     HyprlandAPI::addLuaFunction(PHANDLE, "hyprbars", "window_atlas", ::luaWindowAtlas);

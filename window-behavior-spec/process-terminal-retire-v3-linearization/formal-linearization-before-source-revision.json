@@ -1,0 +1,61 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/LINEARIZATION_CONTRACT.md": {
+      "sha256": "01b58f223fd12174295d6b15d4e4c948a91976116cc340685852e5a728d8286b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/terminal_linearization.qnt": {
+      "sha256": "d2c0bdf843aa2a4ce3ec4a3808e100d3006c2b05ae6d392488c3b176199762c7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/prove_linearization_before.py": {
+      "sha256": "57b0f1e6a98e73efda39ddafcb607b217a3498e6c014f383a38f23ef7d3bdf27",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/process-terminal-retire-v2-source-proposal-handoff-v1.json": {
+      "sha256": "b9e5117a371161cf12ffa1817cf1c51f01bf19bf140c05101b8449996463825c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/proposal/desired/ProcessRegistry.cpp": {
+      "sha256": "4cd20d109a6b5d51a0deba9b57ab46f3a87ecb82f364226e19745f734103ce69",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/proposal/desired/PinWindowMenu.qml": {
+      "sha256": "e39d8ac4ecf56d16325133a3078d230b1e88833bfbf9b34851054eca760ddf52",
+      "mode": 420
+    }
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/terminal_linearization.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  terminal_linearization\n    ok normalLinearizationPreservesExactPastTest passed 1 test(s)\n    ok matchedFaultAtDisconnectBoundaryRefusesTest passed 1 test(s)\n    ok matchedFaultAfterFinalDrainRefusesTest passed 1 test(s)\n    ok overflowAfterFinalDrainRefusesTest passed 1 test(s)\n    ok preexistingMatchedQueueDrainedAtEntryTest passed 1 test(s)\n    ok oldPendingQueueDoesNotFaultSelectedRetirementTest passed 1 test(s)\n    ok oldCallbackAdmittedAfterCommitCannotAlterPastTest passed 1 test(s)\n    ok replacedRecordNeverErasedByOldRetireTest passed 1 test(s)\n    ok replacedRecordNeverFaultedByOldQueuedCallbackTest passed 1 test(s)\n    ok implicitSameCommandReuseStillDrainsCurrentFaultTest passed 1 test(s)\n    ok visibleCurrentRetirementRefusalPublishesFailureOnlyTest passed 1 test(s)\n    ok repeatedRefusalCannotPublishOrLaunchTwiceTest passed 1 test(s)\n    ok changedMenuGetsNoOldRefusalPublicationTest passed 1 test(s)\n    ok dismissedMenuGetsNoOldRefusalPublicationTest passed 1 test(s)\n    ok successfulRetirementNeverPublishesPinSuccessTest passed 1 test(s)\n\n  15 passing (857ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/terminal_linearization.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1178ms at 1698 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceStableDuringProof": true,
+  "original63Exact": true,
+  "runtimeApplied": false,
+  "compiled": false,
+  "GUI": false
+}

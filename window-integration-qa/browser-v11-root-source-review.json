@@ -1,0 +1,25 @@
+{
+  "updatedUTC": "2026-10-02T00:13:02.834019+00:00",
+  "result": "root-source-review-pass",
+  "sourceAuthoredByRoot": true,
+  "manifestSHA256": "edd85057ed84b2904b2b8e8246eba1ea789b6dbcbd4f2ad50b8c0be1b4a63cd2",
+  "fileCount": 40200,
+  "linkCount": 13770,
+  "sourceObligations": 32,
+  "pythonTests": 121,
+  "formalNamed": 69,
+  "formalModels": 7,
+  "samples": 14000,
+  "onlySessionChanges": {
+    "import": "from metrics_diagnostic import observe as observe_metrics\n",
+    "block": "  metrics_proof={'phase':label};report.setdefault('browserMetricsDiagnostic',[]).append(metrics_proof)\n  try:\n   observe_metrics(metrics_proof,evidence,owned_roots['browser'],profile,expected,target_guard)\n  except Exception as error:\n   metrics_proof.setdefault('errors',{})['observation']={'type':type(error).__name__,'errno':getattr(error,'errno',None),'error':str(error)};raise\n  finally:\n   PrivateDesktop.private_json(out/'browser-metrics-diagnostic.json',report['browserMetricsDiagnostic'])\n",
+    "authorityChanged": false,
+    "priorSessionSHA256": "229cd6d9d06258e8bf11c78e9b6116c011318f316b05bbddb7da3e1077ccf998"
+  },
+  "allRuntimeAuthorityAndInputSourcesUnchanged": true,
+  "rawMetadataDiagnosticBeforeUnchangedGate": true,
+  "sevenActualCPUKernelTests": true,
+  "authorityGranted": false,
+  "nativeAccepted": false,
+  "mainWrites": false
+}

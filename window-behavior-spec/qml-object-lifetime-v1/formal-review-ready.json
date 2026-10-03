@@ -1,0 +1,98 @@
+{
+  "result": "contract-model-review-ready",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/CONTRACT.md": {
+      "sha256": "3c60f2ce9b0ffb916c2e4a32399b4da95f857dc71bc45023afc57b2caebef04d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/IMPLEMENTATION_MAPPING.md": {
+      "sha256": "14871b6d1b50b3a0e8aee80c78fd011e079adcde0732a4baa25eb08f1c61a888",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/SOURCE_API_REVIEW.md": {
+      "sha256": "c03d6a282b2d1e33215c6af3523da74a4c09660ad366f53194cb90a19b7b907c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/formal-before-runtime.json": {
+      "sha256": "571b5ba4752aa6d3494f17677743e2b0b23ca8def166b779ea48273d8a4868c5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/formal-final-before-runtime.json": {
+      "sha256": "58037fd4b05f509194b0a9db2d055a72a60fbeb8cd73bdca531f74db0aaf6d6d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/formal-refined-before-runtime.json": {
+      "sha256": "55c96e36a764aaa3106a6dd417a848f803406b7d452c893c6f7ae6e326d64d32",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/initial-contract.md": {
+      "sha256": "55b016cdc3165466750033f394771f0cf592cd5b8b8a9095f0993104a47d647d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/initial-model.qnt": {
+      "sha256": "a938703973cbfd6b376db53d07a9e9774a029a2cf079fb6944b9925cfdc924ef",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/initial-prove-before.py": {
+      "sha256": "37a5fab469806bea944defa4f3f389ff73c758b1630ea6d238acfdb92c8fa655",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/prove_before.py": {
+      "sha256": "04e3f19ee0e58a1dfe1bbd799da31334694a94be8b0ba0e4132e6319c8b53a1b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/qml_lifetime.qnt": {
+      "sha256": "dfe8250976b1431dd68f3957887c6d234185166c161769698e83bafab6dfda8e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/refined-v2-contract.md": {
+      "sha256": "55b016cdc3165466750033f394771f0cf592cd5b8b8a9095f0993104a47d647d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/refined-v2-model.qnt": {
+      "sha256": "8959e2d5032e6a504ddd49bf8ece174a7ee223c9adc63355d3884ecc77d25afb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v1/refined-v2-prove.py": {
+      "sha256": "82c4276419c534b3de236e24989f521b3219039f5f770d0e95114a0874af80ee",
+      "mode": 420
+    },
+    "/usr/include/qt6/QtQml/qqmlengine.h": {
+      "sha256": "5adb9ef0b6df8895de915b9f2e7710d049dd36432159eecca2e83a8616c03f02",
+      "mode": 420
+    },
+    "/usr/include/qt6/QtQml/qqml.h": {
+      "sha256": "5b8d760914cea8f632a2865ec8c5f0534ad8b7493906f89d4f960e9d8d560b70",
+      "mode": 420
+    },
+    "/usr/include/qt6/QtCore/qpointer.h": {
+      "sha256": "37610b4a3be3c516c1d894c93403de212b44a939c086131d55796f326965af1f",
+      "mode": 420
+    },
+    "/usr/include/bits/dlfcn.h": {
+      "sha256": "1580d0227b8fe5d335769a5091bbc399440b94d803b4789552b062eccfb8fdf1",
+      "mode": 420
+    },
+    "/usr/lib/qt6/qml/Quickshell/quickshell-core.qmltypes": {
+      "sha256": "644dca19bedcdfbc9fbd3db999fb51a3d3c7ce65db564ae3800e7870e2e298bd",
+      "mode": 420
+    }
+  },
+  "namedTests": 29,
+  "traces": 2000,
+  "maxSteps": 100,
+  "uniqueMonotonicLiveIdentityInvariant": true,
+  "initial26AndRefined26EvidenceRetained": true,
+  "actualProviderRuntimeImplemented": false,
+  "actualProviderLoaded": false,
+  "actualQtEngineOrObjectAccepted": false,
+  "rootReviewRequiredBeforeRuntime": true,
+  "currentRelationshipProfile": "visual-widget-descendant; Pin popup profile separately required",
+  "reloadStartPublicAPILimit": true,
+  "loaderPersistenceCPUProofPending": true,
+  "BWholeNativeCampaignRunnable": false,
+  "batchConsumerAccepted": false,
+  "nativeLaunch": false,
+  "mainChanges": false,
+  "frozen": false
+}

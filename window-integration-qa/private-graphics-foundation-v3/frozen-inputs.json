@@ -1,0 +1,25 @@
+{
+  "scope": "actual private hardware/bootstrap after fixture blankoutput/settings isolation fixes; prior attempts retained",
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/private-graphics-foundation-v3/run_foundation.py": "88a151806b07f37142380775e14d5b9bd06427c51a44cdb3a44cefc846afafd6",
+    "/home/hoskinson/window-integration-qa/private-graphics-foundation-v3/observations.py": "9f9b1bb282081c6f73422a40b41beede27f04a8c276d4ff3e07d1269e15c5f37",
+    "/home/hoskinson/window-integration-qa/private-graphics-foundation-v3/catalog_preservation.py": "c579d169e9b7093331fd4b78d015cc9fbbcd38c9ceb3772aef1bd0f5056fc54d",
+    "/home/hoskinson/window-integration-qa/private-graphics-foundation-v3/nested-foundation.lua": "2aadb09b9afc3be0183bda4721e3a8e73c7e7d3c563b21979b6e1fbf4d8fc51a",
+    "/home/hoskinson/window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+    "/home/hoskinson/window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+    "/home/hoskinson/window-integration-qa/private-weston-aq-host-v2/weston_host.py": "eefee4ebefbdaafa48fc1487c94b6bd0a8ba61ceadf2e77feaa9e8ecfffbb6a3",
+    "/home/hoskinson/window-integration-qa/private-weston-aq-host-v2/frozen-inputs.json": "c3e4950c9b4245afd6491ac7ad04e23ab1ba4555922f68547c6956035eaafefa",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/host-stage-report.json": "08bc911b36ac6f9910b12513333a3d1d0d7149b12d56776b5ff57703e4fe3900",
+    "/home/hoskinson/window-integration-qa/aquamarine-version-guard-v1/frozen-inputs.json": "abd1f3818e8fdee2683deea4312cbd1d1a3da2ecd305a459e5a7f0762076ed14"
+  },
+  "command": [
+    "python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "python3",
+    "/home/hoskinson/window-integration-qa/private-graphics-foundation-v3/run_foundation.py",
+    "--execute",
+    "--output",
+    "/home/hoskinson/window-integration-qa/private-graphics-foundation-v3/attempt-1"
+  ]
+}

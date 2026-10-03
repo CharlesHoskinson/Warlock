@@ -1,0 +1,14 @@
+{
+  "nativeExecuted": false,
+  "failures": [
+    {
+      "stage": "offline retained closure device comparison",
+      "error": "Mapped V6 Brave device00:1e differs from current stat device0:20; inode424324 and exact bytes unchanged. Extra unreviewed superblock-device equality removed for stable ordinary disk seeds; V6 inode/bytes/mode property unchanged. Both devices retained. New tmpfs FD identity still requires exact device equality."
+    },
+    {
+      "stage": "kernel data fixture tests initial",
+      "result": "17 passed / 1 error",
+      "error": "Ambiguous duplicate mount test included an empty line and parser raised ValueError. Parser now ignores blank lines and explicitly refuses malformed/incomplete mount records."
+    }
+  ]
+}

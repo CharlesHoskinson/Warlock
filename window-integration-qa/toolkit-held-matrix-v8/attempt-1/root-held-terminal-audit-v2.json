@@ -1,0 +1,56 @@
+{
+  "result": "fail",
+  "checks": {
+    "terminalReportRetainsActualFailure": true,
+    "completeFrozenBytesModesLinks": true,
+    "exactSourceManifest": true,
+    "all18MainPreservation": true,
+    "mainWritesAbsent": true,
+    "allFourExactVariants": false,
+    "qt-wayland:all13ExactCases": false,
+    "qt-wayland:move-escape:nativeReplay": true,
+    "qt-wayland:move-escape:normalPublicQuit": true,
+    "qt-wayland:move-reload:nativeReplay": true,
+    "qt-wayland:move-reload:normalPublicQuit": true,
+    "qt-wayland:move-unload-reload:nativeReplay": true,
+    "qt-wayland:move-unload-reload:normalPublicQuit": true,
+    "qt-wayland:move-minimize-preview:nativeReplay": false,
+    "qt-wayland:move-minimize-preview:normalPublicQuit": true,
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:exactQSReadinessAndExplicitNormalQuit": true,
+    "qt-wayland:normalQSAndService": true,
+    "qt-wayland:nativeUnloadNormalOrdered": true,
+    "qt-wayland:hostRuntimeCleanup": true,
+    "qt-wayland:rawHelpersNormalExact": false,
+    "qt-wayland:allRecordedOriginalIdentitiesGone": true,
+    "qt-wayland:bothGenuineShellPreviewReceipts": false
+  },
+  "errors": {},
+  "inventory": [
+    {
+      "variant": "qt-wayland",
+      "reachedCases": 4,
+      "retainedResult": "fail",
+      "errors": {
+        "error": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/run_native.py\", line 110, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/held_controller.py\", line 132, in run\n    if end=='minimize-preview':route.restore_frontend(target,current_geometry)\n                               ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/held_route.py\", line 186, in restore_frontend\n    def restore_frontend(self,target,geometry):return self.frontend.restore(self,target,geometry)\n                                                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/frontend_route.py\", line 98, in restore\n    before_click=route.wait(lambda:arrived('hoskinson-taskbar-popup'),'Actual pointer enters exact preview card layer')\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/held_route.py\", line 97, in wait\n    def wait(self,*args,**kwargs):return wait(*args,**kwargs)\n                                         ~~~~^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/held_route.py\", line 25, in wait\n    raise TimeoutError(label+(': '+last if last else ''))\nTimeoutError: Actual pointer enters exact preview card layer\n",
+        "helperAcceptanceError": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/run_native.py\", line 110, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/held_controller.py\", line 132, in run\n    if end=='minimize-preview':route.restore_frontend(target,current_geometry)\n                               ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/held_route.py\", line 186, in restore_frontend\n    def restore_frontend(self,target,geometry):return self.frontend.restore(self,target,geometry)\n                                                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/frontend_route.py\", line 98, in restore\n    before_click=route.wait(lambda:arrived('hoskinson-taskbar-popup'),'Actual pointer enters exact preview card layer')\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/held_route.py\", line 97, in wait\n    def wait(self,*args,**kwargs):return wait(*args,**kwargs)\n                                         ~~~~^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/held_route.py\", line 25, in wait\n    raise TimeoutError(label+(': '+last if last else ''))\nTimeoutError: Actual pointer enters exact preview card layer\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/run_native.py\", line 172, in variant_run\n    report['completedHelpers']=helper_setup.wait_and_archive(config,output/'completed-helpers.json',expect_harness=expectation['harnessSnapshotAttempted'],expect_service=expectation['serviceRegistered'])\n                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/helper_setup.py\", line 271, in wait_and_archive\n    result = observer.summarize(events, config['allowed'], require_all,expect_harness,expected)\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/helper_observer.py\", line 442, in summarize\n    if actual!=expected_service:raise RuntimeError('Incomplete/extra service helper queries')\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Incomplete/extra service helper queries\n"
+      }
+    }
+  ],
+  "sourceManifestSHA256": "fa37d12a3a0fd7eaa69401835efb3376a6a8b8ca410d691aa87e6ea8b52cc688",
+  "sourceCount": 22476,
+  "modeCount": 22476,
+  "linkCount": 327,
+  "actualReachedCases": 4,
+  "expectedCases": 52,
+  "producerResult": "fail",
+  "nativeCommands": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false,
+  "fullHeld52ReplayAccepted": false,
+  "replayLimitations": [
+    "Historical geometry/pin and native IPC command timing are accepted only where actual samples are retained; gate booleans alone do not supply missing observations."
+  ],
+  "auditorSourceSHA256": "5d35dd6a4f31e71073faa44241d0368055523787040c3842436345236d2fc011"
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_keyboard_layout" xml:lang="eo">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_toggling_caps_lock"/>
+    <title type="sort">6. Klavara Aranĝo</title>
+    <desc>Elekti la Desktop- aŭ Laptop-aranĝon</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Klavara Aranĝo</title>
+  <p>Orko havas du klavarajn aranĝojn: Desktop (t.e. kun numera klavaro) kaj Laptop. La aranĝo kiun vi elektas influas kiun klavon oni uzas kiel la Orko Modifier.</p>
+  <list>
+    <item>
+      <p>Se vi uzas la Laptop-aranĝon, la defaŭlta Orko Modifier estos <key>CapsLock</key></p>
+    </item>
+    <item>
+      <p>Se vi uzas la Desktop-aranĝon, la Orko Modifier estos ambaŭ <key>Insert</key> kaj <key>KP_Insert</key>, ĉi-lasta estante la sama klavo kiel <key>KP_0</key>.</p>
+    </item>
+  </list>
+  <p>La aranĝo ankaŭ determinas la klavpremojn asociitajn kun kelkaj komandoj de <app>Orko</app>, precipe en la areoj de Plata Revizio, Kie Mi Estas, kaj Diri Ĉion.</p>
+  <steps>
+    <title>Ŝanĝi Vian Klavaran Aranĝon</title>
+    <item>
+      <p>Eniru la dialogon <link xref="preferences">Orko Agordoj</link> per premi <keyseq><key>Orko Modifier</key><key>Space</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Movu al la grupo de radikbutonoj <gui>Klavara Aranĝo</gui>.</p>
+    </item>
+    <item>
+      <p>Per sagaj klavoj, iru al la dezirata aranĝo.</p>
+    </item>
+    <item>
+      <p>Premu la butonon <gui>Apliki</gui>.</p>
+    </item>
+  </steps>
+</page>

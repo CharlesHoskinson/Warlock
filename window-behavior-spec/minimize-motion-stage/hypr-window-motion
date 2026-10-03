@@ -1,0 +1,536 @@
+#!/usr/bin/env python3
+"""Identity-bound snapshot route for minimize/restore. No native geometry writes.
+
+The taskbar supplies real icon coordinates. Passive QML acknowledges image
+readiness before minimize, and acknowledges the visual endpoint before restore.
+Only the latest token has commit authority. A watchdog commits current intent
+when the renderer dies/reloads, motion is reduced, or an acknowledgement is lost.
+"""
+import fcntl
+import hashlib
+import json
+import math
+import os
+from pathlib import Path
+import re
+import shutil
+import socket
+import socketserver
+import subprocess
+import sys
+import threading
+import time
+import uuid
+
+HOME = Path.home()
+BASE = Path(__file__).resolve().parent
+RUNTIME = Path(os.getenv('XDG_RUNTIME_DIR', str(HOME / '.cache')))
+SESSION = hashlib.sha256(os.getenv('HYPRLAND_INSTANCE_SIGNATURE', 'session').encode()).hexdigest()[:20]
+ROOT = RUNTIME / 'hypr-window-motion' / SESSION
+SOCKET = ROOT / 'control.sock'
+CORE = Path(os.getenv('HYPR_WINDOWCTL_CORE', str(BASE / 'hypr-windowctl-core')))
+ADDRESS = re.compile(r'^0x[0-9a-fA-F]+$')
+IDENTITY = re.compile(r'^[A-Za-z0-9_-]+$')
+
+
+def key(w):
+    return (w.get('address'), str(w.get('stableId', '')), int(w.get('pid', 0)))
+
+
+def rectangle(w):
+    values = [*w.get('at', []), *w.get('size', [])]
+    if len(values) != 4 or not all(isinstance(v, (int, float)) and math.isfinite(v) for v in values):
+        raise ValueError('invalid rectangle')
+    if values[2] <= 0 or values[3] <= 0:
+        raise ValueError('empty rectangle')
+    return dict(zip(('x', 'y', 'width', 'height'), values))
+
+
+class Desktop:
+    def clients(self):
+        return json.loads(subprocess.check_output(['hyprctl', 'clients', '-j'], text=True, timeout=2))
+
+    def active(self):
+        return json.loads(subprocess.check_output(['hyprctl', 'activewindow', '-j'], text=True, timeout=2)).get('address')
+
+    def reduced(self):
+        try:
+            return (HOME / '.config/hypr/reduced-motion').read_text().strip() == '1'
+        except OSError:
+            return False
+
+    def ipc(self, method, payload):
+        output = subprocess.check_output(['omarchy-shell', 'hoskinson.windows', method, json.dumps(payload)], text=True, timeout=1)
+        return json.loads(output) if output.strip() else None
+
+    def target(self, window):
+        return self.ipc('motionTarget', dict(zip(('address', 'stableId', 'pid'), key(window))))
+
+    def monitors(self):
+        return json.loads(subprocess.check_output(['hyprctl','monitors','-j'],text=True,timeout=2))
+
+    def source_screen(self,window,previous=None):
+        monitors=self.monitors()
+        if previous and window.get('workspace',{}).get('name')=='special:win-minimized' and previous.get('target'):
+            monitor=next((m for m in monitors if m.get('name')==previous['target']['screenName']),None)
+            if monitor:return monitor
+        monitor=next((m for m in monitors if m.get('id')==window.get('monitor')),None)
+        if not monitor:raise ValueError('source monitor unavailable')
+        if not window.get('pinned') and window.get('workspace',{}).get('name')!=monitor.get('activeWorkspace',{}).get('name'):
+            raise ValueError('source window is on a hidden desktop')
+        return monitor
+
+    def select_destination(self,window):
+        state=RUNTIME/'hypr-windowctl'/window['address']
+        fields=state.read_text().split()
+        metadata=json.loads(state.with_name(state.name+'.monitor.json').read_text())
+        if len(fields)<3 or not fields[0].isdigit() or fields[2]!=str(window['stableId']) or metadata.get('pid')!=window['pid'] or metadata.get('stableId')!=window['stableId'] or str(metadata.get('homeWorkspace'))!=fields[0]:
+            raise ValueError('stored destination identity is stale or incomplete')
+        destination=fields[0]
+        monitors=self.monitors()
+        workspaces=json.loads(subprocess.check_output(['hyprctl','workspaces','-j'],text=True,timeout=2))
+        workspace=next((w for w in workspaces if w.get('name')==destination),None)
+        monitor=next((m for m in monitors if workspace and (m.get('id')==workspace.get('monitorID') or m.get('name')==workspace.get('monitor'))),None)
+        monitor=monitor or next((m for m in monitors if m.get('name')==metadata.get('monitorName')),None)
+        # Output removal follows the native core's focused-output fallback.
+        monitor=monitor or next((m for m in monitors if m.get('focused')),None)
+        if not monitor:raise ValueError('destination output unavailable')
+        if not any(key(current)==key(window) for current in self.clients()):raise ValueError('destination identity changed')
+        for expression in ['hl.dsp.focus({ monitor = '+json.dumps(monitor['name'])+' })',
+                           'hl.dsp.focus({ workspace = '+json.dumps(destination)+' })']:
+            subprocess.run(['hyprctl','dispatch',expression],check=True,stdout=subprocess.DEVNULL,timeout=2)
+        self.ipc('motionRefresh',{})
+        return monitor
+
+    def capture(self, window, token):
+        path = ROOT / (token + '.png')
+        subprocess.run(['grim', '-T', str(window['stableId']), str(path)], check=True,
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=.65)
+        if not path.is_file() or path.stat().st_size < 64:
+            raise ValueError('empty toplevel snapshot')
+        preview = RUNTIME / 'hypr-window-previews'
+        preview.mkdir(mode=0o700, parents=True, exist_ok=True)
+        with (preview / (window['address'] + '.lock')).open('w') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            if not any(key(current) == key(window) for current in self.clients()):
+                path.unlink(missing_ok=True)
+                raise ValueError('identity changed during capture')
+            temporary = preview / ('.motion-' + token + '.png')
+            subprocess.run(['magick', str(path), '-thumbnail', '300x180>', str(temporary)],
+                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True, timeout=1)
+            for slot in (0, 1):
+                output = preview / (window['address'] + '-' + str(slot) + '.png')
+                staging = output.with_suffix('.motion.tmp')
+                staging.write_bytes(temporary.read_bytes())
+                staging.replace(output)
+            temporary.unlink(missing_ok=True)
+            metadata = preview / (window['address'] + '.json')
+            staging = metadata.with_suffix('.motion.tmp')
+            staging.write_text(json.dumps({'pid':window['pid'], 'stableId':window['stableId']}, separators=(',', ':'))+'\n')
+            staging.replace(metadata)
+        return str(path)
+
+    def commit(self, operation, window, preview_ready=False):
+        env = dict(os.environ, HYPR_WINDOWCTL_FAMILY_SINGLE='1',
+                   HYPR_WINDOWCTL_PREVIEW_READY='1' if preview_ready else '0')
+        subprocess.run([str(CORE), operation, window['address'], str(window['stableId']), str(window['pid'])],
+                       env=env, check=True, stdout=subprocess.DEVNULL, timeout=8)
+
+    def family(self, window, windows, single=False):
+        helper = HOME / '.local/bin/hypr-window-family'
+        if single or not helper.exists():
+            return [window], window
+        result = json.loads(subprocess.check_output([str(helper), window['address']], input=json.dumps(windows), text=True, timeout=2))
+        return result['windows'], result['focus']
+
+
+class Controller:
+    def __init__(self, desktop, root=ROOT):
+        self.desktop = desktop
+        self.root = root
+        self.lock = threading.RLock()
+        self.pending = {}
+        self.family_batches = []
+        self.latest = {}
+        self.results = {}
+        self.shutdown = False
+        self.sequence = 0
+        self.session = uuid.uuid4().hex[:12]
+        self.last_activity = time.monotonic()
+
+    def matching(self, identity):
+        return next((w for w in self.desktop.clients() if key(w) == identity and w.get('mapped', True)), None)
+
+    def token(self):
+        self.sequence += 1
+        return self.session + '-' + str(self.sequence)
+
+    def journal(self):
+        self.root.mkdir(parents=True, exist_ok=True, mode=0o700)
+        temp = self.root / 'pending.tmp'
+        temp.write_text(json.dumps(list(self.pending.values())))
+        temp.replace(self.root / 'pending.json')
+
+    def recover(self):
+        try:
+            records = json.loads((self.root / 'pending.json').read_text())
+        except (OSError, ValueError):
+            records = []
+        for record in records:
+            try:
+                window = self.matching(tuple(record['identity']))
+                if window:
+                    self.desktop.commit(record['operation'], window, True)
+            except (OSError, ValueError, subprocess.SubprocessError):
+                pass
+            for visual in record.get('oldVisuals',[])+([record] if record.get('target') else []):
+                try:
+                    self.desktop.ipc('motionCancel',visual)
+                except (OSError,ValueError,subprocess.SubprocessError):pass
+            for image in record.get('oldImages', []) + ([record['image']] if record.get('image') else []):
+                Path(image).unlink(missing_ok=True)
+        # A restored modal family ends with its captured focus member, after
+        # every surviving member is visible; recovery never focuses a reused ID.
+        focuses={tuple(r['familyFocus']) for r in records if r.get('familyFocus')}
+        for identity in focuses:
+            window=self.matching(identity)
+            if window and window.get('workspace', {}).get('name') != 'special:win-minimized':
+                try:self.desktop.commit('restore',window,True)
+                except (OSError,ValueError,subprocess.SubprocessError):pass
+        self.journal()
+
+    def request(self, command, address='', expected_id='', expected_pid='', single=False):
+        self.last_activity = time.monotonic()
+        windows = self.desktop.clients()
+        address = address or self.desktop.active()
+        if not address or not ADDRESS.fullmatch(address):
+            raise ValueError('invalid window address')
+        w = next((w for w in windows if w.get('address') == address and w.get('mapped', True)), None)
+        if w is None or not IDENTITY.fullmatch(str(w.get('stableId', ''))) or int(w.get('pid', 0)) <= 0:
+            raise ValueError('window no longer exists or has no stable identity')
+        if expected_id and str(w['stableId']) != str(expected_id) or expected_pid and str(w['pid']) != str(expected_pid):
+            raise ValueError('window identity changed')
+        members, focus = self.desktop.family(w, windows, single)
+        with self.lock:
+            previous = self.pending.get(address)
+            minimized = previous['operation'] == 'minimize' if previous and tuple(previous['identity']) == key(w) else w.get('workspace', {}).get('name') == 'special:win-minimized'
+        if command == 'activate':
+            operation = ('restore' if minimized else 'minimize') if previous else ('minimize' if self.desktop.active()==address and not minimized else 'restore')
+        else:
+            operation = ('restore' if minimized else 'minimize') if command == 'toggle' else command
+        if operation not in ('minimize','restore'):raise ValueError('invalid window operation')
+        result = []
+        # All family members receive captured identities; focus member commits
+        # after its peers when restoring. The existing core keeps pin/desktop.
+        if operation == 'restore':
+            members.sort(key=lambda item: item['address'] == focus['address'])
+        for member in members:
+            result.append(self.prepare(command if len(members)==1 else operation, member))
+        if operation == 'restore' and len(members) > 1:
+            with self.lock:
+                batch={'tokens':result,'members':[key(w) for w in members], 'focus':key(focus)}
+                self.family_batches.append(batch)
+                for token in result:
+                    record=self.lookup(token)
+                    if record:record['familyFocus']=list(key(focus))
+                self.journal()
+                self.finish_families()
+        return {'ok': True, 'tokens': result}
+
+    def finish_families(self):
+        for batch in list(self.family_batches):
+            if any(self.lookup(token) for token in batch['tokens'] if token):
+                continue
+            self.family_batches.remove(batch)
+            # A newer request supersedes the focus decision as well as pixels.
+            if any(self.latest.get(identity) not in batch['tokens'] for identity in batch['members']):
+                continue
+            windows=[self.matching(identity) for identity in batch['members']]
+            if any(w is not None and w.get('workspace', {}).get('name') == 'special:win-minimized' for w in windows):
+                continue
+            focus=self.matching(batch['focus'])
+            if focus:self.desktop.commit('restore',focus,True)
+
+    def prepare(self, operation, window):
+        address = window['address']
+        identity = key(window)
+        with self.lock:
+            previous = self.pending.get(address)
+            if previous and tuple(previous['identity']) != identity:
+                self.drop(previous)
+                previous = None
+            if operation in ('activate','toggle'):
+                minimized=previous['operation']=='minimize' if previous else window.get('workspace',{}).get('name')=='special:win-minimized'
+                if operation=='toggle' or previous:operation='restore' if minimized else 'minimize'
+                else:operation='minimize' if self.desktop.active()==address and not minimized else 'restore'
+            if operation == 'minimize' and window.get('workspace', {}).get('name', '').startswith('special:') and not previous:
+                return ''
+            if operation == 'restore' and window.get('workspace', {}).get('name') != 'special:win-minimized' and not previous:
+                self.latest[identity]=''
+                self.desktop.commit('restore', window)
+                return ''
+            token = self.token()
+            self.latest[identity]=token
+            record = {'token': token, 'identity': list(identity), 'operation': operation,
+                      'deadline': time.monotonic() + 1.8, 'phase': 'preparing', 'previewReady': False, 'nativeRect':rectangle(window),
+                      'oldImages': ([previous['image']] if previous and previous.get('image') else []) + (previous.get('oldImages', []) if previous else []),
+                      'oldVisuals': ([{k:previous[k] for k in ('token','identity','target')}] if previous and previous.get('target') else []) + (previous.get('oldVisuals',[]) if previous else [])}
+            self.pending[address] = record
+            self.journal()
+        try:
+            if self.desktop.reduced():
+                raise ValueError('reduced motion')
+            if operation=='restore' and window.get('workspace',{}).get('name')=='special:win-minimized':
+                with self.lock:
+                    if self.pending.get(address) is not record:return token
+                    if self.matching(identity) is None:
+                        self.drop(record);return token
+                    destination=self.desktop.select_destination(window)
+            else:destination=self.desktop.source_screen(window,previous)
+            target = self.desktop.target(window)
+            # After selecting a foreign desktop, allow the taskbar's requested
+            # fresh snapshot to expose that desktop's icon before visual setup.
+            until=time.monotonic()+.35
+            while operation=='restore' and (not target or not target.get('visible')) and time.monotonic()<until:
+                time.sleep(.02)
+                target=self.desktop.target(window)
+            if not target or not target.get('visible'):
+                raise ValueError('taskbar icon is hidden or unavailable')
+            if target.get('screenName')!=destination.get('name'):
+                raise ValueError('cross-screen visual route has no owning taskbar')
+            rect = rectangle(window)
+            scale=float(destination.get('scale',1))
+            left,top=destination.get('x',0),destination.get('y',0)
+            right=left+destination.get('width',0)/scale
+            bottom=top+destination.get('height',0)/scale
+            if rect['x']<left or rect['y']<top or rect['x']+rect['width']>right or rect['y']+rect['height']>bottom:
+                raise ValueError('snapshot route spans displays or lies outside destination')
+            if previous and previous.get('image') and previous.get('nativeRect')==rectangle(window) and Path(previous['image']).is_file():
+                reuse=self.root/(token+'.png');shutil.copyfile(previous['image'],reuse);image=str(reuse)
+            else:image = self.desktop.capture(window, token)
+            with self.lock:
+                if self.pending.get(address) is not record:
+                    Path(image).unlink(missing_ok=True)
+                    return token
+                if self.matching(identity) is None:
+                    self.drop(record)
+                    return token
+                record.update(image=image, rect=rect, target=target, phase='loading', previewReady=True, deadline=time.monotonic()+1.2)
+                self.journal()
+            if not self.desktop.ipc('motionBegin', record):
+                raise ValueError('renderer rejected request')
+        except (OSError, ValueError, subprocess.SubprocessError):
+            self.settle(token)
+        return token
+
+    def lookup(self, token):
+        return next((r for r in self.pending.values() if r['token'] == token), None)
+
+    def ready(self, token):
+        with self.lock:
+            record = self.lookup(token)
+            if record is None or record['phase'] != 'loading':
+                return {'ok': False}
+            window = self.matching(tuple(record['identity']))
+            if window is None:
+                self.drop(record)
+                return {'ok': False}
+            if self.desktop.reduced():
+                self.settle(token)
+                return {'ok': True}
+            if record['operation'] == 'minimize':
+                try:
+                    self.desktop.commit('minimize', window, True)
+                except (OSError,ValueError,subprocess.SubprocessError) as error:
+                    return self.failure(record,error)
+            record['phase'] = 'running'
+            record['previewReady'] = True
+            record['deadline'] = time.monotonic() + .8
+            self.journal()
+        try:
+            if not self.desktop.ipc('motionStart', record):
+                raise ValueError('renderer rejected start')
+        except (OSError, ValueError, subprocess.SubprocessError):
+            self.settle(token)
+        return {'ok': True}
+
+    def drop(self, record):
+        if self.pending.get(record['identity'][0]) is not record:
+            return
+        del self.pending[record['identity'][0]]
+        self.journal()
+        try:
+            for visual in record.get('oldVisuals',[])+([record] if record.get('target') else []):
+                self.desktop.ipc('motionCancel', visual)
+        except (OSError, ValueError, subprocess.SubprocessError):
+            pass
+        for image in record.get('oldImages', []) + ([record['image']] if record.get('image') else []):
+            Path(image).unlink(missing_ok=True)
+
+    def failure(self, record, error):
+        result={'ok':False,'error':'native window operation failed: '+str(error)}
+        self.results[record['token']]=result
+        self.drop(record)
+        if len(self.results)>512:self.results.pop(next(iter(self.results)))
+        return result
+
+    def settle(self, token):
+        with self.lock:
+            record = self.lookup(token)
+            if record is None:
+                return {'ok': False}
+            window = self.matching(tuple(record['identity']))
+            if window:
+                try:
+                    self.desktop.commit(record['operation'], window, record['previewReady'])
+                except (OSError,ValueError,subprocess.SubprocessError) as error:
+                    return self.failure(record,error)
+            self.drop(record)
+            self.finish_families()
+        return {'ok': True}
+
+    def watchdog(self):
+        with self.lock:
+            records = list(self.pending.values())
+        if not records:
+            with self.lock:self.finish_families()
+            return
+        reduced = self.desktop.reduced()
+        current = {key(w) for w in self.desktop.clients()}
+        for record in records:
+            if tuple(record['identity']) not in current:
+                with self.lock:
+                    self.drop(record)
+            elif reduced or time.monotonic() >= record['deadline']:
+                self.settle(record['token'])
+        with self.lock:self.finish_families()
+
+
+CONTROLLER = None
+
+
+class Handler(socketserver.StreamRequestHandler):
+    def handle(self):
+        try:
+            request = json.loads(self.rfile.readline(65536))
+            method = request['method']
+            if method == 'request':
+                result = CONTROLLER.request(*request['args'],single=bool(request.get('single',False)))
+            elif method=='shutdown':
+                with CONTROLLER.lock:
+                    for record in list(CONTROLLER.pending.values()):CONTROLLER.settle(record['token'])
+                    CONTROLLER.shutdown=True
+                result={'ok':True}
+            elif method == 'status':
+                with CONTROLLER.lock:
+                    result = next((CONTROLLER.results[token] for token in request['tokens'] if token in CONTROLLER.results),
+                                  {'ok': True, 'pending': [token for token in request['tokens'] if CONTROLLER.lookup(token)]})
+            elif method in ('ready', 'done', 'fail'):
+                result = CONTROLLER.ready(request['token']) if method == 'ready' else CONTROLLER.settle(request['token'])
+            else:
+                raise ValueError('invalid method')
+        except (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError) as error:
+            result = {'ok': False, 'error': str(error)}
+        self.wfile.write((json.dumps(result)+'\n').encode())
+
+
+class Server(socketserver.ThreadingUnixStreamServer):
+    daemon_threads = True
+
+
+def daemon():
+    global CONTROLLER
+    os.umask(0o077)
+    ROOT.mkdir(parents=True, exist_ok=True, mode=0o700)
+    with (ROOT / 'daemon.lock').open('w') as lock:
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            return
+        SOCKET.unlink(missing_ok=True)
+        (ROOT/'daemon.pid').write_text(str(os.getpid()))
+        CONTROLLER = Controller(Desktop())
+        CONTROLLER.recover()
+        with Server(str(SOCKET), Handler) as server:
+            worker = threading.Thread(target=server.serve_forever, daemon=True)
+            worker.start()
+            try:
+                while not CONTROLLER.shutdown and (time.monotonic() - CONTROLLER.last_activity < 600 or CONTROLLER.pending):
+                    try:
+                        CONTROLLER.watchdog()
+                    except (OSError, ValueError, subprocess.SubprocessError):
+                        pass
+                    time.sleep(.04)
+            finally:
+                server.shutdown()
+                SOCKET.unlink(missing_ok=True)
+                (ROOT/'daemon.pid').unlink(missing_ok=True)
+
+
+def send(payload, start=False):
+    # Connection establishment is retried without transmitting a request. Once
+    # sent, a lost response must never trigger a duplicate core fallback.
+    deadline=time.monotonic()+(12 if start else 1)
+    launched=False
+    while True:
+        connection=socket.socket(socket.AF_UNIX,socket.SOCK_STREAM)
+        connection.settimeout(12)
+        try:
+            connection.connect(str(SOCKET))
+            break
+        except (ConnectionRefusedError,FileNotFoundError):
+            connection.close()
+            if not start:raise
+            if not launched:
+                env={k:v for k,v in os.environ.items() if k not in {
+                    'HYPR_WINDOWCTL_FAMILY_SINGLE','HYPR_WINDOWCTL_ASYNC',
+                    'HYPR_WINDOWCTL_PREVIEW_READY','HYPR_WINDOWCTL_FRONTEND'}}
+                subprocess.Popen([sys.executable,str(Path(__file__).resolve()),'daemon'],env=env,
+                                 start_new_session=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+                launched=True
+            if time.monotonic()>=deadline:raise OSError('motion service did not become ready')
+            time.sleep(.02)
+    with connection:
+        connection.sendall((json.dumps(payload)+'\n').encode())
+        with connection.makefile('r') as stream:
+            answer=stream.readline(65536)
+            if not answer:raise OSError('motion service disconnected after request submission')
+            return json.loads(answer)
+
+
+def main():
+    if sys.argv[1:2] == ['daemon']:
+        daemon()
+        return
+    if sys.argv[1:2] == ['request']:
+        args = (sys.argv[2:] + ['', '', ''])[:4]
+        try:
+            result = send({'method': 'request', 'args': args, 'single':os.getenv('HYPR_WINDOWCTL_FAMILY_SINGLE')=='1'}, start=True)
+        except (OSError,ValueError,subprocess.SubprocessError) as error:
+            result={'ok':False,'error':str(error)}
+        if result.get('ok') and os.getenv('HYPR_WINDOWCTL_ASYNC') != '1':
+            tokens=[token for token in result.get('tokens', []) if token]
+            deadline=time.monotonic()+12
+            while tokens:
+                status=send({'method':'status','tokens':tokens})
+                if not status.get('ok'):
+                    result=status
+                    break
+                tokens=status.get('pending', [])
+                if tokens and time.monotonic()>=deadline:
+                    result={'ok':False,'error':'motion operation did not settle'}
+                    break
+                if tokens:time.sleep(.02)
+    elif sys.argv[1:2]==['stop']:
+        result=send({'method':'shutdown'})
+    elif sys.argv[1:2] and sys.argv[1] in ('ready', 'done', 'fail') and len(sys.argv) == 3:
+        result = send({'method': sys.argv[1], 'token': sys.argv[2]},start=True)
+    else:
+        raise ValueError('usage: hypr-window-motion request OP [ADDRESS ID PID] | ready/done/fail TOKEN')
+    if not result.get('ok'):
+        print(result.get('error', 'stale motion token'), file=sys.stderr)
+        sys.exit(3)
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,62 @@
+{
+  "result": "pass",
+  "inheritedFiles": 416,
+  "unchanged": 408,
+  "changed": {
+    "actual_service_binding.qnt": {
+      "beforeSHA256": "2cae8ff6809417f263cdf384eb2a25f7ab264c2dfa254cc47397a20c67903288",
+      "afterSHA256": "80562409042afc04c6a233d167f7047c9f1fdba8f630b8d3ddb0a1b28bb32b2c",
+      "mode": 420
+    },
+    "actual_service_binding_test.qnt": {
+      "beforeSHA256": "a32c73f647f8fddd2abe5367e401ec53c6d97e9a31d932e52d003980719e17d4",
+      "afterSHA256": "d903f5bfef9a35fa3593f8a0704accc2bfc11daccf66b9144d4e9cbc9aea6762",
+      "mode": 420
+    },
+    "native_integration.py": {
+      "beforeSHA256": "ee2d17383a9ce295fa7ff013efa349ceb000234e39367e9835712c92026e0b35",
+      "afterSHA256": "e8b32b3a385813276495d83e15905599940fc98ebedcd1e50133febf0f4f3b91",
+      "mode": 493
+    },
+    "service_recovery_observer.py": {
+      "beforeSHA256": "2a61d4c5cdbb00671105afd0b427622a077fc24c18b985646d03ea52747c6d74",
+      "afterSHA256": "07b546f574bd5972b1c20d229c0a7d914745517640db4eb95f277fdf65b83856",
+      "mode": 420
+    },
+    "native_faults.py": {
+      "beforeSHA256": "8201dafd783c72603cc71e19cef4cbbb98cb380b8af53591c952c7335b205568",
+      "afterSHA256": "d2c1f03ba6750f44af6e644dfd28b11e6d273a92bfd0c019f08c23ac510ce562",
+      "mode": 420
+    },
+    "test_freezer_v2.py": {
+      "beforeSHA256": "e8d02dd5d49bc10aabe0927a981ff6e92c93be69dc09a5141eb5d025ca2dbb72",
+      "afterSHA256": "271ffdad0c255c24386d88ba117fdf7e82549526fc0d25f2536e308adf988644",
+      "mode": 420
+    },
+    "module_binding.py": {
+      "beforeSHA256": "b3dcb34adb3adbc736380980a0bcca811ed661c8aec9374ccf80477bd38055e1",
+      "afterSHA256": "3c8d80067575ee36d3980dcecfb121678b07e89509e1ea0c856c6f27a18acbea",
+      "mode": 420
+    },
+    "test_actual_binding.py": {
+      "beforeSHA256": "518e1985c116cbbad8a65f23b2884d96f3c5eb7c7ce9366981b7cf4b087df155",
+      "afterSHA256": "14e98533b9d637aaa83b7972ca00e78ec381aa1afba3b86a656d2bf38e88e11c",
+      "mode": 420
+    }
+  },
+  "baselineStaticCheckCalls": 30,
+  "baselineExecutedGatesRequired": 38,
+  "faultStaticCheckCalls": 34,
+  "allOriginalCheckCallASTsExact": true,
+  "completeBaselineMainInverseExact": true,
+  "completeFaultMainInverseExact": true,
+  "freezerFixtureFullASTInverseExact": true,
+  "actualBindingOriginalAssertionsInverseExact": true,
+  "actualBindingFormalSelectorOnlyInverseExact": true,
+  "actualCaptureRetirementObserverExact": true,
+  "profileHookAdded": false,
+  "manifest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/manifest-family-preparation-v23.json",
+  "manifestSHA256": "0d2b7b231eaa26c6618783b1cb2305c2a989586b3a7cb371716e2d67603c82e2",
+  "nativeGrant": false,
+  "mainChanged": false
+}

@@ -1,0 +1,28 @@
+{
+  "updatedUTC": "2026-10-01T20:56:04.025039+00:00",
+  "result": "pre-native launch failure",
+  "exitCode": 1,
+  "qaScope": "qa-harness-f038515c1ec74f0eba0d5d6f093c13ac.scope",
+  "invocationID": "8167defa0a9c49bc82da7e4b02540d77",
+  "error": "FileExistsError: copied immutable import-preflight.json collides with fresh runtime import-preflight.json O_EXCL output",
+  "checks": {
+    "originalSourcesExact": true,
+    "copiedSourcesExact": true,
+    "allOriginalAndCopiedModesExact": true,
+    "externalSourcesAndModesExact": true,
+    "externalLinksExact": true,
+    "NoPrivateHostConstructed": true,
+    "NoMainObserverCaptureOrNativeReport": true
+  },
+  "allIndependentChecks": true,
+  "sourceCounts": {
+    "local": 2447,
+    "external": 6345,
+    "symlinks": 162
+  },
+  "nativeLaunched": false,
+  "nativeAccepted": false,
+  "productionAccepted": false,
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false
+}

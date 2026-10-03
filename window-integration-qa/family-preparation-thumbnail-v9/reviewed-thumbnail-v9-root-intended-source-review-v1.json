@@ -1,0 +1,96 @@
+{
+  "result": "approved-fresh-V9-source-pairing-and-CPU-QA-only",
+  "updatedUTC": "2026-10-02T12:00:08.073435+00:00",
+  "handoff": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/source-handoff-v1.json",
+  "handoffSHA256": "3d462b4baae512d7fdc21ca00b01249c9e4c3242b9b6f293229db4ed9bce2641",
+  "verifiedDesignBytesAndModes": 58,
+  "formalNamed": 37,
+  "formalSamples": 2000,
+  "formalSteps": 100,
+  "formalReport": {
+    "path": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/formal-before-pairing-v3/report.json",
+    "sha256": "a87b87d85ca34eb6edb4b9de48d6cda1148a4727776c78e6f4f688910a271aa8",
+    "namedScenarios": 37,
+    "samples": 2000,
+    "steps": 100,
+    "modelHashes": {
+      "renderer_collector_binding.qnt": "793001c9d5f3179d28aae1535aede4661bb2940b6e4138a5bbed0e63c300a1af",
+      "renderer_collector_binding_test.qnt": "22fd59606b2669e6eac0864925753ad8c864aef356d9d523ae083a892b0e28e5",
+      "RENDERER_COLLECTOR_BINDING_CONTRACT.md": "47364134a32bc42c2c59127ad58131e0d558cab311f31269e4e88970d75f07a5"
+    }
+  },
+  "intendedPatch": {
+    "path": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended-v9-v2.patch",
+    "sha256": "efe9b068ee3f76767eedabe4329733488c40c5af03e33bc1493df5501a39b58d"
+  },
+  "intendedSources": {
+    "module_binding.py": {
+      "oldSHA256": "468b84d888e7f9d53dcbf1a00f68a5ed43385d923e7dbff41ca4430e2f74cac0",
+      "intendedSHA256": "30fa8d51035d1a2fb7bbeeec6e6c80fcac4e789d8f7d3eab05ef366c1f583c07",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended-v2/module_binding.py.txt"
+    },
+    "collector_v9_closure.py": {
+      "oldSHA256": null,
+      "intendedSHA256": "d326ef3d84c4ff1bd1371fe910591955ad70d18bf920c7036ac8fcad94130a16",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended-v2/collector_v9_closure.py.txt"
+    },
+    "native_faults.py": {
+      "oldSHA256": "d2c1f03ba6750f44af6e644dfd28b11e6d273a92bfd0c019f08c23ac510ce562",
+      "intendedSHA256": "3bd7f7115a0d3ebbf2b4b7e8574ab354b77cb6dda74f8984d4faf1d56f0c06f1",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended-v2/native_faults.py.txt"
+    },
+    "native_integration.py": {
+      "oldSHA256": "e8b32b3a385813276495d83e15905599940fc98ebedcd1e50133febf0f4f3b91",
+      "intendedSHA256": "464f6c6c2d7264a0b86275996242973a217115cef9e1737c0e0f3e479ed39093",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended-v2/native_integration.py.txt"
+    },
+    "renderer_binding_fixture.py": {
+      "oldSHA256": null,
+      "intendedSHA256": "3c079e146d580f9c26b24b8e61d2bb2e97f948653cc7b017bd2b9a9fde3b1256",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended-v2/renderer_binding_fixture.py.txt"
+    },
+    "test_actual_binding.py": {
+      "oldSHA256": "14e98533b9d637aaa83b7972ca00e78ec381aa1afba3b86a656d2bf38e88e11c",
+      "intendedSHA256": "87b95e4b9c32f5b067a53b0a6e99f29047a7330c97be3de451728847391ce4bb",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended-v2/test_actual_binding.py.txt"
+    },
+    "test_batch_binding.py": {
+      "oldSHA256": "a4789f78326e7832630f7e6058b5f35e1ac2272d777e3959ce9851480226a281",
+      "intendedSHA256": "1d57b926c9e3571343b37a22dd1742c5985570297a5405d78d5e2b573fe6ecfb",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended-v2/test_batch_binding.py.txt"
+    }
+  },
+  "rootIndependentSourceConservation": {
+    "batch_relations": true,
+    "batch_identity": true,
+    "archive_final": true,
+    "validate_evidence": true,
+    "validate_ledger": true,
+    "data_probe": true,
+    "bind_recovery": true,
+    "validate_recovery_evidence": true,
+    "baselineWholeMain": true,
+    "faultWholeMainInverse": true,
+    "originalCallbackPrefix": true,
+    "test_actual_binding.py": true,
+    "test_batch_binding.py": true
+  },
+  "reviewedActualTerminalOrdering": true,
+  "exactNormalStopTypedWitness": true,
+  "reviewedScope": "Actual canonical renderer object/source binding and normal terminal identity; no live-exec proof is fabricated at early actor linkage. Product V24 execution proof and original gates remain mandatory.",
+  "sourceImplementationApproved": true,
+  "nativeApproved": false,
+  "mainDeploymentApproved": false,
+  "requirements": [
+    "Fresh V9 derivative only, retain all selected predecessors and failed native epochs.",
+    "Implement exact reviewed seven-file proposal; separate new meaningful CPU tests permitted.",
+    "All original unfiltered tests,38native baseline gates,34fault gates, deadlines and refusals stay intact.",
+    "Real nongraphical sealed renderer/OwnedLaunch/Keeper CPU tests and original full proof before root source freeze.",
+    "Complete root freezer must include external stable design,intended/handoff,final CPU/formal proof and all root/independent reviews bytes+modes+links.",
+    "Only root launches private native original38;34fault campaign remains conditional on accepted baseline."
+  ],
+  "limitations": [
+    "Design/source approval does not prove actual renderer coexistence or preview usability.",
+    "Full V24/V7/V8 union is checked again at the completed source freeze; this review verifies current handoff-listed design and lifecycle sources plus selected manifest identity."
+  ]
+}

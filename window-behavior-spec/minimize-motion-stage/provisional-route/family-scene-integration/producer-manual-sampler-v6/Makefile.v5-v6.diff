@@ -1,0 +1,27 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-causal-v5/Makefile
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/Makefile
+@@ -10,7 +10,7 @@
+ .protocols: $(XMLS)
+ 	@set -e; set -- $(XMLS); for name in $(NAMES); do wayland-scanner client-header "$$1" "$$name-client.h"; wayland-scanner private-code "$$1" "$$name-protocol.c"; $(CC) -c "$$name-protocol.c" -o "$$name-protocol.o"; shift; done
+ 	@touch $@
+-hypr-motion-renderer-staged: Renderer.cpp CausalImage.hpp ReadbackImage.hpp CommitLedger.hpp BackendPolicy.hpp LibraryMaterial.hpp .protocols
++hypr-motion-renderer-staged: Renderer.cpp SamplingExperiment.hpp CausalImage.hpp ReadbackImage.hpp CommitLedger.hpp BackendPolicy.hpp LibraryMaterial.hpp .protocols
+ 	$(CXX) $(CXXFLAGS) Renderer.cpp $(addsuffix -protocol.o,$(NAMES)) -o $@ $(LIBS)
+ test-commit-ledger: test_commit_ledger.cpp CommitLedger.hpp
+ 	$(CXX) $(CXXFLAGS) test_commit_ledger.cpp -o $@
+@@ -20,7 +20,7 @@
+ test-library-material: test_library_material.cpp LibraryMaterial.hpp
+ 	$(CXX) $(CXXFLAGS) test_library_material.cpp -o $@ $(LIBS)
+ 
+-test-family-scene: test_family_scene.cpp Renderer.cpp ReadbackImage.hpp CommitLedger.hpp BackendPolicy.hpp LibraryMaterial.hpp .protocols
++test-family-scene: test_family_scene.cpp Renderer.cpp SamplingExperiment.hpp ReadbackImage.hpp CommitLedger.hpp BackendPolicy.hpp LibraryMaterial.hpp .protocols
+ 	$(CXX) $(CXXFLAGS) test_family_scene.cpp $(addsuffix -protocol.o,$(NAMES)) -o $@ $(LIBS)
+ 
+ test-readback-image: test_readback_image.cpp ReadbackImage.hpp
+@@ -28,3 +28,6 @@
+ 
+ test-causal-image: test_causal_image.cpp CausalImage.hpp ReadbackImage.hpp
+ 	$(CXX) $(CXXFLAGS) test_causal_image.cpp -o $@ $(LIBS)
++
++test-manual-sampling: test_manual_sampling.cpp Renderer.cpp SamplingExperiment.hpp CausalImage.hpp ReadbackImage.hpp CommitLedger.hpp BackendPolicy.hpp LibraryMaterial.hpp .protocols
++	$(CXX) $(CXXFLAGS) test_manual_sampling.cpp $(addsuffix -protocol.o,$(NAMES)) -o $@ $(LIBS)

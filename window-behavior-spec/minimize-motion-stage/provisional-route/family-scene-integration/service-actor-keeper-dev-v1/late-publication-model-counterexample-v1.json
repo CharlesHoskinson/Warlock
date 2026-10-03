@@ -1,0 +1,13 @@
+{
+  "command": [
+    "quint",
+    "test",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-actor-keeper-dev-v1/actor_service_fault_counterexample.qnt"
+  ],
+  "exitCode": 1,
+  "stdout": "\n  actor_service_fault_counterexample\n    1) lateFailureMustRevokeCurrentClosureClaimTest failed after 1 test(s)\n\n  1 failed\n\n  1) lateFailureMustRevokeCurrentClosureClaimTest:\n       Error [QNT508]: Assertion failed\n        at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-actor-keeper-dev-v1/actor_service_fault_counterexample.qnt:3:32\n        3:  action check(p:bool):bool=all{assert(p),s'=s}\n                                          ^^^^^^^^^\n          at check(allProps) (/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-actor-keeper-dev-v1/actor_service_fault_counterexample.qnt:9:10)\n    Use --seed=0x15fa6990d820d21e --match=lateFailureMustRevokeCurrentClosureClaimTest to repeat.\n\n\n  Use --verbosity=3 to show executions.\n  Further debug with: quint test --verbosity=3 /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-actor-keeper-dev-v1/actor_service_fault_counterexample.qnt\n",
+  "stderr": "error: Tests failed\n",
+  "expectedFailureObserved": true,
+  "runtimeCopiedOrChanged": false,
+  "initialBoundedRandomProofRetained": true
+}

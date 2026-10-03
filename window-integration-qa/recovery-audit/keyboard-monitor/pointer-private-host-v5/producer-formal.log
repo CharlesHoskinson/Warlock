@@ -1,0 +1,19 @@
+
+  producer_startup_test
+    ok beforeReadyTest passed 1 test(s)
+    ok actualSyncTest passed 1 test(s)
+    ok failedSyncTest passed 1 test(s)
+    ok mainRuntimeTest passed 1 test(s)
+    ok foreignDirectoriesTest passed 1 test(s)
+    ok explicitFlagTest passed 1 test(s)
+    ok absentScopeTest passed 1 test(s)
+    ok invalidCoreTest passed 1 test(s)
+    ok foreignSocketTest passed 1 test(s)
+    ok replacedPeerTest passed 1 test(s)
+    ok stalePIDTest passed 1 test(s)
+    ok inheritedFDTest passed 1 test(s)
+    ok stoppedTest passed 1 test(s)
+
+  13 passing (90ms)
+[ok] No violation found (446ms at 4484 traces/second).
+Use --seed=0x15fdcf9 --backend=rust to reproduce.

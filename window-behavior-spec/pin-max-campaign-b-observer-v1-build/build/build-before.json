@@ -1,0 +1,184 @@
+{
+  "compilerVersion": "c++ (GCC) 16.2.1 20260810\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+  "core": {
+    "literalLink": null,
+    "mode": "0o755",
+    "mtimeNs": 1790971745252959328,
+    "resolved": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland",
+    "sha256": "8b18c39ec980a5d9e8fa27018a70fc104617562e008d75113f2c7c1c50a3bbbc",
+    "size": 19729408
+  },
+  "coreExecuted": false,
+  "coreInputs": {
+    "literalLink": null,
+    "mode": "0o644",
+    "mtimeNs": 1790972836446167769,
+    "resolved": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/SOURCE_READY_INPUTS.json",
+    "sha256": "82eaec349bc2bb4b9fce35eca431c607d9171f38566f4c299d882bfc160823f0",
+    "size": 1973091
+  },
+  "coreReady": {
+    "literalLink": null,
+    "mode": "0o644",
+    "mtimeNs": 1790972836455783278,
+    "resolved": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/SOURCE_READY.json",
+    "sha256": "0235a02ae77f5e144b93e036bf6013d0d0da0954130a184448a5ef4154b2373a",
+    "size": 2143
+  },
+  "flags": [
+    "-I/usr/include/hyprland/protocols",
+    "-I/usr/include/hyprland",
+    "-I/usr/include/hyprland/src",
+    "-I/usr/include/libdrm",
+    "-I/usr/include/cairo",
+    "-I/usr/include/freetype2",
+    "-I/usr/include/libpng16",
+    "-I/usr/include/pixman-1",
+    "-I/usr/include/libei-1.0",
+    "-I/usr/include/json-c"
+  ],
+  "libs": [
+    "-ljson-c"
+  ],
+  "nativeLoaded": false,
+  "pkgConfig": {
+    "/usr/lib/pkgconfig/json-c.pc": {
+      "literalLink": null,
+      "mode": "0o644",
+      "mtimeNs": 1782585078000000000,
+      "resolved": "/usr/lib/pkgconfig/json-c.pc",
+      "sha256": "628d38a9c4d089973c18b173003732a6635eeab8795e2d13db349052d7bf8ea6",
+      "size": 239
+    },
+    "/usr/lib/pkgconfig/libeis-1.0.pc": {
+      "literalLink": null,
+      "mode": "0o644",
+      "mtimeNs": 1778887645000000000,
+      "resolved": "/usr/lib/pkgconfig/libeis-1.0.pc",
+      "sha256": "ce34d9b30e4bfe5a3ddbd6eb96c90cd8a682319efb89abd5f3c87965dca9133a",
+      "size": 210
+    },
+    "/usr/lib/pkgconfig/libinput.pc": {
+      "literalLink": null,
+      "mode": "0o644",
+      "mtimeNs": 1780539889000000000,
+      "resolved": "/usr/lib/pkgconfig/libinput.pc",
+      "sha256": "e670864af6984075a8c6a4afe06019508aa15ae18560a7b8fc07418452c80771",
+      "size": 242
+    },
+    "/usr/lib/pkgconfig/lua.pc": {
+      "literalLink": "lua55.pc",
+      "mode": "0o644",
+      "mtimeNs": 1785824098000000000,
+      "resolved": "/usr/lib/pkgconfig/lua55.pc",
+      "sha256": "f1a5226f4322942d23af418fe4d9ed37e93fada590240081d21eb3f7a5e491a9",
+      "size": 425
+    },
+    "/usr/lib/pkgconfig/xkbcommon.pc": {
+      "literalLink": null,
+      "mode": "0o644",
+      "mtimeNs": 1780200774000000000,
+      "resolved": "/usr/lib/pkgconfig/xkbcommon.pc",
+      "sha256": "f6b9fef492de8b102d5ee5770a2227d74ead81d36a71c9aa4ff5b245eca8a2ed",
+      "size": 388
+    },
+    "/usr/share/pkgconfig/hyprland.pc": {
+      "literalLink": null,
+      "mode": "0o644",
+      "mtimeNs": 1788245204000000000,
+      "resolved": "/usr/share/pkgconfig/hyprland.pc",
+      "sha256": "1d3af9baa15f0b04a023246afe66070d8e98c97bf117c17ef605ed084cd65868",
+      "size": 500
+    }
+  },
+  "source": {
+    "literalLink": null,
+    "mode": "0o600",
+    "mtimeNs": 1790978979429535659,
+    "resolved": "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v1-build/src/campaign_b_observer.cpp",
+    "sha256": "f2574e0803809eb0db269157a38e853d2a90f0d56542e86bd256196ac09a4536",
+    "size": 21994
+  },
+  "tools": {
+    "/usr/bin/as": {
+      "literalLink": null,
+      "mode": "0o755",
+      "mtimeNs": 1786462112000000000,
+      "resolved": "/usr/bin/as",
+      "sha256": "3dfdf6007545ea36176c350eef201d1ece55c347a182697bb5f9bac815a1f34b",
+      "size": 879712
+    },
+    "/usr/bin/c++": {
+      "literalLink": null,
+      "mode": "0o755",
+      "mtimeNs": 1786392286000000000,
+      "resolved": "/usr/bin/c++",
+      "sha256": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9",
+      "size": 1738072
+    },
+    "/usr/bin/g++": {
+      "literalLink": null,
+      "mode": "0o755",
+      "mtimeNs": 1786392286000000000,
+      "resolved": "/usr/bin/g++",
+      "sha256": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9",
+      "size": 1738072
+    },
+    "/usr/bin/ld": {
+      "literalLink": null,
+      "mode": "0o755",
+      "mtimeNs": 1786462112000000000,
+      "resolved": "/usr/bin/ld",
+      "sha256": "4d83828f709f0eade25bcae2f4a2508c47db2f01b58daaca5c1c4cefce897847",
+      "size": 1611760
+    },
+    "/usr/bin/ldd": {
+      "literalLink": null,
+      "mode": "0o755",
+      "mtimeNs": 1786390742000000000,
+      "resolved": "/usr/bin/ldd",
+      "sha256": "94f332c23cf00596d0387d6f54693664f9a53334d65953b2ff308057cc8530b1",
+      "size": 5440
+    },
+    "/usr/bin/nm": {
+      "literalLink": null,
+      "mode": "0o755",
+      "mtimeNs": 1786462112000000000,
+      "resolved": "/usr/bin/nm",
+      "sha256": "b16707aadd1c1953f51fa32d462b2d463a54031f7a743d63e8333c6bf3985abd",
+      "size": 44432
+    },
+    "/usr/bin/pkg-config": {
+      "literalLink": "pkgconf",
+      "mode": "0o755",
+      "mtimeNs": 1788555574000000000,
+      "resolved": "/usr/bin/pkgconf",
+      "sha256": "6b445a4786f5ac89bfcbf0aeab5ee80b10cafb8aebeb0d5e24237f99545423fe",
+      "size": 51400
+    },
+    "/usr/bin/readelf": {
+      "literalLink": null,
+      "mode": "0o755",
+      "mtimeNs": 1786462112000000000,
+      "resolved": "/usr/bin/readelf",
+      "sha256": "a72f12f3dd8c560554a3ba818bcecbda9178db5befbcc64d91bbb6a241fc21bc",
+      "size": 810072
+    },
+    "/usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1plus": {
+      "literalLink": null,
+      "mode": "0o755",
+      "mtimeNs": 1786392286000000000,
+      "resolved": "/usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1plus",
+      "sha256": "0026a9e66550c7f470558dfbe99f861073294e601d62b7b74eeb50fdebb09bef",
+      "size": 50921144
+    },
+    "/usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2": {
+      "literalLink": null,
+      "mode": "0o755",
+      "mtimeNs": 1786392286000000000,
+      "resolved": "/usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2",
+      "sha256": "6a575bbac80e335d20fc2ca631798899956cbbef882d6c3b83f8b13d01865155",
+      "size": 699168
+    }
+  }
+}

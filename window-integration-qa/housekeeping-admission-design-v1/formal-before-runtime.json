@@ -1,0 +1,95 @@
+{
+  "result": "pass",
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "housekeeping_admission_test.qnt"
+      ],
+      "exitCode": 0,
+      "seconds": 2.085047378001036,
+      "log": "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/formal-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "housekeeping_admission_test.qnt",
+        "--backend=rust",
+        "--seed=2026100226"
+      ],
+      "exitCode": 0,
+      "seconds": 3.4843914340017363,
+      "log": "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/formal-1.log",
+      "sha256": "95c867105537fb2ba7ffb5dfaffac75da911421bf6ab138767783bf6d378e138"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "housekeeping_admission.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100226",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "seconds": 4.201358956022887,
+      "log": "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/formal-2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "namedScenarios": 26,
+  "samples": 2000,
+  "steps": 100,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/CONTRACT.md": {
+      "sha256": "c42bf8e27a57e11baa35b3a8be7b2fadb0f6ffb8ffda1079408d83264f3f4bcc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/housekeeping_admission.qnt": {
+      "sha256": "4cc24029581ce7b4f6d6bbfd59b2882047e8abeb65b4f3c6cdfdf0d7a39084d9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/housekeeping_admission_test.qnt": {
+      "sha256": "8b8aeafd27d37b4500215f4d060f50b9c9ee628a059120e650c1698c74bef4ae",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/prepare_patch.py": {
+      "sha256": "d2a9946934de614e383a223bd1d090a1445626d3e233defcda12dc7aefd7575b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/native_runtime.py.proposed": {
+      "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/test_actor_resources.py.proposed": {
+      "sha256": "ce016e51f0dde51b541483a15ae6bffb0fdacf0f19cd022065075568a902bca5",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/intended.patch": {
+      "sha256": "5a16a94e271a17ff438d28f301a2b728e888421d5710fc1f40dfd448a96799f7",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/intended-source-map.json": {
+      "sha256": "31295b32cd4752a105c211db03633c9f5781087f200cdad789ab569196b32428",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/runtime-mapping.json": {
+      "sha256": "b257f8ee6a53a7947663889caf9cb891cfbb7e539b42c68c6ca5eb126b9eba26",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/formal_gate.py": {
+      "sha256": "cc2fb7a06ed4f020aea71e3b4558901006b565581b298ba924b19e740c47f1c1",
+      "mode": 420
+    }
+  },
+  "sourceUnchangedDuringFormal": true,
+  "runtimeApplied": false,
+  "nativeAccepted": false,
+  "scope": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f5f891ad3735446880954bca1be5294e.scope"
+}

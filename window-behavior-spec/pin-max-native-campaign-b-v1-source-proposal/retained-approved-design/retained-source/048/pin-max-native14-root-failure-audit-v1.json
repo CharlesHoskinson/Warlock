@@ -1,0 +1,203 @@
+{
+  "result": "failure-audit-pass",
+  "nativeCampaignResult": "fail",
+  "actualFeatureChecksPassed": 14,
+  "actualBindingChecksPassed": 3,
+  "actualHostChecksPassed": 8,
+  "actualMainPreservationPassed": 18,
+  "primaryFailure": "New classifier assumed exactly three registered rows; inherited registry retains six already-normally-closed source-bound clients.",
+  "allNineRecordedReapedZero": true,
+  "baseThreeOnlyTERM": true,
+  "clientSixNoSignals": true,
+  "originalNormalClientCleanup": true,
+  "candidateAndProbeUnloadedNormally": true,
+  "runtimeGone": true,
+  "cleanupErrors": [],
+  "goneLifetimeObservations": [
+    {
+      "pid": 758217,
+      "start": "19752516",
+      "name": "privateBus",
+      "sameLifetimeAbsent": true
+    },
+    {
+      "pid": 758218,
+      "start": "19752519",
+      "name": "weston",
+      "sameLifetimeAbsent": true
+    },
+    {
+      "pid": 758314,
+      "start": "19752676",
+      "name": "hyprland",
+      "sameLifetimeAbsent": true
+    },
+    {
+      "pid": 758952,
+      "start": "19753527",
+      "name": "pin-legacy-qt",
+      "sameLifetimeAbsent": true
+    },
+    {
+      "pid": 760053,
+      "start": "19754991",
+      "name": "pin-pointer",
+      "sameLifetimeAbsent": true
+    },
+    {
+      "pid": 760119,
+      "start": "19755035",
+      "name": "pin-chord-3",
+      "sameLifetimeAbsent": true
+    },
+    {
+      "pid": 760162,
+      "start": "19755062",
+      "name": "pin-chord-4",
+      "sameLifetimeAbsent": true
+    },
+    {
+      "pid": 760279,
+      "start": "19755144",
+      "name": "pin-chord-5",
+      "sameLifetimeAbsent": true
+    },
+    {
+      "pid": 760301,
+      "start": "19755167",
+      "name": "pin-chord-6",
+      "sameLifetimeAbsent": true
+    }
+  ],
+  "artifacts": {
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/after-main/catalog-comparison.json": {
+      "sha256": "28f0ff4a5d14f2e349eaf1ca67257eb5e4c8ca388670f718ca86151864dc9a15",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/after-main/clients-raw.json": {
+      "sha256": "654964e4a98fcdb2c7c2cefcb7edb3b442555005d67744700ba03529eaa51f9b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/after-main/files-state.json": {
+      "sha256": "cba8d229c58470f66a3f27d7ac7273ceca9fa3ef29657b73d7c07dd1974ad05f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/after-main/preservation.json": {
+      "sha256": "e9537c4ec3432e9c9bb42f80426cfae6654f287bcbd65fbc39f697df22727a45",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/before-main/catalog-before.json": {
+      "sha256": "3ff553b6cf5c21b8db8923641e239bebf2b6048ee8250e61bfea0b256cb7a362",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/before-main/clients-raw.json": {
+      "sha256": "654964e4a98fcdb2c7c2cefcb7edb3b442555005d67744700ba03529eaa51f9b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/before-main/files-state.json": {
+      "sha256": "cba8d229c58470f66a3f27d7ac7273ceca9fa3ef29657b73d7c07dd1974ad05f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/dmabuf-probe.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/dmabuf-probe.stdout": {
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/host-evidence.json": {
+      "sha256": "fbcb69e518891467f4b0b9c3baa87958157d66c6a71e80b253ca75076ebc4f14",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/host-normal-closure.json": {
+      "sha256": "d4a5225859066ab792674155855909be64d00af76b2def0b92e58d34320d0005",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/hyprland.log": {
+      "sha256": "3e7d1d957be9071e8c846b537dc1c3d97057690219bd802a59837aeebc88f1fc",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/output-readiness-evidence.json": {
+      "sha256": "b91aca4f37f85aaeb6e563a2c081d6c866ff35e1261245c1a90978d21026cc4b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/pin-chord-3.log": {
+      "sha256": "4ced8352fb9d6466170aaba240fd95a8b79f586eac67aaa3e583f232fda5436f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/pin-chord-4.log": {
+      "sha256": "13dff37e784fad52d828c4a2b977b2dfec63385c2528d4e817ffeb36d87ea54f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/pin-chord-5.log": {
+      "sha256": "4ced8352fb9d6466170aaba240fd95a8b79f586eac67aaa3e583f232fda5436f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/pin-chord-6.log": {
+      "sha256": "13dff37e784fad52d828c4a2b977b2dfec63385c2528d4e817ffeb36d87ea54f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/pin-legacy-qt.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/privateBus.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790975053_470609001/hyprland.log": {
+      "sha256": "9cf6c623c6c9433ed491587fcd85810738daaa41987abfb4abe75fe41754face",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/runtime-archive/hyprland.lua": {
+      "sha256": "01e1481ac6ca006a2d3bbec7d1f43f06c10f821baed4d639df73b80ca591e8af",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/weston-renderer.log": {
+      "sha256": "b638dc6aed413c2268054677b01fb1ea6afca06524dca6ab03ad92d779026341",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/weston.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/main-before.json": {
+      "sha256": "bdc75e05feca7bdb6a152ab4eb7597cac351db034d15fdd311e872bac60f30df",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/native/cases.json": {
+      "sha256": "365845dd901d9077be9c7ff523d9f290791fc3a54e3582c3e52b55e074a63477",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/native/command.json": {
+      "sha256": "258631ca4f1b252e76f2517f90f04d837e07c2d13773e61ef8593472ba75ab48",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/native/events.jsonl": {
+      "sha256": "ff7611c033da7c1f3592a85dcf6e77e26cd1fb2cc4e06a5651740462d85c383d",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/native/pointer.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/native/state.json": {
+      "sha256": "8bf7b51f9388c053ad41fbaf7ae775ad3c20a0455f87486ea3d016537187e770",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/report.json": {
+      "sha256": "e9aa371aed25fb6939e2cb2c9ddd66d53c9da278930ff0caeba5cf83131423b2",
+      "mode": 384
+    }
+  },
+  "manifestSHA256": "bbcca0ea7a3501c2984156d99df54e3b5c5dfe8339b35a3a9deab79eecc95e37",
+  "nativeAccepted": false,
+  "fullParityAccepted": false,
+  "limits": [
+    "Old campaign failure preserved unchanged",
+    "Final two original host checks were not executed",
+    "Fresh model/source classifier correction and accepted native run still required",
+    "Actual14 does not prove MAX/helper/frontend ingress"
+  ]
+}

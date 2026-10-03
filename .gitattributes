@@ -1,0 +1,4 @@
+# Preserve the snapshot's exact bytes; do not invoke LFS or normalize line endings.
+* -text -filter
+/window-behavior-spec/pin-maximized-core-v2-implementation/build-core-make/CMakeFiles/hyprland_lib.dir/cmake_pch.hxx.gch filter=lfs diff=lfs merge=lfs -text
+/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/CMakeFiles/hyprland_lib.dir/cmake_pch.hxx.gch filter=lfs diff=lfs merge=lfs -text

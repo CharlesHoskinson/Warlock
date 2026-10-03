@@ -1,0 +1,119 @@
+{
+  "version": "owned-causal-v5-offline",
+  "nativeLaunch": false,
+  "productionChanged": false,
+  "shaderChanged": false,
+  "pixelToleranceChanged": false,
+  "independentOracleChanged": false,
+  "cppChecks": {
+    "ledger": 80,
+    "actualConsumer": 73,
+    "backend": 20,
+    "material": 34,
+    "PNGOwnership": 10,
+    "causalBytes": 15
+  },
+  "pythonBindingChecks": 14,
+  "formalNamedChecks": 6,
+  "formalSamples": 2000,
+  "checks": [
+    {
+      "command": [
+        "make",
+        "hypr-motion-renderer-staged",
+        "test-family-scene",
+        "test-readback-image",
+        "test-causal-image",
+        "test-commit-ledger",
+        "test-backend-policy",
+        "test-library-material"
+      ],
+      "exitCode": 0,
+      "log": "final-check-00.log"
+    },
+    {
+      "command": [
+        "./test-commit-ledger"
+      ],
+      "exitCode": 0,
+      "log": "final-check-01.log"
+    },
+    {
+      "command": [
+        "./test-family-scene"
+      ],
+      "exitCode": 0,
+      "log": "final-check-02.log"
+    },
+    {
+      "command": [
+        "./test-backend-policy"
+      ],
+      "exitCode": 0,
+      "log": "final-check-03.log"
+    },
+    {
+      "command": [
+        "./test-library-material"
+      ],
+      "exitCode": 0,
+      "log": "final-check-04.log"
+    },
+    {
+      "command": [
+        "./test-readback-image"
+      ],
+      "exitCode": 0,
+      "log": "final-check-05.log"
+    },
+    {
+      "command": [
+        "./test-causal-image"
+      ],
+      "exitCode": 0,
+      "log": "final-check-06.log"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_verify_causal"
+      ],
+      "exitCode": 0,
+      "log": "final-check-07.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "causal_binding_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-check-08.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "causal_binding_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-check-09.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "causal_binding.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-check-10.log"
+    }
+  ]
+}

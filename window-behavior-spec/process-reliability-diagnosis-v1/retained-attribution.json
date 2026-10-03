@@ -1,0 +1,178 @@
+{
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/product-capture-runtime-1790969091655075296.json": {
+      "sha256": "5cd29f4aab635fb257c6912e590702fcf00b9cbfc514c61b7580bbd29f7e4e21",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/product-capture-runtime-1790969789274993790.json": {
+      "sha256": "fd3f3ebf2c29c1cd32051739411a90d5a7eac8a948359bd1dcce047f9224525b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/product-capture-runtime-1790970908619332390.json": {
+      "sha256": "de598b68b1e66d75a8721b04ccc5410dba6f40500a0ecb1a752d2bbf0791e892",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/registry-product-context-replacement-1790971858855403880.json": {
+      "sha256": "9637c8e9d1d493da3355ffaeb97f6a1af964177b987eb88802d40325dfba7fd3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/product-capture-runtime-1790971453742602930.json": {
+      "sha256": "212e9b0c731895fb9e84a74cda89525ce05f652a089aaa80ebd20f3fc54f58da",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/registry-product-duplicate-eof-1790975786956516094.json": {
+      "sha256": "8efbcb07918d4d1519f27903fb47f27c9b2966795006fb6727ba5bb6843bdb49",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-reliability-diagnosis-v1/ATTRIBUTION.md": {
+      "sha256": "30251e8bb67425096c5697457a226c743a59ec0bc9ec0dfab79f88e3a4600416",
+      "mode": 420
+    }
+  },
+  "observations": [
+    {
+      "report": "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/product-capture-runtime-1790969091655075296.json",
+      "result": "fail",
+      "elapsedSeconds": 0.7558589209802449,
+      "exitCode": 1,
+      "kernelBound": false,
+      "complete": false,
+      "workerComplete": false,
+      "failure": "Actual owned child status required",
+      "workerFailure": "Actual owned child status required",
+      "rawKernelStateRetained": true,
+      "rawEpochCount": 1,
+      "epochKeys": [
+        [
+          "epoch"
+        ]
+      ],
+      "scope": "Initial owned-status refusal has no raw metadata; UID guard vs already-gone process cannot be distinguished."
+    },
+    {
+      "report": "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/product-capture-runtime-1790969789274993790.json",
+      "result": "fail",
+      "elapsedSeconds": 0.49138798998319544,
+      "exitCode": 1,
+      "kernelBound": false,
+      "complete": false,
+      "workerComplete": false,
+      "failure": "Actual readonly file unavailable",
+      "workerFailure": "Actual readonly file unavailable",
+      "rawKernelStateRetained": true,
+      "rawEpochCount": 1,
+      "epochKeys": [
+        [
+          "epoch",
+          "fullInventoryLinksBefore",
+          "identity",
+          "observerBeforeMicroseconds",
+          "ownedMappingBatch",
+          "rawMaps",
+          "statusMetadataBeforeValidation"
+        ]
+      ],
+      "scope": "Initial owned status/stat UID1000 succeeds. Later generic readonly-file failure lacks exact file/error; no causal file attribution."
+    },
+    {
+      "report": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/product-capture-runtime-1790970908619332390.json",
+      "result": "fail",
+      "elapsedSeconds": 0.5889506360108498,
+      "exitCode": 1,
+      "kernelBound": false,
+      "complete": false,
+      "workerComplete": false,
+      "failure": "Actual readonly file unavailable: /proc/267609/maps errno=2",
+      "workerFailure": "Actual readonly file unavailable: /proc/267609/maps errno=2",
+      "rawKernelStateRetained": true,
+      "rawEpochCount": 1,
+      "epochKeys": [
+        [
+          "epoch",
+          "fullInventoryLinksBefore",
+          "identity",
+          "observerBeforeMicroseconds",
+          "ownedMappingBatch",
+          "rawMaps",
+          "statusMetadataBeforeValidation"
+        ]
+      ],
+      "scope": "Exact /proc/267609/maps errno2 observed during required kernel collection. Fresh mapping proof absent; no postexit substitute."
+    },
+    {
+      "report": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/registry-product-context-replacement-1790971858855403880.json",
+      "result": "fail",
+      "elapsedSeconds": 0.8373261409869883,
+      "exitCode": 1,
+      "kernelBound": null,
+      "complete": null,
+      "workerComplete": null,
+      "failure": null,
+      "workerFailure": null,
+      "rawKernelStateRetained": false,
+      "rawEpochCount": 0,
+      "epochKeys": [],
+      "scope": "Failed baseline before intended mutation; old fixture discarded actual Registry state. Cause cannot be recovered from retained evidence."
+    },
+    {
+      "report": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/product-capture-runtime-1790971453742602930.json",
+      "result": "pass",
+      "elapsedSeconds": 0.8601269939972553,
+      "exitCode": 0,
+      "kernelBound": true,
+      "complete": true,
+      "workerComplete": true,
+      "failure": "",
+      "workerFailure": "",
+      "rawKernelStateRetained": true,
+      "rawEpochCount": 1,
+      "epochKeys": [
+        [
+          "accepted",
+          "epoch",
+          "identity",
+          "lastOwnedMappingWitness",
+          "observerBeforeMicroseconds",
+          "ownedMappingBatch",
+          "rawMaps",
+          "statusMetadataBeforeValidation"
+        ]
+      ],
+      "scope": "Genuine scoped current kernel baseline succeeds. Does not waive missing prior counterexample."
+    },
+    {
+      "report": "/home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/registry-product-duplicate-eof-1790975786956516094.json",
+      "result": "pass",
+      "elapsedSeconds": 0.49400847699143924,
+      "exitCode": 0,
+      "kernelBound": true,
+      "complete": true,
+      "workerComplete": true,
+      "failure": "",
+      "workerFailure": "",
+      "rawKernelStateRetained": true,
+      "rawEpochCount": 1,
+      "epochKeys": [
+        [
+          "accepted",
+          "beforeRawMapsMonotonicNanoseconds",
+          "epoch",
+          "identity",
+          "lastOwnedMappingWitness",
+          "observerBeforeCompletedMonotonicNanoseconds",
+          "observerBeforeMicroseconds",
+          "ownedMappingBatch",
+          "rawMaps",
+          "statusMetadataBeforeValidation"
+        ]
+      ],
+      "scope": "Independent current Registry duplicate case first has a full genuine positive baseline, then rejects actual duplicate. Does not establish reliability for the missing old baseline."
+    }
+  ],
+  "newHelperTransactions": 0,
+  "sparseBaselineFailureCauseKnown": false,
+  "reliabilityAccepted": false,
+  "V7RuntimeChanged": false,
+  "GUI": false,
+  "existingProofsWaiveFailure": false
+}

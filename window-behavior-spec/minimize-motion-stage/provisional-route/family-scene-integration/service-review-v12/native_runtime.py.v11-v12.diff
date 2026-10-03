@@ -1,0 +1,67 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v11/native_runtime.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/native_runtime.py
+@@ -108,6 +108,11 @@
+     def __init__(self,*args,session_guard,core_hash,**kwargs):
+         self.session_guard=session_guard;self.core_hash=core_hash
+         super().__init__(*args,**kwargs)
++    def retire_gestures(self,members):
++        self.session_guard.verify()
++        result=super().retire_gestures(members,env=self.session_guard.env)
++        self.session_guard.verify()
++        return result
+     def commit(self,operation,window,preview_ready=False):
+         if operation not in ('minimize','restore'):raise ValueError('native commit must be resolved endpoint')
+         self.session_guard.verify()
+@@ -122,7 +127,7 @@
+         if self.root.resolve()==expected.resolve() or not self.root.resolve().is_relative_to(expected.resolve()):raise ValueError('native runtime must be below selected private motion root')
+         for name in ('XDG_RUNTIME_DIR','HYPRLAND_INSTANCE_SIGNATURE','WAYLAND_DISPLAY'):
+             if os.environ.get(name)!=guard.env.get(name):raise ValueError('native adapter process environment differs from selected compositor')
+-        self.producer=Path(producer);self.producer_hash=producer_hash;self.core=Path(core);self.core_hash=core_hash;self.desktops=[]
++        self.producer=Path(producer);self.producer_hash=producer_hash;self.core=Path(core);self.core_hash=core_hash;self.desktops=[];self.shared_cache=None
+         # Material proof now, again on each use. No process/actor constructed here.
+         for path,expected in ((producer,producer_hash),(core,core_hash)):
+             with PinnedExecutable(path,expected):pass
+@@ -134,11 +139,43 @@
+             transport=PipeTransport(executable.path,env=self.guard.env,failure=binding,pass_fds=(executable.fd,))
+         transport.bind_controller=lambda controller:binding.bind(controller.transport_failure)
+         self.desktops.append(desktop)
++        self.shared_cache=desktop.shared_cache
+         return desktop,transport
+     def context(self,request):
+         self.guard.verify()
+         if not self.desktops:raise RuntimeError('accepted request actor missing')
+         return NativeContextProvider(self.desktops[0],session=self.guard.session)(request)
++    def retired(self,number,desktop):
++        self.desktops.remove(desktop)
++    def housekeep(self):
++        if self.shared_cache is None:return
++        self.guard.verify()
++        def clients():return json.loads(subprocess.check_output(['hyprctl','clients','-j'],env=self.guard.env,text=True,timeout=.6))
++        before=clients()
++        native=json.loads(subprocess.check_output(['hyprctl','repl','print(hl.plugin.hyprbars.window_families())'],env=self.guard.env,text=True,timeout=.6))
++        after=clients();live=complete_live_identities(before,native,after)
++        self.guard.verify()
++        self.shared_cache.prune(live,complete=True,nonblocking=True)
++
++def complete_live_identities(before,native,after):
++    def check(records):
++        if not isinstance(records,list):raise ValueError('complete client/native list required')
++        result={};mapped=set()
++        for w in records:
++            if (not isinstance(w,dict) or not isinstance(w.get('address'),str)
++                    or re.fullmatch(r'0x[0-9a-f]{1,16}',w['address']) is None
++                    or re.fullmatch(r'[0-9a-f]{1,16}',str(w.get('stableId',''))) is None
++                    or not isinstance(w.get('pid'),int) or isinstance(w['pid'],bool) or w['pid']<1
++                    or 'mapped' in w and not isinstance(w['mapped'],bool)):
++                raise ValueError('invalid complete live identity')
++            identity=(w['address'],str(w['stableId']),w['pid'])
++            if w['address'] in result:raise ValueError('duplicate complete live address')
++            result[w['address']]=identity
++            if w.get('mapped',True):mapped.add(identity)
++        return set(result.values()),mapped
++    b,bm=check(before);n,nm=check(native);a,am=check(after)
++    if b!=a or bm!=am or am!=n or n!=nm:raise ValueError('client/native complete identity coverage changed')
++    return a
+ 
+ def main():
+     parser=argparse.ArgumentParser();parser.add_argument('--root',required=True);parser.add_argument('--session',required=True);parser.add_argument('--stop',action='store_true');parser.add_argument('--request-stdin',action='store_true')

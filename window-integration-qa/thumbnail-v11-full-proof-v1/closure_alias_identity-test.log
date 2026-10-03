@@ -1,0 +1,22 @@
+
+  closure_alias_identity_test
+    ok originalRegularAcceptedTest passed 1 test(s)
+    ok exactSelectedAliasAcceptedTest passed 1 test(s)
+    ok inheritedExactAliasAcceptedTest passed 1 test(s)
+    ok byteLinkOverlapSameExactIdentityAcceptedTest passed 1 test(s)
+    ok unknownAliasMatchingBytesRefusedTest passed 1 test(s)
+    ok sameBytesWrongNamedTargetRefusedTest passed 1 test(s)
+    ok conflictingPriorTargetRefusedTest passed 1 test(s)
+    ok conflictingPriorDigestRefusedTest passed 1 test(s)
+    ok conflictingPriorModeRefusedTest passed 1 test(s)
+    ok wrongTargetModeRefusedTest passed 1 test(s)
+    ok targetNotRegularRefusedTest passed 1 test(s)
+    ok missingTargetRefusedTest passed 1 test(s)
+    ok unknownKindRefusedTest passed 1 test(s)
+    ok regularOverwritesPinnedLinkRefusedTest passed 1 test(s)
+    ok laterGoodCannotEraseRefusalTest passed 1 test(s)
+    ok resolvedBackingUncapturedRefusedTest passed 1 test(s)
+    ok selectedLinkMismatchBeforeBytesRefusedTest passed 1 test(s)
+    ok selectedLinkMismatchAfterBytesRefusedTest passed 1 test(s)
+
+  18 passing (546ms)

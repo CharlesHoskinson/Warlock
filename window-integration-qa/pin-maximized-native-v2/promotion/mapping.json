@@ -1,0 +1,675 @@
+{
+  "sourceStage": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal",
+  "promotedStage": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1",
+  "allCopiedFiles": [
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/FINAL_HANDOFF.md",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/FINAL_HANDOFF.md",
+      "sha256": "a27b607bb686df50be5faeec1122cc1938bd0f0776a47f26b1cd668a9babe45d",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/HOST_CLOSURE_CONTRACT.md",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/HOST_CLOSURE_CONTRACT.md",
+      "sha256": "94483fbcacae7f59209ef22a791f8a6faf591fff27f683d305f45332fb1d41f1",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/PAIRING_CONTRACT.md",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/PAIRING_CONTRACT.md",
+      "sha256": "9478c4239e26a85e877f7fe8657b8fd3c55eb72673ff49cea048c78915cda67d",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/PAIR_READY.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/PAIR_READY.json",
+      "sha256": "2f7cebf018a0d65e9d1d2c849aa2db666651aa38625342e29ac652bf791e3e19",
+      "mode": 384
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/a3-component.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/a3-component.json",
+      "sha256": "35d8ec731ae19713b73c345972e2b14aea85ab60f368f3890e04668ce2239e4b",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/build_readonly_probe.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/build_readonly_probe.py",
+      "sha256": "e0c38a77fa48ec41e571846e564dc14c42f62178ed82543ed5b8e77313cec0e6",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/case_authority.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/case_authority.py",
+      "sha256": "7e1acaff08e496dae5401486f08e2b55c4fcc3df4b059a30e57bd9c2b15c8023",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/cpu-proposal-tests.log",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/cpu-proposal-tests.log",
+      "sha256": "a1fdc5acd52df06c8964a856caea1917e9a716d13bdfd4cdb2ac6f697022e8dc",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/generate-proposed-host.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/generate-proposed-host.py",
+      "sha256": "b7c1c4dfa63132666b07d9f1d1fd5597e5eea5f8a38135ca51a0933b875daeda",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/generate-proposed-runner.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/generate-proposed-runner.py",
+      "sha256": "8b88ef4261aacdde603d4091981fc60c4890413c51b3a87d3f0fe28e82bb7f56",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/host-closure-formal-before-observation.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/host-closure-formal-before-observation.json",
+      "sha256": "2c96088c457682d92d7acc8dba073b3d6a495887201ba891096b1db55a9dd2ca",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/host-closure-named-selected.log",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/host-closure-named-selected.log",
+      "sha256": "de967a7a4d47f44135e1885f18c4c8018a488654aecfafd45c2cc349ab974f18",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/host-closure-named.log",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/host-closure-named.log",
+      "sha256": "34e5fc81e5355f45b22dba3483ffe8261a50738afe26dc673b00f75d455e305d",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/host-closure-traces.log",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/host-closure-traces.log",
+      "sha256": "0579d01ee995902aee6579dcb0f5dc88a1b840ff1e7e63bb926443c197a01554",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/host-closure-typecheck.log",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/host-closure-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/host-method-inverses.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/host-method-inverses.json",
+      "sha256": "020f352e4794b5094d33e39079974205b0e180939cbbd6608fd7545aa21fc9ab",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/host-observation-cpu.log",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/host-observation-cpu.log",
+      "sha256": "62b2bb1f8f7cca5a548f7f818b907beb82429a6080cdef1aacc527f7c6b31883",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/host-whole-methods.diff",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/host-whole-methods.diff",
+      "sha256": "38e1eb48f89766a80e7c33c11eadfe0017ac9915edbb4e6afeea9d2c6d9e2b53",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/host_closure.qnt",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/host_closure.qnt",
+      "sha256": "5a00c36f732948a5da2a40914bd1ee14f3610c031933dba266978e6850f86d6d",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/input_episode.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/input_episode.py",
+      "sha256": "587ca83b1b635f77c8957cb3790bd560cafbd508fa72f4dab663433a0d23df07",
+      "mode": 384
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/inverses/a3-component.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/inverses/a3-component.json",
+      "sha256": "35d8ec731ae19713b73c345972e2b14aea85ab60f368f3890e04668ce2239e4b",
+      "mode": 384
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/inverses/bootstrap-host.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/inverses/bootstrap-host.py",
+      "sha256": "61eaa572b923c31e622dbc7f2c7b8b293beda90bca4c933b2789ce65bb3d7aa6",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/inverses/original-host.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/inverses/original-host.py",
+      "sha256": "0bb343488eb4c04ef53af2550f01a35cc737888bfec797208431f799a28c5d27",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/inverses/readonly-probe.cpp",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/inverses/readonly-probe.cpp",
+      "sha256": "5918fb08acdf14a53b640fd4f2a44c680cb9cf784d8cf967ef3300e0f3c7037d",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/native_cases.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/native_cases.py",
+      "sha256": "b990755e84ccb3d3f10ee17d51ec0bcfd1b45cfb66530ff5c53a1e4bb785dfe2",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/original-a3-cpu-tests.log",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/original-a3-cpu-tests.log",
+      "sha256": "ca9523ae0a4f5ac2f193f3bcd11e4731f57f0e84f03d1f48364b893ea6723df6",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/output-adapter-path.diff",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/output-adapter-path.diff",
+      "sha256": "26b6abe28ce2a3437ac3650fcefe7c059043f20d01726bbb2ea2fe47225623d9",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/output_readiness.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/output_readiness.py",
+      "sha256": "b530bdbff733e7c19e0ec2c33a0096b5d9d6e39ef8edcea8dfb4c9cefb45fa8c",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/pair-plan-pending-build.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/pair-plan-pending-build.json",
+      "sha256": "62e54481f23c7d1f35d23703065556573d914bbb994cb084cc1723b2d5963700",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/private-controls.lua",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/private-controls.lua",
+      "sha256": "855846e51ecd1f5486211a5c3e9b3b6b5b6e1767fcd85ce306aa11d6084b74cd",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/probe_union_conflicts.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/probe_union_conflicts.py",
+      "sha256": "aa3fa16d884907e57a6751bcacf4f00f49af5cfa113a76b1f77a962757905772",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/candidate_host.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/proposed/candidate_host.py",
+      "sha256": "e1a126dfe87b91914d5f14639449d9d7b097112f7a2ab509331f6aa289b69356",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/capture_packet.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/proposed/capture_packet.py",
+      "sha256": "a16e8d82f6837d4968d6df6df16aa3f0fa73fec91f7d292b5a56bebd641fadc9",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/closure_union.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/proposed/closure_union.py",
+      "sha256": "540b2a63dd6496473ef90b5fd760df79cf28c30b3100ee856217eb284000788f",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/freeze_packet.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/proposed/freeze_packet.py",
+      "sha256": "87b7f36ed86ed8c40593293e2d2a537b971c2e4a6de4cf64b45a7338738a2bd1",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/host_observation.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/proposed/host_observation.py",
+      "sha256": "89a0a04b5927c84fb67ec0c1e3d1199770efff4c1d811a21b6ddf825b01d545b",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/pair_binding.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/proposed/pair_binding.py",
+      "sha256": "96325c7e10de26f5073ff7deae0ca9833775fffc52b9a47e518c66d44595186a",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/private_output_host.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/proposed/private_output_host.py",
+      "sha256": "8111ec483a7c2e6418e55bdfc002a9b8bdd2d7dc225fc9405a78d7de94cb691c",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/run_native.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/proposed/run_native.py",
+      "sha256": "959bf3126838ac454cce9f8e9138c6b4b52950294b53fa647354aba1b3099bd4",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/readonly-probe/build-report.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/readonly-probe/build-report.json",
+      "sha256": "4cfb966fd63c738a057cd663b83a323dbffaaf89c003c1634ba8d96946afbd51",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/readonly-probe/compile.log",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/readonly-probe/compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/readonly-probe/header-origin-conservation.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/readonly-probe/header-origin-conservation.json",
+      "sha256": "e05386ea5558346bc2f0166122a01e84548c0c1a6ce06a85ba63c846b35ed249",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/readonly-probe/libqt-modal-probe.so",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/readonly-probe/libqt-modal-probe.so",
+      "sha256": "cb2828cd9ad93500e0e4ea26a3ec4272d6b8fcc7a0f666369c991adaa4f29762",
+      "mode": 493
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/readonly-probe/probe.cpp",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/readonly-probe/probe.cpp",
+      "sha256": "5918fb08acdf14a53b640fd4f2a44c680cb9cf784d8cf967ef3300e0f3c7037d",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/readonly-probe/probe.d",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/readonly-probe/probe.d",
+      "sha256": "82285da039b90d93d5acf5cb7cf3465b7c2ad16b8213c2543521f80e6278e406",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/readonly-probe-build.log",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/readonly-probe-build.log",
+      "sha256": "f4f1d38743ec1f3d2e70e17a02c27ed7898ff34e539415ee6da4a5021640e4d9",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/CONTRACT.md",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/CONTRACT.md",
+      "sha256": "63554bdb04a929e8c1b06536573d6147a20f70ea9f723499da0de211b495ad25",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/INPUT_EPISODE_CONTRACT.md",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/INPUT_EPISODE_CONTRACT.md",
+      "sha256": "bfcdf569a645e70e17bcbe9a689310651360e60d2fc0cc0bdae71aba011a073b",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/REQUIREMENTS.md",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/REQUIREMENTS.md",
+      "sha256": "22fdd1b0a2e77d89532a288f5b2c3b7ce82e4788ac523705af7c3548d7f0560e",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/capture_packet.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/capture_packet.py",
+      "sha256": "5523ff927bf57666170382a4d5b1f4c7ce134558920bc9cc2bf5c8a1bf73a431",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/case-cpu-first-failure.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/case-cpu-first-failure.json",
+      "sha256": "6a204440da7fbde48dd389bb10df013975ea0b758af3839b9fd9bce2078ba9a0",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/case-formal-before-implementation.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/case-formal-before-implementation.json",
+      "sha256": "85c01d5a7764852fe0d4ecf79cc8291cc2a3604596643b751a2ef233cc32e71b",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/case_authority.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/case_authority.py",
+      "sha256": "7e1acaff08e496dae5401486f08e2b55c4fcc3df4b059a30e57bd9c2b15c8023",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/check_episode_component.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/check_episode_component.py",
+      "sha256": "9ba4c3e118578d9cb27884f5c6574682a86284966de36a44a3167117928bbf3a",
+      "mode": 384
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/closure-first-failure.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/closure-first-failure.json",
+      "sha256": "619d61dfcc875b482b16456d397b2e41b251f5d0b52a45b0d1bf64290830f77b",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/inherited-output-source.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/inherited-output-source.json",
+      "sha256": "669d398df17a94cd9a49e8584dd02e5cf82ab55f45de35f3eec41a3123f2df9d",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/input-episode-v2-final.diff",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/input-episode-v2-final.diff",
+      "sha256": "0eb4b32c43af3e3c38dcde6e381746d77982817af2ec71fb9f4e5fcf650153a4",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/input-episode-v2.diff",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/input-episode-v2.diff",
+      "sha256": "9e785ba115f4aeca9e8a58ea648ba075b9dc033d86e697321b13ac80f8144633",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/input_episode.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/input_episode.py",
+      "sha256": "587ca83b1b635f77c8957cb3790bd560cafbd508fa72f4dab663433a0d23df07",
+      "mode": 384
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/native_cases.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/native_cases.py",
+      "sha256": "b990755e84ccb3d3f10ee17d51ec0bcfd1b45cfb66530ff5c53a1e4bb785dfe2",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/output_readiness.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/output_readiness.py",
+      "sha256": "b530bdbff733e7c19e0ec2c33a0096b5d9d6e39ef8edcea8dfb4c9cefb45fa8c",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/pin_case.qnt",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/pin_case.qnt",
+      "sha256": "5b6a8aff1948a7754cb6518d86520b276faee4ffd746c4c9dad56fa354ff95a2",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/pin_input_episode.qnt",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/pin_input_episode.qnt",
+      "sha256": "569242d657152ffd857edb5fe05b66e6f10d77b9e572746416de76137c4094d7",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/pin_input_episode_test.qnt",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/pin_input_episode_test.qnt",
+      "sha256": "b912941b24c1aed5d3d9cfb114a8aed38df37e29d5f924b356fe9fd4b1955576",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/private-controls.lua",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/private-controls.lua",
+      "sha256": "855846e51ecd1f5486211a5c3e9b3b6b5b6e1767fcd85ce306aa11d6084b74cd",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/private_output_host.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/private_output_host.py",
+      "sha256": "0dae688a6ab221ad8f8d01fddf7a23f1ced0213e6837e6332cdf76202a5f4bd1",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/prove_cases.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/prove_cases.py",
+      "sha256": "a70b094144febb5cf883c782a64fbc098c5dd275d60464102215e2de7aad651e",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/retained-A1-input-authority-gap.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/retained-A1-input-authority-gap.json",
+      "sha256": "b5a8a61dc4e0f54ac722ef49cc324a0856dc3ae7003b5c98343067d5109cf8cc",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/retained-before-pending-observation/input-episode-v2.diff",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/retained-before-pending-observation/input-episode-v2.diff",
+      "sha256": "9e785ba115f4aeca9e8a58ea648ba075b9dc033d86e697321b13ac80f8144633",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/retained-before-pending-observation/input_episode.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/retained-before-pending-observation/input_episode.py",
+      "sha256": "fd716432314a600693f325fc5e7fd3a95cbeb56f73036c99dd3a7d112c40dba3",
+      "mode": 384
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/retained-before-pending-observation/native_cases.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/retained-before-pending-observation/native_cases.py",
+      "sha256": "750d34c4f89621e427eb8d642a512355e910da0be46dc2e82821fb59406216b1",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/retained-before-pending-observation/test_input_episode.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/retained-before-pending-observation/test_input_episode.py",
+      "sha256": "d4898229a70fd266306012579208d856c0348d6d294b382b67e964070bcda858",
+      "mode": 384
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/run_native.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/run_native.py",
+      "sha256": "304bf376eb7a6728576f2ff164533d2afa8545cda4a2fd5aa2c13a233a271ff0",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/test_case_authority.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/test_case_authority.py",
+      "sha256": "f73cc92df43a034aab4b5903df1f8bc09d592c065a3c7bd4dd8aa797b94b3238",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/test_focus_observation.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/test_focus_observation.py",
+      "sha256": "3a8a2536cbb13f0631ed4e8deb2a51f51661a7c054badfbbc688a8f287067065",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/test_input_episode.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/test_input_episode.py",
+      "sha256": "fb764c3fd7a0967dfdd6c583c4b19a61ee2a367b6fb9aa6971d2a9bda29d675e",
+      "mode": 384
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-a3/test_native_trace.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-a3/test_native_trace.py",
+      "sha256": "728048f15f5e78ff70e6614d430eb865e7a1545c24b9926763360b4e03f7a0f0",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-ancestral-schema-capture/capture_packet.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-ancestral-schema-capture/capture_packet.py",
+      "sha256": "0b70a6427ac0de3e3d23700018479b401e430e09d095ad02a5f6acb7ab7c4478",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-ancestral-schema-capture/failure.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-ancestral-schema-capture/failure.json",
+      "sha256": "677f7ccd96b4c935ec06f9d655f344972fcb41998f843aa0a3def9aaf712bfff",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-ancestral-schema-capture/test_before_completed_pair.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-ancestral-schema-capture/test_before_completed_pair.py",
+      "sha256": "f521511c2e88301250a7334a3bd72ce018324201f2a4adb0d2c41c531e4ffcf8",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-component-check/attribution.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-component-check/attribution.json",
+      "sha256": "79ff6cfe2745113d407bdab4d87363b71112cceeb8b8171e741b9f3e568b3d42",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-component-check/failure.log",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-component-check/failure.log",
+      "sha256": "7a945924c9d26b8933d9f22e00487865d79a8d36ec3829a962391fec5c47f614",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-component-check/test_preimage.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-component-check/test_preimage.py",
+      "sha256": "b4bc2faabbeefe2ba999a232894bf090bdfde0734b44953e8a62db98fc934247",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-host-signal-encoding/attribution.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-host-signal-encoding/attribution.json",
+      "sha256": "6060f06e110a231dc9b2d66e730677e810abbbe2106bbf9f6544f45b8acc9a3e",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-host-signal-encoding/formal-command-placeholder-preimage.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-host-signal-encoding/formal-command-placeholder-preimage.json",
+      "sha256": "fa81d9d02e4461f653348c6c6f7106c170e53c5a031e630575a82e467df8a96f",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-host-signal-encoding/host-observation-cpu.log",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-host-signal-encoding/host-observation-cpu.log",
+      "sha256": "ba0366f98a49333c80235dd2de66f55b8c4baf4e4515b3263687e389120094ae",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-host-signal-encoding/host_observation.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-host-signal-encoding/host_observation.py",
+      "sha256": "ac888490f5e734bd1a6ff816ffec3ad65e098984ba3faebac5e1e28f5938b9ac",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-host-signal-encoding/test_host_observation.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-host-signal-encoding/test_host_observation.py",
+      "sha256": "01723c76190d504dc1a01d06a83fd74dc58e6429af89cb19d6cad2198d93c651",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-probe-public-header-diagnostics/attribution.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-probe-public-header-diagnostics/attribution.json",
+      "sha256": "c412606999fa9be006483c35383a7ff612cecb2f13b79462a9b427982b0d4d51",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-probe-public-header-diagnostics/build-report.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-probe-public-header-diagnostics/build-report.json",
+      "sha256": "99e531ba7475b6f0cb9077eadeb78d8502043c29b2696927488a01e24d1c09ae",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-probe-public-header-diagnostics/build_readonly_probe.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-probe-public-header-diagnostics/build_readonly_probe.py",
+      "sha256": "55777010710e92abd59a902a638df6606cd36350c3e4bc98b5672544c129c821",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-probe-public-header-diagnostics/compile.log",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-probe-public-header-diagnostics/compile.log",
+      "sha256": "7277b1f24e4d44ba728d32ba9990a8c916b817a949b74682d3c931058225bcdf",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-probe-public-header-diagnostics/readonly-probe-build.log",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-probe-public-header-diagnostics/readonly-probe-build.log",
+      "sha256": "50787b22e7f6f45ea046914a56e3e61b2386e497d8c7a89c2c3c79b742fb4fc8",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-union-before-final-review/host_observation.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-union-before-final-review/host_observation.py",
+      "sha256": "238a581b8b31e4e8ea9f863234361cd18a11c2b42c0f78492ec493c713556bd0",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-union-before-final-review/run_native.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-union-before-final-review/run_native.py",
+      "sha256": "00c479d1080af9373637492e349cf3725da5e9349ce8d1289a3d8490da15649a",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-union-before-final-review/source-ready-inputs.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-union-before-final-review/source-ready-inputs.json",
+      "sha256": "0934250e01dd46c06d170a29775d06900b54ef050ab8668d68b425e9442f766d",
+      "mode": 384
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-union-conflict-gap/closure_union.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-union-conflict-gap/closure_union.py",
+      "sha256": "a9ba6a130964fa4050ef4933f4b7b63532d685e8f512d66fb847bef4effab6dc",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-union-conflict-gap/counterexample-and-correction.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-union-conflict-gap/counterexample-and-correction.json",
+      "sha256": "fe78695737b0c61427f24b77a05e250e3ca93842c0efbe3c5f9e2d046f8bf9f8",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-first-union-conflict-gap/test_pair_proposal.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-first-union-conflict-gap/test_pair_proposal.py",
+      "sha256": "354482666dc2b1bfcc3252f31ffed6b6d77dadacbc0a44f2a775aaee9dbd81a2",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-second-ancestral-alias-capture/capture_packet.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-second-ancestral-alias-capture/capture_packet.py",
+      "sha256": "a7b0350be429186119d2a2fa0495b19e798e9bdb1e6350a9a70c5c6facd50311",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-second-ancestral-alias-capture/failure.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-second-ancestral-alias-capture/failure.json",
+      "sha256": "bb4c0e01fc293eb5eeaa4989f5ed89370e74fc9c12dfbdefaed80d6c5add5f67",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-third-ancestral-relative-root/capture_packet.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-third-ancestral-relative-root/capture_packet.py",
+      "sha256": "c3758a9bd58599839e867067ba1c61c13ba395ef795c220437b1224b237b17d7",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/retained-third-ancestral-relative-root/failure.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/retained-third-ancestral-relative-root/failure.json",
+      "sha256": "56896866bf22841bbba678404ee986d8bdc90f1d134f61adf026b5470c34c31c",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/runner-selector-binding.diff",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/runner-selector-binding.diff",
+      "sha256": "964bf0aefaaf8a931a1ce0ceca53c80659d3d71899314ba41a517eb25d071291",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/source-ready-final-v1.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/source-ready-final-v1.json",
+      "sha256": "897b64e48757162fda9e349104f43b8df9e2b8d5a4b71a0b8505fbd602122fa7",
+      "mode": 384
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/source-ready-inputs-final-v1.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/source-ready-inputs-final-v1.json",
+      "sha256": "35dea348f4836bfa7a2ca2cfe65c9481eb55ff11e9b6044c40e199eedc474310",
+      "mode": 384
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/source-ready-inputs.json",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/source-ready-inputs.json",
+      "sha256": "72b2e356ee54c7b83d61df362fb4ad8859aceb7340478b54460b8284cd010d3a",
+      "mode": 384
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/test_host_observation.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/test_host_observation.py",
+      "sha256": "01723c76190d504dc1a01d06a83fd74dc58e6429af89cb19d6cad2198d93c651",
+      "mode": 420
+    },
+    {
+      "original": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/test_pair_proposal.py",
+      "promoted": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/test_pair_proposal.py",
+      "sha256": "1f21b60230a9af8e689315ebfffac47e8329d55bb41f2982ea6f12975c4a7293",
+      "mode": 420
+    }
+  ],
+  "onlyMutatedFile": "PAIR_READY.json",
+  "mutatedFields": [
+    "probe",
+    "inputs selected probe path",
+    "inputModes selected probe path"
+  ],
+  "originalPairSHA256": "2f7cebf018a0d65e9d1d2c849aa2db666651aa38625342e29ac652bf791e3e19",
+  "promotedPairSHA256": "2c23dea638a995922c256f0ef0736d52814b2b39ff4728060ca9bdc345ee4103",
+  "probeByteModeExact": true,
+  "all31A3SourceBodiesUnchanged": true,
+  "nativeLaunch": false,
+  "freezePerformed": false,
+  "originalFinalReadySHA256": "897b64e48757162fda9e349104f43b8df9e2b8d5a4b71a0b8505fbd602122fa7",
+  "originalFinalClosureSHA256": "35dea348f4836bfa7a2ca2cfe65c9481eb55ff11e9b6044c40e199eedc474310",
+  "rootDirectoryMode": 448
+}

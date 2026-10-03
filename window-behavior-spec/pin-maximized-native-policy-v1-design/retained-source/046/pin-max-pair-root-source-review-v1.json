@@ -1,0 +1,42 @@
+{
+  "result": "pass",
+  "reviewed": "2026-10-02T20:50:37.028429+00:00",
+  "sourceReady": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/source-ready-final-v1.json",
+  "sourceReadySHA256": "897b64e48757162fda9e349104f43b8df9e2b8d5a4b71a0b8505fbd602122fa7",
+  "sourceClosureSHA256": "35dea348f4836bfa7a2ca2cfe65c9481eb55ff11e9b6044c40e199eedc474310",
+  "rootActualSourceCheckSession": 69362,
+  "inputs": 63830,
+  "links": 13879,
+  "directoryModes": 1370,
+  "originalA3SourceRows": 31,
+  "rootActualProbeDependencyRows": 603,
+  "actualProbeSourceInverseExact": true,
+  "probeSHA256": "cb2828cd9ad93500e0e4ea26a3ec4272d6b8fcc7a0f666369c991adaa4f29762",
+  "sourceOnlyAccepted": true,
+  "nativeAuthorized": false,
+  "nativeAccepted": false,
+  "reviewedRuntimeSources": {
+    "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/candidate_host.py": "e1a126dfe87b91914d5f14639449d9d7b097112f7a2ab509331f6aa289b69356",
+    "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/host_observation.py": "89a0a04b5927c84fb67ec0c1e3d1199770efff4c1d811a21b6ddf825b01d545b",
+    "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/pair_binding.py": "96325c7e10de26f5073ff7deae0ca9833775fffc52b9a47e518c66d44595186a",
+    "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/run_native.py": "959bf3126838ac454cce9f8e9138c6b4b52950294b53fa647354aba1b3099bd4",
+    "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/closure_union.py": "540b2a63dd6496473ef90b5fd760df79cf28c30b3100ee856217eb284000788f",
+    "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/capture_packet.py": "a16e8d82f6837d4968d6df6df16aa3f0fa73fec91f7d292b5a56bebd641fadc9",
+    "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/freeze_packet.py": "87b7f36ed86ed8c40593293e2d2a537b971c2e4a6de4cf64b45a7338738a2bd1",
+    "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/proposed/private_output_host.py": "8111ec483a7c2e6418e55bdfc002a9b8bdd2d7dc225fc9405a78d7de94cb691c"
+  },
+  "cpuEvidence": {
+    "pair": 14,
+    "originalA3": 43,
+    "actualHostKernelAndInverse": 5,
+    "hostNamedQuint": 13,
+    "hostTraces": 2000
+  },
+  "approvedScope": "Exact completed V3 core/plugin/helper + rebuilt source-identical readonly probe; three inherited host selectors; original14 bodies and original10host/18main predicates unchanged, three additive binding gates, observation-only exact inherited stop/close and separate normal closure. Explicit full union conflicts/modes/links/directory conservation.",
+  "remaining": [
+    "Fresh QA-rooted promotion and complete closure review/freeze",
+    "Root-owned original14 native campaign",
+    "Separate native MAX/focus/scroll/transfer campaign",
+    "Helper/taskbar/frontend ingress still unproved by original14"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "installedWtypePackage": "wtype0.4-2",
+  "installedWtypeSHA256": "d760e193e31b65f6158462fdb295c101780495ae760852301a42cfb907357bc5",
+  "sourceEquivalenceProved": false,
+  "actualFirstDraftKeyObservations": [
+    {
+      "sequence": 1,
+      "key": "p",
+      "code": "Escape",
+      "keyCode": 80,
+      "which": 80,
+      "value": "",
+      "selection": [
+        0,
+        0
+      ]
+    },
+    {
+      "sequence": 9,
+      "key": "r",
+      "code": "Digit1",
+      "keyCode": 82,
+      "which": 82,
+      "value": "p",
+      "selection": [
+        1,
+        1
+      ]
+    },
+    {
+      "sequence": 17,
+      "key": "i",
+      "code": "Digit2",
+      "keyCode": 73,
+      "which": 73,
+      "value": "pr",
+      "selection": [
+        2,
+        2
+      ]
+    },
+    {
+      "sequence": 25,
+      "key": "v",
+      "code": "Digit3",
+      "keyCode": 86,
+      "which": 86,
+      "value": "pri",
+      "selection": [
+        3,
+        3
+      ]
+    },
+    {
+      "sequence": 33,
+      "key": "a",
+      "code": "Digit4",
+      "keyCode": 65,
+      "which": 65,
+      "value": "priv",
+      "selection": [
+        4,
+        4
+      ]
+    },
+    {
+      "sequence": 41,
+      "key": "t",
+      "code": "Digit5",
+      "keyCode": 84,
+      "which": 84,
+      "value": "priva",
+      "selection": [
+        5,
+        5
+      ]
+    }
+  ],
+  "initialAlphaPhysicalLogicalMismatchAlsoObserved": true,
+  "characterInputAcceptanceDoesNotEstablishCorrectPhysicalCode": true,
+  "primaryInputs": {
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v20/continuation-primary-wtype-v0.4-main.c": "713597abfc049196864ffcc041bb6683c761b71d68ed2da86cdcfc6b7ed3d244",
+    "/usr/include/linux/input-event-codes.h": "ab968a3396f61fc674af9b796a212c98edf5331d0ef1c25734668491d090495a",
+    "/usr/share/X11/xkb/keycodes/evdev": "5f48b3c4c5f6d7db41699bc1e7c714743508ee22fe2948640d3660b2c438d4f9",
+    "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/native-fixture/virtual-keyboard-unstable-v1.xml": "7ad7870003ecd592cae47dc19d277a609b7f18fd7b7be012623cf3225a7294f5"
+  },
+  "interpretation": "Dense custom keycodes produce physical Escape/Digit aliases even when letters insert. B19 leading hyphen physical Escape haskeyCode27 andnoinput; not a generalclaim letters never insert or everyEscapedOMcode causesfailure.",
+  "nativeExecuted": false
+}

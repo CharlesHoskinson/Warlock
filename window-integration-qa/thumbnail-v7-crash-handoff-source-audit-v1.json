@@ -1,0 +1,42 @@
+{
+  "result": "pass-source-audit-before-next-nested-run",
+  "fiveChanges": {
+    "ownUniqueUserScopeAndExactCoreOne": true,
+    "xwaylandDisabledOutsideX11": true,
+    "verifiedExplicitPrivateWaylandParentNoDRMFallback": true,
+    "unsandboxedUnifiedOwned0700Runtime": true,
+    "clientServiceRendererHelperDrainAndNativeUnloadBeforeCompositor": true
+  },
+  "systemd261Implementation": "LimitCORE unsupported on scopes; actual qa_run uses prlimit core1:1 inherited and checked inside scope",
+  "runtimeChecksStillRequired": "actual scope/core, Xwayland option, selected private parent socket+peer+configure/transport, helpers/client normal exit, native unload, main preservation and runtime closure",
+  "processLaunchPolicy": "danger-full-access tool command via qa_run; root is sole serial native GUI owner",
+  "x11OrOrcaProbeSelected": false,
+  "mainCrashWatchGrimKeyringModified": false,
+  "sourceInputs": {
+    "/home/hoskinson/window-integration-qa/qa_run.py": {
+      "sha256": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/qa_launch.py": {
+      "sha256": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/weston_host.py": {
+      "sha256": "0bb343488eb4c04ef53af2550f01a35cc737888bfec797208431f799a28c5d27",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/private-weston-aq-bootstrap-host-v5/weston_host.py": {
+      "sha256": "61eaa572b923c31e622dbc7f2c7b8b293beda90bca4c933b2789ce65bb3d7aa6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/native_integration.py": {
+      "sha256": "e8b32b3a385813276495d83e15905599940fc98ebedcd1e50133febf0f4f3b91",
+      "mode": 493
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/private_shell.py": {
+      "sha256": "673847b93cbf129bed84cb2f0c42c7c9df9c1f873f25fbb1e310087cb6b4d5c4",
+      "mode": 420
+    }
+  },
+  "nativeRun": false
+}

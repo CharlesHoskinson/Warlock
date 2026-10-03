@@ -1,0 +1,8 @@
+{
+  "stage": "CPU adapter only, no __enter__/launch",
+  "selectedConstructorInput": "nested_lua=b''",
+  "actualError": "ValueError: reviewed Lua must be nonempty bytes",
+  "primarySource": "/home/hoskinson/window-integration-qa/private-weston-host-v2/weston_host.py:174",
+  "sourceAndHostGuardsChanged": false,
+  "refinement": "Use exact accepted nested-qt.lua + immutable V2 private-controls.lua bytes for constructor; empty config remains refused"
+}

@@ -1,0 +1,203 @@
+{
+  "rows": [
+    {
+      "pid": 758217,
+      "start": "19752516",
+      "pgid": 758217,
+      "name": "privateBus",
+      "command": [
+        "/usr/bin/dbus-daemon",
+        "--session",
+        "--nofork",
+        "--address=unix:path=/run/user/1000/wqa/0763/bus"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/privateBus.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [
+        {
+          "pid": 758217,
+          "signal": 15,
+          "sent": true,
+          "error": null
+        }
+      ],
+      "stopError": null
+    },
+    {
+      "pid": 758218,
+      "start": "19752519",
+      "pgid": 758218,
+      "name": "weston",
+      "command": [
+        "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston",
+        "--backend=headless",
+        "--renderer=gl",
+        "--shell=kiosk-shell.so",
+        "--fake-seat",
+        "--no-config",
+        "--socket=weston-host",
+        "--width=1600",
+        "--height=1000",
+        "--scale=1",
+        "--idle-time=0",
+        "--log=/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/weston-renderer.log"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/weston.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [
+        {
+          "pid": 758218,
+          "signal": 15,
+          "sent": true,
+          "error": null
+        }
+      ],
+      "stopError": null
+    },
+    {
+      "pid": 758314,
+      "start": "19752676",
+      "pgid": 758314,
+      "name": "hyprland",
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland",
+        "--config",
+        "/run/user/1000/wqa/0763/hyprland.lua"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/hyprland.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [
+        {
+          "pid": 758314,
+          "signal": 15,
+          "sent": true,
+          "error": null
+        }
+      ],
+      "stopError": null
+    },
+    {
+      "pid": 758952,
+      "start": "19753527",
+      "pgid": 758952,
+      "name": "pin-legacy-qt",
+      "command": [
+        "/home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture",
+        "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/native"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/pin-legacy-qt.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 760053,
+      "start": "19754991",
+      "pgid": 760053,
+      "name": "pin-pointer",
+      "command": [
+        "/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer",
+        "1600",
+        "1000"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/native/pointer.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 760119,
+      "start": "19755035",
+      "pgid": 760119,
+      "name": "pin-chord-3",
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--chord",
+        "super-p"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/pin-chord-3.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 760162,
+      "start": "19755062",
+      "pgid": 760162,
+      "name": "pin-chord-4",
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--chord",
+        "super-ctrl-t"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/pin-chord-4.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 760279,
+      "start": "19755144",
+      "pgid": 760279,
+      "name": "pin-chord-5",
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--chord",
+        "super-p"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/pin-chord-5.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 760301,
+      "start": "19755167",
+      "pgid": 760301,
+      "name": "pin-chord-6",
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--chord",
+        "super-ctrl-t"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/attempt-1/host/pin-chord-6.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    }
+  ],
+  "registeredStopOrder": [
+    "pin-chord-6",
+    "pin-chord-5",
+    "pin-chord-4",
+    "pin-chord-3",
+    "pin-pointer",
+    "pin-legacy-qt",
+    "hyprland",
+    "weston",
+    "privateBus"
+  ],
+  "closeError": null,
+  "originalStopSeconds": 4,
+  "originalWaitSeconds": 4,
+  "scope": "observed host closure only; named bus termination distinguished",
+  "normal": false
+}

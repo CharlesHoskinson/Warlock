@@ -1,0 +1,8 @@
+{
+  "result": "failure-retained",
+  "cpuOnly": true,
+  "tests": 31,
+  "failures": 1,
+  "reason": "Renaming parent before batch capture changed actual kernel deleted target outside proposed exact class; helper gave zero mappings, ordinary deleted guard remained mandatory. Test now captures prior proposed VMA then replaces directory to exercise before/after directory failure.",
+  "runtimeGuardWeakened": false
+}

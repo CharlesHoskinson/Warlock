@@ -1,0 +1,49 @@
+--- /home/hoskinson/window-integration-qa/pin-frontend-qa-v1/frontend_cases.py
++++ /home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend_cases.py
+@@ -7,6 +7,8 @@
+ from decimal import Decimal
+ import json,os,time
+ from frontend_authority import binding,current,pointer,keyboard,helper,FrontendCase,layer,exact,numeric,shell_requester,completion_current,focus_projection,one_native_event
++from popup_authority import engine_pair
++from layer_episode import episode
+ from native_authority import token,public,integer_point,move_command,input_safe,protected_order
+ 
+ B=Path(__file__).resolve().parent
+@@ -36,9 +38,14 @@
+   return json.loads(self.ipc_readonly('hoskinson.windows',name))
+  def native(self):return json.loads(self.session.ctl('repl','print(hl.plugin.toolkit_held_probe.state())'))
+  def scope(self):
+-  value=self.scope_reader()
+-  if type(value)is not dict or value.get('actualProviderVerified')is not True or value.get('sourceClosureVerified')is not True or value.get('processAndEngineCurrent')is not True or value.get('processId')!=self.shell.pid:raise RuntimeError('Actual reviewed engine lifetime provider required; no inferred/constant epoch')
+-  self.report['engineAuthorityProvided']=True;self.persist();return value['scope']
++  # Fixed read-only QML path; supplied flags/counters are never authority.
++  value=engine_pair(self.query('pinMenuState'))
++  if value['pid']!=self.shell.pid:raise RuntimeError('Actual provider/QS process differs')
++  self.report['engineAuthorityProvided']=True;self.persist();return value
++ def input_rows(self,route):
++  if route not in ('pointer','return'):raise ValueError('Fixed B observation route required')
++  self.session.guard();name='events'if route=='pointer'else'keyboard_events'
++  return json.loads(self.session.ctl('repl','print(hl.plugin.toolkit_held_probe.'+name+'())'))
+  def snapshots(self):return dict(menu=self.query('pinMenuState'),native=self.native(),scope=self.scope())
+  def chord(self,name,setup=False):
+   if name not in('super-t','menu','return','escape'):raise ValueError('Admitted physical frontend chord required')
+@@ -141,12 +148,18 @@
+   case=FrontendCase(expected)
+   if route=='pointer':self.move_layer(expected['point'],expected['layer'])
+   pre=self.observe('Actual menu/layer/engine immediately before genuine Pin input',self.snapshots);case.press(pre['menu'],pre['native'],pre['scope'],route)
++  row['inputBefore']=self.observe('Actual B event prefix immediately before input',lambda:self.input_rows(route))
+   if route=='pointer':row['realInput']=self.buttons(272,False,lambda:case.press(**self.press_args(self.observe('Current exact real row immediately before down',self.snapshots),route)))
+   elif route=='return':row['realInput']=self.chord('return')
+   else:raise ValueError('Admitted real Toggle pin route required')
+-  case.release(True);self.persist()
++  self.persist()
+   def completed():
+    value=self.snapshots();menu=value['menu']
++   row['inputAfter']=self.observe('Actual B event suffix before receipt predicate',lambda:self.input_rows(route))
++   delivered=episode(row['inputBefore'],row['inputAfter'],route,expected,allow_pending=True)
++   if delivered is None:return None
++   # Native event data is additional evidence; the callback/receipt stays required.
++   row['inputEpisode']=delivered;case.release(delivered);self.persist()
+    if menu.get('status')=='refused-or-uncertain':raise RuntimeError('Actual frontend helper refused or uncertain; no retry')
+    if menu.get('status')!='complete':return None
+    completion_current(menu,value['native'],value['scope'],expected)

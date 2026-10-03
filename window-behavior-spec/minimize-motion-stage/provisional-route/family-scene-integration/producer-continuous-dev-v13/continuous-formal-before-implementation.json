@@ -1,0 +1,31 @@
+{
+  "beforeRuntimeImplementation": true,
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/continuous_integration_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  continuous_integration_test\n    ok exactRetargetPairTest passed 1 test(s)\n    ok repeatedRetargetTest passed 1 test(s)\n    ok earlyFeedbackTest passed 1 test(s)\n    ok failedSwapTest passed 1 test(s)\n    ok mutatedVelocityRefusedTest passed 1 test(s)\n    ok staleGenerationRefusedTest passed 1 test(s)\n    ok staleEpochRefusedTest passed 1 test(s)\n    ok wrongOrderRefusedTest passed 1 test(s)\n    ok staleFeedbackRefusedTest passed 1 test(s)\n    ok partialOriginsRefusedTest passed 1 test(s)\n    ok emptyGlobalIntersectionTest passed 1 test(s)\n    ok duplicateStartTest passed 1 test(s)\n    ok retargetStartAlreadyEstablishedTest passed 1 test(s)\n    ok discardedFeedbackTest passed 1 test(s)\n    ok outputReplacementTest passed 1 test(s)\n    ok reducedMotionTest passed 1 test(s)\n\n  16 passing (926ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/continuous_integration.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (1360ms at 1471 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "result": "pass"
+}

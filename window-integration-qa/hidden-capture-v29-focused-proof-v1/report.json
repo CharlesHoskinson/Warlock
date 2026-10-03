@@ -1,0 +1,4729 @@
+{
+  "result": "fail",
+  "pythonTests": 18,
+  "errors": [
+    [
+      "test_actual_bound_owned_capture_preserves_both_original_pixels_and_six_observations (test_hidden_capture_fusion.HiddenFusionTests.test_actual_bound_owned_capture_preserves_both_original_pixels_and_six_observations)",
+      "Traceback (most recent call last):\n  File \"/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_hidden_capture_fusion.py\", line 102, in test_actual_bound_owned_capture_preserves_both_original_pixels_and_six_observations\n    self.assertTrue(all(h['phase']=='closed' and h['groupEmpty'] and h['normalCompletion'] for h in helpers))\n                    ^^^\n  File \"/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_hidden_capture_fusion.py\", line 102, in <genexpr>\n    self.assertTrue(all(h['phase']=='closed' and h['groupEmpty'] and h['normalCompletion'] for h in helpers))\n                                                                     ~^^^^^^^^^^^^^^^^^^^^\nKeyError: 'normalCompletion'\n"
+    ]
+  ],
+  "failures": [],
+  "sources": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/batch_preview.py": {
+      "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/check_family_preparation.py": {
+      "sha256": "64888a7f49dac4bd860284861c58101fcc512559a5fab6d8d7fa71694112785f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/check_offline.py": {
+      "sha256": "e10f5748574bfa87294cfa076ee86ee943ff43ae59a99f11ccc892745c76a30b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/context_provider.py": {
+      "sha256": "0e3daea910a49f44e63c6321859dd8598c4e610d16e1cc445070602e5bec1b78",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/direction.py": {
+      "sha256": "486f57b77d0d34fa8ef23f7906a4c8728c614beba6ebe4c267afe8e623c20c35",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/family_order.py": {
+      "sha256": "0792d94a67ddb5b8181d54487b048b990a2cc879ece3d981ed30d4b0d4a2ec54",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/fixture_legacy_ready.py": {
+      "sha256": "6ec3ef9763ef7c90d5f9a1f942637545d8296aa72c2ea2c77be23c997f7ce23c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/fixture_restore_planning.py": {
+      "sha256": "f8ba2c1e1243866d966e75877a614aadc58357545006141792758e79b7c2a2d0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/freeze_family_preparation.py": {
+      "sha256": "071c69455bd31e47f65109377fabb59f4c62a4e9795ede2fa6d57a0cd1bb99b4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/freeze_family_query.py": {
+      "sha256": "52a7c70d58dc2088a6771b400cb81756c3e960b94ee45b7091f744642b3622ab",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/freeze_readonly_ipc.py": {
+      "sha256": "5f2a5359acfc1674e18073f7a1cd95e1923e5f71cde672d355a804c2f066f65d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/freeze_recovery.py": {
+      "sha256": "aee233e55edcf853a0f1604533b2a3046169bd82e5df3b9b6905b1ff9b0bc8cf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/freeze_staging_preparation.py": {
+      "sha256": "553416de770f729b05da220aa490b9baf18f11f167c3ac38232fb6ccb560d18a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/helper_keeper.py": {
+      "sha256": "c91aa65faaa04c8351af159000b14fa9f18f7db3a2151af2375a662ad3527252",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/helper_policy.py": {
+      "sha256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/helper_supervisor.py": {
+      "sha256": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/native_desktop.py": {
+      "sha256": "8c0fe944ab9b4208c6f5a52ceeb536102f35e951677af5ff2ec935646a50554b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/native_runtime.py": {
+      "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/owned_commands.py": {
+      "sha256": "6f348647be1f8cbcaae2d0582543b6359968c681a0dd711f9be9802fd8b4f1a3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/owned_launch.py": {
+      "sha256": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/pipe_transport.py": {
+      "sha256": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/prepare_intended_renderer_diff.py": {
+      "sha256": "2400f85bb0b9439edc3c386b5e06aee9d80a29875ff391e3f64126f85f4e01f0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/prepare_intended_renderer_diff_v3.py": {
+      "sha256": "621cbaa1483cceb279aa8a16a93f976bb71347b28a161ca3ade83b4cb96e488a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/prepare_intended_renderer_diff_v4.py": {
+      "sha256": "3f1c662ee15d3097c98dea8df484ca39a042ea1ab0ba736d06f8f1350f936f42",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/prepare_intended_renderer_diff_v5.py": {
+      "sha256": "fd368e69cab52a3f9c4f9cff8347e87ec6ef2b6a5648963cf78713bf403d733a",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/production_motion_6d9.py": {
+      "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/prove_renderer_role_before_runtime.py": {
+      "sha256": "1b1548d33eb0011180ff848c5fd86853d95febf6867f3b0700e43dd124f142c7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/prove_staging_before_runtime.py": {
+      "sha256": "7268945341eb513bf4744bc90519f1f6d6e205ba5fc3f4d922830caa933225e0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/readonly_ipc.py": {
+      "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/recovery_cancel.py": {
+      "sha256": "8647a336a7b83ec5de7d60f63ccb0436f7b684f85879e43c7ae8f21ff499b219",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/recovery_intent.py": {
+      "sha256": "e725b6cc54d2268e81b9e52cd2c24e4632a2ec6f99b357872dadf90d76e2ce66",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/recovery_resources.py": {
+      "sha256": "133edcf7b92aaa2f521af90922c571d1637ab8e8c9536a7cf57a6475fa18ce02",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/recovery_runtime.py": {
+      "sha256": "5c77942c9afdfbc87c8cc28a93d3285de191c66b1390d770859f22173cfae892",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/renderer_role_cpu_fixture.c": {
+      "sha256": "788159ab19f42917c264c1f8f93545e492bcd99ab8592082e3b3c007a032a979",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/runtime_fixture.py": {
+      "sha256": "385d01079b0607d9e6f4519d99cae1fda9f0438e5696b79e55273265a9ddfa8a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/scene_controller.py": {
+      "sha256": "aaf111982a67fa9d713b078e7241ccab3ef5ad087e49bd6b04448bd7b70079cc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/scene_manager.py": {
+      "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/service_runtime.py": {
+      "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/snapshot_cache.py": {
+      "sha256": "21f0d47313c053964fd8e81736843d8b62ecadab5eee3ebba80ef5801e8bf8ee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/socket_frontend.py": {
+      "sha256": "0ea4c81cbf975104bb4ae17f9a8807f4af74a974a793a4b36a0aac7569c2647f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_actor_resources.py": {
+      "sha256": "ce016e51f0dde51b541483a15ae6bffb0fdacf0f19cd022065075568a902bca5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_batch_preview.py": {
+      "sha256": "ad206b94521c27f05aec85fd1935e20188b867c7a7a58dfefbf7f51e749b1b5e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_capture_lease.py": {
+      "sha256": "e301c95d2fc7ac21fb91118493b9323f0acddfb89080251f91959ce74ad05607",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_context_provider.py": {
+      "sha256": "32fdddb492653f08a3bee1d2145903417f6a7fe90e3d0ad89469736672a2c950",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_family_order.py": {
+      "sha256": "c08c2a8d0660204627aa671b347e7429f86e536cf7650ab62a4c98d267ad269b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_family_query_concurrency.py": {
+      "sha256": "a345242b6e7cf850dfd46197dcd1f36793504444e18155c063adb8ae120009ab",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_focus_transaction.py": {
+      "sha256": "6fb35b0dfa7b410dcbfaa41d509480c4196f589f268c7bef85a751bd53742f62",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_frontend_completion.py": {
+      "sha256": "05e34a94adbed012df65e4962faba3a931d4b31f0974cdfbf8fe1efbec87edbc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_gesture_retirement.py": {
+      "sha256": "d1b8cac3bb3fcd14281703177a7c92ad79179170ad8696752d350d5237b11e7b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_helper_keeper.py": {
+      "sha256": "13fca934e7766a777c3983f39924b990c0f08a0273adc5fb82e0f47efc7131bd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_helper_policy.py": {
+      "sha256": "2eb1a33831a29ffcbf210196f32ec9c57bec3b999b3367aea95c2a972db975ce",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_helper_supervisor.py": {
+      "sha256": "203b8d0fe92158cb2f0661630a81ebc569c9602437d5e58a70bb24e83438b480",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_housekeeping_admission.py": {
+      "sha256": "64c0d55c37185dda30eebb75cfb5a36a297e7eda1c458c4a80343a64b063f017",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_ingress_context.py": {
+      "sha256": "04a7c158a2c430b3967da74366b3ac73a62d57b4c37fce93f50e1cb08b077e82",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_ipc_complete_probe.py": {
+      "sha256": "ba53f204516a3ca7a2d8764951d261a2aa4c0de2e47ca11fb881cac42546d62f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_legacy_fixture_ready.py": {
+      "sha256": "4f5af53c4c5468c2a6b3aeb6b77650ca68ef1981359f94c137584c5905a0ddd4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_native_runtime.py": {
+      "sha256": "75728cd42743ec3251e92ff4a2624760bf5472c070d50bb9ea22ae3ddd243140",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_owned_commands.py": {
+      "sha256": "6f6a8e4945d6c9a827563b2ea4a23a3804295401eeed29c4e7b7ebf98bd1e448",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_pending_direction.py": {
+      "sha256": "c621906e5e6e4d7d4fb9ccd0cd81e25e48ff519868576a9a780ee7a00bbe2fea",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_pipe_transport.py": {
+      "sha256": "81b70b7035acb8241a53eaf9288901f17d31ac505be22dd9ac21935303ddfeb6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_preview_admission.py": {
+      "sha256": "b79ce5a60a3de2cf666ee78e45d9094ba436920660351a4959c45308d9cfd678",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_readonly_ipc.py": {
+      "sha256": "ac6f67078081c4893ee2e49d7dcc4ad45a3b55ca7cee83d2c7654a133dc28820",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_receipt_visual.py": {
+      "sha256": "c0d4fa8fc4b063ab450a5ad18a043edbb3334487fd3a7a822c20841e8f7d952e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_recovery_cancel.py": {
+      "sha256": "c37e14e5b901ba1aeeb8648ae74cb72334f8c4d51ee5f4ace44900907891c4a1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_recovery_factory.py": {
+      "sha256": "ee35d43cce72ad7910995783a6e098e18f5e43a4434ca04d8c317d3e48136dc9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_recovery_intent.py": {
+      "sha256": "a0f0e98c45c6bd480d1e52ba046299a23ee8feb5736cbc07b0bdbb3a110ccbb1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_recovery_resources.py": {
+      "sha256": "49dab4475036cd07596083be925b5f447078adc54a1122ec21f201dba4f6bce8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_recovery_runtime.py": {
+      "sha256": "659ae465410feac5c53ff1e47991cca1a7ea7d4447594449b6cf92d19ca456c1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_renderer_job_role.py": {
+      "sha256": "bb4079de72f8d76f94716bc5303ddaf5dc0897e170493f31db8c4882adf49ffb",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_renderer_terminal.py": {
+      "sha256": "f3feb52b8c264224ca98d243ccb4d5dfcb823fd7d3e9c4bc5a89498112c0b083",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_responsive_preparation.py": {
+      "sha256": "f79a3f2f6bb409c8fc6bc5943a6c54d1e79a8d39160a5b0449fe46f867e9497d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_restore_planning.py": {
+      "sha256": "67dacf9380198583c12fb482719b050070b2fff4250b2c5d41f170b58c7ac286",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_runtime_lease.py": {
+      "sha256": "f23ffaba806f3530c3e9c0808c1931c8999c173a34cc1133749836969dbe6a6d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_scene_controller.py": {
+      "sha256": "22e97f7440ca476eb659f3e329e8123e6ab69c9f8edc913326c07f2895456bd6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_scene_manager.py": {
+      "sha256": "461f4740fe823791f7c0c2d0e9fc5d9e091744015bd621a0adf9e4f578dfc6d9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_service_runtime.py": {
+      "sha256": "a7149de0f8b6328696bfd86c02f7f72e616a3bd42a3c87efa5e420f88c57fe6c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_snapshot_cache.py": {
+      "sha256": "655003df776a41314101248404b2cf88c48ae054cb4b5f49a64852fb7a0e032a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_socket_frontend.py": {
+      "sha256": "f83912985eb7b4c0eea2b6e74e39b456ba4aad3a3e462ff7628abb0d7398773e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_split_destination.py": {
+      "sha256": "74a8edc4ec3c64e166e02c80d5a4713bd5171a6de62a5fa7754c39b2856c1041",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_staging_reservation.py": {
+      "sha256": "7dda912f6ec23375e4c3d892ec0226234dd6f25b8d267e6e39b69047e35c9708",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/timeout_adapter.py": {
+      "sha256": "14ccc4078364fdced5a8fa9a499567dd0e2eb592ff1b7f88ad38a39743e9e165",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/hidden_grim_cpu_fixture.c": {
+      "sha256": "18c84718f20d40c491ec66a8137ba7664cd0820eb767df84fa474a0ec199d749",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_hidden_capture_fusion.py": {
+      "sha256": "4ad39d714fcda737388ef1167001421ec5b9d88c131ab9dfb57d401c09d3fbce",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-v29-proof-source-v1/focused.py": {
+      "sha256": "10a68f3294f6a60153fb9003a2c0d4ccf9229c03cec6bac259940b3c0640a955",
+      "mode": 420
+    }
+  },
+  "sourceUnchanged": true,
+  "log": "/home/hoskinson/window-integration-qa/hidden-capture-v29-focused-proof-v1/tests.log",
+  "logSHA256": "c732ffc9ff9c13a78c30d0b37c41d90dcecc8345479b817b22fd870fd8defa99",
+  "evidence": [
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_actual_bound_owned_capture_preserves_both_original_pixels_and_six_observations",
+      "jobs": [
+        {
+          "job": "464367a1e56f4d639510465dc2894633",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234837,
+            "start": 21351996,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 791778,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 791779,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmp0klqhit6",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "f1a4cfca6a48479e9b9b31d1e2b81f7a",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234843,
+            "start": 21351999,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 796718,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 796719,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmp0klqhit6/hypr-window-motion/actor/1689b9f5836e-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmp0klqhit6/hypr-window-motion/actor/1689b9f5836e-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmp0klqhit6",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "5ba9a81b749940728b621ca67cf9b794",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234844,
+            "start": 21352002,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 772847,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 772848,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmp0klqhit6/hypr-window-motion/actor/1689b9f5836e-1.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmp0klqhit6/hypr-window-previews/.motion-1689b9f5836e-1.png\",\"+delete\",\")\",\"/tmp/tmp0klqhit6/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmp0klqhit6/hypr-window-motion/actor/1689b9f5836e-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmp0klqhit6/hypr-window-motion/actor/composed-1689b9f5836e-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmp0klqhit6/hypr-window-motion/actor/1689b9f5836e-1.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmp0klqhit6/hypr-window-previews/.motion-1689b9f5836e-1.png",
+              "+delete",
+              ")",
+              "/tmp/tmp0klqhit6/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmp0klqhit6/hypr-window-motion/actor/1689b9f5836e-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmp0klqhit6/hypr-window-motion/actor/composed-1689b9f5836e-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmp0klqhit6",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 6,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_actual_failed_durable_helper_completion_quarantines_exact_epoch",
+      "jobs": [
+        {
+          "job": "2285567da72b4b18baafb1d506d8cc7f",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234857,
+            "start": 21352021,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 791780,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 791781,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpvf1s27sn",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "57089a3cedb74563be08dc99ac29f116",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234862,
+            "start": 21352024,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 789692,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 789693,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmpvf1s27sn/hypr-window-motion/actor/019674d81b3c-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmpvf1s27sn/hypr-window-motion/actor/019674d81b3c-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpvf1s27sn",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "965de206a1d9480a920fce9ff9aae2b2",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234863,
+            "start": 21352028,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 788815,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 788816,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmpvf1s27sn/hypr-window-motion/actor/019674d81b3c-1.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmpvf1s27sn/hypr-window-previews/.motion-019674d81b3c-1.png\",\"+delete\",\")\",\"/tmp/tmpvf1s27sn/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmpvf1s27sn/hypr-window-motion/actor/019674d81b3c-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmpvf1s27sn/hypr-window-motion/actor/composed-019674d81b3c-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmpvf1s27sn/hypr-window-motion/actor/019674d81b3c-1.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmpvf1s27sn/hypr-window-previews/.motion-019674d81b3c-1.png",
+              "+delete",
+              ")",
+              "/tmp/tmpvf1s27sn/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmpvf1s27sn/hypr-window-motion/actor/019674d81b3c-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmpvf1s27sn/hypr-window-motion/actor/composed-019674d81b3c-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpvf1s27sn",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [
+        {
+          "job": "965de206a1d9480a920fce9ff9aae2b2",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234863,
+            "start": 21352028,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 788815,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 788816,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmpvf1s27sn/hypr-window-motion/actor/019674d81b3c-1.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmpvf1s27sn/hypr-window-previews/.motion-019674d81b3c-1.png\",\"+delete\",\")\",\"/tmp/tmpvf1s27sn/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmpvf1s27sn/hypr-window-motion/actor/019674d81b3c-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmpvf1s27sn/hypr-window-motion/actor/composed-019674d81b3c-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmpvf1s27sn/hypr-window-motion/actor/019674d81b3c-1.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmpvf1s27sn/hypr-window-previews/.motion-019674d81b3c-1.png",
+              "+delete",
+              ")",
+              "/tmp/tmpvf1s27sn/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmpvf1s27sn/hypr-window-motion/actor/019674d81b3c-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmpvf1s27sn/hypr-window-motion/actor/composed-019674d81b3c-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpvf1s27sn",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "unknownExpected": true,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 4,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_actual_grim_timeout_retains_unknown_job_and_epoch",
+      "jobs": [
+        {
+          "job": "e8a646c2a1ec4e97ad117ebc09098509",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234868,
+            "start": 21352039,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 780897,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 780898,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmp682m2mww",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "72334c17d3154410b32f2ebc923fb046",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "released",
+          "ownership": {
+            "pid": 2234873,
+            "start": 21352043,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 791783,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 791784,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmp682m2mww/hypr-window-motion/actor/88314bff0a0f-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmp682m2mww/hypr-window-motion/actor/88314bff0a0f-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmp682m2mww",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          }
+        }
+      ],
+      "remainingRegistered": [
+        {
+          "job": "72334c17d3154410b32f2ebc923fb046",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "released",
+          "ownership": {
+            "pid": 2234873,
+            "start": 21352043,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 791783,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 791784,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmp682m2mww/hypr-window-motion/actor/88314bff0a0f-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmp682m2mww/hypr-window-motion/actor/88314bff0a0f-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmp682m2mww",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          }
+        }
+      ],
+      "unknownExpected": true,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 2,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_actual_magick_nonzero_refuses_and_closes_real_job",
+      "jobs": [
+        {
+          "job": "9ffa100acdf6489e98d81281b25683f3",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234905,
+            "start": 21352117,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 794041,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 794042,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpslfzmuh9",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "04e5af343f354fefbfcb80be146359ef",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234910,
+            "start": 21352120,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 777152,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 777153,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmpslfzmuh9/hypr-window-motion/actor/72cce9c0a9e9-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmpslfzmuh9/hypr-window-motion/actor/72cce9c0a9e9-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpslfzmuh9",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "8653acfca7054651a59f471a703d2b3c",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234911,
+            "start": 21352122,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 789694,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 789695,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmpslfzmuh9/hypr-window-motion/actor/72cce9c0a9e9-1.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmpslfzmuh9/hypr-window-previews/.motion-72cce9c0a9e9-1.png\",\"+delete\",\")\",\"/tmp/tmpslfzmuh9/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmpslfzmuh9/hypr-window-motion/actor/72cce9c0a9e9-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmpslfzmuh9/hypr-window-motion/actor/composed-72cce9c0a9e9-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmpslfzmuh9/hypr-window-motion/actor/72cce9c0a9e9-1.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmpslfzmuh9/hypr-window-previews/.motion-72cce9c0a9e9-1.png",
+              "+delete",
+              ")",
+              "/tmp/tmpslfzmuh9/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmpslfzmuh9/hypr-window-motion/actor/72cce9c0a9e9-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmpslfzmuh9/hypr-window-motion/actor/composed-72cce9c0a9e9-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpslfzmuh9",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 4,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_cancelled_controller_after_real_pixels_cannot_seed",
+      "jobs": [
+        {
+          "job": "e252a141e6ff48daa6a196495df651c7",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234914,
+            "start": 21352133,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 789696,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 789697,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpp2f3gwgy",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "319d628738824a7e9cfc7382c9c4e4ba",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234920,
+            "start": 21352136,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 774889,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 774890,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmpp2f3gwgy/hypr-window-motion/actor/8d6dc41d6c6b-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmpp2f3gwgy/hypr-window-motion/actor/8d6dc41d6c6b-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpp2f3gwgy",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "c8335ab12e61457f9706bccd9c48f96e",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234921,
+            "start": 21352139,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 772849,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 772850,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmpp2f3gwgy/hypr-window-motion/actor/8d6dc41d6c6b-1.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmpp2f3gwgy/hypr-window-previews/.motion-8d6dc41d6c6b-1.png\",\"+delete\",\")\",\"/tmp/tmpp2f3gwgy/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmpp2f3gwgy/hypr-window-motion/actor/8d6dc41d6c6b-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmpp2f3gwgy/hypr-window-motion/actor/composed-8d6dc41d6c6b-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmpp2f3gwgy/hypr-window-motion/actor/8d6dc41d6c6b-1.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmpp2f3gwgy/hypr-window-previews/.motion-8d6dc41d6c6b-1.png",
+              "+delete",
+              ")",
+              "/tmp/tmpp2f3gwgy/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmpp2f3gwgy/hypr-window-motion/actor/8d6dc41d6c6b-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmpp2f3gwgy/hypr-window-motion/actor/composed-8d6dc41d6c6b-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpp2f3gwgy",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 7,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_changed_cached_client_size_refuses_before_grim",
+      "jobs": [
+        {
+          "job": "edebc145bcec4eb1ad05e875244b2b70",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234925,
+            "start": 21352150,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 780899,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 780900,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpjp6oya2z",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 1,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_changed_cached_identity_refuses_before_grim",
+      "jobs": [
+        {
+          "job": "bfb4dd8fa6ea43a7843fb96632c1b401",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234944,
+            "start": 21352159,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 788817,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 788818,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpu6sf9m97",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 1,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_legacy_standalone_keeps_two_original_real_magick_jobs",
+      "jobs": [
+        {
+          "job": "b9e38d13495244c994e1d1ec8a1cccce",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234954,
+            "start": 21352169,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 784928,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 784929,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpxegpt69e",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "8dc8fb698d434e7d8845ef02fc44f2c4",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234962,
+            "start": 21352172,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 784930,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 784931,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmpxegpt69e/hypr-window-motion/actor/1f323d5f9f0b-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmpxegpt69e/hypr-window-motion/actor/1f323d5f9f0b-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpxegpt69e",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "68a5196a5d51470e817339bbcd786836",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234963,
+            "start": 21352175,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 774138,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 774139,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"/tmp/tmpxegpt69e/hypr-window-motion/actor/1f323d5f9f0b-1.png\",\"-thumbnail\",\"300x180>\",\"/tmp/tmpxegpt69e/hypr-window-previews/.motion-1f323d5f9f0b-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "/tmp/tmpxegpt69e/hypr-window-motion/actor/1f323d5f9f0b-1.png",
+              "-thumbnail",
+              "300x180>",
+              "/tmp/tmpxegpt69e/hypr-window-previews/.motion-1f323d5f9f0b-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpxegpt69e",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "cb8cc14f612d4a4e810487027ad6bcc5",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234964,
+            "start": 21352180,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 782709,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 782710,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/usr/bin/magick\",\"/tmp/tmpxegpt69e/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmpxegpt69e/hypr-window-motion/actor/1f323d5f9f0b-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmpxegpt69e/hypr-window-motion/actor/composed-1f323d5f9f0b-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "/tmp/tmpxegpt69e/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmpxegpt69e/hypr-window-motion/actor/1f323d5f9f0b-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmpxegpt69e/hypr-window-motion/actor/composed-1f323d5f9f0b-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpxegpt69e",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 6,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_noncanonical_direct_hidden_helper_refuses_before_material",
+      "jobs": [
+        {
+          "job": "2d267b5de47f46878a51265af8f4a035",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234976,
+            "start": 21352199,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 784932,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 784933,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpy3takc_x",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 0,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_normal_empty_grim_refuses_with_known_closure",
+      "jobs": [
+        {
+          "job": "71b19539acd14844af1368c17d2b0985",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234982,
+            "start": 21352209,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 791234,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 791235,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmppdrarjye",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "047ab3f6d320456b9ff2e04f19f6274e",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234987,
+            "start": 21352213,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 789699,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 789700,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmppdrarjye/hypr-window-motion/actor/837d07d57f46-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmppdrarjye/hypr-window-motion/actor/837d07d57f46-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmppdrarjye",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 2,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_normal_magick_missing_thumbnail_refuses_before_publication",
+      "jobs": [
+        {
+          "job": "7f0ff608168040baae31f8d9aff0205f",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2234998,
+            "start": 21352223,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 781808,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 781809,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmppk2bzrvz",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "bf2f48622bb9435eaf42a2537708e483",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235003,
+            "start": 21352226,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 777154,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 777155,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmppk2bzrvz/hypr-window-motion/actor/42cdc8c393c4-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmppk2bzrvz/hypr-window-motion/actor/42cdc8c393c4-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmppk2bzrvz",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "2004f6b7227a4af5a5e8c336d77d06fd",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235004,
+            "start": 21352229,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 797950,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 797951,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmppk2bzrvz/hypr-window-motion/actor/42cdc8c393c4-1.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmppk2bzrvz/hypr-window-previews/.motion-42cdc8c393c4-1.png\",\"+delete\",\")\",\"/tmp/tmppk2bzrvz/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmppk2bzrvz/hypr-window-motion/actor/42cdc8c393c4-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmppk2bzrvz/hypr-window-motion/actor/composed-42cdc8c393c4-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmppk2bzrvz/hypr-window-motion/actor/42cdc8c393c4-1.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmppk2bzrvz/hypr-window-previews/.motion-42cdc8c393c4-1.png",
+              "+delete",
+              ")",
+              "/tmp/tmppk2bzrvz/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmppk2bzrvz/hypr-window-motion/actor/42cdc8c393c4-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmppk2bzrvz/hypr-window-motion/actor/composed-42cdc8c393c4-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmppk2bzrvz",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 4,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_normal_magick_missing_whole_refuses_before_publication",
+      "jobs": [
+        {
+          "job": "92bc5449388542c7bae1210c40d39e17",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235013,
+            "start": 21352241,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 787018,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 787019,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmppn882_dr",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "8c614cdf473e4f139e0f01209822b23a",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235018,
+            "start": 21352245,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 788051,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 788052,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmppn882_dr/hypr-window-motion/actor/38beced9583a-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmppn882_dr/hypr-window-motion/actor/38beced9583a-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmppn882_dr",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "c78732b988ca4229b2b0eac33bd707a0",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235019,
+            "start": 21352248,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 796720,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 796721,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmppn882_dr/hypr-window-motion/actor/38beced9583a-1.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmppn882_dr/hypr-window-previews/.motion-38beced9583a-1.png\",\"+delete\",\")\",\"/tmp/tmppn882_dr/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmppn882_dr/hypr-window-motion/actor/38beced9583a-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmppn882_dr/hypr-window-motion/actor/composed-38beced9583a-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmppn882_dr/hypr-window-motion/actor/38beced9583a-1.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmppn882_dr/hypr-window-previews/.motion-38beced9583a-1.png",
+              "+delete",
+              ")",
+              "/tmp/tmppn882_dr/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmppn882_dr/hypr-window-motion/actor/38beced9583a-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmppn882_dr/hypr-window-motion/actor/composed-38beced9583a-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmppn882_dr",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 4,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_normal_magick_short_whole_refuses_before_publication",
+      "jobs": [
+        {
+          "job": "9fb757b724b74f968f979140e4f79de0",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235109,
+            "start": 21352261,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 789702,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 789703,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpspnbrtgv",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "e5ff2667b7d146f58615f2824c6f1541",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235135,
+            "start": 21352264,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 796722,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 796723,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmpspnbrtgv/hypr-window-motion/actor/dcc188c3dac1-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmpspnbrtgv/hypr-window-motion/actor/dcc188c3dac1-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpspnbrtgv",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "9b0d15c8f3764b6a8d8becacc19570aa",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235169,
+            "start": 21352267,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 789704,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 789705,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmpspnbrtgv/hypr-window-motion/actor/dcc188c3dac1-1.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmpspnbrtgv/hypr-window-previews/.motion-dcc188c3dac1-1.png\",\"+delete\",\")\",\"/tmp/tmpspnbrtgv/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmpspnbrtgv/hypr-window-motion/actor/dcc188c3dac1-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmpspnbrtgv/hypr-window-motion/actor/composed-dcc188c3dac1-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmpspnbrtgv/hypr-window-motion/actor/dcc188c3dac1-1.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmpspnbrtgv/hypr-window-previews/.motion-dcc188c3dac1-1.png",
+              "+delete",
+              ")",
+              "/tmp/tmpspnbrtgv/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmpspnbrtgv/hypr-window-motion/actor/dcc188c3dac1-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmpspnbrtgv/hypr-window-motion/actor/composed-dcc188c3dac1-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpspnbrtgv",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 4,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_post_helper_actual_geometry_change_refuses_publication",
+      "jobs": [
+        {
+          "job": "f3e8b3baab1e4d4ca4c4e2457a9349ba",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235228,
+            "start": 21352280,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 788053,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 788054,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmprf8__r_n",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "98bb4ffc129a4c20a268711a3ac7f4e0",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235233,
+            "start": 21352284,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 774140,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 774141,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmprf8__r_n/hypr-window-motion/actor/9a7c9b93c4d2-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmprf8__r_n/hypr-window-motion/actor/9a7c9b93c4d2-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmprf8__r_n",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "3aeeacad74104e55b1273b7732d550ef",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235243,
+            "start": 21352287,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 791785,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 791786,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmprf8__r_n/hypr-window-motion/actor/9a7c9b93c4d2-1.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmprf8__r_n/hypr-window-previews/.motion-9a7c9b93c4d2-1.png\",\"+delete\",\")\",\"/tmp/tmprf8__r_n/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmprf8__r_n/hypr-window-motion/actor/9a7c9b93c4d2-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmprf8__r_n/hypr-window-motion/actor/composed-9a7c9b93c4d2-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmprf8__r_n/hypr-window-motion/actor/9a7c9b93c4d2-1.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmprf8__r_n/hypr-window-previews/.motion-9a7c9b93c4d2-1.png",
+              "+delete",
+              ")",
+              "/tmp/tmprf8__r_n/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmprf8__r_n/hypr-window-motion/actor/9a7c9b93c4d2-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmprf8__r_n/hypr-window-motion/actor/composed-9a7c9b93c4d2-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmprf8__r_n",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 5,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_post_helper_actual_lifetime_change_refuses_publication",
+      "jobs": [
+        {
+          "job": "d145d259f1c94259b5ff97917a5b1ba4",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235293,
+            "start": 21352297,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 772852,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 772853,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpxwn6m0c7",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "cf3eea33597444baa3b4455f2f366574",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235307,
+            "start": 21352300,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 787021,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 787022,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmpxwn6m0c7/hypr-window-motion/actor/4d735682281a-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmpxwn6m0c7/hypr-window-motion/actor/4d735682281a-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpxwn6m0c7",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "5e941d57ffeb4694b4a973afa44b5cba",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235310,
+            "start": 21352303,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 787023,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 787024,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmpxwn6m0c7/hypr-window-motion/actor/4d735682281a-1.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmpxwn6m0c7/hypr-window-previews/.motion-4d735682281a-1.png\",\"+delete\",\")\",\"/tmp/tmpxwn6m0c7/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmpxwn6m0c7/hypr-window-motion/actor/4d735682281a-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmpxwn6m0c7/hypr-window-motion/actor/composed-4d735682281a-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmpxwn6m0c7/hypr-window-motion/actor/4d735682281a-1.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmpxwn6m0c7/hypr-window-previews/.motion-4d735682281a-1.png",
+              "+delete",
+              ")",
+              "/tmp/tmpxwn6m0c7/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmpxwn6m0c7/hypr-window-motion/actor/4d735682281a-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmpxwn6m0c7/hypr-window-motion/actor/composed-4d735682281a-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpxwn6m0c7",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 5,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_real_receipt_deadline_after_pixels_cannot_seed",
+      "jobs": [
+        {
+          "job": "859f24c411f14ccc9e0a9494b80cd44d",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235330,
+            "start": 21352314,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 788055,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 788056,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmplmyj3ezt",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "d45a1b97bf8f4ea38800191cccb55c13",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235339,
+            "start": 21352318,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 791787,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 791788,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmplmyj3ezt",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "cae55b978a2c44e8bb79b5b3080fcff0",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235340,
+            "start": 21352321,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 791789,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 791790,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-1.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmplmyj3ezt/hypr-window-previews/.motion-5bc3fe5c801f-1.png\",\"+delete\",\")\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/composed-5bc3fe5c801f-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-1.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmplmyj3ezt/hypr-window-previews/.motion-5bc3fe5c801f-1.png",
+              "+delete",
+              ")",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/composed-5bc3fe5c801f-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmplmyj3ezt",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "a96f2530218c4e1990283aa1f187bc5c",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235393,
+            "start": 21352519,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 782712,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 782713,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"bb02\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-2.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "bb02",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-2.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmplmyj3ezt",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "6ad8162c0c8c4f1db152b86adf655a8f",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235394,
+            "start": 21352522,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 784934,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 784935,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-2.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmplmyj3ezt/hypr-window-previews/.motion-5bc3fe5c801f-2.png\",\"+delete\",\")\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/full-bb02-42.png\",\"(\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-2.png\",\"-resize\",\"104x68!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/composed-5bc3fe5c801f-2.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-2.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmplmyj3ezt/hypr-window-previews/.motion-5bc3fe5c801f-2.png",
+              "+delete",
+              ")",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/full-bb02-42.png",
+              "(",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-2.png",
+              "-resize",
+              "104x68!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/composed-5bc3fe5c801f-2.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmplmyj3ezt",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "6838b1d2ff5148c1aac5d20549ec1848",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235400,
+            "start": 21352526,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 786196,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 786197,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"cc03\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-3.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "cc03",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-3.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmplmyj3ezt",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "8de7d801a8fc4ed39c4cd896df85aae1",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235401,
+            "start": 21352528,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 789706,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 789707,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-3.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmplmyj3ezt/hypr-window-previews/.motion-5bc3fe5c801f-3.png\",\"+delete\",\")\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/full-cc03-43.png\",\"(\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-3.png\",\"-resize\",\"112x72!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmplmyj3ezt/hypr-window-motion/actor/composed-5bc3fe5c801f-3.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-3.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmplmyj3ezt/hypr-window-previews/.motion-5bc3fe5c801f-3.png",
+              "+delete",
+              ")",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/full-cc03-43.png",
+              "(",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/5bc3fe5c801f-3.png",
+              "-resize",
+              "112x72!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmplmyj3ezt/hypr-window-motion/actor/composed-5bc3fe5c801f-3.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmplmyj3ezt",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 20,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_shared_immutable_whole_cache_is_preserved_for_reuse",
+      "jobs": [
+        {
+          "job": "48b282669a0b46f9be77ad728dec530e",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235419,
+            "start": 21352538,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 781810,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 781811,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpx99e0ljx",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "4327a71f98224abaa423f077ad04a445",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235424,
+            "start": 21352541,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 784936,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 784937,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmpx99e0ljx/hypr-window-motion/actor/e0570f55581b-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmpx99e0ljx/hypr-window-motion/actor/e0570f55581b-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpx99e0ljx",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "32886825c13246ae83924d5ba8fca8b5",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235425,
+            "start": 21352544,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 784938,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 784939,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmpx99e0ljx/hypr-window-motion/actor/e0570f55581b-1.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmpx99e0ljx/hypr-window-previews/.motion-e0570f55581b-1.png\",\"+delete\",\")\",\"/tmp/tmpx99e0ljx/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmpx99e0ljx/hypr-window-motion/actor/e0570f55581b-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmpx99e0ljx/hypr-window-motion/actor/composed-e0570f55581b-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmpx99e0ljx/hypr-window-motion/actor/e0570f55581b-1.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmpx99e0ljx/hypr-window-previews/.motion-e0570f55581b-1.png",
+              "+delete",
+              ")",
+              "/tmp/tmpx99e0ljx/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmpx99e0ljx/hypr-window-motion/actor/e0570f55581b-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmpx99e0ljx/hypr-window-motion/actor/composed-e0570f55581b-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpx99e0ljx",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 7,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    },
+    {
+      "test": "test_hidden_capture_fusion.HiddenFusionTests.test_three_members_use_three_real_grim_and_three_real_combined_jobs",
+      "jobs": [
+        {
+          "job": "b312a6f6847f4bcea67d0843fdf2236a",
+          "kind": "renderer",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235448,
+            "start": 21352554,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 772854,
+              "size": 16288,
+              "sha256": "0ddeb11192d723ba1e46235d2c8af0de0abb00ded9fe40a73a264300fe31ebc1",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 772855,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/proc/self/fd/6\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/proc/self/fd/6"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpvbs0hf5r",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "40b46a66d3fe464c9f951574cc487377",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235453,
+            "start": 21352557,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 787025,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 787026,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"aa01\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "aa01",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpvbs0hf5r",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "4d55f2a468c441caa8bb388ea6fafde7",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235463,
+            "start": 21352560,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 796725,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 796726,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-1.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmpvbs0hf5r/hypr-window-previews/.motion-bf877c800e1c-1.png\",\"+delete\",\")\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/full-aa01-41.png\",\"(\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-1.png\",\"-resize\",\"96x64!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/composed-bf877c800e1c-1.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-1.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmpvbs0hf5r/hypr-window-previews/.motion-bf877c800e1c-1.png",
+              "+delete",
+              ")",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/full-aa01-41.png",
+              "(",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-1.png",
+              "-resize",
+              "96x64!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/composed-bf877c800e1c-1.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpvbs0hf5r",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "49709ae5bbc84fbda9a8e3c2a6aa435e",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235470,
+            "start": 21352564,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 796727,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 796728,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"bb02\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-2.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "bb02",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-2.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpvbs0hf5r",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "96305a9c9aa04b0185d8b6099ae521d8",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235481,
+            "start": 21352568,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 787027,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 787028,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-2.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmpvbs0hf5r/hypr-window-previews/.motion-bf877c800e1c-2.png\",\"+delete\",\")\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/full-bb02-42.png\",\"(\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-2.png\",\"-resize\",\"104x68!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/composed-bf877c800e1c-2.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-2.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmpvbs0hf5r/hypr-window-previews/.motion-bf877c800e1c-2.png",
+              "+delete",
+              ")",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/full-bb02-42.png",
+              "(",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-2.png",
+              "-resize",
+              "104x68!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/composed-bf877c800e1c-2.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpvbs0hf5r",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "7a6cea71fe724205a182fa9828e35d17",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235483,
+            "start": 21352572,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 788057,
+              "size": 16400,
+              "sha256": "502dad09b0c95884ea2615b60ce8b581a00f9b3333178c4887f02fde250108c5",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 788058,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "7",
+              "11",
+              "6",
+              "[\"/tmp/fusion-fixtures-ie1aacl8/grim\",\"-T\",\"cc03\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-3.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 5,
+            "producerFD": 6,
+            "targetArgv": [
+              "/tmp/fusion-fixtures-ie1aacl8/grim",
+              "-T",
+              "cc03",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-3.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpvbs0hf5r",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        },
+        {
+          "job": "075d9f4761474019aebed37985d98810",
+          "kind": "helper",
+          "actor": 17,
+          "phase": "closed",
+          "ownership": {
+            "pid": 2235487,
+            "start": 21352575,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 795791,
+              "size": 14824,
+              "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 795792,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "9",
+              "12",
+              "7",
+              "[\"/usr/bin/magick\",\"-respect-parentheses\",\"(\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-3.png\",\"-thumbnail\",\"300x180>\",\"-write\",\"/tmp/tmpvbs0hf5r/hypr-window-previews/.motion-bf877c800e1c-3.png\",\"+delete\",\")\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/full-cc03-43.png\",\"(\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-3.png\",\"-resize\",\"112x72!\",\")\",\"-geometry\",\"+7+31\",\"-compose\",\"SrcAtop\",\"-composite\",\"/tmp/tmpvbs0hf5r/hypr-window-motion/actor/composed-bf877c800e1c-3.png\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 7,
+            "targetArgv": [
+              "/usr/bin/magick",
+              "-respect-parentheses",
+              "(",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-3.png",
+              "-thumbnail",
+              "300x180>",
+              "-write",
+              "/tmp/tmpvbs0hf5r/hypr-window-previews/.motion-bf877c800e1c-3.png",
+              "+delete",
+              ")",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/full-cc03-43.png",
+              "(",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/bf877c800e1c-3.png",
+              "-resize",
+              "112x72!",
+              ")",
+              "-geometry",
+              "+7+31",
+              "-compose",
+              "SrcAtop",
+              "-composite",
+              "/tmp/tmpvbs0hf5r/hypr-window-motion/actor/composed-bf877c800e1c-3.png"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/tmp/tmpvbs0hf5r",
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect"
+            },
+            "timeoutAdapter": {
+              "name": "BASH_FUNC_timeout%%",
+              "function": "() { /usr/bin/timeout --foreground \"$@\"; }",
+              "executable": "/usr/bin/timeout",
+              "material": {
+                "device": 32,
+                "inode": 17913,
+                "size": 51936,
+                "sha256": "c7ad4153c8fa4cfe78794062789182e39d48f85cc114ba9dc4fa54296ad2a407",
+                "seals": null
+              }
+            }
+          },
+          "groupEmpty": true
+        }
+      ],
+      "remainingRegistered": [],
+      "unknownExpected": false,
+      "rendererClosed": true,
+      "rendererExit": 0,
+      "clientObservations": 18,
+      "nativeLaunch": false,
+      "grimIsFixture": true
+    }
+  ],
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-fe41a55942d647cb831a775fbb04706c.scope",
+    "coreLimit": 1
+  },
+  "nativeLaunch": false,
+  "grimIsCPUFixture": true,
+  "realMagick": true,
+  "realOwnedCommandsAndKeeper": true,
+  "nativeAccepted": false
+}

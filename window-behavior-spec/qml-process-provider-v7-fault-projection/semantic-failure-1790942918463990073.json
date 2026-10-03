@@ -1,0 +1,69 @@
+{
+  "result": "fail",
+  "source": "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_process_semantics.cpp",
+  "sourceSHA256": "3d27fecfe8b3621293481c14425ea2e40fdadd9face3b13ca7cd2f434a52f954",
+  "sourceUnchanged": true,
+  "commands": [
+    {
+      "command": [
+        "/usr/lib/qt6/moc",
+        "-I/usr/include/qt6/QtQml",
+        "-I/usr/include/qt6",
+        "-DQT_QML_LIB",
+        "-I/usr/include/qt6/QtQmlIntegration",
+        "-DQT_QMLINTEGRATION_LIB",
+        "-I/usr/include/qt6/QtNetwork",
+        "-DQT_NETWORK_LIB",
+        "-I/usr/include/qt6/QtCore",
+        "-DQT_CORE_LIB",
+        "-I/usr/lib/qt6/mkspecs/linux-g++",
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_process_semantics.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_process_semantics.moc"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_process_semantics.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu-process-semantics",
+        "-I/usr/include/qt6/QtQml",
+        "-I/usr/include/qt6",
+        "-DQT_QML_LIB",
+        "-I/usr/include/qt6/QtQmlIntegration",
+        "-DQT_QMLINTEGRATION_LIB",
+        "-I/usr/include/qt6/QtNetwork",
+        "-DQT_NETWORK_LIB",
+        "-I/usr/include/qt6/QtCore",
+        "-DQT_CORE_LIB",
+        "-I/usr/lib/qt6/mkspecs/linux-g++",
+        "-lQt6Qml",
+        "-lQt6Network",
+        "-lQt6Core"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu-process-semantics"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "context replacement during getter refused\n"
+    }
+  ],
+  "GUI": false,
+  "registryStillAbsent": true,
+  "installedQSProcessAccepted": false
+}

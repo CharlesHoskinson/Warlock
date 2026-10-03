@@ -1,0 +1,207 @@
+{
+  "result": "pass",
+  "baseCollector": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9",
+  "selectedManifest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-preview-lock-admission-v25/manifest-preview-admission-v25.json",
+  "selectedManifestSHA256": "f0b6916151c587501ae73a8fcfacdcc5156c661289592358d13bce66e23ef6e2",
+  "changes": {
+    "module_binding.py": {
+      "originalSHA256": "30fa8d51035d1a2fb7bbeeec6e6c80fcac4e789d8f7d3eab05ef366c1f583c07",
+      "proposedSHA256": "b8ebd54412e94b9f811ca1782c03472f82a53d9369b2bd528eb8b97f2794c363",
+      "originalMode": 420,
+      "wholeFileInverseExact": true,
+      "replacementCount": 3
+    },
+    "native_faults.py": {
+      "originalSHA256": "3bd7f7115a0d3ebbf2b4b7e8574ab354b77cb6dda74f8984d4faf1d56f0c06f1",
+      "proposedSHA256": "862dcf9380b4f05a033f3d7160ba638a7f7e86c25733271f1f62e0483902e6b6",
+      "originalMode": 420,
+      "wholeFileInverseExact": true,
+      "replacementCount": 1
+    }
+  },
+  "originalFiles": {
+    "native_integration.py": {
+      "sha256": "464f6c6c2d7264a0b86275996242973a217115cef9e1737c0e0f3e479ed39093",
+      "mode": 493
+    },
+    "native_faults.py": {
+      "sha256": "3bd7f7115a0d3ebbf2b4b7e8574ab354b77cb6dda74f8984d4faf1d56f0c06f1",
+      "mode": 420
+    },
+    "module_binding.py": {
+      "sha256": "30fa8d51035d1a2fb7bbeeec6e6c80fcac4e789d8f7d3eab05ef366c1f583c07",
+      "mode": 420
+    },
+    "service_observer.py": {
+      "sha256": "9ea62c79ef8eca627df3d588a9f4d61022d58403124ecd8f98c5d85698a1a98b",
+      "mode": 420
+    },
+    "service_recovery_observer.py": {
+      "sha256": "07b546f574bd5972b1c20d229c0a7d914745517640db4eb95f277fdf65b83856",
+      "mode": 420
+    },
+    "recovery_observer.py": {
+      "sha256": "27ab7d8106d433b5f648dc127047fe18a9c95f922e9bbefbc08047184295ded7",
+      "mode": 420
+    },
+    "recovery_evidence.py": {
+      "sha256": "567f006269e72f81a2e6f6e528eed8699159557dcc00582c70a114fc45296b61",
+      "mode": 420
+    },
+    "capture_evidence.py": {
+      "sha256": "7d01fe5ffdbca33a3d3eaa4eafe2a925042414ef9fe3e65f895ec8f1acb19be6",
+      "mode": 420
+    },
+    "verify_reversal.py": {
+      "sha256": "0bce792c511f78c029eb843e7de3c4a5615d2ebaeeadad96943a7dd4e6d21ae5",
+      "mode": 420
+    },
+    "helper_observer.py": {
+      "sha256": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+      "mode": 420
+    },
+    "helper_setup.py": {
+      "sha256": "3eb460716b8580c692b59508c9012d450b4ee7798c1e7486af558d4bc7eaf8cd",
+      "mode": 420
+    },
+    "private_shell.py": {
+      "sha256": "673847b93cbf129bed84cb2f0c42c7c9df9c1f873f25fbb1e310087cb6b4d5c4",
+      "mode": 420
+    },
+    "test_actual_binding.py": {
+      "sha256": "87b95e4b9c32f5b067a53b0a6e99f29047a7330c97be3de451728847391ce4bb",
+      "mode": 420
+    },
+    "test_batch_binding.py": {
+      "sha256": "1d57b926c9e3571343b37a22dd1742c5985570297a5405d78d5e2b573fe6ecfb",
+      "mode": 420
+    },
+    "test_renderer_collector_binding.py": {
+      "sha256": "e76a71d39d68c17a25e56c40ac12990591a31454f2d9200e0762f09ede62bb60",
+      "mode": 420
+    },
+    "renderer_binding_fixture.py": {
+      "sha256": "3c079e146d580f9c26b24b8e61d2bb2e97f948653cc7b017bd2b9a9fde3b1256",
+      "mode": 384
+    },
+    "collector_v9_closure.py": {
+      "sha256": "3ef9b46881587023d642cee353ed84b4bf8de6eb9e264bfbaf1448980e1c0742",
+      "mode": 384
+    }
+  },
+  "functionASTs": {
+    "native_integration.py:module": "766d0d7793e267330cd9bad0a76f2b7ede43049f195d353b00bef4e00d16f98e",
+    "native_integration.py:sha": "018b7706c56e4b14d14d3e01875fd08a2fd33e7262b3d2c8696c7d1db761a250",
+    "native_integration.py:save": "85b75642461e96fe9f67a4eccf72336094c97b8b3b020500e6c5df217978e961",
+    "native_integration.py:freeze": "1687a12ff061f37d404e5bd8d98f1099bf574edfde0ee85aa6db9a8b52962377",
+    "native_integration.py:verify": "75161bf62ed9e9504648026f2cca4354339f784ba6409c14ff35b189467aa66c",
+    "native_integration.py:main": "9aa2e698b14e6271bf7385ec7c48f9c6c6293a34056c0b9bfb8be195a7c49c1e",
+    "native_faults.py:main": "43e0bb8d6bd5857ac3e80d989ae8e13d962a125a0508812e70d2a80ef209da09",
+    "module_binding.py:digest": "11388f62a9b13724e0ddb168bd1706580313db78486057c4c336ffcc2c3baee8",
+    "module_binding.py:sha": "8dd59cc3f8cc05d94f8689155fda233b399aa85eb1de78c3e6bc595c1021df51",
+    "module_binding.py:identity": "0bfdd5a8dbec9e108c1f323b6c3bb6abdff8d28d6891ace39fd45af91c9fbaaa",
+    "module_binding.py:read_source": "9867831783c857ddb05cbca173371ed83250be1e89c8ecb3f3763d04f01c136c",
+    "module_binding.py:functions": "06faa77badea37373c6b00fed667a1419a22caf106af170ea19b18599a026961",
+    "module_binding.py:_observe": "4a1a22e577c6f20f52fb754607a8b64bb4e9a310fac7262fa3f1f5e310f344a8",
+    "module_binding.py:persist_raw": "51846b720472171d8807930449d0577107837ad48f6de0606745d33531234147",
+    "module_binding.py:capture": "e3120ac57ada422ab309f4dc259675bc1b2056539479ec3aa7ea39b3d90b437a",
+    "module_binding.py:owner_projection": "415426c1808166aadbd595d303eb582d3a899f718ca56c39993d87c2a86bcdb0",
+    "module_binding.py:callback": "6a7fc0bcabd04f8741fd9ab8afbe0cc3caf40c84398c7a765eb20f2b16f4fe89",
+    "module_binding.py:bind_owner": "dde346ad6daa289ef1a20c999c15a1da27e9841b8fb69c4148743a090fc5c708",
+    "module_binding.py:source_packet": "161d3ec29489a10c6c155840893607cf4875fe1e11c99109cd5e667405a5be8e",
+    "module_binding.py:typed_json": "63431b31d6346b4145fd9b40746287e666ab4faa6cccd48f46a3ef789d7256d5",
+    "module_binding.py:renderer_owner_types": "1c8ef042cdc9bda2751991efc43d0bd5983f15d057d3e64db3c878ce8b3825c9",
+    "module_binding.py:renderer_observation": "6ca29ca87fca13dab145f1a5ce61f13d6421215eede50087cb8d200e01171e27",
+    "module_binding.py:actor_callbacks": "947a42b6c55ac09aa9f4bea63bec120aa90a6185fde89c687c6fffb11f8be2f4",
+    "module_binding.py:batch_relations": "c5e740485c4c139e485201366e62a7906d94dbd38d2490397ea9e60d34297ca2",
+    "module_binding.py:batch_identity": "8d800475f3ee29cf226c2aa0f7cc76b29ceeff9d75293303de2fc38e0de26304",
+    "module_binding.py:terminal_batch_confirmation": "93572ddce7d5bca7236b80d1b056a2328ee37cd76b811758ed67d10a673d9b39",
+    "module_binding.py:linked_actor": "36964e0681535dc79f6040159e2fc96565f6c40ed374cf965628f5b3d399ab36",
+    "module_binding.py:archive_final": "ea3d964a393e3c59288876cd68309e41e1f7d9c70a1a8b1b04b0cb36d82862f1",
+    "module_binding.py:validate_ledger": "9e810c82df42d1cef680adf0059f0ced11330ad2a0baba94a3a47de49172e4a5",
+    "module_binding.py:validate_evidence": "f7eb69d6dfc0353dc8bc3d9e3e08a813e3a0d7cb085362bfb5d8636c447e92f9",
+    "module_binding.py:data_probe": "9573b5f992984daf923303329cb62e79e0869ca071d3857df2169ab0e928a6db",
+    "module_binding.py:bind_recovery": "35e282fdd991f97b310950f57e679541c9c99716e6d58513eb26e5a6e4f8d2af",
+    "module_binding.py:validate_recovery_evidence": "1eaf272393ac9372cfd49416542560fe84e3598acdfd76e2095d6fc49661bb6b",
+    "module_binding.py:archive_fault_binding": "30b578be6cc7b3204c878fb7ac73525d16a4d9d106aca0b39f4657dba11d25c9",
+    "service_observer.py:ObservedFactory": "5b1350510bcf49a41356b49efbba8ebdab2f41004ae7dad50837aff346c840cc",
+    "service_observer.py:main": "b928619da97655efdc66e81da9deaf5475f9c51c14abdbe725351a5ae8f9dbda",
+    "service_recovery_observer.py:make_recovery_runtime": "c0214c5dc61469c6cf559a43c80f4b2fd068fd337bde239237b61289dcaac520",
+    "service_recovery_observer.py:RecoveryObservedFactory": "94e604a5e4b08484e482bf59cc4742f8f4bcb3c1684f4a90c07a35e6c05aad0d",
+    "recovery_observer.py:witness": "c8cbd432dc25db94e1d0a52310c2dc0a014368d70ed85e8b34f974c91a4e2926",
+    "recovery_observer.py:retain_regular": "46d26cf7b8716aa2aac6344070d72c1ee0dc01b977f25383025c676272c63337",
+    "recovery_observer.py:RecoveryArchive": "e90254fc6a808b0cf03254007bd895ac3d76aae4d873513819b02dcd4c81d733",
+    "recovery_evidence.py:validate_baseline": "58ebba0d5267e29a93fec3865d53d110811c9006b18bd421891acb71fecaa91e",
+    "recovery_evidence.py:runtime_peer_witness": "31949c834c1ba4a16fc80ba7501c8c9ac642cb6f940dbeb359b94d05612c53f3",
+    "capture_evidence.py:digest": "3f903d52fc6e70487f35216907292833acfa93a50a9793d92a3d698bfc5d8804",
+    "capture_evidence.py:captured_and_seeded": "089ffe0142300875159e39893923588cc6e24143bf99d975db17e6839b0ea404",
+    "capture_evidence.py:unchanged_pairs": "6716b24bc4bc8c0798946be67ad09aa5ed97d215dd3779b2c02182a335d819be",
+    "verify_reversal.py:token": "a5f939769d4a19b87276dbe6424093322d5edf9dee2563ee84ecb3088f213292",
+    "verify_reversal.py:verify": "71145f9544ee4220c8f1c19ad9a6609f4915bd0fb4e8ae6f34910f185c906620",
+    "helper_observer.py:digest": "b6bce486126ca077259403753ca857049239b0b73de79ba8f2582523e29a8231",
+    "helper_observer.py:process": "af9788d44874439bf4dd85278104443a1fb6874e01496db486f34b70e0857f3e",
+    "helper_observer.py:still_live": "98cb15eb68d16018deac52f1717a6e4f24552011ef6a50f32560b7761edfc0d8",
+    "helper_observer.py:regular": "09065c6001fb1f7b3d954724528eb775de2f7d50660431ae70a9395bd91fe45d",
+    "helper_observer.py:read_config": "79e8ca34e813eb5b838973daf3743b0f6b5f0496be79a8c3dab97383ecedf7a3",
+    "helper_observer.py:operation": "9a3985693daa85de6f9cb5ba63f7e59d8e995c746a18805cdd165f9ee0024796",
+    "helper_observer.py:ancestor_proof": "5d9b61f54fe6cc3a1157dc87658c1ee0778a749d9ba6e79a7dbbdfb013341d29",
+    "helper_observer.py:ipc_proof": "e8bcaca3a1c6a8dda4408995239ec8b7e3178455147d5f7ccbe567853841a433",
+    "helper_observer.py:digest_bytes": "71d7b32c69931f4a2819c9be74547b58ed0b724a430c25f629f8a1ded178a695",
+    "helper_observer.py:locked_log": "ff7a6be02b04845b8b050c0309b348ee5babe880d1954a90311ff3b1a0848bb5",
+    "helper_observer.py:rows": "c515a77a7b2b4ed2163ac1a4573e0a62b26d443c0aec51b3352bc42061bb0526",
+    "helper_observer.py:append": "01226bf22011bd722f9aa6d4d87c24003f67a43bd0ab0cd8611bf2727c8ca217",
+    "helper_observer.py:cmdline": "5fcb803474700054fd2a3db767af58fa3c57879b42e1cf71327ec712662bf1d0",
+    "helper_observer.py:query_environment": "0b1bb917ca6ccf70703dfa16fc445e904fd3394f7b05992b361b488721ff3936",
+    "helper_observer.py:query_ancestor": "46b00870546906a8202de159199d34a076591bc9842ebeb8455efe4ea909ea49",
+    "helper_observer.py:service_ancestor": "9e9874995264e8c18ca569766bbb543e76d37131d31082ab14a12490c8296f43",
+    "helper_observer.py:service_member": "11e6299d187c1aa08903f2fe39c78ce9af2373602977dacc6967ec9c66605fc5",
+    "helper_observer.py:service_operation": "a12bbd7a80799605c1aafa8b4dab02955cfe48570ff50ed0b43aad1668c31b02",
+    "helper_observer.py:run": "f6b730a767b97b22f68d0ae58125e1eb69bc1cd20bff8a48943c9e2ce26fda04",
+    "helper_observer.py:summarize": "87e4731e3d215c240a03e7ae86d2612f38a70fb212767681f746d8f96f1c2158",
+    "helper_setup.py:archive_witness": "ed6c54c49002514b5e963f958aeaae65e8fd8eba17ea4f2c534491819b4c37da",
+    "helper_setup.py:archive_descriptor": "c448c899d35f23bcd3c1597eeb7bf447d3c8927033e9e6b7ecd033196250036b",
+    "helper_setup.py:archive_helpers": "83506e65c3c4c7119d978db4ad02e2b747df58708683fe8e4511da9b5bb9eec2",
+    "helper_setup.py:retain_before_runtime_delete": "b497120eec241a5ffd69238b0355474c6580526288cf826739a4469600b12df1",
+    "helper_setup.py:write_json": "271366e60ce6106a0b80d83da108bbbb35e90d561200d4a9663a57fce048d0d6",
+    "helper_setup.py:prepare": "baaf0a0909e3f63522c6dd7bb351693231eb75fa11d9dfc8dc6d342acd641cc4",
+    "helper_setup.py:register_query_roots": "e2f94934531003addaba5915b02449edf4414b042e69617c8c984917534d1ef8",
+    "helper_setup.py:register_service_root": "bdb230d9af0104f844ab8c5fde5031a2b5a4eabf84c3db59a1b3265284928462",
+    "helper_setup.py:register_service_restart": "a26b5e7535984e112e205f9ed967af420ddddf33669f236719e06ed0a645b15f",
+    "helper_setup.py:install_lua": "b5b914a07a57656ccebafffbb67a35f15a3c3298e007c4949d878e89176e0ea9",
+    "helper_setup.py:allow_closes": "9b2fd616697a62a396d10abcb4894382e721aaf99ce6286cfb9b0f574f3331a9",
+    "helper_setup.py:wait_and_archive": "01ac81b1a51c8764593ad6b96e0d5b6852c4475493ad24dcf890f1d43f0be1f3",
+    "private_shell.py:sha": "018b7706c56e4b14d14d3e01875fd08a2fd33e7262b3d2c8696c7d1db761a250",
+    "private_shell.py:regular": "b9aa202381d8315f39e6b2d0a6d7e1b660b81e284d93ba7ff0ed484a679e605d",
+    "private_shell.py:shell_config": "07833c21a7630ab2b30bb8dc54576e0ba15bc4df6eef651791490ae1c487a9be",
+    "private_shell.py:build_payload": "5948e60b36e035c8dd0defc92398bbeda204940ef53eea42eacc3dc3f4240464",
+    "private_shell.py:verify_payload": "503150147467522db7c8731a596867e373333b7481f61ea8029f86d1d36c4bdf",
+    "private_shell.py:normalize_home_directories": "3e10b003deff65bd513ceed5c4b79bd8163ea1be2153f2fc26e29119e966c4f0",
+    "private_shell.py:prepare_home": "e6209f8c49d836c4b63abf27dfaa00e144be2f7ef23b866696f4ab1988e350ec",
+    "test_actual_binding.py:LoadedSourceTests": "151cb2cbb0b5a1d0149d3529450aa571f4fc3970ab9c085c528654962d4bd9f2",
+    "test_actual_binding.py:OwnerKernelTests": "b2e93d9a327e4418bdb2d21ae5b15ca6a91367e12d07467816f394540619aa5e",
+    "test_batch_binding.py:ModuleCoverageTests": "25e6b7215ff6f53154610fc57b5e52cc7239277fac783c7167c88537104fa47c",
+    "test_batch_binding.py:BatchBindingKernelTests": "67a4850be7c89a7ecc54c44cbf3588ddad088dc09e1ba1076a17c5e983fddf8c",
+    "test_renderer_collector_binding.py:RendererBindingKernelTests": "4e04dbb5da9acdb507552b904d451451bb0b74d288382c38f38892c625a0cf64",
+    "renderer_binding_fixture.py:prepare": "f352050900593b6d2f9f6d37720ba829ee6010daffb1782b8be9864261ed68bc",
+    "renderer_binding_fixture.py:transport": "b2e84825921b1fcefc71cfc2ae3f3924b2ce83b7501b7d0fd388c11e1a06675c",
+    "renderer_binding_fixture.py:normal_close": "a076c85a0d33a66edc4f0bc71aec5e41ec748d566b283cc56398105ba0a09b84",
+    "renderer_binding_fixture.py:cleanup": "421cdcb8cdca09b74e8b20b0dd6e309b5b57d9f82b52769f7c9a3a324eccfcc7",
+    "collector_v9_closure.py:sha": "0325a83f77e8cf5d3bf1ac84063e139ba39d503f5921fbeddf09d3c2cd2e7ab1",
+    "collector_v9_closure.py:verify_links": "e9a2185ba6b0c1258c006d8260ab193195cb12b49f48e473ef755480a17c1c0c",
+    "collector_v9_closure.py:retained_file": "c1d586ff326654ae37af95cf7e7a292b2c967c9e6d189692b1f70a573e6d40af",
+    "collector_v9_closure.py:retain": "e9931b8d703e1be2a06863e7a311f09aaa75938b0846d59fd433d524efe1a412"
+  },
+  "baselineMainByteExact": true,
+  "faultMainSingleSelectorInverseExact": true,
+  "moduleBindingEveryFunctionByteExact": true,
+  "actualModules": 19,
+  "actualLinks": 16,
+  "baselineSyntacticCheckCalls": 30,
+  "faultSyntacticCheckCalls": 34,
+  "requiredActualBaselineGates": 38,
+  "requiredActualFaultGates": 34,
+  "allOriginalDeadlinesExact": true,
+  "allOriginalCallbacksArchiveQueryAndRefusalFunctionsExact": true,
+  "nativeAccepted": false,
+  "mainChanged": false
+}

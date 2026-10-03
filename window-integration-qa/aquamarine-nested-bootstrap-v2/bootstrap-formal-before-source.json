@@ -1,0 +1,42 @@
+{
+  "result": "pass",
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/bootstrap_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/bootstrap_lifecycle_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  bootstrap_lifecycle_test\n    ok originalPassiveReadableOnlyBootstrapDeadlockTest passed 1 test(s)\n    ok explicitInitialFlushParentConfigureAckThenPublishTest passed 1 test(s)\n    ok actualEagainMustRefuseStartupTest passed 1 test(s)\n    ok actualEpipeMustRefuseStartupTest passed 1 test(s)\n    ok unknownFlushErrorNeverGrantsOutputTest passed 1 test(s)\n    ok configureCannotPublishWithoutSurfaceAckTest passed 1 test(s)\n    ok ackCannotPrecedeConfigureTest passed 1 test(s)\n    ok parentLostBeforeFlushBlocksPublicationTest passed 1 test(s)\n    ok parentLostAfterAckBlocksQueuedPublicationTest passed 1 test(s)\n    ok incidentalParentTrafficCanMaskOriginalGapTest passed 1 test(s)\n    ok repeatedFlushNeverAnnouncesByItselfTest passed 1 test(s)\n    ok wrongOwnerNeverGrantsPublicationTest passed 1 test(s)\n\n  12 passing (894ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/bootstrap_lifecycle.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1981ms at 1010 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "allCandidateSourcesUnchanged": true,
+  "nativeLaunch": false
+}

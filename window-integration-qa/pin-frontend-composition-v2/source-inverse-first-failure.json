@@ -1,0 +1,10 @@
+{
+  "result": "fail",
+  "source": "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/source_conservation.py",
+  "sourceSHA256": "09af340332ab3c322e50834ff6da9b541919e1a7ac3a7ed95e7b577e81b6c831",
+  "failedPredicate": "Complete original toggle/effect AST reconstructs exactly",
+  "observedError": "AssertionError: Complete original toggle/effect AST reconstructs exactly",
+  "diagnosis": "Inverse retained only value assignment and dropped separate same-line menu assignment; metadata inverse also needs original fourth guard node. Applied runtime sources untouched.",
+  "sourceReconstructionOnly": true,
+  "GUI": false
+}

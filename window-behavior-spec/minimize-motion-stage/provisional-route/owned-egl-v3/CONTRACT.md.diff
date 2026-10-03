@@ -1,0 +1,11 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl/CONTRACT.md
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v3/CONTRACT.md
+@@ -55,7 +55,7 @@
+ 
+ Layer surfaces have empty input regions, no keyboard interactivity and exclusive zone -1 (no reservation). The renderer does not bind a seat. It requires presentation,
+ layer-shell, viewporter, xdg-output and fractional-scale protocols; missing
+-capability fails before any native action. Only the exact reviewed Mesa26.2.2 release token (end or whitespace metadata, never a numeric/development suffix) on the direct GPU backend is supported; software/swrast/llvmpipe/softpipe and Zink are rejected before source upload or readiness. Output geometry/generation is owned
++capability fails before any native action. Only the reviewed Mesa26.2.2 token or exact source-backed Arch26.2.2-arch1.1 build token (end or whitespace metadata, never another numeric/development suffix) on the direct GPU backend is supported; the mapped gallium/Mesa-EGL material must match its pinned hash and device/inode. See DISTRO_MATERIAL_CONTRACT.md. software/swrast/llvmpipe/softpipe and Zink are rejected before source upload or readiness. Output geometry/generation is owned
+ and observed, not guessed from wl_output physical dimensions. PNG material
+ limitations remain those of the atlas provider (blurred decoration backdrop
+ fails; raw translucent client backdrop equivalence remains unproven).

@@ -1,0 +1,46 @@
+{
+  "result": "pass",
+  "tests": 24,
+  "output": "test_actual_opened_descriptor_swap_refuses_even_if_path_restored (test_helpers.HelperTests.test_actual_opened_descriptor_swap_refuses_even_if_path_restored) ... ok\ntest_exact_terminal_identity_required (test_helpers.HelperTests.test_exact_terminal_identity_required) ... ok\ntest_nonzero_and_unknown_events_never_accept (test_helpers.HelperTests.test_nonzero_and_unknown_events_never_accept) ... ok\ntest_real_gated_exec_once_argv_status_and_duplicate_refusal (test_helpers.HelperTests.test_real_gated_exec_once_argv_status_and_duplicate_refusal) ... ok\ntest_real_unix_peer_full_eof_and_actual_reply (test_helpers.HelperTests.test_real_unix_peer_full_eof_and_actual_reply) ... ok\ntest_strict_exact_operation_identity (test_helpers.HelperTests.test_strict_exact_operation_identity) ... ok\ntest_symlink_config_refuses (test_helpers.HelperTests.test_symlink_config_refuses) ... ok\ntest_wrong_actual_socket_peer_refuses_before_send (test_helpers.HelperTests.test_wrong_actual_socket_peer_refuses_before_send) ... ok\ntest_actual_bytes_retained_after_release (test_observer.RetentionTests.test_actual_bytes_retained_after_release) ... ok\ntest_binding_delegate_and_return_preserved_outside_product_registry (test_observer.RetentionTests.test_binding_delegate_and_return_preserved_outside_product_registry) ... ok\ntest_foreign_actor_refused (test_observer.RetentionTests.test_foreign_actor_refused) ... ok\ntest_named_path_swap_after_read_refused (test_observer.RetentionTests.test_named_path_swap_after_read_refused) ... ok\ntest_normal_retirement_observed_after_original_registry_removal (test_observer.RetentionTests.test_normal_retirement_observed_after_original_registry_removal) ... ok\ntest_observation_delegates_capture_once_returns_same_object (test_observer.RetentionTests.test_observation_delegates_capture_once_returns_same_object) ... ok\ntest_unsafe_permissions_refused (test_observer.RetentionTests.test_unsafe_permissions_refused) ... ok\ntest_wrong_digest_refused (test_observer.RetentionTests.test_wrong_digest_refused) ... ok\ntest_wrong_epoch_refused (test_observer.RetentionTests.test_wrong_epoch_refused) ... ok\ntest_actual_all_copied_sources_and_absolute_imports_match (test_packaging.Packaging.test_actual_all_copied_sources_and_absolute_imports_match) ... ok\ntest_all_implicitly_enabled_production_services_are_disabled (test_packaging.Packaging.test_all_implicitly_enabled_production_services_are_disabled) ... ok\ntest_changed_source_is_not_accepted_from_unchanged_copy (test_packaging.Packaging.test_changed_source_is_not_accepted_from_unchanged_copy) ... ok\ntest_offscope_home_materialization_refuses_before_any_copy (test_packaging.Packaging.test_offscope_home_materialization_refuses_before_any_copy) ... ok\ntest_only_actual_window_widget_is_on_left_bar (test_packaging.Packaging.test_only_actual_window_widget_is_on_left_bar) ... ok\ntest_payload_has_no_links_into_main_catalogs (test_packaging.Packaging.test_payload_has_no_links_into_main_catalogs) ... ok\ntest_retained_absolute_import_is_explicit_and_unmodified (test_packaging.Packaging.test_retained_absolute_import_is_explicit_and_unmodified) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.060s\n\nOK\n",
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-457effef7d104a958b76702fa6b1c11c.scope",
+    "coreLimit": 1
+  },
+  "coreLimits": [
+    1,
+    1
+  ],
+  "actualQsParserProbes": [
+    {
+      "command": [
+        "/usr/bin/qs",
+        "kill",
+        "--pid",
+        "2147483647",
+        "-p",
+        "/run/user/1000/wqa/1897"
+      ],
+      "exitCode": 108,
+      "stdout": "",
+      "stderr": "[Option Group: Instance Selection] excludes [Option Group: Config Selection]\nRun with --help for more information.\n",
+      "nativeShellLaunched": false,
+      "mainIPCContacted": false
+    },
+    {
+      "command": [
+        "/usr/bin/qs",
+        "kill",
+        "--pid",
+        "2147483647"
+      ],
+      "exitCode": 255,
+      "stdout": "No instance found for pid 2147483647\n",
+      "stderr": "",
+      "nativeShellLaunched": false,
+      "mainIPCContacted": false
+    }
+  ],
+  "nativeLaunch": false,
+  "mainIPCContacted": false,
+  "immutableV3Retained": true
+}

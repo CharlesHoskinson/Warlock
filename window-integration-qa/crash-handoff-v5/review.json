@@ -1,0 +1,84 @@
+{
+  "allFiveApplied": true,
+  "reviewOnly": true,
+  "newNestedRun": false,
+  "changes": {
+    "core": "Unique qa-harness.slice scope; exact inherited soft/hard core1:1 through prlimit because systemd261 does not accept LimitCORE on scope units. Explicit diagnostic backtrace opt-in only.",
+    "xwayland": "Disabled in Wayland nested configurations; explicit X11 campaign exception only.",
+    "parent": "Explicit owned live Wayland parent credentials/socket checks and mandatory reviewed Aquamarine Wayland backend; no DRM fallback.",
+    "environment": "Unrestricted execution; owned nonsymlink0700 /run/user/$UID/wqa/<4hex> runtime and actual render-node access preflight.",
+    "teardownAndABI": "Clients/probes/services first, compositor then parent/bus; safe-v3 Manager-only transport/backend guard before key operations. Unsafe original ABI bytes are retired historical evidence."
+  },
+  "tests": [
+    {
+      "suite": "launch-and-backend",
+      "testCount": 20,
+      "result": {
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "15503c",
+          "wall_time_seconds": 1.0896e-05,
+          "exit_code": 0,
+          "original_token_count": 30,
+          "output": "....................\n----------------------------------------------------------------------\nRan 20 tests in 0.037s\n\nOK\n"
+        }
+      }
+    },
+    {
+      "suite": "AT-SPI-guard",
+      "testCount": 10,
+      "result": {
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "cf311b",
+          "wall_time_seconds": 0.09836349,
+          "exit_code": 0,
+          "original_token_count": 28,
+          "output": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.191s\n\nOK\n"
+        }
+      }
+    },
+    {
+      "suite": "private-host-IPC",
+      "testCount": 23,
+      "result": {
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "f0715c",
+          "wall_time_seconds": 0.009903079,
+          "exit_code": 0,
+          "original_token_count": 60,
+          "output": "Running as unit: qa-harness-b777cca9a7fb4a56976cab5858fc5e41.scope; invocation ID: 8722dbfe5d6b47a0af761ab84d94d0ec\n.......................\n----------------------------------------------------------------------\nRan 23 tests in 0.011s\n\nOK\n"
+        }
+      }
+    }
+  ],
+  "guardTestsPassed": 53,
+  "documentationChange": "README now selects frozen private-weston-aq-host-v4 and records subsequent runtime verification; prior frozen failures unchanged.",
+  "retainedNativeEvidence": [
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v8/attempt-1/root-completion.json",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v6/attempt-private-1/root-completion.json"
+  ],
+  "protectedInstallationsUntouched": [
+    "crash-watch override",
+    "installed grim",
+    "installed gnome-keyring"
+  ],
+  "windowParityAccepted": false,
+  "updatedUTC": "2026-10-01T15:28:11.330563+00:00",
+  "inputHashes": {
+    "/home/hoskinson/Documents/crash-noise/HANDOFF-codex-window-qa.md": "e905e5fe7cc7b23fb9735b85b8d24a6ba136bbd9c83a4778d63a9729c918ee18",
+    "/home/hoskinson/window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+    "/home/hoskinson/window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+    "/home/hoskinson/window-integration-qa/qa_nested_backend.py": "da9abcbf48f4a13158362e7daddd57b580367d6d9bcb15c2c0efd1e87a9f5bfa",
+    "/home/hoskinson/window-integration-qa/README.md": "931b422c6834b3f00a89df784693a306c2f73cfa0188a21a73f5adcf119d8909",
+    "/home/hoskinson/window-integration-qa/private-weston-aq-host-v4/weston_host.py": "b835325fd00e0ccdc2336a35d5eebc6473042e8e0c2d538b2fa163af7f1b9023",
+    "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/abi-safe-v3/abi_client.py": "7d40f35c17b5639585fbd71dbf2821f3f2b52c78cfe6bf9cb30f77f1699d79eb",
+    "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/abi-safe-v3/abi_guard.py": "d91c0f0a854c7adc3f34b9d3b42e0e44f87ba75699a1946abaccbf39b8ab6733",
+    "/home/hoskinson/window-integration-qa/nested_drag.lua": "3f7b4c4367105d9e0e34b8b282b529bbd289ccbc3e95a62ec69cd975c4e8afd3",
+    "/home/hoskinson/window-integration-qa/nested_caption.lua": "011eebbf1a5c1b69ca67eba4ec127f7ebfef77ff0bef417dc267725fc4131d44",
+    "/home/hoskinson/window-integration-qa/nested_pinned.lua": "1f2d9389c5213e645f92e11a0b93357ee6005cf92002d1e0d8e69824cc2b367f",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v8/attempt-1/root-completion.json": "c9a929571f95b01158a8db31b6433b306150e2030bedc9c9949ae590d2c5b1d4",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v6/attempt-private-1/root-completion.json": "804142436bc5bbb442dd5fe13a337eff93e4232b88b6ab743ad21744e30c68d8"
+  }
+}

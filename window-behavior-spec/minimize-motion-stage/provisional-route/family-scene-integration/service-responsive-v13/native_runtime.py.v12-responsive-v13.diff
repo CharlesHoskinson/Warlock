@@ -1,0 +1,24 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/native_runtime.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/native_runtime.py
+@@ -113,6 +113,21 @@
+         result=super().retire_gestures(members,env=self.session_guard.env)
+         self.session_guard.verify()
+         return result
++    def plan_destination(self,window):
++        self.session_guard.verify()
++        result=super().plan_destination(window)
++        self.session_guard.verify()
++        return result
++    def apply_destination(self,window,plan):
++        self.session_guard.verify()
++        result=super().apply_destination(window,plan)
++        self.session_guard.verify()
++        return result
++    def refresh_destination(self,window,plan):
++        self.session_guard.verify()
++        result=super().refresh_destination(window,plan)
++        self.session_guard.verify()
++        return result
+     def commit(self,operation,window,preview_ready=False):
+         if operation not in ('minimize','restore'):raise ValueError('native commit must be resolved endpoint')
+         self.session_guard.verify()

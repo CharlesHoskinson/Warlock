@@ -1,0 +1,51 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-9181cc7704354101ab96910ad2d9ad14.scope",
+    "coreLimit": 1
+  },
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/callback_fixture_completion_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/callback_fixture_completion_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  callback_fixture_completion_test\n    ok failedCueWithoutReceiptRefusesTest passed 1 test(s)\n    ok startedCallbackWithoutReceiptRefusesTest passed 1 test(s)\n    ok exactlyOneGenuineReceiptPassesTest passed 1 test(s)\n    ok duplicateReceiptNeverPassesExactAssertionTest passed 1 test(s)\n    ok callbackWithoutFailureHasNoReceiptAuthorityTest passed 1 test(s)\n    ok failedSendStillRefusesTest passed 1 test(s)\n    ok failedNormalCloseStillRefusesTest passed 1 test(s)\n    ok lateCallbackCannotBorrowNewDeadlineTest passed 1 test(s)\n\n  8 passing (513ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/callback_fixture_completion.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1310ms at 1527 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "runtimeUnchangedBeforeCorrection": true,
+  "sourceSHA256": {
+    "test_pipe_transport.py": "fcd791e2165b92b1d5878e4678785071290cb96febdb75f50d9501fcb565981d"
+  },
+  "allOriginalOutcomeAssertionsRemainExact": true,
+  "originalDeadlineSeconds": 2,
+  "nativeLaunch": false
+}

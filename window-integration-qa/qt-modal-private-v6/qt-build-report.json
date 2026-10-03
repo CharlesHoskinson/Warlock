@@ -1,0 +1,20 @@
+{
+  "result": "compiled",
+  "qtWidgetsVersion": "6.11.2 EXACT",
+  "cmakeSource": "/home/hoskinson/window-integration-qa/qt-modal-private-v6",
+  "cmakeBuild": "/home/hoskinson/window-integration-qa/qt-modal-private-v6/build-v6",
+  "qaBuildScopes": [
+    "qa-harness-a7712d3313bf4316b5c4385ba2fb6a9d.scope",
+    "qa-harness-a1e4eb6569d0475c8f39111e5f11989d.scope",
+    "qa-harness-66a3172d9832488d8e4e7029f3f863ad.scope"
+  ],
+  "coreLimits": [
+    1,
+    1
+  ],
+  "sourceSHA256": "37071bd5510dcb04fe49377e6c9a0cc0b101c483b87bfeced5177ed6be27ea04",
+  "binarySHA256": "2d7b03ffae62b7e522bb3f85110e8b27718ee3b1357c8a51691e2c5694dbe4e1",
+  "originalQt203BinarySHA256": "e74f73fbf86a7c30deb47d89a3cfe240b19c545c04b465986c430b35a50b92c8",
+  "nativeExecuted": false,
+  "sourceDelta": "State/activation/button-client observation only; window creation, poll actions and actual callback code byte-identical to Qt203."
+}

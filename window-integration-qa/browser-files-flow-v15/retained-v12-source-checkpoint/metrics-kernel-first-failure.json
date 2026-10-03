@@ -1,0 +1,9 @@
+{
+  "result": "failure-retained",
+  "cpuOnly": true,
+  "scope": "qa-harness-75912aca5bf645a6ac6c91ea85ee7509",
+  "tests": 23,
+  "failures": 1,
+  "reason": "Test expected post-disk equality error, actual renamed parent caused earlier exact FD target/device/inode refusal. Actual guard succeeded; test expectation corrected.",
+  "runtimeGuardWeakened": false
+}

@@ -1,0 +1,67 @@
+{
+  "result": "pass",
+  "checks": [
+    {
+      "name": "invalid explicit selection returns before backend construction",
+      "passed": true
+    },
+    {
+      "name": "mandatory parent placed first and only explicit headless copied as auxiliary",
+      "passed": true
+    },
+    {
+      "name": "failed mandatory startup clears implementations and returns false",
+      "passed": true
+    },
+    {
+      "name": "late GPU explicit selection refused before DRM creation",
+      "passed": true
+    },
+    {
+      "name": "toplevel only stages size, never publishes/frame-kicks",
+      "passed": true
+    },
+    {
+      "name": "ACK sent before acknowledged state and deferred publication",
+      "passed": true
+    },
+    {
+      "name": "configure deferred callback uses weak lifetime and poststate guard",
+      "passed": true
+    },
+    {
+      "name": "shared public frame relay requires real lifecycle authority",
+      "passed": true
+    },
+    {
+      "name": "idle frame guarded before scheduler frame emission",
+      "passed": true
+    },
+    {
+      "name": "actual buffer commit refuses before snapshot/attach",
+      "passed": true
+    },
+    {
+      "name": "destroy invalidates lifecycle before public destroy and callbacks",
+      "passed": true
+    },
+    {
+      "name": "frame completion holds output and checks authority before present",
+      "passed": true
+    },
+    {
+      "name": "parent error invalidates every lifecycle/scheduler and clears strict readiness",
+      "passed": true
+    },
+    {
+      "name": "Wayland startup rejects real dispatch failure",
+      "passed": true
+    }
+  ],
+  "scope": "Structural source wiring only; real transport loss and callback reentrancy require native proof",
+  "sources": {
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Wayland.cpp": "30f8bfac8f81fe667335aeb8f00ab424aa98bd54329ba1c45d19a344d15ff300",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Backend.cpp": "7aab17d6e9b4ffa7ab3c3c8434832a387b48f3bb22be5310bea8036e70f8c41f",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/NestedLifecycle.hpp": "e2ce7bf808db125387ae7e1c1874e3db06cf61a9ccedfe097fd96bc94f10d3fc"
+  }
+}

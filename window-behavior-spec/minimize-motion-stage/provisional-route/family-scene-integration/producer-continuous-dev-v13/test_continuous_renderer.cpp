@@ -1,0 +1,18 @@
+#define OWNED_EGL_OFFLINE_TEST
+#include "Renderer.cpp"
+#include <sstream>
+struct OfflineCommands {
+ static int run(){size_t checks=0;auto check=[&](bool yes){++checks;if(!yes)throw std::runtime_error("continuous renderer check "+std::to_string(checks));};
+  std::vector<Source> sources{{{"aa01",41},std::string(64,'a'),{104,130,380,240},{100,100,388,274},{20,700,28,28}}};std::vector<Identity> ids{sources[0].identity};
+  Renderer r;r.ledger.configure({{"left",1}});r.ledger.seedContinuousFamily(sources,"0123456789ab-1",std::string(64,'d'),"minimize",.22);r.familyIdentities=ids;r.routeIdentity=ids[0];
+  auto sample=r.ledger.continuousSample("left",1,1000);auto f=r.ledger.prepareContinuousFamily(*sample,1001);r.ledger.swapReturned(f->sequence,true);r.ledger.present(f->sequence,1010,1);r.ledger.promoteFamily(ids,"0123456789ab-1");
+  auto start=QJsonObject{{"command","start"},{"token","0123456789ab-1"},{"identities",identityJson(ids)}};r.command(start);auto clock=r.startedNs;check(clock>0);r.command(start);check(r.startedNs==clock&&r.ledger.continuousStartNs()==clock);
+  auto stale=start;stale["token"]="0123456789ab-2";bool refused=false;try{r.command(stale);}catch(const std::invalid_argument&){refused=true;}check(refused&&r.startedNs==clock);
+  sample=r.ledger.continuousSample("left",1,monotonicNs());auto copied=*sample;copied.members[0].velocity[0]+=1;check(!r.ledger.prepareContinuousFamily(copied,monotonicNs()));f=r.ledger.prepareContinuousFamily(*sample,monotonicNs());r.ledger.swapReturned(f->sequence,true);r.ledger.present(f->sequence,monotonicNs(),2);auto record=r.kinematicsRecord(*f);check(record["epoch"].toString()==QString::number(f->kinematics->epoch));check(record["members"].toArray()[0].toObject()["velocity"].toArray()[0].toDouble()==f->members[0].velocity[0]);check(record["members"].toArray()[0].toObject()["rectangle"]==rectangleJson(f->members[0].rectangle));
+  auto retarget=QJsonObject{{"command","retarget"},{"token","0123456789ab-2"},{"identities",identityJson(ids)},{"operation","restore"},{"durationMs",220}};r.command(retarget);check(r.ledger.token()=="0123456789ab-2"&&!r.ledger.nativeReady());auto origin=r.ledger.continuousSample("left",1,r.startedNs);check(origin&&origin->members==f->members);auto nf=r.ledger.prepareContinuousFamily(*origin,r.startedNs+1);r.ledger.swapReturned(nf->sequence,true);r.ledger.present(nf->sequence,r.startedNs+10,3);r.ledger.promoteFamily(ids,"0123456789ab-2");start["token"]="0123456789ab-2";clock=r.startedNs;r.command(start);check(r.startedNs==clock);
+  Renderer diagnostic(true);diagnostic.ledger.configure({{"left",1}});diagnostic.ledger.seedFamily(sources,"0123456789ab-1",std::string(64,'d'),"minimize");diagnostic.familyIdentities=ids;auto staticFrame=diagnostic.ledger.prepareFamily("left",1,.45,1000);check(staticFrame&&staticFrame->members[0].rectangle==mix(sources[0].atlasRect,sources[0].iconRect,.45));check(!staticFrame->kinematics);check(membersJson(staticFrame->members)[0].toObject().keys()==QStringList({"digest","pid","rectangle","stableId"}));check(!diagnostic.ledger.continuous());bool diagRefused=false;try{diagnostic.command(QJsonObject{{"command","start"},{"token","0123456789ab-1"},{"identities",identityJson(ids)}});}catch(const std::invalid_argument&){diagRefused=true;}check(diagRefused);
+  r.cancel("offline reduced-motion/cancellation");check(!r.ledger.nativeReady()&&!r.ledger.continuous()&&!r.running&&r.required.empty());
+  std::cout<<"{\"result\":\"pass\",\"continuousRendererChecks\":"<<checks<<",\"eglConnected\":false,\"nativeAccepted\":false}\n";return 0;
+ }
+};
+int main(){return OfflineCommands::run();}

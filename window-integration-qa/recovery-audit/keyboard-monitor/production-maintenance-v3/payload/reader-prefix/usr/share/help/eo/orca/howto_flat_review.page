@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_flat_review" xml:lang="eo">
+  <info>
+    <link type="guide" xref="index#reviewing"/>
+    <link type="next" xref="howto_orca_find"/>
+    <title type="sort">2. Plata Revizio</title>
+    <desc>Ekzameni fenestron laŭspace</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Plata Revizio</title>
+  <p>La Plata Revizio-funkcio de <app>Orko</app> permesas al vi laŭspace revizii la enhavon, kaj tekston kaj regiletojn, de la aktiva fenestro. En tiu ĉi reĝimo, <app>Orko</app> traktas la fenestron kvazaŭ ĝi estus dudimensia teksto-folio, forigante ajnan nocion de regileta hierarkio aŭ alia logika grupo ene de la fenestro.</p>
+  <p>La "platigita" enhavo, ankaŭ konata kiel la Plata Revizio-kunteksto, povas esti <link xref="commands_flat_review">navigata</link> laŭ linio, laŭ vorto, laŭ signo, kaj laŭ objekto. Krome, vi povas plenumi maldekstran klaketon aŭ dekstran klaketon sur la objekto estanta reviziata. Fine, vi povas uzi <link xref="howto_orca_find">Orko Serĉo</link>, funkcion bazitan sur Plata Revizio por serĉi la enhavon de la aktiva fenestro.</p>
+  <p>Ĉar la Plata Revizio-kunteksto estas spaca reprezento de la enhavo de la aktiva fenestro, ĝi estas kreata kiam vi unue eniras Platan Revizion kaj nur enhavas tiujn objektojn kiuj estas videblaj. Sekve, vi ne povos uzi Platan Revizion por aliri elementojn kiuj estas en la fenestro sed aktuale ekstermontraj. Krome, se la enhavo de la fenestro ŝanĝiĝas mem, la Plata Revizio-kunteksto ne aŭtomate ĝisdatiĝos. Vi povas kaŭzi ke nova kunteksto estu konstruita per ŝalti/malŝalti Platan Revizion.</p>
+  <p>Fine, Plata Revizio pro sia naturo estas reĝimo kiu ne povas esti uzata samtempe kiam <app>Orko</app> spuras la fokuson. Tiel se vi estas en Plata Revizio kaj tiam uzas la navigadajn komandojn de la aplikaĵo por movi la karenon aŭ por doni fokuson al alia objekto, vi aŭtomate forlosos Platan Revizion.</p>
+</page>

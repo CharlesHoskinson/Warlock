@@ -1,0 +1,4451 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      cursor: 5,
+      focus: 5,
+      follow: true,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: true,
+      phase: 0,
+      refused: false,
+      seat: 5,
+      warps: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      cursor: 5,
+      focus: 5,
+      follow: true,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: true,
+      phase: 1,
+      refused: false,
+      seat: 5,
+      warps: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: true,
+      phase: 1,
+      refused: false,
+      seat: 5,
+      warps: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 1,
+      refused: false,
+      seat: 5,
+      warps: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 1, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 1, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 2, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 1, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 3, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 4, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 4, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 4, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 4, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 4, root: 1, session: 2 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 4, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 2, nested: 4, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 4, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 4, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 4, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 4, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 4, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 5, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 5, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 41]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 42]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 43]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 44]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 45]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 46]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 47]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 48]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 3 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 49]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 4 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 50]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 4 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 51]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 4 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 52]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 4 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 53]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 4 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 54]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 4 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 55]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 4 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 56]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 6, root: 1, session: 4 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 57]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 7, root: 1, session: 4 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 58]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 3, nested: 7, root: 1, session: 5 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 59]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 4, nested: 7, root: 1, session: 5 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 60]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 4, nested: 7, root: 1, session: 5 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 61]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 4, nested: 7, root: 1, session: 5 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 62]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 4, nested: 7, root: 1, session: 5 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 63]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 5, nested: 7, root: 1, session: 5 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 64]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 5, nested: 7, root: 1, session: 5 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 65]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 5, nested: 7, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 66]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 5, nested: 7, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 67]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 5, nested: 8, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 68]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 5, nested: 8, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 69]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 5, nested: 8, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 70]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 5, nested: 8, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 71]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 8, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 72]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 8, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 73]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 8, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 74]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 8, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 75]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 8, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 76]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 9, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 77]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 9, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 78]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 9, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 79]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 9, root: 1, session: 6 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 80]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 9, root: 1, session: 7 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 81]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 9, root: 1, session: 7 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 82]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 9, root: 1, session: 7 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 83]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 9, root: 1, session: 7 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 84]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 9, root: 1, session: 7 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 85]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 9, root: 1, session: 7 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 86]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 6, nested: 9, root: 1, session: 8 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 87]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 7, nested: 9, root: 1, session: 8 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 88]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 7, nested: 9, root: 1, session: 8 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 89]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 7, nested: 9, root: 1, session: 8 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 90]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 7, nested: 10, root: 1, session: 8 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 91]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 7, nested: 10, root: 1, session: 8 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 92]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 7, nested: 10, root: 1, session: 8 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 93]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 7, nested: 10, root: 1, session: 9 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 94]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 7, nested: 11, root: 1, session: 9 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 95]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 7, nested: 11, root: 1, session: 9 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: true,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 96]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 7, nested: 11, root: 1, session: 9 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 97]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 7, nested: 11, root: 1, session: 9 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 98]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 7, nested: 11, root: 1, session: 9 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 99]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 7, nested: 11, root: 1, session: 10 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[State 100]
+{
+  s:
+    {
+      accepted: false,
+      before:
+        {
+          exclusiveLayerAllows: true,
+          fullscreenAllows: true,
+          graphValid: true,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: true
+        },
+      captured: { child: 1, graph: 1, nested: 1, root: 1, session: 1 },
+      current: { child: 1, graph: 8, nested: 11, root: 1, session: 10 },
+      cursor: 5,
+      focus: 5,
+      follow: false,
+      forced: 0,
+      g:
+        {
+          exclusiveLayerAllows: false,
+          fullscreenAllows: false,
+          graphValid: false,
+          leafFocusAllows: true,
+          rootFocusAllows: true,
+          seatGrabAllows: true,
+          sessionUnlocked: true,
+          visible: false
+        },
+      leaf: 0,
+      monitor: 5,
+      nestedLive: false,
+      nestedVisible: false,
+      phase: 0,
+      refused: true,
+      seat: 5,
+      warps: false
+    }
+}
+
+[ok] No violation found (2429ms at 823 traces/second).
+Trace length statistics: max=101, min=101, average=101.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x84b937fd19516633 --backend=rust to reproduce.

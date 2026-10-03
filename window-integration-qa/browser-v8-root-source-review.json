@@ -1,0 +1,22 @@
+{
+  "updatedUTC": "2026-10-01T23:47:39.901883+00:00",
+  "result": "root-source-review-pass",
+  "manifestSHA256": "f78c60c16227163779b268c7d47f48258a3fbbddd46ab439ae748cf3e5cf8ac9",
+  "files": 40172,
+  "links": 13770,
+  "sourceObligations": 25,
+  "independentlyComparedUnchangedModules": [
+    "private_session.py",
+    "run_native.py",
+    "compose.html"
+  ],
+  "strictMode600Unchanged": true,
+  "rawMetadataAttachedBeforeDecision": true,
+  "preflight": {
+    "returncode": 0,
+    "stdout": "{\"preflight\": \"pass\", \"files\": 40172, \"symlinks\": 13770, \"manifestSHA256\": \"f78c60c16227163779b268c7d47f48258a3fbbddd46ab439ae748cf3e5cf8ac9\", \"nativeLaunch\": false}\n",
+    "stderr": ""
+  },
+  "nativeAccepted": false,
+  "mainWrites": false
+}

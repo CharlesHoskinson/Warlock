@@ -1,0 +1,784 @@
+{
+  "directoryModes": {
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/state": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/state/pin": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/view": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/helpers": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/algorithm": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/algorithm/tiled": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/algorithm/tiled/scrolling": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/space": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/target": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/managers": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/managers/fullscreen": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/managers/fullscreen/handler": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/managers/input": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/output": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/plugins": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/external": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-first-protocol-invalidation": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source": "0o755",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/000": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/001": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/002": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/003": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/004": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/005": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/006": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/007": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/008": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/009": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/010": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/011": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/012": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/013": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/014": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/015": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/016": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/017": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/018": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/019": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/020": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/021": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/022": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/023": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/024": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/025": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/026": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/027": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/028": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/029": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/030": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/031": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/032": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/033": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/034": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/035": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/036": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/037": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/038": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/039": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/040": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/041": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/042": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/043": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/044": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/045": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/046": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/047": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/048": "0o700",
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/049": "0o700"
+  },
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/PERMITTED_READ_CALLS.md": {
+      "mode": "0o600",
+      "sha256": "bf53c85c88d6bef7666a3a62d12157f1bf48b02391413d872e1384c0aae27516"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/ROOT_REVIEW_REQUEST.md": {
+      "mode": "0o600",
+      "sha256": "384cc6cf94ae8518273dcced13dce4d9ecc2773e7bd686793749224b6847521b"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/TYPED_SCHEMA.md": {
+      "mode": "0o600",
+      "sha256": "b1ffe9c6569b9512a882a8a810c280ca1a2fe957402e03bd130a4ee7f61167de"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/campaign_b_observer.cpp": {
+      "mode": "0o600",
+      "sha256": "f2574e0803809eb0db269157a38e853d2a90f0d56542e86bd256196ac09a4536"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/decode_observation.py": {
+      "mode": "0o600",
+      "sha256": "ba8b169a941ce252a374f6dca048be99feb372f5ac88baab0ce558466b0e6a48"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/observer-additions.diff": {
+      "mode": "0o600",
+      "sha256": "4d7df4b57ba2fdce2a7d89342feb5fce79b4b59f9019e1be2a0b8d002835db50"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origin-map.json": {
+      "mode": "0o600",
+      "sha256": "3206057969ec8e05c64d57e893c66a0ca7b269c257053f6eeff936b160777351"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/.clang-format": {
+      "mode": "0o664",
+      "sha256": "e26fb6230666b3e478be217eb85ce030b946b6247482939613025d684ee10f59"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/AGENTS.md": {
+      "mode": "0o664",
+      "sha256": "7f79966027424964b91a6cdd1f34ef9c9d5b11081618ec0ff37cec731b021252"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/Compositor.cpp": {
+      "mode": "0o664",
+      "sha256": "74833ecbf0e2b6f8ad84345ac0716a3295a0e347420a188be0ab4f6a684af7c0"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/Workspace.hpp": {
+      "mode": "0o664",
+      "sha256": "d6bcfebb3c0b5a963effe0f42e9e440943fe77a706028450ad77447b51626868"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/state/FocusState.cpp": {
+      "mode": "0o644",
+      "sha256": "91c8bba9ce5e39d9f7dfc8a0be7e5064fcfc9e7a80f8f1908373810ae90cd41a"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/state/FocusState.hpp": {
+      "mode": "0o644",
+      "sha256": "967ab39f4cf5a1ebc2fc5c60e0073f358beedb6bc61764fc660d2f14c4cc1aa5"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/state/ViewHitTester.cpp": {
+      "mode": "0o644",
+      "sha256": "c5a9dc872c0fad54fe124b5280f6fa6ad00c5bd21ff7da569a4a1eec14e4f9bb"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/state/ViewHitTester.hpp": {
+      "mode": "0o664",
+      "sha256": "cf0a1e4026365937f1df0330ffc4fd014b6a5131f7ce6295e222091c7fadaccc"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/state/ViewState.hpp": {
+      "mode": "0o664",
+      "sha256": "9a065d1a6cda8fec77a3f898c1a06f1a5efb9847804bec462a3bd75731eb6ff2"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/state/ViewStateTracker.cpp": {
+      "mode": "0o664",
+      "sha256": "9edeee93a5daf8897ac761e6a21452403c4f9878ad4de89d2c189fb7a2df10aa"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/state/ViewStateTracker.hpp": {
+      "mode": "0o664",
+      "sha256": "d3da3151e4604ec0ee062a3f8b679753451c17d33ee17fe460723ee6765bfb7f"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/state/WindowState.cpp": {
+      "mode": "0o664",
+      "sha256": "2e06622b84e9063d91e39a85c643ab5dfaa56a8574f41b2df480009be42aa477"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/state/WindowState.hpp": {
+      "mode": "0o664",
+      "sha256": "3645229ff9b49980ad962c560b20a3d339f8802c0c25c255dd6675379dfae28e"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/state/pin/NativePinState.cpp": {
+      "mode": "0o644",
+      "sha256": "4f4ba5401f9b4434af93631916dfdea9282f4206541edf6bee1840eacf6dd305"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/state/pin/NativePinState.hpp": {
+      "mode": "0o644",
+      "sha256": "553e9147e86a481cb86f14ce1982f30667faf674ab5e80477636047af5a5904a"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/view/Group.cpp": {
+      "mode": "0o664",
+      "sha256": "f34fec0891e69e0a1b67901e8d1b6b1a1ae8a47eccc92313c2b41660961cd385"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/view/Group.hpp": {
+      "mode": "0o664",
+      "sha256": "5ea8fb3549cbe800e4c8f17e896a5e8e004082027de1bf5b4e282c9081973a12"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/view/Window.cpp": {
+      "mode": "0o664",
+      "sha256": "6ee11dd9a94c2d5f592d2ccdd25f49bd37e4b1f6ac6b79da10b4f499f6b4483a"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/desktop/view/Window.hpp": {
+      "mode": "0o664",
+      "sha256": "1f60b8ff0bc6b5a48af5c03cb2cac1108db677efc70b4424b56ef6f1f2d1cc81"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/helpers/AsyncDialogBox.cpp": {
+      "mode": "0o664",
+      "sha256": "124070530ad4ebe02cb716326a54353c658ca2fbf41655257ec6de4537761fdf"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/algorithm/Algorithm.cpp": {
+      "mode": "0o664",
+      "sha256": "15ff641ccc69cda135222748686ca7f1412df3cfe83da636ecbae93a29b40497"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/algorithm/Algorithm.hpp": {
+      "mode": "0o664",
+      "sha256": "e0cebb2d679a77259e174c2d09676431800e379b6dc963babaced4aff3561438"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/algorithm/ModeAlgorithm.cpp": {
+      "mode": "0o664",
+      "sha256": "4eb96e2a9a3c1f3de064c865541a061bd8dd188e046ead0aa3c086534c9574f2"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/algorithm/ModeAlgorithm.hpp": {
+      "mode": "0o664",
+      "sha256": "490a9b2d91cd9c3aabdd1a40a4cd0e83a9e0f3ecb6b556b5a50b411c9bf7655d"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/algorithm/tiled/scrolling/ScrollTapeController.cpp": {
+      "mode": "0o664",
+      "sha256": "f7ab5b9634c127840ce8d6b700237bfb59404d340b40516478274d5564216d88"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/algorithm/tiled/scrolling/ScrollTapeController.hpp": {
+      "mode": "0o664",
+      "sha256": "8d323c113de33352578a0382a32bbecdec9bc56b58f44dffd09196af79f954c1"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/algorithm/tiled/scrolling/ScrollingAlgorithm.cpp": {
+      "mode": "0o664",
+      "sha256": "026e3a5fd618ba2e059d0fb198d85e83ff67c1c8be00c9ca7fab8f5c1684e13f"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/algorithm/tiled/scrolling/ScrollingAlgorithm.hpp": {
+      "mode": "0o664",
+      "sha256": "df87ddb6595743b86fc48e822aceeaee4f49b01490b03add203ad7d0e7b9f9fc"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.cpp": {
+      "mode": "0o644",
+      "sha256": "f42499c9a06e15030102974508314c33c76036867bd5c0c4687762eebef24e0e"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/space/Space.cpp": {
+      "mode": "0o664",
+      "sha256": "38d60002dedafda678d0a3ce89ae6448bfc4cceb0b6c7ddb716f226c46922450"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/space/Space.hpp": {
+      "mode": "0o664",
+      "sha256": "3f3cd8c34948a295cb6a5e5f8c09e39bbb604f85ce467910924e1aae0815fbe0"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/target/Target.cpp": {
+      "mode": "0o664",
+      "sha256": "4c1b0353e5c03b6411860a5e34283c90bc5d5a3f0227f97df55fca430aa6b87e"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/target/Target.hpp": {
+      "mode": "0o664",
+      "sha256": "ed91dd75b15b2f67698a443581ccee9eff5b773baa533f2983babff8b0a058e0"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/target/WindowGroupTarget.cpp": {
+      "mode": "0o644",
+      "sha256": "145ed820aab4c1b51c26155a27d3e513db0d9d102756a11face552c2a8393dc1"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/layout/target/WindowTarget.cpp": {
+      "mode": "0o644",
+      "sha256": "3659b24a2d5d7c3f2f2bddcb0dca438c7cb7adfe18c063c89588d333bfeab8dd"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/managers/fullscreen/FullscreenController.cpp": {
+      "mode": "0o644",
+      "sha256": "0f0b62fc23af257b6e458c9251ad3486d26337d3e46b58b50d506a1de702a373"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/managers/fullscreen/FullscreenController.hpp": {
+      "mode": "0o644",
+      "sha256": "f913c3fa61804273bddd7f9fd74b67e85645757dba0abec6831ddc4a3d829904"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/managers/fullscreen/handler/FullscreenHandler.cpp": {
+      "mode": "0o644",
+      "sha256": "efb7676e5006aed1b973775837ce43a6ae605ecdc73af2fd2e3394f846c9e47e"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/managers/fullscreen/handler/FullscreenHandler.hpp": {
+      "mode": "0o644",
+      "sha256": "3f4994283982294bc4c506cafbc1648314f4c7ee65439ee58c06c09b20887335"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/managers/input/InputManager.cpp": {
+      "mode": "0o644",
+      "sha256": "7de486a9f08d98fb5c8b0455043d4e527161ecb80618d92c6e8a498c593072a8"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/managers/input/InputManager.hpp": {
+      "mode": "0o664",
+      "sha256": "bb8ceaf61e274bedae10555173760055e632e0ff2ac050636e06c29dffcb188d"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/output/Monitor.hpp": {
+      "mode": "0o664",
+      "sha256": "4e9d88475f614f83015ed799d31425e35b47eb796dd91a4d8ec8f8ae88442621"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/core/src/plugins/PluginAPI.hpp": {
+      "mode": "0o664",
+      "sha256": "6a47b6bf31e781bf40297f7385ff7a18082812f252f5039961c2dae26a5ef740"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/external/Box.hpp": {
+      "mode": "0o644",
+      "sha256": "3996224213a91f7fb471e6af53ebb2dad10091c32d1d896e0d4f01b87f4cd4df"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/external/pin-max-native-campaign-b-root-design-review-v1.json": {
+      "mode": "0o600",
+      "sha256": "53caa3e4910612f7f24946442f99ed242c75aa6f834eb2b841619c31dfb5685e"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/external/pin-max-native-v2-root-completion-v1.json": {
+      "mode": "0o600",
+      "sha256": "1857d2732d4629e63344c69dc252e40345a0ede07d6827935d87d806a4ad5dfe"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/origins/external/probe.cpp": {
+      "mode": "0o644",
+      "sha256": "5918fb08acdf14a53b640fd4f2a44c680cb9cf784d8cf967ef3300e0f3c7037d"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/observer/source-only-check.json": {
+      "mode": "0o600",
+      "sha256": "bcf6af253d699a07bb5342a1af2ae67bb90b2df15acd29f7a178674cf43dee35"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/CAMPAIGN_B_CONTRACT.md": {
+      "mode": "0o644",
+      "sha256": "e8361b58fed519a779d1096f107f5011e8166e57c51a683d98e2fd3552e32b20"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/DESIGN_INPUTS.json": {
+      "mode": "0o600",
+      "sha256": "8fe86b1db6e4aa8f62b614fec121b738962e78a3745f39bae2e10949e98bfd95"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/DESIGN_READY.json": {
+      "mode": "0o600",
+      "sha256": "faa4fb598b503de8ba91a25d5e48c7b25f121361e782be49bf60f0e5b570335d"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/SOURCE_MAPPING.md": {
+      "mode": "0o644",
+      "sha256": "3805b54af196acf2915570640003ce690ca4e0cc6534ef9148b2bbbadc0e5a53"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/campaign_b.qnt": {
+      "mode": "0o644",
+      "sha256": "69c6925423ccc41f1d03103f5a0e587b93eb097ed04e5f0fb4e632ac9bc6acc5"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/cases.json": {
+      "mode": "0o644",
+      "sha256": "b356f640de469adaa52070ce5744643c8c89a0762e8485fd1e95172c484f074d"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/formal-0.log": {
+      "mode": "0o644",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/formal-1.log": {
+      "mode": "0o644",
+      "sha256": "3de12008dcc04a6af88f9334b62ba5dd92b4fec203942b915e63207367aff7c5"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/formal-2.log": {
+      "mode": "0o644",
+      "sha256": "f7c53dbaa5f5230d65e72d5410ae8cc3ac28586907869b7661177d09bb6cf0a2"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/formal-design-final.json": {
+      "mode": "0o644",
+      "sha256": "d5added406d0a2fbb56e4db2db95c94a083d368777058ede0d0f4fa46e1b1415"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/formal-design.json": {
+      "mode": "0o644",
+      "sha256": "1da8d6b8aa68443bb09fff993054a21a2ba8ad22f6460cd7c106daa8199ff3b4"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/formal-final-0.log": {
+      "mode": "0o644",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/formal-final-1.log": {
+      "mode": "0o644",
+      "sha256": "0167c90c8dc6f209aa1f51ee7046015ecc52e0ef40287f0e50f474bb3737a768"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/formal-final-2.log": {
+      "mode": "0o644",
+      "sha256": "36d61723023ddbc7a5b39898383cb701507076cad78d4a078dee1e41223a7ad7"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-first-protocol-invalidation/campaign_b.qnt": {
+      "mode": "0o644",
+      "sha256": "46a0bf780236a40c3b70e72819268c9e38de4f7e93cef88407297133b66dadc9"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-first-protocol-invalidation/formal-0.log": {
+      "mode": "0o644",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-first-protocol-invalidation/formal-1.log": {
+      "mode": "0o644",
+      "sha256": "3de12008dcc04a6af88f9334b62ba5dd92b4fec203942b915e63207367aff7c5"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-first-protocol-invalidation/formal-2.log": {
+      "mode": "0o644",
+      "sha256": "f7c53dbaa5f5230d65e72d5410ae8cc3ac28586907869b7661177d09bb6cf0a2"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-first-protocol-invalidation/formal-design.json": {
+      "mode": "0o644",
+      "sha256": "1da8d6b8aa68443bb09fff993054a21a2ba8ad22f6460cd7c106daa8199ff3b4"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/000/NativePinState.cpp": {
+      "mode": "0o644",
+      "sha256": "4f4ba5401f9b4434af93631916dfdea9282f4206541edf6bee1840eacf6dd305"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/001/NativePinState.hpp": {
+      "mode": "0o644",
+      "sha256": "553e9147e86a481cb86f14ce1982f30667faf674ab5e80477636047af5a5904a"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/002/NativePinPolicy.hpp": {
+      "mode": "0o644",
+      "sha256": "d21c8c8558cbd7b5194493428c7960de059bc0da6069b21a51b207d1a002556c"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/003/ViewHitTester.cpp": {
+      "mode": "0o644",
+      "sha256": "c5a9dc872c0fad54fe124b5280f6fa6ad00c5bd21ff7da569a4a1eec14e4f9bb"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/004/ViewHitTester.hpp": {
+      "mode": "0o664",
+      "sha256": "cf0a1e4026365937f1df0330ffc4fd014b6a5131f7ce6295e222091c7fadaccc"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/005/FocusState.cpp": {
+      "mode": "0o644",
+      "sha256": "91c8bba9ce5e39d9f7dfc8a0be7e5064fcfc9e7a80f8f1908373810ae90cd41a"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/006/FocusState.hpp": {
+      "mode": "0o644",
+      "sha256": "967ab39f4cf5a1ebc2fc5c60e0073f358beedb6bc61764fc660d2f14c4cc1aa5"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/007/GlobalWindowController.cpp": {
+      "mode": "0o664",
+      "sha256": "669cb209f2e4efb2b248bbbc00ef8cef84a4638017a30dc085c8f85fdb2d65f8"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/008/Window.cpp": {
+      "mode": "0o664",
+      "sha256": "6ee11dd9a94c2d5f592d2ccdd25f49bd37e4b1f6ac6b79da10b4f499f6b4483a"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/009/Window.hpp": {
+      "mode": "0o664",
+      "sha256": "1f60b8ff0bc6b5a48af5c03cb2cac1108db677efc70b4424b56ef6f1f2d1cc81"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/010/Renderer.cpp": {
+      "mode": "0o644",
+      "sha256": "82622c263d91f436773784d2655bd27fa30dbf7b3770e00524e38bc3e5c5b3f8"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/011/InputManager.cpp": {
+      "mode": "0o644",
+      "sha256": "7de486a9f08d98fb5c8b0455043d4e527161ecb80618d92c6e8a498c593072a8"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/012/FullscreenController.cpp": {
+      "mode": "0o644",
+      "sha256": "0f0b62fc23af257b6e458c9251ad3486d26337d3e46b58b50d506a1de702a373"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/013/FullscreenController.hpp": {
+      "mode": "0o644",
+      "sha256": "f913c3fa61804273bddd7f9fd74b67e85645757dba0abec6831ddc4a3d829904"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/014/FullscreenHandler.cpp": {
+      "mode": "0o644",
+      "sha256": "efb7676e5006aed1b973775837ce43a6ae605ecdc73af2fd2e3394f846c9e47e"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/015/WindowTarget.cpp": {
+      "mode": "0o644",
+      "sha256": "3659b24a2d5d7c3f2f2bddcb0dca438c7cb7adfe18c063c89588d333bfeab8dd"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/016/WindowGroupTarget.cpp": {
+      "mode": "0o644",
+      "sha256": "145ed820aab4c1b51c26155a27d3e513db0d9d102756a11face552c2a8393dc1"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/017/ScrollingAlgorithm.cpp": {
+      "mode": "0o664",
+      "sha256": "026e3a5fd618ba2e059d0fb198d85e83ff67c1c8be00c9ca7fab8f5c1684e13f"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/018/ScrollingAlgorithm.hpp": {
+      "mode": "0o664",
+      "sha256": "df87ddb6595743b86fc48e822aceeaee4f49b01490b03add203ad7d0e7b9f9fc"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/019/ScrollTapeController.hpp": {
+      "mode": "0o664",
+      "sha256": "8d323c113de33352578a0382a32bbecdec9bc56b58f44dffd09196af79f954c1"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/020/NativeScrollingRestore.cpp": {
+      "mode": "0o644",
+      "sha256": "95e9e6f4261443cb4388f8c679053983393f9bbafea6c7c3b7c5198e56e8c796"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/021/NativeScrollingRestore.hpp": {
+      "mode": "0o644",
+      "sha256": "bae224323c661533759e23b6c9af29a50bf2fd7bfb9cd7486e78ab50bc05313a"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/022/ScrollingFullscreenHandler.cpp": {
+      "mode": "0o644",
+      "sha256": "f42499c9a06e15030102974508314c33c76036867bd5c0c4687762eebef24e0e"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/023/ScrollingFullscreenHandler.hpp": {
+      "mode": "0o644",
+      "sha256": "d02cf12d28e10d3e70c65392f69716c1b5f3e7431c521c5b70a79b749a19c601"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/024/ConfigActions.cpp": {
+      "mode": "0o644",
+      "sha256": "76cf0ca80c693514456629c42edc22bb590337f6a85aaf4801c347f425c82f94"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/025/DispatcherTranslator.cpp": {
+      "mode": "0o664",
+      "sha256": "7248cbb89f898c783c50c89d068df9821a6b38aeb6abeb6064e92c1610fbe771"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/026/LuaBindingsDispatchers.cpp": {
+      "mode": "0o664",
+      "sha256": "a109eeb982856e0fe2ac9d88c29115a09984511787e19a20e7b4804e14a9d4de"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/027/pinBridge.cpp": {
+      "mode": "0o644",
+      "sha256": "48b311efec892ff7f61540a61112ac19b6e4799d841b023f55fafc94de73d025"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/028/PinAction.hpp": {
+      "mode": "0o644",
+      "sha256": "cd0be855963fc9f28e2cd0fea6f2f33fda40dfc99259b68602e6c8a72609c638"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/029/PinStacking.hpp": {
+      "mode": "0o644",
+      "sha256": "37144d56f4a3ee80fb4a49d82bfe3e814d4bb3cf9cd0fb6a57c36a74d4784cfa"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/030/pin_helper.py": {
+      "mode": "0o700",
+      "sha256": "8d3b2987ef309e3e78302fc7620461ae426558911668429d767aa40232d4a2a3"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/031/SOURCE_READY.json": {
+      "mode": "0o644",
+      "sha256": "0235a02ae77f5e144b93e036bf6013d0d0da0954130a184448a5ef4154b2373a"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/032/SOURCE_READY_INPUTS.json": {
+      "mode": "0o644",
+      "sha256": "82eaec349bc2bb4b9fce35eca431c607d9171f38566f4c299d882bfc160823f0"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/033/native_cases.py": {
+      "mode": "0o644",
+      "sha256": "b990755e84ccb3d3f10ee17d51ec0bcfd1b45cfb66530ff5c53a1e4bb785dfe2"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/034/case_authority.py": {
+      "mode": "0o644",
+      "sha256": "7e1acaff08e496dae5401486f08e2b55c4fcc3df4b059a30e57bd9c2b15c8023"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/035/input_episode.py": {
+      "mode": "0o600",
+      "sha256": "587ca83b1b635f77c8957cb3790bd560cafbd508fa72f4dab663433a0d23df07"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/036/candidate_host.py": {
+      "mode": "0o644",
+      "sha256": "e1a126dfe87b91914d5f14639449d9d7b097112f7a2ab509331f6aa289b69356"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/037/host_observation.py": {
+      "mode": "0o644",
+      "sha256": "8257e8a1fda86f8d376a4992954d5ee462f988c5a57cac46c9bf45f37431c505"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/038/PAIR_READY.json": {
+      "mode": "0o600",
+      "sha256": "3dd3a86abb83795ed76cf8182c05e01189e82a41c4a11e30829b09412f9cb52d"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/039/source-ready-v2.json": {
+      "mode": "0o600",
+      "sha256": "e12b65341ad8c7564831f81b3b4e15bad03621482ed6f058e615033d0d72caed"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/040/libqt-modal-probe.so": {
+      "mode": "0o755",
+      "sha256": "cb2828cd9ad93500e0e4ea26a3ec4272d6b8fcc7a0f666369c991adaa4f29762"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/041/frozen-inputs.json": {
+      "mode": "0o600",
+      "sha256": "bbcca0ea7a3501c2984156d99df54e3b5c5dfe8339b35a3a9deab79eecc95e37"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/042/fixture.cpp": {
+      "mode": "0o644",
+      "sha256": "de1cfc6634f8d57fcff2d9fc45f2034d8dd069b185b17d6f88eb015de11b9662"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/043/qt-window-modal-fixture": {
+      "mode": "0o755",
+      "sha256": "fb73af7e53e1805ba953a3050acdaeb58b3cf8e0d9588c508fe761c767dd534e"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/044/probe.cpp": {
+      "mode": "0o644",
+      "sha256": "5918fb08acdf14a53b640fd4f2a44c680cb9cf784d8cf967ef3300e0f3c7037d"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/045/pin-max-core-v3-root-source-review-v1.json": {
+      "mode": "0o644",
+      "sha256": "aa2ddb76e002daaa9a98d3d500dd9117696c0b9ea8076c3996cbe340e81eeeec"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/046/pin-max-pair-root-source-review-v1.json": {
+      "mode": "0o644",
+      "sha256": "0248bb790c24480a2d93e0e24a90b25ac120d6ef6f4b74c3baf0faa326479e5a"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/047/pin-max-promotion-root-source-review-v1.json": {
+      "mode": "0o644",
+      "sha256": "9e1e100ceabb179bae4ca105d0fafb759b6e0ac10f109d427c6faf444f0aa024"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/048/pin-max-native14-root-failure-audit-v1.json": {
+      "mode": "0o644",
+      "sha256": "6ad16b2cee985cc65d1a0e83448b45fdbbb827c7af8be5278695970314222e52"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/retained-source/049/DragController.cpp": {
+      "mode": "0o664",
+      "sha256": "02560e7a38902cd400c3fa1b229eb6ba2c9494750413116b9277f5e8a818b62c"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-max-native-campaign-b-v1-source-proposal/retained-approved-design/source-origins.json": {
+      "mode": "0o644",
+      "sha256": "d65cae5562688661c501a431f891727e784b61ab151648923241f585cef88289"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/SOURCE_READY.json": {
+      "mode": "0o644",
+      "sha256": "0235a02ae77f5e144b93e036bf6013d0d0da0954130a184448a5ef4154b2373a"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/SOURCE_READY_INPUTS.json": {
+      "mode": "0o644",
+      "sha256": "82eaec349bc2bb4b9fce35eca431c607d9171f38566f4c299d882bfc160823f0"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/.clang-format": {
+      "mode": "0o664",
+      "sha256": "e26fb6230666b3e478be217eb85ce030b946b6247482939613025d684ee10f59"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/AGENTS.md": {
+      "mode": "0o664",
+      "sha256": "7f79966027424964b91a6cdd1f34ef9c9d5b11081618ec0ff37cec731b021252"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/Compositor.cpp": {
+      "mode": "0o664",
+      "sha256": "74833ecbf0e2b6f8ad84345ac0716a3295a0e347420a188be0ab4f6a684af7c0"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/Workspace.hpp": {
+      "mode": "0o664",
+      "sha256": "d6bcfebb3c0b5a963effe0f42e9e440943fe77a706028450ad77447b51626868"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/FocusState.cpp": {
+      "mode": "0o644",
+      "sha256": "91c8bba9ce5e39d9f7dfc8a0be7e5064fcfc9e7a80f8f1908373810ae90cd41a"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/FocusState.hpp": {
+      "mode": "0o644",
+      "sha256": "967ab39f4cf5a1ebc2fc5c60e0073f358beedb6bc61764fc660d2f14c4cc1aa5"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/ViewHitTester.cpp": {
+      "mode": "0o644",
+      "sha256": "c5a9dc872c0fad54fe124b5280f6fa6ad00c5bd21ff7da569a4a1eec14e4f9bb"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/ViewHitTester.hpp": {
+      "mode": "0o664",
+      "sha256": "cf0a1e4026365937f1df0330ffc4fd014b6a5131f7ce6295e222091c7fadaccc"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/ViewState.hpp": {
+      "mode": "0o664",
+      "sha256": "9a065d1a6cda8fec77a3f898c1a06f1a5efb9847804bec462a3bd75731eb6ff2"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/ViewStateTracker.cpp": {
+      "mode": "0o664",
+      "sha256": "9edeee93a5daf8897ac761e6a21452403c4f9878ad4de89d2c189fb7a2df10aa"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/ViewStateTracker.hpp": {
+      "mode": "0o664",
+      "sha256": "d3da3151e4604ec0ee062a3f8b679753451c17d33ee17fe460723ee6765bfb7f"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/WindowState.cpp": {
+      "mode": "0o664",
+      "sha256": "2e06622b84e9063d91e39a85c643ab5dfaa56a8574f41b2df480009be42aa477"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/WindowState.hpp": {
+      "mode": "0o664",
+      "sha256": "3645229ff9b49980ad962c560b20a3d339f8802c0c25c255dd6675379dfae28e"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/pin/NativePinState.cpp": {
+      "mode": "0o644",
+      "sha256": "4f4ba5401f9b4434af93631916dfdea9282f4206541edf6bee1840eacf6dd305"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/pin/NativePinState.hpp": {
+      "mode": "0o644",
+      "sha256": "553e9147e86a481cb86f14ce1982f30667faf674ab5e80477636047af5a5904a"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Group.cpp": {
+      "mode": "0o664",
+      "sha256": "f34fec0891e69e0a1b67901e8d1b6b1a1ae8a47eccc92313c2b41660961cd385"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Group.hpp": {
+      "mode": "0o664",
+      "sha256": "5ea8fb3549cbe800e4c8f17e896a5e8e004082027de1bf5b4e282c9081973a12"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Window.cpp": {
+      "mode": "0o664",
+      "sha256": "6ee11dd9a94c2d5f592d2ccdd25f49bd37e4b1f6ac6b79da10b4f499f6b4483a"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Window.hpp": {
+      "mode": "0o664",
+      "sha256": "1f60b8ff0bc6b5a48af5c03cb2cac1108db677efc70b4424b56ef6f1f2d1cc81"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/AsyncDialogBox.cpp": {
+      "mode": "0o664",
+      "sha256": "124070530ad4ebe02cb716326a54353c658ca2fbf41655257ec6de4537761fdf"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/Algorithm.cpp": {
+      "mode": "0o664",
+      "sha256": "15ff641ccc69cda135222748686ca7f1412df3cfe83da636ecbae93a29b40497"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/Algorithm.hpp": {
+      "mode": "0o664",
+      "sha256": "e0cebb2d679a77259e174c2d09676431800e379b6dc963babaced4aff3561438"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/ModeAlgorithm.cpp": {
+      "mode": "0o664",
+      "sha256": "4eb96e2a9a3c1f3de064c865541a061bd8dd188e046ead0aa3c086534c9574f2"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/ModeAlgorithm.hpp": {
+      "mode": "0o664",
+      "sha256": "490a9b2d91cd9c3aabdd1a40a4cd0e83a9e0f3ecb6b556b5a50b411c9bf7655d"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/tiled/scrolling/ScrollTapeController.cpp": {
+      "mode": "0o664",
+      "sha256": "f7ab5b9634c127840ce8d6b700237bfb59404d340b40516478274d5564216d88"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/tiled/scrolling/ScrollTapeController.hpp": {
+      "mode": "0o664",
+      "sha256": "8d323c113de33352578a0382a32bbecdec9bc56b58f44dffd09196af79f954c1"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/tiled/scrolling/ScrollingAlgorithm.cpp": {
+      "mode": "0o664",
+      "sha256": "026e3a5fd618ba2e059d0fb198d85e83ff67c1c8be00c9ca7fab8f5c1684e13f"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/tiled/scrolling/ScrollingAlgorithm.hpp": {
+      "mode": "0o664",
+      "sha256": "df87ddb6595743b86fc48e822aceeaee4f49b01490b03add203ad7d0e7b9f9fc"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.cpp": {
+      "mode": "0o644",
+      "sha256": "f42499c9a06e15030102974508314c33c76036867bd5c0c4687762eebef24e0e"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/space/Space.cpp": {
+      "mode": "0o664",
+      "sha256": "38d60002dedafda678d0a3ce89ae6448bfc4cceb0b6c7ddb716f226c46922450"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/space/Space.hpp": {
+      "mode": "0o664",
+      "sha256": "3f3cd8c34948a295cb6a5e5f8c09e39bbb604f85ce467910924e1aae0815fbe0"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/target/Target.cpp": {
+      "mode": "0o664",
+      "sha256": "4c1b0353e5c03b6411860a5e34283c90bc5d5a3f0227f97df55fca430aa6b87e"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/target/Target.hpp": {
+      "mode": "0o664",
+      "sha256": "ed91dd75b15b2f67698a443581ccee9eff5b773baa533f2983babff8b0a058e0"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/target/WindowGroupTarget.cpp": {
+      "mode": "0o644",
+      "sha256": "145ed820aab4c1b51c26155a27d3e513db0d9d102756a11face552c2a8393dc1"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/target/WindowTarget.cpp": {
+      "mode": "0o644",
+      "sha256": "3659b24a2d5d7c3f2f2bddcb0dca438c7cb7adfe18c063c89588d333bfeab8dd"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/fullscreen/FullscreenController.cpp": {
+      "mode": "0o644",
+      "sha256": "0f0b62fc23af257b6e458c9251ad3486d26337d3e46b58b50d506a1de702a373"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/fullscreen/FullscreenController.hpp": {
+      "mode": "0o644",
+      "sha256": "f913c3fa61804273bddd7f9fd74b67e85645757dba0abec6831ddc4a3d829904"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/fullscreen/handler/FullscreenHandler.cpp": {
+      "mode": "0o644",
+      "sha256": "efb7676e5006aed1b973775837ce43a6ae605ecdc73af2fd2e3394f846c9e47e"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/fullscreen/handler/FullscreenHandler.hpp": {
+      "mode": "0o644",
+      "sha256": "3f4994283982294bc4c506cafbc1648314f4c7ee65439ee58c06c09b20887335"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.cpp": {
+      "mode": "0o644",
+      "sha256": "7de486a9f08d98fb5c8b0455043d4e527161ecb80618d92c6e8a498c593072a8"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.hpp": {
+      "mode": "0o664",
+      "sha256": "bb8ceaf61e274bedae10555173760055e632e0ff2ac050636e06c29dffcb188d"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/output/Monitor.hpp": {
+      "mode": "0o664",
+      "sha256": "4e9d88475f614f83015ed799d31425e35b47eb796dd91a4d8ec8f8ae88442621"
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/plugins/PluginAPI.hpp": {
+      "mode": "0o664",
+      "sha256": "6a47b6bf31e781bf40297f7385ff7a18082812f252f5039961c2dae26a5ef740"
+    },
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v20/native-keyboard-probe/probe.cpp": {
+      "mode": "0o644",
+      "sha256": "5918fb08acdf14a53b640fd4f2a44c680cb9cf784d8cf967ef3300e0f3c7037d"
+    },
+    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-root-design-review-v1.json": {
+      "mode": "0o600",
+      "sha256": "53caa3e4910612f7f24946442f99ed242c75aa6f834eb2b841619c31dfb5685e"
+    },
+    "/home/hoskinson/window-integration-qa/pin-max-native-v2-root-completion-v1.json": {
+      "mode": "0o600",
+      "sha256": "1857d2732d4629e63344c69dc252e40345a0ede07d6827935d87d806a4ad5dfe"
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/readonly-probe/libqt-modal-probe.so": {
+      "mode": "0o755",
+      "sha256": "cb2828cd9ad93500e0e4ea26a3ec4272d6b8fcc7a0f666369c991adaa4f29762"
+    },
+    "/usr/include/hyprutils/math/Box.hpp": {
+      "mode": "0o644",
+      "sha256": "3996224213a91f7fb471e6af53ebb2dad10091c32d1d896e0d4f01b87f4cd4df"
+    }
+  },
+  "links": {},
+  "schema": 1,
+  "scope": "exact observer source review only, no full native freezer or build authority"
+}

@@ -1,0 +1,2 @@
+Fresh private selector-only derivative of private-weston-aq-host-v4.
+Only the exact library/host source selector changes. Inverse replacement reconstructs the entire inherited host source. All session/config/argv/env/15s launch, mandatory Wayland, authenticated X11, IPC/fullEOF, captured process, private ownership and normal shutdown authority remain unchanged. Root alone reviews/freezes/launches.

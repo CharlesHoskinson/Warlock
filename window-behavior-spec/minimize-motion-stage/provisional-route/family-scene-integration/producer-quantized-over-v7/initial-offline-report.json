@@ -1,0 +1,245 @@
+{
+  "nativeLaunch": false,
+  "GPUOperation": false,
+  "commands": [
+    {
+      "label": "build",
+      "command": [
+        "make",
+        "-j2",
+        "hypr-motion-renderer-staged",
+        "test-quantized-over",
+        "test-manual-sampling",
+        "test-family-scene",
+        "test-commit-ledger",
+        "test-backend-policy",
+        "test-library-material",
+        "test-readback-image",
+        "test-causal-image"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-build.log",
+      "logSHA256": "b2539205a2cbdd28debebb267fd43c2357584b07636b175e13f4e137fe81c9b6"
+    },
+    {
+      "label": "quantized-consumer",
+      "command": [
+        "./test-quantized-over"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-quantized-consumer.log",
+      "logSHA256": "5c4e37dd3a91946beee6309822c7974327fca30476e63aaa1aa933fbca081c8a"
+    },
+    {
+      "label": "manual-consumer",
+      "command": [
+        "./test-manual-sampling"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-manual-consumer.log",
+      "logSHA256": "96eff2e0e023e4178938492f008f034cbafb53739f1ac6ee0edb7321f756353e"
+    },
+    {
+      "label": "family-consumer",
+      "command": [
+        "./test-family-scene"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-family-consumer.log",
+      "logSHA256": "e986720fa65cd709ffb1bebf9b5f388cefa0020a5181d4ccfbc99e7c7c6a589f"
+    },
+    {
+      "label": "commit-ledger",
+      "command": [
+        "./test-commit-ledger"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-commit-ledger.log",
+      "logSHA256": "b523a9d46b00238960bf4b3b8fc66ef2f20a89c4ca6ada4082c51d4d72518872"
+    },
+    {
+      "label": "backend",
+      "command": [
+        "./test-backend-policy"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-backend.log",
+      "logSHA256": "02b1002f19a52ba7db9de2014fad973f71cc796747244ca3a7700e1a01cac3ea"
+    },
+    {
+      "label": "material",
+      "command": [
+        "./test-library-material"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-material.log",
+      "logSHA256": "41868c4c3951cfe8167fbebf99777d93846138901598c1a6f082ba36910c4491"
+    },
+    {
+      "label": "readback",
+      "command": [
+        "./test-readback-image"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-readback.log",
+      "logSHA256": "cd7ce0f38c73d4563a95c0e0bb2779a2aa738b7068789d6ace3b47d733fc946d"
+    },
+    {
+      "label": "causal",
+      "command": [
+        "./test-causal-image"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-causal.log",
+      "logSHA256": "61422d8557aae61a6b367f34548c3a115a36153d19b19c8b041f7d01f3f47a0b"
+    },
+    {
+      "label": "binding",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_verify_sampling",
+        "test_verify_causal",
+        "test_quantized_gate"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-binding.log",
+      "logSHA256": "1d279519f4f0cc69d18cf8d7191d662e6e3bcedf1122af91217b8646d12d607e"
+    },
+    {
+      "label": "quantized-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "quantized_over_test.qnt"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-quantized-typecheck.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "quantized-named",
+      "command": [
+        "quint",
+        "test",
+        "quantized_over_test.qnt"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-quantized-named.log",
+      "logSHA256": "d78f507f328787daf127fe47e81436d764fa78e47f38550571d12190205f4ed9"
+    },
+    {
+      "label": "quantized-model",
+      "command": [
+        "quint",
+        "run",
+        "quantized_over.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-quantized-model.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "causal-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "causal_binding_test.qnt"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-causal-typecheck.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "causal-named",
+      "command": [
+        "quint",
+        "test",
+        "causal_binding_test.qnt"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-causal-named.log",
+      "logSHA256": "373399f17e8434bcd1656de62079e71dffeabd1d389d90227bdba6a6afff0566"
+    },
+    {
+      "label": "causal-model",
+      "command": [
+        "quint",
+        "run",
+        "causal_binding.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-causal-model.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "manual_sampling_test.qnt"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-typecheck.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "named",
+      "command": [
+        "quint",
+        "test",
+        "manual_sampling_test.qnt"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-named.log",
+      "logSHA256": "6d41da0e421b4373af675d00e05a196974d975ea2c59a2848f2c9118c641fe91"
+    },
+    {
+      "label": "model",
+      "command": [
+        "quint",
+        "run",
+        "manual_sampling.qnt",
+        "--invariant",
+        "allProps",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "40",
+        "--seed",
+        "2026100114",
+        "--verbosity",
+        "0"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/offline-model.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "quantizedConsumerChecks": 51,
+  "manualConsumerChecks": 52,
+  "familyConsumerChecks": 73,
+  "ledgerChecks": 80,
+  "backendChecks": 20,
+  "materialChecks": 34,
+  "readbackChecks": 10,
+  "causalChecks": 15,
+  "PythonBindingTests": 43,
+  "quantizedConfigurationTests": 18,
+  "newSamplerBindingTests": 11,
+  "namedSamplingScenarios": 8,
+  "namedQuantizedScenarios": 8,
+  "namedCausalScenarios": 7,
+  "samplingModelSamples": 2000,
+  "scope": "offline guards/math only; no native pixel or cadence acceptance"
+}

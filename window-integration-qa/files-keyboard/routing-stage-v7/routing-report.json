@@ -1,0 +1,66 @@
+{
+  "scope": "Actual copied Qt330x320 input/selection/prompt payload and raw attached callback authority; offscreen/private D-Bus, no new reader/native claim",
+  "checks": [
+    {
+      "name": "actual routing fixture completed normally",
+      "passed": true
+    },
+    {
+      "name": "list Down 1 focus selection path agrees",
+      "passed": true
+    },
+    {
+      "name": "list Down 2 focus selection path agrees",
+      "passed": true
+    },
+    {
+      "name": "list F2 captures selected path",
+      "passed": true
+    },
+    {
+      "name": "list Shift Down preserves range",
+      "passed": true
+    },
+    {
+      "name": "grid Down 1 focus selection path agrees",
+      "passed": true
+    },
+    {
+      "name": "grid Down 2 focus selection path agrees",
+      "passed": true
+    },
+    {
+      "name": "grid F2 captures selected path",
+      "passed": true
+    },
+    {
+      "name": "grid Shift Down preserves range",
+      "passed": true
+    },
+    {
+      "name": "toggle fixture completed normally",
+      "passed": true
+    },
+    {
+      "name": "raw current peer visible toggle",
+      "passed": true
+    },
+    {
+      "name": "raw current peer hidden toggle",
+      "passed": true
+    },
+    {
+      "name": "raw current peer disabled toggle",
+      "passed": true
+    },
+    {
+      "name": "raw current peer modalBackground toggle",
+      "passed": true
+    }
+  ],
+  "result": "pass",
+  "baselineSelectionTraceSHA256": "772182baac6bbb47106867b7af83897f2f810d17328dc81957907b6005281d15",
+  "actualSelectionTraceSHA256": "b7cc4d7702ea65e92ccc17f8a5e93d7616e44df3f8f7c56566e4e8ca5689f80a",
+  "baselineToggleSHA256": "e6b17abfcc605955e1c9367a93b358707920111add874cb33e81e5fb2a0d8f17",
+  "actualToggleSHA256": "7329a2cb6101ea8ce26e21f39b96baf89a20b953b8c3d94ee46c4e0613c50276"
+}

@@ -1,0 +1,29 @@
+{
+  "commands": [
+    {
+      "command": [
+        "c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/window-integration-qa/velocity-primitive-review-v11/probe.cpp",
+        "-o",
+        "/home/hoskinson/window-integration-qa/velocity-primitive-review-v11/probe"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-integration-qa/velocity-primitive-review-v11/probe"
+      ],
+      "returncode": 0,
+      "stdout": "positiveTangent duration=4 width=592992592.5925926 widthVelocity=0 reversedRefused=1\nshortDuration duration=3.375e-09 width=200000.078125 widthVelocity=177777583333333.34 reversedRefused=1\n",
+      "stderr": ""
+    }
+  ],
+  "nativeExecuted": false,
+  "rootPrimitiveChanged": false
+}

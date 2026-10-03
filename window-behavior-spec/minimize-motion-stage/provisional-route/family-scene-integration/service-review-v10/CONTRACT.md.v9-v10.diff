@@ -1,0 +1,32 @@
+--- service-review-v9/CONTRACT.md
++++ service-review-v10/CONTRACT.md
+@@ -278,3 +278,29 @@
+ even while the previous provisional request still waits for context. A successful
+ activation starts metadata work on the already reserved scene, preserving its
+ token and source provenance. Fresh native replacement/recovery remains separate.
++
++## Explicit native runtime composition (V10)
++
++Only an explicit daemon invocation may construct the native factory. It requires
++selected compositor signature, PID/start and Wayland display matching the current
++process environment, both compositor IPC and Wayland sockets owned by this UID,
++and connected peers with that exact compositor PID/start. No lookup selects
++another session or falls back to a physical compositor. Startup strips all
++request-scoped HYPR_WINDOWCTL_* flags. Each core native operation restores only
++the explicit per-member family-single/preview-ready flags and exact captured ID/PID.
++
++Executable source material must match the explicitly expected SHA256 on an open
++file descriptor with stable stat before use. Those exact bytes are copied into
++an executable sealed memfd (WRITE/GROW/SHRINK/SEAL), so both path replacement and
++in-place edits after proof cannot change execution. Producer launch executes that
++sealed FD. Core commit likewise hashes, seals and executes the exact core FD with its explicit
++ID/PID arguments. Every actor owns an independent desktop/capture root and one
++renderer transport. The failure sink is bound only after controller construction;
++an early transport failure is retained and delivered once after binding instead
++of being lost or addressing a previous actor.
++
++The API client never starts a daemon or retries an uncertain accepted request
++through a native fallback. It verifies the runtime owner, session, socket inode,
++SO_PEERCRED PID/start before sending. No response is truthful failure with unknown
++acceptance; completion remains separate from accepted receipt. Native recovery
++and automatic production frontend replacement are not included in this stage.

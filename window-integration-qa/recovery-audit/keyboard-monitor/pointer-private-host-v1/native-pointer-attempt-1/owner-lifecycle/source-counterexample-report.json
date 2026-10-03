@@ -1,0 +1,21 @@
+{
+  "kind": "actual extracted source scheduler counterexample; NOT native causal classification",
+  "sourcePluginSHA256": "877ad95b0766322c1a2efd1294d78d9845afb93b17a53a8ed413289378ab747d",
+  "sourcePointerHeaderSHA256": "ad50b39d8027bbb7591bda68f84abfb17a71950cc3809a016d778e9df88eaaf1",
+  "actualFunctions": [
+    "registered",
+    "send",
+    "reconcilePointerOwners",
+    "observeMotion"
+  ],
+  "unchangedFunctionExtractSHA256": "a5ff7d4d44d24113e38aaf76b8ca4db9f00662edfa7dd6735331a016ce0f8f52",
+  "counterexample": "Externally released owner with not-yet-dispatched owner event: actual observeMotion queues directed signal using cached epoch",
+  "reconciledOwnerClearsPending": true,
+  "sourceReplayPassed": true,
+  "nativeCausalClassification": false,
+  "productionChanged": false,
+  "references": [
+    "https://dbus.freedesktop.org/doc/api/html/group__DBusConnection.html",
+    "https://docs.gtk.org/gio/method.DBusConnection.signal_subscribe.html"
+  ]
+}

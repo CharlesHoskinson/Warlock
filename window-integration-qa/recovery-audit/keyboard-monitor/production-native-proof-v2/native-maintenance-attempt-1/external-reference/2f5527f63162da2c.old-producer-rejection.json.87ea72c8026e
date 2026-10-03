@@ -1,0 +1,22 @@
+{
+  "sourceReportSHA256": "300d5f93dcd3bd9efd303914155badb69ef570bd2b432c9434e20ae85051556d",
+  "checks": [
+    {
+      "binary": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v2/native-fixture/native-input",
+      "sha256": "0da1f97985ff94579b7a52a9a344d0f72ce801147fc61ab9cf1a9e84145d4e48",
+      "exactRetainedRuntime": "/run/user/1000/wqa/ca41",
+      "returncode": 20,
+      "stderr": "",
+      "earlyGuardPreventsConnect": true
+    },
+    {
+      "binary": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v2/native-fixture/native-pointer",
+      "sha256": "3ef8faf1202a75515facfc7243f85d6cdf752552a4554a60dc3ca10f566b4126",
+      "exactRetainedRuntime": "/run/user/1000/wqa/ca41",
+      "returncode": 2,
+      "stderr": "",
+      "earlyGuardPreventsConnect": true
+    }
+  ],
+  "nativeGUIStarted": false
+}

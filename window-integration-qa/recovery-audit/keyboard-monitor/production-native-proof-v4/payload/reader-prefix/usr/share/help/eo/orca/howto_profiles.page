@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_profiles" xml:lang="eo">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_documents"/>
+    <title type="sort">9. Profiloj</title>
+    <desc>Konservi plurajn konfiguraciojn</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Profiloj</title>
+  <p>La profiloj de Orko permesas al vi konservi kaj ŝargi plurajn konfiguraciojn tiel ke vi povas rapide aliri la agordojn kiujn vi bezonas.</p>
+  <steps>
+    <title>Konservi Novan Profilon</title>
+    <item>
+      <p>Iru al la dialogkesto <link xref="preferences">Agordoj de Orko</link>.</p>
+    </item>
+    <item>
+      <p>Ŝanĝu kiujn ajn agordojn vi deziras.</p>
+    </item>
+    <item>
+      <p>Sur la paĝo <gui>Ĝeneralaj</gui>, premu la butonon <gui>Konservi Kiel</gui>.</p>
+    </item>
+    <item>
+      <p>Tajpu la novan profilnomon en la rezulta dialogkesto <gui>Konservi Profilon Kiel</gui>.</p>
+    </item>
+    <item>
+      <p>Premu la butonon <gui>Bone</gui> en la dialogkesto <gui>Konservi Profilon Kiel</gui>.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Ŝargi Ekzistantan Profilon</title>
+    <item>
+      <p>Iru al la dialogkesto <link xref="preferences">Agordoj de Orko</link>.</p>
+    </item>
+    <item>
+      <p>Sur la paĝo <gui>Ĝeneralaj</gui>, elektu la profilon por ŝargi el la kombinujo <gui>Aktiva Profilo</gui>.</p>
+    </item>
+    <item>
+      <p>Premu la butonon <gui>Ŝargi</gui>.</p>
+    </item>
+    <item>
+      <p>Vi estos petita konfirmi. Premu la butonon <gui>Jes</gui>.</p>
+    </item>
+    <item>
+      <p>Premu la butonon <gui>Bone</gui>.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Ŝanĝi Ekzistantan Profilon</title>
+    <item>
+      <p>Sekvu la paŝojn priskribitajn supre por ŝargi la profilon kiun vi deziras ŝanĝi.</p>
+    </item>
+    <item>
+      <p>Sekvu la paŝojn priskribitajn supre por konservi novan profilon.</p>
+    </item>
+    <item>
+      <p>Kiam petite por la nova profilnomo, tajpu la saman nomon kiel la aktuala profilo. Kiam vi premas la butonon <gui>Bone</gui>, vi estos informita ke estas noma konflikto.</p>
+    </item>
+    <item>
+      <p>Premu la butonon <gui>Jes</gui> por konfirmi ke vi deziras anstataŭskribi la ekzistantan profilon per la novaj agordoj.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Ŝanĝi la <gui>Ekfunkcian Profilon</gui></title>
+    <item>
+      <p>Iru al la dialogkesto <link xref="preferences">Agordoj de Orko</link>.</p>
+    </item>
+    <item>
+      <p>Sur la paĝo <gui>Ĝeneralaj</gui>, elektu la profilon por ŝargi el la kombinujo <gui>Ekfunkcia Profilo</gui>.</p>
+    </item>
+    <item>
+      <p>Premu la butonon <gui>Bone</gui>. La venontan fojon kiam vi lanĉas <app>Orko</app>, la nove elektita profilo estos uzata.</p>
+    </item>
+  </steps>
+</page>

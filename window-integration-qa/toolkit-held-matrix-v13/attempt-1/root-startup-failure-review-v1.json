@@ -1,0 +1,28 @@
+{
+  "updatedUTC": "2026-10-02T05:06:39.987124+00:00",
+  "result": "retained-failure",
+  "checks": {
+    "original52NotAccepted": true,
+    "original15sBudgetNotReset": true,
+    "all137ActualRepliesEmpty": true,
+    "all137FullEOFAndExactActualPeer": true,
+    "startupExpiredNotRetried": true,
+    "recordedProcessesGone": true,
+    "ownedRuntimeGone": true,
+    "noCleanupErrorsOrUnexpectedDescendants": true,
+    "frozenSourceExact": true,
+    "allMainPreservationAccepted": false
+  },
+  "nativeFeatureCount": 0,
+  "strictTerminalAuditResult": "fail",
+  "mainChangedChecks": [
+    "originalCursor",
+    "originalLayers",
+    "typedClipboardAndPrimary"
+  ],
+  "mainChangeCause": "Unclassified; no restoration or main configuration writes authorized or performed. Original preservation failures retained.",
+  "next": "Diagnose missing actual parent output configuration; waiting longer is not a repair.",
+  "nativeCommandsIssuedByReview": false,
+  "fullWindowsParityAccepted": false,
+  "reportSHA256": "92d2c87530fc15a2bf79cdcbef5ca28956d3160c783d6101a238887841917f64"
+}

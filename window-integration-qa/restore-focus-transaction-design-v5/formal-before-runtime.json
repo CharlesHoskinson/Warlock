@@ -1,0 +1,80 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-67e0e373aa2848ca83cf069820acc1eb.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "focus_transaction_test.qnt"
+      ],
+      "exitCode": 0,
+      "seconds": 4.224409269023454,
+      "log": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/formal-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "focus_transaction_test.qnt",
+        "--backend=rust",
+        "--seed=2026100228"
+      ],
+      "exitCode": 0,
+      "seconds": 3.9252587559749372,
+      "log": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/formal-1.log",
+      "sha256": "ad7a882ec934131e35211101fc9a7c60fc0cf232fbb292eb6ede828816e79971",
+      "mode": 384
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "focus_transaction.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100228",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "seconds": 7.282660326978657,
+      "log": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/formal-2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    }
+  ],
+  "named": 45,
+  "samples": 2000,
+  "steps": 100,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/owning-source-correspondence.json": {
+      "sha256": "b2af04ac705ee3809f1f67b6a0a4ca5897f70a819ea9b6e12f29b68c3de31df3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/CONTRACT.md": {
+      "sha256": "c86dcdb298bbac92b6d613ba34f9a9e3d07adb0fe45db2635b1de117f587d37b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/focus_transaction.qnt": {
+      "sha256": "fb9420f5badea62d8c1b1e7edbf1fbb68bfcc50a39a5e14cbc1747617364bacf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/focus_transaction_test.qnt": {
+      "sha256": "5d8643e26efe5a6e35d1662f1254e0b773d9da181a31d43d5f99e47142aa90bd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/formal_driver.py": {
+      "sha256": "0675d0dd97247713bb779d974b117f94fc136df361e5f6d4a3212d0b76ad41af",
+      "mode": 420
+    }
+  },
+  "sourceUnchanged": true,
+  "runtimeApplied": false
+}

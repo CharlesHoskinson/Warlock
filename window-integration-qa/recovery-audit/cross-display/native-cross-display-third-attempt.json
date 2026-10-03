@@ -1,0 +1,143 @@
+{
+  "checks": [],
+  "kind": "native physical plus temporary headless output; no physical hotplug claim",
+  "before": {
+    "monitors": [
+      {
+        "id": 0,
+        "name": "eDP-2",
+        "description": "Samsung Display Corp. ATNA60HU01-0",
+        "make": "Samsung Display Corp.",
+        "model": "ATNA60HU01-0 ",
+        "serial": "",
+        "width": 2560,
+        "height": 1600,
+        "physicalWidth": 340,
+        "physicalHeight": 220,
+        "refreshRate": 240.0,
+        "x": 0,
+        "y": 0,
+        "activeWorkspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "specialWorkspace": {
+          "id": 0,
+          "name": ""
+        },
+        "reserved": [
+          0,
+          26,
+          0,
+          0
+        ],
+        "scale": 1.6,
+        "transform": 0,
+        "focused": true,
+        "dpmsStatus": true,
+        "vrr": false,
+        "solitary": "0",
+        "solitaryBlockedBy": [
+          "WINDOWED",
+          "CANDIDATE"
+        ],
+        "activelyTearing": false,
+        "tearingBlockedBy": [
+          "NOT_TORN",
+          "USER",
+          "CANDIDATE"
+        ],
+        "directScanoutTo": "0",
+        "directScanoutBlockedBy": [
+          "USER",
+          "SW",
+          "CANDIDATE"
+        ],
+        "disabled": false,
+        "currentFormat": "XRGB8888",
+        "mirrorOf": "none",
+        "availableModes": [
+          "2560x1600@240.00Hz",
+          "2560x1600@60.00Hz"
+        ],
+        "colorManagementPreset": "srgb",
+        "sdrBrightness": 1,
+        "sdrSaturation": 1,
+        "sdrMinLuminance": 0.2,
+        "sdrMaxLuminance": 80,
+        "hardwareCursorsInUse": false
+      }
+    ],
+    "clients": [
+      [
+        "0x5a02aee429f0",
+        4007,
+        "18000005"
+      ],
+      [
+        "0x5a02b0cc9280",
+        4311,
+        "18000006"
+      ],
+      [
+        "0x5a02afd20bd0",
+        361074,
+        "18000076"
+      ],
+      [
+        "0x5a02afa13e90",
+        252010,
+        "1800006a"
+      ]
+    ],
+    "focus": [
+      "0x5a02afa13e90",
+      252010,
+      "1800006a"
+    ],
+    "cursor": {
+      "x": 527,
+      "y": 539
+    },
+    "a11y": {
+      "exists": true,
+      "dev": 84,
+      "inode": 91312,
+      "connects": true
+    },
+    "catalogHashes": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    }
+  },
+  "result": "fail",
+  "error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/cross-display/native_cross_display.py\", line 145, in perform\n    self.start();self.drop(self.target,'target')\n                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/cross-display/native_cross_display.py\", line 108, in drop\n    evidence.update(cursor=data('cursorpos'),statesUnderPointer=self.states(),windowUnderPointer=self.current(address),nativeDrag=ctl('eval','return hl.plugin.file_drag_active()'))\n                                                                ~~~~~~~~~~~^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/cross-display/native_cross_display.py\", line 55, in states\n    def states(self):return ipc('stateAll')\n                            ~~~^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/cross-display/native_cross_display.py\", line 23, in ipc\n    try:return json.loads(response)\n               ~~~~~~~~~~^^^^^^^^^^\n  File \"/usr/lib/python3.14/json/__init__.py\", line 352, in loads\n    return _default_decoder.decode(s)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"/usr/lib/python3.14/json/decoder.py\", line 345, in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/json/decoder.py\", line 363, in raw_decode\n    raise JSONDecodeError(\"Expecting value\", s, err.value) from None\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n",
+  "events": {
+    "source": [
+      {
+        "event": "begin",
+        "time": 52558.589466711
+      }
+    ],
+    "target": [],
+    "peer": []
+  },
+  "restoration": {
+    "clientIdentities": true,
+    "clientWorkspaceAndPinned": true,
+    "outputs": true,
+    "catalogBytes": true,
+    "focus": true,
+    "cursor": true,
+    "a11y": true,
+    "dragCleared": true,
+    "configErrors": true,
+    "fixtureProcessesExited": true,
+    "clientGeometry": true
+  },
+  "gtkErrors": "",
+  "diagnosticEmptyRetries": []
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_mouse_review" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#reviewing"/>
+    <link type="next" xref="howto_notifications"/>
+    <title type="sort">4. Prehliadanie myši</title>
+    <desc>Použitie ukazovateľa na preskúmanie obrazovky</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Prehliadanie myši</title>
+  <p>Funkcia Prehliadanie myši v <app>Orca</app> spôsobí, že <app>Orca</app> zobrazí objekt pod ukazovateľom myši. Na rozdiel od funkcie <link xref="howto_flat_review">Ploché prehliadanie</link> v <app>Orca</app> nie je prehliadanie myši obmedzené na aktívne okno; namiesto toho sa <app>Orca</app> pri pohybe myši pokúsi identifikovať, aký prístupný objekt sa vizuálne nachádza pod ukazovateľom. Ak ste presunuli ukazovateľ na prístupný objekt s informáciami na zobrazenie, <app>Orca</app> vám tento objekt a jeho informácie zobrazí.</p>
+  <p>Keďže zapnutie prehliadania myši spôsobí, že <app>Orca</app> bude počúvať a následne spracúvať všetky zmeny pozície ukazovateľa myši, je táto funkcia predvolene vypnutá. Ak ju chcete mať vždy zapnutú, začiarknite políčko <gui>Hovoriť objekt pod kurzorom</gui> na <link xref="preferences_general">stránke Všeobecné v dialógovom okne predvolieb <app>Orca</app></link>. Okrem toho nájdete nepriradený príkaz s názvom <gui>Prepnúť režim prehliadania myši</gui> na <link xref="preferences_key_bindings">stránke Klávesové skratky</link> toho istého dialógového okna. Priradením tohto príkazu, ako je opísané v časti <link xref="howto_key_bindings">Úvod do klávesových skratiek</link>, môžete prehliadanie myši podľa potreby zapínať a vypínať.</p>
+  <note style="tip">
+    <title>Predvolené nastavenia a klávesové skratky sú navzájom nezávislé</title>
+    <p>Všimnite si, že môžete zvoliť, či bude prehliadanie myši vždy zapnuté alebo nie, a stále ho môžete zapínať a vypínať priradením a použitím príkazu <gui>Prepnúť režim prehliadania myši</gui>. Nie je potrebné ho zapínať, aby ste ho mohli prepínať, pretože nastavenia a klávesové skratky sú navzájom nezávislé.</p>
+  </note>
+</page>

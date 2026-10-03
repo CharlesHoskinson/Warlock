@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_notifications" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#reviewing"/>
+    <title type="sort">5. Oznámenia</title>
+    <desc>Čítanie predtým prijatých správ</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Oznámenia</title>
+  <p>Pracovná plocha GNOME obsahuje „oblasť oznámení“, ktorú môžu aplikácie použiť na zobrazovanie informácií používateľovi. Príklady oznámení zahŕňajú prichádzajúce chatové správy, podrobnosti spojené so skladbou, ktorú váš multimediálny prehrávač začína prehrávať, a upozornenia, že sa vybíja batéria.</p>
+  <p>Keďže oznámenia majú za úlohu zobrazovať informácie používateľom bez prerušenia toho, čo používateľ robí, tieto správy sa zvyčajne objavujú a miznú pomerne rýchlo. Nie sú tiež zaostrovateľné. Hoci vám <app>Orca</app> tieto správy zobrazí, ako prídu, je veľmi ľahké oznámenie <app>Orca</app> omylom prerušiť pokračovaním v písaní alebo zmenou fokusu. Z tohto dôvodu má <app>Orca</app> tri príkazy, ktoré môžete použiť na prístup k predtým zobrazeným správam oznámení:</p>
+  <list>
+    <item>
+      <p>Zobraziť poslednú (najnovšiu) správu oznámenia</p>
+    </item>
+    <item>
+      <p>Zobraziť predchádzajúcu správu oznámenia</p>
+    </item>
+    <item>
+      <p>Zobraziť zoznam všetkých správ oznámení</p>
+    </item>
+  </list>
+  <p>Prvé dva príkazy sú určené hlavne na rýchly prístup k správe, ktorú ste práve dostali. Posledný príkaz je najvýkonnejší, keďže ukladá vašu históriu správ oznámení.</p>
+  <p>Keď vstúpite do zoznamu správ oznámení, zobrazí sa vám jeho veľkosť a nasledujúce možnosti:</p>
+  <list>
+    <item><p>Stlačte H pre pomoc.</p></item>
+    <item><p>Na navigáciu v zozname použite Hore, Dole, Home alebo End.</p></item>
+    <item><p>Stlačte Escape na ukončenie.</p></item>
+    <item><p>Stlačením Medzerníka zopakujte poslednú prečítanú správu.</p></item>
+    <item><p>Stlačte jednu číslicu na prečítanie konkrétnej správy.</p></item>
+  </list>
+  <p>Upozorňujeme, že najnovšie prijatá správa je na začiatku zoznamu.</p>
+  <p>Každý z príkazov <app>Orca</app> na kontrolu upozornení je predvolene nepriradený. Môžeš si ich priradiť ku ktorýmkoľvek klávesovým skratkám podľa vlastného výberu. Postup, ako to urobiť, je opísaný v časti <link xref="howto_key_bindings">Úvod do klávesových skratiek</link>.</p>
+</page>

@@ -1,0 +1,389 @@
+{
+  "result": "pass bounded causal replay",
+  "wholeCampaign": "FAIL",
+  "cases": {
+    "move-escape": "PASS",
+    "move-reload": "FAIL at arm before reload command"
+  },
+  "counts": {
+    "started": 17,
+    "terminal": 17,
+    "nonzero": 1,
+    "refusals": 0
+  },
+  "failedQuery": {
+    "start": {
+      "actual": "/run/user/1000/wqa/3f98/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 3453661,
+          "pgid": 3453661,
+          "pid": 3455137,
+          "start": "14245975"
+        },
+        {
+          "parent": 3452292,
+          "pgid": 3453661,
+          "pid": 3453661,
+          "start": "14245375"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 3455195,
+        "pgid": 3453661,
+        "pid": 3455266,
+        "start": "14246009"
+      },
+      "diagnosticLog": "/run/user/1000/wqa/3f98/taskbar-home/delegate-diagnostics/3455195-14245997.jsonl",
+      "evaluationEnvironment": null,
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 3453165,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          400017,
+          1000
+        ]
+      },
+      "operation": "list-json:3455195:14245997",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-8d56b2df906e42ddb06b3458966420dd.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790919987257516883,
+      "wrapper": {
+        "parent": 3455137,
+        "pgid": 3453661,
+        "pid": 3455195,
+        "start": "14245997"
+      }
+    },
+    "terminal": {
+      "class": "query",
+      "delegate": {
+        "parent": 3455195,
+        "pgid": 3453661,
+        "pid": 3455266,
+        "start": "14246009"
+      },
+      "diagnostic": {
+        "complete": true,
+        "errors": [],
+        "exitCode": 120,
+        "normalOriginalWait": true,
+        "path": "/run/user/1000/wqa/3f98/taskbar-home/delegate-diagnostics/3455195-14245997.jsonl",
+        "productFdRoutingChanged": false,
+        "schedulingPerturbed": true,
+        "stdioSyscalls": 9
+      },
+      "event": "terminal",
+      "exitCode": 120,
+      "helper": "snap",
+      "operation": "list-json:3455195:14245997",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790919987760123355,
+      "wrapper": {
+        "parent": 3455137,
+        "pgid": 3453661,
+        "pid": 3455195,
+        "start": "14245997"
+      }
+    },
+    "observerRecords": 34,
+    "firstStdoutEntry": {
+      "index": 6,
+      "event": "stdio-write-entry",
+      "monotonicNs": 130340616040189,
+      "utcNs": 1790919987734214448,
+      "nr": 1,
+      "fd": 1,
+      "args": [
+        1,
+        102872398955792,
+        3,
+        0,
+        0,
+        0
+      ],
+      "vectorLengths": [
+        3
+      ],
+      "offeredBytesHex": "5b5d0a",
+      "offeredSHA256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "fdWitness": {
+        "device": 16,
+        "inode": 25106515,
+        "mode": 4480,
+        "uid": 1000,
+        "link": "pipe:[25106515]"
+      },
+      "target": {
+        "kind": "exact",
+        "state": "t",
+        "rawStat": "3455266 (python3) t 3455195 3453661 3453661 0 -1 4194304 3350 961 0 0 13 4 0 0 20 0 1 0 14246009 27504640 3788 18446744073709551615 102872392192000 102872392192313 140723432426816 0 0 0 0 16781312 2 1 0 0 17 7 0 0 0 0 0 102872392203704 102872392204304 102872398290944 140723432434956 140723432435048 140723432435048 140723432443879 0\n",
+        "exitCodeKnown": false
+      },
+      "execSeen": 2,
+      "parentObservation": {
+        "kind": "absent",
+        "rawStat": null,
+        "exitCodeKnown": false,
+        "pidfdObserved": true,
+        "pidfdExitObserved": true
+      },
+      "qsObservation": {
+        "kind": "absent",
+        "rawStat": null,
+        "exitCodeKnown": false
+      }
+    },
+    "firstStdoutReturn": {
+      "index": 7,
+      "event": "stdio-write-return",
+      "monotonicNs": 130340616259993,
+      "utcNs": 1790919987734433463,
+      "entry": 6,
+      "nr": 1,
+      "fd": 1,
+      "kernelReturn": -32,
+      "kernelIsError": true,
+      "errno": 32,
+      "deliveredCount": 0,
+      "offeredCount": 3,
+      "parentObservation": {
+        "kind": "absent",
+        "rawStat": null,
+        "exitCodeKnown": false,
+        "pidfdObserved": true,
+        "pidfdExitObserved": true
+      },
+      "qsObservation": {
+        "kind": "absent",
+        "rawStat": null,
+        "exitCodeKnown": false
+      }
+    },
+    "normalWait": {
+      "index": 33,
+      "event": "delegate-wait-terminal",
+      "monotonicNs": 130340641643176,
+      "utcNs": 1790919987759817339,
+      "identity": {
+        "pid": 3455266,
+        "start": "14246009",
+        "pgid": 3453661,
+        "parent": 3455195
+      },
+      "rawWaitStatus": 30720,
+      "exitCode": 120,
+      "normalOriginalWait": true,
+      "complete": true,
+      "errors": [],
+      "stdioSyscalls": 9,
+      "execChain": 2,
+      "parentExitCodeUnavailable": true,
+      "parentObservation": {
+        "kind": "absent",
+        "rawStat": null,
+        "exitCodeKnown": false,
+        "pidfdObserved": true,
+        "pidfdExitObserved": true
+      },
+      "qsObservation": {
+        "kind": "absent",
+        "rawStat": null,
+        "exitCodeKnown": false
+      }
+    }
+  },
+  "normalQSQuit": {
+    "exitCode": 0,
+    "exactOriginalGone": true,
+    "normalQuit": true,
+    "exitObservedNs": 130340576964567,
+    "exitObservedUtcNs": 1790919987695139357,
+    "selectedInstance": {
+      "config_path": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/payload/omarchy/shell/shell.qml",
+      "id": "1v0229pm9mt",
+      "launch_time": "2026-10-01T23:46:21",
+      "pid": 3453661,
+      "shell_id": "530b441d907b00f6c942b527fedf6c94"
+    },
+    "records": [
+      {
+        "role": "startup-ping",
+        "command": [
+          "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/payload/omarchy/bin/omarchy-shell",
+          "shell",
+          "ping"
+        ],
+        "startedNs": 130333894335639,
+        "startedUtcNs": 1790919981012511470,
+        "qsIdentity": {
+          "pid": 3453661,
+          "start": "14245375",
+          "pgid": 3453661,
+          "parent": 3452292
+        },
+        "nativeOutcomeNotInferred": true,
+        "processIdentity": {
+          "pid": 3453685,
+          "start": "14245385",
+          "pgid": 3453685,
+          "parent": 3452292
+        },
+        "returncode": 0,
+        "stdout": "ok\n",
+        "stderr": "",
+        "completedNs": 130334494019744,
+        "completedUtcNs": 1790919981612194324,
+        "originalProbeGone": true
+      },
+      {
+        "role": "instance-selection",
+        "command": [
+          "/usr/bin/qs",
+          "--no-color",
+          "list",
+          "-a",
+          "-j"
+        ],
+        "startedNs": 130340302206734,
+        "startedUtcNs": 1790919987420384275,
+        "qsIdentity": {
+          "pid": 3453661,
+          "start": "14245375",
+          "pgid": 3453661,
+          "parent": 3452292
+        },
+        "nativeOutcomeNotInferred": true,
+        "processIdentity": {
+          "pid": 3455333,
+          "start": "14246026",
+          "pgid": 3455333,
+          "parent": 3452292
+        },
+        "returncode": 0,
+        "stdout": "[\n    {\n        \"config_path\": \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/payload/omarchy/shell/shell.qml\",\n        \"id\": \"1v0229pm9mt\",\n        \"launch_time\": \"2026-10-01T23:46:21\",\n        \"pid\": 3453661,\n        \"shell_id\": \"530b441d907b00f6c942b527fedf6c94\"\n    }\n]\n",
+        "stderr": "",
+        "completedNs": 130340358625254,
+        "completedUtcNs": 1790919987476799746,
+        "originalProbeGone": true
+      },
+      {
+        "role": "normal-kill",
+        "command": [
+          "/usr/bin/qs",
+          "--no-color",
+          "kill",
+          "--pid",
+          "3453661"
+        ],
+        "startedNs": 130340397481030,
+        "startedUtcNs": 1790919987515656739,
+        "qsIdentity": {
+          "pid": 3453661,
+          "start": "14245375",
+          "pgid": 3453661,
+          "parent": 3452292
+        },
+        "nativeOutcomeNotInferred": true,
+        "processIdentity": {
+          "pid": 3455390,
+          "start": "14246036",
+          "pgid": 3455390,
+          "parent": 3452292
+        },
+        "returncode": 0,
+        "stdout": "Killed 1v0229pm9mt\n",
+        "stderr": "",
+        "completedNs": 130340511898556,
+        "completedUtcNs": 1790919987630073155,
+        "originalProbeGone": true
+      }
+    ]
+  },
+  "attribution": {
+    "actualV14PostQSQuitEpipeProved": true,
+    "actualParentExitCodeKnown": false,
+    "historicalV10CauseProved": false,
+    "armDisjunctionBranchProved": false,
+    "armSourceGap": "outer quiet observation -> proposal/source/IPC authorization -> locked recheck; actual config/row/pending predicate branch not separately retained",
+    "exit120Accepted": false,
+    "helperBudgetsChanged": false,
+    "full52Accepted": false
+  },
+  "witnesses": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/evaluation_setup.py": {
+      "sha256": "68a3176799add29342f52f4f13ce7c4e9019f2e580f9f44053af77794c223866",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/helper_observer.py": {
+      "sha256": "1a7d8a4744a797ef2b8880a93e0b3c05f4e64a0a9c8dce8696e04899e346e0ed",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/qs_lifecycle.py": {
+      "sha256": "0f9425d1ba2c6890e5cb7f7fa02dbeff6be688ac69be625fc063d8e8d1d863fd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/delegate_diagnostics.py": {
+      "sha256": "8dd90c0c0af397b7a7d13e2d5d8b25cc5c91a217b5718342f6d925af011d7003",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/run_native.py": {
+      "sha256": "c9ea8e839ebf7b31cd29f94c6e90bc64cc7f88cdab417a029cf3a47b8d649af7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.qml": {
+      "sha256": "70cfcbe3f55250277705492e932fe9e4260ce9903f389ffdb67b6a2141afdb0d",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/attempt-1/qt-wayland/report.json": {
+      "sha256": "40eaa840e0ddaaf2af8e2f60039986a9b241254edfc7f2b762193033ec825aa2",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/attempt-1/qt-wayland/terminal-helpers/helper-events.jsonl": {
+      "sha256": "a6b50964293b8c3c75e0eef0bab3ffa82febba0e03ca9e09e693a634fcb26458",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/attempt-1/qt-wayland/terminal-helpers/helper-config.json": {
+      "sha256": "e524357907745c1d20dca891f44d3f2c9a41136b5541e858ecc92e740c6754ac",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/attempt-1/qt-wayland/terminal-helpers/delegate-diagnostics/archive.json": {
+      "sha256": "32aba790a7aaefd97bb19f4f00e76b0752044633a574bb7f68f0ea4983b27878",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/attempt-1/qt-wayland/terminal-helpers/delegate-diagnostics/3455195-14245997.jsonl": {
+      "sha256": "cf5d01978c0031f3e6a938997341a061f21179094adc317851943b583f520250",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/attempt-1/qt-wayland/taskbar-shell.log": {
+      "sha256": "021686bf5c70f30b4161476476c97244bce74748915602519e22cd54ff4df1db",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/frozen-inputs.json": {
+      "sha256": "06e69ce03f4914c4afc6864633d9141fa352e3598630c2af50d81e297eb78537",
+      "mode": 384
+    }
+  },
+  "nativeLaunch": false,
+  "mainChanges": false
+}

@@ -1,0 +1,269 @@
+#!/usr/bin/env python3
+"""Virtual desktop catalog and Windows-style desktop actions over Hyprland workspaces."""
+
+import fcntl
+import json
+import os
+from pathlib import Path
+import re
+import subprocess
+import sys
+import tempfile
+
+sys.path.insert(0, str(Path.home()/'.local/share/hypr-window-controls'))
+try:
+    from window_state import enrich_families, family_members
+except ImportError:
+    def enrich_families(windows): return windows
+    def family_members(window, windows): return [window]
+
+
+CONFIG = Path(os.getenv("XDG_CONFIG_HOME", str(Path.home() / ".config"))) / "omarchy"
+STATE = CONFIG / "virtual-desktops.json"
+RUNTIME = Path(os.getenv("XDG_RUNTIME_DIR", str(Path.home() / ".cache")))
+MINIMIZED = RUNTIME / "hypr-windowctl"
+ADDRESS = re.compile(r"^0x[0-9a-fA-F]+$")
+NUMBER = re.compile(r"^[1-9][0-9]{0,3}$")
+
+
+def ctl(*args):
+    return subprocess.check_output(["hyprctl", *args], text=True, timeout=5)
+
+
+def dispatch(expr):
+    subprocess.run(["hyprctl", "dispatch", expr], check=True,
+                   stdout=subprocess.DEVNULL, timeout=5)
+
+
+def number(value):
+    value = str(value)
+    if not NUMBER.fullmatch(value):
+        raise ValueError("desktop id must be a positive number below 10000")
+    return value
+
+
+def environment():
+    windows = enrich_families(json.loads(ctl("clients", "-j")))
+    monitors = json.loads(ctl("monitors", "-j"))
+    active = next((str(m.get("activeWorkspace", {}).get("id", ""))
+                   for m in monitors if m.get("focused")), "")
+    if not NUMBER.fullmatch(active):
+        active = next((str(m.get("activeWorkspace", {}).get("name", ""))
+                       for m in monitors if m.get("focused")), "1")
+    return windows, number(active)
+
+
+def load(windows, active):
+    first_run = not STATE.exists()
+    try:
+        data = json.loads(STATE.read_text())
+        order = [number(v) for v in data.get("order", [])]
+        labels = {number(k): str(v)[:64] for k, v in data.get("labels", {}).items()}
+    except (OSError, ValueError, TypeError, KeyError):
+        order, labels = [], {}
+    order = list(dict.fromkeys(order))
+    seen = {active}
+    if first_run:
+        seen.add("1")
+    for w in windows:
+        ws = str(w.get("workspace", {}).get("name", ""))
+        if NUMBER.fullmatch(ws):
+            seen.add(ws)
+    for ws in sorted(seen, key=int):
+        if ws not in order:
+            order.append(ws)
+    return {"order": order, "labels": labels}
+
+
+def save(data):
+    CONFIG.mkdir(parents=True, exist_ok=True)
+    fd, path = tempfile.mkstemp(prefix=".virtual-desktops.", dir=CONFIG)
+    try:
+        with os.fdopen(fd, "w") as out:
+            json.dump(data, out)
+            out.write("\n")
+        os.replace(path, STATE)
+    finally:
+        if os.path.exists(path):
+            os.unlink(path)
+
+
+def minimized_home(address):
+    path = MINIMIZED / address
+    try:
+        fields = path.read_text().split()
+        home, pinned = fields[:2]
+        return path, home, pinned, fields[2] if len(fields) > 2 else ""
+    except (OSError, ValueError):
+        return path, "", "0", ""
+
+
+def save_minimized_home(path, home, pinned, identity):
+    path.write_text(f"{home} {pinned}" + (f" {identity}" if identity else "") + "\n")
+    monitor_path = path.with_name(path.name + '.monitor.json')
+    try:
+        saved = json.loads(monitor_path.read_text())
+    except (OSError, ValueError):
+        return
+    if not isinstance(saved, dict) or saved.get('stableId') != identity:
+        monitor_path.unlink(missing_ok=True)
+        return
+    saved['homeWorkspace'] = home
+    try:
+        workspaces = json.loads(subprocess.check_output(['hyprctl', 'workspaces', '-j'], text=True, stderr=subprocess.DEVNULL, timeout=5))
+    except (OSError, ValueError, subprocess.SubprocessError):
+        workspaces = []
+    destination = next((w for w in workspaces if str(w.get('name')) == home), None)
+    if destination:
+        saved['monitorName'] = destination.get('monitor', saved.get('monitorName', ''))
+    monitor_path.write_text(json.dumps(saved))
+
+
+def listing(data, windows, active):
+    result = []
+    for desktop in data["order"]:
+        members = []
+        for w in windows:
+            ws = str(w.get("workspace", {}).get("name", ""))
+            if ws == "special:win-minimized":
+                _, ws, _, _ = minimized_home(w["address"])
+            if ws == desktop:
+                preview_root = RUNTIME / "hypr-window-previews"
+                preview = preview_root / (w["address"] + "-0.png")
+                metadata = preview_root / (w["address"] + ".json")
+                try:
+                    preview_identity = json.loads(metadata.read_text())
+                except (OSError, ValueError):
+                    preview_identity = None
+                current_identity = {"pid": w.get("pid"), "stableId": w.get("stableId", "")}
+                members.append({"address": w["address"], "class": w.get("class", ""),
+                                **current_identity,
+                                "title": w.get("title", ""),
+                                "preview": str(preview) if preview.is_file() and preview_identity == current_identity else "",
+                                "minimized": w.get("workspace", {}).get("name") == "special:win-minimized"})
+        result.append({"id": desktop, "name": data["labels"].get(desktop, "Desktop " + desktop),
+                       "active": desktop == active, "windows": members})
+    return result
+
+
+def switch(data, active, target):
+    if target in ("next", "prev"):
+        index = data["order"].index(active)
+        delta = 1 if target == "next" else -1
+        target = data["order"][(index + delta) % len(data["order"])]
+    else:
+        target = number(target)
+        if target not in data["order"]:
+            raise ValueError("desktop does not exist")
+    dispatch(f'hl.dsp.focus({{ workspace = "{target}" }})')
+    return target
+
+
+def close(data, windows, active, target):
+    target = number(target)
+    if target not in data["order"]:
+        raise ValueError("desktop does not exist")
+    if len(data["order"]) == 1:
+        return active
+    index = data["order"].index(target)
+    fallback = data["order"][index - 1 if index > 0 else 1]
+    for w in windows:
+        address = str(w.get("address", ""))
+        if not ADDRESS.fullmatch(address):
+            continue
+        ws = str(w.get("workspace", {}).get("name", ""))
+        if ws == target:
+            dispatch(f'hl.dsp.window.move({{ workspace = "{fallback}", follow = false, window = "address:{address}" }})')
+        elif ws == "special:win-minimized":
+            path, home, pinned, identity = minimized_home(address)
+            if home == target:
+                save_minimized_home(path, fallback, pinned, identity)
+    data["order"].remove(target)
+    data["labels"].pop(target, None)
+    for batch in ("minimize-all", "minimize-others"):
+        (MINIMIZED / f"{batch}-{target}").unlink(missing_ok=True)
+    if target == active:
+        switch(data, active, fallback)
+        return fallback
+    return active
+
+
+def move_window(windows, address, target, expected_identity='', expected_pid=''):
+    if not ADDRESS.fullmatch(address):
+        raise ValueError("invalid window address")
+    window = next((w for w in windows if w.get("address") == address), None)
+    if window is None:
+        raise ValueError("window does not exist")
+    if expected_identity and window.get('stableId', '') != expected_identity:
+        raise ValueError("window identity changed")
+    if expected_pid and str(window.get('pid', '')) != str(expected_pid):
+        raise ValueError("window process changed")
+    for member in family_members(window, windows):
+        address = member['address']
+        ws = str(member.get("workspace", {}).get("name", ""))
+        if ws == "special:win-minimized":
+            path, _, pinned, identity = minimized_home(address)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            save_minimized_home(path, target, pinned, identity)
+        else:
+            dispatch(f'hl.dsp.window.move({{ workspace = "{target}", follow = false, window = "address:{address}" }})')
+
+
+def main():
+    args = sys.argv[1:]
+    command = args.pop(0) if args else "list"
+    if command not in {"list", "new", "new-move", "close", "switch", "rename", "reorder", "move"}:
+        raise ValueError("unknown command")
+    CONFIG.mkdir(parents=True, exist_ok=True)
+    with (CONFIG / ".virtual-desktops.lock").open("a") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        windows, active = environment()
+        data = load(windows, active)
+        if command in {"new", "new-move"}:
+            target = str(max(map(int, data["order"])) + 1)
+            data["order"].append(target)
+            if command == "new-move":
+                move_window(windows, args[0], target, *(args[1:3]))
+            active = switch(data, active, target)
+        elif command == "close":
+            active = close(data, windows, active, args[0] if args else active)
+        elif command == "switch":
+            active = switch(data, active, args[0])
+        elif command == "rename":
+            target = number(args[0])
+            if target not in data["order"]:
+                raise ValueError("desktop does not exist")
+            name = " ".join(args[1:]).strip()
+            if not name or len(name) > 64 or any(ord(ch) < 32 for ch in name):
+                raise ValueError("desktop name must have 1–64 printable characters")
+            data["labels"][target] = name
+        elif command == "reorder":
+            target = number(args[0])
+            before = args[1]
+            if target not in data["order"] or (before != "end" and number(before) not in data["order"]):
+                raise ValueError("desktop does not exist")
+            if target != before:
+                data["order"].remove(target)
+                if before == "end":
+                    data["order"].append(target)
+                else:
+                    data["order"].insert(data["order"].index(before), target)
+        elif command == "move":
+            target = number(args[1])
+            if target not in data["order"]:
+                raise ValueError("desktop does not exist")
+            move_window(windows, args[0], target, *(args[2:4]))
+        save(data)
+        # Dispatchers complete synchronously, but the pre-action client list
+        # would otherwise describe windows on their old desktops.
+        windows = json.loads(ctl("clients", "-j"))
+        print(json.dumps({"active": active, "desktops": listing(data, windows, active)}))
+    return 0
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except (ValueError, IndexError, subprocess.CalledProcessError) as exc:
+        print(f"hypr-desktops: {exc}", file=sys.stderr)
+        sys.exit(2)

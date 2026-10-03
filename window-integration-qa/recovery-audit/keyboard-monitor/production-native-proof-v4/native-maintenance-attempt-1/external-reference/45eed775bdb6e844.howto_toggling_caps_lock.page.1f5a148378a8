@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_toggling_caps_lock" xml:lang="sr">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_key_bindings"/>
+    <title type="sort">7. CapsLock у распореду за преносни рачунар</title>
+    <desc>Пребацивање када је то <key>Оркин измењивач</key></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>CapsLock у распореду за преносни рачунар</title>
+  <p>Орка има два распореда тастатуре: за стони и за преносни рачунар. Распоред који изаберете утиче на то који се тастер користи као Оркин измењивач. Ако користите распоред за преносни рачунар, подразумевани Оркин измењивач ће бити <key>CapsLock</key>. Ако користите <app>Оркин</app> распоред за преносни рачунар и желите да закључате или откључате <key>CapsLock</key>, то можете учинити или двоструким притиском на <key>CapsLock</key> (захтева at-spi2 верзију 2.32 или новију), или обављањем следећих корака:</p>
+  <steps>
+    <title>Пребацивање CapsLock-а у распореду за преносни рачунар</title>
+    <item>
+      <p>Притисните наредбу за заобилажење, <keyseq><key>Оркин измењивач</key><key>BackSpace</key> </keyseq>, да кажете <app>Орки</app> да следећу наредбу треба занемарити.</p>
+    </item>
+    <item>
+      <p>Притисните <key>CapsLock</key> да промените његово стање закључаности.</p>
+    </item>
+  </steps>
+</page>

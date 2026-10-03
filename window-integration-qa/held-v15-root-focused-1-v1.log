@@ -1,0 +1,22 @@
+
+  arm_publication_test
+    ok originalQuietProposalSpawnImmediateRefusalTest passed 1 test(s)
+    ok quietProposalSpawnReleasesLockWithoutAuthorityTest passed 1 test(s)
+    ok exactHelperFinishesThenSinglePublicationTest passed 1 test(s)
+    ok configChangeHardRefusalTest passed 1 test(s)
+    ok authorityChangeHardRefusalTest passed 1 test(s)
+    ok actualNonzeroTerminalNeverRetriesTest passed 1 test(s)
+    ok malformedHelperNeverPublishesTest passed 1 test(s)
+    ok finishCannotProgressUnderLogLockTest passed 1 test(s)
+    ok multiplePendingHelpersAllMustCloseTest passed 1 test(s)
+    ok originalAbsoluteDeadlineNeverResetsTest passed 1 test(s)
+    ok repeatedProposeCannotDoublePublishTest passed 1 test(s)
+    ok noPublicationBeforeLockedCurrentRecheckTest passed 1 test(s)
+    ok lockedSourceScanConsumesOriginalDeadlineTest passed 1 test(s)
+    ok externalBusyAcquireReturnsWithoutLockWaitTest passed 1 test(s)
+    ok originalBlockingAcquireViolatesPolicyTest passed 1 test(s)
+    ok heldExternalLockExpiresWithoutPublicationTest passed 1 test(s)
+    ok externalReleaseCanAuthorizeBeforeSameDeadlineTest passed 1 test(s)
+    ok timeAdvancesAfterLockRetryTest passed 1 test(s)
+
+  18 passing (1024ms)

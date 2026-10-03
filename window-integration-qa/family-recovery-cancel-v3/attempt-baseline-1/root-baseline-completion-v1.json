@@ -1,0 +1,95 @@
+{
+  "updatedUTC": "2026-10-02T04:23:26.937269+00:00",
+  "reportSHA256": "a2dedeb0f4a6c65000732cb403e29eb1b8f8a198a14a0579d96fa1691200cc05",
+  "manifestSHA256": "e41e787f2d8c64997f7df7e285f324af82d8ce465ccb131ad0d3a566ac348be7",
+  "inputCount": 14192,
+  "linkCount": 158,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-b57b4f98eb0348f1baaf66736b73139e.scope",
+    "coreLimit": 1
+  },
+  "preservationChecks": {
+    "allFrozenInputsExact": true,
+    "allFrozenLinksExact": true,
+    "allDeclaredFrozenModesExact": true,
+    "allProductionCopiesExact": true,
+    "all15MainPreservationChecks": true,
+    "allRecordedPIDStartIdentitiesGone": true,
+    "privateRuntimeGone": true,
+    "privateClientsGoneBeforeUnload": true,
+    "nativePluginUnloadedNormally": true,
+    "noRemainingDescendantsOrCleanupErrors": true,
+    "archivedMandatoryParentTransportHealthy": true
+  },
+  "allPreservationChecks": true,
+  "acceptanceChecks": {
+    "normalClientLifecycle": false,
+    "noUnexpectedHelpers": true,
+    "allReachedProductChecksPass": false,
+    "terminalCampaignPass": false
+  },
+  "privateBaselineAccepted": false,
+  "processes": [
+    {
+      "pid": 2851791,
+      "start": "13738323",
+      "gone": true
+    },
+    {
+      "pid": 2852243,
+      "start": "13738627",
+      "gone": true
+    },
+    {
+      "pid": 2852472,
+      "start": "13738877",
+      "gone": true
+    },
+    {
+      "pid": 2851453,
+      "start": "13737868",
+      "gone": true
+    },
+    {
+      "pid": 2851454,
+      "start": "13737871",
+      "gone": true
+    },
+    {
+      "pid": 2851525,
+      "start": "13738050",
+      "gone": true
+    },
+    {
+      "pid": 2851453,
+      "start": "13737868",
+      "gone": true
+    },
+    {
+      "pid": 2851454,
+      "start": "13737871",
+      "gone": true
+    },
+    {
+      "pid": 2851525,
+      "start": "13738050",
+      "gone": true
+    },
+    {
+      "pid": 2852650,
+      "start": 13738943,
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false,
+  "physicalCadenceAccepted": false,
+  "rasterAccepted": false
+}

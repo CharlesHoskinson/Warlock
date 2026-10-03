@@ -1,0 +1,120 @@
+{
+  "updatedUTC": "2026-10-01T22:30:56.162039+00:00",
+  "reportSHA256": "5b4eda9d547929ce67cdc38d71f715bd07860c7d9b1b8094a8317ae1758d8b75",
+  "manifestSHA256": "5694b235bb90d5eaa97adf6fc54ae7c140d645575a8d408f302f300742cbdb0b",
+  "fileCount": 40043,
+  "linkCount": 13758,
+  "independentChecks": {
+    "allFrozenBytesModesExact": true,
+    "allFrozenLinksExact": true,
+    "all18MainPreserved": true,
+    "allRecordedPIDStartGone": true,
+    "privateRuntimeGone": true,
+    "noUnexpectedOrRemainingHelpers": true,
+    "normalBrowserAndNoForcedCleanup": true,
+    "nativeProbeAndPluginUnloadedNormally": true,
+    "healthyArchivedParentTransport": true,
+    "actualPrivateBusActivationPolicyVerified": true,
+    "initialRangeDiagnosticIndependentlyReplayed": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "privateBrowserFilesAccepted": false,
+  "processes": [
+    {
+      "pid": 1509378,
+      "start": "11621901",
+      "gone": true
+    },
+    {
+      "pid": 1509387,
+      "start": "11621905",
+      "gone": true
+    },
+    {
+      "pid": 1509397,
+      "start": "11621962",
+      "gone": true
+    },
+    {
+      "pid": 1509378,
+      "start": "11621901",
+      "gone": true
+    },
+    {
+      "pid": 1509387,
+      "start": "11621905",
+      "gone": true
+    },
+    {
+      "pid": 1509397,
+      "start": "11621962",
+      "gone": true
+    },
+    {
+      "pid": 1509582,
+      "start": "11622265",
+      "gone": true
+    },
+    {
+      "pid": 1509693,
+      "start": "11622294",
+      "gone": true
+    },
+    {
+      "pid": 1509756,
+      "start": "11622305",
+      "gone": true
+    },
+    {
+      "pid": 1509690,
+      "start": "11622292",
+      "gone": true
+    },
+    {
+      "pid": 1509691,
+      "start": "11622292",
+      "gone": true
+    },
+    {
+      "pid": 1509724,
+      "start": "11622301",
+      "gone": true
+    },
+    {
+      "pid": 1509722,
+      "start": "11622301",
+      "gone": true
+    },
+    {
+      "pid": 1509582,
+      "start": "11622265",
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "environmentObservations": [
+    {
+      "name": "browser",
+      "identity": {
+        "pid": 1509582,
+        "start": "11622265",
+        "ppid": 1509241,
+        "pgid": 1509582
+      },
+      "bytes": 10167,
+      "nonzeroBytes": 0,
+      "initialRangeMatches": false,
+      "currentLibcSelectorsProved": false
+    }
+  ],
+  "failure": "RuntimeError('Diagnostic: kernel initial-range values differ; current libc bus/VFS selectors unproven, not inferred unsafe')",
+  "rawOwnedProcessEvidenceSHA256": "f07eaec2ad1190f95b13fb82c5bb6d75683879aa3065df520ddbb0d5f13c4f7f",
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false
+}

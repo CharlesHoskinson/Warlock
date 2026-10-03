@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_orca_find" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#reviewing"/>
+    <link type="next" xref="howto_mouse_review"/>
+    <title type="sort">3. Hľadanie v Orca</title>
+    <desc>Vyhľadávanie objektov v okne</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Hľadanie v Orca</title>
+  <p>Funkcia Hľadanie v <app>Orca</app> je vyhľadávanie založené na <link xref="howto_flat_review">Plochom prehliadaní</link>, ktoré vám pomôže rýchlo lokalizovať objekty viditeľné na obrazovke v aktuálnom okne.</p>
+  <note style="tip">
+    <title>Aktivácia Hľadania v Orca</title>
+      <p>Na otvorenie dialógového okna <gui>Hľadať</gui> v Orca použite nasledujúci príkaz podľa zvoleného <link xref="howto_keyboard_layout">rozloženia klávesnice</link>:</p>
+      <list>
+        <item>
+          <p>Stolný počítač: <keyseq><key>KP Delete</key></keyseq></p>
+        </item>
+        <item>
+          <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>Ľavá zátvorka</key></keyseq></p>
+        </item>
+      </list>
+      <p>Zoznam ďalších úloh, ktoré môžete vykonať, nájdete v časti <link xref="commands_find">Príkazy na hľadanie v Orca</link></p>
+  </note>
+  <p>Po aktivácii Hľadania v Orca sa ocitnete v dialógovom okne.</p>
+  <p>Tu môžete zadať nasledujúce položky:</p>
+  <list>
+    <item>
+      <p>Text, ktorý sa má nájsť</p>
+    </item>
+    <item>
+      <p>Umiestnenie, od ktorého sa má začať hľadať, čo môže byť buď aktuálna poloha, alebo vrch okna</p>
+      <p>Predvolená hodnota <gui>Začať od</gui>: <gui>Aktuálna poloha</gui></p>
+    </item>
+    <item>
+      <p>Či sa má pri hľadaní zhody brať do úvahy veľkosť písmen</p>
+      <p>Predvolená hodnota <gui>Rozlišovať veľkosť písmen</gui>: nezačiarknuté</p>
+    </item>
+    <item>
+      <p>Či sa majú obmedziť zhody len na tie, ktoré zodpovedajú celému slovu alebo fráze</p>
+      <p>Predvolená hodnota <gui>Iba celé slová</gui>: nezačiarknuté</p>
+    </item>
+    <item>
+      <p>Či má funkcia Hľadať hľadať nasledujúcu zhodu dole a/alebo doprava, alebo hore a/alebo doľava.</p>
+      <p>Predvolená hodnota <gui>Hľadať dozadu</gui>: nezačiarknuté</p>
+    </item>
+    <item>
+      <p>Či má funkcia Hľadať pokračovať od vrchu/spodu okna, ak sa od počiatočného umiestnenia v smere vyhľadávania nenájde žiadna zhoda.</p>
+      <p>Predvolená hodnota <gui>Pokračovať od začiatku</gui>: začiarknuté</p>
+    </item>
+  </list>
+  <p>Po vykonaní vyhľadávania môžete rýchlo hľadať nasledujúcu alebo predchádzajúcu zhodu bez toho, aby ste sa museli vrátiť do dialógového okna Hľadania v Orca.</p>
+  <p>Keďže ide o funkciu <link xref="howto_flat_review">Plochého prehliadania</link>, pri nájdení zhody sa automaticky aktivuje ploché prehliadanie a zhodná položka alebo text sa stane aktuálnou prehliadanou položkou. Upozorňujeme, že fokus v aplikácii sa nezmení ani sa nepresunie kurzor. Ak potrebujete niektoré z týchto akcií vykonať, pozrite si časť <link xref="commands_mouse">Príkazy Orca týkajúce sa myši/ukazovateľa</link>.</p>
+</page>

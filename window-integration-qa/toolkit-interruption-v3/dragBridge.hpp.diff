@@ -1,0 +1,8 @@
+--- window-integration-qa/modal-ancestor-discovery-v2/native-candidate/dragBridge.hpp
++++ window-integration-qa/toolkit-interruption-v3/native-candidate/dragBridge.hpp
+@@ -7,4 +7,5 @@
+ struct lua_State;
+ int luaDragBridgeAvailable(lua_State* state);
+ int luaFileDragActive(lua_State* state);
++int luaRetireGestureCurrent(lua_State* state);
+ bool startCaptionDrag(const PHLWINDOW& owner, const Vector2D& press);

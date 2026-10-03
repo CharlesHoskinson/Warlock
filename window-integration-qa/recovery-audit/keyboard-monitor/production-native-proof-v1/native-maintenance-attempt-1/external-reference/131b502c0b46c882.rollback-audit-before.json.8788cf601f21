@@ -1,0 +1,5 @@
+{
+  "finding": "Overbroad all-user-process maps scan blocks rollback on non-dumpable unrelated user service PID1308; contract requires compositor mappings only.",
+  "oldSourceSHA": "586d67fec4421d7b19f905b259a28acf897929bbd7d7c017ed88143b9f6dd4b1",
+  "action": "retain failure; narrow process classification to actual native compositor comm; still fail closed for any unreadable compositor maps"
+}

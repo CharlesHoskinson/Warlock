@@ -1,0 +1,64 @@
+{
+  "registeredRow": {
+    "id": "717e0305986d49a7bdd5f446b61da103",
+    "actor": 1,
+    "thread": 1901601,
+    "fd": 6,
+    "fdIdentity": [
+      10,
+      34449380
+    ],
+    "issuerSHA256": "2dbec085e9cac8dab07e1241f991415797492fa49a7cc0125a72209977154d0b",
+    "request": "j/clients",
+    "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+    "registeredNs": 155765181377214,
+    "closed": false,
+    "published": true,
+    "outcome": "pending",
+    "evidence": null,
+    "error": null
+  },
+  "queryElapsedNs": 1058350868,
+  "result": "pass",
+  "errors": [
+    {
+      "type": "TimeoutError",
+      "message": "read-only complete reply absolute deadline"
+    }
+  ],
+  "row": {
+    "id": "717e0305986d49a7bdd5f446b61da103",
+    "actor": 1,
+    "thread": 1901601,
+    "fd": 6,
+    "fdIdentity": [
+      10,
+      34449380
+    ],
+    "issuerSHA256": "2dbec085e9cac8dab07e1241f991415797492fa49a7cc0125a72209977154d0b",
+    "request": "j/clients",
+    "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+    "registeredNs": 155765181377214,
+    "closed": true,
+    "published": true,
+    "outcome": "refused",
+    "evidence": {
+      "completeServerEOF": false,
+      "replyBytes": 0,
+      "replySHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "peer": null,
+      "socketIdentity": [
+        57,
+        1201463
+      ]
+    },
+    "error": {
+      "type": "TimeoutError",
+      "message": "read-only complete reply absolute deadline"
+    },
+    "finishedNs": 155766233654552
+  },
+  "deadlineSeconds": 1,
+  "limitation": "Exact CPU reservation-lock path shown; native row33 timeout site and lock holder unproved",
+  "readonlySourceSHA256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b"
+}

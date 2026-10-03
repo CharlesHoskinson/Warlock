@@ -1,0 +1,770 @@
+#!/usr/bin/env python3
+"""Identity-bound snapshot route for minimize/restore. No native geometry writes.
+
+The taskbar supplies real icon coordinates. Passive QML acknowledges image
+readiness before minimize, and acknowledges the visual endpoint before restore.
+Only the latest token has commit authority. A watchdog commits current intent
+when the renderer dies/reloads, motion is reduced, or an acknowledgement is lost.
+"""
+import fcntl
+import hashlib
+import json
+import math
+import os
+from pathlib import Path
+import re
+import shutil
+import socket
+import socketserver
+import subprocess
+import sys
+import threading
+import time
+import uuid
+
+HOME = Path.home()
+BASE = Path(__file__).resolve().parent
+RUNTIME = Path(os.getenv('XDG_RUNTIME_DIR', str(HOME / '.cache')))
+SESSION = hashlib.sha256(os.getenv('HYPRLAND_INSTANCE_SIGNATURE', 'session').encode()).hexdigest()[:20]
+ROOT = RUNTIME / 'hypr-window-motion' / SESSION
+SOCKET = ROOT / 'control.sock'
+CORE = Path(os.getenv('HYPR_WINDOWCTL_CORE', str(BASE / 'hypr-windowctl-core')))
+ADDRESS = re.compile(r'^0x[0-9a-fA-F]+$')
+IDENTITY = re.compile(r'^[A-Za-z0-9_-]+$')
+
+
+def key(w):
+    return (w.get('address'), str(w.get('stableId', '')), int(w.get('pid', 0)))
+
+
+def rectangle(w):
+    values = [*w.get('at', []), *w.get('size', [])]
+    if len(values) != 4 or not all(isinstance(v, (int, float)) and math.isfinite(v) for v in values):
+        raise ValueError('invalid rectangle')
+    if values[2] <= 0 or values[3] <= 0:
+        raise ValueError('empty rectangle')
+    return dict(zip(('x', 'y', 'width', 'height'), values))
+
+
+class BasicDesktop:
+    def clients(self):
+        return json.loads(subprocess.check_output(['hyprctl', 'clients', '-j'], text=True, timeout=2))
+
+    def active(self):
+        return json.loads(subprocess.check_output(['hyprctl', 'activewindow', '-j'], text=True, timeout=2)).get('address')
+
+    def reduced(self):
+        try:
+            return (HOME / '.config/hypr/reduced-motion').read_text().strip() == '1'
+        except OSError:
+            return False
+
+    def ipc(self, method, payload):
+        output = subprocess.check_output(['omarchy-shell', 'hoskinson.windows', method, json.dumps(payload)], text=True, timeout=1)
+        return json.loads(output) if output.strip() else None
+
+    def target(self, window):
+        return self.ipc('motionTarget', dict(zip(('address', 'stableId', 'pid'), key(window))))
+
+    def monitors(self):
+        return json.loads(subprocess.check_output(['hyprctl','monitors','-j'],text=True,timeout=2))
+
+    def source_screen(self,window,previous=None):
+        monitors=self.monitors()
+        if previous and window.get('workspace',{}).get('name')=='special:win-minimized' and previous.get('target'):
+            monitor=next((m for m in monitors if m.get('name')==previous['target']['screenName']),None)
+            if monitor:return monitor
+        monitor=next((m for m in monitors if m.get('id')==window.get('monitor')),None)
+        if not monitor:raise ValueError('source monitor unavailable')
+        if not window.get('pinned') and window.get('workspace',{}).get('name')!=monitor.get('activeWorkspace',{}).get('name'):
+            raise ValueError('source window is on a hidden desktop')
+        return monitor
+
+    def select_destination(self,window):
+        state=RUNTIME/'hypr-windowctl'/window['address']
+        fields=state.read_text().split()
+        metadata=json.loads(state.with_name(state.name+'.monitor.json').read_text())
+        if len(fields)<3 or not fields[0].isdigit() or fields[2]!=str(window['stableId']) or metadata.get('pid')!=window['pid'] or metadata.get('stableId')!=window['stableId'] or str(metadata.get('homeWorkspace'))!=fields[0]:
+            raise ValueError('stored destination identity is stale or incomplete')
+        destination=fields[0]
+        monitors=self.monitors()
+        workspaces=json.loads(subprocess.check_output(['hyprctl','workspaces','-j'],text=True,timeout=2))
+        workspace=next((w for w in workspaces if w.get('name')==destination),None)
+        monitor=next((m for m in monitors if workspace and (m.get('id')==workspace.get('monitorID') or m.get('name')==workspace.get('monitor'))),None)
+        monitor=monitor or next((m for m in monitors if m.get('name')==metadata.get('monitorName')),None)
+        # Output removal follows the native core's focused-output fallback.
+        monitor=monitor or next((m for m in monitors if m.get('focused')),None)
+        if not monitor:raise ValueError('destination output unavailable')
+        if not any(key(current)==key(window) for current in self.clients()):raise ValueError('destination identity changed')
+        for expression in ['hl.dsp.focus({ monitor = '+json.dumps(monitor['name'])+' })',
+                           'hl.dsp.focus({ workspace = '+json.dumps(destination)+' })']:
+            subprocess.run(['hyprctl','dispatch',expression],check=True,stdout=subprocess.DEVNULL,timeout=2)
+        self.ipc('motionRefresh',{})
+        return monitor
+
+    def capture(self, window, token):
+        path = ROOT / (token + '.png')
+        subprocess.run(['grim', '-T', str(window['stableId']), str(path)], check=True,
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=.65)
+        if not path.is_file() or path.stat().st_size < 64:
+            raise ValueError('empty toplevel snapshot')
+        preview = RUNTIME / 'hypr-window-previews'
+        preview.mkdir(mode=0o700, parents=True, exist_ok=True)
+        with (preview / (window['address'] + '.lock')).open('w') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            if not any(key(current) == key(window) for current in self.clients()):
+                path.unlink(missing_ok=True)
+                raise ValueError('identity changed during capture')
+            temporary = preview / ('.motion-' + token + '.png')
+            subprocess.run(['magick', str(path), '-thumbnail', '300x180>', str(temporary)],
+                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True, timeout=1)
+            for slot in (0, 1):
+                output = preview / (window['address'] + '-' + str(slot) + '.png')
+                staging = output.with_suffix('.motion.tmp')
+                staging.write_bytes(temporary.read_bytes())
+                staging.replace(output)
+            temporary.unlink(missing_ok=True)
+            metadata = preview / (window['address'] + '.json')
+            staging = metadata.with_suffix('.motion.tmp')
+            staging.write_text(json.dumps({'pid':window['pid'], 'stableId':window['stableId']}, separators=(',', ':'))+'\n')
+            staging.replace(metadata)
+        return str(path)
+
+    def commit(self, operation, window, preview_ready=False):
+        env = dict(os.environ, HYPR_WINDOWCTL_FAMILY_SINGLE='1',
+                   HYPR_WINDOWCTL_PREVIEW_READY='1' if preview_ready else '0')
+        subprocess.run([str(CORE), operation, window['address'], str(window['stableId']), str(window['pid'])],
+                       env=env, check=True, stdout=subprocess.DEVNULL, timeout=8)
+
+    def family(self, window, windows, single=False):
+        helper = HOME / '.local/bin/hypr-window-family'
+        if single or not helper.exists():
+            return [window], window
+        result = json.loads(subprocess.check_output([str(helper), window['address']], input=json.dumps(windows), text=True, timeout=2))
+        return result['windows'], result['focus']
+
+
+class Desktop(BasicDesktop):
+    def __init__(self):
+        # Serializes cache PNG/metadata pairs and janitor with active captures.
+        self.snapshot_lock=threading.RLock()
+
+    @staticmethod
+    def validate_snapshot(metadata,native=None):
+        if not isinstance(metadata,dict) or not isinstance(metadata.get('insets'),dict):
+            raise ValueError('invalid whole-window metadata')
+        insets=metadata['insets'];rect=metadata.get('rect',{})
+        if not all(isinstance(insets.get(name),(int,float)) and math.isfinite(insets[name]) and insets[name]>=0 for name in ('left','top','right','bottom')):
+            raise ValueError('invalid whole-window insets')
+        if not isinstance(rect,dict) or not all(isinstance(rect.get(name),(int,float)) and math.isfinite(rect[name]) for name in ('x','y','width','height')) or rect['width']<=0 or rect['height']<=0:
+            raise ValueError('invalid whole-window rectangle')
+        pixels=metadata.get('pixels')
+        if not isinstance(pixels,list) or len(pixels)!=2 or not all(isinstance(v,int) and 0<v<=32768 for v in pixels):
+            raise ValueError('invalid whole-window pixel size')
+        if not math.isclose(pixels[0]/rect['width'],pixels[1]/rect['height'],rel_tol=.001):
+            raise ValueError('inconsistent whole-window pixel scale')
+        if native:
+            actual={'x':rect['x']+insets['left'],'y':rect['y']+insets['top'],
+                    'width':rect['width']-insets['left']-insets['right'],'height':rect['height']-insets['top']-insets['bottom']}
+            if not all(math.isclose(actual[name],native[name],abs_tol=.02) for name in actual):
+                raise ValueError('native geometry drifted during whole-window capture')
+
+    def check_current(self,window):
+        current=next((w for w in self.clients() if key(w)==key(window) and w.get('mapped',True)),None)
+        if current is None or rectangle(current)!=rectangle(window):
+            raise ValueError('native identity or geometry changed during capture')
+
+    def publish_crop(self,window,token,image,metadata):
+        preview=RUNTIME/'hypr-window-previews';preview.mkdir(mode=0o700,parents=True,exist_ok=True)
+        temporary=preview/('.motion-'+token+'.png')
+        scale=metadata['pixels'][0]/metadata['rect']['width'];insets=metadata['insets']
+        crop=f"{round(window['size'][0]*scale)}x{round(window['size'][1]*scale)}+{round(insets['left']*scale)}+{round(insets['top']*scale)}"
+        with (preview/(window['address']+'.lock')).open('w') as lock:
+            fcntl.flock(lock,fcntl.LOCK_EX)
+            self.check_current(window)
+            try:
+                subprocess.run(['magick',str(image),'-crop',crop,'+repage','-thumbnail','300x180>',str(temporary)],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,timeout=1)
+                self.check_current(window)
+                for slot in (0,1):
+                    destination=preview/(window['address']+'-'+str(slot)+'.png')
+                    staging=preview/('.motion-'+token+'-'+str(slot)+'.tmp');staging.write_bytes(temporary.read_bytes());staging.replace(destination)
+                destination=preview/(window['address']+'.json')
+                staging=preview/('.motion-'+token+'.json.tmp');staging.write_text(json.dumps({'pid':window['pid'],'stableId':window['stableId']},separators=(',',':'))+'\n');staging.replace(destination)
+            finally:temporary.unlink(missing_ok=True)
+
+    def capture(self,window,token):
+        with self.snapshot_lock:return self.capture_locked(window,token)
+
+    def capture_locked(self,window,token):
+        native=rectangle(window);image=ROOT/(token+'.png')
+        cache=ROOT/('full-'+str(window['stableId'])+'-'+str(window['pid']))
+        frame=cache.with_suffix('.png');metadata_path=cache.with_suffix('.json')
+        hidden=window.get('workspace',{}).get('name')=='special:win-minimized'
+        if hidden:
+            metadata=json.loads(metadata_path.read_text())
+            if not isinstance(metadata,dict) or metadata.get('identity')!=list(key(window)) or metadata.get('clientSize')!=[native['width'],native['height']] or not metadata.get('whole') or not frame.is_file():
+                raise ValueError('no matching whole-window cache')
+            self.validate_snapshot(metadata)
+            self.check_current(window)
+            insets=metadata['insets']
+            full={'x':native['x']-insets['left'],'y':native['y']-insets['top'],'width':native['width']+insets['left']+insets['right'],'height':native['height']+insets['top']+insets['bottom']}
+            client=super().capture(window,token);self.check_current(window)
+            scale=metadata['pixels'][0]/full['width'];x=round(insets['left']*scale);y=round(insets['top']*scale)
+            composed=ROOT/('composed-'+token+'.png')
+            try:
+                subprocess.run(['magick',str(frame),'(',str(client),'-resize',str(round(native['width']*scale))+'x'+str(round(native['height']*scale))+'!',')','-geometry','+'+str(x)+'+'+str(y),'-compose','SrcAtop','-composite',str(composed)],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,timeout=1)
+                self.check_current(window);composed.replace(image)
+            except (OSError,ValueError,subprocess.SubprocessError):
+                image.unlink(missing_ok=True);raise
+            finally:composed.unlink(missing_ok=True)
+            return {'image':str(image),'rect':full,'whole':True}
+        export=ROOT/('frame-'+token+'.png')
+        staging_frame=ROOT/(cache.name+'-'+token+'.png.tmp');staging_metadata=ROOT/(cache.name+'-'+token+'.json.tmp')
+        try:
+            expression='print(hl.plugin.hyprbars.window_snapshot('+','.join((json.dumps(window['address']),json.dumps(str(window['stableId'])),str(window['pid']),json.dumps(str(export))))+'))'
+            metadata=json.loads(subprocess.check_output(['hyprctl','repl',expression],text=True,timeout=1))
+            if not isinstance(metadata,dict) or not metadata.get('ok') or not metadata.get('whole') or metadata.get('stableId')!=window['stableId'] or metadata.get('pid')!=window['pid']:
+                raise ValueError('whole-window compositor snapshot unavailable')
+            self.validate_snapshot(metadata,native);self.check_current(window)
+            metadata.update(identity=list(key(window)),clientSize=[native['width'],native['height']])
+            # The native snapshot already contains the latest client pixels.
+            # Publish its client crop directly; do not block on a second grim.
+            self.publish_crop(window,token,export,metadata)
+            staging_frame.write_bytes(export.read_bytes());staging_metadata.write_text(json.dumps(metadata))
+            self.check_current(window)
+            staging_frame.replace(frame);staging_metadata.replace(metadata_path);export.replace(image)
+            return {'image':str(image),'rect':metadata['rect'],'whole':True}
+        except (OSError,ValueError,subprocess.SubprocessError):
+            image.unlink(missing_ok=True);raise
+        finally:
+            for path in (export,staging_frame,staging_metadata):path.unlink(missing_ok=True)
+
+    def janitor(self):
+        # Called at most once/sec, even with no pending tween. Never wait on an
+        # active capture; the next watchdog pass can perform the cleanup.
+        if not self.snapshot_lock.acquire(blocking=False):return
+        try:
+            current={key(w) for w in self.clients() if w.get('mapped',True)}
+            cache_pattern=re.compile(r'^full-([0-9a-fA-F]+)-([0-9]+)\.(png|json)$')
+            scratch_pattern=re.compile(r'^(?:(?:frame|composed)-[0-9a-f]{12}-[0-9]+\.png|full-[0-9a-fA-F]+-[0-9]+-[0-9a-f]{12}-[0-9]+\.(?:png|json)\.tmp)$')
+            for path in ROOT.iterdir():
+                if scratch_pattern.fullmatch(path.name):path.unlink(missing_ok=True);continue
+                match=cache_pattern.fullmatch(path.name)
+                if not match:continue
+                metadata_path=ROOT/('full-'+match[1]+'-'+match[2]+'.json')
+                try:
+                    metadata=json.loads(metadata_path.read_text());owned=tuple(metadata['identity'])
+                    retain=len(owned)==3 and owned in current and str(owned[1])==match[1] and str(owned[2])==match[2] and metadata.get('whole') and metadata_path.with_suffix('.png').is_file()
+                except (OSError,ValueError,KeyError,TypeError):retain=False
+                if not retain:path.unlink(missing_ok=True)
+        finally:self.snapshot_lock.release()
+
+
+class Controller:
+    def __init__(self, desktop, root=ROOT):
+        self.desktop = desktop
+        self.root = root
+        self.lock = threading.RLock()
+        self.pending = {}
+        self.family_batches = []
+        self.latest = {}
+        self.results = {}
+        self.shutdown = False
+        self.sequence = 0
+        self.session = uuid.uuid4().hex[:12]
+        self.last_activity = time.monotonic()
+        self.last_janitor = 0
+
+    def matching(self, identity):
+        return next((w for w in self.desktop.clients() if key(w) == identity and w.get('mapped', True)), None)
+
+    def token(self):
+        self.sequence += 1
+        return self.session + '-' + str(self.sequence)
+
+    def journal(self):
+        self.root.mkdir(parents=True, exist_ok=True, mode=0o700)
+        temp = self.root / 'pending.tmp'
+        temp.write_text(json.dumps(list(self.pending.values())))
+        temp.replace(self.root / 'pending.json')
+
+    def recover(self):
+        try:
+            records = json.loads((self.root / 'pending.json').read_text())
+        except (OSError, ValueError):
+            records = []
+        for record in records:
+            try:
+                window = self.matching(tuple(record['identity']))
+                if window:
+                    self.desktop.commit(record['operation'], window, True)
+            except (OSError, ValueError, subprocess.SubprocessError):
+                pass
+            for visual in record.get('oldVisuals',[])+([record.get('frozenVisual')] if record.get('frozenVisual') else [])+([record] if record.get('target') else []):
+                try:
+                    self.desktop.ipc('motionCancel',visual)
+                except (OSError,ValueError,subprocess.SubprocessError):pass
+            for image in record.get('oldImages', []) + ([record['image']] if record.get('image') else []):
+                Path(image).unlink(missing_ok=True)
+        # A restored modal family ends with its captured focus member, after
+        # every surviving member is visible; recovery never focuses a reused ID.
+        focuses={tuple(r['familyFocus']) for r in records if r.get('familyFocus')}
+        for identity in focuses:
+            window=self.matching(identity)
+            if window and window.get('workspace', {}).get('name') != 'special:win-minimized':
+                try:self.desktop.commit('restore',window,True)
+                except (OSError,ValueError,subprocess.SubprocessError):pass
+        self.journal()
+
+    def request(self, command, address='', expected_id='', expected_pid='', single=False):
+        received = time.monotonic()
+        self.last_activity = received
+        if command not in ('minimize','restore','toggle','activate'):
+            raise ValueError('invalid window operation')
+        reservation = None
+        # A captured caller can supersede the exact pending identity before
+        # querying Hyprland/family metadata. Holding pixels has no native effect.
+        with self.lock:
+            previous = self.pending.get(address)
+            if (previous and expected_id and expected_pid and
+                    previous['identity'] == [address,str(expected_id),int(expected_pid)] and
+                    previous.get('nativeWindow')):
+                reservation = self.reserve(command, previous['nativeWindow'], received)
+        if reservation:
+            self.freeze(reservation[0], reservation[1])
+        try:
+            client_start = time.monotonic()
+            windows = self.desktop.clients()
+            client_done = time.monotonic()
+            address = address or self.desktop.active()
+            if not address or not ADDRESS.fullmatch(address):
+                raise ValueError('invalid window address')
+            w = next((w for w in windows if w.get('address') == address and w.get('mapped', True)), None)
+            if w is None or not IDENTITY.fullmatch(str(w.get('stableId', ''))) or int(w.get('pid', 0)) <= 0:
+                raise ValueError('window no longer exists or has no stable identity')
+            if expected_id and str(w['stableId']) != str(expected_id) or expected_pid and str(w['pid']) != str(expected_pid):
+                raise ValueError('window identity changed')
+            with self.lock:
+                if reservation:
+                    record=reservation[0]
+                    if self.pending.get(address) is not record:
+                        return {'ok':True,'tokens':[record['token']]}
+                    record['profile'].update(clientsStart=client_start,clientsDone=client_done,validated=time.monotonic())
+                    record['nativeWindow']=w
+                    record['nativeRect']=rectangle(w)
+                    record['phase']='preparing'
+                previous = self.pending.get(address)
+                minimized = previous['operation'] == 'minimize' if previous and tuple(previous['identity']) == key(w) else w.get('workspace', {}).get('name') == 'special:win-minimized'
+            family_start=time.monotonic()
+            members, focus = self.desktop.family(w, windows, single)
+            family_done=time.monotonic()
+            if reservation:operation=reservation[0]['operation']
+            elif command == 'activate':
+                operation = ('restore' if minimized else 'minimize') if previous else ('minimize' if self.desktop.active()==address and not minimized else 'restore')
+            else:
+                operation = ('restore' if minimized else 'minimize') if command == 'toggle' else command
+            result = []
+            if operation == 'restore':members.sort(key=lambda item: item['address'] == focus['address'])
+            plans=[]
+            metadata={'received':received,'clientsStart':client_start,'clientsDone':client_done,
+                      'familyStart':family_start,'familyDone':family_done}
+            # Pause every currently validated family route before preparing any
+            # snapshot/desktop/icon. Newer member intents supersede this plan.
+            for member in members:
+                own_reservation=reservation if reservation and member['address']==address else None
+                with self.lock:
+                    current=self.pending.get(member['address'])
+                    if not own_reservation and current and current.get('profile',{}).get('received',0)>received:
+                        plans.append((member,None,current['token']));continue
+                    if not own_reservation:
+                        own_reservation=self.reserve(command if len(members)==1 else operation,member,received)
+                if own_reservation and 'freezeSent' not in own_reservation[0]['profile']:
+                    self.freeze(*own_reservation)
+                plans.append((member,own_reservation,None))
+            for member,own_reservation,superseded in plans:
+                if superseded is not None:result.append(superseded)
+                elif own_reservation is None:result.append('')
+                else:result.append(self.prepare(operation, member,own_reservation,metadata))
+            if operation == 'restore' and len(members) > 1:
+                with self.lock:
+                    batch={'tokens':result,'members':[key(w) for w in members], 'focus':key(focus)}
+                    self.family_batches.append(batch)
+                    for token in result:
+                        record=self.lookup(token)
+                        if record:record['familyFocus']=list(key(focus))
+                    self.journal()
+                    self.finish_families()
+            return {'ok': True, 'tokens': result}
+        except (OSError,ValueError,subprocess.SubprocessError):
+            if reservation:
+                with self.lock:self.drop(reservation[0])
+            raise
+
+    def finish_families(self):
+        for batch in list(self.family_batches):
+            if any(self.lookup(token) for token in batch['tokens'] if token):
+                continue
+            self.family_batches.remove(batch)
+            # A newer request supersedes the focus decision as well as pixels.
+            if any(self.latest.get(identity) not in batch['tokens'] for identity in batch['members']):
+                continue
+            windows=[self.matching(identity) for identity in batch['members']]
+            if any(w is not None and w.get('workspace', {}).get('name') == 'special:win-minimized' for w in windows):
+                continue
+            focus=self.matching(batch['focus'])
+            if focus:self.desktop.commit('restore',focus,True)
+
+    def reserve(self, operation, window, received=None):
+        address = window['address']
+        identity = key(window)
+        with self.lock:
+            previous = self.pending.get(address)
+            if previous and tuple(previous['identity']) != identity:
+                self.drop(previous)
+                previous = None
+            if operation in ('activate','toggle'):
+                minimized=previous['operation']=='minimize' if previous else window.get('workspace',{}).get('name')=='special:win-minimized'
+                if operation=='toggle' or previous:operation='restore' if minimized else 'minimize'
+                else:operation='minimize' if self.desktop.active()==address and not minimized else 'restore'
+            if operation == 'minimize' and window.get('workspace', {}).get('name', '').startswith('special:') and not previous:
+                return None
+            if operation == 'restore' and window.get('workspace', {}).get('name') != 'special:win-minimized' and not previous:
+                self.latest[identity]=''
+                self.desktop.commit('restore', window)
+                return None
+            token = self.token()
+            self.latest[identity]=token
+            record = {'token': token, 'identity': list(identity), 'operation': operation,
+                      'deadline': time.monotonic() + 1.8, 'phase': 'validating', 'previewReady': False, 'nativeRect':rectangle(window), 'nativeWindow':window,
+                      'profile':{'received':received or time.monotonic(),'reserved':time.monotonic()},
+                      'oldImages': ([previous['image']] if previous and previous.get('image') else []) + (previous.get('oldImages', []) if previous else []),
+                      'oldVisuals': ([{k:previous[k] for k in ('token','identity','target')}] if previous and previous.get('target') else []) + (previous.get('oldVisuals',[]) if previous else [])}
+            if previous:
+                if previous.get('image') and previous.get('rect'):
+                    record['frozenSnapshot']={'image':previous['image'],'rect':previous['rect'],
+                        'nativeRect':previous['nativeRect'],'identity':previous['identity'],
+                        'whole':bool(previous.get('wholeWindow'))}
+                elif previous.get('frozenSnapshot'):
+                    record['frozenSnapshot']=dict(previous['frozenSnapshot'])
+            self.pending[address] = record
+            self.journal()
+        return record, previous
+
+    def freeze(self, record, previous):
+        if not previous:return
+        target=previous.get('target') or (previous.get('frozenVisual') or {}).get('target')
+        if not target:return
+        payload={'token':record['token'],'previousToken':previous['token'],
+                 'identity':record['identity'],'target':target}
+        record['frozenVisual']=payload
+        record['profile']['freezeSent']=time.monotonic()
+        try:
+            ack=self.desktop.ipc('motionFreeze',payload)
+            record['profile']['freezeAck']=time.monotonic()
+            if isinstance(ack,dict):
+                record['profile']['frozen']=ack
+                snapshot=ack.get('snapshot')
+                owned=record.get('oldImages',[])
+                if (isinstance(snapshot,dict) and snapshot.get('identity')==record['identity'] and
+                        snapshot.get('image') in owned and Path(snapshot['image']).parent==self.root and
+                        snapshot.get('nativeRect') and snapshot.get('rect')):
+                    record['frozenSnapshot']=snapshot
+            if not ack:record['profile']['freezeRejected']=True
+        except (OSError,ValueError,subprocess.SubprocessError):
+            record['profile']['freezeFailed']=time.monotonic()
+        with self.lock:
+            if self.pending.get(record['identity'][0]) is record:self.journal()
+
+    def prepare(self, operation, window, reservation=None, profile=None):
+        with self.lock:
+            current=self.pending.get(window['address'])
+            if not reservation and current and profile and current.get('profile',{}).get('received',0)>profile['received']:
+                return current['token']
+        reservation=reservation or self.reserve(operation,window, (profile or {}).get('received'))
+        if reservation is None:return ''
+        record,previous=reservation
+        address=window['address'];identity=key(window);token=record['token'];operation=record['operation']
+        with self.lock:
+            if self.pending.get(address) is not record:return token
+            if profile:record['profile'].update(profile)
+            record['phase']='preparing'
+        if 'freezeSent' not in record['profile']:self.freeze(record,previous)
+        try:
+            if record['profile'].get('freezeRejected') or record['profile'].get('freezeFailed'):
+                raise ValueError('renderer could not hold previous frame')
+            if self.desktop.reduced():
+                raise ValueError('reduced motion')
+            if operation=='restore' and window.get('workspace',{}).get('name')=='special:win-minimized':
+                with self.lock:
+                    if self.pending.get(address) is not record:return token
+                    if self.matching(identity) is None:
+                        self.drop(record);return token
+                    destination=self.desktop.select_destination(window)
+            else:destination=self.desktop.source_screen(window,previous)
+            target = self.desktop.target(window)
+            # After selecting a foreign desktop, allow the taskbar's requested
+            # fresh snapshot to expose that desktop's icon before visual setup.
+            until=time.monotonic()+.35
+            while operation=='restore' and (not target or not target.get('visible')) and time.monotonic()<until:
+                time.sleep(.02)
+                target=self.desktop.target(window)
+            if not target or not target.get('visible'):
+                raise ValueError('taskbar icon is hidden or unavailable')
+            if target.get('screenName')!=destination.get('name'):
+                raise ValueError('cross-screen visual route has no owning taskbar')
+            rect = rectangle(window)
+            scale=float(destination.get('scale',1))
+            left,top=destination.get('x',0),destination.get('y',0)
+            right=left+destination.get('width',0)/scale
+            bottom=top+destination.get('height',0)/scale
+            if rect['x']<left or rect['y']<top or rect['x']+rect['width']>right or rect['y']+rect['height']>bottom:
+                raise ValueError('snapshot route spans displays or lies outside destination')
+            retained=record.get('frozenSnapshot')
+            if (retained and retained.get('identity')==list(identity) and retained.get('nativeRect')==rectangle(window)
+                    and retained.get('image') in record.get('oldImages',[]) and Path(retained['image']).parent==self.root
+                    and Path(retained['image']).is_file()):
+                reuse=self.root/(token+'.png');shutil.copyfile(retained['image'],reuse)
+                captured={'image':str(reuse),'rect':retained['rect'],'whole':bool(retained.get('whole'))}
+            else:captured = self.desktop.capture(window, token)
+            image=captured['image'] if isinstance(captured,dict) else captured
+            if isinstance(captured,dict):
+                rect=captured['rect']
+                record['wholeWindow']=bool(captured.get('whole'))
+                if rect['x']<left or rect['y']<top or rect['x']+rect['width']>right or rect['y']+rect['height']>bottom:
+                    Path(image).unlink(missing_ok=True)
+                    raise ValueError('decorated rectangle spans outputs')
+            with self.lock:
+                if self.pending.get(address) is not record:
+                    Path(image).unlink(missing_ok=True)
+                    return token
+                if self.matching(identity) is None:
+                    self.drop(record)
+                    return token
+                record.update(image=image, rect=rect, target=target, phase='loading', previewReady=True, deadline=time.monotonic()+1.2)
+                self.journal()
+            record['profile']['beginSent']=time.monotonic()
+            if not self.desktop.ipc('motionBegin', record):
+                raise ValueError('renderer rejected request')
+            record['profile']['beginAck']=time.monotonic()
+            with self.lock:
+                if self.pending.get(address) is record:self.journal()
+        except (OSError, ValueError, subprocess.SubprocessError):
+            self.settle(token)
+        return token
+
+    def lookup(self, token):
+        return next((r for r in self.pending.values() if r['token'] == token), None)
+
+    def ready(self, token):
+        with self.lock:
+            record = self.lookup(token)
+            if record is None or record['phase'] != 'loading':
+                return {'ok': False}
+            window = self.matching(tuple(record['identity']))
+            if window is None:
+                self.drop(record)
+                return {'ok': False}
+            if self.desktop.reduced():
+                self.settle(token)
+                return {'ok': True}
+            if record['operation'] == 'minimize':
+                try:
+                    self.desktop.commit('minimize', window, True)
+                except (OSError,ValueError,subprocess.SubprocessError) as error:
+                    return self.failure(record,error)
+            record['phase'] = 'running'
+            record['previewReady'] = True
+            record['deadline'] = time.monotonic() + .8
+            self.journal()
+        try:
+            if not self.desktop.ipc('motionStart', record):
+                raise ValueError('renderer rejected start')
+        except (OSError, ValueError, subprocess.SubprocessError):
+            self.settle(token)
+        return {'ok': True}
+
+    def drop(self, record):
+        if self.pending.get(record['identity'][0]) is not record:
+            return
+        del self.pending[record['identity'][0]]
+        self.journal()
+        try:
+            for visual in record.get('oldVisuals',[])+([record.get('frozenVisual')] if record.get('frozenVisual') else [])+([record] if record.get('target') else []):
+                self.desktop.ipc('motionCancel', visual)
+        except (OSError, ValueError, subprocess.SubprocessError):
+            pass
+        for image in record.get('oldImages', []) + ([record['image']] if record.get('image') else []):
+            Path(image).unlink(missing_ok=True)
+
+    def failure(self, record, error):
+        result={'ok':False,'error':'native window operation failed: '+str(error)}
+        self.results[record['token']]=result
+        self.drop(record)
+        if len(self.results)>512:self.results.pop(next(iter(self.results)))
+        return result
+
+    def settle(self, token):
+        with self.lock:
+            record = self.lookup(token)
+            if record is None:
+                return {'ok': False}
+            window = self.matching(tuple(record['identity']))
+            if window:
+                try:
+                    self.desktop.commit(record['operation'], window, record['previewReady'])
+                except (OSError,ValueError,subprocess.SubprocessError) as error:
+                    return self.failure(record,error)
+            self.drop(record)
+            self.finish_families()
+        return {'ok': True}
+
+    def watchdog(self):
+        now=time.monotonic()
+        if now-self.last_janitor>=1 and callable(getattr(self.desktop,'janitor',None)):
+            self.last_janitor=now
+            try:self.desktop.janitor()
+            except (OSError,ValueError,subprocess.SubprocessError):pass
+        with self.lock:
+            records = list(self.pending.values())
+        if not records:
+            with self.lock:self.finish_families()
+            return
+        reduced = self.desktop.reduced()
+        current = {key(w) for w in self.desktop.clients()}
+        for record in records:
+            if tuple(record['identity']) not in current:
+                with self.lock:
+                    self.drop(record)
+            elif reduced or time.monotonic() >= record['deadline']:
+                self.settle(record['token'])
+        with self.lock:self.finish_families()
+
+
+CONTROLLER = None
+
+
+class Handler(socketserver.StreamRequestHandler):
+    def handle(self):
+        try:
+            request = json.loads(self.rfile.readline(65536))
+            method = request['method']
+            if method == 'request':
+                result = CONTROLLER.request(*request['args'],single=bool(request.get('single',False)))
+            elif method=='shutdown':
+                with CONTROLLER.lock:
+                    for record in list(CONTROLLER.pending.values()):CONTROLLER.settle(record['token'])
+                    CONTROLLER.shutdown=True
+                result={'ok':True}
+            elif method == 'status':
+                with CONTROLLER.lock:
+                    result = next((CONTROLLER.results[token] for token in request['tokens'] if token in CONTROLLER.results),
+                                  {'ok': True, 'pending': [token for token in request['tokens'] if CONTROLLER.lookup(token)]})
+            elif method in ('ready', 'done', 'fail'):
+                result = CONTROLLER.ready(request['token']) if method == 'ready' else CONTROLLER.settle(request['token'])
+            else:
+                raise ValueError('invalid method')
+        except (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError) as error:
+            result = {'ok': False, 'error': str(error)}
+        self.wfile.write((json.dumps(result)+'\n').encode())
+
+
+class Server(socketserver.ThreadingUnixStreamServer):
+    daemon_threads = True
+
+
+def daemon():
+    global CONTROLLER
+    os.umask(0o077)
+    ROOT.mkdir(parents=True, exist_ok=True, mode=0o700)
+    with (ROOT / 'daemon.lock').open('w') as lock:
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            return
+        SOCKET.unlink(missing_ok=True)
+        (ROOT/'daemon.pid').write_text(str(os.getpid()))
+        CONTROLLER = Controller(Desktop())
+        CONTROLLER.recover()
+        with Server(str(SOCKET), Handler) as server:
+            worker = threading.Thread(target=server.serve_forever, daemon=True)
+            worker.start()
+            try:
+                while not CONTROLLER.shutdown and (time.monotonic() - CONTROLLER.last_activity < 600 or CONTROLLER.pending):
+                    try:
+                        CONTROLLER.watchdog()
+                    except (OSError, ValueError, subprocess.SubprocessError):
+                        pass
+                    time.sleep(.04)
+            finally:
+                server.shutdown()
+                SOCKET.unlink(missing_ok=True)
+                (ROOT/'daemon.pid').unlink(missing_ok=True)
+
+
+def send(payload, start=False):
+    # Connection establishment is retried without transmitting a request. Once
+    # sent, a lost response must never trigger a duplicate core fallback.
+    deadline=time.monotonic()+(12 if start else 1)
+    launched=False
+    while True:
+        connection=socket.socket(socket.AF_UNIX,socket.SOCK_STREAM)
+        connection.settimeout(12)
+        try:
+            connection.connect(str(SOCKET))
+            break
+        except (ConnectionRefusedError,FileNotFoundError):
+            connection.close()
+            if not start:raise
+            if not launched:
+                env={k:v for k,v in os.environ.items() if k not in {
+                    'HYPR_WINDOWCTL_FAMILY_SINGLE','HYPR_WINDOWCTL_ASYNC',
+                    'HYPR_WINDOWCTL_PREVIEW_READY','HYPR_WINDOWCTL_FRONTEND'}}
+                subprocess.Popen([sys.executable,str(Path(__file__).resolve()),'daemon'],env=env,
+                                 start_new_session=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+                launched=True
+            if time.monotonic()>=deadline:raise OSError('motion service did not become ready')
+            time.sleep(.02)
+    with connection:
+        connection.sendall((json.dumps(payload)+'\n').encode())
+        with connection.makefile('r') as stream:
+            answer=stream.readline(65536)
+            if not answer:raise OSError('motion service disconnected after request submission')
+            return json.loads(answer)
+
+
+def main():
+    if sys.argv[1:2] == ['daemon']:
+        daemon()
+        return
+    if sys.argv[1:2] == ['request']:
+        args = (sys.argv[2:] + ['', '', ''])[:4]
+        try:
+            result = send({'method': 'request', 'args': args, 'single':os.getenv('HYPR_WINDOWCTL_FAMILY_SINGLE')=='1'}, start=True)
+        except (OSError,ValueError,subprocess.SubprocessError) as error:
+            result={'ok':False,'error':str(error)}
+        if result.get('ok') and os.getenv('HYPR_WINDOWCTL_ASYNC') != '1':
+            tokens=[token for token in result.get('tokens', []) if token]
+            deadline=time.monotonic()+12
+            while tokens:
+                status=send({'method':'status','tokens':tokens})
+                if not status.get('ok'):
+                    result=status
+                    break
+                tokens=status.get('pending', [])
+                if tokens and time.monotonic()>=deadline:
+                    result={'ok':False,'error':'motion operation did not settle'}
+                    break
+                if tokens:time.sleep(.02)
+    elif sys.argv[1:2]==['stop']:
+        result=send({'method':'shutdown'})
+    elif sys.argv[1:2] and sys.argv[1] in ('ready', 'done', 'fail') and len(sys.argv) == 3:
+        result = send({'method': sys.argv[1], 'token': sys.argv[2]},start=True)
+    else:
+        raise ValueError('usage: hypr-window-motion request OP [ADDRESS ID PID] | ready/done/fail TOKEN')
+    if not result.get('ok'):
+        print(result.get('error', 'stale motion token'), file=sys.stderr)
+        sys.exit(3)
+
+
+if __name__ == '__main__':
+    main()

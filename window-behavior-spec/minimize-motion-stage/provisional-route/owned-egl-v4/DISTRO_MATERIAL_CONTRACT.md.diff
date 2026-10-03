@@ -1,0 +1,11 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v3/DISTRO_MATERIAL_CONTRACT.md
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v4/DISTRO_MATERIAL_CONTRACT.md
+@@ -18,7 +18,7 @@
+ Arch package recipe. Installed pacman integrity reports127files/0altered.
+ 
+ The producer must also verify the exact installed gallium and Mesa-EGL hashes
+-and their actual mapped device/inode identity before backend readiness. A path
++and their actual mapped device/inode/buildID identity through same-domain kernel queries (see MAPPED_MATERIAL_CONTRACT.md) before backend readiness. A path
+ string or version string alone is insufficient. These checks occur once at
+ owned context initialization, never per animation frame. Diagnostics report
+ actual vendor/renderer/version and material success without native authority.

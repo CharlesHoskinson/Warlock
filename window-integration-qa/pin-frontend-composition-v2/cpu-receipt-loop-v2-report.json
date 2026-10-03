@@ -1,0 +1,37 @@
+{
+  "result": "pass",
+  "sourceSHA256": {
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/prove_composition_before.py": "56dc0636fbd5d593c4746fbed672d5ac2b58445686db80d2d75a7a359ff1d728",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/prove_composition_v2_before.py": "cc8292e300b425d557d6a082a11d3d2bf846617f419d89962c26c5ee7d1ff9e3",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/prove_composition_v3_before.py": "26ade1cbe92aafd7aad4b6b847a516565012cb8c33a2fe13e8788830c06df8f6",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend_authority.py": "72802d3d16e414944021e48d6d44349c5dbdf309df290fb2b0c57cf5f21f05be",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend_cases.py": "f3ffafaebd9e76079a6bf2d8a5c35dc6d711513ae9addd20c5c6c37db0ad6deb",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/native_authority.py": "7e1acaff08e496dae5401486f08e2b55c4fcc3df4b059a30e57bd9c2b15c8023",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/root_pin_helper.py": "30cf295bbc3032b10996e9b6db7c602f6044d38cf73d4eb6ef917e72dd80f0f2",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/popup_authority.py": "f1d5dc41babad3efb390812c81a763b121eb8c2d49283be7f0235bb4e558be16",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/layer_episode.py": "829d2f9cca3869ef26c8fda660197ebccb58de7c3750e77e31eda6d808e3dd6f",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/test_composition.py": "ab6cfe38dd25228417ea16a43531790dc8ca9a37450abc0578267033cdeb407a",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/build_probe.py": "d3454bc5291683f3d5e86083d9bf434a9999cf88783ec20e578f10324eb4d0b2",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/run_cpu.py": "0ec3835fb53becdf85b2219175208ff2f7bf49f54658a409c44c827bfc42e17c",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/run_qml_js_cpu.py": "ba81c17bc89a206f2a7b5af989d51c948b15e670d20ee5839f99ecc7666324be",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/test_controller_receipt_episode.py": "8ed07727127dab1ee502715410380109230374a6e9d96c3aa3b16c6d99020b7a",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/run_cpu_receipt_loop.py": "4c1bead75c1bc5cc47f0ddd335a86205ee6b150b8a16676c55aafa1f0d9ade56",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/test_controller_receipt_episode_v2.py": "fc948c6fe73f304f56a415cc44a7b45a132c89685c4cfdaa1d731e5588e3d627",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/run_cpu_receipt_loop_v2.py": "6550955ac92fe82425ff11fed6356dca8be934b941c3a6cd963f77d573f27dee",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend/PinWindowMenu.qml": "e1b890a6f501f9863bc0513894b04a746aadca02a57c07333cee3746d08bc9b2"
+  },
+  "sourceStable": true,
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "-v",
+    "test_controller_receipt_episode_v2"
+  ],
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "test_controller_partial_then_complete_episode_inside_original_receipt_wait (test_controller_receipt_episode_v2.ReceiptLoop.test_controller_partial_then_complete_episode_inside_original_receipt_wait) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.054s\n\nOK\n",
+  "actualUnprojectedCPU": true,
+  "controlledDataNotNativeAuthority": true,
+  "GUI": false
+}

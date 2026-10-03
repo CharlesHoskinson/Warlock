@@ -1,0 +1,11 @@
+{
+  "error": "outer heredoc delimiter collided with nested documented PY delimiter; Python parse failed before source writes",
+  "exitCode": 127,
+  "actualErrors": [
+    "SyntaxError: unterminated triple-quoted string literal",
+    "bash: This: command not found"
+  ],
+  "productError": false,
+  "nativeLaunched": false,
+  "remedy": "unique outer heredoc delimiter"
+}

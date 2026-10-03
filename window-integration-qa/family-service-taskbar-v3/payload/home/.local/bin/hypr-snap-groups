@@ -1,0 +1,317 @@
+#!/usr/bin/env python3
+"""Session-scoped snap membership, assist candidates, and group recall."""
+import argparse
+import fcntl
+import json
+import os
+from pathlib import Path
+import re
+import subprocess
+import time
+import sys
+
+sys.path.insert(0, str(Path.home()/'.local/share/hypr-window-controls'))
+from window_state import enrich_families, family_root, family_focus
+
+HOME = Path.home()
+ROOT = Path(os.getenv('HYPR_SNAP_STATE_DIR', str(Path(os.getenv('XDG_RUNTIME_DIR', HOME / '.cache')) / 'hypr-snap-groups')))
+ZONES = {
+    'left': {0,1,2,6,7,8}, 'right': {3,4,5,9,10,11},
+    'top_left': {0,1,2}, 'top_right': {3,4,5}, 'bottom_left': {6,7,8}, 'bottom_right': {9,10,11},
+    'third_left': {0,1,6,7}, 'third_center': {2,3,8,9}, 'third_right': {4,5,10,11},
+    'two_thirds_left': {0,1,2,3,6,7,8,9}, 'two_thirds_right': {2,3,4,5,8,9,10,11},
+}
+
+def ctl(*args):
+    return subprocess.check_output(['hyprctl', *args], text=True)
+
+def clients():
+    return enrich_families(json.loads(ctl('clients', '-j')))
+
+def identity(w):
+    return [w['address'], w.get('pid'), w.get('initialClass', w.get('class')), w.get('stableId')]
+
+def rect_of(w):
+    return [*w.get('at', [0,0]), *w.get('size', [800,600])]
+
+def resize_plan(address, old, new, members, gap=10, titlebar=24, min_width=200, min_height=100):
+    """Move shared boundaries while retaining each neighbour's outside edge."""
+    ox,oy,ow,oh = old
+    nx,ny,nw,nh = new
+    # Snap Groups retain their outside boundary. A centered compositor resize
+    # can otherwise push the left/top edge offscreen while widening one pane.
+    bounds = [old, *members.values()]
+    left, top = min(r[0] for r in bounds), min(r[1] for r in bounds)
+    right, bottom = max(r[0]+r[2] for r in bounds), max(r[1]+r[3] for r in bounds)
+    new_right, new_bottom = min(nx+nw, right), min(ny+nh, bottom)
+    nx, ny = max(nx,left), max(ny,top)
+    nw, nh = new_right-nx, new_bottom-ny
+    plan = {address: [nx,ny,nw,nh]}
+    if nw < min_width or nh < min_height:
+        return {address: list(old)}
+    horizontal_overlap = lambda x,w: min(x+w,ox+ow) > max(x,ox)
+    vertical_overlap = lambda y,h: min(y+h,oy+oh) > max(y,oy)
+    for other, rect in members.items():
+        if other == address:
+            continue
+        x,y,w,h = rect
+        changed = list(rect)
+        if abs(nx+nw-ox-ow) > .5 and abs(x - (ox+ow+gap)) <= 3:
+            changed[0], changed[2] = nx+nw+gap, x+w-(nx+nw+gap)
+        elif abs(nx+nw-ox-ow) > .5 and abs(x+w-ox-ow) <= 3:
+            changed[2] = nx+nw-x
+        if abs(nx-ox) > .5 and abs(x+w+gap-ox) <= 3:
+            changed[2] = nx-gap-x
+        elif abs(nx-ox) > .5 and abs(x-ox) <= 3:
+            changed[0], changed[2] = nx, x+w-nx
+        if abs(ny+nh-oy-oh) > .5 and abs(y - (oy+oh+gap+titlebar)) <= 3:
+            changed[1], changed[3] = ny+nh+gap+titlebar, y+h-(ny+nh+gap+titlebar)
+        elif abs(ny+nh-oy-oh) > .5 and abs(y+h-oy-oh) <= 3:
+            changed[3] = ny+nh-y
+        if abs(ny-oy) > .5 and abs(y+h+gap+titlebar-oy) <= 3:
+            changed[3] = ny-gap-titlebar-y
+        elif abs(ny-oy) > .5 and abs(y-oy) <= 3:
+            changed[1], changed[3] = ny, y+h-ny
+        if changed != list(rect):
+            if changed[2] < min_width or changed[3] < min_height:
+                return {address: list(old)}
+            plan[other] = changed
+    return plan
+
+def valid_address(a):
+    return isinstance(a, str) and re.fullmatch(r'0x[0-9a-fA-F]+', a)
+
+def session_state(state, instance):
+    """Keep reload hydration within its original compositor incarnation."""
+    if not isinstance(state, dict) or (state.get('instance') and state['instance'] != instance):
+        state = {'version': 1, 'snapped': {}, 'groups': [], 'next_id': 0}
+    state['instance'] = instance
+    return state
+
+def compositor_instance():
+    """Select one compositor before loading or replacing persistent state."""
+    instance = os.getenv('HYPRLAND_INSTANCE_SIGNATURE', '')
+    if instance:
+        return instance
+    try:
+        instances = json.loads(ctl('instances', '-j'))
+    except (OSError, ValueError, subprocess.SubprocessError) as error:
+        raise ValueError('Unable to identify the compositor instance') from error
+    if not isinstance(instances, list) or len(instances) != 1:
+        raise ValueError('Set HYPRLAND_INSTANCE_SIGNATURE when no unique compositor instance is available')
+    instance = instances[0].get('instance') if isinstance(instances[0], dict) else None
+    if not isinstance(instance, str) or not instance:
+        raise ValueError('The compositor instance has no valid signature')
+    # hyprctl queries and mutations must use the instance that owns the tag.
+    os.environ['HYPRLAND_INSTANCE_SIGNATURE'] = instance
+    return instance
+
+def sync(state, windows):
+    live = {w['address']: w for w in windows if w.get('mapped', True)}
+    for a, member in list(state['snapped'].items()):
+        w = live.get(a)
+        if not w or member['identity'] != identity(w):
+            del state['snapped'][a]
+            continue
+        ws = w.get('workspace', {}).get('name', '')
+        if ws != 'special:win-minimized' and (ws != member['workspace'] or w.get('monitor') != member['monitor']):
+            del state['snapped'][a]
+    groups = []
+    used = set()
+    for old in state['groups']:
+        members = [a for a in old['addresses'] if a in state['snapped']]
+        if len(members) >= 2:
+            old['addresses'] = members
+            groups.append(old)
+            used.update(members)
+    # Greedily assemble compatible slots. A window occupies exactly one group.
+    for a, member in state['snapped'].items():
+        if a in used:
+            continue
+        compatible = next((g for g in groups
+            if all(state['snapped'][b]['workspace'] == member['workspace'] and
+                   state['snapped'][b]['monitor'] == member['monitor'] and
+                   not (ZONES[member['zone']] & ZONES[state['snapped'][b]['zone']])
+                   for b in g['addresses'])), None)
+        if compatible:
+            compatible['addresses'].append(a)
+            used.add(a)
+            continue
+        others = [b for b, m in state['snapped'].items() if b != a and b not in used and
+                  m['workspace'] == member['workspace'] and m['monitor'] == member['monitor'] and
+                  not ZONES[member['zone']] & ZONES[m['zone']]]
+        if others:
+            state['next_id'] += 1
+            group = {'id': 'snap-' + str(state['next_id']), 'addresses': [a, others[0]]}
+            groups.append(group)
+            used.update(group['addresses'])
+    state['groups'] = groups
+    return state
+
+def snapshot(state, windows):
+    live = {w['address']: w for w in windows}
+    result = []
+    for g in state['groups']:
+        members = []
+        for a in g['addresses']:
+            w, m = live[a], state['snapped'][a]
+            members.append({'address': a, 'pid': w.get('pid'), 'class': w.get('class', ''),
+                            'title': w.get('title', ''), 'zone': m['zone']})
+        first = state['snapped'][g['addresses'][0]]
+        result.append({**g, 'name': ' + '.join(m['class'] or m['title'] for m in members),
+                       'members': members, 'workspace': first['workspace'], 'monitor': first['monitor']})
+    return result
+
+def record(state, windows, address, zone, normal_size=None, normal_position=None):
+    w = next((w for w in windows if w['address'] == address), None)
+    if not w:
+        return
+    ws = w.get('workspace', {}).get('name', '')
+    prior = state['snapped'].get(address)
+    if prior and zone == prior['zone'] and identity(w) == prior['identity'] and ws == prior['workspace'] and w.get('monitor') == prior['monitor']:
+        prior['rect'] = rect_of(w)
+        if normal_size: prior['normalSize'] = normal_size
+        if normal_size and normal_position: prior['normalRect'] = [*normal_position,*normal_size]
+        prior.pop('custom', None)
+        sync(state, windows)
+        return
+    state['groups'] = [dict(g, addresses=[a for a in g['addresses'] if a != address]) for g in state['groups']]
+    state['snapped'].pop(address, None)
+    if zone in ZONES and re.fullmatch(r'[0-9]+', ws):
+        state['snapped'][address] = {'identity': identity(w), 'zone': zone,
+                                    'workspace': ws, 'monitor': w.get('monitor'), 'rect': rect_of(w)}
+        if normal_size: state['snapped'][address]['normalSize'] = normal_size
+        if normal_size and normal_position: state['snapped'][address]['normalRect'] = [*normal_position,*normal_size]
+    sync(state, windows)
+
+def assist_data(state, windows, address, zone):
+    source = next((w for w in windows if w['address'] == address), None)
+    if not source or zone not in ZONES or family_root(source, windows)['address'] != source['address'] or family_focus(source, windows)['address'] != source['address']:
+        return {'candidates': [], 'zones': []}
+    occupied = set(ZONES[zone])
+    for a, member in state['snapped'].items():
+        if a != address and member['workspace'] == source['workspace']['name'] and member['monitor'] == source['monitor']:
+            occupied |= ZONES[member['zone']]
+    # Prefer halves when the complete opposite side is available.
+    remaining = set(range(12)) - occupied
+    zones = [z for z in ('two_thirds_left', 'two_thirds_right', 'left', 'right') if ZONES[z] <= remaining]
+    if not zones:
+        zones = [z for z in ('third_left', 'third_center', 'third_right') if ZONES[z] <= remaining]
+    if not zones:
+        zones = [z for z in ('top_left', 'top_right', 'bottom_left', 'bottom_right') if ZONES[z] <= remaining]
+    candidates = [{'address': w['address'], 'title': w.get('title', ''), 'class': w.get('class', '')}
+                  for w in windows if w['address'] != address and w.get('mapped', True) and
+                  w.get('workspace', {}).get('name') == source['workspace']['name'] and
+                  w.get('monitor') == source.get('monitor') and not w.get('pinned') and not w.get('fullscreen') and
+                  family_root(w, windows)['address'] == w['address'] and family_focus(w, windows)['address'] == w['address'] and
+                  w['address'] not in state['snapped']]
+    return {'source': address, 'zones': zones, 'candidates': candidates}
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('command', choices=['list', 'record', 'unsnap', 'sync', 'recall', 'forget', 'assist-data', 'select', 'resize', 'hydrate'])
+    parser.add_argument('args', nargs='*')
+    parser.add_argument('--json', action='store_true')
+    ns = parser.parse_args()
+    try:
+        instance = compositor_instance()
+    except ValueError as error:
+        parser.error(str(error))
+    ROOT.mkdir(parents=True, exist_ok=True)
+    with (ROOT / 'lock').open('a') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        try:
+            state = json.loads((ROOT / 'state.json').read_text())
+        except (OSError, ValueError):
+            state = {'version': 1, 'snapped': {}, 'groups': [], 'next_id': 0}
+        state = session_state(state, instance)
+        windows = clients()
+        sync(state, windows)
+        args = ns.args
+        output = None
+        if ns.command == 'record' and len(args) in (2,4,6) and valid_address(args[0]):
+            normal = [int(v) for v in args[2:4]] if len(args) >= 4 else None
+            position = [int(v) for v in args[4:6]] if len(args) == 6 else None
+            record(state, windows, *args[:2], normal_size=normal, normal_position=position)
+        elif ns.command == 'hydrate' and not args:
+            for a, member in state['snapped'].items():
+                normal = member.get('normalSize')
+                if normal and all(isinstance(v, int) and v > 0 for v in normal):
+                    rect = member.get('normalRect')
+                    position = ',' + ','.join(str(int(v)) for v in rect[:2]) if rect else ',nil,nil'
+                    zone = member.get('zone')
+                    suffix = f',"{zone}"' if zone in ZONES else ''
+                    ctl('eval', f'hypr_snap_hydrate("{a}",{normal[0]},{normal[1]}{position}{suffix})')
+        elif ns.command == 'unsnap' and len(args) == 1:
+            state['snapped'].pop(args[0], None)
+            sync(state, windows)
+        elif ns.command == 'list':
+            output = snapshot(state, windows)
+        elif ns.command == 'assist-data' and len(args) == 2:
+            output = assist_data(state, windows, *args)
+        elif ns.command == 'forget' and len(args) == 1:
+            group = next((g for g in state['groups'] if g['id'] == args[0]), None)
+            if group:
+                for a in group['addresses']:
+                    state['snapped'].pop(a, None)
+                sync(state, windows)
+        elif ns.command == 'recall' and len(args) == 1:
+            group = next((g for g in state['groups'] if g['id'] == args[0]), None)
+            if group:
+                # Save then release flock: snapping schedules another record command.
+                targets = [(a, state['snapped'][a]) for a in group['addresses']]
+                fcntl.flock(lock, fcntl.LOCK_UN)
+                for a, member in targets:
+                    subprocess.run([str(HOME / '.local/bin/hypr-windowctl'), 'restore', a], check=True)
+                    if member.get('custom') and member.get('rect'):
+                        values = ','.join(str(int(v)) for v in member['rect'])
+                        ctl('eval', f'hypr_snap_set_geometry("{a}",{values})')
+                    else:
+                        ctl('eval', f'hypr_snap_zone("{member["zone"]}", "{a}", false)')
+                return
+        elif ns.command == 'resize' and len(args) == 5 and valid_address(args[0]):
+            address = args[0]
+            old = [int(v) for v in args[1:]]
+            group = next((g for g in state['groups'] if address in g['addresses']), None)
+            w = next((w for w in windows if w['address'] == address), None)
+            if group and w:
+                members = {a: state['snapped'][a].get('rect', rect_of(next(w for w in windows if w['address'] == a))) for a in group['addresses']}
+                plan = resize_plan(address, old, rect_of(w), members)
+                # Dispatch neighbours first, owner last, so the active owner's
+                # geometry watcher ignores our correcting resize on its next tick.
+                for a in [a for a in plan if a != address] + [address]:
+                    rect = plan[a]
+                    values = ','.join(str(int(v)) for v in rect)
+                    normal = state['snapped'][a].get('normalSize')
+                    if normal:
+                        normal_rect = state['snapped'][a].get('normalRect')
+                        position = ',' + ','.join(str(int(v)) for v in normal_rect[:2]) if normal_rect else ',nil,nil'
+                        zone = state['snapped'][a].get('zone')
+                        suffix = f',"{zone}"' if zone in ZONES else ''
+                        ctl('eval', f'hypr_snap_hydrate("{a}",{normal[0]},{normal[1]}{position}{suffix})')
+                    ctl('eval', f'hypr_snap_set_geometry("{a}",{values})')
+                    state['snapped'][a]['rect'] = rect
+                    state['snapped'][a]['custom'] = True
+            else:
+                state['snapped'].pop(address, None)
+                sync(state, windows)
+                ctl('eval', f'hypr_snap_forget("{address}")')
+        elif ns.command == 'select' and len(args) == 3 and all(valid_address(a) for a in args[:2]):
+            source, candidate, zone = args
+            m = state['snapped'].get(source)
+            data = assist_data(state, windows, source, m['zone'] if m else '')
+            if zone in data['zones'] and any(c['address'] == candidate for c in data['candidates']):
+                fcntl.flock(lock, fcntl.LOCK_UN)
+                ctl('eval', f'hypr_snap_zone("{zone}", "{candidate}", false)')
+                subprocess.run([str(HOME / '.local/bin/hypr-windowctl'), 'restore', candidate], check=True)
+                return
+        elif ns.command != 'sync':
+            parser.error('invalid arguments')
+        temp = ROOT / 'state.tmp'
+        temp.write_text(json.dumps(state))
+        temp.replace(ROOT / 'state.json')
+        if output is not None:
+            print(json.dumps(output))
+
+if __name__ == '__main__':
+    main()

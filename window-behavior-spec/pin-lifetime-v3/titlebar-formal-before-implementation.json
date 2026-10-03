@@ -1,0 +1,38 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_titlebar.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pin_titlebar\n    ok unfocusedPeerRoutesPreservedTest passed 1 test(s)\n    ok duplicatePhysicalDownNoSecondCallTest passed 1 test(s)\n    ok changedSeatBeforeCallRefusedTest passed 1 test(s)\n    ok changedCoreAfterCallNoCompletionTest passed 1 test(s)\n    ok missingReleaseNoAcceptanceTest passed 1 test(s)\n    ok staleOwnerNoPinTest passed 1 test(s)\n    ok invisibleBoxNoPinTest passed 1 test(s)\n    ok otherButtonNoPinTest passed 1 test(s)\n    ok noQueuedRetryTest passed 1 test(s)\n\n  9 passing (659ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_titlebar.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (2187ms at 914 traces/second).\nUse --seed=0x1415bfa --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_titlebar.qnt": "83cd7a2e8e149a5029c9c1f11cff93bd33164dab62afe4fc40e0d89277faa3b1",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/TITLEBAR_PIN_CONTRACT.md": "3c067d444a79bf58ea1ad5a078607e51af99aa37497172572b9945da2b20ad77",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/barDeco.cpp": "adb6fcd4064beb485f7fb2a54167d0558affb39e81f89c0931978569de0a276f"
+  },
+  "sourceUnchanged": true,
+  "reservedEarlyRouteAbsent": true,
+  "nativeExecuted": false
+}

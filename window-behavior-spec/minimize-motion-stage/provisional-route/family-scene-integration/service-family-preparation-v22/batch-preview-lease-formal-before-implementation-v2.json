@@ -1,0 +1,43 @@
+{
+  "result": "pass",
+  "named": 10,
+  "samples": 2000,
+  "steps": 100,
+  "beforeImplementation": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-3b735aed76aa44c6bfe87c065277c69a.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/batch_preview_lease_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/batch-preview-lease-formal-0-v2.log",
+      "sha256": "a030c906bc795c8834a4dd936892aefd3e525b53499c6915fe342b589324aabe"
+    },
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/batch_preview_lease.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261003",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/batch-preview-lease-formal-1-v2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "priorTypeErrorLog": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/batch-preview-lease-formal-0-v1.log",
+  "sources": {
+    "batch_preview_lease.qnt": "07662bae473997625a6a16324dd4d0f66105d13ffa7334eed62d61a4d529ef5c",
+    "batch_preview_lease_test.qnt": "25c4812d7daad857340e465a6477477c426b51853b793540ee5a36d99d491855"
+  }
+}

@@ -1,0 +1,21 @@
+--- producer-highp-v3/Makefile
++++ producer-readback-v4/Makefile
+@@ -10,7 +10,7 @@
+ .protocols: $(XMLS)
+ 	@set -e; set -- $(XMLS); for name in $(NAMES); do wayland-scanner client-header "$$1" "$$name-client.h"; wayland-scanner private-code "$$1" "$$name-protocol.c"; $(CC) -c "$$name-protocol.c" -o "$$name-protocol.o"; shift; done
+ 	@touch $@
+-hypr-motion-renderer-staged: Renderer.cpp CommitLedger.hpp BackendPolicy.hpp LibraryMaterial.hpp .protocols
++hypr-motion-renderer-staged: Renderer.cpp ReadbackImage.hpp CommitLedger.hpp BackendPolicy.hpp LibraryMaterial.hpp .protocols
+ 	$(CXX) $(CXXFLAGS) Renderer.cpp $(addsuffix -protocol.o,$(NAMES)) -o $@ $(LIBS)
+ test-commit-ledger: test_commit_ledger.cpp CommitLedger.hpp
+ 	$(CXX) $(CXXFLAGS) test_commit_ledger.cpp -o $@
+@@ -20,5 +20,8 @@
+ test-library-material: test_library_material.cpp LibraryMaterial.hpp
+ 	$(CXX) $(CXXFLAGS) test_library_material.cpp -o $@ $(LIBS)
+ 
+-test-family-scene: test_family_scene.cpp Renderer.cpp CommitLedger.hpp BackendPolicy.hpp LibraryMaterial.hpp .protocols
++test-family-scene: test_family_scene.cpp Renderer.cpp ReadbackImage.hpp CommitLedger.hpp BackendPolicy.hpp LibraryMaterial.hpp .protocols
+ 	$(CXX) $(CXXFLAGS) test_family_scene.cpp $(addsuffix -protocol.o,$(NAMES)) -o $@ $(LIBS)
++
++test-readback-image: test_readback_image.cpp ReadbackImage.hpp
++	$(CXX) $(CXXFLAGS) test_readback_image.cpp -o $@ $(LIBS)

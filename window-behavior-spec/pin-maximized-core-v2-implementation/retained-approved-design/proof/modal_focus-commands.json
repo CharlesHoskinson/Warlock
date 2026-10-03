@@ -1,0 +1,40 @@
+[
+  {
+    "argv": [
+      "quint",
+      "typecheck",
+      "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/modal_focus.qnt"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 5.292494296998484,
+    "log": "proof/modal_focus-0.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "quint",
+      "test",
+      "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/modal_focus_test.qnt",
+      "--max-samples=1"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 83.23613739601569,
+    "log": "proof/modal_focus-1.log",
+    "sha256": "4029b8774576b2c366bc383855c2b2255654c323e22ddb426941d4c81b00cc76"
+  },
+  {
+    "argv": [
+      "quint",
+      "run",
+      "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/modal_focus.qnt",
+      "--max-samples=2000",
+      "--max-steps=100",
+      "--invariant=allProps",
+      "--n-threads=2"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 7.090563233010471,
+    "log": "proof/modal_focus-2.log",
+    "sha256": "3633a7cf2ba2eeffe5fd2b8559f4e488f50d840868a5c1a2ee59da5807d53dc0"
+  }
+]

@@ -1,0 +1,11 @@
+--- /home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v3/controller/minimal_controller.py
++++ REVIEW_ONLY_FRESH_DERIVATIVE/controller/minimal_controller.py
+@@ -376,7 +376,7 @@
+   peer_max=self.native_mode(actor,'peer','maximized','set');require(self.public(actor,'peer').get('pinned')is False,'independent ordinary MAX peer pin intent false')
+   if case=='B08':
+    report,_=self.pin_keyboard(case,actor,2,'peer');require(report['after']['pinned']is True,'independent real MAX peer pin intent true')
+-  owner_point=self.qt_point(actor,'owner',owner);peer_box=peer_max['body']['visualBox'];require(self.point_inside(owner_point,peer_box),'actual current overlapping owner/peer point')
++  owner_point=self.qt_point(actor,'owner',owner);peer_box=self.qt_box(actor,'peer',peer);require(self.point_inside(owner_point,peer_box),'actual current overlapping owner/peer point')
+   winner=self.raw('current actual protected band witness',lambda:self.query('pin_stack_state'))
+   require(winner.get('planValid')is True and winner.get('satisfied')is True,'actual native shared-band plan/satisfied')
+   protected=[r for r in winner['order']if r.get('coreProtected')is True]

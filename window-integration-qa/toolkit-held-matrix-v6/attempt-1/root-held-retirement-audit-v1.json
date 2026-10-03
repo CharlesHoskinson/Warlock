@@ -1,0 +1,54 @@
+{
+  "result": "fail",
+  "fullFrozenBytesModesLinks": true,
+  "sourceManifestSHA256": "29b5dc5274f440b6bcf35b88027eadff01fa74f876cdff10d19c9a607ecec9ac",
+  "producerResult": "fail",
+  "rows": [
+    {
+      "variant": "qt-wayland",
+      "case": "move-escape",
+      "producerCaseResult": "pass",
+      "retirementExpected": true,
+      "evidenceIntegrity": true,
+      "artifact": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/attempt-1/qt-wayland/case-1/retirement-observation.json",
+      "artifactSHA256": "10a0df11f975c2bcd51e65dc8bfab03ba3c573f615907d9fce36886fe42bae24",
+      "independentFocusBefore": true,
+      "independentFocusAfter": true,
+      "coreRetired": true,
+      "groupsPreserved": true,
+      "actualRawHoldPreserved": true,
+      "escapeSpecificTheftObserved": false
+    },
+    {
+      "variant": "qt-wayland",
+      "case": "move-reload",
+      "producerCaseResult": "pass",
+      "retirementExpected": true,
+      "evidenceIntegrity": true,
+      "artifact": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/attempt-1/qt-wayland/case-2/retirement-observation.json",
+      "artifactSHA256": "cfbe4e0b0d596815db8fb796eec7a5b2b5f89ddc4a394d17b43c757a667d2de2",
+      "independentFocusBefore": true,
+      "independentFocusAfter": true,
+      "coreRetired": true,
+      "groupsPreserved": true,
+      "actualRawHoldPreserved": true,
+      "escapeSpecificTheftObserved": false
+    },
+    {
+      "variant": "qt-wayland",
+      "case": "move-unload-reload",
+      "producerCaseResult": "fail",
+      "retirementExpected": true,
+      "evidenceIntegrity": false,
+      "retirementEvidenceMissing": true
+    }
+  ],
+  "retainedRetirementCount": 2,
+  "allReplayedIndependentFocusPreserved": true,
+  "fullHeld52Accepted": false,
+  "nativeCommands": false,
+  "mainWrites": false,
+  "boundary": "Retained retirement evidence and focus attribution only; full workload/genuine input/lifecycle remain independently required",
+  "auditorSHA256": "619ba22ebca2bc3ed97663952086c983314fa94eac2f0cd131acacf806dfe375",
+  "readerSHA256": "5d35dd6a4f31e71073faa44241d0368055523787040c3842436345236d2fc011"
+}

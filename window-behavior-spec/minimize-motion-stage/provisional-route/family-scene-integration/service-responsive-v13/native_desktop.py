@@ -1,0 +1,249 @@
+"""Native adapter candidate. Instantiate only under a coordinated GUI grant.
+
+Uses the exact frozen production planner/core semantics. V18 canonical atlas
+capture adds whole-window cross-output coordinates without geometry writes.
+Translucent client backdrop equivalence remains outside the capture guarantee.
+"""
+from contextlib import nullcontext
+from copy import deepcopy
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import threading
+import importlib.util
+import uuid
+import re
+import stat
+import production_motion_6d9 as production
+from scene_controller import key, rectangle
+from snapshot_cache import SnapshotCache
+from family_order import order_family,needs_active_witness,checked_identity
+
+class NativeDesktop:
+    def __init__(self, root, *, core, target=None, cache_root=None):
+        self.root=Path(root)
+        expected=Path(os.environ['XDG_RUNTIME_DIR'])/'hypr-window-motion'
+        if not self.root.resolve().is_relative_to(expected.resolve()) or self.root.resolve()==expected.resolve():
+            raise ValueError('actor snapshot root must be under private motion runtime')
+        self.root.mkdir(parents=True,mode=0o700,exist_ok=False)
+        self.root.chmod(0o700)
+        info=self.root.lstat()
+        self.directory_identity=(info.st_dev,info.st_ino)
+        parent=self.root.parent.lstat();self.parent_identity=(parent.st_dev,parent.st_ino)
+        # Each actor receives an independent exact production module. ROOT and
+        # CORE in frozen methods cannot be overwritten by another family actor.
+        source=Path(__file__).with_name('production_motion_6d9.py')
+        if hashlib.sha256(source.read_bytes()).hexdigest()!='6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa':
+            raise ValueError('frozen native planner source changed')
+        spec=importlib.util.spec_from_file_location('motion_native_'+uuid.uuid4().hex,source)
+        self.production=importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(self.production)
+        self.production.ROOT=self.root
+        self.production.CORE=Path(core)
+        self.base=self.production.Desktop()
+        self.target_override=target
+        self.capture_serial=0
+        self.capture_session=os.urandom(6).hex()
+        self.capture_lock=threading.RLock()
+        self.shared_cache=SnapshotCache(cache_root,self.base.validate_snapshot,session=os.environ['HYPRLAND_INSTANCE_SIGNATURE']) if cache_root else None
+        self.current_capture_epoch=None
+        self.family_query_lock=threading.RLock();self.family_query_local=threading.local()
+    def __getattr__(self,name):return getattr(self.base,name)
+    def family(self,window,windows,single=False):
+        with getattr(self,'family_query_lock',nullcontext()):
+            result=self._family_locked(window,windows,single)
+            local=getattr(self,'family_query_local',None)
+            if local is not None:local.evidence=deepcopy(getattr(self.base.family_trace,'evidence',None))
+            return result
+    def _family_locked(self,window,windows,single=False):
+        members,focus=self.base.family(window,windows,single)
+        if single:
+            self.base.family_trace.evidence={'native':[],'members':[list(key(w)) for w in members],
+                'drawOrder':[list(key(w)) for w in members],'single':True,'paintWitness':'explicit-single-captured-identity'}
+            return members,focus
+        evidence=getattr(self.base.family_trace,'evidence',None)
+        if not evidence or not isinstance(evidence.get('native'),list):raise ValueError('fresh native paint vector unavailable')
+        native=evidence['native'];active=None;observed=False
+        if needs_active_witness(members):
+            active_address=self.base.active()
+            current=self.base.clients()
+            # The active address gains identity only through complete fresh
+            # client/native coverage, never shared PID or focus history.
+            if {checked_identity(w) for w in current if w.get('mapped',True)}!={checked_identity(w) for w in native}:raise ValueError('active paint client/native identity coverage changed')
+            if active_address:
+                match=next((w for w in current if w.get('mapped',True) and w['address']==active_address),None)
+                if match is None:raise ValueError('active tiled native identity unavailable')
+                active=checked_identity(match)
+            observed=True
+        ordered=order_family(members,native,active=active,active_observed=observed)
+        evidence['drawOrder']=[list(key(w)) for w in ordered]
+        evidence['paintWitness']='WindowState-vector+native-render-plane+ancestor-constraints'
+        evidence['activePaintIdentity']=list(active) if active else None
+        return ordered,focus
+    def family_evidence(self):
+        local=getattr(self,'family_query_local',None)
+        return deepcopy(getattr(local,'evidence',None) if local is not None else getattr(self.base.family_trace,'evidence',None))
+    def plan_destination(self,window):
+        """Read-only exact stored destination/output plan; no focus or refresh."""
+        state=self.production.RUNTIME/'hypr-windowctl'/window['address']
+        fields=state.read_text().split()
+        metadata=json.loads(state.with_name(state.name+'.monitor.json').read_text())
+        if len(fields)<3 or not fields[0].isdigit() or fields[2]!=str(window['stableId']) or metadata.get('pid')!=window['pid'] or metadata.get('stableId')!=window['stableId'] or str(metadata.get('homeWorkspace'))!=fields[0]:
+            raise ValueError('stored destination identity is stale or incomplete')
+        destination=fields[0]
+        monitors=self.base.monitors()
+        workspaces=json.loads(subprocess.check_output(['hyprctl','workspaces','-j'],text=True,timeout=2))
+        workspace=next((w for w in workspaces if w.get('name')==destination),None)
+        monitor=next((m for m in monitors if workspace and (m.get('id')==workspace.get('monitorID') or m.get('name')==workspace.get('monitor'))),None)
+        monitor=monitor or next((m for m in monitors if m.get('name')==metadata.get('monitorName')),None)
+        monitor=monitor or next((m for m in monitors if m.get('focused')),None)
+        if not monitor:raise ValueError('destination output unavailable')
+        if not any(key(current)==key(window) for current in self.base.clients()):raise ValueError('destination identity changed')
+        return {'identity':list(key(window)),'destination':destination,'monitor':deepcopy(monitor),
+            'storedFields':fields,'storedMetadata':metadata}
+    def apply_destination(self,window,plan):
+        """Short native focus effect; caller holds complete family receipt lock."""
+        if plan.get('identity')!=list(key(window)):raise ValueError('destination plan identity differs')
+        state=self.production.RUNTIME/'hypr-windowctl'/window['address']
+        if state.read_text().split()!=plan['storedFields'] or json.loads(state.with_name(state.name+'.monitor.json').read_text())!=plan['storedMetadata']:
+            raise ValueError('stored destination changed before native focus')
+        if not any(key(current)==key(window) for current in self.base.clients()):raise ValueError('destination identity changed before native focus')
+        for expression in ['hl.dsp.focus({ monitor = '+json.dumps(plan['monitor']['name'])+' })',
+                           'hl.dsp.focus({ workspace = '+json.dumps(plan['destination'])+' })']:
+            subprocess.run(['hyprctl','dispatch',expression],check=True,stdout=subprocess.DEVNULL,timeout=2)
+        return plan['monitor']
+    def refresh_destination(self,window,plan):
+        if plan.get('identity')!=list(key(window)):raise ValueError('destination refresh identity differs')
+        return self.base.ipc('motionRefresh',{})
+    def retire_gestures(self,members,*,env=None):
+        if not isinstance(members,list) or not 1<=len(members)<=64:raise ValueError('complete bounded retirement family required')
+        identities=[checked_identity(w) for w in members]
+        if len(set(identities))!=len(identities):raise ValueError('duplicate exact retirement identity')
+        calls='{'+','.join('{'+json.dumps(address)+','+json.dumps(sid)+'}' for address,sid,pid in identities)+'}'
+        expression=(
+            'local api=hl.plugin.hyprbars.retire_gesture_current; '
+            'if type(api)~="function" then print(\'{"ok":false,"retired":[],"error":"retirement-capability-absent"}\') '
+            'else local retired={}; local ok=true; '
+            'for _,args in ipairs('+calls+') do local success,was=api(args[1],args[2]); '
+            'if type(success)~="boolean" or type(was)~="boolean" or not success then ok=false; break end; '
+            'retired[#retired+1]=was and "true" or "false"; end; '
+            'print(\'{"ok":\'..(ok and "true" or "false")..\',"retired":[\'..table.concat(retired,",")..\']}\'); end')
+        reply=json.loads(subprocess.check_output(['hyprctl','repl',expression],env=env,text=True,timeout=.6))
+        if (not isinstance(reply,dict) or reply.get('ok') is not True or not isinstance(reply.get('retired'),list)
+                or len(reply['retired'])!=len(identities) or any(type(value) is not bool for value in reply['retired'])):
+            error=ValueError('exact gesture retirement refused; no source capture')
+            error.evidence=reply
+            raise error
+        return [{'identity':list(identity),'retired':retired} for identity,retired in zip(identities,reply['retired'],strict=True)]
+    def target(self,window):
+        return self.target_override(window) if self.target_override else self.base.target(window)
+    def capture_source(self,window,scene_token,index):
+        with self.capture_lock:
+            self.current_capture_epoch=None
+            try:
+                if self.shared_cache and window.get('workspace',{}).get('name')=='special:win-minimized':
+                    metadata,pixels=self.shared_cache.restore(window)
+                    self.check_current(window)
+                    stem=self.shared_cache.stem(window)
+                    for extension,data in (('.png',pixels),('.json',json.dumps(metadata).encode())):
+                        path=self.root/(stem+extension)
+                        staging=self.root/(stem+'-'+uuid.uuid4().hex+extension+'.tmp')
+                        try:
+                            with os.fdopen(os.open(staging,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600),'wb') as output:output.write(data)
+                            staging.replace(path)
+                        finally:staging.unlink(missing_ok=True)
+                result=self._capture_source_impl(window,scene_token,index)
+                if self.shared_cache:
+                    stem=self.shared_cache.stem(window)
+                    metadata=json.loads((self.root/(stem+'.json')).read_text())
+                    self.shared_cache.publish(window,metadata,(self.root/(stem+'.png')).read_bytes())
+                return result
+            except Exception:
+                # The controller lease cannot own a capture that never returns.
+                epoch=self.current_capture_epoch
+                if epoch:
+                    for prefix in ('','frame-','composed-'):(self.root/(prefix+epoch+'.png')).unlink(missing_ok=True)
+                raise
+            finally:self.current_capture_epoch=None
+    def _capture_source_impl(self,window,scene_token,index):
+        with self.capture_lock:
+            self.check_current(window)
+            target=self.target(window)
+            if not target or not target.get('visible'):raise ValueError('actual taskbar icon unavailable')
+            icon=target['rect']
+            self.capture_serial+=1
+            epoch=self.capture_session+'-'+str(self.capture_serial)
+            self.current_capture_epoch=epoch
+            image=self.root/(epoch+'.png')
+            cache=self.root/('full-'+str(window['stableId'])+'-'+str(window['pid']))
+            if window.get('workspace',{}).get('name')=='special:win-minimized':
+                captured=self.base.capture(window,epoch)
+                metadata=json.loads(cache.with_suffix('.json').read_text())
+                metadata['rect']=captured['rect']
+                image=Path(captured['image'])
+            else:
+                expression='print(hl.plugin.hyprbars.window_atlas('+','.join((json.dumps(window['address']),json.dumps(str(window['stableId'])),str(window['pid']),json.dumps(str(image)),json.dumps(epoch)))+'))'
+                metadata=json.loads(subprocess.check_output(['hyprctl','repl',expression],text=True,timeout=1))
+                if (not metadata.get('ok') or not metadata.get('whole') or not metadata.get('canonical') or metadata.get('captureEpoch')!=epoch
+                        or str(metadata.get('stableId'))!=str(window['stableId']) or metadata.get('pid')!=window['pid']):
+                    image.unlink(missing_ok=True)
+                    raise ValueError('canonical exact-identity atlas unavailable: '+str(metadata))
+                self.validate_snapshot(metadata,rectangle(window));self.check_current(window)
+                metadata.update(identity=list(key(window)),clientSize=list(window['size']))
+                self.publish_crop(window,epoch,image,metadata)
+                for extension,data in (('.png',image.read_bytes()),('.json',json.dumps(metadata).encode())):
+                    staging=self.root/(cache.name+'-'+epoch+extension+'.tmp')
+                    with os.fdopen(os.open(staging,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600),'wb') as output:output.write(data)
+                    staging.replace(cache.with_suffix(extension))
+            self.check_current(window)
+            image.chmod(0o600)
+            scale=metadata['pixels'][0]/metadata['rect']['width']
+            return {'stableId':str(window['stableId']),'pid':int(window['pid']),
+                'digest':hashlib.sha256(image.read_bytes()).hexdigest(),'path':str(image),
+                'nativeRect':rectangle(window),'atlasRect':metadata['rect'],'iconRect':icon,
+                'insets':metadata['insets'],'pixels':metadata['pixels'],'captureScale':scale,
+                'captureEpoch':epoch,'sceneToken':scene_token,'targetScreen':target['screenName']}
+    def release_sources(self,sources):
+        for source in sources:
+            path=Path(source.get('path',''))
+            if path.parent==self.root and production.re.fullmatch(r'[0-9a-f]{12}-[1-9][0-9]{0,14}\.png',path.name):
+                path.unlink(missing_ok=True)
+        self.janitor()
+    def dispose(self):
+        # Called only after workers/renderer finish normally. Pin both directory
+        # descriptors so a replacement path cannot redirect file deletion.
+        flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC
+        parent_fd=os.open(self.root.parent,flags)
+        actor_fd=None
+        try:
+            parent=os.fstat(parent_fd)
+            if (not stat.S_ISDIR(parent.st_mode) or parent.st_uid!=os.getuid() or parent.st_mode&0o077
+                    or (parent.st_dev,parent.st_ino)!=self.parent_identity
+                    or self.root.parent.resolve()!=self.root.parent.absolute()):raise ValueError('actor parent directory identity changed')
+            actor_fd=os.open(self.root.name,flags,dir_fd=parent_fd)
+            info=os.fstat(actor_fd)
+            if (not stat.S_ISDIR(info.st_mode) or info.st_uid!=os.getuid() or info.st_mode&0o077
+                    or (info.st_dev,info.st_ino)!=self.directory_identity):raise ValueError('actor snapshot directory identity changed')
+            epoch=r'[0-9a-f]{12}-[1-9][0-9]{0,14}'
+            full=r'full-[0-9a-f]{1,16}-[1-9][0-9]*'
+            pattern=re.compile(r'(?:(?:(?:frame|composed)-)?'+epoch+r'\.png|'+full+r'\.(?:png|json)|'+full+'-'+epoch+r'\.(?:png|json)\.tmp)')
+            entries={}
+            for name in os.listdir(actor_fd):
+                item=os.stat(name,dir_fd=actor_fd,follow_symlinks=False)
+                if (not pattern.fullmatch(name) or not stat.S_ISREG(item.st_mode)
+                        or item.st_uid!=os.getuid() or item.st_mode&0o077):raise ValueError('unexpected actor material refused: '+name)
+                entries[name]=(item.st_dev,item.st_ino,item.st_size,item.st_mtime_ns,item.st_ctime_ns)
+            # No active actor worker remains. Preserve unexpected material before
+            # any deletion; recheck each exact generated inode via the same FD.
+            for name,identity in entries.items():
+                item=os.stat(name,dir_fd=actor_fd,follow_symlinks=False)
+                if (item.st_dev,item.st_ino,item.st_size,item.st_mtime_ns,item.st_ctime_ns)!=identity:raise ValueError('actor material changed during disposal')
+            for name in entries:os.unlink(name,dir_fd=actor_fd)
+            named=os.stat(self.root.name,dir_fd=parent_fd,follow_symlinks=False)
+            if (named.st_dev,named.st_ino)!=self.directory_identity:raise ValueError('actor name replaced before removal')
+            os.rmdir(self.root.name,dir_fd=parent_fd)
+        finally:
+            if actor_fd is not None:os.close(actor_fd)
+            os.close(parent_fd)

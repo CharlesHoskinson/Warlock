@@ -1,0 +1,37 @@
+/** Native readiness requires matched actual render-submission observations.
+ * Geometry/digest assigned by the route are expected values, not pixel proof.
+ * The trusted renderer probe observes an exact atlas identity/epoch and rect.
+ * Per-output presentation sequence/time is monotonic. Latest presented frame
+ * controls endpoint acknowledgement; a newer nonendpoint clears that output.
+ */
+module presentation {
+ type Observation={identity:int,epoch:int,output:int,sequence:int,time:int,x:int,digest:int}
+ type Event=Submit(Observation) | Present(Observation) | Tick | Validate | Reverse | Cancel | Finish | Reuse
+ type State={id:int,epoch:int,phase:str,x:int,digest:int,validated:bool,submittedSeq:List[int],submittedX:List[int],presentedSeq:List[int],presentedTime:List[int],ready:Set[int],endReady:Set[int],nativeMin:bool,stale:bool,beforeNative:bool}
+ var s:State
+ action init=s'={id:1,epoch:1,phase:"provisional",x:5,digest:107,validated:false,submittedSeq:List(0,0),submittedX:List(0,0),presentedSeq:List(0,0),presentedTime:List(0,0),ready:Set(),endReady:Set(),nativeMin:false,stale:false,beforeNative:false}
+ def valid(o:Observation):bool=(s.phase=="provisional" or s.phase=="running") and o.identity==s.id and o.epoch==s.epoch and o.digest==s.digest and o.output>=0 and o.output<2
+ action fire(e:Event):bool={
+  val b={...s,stale:false,beforeNative:s.nativeMin}
+  s'=match e {
+   | Submit(o)=>if(not(valid(o)) or o.x!=s.x or o.sequence<=s.submittedSeq.nth(o.output)){...b,stale:true}
+       else {...b,submittedSeq:s.submittedSeq.replaceAt(o.output,o.sequence),submittedX:s.submittedX.replaceAt(o.output,o.x)}
+   | Present(o)=>if(not(valid(o)) or o.sequence!=s.submittedSeq.nth(o.output) or o.x!=s.submittedX.nth(o.output) or o.sequence<=s.presentedSeq.nth(o.output) or o.time<=s.presentedTime.nth(o.output)){...b,stale:true}
+       else {...b,presentedSeq:s.presentedSeq.replaceAt(o.output,o.sequence),presentedTime:s.presentedTime.replaceAt(o.output,o.time),ready:s.ready.union(Set(o.output)),endReady:if(o.x==10)s.endReady.union(Set(o.output)) else s.endReady.exclude(Set(o.output))}
+   | Tick=>if(s.phase=="provisional" or s.phase=="running"){...b,x:if(s.x<10)s.x+1 else 10} else b
+   | Validate=>if(s.phase!="provisional")b else {...b,phase:"running",validated:true}
+   | Reverse=>{...b,epoch:s.epoch+1,phase:"provisional",validated:false,ready:Set(),endReady:Set(),submittedSeq:List(0,0),submittedX:List(0,0),presentedSeq:List(0,0),presentedTime:List(0,0)}
+   | Cancel=>{...b,phase:"cancelled",validated:false,ready:Set(),endReady:Set()}
+   | Finish=>if(s.phase!="running" or not(s.validated) or s.x!=10 or s.endReady!=Set(0,1)){...b,stale:true} else {...b,phase:"idle",nativeMin:true}
+   | Reuse=>{...b,id:s.id+1,epoch:s.epoch+1,phase:"cancelled",nativeMin:false,digest:(s.id+1)*100+7,validated:false,ready:Set(),endReady:Set()}
+  }
+ }
+ val staleCannotCommit=s.stale implies s.nativeMin==s.beforeNative
+ val committedNeedsEndpointProof=(s.phase=="idle" and s.nativeMin) implies (s.validated and s.endReady==Set(0,1) and s.presentedSeq.nth(0)>0 and s.presentedSeq.nth(1)>0)
+ val allProps=staleCannotCommit and committedNeedsEndpointProof
+ action step={
+  val o={identity:s.id,epoch:s.epoch,output:0,sequence:s.submittedSeq.nth(0)+1,time:s.presentedTime.nth(0)+1,x:s.x,digest:s.digest}
+  val r={identity:s.id,epoch:s.epoch,output:1,sequence:s.submittedSeq.nth(1)+1,time:s.presentedTime.nth(1)+1,x:s.x,digest:s.digest}
+  nondet e=Set(Submit(o),Submit(r),Present({...o,sequence:s.submittedSeq.nth(0),x:s.submittedX.nth(0)}),Present({...r,sequence:s.submittedSeq.nth(1),x:s.submittedX.nth(1)}),Present({...o,time:s.presentedTime.nth(0)-1}),Present({...o,digest:s.digest-100}),Present({...o,identity:s.id-1}),Present({...o,x:999}),Tick,Validate,Reverse,Cancel,Finish,Reuse).oneOf();fire(e)
+ }
+}

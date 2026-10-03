@@ -1,0 +1,2859 @@
+DEBUG ]: Old rlimit: soft -> 65536, hard -> 524288
+DEBUG ]: New rlimit: soft -> 524288, hard -> 524288
+WARN ]: WARNING: Hyprland is being launched without start-hyprland. This is highly advised against.
+DEBUG ]: Creating the EventLoopManager!
+DEBUG ]: Creating the KeybindManager!
+DEBUG ]: Creating the AnimationManager!
+DEBUG ]: Creating the DynamicPermissionManager!
+DEBUG ]: Creating the MonitorState!
+DEBUG ]: Creating the WorkspaceState!
+DEBUG ]: Creating the ConfigManager!
+DEBUG ]: [cfg] Config is either explicit or special.
+DEBUG ]: [cfg] Config is lua, loading lua mgr
+DEBUG ]: Creating the Error Overlay!
+DEBUG ]: Creating the LayoutManager!
+DEBUG ]: Creating the TokenManager!
+DEBUG ]: Creating the EventManager!
+DEBUG ]: Creating the PointerManager!
+DEBUG ]: Creating the AsyncResourceGatherer!
+DEBUG from aquamarine ]: Creating an Aquamarine backend!
+DEBUG from aquamarine ]: Private AQ_BACKENDS=wayland: mandatory parent, no DRM or libseat backend
+DEBUG from aquamarine ]: Starting the Aquamarine backend!
+DEBUG from aquamarine ]: Starting the Wayland backend!
+DEBUG from aquamarine ]: Connected to a wayland compositor: Hyprland
+DEBUG from aquamarine ]: Got registry at 0x643a63d1d060
+DEBUG from aquamarine ]: New wayland keyboard wl_keyboard
+DEBUG from aquamarine ]: New wayland pointer wl_pointer
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got main device
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got node /dev/dri/renderD129
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got done
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: opened node /dev/dri/renderD129 with fd 16
+DEBUG from aquamarine ]: Output WAYLAND-1: initialized
+DEBUG from aquamarine ]: reopenDRMNode: opening node /dev/dri/renderD129
+DEBUG from aquamarine ]: Created a GBM allocator with drm fd 17
+DEBUG ]: Instance Signature: efb50993780079460b0cbed1363e2166a2de1d9f_1790906165_1861522036
+DEBUG ]: Runtime directory: /run/user/1000/wqa/5ecc/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790906165_1861522036
+DEBUG ]: Hyprland PID: 2170728
+DEBUG ]: ===== SYSTEM INFO: =====
+DEBUG ]: Hyprland 0.56.2 built from branch v0.56.2 at commit efb50993780079460b0cbed1363e2166a2de1d9f clean ([gha] Nix: update inputs).
+Date: Wed Aug 5 14:13:21 2026
+Tag: v0.56.2, commits: 7661
+
+Libraries:
+Hyprgraphics: built against 0.5.1, system has 0.5.1
+Hyprutils: built against 0.14.1, system has 0.14.2
+Hyprcursor: built against 0.1.13, system has 0.1.13
+Hyprlang: built against 0.6.8, system has 0.6.8
+Aquamarine: built against 0.15.0, system has 0.15.0
+
+Version ABI string: efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6
+no flags were set
+
+
+System Information:
+System name: Linux
+Node name: hosk
+Release: 7.2.7-1-omarchy
+Version: #1 SMP PREEMPT_DYNAMIC Sun, 27 Sep 2026 22:42:08 +0000
+
+Libraries:
+Hyprgraphics: built against 0.5.1, system has 0.5.1
+Hyprutils: built against 0.14.1, system has 0.14.2
+Hyprcursor: built against 0.1.13, system has 0.1.13
+Hyprlang: built against 0.6.8, system has 0.6.8
+Aquamarine: built against 0.15.0, system has 0.15.0
+
+
+
+GPU information: 
+00:02.0 VGA compatible controller [0300]: Intel Corporation Arrow Lake-S [Intel Graphics] [8086:7d67] (rev 06) (prog-if 00 [VGA controller])
+02:00.0 VGA compatible controller [0300]: NVIDIA Corporation GB203M / GN22-X11 [GeForce RTX 5090 Max-Q / Mobile] [10de:2c58] (rev a1) (prog-if 00 [VGA controller])
+80:14.5 Non-VGA unclassified device [0000]: Intel Corporation Device [8086:7f2f] (rev 10)
+NVRM version: NVIDIA UNIX Open Kernel Module for x86_64  615.71.09  Release Build  (root@archiso)  
+
+
+os-release: NAME="Omarchy"
+PRETTY_NAME="Omarchy"
+ID=omarchy
+ID_LIKE=arch
+BUILD_ID="4.0.4.legion"
+VERSION_ID="4.0.4.legion"
+ANSI_COLOR="38;2;158;206;106"
+HOME_URL="https://omarchy.org/"
+DOCUMENTATION_URL="https://learn.omacom.io/2/the-omarchy-manual"
+SUPPORT_URL="https://discord.gg/tXFUdasqhY"
+BUG_REPORT_URL="https://github.com/basecamp/omarchy/issues"
+LOGO=omarchy
+
+
+plugins:
+	unknown: not runtime
+
+Backend: sessionless
+
+Monitor info:
+
+State:
+
+configProvider: lua
+backend: wayland
+
+
+
+DEBUG ]: ========================
+DEBUG ]: 
+
+
+DEBUG ]: If you are crashing, or encounter any bugs, please consult https://wiki.hypr.land/Crashes-and-Bugs/
+
+
+DEBUG ]: 
+Current splash: Funny animation compositor woo
+
+
+DEBUG ]: Running on DRMFD: 16
+DEBUG ]: Using RENDERNODEFD: 16
+DEBUG ]: DRM DisplayNode syncobj timeline support: yes
+DEBUG ]: DRM RenderNode syncobj timeline support: yes
+DEBUG ]: wl_display_add_socket for wayland-1 succeeded with 0
+DEBUG ]: Creating the CHyprOpenGLImpl!
+DEBUG ]: Supported EGL global extensions: (16) EGL_EXT_device_base EGL_EXT_device_enumeration EGL_EXT_device_query EGL_EXT_platform_base EGL_KHR_client_get_all_proc_addresses EGL_EXT_client_extensions EGL_KHR_debug EGL_EXT_platform_device EGL_EXT_explicit_device EGL_EXT_platform_wayland EGL_KHR_platform_wayland EGL_EXT_platform_x11 EGL_KHR_platform_x11 EGL_EXT_platform_xcb EGL_MESA_platform_gbm EGL_KHR_platform_gbm EGL_MESA_platform_surfaceless
+DEBUG ]: eglDeviceFromDRMFD: Using device /dev/dri/card0
+DEBUG ]: EGL: IMG_context_priority supported, requesting high
+DEBUG ]: EGL: EXT_create_context_robustness supported, requesting lose on reset
+DEBUG ]: EGL: Using KHR_context_flush_control
+DEBUG ]: EGL: Got a high priority context
+DEBUG ]: Creating the Hypr OpenGL Renderer!
+DEBUG ]: Using: OpenGL ES 3.2 Mesa 26.2.2-arch1.1
+DEBUG ]: Vendor: Intel
+DEBUG ]: Renderer: Mesa Intel(R) Graphics (ARL)
+DEBUG ]: Supported extensions: (167) GL_EXT_blend_minmax GL_EXT_multi_draw_arrays GL_EXT_texture_filter_anisotropic GL_EXT_texture_compression_s3tc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_format_BGRA8888 GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth24 GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_mapbuffer GL_OES_rgb8_rgba8 GL_OES_standard_derivatives GL_OES_stencil8 GL_OES_texture_3D GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_vertex_half_float GL_EXT_draw_instanced GL_EXT_texture_sRGB_decode GL_OES_EGL_image GL_OES_depth_texture GL_AMD_performance_monitor GL_OES_packed_depth_stencil GL_EXT_texture_type_2_10_10_10_REV GL_NV_conditional_render GL_OES_get_program_binary GL_APPLE_texture_max_level GL_EXT_discard_framebuffer GL_EXT_read_format_bgra GL_EXT_texture_storage GL_NV_pack_subimage GL_NV_texture_barrier GL_EXT_frag_depth GL_NV_fbo_color_attachments GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_array_object GL_OES_viewport_array GL_ANGLE_pack_reverse_row_order GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_EXT_occlusion_query_boolean GL_EXT_robustness GL_EXT_sRGB GL_EXT_texture_rg GL_EXT_unpack_subimage GL_NV_draw_buffers GL_NV_read_buffer GL_NV_read_depth GL_NV_read_depth_stencil GL_NV_read_stencil GL_APPLE_sync GL_EXT_draw_buffers GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_shadow_samplers GL_KHR_debug GL_KHR_robustness GL_KHR_texture_compression_astc_ldr GL_NV_generate_mipmap_sRGB GL_NV_pixel_buffer_object GL_OES_depth_texture_cube_map GL_OES_required_internalformat GL_OES_surfaceless_context GL_EXT_color_buffer_float GL_EXT_debug_label GL_EXT_sRGB_write_control GL_EXT_separate_shader_objects GL_EXT_shader_framebuffer_fetch GL_EXT_shader_group_vote GL_EXT_shader_implicit_conversions GL_EXT_shader_integer_mix GL_EXT_tessellation_point_size GL_EXT_tessellation_shader GL_INTEL_conservative_rasterization GL_INTEL_performance_query GL_ANDROID_extension_pack_es31a GL_EXT_base_instance GL_EXT_compressed_ETC1_RGB8_sub_texture GL_EXT_copy_image GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_gpu_shader5 GL_EXT_multi_draw_indirect GL_EXT_polygon_offset_clamp GL_EXT_primitive_bounding_box GL_EXT_render_snorm GL_EXT_shader_io_blocks GL_EXT_texture_border_clamp GL_EXT_texture_buffer GL_EXT_texture_cube_map_array GL_EXT_texture_norm16 GL_EXT_texture_view GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_KHR_context_flush_control GL_KHR_robust_buffer_access_behavior GL_NV_image_formats GL_NV_shader_noperspective_interpolation GL_OES_copy_image GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_gpu_shader5 GL_OES_primitive_bounding_box GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_io_blocks GL_OES_shader_multisample_interpolation GL_OES_tessellation_point_size GL_OES_tessellation_shader GL_OES_texture_border_clamp GL_OES_texture_buffer GL_OES_texture_cube_map_array GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_texture_view GL_EXT_blend_func_extended GL_EXT_buffer_storage GL_EXT_float_blend GL_EXT_geometry_point_size GL_EXT_geometry_shader GL_EXT_shader_samples_identical GL_EXT_texture_sRGB_R8 GL_KHR_no_error GL_KHR_texture_compression_astc_sliced_3d GL_NV_fragment_shader_interlock GL_OES_EGL_image_external_essl3 GL_OES_geometry_point_size GL_OES_geometry_shader GL_OES_shader_image_atomic GL_EXT_clear_texture GL_EXT_clip_cull_distance GL_EXT_conservative_depth GL_EXT_disjoint_timer_query GL_EXT_texture_compression_s3tc_srgb GL_MESA_shader_integer_functions GL_EXT_clip_control GL_EXT_color_buffer_half_float GL_EXT_memory_object GL_EXT_memory_object_fd GL_EXT_semaphore GL_EXT_semaphore_fd GL_EXT_texture_compression_bptc GL_EXT_texture_mirror_clamp_to_edge GL_KHR_parallel_shader_compile GL_NV_alpha_to_coverage_dither_control GL_EXT_EGL_image_storage GL_EXT_shader_framebuffer_fetch_non_coherent GL_EXT_texture_shadow_lod GL_INTEL_blackhole_render GL_MESA_framebuffer_flip_y GL_NV_compute_shader_derivatives GL_EXT_demote_to_helper_invocation GL_EXT_depth_clamp GL_EXT_texture_query_lod GL_KHR_shader_subgroup GL_MESA_sampler_objects GL_EXT_EGL_image_storage_compression GL_EXT_texture_storage_compression GL_MESA_bgra GL_MESA_texture_const_bandwidth GL_EXT_shader_clock 
+DEBUG ]: Supported EGL display extensions: (33) EGL_ANDROID_blob_cache EGL_ANDROID_native_fence_sync EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_IMG_context_priority EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_partial_update EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_image_dma_buf_export EGL_MESA_query_driver EGL_MESA_x11_native_visual_id 
+DEBUG ]: Supported DMA-BUF formats:
+DEBUG ]: EGL: GPU Supports Format AB4H (0x48344241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XB4H (0x48344258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AB48 (0x38344241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XB48 (0x38344258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AR30 (0x30335241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XR30 (0x30335258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AB30 (0x30334241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XB30 (0x30334258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AR24 (0x34325241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AB24 (0x34324241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XR24 (0x34325258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XB24 (0x34324258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AR15 (0x35315241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AR12 (0x32315241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format RG16 (0x36314752)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format R8 (0x20203852)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format R16 (0x20363152)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format GR88 (0x38385247)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format GR32 (0x32335247)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format R  H (0x48202052)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format R  F (0x46202052)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format GR H (0x48205247)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format GR F (0x46205247)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AB8F (0x46384241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format YUV9 (0x39565559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YU11 (0x31315559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YU12 (0x32315559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YU16 (0x36315559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YU24 (0x34325559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YVU9 (0x39555659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YV11 (0x31315659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YV12 (0x32315659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YV16 (0x36315659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YV24 (0x34325659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S010 (0x30313053)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S210 (0x30313253)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S410 (0x30313453)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S012 (0x32313053)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S212 (0x32313253)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S412 (0x32313453)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S016 (0x36313053)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S216 (0x36313253)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S416 (0x36313453)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV12 (0x3231564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV21 (0x3132564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format P010 (0x30313050)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format P012 (0x32313050)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format P016 (0x36313050)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format P030 (0x30333050)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV16 (0x3631564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV61 (0x3136564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV24 (0x3432564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV42 (0x3234564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format AYUV (0x56555941)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format XYUV (0x56555958)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y410 (0x30313459)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y412 (0x32313459)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y416 (0x36313459)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YUYV (0x56595559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YVYU (0x55595659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format UYVY (0x59565955)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format VYUY (0x59555956)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y210 (0x30313259)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y212 (0x32313259)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y216 (0x36313259)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: 65 formats found in total. Some modifiers may be omitted as they are external-only.
+DEBUG ]: Creating the HyprRenderer!
+DEBUG ]: Aq backend has no session, omitting full DRM node checks
+DEBUG ]: Primary DRM driver information: i915 v1.6.0 from 0 description Intel Graphics
+DEBUG ]: Creating the ProtocolManager!
+DEBUG ]: [IWaylandProtocol] Registered global [WLSeat]
+DEBUG ]: [IWaylandProtocol] Registered global [WLDataDevice]
+DEBUG ]: [IWaylandProtocol] Registered global [WLCompositor]
+DEBUG ]: [IWaylandProtocol] Registered global [WLSubcompositor]
+DEBUG ]: [IWaylandProtocol] Registered global [WLSHM]
+DEBUG ]: [IWaylandProtocol] Registered global [Viewporter]
+DEBUG ]: [IWaylandProtocol] Registered global [TearingControl]
+DEBUG ]: [IWaylandProtocol] Registered global [FractionalScale]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGOutput]
+DEBUG ]: [IWaylandProtocol] Registered global [CursorShape]
+DEBUG ]: [IWaylandProtocol] Registered global [IdleInhibit]
+DEBUG ]: [IWaylandProtocol] Registered global [RelativePointer]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGDecoration]
+DEBUG ]: [IWaylandProtocol] Registered global [AlphaModifier]
+DEBUG ]: [IWaylandProtocol] Registered global [GammaControl]
+DEBUG ]: [IWaylandProtocol] Registered global [ForeignToplevel]
+DEBUG ]: [IWaylandProtocol] Registered global [PointerGestures]
+DEBUG ]: [IWaylandProtocol] Registered global [ForeignToplevelWlr]
+DEBUG ]: [IWaylandProtocol] Registered global [ShortcutsInhibit]
+DEBUG ]: [IWaylandProtocol] Registered global [TextInputV1]
+DEBUG ]: [IWaylandProtocol] Registered global [TextInputV3]
+DEBUG ]: [IWaylandProtocol] Registered global [PointerConstraints]
+DEBUG ]: [IWaylandProtocol] Registered global [OutputPower]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGActivation]
+DEBUG ]: [IWaylandProtocol] Registered global [IdleNotify]
+DEBUG ]: [IWaylandProtocol] Registered global [IdleNotify]
+DEBUG ]: [IWaylandProtocol] Registered global [SessionLock]
+DEBUG ]: [IWaylandProtocol] Registered global [IMEv2]
+DEBUG ]: [IWaylandProtocol] Registered global [VirtualKeyboard]
+DEBUG ]: [IWaylandProtocol] Registered global [VirtualPointer]
+DEBUG ]: [IWaylandProtocol] Registered global [OutputManagement]
+DEBUG ]: [IWaylandProtocol] Registered global [ServerDecorationKDE]
+DEBUG ]: [IWaylandProtocol] Registered global [FocusGrab]
+DEBUG ]: [IWaylandProtocol] Registered global [TabletV2]
+DEBUG ]: [IWaylandProtocol] Registered global [LayerShell]
+DEBUG ]: [IWaylandProtocol] Registered global [Presentation]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGShell]
+DEBUG ]: [IWaylandProtocol] Registered global [DataDeviceWlr]
+DEBUG ]: [IWaylandProtocol] Registered global [PrimarySelection]
+DEBUG ]: [IWaylandProtocol] Registered global [XWaylandShell]
+DEBUG ]: [IWaylandProtocol] Registered global [ToplevelMapping]
+DEBUG ]: [IWaylandProtocol] Registered global [GlobalShortcuts]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGDialog]
+DEBUG ]: [IWaylandProtocol] Registered global [SinglePixel]
+DEBUG ]: [IWaylandProtocol] Registered global [SecurityContext]
+DEBUG ]: [IWaylandProtocol] Registered global [CTMControl]
+DEBUG ]: [IWaylandProtocol] Registered global [InputCapture]
+DEBUG ]: [IWaylandProtocol] Registered global [HyprlandSurface]
+DEBUG ]: [IWaylandProtocol] Registered global [ContentType]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGTag]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGBell]
+DEBUG ]: [IWaylandProtocol] Registered global [Hotkey]
+DEBUG ]: [IWaylandProtocol] Registered global [ExtWorkspace]
+DEBUG ]: [IWaylandProtocol] Registered global [ExtDataDevice]
+DEBUG ]: [IWaylandProtocol] Registered global [PointerWarp]
+DEBUG ]: [IWaylandProtocol] Registered global [Fifo]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGForeignExporter]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGForeignImporter]
+DEBUG ]: [IWaylandProtocol] Registered global [BackgroundEffect]
+DEBUG ]: [IWaylandProtocol] Registered global [CommitTiming]
+DEBUG ]: [IWaylandProtocol] Registered global [Screencopy]
+DEBUG ]: [IWaylandProtocol] Registered global [ToplevelExport]
+DEBUG ]: [IWaylandProtocol] Registered global [OutputImageCaptureSource]
+DEBUG ]: [IWaylandProtocol] Registered global [ForeignToplevelImageCaptureSource]
+DEBUG ]: [IWaylandProtocol] Registered global [ImageCopyCapture]
+DEBUG ]: [IWaylandProtocol] Registered global [ColorManagement]
+DEBUG ]: [IWaylandProtocol] Registered global [MesaDRM]
+DEBUG ]: [IWaylandProtocol] Registered global [LinuxDMABUF]
+DEBUG ]: Creating the SeatManager!
+DEBUG ]: Creating the SessionLockManager!
+DEBUG ]: Creating CHyprCtl
+DEBUG ]: Hypr socket started at /run/user/1000/wqa/5ecc/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790906165_1861522036/.socket.sock
+DEBUG ]: Creating the InputManager!
+DEBUG ]: Creating the XWaylandManager!
+DEBUG ]: Creating the Debug Overlay!
+DEBUG ]: Creating the NotificationOverlay!
+DEBUG ]: Creating the PluginSystem!
+DEBUG ]: Creating the DecorationPositioner!
+DEBUG ]: Creating the CursorManager!
+DEBUG ]: [hc] CHyprcursorManager: attempting to find theme from env
+DEBUG ]: [hc] themeNameFromEnv: env unset
+DEBUG ]: [hc] CHyprcursorManager: attempting to find any theme
+DEBUG ]: [hc] CHyprcursorManager: no themes matched
+ERR ]: Hyprcursor failed loading theme "", falling back to Xcursor.
+DEBUG ]: XCursor scanning theme default
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/default/index.theme
+DEBUG ]: XCursor theme default inherits Adwaita
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme AdwaitaLegacy
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/AdwaitaLegacy/index.theme
+DEBUG ]: XCursor theme AdwaitaLegacy inherits hicolor
+DEBUG ]: XCursor scanning theme hicolor
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/hicolor/index.theme
+DEBUG ]: XCursor already has a shape default loaded, skipping
+DEBUG ]: XCursor already has a shape context-menu loaded, skipping
+DEBUG ]: XCursor already has a shape help loaded, skipping
+DEBUG ]: XCursor already has a shape pointer loaded, skipping
+DEBUG ]: XCursor already has a shape progress loaded, skipping
+DEBUG ]: XCursor already has a shape wait loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name plus, skipping
+DEBUG ]: XCursor already has a shape crosshair loaded, skipping
+DEBUG ]: XCursor already has a shape text loaded, skipping
+DEBUG ]: XCursor already has a shape vertical-text loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-link, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape move loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-none, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name crossed_circle, skipping
+DEBUG ]: XCursor already has a shape grab loaded, skipping
+DEBUG ]: XCursor already has a shape grabbing loaded, skipping
+DEBUG ]: XCursor already has a shape e-resize loaded, skipping
+DEBUG ]: XCursor already has a shape n-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ne-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape s-resize loaded, skipping
+DEBUG ]: XCursor already has a shape se-resize loaded, skipping
+DEBUG ]: XCursor already has a shape sw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape w-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ew-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ns-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nesw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nwse-resize loaded, skipping
+DEBUG ]: XCursor already has a shape col-resize loaded, skipping
+DEBUG ]: XCursor already has a shape row-resize loaded, skipping
+DEBUG ]: XCursor already has a shape all-scroll loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-in loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-out loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape all-resize loaded, skipping
+DEBUG ]: [hc] CHyprcursorManager: attempting to find theme from env
+DEBUG ]: [hc] themeNameFromEnv: env unset
+DEBUG ]: [hc] CHyprcursorManager: attempting to find any theme
+DEBUG ]: [hc] CHyprcursorManager: no themes matched
+ERR ]: Hyprcursor failed loading theme "", falling back to Xcursor.
+DEBUG ]: XCursor scanning theme default
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/default/index.theme
+DEBUG ]: XCursor theme default inherits Adwaita
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme AdwaitaLegacy
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/AdwaitaLegacy/index.theme
+DEBUG ]: XCursor theme AdwaitaLegacy inherits hicolor
+DEBUG ]: XCursor scanning theme hicolor
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/hicolor/index.theme
+DEBUG ]: XCursor already has a shape default loaded, skipping
+DEBUG ]: XCursor already has a shape context-menu loaded, skipping
+DEBUG ]: XCursor already has a shape help loaded, skipping
+DEBUG ]: XCursor already has a shape pointer loaded, skipping
+DEBUG ]: XCursor already has a shape progress loaded, skipping
+DEBUG ]: XCursor already has a shape wait loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name plus, skipping
+DEBUG ]: XCursor already has a shape crosshair loaded, skipping
+DEBUG ]: XCursor already has a shape text loaded, skipping
+DEBUG ]: XCursor already has a shape vertical-text loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-link, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape move loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-none, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name crossed_circle, skipping
+DEBUG ]: XCursor already has a shape grab loaded, skipping
+DEBUG ]: XCursor already has a shape grabbing loaded, skipping
+DEBUG ]: XCursor already has a shape e-resize loaded, skipping
+DEBUG ]: XCursor already has a shape n-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ne-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape s-resize loaded, skipping
+DEBUG ]: XCursor already has a shape se-resize loaded, skipping
+DEBUG ]: XCursor already has a shape sw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape w-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ew-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ns-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nesw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nwse-resize loaded, skipping
+DEBUG ]: XCursor already has a shape col-resize loaded, skipping
+DEBUG ]: XCursor already has a shape row-resize loaded, skipping
+DEBUG ]: XCursor already has a shape all-scroll loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-in loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-out loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape all-resize loaded, skipping
+DEBUG ]: Creating the VersionKeeper!
+DEBUG ]: FsUtils::getDataHome: no hyprland data home, creating.
+DEBUG ]: Creating the DonationNag!
+DEBUG ]: Creating the WelcomeManager!
+DEBUG ]: [welcome] skipping, not autogen
+DEBUG ]: Creating the ANRManager!
+DEBUG ]: Starting XWayland
+DEBUG ]: XWayland has been disabled, cleaning up...
+DEBUG ]: Hyprland init finished.
+DEBUG ]: Running on WAYLAND_DISPLAY: wayland-1
+DEBUG ]: Hyprland is ready, running the event loop!
+DEBUG from aquamarine ]: backend: poll fd 14 for implementation wayland
+DEBUG from aquamarine ]: backend: poll fd 12 for implementation headless
+DEBUG from aquamarine ]: backend: poll fd 13 for idle
+DEBUG ]: New aquamarine keyboard with name wl_keyboard
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 643a63f19f20's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard wl_keyboard
+DEBUG ]: Updated keymap fd to 40, keymap V1 to: 42
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "wl_keyboard"
+DEBUG ]: New keyboard created, pointers Hypr: 643a63f19f20 and AQ: 643a63d25360
+DEBUG ]: New aquamarine pointer with name wl_pointer
+DEBUG ]: Attached pointer wl_pointer to global
+DEBUG ]: New mouse created, pointer AQ: 643a63d257c0
+DEBUG from aquamarine ]: Output WAYLAND-1: wm_capabilities received
+DEBUG from aquamarine ]: Output WAYLAND-1: stage toplevel configure 1600x1000 until surface ACK
+DEBUG from aquamarine ]: Output WAYLAND-1: configure surface with 1
+DEBUG ]: New aquamarine output with name WAYLAND-1
+DEBUG ]: [CMonitorStateTracker] New monitor: WAYLAND-1
+DEBUG ]: Applying monitor rule for WAYLAND-1
+ERR ]: Monitor WAYLAND-1 has NO PREFERRED MODE
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1600, y: 1000] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1600, y: 1000] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1600, y: 1000] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: Swapchain: Reconfigured a swapchain to [Vector2D: x: 1600, y: 1000] XR24 of length 3
+DEBUG ]: CMonitorState::ensureBufferPresent: no buffer or mismatched format, attaching one from the swapchain for modeset being possible
+DEBUG ]: Monitor WAYLAND-1: requested 1600x1000@60.00Hz, using custom mode 1600x1000@0.00Hz
+DEBUG ]: output WAYLAND-1 succeeded basic test on format DRM_FORMAT_XRGB8888
+DEBUG ]: Starting ScreenshareManager
+DEBUG ]: Monitor WAYLAND-1 -> destroyed all render data
+DEBUG ]: CMonitor::updateVCGTRamps: skipping, no gamma ramp for output
+DEBUG ]: Monitor WAYLAND-1 data dump: res 1600x1000@60.00Hz, scale 1.00, transform 0, pos -1x-1, 10b 0
+WARN from aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+DEBUG ]: Added new monitor with name WAYLAND-1 at [-1, -1] with size [1600, 1000], pointer 643a63d29aa0
+DEBUG ]: New monitor: WORKSPACEID 1, exists: 0
+DEBUG ]: checking if we have seen this monitor before: WAYLAND-1
+DEBUG ]: Monitor WAYLAND-1 was not on any workspace
+DEBUG from aquamarine ]: GBM: Automatically selected format AR24 for new GBM buffer
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 24, y: 24] and format AR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: GBM: Automatically selected format AR24 for new GBM buffer
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 24, y: 24] and format AR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: Swapchain: Reconfigured a swapchain to [Vector2D: x: 24, y: 24] AR24 of length 2
+DEBUG ]: Framebuffer "Monitor WAYLAND-1 blur FB" created, status 36053
+DEBUG ]: Shaders initialized successfully.
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: compiling feature set 1 for surface.frag
+DEBUG ]: [IWaylandProtocol] Registered global [WLOutput (WAYLAND-1)]
+DEBUG ]: arrangeMonitors: 1 to arrange
+DEBUG ]: arrangeMonitors: WAYLAND-1 explicit [0, 0]
+DEBUG ]: arrangeMonitors: WAYLAND-1 xwayland [0, 0]
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+WARN ]: [FallbackStateKeeper] Start fired, removing fallback timer
+DEBUG ]: Framebuffer "Monitor WAYLAND-1 workbuffer" created, status 36053
+DEBUG ]: compiling feature set 0 for passthru.frag
+WARN from aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+WARN ]: FIXME: color management protocol is enabled and outputs changed, check preferred image description changes
+DEBUG from aquamarine ]: Output WAYLAND-1: stage toplevel configure 1600x1000 until surface ACK
+DEBUG from aquamarine ]: Output WAYLAND-1: configure surface with 3
+DEBUG from aquamarine ]: [wayland] focus changed: WAYLAND-1
+WARN from aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170753
+DEBUG ]: Hyprctl: new connection from pid 2170754
+DEBUG ]: Hyprctl: new connection from pid 2170755
+DEBUG ]: Hyprctl: new connection from pid 2170756
+DEBUG ]: getAddressForTrampo: Allocating new page for hooks
+DEBUG ]: seekNewPageAddr: page 0x643a34f03000 - 0x643a3506d000
+DEBUG ]: seekNewPageAddr: page 0x643a3506d000 - 0x643a35b24000
+DEBUG ]: seekNewPageAddr: Anchored to hyprland at 0x643a3506d000
+DEBUG ]: seekNewPageAddr: page 0x643a35b24000 - 0x643a35d71000
+DEBUG ]: seekNewPageAddr: page 0x643a35d71000 - 0x643a35d95000
+DEBUG ]: seekNewPageAddr: page 0x643a35d95000 - 0x643a35e5f000
+DEBUG ]: seekNewPageAddr: page 0x643a35e5f000 - 0x643a35e6f000
+DEBUG ]: seekNewPageAddr: page 0x643a63c35000 - 0x643a674b6000
+DEBUG ]: seekNewPageAddr: found gap: 0x643a35e6f000-0x643a63c35000 (769417216 bytes)
+DEBUG ]: Attempted to allocate 0x643a35e6f000, got 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f000 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f020 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f040 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f060 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f080 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f0a0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f0c0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f0e0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f100 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f120 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f140 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f160 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f180 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f1a0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f1c0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f1e0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f200 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f220 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f240 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f260 for page at 0x643a35e6f000
+DEBUG ]:  [PluginSystem] Plugin hyprbars loaded. Handle: 643a644ba880, path: "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/hyprbars-v22-interruption-candidate.so", author: "Vaxry", description: "A plugin to add title bars to windows.", version: "1.0"
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 1 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 2170759
+DEBUG ]:  [PluginSystem] Plugin toolkit_held_probe loaded. Handle: 643a64bf9170, path: "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/native-probe/libtoolkit-held-probe.so", author: "QA", description: "Private read-only exact held-gesture/group QA observation", version: "1"
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 2 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 2170760
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 643a63fa7bf0
+DEBUG ]: [CWLDataDeviceProtocol] New datamgr resource bound at 643a64bf8570
+DEBUG ]: [CWLDataDeviceManagerResource] New data device bound at 643a63ffaf00
+DEBUG ]: [CPrimarySelectionProtocol] New primary_seletion_manager at 643a64a5db60
+DEBUG ]: [CPrimarySelectionManager] New primary selection data device bound at 643a64aab440
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64b63ac0 (not xwayland)
+DEBUG ]: [CXDGShellProtocol] New xdg_wm_base at 643a63f585b0
+DEBUG ]: Hyprctl: new connection from pid 2170777
+DEBUG ]: Hyprctl: new connection from pid 2170778
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 38 at 643a64bcd7f0
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 42 at 643a63d34af0
+DEBUG ]: CWLSurface 643a63d34a10 called init()
+DEBUG ]: LayerSurface 643a64001990 (namespace omarchy-bar layer 2) created on monitor WAYLAND-1
+DEBUG ]: [CLayerShellProtocol] New wlr_layer_surface 643a64001990
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 46: size [Vector2D: x: 1600, y: 26], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 57 stride 6656 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 59 stride 832 offset 212992
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 61 stride 64 offset 217088
+DEBUG ]: LayerSurface 643a64001990 mapped
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 34: size [Vector2D: x: 1600, y: 26], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 60 stride 6656 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 62 stride 832 offset 212992
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 66 stride 64 offset 217088
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 38: size [Vector2D: x: 1600, y: 26], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 63 stride 6656 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 64 stride 832 offset 212992
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 69 stride 64 offset 217088
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170873
+DEBUG ]: Hyprctl: new connection from pid 2170875
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 48: size [Vector2D: x: 1600, y: 26], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 57 stride 6656 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 65 stride 832 offset 212992
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 68 stride 64 offset 217088
+DEBUG ]: Hyprctl: new connection from pid 2170877
+DEBUG ]: Hyprctl: new connection from pid 2170883
+DEBUG ]: Hyprctl: new connection from pid 2170886
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups hydrate
+DEBUG ]: [executor] Process created with pid 2170892
+DEBUG ]: Hyprctl: new connection from pid 2170895
+DEBUG ]: Hyprctl: new connection from pid 2170908
+DEBUG ]: Hyprctl: new connection from pid 2170892
+DEBUG ]: Hyprctl: new connection from pid 2170917
+DEBUG ]: Hyprctl: new connection from pid 2170921
+DEBUG ]: Hyprctl: new connection from pid 2170938
+DEBUG ]: Hyprctl: new connection from pid 2170940
+DEBUG ]: Hyprctl: new connection from pid 2170942
+DEBUG ]: Hyprctl: new connection from pid 2170945
+DEBUG ]: Hyprctl: new connection from pid 2170951
+DEBUG ]: Hyprctl: new connection from pid 2170953
+DEBUG ]: [executor] Executing omarchy-shell hoskinson.windows fileDrag false 100 100 0 116519703
+DEBUG ]: [executor] Process created with pid 2170962
+DEBUG ]: Hyprctl: new connection from pid 2170966
+DEBUG ]: Hyprctl: new connection from pid 2170949
+DEBUG ]: Hyprctl: new connection from pid 2170962
+DEBUG ]: Hyprctl: new connection from pid 2170985
+DEBUG ]: Hyprctl: new connection from pid 2170989
+DEBUG ]: Hyprctl: new connection from pid 2170990
+DEBUG ]: Hyprctl: new connection from pid 2170999
+DEBUG ]: Hyprctl: new connection from pid 2171000
+DEBUG ]: Hyprctl: new connection from pid 2171001
+DEBUG ]: Hyprctl: new connection from pid 2171002
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171003
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: [CVirtualPointerProtocol] New VPointer at id 3
+DEBUG ]: Attached pointer unknown-device to global
+DEBUG ]: New virtual mouse created
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 643a64bc25f0
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 643a64a346c0's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 74, keymap V1 to: 76
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 643a64a346c0
+DEBUG ]: Updating keyboard 643a64a346c0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 74, keymap V1 to: 76
+DEBUG ]: Hyprctl: new connection from pid 2171007
+DEBUG ]: Hyprctl: new connection from pid 2171009
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 643a64db1c00
+DEBUG ]: [CWLDataDeviceProtocol] New datamgr resource bound at 643a64f05400
+DEBUG ]: [CWLDataDeviceManagerResource] New data device bound at 643a64f067d0
+DEBUG ]: [CPrimarySelectionProtocol] New primary_seletion_manager at 643a64dee540
+DEBUG ]: [CPrimarySelectionManager] New primary selection data device bound at 643a64dd75b0
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64b64450 (not xwayland)
+DEBUG ]: [CXDGShellProtocol] New xdg_wm_base at 643a64f13010
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 33 at 643a64dc8ca0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 36 at 643a64f11080
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a64b630c0
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64f13010 gets a toplevel 643a63f56dd0
+DEBUG ]: CWLSurface 643a64db12a0 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: Window 643a64f06cd0 set title to Qt WindowModal QA owner
+DEBUG ]: Window 643a64f06cd0 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 1600, y: 1000] for [Window 643a64f06cd0: title: "Qt WindowModal QA owner"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 6caa06a5-4df8-442b-bfae-09ccd457430b
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 41 at 643a64de3d20
+DEBUG ]: [CWLCompositorResource] New wl_region with id 44 at 643a64f18980
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a64a8b7f0
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64f13010 gets a toplevel 643a63f571e0
+DEBUG ]: CWLSurface 643a64dca640 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: Window 643a64e0a100 set title to Qt WindowModal QA peer
+DEBUG ]: Window 643a64e0a100 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 1600, y: 1000] for [Window 643a64e0a100: title: "Qt WindowModal QA peer"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 0551351c-e156-495d-8d56-571b0f359838
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64b630c0 requests geometry 0x0 1600x1000
+DEBUG ]: [CWLCompositorResource] New wl_region with id 36 at 643a64f15790
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a64f06cd0
+DEBUG ]: Set keyboard focus to surface 643a64dc8ca0, with [Window 643a64f06cd0: title: "Qt WindowModal QA owner"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 71.00000], window size: [1558.00000, 908.00000]
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64a8b7f0 requests geometry 0x0 1600x1000
+DEBUG ]: [CWLCompositorResource] New wl_region with id 51 at 643a64f36130
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a64e0a100
+DEBUG ]: Set keyboard focus to surface 643a64de3d20, with [Window 643a64e0a100: title: "Qt WindowModal QA peer"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 71.00000], window size: [773.00000, 908.00000]
+DEBUG ]: compiling feature set 16 for shadow.frag
+DEBUG ]: compiling feature set 0 for quad.frag
+DEBUG ]: compiling feature set 0 for surface.frag
+DEBUG ]: compiling feature set 8 for border.frag
+DEBUG ]: Hyprctl: new connection from pid 2171016
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64b630c0 requests geometry 0x0 773x908
+DEBUG ]: [CWLCompositorResource] New wl_region with id 62 at 643a65775d30
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64a8b7f0 requests geometry 0x0 773x908
+DEBUG ]: [CWLCompositorResource] New wl_region with id 67 at 643a65775d30
+DEBUG ]: Hyprctl: new connection from pid 2171025
+DEBUG ]: Hyprctl: new connection from pid 2171027
+DEBUG ]: Hyprctl: new connection from pid 2171028
+DEBUG ]: Hyprctl: new connection from pid 2171029
+DEBUG ]: Hyprctl: new connection from pid 2171030
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64a8b7f0 requests geometry 0x0 1558x908
+DEBUG ]: [CWLCompositorResource] New wl_region with id 55 at 643a64f15790
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64b630c0 requests geometry 0x0 460x300
+DEBUG ]: [CWLCompositorResource] New wl_region with id 68 at 643a64f15790
+DEBUG ]: Hyprctl: new connection from pid 2171031
+DEBUG ]: Hyprctl: new connection from pid 2171032
+DEBUG ]: Hyprctl: new connection from pid 2171034
+DEBUG ]: Hyprctl: new connection from pid 2171036
+DEBUG ]: Removing last node (dwindle)
+DEBUG ]: Hyprctl: new connection from pid 2171037
+DEBUG ]: Hyprctl: new connection from pid 2171038
+DEBUG ]: Hyprctl: new connection from pid 2171039
+DEBUG ]: Hyprctl: new connection from pid 2171040
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64a8b7f0 requests geometry 0x0 460x300
+DEBUG ]: [CWLCompositorResource] New wl_region with id 69 at 643a64f32fb0
+DEBUG ]: Hyprctl: new connection from pid 2171041
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 57 at 643a64df2ee0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 54 at 643a64f1a8d0
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a65773170
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64f13010 gets a toplevel 643a63d13b20
+DEBUG ]: CWLSurface 643a65626bb0 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: [CXDGToplevelResource] Toplevel 643a63d13b20 sets parent to 643a63f56dd0
+DEBUG ]: Window 643a64df5c30 set title to Qt WindowModal QA child
+DEBUG ]: Window 643a64df5c30 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 643a64df5c30: title: "Qt WindowModal QA child"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 8501183e-67c4-4d88-9f53-735f80e1f905
+DEBUG ]: compiling feature set 4 for surface.frag
+DEBUG ]: Hyprctl: new connection from pid 2171042
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a65773170 requests geometry 0x0 320x180
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a64df5c30
+DEBUG ]: Set keyboard focus to surface 643a64df2ee0, with [Window 643a64df5c30: title: "Qt WindowModal QA child"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [170.00000, 310.00000], window size: [320.00000, 180.00000]
+DEBUG ]: Hyprctl: new connection from pid 2171043
+DEBUG ]: Hyprctl: new connection from pid 2171044
+DEBUG ]: Hyprctl: new connection from pid 2171045
+DEBUG ]: Hyprctl: new connection from pid 2171046
+DEBUG ]: Hyprctl: new connection from pid 2171047
+DEBUG ]: Hyprctl: new connection from pid 2171048
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 56 at 643a64dc27a0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 59 at 643a64ddf3c0
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a64dc2fe0
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64f13010 gets a toplevel 643a63d175c0
+DEBUG ]: CWLSurface 643a64deb5e0 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: [CXDGToplevelResource] Toplevel 643a63d175c0 sets parent to 643a63d13b20
+DEBUG ]: Window 643a65184260 set title to Qt WindowModal QA nested
+DEBUG ]: Window 643a65184260 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 643a65184260: title: "Qt WindowModal QA nested"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 06dde340-6143-4110-b215-d474690872b9
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64dc2fe0 requests geometry 0x0 320x180
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a65184260
+DEBUG ]: Set keyboard focus to surface 643a64dc27a0, with [Window 643a65184260: title: "Qt WindowModal QA nested"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [260.00000, 310.00000], window size: [320.00000, 180.00000]
+DEBUG ]: Hyprctl: new connection from pid 2171049
+DEBUG ]: Hyprctl: new connection from pid 2171050
+DEBUG ]: Hyprctl: new connection from pid 2171051
+DEBUG ]: Hyprctl: new connection from pid 2171052
+DEBUG ]: Hyprctl: new connection from pid 2171053
+DEBUG ]: Hyprctl: new connection from pid 2171054
+DEBUG ]: Hyprctl: new connection from pid 2171055
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64dc2fe0 requests geometry 0x0 240x140
+DEBUG ]: [CWLCompositorResource] New wl_region with id 40 at 643a64ddfeb0
+DEBUG ]: Hyprctl: new connection from pid 2171056
+DEBUG ]: Hyprctl: new connection from pid 2171057
+DEBUG ]: Hyprctl: new connection from pid 2171058
+DEBUG ]: Hyprctl: new connection from pid 2171065
+DEBUG ]: Hyprctl: new connection from pid 2171066
+DEBUG ]: Hyprctl: new connection from pid 2171067
+DEBUG ]: Set keyboard focus to surface 643a64de3d20, with [Window 643a64e0a100: title: "Qt WindowModal QA peer"]
+DEBUG ]: Hyprctl: new connection from pid 2171068
+DEBUG ]: Hyprctl: new connection from pid 2171069
+DEBUG ]: compiling feature set 8 for quad.frag
+DEBUG ]: Hyprctl: new connection from pid 2171070
+DEBUG ]: Hyprctl: new connection from pid 2171071
+DEBUG ]: Hyprctl: new connection from pid 2171072
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: cursorImage request: shape 1 -> default
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 2171073
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Set keyboard focus to surface 643a64dc27a0, with [Window 643a65184260: title: "Qt WindowModal QA nested"]
+DEBUG ]: Hyprctl: new connection from pid 2171074
+DEBUG ]: Hyprctl: new connection from pid 2171075
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+ERR ]: getConvertedColor: failed to get image description
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: [hyprbars] Dragging initiated on 643a65184260
+DEBUG ]: Hyprctl: new connection from pid 2171076
+DEBUG ]: Hyprctl: new connection from pid 2171082
+DEBUG ]: Hyprctl: new connection from pid 2171087
+DEBUG ]: Hyprctl: new connection from pid 2171092
+DEBUG ]: Hyprctl: new connection from pid 2171096
+DEBUG ]: Set keyboard focus to surface 643a64de3d20, with [Window 643a64e0a100: title: "Qt WindowModal QA peer"]
+DEBUG ]: Hyprctl: new connection from pid 2171100
+DEBUG ]: Hyprctl: new connection from pid 2171102
+DEBUG ]: Hyprctl: new connection from pid 2171103
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171104
+DEBUG ]: Hyprctl: new connection from pid 2171105
+DEBUG ]: Hyprctl: new connection from pid 2171106
+DEBUG ]: Hyprctl: new connection from pid 2171107
+DEBUG ]: Hyprctl: new connection from pid 2170579
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171108
+DEBUG ]: compiling feature set 8 for surface.frag
+DEBUG ]: Hyprctl: new connection from pid 2171114
+DEBUG ]: Hyprctl: new connection from pid 2171117
+DEBUG ]: Hyprctl: new connection from pid 2171120
+DEBUG ]: Hyprctl: new connection from pid 2171121
+DEBUG ]: Hyprctl: new connection from pid 2171122
+DEBUG ]: Hyprctl: new connection from pid 2171124
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: [hyprbars] Dragging ended on 643a65184260
+DEBUG ]: Hyprctl: new connection from pid 2171134
+DEBUG ]: Hyprctl: new connection from pid 2171135
+DEBUG ]: Hyprctl: new connection from pid 2171138
+DEBUG ]: Hyprctl: new connection from pid 2171143
+DEBUG ]: Hyprctl: new connection from pid 2171144
+DEBUG ]: Hyprctl: new connection from pid 2171145
+DEBUG ]: Hyprctl: new connection from pid 2171123
+DEBUG ]: Hyprctl: new connection from pid 2171148
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Set keyboard focus to surface 643a64dc27a0, with [Window 643a65184260: title: "Qt WindowModal QA nested"]
+DEBUG ]: Hyprctl: new connection from pid 2171150
+DEBUG ]: Hyprctl: new connection from pid 2171152
+DEBUG ]: Hyprctl: new connection from pid 2171153
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171157
+DEBUG ]: Hyprctl: new connection from pid 2171158
+DEBUG ]: Hyprctl: new connection from pid 2171159
+DEBUG ]: Hyprctl: new connection from pid 2171161
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Set keyboard focus to surface 643a64de3d20, with [Window 643a64e0a100: title: "Qt WindowModal QA peer"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: cursorImage request: shape 1 -> default
+DEBUG ]: Hyprctl: new connection from pid 2171162
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171167
+DEBUG ]: Hyprctl: new connection from pid 2171168
+DEBUG ]: Hyprctl: new connection from pid 2171169
+DEBUG ]: Hyprctl: new connection from pid 2171170
+DEBUG ]: Hyprctl: new connection from pid 2171171
+DEBUG ]: Hyprctl: new connection from pid 2171172
+DEBUG ]: Hyprctl: new connection from pid 2171173
+DEBUG ]: Hyprctl: new connection from pid 2171174
+DEBUG ]: [Window 643a65184260: title: "Qt WindowModal QA nested", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a65184260 18000003 2171008
+DEBUG ]: [executor] Process created with pid 2171177
+DEBUG ]: renderer: making a snapshot of 643a65184260
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 643a65184260
+DEBUG ]: renderer: rendered a snapshot of 643a65184260
+DEBUG ]: renderer: made a snapshot of 643a65184260
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: Unmapped was not focused, ignoring a refocus.
+DEBUG ]: [Window 643a65184260: title: "Qt WindowModal QA nested", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a64deb5e0 called destroy()
+DEBUG ]: [Window 643a64df5c30: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a64df5c30 18000002 2171008
+DEBUG ]: [executor] Process created with pid 2171178
+DEBUG ]: renderer: making a snapshot of 643a64df5c30
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 643a64df5c30
+DEBUG ]: renderer: rendered a snapshot of 643a64df5c30
+DEBUG ]: renderer: made a snapshot of 643a64df5c30
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: Unmapped was not focused, ignoring a refocus.
+DEBUG ]: [Window 643a64df5c30: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a65626bb0 called destroy()
+DEBUG ]: [Window 643a64e0a100: title: "Qt WindowModal QA peer", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a64e0a100 18000001 2171008
+DEBUG ]: [executor] Process created with pid 2171180
+DEBUG ]: renderer: making a snapshot of 643a64e0a100
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 643a64e0a100
+DEBUG ]: renderer: rendered a snapshot of 643a64e0a100
+DEBUG ]: renderer: made a snapshot of 643a64e0a100
+WARN ]: ITarget: assignToSpace with a null space?
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: On closed window, new focused candidate is [Window 643a64f06cd0: title: "Qt WindowModal QA owner"]
+DEBUG ]: Set keyboard focus to surface 643a64dc8ca0, with [Window 643a64f06cd0: title: "Qt WindowModal QA owner"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: [Window 643a64e0a100: title: "Qt WindowModal QA peer", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a64dca640 called destroy()
+DEBUG ]: [Window 643a64f06cd0: title: "Qt WindowModal QA owner", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a64f06cd0 18000000 2171008
+DEBUG ]: [executor] Process created with pid 2171181
+DEBUG ]: renderer: making a snapshot of 643a64f06cd0
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 643a64f06cd0
+DEBUG ]: renderer: rendered a snapshot of 643a64f06cd0
+DEBUG ]: renderer: made a snapshot of 643a64f06cd0
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: On closed window, new focused candidate is [Window nullptr]
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: [Window 643a64f06cd0: title: "Qt WindowModal QA owner", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a64db12a0 called destroy()
+DEBUG ]: Cleanup: removed 4 fadeouts
+DEBUG ]: Hyprctl: new connection from pid 2171179
+DEBUG ]: Hyprctl: new connection from pid 2171182
+DEBUG ]: Hyprctl: new connection from pid 2171184
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 643a64db26f0
+DEBUG ]: [CWLDataDeviceProtocol] New datamgr resource bound at 643a64db2f80
+DEBUG ]: [CWLDataDeviceManagerResource] New data device bound at 643a64de2ab0
+DEBUG ]: [CPrimarySelectionProtocol] New primary_seletion_manager at 643a64f36d90
+DEBUG ]: [CPrimarySelectionManager] New primary selection data device bound at 643a64f1a390
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64da78e0 (not xwayland)
+DEBUG ]: [CXDGShellProtocol] New xdg_wm_base at 643a64f14a10
+DEBUG ]: Hyprctl: new connection from pid 2171177
+DEBUG ]: Hyprctl: new connection from pid 2171178
+DEBUG ]: Hyprctl: new connection from pid 2171180
+DEBUG ]: Hyprctl: new connection from pid 2171181
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 33 at 643a64dc8ca0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 36 at 643a64db1d40
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a64b630c0
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64f14a10 gets a toplevel 643a63f56dd0
+DEBUG ]: CWLSurface 643a64d84520 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: Window 643a64df5c30 set title to Qt WindowModal QA owner
+DEBUG ]: Window 643a64df5c30 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 1600, y: 1000] for [Window 643a64df5c30: title: "Qt WindowModal QA owner"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 92d4cbe1-a35c-4b68-918e-e4516299fa4a
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 41 at 643a64de3d20
+DEBUG ]: [CWLCompositorResource] New wl_region with id 44 at 643a64db1260
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a64a8b7f0
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64f14a10 gets a toplevel 643a63f571e0
+DEBUG ]: CWLSurface 643a64dc55f0 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: Window 643a65184260 set title to Qt WindowModal QA peer
+DEBUG ]: Window 643a65184260 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 1600, y: 1000] for [Window 643a65184260: title: "Qt WindowModal QA peer"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token a85f20d9-a58b-4dd0-9619-dd6b26fbf1ed
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64b630c0 requests geometry 0x0 1600x1000
+DEBUG ]: [CWLCompositorResource] New wl_region with id 44 at 643a64dc5e60
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a64df5c30
+DEBUG ]: Set keyboard focus to surface 643a64dc8ca0, with [Window 643a64df5c30: title: "Qt WindowModal QA owner"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 71.00000], window size: [1558.00000, 908.00000]
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64a8b7f0 requests geometry 0x0 1600x1000
+DEBUG ]: [CWLCompositorResource] New wl_region with id 51 at 643a658d63e0
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a65184260
+DEBUG ]: Set keyboard focus to surface 643a64de3d20, with [Window 643a65184260: title: "Qt WindowModal QA peer"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [806.00000, 71.00000], window size: [773.00000, 908.00000]
+DEBUG ]: Hyprctl: new connection from pid 2171192
+DEBUG ]: Hyprctl: new connection from pid 2171193
+DEBUG ]: Hyprctl: new connection from pid 2171194
+DEBUG ]: Hyprctl: new connection from pid 2171195
+DEBUG ]: Hyprctl: new connection from pid 2171196
+DEBUG ]: Hyprctl: new connection from pid 2171197
+DEBUG ]: Hyprctl: new connection from pid 2171198
+DEBUG ]: Hyprctl: new connection from pid 2171199
+DEBUG ]: Hyprctl: new connection from pid 2171200
+DEBUG ]: Hyprctl: new connection from pid 2171202
+DEBUG ]: Hyprctl: new connection from pid 2171201
+DEBUG ]: Hyprctl: new connection from pid 2171203
+DEBUG ]: Hyprctl: new connection from pid 2171204
+DEBUG ]: Hyprctl: new connection from pid 2171205
+DEBUG ]: Hyprctl: new connection from pid 2171206
+DEBUG ]: Hyprctl: new connection from pid 2171207
+DEBUG ]: Hyprctl: new connection from pid 2171208
+DEBUG ]: Removing last node (dwindle)
+DEBUG ]: Hyprctl: new connection from pid 2171209
+DEBUG ]: Hyprctl: new connection from pid 2171210
+DEBUG ]: Hyprctl: new connection from pid 2171211
+DEBUG ]: Hyprctl: new connection from pid 2171212
+DEBUG ]: Hyprctl: new connection from pid 2171213
+DEBUG ]: Hyprctl: new connection from pid 2171214
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64b630c0 requests geometry 0x0 460x300
+DEBUG ]: [CWLCompositorResource] New wl_region with id 40 at 643a64f36910
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64a8b7f0 requests geometry 0x0 460x300
+DEBUG ]: [CWLCompositorResource] New wl_region with id 58 at 643a651596a0
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 61 at 643a64f5a2e0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 64 at 643a651596a0
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a64daea20
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64f14a10 gets a toplevel 643a63d13b20
+DEBUG ]: CWLSurface 643a63dc2c20 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: [CXDGToplevelResource] Toplevel 643a63d13b20 sets parent to 643a63f56dd0
+DEBUG ]: Window 643a64f06cd0 set title to Qt WindowModal QA child
+DEBUG ]: Window 643a64f06cd0 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 643a64f06cd0: title: "Qt WindowModal QA child"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 6ae644ff-9941-4d44-a09a-35641729047c
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64daea20 requests geometry 0x0 320x180
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a64f06cd0
+DEBUG ]: Set keyboard focus to surface 643a64f5a2e0, with [Window 643a64f06cd0: title: "Qt WindowModal QA child"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [170.00000, 310.00000], window size: [320.00000, 180.00000]
+DEBUG ]: Hyprctl: new connection from pid 2171215
+DEBUG ]: Hyprctl: new connection from pid 2171216
+DEBUG ]: Hyprctl: new connection from pid 2171217
+DEBUG ]: Hyprctl: new connection from pid 2171218
+DEBUG ]: Hyprctl: new connection from pid 2171219
+DEBUG ]: Hyprctl: new connection from pid 2171220
+DEBUG ]: Hyprctl: new connection from pid 2171225
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 64 at 643a64d811e0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 36 at 643a64e0eee0
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a65773170
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64f14a10 gets a toplevel 643a63d175c0
+DEBUG ]: CWLSurface 643a64dd8610 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: [CXDGToplevelResource] Toplevel 643a63d175c0 sets parent to 643a63d13b20
+DEBUG ]: Window 643a64df3640 set title to Qt WindowModal QA nested
+DEBUG ]: Window 643a64df3640 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 643a64df3640: title: "Qt WindowModal QA nested"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token cde7777e-fc7d-4080-ae97-dbe386b78bb8
+DEBUG ]: Hyprctl: new connection from pid 2171230
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a65773170 requests geometry 0x0 320x180
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a64df3640
+DEBUG ]: Set keyboard focus to surface 643a64d811e0, with [Window 643a64df3640: title: "Qt WindowModal QA nested"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [260.00000, 310.00000], window size: [320.00000, 180.00000]
+DEBUG ]: Hyprctl: new connection from pid 2171231
+DEBUG ]: Hyprctl: new connection from pid 2171232
+DEBUG ]: Hyprctl: new connection from pid 2171233
+DEBUG ]: Hyprctl: new connection from pid 2171235
+DEBUG ]: Hyprctl: new connection from pid 2171236
+DEBUG ]: Hyprctl: new connection from pid 2171237
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a65773170 requests geometry 0x0 240x140
+DEBUG ]: [CWLCompositorResource] New wl_region with id 75 at 643a64bc6770
+DEBUG ]: Hyprctl: new connection from pid 2171238
+DEBUG ]: Hyprctl: new connection from pid 2171234
+DEBUG ]: Hyprctl: new connection from pid 2171239
+DEBUG ]: Hyprctl: new connection from pid 2171241
+DEBUG ]: Hyprctl: new connection from pid 2171242
+DEBUG ]: Hyprctl: new connection from pid 2171243
+DEBUG ]: Hyprctl: new connection from pid 2171244
+DEBUG ]: Hyprctl: new connection from pid 2171245
+DEBUG ]: Hyprctl: new connection from pid 2171246
+DEBUG ]: Hyprctl: new connection from pid 2171247
+DEBUG ]: Hyprctl: new connection from pid 2171249
+DEBUG ]: Hyprctl: new connection from pid 2171252
+DEBUG ]: Hyprctl: new connection from pid 2171256
+DEBUG ]: Hyprctl: new connection from pid 2171257
+DEBUG ]: Hyprctl: new connection from pid 2171259
+DEBUG ]: Hyprctl: new connection from pid 2171260
+DEBUG ]: Set keyboard focus to surface 643a64de3d20, with [Window 643a65184260: title: "Qt WindowModal QA peer"]
+DEBUG ]: Hyprctl: new connection from pid 2171261
+DEBUG ]: Hyprctl: new connection from pid 2171262
+DEBUG ]: Hyprctl: new connection from pid 2171263
+DEBUG ]: Hyprctl: new connection from pid 2171264
+DEBUG ]: Hyprctl: new connection from pid 2171265
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: cursorImage request: shape 1 -> default
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 2171266
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171258
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Set keyboard focus to surface 643a64d811e0, with [Window 643a64df3640: title: "Qt WindowModal QA nested"]
+DEBUG ]: Hyprctl: new connection from pid 2171268
+DEBUG ]: Hyprctl: new connection from pid 2171269
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+ERR ]: getConvertedColor: failed to get image description
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: [hyprbars] Dragging initiated on 643a64df3640
+DEBUG ]: Hyprctl: new connection from pid 2171270
+DEBUG ]: Hyprctl: new connection from pid 2171271
+DEBUG ]: Hyprctl: new connection from pid 2171272
+DEBUG ]: Hyprctl: new connection from pid 2171273
+DEBUG ]: Hyprctl: new connection from pid 2171274
+DEBUG ]: Set keyboard focus to surface 643a64de3d20, with [Window 643a65184260: title: "Qt WindowModal QA peer"]
+DEBUG ]: Hyprctl: new connection from pid 2171275
+DEBUG ]: Hyprctl: new connection from pid 2171276
+DEBUG ]: Hyprctl: new connection from pid 2171277
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171278
+DEBUG ]: Hyprctl: new connection from pid 2171279
+DEBUG ]: Hyprctl: new connection from pid 2171280
+DEBUG ]: Hyprctl: new connection from pid 2171281
+DEBUG ]: Hyprctl: new connection from pid 2171282
+DEBUG ]: Hyprctl: new connection from pid 2171283
+DEBUG ]: Hyprctl: new connection from pid 2171284
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171285
+DEBUG ]: Hyprctl: new connection from pid 2171286
+DEBUG ]: Hyprctl: new connection from pid 2171287
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups hydrate
+DEBUG ]: [executor] Process created with pid 2171288
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 3 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 2171289
+DEBUG ]: Hyprctl: new connection from pid 2171288
+DEBUG ]: Hyprctl: new connection from pid 2171291
+DEBUG ]: Hyprctl: new connection from pid 2171292
+DEBUG ]: Hyprctl: new connection from pid 2171293
+DEBUG ]: Hyprctl: new connection from pid 2171294
+DEBUG ]: [executor] Executing omarchy-shell hoskinson.windows fileDrag false 1230 265 0 116521726
+DEBUG ]: [executor] Process created with pid 2171296
+DEBUG ]: Hyprctl: new connection from pid 2171297
+DEBUG ]: Hyprctl: new connection from pid 2171296
+DEBUG ]: Hyprctl: new connection from pid 2171302
+DEBUG ]: Hyprctl: new connection from pid 2171308
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171309
+DEBUG ]: Hyprctl: new connection from pid 2171310
+DEBUG ]: Hyprctl: new connection from pid 2171313
+DEBUG ]: Hyprctl: new connection from pid 2171318
+DEBUG ]: Hyprctl: new connection from pid 2171319
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171325
+DEBUG ]: Hyprctl: new connection from pid 2171330
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 18000004
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 18000005
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 18000006
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 18000007
+DEBUG ]: [CScreencopyProtocol] Bound client successfully!
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64bdafa0 (not xwayland)
+DEBUG ]: [CToplevelImageCaptureSourceProtocol] New capture source for foreign toplevel: Qt WindowModal QA nested
+DEBUG ]: [CImageCopyCaptureProtocol] New image copy capture session for source (window): "Qt WindowModal QA nested"
+DEBUG ]: Framebuffer "" created, status 36053
+DEBUG ]: [Screenshare] Started screenshare session for (window): Qt WindowModal QA nested
+DEBUG ]: Hyprctl: new connection from pid 2171335
+DEBUG ]: [Screenshare] Stopped screenshare session for (window): Qt WindowModal QA nested
+DEBUG ]: Hyprctl: new connection from pid 2171336
+DEBUG ]: Hyprctl: new connection from pid 2171341
+DEBUG ]: Hyprctl: new connection from pid 2171344
+DEBUG ]: Hyprctl: new connection from pid 2171347
+DEBUG ]: Hyprctl: new connection from pid 2171356
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171357
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Set keyboard focus to surface 643a64d811e0, with [Window 643a64df3640: title: "Qt WindowModal QA nested"]
+DEBUG ]: Hyprctl: new connection from pid 2171358
+DEBUG ]: Hyprctl: new connection from pid 2171359
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171360
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171361
+DEBUG ]: Hyprctl: new connection from pid 2171364
+DEBUG ]: Hyprctl: new connection from pid 2171365
+DEBUG ]: Hyprctl: new connection from pid 2171366
+DEBUG ]: Hyprctl: new connection from pid 2171367
+DEBUG ]: Hyprctl: new connection from pid 2171368
+DEBUG ]: Hyprctl: new connection from pid 2171369
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Set keyboard focus to surface 643a64de3d20, with [Window 643a65184260: title: "Qt WindowModal QA peer"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: cursorImage request: shape 1 -> default
+DEBUG ]: Hyprctl: new connection from pid 2171370
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171371
+DEBUG ]: Hyprctl: new connection from pid 2171372
+DEBUG ]: Hyprctl: new connection from pid 2171373
+DEBUG ]: Hyprctl: new connection from pid 2171374
+DEBUG ]: Hyprctl: new connection from pid 2171375
+DEBUG ]: Hyprctl: new connection from pid 2171376
+DEBUG ]: Hyprctl: new connection from pid 2171377
+DEBUG ]: Hyprctl: new connection from pid 2171378
+DEBUG ]: [Window 643a64df3640: title: "Qt WindowModal QA nested", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a64df3640 18000007 2171183
+DEBUG ]: [executor] Process created with pid 2171379
+DEBUG ]: renderer: making a snapshot of 643a64df3640
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 643a64df3640
+DEBUG ]: renderer: rendered a snapshot of 643a64df3640
+DEBUG ]: renderer: made a snapshot of 643a64df3640
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: Unmapped was not focused, ignoring a refocus.
+DEBUG ]: [Window 643a64df3640: title: "Qt WindowModal QA nested", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a64dd8610 called destroy()
+DEBUG ]: [Window 643a64f06cd0: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a64f06cd0 18000006 2171183
+DEBUG ]: [executor] Process created with pid 2171380
+DEBUG ]: renderer: making a snapshot of 643a64f06cd0
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 643a64f06cd0
+DEBUG ]: renderer: rendered a snapshot of 643a64f06cd0
+DEBUG ]: renderer: made a snapshot of 643a64f06cd0
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: Unmapped was not focused, ignoring a refocus.
+DEBUG ]: [Window 643a64f06cd0: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a63dc2c20 called destroy()
+DEBUG ]: [Window 643a65184260: title: "Qt WindowModal QA peer", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a65184260 18000005 2171183
+DEBUG ]: [executor] Process created with pid 2171381
+DEBUG ]: renderer: making a snapshot of 643a65184260
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 643a65184260
+DEBUG ]: renderer: rendered a snapshot of 643a65184260
+DEBUG ]: renderer: made a snapshot of 643a65184260
+WARN ]: ITarget: assignToSpace with a null space?
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: On closed window, new focused candidate is [Window 643a64df5c30: title: "Qt WindowModal QA owner"]
+DEBUG ]: Set keyboard focus to surface 643a64dc8ca0, with [Window 643a64df5c30: title: "Qt WindowModal QA owner"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: [Window 643a65184260: title: "Qt WindowModal QA peer", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a64dc55f0 called destroy()
+DEBUG ]: [Window 643a64df5c30: title: "Qt WindowModal QA owner", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a64df5c30 18000004 2171183
+DEBUG ]: [executor] Process created with pid 2171383
+DEBUG ]: renderer: making a snapshot of 643a64df5c30
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 643a64df5c30
+DEBUG ]: renderer: rendered a snapshot of 643a64df5c30
+DEBUG ]: renderer: made a snapshot of 643a64df5c30
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: On closed window, new focused candidate is [Window nullptr]
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: [Window 643a64df5c30: title: "Qt WindowModal QA owner", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a64d84520 called destroy()
+DEBUG ]: Cleanup: removed 4 fadeouts
+DEBUG ]: Hyprctl: new connection from pid 2171382
+DEBUG ]: Hyprctl: new connection from pid 2171384
+DEBUG ]: Hyprctl: new connection from pid 2171386
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 643a63d0a6c0
+DEBUG ]: [CWLDataDeviceProtocol] New datamgr resource bound at 643a64d877d0
+DEBUG ]: [CWLDataDeviceManagerResource] New data device bound at 643a64f10f20
+DEBUG ]: [CPrimarySelectionProtocol] New primary_seletion_manager at 643a64bdca40
+DEBUG ]: [CPrimarySelectionManager] New primary selection data device bound at 643a64bdb2d0
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64de6f00 (not xwayland)
+DEBUG ]: [CXDGShellProtocol] New xdg_wm_base at 643a63fd00a0
+DEBUG ]: Hyprctl: new connection from pid 2171379
+DEBUG ]: Hyprctl: new connection from pid 2171380
+DEBUG ]: Hyprctl: new connection from pid 2171381
+DEBUG ]: Hyprctl: new connection from pid 2171383
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 33 at 643a64dc8ca0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 36 at 643a64de96b0
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a64b630c0
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a63fd00a0 gets a toplevel 643a63f56dd0
+DEBUG ]: CWLSurface 643a65042f00 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: Window 643a64df5c30 set title to Qt WindowModal QA owner
+DEBUG ]: Window 643a64df5c30 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 1600, y: 1000] for [Window 643a64df5c30: title: "Qt WindowModal QA owner"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token f18420fc-5acc-4c10-9810-8406df0f22bd
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 41 at 643a64de3d20
+DEBUG ]: [CWLCompositorResource] New wl_region with id 44 at 643a64f37c30
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a64a8b7f0
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a63fd00a0 gets a toplevel 643a63f571e0
+DEBUG ]: CWLSurface 643a64d8cae0 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: Window 643a65184260 set title to Qt WindowModal QA peer
+DEBUG ]: Window 643a65184260 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 1600, y: 1000] for [Window 643a65184260: title: "Qt WindowModal QA peer"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 18162245-80f2-4fb6-a867-90aede359d69
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64b630c0 requests geometry 0x0 1600x1000
+DEBUG ]: [CWLCompositorResource] New wl_region with id 44 at 643a64dc3c10
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a64df5c30
+DEBUG ]: Set keyboard focus to surface 643a64dc8ca0, with [Window 643a64df5c30: title: "Qt WindowModal QA owner"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 71.00000], window size: [1558.00000, 908.00000]
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64a8b7f0 requests geometry 0x0 1600x1000
+DEBUG ]: [CWLCompositorResource] New wl_region with id 51 at 643a65509f40
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a65184260
+DEBUG ]: Set keyboard focus to surface 643a64de3d20, with [Window 643a65184260: title: "Qt WindowModal QA peer"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [806.00000, 71.00000], window size: [773.00000, 908.00000]
+DEBUG ]: Hyprctl: new connection from pid 2171394
+DEBUG ]: Hyprctl: new connection from pid 2171395
+DEBUG ]: Hyprctl: new connection from pid 2171396
+DEBUG ]: Hyprctl: new connection from pid 2171397
+DEBUG ]: Hyprctl: new connection from pid 2171398
+DEBUG ]: Hyprctl: new connection from pid 2171399
+DEBUG ]: Hyprctl: new connection from pid 2171400
+DEBUG ]: Hyprctl: new connection from pid 2171401
+DEBUG ]: Hyprctl: new connection from pid 2171402
+DEBUG ]: Hyprctl: new connection from pid 2171403
+DEBUG ]: Hyprctl: new connection from pid 2171404
+DEBUG ]: Hyprctl: new connection from pid 2171405
+DEBUG ]: Hyprctl: new connection from pid 2171406
+DEBUG ]: Hyprctl: new connection from pid 2171407
+DEBUG ]: Hyprctl: new connection from pid 2171408
+DEBUG ]: Hyprctl: new connection from pid 2171409
+DEBUG ]: Hyprctl: new connection from pid 2171410
+DEBUG ]: Hyprctl: new connection from pid 2171411
+DEBUG ]: Removing last node (dwindle)
+DEBUG ]: Hyprctl: new connection from pid 2171412
+DEBUG ]: Hyprctl: new connection from pid 2171413
+DEBUG ]: Hyprctl: new connection from pid 2171414
+DEBUG ]: Hyprctl: new connection from pid 2171415
+DEBUG ]: Hyprctl: new connection from pid 2171416
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64b630c0 requests geometry 0x0 460x300
+DEBUG ]: [CWLCompositorResource] New wl_region with id 40 at 643a657292f0
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64a8b7f0 requests geometry 0x0 460x300
+DEBUG ]: [CWLCompositorResource] New wl_region with id 58 at 643a64bc6cb0
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 61 at 643a64d811e0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 64 at 643a64bc6cb0
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a64daea20
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a63fd00a0 gets a toplevel 643a63d13b20
+DEBUG ]: CWLSurface 643a64bd8ac0 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: [CXDGToplevelResource] Toplevel 643a63d13b20 sets parent to 643a63f56dd0
+DEBUG ]: Window 643a64f06cd0 set title to Qt WindowModal QA child
+DEBUG ]: Window 643a64f06cd0 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 643a64f06cd0: title: "Qt WindowModal QA child"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token d0e3fbe0-d8ce-41da-93f7-a633a4e22a70
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64daea20 requests geometry 0x0 320x180
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a64f06cd0
+DEBUG ]: Set keyboard focus to surface 643a64d811e0, with [Window 643a64f06cd0: title: "Qt WindowModal QA child"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [170.00000, 310.00000], window size: [320.00000, 180.00000]
+DEBUG ]: Hyprctl: new connection from pid 2171418
+DEBUG ]: Hyprctl: new connection from pid 2171419
+DEBUG ]: Hyprctl: new connection from pid 2171420
+DEBUG ]: Hyprctl: new connection from pid 2171421
+DEBUG ]: Hyprctl: new connection from pid 2171422
+DEBUG ]: Hyprctl: new connection from pid 2171423
+DEBUG ]: Hyprctl: new connection from pid 2171424
+DEBUG ]: Hyprctl: new connection from pid 2171425
+DEBUG ]: Hyprctl: new connection from pid 2171426
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 64 at 643a64df3640
+DEBUG ]: [CWLCompositorResource] New wl_region with id 36 at 643a656133f0
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a65773170
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a63fd00a0 gets a toplevel 643a63d175c0
+DEBUG ]: CWLSurface 643a64bd35f0 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: [CXDGToplevelResource] Toplevel 643a63d175c0 sets parent to 643a63d13b20
+DEBUG ]: Window 643a64f5a1e0 set title to Qt WindowModal QA nested
+DEBUG ]: Window 643a64f5a1e0 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 643a64f5a1e0: title: "Qt WindowModal QA nested"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 7d18f8a5-1565-4bb0-a496-d034bf249f1a
+DEBUG ]: Hyprctl: new connection from pid 2171427
+DEBUG ]: Hyprctl: new connection from pid 2171429
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a65773170 requests geometry 0x0 320x180
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a64f5a1e0
+DEBUG ]: Set keyboard focus to surface 643a64df3640, with [Window 643a64f5a1e0: title: "Qt WindowModal QA nested"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [260.00000, 310.00000], window size: [320.00000, 180.00000]
+DEBUG ]: Hyprctl: new connection from pid 2171430
+DEBUG ]: Hyprctl: new connection from pid 2171431
+DEBUG ]: Hyprctl: new connection from pid 2171432
+DEBUG ]: Hyprctl: new connection from pid 2171433
+DEBUG ]: Hyprctl: new connection from pid 2171434
+DEBUG ]: Hyprctl: new connection from pid 2171435
+DEBUG ]: Hyprctl: new connection from pid 2171436
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a65773170 requests geometry 0x0 240x140
+DEBUG ]: [CWLCompositorResource] New wl_region with id 75 at 643a64bd61a0
+DEBUG ]: Hyprctl: new connection from pid 2171438
+DEBUG ]: Hyprctl: new connection from pid 2171444
+DEBUG ]: Hyprctl: new connection from pid 2171446
+DEBUG ]: Hyprctl: new connection from pid 2171452
+DEBUG ]: Hyprctl: new connection from pid 2171456
+DEBUG ]: Hyprctl: new connection from pid 2171495
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 18000008
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 18000009
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000a
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000b
+DEBUG ]: [CScreencopyProtocol] Bound client successfully!
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64da78e0 (not xwayland)
+DEBUG ]: [CToplevelImageCaptureSourceProtocol] New capture source for foreign toplevel: Qt WindowModal QA child
+DEBUG ]: [CImageCopyCaptureProtocol] New image copy capture session for source (window): "Qt WindowModal QA child"
+DEBUG ]: Framebuffer "" created, status 36053
+DEBUG ]: [Screenshare] Started screenshare session for (window): Qt WindowModal QA child
+DEBUG ]: [Screenshare] Stopped screenshare session for (window): Qt WindowModal QA child
+DEBUG ]: Hyprctl: new connection from pid 2171517
+DEBUG ]: Hyprctl: new connection from pid 2171559
+DEBUG ]: Hyprctl: new connection from pid 2171564
+DEBUG ]: Hyprctl: new connection from pid 2171569
+DEBUG ]: Set keyboard focus to surface 643a64de3d20, with [Window 643a65184260: title: "Qt WindowModal QA peer"]
+DEBUG ]: Hyprctl: new connection from pid 2171573
+DEBUG ]: Hyprctl: new connection from pid 2171574
+DEBUG ]: Hyprctl: new connection from pid 2171575
+DEBUG ]: Hyprctl: new connection from pid 2171576
+DEBUG ]: Hyprctl: new connection from pid 2171577
+DEBUG ]: Hyprctl: new connection from pid 2171578
+DEBUG ]: Hyprctl: new connection from pid 2171579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: cursorImage request: shape 1 -> default
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 2171580
+DEBUG ]: Hyprctl: new connection from pid 2171582
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Set keyboard focus to surface 643a64df3640, with [Window 643a64f5a1e0: title: "Qt WindowModal QA nested"]
+DEBUG ]: Hyprctl: new connection from pid 2171590
+DEBUG ]: Hyprctl: new connection from pid 2171595
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+ERR ]: getConvertedColor: failed to get image description
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: [hyprbars] Dragging initiated on 643a64f5a1e0
+DEBUG ]: Hyprctl: new connection from pid 2171596
+DEBUG ]: Hyprctl: new connection from pid 2171601
+DEBUG ]: Hyprctl: new connection from pid 2171604
+DEBUG ]: Hyprctl: new connection from pid 2171605
+DEBUG ]: Hyprctl: new connection from pid 2171611
+DEBUG ]: Set keyboard focus to surface 643a64de3d20, with [Window 643a65184260: title: "Qt WindowModal QA peer"]
+DEBUG ]: Hyprctl: new connection from pid 2171583
+DEBUG ]: Hyprctl: new connection from pid 2171617
+DEBUG ]: Hyprctl: new connection from pid 2171623
+DEBUG ]: Hyprctl: new connection from pid 2171629
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171636
+DEBUG ]: Hyprctl: new connection from pid 2171638
+DEBUG ]: Hyprctl: new connection from pid 2171639
+DEBUG ]: Hyprctl: new connection from pid 2171640
+DEBUG ]: Hyprctl: new connection from pid 2171641
+DEBUG ]: Hyprctl: new connection from pid 2171642
+DEBUG ]: Hyprctl: new connection from pid 2171643
+DEBUG ]: Hyprctl: new connection from pid 2171644
+DEBUG ]: Hyprctl: new connection from pid 2171649
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171670
+DEBUG ]: Hyprctl: new connection from pid 2171671
+DEBUG ]: Hyprctl: new connection from pid 2171672
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]:  [PluginSystem] Plugin hyprbars unloaded.
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups hydrate
+DEBUG ]: [executor] Process created with pid 2171674
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: Hyprctl: new connection from pid 2171673
+ERR ]: CConfigWatcher: got an event for wd 4 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 2171676
+DEBUG ]: Hyprctl: new connection from pid 2171677
+DEBUG ]: Hyprctl: new connection from pid 2171678
+DEBUG ]: Hyprctl: new connection from pid 2171679
+DEBUG ]: Hyprctl: new connection from pid 2171680
+DEBUG ]: Hyprctl: new connection from pid 2171681
+DEBUG ]: Hyprctl: new connection from pid 2171682
+DEBUG ]: Hyprctl: new connection from pid 2171684
+DEBUG ]: Hyprctl: new connection from pid 2171674
+DEBUG ]: Hyprctl: new connection from pid 2171689
+DEBUG ]: Hyprctl: new connection from pid 2171690
+DEBUG ]: Hyprctl: new connection from pid 2171692
+DEBUG ]: Hyprctl: new connection from pid 2171694
+DEBUG ]: Hyprctl: new connection from pid 2171695
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171696
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171697
+DEBUG ]: Hyprctl: new connection from pid 2171698
+DEBUG ]: Hyprctl: new connection from pid 2171699
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f280 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f2a0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f2c0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f2e0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f300 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f320 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f340 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f360 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f380 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f3a0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f3c0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f3e0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f400 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f420 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f440 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f460 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f480 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f4a0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f4c0 for page at 0x643a35e6f000
+DEBUG ]: getAddressForTrampo: Returning addr 0x643a35e6f4e0 for page at 0x643a35e6f000
+DEBUG ]:  [PluginSystem] Plugin hyprbars loaded. Handle: 643a644ba880, path: "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/hyprbars-v22-interruption-candidate.so", author: "Vaxry", description: "A plugin to add title bars to windows.", version: "1.0"
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups hydrate
+DEBUG ]: [executor] Process created with pid 2171701
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups hydrate
+DEBUG ]: [executor] Process created with pid 2171702
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: Hyprctl: new connection from pid 2171700
+ERR ]: CConfigWatcher: got an event for wd 5 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 2171701
+DEBUG ]: Hyprctl: new connection from pid 2171702
+DEBUG ]: Hyprctl: new connection from pid 2171705
+DEBUG ]: Hyprctl: new connection from pid 2171754
+DEBUG ]: Hyprctl: new connection from pid 2171761
+DEBUG ]: Hyprctl: new connection from pid 2171768
+DEBUG ]: Hyprctl: new connection from pid 2171775
+DEBUG ]: Hyprctl: new connection from pid 2171781
+DEBUG ]: [executor] Executing omarchy-shell hoskinson.windows fileDrag false 1230 265 0 116523268
+DEBUG ]: [executor] Process created with pid 2171784
+DEBUG ]: Hyprctl: new connection from pid 2171785
+DEBUG ]: Hyprctl: new connection from pid 2171786
+DEBUG ]: Hyprctl: new connection from pid 2171787
+DEBUG ]: Hyprctl: new connection from pid 2171788
+DEBUG ]: Hyprctl: new connection from pid 2171784
+DEBUG ]: Hyprctl: new connection from pid 2171791
+DEBUG ]: Hyprctl: new connection from pid 2171789
+DEBUG ]: Hyprctl: new connection from pid 2171797
+DEBUG ]: Hyprctl: new connection from pid 2171802
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 18000008
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 18000009
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000a
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000b
+DEBUG ]: [CScreencopyProtocol] Bound client successfully!
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64c255e0 (not xwayland)
+DEBUG ]: [CToplevelImageCaptureSourceProtocol] New capture source for foreign toplevel: Qt WindowModal QA peer
+DEBUG ]: [CImageCopyCaptureProtocol] New image copy capture session for source (window): "Qt WindowModal QA peer"
+DEBUG ]: Framebuffer "" created, status 36053
+DEBUG ]: [Screenshare] Started screenshare session for (window): Qt WindowModal QA peer
+DEBUG ]: [Screenshare] Stopped screenshare session for (window): Qt WindowModal QA peer
+DEBUG ]: Hyprctl: new connection from pid 2171816
+DEBUG ]: Hyprctl: new connection from pid 2171821
+DEBUG ]: Hyprctl: new connection from pid 2171822
+DEBUG ]: Hyprctl: new connection from pid 2171826
+DEBUG ]: Hyprctl: new connection from pid 2171843
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171854
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171855
+DEBUG ]: Hyprctl: new connection from pid 2171857
+DEBUG ]: Hyprctl: new connection from pid 2171858
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups hydrate
+DEBUG ]: [executor] Process created with pid 2171859
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 6 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 2171860
+DEBUG ]: Hyprctl: new connection from pid 2171859
+DEBUG ]: Hyprctl: new connection from pid 2171862
+DEBUG ]: Hyprctl: new connection from pid 2171878
+DEBUG ]: Hyprctl: new connection from pid 2171881
+DEBUG ]: Hyprctl: new connection from pid 2171883
+DEBUG ]: [executor] Executing omarchy-shell hoskinson.windows fileDrag false 1230 265 0 116523569
+DEBUG ]: [executor] Process created with pid 2171887
+DEBUG ]: Hyprctl: new connection from pid 2171894
+DEBUG ]: Hyprctl: new connection from pid 2171887
+DEBUG ]: Hyprctl: new connection from pid 2171919
+DEBUG ]: Hyprctl: new connection from pid 2171921
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171924
+DEBUG ]: Hyprctl: new connection from pid 2171925
+DEBUG ]: Hyprctl: new connection from pid 2171926
+DEBUG ]: Hyprctl: new connection from pid 2171927
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171928
+DEBUG ]: Hyprctl: new connection from pid 2171929
+DEBUG ]: Hyprctl: new connection from pid 2171930
+DEBUG ]: Hyprctl: new connection from pid 2171931
+DEBUG ]: Hyprctl: new connection from pid 2171932
+DEBUG ]: Hyprctl: new connection from pid 2171933
+DEBUG ]: Hyprctl: new connection from pid 2171934
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Set keyboard focus to surface 643a64df3640, with [Window 643a64f5a1e0: title: "Qt WindowModal QA nested"]
+DEBUG ]: Hyprctl: new connection from pid 2171935
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171936
+DEBUG ]: Hyprctl: new connection from pid 2171937
+DEBUG ]: Hyprctl: new connection from pid 2171938
+DEBUG ]: Hyprctl: new connection from pid 2171939
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Set keyboard focus to surface 643a64de3d20, with [Window 643a65184260: title: "Qt WindowModal QA peer"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: cursorImage request: shape 1 -> default
+DEBUG ]: Hyprctl: new connection from pid 2171940
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2171941
+DEBUG ]: Hyprctl: new connection from pid 2171942
+DEBUG ]: Hyprctl: new connection from pid 2171943
+DEBUG ]: Hyprctl: new connection from pid 2171944
+DEBUG ]: Hyprctl: new connection from pid 2171945
+DEBUG ]: Hyprctl: new connection from pid 2171946
+DEBUG ]: Hyprctl: new connection from pid 2171947
+DEBUG ]: Hyprctl: new connection from pid 2171948
+DEBUG ]: [Window 643a64f5a1e0: title: "Qt WindowModal QA nested", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a64f5a1e0 1800000b 2171385
+DEBUG ]: [executor] Process created with pid 2171949
+DEBUG ]: renderer: making a snapshot of 643a64f5a1e0
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 643a64f5a1e0
+DEBUG ]: renderer: rendered a snapshot of 643a64f5a1e0
+DEBUG ]: renderer: made a snapshot of 643a64f5a1e0
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: Unmapped was not focused, ignoring a refocus.
+DEBUG ]: [Window 643a64f5a1e0: title: "Qt WindowModal QA nested", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a64bd35f0 called destroy()
+DEBUG ]: [Window 643a64f06cd0: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a64f06cd0 1800000a 2171385
+DEBUG ]: [executor] Process created with pid 2171950
+DEBUG ]: renderer: making a snapshot of 643a64f06cd0
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 643a64f06cd0
+DEBUG ]: renderer: rendered a snapshot of 643a64f06cd0
+DEBUG ]: renderer: made a snapshot of 643a64f06cd0
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: Unmapped was not focused, ignoring a refocus.
+DEBUG ]: [Window 643a64f06cd0: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a64bd8ac0 called destroy()
+DEBUG ]: [Window 643a64df5c30: title: "Qt WindowModal QA owner", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a64df5c30 18000008 2171385
+DEBUG ]: [executor] Process created with pid 2171951
+DEBUG ]: renderer: making a snapshot of 643a64df5c30
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 643a64df5c30
+DEBUG ]: renderer: rendered a snapshot of 643a64df5c30
+DEBUG ]: renderer: made a snapshot of 643a64df5c30
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: Unmapped was not focused, ignoring a refocus.
+DEBUG ]: [Window 643a64df5c30: title: "Qt WindowModal QA owner", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a65042f00 called destroy()
+DEBUG ]: [Window 643a65184260: title: "Qt WindowModal QA peer", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a65184260 18000009 2171385
+DEBUG ]: [executor] Process created with pid 2171952
+DEBUG ]: renderer: making a snapshot of 643a65184260
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 643a65184260
+DEBUG ]: renderer: rendered a snapshot of 643a65184260
+DEBUG ]: renderer: made a snapshot of 643a65184260
+WARN ]: ITarget: assignToSpace with a null space?
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: On closed window, new focused candidate is [Window nullptr]
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: [Window 643a65184260: title: "Qt WindowModal QA peer", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a64d8cae0 called destroy()
+DEBUG ]: Cleanup: removed 4 fadeouts
+DEBUG ]: Hyprctl: new connection from pid 2171953
+DEBUG ]: Hyprctl: new connection from pid 2171949
+DEBUG ]: Hyprctl: new connection from pid 2171950
+DEBUG ]: Hyprctl: new connection from pid 2171951
+DEBUG ]: Hyprctl: new connection from pid 2171952
+DEBUG ]: Hyprctl: new connection from pid 2171955
+DEBUG ]: Hyprctl: new connection from pid 2171959
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 643a655595f0
+DEBUG ]: [CWLDataDeviceProtocol] New datamgr resource bound at 643a656280f0
+DEBUG ]: [CWLDataDeviceManagerResource] New data device bound at 643a64bb7fc0
+DEBUG ]: [CPrimarySelectionProtocol] New primary_seletion_manager at 643a64dee540
+DEBUG ]: [CPrimarySelectionManager] New primary selection data device bound at 643a6544cce0
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64bd4d70 (not xwayland)
+DEBUG ]: [CXDGShellProtocol] New xdg_wm_base at 643a64f11b50
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 33 at 643a64d811e0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 36 at 643a64dc6540
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a64a8b7f0
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64f11b50 gets a toplevel 643a63f56dd0
+DEBUG ]: CWLSurface 643a6560feb0 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: Window 643a65184260 set title to Qt WindowModal QA owner
+DEBUG ]: Window 643a65184260 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 1600, y: 1000] for [Window 643a65184260: title: "Qt WindowModal QA owner"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 20966400-12ac-46b1-be89-746a998362e7
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 41 at 643a64dc8ca0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 44 at 643a65055090
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a64b630c0
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64f11b50 gets a toplevel 643a63d13b20
+DEBUG ]: CWLSurface 643a64bd22c0 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: Window 643a650724b0 set title to Qt WindowModal QA peer
+DEBUG ]: Window 643a650724b0 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 1600, y: 1000] for [Window 643a650724b0: title: "Qt WindowModal QA peer"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token c1ac66de-22dc-4b6a-a40e-ec69f39f126b
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64a8b7f0 requests geometry 0x0 1600x1000
+DEBUG ]: [CWLCompositorResource] New wl_region with id 44 at 643a63fbcee0
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a65184260
+DEBUG ]: Set keyboard focus to surface 643a64d811e0, with [Window 643a65184260: title: "Qt WindowModal QA owner"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 71.00000], window size: [1558.00000, 908.00000]
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64b630c0 requests geometry 0x0 1600x1000
+DEBUG ]: [CWLCompositorResource] New wl_region with id 51 at 643a64d9c360
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a650724b0
+DEBUG ]: Set keyboard focus to surface 643a64dc8ca0, with [Window 643a650724b0: title: "Qt WindowModal QA peer"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [806.00000, 71.00000], window size: [773.00000, 908.00000]
+DEBUG ]: Hyprctl: new connection from pid 2171964
+DEBUG ]: Hyprctl: new connection from pid 2171965
+DEBUG ]: Hyprctl: new connection from pid 2171966
+DEBUG ]: Hyprctl: new connection from pid 2171968
+DEBUG ]: Hyprctl: new connection from pid 2171969
+DEBUG ]: Hyprctl: new connection from pid 2171970
+DEBUG ]: Hyprctl: new connection from pid 2171971
+DEBUG ]: Hyprctl: new connection from pid 2171972
+DEBUG ]: Hyprctl: new connection from pid 2171973
+DEBUG ]: Hyprctl: new connection from pid 2171974
+DEBUG ]: Hyprctl: new connection from pid 2171975
+DEBUG ]: Hyprctl: new connection from pid 2171976
+DEBUG ]: Hyprctl: new connection from pid 2171977
+DEBUG ]: Hyprctl: new connection from pid 2171978
+DEBUG ]: Hyprctl: new connection from pid 2171980
+DEBUG ]: Hyprctl: new connection from pid 2171981
+DEBUG ]: Hyprctl: new connection from pid 2171982
+DEBUG ]: Hyprctl: new connection from pid 2171983
+DEBUG ]: Removing last node (dwindle)
+DEBUG ]: Hyprctl: new connection from pid 2171984
+DEBUG ]: Hyprctl: new connection from pid 2171985
+DEBUG ]: Hyprctl: new connection from pid 2171986
+DEBUG ]: Hyprctl: new connection from pid 2171987
+DEBUG ]: Hyprctl: new connection from pid 2171988
+DEBUG ]: Hyprctl: new connection from pid 2171989
+DEBUG ]: Hyprctl: new connection from pid 2171990
+DEBUG ]: Hyprctl: new connection from pid 2171991
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64a8b7f0 requests geometry 0x0 460x300
+DEBUG ]: [CWLCompositorResource] New wl_region with id 48 at 643a64db1940
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64b630c0 requests geometry 0x0 460x300
+DEBUG ]: [CWLCompositorResource] New wl_region with id 61 at 643a64fabfc0
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 64 at 643a64f06cd0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 67 at 643a64fabfc0
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a64daea20
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64f11b50 gets a toplevel 643a63d175c0
+DEBUG ]: CWLSurface 643a64bd8ac0 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: [CXDGToplevelResource] Toplevel 643a63d175c0 sets parent to 643a63f56dd0
+DEBUG ]: Window 643a64de3d20 set title to Qt WindowModal QA child
+DEBUG ]: Window 643a64de3d20 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 643a64de3d20: title: "Qt WindowModal QA child"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 29730290-adc6-45b3-bd60-c530b27c1f32
+DEBUG ]: Hyprctl: new connection from pid 2171992
+DEBUG ]: Hyprctl: new connection from pid 2171994
+DEBUG ]: Hyprctl: new connection from pid 2171995
+DEBUG ]: Hyprctl: new connection from pid 2171996
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64daea20 requests geometry 0x0 320x180
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a64de3d20
+DEBUG ]: Set keyboard focus to surface 643a64f06cd0, with [Window 643a64de3d20: title: "Qt WindowModal QA child"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [170.00000, 310.00000], window size: [320.00000, 180.00000]
+DEBUG ]: Hyprctl: new connection from pid 2171997
+DEBUG ]: Hyprctl: new connection from pid 2171998
+DEBUG ]: Hyprctl: new connection from pid 2171999
+DEBUG ]: Hyprctl: new connection from pid 2172000
+DEBUG ]: Hyprctl: new connection from pid 2172001
+DEBUG ]: Hyprctl: new connection from pid 2172002
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 67 at 643a64f5a1e0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 72 at 643a64a94b80
+DEBUG ]: [CXDGWMBase] New xdg_surface at 643a65773170
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a64f11b50 gets a toplevel 643a658da740
+DEBUG ]: CWLSurface 643a65626bb0 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: [CXDGToplevelResource] Toplevel 643a658da740 sets parent to 643a63d175c0
+DEBUG ]: Window 643a64df5b50 set title to Qt WindowModal QA nested
+DEBUG ]: Window 643a64df5b50 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 643a64df5b50: title: "Qt WindowModal QA nested"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token ec2541d3-1f53-4056-b5f3-8ef543a85b46
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a65773170 requests geometry 0x0 320x180
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000643a64df5b50
+DEBUG ]: Set keyboard focus to surface 643a64f5a1e0, with [Window 643a64df5b50: title: "Qt WindowModal QA nested"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [260.00000, 310.00000], window size: [320.00000, 180.00000]
+DEBUG ]: Hyprctl: new connection from pid 2172003
+DEBUG ]: Hyprctl: new connection from pid 2172004
+DEBUG ]: Hyprctl: new connection from pid 2172005
+DEBUG ]: Hyprctl: new connection from pid 2172006
+DEBUG ]: Hyprctl: new connection from pid 2172007
+DEBUG ]: Hyprctl: new connection from pid 2172008
+DEBUG ]: Hyprctl: new connection from pid 2172009
+DEBUG ]: Hyprctl: new connection from pid 2172010
+DEBUG ]: Hyprctl: new connection from pid 2172011
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 643a65773170 requests geometry 0x0 240x140
+DEBUG ]: [CWLCompositorResource] New wl_region with id 36 at 643a658f3600
+DEBUG ]: Hyprctl: new connection from pid 2172013
+DEBUG ]: Hyprctl: new connection from pid 2172020
+DEBUG ]: Hyprctl: new connection from pid 2172021
+DEBUG ]: Hyprctl: new connection from pid 2172022
+DEBUG ]: Set keyboard focus to surface 643a64dc8ca0, with [Window 643a650724b0: title: "Qt WindowModal QA peer"]
+DEBUG ]: Hyprctl: new connection from pid 2172023
+DEBUG ]: Hyprctl: new connection from pid 2172024
+DEBUG ]: Hyprctl: new connection from pid 2172025
+DEBUG ]: Hyprctl: new connection from pid 2172026
+DEBUG ]: Hyprctl: new connection from pid 2172027
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: cursorImage request: shape 1 -> default
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 2172028
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Set keyboard focus to surface 643a64f5a1e0, with [Window 643a64df5b50: title: "Qt WindowModal QA nested"]
+DEBUG ]: Hyprctl: new connection from pid 2172029
+DEBUG ]: Hyprctl: new connection from pid 2172030
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+ERR ]: getConvertedColor: failed to get image description
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: [hyprbars] Dragging initiated on 643a64df5b50
+DEBUG ]: Hyprctl: new connection from pid 2172031
+DEBUG ]: Hyprctl: new connection from pid 2172032
+DEBUG ]: Hyprctl: new connection from pid 2172033
+DEBUG ]: Hyprctl: new connection from pid 2172034
+DEBUG ]: Hyprctl: new connection from pid 2172035
+DEBUG ]: Set keyboard focus to surface 643a64dc8ca0, with [Window 643a650724b0: title: "Qt WindowModal QA peer"]
+DEBUG ]: Hyprctl: new connection from pid 2172036
+DEBUG ]: Hyprctl: new connection from pid 2172037
+DEBUG ]: Hyprctl: new connection from pid 2172038
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2172039
+DEBUG ]: Hyprctl: new connection from pid 2172040
+DEBUG ]: Hyprctl: new connection from pid 2172041
+DEBUG ]: Hyprctl: new connection from pid 2172042
+DEBUG ]: Hyprctl: new connection from pid 2172043
+DEBUG ]: Hyprctl: new connection from pid 2172044
+DEBUG ]: Hyprctl: new connection from pid 2172045
+DEBUG ]: Hyprctl: new connection from pid 2172051
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000c
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000d
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000e
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000f
+DEBUG ]: [CScreencopyProtocol] Bound client successfully!
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64dde3b0 (not xwayland)
+DEBUG ]: [CToplevelImageCaptureSourceProtocol] New capture source for foreign toplevel: Qt WindowModal QA peer
+DEBUG ]: [CImageCopyCaptureProtocol] New image copy capture session for source (window): "Qt WindowModal QA peer"
+DEBUG ]: Framebuffer "" created, status 36053
+DEBUG ]: [Screenshare] Started screenshare session for (window): Qt WindowModal QA peer
+DEBUG ]: [Screenshare] Stopped screenshare session for (window): Qt WindowModal QA peer
+DEBUG ]: Hyprctl: new connection from pid 2172071
+DEBUG ]: Hyprctl: new connection from pid 2172078
+DEBUG ]: Hyprctl: new connection from pid 2172082
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64dc6910 (not xwayland)
+DEBUG ]: Hyprctl: new connection from pid 2172096
+DEBUG ]: Hyprctl: new connection from pid 2172097
+DEBUG ]: Hyprctl: new connection from pid 2172098
+DEBUG ]: Hyprctl: new connection from pid 2172099
+DEBUG ]: Hyprctl: new connection from pid 2172100
+DEBUG ]: Hyprctl: new connection from pid 2172101
+DEBUG ]: Hyprctl: new connection from pid 2172102
+DEBUG ]: Hyprctl: new connection from pid 2172103
+DEBUG ]: Hyprctl: new connection from pid 2172106
+DEBUG ]: Hyprctl: new connection from pid 2172107
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 15 at 643a64df3640
+DEBUG ]: [CWLCompositorResource] New wl_region with id 16 at 643a63ff8b80
+DEBUG ]: CWLSurface 643a65545190 called init()
+DEBUG ]: LayerSurface 643a64daa270 (namespace hoskinson-window-motion layer 3) created on monitor WAYLAND-1
+DEBUG ]: [CLayerShellProtocol] New wlr_layer_surface 643a64daa270
+DEBUG ]: Hyprctl: new connection from pid 2172110
+DEBUG ]: Hyprctl: new connection from pid 2172113
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172114
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172115
+DEBUG ]: Hyprctl: new connection from pid 2172116
+DEBUG ]: Hyprctl: new connection from pid 2172117
+DEBUG ]: Hyprctl: new connection from pid 2172118
+DEBUG ]: Hyprctl: new connection from pid 2172104
+DEBUG ]: Hyprctl: new connection from pid 2172119
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 21: size [Vector2D: x: 1600, y: 1000], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 83 stride 6656 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 85 stride 832 offset 6815744
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 87 stride 64 offset 6844416
+DEBUG ]: LayerSurface 643a64daa270 mapped
+DEBUG ]: Hyprctl: new connection from pid 2172122
+DEBUG ]: Hyprctl: new connection from pid 2172120
+DEBUG ]: Hyprctl: new connection from pid 2172127
+DEBUG ]: Hyprctl: new connection from pid 2172128
+DEBUG ]: Hyprctl: new connection from pid 2172131
+DEBUG ]: Framebuffer "canonical decorated motion atlas" created, status 36053
+DEBUG ]: Hyprctl: new connection from pid 2172132
+DEBUG ]: Hyprctl: new connection from pid 2172133
+DEBUG ]: Hyprctl: new connection from pid 2172134
+DEBUG ]: Hyprctl: new connection from pid 2172141
+DEBUG ]: Hyprctl: new connection from pid 2172142
+DEBUG ]: Hyprctl: new connection from pid 2172143
+DEBUG ]: Hyprctl: new connection from pid 2172146
+DEBUG ]: Hyprctl: new connection from pid 2172144
+DEBUG ]: Hyprctl: new connection from pid 2172152
+DEBUG ]: Framebuffer "canonical decorated motion atlas" created, status 36053
+DEBUG ]: Hyprctl: new connection from pid 2172153
+DEBUG ]: Hyprctl: new connection from pid 2172155
+DEBUG ]: Hyprctl: new connection from pid 2172154
+DEBUG ]: Hyprctl: new connection from pid 2172156
+DEBUG ]: Hyprctl: new connection from pid 2172157
+DEBUG ]: Hyprctl: new connection from pid 2172158
+DEBUG ]: Hyprctl: new connection from pid 2172166
+DEBUG ]: Hyprctl: new connection from pid 2172167
+DEBUG ]: Hyprctl: new connection from pid 2172168
+DEBUG ]: Hyprctl: new connection from pid 2172159
+DEBUG ]: Hyprctl: new connection from pid 2172171
+DEBUG ]: Hyprctl: new connection from pid 2172169
+DEBUG ]: Hyprctl: new connection from pid 2172177
+DEBUG ]: Hyprctl: new connection from pid 2172178
+DEBUG ]: Hyprctl: new connection from pid 2172180
+DEBUG ]: Framebuffer "canonical decorated motion atlas" created, status 36053
+DEBUG ]: Hyprctl: new connection from pid 2172181
+DEBUG ]: Hyprctl: new connection from pid 2172182
+DEBUG ]: Hyprctl: new connection from pid 2172183
+DEBUG ]: Hyprctl: new connection from pid 2172187
+DEBUG ]: Hyprctl: new connection from pid 2172188
+DEBUG ]: Hyprctl: new connection from pid 2172189
+DEBUG ]: Hyprctl: new connection from pid 2172190
+DEBUG ]: Hyprctl: new connection from pid 2172191
+DEBUG ]: Hyprctl: new connection from pid 2172192
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 23: size [Vector2D: x: 1600, y: 1000], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 86 stride 6656 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 89 stride 832 offset 6815744
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 90 stride 64 offset 6844416
+DEBUG ]: Hyprctl: new connection from pid 2172193
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 20: size [Vector2D: x: 1600, y: 1000], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 88 stride 6656 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 91 stride 832 offset 6815744
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 93 stride 64 offset 6844416
+DEBUG ]: Hyprctl: new connection from pid 2172194
+DEBUG ]: Hyprctl: new connection from pid 2172195
+DEBUG ]: Hyprctl: new connection from pid 2172196
+DEBUG ]: Hyprctl: new connection from pid 2172197
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172200
+DEBUG ]: Hyprctl: new connection from pid 2172201
+DEBUG ]: Hyprctl: new connection from pid 2172217
+DEBUG ]: Hyprctl: new connection from pid 2172220
+DEBUG ]: Hyprctl: new connection from pid 2172221
+DEBUG ]: Hyprctl: new connection from pid 2172222
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172226
+DEBUG ]: Hyprctl: new connection from pid 2172227
+DEBUG ]: Hyprctl: new connection from pid 2172243
+DEBUG ]: Hyprctl: new connection from pid 2172245
+DEBUG ]: Hyprctl: new connection from pid 2172247
+DEBUG ]: Hyprctl: new connection from pid 2172248
+DEBUG ]: Hyprctl: new connection from pid 2172249
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172256
+DEBUG ]: Hyprctl: new connection from pid 2172257
+DEBUG ]: Hyprctl: new connection from pid 2172273
+DEBUG ]: Hyprctl: new connection from pid 2172277
+DEBUG ]: Hyprctl: new connection from pid 2172279
+DEBUG ]: Hyprctl: new connection from pid 2172280
+DEBUG ]: Hyprctl: new connection from pid 2172281
+DEBUG ]: Hyprctl: new connection from pid 2172286
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000c
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000d
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000e
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000f
+DEBUG ]: [CScreencopyProtocol] Bound client successfully!
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64de90c0 (not xwayland)
+DEBUG ]: [CToplevelImageCaptureSourceProtocol] New capture source for foreign toplevel: Qt WindowModal QA peer
+DEBUG ]: [CImageCopyCaptureProtocol] New image copy capture session for source (window): "Qt WindowModal QA peer"
+DEBUG ]: Framebuffer "" created, status 36053
+DEBUG ]: [Screenshare] Started screenshare session for (window): Qt WindowModal QA peer
+DEBUG ]: [Screenshare] Stopped screenshare session for (window): Qt WindowModal QA peer
+DEBUG ]: Hyprctl: new connection from pid 2172301
+DEBUG ]: Hyprctl: new connection from pid 2172307
+DEBUG ]: Hyprctl: new connection from pid 2172306
+DEBUG ]: Hyprctl: new connection from pid 2172308
+DEBUG ]: Hyprctl: new connection from pid 2172313
+DEBUG ]: LayerSurface 643a64daa270 destroyed
+DEBUG ]: Forcing an unmap of a LS that did a straight destroy!
+DEBUG ]: LayerSurface 643a64daa270 unmapped
+DEBUG ]: renderer: making a snapshot of layer 643a64dedd90
+DEBUG ]: Framebuffer "layer snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of layer 643a64dedd90
+DEBUG ]: renderer: rendered a snapshot of layer 643a64dedd90
+DEBUG ]: renderer: made a snapshot of layer 643a64dedd90
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: CWLSurface 643a65545190 called destroy()
+DEBUG ]: Cleanup: removed 1 fadeouts
+DEBUG ]: cursorImage request: shape 1 -> default
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 2172314
+DEBUG ]: Hyprctl: new connection from pid 2172326
+DEBUG ]: Hyprctl: new connection from pid 2172327
+DEBUG ]: Hyprctl: new connection from pid 2172328
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172330
+DEBUG ]: Hyprctl: new connection from pid 2172329
+DEBUG ]: Hyprctl: new connection from pid 2172331
+DEBUG ]: Hyprctl: new connection from pid 2172332
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172334
+DEBUG ]: Hyprctl: new connection from pid 2172335
+DEBUG ]: Hyprctl: new connection from pid 2172337
+DEBUG ]: Hyprctl: new connection from pid 2172338
+DEBUG ]: Hyprctl: new connection from pid 2172339
+DEBUG ]: Hyprctl: new connection from pid 2172340
+DEBUG ]: Hyprctl: new connection from pid 2172343
+DEBUG ]: Hyprctl: new connection from pid 2172344
+DEBUG ]: Hyprctl: new connection from pid 2172345
+DEBUG ]: Hyprctl: new connection from pid 2172346
+DEBUG ]: Hyprctl: new connection from pid 2172347
+DEBUG ]: Hyprctl: new connection from pid 2172348
+DEBUG ]: Hyprctl: new connection from pid 2172349
+DEBUG ]: Hyprctl: new connection from pid 2172351
+DEBUG ]: Hyprctl: new connection from pid 2172352
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2172353
+DEBUG ]: Hyprctl: new connection from pid 2172354
+DEBUG ]: Hyprctl: new connection from pid 2172355
+DEBUG ]: Hyprctl: new connection from pid 2172350
+DEBUG ]: Hyprctl: new connection from pid 2172356
+DEBUG ]: Hyprctl: new connection from pid 2172363
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: cursorImage request: shape 1 -> default
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 46 at 643a64df3640
+DEBUG ]: CWLSurface 643a64df6280 called init()
+DEBUG ]: LayerSurface 643a64daa270 (namespace hoskinson-taskbar-popup layer 3) created on monitor WAYLAND-1
+DEBUG ]: [CLayerShellProtocol] New wlr_layer_surface 643a64daa270
+DEBUG ]: Hyprctl: new connection from pid 2172364
+DEBUG ]: Hyprctl: new connection from pid 2172371
+DEBUG ]: Hyprctl: new connection from pid 2172375
+DEBUG ]: [CWLCompositorResource] New wl_region with id 53 at 643a63ffe280
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 56: size [Vector2D: x: 1600, y: 1000], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 78 stride 6656 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 81 stride 832 offset 6815744
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 85 stride 64 offset 6844416
+DEBUG ]: LayerSurface 643a64daa270 mapped
+DEBUG ]: Hyprctl: new connection from pid 2172382
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 53: size [Vector2D: x: 1600, y: 1000], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 83 stride 6656 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 86 stride 832 offset 6815744
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 88 stride 64 offset 6844416
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2170579
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 2172383
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 47: size [Vector2D: x: 1600, y: 1000], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 87 stride 6656 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 89 stride 832 offset 6815744
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 91 stride 64 offset 6844416
+DEBUG ]: Hyprctl: new connection from pid 2172384
+DEBUG ]: Hyprctl: new connection from pid 2172385
+DEBUG ]: Hyprctl: new connection from pid 2172387
+DEBUG ]: Hyprctl: new connection from pid 2172394
+DEBUG ]: [CWLCompositorResource] New wl_region with id 52 at 643a64dcc0e0
+DEBUG ]: Hyprctl: new connection from pid 2172395
+DEBUG ]: Hyprctl: new connection from pid 2172396
+DEBUG ]: Hyprctl: new connection from pid 2172398
+DEBUG ]: LayerSurface 643a64daa270 destroyed
+DEBUG ]: Forcing an unmap of a LS that did a straight destroy!
+DEBUG ]: LayerSurface 643a64daa270 unmapped
+DEBUG ]: renderer: making a snapshot of layer 643a64dedd90
+DEBUG ]: Framebuffer "layer snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of layer 643a64dedd90
+DEBUG ]: renderer: rendered a snapshot of layer 643a64dedd90
+DEBUG ]: renderer: made a snapshot of layer 643a64dedd90
+DEBUG ]: CWLSurface 643a64df6280 called destroy()
+DEBUG ]: Cleanup: removed 1 fadeouts
+DEBUG ]: Hyprctl: new connection from pid 2172415
+DEBUG ]: Hyprctl: new connection from pid 2172437
+DEBUG ]: Hyprctl: new connection from pid 2172447
+DEBUG ]: Hyprctl: new connection from pid 2172451
+DEBUG ]: Hyprctl: new connection from pid 2172452
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172453
+DEBUG ]: Hyprctl: new connection from pid 2172454
+DEBUG ]: Hyprctl: new connection from pid 2172455
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172456
+DEBUG ]: Hyprctl: new connection from pid 2172458
+DEBUG ]: Hyprctl: new connection from pid 2172459
+DEBUG ]: Hyprctl: new connection from pid 2172460
+DEBUG ]: Hyprctl: new connection from pid 2172461
+DEBUG ]: Hyprctl: new connection from pid 2172462
+DEBUG ]: Hyprctl: new connection from pid 2172464
+DEBUG ]: Hyprctl: new connection from pid 2172465
+DEBUG ]: Hyprctl: new connection from pid 2172466
+DEBUG ]: Hyprctl: new connection from pid 2172467
+DEBUG ]: Hyprctl: new connection from pid 2172468
+DEBUG ]: Hyprctl: new connection from pid 2172469
+DEBUG ]: Hyprctl: new connection from pid 2172471
+DEBUG ]: Hyprctl: new connection from pid 2172476
+DEBUG ]: Hyprctl: new connection from pid 2172479
+DEBUG ]: Hyprctl: new connection from pid 2172480
+DEBUG ]: Hyprctl: new connection from pid 2172481
+DEBUG ]: Hyprctl: new connection from pid 2172482
+DEBUG ]: Hyprctl: new connection from pid 2172483
+DEBUG ]: Hyprctl: new connection from pid 2172484
+DEBUG ]: Hyprctl: new connection from pid 2172485
+DEBUG ]: Hyprctl: new connection from pid 2172486
+DEBUG ]: Hyprctl: new connection from pid 2172487
+DEBUG ]: Hyprctl: new connection from pid 2172489
+DEBUG ]: Hyprctl: new connection from pid 2172490
+DEBUG ]: Hyprctl: new connection from pid 2172491
+DEBUG ]: Hyprctl: new connection from pid 2172492
+DEBUG ]: Hyprctl: new connection from pid 2172493
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172495
+DEBUG ]: Hyprctl: new connection from pid 2172496
+DEBUG ]: Hyprctl: new connection from pid 2172497
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172498
+DEBUG ]: Hyprctl: new connection from pid 2172499
+DEBUG ]: Hyprctl: new connection from pid 2172500
+DEBUG ]: Hyprctl: new connection from pid 2172501
+DEBUG ]: Hyprctl: new connection from pid 2172502
+DEBUG ]: Hyprctl: new connection from pid 2172504
+DEBUG ]: Hyprctl: new connection from pid 2172506
+DEBUG ]: Hyprctl: new connection from pid 2172511
+DEBUG ]: Hyprctl: new connection from pid 2172514
+DEBUG ]: Hyprctl: new connection from pid 2172515
+DEBUG ]: Hyprctl: new connection from pid 2172516
+DEBUG ]: Hyprctl: new connection from pid 2172517
+DEBUG ]: Hyprctl: new connection from pid 2172518
+DEBUG ]: Hyprctl: new connection from pid 2172519
+DEBUG ]: Hyprctl: new connection from pid 2172520
+DEBUG ]: Hyprctl: new connection from pid 2172521
+DEBUG ]: Hyprctl: new connection from pid 2172522
+DEBUG ]: Hyprctl: new connection from pid 2172528
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000c
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000d
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000e
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000f
+DEBUG ]: [CScreencopyProtocol] Bound client successfully!
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64dddb50 (not xwayland)
+DEBUG ]: [CToplevelImageCaptureSourceProtocol] New capture source for foreign toplevel: Qt WindowModal QA peer
+DEBUG ]: [CImageCopyCaptureProtocol] New image copy capture session for source (window): "Qt WindowModal QA peer"
+DEBUG ]: Framebuffer "" created, status 36053
+DEBUG ]: [Screenshare] Started screenshare session for (window): Qt WindowModal QA peer
+DEBUG ]: [Screenshare] Stopped screenshare session for (window): Qt WindowModal QA peer
+DEBUG ]: Hyprctl: new connection from pid 2172547
+DEBUG ]: Hyprctl: new connection from pid 2172562
+DEBUG ]: Hyprctl: new connection from pid 2172563
+DEBUG ]: Hyprctl: new connection from pid 2172564
+DEBUG ]: Hyprctl: new connection from pid 2172565
+DEBUG ]: Hyprctl: new connection from pid 2172566
+DEBUG ]: Hyprctl: new connection from pid 2172568
+DEBUG ]: Hyprctl: new connection from pid 2172569
+DEBUG ]: Hyprctl: new connection from pid 2172570
+DEBUG ]: Hyprctl: new connection from pid 2172571
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172572
+DEBUG ]: Hyprctl: new connection from pid 2172573
+DEBUG ]: Hyprctl: new connection from pid 2172574
+DEBUG ]: Hyprctl: new connection from pid 2172575
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172576
+DEBUG ]: Hyprctl: new connection from pid 2172578
+DEBUG ]: Hyprctl: new connection from pid 2172583
+DEBUG ]: Hyprctl: new connection from pid 2172586
+DEBUG ]: Hyprctl: new connection from pid 2172588
+DEBUG ]: Hyprctl: new connection from pid 2172589
+DEBUG ]: Hyprctl: new connection from pid 2172590
+DEBUG ]: Hyprctl: new connection from pid 2172591
+DEBUG ]: Hyprctl: new connection from pid 2172592
+DEBUG ]: Hyprctl: new connection from pid 2172593
+DEBUG ]: Hyprctl: new connection from pid 2172594
+DEBUG ]: Hyprctl: new connection from pid 2172596
+DEBUG ]: Hyprctl: new connection from pid 2172617
+DEBUG ]: Hyprctl: new connection from pid 2172618
+DEBUG ]: Hyprctl: new connection from pid 2172624
+DEBUG ]: Hyprctl: new connection from pid 2172625
+DEBUG ]: Hyprctl: new connection from pid 2172630
+DEBUG ]: Hyprctl: new connection from pid 2172647
+DEBUG ]: Hyprctl: new connection from pid 2172652
+DEBUG ]: Hyprctl: new connection from pid 2172658
+DEBUG ]: Hyprctl: new connection from pid 2172670
+DEBUG ]: Hyprctl: new connection from pid 2172674
+DEBUG ]: Hyprctl: new connection from pid 2172675
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000c
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000d
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000e
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000f
+DEBUG ]: [CScreencopyProtocol] Bound client successfully!
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64ddd490 (not xwayland)
+DEBUG ]: [CToplevelImageCaptureSourceProtocol] New capture source for foreign toplevel: Qt WindowModal QA peer
+DEBUG ]: [CImageCopyCaptureProtocol] New image copy capture session for source (window): "Qt WindowModal QA peer"
+DEBUG ]: Framebuffer "" created, status 36053
+DEBUG ]: [Screenshare] Started screenshare session for (window): Qt WindowModal QA peer
+DEBUG ]: [Screenshare] Stopped screenshare session for (window): Qt WindowModal QA peer
+DEBUG ]: Hyprctl: new connection from pid 2172695
+DEBUG ]: Hyprctl: new connection from pid 2172700
+DEBUG ]: Hyprctl: new connection from pid 2172719
+DEBUG ]: Hyprctl: new connection from pid 2172736
+DEBUG ]: Hyprctl: new connection from pid 2172741
+DEBUG ]: Hyprctl: new connection from pid 2172749
+DEBUG ]: Hyprctl: new connection from pid 2172750
+DEBUG ]: Hyprctl: new connection from pid 2172751
+DEBUG ]: Hyprctl: new connection from pid 2172752
+DEBUG ]: Hyprctl: new connection from pid 2172753
+DEBUG ]: Hyprctl: new connection from pid 2172756
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172757
+DEBUG ]: Hyprctl: new connection from pid 2172758
+DEBUG ]: Hyprctl: new connection from pid 2172759
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172760
+DEBUG ]: Hyprctl: new connection from pid 2172761
+DEBUG ]: Hyprctl: new connection from pid 2172766
+DEBUG ]: Hyprctl: new connection from pid 2172769
+DEBUG ]: Hyprctl: new connection from pid 2172770
+DEBUG ]: Hyprctl: new connection from pid 2172771
+DEBUG ]: Hyprctl: new connection from pid 2172772
+DEBUG ]: Hyprctl: new connection from pid 2172773
+DEBUG ]: Hyprctl: new connection from pid 2172774
+DEBUG ]: Hyprctl: new connection from pid 2172775
+DEBUG ]: Hyprctl: new connection from pid 2172776
+DEBUG ]: Hyprctl: new connection from pid 2172777
+DEBUG ]: Hyprctl: new connection from pid 2172779
+DEBUG ]: Hyprctl: new connection from pid 2172780
+DEBUG ]: Hyprctl: new connection from pid 2172781
+DEBUG ]: Hyprctl: new connection from pid 2172782
+DEBUG ]: Hyprctl: new connection from pid 2172783
+DEBUG ]: Hyprctl: new connection from pid 2172784
+DEBUG ]: Hyprctl: new connection from pid 2172786
+DEBUG ]: Hyprctl: new connection from pid 2172787
+DEBUG ]: Hyprctl: new connection from pid 2172788
+DEBUG ]: Hyprctl: new connection from pid 2172789
+DEBUG ]: Hyprctl: new connection from pid 2172790
+DEBUG ]: Hyprctl: new connection from pid 2172791
+DEBUG ]: Hyprctl: new connection from pid 2172796
+DEBUG ]: Hyprctl: new connection from pid 2172800
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172801
+DEBUG ]: Hyprctl: new connection from pid 2172802
+DEBUG ]: Hyprctl: new connection from pid 2172803
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172804
+DEBUG ]: Hyprctl: new connection from pid 2172805
+DEBUG ]: Hyprctl: new connection from pid 2172807
+DEBUG ]: Hyprctl: new connection from pid 2172808
+DEBUG ]: Hyprctl: new connection from pid 2172810
+DEBUG ]: Hyprctl: new connection from pid 2172811
+DEBUG ]: Hyprctl: new connection from pid 2172833
+DEBUG ]: Hyprctl: new connection from pid 2172834
+DEBUG ]: Hyprctl: new connection from pid 2172836
+DEBUG ]: Hyprctl: new connection from pid 2172837
+DEBUG ]: Hyprctl: new connection from pid 2172838
+DEBUG ]: Hyprctl: new connection from pid 2172839
+DEBUG ]: Hyprctl: new connection from pid 2172841
+DEBUG ]: Hyprctl: new connection from pid 2172840
+DEBUG ]: Hyprctl: new connection from pid 2172843
+DEBUG ]: Hyprctl: new connection from pid 2172844
+DEBUG ]: Hyprctl: new connection from pid 2172845
+DEBUG ]: Hyprctl: new connection from pid 2172851
+DEBUG ]: Hyprctl: new connection from pid 2172852
+DEBUG ]: Hyprctl: new connection from pid 2172853
+DEBUG ]: Hyprctl: new connection from pid 2172859
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000c
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000d
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000e
+DEBUG ]: [CForeignToplevelList] Newly mapped window gets an identifier of 1800000f
+DEBUG ]: [CScreencopyProtocol] Bound client successfully!
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 643a64ddd490 (not xwayland)
+DEBUG ]: [CToplevelImageCaptureSourceProtocol] New capture source for foreign toplevel: Qt WindowModal QA peer
+DEBUG ]: [CImageCopyCaptureProtocol] New image copy capture session for source (window): "Qt WindowModal QA peer"
+DEBUG ]: Framebuffer "" created, status 36053
+DEBUG ]: [Screenshare] Started screenshare session for (window): Qt WindowModal QA peer
+DEBUG ]: [Screenshare] Stopped screenshare session for (window): Qt WindowModal QA peer
+DEBUG ]: Hyprctl: new connection from pid 2172878
+DEBUG ]: Hyprctl: new connection from pid 2172896
+DEBUG ]: Hyprctl: new connection from pid 2172901
+DEBUG ]: Hyprctl: new connection from pid 2172902
+DEBUG ]: Hyprctl: new connection from pid 2172903
+DEBUG ]: Hyprctl: new connection from pid 2172904
+DEBUG ]: Hyprctl: new connection from pid 2172905
+DEBUG ]: Hyprctl: new connection from pid 2172907
+DEBUG ]: Hyprctl: new connection from pid 2172908
+DEBUG ]: Hyprctl: new connection from pid 2172909
+DEBUG ]: Hyprctl: new connection from pid 2172910
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172911
+DEBUG ]: Hyprctl: new connection from pid 2172912
+DEBUG ]: Hyprctl: new connection from pid 2172913
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2172914
+DEBUG ]: Hyprctl: new connection from pid 2172915
+DEBUG ]: Hyprctl: new connection from pid 2172916
+DEBUG ]: Hyprctl: new connection from pid 2172917
+DEBUG ]: Hyprctl: new connection from pid 2172918
+DEBUG ]: Hyprctl: new connection from pid 2172919
+DEBUG ]: Hyprctl: new connection from pid 2172921
+DEBUG ]: Hyprctl: new connection from pid 2172922
+DEBUG ]: Hyprctl: new connection from pid 2172923
+DEBUG ]: Hyprctl: new connection from pid 2172924
+DEBUG ]: Hyprctl: new connection from pid 2172926
+DEBUG ]: Hyprctl: new connection from pid 2172925
+DEBUG ]: Hyprctl: new connection from pid 2172928
+DEBUG ]: Hyprctl: new connection from pid 2172929
+DEBUG ]: Hyprctl: new connection from pid 2172930
+DEBUG ]: Hyprctl: new connection from pid 2172931
+DEBUG ]: Hyprctl: new connection from pid 2172932
+DEBUG ]: Hyprctl: new connection from pid 2172934
+DEBUG ]: Hyprctl: new connection from pid 2173001
+DEBUG ]: Hyprctl: new connection from pid 2173031
+DEBUG ]: Hyprctl: new connection from pid 2173052
+DEBUG ]: Hyprctl: new connection from pid 2173087
+DEBUG ]: Hyprctl: new connection from pid 2173118
+DEBUG ]: Hyprctl: new connection from pid 2173138
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2173143
+DEBUG ]: Hyprctl: new connection from pid 2173144
+DEBUG ]: Hyprctl: new connection from pid 2173145
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2173146
+DEBUG ]: Hyprctl: new connection from pid 2173149
+DEBUG ]: Hyprctl: new connection from pid 2173150
+DEBUG ]: Hyprctl: new connection from pid 2173151
+DEBUG ]: Hyprctl: new connection from pid 2173152
+DEBUG ]: Hyprctl: new connection from pid 2173154
+DEBUG ]: Hyprctl: new connection from pid 2173155
+DEBUG ]: Hyprctl: new connection from pid 2173156
+DEBUG ]: Hyprctl: new connection from pid 2173157
+DEBUG ]: Hyprctl: new connection from pid 2173158
+DEBUG ]: Hyprctl: new connection from pid 2173160
+DEBUG ]: Hyprctl: new connection from pid 2173161
+DEBUG ]: Hyprctl: new connection from pid 2173162
+DEBUG ]: Hyprctl: new connection from pid 2173163
+DEBUG ]: Hyprctl: new connection from pid 2173164
+DEBUG ]: Hyprctl: new connection from pid 2173165
+DEBUG ]: Hyprctl: new connection from pid 2173167
+DEBUG ]: Hyprctl: new connection from pid 2173172
+DEBUG ]: Hyprctl: new connection from pid 2173175
+DEBUG ]: Hyprctl: new connection from pid 2173176
+DEBUG ]: Hyprctl: new connection from pid 2173177
+DEBUG ]: Hyprctl: new connection from pid 2173178
+DEBUG ]: Hyprctl: new connection from pid 2173179
+DEBUG ]: Hyprctl: new connection from pid 2173180
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2173181
+DEBUG ]: Hyprctl: new connection from pid 2173182
+DEBUG ]: Hyprctl: new connection from pid 2173183
+DEBUG ]: Hyprctl: new connection from pid 2172046
+DEBUG ]: Hyprctl: new connection from pid 2173184
+DEBUG ]: Hyprctl: new connection from pid 2173185
+DEBUG ]: Hyprctl: new connection from pid 2173187
+DEBUG ]: Hyprctl: new connection from pid 2173189
+DEBUG ]: Hyprctl: new connection from pid 2173190
+DEBUG ]: Hyprctl: new connection from pid 2173191
+DEBUG ]: Hyprctl: new connection from pid 2173192
+DEBUG ]: Hyprctl: new connection from pid 2173193
+DEBUG ]: Hyprctl: new connection from pid 2173195
+DEBUG ]: Hyprctl: new connection from pid 2173196
+DEBUG ]: Hyprctl: new connection from pid 2173197
+DEBUG ]: Hyprctl: new connection from pid 2173198
+DEBUG ]: Hyprctl: new connection from pid 2173199
+DEBUG ]: Hyprctl: new connection from pid 2173200
+DEBUG ]: Hyprctl: new connection from pid 2173201
+DEBUG ]: [Window 643a64df5b50: title: "Qt WindowModal QA nested", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a64df5b50 1800000f 2171957
+DEBUG ]: [executor] Process created with pid 2173202
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: Unmapped was not focused, ignoring a refocus.
+DEBUG ]: [Window 643a64df5b50: title: "Qt WindowModal QA nested", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a65626bb0 called destroy()
+DEBUG ]: [Window 643a64de3d20: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a64de3d20 1800000e 2171957
+DEBUG ]: [executor] Process created with pid 2173203
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: Unmapped was not focused, ignoring a refocus.
+DEBUG ]: [Window 643a64de3d20: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a64bd8ac0 called destroy()
+DEBUG ]: [Window 643a650724b0: title: "Qt WindowModal QA peer", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a650724b0 1800000d 2171957
+DEBUG ]: [executor] Process created with pid 2173204
+DEBUG ]: renderer: making a snapshot of 643a650724b0
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 643a650724b0
+DEBUG ]: renderer: rendered a snapshot of 643a650724b0
+DEBUG ]: renderer: made a snapshot of 643a650724b0
+WARN ]: ITarget: assignToSpace with a null space?
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: On closed window, new focused candidate is [Window nullptr]
+DEBUG ]: [Window 643a650724b0: title: "Qt WindowModal QA peer", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a64bd22c0 called destroy()
+DEBUG ]: [Window 643a65184260: title: "Qt WindowModal QA owner", class: qt-window-modal-fixture] unmapped
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups forget-closed 0x643a65184260 1800000c 2171957
+DEBUG ]: [executor] Process created with pid 2173206
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: Unmapped was not focused, ignoring a refocus.
+DEBUG ]: Destroying workspace ID -98
+DEBUG ]: [Window 643a65184260: title: "Qt WindowModal QA owner", class: qt-window-modal-fixture] destroyed, queueing.
+DEBUG ]: CWLSurface 643a6560feb0 called destroy()
+DEBUG ]: Cleanup: removed 1 fadeouts
+DEBUG ]: Hyprctl: new connection from pid 2173205
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Pointer at 643a64d90220 removed
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Keyboard at 643a64a346c0 removed
+DEBUG ]: Destroyed keyboard 643a64a346c0
+DEBUG ]: Hyprctl: new connection from pid 2173204
+DEBUG ]: Hyprctl: new connection from pid 2173202
+DEBUG ]: Hyprctl: new connection from pid 2173203
+DEBUG ]: Hyprctl: new connection from pid 2173206
+DEBUG ]: Hyprctl: new connection from pid 2173213
+DEBUG ]: Hyprctl: new connection from pid 2173214
+DEBUG ]: Hyprctl: new connection from pid 2173215
+DEBUG ]: Hyprctl: new connection from pid 2173216
+DEBUG ]: Hyprctl: new connection from pid 2173217
+DEBUG ]: Hyprctl: new connection from pid 2173218
+DEBUG ]: Hyprctl: new connection from pid 2173220
+DEBUG ]: Hyprctl: new connection from pid 2173221
+DEBUG ]: LayerSurface 643a64001990 unmapped
+DEBUG ]: renderer: making a snapshot of layer 643a64b5f4f0
+DEBUG ]: Framebuffer "layer snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of layer 643a64b5f4f0
+DEBUG ]: renderer: rendered a snapshot of layer 643a64b5f4f0
+DEBUG ]: renderer: made a snapshot of layer 643a64b5f4f0
+DEBUG ]: LayerSurface 643a64001990 destroyed
+DEBUG ]: CWLSurface 643a63d34a10 called destroy()
+DEBUG ]: Cleanup: removed 1 fadeouts
+DEBUG ]: Hyprctl: new connection from pid 2173227
+DEBUG ]: Hyprctl: new connection from pid 2173231
+DEBUG ]: Hyprctl: new connection from pid 2173232
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2173234
+DEBUG ]: Hyprctl: new connection from pid 2173235
+DEBUG ]: Hyprctl: new connection from pid 2173236
+DEBUG ]:  [PluginSystem] Plugin hyprbars unloaded.
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups hydrate
+DEBUG ]: [executor] Process created with pid 2173239
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: Hyprctl: new connection from pid 2173237
+ERR ]: CConfigWatcher: got an event for wd 7 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 2173241
+DEBUG ]: Hyprctl: new connection from pid 2173239
+DEBUG ]: Hyprctl: new connection from pid 2173243
+DEBUG ]: Hyprctl: new connection from pid 2173244
+DEBUG ]: Hyprctl: new connection from pid 2173245
+DEBUG ]: Hyprctl: new connection from pid 2173246
+DEBUG ]: Hyprctl: new connection from pid 2173247
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2173248
+DEBUG ]: Hyprctl: new connection from pid 2173249
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2173250
+DEBUG ]: Hyprctl: new connection from pid 2173251
+DEBUG ]: Hyprctl: new connection from pid 2173252
+DEBUG ]:  [PluginSystem] Plugin toolkit_held_probe unloaded.
+DEBUG ]: [executor] Executing /run/user/1000/wqa/5ecc/taskbar-home/.local/bin/hypr-snap-groups hydrate
+DEBUG ]: [executor] Process created with pid 2173254
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: Hyprctl: new connection from pid 2173253
+ERR ]: CConfigWatcher: got an event for wd 8 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 2173254
+DEBUG ]: Hyprctl: new connection from pid 2173256
+DEBUG ]: Hyprctl: new connection from pid 2173257
+DEBUG ]: Hyprctl: new connection from pid 2173258
+DEBUG ]: Hyprctl: new connection from pid 2173259
+DEBUG ]: Hyprctl: new connection from pid 2173260
+DEBUG ]: Hyprctl: new connection from pid 2170579
+DEBUG ]: Hyprctl: new connection from pid 2173261
+DEBUG ]: Hyprland received signal 15
+DEBUG ]: Hyprland is stopping!
+DEBUG ]: Kicked off the event loop! :(
+DEBUG ]: Monitor WAYLAND-1 -> destroyed all render data
+DEBUG ]: Destroying workspace ID 1
+DEBUG ]: Hyprland has reached the end.

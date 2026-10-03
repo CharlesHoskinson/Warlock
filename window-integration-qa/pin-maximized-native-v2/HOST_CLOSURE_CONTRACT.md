@@ -1,0 +1,9 @@
+# Observed owned host shutdown
+
+Original runtimeGone/empty descendants are required but cannot prove normal shutdown. The original stop may send SIGKILL after its unchanged four-second stop loop; the original close then waits at most four seconds and does not retain return codes. Frozen host sources remain untouched.
+
+The fresh host retains complete original stop/close methods. Substitute only the os.kill call through an observational method which invokes the identical PID/signal and records requested/sent/error; wrap each stop with its registered PID/start/PGID/Popen record and finally snapshot poll/returncode. Wrap inherited close with a final observational record of all three registered Popen returncodes, actual stop signal events, before/after raw rows and original errors. Preserve exact four-second stop and four-second wait, original reverse order (Hyprland, Weston, privateBus), unknown descendant handling and clients-first probe/plugin unload. Persist raw closure before applying its separate acceptance predicate. No new signal, retry or grace period.
+
+A normal Hyprland or Weston outcome requires its exact registered Popen and lifetime record, returncode integer zero after original wait, no stop error and no SIGKILL. Named privateBus may return zero, or exactly -SIGTERM when the actual recorded successful signal was SIGTERM only. That named bus result is deliberate termination, not a zero exit claim. Unknown roles, incomplete observations, null/positive/other negative returncodes, wrong owner, unknown descendants, failed wait, stop error, or any SIGKILL refuse acceptance even if runtimeGone is true. Preserve original ten host gates and original14, with normal shutdown a separate required binding/closure gate.
+
+This bounded model classifies observed terminal rows and ordering; it does not prove native signal delivery, compositor reachability or functional Pin acceptance. Actual normal closure remains root-only.

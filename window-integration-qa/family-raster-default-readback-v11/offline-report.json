@@ -1,0 +1,55 @@
+{
+  "result": "pass",
+  "PythonChecks": 37,
+  "formalNamed": 7,
+  "samples": 2000,
+  "steps": 100,
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/home/hoskinson/window-integration-qa/family-raster-quantized-v9",
+        "-p",
+        "test*.py"
+      ],
+      "exitCode": 0,
+      "output": ".....................................\n----------------------------------------------------------------------\nRan 37 tests in 0.038s\n\nOK\n"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-raster-quantized-v9/collection_test.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "output": "\n  collection_test\n    ok partialCannotPassTest passed 1 test(s)\n    ok failedImageSurvivesOtherPassTest passed 1 test(s)\n    ok duplicateCannotRewriteFailureTest passed 1 test(s)\n    ok invalidBindingStopsAcceptanceTest passed 1 test(s)\n    ok outsideSlotCannotPassTest passed 1 test(s)\n    ok all26FinalAndCausalMustPassTest passed 1 test(s)\n    ok retainedCausalFailureCannotPassTest passed 1 test(s)\n\n  7 passing (89ms)\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-raster-quantized-v9/collection.qnt",
+        "--invariant",
+        "invariant",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20260930",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "output": "[ok] No violation found (447ms at 4474 traces/second).\nUse --seed=0x147756a --backend=rust to reproduce.\n"
+    }
+  ],
+  "nativeLaunch": false,
+  "producerNotYetFrozen": true
+}

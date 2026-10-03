@@ -1,0 +1,135 @@
+--------------------------------------------
+   Hyprland Crash Report
+--------------------------------------------
+*thud*
+
+Hyprland received signal 6(ABRT)
+Version: efb50993780079460b0cbed1363e2166a2de1d9f
+Tag: v0.56.2
+Date: Wed Aug 5 14:13:21 2026
+Flags:
+
+System info:
+	System name: Linux
+	Node name: hosk
+	Release: 7.2.7-1-omarchy
+	Version: #1 SMP PREEMPT_DYNAMIC Sun, 27 Sep 2026 22:42:08 +0000
+
+GPU:
+	00:02.0 VGA compatible controller [0300]: Intel Corporation Arrow Lake-S [Intel Graphics] [8086:7d67] (rev 06) (prog-if 00 [VGA controller])
+02:00.0 VGA compatible controller [0300]: NVIDIA Corporation GB203M / GN22-X11 [GeForce RTX 5090 Max-Q / Mobile] [10de:2c58] (rev a1) (prog-if 00 [VGA controller])
+80:14.5 Non-VGA unclassified device [0000]: Intel Corporation Device [8086:7f2f] (rev 10)
+
+
+os-release:
+	NAME="Omarchy"
+	PRETTY_NAME="Omarchy"
+	ID=omarchy
+	ID_LIKE=arch
+	BUILD_ID="4.0.4.legion"
+	VERSION_ID="4.0.4.legion"
+	ANSI_COLOR="38;2;158;206;106"
+	HOME_URL="https://omarchy.org/"
+	DOCUMENTATION_URL="https://learn.omacom.io/2/the-omarchy-manual"
+	SUPPORT_URL="https://discord.gg/tXFUdasqhY"
+	BUG_REPORT_URL="https://github.com/basecamp/omarchy/issues"
+	LOGO=omarchy
+
+Libraries:
+Hyprgraphics: built against 0.5.1, system has 0.5.1
+Hyprutils: built against 0.14.1, system has 0.14.2
+Hyprcursor: built against 0.1.13, system has 0.1.13
+Hyprlang: built against 0.6.8, system has 0.6.8
+Aquamarine: built against 0.15.0, system has 0.15.0
+
+Backtrace:
+	#0 | /usr/bin/Hyprland(_Z12getBacktracev+0x73) [0x64f8394b34f3]
+		getBacktrace()
+		??:?
+	#1 | /usr/bin/Hyprland(_ZN13CrashReporter18createAndSaveCrashEi+0xad4) [0x64f8393d79d4]
+		CrashReporter::createAndSaveCrash(int)
+		??:?
+	#2 | /usr/bin/Hyprland(+0x3bc7ee) [0x64f8392ad7ee]
+		void std::println<>(_IO_FILE*, std::basic_format_string<char>)
+		??:?
+	#3 | /usr/lib/libc.so.6(+0x3e6f0) [0x7a537703e6f0]
+		??
+		??:0
+	#4 | /usr/lib/libc.so.6(+0x9a17c) [0x7a537709a17c]
+		??
+		??:0
+	#5 | /usr/lib/libc.so.6(gsignal+0x20) [0x7a537703e5d0]
+		??
+		??:0
+	#6 | /usr/lib/libc.so.6(abort+0x26) [0x7a5377025685]
+		??
+		??:0
+	#7 | /usr/lib/libstdc++.so.6(+0x9ac54) [0x7a537749ac54]
+		??
+		??:0
+	#8 | /usr/lib/libstdc++.so.6(+0xb581a) [0x7a53774b581a]
+		??
+		??:0
+	#9 | /usr/lib/libstdc++.so.6(_ZSt10unexpectedv+0) [0x7a537749a5ed]
+		??
+		??:0
+	#10 | /usr/lib/libstdc++.so.6(+0xb5ad6) [0x7a53774b5ad6]
+		??
+		??:0
+	#11 | /usr/bin/Hyprland(+0x1b4f6b) [0x64f8390a5f6b]
+		std::__throw_bad_variant_access(unsigned int)
+		??:?
+	#12 | /usr/bin/Hyprland(_ZN11CCompositor10initServerENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi+0x2043) [0x64f8392ba813]
+		CCompositor::initServer(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int)
+		??:?
+	#13 | /usr/bin/Hyprland(main+0x10e1) [0x64f83916dcb1]
+		main
+		??:?
+	#14 | /usr/lib/libc.so.6(+0x27781) [0x7a5377027781]
+		??
+		??:0
+	#15 | /usr/lib/libc.so.6(__libc_start_main+0x89) [0x7a53770278b9]
+		??
+		??:0
+	#16 | /usr/bin/Hyprland(_start+0x25) [0x64f8392965e5]
+		_start
+		??:?
+
+
+Log tail:
+DEBUG ]: Old rlimit: soft -> 65536, hard -> 524288
+DEBUG ]: New rlimit: soft -> 524288, hard -> 524288
+WARN ]: WARNING: Hyprland is being launched without start-hyprland. This is highly advised against.
+DEBUG ]: Creating the EventLoopManager!
+DEBUG ]: Creating the KeybindManager!
+DEBUG ]: Creating the AnimationManager!
+DEBUG ]: Creating the DynamicPermissionManager!
+DEBUG ]: Creating the MonitorState!
+DEBUG ]: Creating the WorkspaceState!
+DEBUG ]: Creating the ConfigManager!
+DEBUG ]: [cfg] Config is either explicit or special.
+DEBUG ]: [cfg] Config is lua, loading lua mgr
+DEBUG ]: Creating the Error Overlay!
+DEBUG ]: Creating the LayoutManager!
+DEBUG ]: Creating the TokenManager!
+DEBUG ]: Creating the EventManager!
+DEBUG ]: Disabling stdout logs (debug.enable_stdout_logs = 0). Further logs will be written to /run/user/1000/wqa/8b85/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790857188_116084394/hyprland.log
+DEBUG ]: Creating the PointerManager!
+DEBUG ]: Creating the AsyncResourceGatherer!
+DEBUG from aquamarine ]: Creating an Aquamarine backend!
+DEBUG from aquamarine ]: [libseat] [libseat/backend/seatd.c:64] Could not connect to socket /run/seatd.sock: No such file or directory
+DEBUG from aquamarine ]: [libseat] [libseat/libseat.c:76] Backend 'seatd' failed to open seat, skipping
+ERR from aquamarine ]: [libseat] [libseat/backend/logind.c:309] Could not take control of session: Device or resource busy
+DEBUG from aquamarine ]: [libseat] [libseat/libseat.c:76] Backend 'logind' failed to open seat, skipping
+ERR from aquamarine ]: [libseat] [libseat/libseat.c:79] No backend was able to open a seat
+ERR from aquamarine ]: libseat: failed to open a seat
+ERR from aquamarine ]: Failed to open a session
+ERR from aquamarine ]: DRM Backend failed
+DEBUG from aquamarine ]: Starting the Aquamarine backend!
+DEBUG from aquamarine ]: Starting the Wayland backend!
+DEBUG from aquamarine ]: Connected to a wayland compositor: Hyprland
+DEBUG from aquamarine ]: Got registry at 0x64f8575f1540
+DEBUG from aquamarine ]: Output WAYLAND-1: initialized
+CRIT from aquamarine ]: Cannot open backend: no allocator available
+CRIT ]: m_pAqBackend couldn't start! This usually means aquamarine could not find a GPU or encountered some issues. Make sure you're running either on a tty or on a Wayland session, NOT an X11 one.
+CRIT ]: Critical error thrown: CBackend::create() failed!

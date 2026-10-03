@@ -1,0 +1,26 @@
+{
+  "rootReviewSHA256": "3b3bedfdd60203cbab58bf537df24f0b2511c2b0d1504d00149950bd714ddea0",
+  "manifestSHA256": "940cedc2aa1cf5985607cebb7d526e5a106e62eaa1fa9dd76b756751591b3f16",
+  "requiredWorkingDirectory": "/home/hoskinson (retained immutable frontend manifest contains relative keys)",
+  "freeze": {
+    "command": [
+      "/usr/bin/python3",
+      "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/freeze_packet.py",
+      "--freeze"
+    ],
+    "returncode": 0,
+    "stdout": "{\"result\": \"pass\", \"inputs\": 22167, \"links\": 327, \"modes\": 22167, \"nativeLaunch\": false}\n",
+    "stderr": ""
+  },
+  "preflight": {
+    "command": [
+      "/usr/bin/python3",
+      "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/run_native.py",
+      "--preflight"
+    ],
+    "returncode": 0,
+    "stdout": "{\"result\": \"pass\", \"inputs\": 22167, \"links\": 327, \"nativeLaunch\": false}\n",
+    "stderr": ""
+  },
+  "nativeLaunched": false
+}

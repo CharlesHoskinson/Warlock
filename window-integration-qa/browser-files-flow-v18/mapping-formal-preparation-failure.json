@@ -1,0 +1,32 @@
+{
+  "result": "fail",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v6/mapping_evidence_test.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: Expected [captured,persisted,accepted,checked,readable,sameLifetime,authorized] and [checked,captured,persisted,readable,sameLifetime,authorized] to be the same\nTrying to unify entities ['captured', 'persisted', 'accepted', 'checked', 'readable', 'sameLifetime', 'authorized'] and ['checked', 'captured', 'persisted', 'readable', 'sameLifetime', 'authorized']\nTrying to unify Read[_v278] & Temporal[_v279] & Update['captured', 'persisted', 'accepted', 'checked', 'readable', 'sameLifetime', 'authorized'] and Read['captured', 'persisted', 'readable', 'sameLifetime', 'authorized'] & Temporal['accepted'] & Update['checked', 'captured', 'persisted', 'readable', 'sameLifetime', 'authorized']\nTrying to unify (Read[_v273] & Temporal[_v274] & Update[_v275], Read[_v276] & Temporal[_v277] & Update[_v275], Read[_v278] & Temporal[_v279] & Update[_v275]) => Read[_v273, _v276, _v278] & Temporal[_v274, _v277, _v279] & Update[_v275] and (Update['captured', 'persisted', 'accepted', 'checked', 'readable', 'sameLifetime', 'authorized'], Read['captured', 'accepted', 'checked', 'readable', 'sameLifetime', 'authorized'] & Update['persisted', 'captured', 'accepted', 'checked', 'readable', 'sameLifetime', 'authorized'], Read['captured', 'persisted', 'readable', 'sameLifetime', 'authorized'] & Temporal['accepted'] & Update['checked', 'captured', 'persisted', 'readable', 'sameLifetime', 'authorized']) => _e50\nTrying to infer effect for operator application in actionAny(nondet read = oneOf(Bool) { nondet live = oneOf(Bool) { nondet auth = oneOf(Bool) { capture(read, live, auth) } } }, save, validate)\n\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v6/mapping_evidence.qnt:17:16\n  17:  action step = any {\n                     ^^^^^\n  18:   {nondet read=Bool.oneOf();nondet live=Bool.oneOf();nondet auth=Bool.oneOf();capture(read,live,auth)},\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  19:   save,validate\n      ^^^^^^^^^^^^^^^\n  20:  }\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n\n Error [QNT200]: Using an action as an argument of `and` is only allowed in temporal definitions, but it is used in action `validate`. To combine actions, use `all { ... }` instead.\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v6/mapping_evidence.qnt:12:58\n  12:  action validate = all {captured,persisted,checked'=true,accepted'=readable and sameLifetime and authorized,captured'=captured,persisted'=persisted,readable'=readable,sameLifetime'=sameLifetime,authorized'=authorized}\n                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v6/mapping_evidence.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--verbosity=1"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: Expected [captured,persisted,accepted,checked,readable,sameLifetime,authorized] and [checked,captured,persisted,readable,sameLifetime,authorized] to be the same\nTrying to unify entities ['captured', 'persisted', 'accepted', 'checked', 'readable', 'sameLifetime', 'authorized'] and ['checked', 'captured', 'persisted', 'readable', 'sameLifetime', 'authorized']\nTrying to unify Read[_v278] & Temporal[_v279] & Update['captured', 'persisted', 'accepted', 'checked', 'readable', 'sameLifetime', 'authorized'] and Read['captured', 'persisted', 'readable', 'sameLifetime', 'authorized'] & Temporal['accepted'] & Update['checked', 'captured', 'persisted', 'readable', 'sameLifetime', 'authorized']\nTrying to unify (Read[_v273] & Temporal[_v274] & Update[_v275], Read[_v276] & Temporal[_v277] & Update[_v275], Read[_v278] & Temporal[_v279] & Update[_v275]) => Read[_v273, _v276, _v278] & Temporal[_v274, _v277, _v279] & Update[_v275] and (Update['captured', 'persisted', 'accepted', 'checked', 'readable', 'sameLifetime', 'authorized'], Read['captured', 'accepted', 'checked', 'readable', 'sameLifetime', 'authorized'] & Update['persisted', 'captured', 'accepted', 'checked', 'readable', 'sameLifetime', 'authorized'], Read['captured', 'persisted', 'readable', 'sameLifetime', 'authorized'] & Temporal['accepted'] & Update['checked', 'captured', 'persisted', 'readable', 'sameLifetime', 'authorized']) => _e50\nTrying to infer effect for operator application in actionAny(nondet read = oneOf(Bool) { nondet live = oneOf(Bool) { nondet auth = oneOf(Bool) { capture(read, live, auth) } } }, save, validate)\n\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v6/mapping_evidence.qnt:17:16\n  17:  action step = any {\n                     ^^^^^\n  18:   {nondet read=Bool.oneOf();nondet live=Bool.oneOf();nondet auth=Bool.oneOf();capture(read,live,auth)},\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  19:   save,validate\n      ^^^^^^^^^^^^^^^\n  20:  }\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n\n Error [QNT200]: Using an action as an argument of `and` is only allowed in temporal definitions, but it is used in action `validate`. To combine actions, use `all { ... }` instead.\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v6/mapping_evidence.qnt:12:58\n  12:  action validate = all {captured,persisted,checked'=true,accepted'=readable and sameLifetime and authorized,captured'=captured,persisted'=persisted,readable'=readable,sameLifetime'=sameLifetime,authorized'=authorized}\n                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n"
+    }
+  ],
+  "nativeExecuted": false,
+  "initialPreparationError": "First new model parse failed: annotated capture parameters required explicit bool return type. Corrected before implementing runtime helper."
+}

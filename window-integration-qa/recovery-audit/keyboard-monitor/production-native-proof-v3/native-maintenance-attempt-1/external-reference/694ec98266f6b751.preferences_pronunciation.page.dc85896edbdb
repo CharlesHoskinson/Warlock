@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_pronunciation" xml:lang="eu">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_text_attributes"/>
+    <title type="sort">7. Ahoskera</title>
+    <title type="link">Ahoskera</title>
+    <desc>Hitz batzuk nola ahoskatzen diren definitzea</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Ahoskera-hobespenak</title>
+  <p>
+    Sometimes your speech synthesizer just doesn't say the right thing
+    for a given string. You might prefer to hear "laughing out loud"
+    rather than "LOL," or "accessibility" rather than "a11y". Or there
+    may be a name or a technical term which the synthesizer mispronounces.
+  </p>
+  <p>
+     The <gui>Pronunciation</gui> page of the <app>Orca</app> preferences
+     dialog allows you to add, edit, and delete entries in <app>Orca</app>'s
+     pronunciation dictionary.
+  </p>
+  <p>
+    Because the <gui>Pronunciation</gui> page is also part of the
+    application-specific settings, you can customize your entries on an
+    as-needed basis for each application you use.
+  </p>
+  <steps>
+    <title>Hiztegiari sarrera berria gehitzea</title>
+    <item>
+      <p>Sakatu <gui>Sarrera berria</gui> botoia (<keyseq><key>Alt</key><key>N</key></keyseq>)</p>
+    </item>
+    <item>
+      <p>Idatzi sarrera berriaren testua eta sakatu <key>Return</key> uneko katearen edizioa amaitzeko.</p>
+    </item>
+    <item>
+      <p>Joan <gui>Ordezko katea</gui> zutabera eta sakatu <key>Return</key> editatzen hasteko.</p>
+    </item>
+    <item>
+      <p>
+        Type the text that you would like to have spoken instead and press <key>
+        Return</key> to finish editing the replacement string.
+      </p>
+    </item>
+  </steps>
+  <steps>
+  <title>Lehendik dagoen hiztegi-sarrera bat editatzea</title>
+    <item>
+      <p>Joan editatu nahi duzun gelaxkara eta sakatu <key>Return</key> editatzen hasteko.</p>
+    </item>
+    <item>
+      <p>Egin aldaketak eta sakatu <key>Return</key> edizioa amaitzeko.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Lehendik dagoen hiztegi-sarrera bat ezabatzea</title>
+    <item>
+      <p>Joan ezabatu nahi duzun sarrerara</p>
+    </item>
+    <item>
+      <p>Sakatu <gui>Ezabatu</gui> botoia edo <keyseq><key>Alt</key><key>D</key></keyseq>.</p>
+    </item>
+  </steps>
+</page>

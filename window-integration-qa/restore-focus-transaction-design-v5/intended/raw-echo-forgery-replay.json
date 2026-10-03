@@ -1,0 +1,15 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-52a3ca847f424e168103087ec2b6f5b0.scope",
+    "coreLimit": 1
+  },
+  "rawEchoContainsExactReceiptBytes": true,
+  "echoAloneNotUsable": true,
+  "separateExactReplyRequired": true,
+  "expression": "local v=[[ {\"nonce\":\"0123456789abcdef0123456789abcdef\",\"expected\":6,\"completed\":2,\"ok\":true} ]]; return v",
+  "rawEcho": "> local v=[[ {\"nonce\":\"0123456789abcdef0123456789abcdef\",\"expected\":6,\"completed\":2,\"ok\":true} ]]; return v\n",
+  "CPUOnly": true,
+  "nativeAcceptance": false,
+  "parserSourceSHA256": "63f83950fa61db3efed43186bd918496477021f33e339047582b2eb3099a1f74"
+}

@@ -1,0 +1,61 @@
+[
+  {
+    "variant": "original",
+    "phase": "compile",
+    "argv": [
+      "g++",
+      "-std=c++26",
+      "-O1",
+      "-UNDEBUG",
+      "adapter-matrix.cpp",
+      "-o",
+      "adapter-original",
+      "-lhyprutils"
+    ],
+    "exitCode": 0,
+    "elapsed": 2.6784527889976744,
+    "log": "matrix-original-compile.log",
+    "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "variant": "original",
+    "phase": "run",
+    "argv": [
+      "./adapter-original"
+    ],
+    "exitCode": 0,
+    "elapsed": 0.003909368999302387,
+    "log": "matrix-original-run.log",
+    "logSHA256": "02cb3f5511b4815a07b5ed10ba032a5ec313eaa0ae10f238b5edd3ff3572c6ed"
+  },
+  {
+    "variant": "proposed",
+    "phase": "compile",
+    "argv": [
+      "g++",
+      "-std=c++26",
+      "-O1",
+      "-UNDEBUG",
+      "-DPROPOSED_CORRECTION",
+      "adapter-matrix.cpp",
+      "-o",
+      "adapter-proposed",
+      "-lhyprutils"
+    ],
+    "exitCode": 0,
+    "elapsed": 2.421259322989499,
+    "log": "matrix-proposed-compile.log",
+    "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "variant": "proposed",
+    "phase": "run",
+    "argv": [
+      "./adapter-proposed"
+    ],
+    "exitCode": 0,
+    "elapsed": 0.0035775229916907847,
+    "log": "matrix-proposed-run.log",
+    "logSHA256": "587ff2c9a281f4a73c7264accc8bfe0f5766f168b6a864d2ecdf653920fd6e30"
+  }
+]

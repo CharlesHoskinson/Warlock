@@ -1,0 +1,134 @@
+
+ Error [QNT000]: no viable alternative at input 'puredefrun'
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:4:11
+  4:  pure def run(es)=es.foldl(initial,(a,e)=>advance(a,e))
+               ^^^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:8:25
+  8:  run positive_six=assert(run(completed).closed)
+                             ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:9:26
+  9:  run seed_complete=assert(run(completed.append(Seed)).seeded)
+                              ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:10:27
+  10:  run guard_required=assert(run(opened.append(Effect(true))).next==0)
+                                ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:11:36
+  11:  run material_before_prepare=assert(run(List(Material,Prepare)).phase==Idle)
+                                         ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:12:33
+  12:  run material_before_gate=assert(run(List(Prepare,Register,Material,Gate)).phase==Refused)
+                                      ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:13:33
+  13:  run lifetime_before_gate=assert(run(List(Prepare,Register,Native,Gate)).phase==Refused)
+                                      ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:14:31
+  14:  run output_before_gate=assert(run(List(Prepare,Register,Output,Gate)).phase==Refused)
+                                    ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:15:31
+  15:  run expiry_before_gate=assert(run(List(Prepare,Register,Tick(20),Gate)).phase==Refused)
+                                    ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:16:34
+  16:  run cancel_before_prepare=assert(run(List(Cancel,Prepare)).phase==Idle)
+                                       ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:17:35
+  17:  run cancel_atomic_deferred=assert(run(opened.append(Cancel)).current)
+                                        ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:18:26
+  18:  run first_partial=assert(run(opened.concat(List(Guard,Effect(false),Exit,Gone,Confirm))).uncertain)
+                               ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:19:27
+  19:  run middle_partial=assert(run(opened.concat(List(Guard,Effect(true),Guard,Effect(false),Guard,Effect(true)))).next==2)
+                                ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:20:34
+  20:  run guard_material_change=assert(run(opened.concat(List(Guard,Effect(true),Material,Guard))).phase==Quarantined)
+                                       ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:21:34
+  21:  run guard_lifetime_change=assert(run(opened.concat(List(Guard,Effect(true),Native,Guard))).phase==Quarantined)
+                                       ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:22:32
+  22:  run guard_output_change=assert(run(opened.concat(List(Guard,Effect(true),Output,Guard))).phase==Quarantined)
+                                     ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:23:33
+  23:  run zero_exit_no_receipt=assert(not(run(opened.concat(actions).concat(List(Exit,Gone,Confirm))).closed))
+                                      ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:24:28
+  24:  run missing_receipt=assert(run(opened.concat(List(Receipt({shape:false,nonce:true,count:0}),Exit,Gone,Confirm))).uncertain)
+                                 ^
+
+
+ Error [QNT000]: extraneous input ')' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/focus_transaction_test.qnt:24:92
+  24:  run missing_receipt=assert(run(opened.concat(List(Receipt({shape:false,nonce:true,count:0}),Exit,Gone,Confirm))).uncertain)
+                                                                                                 ^
+
+error: parsing failed

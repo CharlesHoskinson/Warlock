@@ -1,0 +1,57 @@
+{
+  "result": "pass",
+  "named": 12,
+  "models": 1,
+  "samplesPerModel": 2000,
+  "steps": 100,
+  "checks": [
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/preparation_profile_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/restore-span-diagnostic-formal-v2/preparation_profile-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/preparation_profile_test.qnt",
+        "--backend=rust",
+        "--seed=2026100711"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/restore-span-diagnostic-formal-v2/preparation_profile-test.log",
+      "sha256": "a3a1bdcca2e5562e29ab502a93ff355c8a5b0109b6fd42e1d85080b64d6da729",
+      "named": 12
+    },
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v2/preparation_profile.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100711",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/restore-span-diagnostic-formal-v2/preparation_profile-run.log",
+      "sha256": "33496d66288ad6253d91123ad3ec7731b4ef93af53774196cb950dcf49385d97"
+    }
+  ],
+  "modelSourceSHA256": {
+    "preparation_profile.qnt": "aad07eac412e253a5c519e2760c4f9b5c626f5393f592020f0577c4289ee53f7",
+    "preparation_profile_test.qnt": "ba4004f334963fcf9a6dda39236b870989fa50deefc0c8a5aba4da335c589c2b"
+  },
+  "retainedFormalProof": "/home/hoskinson/window-integration-qa/restore-span-diagnostic-formal-v2/report.json",
+  "retainedFormalProofSHA256": "4a08b050cb7b386cd8ea8e7186c14e17427e180bf778161ed44c4ca16f664b32",
+  "formalBeforeRuntime": true,
+  "nativeLaunch": false,
+  "projection": "Unchanged BoundaryProfile lifecycle/capacity/source/fault model; proposed selector data and source-binding remain diagnostic only. No V2 stronger pointer-projection assertion is made for V3."
+}

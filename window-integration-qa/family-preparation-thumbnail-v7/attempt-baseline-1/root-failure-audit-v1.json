@@ -1,0 +1,34 @@
+{
+  "result": "FAIL",
+  "nativeAcceptance": false,
+  "independentFrozenClosure": {
+    "inputs": 17319,
+    "links": 287,
+    "mismatches": [],
+    "elapsedSeconds": 1.688971516006859
+  },
+  "originalChecksPassed": 11,
+  "originalChecksExecuted": 11,
+  "primaryPreparationFailure": "outstanding actor helper prevents thumbnail launch",
+  "retainedCaptureCount": 3,
+  "terminalQueryErrors": [
+    {
+      "type": "ValueError",
+      "message": "complete closed actual query proof required"
+    }
+  ],
+  "secondaryConfirmationErrors": [
+    {
+      "type": "UnboundLocalError",
+      "message": "cannot access local variable 'packet' where it is not associated with a value"
+    }
+  ],
+  "allMainPreservation": true,
+  "mainPreservationCount": 15,
+  "privateRuntimeGone": true,
+  "normalNativeUnload": true,
+  "serviceNormalExit": false,
+  "reportSHA256": "98a11f29c984a04dd5509b3d21846cb3d6eb0fafa38747580b8d3eeeeacb82f9",
+  "manifestSHA256": "d066ecf9b9ec94f0fe096d117464ba0f611f5b4d655792c0f1f8c6c339cd90eb",
+  "fullWindowsParityAccepted": false
+}

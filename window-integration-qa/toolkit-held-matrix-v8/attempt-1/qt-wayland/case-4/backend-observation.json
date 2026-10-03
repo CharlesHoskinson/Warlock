@@ -1,0 +1,470 @@
+{
+  "toolkit": "QtWidgets",
+  "backend": "wayland",
+  "pid": 2171957,
+  "predicate": "libqwayland",
+  "candidates": [
+    {
+      "path": "/usr/lib/qt6/plugins/platforms/libqwayland.so",
+      "loadedSHA256": "8c2c354cd0fe960820edb88bc398bda39a4d06740146b1ae1bca81c03aff92a1",
+      "frozenSHA256": "8c2c354cd0fe960820edb88bc398bda39a4d06740146b1ae1bca81c03aff92a1",
+      "inFrozen": true,
+      "exactBytes": true
+    }
+  ],
+  "candidateSetNonempty": true,
+  "allCandidateBytesExact": true,
+  "publicState": {
+    "activeWindow": "nested",
+    "commandEpoch": 2,
+    "pid": 2171957,
+    "platform": "wayland",
+    "qtVersion": "6.11.2",
+    "windows": {
+      "child": {
+        "active": false,
+        "buttonClient": [
+          11,
+          79,
+          298,
+          22
+        ],
+        "buttonGlobal": [
+          11,
+          79,
+          298,
+          22
+        ],
+        "clicks": 0,
+        "enabled": true,
+        "geometryGlobal": [
+          0,
+          0,
+          320,
+          180
+        ],
+        "layoutGeometry": [
+          0,
+          0,
+          320,
+          180
+        ],
+        "modality": 1,
+        "native": true,
+        "transientParentTitle": "Qt WindowModal QA owner",
+        "visible": true
+      },
+      "nested": {
+        "active": true,
+        "buttonClient": [
+          11,
+          79,
+          298,
+          22
+        ],
+        "buttonGlobal": [
+          11,
+          79,
+          298,
+          22
+        ],
+        "clicks": 0,
+        "enabled": true,
+        "geometryGlobal": [
+          0,
+          0,
+          320,
+          180
+        ],
+        "layoutGeometry": [
+          0,
+          0,
+          320,
+          180
+        ],
+        "modality": 1,
+        "native": true,
+        "transientParentTitle": "Qt WindowModal QA child",
+        "visible": true
+      },
+      "owner": {
+        "active": false,
+        "buttonClient": [
+          11,
+          139,
+          438,
+          22
+        ],
+        "buttonGlobal": [
+          11,
+          139,
+          438,
+          22
+        ],
+        "clicks": 0,
+        "enabled": true,
+        "geometryGlobal": [
+          0,
+          0,
+          460,
+          300
+        ],
+        "layoutGeometry": [
+          0,
+          0,
+          460,
+          300
+        ],
+        "modality": 0,
+        "native": true,
+        "transientParentTitle": "",
+        "visible": true
+      },
+      "peer": {
+        "active": false,
+        "buttonClient": [
+          11,
+          139,
+          438,
+          22
+        ],
+        "buttonGlobal": [
+          11,
+          139,
+          438,
+          22
+        ],
+        "clicks": 0,
+        "enabled": true,
+        "geometryGlobal": [
+          0,
+          0,
+          460,
+          300
+        ],
+        "layoutGeometry": [
+          0,
+          0,
+          460,
+          300
+        ],
+        "modality": 0,
+        "native": true,
+        "transientParentTitle": "",
+        "visible": true
+      },
+      "source": {
+        "active": true,
+        "buttonClient": [
+          11,
+          79,
+          298,
+          22
+        ],
+        "buttonGlobal": [
+          11,
+          79,
+          298,
+          22
+        ],
+        "clicks": 0,
+        "enabled": true,
+        "geometryGlobal": [
+          0,
+          0,
+          320,
+          180
+        ],
+        "layoutGeometry": [
+          0,
+          0,
+          320,
+          180
+        ],
+        "modality": 1,
+        "native": true,
+        "transientParentTitle": "Qt WindowModal QA child",
+        "visible": true
+      }
+    }
+  },
+  "nativeClients": [
+    {
+      "address": "0x643a65184260",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        100,
+        250
+      ],
+      "size": [
+        460,
+        300
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "qt-window-modal-fixture",
+      "title": "Qt WindowModal QA owner",
+      "initialClass": "qt-window-modal-fixture",
+      "initialTitle": "Qt WindowModal QA owner",
+      "pid": 2171957,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [],
+      "swallowing": "0x0",
+      "focusHistoryID": 3,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "1800000c"
+    },
+    {
+      "address": "0x643a64de3d20",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        260,
+        310
+      ],
+      "size": [
+        320,
+        180
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "qt-window-modal-fixture",
+      "title": "Qt WindowModal QA child",
+      "initialClass": "qt-window-modal-fixture",
+      "initialTitle": "Qt WindowModal QA child",
+      "pid": 2171957,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [],
+      "swallowing": "0x0",
+      "focusHistoryID": 1,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "1800000e"
+    },
+    {
+      "address": "0x643a64df5b50",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        330,
+        350
+      ],
+      "size": [
+        240,
+        140
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "qt-window-modal-fixture",
+      "title": "Qt WindowModal QA nested",
+      "initialClass": "qt-window-modal-fixture",
+      "initialTitle": "Qt WindowModal QA nested",
+      "pid": 2171957,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [],
+      "swallowing": "0x0",
+      "focusHistoryID": 0,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "1800000f"
+    },
+    {
+      "address": "0x643a650724b0",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        1000,
+        300
+      ],
+      "size": [
+        460,
+        300
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "qt-window-modal-fixture",
+      "title": "Qt WindowModal QA peer",
+      "initialClass": "qt-window-modal-fixture",
+      "initialTitle": "Qt WindowModal QA peer",
+      "pid": 2171957,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [],
+      "swallowing": "0x0",
+      "focusHistoryID": 2,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "1800000d"
+    }
+  ],
+  "mappedFiles": {
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture": "fb73af7e53e1805ba953a3050acdaeb58b3cf8e0d9588c508fe761c767dd534e",
+    "/usr/share/fonts/liberation/LiberationSans-Regular.ttf": "baccc64becc3eb7d104b7c84d99f5314a0a1f896e2b3ea6c2f22fc08d2003bee",
+    "/var/cache/fontconfig/f2e43df3287529323e79e7929dc44cc9-le64.cache-12": "42f2fa40b48274e37e6d4dcb738e66dd5ed9108ad7ef3b11549161cde1fa6d5c",
+    "/var/cache/fontconfig/923e285e415b1073c8df160bee08820f-le64.cache-12": "ddcaec87ffba68b9afe310dd4b5e4f6693e078fd10ecef5117086d3de867a968",
+    "/usr/lib/libFcitx5Qt6DBusAddons.so.5.1.15": "0c585580fb452314a2171f04cf7b9d5dcabce09fdea7f7dd8b9568d9086e2c99",
+    "/usr/lib/libQt6WaylandClient.so.6.11.2": "f3855bf61929da7ff9031b03152e6b4f6ec3d8b1ddcd5bf346cea2c67c0bdfa1",
+    "/usr/lib/locale/locale-archive": "7bf2da63b17127e5976936957419603a8b057f606dcf56de1e81e9256ad06a32",
+    "/var/cache/fontconfig/a9166a13c4a4e072c9ea2dae19ae425f-le64.cache-12": "60e7f34cc970dae2d619cec2e3f64e5bfd46ad99ee13fd928cfe739e2f73e4a1",
+    "/usr/lib/qt6/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so": "1960fa253a12fe533d31dcd0ff47132d74372f47b8f2fc31771743b9f2368fa0",
+    "/usr/lib/libbrotlienc.so.1.2.0": "8dbc539197d276310ce2750dcb73de5465a1259d46a5d1894e6138fd354bf5c7",
+    "/usr/lib/libicudata.so.78.3": "d72003b08760852bee4c80cff32c1e6248ae6b1fda5bd313482733a4d5e70dc9",
+    "/var/cache/fontconfig/491f45a0a771fef1c10b9b647a97fb82-le64.cache-12": "64d126a289d2e831c3e6c888842f6175c52489e5a0ed8a826de99be07307428a",
+    "/var/cache/fontconfig/4b31aef11cb0687b6d280d34cbe23592-le64.cache-12": "f8e00f1c7c380265e481c598c7f9ac81ba4f48830d6007e1eb1fe1a178cd5f26",
+    "/usr/lib/locale/C.utf8/LC_CTYPE": "40680545df4f92443c15e7c6f51a7fdc9154ebedd9eff1ed5c48437039add365",
+    "/usr/lib/libgomp.so.1.0.0": "d6c6309ee83dbe9b50bf38342489799a4822ee22451677730ff5542aa74bdefc",
+    "/usr/lib/libpcre2-8.so.0.16.0": "cb615af32644bbb8f13a582b45dd52a73b0b94fe365f149f94b577c711fb534c",
+    "/usr/lib/libzstd.so.1.5.7": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+    "/usr/lib/libcrypto.so.3": "24882a9ce56d9bf2f4c3722772aa8ce99e53b7165d70072ad06c9dd35cee13e3",
+    "/var/cache/fontconfig/b67b32625a2bb51b023d3814a918f351-le64.cache-12": "e0a6f1a809f65cf5d89c1b4423062f26b59361c39776f507be1975c936ad6969",
+    "/var/cache/fontconfig/ec9db0aec63b087e87fa5135389d951c-le64.cache-12": "cbea250134a6d346b670901ba07f395cce9e7fba82dca679123ffbc0639cb389",
+    "/usr/lib/qt6/plugins/wayland-shell-integration/libxdg-shell.so": "32712821f00e67d7a2dd10357ddaab00e0717e4abf60e6ce2e470ac78e4e95cd",
+    "/usr/lib/libffi.so.8.5.0": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c",
+    "/usr/lib/libicuuc.so.78.3": "c99f0dd0c797c07f9ab64413d36c595393cdded6fa04cc4edd6f6a521fd155ca",
+    "/var/cache/fontconfig/061e4bb214a55cfecd58789ba388a75a-le64.cache-12": "44b2deb633f4c211c7953f20b74dbe7a732dc30e8e28e0606e45d1f77d6c2e40",
+    "/var/cache/fontconfig/f6b893a7224233d96cb72fd88691c0b4-le64.cache-12": "5fc9e852e9be63a2bc0ffc6e5f13bbe9b6624084c07f64dfb8d69baa1b81398f",
+    "/usr/lib/libwayland-cursor.so.0.26.0": "9bf05b4e53f00d46590c241c501d1d1711e99fb8106eb6f0654084c69072c2e5",
+    "/usr/lib/libwayland-client.so.0.26.0": "39c83ae7b73d22f18b4f81da14749c4535c304b7e62910a2f1aae682f279cc9d",
+    "/usr/lib/qt6/plugins/platforms/libqwayland.so": "8c2c354cd0fe960820edb88bc398bda39a4d06740146b1ae1bca81c03aff92a1",
+    "/usr/lib/locale/C.utf8/LC_NUMERIC": "f5976e6b3e6b24dfe03caad6a5b98d894d8110d8bd15507e690fd60fd3e04ab2",
+    "/usr/lib/locale/C.utf8/LC_TIME": "0910b595d1d5d4e52cc0f415bbb1ff07c015d6860d34aae02505dd9973a63154",
+    "/usr/lib/locale/C.utf8/LC_COLLATE": "47a5f5359a8f324abc39d69a7f6241a2ac0e2fbbeae5b9c3a756e682b75d087b",
+    "/usr/lib/locale/C.utf8/LC_MONETARY": "bfd9e9975443b834582493fe9a8d7aefcd989376789c17470a1e548aee76fd55",
+    "/usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES": "f9ad02f1d8eba721d4cbd50c365b5c681c39aec008f90bfc2be2dc80bfbaddcb",
+    "/usr/lib/locale/C.utf8/LC_PAPER": "cde048b81e2a026517cc707c906aebbd50f5ee3957b6f0c1c04699dffcb7c015",
+    "/usr/lib/locale/C.utf8/LC_NAME": "14507aad9f806112e464b9ca94c93b2e4d759ddc612b5f87922d7cac7170697d",
+    "/usr/lib/locale/C.utf8/LC_ADDRESS": "26e2800affab801cb36d4ff9625a95c3abceeda2b6553a7aecd0cfcf34c98099",
+    "/usr/lib/gconv/gconv-modules.cache": "0fde9bfd93c2ac83b23f0ab2e89f438be92f3c368247410eff58ccc847d7a783",
+    "/usr/lib/libbrotlicommon.so.1.2.0": "4f895094b7b6ff9c82909e6516bc9cf212e2ec5af451d39bf1bcbc5e5fa225b2",
+    "/usr/lib/libdbus-1.so.3.38.3": "61be5c82b1d494a3690ad38abd756691bc129a51ba3fb7d5b9074016861b7d60",
+    "/usr/lib/libsystemd.so.0.44.0": "2e971237c56af98844a847344edeae0f59ae2e3437de84162b37f308f82c1615",
+    "/usr/lib/libicui18n.so.78.3": "60d7ad7b3f8e6e1c42895c03379954ee46008948dcdb2e556fa8e4c875742c60",
+    "/usr/lib/locale/C.utf8/LC_TELEPHONE": "f4caf0d12844219b65ba42edc7ec2f5ac1b2fc36a3c88c28887457275daca1ee",
+    "/usr/lib/libxcb.so.1.1.0": "40df5eff95408b67d969e559f2689b3e50e6151251b1f4e03608ce5cd9c9a133",
+    "/usr/lib/libexpat.so.1.12.4": "516a880ec607ee15f664d92eeb587deeb609f6ef6d05c947e9bfeb781a9debaf",
+    "/usr/lib/libpcre2-16.so.0.16.0": "5f0f5ca4b0ed6e4078592732c2ff70ac5ef497942e93aae341ec0b61e129a1f5",
+    "/usr/lib/libfreetype.so.6.20.6": "8617439444dda4fc8bb4d53e9c5e888e7338543778d477723a6b69ee1e64c602",
+    "/usr/lib/libharfbuzz.so.0.61440.0": "ea4f2a4d4593dd5645cf3b5c856b0e22fb72c2b515f331b3243886649e9639a1",
+    "/usr/lib/libglib-2.0.so.0.8800.3": "a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+    "/usr/lib/libc.so.6": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+    "/usr/lib/libXdmcp.so.6.0.0": "0c572ba75de0f967c9c4d088161d3e435ea721bd99c169aae707aba6870a71b1",
+    "/usr/lib/libbrotlidec.so.1.2.0": "0883fb05fa42aa6a883722098530ab08551ed317e38a2311f5c96e94dd460979",
+    "/usr/lib/libGLdispatch.so.0.0.0": "b6d068112d4fd36750b6fedcddea0df7719b707495611cbe6fd92f6887eda467",
+    "/usr/lib/libX11.so.6.4.0": "97736fa2855baf2022d80a8881ffc79cdbecca11c96935e4ca3cfeb47eae1ea4",
+    "/usr/lib/libstdc++.so.6.0.36": "f5fc7380f2ae46fa4053a64be04e7b98109f1066a4bbfff3c37042488aa0be0e",
+    "/usr/lib/libgraphite2.so.3.3.1": "70eebd2fda11b867ebff5a8e3bdf272875acdde0851d258c98b3b046b01b4fc7",
+    "/usr/lib/libpng16.so.16.58.0": "c13e6aa88f5fe0dae5d5bf3d27edf8dce96ad91d130b4b81239ae72a3be36b8f",
+    "/usr/lib/libQt6DBus.so.6.11.2": "addae4a33f3e692ba2297989e0c5cec04afb92ca34ffc2420f9afbefe123d801",
+    "/usr/lib/libQt6Core.so.6.11.2": "6c78628047a343d332108b882d2b4396ea19aae66e8226f7239edaf8415b388e",
+    "/usr/lib/locale/C.utf8/LC_MEASUREMENT": "bb14a6f2cbd5092a755e8f272079822d3e842620dd4542a8dfa1e5e72fc6115b",
+    "/usr/lib/libXau.so.6.0.0": "3e229dba702d7b56f1c58ac0e004ae691ae2ad5ede7b50968e1cd7d8b2ccdecc",
+    "/usr/lib/libbz2.so.1.0.8": "3265f0647d9157aaa820c5094eba03c5be0f101c49e9ffd21289978b8e1875af",
+    "/usr/lib/libb2.so.1.0.4": "2e1b5045b932561e84fa4e9fe141b462d23134f145ec12e4b65f7fe40d51a93e",
+    "/usr/lib/libm.so.6": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+    "/usr/lib/libQt6Gui.so.6.11.2": "76c10f18c6c5ba9492b12c9e2be85a7369ca2570fdcd1e9a2ed1fd3aa6a83e16",
+    "/usr/lib/locale/C.utf8/LC_IDENTIFICATION": "be5c6f4aa0cc2c05ab5ce3ed43c538cd7decbf97b42bc7c73f19414292f4dd4c",
+    "/usr/lib/libdouble-conversion.so.3.4.0": "d650a36479806f9425ba69871745fae91e63a7a72d4c199b4220637c4fe36d0a",
+    "/usr/lib/libz.so.1.3.2": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+    "/usr/lib/libxkbcommon.so.0.13.2": "e475adbf5abd181b1bdfdeba70ad4d501cb296bbf05b13e8649fd71b3989ee07",
+    "/usr/lib/libQt6Widgets.so.6.11.2": "fe40d11c9b7a4daaa0f4c9c4ba5973b9bacb61ff534bbe6405e9466288a591c9",
+    "/usr/lib/liburing.so.2.15": "b01799e8295bc119d614bf061baad1f2a2a494a0787a057f49997244daf110c5",
+    "/usr/lib/libmd4c.so.0.5.3": "693f209bfdb01deb3c2e0539917d0c1eb34a6d03aa36342a25cffa1e858e1736",
+    "/usr/lib/libfontconfig.so.1.17.0": "9d103ae2234c4a8140250935ec6f8d72b0ce1a389fc1a75e17a485c16adc566b",
+    "/usr/lib/libEGL.so.1.1.0": "89d5d0f68f7e42397544db26347c24a893be2e08b81406e8e8714803c29db03b",
+    "/usr/lib/libgcc_s.so.1": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+    "/usr/lib/libOpenGL.so.0.0.0": "5ec13550cb78002495db99017a034c810e0a61facc9c289091420ba1edbd441e",
+    "/usr/lib/libGLX.so.0.0.0": "4eca76728c640b67b1ed656a22b53d3734c100ba4f992aecd705d2e70bfe743a",
+    "/etc/ld.so.cache": "caa8e3a813e407cc331716d2b4fac6eab9063e666ddb3c774ce14f57f8813aae",
+    "/usr/lib/ld-linux-x86-64.so.2": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb"
+  },
+  "processIdentity": {
+    "pid": 2171957,
+    "start": "12864404",
+    "pgid": 2171957,
+    "parent": 2170579
+  },
+  "argv": [
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/attempt-1/qt-wayland/case-4"
+  ],
+  "executable": "/home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture",
+  "executableSHA256": "fb73af7e53e1805ba953a3050acdaeb58b3cf8e0d9588c508fe761c767dd534e",
+  "privateEnvironment": {
+    "HOME": "/run/user/1000/wqa/5ecc/taskbar-home",
+    "PATH": "/run/user/1000/wqa/5ecc/taskbar-home/.local/bin:/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/payload/omarchy/bin:/usr/bin",
+    "XDG_RUNTIME_DIR": "/run/user/1000/wqa/5ecc",
+    "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790906165_1861522036",
+    "WAYLAND_DISPLAY": "wayland-1",
+    "DISPLAY": null,
+    "XAUTHORITY": null,
+    "QT_QPA_PLATFORM": "wayland",
+    "GDK_BACKEND": "wayland"
+  },
+  "rawMaps": "56fd6d52e000-56fd6d531000 r--p 00000000 00:1e 898878                     /home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture\n56fd6d531000-56fd6d539000 r-xp 00003000 00:1e 898878                     /home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture\n56fd6d539000-56fd6d53b000 r--p 0000b000 00:1e 898878                     /home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture\n56fd6d53b000-56fd6d53c000 r--p 0000c000 00:1e 898878                     /home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture\n56fd6d53c000-56fd6d53d000 rw-p 0000d000 00:1e 898878                     /home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture\n56fd9cbbc000-56fd9cf81000 rw-p 00000000 00:00 0                          [heap]\n7f5618000000-7f5618021000 rw-p 00000000 00:00 0 \n7f5618021000-7f561c000000 ---p 00000000 00:00 0 \n7f561c000000-7f561c021000 rw-p 00000000 00:00 0 \n7f561c021000-7f5620000000 ---p 00000000 00:00 0 \n7f5620000000-7f5620021000 rw-p 00000000 00:00 0 \n7f5620021000-7f5624000000 ---p 00000000 00:00 0 \n7f5626d18000-7f5626d3b000 rw-s 00000000 00:01 310016                     /memfd:wayland-shm (deleted)\n7f5626d3b000-7f5626d74000 rw-s 00000000 00:01 322751                     /memfd:wayland-shm (deleted)\n7f5626d74000-7f5626dad000 rw-s 00000000 00:01 288738                     /memfd:wayland-shm (deleted)\n7f5626dad000-7f5626e43000 rw-s 00000000 00:01 314857                     /memfd:wayland-shm (deleted)\n7f5626e43000-7f5626ed9000 rw-s 00000000 00:01 314856                     /memfd:wayland-shm (deleted)\n7f5626ed9000-7f5626f3e000 r--p 00000000 00:1e 128581                     /usr/share/fonts/liberation/LiberationSans-Regular.ttf\n7f5626f3e000-7f5626f68000 r--s 00000000 00:1e 288687                     /var/cache/fontconfig/f2e43df3287529323e79e7929dc44cc9-le64.cache-12\n7f5626f68000-7f5627082000 r--s 00000000 00:1e 288682                     /var/cache/fontconfig/923e285e415b1073c8df160bee08820f-le64.cache-12\n7f5627082000-7f5627883000 rw-p 00000000 00:00 0 \n7f5627883000-7f5627892000 r--p 00000000 00:1e 158518                     /usr/lib/libFcitx5Qt6DBusAddons.so.5.1.15\n7f5627892000-7f56278cc000 r-xp 0000f000 00:1e 158518                     /usr/lib/libFcitx5Qt6DBusAddons.so.5.1.15\n7f56278cc000-7f56278de000 r--p 00049000 00:1e 158518                     /usr/lib/libFcitx5Qt6DBusAddons.so.5.1.15\n7f56278de000-7f56278e1000 r--p 0005b000 00:1e 158518                     /usr/lib/libFcitx5Qt6DBusAddons.so.5.1.15\n7f56278e1000-7f56278e3000 rw-p 0005e000 00:1e 158518                     /usr/lib/libFcitx5Qt6DBusAddons.so.5.1.15\n7f56278e3000-7f56288e5000 rw-p 00000000 00:00 0 \n7f56288e5000-7f5628947000 r--p 00000000 00:1e 119842                     /usr/lib/libQt6WaylandClient.so.6.11.2\n7f5628947000-7f56289c3000 r-xp 00062000 00:1e 119842                     /usr/lib/libQt6WaylandClient.so.6.11.2\n7f56289c3000-7f56289ed000 r--p 000de000 00:1e 119842                     /usr/lib/libQt6WaylandClient.so.6.11.2\n7f56289ed000-7f56289fb000 r--p 00107000 00:1e 119842                     /usr/lib/libQt6WaylandClient.so.6.11.2\n7f56289fb000-7f56289fd000 rw-p 00115000 00:1e 119842                     /usr/lib/libQt6WaylandClient.so.6.11.2\n7f56289fd000-7f5628a00000 rw-p 00000000 00:00 0 \n7f5628a00000-7f5628ced000 r--p 00000000 00:1e 46986                      /usr/lib/locale/locale-archive\n7f5628cee000-7f5628cf6000 r--s 00000000 00:1e 288692                     /var/cache/fontconfig/a9166a13c4a4e072c9ea2dae19ae425f-le64.cache-12\n7f5628cf6000-7f5628d05000 r--p 00000000 00:1e 158525                     /usr/lib/qt6/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so\n7f5628d05000-7f5628d30000 r-xp 0000f000 00:1e 158525                     /usr/lib/qt6/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so\n7f5628d30000-7f5628d3c000 r--p 0003a000 00:1e 158525                     /usr/lib/qt6/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so\n7f5628d3c000-7f5628d3f000 r--p 00046000 00:1e 158525                     /usr/lib/qt6/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so\n7f5628d3f000-7f5628d40000 rw-p 00049000 00:1e 158525                     /usr/lib/qt6/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so\n7f5628d40000-7f5628d41000 r--p 00000000 00:1e 8052                       /usr/lib/libbrotlienc.so.1.2.0\n7f5628d41000-7f5628dae000 r-xp 00001000 00:1e 8052                       /usr/lib/libbrotlienc.so.1.2.0\n7f5628dae000-7f5628dfe000 r--p 0006e000 00:1e 8052                       /usr/lib/libbrotlienc.so.1.2.0\n7f5628dfe000-7f5628dff000 r--p 000bd000 00:1e 8052                       /usr/lib/libbrotlienc.so.1.2.0\n7f5628dff000-7f5628e00000 rw-p 000be000 00:1e 8052                       /usr/lib/libbrotlienc.so.1.2.0\n7f5628e00000-7f562ad94000 r--p 00000000 00:1e 22119                      /usr/lib/libicudata.so.78.3\n7f562ad94000-7f562ad95000 r--p 01f93000 00:1e 22119                      /usr/lib/libicudata.so.78.3\n7f562ad96000-7f562ada6000 r--s 00000000 00:1e 288672                     /var/cache/fontconfig/491f45a0a771fef1c10b9b647a97fb82-le64.cache-12\n7f562ada6000-7f562adb2000 r--s 00000000 00:1e 84291                      /var/cache/fontconfig/4b31aef11cb0687b6d280d34cbe23592-le64.cache-12\n7f562adb2000-7f562ae0d000 r--p 00000000 00:1e 3475                       /usr/lib/locale/C.utf8/LC_CTYPE\n7f562ae0d000-7f562ae18000 r--p 00000000 00:1e 4304                       /usr/lib/libgomp.so.1.0.0\n7f562ae18000-7f562ae56000 r-xp 0000b000 00:1e 4304                       /usr/lib/libgomp.so.1.0.0\n7f562ae56000-7f562ae65000 r--p 00049000 00:1e 4304                       /usr/lib/libgomp.so.1.0.0\n7f562ae65000-7f562ae66000 r--p 00057000 00:1e 4304                       /usr/lib/libgomp.so.1.0.0\n7f562ae66000-7f562ae67000 rw-p 00058000 00:1e 4304                       /usr/lib/libgomp.so.1.0.0\n7f562ae67000-7f562ae6a000 r--p 00000000 00:1e 18466                      /usr/lib/libpcre2-8.so.0.16.0\n7f562ae6a000-7f562aeec000 r-xp 00003000 00:1e 18466                      /usr/lib/libpcre2-8.so.0.16.0\n7f562aeec000-7f562af18000 r--p 00085000 00:1e 18466                      /usr/lib/libpcre2-8.so.0.16.0\n7f562af18000-7f562af19000 r--p 000b0000 00:1e 18466                      /usr/lib/libpcre2-8.so.0.16.0\n7f562af19000-7f562af1a000 rw-p 000b1000 00:1e 18466                      /usr/lib/libpcre2-8.so.0.16.0\n7f562af1a000-7f562af26000 r--p 00000000 00:1e 8530                       /usr/lib/libzstd.so.1.5.7\n7f562af26000-7f562afed000 r-xp 0000c000 00:1e 8530                       /usr/lib/libzstd.so.1.5.7\n7f562afed000-7f562affe000 r--p 000d3000 00:1e 8530                       /usr/lib/libzstd.so.1.5.7\n7f562affe000-7f562afff000 r--p 000e4000 00:1e 8530                       /usr/lib/libzstd.so.1.5.7\n7f562afff000-7f562b000000 rw-p 000e5000 00:1e 8530                       /usr/lib/libzstd.so.1.5.7\n7f562b000000-7f562b053000 r--p 00000000 00:1e 8710                       /usr/lib/libcrypto.so.3\n7f562b053000-7f562b3ff000 r-xp 00053000 00:1e 8710                       /usr/lib/libcrypto.so.3\n7f562b3ff000-7f562b525000 r--p 003ff000 00:1e 8710                       /usr/lib/libcrypto.so.3\n7f562b525000-7f562b5a3000 r--p 00525000 00:1e 8710                       /usr/lib/libcrypto.so.3\n7f562b5a3000-7f562b5a6000 rw-p 005a3000 00:1e 8710                       /usr/lib/libcrypto.so.3\n7f562b5a6000-7f562b5a9000 rw-p 00000000 00:00 0 \n7f562b5ac000-7f562b5ca000 rw-p 00000000 00:00 0 \n7f562b5cc000-7f562b5d2000 r--s 00000000 00:1e 288677                     /var/cache/fontconfig/b67b32625a2bb51b023d3814a918f351-le64.cache-12\n7f562b5d2000-7f562b5d5000 r--s 00000000 00:1e 288662                     /var/cache/fontconfig/ec9db0aec63b087e87fa5135389d951c-le64.cache-12\n7f562b5d5000-7f562b5e0000 r--p 00000000 00:1e 120611                     /usr/lib/qt6/plugins/wayland-shell-integration/libxdg-shell.so\n7f562b5e0000-7f562b5ea000 r-xp 0000b000 00:1e 120611                     /usr/lib/qt6/plugins/wayland-shell-integration/libxdg-shell.so\n7f562b5ea000-7f562b5ee000 r--p 00015000 00:1e 120611                     /usr/lib/qt6/plugins/wayland-shell-integration/libxdg-shell.so\n7f562b5ee000-7f562b5f1000 r--p 00018000 00:1e 120611                     /usr/lib/qt6/plugins/wayland-shell-integration/libxdg-shell.so\n7f562b5f1000-7f562b5f2000 rw-p 0001b000 00:1e 120611                     /usr/lib/qt6/plugins/wayland-shell-integration/libxdg-shell.so\n7f562b5f2000-7f562b5f4000 r--p 00000000 00:1e 19135                      /usr/lib/libffi.so.8.5.0\n7f562b5f4000-7f562b5fc000 r-xp 00002000 00:1e 19135                      /usr/lib/libffi.so.8.5.0\n7f562b5fc000-7f562b5fe000 r--p 0000a000 00:1e 19135                      /usr/lib/libffi.so.8.5.0\n7f562b5fe000-7f562b5ff000 r--p 0000b000 00:1e 19135                      /usr/lib/libffi.so.8.5.0\n7f562b5ff000-7f562b600000 rw-p 0000c000 00:1e 19135                      /usr/lib/libffi.so.8.5.0\n7f562b600000-7f562b648000 r--p 00000000 00:1e 22134                      /usr/lib/libicuuc.so.78.3\n7f562b648000-7f562b765000 r-xp 00048000 00:1e 22134                      /usr/lib/libicuuc.so.78.3\n7f562b765000-7f562b7f8000 r--p 00165000 00:1e 22134                      /usr/lib/libicuuc.so.78.3\n7f562b7f8000-7f562b80b000 r--p 001f8000 00:1e 22134                      /usr/lib/libicuuc.so.78.3\n7f562b80b000-7f562b80c000 rw-p 0020b000 00:1e 22134                      /usr/lib/libicuuc.so.78.3\n7f562b80c000-7f562b80e000 rw-p 00000000 00:00 0 \n7f562b80e000-7f562b80f000 r--s 00000000 00:1e 90550                      /var/cache/fontconfig/061e4bb214a55cfecd58789ba388a75a-le64.cache-12\n7f562b80f000-7f562b812000 r--s 00000000 00:1e 425727                     /var/cache/fontconfig/f6b893a7224233d96cb72fd88691c0b4-le64.cache-12\n7f562b812000-7f562b813000 rw-p 00000000 00:00 0 \n7f562b813000-7f562b814000 rw-p 00000000 00:00 0 \n7f562b814000-7f562b815000 r--p 00000000 00:1e 110515                     /usr/lib/libwayland-cursor.so.0.26.0\n7f562b815000-7f562b817000 r-xp 00001000 00:1e 110515                     /usr/lib/libwayland-cursor.so.0.26.0\n7f562b817000-7f562b818000 r--p 00003000 00:1e 110515                     /usr/lib/libwayland-cursor.so.0.26.0\n7f562b818000-7f562b819000 r--p 00003000 00:1e 110515                     /usr/lib/libwayland-cursor.so.0.26.0\n7f562b819000-7f562b81d000 rw-p 00004000 00:1e 110515                     /usr/lib/libwayland-cursor.so.0.26.0\n7f562b81d000-7f562b820000 r--p 00000000 00:1e 110512                     /usr/lib/libwayland-client.so.0.26.0\n7f562b820000-7f562b827000 r-xp 00003000 00:1e 110512                     /usr/lib/libwayland-client.so.0.26.0\n7f562b827000-7f562b82a000 r--p 0000a000 00:1e 110512                     /usr/lib/libwayland-client.so.0.26.0\n7f562b82a000-7f562b82c000 r--p 0000c000 00:1e 110512                     /usr/lib/libwayland-client.so.0.26.0\n7f562b82c000-7f562b82d000 rw-p 0000e000 00:1e 110512                     /usr/lib/libwayland-client.so.0.26.0\n7f562b82d000-7f562b82f000 r--p 00000000 00:1e 120584                     /usr/lib/qt6/plugins/platforms/libqwayland.so\n7f562b82f000-7f562b830000 r-xp 00002000 00:1e 120584                     /usr/lib/qt6/plugins/platforms/libqwayland.so\n7f562b830000-7f562b831000 r--p 00003000 00:1e 120584                     /usr/lib/qt6/plugins/platforms/libqwayland.so\n7f562b831000-7f562b832000 r--p 00003000 00:1e 120584                     /usr/lib/qt6/plugins/platforms/libqwayland.so\n7f562b832000-7f562b833000 rw-p 00004000 00:1e 120584                     /usr/lib/qt6/plugins/platforms/libqwayland.so\n7f562b833000-7f562b834000 r--p 00000000 00:1e 3482                       /usr/lib/locale/C.utf8/LC_NUMERIC\n7f562b834000-7f562b835000 r--p 00000000 00:1e 3485                       /usr/lib/locale/C.utf8/LC_TIME\n7f562b835000-7f562b836000 r--p 00000000 00:1e 3474                       /usr/lib/locale/C.utf8/LC_COLLATE\n7f562b836000-7f562b837000 r--p 00000000 00:1e 3480                       /usr/lib/locale/C.utf8/LC_MONETARY\n7f562b837000-7f562b838000 r--p 00000000 00:1e 3479                       /usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES\n7f562b838000-7f562b839000 r--p 00000000 00:1e 3483                       /usr/lib/locale/C.utf8/LC_PAPER\n7f562b839000-7f562b83a000 r--p 00000000 00:1e 3481                       /usr/lib/locale/C.utf8/LC_NAME\n7f562b83a000-7f562b83b000 r--p 00000000 00:1e 3473                       /usr/lib/locale/C.utf8/LC_ADDRESS\n7f562b83b000-7f562b842000 r--s 00000000 00:1e 46210                      /usr/lib/gconv/gconv-modules.cache\n7f562b842000-7f562b843000 r--p 00000000 00:1e 8046                       /usr/lib/libbrotlicommon.so.1.2.0\n7f562b843000-7f562b844000 r-xp 00001000 00:1e 8046                       /usr/lib/libbrotlicommon.so.1.2.0\n7f562b844000-7f562b863000 r--p 00002000 00:1e 8046                       /usr/lib/libbrotlicommon.so.1.2.0\n7f562b863000-7f562b864000 r--p 00021000 00:1e 8046                       /usr/lib/libbrotlicommon.so.1.2.0\n7f562b864000-7f562b865000 rw-p 00022000 00:1e 8046                       /usr/lib/libbrotlicommon.so.1.2.0\n7f562b865000-7f562b873000 r--p 00000000 00:1e 26334                      /usr/lib/libdbus-1.so.3.38.3\n7f562b873000-7f562b8a4000 r-xp 0000e000 00:1e 26334                      /usr/lib/libdbus-1.so.3.38.3\n7f562b8a4000-7f562b8b5000 r--p 0003f000 00:1e 26334                      /usr/lib/libdbus-1.so.3.38.3\n7f562b8b5000-7f562b8b7000 r--p 0004f000 00:1e 26334                      /usr/lib/libdbus-1.so.3.38.3\n7f562b8b7000-7f562b8b8000 rw-p 00051000 00:1e 26334                      /usr/lib/libdbus-1.so.3.38.3\n7f562b8b8000-7f562b8cd000 r--p 00000000 00:1e 16324                      /usr/lib/libsystemd.so.0.44.0\n7f562b8cd000-7f562b9a6000 r-xp 00015000 00:1e 16324                      /usr/lib/libsystemd.so.0.44.0\n7f562b9a6000-7f562b9f5000 r--p 000ee000 00:1e 16324                      /usr/lib/libsystemd.so.0.44.0\n7f562b9f5000-7f562b9fe000 r--p 0013c000 00:1e 16324                      /usr/lib/libsystemd.so.0.44.0\n7f562b9fe000-7f562b9ff000 rw-p 00145000 00:1e 16324                      /usr/lib/libsystemd.so.0.44.0\n7f562b9ff000-7f562ba00000 rw-p 00000000 00:00 0 \n7f562ba00000-7f562badc000 r--p 00000000 00:1e 22122                      /usr/lib/libicui18n.so.78.3\n7f562badc000-7f562bce6000 r-xp 000dc000 00:1e 22122                      /usr/lib/libicui18n.so.78.3\n7f562bce6000-7f562bd79000 r--p 002e6000 00:1e 22122                      /usr/lib/libicui18n.so.78.3\n7f562bd79000-7f562bd8c000 r--p 00379000 00:1e 22122                      /usr/lib/libicui18n.so.78.3\n7f562bd8c000-7f562bd8d000 rw-p 0038c000 00:1e 22122                      /usr/lib/libicui18n.so.78.3\n7f562bd8d000-7f562bd8e000 rw-p 00000000 00:00 0 \n7f562bd8e000-7f562bd8f000 r--p 00000000 00:1e 3484                       /usr/lib/locale/C.utf8/LC_TELEPHONE\n7f562bd8f000-7f562bd9b000 r--p 00000000 00:1e 84720                      /usr/lib/libxcb.so.1.1.0\n7f562bd9b000-7f562bdaf000 r-xp 0000c000 00:1e 84720                      /usr/lib/libxcb.so.1.1.0\n7f562bdaf000-7f562bdb8000 r--p 00020000 00:1e 84720                      /usr/lib/libxcb.so.1.1.0\n7f562bdb8000-7f562bdb9000 r--p 00028000 00:1e 84720                      /usr/lib/libxcb.so.1.1.0\n7f562bdb9000-7f562bdba000 rw-p 00029000 00:1e 84720                      /usr/lib/libxcb.so.1.1.0\n7f562bdba000-7f562bdbc000 r--p 00000000 00:1e 26283                      /usr/lib/libexpat.so.1.12.4\n7f562bdbc000-7f562bddc000 r-xp 00002000 00:1e 26283                      /usr/lib/libexpat.so.1.12.4\n7f562bddc000-7f562bde5000 r--p 00022000 00:1e 26283                      /usr/lib/libexpat.so.1.12.4\n7f562bde5000-7f562bde7000 r--p 0002a000 00:1e 26283                      /usr/lib/libexpat.so.1.12.4\n7f562bde7000-7f562bde8000 rw-p 0002c000 00:1e 26283                      /usr/lib/libexpat.so.1.12.4\n7f562bde8000-7f562bdeb000 r--p 00000000 00:1e 18458                      /usr/lib/libpcre2-16.so.0.16.0\n7f562bdeb000-7f562be60000 r-xp 00003000 00:1e 18458                      /usr/lib/libpcre2-16.so.0.16.0\n7f562be60000-7f562be8c000 r--p 00078000 00:1e 18458                      /usr/lib/libpcre2-16.so.0.16.0\n7f562be8c000-7f562be8d000 r--p 000a3000 00:1e 18458                      /usr/lib/libpcre2-16.so.0.16.0\n7f562be8d000-7f562be8e000 rw-p 000a4000 00:1e 18458                      /usr/lib/libpcre2-16.so.0.16.0\n7f562be8e000-7f562be94000 r--p 00000000 00:1e 83893                      /usr/lib/libfreetype.so.6.20.6\n7f562be94000-7f562bf2c000 r-xp 00006000 00:1e 83893                      /usr/lib/libfreetype.so.6.20.6\n7f562bf2c000-7f562bf55000 r--p 0009e000 00:1e 83893                      /usr/lib/libfreetype.so.6.20.6\n7f562bf55000-7f562bf5d000 r--p 000c6000 00:1e 83893                      /usr/lib/libfreetype.so.6.20.6\n7f562bf5d000-7f562bf5e000 rw-p 000ce000 00:1e 83893                      /usr/lib/libfreetype.so.6.20.6\n7f562bf5e000-7f562bf6b000 r--p 00000000 00:1e 89211                      /usr/lib/libharfbuzz.so.0.61440.0\n7f562bf6b000-7f562c066000 r-xp 0000d000 00:1e 89211                      /usr/lib/libharfbuzz.so.0.61440.0\n7f562c066000-7f562c09a000 r--p 00108000 00:1e 89211                      /usr/lib/libharfbuzz.so.0.61440.0\n7f562c09a000-7f562c09c000 r--p 0013b000 00:1e 89211                      /usr/lib/libharfbuzz.so.0.61440.0\n7f562c09c000-7f562c09d000 rw-p 0013d000 00:1e 89211                      /usr/lib/libharfbuzz.so.0.61440.0\n7f562c09d000-7f562c0bb000 r--p 00000000 00:1e 25206                      /usr/lib/libglib-2.0.so.0.8800.3\n7f562c0bb000-7f562c169000 r-xp 0001e000 00:1e 25206                      /usr/lib/libglib-2.0.so.0.8800.3\n7f562c169000-7f562c1fd000 r--p 000cc000 00:1e 25206                      /usr/lib/libglib-2.0.so.0.8800.3\n7f562c1fd000-7f562c1fe000 r--p 00160000 00:1e 25206                      /usr/lib/libglib-2.0.so.0.8800.3\n7f562c1fe000-7f562c1ff000 rw-p 00161000 00:1e 25206                      /usr/lib/libglib-2.0.so.0.8800.3\n7f562c1ff000-7f562c200000 rw-p 00000000 00:00 0 \n7f562c200000-7f562c224000 r--p 00000000 00:1e 3434                       /usr/lib/libc.so.6\n7f562c224000-7f562c39f000 r-xp 00024000 00:1e 3434                       /usr/lib/libc.so.6\n7f562c39f000-7f562c415000 r--p 0019f000 00:1e 3434                       /usr/lib/libc.so.6\n7f562c415000-7f562c419000 r--p 00214000 00:1e 3434                       /usr/lib/libc.so.6\n7f562c419000-7f562c41b000 rw-p 00218000 00:1e 3434                       /usr/lib/libc.so.6\n7f562c41b000-7f562c425000 rw-p 00000000 00:00 0 \n7f562c425000-7f562c42e000 rw-p 00000000 00:00 0 \n7f562c42e000-7f562c430000 r--p 00000000 00:1e 84582                      /usr/lib/libXdmcp.so.6.0.0\n7f562c430000-7f562c432000 r-xp 00002000 00:1e 84582                      /usr/lib/libXdmcp.so.6.0.0\n7f562c432000-7f562c434000 r--p 00004000 00:1e 84582                      /usr/lib/libXdmcp.so.6.0.0\n7f562c434000-7f562c435000 r--p 00005000 00:1e 84582                      /usr/lib/libXdmcp.so.6.0.0\n7f562c435000-7f562c436000 rw-p 00006000 00:1e 84582                      /usr/lib/libXdmcp.so.6.0.0\n7f562c436000-7f562c437000 r--p 00000000 00:1e 8049                       /usr/lib/libbrotlidec.so.1.2.0\n7f562c437000-7f562c440000 r-xp 00001000 00:1e 8049                       /usr/lib/libbrotlidec.so.1.2.0\n7f562c440000-7f562c443000 r--p 0000a000 00:1e 8049                       /usr/lib/libbrotlidec.so.1.2.0\n7f562c443000-7f562c444000 r--p 0000c000 00:1e 8049                       /usr/lib/libbrotlidec.so.1.2.0\n7f562c444000-7f562c445000 rw-p 0000d000 00:1e 8049                       /usr/lib/libbrotlidec.so.1.2.0\n7f562c445000-7f562c447000 r--p 00000000 00:1e 110700                     /usr/lib/libGLdispatch.so.0.0.0\n7f562c447000-7f562c486000 r-xp 00002000 00:1e 110700                     /usr/lib/libGLdispatch.so.0.0.0\n7f562c486000-7f562c499000 r--p 00041000 00:1e 110700                     /usr/lib/libGLdispatch.so.0.0.0\n7f562c499000-7f562c4b5000 r--p 00054000 00:1e 110700                     /usr/lib/libGLdispatch.so.0.0.0\n7f562c4b5000-7f562c4b6000 rw-p 00070000 00:1e 110700                     /usr/lib/libGLdispatch.so.0.0.0\n7f562c4b6000-7f562c4be000 rw-p 00000000 00:00 0 \n7f562c4be000-7f562c4d5000 r--p 00000000 00:1e 87085                      /usr/lib/libX11.so.6.4.0\n7f562c4d5000-7f562c56a000 r-xp 00017000 00:1e 87085                      /usr/lib/libX11.so.6.4.0\n7f562c56a000-7f562c5f9000 r--p 000ac000 00:1e 87085                      /usr/lib/libX11.so.6.4.0\n7f562c5f9000-7f562c5fc000 r--p 0013a000 00:1e 87085                      /usr/lib/libX11.so.6.4.0\n7f562c5fc000-7f562c600000 rw-p 0013d000 00:1e 87085                      /usr/lib/libX11.so.6.4.0\n7f562c600000-7f562c69a000 r--p 00000000 00:1e 4262                       /usr/lib/libstdc++.so.6.0.36\n7f562c69a000-7f562c81d000 r-xp 0009a000 00:1e 4262                       /usr/lib/libstdc++.so.6.0.36\n7f562c81d000-7f562c8bd000 r--p 0021d000 00:1e 4262                       /usr/lib/libstdc++.so.6.0.36\n7f562c8bd000-7f562c8ce000 r--p 002bc000 00:1e 4262                       /usr/lib/libstdc++.so.6.0.36\n7f562c8ce000-7f562c8cf000 rw-p 002cd000 00:1e 4262                       /usr/lib/libstdc++.so.6.0.36\n7f562c8cf000-7f562c8d3000 rw-p 00000000 00:00 0 \n7f562c8d3000-7f562c8d5000 r--p 00000000 00:1e 89134                      /usr/lib/libgraphite2.so.3.3.1\n7f562c8d5000-7f562c8ee000 r-xp 00002000 00:1e 89134                      /usr/lib/libgraphite2.so.3.3.1\n7f562c8ee000-7f562c8f3000 r--p 0001b000 00:1e 89134                      /usr/lib/libgraphite2.so.3.3.1\n7f562c8f3000-7f562c8f5000 r--p 0001f000 00:1e 89134                      /usr/lib/libgraphite2.so.3.3.1\n7f562c8f5000-7f562c8f6000 rw-p 00021000 00:1e 89134                      /usr/lib/libgraphite2.so.3.3.1\n7f562c8f6000-7f562c8fc000 r--p 00000000 00:1e 83820                      /usr/lib/libpng16.so.16.58.0\n7f562c8fc000-7f562c927000 r-xp 00006000 00:1e 83820                      /usr/lib/libpng16.so.16.58.0\n7f562c927000-7f562c931000 r--p 00031000 00:1e 83820                      /usr/lib/libpng16.so.16.58.0\n7f562c931000-7f562c932000 r--p 0003a000 00:1e 83820                      /usr/lib/libpng16.so.16.58.0\n7f562c932000-7f562c933000 rw-p 0003b000 00:1e 83820                      /usr/lib/libpng16.so.16.58.0\n7f562c933000-7f562c94e000 r--p 00000000 00:1e 119790                     /usr/lib/libQt6DBus.so.6.11.2\n7f562c94e000-7f562c9de000 r-xp 0001b000 00:1e 119790                     /usr/lib/libQt6DBus.so.6.11.2\n7f562c9de000-7f562c9f9000 r--p 000ab000 00:1e 119790                     /usr/lib/libQt6DBus.so.6.11.2\n7f562c9f9000-7f562c9fd000 r--p 000c6000 00:1e 119790                     /usr/lib/libQt6DBus.so.6.11.2\n7f562c9fd000-7f562c9ff000 rw-p 000ca000 00:1e 119790                     /usr/lib/libQt6DBus.so.6.11.2\n7f562c9ff000-7f562ca00000 rw-p 00000000 00:00 0 \n7f562ca00000-7f562ca94000 r--p 00000000 00:1e 119786                     /usr/lib/libQt6Core.so.6.11.2\n7f562ca94000-7f562cec4000 r-xp 00094000 00:1e 119786                     /usr/lib/libQt6Core.so.6.11.2\n7f562cec4000-7f562d073000 r--p 004c4000 00:1e 119786                     /usr/lib/libQt6Core.so.6.11.2\n7f562d073000-7f562d083000 r--p 00673000 00:1e 119786                     /usr/lib/libQt6Core.so.6.11.2\n7f562d083000-7f562d08c000 rw-p 00683000 00:1e 119786                     /usr/lib/libQt6Core.so.6.11.2\n7f562d08c000-7f562d090000 rw-p 00000000 00:00 0 \n7f562d090000-7f562d091000 r--p 00000000 00:1e 3477                       /usr/lib/locale/C.utf8/LC_MEASUREMENT\n7f562d091000-7f562d092000 r--p 00000000 00:1e 84595                      /usr/lib/libXau.so.6.0.0\n7f562d092000-7f562d093000 r-xp 00001000 00:1e 84595                      /usr/lib/libXau.so.6.0.0\n7f562d093000-7f562d094000 r--p 00002000 00:1e 84595                      /usr/lib/libXau.so.6.0.0\n7f562d094000-7f562d095000 r--p 00002000 00:1e 84595                      /usr/lib/libXau.so.6.0.0\n7f562d095000-7f562d096000 rw-p 00003000 00:1e 84595                      /usr/lib/libXau.so.6.0.0\n7f562d096000-7f562d098000 rw-p 00000000 00:00 0 \n7f562d098000-7f562d09a000 r--p 00000000 00:1e 18189                      /usr/lib/libbz2.so.1.0.8\n7f562d09a000-7f562d0a7000 r-xp 00002000 00:1e 18189                      /usr/lib/libbz2.so.1.0.8\n7f562d0a7000-7f562d0a9000 r--p 0000f000 00:1e 18189                      /usr/lib/libbz2.so.1.0.8\n7f562d0a9000-7f562d0aa000 r--p 00010000 00:1e 18189                      /usr/lib/libbz2.so.1.0.8\n7f562d0aa000-7f562d0ab000 rw-p 00011000 00:1e 18189                      /usr/lib/libbz2.so.1.0.8\n7f562d0ab000-7f562d0ae000 r--p 00000000 00:1e 115098                     /usr/lib/libb2.so.1.0.4\n7f562d0ae000-7f562d0c5000 r-xp 00003000 00:1e 115098                     /usr/lib/libb2.so.1.0.4\n7f562d0c5000-7f562d0c7000 r--p 0001a000 00:1e 115098                     /usr/lib/libb2.so.1.0.4\n7f562d0c7000-7f562d0c8000 r--p 0001c000 00:1e 115098                     /usr/lib/libb2.so.1.0.4\n7f562d0c8000-7f562d0c9000 rw-p 0001d000 00:1e 115098                     /usr/lib/libb2.so.1.0.4\n7f562d0c9000-7f562d0d9000 r--p 00000000 00:1e 3444                       /usr/lib/libm.so.6\n7f562d0d9000-7f562d175000 r-xp 00010000 00:1e 3444                       /usr/lib/libm.so.6\n7f562d175000-7f562d1fe000 r--p 000ac000 00:1e 3444                       /usr/lib/libm.so.6\n7f562d1fe000-7f562d1ff000 r--p 00134000 00:1e 3444                       /usr/lib/libm.so.6\n7f562d1ff000-7f562d200000 rw-p 00135000 00:1e 3444                       /usr/lib/libm.so.6\n7f562d200000-7f562d2e5000 r--p 00000000 00:1e 119810                     /usr/lib/libQt6Gui.so.6.11.2\n7f562d2e5000-7f562d9fc000 r-xp 000e5000 00:1e 119810                     /usr/lib/libQt6Gui.so.6.11.2\n7f562d9fc000-7f562db2c000 r--p 007fc000 00:1e 119810                     /usr/lib/libQt6Gui.so.6.11.2\n7f562db2c000-7f562db47000 r--p 0092b000 00:1e 119810                     /usr/lib/libQt6Gui.so.6.11.2\n7f562db47000-7f562db54000 rw-p 00946000 00:1e 119810                     /usr/lib/libQt6Gui.so.6.11.2\n7f562db54000-7f562db68000 rw-p 00000000 00:00 0 \n7f562db68000-7f562db69000 r--p 00000000 00:1e 3476                       /usr/lib/locale/C.utf8/LC_IDENTIFICATION\n7f562db69000-7f562db6d000 rw-p 00000000 00:00 0 \n7f562db6d000-7f562db70000 r--p 00000000 00:1e 115087                     /usr/lib/libdouble-conversion.so.3.4.0\n7f562db70000-7f562db7d000 r-xp 00003000 00:1e 115087                     /usr/lib/libdouble-conversion.so.3.4.0\n7f562db7d000-7f562db82000 r--p 00010000 00:1e 115087                     /usr/lib/libdouble-conversion.so.3.4.0\n7f562db82000-7f562db83000 r--p 00015000 00:1e 115087                     /usr/lib/libdouble-conversion.so.3.4.0\n7f562db83000-7f562db84000 rw-p 00016000 00:1e 115087                     /usr/lib/libdouble-conversion.so.3.4.0\n7f562db84000-7f562db86000 rw-p 00000000 00:00 0 \n7f562db86000-7f562db89000 r--p 00000000 00:1e 7680                       /usr/lib/libz.so.1.3.2\n7f562db89000-7f562db99000 r-xp 00003000 00:1e 7680                       /usr/lib/libz.so.1.3.2\n7f562db99000-7f562db9f000 r--p 00013000 00:1e 7680                       /usr/lib/libz.so.1.3.2\n7f562db9f000-7f562dba0000 r--p 00018000 00:1e 7680                       /usr/lib/libz.so.1.3.2\n7f562dba0000-7f562dba1000 rw-p 00019000 00:1e 7680                       /usr/lib/libz.so.1.3.2\n7f562dba1000-7f562dba5000 r--p 00000000 00:1e 89030                      /usr/lib/libxkbcommon.so.0.13.2\n7f562dba5000-7f562dbd4000 r-xp 00004000 00:1e 89030                      /usr/lib/libxkbcommon.so.0.13.2\n7f562dbd4000-7f562dbfd000 r--p 00033000 00:1e 89030                      /usr/lib/libxkbcommon.so.0.13.2\n7f562dbfd000-7f562dbff000 r--p 0005b000 00:1e 89030                      /usr/lib/libxkbcommon.so.0.13.2\n7f562dbff000-7f562dc00000 rw-p 0005d000 00:1e 89030                      /usr/lib/libxkbcommon.so.0.13.2\n7f562dc00000-7f562dceb000 r--p 00000000 00:1e 119846                     /usr/lib/libQt6Widgets.so.6.11.2\n7f562dceb000-7f562e20a000 r-xp 000eb000 00:1e 119846                     /usr/lib/libQt6Widgets.so.6.11.2\n7f562e20a000-7f562e356000 r--p 0060a000 00:1e 119846                     /usr/lib/libQt6Widgets.so.6.11.2\n7f562e356000-7f562e390000 r--p 00756000 00:1e 119846                     /usr/lib/libQt6Widgets.so.6.11.2\n7f562e390000-7f562e39d000 rw-p 00790000 00:1e 119846                     /usr/lib/libQt6Widgets.so.6.11.2\n7f562e39d000-7f562e39e000 rw-p 00000000 00:00 0 \n7f562e39e000-7f562e3a0000 r--p 00000000 00:1e 115203                     /usr/lib/liburing.so.2.15\n7f562e3a0000-7f562e3a3000 r-xp 00002000 00:1e 115203                     /usr/lib/liburing.so.2.15\n7f562e3a3000-7f562e3a4000 r--p 00005000 00:1e 115203                     /usr/lib/liburing.so.2.15\n7f562e3a4000-7f562e3a5000 r--p 00005000 00:1e 115203                     /usr/lib/liburing.so.2.15\n7f562e3a5000-7f562e3a6000 r--p 00000000 00:1e 115465                     /usr/lib/libmd4c.so.0.5.3\n7f562e3a6000-7f562e3b6000 r-xp 00001000 00:1e 115465                     /usr/lib/libmd4c.so.0.5.3\n7f562e3b6000-7f562e3b9000 r--p 00011000 00:1e 115465                     /usr/lib/libmd4c.so.0.5.3\n7f562e3b9000-7f562e3ba000 r--p 00014000 00:1e 115465                     /usr/lib/libmd4c.so.0.5.3\n7f562e3ba000-7f562e3bb000 rw-p 00015000 00:1e 115465                     /usr/lib/libmd4c.so.0.5.3\n7f562e3bb000-7f562e3bf000 rw-p 00000000 00:00 0 \n7f562e3bf000-7f562e3c5000 r--p 00000000 00:1e 83923                      /usr/lib/libfontconfig.so.1.17.0\n7f562e3c5000-7f562e3fa000 r-xp 00006000 00:1e 83923                      /usr/lib/libfontconfig.so.1.17.0\n7f562e3fa000-7f562e430000 r--p 0003b000 00:1e 83923                      /usr/lib/libfontconfig.so.1.17.0\n7f562e430000-7f562e439000 r--p 00071000 00:1e 83923                      /usr/lib/libfontconfig.so.1.17.0\n7f562e439000-7f562e43a000 rw-p 0007a000 00:1e 83923                      /usr/lib/libfontconfig.so.1.17.0\n7f562e43a000-7f562e43c000 r--p 00000000 00:1e 110688                     /usr/lib/libEGL.so.1.1.0\n7f562e43c000-7f562e446000 r-xp 00002000 00:1e 110688                     /usr/lib/libEGL.so.1.1.0\n7f562e446000-7f562e44a000 r--p 0000c000 00:1e 110688                     /usr/lib/libEGL.so.1.1.0\n7f562e44a000-7f562e44b000 r--p 0000f000 00:1e 110688                     /usr/lib/libEGL.so.1.1.0\n7f562e44b000-7f562e44c000 rw-p 00010000 00:1e 110688                     /usr/lib/libEGL.so.1.1.0\n7f562e44c000-7f562e450000 r--p 00000000 00:1e 4253                       /usr/lib/libgcc_s.so.1\n7f562e450000-7f562e473000 r-xp 00004000 00:1e 4253                       /usr/lib/libgcc_s.so.1\n7f562e473000-7f562e477000 r--p 00027000 00:1e 4253                       /usr/lib/libgcc_s.so.1\n7f562e477000-7f562e478000 r--p 0002b000 00:1e 4253                       /usr/lib/libgcc_s.so.1\n7f562e478000-7f562e479000 rw-p 0002c000 00:1e 4253                       /usr/lib/libgcc_s.so.1\n7f562e479000-7f562e47b000 rw-p 00000000 00:00 0 \n7f562e47b000-7f562e489000 r--p 00000000 00:1e 110703                     /usr/lib/libOpenGL.so.0.0.0\n7f562e489000-7f562e494000 r-xp 0000e000 00:1e 110703                     /usr/lib/libOpenGL.so.0.0.0\n7f562e494000-7f562e499000 r--p 00019000 00:1e 110703                     /usr/lib/libOpenGL.so.0.0.0\n7f562e499000-7f562e49e000 r--p 0001e000 00:1e 110703                     /usr/lib/libOpenGL.so.0.0.0\n7f562e49e000-7f562e49f000 rw-p 00023000 00:1e 110703                     /usr/lib/libOpenGL.so.0.0.0\n7f562e49f000-7f562e4a1000 r--p 00000000 00:1e 110697                     /usr/lib/libGLX.so.0.0.0\n7f562e4a1000-7f562e4bb000 r-xp 00002000 00:1e 110697                     /usr/lib/libGLX.so.0.0.0\n7f562e4bb000-7f562e4be000 r--p 0001c000 00:1e 110697                     /usr/lib/libGLX.so.0.0.0\n7f562e4be000-7f562e4bf000 r--p 0001f000 00:1e 110697                     /usr/lib/libGLX.so.0.0.0\n7f562e4bf000-7f562e4c0000 rw-p 00020000 00:1e 110697                     /usr/lib/libGLX.so.0.0.0\n7f562e4c0000-7f562e4d2000 rw-p 00000000 00:00 0 \n7f562e4d2000-7f562e4f7000 r--p 00000000 00:1e 448372                     /etc/ld.so.cache\n7f562e4f7000-7f562e4fb000 r--p 00000000 00:00 0                          [vvar]\n7f562e4fb000-7f562e4fd000 r--p 00000000 00:00 0                          [vvar_vclock]\n7f562e4fd000-7f562e4ff000 r-xp 00000000 00:00 0                          [vdso]\n7f562e4ff000-7f562e500000 r--p 00000000 00:1e 3425                       /usr/lib/ld-linux-x86-64.so.2\n7f562e500000-7f562e52d000 r-xp 00001000 00:1e 3425                       /usr/lib/ld-linux-x86-64.so.2\n7f562e52d000-7f562e53c000 r--p 0002e000 00:1e 3425                       /usr/lib/ld-linux-x86-64.so.2\n7f562e53c000-7f562e53e000 r--p 0003d000 00:1e 3425                       /usr/lib/ld-linux-x86-64.so.2\n7f562e53e000-7f562e53f000 rw-p 0003f000 00:1e 3425                       /usr/lib/ld-linux-x86-64.so.2\n7f562e53f000-7f562e540000 rw-p 00000000 00:00 0 \n7ffde9b35000-7ffde9b58000 rw-p 00000000 00:00 0                          [stack]\nffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]\n",
+  "guardedBeforeAfter": true
+}

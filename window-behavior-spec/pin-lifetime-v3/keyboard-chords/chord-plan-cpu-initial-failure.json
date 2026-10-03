@@ -1,0 +1,60 @@
+{
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--plan",
+        "--chord",
+        "super-p"
+      ],
+      "returncode": 0,
+      "stdout": "{\"cpuOnly\":true,\"keymapSHA256\":\"bac3cf32ec492636e40269802a13285515e138069fa0405284397404599b11ee\",\"keymapBytes\":35572,\"plan\":[{\"symbol\":65515,\"wire\":125,\"xkb\":133,\"name\":\"LWIN\",\"state\":1,\"modsDepressed\":64,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":true},{\"symbol\":112,\"wire\":25,\"xkb\":33,\"name\":\"AD10\",\"state\":1,\"modsDepressed\":64,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":false},{\"symbol\":112,\"wire\":25,\"xkb\":33,\"name\":\"AD10\",\"state\":0,\"modsDepressed\":64,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":false},{\"symbol\":65515,\"wire\":125,\"xkb\":133,\"name\":\"LWIN\",\"state\":0,\"modsDepressed\":0,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":true}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--plan",
+        "--chord",
+        "super-ctrl-t"
+      ],
+      "returncode": 0,
+      "stdout": "{\"cpuOnly\":true,\"keymapSHA256\":\"bac3cf32ec492636e40269802a13285515e138069fa0405284397404599b11ee\",\"keymapBytes\":35572,\"plan\":[{\"symbol\":65515,\"wire\":125,\"xkb\":133,\"name\":\"LWIN\",\"state\":1,\"modsDepressed\":64,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":true},{\"symbol\":65507,\"wire\":29,\"xkb\":37,\"name\":\"LCTL\",\"state\":1,\"modsDepressed\":68,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":true},{\"symbol\":116,\"wire\":20,\"xkb\":28,\"name\":\"AD05\",\"state\":1,\"modsDepressed\":68,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":false},{\"symbol\":116,\"wire\":20,\"xkb\":28,\"name\":\"AD05\",\"state\":0,\"modsDepressed\":68,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":false},{\"symbol\":65507,\"wire\":29,\"xkb\":37,\"name\":\"LCTL\",\"state\":0,\"modsDepressed\":64,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":true},{\"symbol\":65515,\"wire\":125,\"xkb\":133,\"name\":\"LWIN\",\"state\":0,\"modsDepressed\":0,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":true}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--plan",
+        "--chord",
+        "menu"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "Exact whole physical plan refused before connection/input\n"
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--plan",
+        "--chord",
+        "return"
+      ],
+      "returncode": 0,
+      "stdout": "{\"cpuOnly\":true,\"keymapSHA256\":\"bac3cf32ec492636e40269802a13285515e138069fa0405284397404599b11ee\",\"keymapBytes\":35572,\"plan\":[{\"symbol\":65293,\"wire\":28,\"xkb\":36,\"name\":\"RTRN\",\"state\":1,\"modsDepressed\":0,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":false},{\"symbol\":65293,\"wire\":28,\"xkb\":36,\"name\":\"RTRN\",\"state\":0,\"modsDepressed\":0,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":false}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--plan",
+        "--chord",
+        "escape"
+      ],
+      "returncode": 0,
+      "stdout": "{\"cpuOnly\":true,\"keymapSHA256\":\"bac3cf32ec492636e40269802a13285515e138069fa0405284397404599b11ee\",\"keymapBytes\":35572,\"plan\":[{\"symbol\":65307,\"wire\":1,\"xkb\":9,\"name\":\"ESC\",\"state\":1,\"modsDepressed\":0,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":false},{\"symbol\":65307,\"wire\":1,\"xkb\":9,\"name\":\"ESC\",\"state\":0,\"modsDepressed\":0,\"modsLatched\":0,\"modsLocked\":0,\"group\":0,\"modifierTransition\":false}]}\n",
+      "stderr": ""
+    }
+  ],
+  "nativeLaunched": false
+}

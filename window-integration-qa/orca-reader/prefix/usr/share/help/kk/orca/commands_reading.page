@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_reading" xml:lang="kk">
+  <info>
+    <link type="next" xref="commands_structural_navigation"/>
+    <link type="guide" xref="commands#reading_documents"/>
+    <link type="seealso" xref="howto_documents"/>
+    <link type="seealso" xref="howto_text_attributes"/>
+    <link type="seealso" xref="howto_whereami"/>
+    <title type="sort">1. Оқу</title>
+    <title type="link">Оқу</title>
+    <desc>Құжат мазмұнына қол жеткізу командалары</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Оқу командалары</title>
+  <p>GNOME құрамына кіретін каретка навигациясы командаларына қоса, <app>Orca</app> құжатты оқу үшін пайдалануға болатын бірқатар командаларды ұсынады.</p>
+  <note style="tip">
+    <p>Төменде "KP" туралы бірнеше сілтемелерді көресіз. Барлық "KP" пернелері сандық пернетақтада орналасқан. Сондай-ақ, жұмыс үстелін немесе ноутбукті пайдалануыңызға немесе дәлірек айтқанда <app>Orca</app>-ның жұмыс үстелі пернетақта жаймасын немесе ноутбук пернетақта жаймасын пайдалануыңызға байланысты әртүрлі пернелер тіркесімдері бар екенін байқайсыз. Қосымша ақпарат алу үшін <link xref="howto_keyboard_layout">Пернетақта жаймасы</link> тақырыбын қараңыз.</p>
+  </note>
+  <section id="flat_review">
+    <title>Ағымдағы орналасқан жеріңізді оқу</title>
+    <p>Келесі <app>Orca</app> <link xref="commands_flat_review">Жалпақ шолу командаларын</link> ағымдағы орналасқан жеріңізді оқу үшін пайдалануға болады:</p>
+    <list>
+      <item>
+        <p>Ағымдағы жолды оқу:</p>
+        <list>
+          <item>
+            <p>Жұмыс үстелі: <keyseq><key>KP 8</key></keyseq></p>
+          </item>
+          <item>
+            <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>I</key></keyseq></p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Ағымдағы сөзді оқу:</p>
+        <list>
+          <item>
+            <p>Жұмыс үстелі: <keyseq><key>KP 5</key></keyseq></p>
+          </item>
+          <item>
+            <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>K</key></keyseq></p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Ағымдағы сөзді әріптеп оқу:</p>
+        <list>
+          <item>
+            <p>Жұмыс үстелі: <keyseq><key>KP 5</key></keyseq> (екі рет шертілген)</p>
+          </item>
+          <item>
+            <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>K</key></keyseq> (екі рет шертілген)</p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Ағымдағы сөзді фонетикалық әріптеп оқу:</p>
+        <list>
+          <item>
+            <p>Жұмыс үстелі: <keyseq><key>KP 5</key></keyseq> (үш рет шертілген)</p>
+          </item>
+          <item>
+            <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>K</key></keyseq> (үш рет шертілген)</p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Ағымдағы таңбаны оқу:</p>
+        <list>
+          <item>
+            <p>Жұмыс үстелі: <keyseq><key>KP 2</key></keyseq></p>
+          </item>
+          <item>
+            <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Comma</key></keyseq></p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Ағымдағы таңбаны фонетикалық дыбыстау:</p>
+        <list>
+          <item>
+            <p>Жұмыс үстелі: <keyseq><key>KP 2</key></keyseq> (екі рет шертілген)</p>
+          </item>
+          <item>
+            <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Comma</key></keyseq> (екі рет шертілген)</p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Ағымдағы таңбаның Unicode мәнін дыбыстау:</p>
+        <list>
+          <item>
+            <p>Жұмыс үстелі: <keyseq><key>KP 2</key></keyseq> (үш рет шертілген)</p>
+          </item>
+          <item>
+            <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Comma</key></keyseq> (үш рет шертілген)</p>
+          </item>
+        </list>
+      </item>
+    </list>
+  </section>
+  <section id="say_all">
+    <title>Барлығын айту</title>
+    <p>Orca-ның "Барлығын айту" командасы <app>Orca</app>-ға ағымдағы орналасқан жеріңізден бастап бүкіл құжатты дыбыстауға мәжбүр етеді.</p>
+    <list>
+      <item>
+        <p>Жұмыс үстелі: <key>KP Plus</key></p>
+      </item>
+      <item>
+        <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Semicolon</key></keyseq></p>
+      </item>
+    </list>
+  </section>
+  <section id="attributes_and_selection">
+    <title>Мәтін атрибуттары және таңдалған мәтін</title>
+    <p><app>Orca</app> бағдарламасында каретка орналасқан жерде мәтін атрибуттарын алуға арналған арнайы команда бар. Сонымен қатар, егер сіз мәтін таңдалған мәтіндік объектінің ішінен <app>Orca</app>-ның "Мен қайдамын" командаларын пайдалансаңыз, <app>Orca</app> таңдалған мәтінді хабарлайды. <app>Orca</app>-ның ағымдағы таңдауды дыбыстау командасы мәтіндік объектіде осы функцияны орындайды.</p>
+    <list>
+      <item>
+        <p>Мәтін атрибуттарын көрсету: <keyseq><key>Orca модификаторы</key><key>F</key></keyseq></p>
+      </item>
+      <item>
+        <p>Негізгі "Мен қайдамын" функциясын орындау:</p>
+        <list>
+          <item>
+            <p>Жұмыс үстелі: <key>KP Enter</key></p>
+          </item>
+          <item>
+            <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Return</key></keyseq></p>
+          </item>
+        </list>
+    </item>
+    <item>
+      <p>Толық "Мен қайдамын" функциясын орындау:</p>
+      <list>
+        <item>
+          <p>Жұмыс үстелі: <key>KP Enter</key> (екі рет шертілген)</p>
+        </item>
+        <item>
+          <p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Return</key></keyseq> (екі рет шертілген)</p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Ағымдағы таңдауды дыбыстау: <keyseq><key>Orca модификаторы</key><key>Shift</key><key>Up</key></keyseq></p>
+    </item>
+  </list>
+  </section>
+  <section id="link_details">
+    <title>Сілтеме мәліметтері</title>
+    <p>Егер сіз сілтемеде болсаңыз, <app>Orca</app>-ның негізгі "Мен қайдамын" командасын сілтеме түрі, сілтемеге кірген-кірмегеніңіз, сайт сипаттамасы және файл өлшемі сияқты сілтемеге қатысты мәліметтерді хабарлау үшін пайдалануға болады. Осы мақсатта арнайы команданы қаласаңыз, <app>Orca</app>-ның "Сілтеме мәліметтерін айту" командасын пернелер тіркесіміне тағайындауға болады. Оны қалай жасау керектігі туралы ақпаратты <link xref="howto_key_bindings">Пернелер тіркесімдерін өзгерту</link> бөлімінен қараңыз.</p>
+    <list>
+      <item>
+        <p>Сілтеме мәліметтерін айту: (Тағайындалмаған)</p>
+      </item>
+    </list>
+  </section>
+  <section id="browse_and_focus_modes">
+    <title>Шолу және фокус режимдері</title>
+    <p><app>Orca</app>-ның Шолу және Фокус режимдері веб-мазмұнды оқу мен онымен әрекеттесу арасында ауысуға мүмкіндік береді.</p>
+    <list>
+      <item>
+        <p>Шолу режимі мен фокус режимі арасында ауысу: <keyseq><key>Orca модификаторы</key><key>A</key></keyseq></p>
+      </item>
+      <item>
+        <p>Жабысқақ фокус режимін іске қосу: <keyseq><key>Orca модификаторы</key><key>A</key></keyseq> (екі рет шертілген)</p>
+      </item>
+      <item>
+        <p>Жабысқақ шолу режимін іске қосу: <keyseq><key>Orca модификаторы</key><key>A</key></keyseq> (үш рет шертілген)</p>
+      </item>
+    </list>
+  </section>
+  <section id="toggling_layout_mode">
+    <title>Жайма режимін ауыстыру</title>
+    <p>Жайма режимі іске қосылғанда, <app>Orca</app>-ның каретка навигациясы мазмұнның экрандағы жаймасын ескеріп, толық жолды, соның ішінде сол жолдағы кез келген сілтемелерді немесе пішін өрістерін көрсетеді. Жайма режимі сөндірілгенде, <app>Orca</app> сілтемелер мен пішін өрістері сияқты объектілерді көрсету мен навигация үшін бөлек жолдарда тұрғандай қарастырады.</p>
+    <p><app>Orca</app> Жайма режимі мен Объектілік режим арасында ауысу командасын ұсынады. Бұл команда әдепкі бойынша тағайындалмаған. Тағайындалмаған командаларды тағайындау туралы ақпаратты <link xref="howto_key_bindings">Пернелер тіркесімдерін өзгерту</link> бөлімінен қараңыз.</p>
+    <list>
+      <item>
+        <p>Жайма режимі мен Объектілік режим арасында ауысу: (Тағайындалмаған)</p>
+      </item>
+    </list>
+  </section>
+</page>

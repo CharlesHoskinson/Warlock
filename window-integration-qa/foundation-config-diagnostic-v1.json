@@ -1,0 +1,13 @@
+{
+  "command": [
+    "Hyprland",
+    "--verify-config",
+    "--config",
+    "/home/hoskinson/window-integration-qa/private-graphics-foundation-v2/nested-foundation.lua"
+  ],
+  "sourceSHA256": "2aadb09b9afc3be0183bda4721e3a8e73c7e7d3c563b21979b6e1fbf4d8fc51a",
+  "exitCode": 0,
+  "stdout": "\u001b[1;32mDEBUG \u001b[0m]: User-specified config location: '/home/hoskinson/window-integration-qa/private-graphics-foundation-v2/nested-foundation.lua'\n\u001b[1;32mDEBUG \u001b[0m]: [cfg] Config is either explicit or special.\n\u001b[1;32mDEBUG \u001b[0m]: [cfg] Config is lua, loading lua mgr\n\u001b[1;32mDEBUG \u001b[0m]: Disabling stdout logs (debug.enable_stdout_logs = 0). Further logs will be written to /hyprland.log\n\n\n======== Config parsing result:\n\nconfig ok\n",
+  "stderr": "",
+  "nestedLaunched": false
+}

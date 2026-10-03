@@ -1,0 +1,685 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_bus_authority.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_actual_owned_kernel_peer_protocol_fixture_positive (__main__.BusAuthority.test_actual_owned_kernel_peer_protocol_fixture_positive) ... ok\ntest_duplicate_names_refused (__main__.BusAuthority.test_duplicate_names_refused) ... ok\ntest_malformed_pid_refused (__main__.BusAuthority.test_malformed_pid_refused) ... ok\ntest_method_mutation_refused (__main__.BusAuthority.test_method_mutation_refused) ... ok\ntest_other_client_pid_not_browser (__main__.BusAuthority.test_other_client_pid_not_browser) ... ok\ntest_other_uid_refused (__main__.BusAuthority.test_other_uid_refused) ... ok\ntest_preexec_foreign_selector_refused (__main__.BusAuthority.test_preexec_foreign_selector_refused) ... ok\ntest_query_refusal_retained (__main__.BusAuthority.test_query_refusal_retained) ... ok\ntest_stale_root_refused (__main__.BusAuthority.test_stale_root_refused) ... ok\ntest_wrong_actual_peer_refused (__main__.BusAuthority.test_wrong_actual_peer_refused) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.514s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_continuation_evidence.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "..........................\n----------------------------------------------------------------------\nRan 26 tests in 0.353s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/preservation_projection.py",
+        "test_focus_setup.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "....................\n----------------------------------------------------------------------\nRan 20 tests in 0.016s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/preservation_projection.py",
+        "test_geometry_source.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.019s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_keyboard_probe_source.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.008s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_mapping_evidence.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_metrics_diagnostic.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.005s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_nss_inputs.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_owned_metrics_data.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".........................................\n----------------------------------------------------------------------\nRan 41 tests in 0.823s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_owned_shared_data.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "..............................\n----------------------------------------------------------------------\nRan 30 tests in 0.480s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_pipe_fds.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scope\": {\"cgroup\": \"0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7cff080e3d70429288c2d432e3699e24.scope\", \"coreLimit\": 1}, \"cases\": [{\"name\": \"original\", \"passed\": true, \"returncode\": 0, \"readwriteDescriptors\": [3, 4]}, {\"name\": \"destination-swap\", \"passed\": true, \"returncode\": 0, \"readwriteDescriptors\": [3, 4]}, {\"name\": \"high\", \"passed\": true, \"returncode\": 0, \"readwriteDescriptors\": [3, 4]}], \"browserExecuted\": false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/preservation_projection.py",
+        "test_press_receipt.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "....................................\n----------------------------------------------------------------------\nRan 36 tests in 0.301s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_private_bus.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_exact_owned_command (__main__.PrivateBus.test_exact_owned_command) ... ok\ntest_foreign_command_refused (__main__.PrivateBus.test_foreign_command_refused) ... ok\ntest_foreign_config_refused (__main__.PrivateBus.test_foreign_config_refused) ... ok\ntest_foreign_socket_refused (__main__.PrivateBus.test_foreign_socket_refused) ... ok\ntest_no_activation_paths (__main__.PrivateBus.test_no_activation_paths) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_process_evidence.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_ambiguous_title (__main__.ProcessEvidence.test_ambiguous_title) ... ok\ntest_conflicting_roles (__main__.ProcessEvidence.test_conflicting_roles) ... ok\ntest_disabled_sandbox (__main__.ProcessEvidence.test_disabled_sandbox) ... ok\ntest_duplicate_role (__main__.ProcessEvidence.test_duplicate_role) ... ok\ntest_exact_vector (__main__.ProcessEvidence.test_exact_vector) ... ok\ntest_exited_record_retained_not_renderer (__main__.ProcessEvidence.test_exited_record_retained_not_renderer) ... ok\ntest_flattened_title (__main__.ProcessEvidence.test_flattened_title) ... ok\ntest_host_network_refused (__main__.ProcessEvidence.test_host_network_refused) ... ok\ntest_missing_terminator (__main__.ProcessEvidence.test_missing_terminator) ... ok\ntest_no_new_privileges_refused (__main__.ProcessEvidence.test_no_new_privileges_refused) ... ok\ntest_padded_title (__main__.ProcessEvidence.test_padded_title) ... ok\ntest_real_sandbox_fields (__main__.ProcessEvidence.test_real_sandbox_fields) ... ok\ntest_seccomp_refused (__main__.ProcessEvidence.test_seccomp_refused) ... ok\ntest_snapshot_captures_lifetime_race (__main__.ProcessEvidence.test_snapshot_captures_lifetime_race) ... ok\ntest_snapshot_retains_unreadable_and_raw_bytes (__main__.ProcessEvidence.test_snapshot_retains_unreadable_and_raw_bytes) ... ok\ntest_uid_refused (__main__.ProcessEvidence.test_uid_refused) ... ok\ntest_unreadable_live_refused (__main__.ProcessEvidence.test_unreadable_live_refused) ... ok\ntest_value_not_role (__main__.ProcessEvidence.test_value_not_role) ... ok\ntest_wrong_executable (__main__.ProcessEvidence.test_wrong_executable) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_protocol.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_dom_needs_exact_session (__main__.Protocol.test_dom_needs_exact_session) ... ok\ntest_event_before_reply (__main__.Protocol.test_event_before_reply) ... ok\ntest_external_ipv4_refused (__main__.Protocol.test_external_ipv4_refused) ... ok\ntest_external_ipv6_refused (__main__.Protocol.test_external_ipv6_refused) ... ok\ntest_fragmented_actual_reply (__main__.Protocol.test_fragmented_actual_reply) ... ok\ntest_mutation_refused_before_any_write (__main__.Protocol.test_mutation_refused_before_any_write) ... ok\ntest_no_external_route (__main__.Protocol.test_no_external_route) ... ok\ntest_public_query_result_not_ack (__main__.Protocol.test_public_query_result_not_ack) ... ok\ntest_wrong_command_reply_refused (__main__.Protocol.test_wrong_command_reply_refused) ... ok\ntest_wrong_session_refused (__main__.Protocol.test_wrong_session_refused) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_retained_mapping_inputs.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.969s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_runtime_inputs.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_anonymous_memfd_not_disk (__main__.RuntimeInputs.test_anonymous_memfd_not_disk) ... ok\ntest_cache_allowance_escaped_runtime (__main__.RuntimeInputs.test_cache_allowance_escaped_runtime) ... ok\ntest_cache_exec (__main__.RuntimeInputs.test_cache_exec) ... ok\ntest_cache_nonexec (__main__.RuntimeInputs.test_cache_nonexec) ... ok\ntest_changed_bytes (__main__.RuntimeInputs.test_changed_bytes) ... ok\ntest_changed_mode (__main__.RuntimeInputs.test_changed_mode) ... ok\ntest_deleted_disk (__main__.RuntimeInputs.test_deleted_disk) ... ok\ntest_duplicate_refused (__main__.RuntimeInputs.test_duplicate_refused) ... ok\ntest_exact_frozen_disk (__main__.RuntimeInputs.test_exact_frozen_disk) ... ok\ntest_exact_instance (__main__.RuntimeInputs.test_exact_instance) ... ok\ntest_inode_changed (__main__.RuntimeInputs.test_inode_changed) ... ok\ntest_runtime_other_data (__main__.RuntimeInputs.test_runtime_other_data) ... ok\ntest_same_path_different_pid_refused (__main__.RuntimeInputs.test_same_path_different_pid_refused) ... ok\ntest_same_pid_other_config_refused (__main__.RuntimeInputs.test_same_pid_other_config_refused) ... ok\ntest_symlink_escape (__main__.RuntimeInputs.test_symlink_escape) ... ok\ntest_unfrozen_disk (__main__.RuntimeInputs.test_unfrozen_disk) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.006s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/test_viewport_witness.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "............................\n----------------------------------------------------------------------\nRan 28 tests in 0.035s\n\nOK\n"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/draft_focus_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  draft_focus_test\n    ok exposedFilesRaisesWithoutLosingDraftTest passed 1 test(s)\n    ok privateReloadPreservesIndependentDraftTest passed 1 test(s)\n    ok staleFilesPeerCannotRaiseTest passed 1 test(s)\n\n  3 passing (34ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/draft_focus.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (516ms at 3876 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/runtime_authority_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  runtime_authority_test\n    ok exactDiskTest passed 1 test(s)\n    ok changedBytesTest passed 1 test(s)\n    ok changedModeTest passed 1 test(s)\n    ok cacheDataTest passed 1 test(s)\n    ok runtimeExecutableRefusedTest passed 1 test(s)\n    ok otherRuntimeRefusedTest passed 1 test(s)\n    ok staleOwnedRefusedTest passed 1 test(s)\n    ok deletedRefusedTest passed 1 test(s)\n\n  8 passing (53ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/runtime_authority.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (390ms at 5128 traces/second).\nUse --seed=0x1509c45 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/bus_authority_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  bus_authority_test\n    ok ownedPositiveTest passed 1 test(s)\n    ok preexecMismatchTest passed 1 test(s)\n    ok execMismatchTest passed 1 test(s)\n    ok lifetimeMismatchTest passed 1 test(s)\n    ok scopeMismatchTest passed 1 test(s)\n    ok foreignDaemonTest passed 1 test(s)\n    ok replacedSocketTest passed 1 test(s)\n    ok foreignBusClientTest passed 1 test(s)\n    ok foreignClientUidTest passed 1 test(s)\n\n  9 passing (45ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/bus_authority.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (268ms at 7463 traces/second).\nUse --seed=0x14d8f69 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/process_evidence_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  process_evidence_test\n    ok strictPositiveTest passed 1 test(s)\n    ok incompleteRefusedTest passed 1 test(s)\n    ok staleRefusedTest passed 1 test(s)\n    ok unownedRefusedTest passed 1 test(s)\n    ok unknownRoleRefusedTest passed 1 test(s)\n    ok noSandboxRefusedTest passed 1 test(s)\n    ok privilegeRefusedTest passed 1 test(s)\n    ok hostNetworkRefusedTest passed 1 test(s)\n\n  8 passing (46ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/process_evidence.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (249ms at 8032 traces/second).\nUse --seed=0x14a828d --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/mapping_evidence_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  mapping_evidence_test\n    ok acceptedRetainedTest passed 1 test(s)\n    ok missingClosureRetainedTest passed 1 test(s)\n    ok unreadableRetainedTest passed 1 test(s)\n    ok staleLifetimeRetainedTest passed 1 test(s)\n    ok allErrorsRetainedTest passed 1 test(s)\n    ok noValidationBeforeSaveTest passed 1 test(s)\n\n  6 passing (38ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/mapping_evidence.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (321ms at 6231 traces/second).\nUse --seed=0x14205b1 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/data_provenance_proposal_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  data_provenance_proposal_test\n    ok exactDataTest passed 1 test(s)\n    ok executableRefusedTest passed 1 test(s)\n    ok writableVmaRefusedTest passed 1 test(s)\n    ok unownedConsumerRefusedTest passed 1 test(s)\n    ok unrelatedProducerRefusedTest passed 1 test(s)\n    ok wrongPeerRefusedTest passed 1 test(s)\n    ok staleLifetimeRefusedTest passed 1 test(s)\n    ok changedFdRefusedTest passed 1 test(s)\n    ok missingFdRefusedTest passed 1 test(s)\n    ok wrongUidModeRefusedTest passed 1 test(s)\n    ok ordinaryDiskRefusedTest passed 1 test(s)\n    ok arbitraryDeletedPathRefusedTest passed 1 test(s)\n    ok unboundedUnpinnedRefusedTest passed 1 test(s)\n    ok offsetOrRangeRefusedTest passed 1 test(s)\n    ok ambiguousMountRefusedTest passed 1 test(s)\n    ok writableProducerFdRefusedTest passed 1 test(s)\n    ok mode600RefusedTest passed 1 test(s)\n    ok mode400RefusedTest passed 1 test(s)\n    ok mode200RefusedTest passed 1 test(s)\n    ok setuidRefusedTest passed 1 test(s)\n    ok setgidRefusedTest passed 1 test(s)\n    ok stickyRefusedTest passed 1 test(s)\n    ok allSpecialAndPermissionsRefusedTest passed 1 test(s)\n\n  23 passing (231ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/data_provenance_proposal.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (613ms at 3263 traces/second).\nUse --seed=0x17229b9 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/data_provenance_lifecycle_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  data_provenance_lifecycle_test\n    ok stableAcceptedTest passed 1 test(s)\n    ok consumerReplacedBeforeCommitTest passed 1 test(s)\n    ok producerReplacedBeforeCommitTest passed 1 test(s)\n    ok fdReplacedBeforeCommitTest passed 1 test(s)\n    ok vmaChangedBeforeCommitTest passed 1 test(s)\n    ok peerChangedBeforeCommitTest passed 1 test(s)\n    ok acceptedConsumerInvalidationTest passed 1 test(s)\n    ok acceptedProducerInvalidationTest passed 1 test(s)\n    ok acceptedFdInvalidationTest passed 1 test(s)\n    ok acceptedVmaInvalidationTest passed 1 test(s)\n    ok recaptureFreshIdentityTest passed 1 test(s)\n    ok invalidEvidenceRefusedTest passed 1 test(s)\n\n  12 passing (82ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/data_provenance_lifecycle.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (269ms at 7435 traces/second).\nUse --seed=0x1405c07 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/runtime_metrics_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  runtime_metrics_test\n    ok exactRuntimeDataTest passed 1 test(s)\n    ok beforeOnlyRefusedTest passed 1 test(s)\n    ok missingDiskConfirmationTest passed 1 test(s)\n    ok directConfirmationRefusedTest passed 1 test(s)\n    ok lifetimeReplacementRefusedTest passed 1 test(s)\n    ok laterReplacementInvalidatesTest passed 1 test(s)\n    ok duplicateFdRefusedTest passed 1 test(s)\n    ok readOnlyFdRefusedTest passed 1 test(s)\n    ok wrongModeRefusedTest passed 1 test(s)\n    ok specialModeRefusedTest passed 1 test(s)\n    ok linkedDiskRefusedTest passed 1 test(s)\n    ok executableAliasRefusedTest passed 1 test(s)\n    ok executableMappingRefusedTest passed 1 test(s)\n    ok wrongProfileRefusedTest passed 1 test(s)\n    ok wrongFilenameRefusedTest passed 1 test(s)\n    ok unownedBrowserRefusedTest passed 1 test(s)\n    ok unpinnedSourceRefusedTest passed 1 test(s)\n    ok wrongSizeRefusedTest passed 1 test(s)\n    ok wrongRangeRefusedTest passed 1 test(s)\n    ok staleSnapshotRefusedTest passed 1 test(s)\n    ok invalidationRemovesAuthorityTest passed 1 test(s)\n    ok fdNumberReplacementTest passed 1 test(s)\n    ok deviceTokenReplacementTest passed 1 test(s)\n    ok inodeTokenReplacementTest passed 1 test(s)\n    ok mountTokenReplacementTest passed 1 test(s)\n    ok profileTokenReplacementTest passed 1 test(s)\n    ok parentTokenReplacementTest passed 1 test(s)\n    ok rootTokenReplacementTest passed 1 test(s)\n    ok executableTokenReplacementTest passed 1 test(s)\n    ok snapshotTokenReplacementTest passed 1 test(s)\n    ok mappingTokenReplacementTest passed 1 test(s)\n    ok fullFlagsReplacementTest passed 1 test(s)\n    ok stalePartialAfterChangeTest passed 1 test(s)\n    ok staleConfirmedAfterChangeTest passed 1 test(s)\n    ok invalidatedGenerationCannotResumeTest passed 1 test(s)\n    ok fdNumberConfirmReplacementTest passed 1 test(s)\n    ok deviceTokenConfirmReplacementTest passed 1 test(s)\n    ok inodeTokenConfirmReplacementTest passed 1 test(s)\n    ok mountTokenConfirmReplacementTest passed 1 test(s)\n    ok profileTokenConfirmReplacementTest passed 1 test(s)\n    ok parentTokenConfirmReplacementTest passed 1 test(s)\n    ok rootTokenConfirmReplacementTest passed 1 test(s)\n    ok executableTokenConfirmReplacementTest passed 1 test(s)\n    ok snapshotTokenConfirmReplacementTest passed 1 test(s)\n    ok mappingTokenConfirmReplacementTest passed 1 test(s)\n    ok targetTokenConfirmReplacementTest passed 1 test(s)\n    ok fullFlagsConfirmReplacementTest passed 1 test(s)\n    ok pathFdRefusedTest passed 1 test(s)\n    ok mutableDataExcludedTest passed 1 test(s)\n    ok targetTokenReplacementTest passed 1 test(s)\n    ok exactDetachedParentTest passed 1 test(s)\n    ok parentPresentToAbsentTest passed 1 test(s)\n    ok parentAbsentToPresentConfirmTest passed 1 test(s)\n    ok detachedStalePartialInvalidatedTest passed 1 test(s)\n    ok detachedConfirmedChangedEpochTest passed 1 test(s)\n    ok absencePermissionErrorRefusedTest passed 1 test(s)\n    ok absenceUnknownErrorRefusedTest passed 1 test(s)\n    ok fabricatedHistoricalParentRefusedTest passed 1 test(s)\n    ok fabricatedHistoricalModeRefusedTest passed 1 test(s)\n    ok unknownParentStateRefusedTest passed 1 test(s)\n    ok symlinkParentRefusedTest passed 1 test(s)\n    ok danglingSymlinkParentRefusedTest passed 1 test(s)\n    ok specialParentRefusedTest passed 1 test(s)\n    ok detachedUnownedProfileRefusedTest passed 1 test(s)\n    ok detachedParentPathReplacementTest passed 1 test(s)\n    ok detachedLiveProfileReplacementTest passed 1 test(s)\n    ok detachedLiveRuntimeReplacementTest passed 1 test(s)\n    ok presentSpecialParentModeRefusedTest passed 1 test(s)\n    ok detachedLiveRuntimeVerifyReplacementTest passed 1 test(s)\n    ok invalidRuntimeTokenRefusedTest passed 1 test(s)\n\n  70 passing (3932ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/runtime_metrics.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (594ms at 3367 traces/second).\nUse --seed=0x156b5fd --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/viewport_geometry_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  viewport_geometry_test\n    ok exactPairTest passed 1 test(s)\n    ok beforePairRefusedTest passed 1 test(s)\n    ok syntheticRefusedTest passed 1 test(s)\n    ok staleSequenceRefusedTest passed 1 test(s)\n    ok wrongTranslationRefusedTest passed 1 test(s)\n    ok buttonsRefusedTest passed 1 test(s)\n    ok wrongLifetimeRefusedTest passed 1 test(s)\n    ok sessionChangeRevokesTest passed 1 test(s)\n    ok layoutChangeRevokesTest passed 1 test(s)\n    ok surfaceChangeRevokesTest passed 1 test(s)\n    ok basisChangeRevokesTest passed 1 test(s)\n    ok focusOrDraftChangeRefusedTest passed 1 test(s)\n    ok wrongHitRefusedTest passed 1 test(s)\n    ok nonfiniteRefusedTest passed 1 test(s)\n    ok outOfBoundsRefusedTest passed 1 test(s)\n    ok duplicatePointRefusedTest passed 1 test(s)\n    ok touchRefusedTest passed 1 test(s)\n    ok nonprimaryRefusedTest passed 1 test(s)\n    ok invalidationRevokesTest passed 1 test(s)\n    ok modifierRefusedTest passed 1 test(s)\n    ok captureRefusedTest passed 1 test(s)\n    ok oldQueuedTimestampRefusedTest passed 1 test(s)\n    ok unpreparedRefusedTest passed 1 test(s)\n    ok timeOriginReplacementRevokesTest passed 1 test(s)\n\n  24 passing (696ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/viewport_geometry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (1049ms at 1907 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/coordinate_representation_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  coordinate_representation_test\n    ok integerExactTest passed 10000 test(s)\n    ok halfAwayTest passed 10000 test(s)\n    ok belowHalfTest passed 10000 test(s)\n    ok aboveHalfTest passed 10000 test(s)\n    ok fractionalExactTest passed 10000 test(s)\n    ok zeroDenominatorRefusedTest passed 10000 test(s)\n    ok surfaceEdgeRefusedTest passed 10000 test(s)\n    ok integerInteriorTest passed 10000 test(s)\n    ok fractionalCommandNotInteriorAuthorityTest passed 10000 test(s)\n\n  9 passing (1454ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/coordinate_representation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (427ms at 4684 traces/second).\nUse --seed=0x13e4f1d --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/pointer_syntax_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pointer_syntax_test\n    ok exactIntegersTest passed 1 test(s)\n    ok fractionalFirstRefusedTest passed 1 test(s)\n    ok fractionalSecondRefusedTest passed 1 test(s)\n    ok missingFirstRefusedTest passed 1 test(s)\n    ok missingSecondRefusedTest passed 1 test(s)\n    ok extraTokenRefusedTest passed 1 test(s)\n    ok nonfiniteRefusedTest passed 1 test(s)\n    ok booleanRefusedTest passed 1 test(s)\n    ok negativeRefusedTest passed 1 test(s)\n    ok xExtentRefusedTest passed 1 test(s)\n    ok yExtentRefusedTest passed 1 test(s)\n    ok injectionTextRefusedTest passed 1 test(s)\n\n  12 passing (85ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/pointer_syntax.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (547ms at 3656 traces/second).\nUse --seed=0x13e4f1d --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/focus_setup_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  focus_setup_test\n    ok setupThenSwappedMotionsTest passed 1 test(s)\n    ok motionsWithoutSetupRefusedTest passed 1 test(s)\n    ok ackWithoutFocusRefusedTest passed 1 test(s)\n    ok refusedAckTest passed 1 test(s)\n    ok wrongPointerOwnerTest passed 1 test(s)\n    ok heldInputRefusedTest passed 1 test(s)\n    ok lifetimeChangedDuringSetupTest passed 1 test(s)\n    ok staleOwnerTest passed 1 test(s)\n    ok stalePidTest passed 1 test(s)\n    ok staleStartTest passed 1 test(s)\n    ok staleSessionTest passed 1 test(s)\n    ok zeroMotionRefusedTest passed 1 test(s)\n    ok unchangedOneAxisRefusedTest passed 1 test(s)\n    ok lostFocusBetweenMovesTest passed 1 test(s)\n    ok lostPointerBetweenMovesTest passed 1 test(s)\n    ok stalePageSessionMoveTest passed 1 test(s)\n    ok staleEventRefusedTest passed 1 test(s)\n    ok translationMismatchRefusedTest passed 1 test(s)\n    ok finalFocusLossRefusesPressTest passed 1 test(s)\n    ok finalLifetimeChangeRefusesPressTest passed 1 test(s)\n    ok setupIsNeverClickAcceptanceTest passed 1 test(s)\n\n  21 passing (684ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/focus_setup.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (891ms at 2245 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/press_receipt_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  press_receipt_test\n    ok captureBeforeReactiveMutationTest passed 1 test(s)\n    ok pressedFalseDoesNotLoseSameClickTest passed 1 test(s)\n    ok noPressRefusedTest passed 1 test(s)\n    ok queryIsNeverPressAuthorityTest passed 1 test(s)\n    ok canceledRefusedTest passed 1 test(s)\n    ok destroyedRefusedTest passed 1 test(s)\n    ok replacedComponentRefusedTest passed 1 test(s)\n    ok newPressRevokesOldGenerationTest passed 1 test(s)\n    ok newPressCanClickItsOwnGenerationTest passed 1 test(s)\n    ok duplicateClickRefusedTest passed 1 test(s)\n    ok wrongOwnerRefusedTest passed 1 test(s)\n    ok wrongButtonRefusedTest passed 1 test(s)\n    ok wrongModifiersRefusedTest passed 1 test(s)\n    ok syntheticClickRefusedTest passed 1 test(s)\n    ok syntheticPressRefusedTest passed 1 test(s)\n    ok invisibleDisabledPressRefusedTest passed 1 test(s)\n    ok unsupportedPressButtonRefusedTest passed 1 test(s)\n    ok modifiedPressRefusedTest passed 1 test(s)\n    ok emptyIdentityRefusedTest passed 1 test(s)\n    ok repeatedGenerationRefusedTest passed 1 test(s)\n\n  20 passing (838ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/press_receipt.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (708ms at 2825 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/continuation_diagnostic_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  continuation_diagnostic_test\n    ok matchingOriginalOracleTest passed 1 test(s)\n    ok ackNotDeliveryTest passed 1 test(s)\n    ok retainedNoDeliveryRefusedTest passed 1 test(s)\n    ok wrongTextRefusedTest passed 1 test(s)\n    ok wrongCaretRefusedTest passed 1 test(s)\n    ok missingTrustedInputRefusedTest passed 1 test(s)\n    ok coreAndSeatSeparateEvidenceTest passed 1 test(s)\n    ok absentSeatNeverRepairedFromCoreTest passed 1 test(s)\n    ok staleWindowRefusedTest passed 1 test(s)\n    ok staleSessionRefusedTest passed 1 test(s)\n    ok readErrorRevokesTest passed 1 test(s)\n    ok lifetimeChangeRevokesTest passed 1 test(s)\n\n  12 passing (343ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v17/continuation_diagnostic.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (638ms at 3135 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "pythonTests": 288,
+  "quintNamed": 237,
+  "originalModels": 7,
+  "inheritedModels": 8,
+  "models": 14,
+  "tracesPerModel": 2000,
+  "maxSteps": 100,
+  "sourceSHA256": {
+    "CONTRACT.md": "db34c8a34efb3bf9454f930679332c9aaa1d4ffe4a79f5ca657849824ce258be",
+    "DATA_PROVENANCE_PROPOSAL.md": "9b8a9fe5321db140a3892653700c4906c4aa6a3fc047bbe7c0cd69de2280586b",
+    "METRICS_SOURCE_REVIEW.md": "3bc06f13701d72c0a1ff6a63a1e561a7d13b1be84017aaccd65b8d44a784928c",
+    "README.md": "6d9dbd2a9a8ba576bbf9417c6050e90aa6ddc121f528940dd44c4c7bd8cf3b16",
+    "V10_CONTRACT.md": "6c6aa6c138fa3ed5fa881eae71dd220d0f61299b207eff9c075d55332d93c86b",
+    "V11_CONTRACT.md": "985e76dff1311886310c67c8c3dee8dffbe1061742b56ace666aef7e424b7916",
+    "V12_CONTRACT.md": "17793c9015356f9aa28e14e86d0c838d65bce87dfbaffa0c333fd78ece6dfcf2",
+    "V13_CONTRACT.md": "3e38e0d94aa0dfd2997b5e8b00b9464c936a5bdd19faf5474b05d49d50d4a62d",
+    "V14_GEOMETRY_CONTRACT.md": "9779460d6c2eefb2622e442189ef0f12f95aa93d77ab8e9110cfcc4b13ecc31e",
+    "V14_SOURCE_REVIEW.md": "2359da0a9f5c433ff730c8a5709adf49107cc417db13c34f8bf803c2c3fef751",
+    "V15_CONTRACT.md": "6ded8c2b3e3e5da88597f423892274eb1417f3c8ed2ba301a6f87c76d908affb",
+    "V15_SOURCE_REVIEW.md": "5d928380f5f84a3b2fa35a6efe1c73e307eb56c4de526a7b90cf72634791648e",
+    "V16_CONTRACT.md": "8a27383cd1af35247e45cc02d04f507090e061b95fa58df5a1dc071d97e90e8d",
+    "V16_SOURCE_REVIEW.md": "8d5f6f6337d88546c013129e7d0c7cf1bf1bc0dd50043fe3eec17a691ce4e455",
+    "V17_CONTRACT.md": "a7a213d4420c2eb167fd87ccad896149aca72b0533b76f7b988b9d83f33c109f",
+    "browser_exec.py": "a68ea4df04dd6379050ad66e6d3952e5577fa7f6d07341288c9af69e809f055e",
+    "bus_authority.py": "10e4e6d32039c121b131d207e6ad84d251cf61817b0f93d63ac6bf1218f89d11",
+    "bus_authority.qnt": "2beb0ab1bf93852c73cd72a3bf600b43419c87e5dcfac59accbc344ddd977ab1",
+    "bus_authority_test.qnt": "5cb2bc26ff526e817bf5949f33e0f255176e2277a38e144b2c44ce13abd5addc",
+    "catalog_preservation.py": "c579d169e9b7093331fd4b78d015cc9fbbcd38c9ceb3772aef1bd0f5056fc54d",
+    "cdp_readonly.py": "aed83ef32b0c8d3babfb4c50a2159847a542c2f4db67a43c057b2b864b98f3e1",
+    "continuation-primary-InputManager.cpp": "feedf32e2e3d23aeaed7a02ef4ab94be2d66f4b22873b3166026da1e9ece4765",
+    "continuation_diagnostic.qnt": "ef5f9ebdca04e31d4e8e6716d3503457198d93a07e5cc5a5cbfec49e0a48e8a6",
+    "continuation_diagnostic_test.qnt": "ee310df97fd49739fd167c04892dd957147058aafeac9530baa739d6e188edf4",
+    "continuation_evidence.py": "708c29ea83410a86f35ef13767e56a78cc59ccd1cf64cba8e7b6d11fca5e8737",
+    "coordinate_representation.qnt": "914e260a498079bd6f01a813688a122a6adc8fd7b74463cccd6d52663bfee75b",
+    "coordinate_representation_test.qnt": "9bcb24dd9a380cf36c934a03e73d1970f4e853923d8357030f8051e75cdb13e4",
+    "cursor_readiness.py": "de16de255e3f029ebeb417ce11586dd255ee53959af5e769bfb98271f3a0074d",
+    "data_provenance_lifecycle.qnt": "3ba8f6b9f815ca1b90b9c906fd7fd7f475419553678e8ceb46e670f7520d8c90",
+    "data_provenance_lifecycle_test.qnt": "1ce6f146cfcd1a45d51fbf4211939794d4ae35b0235cd1eb1534d825e8970e36",
+    "data_provenance_proposal.qnt": "d9dddd36211ed103244079748f6de4571f5f2279522135314d79657ceaaf1331",
+    "data_provenance_proposal_test.qnt": "f416784e2dd07dd4ce7bd341e024b875f72fb565b4c1754f2e95148fc487d8b7",
+    "draft_focus.qnt": "f1e4d522e5665c47e36c95918e77c9771a314dcfb2fcbd75e5d08d18a08b6ba6",
+    "draft_focus_test.qnt": "29955b178596bf37589574e0a4caaac63a6073d033bc60ec1e738afac3d73600",
+    "files-app/Commons/Data.qml": "4888a3b664c48af9fa22f51934bebe38020ae913e057d44d93bb0b6c9ee674ca",
+    "files-app/Commons/Fs.qml": "2dccf4f9c7f9856e63e0dac4426fab0485270fb1816d2a4b1dbf0d18c4bda079",
+    "files-app/Commons/Lister.qml": "d3b5e038bf46ecbdb41056c5159765fbbe7912db6aabe5a44fd37b4bb23dbca3",
+    "files-app/Commons/Theme.qml": "5f1e8a24580fc3bdd80c04443d854dc76cbf60a1a3ab974d81a03c3d8cef6bd1",
+    "files-app/Commons/Thumbs.qml": "fac09c63cd2104d66102b01ceb4a12319482dffc85886c9ab02874b929190dda",
+    "files-app/PressReceipt.js": "706127731dae1370f93a3f47ea38751f9beaaffd38dccc39e00e846b72e0cdfd",
+    "files-app/Ui/Btn.qml": "b3bf56f01f79db488a2db1166e93bc4507522db256bab4847ac2dfcf9c6669e3",
+    "files-app/Ui/Chip.qml": "18e0ace558870491852f27461e7abc2d45974ba6dc306396fc69060d40b5f922",
+    "files-app/Ui/ContextMenu.qml": "8e0af8bb8eb18305d7a886df28b6ce4dc47961648b188c6004110c71d893b993",
+    "files-app/Ui/Ico.qml": "7b2db1f4651f1ba388183036e752d45df8fba299b58b3d7ffcc448aaf7577e9d",
+    "files-app/Ui/Label.qml": "c48db6eb8cefe7fa9702bbac861c0cd5621f55eb1980b81fda0acb137f886b66",
+    "files-app/Ui/Prompt.qml": "745833f64fefebfe316eecc7758c023f9f2c99bf2201c609921c80c0e33226f9",
+    "files-app/Ui/Section.qml": "a7d97c708295760f9a09d40984d7a4381331ea9d9b88956edbb5bb90bcda541e",
+    "files-app/Ui/Slider.qml": "c03c1749ddfca296a91bbf30970d47ac5edfa180eedcf6e26c395f4651bcc8ad",
+    "files-app/Ui/Thumb.qml": "662010e2ebd1a60b05aec200a53b42c5ef310d6ae89750d9f82fd7f0480200dd",
+    "files-app/explorer/Cell.qml": "d0da41b493041d6111680f8585bdc4081a016fd8f6ec79e1592671eae61f9d9f",
+    "files-app/explorer/Dashboard.qml": "c20a25f0c45eed8e5ff9580e08da27abac09dedd7d723cc52d3d0760d25aa585",
+    "files-app/explorer/Detail.qml": "a415763b2fef5fbd9faf1cc3908cd9c1e1087c6b1812b1e871d4e6ea96c0a6be",
+    "files-app/explorer/Explorer.qml": "c4c1cdfd5c8d95d989edc183ae37bd3cc36f5917d1c15c471fa019ba640a3958",
+    "files-app/explorer/FileArea.qml": "a572e7db3ca46dfff4046768ab4484e82f5a9213bea5ddb70fb40911f439804b",
+    "files-app/explorer/Lightbox.qml": "9519c9fa5ce742cfa56e27c80d965b076e0d421174fdee477d984390f873e3cc",
+    "files-app/explorer/PathBar.qml": "3cad2e6d2448ae774d4b395b4de888b458ae2ed280887f0a3e2732e0513591de",
+    "files-app/explorer/ScrollBar_.qml": "0b96e375f982b9d636edd9538742a5cacf887f980746fc3536ab09150281f691",
+    "files-app/explorer/Tree.qml": "80f88b797191c72b0ae24a60c4b42512269ba5d4bd275201de9351146479164b",
+    "files-app/explorer/Treemap.qml": "c95c24079da385b8aa8554eeb739a5ee6954f8ab3440551edddd38549729ae09",
+    "files-app/shell.qml": "e5679aceb4380d232569d028efa46c2128dbaea669c0458ca943a1bc0311a838",
+    "files-app/spec/fileops.qnt": "ba116b777b98d9cb2f9d6b8b3adfdf2958fdeffc6f11548faae805b6b6cf5974",
+    "files-app/spec/launcher.qnt": "f389fc7b12b6a6b6bf77563b334790bf9ea1e91550c60449e620af38c9aa4ae2",
+    "files-app/spec/mbt.py": "0dc9a534e8c5cc3e1de83297209f675d93dd11fb7538e6191238ef55dd57e567",
+    "files-app/spec/mbt_launcher.py": "6334bf16bfbf11486decec0a5022bbddfd420a71165dd48e8ca25074abd220e4",
+    "files-app/widget/Widget.qml": "5570b4a1cdf91b6f822450adffe26356f04c13c433e97563d4e29602edf554ed",
+    "focus-primary-ConfigActions.cpp": "a83abeb57175e65908d8d67ddc9802310134e5a4752fa3764f980401b48a7637",
+    "focus-primary-LuaBindingsDispatchers.cpp": "a109eeb982856e0fe2ac9d88c29115a09984511787e19a20e7b4804e14a9d4de",
+    "focus-primary-LuaBindingsToplevel.cpp": "706b29eb52de087c1d6e64770cf85fb3ebc0f2fbe9ddcff086905499bcd332f5",
+    "focus_setup.py": "b7e33aeba3906d077f7a670d089590db7db5b69415ffe76e9a625bf9611c3a95",
+    "focus_setup.qnt": "049890dfea2d59de24ca4fd86976a27010f746b4eb0aa708cffcf63da228b5b2",
+    "focus_setup_test.qnt": "bb74974afc795b6dcc77c42b9678a887ea4d3611f9dafd686600e08cb0d3c5bc",
+    "freeze_packet.py": "2809a746b34266a063a3f29d3f7e7bf7ec4eeb388241370ae7dc8a4c713269b8",
+    "loader_closure.py": "1d2cc005f22b9ab067ec180ff62512240d6de522e433f35031874acba7aa7166",
+    "logical_geometry.py": "be7db0d2bbc11ee77bfc6451d60cd0193ce15ae2f9a2cd6ab24f1baf00b069b0",
+    "main_observations.py": "6ee015e72931d75464a694c040a91f003ea845f9b6fac81ea9ef8b83c9b17e72",
+    "main_observer.py": "e5dc952a3ae3f2b9b2bd881d604c885a52b7005f80941b77f114ad0c4437e62e",
+    "mapping_evidence.py": "29560e771758b740121f1041212f79fb94c387245c8d6d6111e14b8f4febc436",
+    "mapping_evidence.qnt": "d2e3fd25c755617d617b8616bff724156acd55912151c05e51d93bffb221bda9",
+    "mapping_evidence_test.qnt": "721b11903eaff78bb7d11d692b8c88b0a92f144b8d8e503c92ff9ffeff1fc70b",
+    "metrics-first-model/runtime_metrics.qnt": "267c74f4435f26b16bd28698738130f6544ce50fd69b83850978b985e4bf9606",
+    "metrics-first-model/runtime_metrics_test.qnt": "a45cf180c7274937d525860915149d58a24c588f2d31e9b25d9a4fb19c3bb467",
+    "metrics_diagnostic.py": "6a4f3cdb72adc5e0fc3bd042390c526b7dbfffb0378f7b3dd278696b27d56d0b",
+    "metrics_offline.py": "c5ad9c44649644a2f95e19162a9c2cc47d9d1a4df5102aef88174d0e9578378b",
+    "namespace_probe.py": "040f0b48d38d9290e36a263f495fc9660d22c06b2ad8bc7e409953a76e648c19",
+    "native-keyboard-probe/CONTRACT.md": "f28e7d79f0e1c2ae1b70543a5412fe7b3d8a376484373803fcc86365f08f0337",
+    "native-keyboard-probe/build.py": "58e420c1b5ad30a72e02d492e369c1b49f031b7024b73be2865b5e029d9745d9",
+    "native-keyboard-probe/probe.cpp": "5918fb08acdf14a53b640fd4f2a44c680cb9cf784d8cf967ef3300e0f3c7037d",
+    "network_guard.py": "fd0f6b9369555763913236ae8b9220f67f84f40f836b32aa2b37e9bbc8f85603",
+    "nss_inputs.py": "8424af50eec3f82b1e2c64d9dcf408664f5a1e571476add5353dced7a0cd8d12",
+    "owned_metrics_data.py": "563647132ff06cbacd40482d2eeac9cbfe34cd1892fb3c4b654f98e8c386bf50",
+    "owned_shared_data.py": "f55bdb1b3acf0613fb5510b1146f1445b3d82d87b5aafe64670e0000d937ad62",
+    "pointer_syntax.qnt": "3e82785fa58f6b5eba95207ee8dcd3cf315f4858a8695ddcfb8f8c274a3fc9e2",
+    "pointer_syntax_test.qnt": "f3e6d0245a029f7bddc9f2a8612cda112cbd9e202eb1138662f1be777f3400fd",
+    "prepare_files.py": "1a9ba5e5bd31d8b6ffd76ce83f8a5804b101cb1d752b17fe7898c391afc64df1",
+    "prepare_geometry_formal.py": "3aa637e181f143ffe8a84c34c547010bf8ed3ba81f7f77583eb931e028ffcaff",
+    "prepare_offline_report.py": "fd1f1fbaa360f6452d80527f74707269e6e2c3b659c59847cc6ca28a5bbba5b9",
+    "prepare_stage_review.py": "7e39a1f7f921785de198c5bc6a1b848613f33cb309f8db2b668706db59f8f50b",
+    "preservation_projection.py": "ec6d9faf0c9060edee11ac0083b3481dd52d24ac5bc49126db07fb9e1bbcb5b6",
+    "press_receipt.qnt": "ea923d0f3c88005b99420645544718f59716deedad3272e00ad65dfb8612298e",
+    "press_receipt_test.qnt": "bfc68c220e7cd0a2213b5b4e7fd7c10596bafac7f0ec5543bb863b1bc787364d",
+    "primary/EXIT_VFS_CONTRACT.md": "39edd9a3106786de16fc1e208d53c863a651b608d747c7228ff32ccce28cc407",
+    "primary/geometry-hyprland-v0.56.2-Seat.cpp": "cc23bb8b4f1e44cd46ab278e5353275dbb03adfe3955393af64c7b828ed0818d",
+    "primary/hyprland-0.56.2-ikeyboard.cpp": "8a800efe9baa7f375a3781744372eecd98a88be2c4bedaae96c90a1102a1aa3d",
+    "primary/hyprland-0.56.2-miscfunctions.cpp": "065418241a3b40e21273bca1fd29036221942554cddb61e08422d86f0a13c1d9",
+    "primary/hyprland-ikeyboard.cpp": "6f10977565d8b513e77813ea305d27c60c5882b784d9688f094fd97e76bd7be4",
+    "primary/hyprland-miscfunctions.cpp": "34a677cb6f99442ecdbe1ae4b77391625bd55298ae739412ede63614f6bc5060",
+    "primary/qtbase-v6.11.2-inputdevice.cpp": "b7d69a34cdd41fc037485feb2a8a636431eb663f22218d0f06f8119e5122d36c",
+    "private_bus_host.py": "060505066365dbd1b4dc4e0083fe6f86824fce28a272f48f4605c2e3028aaacb",
+    "private_desktop.py": "5957431c9290dd25e72683019a96802043bc4a97c075b5e11325760c9cdfb482",
+    "private_session.py": "21b0bbf43db3a2c8be90978729c250e79645a8cbd1b355194d95d84d3fafa626",
+    "private_target.py": "5033887f21d959e5b406c8b16bb33af90f0e26047dcd15d31e0f947ace8b740a",
+    "process_evidence.py": "cf3057af05838679efd15af106d33441a547bd8801b6f6ac1276a91b327a1592",
+    "process_evidence.qnt": "bc095d66acefa1a5b093cc470086b2137df7ad6042ee43e250565a8f9a459394",
+    "process_evidence_test.qnt": "c4925af4978a08b6ab1119ab277d0b8553f01cfed97611619834cf3d598dc37a",
+    "receipt-fixture.qml": "ed32d12328fb7f9eb05972a123ead8e6d20e177f3d04db0095a3be0838e17493",
+    "receipt_cpu.cpp": "69cb1e44778068a76838b65363b3833934da7c8eec55fa53d2bc72a97f7132d6",
+    "retained-v12-source-checkpoint/METRICS_SOURCE_REVIEW.md": "2f31658ffc9388a1f44b89d58acc3b8e73efbb1d51741539e397830636add27f",
+    "retained-v12-source-checkpoint/V12_CONTRACT.md": "17793c9015356f9aa28e14e86d0c838d65bce87dfbaffa0c333fd78ece6dfcf2",
+    "retained-v12-source-checkpoint/metrics_offline.py": "5aed5689e715aa40dcf6e601d2e1e30a7f56d29900017555cc25ad516a76107a",
+    "retained-v12-source-checkpoint/owned_metrics_data.py": "eb65d3c17e0875c07a300ab2f4d65595d1dc71f65c90f6296869cea8b2ea7f74",
+    "retained-v12-source-checkpoint/runtime_metrics.qnt": "0f15611bd7fd3f54b938a2d2bd09e63bd2b07f3f41900512da91efcbd516887d",
+    "retained-v12-source-checkpoint/runtime_metrics_test.qnt": "ddfab8ac860b977939e6e89fb3755af2185641135e478bc3dcda62dc159b5a5e",
+    "retained-v12-source-checkpoint/test_owned_metrics_data.py": "1a02acc6b2ffa0d001b835c1bda76f98bef1d1cbda609e1e14e477fdbb067903",
+    "retained_mapping_inputs.py": "4de493da995595310b72b5dc9be57853f70982a2d78716f227945ed73c5b966d",
+    "run_native.py": "150f5f59fb1b4c785e635a2cca5f0c3b18323da326b25731f28c1bfd82ced1df",
+    "runtime_authority.qnt": "bd7a0dcdbafdc61a7d9852be64852aece2b92cf6ccdf737423d9ac5b607182a6",
+    "runtime_authority_test.qnt": "cf355fc4ee3f8aff1c3278ccdb8d37a6f26026d546e2cd1706a6a821cbd0be06",
+    "runtime_inputs.py": "4b18ec031e0e15f7f8a5c225a70c812e38c5d47f2638c6904459f012b80f7356",
+    "runtime_metrics.qnt": "5359e84b1b4e5964c8e0eb8c80226151e7bea4e1ca52bcbe2860e62a9e2101ec",
+    "runtime_metrics_test.qnt": "b81d66b6a317639c72ae1b722e8306fb57fe1cadf8af197790b0a8c667efd6fe",
+    "test_bus_authority.py": "936a0a45c7d3e7023a2eef00290eecca087dc65031254103eee30d03eb80bc96",
+    "test_continuation_evidence.py": "baad20194f6b0e201d4787a5c2d17b8cb8facf1e438dbb605429566b87099d9f",
+    "test_focus_setup.py": "193dcd4f65e2779ba9bbc2a064ef287e8140e87220e6405e0cf31ffd39b11d3e",
+    "test_geometry_source.py": "2bd4864d59c46a510e2968d0f0f9ca7378cd3478baad2bea606e0f3e2cfe0193",
+    "test_keyboard_probe_source.py": "8be915ac347eb57b426389c567310f5c70ff74a7d094f59a2d06678b8545ad8a",
+    "test_mapping_evidence.py": "470ef26f77f35d89a62f217eb3939c5eaba344bd5c0f998c5d40c5bc6d096b56",
+    "test_metrics_diagnostic.py": "70a3de1d1352cfbac2f050d031c862cd9c0c0c0ea7d49d72bb71a806b1f067a1",
+    "test_nss_inputs.py": "9bf453718483ff7915ab70f2df71f435d506d0da4079261f9d9ded4c8d549f8c",
+    "test_owned_metrics_data.py": "f5ac69ee3e78f195a20a89e1038e3b2f011a413ee2ac9ff6f665bb965beeb452",
+    "test_owned_shared_data.py": "41c8346939449dee8145fa17a79b14656815cfdf047c6f2f62659582ee962ccf",
+    "test_pipe_fds.py": "60ec1119d607cfc6ff933c7e54fbc4a25319a3f52735f52c0336f29f8cad2b91",
+    "test_press_receipt.py": "adf7a9d20c383ba7766c11bb808491df3e5aeb18c373277b85590e98806ad327",
+    "test_private_bus.py": "f3032663c93cd2f1a8f28f2d435e31dab7d848121fc5a7f1198924225c432193",
+    "test_process_evidence.py": "e88c522c55db628eac956f6f9abba5472bb3b7a7b999de69c40a47b1ef9bfcb7",
+    "test_protocol.py": "504a2b4b54293ef752ef5f35d7f29936982bbfedeb3ac25390d9033f07113356",
+    "test_retained_mapping_inputs.py": "788db7490de0988f59196b6c1cb8a4c279696cb784516fab4c77b1eca6301736",
+    "test_runtime_inputs.py": "0f7040b3e6de3c740fe839d47a85a58ef7c00271fe36ea1342cf82bbad0e8a39",
+    "test_viewport_witness.py": "caf2651caf4f389848d607fb117b031854e17e31f043ed18633169c3591cbe66",
+    "viewport_geometry.qnt": "01904330a32a70be9e6c2374e940a5f48653e97fe73848b0bde3456217a890b4",
+    "viewport_geometry_test.qnt": "c5682084683d639ffba0f5544ab674d0e7ee630e8bb68831bfdb328ab86992fb",
+    "viewport_witness.py": "edfaa37bd13bfc26d921893a8e700c400b22a1f40bb4793b8187e8bdee4560fd"
+  },
+  "sourceUnchangedDuringTests": true,
+  "cpuOnly": true,
+  "nativeGuiExecuted": false,
+  "mainGUIWrites": false,
+  "elapsedSeconds": 30.73779389000265
+}

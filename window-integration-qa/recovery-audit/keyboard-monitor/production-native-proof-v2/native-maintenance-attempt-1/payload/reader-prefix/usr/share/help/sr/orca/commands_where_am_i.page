@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_where_am_i" xml:lang="sr">
+  <info>
+    <link type="next" xref="commands_time_date_notifications"/>
+    <link type="guide" xref="commands#getting_started"/>
+    <link type="seealso" xref="howto_whereami"/>
+    <title type="sort">3. Где се налазим</title>
+    <title type="link">Где се налазим</title>
+    <desc>Наредбе за сазнавање вашег места</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Наредбе „Где се налазим“</title>
+  <p><app>Оркина</app> функција „Где се налазим“ вам даје детаље зависне од контекста о вашем тренутном месту. На пример, у табелама, „Где се налазим“ ће вам дати детаље о ћелији табеле у којој се налазите, али у тексту ће изговорити тренутни ред заједно са било којим текстом који је изабран. Цео списак онога што можете очекивати да <app>Орка</app> изговори можете пронаћи у <link xref="howto_whereami">Уводу у „Где се налазим“</link>.</p>
+  <p><app>Орка</app> пружа следеће наредбе „Где се налазим“:</p>
+  <list>
+    <item>
+      <p>Изврши основни „Где сам“:</p>
+      <list>
+        <item>
+          <p>Радна површина: <key>Ентер на нумеричкој тастатури</key></p>
+        </item>
+        <item>
+          <p>Преносни рачунар: <keyseq><key>Оркин измењивач</key><key>Return</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Изврши детаљни „Где сам“:</p>
+      <list>
+        <item>
+          <p>Радна површина: <key>Ентер на нумеричкој тастатури</key> (двоструки клик)</p>
+        </item>
+        <item>
+          <p>Преносни рачунар: <keyseq><key>Оркин измењивач</key><key>Return</key></keyseq> (двоструки клик)</p>
+        </item>
+      </list>
+    </item>
+  </list>
+  <p>Поред наменских наредби „Где се налазим“, <app>Орка</app> има и додатне наредбе које се односе на добијање података о вашем тренутном месту:</p>
+  <list>
+    <item>
+      <p>Изговори насловну траку:</p>
+      <list>
+        <item>
+          <p>Стони рачунар: <keyseq><key>Оркин измењивач</key><key>БТ Ентер</key></keyseq></p>
+        </item>
+        <item>
+          <p>Преносни рачунар: <keyseq><key>Оркин измењивач</key><key>Коса црта</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Изговори траку стања:</p>
+      <list>
+        <item>
+          <p>Стони рачунар: <keyseq><key>Оркин измењивач</key><key>БТ Ентер</key></keyseq> (двоструки клик)</p>
+        </item>
+        <item>
+          <p>Преносни рачунар: <keyseq><key>Оркин измењивач</key><key>Коса црта</key></keyseq> (двоструки клик)</p>
+        </item>
+        <item>
+          <p>Изговори величину и место тренутног објекта у пикселима: (Није додељено)</p>
+        </item>
+      </list>
+    </item>
+  </list>
+</page>

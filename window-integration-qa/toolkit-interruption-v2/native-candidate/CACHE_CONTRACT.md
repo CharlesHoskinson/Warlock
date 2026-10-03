@@ -1,0 +1,7 @@
+# Caption and icon raster cache contract
+
+Raster reuse is allowed only when every input that can change its pixels or raster bounds matches: exact effective render scale, buffer dimensions, title/icon text, font size/weight/font, padding/alignment/max width and effective foreground color. A move at fixed dimensions/configuration can reuse a raster. A scale1→1.5→1 sequence must select the current scale's raster even without a resize. Icon raster ownership is per decoration, preventing one monitor's draw from changing another monitor's image.
+
+An atlas export uses temporary cache state. It can regenerate caption/icons at the export's render scale but restores the exact previous normal texture references, keys, dirty/hover/focus/height/extents flags on every return or exception. It does not populate or clear another decoration's icon cache or shared global button raster. It does not advance animation targets or invoke input hover damage during export. Normal draws re-evaluate the full key before use, so an old restored raster from a different normal scale is never drawn without regeneration.
+
+The failedv16 no-capture scale/move/font comparison is retained. Native v17 acceptance requires all16 strict atlas metadata/pixel checks, stable complete normal controls, exact full RGBA after first and occluded exports, and unchanged original desktop preservation. No mask, prewarming, or equality tolerance replaces those gates.

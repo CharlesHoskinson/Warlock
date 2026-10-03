@@ -1,0 +1,21 @@
+module continuous_integration_test {
+ import continuous_integration.* from "./continuous_integration"
+ action left=fire(Sample(frame(s.token,s.epoch,s.generation,0,12,-4))).then(fire(Submit(s.issued))).then(fire(Swap(true))).then(fire(Feedback({generation:s.generation,epoch:s.epoch})))
+ action right=fire(Sample(frame(s.token,s.epoch,s.generation,1,23,5))).then(fire(Submit(s.issued))).then(fire(Swap(true))).then(fire(Feedback({generation:s.generation,epoch:s.epoch})))
+ run exactRetargetPairTest=init.then(left).then(right).then(fire(Retarget({token:2,lower0:1,upper0:8,lower1:2,upper1:5}))).then(all{assert(s.originPos==List(12,23) and s.originVel==List(-4,5) and s.duration==5 and allProps),fire(Promote)})
+ run repeatedRetargetTest=init.then(left).then(right).then(fire(Retarget({token:2,lower0:1,upper0:8,lower1:2,upper1:5}))).then(left).then(right).then(fire(Retarget({token:3,lower0:1,upper0:7,lower1:2,upper1:4}))).then(all{assert(s.token==3 and s.epoch==3 and s.originVel==List(-4,5) and allProps),fire(Promote)})
+ run earlyFeedbackTest=init.then(fire(Sample(frame(1,1,1,0,12,-4)))).then(fire(Submit(s.issued))).then(fire(Feedback({generation:1,epoch:1}))).then(all{assert(s.accepted==Set()),fire(Swap(true))}).then(all{assert(s.origins.nth(0).vel== -4 and s.accepted==Set(0) and allProps),fire(Promote)})
+ run failedSwapTest=init.then(fire(Sample(frame(1,1,1,0,12,-4)))).then(fire(Submit(s.issued))).then(fire(Feedback({generation:1,epoch:1}))).then(fire(Swap(false))).then(all{assert(not(s.active) and s.accepted==Set() and allProps),fire(Start)})
+ run mutatedVelocityRefusedTest=init.then(fire(Sample(frame(1,1,1,0,12,-4)))).then(fire(Submit({...s.issued,vel:999}))).then(all{assert(not(s.hasPending) and allProps),fire(Promote)})
+ run staleGenerationRefusedTest=init.then(fire(Sample(frame(1,1,2,0,12,-4)))).then(all{assert(not(s.hasIssue) and allProps),fire(Promote)})
+ run staleEpochRefusedTest=init.then(fire(Sample(frame(1,2,1,0,12,-4)))).then(all{assert(not(s.hasIssue) and allProps),fire(Promote)})
+ run wrongOrderRefusedTest=init.then(fire(Sample({...frame(1,1,1,0,12,-4),order:2}))).then(all{assert(not(s.hasIssue) and allProps),fire(Promote)})
+ run staleFeedbackRefusedTest=init.then(fire(Sample(frame(1,1,1,0,12,-4)))).then(fire(Submit(s.issued))).then(fire(Swap(true))).then(fire(Feedback({generation:2,epoch:1}))).then(all{assert(s.accepted==Set() and allProps),fire(Promote)})
+ run partialOriginsRefusedTest=init.then(left).then(fire(Retarget({token:2,lower0:1,upper0:8,lower1:2,upper1:5}))).then(all{assert(s.token==1 and s.epoch==1 and allProps),fire(Promote)})
+ run emptyGlobalIntersectionTest=init.then(left).then(right).then(fire(Promote)).then(fire(Retarget({token:2,lower0:6,upper0:8,lower1:1,upper1:5}))).then(all{assert(s.token==1 and not(s.active) and not(s.promoted) and allProps),fire(Start)})
+ run duplicateStartTest=init.then(left).then(right).then(fire(Promote)).then(fire(Start)).then(fire(Start)).then(all{assert(s.starts==1 and allProps),fire(Start)})
+ run retargetStartAlreadyEstablishedTest=init.then(left).then(right).then(fire(Retarget({token:2,lower0:1,upper0:8,lower1:2,upper1:5}))).then(left).then(right).then(fire(Promote)).then(fire(Start)).then(all{assert(s.starts==1 and allProps),fire(Start)})
+ run discardedFeedbackTest=init.then(left).then(right).then(fire(Promote)).then(fire(Discard)).then(all{assert(not(s.active) and not(s.promoted) and allProps),fire(Start)})
+ run outputReplacementTest=init.then(left).then(right).then(fire(Promote)).then(fire(OutputChange)).then(all{assert(s.generation==2 and not(s.active) and allProps),fire(Start)})
+ run reducedMotionTest=init.then(left).then(right).then(fire(Promote)).then(fire(Reduce)).then(all{assert(not(s.active) and not(s.promoted) and allProps),fire(Start)})
+}

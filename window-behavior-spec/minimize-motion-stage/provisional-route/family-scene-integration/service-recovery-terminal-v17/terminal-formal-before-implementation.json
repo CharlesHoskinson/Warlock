@@ -1,0 +1,49 @@
+{
+  "formalBeforeRuntimeEdits": true,
+  "nativeLaunch": false,
+  "named": 10,
+  "samples": 2000,
+  "maxSteps": 100,
+  "baseManifestSHA256": "2e2cf006d8aef8c27cea8ea0a1d12aca9122f35e4d42ab5570b1816c8e787d8e",
+  "sourceSHA256": {
+    "V17_TERMINAL_CONTRACT.md": "e32b3b5a6d123ec4aba06dd088c0650d80444990ec2397b576cf8963366e8751",
+    "renderer_terminal.qnt": "24cd7c94cfb96e1ce629732607ae7db7dcb67bec250ed23fe4b8f01a7ef26ea8",
+    "renderer_terminal_test.qnt": "10acec5bbbb533cb832219db42398aa80bdaea1c404901235b3efce40f7d3dae",
+    "recovery_runtime.py": "8baacd6ae76560a83f3fea4a77ed19cd9709b01e770fd2bd5e1313546fcf0469",
+    "recovery_resources.py": "ab45ef7ba90371dfab94c95414280ebd3cb45de09b0e98f0ec9b5b6c0d7d3733"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "renderer_terminal_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "renderer_terminal_test.qnt",
+        "--backend=rust",
+        "--seed=2026100117"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "renderer_terminal.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100117",
+        "--verbosity=0"
+      ],
+      "exitCode": 0
+    }
+  ]
+}

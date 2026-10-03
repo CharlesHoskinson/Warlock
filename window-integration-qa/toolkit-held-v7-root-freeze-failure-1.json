@@ -1,0 +1,20 @@
+{
+  "initialCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/freeze_packet.py",
+    "--freeze"
+  ],
+  "initialCwd": "/home/hoskinson/window-integration-qa",
+  "readOnlyDiagnostic": {
+    "command": [
+      "/usr/bin/python3",
+      "-c",
+      "import freeze_packet; freeze_packet.collect()"
+    ],
+    "cwd": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import freeze_packet; freeze_packet.collect()\n                          ~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/freeze_packet.py\", line 53, in collect\n    packet(FRONT,FRONT_SHA)\n    ~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/freeze_packet.py\", line 43, in packet\n    for row in files:add(row['path'],row['sha256'],row.get('mode',oldmodes.get(row['path'])))\n                     ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/freeze_packet.py\", line 30, in add\n    actual=sha(path);actualmode=path.stat().st_mode&0o7777\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/freeze_packet.py\", line 7, in sha\n    def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()\n                                        ~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 777, in read_bytes\n    with self.open(mode='rb', buffering=0) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'window-integration-qa/snap-close-identity-audit-v1/replay.py'\n"
+  },
+  "nativeLaunched": false
+}

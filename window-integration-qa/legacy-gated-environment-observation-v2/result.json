@@ -1,0 +1,2387 @@
+{
+  "nativeLaunch": false,
+  "guardUnchanged": true,
+  "sourceManifestSHA256": "57ef24c0b73d80aa6b2de78366d7a40f21fefc4ca464928f5f6ef27524981b0e",
+  "guardSourceSHA256": "133edcf7b92aaa2f521af90922c571d1637ab8e8c9536a7cf57a6475fa18ce02",
+  "count": 128,
+  "failures": [
+    {
+      "pid": 3340678,
+      "start": 14147887,
+      "expected": {
+        "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+        "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+        "WAYLAND_DISPLAY": "never-connect"
+      },
+      "actualEnvironmentReads": [
+        {
+          "path": "/proc/3340678/environ",
+          "length": 9649,
+          "hash": "071a7a38a5a6f77813a541f21f2e901db899cbe317cdacb4919b62173f78fed1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/run/user/1000",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+            "WAYLAND_DISPLAY": "wayland-1"
+          }
+        }
+      ],
+      "stat": "3340678 (python3) R 3340659 3340659 3340659 0 -1 4194368 3 0 0 0 0 0 0 0 20 0 1 0 14147887 33910784 5114 18446744073709551615 105646028144640 105646028144953 140735508021744 0 0 0 0 0 0 0 0 0 17 21 0 0 0 0 0 105646028156344 105646028156944 105646968860672 140735508027863 140735508027958 140735508027958 140735508037607 0\n",
+      "cmdline": "python3\u0000/home/hoskinson/window-integration-qa/legacy-gated-environment-observation-v2/probe.py\u0000",
+      "syscall": "running\n",
+      "exe": "/usr/bin/python3.14"
+    },
+    {
+      "pid": 3340773,
+      "start": 14148048,
+      "expected": {
+        "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+        "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+        "WAYLAND_DISPLAY": "never-connect"
+      },
+      "actualEnvironmentReads": [
+        {
+          "path": "/proc/3340773/environ",
+          "length": 9649,
+          "hash": "071a7a38a5a6f77813a541f21f2e901db899cbe317cdacb4919b62173f78fed1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/run/user/1000",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+            "WAYLAND_DISPLAY": "wayland-1"
+          }
+        }
+      ],
+      "stat": "3340773 (python3) R 3340659 3340659 3340659 0 -1 4194368 3 0 0 0 0 0 0 0 20 0 1 0 14148048 33910784 5114 18446744073709551615 105646028144640 105646028144953 140735508021744 0 0 0 0 0 0 0 0 0 17 3 0 0 0 0 0 105646028156344 105646028156944 105646968860672 140735508027863 140735508027958 140735508027958 140735508037607 0\n",
+      "cmdline": "python3\u0000/home/hoskinson/window-integration-qa/legacy-gated-environment-observation-v2/probe.py\u0000",
+      "syscall": "running\n",
+      "exe": "/usr/bin/python3.14"
+    },
+    {
+      "pid": 3340851,
+      "start": 14148092,
+      "expected": {
+        "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+        "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+        "WAYLAND_DISPLAY": "never-connect"
+      },
+      "actualEnvironmentReads": [
+        {
+          "path": "/proc/3340851/environ",
+          "length": 9649,
+          "hash": "071a7a38a5a6f77813a541f21f2e901db899cbe317cdacb4919b62173f78fed1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/run/user/1000",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+            "WAYLAND_DISPLAY": "wayland-1"
+          }
+        }
+      ],
+      "stat": "3340851 (python3) R 3340659 3340659 3340659 0 -1 4194368 3 0 0 0 0 0 0 0 20 0 1 0 14148092 33910784 5114 18446744073709551615 105646028144640 105646028144953 140735508021744 0 0 0 0 0 0 0 0 0 17 14 0 0 0 0 0 105646028156344 105646028156944 105646968860672 140735508027863 140735508027958 140735508027958 140735508037607 0\n",
+      "cmdline": "python3\u0000/home/hoskinson/window-integration-qa/legacy-gated-environment-observation-v2/probe.py\u0000",
+      "syscall": "running\n",
+      "exe": "/usr/bin/python3.14"
+    },
+    {
+      "pid": 3340941,
+      "start": 14148126,
+      "expected": {
+        "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+        "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+        "WAYLAND_DISPLAY": "never-connect"
+      },
+      "actualEnvironmentReads": [
+        {
+          "path": "/proc/3340941/environ",
+          "length": 0,
+          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "selected": {
+            "XDG_RUNTIME_DIR": "",
+            "HYPRLAND_INSTANCE_SIGNATURE": "",
+            "WAYLAND_DISPLAY": ""
+          }
+        }
+      ],
+      "stat": "3340941 (python3.14) R 3340659 3340659 3340659 0 -1 4194304 5 0 0 0 0 0 0 0 20 0 1 0 14148126 430080 0 18446744073709551615 0 0 140725644040730 0 0 0 0 0 0 0 0 0 17 4 0 0 0 0 0 0 0 0 140725644040730 0 0 0 0\n",
+      "cmdline": "",
+      "syscall": "running\n",
+      "exe": "/usr/bin/python3.14"
+    },
+    {
+      "pid": 3340957,
+      "start": 14148134,
+      "expected": {
+        "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+        "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+        "WAYLAND_DISPLAY": "never-connect"
+      },
+      "actualEnvironmentReads": [
+        {
+          "path": "/proc/3340957/environ",
+          "length": 9649,
+          "hash": "071a7a38a5a6f77813a541f21f2e901db899cbe317cdacb4919b62173f78fed1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/run/user/1000",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+            "WAYLAND_DISPLAY": "wayland-1"
+          }
+        }
+      ],
+      "stat": "3340957 (python3) R 3340659 3340659 3340659 0 -1 4194368 3 0 0 0 0 0 0 0 20 0 1 0 14148134 33910784 5114 18446744073709551615 105646028144640 105646028144953 140735508021744 0 0 0 0 0 0 0 0 0 17 19 0 0 0 0 0 105646028156344 105646028156944 105646968860672 140735508027863 140735508027958 140735508027958 140735508037607 0\n",
+      "cmdline": "python3\u0000/home/hoskinson/window-integration-qa/legacy-gated-environment-observation-v2/probe.py\u0000",
+      "syscall": "running\n",
+      "exe": "/usr/bin/python3.14"
+    },
+    {
+      "pid": 3341014,
+      "start": 14148165,
+      "expected": {
+        "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+        "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+        "WAYLAND_DISPLAY": "never-connect"
+      },
+      "actualEnvironmentReads": [
+        {
+          "path": "/proc/3341014/environ",
+          "length": 0,
+          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "selected": {
+            "XDG_RUNTIME_DIR": "",
+            "HYPRLAND_INSTANCE_SIGNATURE": "",
+            "WAYLAND_DISPLAY": ""
+          }
+        }
+      ],
+      "stat": "3341014 (python3.14) R 3340659 3340659 3340659 0 -1 4194304 6 0 0 0 0 0 0 0 20 0 1 0 14148165 462848 0 18446744073709551615 0 0 140725282155034 0 0 0 0 0 0 0 0 0 17 4 0 0 0 0 0 0 0 0 140725282155034 140725282155076 140725282155076 140725282155076 0\n",
+      "cmdline": "/usr/bin/python3.14\u0000/proc/self/fd/3\u00005\u00004\u00003\u0000",
+      "syscall": "running\n",
+      "exe": "/usr/bin/python3.14"
+    },
+    {
+      "pid": 3341494,
+      "start": 14148275,
+      "expected": {
+        "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+        "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+        "WAYLAND_DISPLAY": "never-connect"
+      },
+      "actualEnvironmentReads": [
+        {
+          "path": "/proc/3341494/environ",
+          "length": 9649,
+          "hash": "071a7a38a5a6f77813a541f21f2e901db899cbe317cdacb4919b62173f78fed1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/run/user/1000",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+            "WAYLAND_DISPLAY": "wayland-1"
+          }
+        }
+      ],
+      "stat": "3341494 (python3) R 3340659 3340659 3340659 0 -1 4194368 3 0 0 0 0 0 0 0 20 0 1 0 14148275 34959360 5114 18446744073709551615 105646028144640 105646028144953 140735508021744 0 0 0 0 0 0 0 0 0 17 17 0 0 0 0 0 105646028156344 105646028156944 105646968860672 140735508027863 140735508027958 140735508027958 140735508037607 0\n",
+      "cmdline": "python3\u0000/home/hoskinson/window-integration-qa/legacy-gated-environment-observation-v2/probe.py\u0000",
+      "syscall": "running\n",
+      "exe": "/usr/bin/python3.14"
+    },
+    {
+      "pid": 3341870,
+      "start": 14148482,
+      "expected": {
+        "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+        "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+        "WAYLAND_DISPLAY": "never-connect"
+      },
+      "actualEnvironmentReads": [
+        {
+          "path": "/proc/3341870/environ",
+          "length": 9649,
+          "hash": "071a7a38a5a6f77813a541f21f2e901db899cbe317cdacb4919b62173f78fed1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/run/user/1000",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+            "WAYLAND_DISPLAY": "wayland-1"
+          }
+        }
+      ],
+      "stat": "3341870 (python3.14) R 3340659 3340659 3340659 0 -1 4194304 23 0 0 0 0 0 0 0 20 0 1 0 14148482 622592 58 18446744073709551615 95729541672960 95729541673273 140731567087232 0 0 0 0 0 0 0 0 0 17 20 0 0 0 0 0 95729541684664 95729541685264 95730333458432 140731567090202 140731567090244 140731567090244 140731567099876 0\n",
+      "cmdline": "/usr/bin/python3.14\u0000/proc/self/fd/3\u00005\u00004\u00003\u0000",
+      "syscall": "running\n",
+      "exe": "/usr/bin/python3.14"
+    }
+  ],
+  "results": [
+    {
+      "index": 0,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340668/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340671/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340672/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340673/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340674/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340677/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "returned": false,
+      "error": "ValueError('renderer selected environment changed')",
+      "reads": [
+        {
+          "path": "/proc/3340678/environ",
+          "length": 9649,
+          "hash": "071a7a38a5a6f77813a541f21f2e901db899cbe317cdacb4919b62173f78fed1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/run/user/1000",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+            "WAYLAND_DISPLAY": "wayland-1"
+          }
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340686/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340687/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340689/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340692/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340694/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340695/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340703/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340705/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340706/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340707/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340711/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340713/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340714/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340718/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340720/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340726/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340727/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340729/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340730/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340731/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340733/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340745/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340747/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340748/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340750/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340752/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340753/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340754/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340755/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340761/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340764/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340767/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340771/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "returned": false,
+      "error": "ValueError('renderer selected environment changed')",
+      "reads": [
+        {
+          "path": "/proc/3340773/environ",
+          "length": 9649,
+          "hash": "071a7a38a5a6f77813a541f21f2e901db899cbe317cdacb4919b62173f78fed1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/run/user/1000",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+            "WAYLAND_DISPLAY": "wayland-1"
+          }
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340784/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340795/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340798/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340801/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340804/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340818/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340836/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340844/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "returned": false,
+      "error": "ValueError('renderer selected environment changed')",
+      "reads": [
+        {
+          "path": "/proc/3340851/environ",
+          "length": 9649,
+          "hash": "071a7a38a5a6f77813a541f21f2e901db899cbe317cdacb4919b62173f78fed1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/run/user/1000",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+            "WAYLAND_DISPLAY": "wayland-1"
+          }
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340861/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340871/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340874/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340891/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340904/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340930/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340940/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "returned": false,
+      "error": "ValueError('renderer selected environment changed')",
+      "reads": [
+        {
+          "path": "/proc/3340941/environ",
+          "length": 0,
+          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "selected": {
+            "XDG_RUNTIME_DIR": "",
+            "HYPRLAND_INSTANCE_SIGNATURE": "",
+            "WAYLAND_DISPLAY": ""
+          }
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340954/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "returned": false,
+      "error": "ValueError('renderer selected environment changed')",
+      "reads": [
+        {
+          "path": "/proc/3340957/environ",
+          "length": 9649,
+          "hash": "071a7a38a5a6f77813a541f21f2e901db899cbe317cdacb4919b62173f78fed1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/run/user/1000",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+            "WAYLAND_DISPLAY": "wayland-1"
+          }
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340966/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340967/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340968/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3340973/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341000/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "returned": false,
+      "error": "ValueError('renderer selected environment changed')",
+      "reads": [
+        {
+          "path": "/proc/3341014/environ",
+          "length": 0,
+          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "selected": {
+            "XDG_RUNTIME_DIR": "",
+            "HYPRLAND_INSTANCE_SIGNATURE": "",
+            "WAYLAND_DISPLAY": ""
+          }
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341030/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341046/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341062/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341090/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341105/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 71,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341116/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341144/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341166/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 74,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341188/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 75,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341209/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 76,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341245/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 77,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341258/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 78,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341283/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 79,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341299/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 80,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341329/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 81,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341343/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 82,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341371/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 83,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341395/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 84,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341434/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 85,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341455/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 86,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341485/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 87,
+      "returned": false,
+      "error": "ValueError('renderer selected environment changed')",
+      "reads": [
+        {
+          "path": "/proc/3341494/environ",
+          "length": 9649,
+          "hash": "071a7a38a5a6f77813a541f21f2e901db899cbe317cdacb4919b62173f78fed1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/run/user/1000",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+            "WAYLAND_DISPLAY": "wayland-1"
+          }
+        }
+      ]
+    },
+    {
+      "index": 88,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341505/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 89,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341520/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 90,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341525/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 91,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341565/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 92,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341566/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 93,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341571/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 94,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341590/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 95,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341625/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 96,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341648/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 97,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341651/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 98,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341660/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 99,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341681/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 100,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341709/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 101,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341711/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 102,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341712/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 103,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341729/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 104,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341736/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 105,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341741/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 106,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341747/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 107,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341753/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 108,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341760/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 109,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341761/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 110,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341762/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 111,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341765/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 112,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341766/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 113,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341768/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 114,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341778/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 115,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341816/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 116,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341831/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 117,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341844/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 118,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341850/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 119,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341863/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 120,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341869/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 121,
+      "returned": false,
+      "error": "ValueError('renderer selected environment changed')",
+      "reads": [
+        {
+          "path": "/proc/3341870/environ",
+          "length": 9649,
+          "hash": "071a7a38a5a6f77813a541f21f2e901db899cbe317cdacb4919b62173f78fed1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/run/user/1000",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+            "WAYLAND_DISPLAY": "wayland-1"
+          }
+        }
+      ]
+    },
+    {
+      "index": 122,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341877/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 123,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341886/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 124,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341892/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 125,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341893/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 126,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341897/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    },
+    {
+      "index": 127,
+      "returned": true,
+      "code": 0,
+      "reads": [
+        {
+          "path": "/proc/3341899/environ",
+          "length": 9632,
+          "hash": "53981500c721fc39e01c91a64005f011d0fb2d3591efdcc8bd5398cff5878be1",
+          "selected": {
+            "XDG_RUNTIME_DIR": "/tmp/legacy-proc-observation-ebtafwql",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-no-compositor",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      ]
+    }
+  ]
+}

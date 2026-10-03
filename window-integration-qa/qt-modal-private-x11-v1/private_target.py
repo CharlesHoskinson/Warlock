@@ -1,0 +1,34 @@
+"""Strict environment authority for the private Qt fixture; no native actions."""
+from pathlib import Path
+import os,re,stat
+
+def assert_private_environment(main,private,allow_x11=False):
+ for key in ('XDG_RUNTIME_DIR','HYPRLAND_INSTANCE_SIGNATURE'):
+  assert main.get(key) and private.get(key) and main[key]!=private[key],key+' must identify distinct private target'
+ runtime=Path(private['XDG_RUNTIME_DIR']);assert runtime.is_absolute()
+ assert runtime.resolve()!=Path(main['XDG_RUNTIME_DIR']).resolve()
+ for key in ('HOME','XDG_CONFIG_HOME','XDG_CACHE_HOME','XDG_DATA_HOME','XDG_STATE_HOME'):
+  path=Path(private[key]);assert path.is_absolute() and path.resolve().is_relative_to(runtime.resolve()),key+' must be private'
+ for key in ('WAYLAND_SOCKET','AT_SPI_BUS_ADDRESS','SESSION_MANAGER'):
+  assert not private.get(key),key+' must not inherit main handle'
+ if allow_x11:
+  assert re.fullmatch(r':[0-9]+',private.get('DISPLAY','')) and private['DISPLAY']!=main.get('DISPLAY'),'explicit distinct owned X display required'
+  authority=Path(private.get('XAUTHORITY',''));assert authority.is_absolute() and authority.resolve().is_relative_to(runtime.resolve()) and not authority.is_symlink(),'private Xauthority required'
+  info=authority.stat();assert stat.S_ISREG(info.st_mode) and info.st_uid==os.getuid() and stat.S_IMODE(info.st_mode)==0o600,'owned0600 Xauthority required'
+ else:assert not private.get('DISPLAY') and not private.get('XAUTHORITY'),'main X display/authority cannot be inherited'
+ assert not main.get('DBUS_SESSION_BUS_ADDRESS') or private.get('DBUS_SESSION_BUS_ADDRESS')!=main['DBUS_SESSION_BUS_ADDRESS'],'private bus cannot inherit main bus'
+ assert main.get('WAYLAND_DISPLAY') and private.get('WAYLAND_DISPLAY'),'Explicit main/private socket names required'
+ display=Path(private['WAYLAND_DISPLAY'])
+ path=display if display.is_absolute() else runtime/display
+ assert path.resolve().is_relative_to(runtime.resolve()),'private Wayland socket must be inside private runtime'
+ main_display=Path(main['WAYLAND_DISPLAY']);main_path=main_display if main_display.is_absolute() else Path(main['XDG_RUNTIME_DIR'])/main_display
+ assert path.resolve()!=main_path.resolve(),'private socket path must differ from main'
+ assert not path.is_symlink(),'private socket cannot be symlink'
+ return path
+
+def verify_socket(main,private,allow_x11=False):
+ path=assert_private_environment(main,private,allow_x11=allow_x11);st=path.stat()
+ assert stat.S_ISSOCK(st.st_mode) and st.st_uid==os.getuid(),'private socket must be owned user socket'
+ display=Path(main['WAYLAND_DISPLAY']);original=display if display.is_absolute() else Path(main['XDG_RUNTIME_DIR'])/display
+ original_st=original.stat();assert (st.st_dev,st.st_ino)!=(original_st.st_dev,original_st.st_ino)
+ return {'privateSocket':str(path),'privateSocketIdentity':[st.st_dev,st.st_ino],'distinctFromMainSocket':True}

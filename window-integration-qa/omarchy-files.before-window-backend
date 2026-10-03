@@ -1,0 +1,39 @@
+#!/bin/bash
+# Open the Files explorer (Quickshell app in ~/.local/share/omarchy-files).
+# Usage: omarchy-files [path|home|coll:images|coll:recent|...]   (default: home)
+APP="$HOME/.local/share/omarchy-files"
+target="${1:-home}"
+
+# Pull the Files window onto the current workspace (it may be minimized to the
+# scratchpad or sitting on another workspace) and focus it.
+summon() {
+  local pid addr ws cur
+  # Re-resolve the pid on every poll: on a cold start `qs -d` forks, so the pid
+  # seen first (or not yet registered) is not the one that owns the window.
+  for _ in $(seq 30); do
+    pid=$(pgrep -f "^qs -p $APP( |$)" | head -1)
+    if [ -n "$pid" ]; then
+      read -r addr ws < <(hyprctl -j clients | jq -r --argjson p "$pid" \
+        '.[] | select(.pid == $p and .title == "Files") | "\(.address) \(.workspace.name)"' | head -1)
+      [ -n "$addr" ] && break
+    fi
+    sleep 0.1
+  done
+  [ -n "$addr" ] || return 1
+  cur=$(hyprctl -j monitors | jq -r '.[] | select(.focused) | .activeWorkspace.name')
+  if [ "$ws" != "$cur" ]; then
+    hyprctl dispatch "hl.dsp.window.move({ workspace = \"$cur\", follow = false, window = \"address:$addr\" })" >/dev/null
+    # If the scratchpad view is open, close it so the restored window is visible.
+    special=$(hyprctl -j monitors | jq -r '.[] | select(.focused) | .specialWorkspace.name')
+    [ -n "$special" ] && hyprctl dispatch "hl.dsp.workspace.toggle_special(\"${special#special:}\")" >/dev/null
+  fi
+  hyprctl dispatch "hl.dsp.focus({ window = \"address:$addr\" })" >/dev/null
+}
+
+if qs -p "$APP" ipc call files open "$target" >/dev/null 2>&1; then
+  summon
+  exit 0
+fi
+# Not running yet: start it (daemonized) opened at the target.
+FILES_OPEN="$target" setsid qs -p "$APP" -d >/dev/null 2>&1 < /dev/null &
+summon

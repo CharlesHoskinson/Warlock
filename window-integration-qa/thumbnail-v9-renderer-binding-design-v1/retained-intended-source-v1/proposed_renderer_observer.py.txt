@@ -1,0 +1,77 @@
+def typed_json(value):
+    """Strict JSON types: comparing canonical bytes retains bool/int distinction."""
+    def check(v):
+        if type(v) is dict:
+            if any(type(k) is not str for k in v):raise ValueError('exact string JSON keys required')
+            for item in v.values():check(item)
+        elif type(v) is list:
+            for item in v:check(item)
+        elif type(v) not in (str,int,bool,type(None)):raise ValueError('exact JSON scalar/container types required')
+    check(value)
+    return json.dumps(value,sort_keys=True,separators=(',',':'),allow_nan=False)
+
+
+def renderer_owner_types(owner,environment,packet):
+    # Pure metadata decoding. No _closed, poll, /proc, source or material read.
+    import recovery_resources,helper_policy
+    expected={'pid','start','uid','producer','launcher','script','argv','scriptFD','producerFD','targetArgv','mode','interpreter','policy','policySHA256','environment'}
+    if type(owner) is not dict or set(owner)!=expected:raise ValueError('complete modern renderer metadata required')
+    typed_json(owner)
+    if any(type(owner[k]) is not int or owner[k]<1 for k in ('pid','start'))or type(owner['uid']) is not int or owner['uid']!=os.getuid():raise ValueError('typed renderer lifetime/UID required')
+    if any(type(owner[k]) is not int or owner[k]<0 for k in ('scriptFD','producerFD')):raise ValueError('typed renderer descriptor values required')
+    for key,sealed in (('producer',True),('launcher',False),('script',True)):
+        if type(owner[key]) is not dict:raise ValueError('exact renderer material metadata required')
+        recovery_resources.checked_material(owner[key],sealed=sealed)
+    if owner['mode']!='elf'or owner['interpreter']is not None or typed_json(owner['policy'])!=typed_json(helper_policy.POLICY)or owner['policySHA256']!=packet['inputs'][str(SERVICE/'helper_policy.py')]:raise ValueError('exact reviewed owned renderer metadata required')
+    target=[f"/proc/self/fd/{owner['producerFD']}"]
+    if type(owner['targetArgv'])is not list or owner['targetArgv']!=target:raise ValueError('default sealed renderer invocation required')
+    argv=owner['argv']
+    if type(argv)is not list or len(argv)!=8 or any(type(v)is not str for v in argv):raise ValueError('exact renderer launcher arguments required')
+    if argv[1]!=f"/proc/self/fd/{owner['scriptFD']}"or not argv[2].isdigit()or not argv[3].isdigit()or argv[4]!=str(owner['producerFD'])or typed_json(json.loads(argv[5]))!=typed_json(target)or argv[6:]!=['elf','-1']:raise ValueError('exact owned renderer argument binding required')
+    if type(owner['environment'])is not dict or typed_json(owner['environment'])!=typed_json(environment)or any(type(v)is not str or not v for v in owner['environment'].values()):raise ValueError('exact renderer session selectors required')
+
+
+def renderer_observation(factory,number,desktop,transport,packet,*,terminal=False):
+    """Immediate memory/source role observation; exec proof belongs to V24."""
+    import subprocess,batch_preview,pipe_transport,owned_launch,helper_supervisor
+    result={'stable':None,'relations':{},'errors':[]}
+    try:
+        batch=desktop.preview_batch;binding=batch.renderer_binding
+        fields={'transport','launch','process','keeper','job','actor','ownership','producerSHA256','environment'}
+        result['relations']['bindingShape']=type(binding)is dict and set(binding)==fields
+        if not result['relations']['bindingShape']:raise ValueError('exact renderer binding dictionary required')
+        launch=transport.owned_launch;process=transport.process;keeper=desktop.commands.keeper
+        result['relations']['rendererClasses']=(type(transport)is pipe_transport.PipeTransport and type(launch)is owned_launch.OwnedLaunch and type(process)is subprocess.Popen and type(keeper)is helper_supervisor.Keeper)
+        if not result['relations']['rendererClasses']:raise ValueError('canonical actual renderer objects required')
+        # No process/material/source IO is performed under this registry lock.
+        with keeper.lock:
+            environment={k:factory.guard.env[k]for k in ('XDG_RUNTIME_DIR','HYPRLAND_INSTANCE_SIGNATURE','WAYLAND_DISPLAY')}
+            owner=deepcopy(binding['ownership']);renderer_owner_types(owner,environment,packet)
+            result['stable']={'bindingID':id(binding),'transportID':id(binding['transport']),'launchID':id(binding['launch']),'processID':id(binding['process']),'keeperID':id(binding['keeper']),
+                'job':binding['job'],'actor':binding['actor'],'ownership':owner,'producerSHA256':binding['producerSHA256'],'environment':deepcopy(binding['environment']),
+                'keeperRoot':str(keeper.root),'keeperRootIdentity':deepcopy(keeper.ownership['rootIdentity']),'keeperNonce':keeper.nonce,'keeperPID':keeper.ownership['pid'],'keeperStart':keeper.ownership['start']}
+            typed_json(result['stable'])
+            result['relations']['rendererObjectChain']=(binding['transport']is transport and binding['launch']is launch and binding['process']is process and binding['keeper']is keeper and factory.keeper is keeper and launch.keeper is keeper and launch.process is process and keeper.root==factory.root)
+            result['relations']['rendererActorJob']=(type(number)is int and number>0 and type(binding['actor'])is int and binding['actor']==number==desktop.commands.actor and type(desktop.commands.actor)is int and type(binding['job'])is str and re.fullmatch('[0-9a-f]{32}',binding['job'])is not None and launch.job==binding['job'])
+            result['relations']['rendererPopenPID']=(type(process.pid)is int and process.pid==owner['pid']and typed_json(process.args)==typed_json(owner['argv']))
+            result['relations']['rendererSelectedMaterial']=(type(binding['producerSHA256'])is str and binding['producerSHA256']==factory.producer_hash==owner['producer']['sha256']and typed_json(binding['environment'])==typed_json(environment))
+            result['relations']['rendererOwnership']=(typed_json(launch.ownership)==typed_json(owner))
+            result['relations']['keeperOwnedContext']=(all(type(keeper.ownership[k])is int and keeper.ownership[k]>0 for k in ('pid','start','servicePID','serviceStart'))and type(keeper.nonce)is str and re.fullmatch('[0-9a-f]{32}',keeper.nonce)is not None and keeper.ownership['nonce']==keeper.nonce and keeper.ownership['servicePID']==factory.binding_owner['owner']['pid']and keeper.ownership['serviceStart']==factory.binding_owner['owner']['start']and keeper.ownership['root']==str(factory.root)and typed_json(keeper.ownership['rootIdentity'])==typed_json(factory.binding_owner['owner']['rootIdentity'])and typed_json(keeper.ownership['environment'])==typed_json(environment))
+            if terminal:
+                result['relations']['rendererNormalClose']=(transport.closed is True and transport.closing is True and transport.failed is False and transport.close_error is None and launch.closed is True and type(process.returncode)is int and process.returncode==0)
+                result['relations']['rendererRegistrationRetired']=(not keeper.jobs and not keeper.children)
+                result['relations']['keeperNormalStop']=(keeper.closed is True and type(keeper.process.returncode)is int and keeper.process.returncode==0 and keeper.ownership['phase']=='closed'and keeper.ownership['terminal']['normalStop']is True)
+            else:
+                expected={'job':binding['job'],'kind':'renderer','actor':number,'phase':'released','ownership':owner}
+                own=[row for row in keeper.jobs.values()if row.get('actor')==number]
+                result['relations']['rendererRegisteredOwner']=(len(own)==1 and typed_json(own[0])==typed_json(expected)and keeper.children.get(binding['job'])is process)
+                result['relations']['rendererLiveRegistration']=(launch.closed is False and transport.closed is False and transport.closing is False and transport.failed is False and process.returncode is None)
+        for name in ('bind_renderer','_closed','_renderer_matches'):
+            fn=getattr(batch,name,None)
+            result['relations']['rendererGuard.'+name]=(getattr(fn,'__func__',None)is getattr(batch_preview.BatchPreviews,name)and getattr(fn,'__self__',None)is batch)
+        for name in ('_typed_equal','_renderer_witness'):
+            result['relations']['rendererGuard.'+name]=(getattr(batch,name,None)is getattr(batch_preview.BatchPreviews,name))
+        if not all(result['relations'].values()):raise ValueError('actual renderer binding role or ownership differs')
+    except BaseException as failure:result['errors'].append({'type':type(failure).__name__,'message':str(failure)})
+    return result
+

@@ -1,0 +1,114 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f30cc490d31b4cb888f0c1469f78a5d8.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2",
+        "-p",
+        "test*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_actual_group_insert_positive (test_observations.Oracle.test_actual_group_insert_positive) ... ok\ntest_competing_grab_refused (test_observations.Oracle.test_competing_grab_refused) ... ok\ntest_core_captured_exact (test_observations.Oracle.test_core_captured_exact) ... ok\ntest_core_held_blocks_release (test_observations.Oracle.test_core_held_blocks_release) ... ok\ntest_fake_retirement_release_refused (test_observations.Oracle.test_fake_retirement_release_refused) ... ok\ntest_genuine_release_quiescent (test_observations.Oracle.test_genuine_release_quiescent) ... ok\ntest_lifetime_mismatch_refused (test_observations.Oracle.test_lifetime_mismatch_refused) ... ok\ntest_no_group_insert_refused (test_observations.Oracle.test_no_group_insert_refused) ... ok\ntest_nonrelease_focus_theft_refused (test_observations.Oracle.test_nonrelease_focus_theft_refused) ... ok\ntest_nonrelease_group_mutation_refused (test_observations.Oracle.test_nonrelease_group_mutation_refused) ... ok\ntest_retire_held_signal_preserved (test_observations.Oracle.test_retire_held_signal_preserved) ... ok\ntest_retire_target_not_clear_refused (test_observations.Oracle.test_retire_target_not_clear_refused) ... ok\ntest_signal_held_blocks_release (test_observations.Oracle.test_signal_held_blocks_release) ... ok\ntest_wrong_held_button_refused (test_observations.Oracle.test_wrong_held_button_refused) ... ok\ntest_wrong_lifetime_group_insert_refused (test_observations.Oracle.test_wrong_lifetime_group_insert_refused) ... ok\ntest_wrong_mode_refused (test_observations.Oracle.test_wrong_mode_refused) ... ok\ntest_actual_caption_and_group_allocations_not_fixed_offset (test_protocol.Protocol.test_actual_caption_and_group_allocations_not_fixed_offset) ... ok\ntest_exact_owned_non_graphical_input_pipe_transitions_normal_eof (test_protocol.Protocol.test_exact_owned_non_graphical_input_pipe_transitions_normal_eof) ... ok\ntest_native_backend_and_frozen_actual_mapped_module_required (test_protocol.Protocol.test_native_backend_and_frozen_actual_mapped_module_required) ... ok\ntest_public_alias_preserves_actual_nested_source_bytes (test_protocol.Protocol.test_public_alias_preserves_actual_nested_source_bytes) ... ok\ntest_qt_native_origin_and_gtk_actual_transform (test_protocol.Protocol.test_qt_native_origin_and_gtk_actual_transform) ... ok\ntest_reload_generation_requires_prior_helpers_normal_and_retained (test_protocol.Protocol.test_reload_generation_requires_prior_helpers_normal_and_retained) ... ok\ntest_stale_or_outside_allocation_refuses (test_protocol.Protocol.test_stale_or_outside_allocation_refuses) ... ok\ntest_unknown_fixture_commands_refuse_before_guard_or_io (test_protocol.Protocol.test_unknown_fixture_commands_refuse_before_guard_or_io) ... ok\ntest_actual_gated_service_queries_full_eof_unchanged_launcher_and_refusals (test_service_queries.ServiceQueryTests.test_actual_gated_service_queries_full_eof_unchanged_launcher_and_refusals) ... ok\ntest_strict_exact_service_payloads_methods_identity_and_source (test_service_queries.ServiceQueryTests.test_strict_exact_service_payloads_methods_identity_and_source) ... ok\n\n----------------------------------------------------------------------\nRan 26 tests in 0.704s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/frontend-candidate",
+        "-p",
+        "test*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_actual_cli_delegates_v12_once_with_eof (test_frontend.Frontend.test_actual_cli_delegates_v12_once_with_eof) ... ok\ntest_ambiguous_acceptance_retained (test_frontend.Frontend.test_ambiguous_acceptance_retained) ... ok\ntest_config_builder_wrong_requester_argv_refused (test_frontend.Frontend.test_config_builder_wrong_requester_argv_refused) ... ok\ntest_explicit_cli (test_frontend.Frontend.test_explicit_cli) ... ok\ntest_explicit_server_refusal_retained (test_frontend.Frontend.test_explicit_server_refusal_retained) ... ok\ntest_extra_frame_uncertain_no_second_send (test_frontend.Frontend.test_extra_frame_uncertain_no_second_send) ... ok\ntest_foreign_path_refused (test_frontend.Frontend.test_foreign_path_refused) ... ok\ntest_missing_eof_uncertain_no_second_send (test_frontend.Frontend.test_missing_eof_uncertain_no_second_send) ... ok\ntest_missing_frame_uncertain_no_second_send (test_frontend.Frontend.test_missing_frame_uncertain_no_second_send) ... ok\ntest_no_inferred_target (test_frontend.Frontend.test_no_inferred_target) ... ok\ntest_noncanonical_identity (test_frontend.Frontend.test_noncanonical_identity) ... ok\ntest_post_receipt_log_failure_uncertain_not_refused (test_frontend.Frontend.test_post_receipt_log_failure_uncertain_not_refused) ... ok\ntest_post_send_config_change_uncertain (test_frontend.Frontend.test_post_send_config_change_uncertain) ... ok\ntest_post_send_socket_disappearance_uncertain (test_frontend.Frontend.test_post_send_socket_disappearance_uncertain) ... ok\ntest_private_entry_wrong_legacy_refused_before_replace (test_frontend.Frontend.test_private_entry_wrong_legacy_refused_before_replace) ... ok\ntest_private_path_symlink_refused (test_frontend.Frontend.test_private_path_symlink_refused) ... ok\ntest_real_cli_config_builder_and_private_entry (test_frontend.Frontend.test_real_cli_config_builder_and_private_entry) ... ok\ntest_stale_lifetime_refused_before_api_send (test_frontend.Frontend.test_stale_lifetime_refused_before_api_send) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 7.852s\n\nOK\n"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/interruption_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  interruption_test\n    ok heldMoveCrossesIndependentPeerTest passed 1 test(s)\n    ok heldResizeCrossesIndependentPeerTest passed 1 test(s)\n    ok blockedAncestorHasNoCaptureTest passed 1 test(s)\n    ok escapeBeforeFirstMotionTest passed 1 test(s)\n    ok escapeMovedCaptionRestoresPressRectTest passed 1 test(s)\n    ok escapeResizeRestoresPressRectRequiredTest passed 1 test(s)\n    ok cancelledHeldPressCannotRecaptureTest passed 1 test(s)\n    ok reloadMoveRetiresOldGenerationTest passed 1 test(s)\n    ok reloadResizeRetiresCaptureRequiredTest passed 1 test(s)\n    ok latestGeometryMixedPinsPreviewRestoreTest passed 1 test(s)\n    ok newerPinIntentSurvivesCancellationTest passed 1 test(s)\n    ok newerPinIntentSurvivesRestoreTest passed 1 test(s)\n    ok closedCapturedDialogNewLifetimeRejectsMotionTest passed 1 test(s)\n    ok staleMinimizedPreviewCannotRestoreNewLifetimeTest passed 1 test(s)\n    ok currentGenerationStillActionableAfterReloadsTest passed 1 test(s)\n    ok escapeCannotDropIntoPeerGroupTest passed 1 test(s)\n    ok reloadCannotDropIntoPeerGroupTest passed 1 test(s)\n    ok minimizeRetirementCannotDropIntoPeerGroupTest passed 1 test(s)\n    ok genuineReleaseKeepsGroupDropTest passed 1 test(s)\n\n  19 passing (4091ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/interruption.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (2561ms at 781 traces/second).\nUse --seed=0x13b4241 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/helper_generations.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  helper_generations\n    ok actualLoadBeforeReloadTest passed 1 test(s)\n    ok priorLifetimeRegistrationRetainedTest passed 10000 test(s)\n    ok incompleteNewGenerationCannotAcceptTest passed 1 test(s)\n    ok refusalBlocksNextGenerationAcceptanceTest passed 1 test(s)\n\n  4 passing (298ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/helper_generations.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (592ms at 3378 traces/second).\nUse --seed=0x151b785 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceChecks": {
+    "probeControllerBorrowedNotUniqueCopied": true,
+    "publicRawSignalHeldIdsDistinctFromCoreBool": true,
+    "noPrivateAccessMacro": true,
+    "probeHasNoMutatingHooksDragCalls": true,
+    "actualDecorationsAndLayersQueried": true,
+    "coreKeyboardCancelsTargetBeforeKeybindHandling": true,
+    "pythonParses": true,
+    "fullBytesModesLinksCurrent": true
+  },
+  "formalNamedScenarios": 23,
+  "formalSamples": 4000,
+  "formalSteps": 100,
+  "nativeLaunched": false,
+  "nativeLoaded": false,
+  "probeCompiledOnly": true,
+  "rootReviewPending": true,
+  "wrapperFrozen": false,
+  "closureCounts": {
+    "inputs": 20358,
+    "modes": 20358,
+    "links": 320
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "result": "pass",
+  "inputs": 63953,
+  "links": 13879,
+  "directories": 1385,
+  "retainedOriginalInputs": 63830,
+  "retainedOriginalLinks": 13879,
+  "retainedOriginalDirectories": 1370,
+  "copiedFiles": 109,
+  "changed": [
+    "PAIR_READY.json",
+    "proposed/freeze_packet.py"
+  ],
+  "sourceReadySHA256": "0f0d7d5d192fc230c85d537bc40f9e6592030727a510a158c316b0a1c51432cc",
+  "sourceClosureSHA256": "665c3d5c90d56ec146c4318985ce0666cf129f7989a278fdde8fea9ce048d4ff",
+  "originalRuntimeAndTestBodiesExact": true,
+  "selectedProbeBytesModesExact": true,
+  "pairMetadataRebindingExact": true,
+  "sourceOnlyFreezerUnionReviewed": true,
+  "normalClosureObservationRequired": true,
+  "sourceAndPromotionAccepted": true,
+  "nativeAuthorized": false,
+  "nativeAccepted": false,
+  "remaining": [
+    "Root freeze and exact frozen-source validation",
+    "Original14 native campaign",
+    "Separate native MAX/focus/scroll/transfer campaign"
+  ]
+}

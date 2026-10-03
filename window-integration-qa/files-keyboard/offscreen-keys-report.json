@@ -1,0 +1,239 @@
+{
+  "scope": "Actual copied QML and Qt event routing on offscreen QQuickWindow; no native physical input or reader claim",
+  "checks": [
+    {
+      "name": "V4 and staged real QML instantiate",
+      "passed": true
+    },
+    {
+      "name": "named toolbar Home can focus",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777217",
+      "passed": true
+    },
+    {
+      "name": "Tab skips disabled Back/Forward/Up/View/Sort/Details on Home",
+      "passed": true
+    },
+    {
+      "name": "View button can focus",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777220",
+      "passed": true
+    },
+    {
+      "name": "Return activates existing View callback",
+      "passed": true
+    },
+    {
+      "name": "Sort can focus",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777220",
+      "passed": true
+    },
+    {
+      "name": "Sort opens existing menu",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777216",
+      "passed": true
+    },
+    {
+      "name": "menu Escape closes",
+      "passed": true
+    },
+    {
+      "name": "toolbar focus retained for shortcut test",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 70",
+      "passed": true
+    },
+    {
+      "name": "Ctrl F bubbles to existing command handler",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777216",
+      "passed": true
+    },
+    {
+      "name": "filter Escape restores main focus",
+      "passed": true
+    },
+    {
+      "name": "existing NewFolder prompt owns text focus",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777217",
+      "passed": true
+    },
+    {
+      "name": "prompt Tab input to Cancel",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777217",
+      "passed": true
+    },
+    {
+      "name": "prompt Tab Cancel to accept",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777217",
+      "passed": true
+    },
+    {
+      "name": "prompt Tab traps accept to input",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777218",
+      "passed": true
+    },
+    {
+      "name": "prompt Backtab traps input to accept",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777216",
+      "passed": true
+    },
+    {
+      "name": "prompt Escape cancels without operation",
+      "passed": true
+    },
+    {
+      "name": "330x320 actual Qt window instantiated",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777237",
+      "passed": true
+    },
+    {
+      "name": "list arrow owns real accessible row focus",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777237",
+      "passed": true
+    },
+    {
+      "name": "list next arrow moves focus and selection",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777301",
+      "passed": true
+    },
+    {
+      "name": "Menu key opens current file context menu",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777237",
+      "passed": true
+    },
+    {
+      "name": "menu Down focuses actual row",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777216",
+      "passed": true
+    },
+    {
+      "name": "menu closes to original file commands",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777237",
+      "passed": true
+    },
+    {
+      "name": "grid arrow owns real accessible cell focus",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 66",
+      "passed": true
+    },
+    {
+      "name": "Ctrl B focuses compact sidebar collection",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777217",
+      "passed": true
+    },
+    {
+      "name": "sidebar Tab reaches next collection",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777216",
+      "passed": true
+    },
+    {
+      "name": "sidebar Escape closes and returns command focus",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 66",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777237",
+      "passed": true
+    },
+    {
+      "name": "tree Down keeps real row focus",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777216",
+      "passed": true
+    },
+    {
+      "name": "tree Escape closes compact sidebar",
+      "passed": true
+    },
+    {
+      "name": "Home filter can receive real focus",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777217",
+      "passed": true
+    },
+    {
+      "name": "Home filter Tab reaches another chip",
+      "passed": true
+    },
+    {
+      "name": "Home collection card has real focus",
+      "passed": true
+    },
+    {
+      "name": "Qt event delivered 16777220",
+      "passed": true
+    },
+    {
+      "name": "Home collection Return uses existing navigation",
+      "passed": true
+    }
+  ],
+  "exitCode": -15,
+  "result": "pass"
+}

@@ -1,0 +1,46 @@
+{
+  "result": "pass",
+  "calibration": {
+    "device": 30,
+    "inode": 943561,
+    "statDevice": 58,
+    "statInode": 943561,
+    "exactPath": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/payload/native/libomarchy-a11y-prod-v2.so",
+    "bufferAddress": 124867112366080,
+    "selfMapping": {
+      "first": 124867112366080,
+      "last": 124867112804352,
+      "permissions": "rw-p",
+      "offset": 0,
+      "device": 30,
+      "inode": 943561,
+      "path": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/payload/native/libomarchy-a11y-prod-v2.so"
+    },
+    "sha256": "913cbc06c6f16a001a3726b24ee8009af24629051822a3344f97ee0a7b181b43",
+    "fdPinned": true,
+    "nativeCodeExecuted": false
+  },
+  "actualRemoteMappings": [
+    {
+      "first": 124867112366080,
+      "last": 124867112804352,
+      "permissions": "rw-p",
+      "offset": 0,
+      "device": 30,
+      "inode": 943561,
+      "path": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/payload/native/libomarchy-a11y-prod-v2.so"
+    },
+    {
+      "first": 124867112804352,
+      "last": 124867113242624,
+      "permissions": "r--s",
+      "offset": 0,
+      "device": 30,
+      "inode": 943561,
+      "path": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/payload/native/libomarchy-a11y-prod-v2.so"
+    }
+  ],
+  "nativeCodeExecuted": false,
+  "nativeGUIContacted": false,
+  "mainWrites": false
+}

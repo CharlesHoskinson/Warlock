@@ -1,0 +1,142 @@
+{
+  "scope": "Read-only diagnosis of retained actual V7 attempt; no native re-execution or product edit",
+  "retainedReportSha256": "77b4e6649517c362e442c6fb6102be3dba5f1f3232291d6d43882241eddb0399",
+  "debugSha256": "1e98d815c73bc4d7d2b405d273b717010ace2f9da26826e57e975c064a0ca778",
+  "rowPeer": {
+    "bus": ":1.171",
+    "path": "/org/a11y/atspi/accessible/2147483838",
+    "name": "Home",
+    "role": "table cell"
+  },
+  "branchPeer": {
+    "bus": ":1.171",
+    "path": "/org/a11y/atspi/accessible/2147483836",
+    "name": "Expand Home",
+    "role": "button"
+  },
+  "hierarchyEvidence": "MoveToParent presented Home row at03:34:09.723296 line29702. Unconditional MoveToFirstChild presented its Expand Home branch at03:34:09.990155 line29840. Subsequent sibling commands remained at that only child; no next.",
+  "classification": "Fixture failed to compare exact target after parent command. The actual row was reached before the fixture navigated away; row PerformAction remains unexecuted in this attempt. No product inaccessibility is proved.",
+  "officialSource": "orca-reader/prefix/usr/lib/python3.14/site-packages/orca/object_navigator.py: _update/_parent/_children and move_to_parent/move_to_first_child; table cells explicitly included in simple navigation",
+  "excerpt": [
+    {
+      "line": 29522,
+      "text": "03:34:09.638544 - FOCUS MANAGER: Switching object of interest from [button: 'Expand Home' (0x7c2fc5f5ff00)]  to [table cell: 'Home' (0x7c2fc5fde1c0)] "
+    },
+    {
+      "line": 29559,
+      "text": "03:34:09.645472 - FOCUS MANAGER: Active mode: focus-tracking Object of interest: [table cell: 'Home' (0x7c2fc5fde1c0)] "
+    },
+    {
+      "line": 29696,
+      "text": "03:34:09.722193 - DBUS SERVICE: Getter 'State' returned: {\"device_type\": \"AtspiDeviceLegacy\", \"focus\": {\"name\": \"Home\", \"role\": \"table cell\", \"identity\": \"QGuiApplication.ProxiedWindow.Tree.list.Tree.row\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483838\", \"app_bus\": \":1.171\"}, \"active_window\": {\"name\": \"Files Responsive QA\", \"role\": \"frame\", \"identity\": \"QGuiApplication.ProxiedWindow\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483898\", \"app_bus\": \":1.171\"}, \"navigator\": {\"name\": \"Expand Home\", \"role\": \"button\", \"identity\": \"QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483836\", \"app_bus\": \":1.171\"}}"
+    },
+    {
+      "line": 29697,
+      "text": "03:34:09.722807 - DBUS SERVICE: About to execute 'MoveToParent' in 'ObjectNavigator'."
+    },
+    {
+      "line": 29699,
+      "text": "03:34:09.722886 - OBJECT NAVIGATOR: move_to_parent. Script: quickshell (module=orca.scripts.toolkits.Qt.script) Event: <orca.input_event.RemoteControllerEvent object at 0x7c2fc5f4bad0> notify_user: True"
+    },
+    {
+      "line": 29700,
+      "text": "03:34:09.723010 - FOCUS MANAGER: Active mode: focus-tracking Object of interest: [table cell: 'Home' (0x7c2fc5fde1c0)] "
+    },
+    {
+      "line": 29701,
+      "text": "03:34:09.723193 - OBJECT NAVIGATOR: Not excluding [table cell: 'Home' (0x7c2fc5fde1c0)] "
+    },
+    {
+      "line": 29702,
+      "text": "03:34:09.723296 - OBJECT NAVIGATOR: Presenting [table cell: 'Home' (0x7c2fc5fde1c0)] "
+    },
+    {
+      "line": 29706,
+      "text": "03:34:09.723804 - FOCUS MANAGER: Active mode: object-navigator Object of interest: [table cell: 'Home' (0x7c2fc5fde1c0)] "
+    },
+    {
+      "line": 29835,
+      "text": "03:34:09.988499 - DBUS SERVICE: About to execute 'MoveToFirstChild' in 'ObjectNavigator'."
+    },
+    {
+      "line": 29837,
+      "text": "03:34:09.988619 - OBJECT NAVIGATOR: move_to_first_child. Script: quickshell (module=orca.scripts.toolkits.Qt.script) Event: <orca.input_event.RemoteControllerEvent object at 0x7c2fc5f67a10> notify_user: True"
+    },
+    {
+      "line": 29838,
+      "text": "03:34:09.989432 - FOCUS MANAGER: Active mode: object-navigator Object of interest: [table cell: 'Home' (0x7c2fc5fde1c0)] "
+    },
+    {
+      "line": 29839,
+      "text": "03:34:09.990124 - OBJECT NAVIGATOR: Not excluding [button: 'Expand Home' (0x7c2fc5f5ff00)] "
+    },
+    {
+      "line": 29840,
+      "text": "03:34:09.990155 - OBJECT NAVIGATOR: Presenting [button: 'Expand Home' (0x7c2fc5f5ff00)] "
+    },
+    {
+      "line": 29842,
+      "text": "03:34:09.990530 - FOCUS MANAGER: Switching object of interest from [table cell: 'Home' (0x7c2fc5fde1c0)]  to [button: 'Expand Home' (0x7c2fc5f5ff00)] "
+    },
+    {
+      "line": 29844,
+      "text": "03:34:09.990618 - FOCUS MANAGER: Active mode: object-navigator Object of interest: [button: 'Expand Home' (0x7c2fc5f5ff00)] "
+    },
+    {
+      "line": 29976,
+      "text": "03:34:10.252841 - DBUS SERVICE: Getter 'State' returned: {\"device_type\": \"AtspiDeviceLegacy\", \"focus\": {\"name\": \"Home\", \"role\": \"table cell\", \"identity\": \"QGuiApplication.ProxiedWindow.Tree.list.Tree.row\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483838\", \"app_bus\": \":1.171\"}, \"active_window\": {\"name\": \"Files Responsive QA\", \"role\": \"frame\", \"identity\": \"QGuiApplication.ProxiedWindow\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483898\", \"app_bus\": \":1.171\"}, \"navigator\": {\"name\": \"Expand Home\", \"role\": \"button\", \"identity\": \"QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483836\", \"app_bus\": \":1.171\"}}"
+    },
+    {
+      "line": 29979,
+      "text": "03:34:10.254654 - DBUS SERVICE: Getter 'State' returned: {\"device_type\": \"AtspiDeviceLegacy\", \"focus\": {\"name\": \"Home\", \"role\": \"table cell\", \"identity\": \"QGuiApplication.ProxiedWindow.Tree.list.Tree.row\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483838\", \"app_bus\": \":1.171\"}, \"active_window\": {\"name\": \"Files Responsive QA\", \"role\": \"frame\", \"identity\": \"QGuiApplication.ProxiedWindow\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483898\", \"app_bus\": \":1.171\"}, \"navigator\": {\"name\": \"Expand Home\", \"role\": \"button\", \"identity\": \"QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483836\", \"app_bus\": \":1.171\"}}"
+    },
+    {
+      "line": 29980,
+      "text": "03:34:10.255152 - DBUS SERVICE: About to execute 'MoveToNextSibling' in 'ObjectNavigator'."
+    },
+    {
+      "line": 29982,
+      "text": "03:34:10.255233 - OBJECT NAVIGATOR: move_to_next_sibling. Script: quickshell (module=orca.scripts.toolkits.Qt.script) Event: <orca.input_event.RemoteControllerEvent object at 0x7c2fc5f4bad0> notify_user: True"
+    },
+    {
+      "line": 29983,
+      "text": "03:34:10.255268 - FOCUS MANAGER: Active mode: object-navigator Object of interest: [button: 'Expand Home' (0x7c2fc5f5ff00)] "
+    },
+    {
+      "line": 29984,
+      "text": "03:34:10.255413 - OBJECT NAVIGATOR: Not excluding [table cell: 'Home' (0x7c2fc5fde1c0)] "
+    },
+    {
+      "line": 29985,
+      "text": "03:34:10.255594 - OBJECT NAVIGATOR: Not excluding [button: 'Expand Home' (0x7c2fc5f5ff00)] "
+    },
+    {
+      "line": 30023,
+      "text": "03:34:10.510723 - DBUS SERVICE: Getter 'State' returned: {\"device_type\": \"AtspiDeviceLegacy\", \"focus\": {\"name\": \"Home\", \"role\": \"table cell\", \"identity\": \"QGuiApplication.ProxiedWindow.Tree.list.Tree.row\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483838\", \"app_bus\": \":1.171\"}, \"active_window\": {\"name\": \"Files Responsive QA\", \"role\": \"frame\", \"identity\": \"QGuiApplication.ProxiedWindow\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483898\", \"app_bus\": \":1.171\"}, \"navigator\": {\"name\": \"Expand Home\", \"role\": \"button\", \"identity\": \"QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483836\", \"app_bus\": \":1.171\"}}"
+    },
+    {
+      "line": 30026,
+      "text": "03:34:10.512758 - DBUS SERVICE: Getter 'State' returned: {\"device_type\": \"AtspiDeviceLegacy\", \"focus\": {\"name\": \"Home\", \"role\": \"table cell\", \"identity\": \"QGuiApplication.ProxiedWindow.Tree.list.Tree.row\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483838\", \"app_bus\": \":1.171\"}, \"active_window\": {\"name\": \"Files Responsive QA\", \"role\": \"frame\", \"identity\": \"QGuiApplication.ProxiedWindow\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483898\", \"app_bus\": \":1.171\"}, \"navigator\": {\"name\": \"Expand Home\", \"role\": \"button\", \"identity\": \"QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483836\", \"app_bus\": \":1.171\"}}"
+    },
+    {
+      "line": 30027,
+      "text": "03:34:10.513370 - DBUS SERVICE: About to execute 'MoveToNextSibling' in 'ObjectNavigator'."
+    },
+    {
+      "line": 30029,
+      "text": "03:34:10.513448 - OBJECT NAVIGATOR: move_to_next_sibling. Script: quickshell (module=orca.scripts.toolkits.Qt.script) Event: <orca.input_event.RemoteControllerEvent object at 0x7c2fc5f675f0> notify_user: True"
+    },
+    {
+      "line": 30030,
+      "text": "03:34:10.513482 - FOCUS MANAGER: Active mode: object-navigator Object of interest: [button: 'Expand Home' (0x7c2fc5f5ff00)] "
+    },
+    {
+      "line": 30031,
+      "text": "03:34:10.513626 - OBJECT NAVIGATOR: Not excluding [table cell: 'Home' (0x7c2fc5fde1c0)] "
+    },
+    {
+      "line": 30032,
+      "text": "03:34:10.513800 - OBJECT NAVIGATOR: Not excluding [button: 'Expand Home' (0x7c2fc5f5ff00)] "
+    }
+  ]
+}

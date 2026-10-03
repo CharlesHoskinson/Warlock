@@ -1,0 +1,43 @@
+{
+  "kind": "actual v1 draft wrapper source replay; no native/product claim",
+  "counterexample": true,
+  "sourceSHA256": "aee0bb9cbf0aec430f16ee5a52fd93fbdbdeaad1e142c6d3e7f1164168b92b1e",
+  "sameCompositor": true,
+  "sameArtifact": true,
+  "staleIdentityRetiredNewPlugin": true,
+  "calls": [
+    {
+      "command": [
+        "hyprctl",
+        "-i",
+        "abc_1_2",
+        "repl",
+        "return hl.plugin.omarchy_a11y.identity()"
+      ],
+      "plugin": "old-plugin"
+    },
+    {
+      "command": [
+        "hyprctl",
+        "-i",
+        "abc_1_2",
+        "repl",
+        "return hl.plugin.omarchy_a11y.prepare_unload(\"abc_1_2\",\"same-artifact\")"
+      ],
+      "plugin": "new-plugin"
+    },
+    {
+      "command": [
+        "hyprctl",
+        "-i",
+        "abc_1_2",
+        "plugin",
+        "unload",
+        "/home/hoskinson/.local/lib/omarchy-a11y-same-artifact.so"
+      ],
+      "plugin": "new-plugin"
+    }
+  ],
+  "GUI": false,
+  "mainTouched": false
+}

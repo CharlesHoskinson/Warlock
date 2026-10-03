@@ -1,0 +1,44 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v3/README.md
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v4/README.md
+@@ -88,17 +88,17 @@
+ opaque client tested; exact installed theme/inactive colors and translucent
+ client backdrop equivalence are not claimed.
+ 
+-## Fresh v3 offline and native review packet
++## Fresh v4 offline and native review packet
+ 
+-`checkpoint-v3.json` and `native-manifest-v3.json` supersede the retained v1
++`checkpoint-v4.json` and `native-manifest-v4.json` supersede the retained v1
+ checkpoint; the v1 files and pre-repair source checkpoints remain evidence.
+-Current offline gates are 80 ledger, 20 actual command-consumer, 20 backend, eight mapped material
++Current offline gates are 80 ledger, 28 actual command-consumer, 20 backend, 34 mapped material
+ checks, five observer tests and 13 formal scenarios / 2,000 traces of 100 steps.
+ 
+ The proposed private command (GUI slot required, not executed here) is:
+ 
+ ```sh
+-python3 /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v3/nested_owned_egl_smoke.py --output /home/hoskinson/.cache/window-owned-egl-private-v3
++python3 /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v4/nested_owned_egl_smoke.py --output /home/hoskinson/.cache/window-owned-egl-private-v4
+ ```
+ 
+ The private fixture uses the frozen V18 atlas source in a separate compositor,
+@@ -122,6 +122,18 @@
+ 
+ The v2 native attempt is retained at `.cache/window-owned-egl-private-v2`: it
+ refused the backend before upload/readiness and preserved all12 main-state gates.
+-Actual runtime backend classification remains unobserved until v3 emits its
++Actual runtime backend classification remains unobserved until v4 emits its
+ `backendObserved` event; the Arch build label is a source-backed compatibility
+ allowance, not a retrospective classification of that failed attempt.
++
++V3 actual runtime classification is now retained: MesaProject / Intel Graphics
++(ARL) / OpenGL ES3.2 Mesa26.2.2-arch1.1. It refused a device-domain mismatch
++before source upload. V4 uses PROCMAP_QUERY for the existing mapping and the
++already-hashed fd probe, with exact pinned ELF build IDs, bounded queries,
++complete mapping revalidation and RAII. `MAPPED_MATERIAL_CONTRACT.md` records
++the primary kernel source and preserves deleted/unmapped/replaced/wronghash
++refusal. Actual tmpfs+Btrfs regressions print both stat and mapping devices.
++
++Idle surfaces clear once; `state` exposes transparentCommitCount and observationId.
++The private fixture requires that counter to remain stable across an idle interval
++before the first seed. No active route/render cadence gates are weakened.

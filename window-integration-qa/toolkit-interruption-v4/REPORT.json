@@ -1,0 +1,36 @@
+{
+  "result": "offline source/compile candidate ready for review",
+  "nativeExecuted": false,
+  "mainChanged": false,
+  "productionDeployed": false,
+  "binarySHA256": "a37c4a62b3ac3104eeb1a38f0d33993b2310cc404c61295f3aefcc339d80a271",
+  "snapLuaSHA256": "b62ab10975f9591bad85a9f836492114267110dfed73d65382411167c6f5b6e2",
+  "backendSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+  "compiledDependencies": 763,
+  "sourceGates": 18,
+  "realLuaVMGetterScenarios": 8,
+  "inheritedGestureRequirements": {
+    "named": 19,
+    "samples": 2000,
+    "steps": 100,
+    "seed": "20260930",
+    "actualSourceExtractedAssertions": 33,
+    "atlasCPP": 72,
+    "cacheCPP": 38,
+    "mixedProtocolCPP": 17
+  },
+  "closeCleanupRequirements": {
+    "named": 3,
+    "samples": 2000,
+    "steps": 100,
+    "actualBackendSandboxTests": 9
+  },
+  "remaining": [
+    "Actual paired native/API/motion V12 input proof",
+    "Real grouped cancel/release and independent focus retention",
+    "Four toolkit/backend gesture variants",
+    "Actual old-close/new-address-reuse schedule where reproducible",
+    "Touch/tablet legacy caption/pin path",
+    "Browser local draft/copied Files focus regression"
+  ]
+}

@@ -1,0 +1,15 @@
+
+  production_pipeline_test
+    ok noArgumentProductionUsesRepairedPipelineTest passed 1 test(s)
+    ok defaultDiagnosticUsesSameRepairedPipelineTest passed 1 test(s)
+    ok configurationAloneNeverGrantsAuthorityTest passed 1 test(s)
+    ok readyAloneCannotStartProductionTest passed 1 test(s)
+    ok ordinaryExactLedgerSequenceMayAuthorizeEndpointTest passed 1 test(s)
+    ok acceptedRasterPixelsCannotAuthorizeNativeStartTest passed 1 test(s)
+    ok ordinaryExperimentFlagCannotEnableRasterModeTest passed 1 test(s)
+    ok productionCannotRequestCausalNoAuthorityScopeTest passed 1 test(s)
+    ok stdinModeSpoofCannotChangeProductionScopeTest passed 1 test(s)
+    ok shaderFailureCannotFallBackOrCommitTest passed 1 test(s)
+    ok duplicateLaunchCannotDowngradeProductionTest passed 1 test(s)
+
+  11 passing (180ms)

@@ -1,0 +1,38 @@
+
+  minimize_motion_test
+    ok readinessBeforeMinimizeTest passed 1 test(s)
+    ok restoreAtEndpointTest passed 1 test(s)
+    ok reverseRejectsOldCompletionTest passed 1 test(s)
+    ok closeReuseRejectsOldCompletionTest passed 1 test(s)
+    ok shellReloadCommitsIntentTest passed 1 test(s)
+    ok reductionCommitsIntentTest passed 1 test(s)
+    ok rapidActivateUsesIntentTest passed 1 test(s)
+    ok inactiveActivateRaisesTest passed 1 test(s)
+    ok foreignDesktopBeforeExpansionTest passed 1 test(s)
+
+  9 passing (352ms)
+[ok] No violation found (1059ms at 1889 traces/second).
+Use --seed=0x138351e --backend=rust to reproduce.
+............................
+----------------------------------------------------------------------
+Ran 28 tests in 0.009s
+
+OK
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 1.288s
+
+OK
+...
+----------------------------------------------------------------------
+Ran 3 tests in 2.901s
+
+OK
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.005s
+
+OK
+windowctl/desktop QA: 19 stateful scenarios passed
+desktop backend fuzz: 165 mixed operations passed
+Actual QML motion functions: reversal continuity, pixel retention, token guards, independent frames, reduced motion and reuse passed.

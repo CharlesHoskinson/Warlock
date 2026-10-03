@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="kk">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_setting_up_orca"/>
+    <title type="sort">1. Orca-ға қош келдіңіз</title>
+    <desc><app>Orca</app> экрандық дикторымен таныстыру</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Orca-ға қош келдіңіз</title>
+  <p><app>Orca</app> — бұл сөйлеу және жаңартылатын Брайль арқылы графикалық жұмыс үстеліне қол жеткізуді қамтамасыз ететін еркін, ашық бастапқы коды бар, икемді және кеңейтілетін экрандық диктор.</p>
+  <p><app>Orca</app> Linux және Solaris үшін негізгі көмекші технология инфрақұрылымы болып табылатын Assistive Technology Service Provider Interface (AT-SPI) қолдайтын қолданбалармен және құралдар жиынтығымен жұмыс істейді. AT-SPI қолдайтын қолданбалар мен құралдар жиынтығына Gtk+, Qt, Java Swing, LibreOffice, Gecko, WebKitGtk және Chrome/Chromium жатады.</p>
+  <section id="launching">
+    <title><app>Orca</app>-ны іске қосу</title>
+    <p><app>Orca</app>-ны іске қосу үшін:</p>
+    <list>
+      <item>
+        <p><app>Orca</app>-ны қалаған экрандық диктор ретінде автоматты түрде іске қосылатындай етіп теңшеу әдісі сіз пайдаланатын жұмыс үстелі ортасына байланысты болады.</p>
+      </item>
+      <item>
+        <p>GNOME-да <app>Orca</app>-ны қосу және сөндіру үшін <keyseq><key>Super</key><key>Alt</key><key>S</key></keyseq> пернелерін басыңыз.</p>
+      </item>
+      <item>
+        <p>Терминал терезесінде немесе <gui>Орындау</gui> сұхбат терезесінде <cmd>orca</cmd> пәрменін кез келген қосымша параметрлермен бірге теріп, <key>Return</key> пернесін басыңыз.</p>
+      </item>
+    </list>
+  </section>
+    <section id="loadtime">
+      <title>Жүктеу кезіндегі опциялар</title>
+      <p>Терминал терезесінде немесе <gui>Орындау</gui> сұхбат терезесінде <app>Orca</app>-ны іске қосқан кезде келесі опцияларды көрсетуге болады:</p>
+      <list>
+        <item>
+          <p><cmd>-h</cmd>, <cmd>--help</cmd>: Көмек хабарын көрсету</p>
+        </item>
+        <item>
+          <p><cmd>-v</cmd>, <cmd>--version</cmd>: <app>Orca</app> нұсқасын көрсету</p>
+        </item>
+        <item>
+          <p><cmd>-s</cmd>, <cmd>--setup</cmd>: Пайдаланушы баптауларын теңшеу</p>
+        </item>
+        <item>
+          <p><cmd>-u</cmd>, <cmd>--user-prefs=<em>бума_аты</em></cmd>: Пайдаланушы баптаулары үшін балама бума ретінде <em>бума_аты</em> бумасын пайдалану</p>
+        </item>
+        <item>
+          <p><cmd>-e</cmd>, <cmd>--enable=<em>опция</em></cmd>: Опцияны пайдалануға мәжбүрлеу, мұндағы <em>опция</em> келесілердің бірі болуы мүмкін:</p>
+          <list>
+            <item><p><cmd>speech</cmd></p></item>
+            <item><p><cmd>braille</cmd></p></item>
+            <item><p><cmd>braille-monitor</cmd></p></item>
+          </list>
+        </item>
+        <item>
+          <p><cmd>-d</cmd>, <cmd>--disable=<em>опция</em></cmd>: Опцияны пайдалануға жол бермеу, мұндағы <em>опция</em> келесілердің бірі болуы мүмкін:</p>
+          <list>
+            <item><p><cmd>speech</cmd></p></item>
+            <item><p><cmd>braille</cmd></p></item>
+            <item><p><cmd>braille-monitor</cmd></p></item>
+          </list>
+        </item>
+        <item>
+            <p><cmd>-p</cmd>, <cmd>--profile=<em>файл_аты</em></cmd>: Берілген <app>Orca</app> профиль файлынан профильді импорттау</p>
+        </item>
+        <item>
+          <p><cmd>-r</cmd>, <cmd>--replace</cmd>: Қазір жұмыс істеп тұрған <app>Orca</app>-ны алмастыру</p>
+        </item>
+        <item>
+          <p><cmd>-l</cmd>, <cmd>--list-apps</cmd>: Белгілі жұмыс істеп тұрған қолданбаларды басып шығару</p>
+        </item>
+        <item>
+          <p><cmd>--debug</cmd>: Түзету шығысын debug-YYYY-MM-DD-HH:MM:SS.out файлына жіберу</p>
+        </item>
+        <item>
+          <p><cmd>--debug-file=<em>файл_аты</em></cmd>: Түзету шығысын көрсетілген файлға жіберу</p>
+        </item>
+      </list>
+    </section>
+
+</page>

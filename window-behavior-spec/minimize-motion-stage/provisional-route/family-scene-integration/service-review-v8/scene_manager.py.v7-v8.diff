@@ -1,0 +1,54 @@
+--- service-review-v7/scene_manager.py
++++ service-review-v8/scene_manager.py
+@@ -65,8 +65,10 @@
+     Context is supplied by a trusted integration caller for now. This registry
+     does not promote it into native workspace/output evidence.
+     """
+-    def __init__(self,factory,**controller_options):
++    def __init__(self,factory,*,persist=None,**controller_options):
+         self.factory=factory
++        self.persist=persist or (lambda:None)
++        self.persistence_failed=False
+         self.options=controller_options
+         self.lock=threading.RLock()
+         self.serial=0
+@@ -105,7 +107,7 @@
+     def owns(self,controller,record):
+         receipt=record.profile.get('managerReceipt',0)
+         scope={key(m) for m in record.members} or {record.requested}
+-        return receipt>0 and all(self.receipts.get(k,0)<=receipt for k in scope)
++        return not self.persistence_failed and receipt>0 and all(self.receipts.get(k,0)<=receipt for k in scope)
+     def claim(self,controller,record,members):
+         if controller.current is not record:raise ValueError('obsolete actor family claim')
+         scope={key(m) for m in members}
+@@ -155,6 +157,7 @@
+                 'command':command,'direction':direction,'captured':captured,'single':single,'scope':scope,
+                 'receivedNs':time.monotonic_ns()}
+             self.pending[self.serial]=ingress
++            self.persist() # acceptance is returned only after durable receipt ownership
+             return {'ok':True,'accepted':True,'completed':False,'contextPending':True,
+                 'receipt':self.serial,'actor':actor}
+     def finish_ingress(self,ingress,**result):
+@@ -163,6 +166,7 @@
+             'identity':list(ingress['captured']),'receivedNs':ingress['receivedNs'],
+             'finishedNs':time.monotonic_ns(),**result})
+         self.ingress_history=self.ingress_history[-128:]
++        self.persist()
+     def activate(self,receipt,*,context):
+         with self.lock:
+             ingress=self.pending.get(receipt)
+@@ -204,10 +208,12 @@
+         for receipt in expired:self.fail_ingress(receipt,'context deadline')
+         for a in list(self.actors):a.controller.watchdog()
+     def close(self):
++        failures=[]
+         with self.lock:
+             self.closed=True
+-            for receipt in list(self.pending):self.fail_ingress(receipt,'service shutdown')
+-        failures=[]
++            for receipt in list(self.pending):
++                try:self.fail_ingress(receipt,'service shutdown')
++                except Exception as error:failures.append({'receipt':receipt,'reason':str(error)})
+         for a in self.actors:
+             try:a.controller.close()
+             except Exception as error:failures.append({'actor':a.number,'reason':str(error)})

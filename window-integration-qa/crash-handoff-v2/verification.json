@@ -1,0 +1,47 @@
+{
+  "updatedUTC": "2026-10-01T13:33:48.804300+00:00",
+  "handoff": "/home/hoskinson/Documents/crash-noise/HANDOFF-codex-window-qa.md",
+  "allFiveApplied": true,
+  "changes": {
+    "core": "Each QA run uniqueuser scope +prlimit core1:1; --backtrace explicitunlimited; actual parent+childlimits verified",
+    "xwayland": "Off in Waylandconfigs/effectivehostconfig; explicittestX11exception",
+    "parent": "Liveprivate parentpeer verified beforelaunch; mandatoryWayland enforced actualprivateAQ instead of ignored env; noDRM/libseat attempt inV3logs",
+    "environment": "Unrestrictedexecution; oneowned0700 /run/user/$UID/wqa/<4hex> runtime forbus/compositor/clients; bothrendernodes accessverified",
+    "teardownAndABI": "Clients/producer beforecompositor beforeWeston/bus; Manager backend/owner/transport checks beforekey APIs; failclosedX11/Legacy fallback"
+  },
+  "originalGuardTests": 38,
+  "additionalFormalNamed": 32,
+  "additionalRandomModels": 3,
+  "samplesPerModel": 2000,
+  "stepsPerSample": 100,
+  "cppLifecycleTraces": 46656,
+  "cppVersionCases": 72,
+  "deliberateGuardMutationsDetected": 5,
+  "sourceWiringChecks": 14,
+  "adapterTests": 7,
+  "nativeEvidence": "/home/hoskinson/window-integration-qa/family-raster-oracle-v3/attempt-private-1/report.json",
+  "cleanupEvidence": "/home/hoskinson/window-integration-qa/family-raster-oracle-v3/attempt-private-1/root-completion.json",
+  "mainPreservationChecks": 15,
+  "mainGUIWrites": false,
+  "privateSurvivors": 0,
+  "fullRasterAccepted": false,
+  "remaining": "Scaledimagefailure retained:369 cursorpixels +7memberpixels exceed tolerance1 bymax2. ExactBrokenpipe line attributed to runner-owned Hyprctl readinessprobe, not Wayland; originalFalsegate retained. FreshadapterV4 realread-only versionreply offline23checks pass; nativeQt/pointer/fullraster QA pending.",
+  "untouched": [
+    "crash-watch override",
+    "installedgrim",
+    "installedgnome-keyring",
+    "allpriorfrozenpackets"
+  ],
+  "legacyBackendGuardTests": 7,
+  "strictMutableLegacySources": {
+    "/home/hoskinson/window-integration-qa/qa_nested_backend.py": "da9abcbf48f4a13158362e7daddd57b580367d6d9bcb15c2c0efd1e87a9f5bfa",
+    "/home/hoskinson/window-integration-qa/test_qa_nested_backend.py": "2d3b8256b1e2ffcd4ee2f54f2d1b7f4a0cd87a48d7996b992fca35864f94d619",
+    "/home/hoskinson/window-integration-qa/qa_nested_target.py": "f77e5c8ef413b345e37824b8e0208122e8f18f1c914f043c42cdd566e91be0c9",
+    "/home/hoskinson/window-integration-qa/content-probe/smoke.py": "ea1ca7081d4148ebc4eb524ce5a153bed1b30dca752fb22708640248dd1e0121",
+    "/home/hoskinson/window-integration-qa/recovery-audit/isolated_restart.py": "34025a8c66abc5a6b385a0246e2c408a6fa0f9b296453213a0239628fa6182ca"
+  },
+  "ipcAttribution": {
+    "report": "/home/hoskinson/window-integration-qa/raster-v3-ipc-attribution/report.json",
+    "sha256": "c27ca2dccc9a6c967abebbef72a0654522d36d487a56330409ecb59d9d8fe944"
+  }
+}

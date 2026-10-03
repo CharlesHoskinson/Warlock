@@ -1,0 +1,13 @@
+{
+  "scope": "Source-only freeze preparation; no native launch",
+  "result": "retained-cwd-dependent-input-refused",
+  "oldInput": "window-integration-qa/snap-close-identity-audit-v1/replay.py",
+  "originalCwdRequired": "/home/hoskinson",
+  "attemptedCwd": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4",
+  "exception": "FileNotFoundError reading retained FamilyV6 root-relative input",
+  "offlineTestsBeforeFailure": "99 Python,16 named,2 models x2000x100 PASS",
+  "resolution": "Freeze historical packet from exact original workspace root; normalize all new packet paths to absolute keys before freezing",
+  "predicateRelaxed": false,
+  "mainWrites": false,
+  "nativeExecuted": false
+}

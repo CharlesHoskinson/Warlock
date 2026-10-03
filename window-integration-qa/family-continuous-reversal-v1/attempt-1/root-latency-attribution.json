@@ -1,0 +1,138 @@
+{
+  "updatedUTC": "2026-10-01T22:51:50.341882+00:00",
+  "reportSHA256": "a930f89ba213e2d4e2f8d91f4d01b4daef054e806e0fee1ef18c0b3ee71165b5",
+  "eventsEvidenceSHA256": "ecb4d1432f0f082571953ae69b080d573b621e2ef1bbf01689035fbf3d2475d4",
+  "strictReversalRefusal": "Reversal must begin from an actual interior presentation",
+  "originalOracleUnchanged": true,
+  "nativeReversalAccepted": false,
+  "requestAPIElapsedMs": 334.778368,
+  "requestToRendererAcceptanceMs": 333.815803,
+  "actualOrigins": [
+    {
+      "token": "5dddd896614f-2",
+      "origins": [
+        {
+          "actualOrigin": {
+            "generation": 6,
+            "members": [
+              {
+                "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+                "pid": 1572356,
+                "rectangle": {
+                  "height": 265.6296822,
+                  "width": 370.77587900000003,
+                  "x": 81.7701231,
+                  "y": 169.9969008
+                },
+                "stableId": "18000000"
+              },
+              {
+                "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+                "pid": 1572356,
+                "rectangle": {
+                  "height": 172.8536262,
+                  "width": 262.537147,
+                  "x": 205.4715311,
+                  "y": 216.3849288
+                },
+                "stableId": "18000002"
+              },
+              {
+                "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+                "pid": 1572356,
+                "rectangle": {
+                  "height": 141.9282742,
+                  "width": 200.686443,
+                  "x": 259.5908971,
+                  "y": 247.3102808
+                },
+                "stableId": "18000003"
+              }
+            ],
+            "output": "WAYLAND-1",
+            "rectangle": {
+              "height": 265.6296822,
+              "width": 386.238555,
+              "x": 81.7701231,
+              "y": 169.9969008
+            },
+            "sequence": "15",
+            "timestampNs": "105304030767561"
+          },
+          "presentedProgress": 0.2268662,
+          "presentedToken": "5dddd896614f-1"
+        }
+      ],
+      "sourceReused": true,
+      "uploadCount": 3
+    },
+    {
+      "token": "5dddd896614f-3",
+      "origins": [
+        {
+          "actualOrigin": {
+            "generation": 6,
+            "members": [
+              {
+                "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+                "pid": 1572356,
+                "rectangle": {
+                  "height": 338,
+                  "width": 474,
+                  "x": 93,
+                  "y": 219
+                },
+                "stableId": "18000000"
+              },
+              {
+                "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+                "pid": 1572356,
+                "rectangle": {
+                  "height": 218,
+                  "width": 334,
+                  "x": 253,
+                  "y": 279
+                },
+                "stableId": "18000002"
+              },
+              {
+                "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+                "pid": 1572356,
+                "rectangle": {
+                  "height": 178,
+                  "width": 254,
+                  "x": 323,
+                  "y": 319
+                },
+                "stableId": "18000003"
+              }
+            ],
+            "output": "WAYLAND-1",
+            "rectangle": {
+              "height": 338,
+              "width": 494,
+              "x": 93,
+              "y": 219
+            },
+            "sequence": "30",
+            "timestampNs": "105304297659083"
+          },
+          "presentedProgress": 1,
+          "presentedToken": "5dddd896614f-2"
+        }
+      ],
+      "sourceReused": true,
+      "uploadCount": 3
+    }
+  ],
+  "all15MainPreserved": true,
+  "all7176BytesModes146LinksExact": true,
+  "allServiceRendererUIClientsNormalExit": true,
+  "noRemainingProcessesRuntimeHelpers": true,
+  "nativeUnloadAccepted": false,
+  "cleanupAcceptanceIncomplete": "failed workload/helper count gate preceded explicit native unload; private compositor and parent subsequently exited normally",
+  "lockCause": "Pending source-backed causal audit; long request latency is observed directly",
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false
+}

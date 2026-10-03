@@ -1,0 +1,32 @@
+{
+  "result": "pass",
+  "scope": "Read-only replay of exact actual V3 mandatory-parent transport logs only",
+  "originalAttemptResult": "fail",
+  "originalResultUnchanged": true,
+  "nativeHeldCasesAccepted": false,
+  "nativeExecuted": false,
+  "sourceASTExact": true,
+  "primarySource": "/home/hoskinson/window-integration-qa/qt-modal-private-v9/run_native.py",
+  "primarySHA256": "8c31bbeacec8305df4d6bc650888f51abbab209aaade99edc52136c0d4621018",
+  "checkerSHA256": "106a421e1cd8e368d3a07271d0d6908e44c22a0e1cb25285d198a2b1a734d5e5",
+  "artifacts": [
+    {
+      "path": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/attempt-1/qt-wayland/host/hyprland.log",
+      "sha256": "6bd29d2f7e222608a34b2b0f864241d8c6926f7a42f9a5e1521538b2f0828cd5",
+      "bytes": 99020,
+      "completeEOF": true
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/attempt-1/qt-wayland/host/weston-renderer.log",
+      "sha256": "2baa4ee7a16df291924d54e4c3e4cce19af747a1119f02581f4f65dd6f6bd41a",
+      "bytes": 3480,
+      "completeEOF": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  }
+}

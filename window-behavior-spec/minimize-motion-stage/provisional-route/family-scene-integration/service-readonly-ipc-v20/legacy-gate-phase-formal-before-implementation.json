@@ -1,0 +1,52 @@
+{
+  "formalBeforeGatePhaseImplementation": true,
+  "productResourcesUnchanged": true,
+  "named": 12,
+  "samples": 2000,
+  "steps": 100,
+  "sourceSHA256": {
+    "legacy_fixture_ready.qnt": "122a0bf01d3099727747923ea299e8bdf0d7901d4c3e39889e56b558c5464eeb",
+    "legacy_fixture_ready_test.qnt": "12627338c71ccd717207114acb4b74b076659d2154e856cc939f98334b941700",
+    "LEGACY_FIXTURE_READINESS_CONTRACT.md": "7631a7e4af9a9f2ef4e36ece47b1a2dc6ae302021d806e3d3b7c6aab1eab5757",
+    "fixture_legacy_ready.py": "ff8ba73527f0b9c4b4905bb38c0f8471c7c64dc0724f702258f2e74937aa424a",
+    "test_renderer_terminal.py": "f3feb52b8c264224ca98d243ccb4d5dfcb823fd7d3e9c4bc5a89498112c0b083",
+    "recovery_resources.py": "133edcf7b92aaa2f521af90922c571d1637ab8e8c9536a7cf57a6475fa18ce02"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "legacy_fixture_ready_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "legacy-gate-phase-before-0.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "legacy_fixture_ready_test.qnt",
+        "--backend=rust",
+        "--seed=2026100203"
+      ],
+      "exitCode": 0,
+      "log": "legacy-gate-phase-before-1.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "legacy_fixture_ready.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100203",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "legacy-gate-phase-before-2.log"
+    }
+  ]
+}

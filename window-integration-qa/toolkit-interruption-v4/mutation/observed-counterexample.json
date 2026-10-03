@@ -1,0 +1,14 @@
+{
+  "kind": "Requirement mutation recreates source-confirmed nonrelease drop +focus override; expected failure",
+  "command": [
+    "quint",
+    "test",
+    "window-integration-qa/toolkit-interruption-v3/mutation/interruption_test.qnt",
+    "--seed",
+    "20260930"
+  ],
+  "exitCode": 1,
+  "stdout": "\n  interruption_test\n    ok heldMoveCrossesIndependentPeerTest passed 1 test(s)\n    ok heldResizeCrossesIndependentPeerTest passed 1 test(s)\n    ok blockedAncestorHasNoCaptureTest passed 1 test(s)\n    ok escapeBeforeFirstMotionTest passed 1 test(s)\n    ok escapeMovedCaptionRestoresPressRectTest passed 1 test(s)\n    ok escapeResizeRestoresPressRectRequiredTest passed 1 test(s)\n    ok cancelledHeldPressCannotRecaptureTest passed 1 test(s)\n    ok reloadMoveRetiresOldGenerationTest passed 1 test(s)\n    ok reloadResizeRetiresCaptureRequiredTest passed 1 test(s)\n    ok latestGeometryMixedPinsPreviewRestoreTest passed 1 test(s)\n    ok newerPinIntentSurvivesCancellationTest passed 1 test(s)\n    ok newerPinIntentSurvivesRestoreTest passed 1 test(s)\n    ok closedCapturedDialogNewLifetimeRejectsMotionTest passed 1 test(s)\n    ok staleMinimizedPreviewCannotRestoreNewLifetimeTest passed 1 test(s)\n    ok currentGenerationStillActionableAfterReloadsTest passed 1 test(s)\n    1) escapeCannotDropIntoPeerGroupTest failed after 1 test(s)\n    ok reloadCannotDropIntoPeerGroupTest passed 1 test(s)\n    ok minimizeRetirementCannotDropIntoPeerGroupTest passed 1 test(s)\n    ok genuineReleaseKeepsGroupDropTest passed 1 test(s)\n\n  18 passing (4164ms)\n  1 failed\n\n  1) escapeCannotDropIntoPeerGroupTest:\n       Error [QNT508]: Assertion failed\n        at /home/hoskinson/window-integration-qa/toolkit-interruption-v3/mutation/interruption_test.qnt:53:13\n        53:   .then(all{assert(s.groups.get(2)==2 and s.focus==3 and allProps),fire(Release)})\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    Use --seed=0x1352842 --match=escapeCannotDropIntoPeerGroupTest to repeat.\n\n\n  Use --verbosity=3 to show executions.\n  Further debug with: quint test --verbosity=3 window-integration-qa/toolkit-interruption-v3/mutation/interruption_test.qnt\n",
+  "stderr": "error: Tests failed\n",
+  "nativeExecuted": false
+}

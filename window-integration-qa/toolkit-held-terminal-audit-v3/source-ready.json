@@ -1,0 +1,52 @@
+{
+  "result": "source-ready",
+  "formalNamed": 9,
+  "formalSamples": 2000,
+  "formalSteps": 100,
+  "cpuPolicyCasesBeforeRuntime": 19,
+  "actualAuditorTests": 18,
+  "tests": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "test_exact_probe_replay_and_no_natural_exit_promotion (test_audit.QSReplay.test_exact_probe_replay_and_no_natural_exit_promotion) ... ok\ntest_unknown_reply_wrong_pid_and_second_kill_refused (test_audit.QSReplay.test_unknown_reply_wrong_pid_and_second_kill_refused) ... ok\ntest_descriptor_refuses_symlink_and_preserves_full_eof (test_audit.Replay.test_descriptor_refuses_symlink_and_preserves_full_eof) ... ok\ntest_exact_pidstart_not_pid_only (test_audit.Replay.test_exact_pidstart_not_pid_only) ... ok\ntest_fake_releases_unknown_commands_and_unbalanced_transitions_refused (test_audit.Replay.test_fake_releases_unknown_commands_and_unbalanced_transitions_refused) ... ok\ntest_group_member_order_and_lifetimes_remain_distinct (test_audit.Replay.test_group_member_order_and_lifetimes_remain_distinct) ... ok\ntest_native_bool_pid_and_nan_rectangle_refused (test_audit.Replay.test_native_bool_pid_and_nan_rectangle_refused) ... ok\ntest_actual_reviewed_binary_source_build_protocol_provenance (test_wheel.WheelReplay.test_actual_reviewed_binary_source_build_protocol_provenance) ... ok\ntest_changed_binary_or_unknown_producer_argv_refuses (test_wheel.WheelReplay.test_changed_binary_or_unknown_producer_argv_refuses) ... ok\ntest_changed_sync_pidstart_order_refuses (test_wheel.WheelReplay.test_changed_sync_pidstart_order_refuses) ... ok\ntest_held_button_refuses_without_fake_release (test_wheel.WheelReplay.test_held_button_refuses_without_fake_release) ... ok\ntest_keyboard_and_unauthenticated_refuse (test_wheel.WheelReplay.test_keyboard_and_unauthenticated_refuse) ... ok\ntest_literal_signed_released_sync_pairs (test_wheel.WheelReplay.test_literal_signed_released_sync_pairs) ... ok\ntest_malformed_literal_refuses (test_wheel.WheelReplay.test_malformed_literal_refuses) ... ok\ntest_missing_cpu_proof_and_changed_parser_or_guard_refuses (test_wheel.WheelReplay.test_missing_cpu_proof_and_changed_parser_or_guard_refuses) ... ok\ntest_missing_interposed_or_duplicate_sync_pair_refuses (test_wheel.WheelReplay.test_missing_interposed_or_duplicate_sync_pair_refuses) ... ok\ntest_normal_eof_and_zero_exit_remain_mandatory (test_wheel.WheelReplay.test_normal_eof_and_zero_exit_remain_mandatory) ... ok\ntest_original_entire_auditor_reconstructs_exactly (test_wheel.WheelReplay.test_original_entire_auditor_reconstructs_exactly) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 0.309s\n\nOK\n"
+  },
+  "originalEntireAuditorReconstructedExact": true,
+  "sourceInputs": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/CONTRACT.md": "8da42a711b08c48569f59ba7507b8b12581bf24991b5a14ddbf2b6c6f1cca98b",
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/wheel_input.qnt": "f96b9060fcffeb2994d956c6ee972f77371b15b15d9a9d53b0f821470aa31bfe",
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/wheel_input_test.qnt": "d07d28dbb8097d782c62a70e3b6066a2bec05f86c0765aae18ee655fb0c5fb6f",
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/formal_review.py": "0a81b9292295b935d0e7796788acb1fb12bd34fba9f06ba87b9993c64052cb88",
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/formal-before-runtime.json": "e235d094130c1dd1723bf426304c35e4eb7bc19e19361882fd13bfcee4e85c72",
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/cpu_policy_before_runtime.py": "5c2b84d71eee1c71dcc51160c94fe00a804fc2b745386e77f7db6d571bfd01b5",
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/cpu-policy-before-runtime.json": "caeb26e0b8ba503adf2de80332c800e496f40eec89db9541ed2f527ae40b7ab2",
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py": "cc787853b6ec5686b7c5e09e27f397eef906ef6863a49aa6001766daf904e454",
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/test_audit.py": "5d6953afb6ad64a37aaedf3377ed2211383ba427e8f926f29a25221570f3aade",
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/test_wheel.py": "5a82e7f892d0b1ca51ea218c219f8d6f42487b3ddb031189c97482b4704ebd67",
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/audit.py": "5d35dd6a4f31e71073faa44241d0368055523787040c3842436345236d2fc011",
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/test_audit.py": "5d6953afb6ad64a37aaedf3377ed2211383ba427e8f926f29a25221570f3aade",
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/CONTRACT.md": "d0d86854f8c8d6d81b4829fa516f47b55d05890ee7bfcf14ececf1722e93a297"
+  },
+  "sourceModes": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/CONTRACT.md": 420,
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/wheel_input.qnt": 420,
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/wheel_input_test.qnt": 420,
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/formal_review.py": 420,
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/formal-before-runtime.json": 420,
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/cpu_policy_before_runtime.py": 420,
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/cpu-policy-before-runtime.json": 420,
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py": 420,
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/test_audit.py": 420,
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/test_wheel.py": 420,
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/audit.py": 420,
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/test_audit.py": 420,
+    "/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/CONTRACT.md": 420
+  },
+  "reviewedProducerSHA256": "a68b51faa21c768cee50f973c62b6691e135d7778e36c3cfdfcb0203aa4f6b7a",
+  "rootReviewPending": true,
+  "sourceOnly": true,
+  "nativeCommands": false,
+  "mainWrites": false,
+  "originalV10AuditorFailuresPreserved": true,
+  "actualHelperExit120StillRefuses": true,
+  "fullHeld52Accepted": false
+}

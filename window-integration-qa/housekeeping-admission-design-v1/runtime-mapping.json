@@ -1,0 +1,52 @@
+{
+  "productDelta": "NativeFactory.housekeep perquery reentrant receipt admission",
+  "unchangedMethods": {
+    "PinnedExecutable.__init__": "0527f59374f69e08ebffe4f1e9b8b14a5999ad6a4e0480cfb2318902c6fe08ae",
+    "PinnedExecutable.path": "e8aef622ed748fd9f948b9246b5b2b7bbf9d60ff0e7d8974200cec50ea9cb241",
+    "PinnedExecutable.close": "5bebd65679de0b56b4686d6aaff8c4bb8db246900ed32db5df39c57e7dbf646b",
+    "PinnedExecutable.__enter__": "b1d9afdbf340299eb63649b1713baa87e774e5e24fc3a3cbcaaecfe2e6804411",
+    "PinnedExecutable.__exit__": "f434ee8212fd5ae30e11c517978f3e292b8aed4524f5ca360e66934405efb5cf",
+    "NativeSession.__init__": "d2fea2d35e46ba06f47c94c82d1824060ecf677d0c995040dffd6a405572fc02",
+    "NativeSession.verify": "4b23b9c7457aba14edbf439bbcd8d033435b350b464ff94c65accc83433d32eb",
+    "FailureBinding.__init__": "dfeca23a0ea1da3aaeaea3a41f1804bc5437fdbd5908535403a004734c9d9be8",
+    "FailureBinding.__call__": "f12cbee25f7035a1573a0ae54e331ce923ad2832c31f3de0651d4e484bd9f30a",
+    "FailureBinding.bind": "5558d18b9d756aac02ac0ac81427af5e1f04a4d32d7c05e1b7725d41fbfdbfff",
+    "FailureBinding.deliver": "b0b92a4aefbd384c3ed1351714da9e49ea188a9c8987c6ff6fa0c3ea0a209f7d",
+    "PinnedNativeDesktop.__init__": "0719779682603556afefc7a5f0e05218f29f93a2d27ddcd40e3eae72cf669f58",
+    "PinnedNativeDesktop.retire_gestures": "cfb3e1ca721a98e1c05d10dbcdabb3e9744573a0923d97a894f8e099b29f0ab0",
+    "PinnedNativeDesktop.plan_destination": "352bc21d241649fc62cdb84cf48333eaa8caa9e3a1f962081375f80333f7ce4c",
+    "PinnedNativeDesktop.apply_destination": "c10fcd52505e12545f810a092772da474d80a22bfa6c86dee275fb3ddcbf7091",
+    "PinnedNativeDesktop.refresh_destination": "adb4ce0c3e3ee27fbcc3fb8581c08aecf40af8765bc53a4909bfc0b7ae79223e",
+    "PinnedNativeDesktop.commit": "f3c7264979ce84c35303c249d4f351bb1dfca1bc707c368e6e65ae570adc6f9e",
+    "NativeFactory.__init__": "6634585be560b4e20e50f394b90263244ab41767b67235f0597ecfc8b0569066",
+    "NativeFactory.bind_lease": "3abe7154b79eed5ebb85a650357421da859eff1f2d675b988c8f9cceb390ebeb",
+    "NativeFactory.bind_journal": "b642b957394ee10fe03e2a9596c5d28c50bf79d7e45a62faf7cd1926f3fce4a8",
+    "NativeFactory.readonly_changed": "dd572a3d8a49d1553213b3048f3c5caa03bf918d47466574b2785bfa2a996b1a",
+    "NativeFactory.readonly_snapshot": "859545275e3f7b09d71a70729b48bd3e8234096aca4a9f6c52f557c980117713",
+    "NativeFactory.helper_changed": "2fdd3cfbb99866fced0ad03b022241da6c6415d677fb36e18b8de9f3f0f7c6a3",
+    "NativeFactory.helper_snapshot": "9adf3b12ba3731e4a0825668122fc03e51f70552aaecd67ada88dfcc41cbe4ec",
+    "NativeFactory.close": "3305ea77225058c8aefe54477897b1e1142db93e6c87502b9249c346f6e63cb9",
+    "NativeFactory.resource_snapshot": "8f3ddd35cdb44c973977188eed187712c0b788c99c2158d787a5fd094cd4dd47",
+    "NativeFactory.publish_resource": "e54e2d423128fdfd15683a0495074a8ca4b719d9383f8a6ef23d40fb09512017",
+    "NativeFactory.__call__": "13881db1a66880186a372b8f8c9ba86d770ad81b1c5fe751ad9c041bd1254cb8",
+    "NativeFactory.context": "4c8512fbf5b8d1ec4920ba1f533f7a562d95442dc771a7dedfe6606a081a4c49",
+    "NativeFactory.retired": "be19d69716459dddee524f75320454ece665eb4e63433434b3a724c19827715a",
+    "NativeFactory.recover": "ce868636059795472450398bd881a566611d31647ddaece8bd161f109bcf8247"
+  },
+  "deadlineStartsAt": "unchanged ReadonlyIPC.query deadline=time.monotonic()+timeout, AFTER wrapper acquires journal_lock",
+  "deadlineIncludesPreRegistrationAuthority": true,
+  "fixedQueries": [
+    "j/clients",
+    "/repl print(hl.plugin.hyprbars.window_families())",
+    "j/clients"
+  ],
+  "allTimeoutsSeconds": [
+    0.6,
+    0.6,
+    0.6
+  ],
+  "fixtureChanges": "two real RLock assembly statements; complete inverse exact",
+  "readonlyIPCUnchanged": true,
+  "controllerManagerKeeperUnchanged": true,
+  "nativeAccepted": false
+}

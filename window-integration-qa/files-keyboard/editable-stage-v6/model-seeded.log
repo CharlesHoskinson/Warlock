@@ -1,0 +1,2229 @@
+An example execution:
+
+[State 0]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 1]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 2]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 3]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 4]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 5]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 6]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 7]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 8]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 9]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 10]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 11]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 12]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 13]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 14]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 15]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 16]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 17]
+{
+  alive: Set(0, 1, 2),
+  allowed: true,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 18]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 19]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 20]
+{
+  alive: Set(0, 1, 2),
+  allowed: true,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 21]
+{
+  alive: Set(0, 1, 2),
+  allowed: true,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 0, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 22]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(),
+  selection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 23]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0),
+  selection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 24]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 2),
+  selection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 25]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(2),
+  selection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 26]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(2),
+  selection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 27]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(2),
+  selection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 28]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 29]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 30]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 31]
+{
+  alive: Set(0, 1, 2),
+  allowed: true,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 32]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 33]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 34]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 35]
+{
+  alive: Set(0, 1, 2),
+  allowed: true,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 1, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 36]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 37]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 38]
+{
+  alive: Set(0, 1, 2),
+  allowed: true,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 39]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 40]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 0, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 41]
+{
+  alive: Set(1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 1, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 42]
+{
+  alive: Set(1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 1, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 43]
+{
+  alive: Set(1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 1, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 44]
+{
+  alive: Set(1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 1, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 45]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 1, 2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 46]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 47]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 48]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 49]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 50]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 51]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 52]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 53]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 54]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 55]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 56]
+{
+  alive: Set(0, 1, 2),
+  allowed: true,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 0),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 57]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 58]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(1, 2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 59]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(1, 2),
+  epochs: Map(0 -> 2, 1 -> 1, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 60]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(1, 2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 61]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(1, 2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 62]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(1, 2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 63]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(1, 2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 64]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 65]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 66]
+{
+  alive: Set(0, 2),
+  allowed: true,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 1),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 67]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 68]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 69]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 70]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 71]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 72]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 73]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 74]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 75]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 76]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 77]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 78]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 79]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 80]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 81]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 82]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 83]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 84]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 85]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 2, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 86]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 3, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 87]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 3, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 88]
+{
+  alive: Set(0, 1, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 3, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 89]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 4, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 90]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 4, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(1, 2)
+}
+
+[State 91]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 4, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: false,
+  visible: Set(1, 2)
+}
+
+[State 92]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 4, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: false,
+  visible: Set(0, 1, 2)
+}
+
+[State 93]
+{
+  alive: Set(0, 2),
+  allowed: true,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 1),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 4, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 94]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 4, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 95]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 4, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 96]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 4, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 97]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 4, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(0, 1, 2)
+}
+
+[State 98]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 2, 1 -> 4, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: false,
+  visible: Set(0, 1)
+}
+
+[State 99]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: false,
+  attemptedContent: false,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 3, 1 -> 4, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: false,
+  visible: Set(0, 1)
+}
+
+[State 100]
+{
+  alive: Set(0, 2),
+  allowed: false,
+  attempted: true,
+  attemptedContent: true,
+  beforeContent: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  beforeCursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  beforeSelection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  content: Map(0 -> 2, 1 -> 0, 2 -> 0),
+  cursor: Map(0 -> 0, 1 -> 0, 2 -> 2),
+  enabledNodes: Set(0, 2),
+  epochs: Map(0 -> 3, 1 -> 4, 2 -> 0),
+  mapped: true,
+  modal: false,
+  pid: 667402,
+  readonly: Set(0, 1, 2),
+  selection: Map(0 -> 3, 1 -> 0, 2 -> 2),
+  targetReadonly: true,
+  visible: Set(0, 1)
+}
+
+[ok] No violation found (8567ms at 233 traces/second).
+Trace length statistics: max=101, min=101, average=101.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x138351e --backend=rust to reproduce.

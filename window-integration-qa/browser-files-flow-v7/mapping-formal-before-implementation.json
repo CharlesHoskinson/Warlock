@@ -1,0 +1,31 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v6/mapping_evidence_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  mapping_evidence_test\n    ok acceptedRetainedTest passed 1 test(s)\n    ok missingClosureRetainedTest passed 1 test(s)\n    ok unreadableRetainedTest passed 1 test(s)\n    ok staleLifetimeRetainedTest passed 1 test(s)\n    ok allErrorsRetainedTest passed 1 test(s)\n    ok noValidationBeforeSaveTest passed 1 test(s)\n\n  6 passing (38ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v6/mapping_evidence.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (290ms at 6897 traces/second).\nUse --seed=0x142082e --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "nativeExecuted": false
+}

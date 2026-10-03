@@ -1,0 +1,39 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/process-callback-thread-v2-rearm/CONTRACT.md": "9e05b7336e93f05df71a282a508a016d3e400fefaf9870894ee33fdfff35a24e",
+    "/home/hoskinson/window-behavior-spec/process-callback-thread-v2-rearm/thread_callback.qnt": "739cec24d4e92917d256279492ae17de6bd2c8f2acb1e024a2c82bc7583a147a",
+    "/home/hoskinson/window-behavior-spec/process-callback-thread-v2-rearm/prove_before.py": "49d0a615b04c2179b6e57e28950609d27cae1cd0fcd466dc1a542e1bac9503fb"
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/process-callback-thread-v2-rearm/thread_callback.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  thread_callback\n    ok actualCurrentWrongThreadContainedFaultTest passed 1 test(s)\n    ok queryBeforeQueuedDeliveryMustDrainTest passed 1 test(s)\n    ok commitBeforeQueuedDeliveryMustDrainTest passed 1 test(s)\n    ok oldWrongThreadCallbackPreservesCurrentRecordTest passed 1 test(s)\n    ok oldWrongThreadQueryIsInertTest passed 1 test(s)\n    ok mixedCurrentAndOldFaultMatchesCurrentTest passed 1 test(s)\n    ok oldFaultCannotPoisonReplacedLeaseTest passed 1 test(s)\n    ok currentFaultPreservesNormalJobAccountingTest passed 1 test(s)\n    ok oldFaultPreservesNormalJobAccountingTest passed 1 test(s)\n    ok repeatedCurrentFaultNeverRestoresTest passed 1 test(s)\n    ok overflowRefusesUnknownDroppedAuthorityTest passed 1 test(s)\n    ok currentWrongThreadImmediatelyBeforeRearmMustDrainTest passed 1 test(s)\n\n  12 passing (432ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/process-callback-thread-v2-rearm/thread_callback.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1580ms at 1266 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceUnchanged": true,
+  "mappingPredicateChanged": false,
+  "GUI": false,
+  "rootReviewBeforeRuntime": true
+}

@@ -1,0 +1,33 @@
+5678:method call time=1790866666.853002 sender=:1.14 -> destination=org.freedesktop.DBus serial=193 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=GetNameOwner
+5679:   string "org.gnome.Orca.KeyboardMonitor"
+5680:method return time=1790866666.853020 sender=org.freedesktop.DBus -> destination=:1.14 serial=64 reply_serial=193
+5681:   string ":1.13"
+5682:signal time=1790866666.858094 sender=:1.14 -> destination=:1.13 serial=194 path=/org/freedesktop/a11y/Manager; interface=org.freedesktop.a11y.PointerLocator; member=PointerPositionChanged
+5683:method call time=1790866666.880460 sender=:1.13 -> destination=:1.14 serial=100 path=/org/freedesktop/a11y/Manager; interface=org.freedesktop.a11y.PointerLocator; member=QueryPointer
+5684:method call time=1790866666.909055 sender=:1.4 -> destination=org.freedesktop.a11y.Manager serial=66 path=/org/freedesktop/a11y/Manager; interface=org.freedesktop.a11y.PointerLocator; member=QueryPointer
+5685:method return time=1790866666.918906 sender=:1.14 -> destination=:1.13 serial=195 reply_serial=100
+5686:   array [
+5687:      dict entry(
+5688:         string "app-dbus-name"
+5689:         variant             string ":1.6"
+5690:      )
+5691:      dict entry(
+5692:         string "toplevel-object-path"
+5693:         variant             object path "/org/omarchy/PointerPeerA/a11y/6e7049fa_ec8a_4737_b6f7_4b552b3eb26a"
+5694:      )
+5695:   ]
+5696:   double 180
+5697:   double -14
+5698:method return time=1790866666.949789 sender=:1.14 -> destination=:1.4 serial=196 reply_serial=66
+5699:   array [
+5700:      dict entry(
+5701:         string "app-dbus-name"
+5702:         variant             string ":1.6"
+5703:      )
+5704:      dict entry(
+5705:         string "toplevel-object-path"
+5706:         variant             object path "/org/omarchy/PointerPeerA/a11y/6e7049fa_ec8a_4737_b6f7_4b552b3eb26a"
+5707:      )
+5708:   ]
+5709:   double 180
+5710:   double -14

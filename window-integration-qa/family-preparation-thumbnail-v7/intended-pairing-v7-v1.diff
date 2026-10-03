@@ -1,0 +1,279 @@
+--- V5/module_binding.py
++++ V7/module_binding.py
+@@ -9,11 +9,12 @@
+ import sys
+ import time
+ 
+-SERVICE=Path('/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20')
+-MANIFEST=SERVICE/'manifest-readonly-ipc-v20.json'
+-MANIFEST_SHA256='d3d836eda0e2a25681df4ca80740ca94f8d2084ea1c48f8834293b740122c068'
+-MODULES=('native_runtime','service_runtime','native_desktop','scene_manager','scene_controller','pipe_transport','context_provider','recovery_runtime','recovery_resources','recovery_cancel','readonly_ipc','owned_commands','helper_supervisor','owned_launch','helper_policy','timeout_adapter','snapshot_cache','production_motion_6d9')
+-LINKS=(('native_runtime','NativeDesktop','native_desktop','NativeDesktop'),('native_runtime','PipeTransport','pipe_transport','PipeTransport'),('native_runtime','RuntimeService','service_runtime','RuntimeService'),('native_runtime','NativeContextProvider','context_provider','NativeContextProvider'),('service_runtime','SceneManager','scene_manager','SceneManager'),('scene_manager','SceneController','scene_controller','SceneController'))
++SERVICE=Path('/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23')
++MANIFEST=SERVICE/'manifest-family-preparation-v23.json'
++# Deliberately refuses until root freezes/reviews the completed V23 packet.
++MANIFEST_SHA256='UNFROZEN_V23_NO_NATIVE_GRANT'
++MODULES=('native_runtime','service_runtime','native_desktop','scene_manager','scene_controller','pipe_transport','context_provider','recovery_runtime','recovery_resources','recovery_cancel','readonly_ipc','owned_commands','helper_supervisor','owned_launch','helper_policy','timeout_adapter','snapshot_cache','production_motion_6d9','batch_preview')
++LINKS=(('native_runtime','NativeDesktop','native_desktop','NativeDesktop'),('native_runtime','PipeTransport','pipe_transport','PipeTransport'),('native_runtime','RuntimeService','service_runtime','RuntimeService'),('native_runtime','NativeContextProvider','context_provider','NativeContextProvider'),('service_runtime','SceneManager','scene_manager','SceneManager'),('scene_manager','SceneController','scene_controller','SceneController'),('native_desktop','BatchPreviews','batch_preview','BatchPreviews'),('native_desktop','OwnedCommands','owned_commands','OwnedCommands'),('batch_preview','key','scene_controller','key'),('batch_preview','rectangle','scene_controller','rectangle'))
+ 
+ def digest(value):return hashlib.sha256(json.dumps(value,sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()
+ def sha(raw):return hashlib.sha256(raw).hexdigest()
+@@ -55,7 +56,7 @@
+     loaded={};packet=None
+     try:
+         blob=MANIFEST.read_bytes();raw['manifestActualSHA256']=sha(blob);packet=json.loads(blob)
+-        if raw['manifestActualSHA256']!=MANIFEST_SHA256:raise ValueError('exact frozen V20 manifest required')
++        if raw['manifestActualSHA256']!=MANIFEST_SHA256:raise ValueError('exact frozen V23 manifest required')
+         for name in MODULES:
+             # Cached modules are inspected too. Adding candidate PATH never
+             # substitutes for a stale module already present in sys.modules.
+@@ -168,7 +169,27 @@
+ 
+ 
+ def actor_callbacks(factory,desktop,transport,controller):
+-    return [('controller.event',transport.callback),('controller.prepare',controller.prepare),('controller.commit_members',controller.commit_members),('controller.transport_failure',controller.transport_failure),('native.bind_controller',transport.qa_original_bind_controller),('failure.bind',transport.failure.bind),('desktop.commit',desktop.commit),('desktop.clients',desktop.clients),('commands.run',desktop.commands.run),('reader.query',factory.readonly.query),('runtime.persist',factory.resource_writer)]
++    batch=desktop.preview_batch
++    return [('controller.event',transport.callback),('controller.prepare',controller.prepare),('controller.commit_members',controller.commit_members),('controller.transport_failure',controller.transport_failure),('native.bind_controller',transport.qa_original_bind_controller),('failure.bind',transport.failure.bind),('desktop.commit',desktop.commit),('desktop.clients',desktop.clients),('commands.run',desktop.commands.run),('reader.query',factory.readonly.query),('runtime.persist',factory.resource_writer),('desktop.finish_capture_previews',desktop.finish_capture_previews),('batch.stage',batch.stage),('batch.finish',batch.finish),('batch.discard',batch.discard),('batch.require_releasable',batch.require_releasable),('batch.require_disposable',batch.require_disposable)]
++
++
++def batch_relations(factory,number,desktop):
++    import batch_preview,native_desktop
++    batch=desktop.preview_batch
++    expected=Path(factory.guard.env['XDG_RUNTIME_DIR'])/'hypr-window-previews'
++    return {
++        'batchClass':type(batch) is batch_preview.BatchPreviews,
++        'batchCommands':batch.commands is desktop.commands,
++        'batchRoot':batch.root==desktop.root and desktop.root.parent==factory.root/'actors',
++        'batchPreview':batch.preview==expected and desktop.production.RUNTIME==expected.parent,
++        'batchActor':type(desktop.commands.actor) is int and desktop.commands.actor==number,
++        'finisherFunction':getattr(desktop.finish_capture_previews,'__func__',None) is native_desktop.NativeDesktop.finish_capture_previews,
++    }
++
++
++def batch_identity(desktop):
++    batch=desktop.preview_batch
++    return {'instanceID':id(batch),'commandsID':id(batch.commands),'root':str(batch.root),'preview':str(batch.preview)}
+ 
+ 
+ def linked_actor(factory,number,desktop,transport,controller,destination):
+@@ -193,6 +214,8 @@
+             'failureBinding':type(transport.failure) is native_runtime.FailureBinding,
+             'failureClosure':inspect.getclosurevars(transport.qa_original_bind_controller).nonlocals.get('binding') is transport.failure,
+         }
++        raw['relations'].update(batch_relations(factory,number,desktop))
++        raw['batch']=batch_identity(desktop)
+         if not all(raw['relations'].values()):raise ValueError('actual actor/runtime links differ')
+         def selected():return actor_callbacks(factory,desktop,transport,controller)
+         for name,fn in selected():raw['callbacks'][name]=callback(fn,packet)
+@@ -209,6 +232,9 @@
+     confirmation={'phase':'actor-post-disk','errors':[],'capturedRaw':raw['disk'],'callbacks':{},'ownerToken':None}
+     try:
+         factory.lease_verify();confirmation['ownerToken']=digest(owner_projection(factory,factory.lease_verify.__self__))
++        confirmation['batch']=batch_identity(desktop)
++        confirmation['batchRelations']=batch_relations(factory,number,desktop)
++        if confirmation['batch']!=raw['batch'] or not all(confirmation['batchRelations'].values()):raise ValueError('actual batch instance or links changed after disk')
+         confirmation['callbacks']={name:callback(fn,packet) for name,fn in selected()}
+         if confirmation['callbacks']!=raw['callbacks'] or confirmation['ownerToken']!=raw['ownerToken'] or functions(desktop.production)!=raw['production']['callables'] or read_source(desktop.production.__file__)['sha256']!=raw['production']['source']['sha256']:raise ValueError('actual actor changed after disk observation')
+         factory.lease_verify()
+@@ -236,6 +262,7 @@
+         for number,controller in getattr(factory,'observed_controllers',[]):
+             selected=[row for row in raw['actors'] if row['actor']==number]
+             if len(selected)!=1 or {name:callback(fn,packet) for name,fn in actor_callbacks(factory,controller.desktop,controller.transport,controller)}!=selected[0]['callbacks']:raise ValueError('actual retained actor callbacks changed at terminal')
++            if not all(batch_relations(factory,number,controller.desktop).values()) or batch_identity(controller.desktop)!=selected[0]['batch']:raise ValueError('actual batch instance or links changed at terminal')
+             production=controller.desktop.production
+             if production.__file__!=selected[0]['production']['actualFile'] or functions(production)!=selected[0]['production']['callables'] or production.subprocess is not controller.desktop.commands or type(controller.desktop.base) is not production.Desktop:raise ValueError('actual per-actor production links changed at terminal')
+     except BaseException as failure:raw['errors'].append({'type':type(failure).__name__,'message':str(failure)})
+--- V5/native_integration.py
++++ V7/native_integration.py
+@@ -26,7 +26,7 @@
+ B = Path(__file__).resolve().parent
+ QA = Path('/home/hoskinson/window-integration-qa')
+ QT = QA / 'qt-modal-private-v9'
+-SERVICE = Path('/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20')
++from module_binding import SERVICE, MANIFEST as SERVICE_MANIFEST, MANIFEST_SHA256 as EXPECTED_SERVICE_MANIFEST
+ PRODUCER_PACKET = SERVICE.parent / 'producer-production-default-v10/manifest-v10.json'
+ PAIR = QA / 'toolkit-interruption-v5'
+ PLUGIN = PAIR / 'native-candidate/hyprbars-v21-interruption-candidate.so'
+@@ -73,8 +73,8 @@
+         links[name]=target
+     for p in (pair_manifest,QA/'toolkit-v5-root-source-review.json',helper_setup.OMARCHY_BIND,helper_setup.FRESH_HELPER):
+         inputs[str(p)]=sha(p)
+-    if sha(SERVICE/'manifest-readonly-ipc-v20.json')!='d3d836eda0e2a25681df4ca80740ca94f8d2084ea1c48f8834293b740122c068':raise ValueError('Reviewed corrected recovery V17 freeze changed')
+-    for packet in (json.loads((SERVICE / 'manifest-readonly-ipc-v20.json').read_text()),
++    if sha(SERVICE_MANIFEST)!=EXPECTED_SERVICE_MANIFEST:raise ValueError('Reviewed V23 service freeze changed')
++    for packet in (json.loads(SERVICE_MANIFEST.read_text()),
+                    json.loads(PRODUCER_PACKET.read_text())):
+         inputs.update(packet['inputs'])
+         links.update(packet.get('symlinks', packet.get('links', {})))
+@@ -132,7 +132,7 @@
+     inputs[str(prior/'frozen-inputs.json')]=sha(prior/'frozen-inputs.json')
+     for p in (prior/'attempt-1').rglob('*'):
+         if p.is_file():inputs[str(p)]=sha(p)
+-    for p in (SERVICE/'checkpoint-readonly-ipc-v20.json',):inputs[str(p)]=sha(p)
++    for p in (SERVICE_MANIFEST,):inputs[str(p)]=sha(p)
+     prior_v2=QA/'family-continuous-reversal-v2'
+     prior_packet=json.loads((prior_v2/'frozen-inputs.json').read_text())
+     for name,digest in prior_packet['inputs'].items():
+@@ -180,7 +180,7 @@
+         inputs[p] = sha(p)
+     links['/usr/bin/qs'] = os.readlink('/usr/bin/qs')
+     links.update(json.loads((B / 'payload-manifest.json').read_text())['externalSymlinks'])
+-    for p in (SERVICE / 'manifest-readonly-ipc-v20.json', PRODUCER_PACKET, QT / 'frozen-inputs.json'):
++    for p in (SERVICE_MANIFEST, PRODUCER_PACKET, QT / 'frozen-inputs.json'):
+         inputs[str(p)] = sha(p)
+     accepted=QA/'family-raster-production-default-v12'
+     packet=json.loads((accepted/'frozen-inputs.json').read_text())
+@@ -211,6 +211,21 @@
+         inputs[str(manifest)]=sha(manifest);modes[str(manifest)]=stat.S_IMODE(manifest.stat().st_mode)
+     review=QA/'recovery-v4-root-source-review-v1.json'
+     inputs[str(review)]=sha(review);modes[str(review)]=stat.S_IMODE(review.stat().st_mode)
++    # Preserve the exact V5 collector and its failed baseline, not only its name.
++    retained_v5=QA/'family-recovery-bootstrap-v5'
++    v5_manifest=retained_v5/'frozen-inputs.json'
++    if sha(v5_manifest)!='bbd142db7116de7e076df508dcb6d9b57ceda4d6cc5035cec7da6a5867b2e492':raise ValueError('Reviewed V5 collector changed')
++    v5_packet=json.loads(v5_manifest.read_text())
++    for name,value in v5_packet['inputs'].items():
++        mode=v5_packet['inputModes'][name]
++        if sha(name)!=value or stat.S_IMODE(Path(name).stat().st_mode)!=mode:raise ValueError('V5 retained source or mode changed')
++        if name in inputs and inputs[name]!=value or name in modes and modes[name]!=mode:raise ValueError('V5 retained source conflict')
++        inputs[name]=value;modes[name]=mode
++    for name,target in v5_packet['symlinks'].items():
++        if not Path(name).is_symlink() or os.readlink(name)!=target or name in links and links[name]!=target:raise ValueError('V5 retained link changed')
++        links[name]=target
++    for path in [v5_manifest,*sorted((retained_v5/'attempt-baseline-1').rglob('*'))]:
++        if path.is_file() and not path.is_symlink():inputs[str(path)]=sha(path);modes[str(path)]=stat.S_IMODE(path.stat().st_mode)
+     row = {'inputs': inputs, 'symlinks': links,
+            'inputModes':modes,
+            'scope': 'Private integrated native family/taskbar baseline; full contract not yet accepted',
+@@ -789,7 +804,7 @@
+                       logHashes={str(p): sha(p) for p in host_logs})
+         if len(report['checks'])!=38 or not all(row['passed'] for row in report['checks']):raise RuntimeError('Original29 plus8 continuous episode and1default selection gates required')
+         from module_binding import validate_evidence
+-        report['actualV20Binding']=validate_evidence(json.loads((output/'service-evidence.json').read_text()))
++        report['actualServiceBinding']=validate_evidence(json.loads((output/'service-evidence.json').read_text()))
+         report['result'] = 'pass'
+     except BaseException:
+         report['error'] = traceback.format_exc(); report['result'] = 'fail'
+--- V5/native_faults.py
++++ V7/native_faults.py
+@@ -18,13 +18,13 @@
+     if not args.attempt:
+         parser.error('explicit fresh --attempt required')
+     require_qa_scope(); verify()
+-    if SERVICE.name!='service-readonly-ipc-v20':raise ValueError('Reviewed corrected terminal candidate pairing required before native faults')
++    if SERVICE.name!='service-family-preparation-v23':raise ValueError('Reviewed corrected terminal candidate pairing required before native faults')
+     baseline=json.loads(args.baseline.read_text())
+     if args.baseline.resolve().parent.parent!=B or not args.baseline.parent.name.startswith('attempt-'):raise ValueError('Owned original baseline attempt required')
+     validate_baseline(baseline,sha(B/'frozen-inputs.json'))
+     from module_binding import validate_evidence
+     binding=validate_evidence(json.loads((args.baseline.parent/'service-evidence.json').read_text()))
+-    if baseline.get('actualV20Binding')!=binding:raise ValueError('Same frozen packet actual V20 baseline binding required')
++    if baseline.get('actualServiceBinding')!=binding:raise ValueError('Same frozen packet actual V23 baseline binding required')
+     main_env = dict(os.environ); os.umask(0o077)
+     output = args.attempt.resolve()
+     if output.parent != B or not output.name.startswith('attempt-'):
+@@ -385,7 +385,7 @@
+                 from module_binding import archive_fault_binding
+                 from types import SimpleNamespace
+                 old_guard=SimpleNamespace(session=env['HYPRLAND_INSTANCE_SIGNATURE'],pid=session.evidence['compositorPID'],start=int(session.evidence['compositorStart']),env=env,sockets=[Path(env['XDG_RUNTIME_DIR'])/'hypr'/env['HYPRLAND_INSTANCE_SIGNATURE']/'.socket.sock'])
+-                report['oldActualV20Binding']=archive_fault_binding(output/'initial',old,owner,old_guard,fault_folder/'actual-old-binding.json')
++                report['oldActualServiceBinding']=archive_fault_binding(output/'initial',old,owner,old_guard,fault_folder/'actual-old-binding.json')
+                 check('Old owner and live root lock bind the exact stopped service',owner['pid']==daemon.pid and owner['start']==int(service_identity['start']) and owner['session']==env['HYPRLAND_INSTANCE_SIGNATURE'],owner=owner,rootIdentity=[before_root.st_dev,before_root.st_ino],lockIdentity=[before_lock.st_dev,before_lock.st_ino])
+                 from helper_supervisor import checked_keeper,await_terminal
+                 keeper=old['helperOwnership']['keeper'];checked_keeper(keeper,root=service_root,environment={k:env[k] for k in ('XDG_RUNTIME_DIR','HYPRLAND_INSTANCE_SIGNATURE','WAYLAND_DISPLAY')});terminal_path=service_root/('keeper-'+keeper['nonce']+'.json')
+@@ -488,9 +488,9 @@
+                 if loaded:session.ctl('plugin','unload',str(PLUGIN));report['normalNativeUnload']=session.data('plugin','list')==[]
+                 host_logs=[Path(session.evidence['hyprland']['log']),output/'host/weston-renderer.log'];transport=qt.transport_log_gate([p.read_text() for p in host_logs])
+                 check('Mandatory actual parent transport remains healthy through clients-first teardown',transport['passed'],transport=transport,logHashes={str(p):sha(p) for p in host_logs})
+-        report['actualV20Binding']=validate_evidence(recovered_evidence)
++        report['actualServiceBinding']=validate_evidence(recovered_evidence)
+         from module_binding import validate_recovery_evidence
+-        report['actualV20RecoveryBinding']=validate_recovery_evidence(recovered_evidence)
++        report['actualServiceRecoveryBinding']=validate_recovery_evidence(recovered_evidence)
+         report['result']='pass'
+     except BaseException:
+         report['error']=traceback.format_exc();report['result']='fail'
+--- V5/service_recovery_observer.py
++++ V7/service_recovery_observer.py
+@@ -7,7 +7,7 @@
+ _RuntimeService=original.RuntimeService
+ 
+ def make_recovery_runtime(root,session,factory,context_provider):
+-    if original.SERVICE!=SERVICE:raise ValueError('both observers must select exact frozen V20')
++    if original.SERVICE!=SERVICE:raise ValueError('both observers must select exact frozen V23')
+     # Exact documented native_runtime.py entrypoint binding.
+     return _RuntimeService(root,session,factory,context_provider,recovery=factory.recover)
+ 
+--- V5/test_actual_binding.py
++++ V7/test_actual_binding.py
+@@ -12,7 +12,7 @@
+ 
+ class LoadedSourceTests(unittest.TestCase):
+  def test_actual_candidate_and_links(self):
+-  raw=binding._observe('actual-cpu');self.assertEqual(raw['errors'],[]);self.assertFalse(raw['usable']);self.assertTrue(raw['rawEvidenceOnly']);self.assertEqual(len(raw['modules']),18);self.assertTrue(all(v['matched'] for v in raw['links']))
++  raw=binding._observe('actual-cpu');self.assertEqual(raw['errors'],[]);self.assertFalse(raw['usable']);self.assertTrue(raw['rawEvidenceOnly']);self.assertEqual(len(raw['modules']),19);self.assertTrue(all(v['matched'] for v in raw['links']))
+  def test_stale_preloaded_v17_is_not_repaired_by_outer_path(self):
+   old=binding.SERVICE.parent/'service-recovery-terminal-v17'
+   code="import sys;sys.path.insert(0,sys.argv[1]);import native_runtime;sys.path.insert(0,sys.argv[2]);import module_binding;sys.path.insert(0,str(module_binding.SERVICE));r=module_binding._observe('stale');assert r['errors'] and not r['usable'];print(native_runtime.__file__)"
+@@ -110,6 +110,8 @@
+    with self.assertRaises(ValueError):binding.validate_ledger(ledger,proof['owner'],bad)
+  def actor(self,factory):
+   desktop=object.__new__(native_runtime.PinnedNativeDesktop);desktop.commands=owned_commands.OwnedCommands(None,self.env,1,readonly=self.reader);desktop.production=importlib.import_module('production_motion_6d9');desktop.base=object.__new__(desktop.production.Desktop)
++  from batch_preview import BatchPreviews
++  desktop.root=factory.root/'actors'/'actor-1-cpu';desktop.production.RUNTIME=Path(self.env['XDG_RUNTIME_DIR']);desktop.preview_batch=BatchPreviews(desktop.root,desktop.production.RUNTIME/'hypr-window-previews',desktop.commands)
+   controller=object.__new__(scene_manager.ManagedController);transport=object.__new__(pipe_transport.PipeTransport);controller.desktop=desktop;controller.transport=transport;transport.callback=controller.event
+   import types
+   transport.failure=native_runtime.FailureBinding();code=next(v for v in native_runtime.NativeFactory.__call__.__code__.co_consts if isinstance(v,types.CodeType) and v.co_name=='<lambda>');cell=(lambda value:lambda:value)(transport.failure).__closure__[0];transport.qa_original_bind_controller=types.FunctionType(code,native_runtime.__dict__,closure=(cell,))
+@@ -119,7 +121,7 @@
+   with self.package() as (factory,initial,destination,digest):
+    self.bound(factory,initial,destination,digest);desktop,transport,controller=self.actor(factory)
+    # Production owns an actual per-actor module with its command facade.
+-   source=Path(binding.SERVICE/'production_motion_6d9.py');spec=importlib.util.spec_from_file_location('_cpu_actual_actor',source);desktop.production=importlib.util.module_from_spec(spec);spec.loader.exec_module(desktop.production);desktop.production.subprocess=desktop.commands;desktop.base=object.__new__(desktop.production.Desktop)
++   source=Path(binding.SERVICE/'production_motion_6d9.py');spec=importlib.util.spec_from_file_location('_cpu_actual_actor',source);desktop.production=importlib.util.module_from_spec(spec);spec.loader.exec_module(desktop.production);desktop.production.subprocess=desktop.commands;desktop.production.RUNTIME=Path(self.env['XDG_RUNTIME_DIR']);desktop.base=object.__new__(desktop.production.Desktop)
+    proof=binding.linked_actor(factory,1,desktop,transport,controller,destination/'actor.json');self.assertTrue(proof['usable']);self.assertTrue(all(proof['relations'].values()))
+  def test_stale_callback_no_actor_preparation_authority(self):
+   with self.package() as (factory,initial,destination,digest):
+--- V5/test_freezer_v2.py
++++ V7/test_freezer_v2.py
+@@ -12,11 +12,11 @@
+    rows=[]
+    with patch.object(n,'B',b),patch.object(n,'save',side_effect=lambda path,row:rows.append(row)),patch.object(n,'verify',side_effect=lambda:rows[0]):row=n.freeze()
+    self.assertNotIn(str(own),row['inputs']);self.assertEqual(row['inputs'][str(nested)],hashlib.sha256(nested.read_bytes()).hexdigest());self.assertEqual(row['inputModes'][str(nested)],0o600)
+-   for packet in (n.SERVICE/'manifest-readonly-ipc-v20.json',n.QA/'family-continuous-reversal-v3/frozen-inputs.json',n.QA/'family-recovery-cancel-v1/frozen-inputs.json'):
++   for packet in (n.SERVICE_MANIFEST,n.QA/'family-continuous-reversal-v3/frozen-inputs.json',n.QA/'family-recovery-cancel-v1/frozen-inputs.json'):
+     old=json.loads(packet.read_text())
+     for name,mode in old['inputModes'].items():self.assertEqual(row['inputModes'][name],mode,name)
+  def test_changed_declared_ancestral_mode_refuses_instead_of_restat_blessing(self):
+-  text=(n.SERVICE/'manifest-readonly-ipc-v20.json').read_text();real=json.loads;packet=real(text);name=next(iter(packet['inputModes']))
++  text=(n.SERVICE_MANIFEST).read_text();real=json.loads;packet=real(text);name=next(iter(packet['inputModes']))
+   def changed(data,*args,**kw):
+    row=real(data,*args,**kw)
+    if data==text:row['inputModes'][name]^=0o100
+--- V5/actual_service_binding.qnt
++++ V7/actual_service_binding.qnt
+@@ -5,7 +5,7 @@
+  type State={moduleToken:int,ownerToken:int,ledgerToken:int,binding:bool,ledger:bool,originalBaseline:bool,originalFault:bool,final:bool,refused:bool,baselineAccepted:bool,faultAccepted:bool}
+  var s:State
+  action init=s'={moduleToken:0,ownerToken:0,ledgerToken:0,binding:false,ledger:false,originalBaseline:false,originalFault:false,final:false,refused:false,baselineAccepted:false,faultAccepted:false}
+- pure def valid(p:Modules):bool=p.moduleToken>0 and p.ownerToken>0 and p.outer==20 and p.baseline==20 and p.recovery==20 and p.actual==20 and p.complete and p.paths and p.hashes and p.modes and p.linked and p.durable
++ pure def valid(p:Modules):bool=p.moduleToken>0 and p.ownerToken>0 and p.outer==23 and p.baseline==23 and p.recovery==23 and p.actual==23 and p.complete and p.paths and p.hashes and p.modes and p.linked and p.durable
+  pure def validLedger(p:Ledger):bool=p.ledgerToken>0 and p.ownerToken>0 and p.currentOwner and p.currentSource and p.currentRoot and p.nonempty and p.complete and p.closed and p.published and not(p.fault) and p.diskEqual
+  action fire(e:Event):bool=s'=if(s.refused)s else match e {
+  | Bind(p)=>if(valid(p) and (not(s.binding) or (p.moduleToken==s.moduleToken and p.ownerToken==s.ownerToken))){...s,binding:true,moduleToken:p.moduleToken,ownerToken:p.ownerToken} else {...s,refused:true,binding:false,baselineAccepted:false,faultAccepted:false}
+@@ -17,5 +17,5 @@
+  | Refuse=>{...s,refused:true,baselineAccepted:false,faultAccepted:false}
+  }
+  val allProps=(s.baselineAccepted implies (s.binding and s.ledger and s.final and s.originalBaseline and not(s.refused))) and (s.faultAccepted implies (s.baselineAccepted and s.originalFault and not(s.refused)))
+- action step={nondet n=Set(17,19,20).oneOf();nondet yes=Set(true,false).oneOf();nondet e=Set(Bind({moduleToken:n,ownerToken:1,outer:20,baseline:n,recovery:20,actual:n,complete:yes,paths:true,hashes:true,modes:true,linked:true,durable:true}),Queries({ledgerToken:n,ownerToken:1,currentOwner:yes,currentSource:true,currentRoot:true,nonempty:true,complete:true,closed:true,published:true,fault:false,diskEqual:true}),Original({baseline:yes,fault:yes}),Finish({moduleToken:n,ledgerToken:n,ownerToken:1,modulesSame:yes,ledgerSame:yes}),AcceptBaseline,AcceptFault,Refuse).oneOf();fire(e)}
++ action step={nondet n=Set(17,19,23).oneOf();nondet yes=Set(true,false).oneOf();nondet e=Set(Bind({moduleToken:n,ownerToken:1,outer:23,baseline:n,recovery:23,actual:n,complete:yes,paths:true,hashes:true,modes:true,linked:true,durable:true}),Queries({ledgerToken:n,ownerToken:1,currentOwner:yes,currentSource:true,currentRoot:true,nonempty:true,complete:true,closed:true,published:true,fault:false,diskEqual:true}),Original({baseline:yes,fault:yes}),Finish({moduleToken:n,ledgerToken:n,ownerToken:1,modulesSame:yes,ledgerSame:yes}),AcceptBaseline,AcceptFault,Refuse).oneOf();fire(e)}
+ }
+--- V5/actual_service_binding_test.qnt
++++ V7/actual_service_binding_test.qnt
+@@ -1,6 +1,6 @@
+ module actual_service_binding_test {
+  import actual_service_binding.* from "./actual_service_binding"
+- val modules={moduleToken:1,ownerToken:1,outer:20,baseline:20,recovery:20,actual:20,complete:true,paths:true,hashes:true,modes:true,linked:true,durable:true}
++ val modules={moduleToken:1,ownerToken:1,outer:23,baseline:23,recovery:23,actual:23,complete:true,paths:true,hashes:true,modes:true,linked:true,durable:true}
+  val ledger={ledgerToken:1,ownerToken:1,currentOwner:true,currentSource:true,currentRoot:true,nonempty:true,complete:true,closed:true,published:true,fault:false,diskEqual:true}
+  action check(p:bool):bool=all{assert(p),s'=s}
+  action original:bool=fire(Original({baseline:true,fault:true}))

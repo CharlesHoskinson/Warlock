@@ -1,0 +1,110 @@
+{
+  "updatedUTC": "2026-10-02T01:05:34.786055+00:00",
+  "reportSHA256": "39a85c66e4629d3c5dff2f24fd5b98c79591ec230d8bffeb1d4f1a7bcd810500",
+  "manifestSHA256": "585f38c248a43775da64dc3136ec831c65a1df31e08b57c5b9827d1373dc8134",
+  "inputCount": 8433,
+  "linkCount": 146,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+    "coreLimit": 1
+  },
+  "preservationChecks": {
+    "allFrozenInputsExact": true,
+    "allFrozenLinksExact": true,
+    "allDeclaredFrozenModesExact": true,
+    "allProductionCopiesExact": true,
+    "all15MainPreservationChecks": true,
+    "allRecordedPIDStartIdentitiesGone": true,
+    "privateRuntimeGone": true,
+    "privateClientsGoneBeforeUnload": true,
+    "nativePluginUnloadedNormally": true,
+    "noRemainingDescendantsOrCleanupErrors": true,
+    "archivedMandatoryParentTransportHealthy": true
+  },
+  "allPreservationChecks": true,
+  "acceptanceChecks": {
+    "normalClientLifecycle": true,
+    "noUnexpectedHelpers": true,
+    "allReachedProductChecksPass": true,
+    "terminalCampaignPass": true
+  },
+  "privateBaselineAccepted": true,
+  "processes": [
+    {
+      "pid": 1992100,
+      "start": "12526832",
+      "gone": true
+    },
+    {
+      "pid": 1992424,
+      "start": "12526956",
+      "gone": true
+    },
+    {
+      "pid": 1992560,
+      "start": "12527073",
+      "gone": true
+    },
+    {
+      "pid": 1991936,
+      "start": "12526647",
+      "gone": true
+    },
+    {
+      "pid": 1991939,
+      "start": "12526650",
+      "gone": true
+    },
+    {
+      "pid": 1991961,
+      "start": "12526726",
+      "gone": true
+    },
+    {
+      "pid": 1991936,
+      "start": "12526647",
+      "gone": true
+    },
+    {
+      "pid": 1991939,
+      "start": "12526650",
+      "gone": true
+    },
+    {
+      "pid": 1991961,
+      "start": "12526726",
+      "gone": true
+    },
+    {
+      "pid": 1992570,
+      "start": 12527091,
+      "gone": true
+    },
+    {
+      "pid": 1992945,
+      "start": 12527219,
+      "gone": true
+    },
+    {
+      "pid": 1993413,
+      "start": 12527399,
+      "gone": true
+    },
+    {
+      "pid": 1993790,
+      "start": 12527600,
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false,
+  "physicalCadenceAccepted": false,
+  "rasterAccepted": false
+}

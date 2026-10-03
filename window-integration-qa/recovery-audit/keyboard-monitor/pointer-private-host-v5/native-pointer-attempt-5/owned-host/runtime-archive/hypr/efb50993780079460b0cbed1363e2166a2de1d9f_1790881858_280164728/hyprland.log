@@ -1,0 +1,2423 @@
+DEBUG ]: Old rlimit: soft -> 65536, hard -> 524288
+DEBUG ]: New rlimit: soft -> 524288, hard -> 524288
+WARN ]: WARNING: Hyprland is being launched without start-hyprland. This is highly advised against.
+DEBUG ]: Creating the EventLoopManager!
+DEBUG ]: Creating the KeybindManager!
+DEBUG ]: Creating the AnimationManager!
+DEBUG ]: Creating the DynamicPermissionManager!
+DEBUG ]: Creating the MonitorState!
+DEBUG ]: Creating the WorkspaceState!
+DEBUG ]: Creating the ConfigManager!
+DEBUG ]: [cfg] Config is either explicit or special.
+DEBUG ]: [cfg] Config is lua, loading lua mgr
+DEBUG ]: Creating the Error Overlay!
+DEBUG ]: Creating the LayoutManager!
+DEBUG ]: Creating the TokenManager!
+DEBUG ]: Creating the EventManager!
+DEBUG ]: Creating the PointerManager!
+DEBUG ]: Creating the AsyncResourceGatherer!
+DEBUG from aquamarine ]: Creating an Aquamarine backend!
+DEBUG from aquamarine ]: Private AQ_BACKENDS=wayland: mandatory parent, no DRM or libseat backend
+DEBUG from aquamarine ]: Starting the Aquamarine backend!
+DEBUG from aquamarine ]: Starting the Wayland backend!
+DEBUG from aquamarine ]: Connected to a wayland compositor: Hyprland
+DEBUG from aquamarine ]: Got registry at 0x62f23522b3f0
+DEBUG from aquamarine ]: New wayland keyboard wl_keyboard
+DEBUG from aquamarine ]: New wayland pointer wl_pointer
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED_MTL_RC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier 4_TILED_MTL_MC_CCS
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier INVALID
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier LINEAR
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier X_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier 4_TILED
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got main device
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got node /dev/dri/renderD129
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: Got done
+DEBUG from aquamarine ]: zwp_linux_dmabuf_v1: opened node /dev/dri/renderD129 with fd 16
+DEBUG from aquamarine ]: Output WAYLAND-1: initialized
+DEBUG from aquamarine ]: reopenDRMNode: opening node /dev/dri/renderD129
+DEBUG from aquamarine ]: Created a GBM allocator with drm fd 17
+DEBUG ]: Instance Signature: efb50993780079460b0cbed1363e2166a2de1d9f_1790881858_280164728
+DEBUG ]: Runtime directory: /run/user/1000/wqa/cc0e/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790881858_280164728
+DEBUG ]: Hyprland PID: 831730
+DEBUG ]: ===== SYSTEM INFO: =====
+DEBUG ]: Hyprland 0.56.2 built from branch v0.56.2 at commit efb50993780079460b0cbed1363e2166a2de1d9f clean ([gha] Nix: update inputs).
+Date: Wed Aug 5 14:13:21 2026
+Tag: v0.56.2, commits: 7661
+
+Libraries:
+Hyprgraphics: built against 0.5.1, system has 0.5.1
+Hyprutils: built against 0.14.1, system has 0.14.2
+Hyprcursor: built against 0.1.13, system has 0.1.13
+Hyprlang: built against 0.6.8, system has 0.6.8
+Aquamarine: built against 0.15.0, system has 0.15.0
+
+Version ABI string: efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6
+no flags were set
+
+
+System Information:
+System name: Linux
+Node name: hosk
+Release: 7.2.7-1-omarchy
+Version: #1 SMP PREEMPT_DYNAMIC Sun, 27 Sep 2026 22:42:08 +0000
+
+Libraries:
+Hyprgraphics: built against 0.5.1, system has 0.5.1
+Hyprutils: built against 0.14.1, system has 0.14.2
+Hyprcursor: built against 0.1.13, system has 0.1.13
+Hyprlang: built against 0.6.8, system has 0.6.8
+Aquamarine: built against 0.15.0, system has 0.15.0
+
+
+
+GPU information: 
+00:02.0 VGA compatible controller [0300]: Intel Corporation Arrow Lake-S [Intel Graphics] [8086:7d67] (rev 06) (prog-if 00 [VGA controller])
+02:00.0 VGA compatible controller [0300]: NVIDIA Corporation GB203M / GN22-X11 [GeForce RTX 5090 Max-Q / Mobile] [10de:2c58] (rev a1) (prog-if 00 [VGA controller])
+80:14.5 Non-VGA unclassified device [0000]: Intel Corporation Device [8086:7f2f] (rev 10)
+NVRM version: NVIDIA UNIX Open Kernel Module for x86_64  615.71.09  Release Build  (root@archiso)  
+
+
+os-release: NAME="Omarchy"
+PRETTY_NAME="Omarchy"
+ID=omarchy
+ID_LIKE=arch
+BUILD_ID="4.0.4.legion"
+VERSION_ID="4.0.4.legion"
+ANSI_COLOR="38;2;158;206;106"
+HOME_URL="https://omarchy.org/"
+DOCUMENTATION_URL="https://learn.omacom.io/2/the-omarchy-manual"
+SUPPORT_URL="https://discord.gg/tXFUdasqhY"
+BUG_REPORT_URL="https://github.com/basecamp/omarchy/issues"
+LOGO=omarchy
+
+
+plugins:
+	unknown: not runtime
+
+Backend: sessionless
+
+Monitor info:
+
+State:
+
+configProvider: lua
+backend: wayland
+
+
+
+DEBUG ]: ========================
+DEBUG ]: 
+
+
+DEBUG ]: If you are crashing, or encounter any bugs, please consult https://wiki.hypr.land/Crashes-and-Bugs/
+
+
+DEBUG ]: 
+Current splash: It's like Hypr, but better.
+
+
+DEBUG ]: Running on DRMFD: 16
+DEBUG ]: Using RENDERNODEFD: 16
+DEBUG ]: DRM DisplayNode syncobj timeline support: yes
+DEBUG ]: DRM RenderNode syncobj timeline support: yes
+DEBUG ]: wl_display_add_socket for wayland-1 succeeded with 0
+DEBUG ]: Creating the CHyprOpenGLImpl!
+DEBUG ]: Supported EGL global extensions: (16) EGL_EXT_device_base EGL_EXT_device_enumeration EGL_EXT_device_query EGL_EXT_platform_base EGL_KHR_client_get_all_proc_addresses EGL_EXT_client_extensions EGL_KHR_debug EGL_EXT_platform_device EGL_EXT_explicit_device EGL_EXT_platform_wayland EGL_KHR_platform_wayland EGL_EXT_platform_x11 EGL_KHR_platform_x11 EGL_EXT_platform_xcb EGL_MESA_platform_gbm EGL_KHR_platform_gbm EGL_MESA_platform_surfaceless
+DEBUG ]: eglDeviceFromDRMFD: Using device /dev/dri/card0
+DEBUG ]: EGL: IMG_context_priority supported, requesting high
+DEBUG ]: EGL: EXT_create_context_robustness supported, requesting lose on reset
+DEBUG ]: EGL: Using KHR_context_flush_control
+DEBUG ]: EGL: Got a high priority context
+DEBUG ]: Creating the Hypr OpenGL Renderer!
+DEBUG ]: Using: OpenGL ES 3.2 Mesa 26.2.2-arch1.1
+DEBUG ]: Vendor: Intel
+DEBUG ]: Renderer: Mesa Intel(R) Graphics (ARL)
+DEBUG ]: Supported extensions: (167) GL_EXT_blend_minmax GL_EXT_multi_draw_arrays GL_EXT_texture_filter_anisotropic GL_EXT_texture_compression_s3tc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_format_BGRA8888 GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth24 GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_mapbuffer GL_OES_rgb8_rgba8 GL_OES_standard_derivatives GL_OES_stencil8 GL_OES_texture_3D GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_vertex_half_float GL_EXT_draw_instanced GL_EXT_texture_sRGB_decode GL_OES_EGL_image GL_OES_depth_texture GL_AMD_performance_monitor GL_OES_packed_depth_stencil GL_EXT_texture_type_2_10_10_10_REV GL_NV_conditional_render GL_OES_get_program_binary GL_APPLE_texture_max_level GL_EXT_discard_framebuffer GL_EXT_read_format_bgra GL_EXT_texture_storage GL_NV_pack_subimage GL_NV_texture_barrier GL_EXT_frag_depth GL_NV_fbo_color_attachments GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_array_object GL_OES_viewport_array GL_ANGLE_pack_reverse_row_order GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_EXT_occlusion_query_boolean GL_EXT_robustness GL_EXT_sRGB GL_EXT_texture_rg GL_EXT_unpack_subimage GL_NV_draw_buffers GL_NV_read_buffer GL_NV_read_depth GL_NV_read_depth_stencil GL_NV_read_stencil GL_APPLE_sync GL_EXT_draw_buffers GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_shadow_samplers GL_KHR_debug GL_KHR_robustness GL_KHR_texture_compression_astc_ldr GL_NV_generate_mipmap_sRGB GL_NV_pixel_buffer_object GL_OES_depth_texture_cube_map GL_OES_required_internalformat GL_OES_surfaceless_context GL_EXT_color_buffer_float GL_EXT_debug_label GL_EXT_sRGB_write_control GL_EXT_separate_shader_objects GL_EXT_shader_framebuffer_fetch GL_EXT_shader_group_vote GL_EXT_shader_implicit_conversions GL_EXT_shader_integer_mix GL_EXT_tessellation_point_size GL_EXT_tessellation_shader GL_INTEL_conservative_rasterization GL_INTEL_performance_query GL_ANDROID_extension_pack_es31a GL_EXT_base_instance GL_EXT_compressed_ETC1_RGB8_sub_texture GL_EXT_copy_image GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_gpu_shader5 GL_EXT_multi_draw_indirect GL_EXT_polygon_offset_clamp GL_EXT_primitive_bounding_box GL_EXT_render_snorm GL_EXT_shader_io_blocks GL_EXT_texture_border_clamp GL_EXT_texture_buffer GL_EXT_texture_cube_map_array GL_EXT_texture_norm16 GL_EXT_texture_view GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_KHR_context_flush_control GL_KHR_robust_buffer_access_behavior GL_NV_image_formats GL_NV_shader_noperspective_interpolation GL_OES_copy_image GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_gpu_shader5 GL_OES_primitive_bounding_box GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_io_blocks GL_OES_shader_multisample_interpolation GL_OES_tessellation_point_size GL_OES_tessellation_shader GL_OES_texture_border_clamp GL_OES_texture_buffer GL_OES_texture_cube_map_array GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_texture_view GL_EXT_blend_func_extended GL_EXT_buffer_storage GL_EXT_float_blend GL_EXT_geometry_point_size GL_EXT_geometry_shader GL_EXT_shader_samples_identical GL_EXT_texture_sRGB_R8 GL_KHR_no_error GL_KHR_texture_compression_astc_sliced_3d GL_NV_fragment_shader_interlock GL_OES_EGL_image_external_essl3 GL_OES_geometry_point_size GL_OES_geometry_shader GL_OES_shader_image_atomic GL_EXT_clear_texture GL_EXT_clip_cull_distance GL_EXT_conservative_depth GL_EXT_disjoint_timer_query GL_EXT_texture_compression_s3tc_srgb GL_MESA_shader_integer_functions GL_EXT_clip_control GL_EXT_color_buffer_half_float GL_EXT_memory_object GL_EXT_memory_object_fd GL_EXT_semaphore GL_EXT_semaphore_fd GL_EXT_texture_compression_bptc GL_EXT_texture_mirror_clamp_to_edge GL_KHR_parallel_shader_compile GL_NV_alpha_to_coverage_dither_control GL_EXT_EGL_image_storage GL_EXT_shader_framebuffer_fetch_non_coherent GL_EXT_texture_shadow_lod GL_INTEL_blackhole_render GL_MESA_framebuffer_flip_y GL_NV_compute_shader_derivatives GL_EXT_demote_to_helper_invocation GL_EXT_depth_clamp GL_EXT_texture_query_lod GL_KHR_shader_subgroup GL_MESA_sampler_objects GL_EXT_EGL_image_storage_compression GL_EXT_texture_storage_compression GL_MESA_bgra GL_MESA_texture_const_bandwidth GL_EXT_shader_clock 
+DEBUG ]: Supported EGL display extensions: (33) EGL_ANDROID_blob_cache EGL_ANDROID_native_fence_sync EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_IMG_context_priority EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_partial_update EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_image_dma_buf_export EGL_MESA_query_driver EGL_MESA_x11_native_visual_id 
+DEBUG ]: Supported DMA-BUF formats:
+DEBUG ]: EGL: GPU Supports Format AB4H (0x48344241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XB4H (0x48344258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AB48 (0x38344241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XB48 (0x38344258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AR30 (0x30335241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XR30 (0x30335258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AB30 (0x30334241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XB30 (0x30334258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AR24 (0x34325241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AB24 (0x34324241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XR24 (0x34325258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format XB24 (0x34324258)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AR15 (0x35315241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AR12 (0x32315241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format RG16 (0x36314752)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format R8 (0x20203852)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format R16 (0x20363152)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format GR88 (0x38385247)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format GR32 (0x32335247)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format R  H (0x48202052)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format R  F (0x46202052)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format GR H (0x48205247)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format GR F (0x46205247)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format AB8F (0x46384241)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+DEBUG ]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+DEBUG ]: EGL: | with modifier 4_TILED (0x100000000000009)
+DEBUG ]: EGL: | with modifier X_TILED (0x100000000000001)
+DEBUG ]: EGL: | with modifier LINEAR (0x0)
+DEBUG ]: EGL: GPU Supports Format YUV9 (0x39565559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YU11 (0x31315559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YU12 (0x32315559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YU16 (0x36315559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YU24 (0x34325559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YVU9 (0x39555659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YV11 (0x31315659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YV12 (0x32315659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YV16 (0x36315659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YV24 (0x34325659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S010 (0x30313053)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S210 (0x30313253)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S410 (0x30313453)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S012 (0x32313053)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S212 (0x32313253)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S412 (0x32313453)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S016 (0x36313053)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S216 (0x36313253)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format S416 (0x36313453)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV12 (0x3231564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV21 (0x3132564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format P010 (0x30313050)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format P012 (0x32313050)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format P016 (0x36313050)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format P030 (0x30333050)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV16 (0x3631564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV61 (0x3136564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV24 (0x3432564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format NV42 (0x3234564e)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format AYUV (0x56555941)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format XYUV (0x56555958)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y410 (0x30313459)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y412 (0x32313459)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y416 (0x36313459)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YUYV (0x56595559)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format YVYU (0x55595659)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format UYVY (0x59565955)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format VYUY (0x59555956)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y210 (0x30313259)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y212 (0x32313259)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: GPU Supports Format Y216 (0x36313259)
+DEBUG ]: EGL: | with modifier INVALID (0xffffffffffffff)
+DEBUG ]: EGL: 65 formats found in total. Some modifiers may be omitted as they are external-only.
+DEBUG ]: Creating the HyprRenderer!
+DEBUG ]: Aq backend has no session, omitting full DRM node checks
+DEBUG ]: Primary DRM driver information: i915 v1.6.0 from 0 description Intel Graphics
+DEBUG ]: Creating the ProtocolManager!
+DEBUG ]: [IWaylandProtocol] Registered global [WLSeat]
+DEBUG ]: [IWaylandProtocol] Registered global [WLDataDevice]
+DEBUG ]: [IWaylandProtocol] Registered global [WLCompositor]
+DEBUG ]: [IWaylandProtocol] Registered global [WLSubcompositor]
+DEBUG ]: [IWaylandProtocol] Registered global [WLSHM]
+DEBUG ]: [IWaylandProtocol] Registered global [Viewporter]
+DEBUG ]: [IWaylandProtocol] Registered global [TearingControl]
+DEBUG ]: [IWaylandProtocol] Registered global [FractionalScale]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGOutput]
+DEBUG ]: [IWaylandProtocol] Registered global [CursorShape]
+DEBUG ]: [IWaylandProtocol] Registered global [IdleInhibit]
+DEBUG ]: [IWaylandProtocol] Registered global [RelativePointer]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGDecoration]
+DEBUG ]: [IWaylandProtocol] Registered global [AlphaModifier]
+DEBUG ]: [IWaylandProtocol] Registered global [GammaControl]
+DEBUG ]: [IWaylandProtocol] Registered global [ForeignToplevel]
+DEBUG ]: [IWaylandProtocol] Registered global [PointerGestures]
+DEBUG ]: [IWaylandProtocol] Registered global [ForeignToplevelWlr]
+DEBUG ]: [IWaylandProtocol] Registered global [ShortcutsInhibit]
+DEBUG ]: [IWaylandProtocol] Registered global [TextInputV1]
+DEBUG ]: [IWaylandProtocol] Registered global [TextInputV3]
+DEBUG ]: [IWaylandProtocol] Registered global [PointerConstraints]
+DEBUG ]: [IWaylandProtocol] Registered global [OutputPower]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGActivation]
+DEBUG ]: [IWaylandProtocol] Registered global [IdleNotify]
+DEBUG ]: [IWaylandProtocol] Registered global [IdleNotify]
+DEBUG ]: [IWaylandProtocol] Registered global [SessionLock]
+DEBUG ]: [IWaylandProtocol] Registered global [IMEv2]
+DEBUG ]: [IWaylandProtocol] Registered global [VirtualKeyboard]
+DEBUG ]: [IWaylandProtocol] Registered global [VirtualPointer]
+DEBUG ]: [IWaylandProtocol] Registered global [OutputManagement]
+DEBUG ]: [IWaylandProtocol] Registered global [ServerDecorationKDE]
+DEBUG ]: [IWaylandProtocol] Registered global [FocusGrab]
+DEBUG ]: [IWaylandProtocol] Registered global [TabletV2]
+DEBUG ]: [IWaylandProtocol] Registered global [LayerShell]
+DEBUG ]: [IWaylandProtocol] Registered global [Presentation]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGShell]
+DEBUG ]: [IWaylandProtocol] Registered global [DataDeviceWlr]
+DEBUG ]: [IWaylandProtocol] Registered global [PrimarySelection]
+DEBUG ]: [IWaylandProtocol] Registered global [XWaylandShell]
+DEBUG ]: [IWaylandProtocol] Registered global [ToplevelMapping]
+DEBUG ]: [IWaylandProtocol] Registered global [GlobalShortcuts]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGDialog]
+DEBUG ]: [IWaylandProtocol] Registered global [SinglePixel]
+DEBUG ]: [IWaylandProtocol] Registered global [SecurityContext]
+DEBUG ]: [IWaylandProtocol] Registered global [CTMControl]
+DEBUG ]: [IWaylandProtocol] Registered global [InputCapture]
+DEBUG ]: [IWaylandProtocol] Registered global [HyprlandSurface]
+DEBUG ]: [IWaylandProtocol] Registered global [ContentType]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGTag]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGBell]
+DEBUG ]: [IWaylandProtocol] Registered global [Hotkey]
+DEBUG ]: [IWaylandProtocol] Registered global [ExtWorkspace]
+DEBUG ]: [IWaylandProtocol] Registered global [ExtDataDevice]
+DEBUG ]: [IWaylandProtocol] Registered global [PointerWarp]
+DEBUG ]: [IWaylandProtocol] Registered global [Fifo]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGForeignExporter]
+DEBUG ]: [IWaylandProtocol] Registered global [XDGForeignImporter]
+DEBUG ]: [IWaylandProtocol] Registered global [BackgroundEffect]
+DEBUG ]: [IWaylandProtocol] Registered global [CommitTiming]
+DEBUG ]: [IWaylandProtocol] Registered global [Screencopy]
+DEBUG ]: [IWaylandProtocol] Registered global [ToplevelExport]
+DEBUG ]: [IWaylandProtocol] Registered global [OutputImageCaptureSource]
+DEBUG ]: [IWaylandProtocol] Registered global [ForeignToplevelImageCaptureSource]
+DEBUG ]: [IWaylandProtocol] Registered global [ImageCopyCapture]
+DEBUG ]: [IWaylandProtocol] Registered global [ColorManagement]
+DEBUG ]: [IWaylandProtocol] Registered global [MesaDRM]
+DEBUG ]: [IWaylandProtocol] Registered global [LinuxDMABUF]
+DEBUG ]: Creating the SeatManager!
+DEBUG ]: Creating the SessionLockManager!
+DEBUG ]: Creating CHyprCtl
+DEBUG ]: Hypr socket started at /run/user/1000/wqa/cc0e/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790881858_280164728/.socket.sock
+DEBUG ]: Creating the InputManager!
+DEBUG ]: Creating the XWaylandManager!
+DEBUG ]: Creating the Debug Overlay!
+DEBUG ]: Creating the NotificationOverlay!
+DEBUG ]: Creating the PluginSystem!
+DEBUG ]: Creating the DecorationPositioner!
+DEBUG ]: Creating the CursorManager!
+DEBUG ]: [hc] CHyprcursorManager: attempting to find theme from env
+DEBUG ]: [hc] themeNameFromEnv: env unset
+DEBUG ]: [hc] CHyprcursorManager: attempting to find any theme
+DEBUG ]: [hc] CHyprcursorManager: no themes matched
+ERR ]: Hyprcursor failed loading theme "", falling back to Xcursor.
+DEBUG ]: XCursor scanning theme default
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/default/index.theme
+DEBUG ]: XCursor theme default inherits Adwaita
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme AdwaitaLegacy
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/AdwaitaLegacy/index.theme
+DEBUG ]: XCursor theme AdwaitaLegacy inherits hicolor
+DEBUG ]: XCursor scanning theme hicolor
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/hicolor/index.theme
+DEBUG ]: XCursor already has a shape default loaded, skipping
+DEBUG ]: XCursor already has a shape context-menu loaded, skipping
+DEBUG ]: XCursor already has a shape help loaded, skipping
+DEBUG ]: XCursor already has a shape pointer loaded, skipping
+DEBUG ]: XCursor already has a shape progress loaded, skipping
+DEBUG ]: XCursor already has a shape wait loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name plus, skipping
+DEBUG ]: XCursor already has a shape crosshair loaded, skipping
+DEBUG ]: XCursor already has a shape text loaded, skipping
+DEBUG ]: XCursor already has a shape vertical-text loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-link, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape move loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-none, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name crossed_circle, skipping
+DEBUG ]: XCursor already has a shape grab loaded, skipping
+DEBUG ]: XCursor already has a shape grabbing loaded, skipping
+DEBUG ]: XCursor already has a shape e-resize loaded, skipping
+DEBUG ]: XCursor already has a shape n-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ne-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape s-resize loaded, skipping
+DEBUG ]: XCursor already has a shape se-resize loaded, skipping
+DEBUG ]: XCursor already has a shape sw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape w-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ew-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ns-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nesw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nwse-resize loaded, skipping
+DEBUG ]: XCursor already has a shape col-resize loaded, skipping
+DEBUG ]: XCursor already has a shape row-resize loaded, skipping
+DEBUG ]: XCursor already has a shape all-scroll loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-in loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-out loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape all-resize loaded, skipping
+DEBUG ]: [hc] CHyprcursorManager: attempting to find theme from env
+DEBUG ]: [hc] themeNameFromEnv: env unset
+DEBUG ]: [hc] CHyprcursorManager: attempting to find any theme
+DEBUG ]: [hc] CHyprcursorManager: no themes matched
+ERR ]: Hyprcursor failed loading theme "", falling back to Xcursor.
+DEBUG ]: XCursor scanning theme default
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/default/index.theme
+DEBUG ]: XCursor theme default inherits Adwaita
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme AdwaitaLegacy
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/AdwaitaLegacy/index.theme
+DEBUG ]: XCursor theme AdwaitaLegacy inherits hicolor
+DEBUG ]: XCursor scanning theme hicolor
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/hicolor/index.theme
+DEBUG ]: XCursor already has a shape default loaded, skipping
+DEBUG ]: XCursor already has a shape context-menu loaded, skipping
+DEBUG ]: XCursor already has a shape help loaded, skipping
+DEBUG ]: XCursor already has a shape pointer loaded, skipping
+DEBUG ]: XCursor already has a shape progress loaded, skipping
+DEBUG ]: XCursor already has a shape wait loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name plus, skipping
+DEBUG ]: XCursor already has a shape crosshair loaded, skipping
+DEBUG ]: XCursor already has a shape text loaded, skipping
+DEBUG ]: XCursor already has a shape vertical-text loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-link, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape move loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-none, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name crossed_circle, skipping
+DEBUG ]: XCursor already has a shape grab loaded, skipping
+DEBUG ]: XCursor already has a shape grabbing loaded, skipping
+DEBUG ]: XCursor already has a shape e-resize loaded, skipping
+DEBUG ]: XCursor already has a shape n-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ne-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape s-resize loaded, skipping
+DEBUG ]: XCursor already has a shape se-resize loaded, skipping
+DEBUG ]: XCursor already has a shape sw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape w-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ew-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ns-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nesw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nwse-resize loaded, skipping
+DEBUG ]: XCursor already has a shape col-resize loaded, skipping
+DEBUG ]: XCursor already has a shape row-resize loaded, skipping
+DEBUG ]: XCursor already has a shape all-scroll loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-in loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-out loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape all-resize loaded, skipping
+DEBUG ]: Creating the VersionKeeper!
+DEBUG ]: FsUtils::getDataHome: no hyprland data home, creating.
+DEBUG ]: Creating the DonationNag!
+DEBUG ]: Creating the WelcomeManager!
+DEBUG ]: [welcome] skipping, not autogen
+DEBUG ]: Creating the ANRManager!
+DEBUG ]: Starting XWayland
+DEBUG ]: XWayland has been disabled, cleaning up...
+DEBUG ]: Hyprland init finished.
+DEBUG ]: Running on WAYLAND_DISPLAY: wayland-1
+DEBUG ]: Hyprland is ready, running the event loop!
+DEBUG from aquamarine ]: backend: poll fd 14 for implementation wayland
+DEBUG from aquamarine ]: backend: poll fd 12 for implementation headless
+DEBUG from aquamarine ]: backend: poll fd 13 for idle
+DEBUG ]: New aquamarine keyboard with name wl_keyboard
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f2354f7150's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard wl_keyboard
+DEBUG ]: Updated keymap fd to 40, keymap V1 to: 42
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "wl_keyboard"
+DEBUG ]: New keyboard created, pointers Hypr: 62f2354f7150 and AQ: 62f235255ba0
+DEBUG ]: New aquamarine pointer with name wl_pointer
+DEBUG ]: Attached pointer wl_pointer to global
+DEBUG ]: New mouse created, pointer AQ: 62f235256000
+DEBUG from aquamarine ]: Output WAYLAND-1: wm_capabilities received
+DEBUG from aquamarine ]: Output WAYLAND-1: stage toplevel configure 1280x800 until surface ACK
+DEBUG from aquamarine ]: Output WAYLAND-1: configure surface with 1
+DEBUG ]: New aquamarine output with name WAYLAND-1
+DEBUG ]: [CMonitorStateTracker] New monitor: WAYLAND-1
+DEBUG ]: Applying monitor rule for WAYLAND-1
+ERR ]: Monitor WAYLAND-1 has NO PREFERRED MODE
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1280, y: 800] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1280, y: 800] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1280, y: 800] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: Swapchain: Reconfigured a swapchain to [Vector2D: x: 1280, y: 800] XR24 of length 3
+DEBUG ]: CMonitorState::ensureBufferPresent: no buffer or mismatched format, attaching one from the swapchain for modeset being possible
+DEBUG ]: Monitor WAYLAND-1: requested 1280x800@60.00Hz, using custom mode 1280x800@0.00Hz
+DEBUG ]: output WAYLAND-1 succeeded basic test on format DRM_FORMAT_XRGB8888
+DEBUG ]: Starting ScreenshareManager
+DEBUG ]: Monitor WAYLAND-1 -> destroyed all render data
+DEBUG ]: CMonitor::updateVCGTRamps: skipping, no gamma ramp for output
+DEBUG ]: Monitor WAYLAND-1 data dump: res 1280x800@60.00Hz, scale 1.25, transform 0, pos -1x-1, 10b 0
+WARN from aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+DEBUG ]: Added new monitor with name WAYLAND-1 at [-1, -1] with size [1280, 800], pointer 62f2352564a0
+DEBUG ]: New monitor: WORKSPACEID 1, exists: 0
+DEBUG ]: checking if we have seen this monitor before: WAYLAND-1
+DEBUG ]: Monitor WAYLAND-1 was not on any workspace
+DEBUG from aquamarine ]: GBM: Automatically selected format AR24 for new GBM buffer
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 24, y: 24] and format AR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: GBM: Automatically selected format AR24 for new GBM buffer
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 24, y: 24] and format AR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: Swapchain: Reconfigured a swapchain to [Vector2D: x: 24, y: 24] AR24 of length 2
+DEBUG ]: Framebuffer "Monitor WAYLAND-1 blur FB" created, status 36053
+DEBUG ]: Shaders initialized successfully.
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: compiling feature set 1 for surface.frag
+DEBUG ]: [IWaylandProtocol] Registered global [WLOutput (WAYLAND-1)]
+DEBUG ]: arrangeMonitors: 1 to arrange
+DEBUG ]: arrangeMonitors: WAYLAND-1 explicit [0, 0]
+DEBUG ]: arrangeMonitors: WAYLAND-1 xwayland [0, 0]
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+WARN ]: [FallbackStateKeeper] Start fired, removing fallback timer
+DEBUG ]: Framebuffer "Monitor WAYLAND-1 workbuffer" created, status 36053
+DEBUG ]: compiling feature set 0 for quad.frag
+DEBUG ]: compiling feature set 0 for passthru.frag
+WARN from aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+WARN ]: FIXME: color management protocol is enabled and outputs changed, check preferred image description changes
+DEBUG from aquamarine ]: Output WAYLAND-1: stage toplevel configure 1280x800 until surface ACK
+DEBUG from aquamarine ]: Output WAYLAND-1: configure surface with 3
+DEBUG from aquamarine ]: [wayland] focus changed: WAYLAND-1
+WARN from aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+DEBUG ]: Hyprctl: new connection from pid 830986
+DEBUG ]: Creating a texture for BGTex
+DEBUG ]: BGTex created for monitor WAYLAND-1
+DEBUG ]: Framebuffer "BGTex scale" created, status 36053
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: BGTex scaled from 7680x4320 to 1280x800 for monitor WAYLAND-1
+DEBUG ]: Hyprctl: new connection from pid 831896
+DEBUG ]: Hyprctl: new connection from pid 831897
+DEBUG ]: Hyprctl: new connection from pid 831905
+DEBUG ]: Hyprctl: new connection from pid 831908
+DEBUG ]: Hyprctl: new connection from pid 831939
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 62f236157d60
+DEBUG ]: [CWLDataDeviceProtocol] New datamgr resource bound at 62f2361faa00
+DEBUG ]: [CWLDataDeviceManagerResource] New data device bound at 62f236262130
+DEBUG ]: [CTextInputV3] New tiv3 at 000062f23619a5a0
+DEBUG ]: [CXDGShellProtocol] New xdg_wm_base at 62f2361fbc70
+DEBUG ]: [CPrimarySelectionProtocol] New primary_seletion_manager at 62f2361faa70
+DEBUG ]: [CPrimarySelectionManager] New primary selection data device bound at 62f2361fbf80
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 62f236175c60 (not xwayland)
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 29 at 62f2361fc210
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 3 at 62f2361fd4e0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 38 at 62f2361fe400
+DEBUG ]: [CXDGWMBase] New xdg_surface at 62f2361d1f50
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 62f2361fbc70 gets a toplevel 62f23523d6b0
+DEBUG ]: CWLSurface 62f2360f5b70 called init()
+DEBUG ]: Window 62f236262720 set class to org.omarchy.keyboardnativeqa
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: Layout predicts size [Vector2D: x: 1024, y: 640] for [Window 62f236262720: title: ""]
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 42 at 62f236218cd0
+DEBUG ]: [CWLSubcompositorResource] New wl_subsurface with id 43 at 62f236179f90
+DEBUG ]: [CWLCompositorResource] New wl_region with id 45 at 62f23621df10
+DEBUG ]: Window 62f236262720 set title to Private full pointer keyboard QA
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 62f2361d1f50 requests geometry 0x0 1024x640
+DEBUG ]: CWLSurface 62f23621d910 called init()
+DEBUG ]: Set keyboard focus to surface 62f2361fd4e0, with [Window 62f236262720: title: "Private full pointer keyboard QA"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 21.00000], window size: [982.00000, 598.00000]
+DEBUG ]: Removing last node (dwindle)
+DEBUG ]: compiling feature set 16 for shadow.frag
+DEBUG ]: compiling feature set 8 for border.frag
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 62f2361d1f50 requests geometry 0x0 1024x640
+DEBUG ]: cursorImage request: shape 9 -> text
+DEBUG ]: XCursor scanning theme default
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/default/index.theme
+DEBUG ]: XCursor theme default inherits Adwaita
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme Adwaita
+DEBUG ]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+DEBUG ]: XCursor theme Adwaita inherits AdwaitaLegacy
+DEBUG ]: XCursor theme Adwaita inherits hicolor
+DEBUG ]: XCursor scanning theme AdwaitaLegacy
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/AdwaitaLegacy/index.theme
+DEBUG ]: XCursor theme AdwaitaLegacy inherits hicolor
+DEBUG ]: XCursor scanning theme hicolor
+DEBUG ]: XCursor parsing index.theme /usr/share/icons/hicolor/index.theme
+DEBUG ]: XCursor already has a shape default loaded, skipping
+DEBUG ]: XCursor already has a shape context-menu loaded, skipping
+DEBUG ]: XCursor already has a shape help loaded, skipping
+DEBUG ]: XCursor already has a shape pointer loaded, skipping
+DEBUG ]: XCursor already has a shape progress loaded, skipping
+DEBUG ]: XCursor already has a shape wait loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name plus, skipping
+DEBUG ]: XCursor already has a shape crosshair loaded, skipping
+DEBUG ]: XCursor already has a shape text loaded, skipping
+DEBUG ]: XCursor already has a shape vertical-text loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-link, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape move loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-none, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name crossed_circle, skipping
+DEBUG ]: XCursor already has a shape grab loaded, skipping
+DEBUG ]: XCursor already has a shape grabbing loaded, skipping
+DEBUG ]: XCursor already has a shape e-resize loaded, skipping
+DEBUG ]: XCursor already has a shape n-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ne-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape s-resize loaded, skipping
+DEBUG ]: XCursor already has a shape se-resize loaded, skipping
+DEBUG ]: XCursor already has a shape sw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape w-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ew-resize loaded, skipping
+DEBUG ]: XCursor already has a shape ns-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nesw-resize loaded, skipping
+DEBUG ]: XCursor already has a shape nwse-resize loaded, skipping
+DEBUG ]: XCursor already has a shape col-resize loaded, skipping
+DEBUG ]: XCursor already has a shape row-resize loaded, skipping
+DEBUG ]: XCursor already has a shape all-scroll loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-in loaded, skipping
+DEBUG ]: XCursor already has a shape zoom-out loaded, skipping
+DEBUG ]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+DEBUG ]: XCursor already has a shape all-resize loaded, skipping
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 48, y: 48] and format AR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 48, y: 48] and format AR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+DEBUG from aquamarine ]: Swapchain: Reconfigured a swapchain to [Vector2D: x: 48, y: 48] AR24 of length 2
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 831974
+DEBUG ]: Hyprctl: new connection from pid 831979
+DEBUG ]: [lua] file /run/user/1000/wqa/cc0e/hyprland.lua modified, reloading
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 1 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 832019
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 2 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 832020
+DEBUG ]: Hyprctl: new connection from pid 832021
+DEBUG ]: Hyprctl: new connection from pid 832061
+DEBUG ]: getAddressForTrampo: Allocating new page for hooks
+DEBUG ]: seekNewPageAddr: page 0x62f21c9ee000 - 0x62f21cb58000
+DEBUG ]: seekNewPageAddr: page 0x62f21cb58000 - 0x62f21d60f000
+DEBUG ]: seekNewPageAddr: Anchored to hyprland at 0x62f21cb58000
+DEBUG ]: seekNewPageAddr: page 0x62f21d60f000 - 0x62f21d85c000
+DEBUG ]: seekNewPageAddr: page 0x62f21d85c000 - 0x62f21d880000
+DEBUG ]: seekNewPageAddr: page 0x62f21d880000 - 0x62f21d94a000
+DEBUG ]: seekNewPageAddr: page 0x62f21d94a000 - 0x62f21d95a000
+DEBUG ]: seekNewPageAddr: page 0x62f235154000 - 0x62f2389d3000
+DEBUG ]: seekNewPageAddr: found gap: 0x62f21d95a000-0x62f235154000 (394240000 bytes)
+DEBUG ]: Attempted to allocate 0x62f21d95a000, got 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a000 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a020 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a040 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a060 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a080 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a0a0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a0c0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a0e0 for page at 0x62f21d95a000
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private loaded. Handle: 62f2361ee9e0, path: "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v5/native-pointer-attempt-5/native/libkeyboard-monitor-private-v8-host.so", author: "local parity QA", description: "Exact ABI keyboard monitor isolated candidate", version: "0.8-private-pointer-fence"
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 3 which we don't have?!
+ERR ]: CConfigWatcher: got an event for wd 3 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 832064
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 4 which we don't have?!
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 62f2367fea40
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 61, keymap V1 to: 63
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f236161f10
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 61, keymap V1 to: 63
+DEBUG ]: [CVirtualPointerProtocol] New VPointer at id 3
+DEBUG ]: Attached pointer unknown-device to global
+DEBUG ]: New virtual mouse created
+DEBUG ]: Hyprctl: new connection from pid 832077
+DEBUG ]: Hyprctl: new connection from pid 832084
+DEBUG ]: Hyprctl: new connection from pid 832100
+DEBUG ]: Hyprctl: new connection from pid 832125
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private unloaded.
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 5 which we don't have?!
+DEBUG ]: [CWLDataDeviceProtocol] New datamgr resource bound at 62f235f58ff0
+DEBUG ]: [CPrimarySelectionProtocol] New primary_seletion_manager at 62f235fcd150
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 62f2361a54e0 (not xwayland)
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 2304 to 6912
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 6912 to 16128
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 16128 to 34560
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 34560 to 71424
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 71424 to 145152
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 145152 to 292608
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 292608 to 587520
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 62f236bfb580
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 23 at 62f236890e80
+DEBUG ]: [CPrimarySelectionManager] New primary selection data device bound at 62f23634b600
+DEBUG ]: [CWLDataDeviceManagerResource] New data device bound at 62f236380590
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 26 at 62f236bc1ca0
+DEBUG ]: [CXDGShellProtocol] New xdg_wm_base at 62f235f59e60
+DEBUG ]: Hyprctl: new connection from pid 832205
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a100 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a120 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a140 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a160 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a180 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a1a0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a1c0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a1e0 for page at 0x62f21d95a000
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private loaded. Handle: 62f2368f01c0, path: "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v5/native-pointer-attempt-5/native/libkeyboard-monitor-private-v8-host.so", author: "local parity QA", description: "Exact ABI keyboard monitor isolated candidate", version: "0.8-private-pointer-fence"
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 6 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 832207
+DEBUG ]: Hyprctl: new connection from pid 832210
+DEBUG ]: [CWLDataDeviceProtocol] New datamgr resource bound at 62f2352354d0
+DEBUG ]: [CPrimarySelectionProtocol] New primary_seletion_manager at 62f236935880
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 62f235fa94b0 (not xwayland)
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 62f23671eff0
+DEBUG ]: [CPrimarySelectionManager] New primary selection data device bound at 62f2369bc250
+DEBUG ]: [CWLDataDeviceManagerResource] New data device bound at 62f2354ec0a0
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 34 at 62f23665a620
+DEBUG ]: Hyprctl: new connection from pid 832216
+DEBUG ]: Hyprctl: new connection from pid 832223
+DEBUG ]: Hyprctl: new connection from pid 832224
+DEBUG ]: [CXDGShellProtocol] New xdg_wm_base at 62f23656cb50
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 42 at 62f235232c80
+DEBUG ]: [CFifoManagerResource] New fifo at 62f236a59510 for surface 62f235232c80
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 66: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 69 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 74 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 75 stride 64 offset 20480
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 68: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 76 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 77 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 78 stride 64 offset 20480
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 70: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 79 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 80 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 81 stride 64 offset 20480
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 72: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 82 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 83 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 84 stride 64 offset 20480
+DEBUG ]: [CXDGWMBase] New xdg_surface at 62f23671d700
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 62f23656cb50 gets a toplevel 62f23523ce30
+DEBUG ]: CWLSurface 62f2361f65d0 called init()
+DEBUG ]: [CXDGToplevelResource] Toplevel 62f23523ce30 sets parent to 0
+DEBUG ]: Window 62f23653e9f0 set title to Pointer peer A
+DEBUG ]: Window 62f23653e9f0 set class to org.omarchy.PointerPeerA
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 62f23653e9f0: title: "Pointer peer A"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token e93f0e7a-31f2-4f41-ab3e-a125809a970c
+DEBUG ]: [CFifoManagerResource] New fifo at 62f236a59510 for surface 62f235232c80
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 76: size [Vector2D: x: 720, y: 480], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 85 stride 3072 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 86 stride 384 offset 1474560
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 87 stride 64 offset 1482752
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 65: size [Vector2D: x: 720, y: 480], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 88 stride 3072 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 89 stride 384 offset 1474560
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 90 stride 64 offset 1482752
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 69: size [Vector2D: x: 720, y: 480], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 91 stride 3072 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 92 stride 384 offset 1474560
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 93 stride 64 offset 1482752
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 83: size [Vector2D: x: 720, y: 480], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 94 stride 3072 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 95 stride 384 offset 1474560
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 96 stride 64 offset 1482752
+DEBUG ]: Hyprctl: new connection from pid 832227
+DEBUG ]: Hyprctl: new connection from pid 832229
+DEBUG ]: Hyprctl: new connection from pid 832230
+DEBUG ]: Hyprctl: new connection from pid 832232
+DEBUG ]: Hyprctl: new connection from pid 832233
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 62f23671d700 requests geometry 0x0 360x240
+DEBUG ]: [CWLCompositorResource] New wl_region with id 84 at 62f235539850
+DEBUG ]: Set keyboard focus to surface 62f235232c80, with [Window 62f23653e9f0: title: "Pointer peer A"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 21.00000], window size: [982.00000, 598.00000]
+DEBUG ]: Removing last node (dwindle)
+DEBUG ]: [CFifoManagerResource] New fifo at 62f236a59510 for surface 62f235232c80
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 72: size [Vector2D: x: 450, y: 300], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 69 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 73 stride 256 offset 655360
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 75 stride 64 offset 659456
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 68: size [Vector2D: x: 450, y: 300], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 76 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 77 stride 256 offset 655360
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 78 stride 64 offset 659456
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 84: size [Vector2D: x: 450, y: 300], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 79 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 80 stride 256 offset 655360
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 81 stride 64 offset 659456
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 88: size [Vector2D: x: 450, y: 300], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 82 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 83 stride 256 offset 655360
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 84 stride 64 offset 659456
+DEBUG ]: cursorImage request: shape 1 -> default
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 832235
+DEBUG ]: Hyprctl: new connection from pid 832236
+DEBUG ]: Hyprctl: new connection from pid 832240
+DEBUG ]: Hyprctl: new connection from pid 832242
+DEBUG ]: Hyprctl: new connection from pid 832252
+DEBUG ]: Hyprctl: new connection from pid 832257
+DEBUG ]: [CWLDataDeviceProtocol] New datamgr resource bound at 62f2355382d0
+DEBUG ]: [CPrimarySelectionProtocol] New primary_seletion_manager at 62f235f57740
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 62f2354acaa0 (not xwayland)
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 62f2361be910
+DEBUG ]: [CPrimarySelectionManager] New primary selection data device bound at 62f2354adf40
+DEBUG ]: [CWLDataDeviceManagerResource] New data device bound at 62f235484eb0
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 34 at 62f2367cd930
+DEBUG ]: Hyprctl: new connection from pid 832273
+DEBUG ]: Hyprctl: new connection from pid 832274
+DEBUG ]: Hyprctl: new connection from pid 832275
+DEBUG ]: [CXDGShellProtocol] New xdg_wm_base at 62f2362b9050
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 42 at 62f235233860
+DEBUG ]: [CFifoManagerResource] New fifo at 62f23684ad20 for surface 62f235233860
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 66: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 85 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 87 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 89 stride 64 offset 20480
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 68: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 90 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 91 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 92 stride 64 offset 20480
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 70: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 93 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 94 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 95 stride 64 offset 20480
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 72: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 96 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 97 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 98 stride 64 offset 20480
+DEBUG ]: [CXDGWMBase] New xdg_surface at 62f236bfca70
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 62f2362b9050 gets a toplevel 62f23523d100
+DEBUG ]: CWLSurface 62f2368a5c20 called init()
+DEBUG ]: [CXDGToplevelResource] Toplevel 62f23523d100 sets parent to 0
+DEBUG ]: Window 62f23671a1c0 set title to Pointer peer B
+DEBUG ]: Window 62f23671a1c0 set class to org.omarchy.PointerPeerB
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 62f23671a1c0: title: "Pointer peer B"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token c062d959-1043-49b4-99bc-21aa78704659
+DEBUG ]: [CFifoManagerResource] New fifo at 62f23684ad20 for surface 62f235233860
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 76: size [Vector2D: x: 800, y: 560], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 99 stride 3584 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 100 stride 448 offset 2064384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 101 stride 64 offset 2072576
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 65: size [Vector2D: x: 800, y: 560], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 102 stride 3584 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 103 stride 448 offset 2064384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 104 stride 64 offset 2072576
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 69: size [Vector2D: x: 800, y: 560], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 105 stride 3584 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 106 stride 448 offset 2064384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 107 stride 64 offset 2072576
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 83: size [Vector2D: x: 800, y: 560], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 108 stride 3584 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 109 stride 448 offset 2064384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 110 stride 64 offset 2072576
+DEBUG ]: Hyprctl: new connection from pid 832278
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 62f236bfca70 requests geometry 20x20 360x240
+DEBUG ]: [CWLCompositorResource] New wl_region with id 84 at 62f23624c5b0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 85 at 62f23624c5b0
+DEBUG ]: Set keyboard focus to surface 62f235233860, with [Window 62f23671a1c0: title: "Pointer peer B"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 21.00000], window size: [982.00000, 598.00000]
+DEBUG ]: Removing last node (dwindle)
+DEBUG ]: Framebuffer "Monitor WAYLAND-1 workbuffer" created, status 36053
+DEBUG ]: Framebuffer "Monitor WAYLAND-1 workbuffer" created, status 36053
+DEBUG ]: compiling feature set 0 for blurprepare.frag
+DEBUG ]: compiling feature set 0 for blur1.frag
+DEBUG ]: compiling feature set 0 for blur2.frag
+DEBUG ]: compiling feature set 0 for blurfinish.frag
+DEBUG ]: Hyprctl: new connection from pid 832280
+DEBUG ]: [CFifoManagerResource] New fifo at 62f2368a6010 for surface 62f235233860
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 84: size [Vector2D: x: 500, y: 350], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 93 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 94 stride 256 offset 720896
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 95 stride 64 offset 724992
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 70: size [Vector2D: x: 500, y: 350], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 96 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 97 stride 256 offset 720896
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 98 stride 64 offset 724992
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 85: size [Vector2D: x: 500, y: 350], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 111 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 112 stride 256 offset 720896
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 113 stride 64 offset 724992
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 88: size [Vector2D: x: 500, y: 350], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 114 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 115 stride 256 offset 720896
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 116 stride 64 offset 724992
+DEBUG ]: cursorImage request: shape 1 -> default
+DEBUG ]: cursorImage request: shape 21 -> nw-resize
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: [CFifoManagerResource] New fifo at 62f2368a6010 for surface 62f235233860
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 67: size [Vector2D: x: 450, y: 300], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 120 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 121 stride 256 offset 655360
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 122 stride 64 offset 659456
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 72: size [Vector2D: x: 450, y: 300], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 123 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 124 stride 256 offset 655360
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 125 stride 64 offset 659456
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 90: size [Vector2D: x: 450, y: 300], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 126 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 127 stride 256 offset 655360
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 128 stride 64 offset 659456
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 96: size [Vector2D: x: 450, y: 300], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 129 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 130 stride 256 offset 655360
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 131 stride 64 offset 659456
+DEBUG ]: Hyprctl: new connection from pid 832282
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 62f236bfca70 requests geometry 0x0 360x240
+DEBUG ]: [CWLCompositorResource] New wl_region with id 97 at 62f236596740
+DEBUG ]: [CWLCompositorResource] New wl_region with id 98 at 62f236596740
+DEBUG ]: Hyprctl: new connection from pid 832283
+DEBUG ]: cursorImage request: shape 1 -> default
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 832406
+DEBUG ]: Hyprctl: new connection from pid 832407
+DEBUG ]: Hyprctl: new connection from pid 832408
+DEBUG ]: Hyprctl: new connection from pid 832428
+DEBUG ]: Hyprctl: new connection from pid 832429
+DEBUG ]: Hyprctl: new connection from pid 832430
+DEBUG ]: Hyprctl: new connection from pid 832433
+DEBUG ]: Hyprctl: new connection from pid 832512
+DEBUG ]: Hyprctl: new connection from pid 832801
+DEBUG ]: Hyprctl: new connection from pid 832805
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 62f2361d1f50 requests geometry 0x0 400x160
+DEBUG ]: Hyprctl: new connection from pid 832810
+DEBUG ]: Hyprctl: new connection from pid 832816
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 89 at 62f236739310
+DEBUG ]: [CFifoManagerResource] New fifo at 62f2364ebf40 for surface 62f236739310
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 104: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 50 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 87 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 91 stride 64 offset 20480
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 106: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 92 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 95 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 96 stride 64 offset 20480
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 108: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 97 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 98 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 99 stride 64 offset 20480
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 110: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 100 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 101 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 102 stride 64 offset 20480
+DEBUG ]: [CXDGWMBase] New xdg_surface at 62f2369b8670
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 62f23656cb50 gets a toplevel 62f23523e910
+DEBUG ]: CWLSurface 62f2364efcc0 called init()
+DEBUG ]: [CXDGToplevelResource] Toplevel 62f23523e910 sets parent to 0
+DEBUG ]: Window 62f2369f9ba0 set title to Pointer peer A second
+DEBUG ]: Window 62f2369f9ba0 set class to org.omarchy.PointerPeerA
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 62f2369f9ba0: title: "Pointer peer A second"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token d7c1cef1-9a0d-4c19-a4c5-f17bf9c548b1
+DEBUG ]: [CFifoManagerResource] New fifo at 62f2364ebf40 for surface 62f236739310
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 114: size [Vector2D: x: 720, y: 480], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 103 stride 3072 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 104 stride 384 offset 1474560
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 105 stride 64 offset 1482752
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 103: size [Vector2D: x: 720, y: 480], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 106 stride 3072 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 107 stride 384 offset 1474560
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 108 stride 64 offset 1482752
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 107: size [Vector2D: x: 720, y: 480], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 109 stride 3072 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 110 stride 384 offset 1474560
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 111 stride 64 offset 1482752
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 121: size [Vector2D: x: 720, y: 480], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 112 stride 3072 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 113 stride 384 offset 1474560
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 114 stride 64 offset 1482752
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 62f2369b8670 requests geometry 0x0 360x240
+DEBUG ]: [CWLCompositorResource] New wl_region with id 122 at 62f2364e8c90
+DEBUG ]: Hyprctl: new connection from pid 832833
+DEBUG ]: Set keyboard focus to surface 62f236739310, with [Window 62f2369f9ba0: title: "Pointer peer A second"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 21.00000], window size: [982.00000, 598.00000]
+DEBUG ]: Removing last node (dwindle)
+DEBUG ]: [CFifoManagerResource] New fifo at 62f2364ebf40 for surface 62f236739310
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 110: size [Vector2D: x: 450, y: 300], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 50 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 87 stride 256 offset 655360
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 88 stride 64 offset 659456
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 106: size [Vector2D: x: 450, y: 300], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 89 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 90 stride 256 offset 655360
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 93 stride 64 offset 659456
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 122: size [Vector2D: x: 450, y: 300], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 94 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 95 stride 256 offset 655360
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 96 stride 64 offset 659456
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 126: size [Vector2D: x: 450, y: 300], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 98 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 115 stride 256 offset 655360
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 116 stride 64 offset 659456
+DEBUG ]: cursorImage request: shape 1 -> default
+DEBUG ]: cursorImage request: shape 9 -> text
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Hyprctl: new connection from pid 832834
+DEBUG ]: Hyprctl: new connection from pid 832835
+DEBUG ]: Hyprctl: new connection from pid 832844
+DEBUG ]: Hyprctl: new connection from pid 832847
+DEBUG ]: [Window 62f2369f9ba0: title: "Pointer peer A second", class: org.omarchy.PointerPeerA] unmapped
+DEBUG ]: renderer: making a snapshot of 62f2369f9ba0
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 62f2369f9ba0
+DEBUG ]: renderer: rendered a snapshot of 62f2369f9ba0
+DEBUG ]: renderer: made a snapshot of 62f2369f9ba0
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: On closed window, new focused candidate is [Window 62f23671a1c0: title: "Pointer peer B"]
+DEBUG ]: Set keyboard focus to surface 62f235233860, with [Window 62f23671a1c0: title: "Pointer peer B"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: [Window 62f2369f9ba0: title: "Pointer peer A second", class: org.omarchy.PointerPeerA] destroyed, queueing.
+DEBUG ]: CWLSurface 62f2364efcc0 called destroy()
+DEBUG ]: cursorImage request: shape 1 -> default
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Cleanup: removed 1 fadeouts
+DEBUG ]: [CTextInputV3] New tiv3 at 000062f23697df30
+DEBUG ]: Hyprctl: new connection from pid 832901
+DEBUG ]: Hyprctl: new connection from pid 832934
+DEBUG ]: Hyprctl: new connection from pid 832935
+DEBUG ]: Hyprctl: new connection from pid 832936
+DEBUG ]: Hyprctl: new connection from pid 832937
+DEBUG ]: Hyprctl: new connection from pid 832942
+DEBUG ]: Hyprctl: new connection from pid 832948
+DEBUG ]: Hyprctl: new connection from pid 832950
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 110 at 62f236739310
+DEBUG ]: [CFifoManagerResource] New fifo at 62f2369f5ab0 for surface 62f236739310
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 108: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 50 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 88 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 91 stride 64 offset 20480
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 129: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 92 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 93 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 94 stride 64 offset 20480
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 131: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 95 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 96 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 97 stride 64 offset 20480
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 133: size [Vector2D: x: 2, y: 2], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 98 stride 512 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 99 stride 64 offset 16384
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 100 stride 64 offset 20480
+DEBUG ]: [CXDGWMBase] New xdg_positioner at 62f2364db6b0
+DEBUG ]: [CXDGWMBase] New xdg_surface at 62f2369b8670
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 62f2369b8670 gets a popup 62f236593d80 owner 62f23671d700
+DEBUG ]: CWLSurface 62f2365686c0 called init()
+DEBUG ]: GetPosition with constraint [Vector2D: x: 0, y: 0] [Vector2D: x: 1024, y: 640] and parent [Vector2D: x: 96, y: 120]
+DEBUG ]: [CXDGPopupResource] Popup 62f236593d80 gets unconstrained to [Vector2D: x: 78, y: -40] [Vector2D: x: 204, y: 64]
+DEBUG ]: New popup at 62f23522f2e0
+DEBUG ]: [CXDGPopupResource] xdg_popup 62f236593d80 requests grab
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: cursorImage request: shape 1 -> default
+DEBUG ]: cursorImage request: shape 1 -> default
+DEBUG ]: [CFifoManagerResource] New fifo at 62f2369f5ab0 for surface 62f236739310
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 130: size [Vector2D: x: 420, y: 140], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 89 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 90 stride 256 offset 327680
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 101 stride 64 offset 331776
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 104: size [Vector2D: x: 420, y: 140], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 102 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 103 stride 256 offset 327680
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 104 stride 64 offset 331776
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 132: size [Vector2D: x: 420, y: 140], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 105 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 106 stride 256 offset 327680
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 107 stride 64 offset 331776
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 143: size [Vector2D: x: 420, y: 140], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 108 stride 2048 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 109 stride 256 offset 327680
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 110 stride 64 offset 331776
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 62f2369b8670 requests geometry 3x2 204x64
+DEBUG ]: [CWLCompositorResource] New wl_region with id 144 at 62f2369f6e60
+DEBUG ]: [CWLCompositorResource] New wl_region with id 145 at 62f2369f6e60
+DEBUG ]: popup 62f236195ee0: mapped
+DEBUG ]: [CFifoManagerResource] New fifo at 62f2369f5ab0 for surface 62f236739310
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 144: size [Vector2D: x: 263, y: 88], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 50 stride 1536 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 88 stride 192 offset 147456
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 93 stride 64 offset 151552
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 131: size [Vector2D: x: 263, y: 88], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 94 stride 1536 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 95 stride 192 offset 147456
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 96 stride 64 offset 151552
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 145: size [Vector2D: x: 263, y: 88], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 97 stride 1536 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 98 stride 192 offset 147456
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 99 stride 64 offset 151552
+DEBUG ]: [CLinuxDMABUFParamsResource] Creating a dmabuf, with id 148: size [Vector2D: x: 263, y: 88], fmt AR24, planes 3
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 0: mod 72057594037927951 fd 100 stride 1536 offset 0
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 1: mod 72057594037927951 fd 111 stride 192 offset 147456
+DEBUG ]: [CLinuxDMABUFParamsResource]  | plane 2: mod 72057594037927951 fd 112 stride 64 offset 151552
+DEBUG ]: Hyprctl: new connection from pid 832991
+DEBUG ]: Hyprctl: new connection from pid 833002
+DEBUG ]: Hyprctl: new connection from pid 833004
+DEBUG ]: popup 62f236195ee0: unmapped
+DEBUG ]: renderer: making a snapshot of 62f236195ee0
+DEBUG ]: Framebuffer "popup shapshot" created, status 36053
+DEBUG ]: Set keyboard focus to surface 62f235232c80, with [Window 62f23653e9f0: title: "Pointer peer A"]
+DEBUG ]: [seatmgr] Refocused popup parent window Pointer peer A (follow_mouse=0)
+DEBUG ]: CWLSurface 62f2365686c0 called destroy()
+DEBUG ]: popup 62f236195ee0 fully destroying
+DEBUG ]: Cleanup: removed 1 fadeouts
+DEBUG ]: Hyprctl: new connection from pid 833150
+DEBUG ]: Hyprctl: new connection from pid 833184
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private unloaded.
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 7 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 833189
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a200 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a220 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a240 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a260 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a280 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a2a0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a2c0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a2e0 for page at 0x62f21d95a000
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private loaded. Handle: 62f236313d40, path: "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v5/native-pointer-attempt-5/native/libkeyboard-monitor-private-v8-host.so", author: "local parity QA", description: "Exact ABI keyboard monitor isolated candidate", version: "0.8-private-pointer-fence"
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 8 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 833200
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private unloaded.
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 9 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 833201
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a300 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a320 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a340 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a360 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a380 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a3a0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a3c0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a3e0 for page at 0x62f21d95a000
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private loaded. Handle: 62f236854960, path: "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v5/native-pointer-attempt-5/native/libkeyboard-monitor-private-v8-host.so", author: "local parity QA", description: "Exact ABI keyboard monitor isolated candidate", version: "0.8-private-pointer-fence"
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 10 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 833202
+DEBUG ]: Hyprctl: new connection from pid 833204
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: cursorImage request: shape 1 -> default
+DEBUG ]: Pointer at 62f2368f0780 removed
+DEBUG ]: Keyboard at 62f236161f10 removed
+DEBUG ]: Destroyed keyboard 62f236161f10
+WARN ]: [/usr/src/debug/hyprland/Hyprland-0.56.2/src/protocols/XDGShell.cpp:506] wl_surface destroyed before its xdg_surface role object
+DEBUG ]: [Window 62f23653e9f0: title: "Pointer peer A", class: org.omarchy.PointerPeerA] unmapped
+DEBUG ]: renderer: making a snapshot of 62f23653e9f0
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 62f23653e9f0
+DEBUG ]: renderer: rendered a snapshot of 62f23653e9f0
+DEBUG ]: renderer: made a snapshot of 62f23653e9f0
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: On closed window, new focused candidate is [Window 62f23671a1c0: title: "Pointer peer B"]
+DEBUG ]: Set keyboard focus to surface 62f235233860, with [Window 62f23671a1c0: title: "Pointer peer B"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: [Window 62f23653e9f0: title: "Pointer peer A", class: org.omarchy.PointerPeerA] destroyed, queueing.
+DEBUG ]: CWLSurface 62f2361f65d0 called destroy()
+DEBUG ]: cursorImage request: shape 1 -> default
+DEBUG ]: Cleanup: removed 1 fadeouts
+WARN ]: [/usr/src/debug/hyprland/Hyprland-0.56.2/src/protocols/XDGShell.cpp:506] wl_surface destroyed before its xdg_surface role object
+DEBUG ]: [Window 62f23671a1c0: title: "Pointer peer B", class: org.omarchy.PointerPeerB] unmapped
+DEBUG ]: renderer: making a snapshot of 62f23671a1c0
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 62f23671a1c0
+DEBUG ]: renderer: rendered a snapshot of 62f23671a1c0
+DEBUG ]: renderer: made a snapshot of 62f23671a1c0
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: On closed window, new focused candidate is [Window 62f236262720: title: "Private full pointer keyboard QA"]
+DEBUG ]: Set keyboard focus to surface 62f2361fd4e0, with [Window 62f236262720: title: "Private full pointer keyboard QA"]
+DEBUG ]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+DEBUG ]: [Window 62f23671a1c0: title: "Pointer peer B", class: org.omarchy.PointerPeerB] destroyed, queueing.
+DEBUG ]: CWLSurface 62f2368a5c20 called destroy()
+DEBUG ]: cursorImage request: shape 9 -> text
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: Cleanup: removed 1 fadeouts
+DEBUG ]: Hyprctl: new connection from pid 833329
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private unloaded.
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 11 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 833336
+DEBUG ]: [lua] file /run/user/1000/wqa/cc0e/hyprland.lua modified, reloading
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 12 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 833337
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 13 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 833338
+DEBUG ]: Hyprctl: new connection from pid 833339
+DEBUG ]: Hyprctl: new connection from pid 833340
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a400 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a420 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a440 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a460 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a480 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a4a0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a4c0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a4e0 for page at 0x62f21d95a000
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private loaded. Handle: 62f2363d1aa0, path: "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v5/native-pointer-attempt-5/native/libkeyboard-monitor-private-v8-host.so", author: "local parity QA", description: "Exact ABI keyboard monitor isolated candidate", version: "0.8-private-pointer-fence"
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 14 which we don't have?!
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 62f23637c600
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-evdev-keyboard", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-evdev-keyboard
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-evdev-keyboard"
+DEBUG ]: New virtual keyboard created at 62f236161f10
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-evdev-keyboard
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Keybind triggered, calling dispatcher (0, , 65481, __lua)
+DEBUG ]: Keyboard at 62f236161f10 removed
+DEBUG ]: Destroyed keyboard 62f236161f10
+DEBUG ]: [lua] file /run/user/1000/wqa/cc0e/hyprland.lua modified, reloading
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 15 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 833369
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 16 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 833371
+DEBUG ]: Hyprctl: new connection from pid 833372
+DEBUG ]: Hyprctl: new connection from pid 833373
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 62f2354f9d70
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f236161f10
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Hyprctl: new connection from pid 833389
+DEBUG ]: Hyprctl: new connection from pid 833390
+DEBUG ]: Hyprctl: new connection from pid 833391
+DEBUG ]: Keyboard at 62f236161f10 removed
+DEBUG ]: Destroyed keyboard 62f236161f10
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 7
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f236161f10
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Hyprctl: new connection from pid 833449
+DEBUG ]: Hyprctl: new connection from pid 833450
+DEBUG ]: Keyboard at 62f236161f10 removed
+DEBUG ]: Destroyed keyboard 62f236161f10
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f236161f10
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Hyprctl: new connection from pid 833618
+DEBUG ]: Keyboard at 62f236161f10 removed
+DEBUG ]: Destroyed keyboard 62f236161f10
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 7
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f236161f10
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Hyprctl: new connection from pid 833897
+DEBUG ]: Hyprctl: new connection from pid 833903
+DEBUG ]: Keyboard at 62f236161f10 removed
+DEBUG ]: Destroyed keyboard 62f236161f10
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f236161f10
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Hyprctl: new connection from pid 834092
+DEBUG ]: Hyprctl: new connection from pid 834095
+DEBUG ]: Keyboard at 62f236161f10 removed
+DEBUG ]: Destroyed keyboard 62f236161f10
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 7
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f236161f10
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Keyboard at 62f236161f10 removed
+DEBUG ]: Destroyed keyboard 62f236161f10
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f236161f10
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Hyprctl: new connection from pid 834168
+DEBUG ]: Hyprctl: new connection from pid 834169
+DEBUG ]: Keyboard at 62f236161f10 removed
+DEBUG ]: Destroyed keyboard 62f236161f10
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 7
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f236161f10
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Hyprctl: new connection from pid 834234
+DEBUG ]: Hyprctl: new connection from pid 834236
+DEBUG ]: Keyboard at 62f236161f10 removed
+DEBUG ]: Destroyed keyboard 62f236161f10
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f236161f10
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Keyboard at 62f236161f10 removed
+DEBUG ]: Destroyed keyboard 62f236161f10
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 7
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f236161f10
+DEBUG ]: Updating keyboard 62f236161f10's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input-1", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 61, keymap V1 to: 69
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input-1"
+DEBUG ]: New virtual keyboard created at 62f23632a6d0
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 61, keymap V1 to: 69
+DEBUG ]: Keyboard at 62f236161f10 removed
+DEBUG ]: Destroyed keyboard 62f236161f10
+DEBUG ]: Keyboard at 62f23632a6d0 removed
+DEBUG ]: Destroyed keyboard 62f23632a6d0
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 8
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f23632a6d0
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Keyboard at 62f23632a6d0 removed
+DEBUG ]: Destroyed keyboard 62f23632a6d0
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f23632a6d0
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Keyboard at 62f23632a6d0 removed
+DEBUG ]: Destroyed keyboard 62f23632a6d0
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 8
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f23632a6d0
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Hyprctl: new connection from pid 834640
+DEBUG ]: Hyprctl: new connection from pid 834641
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Keyboard at 62f23632a6d0 removed
+DEBUG ]: Destroyed keyboard 62f23632a6d0
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f23632a6d0
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Hyprctl: new connection from pid 834653
+DEBUG ]: [lua] file /run/user/1000/wqa/cc0e/hyprland.lua modified, reloading
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 1
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 17 which we don't have?!
+DEBUG ]: Framebuffer "Monitor WAYLAND-1 workbuffer" created, status 36053
+DEBUG ]: Hyprctl: new connection from pid 834654
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 1
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 18 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 834771
+DEBUG ]: Hyprctl: new connection from pid 834775
+DEBUG ]: Hyprctl: new connection from pid 834776
+DEBUG ]: [lua] file /run/user/1000/wqa/cc0e/hyprland.lua modified, reloading
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 1
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 19 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 834804
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 1
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 20 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 834838
+DEBUG ]: Hyprctl: new connection from pid 834839
+DEBUG ]: Hyprctl: new connection from pid 834840
+DEBUG ]: Keyboard at 62f23632a6d0 removed
+DEBUG ]: Destroyed keyboard 62f23632a6d0
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 8
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 1
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f23632a6d0
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: [lua] file /run/user/1000/wqa/cc0e/hyprland.lua modified, reloading
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 1
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 21 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 834963
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 1
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 22 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 834986
+DEBUG ]: Hyprctl: new connection from pid 834987
+DEBUG ]: Hyprctl: new connection from pid 834988
+DEBUG ]: [lua] file /run/user/1000/wqa/cc0e/hyprland.lua modified, reloading
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 23 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 835018
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 24 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 835085
+DEBUG ]: Hyprctl: new connection from pid 835086
+DEBUG ]: Hyprctl: new connection from pid 835087
+DEBUG ]: Keyboard at 62f23632a6d0 removed
+DEBUG ]: Destroyed keyboard 62f23632a6d0
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f23632a6d0
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Keyboard at 62f23632a6d0 removed
+DEBUG ]: Destroyed keyboard 62f23632a6d0
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 8
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f23632a6d0
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: [CInputMethodV2Protocol] New IME with resource id 3
+DEBUG ]: [CInputMethodV2] New IME Grab with resource id 7
+DEBUG ]: TI ENABLE
+DEBUG ]: IME Destroy
+DEBUG ]: IME Destroy
+DEBUG ]: Keyboard at 62f23632a6d0 removed
+DEBUG ]: Destroyed keyboard 62f23632a6d0
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 9
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f23632a6d0
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Hyprctl: new connection from pid 835378
+DEBUG ]: Hyprctl: new connection from pid 835379
+DEBUG ]: Keyboard at 62f23632a6d0 removed
+DEBUG ]: Destroyed keyboard 62f23632a6d0
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 8
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f23632a6d0
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 58, keymap V1 to: 62
+DEBUG ]: Keyboard at 62f23632a6d0 removed
+DEBUG ]: Destroyed keyboard 62f23632a6d0
+DEBUG ]: [lua] file /run/user/1000/wqa/cc0e/hyprland.lua modified, reloading
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 25 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 835442
+DEBUG ]: Hyprctl: new connection from pid 835451
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private unloaded.
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 26 which we don't have?!
+ERR ]: CConfigWatcher: got an event for wd 26 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 835452
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 27 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 835453
+DEBUG ]: Hyprctl: new connection from pid 835454
+DEBUG ]: [CWLDataDeviceProtocol] New datamgr resource bound at 62f2367d0c80
+DEBUG ]: [CPrimarySelectionProtocol] New primary_seletion_manager at 62f23632c9a0
+DEBUG ]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 62f23624e430 (not xwayland)
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 2304 to 6912
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 6912 to 16128
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 16128 to 34560
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 34560 to 71424
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 71424 to 145152
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 145152 to 292608
+DEBUG ]: [CSHMPool] Resizing a SHM pool from 292608 to 587520
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 62f2363d1930
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 23 at 62f2367d0dd0
+DEBUG ]: [CPrimarySelectionManager] New primary selection data device bound at 62f23673e8f0
+DEBUG ]: [CWLDataDeviceManagerResource] New data device bound at 62f235526e80
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 26 at 62f2364e87f0
+DEBUG ]: [CXDGShellProtocol] New xdg_wm_base at 62f235fb07d0
+DEBUG ]: Hyprctl: new connection from pid 835499
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a500 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a520 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a540 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a560 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a580 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a5a0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a5c0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a5e0 for page at 0x62f21d95a000
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private loaded. Handle: 62f236890fd0, path: "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v5/native-pointer-attempt-5/native/libkeyboard-monitor-private-v8-host.so", author: "local parity QA", description: "Exact ABI keyboard monitor isolated candidate", version: "0.8-private-pointer-fence"
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 28 which we don't have?!
+DEBUG ]: [lua] file /run/user/1000/wqa/cc0e/hyprland.lua modified, reloading
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 29 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 835506
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 30 which we don't have?!
+DEBUG ]: [CWLSeatProtocol] New seat resource bound at 62f23518a530
+DEBUG ]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: xkb: LED index 0 (name Num Lock) got index 1
+DEBUG ]: xkb: LED index 1 (name Caps Lock) got index 0
+DEBUG ]: xkb: LED index 2 (name Scroll Lock) got index 2
+DEBUG ]: xkb: Mod index 0 (name Shift) got index 0
+DEBUG ]: xkb: Mod index 1 (name Lock) got index 1
+DEBUG ]: xkb: Mod index 2 (name Control) got index 2
+DEBUG ]: xkb: Mod index 3 (name Mod1) got index 3
+DEBUG ]: xkb: Mod index 4 (name Mod2) got index 4
+DEBUG ]: xkb: Mod index 5 (name Mod3) got index 5
+DEBUG ]: xkb: Mod index 6 (name Mod4) got index 6
+DEBUG ]: xkb: Mod index 7 (name Mod5) got index 7
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 63, keymap V1 to: 70
+DEBUG ]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-native-input"
+DEBUG ]: New virtual keyboard created at 62f23632a6d0
+DEBUG ]: Updating keyboard 62f23632a6d0's translation state from a provided keymap
+DEBUG ]: Updating keymap fd for keyboard hl-virtual-keyboard-native-input
+DEBUG ]: Updated keymap fd to 63, keymap V1 to: 70
+DEBUG ]: Hyprctl: new connection from pid 835644
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private unloaded.
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 31 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 835647
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a600 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a620 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a640 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a660 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a680 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a6a0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a6c0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a6e0 for page at 0x62f21d95a000
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private loaded. Handle: 62f236890fd0, path: "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v5/native-pointer-attempt-5/native/libkeyboard-monitor-private-v8-host.so", author: "local parity QA", description: "Exact ABI keyboard monitor isolated candidate", version: "0.8-private-pointer-fence"
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 32 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 835732
+DEBUG ]: Hyprctl: new connection from pid 835739
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private unloaded.
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 33 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 835804
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a700 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a720 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a740 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a760 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a780 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a7a0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a7c0 for page at 0x62f21d95a000
+DEBUG ]: getAddressForTrampo: Returning addr 0x62f21d95a7e0 for page at 0x62f21d95a000
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private loaded. Handle: 62f236890fd0, path: "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v5/native-pointer-attempt-5/native/libkeyboard-monitor-private-v8-host.so", author: "local parity QA", description: "Exact ABI keyboard monitor isolated candidate", version: "0.8-private-pointer-fence"
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+DEBUG ]: ApplyConfigToKeyboard for "hl-virtual-keyboard-native-input", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 34 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 835831
+DEBUG ]: Keyboard at 62f23632a6d0 removed
+DEBUG ]: Destroyed keyboard 62f23632a6d0
+DEBUG ]: Hyprctl: new connection from pid 836168
+DEBUG ]:  [PluginSystem] Plugin keyboard-monitor-private unloaded.
+DEBUG ]: [CXDGOutputProtocol] updating all xdg_output heads
+DEBUG ]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+DEBUG ]: Not applying config to keyboard, it did not change.
+ERR ]: CConfigWatcher: got an event for wd 35 which we don't have?!
+DEBUG ]: Hyprctl: new connection from pid 836179
+DEBUG ]: Hyprctl: new connection from pid 836180
+DEBUG ]: [Window 62f236262720: title: "Private full pointer keyboard QA", class: org.omarchy.keyboardnativeqa] unmapped
+DEBUG ]: renderer: making a snapshot of 62f236262720
+DEBUG ]: Framebuffer "window snapshot" created, status 36053
+DEBUG ]: renderer: cleared a snapshot of 62f236262720
+DEBUG ]: renderer: rendered a snapshot of 62f236262720
+DEBUG ]: renderer: made a snapshot of 62f236262720
+WARN ]: ITarget: assignToSpace with a null space?
+DEBUG ]: On closed window, new focused candidate is [Window nullptr]
+ERR ]: getConvertedColor: failed to get image description
+DEBUG ]: CWLSurface 62f23621d910 called destroy()
+DEBUG ]: Cleanup: removed 1 fadeouts
+DEBUG ]: [Window 62f236262720: title: "Private full pointer keyboard QA", class: org.omarchy.keyboardnativeqa] destroyed, queueing.
+DEBUG ]: CWLSurface 62f2360f5b70 called destroy()
+DEBUG ]: Destroy TI owner1
+DEBUG ]: Hyprland received signal 15
+DEBUG ]: Hyprland is stopping!
+DEBUG ]: Kicked off the event loop! :(
+DEBUG ]: Monitor WAYLAND-1 -> destroyed all render data
+DEBUG ]: Destroying workspace ID 1
+DEBUG ]: Hyprland has reached the end.

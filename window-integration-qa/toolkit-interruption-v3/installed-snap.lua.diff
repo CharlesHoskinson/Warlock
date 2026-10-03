@@ -1,0 +1,30 @@
+--- window-integration-qa/modal-ancestor-discovery-v2/native-candidate/installed-snap.lua
++++ window-integration-qa/toolkit-interruption-v3/native-candidate/installed-snap.lua
+@@ -446,6 +446,17 @@
+   last = {}
+ end
+ 
++-- Minimize snapshots the current rectangle rather than rolling back to press.
++-- Native retirement emits only this event, after clearing the exact controller.
++function hypr_snap_drag_retire_current(address)
++  if drag_address ~= address then return end
++  drag_source, drag_address, drag_normal, release_normal, shake = nil, nil, nil, nil, nil
++  if snapbar_open then hl.exec_cmd(controls_bin .. "hypr-window-menu hide") end
++  snapbar_open = false
++  skip_address = address
++  last = {}
++end
++
+ if hl.plugin.hyprbars and hl.plugin.hyprbars.drag_bridge and hl.plugin.hyprbars.drag_bridge() then
+   hl.on("hyprbars.drag_start",function(w,x,y)
+     local press = type(x)=="number" and type(y)=="number" and {x=x,y=y} or nil
+@@ -453,6 +464,9 @@
+   end)
+   hl.on("hyprbars.drag_finish",function(w,released)
+     if released then hypr_snap_drag_end(w.address) else hypr_snap_drag_cancel(w.address) end
++  end)
++  hl.on("hyprbars.drag_retire_current",function(w)
++    hypr_snap_drag_retire_current(w.address)
+   end)
+ end
+ 

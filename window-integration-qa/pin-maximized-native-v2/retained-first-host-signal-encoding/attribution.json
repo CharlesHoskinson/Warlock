@@ -1,0 +1,6 @@
+{
+  "nativeExecuted": false,
+  "originalSignalsChanged": false,
+  "cause": "signal.SIGTERM and SIGKILL are Python Signals IntEnum objects; strict integer receipt decoder rejected in-memory enum before JSON encoding. Store the observed numeric signal explicitly while delegating original untouched sig argument to os.kill.",
+  "typedDecoderWeakened": false
+}

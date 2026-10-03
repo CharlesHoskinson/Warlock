@@ -1,0 +1,22 @@
+{
+  "result": "pass",
+  "proposal": "/home/hoskinson/window-integration-qa/restore-span-diagnostic-source-proposal-v1.json",
+  "proposalSHA256": "1c6870cbf856c6da61c2c88b510d8dfbe7868bfe293f351b26ae3d0c4551ab14",
+  "verifiedInputs": 53,
+  "selectedCallBoundaries": 44,
+  "modelCases": 12,
+  "modelTraces": 2000,
+  "profilerByteExact": true,
+  "wholeOriginalObserverDiffExact": true,
+  "productChanged": false,
+  "originalBaselineAndFaultAndCleanupGatesUnchanged": true,
+  "originalDeadlinesUnchanged": true,
+  "timingPerturbationExplicit": true,
+  "returnDoesNotProveSuccess": true,
+  "codeObjectIDsAreDiagnosticLabels": true,
+  "sourceDerivativeApplicationAuthorized": true,
+  "requiredOriginalCPUSuiteAndProfileTests": true,
+  "nativeLaunchAuthorized": false,
+  "freshSourceClosureAndRootFreezeRequired": true,
+  "scope": "One causal private diagnostic; preserves failed B12 and fixed V27. No unobserved lock/file gap attribution or production performance claim."
+}

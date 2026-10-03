@@ -1,0 +1,352 @@
+{
+  "result": "pass",
+  "namedScenarios": 32,
+  "randomizedModels": 3,
+  "samplesPerModel": 2000,
+  "stepsPerSample": 100,
+  "requestedSeed": 20260930,
+  "formal": [
+    {
+      "name": "configure_lifecycle-named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/configure_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  configure_lifecycle\n    ok initialCommitRefusedTest passed 1 test(s)\n    ok toplevelDoesNotPublishTest passed 1 test(s)\n    ok ackAloneDoesNotCommitTest passed 1 test(s)\n    ok acknowledgedPublicationAllowsBufferTest passed 1 test(s)\n    ok destroyedOutputCannotReappearTest passed 1 test(s)\n    ok repeatedConfigureStaysUsableTest passed 1 test(s)\n    ok publishedDestructionRefusesMoreTest passed 1 test(s)\n    ok ackThenDestroyedQueuedCallbackRefusedTest passed 1 test(s)\n    ok stateListenerDestructionRefusesFrameTest passed 1 test(s)\n    ok publishedThenDestroyedQueuedReconfigureRefusedTest passed 1 test(s)\n    ok idleFrameBeforeAnnouncementRefusedTest passed 1 test(s)\n    ok publishedFrameAndBufferRecordedSeparatelyTest passed 1 test(s)\n    ok parentLossBeforeAckInvalidatesQueuedWorkTest passed 1 test(s)\n    ok parentLossAfterAckRefusesAnnouncementTest passed 1 test(s)\n    ok publishedParentLossStopsBuffersFramesAndReconfigureTest passed 1 test(s)\n\n  15 passing (193ms)\n",
+      "stderr": "",
+      "expectedNamedCount": 15
+    },
+    {
+      "name": "configure_lifecycle-random",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/configure_lifecycle.qnt",
+        "--invariant",
+        "safe",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20260930",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (552ms at 3623 traces/second).\nUse --seed=0x14d8f22 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "name": "nested_selection-named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/nested_selection.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  nested_selection\n    ok mandatoryWaylandConstructedWithoutDrmTest passed 1 test(s)\n    ok strictInitialDrmRequestsRefusedTest passed 1 test(s)\n    ok lateGpuCannotCreateDrmTest passed 1 test(s)\n    ok failedMandatoryParentCannotUseAuxiliaryTest passed 1 test(s)\n    ok auxiliaryBeforeMandatoryStartRefusedTest passed 1 test(s)\n    ok successfulParentAllowsAuxiliaryTest passed 1 test(s)\n    ok parentLossCannotFallbackToLiveAuxiliaryTest passed 1 test(s)\n    ok lostParentIgnoresLateStartAndGpuTest passed 1 test(s)\n    ok invalidSelectionMakesNoBackendTest passed 1 test(s)\n    ok unsetPreservesDrmStartupTest passed 1 test(s)\n    ok unsetPreservesLateGpuTest passed 1 test(s)\n    ok rejectedParentNotRetargetedByLateSelectionTest passed 1 test(s)\n\n  12 passing (103ms)\n",
+      "stderr": "",
+      "expectedNamedCount": 12
+    },
+    {
+      "name": "nested_selection-random",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/nested_selection.qnt",
+        "--invariant",
+        "safe",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20260930",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (801ms at 2497 traces/second).\nUse --seed=0x138351e --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "name": "version_guard-named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/version_guard.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  version_guard\n    ok compositor5Binds5Test passed 1 test(s)\n    ok lowCompositorRefusesDamageBufferTest passed 1 test(s)\n    ok lowDmabufRefusesDefaultFeedbackTest passed 1 test(s)\n    ok futureVersionClampsToClientTest passed 1 test(s)\n    ok absentGlobalDoesNotBindTest passed 1 test(s)\n\n  5 passing (26ms)\n",
+      "stderr": "",
+      "expectedNamedCount": 5
+    },
+    {
+      "name": "version_guard-random",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/version_guard.qnt",
+        "--invariant",
+        "validBinding and truthfulRefusal",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20260930",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (429ms at 4662 traces/second).\nUse --seed=0x13b41fa --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "mutationCounterexamples": [
+    {
+      "name": "unguarded-buffer",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/unguarded-buffer.qnt",
+        "--invariant",
+        "safe",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20260930",
+        "--out-itf",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/unguarded-buffer.itf.json",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 1,
+      "stdout": "[violation] Found an issue (22ms at 45 traces/second).\n",
+      "stderr": "error: Invariant violated\n",
+      "counterexample": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/unguarded-buffer.itf.json",
+      "counterexampleSha256": "f01d7c6de7192e571e505d37af2702d0e1e1f9f9b0b64a121f446f826b9d58bd"
+    },
+    {
+      "name": "unguarded-frame",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/unguarded-frame.qnt",
+        "--invariant",
+        "safe",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20260930",
+        "--out-itf",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/unguarded-frame.itf.json",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 1,
+      "stdout": "[violation] Found an issue (21ms at 48 traces/second).\n",
+      "stderr": "error: Invariant violated\n",
+      "counterexample": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/unguarded-frame.itf.json",
+      "counterexampleSha256": "cf0602ed1778153cc905f361c5bce4dbdafcf476b650f983be010d45c9ad3925"
+    },
+    {
+      "name": "publication-before-ack",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/publication-before-ack.qnt",
+        "--invariant",
+        "safe",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20260930",
+        "--out-itf",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/publication-before-ack.itf.json",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 1,
+      "stdout": "[violation] Found an issue (22ms at 91 traces/second).\n",
+      "stderr": "error: Invariant violated\n",
+      "counterexample": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/publication-before-ack.itf.json",
+      "counterexampleSha256": "b6f0ed040f4ea9d9e613960dde97d14d4b6d194a92af4d788d44df748383b0ea"
+    },
+    {
+      "name": "late-gpu-drm",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/late-gpu-drm.qnt",
+        "--invariant",
+        "safe",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20260930",
+        "--out-itf",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/late-gpu-drm.itf.json",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 1,
+      "stdout": "[violation] Found an issue (23ms at 435 traces/second).\n",
+      "stderr": "error: Invariant violated\n",
+      "counterexample": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/late-gpu-drm.itf.json",
+      "counterexampleSha256": "474dfb0a8e293975ab37f60bdc8eba1545a1a5597b6a367fe3069c2e7f523754"
+    },
+    {
+      "name": "parentloss-aux-fallback",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/parentloss-aux-fallback.qnt",
+        "--invariant",
+        "safe",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20260930",
+        "--out-itf",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/parentloss-aux-fallback.itf.json",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 1,
+      "stdout": "[violation] Found an issue (27ms at 963 traces/second).\n",
+      "stderr": "error: Invariant violated\n",
+      "counterexample": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/independent-model-evidence/parentloss-aux-fallback.itf.json",
+      "counterexampleSha256": "1c9ca8d303137a7e0a010a4921c04b05b8ab7fea0d327127dc9a6a55dd146e9a"
+    }
+  ],
+  "sourceWiring": {
+    "result": "pass",
+    "checks": [
+      {
+        "name": "invalid explicit selection returns before backend construction",
+        "passed": true
+      },
+      {
+        "name": "mandatory parent placed first and only explicit headless copied as auxiliary",
+        "passed": true
+      },
+      {
+        "name": "failed mandatory startup clears implementations and returns false",
+        "passed": true
+      },
+      {
+        "name": "late GPU explicit selection refused before DRM creation",
+        "passed": true
+      },
+      {
+        "name": "toplevel only stages size, never publishes/frame-kicks",
+        "passed": true
+      },
+      {
+        "name": "ACK sent before acknowledged state and deferred publication",
+        "passed": true
+      },
+      {
+        "name": "configure deferred callback uses weak lifetime and poststate guard",
+        "passed": true
+      },
+      {
+        "name": "shared public frame relay requires real lifecycle authority",
+        "passed": true
+      },
+      {
+        "name": "idle frame guarded before scheduler frame emission",
+        "passed": true
+      },
+      {
+        "name": "actual buffer commit refuses before snapshot/attach",
+        "passed": true
+      },
+      {
+        "name": "destroy invalidates lifecycle before public destroy and callbacks",
+        "passed": true
+      },
+      {
+        "name": "frame completion holds output and checks authority before present",
+        "passed": true
+      },
+      {
+        "name": "parent error invalidates every lifecycle/scheduler and clears strict readiness",
+        "passed": true
+      },
+      {
+        "name": "Wayland startup rejects real dispatch failure",
+        "passed": true
+      }
+    ],
+    "scope": "Structural source wiring only; real transport loss and callback reentrancy require native proof",
+    "sources": {
+      "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Wayland.cpp": "30f8bfac8f81fe667335aeb8f00ab424aa98bd54329ba1c45d19a344d15ff300",
+      "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Backend.cpp": "7aab17d6e9b4ffa7ab3c3c8434832a387b48f3bb22be5310bea8036e70f8c41f",
+      "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/NestedLifecycle.hpp": "e2ce7bf808db125387ae7e1c1874e3db06cf61a9ccedfe097fd96bc94f10d3fc"
+    }
+  },
+  "scopedCpp": {
+    "result": "pass",
+    "scopeEvidence": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-44c84fb751dc4ad987d1f6012b0fb546.scope",
+      "coreLimit": 1
+    },
+    "inheritedCoreLimits": [
+      1,
+      1
+    ],
+    "tests": [
+      {
+        "binary": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/test_lifecycle-independent",
+        "sha256": "bcef797160e3ef2b046887b787db3414f2360ca11eff2892c36af6e5b158c171",
+        "exitCode": 0,
+        "stdout": "selection/lifecycle boundaries, staged sizes, reentrant-destruction/parent-loss helper states and 46656 exhaustive event traces passed\n",
+        "stderr": ""
+      },
+      {
+        "binary": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/test_version-independent",
+        "sha256": "370c9045e22abb7ef13c8f7f7e140544bb0ef113b27c83e76d42780c20200c65",
+        "exitCode": 0,
+        "stdout": "72 actual C++ boundary/property checks PASS\n",
+        "stderr": ""
+      }
+    ],
+    "nativeGuiLaunched": false
+  },
+  "nativeGuiLaunched": false,
+  "boundaries": [
+    "Models and actual compiled internal helper execution do not prove live parent transport loss, callback reentrancy, or native window correctness.",
+    "Fourteen source checks inspect actual source ordering and guards without executing those native callbacks.",
+    "C++ executable tests use the dedicated QA scope and inherited core soft/hard limit 1.",
+    "Unset backend policy retains upstream optional behavior; mandatory-parent invariants apply only to explicit Wayland selection."
+  ],
+  "sourceHashes": {
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/configure_lifecycle.qnt": "5b0989745df3797384f178e707a7c7b637fc9d05142a631756f37be7f30d8ce2",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/nested_selection.qnt": "cb36b1fe87335e5442dccf8d98ee85f276278e0cbab06f443212152c13e2e0f0",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/version_guard.qnt": "2b576a9db98cf2623ae5bbabf0e6738b834a638424444256ee35bf66e2276752",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/test_lifecycle.cpp": "1c8adce57de58d84efb8bcd2a8993055a08f6cbb2d690e3b14ad5b9f9c0d9666",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/test_version.cpp": "5600d7292724b234fa3a442d26b5057587076e930864d119a6ba31c10f460925",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/check_wiring.py": "462829157cec389750f503b3a486969cf727b9eff2ec9480519af3cefa773ec3",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/run_scoped_cpp.py": "37457eb5fe44190cd5024f515d23766b552aea87945f54465a6b75ee4537f2de",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/run_independent_formal.py": "afe9d6d2850d98022b7a2e3aae718f44d63a804580f1b2e92ae8e9eeb7c64278",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/NestedLifecycle.hpp": "e2ce7bf808db125387ae7e1c1874e3db06cf61a9ccedfe097fd96bc94f10d3fc",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Wayland.cpp": "30f8bfac8f81fe667335aeb8f00ab424aa98bd54329ba1c45d19a344d15ff300",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/candidate/src/backend/Backend.cpp": "7aab17d6e9b4ffa7ab3c3c8434832a387b48f3bb22be5310bea8036e70f8c41f",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/prefix/lib/libaquamarine.so.0.15.0": "4ed46e823441b7c9539193cb16020dbfe9297a9635ffcadca442452b9a64a63f"
+  }
+}

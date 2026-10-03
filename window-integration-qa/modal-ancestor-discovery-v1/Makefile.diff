@@ -1,0 +1,13 @@
+--- production-v18/Makefile
++++ candidate-v19/Makefile
+@@ -10,8 +10,8 @@
+ INCLUDES = `pkg-config --cflags pixman-1 libdrm hyprland libinput libudev wayland-server xkbcommon libeis-1.0`
+ LIBS = `pkg-config --libs cairo`
+ 
+-SRC = main.cpp barDeco.cpp BarPassElement.cpp dragBridge.cpp familyBridge.cpp snapshotBridge.cpp atlasRenderer.cpp atlasAdapter.cpp
+-TARGET = hyprbars-v18-atlas-candidate.so
++SRC = main.cpp barDeco.cpp BarPassElement.cpp dragBridge.cpp familyBridge.cpp ancestorHit.cpp snapshotBridge.cpp atlasRenderer.cpp atlasAdapter.cpp
++TARGET = hyprbars-v19-modal-candidate.so
+ 
+ all: $(TARGET)
+ 

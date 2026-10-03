@@ -1,0 +1,49 @@
+{
+  "result": "fail",
+  "checks": {
+    "terminalReportRetainsActualFailure": true,
+    "completeFrozenBytesModesLinks": true,
+    "exactSourceManifest": true,
+    "all18MainPreservation": true,
+    "mainWritesAbsent": true,
+    "allFourExactVariants": false,
+    "qt-wayland:all13ExactCases": false,
+    "qt-wayland:move-escape:nativeReplay": false,
+    "qt-wayland:move-escape:normalPublicQuit": true,
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:exactQSReadinessAndExplicitNormalQuit": true,
+    "qt-wayland:normalQSAndService": true,
+    "qt-wayland:nativeUnloadNormalOrdered": true,
+    "qt-wayland:hostRuntimeCleanup": false,
+    "qt-wayland:rawHelpersNormalExact": false,
+    "qt-wayland:allRecordedOriginalIdentitiesGone": true,
+    "qt-wayland:bothGenuineShellPreviewReceipts": false
+  },
+  "errors": {},
+  "inventory": [
+    {
+      "variant": "qt-wayland",
+      "reachedCases": 1,
+      "retainedResult": "fail",
+      "errors": {
+        "error": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v5/run_native.py\", line 113, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v5/held_controller.py\", line 101, in run\n    retired(before,after,peer)\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v5/observations.py\", line 24, in retired\n    if independent is not None and not exact(after['nativeFocus'],independent):raise ValueError('Nonrelease interruption stole independent native focus')\n                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Nonrelease interruption stole independent native focus\n"
+      }
+    }
+  ],
+  "sourceManifestSHA256": "b13d328f4de94a0182000d434a722d5236a123de49ce95f8f8e66cf8ef1522ac",
+  "sourceCount": 21349,
+  "modeCount": 21349,
+  "linkCount": 326,
+  "actualReachedCases": 1,
+  "expectedCases": 52,
+  "producerResult": "fail",
+  "nativeCommands": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false,
+  "fullHeld52ReplayAccepted": false,
+  "replayLimitations": [
+    "Historical geometry/pin and native IPC command timing are accepted only where actual samples are retained; gate booleans alone do not supply missing observations."
+  ],
+  "auditorSourceSHA256": "5d35dd6a4f31e71073faa44241d0368055523787040c3842436345236d2fc011"
+}

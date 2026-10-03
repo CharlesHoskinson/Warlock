@@ -1,0 +1,43 @@
+--- /home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/proposal/desired/ProcessRegistry.cpp
++++ /home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/proposal/revised-desired/ProcessRegistry.cpp
+@@ -3,6 +3,7 @@
+ #include <QMetaMethod>
+ #include <qqml.h>
+ #include <set>
++#include <algorithm>
+ #include "MappingWitness.hpp"
+ #include <QPromise>
+ #include <QFutureWatcher>
+@@ -98,9 +99,10 @@
+  auto r=find(scope.objects[3],scope.lease);if(!r)throw Refused("Exact selected terminal lease required");
+  auto bound=[&]{const auto current=rows.find(scope.objects[3]);if(current==rows.end()||current->second!=r||r->lease!=scope.lease||r->arm.engine!=scope.engine||r->arm.provider!=scope.provider||r->objects!=scope.objects)throw Refused("Terminal-retire selected tuple/lease changed");};
+  auto invalidate=[&]{const auto selected=rows.find(scope.objects[3]);if(selected!=rows.end()&&selected->second==r&&r->lease==scope.lease){r->fault=true;r->kernel=false;r->accepted=false;r->normalLife=false;}};
+- auto guarded=[&]{bound();try{scope.sourceGuard();bound();stable(r,false);bound();if(r->fault)throw Refused("Terminal record faulted across getter/callback");}catch(...){invalidate();throw;}};
+- auto closedNow=[&]{bound();try{const bool value=lifecycle(r);bound();return value&&!r->fault;}catch(...){invalidate();throw;}};
+- auto receiptNow=[&]{bound();try{r->arm.receiptGuard(r->stdoutBytes,r->stderrBytes,r->witness,r->code);bound();}catch(...){invalidate();throw;}};
++ auto boundary=[&]{drainFaults();bound();if(r->fault)throw Refused("Terminal record faulted at owning-thread boundary");};
++ auto guarded=[&]{bound();try{boundary();scope.sourceGuard();boundary();stable(r,false);boundary();}catch(...){invalidate();throw;}};
++ auto closedNow=[&]{bound();try{boundary();const bool value=lifecycle(r);boundary();return value&&!r->fault;}catch(...){invalidate();throw;}};
++ auto receiptNow=[&]{bound();try{boundary();r->arm.receiptGuard(r->stdoutBytes,r->stderrBytes,r->witness,r->code);boundary();}catch(...){invalidate();throw;}};
+  guarded();const bool closed=closedNow();bound();if(!closed)throw Refused("Actual normal terminal actor closure required");
+  receiptNow();guarded();
+  const auto actualPID=r->pid.read(r->arm.process);guarded();if(actualPID.isValid()&&!actualPID.isNull()){invalidate();throw Refused("Actual terminal Process still has an invocation");}
+@@ -112,8 +114,16 @@
+  // never erase or fault a different reentrant lease.
+  for(const auto&connection:r->connections){QObject::disconnect(connection);guarded();}
+  if(!closedNow())throw Refused("Terminal closure changed across disconnect callbacks");receiptNow();guarded();
+- const auto selected=rows.find(r->arm.process);bound();
+- r->current=false;r->kernel=false;r->accepted=false;r->normalLife=true;r->receipt=true;history.push_back(r);rows.erase(selected);
++ // The queue and row removal share one admission linearization. No getters,
++ // Qt disconnects, notifications or child/worker controls are called while locked.
++ {
++  std::lock_guard admission(faultMutex);bound();
++  const bool matchedPending=std::any_of(queuedFaults.begin(),queuedFaults.end(),[&](const auto&fault){return fault.first==scope.objects[3]&&fault.second==scope.lease;});
++  if(matchedPending||faultOverflow.load()||r->fault){invalidate();throw Refused("Matched pending fault/overflow forbids terminal retirement");}
++  if(!r->job||!r->job->joined||!r->started||!r->historical||!r->exited||!r->normal||!r->out||!r->err||!r->gone)throw Refused("Terminal closure lost before admission commit");
++  const auto selected=rows.find(r->arm.process);
++  r->current=false;r->kernel=false;r->accepted=false;r->normalLife=true;r->receipt=true;history.push_back(r);rows.erase(selected);
++ }
+  return result;
+ }
+ void ProcessRegistry::drainFaults(){requireOwnerThread();if(QThread::currentThread()!=thread)throw Refused("Fault queue owning thread differs");std::deque<std::pair<QObject*,uint64_t>>pending;{std::lock_guard lock(faultMutex);pending.swap(queuedFaults);}auto invalidate=[this](const std::shared_ptr<Invocation>&r){r->fault=true;r->kernel=false;r->accepted=false;r->normalLife=false;r->failure="Actual matched-lease wrong-thread callback contained";r->evidence.insert("failure",r->failure);changed(r);};if(faultOverflow.exchange(false))for(const auto&[_,r]:rows)invalidate(r);for(const auto&[p,lease]:pending){const auto it=rows.find(p);if(it!=rows.end()&&it->second->lease==lease)invalidate(it->second);}}

@@ -1,0 +1,52 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-69b570bef79a443e9626cf9293ec3e11.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/reduction_validation_v18.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/reduction_validation_v18_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  reduction_validation_v18_test\n    ok initialReductionKeepsAcceptedBlockedReceiptTest passed 1 test(s)\n    ok initialFreshValidationMayReduceWithoutVisualTest passed 1 test(s)\n    ok visualReductionReservesOneExactCancelTest passed 1 test(s)\n    ok repeatedWatchdogDoesNotDuplicateCancelTest passed 1 test(s)\n    ok pendingContextVisualStillCancelsTest passed 1 test(s)\n    ok latestValidationCannotPassPendingRetirementTest passed 1 test(s)\n    ok exactAckCreatesFreshObjectTokenTest passed 1 test(s)\n    ok ackDoesNotValidateOrCommitTest passed 1 test(s)\n    ok oldWorkerCannotValidateFreshObjectTest passed 1 test(s)\n    ok oldReadyAndEndpointCannotPromoteTest passed 1 test(s)\n    ok freshValidationSettlesExactOriginalLatestDirectionTest passed 1 test(s)\n    ok contextPendingAckAtomicallyRebindsProvisionalObjectTest passed 1 test(s)\n    ok contextMustRemainPendingAfterAckTest passed 1 test(s)\n    ok currentContextThenFreshValidationCompletesTest passed 1 test(s)\n    ok newerReceiptInheritsOldVisualBindingWithoutRetargetTest passed 1 test(s)\n    ok twoSuccessorsCannotDuplicateCancelOrResetBindingTest passed 1 test(s)\n    ok latestReceiptSurvivesAckAndNeedsItsOwnContextTest passed 1 test(s)\n    ok latestContextAndFreshLatestDirectionOnlyTest passed 1 test(s)\n    ok reductionOffCannotReviveOldVisualTest passed 1 test(s)\n    ok offAfterAckNeedsNewValidationAndSeedTest passed 1 test(s)\n    ok offFreshPreparationUsesNewTokenTest passed 1 test(s)\n    ok wrongTokenAckCannotDisposeTest passed 1 test(s)\n    ok wrongOrderedMembersAckCannotDisposeTest passed 1 test(s)\n    ok wrongSourceDigestsAckCannotDisposeTest passed 1 test(s)\n    ok wrongRootSessionTransportAckCannotDisposeTest passed 1 test(s)\n    ok duplicateAckCannotReplaceObjectTwiceTest passed 1 test(s)\n    ok queueFailureLatchesAndCannotBeAcknowledgedTest passed 1 test(s)\n    ok transportUncertaintyCannotBeClearedByAckOrSuccessorTest passed 1 test(s)\n    ok exactAckDoesNotResetOriginalDeadlineTest passed 1 test(s)\n    ok explicitDeadlineStillEndsUnvalidatedReceiptTest passed 1 test(s)\n    ok lostScopeCannotGainNativeAuthorityAfterAckTest passed 1 test(s)\n\n  31 passing (11825ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/reduction_validation_v18.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (6134ms at 326 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "runtimeUnchangedV17": true,
+  "sources": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/REDUCTION_VALIDATION_CONTRACT.md": "9ff1c3f1ae05c244dc19d709f07a8d1586ab5515da033b0e9781a5e4d6d03c7a",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/reduction_validation_v18.qnt": "682463440105c3c5fcd06de92312425b91ad93bca51227e411e07a00d7ce003b",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/reduction_validation_v18_test.qnt": "23391431b09c6b11820d9e022dd4387b81a7464b1921d4dd05590751131cafa5"
+  },
+  "noNative": true,
+  "runtimeImplemented": false
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_the_orca_modifier" xml:lang="eo">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_learn_modes"/>
+    <title type="sort">3. La Orko-Modifilo</title>
+    <desc>Klavo kiu funkcias kiel <key>Shift</key>, <key>Ctrl</key>, kaj <key>Alt</key></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>La Orko-Modifilo</title>
+  <p>Orko havas specialan modifilon kiu funkcias kiel <key>Shift</key>, <key>Ctrl</key>, kaj <key>Alt</key>. Ĝi estas desegnita specife por efektivigi komandojn de <app>Orko</app> kaj fari tion sen enkonduki konfliktojn kun la komandoj de la aplikaĵoj kiujn vi aliras.</p>
+  <p>Al kiu klavo la "Orko Modifier" estas ligita dependos defaŭlte de tio ĉu vi uzas la klavaran aranĝon Tekomputilo aŭ la klavaran aranĝon Labortablo de <app>Orko</app>:</p>
+  <list>
+    <item>
+      <p>Se vi uzas la Laptop-aranĝon, la defaŭlta Orko Modifier estos <key>CapsLock</key></p>
+    </item>
+    <item>
+      <p>Se vi uzas la Desktop-aranĝon, la Orko Modifier estos ambaŭ <key>Insert</key> kaj <key>KP_Insert</key>, ĉi-lasta estante la sama klavo kiel <key>KP_0</key>.</p>
+    </item>
+  </list>
+  <p>Se vi volas konservi vian aktualan klavaran aranĝon sed elekti malsaman modifilon, vi povas fari tion per la sekvaj paŝoj:</p>
+  <steps>
+    <title>Ŝanĝi la Orko-Modifilon</title>
+    <item>
+      <p>Eniĝu en la dialogon <link xref="preferences">Agordoj de Orko</link> per premado de <keyseq><key>Orko Modifier</key><key>Space</key></keyseq>. Alternative, vi povas lanĉi Orko kun la agord-dialogo malfermita el terminalo: tajpu <cmd>orca -s</cmd> kaj premu <key>Return</key>.</p>
+    </item>
+    <item>
+      <p>Movu al la paĝo <gui>Klavkombinoj</gui>.</p>
+    </item>
+    <item>
+      <p>Movu al la kombinujo <gui>Klavo(j) de Modifilo de Ekrana Leganto</gui>.</p>
+    </item>
+    <item>
+      <p>Premu sagklavon al la dezirata modifilo. La disponeblaj opcioj estas:</p>
+      <list>
+        <item><p>Insert, KP_Insert</p></item>
+        <item><p>KP_Insert</p></item>
+        <item><p>Insert</p></item>
+        <item><p>Caps_Lock</p></item>
+      </list>
+    </item>
+    <item><p>Premu la butonon <gui>Apliki</gui>.</p></item>
+  </steps>
+</page>

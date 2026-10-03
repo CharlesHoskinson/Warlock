@@ -1,0 +1,78 @@
+
+  window_test
+    ok snapOnlyOnReleaseTest passed 1 test(s)
+    ok dragSnappedAwayTest passed 1 test(s)
+    ok dragMaximizedAwayTest passed 1 test(s)
+    ok focusChangeCancelsDragTest passed 1 test(s)
+    ok minimizeRestoresPriorModeTest passed 1 test(s)
+    ok pinnedAcrossWorkspacesTest passed 1 test(s)
+    ok thirdsGeometryTest passed 1 test(s)
+    ok asymmetricGeometryTest passed 1 test(s)
+    ok layoutWidthBoundaryTest passed 1 test(s)
+    ok chosenLayoutRestoresNormalTest passed 1 test(s)
+
+  10 passing (270ms)
+
+  desktop_test
+    ok appPinWithOpenWindowsTest passed 1 test(s)
+    ok targetedFocusAndPinTest passed 1 test(s)
+    ok minimizeKeepsGroupingTest passed 1 test(s)
+    ok closeDissolvesGroupTest passed 1 test(s)
+    ok movedAndResnappedMembersTest passed 1 test(s)
+    ok foreignWorkspaceRestoreTest passed 1 test(s)
+    ok fourQuarterGroupTest passed 1 test(s)
+    ok mixedHalfQuarterGroupTest passed 1 test(s)
+    ok threeThirdsGroupTest passed 1 test(s)
+    ok asymmetricGroupAndOverlapTest passed 1 test(s)
+
+  10 passing (278ms)
+
+  navigation_test
+    ok batchKeepsPreMinimizedTest passed 1 test(s)
+    ok shakeExcludesOwnerTest passed 1 test(s)
+    ok peekPreservesFocusAndMinimizeTest passed 1 test(s)
+    ok showDesktopRestoresModalChildTest passed 1 test(s)
+    ok altTabCommitsOnlyOnReleaseTest passed 1 test(s)
+    ok closingDesktopMovesModalFamilyTest passed 1 test(s)
+
+  6 passing (129ms)
+[ok] No violation found (5272ms at 379 traces/second).
+Use --seed=0x138351e --backend=rust to reproduce.
+[ok] No violation found (22361ms at 89 traces/second).
+[ok] No violation found (4646ms at 430 traces/second).
+{
+  "traces": 40,
+  "states_checked": 4611,
+  "events": {
+    "AddMember": 4,
+    "Close": 224,
+    "CreateGroup": 27,
+    "Focus": 111,
+    "Minimize": 152,
+    "Move": 465,
+    "Open": 206,
+    "PinApp": 270,
+    "PinWindow": 202,
+    "Recall": 3,
+    "Reorder": 317,
+    "Restore": 211,
+    "Snap": 2077,
+    "Switch": 302
+  },
+  "result": "PASS",
+  "scope": "actual backend functions, isolated state, mocked compositor"
+}
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
+snap regression and 11,000 randomized zone checks passed (/home/hoskinson/.config/hypr/snap.lua)
+pin fade and 4,000 randomized operation tests passed (/home/hoskinson/.config/hypr/pin.lua)
+windowctl/desktop QA: 10 stateful scenarios passed
+desktop backend fuzz: 165 mixed operations passed
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.064s
+
+OK

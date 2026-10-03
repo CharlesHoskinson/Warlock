@@ -1,0 +1,105 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-14391336de2e46f19793347e5d40711e.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "hidden_capture_test.qnt"
+      ],
+      "exitCode": 0,
+      "seconds": 1.0672636709932704,
+      "log": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v2/formal-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "hidden_capture_test.qnt",
+        "--match=^(three_sources_seed|missing_cache_no_launch|missing_raw_no_launch|normal_return_required|nonzero_no_publish|native_change_refuses|material_change_refuses|slot_order_exact|no_identity_before_slots|no_source_before_publication|active_timeout_retains|gone_not_authority|failed_closed_cleanup|deadline_no_seed|cancel_no_seed|helper_return_not_seed|late_helper_closes_no_seed|partial_publication_not_source|normal_close_without_observation_refuses|missing_thumbnail_normal_refuses|missing_whole_normal_refuses|both_missing_normal_refuses|missing_output_closed_cleanup)$",
+        "--backend=rust",
+        "--seed=2026100229"
+      ],
+      "exitCode": 0,
+      "seconds": 1.3179183670144994,
+      "log": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v2/formal-1.log",
+      "sha256": "82bb592faca22b33f43c5cfd5cf64acf3f01d97d5f1b8daad5ef6f9e310541d7",
+      "mode": 384
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "hidden_capture.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100229",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "seconds": 2.1702605199825484,
+      "log": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v2/formal-2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    }
+  ],
+  "namedActuallyRun": 23,
+  "names": [
+    "three_sources_seed",
+    "missing_cache_no_launch",
+    "missing_raw_no_launch",
+    "normal_return_required",
+    "nonzero_no_publish",
+    "native_change_refuses",
+    "material_change_refuses",
+    "slot_order_exact",
+    "no_identity_before_slots",
+    "no_source_before_publication",
+    "active_timeout_retains",
+    "gone_not_authority",
+    "failed_closed_cleanup",
+    "deadline_no_seed",
+    "cancel_no_seed",
+    "helper_return_not_seed",
+    "late_helper_closes_no_seed",
+    "partial_publication_not_source",
+    "normal_close_without_observation_refuses",
+    "missing_thumbnail_normal_refuses",
+    "missing_whole_normal_refuses",
+    "both_missing_normal_refuses",
+    "missing_output_closed_cleanup"
+  ],
+  "samples": 2000,
+  "steps": 100,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v2/hidden_capture.qnt": {
+      "sha256": "95939995a8e39ed5f629f854c6d49f1b6d11936b6bc808505d0dbb10548a82a3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v2/hidden_capture_test.qnt": {
+      "sha256": "5e9920e8e078961979a8a8d72e1fe6a6f619c94b0e721cdfc61fb4bf9ef67dbc",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v2/CONTRACT.md": {
+      "sha256": "84a7811c72dfa128851f4f4b3f88852a71b99f60d00b07bdbb09f851fe3879a8",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v2/SOURCE_MAPPING.md": {
+      "sha256": "c0dd9299fb83c055b028e71a860b54dcdadee296e7d917a19f5a23f5c69a7da8",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v2/formal_driver.py": {
+      "sha256": "84dc7a61c157d32f90803363708e117cc72a35eff6ca5e73fb1bce75be8a80e4",
+      "mode": 384
+    }
+  },
+  "runtimeApplied": false
+}

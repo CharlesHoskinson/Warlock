@@ -1,0 +1,42 @@
+{
+  "result": "fail",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-33ce6843ab914e8182b153b7c3106a23.scope",
+    "coreLimit": 1
+  },
+  "coreLimits": [
+    1,
+    1
+  ],
+  "command": [
+    "c++",
+    "-std=c++23",
+    "-shared",
+    "-fPIC",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-MD",
+    "-MF",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/native-probe/probe.d",
+    "-I/usr/include/hyprland/protocols",
+    "-I/usr/include/hyprland",
+    "-I/usr/include/hyprland/src",
+    "-I/usr/include/libdrm",
+    "-I/usr/include/cairo",
+    "-I/usr/include/freetype2",
+    "-I/usr/include/libpng16",
+    "-I/usr/include/pixman-1",
+    "-I/usr/include/libei-1.0",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/native-probe/probe.cpp",
+    "-o",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/native-probe/libtoolkit-held-probe.so"
+  ],
+  "exitCode": 1,
+  "stdout": "",
+  "stderr": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/native-probe/probe.cpp: In function \u2018std::string {anonymous}::state()\u2019:\n/home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/native-probe/probe.cpp:42:56: error: use of deleted function \u2018Hyprutils::Memory::CUniquePointer<T>::CUniquePointer(const Hyprutils::Memory::CUniquePointer<T>&) [with T = Layout::Supplementary::CDragStateController]\u2019\n   42 |  const auto controller=g_layoutManager->dragController();\n      |                                                        ^\nIn file included from /usr/include/hyprutils/memory/WeakPtr.hpp:4,\n                 from /usr/include/hyprland/src/helpers/memory/Memory.hpp:3,\n                 from /usr/include/hyprland/src/macros.hpp:9,\n                 from /usr/include/hyprland/src/helpers/Color.hpp:5,\n                 from /usr/include/hyprland/src/plugins/PluginAPI.hpp:23,\n                 from /home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/native-probe/probe.cpp:2:\n/usr/include/hyprutils/memory/UniquePtr.hpp:32:9: note: declared here\n   32 |         CUniquePointer(const CUniquePointer& ref)    = delete;\n      |         ^~~~~~~~~~~~~~\n/home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/native-probe/probe.cpp:42:56: note: use \u2018-fdiagnostics-all-candidates\u2019 to display considered candidates\n   42 |  const auto controller=g_layoutManager->dragController();\n      |                                                        ^\n/home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/native-probe/probe.cpp:45:41: error: \u2018std::__cxx11::list<unsigned int> CInputManager::m_currentlyHeldButtons\u2019 is private within this context\n   45 |  for(const auto button:g_pInputManager->m_currentlyHeldButtons){if(!first)held+=\",\";first=false;held+=std::to_string(button);}held+=\"]\";\n      |                                         ^~~~~~~~~~~~~~~~~~~~~~\nIn file included from /home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/native-probe/probe.cpp:15:\n/usr/include/hyprland/src/managers/input/InputManager.hpp:271:25: note: declared private here\n  271 |     std::list<uint32_t> m_currentlyHeldButtons;\n      |                         ^~~~~~~~~~~~~~~~~~~~~~\n/home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/native-probe/probe.cpp:49:3: error: this \u2018if\u2019 clause does not guard... [-Werror=misleading-indentation]\n   49 |   if(!first)groups+=\",\";first=false;std::string members=\"[\";bool memberFirst=true;\n      |   ^~\n/home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/native-probe/probe.cpp:49:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018if\u2019\n   49 |   if(!first)groups+=\",\";first=false;std::string members=\"[\";bool memberFirst=true;\n      |                         ^~~~~\ncc1plus: all warnings being treated as errors\n",
+  "sourceDependencies": [],
+  "binarySHA256": null,
+  "nativeLoaded": false
+}

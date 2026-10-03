@@ -1,0 +1,37 @@
+
+  readonly_predecessor_test
+    ok pendingAndUnpublishedRowsRetainedBeforeNewIssuerTest passed 1 test(s)
+    ok liveOldServiceCannotAuthorizeNewIssuerTest passed 1 test(s)
+    ok missingActualNewLeaseCannotSealTest passed 1 test(s)
+    ok wrongLeaseOwnerCannotSealTest passed 1 test(s)
+    ok partialDatasetCannotBeNormalizedTest passed 1 test(s)
+    ok pendingRowCannotBeDiscardedBySealTest passed 1 test(s)
+    ok invalidArchiveChainCannotBeSealedTest passed 1 test(s)
+    ok predecessorFileMustBeDurableTest passed 1 test(s)
+    ok stillValidDatasetReplacementCannotConfirmTest passed 1 test(s)
+    ok everyOtherValidIdentityReplacementCannotConfirmTest passed 1 test(s)
+    ok unconfirmedSealCannotReplaceOldJournalTest passed 1 test(s)
+    ok wrongPredecessorPointerCannotPublishTest passed 1 test(s)
+    ok failedNewJournalPublicationPreservesOldRowsTest passed 1 test(s)
+    ok crashBeforeNewPublicationKeepsFullOldDatasetTest passed 1 test(s)
+    ok crashAfterNewPublicationKeepsExactPredecessorTest passed 1 test(s)
+    ok everyBadRecoveryWitnessRefusesTest passed 1 test(s)
+    ok oldDataNeverSuppliesNewQueryResultTest passed 1 test(s)
+    ok refusalCannotBeClearedByGoodLaterSealTest passed 1 test(s)
+    1) verifiedOrphanResealRequiresFreshOwnerAndConfirmationTest failed after 1 test(s)
+
+  18 passing (2818ms)
+  1 failed
+
+  1) verifiedOrphanResealRequiresFreshOwnerAndConfirmationTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/readonly_predecessor_test.qnt:4:32
+        4:  action check(p:bool):bool=all{assert(p),s'=s}
+                                          ^^^^^^^^^
+          at check(s.newPublished and s.diskRetained==Set(1,2,3) and not(s.oldUsable) and allProps) (/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/readonly_predecessor_test.qnt:27:298)
+    Use --seed=0x78c3d5f7 --match=verifiedOrphanResealRequiresFreshOwnerAndConfirmationTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 readonly_predecessor_test.qnt
+error: Tests failed

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_structural_navigation" xml:lang="eo">
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <link type="next" xref="howto_tables"/>
+    <title type="sort">3. Struktura Navigado</title>
+    <desc>Movi laŭ titoloj kaj aliaj elementoj</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Struktura Navigado</title>
+  <p>La funkcio de Struktura Navigado de <app>Orko</app> permesas al vi navigi inter elementoj en dokumento. La tipoj de elementoj laŭ kiuj vi povas navigi inkluzivas:</p>
+  <list>
+    <item><p>Titoloj kaj aliaj tekstblokoj</p></item>
+    <item><p>Formularaj regiloj</p></item>
+    <item><p>Ligiloj</p></item>
+    <item><p>Listoj kaj listeroj</p></item>
+    <item><p>Ŝildomerkoj, apartigiloj kaj ankroj</p></item>
+    <item><p>Tabeloj kaj tabelĉeloj</p></item>
+  </list>
+  <p>Plena listo de individuaj elementoj kaj iliaj asociitaj klavkombinoj troveblas en <link xref="commands_structural_navigation">Komandoj de Struktura Navigado</link>.</p>
+  <section id="applications">
+      <title>Subtenataj Aplikaĵoj</title>
+      <p>Nuntempe, Struktura Navigado estas plene efektivigita por retenhavo, inkluzive la helpoenhavon kiun vi legas nun. La subteno de Struktura Navigado de <app>Orko</app> por tabelĉeloj ankaŭ estas efektivigita por <app>OpenOffice Writer</app> kaj <app>LibreOffice Writer</app>. Efektivigi la ceteron de la objektoj de Struktura Navigado por ĉi tiuj oficejaj aplikaĵaroj postulas ŝanĝojn farendajn de iliaj respektivaj programistoj. Efektivigi iujn ajn funkciojn de Struktura Navigado en <app>Evince</app> postulos similan klopodon de la flanko de ĝiaj programistoj.</p>
+      <note style="tip">
+        <title>Ne Forgesu Ŝalti Strukturan Navigadon!</title>
+        <p>Depende de kie vi estas, povas esti necese al vi eksplicite ŝalti Strukturan Navigadon antaŭ ol vi povas uzi ĝin.</p>
+      </note>
+      <section id="toggling_required">
+        <title>Kiam Necesas Ŝalti Strukturan Navigadon</title>
+        <p>En retpaĝoj, eksplicite ŝalti Strukturan Navigadon estas ĝenerale nenecesa ĉar via interago kun la dokumento ĉefe konsistas el lego de ĝia enhavo. Tial ne estas demando ĉu la 'H' kiun vi ĵus premis estis celita esti skriba komando aŭ navigada komando.</p>
+        <p>Aliflanke, en redakteblaj dokumentoj kiel tiuj trovitaj en <app>OpenOffice</app> kaj <app>LibreOffice</app>, estas multe pli malfacile por <app>Orko</app> ĝuste antaŭdiri kion vi atendas okazi pro premi 'H'. Tial, antaŭ ol vi povas uzi iun ajn komandon de Struktura Navigado en redaktebla dokumento, vi devas unue ŝalti Strukturan Navigadon premante <keyseq><key>Orko Modifier</key><key>Z</key></keyseq>. Kiam vi finis navigadon kaj pretas rekomenci skribadon, premu <keyseq><key>Orko Modifier</key><key>Z</key></keyseq> denove por malŝalti Strukturan Navigadon.</p>
+      </section>
+  </section>
+  <section id="settings">
+    <title>Disponeblaj Agordoj</title>
+    <p>Aldone al la antaŭe menciitaj komandoj, <app>Orko</app> havas kelkajn agordeblajn opciojn disponeblajn specife por aplikaĵoj en kiuj estas subteno de struktura navigado.</p>
+    <steps>
+      <title>Agordi Strukturan Navigadon</title>
+      <item>
+        <p>Donu fokuson al aplikaĵo por kiu <app>Orko</app> havas subtenon de Struktura Navigado.</p>
+      </item>
+      <item>
+        <p>Iru al la dialogkesto <link xref="preferences">Agordoj de Orko</link> por la aktuala aplikaĵo premante <keyseq> <key>Ctrl</key><key>Orko Modifier</key><key>Space</key> </keyseq>.</p>
+      </item>
+      <item>
+        <p>Navigu al la lasta paĝo de la dialogkesto kiu devas esti nomata laŭ la nomo de via aktuala aplikaĵo.</p>
+      </item>
+      <item>
+        <p>Ekzamenu kaj ŝanĝu la agordojn laŭ via bontrovo.</p>
+      </item>
+      <item>
+        <p>Premu la butonon <gui>Bone</gui>.</p>
+      </item>
+    </steps>
+  </section>
+</page>

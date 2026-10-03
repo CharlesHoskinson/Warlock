@@ -1,0 +1,31 @@
+{
+  "modelSHA256": "fc86cc9f7bee303ee1b9b9c31b466bfc729ff4f3a826745d2c9780bc9f92ef9e",
+  "commands": [
+    {
+      "argv": [
+        "quint",
+        "typecheck",
+        "client_closure.qnt"
+      ],
+      "returncode": 0,
+      "log": "formal-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "quint",
+        "test",
+        "client_closure.qnt",
+        "--match",
+        ".*",
+        "--max-samples",
+        "1"
+      ],
+      "returncode": 1,
+      "log": "formal-1.log",
+      "sha256": "fc76dc3723eca227c1b88aa76dfec56fff63a44fc0eb4124e963453981f1f38c"
+    }
+  ],
+  "runtimeUnmodified": true,
+  "allPass": false
+}

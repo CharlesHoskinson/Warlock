@@ -1,0 +1,145 @@
+#!/usr/bin/env python3
+"""Windows-style Show Desktop toggle and temporary desktop Peek for Hyprland."""
+
+import fcntl
+import json
+import os
+from pathlib import Path
+import re
+import subprocess
+import sys
+import tempfile
+
+
+RUNTIME = Path(os.getenv("XDG_RUNTIME_DIR", str(Path.home() / ".cache")))
+ROOT = RUNTIME / "hypr-desktop"
+PEEK_FILE = ROOT / "peek.json"
+WINDOWCTL = Path.home() / ".local/bin/hypr-windowctl"
+ADDRESS = re.compile(r"^0x[0-9a-fA-F]+$")
+OPACITY_PROPS = ("opacity", "opacity_inactive", "opacity_fullscreen",
+                 "opacity_override", "opacity_inactive_override",
+                 "opacity_fullscreen_override")
+
+
+def hyprctl(*args):
+    return subprocess.check_output(["hyprctl", *args], text=True, timeout=5)
+
+
+def dispatch(command):
+    subprocess.run(["hyprctl", "dispatch", command], check=False,
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=5)
+
+
+def tag(address, add):
+    if ADDRESS.fullmatch(address):
+        marker = "+omarchy-peek" if add else "-omarchy-peek"
+        dispatch(f'hl.dsp.window.tag({{ tag = "{marker}", window = "address:{address}" }})')
+
+
+def get_prop(address, prop):
+    if ADDRESS.fullmatch(address) and prop in OPACITY_PROPS:
+        return hyprctl("getprop", "address:" + address, prop).strip()
+    raise ValueError("invalid opacity target")
+
+
+def set_prop(address, prop, value):
+    if ADDRESS.fullmatch(address) and prop in OPACITY_PROPS and \
+            re.fullmatch(r"(?:[01](?:\.[0-9]+)?|true|false)", value):
+        dispatch(f'hl.dsp.window.set_prop({{ window = "address:{address}", '
+                 f'prop = "{prop}", value = "{value}" }})')
+
+
+def clear_peek():
+    try:
+        snapshots = json.loads(PEEK_FILE.read_text())
+    except (OSError, ValueError):
+        snapshots = []
+    current = {w.get("address"): w for w in json.loads(hyprctl("clients", "-j"))}
+    for item in snapshots:
+        if isinstance(item, str):  # Previous release's Peek state.
+            item = {"address": item}
+        address = item.get("address", "")
+        window = current.get(address)
+        if window is None or (item.get("stableId") and
+                              item["stableId"] != window.get("stableId")):
+            continue
+        for prop, value in item.get("properties", {}).items():
+            set_prop(address, prop, value)
+        tag(address, False)
+    PEEK_FILE.unlink(missing_ok=True)
+
+
+def active_workspace():
+    monitors = json.loads(hyprctl("monitors", "-j"))
+    return next((str(m.get("activeWorkspace", {}).get("name", ""))
+                 for m in monitors if m.get("focused")), "")
+
+
+def minimize_all_file():
+    workspace = active_workspace()
+    if not re.fullmatch(r"[0-9]+", workspace):
+        raise ValueError("Show Desktop requires a numbered desktop")
+    return RUNTIME / "hypr-windowctl" / ("minimize-all-" + workspace)
+
+
+def start_peek():
+    clear_peek()
+    if minimize_all_file().exists():
+        return
+    workspace = active_workspace()
+    clients = json.loads(hyprctl("clients", "-j"))
+    snapshots = []
+    for window in clients:
+        address = str(window.get("address", ""))
+        if not (window.get("mapped") and not window.get("hidden") and
+                (window.get("workspace", {}).get("name") == workspace or window.get("pinned")) and
+                ADDRESS.fullmatch(address)):
+            continue
+        try:
+            properties = {prop: get_prop(address, prop) for prop in OPACITY_PROPS}
+        except subprocess.CalledProcessError:
+            continue
+        snapshots.append({"address": address, "stableId": window.get("stableId"),
+                          "properties": properties})
+    # Save before changing compositor state so a later peek-off can recover.
+    fd, temporary = tempfile.mkstemp(prefix=".peek-", dir=ROOT)
+    try:
+        with os.fdopen(fd, "w") as out:
+            json.dump(snapshots, out)
+        os.replace(temporary, PEEK_FILE)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+    for item in snapshots:
+        address = item["address"]
+        tag(address, True)
+        for prop in OPACITY_PROPS[:3]:
+            set_prop(address, prop, "0.03")
+        for prop in OPACITY_PROPS[3:]:
+            set_prop(address, prop, "true")
+
+
+def main():
+    if len(sys.argv) != 2 or sys.argv[1] not in {"toggle", "peek-on", "peek-off", "state"}:
+        print("usage: hypr-desktop {toggle|peek-on|peek-off|state}", file=sys.stderr)
+        return 2
+    command = sys.argv[1]
+    ROOT.mkdir(parents=True, exist_ok=True)
+    with (ROOT / "lock").open("a") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        if command == "state":
+            print(json.dumps({"showing": minimize_all_file().exists(),
+                              "peeking": PEEK_FILE.exists()}))
+        elif command == "peek-off":
+            clear_peek()
+        elif command == "peek-on":
+            start_peek()
+        else:
+            clear_peek()
+            subprocess.run([str(WINDOWCTL), "restore-all" if minimize_all_file().exists()
+                            else "minimize-all"], check=True, timeout=30)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

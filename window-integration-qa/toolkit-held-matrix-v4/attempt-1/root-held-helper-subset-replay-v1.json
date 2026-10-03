@@ -1,0 +1,36 @@
+{
+  "result": "pass",
+  "scope": "Completed actual registered helper subset integrity only; full workload and original feature failure remain false",
+  "rawArchiveIntegrity": true,
+  "actualRegisteredCompositorOperationsNormal": true,
+  "compositorOperations": [
+    "generation:1:hydrate",
+    "generation:1:inactive-fileDrag",
+    "forget-closed:0x5f664c91a1b0:18000003:1772357",
+    "forget-closed:0x5f664c87c410:18000002:1772357",
+    "forget-closed:0x5f664c0a3e30:18000001:1772357",
+    "forget-closed:0x5f664c0bef70:18000000:1772357"
+  ],
+  "actualQSQueries": 1,
+  "harnessQueries": 0,
+  "serviceConfigured": false,
+  "serviceQueries": 0,
+  "fullHelperWorkloadAccepted": false,
+  "fullHeld52Accepted": false,
+  "unexpectedInnerDescendants": [
+    {
+      "pid": 1772583,
+      "start": "12117408",
+      "pgid": 1771921
+    },
+    {
+      "pid": 1772587,
+      "start": "12117409",
+      "pgid": 1771921
+    }
+  ],
+  "allUnexpectedRecordedOriginalsGone": true,
+  "unexpectedDescendantAttributionAccepted": false,
+  "nativeCommands": false,
+  "originalAttemptUnchanged": true
+}

@@ -1,0 +1,51 @@
+{
+  "result": "offline candidate frozen ready for root review",
+  "manifest": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/frozen-inputs.json",
+  "manifestSHA256": "b5a1363da1f0635ce21e05f961324c246bf31cb914993b798b2ff8eb00909e8a",
+  "inputCount": 1354,
+  "modeCount": 1354,
+  "linkCount": 129,
+  "binary": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/hyprbars-v21-interruption-candidate.so",
+  "binarySHA256": "bdd8bab3b3cea6f2dd2e49b317f133691cc920700f9743d21438c0e3338a0dc7",
+  "snapLuaSHA256": "b62ab10975f9591bad85a9f836492114267110dfed73d65382411167c6f5b6e2",
+  "nativeExecuted": false,
+  "mainChanged": false,
+  "productionDeployed": false,
+  "sourceGates": 22,
+  "exactGestureAssertions": 33,
+  "nativeLuaGetterScenarios": 8,
+  "uniqueWeakLuaAssertions": 66,
+  "uniqueWeakLuaScenarios": 17,
+  "frozenV20Counterexample": "actual extracted idle API SIGABRT/WeakPtr.hpp180 with real Hyprutils ABI, coreLimit1",
+  "named": 28,
+  "models": 2,
+  "samplesPerModel": 2000,
+  "atlasChecks": 72,
+  "cacheChecks": 38,
+  "protocolChecks": 17,
+  "unchangedCloseBackendInherited": {
+    "named": 3,
+    "samples": 2000,
+    "backendTests": 9
+  },
+  "preservedIntegrity": {
+    "ServiceV12": {
+      "manifest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/manifest-v12.json",
+      "manifestSHA256": "44a34f5bbff1d4e35576c272016d4c5e178c057ff1340db3f82ff123dd55282d",
+      "inputs": 1148,
+      "unchanged": true
+    },
+    "GPUV7": {
+      "manifest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-quantized-over-v7/manifest-v7.json",
+      "manifestSHA256": "6f066b883b4678c7520a7052d2c13d18d8d9fb6a847b634473c6a803a73812fa",
+      "inputs": 1286,
+      "unchanged": true
+    }
+  },
+  "remaining": [
+    "root source/mode review",
+    "actual private idle/pending/held/cancel/release/group/focus/retirement/native controls",
+    "browser/held/family integration",
+    "reviewed guarded deployment"
+  ]
+}

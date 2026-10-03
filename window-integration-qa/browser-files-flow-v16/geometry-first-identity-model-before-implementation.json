@@ -1,0 +1,43 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/viewport_geometry_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  viewport_geometry_test\n    ok exactPairTest passed 1 test(s)\n    ok beforePairRefusedTest passed 1 test(s)\n    ok syntheticRefusedTest passed 1 test(s)\n    ok staleSequenceRefusedTest passed 1 test(s)\n    ok wrongTranslationRefusedTest passed 1 test(s)\n    ok buttonsRefusedTest passed 1 test(s)\n    ok wrongLifetimeRefusedTest passed 1 test(s)\n    ok sessionChangeRevokesTest passed 1 test(s)\n    ok layoutChangeRevokesTest passed 1 test(s)\n    ok surfaceChangeRevokesTest passed 1 test(s)\n    ok basisChangeRevokesTest passed 1 test(s)\n    ok focusOrDraftChangeRefusedTest passed 1 test(s)\n    ok wrongHitRefusedTest passed 1 test(s)\n    ok nonfiniteRefusedTest passed 1 test(s)\n    ok outOfBoundsRefusedTest passed 1 test(s)\n    ok duplicatePointRefusedTest passed 1 test(s)\n    ok touchRefusedTest passed 1 test(s)\n    ok nonprimaryRefusedTest passed 1 test(s)\n    ok invalidationRevokesTest passed 1 test(s)\n    ok modifierRefusedTest passed 1 test(s)\n    ok captureRefusedTest passed 1 test(s)\n    ok oldQueuedTimestampRefusedTest passed 1 test(s)\n    ok unpreparedRefusedTest passed 1 test(s)\n\n  23 passing (645ms)\n",
+      "stderr": "Running as unit: qa-harness-fac5ae167a1c4879a5ad1776cd5e931f.scope; invocation ID: 0c952655644b4ccabfb20fda3f82458f\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/viewport_geometry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (1097ms at 1823 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": "Running as unit: qa-harness-a9638f897c194ec8827d424aa3f87477.scope; invocation ID: 0e6d815879594c48a7267c411b0d8e61\n"
+    }
+  ],
+  "nativeExecuted": false,
+  "runtimeStillExactFrozenV13": true,
+  "namedCases": 23,
+  "randomTraces": 2000,
+  "maxSteps": 100,
+  "sourceSHA256": {
+    "V14_GEOMETRY_CONTRACT.md": "3c2b90b0ebbe6c3d7d0fd58f970661c371c41789de2b0c9cc96e06d7f3a079d4",
+    "viewport_geometry.qnt": "30604b7fb9c83b37bd9234f302bc0c871f2e0450e13b991d517ffc092e8b835e",
+    "viewport_geometry_test.qnt": "6d3b95c9fdcb8aaee9c971d7ccdb565558e23a030dc3901e53ad167ba788ec5b",
+    "private_session.py": "4351a20bb62645df2a8b41972d7de692039eef2c079bd2f6533340315d9300e4",
+    "compose.html": "2f59cfe679c48691ff82b245a8f299953b934367992e5fa04f06ac7d25c17638",
+    "cdp_readonly.py": "8f544e6604aba21c37f2fea5b762326c3dc99067ac9de7d93502706c03949d63"
+  }
+}

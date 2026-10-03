@@ -1,0 +1,193 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-66aa3987a6f94815a78c359c5591cf58.scope",
+    "coreLimit": 1
+  },
+  "cases": [
+    {
+      "binding": "genuine-live-positive",
+      "liveRegisteredRow": {
+        "job": "e801a1db060441539cdb3f80c044effd",
+        "kind": "renderer",
+        "actor": 17,
+        "phase": "released",
+        "ownership": {
+          "pid": 1194036,
+          "start": 16162737,
+          "uid": 1000,
+          "producer": {
+            "device": 1,
+            "inode": 605169,
+            "size": 16272,
+            "sha256": "801495504cd67ab5e124d9d91d470241f35927c12ccdc59bc37e3c5d556eb6c9",
+            "seals": 15
+          },
+          "launcher": {
+            "device": 32,
+            "inode": 72938,
+            "size": 14424,
+            "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+            "seals": null
+          },
+          "script": {
+            "device": 1,
+            "inode": 605170,
+            "size": 2738,
+            "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+            "seals": 15
+          },
+          "argv": [
+            "/usr/bin/python3.14",
+            "/proc/self/fd/4",
+            "6",
+            "10",
+            "5",
+            "[\"/proc/self/fd/5\"]",
+            "elf",
+            "-1"
+          ],
+          "scriptFD": 4,
+          "producerFD": 5,
+          "targetArgv": [
+            "/proc/self/fd/5"
+          ],
+          "mode": "elf",
+          "interpreter": null,
+          "policy": "linux-x86_64-group-confinement-v1",
+          "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+          "environment": {
+            "XDG_RUNTIME_DIR": "/tmp/tmpdzm_6sfh",
+            "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      },
+      "receiptAndKeeperReturnedBeforeMaterialRelease": true,
+      "actualNativeDesktopAdapter": true,
+      "failure": [],
+      "events": [
+        {
+          "event": "actualRendererMaterialReadEntered",
+          "ns": 149507847720835
+        },
+        {
+          "event": "independentReceiptAndKeeperAcquired",
+          "ns": 149507848072989
+        }
+      ],
+      "publicationPNGs": {
+        "0xcc03-1.png": "db2bf3326b9feaf87e69f45c4f77b881aa6c1a942b6b68ee6cc00bdbffa90504",
+        "0xcc03-0.png": "db2bf3326b9feaf87e69f45c4f77b881aa6c1a942b6b68ee6cc00bdbffa90504",
+        "0xbb02-1.png": "29bf4507e9bfa7dc870bc32cb7e783a4b8fd25ca176433678857e3dbdba7267d",
+        "0xbb02-0.png": "29bf4507e9bfa7dc870bc32cb7e783a4b8fd25ca176433678857e3dbdba7267d",
+        "0xaa01-1.png": "50d22baea2bd2c05842375d250542902d4fde76c9e22efd7ba85ff26deb4f985",
+        "0xaa01-0.png": "50d22baea2bd2c05842375d250542902d4fde76c9e22efd7ba85ff26deb4f985"
+      },
+      "rendererStillAlive": true,
+      "cleanup": {
+        "rendererExit0": true,
+        "keeperExit0": true,
+        "threadsTerminal": true
+      }
+    },
+    {
+      "binding": "genuine-mutated-during-IO",
+      "liveRegisteredRow": {
+        "job": "fea6f813ea4744678457220004d77f0e",
+        "kind": "renderer",
+        "actor": 17,
+        "phase": "released",
+        "ownership": {
+          "pid": 1194143,
+          "start": 16162821,
+          "uid": 1000,
+          "producer": {
+            "device": 1,
+            "inode": 613872,
+            "size": 16272,
+            "sha256": "801495504cd67ab5e124d9d91d470241f35927c12ccdc59bc37e3c5d556eb6c9",
+            "seals": 15
+          },
+          "launcher": {
+            "device": 32,
+            "inode": 72938,
+            "size": 14424,
+            "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+            "seals": null
+          },
+          "script": {
+            "device": 1,
+            "inode": 613873,
+            "size": 2738,
+            "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+            "seals": 15
+          },
+          "argv": [
+            "/usr/bin/python3.14",
+            "/proc/self/fd/4",
+            "6",
+            "10",
+            "5",
+            "[\"/proc/self/fd/5\"]",
+            "elf",
+            "-1"
+          ],
+          "scriptFD": 4,
+          "producerFD": 5,
+          "targetArgv": [
+            "/proc/self/fd/5"
+          ],
+          "mode": "elf",
+          "interpreter": null,
+          "policy": "linux-x86_64-group-confinement-v1",
+          "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+          "environment": {
+            "XDG_RUNTIME_DIR": "/tmp/tmpueyxguez",
+            "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+            "WAYLAND_DISPLAY": "never-connect"
+          }
+        }
+      },
+      "receiptAndKeeperReturnedBeforeMaterialRelease": true,
+      "actualNativeDesktopAdapter": true,
+      "failure": [
+        {
+          "type": "ValueError",
+          "message": "outstanding actor helper prevents thumbnail launch"
+        }
+      ],
+      "events": [
+        {
+          "event": "actualRendererMaterialReadEntered",
+          "ns": 149508793860821
+        },
+        {
+          "event": "independentReceiptAndKeeperAcquired",
+          "ns": 149508794159032
+        }
+      ],
+      "publicationPNGs": {},
+      "rendererStillAlive": true,
+      "cleanup": {
+        "rendererExit0": true,
+        "keeperExit0": true,
+        "threadsTerminal": true
+      }
+    }
+  ],
+  "sourceSHA256": {
+    "batch_preview.py": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250",
+    "native_runtime.py": "2179e2a30c880d5ad88b5ae19b370485ac886979ba8834f182ddcfb59b2006d1",
+    "native_desktop.py": "31ace97dda5342519aa749c4dcd01dbd70b425b79b507639a543cf9a2c00ba19",
+    "helper_supervisor.py": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+    "recovery_resources.py": "133edcf7b92aaa2f521af90922c571d1637ab8e8c9536a7cf57a6475fa18ce02",
+    "owned_launch.py": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+    "pipe_transport.py": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8"
+  },
+  "sourceUnchanged": true,
+  "producerSHA256": "801495504cd67ab5e124d9d91d470241f35927c12ccdc59bc37e3c5d556eb6c9",
+  "nativeLaunch": false,
+  "nativeAccepted": false,
+  "scopeLimit": "Actual nongraphical owned process and NativeDesktop finish adapter; unchanged factory I/O under receipt is excluded; no native seeding/performance claim"
+}

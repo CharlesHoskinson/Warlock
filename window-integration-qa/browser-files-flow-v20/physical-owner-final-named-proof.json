@@ -1,0 +1,34 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_owner_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  physical_owner_test\n    ok completeTest passed 1 test(s)\n    ok noBeforeTest passed 1 test(s)\n    ok noAfterTest passed 1 test(s)\n    ok wrongSeatTest passed 1 test(s)\n    ok wrongCoreTest passed 1 test(s)\n    ok noSurfaceTest passed 1 test(s)\n    ok changedLifeTest passed 1 test(s)\n    ok failedExitTest passed 1 test(s)\n    ok noRetryTest passed 1 test(s)\n    ok replacedSelectorTest passed 1 test(s)\n\n  10 passing (662ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_owner.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (5336ms at 375 traces/second).\nUse --seed=0x13b4241 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "namedCases": 10,
+  "nativeExecuted": false,
+  "wrapperAlreadyImplemented": true,
+  "noNamedBeforeWrapperClaim": true
+}

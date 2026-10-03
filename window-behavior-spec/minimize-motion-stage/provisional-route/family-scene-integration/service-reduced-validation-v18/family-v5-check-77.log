@@ -1,0 +1,12 @@
+
+  context_completion_fixture_test
+    ok emptyPendingCueCanPrecedeActiveCompletionTest passed 1 test(s)
+    ok genuineLatestCompleteOutcomePassesTest passed 1 test(s)
+    ok oldWorkerCannotFinishLatestReceiptTest passed 1 test(s)
+    ok currentAbsentFailureCannotPassOriginalEffectsTest passed 1 test(s)
+    ok queueFailureDoesNotCountAsNativeCompletionTest passed 1 test(s)
+    ok wholeTwoSecondWaitExpiresWithoutResetTest passed 1 test(s)
+    ok lateCompletionCannotBorrowNewDeadlineTest passed 1 test(s)
+    ok originalThreeMemberEffectsRemainRequiredTest passed 1 test(s)
+
+  8 passing (335ms)

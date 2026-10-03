@@ -1,0 +1,20 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-4de7b42c523d49d997402cdf23e683a7.scope",
+    "coreLimit": 1
+  },
+  "manifestSHA256": "d066ecf9b9ec94f0fe096d117464ba0f611f5b4d655792c0f1f8c6c339cd90eb",
+  "inputs": 17319,
+  "modes": 17319,
+  "links": 287,
+  "serviceManifestSHA256": "0d2b7b231eaa26c6618783b1cb2305c2a989586b3a7cb371716e2d67603c82e2",
+  "actualImportedModuleCount": 19,
+  "actualClassAndFunctionLinks": 10,
+  "sourceObservationOnly": true,
+  "ownerBound": false,
+  "nativeAccepted": false,
+  "fiveHandoffSourceRequirementsReviewed": true,
+  "mainChanged": false,
+  "pythonBytecodePolicy": "PYTHONDONTWRITEBYTECODE=1 inherited by all subprocesses; frozen bytecode inputs remain immutable"
+}

@@ -1,0 +1,3772 @@
+{
+  "scope": "Isolated copied Files on native Wayland; Wayland virtual-keyboard Qt keyboard plus actual Orca focus/navigation/press actions; silent speech log",
+  "checks": [
+    {
+      "name": "native minimum330x320",
+      "passed": true
+    },
+    {
+      "name": "real Orca native Wayland loop ready",
+      "passed": true
+    },
+    {
+      "name": "Orca recognizes actual named Home button",
+      "passed": true
+    },
+    {
+      "name": "virtual-keyboard Tab produces actual Orca button focus",
+      "passed": true,
+      "readerState": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Show hidden files",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483674",
+          "app_bus": ":1.176"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483902",
+          "app_bus": ":1.176"
+        },
+        "navigator": null
+      }
+    },
+    {
+      "name": "virtual-keyboard Return activates existing View",
+      "passed": true
+    },
+    {
+      "name": "virtual-keyboard arrow moves real file row reader focus",
+      "passed": true
+    },
+    {
+      "name": "virtual-keyboard next file arrow retains named reader focus",
+      "passed": true
+    },
+    {
+      "name": "actual focused row navigation selects its logical file",
+      "passed": true
+    },
+    {
+      "name": "virtual-keyboard F2 opens named text prompt",
+      "passed": true
+    },
+    {
+      "name": "actual keyboard F2 captures focused selected file",
+      "passed": true
+    },
+    {
+      "name": "native prompt Tab traps at text input",
+      "passed": true
+    },
+    {
+      "name": "native prompt Escape preserves fixture files",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToParent",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToFirstChild",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "actual Orca ObjectNavigator reaches Sort",
+      "passed": true,
+      "readerState": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Sort",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483668",
+          "app_bus": ":1.176"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483902",
+          "app_bus": ":1.176"
+        },
+        "navigator": {
+          "name": "Sort",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483668",
+          "app_bus": ":1.176"
+        }
+      }
+    },
+    {
+      "name": "real Orca command PerformAction",
+      "passed": true
+    },
+    {
+      "name": "actual Orca press opens existing Sort menu",
+      "passed": true
+    },
+    {
+      "name": "menu arrow gives real named reader row focus",
+      "passed": true
+    },
+    {
+      "name": "compact sidebar reader focus follows collection",
+      "passed": true
+    },
+    {
+      "name": "Home filter has actual button reader role",
+      "passed": true
+    },
+    {
+      "name": "virtual-keyboard Home filter Tab announces next name",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToParent",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToFirstChild",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "actual Orca navigator reaches exact file:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home/fixture/subfolder",
+      "passed": true
+    },
+    {
+      "name": "real Orca command PerformAction",
+      "passed": true
+    },
+    {
+      "name": "gallery actual reader directory press",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToParent",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToFirstChild",
+      "passed": true
+    },
+    {
+      "name": "actual Orca navigator reaches exact Tree.chev",
+      "passed": true
+    },
+    {
+      "name": "real Orca command PerformAction",
+      "passed": true
+    },
+    {
+      "name": "tree actual reader branch toggle announces changed state",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToParent",
+      "passed": true
+    },
+    {
+      "name": "actual Orca navigator reaches exact Tree.row",
+      "passed": true
+    },
+    {
+      "name": "real Orca command PerformAction",
+      "passed": true
+    },
+    {
+      "name": "tree actual reader captured directory navigation",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToParent",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToFirstChild",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "actual Orca navigator reaches exact Dashboard.cc",
+      "passed": true
+    },
+    {
+      "name": "real Orca command PerformAction",
+      "passed": true
+    },
+    {
+      "name": "Home actual reader smart collection",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToParent",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToFirstChild",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "actual Orca navigator reaches exact Dashboard.tile",
+      "passed": true
+    },
+    {
+      "name": "real Orca command PerformAction",
+      "passed": true
+    },
+    {
+      "name": "Home actual reader pinned folder",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToParent",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToFirstChild",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "actual Orca navigator reaches exact Dashboard.mt",
+      "passed": true
+    },
+    {
+      "name": "real Orca command PerformAction",
+      "passed": true
+    },
+    {
+      "name": "Home actual reader media reveal",
+      "passed": true
+    },
+    {
+      "name": "actual Orca navigator reaches exact Dashboard.rr",
+      "passed": true
+    },
+    {
+      "name": "real Orca command PerformAction",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "physicalHardwareProved": false,
+  "inputSource": "wtype Wayland virtual-keyboard protocol, routed through the compositor to the copied Qt window",
+  "clientComparison": "All captured stable compositor fields match strictly. App-owned current title hashes are observed separately; the Codex terminal animates its title. Prior V6 strict-title failure remains unchanged.",
+  "titleHashesBefore": {
+    "0x5a02aee429f0": "5d48eac09d17489ce011af63b5d37700a395e24810b96bfc3f21976c904cce18",
+    "0x5a02b0cc9280": "a7b8aa98953e573ee61bb4e66d1206f8e4dfba0730b657472f7db8da97049000",
+    "0x5a02afd20bd0": "955409ed1ec51afd6a72768611ff73825fbda874456c7697bb56f5054a90cf6e",
+    "0x5a02afa13e90": "102607aba0aca07600ed90354604dd4f2164a9ea9a674a5727b90bdfc8f648ab"
+  },
+  "fixtureIdentity": [
+    "0x5a02b0290ca0",
+    "180003f6",
+    3762011
+  ],
+  "focusTrace": [
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Home",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483653",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Show list",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483665",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "subfolder",
+        "role": "list item",
+        "identity": "QGuiApplication.ProxiedWindow.FileArea.row",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483968",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "alpha-long-file-name-to-test-eliding.txt",
+        "role": "list item",
+        "identity": "QGuiApplication.ProxiedWindow.FileArea.row",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483970",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Rename",
+        "role": "text",
+        "identity": "QGuiApplication.ProxiedWindow.Prompt.card.Prompt.input",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483731",
+        "app_bus": ":1.176",
+        "text": "alpha-long-file-name-to-test-eliding.txt"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Cancel",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Prompt.card.Prompt.cancelBtn",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483734",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Rename",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Prompt.card.Prompt.acceptBtn",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483735",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Rename",
+        "role": "text",
+        "identity": "QGuiApplication.ProxiedWindow.Prompt.card.Prompt.input",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483731",
+        "app_bus": ":1.176",
+        "text": "alpha-long-file-name-to-test-eliding.txt"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483668",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Name",
+        "role": "menu item",
+        "identity": "QGuiApplication.ProxiedWindow.ContextMenu.card.ContextMenu.menuRow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483976",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483668",
+        "app_bus": ":1.176"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Recent activity",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483773",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483668",
+        "app_bus": ":1.176"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "All",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483939",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483668",
+        "app_bus": ":1.176"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Documents",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483940",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483668",
+        "app_bus": ":1.176"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "subfolder",
+        "role": "list item",
+        "identity": "QGuiApplication.ProxiedWindow.FileArea.gr.FileArea.cl",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483996",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483668",
+        "app_bus": ":1.176"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Collapse Home",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483836",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": {
+        "error": "GLib.Error('No such object path '/org/a11y/atspi/accessible/2147483996'', 'atspi_error', 1)"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Home",
+        "role": "table cell",
+        "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483838",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": {
+        "name": "Expand Home",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483836",
+        "app_bus": ":1.176"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Recent activity",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483686",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": {
+        "name": "Home",
+        "role": "table cell",
+        "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483838",
+        "app_bus": ":1.176"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Home",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483845",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": {
+        "name": "Recent activity",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483686",
+        "app_bus": ":1.176"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "native-image.svg",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483901",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": {
+        "name": "Home",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483845",
+        "app_bus": ":1.176"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "native-image.svg",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483901",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": {
+        "name": "native-image.svg",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483901",
+        "app_bus": ":1.176"
+      }
+    }
+  ],
+  "navigatorTrace": [
+    {
+      "target": "file:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home/fixture/subfolder",
+      "expectedBusAndPath": [
+        ":1.176",
+        "/org/a11y/atspi/accessible/2147483996"
+      ],
+      "steps": [
+        {
+          "command": null,
+          "navigator": {
+            "name": "Sort",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483668",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToParent",
+          "navigator": {
+            "name": "Files Responsive QA",
+            "role": "frame",
+            "identity": "QGuiApplication.ProxiedWindow",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483902",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToFirstChild",
+          "navigator": {
+            "name": "Collections and tree (Ctrl+B)",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483650",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Home",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483653",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Back",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483656",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Forward",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483659",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Up",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483662",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Show list",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483665",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Sort",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483668",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Details",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483671",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Show hidden files",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483674",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Pin folder",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483677",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Filter files",
+            "role": "text",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.filterInput",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483679",
+            "app_bus": ":1.176",
+            "text": ""
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Location",
+            "role": "text",
+            "identity": "QGuiApplication.ProxiedWindow.PathBar.input",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483682",
+            "app_bus": ":1.176",
+            "text": ""
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Recent activity",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483773",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Images",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483775",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Videos",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483777",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Documents",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483779",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Downloads",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483781",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Large files",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483783",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Screenshots",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483785",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Folders",
+            "role": "tree",
+            "identity": "QGuiApplication.ProxiedWindow.Tree.list",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483683",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "All",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483939",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Documents",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483940",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Images",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483941",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Video",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483935",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Audio",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483936",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Code",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483937",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Archives",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483938",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Recent media timeline",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.timelineLink",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483684",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "native-image.svg",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483901",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "image.svg",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483898",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Recent activity",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483686",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Images",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483903",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Videos",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483904",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Documents",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483905",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Downloads",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483906",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Large files",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483907",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Screenshots",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483908",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Home",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483845",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Documents",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483847",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Downloads",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483849",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Pictures",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483851",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Videos",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483853",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Music",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483855",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Projects",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483857",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "src",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483859",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Work",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483861",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "fixture",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Treemap.t",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483915",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "(files)",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Treemap.t",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483916",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Documents",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Treemap.t",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483917",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Pictures",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Treemap.t",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483918",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "native-image.svg",
+            "role": "list item",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.rr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483868",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "native-document.txt",
+            "role": "list item",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.rr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483870",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "image.svg",
+            "role": "list item",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.rr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483872",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "beta.txt",
+            "role": "list item",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.rr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483874",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "alpha-long-file-name-to-test-eliding.txt",
+            "role": "list item",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.rr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483876",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Folder",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483691",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "File",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483694",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Sort by name",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.FileArea.sortHeader",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483928",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Sort by modified",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.FileArea.sortHeader",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483930",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Sort by size",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.FileArea.sortHeader",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483932",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Sort by kind",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.FileArea.sortHeader",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483934",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "subfolder",
+            "role": "list item",
+            "identity": "QGuiApplication.ProxiedWindow.FileArea.gr.FileArea.cl",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483996",
+            "app_bus": ":1.176"
+          }
+        }
+      ]
+    },
+    {
+      "target": "Tree.chev",
+      "expectedBusAndPath": [
+        ":1.176",
+        "/org/a11y/atspi/accessible/2147483836"
+      ],
+      "steps": [
+        {
+          "command": null,
+          "navigator": {
+            "error": "GLib.Error('No such object path '/org/a11y/atspi/accessible/2147483996'', 'atspi_error', 1)"
+          }
+        },
+        {
+          "command": "MoveToParent",
+          "navigator": {
+            "name": "Home",
+            "role": "table cell",
+            "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483838",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToFirstChild",
+          "navigator": {
+            "name": "Collapse Home",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483836",
+            "app_bus": ":1.176"
+          }
+        }
+      ]
+    },
+    {
+      "target": "Tree.row",
+      "expectedBusAndPath": [
+        ":1.176",
+        "/org/a11y/atspi/accessible/2147483838"
+      ],
+      "steps": [
+        {
+          "command": null,
+          "navigator": {
+            "name": "Expand Home",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483836",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToParent",
+          "navigator": {
+            "name": "Home",
+            "role": "table cell",
+            "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483838",
+            "app_bus": ":1.176"
+          }
+        }
+      ]
+    },
+    {
+      "target": "Dashboard.cc",
+      "expectedBusAndPath": [
+        ":1.176",
+        "/org/a11y/atspi/accessible/2147483686"
+      ],
+      "steps": [
+        {
+          "command": null,
+          "navigator": {
+            "name": "Home",
+            "role": "table cell",
+            "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483838",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToParent",
+          "navigator": {
+            "name": "Files Responsive QA",
+            "role": "frame",
+            "identity": "QGuiApplication.ProxiedWindow",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483902",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToFirstChild",
+          "navigator": {
+            "name": "Collections and tree (Ctrl+B)",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483650",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Home",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483653",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Back",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483656",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Forward",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483659",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Up",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483662",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Show grid",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483665",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Sort",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483668",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Details",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483671",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Show hidden files",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483674",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Refresh Home",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483677",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Filter files",
+            "role": "text",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.filterInput",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483679",
+            "app_bus": ":1.176",
+            "text": ""
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Location",
+            "role": "text",
+            "identity": "QGuiApplication.ProxiedWindow.PathBar.input",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483682",
+            "app_bus": ":1.176",
+            "text": ""
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Recent activity",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483773",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Images",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483775",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Videos",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483777",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Documents",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483779",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Downloads",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483781",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Large files",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483783",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Screenshots",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483785",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Folders",
+            "role": "tree",
+            "identity": "QGuiApplication.ProxiedWindow.Tree.list",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483683",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "All",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483939",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Documents",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483940",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Images",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483941",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Video",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483935",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Audio",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483936",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Code",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483937",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Archives",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483938",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Recent media timeline",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.timelineLink",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483684",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "native-image.svg",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483901",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "image.svg",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483898",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Recent activity",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483686",
+            "app_bus": ":1.176"
+          }
+        }
+      ]
+    },
+    {
+      "target": "Dashboard.tile",
+      "expectedBusAndPath": [
+        ":1.176",
+        "/org/a11y/atspi/accessible/2147483845"
+      ],
+      "steps": [
+        {
+          "command": null,
+          "navigator": {
+            "name": "Recent activity",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483686",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToParent",
+          "navigator": {
+            "name": "Files Responsive QA",
+            "role": "frame",
+            "identity": "QGuiApplication.ProxiedWindow",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483902",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToFirstChild",
+          "navigator": {
+            "name": "Collections and tree (Ctrl+B)",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483650",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Home",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483653",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Back",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483656",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Forward",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483659",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Up",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483662",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Show list",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483665",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Sort",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483668",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Details",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483671",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Show hidden files",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483674",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Refresh Home",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483677",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Filter files",
+            "role": "text",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.filterInput",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483679",
+            "app_bus": ":1.176",
+            "text": ""
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Location",
+            "role": "text",
+            "identity": "QGuiApplication.ProxiedWindow.PathBar.input",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483682",
+            "app_bus": ":1.176",
+            "text": ""
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Recent activity",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483773",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Images",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483775",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Videos",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483777",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Documents",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483779",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Downloads",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483781",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Large files",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483783",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Screenshots",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483785",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Folders",
+            "role": "tree",
+            "identity": "QGuiApplication.ProxiedWindow.Tree.list",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483683",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "All",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483939",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Documents",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483940",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Images",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483941",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Video",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483935",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Audio",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483936",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Code",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483937",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Archives",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483938",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Recent media timeline",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.timelineLink",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483684",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "native-image.svg",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483901",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "image.svg",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483898",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Recent activity",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483686",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Images",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483903",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Videos",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483904",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Documents",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483905",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Downloads",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483906",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Large files",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483907",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Screenshots",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483908",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Home",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483845",
+            "app_bus": ":1.176"
+          }
+        }
+      ]
+    },
+    {
+      "target": "Dashboard.mt",
+      "expectedBusAndPath": [
+        ":1.176",
+        "/org/a11y/atspi/accessible/2147483901"
+      ],
+      "steps": [
+        {
+          "command": null,
+          "navigator": {
+            "name": "Home",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483845",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToParent",
+          "navigator": {
+            "name": "Files Responsive QA",
+            "role": "frame",
+            "identity": "QGuiApplication.ProxiedWindow",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483902",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToFirstChild",
+          "navigator": {
+            "name": "Collections and tree (Ctrl+B)",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483650",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Home",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483653",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Back",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483656",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Forward",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483659",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Up",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483662",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Show list",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483665",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Sort",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483668",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Details",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483671",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Show hidden files",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483674",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Refresh Home",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483677",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Filter files",
+            "role": "text",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.filterInput",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483679",
+            "app_bus": ":1.176",
+            "text": ""
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Location",
+            "role": "text",
+            "identity": "QGuiApplication.ProxiedWindow.PathBar.input",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483682",
+            "app_bus": ":1.176",
+            "text": ""
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Recent activity",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483773",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Images",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483775",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Videos",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483777",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Documents",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483779",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Downloads",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483781",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Large files",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483783",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Screenshots",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483785",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Folders",
+            "role": "tree",
+            "identity": "QGuiApplication.ProxiedWindow.Tree.list",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483683",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "All",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483939",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Documents",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483940",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Images",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483941",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Video",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483935",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Audio",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483936",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Code",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483937",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Archives",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483938",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "Recent media timeline",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.timelineLink",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483684",
+            "app_bus": ":1.176"
+          }
+        },
+        {
+          "command": "MoveToNextSibling",
+          "navigator": {
+            "name": "native-image.svg",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483901",
+            "app_bus": ":1.176"
+          }
+        }
+      ]
+    },
+    {
+      "target": "Dashboard.rr",
+      "expectedBusAndPath": [
+        ":1.176",
+        "/org/a11y/atspi/accessible/2147483901"
+      ],
+      "steps": [
+        {
+          "command": null,
+          "navigator": {
+            "name": "native-image.svg",
+            "role": "button",
+            "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+            "app": "quickshell",
+            "object_path": "/org/a11y/atspi/accessible/2147483901",
+            "app_bus": ":1.176"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "target": "file:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home/fixture/subfolder",
+      "observed": {
+        "description": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home/fixture/subfolder",
+        "height": 82,
+        "invisible": false,
+        "logicalIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home/fixture/subfolder",
+        "name": "subfolder",
+        "role": 34,
+        "valid": true,
+        "width": 302,
+        "x": 14,
+        "y": 206
+      },
+      "readerFocus": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "subfolder",
+          "role": "list item",
+          "identity": "QGuiApplication.ProxiedWindow.FileArea.gr.FileArea.cl",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483996",
+          "app_bus": ":1.176"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483902",
+          "app_bus": ":1.176"
+        },
+        "navigator": {
+          "name": "Sort",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483668",
+          "app_bus": ":1.176"
+        }
+      }
+    },
+    {
+      "target": "Tree.chev",
+      "observed": {
+        "description": "",
+        "height": 26,
+        "invisible": false,
+        "logicalIdentity": "tree-toggle:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home",
+        "name": "Collapse Home",
+        "role": 43,
+        "valid": true,
+        "width": 18,
+        "x": 10,
+        "y": 268
+      },
+      "readerFocus": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Collapse Home",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483836",
+          "app_bus": ":1.176"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483902",
+          "app_bus": ":1.176"
+        },
+        "navigator": {
+          "error": "GLib.Error('No such object path '/org/a11y/atspi/accessible/2147483996'', 'atspi_error', 1)"
+        }
+      }
+    },
+    {
+      "target": "Tree.row",
+      "observed": {
+        "description": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home, collapsed",
+        "height": 26,
+        "invisible": false,
+        "logicalIdentity": "tree:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home",
+        "name": "Home",
+        "role": 36,
+        "valid": true,
+        "width": 243,
+        "x": 0,
+        "y": 268
+      },
+      "readerFocus": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Home",
+          "role": "table cell",
+          "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483838",
+          "app_bus": ":1.176"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483902",
+          "app_bus": ":1.176"
+        },
+        "navigator": {
+          "name": "Expand Home",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row.Tree.chev",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483836",
+          "app_bus": ":1.176"
+        }
+      }
+    },
+    {
+      "target": "Dashboard.cc",
+      "observed": {
+        "description": "5 items",
+        "height": 46,
+        "invisible": false,
+        "logicalIdentity": "home-collection:recent",
+        "name": "Recent activity",
+        "role": 43,
+        "valid": true,
+        "width": 302,
+        "x": 14,
+        "y": 248
+      },
+      "readerFocus": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Recent activity",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483686",
+          "app_bus": ":1.176"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483902",
+          "app_bus": ":1.176"
+        },
+        "navigator": {
+          "name": "Home",
+          "role": "table cell",
+          "identity": "QGuiApplication.ProxiedWindow.Tree.list.Tree.row",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483838",
+          "app_bus": ":1.176"
+        }
+      }
+    },
+    {
+      "target": "Dashboard.tile",
+      "observed": {
+        "description": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home",
+        "height": 56,
+        "invisible": false,
+        "logicalIdentity": "pin:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home",
+        "name": "Home",
+        "role": 43,
+        "valid": true,
+        "width": 147,
+        "x": 14,
+        "y": 238
+      },
+      "readerFocus": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Home",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483845",
+          "app_bus": ":1.176"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483902",
+          "app_bus": ":1.176"
+        },
+        "navigator": {
+          "name": "Recent activity",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Dashboard.cc",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483686",
+          "app_bus": ":1.176"
+        }
+      }
+    },
+    {
+      "target": "Dashboard.mt",
+      "observed": {
+        "description": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home/Pictures/native-image.svg",
+        "height": 208,
+        "invisible": false,
+        "logicalIdentity": "media:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home/Pictures/native-image.svg",
+        "name": "native-image.svg",
+        "role": 43,
+        "valid": true,
+        "width": 139,
+        "x": 14,
+        "y": 128
+      },
+      "readerFocus": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "native-image.svg",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483901",
+          "app_bus": ":1.176"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483902",
+          "app_bus": ":1.176"
+        },
+        "navigator": {
+          "name": "Home",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Dashboard.tile",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483845",
+          "app_bus": ":1.176"
+        }
+      }
+    },
+    {
+      "target": "Dashboard.rr",
+      "observed": {
+        "description": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home/Pictures/native-image.svg",
+        "height": 38,
+        "invisible": false,
+        "logicalIdentity": "recent:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home/Pictures/native-image.svg",
+        "name": "native-image.svg",
+        "role": 34,
+        "valid": true,
+        "width": 302,
+        "x": 14,
+        "y": 256
+      },
+      "readerFocus": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "native-image.svg",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483901",
+          "app_bus": ":1.176"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483902",
+          "app_bus": ":1.176"
+        },
+        "navigator": {
+          "name": "native-image.svg",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+          "app": "quickshell",
+          "object_path": "/org/a11y/atspi/accessible/2147483901",
+          "app_bus": ":1.176"
+        }
+      }
+    }
+  ],
+  "error": "AssertionError('captured real opener dispatch')",
+  "fixtureCleanup": [
+    {
+      "name": "reader",
+      "pid": 3762143,
+      "ownNewSession": true,
+      "forcedKill": false,
+      "exitCode": 0,
+      "exited": true
+    },
+    {
+      "name": "copiedFiles",
+      "pid": 3762011,
+      "ownNewSession": true,
+      "forcedKill": false,
+      "exitCode": -15,
+      "exited": true
+    }
+  ],
+  "preservation": {
+    "originalStableClientFields": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "allFourCatalogBytes": true,
+    "originalFullUiState": true,
+    "sharedReaderProfileBytes": true,
+    "originalProcessStart": true,
+    "clipboardAndPrimaryRawAndMimeHashes": true,
+    "catalogBytes": true,
+    "dashboardBytes": true,
+    "originalExplorerPublicState": true,
+    "originalExplorerPID": true,
+    "originalExplorerHidden": true,
+    "a11yFlags": true,
+    "a11ySocketConnectivity": true,
+    "readerEnabledProperty": true,
+    "originalOutputs": true,
+    "originalPlugins": true,
+    "originalKeyboardStates": true,
+    "reviewedManifestBytes": true,
+    "frozenDependencies": true,
+    "fixturesNormalShutdown": true,
+    "fixturesExited": true,
+    "responsiveManifestBytes": true
+  },
+  "titleHashesAfter": {
+    "0x5a02aee429f0": "5d48eac09d17489ce011af63b5d37700a395e24810b96bfc3f21976c904cce18",
+    "0x5a02b0cc9280": "a7b8aa98953e573ee61bb4e66d1206f8e4dfba0730b657472f7db8da97049000",
+    "0x5a02afd20bd0": "788215a84492ed4cd4855962c3c47108f9ce3be56564bad73febc9f576bff0de",
+    "0x5a02afa13e90": "102607aba0aca07600ed90354604dd4f2164a9ea9a674a5727b90bdfc8f648ab"
+  },
+  "catalogImmediatelyAfterCleanup": {
+    "virtual-desktops.json": {
+      "exactBytes": true,
+      "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0"
+    },
+    "taskbar-settings.json": {
+      "exactBytes": true,
+      "expectedSHA256": null,
+      "actualSHA256": null
+    },
+    "taskbar-order.json": {
+      "exactBytes": true,
+      "expectedSHA256": null,
+      "actualSHA256": null
+    },
+    "taskbar-session-order.json": {
+      "exactBytes": true,
+      "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    }
+  },
+  "catalogNaturalSettling": {
+    "/home/hoskinson/.config/omarchy/virtual-desktops.json": {
+      "exactBytes": true,
+      "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0"
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-settings.json": {
+      "exactBytes": true,
+      "expectedSHA256": null,
+      "actualSHA256": null
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-order.json": {
+      "exactBytes": true,
+      "expectedSHA256": null,
+      "actualSHA256": null
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-session-order.json": {
+      "exactBytes": true,
+      "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    }
+  },
+  "navigatorCommandAcknowledgements": 183,
+  "featureChecks": 31,
+  "passedFeatureChecks": 31,
+  "result": "fail"
+}

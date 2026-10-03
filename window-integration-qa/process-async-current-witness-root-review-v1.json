@@ -1,0 +1,366 @@
+{
+  "result": "pass",
+  "namedScenarios": 35,
+  "traces": 2000,
+  "maxSteps": 100,
+  "formalInputs": 74,
+  "semanticInputs": 13,
+  "semanticChecks": 10,
+  "sourceImplementationAuthorized": true,
+  "implementationScope": "Fresh provider V2 only: immutable started PID/start/lease/expected values, readonly POSIX/RAII kernel worker, bounded explained mapping epochs, owned QPromise/pthread channel, UI revalidation/normal worker inventory and original independent Process74 exit/EOF/gone/receipt gates.",
+  "requiredGuards": [
+    "No synchronous collection loop or blocking join on UI thread. No QObject/QML/Registry access or construction in worker.",
+    "Original absolute started two-second deadline and sixteen epochs; no relaunch/helper delay/native writes or old partial witness union.",
+    "Typed mapping change requires independently explanatory fresh raw maps and original live root plus implicated known frozen bytes/FD/mount checks.",
+    "One complete epoch retains all original scalar/env/namespaces and source/hash/FD/mount observations before and after; no fabricated acceptance fields.",
+    "Actual normal return/join must be observed before completed authority; promise-finished alone remains insufficient. Old-lease authority inert, every job retained for normal teardown.",
+    "Original UI owner/context/source/getter/loader tuple must be revalidated; independent actual helper signals and durable receipt are required."
+  ],
+  "semanticLimits": [
+    "Actual QtCore queued delivery, pthread difference, promise-before-return EBUSY and normal join are component evidence.",
+    "Old lease/context refusals in this ten-check fixture are explicit local value comparisons, not production Registry/QML integration proof.",
+    "Actual worker/Registry negative/retirement tests and unchanged fast helper with accepted live current kernel witness remain required."
+  ],
+  "QMLFrontendChangeAuthorized": false,
+  "nativeAuthorized": false,
+  "actualQSProcessAccepted": false,
+  "mainChanged": false,
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/formal-source-review-inputs.json": {
+      "sha256": "52c07e1c6ce69bb043020e11adc3eeb39db3e55bc754571f0f2a6059f8870ad1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v2/CONTRACT.md": {
+      "sha256": "d95b2c74a24b9f37eab0e206ff58f36f5c3eebc9cf3a7326dc837378bde4a74a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v2/IMPLEMENTATION_MAPPING.md": {
+      "sha256": "18aa2cd30044463873d3df50414ee9d02b9b9b7f3d7841221716132651280c88",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v2/current_witness.qnt": {
+      "sha256": "170ac161a4e530e701e613d517f86cddf0c00f8768d14cce23b0d59882a97b20",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v2/formal-current-before-runtime.json": {
+      "sha256": "cdd3fc4997a948969ea11430780c8595e16191f00d3cb8666f0728d10cc8951b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v2/formal-source-review-inputs.json": {
+      "sha256": "a4b97e992bd91e72c5a61d91d9204b58b383cd2398d91edcd79953db1664482b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v2/prove_before.py": {
+      "sha256": "0a4c0379462d436c29fdfd40f5ce6a1fa1e8ffa0f3be18412f05ae3e8f155296",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/CONTRACT.md": {
+      "sha256": "f9f989d2cd91f8007f5e452f4589fa25072cf8d66b0550ed6df5751ae313d76b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/IMPLEMENTATION_MAPPING.md": {
+      "sha256": "9c39f12025b1a5dfcf80fd1e2d68e8d4d01b4f84132fff0e941aca35a03ba84e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/async_witness.qnt": {
+      "sha256": "964b88ed705622e63681dd762a85071b079edbc66ef2b445f6ef5562742a7e29",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/formal-async-before-runtime.json": {
+      "sha256": "dd1d026dfb80c8e8465a71b68d29d2dacf29fbb41dd95397354f34b8c1fdda68",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/initial-async32/CONTRACT.md": {
+      "sha256": "56bb36cc5686b13569180482870ec9c27371fd80e939aee624db03ee264e7815",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/initial-async32/IMPLEMENTATION_MAPPING.md": {
+      "sha256": "4707f3e85e6e764a0898656c62ca399e69a908870487911c94163e6ba6d8c104",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/initial-async32/async_witness.qnt": {
+      "sha256": "e252c7897bacfc257444c98c87e4641205c0ad0f38684554ec8e294b678d3aa5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/initial-async32/formal-async-before-runtime.json": {
+      "sha256": "e8a05d8d3ce276ffa60d39b5729d1389b092ae5287c597e9e4ae6e74a9ac47a8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/initial-async32/prove_before.py": {
+      "sha256": "afc28f587b82463a6c185bbba6fb6a32316a93ef1d542e1e5d13b2118c4e2e09",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/prove_before.py": {
+      "sha256": "afc28f587b82463a6c185bbba6fb6a32316a93ef1d542e1e5d13b2118c4e2e09",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/CACHE_MAPPING.md": {
+      "sha256": "b641b52116017d8cc5eb9df6e1aefa6c0f636986bc12c63b9c5ea5a317ba7b37",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/CONTRACT.md": {
+      "sha256": "5ae1c7fed0e3dedfceb85d522a69d13b76a8ffb24a855f79f890d03d94addb81",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/IMPLEMENTATION_MAPPING.md": {
+      "sha256": "793f7941e552a653510087e4a77240b7052310cebf0b0d7f7561f08895d6baf4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/actual-owned-map-diagnostic-v2.json": {
+      "sha256": "7718f66c9e65204e7829d372233501236d8e2d0e1502f5507ba1c75869813097",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/btrfs-inode.c": {
+      "sha256": "76a195f07159fe5c4f0dbc5abb35164976462371bde6271fa31d8df2902d1b15",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/device-relation-before-guard-execution.json": {
+      "sha256": "5124a060e97aadbd149985f9d7c2e554853aa0e1fd5fa1f496099e0e8f0dd37c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/device_relation.qnt": {
+      "sha256": "ea08378f0c0ad20762a9575d25f1a48a95c8769e9e78793a42431f62b54a8345",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/formal-before-guard-change.json": {
+      "sha256": "c42478254d288985a026c46329775baad18370bdb0e12df8f755a679ab5c07bb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/mapping_device.qnt": {
+      "sha256": "d4510fb39c71ae688b61d150dd7938cc715c8d821272cf32d6fcd98807d11118",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/primary-sources.json": {
+      "sha256": "c34a820d2f00e301054e70387aeafca8b0cd769a7dc40e76094704bdb0b1a2de",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/proc-base.c": {
+      "sha256": "f13f7adf038170dfa9b5f2bd077bda95307499bfb708440e9b9251a849d70732",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/proc_namespace.c": {
+      "sha256": "fd82c0db52055ae807ee0b46c7c9bc5d47a9239805eb8ca5c47d2ba81d695776",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/task_mmu.c": {
+      "sha256": "f3afb0ed8f36a77440640a821d0572f448c856db5c7c310bc4d7dbdcf82d684d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/KnownQuickshell.hpp": {
+      "sha256": "46a320a4fb871622f8d7fdfb3a790044b50a7df6a22152a932027ead013bc1f7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/Lifetime.cpp": {
+      "sha256": "b4599fc772d9ad1255a2bd0628d166228927502721f38bd6267ddd387cf573ac",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/Lifetime.hpp": {
+      "sha256": "6c623cd64e45c3306e727b0d079fd9b870ec5a27cecb40f5512b441755cd0173",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/MappingBatch.cpp": {
+      "sha256": "b66cc8c70fb1b1a69eb9c2d11c651ede56e1fad2a1759c3208cf3d4374635f9e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/MappingDiagnostic.cpp": {
+      "sha256": "c38f2ec90ea294fff5541362fb9141749cdd0c509b6620a38b5666ec07102a19",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/MappingDiagnostic.hpp": {
+      "sha256": "695e91d389d97e53420f7f3e0a0bb1d017f983c9f8dd5dbf409024e368abed96",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/MappingWitness.cpp": {
+      "sha256": "d0e56e966bb24fe9dd87f7989018f2633772c76036a24b1c52a2b1679db59409",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/MappingWitness.hpp": {
+      "sha256": "8c0b33623f736cd83a4b576779b31d7500222e866a886419e46224931b3d039c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/NativeProcess.cpp": {
+      "sha256": "f0d37e136911ce8c759a6ae7bd7f6eabc5233179907f62df76b8cacfd9629aae",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/NativeProcess.hpp": {
+      "sha256": "2da0e35ac047c02819127cbd9e65dc6b90d9103d7664c9c933da43150f7d371f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/Popup.cpp": {
+      "sha256": "6a424af727baa6526804aa24cc3b12bc20885bb669558fa8b7018aebc1a895cc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/ProcessKernel.cpp": {
+      "sha256": "0b4785e5bcf9351b1f8b67b0fca58d8141620e740b912ec5d4343ca9ee514cd3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/ProcessRegistry.cpp": {
+      "sha256": "6f37b1f0bf1ad6a3c7fd61955d8004ab3e066c870dd4a90ec803b171914e35d0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/ProcessRegistry.hpp": {
+      "sha256": "8244cd4854dbfa2b5b19d4299e12af875ea514becd859e2b64ef32695bee8dee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/ProcessRelay.hpp": {
+      "sha256": "b8a05f6d93403abd3d697ae04e65a577de1e5fe3de3f5074608577c863835a12",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/Provider.cpp": {
+      "sha256": "98244e69d5185fd31c71f198ecd8f65fe404e401d160184e212614a02bfa7ad1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/Provider.hpp": {
+      "sha256": "05d87c5d424ad458392771b4e4f57670032df9fbe449084de9d7cf25494c4f76",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/ReloadRelay.hpp": {
+      "sha256": "b9b0dfee22c3cc15b96534c95aa1f00a5ce5572fa96d0f853d1567d6fa6f9125",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/Seal.cpp": {
+      "sha256": "fbec9a771dcf245f8969b02babc07db80abb482bcaa7b85c9dfba94c875a30c4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_dso.cpp": {
+      "sha256": "a46e6b238d581cf1d801f51207e14bf2bfc0ca4247debe78bac3aea77b2f41be",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_popup_runtime.cpp": {
+      "sha256": "51712c0f0a9a107f09ce14bab26027e083b2996c295fed8a7c249747c6d618b7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_popup_semantics.cpp": {
+      "sha256": "c1c78b4117f90b364b598bdf7c9ddc333a1c0e69a25982666c64391499f0c5f2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_popup_semantics_initial.cpp": {
+      "sha256": "c6fcf6e1622e36f7c25db0a64c82215925b66f93c079f389073f751b38118bf0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_process_runtime.cpp": {
+      "sha256": "d3e1f36e2689a98b091b3f3d14057a2c64cd786288a647ee0c188fc859858c63",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_process_semantics.cpp": {
+      "sha256": "4c16c632fe5c31cfe92801e6da963977bccd35435719e7b3ea3be2c565918af9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_process_semantics_initial.cpp": {
+      "sha256": "3d27fecfe8b3621293481c14425ea2e40fdadd9face3b13ca7cd2f434a52f954",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_product_capture.cpp": {
+      "sha256": "7ebb50bf54f2fb1e7bce1843a69754571196e82fc39c10cd2e95607e56cd1e18",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_registry.cpp": {
+      "sha256": "905a8fbd969f8ca50a03f8c0205ac1acc059fc19ef804041620fdb267d5da59f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/fast-capture-first-attempt/product-capture-runtime-1790947744361713256.json": {
+      "sha256": "9cafefae1b44b9b3482cad06d3f5ddd8f0b922dd14ddd9dea7cd0368fa9e29fc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/moc_ProcessRelay.cpp": {
+      "sha256": "53d9219b216e19b5e4b2b496077010dc0160777da3c47a2462302f18752ffe7f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/moc_Provider.cpp": {
+      "sha256": "bfe7e9a2ebf5c7c93aa4af645b8347f39e76866377e0508d6a78bec26236ad5d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/moc_ReloadRelay.cpp": {
+      "sha256": "17bb7d4aaec1e0ce89effba0a20b3f4ffbb82ad37c1d2785e9942da2d10df0ad",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/native-process-compile.json": {
+      "sha256": "98082ad01e90ca399fa5a8b3377d2eedff2676f573502ddba9ca838b4a35af9e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/product-capture-build.json": {
+      "sha256": "8942aca305cec475401d3c16b2fcc4232f70fadf7fa5c8f35bf332e056e56764",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/product-capture-runtime-1790948061244581367.json": {
+      "sha256": "3c97d22ee6489caf29ee410b8f3617833bc9947030b4bdd1173f630b0de03c79",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/product_capture_once.py": {
+      "sha256": "e082e5292357f4d34c554c3febd8514fff15a9a70c474a655e08bb2efd074c25",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/popup-v5-root-source-review-v1.json": {
+      "sha256": "09a7f963718eb000815fdcac15d0110b63abfc1f24adfdc2969c2250508aac08",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/process-current-witness-root-model-review-v1.json": {
+      "sha256": "7e4670b45cbc130761b75133d9d447a1f4a0d386960ebae1b0ce82c3d5c58e24",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/process-parser-pointer-root-semantics-review-v1.json": {
+      "sha256": "9f008fb6b04d784fc1f95a855d4ca6b07bbad32e19d4e939fb0648728fcf65db",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/process-v2-root-model-source-review-v1.json": {
+      "sha256": "f77f88264e7d0b93a3c0f1e34e38ff6dce498bfa4e51950b0f806437046de3f9",
+      "mode": 420
+    },
+    "/usr/include/pthread.h": {
+      "sha256": "5479c95276c6693fdd1baa448f5d457dee57fc02b31277bfa04df63cc0b26a94",
+      "mode": 420
+    },
+    "/usr/include/qt6/QtCore/qfuture.h": {
+      "sha256": "b97761fe95235964bf1ffc02b57f46f7fd11e5373784538c1470acf923fd4846",
+      "mode": 420
+    },
+    "/usr/include/qt6/QtCore/qfutureinterface.h": {
+      "sha256": "c9e27a52b05405e4692a6e257ecbe437e49c9a5ad63c72658368f2a6f65f3d3d",
+      "mode": 420
+    },
+    "/usr/include/qt6/QtCore/qfuturewatcher.h": {
+      "sha256": "a032724e0f55c41236e0c9bc3e2a427c6662c8138792904899e5e11e06252f20",
+      "mode": 420
+    },
+    "/usr/include/qt6/QtCore/qpromise.h": {
+      "sha256": "abd19d5caf237e1fc272096d893cc63eede4470cb87d9ce1af6745855b5b7108",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async-semantics-component-inputs.json": {
+      "sha256": "04ab6be546f43f90dfee54bb905f6bfeb699135a9e4486efcdba33bbef685a33",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async-predecessor-inputs.json": {
+      "sha256": "e7f034d1f51b0167a8f93855102d54efd39c92140c0f4960da628e7f4fb14aa8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async-semantics-first-compile/cpu_async_semantics.cpp": {
+      "sha256": "8c10481e3c6cb307cbbdc2d48385dc8a4efdb55d34824b612f1e68b01bcd26b7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async-semantics-first-compile/report.json": {
+      "sha256": "c6ae642707929c57f5114d9d44a839c7c9aff60030fd7c0984d840b7b54d90c8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async-semantics-proof.json": {
+      "sha256": "0567a6c9a233f72f3c115d98d5e23bd5056a23f7f9da45a3f0d543878c93ba1b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async_semantics_build.py": {
+      "sha256": "ade78abd7a439def104ce28834d1400aea5dd1511eb09cad8544ed830cba7f39",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/cpu-async-semantics": {
+      "sha256": "60c9ffeb3dd3325b22936844e78af064e4f00380eec49db4a5b9b6ca1a1393fa",
+      "mode": 493
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/cpu_async_semantics.cpp": {
+      "sha256": "6bb7215aa74f5dba5bd732ac07bc6b7f4c3aecdafcf7ffb3bd35a73817704aaa",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/ASYNC_IMPLEMENTATION_NOTES.md": {
+      "sha256": "dde730cd9a0d1c41001642f2a487b5ffafb1f99398169792f327940483228e04",
+      "mode": 420
+    }
+  }
+}

@@ -1,0 +1,18 @@
+--- /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v2/native-fixture/pointer_cases.py	2026-10-01 05:20:34.651247367 -0600
++++ /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v3/native-fixture/pointer_cases.py	2026-10-01 08:27:28.657707423 -0600
+@@ -74,6 +74,7 @@
+     with c['config'].open('a') as stream:stream.write('\nhl.config({ecosystem={enforce_permissions=false}})\n')
+     ctl('reload');time.sleep(.15)
+     keyboard=pipe([here/'native-fixture/native-input'],'pointer-keyboard')
++    c['producer_ready'](keyboard,here/'pointer-keyboard.log','pointer keyboard')
+     check('external registered caller explicitly requests full capture',request(b,'grab')['pass_'])
+     wait(lambda:c['received'].exists(),'actual private Foot byte receiver')
+     before=c['received'].read_bytes();input_lines(keyboard,'key 35 1\n')
+@@ -92,6 +93,7 @@
+     # No GObject pointer-moved observer or MouseReviewer exists in this probe.
+     # The official GDBus callback alone must issue its real query and rearm.
+     pointer=pipe([here/'native-fixture/native-pointer'],'actual-native-pointer')
++    c['producer_ready'](pointer,here/'actual-native-pointer.log','actual pointer')
+     monitor=data('monitors')[0];width=monitor['width']/monitor['scale'];height=monitor['height']/monitor['scale']
+     pending=json.loads(manager('State'))['pointerPending']
+     check('actual successful capability bootstrap primes exactly one query',pending==1,pending=pending)

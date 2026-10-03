@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_chat" xml:lang="eo">
+  <info>
+    <link type="guide" xref="preferences#application"/>
+    <link type="next" xref="preferences_spellcheck"/>
+    <title type="sort">3. Babilado</title>
+    <title type="link">Babilo</title>
+    <desc>Agordi la subtenon de <app>Orko</app> por IM kaj IRC</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Babiladaj Preferaĵoj</title>
+  <p>La sekvaj opcioj permesas al vi personecigi kiel <app>Orko</app> kondutas dum provizado de aliro al tujaj mesaĝadaj kaj interretaj relaj babiladaj klientoj.</p>
+  <section id="speak_name">
+    <title>Paroldiri la nomon de la babilĉambro</title>
+    <p>Se tiu ĉi markobulono estas markita, <app>Orko</app> antaŭmetos alvenantajn mesaĝojn per la nomo de la ĉambro aŭ amiko el kiu ili venis, krom se ili venis el la nuntempe fokusita konversacio.</p>
+    <p>Defaŭlta valoro: nemarkita</p>
+  </section>
+  <section id="announce_typing">
+    <title>Anonci kiam viaj amikoj skribas</title>
+    <p>Se tiu ĉi markobulono estas markita, kaj se <app>Orko</app> havas sufiĉan informon identigante ke via amiko skribas, <app>Orko</app> anoncados ŝanĝojn en la skribostato.</p>
+    <p>Defaŭlta valoro: nemarkita</p>
+  </section>
+  <section id="message_histories">
+    <title>Provizi specifajn mesaĝhistoriojn por babilĉambroj</title>
+    <p>Se tiu ĉi markobulono estas markita, la komandoj de <app>Orko</app> por revizii lastatempajn mesaĝojn validos nur por la nuntempe fokusita konversacio. Alie, la historio enhavos la plej lastatempajn mesaĝojn sendepende de el kiu konversacio ili venis.</p>
+    <p>Defaŭlta valoro: nemarkita</p>
+  </section>
+  <section id="speak_messages_from">
+    <title>Paroldiri mesaĝojn de</title>
+    <p>Tiu ĉi grupo da radikbutonoj permesas al vi kontroli en kiaj cirkonstancoj <app>Orko</app> prezentados alvenantajn mesaĝojn al vi. Viaj elektoj estas:</p>
+    <list>
+      <item>
+        <p><gui>Ĉiuj kanaloj</gui></p>
+      </item>
+      <item>
+        <p><gui>Kanalo nur se ĝia fenestro estas aktiva</gui></p>
+      </item>
+      <item>
+        <p><gui>Ĉiuj kanaloj kiam iu babilada fenestro estas aktiva</gui></p>
+      </item>
+    </list>
+    <p>Defaŭlta valoro: ĉiuj kanaloj</p>
+  </section>
+</page>

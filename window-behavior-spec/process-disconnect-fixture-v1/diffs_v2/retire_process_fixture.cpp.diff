@@ -1,0 +1,13 @@
+--- /home/hoskinson/window-behavior-spec/qml-process-provider-v8-terminal-retire/retire_process_fixture.cpp
++++ /home/hoskinson/window-behavior-spec/process-disconnect-fixture-v1/proposed_v2/retire_process_fixture.cpp
+@@ -35,7 +35,9 @@
+  void launch(){child.setProgram(selected[0]);child.setArguments(selected.mid(1));QProcessEnvironment env;env.insert("HOME",qEnvironmentVariable("HOME"));env.insert("XDG_RUNTIME_DIR",qEnvironmentVariable("XDG_RUNTIME_DIR"));env.insert("PATH","/usr/bin");env.insert("LC_ALL","C");child.setProcessEnvironment(env);child.start();}
+ public:std::function<void(const QMetaMethod&)>disconnectProbe;
+ protected:
+- void disconnectNotify(const QMetaMethod&method)override{if(disconnectProbe){auto probe=disconnectProbe;probe(method);}QObject::disconnectNotify(method);}
++ // The tagged Qt default disconnectNotify is empty. This CPU override only
++ // invokes its plain C++ diagnostic handoff; no QObject reentry/base call.
++ void disconnectNotify(const QMetaMethod&method)override{if(disconnectProbe){auto probe=disconnectProbe;probe(method);}}
+ signals:void started();void exited(int,QProcess::ExitStatus);
+ };
+ QByteArray argv(const QStringList&parts){QByteArray raw;for(const auto&p:parts)raw+=p.toUtf8()+'\0';return raw;}

@@ -1,0 +1,66 @@
+--- /home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/capture_packet.py
++++ /home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/capture_packet.py
+@@ -7,6 +7,7 @@
+ O=Path('/home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v2-build')
+ D=Path('/home/hoskinson/window-behavior-spec/pin-maximized-native-policy-v1-design')
+ QA=V2.parent
++FAILED=Path('/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal')
+ sys.path.insert(0,str(V2/'proposed'))
+ from closure_union import union
+ 
+@@ -19,8 +20,13 @@
+  design=json.loads((D/'DESIGN_INPUTS.json').read_bytes())
+  design=dict(inputs={str(D/p):m['sha256']for p,m in design['files'].items()},inputModes={str(D/p):m['mode']for p,m in design['files'].items()},symlinks={},directoryModes={})
+  extras=[V2/'frozen-inputs.json',V2/'source-ready-v2.json',O/'SOURCE_READY.json',O/'SOURCE_READY_INPUTS.json',D/'DESIGN_READY.json',D/'DESIGN_INPUTS.json',QA/'pin-max-native-campaign-b-root-design-review-v1.json',QA/'pin-max-native-v2-root-completion-v1.json',QA/'pin-max-campaign-b-observer-root-source-review-v1.json',QA/'pin-max-campaign-b-observer-correction-root-review-v1.json',QA/'pin-max-campaign-b-observer-root-build-review-v1.json',QA/'pin-max-campaign-b-observer-root-header-origin-v1.json',QA/'review_pin_campaign_b_observer_build_v1.py',QA/'review_resume_sources_20261002_v1.py']
+- row=union(B,[a,observer,design],extras)
+- row['ancestralDescriptors']=[dict(path=str(p),**meta(p))for p in [V2/'frozen-inputs.json',O/'SOURCE_READY_INPUTS.json',D/'DESIGN_INPUTS.json']]
++ failed=json.loads((FAILED/'frozen-inputs.json').read_bytes())
++ extras.extend([FAILED/'frozen-inputs.json',FAILED/'ROOT_NATIVE_GRANT.json',FAILED/'SOURCE_READY.json',FAILED/'SOURCE_INPUTS.json',QA/'pin-max-campaign-b-controller-root-source-review-v1.json',QA/'review_pin_campaign_b_controller_v1.py',QA/'freeze_pin_campaign_b_controller_v1.py'])
++ # Failed actual attempt is raw evidence, never new acceptance authority.
++ extras.extend(p for p in sorted((FAILED/'attempt-1').rglob('*'))if p.is_file()or p.is_symlink())
++ failed_attempt=dict(inputs={},inputModes={},symlinks={},directoryModes={str(p):stat.S_IMODE(p.stat().st_mode)for p in [FAILED/'attempt-1',*sorted((FAILED/'attempt-1').rglob('*'))]if p.is_dir()and not p.is_symlink()})
++ row=union(B,[a,observer,design,failed,failed_attempt],extras)
++ row['ancestralDescriptors']=[dict(path=str(p),**meta(p))for p in [V2/'frozen-inputs.json',O/'SOURCE_READY_INPUTS.json',D/'DESIGN_INPUTS.json',FAILED/'frozen-inputs.json']]
+  row['scope']='source-only B01–B12 component proposal; no native/freeze authority'
+  return row
+ 
+@@ -32,6 +38,6 @@
+  finally:os.close(fd)
+ if __name__=='__main__':
+  row=inventory();publish(B/'SOURCE_INPUTS.json',row)
+- ready=dict(schema=1,sourceOnly=True,nativeAuthorized=False,freezeAuthorized=False,sourceInputsSHA256=meta(B/'SOURCE_INPUTS.json')['sha256'],pairSHA256=meta(B/'PAIR_READY.json')['sha256'],inputs=len(row['inputs']),symlinks=len(row['symlinks']),directoryModes=len(row['directoryModes']),controllerCPU=16,producerNamedFormal=14,producerTraces=2000,producerMaxSteps=100,originalA3SourcesConserved=31,original14Credit=False,coreAndObserverUnchanged=True,scope='B01–B12 bounded components only',fullCampaignBAccepted=False,remaining=['B03 full CLI ingress','B07–09 presentation ROI','B11–12 third blocked peer','exhaustive native mode trajectory','B13–B24 actual masks/scroll/transfer/twooutputs','B24 genuine failure trigger','full Windows parity'])
++ ready=dict(schema=1,promotionFrom=str(FAILED),locationOnly=True,runtimeBodiesUnchanged=True,sourceOnly=True,nativeAuthorized=False,freezeAuthorized=False,sourceInputsSHA256=meta(B/'SOURCE_INPUTS.json')['sha256'],pairSHA256=meta(B/'PAIR_READY.json')['sha256'],inputs=len(row['inputs']),symlinks=len(row['symlinks']),directoryModes=len(row['directoryModes']),controllerCPU=16,producerNamedFormal=14,producerTraces=2000,producerMaxSteps=100,originalA3SourcesConserved=31,original14Credit=False,coreAndObserverUnchanged=True,scope='B01–B12 bounded components only',fullCampaignBAccepted=False,remaining=['B03 full CLI ingress','B07–09 presentation ROI','B11–12 third blocked peer','exhaustive native mode trajectory','B13–B24 actual masks/scroll/transfer/twooutputs','B24 genuine failure trigger','full Windows parity'])
+  publish(B/'SOURCE_READY.json',ready)
+  print(json.dumps(dict(sourceReadySHA256=meta(B/'SOURCE_READY.json')['sha256'],sourceInputsSHA256=ready['sourceInputsSHA256'],inputs=ready['inputs'],symlinks=ready['symlinks'],directories=ready['directoryModes'],noNative=True)))
+--- /home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/PAIR_READY.json
++++ /home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/PAIR_READY.json
+@@ -37,7 +37,13 @@
+     "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/producer-registry/registry.py": "d6f3676ed4bb6f10215adf9f74912ab590d2cd648806e3d9a72fedffbaa274af",
+     "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/host/b_closure.py": "d9ae436a1671656ee975acadc788947ebc4b9ce754869bf9912d5953882afb5b",
+     "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/host/candidate_host.py": "d87216be25180ad6181228653a266ae0c281a599ca60354dbea5ab4ce6ba2928",
+-    "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/run_native.py": "2b2eb049b76a3af920b132f55c968ef0923210dc474f8cc43c2cb12001adc052"
++    "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/run_native.py": "2b2eb049b76a3af920b132f55c968ef0923210dc474f8cc43c2cb12001adc052",
++    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/controller/minimal_controller.py": "1921a912c510fe558ee6aa09e44637115e93e2ac2891f938affed5348c8163ca",
++    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/producer-registry/registry.py": "d6f3676ed4bb6f10215adf9f74912ab590d2cd648806e3d9a72fedffbaa274af",
++    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/host/b_closure.py": "d9ae436a1671656ee975acadc788947ebc4b9ce754869bf9912d5953882afb5b",
++    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/host/candidate_host.py": "d87216be25180ad6181228653a266ae0c281a599ca60354dbea5ab4ce6ba2928",
++    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/run_native.py": "2b2eb049b76a3af920b132f55c968ef0923210dc474f8cc43c2cb12001adc052",
++    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/observer/decode_observation.py": "ba8b169a941ce252a374f6dca048be99feb372f5ac88baab0ce558466b0e6a48"
+   },
+   "inputModes": {
+     "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland": 493,
+@@ -66,7 +72,13 @@
+     "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/producer-registry/registry.py": 420,
+     "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/host/b_closure.py": 420,
+     "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/host/candidate_host.py": 420,
+-    "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/run_native.py": 420
++    "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/run_native.py": 420,
++    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/controller/minimal_controller.py": 420,
++    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/producer-registry/registry.py": 420,
++    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/host/b_closure.py": 420,
++    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/host/candidate_host.py": 420,
++    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/run_native.py": 420,
++    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/observer/decode_observation.py": 384
+   },
+   "directoryModes": {
+     "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make": 493,

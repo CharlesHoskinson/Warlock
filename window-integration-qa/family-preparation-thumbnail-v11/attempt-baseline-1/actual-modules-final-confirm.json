@@ -1,0 +1,2489 @@
+{
+  "version": 1,
+  "phase": "terminal-post-disk",
+  "observedNs": 182034109337227,
+  "servicePID": 360409,
+  "serviceStart": 19414266,
+  "manifest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/manifest-housekeeping-admission-v26.json",
+  "manifestExpectedSHA256": "e98809f3cee21c3fc8a0447c98c76915cc3083df2ac1090f1531c7fa3b25a1b2",
+  "manifestActualSHA256": "e98809f3cee21c3fc8a0447c98c76915cc3083df2ac1090f1531c7fa3b25a1b2",
+  "modules": [
+    {
+      "name": "native_runtime",
+      "objectID": 137441410186464,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228175,
+          "size": 20989,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228175,
+          "size": 20989,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228175,
+          "size": 20989,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228175,
+          "size": 20989,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "FailureBinding.__call__",
+          "objectID": 137441407619616,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "FailureBinding.__init__",
+          "objectID": 137441407619440,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "FailureBinding.bind",
+          "objectID": 137441407619792,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "FailureBinding.deliver",
+          "objectID": 137441407619968,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.__call__",
+          "objectID": 137441407622960,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.__init__",
+          "objectID": 137441407621200,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.bind_journal",
+          "objectID": 137441407621552,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.bind_lease",
+          "objectID": 137441407621376,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.close",
+          "objectID": 137441407622432,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.context",
+          "objectID": 137441407623136,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.helper_changed",
+          "objectID": 137441407622080,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.helper_snapshot",
+          "objectID": 137441407622256,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.housekeep",
+          "objectID": 137441407623664,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.publish_resource",
+          "objectID": 137441407622784,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.readonly_changed",
+          "objectID": 137441407621728,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.readonly_snapshot",
+          "objectID": 137441407621904,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.recover",
+          "objectID": 137441407623488,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.resource_snapshot",
+          "objectID": 137441407622608,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeFactory.retired",
+          "objectID": 137441407623312,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeSession.__init__",
+          "objectID": 137441407619088,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "NativeSession.verify",
+          "objectID": 137441407619264,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "PinnedExecutable.__enter__",
+          "objectID": 137441407618560,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "PinnedExecutable.__exit__",
+          "objectID": 137441407618736,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "PinnedExecutable.__init__",
+          "objectID": 137441407278720,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "PinnedExecutable.close",
+          "objectID": 137441407618384,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "PinnedNativeDesktop.__init__",
+          "objectID": 137441407620144,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "PinnedNativeDesktop.apply_destination",
+          "objectID": 137441407620672,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "PinnedNativeDesktop.commit",
+          "objectID": 137441407621024,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "PinnedNativeDesktop.plan_destination",
+          "objectID": 137441407620496,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "PinnedNativeDesktop.refresh_destination",
+          "objectID": 137441407620848,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "PinnedNativeDesktop.retire_gestures",
+          "objectID": 137441407620320,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "complete_live_identities",
+          "objectID": 137441407618912,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "main",
+          "objectID": 137441407623840,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "request_runtime",
+          "objectID": 137441407624016,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        },
+        {
+          "symbol": "sanitize_environment",
+          "objectID": 137441410300240,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_runtime.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "service_runtime",
+      "objectID": 137441406966560,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228007,
+          "size": 17931,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228007,
+          "size": 17931,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228007,
+          "size": 17931,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228007,
+          "size": 17931,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "JournalStore.__init__",
+          "objectID": 137441407615216,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "JournalStore.read",
+          "objectID": 137441407615392,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "JournalStore.write",
+          "objectID": 137441407615568,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "RuntimeLease.__init__",
+          "objectID": 137441407616096,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "RuntimeLease.bound",
+          "objectID": 137441407616800,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "RuntimeLease.close",
+          "objectID": 137441407616976,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "RuntimeLease.publish_owner",
+          "objectID": 137441407616624,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "RuntimeLease.verify",
+          "objectID": 137441407616448,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "RuntimeLease.verify_namespace",
+          "objectID": 137441407616272,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "RuntimeService.__init__",
+          "objectID": 137441407617152,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "RuntimeService.close",
+          "objectID": 137441407618208,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "RuntimeService.housekeep",
+          "objectID": 137441407617680,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "RuntimeService.persist",
+          "objectID": 137441407617504,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "RuntimeService.run",
+          "objectID": 137441407618032,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "RuntimeService.snapshot",
+          "objectID": 137441407617328,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "RuntimeService.start",
+          "objectID": 137441407617856,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "atomic_write",
+          "objectID": 137441407615040,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "private_directory",
+          "objectID": 137441407279248,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "process_start",
+          "objectID": 137441407278896,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "read_private",
+          "objectID": 137441407285760,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "stop_runtime",
+          "objectID": 137441407615920,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        },
+        {
+          "symbol": "unresolved",
+          "objectID": 137441407615744,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/service_runtime.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "native_desktop",
+      "objectID": 137441410592464,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228001,
+          "size": 19092,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228001,
+          "size": 19092,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228001,
+          "size": 19092,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228001,
+          "size": 19092,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "bccbb7611d730b7103f2d9aaebf05b0ac4f66a2824b1ee42ad2cb45a6f0a0ba1",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "NativeDesktop.__getattr__",
+          "objectID": 137441407155568,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop.__init__",
+          "objectID": 137441408748880,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop._capture_source_impl",
+          "objectID": 137441407276080,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop._family_locked",
+          "objectID": 137441407274672,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop.apply_destination",
+          "objectID": 137441407275200,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop.capture_source",
+          "objectID": 137441407275904,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop.dispose",
+          "objectID": 137441407276608,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop.family",
+          "objectID": 137441407274496,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop.family_evidence",
+          "objectID": 137441407274848,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop.finish_capture_previews",
+          "objectID": 137441407276256,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop.plan_destination",
+          "objectID": 137441407275024,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop.refresh_destination",
+          "objectID": 137441407275376,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop.release_sources",
+          "objectID": 137441407276432,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop.retire_gestures",
+          "objectID": 137441407275552,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        },
+        {
+          "symbol": "NativeDesktop.target",
+          "objectID": 137441407275728,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/native_desktop.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "scene_manager",
+      "objectID": 137441406966400,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228006,
+          "size": 20290,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228006,
+          "size": 20290,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228006,
+          "size": 20290,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228006,
+          "size": 20290,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "Actor.__annotate_func__",
+          "objectID": 137441407279072,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "ManagedController.__init__",
+          "objectID": 137441407280304,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "ManagedController.direction_for",
+          "objectID": 137441407281536,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "ManagedController.event",
+          "objectID": 137441407282592,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "ManagedController.owns",
+          "objectID": 137441407281360,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "ManagedController.reserve_retirement_scope",
+          "objectID": 137441407281888,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "ManagedController.retire",
+          "objectID": 137441407282064,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "ManagedController.transport_failure",
+          "objectID": 137441407282416,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "ManagedController.validate_scope",
+          "objectID": 137441407281712,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "ManagedController.watchdog",
+          "objectID": 137441407282240,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "ManagedController.write_journal",
+          "objectID": 137441407281184,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.__init__",
+          "objectID": 137441407282768,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.activate",
+          "objectID": 137441407284352,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.begin_close",
+          "objectID": 137441407285408,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.claim",
+          "objectID": 137441407283824,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.close",
+          "objectID": 137441407285584,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.compress_intent",
+          "objectID": 137441407283120,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.discard_intent",
+          "objectID": 137441407283296,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.fail_ingress",
+          "objectID": 137441407284528,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.finish_ingress",
+          "objectID": 137441407284176,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.intent_for",
+          "objectID": 137441407282944,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.owns",
+          "objectID": 137441407283648,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.reap_idle",
+          "objectID": 137441407285232,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.request",
+          "objectID": 137441407284704,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.reserve",
+          "objectID": 137441407284000,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.source_paths",
+          "objectID": 137441407283472,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.state",
+          "objectID": 137441407284880,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        },
+        {
+          "symbol": "SceneManager.watchdog",
+          "objectID": 137441407285056,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_manager.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "scene_controller",
+      "objectID": 137441408905152,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228005,
+          "size": 23281,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228005,
+          "size": 23281,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228005,
+          "size": 23281,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228005,
+          "size": 23281,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "8e8935b83496aa85a16dd939e9961cee2bfcbcadd8d92bcbc8d335bcd353b11b",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "Scene.__annotate_func__",
+          "objectID": 137441408724208,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.__init__",
+          "objectID": 137441408724560,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.cleanup",
+          "objectID": 137441408727200,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.close",
+          "objectID": 137441408728256,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.commit_members",
+          "objectID": 137441408726848,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.direction_for",
+          "objectID": 137441408726496,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.event",
+          "objectID": 137441408727024,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.finish_cleanup",
+          "objectID": 137441408727728,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.fresh",
+          "objectID": 137441408725968,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.owns",
+          "objectID": 137441408725616,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.prepare",
+          "objectID": 137441408726672,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.reject",
+          "objectID": 137441408727552,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.request",
+          "objectID": 137441408725792,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.reserve_retirement_scope",
+          "objectID": 137441408726320,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.settle",
+          "objectID": 137441408727376,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.transport_failure",
+          "objectID": 137441408728080,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.validate_scope",
+          "objectID": 137441408726144,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.watchdog",
+          "objectID": 137441408727904,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "SceneController.write_journal",
+          "objectID": 137441408725440,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "ids",
+          "objectID": 137441408593136,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "key",
+          "objectID": 137441408799264,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        },
+        {
+          "symbol": "rectangle",
+          "objectID": 137441408722800,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "pipe_transport",
+      "objectID": 137441408694400,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228002,
+          "size": 8488,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228002,
+          "size": 8488,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228002,
+          "size": 8488,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228002,
+          "size": 8488,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "PipeTransport.__init__",
+          "objectID": 137441408757856,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py"
+        },
+        {
+          "symbol": "PipeTransport.close",
+          "objectID": 137441408759792,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py"
+        },
+        {
+          "symbol": "PipeTransport.dispatch_callbacks",
+          "objectID": 137441408758912,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py"
+        },
+        {
+          "symbol": "PipeTransport.ensure_outputs",
+          "objectID": 137441408758384,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py"
+        },
+        {
+          "symbol": "PipeTransport.fail",
+          "objectID": 137441408758736,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py"
+        },
+        {
+          "symbol": "PipeTransport.outputs",
+          "objectID": 137441408758208,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py"
+        },
+        {
+          "symbol": "PipeTransport.queue_callback",
+          "objectID": 137441408759088,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py"
+        },
+        {
+          "symbol": "PipeTransport.read",
+          "objectID": 137441408759440,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py"
+        },
+        {
+          "symbol": "PipeTransport.read_errors",
+          "objectID": 137441408759616,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py"
+        },
+        {
+          "symbol": "PipeTransport.send",
+          "objectID": 137441408758560,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py"
+        },
+        {
+          "symbol": "PipeTransport.set_callback",
+          "objectID": 137441408758032,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py"
+        },
+        {
+          "symbol": "PipeTransport.write",
+          "objectID": 137441408759264,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/pipe_transport.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "context_provider",
+      "objectID": 137441410592864,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/context_provider.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/context_provider.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26227999,
+          "size": 2651,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26227999,
+          "size": 2651,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26227999,
+          "size": 2651,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26227999,
+          "size": 2651,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "0e3daea910a49f44e63c6321859dd8598c4e610d16e1cc445070602e5bec1b78",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "NativeContextProvider.__call__",
+          "objectID": 137441407277488,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/context_provider.py"
+        },
+        {
+          "symbol": "NativeContextProvider.__init__",
+          "objectID": 137441407277312,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/context_provider.py"
+        },
+        {
+          "symbol": "monitor_fingerprint",
+          "objectID": 137441407276960,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/context_provider.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "recovery_runtime",
+      "objectID": 137441387937856,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228031,
+          "size": 35951,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228031,
+          "size": 35951,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228031,
+          "size": 35951,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228031,
+          "size": 35951,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "5c77942c9afdfbc87c8cc28a93d3285de191c66b1390d770859f22173cfae892",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "NativeRecovery.__init__",
+          "objectID": 137441387921824,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery._recover",
+          "objectID": 137441387926928,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.cancellation_candidate",
+          "objectID": 137441387926400,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.check_closures",
+          "objectID": 137441387925168,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.checked_clients",
+          "objectID": 137441387925872,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.close_helpers",
+          "objectID": 137441387925344,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.current",
+          "objectID": 137441387924816,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.descriptions",
+          "objectID": 137441387926048,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.finish_queries",
+          "objectID": 137441387926224,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.observe",
+          "objectID": 137441387925696,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.persist",
+          "objectID": 137441387924640,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.preflight",
+          "objectID": 137441387924992,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.prepare_plans",
+          "objectID": 137441387926752,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.query_desktop",
+          "objectID": 137441387925520,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.recover",
+          "objectID": 137441387927104,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        },
+        {
+          "symbol": "NativeRecovery.refresh_cancellation",
+          "objectID": 137441387926576,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_runtime.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "recovery_resources",
+      "objectID": 137441408692800,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_resources.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_resources.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228030,
+          "size": 16199,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228030,
+          "size": 16199,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228030,
+          "size": 16199,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228030,
+          "size": 16199,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "133edcf7b92aaa2f521af90922c571d1637ab8e8c9536a7cf57a6475fa18ce02",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "checked_material",
+          "objectID": 137441408754336,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_resources.py"
+        },
+        {
+          "symbol": "checked_renderer",
+          "objectID": 137441408754688,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_resources.py"
+        },
+        {
+          "symbol": "dispose_directory",
+          "objectID": 137441408755216,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_resources.py"
+        },
+        {
+          "symbol": "gated_process",
+          "objectID": 137441408754512,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_resources.py"
+        },
+        {
+          "symbol": "material_fd",
+          "objectID": 137441408753984,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_resources.py"
+        },
+        {
+          "symbol": "material_path",
+          "objectID": 137441408754160,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_resources.py"
+        },
+        {
+          "symbol": "process_start",
+          "objectID": 137441408749760,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_resources.py"
+        },
+        {
+          "symbol": "renderer_terminal_state",
+          "objectID": 137441408751168,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_resources.py"
+        },
+        {
+          "symbol": "retire_renderer",
+          "objectID": 137441408755040,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_resources.py"
+        },
+        {
+          "symbol": "verify_process",
+          "objectID": 137441408754864,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_resources.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "recovery_cancel",
+      "objectID": 137441387938336,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_cancel.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_cancel.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228049,
+          "size": 12331,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228049,
+          "size": 12331,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228049,
+          "size": 12331,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228049,
+          "size": 12331,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "8647a336a7b83ec5de7d60f63ccb0436f7b684f85879e43c7ae8f21ff499b219",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "checked_lease",
+          "objectID": 137441387924288,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_cancel.py"
+        },
+        {
+          "symbol": "checked_observation",
+          "objectID": 137441387924464,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_cancel.py"
+        },
+        {
+          "symbol": "lease_proof",
+          "objectID": 137441387922352,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_cancel.py"
+        },
+        {
+          "symbol": "observe",
+          "objectID": 137441387923760,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_cancel.py"
+        },
+        {
+          "symbol": "observe_once",
+          "objectID": 137441387921648,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_cancel.py"
+        },
+        {
+          "symbol": "original",
+          "objectID": 137441387922528,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_cancel.py"
+        },
+        {
+          "symbol": "projection",
+          "objectID": 137441387922000,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_cancel.py"
+        },
+        {
+          "symbol": "reason",
+          "objectID": 137441387923936,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_cancel.py"
+        },
+        {
+          "symbol": "validate",
+          "objectID": 137441387924112,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/recovery_cancel.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "readonly_ipc",
+      "objectID": 137441387939696,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228098,
+          "size": 19577,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228098,
+          "size": 19577,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228098,
+          "size": 19577,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228098,
+          "size": 19577,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "ReadonlyIPC.__init__",
+          "objectID": 137441387923232,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py"
+        },
+        {
+          "symbol": "ReadonlyIPC.assert_closed",
+          "objectID": 137441387923584,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py"
+        },
+        {
+          "symbol": "ReadonlyIPC.authority",
+          "objectID": 137441387928688,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py"
+        },
+        {
+          "symbol": "ReadonlyIPC.finish",
+          "objectID": 137441387929040,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py"
+        },
+        {
+          "symbol": "ReadonlyIPC.publish",
+          "objectID": 137441387928512,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py"
+        },
+        {
+          "symbol": "ReadonlyIPC.query",
+          "objectID": 137441387929216,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py"
+        },
+        {
+          "symbol": "ReadonlyIPC.register",
+          "objectID": 137441387928864,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py"
+        },
+        {
+          "symbol": "ReadonlyIPC.run",
+          "objectID": 137441387929392,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py"
+        },
+        {
+          "symbol": "ReadonlyIPC.snapshot",
+          "objectID": 137441387923408,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py"
+        },
+        {
+          "symbol": "checked_retained",
+          "objectID": 137441387927280,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py"
+        },
+        {
+          "symbol": "digest",
+          "objectID": 137441387927456,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/readonly_ipc.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "owned_commands",
+      "objectID": 137441408689280,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_commands.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_commands.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228039,
+          "size": 5619,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228039,
+          "size": 5619,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228039,
+          "size": 5619,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228039,
+          "size": 5619,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "OwnedCommands.__init__",
+          "objectID": 137441408755920,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_commands.py"
+        },
+        {
+          "symbol": "OwnedCommands.check_output",
+          "objectID": 137441408756448,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_commands.py"
+        },
+        {
+          "symbol": "OwnedCommands.classify",
+          "objectID": 137441408756096,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_commands.py"
+        },
+        {
+          "symbol": "OwnedCommands.run",
+          "objectID": 137441408756272,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_commands.py"
+        },
+        {
+          "symbol": "SealedFile.__enter__",
+          "objectID": 137441408755568,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_commands.py"
+        },
+        {
+          "symbol": "SealedFile.__exit__",
+          "objectID": 137441408755744,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_commands.py"
+        },
+        {
+          "symbol": "SealedFile.__init__",
+          "objectID": 137441408748528,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_commands.py"
+        },
+        {
+          "symbol": "SealedFile.close",
+          "objectID": 137441408755392,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_commands.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "helper_supervisor",
+      "objectID": 137441407229824,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228036,
+          "size": 14398,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228036,
+          "size": 14398,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228036,
+          "size": 14398,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228036,
+          "size": 14398,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "Keeper.__init__",
+          "objectID": 137441407152048,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "Keeper.abort",
+          "objectID": 137441407153632,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "Keeper.complete",
+          "objectID": 137441407153280,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "Keeper.detach",
+          "objectID": 137441407153984,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "Keeper.exchange",
+          "objectID": 137441407152752,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "Keeper.publish",
+          "objectID": 137441407152400,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "Keeper.read_terminal",
+          "objectID": 137441407153808,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "Keeper.register",
+          "objectID": 137441407152928,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "Keeper.released",
+          "objectID": 137441407153104,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "Keeper.snapshot",
+          "objectID": 137441407152224,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "Keeper.stop",
+          "objectID": 137441407153456,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "Keeper.verify",
+          "objectID": 137441407152576,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "await_terminal",
+          "objectID": 137441407154512,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "checked_keeper",
+          "objectID": 137441407154160,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "keeper_source",
+          "objectID": 137441407150640,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "read_terminal",
+          "objectID": 137441407150288,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        },
+        {
+          "symbol": "verify_keeper",
+          "objectID": 137441407154336,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_supervisor.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "owned_launch",
+      "objectID": 137441408695760,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_launch.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_launch.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228037,
+          "size": 8999,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228037,
+          "size": 8999,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228037,
+          "size": 8999,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228037,
+          "size": 8999,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "OwnedLaunch.__init__",
+          "objectID": 137441408444800,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_launch.py"
+        },
+        {
+          "symbol": "OwnedLaunch.complete",
+          "objectID": 137441407149056,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_launch.py"
+        },
+        {
+          "symbol": "checked_owned",
+          "objectID": 137441408757680,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_launch.py"
+        },
+        {
+          "symbol": "handoff_source",
+          "objectID": 137441408756976,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/owned_launch.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "helper_policy",
+      "objectID": 137441407232464,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_policy.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_policy.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228033,
+          "size": 1905,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228033,
+          "size": 1905,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228033,
+          "size": 1905,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228033,
+          "size": 1905,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "install",
+          "objectID": 137441408759968,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/helper_policy.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "timeout_adapter",
+      "objectID": 137441387941296,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/timeout_adapter.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/timeout_adapter.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228045,
+          "size": 867,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228045,
+          "size": 867,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228045,
+          "size": 867,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228045,
+          "size": 867,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "14ccc4078364fdced5a8fa9a499567dd0e2eb592ff1b7f88ad38a39743e9e165",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "check",
+          "objectID": 137441387929744,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/timeout_adapter.py"
+        },
+        {
+          "symbol": "prepare",
+          "objectID": 137441387929568,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/timeout_adapter.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "snapshot_cache",
+      "objectID": 137441408688320,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/snapshot_cache.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/snapshot_cache.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228008,
+          "size": 7588,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228008,
+          "size": 7588,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228008,
+          "size": 7588,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228008,
+          "size": 7588,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "21f0d47313c053964fd8e81736843d8b62ecadab5eee3ebba80ef5801e8bf8ee",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "SnapshotCache.__init__",
+          "objectID": 137441408746064,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/snapshot_cache.py"
+        },
+        {
+          "symbol": "SnapshotCache.pair",
+          "objectID": 137441408746592,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/snapshot_cache.py"
+        },
+        {
+          "symbol": "SnapshotCache.prune",
+          "objectID": 137441408747472,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/snapshot_cache.py"
+        },
+        {
+          "symbol": "SnapshotCache.publish",
+          "objectID": 137441408747296,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/snapshot_cache.py"
+        },
+        {
+          "symbol": "SnapshotCache.read",
+          "objectID": 137441408746416,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/snapshot_cache.py"
+        },
+        {
+          "symbol": "SnapshotCache.restore",
+          "objectID": 137441408747648,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/snapshot_cache.py"
+        },
+        {
+          "symbol": "SnapshotCache.stem",
+          "objectID": 137441408746240,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/snapshot_cache.py"
+        },
+        {
+          "symbol": "SnapshotCache.validate",
+          "objectID": 137441408746944,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/snapshot_cache.py"
+        },
+        {
+          "symbol": "SnapshotCache.write_atomic",
+          "objectID": 137441408747120,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/snapshot_cache.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "production_motion_6d9",
+      "objectID": 137441410594864,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228003,
+          "size": 51974,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228003,
+          "size": 51974,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228003,
+          "size": 51974,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228003,
+          "size": 51974,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "BasicDesktop.active",
+          "objectID": 137441410774144,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "BasicDesktop.capture",
+          "objectID": 137441410775376,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "BasicDesktop.clients",
+          "objectID": 137441410773968,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "BasicDesktop.commit",
+          "objectID": 137441410775552,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "BasicDesktop.family",
+          "objectID": 137441410775728,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "BasicDesktop.ipc",
+          "objectID": 137441410774496,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "BasicDesktop.monitors",
+          "objectID": 137441410774848,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "BasicDesktop.reduced",
+          "objectID": 137441410774320,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "BasicDesktop.select_destination",
+          "objectID": 137441410775200,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "BasicDesktop.source_screen",
+          "objectID": 137441410775024,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "BasicDesktop.target",
+          "objectID": 137441410774672,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.__init__",
+          "objectID": 137441408794864,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.audit",
+          "objectID": 137441408795040,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.commit",
+          "objectID": 137441408795216,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.drop",
+          "objectID": 137441408797504,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.failure",
+          "objectID": 137441408797680,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.finish_families",
+          "objectID": 137441408796448,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.freeze",
+          "objectID": 137441408796800,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.journal",
+          "objectID": 137441408795744,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.lookup",
+          "objectID": 137441408797152,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.matching",
+          "objectID": 137441408795392,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.prepare",
+          "objectID": 137441408796976,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.ready",
+          "objectID": 137441408797328,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.recover",
+          "objectID": 137441408795920,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.reject_reservation",
+          "objectID": 137441408796272,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.request",
+          "objectID": 137441408796096,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.reserve",
+          "objectID": 137441408796624,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.settle",
+          "objectID": 137441408797856,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.token",
+          "objectID": 137441408795568,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Controller.watchdog",
+          "objectID": 137441408798032,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Desktop.__init__",
+          "objectID": 137441410775904,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Desktop.capture",
+          "objectID": 137441410776608,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Desktop.capture_locked",
+          "objectID": 137441410776784,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Desktop.check_current",
+          "objectID": 137441410776256,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Desktop.janitor",
+          "objectID": 137441408794688,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Desktop.publish_crop",
+          "objectID": 137441410776432,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Desktop.validate_snapshot",
+          "objectID": 137441410776080,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "Handler.handle",
+          "objectID": 137441408798208,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "daemon",
+          "objectID": 137441410773792,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "key",
+          "objectID": 137441410765344,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "main",
+          "objectID": 137441408798736,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "native_family_plan",
+          "objectID": 137441410764816,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "rectangle",
+          "objectID": 137441410765872,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "send",
+          "objectID": 137441408798384,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        },
+        {
+          "symbol": "stop",
+          "objectID": 137441408798560,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/production_motion_6d9.py"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "batch_preview",
+      "objectID": 137441408687680,
+      "actualFile": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py",
+        "fd": 3,
+        "before": {
+          "device": 58,
+          "inode": 26228174,
+          "size": 25743,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "after": {
+          "device": 58,
+          "inode": 26228174,
+          "size": 25743,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedBefore": {
+          "device": 58,
+          "inode": 26228174,
+          "size": 25743,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "namedAfter": {
+          "device": 58,
+          "inode": 26228174,
+          "size": 25743,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746",
+        "error": null
+      },
+      "callables": [
+        {
+          "symbol": "BatchPreviews.__init__",
+          "objectID": 137441407155744,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews._check_preview_locks",
+          "objectID": 137441407274144,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews._closed",
+          "objectID": 137441407272384,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews._preview_lock_identity",
+          "objectID": 137441407273616,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews._preview_locks",
+          "objectID": 137441407273792,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews._receipt_guard",
+          "objectID": 137441407273264,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews._remaining",
+          "objectID": 137441407273088,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews._renderer_matches",
+          "objectID": 137441407271856,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews._renderer_witness",
+          "objectID": 137441407272208,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews._reserve",
+          "objectID": 137441407272912,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews._typed_equal",
+          "objectID": 137441407271680,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews.bind_renderer",
+          "objectID": 137441407272032,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews.check_family",
+          "objectID": 137441407272560,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews.discard",
+          "objectID": 137441407270976,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews.finish",
+          "objectID": 137441407274320,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews.require_disposable",
+          "objectID": 137441407271504,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews.require_idle",
+          "objectID": 137441407271328,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews.require_releasable",
+          "objectID": 137441407271152,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews.stage",
+          "objectID": 137441407155920,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "BatchPreviews.write_exclusive",
+          "objectID": 137441407272736,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "PinnedPNG.__enter__",
+          "objectID": 137441407155216,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "PinnedPNG.__exit__",
+          "objectID": 137441407155392,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "PinnedPNG.__init__",
+          "objectID": 137441407154688,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "PinnedPNG.check",
+          "objectID": 137441407154864,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "PinnedPNG.close",
+          "objectID": 137441407155040,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "crop_geometry",
+          "objectID": 137441407150816,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "file_identity",
+          "objectID": 137441408748704,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        },
+        {
+          "symbol": "png_dimensions",
+          "objectID": 137441408757504,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/batch_preview.py"
+        }
+      ],
+      "error": null
+    }
+  ],
+  "links": [
+    {
+      "left": "native_runtime.NativeDesktop",
+      "right": "native_desktop.NativeDesktop",
+      "actualObjectID": 110762108458752,
+      "expectedObjectID": 110762108458752,
+      "matched": true
+    },
+    {
+      "left": "native_runtime.PipeTransport",
+      "right": "pipe_transport.PipeTransport",
+      "actualObjectID": 110762106932000,
+      "expectedObjectID": 110762106932000,
+      "matched": true
+    },
+    {
+      "left": "native_runtime.RuntimeService",
+      "right": "service_runtime.RuntimeService",
+      "actualObjectID": 110762107438560,
+      "expectedObjectID": 110762107438560,
+      "matched": true
+    },
+    {
+      "left": "native_runtime.NativeContextProvider",
+      "right": "context_provider.NativeContextProvider",
+      "actualObjectID": 110762106796912,
+      "expectedObjectID": 110762106796912,
+      "matched": true
+    },
+    {
+      "left": "service_runtime.SceneManager",
+      "right": "scene_manager.SceneManager",
+      "actualObjectID": 110762108459760,
+      "expectedObjectID": 110762108459760,
+      "matched": true
+    },
+    {
+      "left": "scene_manager.SceneController",
+      "right": "scene_controller.SceneController",
+      "actualObjectID": 110762108236160,
+      "expectedObjectID": 110762108236160,
+      "matched": true
+    },
+    {
+      "left": "native_desktop.BatchPreviews",
+      "right": "batch_preview.BatchPreviews",
+      "actualObjectID": 110762109511344,
+      "expectedObjectID": 110762109511344,
+      "matched": true
+    },
+    {
+      "left": "native_desktop.OwnedCommands",
+      "right": "owned_commands.OwnedCommands",
+      "actualObjectID": 110762107405536,
+      "expectedObjectID": 110762107405536,
+      "matched": true
+    },
+    {
+      "left": "batch_preview.key",
+      "right": "scene_controller.key",
+      "actualObjectID": 137441408799264,
+      "expectedObjectID": 137441408799264,
+      "matched": true
+    },
+    {
+      "left": "batch_preview.rectangle",
+      "right": "scene_controller.rectangle",
+      "actualObjectID": 137441408722800,
+      "expectedObjectID": 137441408722800,
+      "matched": true
+    },
+    {
+      "left": "batch_preview.PipeTransport",
+      "right": "pipe_transport.PipeTransport",
+      "actualObjectID": 110762106932000,
+      "expectedObjectID": 110762106932000,
+      "matched": true
+    },
+    {
+      "left": "batch_preview.OwnedLaunch",
+      "right": "owned_launch.OwnedLaunch",
+      "actualObjectID": 110762107308432,
+      "expectedObjectID": 110762107308432,
+      "matched": true
+    },
+    {
+      "left": "batch_preview.Keeper",
+      "right": "helper_supervisor.Keeper",
+      "actualObjectID": 110762107548480,
+      "expectedObjectID": 110762107548480,
+      "matched": true
+    },
+    {
+      "left": "batch_preview.checked_renderer",
+      "right": "recovery_resources.checked_renderer",
+      "actualObjectID": 137441408754688,
+      "expectedObjectID": 137441408754688,
+      "matched": true
+    },
+    {
+      "left": "batch_preview.verify_process",
+      "right": "recovery_resources.verify_process",
+      "actualObjectID": 137441408754864,
+      "expectedObjectID": 137441408754864,
+      "matched": true
+    },
+    {
+      "left": "batch_preview.process_start",
+      "right": "recovery_resources.process_start",
+      "actualObjectID": 137441408749760,
+      "expectedObjectID": 137441408749760,
+      "matched": true
+    }
+  ],
+  "errors": [],
+  "usable": false,
+  "moduleToken": "3e9267af24c4c982e23e49315ae1847c0dcb1f118c71f77da4df74f92af7b1f0",
+  "rawEvidenceOnly": true
+}

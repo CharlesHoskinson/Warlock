@@ -1,0 +1,92 @@
+Running as unit: qa-harness-b445175b576949a9ba09828623ace399.scope; invocation ID: ca0c51385bf9435aaacf3ee2878a05b1
+test_absolute_timeout_is_not_reset_for_chunks (test_readonly_ipc.ReadonlyKernelTests.test_absolute_timeout_is_not_reset_for_chunks) ... ok
+test_actual_peer_eof_fd_and_durable_history_before_return (test_readonly_ipc.ReadonlyKernelTests.test_actual_peer_eof_fd_and_durable_history_before_return) ... ok
+test_all_exact_fixed_requests_use_original_top_level_shapes (test_readonly_ipc.ReadonlyKernelTests.test_all_exact_fixed_requests_use_original_top_level_shapes) ... ok
+test_changed_socket_identity_during_reply_refuses (test_readonly_ipc.ReadonlyKernelTests.test_changed_socket_identity_during_reply_refuses) ... ok
+test_completion_fsync_failure_never_returns_bytes (test_readonly_ipc.ReadonlyKernelTests.test_completion_fsync_failure_never_returns_bytes) ... ok
+test_direct_path_does_not_touch_keeper_or_execute_helper (test_readonly_ipc.ReadonlyKernelTests.test_direct_path_does_not_touch_keeper_or_execute_helper) ... ok
+test_exact_selected_peer_change_refuses_before_data_request (test_readonly_ipc.ReadonlyKernelTests.test_exact_selected_peer_change_refuses_before_data_request) ... ok
+test_extra_flags_or_effect_or_user_expression_never_enter_direct_path (test_readonly_ipc.ReadonlyKernelTests.test_extra_flags_or_effect_or_user_expression_never_enter_direct_path) ... ok
+test_healthy_parallel_rows_do_not_hold_manager_lock_during_io (test_readonly_ipc.ReadonlyKernelTests.test_healthy_parallel_rows_do_not_hold_manager_lock_during_io) ... ok
+test_history_capacity_archives_only_closed_rows_before_connection (test_readonly_ipc.ReadonlyKernelTests.test_history_capacity_archives_only_closed_rows_before_connection) ... ok
+test_normal_factory_closure_refuses_actual_pending_connection (test_readonly_ipc.ReadonlyKernelTests.test_normal_factory_closure_refuses_actual_pending_connection) ... ok
+test_oversized_reply_refuses_and_closes_actual_descriptor (test_readonly_ipc.ReadonlyKernelTests.test_oversized_reply_refuses_and_closes_actual_descriptor) ... ok
+test_owner_replacement_during_reply_refuses (test_readonly_ipc.ReadonlyKernelTests.test_owner_replacement_during_reply_refuses) ... ok
+test_partial_json_even_with_eof_is_terminal_refusal (test_readonly_ipc.ReadonlyKernelTests.test_partial_json_even_with_eof_is_terminal_refusal) ... ok
+test_postdisk_owner_replacement_revokes_completed_partial_proof (test_readonly_ipc.ReadonlyKernelTests.test_postdisk_owner_replacement_revokes_completed_partial_proof) ... ok
+test_registration_fsync_failure_prevents_query_send_and_latches (test_readonly_ipc.ReadonlyKernelTests.test_registration_fsync_failure_prevents_query_send_and_latches) ... ok
+test_retained_history_schema_does_not_bless_effect_or_partial_return (test_readonly_ipc.ReadonlyKernelTests.test_retained_history_schema_does_not_bless_effect_or_partial_return) ... ok
+test_source_alias_and_executable_path_replacement_refuse (test_readonly_ipc.ReadonlyKernelTests.test_source_alias_and_executable_path_replacement_refuse) ... ok
+test_wrong_shape_and_invalid_utf8_refuse (test_readonly_ipc.ReadonlyKernelTests.test_wrong_shape_and_invalid_utf8_refuse) ... ok
+test_actual_valid_file_replacement_and_hardlink_alias_refuse (test_readonly_longevity.LongevityKernelTests.test_actual_valid_file_replacement_and_hardlink_alias_refuse) ... ok
+test_all_actual_pending_connections_refuse_capacity_before_new_send (test_readonly_longevity.LongevityKernelTests.test_all_actual_pending_connections_refuse_capacity_before_new_send) ... ok
+test_archive_directory_fsync_fault_keeps_unreferenced_orphan (test_readonly_longevity.LongevityKernelTests.test_archive_directory_fsync_fault_keeps_unreferenced_orphan) ... ok
+test_archive_file_fsync_fault_retains_old_journal_and_prevents_send (test_readonly_longevity.LongevityKernelTests.test_archive_file_fsync_fault_retains_old_journal_and_prevents_send) ... ok
+test_archive_io_block_does_not_hold_service_reservation_or_row_lock (test_readonly_longevity.LongevityKernelTests.test_archive_io_block_does_not_hold_service_reservation_or_row_lock) ... ok
+test_archive_readback_fault_never_publishes_tip (test_readonly_longevity.LongevityKernelTests.test_archive_readback_fault_never_publishes_tip) ... ok
+test_closed_refusal_archives_without_becoming_returned_data (test_readonly_longevity.LongevityKernelTests.test_closed_refusal_archives_without_becoming_returned_data) ... ok
+test_concurrent_new_row_survives_archive_plan_and_tip_commit (test_readonly_longevity.LongevityKernelTests.test_concurrent_new_row_survives_archive_plan_and_tip_commit) ... FAIL
+test_corrupt_archive_bytes_even_with_stable_inode_refuse (test_readonly_longevity.LongevityKernelTests.test_corrupt_archive_bytes_even_with_stable_inode_refuse) ... ok
+test_failed_tip_publication_preserves_old_memory_and_disk (test_readonly_longevity.LongevityKernelTests.test_failed_tip_publication_preserves_old_memory_and_disk) ... ok
+test_genuine_640_queries_exceed_original_512_without_discard_or_replay (test_readonly_longevity.LongevityKernelTests.test_genuine_640_queries_exceed_original_512_without_discard_or_replay) ... ERROR
+test_journal_published_then_writer_crashes_retains_verifiable_disk_tip (test_readonly_longevity.LongevityKernelTests.test_journal_published_then_writer_crashes_retains_verifiable_disk_tip) ... ok
+test_live_postdisk_confirmation_reference_cannot_be_reclaimed (test_readonly_longevity.LongevityKernelTests.test_live_postdisk_confirmation_reference_cannot_be_reclaimed) ... ok
+test_missing_or_wrong_epoch_digest_tip_refuses (test_readonly_longevity.LongevityKernelTests.test_missing_or_wrong_epoch_digest_tip_refuses) ... ok
+test_new_actual_lease_nonce_empty_current_ledger_keeps_full_predecessor (test_readonly_longevity.LongevityKernelTests.test_new_actual_lease_nonce_empty_current_ledger_keeps_full_predecessor) ... ok
+test_pending_actual_connection_survives_disjoint_closed_reclamation (test_readonly_longevity.LongevityKernelTests.test_pending_actual_connection_survives_disjoint_closed_reclamation) ... ok
+test_predecessor_preserves_pending_without_publishing_completion_or_replay (test_readonly_longevity.LongevityKernelTests.test_predecessor_preserves_pending_without_publishing_completion_or_replay) ... ok
+test_tip_published_before_in_memory_reclamation (test_readonly_longevity.LongevityKernelTests.test_tip_published_before_in_memory_reclamation) ... ok
+test_valid_archive_directory_replacement_refuses (test_readonly_longevity.LongevityKernelTests.test_valid_archive_directory_replacement_refuses) ... ok
+
+======================================================================
+ERROR: test_genuine_640_queries_exceed_original_512_without_discard_or_replay (test_readonly_longevity.LongevityKernelTests.test_genuine_640_queries_exceed_original_512_without_discard_or_replay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_readonly_longevity.py", line 39, in test_genuine_640_queries_exceed_original_512_without_discard_or_replay
+    self.assertEqual(self.query(), b'[]')
+                     ~~~~~~~~~~^^
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_readonly_ipc.py", line 70, in query
+    return self.reader.query(wire,shape,timeout,1)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_ipc.py", line 219, in query
+    owned = set()
+               ^^
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_ipc.py", line 310, in _query
+    if error is not None:
+           ^^^^^^^^^^^^^^
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_ipc.py", line 137, in authority
+    validate_storage(retained, root=self.root, environment=self.issuer['environment'], guard=self.guard)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_ipc.py", line 443, in validate_storage
+    if not isinstance(value, dict) or not isinstance(value.get('issuer'), dict):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_ipc.py", line 428, in _validate_dataset
+    value['archiveDirectory'] != store.directory or not isinstance(value['issuer'], dict)):
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_ipc.py", line 414, in _validate_rows
+    keeper = {'servicePID': issuer['pid'], 'serviceStart': issuer['start'],
+              'rootIdentity': issuer['rootIdentity']}
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_ipc.py", line 363, in _checked_active
+    info=where.lstat()
+    
+ValueError: retained read-only source is not this reviewed implementation
+
+======================================================================
+FAIL: test_concurrent_new_row_survives_archive_plan_and_tip_commit (test_readonly_longevity.LongevityKernelTests.test_concurrent_new_row_survives_archive_plan_and_tip_commit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_readonly_longevity.py", line 163, in test_concurrent_new_row_survives_archive_plan_and_tip_commit
+    self.assertEqual(errors, [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: Lists differ: [ValueError('bounded active or archived rows required')] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+ValueError('bounded active or archived rows required')
+
+- [ValueError('bounded active or archived rows required')]
++ []
+
+----------------------------------------------------------------------
+Ran 38 tests in 66.440s
+
+FAILED (failures=1, errors=1)

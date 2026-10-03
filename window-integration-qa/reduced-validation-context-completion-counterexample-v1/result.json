@@ -1,0 +1,59 @@
+{
+  "result": "actual cue precedes completion; original strict outcome later completes",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-60c511900f994c6598bff9b6910e0551.scope",
+    "coreLimit": 1
+  },
+  "sourceSHA256": {
+    "test_socket_frontend.py": "5cde825dffd77ebc9684cf9a55e48ffa8b23ec9eb08c57242b7096c437902f2b",
+    "socket_frontend.py": "0ea4c81cbf975104bb4ae17f9a8807f4af74a974a793a4b36a0aac7569c2647f",
+    "scene_controller.py": "b7c6396ef91b0c6dca9b8bb2caf7b9e5a75db90ab94f20f499b3c8c2fcfa6a4f",
+    "scene_manager.py": "3f2f3aa5e2f0f1a2dd108acccfa4372761dda966d672741556b8b709bf8edd41"
+  },
+  "cue": {
+    "pendingEmpty": true,
+    "activeSceneCount": 1,
+    "sceneReceipt": 2,
+    "validated": false,
+    "commits": [],
+    "elapsedSeconds": 0.006082431005779654
+  },
+  "originalLatestReceipt": 2,
+  "finalReceipt": 2,
+  "originalOperation": "restore",
+  "nativeEndpointAlreadySatisfied": true,
+  "actualFakeEffects": [
+    [
+      "restore",
+      [
+        "0xaa01",
+        "aa01",
+        41
+      ],
+      true
+    ],
+    [
+      "restore",
+      [
+        "0xbb02",
+        "bb02",
+        42
+      ],
+      false
+    ],
+    [
+      "restore",
+      [
+        "0xcc03",
+        "cc03",
+        43
+      ],
+      false
+    ]
+  ],
+  "elapsedSeconds": 0.009529450006084517,
+  "originalDeadlineSeconds": 2,
+  "allOriginalOutcomeAssertionsPreserved": true,
+  "nativeLaunch": false,
+  "productChanged": false
+}

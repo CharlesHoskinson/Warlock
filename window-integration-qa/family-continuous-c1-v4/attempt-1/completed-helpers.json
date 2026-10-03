@@ -1,0 +1,5611 @@
+{
+  "config": {
+    "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790902794_913863088",
+    "compositor": {
+      "pid": 1991961,
+      "start": "12526726"
+    },
+    "socket": "/run/user/1000/wqa/62ea/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790902794_913863088/.socket.sock",
+    "socketIdentity": [
+      84,
+      333728,
+      1000
+    ],
+    "versionSHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+    "helpers": {
+      "snap": {
+        "wrapper": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups",
+        "wrapperSHA256": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+        "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+        "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+        "invocation": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups"
+      },
+      "shell": {
+        "wrapper": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell",
+        "wrapperSHA256": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+        "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+        "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+        "invocation": "omarchy-shell"
+      }
+    },
+    "log": "/run/user/1000/wqa/62ea/taskbar-home/helper-events.jsonl",
+    "allowed": [
+      "hydrate",
+      "inactive-fileDrag",
+      "forget-closed:0x56a489c36610:18000000:1992424",
+      "forget-closed:0x56a489f902f0:18000002:1992424",
+      "forget-closed:0x56a48a46e8d0:18000003:1992424",
+      "forget-closed:0x56a489a45800:18000001:1992424"
+    ],
+    "queryTaskbar": {
+      "path": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-taskbar",
+      "sha256": "58215e6cb07b364988a0d5c38e9a4f63d7803e2b7f78481ea3a7104fa55f02e1",
+      "python": "/usr/bin/python3",
+      "pythonSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+    },
+    "queryEnvironment": {
+      "HOME": "/run/user/1000/wqa/62ea/taskbar-home",
+      "PATH": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin:/home/hoskinson/window-integration-qa/family-continuous-c1-v4/payload/omarchy/bin:/usr/bin",
+      "XDG_RUNTIME_DIR": "/run/user/1000/wqa/62ea",
+      "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790902794_913863088",
+      "OMARCHY_PATH": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/payload/omarchy",
+      "WINDOW_QA_HELPER_CONFIG": "/run/user/1000/wqa/62ea/taskbar-home/helper-config.json"
+    },
+    "queryRoots": {
+      "qs": {
+        "identity": {
+          "pid": 1992100,
+          "start": "12526832",
+          "pgid": 1992100,
+          "parent": 1991844
+        },
+        "argv": [
+          "/usr/bin/qs",
+          "-p",
+          "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/payload/omarchy/shell"
+        ],
+        "config": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/payload/omarchy/shell",
+        "executable": "/usr/bin/quickshell",
+        "executableSHA256": "2dc99382c032710fe495ed115cdee9dc9c69bdb3a21af4d86a9a8ea16733069b",
+        "configSHA256": "4a4b7694e5b9e0bd952ce0efa2d6dc2cea44cdfa98cc2f442e40fe41cbc1beab"
+      },
+      "harness": {
+        "identity": {
+          "pid": 1991844,
+          "start": "12526558",
+          "pgid": 1991844,
+          "parent": 1275790
+        },
+        "argv": [
+          "/usr/bin/python3",
+          "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/native_integration.py",
+          "--attempt",
+          "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1"
+        ],
+        "source": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/native_integration.py",
+        "sourceSHA256": "efd36e6b224e4e675531bf710a8e3ecd98e6067fdf11ae8ab54af994e22e09e3",
+        "executable": "/usr/bin/python3.14",
+        "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+      },
+      "service": {
+        "identity": {
+          "pid": 1992560,
+          "start": "12527073",
+          "pgid": 1992560,
+          "parent": 1991844
+        },
+        "argv": [
+          "/usr/bin/python3",
+          "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/service_observer.py",
+          "--root",
+          "/run/user/1000/wqa/62ea/hypr-window-motion/qa-family-service",
+          "--session",
+          "efb50993780079460b0cbed1363e2166a2de1d9f_1790902794_913863088",
+          "--pid",
+          "1991961",
+          "--start",
+          "12526726",
+          "--display",
+          "wayland-1",
+          "--producer",
+          "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/hypr-motion-renderer-staged",
+          "--producer-sha256",
+          "824173e2e1461a0f32bb101ee8daa6e6de09b6eb48f4484f07bc64510db0a02c",
+          "--core",
+          "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/payload/home/.local/bin/hypr-windowctl-core",
+          "--core-sha256",
+          "30232bb4ffbfca0f0a34dd677ea4bc9fc53f8828bf75c662ce8a0ec15f35db3a",
+          "--evidence",
+          "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/attempt-1/service-evidence.json"
+        ],
+        "executable": "/usr/bin/python3.14",
+        "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+        "source": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/service_observer.py",
+        "sourceSHA256": "7b030d94acdab271ce67715223c25de230ece090fbb00dfa7da0ccb0d0c017b6",
+        "sources": {
+          "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/native_desktop.py": "a8a245a11a8cfd2d03c9abab24c46474a4601e5d4f2b3a389fa6045d7b2cf39d",
+          "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/production_motion_6d9.py": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+          "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/scene_controller.py": "459135eec7abd238b9366c775cec39df72d75312b6a2ef6850cb1fdf655a7ba5",
+          "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/native_runtime.py": "26d0cd2a1f9eddb88024073fa12e8bd9f5fb88215df3a35be723b63dd440c7bc",
+          "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/context_provider.py": "0e3daea910a49f44e63c6321859dd8598c4e610d16e1cc445070602e5bec1b78",
+          "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/service_runtime.py": "d48e1c3133bf84bd4a9fc3539060e05ce83c8c90f36b023bb5aeca6da832b615"
+        }
+      }
+    },
+    "serviceMembers": [
+      {
+        "address": "0x56a489c36610",
+        "stableId": "18000000",
+        "pid": 1992424
+      },
+      {
+        "address": "0x56a489f902f0",
+        "stableId": "18000002",
+        "pid": 1992424
+      },
+      {
+        "address": "0x56a48a46e8d0",
+        "stableId": "18000003",
+        "pid": 1992424
+      }
+    ],
+    "serviceTargetLimitPerMember": 4,
+    "serviceRefreshLimit": 9
+  },
+  "events": [
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1991961,
+          "pid": 1991961,
+          "start": "12526726"
+        }
+      ],
+      "args": [
+        "hydrate"
+      ],
+      "class": "compositor",
+      "delegate": {
+        "parent": 1992247,
+        "pgid": 1991961,
+        "pid": 1992292,
+        "start": "12526860"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "hydrate",
+      "queryRoot": null,
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902795763525964,
+      "wrapper": {
+        "parent": 1991961,
+        "pgid": 1991961,
+        "pid": 1992247,
+        "start": "12526856"
+      }
+    },
+    {
+      "class": "compositor",
+      "delegate": {
+        "parent": 1992247,
+        "pgid": 1991961,
+        "pid": 1992292,
+        "start": "12526860"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "hydrate",
+      "queryRoot": null,
+      "serviceOperation": null,
+      "timeNs": 1790902795827254349,
+      "wrapper": {
+        "parent": 1991961,
+        "pgid": 1991961,
+        "pid": 1992247,
+        "start": "12526856"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1991961,
+          "pid": 1991961,
+          "start": "12526726"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "fileDrag",
+        "false",
+        "100",
+        "100",
+        "0",
+        "113148703"
+      ],
+      "class": "compositor",
+      "delegate": {
+        "parent": 1992332,
+        "pgid": 1991961,
+        "pid": 1992359,
+        "start": "12526870"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "inactive-fileDrag",
+      "queryRoot": null,
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902795860115150,
+      "wrapper": {
+        "parent": 1991961,
+        "pgid": 1991961,
+        "pid": 1992332,
+        "start": "12526866"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992295,
+          "start": "12526861"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992344,
+        "pgid": 1992100,
+        "pid": 1992373,
+        "start": "12526871"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992344:12526868",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902795876243763,
+      "wrapper": {
+        "parent": 1992295,
+        "pgid": 1992100,
+        "pid": 1992344,
+        "start": "12526868"
+      }
+    },
+    {
+      "class": "compositor",
+      "delegate": {
+        "parent": 1992332,
+        "pgid": 1991961,
+        "pid": 1992359,
+        "start": "12526870"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "inactive-fileDrag",
+      "queryRoot": null,
+      "serviceOperation": null,
+      "timeNs": 1790902795885544800,
+      "wrapper": {
+        "parent": 1991961,
+        "pgid": 1991961,
+        "pid": 1992332,
+        "start": "12526866"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1992344,
+        "pgid": 1992100,
+        "pid": 1992373,
+        "start": "12526871"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1992344:12526868",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902795931292471,
+      "wrapper": {
+        "parent": 1992295,
+        "pgid": 1992100,
+        "pid": 1992344,
+        "start": "12526868"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992422,
+          "start": "12526953"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992432,
+        "pgid": 1992100,
+        "pid": 1992436,
+        "start": "12526972"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992432:12526959",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902796883998496,
+      "wrapper": {
+        "parent": 1992422,
+        "pgid": 1992100,
+        "pid": 1992432,
+        "start": "12526959"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1992432,
+        "pgid": 1992100,
+        "pid": 1992436,
+        "start": "12526972"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1992432:12526959",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902796943434763,
+      "wrapper": {
+        "parent": 1992422,
+        "pgid": 1992100,
+        "pid": 1992432,
+        "start": "12526959"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992519,
+          "start": "12527043"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992524,
+        "pgid": 1992100,
+        "pid": 1992531,
+        "start": "12527052"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992524:12527049",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902797682934627,
+      "wrapper": {
+        "parent": 1992519,
+        "pgid": 1992100,
+        "pid": 1992524,
+        "start": "12527049"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1992524,
+        "pgid": 1992100,
+        "pid": 1992531,
+        "start": "12527052"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1992524:12527049",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902797734598985,
+      "wrapper": {
+        "parent": 1992519,
+        "pgid": 1992100,
+        "pid": 1992524,
+        "start": "12527049"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489c36610\", \"stableId\": \"18000000\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992599,
+        "pgid": 1992560,
+        "pid": 1992602,
+        "start": "12527101"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489c36610:18000000:1992424:1",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489c36610:18000000:1992424",
+      "timeNs": 1790902798167737933,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1992599,
+        "start": "12527097"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1992599,
+        "pgid": 1992560,
+        "pid": 1992602,
+        "start": "12527101"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionTarget:0x56a489c36610:18000000:1992424:1",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionTarget:0x56a489c36610:18000000:1992424",
+      "timeNs": 1790902798196993205,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1992599,
+        "start": "12527097"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489f902f0\", \"stableId\": \"18000002\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992650,
+        "pgid": 1992560,
+        "pid": 1992659,
+        "start": "12527112"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489f902f0:18000002:1992424:1",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489f902f0:18000002:1992424",
+      "timeNs": 1790902798284877688,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1992650,
+        "start": "12527109"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1992650,
+        "pgid": 1992560,
+        "pid": 1992659,
+        "start": "12527112"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionTarget:0x56a489f902f0:18000002:1992424:1",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionTarget:0x56a489f902f0:18000002:1992424",
+      "timeNs": 1790902798317392852,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1992650,
+        "start": "12527109"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992656,
+          "start": "12527109"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992669,
+        "pgid": 1992100,
+        "pid": 1992684,
+        "start": "12527121"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992669:12527117",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902798373855968,
+      "wrapper": {
+        "parent": 1992656,
+        "pgid": 1992100,
+        "pid": 1992669,
+        "start": "12527117"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a48a46e8d0\", \"stableId\": \"18000003\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992683,
+        "pgid": 1992560,
+        "pid": 1992686,
+        "start": "12527124"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424:1",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424",
+      "timeNs": 1790902798404140581,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1992683,
+        "start": "12527121"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1992669,
+        "pgid": 1992100,
+        "pid": 1992684,
+        "start": "12527121"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1992669:12527117",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902798432968096,
+      "wrapper": {
+        "parent": 1992656,
+        "pgid": 1992100,
+        "pid": 1992669,
+        "start": "12527117"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1992683,
+        "pgid": 1992560,
+        "pid": 1992686,
+        "start": "12527124"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424:1",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424",
+      "timeNs": 1790902798434198920,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1992683,
+        "start": "12527121"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992713,
+          "start": "12527133"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992738,
+        "pgid": 1992100,
+        "pid": 1992748,
+        "start": "12527143"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992738:12527139",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902798592517056,
+      "wrapper": {
+        "parent": 1992713,
+        "pgid": 1992100,
+        "pid": 1992738,
+        "start": "12527139"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1992738,
+        "pgid": 1992100,
+        "pid": 1992748,
+        "start": "12527143"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1992738:12527139",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902798659301429,
+      "wrapper": {
+        "parent": 1992713,
+        "pgid": 1992100,
+        "pid": 1992738,
+        "start": "12527139"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992866,
+          "start": "12527165"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992877,
+        "pgid": 1992100,
+        "pid": 1992878,
+        "start": "12527175"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992877:12527172",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902798915274890,
+      "wrapper": {
+        "parent": 1992866,
+        "pgid": 1992100,
+        "pid": 1992877,
+        "start": "12527172"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1992877,
+        "pgid": 1992100,
+        "pid": 1992878,
+        "start": "12527175"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1992877:12527172",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902798978015145,
+      "wrapper": {
+        "parent": 1992866,
+        "pgid": 1992100,
+        "pid": 1992877,
+        "start": "12527172"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1991844,
+          "pid": 1992913,
+          "start": "12527195"
+        },
+        {
+          "parent": 1275790,
+          "pgid": 1991844,
+          "pid": 1991844,
+          "start": "12526558"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992928,
+        "pgid": 1991844,
+        "pid": 1992930,
+        "start": "12527205"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "harness-list-json",
+      "queryRoot": "harness",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902799207778849,
+      "wrapper": {
+        "parent": 1992913,
+        "pgid": 1991844,
+        "pid": 1992928,
+        "start": "12527201"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992912,
+          "start": "12527195"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992929,
+        "pgid": 1992100,
+        "pid": 1992931,
+        "start": "12527205"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992929:12527201",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902799211836512,
+      "wrapper": {
+        "parent": 1992912,
+        "pgid": 1992100,
+        "pid": 1992929,
+        "start": "12527201"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1992928,
+        "pgid": 1991844,
+        "pid": 1992930,
+        "start": "12527205"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "harness-list-json",
+      "queryRoot": "harness",
+      "serviceOperation": null,
+      "timeNs": 1790902799265818687,
+      "wrapper": {
+        "parent": 1992913,
+        "pgid": 1991844,
+        "pid": 1992928,
+        "start": "12527201"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1992929,
+        "pgid": 1992100,
+        "pid": 1992931,
+        "start": "12527205"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1992929:12527201",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902799274577775,
+      "wrapper": {
+        "parent": 1992912,
+        "pgid": 1992100,
+        "pid": 1992929,
+        "start": "12527201"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992966,
+          "start": "12527223"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992988,
+        "pgid": 1992100,
+        "pid": 1992996,
+        "start": "12527236"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992988:12527231",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902799517575749,
+      "wrapper": {
+        "parent": 1992966,
+        "pgid": 1992100,
+        "pid": 1992988,
+        "start": "12527231"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionRefresh",
+        "{}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992997,
+        "pgid": 1992560,
+        "pid": 1992998,
+        "start": "12527239"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionRefresh:1",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902799556922695,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1992997,
+        "start": "12527236"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1992988,
+        "pgid": 1992100,
+        "pid": 1992996,
+        "start": "12527236"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1992988:12527231",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902799582658194,
+      "wrapper": {
+        "parent": 1992966,
+        "pgid": 1992100,
+        "pid": 1992988,
+        "start": "12527231"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1992997,
+        "pgid": 1992560,
+        "pid": 1992998,
+        "start": "12527239"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionRefresh:1",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902799588020050,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1992997,
+        "start": "12527236"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionRefresh",
+        "{}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993013,
+        "pgid": 1992560,
+        "pid": 1993015,
+        "start": "12527248"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionRefresh:2",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902799638376068,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993013,
+        "start": "12527243"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993013,
+        "pgid": 1992560,
+        "pid": 1993015,
+        "start": "12527248"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionRefresh:2",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902799673429322,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993013,
+        "start": "12527243"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionRefresh",
+        "{}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993049,
+        "pgid": 1992560,
+        "pid": 1993065,
+        "start": "12527256"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionRefresh:3",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902799721540551,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993049,
+        "start": "12527252"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993049,
+        "pgid": 1992560,
+        "pid": 1993065,
+        "start": "12527256"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionRefresh:3",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902799753045766,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993049,
+        "start": "12527252"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993038,
+          "start": "12527251"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993073,
+        "pgid": 1992100,
+        "pid": 1993092,
+        "start": "12527263"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993073:12527259",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902799792848410,
+      "wrapper": {
+        "parent": 1993038,
+        "pgid": 1992100,
+        "pid": 1993073,
+        "start": "12527259"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489c36610\", \"stableId\": \"18000000\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993077,
+        "pgid": 1992560,
+        "pid": 1993093,
+        "start": "12527265"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489c36610:18000000:1992424:2",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489c36610:18000000:1992424",
+      "timeNs": 1790902799809012358,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993077,
+        "start": "12527261"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993077,
+        "pgid": 1992560,
+        "pid": 1993093,
+        "start": "12527265"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionTarget:0x56a489c36610:18000000:1992424:2",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionTarget:0x56a489c36610:18000000:1992424",
+      "timeNs": 1790902799839995427,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993077,
+        "start": "12527261"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993073,
+        "pgid": 1992100,
+        "pid": 1993092,
+        "start": "12527263"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1993073:12527259",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902799857504480,
+      "wrapper": {
+        "parent": 1993038,
+        "pgid": 1992100,
+        "pid": 1993073,
+        "start": "12527259"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489f902f0\", \"stableId\": \"18000002\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993183,
+        "pgid": 1992560,
+        "pid": 1993199,
+        "start": "12527282"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489f902f0:18000002:1992424:2",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489f902f0:18000002:1992424",
+      "timeNs": 1790902799983407461,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993183,
+        "start": "12527278"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993183,
+        "pgid": 1992560,
+        "pid": 1993199,
+        "start": "12527282"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionTarget:0x56a489f902f0:18000002:1992424:2",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionTarget:0x56a489f902f0:18000002:1992424",
+      "timeNs": 1790902800015286057,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993183,
+        "start": "12527278"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a48a46e8d0\", \"stableId\": \"18000003\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993253,
+        "pgid": 1992560,
+        "pid": 1993258,
+        "start": "12527297"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424:2",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424",
+      "timeNs": 1790902800135021286,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993253,
+        "start": "12527294"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993253,
+        "pgid": 1992560,
+        "pid": 1993258,
+        "start": "12527297"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424:2",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424",
+      "timeNs": 1790902800164066788,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993253,
+        "start": "12527294"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993289,
+          "start": "12527313"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993294,
+        "pgid": 1992100,
+        "pid": 1993296,
+        "start": "12527324"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993294:12527320",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902800401694979,
+      "wrapper": {
+        "parent": 1993289,
+        "pgid": 1992100,
+        "pid": 1993294,
+        "start": "12527320"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993294,
+        "pgid": 1992100,
+        "pid": 1993296,
+        "start": "12527324"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1993294:12527320",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902800457221729,
+      "wrapper": {
+        "parent": 1993289,
+        "pgid": 1992100,
+        "pid": 1993294,
+        "start": "12527320"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489c36610\", \"stableId\": \"18000000\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993439,
+        "pgid": 1992560,
+        "pid": 1993440,
+        "start": "12527407"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489c36610:18000000:1992424:3",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489c36610:18000000:1992424",
+      "timeNs": 1790902801231529703,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993439,
+        "start": "12527404"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993439,
+        "pgid": 1992560,
+        "pid": 1993440,
+        "start": "12527407"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionTarget:0x56a489c36610:18000000:1992424:3",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionTarget:0x56a489c36610:18000000:1992424",
+      "timeNs": 1790902801258207664,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993439,
+        "start": "12527404"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993436,
+          "start": "12527403"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993447,
+        "pgid": 1992100,
+        "pid": 1993453,
+        "start": "12527413"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993447:12527409",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902801290247870,
+      "wrapper": {
+        "parent": 1993436,
+        "pgid": 1992100,
+        "pid": 1993447,
+        "start": "12527409"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993447,
+        "pgid": 1992100,
+        "pid": 1993453,
+        "start": "12527413"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1993447:12527409",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902801350702137,
+      "wrapper": {
+        "parent": 1993436,
+        "pgid": 1992100,
+        "pid": 1993447,
+        "start": "12527409"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489f902f0\", \"stableId\": \"18000002\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993462,
+        "pgid": 1992560,
+        "pid": 1993465,
+        "start": "12527420"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489f902f0:18000002:1992424:3",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489f902f0:18000002:1992424",
+      "timeNs": 1790902801363097180,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993462,
+        "start": "12527417"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993462,
+        "pgid": 1992560,
+        "pid": 1993465,
+        "start": "12527420"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionTarget:0x56a489f902f0:18000002:1992424:3",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionTarget:0x56a489f902f0:18000002:1992424",
+      "timeNs": 1790902801388434688,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993462,
+        "start": "12527417"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a48a46e8d0\", \"stableId\": \"18000003\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993482,
+        "pgid": 1992560,
+        "pid": 1993483,
+        "start": "12527430"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424:3",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424",
+      "timeNs": 1790902801464976751,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993482,
+        "start": "12527427"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993482,
+        "pgid": 1992560,
+        "pid": 1993483,
+        "start": "12527430"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424:3",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424",
+      "timeNs": 1790902801489235055,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993482,
+        "start": "12527427"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993639,
+          "start": "12527464"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993684,
+        "pgid": 1992100,
+        "pid": 1993697,
+        "start": "12527475"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993684:12527471",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902801910898086,
+      "wrapper": {
+        "parent": 1993639,
+        "pgid": 1992100,
+        "pid": 1993684,
+        "start": "12527471"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993684,
+        "pgid": 1992100,
+        "pid": 1993697,
+        "start": "12527475"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1993684:12527471",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902801971636415,
+      "wrapper": {
+        "parent": 1993639,
+        "pgid": 1992100,
+        "pid": 1993684,
+        "start": "12527471"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993751,
+          "start": "12527493"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993760,
+        "pgid": 1992100,
+        "pid": 1993761,
+        "start": "12527502"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993760:12527499",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902802183196702,
+      "wrapper": {
+        "parent": 1993751,
+        "pgid": 1992100,
+        "pid": 1993760,
+        "start": "12527499"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993760,
+        "pgid": 1992100,
+        "pid": 1993761,
+        "start": "12527502"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1993760:12527499",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902802233571925,
+      "wrapper": {
+        "parent": 1993751,
+        "pgid": 1992100,
+        "pid": 1993760,
+        "start": "12527499"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993772,
+          "start": "12527583"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993776,
+        "pgid": 1992100,
+        "pid": 1993778,
+        "start": "12527592"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993776:12527589",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902803080294832,
+      "wrapper": {
+        "parent": 1993772,
+        "pgid": 1992100,
+        "pid": 1993776,
+        "start": "12527589"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993776,
+        "pgid": 1992100,
+        "pid": 1993778,
+        "start": "12527592"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1993776:12527589",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902803132045860,
+      "wrapper": {
+        "parent": 1993772,
+        "pgid": 1992100,
+        "pid": 1993776,
+        "start": "12527589"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionRefresh",
+        "{}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993833,
+        "pgid": 1992560,
+        "pid": 1993835,
+        "start": "12527614"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionRefresh:4",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902803302675296,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993833,
+        "start": "12527611"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993833,
+        "pgid": 1992560,
+        "pid": 1993835,
+        "start": "12527614"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionRefresh:4",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902803330710556,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993833,
+        "start": "12527611"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionRefresh",
+        "{}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993841,
+        "pgid": 1992560,
+        "pid": 1993843,
+        "start": "12527621"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionRefresh:5",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902803370497336,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993841,
+        "start": "12527618"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993841,
+        "pgid": 1992560,
+        "pid": 1993843,
+        "start": "12527621"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionRefresh:5",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902803396536656,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993841,
+        "start": "12527618"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993840,
+          "start": "12527617"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993851,
+        "pgid": 1992100,
+        "pid": 1993854,
+        "start": "12527627"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993851:12527623",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902803427469888,
+      "wrapper": {
+        "parent": 1993840,
+        "pgid": 1992100,
+        "pid": 1993851,
+        "start": "12527623"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionRefresh",
+        "{}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993852,
+        "pgid": 1992560,
+        "pid": 1993855,
+        "start": "12527627"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionRefresh:6",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902803434153021,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993852,
+        "start": "12527624"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993852,
+        "pgid": 1992560,
+        "pid": 1993855,
+        "start": "12527627"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionRefresh:6",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902803459799150,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993852,
+        "start": "12527624"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993851,
+        "pgid": 1992100,
+        "pid": 1993854,
+        "start": "12527627"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1993851:12527623",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902803480688882,
+      "wrapper": {
+        "parent": 1993840,
+        "pgid": 1992100,
+        "pid": 1993851,
+        "start": "12527623"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489c36610\", \"stableId\": \"18000000\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993864,
+        "pgid": 1992560,
+        "pid": 1993866,
+        "start": "12527634"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489c36610:18000000:1992424:4",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489c36610:18000000:1992424",
+      "timeNs": 1790902803505918845,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993864,
+        "start": "12527631"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993864,
+        "pgid": 1992560,
+        "pid": 1993866,
+        "start": "12527634"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionTarget:0x56a489c36610:18000000:1992424:4",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionTarget:0x56a489c36610:18000000:1992424",
+      "timeNs": 1790902803531991564,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993864,
+        "start": "12527631"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489f902f0\", \"stableId\": \"18000002\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993896,
+        "pgid": 1992560,
+        "pid": 1993897,
+        "start": "12527649"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489f902f0:18000002:1992424:4",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489f902f0:18000002:1992424",
+      "timeNs": 1790902803654049879,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993896,
+        "start": "12527646"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993896,
+        "pgid": 1992560,
+        "pid": 1993897,
+        "start": "12527649"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionTarget:0x56a489f902f0:18000002:1992424:4",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionTarget:0x56a489f902f0:18000002:1992424",
+      "timeNs": 1790902803680482430,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993896,
+        "start": "12527646"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a48a46e8d0\", \"stableId\": \"18000003\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993925,
+        "pgid": 1992560,
+        "pid": 1993926,
+        "start": "12527662"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424:4",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424",
+      "timeNs": 1790902803780985712,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993925,
+        "start": "12527659"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993925,
+        "pgid": 1992560,
+        "pid": 1993926,
+        "start": "12527662"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424:4",
+      "queryRoot": "service",
+      "serviceOperation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424",
+      "timeNs": 1790902803807540818,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993925,
+        "start": "12527659"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993956,
+          "start": "12527673"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993965,
+        "pgid": 1992100,
+        "pid": 1993967,
+        "start": "12527683"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993965:12527679",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902803995480598,
+      "wrapper": {
+        "parent": 1993956,
+        "pgid": 1992100,
+        "pid": 1993965,
+        "start": "12527679"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1993965,
+        "pgid": 1992100,
+        "pid": 1993967,
+        "start": "12527683"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1993965:12527679",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902804051626838,
+      "wrapper": {
+        "parent": 1993956,
+        "pgid": 1992100,
+        "pid": 1993965,
+        "start": "12527679"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1994124,
+          "start": "12527763"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1994128,
+        "pgid": 1992100,
+        "pid": 1994129,
+        "start": "12527772"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1994128:12527769",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902804884324401,
+      "wrapper": {
+        "parent": 1994124,
+        "pgid": 1992100,
+        "pid": 1994128,
+        "start": "12527769"
+      }
+    },
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 1994128,
+        "pgid": 1992100,
+        "pid": 1994129,
+        "start": "12527772"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "list-json:1994128:12527769",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790902804934487427,
+      "wrapper": {
+        "parent": 1994124,
+        "pgid": 1992100,
+        "pid": 1994128,
+        "start": "12527769"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1991961,
+          "pid": 1991961,
+          "start": "12526726"
+        }
+      ],
+      "args": [
+        "forget-closed",
+        "0x56a489f902f0",
+        "18000002",
+        "1992424"
+      ],
+      "class": "compositor",
+      "delegate": {
+        "parent": 1994155,
+        "pgid": 1991961,
+        "pid": 1994170,
+        "start": "12527827"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "forget-closed:0x56a489f902f0:18000002:1992424",
+      "queryRoot": null,
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902805432939404,
+      "wrapper": {
+        "parent": 1991961,
+        "pgid": 1991961,
+        "pid": 1994155,
+        "start": "12527823"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1991961,
+          "pid": 1991961,
+          "start": "12526726"
+        }
+      ],
+      "args": [
+        "forget-closed",
+        "0x56a48a46e8d0",
+        "18000003",
+        "1992424"
+      ],
+      "class": "compositor",
+      "delegate": {
+        "parent": 1994154,
+        "pgid": 1991961,
+        "pid": 1994171,
+        "start": "12527827"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "forget-closed:0x56a48a46e8d0:18000003:1992424",
+      "queryRoot": null,
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902805435542353,
+      "wrapper": {
+        "parent": 1991961,
+        "pgid": 1991961,
+        "pid": 1994154,
+        "start": "12527823"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1991961,
+          "pid": 1991961,
+          "start": "12526726"
+        }
+      ],
+      "args": [
+        "forget-closed",
+        "0x56a489c36610",
+        "18000000",
+        "1992424"
+      ],
+      "class": "compositor",
+      "delegate": {
+        "parent": 1994156,
+        "pgid": 1991961,
+        "pid": 1994172,
+        "start": "12527828"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "forget-closed:0x56a489c36610:18000000:1992424",
+      "queryRoot": null,
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902805438195990,
+      "wrapper": {
+        "parent": 1991961,
+        "pgid": 1991961,
+        "pid": 1994156,
+        "start": "12527823"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1991961,
+          "pid": 1991961,
+          "start": "12526726"
+        }
+      ],
+      "args": [
+        "forget-closed",
+        "0x56a489a45800",
+        "18000001",
+        "1992424"
+      ],
+      "class": "compositor",
+      "delegate": {
+        "parent": 1994158,
+        "pgid": 1991961,
+        "pid": 1994173,
+        "start": "12527828"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "forget-closed:0x56a489a45800:18000001:1992424",
+      "queryRoot": null,
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902805440897810,
+      "wrapper": {
+        "parent": 1991961,
+        "pgid": 1991961,
+        "pid": 1994158,
+        "start": "12527823"
+      }
+    },
+    {
+      "class": "compositor",
+      "delegate": {
+        "parent": 1994155,
+        "pgid": 1991961,
+        "pid": 1994170,
+        "start": "12527827"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "forget-closed:0x56a489f902f0:18000002:1992424",
+      "queryRoot": null,
+      "serviceOperation": null,
+      "timeNs": 1790902805493962957,
+      "wrapper": {
+        "parent": 1991961,
+        "pgid": 1991961,
+        "pid": 1994155,
+        "start": "12527823"
+      }
+    },
+    {
+      "class": "compositor",
+      "delegate": {
+        "parent": 1994154,
+        "pgid": 1991961,
+        "pid": 1994171,
+        "start": "12527827"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "forget-closed:0x56a48a46e8d0:18000003:1992424",
+      "queryRoot": null,
+      "serviceOperation": null,
+      "timeNs": 1790902805502205032,
+      "wrapper": {
+        "parent": 1991961,
+        "pgid": 1991961,
+        "pid": 1994154,
+        "start": "12527823"
+      }
+    },
+    {
+      "class": "compositor",
+      "delegate": {
+        "parent": 1994156,
+        "pgid": 1991961,
+        "pid": 1994172,
+        "start": "12527828"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "forget-closed:0x56a489c36610:18000000:1992424",
+      "queryRoot": null,
+      "serviceOperation": null,
+      "timeNs": 1790902805509340060,
+      "wrapper": {
+        "parent": 1991961,
+        "pgid": 1991961,
+        "pid": 1994156,
+        "start": "12527823"
+      }
+    },
+    {
+      "class": "compositor",
+      "delegate": {
+        "parent": 1994158,
+        "pgid": 1991961,
+        "pid": 1994173,
+        "start": "12527828"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "forget-closed:0x56a489a45800:18000001:1992424",
+      "queryRoot": null,
+      "serviceOperation": null,
+      "timeNs": 1790902805517224731,
+      "wrapper": {
+        "parent": 1991961,
+        "pgid": 1991961,
+        "pid": 1994158,
+        "start": "12527823"
+      }
+    }
+  ],
+  "operations": [
+    "hydrate",
+    "inactive-fileDrag",
+    "forget-closed:0x56a489f902f0:18000002:1992424",
+    "forget-closed:0x56a48a46e8d0:18000003:1992424",
+    "forget-closed:0x56a489c36610:18000000:1992424",
+    "forget-closed:0x56a489a45800:18000001:1992424"
+  ],
+  "allNormal": true,
+  "allExactProcessesGone": true,
+  "nameExemptions": false,
+  "queryEvents": [
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992295,
+          "start": "12526861"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992344,
+        "pgid": 1992100,
+        "pid": 1992373,
+        "start": "12526871"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992344:12526868",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902795876243763,
+      "wrapper": {
+        "parent": 1992295,
+        "pgid": 1992100,
+        "pid": 1992344,
+        "start": "12526868"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992422,
+          "start": "12526953"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992432,
+        "pgid": 1992100,
+        "pid": 1992436,
+        "start": "12526972"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992432:12526959",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902796883998496,
+      "wrapper": {
+        "parent": 1992422,
+        "pgid": 1992100,
+        "pid": 1992432,
+        "start": "12526959"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992519,
+          "start": "12527043"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992524,
+        "pgid": 1992100,
+        "pid": 1992531,
+        "start": "12527052"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992524:12527049",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902797682934627,
+      "wrapper": {
+        "parent": 1992519,
+        "pgid": 1992100,
+        "pid": 1992524,
+        "start": "12527049"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489c36610\", \"stableId\": \"18000000\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992599,
+        "pgid": 1992560,
+        "pid": 1992602,
+        "start": "12527101"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489c36610:18000000:1992424:1",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489c36610:18000000:1992424",
+      "timeNs": 1790902798167737933,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1992599,
+        "start": "12527097"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489f902f0\", \"stableId\": \"18000002\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992650,
+        "pgid": 1992560,
+        "pid": 1992659,
+        "start": "12527112"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489f902f0:18000002:1992424:1",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489f902f0:18000002:1992424",
+      "timeNs": 1790902798284877688,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1992650,
+        "start": "12527109"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992656,
+          "start": "12527109"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992669,
+        "pgid": 1992100,
+        "pid": 1992684,
+        "start": "12527121"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992669:12527117",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902798373855968,
+      "wrapper": {
+        "parent": 1992656,
+        "pgid": 1992100,
+        "pid": 1992669,
+        "start": "12527117"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a48a46e8d0\", \"stableId\": \"18000003\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992683,
+        "pgid": 1992560,
+        "pid": 1992686,
+        "start": "12527124"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424:1",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424",
+      "timeNs": 1790902798404140581,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1992683,
+        "start": "12527121"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992713,
+          "start": "12527133"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992738,
+        "pgid": 1992100,
+        "pid": 1992748,
+        "start": "12527143"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992738:12527139",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902798592517056,
+      "wrapper": {
+        "parent": 1992713,
+        "pgid": 1992100,
+        "pid": 1992738,
+        "start": "12527139"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992866,
+          "start": "12527165"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992877,
+        "pgid": 1992100,
+        "pid": 1992878,
+        "start": "12527175"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992877:12527172",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902798915274890,
+      "wrapper": {
+        "parent": 1992866,
+        "pgid": 1992100,
+        "pid": 1992877,
+        "start": "12527172"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1991844,
+          "pid": 1992913,
+          "start": "12527195"
+        },
+        {
+          "parent": 1275790,
+          "pgid": 1991844,
+          "pid": 1991844,
+          "start": "12526558"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992928,
+        "pgid": 1991844,
+        "pid": 1992930,
+        "start": "12527205"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "harness-list-json",
+      "queryRoot": "harness",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902799207778849,
+      "wrapper": {
+        "parent": 1992913,
+        "pgid": 1991844,
+        "pid": 1992928,
+        "start": "12527201"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992912,
+          "start": "12527195"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992929,
+        "pgid": 1992100,
+        "pid": 1992931,
+        "start": "12527205"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992929:12527201",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902799211836512,
+      "wrapper": {
+        "parent": 1992912,
+        "pgid": 1992100,
+        "pid": 1992929,
+        "start": "12527201"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1992966,
+          "start": "12527223"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992988,
+        "pgid": 1992100,
+        "pid": 1992996,
+        "start": "12527236"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1992988:12527231",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902799517575749,
+      "wrapper": {
+        "parent": 1992966,
+        "pgid": 1992100,
+        "pid": 1992988,
+        "start": "12527231"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionRefresh",
+        "{}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1992997,
+        "pgid": 1992560,
+        "pid": 1992998,
+        "start": "12527239"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionRefresh:1",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902799556922695,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1992997,
+        "start": "12527236"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionRefresh",
+        "{}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993013,
+        "pgid": 1992560,
+        "pid": 1993015,
+        "start": "12527248"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionRefresh:2",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902799638376068,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993013,
+        "start": "12527243"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionRefresh",
+        "{}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993049,
+        "pgid": 1992560,
+        "pid": 1993065,
+        "start": "12527256"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionRefresh:3",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902799721540551,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993049,
+        "start": "12527252"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993038,
+          "start": "12527251"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993073,
+        "pgid": 1992100,
+        "pid": 1993092,
+        "start": "12527263"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993073:12527259",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902799792848410,
+      "wrapper": {
+        "parent": 1993038,
+        "pgid": 1992100,
+        "pid": 1993073,
+        "start": "12527259"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489c36610\", \"stableId\": \"18000000\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993077,
+        "pgid": 1992560,
+        "pid": 1993093,
+        "start": "12527265"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489c36610:18000000:1992424:2",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489c36610:18000000:1992424",
+      "timeNs": 1790902799809012358,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993077,
+        "start": "12527261"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489f902f0\", \"stableId\": \"18000002\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993183,
+        "pgid": 1992560,
+        "pid": 1993199,
+        "start": "12527282"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489f902f0:18000002:1992424:2",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489f902f0:18000002:1992424",
+      "timeNs": 1790902799983407461,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993183,
+        "start": "12527278"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a48a46e8d0\", \"stableId\": \"18000003\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993253,
+        "pgid": 1992560,
+        "pid": 1993258,
+        "start": "12527297"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424:2",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424",
+      "timeNs": 1790902800135021286,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993253,
+        "start": "12527294"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993289,
+          "start": "12527313"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993294,
+        "pgid": 1992100,
+        "pid": 1993296,
+        "start": "12527324"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993294:12527320",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902800401694979,
+      "wrapper": {
+        "parent": 1993289,
+        "pgid": 1992100,
+        "pid": 1993294,
+        "start": "12527320"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489c36610\", \"stableId\": \"18000000\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993439,
+        "pgid": 1992560,
+        "pid": 1993440,
+        "start": "12527407"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489c36610:18000000:1992424:3",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489c36610:18000000:1992424",
+      "timeNs": 1790902801231529703,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993439,
+        "start": "12527404"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993436,
+          "start": "12527403"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993447,
+        "pgid": 1992100,
+        "pid": 1993453,
+        "start": "12527413"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993447:12527409",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902801290247870,
+      "wrapper": {
+        "parent": 1993436,
+        "pgid": 1992100,
+        "pid": 1993447,
+        "start": "12527409"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489f902f0\", \"stableId\": \"18000002\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993462,
+        "pgid": 1992560,
+        "pid": 1993465,
+        "start": "12527420"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489f902f0:18000002:1992424:3",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489f902f0:18000002:1992424",
+      "timeNs": 1790902801363097180,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993462,
+        "start": "12527417"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a48a46e8d0\", \"stableId\": \"18000003\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993482,
+        "pgid": 1992560,
+        "pid": 1993483,
+        "start": "12527430"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424:3",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424",
+      "timeNs": 1790902801464976751,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993482,
+        "start": "12527427"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993639,
+          "start": "12527464"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993684,
+        "pgid": 1992100,
+        "pid": 1993697,
+        "start": "12527475"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993684:12527471",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902801910898086,
+      "wrapper": {
+        "parent": 1993639,
+        "pgid": 1992100,
+        "pid": 1993684,
+        "start": "12527471"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993751,
+          "start": "12527493"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993760,
+        "pgid": 1992100,
+        "pid": 1993761,
+        "start": "12527502"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993760:12527499",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902802183196702,
+      "wrapper": {
+        "parent": 1993751,
+        "pgid": 1992100,
+        "pid": 1993760,
+        "start": "12527499"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993772,
+          "start": "12527583"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993776,
+        "pgid": 1992100,
+        "pid": 1993778,
+        "start": "12527592"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993776:12527589",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902803080294832,
+      "wrapper": {
+        "parent": 1993772,
+        "pgid": 1992100,
+        "pid": 1993776,
+        "start": "12527589"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionRefresh",
+        "{}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993833,
+        "pgid": 1992560,
+        "pid": 1993835,
+        "start": "12527614"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionRefresh:4",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902803302675296,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993833,
+        "start": "12527611"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionRefresh",
+        "{}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993841,
+        "pgid": 1992560,
+        "pid": 1993843,
+        "start": "12527621"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionRefresh:5",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902803370497336,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993841,
+        "start": "12527618"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993840,
+          "start": "12527617"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993851,
+        "pgid": 1992100,
+        "pid": 1993854,
+        "start": "12527627"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993851:12527623",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902803427469888,
+      "wrapper": {
+        "parent": 1993840,
+        "pgid": 1992100,
+        "pid": 1993851,
+        "start": "12527623"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionRefresh",
+        "{}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993852,
+        "pgid": 1992560,
+        "pid": 1993855,
+        "start": "12527627"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionRefresh:6",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionRefresh",
+      "timeNs": 1790902803434153021,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993852,
+        "start": "12527624"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489c36610\", \"stableId\": \"18000000\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993864,
+        "pgid": 1992560,
+        "pid": 1993866,
+        "start": "12527634"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489c36610:18000000:1992424:4",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489c36610:18000000:1992424",
+      "timeNs": 1790902803505918845,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993864,
+        "start": "12527631"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a489f902f0\", \"stableId\": \"18000002\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993896,
+        "pgid": 1992560,
+        "pid": 1993897,
+        "start": "12527649"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a489f902f0:18000002:1992424:4",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a489f902f0:18000002:1992424",
+      "timeNs": 1790902803654049879,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993896,
+        "start": "12527646"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 1991844,
+          "pgid": 1992560,
+          "pid": 1992560,
+          "start": "12527073"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "motionTarget",
+        "{\"address\": \"0x56a48a46e8d0\", \"stableId\": \"18000003\", \"pid\": 1992424}"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993925,
+        "pgid": 1992560,
+        "pid": 1993926,
+        "start": "12527662"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424:4",
+      "queryRoot": "service",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": "service-motionTarget:0x56a48a46e8d0:18000003:1992424",
+      "timeNs": 1790902803780985712,
+      "wrapper": {
+        "parent": 1992560,
+        "pgid": 1992560,
+        "pid": 1993925,
+        "start": "12527659"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1993956,
+          "start": "12527673"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1993965,
+        "pgid": 1992100,
+        "pid": 1993967,
+        "start": "12527683"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1993965:12527679",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902803995480598,
+      "wrapper": {
+        "parent": 1993956,
+        "pgid": 1992100,
+        "pid": 1993965,
+        "start": "12527679"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/62ea/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 1992100,
+          "pgid": 1992100,
+          "pid": 1994124,
+          "start": "12527763"
+        },
+        {
+          "parent": 1991844,
+          "pgid": 1992100,
+          "pid": 1992100,
+          "start": "12526832"
+        }
+      ],
+      "args": [
+        "list",
+        "--json"
+      ],
+      "class": "query",
+      "delegate": {
+        "parent": 1994128,
+        "pgid": 1992100,
+        "pid": 1994129,
+        "start": "12527772"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 1991961,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          333728,
+          1000
+        ]
+      },
+      "operation": "list-json:1994128:12527769",
+      "queryRoot": "qs",
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-db1fb28d7e04411f8e07e2f55a189eb5.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790902804884324401,
+      "wrapper": {
+        "parent": 1994124,
+        "pgid": 1992100,
+        "pid": 1994128,
+        "start": "12527769"
+      }
+    }
+  ],
+  "queryOperations": [
+    "list-json:1992344:12526868",
+    "list-json:1992432:12526959",
+    "list-json:1992524:12527049",
+    "service-motionTarget:0x56a489c36610:18000000:1992424:1",
+    "service-motionTarget:0x56a489f902f0:18000002:1992424:1",
+    "list-json:1992669:12527117",
+    "service-motionTarget:0x56a48a46e8d0:18000003:1992424:1",
+    "list-json:1992738:12527139",
+    "list-json:1992877:12527172",
+    "harness-list-json",
+    "list-json:1992929:12527201",
+    "list-json:1992988:12527231",
+    "service-motionRefresh:1",
+    "service-motionRefresh:2",
+    "service-motionRefresh:3",
+    "list-json:1993073:12527259",
+    "service-motionTarget:0x56a489c36610:18000000:1992424:2",
+    "service-motionTarget:0x56a489f902f0:18000002:1992424:2",
+    "service-motionTarget:0x56a48a46e8d0:18000003:1992424:2",
+    "list-json:1993294:12527320",
+    "service-motionTarget:0x56a489c36610:18000000:1992424:3",
+    "list-json:1993447:12527409",
+    "service-motionTarget:0x56a489f902f0:18000002:1992424:3",
+    "service-motionTarget:0x56a48a46e8d0:18000003:1992424:3",
+    "list-json:1993684:12527471",
+    "list-json:1993760:12527499",
+    "list-json:1993776:12527589",
+    "service-motionRefresh:4",
+    "service-motionRefresh:5",
+    "list-json:1993851:12527623",
+    "service-motionRefresh:6",
+    "service-motionTarget:0x56a489c36610:18000000:1992424:4",
+    "service-motionTarget:0x56a489f902f0:18000002:1992424:4",
+    "service-motionTarget:0x56a48a46e8d0:18000003:1992424:4",
+    "list-json:1993965:12527679",
+    "list-json:1994128:12527769"
+  ],
+  "allQueriesNormal": true,
+  "harnessQueries": 1,
+  "serviceQueries": 18
+}

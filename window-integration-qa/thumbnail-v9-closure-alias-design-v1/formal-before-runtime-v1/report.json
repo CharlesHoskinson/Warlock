@@ -1,0 +1,31 @@
+{
+  "result": "fail",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a5851a45e5a44825a6effba413ca6a53.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/thumbnail-v9-closure-alias-design-v1/closure_alias_identity_test.qnt"
+      ],
+      "exitCode": 1,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v9-closure-alias-design-v1/formal-before-runtime-v1/check-0.log",
+      "sha256": "6630214ce551823218bc389d45058a5cfea813e918b81cbcec7264006a63aed5"
+    }
+  ],
+  "models": {
+    "closure_alias_identity.qnt": "aed89d14319433e6dabdc2517db4f8f02f60a34eab500f88686feddbe4f79e8d",
+    "closure_alias_identity_test.qnt": "ef741470e02e260a8d36db7d122547d63f119b2a46d82cf7402703c09e5227e8",
+    "CLOSURE_ALIAS_CONTRACT.md": "d1340f0a151774b529e4d3c8c95dd06a2224a3b229ce32fe138f3f024b035c72"
+  },
+  "inheritedV8Untouched": true,
+  "inheritedV8InputCount": 439,
+  "selectedV24ManifestSHA256": "b017d8d2a126f76c637429fffc2d77d510161fb89d3f3826795abb47d30b9f2c",
+  "runtimeEdited": false,
+  "closureSourceUnchanged": "d326ef3d84c4ff1bd1371fe910591955ad70d18bf920c7036ac8fcad94130a16",
+  "nativeLaunch": false,
+  "nativeAccepted": false
+}

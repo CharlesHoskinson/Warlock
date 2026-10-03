@@ -1,0 +1,22 @@
+{
+  "GUI": false,
+  "nativePinEffectAccepted": false,
+  "actualQSProcessAccepted": false,
+  "helperWaitSleepOrRetryAdded": false,
+  "originalHelperTransactionSeconds": 2,
+  "fixtureSource": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/frontend/test_capture.py",
+  "fixtureSourceSHA256": "9c15c3b1a5212ad282d090eee465dc49b8287a1a286761802f34d4525702e4e3",
+  "result": "fail",
+  "error": "TimeoutExpired(['/home/hoskinson/window-behavior-spec/qml-process-provider-v8-terminal-retire/cpu-terminal-disconnect'], 8)",
+  "diagnosticActorStillLive": true,
+  "normalFixtureCleanup": false,
+  "retainedPrivateRuntime": "/tmp/tmp_vw3pp8w/home",
+  "actorPID": 1410763,
+  "ownedActorReadOnlyEvidence": {
+    "stat": "1410763 (cpu-terminal-di) S 1410700 1410700 1410700 0 -1 4194304 14332 2606 0 0 46 5 7 1 20 0 2 0 20397270 243781632 19491 18446744073709551615 107688008175616 107688008655665 140729396890000 0 0 0 0 0 0 0 0 0 17 23 0 0 0 0 0 107688008761712 107688008769648 107688827355136 140729396895270 140729396895371 140729396895371 140729396895635 0\n",
+    "status": "Name:\tcpu-terminal-di\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t1410763\nNgid:\t0\nPid:\t1410763\nPPid:\t1410700\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t64\nGroups:\t998 1000 \nNStgid:\t1410763\nNSpid:\t1410763\nNSpgid:\t1410700\nNSsid:\t1410700\nKthread:\t0\nVmPeak:\t  303604 kB\nVmSize:\t  238068 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   78616 kB\nVmRSS:\t   78616 kB\nRssAnon:\t   48480 kB\nRssFile:\t   30136 kB\nRssShmem:\t       0 kB\nVmData:\t   62548 kB\nVmStk:\t     132 kB\nVmExe:\t     472 kB\nVmLib:\t   48452 kB\nVmPTE:\t     316 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t2\nSigQ:\t0/253892\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000000000\nSigCgt:\t0000000100000000\nCapInh:\t0000000800000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tthread vulnerable\nSpeculationIndirectBranch:\tconditional enabled\nCpus_allowed:\tffffff\nCpus_allowed_list:\t0-23\nMems_allowed:\t00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t88\nnonvoluntary_ctxt_switches:\t3\nx86_Thread_features:\t\nx86_Thread_features_locked:\t\n",
+    "wchan": "__futex_wait",
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-35f7ffd1e1d44809979b3b56e82e4a6b.scope\n"
+  },
+  "normalCPUPrivateRuntimeRemoved": false
+}

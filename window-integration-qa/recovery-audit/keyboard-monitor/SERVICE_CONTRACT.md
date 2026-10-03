@@ -1,0 +1,13 @@
+# Retirement, adoption, and reader reconnect
+
+This contract precedes the separate v6 implementation. The frozen v5 libraries and native reports remain unchanged.
+
+`PrepareUnload=false` preserves every watch and grab definition. Held captured routes, outstanding controlled lock transitions, or nonzero raw/accepted virtual Caps/Num parity prevent normal unload. Device retirement or genuine mask reconciliation can remove those obligations. A clean surviving virtual device may remain across unload/reload; a dirty device cannot be made clean by deleting the bridge state.
+
+`PrepareUnload=true` irreversibly retires this loaded service incarnation and clears subscriptions. Every subsequent KeyboardMonitor method fails with a retirement error, including WatchKeyboard, GrabKeyboard and SetKeyGrabs. Only a newly loaded incarnation can accept explicit subscriptions again. Normal unload invokes no fabricated key release. Forced core unload remains unsupported.
+
+Startup installs the trusted bus owner-change match before enumerating registrations. It adopts only current owners of valid application KeyboardMonitor names, under bounded initialization work; ownership churn reconciles before service availability and during regular bounded dispatch. Adoption authorizes a caller but never creates watches or grabs. No subscription is persisted or inferred from a name.
+
+Reader reconnect reconstructs the official Atspi device when the actual Manager owner appears or changes. Orca public binding removal retires old IDs before both AXDeviceManager and InputEventManager change device; explicit modifier mappings retire before replay. Current command dictionaries and suspended/active flags remain unchanged; public set_active_commands performs grab reconstruction without applying preferences or activating another script. Learn-mode full grab is replayed only when the real learn presenter remains active. The reconnect callback carries the session/owner epoch and is discarded if either is stale. Reader absence remains passive; no autostart or global reader setting changes.
+
+Native gates: official Orca starts in Legacy before bridge; real owner appearance switches to DeviceA11yManager and commands work in non-AT-SPI Foot; quiescent retirement rejects every public reactivation; reload of the same service reconstructs requested commands and active learn full grab; preexisting registration owner churn never authorizes the previous owner; clean surviving virtual Caps/Num parity remains exact across reload, while dirty parity refuses unload until a real reconciliation or removal. Directed native packets and terminal bytes are the oracle.

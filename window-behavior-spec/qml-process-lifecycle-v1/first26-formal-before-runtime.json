@@ -1,0 +1,41 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v1/CONTRACT.md": "624344a7fafa58c3415860c5a640c453e97413e28651cda788ba44d72c4ccd39",
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v1/process_lifecycle.qnt": "8c4fcc7a2fa85bbc644f57e200ad1bff01bf8c6a4f5557650b2dafd09872fac5",
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v1/prove_before.py": "bb428844d24841ab08e4713e983958ec6d6c77c75883fcb53dbdf106d25cbedb",
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v1/initial-proof-runner.py": "3f31d779dfe21b8929b6c96d2f5127beafaf54b1a71fe04aae5fbab580c04bdb",
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v1/initial-process-model.qnt": "5da2bc92519212489d9c6a310e1b4a4cd03e9b4e6f034a3398fc3f3b9a76ce0f"
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v1/process_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  process_lifecycle\n    ok normalCompleteTest passed 1 test(s)\n    ok eofBeforeExitTest passed 1 test(s)\n    ok stderrFirstTest passed 1 test(s)\n    ok missingStartTest passed 1 test(s)\n    ok missingKernelTest passed 1 test(s)\n    ok missingStdoutTest passed 1 test(s)\n    ok missingStderrTest passed 1 test(s)\n    ok missingExitTest passed 1 test(s)\n    ok missingGoneTest passed 1 test(s)\n    ok crashZeroNotNormalTest passed 1 test(s)\n    ok nativeRefusalNormalNotCompleteTest passed 1 test(s)\n    ok malformedReceiptTest passed 1 test(s)\n    ok cancelPreservesNormalLifeTest passed 1 test(s)\n    ok sourceReloadRevokesTest passed 1 test(s)\n    ok processReplacementTest passed 1 test(s)\n    ok collectorReplacementTest passed 1 test(s)\n    ok commandChangedTest passed 1 test(s)\n    ok pidReuseTest passed 1 test(s)\n    ok duplicateStartTest passed 1 test(s)\n    ok duplicateExitTest passed 1 test(s)\n    ok duplicateEOFTest passed 1 test(s)\n    ok lateRawChangeTest passed 1 test(s)\n    ok rearmPendingRefusedTest passed 1 test(s)\n    ok newLeaseIgnoresOldCallbackTest passed 1 test(s)\n    ok callerFlagsCannotCompleteTest passed 1 test(s)\n    ok earlyReceiptCannotBecomeCompletionTest passed 1 test(s)\n\n  26 passing (2741ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v1/process_lifecycle.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (5117ms at 391 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceUnchanged": true,
+  "registryImplemented": false,
+  "GUI": false,
+  "rootReviewBeforeRuntime": true
+}

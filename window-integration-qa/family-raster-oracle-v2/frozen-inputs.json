@@ -1,0 +1,40 @@
+{
+  "scope": "full RGBA across two private buffers/mixedscale, transparency/order/clipping; exact0 or1 tolerance; diagnostic no native authority/cadence claim",
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v2/run_private_raster.py": "0f58a5eb7f47b961b73116d596fce43a6ed0e57548dfac5767bcaf2466141773",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v2/producer_observer.py": "ab80327d4884b2320693d966aef5fcf73a5ffe3e12470172b5443b67b7f6640c",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v2/observations.py": "9f9b1bb282081c6f73422a40b41beede27f04a8c276d4ff3e07d1269e15c5f37",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v2/catalog_preservation.py": "c579d169e9b7093331fd4b78d015cc9fbbcd38c9ceb3772aef1bd0f5056fc54d",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v2/PRIVATE_RUN_CONTRACT.md": "a85ecf81d917bfdeea5c33660e3f8710f64d4d010ce5809148d08bee9391754a",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v2/CONTRACT.md": "a75e5b4b91b4173d1defb53f02844ac940cabfb58817a481fba0c581d67d8dd7",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v2/raster_oracle.py": "3a542d7de3376c7bfce276dbc18efc9134a6ab9ae0b3e235d4b58af7c0b01602",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v2/compare_scene.py": "eb7e632824b76c07f7a0fb7c3c6a8cb6a46a87389948c97245841160f989ef34",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v2/test_raster_oracle.py": "6fba5dfa6cc73284290f8ea59baafb789efc956695103c39d57a75003a389cad",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v2/test_scene_evidence.py": "90e5e9e06f4317487c2493fa9518f0d932690a92147911fa30e6608235c0c1ba",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v2/private-nested.lua": "c25dc88f48ebbd55494efac8ca4e384c4bc958ffdea8b58c5c7bb92b3dda0448",
+    "/home/hoskinson/window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+    "/home/hoskinson/window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+    "/home/hoskinson/window-integration-qa/private-weston-aq-host-v2/weston_host.py": "eefee4ebefbdaafa48fc1487c94b6bd0a8ba61ceadf2e77feaa9e8ecfffbb6a3",
+    "/home/hoskinson/window-integration-qa/private-weston-aq-host-v2/frozen-inputs.json": "c3e4950c9b4245afd6491ac7ad04e23ab1ba4555922f68547c6956035eaafefa",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/host-stage-report.json": "08bc911b36ac6f9910b12513333a3d1d0d7149b12d56776b5ff57703e4fe3900",
+    "/home/hoskinson/window-integration-qa/aquamarine-version-guard-v1/frozen-inputs.json": "abd1f3818e8fdee2683deea4312cbd1d1a3da2ecd305a459e5a7f0762076ed14",
+    "/home/hoskinson/window-integration-qa/private-graphics-foundation-v3/attempt-1/report.json": "7fbf7f3318665d5eb44b9d4ff61f6a29a0dc150e8f61fbd99b9f997afe82d7d8",
+    "/home/hoskinson/window-integration-qa/private-graphics-foundation-v3/attempt-1/root-completion.json": "53ea8539a1b26629c3788fb93d047e562b89ab15e7ad401def79a8f36e737463",
+    "/usr/bin/grim": "8fb2e84762652dd82dea186f415577cb40ff7e4fab7f6ae59100848c7428e23d",
+    "/usr/bin/magick": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-checkpoint-v1.json": "c5cc88b04f7705c8d958115c742187d5f16fd079d9e37df432e28ac64e1e6f81"
+  },
+  "offlineTests": 18,
+  "producerInputs": 77,
+  "foundationActualNativeAccepted": true,
+  "command": [
+    "python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "python3",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v2/run_private_raster.py",
+    "--execute",
+    "--output",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v2/attempt-private-1"
+  ]
+}

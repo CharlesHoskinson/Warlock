@@ -1,0 +1,179 @@
+{
+  "result": "pass",
+  "actualV5FirstRefusedPath": "/usr/lib/libnss_resolve.so.2",
+  "actualRawV5MappingsAvailable": false,
+  "actualCompleteMappingCoverage": false,
+  "configuredNSS": {
+    "configuration": "/etc/nsswitch.conf",
+    "databases": {
+      "passwd": [
+        "files",
+        "systemd"
+      ],
+      "group": [
+        "files",
+        "systemd"
+      ],
+      "shadow": [
+        "files",
+        "systemd"
+      ],
+      "gshadow": [
+        "files",
+        "systemd"
+      ],
+      "publickey": [
+        "files"
+      ],
+      "hosts": [
+        "mymachines",
+        "mdns_minimal",
+        "resolve",
+        "files",
+        "myhostname",
+        "dns"
+      ],
+      "networks": [
+        "files"
+      ],
+      "protocols": [
+        "files"
+      ],
+      "services": [
+        "files"
+      ],
+      "ethers": [
+        "files"
+      ],
+      "rpc": [
+        "files"
+      ],
+      "netgroup": [
+        "files"
+      ]
+    },
+    "configuredModules": {
+      "dns": "/usr/lib/libnss_dns.so.2",
+      "files": "/usr/lib/libnss_files.so.2",
+      "mdns_minimal": "/usr/lib/libnss_mdns_minimal.so.2",
+      "myhostname": "/usr/lib/libnss_myhostname.so.2",
+      "mymachines": "/usr/lib/libnss_mymachines.so.2",
+      "resolve": "/usr/lib/libnss_resolve.so.2",
+      "systemd": "/usr/lib/libnss_systemd.so.2"
+    },
+    "installedModules": [
+      "/usr/lib/libnss_compat.so.2",
+      "/usr/lib/libnss_db.so.2",
+      "/usr/lib/libnss_dns.so.2",
+      "/usr/lib/libnss_files.so.2",
+      "/usr/lib/libnss_hesiod.so.2",
+      "/usr/lib/libnss_mdns.so.2",
+      "/usr/lib/libnss_mdns4.so.2",
+      "/usr/lib/libnss_mdns4_minimal.so.2",
+      "/usr/lib/libnss_mdns6.so.2",
+      "/usr/lib/libnss_mdns6_minimal.so.2",
+      "/usr/lib/libnss_mdns_minimal.so.2",
+      "/usr/lib/libnss_myhostname.so.2",
+      "/usr/lib/libnss_mymachines.so.2",
+      "/usr/lib/libnss_resolve.so.2",
+      "/usr/lib/libnss_systemd.so.2",
+      "/usr/lib/libnss_winbind.so.2",
+      "/usr/lib/libnss_wins.so.2"
+    ],
+    "moduleInitializationExecuted": false
+  },
+  "addedClosureFiles": [
+    {
+      "path": "/etc/nsswitch.conf",
+      "sha256": "d33947c888e10b0a6984d1c9b37c970fdb6f27ce479c01e7d04e1151a8a0514a",
+      "mode": "0o644"
+    },
+    {
+      "path": "/usr/lib/libnss_compat.so.2",
+      "sha256": "b861b1d0a00985de2eeaf457c6051be96ea61f5b17b603687c7dc9beae90d8a5",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_db.so.2",
+      "sha256": "fffb3a34dae667db6d64374a35b9fd02bd637790485c9555fc8571c10bbee5fc",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_dns.so.2",
+      "sha256": "b1b0ce68f503030178a16ad42dbab940466c8285e757164605d2a8f60701066e",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_files.so.2",
+      "sha256": "09d707895bf1a4b3ac96a3db760460c11a6a1e4c7b5d8087ca9437adbc51acdd",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_hesiod.so.2",
+      "sha256": "2d20a28ad61765dea051b09f0c5e21a4593a446d730a4c173c4aae7912ece6af",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_mdns.so.2",
+      "sha256": "d11b52d607207a48c684357ad2983c8c96ca5dd957d96d02aaf67aa56868aa93",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_mdns4.so.2",
+      "sha256": "0df9f514bd5feae678188f80707a8b0d96468c7b00b548a8bc0fa11abf377757",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_mdns4_minimal.so.2",
+      "sha256": "6d5ea3c97fedc5a9512353c23fb0dafd95b9ef8a6c404529b11e61bad1dc03c2",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_mdns6.so.2",
+      "sha256": "c627c3a2f0fe05b4d5f5051f763c64b1389e2d068f8c2f14bd6b040636ac75c4",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_mdns6_minimal.so.2",
+      "sha256": "03ae15f51d5513056866c6547c5fd23c48fcf79bb9ae07f9e6ef102e27733935",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_mdns_minimal.so.2",
+      "sha256": "351fffac58395b0ebd3b1327b295a51708ae1c7f32a1f29bd52ce1733bdb88d6",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_myhostname.so.2",
+      "sha256": "acc0f8f82214558da26d394d9497607ab7577510c2176e8cf76033705b013885",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_mymachines.so.2",
+      "sha256": "51db6b5db0e0560e2f18bdc9d24881cae7b9b56b95abf0db67fe945eac7c21af",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_resolve.so.2",
+      "sha256": "10859a29b931b93c518a718ccaf4513c6387ce15c9a1b395bbf5de66926ef1ee",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_systemd.so.2",
+      "sha256": "b08ebb7180ee933cc589ed5afdd14451078f2875bde31526b22309ab174c198f",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_winbind.so.2",
+      "sha256": "f0a92dae34593d060bdb46931c239fc160c5fd1ead3c514c957b2dc7ba65fac1",
+      "mode": "0o755"
+    },
+    {
+      "path": "/usr/lib/libnss_wins.so.2",
+      "sha256": "b5372a8ec4d842f22fb7d9cdfee4d4309260affa362d653d3f4119cded908ca2",
+      "mode": "0o755"
+    }
+  ],
+  "unchangedMappingAuthoritySHA256": "3d6c471362708c9409bb53eabb51d2e9d6ed8a3a30d41a0e11b3c87073d586fa",
+  "actualNativeExecution": false
+}

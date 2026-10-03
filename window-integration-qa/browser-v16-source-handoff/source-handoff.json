@@ -1,0 +1,41 @@
+{
+  "result": "pass",
+  "freshPacket": "/home/hoskinson/window-integration-qa/browser-files-flow-v16/frozen-inputs.json",
+  "manifestSHA256": "602f75d97c3352505448580dfb31a9e052013b87d6d10ec2dd91ed123599d680",
+  "sourceReadySHA256": "30f22a04e45e212b18e5bf67465ea7284b6504a7d08773adf067b02699ab14ab",
+  "inputBytesAndModes": 41827,
+  "symlinks": 13770,
+  "inheritedV15RecordsByteModeExact": 41458,
+  "inheritedV15LinksExact": 13770,
+  "stageSourceReadyRecordsExact": 366,
+  "offline": {
+    "python": 254,
+    "namedQuint": 225,
+    "models": 13,
+    "tracesPerModel": 2000,
+    "maxSteps": 100,
+    "sourceUnchanged": true,
+    "reportSHA256": "9ea475ff71f70978f902e6080dfe62d65b7dfcb0da75d0b51514c98716424d4b"
+  },
+  "formalBeforeImplementationSHA256": "937b7c653012f29c3ea4470c7e34490908a309154cce1552ede9f5f2733576a1",
+  "qtEvidenceSHA256": "99d405929a821111eacbbfbb08e3e485e6f88a7db0708be25bde0ef86ab7fb92",
+  "preflightTerminal": 0,
+  "preflightSHA256": "c7fb85f5d86f388bf8ac40417494a19bba50d2a792e9da230d5f424f2d8cf219",
+  "nativeExecuted": false,
+  "mainWrites": false,
+  "original15ASTExact": true,
+  "v15PrivateSessionExact": true,
+  "realBtnExplorerExact": true,
+  "actualBrowserFilesAccepted": false,
+  "qtCpuSignalsArePhysicalMouseAreaProof": false,
+  "command": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v16/run_native.py",
+    "--attempt",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v16/attempt-1"
+  ],
+  "pending": "Root source/closure review and actual original15/all18main/normal lifecycle"
+}

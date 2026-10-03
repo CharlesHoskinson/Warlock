@@ -1,0 +1,62 @@
+{
+  "pid": 3281985,
+  "start": "14092066",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-eb4649150c7b47bd9cf72b214f7bf353.scope",
+    "coreLimit": 1
+  },
+  "network": {
+    "ipv4": "",
+    "ipv6": "00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo\n00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo\n",
+    "parentNetNamespace": "net:[4026531833]",
+    "netNamespace": "net:[4026532458]",
+    "uid": 1000,
+    "interfaces": [
+      "lo"
+    ]
+  },
+  "waylandPeer": {
+    "path": "/run/user/1000/wqa/425f/wayland-1",
+    "pid": 3281082,
+    "uid": 1000,
+    "gid": 1000,
+    "device": 84,
+    "inode": 393938
+  },
+  "compositorStart": "14091017",
+  "signature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790918437_1548938135",
+  "argv": [
+    "/opt/brave-bin/brave",
+    "--ozone-platform=wayland",
+    "--user-data-dir=/run/user/1000/wqa/425f/browser-profile",
+    "--remote-debugging-pipe",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-background-networking",
+    "--disable-component-update",
+    "--disable-sync",
+    "--disable-extensions",
+    "--disable-default-apps",
+    "--disable-breakpad",
+    "--disable-dev-shm-usage",
+    "--disable-features=MediaRouter,OptimizationHints,AutofillServerCommunication,BraveNews,BraveRewards",
+    "--enable-features=PersistentHistograms:storage/LocalMemory",
+    "--metrics-recording-only",
+    "--password-store=basic",
+    "file:///home/hoskinson/window-integration-qa/browser-files-flow-v20/compose.html"
+  ],
+  "binarySHA256": "746c3445bb364d76619cb55491dc8bfa98552747ee44e7b1fc8554d16bba6858",
+  "profile": "/run/user/1000/wqa/425f/browser-profile",
+  "page": "file:///home/hoskinson/window-integration-qa/browser-files-flow-v20/compose.html",
+  "sandboxEnabled": true,
+  "privateBusPolicy": "Activation-free owned bus; actual daemon policy and no unexpected helpers required",
+  "privateGioVfs": "local",
+  "appBusSelectors": {
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/wqa/425f/bus",
+    "DBUS_SYSTEM_BUS_ADDRESS": "unix:path=/run/user/1000/wqa/425f/bus"
+  },
+  "cdpPipeDescriptors": [
+    3,
+    4
+  ]
+}

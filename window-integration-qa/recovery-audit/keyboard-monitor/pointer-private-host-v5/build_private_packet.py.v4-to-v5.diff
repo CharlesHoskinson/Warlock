@@ -1,0 +1,29 @@
+--- V4/build_private_packet.py
++++ V5/build_private_packet.py
+@@ -33,6 +33,13 @@
+         add(signed/name,value)
+         if digest(STAGE/'mouse-review-signed-v3'/name)!=value:raise RuntimeError('Copied signed compat source changed: '+name)
+     for name,value in signed_row['external'].items():add(name,value)
++    lifecycle=STAGE.parent/'fixture-lifecycle-v5'
++    lifecycle_manifest=lifecycle/'frozen-inputs.json';add(lifecycle_manifest)
++    lifecycle_row=json.loads(lifecycle_manifest.read_text())
++    for name,value in lifecycle_row['local'].items():
++        add(lifecycle/name,value)
++        if digest(STAGE/'fixture-lifecycle-v5'/name)!=value:raise RuntimeError('Copied lifecycle proof source changed: '+name)
++    add(STAGE.parent/'pointer-private-host-v4/native-pointer-attempt-4/native-pointer-report.json','b26aa41b27439c289623fd37552a60597d7d5c33c9299f397406cff38bdc8c7d')
+     original=json.loads((STAGE/'v8c-original-manifest.json').read_text())
+     for name,value in original['externalDependencies'].items():add(name,value)
+     base=QA/'private-weston-host-v2';base_manifest=base/'host-stage-report.json';add(base_manifest)
+@@ -57,6 +64,12 @@
+         path=Path(source)
+         if path.is_symlink():link(path,str(path.readlink()))
+         add(path)
++    # Exact GI dependencies used by the new same-process local VFS observations.
++    for name in ('Gio-2.0','GLib-2.0','GObject-2.0'):
++        add(Path('/usr/lib/girepository-1.0')/(name+'.typelib'))
++    gi=Path('/usr/lib/python3.14/site-packages/gi')
++    for source in gi.rglob('*'):
++        if source.is_file() and (source.suffix=='.py' or '.so' in source.name):add(source)
+     native=json.loads((STAGE/'native-dependency-map.json').read_text())
+     for name,value in native['files'].items():add(name,value)
+     for name,value in native['symlinks'].items():link(name,value)

@@ -1,0 +1,20 @@
+{
+  "schema": "root-pin-b-location-review-v2",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1b0694774d2b4196bc39a5a11f833ba5.scope",
+    "coreLimit": 1
+  },
+  "observedUTC": "2026-10-02T23:52:07.601679+00:00",
+  "files": 64695,
+  "links": 13883,
+  "directories": 1491,
+  "wholeFailedAncestorFiles": 64623,
+  "allBytesModesLinksDirectoriesMatch": true,
+  "runtimeTestProofBodiesUnchanged": true,
+  "inheritedHostGuardUnchanged": true,
+  "reviewed": "Complete location capture delta, final capture, actual source/location preflight and pair additions; prior full controller root review conserved.",
+  "approved": "Freeze this exact derivative then one root private B01-B12 attempt after frozen actual location preflight.",
+  "nativeExecuted": false,
+  "fullCampaignBAccepted": false,
+  "fullParityAccepted": false
+}

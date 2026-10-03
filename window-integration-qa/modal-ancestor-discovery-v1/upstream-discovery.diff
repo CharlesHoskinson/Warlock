@@ -1,0 +1,65 @@
+--- upstream-v0.56.2/windowAt
++++ press-only-geometric-windowAt
+@@ -1,4 +1,4 @@
+-PHLWINDOW CViewHitTester::windowAt(const Vector2D& pos, uint16_t properties, PHLWINDOW ignoreWindow) const {
++PHLWINDOW modalGeometricWindowAt(const Vector2D& pos, uint16_t properties, PHLWINDOW ignoreWindow) {
+     const auto PMONITOR = State::monitorState()->query().vec(pos).run();
+     if (!PMONITOR)
+         return nullptr;
+@@ -7,18 +7,14 @@
+     static auto PBORDERSIZE           = CConfigValue<Config::INTEGER>("general:border_size");
+     static auto PBORDERGRABEXTEND     = CConfigValue<Config::INTEGER>("general:extend_border_grab_area");
+     static auto PSPECIALFALLTHRU      = CConfigValue<Config::INTEGER>("input:special_fallthrough");
+-    static auto PMODALPARENTBLOCKING  = CConfigValue<Config::INTEGER>("general:modal_parent_blocking");
+     static auto PFOLLOWMOUSESHRINK    = CConfigValue<Config::INTEGER>("input:follow_mouse_shrink");
+     const auto  BORDER_GRAB_AREA      = *PRESIZEONBORDER ? *PBORDERSIZE + *PBORDERGRABEXTEND : 0;
+     const bool  ONLY_PRIORITY         = properties & FOCUS_PRIORITY;
+     const bool  DO_FOLLOW_MOUSE_CHECK = properties & FOLLOW_MOUSE_CHECK;
+     const auto  HITBOX_SHRINK         = DO_FOLLOW_MOUSE_CHECK ? *PFOLLOWMOUSESHRINK : 0;
+     const auto  LASTFOCUSED           = focusState()->window();
+-    const auto& WINDOWS               = m_tracker.windows();
+-
+-    const auto  isShadowedByModal = [](PHLWINDOW w) -> bool {
+-        return *PMODALPARENTBLOCKING && w->m_xdgSurface && w->m_xdgSurface->m_toplevel && w->m_xdgSurface->m_toplevel->anyChildModal();
+-    };
++    const auto& WINDOWS               = Desktop::viewState()->windows();
++
+ 
+     // pinned windows on top of floating regardless
+     if (properties & ALLOW_FLOATING) {
+@@ -27,7 +23,7 @@
+                 continue;
+ 
+             if (w->m_isFloating && w->m_isMapped && w->acceptsInput() && !w->m_X11ShouldntFocus && w->m_pinned && !w->m_ruleApplicator->noFocus().valueOrDefault() &&
+-                w != ignoreWindow && !isShadowedByModal(w)) {
++                w != ignoreWindow) {
+                 const auto BB  = w->getWindowBoxUnified(properties);
+                 CBox       box = BB.copy().expand(!w->isX11OverrideRedirect() ? BORDER_GRAB_AREA : 0);
+                 if (HITBOX_SHRINK > 0 && w != LASTFOCUSED)
+@@ -66,7 +62,7 @@
+                 }
+ 
+                 if (w->m_isFloating && w->m_isMapped && w->m_workspace->isVisible() && w->acceptsInput() && !w->m_pinned && !w->m_ruleApplicator->noFocus().valueOrDefault() &&
+-                    w != ignoreWindow && (!aboveFullscreen || w->isAllowedOverFullscreen()) && !isShadowedByModal(w)) {
++                    w != ignoreWindow && (!aboveFullscreen || w->isAllowedOverFullscreen())) {
+                     // OR windows should add focus to parent
+                     if (w->m_X11ShouldntFocus && !w->isX11OverrideRedirect())
+                         continue;
+@@ -137,7 +133,7 @@
+                 continue;
+ 
+             if (!w->m_isX11 && !w->m_isFloating && w->m_isMapped && w->workspaceID() == WSPID && w->acceptsInput() && !w->m_X11ShouldntFocus &&
+-                !w->m_ruleApplicator->noFocus().valueOrDefault() && w != ignoreWindow && !isShadowedByModal(w)) {
++                !w->m_ruleApplicator->noFocus().valueOrDefault() && w != ignoreWindow) {
+                 if (w->hasPopupAt(pos))
+                     return w;
+             }
+@@ -154,7 +150,7 @@
+                 continue;
+ 
+             if (!w->m_isFloating && w->m_isMapped && w->workspaceID() == WSPID && w->acceptsInput() && !w->m_X11ShouldntFocus && !w->m_ruleApplicator->noFocus().valueOrDefault() &&
+-                w != ignoreWindow && !isShadowedByModal(w)) {
++                w != ignoreWindow) {
+                 CBox box = (properties & USE_PROP_TILED) ? w->getWindowBoxUnified(properties) : w->layoutBox();
+                 if ((properties & INPUT_EXTENTS) && BORDER_GRAB_AREA > 0 && !w->isX11OverrideRedirect()) {
+                     const auto WORKAREA                    = PWORKSPACE->m_space->workArea();

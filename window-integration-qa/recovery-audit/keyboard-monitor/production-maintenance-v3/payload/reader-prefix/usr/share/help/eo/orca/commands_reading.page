@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_reading" xml:lang="eo">
+  <info>
+    <link type="next" xref="commands_structural_navigation"/>
+    <link type="guide" xref="commands#reading_documents"/>
+    <link type="seealso" xref="howto_documents"/>
+    <link type="seealso" xref="howto_text_attributes"/>
+    <link type="seealso" xref="howto_whereami"/>
+    <title type="sort">1. Legado</title>
+    <title type="link">Legado</title>
+    <desc>Komandoj por aliri dokumentenhavon</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Komandoj de Legado</title>
+  <p>Aldone al la komandoj de kursora navigado kiuj estas parto de GNOME, <app>Orko</app> provizas nombron da komandoj kiujn vi povas uzi por legi dokumenton.</p>
+  <note style="tip">
+    <p>Sube vi vidos plurajn referencojn al "KP". Ĉiuj klavoj "KP" troviĝas sur la nombra klavareto. Vi ankaŭ rimarkos ke estas malsamaj klavpremoj laŭ tio, ĉu vi uzas labortablon aŭ tekokomputilon -- aŭ pli precize, ĉu vi uzas la Labortablan klavaran aranĝon de <app>Orko</app> aŭ ĝian Tekokomputilan klavaran aranĝon. Por pliaj informoj, bonvolu vidi la temon <link xref="howto_keyboard_layout">Klavara Aranĝo</link>.</p>
+  </note>
+  <section id="flat_review">
+    <title>Legado de Via Aktuala Loko</title>
+    <p>La sekvaj <app>Orko</app> <link xref="commands_flat_review">Komandoj de Plata Revizio</link> povas esti uzataj por legi vian aktualan lokon:</p>
+    <list>
+      <item>
+        <p>Legi la aktualan linion:</p>
+        <list>
+          <item>
+            <p>Labortablo: <keyseq><key>KP 8</key></keyseq></p>
+          </item>
+          <item>
+            <p>Tekomputilo: <keyseq><key>Orko Modifier</key><key>I</key></keyseq></p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Legi la aktualan vorton:</p>
+        <list>
+          <item>
+            <p>Labortablo: <keyseq><key>KP 5</key></keyseq></p>
+          </item>
+          <item>
+            <p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>K</key></keyseq></p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Literumi la aktualan vorton:</p>
+        <list>
+          <item>
+            <p>Labortablo: <keyseq><key>KP 5</key></keyseq> (duoble klakita)</p>
+          </item>
+          <item>
+            <p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>K</key></keyseq> (duoble klakita)</p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Fonetike literumi la aktualan vorton:</p>
+        <list>
+          <item>
+            <p>Labortablo: <keyseq><key>KP 5</key></keyseq> (trioble klakita)</p>
+          </item>
+          <item>
+            <p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>K</key></keyseq> (trioble klakita)</p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Legi la aktualan signon:</p>
+        <list>
+          <item>
+            <p>Labortablo: <keyseq><key>KP 2</key></keyseq></p>
+          </item>
+          <item>
+            <p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Comma</key></keyseq></p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Fonetike prononci la aktualan signon:</p>
+        <list>
+          <item>
+            <p>Labortablo: <keyseq><key>KP 2</key></keyseq> (duoble klakita)</p>
+          </item>
+          <item>
+            <p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Comma</key></keyseq> (duoble klakita)</p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Diri la Unikod-valoron de la aktuala signo:</p>
+        <list>
+          <item>
+            <p>Labortablo: <keyseq><key>KP 2</key></keyseq> (trioble klakita)</p>
+          </item>
+          <item>
+            <p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Comma</key></keyseq> (trioble klakita)</p>
+          </item>
+        </list>
+      </item>
+    </list>
+  </section>
+  <section id="say_all">
+    <title>Diri Ĉion</title>
+    <p>La komando Diri Ĉion de Orko kaŭzos ke <app>Orko</app> parolos la tutan dokumenton ekde via aktuala loko.</p>
+    <list>
+      <item>
+        <p>Labortablo: <key>KP Plus</key></p>
+      </item>
+      <item>
+        <p>Tekkomputilo: <keyseq><key>Orko Modifier</key><key>Semicolon</key></keyseq></p>
+      </item>
+    </list>
+  </section>
+  <section id="attributes_and_selection">
+    <title>Tekstaj Atributoj kaj Elektita Teksto</title>
+    <p><app>Orko</app> havas apartan komandon por akiri la atributojn de la teksto ĉe la kursora loko. Aldone, se vi uzas la komandojn Kie Mi Estas de <app>Orko</app> ene de teksta objekto en kiu teksto estas elektita, <app>Orko</app> anoncos la elektitan tekston. La komando de <app>Orko</app> por diri la aktualan elekton ankaŭ plenumos tiun funkcion en teksta objekto.</p>
+    <list>
+      <item>
+        <p>Prezenti la tekstajn atributojn: <keyseq><key>Orko Modifier</key><key>F</key></keyseq></p>
+      </item>
+      <item>
+        <p>Plenumi bazan Kie Mi Estas:</p>
+        <list>
+          <item>
+            <p>Labortablo: <key>KP Enter</key></p>
+          </item>
+          <item>
+            <p>Tekkomputilo: <keyseq><key>Orko Modifier</key><key>Return</key></keyseq></p>
+          </item>
+        </list>
+    </item>
+    <item>
+      <p>Plenumi detalan Kie Mi Estas:</p>
+      <list>
+        <item>
+          <p>Labortablo: <key>KP Enter</key> (duoble klakita)</p>
+        </item>
+        <item>
+          <p>Tekkomputilo: <keyseq><key>Orko Modifier</key><key>Return</key></keyseq> (duoble klakita)</p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Diri aktualan elekton: <keyseq><key>Orko Modifier</key><key>Shift</key><key>Up</key></keyseq></p>
+    </item>
+  </list>
+  </section>
+  <section id="link_details">
+    <title>Detaloj de Ligilo</title>
+    <p>Se vi estas sur ligilo, la komando Baza Kie Mi Estas de <app>Orko</app> povas esti uzata por anonci la detalojn asociitajn kun la ligilo kiel la tipo de ligilo, ĉu la ligilo estas vizitita, la priskribo de la retejo, kaj la dosiergrandeco. Se vi preferas apartan komandon por tiu celo, vi povas ligi la komandon Diri Detalojn de Ligilo de <app>Orko</app> al klavpremo. Bonvolu vidi <link xref="howto_key_bindings"> Modifado de Klavkombinojn</link> por informo pri kiel fari tion.</p>
+    <list>
+      <item>
+        <p>Diri la detalojn de ligilo: (neligita)</p>
+      </item>
+    </list>
+  </section>
+  <section id="browse_and_focus_modes">
+    <title>Reĝimoj Foliumado kaj Fokuso</title>
+    <p>La reĝimoj Foliumado kaj Fokuso de <app>Orko</app> ebligas ŝanĝi inter legado de kaj interagado kun retenhavo.</p>
+    <list>
+      <item>
+        <p>Ŝanĝi inter reĝimo foliumado kaj reĝimo fokuso: <keyseq><key>Orko Modifier</key><key>A</key></keyseq></p>
+      </item>
+      <item>
+        <p>Ebligi algluan reĝimon fokuso: <keyseq><key>Orko Modifier</key><key>A</key></keyseq> (duoble klakita)</p>
+      </item>
+      <item>
+        <p>Ebligi algluan reĝimon foliumado: <keyseq><key>Orko Modifier</key><key>A</key></keyseq> (triope klakita)</p>
+      </item>
+    </list>
+  </section>
+  <section id="toggling_layout_mode">
+    <title>Ŝalti/Malŝalti Aranĝan Reĝimon</title>
+    <p>Kiam la Aranĝa reĝimo estas ebligita, la kursora navigado de <app>Orko</app> respektos la ekranan aranĝon de la enhavo kaj prezentados la plenan linion, inkluzive de ĉiuj ligiloj aŭ formkampoj sur tiu linio. Kiam la Aranĝa reĝimo estas malebligita, <app>Orko</app> traktos objektojn kiel ligilojn kaj formkampojn kvazaŭ ili estus sur apartaj linioj, kaj por prezentado kaj por navigado.</p>
+    <p><app>Orko</app> provizas komandon por ŝanĝi inter Aranĝa reĝimo kaj Objekta reĝimo. Tiu komando estas neligita defaŭlte. Bonvolu vidi <link xref="howto_key_bindings">Modifado de Klavkombinojn</link> por informo pri kiel ligi neligitajn komandojn.</p>
+    <list>
+      <item>
+        <p>Ŝanĝi inter Aranĝa reĝimo kaj Objekta reĝimo: (neligita)</p>
+      </item>
+    </list>
+  </section>
+</page>

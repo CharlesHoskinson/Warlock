@@ -1,0 +1,1 @@
+Fresh applied source stage from V7 and root-approved V3 terminal proposal. Copied ancestral build/CPU reports are historical evidence only; no current-source-ready descriptor exists yet. Current build/runtime evidence will use terminal-prefixed descriptors. Main/GUI/native/installed QS/reliability remain unaccepted.

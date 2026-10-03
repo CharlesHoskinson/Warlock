@@ -1,0 +1,2229 @@
+An example execution:
+
+[State 0]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: StartService,
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: true,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 1]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2),
+  fullGrabbers: Set(),
+  held: Set(2),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(2),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: true,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 2]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2),
+  fullGrabbers: Set(),
+  held: Set(2),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: SetGrabs((2, true, true)),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: true,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 3]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(2),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: true,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 4]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(4),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: true,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 5]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: true,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 6]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: SetPermission(true),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: true,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 7]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: KeymapChange,
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: true,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 8]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: StopService,
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 9]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 10]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 11]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(2),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 12]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(2),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 13]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 14]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 15]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: UngrabAll(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 16]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: Watch(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 17]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: Unwatch(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 18]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(2),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 19]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Disconnect(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 20]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: ClaimReader(2),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 21]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Disconnect(2),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 22]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 23]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1),
+  fullGrabbers: Set(),
+  held: Set(1),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: Unwatch(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 24]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1, 3),
+  fullGrabbers: Set(),
+  held: Set(1, 3),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(3),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 25]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1, 3),
+  fullGrabbers: Set(),
+  held: Set(1, 3),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 26]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1, 2, 3),
+  fullGrabbers: Set(),
+  held: Set(1, 2, 3),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(2),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 27]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1, 2, 3),
+  fullGrabbers: Set(),
+  held: Set(1, 2, 3),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: Watch(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 28]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(1, 2, 3),
+  fullGrabbers: Set(),
+  held: Set(1, 2, 3),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(3),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 29]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3),
+  fullGrabbers: Set(),
+  held: Set(2, 3),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 30]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3),
+  fullGrabbers: Set(),
+  held: Set(2, 3),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 31]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3),
+  fullGrabbers: Set(),
+  held: Set(2, 3),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: KeymapChange,
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 32]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3),
+  fullGrabbers: Set(),
+  held: Set(2, 3),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(2),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 33]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3),
+  fullGrabbers: Set(),
+  held: Set(2, 3),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: GrabAll(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 34]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3),
+  fullGrabbers: Set(),
+  held: Set(2, 3),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: SetGrabs((1, true, false)),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 35]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3, 4),
+  fullGrabbers: Set(),
+  held: Set(2, 3, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(4),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 36]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3, 4),
+  fullGrabbers: Set(),
+  held: Set(2, 3, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(3),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 37]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3, 4),
+  fullGrabbers: Set(),
+  held: Set(2, 3, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: StartService,
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: true,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 38]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3, 4),
+  fullGrabbers: Set(),
+  held: Set(2, 3, 4),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: GrabAll(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: true,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 39]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3, 4),
+  fullGrabbers: Set(),
+  held: Set(2, 3, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: KeymapChange,
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: true,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 40]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3, 4),
+  fullGrabbers: Set(),
+  held: Set(2, 3, 4),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: SetGrabs((1, false, false)),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: true,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 41]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3, 4),
+  fullGrabbers: Set(),
+  held: Set(2, 3, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: StopService,
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 42]
+{
+  captured: Set(),
+  clock: 0,
+  delivered: Set(2, 3, 4),
+  fullGrabbers: Set(),
+  held: Set(2, 3, 4),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: Watch(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 43]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(2, 3, 4),
+  fullGrabbers: Set(),
+  held: Set(2, 3, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Tick,
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 44]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(2, 3, 4),
+  fullGrabbers: Set(),
+  held: Set(2, 3, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(3),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 45]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(1, 2, 3, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 2, 3, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 46]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(1, 2, 3, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 2, 3, 4),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: UngrabAll(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 47]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(1, 2, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 2, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(3),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 48]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(1, 2, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 2, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(4),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 49]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(1, 2, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 2, 4),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: Watch(2),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 50]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(1, 2, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 2, 4),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: Watch(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 51]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(1, 2, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 2, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: KeymapChange,
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 52]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: RemoveDevice,
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 53]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: RemoveDevice,
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 54]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: ClaimReader(2),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 55]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: UngrabAll(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 56]
+{
+  captured: Set(),
+  clock: 1,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: Watch(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 57]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Tick,
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 58]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: StopService,
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 59]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 60]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(2),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 61]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: GrabAll(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 62]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(4),
+  fullGrabbers: Set(),
+  held: Set(4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(4),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 63]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(4),
+  fullGrabbers: Set(),
+  held: Set(4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: StopService,
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 64]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 65]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: StopService,
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 66]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: SetGrabs((1, true, false)),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 67]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: KeymapChange,
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 68]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: Watch(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 69]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: SetGrabs((2, true, true)),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 70]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(2),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 71]
+{
+  captured: Set(),
+  clock: 2,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: GrabAll(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 72]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Tick,
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 73]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: KeymapChange,
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 74]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(3),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 75]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: ClaimReader(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 76]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: RemoveDevice,
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 77]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(3),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 78]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: SetGrabs((1, false, true)),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 79]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(3),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 80]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(4),
+  fullGrabbers: Set(),
+  held: Set(4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(4),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 81]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(4),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 82]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: StopService,
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 83]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: SetPermission(true),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 84]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: RemoveDevice,
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 85]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: ClaimReader(1),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 86]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(4),
+  fullGrabbers: Set(),
+  held: Set(4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(4),
+  lastNotified: false,
+  locked: true,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 87]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 88]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(3),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 89]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Disconnect(2),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 90]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Disconnect(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 91]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: SetGrabs((2, true, true)),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 92]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Disconnect(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 93]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: true,
+  lastEvent: Unwatch(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 94]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: ClaimReader(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 95]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Disconnect(1),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 96]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(1, 4),
+  fullGrabbers: Set(),
+  held: Set(1, 4),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: KeymapChange,
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 97]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: RemoveDevice,
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 98]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Disconnect(2),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 99]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(3),
+  fullGrabbers: Set(),
+  held: Set(3),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Press(3),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[State 100]
+{
+  captured: Set(),
+  clock: 3,
+  delivered: Set(),
+  fullGrabbers: Set(),
+  held: Set(),
+  lastConsumed: false,
+  lastDenied: false,
+  lastEvent: Release(3),
+  lastNotified: false,
+  locked: false,
+  modifierGrabbers: Set(),
+  permitted: true,
+  registered: Set(),
+  service: false,
+  strokeGrabbers: Set(),
+  tapArmed: false,
+  tapTime: 0,
+  watchers: Set()
+}
+
+[ok] No violation found (263ms at 7605 traces/second).
+Trace length statistics: max=101, min=101, average=101.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1d5bdac541c1f229 --backend=rust to reproduce.

@@ -1,0 +1,180 @@
+{
+  "report": "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/process-runtime-1790945896639732448.json",
+  "reportSHA256": "354678b3ed721683fa6d44755da8bf216ae4fcc028dd670e30cba9532b9cc510",
+  "scope": "qa-harness-8b73b57e1a07449e9c1bb0e809c9e384",
+  "invocation": "35b2f007ff944354a8efb68ac7fc179f",
+  "diagnostic": {
+    "childMountInfoAfterSHA256": "68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8",
+    "childMountInfoSHA256": "68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8",
+    "childMountNamespace": "mnt:[4026531832]",
+    "childSelectedMount": "33 2 0:30 /@ / rw,relatime shared:1 - btrfs /dev/mapper/root rw,compress=zstd:3,ssd,space_cache=v2,subvolid=256,subvol=/@",
+    "childSelectedMountAfter": "33 2 0:30 /@ / rw,relatime shared:1 - btrfs /dev/mapper/root rw,compress=zstd:3,ssd,space_cache=v2,subvolid=256,subvol=/@",
+    "diagnosticCompleted": true,
+    "fdAfter": {
+      "fdTarget": "/usr/bin/python3.14",
+      "filesystemType": 2435016766,
+      "rawFDInfo": "pos:\t0\nflags:\t02500000\nmnt_id:\t33\nino:\t72938\n",
+      "stat": {
+        "device": 32,
+        "gid": 0,
+        "inode": 72938,
+        "major": 0,
+        "minor": 32,
+        "mode": 33261,
+        "mtimeNanoseconds": 0,
+        "mtimeSeconds": 1786348016,
+        "nlink": 1,
+        "size": 14424,
+        "uid": 0
+      },
+      "statx": {
+        "errno": 0,
+        "gid": 0,
+        "inode": 72938,
+        "major": 0,
+        "mask": 40959,
+        "minor": 32,
+        "mode": 33261,
+        "mountID": 33,
+        "mtimeNanoseconds": 0,
+        "mtimeSeconds": 1786348016,
+        "nlink": 1,
+        "size": 14424,
+        "subvolumeID": 256,
+        "uid": 0
+      }
+    },
+    "fdBefore": {
+      "fdTarget": "/usr/bin/python3.14",
+      "filesystemType": 2435016766,
+      "rawFDInfo": "pos:\t0\nflags:\t02500000\nmnt_id:\t33\nino:\t72938\n",
+      "stat": {
+        "device": 32,
+        "gid": 0,
+        "inode": 72938,
+        "major": 0,
+        "minor": 32,
+        "mode": 33261,
+        "mtimeNanoseconds": 0,
+        "mtimeSeconds": 1786348016,
+        "nlink": 1,
+        "size": 14424,
+        "uid": 0
+      },
+      "statx": {
+        "errno": 0,
+        "gid": 0,
+        "inode": 72938,
+        "major": 0,
+        "mask": 40959,
+        "minor": 32,
+        "mode": 33261,
+        "mountID": 33,
+        "mtimeNanoseconds": 0,
+        "mtimeSeconds": 1786348016,
+        "nlink": 1,
+        "size": 14424,
+        "subvolumeID": 256,
+        "uid": 0
+      }
+    },
+    "identityAfter": {
+      "argvSHA256": "8f425a6e1e00c20d73b374b3d1783fc3d3f111c99da758e1c9ca90fccefef9d2",
+      "cgroupSHA256": "ca4eb2d5d2efe8438113baebc5ba16166b2c0124a03dd2a4eac656edb43b3eba",
+      "executable": "/usr/bin/python3.14",
+      "group": "1950357",
+      "namespaces": {
+        "cgroup": "cgroup:[4026531835]",
+        "ipc": "ipc:[4026531839]",
+        "mnt": "mnt:[4026531832]",
+        "net": "net:[4026531833]",
+        "pid": "pid:[4026531836]",
+        "user": "user:[4026531837]",
+        "uts": "uts:[4026531838]"
+      },
+      "parent": "1950437",
+      "pid": 1950475,
+      "start": "16836942"
+    },
+    "identityBefore": {
+      "argvSHA256": "8f425a6e1e00c20d73b374b3d1783fc3d3f111c99da758e1c9ca90fccefef9d2",
+      "cgroupSHA256": "ca4eb2d5d2efe8438113baebc5ba16166b2c0124a03dd2a4eac656edb43b3eba",
+      "executable": "/usr/bin/python3.14",
+      "group": "1950357",
+      "namespaces": {
+        "cgroup": "cgroup:[4026531835]",
+        "ipc": "ipc:[4026531839]",
+        "mnt": "mnt:[4026531832]",
+        "net": "net:[4026531833]",
+        "pid": "pid:[4026531836]",
+        "user": "user:[4026531837]",
+        "uts": "uts:[4026531838]"
+      },
+      "parent": "1950437",
+      "pid": 1950475,
+      "start": "16836942"
+    },
+    "identityUnchanged": true,
+    "mapFilesAfter": {
+      "link": "/usr/bin/python3.14",
+      "openErrno": 1,
+      "statErrno": 1,
+      "statx": {
+        "errno": 1
+      }
+    },
+    "mapFilesBefore": {
+      "link": "/usr/bin/python3.14",
+      "openErrno": 1,
+      "statErrno": 1,
+      "statx": {
+        "errno": 1
+      }
+    },
+    "mapFilesUnchanged": true,
+    "mappingAuthority": false,
+    "mapsAfterSHA256": "676519e8bb4ab3ba61f5a92dbe24bed3a2d8ceb5e8af4761772cd2305360732c",
+    "mapsBeforeSHA256": "6aae294c27e3afda69e6763fb064fdf9f0282e40b7f9b9fdcd020c11dde3c522",
+    "namedAfter": {
+      "device": 32,
+      "gid": 0,
+      "inode": 72938,
+      "major": 0,
+      "minor": 32,
+      "mode": 33261,
+      "mtimeNanoseconds": 0,
+      "mtimeSeconds": 1786348016,
+      "nlink": 1,
+      "size": 14424,
+      "uid": 0
+    },
+    "namedBefore": {
+      "device": 32,
+      "gid": 0,
+      "inode": 72938,
+      "major": 0,
+      "minor": 32,
+      "mode": 33261,
+      "mtimeNanoseconds": 0,
+      "mtimeSeconds": 1786348016,
+      "nlink": 1,
+      "size": 14424,
+      "uid": 0
+    },
+    "namedUnchanged": true,
+    "observerMountInfoAfterSHA256": "68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8",
+    "observerMountInfoSHA256": "68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8",
+    "observerMountNamespace": "mnt:[4026531832]",
+    "observerSelectedMount": "33 2 0:30 /@ / rw,relatime shared:1 - btrfs /dev/mapper/root rw,compress=zstd:3,ssd,space_cache=v2,subvolid=256,subvol=/@",
+    "observerSelectedMountAfter": "33 2 0:30 /@ / rw,relatime shared:1 - btrfs /dev/mapper/root rw,compress=zstd:3,ssd,space_cache=v2,subvolid=256,subvol=/@",
+    "path": "/usr/bin/python3.14",
+    "rawLine": "5a2547248000-5a2547249000 r--p 00000000 00:1e 72938                      /usr/bin/python3.14",
+    "schema": "owned-map-device-diagnostic-v1",
+    "selectedBackingSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+    "selectedMountUnchanged": true,
+    "selectedRowAfterPresent": true,
+    "selectedRowBeforePresent": true,
+    "sourceFDUnchanged": true,
+    "strictOriginalPredicateUnchanged": true
+  }
+}

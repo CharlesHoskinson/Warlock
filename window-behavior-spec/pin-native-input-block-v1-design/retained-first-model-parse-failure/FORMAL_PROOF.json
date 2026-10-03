@@ -1,0 +1,37 @@
+{
+  "sourceModelSHA256": "2491498815118fe652d290b45b315035d2aa60292d856a826468f51351e501af",
+  "sourceNamed": [
+    "falsePropertyDoesNotBlock",
+    "declarationAckNotNativeBlock",
+    "actualIsolatedBlockAccepted",
+    "noPhysicalInputRefused",
+    "noCurrentConfirmationRefused",
+    "revivedOwnerHitRefused",
+    "ownerCoreRefused",
+    "ownerSeatRefused",
+    "ownerCallbackRefused",
+    "hiddenNotIsolated",
+    "replacementRevokes",
+    "nativeClearRevokesOldBlock",
+    "sourceReplacementRevokes",
+    "lateDeclarationCannotRebindOldObservation"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "quint",
+        "typecheck",
+        "input_block.qnt"
+      ],
+      "exitCode": 1,
+      "elapsedSeconds": 0.3663912329939194,
+      "log": "/home/hoskinson/window-behavior-spec/pin-native-input-block-v1-design/formal-0.log",
+      "logSHA256": "8020bb82911cd8eea34939169c552f43e852b3ca5e16c4e623b97f7d8b672972"
+    }
+  ],
+  "allPass": false,
+  "actualNamedCount": 0,
+  "sourceOnly": true,
+  "nativeReachabilityProved": false,
+  "runtimeImplemented": false
+}

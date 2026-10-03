@@ -1,0 +1,114 @@
+{
+  "result": "source-ready",
+  "candidate": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13",
+  "evidence": {
+    "sourceReady": {
+      "path": "/home/hoskinson/window-integration-qa/thumbnail-v13-source-ready-v1.json",
+      "sha256": "ae196e4e64a4c421b643254a333d30980d7483297d1924d98405ad00d9e464e0",
+      "mode": 384
+    },
+    "freezer": {
+      "path": "/home/hoskinson/window-integration-qa/thumbnail-v13-causal-proposal-v1/freeze_collector_v13.py",
+      "sha256": "2cb35c4bafc3536be491a512c69a03a3d5a637f0ff80a197eb626a5253cb2cbc",
+      "mode": 420
+    },
+    "fullProof": {
+      "path": "/home/hoskinson/window-integration-qa/thumbnail-v13-full-proof-v1/report.json",
+      "sha256": "cfe15e116d2cfb381a460ef5d9a0a758fbef6ce95d1d3a6c86acd1807a50bcb3",
+      "mode": 420
+    },
+    "requiredProofConfirmation": {
+      "path": "/home/hoskinson/window-integration-qa/thumbnail-v13-causal-proposal-v1/required-proof-confirmation.json",
+      "sha256": "380a9d9d0e07ca272078eb1895b9f6a8bb3175012d1d0067aa2860cafa246c60",
+      "mode": 384
+    },
+    "sourceConservation": {
+      "path": "/home/hoskinson/window-integration-qa/thumbnail-v13-causal-proposal-v1/source-conservation.json",
+      "sha256": "1d2c81b93aabb04f4903cea9ef3f7eb260471022cae65be63be8566b00315810",
+      "mode": 384
+    },
+    "rootDesignApproval": {
+      "path": "/home/hoskinson/window-integration-qa/restore-span-diagnostic-root-design-review-v1.json",
+      "sha256": "42f4e5040e64dbce0cb2d707aa54e58dc5e55a1cf120defade91b1080a6fb067",
+      "mode": 384
+    },
+    "actualB12FailureReplay": {
+      "path": "/home/hoskinson/window-integration-qa/thumbnail-v12-agent-restore-failure-v1/report.json",
+      "sha256": "1629cfe3030930e93a382487692912ecee7110e81f9c57785978e62031a76bba",
+      "mode": 384
+    },
+    "actualB12RootFailureAudit": {
+      "path": "/home/hoskinson/window-integration-qa/thumbnail-v12-root-failure-audit-v1.json",
+      "sha256": "f3d2476e1d062bf664659fffb40ec431780e3b89b6e79654fd9623af8ba2601f",
+      "mode": 384
+    }
+  },
+  "inputs": 22411,
+  "modes": 22411,
+  "links": 287,
+  "fullProof": {
+    "cpu": 179,
+    "named": 217,
+    "models": 15,
+    "randomTracesPerModel": 2000,
+    "stepsPerTrace": 100,
+    "commands": 46,
+    "original43CommandVectorsExact": true,
+    "sourceUnchangedDuringProof": true
+  },
+  "conservation": {
+    "inheritedLocalRegularFiles": 459,
+    "byteExact": 458,
+    "approvedChangedSources": [
+      "service_observer.py"
+    ],
+    "newRuntimeFiles": [
+      "preparation_profile.py",
+      "causal_profile_sources.py"
+    ],
+    "inheritedProfileProofFiles": [
+      "test_preparation_profile.py",
+      "preparation_profile.qnt",
+      "preparation_profile_test.qnt"
+    ]
+  },
+  "originalBaselineRequired": 38,
+  "originalFaultsRequired": 34,
+  "originalRunnerAssertionsDeadlinesD3CoreV21TupleUnchanged": true,
+  "timingPerturbation": true,
+  "nativeAccepted": false,
+  "baseline38Accepted": false,
+  "fault34Accepted": false,
+  "hostNormalExitProven": false,
+  "nativeLaunch": false,
+  "mainChanges": false,
+  "rootOwnsFreezeAndSerialNative": true,
+  "collectTerminal": {
+    "handle": 91801,
+    "scope": "qa-harness-a995086170d34b47871df8917d1439f8",
+    "exitCode": 0
+  },
+  "rootFreezeCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/window-integration-qa/thumbnail-v13-causal-proposal-v1/freeze_collector_v13.py",
+    "--freeze",
+    "--review",
+    "ROOT_PASS_REVIEW_PATH",
+    "--evidence",
+    "/home/hoskinson/window-integration-qa/thumbnail-v13-source-ready-v1.json",
+    "ae196e4e64a4c421b643254a333d30980d7483297d1924d98405ad00d9e464e0"
+  ],
+  "verifyCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/window-integration-qa/thumbnail-v13-causal-proposal-v1/freeze_collector_v13.py",
+    "--verify"
+  ]
+}

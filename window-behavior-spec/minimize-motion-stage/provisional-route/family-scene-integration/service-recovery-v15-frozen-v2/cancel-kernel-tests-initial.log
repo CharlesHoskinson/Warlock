@@ -1,0 +1,39 @@
+test_acknowledged_cancellation_does_not_settle_if_closed_member_returns (test_recovery_cancel.CancellationTests.test_acknowledged_cancellation_does_not_settle_if_closed_member_returns) ... ok
+test_acknowledgment_false_refuses_before_disposal (test_recovery_cancel.CancellationTests.test_acknowledgment_false_refuses_before_disposal) ... ok
+test_actual_owner_nonce_replacement_cannot_cancel (test_recovery_cancel.CancellationTests.test_actual_owner_nonce_replacement_cannot_cancel) ... ok
+test_actual_unlock_cannot_acknowledge_or_dispose (test_recovery_cancel.CancellationTests.test_actual_unlock_cannot_acknowledge_or_dispose) ... ok
+test_changed_observed_whole_family_cancels_as_nonsettlement (test_recovery_cancel.CancellationTests.test_changed_observed_whole_family_cancels_as_nonsettlement) ... ok
+test_closed_captured_lifetime_cancels_without_writing_survivors (test_recovery_cancel.CancellationTests.test_closed_captured_lifetime_cancels_without_writing_survivors) ... ok
+test_closed_peer_remains_classified_with_all_old_member_states (test_recovery_cancel.CancellationTests.test_closed_peer_remains_classified_with_all_old_member_states) ... ok
+test_compatible_family_still_settles_original_toggle (test_recovery_cancel.CancellationTests.test_compatible_family_still_settles_original_toggle) ... ok
+test_failed_cancellation_ack_fsync_keeps_sources (test_recovery_cancel.CancellationTests.test_failed_cancellation_ack_fsync_keeps_sources) ... ok
+test_failed_retired_journal_fsync_keeps_sources_and_no_ack (test_recovery_cancel.CancellationTests.test_failed_retired_journal_fsync_keeps_sources_and_no_ack) ... ok
+test_fake_lease_dict_is_not_cancellation_authority (test_recovery_cancel.CancellationTests.test_fake_lease_dict_is_not_cancellation_authority) ... ok
+test_forged_prior_native_result_refuses_resume (test_recovery_cancel.CancellationTests.test_forged_prior_native_result_refuses_resume) ... ok
+test_known_restore_focus_change_has_explicit_nonsuccess_outcome (test_recovery_cancel.CancellationTests.test_known_restore_focus_change_has_explicit_nonsuccess_outcome) ... ok
+test_newer_exact_receipt_cannot_be_cancelled_by_old_scope (test_recovery_cancel.CancellationTests.test_newer_exact_receipt_cannot_be_cancelled_by_old_scope) ... ok
+test_partial_returned_result_preserved_when_next_member_is_reused (test_recovery_cancel.CancellationTests.test_partial_returned_result_preserved_when_next_member_is_reused) ... ok
+test_replaced_source_directory_cannot_be_deleted_after_cancel_ack (test_recovery_cancel.CancellationTests.test_replaced_source_directory_cannot_be_deleted_after_cancel_ack) ... FAIL
+test_restart_new_owner_refreshes_cancel_then_disposes_sources (test_recovery_cancel.CancellationTests.test_restart_new_owner_refreshes_cancel_then_disposes_sources) ... ok
+test_reused_address_records_replacement_without_writing_it (test_recovery_cancel.CancellationTests.test_reused_address_records_replacement_without_writing_it) ... ok
+test_unknown_source_material_preserves_nonsettlement_and_quarantines_api (test_recovery_cancel.CancellationTests.test_unknown_source_material_preserves_nonsettlement_and_quarantines_api) ... ok
+test_unmapped_old_member_is_not_dropped_from_scope (test_recovery_cancel.CancellationTests.test_unmapped_old_member_is_not_dropped_from_scope) ... ok
+test_unstable_fresh_cancel_refresh_preserves_ack_and_sources (test_recovery_cancel.CancellationTests.test_unstable_fresh_cancel_refresh_preserves_ack_and_sources) ... ok
+
+======================================================================
+FAIL: test_replaced_source_directory_cannot_be_deleted_after_cancel_ack (test_recovery_cancel.CancellationTests.test_replaced_source_directory_cannot_be_deleted_after_cancel_ack)
+----------------------------------------------------------------------
+ValueError: actor directory identity/private mode changed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v15/test_recovery_cancel.py", line 142, in test_replaced_source_directory_cannot_be_deleted_after_cancel_ack
+    with self.assertRaisesRegex(ValueError,'identity changed'):self.coordinator(f,s,d,l).recover(archived)
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "identity changed" does not match "actor directory identity/private mode changed"
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.624s
+
+FAILED (failures=1)

@@ -1,0 +1,56 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-e2ec0409347e4b91b6d1986e8b4977b4.scope",
+    "coreLimit": 1
+  },
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/legacy_fixture_ready_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/legacy_fixture_ready_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  legacy_fixture_ready_test\n    ok emptyKernelDataNeverReadyTest passed 1 test(s)\n    ok emptyThenFreshFullVerificationTest passed 1 test(s)\n    ok nonemptyMismatchLatchesTest passed 1 test(s)\n    ok argvMismatchRefusesTest passed 1 test(s)\n    ok sourceReplacementRefusesTest passed 1 test(s)\n    ok descriptorReplacementRefusesTest passed 1 test(s)\n    ok reusedLifetimeRefusesTest passed 1 test(s)\n    ok absoluteDeadlineRefusesLaterReadyTest passed 1 test(s)\n    ok unknownKernelErrorRefusesTest passed 1 test(s)\n    ok readyCannotReplaceExistingFullGuardTest passed 1 test(s)\n    ok initialKernelNonemptyDataCannotBeSelectedWitnessTest passed 1 test(s)\n    ok gateReadPhaseMandatoryBeforeInitialWitnessTest passed 1 test(s)\n\n  12 passing (784ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/legacy_fixture_ready.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (2417ms at 827 traces/second).\nUse --seed=0x14468d6 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "test_renderer_terminal.py": "88c07af901f1e67499acc10333016565a2a8647a3b79fb582ae111722a141fce",
+    "recovery_resources.py": "133edcf7b92aaa2f521af90922c571d1637ab8e8c9536a7cf57a6475fa18ce02",
+    "scene_controller.py": "77bf976f641ba1bce895dfec51f59f8755529761fdc6370079a385e4385a8206",
+    "scene_manager.py": "3f2f3aa5e2f0f1a2dd108acccfa4372761dda966d672741556b8b709bf8edd41",
+    "visual_retirement.py": "0bd2513fec9ae3d0c9008ec8f789dce99670cc643a91b7a87b7346baefa40c84"
+  },
+  "sourceStable": true,
+  "fixtureRuntimeNotYetAdopted": true,
+  "inheritedEnvironmentGuardExactV17": true,
+  "originalV18EnvironmentRefusalCauseUnclassified": true,
+  "nativeLaunch": false
+}

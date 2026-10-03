@@ -1,0 +1,19 @@
+
+  authority_fence_test
+    ok pendingLossSameUniqueReclaimMotionReplyTest passed 1 test(s)
+    ok locallyEmptyCannotBypassUnseenDaemonLossTest passed 1 test(s)
+    ok aliasChurnInvalidatesPendingOldPrincipalTest passed 1 test(s)
+    ok validFencedSnapshotEmitsOnceTest passed 1 test(s)
+    ok futureUnseenOwnerLossIsInFlightBoundaryTest passed 1 test(s)
+    ok knownLaterOwnerLossCancelsBeforeEnqueueTest passed 1 test(s)
+    ok retirementAfterCompletionRejectsLateCallbackTest passed 1 test(s)
+    ok busLossAfterCompletionRejectsLateCallbackTest passed 1 test(s)
+    ok timeoutPreservesOtherAcceptedNoteTest passed 1 test(s)
+    ok noOwnerSnapshotNeverEmitsTest passed 1 test(s)
+    ok mismatchedOwnerSnapshotNeverEmitsTest passed 1 test(s)
+    ok saturatedQueueRefusesNewQueryPreservesAcceptedNotesTest passed 1 test(s)
+    ok nextAuthorizedQueryRearmsAfterTimeoutTest passed 1 test(s)
+    ok boundedDrainMustFinishPriorOwnerMessagesTest passed 1 test(s)
+    ok overflowRetiresWithoutStaleDeliveryTest passed 1 test(s)
+
+  15 passing (1651ms)

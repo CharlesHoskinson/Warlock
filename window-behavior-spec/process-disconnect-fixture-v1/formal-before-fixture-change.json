@@ -1,0 +1,52 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/process-terminal-v8-first-disconnect-failure-handoff-v1.json": {
+      "sha256": "27afb2961ea36447e19debc22e9f204fab6c20bbbd7d424514ee102f1a31be0a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-disconnect-fixture-v1/CONTRACT.md": {
+      "sha256": "93ef81e4e95e11bbdeac58c410fced32f26ba8b689689bc020c5911dc7407412",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-disconnect-fixture-v1/disconnect_fixture.qnt": {
+      "sha256": "73e3e07c20f4b2143a9a3203040ff0410005527886a9039c88589bd82f12589d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-disconnect-fixture-v1/prove_before.py": {
+      "sha256": "a9ff35b08faf65112a99a5f19a32014a9e57a0b05ca12d945733edc7c64db80f",
+      "mode": 420
+    }
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/process-disconnect-fixture-v1/disconnect_fixture.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  disconnect_fixture\n    ok originalInsideHookJoinDeadlockRetainedTest passed 1 test(s)\n    ok hookRequiresDurablePreconditionEvidenceTest passed 1 test(s)\n    ok hookReturnReleasesActivationLockBeforeJoinTest passed 1 test(s)\n    ok actualQueueAdmittedAfterUnlockPreventsCommitTest passed 1 test(s)\n    ok ownerDrainAfterOutsideJoinRefusesNormalPastTest passed 1 test(s)\n    ok missingActualCollectorActivationCannotProveTest passed 1 test(s)\n    ok noSecondHelperLaunchOrControlFromDiagnosticJoinTest passed 1 test(s)\n\n  7 passing (438ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/process-disconnect-fixture-v1/disconnect_fixture.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1238ms at 1616 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "failedV8Exact": true,
+  "sourceStable": true,
+  "runtimeChanged": false,
+  "GUI": false
+}

@@ -1,0 +1,26 @@
+module readonly_ipc_test {
+ import readonly_ipc.* from "./readonly_ipc"
+ action check(p:bool):bool=all{assert(p),s'=s}
+ action begin=fire(Begin({id:1,request:1,owner:owner,durable:true}))
+ action connect=fire(Connect({owner:owner,peer:true}))
+ action reply=fire(Reply({eof:true,bounded:true,decoded:true,deadline:true}))
+ action confirm=fire(Confirm({owner:owner,durable:true}))
+ action complete=init.then(begin).then(connect).then(reply).then(fire(Close(true))).then(confirm)
+ run actualClosedPublishedDataMayReturnTest=complete.then(fire(Consume)).then(check(s.consumed and allProps))
+ run unknownRequestCannotConnectTest=init.then(fire(Begin({id:1,request:6,owner:owner,durable:true}))).then(connect).then(check(not(s.connected)))
+ run failedRegistrationCannotSendTest=init.then(fire(Begin({id:1,request:1,owner:owner,durable:false}))).then(connect).then(check(s.fault and not(s.connected)))
+ run wrongKernelPeerCannotBorrowDataTest=init.then(begin).then(fire(Connect({owner:owner,peer:false}))).then(reply).then(fire(Close(true))).then(confirm).then(check(not(s.usable)))
+ run partialReplyCannotReturnTest=init.then(begin).then(connect).then(fire(Reply({eof:false,bounded:true,decoded:true,deadline:true}))).then(fire(Close(true))).then(confirm).then(check(not(s.usable)))
+ run oversizedReplyCannotReturnTest=init.then(begin).then(connect).then(fire(Reply({eof:true,bounded:false,decoded:true,deadline:true}))).then(fire(Close(true))).then(confirm).then(check(not(s.usable)))
+ run undecodedReplyCannotReturnTest=init.then(begin).then(connect).then(fire(Reply({eof:true,bounded:true,decoded:false,deadline:true}))).then(fire(Close(true))).then(confirm).then(check(not(s.usable)))
+ run timeoutCannotResetForAnotherChunkTest=init.then(begin).then(connect).then(fire(Reply({eof:true,bounded:true,decoded:true,deadline:false}))).then(fire(Close(true))).then(confirm).then(check(not(s.usable)))
+ run actualDescriptorClosureRequiredTest=init.then(begin).then(connect).then(reply).then(fire(Close(false))).then(confirm).then(check(not(s.usable)))
+ run completionPublicationRequiredTest=init.then(begin).then(connect).then(reply).then(fire(Close(true))).then(fire(Confirm({owner:owner,durable:false}))).then(check(s.fault and not(s.usable)))
+ run everyReplacementBeforeConfirmRefusesTest=init.then(begin).then(connect).then(reply).then(fire(Close(true))).then(all{nondet n=0.to(6).oneOf();fire(Replace(n))}).then(confirm).then(check(not(s.usable)))
+ run everyReplacementAfterConfirmInvalidatesTest=complete.then(all{nondet n=0.to(6).oneOf();fire(Replace(n))}).then(fire(Consume)).then(check(not(s.consumed)))
+ run oldConnectionCannotBeReusedTest=complete.then(fire(Begin({id:1,request:2,owner:owner,durable:true}))).then(check(s.id==1 and s.request==1 and s.history==Set(1)))
+ run anotherConnectionInvalidatesPartialResultTest=complete.then(fire(Begin({id:2,request:2,owner:owner,durable:true}))).then(fire(Consume)).then(check(not(s.consumed) and s.history==Set(1,2)))
+ run staleSourceCannotRegisterTest=init.then(fire(Begin({id:1,request:1,owner:changed(owner,3),durable:true}))).then(check(not(s.registered)))
+ run completeEOFCannotReplaceDurabilityTest=init.then(begin).then(connect).then(reply).then(fire(Close(true))).then(fire(Consume)).then(check(not(s.consumed)))
+ run crashNeverPromotesReadOnlyResultTest=complete.then(fire(Fail)).then(fire(Consume)).then(check(s.fault and not(s.consumed)))
+}

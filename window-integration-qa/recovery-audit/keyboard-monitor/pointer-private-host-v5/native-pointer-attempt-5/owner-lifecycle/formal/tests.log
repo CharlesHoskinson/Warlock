@@ -1,0 +1,16 @@
+
+  notification_delivery_test
+    ok queuedOwnerBlocksDeliveryTest passed 1 test(s)
+    ok sameConnectionReclaimDropsOldEpochTest passed 1 test(s)
+    ok freshEpochQueryCanDeliverTest passed 1 test(s)
+    ok ownerLossAfterCaptureBeforeEmitTest passed 1 test(s)
+    ok boundedDrainDefersAtRemainingOwnerTest passed 1 test(s)
+    ok irreversibleRetirementRejectsLateCallbacksTest passed 1 test(s)
+    ok busLossClearsNotificationsTest passed 1 test(s)
+    ok repeatedQueriesCoalesceTest passed 1 test(s)
+    ok awayBackPreservesCapturedChangeTest passed 1 test(s)
+    ok fullNotificationBudgetRefusesQueryPreservesNotesTest passed 1 test(s)
+    ok overflowFailsClosedTest passed 1 test(s)
+    ok legacyDirectSourceCounterexampleTest passed 1 test(s)
+
+  12 passing (578ms)

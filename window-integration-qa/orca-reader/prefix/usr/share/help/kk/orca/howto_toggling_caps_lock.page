@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_toggling_caps_lock" xml:lang="kk">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_key_bindings"/>
+    <title type="sort">7. Ноутбук жаймасындағы CapsLock</title>
+    <desc>Ол <key>Orca модификаторы</key> болған кезде оны ауыстыру</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Ноутбук жаймасындағы CapsLock</title>
+  <p>Orca-да екі пернетақта жаймасы бар: Жұмыс үстелі және Ноутбук. Таңдалған жайма қай перненің Orca модификаторы ретінде пайдаланылатынына әсер етеді. Егер сіз Ноутбук жаймасын пайдалансаңыз, әдепкі Orca модификаторы <key>CapsLock</key> болады. Егер сіз <app>Orca</app>-ның Ноутбук жаймасын пайдалансаңыз және <key>CapsLock</key> пернесін құлыптағыңыз немесе құлпын ашқыңыз келсе, оны <key>CapsLock</key> пернесін екі рет басу арқылы (at-spi2 2.32 немесе одан кейінгі нұсқасын талап етеді) немесе келесі қадамдарды орындау арқылы жасай аласыз:</p>
+  <steps>
+    <title>Ноутбук жаймасында CapsLock ауыстыру</title>
+    <item>
+      <p><app>Orca</app>-ға келесі команда еленбеуі керектігін айту үшін Айналып өту командасын, <keyseq><key>Orca модификаторы</key><key>BackSpace</key> </keyseq>, басыңыз.</p>
+    </item>
+    <item>
+      <p>Оның құлыпталған күйін ауыстыру үшін <key>CapsLock</key> пернесін басыңыз.</p>
+    </item>
+  </steps>
+</page>

@@ -1,0 +1,15 @@
+{
+  "nativeExecuted": false,
+  "kind": "source control-flow counterexample",
+  "sequence": [
+    "capture owner A + target/group G generation1",
+    "begin owning transfer",
+    "group selects B during move",
+    "finish observes current owner changed and refuses",
+    "actualModesKnown false skips invalidateReturn",
+    "group selects A again with original record generation1"
+  ],
+  "contractRequires": "failed exact captured record cannot become usable again merely because current owner returns",
+  "observedSource": "finish invalidates only inside actualModesKnown branch; captured record latch absent",
+  "sourceSha256": "c52b309632bac4c15fdd9c56ef4a48bb0b493b165484e65a37b14810bef402ff"
+}

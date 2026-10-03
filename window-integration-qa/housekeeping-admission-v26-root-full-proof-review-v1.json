@@ -1,0 +1,25 @@
+{
+  "result": "source-and-required-full-proof-reviewed",
+  "fullProofSHA256": "b093d8893029aa632348dd2b93603133356d1d60d2a3d4b063934e3e9dfc2425",
+  "pythonTests": 409,
+  "quintNamedScenarios": 403,
+  "quintModels": 35,
+  "samplesPerModel": 2000,
+  "steps": 100,
+  "requiredCommandsVerified": 106,
+  "original103CommandsByteExact": true,
+  "inheritedFilesVerified": 191,
+  "inheritedUnchanged": 188,
+  "approvedChangedFiles": [
+    "native_runtime.py",
+    "test_actor_resources.py",
+    "test_preview_admission.py"
+  ],
+  "bytesVerified": 496,
+  "originalFailureRetained": "4f6ff6dc3a4759b594a17943f0f76a26b72d195f709054f3783375c9898c5c9a",
+  "nativeAuthorized": false,
+  "nativeAccepted": false,
+  "normalHelperAndHostClosureStillRequired": true,
+  "freezerReviewed": "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/freeze_housekeeping_admission_v2.py",
+  "freezerSHA256": "616d921260486a499e79e2fcbedae68dfb3cd092368c791fd10d80ea997991f8"
+}

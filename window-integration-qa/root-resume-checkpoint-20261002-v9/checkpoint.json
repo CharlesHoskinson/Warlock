@@ -1,0 +1,65 @@
+{
+  "timestampUTC": "2026-10-03T00:55:54.807140+00:00",
+  "fullParity": false,
+  "automaticLoopReactivationConfirmed": false,
+  "mainChanged": false,
+  "nativePinA": {
+    "accepted": true,
+    "featureChecks": 14
+  },
+  "pinB": {
+    "candidate": "pin-max-native-campaign-b-v4",
+    "completedCases": [
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B06",
+      "B07"
+    ],
+    "attemptStatus": "running",
+    "componentIncrementAccepted": false,
+    "fullCampaignAccepted": false,
+    "rootSourceReviewSHA256": "52e6ccf8d1e06ea926c3fafd1fae2ecb165e2cbb22368c4ce5005d7642f81539"
+  },
+  "processV9": {
+    "componentAccepted": true
+  },
+  "processReuse": {
+    "requiredComponents": 5,
+    "actualComponentsAccepted": true,
+    "rootReviewSHA256": "8a5ce827cea04a6d52d161b246435c1122d23b374693fe91ddd604a19cc99db9"
+  },
+  "popupComposition": {
+    "sourceReviewed": true,
+    "formalNamed": 24,
+    "formalTraces": 2000,
+    "actualInstalledQuickshellAccepted": false,
+    "rootReviewSHA256": "c23fe9ac3784569610e758d1ab3aacfc2df865e641f561c7c86344510f15182f"
+  },
+  "restore": {
+    "candidate": "service-restore-focus-transaction-v28",
+    "actualCPU": 444,
+    "baselineResult": "fail",
+    "reachedChecks": 19,
+    "passedChecks": 17,
+    "baselineRequired": 38,
+    "faultsRequired": 34,
+    "baselineAccepted": false,
+    "faultsAuthorized": false,
+    "focusTransactionAndThreeRefreshesCompleted": true,
+    "allHelpersNormal": true,
+    "actualCaptures": 3,
+    "rendererSeedAndUploadsAbsent": true,
+    "rootFailureSHA256": "e01aee0d6c5f57f1e4ed80932fb739922cf50eddeeb0e4031864617daa1f5a6e",
+    "next": "Model and review a pixel-preserving capture/image preparation optimization before a fresh derivative."
+  },
+  "next": [
+    "Finish actual B01\u2013B12 and independent source/main/normal teardown verification; remaining B13\u2013B24 and fuller-case predicates remain open.",
+    "Review restore capture optimization proposal, then actual original baseline38 and recovery34 with unchanged deadlines.",
+    "Review exact real Quickshell launcher/ABI/materialization packet, then private required routes and fixed reliability campaign.",
+    "Complete original52 drag/resize/reload, cancellation and reduced motion native gates.",
+    "Complete display/hardware cadence/accessibility, combined regression and deployment."
+  ]
+}

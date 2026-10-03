@@ -1,0 +1,38 @@
+{
+  "result": "pass",
+  "passedAssertions": 33,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-30be34d707224f1297e176357229d2e5.scope",
+    "coreLimit": 1
+  },
+  "coreLimits": [
+    1,
+    1
+  ],
+  "command": [
+    "g++",
+    "-std=c++23",
+    "-O1",
+    "-g",
+    "-MMD",
+    "-MF",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/authority-build-2/test.d",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/authority-build-2/test.cpp",
+    "-o",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/authority-build-2/test"
+  ],
+  "sourceSHA256": "f8ba303484ae321e70d354353cde2565f4022b932fdee1fa6300725406366486",
+  "extractedSHA256": "5988b2cba18a370bae52f0d05f789890e3c4508bd55bcf686a91bbfb18211c55",
+  "compile": {
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "execute": {
+    "exitCode": 0,
+    "stdout": "33 exact-function assertions PASS\n",
+    "stderr": ""
+  },
+  "boundary": "Exact function text, mocked core/lifetimes; no native/toolkit acceptance",
+  "nativeExecuted": false
+}

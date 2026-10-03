@@ -1,0 +1,31 @@
+{
+  "result": "popup-v5-source-correction-approved-for-later-native-pairing",
+  "updatedUTC": "2026-10-02T12:06:34.083017+00:00",
+  "packet": "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v5-popup/source-ready-inputs.json",
+  "packetSHA256": "acc63a9583dce38a8beefab5d6263f4267f528c8673b3f662f426ff051648165",
+  "verifiedInputsBytesAndModes": 24943,
+  "verifiedLinks": 13862,
+  "buildCommands": 17,
+  "CPUChecks": 308,
+  "CPUCases": 12,
+  "popupChecks": 71,
+  "CPUProof": {
+    "path": "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v5-popup/current-cpu-report.json",
+    "sha256": "2a32ba35c63eb154c760950946e1729dcd3360aecbe3f2898e87daf438132a56"
+  },
+  "narrowProductDiff": "Only adds capturePre(window) and capturePre(nativeRoot) to Popup.cpp; full V4 source inverse independently exact. Provider,Seal,Lifetime source byte exact.",
+  "predecessorReview": {
+    "path": "/home/hoskinson/window-integration-qa/popup-v4-root-source-review-v1.json",
+    "sha256": "713485a5a7a7f439f07b954d0fd734116625aac28c3bcc6acef01ae3a77f9a00"
+  },
+  "sourceImplementationAccepted": true,
+  "nativeApproved": false,
+  "installedQuickshellPopupAccepted": false,
+  "mainChanges": false,
+  "remaining": [
+    "Actual non-null QQuickWindow/root and installed Quickshell popup relationships",
+    "Actual Process registry/direct helper normal lifecycle and captured receipt",
+    "Source-bound actual UI/input episode plus current owner/Seat/layer",
+    "Full native frontendB/max/pin/reload/legacy integration"
+  ]
+}

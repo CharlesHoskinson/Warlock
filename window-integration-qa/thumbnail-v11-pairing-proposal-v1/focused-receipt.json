@@ -1,0 +1,30 @@
+{
+  "result": "pass",
+  "testsRun": 14,
+  "wallSeconds": 1.811,
+  "actualSession": 52489,
+  "actualExitCode": 0,
+  "scope": "qa-harness-dfef01b52a47448d81a5bb228ab8fd0f",
+  "invocation": "992b4b471e5f48e7b89e313916c122fd",
+  "stdoutCapturedByToolOnly": true,
+  "fullStdoutFileAvailable": false,
+  "command": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_helper_failure_drain"
+  ],
+  "cwd": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11",
+  "nativeLaunched": false,
+  "sourceInputs": {
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/helper_setup.py": "435106340de615c71a93b84a584fee877e209bdfc47eb144977460f71cb7031a",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/helper_observer.py": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/helper_drain_fixture.py": "db79d262615f8d02907270d9719d9942da220c27f45bc862ddeb9b3bd129331d",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/test_helper_failure_drain.py": "ab16b50cc5580945ce441a0994cf71fafb46bff8090b4ca17c90292372395f9f"
+  }
+}

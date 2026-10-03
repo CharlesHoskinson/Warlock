@@ -1,0 +1,28 @@
+{
+  "updatedUTC": "2026-10-02T01:17:44.043608+00:00",
+  "rootSourceReviewSHA256": "ec508d999c0c66c24f45f306e0440f4efd2fb35c10a90ced1f47286985022451",
+  "independentRuntimeReviewSHA256": "38bfd2c7a2d0a71a090057082ffb5556a9ef764a7d3238319d3920eb04fb12f0",
+  "manifestSHA256": "dade8f0e50bbf92dccb2a4a2c1d966d923911ee09bd457ab6d24453f044e211e",
+  "freeze": {
+    "command": [
+      "/usr/bin/python3",
+      "/home/hoskinson/window-integration-qa/browser-files-flow-v13/freeze_packet.py"
+    ],
+    "returncode": 0,
+    "stdout": "{\"files\": 40780, \"links\": 13770, \"manifestSHA256\": \"dade8f0e50bbf92dccb2a4a2c1d966d923911ee09bd457ab6d24453f044e211e\", \"diagnosticKernelInitialEnvironmentRange\": true, \"selectorAuthorityProperty\": \"Observed actual PID-bound private session-bus connection plus exact final pre-exec selectors; no direct currentgetenv/GIO claim\", \"nativeExecution\": false}\n",
+    "stderr": ""
+  },
+  "preflight": {
+    "command": [
+      "/usr/bin/python3",
+      "/home/hoskinson/window-integration-qa/browser-files-flow-v13/run_native.py",
+      "--preflight"
+    ],
+    "returncode": 0,
+    "stdout": "{\"preflight\": \"pass\", \"files\": 40780, \"symlinks\": 13770, \"manifestSHA256\": \"dade8f0e50bbf92dccb2a4a2c1d966d923911ee09bd457ab6d24453f044e211e\", \"nativeLaunch\": false}\n",
+    "stderr": ""
+  },
+  "allReviewsAccepted": true,
+  "nativeLaunched": false,
+  "mainWrites": false
+}

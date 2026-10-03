@@ -1,0 +1,10 @@
+{
+  "kind": "actual copied PipeTransport continuous drain during blocked native callback",
+  "transportSHA256": "6eebe9b189f82ad65c4730e635c207f64216c37b28839ac9a7279ac977bd4439",
+  "producerWritesBlockedUntilCallbackRelease": true,
+  "eventCountWhileCallbackBlocked": 1,
+  "eventCountAfterCallbackRelease": 81,
+  "counterexampleReproduced": true,
+  "nativeGUIUsed": false,
+  "scope": "actual subprocess pipe/source transport; controlled callback latency, no attribution to retained V4 presentation failure"
+}

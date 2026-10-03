@@ -1,0 +1,9 @@
+
+  runtime_lifecycle_test
+    ok acceptedReceiptRequiresDurableJournalTest passed 1 test(s)
+    ok journalFailureCannotCommitPreviouslyValidatedRequestTest passed 1 test(s)
+    ok unresolvedRestartCannotStartActorTest passed 1 test(s)
+    ok duplicateRuntimeLeaseCannotStartServiceTest passed 1 test(s)
+    ok idleStopNeverStartsRuntimeTest passed 1 test(s)
+
+  5 passing (262ms)

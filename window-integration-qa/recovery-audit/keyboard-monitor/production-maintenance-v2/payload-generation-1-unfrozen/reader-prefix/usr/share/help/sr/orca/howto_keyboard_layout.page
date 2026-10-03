@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_keyboard_layout" xml:lang="sr">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_toggling_caps_lock"/>
+    <title type="sort">6. Распоред тастатуре</title>
+    <desc>Бирање стоног или преносног распореда</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Распоред тастатуре</title>
+  <p>Орка има два распореда тастатуре: стони (тј. са бројевним делом) и преносни. Распоред који изаберете утиче на то који се тастер користи као Оркин измењивач.</p>
+  <list>
+    <item>
+      <p>Ако користите преносни распоред, подразумевани Оркин измењивач биће <key>CapsLock</key></p>
+    </item>
+    <item>
+      <p>Ако користите стони распоред, Оркин измењивач биће и <key>Insert</key> и <key>KP_Insert</key>, при чему је овај други исти тастер као и <key>KP_0</key>.</p>
+    </item>
+  </list>
+  <p>Распоред такође одређује притиске тастера повезане са бројним наредбама <app>Орке</app>, нарочито у областима равног прегледа, „Где сам“ и „Изговори све“.</p>
+  <steps>
+    <title>Мењање распореда тастатуре</title>
+    <item>
+      <p>Отворите прозорче <link xref="preferences">Оркиних поставки</link> притиском на <keyseq><key>Оркиног измењивача</key><key>Размак</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Идите до групе радио дугмића <gui>Распоред тастатуре</gui>.</p>
+    </item>
+    <item>
+      <p>Стрелицом идите до жељеног распореда.</p>
+    </item>
+    <item>
+      <p>Притисните дугме <gui>Примени</gui>.</p>
+    </item>
+  </steps>
+</page>

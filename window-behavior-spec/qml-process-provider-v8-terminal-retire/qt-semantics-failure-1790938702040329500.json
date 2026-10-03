@@ -1,0 +1,60 @@
+{
+  "result": "fail",
+  "sources": {
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/Lifetime.hpp": "b1848d124cbee12a39d1089adda1162157aa3a9810eba14916dc74a8b9b4cf4f",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/Lifetime.cpp": "b4599fc772d9ad1255a2bd0628d166228927502721f38bd6267ddd387cf573ac",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/ReloadRelay.hpp": "b9b0dfee22c3cc15b96534c95aa1f00a5ce5572fa96d0f853d1567d6fa6f9125",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/Seal.cpp": "34d22146c7ce697ba0904d14b44b478fefc693294c1febc86440fbf7476761b9",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/Provider.hpp": "0aa610853869eea9312f412b7ec854007bbc5b235ce796b890f5bebd013bd1c4",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/Provider.cpp": "1ad833f6ea0521214a785b7f4ad6f67b784555babdb434d5f12e6b3da5a68095",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/cpu_registry.cpp": "905a8fbd969f8ca50a03f8c0205ac1acc059fc19ef804041620fdb267d5da59f",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/build.py": "35b323467c00afc9c3634ce72ec30ef2952e9391682b4acf9b00c4302d716492",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/KnownQuickshell.hpp": "46a320a4fb871622f8d7fdfb3a790044b50a7df6a22152a932027ead013bc1f7",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/moc_Provider.cpp": "79738def7a2d0b3ab42321b83d5893b912f9c696b014749dd1b0cc5269ed1488",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/moc_ReloadRelay.cpp": "17bb7d4aaec1e0ce89effba0a20b3f4ffbb82ad37c1d2785e9942da2d10df0ad",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/cpu_dso.cpp": "6dd01c19a1b7c26b68e79f41326a0510312a3a3a71159a272df0a78b06f89c15",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/cpu_run.py": "e2d86548b4bac33192f1192da615a1d3a57def4e9d4ead05b9fa30c4cce51267",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/source_ready.py": "19863c8da82247bd18d0a7da5ac93058690915ff03f0b9bf9ec8f398f214560d",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/cpu_popup_semantics.cpp": "c6fcf6e1622e36f7c25db0a64c82215925b66f93c079f389073f751b38118bf0",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/semantics_before.py": "19693b33c9aadf8832a3e61f5f24571b22afedd7d198d3806cc2a5a2f023f8c8"
+  },
+  "sourceUnchanged": true,
+  "commands": [
+    {
+      "command": [
+        "/usr/lib/qt6/moc",
+        "-I/usr/include/qt6/QtQuick",
+        "-I/usr/include/qt6",
+        "-DQT_QUICK_LIB",
+        "-I/usr/include/qt6/QtOpenGL",
+        "-DQT_OPENGL_LIB",
+        "-I/usr/include/qt6/QtGui",
+        "-DQT_GUI_LIB",
+        "-I/usr/include/qt6/QtQml",
+        "-DQT_QML_LIB",
+        "-I/usr/include/qt6/QtQmlIntegration",
+        "-DQT_QMLINTEGRATION_LIB",
+        "-I/usr/include/qt6/QtNetwork",
+        "-DQT_NETWORK_LIB",
+        "-I/usr/include/qt6/QtCore",
+        "-DQT_CORE_LIB",
+        "-I/usr/lib/qt6/mkspecs/linux-g++",
+        "-lQt6Quick",
+        "-lQt6OpenGL",
+        "-lQt6Gui",
+        "-lQt6Qml",
+        "-lQt6Network",
+        "-lQt6Core",
+        "cpu_popup_semantics.cpp",
+        "-o",
+        "cpu_popup_semantics.moc"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "moc: Unknown options: lQt6Quick, lQt6OpenGL, lQt6Gui, lQt6Qml, lQt6Network, lQt6Core.\n"
+    }
+  ],
+  "popupRuntimeImplemented": false,
+  "GUI": false,
+  "actualInstalledQSPopupAccepted": false
+}

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_key_bindings" xml:lang="eu">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_profiles"/>
+  <title type="sort">8. Laster-teklak</title>
+  <desc>Komandoak laster-teklekin lotzea, berlotzea eta askatzea</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Laster-teklak</title>
+  <p>Orcak komando asko ditu, eta batzuk laster-tekla bati lotuta daude eta beste batzuk ez. <app>Orcaren</app> komandoak lotu, birlotu eta deslotzeko, erabili beheko urratsak.</p>
+  <steps>
+    <title>Lotu gabeko komando bat lotzea</title>
+    <item>
+      <p>Sartu <link xref="preferences">Orcaren hobespenak</link> elkarrizketa-koadroan <keyseq><key>Orca aldatzailea</key><key>zuriunea</key></keyseq> sakatuz.</p>
+    </item>
+    <item>
+      <p>jkoan <gui>Laster-teklak</gui> orrira.</p>
+    </item>
+    <item>
+      <p>Gezia tekla-sakatze bati esleitu nahi diozun komandoa duen gelaxkara.</p>
+    </item>
+    <item>
+      <p>Gezia behin eskuinera. Horrek fokua <gui>Laster-teklak</gui> zutabean jarriko du. Sakatu <key>Return</key>.</p>
+    </item>
+    <item>
+      <p>Sakatu nahi duzun tekla-konbinazioa</p></item>
+    <item>
+      <p>
+        Press <key>Return</key> to confirm the new combination. The new
+        keystroke will be saved and the check box in the last column (the
+        <gui>Modified</gui> column) will indicate that the key binding
+        has been modified.
+      </p>
+    </item>
+    <item>
+      <p>Sakatu <gui>Aplikatu</gui> botoia.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Lehendik dauden laster-teklak aldatzea</title>
+    <item>
+      <p>Sartu <link xref="preferences">Orcaren hobespenak</link> elkarrizketa-koadroan <keyseq><key>Orca aldatzailea</key><key>zuriunea</key></keyseq> sakatuz.</p>
+    </item>
+    <item>
+      <p>jkoan <gui>Laster-teklak</gui> orrira.</p>
+    </item>
+    <item>
+      <p>
+        Arrow to the cell which contains the binding you which to change and
+        press <key>Return</key>.
+      </p>
+    </item>
+    <item>
+        <p>Sakatu nahi duzun tekla-konbinazioa</p>
+    </item>
+    <item>
+      <p>
+        Press <key>Return</key> to confirm the new combination. The new
+        keystroke will be saved and the check box in the last column (the
+        <gui>Modified</gui> column) will indicate that the key binding has
+        been modified.
+      </p>
+    </item>
+    <item>
+      <p>Sakatu <gui>Aplikatu</gui> botoia.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Jatorrizko laster-teklak leheneratzea</title>
+    <item>
+      <p>Sartu <link xref="preferences">Orcaren hobespenak</link> elkarrizketa-koadroan <keyseq><key>Orca aldatzailea</key><key>zuriunea</key></keyseq> sakatuz.</p>
+    </item>
+    <item>
+      <p>jkoan <gui>Laster-teklak</gui> orrira.</p>
+    </item>
+    <item>
+      <p>Gezia laster-teklarekin lotuta dagoen aldatutako zutabera.</p>
+    </item>
+    <item>
+      <p>Kendu marka kontrol-laukiari <key>Zuriunea</key> sakatuz.</p>
+    </item>
+    <item>
+      <p>Sakatu <gui>Aplikatu</gui> botoia.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Lotutako komandoak askatzea</title>
+    <item>
+      <p>Sartu <link xref="preferences">Orcaren hobespenak</link> elkarrizketa-koadroan <keyseq><key>Orca aldatzailea</key><key>zuriunea</key></keyseq> sakatuz.</p>
+    </item>
+    <item>
+      <p>jkoan <gui>Laster-teklak</gui> orrira.</p>
+    </item>
+    <item>
+      <p>
+        Arrow to the cell which contains the binding you which to delete
+        and press <key>Return</key>.
+      </p>
+    </item>
+    <item>
+      <p>
+        When prompted for the new keybinding, press <key>Delete</key> or
+        <key>BackSpace</key>. You will be told that the key binding has
+        been removed.
+      </p>
+    </item>
+    <item>
+      <p>Sakatu <key>Return</key> berresteko.</p>
+    </item>
+    <item>
+      <p>Sakatu <gui>Aplikatu</gui> botoia.</p>
+    </item>
+  </steps>
+</page>

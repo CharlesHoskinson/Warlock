@@ -1,0 +1,11 @@
+{
+  "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/debug/HyprCtl.cpp",
+  "commit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+  "sha256": "798b7c6c4c1684557842463d46ac99c96629be4179e0e461dca77670247b91fa",
+  "function": "cursorPosRequest",
+  "evidence": "getMouseCoordsInternal().floor() before int JSON serialization",
+  "lines": [
+    1191,
+    1203
+  ]
+}

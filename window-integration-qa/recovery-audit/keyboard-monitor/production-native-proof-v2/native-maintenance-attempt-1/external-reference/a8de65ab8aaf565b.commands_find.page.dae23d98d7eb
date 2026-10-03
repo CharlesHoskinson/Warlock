@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_find" xml:lang="sr">
+  <info>
+    <link type="next" xref="commands_mouse"/>
+    <link type="guide" xref="commands#reviewing_screen_contents"/>
+    <link type="seealso" xref="howto_orca_find"/>
+    <title type="sort">2. Оркино проналажење</title>
+    <title type="link">Оркино проналажење</title>
+    <desc>Наредбе за претраживање садржаја прозора</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Наредбе Оркиног проналажења</title>
+  <p><app>Оркина</app> <link xref="howto_orca_find">функција проналажења</link> омогућава вам да претражујете садржај <link xref="howto_flat_review">Равног прегледа</link> за елементима који се налазе унутар тренутног прозора.</p>
+  <list>
+    <item>
+      <p>Отворите прозорче „Пронађи“ Орке:</p>
+      <list>
+        <item>
+          <p>Стони рачунар: <keyseq><key>КП Делете</key></keyseq></p>
+        </item>
+        <item>
+          <p>Преносни рачунар: <keyseq><key>Оркин измењивач</key><key>Лева заграда</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Преместите раван преглед на следећу појаву ниске:</p>
+      <list>
+        <item>
+          <p>Стони рачунар: <keyseq><key>Оркин измењивач</key><key>КП Делете</key></keyseq></p>
+        </item>
+        <item>
+          <p>Преносни рачунар: <keyseq><key>Оркин измењивач</key><key>Десна заграда</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Преместите раван преглед на претходну појаву ниске:</p>
+      <list>
+        <item>
+          <p>Стони рачунар: <keyseq> <key>Оркин измењивач</key><key>Шифт</key><key>КП Делете</key> </keyseq></p>
+        </item>
+        <item>
+          <p>Преносни рачунар: <keyseq> <key>Оркин измењивач</key><key>Цтрл</key><key>Десна заграда</key> </keyseq></p>
+        </item>
+      </list>
+    </item>
+  </list>
+</page>

@@ -1,0 +1,16 @@
+[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/window-integration-qa/thumbnail-v9-closure-alias-design-v1/closure_alias_identity_test.qnt:3:22
+  3:  action check(v:bool)=all{assert(v),s'=s}
+                          ^
+
+
+ Error [QNT000]: extraneous input 'run' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/window-integration-qa/thumbnail-v9-closure-alias-design-v1/closure_alias_identity_test.qnt:4:2
+  4:  run originalRegularAcceptedTest=init.then(observe(regular)).then(check(s.accepted))
+      ^^^
+
+error: parsing failed

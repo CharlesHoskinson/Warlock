@@ -1,0 +1,37 @@
+# Restore focus transaction — unapplied proposal
+
+## Scope and measured reason
+
+Frozen V27/B13 remain untouched. B13's timing-perturbed actual restore spent 548.665 ms in six sequential native-effect subprocess envelopes (including 238.212 ms of nested durable persistence), then two sequential real motionRefresh calls before original 2 s expiry. These spans prove costs and ordering, not geometry effects or unprofiled historical latency. Original baseline38/fault34, three genuine hidden captures, helper counts and every original receipt/context/material/native/current guard remain mandatory.
+
+The proposal substitutes ONE real OwnedLaunch native-effect job for the six focus dispatch envelopes. It retains monitor then workspace focus for each original ordered member. Three original refresh_destination calls remain three real registered helper invocations; bounded observation workers overlap them with no native-write concurrency. Neither completion of focus nor refresh alone grants capture/seed authority. OriginalPipelineReady in the small model is the unchanged original validation/capture/output/fresh-family/source pipeline, whose full source body is conserved by the intended diff. It is not a new caller Boolean or runtime bypass.
+
+## Owning source and correspondence limit
+
+Official clean Hyprland commit efb50993780079460b0cbed1363e2166a2de1d9f source copies are explicitly retained with SHA/mode and local owning snapshot equality. B13's actual host log names that clean commit; its selected core SHA is da8fcacf347bcbed83edc40108c6e2298da095e22246bd764e9bb382786cebb2 and selected V21 plugin remains unchanged. This is version/source correspondence, not reproducible compiler proof or permission to pair another ABI. /usr/bin/hyprctl SHA2780a8bb56494917a725f817c9cf70fb5cc2f39aac5abc62ecf2e619a1f13ec5 is the actual CPU-tested unchanged CLI.
+
+hyprctl/src/main.cpp's interactive repl reads one stdin line, invokes request('/repl '+line), prints the reply after complete server EOF, and obtains the next readline prompt. Its request has a 5 s socket timeout and exit status does not prove semantic effects. The proposal imposes the original absolute receivedNs+2,000,000,000 deadline at every parent admission/write/read/postguard; it does not inherit 5 s as authority or reset a deadline. Original per-command maximum 2 s remains an upper bound within that remaining receipt budget. One pair admitted before expiry may finish across expiry; later request/receipt/publication/seed authority is denied. Unknown partial results remain durable uncertain jobs even after process/group closure.
+
+## Parent guards and exact interactive conversation
+
+Only canonical NativeDesktop guard/builder functions bound to the exact NativeDesktop owning the exact OwnedCommands may supply the transaction. Plans are deep-copied, unique exact identity tuples, ordered and bounded 1..64. The controller retains its existing receipt RLock throughout all native writes, as before. Immediately before EACH pair the parent repeats the unchanged apply_destination plan-identity, stored state fields, stored monitor JSON and fresh exact client identity checks. It rechecks currency/deadline after those observations and before sending. No compositor filesystem reads or caller-asserted safety flag.
+
+The one sealed native-effect launch is registered/released via the existing OwnedLaunch/Keeper before exec. Its real PID/start, sealed helper/launcher material, session and actor provenance remain the existing authorities. A fresh nonce and ordered intended identity/source vector are in the real record before registration, not fabricated six jobs.
+
+The parent sends exactly one owned expression per pair. Owning hl.get_window/hl.get_monitor userdata rechecks actual mapped address/stable-ID/PID and exact destination output geometry/scale/transform before EACH ordered dispatch. hl.dispatch result must be an actual table with Boolean ok=true; errors/expired userdata are refused. Lua prints one typed receipt {nonce,expected,completed,ok}; completed prefixes must be exactly2,4,6 for a three-member family. Dispatch-entry, ACK and process return alone are not effect proof. Each receipt proves only the owning synchronous dispatcher result prefix under its native guards; post-Python material/current guards and normal exit/group closure still precede Keeper.complete.
+
+The parser accepts ONLY full exact expected input echo framed by the actual prompt (plain or observed readline clear-H/clear-2J), followed by one JSON line with exact keys/types/nonce/next prefix and the next exact prompt. It consumes the ENTIRE echo first: JSON embedded in echoed Lua is never a receipt. Duplicate JSON keys, prior nonce, wrong/out-of-order/duplicate prefixes, unknown ANSI, additional lines, partial EOF and missing prompt refuse. Buffer/transcript are bounded. All actual stdout/stderr and sent expressions are retained privately in the record profile; no new unknown actor-directory file. Exact byte framing CPU proof does not execute Lua or prove native semantics. Unsupported legitimate framing fails closed for later reviewed correction.
+
+After prefix6 and the next prompt, close stdin, require full process EOF/exit0 and empty stderr, then repeat original member/material/currency checks before normal Keeper.complete. Any unknown result/timeout/failed postguard leaves the job's native uncertainty intact. Existing owned-launch policy/registration/G gate and group closure are unchanged.
+
+## Real refresh observations and original acceptance
+
+The exact frozen shell motionRefresh handler broadcasts refresh, and refresh only starts snapshotProcess when not already running. No native focus/window write is added to those original calls. NativeDesktop refresh_destinations uses max3 workers and ordered slots, invokes the existing refresh_destination once for EACH plan, preserves every original1s helper timeout, and checks currency/original deadline before and after each call. Failure/cancel/expiry stops new slots; all started workers drain outside the scene RLock before return. Completion does not waive original family/material/validation/capture/output/seed checks. No replacement one-shot refresh, fake count, polling pause or default4/helper-budget waiver.
+
+## Proof boundary
+
+The focused model covers ordered effects, per-pair parent/native guards, partial uncertainty, nonce/prefix conversations, atomic cancellation, fixed deadline, normal owned closure, bounded real refresh drain and no seed from refresh alone. The unapplied whole-file inverse conserves original methods/action bodies, all original preparation tail and fallback/reduction/deadline logic. Parser/guard/partial CPU tests supplement this abstraction. Root review is required before any product application/full original proof; root alone freezes and launches a fresh unprofiled original38 collector.
+
+## V6 final admission refinement
+
+V5 is retained unchanged. Final member/material/output observations can consume the remaining receipt budget even after receipt6 and exit0. The new final remaining() check immediately before Keeper.complete refuses expired authority and leaves the real native-effect job uncertain. Existing Confirm now requires its original deadline too; no new model state. All original guards/actions/budgets and whole-file inverses remain exact.

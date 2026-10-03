@@ -1,0 +1,867 @@
+{
+  "result": "pass",
+  "classification": "Independent complete boundary trace from failed native diagnostic",
+  "traceEvents": 2792,
+  "pairedSpans": 1396,
+  "sourceStable": true,
+  "actualModuleOwnerTokensEqual": true,
+  "mainPreservationCount": 15,
+  "mainPreservationAccepted": true,
+  "originalBaselineAccepted": false,
+  "allHelpersNormal": false,
+  "normalServiceClosure": false,
+  "fullWindowsParityAccepted": false,
+  "physicalCadenceAccepted": false,
+  "timingPerturbed": true,
+  "timeline": [
+    {
+      "id": 25,
+      "parent": null,
+      "thread": 4136227,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": -665.128691,
+      "durationMs": 16.070831,
+      "details": {
+        "timeout": 0.6,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 79,
+      "parent": null,
+      "thread": 4136368,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": -199.392187,
+      "durationMs": 19.341621,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 104,
+      "parent": null,
+      "thread": 4136368,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": -179.868323,
+      "durationMs": 107.634957,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "monitors",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 130,
+      "parent": null,
+      "thread": 4136368,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": -70.583099,
+      "durationMs": 34.916411,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "monitors",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 155,
+      "parent": null,
+      "thread": 4136368,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": -35.491089,
+      "durationMs": 35.184718,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 181,
+      "parent": null,
+      "thread": 4136434,
+      "symbol": "SceneController.prepare",
+      "startAfterReceiptMs": 6.414979,
+      "durationMs": 3685.138253,
+      "details": {}
+    },
+    {
+      "id": 183,
+      "parent": 182,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 6.524531,
+      "durationMs": 38.020668,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 210,
+      "parent": 182,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 44.717946,
+      "durationMs": 27.452386,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 235,
+      "parent": 182,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 72.33067,
+      "durationMs": 26.812424,
+      "details": {
+        "timeout": 0.6,
+        "args": [
+          "hyprctl",
+          "repl",
+          "print(hl.plugin.hyprbars.window_families())"
+        ]
+      }
+    },
+    {
+      "id": 260,
+      "parent": 182,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 99.219666,
+      "durationMs": 25.366643,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 289,
+      "parent": 288,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 133.6549,
+      "durationMs": 131.324517,
+      "details": {
+        "timeout": 0.6,
+        "args": [
+          "hyprctl",
+          "repl",
+          "local api=hl.plugin.hyprbars.retire_gesture_current; if type(api)~=\"function\" then print('{\"ok\":false,\"retired\":[],\"error\":\"retirement-capability-absent\"}') else local retired={}; local ok=true; for _,args in ipairs({{\"0x59945473a560\",\"18000000\"},{\"0x599454f6f000\",\"18000002\"},{\"0x599454dd7b70\",\"18000003\"}}) do local success,was=api(args[1],args[2]); if type(success)~=\"boolean\" or type(was)~=\"boolean\" or not success then ok=false; break end; retired[#retired+1]=was and \"true\" or \"false\"; end; print('{\"ok\":'..(ok and \"true\" or \"false\")..',\"retired\":['..table.concat(retired,\",\")..']}'); end"
+        ]
+      }
+    },
+    {
+      "id": 327,
+      "parent": 326,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 267.957386,
+      "durationMs": 20.10974,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 352,
+      "parent": 326,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 288.218724,
+      "durationMs": 22.905412,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 377,
+      "parent": 326,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 311.328461,
+      "durationMs": 32.364634,
+      "details": {
+        "timeout": 0.6,
+        "args": [
+          "hyprctl",
+          "repl",
+          "print(hl.plugin.hyprbars.window_families())"
+        ]
+      }
+    },
+    {
+      "id": 402,
+      "parent": 326,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 343.778831,
+      "durationMs": 33.074082,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 431,
+      "parent": null,
+      "thread": 4136324,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 389.513998,
+      "durationMs": 84.164749,
+      "details": {
+        "timeout": 0.6,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 434,
+      "parent": 181,
+      "thread": 4136434,
+      "symbol": "NativeDesktop.capture_source",
+      "startAfterReceiptMs": 396.643429,
+      "durationMs": 859.814157,
+      "details": {
+        "index": 0,
+        "scene_token": "e52ce3d43e8f-1",
+        "window": {
+          "address": "0x59945473a560",
+          "stableId": "18000000",
+          "pid": 4135853
+        }
+      }
+    },
+    {
+      "id": 437,
+      "parent": 436,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 396.807526,
+      "durationMs": 74.241713,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 484,
+      "parent": 435,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 471.389814,
+      "durationMs": 307.371252,
+      "details": {
+        "timeout": 1,
+        "args": [
+          "omarchy-shell",
+          "hoskinson.windows",
+          "motionTarget",
+          "{\"address\": \"0x59945473a560\", \"stableId\": \"18000000\", \"pid\": 4135853}"
+        ]
+      }
+    },
+    {
+      "id": 489,
+      "parent": null,
+      "thread": 4136324,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 473.832881,
+      "durationMs": 40.564158,
+      "details": {
+        "timeout": 0.6,
+        "args": [
+          "hyprctl",
+          "repl",
+          "print(hl.plugin.hyprbars.window_families())"
+        ]
+      }
+    },
+    {
+      "id": 518,
+      "parent": null,
+      "thread": 4136324,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 514.485509,
+      "durationMs": 67.814231,
+      "details": {
+        "timeout": 0.6,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 573,
+      "parent": 435,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 779.008316,
+      "durationMs": 153.715935,
+      "details": {
+        "timeout": 1,
+        "args": [
+          "hyprctl",
+          "repl",
+          "print(hl.plugin.hyprbars.window_atlas(\"0x59945473a560\",\"18000000\",4135853,\"/run/user/1000/wqa/989f/hypr-window-motion/qa-family-service/actors/actor-1-b5030e3ffff141a1b4c8918561241a5c/d0262dc22724-1.png\",\"d0262dc22724-1\"))"
+        ]
+      }
+    },
+    {
+      "id": 612,
+      "parent": 611,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 933.093864,
+      "durationMs": 34.824741,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 637,
+      "parent": 435,
+      "thread": 4136434,
+      "symbol": "Desktop.publish_crop",
+      "startAfterReceiptMs": 968.68462,
+      "durationMs": 250.043951,
+      "details": {
+        "window": {
+          "address": "0x59945473a560",
+          "stableId": "18000000",
+          "pid": 4135853
+        }
+      }
+    },
+    {
+      "id": 639,
+      "parent": 638,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 969.301926,
+      "durationMs": 35.373752,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 665,
+      "parent": 637,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 1004.971124,
+      "durationMs": 178.678263,
+      "details": {
+        "timeout": 1,
+        "args": [
+          "magick",
+          "/run/user/1000/wqa/989f/hypr-window-motion/qa-family-service/actors/actor-1-b5030e3ffff141a1b4c8918561241a5c/d0262dc22724-1.png",
+          "-crop",
+          "460x300+7+31",
+          "+repage",
+          "-thumbnail",
+          "300x180>",
+          "/run/user/1000/wqa/989f/hypr-window-previews/.motion-d0262dc22724-1.png"
+        ]
+      }
+    },
+    {
+      "id": 702,
+      "parent": 701,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 1183.747352,
+      "durationMs": 34.176743,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 729,
+      "parent": 728,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 1219.160872,
+      "durationMs": 35.135999,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 757,
+      "parent": 181,
+      "thread": 4136434,
+      "symbol": "NativeDesktop.capture_source",
+      "startAfterReceiptMs": 1264.166835,
+      "durationMs": 2378.268194,
+      "details": {
+        "index": 1,
+        "scene_token": "e52ce3d43e8f-1",
+        "window": {
+          "address": "0x599454f6f000",
+          "stableId": "18000002",
+          "pid": 4135853
+        }
+      }
+    },
+    {
+      "id": 760,
+      "parent": 759,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 1264.324071,
+      "durationMs": 35.816355,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 785,
+      "parent": 758,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 1300.473784,
+      "durationMs": 278.624935,
+      "details": {
+        "timeout": 1,
+        "args": [
+          "omarchy-shell",
+          "hoskinson.windows",
+          "motionTarget",
+          "{\"address\": \"0x599454f6f000\", \"stableId\": \"18000002\", \"pid\": 4135853}"
+        ]
+      }
+    },
+    {
+      "id": 823,
+      "parent": 758,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 1579.369535,
+      "durationMs": 156.354731,
+      "details": {
+        "timeout": 1,
+        "args": [
+          "hyprctl",
+          "repl",
+          "print(hl.plugin.hyprbars.window_atlas(\"0x599454f6f000\",\"18000002\",4135853,\"/run/user/1000/wqa/989f/hypr-window-motion/qa-family-service/actors/actor-1-b5030e3ffff141a1b4c8918561241a5c/d0262dc22724-2.png\",\"d0262dc22724-2\"))"
+        ]
+      }
+    },
+    {
+      "id": 832,
+      "parent": null,
+      "thread": 4136324,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 1597.128112,
+      "durationMs": 38.910338,
+      "details": {
+        "timeout": 0.6,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 858,
+      "parent": null,
+      "thread": 4136324,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 1636.191434,
+      "durationMs": 57.499516,
+      "details": {
+        "timeout": 0.6,
+        "args": [
+          "hyprctl",
+          "repl",
+          "print(hl.plugin.hyprbars.window_families())"
+        ]
+      }
+    },
+    {
+      "id": 900,
+      "parent": null,
+      "thread": 4136324,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 1693.753417,
+      "durationMs": 59.399178,
+      "details": {
+        "timeout": 0.6,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 930,
+      "parent": 929,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 1735.954093,
+      "durationMs": 60.032926,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 964,
+      "parent": 758,
+      "thread": 4136434,
+      "symbol": "Desktop.publish_crop",
+      "startAfterReceiptMs": 1796.247534,
+      "durationMs": 1787.417268,
+      "details": {
+        "window": {
+          "address": "0x599454f6f000",
+          "stableId": "18000002",
+          "pid": 4135853
+        }
+      }
+    },
+    {
+      "id": 966,
+      "parent": 965,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 1796.508714,
+      "durationMs": 44.245759,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 992,
+      "parent": 964,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 1841.091252,
+      "durationMs": 185.296215,
+      "details": {
+        "timeout": 1,
+        "args": [
+          "magick",
+          "/run/user/1000/wqa/989f/hypr-window-motion/qa-family-service/actors/actor-1-b5030e3ffff141a1b4c8918561241a5c/d0262dc22724-2.png",
+          "-crop",
+          "320x180+7+31",
+          "+repage",
+          "-thumbnail",
+          "300x180>",
+          "/run/user/1000/wqa/989f/hypr-window-previews/.motion-d0262dc22724-2.png"
+        ]
+      }
+    },
+    {
+      "id": 1029,
+      "parent": 1028,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 2026.478988,
+      "durationMs": 1555.884757,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 1032,
+      "parent": 1031,
+      "thread": 4136227,
+      "symbol": "SceneController.settle",
+      "startAfterReceiptMs": 2027.21894,
+      "durationMs": 1460.099942,
+      "details": {}
+    },
+    {
+      "id": 1035,
+      "parent": 1034,
+      "thread": 4136227,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 2027.387137,
+      "durationMs": 49.131045,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 1067,
+      "parent": 1034,
+      "thread": 4136227,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 2076.692636,
+      "durationMs": 29.343482,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 1092,
+      "parent": 1034,
+      "thread": 4136227,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 2106.168066,
+      "durationMs": 33.17038,
+      "details": {
+        "timeout": 0.6,
+        "args": [
+          "hyprctl",
+          "repl",
+          "print(hl.plugin.hyprbars.window_families())"
+        ]
+      }
+    },
+    {
+      "id": 1117,
+      "parent": 1034,
+      "thread": 4136227,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 2139.399414,
+      "durationMs": 48.131074,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 1144,
+      "parent": 1142,
+      "thread": 4136227,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 2192.359049,
+      "durationMs": 441.375907,
+      "details": {
+        "timeout": 8,
+        "args": [
+          "/proc/self/fd/10",
+          "minimize",
+          "0x59945473a560",
+          "18000000",
+          "4135853"
+        ]
+      }
+    },
+    {
+      "id": 1185,
+      "parent": 1183,
+      "thread": 4136227,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 2644.670777,
+      "durationMs": 289.808872,
+      "details": {
+        "timeout": 8,
+        "args": [
+          "/proc/self/fd/10",
+          "minimize",
+          "0x599454f6f000",
+          "18000002",
+          "4135853"
+        ]
+      }
+    },
+    {
+      "id": 1214,
+      "parent": null,
+      "thread": 4136324,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 2774.653091,
+      "durationMs": 765.352211,
+      "details": {
+        "timeout": 0.6,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 1236,
+      "parent": 1234,
+      "thread": 4136227,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 2949.074141,
+      "durationMs": 459.93804,
+      "details": {
+        "timeout": 8,
+        "args": [
+          "/proc/self/fd/11",
+          "minimize",
+          "0x599454dd7b70",
+          "18000003",
+          "4135853"
+        ]
+      }
+    },
+    {
+      "id": 1276,
+      "parent": 1032,
+      "thread": 4136227,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 3429.720728,
+      "durationMs": 44.596675,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 1323,
+      "parent": 1322,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 3587.338594,
+      "durationMs": 53.049021,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    },
+    {
+      "id": 1351,
+      "parent": 181,
+      "thread": 4136434,
+      "symbol": "OwnedCommands.run",
+      "startAfterReceiptMs": 3646.947889,
+      "durationMs": 43.658671,
+      "details": {
+        "timeout": 2,
+        "args": [
+          "hyprctl",
+          "clients",
+          "-j"
+        ]
+      }
+    }
+  ],
+  "interpretation": "Per-window target launch and synchronous thumbnail subprocess costs observed. Deadline settlement temporally overlaps the second capture post-crop client observation. Exact lock-wait subphase not separately instrumented; no specific wait primitive or uninstrumented V5 attribution claimed.",
+  "nextProductWork": [
+    "Genuine batch taskbar target query with per-member actual endpoint obligations",
+    "One normal owned thumbnail command for the complete captured family, before renderer seed/native preview readiness",
+    "Keep original2s controller deadline and exact source/family/current receipt checks"
+  ],
+  "artifacts": {
+    "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/frozen-inputs.json": "f570f9c5fc1c3b31afcf215549c8c89ed4f150cf40c7d06ef42460059d1ff8e4",
+    "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/attempt-baseline-1/actual-preparation-timing.json": "a15502dc2f80e1fc448605aaf683fbae473eb8d6e539c1356ea35aaff2f5da17",
+    "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/attempt-baseline-1/report.json": "eb9375666324419df33a853b9d09ebd5759a6c01996da6079efb34a0897d518b",
+    "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/attempt-baseline-1/service-retirement-1.json": "6b56294bc516ad56518356051f05fc92b3e4a0ec7aa6c1280aad60ec96014d15",
+    "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/attempt-baseline-1/actual-terminal-binding.json": "6414c6bc0820ce6b46e5030342784ed21dccb62e0f1d9925374323868b11023f"
+  }
+}

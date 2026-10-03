@@ -1,0 +1,36 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_capture.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pin_capture\n    ok exactReadTest passed 1 test(s)\n    ok wrongOwnerRefusedTest passed 1 test(s)\n    ok zeroGenerationRefusedTest passed 1 test(s)\n    ok changedBeforeReadTest passed 1 test(s)\n    ok changedAfterReadTest passed 1 test(s)\n    ok wrongPeerRefusedTest passed 1 test(s)\n    ok malformedNoAuthorityTest passed 1 test(s)\n\n  7 passing (366ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_capture.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (3436ms at 582 traces/second).\nUse --seed=0x13e4f1d --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "pin_capture.qnt": "97ec8a3757a9259c78987aa2ee0dc8bae10e2ef98af7823ba60dc0c2f812c0fb",
+    "CAPTURE_CONTRACT.md": "07abca099d58857f762421f4a2d53212c00ff5989a32b4171386ae103641ba90"
+  },
+  "implementationUnchanged": true,
+  "nativeExecuted": false
+}

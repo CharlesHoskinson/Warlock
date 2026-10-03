@@ -1,0 +1,2481 @@
+{
+  "scope": "Actual native Qt6.11.2 editable/selection interfaces on copied Files PathBar TextInput and diagnostic native TextEdit; isolated offscreen session bus, no Orca/compositor claim",
+  "cases": [
+    {
+      "item": "PathBar.input",
+      "context": "visible",
+      "operation": "delete",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ADEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "visible",
+      "operation": "insert",
+      "after": {
+        "cursorPosition": 3,
+        "objectAlive": true,
+        "selectionEnd": 3,
+        "selectionStart": 0,
+        "text": "ABXCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "visible",
+      "operation": "replace",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 3,
+        "selectionStart": 0,
+        "text": "AXDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "visible",
+      "operation": "selection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "visible",
+      "operation": "addSelection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "visible",
+      "operation": "removeSelection",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "visible",
+      "operation": "cursor",
+      "after": {
+        "cursorPosition": 4,
+        "objectAlive": true,
+        "selectionEnd": 4,
+        "selectionStart": 4,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "visible",
+      "operation": "setValue",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 1,
+        "text": "X"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "hidden",
+      "operation": "delete",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ADEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "hidden",
+      "operation": "insert",
+      "after": {
+        "cursorPosition": 3,
+        "objectAlive": true,
+        "selectionEnd": 3,
+        "selectionStart": 0,
+        "text": "ABXCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "hidden",
+      "operation": "replace",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 3,
+        "selectionStart": 0,
+        "text": "AXDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "hidden",
+      "operation": "selection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "hidden",
+      "operation": "addSelection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "hidden",
+      "operation": "removeSelection",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "hidden",
+      "operation": "cursor",
+      "after": {
+        "cursorPosition": 4,
+        "objectAlive": true,
+        "selectionEnd": 4,
+        "selectionStart": 4,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "hidden",
+      "operation": "setValue",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 1,
+        "text": "X"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "disabled",
+      "operation": "delete",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 1,
+        "text": "ADEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "disabled",
+      "operation": "insert",
+      "after": {
+        "cursorPosition": 3,
+        "objectAlive": true,
+        "selectionEnd": 3,
+        "selectionStart": 3,
+        "text": "ABXCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "disabled",
+      "operation": "replace",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "AXDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "disabled",
+      "operation": "selection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "disabled",
+      "operation": "addSelection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "disabled",
+      "operation": "removeSelection",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": false,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "disabled",
+      "operation": "cursor",
+      "after": {
+        "cursorPosition": 4,
+        "objectAlive": true,
+        "selectionEnd": 4,
+        "selectionStart": 4,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "disabled",
+      "operation": "setValue",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 1,
+        "text": "X"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "modalBackground",
+      "operation": "delete",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 1,
+        "text": "ADEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "modalBackground",
+      "operation": "insert",
+      "after": {
+        "cursorPosition": 3,
+        "objectAlive": true,
+        "selectionEnd": 3,
+        "selectionStart": 3,
+        "text": "ABXCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "modalBackground",
+      "operation": "replace",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "AXDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "modalBackground",
+      "operation": "selection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "modalBackground",
+      "operation": "addSelection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "modalBackground",
+      "operation": "removeSelection",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": false,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "modalBackground",
+      "operation": "cursor",
+      "after": {
+        "cursorPosition": 4,
+        "objectAlive": true,
+        "selectionEnd": 4,
+        "selectionStart": 4,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "modalBackground",
+      "operation": "setValue",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 1,
+        "text": "X"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "PathBar.input",
+      "context": "readOnly",
+      "operation": "delete",
+      "after": {
+        "cursorPosition": 4,
+        "objectAlive": true,
+        "selectionEnd": 4,
+        "selectionStart": 4,
+        "text": "ADEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "PathBar.input",
+      "context": "readOnly",
+      "operation": "insert",
+      "after": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": false,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "PathBar.input",
+      "context": "readOnly",
+      "operation": "replace",
+      "after": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": false,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "PathBar.input",
+      "context": "readOnly",
+      "operation": "selection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "PathBar.input",
+      "context": "readOnly",
+      "operation": "addSelection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "PathBar.input",
+      "context": "readOnly",
+      "operation": "removeSelection",
+      "after": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": false,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "PathBar.input",
+      "context": "readOnly",
+      "operation": "cursor",
+      "after": {
+        "cursorPosition": 4,
+        "objectAlive": true,
+        "selectionEnd": 4,
+        "selectionStart": 4,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "PathBar.input",
+      "context": "readOnly",
+      "operation": "setValue",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 1,
+        "text": "X"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "visible",
+      "operation": "delete",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 0,
+        "text": "ADEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "visible",
+      "operation": "insert",
+      "after": {
+        "cursorPosition": 3,
+        "objectAlive": true,
+        "selectionEnd": 3,
+        "selectionStart": 0,
+        "text": "ABXCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "visible",
+      "operation": "replace",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "AXDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "visible",
+      "operation": "selection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "visible",
+      "operation": "addSelection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "visible",
+      "operation": "removeSelection",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "visible",
+      "operation": "cursor",
+      "after": {
+        "cursorPosition": 4,
+        "objectAlive": true,
+        "selectionEnd": 4,
+        "selectionStart": 4,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "visible",
+      "operation": "setValue",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 1,
+        "text": "X"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "hidden",
+      "operation": "delete",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 0,
+        "text": "ADEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "hidden",
+      "operation": "insert",
+      "after": {
+        "cursorPosition": 3,
+        "objectAlive": true,
+        "selectionEnd": 3,
+        "selectionStart": 0,
+        "text": "ABXCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "hidden",
+      "operation": "replace",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "AXDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "hidden",
+      "operation": "selection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "hidden",
+      "operation": "addSelection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "hidden",
+      "operation": "removeSelection",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "hidden",
+      "operation": "cursor",
+      "after": {
+        "cursorPosition": 4,
+        "objectAlive": true,
+        "selectionEnd": 4,
+        "selectionStart": 4,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "hidden",
+      "operation": "setValue",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 1,
+        "text": "X"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": true,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "disabled",
+      "operation": "delete",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 0,
+        "text": "ADEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "disabled",
+      "operation": "insert",
+      "after": {
+        "cursorPosition": 3,
+        "objectAlive": true,
+        "selectionEnd": 3,
+        "selectionStart": 0,
+        "text": "ABXCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "disabled",
+      "operation": "replace",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "AXDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "disabled",
+      "operation": "selection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "disabled",
+      "operation": "addSelection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "disabled",
+      "operation": "removeSelection",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "disabled",
+      "operation": "cursor",
+      "after": {
+        "cursorPosition": 4,
+        "objectAlive": true,
+        "selectionEnd": 4,
+        "selectionStart": 4,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "disabled",
+      "operation": "setValue",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 1,
+        "text": "X"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": true,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "modalBackground",
+      "operation": "delete",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 0,
+        "text": "ADEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "modalBackground",
+      "operation": "insert",
+      "after": {
+        "cursorPosition": 3,
+        "objectAlive": true,
+        "selectionEnd": 3,
+        "selectionStart": 0,
+        "text": "ABXCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "modalBackground",
+      "operation": "replace",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "AXDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "modalBackground",
+      "operation": "selection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "modalBackground",
+      "operation": "addSelection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "modalBackground",
+      "operation": "removeSelection",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "modalBackground",
+      "operation": "cursor",
+      "after": {
+        "cursorPosition": 4,
+        "objectAlive": true,
+        "selectionEnd": 4,
+        "selectionStart": 4,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "modalBackground",
+      "operation": "setValue",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 1,
+        "text": "X"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "readOnly",
+      "operation": "delete",
+      "after": {
+        "cursorPosition": 4,
+        "objectAlive": true,
+        "selectionEnd": 4,
+        "selectionStart": 4,
+        "text": "ADEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "readOnly",
+      "operation": "insert",
+      "after": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": false,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "readOnly",
+      "operation": "replace",
+      "after": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": false,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "readOnly",
+      "operation": "selection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "readOnly",
+      "operation": "addSelection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "readOnly",
+      "operation": "removeSelection",
+      "after": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": false,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "readOnly",
+      "operation": "cursor",
+      "after": {
+        "cursorPosition": 4,
+        "objectAlive": true,
+        "selectionEnd": 4,
+        "selectionStart": 4,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "QA.TextEdit",
+      "context": "readOnly",
+      "operation": "setValue",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 1,
+        "text": "X"
+      },
+      "before": {
+        "cursorPosition": 6,
+        "objectAlive": true,
+        "selectionEnd": 6,
+        "selectionStart": 6,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": false,
+      "hasCurrentEditable": false,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": true
+    },
+    {
+      "item": "Prompt.input",
+      "context": "modalOwner",
+      "operation": "delete",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ADEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "Prompt.input",
+      "context": "modalOwner",
+      "operation": "insert",
+      "after": {
+        "cursorPosition": 3,
+        "objectAlive": true,
+        "selectionEnd": 3,
+        "selectionStart": 0,
+        "text": "ABXCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "Prompt.input",
+      "context": "modalOwner",
+      "operation": "replace",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 3,
+        "selectionStart": 0,
+        "text": "AXDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "Prompt.input",
+      "context": "modalOwner",
+      "operation": "selection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "Prompt.input",
+      "context": "modalOwner",
+      "operation": "addSelection",
+      "after": {
+        "cursorPosition": 5,
+        "objectAlive": true,
+        "selectionEnd": 5,
+        "selectionStart": 3,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "Prompt.input",
+      "context": "modalOwner",
+      "operation": "removeSelection",
+      "after": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 2,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "Prompt.input",
+      "context": "modalOwner",
+      "operation": "cursor",
+      "after": {
+        "cursorPosition": 4,
+        "objectAlive": true,
+        "selectionEnd": 4,
+        "selectionStart": 4,
+        "text": "ABCDEF"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    },
+    {
+      "item": "Prompt.input",
+      "context": "modalOwner",
+      "operation": "setValue",
+      "after": {
+        "cursorPosition": 1,
+        "objectAlive": true,
+        "selectionEnd": 1,
+        "selectionStart": 1,
+        "text": "X"
+      },
+      "before": {
+        "cursorPosition": 2,
+        "objectAlive": true,
+        "selectionEnd": 2,
+        "selectionStart": 0,
+        "text": "ABCDEF"
+      },
+      "changed": true,
+      "disabled": false,
+      "hasCachedEditable": true,
+      "hasCurrentEditable": true,
+      "hasText": true,
+      "interfaceFound": true,
+      "invisible": false,
+      "objectAlive": true,
+      "readOnly": false
+    }
+  ],
+  "destroyedPeer": {
+    "after": {
+      "objectAlive": false
+    },
+    "before": {
+      "objectAlive": false
+    },
+    "changed": false,
+    "interfaceFound": false,
+    "objectAlive": false
+  },
+  "exitCode": -15
+}

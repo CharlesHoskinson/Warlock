@@ -1,0 +1,58 @@
+{
+  "updatedUTC": "2026-10-01T19:36:15.592324+00:00",
+  "reportSHA256": "91910b36f135bd936ce52114343a2523820b207dd6f527b4fb651506a2371acc",
+  "manifestSHA256": "d8e8b0dfae0f5e581116f70e550c9b71a0b151ea1e542e9a9fb68ea0a79f1832",
+  "inputCount": 2983,
+  "linkCount": 6,
+  "independentChecks": {
+    "frozenInputsExact": true,
+    "frozenLinksExact": true,
+    "all15MainPreservation": true,
+    "allRecordedPIDStartGone": true,
+    "actualProducerNormalWaitZero": true,
+    "ownedRuntimeGone": true,
+    "strictHostCleanup": true,
+    "mandatoryParentTransport": true,
+    "all8FinalComparisonsRetained": true,
+    "all18CausalReadPairsRetained": true
+  },
+  "allIndependentChecks": true,
+  "processes": [
+    {
+      "pid": 948911,
+      "start": "10572154",
+      "gone": true
+    },
+    {
+      "pid": 948912,
+      "start": "10572157",
+      "gone": true
+    },
+    {
+      "pid": 948923,
+      "start": "10572234",
+      "gone": true
+    },
+    {
+      "pid": 948911,
+      "start": "10572154",
+      "gone": true
+    },
+    {
+      "pid": 948912,
+      "start": "10572157",
+      "gone": true
+    },
+    {
+      "pid": 948923,
+      "start": "10572234",
+      "gone": true
+    }
+  ],
+  "rasterAccepted": false,
+  "physicalCadenceAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "failure": "Retained scaled translucent prefix/full-image errors2 above original tolerance1; no threshold changes",
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false
+}

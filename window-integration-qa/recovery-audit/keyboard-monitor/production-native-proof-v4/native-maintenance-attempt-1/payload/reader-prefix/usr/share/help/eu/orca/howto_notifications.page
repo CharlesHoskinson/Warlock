@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_notifications" xml:lang="eu">
+  <info>
+    <link type="guide" xref="index#reviewing"/>
+    <title type="sort">5. Jakinarazpenak</title>
+    <desc>Aurretik jasotako mezuak irakurtzea</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Jakinarazpenak</title>
+  <p>GNOMEren mahaigainak "jakinarazpenen area" bat du, non aplikazioek informazioa eman diezaieketen erabiltzaileei. Jakinarazpen horiek izan daitezke, adibidez, berriketa-mezuak, erreproduzitzen ari den abestiaren xehetasunak, bateria-maila baxu dagoela ohartarazten duen mezua eta abar.</p>
+  <p>
+    Because notifications are intended to present information to users without
+    interrupting what the user is doing, these messages tend to appear and
+    disappear relatively quickly. They are also not focusable. While
+    <app>Orca</app> will present these messages to you as they come in, it is
+    far too easy to interrupt <app>Orca</app>'s announcement accidentally by
+    continuing to type or to change focus. For this reason, <app>Orca</app> has
+    three commands which you can use to access previously-displayed notification
+    messages:
+  </p>
+  <list>
+    <item>
+      <p>Aurkeztu azken jakinarazpen-mezua (berriena)</p>
+    </item>
+    <item>
+      <p>Aurkeztu aurreko jakinarazpen-mezua</p>
+    </item>
+    <item>
+      <p>Aurkeztu jakinarazpen-mezu guztien zerrenda</p>
+    </item>
+  </list>
+  <p>Lehen bi komandoak jaso berri duzun mezu bat azkar ikusteko daude diseinatuta. Azken komandoa indartsuagoa da, jakinarazpen-mezuen historia gordetzen baitu.</p>
+  <p>Jakinarazpen-mezuen zerrendan sartzean, zerrendaren tamaina esango da eta honako aukerak eskainiko dizu sistemak:</p>
+  <list>
+    <item><p>Sakatu H letra laguntza jasotzeko.</p></item>
+    <item><p>Erabili Up, Down, Home edo End zerrendan nabigatzeko.</p></item>
+    <item><p>Sakatu Esc irteteko.</p></item>
+    <item><p>Sakatu Zuriunea irakurritako azken mezua errepikatzeko.</p></item>
+    <item><p>Sakatu sigitu bat mezu jakin bat irakurtzeko.</p></item>
+  </list>
+  <p>Kontuan izan jaso den azken mezua zerrendaren goiko aldean ageriko dela.</p>
+  <p>
+    Each of <app>Orca</app>'s notification review commands is unbound by
+    default. You can bind any or all of them to the shortcut or shortcuts
+    you choose. How to do so is described in the
+    <link xref="howto_key_bindings">Introduction to Key Bindings</link>.
+  </p>
+</page>

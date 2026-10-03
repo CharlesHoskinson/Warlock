@@ -1,0 +1,36 @@
+{
+  "status": "source ready for root review and freeze",
+  "frozen": false,
+  "nativeLaunch": false,
+  "rootNativeGrant": false,
+  "serviceProductChanged": false,
+  "preservedFailedFamilyV7": true,
+  "requiredNativeGates": 29,
+  "requiredMainPreservationChecks": 15,
+  "actualBackendTests": {
+    "tests": 49,
+    "parserProbes": 2,
+    "report": "offline-ready-v8.json"
+  },
+  "formal": {
+    "models": 4,
+    "namedCases": 16,
+    "traces": 8000,
+    "report": "formal-final-v8.json"
+  },
+  "candidateSHA256": "bdd8bab3b3cea6f2dd2e49b317f133691cc920700f9743d21438c0e3338a0dc7",
+  "sourceHashes": {
+    "native_integration.py": "953d7b1189ec9b505787d3a16e524c6f101d411d7714aedb854b476be955d095",
+    "service_observer.py": "6f2ced491a07a68fee4d674971ec574f69d8da9981255911ea0dab8eaedee158",
+    "capture_evidence.py": "7d01fe5ffdbca33a3d3eaa4eafe2a925042414ef9fe3e65f895ec8f1acb19be6",
+    "helper_observer.py": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+    "helper_setup.py": "022187652c255877e84d82e19b4f43ec1e92ae827d095273ff4b09e9c26f7756",
+    "test_service_queries.py": "3a0d4de96ce0eeb1bebda0bf94118d0bafe1d185b9f743221e4cb54283fbd4ac",
+    "test_capture_evidence.py": "f7c01ae25e297375685ef0f5b04641ba3a9f8528628b0cb633b48d5577d8a94e",
+    "HELPER_OBSERVER_CONTRACT.md": "077d2da261495f946f84acd9e62f9f4bbcab3bc4852fb9893daaed3cbb055859",
+    "offline-ready-v8.json": "2b0b8df4807bac1db9e571febf859a24966acc3916b5f99ba6b4796e00dddb8b",
+    "formal-final-v8.json": "7d5551ee3b135110ed9d7664c30995f6b1120be61b0b22b206d019aaf2ec2804"
+  },
+  "causalAcceptance": "Three actual capture sources and matched renderer seed/uploads before cache acceptance; three exact pointer/immutable PNG pairs captured under real cache lock and unchanged after actor retirement and restore; original whole cache pixels are observed separately from composed restore source pixels",
+  "pending": "Root source review, freeze, and actual private native attempt; full parity/raster/cadence/reversal still unaccepted"
+}

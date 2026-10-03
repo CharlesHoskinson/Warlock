@@ -1,0 +1,22 @@
+{
+  "result": "fail",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_keyboard.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT101]: Built-in name 'Map' is redefined in module 'physical_keyboard'\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_keyboard.qnt:2:77\n  2:  type Event=Plan({valid:bool,physical:bool})|Connect({live:bool,peer:bool})|Map({valid:bool,eof:bool})|Press|Release|Advance|Change|Error|Finish\n                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nerror: parsing failed\n"
+    }
+  ],
+  "runtimeStillExactFrozenB19": {
+    "private_session.py": "21b0bbf43db3a2c8be90978729c250e79645a8cbd1b355194d95d84d3fafa626",
+    "run_native.py": "7ed77fd56fa54e9e32568f0c0dc67c0a656f9dc692b441081ad01fe4e5b4f1aa",
+    "continuation_evidence.py": "1b4cda46880a7745163d51a7529245089d31a5bd3212e08287a5df1f1f44c369"
+  },
+  "newDriverNotImplemented": true,
+  "nativeExecuted": false
+}

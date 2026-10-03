@@ -1,0 +1,13 @@
+
+ Error [QNT000]: Expected [request] and [] to be the same
+Trying to unify entities ['request'] and []
+Trying to unify Read[_v437] & Update['request'] and Read['request']
+Trying to unify (Read[_v435] & Update[_v436], Read[_v437] & Update[_v436]) => Read[_v438] & Update[_v436] and (Update['request'], Read['request']) => _e80
+Trying to infer effect for operator application in then(init, assert(and(and(eq(request, base), eq(oldHit(base), 0)), eq(ordinaryResult(base), 2))))
+
+
+  at /home/hoskinson/window-behavior-spec/pin-maximized-hit-audit-v1/hit_fallback.qnt:33:40
+  33:  run ignoredProtectedOldCounterexample=init.then(assert(request==base and oldHit(base)==0 and ordinaryResult(base)==2))
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

@@ -1,0 +1,35 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v11/NATIVE_ENTRYPOINT.md
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/NATIVE_ENTRYPOINT.md
+@@ -38,3 +38,32 @@
+ rasters, receipt-to-presented reversal latency, physical 240Hz/cross-output
+ cadence, reduced/interruption/reuse, exact geometry/native/input preservation and
+ normal daemon/renderer shutdown. Those are not implied by offline bootstrap tests.
++
++## V12 private integration pairing
++
++V12 requires toolkit-interruption-v4's reviewed immutable native/Snap/close-helper
++pair. The API `retire_gesture_current(address, stableIdHex)` must exist and return
++exact boolean success/retired for each selected member. A false result or absent
++capability aborts the whole visual preparation before capture. The registry's
++current complete-family reservation covers the batch and the subsequent full
++native requery. Earlier V2/V3 native pairs are not this packet's launch material.
++
++The packet pins the V4 manifest plus every one of its 936 input hashes. This is
++private source review acceptance only; it is not main installation or native
++gesture acceptance. Source draw order is ancestor first with native sibling
++paint-vector witnesses, independently of deepest endpoint focus.
++
++The durable journal exposes `liveActors`, `retiringActors`, `actorSerial`,
++`actorLimit`, `resourceErrors`, `housekeepingErrors` and `managerClosed`. Actor
++numbers increase and include failures/retirement. Normal retirement invokes
++`NativeFactory.retired(number, desktop)` only after worker drain, normal renderer
++close and exact private-directory disposal. A read-only observer must capture
++controllers at the existing once-per-creation `transport.bind_controller` seam;
++product actors are removed after retirement and cannot retain QA history.
++Normal service stop performs the same closure/disposal and durable completion.
++
++Offline replay from this directory: `python3 check_offline.py` requires fresh
++log/report destinations and performs 165 Python checks, 90 named Quint scenarios
++and 14 models at 2000 samples each. A frozen checkpoint already contains these
++results. Replaying that packet should use a fresh copy/output path; never
++rewrite its proof files. These counts do not imply native/physical acceptance.

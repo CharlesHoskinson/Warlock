@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_general" xml:lang="eu">
+  <info>
+    <title type="sort">1. Orokorra</title>
+    <title type="link">Orokorra</title>
+    <desc><app>Orca</app> aplikazioaren funtsezko portaerak fonfiguratzea</desc>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_voice"/>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Hobespen orokorrak</title>
+  <section id="keyboardlayout">
+    <info>
+      <desc>
+        Preferences dialog box option to select which <app>Orca</app> keyboard
+        layout to use, desktop or laptop.
+      </desc>
+    </info>
+    <title>Teklatuaren diseinua</title>
+    <p>
+      The <gui>Keyboard Layout</gui> radio button group allows you to specify if
+      you will be working on a desktop (i.e. with a numeric keypad) or laptop
+      keyboard. Which layout you choose will determine both the <key>Orca
+      Modifier</key> as well as a number of keyboard shortcuts for performing
+      <app>Orca</app> commands.</p>
+    <p>Balio lehenetsia: <gui>Mahaigaina</gui></p>
+  </section>
+  <section id="presenttooltips">
+    <info>
+      <desc>
+        Preferences dialog box option to enable presentation of tooltips which
+        appear as the result of mouse hovering.
+      </desc>
+    </info>
+    <title>Adierazi argibideak</title>
+    <p>
+      When checked, this option will tell <app>Orca</app> to present information
+      about tooltips when they appear as the result of mouse hovering. Specific
+      actions to force tooltips to appear, such as pressing <keyseq>
+      <key>Ctrl</key><key>F1</key></keyseq> when an object has focus, will
+      always result in tooltips being presented, regardless of this setting.
+    </p>
+    <p>Balio lehenetsia: markatu gabe</p>
+  </section>
+  <section id="objectundermouse">
+    <info>
+      <desc>
+        Preferences dialog box option to enable presentation of the object
+        under the mouse pointer.
+      </desc>
+    </info>
+    <title>Irakurri saguaren azpiko objektua</title>
+    <p>
+      When checked, this option will tell <app>Orca</app> to present
+      information about the object under the mouse pointer as you move
+      it around the screen using <app>Orca</app>'s
+      <link xref="howto_mouse_review">Mouse Review</link> feature.
+    </p>
+    <p>Balio lehenetsia: markatu gabe</p>
+  </section>
+  <section id="timeanddate">
+    <info>
+      <desc>
+        Preferences dialog box options for customizing the time and date
+        formats used by <app>Orca</app>.
+      </desc>
+    </info>
+    <title>Orduaren eta dataren formatua</title>
+    <p>
+      The <gui>Time Format</gui> and <gui>Date Format</gui> combo boxes allow
+      you to specify how <app>Orca</app> will speak and braille the time and the
+      date.
+    </p>
+    <p>Balio lehenetsia: erabili sistemaren hizkuntzaren formatua bakoitzeko</p>
+  </section>
+  <section id="navigation_in_say_all">
+    <info>
+      <desc>
+        Preferences dialog box options for enabling rewind, fast forward,
+	and structural navigation during Say All.
+      </desc>
+    </info>
+    <title>Nabigazioa 'Esan dena' aukeran</title>
+    <p>
+        <app>Orca</app>'s Say All feature speaks document content from your
+        present location to the end of the document. By default, pressing any
+        key will interrupt Say All's presentation. However, if you check the
+        <gui>Enable rewind and fast forward in Say All</gui> checkbox,
+        <key>Up</key> and <key>Down</key> can be used during Say All to quickly
+        move within the document in order to re-hear something which was just
+        read or skip past text of no interest without having to restart Say All.
+    </p>
+    <p>
+       If you are reading a document within an application that has structural
+       navigation support, and you have checked the <gui>Enable structural navigation
+       in Say All</gui> checkbox, you can use the supported structural navigation
+       commands in a similar fashion: <key>H</key>/<keyseq><key>Shift</key>
+       <key>H</key></keyseq> continues reading from the next/previous heading,
+       <key>P</key>/<keyseq><key>Shift</key><key>P</key></keyseq> continues reading
+       from the next/previous paragraph, <key>T</key>/<keyseq><key>Shift</key>
+       <key>T</key></keyseq> continues reading from the next/previous table, and
+       so on.
+    </p>
+    <p>Balio lehenetsia: markatu gabe</p>
+  </section>
+  <section id="say_all_announce_context">
+    <title>Iragarri testuinguru-informazioa 'Esan dena' aukeran</title>
+    <p>
+      <app>Orca</app> can optionally provide more information about the document
+      content being spoken, such as announcing when you are entering and leaving
+      a blockquote, list, table, or other container. Whether or not these
+      announcements are made can be configured independently through the following
+      checkboxes:
+    </p>
+    <list>
+      <item><p>Iragarri aipu-blokeak 'Esan dena' aukeran</p></item>
+      <item><p>Iragarri inprimakiak 'Esan dena' aukeran</p></item>
+      <item><p>Iragarri erreferentzia-puntuak 'Esan dena' aukeran</p></item>
+      <item><p>Iragarri zerrenak 'Esan dena' aukeran</p></item>
+      <item><p>Iragarri panelak 'Esan dena' aukeran</p></item>
+      <item><p>Iragarri taulak 'Esan dena' aukeran</p></item>
+    </list>
+    <p>Balio lehenetsia: markatuta</p>
+    <note style="note">
+      <p>
+        Whether or not <app>Orca</app> makes these announcements during
+        navigation is also configurable. You will find similar checkboxes
+        on the <gui>Speech</gui> page. For more information, see
+        <link xref="preferences_speech#spoken_context">Spoken Context</link>.
+      </p>
+    </note>
+  </section>
+  <section id="say_all_by">
+   <info>
+      <desc>
+        Preferences dialog box option for customizing <app>Orca</app>'s
+	Say All presentation.
+      </desc>
+   </info>
+   <title>Esan dena honen arabera</title>
+   <p>
+      The <gui>Say All By</gui> combo box allows you to specify whether
+      <app>Orca</app> speaks a sentence at a time or a line at a time when
+      doing a "Say All" of a document.
+    </p>
+    <p>Balio lehenetsia: <gui>Esaldia</gui></p>
+  </section>
+  <section id="profiles">
+    <info>
+      <desc>Hobespenen elkarrizketa-koadroaren aukerak ezarpenen profilak kudeatzeko.</desc>
+    </info>
+    <title>Profilak</title>
+    <p>
+      The <gui>Profiles</gui> group of controls, which appear at the bottom
+      of the <gui>General</gui> page, make it possible for you to maintain
+      and use multiple configurations. 
+    </p>
+   <list>
+      <item>
+        <p><gui>Profil aktiboa</gui> konbinazio-koadroak uneko profila erakusten du eta beste profil bat hautatzea ahalbidetzen du.</p>
+      </item>
+      <item>
+        <p>
+          The <gui>Load</gui> button will cause <app>Orca</app> to load the
+          profile indicated in the <gui>Active Profile</gui> combo box.
+        </p>
+      </item>
+      <item>
+        <p>
+          The <gui>Save As</gui> button allows you to save the current set of
+          options from the preferences dialog box to a named profile.
+        </p>
+      </item>
+      <item>
+        <p>
+          The <gui>Start-up Profile</gui> combo box allows you to select the
+          profile which should be automatically loaded each time you launch
+          <app>Orca</app>.
+        </p>
+      </item>
+    </list>
+  </section>
+  <section id="progress_bar_updates">
+    <title>Aurrerapen-barraren eguneratzeak</title>
+    <section id="progress_bar_updates_speak">
+      <title>Esan eguneratzeak</title>
+      <p><gui>Esan eguneratzeak</gui> kontrol-laukia markatuta badago, <app>Orcak</app> aurrerapen-barren egoera esango du aldizka.</p>
+      <p>Balio lehenetsia: markatuta</p>
+    </section>
+    <section id="progress_bar_updates_braille">
+      <title>Braille eguneratzeak</title>
+      <p>
+        If the <gui>Braille updates</gui> checkbox is checked <app>Orca</app> will
+        periodically display the status of progress bars on your refreshable braille
+        display.
+      </p>
+      <p>Balio lehenetsia: markatu gabe</p>
+    </section>
+    <section id="progress_bar_updates_beep">
+      <title>Beep eguneratzeak</title>
+      <p><gui>Beep eguneratzeak</gui> kontrol-laukia markatuta badago, <app>Orcak</app> beep soinuak igorriko ditu aldizka eta tonua igotzen joango da aurrerapen-barraren balioa handitu ahala.</p>
+      <p>Balio lehenetsia: markatu gabe</p>
+    </section>
+    <section id="progress_bar_updates_frequency">
+      <title>Maiztasuna (seg.)</title>
+      <p>Biratze-botoiak zehazten du eguneratzeak zenbatero aurkezten diren.</p>
+      <p>Balio lehenetsia: 10</p>
+    </section>
+    <section id="progress_bar_updates_restrict">
+      <title>Honi aplikatzen zaio:</title>
+      <p>
+         This combo box allows you to control which progress bars should be
+         presented, assuming the presentation of progress bar updates has been
+         enabled. The choices are <gui>All</gui>, <gui>Application</gui>, and
+         <gui>Window</gui>.
+      </p>
+      <p>
+        Choosing <gui>All</gui> will result in <app>Orca</app> presenting
+        updates for all progress bars, regardless of where the progress bars
+        are located.
+      </p>
+      <p>
+        Choosing <gui>Application</gui> will result in <app>Orca</app>
+        presenting updates from progress bars in the active application, even
+        if they are not in the active window.
+      </p>
+      <p>
+         Choosing <gui>Window</gui> will result in <app>Orca</app> only
+         presenting updates for progress bars in the active window.
+      </p>
+      <p>Balio lehenetsia: <gui>Aplikazioa</gui></p>
+    </section>
+  </section>
+</page>

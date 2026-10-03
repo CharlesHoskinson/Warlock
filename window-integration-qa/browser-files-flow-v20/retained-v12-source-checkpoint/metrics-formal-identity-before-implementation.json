@@ -1,0 +1,46 @@
+{
+  "updatedUTC": "2026-10-02T00:31:50.110590+00:00",
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "runtime_metrics_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  runtime_metrics_test\n    ok exactRuntimeDataTest passed 1 test(s)\n    ok beforeOnlyRefusedTest passed 1 test(s)\n    ok missingDiskConfirmationTest passed 1 test(s)\n    ok directConfirmationRefusedTest passed 1 test(s)\n    ok lifetimeReplacementRefusedTest passed 1 test(s)\n    ok laterReplacementInvalidatesTest passed 1 test(s)\n    ok duplicateFdRefusedTest passed 1 test(s)\n    ok readOnlyFdRefusedTest passed 1 test(s)\n    ok wrongModeRefusedTest passed 1 test(s)\n    ok specialModeRefusedTest passed 1 test(s)\n    ok linkedDiskRefusedTest passed 1 test(s)\n    ok executableAliasRefusedTest passed 1 test(s)\n    ok executableMappingRefusedTest passed 1 test(s)\n    ok wrongProfileRefusedTest passed 1 test(s)\n    ok wrongFilenameRefusedTest passed 1 test(s)\n    ok unownedBrowserRefusedTest passed 1 test(s)\n    ok unpinnedSourceRefusedTest passed 1 test(s)\n    ok wrongSizeRefusedTest passed 1 test(s)\n    ok wrongRangeRefusedTest passed 1 test(s)\n    ok staleSnapshotRefusedTest passed 1 test(s)\n    ok invalidationRemovesAuthorityTest passed 1 test(s)\n    ok fdNumberReplacementTest passed 1 test(s)\n    ok deviceTokenReplacementTest passed 1 test(s)\n    ok inodeTokenReplacementTest passed 1 test(s)\n    ok mountTokenReplacementTest passed 1 test(s)\n    ok profileTokenReplacementTest passed 1 test(s)\n    ok parentTokenReplacementTest passed 1 test(s)\n    ok rootTokenReplacementTest passed 1 test(s)\n    ok executableTokenReplacementTest passed 1 test(s)\n    ok snapshotTokenReplacementTest passed 1 test(s)\n    ok mappingTokenReplacementTest passed 1 test(s)\n    ok fullFlagsReplacementTest passed 1 test(s)\n    ok stalePartialAfterChangeTest passed 1 test(s)\n    ok staleConfirmedAfterChangeTest passed 1 test(s)\n    ok invalidatedGenerationCannotResumeTest passed 1 test(s)\n    ok fdNumberConfirmReplacementTest passed 1 test(s)\n    ok deviceTokenConfirmReplacementTest passed 1 test(s)\n    ok inodeTokenConfirmReplacementTest passed 1 test(s)\n    ok mountTokenConfirmReplacementTest passed 1 test(s)\n    ok profileTokenConfirmReplacementTest passed 1 test(s)\n    ok parentTokenConfirmReplacementTest passed 1 test(s)\n    ok rootTokenConfirmReplacementTest passed 1 test(s)\n    ok executableTokenConfirmReplacementTest passed 1 test(s)\n    ok snapshotTokenConfirmReplacementTest passed 1 test(s)\n    ok mappingTokenConfirmReplacementTest passed 1 test(s)\n    ok targetTokenConfirmReplacementTest passed 1 test(s)\n    ok fullFlagsConfirmReplacementTest passed 1 test(s)\n    ok pathFdRefusedTest passed 1 test(s)\n    ok mutableDataExcludedTest passed 1 test(s)\n    ok targetTokenReplacementTest passed 1 test(s)\n\n  50 passing (2170ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "runtime_metrics.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (520ms at 3846 traces/second).\nUse --seed=0x156b5fd --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "namedScenarios": 50,
+  "randomTraces": 2000,
+  "maxSteps": 100,
+  "runtimeClassifierStillV11": true,
+  "newDataAuthorityImplemented": false,
+  "nativeExecuted": false,
+  "sourceSHA256": {
+    "V12_CONTRACT.md": "17793c9015356f9aa28e14e86d0c838d65bce87dfbaffa0c333fd78ece6dfcf2",
+    "runtime_metrics.qnt": "0f15611bd7fd3f54b938a2d2bd09e63bd2b07f3f41900512da91efcbd516887d",
+    "runtime_metrics_test.qnt": "ddfab8ac860b977939e6e89fb3755af2185641135e478bc3dcda62dc159b5a5e",
+    "runtime_inputs.py": "e7b5aabd3d1892e6fc5f45be1a3948fac6fb46260d9cc55d21fb54fd9e69ba97",
+    "private_session.py": "0614bcf5af29785c5e9079f2a2ca139cac3060b89616f05afeecfd6d522d870a"
+  },
+  "independentReview": "/home/hoskinson/window-integration-qa/browser-v12-independent-review/REVIEW.md",
+  "previousProof": "metrics-first-model/metrics-formal-before-implementation.json"
+}

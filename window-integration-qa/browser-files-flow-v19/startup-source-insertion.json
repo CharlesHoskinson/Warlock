@@ -1,0 +1,11 @@
+{
+  "run_native.py": {
+    "add": "    from output_readiness import collect as collect_output_readiness\n    collect_output_readiness(session,output/'host/output-readiness-evidence.json')\n"
+  },
+  "private_bus_host.py": {
+    "old": "  return super().launch(name,command,env)",
+    "new": "  result=super().launch(name,command,env)\n  if name=='hyprland':\n   launch_returned=time.monotonic()\n   self.evidence['browserStartupBudget']={'launchReturnedMonotonic':launch_returned,'deadlineMonotonic':launch_returned+15,'seconds':15,'origin':'same actual child launch return before inherited original15s instance discovery starts','pid':result.pid}\n  return result",
+    "importOld": "stat,struct,subprocess",
+    "importNew": "stat,struct,subprocess,time"
+  }
+}

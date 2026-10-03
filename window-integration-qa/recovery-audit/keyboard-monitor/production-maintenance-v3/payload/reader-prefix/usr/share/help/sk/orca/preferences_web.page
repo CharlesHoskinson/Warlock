@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_web" xml:lang="sk">
+  <info>
+    <link type="guide" xref="preferences#application"/>
+    <link type="next" xref="preferences_table_navigation"/>
+    <title type="sort">1. Webová navigácia</title>
+    <title type="link">Webová navigácia</title>
+    <desc>Konfigurácia podpory <app>Orca</app> pre <app>Firefox</app>, <app>Thunderbird</app> a <app>Chrome</app>/<app>Chromium</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Predvoľby webovej navigácie</title>
+  <section id="page_navigation">
+    <title>Navigácia na stránke</title>
+    <p>Skupina ovládacích prvkov <gui>Navigácia na stránke</gui> vám umožňuje prispôsobiť spôsob, akým <app>Orca</app> zobrazuje text a iný obsah, a umožňuje vám s nimi interagovať.</p>
+    <section id="page_navigation_control_caret">
+      <title>Ovládať navigáciu kurzora</title>
+      <p>Toto začiarkavacie políčko prepína navigáciu kurzora <app>Orca</app> zapnúť a vypnúť. Keď je zapnutá, <app>Orca</app> preberá kontrolu nad kurzorom, keď sa pohybujete šípkami na stránke; keď je vypnutá, je aktívna natívna navigácia kurzora prehliadača.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+      <note style="tip">
+        <title>Toto nastavenie je možné prepínať priebežne</title>
+        <p>Na priebežné prepínanie tohto nastavenia bez jeho uloženia použite <keyseq><key>Modifikátor Orca</key><key>F12</key></keyseq>.</p>
+       </note>
+    </section>
+    <section id="page_navigation_focus_caret">
+      <title>Automatický režim fokusu počas navigácie kurzora</title>
+      <p>Ak je toto políčko začiarknuté, <app>Orca</app> automaticky zapne režim fokusu, keď použijete príkazy navigácie kurzora na navigáciu k formulárovému poľu. Napríklad stlačením <key>Dole</key> by ste sa mohli presunúť do vstupného poľa, ale hneď ako to urobíte, Orca by preplo na režim fokusu a následné stlačenia <key>Dole</key> by ovládal webový prehliadač, nie Orca. Ak toto políčko nie je začiarknuté, <app>Orca</app> by naďalej ovládala, čo sa stane, keď stlačíte <key>Dole</key>, čo by umožnilo šípkami opustiť vstupné pole a pokračovať v čítaní.</p>
+      <p>Predvolená hodnota: nezačiarknuté</p>
+      <note style="tip">
+        <title>Manuálne prepínanie medzi režimom prehliadania a režimom fokusu</title>
+        <p>Na začatie alebo ukončenie interakcie so zameraným formulárovým poľom použite <keyseq><key>Modifikátor Orca</key><key>A</key></keyseq> na prepínanie medzi režimom prehliadania a režimom fokusu.</p>
+       </note>
+    </section>
+    <section id="page_navigation_structural">
+      <title>Povoliť štrukturálnu navigáciu</title>
+      <p>Toto začiarkavacie políčko prepína <link xref="howto_structural_navigation">štrukturálnu navigáciu</link> <app>Orca</app> zapnúť a vypnúť. Štrukturálna navigácia vám umožňuje navigovať podľa prvkov, ako sú nadpisy, odkazy a formulárové polia.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+      <note style="tip">
+        <title>Toto nastavenie je možné prepínať priebežne</title>
+        <p>Na priebežné prepínanie tohto nastavenia bez jeho uloženia použite <keyseq><key>Modifikátor Orca</key><key>Z</key></keyseq>.</p>
+       </note>
+    </section>
+    <section id="page_navigation_focus_structural">
+      <title>Automatický režim fokusu počas štrukturálnej navigácie</title>
+      <p>Ak je toto políčko začiarknuté, <app>Orca</app> automaticky zapne režim fokusu, keď použijete príkazy štrukturálnej navigácie na navigáciu k formulárovému poľu. Napríklad stlačením <key>E</key> na presun na ďalšie vstupné pole by sa tam presunul fokus a zároveň by sa zapol režim fokusu, takže vaše ďalšie stlačenie <key>E</key> by do tohto poľa zadalo „e“. Ak toto políčko nie je začiarknuté, <app>Orca</app> vás ponechá v režime prehliadania a vaše ďalšie stlačenie <key>E</key> by vás presunulo na ďalšie vstupné pole na stránke.</p>
+      <p>Predvolená hodnota: nezačiarknuté</p>
+      <note style="tip">
+        <title>Manuálne prepínanie medzi režimom prehliadania a režimom fokusu</title>
+        <p>Na začatie alebo ukončenie interakcie so zameraným formulárovým poľom použite <keyseq><key>Modifikátor Orca</key><key>A</key></keyseq> na prepínanie medzi režimom prehliadania a režimom fokusu.</p>
+       </note>
+    </section>
+    <section id="page_navigation_focus_native">
+      <title>Automatický režim fokusu počas natívnej navigácie</title>
+      <p>Ak je toto políčko začiarknuté, <app>Orca</app> automaticky zapne režim fokusu, keď použijete natívne navigačné príkazy prehliadača na navigáciu k formulárovému poľu. Napríklad stlačením <key>Tab</key> na presun na ďalšie vstupné pole by sa tam presunul fokus a zároveň by sa zapol režim fokusu, takže vaše ďalšie stlačenie <key>E</key> by do tohto poľa zadalo „e“. Ak toto políčko nie je začiarknuté, <app>Orca</app> vás ponechá v režime prehliadania a vaše ďalšie stlačenie <key>E</key> by vás presunulo na ďalšie vstupné pole na stránke.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+      <note style="tip">
+        <title>Manuálne prepínanie medzi režimom prehliadania a režimom fokusu</title>
+        <p>Na začatie alebo ukončenie interakcie so zameraným formulárovým poľom použite <keyseq><key>Modifikátor Orca</key><key>A</key></keyseq> na prepínanie medzi režimom prehliadania a režimom fokusu.</p>
+       </note>
+    </section>
+    <section id="page_navigation_speak">
+      <title>Automaticky začať čítať stránku pri prvom načítaní</title>
+      <p>Ak je toto políčko začiarknuté, <app>Orca</app> vykoná Prečítať všetko na novo otvorenej webovej stránke alebo e-maile.</p>
+      <p>Predvolená hodnota: začiarknuté pre Firefox; nezačiarknuté pre Thunderbird</p>
+    </section>
+    <section id="page_navigation_summary">
+      <title>Zobraziť súhrn stránky pri prvom načítaní</title>
+      <p>Ak je toto políčko začiarknuté, <app>Orca</app> zhrnie podrobnosti o novo otvorenej webovej stránke alebo e-maile, napríklad počet nadpisov, orientačných bodov a odkazov.</p>
+      <p>Predvolená hodnota: začiarknuté pre Firefox; nezačiarknuté pre Thunderbird</p>
+    </section>
+    <section id="page_navigation_layout_mode">
+      <title>Povoliť režim rozloženia pre obsah</title>
+      <p>Ak je toto políčko začiarknuté, navigácia kurzora <app>Orca</app> bude rešpektovať rozloženie obsahu na obrazovke a zobrazí celý riadok vrátane všetkých odkazov alebo formulárových polí na danom riadku. Ak toto políčko nie je začiarknuté, <app>Orca</app> bude s objektmi, ako sú odkazy a formulárové polia, zaobchádzať, akoby boli na samostatných riadkoch, a to tak pri zobrazovaní, ako aj pri navigácii.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+  </section>
+  <section id="table_options">
+    <title>Možnosti tabuľky</title>
+    <note>
+      <p>Ak sa chcete dozvedieť viac o možnostiach <app>Orca</app> na navigáciu v tabuľkách, pozrite si časť <link xref="preferences_table_navigation">Predvoľby navigácie v tabuľkách</link>.</p>
+    </note>
+  </section>
+  <section id="find_options">
+    <title>Možnosti hľadania</title>
+    <p>Skupina ovládacích prvkov <gui>Možnosti hľadania</gui> vám umožňuje prispôsobiť spôsob, akým <app>Orca</app> zobrazuje výsledky vyhľadávania vykonaného pomocou vstavanej funkcie vyhľadávania aplikácie.</p>
+    <section id="find_options_speak_during_find">
+      <title>Čítať výsledky počas hľadania</title>
+      <p>Ak je toto políčko začiarknuté, <app>Orca</app> prečíta riadok, ktorý zodpovedá vašej aktuálnej vyhľadávacej otázke.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="find_options_speak_changed_lines_during_find">
+      <title>Čítať iba zmenené riadky počas hľadania</title>
+      <p>Ak je toto políčko začiarknuté, <app>Orca</app> nezobrazí zodpovedajúci riadok, ak je to rovnaký riadok ako predchádzajúca zhoda. Táto možnosť je navrhnutá na zabránenie „rozkecanosti“ na riadku s viacerými výskytmi reťazca, ktorý hľadáte.</p>
+      <p>Predvolená hodnota: nezačiarknuté</p>
+    </section>
+    <section id="find_options_minimum_match_length">
+      <title>Minimálna dĺžka zodpovedajúceho textu</title>
+      <p>V tomto upraviteľnom číselníku môžete zadať počet znakov, ktoré sa musia zhodovať, kým <app>Orca</app> oznámi zodpovedajúci riadok. Táto možnosť je tiež navrhnutá na zabránenie „rozkecanosti“, keďže pri prvom zadávaní reťazca, ktorý hľadáte, existuje mnoho zhôd.</p>
+      <p>Predvolená hodnota: 4</p>
+    </section>
+  </section>
+</page>

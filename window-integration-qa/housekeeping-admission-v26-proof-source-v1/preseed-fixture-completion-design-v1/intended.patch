@@ -1,0 +1,11 @@
+--- a/test_preview_admission.py
++++ b/test_preview_admission.py
+@@ -262,7 +262,7 @@
+             try:
+                 window=desktop.windows[0];controller.request('minimize',window['address'],window['stableId'],window['pid'],context=1)
+                 limit=time.monotonic()+3
+-                while not controller.history and time.monotonic()<limit:time.sleep(.002)
++                while not(controller.history and len(desktop.removed)==3) and time.monotonic()<limit:time.sleep(.002)
+                 self.assertTrue(controller.history)
+                 self.assertEqual(controller.history[0].profile['failure'],'original scene receipt deadline before seed')
+                 self.assertFalse(any(row['command']=='seed'for row in transport.sent))

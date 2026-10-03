@@ -1,0 +1,33 @@
+{
+  "scope": "Exact durable native URL, copied same-PID responsive-to-keyboard reload; no main input or operations",
+  "platform": "private offscreen",
+  "checks": [],
+  "preservation": {
+    "ownedFixtureNormalExit": false,
+    "ownedFixtureGone": true,
+    "durableNativeAssetsExact": true,
+    "frozenManifestBytes": true,
+    "allFrozenInputsExact": true
+  },
+  "result": "fail",
+  "bootstrapOnlyChange": "var o = Quickshell.env(\"FILES_OPEN\") -> empty in copied baseline only",
+  "sourceManifestSHA256": "5dbd0a25de38951664c958b432d5b0bc1af0ccb029b45b5867e6be3117c8d34a",
+  "sourcePlanSHA256": "f3f6c11f21cc80623377a624a25070fe521d5fecfff5d10062b4c35ace9da71f",
+  "durableUrl": "/home/hoskinson/.local/share/omarchy-files-native/WindowAccessibilityV6_routing_20261001",
+  "error": "AssertionError('baseline ready')",
+  "finalObservationError": "CalledProcessError(255, ['qs', 'ipc', '--pid', '3930228', 'call', 'files', 'uiState'])",
+  "cleanup": {
+    "pid": 3930228,
+    "exitCode": 255,
+    "forcedKill": false,
+    "gone": true,
+    "exactOwnedMembers": [
+      {
+        "pid": 3930228,
+        "start": "7359526"
+      }
+    ],
+    "remainingOwnedMembers": []
+  },
+  "elapsedSeconds": 10.09709677900537
+}

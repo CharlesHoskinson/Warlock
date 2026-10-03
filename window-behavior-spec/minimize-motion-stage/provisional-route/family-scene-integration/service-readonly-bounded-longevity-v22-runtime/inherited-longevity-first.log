@@ -1,0 +1,70 @@
+Running as unit: qa-harness-cd3a15a1b85f483a868f779faa52efd9.scope; invocation ID: f0e921cc9565471887e0cda79eab9e46
+test_actual_keeper_first_startup_publication_keeps_lineage_before_reader (test_readonly_longevity.LongevityKernelTests.test_actual_keeper_first_startup_publication_keeps_lineage_before_reader) ... ok
+test_actual_valid_file_replacement_and_hardlink_alias_refuse (test_readonly_longevity.LongevityKernelTests.test_actual_valid_file_replacement_and_hardlink_alias_refuse) ... FAIL
+test_all_actual_pending_connections_refuse_capacity_before_new_send (test_readonly_longevity.LongevityKernelTests.test_all_actual_pending_connections_refuse_capacity_before_new_send) ... ok
+test_archive_directory_fsync_fault_keeps_unreferenced_orphan (test_readonly_longevity.LongevityKernelTests.test_archive_directory_fsync_fault_keeps_unreferenced_orphan) ... ok
+test_archive_file_fsync_fault_retains_old_journal_and_prevents_send (test_readonly_longevity.LongevityKernelTests.test_archive_file_fsync_fault_retains_old_journal_and_prevents_send) ... ok
+test_archive_io_block_does_not_hold_service_reservation_or_row_lock (test_readonly_longevity.LongevityKernelTests.test_archive_io_block_does_not_hold_service_reservation_or_row_lock) ... ok
+test_archive_readback_fault_never_publishes_tip (test_readonly_longevity.LongevityKernelTests.test_archive_readback_fault_never_publishes_tip) ... ok
+test_closed_refusal_archives_without_becoming_returned_data (test_readonly_longevity.LongevityKernelTests.test_closed_refusal_archives_without_becoming_returned_data) ... ok
+test_concurrent_new_row_survives_archive_plan_and_tip_commit (test_readonly_longevity.LongevityKernelTests.test_concurrent_new_row_survives_archive_plan_and_tip_commit) ... ok
+test_corrupt_archive_bytes_even_with_stable_inode_refuse (test_readonly_longevity.LongevityKernelTests.test_corrupt_archive_bytes_even_with_stable_inode_refuse) ... ok
+test_exact_orphan_predecessor_reseal_under_new_actual_lease (test_readonly_longevity.LongevityKernelTests.test_exact_orphan_predecessor_reseal_under_new_actual_lease) ... ok
+test_existing_predecessor_fsync_fault_never_authorizes_new_journal (test_readonly_longevity.LongevityKernelTests.test_existing_predecessor_fsync_fault_never_authorizes_new_journal) ... ok
+test_failed_tip_publication_preserves_old_memory_and_disk (test_readonly_longevity.LongevityKernelTests.test_failed_tip_publication_preserves_old_memory_and_disk) ... ok
+test_genuine_640_queries_exceed_original_512_without_discard_or_replay (test_readonly_longevity.LongevityKernelTests.test_genuine_640_queries_exceed_original_512_without_discard_or_replay) ... ok
+test_hardlink_alias_refuses_without_fault_reset (test_readonly_longevity.LongevityKernelTests.test_hardlink_alias_refuses_without_fault_reset) ... FAIL
+test_issuer_changes_during_archive_write_keep_full_old_journal (test_readonly_longevity.LongevityKernelTests.test_issuer_changes_during_archive_write_keep_full_old_journal) ... ok
+test_journal_published_then_writer_crashes_retains_verifiable_disk_tip (test_readonly_longevity.LongevityKernelTests.test_journal_published_then_writer_crashes_retains_verifiable_disk_tip) ... ok
+test_live_postdisk_confirmation_reference_cannot_be_reclaimed (test_readonly_longevity.LongevityKernelTests.test_live_postdisk_confirmation_reference_cannot_be_reclaimed) ... FAIL
+test_missing_or_wrong_epoch_digest_tip_refuses (test_readonly_longevity.LongevityKernelTests.test_missing_or_wrong_epoch_digest_tip_refuses) ... ok
+test_new_actual_lease_nonce_empty_current_ledger_keeps_full_predecessor (test_readonly_longevity.LongevityKernelTests.test_new_actual_lease_nonce_empty_current_ledger_keeps_full_predecessor) ... ok
+test_partial_existing_predecessor_refuses_without_old_journal_replacement (test_readonly_longevity.LongevityKernelTests.test_partial_existing_predecessor_refuses_without_old_journal_replacement) ... ok
+test_pending_actual_connection_survives_disjoint_closed_reclamation (test_readonly_longevity.LongevityKernelTests.test_pending_actual_connection_survives_disjoint_closed_reclamation) ... ok
+test_predecessor_preserves_pending_without_publishing_completion_or_replay (test_readonly_longevity.LongevityKernelTests.test_predecessor_preserves_pending_without_publishing_completion_or_replay) ... ok
+test_real_child_crash_after_durable_tip_restarts_with_exact_new_lifetime (test_readonly_longevity.LongevityKernelTests.test_real_child_crash_after_durable_tip_restarts_with_exact_new_lifetime) ... ok
+test_still_valid_new_owner_replacement_during_predecessor_seal_refuses (test_readonly_longevity.LongevityKernelTests.test_still_valid_new_owner_replacement_during_predecessor_seal_refuses) ... ok
+test_synthetic_predecessor_lease_callback_never_seals (test_readonly_longevity.LongevityKernelTests.test_synthetic_predecessor_lease_callback_never_seals) ... ok
+test_tip_published_before_in_memory_reclamation (test_readonly_longevity.LongevityKernelTests.test_tip_published_before_in_memory_reclamation) ... ok
+test_unpublished_refusal_is_retained_raw_and_not_reclaimed (test_readonly_longevity.LongevityKernelTests.test_unpublished_refusal_is_retained_raw_and_not_reclaimed) ... ok
+test_valid_archive_directory_replacement_refuses (test_readonly_longevity.LongevityKernelTests.test_valid_archive_directory_replacement_refuses) ... ok
+
+======================================================================
+FAIL: test_actual_valid_file_replacement_and_hardlink_alias_refuse (test_readonly_longevity.LongevityKernelTests.test_actual_valid_file_replacement_and_hardlink_alias_refuse)
+----------------------------------------------------------------------
+ValueError: exact pinned current tip FD/name replaced or unsafe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/test_readonly_longevity.py", line 462, in test_actual_valid_file_replacement_and_hardlink_alias_refuse
+    with self.assertRaisesRegex(ValueError, 'identity'): self.query()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "identity" does not match "exact pinned current tip FD/name replaced or unsafe"
+
+======================================================================
+FAIL: test_hardlink_alias_refuses_without_fault_reset (test_readonly_longevity.LongevityKernelTests.test_hardlink_alias_refuses_without_fault_reset)
+----------------------------------------------------------------------
+ValueError: exact pinned current tip FD/name replaced or unsafe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/test_readonly_longevity.py", line 166, in test_hardlink_alias_refuses_without_fault_reset
+    with self.assertRaisesRegex(ValueError, 'identity'): self.query()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "identity" does not match "exact pinned current tip FD/name replaced or unsafe"
+
+======================================================================
+FAIL: test_live_postdisk_confirmation_reference_cannot_be_reclaimed (test_readonly_longevity.LongevityKernelTests.test_live_postdisk_confirmation_reference_cannot_be_reclaimed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/test_readonly_longevity.py", line 296, in test_live_postdisk_confirmation_reference_cannot_be_reclaimed
+    self.assertTrue(reached.wait(1))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 29 tests in 152.571s
+
+FAILED (failures=3)

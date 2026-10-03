@@ -1,0 +1,44 @@
+{
+  "result": "pass",
+  "updatedUTC": "2026-10-02T01:23:21.442883+00:00",
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/test_evaluations.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Running as unit: qa-harness-5ee5c8941277487a80066fbb8c1c3515.scope; invocation ID: ac72e21e703c4b6a8996254b92ecae22\n....................\n----------------------------------------------------------------------\nRan 20 tests in 0.073s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/test_evaluation_delegate.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Running as unit: qa-harness-85b4dd6fe7b84a81bf37add5d296a482.scope; invocation ID: 49e5e8b83cd046e8aa1faec098abe746\n.\n----------------------------------------------------------------------\nRan 1 test in 0.507s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/test_inherited_case_policy.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Running as unit: qa-harness-1cc983a8e8484665b6750948974a92b0.scope; invocation ID: 00da48c47fe4452392b67a34f593e8e1\n..\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+    }
+  ],
+  "nativeGuiLaunched": false,
+  "mainWrites": false
+}

@@ -1,0 +1,211 @@
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:6:121
+  6:  run positiveTest=init.then(begin).then(free(1)).then(free(2)).then(free(3)).then(fire(Commit)).then(fire(Launch)).then(check(s.launch and allProps))
+                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:7:88
+  7:  run normalWriterBusyThenReleaseTest=init.then(begin).then(free(1)).then(busy(2)).then(check(s.held==Set())).then(fire(Sleep)).then(fire(Tick(1))).then(free(1)).then(free(2)).then(free(3)).then(fire(Commit)).then(check(s.phase==Admitted))
+                                                                                            ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:7:214
+  7:  run normalWriterBusyThenReleaseTest=init.then(begin).then(free(1)).then(busy(2)).then(check(s.held==Set())).then(fire(Sleep)).then(fire(Tick(1))).then(free(1)).then(free(2)).then(free(3)).then(fire(Commit)).then(check(s.phase==Admitted))
+                                                                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:8:88
+  8:  run partialLocksCannotSleepTest=init.then(begin).then(free(1)).then(fire(Sleep)).then(check(s.phase==Refused and s.held==Set()))
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:9:98
+  9:  run receiptLockCannotSleepTest=init.then(begin).then(fire(ReceiptEnter)).then(fire(Sleep)).then(check(s.phase==Refused))
+                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:10:94
+  10:  run receiptHeldCannotFlockTest=init.then(begin).then(fire(ReceiptEnter)).then(free(1)).then(check(s.phase==Refused))
+                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:11:96
+  11:  run keeperHeldCannotSleepTest=init.then(begin).then(fire(KeeperEnter)).then(fire(Sleep)).then(check(s.phase==Refused))
+                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:12:102
+  12:  run lifecycleHeldCannotSleepTest=init.then(begin).then(fire(LifecycleEnter)).then(fire(Sleep)).then(check(s.phase==Refused))
+                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:13:92
+  13:  run keeperHeldCannotFlockTest=init.then(begin).then(fire(KeeperEnter)).then(free(1)).then(check(s.phase==Refused))
+                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:14:98
+  14:  run lifecycleHeldCannotFlockTest=init.then(begin).then(fire(LifecycleEnter)).then(free(1)).then(check(s.phase==Refused))
+                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:15:74
+  15:  run clockReversalRefusesTest=init.then(begin).then(fire(Tick(-1))).then(check(s.phase==Refused and s.now==0))
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:16:106
+  16:  run clockAdvancesWithReceiptHeldTest=init.then(begin).then(fire(ReceiptEnter)).then(fire(Tick(8))).then(check(s.now==8 and s.phase==Refused and not(s.receiptHeld)))
+                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:17:102
+  17:  run clockAdvancesWithPartialAddressHeldTest=init.then(begin).then(free(1)).then(fire(Tick(8))).then(check(s.now==8 and s.phase==Refused and s.held==Set()))
+                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:18:122
+  18:  run noDeadlineResetOnBusyTest=init.then(begin).then(fire(Tick(7))).then(busy(1)).then(fire(Tick(1))).then(free(1)).then(check(s.phase==Refused and s.deadline==8))
+                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:19:89
+  19:  run noDeadlineResetOnReentryTest=init.then(begin).then(fire(Tick(7))).then(begin).then(check(s.phase==Refused and s.deadline==8))
+                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:20:71
+  20:  run expiredBeforeBeginTest=init.then(fire(Tick(8))).then(begin).then(check(s.phase==Refused))
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:21:140
+  21:  run allLocksExpireBeforeCommitTest=init.then(begin).then(free(1)).then(free(2)).then(free(3)).then(fire(Tick(8))).then(fire(Commit)).then(check(s.phase==Refused and not(s.launch)))
+                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:22:165
+  22:  run expireAfterAdmissionBeforeLaunchTest=init.then(begin).then(free(1)).then(free(2)).then(free(3)).then(fire(Commit)).then(fire(Tick(8))).then(fire(Launch)).then(check(s.phase==Refused))
+                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:23:99
+  23:  run unknownErrorRefusesTest=init.then(begin).then(fire(Acquire({address:1,reply:Unknown}))).then(check(s.phase==Refused))
+                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:24:100
+  24:  run replacedLockRefusesTest=init.then(begin).then(fire(Acquire({address:1,reply:Replaced}))).then(check(s.phase==Refused))
+                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:25:70
+  25:  run unrelatedAddressRefusesTest=init.then(begin).then(free(4)).then(check(s.phase==Refused))
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:26:84
+  26:  run duplicateAcquireRefusesTest=init.then(begin).then(free(1)).then(free(1)).then(check(s.phase==Refused))
+                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:27:93
+  27:  run missingAddressRefusesCommitTest=init.then(begin).then(free(1)).then(fire(Commit)).then(check(s.phase==Refused))
+                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:28:108
+  28:  run supersededWhileWaitingTest=init.then(begin).then(busy(1)).then(fire(Supersede(2))).then(free(1)).then(check(s.phase==Refused))
+                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:29:119
+  29:  run authorityChangedWhileWaitingTest=init.then(begin).then(busy(1)).then(fire(GuardFailure)).then(fire(Commit)).then(check(s.phase==Refused))
+                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:30:98
+  30:  run original64BoundTest=init.then(fire(Begin({count:64,receipt:1,deadline:8,exact:true}))).then(check(s.required.size()==64 and s.phase==Acquiring))
+                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:31:97
+  31:  run above64RefusesTest=init.then(fire(Begin({count:65,receipt:1,deadline:8,exact:true}))).then(check(s.phase==Refused))
+                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:32:106
+  32:  run malformedDeadlineRefusesTest=init.then(fire(Begin({count:3,receipt:1,deadline:9,exact:true}))).then(check(s.phase==Refused))
+                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:33:103
+  33:  run foreignReceiptRefusesTest=init.then(fire(Begin({count:3,receipt:2,deadline:8,exact:true}))).then(check(s.phase==Refused))
+                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'check' not found
+
+  at /home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt:34:103
+  34:  run unknownFamilyRefusesTest=init.then(fire(Begin({count:3,receipt:1,deadline:8,exact:false}))).then(check(s.phase==Refused))
+                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^
+
+error: parsing failed

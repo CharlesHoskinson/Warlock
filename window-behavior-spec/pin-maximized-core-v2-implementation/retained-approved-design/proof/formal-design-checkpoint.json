@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "result": "DESIGN_PROOF_PASS",
+  "created": "2026-10-02T11:58:35.813694+00:00",
+  "nativeAuthorized": false,
+  "runtimeChanged": false,
+  "namedDesignCases": {
+    "max_pin": 61,
+    "modal_focus": 59,
+    "naive_max_pin_counterexamples": 4,
+    "first_band_counterexample": 1,
+    "independent_family_test": 4
+  },
+  "totalNamed": 129,
+  "traces": {
+    "maxPinMixed": 2000,
+    "maxPinValid": 2000,
+    "focusMixed": 2000
+  },
+  "maxStepsPerInvocation": 100,
+  "traceMeaning": "validStep composes several native model phases; its expanded state traces can exceed100 states. Simulation is bounded and not exhaustive proof.",
+  "actualCommands": [
+    {
+      "argv": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/max_pin.qnt"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 10.546371331001865,
+      "log": "proof/max_pin-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/max_pin_test.qnt",
+        "--max-samples=1"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 103.75966937601333,
+      "log": "proof/max_pin-1.log",
+      "sha256": "bf01ce38e0dec8046aabc6f2b4970b16cad4d82d46a92fc41affa3898ad8e681"
+    },
+    {
+      "argv": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/max_pin.qnt",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--invariant=allProps",
+        "--n-threads=2"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 37.32240762299625,
+      "log": "proof/max_pin-2.log",
+      "sha256": "20f2dce1298718cc4d4056779b90e094d7ca0615f76ccd4f25786157d2b33cf2"
+    },
+    {
+      "argv": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/max_pin.qnt",
+        "--step=validStep",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--invariant=allProps",
+        "--n-threads=2"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 102.13917906899587,
+      "log": "proof/max_pin-3.log",
+      "sha256": "42651b04ff358942177296787da94748edc6a29e9253814153a95fb16c070f9b"
+    },
+    {
+      "argv": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/modal_focus.qnt"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 5.292494296998484,
+      "log": "proof/modal_focus-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/modal_focus_test.qnt",
+        "--max-samples=1"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 83.23613739601569,
+      "log": "proof/modal_focus-1.log",
+      "sha256": "4029b8774576b2c366bc383855c2b2255654c323e22ddb426941d4c81b00cc76"
+    },
+    {
+      "argv": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/modal_focus.qnt",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--invariant=allProps",
+        "--n-threads=2"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 7.090563233010471,
+      "log": "proof/modal_focus-2.log",
+      "sha256": "3633a7cf2ba2eeffe5fd2b8559f4e488f50d840868a5c1a2ee59da5807d53dc0"
+    }
+  ],
+  "sourceHashes": {
+    "max_pin.qnt": "d48fde39d4682ba24ae70075a3a0e91493d2f2eaf602e024d613f67a6ff0351b",
+    "max_pin_test.qnt": "1d50a3cd9fb3e979ed610938d82aaddb7262ea0e7ce8dd94cf00be2af242c87d",
+    "modal_focus.qnt": "ba2e1c3eadfeeae60d9bba5b5e48165044c55b32bbd2deb0b496edfbe36857c9",
+    "modal_focus_test.qnt": "a8178427e8157e90171c6f213f7d410cb092fc24516e007ab26efbfc051a2e9b",
+    "MAXIMIZED_PIN_CONTRACT.md": "b696d441a2a9e73015d51911daa4571f5e04f76c975b79ddb832c33dcdddced7",
+    "SOURCE_MAPPING.md": "ac78e008c6dacfd94d9f8d5a3a7bac8d273b3aa818d2bbeca2123076c0d15fc5",
+    "prove_design.py": "960b8cb98726c39fe6e1f58c71830308a839ea3c6ac577f60647ed538c10bc6c",
+    "naive_max_pin_counterexamples.qnt": "6c4c9a89825db673ac4b0ed86b7aec448262a32bcd8f05eb4d2ed05b31669a81",
+    "source_counterexamples.py": "a1510112d8723cfdc5990166f23a51e7ee11b33961dd5f9327e840fb8684db75",
+    "DESIGN_REVIEW_REQUEST.md": "4e926ec40ff578f7165a608768b3c948b8f507cab705ae11e66f2fd25f704df6",
+    "check_preservation.py": "fe0f1618d62c79687d92fb27a5a6b16683f4575c5f165875ee08b6f7a72dff13",
+    "first_band_counterexample.qnt": "5c5aa435411ea812e873426f3f507b282163a758da4667bafa2d64dca132065c",
+    "MODEL_FIELD_MAPPING.md": "4d49b864c4df9e7ab50d2b98188dc578ee8c2410d736069ec9a74b038a5f3f09",
+    "independent_family_test.qnt": "b7c41f3c862bebbadb3053af7185946ce842a81451f2eec11cc3116fe239b600",
+    "make_design_handoff.py": "b7961e01040f2b5a1545e417170e974b16d3252d4ac3042f757e153b473f2175"
+  },
+  "primaryRecordsExact": 180,
+  "sourcePredicateCounterexamples": 8,
+  "modelsRetained": "Prior fixed-chain band/focus schemas and their completed proofs are retained as independent preimages. Four naive policy failures plus the first-band missing descendant case are executable model counterexamples.",
+  "remaining": [
+    "Root design review of coexistence/mode restore/family/focus policy and exact intended implementation diff",
+    "Fresh isolated actual core/plugin/helper implementation plus CPU/source inverses and original regressions",
+    "Root-only matching private core native gates; no deployment/native acceptance from this packet"
+  ]
+}

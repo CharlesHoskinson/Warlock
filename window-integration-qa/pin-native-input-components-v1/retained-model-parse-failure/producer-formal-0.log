@@ -1,0 +1,16 @@
+[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/producer_closure.qnt:14:41
+  14:  action register(known:bool,source:bool)=all{s.bound,not(s.sealed),not(s.fault),s.owner==s.captured,s.registered<2,
+                                              ^
+
+
+ Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/producer_closure.qnt:16:2
+  16:  action terminal(normal:bool)=all{s.closed<s.registered,not(s.sealed),
+       ^^^^^^
+
+error: parsing failed

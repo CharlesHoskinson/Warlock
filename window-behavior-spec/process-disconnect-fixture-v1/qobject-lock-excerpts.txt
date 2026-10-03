@@ -1,0 +1,127 @@
+3651: 
+3652: /*!
+3653:     \since 5.0
+3654: 
+3655:     This virtual function is called when something has been
+3656:     disconnected from \a signal in this object.
+3657: 
+3658:     See connectNotify() for an example of how to compare
+3659:     \a signal with a specific signal.
+3660: 
+3661:     If all signals were disconnected from this object (e.g., the
+3662:     signal argument to disconnect() was \nullptr), disconnectNotify()
+3663:     is only called once, and the \a signal will be an invalid
+3664:     QMetaMethod (QMetaMethod::isValid() returns \c false).
+3665: 
+3666:     \warning This function violates the object-oriented principle of
+3667:     modularity. However, it might be useful for optimizing access to
+3668:     expensive resources.
+3669: 
+3670:     \warning This function is called from the thread which performs the
+3671:     disconnection, which may be a different thread from the thread in which
+3672:     this object lives. This function may also be called with a QObject internal
+3673:     mutex locked. It is therefore not allowed to re-enter any QObject
+3674:     functions, including isSignalConnected(), from your reimplementation. If
+3675:     you lock a mutex in your reimplementation, make sure that you don't call
+3676:     QObject functions with that mutex held in other places or it will result in
+3677:     a deadlock.
+3678: 
+3679:     \sa disconnect(), connectNotify()
+3680: */
+3681: 
+3682: void QObject::disconnectNotify(const QMetaMethod &signal)
+3683: {
+3684:     Q_UNUSED(signal);
+3685: }
+
+4315:         list = &signalVector->at(-1);
+4316: 
+4317:     Qt::HANDLE currentThreadId = QThread::currentThreadId();
+4318:     bool inSenderThread = currentThreadId == QObjectPrivate::get(sender)->threadData.loadRelaxed()->threadId.loadRelaxed();
+4319: 
+4320:     // We need to check against the highest connection id to ensure that signals added
+4321:     // during the signal emission are not emitted in this emission.
+4322:     uint highestConnectionId = connections->currentConnectionId.loadRelaxed();
+4323:     do {
+4324:         QObjectPrivate::Connection *c = list->first.loadAcquire();
+4325:         if (!c)
+4326:             continue;
+4327: 
+4328:         do {
+4329:             QObject * const receiver = c->receiver.loadRelaxed();
+4330:             if (!receiver)
+4331:                 continue;
+4332: 
+4333:             QThreadData *td = c->receiverThreadData.loadRelaxed();
+4334:             if (!td)
+4335:                 continue;
+4336: 
+4337:             bool receiverInSameThread;
+4338:             if (inSenderThread) {
+4339:                 receiverInSameThread = currentThreadId == td->threadId.loadRelaxed();
+4340:             } else {
+4341:                 // need to lock before reading the threadId, because moveToThread() could interfere
+4342:                 QMutexLocker lock(signalSlotLock(receiver));
+4343:                 receiverInSameThread = currentThreadId == td->threadId.loadRelaxed();
+4344:             }
+4345: 
+4346: 
+4347:             // determine if this connection should be sent immediately or
+4348:             // put into the event queue
+4349:             if ((c->connectionType == Qt::AutoConnection && !receiverInSameThread)
+4350:                 || (c->connectionType == Qt::QueuedConnection)) {
+4351:                 queued_activate(sender, signal_index, c, argv);
+4352:                 continue;
+
+5583: bool QObject::disconnect(const QMetaObject::Connection &connection)
+5584: {
+5585:     QObjectPrivate::Connection *c = static_cast<QObjectPrivate::Connection *>(connection.d_ptr);
+5586:     if (!c)
+5587:         return false;
+5588:     const bool disconnected = QObjectPrivate::removeConnection(c);
+5589:     connection.d_ptr = nullptr;
+5590:     c->deref(); // has been removed from the QMetaObject::Connection object
+5591:     return disconnected;
+5592: }
+5593: 
+5594: /*! \fn template<typename PointerToMemberFunction> bool QObject::disconnect(const QObject *sender, PointerToMemberFunction signal, const QObject *receiver, PointerToMemberFunction method)
+
+5765: inline bool QObjectPrivate::removeConnection(QObjectPrivate::Connection *c)
+5766: {
+5767:     if (!c)
+5768:         return false;
+5769:     QObject *receiver = c->receiver.loadRelaxed();
+5770:     if (!receiver)
+5771:         return false;
+5772: 
+5773:     QBasicMutex *senderMutex = signalSlotLock(c->sender);
+5774:     QBasicMutex *receiverMutex = signalSlotLock(receiver);
+5775: 
+5776:     QObjectPrivate::ConnectionData *connections;
+5777:     {
+5778:         QOrderedMutexLocker locker(senderMutex, receiverMutex);
+5779: 
+5780:         // load receiver once again and recheck to ensure nobody else has removed the connection in the meantime
+5781:         receiver = c->receiver.loadRelaxed();
+5782:         if (!receiver)
+5783:             return false;
+5784: 
+5785:         connections = QObjectPrivate::get(c->sender)->connections.loadRelaxed();
+5786:         Q_ASSERT(connections);
+5787:         connections->removeConnection(c);
+5788: 
+5789:         c->sender->disconnectNotify(QMetaObjectPrivate::signal(c->sender->metaObject(), c->signal_index));
+5790:         // We must not hold the receiver mutex, else we risk dead-locking; we also only need the sender mutex
+5791:         // It is however vital to hold the senderMutex before calling cleanOrphanedConnections, as otherwise
+5792:         // another thread might modify/delete the connection
+5793:         if (receiverMutex != senderMutex) {
+5794:             receiverMutex->unlock();
+5795:         }
+5796:         connections->cleanOrphanedConnections(c->sender, ConnectionData::AlreadyLockedAndTemporarilyReleasingLock);
+5797:         senderMutex->unlock(); // now both sender and receiver mutex have been manually unlocked
+5798:         locker.dismiss(); // so we dismiss the QOrderedMutexLocker
+5799:     }
+5800: 
+5801:     return true;
+5802: }
+5803: 

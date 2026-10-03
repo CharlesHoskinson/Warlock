@@ -1,0 +1,12 @@
+
+  readonly_startup_test
+    ok helperFirstPublicationPreservesExactLineageTest passed 1 test(s)
+    ok crashAfterHelperBeforeReaderRecoversLineageTest passed 1 test(s)
+    ok missingSealCannotPublishHelperTest passed 1 test(s)
+    ok wrongPointerCannotPublishHelperTest passed 1 test(s)
+    ok malformedPendingLineageRefusesBeforeNativeRecoveryTest passed 1 test(s)
+    ok unvalidatedPendingCannotStartNativeRecoveryTest passed 1 test(s)
+    ok dataLineageCannotWaiveNativeClosureTest passed 1 test(s)
+    ok everyInvalidOwnerRootSourcePointerDurabilityRefusesTest passed 1 test(s)
+
+  8 passing (543ms)

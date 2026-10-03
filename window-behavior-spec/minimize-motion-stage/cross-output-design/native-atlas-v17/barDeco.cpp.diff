@@ -1,0 +1,145 @@
+--- frozen-v16/barDeco.cpp
++++ staged-v17/barDeco.cpp
+@@ -437,12 +437,16 @@
+     const int  paddingTotal      = scaledBarPadding * 2 + scaledButtonsSize + (ALIGN != "left" ? scaledButtonsSize : 0);
+     const int  maxWidth          = std::clamp(static_cast<int>(bufferSize.x - paddingTotal), 0, INT_MAX);
+ 
++    const CHyprColor COLOR = m_bForcedTitleColor.value_or(configColor(COLORVAL));
++    const CaptionCache::TitleKey key{scale,bufferSize.x,bufferSize.y,scaledSize,WEIGHT.m_value,maxWidth,
++        static_cast<int>(BARPADDING),static_cast<int>(BARBUTTONPADDING),m_szLastTitle,FONT,ALIGN,{COLOR.r,COLOR.g,COLOR.b,COLOR.a}};
++    if(m_titleRasterKey && *m_titleRasterKey==key && m_pTextTex && m_pTextTex->m_texID!=0)return;
++    m_titleRasterKey=key;
+     if (m_szLastTitle.empty() || maxWidth < 1) {
+         m_pTextTex = nullptr;
+         return;
+     }
+ 
+-    const CHyprColor COLOR = m_bForcedTitleColor.value_or(configColor(COLORVAL));
+     m_pTextTex             = g_pHyprRenderer->renderText(m_szLastTitle, COLOR, scaledSize, false, FONT, maxWidth, WEIGHT.m_value);
+ }
+ 
+@@ -470,7 +474,6 @@
+ 
+     const bool BUTTONSRIGHT    = ALIGNBUTTONS != "left";
+     const auto visibleCount    = getVisibleButtonCount(BARBUTTONPADDING, BARPADDING, Vector2D{barBox->w, barBox->h}, scale);
+-    const bool INVALIDATEICONS = m_bButtonsDirty || m_bWindowSizeChanged;
+ 
+     int        offset = BARPADDING * scale;
+     for (size_t i = 0; i < visibleCount; ++i) {
+@@ -482,8 +485,7 @@
+ 
+         if (INACTIVECOLOR > 0) {
+             color = m_bWindowHasFocus ? color : configColor(INACTIVECOLOR);
+-            if (INVALIDATEICONS && button.userfg && button.iconTex)
+-                button.iconTex = nullptr;
++
+         }
+ 
+         color.a *= a;
+@@ -509,6 +511,7 @@
+     const auto visibleCount = getVisibleButtonCount(BARBUTTONPADDING, BARPADDING, Vector2D{barBox->w, barBox->h}, scale);
+     const auto COORDS       = cursorRelativeToBar();
+ 
++    m_iconRasters.resize(g_pGlobalState->buttons.size());
+     int        offset        = BARPADDING * scale;
+     float      noScaleOffset = BARPADDING;
+ 
+@@ -523,26 +526,27 @@
+         bool       hovering   = VECINRECT(COORDS, currentPos.x, currentPos.y, currentPos.x + button.size + BARBUTTONPADDING, currentPos.y + button.size);
+         noScaleOffset += BARBUTTONPADDING + button.size;
+ 
+-        if ((!button.iconTex || button.iconTex->m_texID == 0) && !button.icon.empty()) {
+-            // render icon
+-            auto fgcol = button.userfg ? button.fgcol : (button.bgcol.r + button.bgcol.g + button.bgcol.b < 1) ? CHyprColor(0xFFFFFFFF) : CHyprColor(0xFF000000);
+-
+-            button.iconTex = g_pHyprRenderer->renderText(button.icon, fgcol, std::round(button.size * 0.62 * scale), false, "sans", scaledButtonSize);
+-        }
+-
+-        if (!button.iconTex || button.iconTex->m_texID == 0)
+-            continue;
+-
+-        const auto iconX = barBox->x + (BUTTONSRIGHT ? barBox->width - offset - scaledButtonSize / 2.0 : offset + scaledButtonSize / 2.0) - button.iconTex->m_size.x / 2.0;
+-        const auto iconY = barBox->y + barBox->height / 2.0 - button.iconTex->m_size.y / 2.0;
+-        CBox       pos   = {iconX, iconY, button.iconTex->m_size.x, button.iconTex->m_size.y};
++        auto& raster=m_iconRasters[i];
++        const auto fgcol = button.userfg ? button.fgcol : (button.bgcol.r + button.bgcol.g + button.bgcol.b < 1) ? CHyprColor(0xFFFFFFFF) : CHyprColor(0xFF000000);
++        const CaptionCache::IconKey key{scale,scaledButtonSize,scaledButtonSize,button.size,
++            static_cast<int>(std::round(button.size*.62*scale)),button.userfg,button.icon,"sans",
++            {fgcol.r,fgcol.g,fgcol.b,fgcol.a},{button.bgcol.r,button.bgcol.g,button.bgcol.b,button.bgcol.a}};
++        if(!raster.matches(key) || (raster.texture && raster.texture->m_texID==0)) {
++            raster.store(key,button.icon.empty() ? nullptr : g_pHyprRenderer->renderText(button.icon,fgcol,key.pixelSize,false,key.font,scaledButtonSize));
++        }
++        const auto& icon=raster.texture;
++        if (!icon || icon->m_texID == 0)continue;
++
++        const auto iconX = barBox->x + (BUTTONSRIGHT ? barBox->width - offset - scaledButtonSize / 2.0 : offset + scaledButtonSize / 2.0) - icon->m_size.x / 2.0;
++        const auto iconY = barBox->y + barBox->height / 2.0 - icon->m_size.y / 2.0;
++        CBox       pos   = {iconX, iconY, icon->m_size.x, icon->m_size.y};
+ 
+         if (!ICONONHOVER || (ICONONHOVER && m_iButtonHoverState > 0))
+-            g_pHyprOpenGL->renderTexture(button.iconTex, pos, {.a = a});
++            g_pHyprOpenGL->renderTexture(icon, pos, {.a = a});
+         offset += scaledButtonsPad + scaledButtonSize;
+ 
+         bool currentBit = (m_iButtonHoverState & (1 << i)) != 0;
+-        if (hovering != currentBit) {
++        if (!g_pHyprRenderer->m_bRenderingSnapshot && hovering != currentBit) {
+             m_iButtonHoverState ^= (1 << i);
+             // damage to get rid of some artifacts when icons are "hidden"
+             damageEntire();
+@@ -571,6 +575,19 @@
+ }
+ 
+ void CHyprBar::renderPass(PHLMONITOR pMonitor, const float& a) {
++    const bool exportPass=g_pHyprRenderer->m_bRenderingSnapshot && g_pHyprRenderer->m_renderData.projectionType==Render::RPT_EXPORT;
++    // Export may generate temporary rasters, but normal texture references and
++    // flags survive exactly, including early returns and exceptions.
++    const auto oldText=exportPass ? m_pTextTex : nullptr;const auto oldKey=exportPass ? m_titleRasterKey : std::nullopt;
++    const auto oldIcons=exportPass ? m_iconRasters : decltype(m_iconRasters){};
++    const auto oldTitle=exportPass ? m_szLastTitle : std::string{};const auto oldExtents=m_seExtents;
++    const auto oldSize=m_bWindowSizeChanged,oldDirty=m_bButtonsDirty,oldColor=m_bTitleColorChanged,oldFocus=m_bWindowHasFocus;
++    const auto oldHover=m_iButtonHoverState;const auto oldHeight=m_iLastHeight;
++    CaptionCache::RestoreScope restore([&] {
++        m_pTextTex=oldText;m_titleRasterKey=oldKey;m_iconRasters=oldIcons;m_szLastTitle=oldTitle;m_seExtents=oldExtents;
++        m_bWindowSizeChanged=oldSize;m_bButtonsDirty=oldDirty;m_bTitleColorChanged=oldColor;m_bWindowHasFocus=oldFocus;
++        m_iButtonHoverState=oldHover;m_iLastHeight=oldHeight;
++    },exportPass);
+     const auto  PWINDOW = m_pWindow.lock();
+ 
+     static auto PENABLEBLURGLOBAL = CConfigValue<Config::BOOL>("decoration:blur:enabled");
+@@ -591,7 +608,7 @@
+     }
+ 
+     const CHyprColor DEST_COLOR = m_bForcedBarColor.value_or(configColor(BARCOLOR));
+-    if (DEST_COLOR != m_cRealBarColor->goal())
++    if (!exportPass && DEST_COLOR != m_cRealBarColor->goal())
+         *m_cRealBarColor = DEST_COLOR;
+ 
+     CHyprColor color = m_cRealBarColor->value();
+@@ -667,7 +684,7 @@
+         g_pHyprOpenGL->renderRect(titleBarBox, color, {.round = scaledRounding, .roundingPower = m_pWindow->roundingPower()});
+ 
+     // render title
+-    if (ENABLETITLE && (m_szLastTitle != PWINDOW->m_title || m_bWindowSizeChanged || !m_pTextTex || m_pTextTex->m_texID == 0 || m_bTitleColorChanged)) {
++    if (ENABLETITLE) {
+         m_szLastTitle = PWINDOW->m_title;
+         renderBarTitle(BARBUF, pMonitor->m_scale);
+     }
+@@ -714,7 +731,7 @@
+     m_bTitleColorChanged = false;
+ 
+     // dynamic updates change the extents
+-    if (m_iLastHeight != HEIGHT) {
++    if (!exportPass && m_iLastHeight != HEIGHT) {
+         PWINDOW->layoutTarget()->recalc();
+         m_iLastHeight = HEIGHT;
+     }
+@@ -739,6 +756,8 @@
+     m_bButtonsDirty      = true;
+     m_bTitleColorChanged = true;
+     m_pTextTex           = nullptr;
++    m_titleRasterKey.reset();
++    m_iconRasters.clear();
+ 
+     g_pDecorationPositioner->repositionDeco(this);
+     damageEntire();

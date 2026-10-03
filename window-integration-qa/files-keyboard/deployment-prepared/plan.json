@@ -1,0 +1,100 @@
+{
+  "execution": "Root review required; this script only prepares isolated QA files",
+  "original": {
+    "pid": 667402,
+    "instance": "yyaefmu6mt",
+    "processStart": "1275224"
+  },
+  "nativeDestination": "/home/hoskinson/.local/share/omarchy-files-native/WindowAccessibilityV4_keyboard_20261001",
+  "nativeSha256": "3e79329aa2c9b4008cbf7bd39b859fc6f578a89a03ac10cfb01b9b4f6e67c46a",
+  "changedQml": [
+    {
+      "path": "Ui/Btn.qml",
+      "baselineSha256": "c701e710ea1dd275a124f296f273426cd9b05c0fe4f7afa75943f73e16cc0855",
+      "candidateSha256": "fa03a2b14dba0d3fdea02d85bd29a95540d92266c104e42fd2a70c663174ba7e"
+    },
+    {
+      "path": "Ui/Chip.qml",
+      "baselineSha256": "413bd300daf57dfff1fe1a6a14cea1f9779de1a6c45f7be7e4af8fdeb7747469",
+      "candidateSha256": "7c07b83379051e42bf542a7d7bd4e67b279284d4691b07d5aab4514bd79e19da"
+    },
+    {
+      "path": "Ui/ContextMenu.qml",
+      "baselineSha256": "f7c21a0d6f68f92788bb581aeca0bf09b473a85cab23b5861717fcc9880a45f2",
+      "candidateSha256": "546244ad2850a401450b8eca1c084d6a26948f7220511a40ece255685ebbb39b"
+    },
+    {
+      "path": "Ui/Ico.qml",
+      "baselineSha256": "1ad78967f062cbd95cf930572530e5281d8e68e8891c941641ca9b377dc039d2",
+      "candidateSha256": "7b2db1f4651f1ba388183036e752d45df8fba299b58b3d7ffcc448aaf7577e9d"
+    },
+    {
+      "path": "Ui/Prompt.qml",
+      "baselineSha256": "109d0fa777ba175fa1e70800139bec1881ad06a8911e21248fc7c272c67452e1",
+      "candidateSha256": "b7979c7419facf82db823edf2f1c0dfe96ef00d80dbf1486948b1cacc2c538f5"
+    },
+    {
+      "path": "explorer/Cell.qml",
+      "baselineSha256": "274b7a86663f934278422d7a4a519eb3441dccbcd68a84ea7a04b51988ee62af",
+      "candidateSha256": "1440189979813eb873109f9a6f38f5153e86158d4bceb1ad5ae9a5653c6bc9fe"
+    },
+    {
+      "path": "explorer/Dashboard.qml",
+      "baselineSha256": "153c95e55a33670f09c68d0bf0fd7b48dd8cae810f243b806bac478a644be251",
+      "candidateSha256": "ae7b31de713ce7b9cf57ea450ed07a8dce080405ba0f6a84a7e6e2d7ee8b0299"
+    },
+    {
+      "path": "explorer/Detail.qml",
+      "baselineSha256": "fe960fbb6ce315bb73dd908018d2aa32bbd08a4fd4bc0aeb6a7a2c7ff0d04736",
+      "candidateSha256": "a415763b2fef5fbd9faf1cc3908cd9c1e1087c6b1812b1e871d4e6ea96c0a6be"
+    },
+    {
+      "path": "explorer/Explorer.qml",
+      "baselineSha256": "30832668009b0932550fb8a99725c909cf23629e9b3ea0eea6b136c5f3e3ad64",
+      "candidateSha256": "cc70901c64cc3de3d600a5d34e3a5210134d1f9e580a097d824cc150667cbb0a"
+    },
+    {
+      "path": "explorer/FileArea.qml",
+      "baselineSha256": "fb6a4b91bf8bdceeec258308d7e80f69c0a50230358cc61e5eceb4518ede2ba1",
+      "candidateSha256": "0970131c160bc67edf7bf02edee8cf83a71e1aa3ef30e613805e8fd2087dd012"
+    },
+    {
+      "path": "explorer/Lightbox.qml",
+      "baselineSha256": "dfe4d5a3c7476a655ff64b4f16e53c11e95b28e170a6b78f9855765e2b716760",
+      "candidateSha256": "9519c9fa5ce742cfa56e27c80d965b076e0d421174fdee477d984390f873e3cc"
+    },
+    {
+      "path": "explorer/PathBar.qml",
+      "baselineSha256": "b08cad5e2299e3fe2b06bbdc7accc3552c81e02d1b33b73a9718888884c935c9",
+      "candidateSha256": "9ff7406d983736f7f664ef3d113a829245695ec18fb2168461ca1945af8ee3cd"
+    },
+    {
+      "path": "explorer/Tree.qml",
+      "baselineSha256": "14e1ac4417cefcc6b999a5c0151fe62daaa7f536f1b03c85fdf98a95ce1558f3",
+      "candidateSha256": "0586e327f503bf3a78cf21d96b72f3b8236068d3fbfc35d278ede06c5962cc39"
+    },
+    {
+      "path": "explorer/Treemap.qml",
+      "baselineSha256": "7c4412fd40cfdc5e1920ec9433f191003c9a116600fbc51743d0b83f51d76b16",
+      "candidateSha256": "8f83becc412fa6d8806682a5ee69c6e60d8f1f9b6ab1fb1ff99bd9e3feffe016"
+    },
+    {
+      "path": "shell.qml",
+      "baselineSha256": "6b3451c44e83587db6895be5343c169a8989dca095ec5603b51eb0d391130f42",
+      "candidateSha256": "4a7d20cc81dfb114031db2793f97d6b43dca3dc06b9133d00763195ecd18a6b5"
+    }
+  ],
+  "legacyMigrationRequired": false,
+  "publicStateSha256": "f084cf1a9cd3ecfd38972157356a638a7c7ac85f81e158d00d34cb1d5d2d23fe",
+  "uiStateSha256": "e86930348c5f26f410acc6e055f47c2ae11b99f09e8555d0b8144fb971da0dba",
+  "steps": [
+    "Install native assets into the fresh unused user-only destination; do not overwrite any loaded library.",
+    "Revalidate exact source hashes, process start/instance and hidden idle state immediately before mutation.",
+    "Prepare all QML temporary bytes and private backup before stopping the exact pidfd; no user app termination.",
+    "Stop exact original briefly, atomically replace all15 QML files; on partial write failure restore original bytes before continuing.",
+    "Continue once; current PersistentProperties strings transfer full state. Do not create ui-migration.json or call files open/toggle.",
+    "Verify exact same PID/instance, ready/hidden-before-map, public and full UI state, original native identities/geometries/focus/cursor/layers, clipboard/MIME hashes/catalog/dashboard/a11y/socket and script/spec hashes.",
+    "Retain the private source/state backup after reviewed success for later recovery; never revert to a legacy stateless host."
+  ],
+  "nativeReaderUrlBoundary": "Only shell import URL changes from tested app; the V4 binary and all other candidate QML bytes are identical. Prove URL/module resolution on copied offscreen reload before live deployment."
+}

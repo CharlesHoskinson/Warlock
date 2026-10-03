@@ -1,0 +1,12 @@
+-- Extra autostart processes.
+-- o.launch_on_start("my-service")
+
+-- Load the hyprbars title-bar plugin, then reload so looknfeel.lua can configure it.
+-- Prefer the locally patched build (~/src/hyprbars-dragend adds native drag lifecycle events
+-- hooks so snap.lua can snap the instant a title-bar drag is released); fall back to the
+-- packaged plugin if it's missing or fails to load (e.g. after a Hyprland ABI bump).
+hl.on("hyprland.start", function()
+  hl.exec_cmd([[p="$HOME/.local/lib/libhyprbars-controls-v10.so"; ]]
+    .. [[{ [ -f "$p" ] && hyprctl plugin load "$p" | grep -qx ok; } || hyprctl plugin load /usr/lib/libhyprbars.so; ]]
+    .. [[hyprctl reload]])
+end)

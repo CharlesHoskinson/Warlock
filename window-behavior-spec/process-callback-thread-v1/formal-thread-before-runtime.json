@@ -1,0 +1,39 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/process-callback-thread-v1/CONTRACT.md": "0f729d43e1efb42dfca80d4a64d7ab2d5715e1119f06b5694f09ac6951e02ed8",
+    "/home/hoskinson/window-behavior-spec/process-callback-thread-v1/thread_callback.qnt": "17108ee8172aa01b339b01ff537b5deae350d0df5027fd9b57f55968d5b82880",
+    "/home/hoskinson/window-behavior-spec/process-callback-thread-v1/prove_before.py": "49d0a615b04c2179b6e57e28950609d27cae1cd0fcd466dc1a542e1bac9503fb"
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/process-callback-thread-v1/thread_callback.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  thread_callback\n    ok actualCurrentWrongThreadContainedFaultTest passed 1 test(s)\n    ok queryBeforeQueuedDeliveryMustDrainTest passed 1 test(s)\n    ok commitBeforeQueuedDeliveryMustDrainTest passed 1 test(s)\n    ok oldWrongThreadCallbackPreservesCurrentRecordTest passed 1 test(s)\n    ok oldWrongThreadQueryIsInertTest passed 1 test(s)\n    ok mixedCurrentAndOldFaultMatchesCurrentTest passed 1 test(s)\n    ok oldFaultCannotPoisonReplacedLeaseTest passed 1 test(s)\n    ok currentFaultPreservesNormalJobAccountingTest passed 1 test(s)\n    ok oldFaultPreservesNormalJobAccountingTest passed 1 test(s)\n    ok repeatedCurrentFaultNeverRestoresTest passed 1 test(s)\n    ok overflowRefusesUnknownDroppedAuthorityTest passed 1 test(s)\n\n  11 passing (341ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/process-callback-thread-v1/thread_callback.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1281ms at 1561 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceUnchanged": true,
+  "mappingPredicateChanged": false,
+  "GUI": false,
+  "rootReviewBeforeRuntime": true
+}

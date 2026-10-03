@@ -1,0 +1,44 @@
+{
+  "nativeExecuted": false,
+  "temporaryKernelObjectsOnly": true,
+  "preimage": [
+    {
+      "kind": "literal",
+      "accepted": true
+    },
+    {
+      "kind": "alias",
+      "accepted": true
+    },
+    {
+      "kind": "mode",
+      "accepted": true
+    },
+    {
+      "kind": "directory",
+      "accepted": true
+    }
+  ],
+  "corrected": [
+    {
+      "kind": "literal",
+      "accepted": false,
+      "error": "Conflicting ancestral literal target: /tmp/tmpya_m2hrn/external/alias"
+    },
+    {
+      "kind": "alias",
+      "accepted": false,
+      "error": "Conflicting ancestral alias bytes/mode: /tmp/tmpi3s5ujob/external/alias"
+    },
+    {
+      "kind": "mode",
+      "accepted": false,
+      "error": "Conflicting ancestral alias bytes/mode: /tmp/tmpo29yb2lo/external/alias"
+    },
+    {
+      "kind": "directory",
+      "accepted": false,
+      "error": "Conflicting ancestral directory mode: /tmp/tmp7etl5n7x/external"
+    }
+  ]
+}

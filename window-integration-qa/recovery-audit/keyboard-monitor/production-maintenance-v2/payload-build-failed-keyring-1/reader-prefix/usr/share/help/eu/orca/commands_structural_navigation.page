@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_structural_navigation" xml:lang="eu">
+  <info>
+    <link type="next" xref="commands_table"/>
+    <link type="guide" xref="commands#reading_documents"/>
+    <link type="seealso" xref="howto_forms"/>
+    <title type="sort">2. Egitura-nabigazioa</title>
+    <title type="link">Egitura-nabigazioa</title>
+    <desc>Elementuen arabera nabigatzeko komandoak</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Egitura-nabigaziorako komandoak</title>
+  <p>
+    The following commands can be used to navigate by headings, links,
+    and other elements found in applications for which <app>Orca</app>
+    provides structural navigation support.
+  </p>
+  <list>
+    <item>
+      <p>Gaitu/desgaitu egitura-nabigazioaren teklak: <keyseq><key>Orca aldatzailea</key><key>Z</key></keyseq></p>
+    </item>
+  </list>
+  <section id="headings">
+    <title>Izenburuak</title>
+      <list>
+        <item>
+          <p>Hurrengo eta aurreko izenburua: <keyseq><key>H</key></keyseq> eta <keyseq><key>Shift</key><key>H</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu izenburuen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>H</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko izenburua 1. mailan: <keyseq><key>1</key></keyseq> eta <keyseq><key>Shift</key><key>1</key></keyseq></p>
+        </item>
+        <item>
+          <p>Bistaratu 1. mailako izenburuen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>1</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko izenburua 2. mailan: <keyseq><key>2</key></keyseq> eta <keyseq><key>Shift</key><key>2</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu 2. mailako izenburuen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>2</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko izenburua 3. mailan: <keyseq><key>3</key></keyseq> eta <keyseq><key>Shift</key><key>3</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu 3. mailako izenburuen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>3</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko izenburua 4. mailan: <keyseq><key>4</key></keyseq> eta <keyseq><key>Shift</key><key>4</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu 4. mailako izenburuen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>4</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko izenburua 5. mailan: <keyseq><key>5</key></keyseq> eta <keyseq><key>Shift</key><key>5</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu 5. mailako izenburuen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>5</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko izenburua 6. mailan: <keyseq><key>6</key></keyseq> eta <keyseq><key>Shift</key><key>6</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu 6. mailako izenburuen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>6</key></keyseq></p>
+        </item>
+      </list>
+    </section>
+    <section id="forms">
+      <title>Inprimakiak</title>
+      <list>
+        <item>
+          <p>Hurrengo eta aurreko inprimaki-eremua: <keyseq><key>P</key></keyseq> eta <keyseq><key>Shift</key><key>F</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu inprimaki-eremuen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>F</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko botoia: <keyseq><key>B</key></keyseq> eta <keyseq><key>Shift</key><key>B</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu botoien zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>B</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko konbinazio-koadroa: <keyseq><key>C</key></keyseq> eta <keyseq><key>Shift</key><key>C</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu konbinazio-koadroen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>C</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko sarrera: <keyseq><key>E</key></keyseq> eta <keyseq><key>Shift</key><key>E</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu sarreren zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>E</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko aukera-botoia: <keyseq><key>R</key></keyseq> eta <keyseq><key>Shift</key><key>R</key></keyseq></p>
+        </item>
+        <item>
+          <p>Bistaratu aukera-botoien zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>R</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Hurrengo eta aurreko kontrol-laukia: <keyseq><key>X</key></keyseq> eta <keyseq><key>Shift</key><key>X</key></keyseq></p>
+        </item>
+        <item>
+          <p>Bistaratu kontrol-laukien zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>X</key></keyseq></p>
+        </item> 
+      </list>
+    </section>
+    <section id="links">
+    <title>Estekak</title>
+      <list>
+        <item>
+          <p>Hurrengo eta aurreko esteka: <keyseq><key>K</key></keyseq> eta <keyseq><key>Shift</key><key>K</key></keyseq></p>
+        </item>
+        <item>
+          <p>Bistaratu esteken zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>K</key></keyseq></p>
+        </item>
+        <item>
+          <p>Bisitatu gabeko hurrengo eta aurreko esteka: <keyseq><key>U</key></keyseq> eta <keyseq><key>Shift</key><key>U</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu bisitatu gabeko esteken zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>U</key></keyseq></p>
+        </item>
+        <item>
+          <p>Bisitatutako hurrengo eta aurreko esteka: <keyseq><key>V</key></keyseq> eta <keyseq><key>Shift</key><key>V</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu bisitatutako esteken zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>V</key></keyseq></p>
+        </item>
+      </list>
+    </section>
+    <section id="lists">
+      <title>Zerrendak</title>
+      <list>
+        <item>
+          <p>Hurrengo eta aurreko zerrenda: <keyseq><key>L</key></keyseq> eta <keyseq><key>Shift</key><key>L</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu zerrenden zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>L</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko zerrenda-elementua: <keyseq><key>I</key></keyseq> eta <keyseq><key>Shift</key><key>I</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu zerrenda-elementuen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>I</key></keyseq></p>
+        </item>
+      </list>
+    </section>
+    <section id="tables">
+      <title>Taulak</title>
+      <list>
+        <item>
+          <p>Hurrengo eta aurreko taula: <keyseq><key>T</key></keyseq> eta <keyseq><key>Shift</key><key>T</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu taulen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>T</key></keyseq></p>
+        </item>
+        <item>
+          <p>Gelaxka ezkerrean: <keyseq><key>Alt</key><key>Shift</key><key>Ezkerra</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Gelaxka eskuinean: <keyseq><key>Alt</key><key>Shift</key><key>Eskuina</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Gelaxka goian: <keyseq><key>Alt</key><key>Shift</key><key>Gora</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Gelaxka behean: <keyseq><key>Alt</key><key>Shift</key><key>Behera</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Taulako lehen gelaxka: <keyseq><key>Alt</key><key>Shift</key><key>Hasiera</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Taulako azken gelaxka: <keyseq><key>Alt</key><key>Shift</key><key>Amaiera</key></keyseq></p>
+        </item> 
+      </list>
+    </section>
+    <section id="text_blocks">
+      <title>Testu-blokeak</title>
+      <list>
+        <item>
+          <p>Hurrengo eta aurreko paragrafoa: <keyseq><key>P</key></keyseq> eta <keyseq><key>Shift</key><key>P</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu paragrafoen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>P</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko aipu-blokea: <keyseq><key>Q</key></keyseq> eta <keyseq><key>Shift</key><key>Q</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu aipu-blokeen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>Q</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko "objektu handia": <keyseq><key>O</key></keyseq> eta <keyseq><key>Shift</key><key>O</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu "objektu handien" zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>O</key></keyseq></p>
+        </item>
+       </list>
+    </section>
+    <section id="other">
+      <title>Beste elementu batzuk</title>
+      <list>
+        <item>
+          <p>Hurrengo eta aurreko erreferentzia-puntua: <keyseq><key>M</key></keyseq> eta <keyseq><key>Shift</key><key>M</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu erreferentzia-puntuen zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>M</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko bereizlea: <keyseq><key>S</key></keyseq> eta <keyseq><key>Shift</key><key>S</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Hurrengo eta aurreko "klikagarria": <keyseq><key>A</key></keyseq> eta <keyseq><key>Shift</key><key>A</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Bistaratu "klikagarrien" zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>A</key></keyseq></p>
+        </item>
+        <item>
+          <p>Hurrengo eta aurreko irudia: <keyseq><key>G</key></keyseq> eta <keyseq><key>Shift</key><key>G</key></keyseq></p>
+        </item>
+        <item>
+          <p>Bistaratu irudien zerrenda bat: <keyseq><key>Alt</key><key>Shift</key><key>G</key></keyseq></p>
+        </item>
+        <item>
+          <p>Uneko edukiontziaren hasiera eta amaiera: <keyseq><key>Shift</key><key>koma</key></keyseq> eta <keyseq><key>koma</key></keyseq></p>
+        </item>
+      </list>
+    </section>
+</page>

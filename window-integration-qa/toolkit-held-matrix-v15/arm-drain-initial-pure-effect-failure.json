@@ -1,0 +1,42 @@
+{
+  "result": "fail",
+  "named": 29,
+  "models": 2,
+  "samplesPerModel": 2000,
+  "steps": 100,
+  "runtimeUnchangedExactV14": true,
+  "runtimeHashes": {
+    "evaluation_setup.py": "68a3176799add29342f52f4f13ce7c4e9019f2e580f9f44053af77794c223866",
+    "run_native.py": "c9ea8e839ebf7b31cd29f94c6e90bc64cc7f88cdab417a029cf3a47b8d649af7",
+    "qs_lifecycle.py": "0f9425d1ba2c6890e5cb7f7fa02dbeff6be688ac69be625fc063d8e8d1d863fd",
+    "helper_setup.py": "d08689f110ee1b27e7dcfc4fe4e96f1dc719cc0395b31589270508ee4517430e",
+    "helper_observer.py": "1a7d8a4744a797ef2b8880a93e0b3c05f4e64a0a9c8dce8696e04899e346e0ed",
+    "private_shell.py": "96a4a83b866badaa92b8872c96c949ff810e01841462aa018326c3cbb31152a8",
+    "payload-manifest.json": "64b6d4f336fd365dd61693cea783bed976d2c8e3395d9204648353c88eb4f9fb",
+    "payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.qml": "70cfcbe3f55250277705492e932fe9e4260ce9903f389ffdb67b6a2141afdb0d"
+  },
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication_test.qnt"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: Expected [s] and [] to be the same\nTrying to unify entities ['s'] and []\nTrying to unify Read[_v595] & Update['s'] and Read['s']\nTrying to unify (Read[_v593] & Update[_v594], Read[_v595] & Update[_v594]) => Read[_v596] & Update[_v594] and (Read[_v577] & Update['s'], Read['s']) => _e182\nTrying to infer effect for operator application in then(then(then(then(then(init, fire(Propose)), fire(ConfigChanged)), fire(Acquire)), fire(Recheck)), assert(and(field(s, \"failed\"), eq(field(s, \"published\"), 0))))\n\n\n  at /home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication_test.qnt:6:34\n  6:  run configChangeHardRefusalTest=init.then(fire(Propose)).then(fire(ConfigChanged)).then(fire(Acquire)).then(fire(Recheck)).then(assert(s.failed and s.published==0))\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n"
+    }
+  ],
+  "nativeLaunch": false,
+  "nativeLoaded": false
+}

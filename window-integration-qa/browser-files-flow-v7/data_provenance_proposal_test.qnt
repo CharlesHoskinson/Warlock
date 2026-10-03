@@ -1,0 +1,20 @@
+module data_provenance_proposal_test {
+ import data_provenance_proposal.* from "./data_provenance_proposal"
+ pure val data={ownedConsumer:true,ownedCompositor:true,privatePeer:true,sameLifetime:true,fdStable:true,sameInodeDevice:true,ownedUid:true,regular:true,privateMode:true,unlinked:true,tmpfs:true,uuidName:true,readOnlyVma:true,noExecutableAlias:true,boundedSize:true,sourcePinned:true,offsetBounds:true,unambiguousMount:true,readOnlyProducer:true}
+ run exactDataTest=init.then(observe(data)).then(all{assert(accepted and allProps),observe(data)})
+ run executableRefusedTest=init.then(observe(data.with("noExecutableAlias",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run writableVmaRefusedTest=init.then(observe(data.with("readOnlyVma",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run unownedConsumerRefusedTest=init.then(observe(data.with("ownedConsumer",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run unrelatedProducerRefusedTest=init.then(observe(data.with("ownedCompositor",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run wrongPeerRefusedTest=init.then(observe(data.with("privatePeer",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run staleLifetimeRefusedTest=init.then(observe(data.with("sameLifetime",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run changedFdRefusedTest=init.then(observe(data.with("fdStable",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run missingFdRefusedTest=init.then(observe(data.with("sameInodeDevice",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run wrongUidModeRefusedTest=init.then(observe(data.with("ownedUid",false).with("privateMode",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run ordinaryDiskRefusedTest=init.then(observe(data.with("tmpfs",false).with("unlinked",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run arbitraryDeletedPathRefusedTest=init.then(observe(data.with("uuidName",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run unboundedUnpinnedRefusedTest=init.then(observe(data.with("boundedSize",false).with("sourcePinned",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run offsetOrRangeRefusedTest=init.then(observe(data.with("offsetBounds",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run ambiguousMountRefusedTest=init.then(observe(data.with("unambiguousMount",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+ run writableProducerFdRefusedTest=init.then(observe(data.with("readOnlyProducer",false))).then(all{assert(not(accepted) and allProps),observe(data)})
+}

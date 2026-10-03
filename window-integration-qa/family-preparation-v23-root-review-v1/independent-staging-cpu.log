@@ -1,0 +1,14 @@
+test_actual_failed_adapter_read_closes_fd_before_unreturned_epoch_cleanup (test_staging_reservation.StagingTests.test_actual_failed_adapter_read_closes_fd_before_unreturned_epoch_cleanup) ... ok
+test_changed_reservation_quarantines_exact_epoch_without_erasing_replacement (test_staging_reservation.StagingTests.test_changed_reservation_quarantines_exact_epoch_without_erasing_replacement) ... ok
+test_close_occurs_outside_lifecycle_before_epoch_becomes_releasable (test_staging_reservation.StagingTests.test_close_occurs_outside_lifecycle_before_epoch_becomes_releasable) ... ok
+test_duplicate_epoch_cannot_borrow_live_scan_reservation (test_staging_reservation.StagingTests.test_duplicate_epoch_cannot_borrow_live_scan_reservation) ... ok
+test_exact_scanning_epoch_release_discard_dispose_and_helper_launch_refuse (test_staging_reservation.StagingTests.test_exact_scanning_epoch_release_discard_dispose_and_helper_launch_refuse) ... ok
+test_pending_and_scanning_combined_capacity64_refuses65_before_open (test_staging_reservation.StagingTests.test_pending_and_scanning_combined_capacity64_refuses65_before_open) ... ok
+test_png_identity_replacement_during_read_unwinds_only_owned_reservation (test_staging_reservation.StagingTests.test_png_identity_replacement_during_read_unwinds_only_owned_reservation) ... ok
+test_unknown_lifecycle_during_scan_cannot_publish_material_or_clear_quarantine (test_staging_reservation.StagingTests.test_unknown_lifecycle_during_scan_cannot_publish_material_or_clear_quarantine) ... ok
+test_unrelated_actual_cleanup_and_new_receipt_complete_during_png_read (test_staging_reservation.StagingTests.test_unrelated_actual_cleanup_and_new_receipt_complete_during_png_read) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.934s
+
+OK

@@ -1,0 +1,42 @@
+{
+  "result": "fail",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-d86218bb233a4105ab5fc1069d0483af.scope",
+    "coreLimit": 1
+  },
+  "coreLimits": [
+    1,
+    1
+  ],
+  "command": [
+    "c++",
+    "-std=c++23",
+    "-shared",
+    "-fPIC",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-MD",
+    "-MF",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/native-probe/probe.d",
+    "-I/usr/include/hyprland/protocols",
+    "-I/usr/include/hyprland",
+    "-I/usr/include/hyprland/src",
+    "-I/usr/include/libdrm",
+    "-I/usr/include/cairo",
+    "-I/usr/include/freetype2",
+    "-I/usr/include/libpng16",
+    "-I/usr/include/pixman-1",
+    "-I/usr/include/libei-1.0",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/native-probe/probe.cpp",
+    "-o",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/native-probe/libtoolkit-held-probe.so"
+  ],
+  "exitCode": 1,
+  "stdout": "",
+  "stderr": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v2/native-probe/probe.cpp:31:10: fatal error: nlohmann/json.hpp: No such file or directory\n   31 | #include <nlohmann/json.hpp>\n      |          ^~~~~~~~~~~~~~~~~~~\ncompilation terminated.\n",
+  "sourceDependencies": [],
+  "binarySHA256": null,
+  "nativeLoaded": false
+}

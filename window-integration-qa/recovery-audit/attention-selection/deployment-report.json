@@ -1,0 +1,395 @@
+{
+  "status": "installed and restarted; preservation pass",
+  "installedAt": "2026-10-01T05:08:02.661766+00:00",
+  "installedPath": "/home/hoskinson/.local/bin/hypr-taskbar-attention",
+  "backupPath": "/home/hoskinson/window-integration-qa/recovery-audit/attention-selection/hypr-taskbar-attention.before-instance-selection",
+  "beforeHash": "565776b1e128efef4cb482b834a8300bbfbb63ec59c195c25ee2b768fa00c83a",
+  "installedHash": "b544917f44fcc4786fcc0b4eca922bbc4c3df00b9b4b1f92a220d4c6fcb10b5e",
+  "oldRunningPID": 2470611,
+  "oldStartTick": 4836508,
+  "selectedSignature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+  "rollback": "Atomic-copy the backup over installedPath, then verify exact current helper PID/signature before terminating only that daemon and relaunching via hl.exec_cmd.",
+  "beforeRestart": {
+    "clients": [
+      {
+        "address": "0x5a02aee429f0",
+        "pid": 4007,
+        "stableId": "18000005",
+        "at": [
+          945,
+          284
+        ],
+        "size": [
+          386,
+          444
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0
+      },
+      {
+        "address": "0x5a02afa13e90",
+        "pid": 252010,
+        "stableId": "1800006a",
+        "at": [
+          26,
+          145
+        ],
+        "size": [
+          1002,
+          789
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0
+      },
+      {
+        "address": "0x5a02afd20bd0",
+        "pid": 361074,
+        "stableId": "18000076",
+        "at": [
+          817,
+          206
+        ],
+        "size": [
+          700,
+          500
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0
+      },
+      {
+        "address": "0x5a02b0cc9280",
+        "pid": 4311,
+        "stableId": "18000006",
+        "at": [
+          417,
+          71
+        ],
+        "size": [
+          1022,
+          890
+        ],
+        "workspace": {
+          "id": -98,
+          "name": "special:win-minimized"
+        },
+        "pinned": false,
+        "fullscreen": 0
+      }
+    ],
+    "focus": "0x5a02afa13e90",
+    "cursor": {
+      "x": 527,
+      "y": 539
+    },
+    "monitors": [
+      {
+        "id": 0,
+        "name": "eDP-2",
+        "description": "Samsung Display Corp. ATNA60HU01-0",
+        "make": "Samsung Display Corp.",
+        "model": "ATNA60HU01-0 ",
+        "serial": "",
+        "width": 2560,
+        "height": 1600,
+        "physicalWidth": 340,
+        "physicalHeight": 220,
+        "refreshRate": 240.0,
+        "x": 0,
+        "y": 0,
+        "activeWorkspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "specialWorkspace": {
+          "id": 0,
+          "name": ""
+        },
+        "reserved": [
+          0,
+          26,
+          0,
+          0
+        ],
+        "scale": 1.6,
+        "transform": 0,
+        "focused": true,
+        "dpmsStatus": true,
+        "vrr": false,
+        "solitary": "0",
+        "solitaryBlockedBy": [
+          "WINDOWED",
+          "CANDIDATE"
+        ],
+        "activelyTearing": false,
+        "tearingBlockedBy": [
+          "NOT_TORN",
+          "USER",
+          "CANDIDATE"
+        ],
+        "directScanoutTo": "0",
+        "directScanoutBlockedBy": [
+          "USER",
+          "SW",
+          "CANDIDATE"
+        ],
+        "disabled": false,
+        "currentFormat": "XRGB8888",
+        "mirrorOf": "none",
+        "availableModes": [
+          "2560x1600@240.00Hz",
+          "2560x1600@60.00Hz"
+        ],
+        "colorManagementPreset": "srgb",
+        "sdrBrightness": 1,
+        "sdrSaturation": 1,
+        "sdrMinLuminance": 0.2,
+        "sdrMaxLuminance": 80,
+        "hardwareCursorsInUse": false
+      }
+    ],
+    "catalogHashes": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    },
+    "a11y": {
+      "exists": true,
+      "dev": 84,
+      "inode": 91312,
+      "connects": true
+    },
+    "launcherCacheHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  "oldDaemonIdentity": {
+    "pid": 2470611,
+    "cmdline": [
+      "python3",
+      "/home/hoskinson/.local/bin/hypr-taskbar-attention"
+    ],
+    "parent": 1468,
+    "startTick": 4836508,
+    "state": "S",
+    "signature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+    "runtime": "/run/user/1000"
+  },
+  "runtimeStateBackup": "/home/hoskinson/window-integration-qa/recovery-audit/attention-selection/attention-runtime.before-instance-selection.json",
+  "runtimeStateBefore": {},
+  "launchCommand": [
+    "hyprctl",
+    "eval",
+    "hl.exec_cmd(\"/home/hoskinson/.local/bin/hypr-taskbar-attention\")"
+  ],
+  "launchResult": "ok",
+  "newDaemonIdentity": {
+    "pid": 2850234,
+    "cmdline": [
+      "python3",
+      "/home/hoskinson/.local/bin/hypr-taskbar-attention"
+    ],
+    "parent": 1468,
+    "startTick": 5408290,
+    "state": "S",
+    "signature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+    "runtime": "/run/user/1000"
+  },
+  "newDaemonSocketFDs": [
+    "socket:[9480465]"
+  ],
+  "expectedEventSocket": "/run/user/1000/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558/.socket2.sock",
+  "querySignature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790777558_556595558",
+  "afterRestart": {
+    "clients": [
+      {
+        "address": "0x5a02aee429f0",
+        "pid": 4007,
+        "stableId": "18000005",
+        "at": [
+          945,
+          284
+        ],
+        "size": [
+          386,
+          444
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0
+      },
+      {
+        "address": "0x5a02afa13e90",
+        "pid": 252010,
+        "stableId": "1800006a",
+        "at": [
+          26,
+          145
+        ],
+        "size": [
+          1002,
+          789
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0
+      },
+      {
+        "address": "0x5a02afd20bd0",
+        "pid": 361074,
+        "stableId": "18000076",
+        "at": [
+          817,
+          206
+        ],
+        "size": [
+          700,
+          500
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0
+      },
+      {
+        "address": "0x5a02b0cc9280",
+        "pid": 4311,
+        "stableId": "18000006",
+        "at": [
+          417,
+          71
+        ],
+        "size": [
+          1022,
+          890
+        ],
+        "workspace": {
+          "id": -98,
+          "name": "special:win-minimized"
+        },
+        "pinned": false,
+        "fullscreen": 0
+      }
+    ],
+    "focus": "0x5a02afa13e90",
+    "cursor": {
+      "x": 527,
+      "y": 539
+    },
+    "monitors": [
+      {
+        "id": 0,
+        "name": "eDP-2",
+        "description": "Samsung Display Corp. ATNA60HU01-0",
+        "make": "Samsung Display Corp.",
+        "model": "ATNA60HU01-0 ",
+        "serial": "",
+        "width": 2560,
+        "height": 1600,
+        "physicalWidth": 340,
+        "physicalHeight": 220,
+        "refreshRate": 240.0,
+        "x": 0,
+        "y": 0,
+        "activeWorkspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "specialWorkspace": {
+          "id": 0,
+          "name": ""
+        },
+        "reserved": [
+          0,
+          26,
+          0,
+          0
+        ],
+        "scale": 1.6,
+        "transform": 0,
+        "focused": true,
+        "dpmsStatus": true,
+        "vrr": false,
+        "solitary": "0",
+        "solitaryBlockedBy": [
+          "WINDOWED",
+          "CANDIDATE"
+        ],
+        "activelyTearing": false,
+        "tearingBlockedBy": [
+          "NOT_TORN",
+          "USER",
+          "CANDIDATE"
+        ],
+        "directScanoutTo": "0",
+        "directScanoutBlockedBy": [
+          "USER",
+          "SW",
+          "CANDIDATE"
+        ],
+        "disabled": false,
+        "currentFormat": "XRGB8888",
+        "mirrorOf": "none",
+        "availableModes": [
+          "2560x1600@240.00Hz",
+          "2560x1600@60.00Hz"
+        ],
+        "colorManagementPreset": "srgb",
+        "sdrBrightness": 1,
+        "sdrSaturation": 1,
+        "sdrMinLuminance": 0.2,
+        "sdrMaxLuminance": 80,
+        "hardwareCursorsInUse": false
+      }
+    ],
+    "catalogHashes": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    },
+    "a11y": {
+      "exists": true,
+      "dev": 84,
+      "inode": 91312,
+      "connects": true
+    },
+    "launcherCacheHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  "preservation": {
+    "clients": true,
+    "focus": true,
+    "cursor": true,
+    "catalogHashes": true,
+    "a11y": true,
+    "launcherCacheHash": true,
+    "monitors": true
+  },
+  "selectedQueryClientsMatch": true,
+  "runtimeStateAfter": {},
+  "restartedAt": "2026-10-01T05:13:30.351045+00:00",
+  "installedSelectionTests": 6,
+  "installedEOFReconnectFocusRegressionTests": 1,
+  "centralFormalCopy": "Parent confirmed both formal models copied and typechecked before deployment",
+  "centralQA": "Parent reported exit0 against installed fixed helper",
+  "runtimeAttentionUnchangedAtRestart": true,
+  "guiSlotReleased": true
+}

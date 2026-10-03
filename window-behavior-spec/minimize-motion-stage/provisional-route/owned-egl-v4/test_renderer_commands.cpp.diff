@@ -1,0 +1,17 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v3/test_renderer_commands.cpp
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v4/test_renderer_commands.cpp
+@@ -28,6 +28,14 @@
+   auto huge=action("retarget","0123456789ab-4");huge["pid"]=1e100;check(rejects(huge));
+   r.command(action("cancel","0123456789ab-3"));check(!r.ledger.isActive());check(r.waitingRetarget.isEmpty());
+   check(r.ledger.present(pending->sequence,200,1)==Result::Rejected);
++  Renderer::Output idle;idle.configured=true;
++  check(r.needsDraw(idle));idle.clearCommitted=true;check(!r.needsDraw(idle));
++  r.ledger.seed(r.routeIdentity,"0123456789ab-4",std::string(64,'a'));r.required.push_back(&idle);
++  check(r.needsDraw(idle));idle.frameReady=false;check(!r.needsDraw(idle));
++  idle.frameReady=true;idle.outstanding=1;check(!r.needsDraw(idle));
++  idle.outstanding=0;idle.endpointPresented=true;check(!r.needsDraw(idle));
++  idle.endpointPresented=false;r.ledger.cancel();check(!r.needsDraw(idle));
++  idle.clearCommitted=false;check(r.needsDraw(idle));r.required.clear();
+   std::cout<<checks<<" actual owned-renderer pending-command checks PASS\n";return 0;
+  }
+ };

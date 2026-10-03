@@ -1,0 +1,44 @@
+test_ambiguous_absent_target (test_control.Tests.test_ambiguous_absent_target) ... ok
+test_capability_requires_exact_owner_and_all_actual_flags (test_control.Tests.test_capability_requires_exact_owner_and_all_actual_flags) ... ok
+test_delimited_orca_args_preserved_and_env_target_available (test_control.Tests.test_delimited_orca_args_preserved_and_env_target_available) ... ok
+test_explicit_launcher_instance_routes_to_bootstrap (test_control.Tests.test_explicit_launcher_instance_routes_to_bootstrap) ... ok
+test_held_refusal_preserves_loaded_subscription (test_control.Tests.test_held_refusal_preserves_loaded_subscription) ... ok
+test_missing_or_duplicate_target_option_rejected (test_control.Tests.test_missing_or_duplicate_target_option_rejected) ... usage: python3 -m unittest [--instance INSTANCE]
+python3 -m unittest: error: argument --instance: expected one argument
+usage: python3 -m unittest [--instance INSTANCE]
+python3 -m unittest: error: duplicate --instance
+ok
+test_probe_absent_actual_binary (test_control.Tests.test_probe_absent_actual_binary) ... ok
+test_profile_and_real_speech_environment_preserved (test_control.Tests.test_profile_and_real_speech_environment_preserved) ... ok
+test_public_adapter_classes_exactly_match_accepted_source (test_control.Tests.test_public_adapter_classes_exactly_match_accepted_source) ... ok
+test_replaced_after_prepare_refuses_raw_unload (test_control.Tests.test_replaced_after_prepare_refuses_raw_unload) ... ok
+test_same_artifact_new_nonce_refuses_before_raw_unload (test_control.Tests.test_same_artifact_new_nonce_refuses_before_raw_unload) ... ok
+test_true_retire_then_normal_path (test_control.Tests.test_true_retire_then_normal_path) ... ok
+test_unaccepted_control_cannot_target_canonical_main (test_control.Tests.test_unaccepted_control_cannot_target_canonical_main) ... ok
+test_unapproved_artifact_fails_before_session_access (test_control.Tests.test_unapproved_artifact_fails_before_session_access) ... ok
+test_unknown_preferred_does_not_fallback (test_control.Tests.test_unknown_preferred_does_not_fallback) ... ok
+test_changed_installed_launcher_mode_refuses_rollback (test_install.InstallTests.test_changed_installed_launcher_mode_refuses_rollback) ... ok
+test_changed_prior_launcher_refuses_before_install (test_install.InstallTests.test_changed_prior_launcher_refuses_before_install) ... ok
+test_install_and_byte_exact_guarded_rollback (test_install.InstallTests.test_install_and_byte_exact_guarded_rollback) ... ok
+test_modified_payload_refused (test_install.InstallTests.test_modified_payload_refused) ... ok
+test_preexisting_version_never_overwritten (test_install.InstallTests.test_preexisting_version_never_overwritten) ... ok
+test_real_executable_payload_preserves_mode_and_runs (test_install.InstallTests.test_real_executable_payload_preserves_mode_and_runs) ... ok
+test_rollback_preserves_unrelated_newer_edit (test_install.InstallTests.test_rollback_preserves_unrelated_newer_edit) ... ok
+test_source_mode_drift_refused_before_mutation (test_install.InstallTests.test_source_mode_drift_refused_before_mutation) ... ok
+test_symlink_launcher_refused (test_install.InstallTests.test_symlink_launcher_refused) ... ok
+test_unapproved_apply_never_writes_version_or_launchers (test_install.InstallTests.test_unapproved_apply_never_writes_version_or_launchers) ... ok
+test_unsafe_payload_mode_refused_before_mutation (test_install.InstallTests.test_unsafe_payload_mode_refused_before_mutation) ... ok
+test_actual_control_mapped_accepts_btrfs_and_retains_both_device_inode_guards (test_mapping_artifact.MappingTests.test_actual_control_mapped_accepts_btrfs_and_retains_both_device_inode_guards) ... ok
+test_actual_descriptor_swap_refuses_even_if_named_original_restored (test_mapping_artifact.MappingTests.test_actual_descriptor_swap_refuses_even_if_named_original_restored) ... ok
+test_actual_ordinary_file_self_map_buffer_backing_and_two_segments (test_mapping_artifact.MappingTests.test_actual_ordinary_file_self_map_buffer_backing_and_two_segments) ... ok
+test_control_path_mutation_during_plugin_verification_refuses (test_mapping_artifact.MappingTests.test_control_path_mutation_during_plugin_verification_refuses) ... ok
+test_exact_frozen_btrfs_so_backing_device_is_calibrated_without_execute (test_mapping_artifact.MappingTests.test_exact_frozen_btrfs_so_backing_device_is_calibrated_without_execute) ... ok
+test_missing_deleted_and_one_bad_segment_refuse (test_mapping_artifact.MappingTests.test_missing_deleted_and_one_bad_segment_refuse) ... ok
+test_post_remote_read_path_replace_bytes_and_permissions_refuse (test_mapping_artifact.MappingTests.test_post_remote_read_path_replace_bytes_and_permissions_refuse) ... ok
+test_symlink_mode_and_wrong_hash_reject (test_mapping_artifact.MappingTests.test_symlink_mode_and_wrong_hash_reject) ... ok
+test_wrong_device_same_inode_and_wrong_inode_same_device_refuse (test_mapping_artifact.MappingTests.test_wrong_device_same_inode_and_wrong_inode_same_device_refuse) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.050s
+
+OK

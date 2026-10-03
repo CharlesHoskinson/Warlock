@@ -1,0 +1,52 @@
+{
+  "result": "pass",
+  "named": 5,
+  "samples": 2000,
+  "steps": 100,
+  "markersStillBeforeDeclarationCorrection": true,
+  "sourceHashes": {
+    "terminal_qml.py": "57793eac18caca760ed8797dad431a7e358dfb469331d89c59e440dc71644b94",
+    "terminal_drain.py": "bf402534bca13c73ce7dc68dca8adbdfd678fee9bfa5b42f0f9736b95c2b72eb",
+    "run_native.py": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+    "payload-manifest.json": "016d1dd35dcf8e2664f1977eed5b61fe4e29867d4afe885cd9955be3a044a01b",
+    "payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.qml": "d3f52ecfc810e309d3c7dcff30bf46784b569b0ab03692fafcd7a5c6626d4280"
+  },
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/command_declaration.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/command_declaration_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  command_declaration_test\n    ok originalMutableDeclarationComparisonRejectsRealNormalJobTest passed 1 test(s)\n    ok declaredBindingChangeDoesNotChangeLaunchedArgvTest passed 1 test(s)\n    ok declaredFieldCannotInferMissingNativeStartTest passed 1 test(s)\n    ok actualExit120StillRefusesRegardlessOfBindingTest passed 1 test(s)\n    ok sourceIdentityMutationCannotGainDeclarationExceptionTest passed 1 test(s)\n\n  5 passing (143ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/command_declaration.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1502ms at 1332 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "nativeLaunch": false
+}

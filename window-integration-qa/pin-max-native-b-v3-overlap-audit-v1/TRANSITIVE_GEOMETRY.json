@@ -1,0 +1,20 @@
+{
+  "sourceOnly": true,
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Window.hpp": {
+      "sha256": "1f60b8ff0bc6b5a48af5c03cb2cac1108db677efc70b4424b56ef6f1f2d1cc81",
+      "mode": 436
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/types/GeometricMovableAnimated.cpp": {
+      "sha256": "649f1a8d01d28e20e23380db65c5aeb35846d7ef48c8aada9b84ff0e4a1a207d",
+      "mode": 436
+    }
+  },
+  "sourceMapping": [
+    "Window.hpp433\u2013435 getWindowMainSurfaceBox returns geometricBox(GEOMETRIC_CURRENT)",
+    "GeometricMovableAnimated.cpp geometricBox current returns realPosition.value and realSize.value"
+  ],
+  "nativePresentationProof": false,
+  "firstCPUObserverFixtureFailure": "Whole-body memory adapter lacked raw() boundary stub; first actual trace/error and exact fixture source retained. No product failure.",
+  "noGUI": true
+}

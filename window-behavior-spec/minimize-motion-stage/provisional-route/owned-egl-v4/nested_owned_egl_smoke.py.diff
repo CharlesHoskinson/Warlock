@@ -1,0 +1,25 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v3/nested_owned_egl_smoke.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v4/nested_owned_egl_smoke.py
+@@ -35,7 +35,7 @@
+ def main():
+  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True)
+  args=parser.parse_args()
+- manifest=json.loads((LOCAL/'native-manifest-v3.json').read_text())
++ manifest=json.loads((LOCAL/'native-manifest-v4.json').read_text())
+  for path,expected in manifest['inputs'].items():
+   assert hashlib.sha256(Path(path).read_bytes()).hexdigest()==expected,'frozen native input changed: '+path
+  args.output.mkdir(parents=True,exist_ok=False);args.output.chmod(0o700)
+@@ -116,6 +116,13 @@
+    observed=producer.wait(lambda e:e.get('event')=='outputs','producer outputs')['outputs']
+    assert {o['name'] for o in observed}=={'WAYLAND-1','EGL-SECOND'},observed
+    report['producerOutputs']=observed
++   producer.send(command='state',observationId='idle-before')
++   idle_before=producer.wait(lambda e:e.get('event')=='state' and e.get('observationId')=='idle-before','idle initial observation')
++   time.sleep(.18)
++   producer.send(command='state',observationId='idle-after')
++   idle_after=producer.wait(lambda e:e.get('event')=='state' and e.get('observationId')=='idle-after','idle stable observation')
++   report['idleObservations']=[idle_before,idle_after]
++   report['checks']['idleNoRepeatedTransparentSwaps']=idle_before['transparentCommitCount']>=len(observed) and idle_before['transparentCommitCount']==idle_after['transparentCommitCount']
+    required=[{'name':o['name'],'generation':o['generation']} for o in observed]
+    ident={'stableId':target['stableId'],'pid':target['pid']}
+    token=lambda n:'abcdef123456-'+str(n)

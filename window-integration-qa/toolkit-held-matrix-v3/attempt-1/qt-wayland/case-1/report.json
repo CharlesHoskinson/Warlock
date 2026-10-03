@@ -1,0 +1,34 @@
+{
+  "case": "move-escape",
+  "result": "fail",
+  "gates": [],
+  "trace": [],
+  "cleanup": {
+    "fixtureExitCode": 0,
+    "normalPublicQuit": true,
+    "publicCommandAcknowledgements": [
+      {
+        "command": "open",
+        "epoch": 1,
+        "ack": true,
+        "featureOracle": false
+      },
+      {
+        "command": "quit",
+        "epoch": 2,
+        "ack": true,
+        "featureOracle": false
+      }
+    ],
+    "exactOriginalProcessGone": true
+  },
+  "nativeInputSource": "owned Wayland virtual protocols",
+  "physicalInputAccepted": false,
+  "processIdentity": {
+    "pid": 1708626,
+    "start": "11997808",
+    "pgid": 1708626,
+    "parent": 1708330
+  },
+  "error": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/run_native.py\", line 113, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n        ~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/held_route.py\", line 88, in prepare\n    self.fixture.command('open');self.wait(lambda:'child' in self.fixture.state()['windows'],'Actual public child creation');self.arrange('child',[260,310,320,180])\n                                                                                                                             ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/held_route.py\", line 61, in arrange\n    window=self.window(role);x,y,width,height=rectangle;address=json.dumps('address:'+window['address'])\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v3/held_route.py\", line 56, in window\n    if len(matches)!=1:raise RuntimeError('One exact actual mapped fixture window required: '+role)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: One exact actual mapped fixture window required: child\n"
+}

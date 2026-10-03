@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_tables" xml:lang="eo">
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <link type="next" xref="howto_forms"/>
+    <title type="sort">4. Tabeloj</title>
+    <desc>Navigi kaj agordi dinamikajn titolojn</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Tabeloj</title>
+  <p><app>Orko</app> provizas plurajn funkciojn specife destinitajn por plibonigi aliron al tabeloj trovitaj en retpaĝoj kaj aliaj dokumentoj: agordigebla ĉelo-kontraŭ-vico-legado, <link xref="howto_structural_navigation">Struktura Navigado</link> kaj Dinamikaj Titoloj.</p>
+  <section id="cell_row">
+    <title>Ĉelo-Kontraŭ-Vico-Legado</title>
+    <p>Konsideru la procezon de ekzameni la liston de mesaĝoj en via Ricevujo. Por ke Orko anoncu la sendinton, temon, daton kaj ĉeeston de aldonaĵoj, vi bezonus <app>Orko</app> paroli la vicon. Aliflanke, kiam navigante inter vicoj en kalkultabelo, aŭdi la plenan vicon eble ne estas dezirata se ne pro alia kialo ol la pura nombro de ĉeloj en ĉiu vico. Tiel en tiu kazo, vi volus ke <app>Orko</app> parolu nur la ĉelon kun fokuso. Similaj situacioj okazas en dokumentaj tabeloj.</p>
+    <p><app>Orko</app> permesas al vi agordi ĉu nur la ĉelo estu legata, aŭ ĉu la plena vico devas esti, por GUI-tabeloj, dokumentaj tabeloj kaj kalkultabeloj. Ĉar tiuj agordoj estas sendependaj unu de la alia, vi ne devas elekti unu tabel-legoreĝimon por konveni plurajn tipojn de tabeloj.</p>
+    <p>Vi povas agordi ĉiun el la tabel-legaj preferoj de <app>Orko</app> por tuta <app>Orko</app> same kiel individue por ĉiu aplikaĵo. Kiel fari ĉiun estas priskribita en la gvidilo pri <link xref="preferences">la agord-dialogoj de <app>Orko</app></link>. La agordoj troviĝas en la <link xref="preferences_speech"> paĝo <gui>Parolo</gui></link>.</p>
+    <p>Fine, estas ankaŭ komando de <app>Orko</app> kiu permesas al vi ŝalti/malŝalti legadon de ĉelo kontraŭ vico dumtempe por la aktuale-aktiva tabelo: <keyseq><key>Orko Modifier</key><key>F11</key></keyseq>.</p>
+  </section>
+  <section id="structural_navigation">
+    <title>Struktura Navigado</title>
+    <p>La <link xref="commands_structural_navigation#tables">komandojn de tabela Struktura Navigado</link> de <app>Orko</app> ebligas al vi rapide loktrofi tabelojn, tuj salti al la unua aŭ lasta ĉelo de tabelo, kaj movi al la sekva ĉelo en ajna direkto.</p>
+    <p>Dum vi navigas inter kaj ene de tabeloj per Struktura Navigado, <app>Orko</app> anoncos pliajn detalojn por helpi vin kompreni vian pozicion, kiel ekzemple la dimensiojn de la tabelo kiun vi ĵus eniris kaj la fakton ke vi atingis la randon de la tabelo en la direkto en kiu vi moviĝas.</p>
+    <p>Krome, <app>Orko</app> provizas agordeblajn <link xref="preferences_table_navigation">prezentajn opciojn</link> kiuj kunlaboras kun Struktura Navigado kaj permesas al vi kontroli ĉu ĉel-koordinatoj estas prezentitaj, pluraj ĉel-intervaloj estas indikataj, kaj ĉel-kaplinioj estas anoncitaj.</p>
+    <note style="tip">
+      <title>Ne Forgesu Ŝalti Strukturan Navigadon!</title>
+      <p>Depende de kie vi estas, eble estos necese eksplicite ŝalti Strukturan Navigadon antaŭ ol vi povas uzi ĝin. Por scii pli, legu <link xref="howto_structural_navigation#toggling_required"> kiam estas postulata ŝalti Strukturan Navigadon.</link></p>
+    </note>
+  </section>
+  <section id="dynamic_headers">
+    <title>Dinamikaj Kaplinioj</title>
+    <p>Multaj el la tabeloj kiujn vi renkontos dum legado havas ĉelojn kiuj funkcias kiel kaplinio por vico aŭ kolumno. Ĉu la kreinto de tiu tabelo ĝuste markis tiujn ĉelojn kiel kapliniojn, estas malfacile diri. En multaj kazoj, la teksto simple estis formatita por esti pli granda kaj/aŭ grasa. Eĉ se la tabelo ĝuste estas markita, tio ne garantias ke la aplikaĵo aŭ la ilaro eksponas tiun tekston kiel informojn pri kaplinioj al helpaj teknologioj. La subteno de Dinamikaj Kaplinioj de <app>Orko</app> ebligas venki tiujn defiojn.</p>
+    <steps>
+      <title>Agordi Kolumnajn Kapliniojn</title>
+      <item>
+        <p>Movu al la vico kiu enhavas ĉiujn kolumnajn kapliniojn.</p>
+      </item>
+      <item>
+        <p>Premu <keyseq><key>Orko Modifier</key><key>R</key></keyseq> por diri al <app>Orko</app> ke la aktuala vico estas tiu kun la kaplinioj.</p>
+      </item>
+    </steps>
+    <steps>
+      <title>Agordi Vicajn Kapliniojn</title>
+      <item>
+        <p>Movu al la kolumno kiu enhavas ĉiujn vicajn kapliniojn.</p>
+      </item>
+      <item>
+        <p>Premu <keyseq><key>Orko Modifier</key><key>C</key></keyseq> por diri al <app>Orko</app> ke la aktuala kolumno estas tiu kun la kaplinioj.</p>
+      </item>
+    </steps>
+    <p>Post agordado de la kolumnaj kaplinioj aŭ vicaj kaplinioj, vi trovos ke dum vi navigas inter la ĉeloj, <app>Orko</app> prezentos ĉiun kaplinion kiu ŝanĝiĝis. Aŭ dirite alie, <app>Orko</app> ne prezentos la kolumnan kaplinion denove kaj denove dum vi moviĝas supren aŭ malsupren ene de la aktuala kolumno. Simile, ĝi ne prezentos la vican kaplinion denove kaj denove dum vi moviĝas maldekstren aŭ dekstren ene de la aktuala vico. Tamen, se vi ŝanĝas vicojn kaj estas vicaj kaplinioj, la kaplinio asociita kun la nova vico estos prezentita. Kaj se vi ŝanĝas kolumnojn kaj estas kolumnaj kaplinioj, la kaplinio asociita kun la nova kolumno estos prezentita.</p>
+    <p>Por forigi kapliniojn, simple duoble klaku la komandon kiun vi uzis por agordi ilin. Do duoble klakante <keyseq><key>Orko Modifier</key><key>R</key></keyseq> oni diras al <app>Orko</app> ke ne estas kolumnaj kaplinioj. Duoble klakante <keyseq><key>Orko Modifier</key><key>C</key></keyseq> oni diras al <app>Orko</app> ke ne estas vicaj kaplinioj.</p>
+  </section>
+</page>

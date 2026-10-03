@@ -1,0 +1,2734 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 0,
+      hidden: false,
+      hit: 0,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 1,
+      ownerCallback: false,
+      physical: false,
+      pinned: true,
+      raw: false,
+      seat: 0,
+      source: 1,
+      sourceMonocle: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 1,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 1,
+      sourceMonocle: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 1,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 1,
+      sourceMonocle: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: true,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 1,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 1,
+      sourceMonocle: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: true,
+      core: 2,
+      hidden: true,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 1,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 1,
+      sourceMonocle: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: true,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 1,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 1,
+      sourceMonocle: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 1,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 1,
+      sourceMonocle: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 1,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 1,
+      sourceMonocle: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 1,
+      sourceMonocle: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 41]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 42]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 43]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 44]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 45]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 46]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 47]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 48]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 49]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 50]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 51]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 52]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 53]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 54]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 55]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 56]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 57]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 58]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 59]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 60]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 61]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 62]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 63]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 64]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 65]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 66]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 67]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 68]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 69]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 70]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 71]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 72]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 73]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 74]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: true,
+      hit: 1,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 75]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: true,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 76]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: true,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 77]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: true,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 78]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: true,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 79]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: true,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 80]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 81]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 82]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 83]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 1,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 84]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 85]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 86]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 87]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 88]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 89]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 90]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 91]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: true,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 92]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 93]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 94]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 95]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 96]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 97]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 98]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 2,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 1,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 99]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 0,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: false,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: false,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[State 100]
+{
+  s:
+    {
+      accepted: false,
+      allowsInput: false,
+      block: 2,
+      captured: 1,
+      capturedSource: 1,
+      confirmed: false,
+      core: 2,
+      hidden: false,
+      hit: 1,
+      mapped: true,
+      nativeBlock: true,
+      noFocus: false,
+      owner: 2,
+      ownerCallback: false,
+      physical: true,
+      pinned: true,
+      raw: true,
+      seat: 2,
+      source: 2,
+      sourceMonocle: true
+    }
+}
+
+[ok] No violation found (517ms at 3868 traces/second).
+Trace length statistics: max=101, min=101, average=101.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1b8f6c3 --backend=rust to reproduce.

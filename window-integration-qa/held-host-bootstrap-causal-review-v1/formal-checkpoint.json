@@ -1,0 +1,32 @@
+{
+  "result": "fail",
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap_flush.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap_flush_test.qnt"
+      ],
+      "exitCode": 1,
+      "stdout": "[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type\n",
+      "stderr": "\n Error [QNT000]: mismatched input '=' expecting ':'\n\n  at /home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap_flush_test.qnt:3:22\n  3:  action check(v:bool)=all{assert(v),queued'=queued,readable'=readable,serverSawCommit'=serverSawCommit,configure'=configure,clientSawConfigure'=clientSawConfigure}\n                          ^\n\n\n Error [QNT000]: extraneous input 'run' expecting {<EOF>, 'module', DOCCOMMENT}\n\n  at /home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap_flush_test.qnt:4:2\n  4:  run queuedInitialCommitWithoutReadableTrafficDoesNotFlushTest=init.then(create).then(eventOnly).then(eventOnly).then(check(queued and not(serverSawCommit) and not(configure)))\n      ^^^\n\nerror: parsing failed\n"
+    }
+  ],
+  "sources": {
+    "bootstrap_flush.qnt": "5f637a5f0a3375a47fb33ffb60a685c0b9e2b1961ee5400732b19ab146ba14da",
+    "bootstrap_flush_test.qnt": "4e8a67351c2e0d153d7a63a0302f6b872d4489e7bbb7080a3adb825e657267ac",
+    "CONTRACT.md": "e8a91e97a13aa5aaf607c2200ae584c2a5ee2200baaec25b63ddc42e26fc61e4"
+  },
+  "nativeGUI": false,
+  "sourceRepair": false
+}

@@ -1,0 +1,39 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/process-historical-closure-v1/CONTRACT.md": "45823b87eb6cc8d4f50b2931bf79f2d0591e765a410f656b70f8390064f83f5b",
+    "/home/hoskinson/window-behavior-spec/process-historical-closure-v1/historical_closure.qnt": "36d6f5d694a4de45ac2b08aef39d04d8098887137bb6bce92d0feb717addd53e",
+    "/home/hoskinson/window-behavior-spec/process-historical-closure-v1/prove_before.py": "faa611e64bae42458bb4bbbbf9a0d86866adce4477dc415adbc54d53d1021232"
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/process-historical-closure-v1/historical_closure.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  historical_closure\n    ok currentPositiveAuthorityTest passed 1 test(s)\n    ok originalPendingCancelGapCorrectedTest passed 1 test(s)\n    ok cancelBeforeWorkerProofRetainsActorClosureTest passed 1 test(s)\n    ok currentConsumerLostStillCannotAuthorizeTest passed 1 test(s)\n    ok cancelAfterCurrentAcceptanceRetainsNormalLifeTest passed 1 test(s)\n    ok actorContextRetiredBeforeResultRefusesTest passed 1 test(s)\n    ok sourceRetiredBeforeResultRefusesTest passed 1 test(s)\n    ok sourceRetiredAfterProofRevokesClosureTest passed 1 test(s)\n    ok expiredHistoricalResultRefusesTest passed 1 test(s)\n    ok wrongLeaseProofNeverHistoricalTest passed 1 test(s)\n    ok unjoinedProofNeverActorClosureTest passed 1 test(s)\n    ok missingStdoutRefusesClosureTest passed 1 test(s)\n    ok missingStderrRefusesClosureTest passed 1 test(s)\n    ok missingGoneRefusesReceiptTest passed 1 test(s)\n    ok crashRefusesNormalActorClosureTest passed 1 test(s)\n    ok uncertainReceiptRefusesNormalLifeTest passed 1 test(s)\n    ok rearmPendingRefusesTest passed 1 test(s)\n    ok canceledActorOnlyRearmsAfterEveryConditionTest passed 1 test(s)\n    ok duplicateCurrentResultFaultsTest passed 1 test(s)\n    ok firstNativeNotificationAfterPollIsHarmlessTest passed 1 test(s)\n    ok duplicateCurrentNativeNotificationFaultsTest passed 1 test(s)\n    ok actualOldNotificationAfterRearmInertTest passed 1 test(s)\n    ok prematureNativeNotificationRefusesTest passed 1 test(s)\n    ok actorReplacementCannotRearmUnclosedTest passed 1 test(s)\n\n  24 passing (3975ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/process-historical-closure-v1/historical_closure.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (2986ms at 670 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceUnchanged": true,
+  "mappingPredicateChanged": false,
+  "GUI": false,
+  "rootReviewBeforeRuntime": true
+}

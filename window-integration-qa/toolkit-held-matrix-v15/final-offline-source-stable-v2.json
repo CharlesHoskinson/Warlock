@@ -1,0 +1,1034 @@
+{
+  "result": "pass",
+  "exitCode": 0,
+  "stdout": "{\"result\": \"pass\", \"sourceChecks\": 9, \"commands\": 49, \"nativeLaunched\": false}\n",
+  "stderr": "",
+  "processIdentity": {
+    "pid": 4073770,
+    "start": "14921836",
+    "pgid": 4073760,
+    "parent": 4073760
+  },
+  "actualChildGone": true,
+  "sourceWitnesses": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/interruption.qnt": {
+      "sha256": "c39bf90dcb1766ba2112a598010de8f29e39a468c0b8577c0d9b2b14d593ffaa",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/interruption_test.qnt": {
+      "sha256": "bd4990c232a93b82138232c81ea385a8a2a6c274d7163786269500f0e72601ec",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/observations.py": {
+      "sha256": "13818450d5bdfd6e5644ad32d397617b210ef9090584067c2135c40aed714384",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/prepare_matrix.py": {
+      "sha256": "e39a0e670e407d20531676e93a004453f28e832042a087e1cf62cd83dad1f356",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_observations.py": {
+      "sha256": "78c7367bee994d6712e70cb11c97a5060f6f701de89dce96c5a9520acdcbc7b3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/offline_review.py": {
+      "sha256": "91c9a767d3c90dcdcb78df30035595cf1900f12496ec149b93ca11a4f9730e15",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/private_shell.py": {
+      "sha256": "ed594bd55d05ae72cf9b0887f6eca86174f6a5615b25eb9b5f7a480a5870e134",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/helper_observer.py": {
+      "sha256": "1a7d8a4744a797ef2b8880a93e0b3c05f4e64a0a9c8dce8696e04899e346e0ed",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/helper_setup.py": {
+      "sha256": "d08689f110ee1b27e7dcfc4fe4e96f1dc719cc0395b31589270508ee4517430e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_observer.py": {
+      "sha256": "6f2ced491a07a68fee4d674971ec574f69d8da9981255911ea0dab8eaedee158",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/capture_evidence.py": {
+      "sha256": "7d01fe5ffdbca33a3d3eaa4eafe2a925042414ef9fe3e65f895ec8f1acb19be6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/exec_gate.py": {
+      "sha256": "fba80e877ed4275cb51cf401166ffd35d20711f5464bbe241735d10903c97314",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/public_toolkit.py": {
+      "sha256": "ed39290adaccf81903d832fe0c9a3a38c1d92b746b4626955296dd04356fe77c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/input_control.py": {
+      "sha256": "4fd0d89dfb2b39ce5213eb5b04854d3be5921e04411659933f97ca2e71a9cdd6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/held_controller.py": {
+      "sha256": "e0d0195ac05cf02525557cf28f8747e3a82cab60c8bff545f8516f07759383af",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_protocol.py": {
+      "sha256": "4c525c0aa5321cbb8ecbedae51d22284e56687f3bbd406e946a3c07b2f85e094",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/helper_generations.qnt": {
+      "sha256": "e5ea6ffdc0f51a3176b0969b8023a5b9eaab86770836c012c75e2d2cf7a09a54",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/held_route.py": {
+      "sha256": "8e95f83d85308afc0ae43c81f2133cbf556f932687a23ccfb1306726aba6e3f2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_presentations.py": {
+      "sha256": "9292818fcdb4a646ae65522ece793c73c728f31fed841123c156f1d8b7500e5e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/frontend_route.py": {
+      "sha256": "bc1459db7e59555afb9e69955b3e401546e674ad149b70a39e1b72cb990a9643",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/main_observer.py": {
+      "sha256": "e5dc952a3ae3f2b9b2bd881d604c885a52b7005f80941b77f114ad0c4437e62e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/main_observations.py": {
+      "sha256": "6ee015e72931d75464a694c040a91f003ea845f9b6fac81ea9ef8b83c9b17e72",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/catalog_preservation.py": {
+      "sha256": "c579d169e9b7093331fd4b78d015cc9fbbcd38c9ceb3772aef1bd0f5056fc54d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py": {
+      "sha256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/freeze_packet.py": {
+      "sha256": "9acb4b8defc0bc652f3e98275e8becb451fb45a8425ad5f68111a6f941cde91e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/capture_gtk_loader.py": {
+      "sha256": "92f0dde6c5982714ff2988a2f7b635e6863d9118b841922d8d42e8bdcbdb80a7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_service_queries.py": {
+      "sha256": "3a0d4de96ce0eeb1bebda0bf94118d0bafe1d185b9f743221e4cb54283fbd4ac",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/qs_readiness.qnt": {
+      "sha256": "42010ee8d4e863b2aaa7010de04f64407806fd99c5a3bf7ad96b9a9354f66a7d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/qs_lifecycle.py": {
+      "sha256": "0f9425d1ba2c6890e5cb7f7fa02dbeff6be688ac69be625fc063d8e8d1d863fd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_qs_lifecycle.py": {
+      "sha256": "52f5766c603cc77ed27f91a36b86d9228771fe4b71c7084b832b539b587b669b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/mapped_lifetimes.qnt": {
+      "sha256": "8545da1e1938ff7cc2bdad9795de53ef270a5e2a685443e945b14a72ca1f8e5b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/transport_check.py": {
+      "sha256": "106a421e1cd8e368d3a07271d0d6908e44c22a0e1cb25285d198a2b1a734d5e5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_mapping.py": {
+      "sha256": "73b9b05379daff13e8909875ccceffafc4afb29d483cb70fa0768d987a6fd014",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/capture_qt_loader.py": {
+      "sha256": "655d4687cacc3a2f764c2bd8676c2df5589f52f11bb0ad9d8935990a324d9969",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_backend_evidence.py": {
+      "sha256": "4e40ebf56d86cb8b38b8a1c970ffe90402f1612305f6bbf1628d19ac0b638353",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/backend_lifecycle.qnt": {
+      "sha256": "504aa253f30ca322280c3cb5d6006b6eb1f2f385dff03e41e09c0b43218d156f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_retirement_evidence.py": {
+      "sha256": "f8c3f80aa901254dcb0ec1ea8f1a5f510a5d50f31b60cdf851630a4724228bb5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_inherited_case_policy.py": {
+      "sha256": "189bab91c139fc59cc6c9c1c7752206adcfc830d17c4b2a3d349e55b2825257d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/evaluation_tickets.qnt": {
+      "sha256": "1b9beea695a02226042409ab235f0fd55e51e0d5cc53fd87590d742700eee13d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/prove_evaluation_model.py": {
+      "sha256": "f8319bd8b9d30c4309d83c5427b9b76faa8b46913d6519140d6a793584ca83c9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/evaluation_setup.py": {
+      "sha256": "1c08882cb9b311bd152f1c9414610f3d1f3793bb6ba3a25646a416707f961554",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_evaluations.py": {
+      "sha256": "1e8baea294651acbb4531332dcc094401b03d8e17e7b5669ee99efa59015f735",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_evaluation_delegate.py": {
+      "sha256": "a9b0e4fa1f348494a774f90c9cc07775f3b853781232de742631ce21ce3c452f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/prove_boundary_refinement.py": {
+      "sha256": "c834a08ea3ad3a4e2dfc65479add2b786ad9f1a2ca05e0cf541e48b0bc67d337",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/evaluation_tickets-initial.qnt": {
+      "sha256": "05abb90fd840b71fe348a78e125937cd82336a18a171c403a755285292f1632e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/preview_diagnostics.qnt": {
+      "sha256": "c7e98b717ce15db04633dc57af13bdb8f24d496a80ac55b4d4821e6522af02e5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/preview_diagnostics-initial.qnt": {
+      "sha256": "1e814117e1a31bd232d9f33a78d4e4c7febb939e5e7799ac6908d806b8697685",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/preview_evidence.py": {
+      "sha256": "9540538eb13bc79189f281c2a98dd18a44f46ea379626214ca8e2c271bf3e2a1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_preview_evidence.py": {
+      "sha256": "194c1d85b3fe4fdf1232052315ed84067a312a328a4a81696cf2bb5980cc8b17",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/preview_scroll.qnt": {
+      "sha256": "39ecf6c397fdc123ea6b97b0cfa90994a8321f59ef406fcd438e9a335dec20bc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/preview_scroll-initial.qnt": {
+      "sha256": "e9f8512fd4b71418937e5f1dbe61ec5b64faa829edfa4caa55a4b806f163d68e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/scroll_route.py": {
+      "sha256": "3693856aaf8afacef563153d501be6bb64148d7acc6c579bd474427e155b6432",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_scroll_route.py": {
+      "sha256": "90439c433c923529f9adf0322caedd221fbfa3cd6f2072c19b9c6abe3eafcc81",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/delegate_observer.qnt": {
+      "sha256": "c9bd3f70146af3f1f9a4bf91b0345ce355a126a2e025a9b770d73dec270c4dc7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/delegate_observer_test.qnt": {
+      "sha256": "cf0bff1d38d183faae293200f33c65078f783ac24cd474b3c6618098ef1d7ad6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/observer_formal_review.py": {
+      "sha256": "e066e0d88c4adf4062081d9862fb2ca1653d6809060806df6faaa0106196325e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/delegate_observer-initial.qnt": {
+      "sha256": "f4980870c88f7aee6baa3ca5c50d40347e48882a1eabc9c83bd652e9af37a715",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/observer_formal_refined.py": {
+      "sha256": "914ce1df2fb1c479d76db3d413f8265773bafcd2fc04392090aa48b2c7f8220d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/delegate_diagnostics.py": {
+      "sha256": "8dd90c0c0af397b7a7d13e2d5d8b25cc5c91a217b5718342f6d925af011d7003",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_delegate_diagnostics.py": {
+      "sha256": "7f7cad26a34fa7400dd8bbd5a6e3b094056215e62d198ab052d574d4363b7d03",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_diagnostic_integration.py": {
+      "sha256": "3f33919557f834616f6b1471658685788d6cf78173b2d9b3b4d650647947111d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/source_conservation.py": {
+      "sha256": "8575a15e91144717c52c335e7556b6fcd16ead447d75168659eda5be94642298",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/observer_kernel_checkpoint.py": {
+      "sha256": "d5e61d6a6196c59cf840689e1868a24ad04d0aceca6941e0f11df49307c222e4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/observer_descendant_checkpoint.py": {
+      "sha256": "4882fc0072a1386c94ac789292c3e93cfd66b426bf896e7881c653e5d6b9c6b4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/process_observation.qnt": {
+      "sha256": "967da5ec51274c5597079a977e28b68f3aed9123d386bd1778280aec9a96f6f0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/process_observation_test.qnt": {
+      "sha256": "7c36fd87cb2a1b61893525673b71b5188e49acd1156d68336118e1ac5ca00358",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/process_formal_review.py": {
+      "sha256": "cbfd89b82b6772ecf5de76871c7fcedf26a2a0f732bb75b7001b54838a4fbd6b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/proc_disappearance_fixture.py": {
+      "sha256": "90c79e6fcb0b113d4c802dc3a5f27055842779812335546deda2da43e4c2590a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/proc_counterexample_before_runtime.py": {
+      "sha256": "5b7ea95823342e2fff901e7b920947878525aadbd4e65633250b80ecf300328d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/process_observation-parser-failure.qnt": {
+      "sha256": "1b72bbb80c9a18266dc5ca301dd816d50fff9f753a2553d76f456ba84b2bb640",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/process_formal_refined.py": {
+      "sha256": "6940ebc522f90e1336c8460eeee057e1db4dc793ddd8720845e6ef77d0157d6e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_process_disappearance.py": {
+      "sha256": "b4f21fc7900b475f304c3912bb8b97bddb1acbebd8a9e545954f61d54a7d56fb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/process_kernel_regression_checkpoint.py": {
+      "sha256": "75e050352d2688f5cc23a015f8e7dd7eb3832b5d042e447b6c961f8599493e92",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/qs_cpu_fixture_replay.py": {
+      "sha256": "af8fa4c938634e32450aa97098d5ffc683a9ff55bd5f147497da23c69fdef1eb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-process-disappearance-before-fixture.py": {
+      "sha256": "0304122583492e58a839c62bde4d937ba7b966cf262e3216d5239eed0114612e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/process_kernel_regression_final.py": {
+      "sha256": "87ad76475a1790a4ac709a8f7a2d04d54b25c59247624de0e855732b3c64ae33",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/output_readiness.qnt": {
+      "sha256": "0b8af10487a6be135e4498b1385f1dab8637cc6407f0f6a883a32a7adc5d27ce",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/output_readiness_test.qnt": {
+      "sha256": "9ccb728946e73238b300d3a097bbf23ef39ed03f84597f3bd6ec6d71980971f8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/output_formal_review.py": {
+      "sha256": "7d29885e5d39774e1fcfb562c4ec2de4b758df3409ef26cf722d29b285a8b294",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/output_readiness.py": {
+      "sha256": "b530bdbff733e7c19e0ec2c33a0096b5d9d6e39ef8edcea8dfb4c9cefb45fa8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/private_output_host.py": {
+      "sha256": "0dae688a6ab221ad8f8d01fddf7a23f1ced0213e6837e6332cdf76202a5f4bd1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_output_readiness.py": {
+      "sha256": "fef482cc3adb0d9b46a142d61ef7a483136b19edd3dd707d5c9fd78fee522f94",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_output_host.py": {
+      "sha256": "24927be0dc60afb1c75b6cccf462345f92244b14c2c44fadc8b266702c6b2e19",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/rebuild_pointer_cpu.py": {
+      "sha256": "94028da15d904aae61bd43d1f380e26b21f328850afa813b3030dd851f6f4dc8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_bootstrap_pairing.py": {
+      "sha256": "63e101c299a62c3642e394c2b72343a3d373e977bd78622a22f209d14aa2f72d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-original-preview-selector-test.py": {
+      "sha256": "8384856382f4d7b81597ad69122ef9ce47e04ed0768081b2da2fa6bfe670551a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication.qnt": {
+      "sha256": "0fdd9c0aa4579a6145477453b312f8bc4939db2a929e19933d2e42fcee95ffa5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication_test.qnt": {
+      "sha256": "540e2423f187eb65d80c2a83ed29685821a32454708674966282c49ba5db8072",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/terminal_query_drain.qnt": {
+      "sha256": "4a738ff41238567e5e0b5ede279cb12eb42b467f63a52ee3f981dde07fc55591",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/terminal_query_drain_test.qnt": {
+      "sha256": "e575e594094124d44e920a88c54eaf20d95cb0096bea41cf8f01362b68aa8585",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/prove_arm_and_drain.py": {
+      "sha256": "7e11c95f4bbe62203569b64c4d450afcf65fb2fd944d1655cc5648e03cb27e14",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-initial-arm_publication.qnt": {
+      "sha256": "c1a9de331f33d18d2d807e51f5b9b1c9394fbd82f38a268882923aa92254dc23",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-initial-terminal_query_drain.qnt": {
+      "sha256": "a3128e8bb5476231536e35a40a7be64aabbcc6507d4ac16fba082bcac1289e1b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-initial-arm_publication_test.qnt": {
+      "sha256": "bd5055bb872a97a8b1ccea0469b853014dffe25b9f2d5a8cfe7a3244b9be58de",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-initial-terminal_query_drain_test.qnt": {
+      "sha256": "eeda2a62f3e22f613d98c14895f151bbbf8ba8a66fc5af3903de9a6fb88d702f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_kernel_counterexample.py": {
+      "sha256": "f1f8110c51657cfe94b19480617e002ee16329580768ef4f6adb4044c972c20a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-before-lock-deadline-refinement-arm_publication.qnt": {
+      "sha256": "85020b599e00ce040393eda0dfad7eef7571e2e1cccd0c005e11b6fd0f2110aa",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-before-lock-deadline-refinement-arm_publication_test.qnt": {
+      "sha256": "b118d6a0421ad997ffd5b62dd3694ee36e028f226c099889350b6b1fd8de5e3e",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/prove_arm_lock_deadline.py": {
+      "sha256": "2c5c3fb2fae9cdcdbced11139495f6b4ffbdaf8de759e36f51f2edee58934226",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_lock_candidate_fixture.py": {
+      "sha256": "d92cbc195d8326d98c7853271981eb0423c7198f235d852bb9fc3719caa8331c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_arm_lock_candidate.py": {
+      "sha256": "e6bcd9cac9a5bd507d9f75e9c7fbd320be53253e257008a89ac17263f9f0073a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/prove_arm_lock_kernel.py": {
+      "sha256": "f2738fae82d4a2122335326c15d440722d7046b9a9acea6bf65b398313aec735",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-initial-lock-kernel-test.py": {
+      "sha256": "0b5c88ab2fa56002284a80b516df387c12741698f9f714cef13448f50ad26c2f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/prove_arm_lock_kernel_final.py": {
+      "sha256": "39ffe4437460f9dd22128f01bcf5fe17809712f98ddf55d21ddde5ff2d153f0f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_lock.py": {
+      "sha256": "1fd6e1c88c9365736e4afbcfb88e36aae31d7992341ff856f902f248f85dcd35",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_observation.py": {
+      "sha256": "33509b607bcb2f8aadfa2ef556b2684ca31613a6d27566a1cba938c6b481172a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication_kernel_regression.py": {
+      "sha256": "85a4924027dea2f5a1f4ac03ea93c8d3bc5b35d26f3aaa30b02878b5afed866d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-initial-arm-gap-regression.py": {
+      "sha256": "b2497b3c631ff6598051af47af70a3cd430215d351bd34ba715ce481d581f9b6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_arm_publication.py": {
+      "sha256": "78959009a18305e023c644503b2e7327b61c7946ff76800266bb433fb80abab7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/terminal_process_receipts.qnt": {
+      "sha256": "e3a2de2042d98f85de8d85d4d47bab9066dc7dc3f54b6e8dc98f5ca2e0a9e787",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/terminal_process_receipts_test.qnt": {
+      "sha256": "9834b58bd57715f2bab47a0b24536374fcef7142a858434e0b970bd43c7473a2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/prove_terminal_receipts.py": {
+      "sha256": "183d1025a925c140848a85acc657ac80616aaf9b0e053312169c139412e6c897",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/terminal_qml.py": {
+      "sha256": "afcf5f2772046317fbb92a200f933e7aa99a7a6f7b8221b6b56dd53311ca180c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/terminal_drain.py": {
+      "sha256": "da967663a179da79f7bf947b1ae7c2dd2b82e5152fcaefac6b28e4503a007bc2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/test_terminal_drain.py": {
+      "sha256": "0ecec784f5ad18e603672d4822c37529a89883de8bd29201aa5b776f7b540d9e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-before-double-inverse-test-fix.py": {
+      "sha256": "02cff90f586036d7c84f8b79f677a432999d84a30956c6975339c68bffe07d5b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_terminal_authority.qnt": {
+      "sha256": "0d25574415b54148580b0d43c3d3f628ace28878c2fccffe285e524a55ecda77",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_terminal_authority_test.qnt": {
+      "sha256": "ee687d69eb471f1338b564839f936c7518976697e8fe5bd5b20bfd3a8202b6e5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/prove_terminal_service.py": {
+      "sha256": "c91899e24de6284c660312b363673514a3121433911a87613866557f5cd140ef",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-initial-service_terminal_authority.qnt": {
+      "sha256": "1c15bde748f2ad5943fd2e3a48d43a7b25960f8b57ea2a6a23f6e9a5368d3d84",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-initial-service_terminal_authority_test.qnt": {
+      "sha256": "99ce80e2a25b2fc2806e0727d3bcff0d82af1e539b289b08ebfc449a60bfe110",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/prove_terminal_service_final.py": {
+      "sha256": "bf6c65cd5ba64bf40a1441709856524c3126f17b9d35d227e19ea09fda18fbb9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-before-service-phase-guard.py": {
+      "sha256": "38cce63f8e2e8b32e685fee38e56834a1a6583cefc19b167300640a6696d8547",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/final_gate.py": {
+      "sha256": "980340d986d593b6f7931be4aa72413419c7309f77759ec2f0da4166b016c11f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/command_declaration.qnt": {
+      "sha256": "2e6a40a2442dd169520728a9ee13d70708a61022380de7ceb82738f1dc3fdcc5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/command_declaration_test.qnt": {
+      "sha256": "5683389dee446f30c10eb3080ba812e719e023fede9341d583dd7d522852d8ed",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/prove_command_declaration.py": {
+      "sha256": "96284b3bf7f8642023dea6167a42ab3b0610ac788db7dd39b935dec8ff006003",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/prove_command_kernel.py": {
+      "sha256": "9a09086be9a75ae653a5af87be80d2c9929e00ecb8536e3efd1b0c3fa6c48e93",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/prove_command_kernel_final.py": {
+      "sha256": "1662d6e1af49a9e8b86854f82c235525d487c27544f06a15543944aa36d4103e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/capture_command_probe_inputs.py": {
+      "sha256": "9e03012379b7bd21700904572d2ccd95942828c2d99a9178defdca3fd79325bc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/native-probe/build.py": {
+      "sha256": "1be9af62ee1590d571f72209d658d63335a3aec372c6c8612a63de425448518d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/fixtures/gtk_family.py": {
+      "sha256": "b2a54baa7fe7a1a19eb0a2de19ca8c15860cbe3edf485dfa2d3e58e58ff8c6cc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/frontend-candidate/native_frontend.py": {
+      "sha256": "9ab18a4d3093e9b96da0b0376874b1bfa4d9d733890b5f341ebc637807ac7d94",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/frontend-candidate/prepare_config.py": {
+      "sha256": "25aa17fc34373e9a1710873b10bcf50980843c2ae4822daa67a61ea6f1db6ca9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/frontend-candidate/test_frontend.py": {
+      "sha256": "3130fe4f76b742a00c149766e7fff6803be2f06f743822afe10f78321d1f3ee0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/native-pointer-wheel/native-pointer.c": {
+      "sha256": "2566791559a9556c0d8ef8e12413e53e5f36df311acc0cfcf213b5194788a466",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/native-pointer-wheel/virtual-pointer-client.h": {
+      "sha256": "0dcb6107cf948a007dcef0a6b2192e4f7b9166c0f57b499ca49b7aaf48adc56c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/native-pointer-wheel/virtual-pointer-protocol.c": {
+      "sha256": "a72e9b38dd5ed0c49fae22aa2f01883aea76075ad33f6399d9b2033df4330675",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/native-pointer-wheel/private-producer-guard.h": {
+      "sha256": "b9d85a5e97556aebb9851b2dbfe963afb1f3bdb64c19723f040dc6686999f9ce",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/native-pointer-wheel/wheel-command.h": {
+      "sha256": "acdd3e3b09e8f90b3309ca43b30ca57559ea45d5929b4b746be550d5628c756f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/native-pointer-wheel/test-wheel-command.c": {
+      "sha256": "c3eb96bf4666ac12918eed2cae559096643a185886d786108a34d65db207f45d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-observer-cpu-counterexample-1/delegate_diagnostics.py": {
+      "sha256": "93289a8e14e5dbafba6a8d33547196aafcf43fd77325189747a2b5927b21f556",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-before-command-declaration-correction/terminal_qml.py": {
+      "sha256": "57793eac18caca760ed8797dad431a7e358dfb469331d89c59e440dc71644b94",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-before-command-declaration-correction/terminal_drain.py": {
+      "sha256": "bf402534bca13c73ce7dc68dca8adbdfd678fee9bfa5b42f0f9736b95c2b72eb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-before-command-declaration-correction/private_shell.py": {
+      "sha256": "36e08660a805ba3d45e24ca2768bc0305ab263675e4f320f7707657f106be2f7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-before-command-declaration-correction/test_terminal_drain.py": {
+      "sha256": "0e968c1447af1ed6361e2d879f6712ef88c3f339b90dfefc70cd0029fc9c8a41",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/retained-before-command-declaration-correction/payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.qml": {
+      "sha256": "d3f52ecfc810e309d3c7dcff30bf46784b569b0ab03692fafcd7a5c6626d4280",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/home/.local/share/hypr-window-controls/window_state.py": {
+      "sha256": "cffedb3a79ef3e0965e64adc8ae4a2ad89ebaeb2325a638d5eb2711037951530",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/TaskbarPopup.qml": {
+      "sha256": "5696f5c912b086024bcdff4a6388dfef3a4c3c6d6e7a93a5e8e5ed40d209b97d",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/WindowMotion.qml": {
+      "sha256": "6812a49f86ff33c30a307a6d424ef2efb0514543339c16b9a915bf60c96f2a95",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.qml": {
+      "sha256": "f76ff4d5d8ccc5797c289bd381223b64d613052e1be59e671549c64a14bd8e42",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/shell.qml": {
+      "sha256": "4a4b7694e5b9e0bd952ce0efa2d6dc2cea44cdfa98cc2f442e40fe41cbc1beab",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Commons/Border.qml": {
+      "sha256": "b98c82530126fc10a287845e8df574ae26fa05b6064d93451d93d0ee9c3f7166",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Commons/Color.qml": {
+      "sha256": "cc9b62e2eaf8c307aa02206d9320c3d0ca349cf8feed452a6eddf387adaa5320",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Commons/Style.qml": {
+      "sha256": "f5901092617ae62645597199270afd4dfb0644d596bdfff16e1834fca6ad7243",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Commons/Util.qml": {
+      "sha256": "6894c63190973b5dbe50b13b3f7a99dd5770e143699f3aae1650fb65ca3ebe9b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/BarIconButton.qml": {
+      "sha256": "bae9894d021655105b67d4ae7dec734bcd36ebf3b17a4aaef2c462e0cfa0c874",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/BarIndicator.qml": {
+      "sha256": "5ed0ecd4be63cbe51a732900ffe7a06ed02f89e176207a42258021d2631e6d4a",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/BarWidget.qml": {
+      "sha256": "8be00e2553a486b3dbfcb4f99de976035f323c4061b993dbc1842c75ff8b9022",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/BorderOverlay.qml": {
+      "sha256": "c0aaf4f8a080712bf8dce2360d496ba1a63dcacb982a0fd9ed15bc51be333d66",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/BorderSurface.qml": {
+      "sha256": "e17d8150d0b0e60f431bd6df5e661f5d9fe1f5eec9c2e2420f6eff2179a45baf",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/Button.qml": {
+      "sha256": "fda48672cc11dba109acea1cc98eb4b29746e5ce09f90a47f487b776ff99e799",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/ButtonGroup.qml": {
+      "sha256": "4af792f394534b7d61b270fcb44203bba8d88ed25f8822e0b90e456e35487542",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/ConfirmDialog.qml": {
+      "sha256": "969cafe0580acb66d47947b7b6e9fa5103e1911b3a7dee03b84f2b154afc2762",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/CursorSurface.qml": {
+      "sha256": "27844a40fbe378e84c0aea35654dd8b396afb7e331c86be80852e1529da4f5b2",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/Dropdown.qml": {
+      "sha256": "6e2b847a33f5dedb96f65757d284f40b90073b3b34fd31abb84b2d471814fc5c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/KeyboardPanel.qml": {
+      "sha256": "96245f2da8d38baa0017caa285d596c485bd19a3a4d2cd1675bee9d84ffba42d",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/MultiSelect.qml": {
+      "sha256": "ed85c2bf48ca17a059611b582d3d650eb2a1ad37cff2b700ca0c6c441a4c52df",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/NumberField.qml": {
+      "sha256": "b3584b513ee720f9f3e0f098d19ca1b129a02270c140528455d88fe04e2f2c8b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/OpticalGlyph.qml": {
+      "sha256": "293e2863c7ff18998a7aea651fa952a564a860df125bf8900b7e739500b3c352",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/Panel.qml": {
+      "sha256": "e6588b3d7c1075d68c6392d028483fcc5d4d2bcb29180758fe265a957cbdc71d",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/PanelActionButton.qml": {
+      "sha256": "6c94ff62997f18d1712a741e8ae24ed98a6fa5c6350b266c631ff92f26cffdc7",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/PanelController.qml": {
+      "sha256": "4c08895559a2a7634f6513cb08eda6e05f6ac0bf3d940085229d594b2f383108",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/PanelHero.qml": {
+      "sha256": "bf0753e69c91c906b8f1e1a46cfbbd4326228e9d9abde1b4007ee86c0bf78f05",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/PanelKeyCatcher.qml": {
+      "sha256": "76abaf157317ea260b81591a614460dfbc7173f545963be25558ed5a8cddedb4",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/PanelSectionHeader.qml": {
+      "sha256": "ede63ff97dd3d4d2198b771cbb33dcd07b7026d64d92f1c624e71465d000115d",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/PanelSeparator.qml": {
+      "sha256": "667cd49e89c5911fbe564904720b3d4073057e0b6fa38f03e55fa5949ccd195c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/PanelSlider.qml": {
+      "sha256": "aa8fcf167324ff9eb60a219f037004482adbe2a30369af123d53956a81a93068",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/PanelToolTip.qml": {
+      "sha256": "5520685c2d160002cb4bd62c9e5da193003c071fca69b90e6012ebf0c8ee4ca3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/PluginBarApi.qml": {
+      "sha256": "91964a42b92c58476a4f961df35148d4c94071344ef1a69eab1563d1496705a7",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/PointerMoveGate.qml": {
+      "sha256": "6f494aadb3b7963c35167cf1b07505c237f27ef07e4fd386f7d041ec302af51a",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/PopupCard.qml": {
+      "sha256": "b3751c78dba9d3b6383c072c915c3d1ecf5e2227cc8417127323077df1f0af5a",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/ScreenMoveRemap.qml": {
+      "sha256": "ae09782672877502015e517c6f58565cf79b82e0aa1dc56ee5655989863ad8a7",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/SearchableDropdown.qml": {
+      "sha256": "a30cff5297ba595235ead18c956b1268d140b3962375b5ed14d98f6ed0eecc10",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/SpeedTestOverlay.qml": {
+      "sha256": "f7b37ccf6e641c3a607d91b824f7df15aac6177e5004462718842c686325af48",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/TextField.qml": {
+      "sha256": "b3ad72f56f86c2df164e347d64205c099f77c5fb90933fabea3b0f2a9e2b3778",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/Toggle.qml": {
+      "sha256": "158aaa84cf1fff771b932bb1c79e00be19bee1bfeef2d27bfbd8aa4f1c416e6b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/ToggleSwitch.qml": {
+      "sha256": "6bfae25396c1d03979efd9a27130e03f11edc2c7062d1f0c0c252b30e60a9898",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/Ui/WidgetButton.qml": {
+      "sha256": "a3cc74adca517b73a176eae0f93e976c24a3ec73b4b5855340b61b1ed2dcd08f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/services/AppLibrary.qml": {
+      "sha256": "68dd83a2141e9a8eda01a9ec5e2fbaaecf5d02d969178512cc6fec118fa23a31",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/services/BarWidgetRegistry.qml": {
+      "sha256": "e59391d65904febf95399748c3866b6065d2cfceb9a15cc7c28a72eef6356799",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/services/PluginAppLibraryApi.qml": {
+      "sha256": "4b1592243c63c0e589e3324f9d596378d0ab1808233dec11d4d68134f3052117",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/services/PluginBarStateApi.qml": {
+      "sha256": "3dfeb7819106378f76912aa3a428ca5fe4212f5f19dc5b7aa851d46feaf7037b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/services/PluginBarWidgetRegistryApi.qml": {
+      "sha256": "7afdd10d35f373e35ccaabd5625e1c6eb606467ccc4f4454bd6432486f0b1627",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/services/PluginFirstPartyServiceApi.qml": {
+      "sha256": "bae758ce27a11a84d68b11f6f192d6270f3dd1a6663b408338a92402bd42f5a4",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/services/PluginRegistry.qml": {
+      "sha256": "8466127c53037b80b582544610b0bdf78a86764e4f037a3b9ce360d107359803",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/services/PluginRegistryApi.qml": {
+      "sha256": "c00fec41303c4b5975a6e7fb00b78c125f5daaf0eb9eecc1dd45b4d155984e91",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/services/PluginShellApi.qml": {
+      "sha256": "ff0cb5ec5fcdda0b21af447b11f07a24e065a3557796639364109aaa2ce5c763",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/agents/Agent.qml": {
+      "sha256": "9fa9a8650ecbc2f2f691b01da7419fa0620b6066c423eea8d50f6253ddf6f4e3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/agents/Main.qml": {
+      "sha256": "fc61e5e06325dd6eb3d100b1f3eead4c6ed8b62b58bda209c70a82084e23f3c7",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/agents/Panel.qml": {
+      "sha256": "0e5ecdb45eaff618963851c16a1f5066307c13195526890d2cbb6ddb5a1aa7c1",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/background/Background.qml": {
+      "sha256": "505c7d4af8323bdb201cd816aa8332248dcfd4c056ec8f64b5c0a2ae1776c58a",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/Bar.qml": {
+      "sha256": "9874c0f36271840b43002890ae333c83097df7f4cff0bade81536a41ed83590b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/clipboard/Clipboard.qml": {
+      "sha256": "7fcc8abf8ba142d81c79e265a662769e4c101826b4716ef8a976ee333cbbfa81",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/dev-gallery/GalleryPanel.qml": {
+      "sha256": "4fa15562d85fd021a7cfe46474e0bdda4b063c3f4f56c6c61dbb5148b6f5aaa8",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/emojis/Emojis.qml": {
+      "sha256": "ff49e2e8174e0c0925d76c9b686f4de1e7297aa256c9dcc7320ed00c39dafeda",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/image-picker/ImagePicker.qml": {
+      "sha256": "0bcb5e97a06f5dd14ce8265b16039f01cb5a1e99f64d01165e66786a1aa175e0",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/lock/LockView.qml": {
+      "sha256": "9b174cf3ba8569dede528968be38994491ac73d9ca708f7e9451beeec7b4d066",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/lock/Service.qml": {
+      "sha256": "3f0a265a09f7957e8f5d74666595d3136ec64899c414426190460f9e2098e701",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/menu/BarWidget.qml": {
+      "sha256": "ad201156483711ba77ec97303183bc02922248e97ac0c0b8ea30d250e57cd0af",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/menu/Menu.qml": {
+      "sha256": "0154d0ec3855fbb48aa06eaa724a19f3c07c377494d4a3de65daed2d7d9100e3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/notifications/Service.qml": {
+      "sha256": "11665542e70df80ccd3c785a6143dee2daefd2082e4f75c740adc2c9947cf7c2",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/osd/Osd.qml": {
+      "sha256": "a139b64d45f89a6b55ebcbd1233347f75b541b020e24b4286d6e00a6d5f5c50c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/polkit/PolkitAgent.qml": {
+      "sha256": "dfd8e994bd774b9d6d5375f1380a51db1813ce2c060a37c3519c75f0c089dde6",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/reminders/ReminderFlow.qml": {
+      "sha256": "1ffb380e1b3d85539aae8b9407d271bd9e42ae936d3d853b543afcfd714c3857",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/services/battery/Service.qml": {
+      "sha256": "5557460d74ad329c53dea5850cf8178af106a0e47e09ef7963ce25f4fc2d1b45",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/services/idle/Service.qml": {
+      "sha256": "50f5c81e2e94fab32395a5bc3cce982e30a10ab1b3f56cc58f29055951518a51",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/services/media/BarWidget.qml": {
+      "sha256": "05b9bca8673facb447d7b10b513865c80b5de7dc61828efc41026de4bb960d42",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/services/media/Service.qml": {
+      "sha256": "92237e82b280903dae296d9e876532058083299a65459e2bf3cacce3be644139",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/services/nightlight/Service.qml": {
+      "sha256": "721cd63d2404859918e28f92420e87369328c26fcef7df821443baa16d0b1897",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/audio/Panel.qml": {
+      "sha256": "831efaa29097d06abed31480a9e54208552e3f4e529a5c4ecca9255b12c5a7b1",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/bluetooth/Panel.qml": {
+      "sha256": "f51654a00e3bfe5d6ccfd42bbd972d9436f70a27d152baa43ccdcbd8c66e1225",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/clock/BarWidget.qml": {
+      "sha256": "cfcdaeedc4ae5832b37271a84bb92ee762301022e2443a0f769992fa792acf28",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/clock/Panel.qml": {
+      "sha256": "396d98c9696a64977166be99d3b70c102ca20ac30f41e073fe1d168fde61de75",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/disk-speedtest/Panel.qml": {
+      "sha256": "b9cffa6c2036a9d3ca1bc53999e62a19ae2577339602239f44dc462fdecc198c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/dropbox/DropboxIcon.qml": {
+      "sha256": "3367632df6a80998e377a085483deb61175bf572138db81bd8f71423d06ca349",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/dropbox/Panel.qml": {
+      "sha256": "4bc3b9660fd84e57c170004e0840495aa5d95c6cf1be0f891b9b58e6cc232d7a",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/dropbox/Service.qml": {
+      "sha256": "7bfdb9cbedcb374adf150453f918f36468b5ab4c600d0c990f6a61324d6900ae",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/dropbox/status.py": {
+      "sha256": "32a9be54c2149622bb96c2fc0742f490ea75f637bac13f07255c7c0095fcf835",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/monitor/Panel.qml": {
+      "sha256": "2f3f95e5fc75af2af1f1af418a65469c37714b2bec38cfd2206bdd3f1f1b0e69",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/network/Panel.qml": {
+      "sha256": "84d81680cfd2e06b4f07d40129c7e40e6e173e9d4794471c003e14a8f1b1e693",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/power/Panel.qml": {
+      "sha256": "560e17a5144d3e2ea1e0ad36c2aec563909b535551e1e66e061f5fb25f1d4ec0",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/speedtest/Panel.qml": {
+      "sha256": "f1b3ebc595cebe8ecd7d5302a1ae3b8fe2517fd136368a721bd684499f9ad15b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/tailscale/Panel.qml": {
+      "sha256": "c1f343ba875e49031fd4133bc4bba224980207f08a991b9882f3c3ac8c70f5df",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/tailscale/Service.qml": {
+      "sha256": "ebf79b1e95c4268de7d40cfd69a25e6fb67306d1caa4c13b1684468668f81d7e",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/tailscale/TailscaleIcon.qml": {
+      "sha256": "f3e35a849425b3400891726ca06a12681853a17599ccb66da2a788c0e0261beb",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/weather/BarWidget.qml": {
+      "sha256": "ab3e32b97cf37847ff880a44013133eef9b9f04fe7258b692b30e7b24c6de4ca",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/weather/Panel.qml": {
+      "sha256": "47e38b979a578b662428844d11707d29db7f7933fdf60b69bc955429fdf5c201",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/panels/wifiqr/Panel.qml": {
+      "sha256": "5c76a02e2e766260f17edc697b82cc7c055b694f5e181fc9808a72b92a5d5beb",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/notifications/components/NotificationCard.qml": {
+      "sha256": "3f023446cfe26b9f70570d7088baab31e56ca374c4a206a7c098b09d36cdff3d",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/indicators/Dictation.qml": {
+      "sha256": "581498154ecbfaa64dcc0612dbac417968b8567404c0cabb13fa092f339c7ac6",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/indicators/Dnd.qml": {
+      "sha256": "ef3dfda58d9a874d304d6c7742508535957d99e388d2140ca90d14f1b29050d1",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/indicators/NightLight.qml": {
+      "sha256": "9a7d5dbbcf5f2b1612d673cef8fba26c53584364e12b43935f1d02a66fb404d2",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/indicators/Reminder.qml": {
+      "sha256": "51cef554abf4b4b28692cee73add20e2c34bd9883bfed74be10b5334d73f7c7b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/indicators/ScreenRecording.qml": {
+      "sha256": "e336f4e14e0875fe56cb0c1008799506eb5023051c80e530b9e1f35fedbce2df",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/indicators/StayAwake.qml": {
+      "sha256": "0701f2231d292af5ab500cb7be574222d0be82a7831eb8188da038f2347bdd13",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/widgets/ActiveWindow.qml": {
+      "sha256": "e53bbf968f78a9c4748c1872d6b34e1914070fc170641730bc2f7b4bce4e0173",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/widgets/Indicators.qml": {
+      "sha256": "f64fc3a122d71e6cc1f9a8b8284416df29cac070306fa6df55e9f1053fe4cf65",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/widgets/KeyboardLayout.qml": {
+      "sha256": "9a80f7e73da4c2c280268d1e9152045697cf1c4f118e2be5cb32a43c07e8f6bb",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/widgets/Microphone.qml": {
+      "sha256": "29b9aa5143074c8cbcaee32bbff291204e5358c8fb07bb2e82f53f84a2568dad",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/widgets/Spacer.qml": {
+      "sha256": "85abd1cd06755e57194b86d30df9c31e7521e5c91f5a663d9cd6420b9e91c545",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/widgets/SystemUpdate.qml": {
+      "sha256": "d615dbfb9c9cfd1557f98db1e78a812ba81847209ca87b98dc1f6539aa8fb3de",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/widgets/Tray.qml": {
+      "sha256": "6566c548c76e56315589a126965eb686a6be812b1106d618045fee01a5095dd0",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell/plugins/bar/widgets/Workspaces.qml": {
+      "sha256": "d0509e734d76d3c8cb68502a657ebae52e66bcc06988f2930567d67004f28325",
+      "mode": 384
+    }
+  },
+  "changedSources": [],
+  "nativeLaunch": false,
+  "nativeLoaded": false
+}

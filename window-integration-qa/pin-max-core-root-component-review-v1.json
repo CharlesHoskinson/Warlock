@@ -1,0 +1,42 @@
+{
+  "updatedUTC": "2026-10-02T13:15:18.512602+00:00",
+  "result": "draft actual core owning/focus/render-hit review completed; concrete transfer/refusal defects require correction",
+  "checkpoint": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/review-components/checkpoint-v1/checkpoint.json",
+  "checkpointSHA256": "6bcc9fae7b4e477edebaf09b19d282995584a281273f473881cdf7d2877195f7",
+  "verifiedChangedNewFiles": 37,
+  "reviewedWholeTrackedCoreDiff": {
+    "path": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/review-components/checkpoint-v1/core-current-draft.diff",
+    "sha256": "ca1a0ede188bfea1c4f5a6923af98ee1d49f5c6cb46b97d0090e425e6bc219db"
+  },
+  "reviewedNewCoreOwningSources": [
+    "core/src/desktop/state/pin/NativePinState.hpp",
+    "core/src/desktop/state/pin/NativePinState.cpp",
+    "core/src/desktop/state/pin/NativePinPolicy.hpp",
+    "core/src/desktop/state/pin/NativePinPolicy.cpp"
+  ],
+  "findings": [
+    {
+      "area": "transfer completion",
+      "problem": "beginTransfer removes old fullscreen handler state; both assignToSpace callers discard false finishTransfer, allowing loss of native state without a recorded outcome.",
+      "required": "Retain source owning mode witness through destination completion; actual callers must record truthful current state/partial refusal and prevent stale authority."
+    },
+    {
+      "area": "scroll reconstruction",
+      "problem": "removeFsTarget ignores restoreNative false before discarding its owning return context.",
+      "required": "Guard stale context before mutation and retain explicit invalid reconstruction outcome; no geometry success claim."
+    },
+    {
+      "area": "unpin after failure",
+      "problem": "A live tiled m_pinned target with invalid restore record can fail both NativePinState admission and ordinary floating qualification, preventing user unpin.",
+      "required": "Explicit same-live-owner unpin clears independent intent without requiring or fabricating restore geometry authority; no callback-driven bit clearing for closed/replaced/unrelated targets."
+    }
+  ],
+  "preservedScope": [
+    "Original PinA14 untouched; full actual final source/build/CPU and native campaign still pending.",
+    "Focus result uses actual core+Seat/current surface guards; partial publication remains observed without synthetic rollback.",
+    "Shared render and hit band derive modal/transient family protection without copying independent child bits."
+  ],
+  "nativeAccepted": false,
+  "mainChanged": false,
+  "next": "Agent corrects specified owning/failure paths in fresh immutable checkpoint and supplies final exact-source compatible core/plugin build and actual owning adapter proof."
+}

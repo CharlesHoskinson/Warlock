@@ -1,0 +1,28 @@
+{
+  "result": "pass",
+  "checks": [
+    {
+      "label": "typecheck",
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/pin-input-episode-v2-design/formal-before-runtime-v1/typecheck.log"
+    },
+    {
+      "label": "test",
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/pin-input-episode-v2-design/formal-before-runtime-v1/test.log"
+    },
+    {
+      "label": "run",
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/pin-input-episode-v2-design/formal-before-runtime-v1/run.log"
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/pin-input-episode-v2-design/CONTRACT.md": "4ab69c877c8e7e1b536a912b8bed92293710f560b8a9bb459540f2a69dcbb3ba",
+    "/home/hoskinson/window-integration-qa/pin-input-episode-v2-design/pin_input_episode.qnt": "569242d657152ffd857edb5fe05b66e6f10d77b9e572746416de76137c4094d7",
+    "/home/hoskinson/window-integration-qa/pin-input-episode-v2-design/pin_input_episode_test.qnt": "09b83e259abdd9a9e79c6e9f982e54f13e6be63978d7e4c427e8188863900a29",
+    "/home/hoskinson/window-integration-qa/pin-input-episode-v2-design/prove.py": "673750d41b35ad55ff9f78e49b28bcda6cb28f200439bc63ee153da80ca5609d"
+  },
+  "runtimeChanged": false,
+  "nativeGrant": false
+}

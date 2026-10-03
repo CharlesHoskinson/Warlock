@@ -1,0 +1,17 @@
+{
+  "proof": "/home/hoskinson/window-integration-qa/toolkit-interruption-v2/helper-report.json",
+  "proofSHA256": "33b00cfca02aae813df4c25379d3f9641cb562681646f6a380ed96defa011d0a",
+  "outputs": [
+    "72 exact Hyprutils scale/transform/edge/gap coordinate cases PASS",
+    "38 actual caption/icon cache key and scope checks PASS",
+    "17 actual mixed-protocol API selector/region/scale/callback checks PASS"
+  ],
+  "sources": {
+    "test_atlas_coordinates.cpp": "cf7aa77aad715ad3815564e77300816d6a81b22df2cfc1b15ac38ccebff76fc3",
+    "atlasCoordinates.hpp": "32950ba8eecdbf6a6e925570ad52eda103a6b46436d83f6588c6e52d709beb22",
+    "test_caption_cache.cpp": "d5ee50bd1b9b23ae2c28c065c7a58e97dd4eef7c087467a581395c0afa7ee74b",
+    "captionCache.hpp": "a21c13585faf1e26694e172cf3ad49ca56f5191317e1fbb1cdbba73ccb5357f8",
+    "test_modal_region.cpp": "b601bea50a369db790ac673f6e3c28f4bfff3e1f42d19cd88c016ccb9afd4117",
+    "modalRegionAuthority.hpp": "71f0b52b87c0bca13130ab72d6d5c0571855892c1ce2a3c40779abdcf9473997"
+  }
+}

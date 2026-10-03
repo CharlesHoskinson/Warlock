@@ -1,0 +1,54 @@
+{
+  "result": "fail",
+  "observedCommand": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_actual_binding",
+    "test_batch_binding",
+    "test_freezer_v2"
+  ],
+  "cwd": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7",
+  "scope": "qa-harness-6829c63c137149cd9013ac8507b51d8c",
+  "tests": 29,
+  "errors": 2,
+  "retainedSources": {
+    "module_binding.py": {
+      "sha256": "e2efd52a80dfe22f9ecc5f93d22e6039940564177200e5617586686f331247d2",
+      "mode": 420
+    },
+    "test_actual_binding.py": {
+      "sha256": "14e98533b9d637aaa83b7972ca00e78ec381aa1afba3b86a656d2bf38e88e11c",
+      "mode": 420
+    },
+    "test_batch_binding.py": {
+      "sha256": "794434a85b75c14765f4dd92febb095754dd1eb07328365b2214860ed135cee0",
+      "mode": 420
+    },
+    "test_freezer_v2.py": {
+      "sha256": "271ffdad0c255c24386d88ba117fdf7e82549526fc0d25f2536e308adf988644",
+      "mode": 420
+    },
+    "native_integration.py": {
+      "sha256": "e8b32b3a385813276495d83e15905599940fc98ebedcd1e50133febf0f4f3b91",
+      "mode": 493
+    }
+  },
+  "sourceObservation": "direct unified-exec output; no disk stdout log was configured",
+  "failures": [
+    {
+      "case": "test_terminal_still_valid_replaced_batch_or_callback_refuses.callback",
+      "error": "complete owner binding refused before callback replacement; same test closed its real lease during first subcase",
+      "correction": "separate actual terminal cases with fresh unittest setUp lease each"
+    },
+    {
+      "case": "test_nested_retained_manifest_and_declared_modes_survive_actual_freezer",
+      "error": "relative inherited closure path missing from collector cwd",
+      "correction": "run actual original closure from /home/hoskinson; absolute unittest discovery imports collector"
+    }
+  ],
+  "productChanged": false,
+  "nativeLaunch": false
+}

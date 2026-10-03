@@ -1,0 +1,12 @@
+
+  callback_fixture_completion_test
+    ok failedCueWithoutReceiptRefusesTest passed 1 test(s)
+    ok startedCallbackWithoutReceiptRefusesTest passed 1 test(s)
+    ok exactlyOneGenuineReceiptPassesTest passed 1 test(s)
+    ok duplicateReceiptNeverPassesExactAssertionTest passed 1 test(s)
+    ok callbackWithoutFailureHasNoReceiptAuthorityTest passed 1 test(s)
+    ok failedSendStillRefusesTest passed 1 test(s)
+    ok failedNormalCloseStillRefusesTest passed 1 test(s)
+    ok lateCallbackCannotBorrowNewDeadlineTest passed 1 test(s)
+
+  8 passing (530ms)

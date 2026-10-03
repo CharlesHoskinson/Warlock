@@ -1,0 +1,36 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/stable_representation.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  stable_representation\n    ok exactHexStringPassTest passed 1 test(s)\n    ok numericStableRefusedTest passed 1 test(s)\n    ok noncanonicalRefusedTest passed 1 test(s)\n    ok overflowRefusedTest passed 1 test(s)\n    ok foreignValueRefusedTest passed 1 test(s)\n    ok boolPIDRefusedTest passed 1 test(s)\n    ok differentReplyRefusedTest passed 1 test(s)\n\n  7 passing (277ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/stable_representation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (3333ms at 600 traces/second).\nUse --seed=0x14775b1 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "stable_representation.qnt": "7ef2990a8f2e5508e38deb8affbab966bcf4e9e408fc5c7b47bd2bd5168390e1",
+    "STABLE_REPRESENTATION_CONTRACT.md": "500b0437b68b60a192a543460b76b4da6f23b36dcd4048004d47534ef3a4d975"
+  },
+  "implementationUnchanged": true,
+  "nativeExecuted": false
+}

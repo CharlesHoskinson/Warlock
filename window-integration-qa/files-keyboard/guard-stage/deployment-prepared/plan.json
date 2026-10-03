@@ -1,0 +1,180 @@
+{
+  "execution": "Prepared only. Root must review and grant copied native proof before any installation/reload.",
+  "original": {
+    "pid": 667402,
+    "instance": "yyaefmu6mt",
+    "processStart": "1275224",
+    "requiredHidden": true
+  },
+  "nativeDestination": "/home/hoskinson/.local/share/omarchy-files-native/WindowAccessibilityV5_guard_20261001",
+  "nativeFiles": [
+    {
+      "path": "libwindowaccessibility.so",
+      "sha256": "7f4130dca162ed12939e77d094035724a8918086775cf5fd405210e7faef7130"
+    },
+    {
+      "path": "qmldir",
+      "sha256": "61fe08ce9ff86361de1b7b5d95c76294cc50a7a8aff4520fc9e73fb87d35639a"
+    }
+  ],
+  "sourceManifestSha256": "8e23cae4d493b1f45085fcddc0881d9d65d64b8b0fa278b27ae2749326f5fc57",
+  "changedQml": [
+    {
+      "path": "Ui/Btn.qml",
+      "baselineSha256": "c701e710ea1dd275a124f296f273426cd9b05c0fe4f7afa75943f73e16cc0855",
+      "candidateSha256": "2dd7b1c5cd4774535c888fff15641a69ebf169ccd3c97b2d0d522fb67a79c375",
+      "deploymentSha256": "985c728116179cbf00d80092964a0a2173ea8a8076b0ca8a6a1956d8834b246a"
+    },
+    {
+      "path": "Ui/Chip.qml",
+      "baselineSha256": "413bd300daf57dfff1fe1a6a14cea1f9779de1a6c45f7be7e4af8fdeb7747469",
+      "candidateSha256": "8d0ab1cffdd589a9ceea51a610b4f15fb9831396e3cf747d72b7825d6dc949f8",
+      "deploymentSha256": "6dda048392f61fdb02242402256db07f4958dccb7f691ddfaa15d46c236240a0"
+    },
+    {
+      "path": "Ui/ContextMenu.qml",
+      "baselineSha256": "f7c21a0d6f68f92788bb581aeca0bf09b473a85cab23b5861717fcc9880a45f2",
+      "candidateSha256": "89b64a0d29df1b43922b11b7edbfb6991091592fd377d79357a947367cbcc61a",
+      "deploymentSha256": "17e8cce115029ae3ddea531a2c08943e2482631451c82c5803c0548bf3ac5188"
+    },
+    {
+      "path": "Ui/Ico.qml",
+      "baselineSha256": "1ad78967f062cbd95cf930572530e5281d8e68e8891c941641ca9b377dc039d2",
+      "candidateSha256": "7b2db1f4651f1ba388183036e752d45df8fba299b58b3d7ffcc448aaf7577e9d",
+      "deploymentSha256": "7b2db1f4651f1ba388183036e752d45df8fba299b58b3d7ffcc448aaf7577e9d"
+    },
+    {
+      "path": "Ui/Prompt.qml",
+      "baselineSha256": "109d0fa777ba175fa1e70800139bec1881ad06a8911e21248fc7c272c67452e1",
+      "candidateSha256": "d1276072bd2e5a330975f2f06c9d700f1c9a5133d65f108bd920b42d93183603",
+      "deploymentSha256": "37f88645e4d3252ad39ecb0af4bf539f71e75607de5c4d4e6c55e61fa7f5e833"
+    },
+    {
+      "path": "explorer/Cell.qml",
+      "baselineSha256": "274b7a86663f934278422d7a4a519eb3441dccbcd68a84ea7a04b51988ee62af",
+      "candidateSha256": "a6058c2a4ab706df93b5287616dceb6af7bdba1713303b06bf2078a1955672d2",
+      "deploymentSha256": "d49532c0fdfe4241f0cac62a8021abac9c9a87c3d5750cdc9948f007555d26f2"
+    },
+    {
+      "path": "explorer/Dashboard.qml",
+      "baselineSha256": "153c95e55a33670f09c68d0bf0fd7b48dd8cae810f243b806bac478a644be251",
+      "candidateSha256": "9d5514afa7b8437622665d06edd5f6693dd7442b1a61f0f5334858dae442aad9",
+      "deploymentSha256": "d25a91c5232d63691b5cbced383ac0ebdb14b79f40b2c4e70da1240a8bb0a8f9"
+    },
+    {
+      "path": "explorer/Detail.qml",
+      "baselineSha256": "fe960fbb6ce315bb73dd908018d2aa32bbd08a4fd4bc0aeb6a7a2c7ff0d04736",
+      "candidateSha256": "a415763b2fef5fbd9faf1cc3908cd9c1e1087c6b1812b1e871d4e6ea96c0a6be",
+      "deploymentSha256": "a415763b2fef5fbd9faf1cc3908cd9c1e1087c6b1812b1e871d4e6ea96c0a6be"
+    },
+    {
+      "path": "explorer/Explorer.qml",
+      "baselineSha256": "30832668009b0932550fb8a99725c909cf23629e9b3ea0eea6b136c5f3e3ad64",
+      "candidateSha256": "5ac4bc3c1ce38ebcc862fde38562dfd903e32d7996488c10b6278bad4bdc80e0",
+      "deploymentSha256": "b092ce9e382c66e8020855d72140f7de08943c5cba4c079d11c94055c1dcee11"
+    },
+    {
+      "path": "explorer/FileArea.qml",
+      "baselineSha256": "fb6a4b91bf8bdceeec258308d7e80f69c0a50230358cc61e5eceb4518ede2ba1",
+      "candidateSha256": "ef6c8fa91af54f620f83c6b641a593013035ba29e4ccb3400d2698cb723600c6",
+      "deploymentSha256": "fb5f3cb17cb11ad5dcada4622e2a952538edb25f318334094483fc58c34453e5"
+    },
+    {
+      "path": "explorer/Lightbox.qml",
+      "baselineSha256": "dfe4d5a3c7476a655ff64b4f16e53c11e95b28e170a6b78f9855765e2b716760",
+      "candidateSha256": "9519c9fa5ce742cfa56e27c80d965b076e0d421174fdee477d984390f873e3cc",
+      "deploymentSha256": "9519c9fa5ce742cfa56e27c80d965b076e0d421174fdee477d984390f873e3cc"
+    },
+    {
+      "path": "explorer/PathBar.qml",
+      "baselineSha256": "b08cad5e2299e3fe2b06bbdc7accc3552c81e02d1b33b73a9718888884c935c9",
+      "candidateSha256": "2fd7bfa0bf3d1f093383436cd44a95daa01444150f96f103caf76a4a9b57169e",
+      "deploymentSha256": "e401951c523b3d134ccec7120f9948883ad686a1e94a2c5104c3c9483dc053d1"
+    },
+    {
+      "path": "explorer/Tree.qml",
+      "baselineSha256": "14e1ac4417cefcc6b999a5c0151fe62daaa7f536f1b03c85fdf98a95ce1558f3",
+      "candidateSha256": "203a2591b714b9863a8587e95368395c3453643312dcd70205ff1de3cd0387df",
+      "deploymentSha256": "c46cea188f9a1eb6f53356a4ccde67398d3761125f274b32bc26ed5311e24789"
+    },
+    {
+      "path": "explorer/Treemap.qml",
+      "baselineSha256": "7c4412fd40cfdc5e1920ec9433f191003c9a116600fbc51743d0b83f51d76b16",
+      "candidateSha256": "3dacc36018428c01b328cc5e387b619aea68519bb40f0973fae1ee1d3fd19d20",
+      "deploymentSha256": "973c17003c54d1dd84302aab621184b87c61b12518c1a7741408201472359e05"
+    },
+    {
+      "path": "shell.qml",
+      "baselineSha256": "6b3451c44e83587db6895be5343c169a8989dca095ec5603b51eb0d391130f42",
+      "candidateSha256": "cf40f390fc92a9e025004406e71b570e11e727055eac6fdecfe5ae02f9b982c8",
+      "deploymentSha256": "a55e8ba96aec1ae4041f2c30e87b56a48fb47ac98091bf16b2c02c787a34c0db"
+    }
+  ],
+  "unchangedOperationsAndSpec": [
+    {
+      "path": "scripts/collect.sh",
+      "sha256": "35426c28325254cd0eef0d62bd917e7a696bdb5a28119b894ac5106658a5873d"
+    },
+    {
+      "path": "scripts/du.sh",
+      "sha256": "69d59a1cd8e7fc4fcdb6623f1593fb4a234fe2dacefb27b371236aeea27df14a"
+    },
+    {
+      "path": "scripts/elevate.sh",
+      "sha256": "8d1caa84bb219978b870a159b51f2009976a0bd8daa4eb24f2bf9d2883d16bd7"
+    },
+    {
+      "path": "scripts/list.sh",
+      "sha256": "abb3a32d2c64014322ba3a89846c587052d3a04fa3817342568d31ea1ec3520a"
+    },
+    {
+      "path": "scripts/meta.sh",
+      "sha256": "27d16e63096a3809f8af3626e7200e053075ad71f323a178b3432c5d4bd6b91d"
+    },
+    {
+      "path": "scripts/ops.sh",
+      "sha256": "6678d6b84b4bc5c2e86414b6250848119dd372a9a701dba880f4dcfdb8f3236a"
+    },
+    {
+      "path": "scripts/preview.sh",
+      "sha256": "d64df3f5fa7dfd56700c73cd7ce52131bd9f52e26a8c05d403570c56c9015772"
+    },
+    {
+      "path": "scripts/recent.sh",
+      "sha256": "d45962baf2ad0308d82e0d73de02e63b09461c70c864f4a1c54b7022a9a07751"
+    },
+    {
+      "path": "scripts/search.sh",
+      "sha256": "e0d5dc0b67dd54e05710d878f4e18c60b0cb598d49417bcc36693898df1936d2"
+    },
+    {
+      "path": "scripts/thumb.sh",
+      "sha256": "59f008aa9c306bda1660b8975bc8eaad77e655434bf05c9c80752fac49bcd7c5"
+    },
+    {
+      "path": "spec/fileops.qnt",
+      "sha256": "ba116b777b98d9cb2f9d6b8b3adfdf2958fdeffc6f11548faae805b6b6cf5974"
+    }
+  ],
+  "legacyMigrationRequired": false,
+  "stateContract": {
+    "PersistentPropertiesReloadableId": "files-ui-persistence-v1",
+    "required": "Canonical equality of every pre-existing public/full UI state field after watcher and post-model restoration, same PID/start/instance, hidden before map. The optional new focusIdentity field must be empty for the existing hidden responsive state. No FILES_OPEN initialization or files open/toggle IPC.",
+    "additionalField": {
+      "focusIdentity": ""
+    }
+  },
+  "steps": [
+    "First prove fresh durable native URL resolves and copied same-PID hidden reload transfers PersistentProperties, with no popup/window mapping. Fresh destination must not exist before installation; never overwrite a loaded SO.",
+    "Capture a new private 0700/0600 backup of all changed source bytes, scripts/spec hashes, public/full UI state, four catalog bytes, dashboard, typed clipboard/primary hashes, process identity, canonical clients, focus/cursor/layers, a11y flags and socket. Retain backup after success.",
+    "Revalidate exact live baseline hashes, PID start/instance, hidden idle state immediately before mutation. Open pidfd for exact original.",
+    "Prepare all 15 temporary QML files. Root briefly SIGSTOPs exact pidfd, atomically replaces files, restores all originals before SIGCONT if any write fails. Resume once; no termination or state migration file.",
+    "Wait ready/watchers/PersistentProperties/post-model restoration, prove original hidden-before-map and canonical UI equality with only explicitly allowed empty focusIdentity addition.",
+    "Compare complete canonical client projection (address/stableId/PID/class/title/workspace/monitor/geometry/pin/fullscreen/floating), same original focus/cursor/layers, all four catalog bytes, dashboard, clipboard/primary MIME/content hashes, flags/socket and operation hashes. Do not erase failed gates; retain rollback package."
+  ],
+  "pending": [
+    "Actual broad silent Orca reader/native input coverage",
+    "Copied durable URL reload proof",
+    "Root review and concrete live prestate snapshot"
+  ]
+}

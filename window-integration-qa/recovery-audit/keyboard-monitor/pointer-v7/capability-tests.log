@@ -1,0 +1,13 @@
+
+  capability_probe_test
+    ok constructorBeforeReleaseTest passed 1 test(s)
+    ok replayOnlyAfterReclaimTest passed 1 test(s)
+    ok unknownFreshnessRefusesTest passed 1 test(s)
+    ok staleEpochCannotNegotiateTest passed 1 test(s)
+    ok existingDeviceProbeDoesNotReleaseTest passed 1 test(s)
+    ok capabilityExceptionStillReclaimsOwnNameTest passed 1 test(s)
+    ok heldFreshPolicyRefusesWithoutOwnershipLossTest passed 1 test(s)
+    ok dirtyFreshPolicyRefusesWithoutOwnershipLossTest passed 1 test(s)
+    ok ownerReplacementDuringProbeReclaimsWithoutReplayTest passed 1 test(s)
+
+  9 passing (216ms)

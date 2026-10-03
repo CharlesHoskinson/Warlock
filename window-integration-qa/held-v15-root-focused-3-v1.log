@@ -1,0 +1,21 @@
+
+  terminal_query_drain_test
+    ok duringFeatureCannotPausePollingTest passed 1 test(s)
+    ok genuineHeldInputBlocksQuiesceTest passed 1 test(s)
+    ok livePublicFixtureBlocksQuiesceTest passed 1 test(s)
+    ok explicitOwnedAckStopsOnlyNewSchedulingTest passed 1 test(s)
+    ok activeOriginalQueryMustCompleteNormallyBeforeQuitTest passed 1 test(s)
+    ok queuedUnloggedHelperStillBlocksDrainTest passed 1 test(s)
+    ok helperTerminalDoesNotInventProcessReceiptTest passed 1 test(s)
+    ok normalProcessAndHelperMustBothCloseTest passed 1 test(s)
+    ok badExit120NeverNormalizedTest passed 1 test(s)
+    ok absentNormalReceiptNeverGrantsQuitTest passed 1 test(s)
+    ok changedQSOwnerRefusesTeardownAuthorityTest passed 1 test(s)
+    ok changedSourceRefusesTeardownAuthorityTest passed 1 test(s)
+    ok wrongNonceRefusesTeardownAuthorityTest passed 1 test(s)
+    ok reopenedPhaseInvalidatesDrainTest passed 1 test(s)
+    ok originalFixedDrainDeadlineNeverResetsTest passed 1 test(s)
+    ok terminalProofCannotEraseFeatureFailureTest passed 1 test(s)
+    ok unknownEarlyQuitRefusesTest passed 1 test(s)
+
+  17 passing (854ms)

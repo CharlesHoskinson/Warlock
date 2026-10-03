@@ -1,0 +1,311 @@
+{
+  "scope": "Actual Qt key events on copied fresh routing list/grid focus, selection and prompt payload; private session bus; no new reader/compositor test",
+  "trace": [
+    {
+      "event": "list Home",
+      "cur": 0,
+      "sel": [
+        "subfolder"
+      ],
+      "focus": "FileArea.row",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/subfolder",
+      "prompt": {
+        "visible": false,
+        "title": "",
+        "hint": "",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "OK",
+        "mode": "",
+        "payload": null,
+        "text": "",
+        "cursor": 0,
+        "selectionStart": 0,
+        "selectionEnd": 0,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "list Down 1",
+      "cur": 1,
+      "sel": [
+        "alpha-long-file-name-to-test-eliding.txt"
+      ],
+      "focus": "FileArea.row",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/alpha-long-file-name-to-test-eliding.txt",
+      "prompt": {
+        "visible": false,
+        "title": "",
+        "hint": "",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "OK",
+        "mode": "",
+        "payload": null,
+        "text": "",
+        "cursor": 0,
+        "selectionStart": 0,
+        "selectionEnd": 0,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "list Down 2",
+      "cur": 2,
+      "sel": [
+        "beta.txt"
+      ],
+      "focus": "FileArea.row",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/beta.txt",
+      "prompt": {
+        "visible": false,
+        "title": "",
+        "hint": "",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "OK",
+        "mode": "",
+        "payload": null,
+        "text": "",
+        "cursor": 0,
+        "selectionStart": 0,
+        "selectionEnd": 0,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "list F2",
+      "cur": 2,
+      "sel": [
+        "beta.txt"
+      ],
+      "focus": "Prompt.input",
+      "focusIdentity": "prompt:input",
+      "prompt": {
+        "visible": true,
+        "title": "Rename",
+        "hint": "Renaming file",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "Rename",
+        "mode": "rename",
+        "payload": {
+          "name": "beta.txt",
+          "path": "/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/beta.txt",
+          "isDir": false,
+          "isLink": false,
+          "size": 15,
+          "mtime": 1790842253.5338328,
+          "ext": "txt",
+          "hidden": false
+        },
+        "text": "beta.txt",
+        "cursor": 4,
+        "selectionStart": 0,
+        "selectionEnd": 4,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "list Shift Down",
+      "cur": 1,
+      "sel": [
+        "subfolder",
+        "alpha-long-file-name-to-test-eliding.txt"
+      ],
+      "focus": "FileArea.row",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/alpha-long-file-name-to-test-eliding.txt",
+      "prompt": {
+        "visible": false,
+        "title": "Rename",
+        "hint": "Renaming file",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "Rename",
+        "mode": "rename",
+        "payload": {
+          "name": "beta.txt",
+          "path": "/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/beta.txt",
+          "isDir": false,
+          "isLink": false,
+          "size": 15,
+          "mtime": 1790842253.5338328,
+          "ext": "txt",
+          "hidden": false
+        },
+        "text": "beta.txt",
+        "cursor": 4,
+        "selectionStart": 4,
+        "selectionEnd": 4,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "grid Home",
+      "cur": 0,
+      "sel": [
+        "subfolder"
+      ],
+      "focus": "FileArea.cl",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/subfolder",
+      "prompt": {
+        "visible": false,
+        "title": "Rename",
+        "hint": "Renaming file",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "Rename",
+        "mode": "rename",
+        "payload": {
+          "name": "beta.txt",
+          "path": "/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/beta.txt",
+          "isDir": false,
+          "isLink": false,
+          "size": 15,
+          "mtime": 1790842253.5338328,
+          "ext": "txt",
+          "hidden": false
+        },
+        "text": "beta.txt",
+        "cursor": 4,
+        "selectionStart": 4,
+        "selectionEnd": 4,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "grid Down 1",
+      "cur": 1,
+      "sel": [
+        "alpha-long-file-name-to-test-eliding.txt"
+      ],
+      "focus": "FileArea.cl",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/alpha-long-file-name-to-test-eliding.txt",
+      "prompt": {
+        "visible": false,
+        "title": "Rename",
+        "hint": "Renaming file",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "Rename",
+        "mode": "rename",
+        "payload": {
+          "name": "beta.txt",
+          "path": "/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/beta.txt",
+          "isDir": false,
+          "isLink": false,
+          "size": 15,
+          "mtime": 1790842253.5338328,
+          "ext": "txt",
+          "hidden": false
+        },
+        "text": "beta.txt",
+        "cursor": 4,
+        "selectionStart": 4,
+        "selectionEnd": 4,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "grid Down 2",
+      "cur": 2,
+      "sel": [
+        "beta.txt"
+      ],
+      "focus": "FileArea.cl",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/beta.txt",
+      "prompt": {
+        "visible": false,
+        "title": "Rename",
+        "hint": "Renaming file",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "Rename",
+        "mode": "rename",
+        "payload": {
+          "name": "beta.txt",
+          "path": "/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/beta.txt",
+          "isDir": false,
+          "isLink": false,
+          "size": 15,
+          "mtime": 1790842253.5338328,
+          "ext": "txt",
+          "hidden": false
+        },
+        "text": "beta.txt",
+        "cursor": 4,
+        "selectionStart": 4,
+        "selectionEnd": 4,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "grid F2",
+      "cur": 2,
+      "sel": [
+        "beta.txt"
+      ],
+      "focus": "Prompt.input",
+      "focusIdentity": "prompt:input",
+      "prompt": {
+        "visible": true,
+        "title": "Rename",
+        "hint": "Renaming file",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "Rename",
+        "mode": "rename",
+        "payload": {
+          "name": "beta.txt",
+          "path": "/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/beta.txt",
+          "isDir": false,
+          "isLink": false,
+          "size": 15,
+          "mtime": 1790842253.5338328,
+          "ext": "txt",
+          "hidden": false
+        },
+        "text": "beta.txt",
+        "cursor": 4,
+        "selectionStart": 0,
+        "selectionEnd": 4,
+        "scroll": 0
+      }
+    },
+    {
+      "event": "grid Shift Down",
+      "cur": 1,
+      "sel": [
+        "subfolder",
+        "alpha-long-file-name-to-test-eliding.txt"
+      ],
+      "focus": "FileArea.cl",
+      "focusIdentity": "file:/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/alpha-long-file-name-to-test-eliding.txt",
+      "prompt": {
+        "visible": false,
+        "title": "Rename",
+        "hint": "Renaming file",
+        "confirmOnly": false,
+        "danger": false,
+        "okLabel": "Rename",
+        "mode": "rename",
+        "payload": {
+          "name": "beta.txt",
+          "path": "/home/hoskinson/window-integration-qa/files-installed-qa-v2/attempt-20261001T110546-449848/routing/home/fixture/beta.txt",
+          "isDir": false,
+          "isLink": false,
+          "size": 15,
+          "mtime": 1790842253.5338328,
+          "ext": "txt",
+          "hidden": false
+        },
+        "text": "beta.txt",
+        "cursor": 4,
+        "selectionStart": 4,
+        "selectionEnd": 4,
+        "scroll": 0
+      }
+    }
+  ],
+  "exitCode": -15
+}

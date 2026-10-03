@@ -1,0 +1,30 @@
+test_complete_exact_observation (test_verify_sampling.SamplerConfiguration.test_complete_exact_observation) ... ok
+test_duplicate_texture_cannot_attest_two_sources (test_verify_sampling.SamplerConfiguration.test_duplicate_texture_cannot_attest_two_sources) ... ok
+test_missing_family_and_control_records (test_verify_sampling.SamplerConfiguration.test_missing_family_and_control_records) ... ok
+test_native_window_extent_is_not_source_extent (test_verify_sampling.SamplerConfiguration.test_native_window_extent_is_not_source_extent) ... ok
+test_numeric_booleans_are_invalid_getters (test_verify_sampling.SamplerConfiguration.test_numeric_booleans_are_invalid_getters) ... ok
+test_one_pixel_control_never_substitutes_family (test_verify_sampling.SamplerConfiguration.test_one_pixel_control_never_substitutes_family) ... ok
+test_pixels_and_presentation_are_separate (test_verify_sampling.SamplerConfiguration.test_pixels_and_presentation_are_separate) ... ok
+test_queried_state_and_errors (test_verify_sampling.SamplerConfiguration.test_queried_state_and_errors) ... ok
+test_stale_source_digest (test_verify_sampling.SamplerConfiguration.test_stale_source_digest) ... ok
+test_sticky_control_uniform (test_verify_sampling.SamplerConfiguration.test_sticky_control_uniform) ... ok
+test_wrong_fragment_is_not_experiment (test_verify_sampling.SamplerConfiguration.test_wrong_fragment_is_not_experiment) ... ok
+test_changed_actual_full_raw_digest_refused (test_verify_causal.BindingTests.test_changed_actual_full_raw_digest_refused) ... ok
+test_changed_member_order_refused (test_verify_causal.BindingTests.test_changed_member_order_refused) ... ok
+test_changed_prefix_digest_refused (test_verify_causal.BindingTests.test_changed_prefix_digest_refused) ... ok
+test_equivalent_reordered_rectangle_keys_accepted (test_verify_causal.BindingTests.test_equivalent_reordered_rectangle_keys_accepted) ... ok
+test_false_declared_read_format_equality_refused (test_verify_causal.BindingTests.test_false_declared_read_format_equality_refused) ... ok
+test_missing_swap_success_refused (test_verify_causal.BindingTests.test_missing_swap_success_refused) ... ok
+test_native_read_pair_must_match_actual_query (test_verify_causal.BindingTests.test_native_read_pair_must_match_actual_query) ... ok
+test_partial_or_out_of_range_prefix_refused (test_verify_causal.BindingTests.test_partial_or_out_of_range_prefix_refused) ... ok
+test_predetermined_constant_controls_complete_exact_images (test_verify_causal.BindingTests.test_predetermined_constant_controls_complete_exact_images) ... ok
+test_prefix_does_not_substitute_for_actual_full_presentation (test_verify_causal.BindingTests.test_prefix_does_not_substitute_for_actual_full_presentation) ... ok
+test_retained_actual_full_prefix_error_is_preserved (test_verify_causal.BindingTests.test_retained_actual_full_prefix_error_is_preserved) ... ok
+test_stale_sequence_refused_before_pixels (test_verify_causal.BindingTests.test_stale_sequence_refused_before_pixels) ... ok
+test_symlink_evidence_refused (test_verify_causal.BindingTests.test_symlink_evidence_refused) ... ok
+test_wrong_scene_token_suffix_refused (test_verify_causal.BindingTests.test_wrong_scene_token_suffix_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 4.164s
+
+OK

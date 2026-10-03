@@ -1,0 +1,24 @@
+Running as unit: qa-harness-1ec489b1efad44c2877291d54656d959.scope; invocation ID: 954fc0372c6843b5b8397661c0aec237
+test_actual_keeper_first_startup_publication_keeps_lineage_before_reader (test_readonly_longevity.LongevityKernelTests.test_actual_keeper_first_startup_publication_keeps_lineage_before_reader) ... ERROR
+
+======================================================================
+ERROR: test_actual_keeper_first_startup_publication_keeps_lineage_before_reader (test_readonly_longevity.LongevityKernelTests.test_actual_keeper_first_startup_publication_keeps_lineage_before_reader)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_readonly_longevity.py", line 130, in test_actual_keeper_first_startup_publication_keeps_lineage_before_reader
+    first_factory=factory();first=RuntimeService(root,self.session,first_factory,lambda:None)
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/test_readonly_longevity.py", line 123, in factory
+    return NativeFactory(root,self.guard,producer=executable,producer_hash=expected,
+                         core=executable,core_hash=expected)
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/native_runtime.py", line 150, in __init__
+    with PinnedExecutable(path,expected):pass
+         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/native_runtime.py", line 30, in __init__
+    if not stat.S_ISREG(before.st_mode) or before.st_uid!=os.getuid() or not before.st_mode&0o100 or before.st_mode&0o022 or before.st_size>128*1024*1024:raise ValueError('unsafe executable material')
+                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: unsafe executable material
+
+----------------------------------------------------------------------
+Ran 1 test in 0.114s
+
+FAILED (errors=1)

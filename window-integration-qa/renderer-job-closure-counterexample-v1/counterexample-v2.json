@@ -1,0 +1,154 @@
+{
+  "result": "counterexample reproduced",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-6624ddc6858f4846b567cc6668d24df0.scope",
+    "coreLimit": 1
+  },
+  "sourceSHA256": {
+    "batch_preview.py": "875e9e25973458691607503a5293db423b8a6510dfc856f22c99a9121c6037de",
+    "helper_supervisor.py": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+    "owned_launch.py": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+    "pipe_transport.py": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8",
+    "owned_commands.py": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba"
+  },
+  "producerSHA256": "801495504cd67ab5e124d9d91d470241f35927c12ccdc59bc37e3c5d556eb6c9",
+  "producerSourceSHA256": "788159ab19f42917c264c1f8f93545e492bcd99ab8592082e3b3c007a032a979",
+  "observation": {
+    "threeActualOwnedPNGStages": 3,
+    "batchClosed": false,
+    "error": {
+      "type": "ValueError",
+      "message": "outstanding actor helper prevents thumbnail launch"
+    },
+    "genuineRenderer": {
+      "job": "54f97cdef98543aba72519599a06626a",
+      "kind": "renderer",
+      "actor": 17,
+      "phase": "released",
+      "ownership": {
+        "pid": 929757,
+        "start": 15986906,
+        "uid": 1000,
+        "producer": {
+          "device": 1,
+          "inode": 609017,
+          "size": 16272,
+          "sha256": "801495504cd67ab5e124d9d91d470241f35927c12ccdc59bc37e3c5d556eb6c9",
+          "seals": 15
+        },
+        "launcher": {
+          "device": 32,
+          "inode": 72938,
+          "size": 14424,
+          "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+          "seals": null
+        },
+        "script": {
+          "device": 1,
+          "inode": 609018,
+          "size": 2738,
+          "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+          "seals": 15
+        },
+        "argv": [
+          "/usr/bin/python3.14",
+          "/proc/self/fd/4",
+          "6",
+          "10",
+          "5",
+          "[\"/proc/self/fd/5\"]",
+          "elf",
+          "-1"
+        ],
+        "scriptFD": 4,
+        "producerFD": 5,
+        "targetArgv": [
+          "/proc/self/fd/5"
+        ],
+        "mode": "elf",
+        "interpreter": null,
+        "policy": "linux-x86_64-group-confinement-v1",
+        "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+        "environment": {
+          "XDG_RUNTIME_DIR": "/tmp/tmpkxxz6eiu",
+          "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+          "WAYLAND_DISPLAY": "never-connect"
+        }
+      }
+    },
+    "actualPipeTransportType": "PipeTransport",
+    "actualOwnedLaunchType": "OwnedLaunch",
+    "keeperVerified": true,
+    "actualOwnedProcessVerified": "executed",
+    "rendererLeaderAlive": true,
+    "registeredPopenIsActual": true,
+    "ownedLaunchJobMatches": true,
+    "thumbnailHelperExecuted": false
+  },
+  "nativeLaunch": false,
+  "scopeLimit": "Real sealed nongraphical C protocol process via genuine PipeTransport/OwnedLaunch/Keeper; frozen V23 batch refuses actual persistent renderer. No compositor/client/native GUI or native timing claim.",
+  "terminalRendererRow": {
+    "job": "54f97cdef98543aba72519599a06626a",
+    "kind": "renderer",
+    "actor": 17,
+    "phase": "closed",
+    "ownership": {
+      "pid": 929757,
+      "start": 15986906,
+      "uid": 1000,
+      "producer": {
+        "device": 1,
+        "inode": 609017,
+        "size": 16272,
+        "sha256": "801495504cd67ab5e124d9d91d470241f35927c12ccdc59bc37e3c5d556eb6c9",
+        "seals": 15
+      },
+      "launcher": {
+        "device": 32,
+        "inode": 72938,
+        "size": 14424,
+        "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+        "seals": null
+      },
+      "script": {
+        "device": 1,
+        "inode": 609018,
+        "size": 2738,
+        "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+        "seals": 15
+      },
+      "argv": [
+        "/usr/bin/python3.14",
+        "/proc/self/fd/4",
+        "6",
+        "10",
+        "5",
+        "[\"/proc/self/fd/5\"]",
+        "elf",
+        "-1"
+      ],
+      "scriptFD": 4,
+      "producerFD": 5,
+      "targetArgv": [
+        "/proc/self/fd/5"
+      ],
+      "mode": "elf",
+      "interpreter": null,
+      "policy": "linux-x86_64-group-confinement-v1",
+      "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+      "environment": {
+        "XDG_RUNTIME_DIR": "/tmp/tmpkxxz6eiu",
+        "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+        "WAYLAND_DISPLAY": "never-connect"
+      }
+    },
+    "groupEmpty": true
+  },
+  "cleanup": {
+    "rendererExitCode": 0,
+    "rendererLifetimeGone": true,
+    "keeperExitCode": 0,
+    "allJobsNormallyCompleted": true,
+    "allTransportThreadsTerminal": true
+  }
+}

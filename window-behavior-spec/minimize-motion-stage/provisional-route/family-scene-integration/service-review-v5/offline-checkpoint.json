@@ -1,0 +1,229 @@
+{
+  "version": "family-service-v5-offline",
+  "productionChanged": false,
+  "nativeLaunch": false,
+  "pythonTests": 52,
+  "quintNamedScenarios": 29,
+  "quintModels": 5,
+  "quintSamplesPerModel": 2000,
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_scene_manager.py",
+        "test_pipe_transport.py",
+        "test_scene_controller.py",
+        "test_capture_lease.py",
+        "test_ingress_context.py",
+        "test_socket_frontend.py",
+        "test_context_provider.py"
+      ],
+      "exitCode": 0,
+      "log": "check-00.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_scene_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-01.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_scene_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-02.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_scene.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-03.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_destination_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-04.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_destination_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-05.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_destination.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-06.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "transport_dispatch_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-07.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "transport_dispatch_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-08.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "transport_dispatch.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-09.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-10.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-11.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_registry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-12.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "ingress_context_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-13.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "ingress_context_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-14.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "ingress_context.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-15.log"
+    }
+  ],
+  "changed": [
+    {
+      "name": "CONTRACT.md",
+      "kind": "modified",
+      "diff": "CONTRACT.md.v4-v5.diff"
+    },
+    {
+      "name": "scene_manager.py",
+      "kind": "modified",
+      "diff": "scene_manager.py.v4-v5.diff"
+    },
+    {
+      "name": "test_scene_manager.py",
+      "kind": "modified",
+      "diff": "test_scene_manager.py.v4-v5.diff"
+    },
+    {
+      "name": "test_ingress_context.py",
+      "kind": "added"
+    },
+    {
+      "name": "socket_frontend.py",
+      "kind": "added"
+    },
+    {
+      "name": "test_socket_frontend.py",
+      "kind": "added"
+    },
+    {
+      "name": "context_provider.py",
+      "kind": "added"
+    },
+    {
+      "name": "test_context_provider.py",
+      "kind": "added"
+    },
+    {
+      "name": "ingress_context.qnt",
+      "kind": "added"
+    },
+    {
+      "name": "ingress_context_test.qnt",
+      "kind": "added"
+    }
+  ],
+  "scope": "Reserve-before-context ingestion + UID-scoped UNIX socket frontend + read-only native output/desktop snapshot provider. NativeContextProvider proves consistent sampled context, not output lifetime or continued equality after observation. Producer exact output generations/native family worker remain required. Daemon lifecycle/recovery/retry dedup/atomic replacement/real native validation and 240Hz remain open."
+}

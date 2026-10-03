@@ -1,0 +1,131 @@
+{
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-maintenance-v4/maintenance.qnt"
+      ],
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-maintenance-v4/maintenance.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "output": "\n  maintenance\n    ok defaultPassiveTest passed 1 test(s)\n    ok staleNonceRefusalTest passed 1 test(s)\n    ok heldRefusalPreservesTest passed 1 test(s)\n    ok lockRefusalPreservesTest passed 1 test(s)\n    ok trueRetirementTest passed 1 test(s)\n    ok normalUnloadTest passed 1 test(s)\n    ok sameArtifactReloadNewNonceTest passed 1 test(s)\n    ok enabledIntentPreservedTest passed 1 test(s)\n\n  8 passing (90ms)\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-maintenance-v4/maintenance.qnt",
+        "--invariant",
+        "safe",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20461012",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "output": "[ok] No violation found (641ms at 3120 traces/second).\nUse --seed=0x153a990 --backend=rust to reproduce.\n"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-maintenance-v4/package_modes.qnt"
+      ],
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-maintenance-v4/package_modes.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "output": "\n  package_modes\n    ok executablePreservedTest passed 1 test(s)\n    ok dataPreservedTest passed 1 test(s)\n    ok unsafeModeRefusedTest passed 1 test(s)\n    ok specialModeRefusedTest passed 1 test(s)\n    ok mismatchedModeRefusedTest passed 1 test(s)\n    ok rollbackExactModeBytesTest passed 1 test(s)\n\n  6 passing (39ms)\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-maintenance-v4/package_modes.qnt",
+        "--invariant",
+        "safe",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20461012",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "output": "[ok] No violation found (317ms at 6309 traces/second).\nUse --seed=0x153a990 --backend=rust to reproduce.\n"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-maintenance-v4/mapping_identity.qnt"
+      ],
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-maintenance-v4/mapping_identity.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "output": "\n  mapping_identity\n    ok calibratedBtrfsCanAcceptTest passed 1 test(s)\n    ok noCalibrationCannotAcceptTest passed 100 test(s)\n    ok statDeviceNeverSubstitutesTest passed 1 test(s)\n    ok changedPathCannotAcceptTest passed 1 test(s)\n    ok changedBytesCannotAcceptTest passed 1 test(s)\n\n  5 passing (36ms)\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-maintenance-v4/mapping_identity.qnt",
+        "--invariant",
+        "invariant",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20461012",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "output": "[ok] No violation found (340ms at 5882 traces/second).\nUse --seed=0x14f11ce --backend=rust to reproduce.\n"
+    }
+  ],
+  "specs": {
+    "maintenance.qnt": "e437803dabef5cb91a675415a9d537f633d54dec51bb7498a6499b5190bb89fe",
+    "package_modes.qnt": "0dea6ab6412352c5a99f5c46769fb6dedf2e407c4555a4ab1f8d8f1ea4696712",
+    "mapping_identity.qnt": "3c0ee48915683a954d7123ba14a49c7558790fdc2a372711cc5d7717ead0f29d"
+  },
+  "named": 19,
+  "samplesPerModel": 2000,
+  "maxSteps": 100,
+  "seed": 20461012,
+  "nativeAccepted": false
+}

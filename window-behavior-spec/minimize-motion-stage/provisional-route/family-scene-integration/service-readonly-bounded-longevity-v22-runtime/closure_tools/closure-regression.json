@@ -1,0 +1,25 @@
+{
+  "tests": 4,
+  "passed": true,
+  "nativeLaunch": false,
+  "checks": [
+    "nested retained manifest hash and declared mode included",
+    "only exact own root manifest/checkpoint excluded",
+    "ancestral declared-mode replacement refuses",
+    "O_EXCL0600 fsync publication cannot replace existing descriptor"
+  ],
+  "sources": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/closure_tools/freeze_bounded.py": {
+      "sha256": "0ec93c994a51092c37723dc3a8bb25a69f8845f929f00bdfe7babaa64d2bb10f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/closure_tools/test_freeze_bounded.py": {
+      "sha256": "efa00d5a80061d211ecdab8c89f1224b788d9e924ce87ad714e153d1a7594176",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/closure_tools/closure-regression.log": {
+      "sha256": "3d4f03bf3696c66a6cd39f2a61446b16d7acaefb238da025016423a8322bc618",
+      "mode": 420
+    }
+  }
+}

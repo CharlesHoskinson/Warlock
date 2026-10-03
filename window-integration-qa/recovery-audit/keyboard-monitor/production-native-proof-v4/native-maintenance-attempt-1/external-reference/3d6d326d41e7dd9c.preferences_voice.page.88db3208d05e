@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_voice" xml:lang="eo">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_speech"/>
+    <title type="sort">2.0 Voĉo</title>
+    <title type="link">Voĉo</title>
+    <desc>Agordi la voĉon uzatan de <app>Orko</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Preferoj de Voĉo</title>
+  <section id="voice_type_settings">
+    <title>Agordoj de Voĉtipo</title>
+    <section id="voice_type">
+      <title>Voĉtipo</title>
+      <p>Ĉi tiu kombokesto ebligas al vi uzi malsamajn voĉojn por povi pli bone distingi majusklan kaj ligitan tekston de aliaj tekstoj, kaj ekranan tekston de teksto aldonita de <app>Orko</app>.</p>
+      <note style="tip">
+        <title>Agordi Plurajn Voĉojn</title>
+        <p>Por ĉiu voĉo kiun vi volas agordi, unue elektu la voĉon en la kombokesto <gui>Voĉtipo</gui>. Poste agordu la personon, rapidecon, tonalton kaj volumon por tiu voĉo.</p>
+      </note>
+    </section>
+    <section id="speech_system">
+      <title>Parolsistemo</title>
+      <p>Ĉi tiu kombokesto permesas al vi elekti vian preferatan parolsistemon el tiuj instalitaj, kiel ekzemple Speech Dispatcher.</p>
+    </section>
+    <section id="speech_synthesizer">
+      <title>Parolsintetizilo</title>
+      <p>Ĉi tiu kombokesto permesas al vi elekti la parolsintetizilon por uzi kun via elektita parolsistemo.</p>
+    </section>
+    <section id="person">
+      <title>Persono</title>
+      <p>Ĉi tiu kombokesto permesas al vi elekti, kiun "personon" aŭ "parolanton" uzi kun la elektita voĉo. Ekzemple, vi eble volas, ke Davido parolu defaŭlte, sed ke hiperligiloj estu parolataj de Alice. Atentu, ke tio, kion vi trovos en la kombokesto <gui>Persono</gui>, dependos de kiuj parolsintetiziloj estas instalitaj.</p>
+    </section>
+    <section id="capitalization_style">
+      <title>Stilo de majuskligo</title>
+      <p>Ĉi tiu kombokesto permesas al vi elekti, kiujn stilojn de majuskligo-indikado de Speech Dispatcher vi volas uzi aldone al la majuskligo-voĉo de <app>Orko</app>. La opcioj, kiuj estas nomataj uzante la terminologion de Speech Dispatcher, estas:</p>
+     <list>
+       <item><p><gui>Ikono</gui>: Ludas tonon</p></item>
+       <item><p><gui>Literumi</gui>: Parolas la vorton "majusklo"</p></item>
+       <item><p><gui>Nenio</gui></p></item>
+    </list>
+    <note style="tip">
+      <title>Ĉi tiun agordon eblas ŝalti/malŝalti interagante</title>
+      <p><app>Orko</app> ankaŭ havas komandon por cikli tra la disponeblaj stiloj de majuskligo. Vidu <link xref="commands_speech_settings"> Komandoj de Parolagordoj</link> por pli da informoj.</p>
+    </note>
+    <p>Defaŭlta valoro: nenio</p>
+    </section>
+    <section id="rate_pitch_and_volume">
+      <title>Rapideco, Tonalto kaj Volumo</title>
+      <p>Ĉi tiuj tri maldekstra-dekstraj glisiloj permesas al vi plue personecigi la sonon de la persono kiun vi ĵus elektis.</p>
+    </section>
+  </section>
+  <section id="global_voice_settings">
+  <title>Tutaj Agordoj de Voĉo</title>
+    <section id="pauses">
+      <title>Dividi parolon en partojn inter paŭzoj</title>
+      <p>Depende de la ebligitaj parolagordoj, <app>Orko</app> povas havi sufiĉe multe por diri pri aparta objekto, kiel ĝia nomo, rolo, stato, mnemonika vorto, lernokonsila mesaĝo, kaj tiel plu. Markado de la markobutono <gui>Dividi parolon en partojn inter paŭzoj</gui> igos <app>Orko</app> enmeti mallongajn paŭzojn inter ĉiu el ĉi tiuj informpecioj.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="numbers_as_digits">
+      <title>Paroli nombrojn kiel ciferojn</title>
+      <p>Markado de la markobutono <gui>Paroli nombrojn kiel ciferojn</gui> igos <app>Orko</app> dividi nombron kiel "123" en apartajn ciferojn ("1," "2," kaj "3") antaŭ ol transdoni ĝin al la parolsintetizilo.</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+    </section>
+  </section>
+</page>

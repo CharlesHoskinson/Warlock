@@ -1,0 +1,93 @@
+--- /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v1/native_probe_pointer.py	2026-10-01 07:45:20.531371730 -0600
++++ /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v2/native_probe_pointer.py	2026-10-01 08:10:00.980394888 -0600
+@@ -7,6 +7,7 @@
+ import lifecycle_preservation as preservation
+ from main_observer import MainObserver
+ import host_acceptance
++import startup_reporting
+ from gi.repository import GLib
+ STAGE=Path(__file__).resolve().parent
+ HERE=STAGE
+@@ -127,7 +128,7 @@
+ 
+ def config_bytes():
+     return ('hl.monitor({output="WAYLAND-1",mode="1280x800@60",position="0x0",scale=1.25})\n'
+-        'hl.config({animations={enabled=false},input={follow_mouse=0,repeat_delay=1000,virtualkeyboard={release_pressed_on_close=false}},ecosystem={enforce_permissions=true},misc={name_vk_after_proc=true},debug={disable_logs=false}})\n'
++        'hl.config({animations={enabled=false},input={follow_mouse=0,repeat_delay=1000,virtualkeyboard={release_pressed_on_close=false}},ecosystem={enforce_permissions=true},misc={name_vk_after_proc=true},debug={disable_logs=false,enable_stdout_logs=true}})\n'
+         'hl.on("window.open",function(w) if not w.floating then hl.dispatch(hl.dsp.window.float({action="set",window="address:"..w.address})) end end)\n'
+         'hl.permission({binary='+json.dumps(str(LIB))+',type="plugin",mode="allow"})\n'
+         'hl.permission({binary='+json.dumps(str(READER/'physical-commands/evdev-keyboard'))+',type="keyboard",mode="allow"})\n'
+@@ -190,10 +191,11 @@
+                 maps=HOST.original.mapped_files(session.evidence['compositorPID'])
+                 aq=str(QA_ROOT/'aquamarine-nested-lifecycle-v1/prefix/lib/libaquamarine.so.0.15.0')
+                 check(report,'actual private mandatory-Wayland Aquamarine mapped',maps['files'].get(aq)==host_acceptance.AQ_SHA,mappedSHA256=maps['files'].get(aq))
+-                inner_log=runtime/'hypr'/session.evidence['signature']/'hyprland.log'
++                stdout_log=Path(session.evidence['hyprland']['log'])
++                assert stdout_log==HERE/'owned-host/hyprland.log','actual registered child stdout path required'
+                 weston_log=HERE/'owned-host/weston-renderer.log'
+-                startup_transport=wait(lambda:(result if (result:=host_acceptance.transport([inner_log.read_text(),weston_log.read_text()]))['pass_'] else None),'actual healthy parent Wayland configure transport')
+-                check(report,'actual startup parent configure transport is healthy',startup_transport.pop('pass_'),**startup_transport,logHashes={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in (inner_log,weston_log)})
++                startup_transport=startup_reporting.live_transport([stdout_log,weston_log],session.guard,report)
++                check(report,'actual startup parent configure transport is healthy',startup_transport.pop('pass_'),**startup_transport,logHashes={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in (stdout_log,weston_log)})
+                 receiver=runtime/'terminal_receiver.py';received=runtime/'terminal.bin';marker=runtime/'shortcut-count'
+                 receiver.write_text('import os,sys,termios,tty\nold=termios.tcgetattr(0)\ntty.setraw(0)\nprint("Private native Foot byte receiver",flush=True)\ntry:\n with open(sys.argv[1],"ab",buffering=0) as f:\n  while True:\n   b=os.read(0,256)\n   if not b:break\n   f.write(b)\nfinally:termios.tcsetattr(0,termios.TCSANOW,old)\n');receiver.chmod(0o600)
+                 foot=launch(['/usr/bin/foot','--app-id=org.omarchy.keyboardnativeqa','--title=Private full pointer keyboard QA','/usr/bin/python3',receiver,received],env,'native-foot')
+@@ -224,13 +226,14 @@
+                     if name=='lifecycle':report['nativeInputProved']=True
+                 report['result']='pass'
+             except Exception as error:
+-                report.update(result='failed',error=repr(error),traceback=traceback.format_exc())
++                startup_reporting.failure(report,error,'startup-or-campaign')
+             finally:
+                 # All scenario device EOFs/natural releases precede retirement.
+                 finish_scenario(processes,phase_checkpoint)
+                 try:
+                     if 'keyboard-monitor-private' in ctl(env,'plugin','list'):retire_private_plugin(env,LIB,report)
+-                except Exception as error:report['cleanupUnloadError']=repr(error);report['result']='failed'
++                except Exception as error:
++                    report['cleanupUnloadError']=repr(error);startup_reporting.failure(report,error,'normal-unload-cleanup')
+                 for p in reversed(processes):finish_fixture(p)
+                 owned={row['pid'] for _,row in session.host.processes}
+                 leftover=[row for row in session.host.descendants() if row['pid'] not in owned]
+@@ -239,12 +242,11 @@
+                     report['result']='failed'
+                     for row in reversed(leftover):session.host.stop(row)
+                 report['ownedFixtureProcesses']=records
+-                if received.exists():
+-                    (HERE/'native-terminal.bin').write_bytes(received.read_bytes());(HERE/'native-terminal.bin').chmod(0o600);report['terminalBytes']=received.read_bytes().hex()
++                startup_reporting.archive_terminal(received,HERE,report)
+                 for log in logs:log.close()
+                 PRIVATE_SESSION=None
+     except Exception as error:
+-        report.update(result='failed',error=repr(error),traceback=traceback.format_exc())
++        startup_reporting.failure(report,error,'host-lifecycle-or-cleanup')
+     finally:PRIVATE_SESSION=None
+     if session is not None:
+         report['hostEvidence']=session.evidence
+@@ -254,13 +256,15 @@
+             logs=archived+[HERE/'owned-host/weston-renderer.log']
+             final_transport=host_acceptance.transport([path.read_text() for path in logs])
+             check(report,'actual complete campaign archived parent transport stayed healthy',final_transport.pop('pass_'),**final_transport,logHashes={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in logs})
+-        except Exception as error:report['result']='failed';report['terminalTransportError']=repr(error)
++        except Exception as error:
++            report['terminalTransportError']=repr(error);startup_reporting.failure(report,error,'archived-terminal-transport')
+     try:
+         after=observer.capture();save_json(HERE/'main-after.json',after);report['after']=after;report['restoration']=observer.compare(before,after)
+-    except Exception as error:report['restoration']={'mainReadOnlyObservationSucceeded':False};report['preservationError']=repr(error)
++    except Exception as error:
++        report['restoration']={'mainReadOnlyObservationSucceeded':False};report['preservationError']=repr(error);startup_reporting.failure(report,error,'main-read-only-preservation')
+     report['restoration'].update(frozenDependencies=manifest_unchanged(manifest),fixtureProcessesGone=all(p.poll() is not None for p in processes),ownedRuntimeGone=bool(session and session.evidence.get('runtimeGone')),ownedInfrastructureGone=bool(session and not session.evidence.get('remainingDescendants') and not session.evidence.get('cleanupErrors') and not session.evidence.get('unexpectedInnerDescendants') and session.evidence.get('runtimeGone')))
+     if not all(report['restoration'].values()):report['result']='failed'
+-    save_json(REPORT,report);print(json.dumps(report,indent=2));return 0 if report.get('result')=='pass' else 1
++    save_json(REPORT,report);print(json.dumps(startup_reporting.summary(report,REPORT)));return 0 if report.get('result')=='pass' else 1
+ 
+ def freeze_attempt(destination):
+     global HERE,LIB,REPORT
+@@ -304,6 +308,7 @@
+     else:
+         assert options.output,'--output is required; never overwrite prior evidence'
+         qa.require_qa_scope()
++        os.umask(0o077)
+         freeze_attempt(options.output)
+         preflight=import_preflight(HERE)
+         descriptor=os.open(HERE/'import-preflight.json',os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600)

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_whereami" xml:lang="eo">
+  <info>
+    <link type="guide" xref="index#reviewing"/>
+    <link type="next" xref="howto_flat_review"/>
+    <title type="sort">1. Kie Mi Estas</title>
+    <desc>Lerni pri via loko</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Kie Mi Estas</title>
+  <p>Aldone al dediĉitaj komandoj por legi la titolan breton kaj la statusan breton, Orko provizas du kuntekst-sentemajn komandojn Kie Mi Estas: Baza Kie Mi Estas kaj Detala Kie Mi Estas. Baza Kie Mi Estas estas efektivigita por ĉiuj objektoj. Detala Kie Mi Estas estas efektivigita nur por tiuj objektoj por kiuj estas signifika kvanto da informoj kiujn vi eble volas scii, sed verŝajne ne volas scii ĉiam.</p>
+  <p>La plej bona maniero familiiĝi kun tio kion Kie Mi Estas prezentos estas provi la <link xref="commands_where_am_i">komandojn Kie Mi Estas</link>. Tamen, por doni al vi pli bonan ideon pri la kuntekst-sentema naturo de la funkcio Kie Mi Estas de <app>Orko</app>, pripensu la sekvan:</p>
+  <p>Por plej multaj regiletoj, oni diros al vi almenaŭ la etikedon kaj/aŭ nomon, la tipon aŭ rolon de la regileto, kaj la mnemonikon kaj/aŭ la akcelan klavon se ili ekzistas. Aldone:</p>
+  <list>
+    <item>
+      <p>Se la regileto estas teksto, kaj vi plenumas Bazan Kie Mi Estas, oni diros al vi la aktualan linion se neniu teksto estas elektita. Se teksto estas elektita, tamen, Baza Kie Mi Estas diros al vi kiu teksto estas elektita. Detala Kie Mi Estas ene de la teksto ankaŭ inkluzivos la tekst-atributojn.</p>
+    </item>
+    <item>
+      <p>Se la regileto povas esti markita, kiel estas la kazo kun markobutonoj kaj radikbutonoj, la markita stato estos inkluzivita.</p>
+    </item>
+    <item>
+      <p>Se la regileto estas listo aŭ listo-simila objekto, kiel kombinujo, grupo de radikbutonoj, aŭ paĝlangeta listo, la pozicio de la aktuala ero estos inkluzivita.</p>
+    </item>
+    <item>
+      <p>Se la regileto estas hierarkia, kiel arbo, kaj vi estas sur etendebla nodo, oni diros al vi ĉu tiu nodo estas etendita aŭ ne. Kaj se ĝi estas etendita, oni ankaŭ diros al vi kiom da infanojn ĝi enhavas. Krome, la nestiga nivelo ankaŭ estos provizita.</p>
+    </item>
+    <item>
+      <p>Se la regileto estas progresa breto aŭ glitilo, oni diros al vi la aktualan procenton.</p>
+    </item>
+    <item>
+      <p>Se la regileto estas piktogramo ene de piktograma grupo, Baza Kie Mi Estas inkluzivos la objekton en kiu vi estas, la eron sur kiun vi estas, kaj la nombron da eroj kiuj estas elektitaj. En Detala Kie Mi Estas, oni ankaŭ diros al vi kiuj eroj estas elektitaj.</p>
+    </item>
+    <item>
+      <p>Se vi estas sur ligilo, la tipo de ligilo (sama retejo, malsama retejo, FTP-ligilo, k.t.p.) estos inkluzivita.</p>
+    </item>
+    <item>
+      <p>Se vi estas en tabela ĉelo, la koordinatoj de tiu ĉelo kaj la ĉel-kaplinioj estos inkluzivitaj.</p>
+    </item>
+    <item>
+      <p>Se vi estas en la literumilo de aplikaĵo kie <app>Orko</app> provizas plibonigitan subtenon, Baza Kie Mi Estas ripetos la eraron respektante viajn <link xref="preferences_spellcheck">preferojn de literumkontrolado</link>. Detala Kie Mi Estas igos <app>Orko</app> prezenti la plenajn detalojn de la eraro.</p>
+    </item>
+  </list>
+  <p>Kaj tiel plu. Denove, la celo de la funkcio Kie Mi Estas de <app>Orko</app> estas provizi al vi la detalojn kiujn vi verŝajne interesiĝas scii pri la objekto en kiu vi aktuele estas. Por provi Kie Mi Estas, vidu la liston de <link xref="commands_where_am_i">komandoj Kie Mi Estas</link>.</p>
+</page>

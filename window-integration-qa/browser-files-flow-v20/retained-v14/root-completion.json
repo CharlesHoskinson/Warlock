@@ -1,0 +1,204 @@
+{
+  "updatedUTC": "2026-10-02T01:54:23.842380+00:00",
+  "reportSHA256": "d801d25c9525fb47c5f6a50736d187684be2d7b0475c5cf539a4e41a9f7c1b54",
+  "manifestSHA256": "7607911bd1787a8316c31b1f2d22e4c316a4e10dbe926d2b2c0897325bf4ab32",
+  "fileCount": 41111,
+  "linkCount": 13770,
+  "independentChecks": {
+    "allFrozenBytesModesExact": true,
+    "allFrozenLinksExact": true,
+    "all18MainPreserved": true,
+    "allRecordedPIDStartGone": true,
+    "privateRuntimeGone": true,
+    "noUnexpectedOrRemainingHelpers": true,
+    "normalBrowserAndNoForcedCleanup": true,
+    "nativeProbeAndPluginUnloadedNormally": true,
+    "healthyArchivedParentTransport": true,
+    "actualPrivateBusActivationPolicyVerified": true,
+    "initialRangeDiagnosticIndependentlyReplayed": true,
+    "actualBrowserPrivateBusPIDBindingIndependentlyReplayed": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "privateBrowserFilesAccepted": false,
+  "processes": [
+    {
+      "pid": 2155509,
+      "start": "12835280",
+      "gone": true
+    },
+    {
+      "pid": 2155529,
+      "start": "12835283",
+      "gone": true
+    },
+    {
+      "pid": 2155542,
+      "start": "12835343",
+      "gone": true
+    },
+    {
+      "pid": 2155509,
+      "start": "12835280",
+      "gone": true
+    },
+    {
+      "pid": 2155529,
+      "start": "12835283",
+      "gone": true
+    },
+    {
+      "pid": 2155542,
+      "start": "12835343",
+      "gone": true
+    },
+    {
+      "pid": 2155691,
+      "start": "12835684",
+      "gone": true
+    },
+    {
+      "pid": 2155708,
+      "start": "12835709",
+      "gone": true
+    },
+    {
+      "pid": 2155707,
+      "start": "12835709",
+      "gone": true
+    },
+    {
+      "pid": 2155802,
+      "start": "12835728",
+      "gone": true
+    },
+    {
+      "pid": 2155801,
+      "start": "12835728",
+      "gone": true
+    },
+    {
+      "pid": 2155738,
+      "start": "12835717",
+      "gone": true
+    },
+    {
+      "pid": 2155740,
+      "start": "12835718",
+      "gone": true
+    },
+    {
+      "pid": 2155773,
+      "start": "12835721",
+      "gone": true
+    },
+    {
+      "pid": 2155710,
+      "start": "12835711",
+      "gone": true
+    },
+    {
+      "pid": 2156025,
+      "start": "12835874",
+      "gone": true
+    },
+    {
+      "pid": 2156037,
+      "start": "12835892",
+      "gone": true
+    },
+    {
+      "pid": 2156038,
+      "start": "12835892",
+      "gone": true
+    },
+    {
+      "pid": 2156039,
+      "start": "12835892",
+      "gone": true
+    },
+    {
+      "pid": 2156040,
+      "start": "12835892",
+      "gone": true
+    },
+    {
+      "pid": 2156041,
+      "start": "12835892",
+      "gone": true
+    },
+    {
+      "pid": 2156071,
+      "start": "12835899",
+      "gone": true
+    },
+    {
+      "pid": 2156072,
+      "start": "12835899",
+      "gone": true
+    },
+    {
+      "pid": 2156076,
+      "start": "12835900",
+      "gone": true
+    },
+    {
+      "pid": 2157312,
+      "start": "12837451",
+      "gone": true
+    },
+    {
+      "pid": 2155691,
+      "start": "12835684",
+      "gone": true
+    },
+    {
+      "pid": 2156025,
+      "start": "12835874",
+      "gone": true
+    },
+    {
+      "pid": 2157312,
+      "start": "12837451",
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "environmentObservations": [
+    {
+      "name": "browser",
+      "identity": {
+        "pid": 2155691,
+        "start": "12835684",
+        "ppid": 2154202,
+        "pgid": 2155691
+      },
+      "bytes": 10167,
+      "nonzeroBytes": 0,
+      "initialRangeMatches": false,
+      "currentLibcSelectorsProved": false
+    },
+    {
+      "name": "files",
+      "identity": {
+        "pid": 2156025,
+        "start": "12835874",
+        "ppid": 2154202,
+        "pgid": 2156025
+      },
+      "bytes": 10294,
+      "nonzeroBytes": 10073,
+      "initialRangeMatches": true,
+      "currentLibcSelectorsProved": false
+    }
+  ],
+  "failure": "RuntimeError('Bounded actual observation timed out:genuine trusted button-free page pointer coordinate event')",
+  "rawOwnedProcessEvidenceSHA256": "57bc27ed7f22a91f6e2de4f3f459b73992d52ccbb9713069fd0f2b0f715da253",
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false
+}

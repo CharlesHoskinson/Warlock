@@ -1,0 +1,46 @@
+{
+  "result": "pass",
+  "nativeExecuted": false,
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/test-continuous-ledger"
+      ],
+      "returncode": 0,
+      "stdout": "{\"result\":\"pass\",\"continuousLedgerChecks\":1037,\"nativeAccepted\":false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/test-continuous-renderer"
+      ],
+      "returncode": 0,
+      "stdout": "{\"event\":\"retargetAccepted\",\"identities\":[{\"pid\":41,\"stableId\":\"aa01\"}],\"nativeAuthority\":false,\"receivedNs\":\"110296463426341\",\"sourceDigests\":[{\"digest\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"pid\":41,\"stableId\":\"aa01\"}],\"token\":\"0123456789ab-2\"}\n{\"event\":\"retargeted\",\"identities\":[{\"pid\":41,\"stableId\":\"aa01\"}],\"nativeAuthority\":false,\"origins\":[],\"sourceDigests\":[{\"digest\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"pid\":41,\"stableId\":\"aa01\"}],\"sourceReused\":true,\"startNs\":\"110296463454930\",\"token\":\"0123456789ab-2\",\"uploadCount\":0}\n{\"accepted\":true,\"durationSeconds\":0.22,\"elapsedSeconds\":4.1902e-05,\"endpoint\":false,\"epoch\":\"1\",\"event\":\"frameKinematics\",\"generation\":1,\"members\":[{\"digest\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"pid\":41,\"rectangle\":{\"height\":273.99997323141855,\"width\":387.9999608264662,\"x\":99.99999129477027,\"y\":100.000065289223},\"stableId\":\"aa01\",\"velocity\":[-0.4154778762913298,3.1160840721849734,-1.869650443310984,-1.2775944695958392]}],\"nativeAuthority\":false,\"output\":\"left\",\"phase\":\"retargetOrigin\",\"progress\":0.00019046363636363636,\"sampleNs\":\"110296463373603\",\"sequence\":\"2\",\"startNs\":\"110296463331701\",\"token\":\"0123456789ab-1\"}\n{\"event\":\"cancelled\",\"identities\":[{\"pid\":41,\"stableId\":\"aa01\"}],\"nativeAuthority\":false,\"reason\":\"offline reduced-motion/cancellation\",\"sourceDigests\":[{\"digest\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"pid\":41,\"stableId\":\"aa01\"}],\"token\":\"0123456789ab-2\"}\n{\"result\":\"pass\",\"continuousRendererChecks\":16,\"eglConnected\":false,\"nativeAccepted\":false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/test-trajectory"
+      ],
+      "returncode": 0,
+      "stdout": "{\"result\":\"pass\",\"numericChecks\":2012523,\"randomFamilies\":2000,\"nativeAccepted\":false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/test-commit-ledger"
+      ],
+      "returncode": 0,
+      "stdout": "80 owned EGL commit ledger checks PASS\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/test-family-scene"
+      ],
+      "returncode": 0,
+      "stdout": "{\"event\":\"retargetAccepted\",\"identities\":[{\"pid\":41,\"stableId\":\"aa01\"},{\"pid\":42,\"stableId\":\"bb02\"},{\"pid\":43,\"stableId\":\"cc03\"}],\"nativeAuthority\":false,\"receivedNs\":\"110296557009438\",\"sourceDigests\":[{\"digest\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"pid\":41,\"stableId\":\"aa01\"},{\"digest\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"pid\":42,\"stableId\":\"bb02\"},{\"digest\":\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\",\"pid\":43,\"stableId\":\"cc03\"}],\"token\":\"0123456789ab-2\"}\n{\"event\":\"retargetAccepted\",\"identities\":[{\"pid\":41,\"stableId\":\"aa01\"},{\"pid\":42,\"stableId\":\"bb02\"},{\"pid\":43,\"stableId\":\"cc03\"}],\"nativeAuthority\":false,\"receivedNs\":\"110296557086353\",\"sourceDigests\":[{\"digest\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"pid\":41,\"stableId\":\"aa01\"},{\"digest\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"pid\":42,\"stableId\":\"bb02\"},{\"digest\":\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\",\"pid\":43,\"stableId\":\"cc03\"}],\"token\":\"0123456789ab-3\"}\n{\"event\":\"cancelRejected\",\"nativeAuthority\":false,\"token\":\"0123456789ab-1\"}\n{\"event\":\"cancelled\",\"identities\":[{\"pid\":41,\"stableId\":\"aa01\"},{\"pid\":42,\"stableId\":\"bb02\"},{\"pid\":43,\"stableId\":\"cc03\"}],\"nativeAuthority\":false,\"reason\":\"service cancelled exact latest token\",\"sourceDigests\":[{\"digest\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"pid\":41,\"stableId\":\"aa01\"},{\"digest\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"pid\":42,\"stableId\":\"bb02\"},{\"digest\":\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\",\"pid\":43,\"stableId\":\"cc03\"}],\"token\":\"0123456789ab-3\"}\n{\"event\":\"sampleAccepted\",\"nativeAuthority\":false,\"progress\":0.45,\"token\":\"0123456789ab-1\"}\n73 composite family ledger/actual consumer checks PASS\n",
+      "stderr": ""
+    }
+  ]
+}

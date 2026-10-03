@@ -1,0 +1,11 @@
+--- frozen-v4/test_scene_manager.py
++++ review-v5/test_scene_manager.py
+@@ -86,7 +86,7 @@
+         accepted=[];request=threading.Thread(target=lambda:accepted.append(self.request(2,'restore')));request.start()
+         try:
+             request.join(.3);self.assertEqual(len(accepted),1)
+-            self.assertEqual(self.boundaries[0][1].sent[-1]['command'],'retarget')
++            self.assertTrue(any(e['command']=='retarget' and e['token']==c.current.token for e in self.boundaries[0][1].sent))
+         finally:release.set();callback.join(1);request.join(1)
+         self.assertFalse(self.d.commits)
+     def test_unrelated_same_pid_families_have_independent_actors(self):

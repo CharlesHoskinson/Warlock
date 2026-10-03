@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_key_bindings" xml:lang="kk">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_pronunciation"/>
+    <link type="seealso" xref="howto_key_bindings"/>
+    <title type="sort">6. Пернелер тіркесімдері</title>
+    <title type="link">Пернелер тіркесімдері</title>
+    <desc><app>Orca</app>-ның пернетақта жарлықтарын теңшеу</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Пернелер тіркесімдері баптаулары</title>
+  <section id="orca_modifier_keys">
+    <title>Orca модификатор пернелері</title>
+    <p><gui>Экрандық диктордың модификатор пернелері</gui> құрама тізімі қай перне немесе пернелер Orca модификаторы ретінде қызмет ететінін таңдауға мүмкіндік береді. Қолжетімді опциялар:</p>
+    <list>
+      <item>
+        <p><gui>KP_Insert</gui> (сандық пернетақтадағы <key>0</key> пернесімен бірдей)</p></item>
+      <item><p><gui>Insert</gui></p></item>
+      <item><p><gui>Insert, KP_Insert</gui></p></item>
+      <item><p><gui>Caps_Lock</gui></p></item>
+    </list>
+  </section>
+  <section id="key_bindings_table">
+    <title>Пернелер тіркесімдері кестесі</title>
+    <p>Пернелер тіркесімдері кестесі <app>Orca</app> операцияларының және оларға тағайындалған пернелердің тізімін береді.</p>
+    <list>
+      <item>
+        <p><gui>Команда</gui> бағанында орындалатын <app>Orca</app> командасының сипаттамасы бар.</p>
+      </item>
+      <item>
+        <p><gui>Пернелер тіркесімі</gui> бағанында <app>Orca</app> командасына қазіргі уақытта тағайындалған пернетақта жарлығы бар. <key>Return</key> пернесін басып, жаңа тіркесімге арналған пернелерді басып, <key>Return</key> пернесін қайтадан басу арқылы бұл бағанның мәнін өзгертуге болады.</p>
+      </item>
+      <item>
+        <p><gui>Өзгертілген</gui> бағаны не өзгертілгенінің индикаторы ретінде де, сол командамен байланысты әдепкі тіркесімдерді қалпына келтіру тәсілі ретінде де қызмет етеді.</p>
+      </item>
+    </list>
+    <p><app>Orca</app> пернелер тіркесімдері тізімінің астында "тағайындалмаған" командалар тобын табасыз. Бұл біз кейбір пайдаланушылар үшін өте пайдалы болады деп санайтын, бірақ пайдаланушылардың көпшілігіне қажет емес командалар. Мұндай командалар үшін пернелер тіркесімін "жұмсамау" үшін біз оларды әдепкі бойынша тағайындалмаған күйде қалдырдық. Тізімнің соңында жаңартылатын Брайль дисплейімен пайдалануға арналған Брайль тіркесімдері орналасқан.</p>
+  </section>
+</page>

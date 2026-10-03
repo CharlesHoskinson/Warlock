@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_keyboard_layout" xml:lang="eu">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_toggling_caps_lock"/>
+    <title type="sort">6. Teklatuaren diseinua</title>
+    <desc>Mahaigaineko ordenagailuaren edo eramangarriaren diseinua hautatzea</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Teklatuaren diseinua</title>
+  <p>Orca aplikazioak bi teklatu-diseinu ditu: Mahaigaina (alegia, zenbakizko teklatu bat duena) eta Eramangarria. Aukeratzen duzun diseinuak eragina izango du Orca aldatzailea zein tekla izango den zehazterakoan.</p>
+  <list>
+    <item>
+      <p>Eramangarriaren diseinua erabiltzen ari bazara, Orca aldatzaile lehenetsia <key>CapsLock</key> izango da,</p>
+    </item>
+    <item>
+      <p>
+        If you are using the Desktop layout, the Orca Modifier will be both
+        <key>Insert</key> and <key>KP_Insert</key>, the latter being the
+        same key as <key>KP_0</key>.
+      </p>
+    </item>
+  </list>
+  <p>
+    The layout also determines the keystrokes associated with a number of
+    <app>Orca</app>'s commands, especially in the areas of Flat Review,
+    Where Am I, and Say All.
+  </p>
+  <steps>
+    <title>Teklatuaren diseinua aldatzea</title>
+    <item>
+      <p>Sartu <link xref="preferences">Orcaren hobespenak</link> elkarrizketa-koadroan <keyseq><key>Orca aldatzailea</key><key>zuriunea</key></keyseq> sakatuz.</p>
+    </item>
+    <item>
+      <p>Joan <gui>Teklatuaren diseinua</gui> aukera-botoien taldera.</p>
+    </item>
+    <item>
+      <p>Gezia nahi den diseinura.</p>
+    </item>
+    <item>
+      <p>Sakatu <gui>Aplikatu</gui> botoia.</p>
+    </item>
+  </steps>
+</page>

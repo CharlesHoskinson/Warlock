@@ -1,0 +1,13 @@
+{
+  "installedAtspiVersion": "2.60.6-1",
+  "retainedOfficialSourceVersion": "2.60.7",
+  "sourceFiles": [
+    "/home/hoskinson/window-integration-qa/orca-reader/physical-commands/at-spi2-core-2.60.7/atspi/atspi-device.c",
+    "/home/hoskinson/window-integration-qa/orca-reader/physical-commands/at-spi2-core-2.60.7/atspi/atspi-device-a11y-manager.c",
+    "/home/hoskinson/window-integration-qa/orca-reader/physical-commands/at-spi2-core-2.60.7/atspi/atspi-device-x11.c",
+    "/home/hoskinson/window-integration-qa/orca-reader/physical-commands/at-spi2-core-2.60.7/atspi/atspi-device-legacy.c"
+  ],
+  "officialOrcaFactory": "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/ax_device_manager.py",
+  "crashEvidence": "Retained handoff stack; exact crash path is not reclassified from a different source version",
+  "managerNoXContract": "A11yManager stores keysym modifiers directly; factory fallback is inspected and refused before key calls"
+}

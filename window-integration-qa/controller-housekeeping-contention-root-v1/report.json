@@ -1,0 +1,133 @@
+{
+  "result": "pass",
+  "GUI": false,
+  "mainChanged": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-66f929c7b35e4178ae5495791838b995.scope",
+    "coreLimit": 1
+  },
+  "observations": {
+    "commitStartedNs": 158081963376232,
+    "housekeepingStartedNs": 158081964121774,
+    "queryAuthorityObservedNs": 158081970545480,
+    "commitReleaseNs": 158082714994359,
+    "commitResult": true,
+    "commitFinishedNs": 158082716584925,
+    "housekeepingError": {
+      "type": "TimeoutError",
+      "message": "read-only complete reply absolute deadline"
+    },
+    "housekeepingFinishedNs": 158082719970143
+  },
+  "sceneCommitResults": [
+    {
+      "identity": [
+        "0xaa01",
+        "aa01",
+        41
+      ],
+      "operation": "minimize",
+      "reason": "presented ready",
+      "committedNs": 158082715301188
+    },
+    {
+      "identity": [
+        "0xbb02",
+        "bb02",
+        42
+      ],
+      "operation": "minimize",
+      "reason": "presented ready",
+      "committedNs": 158082715355942
+    },
+    {
+      "identity": [
+        "0xcc03",
+        "cc03",
+        43
+      ],
+      "operation": "minimize",
+      "reason": "presented ready",
+      "committedNs": 158082715375518
+    }
+  ],
+  "refusedRow": {
+    "id": "ee26dc0d9e924c3db263065446918f92",
+    "actor": null,
+    "thread": 2172772,
+    "fd": 6,
+    "fdIdentity": [
+      10,
+      35401039
+    ],
+    "issuerSHA256": "1289a15ab8e77e40a225143b83a53cdf22626012a236ac5bb0e61eaafd54869e",
+    "request": "j/clients",
+    "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+    "registeredNs": 158081972150193,
+    "closed": true,
+    "published": true,
+    "outcome": "refused",
+    "evidence": {
+      "completeServerEOF": false,
+      "replyBytes": 0,
+      "replySHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "peer": null,
+      "socketIdentity": [
+        57,
+        1202660
+      ]
+    },
+    "error": {
+      "type": "TimeoutError",
+      "message": "read-only complete reply absolute deadline"
+    },
+    "finishedNs": 158082718679561
+  },
+  "subsequentActualDataRequests": [
+    "j/clients",
+    "/repl print(hl.plugin.hyprbars.window_families())",
+    "j/clients"
+  ],
+  "originalHousekeepingQueryBudgetSeconds": 0.6,
+  "sourceUnchanged": true,
+  "limits": [
+    "Actual frozen controller callback and NativeFactory.housekeep share the real receipt lock; native effect is controlled CPU fixture.",
+    "Actual Unix peers, original query guards, durable JournalStore and SnapshotCache prune run without deadline changes.",
+    "Reachable native-commit contention path, not retrospective attribution of native baseline query33.",
+    "No GUI, production mutation, hidden refusal, or accepted feature baseline."
+  ],
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/controller-housekeeping-contention-root-v1/replay.py": {
+      "sha256": "5b215e78a40bd88110767382034e8e9f18e1ee4292fac10cd37e497c11dcf02f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/native_runtime.py": {
+      "sha256": "2179e2a30c880d5ad88b5ae19b370485ac886979ba8834f182ddcfb59b2006d1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/owned_commands.py": {
+      "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/snapshot_cache.py": {
+      "sha256": "21f0d47313c053964fd8e81736843d8b62ecadab5eee3ebba80ef5801e8bf8ee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/readonly_ipc.py": {
+      "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/scene_controller.py": {
+      "sha256": "3b47325e7e86b06492ef59576159482c6036297aeafdcb46875cf590d1844657",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/test_readonly_ipc.py": {
+      "sha256": "ac6f67078081c4893ee2e49d7dcc4ad45a3b55ca7cee83d2c7654a133dc28820",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/test_scene_controller.py": {
+      "sha256": "22e97f7440ca476eb659f3e329e8123e6ab69c9f8edc913326c07f2895456bd6",
+      "mode": 420
+    }
+  }
+}

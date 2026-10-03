@@ -1,0 +1,58 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f3ffc791a97c470eb056d6a6fca4d460.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/thumbnail-v9-closure-alias-design-v1/closure_alias_identity_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v9-closure-alias-design-v1/formal-before-runtime-v2/check-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/thumbnail-v9-closure-alias-design-v1/closure_alias_identity_test.qnt",
+        "--backend=rust"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v9-closure-alias-design-v1/formal-before-runtime-v2/check-1.log",
+      "sha256": "1b44115a3a4860b0e6d28bdfabbac91ff041ac9e8c07a071f00b260d429a318e"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/thumbnail-v9-closure-alias-design-v1/closure_alias_identity.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100707",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v9-closure-alias-design-v1/formal-before-runtime-v2/check-2.log",
+      "sha256": "cdb948d633e34c9fada2958eb24cf89607cded591d90df99a4a4fc305af36a7b"
+    }
+  ],
+  "models": {
+    "closure_alias_identity.qnt": "8899aca6e5c47efd207a8590fd3ae96c5d577afff96443602f444e819cd19029",
+    "closure_alias_identity_test.qnt": "c232390de416e8ebbf77ea4123531462556106047b2ca39ef6145a8eb4f39e67",
+    "CLOSURE_ALIAS_CONTRACT.md": "2720059d49b7b3113bb7e9daff6f164f4ee5770c047a1f70e2adfc3416f05bc2"
+  },
+  "inheritedV8Untouched": true,
+  "inheritedV8InputCount": 439,
+  "selectedV24ManifestSHA256": "b017d8d2a126f76c637429fffc2d77d510161fb89d3f3826795abb47d30b9f2c",
+  "runtimeEdited": false,
+  "closureSourceUnchanged": "d326ef3d84c4ff1bd1371fe910591955ad70d18bf920c7036ac8fcad94130a16",
+  "nativeLaunch": false,
+  "nativeAccepted": false
+}

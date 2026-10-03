@@ -1,0 +1,65 @@
+{
+  "publisher": "installed Brave",
+  "browserPid": 2364869,
+  "version": "Brave Browser 154.1.96.59 unknown",
+  "mode": "headless",
+  "environment": {
+    "XDG_CURRENT_DESKTOP": "Hyprland",
+    "optionalLibunity": "system default; unavailable"
+  },
+  "requests": [
+    "/",
+    "/favicon.ico",
+    "/download"
+  ],
+  "signals": [],
+  "snapshots": [
+    {}
+  ],
+  "downloadComplete": true,
+  "downloadSha256": "ae230a6c198133d0272bcd8e485ead212ac1c5767fc291119289f0c3f8612ed9",
+  "expectedSha256": "ae230a6c198133d0272bcd8e485ead212ac1c5767fc291119289f0c3f8612ed9",
+  "actualBrowserProcess": {
+    "environment": {
+      "XDG_CURRENT_DESKTOP": null,
+      "XDG_SESSION_TYPE": null,
+      "WAYLAND_DISPLAY": null,
+      "CHROME_DESKTOP": null,
+      "LD_LIBRARY_PATH": null,
+      "XDG_RUNTIME_DIR": null
+    },
+    "argv": [
+      "/opt/brave-bin/brave --headless=new --no-first-run --no-default-browser-check --disable-background-networking --disable-component-update --disable-sync --disable-extensions --disable-features=MediaRouter --user-data-dir=/tmp/real-brave-publisher-lvv3zyox/profile --noerrdialogs --ozone-platform=headless --ozone-override-screen-size=800,600 --use-angle=swiftshader-webgl http://127.0.0.1:44113/"
+    ]
+  },
+  "checks": {
+    "realBrowserSender": false,
+    "correctAppURI": false,
+    "countReceived": false,
+    "progressReceived": false,
+    "receiverImported": false,
+    "downloadIntegrity": true,
+    "disconnectClears": true,
+    "mainA11yUnchanged": true
+  },
+  "afterBrowserExit": {},
+  "result": "incomplete",
+  "isolation": {
+    "runtimeBeforeBusDaemon": true,
+    "mainA11yBefore": {
+      "identity": [
+        84,
+        91312
+      ],
+      "connects": true
+    },
+    "mainA11yAfter": {
+      "identity": [
+        84,
+        91312
+      ],
+      "connects": true
+    },
+    "mainA11yUnchanged": true
+  }
+}

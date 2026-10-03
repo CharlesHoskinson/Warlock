@@ -1,0 +1,116 @@
+--- accepted/plugin-v8-host.cpp
++++ production/plugin-production.cpp
+@@ -1,6 +1,7 @@
+-// Offline/private candidate only. This file has never been loaded on the main compositor.
++// Staged production candidate. Never loaded on the main compositor.
+ #include "key_policy.hpp"
+-#include "private_runtime.hpp"
++#include "production_runtime.hpp"
++#include "MaintenanceLua.hpp"
+ #include "xkb_helpers.hpp"
+ #include "PointerLocatorState.hpp"
+ #include "PointerNotificationFence.hpp"
+@@ -43,6 +44,9 @@
+ bool initializing=true;
+ DBusConnection* bus=nullptr;
+ wl_event_source* timer=nullptr;
++constexpr auto PACKAGE="omarchy-a11y-prod-v2";
++OmarchyA11yMaintenance::Context maintenance;
++bool luaRegistered=false;
+ std::map<std::string,std::string> registrations;
+ CFunctionHook *pressedHook=nullptr,*keyHook=nullptr,*maskHook=nullptr;
+ using PressedFn=bool(*)(IKeyboard*,uint32_t,bool);
+@@ -251,20 +255,8 @@
+     if(dbus_message_get_type(m)!=DBUS_MESSAGE_TYPE_METHOD_CALL||std::string(dbus_message_get_path(m)?dbus_message_get_path(m):"")!=PATH)return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
+     const char* sender=dbus_message_get_sender(m);
+     if(dbus_message_is_method_call(m,DBUS_INTERFACE_INTROSPECTABLE,"Introspect")) {
+-        constexpr const char* xml="<node><interface name='org.freedesktop.a11y.KeyboardMonitor'><method name='WatchKeyboard'/><method name='UnwatchKeyboard'/><method name='GrabKeyboard'/><method name='UngrabKeyboard'/><method name='SetKeyGrabs'><arg type='au' direction='in'/><arg type='a(uu)' direction='in'/></method><signal name='KeyEvent'><arg type='b'/><arg type='u'/><arg type='u'/><arg type='u'/><arg type='q'/></signal></interface><interface name='org.freedesktop.a11y.PointerLocator'><method name='QueryPointer'><arg type='a{sv}' direction='out'/><arg type='d' direction='out'/><arg type='d' direction='out'/></method><signal name='PointerPositionChanged'/></interface><interface name='org.omarchy.KeyboardMonitorProbe'><method name='State'><arg type='s' direction='out'/></method><method name='PrepareUnload'><arg type='b' direction='out'/></method></interface></node>";
++        constexpr const char* xml="<node><interface name='org.freedesktop.a11y.KeyboardMonitor'><method name='WatchKeyboard'/><method name='UnwatchKeyboard'/><method name='GrabKeyboard'/><method name='UngrabKeyboard'/><method name='SetKeyGrabs'><arg type='au' direction='in'/><arg type='a(uu)' direction='in'/></method><signal name='KeyEvent'><arg type='b'/><arg type='u'/><arg type='u'/><arg type='u'/><arg type='q'/></signal></interface><interface name='org.freedesktop.a11y.PointerLocator'><method name='QueryPointer'><arg type='a{sv}' direction='out'/><arg type='d' direction='out'/><arg type='d' direction='out'/></method><signal name='PointerPositionChanged'/></interface></node>";
+         auto* r=dbus_message_new_method_return(m);dbus_message_append_args(r,DBUS_TYPE_STRING,&xml,DBUS_TYPE_INVALID);send(r);return DBUS_HANDLER_RESULT_HANDLED;
+-    }
+-    if(dbus_message_has_interface(m,"org.omarchy.KeyboardMonitorProbe")) {
+-        if(dbus_message_has_member(m,"PrepareUnload")) {
+-            dbus_bool_t ready=unloadQuiescent();if(ready){retiring=true;policy.stop();pointerRetire();}
+-            auto* r=dbus_message_new_method_return(m);dbus_message_append_args(r,DBUS_TYPE_BOOLEAN,&ready,DBUS_TYPE_INVALID);send(r);return DBUS_HANDLER_RESULT_HANDLED;
+-        }
+-        if(dbus_message_has_member(m,"State")) {
+-            const auto caller=sender?policy.clients.find(sender):policy.clients.end();
+-            const bool preReplay=sender&&registered(sender)&&(caller==policy.clients.end()||(!caller->second.full&&caller->second.modifiers.empty()&&caller->second.strokes.empty()));
+-            const auto value=std::string("{\"retiring\":")+(retiring?"true":"false")+",\"unloadQuiescent\":"+(unloadQuiescent()?"true":"false")+",\"registrations\":"+std::to_string(registrations.size())+",\"clients\":"+std::to_string(policy.clients.size())+",\"devices\":"+std::to_string(devices.size())+",\"quiescent\":"+(policy.quiescent()?"true":"false")+",\"callerPreReplay\":"+(preReplay?"true":"false")+",\"pointerPending\":"+std::to_string(pointerState.pendingCount())+",\"pointerDeferred\":"+std::to_string(pointerFence.notes.size())+",\"pointerFences\":"+std::to_string(pointerFenceCalls.size())+",\"pointerDiscarded\":"+std::to_string(pointerFence.discarded)+",\"pointerEmitted\":"+std::to_string(pointerFence.emitted)+",\"nativeInputProved\":false}";
+-            const char* s=value.c_str();auto* r=dbus_message_new_method_return(m);dbus_message_append_args(r,DBUS_TYPE_STRING,&s,DBUS_TYPE_INVALID);send(r);return DBUS_HANDLER_RESULT_HANDLED;
+-        }
+     }
+     if(dbus_message_has_interface(m,POINTER_IFACE)) {
+         if(retiring||initializing){error(m,"org.freedesktop.a11y.ServiceRetired","service retired");return DBUS_HANDLER_RESULT_HANDLED;}
+@@ -301,7 +293,16 @@
+     pollPointerNotifications();
+     wl_event_source_timer_update(timer,5);return 0;
+ }
++int luaIdentity(lua_State* L){return OmarchyA11yMaintenance::identity(L,maintenance);}
++int luaPrepare(lua_State* L){return OmarchyA11yMaintenance::prepare(L,maintenance);}
++int luaCapability(lua_State* L){return OmarchyA11yMaintenance::capability(L,maintenance);}
++void removeLua() {
++    if(!luaRegistered)return;
++    for(const char* name:{"identity","prepare_unload","capability_status"})HyprlandAPI::removeLuaFunction(handle,"omarchy_a11y",name);
++    luaRegistered=false;
++}
+ void cleanup() {
++    removeLua();
+     pointerCleanup();
+     if(timer){wl_event_source_remove(timer);timer=nullptr;}
+     if(bus){dbus_connection_remove_filter(bus,dispatch,nullptr);dbus_connection_close(bus);dbus_connection_unref(bus);bus=nullptr;}
+@@ -319,18 +320,23 @@
+     handle=h;
+     const char* enabled=getenv("HYPR_A11Y_BRIDGE_PRIVATE");const char* runtime=getenv("XDG_RUNTIME_DIR");
+     const char* address=getenv("DBUS_SESSION_BUS_ADDRESS");
+-    if(!enabled||std::string(enabled)!="1"||!PrivateRuntime::allowed(runtime))
+-        throw std::runtime_error("candidate restricted to explicit private keyboard-native runtime");
++    if(!ProductionRuntime::allowed(runtime,enabled))
++        throw std::runtime_error("production bridge requires exact owned session runtime or scoped private proof");
+     const auto expected=std::string("unix:path=")+runtime+"/bus";
+     const auto configured=address?std::string(address):std::string();
+     struct stat socketStat{};
+-    if((configured!=expected&&!configured.starts_with(expected+","))||lstat((std::string(runtime)+"/bus").c_str(),&socketStat)||!S_ISSOCK(socketStat.st_mode)||socketStat.st_uid!=getuid())
+-        throw std::runtime_error("candidate requires its own D-Bus socket inside private runtime");
++    if(!ProductionRuntime::busAddressAllowed(configured,expected)||lstat((std::string(runtime)+"/bus").c_str(),&socketStat)||!S_ISSOCK(socketStat.st_mode)||socketStat.st_uid!=getuid())
++        throw std::runtime_error("production bridge requires exact own session D-Bus socket");
+     if(HyprlandAPI::getHyprlandVersion(handle).hash!=HASH)throw std::runtime_error("exact Hyprland ABI mismatch");
++    const auto incarnation=ProductionRuntime::nonce();
++    if(g_pCompositor->m_instanceSignature.empty())throw std::runtime_error("compositor instance unavailable");
+     try {
+         DBusError err;dbus_error_init(&err);
+         bus=dbus_bus_get_private(DBUS_BUS_SESSION,&err);
+         if(!bus){std::string why=err.message?err.message:"private D-Bus unavailable";dbus_error_free(&err);throw std::runtime_error(why);}
++        int fd=-1;struct stat after{};
++        if(!dbus_connection_get_unix_fd(bus,&fd)||!ProductionRuntime::peerUID(fd)||lstat((std::string(runtime)+"/bus").c_str(),&after)||after.st_dev!=socketStat.st_dev||after.st_ino!=socketStat.st_ino)
++            throw std::runtime_error("session bus peer/socket identity changed");
+         dbus_connection_set_exit_on_disconnect(bus,false);
+         // Subscribe before snapshot; never infer client policy from names.
+         // The service name is claimed only after bounded owner reconciliation.
+@@ -392,11 +398,25 @@
+         timer=wl_event_loop_add_timer(g_pCompositor->m_wlEventLoop,poll,nullptr);
+         if(!timer)throw std::runtime_error("Wayland dispatch timer allocation");
+         wl_event_source_timer_update(timer,5);
++        maintenance={g_pCompositor->m_instanceSignature,PACKAGE,incarnation,
++            []{const auto* name=bus?dbus_bus_get_unique_name(bus):nullptr;return name?std::string(name):std::string();},
++            [](const std::string& client){
++                const auto caller=policy.clients.find(client);
++                const bool registration=bus&&dbus_connection_get_is_connected(bus)&&registered(client.c_str());
++                const bool preReplay=registration&&(caller==policy.clients.end()||(!caller->second.full&&caller->second.modifiers.empty()&&caller->second.strokes.empty()));
++                return OmarchyA11yMaintenance::Status{retiring||initializing,policy.quiescent(),unloadQuiescent(),registration,preReplay};
++            },[]{return unloadQuiescent();},[]{retiring=true;policy.stop();pointerRetire();}};
++        // Track before the first registration, so partial failures remove all.
++        luaRegistered=true;
++        if(!HyprlandAPI::addLuaFunction(handle,"omarchy_a11y","identity",luaIdentity)
++            ||!HyprlandAPI::addLuaFunction(handle,"omarchy_a11y","prepare_unload",luaPrepare)
++            ||!HyprlandAPI::addLuaFunction(handle,"omarchy_a11y","capability_status",luaCapability))
++            throw std::runtime_error("production maintenance Lua registration failed");
+     } catch(...) {
+         for(auto* entry:{pressedHook,keyHook,maskHook,motionHook})if(entry)HyprlandAPI::removeFunctionHook(handle,entry);
+         pressedHook=keyHook=maskHook=motionHook=nullptr;cleanup();throw;
+     }
+-    return {"keyboard-monitor-private","Exact ABI keyboard monitor isolated candidate","local parity QA","0.8-private-pointer-fence"};
++    return {"omarchy-a11y-monitor","Exact ABI native accessibility monitor; explicit reader subscriptions","Omarchy Orca compatibility","0.8-production-v2"};
+ }
+ APICALL EXPORT void PLUGIN_EXIT() {
+     // PrepareUnload is the normal quiescence precondition. Accepted keys stay

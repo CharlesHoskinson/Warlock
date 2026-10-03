@@ -1,0 +1,53 @@
+{
+  "retainedRawSHA256": "c37547e7dea7b6ba77c9341b905f698de1e2bb8b4fa7880bf392c1dea055911a",
+  "rawBlocksIndependentlyVerified": true,
+  "actualFailureIsOnlyFullMode600": true,
+  "stat": {
+    "st_mode": 32768,
+    "st_ino": 76787,
+    "st_dev": 33,
+    "st_nlink": 0,
+    "st_uid": 1000,
+    "st_gid": 1000,
+    "st_size": 2960,
+    "st_atime_ns": 1790898483612580762,
+    "st_mtime_ns": 1790898478414816993,
+    "st_ctime_ns": 1790898478414816993,
+    "st_blocks": 8,
+    "st_blksize": 4096,
+    "st_rdev": 0,
+    "fileType": 32768,
+    "fullMode": 0,
+    "deviceMajor": 0,
+    "deviceMinor": 33
+  },
+  "fdinfo": {
+    "flags": 688128,
+    "mnt_id": 35,
+    "ino": 76787
+  },
+  "mapping": {
+    "line": "71c536c08000-71c536c09000 r--p 00000000 00:21 76787                      /dev/shm/0131dc6d-11c0-486f-8a24-d61e19c6063d (deleted)",
+    "begin": 125091841081344,
+    "end": 125091841085440,
+    "offset": 0,
+    "permissions": "r--p",
+    "device": 33,
+    "inode": 76787,
+    "path": "/dev/shm/0131dc6d-11c0-486f-8a24-d61e19c6063d (deleted)"
+  },
+  "target": "/dev/shm/0131dc6d-11c0-486f-8a24-d61e19c6063d (deleted)",
+  "selectedMount": {
+    "id": 35,
+    "device": 33,
+    "root": "/",
+    "path": "/dev/shm",
+    "type": "tmpfs",
+    "source": "tmpfs",
+    "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+  },
+  "installedBinarySourceEvidence": "/home/hoskinson/window-integration-qa/browser-files-flow-v9/installed-shm-pair-evidence.json",
+  "priorFailureRetained": true,
+  "implementedPolicy": "Exact fullMode0000 only; no permission or special-bit alternatives; all other conjuncts unchanged",
+  "nativeExecuted": false
+}

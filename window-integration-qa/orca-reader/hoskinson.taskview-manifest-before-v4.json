@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "hoskinson.taskview",
+  "name": "Task View",
+  "version": "1.2.0",
+  "author": "hoskinson",
+  "description": "Windows-style overview of windows and virtual desktops.",
+  "kinds": [
+    "overlay"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "overlay": "overlay_v12/TaskView.qml"
+  }
+}

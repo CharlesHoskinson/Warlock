@@ -1,0 +1,102 @@
+{
+  "updatedUTC": "2026-10-01T22:16:54.583230+00:00",
+  "reportSHA256": "ee9fb2d5b3de38cd3221c69b43d67afdef01a5e86c82afd22a5ce0c06acee509",
+  "manifestSHA256": "557e7bff8caaf35b82ce32114b90f8a5b3099e57abf51f5a798596b84d7e15fc",
+  "independentChecks": {
+    "all40036FrozenBytesModesExact": true,
+    "all13758LinksExact": true,
+    "all18MainPreserved": true,
+    "allRecordedPIDStartGone": true,
+    "privateRuntimeGone": true,
+    "noUnexpectedOrRemainingHelpers": true,
+    "normalBrowserAndNoForcedCleanup": true,
+    "nativeProbeAndPluginUnloadedNormally": true,
+    "healthyArchivedParentTransport": true,
+    "actualPrivateBusActivationPolicyVerified": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "privateBrowserFilesAccepted": false,
+  "rendererSandboxAccepted": false,
+  "FilesFocusFlowReached": false,
+  "normalAllPrivateHelpersAccepted": true,
+  "privateBusActivationPolicyVerified": true,
+  "processes": [
+    {
+      "pid": 1462255,
+      "start": "11529573",
+      "gone": true
+    },
+    {
+      "pid": 1462260,
+      "start": "11529577",
+      "gone": true
+    },
+    {
+      "pid": 1462270,
+      "start": "11529636",
+      "gone": true
+    },
+    {
+      "pid": 1462255,
+      "start": "11529573",
+      "gone": true
+    },
+    {
+      "pid": 1462260,
+      "start": "11529577",
+      "gone": true
+    },
+    {
+      "pid": 1462270,
+      "start": "11529636",
+      "gone": true
+    },
+    {
+      "pid": 1462389,
+      "start": "11529948",
+      "gone": true
+    },
+    {
+      "pid": 1462450,
+      "start": "11529972",
+      "gone": true
+    },
+    {
+      "pid": 1462451,
+      "start": "11529972",
+      "gone": true
+    },
+    {
+      "pid": 1462453,
+      "start": "11529974",
+      "gone": true
+    },
+    {
+      "pid": 1462480,
+      "start": "11529979",
+      "gone": true
+    },
+    {
+      "pid": 1462482,
+      "start": "11529980",
+      "gone": true
+    },
+    {
+      "pid": 1462517,
+      "start": "11529982",
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "failure": "AssertionError('Actual app bus/VFS environment authority mismatch')",
+  "rawOwnedProcessEvidenceSHA256": "2d8746888eb7d4c2bdef34129a6a40d404d94d464e1d8f04a6efd69f2f52ee02",
+  "processTitleObservedButLiveLibcEnvironmentNotObserved": true,
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false
+}

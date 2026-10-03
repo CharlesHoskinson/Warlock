@@ -1,0 +1,44 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/viewport_geometry_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  viewport_geometry_test\n    ok exactPairTest passed 1 test(s)\n    ok beforePairRefusedTest passed 1 test(s)\n    ok syntheticRefusedTest passed 1 test(s)\n    ok staleSequenceRefusedTest passed 1 test(s)\n    ok wrongTranslationRefusedTest passed 1 test(s)\n    ok buttonsRefusedTest passed 1 test(s)\n    ok wrongLifetimeRefusedTest passed 1 test(s)\n    ok sessionChangeRevokesTest passed 1 test(s)\n    ok layoutChangeRevokesTest passed 1 test(s)\n    ok surfaceChangeRevokesTest passed 1 test(s)\n    ok basisChangeRevokesTest passed 1 test(s)\n    ok focusOrDraftChangeRefusedTest passed 1 test(s)\n    ok wrongHitRefusedTest passed 1 test(s)\n    ok nonfiniteRefusedTest passed 1 test(s)\n    ok outOfBoundsRefusedTest passed 1 test(s)\n    ok duplicatePointRefusedTest passed 1 test(s)\n    ok touchRefusedTest passed 1 test(s)\n    ok nonprimaryRefusedTest passed 1 test(s)\n    ok invalidationRevokesTest passed 1 test(s)\n\n  19 passing (450ms)\n",
+      "stderr": "Running as unit: qa-harness-96c3f6cbb1944430b70c8ff95cdec6a5.scope; invocation ID: f8760bc158bc41ac86bac8b36aeb479c\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/viewport_geometry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (1000ms at 2000 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": "Running as unit: qa-harness-812e3696ff424dfab465a18729d4bf18.scope; invocation ID: fc384ab7476f400c84af9011f67120c8\n"
+    }
+  ],
+  "nativeExecuted": false,
+  "runtimeStillExactFrozenV13": true,
+  "namedCases": 19,
+  "randomTraces": 2000,
+  "maxSteps": 100,
+  "sourceSHA256": {
+    "V14_GEOMETRY_CONTRACT.md": "762d050208cddffdffce674c5f6d1c119bbf63980c97694b53d9b0a9815fc3db",
+    "viewport_geometry.qnt": "1d8c2e9ae28dfd858c6d18d160b6da66c98ffa4f8f0742bd81e90962aadeaa18",
+    "viewport_geometry_test.qnt": "8d864d56130371a3857ea104aa71541dfaa41ce401601a70c3686bdb16bbfa9b",
+    "private_session.py": "4351a20bb62645df2a8b41972d7de692039eef2c079bd2f6533340315d9300e4",
+    "compose.html": "2f59cfe679c48691ff82b245a8f299953b934367992e5fa04f06ac7d25c17638",
+    "cdp_readonly.py": "8f544e6604aba21c37f2fea5b762326c3dc99067ac9de7d93502706c03949d63"
+  },
+  "retainedPreparationFailure": "Initial assignment missing parentheses produced QNT000 effect-unification error; fixed before runtime. No native execution or false passing proof."
+}

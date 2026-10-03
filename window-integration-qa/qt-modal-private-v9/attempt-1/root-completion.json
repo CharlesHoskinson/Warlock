@@ -1,0 +1,63 @@
+{
+  "updatedUTC": "2026-10-01T15:30:40.225285+00:00",
+  "reportSHA256": "e7f0a07338e1e84b8db468206f9bf1d1295ee8d55aea1757eac3ff72811467c5",
+  "frozenFileCount": 3644,
+  "frozenLinkCount": 6,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7e31713dbb344835adbb3afb3b834706.scope",
+    "coreLimit": 1
+  },
+  "independentChecks": {
+    "allFrozenFilesExact": true,
+    "allFrozenLinksExact": true,
+    "all18MainPreservationChecks": true,
+    "normalOwnedFixtureShutdown": true,
+    "privateClientsGoneBeforeUnload": true,
+    "bothNativeModulesUnloadedNormally": true,
+    "allRecordedProcessIdentitiesGone": true,
+    "privateRuntimeGone": true,
+    "noCleanupErrorsOrUnexpectedSurvivors": true,
+    "archivedParentTransportHealthy": true
+  },
+  "allIndependentChecks": true,
+  "processes": [
+    {
+      "pid": 712498,
+      "start": "9105884",
+      "gone": true
+    },
+    {
+      "pid": 712499,
+      "start": "9105887",
+      "gone": true
+    },
+    {
+      "pid": 712515,
+      "start": "9105943",
+      "gone": true
+    },
+    {
+      "pid": 712635,
+      "start": "9106210",
+      "gone": true
+    },
+    {
+      "pid": 712672,
+      "start": "9106266",
+      "gone": true
+    }
+  ],
+  "archivedTransport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "logHashes": {
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v9/attempt-1/host/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790868586_2128440738/hyprland.log": "a45497f21bfeb4c9862e5d002aa8b6c8a24e1dd9750bc35ecd4d37b1d6f87ccd",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v9/attempt-1/host/weston-renderer.log": "ca9c9b7db91f5ae14a993049e43fc67cc1ffdfb230a95ce780d4b0710f729f60"
+  },
+  "toolkitAccepted": true,
+  "toolkitFailure": null,
+  "fullWindowsParityAccepted": false
+}

@@ -1,0 +1,36 @@
+{
+  "result": "pass",
+  "updatedUTC": "2026-10-02T05:06:23.891734+00:00",
+  "cpuKernelTests": 30,
+  "command": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1",
+    "-p",
+    "test_helper.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "Running as unit: qa-harness-d81084d25b3c4ded818b9e3b80e04774.scope; invocation ID: 5a823455e4314c27a0d4bb0e04d08a42\ntest_fsync_failure_propagates (test_helper.EvidenceTests.test_fsync_failure_propagates) ... ok\ntest_full_short_writes_and_fsync (test_helper.EvidenceTests.test_full_short_writes_and_fsync) ... ok\ntest_zero_write_refused (test_helper.EvidenceTests.test_zero_write_refused) ... ok\ntest_actual_direct_shebang_exact_executable_argv_and_durable_evidence (test_helper.ExecutableTests.test_actual_direct_shebang_exact_executable_argv_and_durable_evidence) ... ok\ntest_actual_malformed_completed_token_is_exit3_without_completion (test_helper.ExecutableTests.test_actual_malformed_completed_token_is_exit3_without_completion) ... ok\ntest_actual_native_refusal_is_exit2 (test_helper.ExecutableTests.test_actual_native_refusal_is_exit2) ... ok\ntest_actual_wrong_argv_refuses_before_any_send (test_helper.ExecutableTests.test_actual_wrong_argv_refuses_before_any_send) ... ok\ntest_actual_wrong_interpreter_refuses_before_any_send (test_helper.ExecutableTests.test_actual_wrong_interpreter_refuses_before_any_send) ... ok\ntest_before_pin_must_be_boolean_and_toggled (test_helper.ParserTests.test_before_pin_must_be_boolean_and_toggled) ... ok\ntest_command_has_only_full_token_and_no_fallback (test_helper.ParserTests.test_command_has_only_full_token_and_no_fallback) ... ok\ntest_duplicate_and_nonfinite_json_refused (test_helper.ParserTests.test_duplicate_and_nonfinite_json_refused) ... ok\ntest_explicit_native_partial_failure_stays_visible (test_helper.ParserTests.test_explicit_native_partial_failure_stays_visible) ... ok\ntest_explicit_native_validation_refusal (test_helper.ParserTests.test_explicit_native_validation_refusal) ... ok\ntest_foreign_native_refusal_token_is_uncertain (test_helper.ParserTests.test_foreign_native_refusal_token_is_uncertain) ... ok\ntest_foreign_token_is_uncertain (test_helper.ParserTests.test_foreign_token_is_uncertain) ... ok\ntest_inconsistent_native_refusal_phase_is_uncertain (test_helper.ParserTests.test_inconsistent_native_refusal_phase_is_uncertain) ... ok\ntest_inconsistent_partial_flag_is_uncertain (test_helper.ParserTests.test_inconsistent_partial_flag_is_uncertain) ... ok\ntest_missing_or_malformed_completed_token_is_uncertain (test_helper.ParserTests.test_missing_or_malformed_completed_token_is_uncertain) ... ok\ntest_no_action_cannot_claim_complete (test_helper.ParserTests.test_no_action_cannot_claim_complete) ... ok\ntest_original_malformed_completion_counterexample (test_helper.ParserTests.test_original_malformed_completion_counterexample) ... ok\ntest_owner_projection_and_state_guards (test_helper.ParserTests.test_owner_projection_and_state_guards) ... ok\ntest_toggle_from_pinned_to_unpinned (test_helper.ParserTests.test_toggle_from_pinned_to_unpinned) ... ok\ntest_valid_exact_toggle (test_helper.ParserTests.test_valid_exact_toggle) ... ok\ntest_actual_drip_cannot_reset_deadline (test_helper.TransportTests.test_actual_drip_cannot_reset_deadline) ... ok\ntest_actual_peer_full_eof_raw_before_parse (test_helper.TransportTests.test_actual_peer_full_eof_raw_before_parse) ... ok\ntest_malformed_after_send_uncertain (test_helper.TransportTests.test_malformed_after_send_uncertain) ... ok\ntest_post_send_publication_failure_cannot_reclassify (test_helper.TransportTests.test_post_send_publication_failure_cannot_reclassify) ... ok\ntest_pre_send_guard_uses_original_deadline (test_helper.TransportTests.test_pre_send_guard_uses_original_deadline) ... ok\ntest_socket_replacement_after_send_uncertain (test_helper.TransportTests.test_socket_replacement_after_send_uncertain) ... ok\ntest_wrong_actual_peer_before_send (test_helper.TransportTests.test_wrong_actual_peer_before_send) ... ok\n\n----------------------------------------------------------------------\nRan 30 tests in 6.180s\n\nOK\n",
+  "sources": {
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/retained-initial.py": "b125dd94cd7d3f201279b3b0f16619fa2bf0b530f43c4c352deb6eca2d941842",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/initial-counterexample.json": "3def8d606393570ad8917c3a6743abe142dfd7741c6932d3f87e51ca9bb2bb60",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/BOUNDARY_CONTRACT.md": "f67e66b5b02040248d972044c12f2602432d9006f6ef20d9536ce8cbd89874b4",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/helper_boundary.qnt": "435d5d7cdf7f6bec092dce1f9188e31223cb07fad6c72013c1d0168876607734",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/formal-before-runtime-v1.json": "6b76d6d8123fe95831dbaefb7a53b89552c689ffef6ceaafa11e84e58a274588",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/pin_helper.py": "34c00b57fd612d7d078fb2c93cfee0b402081349d965e173ba03d2186b05c1cf",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/test_helper.py": "73fedb468c84ba34721b0710d2d0949859a73f810125e4ec1fe721249ed62006"
+  },
+  "nativePluginExecuted": false,
+  "syntheticRepliesOnly": true,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false
+}

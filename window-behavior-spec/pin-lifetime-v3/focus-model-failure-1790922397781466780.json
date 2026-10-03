@@ -1,0 +1,36 @@
+{
+  "result": "fail",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_focus.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pin_focus\n    ok exactBothRoutesCompleteTest passed 1 test(s)\n    ok changedCoreRefusesPartialTest passed 1 test(s)\n    ok sameCoreWrongSeatRefusesTest passed 1 test(s)\n    ok noObservationNoCompleteTest passed 1 test(s)\n    ok noRefocusOrRetryTest passed 1 test(s)\n\n  5 passing (216ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_focus.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 1,
+      "stdout": "[violation] Found an issue (75ms at 13 traces/second).\nUse --seed=0x1352889 --backend=rust to reproduce.\n",
+      "stderr": "error: Invariant violated\n"
+    }
+  ],
+  "sourceSHA256": {
+    "pin_focus.qnt": "d9373cf0ce659df3b0cbfa19a615efcd2176320abb16a071adf7868e9145e435",
+    "FOCUS_PRESERVATION_CONTRACT.md": "9dd857f24b8f3f3e14fbd3d6c5895e88c64c3e7473661d9fa9f4925b3bb30836"
+  },
+  "implementationUnchanged": true,
+  "nativeExecuted": false
+}

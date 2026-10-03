@@ -1,0 +1,62 @@
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Aaron Blasko <blaskoazzolaaaron [at] gmail.com>
+
+pkgname=xdg-desktop-portal-hyprland
+pkgver=1.4.1
+_protocolver=cc9a8fd253bdc00f48a967ecf4828211ef08751f  # v0.7.1 (local: pinned commit lacks input-capture)
+pkgrel=2.1
+pkgdesc='xdg-desktop-portal backend for hyprland'
+url="https://github.com/hyprwm/$pkgname"
+arch=(x86_64)
+license=(MIT)
+provides=(xdg-desktop-portal-impl)
+depends=(
+         libgcc
+         libstdc++
+         glibc
+         hyprlang libhyprlang.so
+         hyprutils libhyprutils.so
+         libinih
+         pipewire
+         qt6-base
+         sdbus-cpp libsdbus-c++.so
+         util-linux-libs libuuid.so
+         xdg-desktop-portal
+)
+makedepends=(cmake
+             hyprland-protocols
+             hyprwayland-scanner
+             wayland
+             wayland-protocols)
+optdepends=('grim: required for the screenshot portal to function'
+            'slurp: support for interactive mode for the screenshot portal')
+_archive="$pkgname-$pkgver"
+source=("$url/archive/v$pkgver/$_archive.tar.gz"
+        "https://github.com/hyprwm/hyprland-protocols/archive/$_protocolver.tar.gz"
+        pr429.diff)
+sha256sums=('3652c14f63a9666acea2c841e196782dbc0f74ea5b4783622dd04a32f08b709f'
+            'SKIP'
+            SKIP)
+
+prepare() {
+	# upstream PR #429: destroy Wayland proxies before wl_display_disconnect (exit-time UAF)
+	patch -d "$_archive" -Np1 -i "$srcdir/pr429.diff"
+	cd "$_archive/subprojects"
+	rm -rf hyprland-protocols sdbus-cpp
+	ln -sfT "$srcdir/hyprland-protocols-$_protocolver" hyprland-protocols
+}
+
+build() {
+	cd "$_archive"
+	cmake -B build \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBEXECDIR=/usr/lib \
+		-D CMAKE_BUILD_TYPE=Release
+	cmake --build build
+}
+
+package() {
+	cd "$_archive"
+	DESTDIR="$pkgdir" cmake --install build
+	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
+}

@@ -1,0 +1,55 @@
+{
+  "updatedUTC": "2026-10-02T02:41:31.197143+00:00",
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  reduction_validation_test\n    ok reductionPreservesBlockedInitialReceiptTest passed 1 test(s)\n    ok validatedInitialReducedRequestCompletesTest passed 1 test(s)\n    ok duplicateWatchdogCannotDuplicateCommitTest passed 1 test(s)\n    ok reductionQueuesExactOldVisualTest passed 1 test(s)\n    ok prematureValidationCannotPassRetirementTest passed 1 test(s)\n    ok cancelAckPreservesReceiptRequiresFreshTokenTest passed 1 test(s)\n    ok oldValidationAfterAckRefusedTest passed 1 test(s)\n    ok freshValidationAfterAckSettlesLatestTest passed 1 test(s)\n    ok newerReceiptRetainsOldRetirementTest passed 1 test(s)\n    ok oldAckCannotSupplyNewContextTest passed 1 test(s)\n    ok latestContextAndFreshValidationOnlyTest passed 1 test(s)\n    ok reductionOffCannotReviveOldVisualTest passed 1 test(s)\n    ok offAfterAckNeedsFreshAnimationPreparationTest passed 1 test(s)\n    ok wrongAckRetainsSourcesTest passed 1 test(s)\n    ok deadlineIsExplicitFailureNotReductionTest passed 1 test(s)\n    ok scopeLossCannotCommitTest passed 1 test(s)\n\n  16 passing (739ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (1005ms at 1990 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "models": 1,
+  "named": 16,
+  "samples": 2000,
+  "steps": 100,
+  "sourceOnly": true,
+  "productChanged": false,
+  "nativeExecuted": false,
+  "hashes": {
+    "REPAIR_CONTRACT.md": "ade3d552a346bb02a06afdf97905e76b409d4382ef8ce8f7bf569190610328a3",
+    "reduction_validation.qnt": "12803d4361b2ea5cee19e9381d7009cf6fe165072707df8f90bb1e72e39839a4",
+    "reduction_validation_test.qnt": "be7aa8776bf8b11e997a73685c8a7dec93564672e733988e066c315c0ef3518c",
+    "probe.py": "abc233610daa80e7528f27f2e2395dfcb2a3bcb103870bff97a44c855542b119",
+    "result.json": "b2989f43710bec5b238cb98f59b39097616ec82a3bf011904ae7514f55744b19"
+  }
+}

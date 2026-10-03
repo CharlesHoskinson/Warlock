@@ -1,0 +1,420 @@
+{
+  "result": "counterexample-confirmed",
+  "GUI": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-536f2095b6284ff3aed615c0ffd2a368.scope",
+    "coreLimit": 1
+  },
+  "cases": [
+    {
+      "label": "original-v26",
+      "profile": {
+        "receivedNs": 185162144789419,
+        "reservedNs": 185162144790164,
+        "ingressCommand": "restore",
+        "contextPending": false,
+        "metadataStartNs": 185162145175640,
+        "resolvedDirection": "restore",
+        "metadataValidatedNs": 185164211497453,
+        "nativeEndpointAlreadySatisfied": true,
+        "cleanupQueuedNs": 185164229528636,
+        "settlementReason": "native endpoint already satisfied",
+        "cleanupAckNs": 185164229537739
+      },
+      "validated": true,
+      "results": [
+        {
+          "identity": [
+            "0xaa01",
+            "aa01",
+            41
+          ],
+          "operation": "restore",
+          "reason": "native endpoint already satisfied",
+          "committedNs": 185164229468015
+        },
+        {
+          "identity": [
+            "0xbb02",
+            "bb02",
+            42
+          ],
+          "operation": "restore",
+          "reason": "native endpoint already satisfied",
+          "committedNs": 185164229497764
+        },
+        {
+          "identity": [
+            "0xcc03",
+            "cc03",
+            43
+          ],
+          "operation": "restore",
+          "reason": "native endpoint already satisfied",
+          "committedNs": 185164229514105
+        }
+      ],
+      "focus": [],
+      "refresh": [],
+      "messages": [],
+      "readonly": {
+        "version": 1,
+        "issuer": {
+          "pid": 734351,
+          "start": 19728124,
+          "uid": 1000,
+          "root": "/tmp/readonly-cpu-lyhgsupg/service",
+          "rootIdentity": [
+            57,
+            1410143
+          ],
+          "lockIdentity": [
+            57,
+            1410148
+          ],
+          "nonce": "9229e8de3b8742e0a749cdd4b193f6f6",
+          "session": "cpu-readonly",
+          "environment": {
+            "XDG_RUNTIME_DIR": "/tmp/readonly-cpu-lyhgsupg",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-readonly",
+            "WAYLAND_DISPLAY": "cpu-wayland"
+          },
+          "compositorPID": 734351,
+          "compositorStart": 19728124,
+          "socket": "/tmp/readonly-cpu-lyhgsupg/hypr/cpu-readonly/.socket.sock",
+          "socketIdentity": [
+            57,
+            1410146
+          ],
+          "adapter": {
+            "device": 58,
+            "inode": 30469139,
+            "size": 19577,
+            "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+            "seals": null
+          },
+          "sessionSource": {
+            "device": 58,
+            "inode": 30469248,
+            "size": 20989,
+            "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b",
+            "seals": null
+          },
+          "executable": "/usr/bin/hyprctl",
+          "executableMaterial": {
+            "device": 32,
+            "inode": 114194,
+            "size": 272680,
+            "sha256": "2780a8bb56494917a725f817c9cf70fb5cc2f39aac5abc62ecf2e619a1f13ec5",
+            "seals": null
+          }
+        },
+        "history": [
+          {
+            "id": "14b36f982a624ecca66facfb4c8ad6e9",
+            "actor": 17,
+            "thread": 734391,
+            "fd": 7,
+            "fdIdentity": [
+              10,
+              43644078
+            ],
+            "issuerSHA256": "20f5e712eae337dc15b671e65325de87c08ca48fc80c0a447186d420611dd956",
+            "request": "j/clients",
+            "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+            "registeredNs": 185162149825673,
+            "closed": true,
+            "published": true,
+            "outcome": "complete",
+            "evidence": {
+              "completeServerEOF": true,
+              "replyBytes": 458,
+              "replySHA256": "9ec5ad5a93fe60f4efa78a5c718526d8c9b15ccb4fd180da5fb372b43a2a2767",
+              "peer": {
+                "pid": 734351,
+                "uid": 1000,
+                "gid": 1000
+              },
+              "socketIdentity": [
+                57,
+                1410146
+              ]
+            },
+            "error": null,
+            "finishedNs": 185162155292009
+          },
+          {
+            "id": "43e380af74e54d278e07beaf36d14fd7",
+            "actor": 17,
+            "thread": 734391,
+            "fd": 8,
+            "fdIdentity": [
+              10,
+              43644136
+            ],
+            "issuerSHA256": "20f5e712eae337dc15b671e65325de87c08ca48fc80c0a447186d420611dd956",
+            "request": "j/clients",
+            "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+            "registeredNs": 185164216355793,
+            "closed": true,
+            "published": true,
+            "outcome": "complete",
+            "evidence": {
+              "completeServerEOF": true,
+              "replyBytes": 458,
+              "replySHA256": "9ec5ad5a93fe60f4efa78a5c718526d8c9b15ccb4fd180da5fb372b43a2a2767",
+              "peer": {
+                "pid": 734351,
+                "uid": 1000,
+                "gid": 1000
+              },
+              "socketIdentity": [
+                57,
+                1410146
+              ]
+            },
+            "error": null,
+            "finishedNs": 185164223994195
+          }
+        ],
+        "fault": false
+      },
+      "cpuCommitMarkers": [
+        [
+          "restore",
+          [
+            "0xaa01",
+            "aa01",
+            41
+          ],
+          true
+        ],
+        [
+          "restore",
+          [
+            "0xbb02",
+            "bb02",
+            42
+          ],
+          false
+        ],
+        [
+          "restore",
+          [
+            "0xcc03",
+            "cc03",
+            43
+          ],
+          false
+        ]
+      ],
+      "noWatchdogCalled": true,
+      "workersDrained": true,
+      "actualKeeperTerminal": {
+        "allGroupsEmpty": true,
+        "closedNs": 185164231359962,
+        "jobs": [],
+        "keeperPID": 734387,
+        "keeperStart": 19728202,
+        "nonce": "185789c7d7574f2ab154b1b20ba06ec1",
+        "normalStop": true,
+        "registrations": 0,
+        "rootIdentity": [
+          57,
+          1410143
+        ],
+        "servicePID": 734351,
+        "serviceStart": 19728124
+      },
+      "normalStop": true,
+      "fixtureRuntimeGone": true
+    },
+    {
+      "label": "current-v27",
+      "profile": {
+        "receivedNs": 185164436450999,
+        "reservedNs": 185164436451732,
+        "ingressCommand": "restore",
+        "contextPending": false,
+        "metadataStartNs": 185164437168086,
+        "resolvedDirection": "restore",
+        "failure": "original scene receipt deadline before destination focus",
+        "cleanupQueuedNs": 185166505721097,
+        "settlementReason": "request rejected: original scene receipt deadline before destination focus",
+        "cleanupAckNs": 185166505730928
+      },
+      "validated": false,
+      "results": [],
+      "focus": [],
+      "refresh": [],
+      "messages": [],
+      "readonly": {
+        "version": 1,
+        "issuer": {
+          "pid": 734351,
+          "start": 19728124,
+          "uid": 1000,
+          "root": "/tmp/readonly-cpu-6wu1xbwa/service",
+          "rootIdentity": [
+            57,
+            1410170
+          ],
+          "lockIdentity": [
+            57,
+            1410175
+          ],
+          "nonce": "63ae00e4bd2f4e85acb024f451d23d00",
+          "session": "cpu-readonly",
+          "environment": {
+            "XDG_RUNTIME_DIR": "/tmp/readonly-cpu-6wu1xbwa",
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-readonly",
+            "WAYLAND_DISPLAY": "cpu-wayland"
+          },
+          "compositorPID": 734351,
+          "compositorStart": 19728124,
+          "socket": "/tmp/readonly-cpu-6wu1xbwa/hypr/cpu-readonly/.socket.sock",
+          "socketIdentity": [
+            57,
+            1410173
+          ],
+          "adapter": {
+            "device": 58,
+            "inode": 30469139,
+            "size": 19577,
+            "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+            "seals": null
+          },
+          "sessionSource": {
+            "device": 58,
+            "inode": 30469248,
+            "size": 20989,
+            "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b",
+            "seals": null
+          },
+          "executable": "/usr/bin/hyprctl",
+          "executableMaterial": {
+            "device": 32,
+            "inode": 114194,
+            "size": 272680,
+            "sha256": "2780a8bb56494917a725f817c9cf70fb5cc2f39aac5abc62ecf2e619a1f13ec5",
+            "seals": null
+          }
+        },
+        "history": [
+          {
+            "id": "0ba16ba182d940679393d5e2b59882bd",
+            "actor": 17,
+            "thread": 734885,
+            "fd": 7,
+            "fdIdentity": [
+              10,
+              43640029
+            ],
+            "issuerSHA256": "710740269c9dc7cf026cd843ce60d91066144b2c0c1bbfbaa77891d946221741",
+            "request": "j/clients",
+            "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+            "registeredNs": 185164442500416,
+            "closed": true,
+            "published": true,
+            "outcome": "complete",
+            "evidence": {
+              "completeServerEOF": true,
+              "replyBytes": 458,
+              "replySHA256": "9ec5ad5a93fe60f4efa78a5c718526d8c9b15ccb4fd180da5fb372b43a2a2767",
+              "peer": {
+                "pid": 734351,
+                "uid": 1000,
+                "gid": 1000
+              },
+              "socketIdentity": [
+                57,
+                1410173
+              ]
+            },
+            "error": null,
+            "finishedNs": 185164448928662
+          }
+        ],
+        "fault": false
+      },
+      "cpuCommitMarkers": [],
+      "noWatchdogCalled": true,
+      "workersDrained": true,
+      "actualKeeperTerminal": {
+        "allGroupsEmpty": true,
+        "closedNs": 185166507544357,
+        "jobs": [],
+        "keeperPID": 734882,
+        "keeperStart": 19728430,
+        "nonce": "52d8f916658b4d4bb39251c5d15f5e92",
+        "normalStop": true,
+        "registrations": 0,
+        "rootIdentity": [
+          57,
+          1410170
+        ],
+        "servicePID": 734351,
+        "serviceStart": 19728124
+      },
+      "normalStop": true,
+      "fixtureRuntimeGone": true
+    }
+  ],
+  "sources": {
+    "/home/hoskinson/window-integration-qa/restore-planning-empty-plan-counterexample-v1/replay.py": {
+      "sha256": "8b6c1ce63596820e55b344e775a73eec5bdf2bcd8a7f09962e6814438ee9335e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py": {
+      "sha256": "8e8935b83496aa85a16dd939e9961cee2bfcbcadd8d92bcbc8d335bcd353b11b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/scene_controller.py": {
+      "sha256": "d45ec2a2c12936c65985d0f2b62d9e93d8b020597472ffc6f16424b547a55258",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/native_desktop.py": {
+      "sha256": "1710013ef0fe5e05da92ab0b8ca95ff024d94eba7f0aeff6b7ab6fc6a1c19dba",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/fixture_restore_planning.py": {
+      "sha256": "f259e2646ca386737d9ccf24a1b34fe3c060f62a1a6b672899ba45ca88553d38",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/owned_commands.py": {
+      "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/owned_launch.py": {
+      "sha256": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/helper_supervisor.py": {
+      "sha256": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/readonly_ipc.py": {
+      "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/native_runtime.py": {
+      "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/service_runtime.py": {
+      "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/production_motion_6d9.py": {
+      "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+      "mode": 420
+    }
+  },
+  "sourceUnchanged": true,
+  "limits": [
+    "Actual old/current SceneController with actual selected NativeDesktop adapter and genuine ReadonlyIPC/RuntimeLease/JournalStore/Keeper.",
+    "All-visible family and explicit first CPU family observation delay2.05s; no watchdog or deadline extension.",
+    "CPU family/pixels/native settlement boundaries unchanged; native core effects/PNG acceptance not claimed.",
+    "Zero focus/refresh/seed in both; original endpoint no-op metadata accepted, added empty-plan guard refuses before validation."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "hoskinson.windows",
+  "name": "Windows",
+  "version": "1.0.0",
+  "author": "hoskinson",
+  "description": "Pinned app launchers, grouped running windows, previews and Jump Lists.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "widget_v62/Windows.qml"
+  },
+  "barWidget": {
+    "displayName": "Windows",
+    "description": "Switch, minimize, and restore running windows.",
+    "category": "Compositor",
+    "allowMultiple": false,
+    "defaultSection": "left"
+  }
+}

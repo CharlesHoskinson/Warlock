@@ -1,0 +1,41 @@
+{
+  "phase": "terminal-post-disk",
+  "capturedRaw": {
+    "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/attempt-baseline-1/actual-terminal-binding.json",
+    "sha256": "add989f7f8493f30a4a1c9958e2a6e92eb9413503e25a1355963f9e8c35a6585",
+    "identity": {
+      "device": 58,
+      "inode": 12120610,
+      "size": 107511,
+      "mode": 384,
+      "uid": 1000,
+      "gid": 1000
+    }
+  },
+  "errors": [
+    {
+      "type": "UnboundLocalError",
+      "message": "cannot access local variable 'packet' where it is not associated with a value"
+    }
+  ],
+  "owner": {
+    "pid": 834007,
+    "start": 15894241,
+    "uid": 1000,
+    "nonce": "e82e7597c80e43c1aee154f3790d78fe",
+    "session": "efb50993780079460b0cbed1363e2166a2de1d9f_1790936461_1080168132",
+    "root": "/run/user/1000/wqa/d00b/hypr-window-motion/qa-family-service",
+    "rootIdentity": [
+      84,
+      458491
+    ],
+    "lockIdentity": [
+      84,
+      458492
+    ],
+    "compositorPID": 833039,
+    "compositorStart": 15893395
+  },
+  "ledgerToken": "2a6e3ee434925f04dac54d25b0df20dcf9cad44b64adb90b54dc55712bf6f565",
+  "moduleToken": "9ef0056f550b8575fb73cc2e4b1d6651794c92a44137f1934c0d266447055c01"
+}

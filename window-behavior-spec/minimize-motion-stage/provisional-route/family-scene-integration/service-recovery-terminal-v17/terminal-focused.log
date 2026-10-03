@@ -1,0 +1,40 @@
+test_actual_unreaped_legacy_cancel_ack_then_dispose_without_native_write (test_renderer_terminal.RendererTerminalTests.test_actual_unreaped_legacy_cancel_ack_then_dispose_without_native_write) ... ok
+test_boolean_and_nonpositive_pid_start_never_prove_terminal (test_renderer_terminal.RendererTerminalTests.test_boolean_and_nonpositive_pid_start_never_prove_terminal) ... ok
+test_modern_zombie_pidfd_does_not_bless_nonempty_keeper_group (test_renderer_terminal.RendererTerminalTests.test_modern_zombie_pidfd_does_not_bless_nonempty_keeper_group) ... ERROR
+/usr/lib/python3.14/unittest/case.py:668: ResourceWarning: unclosed file <_io.TextIOWrapper name=15 encoding='UTF-8'>
+  with outcome.testPartExecutor(self):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.14/unittest/case.py:668: ResourceWarning: unclosed file <_io.TextIOWrapper name=12 encoding='UTF-8'>
+  with outcome.testPartExecutor(self):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.14/unittest/case.py:668: ResourceWarning: unclosed file <_io.TextIOWrapper name=13 encoding='UTF-8'>
+  with outcome.testPartExecutor(self):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.14/unittest/case.py:668: ResourceWarning: unclosed file <_io.BufferedReader name=7>
+  with outcome.testPartExecutor(self):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test_reaped_old_pid_is_separately_absent (test_renderer_terminal.RendererTerminalTests.test_reaped_old_pid_is_separately_absent) ... ok
+test_reused_start_never_signals_actual_live_replacement (test_renderer_terminal.RendererTerminalTests.test_reused_start_never_signals_actual_live_replacement) ... ok
+test_running_durable_retired_claim_refuses_without_disposal (test_renderer_terminal.RendererTerminalTests.test_running_durable_retired_claim_refuses_without_disposal) ... ok
+test_same_live_lifetime_is_not_terminal (test_renderer_terminal.RendererTerminalTests.test_same_live_lifetime_is_not_terminal) ... ok
+test_same_unreaped_lifetime_restart_refreshes_durable_ack (test_renderer_terminal.RendererTerminalTests.test_same_unreaped_lifetime_restart_refreshes_durable_ack) ... ok
+test_unexpected_pidfd_error_event_refuses (test_renderer_terminal.RendererTerminalTests.test_unexpected_pidfd_error_event_refuses) ... ok
+test_unknown_and_malformed_stat_quarantine (test_renderer_terminal.RendererTerminalTests.test_unknown_and_malformed_stat_quarantine) ... ok
+test_unknown_procfs_and_pidfd_errors_are_not_absence (test_renderer_terminal.RendererTerminalTests.test_unknown_procfs_and_pidfd_errors_are_not_absence) ... ok
+
+======================================================================
+ERROR: test_modern_zombie_pidfd_does_not_bless_nonempty_keeper_group (test_renderer_terminal.RendererTerminalTests.test_modern_zombie_pidfd_does_not_bless_nonempty_keeper_group)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-terminal-v17/test_renderer_terminal.py", line 90, in test_modern_zombie_pidfd_does_not_bless_nonempty_keeper_group
+    terminal=keeper.read_terminal();self.assertTrue(terminal['allGroupsEmpty']);self.assertFalse(terminal['normalStop'])
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-terminal-v17/helper_supervisor.py", line 120, in read_terminal
+    return read_terminal(self.ownership)
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-terminal-v17/helper_supervisor.py", line 129, in read_terminal
+    fd=os.open(path,os.O_RDONLY|os.O_NOFOLLOW|os.O_CLOEXEC)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmpzvlwcb8z/keeper-ca9a98ba9e034db4bfe05a1f411b40fc.json'
+
+----------------------------------------------------------------------
+Ran 11 tests in 4.357s
+
+FAILED (errors=1)

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -euo pipefail
+exec "$HOME/.local/bin/hypr-window-menu" layouts "${1:-$(hyprctl activewindow -j | jq -r '.address // empty')}"

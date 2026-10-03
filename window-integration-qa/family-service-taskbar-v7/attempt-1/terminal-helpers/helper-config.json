@@ -1,0 +1,90 @@
+{
+  "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790891121_1419919618",
+  "compositor": {
+    "pid": 1370060,
+    "start": "11359428"
+  },
+  "socket": "/run/user/1000/wqa/ef3e/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790891121_1419919618/.socket.sock",
+  "socketIdentity": [
+    84,
+    285474,
+    1000
+  ],
+  "versionSHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+  "helpers": {
+    "snap": {
+      "wrapper": "/run/user/1000/wqa/ef3e/taskbar-home/.local/bin/hypr-snap-groups",
+      "wrapperSHA256": "7db4c5b12d8e447eed47858951a28c052e4707d5d95fa8b39a26eb49eaf2b6ca",
+      "actual": "/run/user/1000/wqa/ef3e/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "invocation": "/run/user/1000/wqa/ef3e/taskbar-home/.local/bin/hypr-snap-groups"
+    },
+    "shell": {
+      "wrapper": "/run/user/1000/wqa/ef3e/taskbar-home/.local/bin/omarchy-shell",
+      "wrapperSHA256": "7db4c5b12d8e447eed47858951a28c052e4707d5d95fa8b39a26eb49eaf2b6ca",
+      "actual": "/run/user/1000/wqa/ef3e/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "invocation": "omarchy-shell"
+    }
+  },
+  "log": "/run/user/1000/wqa/ef3e/taskbar-home/helper-events.jsonl",
+  "allowed": [
+    "hydrate",
+    "inactive-fileDrag",
+    "forget-closed:0x561c8c24ec60:18000000:1370447",
+    "forget-closed:0x561c8c628470:18000002:1370447",
+    "forget-closed:0x561c8c8466a0:18000003:1370447",
+    "forget-closed:0x561c8c07bd80:18000001:1370447"
+  ],
+  "queryTaskbar": {
+    "path": "/run/user/1000/wqa/ef3e/taskbar-home/.local/bin/hypr-taskbar",
+    "sha256": "58215e6cb07b364988a0d5c38e9a4f63d7803e2b7f78481ea3a7104fa55f02e1",
+    "python": "/usr/bin/python3",
+    "pythonSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+  },
+  "queryEnvironment": {
+    "HOME": "/run/user/1000/wqa/ef3e/taskbar-home",
+    "PATH": "/run/user/1000/wqa/ef3e/taskbar-home/.local/bin:/home/hoskinson/window-integration-qa/family-service-taskbar-v7/payload/omarchy/bin:/usr/bin",
+    "XDG_RUNTIME_DIR": "/run/user/1000/wqa/ef3e",
+    "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790891121_1419919618",
+    "OMARCHY_PATH": "/home/hoskinson/window-integration-qa/family-service-taskbar-v7/payload/omarchy",
+    "WINDOW_QA_HELPER_CONFIG": "/run/user/1000/wqa/ef3e/taskbar-home/helper-config.json"
+  },
+  "queryRoots": {
+    "qs": {
+      "identity": {
+        "pid": 1370113,
+        "start": "11359518",
+        "pgid": 1370113,
+        "parent": 1369786
+      },
+      "argv": [
+        "/usr/bin/qs",
+        "-p",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v7/payload/omarchy/shell"
+      ],
+      "config": "/home/hoskinson/window-integration-qa/family-service-taskbar-v7/payload/omarchy/shell",
+      "executable": "/usr/bin/quickshell",
+      "executableSHA256": "2dc99382c032710fe495ed115cdee9dc9c69bdb3a21af4d86a9a8ea16733069b",
+      "configSHA256": "4a4b7694e5b9e0bd952ce0efa2d6dc2cea44cdfa98cc2f442e40fe41cbc1beab"
+    },
+    "harness": {
+      "identity": {
+        "pid": 1369786,
+        "start": "11359275",
+        "pgid": 1369786,
+        "parent": 1275790
+      },
+      "argv": [
+        "python3",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v7/native_integration.py",
+        "--attempt",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v7/attempt-1"
+      ],
+      "source": "/home/hoskinson/window-integration-qa/family-service-taskbar-v7/native_integration.py",
+      "sourceSHA256": "babc786a8313892438ebd441a3e1771c988b969910885965bca3a416f01ff819",
+      "executable": "/usr/bin/python3.14",
+      "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+    }
+  }
+}

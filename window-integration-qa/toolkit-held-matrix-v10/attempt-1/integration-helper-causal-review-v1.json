@@ -1,0 +1,196 @@
+{
+  "scope": "Read-only actual terminal attribution; no product bug or closed pipe conclusion",
+  "campaignResult": "fail",
+  "all13OriginalQtWaylandCasesPass": true,
+  "frozenSourcesExact": true,
+  "frozenCount": 23343,
+  "frozenLinks": 332,
+  "normalNativeUnload": true,
+  "helperArchiveExact": true,
+  "events": 284,
+  "starts": 142,
+  "terminals": 142,
+  "refusals": [],
+  "nonzeroTerminals": [
+    {
+      "class": "query",
+      "delegate": {
+        "parent": 2356980,
+        "pgid": 2351370,
+        "pid": 2356984,
+        "start": "13206220"
+      },
+      "event": "terminal",
+      "exitCode": 120,
+      "helper": "snap",
+      "operation": "list-json:2356980:13206217",
+      "queryRoot": "qs",
+      "serviceOperation": null,
+      "timeNs": 1790909589416701477,
+      "wrapper": {
+        "parent": 2356967,
+        "pgid": 2351370,
+        "pid": 2356980,
+        "start": "13206217"
+      }
+    }
+  ],
+  "exactBadStart": {
+    "actual": "/run/user/1000/wqa/c28d/taskbar-home/.local/bin/hypr-snap-groups.actual",
+    "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+    "ancestry": [
+      {
+        "parent": 2351370,
+        "pgid": 2351370,
+        "pid": 2356967,
+        "start": "13206209"
+      },
+      {
+        "parent": 2351197,
+        "pgid": 2351370,
+        "pid": 2351370,
+        "start": "13203664"
+      }
+    ],
+    "args": [
+      "list",
+      "--json"
+    ],
+    "class": "query",
+    "delegate": {
+      "parent": 2356980,
+      "pgid": 2351370,
+      "pid": 2356984,
+      "start": "13206220"
+    },
+    "evaluationEnvironment": null,
+    "event": "started",
+    "helper": "snap",
+    "ipc": {
+      "completeServerEOF": true,
+      "peer": {
+        "gid": 1000,
+        "pid": 2351294,
+        "uid": 1000
+      },
+      "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+      "request": "j/version",
+      "socketIdentity": [
+        84,
+        361735,
+        1000
+      ]
+    },
+    "operation": "list-json:2356980:13206217",
+    "queryRoot": "qs",
+    "scope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-41c84830613440938b21f4d3ceae171b.scope",
+      "coreLimit": 1
+    },
+    "serviceOperation": null,
+    "timeNs": 1790909589365232508,
+    "wrapper": {
+      "parent": 2356967,
+      "pgid": 2351370,
+      "pid": 2356980,
+      "start": "13206217"
+    }
+  },
+  "serviceCountsActual": {
+    "service-motionTarget:0x5ea6aa0c2480:1800000c:2352343": 2,
+    "service-motionTarget:0x5ea6aa09d390:1800000e:2352343": 2,
+    "service-motionTarget:0x5ea6aa8a4740:1800000f:2352343": 2,
+    "service-motionRefresh": 6,
+    "service-motionTarget:0x5ea6aa91b170:18000021:2354852": 2,
+    "service-motionTarget:0x5ea6aa6df980:18000023:2354852": 2,
+    "service-motionTarget:0x5ea6aa74e660:18000024:2354852": 2
+  },
+  "serviceCountsExpected": {
+    "service-motionTarget:0x5ea6aa0c2480:1800000c:2352343": 2,
+    "service-motionTarget:0x5ea6aa09d390:1800000e:2352343": 2,
+    "service-motionTarget:0x5ea6aa8a4740:1800000f:2352343": 2,
+    "service-motionTarget:0x5ea6aa91b170:18000021:2354852": 2,
+    "service-motionTarget:0x5ea6aa6df980:18000023:2354852": 2,
+    "service-motionTarget:0x5ea6aa74e660:18000024:2354852": 2,
+    "service-motionRefresh": 6
+  },
+  "serviceBudgetsExactlyMet": true,
+  "evaluationTicketCount": 12,
+  "normalQSKillRecord": {
+    "role": "normal-kill",
+    "command": [
+      "/usr/bin/qs",
+      "--no-color",
+      "kill",
+      "--pid",
+      "2351370"
+    ],
+    "startedNs": 119942242179191,
+    "qsIdentity": {
+      "pid": 2351370,
+      "start": "13203664",
+      "pgid": 2351370,
+      "parent": 2351197
+    },
+    "nativeOutcomeNotInferred": true,
+    "processIdentity": {
+      "pid": 2356983,
+      "start": "13206220",
+      "pgid": 2356983,
+      "parent": 2351197
+    },
+    "returncode": 0,
+    "stdout": "Killed ubee1vne9mt\n",
+    "stderr": "",
+    "completedNs": 119942285528557,
+    "originalProbeGone": true
+  },
+  "concurrentCreationEvidence": {
+    "qsKillProcessStart": "13206220",
+    "delegateStart": "13206220",
+    "sameKernelStartTick": true,
+    "limitation": "Kernel centisecond creation equivalence corroborates overlapping start interval, not exact parent termination/pipe close chronology"
+  },
+  "sourceFacts": {
+    "backendPython": true,
+    "taskbarChildStdoutPipe": true,
+    "snapshotRefreshProcess": true,
+    "refreshTimer900": true,
+    "shutdownQSBeforeHelperSummarize": true
+  },
+  "rawLogs": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/attempt-1/qt-wayland/taskbar-shell.log": {
+      "sha256": "a495109c1ec23c4e478c3bf367bd4b10ccb183a78e5b4c2bedc04aba1b1413df",
+      "bytes": 895
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/attempt-1/qt-wayland/held-service.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/attempt-1/qt-wayland/host/runtime-archive/quickshell/by-id/ubee1vne9mt/log.log": {
+      "sha256": "c6559297c5e9a990f96ff6c0c45e611b2ca0c2b180b7b8bbdace4bf25a730911",
+      "bytes": 1033
+    }
+  },
+  "evidenceMissing": [
+    "Delegate stdout/stderr raw bytes are not separately captured in existing wrapper journal",
+    "Actual taskbar snapshot parent exit code/time and exact stdout reader pipe state at delegate write unavailable",
+    "No retained evidence identifies why delegate returned120"
+  ],
+  "interpretation": "Actual strict normal-helper gate correctly fails because one registered QS query delegate returned120. Service/evaluation operation budgets are exactly met; no count increase or exit normalization justified. QS quit concurrency makes reader closure a candidate hypothesis only.",
+  "recommendedFreshDiagnostics": [
+    "Preserve delegate stdout behavior; capture complete bounded stderr separately with fsync and raw EOF/hash/exit identity under existing exact ancestry gate",
+    "Retain exact snapshot parent PID/start/argv and kernel live-state observations before release and terminal, plus inherited stdout FD type/device/inode and exact normal QS quit timing",
+    "Review source-backed normal owned snapshot completion before QS destruction; if genuine outstanding query causes teardown fault, design bounded exact quiescence/drain protocol without accepting nonzero terminals"
+  ],
+  "sourceFiles": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/run_native.py": "ef897048ec315469db776820629d28dd84f248ab338fc8ca7c5e0b1d9c780154",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/helper_observer.py": "4f19c27d8ab7c5f210544156855cc29e5221e32fd6967065d972fb0315322809",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/payload/home/.local/bin/hypr-taskbar": "58215e6cb07b364988a0d5c38e9a4f63d7803e2b7f78481ea3a7104fa55f02e1",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/payload/home/.local/bin/hypr-snap-groups": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.qml": "70cfcbe3f55250277705492e932fe9e4260ce9903f389ffdb67b6a2141afdb0d"
+  },
+  "fullHeld52Accepted": false,
+  "nativeCommands": false,
+  "mainWrites": false
+}

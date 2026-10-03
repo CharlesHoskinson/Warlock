@@ -1,0 +1,27 @@
+{
+  "result": "fail",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1d8e067eba914659833c17498c796680.scope",
+    "coreLimit": 1
+  },
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/retained_family_scope_test.qnt"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT404]: Name 'isEmpty' not found\n\n  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/retained_family_scope.qnt:17:50\n  17:  pure def covered(x:State):bool=x.freshRead and (x.expected.isEmpty() or x.observed==x.expected)\n                                                       ^^^^^^^^^^^^^^^^^^^^\n\nerror: parsing failed\n"
+    }
+  ],
+  "runtimeUnchangedBeforeCorrection": true,
+  "sourceSHA256": {
+    "scene_controller.py": "77bf976f641ba1bce895dfec51f59f8755529761fdc6370079a385e4385a8206",
+    "scene_manager.py": "3f2f3aa5e2f0f1a2dd108acccfa4372761dda966d672741556b8b709bf8edd41",
+    "visual_retirement.py": "0bd2513fec9ae3d0c9008ec8f789dce99670cc643a91b7a87b7346baefa40c84"
+  },
+  "exactTupleSetsNotMemberCounts": true,
+  "nativeLaunch": false
+}

@@ -1,0 +1,89 @@
+{
+  "result": "fail",
+  "classification": "concrete missing initial callback function/owner identity guards",
+  "sourceAndExistingTests": "pass",
+  "collector": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7",
+  "proof": "/home/hoskinson/window-integration-qa/thumbnail-v7-full-proof-v2/report.json",
+  "proofSHA256": "3d0d4cdcd3d03d3f148b3dd47a160868aac7ff80387df34ad673043fe06ef07b",
+  "fullProof": {
+    "python": 118,
+    "named": 88,
+    "models": 9,
+    "commands": 28,
+    "sourceWitnesses": 425
+  },
+  "focused": {
+    "pythonTests": 29,
+    "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSHA256": "a24f1ef40e4418fc9f1c40b1831c7f9c011a7e47e955db40a14863a564fd3606"
+  },
+  "sourceConservation": {
+    "inherited": 416,
+    "unchanged": 408,
+    "declaredChanges": {
+      "actual_service_binding.qnt": {
+        "before": "2cae8ff6809417f263cdf384eb2a25f7ab264c2dfa254cc47397a20c67903288",
+        "after": "80562409042afc04c6a233d167f7047c9f1fdba8f630b8d3ddb0a1b28bb32b2c"
+      },
+      "actual_service_binding_test.qnt": {
+        "before": "a32c73f647f8fddd2abe5367e401ec53c6d97e9a31d932e52d003980719e17d4",
+        "after": "d903f5bfef9a35fa3593f8a0704accc2bfc11daccf66b9144d4e9cbc9aea6762"
+      },
+      "native_integration.py": {
+        "before": "ee2d17383a9ce295fa7ff013efa349ceb000234e39367e9835712c92026e0b35",
+        "after": "e8b32b3a385813276495d83e15905599940fc98ebedcd1e50133febf0f4f3b91"
+      },
+      "service_recovery_observer.py": {
+        "before": "2a61d4c5cdbb00671105afd0b427622a077fc24c18b985646d03ea52747c6d74",
+        "after": "07b546f574bd5972b1c20d229c0a7d914745517640db4eb95f277fdf65b83856"
+      },
+      "native_faults.py": {
+        "before": "8201dafd783c72603cc71e19cef4cbbb98cb380b8af53591c952c7335b205568",
+        "after": "d2c1f03ba6750f44af6e644dfd28b11e6d273a92bfd0c019f08c23ac510ce562"
+      },
+      "test_freezer_v2.py": {
+        "before": "e8d02dd5d49bc10aabe0927a981ff6e92c93be69dc09a5141eb5d025ca2dbb72",
+        "after": "271ffdad0c255c24386d88ba117fdf7e82549526fc0d25f2536e308adf988644"
+      },
+      "module_binding.py": {
+        "before": "b3dcb34adb3adbc736380980a0bcca811ed661c8aec9374ccf80477bd38055e1",
+        "after": "3c8d80067575ee36d3980dcecfb121678b07e89509e1ea0c856c6f27a18acbea"
+      },
+      "test_actual_binding.py": {
+        "before": "518e1985c116cbbad8a65f23b2884d96f3c5eb7c7ce9366981b7cf4b087df155",
+        "after": "14e98533b9d637aaa83b7972ca00e78ec381aa1afba3b86a656d2bf38e88e11c"
+      }
+    },
+    "originalCheckCallASTsExact": {
+      "native_integration.py": 30,
+      "native_faults.py": 34
+    },
+    "completeBaselineAndFaultMainInverseExact": true,
+    "actualCaptureRetirementObserverByteExact": true
+  },
+  "candidateManifest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/manifest-family-preparation-v23.json",
+  "candidateManifestSHA256": "0d2b7b231eaa26c6618783b1cb2305c2a989586b3a7cb371716e2d67603c82e2",
+  "candidateClosure": {
+    "inputs": 15238,
+    "modes": 15238,
+    "links": 158,
+    "fullBytesModesLinksExact": true
+  },
+  "counterexamples": [
+    {
+      "path": "/home/hoskinson/window-integration-qa/thumbnail-v7-agent-review-v1/initial-callback-counterexample.json",
+      "sha256": "59e8230bb5f9da0469ffd5ea15a957c63b90c1d8062b4a7f85c49918ae184252"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/thumbnail-v7-agent-review-v1/initial-callback-owner-counterexample.json",
+      "sha256": "5dcfac3d29efa69b57da2ea7f46f78c8d16110c1ff649a5ca888529b74298329"
+    }
+  ],
+  "acceptedWrongInitialBindings": 7,
+  "neededCorrection": "Formal-before-source expected __func__ and __self__ for five BatchPreviews callbacks and finisher at initial/postdisk/terminal observations; original oracles unchanged",
+  "guiPairingReady": false,
+  "nativeLaunch": false,
+  "candidateEdited": false,
+  "original38Accepted": false,
+  "original34FaultsAccepted": false
+}

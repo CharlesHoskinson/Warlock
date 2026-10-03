@@ -1,0 +1,209 @@
+--- v1/Wayland.cpp
++++ lifecycle-v1/Wayland.cpp
+@@ -1,5 +1,8 @@
+ #include <algorithm>
+ #include "GlobalVersion.hpp"
++#include "NestedLifecycle.hpp"
++#include <memory>
++#include <unordered_map>
+ #include <aquamarine/backend/Wayland.hpp>
+ #include <wayland.hpp>
+ #include <xdg-shell.hpp>
+@@ -7,6 +10,7 @@
+ #include "FormatUtils.hpp"
+ #include <chrono>
+ #include <cstring>
++#include <cstdlib>
+ #include <xf86drm.h>
+ #include <gbm.h>
+ #include <fcntl.h>
+@@ -17,6 +21,9 @@
+ using namespace Hyprutils::Memory;
+ using namespace Hyprutils::Math;
+ #define SP CSharedPointer
++
++// Event-loop-owned lifecycle state; public class layout remains unchanged.
++static std::unordered_map<CWaylandOutput*, std::shared_ptr<NestedPolicy::ConfigureLifecycle>> outputLifecycle;
+ 
+ static std::pair<int, std::string> openExclusiveShm() {
+     // Only absolute paths can be shared across different shm_open() calls
+@@ -175,7 +182,8 @@
+         return false;
+     }
+ 
+-    dispatchEvents();
++    if (!dispatchEvents())
++        return false;
+ 
+     createOutput();
+ 
+@@ -208,7 +216,7 @@
+     o->self = o;
+     if (backend->ready)
+         o->swapchain = CSwapchain::create(backend->primaryAllocator, self.lock());
+-    idleCallbacks.emplace_back([this, o]() { backend->events.newOutput.emit(SP<IOutput>(o)); });
++    // Initial newOutput is queued by the first xdg_surface ACK, never before.
+     return true;
+ }
+ 
+@@ -220,6 +228,23 @@
+ }
+ 
+ bool Aquamarine::CWaylandBackend::dispatchEvents() {
++    const auto transportAlive = [this]() {
++        if (wl_display_get_error(waylandState.display) == 0)
++            return true;
++        backend->log(AQ_LOG_CRITICAL, "Wayland parent transport failed; invalidating every nested output");
++        if (NestedPolicy::selection(std::getenv("AQ_BACKENDS")) == NestedPolicy::Selection::Wayland)
++            backend->ready = false;
++        for (const auto& output : outputs) {
++            if (const auto state = outputLifecycle.find(output.get()); state != outputLifecycle.end())
++                state->second->destroy();
++            output->needsFrame = false;
++            output->waylandState.frameCallback.reset();
++            output->sched.invalidate();
++        }
++        return false;
++    };
++    if (!transportAlive())
++        return false;
+     wl_display_flush(waylandState.display);
+ 
+     if (wl_display_prepare_read(waylandState.display) == 0) {
+@@ -228,11 +253,15 @@
+     } else
+         wl_display_dispatch(waylandState.display);
+ 
++    if (!transportAlive())
++        return false;
+     int ret = 0;
+     do {
+         ret = wl_display_dispatch_pending(waylandState.display);
+         wl_display_flush(waylandState.display);
+     } while (ret > 0);
++    if (!transportAlive())
++        return false;
+ 
+     // dispatch frames
+     if (backend->ready) {
+@@ -516,9 +545,11 @@
+ 
+ Aquamarine::CWaylandOutput::CWaylandOutput(const std::string& name_, Hyprutils::Memory::CWeakPointer<CWaylandBackend> backend_) : backend(backend_) {
+     name = name_;
++    const auto lifecycle = std::make_shared<NestedPolicy::ConfigureLifecycle>();
++    outputLifecycle.emplace(this, lifecycle);
+ 
+     // The scheduler's frameReady signal drives the public events.frame on this output.
+-    frameReadyListener = sched.frameReady.listen([this]() { events.frame.emit(); });
++    frameReadyListener = sched.frameReady.listen([this, lifecycle]() { if (lifecycle->bufferAllowed()) events.frame.emit(); });
+ 
+     // a scheduleFrame mid frame, reschedule one more.
+     rescheduleListener = sched.rescheduleNeeded.listen([this]() { scheduleFrame(AQ_SCHEDULE_NEEDS_FRAME); });
+@@ -530,6 +561,9 @@
+     // pending (e.g. right after a focus change) would never fire.
+     frameIdle = makeShared<std::function<void(void)>>([this]() {
+         sched.setFrameScheduled(false);
++        const auto lifecycle = outputLifecycle.find(this);
++        if (lifecycle == outputLifecycle.end() || !lifecycle->second->bufferAllowed())
++            return;
+         if (sched.frameInFlight() || sched.frameRunning())
+             return;
+         sched.frameReady.emit();
+@@ -549,9 +583,29 @@
+         return;
+     }
+ 
+-    waylandState.xdgSurface->setConfigure([this](CCXdgSurface* r, uint32_t serial) {
++    waylandState.xdgSurface->setConfigure([this, lifecycle](CCXdgSurface* r, uint32_t serial) {
+         backend->backend->log(AQ_LOG_DEBUG, std::format("Output {}: configure surface with {}", name, serial));
+         r->sendAckConfigure(serial);
++        if (!lifecycle->acknowledge())
++            return;
++        // ACK precedes every consumer signal and buffer commit. Weak ownership
++        // prevents queued configure work from reviving a destroyed output.
++        const auto weak = self;
++        const auto width = lifecycle->width, height = lifecycle->height;
++        backend->idleCallbacks.emplace_back([weak, lifecycle, width, height]() {
++            const auto output = weak.lock();
++            if (!output || lifecycle->destroyed)
++                return;
++            if (lifecycle->announce())
++                output->backend->backend->events.newOutput.emit(SP<IOutput>(output));
++            if (lifecycle->destroyed)
++                return;
++            output->events.state.emit(SStateEvent{.size = {width, height}});
++            if (!lifecycle->bufferAllowed())
++                return;
++            output->needsFrame = true;
++            output->sched.frameReady.emit();
++        });
+     });
+ 
+     waylandState.xdgToplevel = makeShared<CCXdgToplevel>(waylandState.xdgSurface->sendGetToplevel());
+@@ -564,19 +618,9 @@
+     waylandState.xdgToplevel->setWmCapabilities(
+         [this](CCXdgToplevel* r, wl_array* arr) { backend->backend->log(AQ_LOG_DEBUG, std::format("Output {}: wm_capabilities received", name)); });
+ 
+-    waylandState.xdgToplevel->setConfigure([this](CCXdgToplevel* r, int32_t w, int32_t h, wl_array* arr) {
+-        backend->backend->log(AQ_LOG_DEBUG, std::format("Output {}: configure toplevel with {}x{}", name, w, h));
+-        if (w == 0 || h == 0) {
+-            backend->backend->log(AQ_LOG_DEBUG, std::format("Output {}: w/h is 0, sending default hardcoded 1280x720", name));
+-            w = 1280;
+-            h = 720;
+-        }
+-        events.state.emit(SStateEvent{.size = {w, h}});
+-        // Kick off the first frame synchronously: the consumer expects events.frame in
+-        // the same dispatch cycle as the toplevel configure. Deferring via scheduleFrame's
+-        // idle races the first commit and can leave the output blank until the next event.
+-        needsFrame = true;
+-        sched.frameReady.emit();
++    waylandState.xdgToplevel->setConfigure([this, lifecycle](CCXdgToplevel* r, int32_t w, int32_t h, wl_array* arr) {
++        backend->backend->log(AQ_LOG_DEBUG, std::format("Output {}: stage toplevel configure {}x{} until surface ACK", name, w, h));
++        lifecycle->stageSize(w, h);
+     });
+ 
+     waylandState.xdgToplevel->setClose([this](CCXdgToplevel* r) { destroy(); });
+@@ -597,6 +641,10 @@
+ }
+ 
+ Aquamarine::CWaylandOutput::~CWaylandOutput() {
++    if (const auto state = outputLifecycle.find(this); state != outputLifecycle.end()) {
++        state->second->destroy();
++        outputLifecycle.erase(state);
++    }
+     events.destroy.emit();
+     // frameIdle captures a raw this and may still be queued; pull it before we die.
+     backend->backend->removeIdleEvent(frameIdle);
+@@ -624,6 +672,8 @@
+ }
+ 
+ bool Aquamarine::CWaylandOutput::destroy() {
++    if (const auto state = outputLifecycle.find(this); state != outputLifecycle.end())
++        state->second->destroy();
+     if (backend->focusedOutput.lock() == self.lock())
+         backend->focusedOutput = {};
+ 
+@@ -641,6 +691,11 @@
+ }
+ 
+ bool Aquamarine::CWaylandOutput::commit() {
++    const auto lifecycle = outputLifecycle.find(this);
++    if (lifecycle == outputLifecycle.end() || !lifecycle->second->bufferAllowed()) {
++        backend->backend->log(AQ_LOG_WARNING, std::format("Output {}: refusing commit before initial configure ACK/publication or after destroy", name));
++        return false;
++    }
+     const auto  snapshot  = state->snapshot();
+     const auto& STATE     = snapshot.state();
+     Vector2D    pixelSize = {};
+@@ -755,6 +810,11 @@
+ }
+ 
+ void Aquamarine::CWaylandOutput::onFrameDone() {
++    // Hold a live output across synchronous listener calls that may destroy it.
++    const auto alive = self.lock();
++    const auto lifecycle = outputLifecycle.find(this);
++    if (!alive || lifecycle == outputLifecycle.end() || !lifecycle->second->bufferAllowed())
++        return;
+     // Mirrors DRM's handlePF: settle scheduler state, emit present, then emit frame
+     // via the scheduler signal. The loop self-limits — if the consumer doesn't
+     // commit (its needsFrame bit clears in renderMonitor), no new wl_surface.frame

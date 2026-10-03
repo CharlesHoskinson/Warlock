@@ -1,0 +1,57 @@
+{
+  "result": "fail",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-0108f59bc3bb4c5c8022c5eda99ee616.scope",
+    "coreLimit": 1
+  },
+  "campaign": "B01\u2013B12 bounded actual components",
+  "hostChecks": [],
+  "mainPreservation": {
+    "allStableClientFields": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "typedClipboardAndPrimary": true,
+    "a11ySocketFlagsAndReaderEnabled": true,
+    "outputs": true,
+    "plugins": true,
+    "keyboardStates": true,
+    "fourCatalogNaturalBytes": true,
+    "dashboardBytes": true,
+    "originalFilesProcess": true,
+    "originalFilesPublicState": true,
+    "originalFilesFullUi": true,
+    "originalFilesVisibility": true,
+    "originalEnvironmentUnchanged": true,
+    "frozenManifestBytes": true,
+    "allFrozenInputsExact": true
+  },
+  "bindingChecks": [],
+  "original14Credit": false,
+  "fullCampaignBAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "componentIncrementAccepted": false,
+  "sourceManifestSHA256": "a008f5673d8914ebc3b2c6b8963155d589d315877dc0d57f6860e313a431f084",
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "error": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/run_native.py\", line 57, in main\n    with host as session:\n         ^^^^\n  File \"/home/hoskinson/window-integration-qa/pin-maximized-native-v2/proposed/candidate_host.py\", line 97, in __enter__\n    self.host.__enter__()\n    ~~~~~~~~~~~~~~~~~~~^^\n  File \"/home/hoskinson/window-integration-qa/private-weston-host-v2/weston_host.py\", line 83, in __enter__\n    self.verify();assert str(self.output).startswith(str(Path.home()/'window-integration-qa')+'/')\n                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "hostEvidence": {
+    "nativeHostAccepted": false,
+    "mainDisplayUsed": false,
+    "width": 1600,
+    "height": 1000,
+    "hostScale": 1,
+    "privateSettingsBackend": "memory",
+    "qaScope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-0108f59bc3bb4c5c8022c5eda99ee616.scope",
+      "coreLimit": 1
+    },
+    "manifestSHA256": "08bc911b36ac6f9910b12513333a3d1d0d7149b12d56776b5ff57703e4fe3900",
+    "privateAquamarine": {
+      "path": "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/lib/libaquamarine.so.0.15.0",
+      "sha256": "4ee1f9958ec83a9d2774f760ba66f90f1d646d1c198dd49d9dfbf1763c2fd296",
+      "scope": "nested Hyprland child only; no installed replacement",
+      "contractManifestSHA256": "edc94b14ab8837011911d3e1730d8a85f29d6fd62aa6541c3f1983efc1ff6da1"
+    }
+  }
+}

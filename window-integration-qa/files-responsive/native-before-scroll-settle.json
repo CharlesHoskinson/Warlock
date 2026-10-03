@@ -1,0 +1,659 @@
+{
+  "checks": [
+    {
+      "name": "actual native client accepts 330x320",
+      "passed": true,
+      "requested": [
+        330,
+        320
+      ],
+      "size": [
+        330,
+        320
+      ],
+      "allowedFractionalScaleRounding": 1,
+      "pathWidth": 302,
+      "filterWidth": 226
+    },
+    {
+      "name": "actual native client accepts 487x320",
+      "passed": true,
+      "requested": [
+        487,
+        320
+      ],
+      "size": [
+        487,
+        320
+      ],
+      "allowedFractionalScaleRounding": 1,
+      "pathWidth": 459,
+      "filterWidth": 383
+    },
+    {
+      "name": "actual native client accepts 500x320",
+      "passed": true,
+      "requested": [
+        500,
+        320
+      ],
+      "size": [
+        500,
+        320
+      ],
+      "allowedFractionalScaleRounding": 1,
+      "pathWidth": 472,
+      "filterWidth": 396
+    },
+    {
+      "name": "actual native client accepts 533x320",
+      "passed": true,
+      "requested": [
+        533,
+        320
+      ],
+      "size": [
+        533,
+        320
+      ],
+      "allowedFractionalScaleRounding": 1,
+      "pathWidth": 505,
+      "filterWidth": 429
+    },
+    {
+      "name": "actual native client accepts 800x500",
+      "passed": true,
+      "requested": [
+        800,
+        500
+      ],
+      "size": [
+        801,
+        500
+      ],
+      "allowedFractionalScaleRounding": 1,
+      "pathWidth": 511,
+      "filterWidth": 250
+    },
+    {
+      "name": "actual left snap fits minimum",
+      "passed": true,
+      "requestedRect": [
+        10.0,
+        60.0,
+        785,
+        930.0
+      ],
+      "actualRect": [
+        10,
+        60,
+        784,
+        930
+      ],
+      "allowedFractionalScaleRounding": 1
+    },
+    {
+      "name": "actual left unsnap restores normal",
+      "passed": true
+    },
+    {
+      "name": "actual top_left snap fits minimum",
+      "passed": true,
+      "requestedRect": [
+        10.0,
+        60.0,
+        785,
+        448
+      ],
+      "actualRect": [
+        10,
+        60,
+        784,
+        447
+      ],
+      "allowedFractionalScaleRounding": 1
+    },
+    {
+      "name": "actual top_left unsnap restores normal",
+      "passed": true
+    },
+    {
+      "name": "actual third_left snap fits minimum",
+      "passed": true,
+      "requestedRect": [
+        10.0,
+        60.0,
+        520,
+        930.0
+      ],
+      "actualRect": [
+        10,
+        60,
+        519,
+        930
+      ],
+      "allowedFractionalScaleRounding": 1
+    },
+    {
+      "name": "actual third_left unsnap restores normal",
+      "passed": true
+    },
+    {
+      "name": "physical New Folder opens mkdir prompt",
+      "passed": true
+    },
+    {
+      "name": "physical New File opens newfile prompt",
+      "passed": true
+    },
+    {
+      "name": "physical CtrlF filter works at330",
+      "passed": true
+    },
+    {
+      "name": "physical Escape clears filter",
+      "passed": true
+    },
+    {
+      "name": "physical CtrlL navigates compact path",
+      "passed": true
+    },
+    {
+      "name": "physical AltLeft restores folder history",
+      "passed": true
+    },
+    {
+      "name": "physical View button switches grid",
+      "passed": true
+    },
+    {
+      "name": "physical View button restores list",
+      "passed": true
+    },
+    {
+      "name": "physical Sort menu reaches compact hidden Kind column",
+      "passed": true
+    },
+    {
+      "name": "physical CtrlB opens compact sidebar",
+      "passed": true
+    },
+    {
+      "name": "physical sidebar wheel reaches tree",
+      "passed": true
+    },
+    {
+      "name": "physical Escape dismisses sidebar",
+      "passed": true
+    },
+    {
+      "name": "physical selection preserves full compact file area",
+      "passed": true
+    },
+    {
+      "name": "physical CtrlI opens details overlay",
+      "passed": true
+    },
+    {
+      "name": "physical details wheel reaches Trash action",
+      "passed": true,
+      "button": {
+        "x": 47,
+        "y": 248.0018251432832,
+        "w": 129.5,
+        "h": 32,
+        "visible": true
+      }
+    },
+    {
+      "name": "physical compact details Rename preserves prompt payload",
+      "passed": false
+    },
+    {
+      "name": "original clients and geometries preserved",
+      "passed": true
+    },
+    {
+      "name": "original cursor restored",
+      "passed": true
+    },
+    {
+      "name": "original focus restored",
+      "passed": true
+    },
+    {
+      "name": "original catalog bytes unchanged",
+      "passed": true
+    },
+    {
+      "name": "original explorer dashboard bytes unchanged",
+      "passed": true
+    },
+    {
+      "name": "original explorer navigation selection history unchanged",
+      "passed": true
+    },
+    {
+      "name": "clipboard and primary selection unchanged by raw byte hash and MIME hash",
+      "passed": true
+    },
+    {
+      "name": "accessibility flags unchanged",
+      "passed": true
+    },
+    {
+      "name": "original physical keyboard layouts and locks preserved",
+      "passed": true
+    },
+    {
+      "name": "copied fixture exits normally",
+      "passed": true
+    }
+  ],
+  "failures": [
+    "physical compact details Rename preserves prompt payload"
+  ],
+  "scope": "Copied real Files QML on main Wayland compositor; own window physical input and actual snap",
+  "fixtureIdentity": [
+    "0x5a02b0290ca0",
+    "180003cc",
+    2832789
+  ],
+  "error": "AssertionError('physical compact details Rename preserves prompt payload')",
+  "lastFixture": {
+    "address": "0x5a02b0290ca0",
+    "mapped": true,
+    "hidden": false,
+    "visible": true,
+    "acceptsInput": true,
+    "at": [
+      120,
+      250
+    ],
+    "size": [
+      330,
+      320
+    ],
+    "workspace": {
+      "id": 1,
+      "name": "1"
+    },
+    "floating": true,
+    "monitor": 0,
+    "class": "org.quickshell",
+    "title": "Files Responsive QA",
+    "initialClass": "org.quickshell",
+    "initialTitle": "Files Responsive QA",
+    "pid": 2832789,
+    "xwayland": false,
+    "pinned": false,
+    "pinFullscreened": false,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "fullscreenHandler": "default",
+    "allowedOverFullscreen": true,
+    "grouped": [],
+    "tags": [
+      "default-opacity*"
+    ],
+    "swallowing": "0x0",
+    "focusHistoryID": 0,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": "",
+    "contentType": "none",
+    "tearingHint": false,
+    "stableId": "180003cc"
+  },
+  "lastLayout": {
+    "width": 330,
+    "height": 320,
+    "minWidth": 330,
+    "minHeight": 320,
+    "view": "folder",
+    "loading": false,
+    "count": 4,
+    "mode": "list",
+    "nsel": 1,
+    "sidebarDocked": false,
+    "detailDocked": false,
+    "detailVisible": true,
+    "fileColumns": 1,
+    "cellWidth": 302,
+    "modifiedWidth": 0,
+    "kindWidth": 0,
+    "rects": {
+      "toolbar": {
+        "x": 0,
+        "y": 0,
+        "w": 330,
+        "h": 128,
+        "visible": true
+      },
+      "nav": {
+        "x": 14,
+        "y": 11,
+        "w": 171,
+        "h": 30,
+        "visible": true
+      },
+      "tools": {
+        "x": 218,
+        "y": 11,
+        "w": 98,
+        "h": 30,
+        "visible": true
+      },
+      "extraTools": {
+        "x": 252,
+        "y": 87,
+        "w": 64,
+        "h": 30,
+        "visible": true
+      },
+      "filter": {
+        "x": 14,
+        "y": 87,
+        "w": 226,
+        "h": 32,
+        "visible": true
+      },
+      "path": {
+        "x": 14,
+        "y": 49,
+        "w": 302,
+        "h": 32,
+        "visible": true
+      },
+      "main": {
+        "x": 0,
+        "y": 128,
+        "w": 330,
+        "h": 166,
+        "visible": true
+      },
+      "files": {
+        "x": 0,
+        "y": 128,
+        "w": 330,
+        "h": 166,
+        "visible": true
+      },
+      "details": {
+        "x": 30,
+        "y": 128,
+        "w": 300,
+        "h": 166,
+        "visible": true
+      },
+      "sidebar": {
+        "x": 0,
+        "y": 128,
+        "w": 244,
+        "h": 166,
+        "visible": false
+      },
+      "status": {
+        "x": 0,
+        "y": 294,
+        "w": 330,
+        "h": 26,
+        "visible": true
+      }
+    },
+    "named": {
+      "Explorer.content": {
+        "x": 0,
+        "y": 0,
+        "w": 330,
+        "h": 320,
+        "visible": true
+      },
+      "Explorer.toolbar": {
+        "x": 0,
+        "y": 0,
+        "w": 330,
+        "h": 128,
+        "visible": true
+      },
+      "Explorer.nav": {
+        "x": 14,
+        "y": 11,
+        "w": 171,
+        "h": 30,
+        "visible": true
+      },
+      "Btn.root": {
+        "x": 47,
+        "y": 248,
+        "w": 129.5,
+        "h": 32,
+        "visible": true
+      },
+      "Btn.row": {
+        "x": 85,
+        "y": 255,
+        "w": 54.9375,
+        "h": 18,
+        "visible": true
+      },
+      "Btn.ma": {
+        "x": 47,
+        "y": 248,
+        "w": 129.5,
+        "h": 32,
+        "visible": true
+      },
+      "Explorer.tools": {
+        "x": 218,
+        "y": 11,
+        "w": 98,
+        "h": 30,
+        "visible": true
+      },
+      "Explorer.extraTools": {
+        "x": 252,
+        "y": 87,
+        "w": 64,
+        "h": 30,
+        "visible": true
+      },
+      "Explorer.filterBox": {
+        "x": 14,
+        "y": 87,
+        "w": 226,
+        "h": 32,
+        "visible": true
+      },
+      "Explorer.filterInput": {
+        "x": 44,
+        "y": 95,
+        "w": 188,
+        "h": 16,
+        "visible": true
+      },
+      "Explorer.pathbar": {
+        "x": 14,
+        "y": 49,
+        "w": 302,
+        "h": 32,
+        "visible": true
+      },
+      "PathBar.hoverMa": {
+        "x": 14,
+        "y": 49,
+        "w": 302,
+        "h": 32,
+        "visible": true
+      },
+      "PathBar.crumbs": {
+        "x": 25,
+        "y": 49,
+        "w": 121.5,
+        "h": 32,
+        "visible": true
+      },
+      "PathBar.seg": {
+        "x": 91.1875,
+        "y": 57,
+        "w": 50.3125,
+        "h": 16,
+        "visible": true
+      },
+      "PathBar.segMa": {
+        "x": 86.1875,
+        "y": 54,
+        "w": 60.3125,
+        "h": 22,
+        "visible": true
+      },
+      "Explorer.main": {
+        "x": 0,
+        "y": 128,
+        "w": 330,
+        "h": 166,
+        "visible": true
+      },
+      "Explorer.area": {
+        "x": 0,
+        "y": 128,
+        "w": 330,
+        "h": 166,
+        "visible": true
+      },
+      "FileArea.fhead": {
+        "x": 0,
+        "y": 128,
+        "w": 330,
+        "h": 78,
+        "visible": true
+      },
+      "FileArea.headerActions": {
+        "x": 14,
+        "y": 171,
+        "w": 159.875,
+        "h": 30,
+        "visible": true
+      },
+      "Btn.caption": {
+        "x": 101.796875,
+        "y": 256,
+        "w": 35.9375,
+        "h": 16,
+        "visible": true
+      },
+      "FileArea.header": {
+        "x": 0,
+        "y": 206,
+        "w": 330,
+        "h": 28,
+        "visible": true
+      },
+      "FileArea.listView": {
+        "x": 0,
+        "y": 234,
+        "w": 330,
+        "h": 60,
+        "visible": true
+      },
+      "FileArea.row": {
+        "x": 0,
+        "y": 336,
+        "w": 330,
+        "h": 34,
+        "visible": true
+      },
+      "Thumb.root": {
+        "x": 14,
+        "y": 340,
+        "w": 26,
+        "h": 26,
+        "visible": true
+      },
+      "Thumb.img": {
+        "x": 15,
+        "y": 341,
+        "w": 24,
+        "h": 24,
+        "visible": true
+      },
+      "FileArea.ma": {
+        "x": 0,
+        "y": 336,
+        "w": 330,
+        "h": 34,
+        "visible": true
+      },
+      "ScrollBar_.sb": {
+        "x": 325,
+        "y": 237.30041152263374,
+        "w": 4,
+        "h": 56.699588477366255,
+        "visible": true
+      },
+      "Explorer.detail": {
+        "x": 30,
+        "y": 128,
+        "w": 300,
+        "h": 166,
+        "visible": true
+      },
+      "Detail.detailScroll": {
+        "x": 31,
+        "y": 128,
+        "w": 299,
+        "h": 166,
+        "visible": true
+      },
+      "Detail.col": {
+        "x": 47,
+        "y": -178,
+        "w": 267,
+        "h": 458,
+        "visible": true
+      },
+      "Explorer.status": {
+        "x": 0,
+        "y": 294,
+        "w": 330,
+        "h": 26,
+        "visible": true
+      },
+      "Explorer.statusLeft": {
+        "x": 14,
+        "y": 294,
+        "w": 288,
+        "h": 26,
+        "visible": true
+      },
+      "Explorer.statusExtra": {
+        "x": 316,
+        "y": 294,
+        "w": 0,
+        "h": 26,
+        "visible": true
+      },
+      "Explorer.toastBox": {
+        "x": 149,
+        "y": 246,
+        "w": 32,
+        "h": 34,
+        "visible": true
+      },
+      "Explorer.toastText": {
+        "x": 165,
+        "y": 255,
+        "w": 0,
+        "h": 16,
+        "visible": true
+      }
+    },
+    "negative": []
+  },
+  "clipboardPreservation": {
+    "method": "wl-paste --no-newline and --list-types, SHA256 comparison in memory; contents never printed/stored",
+    "matched": true
+  },
+  "exitCode": -15,
+  "result": "fail"
+}

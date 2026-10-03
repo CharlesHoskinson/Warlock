@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_documents" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <link type="next" xref="howto_text_attributes"/>
+    <title type="sort">1. Dokumenty</title>
+    <desc>Čítanie obsahu</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Dokumenty</title>
+  <p>Na čítanie obsahu ľubovoľného dokumentu použite vstavaný režim navigácie kurzorom aplikácie. Pri navigácii v texte dokumentu <app>Orca</app> zobrazí vašu novú polohu. V dôsledku toho pravdepodobne už poznáte spôsob čítania dokumentu pomocou <app>Orca</app>. Napríklad:</p>
+  <list>
+    <item>
+      <p>Použite <key>Vľavo</key> a <key>Vpravo</key> na presun a čítanie po znakoch.</p>
+    </item>
+    <item>
+      <p>Použite <keyseq><key>Ctrl</key><key>Vľavo</key></keyseq> a <keyseq><key>Ctrl</key><key>Vpravo</key></keyseq> na presun a čítanie po slovách.</p>
+    </item>
+    <item>
+      <p>Použite <key>Hore</key> a <key>Dole</key> na presun a čítanie po riadkoch.</p>
+    </item>
+    <item>
+      <p>Použite <key>Shift</key> v kombinácii s vyššie uvedenými príkazmi na výber a zrušenie výberu textu.</p>
+    </item>
+  </list>
+  <note style="tip">
+    <title>Zapnutie navigácie kurzora v aplikácii</title>
+    <p>Nemajú všetky aplikácie predvolene zapnutú navigáciu kurzora. V mnohých aplikáciách GNOME možno navigáciu kurzora zapnúť a vypnúť stlačením <key>F7</key>.</p>
+  </note>
+  <p>Okrem čítania dokumentu pomocou navigácie kurzora sa vám môže hodiť možnosť čítať, hláskovať a získať hodnotu Unicode aktuálneho textu. Tieto veci môžete urobiť prostredníctvom funkcie <link xref="howto_flat_review">Ploché prehliadanie</link> v <app>Orca</app>.</p>
+  <p>Na záver, aby <app>Orca</app> prečítal celý dokument od vašej aktuálnej polohy, použite príkaz Prečítať všetko. Tento príkaz spolu s úplnejším zoznamom príkazov <app>Orca</app> na prístup k textu dokumentu nájdete v príručke <link xref="commands_reading">Príkazy na čítanie</link>.</p>
+</page>

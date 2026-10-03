@@ -1,0 +1,367 @@
+{
+  "updatedUTC": "2026-10-01T21:52:02.372030+00:00",
+  "manifestSHA256": "3091e1992b293245174628e8ca73f9c54e543a00dc5bdef9cb05791255218c40",
+  "reportSHA256": "264562ca59db40b5af3c24b018afca3f24b98fa0fbca2bd7243ceae603d4bcf5",
+  "independentChecks": {
+    "all39970FrozenBytesAndModesExact": true,
+    "all13758LinksExact": true,
+    "all18MainChecksPass": true,
+    "allRecordedAppHostHelperPIDStartGone": true,
+    "ownedRuntimeGone": true,
+    "noRemainingDescendantsOrCleanupErrors": true,
+    "browserNormalExitNoForce": true,
+    "nativeV21AndProbeNormalUnload": true,
+    "rawHostArchivesExact": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "privateBrowserFilesAccepted": false,
+  "rendererSandboxAccepted": false,
+  "FilesFocusFlowReached": false,
+  "actualPrivatePreExecNetworkNamespaceAccepted": true,
+  "hostGatesReached": 9,
+  "featureGatesReached": 1,
+  "unexpectedPrivateBusHelpers": [
+    {
+      "pid": 1386055,
+      "start": "11385124",
+      "pgid": 1385835
+    },
+    {
+      "pid": 1386061,
+      "start": "11385125",
+      "pgid": 1385835
+    },
+    {
+      "pid": 1386131,
+      "start": "11385131",
+      "pgid": 1385835
+    },
+    {
+      "pid": 1386163,
+      "start": "11385139",
+      "pgid": 1385835
+    },
+    {
+      "pid": 1386171,
+      "start": "11385140",
+      "pgid": 1385835
+    },
+    {
+      "pid": 1386177,
+      "start": "11385140",
+      "pgid": 1385835
+    },
+    {
+      "pid": 1386187,
+      "start": "11385141",
+      "pgid": 1385835
+    },
+    {
+      "pid": 1386193,
+      "start": "11385143",
+      "pgid": 1385835
+    },
+    {
+      "pid": 1386194,
+      "start": "11385143",
+      "pgid": 1385835
+    },
+    {
+      "pid": 1386203,
+      "start": "11385146",
+      "pgid": 1385835
+    }
+  ],
+  "normalAllPrivateHelpersAccepted": false,
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false,
+  "failure": "RuntimeError('Bounded actual observation timed out:actual owned renderer sandbox process')",
+  "processes": [
+    {
+      "pid": 1386013,
+      "start": "11385097",
+      "ppid": 1385746,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1386032,
+      "start": "11385119",
+      "ppid": 1386013,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1386033,
+      "start": "11385119",
+      "ppid": 1386013,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1386035,
+      "start": "11385121",
+      "ppid": 1386033,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1386077,
+      "start": "11385127",
+      "ppid": 1386032,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1386117,
+      "start": "11385130",
+      "ppid": 1386035,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1386079,
+      "start": "11385127",
+      "ppid": 1386013,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1386144,
+      "start": "11385137",
+      "ppid": 1386035,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1386145,
+      "start": "11385137",
+      "ppid": 1386035,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1386696,
+      "start": "11386123",
+      "ppid": 1386685,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1386697,
+      "start": "11386123",
+      "ppid": 1386696,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1386685,
+      "start": "11386121",
+      "ppid": 1386013,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1386881,
+      "start": "11386131",
+      "ppid": 1386685,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1386883,
+      "start": "11386131",
+      "ppid": 1386881,
+      "pgid": 1386013,
+      "gone": true
+    },
+    {
+      "pid": 1385835,
+      "start": "11384734",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1385836,
+      "start": "11384737",
+      "pgid": 1385836,
+      "gone": true
+    },
+    {
+      "pid": 1385897,
+      "start": "11384798",
+      "pgid": 1385897,
+      "gone": true
+    },
+    {
+      "pid": 1386055,
+      "start": "11385124",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386061,
+      "start": "11385125",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386131,
+      "start": "11385131",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386163,
+      "start": "11385139",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386171,
+      "start": "11385140",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386177,
+      "start": "11385140",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386187,
+      "start": "11385141",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386193,
+      "start": "11385143",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386194,
+      "start": "11385143",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386203,
+      "start": "11385146",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386055,
+      "start": "11385124",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386061,
+      "start": "11385125",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386131,
+      "start": "11385131",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386163,
+      "start": "11385139",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386171,
+      "start": "11385140",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386177,
+      "start": "11385140",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386187,
+      "start": "11385141",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386193,
+      "start": "11385143",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386194,
+      "start": "11385143",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1386203,
+      "start": "11385146",
+      "pgid": 1385835,
+      "gone": true
+    },
+    {
+      "pid": 1385835,
+      "start": "11384734",
+      "pgid": 1385835,
+      "name": "privateBus",
+      "command": [
+        "/usr/bin/dbus-daemon",
+        "--session",
+        "--nofork",
+        "--address=unix:path=/run/user/1000/wqa/a73f/bus"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/browser-files-flow-v2/attempt-1/host/privateBus.log",
+      "gone": true
+    },
+    {
+      "pid": 1385836,
+      "start": "11384737",
+      "pgid": 1385836,
+      "name": "weston",
+      "command": [
+        "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston",
+        "--backend=headless",
+        "--renderer=gl",
+        "--shell=kiosk-shell.so",
+        "--fake-seat",
+        "--no-config",
+        "--socket=weston-host",
+        "--width=1600",
+        "--height=1000",
+        "--scale=1",
+        "--idle-time=0",
+        "--log=/home/hoskinson/window-integration-qa/browser-files-flow-v2/attempt-1/host/weston-renderer.log"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/browser-files-flow-v2/attempt-1/host/weston.log",
+      "gone": true
+    },
+    {
+      "pid": 1385897,
+      "start": "11384798",
+      "pgid": 1385897,
+      "name": "hyprland",
+      "command": [
+        "/usr/bin/Hyprland",
+        "--config",
+        "/run/user/1000/wqa/a73f/hyprland.lua"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/browser-files-flow-v2/attempt-1/host/hyprland.log",
+      "gone": true
+    }
+  ]
+}

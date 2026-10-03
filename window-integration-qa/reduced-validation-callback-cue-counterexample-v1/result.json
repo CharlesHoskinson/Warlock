@@ -1,0 +1,26 @@
+{
+  "result": "actual failed cue precedes genuine callback receipt",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-80ff7d31826049c0be5d6e6a817c9adc.scope",
+    "coreLimit": 1
+  },
+  "cue": {
+    "failed": true,
+    "actualReceiptCount": 0,
+    "elapsedSeconds": 0.011170899990247563
+  },
+  "receiptCount": 1,
+  "sendRefused": true,
+  "normalCloseRefused": "renderer failed normal shutdown: -15; renderer transport had already failed",
+  "producerPID": 327080,
+  "producerActualExit": -15,
+  "failureThreadGone": true,
+  "elapsedSeconds": 0.013922126003308222,
+  "originalDeadlineSeconds": 2,
+  "sourceSHA256": {
+    "pipe_transport.py": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8",
+    "test_pipe_transport.py": "fcd791e2165b92b1d5878e4678785071290cb96febdb75f50d9501fcb565981d"
+  },
+  "nativeLaunch": false,
+  "productChanged": false
+}

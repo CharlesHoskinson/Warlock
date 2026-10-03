@@ -1,0 +1,41 @@
+{
+  "updatedUTC": "2026-10-01T14:54:16.681825+00:00",
+  "reportSHA256": "068788e56b66dba824a715cb40905f5da40fccf03081a14908991965edfc33ab",
+  "allIndependentChecks": true,
+  "independentChecks": {
+    "all2881FrozenInputsExact": true,
+    "all186ProducerInputsExact": true,
+    "all15MainPreservationChecks": true,
+    "normalProducerExit": true,
+    "normalHostCleanup": true,
+    "runtimeGone": true,
+    "noUnexpectedSurvivors": true,
+    "actualParentTransportAccepted": true,
+    "allOwnedHostIdentitiesGone": true,
+    "producerPIDGone": true
+  },
+  "processes": [
+    {
+      "pid": 596260,
+      "start": "8879110",
+      "gone": true
+    },
+    {
+      "pid": 596261,
+      "start": "8879113",
+      "gone": true
+    },
+    {
+      "pid": 596276,
+      "start": "8879169",
+      "gone": true
+    }
+  ],
+  "fullRasterAccepted": false,
+  "completedScreenshotComparisons": 4,
+  "completedRawComparisons": 4,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-88227c325a124215b6f792bad72d4ef6.scope",
+    "coreLimit": 1
+  }
+}

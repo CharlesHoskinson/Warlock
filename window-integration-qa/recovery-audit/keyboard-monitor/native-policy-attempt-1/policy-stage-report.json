@@ -1,0 +1,26 @@
+{
+  "status": "offline frozen review candidate; native input not executed",
+  "files": {
+    "native_probe_policy.py": "3d3a199e5494ddfd0fd1582aa03fa173d8afa1991a1b35db9878a4bfcffc6839",
+    "native-fixture/policy_cases.py": "5e6c8a63caac08aa1e3b77704ec931933809600f99645f1c714bdc51908176aa",
+    "native-fixture/policy_client.py": "8627cff1cbed866113a75b309bce2a2bcc7f892878001b8cbff0faf35c923d22",
+    "native-fixture/native-input.c": "6f7c96842d2230a7100e2cdb79d49a42e54196c1f2bc5d1f623b737ed99e9791",
+    "native-fixture/native-input": "0da1f97985ff94579b7a52a9a344d0f72ce801147fc61ab9cf1a9e84145d4e48",
+    "POLICY_REVIEW.md": "49017f2a953d0663b1b6679d764887997a5b3ec0045c44d634f524b6957cdbde",
+    "PRODUCTION_PLAN.md": "1058d8fc6e0166c3ec2055410a30b0306e49829c28a8fe29fd2f6692838a4ccf",
+    "native/plugin-v5.cpp": "9694faa8c8185ed146bdef91e3aca148756b59bcbe7e0f767041e5031e0f850c",
+    "native/libkeyboard-monitor-private-v5.so": "4341227f55586f247502cadd5b591762e73a24972ff31389e12089c5ad99454b"
+  },
+  "verification": {
+    "cCompile": "cc -std=gnu11 -O2 -Wall -Wextra -Werror -Wno-misleading-indentation + wayland-client/xkbcommon PASS",
+    "pythonCompile": true,
+    "publicSignaturePacking": true,
+    "actualUSAndDvorakHardwareLookup": true,
+    "rejectMainRuntimeExit20": true
+  },
+  "nativeExecution": false,
+  "mainPluginLoad": false,
+  "mainConfigChanges": false,
+  "GUIOwner": "root",
+  "contract": "POLICY_REVIEW.md"
+}

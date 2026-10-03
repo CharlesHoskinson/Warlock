@@ -1,0 +1,1825 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: false,
+      loaded: false,
+      mainFalse: true,
+      nonce: 0,
+      oldNonce: 0,
+      owned: true,
+      profile: 0,
+      retired: false,
+      started: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: false,
+      loaded: false,
+      mainFalse: true,
+      nonce: 0,
+      oldNonce: 0,
+      owned: true,
+      profile: 0,
+      retired: false,
+      started: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: false,
+      loaded: false,
+      mainFalse: true,
+      nonce: 0,
+      oldNonce: 0,
+      owned: true,
+      profile: 0,
+      retired: false,
+      started: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: false,
+      loaded: false,
+      mainFalse: true,
+      nonce: 0,
+      oldNonce: 0,
+      owned: true,
+      profile: 0,
+      retired: false,
+      started: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: false,
+      loaded: true,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 0,
+      retired: false,
+      started: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: false,
+      loaded: true,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 0,
+      retired: false,
+      started: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: false,
+      loaded: true,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 0,
+      retired: false,
+      started: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: false,
+      loaded: true,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 0,
+      retired: false,
+      started: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: false,
+      loaded: true,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 0,
+      retired: true,
+      started: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: false,
+      loaded: true,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 0,
+      retired: true,
+      started: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: false,
+      loaded: true,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 0,
+      retired: true,
+      started: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 0,
+      retired: true,
+      started: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 0,
+      retired: true,
+      started: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 1,
+      retired: true,
+      started: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 1,
+      retired: true,
+      started: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 1,
+      retired: true,
+      started: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 1,
+      retired: true,
+      started: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 2,
+      retired: true,
+      started: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 1,
+      oldNonce: 0,
+      owned: true,
+      profile: 2,
+      retired: true,
+      started: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 2,
+      retired: false,
+      started: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 2,
+      retired: false,
+      started: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 2,
+      retired: false,
+      started: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 2,
+      retired: false,
+      started: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 3,
+      retired: false,
+      started: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      dirty: false,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 3,
+      retired: false,
+      started: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      dirty: false,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 3,
+      retired: false,
+      started: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 3,
+      retired: false,
+      started: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 3,
+      retired: false,
+      started: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 3,
+      retired: false,
+      started: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 3,
+      retired: false,
+      started: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 41]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 42]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 43]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 44]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 45]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: false,
+      started: true
+    }
+}
+
+[State 46]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: true,
+      started: true
+    }
+}
+
+[State 47]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 4,
+      retired: true,
+      started: true
+    }
+}
+
+[State 48]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 5,
+      retired: true,
+      started: true
+    }
+}
+
+[State 49]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 5,
+      retired: true,
+      started: true
+    }
+}
+
+[State 50]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 5,
+      retired: true,
+      started: true
+    }
+}
+
+[State 51]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 5,
+      retired: true,
+      started: true
+    }
+}
+
+[State 52]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 6,
+      retired: true,
+      started: true
+    }
+}
+
+[State 53]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 6,
+      retired: true,
+      started: true
+    }
+}
+
+[State 54]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 6,
+      retired: true,
+      started: true
+    }
+}
+
+[State 55]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 2,
+      oldNonce: 1,
+      owned: true,
+      profile: 7,
+      retired: true,
+      started: true
+    }
+}
+
+[State 56]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 7,
+      retired: false,
+      started: true
+    }
+}
+
+[State 57]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 7,
+      retired: false,
+      started: true
+    }
+}
+
+[State 58]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 7,
+      retired: true,
+      started: true
+    }
+}
+
+[State 59]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 8,
+      retired: true,
+      started: true
+    }
+}
+
+[State 60]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 8,
+      retired: true,
+      started: true
+    }
+}
+
+[State 61]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 8,
+      retired: true,
+      started: true
+    }
+}
+
+[State 62]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 8,
+      retired: true,
+      started: true
+    }
+}
+
+[State 63]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 8,
+      retired: true,
+      started: true
+    }
+}
+
+[State 64]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 8,
+      retired: true,
+      started: true
+    }
+}
+
+[State 65]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 8,
+      retired: true,
+      started: true
+    }
+}
+
+[State 66]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 8,
+      retired: true,
+      started: true
+    }
+}
+
+[State 67]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 8,
+      retired: true,
+      started: true
+    }
+}
+
+[State 68]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 9,
+      retired: true,
+      started: true
+    }
+}
+
+[State 69]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 9,
+      retired: true,
+      started: true
+    }
+}
+
+[State 70]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 9,
+      retired: true,
+      started: true
+    }
+}
+
+[State 71]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 9,
+      retired: true,
+      started: true
+    }
+}
+
+[State 72]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 10,
+      retired: true,
+      started: true
+    }
+}
+
+[State 73]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 3,
+      oldNonce: 2,
+      owned: true,
+      profile: 10,
+      retired: true,
+      started: true
+    }
+}
+
+[State 74]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 4,
+      oldNonce: 3,
+      owned: true,
+      profile: 10,
+      retired: false,
+      started: true
+    }
+}
+
+[State 75]
+{
+  s:
+    {
+      dirty: true,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 4,
+      oldNonce: 3,
+      owned: true,
+      profile: 10,
+      retired: false,
+      started: true
+    }
+}
+
+[State 76]
+{
+  s:
+    {
+      dirty: true,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 4,
+      oldNonce: 3,
+      owned: true,
+      profile: 10,
+      retired: false,
+      started: true
+    }
+}
+
+[State 77]
+{
+  s:
+    {
+      dirty: true,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 4,
+      oldNonce: 3,
+      owned: true,
+      profile: 10,
+      retired: false,
+      started: true
+    }
+}
+
+[State 78]
+{
+  s:
+    {
+      dirty: true,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 4,
+      oldNonce: 3,
+      owned: true,
+      profile: 10,
+      retired: false,
+      started: true
+    }
+}
+
+[State 79]
+{
+  s:
+    {
+      dirty: true,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 4,
+      oldNonce: 3,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 80]
+{
+  s:
+    {
+      dirty: true,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 4,
+      oldNonce: 3,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 81]
+{
+  s:
+    {
+      dirty: true,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 4,
+      oldNonce: 3,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 82]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 4,
+      oldNonce: 3,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 83]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 4,
+      oldNonce: 3,
+      owned: true,
+      profile: 11,
+      retired: true,
+      started: true
+    }
+}
+
+[State 84]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: false,
+      mainFalse: true,
+      nonce: 4,
+      oldNonce: 3,
+      owned: true,
+      profile: 11,
+      retired: true,
+      started: true
+    }
+}
+
+[State 85]
+{
+  s:
+    {
+      dirty: false,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 86]
+{
+  s:
+    {
+      dirty: true,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 87]
+{
+  s:
+    {
+      dirty: true,
+      held: false,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 88]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 89]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 90]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 91]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 92]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 93]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 94]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 95]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 96]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 97]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 98]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 99]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[State 100]
+{
+  s:
+    {
+      dirty: true,
+      held: true,
+      intent: true,
+      loaded: true,
+      mainFalse: true,
+      nonce: 5,
+      oldNonce: 4,
+      owned: true,
+      profile: 11,
+      retired: false,
+      started: true
+    }
+}
+
+[ok] No violation found (279ms at 7168 traces/second).
+Trace length statistics: max=101, min=101, average=101.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x159c346 --backend=rust to reproduce.

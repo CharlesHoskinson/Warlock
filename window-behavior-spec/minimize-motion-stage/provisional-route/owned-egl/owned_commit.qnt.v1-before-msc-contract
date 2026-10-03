@@ -1,0 +1,43 @@
+/** Only the renderer's exact successful swap can grant presentation authority.
+ * Preparing callbacks defer; failure/discard/output reuse cancel authority.
+ * Metadata validation belongs to the controller and promotion is per epoch.
+ */
+module owned_commit {
+ type Frame={id:int,epoch:int,output:int,generation:int,sequence:int,x:int,endpoint:bool}
+ type Event=Prepare(Frame)|Swap({seq:int,ok:bool})|Present(int)|Promote|Reserve|Retarget|Cancel|Discard(int)|OutputRemove|Reuse|Ack
+ type State={id:int,epoch:int,generation:int,active:bool,promoted:bool,queued:bool,prepared:List[Frame],swapped:Set[int],early:Set[int],seen:Set[int],endSeen:Set[int],last:List[int],grant:bool,accepted:bool,beforeGrant:bool}
+ var s:State
+ action init=s'={id:1,epoch:1,generation:1,active:true,promoted:false,queued:false,prepared:List(),swapped:Set(),early:Set(),seen:Set(),endSeen:Set(),last:List(0,0),grant:false,accepted:false,beforeGrant:false}
+ def retired(b:State):State={...b,active:false,promoted:false,queued:false,prepared:List(),swapped:Set(),early:Set(),seen:Set(),endSeen:Set(),grant:false}
+ def observed(b:State,f:Frame):State=if(not(b.active) or f.id!=b.id or f.epoch!=b.epoch or f.generation!=b.generation or not(b.swapped.contains(f.sequence)) or f.sequence<=b.last.nth(f.output))b
+  else {...b,prepared:b.prepared.select(q=>q.output!=f.output or q.sequence>f.sequence),last:b.last.replaceAt(f.output,f.sequence),seen:b.seen.union(Set(f.output)),endSeen:if(f.endpoint)b.endSeen.union(Set(f.output)) else b.endSeen.exclude(Set(f.output)),accepted:true,grant:false}
+ action fire(e:Event):bool={
+  val b={...s,accepted:false,beforeGrant:s.grant}
+  s'=match e {
+   | Prepare(f)=>if(s.active and not(s.queued) and f.id==s.id and f.epoch==s.epoch and f.generation==s.generation and f.output>=0 and f.output<2 and f.sequence>s.last.nth(f.output) and not((s.prepared.select(q=>q.sequence==f.sequence).length()>0)) and s.prepared.length()<8){...b,prepared:s.prepared.append(f)} else b
+   | Swap(swap)=>if(not((s.prepared.select(q=>q.sequence==swap.seq).length()>0)))b else if(not(swap.ok))retired(b) else {
+      val n={...b,swapped:s.swapped.union(Set(swap.seq))}
+      if(s.early.contains(swap.seq))observed(n,s.prepared.select(q=>q.sequence==swap.seq).head()) else n
+     }
+   | Present(seq)=>if(not((s.prepared.select(q=>q.sequence==seq).length()>0)))b else if(not(s.swapped.contains(seq))){...b,early:s.early.union(Set(seq))} else observed(b,s.prepared.select(q=>q.sequence==seq).head())
+   | Promote=>if(s.active and not(s.queued)){...b,promoted:true} else b
+   | Reserve=>if(s.active){...b,queued:true,promoted:false,grant:false} else b
+   | Retarget=>if(s.active and s.queued and s.prepared.length()==0 and s.seen==Set(0,1)){...b,epoch:s.epoch+1,queued:false,promoted:false,seen:Set(),endSeen:Set(),swapped:Set(),early:Set(),grant:false} else b
+   | Cancel=>retired(b)
+   | Discard(seq)=>if((s.prepared.select(q=>q.sequence==seq).length()>0))retired(b) else b
+   | OutputRemove=>{...retired(b),generation:s.generation+1}
+   | Reuse=>{...retired(b),id:s.id+1,epoch:s.epoch+1}
+   | Ack=>if(s.active and not(s.queued) and s.promoted and s.endSeen==Set(0,1)){...b,grant:true,accepted:true} else b
+  }
+ }
+ val authorityRequiresLiveValidatedPresented=s.grant implies (s.active and not(s.queued) and s.promoted and s.endSeen==Set(0,1))
+ val observedFramesWereSwapped=s.seen.forall(output=>s.swapped.contains(s.last.nth(output)))
+ val retiredHasNoAuthority=not(s.active) implies (not(s.grant) and s.prepared.length()==0 and s.seen==Set())
+ val allProps=authorityRequiresLiveValidatedPresented and observedFramesWereSwapped and retiredHasNoAuthority
+ action step={
+  val nextSequence=s.last.foldl(0,(max,x)=>if(x>max)x else max)+s.prepared.length()+1
+  val f={id:s.id,epoch:s.epoch,output:0,generation:s.generation,sequence:nextSequence,x:10,endpoint:true}
+  val events=s.prepared.foldl(Set(),(es,q)=>es.union(Set(Swap({seq:q.sequence,ok:true}),Swap({seq:q.sequence,ok:false}),Present(q.sequence),Discard(q.sequence))))
+  nondet e=Set(Prepare(f),Prepare({...f,output:1}),Prepare({...f,id:s.id-1}),Prepare({...f,generation:s.generation-1}),Promote,Reserve,Retarget,Cancel,OutputRemove,Reuse,Ack,Present(nextSequence-1)).union(events).oneOf();fire(e)
+ }
+}

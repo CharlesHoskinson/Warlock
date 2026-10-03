@@ -1,0 +1,26 @@
+{
+  "result": "source-review-pass",
+  "sourceReadySHA256": "62faca37ef7271e6cc5e21407397924f2c501b5cc893a0d71a93198a699e087f",
+  "frozenManifestSHA256": "223858b3b98f47c48383d31d68c38a365661a850e3605fa1e2027c4d6a77ec0c",
+  "inputCount": 20680,
+  "modeCount": 20680,
+  "linkCount": 320,
+  "reviewedSources": [
+    "qs_lifecycle.py",
+    "run_native.py",
+    "freeze_packet.py",
+    "test_qs_lifecycle.py",
+    "qs-cli-sources/src-launch-command.cpp"
+  ],
+  "sourceBackedQSReadinessReviewed": true,
+  "exactRegistryAndKillSchemaReviewed": true,
+  "completeOriginal52RoutesUnchanged": true,
+  "matrixSelfPathsAndStatusLabelChangedOnly": true,
+  "V12ReadbackV4FrontendPairUnchanged": true,
+  "retainedV2FailureUnchanged": true,
+  "mainWrites": false,
+  "nativeAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "additionalRootAcceptanceRequirement": "QS explicit normalQuit true; naturallyExitedBeforeClose cannot establish complete normal lifecycle",
+  "preparationNote": "Initial full byte-equality matrix assertion refused intended self-path relocation and descriptive nativeBlocked label. Exact normalized matrix and every case route independently verified before native launch; no acceptance inferred from initial assertion."
+}

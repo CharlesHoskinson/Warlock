@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_spellcheck" xml:lang="eo">
+  <info>
+    <link type="guide" xref="preferences#application"/>
+    <title type="sort">4. Literumilo</title>
+    <title type="link">Literumilo</title>
+    <desc>Agordi la subtenon de <app>Orko</app> por Literumilo</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Agordoj de Literumilo</title>
+  <p><app>Orko</app> provas provizi konsekvencan uzantosperton kiam interagas kun aplikaĵaj literumiloj. Por aplikaĵoj, kie ĉi tiu plibonigita subteno estis provizita, vi trovos plurajn opciojn, kiujn vi povas agordi por ricevi la nivelon de parolindeco, kiu plej bone funkcias por vi.</p>
+  <note style="tip">
+    <title>Vi povas havi kaj mallongan kaj detalan literumilan informon</title>
+    <p>Se vi normale volas tre malmultan parolindecon kiam uzas literumilon, sed foje bezonas detalajn informojn pri donita eraro, vi povas malaktivigi ĉi tiujn opciojn. Kiam vi bezonas aldonajn detalojn, simple uzu la detalan komandon <link xref="howto_whereami">Kie Mi Estas</link> de <app>Orko</app> por ke <app>Orko</app> prezentu la nunan eraron kvazaŭ ĉiuj ĉi tiuj opcioj estus ebligitaj.</p>
+  </note>
+  <section id="spell_error">
+    <title>Literuma eraro</title>
+    <p>Se ĉi tiu markobulono estas markita, <app>Orko</app> literumados la misortografitan vorton post ĝia parolado.</p>
+    <p>Defaŭlta valoro: markita</p>
+  </section>
+  <section id="spell_suggestion">
+    <title>Literuma sugestio</title>
+    <p>Se ĉi tiu markobulono estas markita, <app>Orko</app> literumados la sugestitan korektadon post ĝia parolado.</p>
+    <p>Defaŭlta valoro: markita</p>
+  </section>
+  <section id="error_context">
+    <title>Prezenti kuntekston de eraro</title>
+    <p>Se ĉi tiu markobulono estas markita, <app>Orko</app> parolos la frazon aŭ linion el la dokumento, en kiu la eraro estas trovita.</p>
+    <p>Defaŭlta valoro: markita</p>
+  </section>
+</page>

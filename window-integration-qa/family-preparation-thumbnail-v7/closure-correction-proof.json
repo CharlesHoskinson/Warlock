@@ -1,0 +1,17 @@
+{
+  "result": "pass",
+  "nativeLaunch": false,
+  "onlyRuntimeFunctionChanged": "native_integration.freeze",
+  "allOtherPythonExact": true,
+  "original38CheckASTExact": true,
+  "strictVerifierExact": true,
+  "all7FormalModelsAndProofProvenanceExact": true,
+  "v1ManifestSHA256": "5b47484c89fd7183f7ea9c4586134f932b6a96e82845aa6e1fc1941c9ed6f286",
+  "v1RejectionSHA256": "0c0102c4e2e5d8716e241f10a9f71aea325b82b640ef95a2794ba538ac30558d",
+  "regression": {
+    "result": "pass",
+    "tests": 2,
+    "nativeLaunch": false,
+    "output": "test_changed_declared_ancestral_mode_refuses_instead_of_restat_blessing (test_freezer_v2.FreezerV2.test_changed_declared_ancestral_mode_refuses_instead_of_restat_blessing) ... ok\ntest_nested_retained_manifest_and_declared_modes_survive_actual_freezer (test_freezer_v2.FreezerV2.test_nested_retained_manifest_and_declared_modes_survive_actual_freezer) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 8.481s\n\nOK\n"
+  }
+}

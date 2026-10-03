@@ -1,0 +1,174 @@
+{
+  "result": "pass",
+  "observations": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/helper_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/helper_lifecycle.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  helper_lifecycle\n    ok startedCannotUnloadTest passed 100 test(s)\n    ok failedCannotUnloadTest passed 100 test(s)\n    ok completedPrefixCannotUnloadTest passed 100 test(s)\n    ok allNormalCanUnloadTest passed 100 test(s)\n\n  4 passing (36ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/helper_lifecycle.qnt",
+        "--invariant",
+        "invariant",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20261001",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (839ms at 2384 traces/second).\nUse --seed=0x14605b4 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/query_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/query_lifecycle.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  query_lifecycle\n    ok gateBeforeExecTest passed 1 test(s)\n    ok failedQueryCannotUnloadTest passed 100 test(s)\n    ok runningQueryCannotUnloadTest passed 100 test(s)\n    ok completedQueriesCanUnloadTest passed 100 test(s)\n\n  4 passing (44ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/query_lifecycle.qnt",
+        "--invariant",
+        "invariant",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20261001",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (707ms at 2829 traces/second).\nUse --seed=0x14e9776 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/service_queries.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/service_queries.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  service_queries\n    ok registerBeforeExecTest passed 1 test(s)\n    ok boundedMemberQueryTest passed 100 test(s)\n    ok unknownQueryRefusesAcceptanceTest passed 1 test(s)\n    ok incompleteQueriesCannotAcceptTest passed 100 test(s)\n\n  4 passing (34ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/service_queries.qnt",
+        "--invariant",
+        "invariant",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20261001",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (603ms at 3317 traces/second).\nUse --seed=0x14e4bff --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/capture_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/capture_lifecycle.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  capture_lifecycle\n    ok fallbackCannotAcceptTest passed 1 test(s)\n    ok captureWithoutSeedCannotAcceptTest passed 1 test(s)\n    ok actualSeedAndPairsCanAcceptTest passed 1 test(s)\n    ok changedPairsRevokeAcceptanceTest passed 1 test(s)\n\n  4 passing (32ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v8/capture_lifecycle.qnt",
+        "--invariant",
+        "invariant",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20261001",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (428ms at 4673 traces/second).\nUse --seed=0x14a828d --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "nativeLaunch": false
+}

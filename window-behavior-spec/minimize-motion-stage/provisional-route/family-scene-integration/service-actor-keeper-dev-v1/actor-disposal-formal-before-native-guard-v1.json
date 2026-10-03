@@ -1,0 +1,41 @@
+{
+  "result": "pass",
+  "nativeSourceDisposalGuardChanged": false,
+  "actorSelectiveGuardChanged": false,
+  "records": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "actor_disposal_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  actor_disposal_test\n    ok unresolvedNativeCannotDrainOrDisposeTest passed 1 test(s)\n    ok physicalExitCannotReplaceSemanticDrainTest passed 1 test(s)\n    ok actualReturnedNativeAllowsNormalRendererDrainTest passed 1 test(s)\n    ok prematureSemanticReturnCannotAllowDisposalTest passed 1 test(s)\n    ok faultKeepsRendererAndCapturesQuarantinedTest passed 1 test(s)\n    ok missingInventoryKeepsCapturesQuarantinedTest passed 1 test(s)\n    ok liveRendererCannotBeDisposedTest passed 1 test(s)\n    ok idleHealthyRendererMayDrainAndDisposeTest passed 1 test(s)\n    ok lateNativeStartRequiresFreshGuardAtActualDisposalTest passed 1 test(s)\n    ok disjointActorsPendingNativeWorkDoesNotPreventSelectedDisposalTest passed 1 test(s)\n\n  10 passing (508ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "actor_disposal.qnt",
+        "--invariant",
+        "allProps",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20261003",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (2225ms at 899 traces/second).\nUse --seed=0x1383567 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "actor_disposal.qnt": "c08a20008a21f1843765c709b486848ec719698aa4d42ef4cb623b73c0eabc7e",
+    "actor_disposal_test.qnt": "d4fae7e5a6060bb51c0879e1ad6e3b77319ac704dca33659afcf78d88f9d4417"
+  }
+}

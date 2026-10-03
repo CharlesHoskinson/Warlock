@@ -1,0 +1,21 @@
+{
+  "schema": 2,
+  "packageID": "omarchy-a11y-prod-v2",
+  "identity": "Omarchy native monitor + Omarchy Orca compat signed-v3",
+  "library": "native/libomarchy-a11y-prod-v2.so",
+  "sha256": "f3269fc35c3fbdabacb5500331bba6fd7e427e115c5ca7d53a8ae55d249c34a2",
+  "pluginName": "omarchy-a11y-monitor",
+  "pluginVersion": "0.8-production-v2",
+  "hyprlandCommit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+  "nativeAccepted": true,
+  "productionAccepted": false,
+  "privateProbeAbsent": true,
+  "acceptanceScope": "Accepted185 applies to inherited policy/private service; production init/Lua/transport/bootstrap/real speech remain unproved.",
+  "privateCampaignReportSHA256": "fd4c8678b208f5ff56ce0e6e35f403a6e40e6a3329947b9792336fae9816d2b4",
+  "readerDefault": "disabled; existing org.a11y.Status.ScreenReaderEnabled required",
+  "originalReaderSigned": true,
+  "modifiedModules": [
+    "mouse_review.py"
+  ],
+  "systemLibrariesModified": false
+}

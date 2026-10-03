@@ -1,0 +1,117 @@
+{
+  "updatedUTC": "2026-10-01T21:38:55.684469+00:00",
+  "reportSHA256": "cc518895d449552f734d79562802f752de3190d980642767f6a87d66096b596d",
+  "manifestSHA256": "bc69be1271a58c7fa72d9845b3a7b270783f9fbf2de7ff7767a171a07440d448",
+  "sourceCounts": {
+    "local": 2454,
+    "external": 11244,
+    "links": 162
+  },
+  "independentChecks": {
+    "allOriginalSourceBytesAndModesExact": true,
+    "allCopiedSourceBytesAndModesExact": true,
+    "allExternalSourceBytesAndModesExact": true,
+    "allExternalLinksExact": true,
+    "all19MainPreservationChecks": true,
+    "allRecordedProcessIdentitiesGone": true,
+    "privateRuntimeGone": true,
+    "noUnexpectedOrRemainingDescendants": true,
+    "archivedParentTransportHealthy": true,
+    "terminalNoHelperGate": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "acceptanceChecks": {
+    "terminalCampaignPass": false,
+    "allNativeChecksPass": false,
+    "actualMaintenanceProved": false,
+    "normalExactRetirementAndUnload": true
+  },
+  "privateMaintenanceAccepted": false,
+  "disabledReaderImportRefusalAccepted": true,
+  "checksReached": 43,
+  "checksPassed": 42,
+  "processes": [
+    {
+      "pid": 1347974,
+      "start": "11317090",
+      "gone": true
+    },
+    {
+      "pid": 1348012,
+      "start": "11317105",
+      "gone": true
+    },
+    {
+      "pid": 1348029,
+      "start": "11317106",
+      "gone": true
+    },
+    {
+      "pid": 1348037,
+      "start": "11317109",
+      "gone": true
+    },
+    {
+      "pid": 1348042,
+      "start": "11317121",
+      "gone": true
+    },
+    {
+      "pid": 1348074,
+      "start": "11317143",
+      "gone": true
+    },
+    {
+      "pid": 1348098,
+      "start": "11317158",
+      "gone": true
+    },
+    {
+      "pid": 1348380,
+      "start": "11317368",
+      "gone": true
+    },
+    {
+      "pid": 1347860,
+      "start": "11316834",
+      "gone": true
+    },
+    {
+      "pid": 1347861,
+      "start": "11316837",
+      "gone": true
+    },
+    {
+      "pid": 1347878,
+      "start": "11316912",
+      "gone": true
+    },
+    {
+      "pid": 1347977,
+      "start": "11317091",
+      "gone": true
+    },
+    {
+      "pid": 1348023,
+      "start": "11317106",
+      "gone": true
+    },
+    {
+      "pid": 1348027,
+      "start": "11317106",
+      "gone": true
+    }
+  ],
+  "failures": [
+    {
+      "stage": "startup-or-campaign",
+      "type": "AssertionError",
+      "error": "AssertionError('actual stale nonce has specific native target/incarnation refusal')",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v3/native_probe_maintenance.py\", line 308, in execute\n    proof_cases.run(ctx)\n    ~~~~~~~~~~~~~~~^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v3/native-maintenance-attempt-1/proof_cases.py\", line 65, in run\n    check('actual stale nonce has specific native target/incarnation refusal','maintenance target/incarnation mismatch' in error,error=error)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v3/native_probe_maintenance.py\", line 215, in <lambda>\n    return dict(here=HERE,env=env,runtime=Path(env['XDG_RUNTIME_DIR']),control=control,Refused=Refused,received=received,ctl=lambda *args:ctl(env,*args),check=lambda name,ok,**fields:check(report,name,ok,**fields),wait=wait,pipe=pipe,keyboard=keyboard,reader=reader,\n                                                                                                                                                                                       ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v3/native_probe_maintenance.py\", line 56, in check\n    if not ok:raise AssertionError(name)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: actual stale nonce has specific native target/incarnation refusal\n"
+    }
+  ],
+  "fullWindowsParityAccepted": false,
+  "productionAccepted": false,
+  "mainGUIWrites": false,
+  "physicalHardwareAccepted": false
+}

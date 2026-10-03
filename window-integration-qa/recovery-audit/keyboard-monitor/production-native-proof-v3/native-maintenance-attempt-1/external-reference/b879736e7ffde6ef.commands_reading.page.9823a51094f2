@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_reading" xml:lang="sk">
+  <info>
+    <link type="next" xref="commands_structural_navigation"/>
+    <link type="guide" xref="commands#reading_documents"/>
+    <link type="seealso" xref="howto_documents"/>
+    <link type="seealso" xref="howto_text_attributes"/>
+    <link type="seealso" xref="howto_whereami"/>
+    <title type="sort">1. Čítanie</title>
+    <title type="link">Čítanie</title>
+    <desc>Príkazy na prístup k obsahu dokumentu</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Príkazy na čítanie</title>
+  <p>Okrem príkazov navigácie kurzora, ktoré sú súčasťou GNOME, poskytuje <app>Orca</app> množstvo príkazov, ktoré môžete použiť na čítanie dokumentu.</p>
+  <note style="tip">
+    <p>Nižšie uvidíte niekoľko odkazov na „KP“. Všetky klávesy „KP“ sa nachádzajú na numerickej klávesnici. Všimnete si tiež, že existujú rôzne klávesové skratky v závislosti od toho, či používate stolný alebo prenosný počítač – alebo presnejšie, či používate rozloženie klávesnice pre stolný počítač alebo prenosný počítač v <app>Orca</app>. Ďalšie informácie nájdete v téme <link xref="howto_keyboard_layout">Rozloženie klávesnice</link>.</p>
+  </note>
+  <section id="flat_review">
+    <title>Čítanie aktuálnej polohy</title>
+    <p>Nasledujúce <link xref="commands_flat_review">Príkazy plochého prehliadania</link> <app>Orca</app> možno použiť na čítanie vašej aktuálnej polohy:</p>
+    <list>
+      <item>
+        <p>Prečítať aktuálny riadok:</p>
+        <list>
+          <item>
+            <p>Stolný počítač: <keyseq><key>KP 8</key></keyseq></p>
+          </item>
+          <item>
+            <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>I</key></keyseq></p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Prečítať aktuálne slovo:</p>
+        <list>
+          <item>
+            <p>Stolný počítač: <keyseq><key>KP 5</key></keyseq></p>
+          </item>
+          <item>
+            <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>K</key></keyseq></p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Hláskovať aktuálne slovo:</p>
+        <list>
+          <item>
+            <p>Stolný počítač: <keyseq><key>KP 5</key></keyseq> (dvojklik)</p>
+          </item>
+          <item>
+            <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>K</key></keyseq> (dvojklik)</p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Hláskovať aktuálne slovo foneticky:</p>
+        <list>
+          <item>
+            <p>Stolný počítač: <keyseq><key>KP 5</key></keyseq> (trojklik)</p>
+          </item>
+          <item>
+            <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>K</key></keyseq> (trojklik)</p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Prečítať aktuálny znak:</p>
+        <list>
+          <item>
+            <p>Stolný počítač: <keyseq><key>KP 2</key></keyseq></p>
+          </item>
+          <item>
+            <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>Čiarka</key></keyseq></p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Prečítať aktuálny znak foneticky:</p>
+        <list>
+          <item>
+            <p>Stolný počítač: <keyseq><key>KP 2</key></keyseq> (dvojklik)</p>
+          </item>
+          <item>
+            <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>Čiarka</key></keyseq> (dvojklik)</p>
+          </item>
+        </list>
+      </item>
+      <item>
+        <p>Prečítať hodnotu Unicode aktuálneho znaku:</p>
+        <list>
+          <item>
+            <p>Stolný počítač: <keyseq><key>KP 2</key></keyseq> (trojklik)</p>
+          </item>
+          <item>
+            <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>Čiarka</key></keyseq> (trojklik)</p>
+          </item>
+        </list>
+      </item>
+    </list>
+  </section>
+  <section id="say_all">
+    <title>Prečítať všetko</title>
+    <p>Príkaz Prečítať všetko v Orca spôsobí, že <app>Orca</app> prečíta celý dokument začínajúc od vašej aktuálnej polohy.</p>
+    <list>
+      <item>
+        <p>Stolný počítač: <key>KP Plus</key></p>
+      </item>
+      <item>
+        <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>Bodkočiarka</key></keyseq></p>
+      </item>
+    </list>
+  </section>
+  <section id="attributes_and_selection">
+    <title>Atribúty textu a vybraný text</title>
+    <p><app>Orca</app> má vyhradený príkaz na získanie atribútov textu na pozícii kurzora. Okrem toho, ak použijete príkazy Kde som v <app>Orca</app> v rámci textového objektu, v ktorom je text vybraný, <app>Orca</app> oznámi vybraný text. Príkaz <app>Orca</app> na čítanie aktuálneho výberu bude v textovom objekte plniť aj túto funkciu.</p>
+    <list>
+      <item>
+        <p>Zobraziť atribúty textu: <keyseq><key>Modifikátor Orca</key><key>F</key></keyseq></p>
+      </item>
+      <item>
+        <p>Vykonať základné Kde som:</p>
+        <list>
+          <item>
+            <p>Stolný počítač: <key>KP Enter</key></p>
+          </item>
+          <item>
+            <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>Return</key></keyseq></p>
+          </item>
+        </list>
+    </item>
+    <item>
+      <p>Vykonať podrobné Kde som:</p>
+      <list>
+        <item>
+          <p>Stolný počítač: <key>KP Enter</key> (dvojklik)</p>
+        </item>
+        <item>
+          <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>Return</key></keyseq> (dvojklik)</p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Prečítať aktuálny výber: <keyseq><key>Modifikátor Orca</key><key>Shift</key><key>Hore</key></keyseq></p>
+    </item>
+  </list>
+  </section>
+  <section id="link_details">
+    <title>Podrobnosti odkazu</title>
+    <p>Ak ste na odkaze, príkaz Základné Kde som v <app>Orca</app> možno použiť na oznámenie podrobností spojených s odkazom, ako je typ odkazu, či bol odkaz navštívený, popis stránky a veľkosť súboru. Ak by ste namiesto toho uprednostnili vyhradený príkaz na tento účel, môžete príkaz <app>Orca</app> Prečítať podrobnosti odkazu priradiť ku klávesovej skratke. Informácie o tom, ako to urobiť, nájdete v časti <link xref="howto_key_bindings">Úprava klávesových skratiek</link>.</p>
+    <list>
+      <item>
+        <p>Prečítať podrobnosti odkazu: (Nepriradené)</p>
+      </item>
+    </list>
+  </section>
+  <section id="browse_and_focus_modes">
+    <title>Režim prehliadania a režim fokusu</title>
+    <p>Režimy prehliadania a fokusu v <app>Orca</app> vám umožňujú prepínať medzi čítaním a interakciou s webovým obsahom.</p>
+    <list>
+      <item>
+        <p>Prepnúť medzi režimom prehliadania a režimom fokusu: <keyseq><key>Modifikátor Orca</key><key>A</key></keyseq></p>
+      </item>
+      <item>
+        <p>Povoliť trvalý režim fokusu: <keyseq><key>Modifikátor Orca</key><key>A</key></keyseq> (dvojklik)</p>
+      </item>
+      <item>
+        <p>Povoliť trvalý režim prehliadania: <keyseq><key>Modifikátor Orca</key><key>A</key></keyseq> (trojklik)</p>
+      </item>
+    </list>
+  </section>
+  <section id="toggling_layout_mode">
+    <title>Prepínanie režimu rozloženia</title>
+    <p>Keď je zapnutý režim rozloženia, navigácia kurzora v <app>Orca</app> bude rešpektovať rozloženie obsahu na obrazovke a zobrazí celý riadok vrátane všetkých odkazov alebo formulárových polí na danom riadku. Keď je režim rozloženia vypnutý, <app>Orca</app> bude s objektmi, ako sú odkazy a formulárové polia, zaobchádzať, akoby boli na samostatných riadkoch, a to tak pri zobrazovaní, ako aj pri navigácii.</p>
+    <p><app>Orca</app> poskytuje príkaz na prepínanie medzi režimom rozloženia a režimom objektu. Tento príkaz je predvolene nepriradený. Informácie o tom, ako nepriradené príkazy priradiť, nájdete v časti <link xref="howto_key_bindings">Úprava klávesových skratiek</link>.</p>
+    <list>
+      <item>
+        <p>Prepnúť medzi režimom rozloženia a režimom objektu: (Nepriradené)</p>
+      </item>
+    </list>
+  </section>
+</page>

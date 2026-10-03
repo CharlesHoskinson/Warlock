@@ -1,0 +1,280 @@
+{
+  "result": "counterexample reproduced",
+  "nativeLaunch": false,
+  "actualKernelQueryOutcome": "refused",
+  "raw": {
+    "phase": "terminal-binding",
+    "errors": [
+      {
+        "type": "ValueError",
+        "message": "complete closed actual query proof required"
+      }
+    ],
+    "usable": false,
+    "moduleToken": "5ef4b9bcdc039ec9d127975474b87c5b4be0e0fcc54dc971c9a4e1a161a24a6f",
+    "owner": {
+      "pid": 934477,
+      "start": 15990242,
+      "uid": 1000,
+      "nonce": "1902a41d95334999bc75cf6a54336d9a",
+      "session": "cpu-readonly",
+      "root": "/tmp/readonly-cpu-0zcuihy1/service",
+      "rootIdentity": [
+        57,
+        1171026
+      ],
+      "lockIdentity": [
+        57,
+        1171031
+      ],
+      "compositorPID": 934477,
+      "compositorStart": 15990242
+    },
+    "ownerToken": "de8204e57b94bfd266326bbcfb64627d2da1a15108a3bde92fdf61b993d27b7f",
+    "ledger": {
+      "version": 1,
+      "issuer": {
+        "pid": 934477,
+        "start": 15990242,
+        "uid": 1000,
+        "root": "/tmp/readonly-cpu-0zcuihy1/service",
+        "rootIdentity": [
+          57,
+          1171026
+        ],
+        "lockIdentity": [
+          57,
+          1171031
+        ],
+        "nonce": "1902a41d95334999bc75cf6a54336d9a",
+        "session": "cpu-readonly",
+        "environment": {
+          "XDG_RUNTIME_DIR": "/tmp/readonly-cpu-0zcuihy1",
+          "HYPRLAND_INSTANCE_SIGNATURE": "cpu-readonly",
+          "WAYLAND_DISPLAY": "cpu-wayland"
+        },
+        "compositorPID": 934477,
+        "compositorStart": 15990242,
+        "socket": "/tmp/readonly-cpu-0zcuihy1/hypr/cpu-readonly/.socket.sock",
+        "socketIdentity": [
+          57,
+          1171029
+        ],
+        "adapter": {
+          "device": 58,
+          "inode": 10486766,
+          "size": 19577,
+          "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+          "seals": null
+        },
+        "sessionSource": {
+          "device": 58,
+          "inode": 10486669,
+          "size": 20873,
+          "sha256": "a690e79fcb1231debce7a66fe7712d31942db6301fce79bc92effaa453a35c73",
+          "seals": null
+        },
+        "executable": "/usr/bin/hyprctl",
+        "executableMaterial": {
+          "device": 32,
+          "inode": 114194,
+          "size": 272680,
+          "sha256": "2780a8bb56494917a725f817c9cf70fb5cc2f39aac5abc62ecf2e619a1f13ec5",
+          "seals": null
+        }
+      },
+      "history": [
+        {
+          "id": "f1cb2b139e65439c8c57b0f7bbe751f7",
+          "actor": 1,
+          "thread": 934477,
+          "fd": 6,
+          "fdIdentity": [
+            10,
+            31246550
+          ],
+          "issuerSHA256": "fca4443a13a2964b9c7c8aaae35e3253390ca2290f4c9b9103a9e01d6cac4724",
+          "request": "j/clients",
+          "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+          "registeredNs": 147783328145456,
+          "closed": true,
+          "published": true,
+          "outcome": "refused",
+          "evidence": {
+            "completeServerEOF": true,
+            "replyBytes": 2,
+            "replySHA256": "8b351adb56355ffc40a4986ab30267eecae89710c63d09cba764a35adfda3ef5",
+            "peer": {
+              "pid": 934477,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "socketIdentity": [
+              57,
+              1171029
+            ]
+          },
+          "error": {
+            "type": "JSONDecodeError",
+            "message": "Expecting property name enclosed in double quotes: line 1 column 3 (char 2)"
+          },
+          "finishedNs": 147783330146472
+        }
+      ],
+      "fault": false
+    },
+    "ledgerToken": "1ce534ff5c7b0fd85ec16584c34ca982d9051273c47f17d65ed24c25d809375e",
+    "journal": {
+      "helperOwnership": {
+        "keeper": {
+          "rootIdentity": [
+            57,
+            1171026
+          ],
+          "servicePID": 934477,
+          "serviceStart": 15990242
+        }
+      },
+      "pending": [],
+      "readonlyOwnership": {
+        "fault": false,
+        "history": [
+          {
+            "actor": 1,
+            "closed": true,
+            "error": {
+              "message": "Expecting property name enclosed in double quotes: line 1 column 3 (char 2)",
+              "type": "JSONDecodeError"
+            },
+            "evidence": {
+              "completeServerEOF": true,
+              "peer": {
+                "gid": 1000,
+                "pid": 934477,
+                "uid": 1000
+              },
+              "replyBytes": 2,
+              "replySHA256": "8b351adb56355ffc40a4986ab30267eecae89710c63d09cba764a35adfda3ef5",
+              "socketIdentity": [
+                57,
+                1171029
+              ]
+            },
+            "fd": 6,
+            "fdIdentity": [
+              10,
+              31246550
+            ],
+            "finishedNs": 147783330146472,
+            "id": "f1cb2b139e65439c8c57b0f7bbe751f7",
+            "issuerSHA256": "fca4443a13a2964b9c7c8aaae35e3253390ca2290f4c9b9103a9e01d6cac4724",
+            "outcome": "refused",
+            "published": true,
+            "registeredNs": 147783328145456,
+            "request": "j/clients",
+            "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+            "thread": 934477
+          }
+        ],
+        "issuer": {
+          "adapter": {
+            "device": 58,
+            "inode": 10486766,
+            "seals": null,
+            "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+            "size": 19577
+          },
+          "compositorPID": 934477,
+          "compositorStart": 15990242,
+          "environment": {
+            "HYPRLAND_INSTANCE_SIGNATURE": "cpu-readonly",
+            "WAYLAND_DISPLAY": "cpu-wayland",
+            "XDG_RUNTIME_DIR": "/tmp/readonly-cpu-0zcuihy1"
+          },
+          "executable": "/usr/bin/hyprctl",
+          "executableMaterial": {
+            "device": 32,
+            "inode": 114194,
+            "seals": null,
+            "sha256": "2780a8bb56494917a725f817c9cf70fb5cc2f39aac5abc62ecf2e619a1f13ec5",
+            "size": 272680
+          },
+          "lockIdentity": [
+            57,
+            1171031
+          ],
+          "nonce": "1902a41d95334999bc75cf6a54336d9a",
+          "pid": 934477,
+          "root": "/tmp/readonly-cpu-0zcuihy1/service",
+          "rootIdentity": [
+            57,
+            1171026
+          ],
+          "session": "cpu-readonly",
+          "sessionSource": {
+            "device": 58,
+            "inode": 10486669,
+            "seals": null,
+            "sha256": "a690e79fcb1231debce7a66fe7712d31942db6301fce79bc92effaa453a35c73",
+            "size": 20873
+          },
+          "socket": "/tmp/readonly-cpu-0zcuihy1/hypr/cpu-readonly/.socket.sock",
+          "socketIdentity": [
+            57,
+            1171029
+          ],
+          "start": 15990242,
+          "uid": 1000
+        },
+        "version": 1
+      },
+      "scenes": [],
+      "session": "cpu-readonly",
+      "snapshot": 3,
+      "version": 1
+    },
+    "actors": []
+  },
+  "confirmation": {
+    "phase": "terminal-post-disk",
+    "capturedRaw": {
+      "path": "/tmp/tmpju9vq1kx/evidence/actual-terminal-binding.json",
+      "sha256": "3895df36e0a5bb8a041cdbeb3a5554565b7760703bcdaeb0942866a11cc65ee9",
+      "identity": {
+        "device": 57,
+        "inode": 1171047,
+        "size": 6554,
+        "mode": 384,
+        "uid": 1000,
+        "gid": 1000
+      }
+    },
+    "errors": [
+      {
+        "type": "UnboundLocalError",
+        "message": "cannot access local variable 'packet' where it is not associated with a value"
+      }
+    ],
+    "owner": {
+      "pid": 934477,
+      "start": 15990242,
+      "uid": 1000,
+      "nonce": "1902a41d95334999bc75cf6a54336d9a",
+      "session": "cpu-readonly",
+      "root": "/tmp/readonly-cpu-0zcuihy1/service",
+      "rootIdentity": [
+        57,
+        1171026
+      ],
+      "lockIdentity": [
+        57,
+        1171031
+      ],
+      "compositorPID": 934477,
+      "compositorStart": 15990242
+    },
+    "ledgerToken": "1ce534ff5c7b0fd85ec16584c34ca982d9051273c47f17d65ed24c25d809375e",
+    "moduleToken": "5ef4b9bcdc039ec9d127975474b87c5b4be0e0fcc54dc971c9a4e1a161a24a6f"
+  },
+  "sourceSHA256": "35f4e144c9ea720e638e0dd3d5310dff140d80dd52ed902f90bf6e9a71b41ef5"
+}

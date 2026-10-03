@@ -1,0 +1,75 @@
+{
+  "case": "move-escape",
+  "result": "fail",
+  "gates": [],
+  "trace": [],
+  "cleanup": {
+    "fixtureExitCode": 0,
+    "normalPublicQuit": true,
+    "publicCommandAcknowledgements": [
+      {
+        "command": "open",
+        "epoch": 1,
+        "ack": true,
+        "featureOracle": false
+      },
+      {
+        "command": "nested",
+        "epoch": 2,
+        "ack": true,
+        "featureOracle": false
+      },
+      {
+        "command": "quit",
+        "epoch": 3,
+        "ack": true,
+        "featureOracle": false
+      }
+    ],
+    "exactOriginalProcessGone": true
+  },
+  "nativeInputSource": "owned Wayland virtual protocols",
+  "physicalInputAccepted": false,
+  "processIdentity": {
+    "pid": 1772357,
+    "start": "12117328",
+    "pgid": 1772357,
+    "parent": 1771782
+  },
+  "mappedLifetimeRegistrations": [
+    [
+      {
+        "address": "0x5f664c0bef70",
+        "stableId": "18000000",
+        "pid": 1772357
+      }
+    ],
+    [
+      {
+        "address": "0x5f664c0a3e30",
+        "stableId": "18000001",
+        "pid": 1772357
+      }
+    ],
+    [
+      {
+        "address": "0x5f664c87c410",
+        "stableId": "18000002",
+        "pid": 1772357
+      }
+    ],
+    [
+      {
+        "address": "0x5f664c91a1b0",
+        "stableId": "18000003",
+        "pid": 1772357
+      }
+    ],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "error": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/run_native.py\", line 113, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n        ~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/held_route.py\", line 122, in prepare\n    backend=actual_backend(self.fixture.state(),windows,self.variant,self.process.pid,self.host_api.original.mapped_files(self.process.pid)['files'],self.closure)\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/public_toolkit.py\", line 54, in actual_backend\n    if not matches or any(path not in frozen or frozen[path]!=loaded[path] for path in matches):raise ValueError('Actual toolkit backend module outside frozen exact bytes')\n                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Actual toolkit backend module outside frozen exact bytes\n"
+}

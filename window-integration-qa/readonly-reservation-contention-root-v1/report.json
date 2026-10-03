@@ -1,0 +1,120 @@
+{
+  "result": "pass",
+  "nativeLaunch": false,
+  "mainChanged": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-9356ddf03bb7467caa93cd4c6805d88b.scope",
+    "coreLimit": 1
+  },
+  "experiment": "genuine frozen Unix peer/NativeSession/RuntimeLease/JournalStore, real reservation-lock contention",
+  "queryBudgetSeconds": 0.6,
+  "observations": {
+    "startedNs": 155887240801997,
+    "authorityVersionConnectionObservedNs": 155887243890001,
+    "lockReleaseNs": 155887992037375,
+    "error": {
+      "type": "TimeoutError",
+      "message": "read-only complete reply absolute deadline"
+    },
+    "finishedNs": 155887994294161
+  },
+  "refusedRow": {
+    "id": "2104e82cf2674aa3822ade8a5c519331",
+    "actor": 1,
+    "thread": 1913226,
+    "fd": 6,
+    "fdIdentity": [
+      10,
+      34493195
+    ],
+    "issuerSHA256": "aae6fe3003acb8d5dc8e5641e94f34affd72225a8e49b22b44a65e4897d259f9",
+    "request": "j/clients",
+    "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+    "registeredNs": 155887244862243,
+    "closed": true,
+    "published": true,
+    "outcome": "refused",
+    "evidence": {
+      "completeServerEOF": false,
+      "replyBytes": 0,
+      "replySHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "peer": null,
+      "socketIdentity": [
+        57,
+        1201507
+      ]
+    },
+    "error": {
+      "type": "TimeoutError",
+      "message": "read-only complete reply absolute deadline"
+    },
+    "finishedNs": 155887993426302
+  },
+  "subsequentUncontendedRow": {
+    "id": "e20ae04436fa4072a2b0c3080d12c565",
+    "actor": 1,
+    "thread": 1913167,
+    "fd": 6,
+    "fdIdentity": [
+      10,
+      34491236
+    ],
+    "issuerSHA256": "aae6fe3003acb8d5dc8e5641e94f34affd72225a8e49b22b44a65e4897d259f9",
+    "request": "j/clients",
+    "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+    "registeredNs": 155887998473499,
+    "closed": true,
+    "published": true,
+    "outcome": "complete",
+    "evidence": {
+      "completeServerEOF": true,
+      "replyBytes": 2,
+      "replySHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "peer": {
+        "pid": 1913167,
+        "uid": 1000,
+        "gid": 1000
+      },
+      "socketIdentity": [
+        57,
+        1201507
+      ]
+    },
+    "error": null,
+    "finishedNs": 155888003689518
+  },
+  "actualDataRequests": [
+    "j/clients"
+  ],
+  "registrationToRefusalMs": 748.564059,
+  "sourceUnchanged": true,
+  "limits": [
+    "A reachable pre-connect timeout path; native row33 manager-lock holder and timing are unproved.",
+    "No product changes, deadline reset, skipped ledger proof or native feature acceptance.",
+    "CPU peer is a fixture; no Hyprland or Quickshell launched."
+  ],
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/readonly-reservation-contention-root-v1/replay.py": {
+      "sha256": "01f067d72026d27c63c32ce1f7e3d7aca12b6dc78a8699bb2bb3f121a16f18f8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/readonly_ipc.py": {
+      "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/native_runtime.py": {
+      "sha256": "2179e2a30c880d5ad88b5ae19b370485ac886979ba8834f182ddcfb59b2006d1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/service_runtime.py": {
+      "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/test_readonly_ipc.py": {
+      "sha256": "ac6f67078081c4893ee2e49d7dcc4ad45a3b55ca7cee83d2c7654a133dc28820",
+      "mode": 420
+    }
+  },
+  "selectedManifest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/manifest-family-preparation-v24.json",
+  "selectedManifestSHA256": "b017d8d2a126f76c637429fffc2d77d510161fb89d3f3826795abb47d30b9f2c"
+}

@@ -1,0 +1,2362 @@
+{
+  "accepted": true,
+  "originalFeatureAcceptance": false,
+  "scope": "Two genuine serial button-free pointer moves with bounded exact current native/CSS coordinate witness",
+  "moves": [
+    {
+      "beforeDom": {
+        "url": "file:///home/hoskinson/window-integration-qa/browser-files-flow-v19/compose.html",
+        "title": "Private local draft QA",
+        "value": "",
+        "selection": [
+          0,
+          0
+        ],
+        "active": "",
+        "rect": [
+          135.953125,
+          79.875,
+          461,
+          222
+        ],
+        "inner": [
+          890,
+          563
+        ],
+        "outer": [
+          930,
+          700
+        ],
+        "screen": [
+          0,
+          0
+        ],
+        "ratio": 1,
+        "clicks": 0,
+        "events": [],
+        "pointerMoves": [],
+        "pointerSequence": 0,
+        "keyboardDiagnostic": {
+          "entries": [],
+          "sequence": 0,
+          "eventSequence": 0,
+          "dropped": 0,
+          "exhausted": false,
+          "limit": 512
+        },
+        "timeOrigin": 1790914567248.3,
+        "now": 43287.09999999404,
+        "scroll": [
+          0,
+          0
+        ],
+        "viewport": [
+          890,
+          563,
+          1,
+          0,
+          0
+        ]
+      },
+      "beforeNative": {
+        "cursor": [
+          605,
+          450
+        ],
+        "hitOwner": {
+          "address": "0x5dbb66c747a0",
+          "stableId": "18000000",
+          "pid": 2820728,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ]
+        },
+        "pointerOwner": {
+          "address": "0x5dbb66c747a0",
+          "stableId": "18000000",
+          "pid": 2820728,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ]
+        },
+        "pointerSurfacePresent": true,
+        "nativeFocus": {
+          "address": "0x5dbb66c747a0",
+          "stableId": "18000000",
+          "pid": 2820728,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ]
+        },
+        "modalTarget": {
+          "address": "0x5dbb66c747a0",
+          "stableId": "18000000",
+          "pid": 2820728,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ]
+        },
+        "historyOldToNew": [
+          {
+            "address": "0x5dbb672b9d50",
+            "stableId": "18000001",
+            "pid": 2821187,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              760,
+              220,
+              700,
+              550
+            ]
+          },
+          {
+            "address": "0x5dbb66c747a0",
+            "stableId": "18000000",
+            "pid": 2820728,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          }
+        ],
+        "windows": [
+          {
+            "address": "0x5dbb66c747a0",
+            "stableId": "18000000",
+            "pid": 2820728,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          {
+            "address": "0x5dbb672b9d50",
+            "stableId": "18000001",
+            "pid": 2821187,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              760,
+              220,
+              700,
+              550
+            ]
+          }
+        ],
+        "sessionLocked": false,
+        "exclusiveLayers": 0,
+        "clickMode": 0,
+        "constrained": false,
+        "heldButtons": false,
+        "seatGrab": false,
+        "captured": false,
+        "dnd": false,
+        "dragTarget": false
+      },
+      "point": [
+        682,
+        508
+      ],
+      "observations": [
+        {
+          "nativeBefore": {
+            "cursor": [
+              682,
+              508
+            ],
+            "hitOwner": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "pointerOwner": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "pointerSurfacePresent": true,
+            "nativeFocus": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "modalTarget": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "historyOldToNew": [
+              {
+                "address": "0x5dbb672b9d50",
+                "stableId": "18000001",
+                "pid": 2821187,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  760,
+                  220,
+                  700,
+                  550
+                ]
+              },
+              {
+                "address": "0x5dbb66c747a0",
+                "stableId": "18000000",
+                "pid": 2820728,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  140,
+                  100,
+                  930,
+                  700
+                ]
+              }
+            ],
+            "windows": [
+              {
+                "address": "0x5dbb66c747a0",
+                "stableId": "18000000",
+                "pid": 2820728,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  140,
+                  100,
+                  930,
+                  700
+                ]
+              },
+              {
+                "address": "0x5dbb672b9d50",
+                "stableId": "18000001",
+                "pid": 2821187,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  760,
+                  220,
+                  700,
+                  550
+                ]
+              }
+            ],
+            "sessionLocked": false,
+            "exclusiveLayers": 0,
+            "clickMode": 0,
+            "constrained": false,
+            "heldButtons": false,
+            "seatGrab": false,
+            "captured": false,
+            "dnd": false,
+            "dragTarget": false
+          },
+          "dom": {
+            "url": "file:///home/hoskinson/window-integration-qa/browser-files-flow-v19/compose.html",
+            "title": "Private local draft QA",
+            "value": "",
+            "selection": [
+              0,
+              0
+            ],
+            "active": "",
+            "rect": [
+              135.953125,
+              79.875,
+              461,
+              222
+            ],
+            "inner": [
+              890,
+              563
+            ],
+            "outer": [
+              930,
+              700
+            ],
+            "screen": [
+              0,
+              0
+            ],
+            "ratio": 1,
+            "clicks": 0,
+            "events": [],
+            "pointerMoves": [
+              {
+                "sequence": 1,
+                "type": "pointermove",
+                "trusted": true,
+                "pointerType": "mouse",
+                "pointerId": 1,
+                "primary": true,
+                "buttons": 0,
+                "modifiers": [
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "client": [
+                  542,
+                  271
+                ],
+                "timestamp": 43344.70000000298,
+                "handled": 43347.5
+              }
+            ],
+            "pointerSequence": 1,
+            "keyboardDiagnostic": {
+              "entries": [],
+              "sequence": 0,
+              "eventSequence": 0,
+              "dropped": 0,
+              "exhausted": false,
+              "limit": 512
+            },
+            "timeOrigin": 1790914567248.3,
+            "now": 43381,
+            "scroll": [
+              0,
+              0
+            ],
+            "viewport": [
+              890,
+              563,
+              1,
+              0,
+              0
+            ]
+          },
+          "nativeAfter": {
+            "cursor": [
+              682,
+              508
+            ],
+            "hitOwner": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "pointerOwner": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "pointerSurfacePresent": true,
+            "nativeFocus": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "modalTarget": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "historyOldToNew": [
+              {
+                "address": "0x5dbb672b9d50",
+                "stableId": "18000001",
+                "pid": 2821187,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  760,
+                  220,
+                  700,
+                  550
+                ]
+              },
+              {
+                "address": "0x5dbb66c747a0",
+                "stableId": "18000000",
+                "pid": 2820728,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  140,
+                  100,
+                  930,
+                  700
+                ]
+              }
+            ],
+            "windows": [
+              {
+                "address": "0x5dbb66c747a0",
+                "stableId": "18000000",
+                "pid": 2820728,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  140,
+                  100,
+                  930,
+                  700
+                ]
+              },
+              {
+                "address": "0x5dbb672b9d50",
+                "stableId": "18000001",
+                "pid": 2821187,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  760,
+                  220,
+                  700,
+                  550
+                ]
+              }
+            ],
+            "sessionLocked": false,
+            "exclusiveLayers": 0,
+            "clickMode": 0,
+            "constrained": false,
+            "heldButtons": false,
+            "seatGrab": false,
+            "captured": false,
+            "dnd": false,
+            "dragTarget": false
+          },
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ],
+          "identity": {
+            "address": "0x5dbb66c747a0",
+            "stableId": "18000000",
+            "pid": 2820728,
+            "start": "13703880"
+          }
+        }
+      ],
+      "selectedSequence": 1,
+      "selectedPointerId": 1
+    },
+    {
+      "beforeDom": {
+        "url": "file:///home/hoskinson/window-integration-qa/browser-files-flow-v19/compose.html",
+        "title": "Private local draft QA",
+        "value": "",
+        "selection": [
+          0,
+          0
+        ],
+        "active": "",
+        "rect": [
+          135.953125,
+          79.875,
+          461,
+          222
+        ],
+        "inner": [
+          890,
+          563
+        ],
+        "outer": [
+          930,
+          700
+        ],
+        "screen": [
+          0,
+          0
+        ],
+        "ratio": 1,
+        "clicks": 0,
+        "events": [],
+        "pointerMoves": [
+          {
+            "sequence": 1,
+            "type": "pointermove",
+            "trusted": true,
+            "pointerType": "mouse",
+            "pointerId": 1,
+            "primary": true,
+            "buttons": 0,
+            "modifiers": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "client": [
+              542,
+              271
+            ],
+            "timestamp": 43344.70000000298,
+            "handled": 43347.5
+          }
+        ],
+        "pointerSequence": 1,
+        "keyboardDiagnostic": {
+          "entries": [],
+          "sequence": 0,
+          "eventSequence": 0,
+          "dropped": 0,
+          "exhausted": false,
+          "limit": 512
+        },
+        "timeOrigin": 1790914567248.3,
+        "now": 43430.70000000298,
+        "scroll": [
+          0,
+          0
+        ],
+        "viewport": [
+          890,
+          563,
+          1,
+          0,
+          0
+        ]
+      },
+      "beforeNative": {
+        "cursor": [
+          682,
+          508
+        ],
+        "hitOwner": {
+          "address": "0x5dbb66c747a0",
+          "stableId": "18000000",
+          "pid": 2820728,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ]
+        },
+        "pointerOwner": {
+          "address": "0x5dbb66c747a0",
+          "stableId": "18000000",
+          "pid": 2820728,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ]
+        },
+        "pointerSurfacePresent": true,
+        "nativeFocus": {
+          "address": "0x5dbb66c747a0",
+          "stableId": "18000000",
+          "pid": 2820728,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ]
+        },
+        "modalTarget": {
+          "address": "0x5dbb66c747a0",
+          "stableId": "18000000",
+          "pid": 2820728,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ]
+        },
+        "historyOldToNew": [
+          {
+            "address": "0x5dbb672b9d50",
+            "stableId": "18000001",
+            "pid": 2821187,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              760,
+              220,
+              700,
+              550
+            ]
+          },
+          {
+            "address": "0x5dbb66c747a0",
+            "stableId": "18000000",
+            "pid": 2820728,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          }
+        ],
+        "windows": [
+          {
+            "address": "0x5dbb66c747a0",
+            "stableId": "18000000",
+            "pid": 2820728,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          {
+            "address": "0x5dbb672b9d50",
+            "stableId": "18000001",
+            "pid": 2821187,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              760,
+              220,
+              700,
+              550
+            ]
+          }
+        ],
+        "sessionLocked": false,
+        "exclusiveLayers": 0,
+        "clickMode": 0,
+        "constrained": false,
+        "heldButtons": false,
+        "seatGrab": false,
+        "captured": false,
+        "dnd": false,
+        "dragTarget": false
+      },
+      "point": [
+        605,
+        450
+      ],
+      "observations": [
+        {
+          "nativeBefore": {
+            "cursor": [
+              605,
+              450
+            ],
+            "hitOwner": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "pointerOwner": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "pointerSurfacePresent": true,
+            "nativeFocus": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "modalTarget": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "historyOldToNew": [
+              {
+                "address": "0x5dbb672b9d50",
+                "stableId": "18000001",
+                "pid": 2821187,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  760,
+                  220,
+                  700,
+                  550
+                ]
+              },
+              {
+                "address": "0x5dbb66c747a0",
+                "stableId": "18000000",
+                "pid": 2820728,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  140,
+                  100,
+                  930,
+                  700
+                ]
+              }
+            ],
+            "windows": [
+              {
+                "address": "0x5dbb66c747a0",
+                "stableId": "18000000",
+                "pid": 2820728,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  140,
+                  100,
+                  930,
+                  700
+                ]
+              },
+              {
+                "address": "0x5dbb672b9d50",
+                "stableId": "18000001",
+                "pid": 2821187,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  760,
+                  220,
+                  700,
+                  550
+                ]
+              }
+            ],
+            "sessionLocked": false,
+            "exclusiveLayers": 0,
+            "clickMode": 0,
+            "constrained": false,
+            "heldButtons": false,
+            "seatGrab": false,
+            "captured": false,
+            "dnd": false,
+            "dragTarget": false
+          },
+          "dom": {
+            "url": "file:///home/hoskinson/window-integration-qa/browser-files-flow-v19/compose.html",
+            "title": "Private local draft QA",
+            "value": "",
+            "selection": [
+              0,
+              0
+            ],
+            "active": "",
+            "rect": [
+              135.953125,
+              79.875,
+              461,
+              222
+            ],
+            "inner": [
+              890,
+              563
+            ],
+            "outer": [
+              930,
+              700
+            ],
+            "screen": [
+              0,
+              0
+            ],
+            "ratio": 1,
+            "clicks": 0,
+            "events": [],
+            "pointerMoves": [
+              {
+                "sequence": 1,
+                "type": "pointermove",
+                "trusted": true,
+                "pointerType": "mouse",
+                "pointerId": 1,
+                "primary": true,
+                "buttons": 0,
+                "modifiers": [
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "client": [
+                  542,
+                  271
+                ],
+                "timestamp": 43344.70000000298,
+                "handled": 43347.5
+              },
+              {
+                "sequence": 2,
+                "type": "pointermove",
+                "trusted": true,
+                "pointerType": "mouse",
+                "pointerId": 1,
+                "primary": true,
+                "buttons": 0,
+                "modifiers": [
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "client": [
+                  465,
+                  213
+                ],
+                "timestamp": 43492,
+                "handled": 43493.59999999404
+              }
+            ],
+            "pointerSequence": 2,
+            "keyboardDiagnostic": {
+              "entries": [],
+              "sequence": 0,
+              "eventSequence": 0,
+              "dropped": 0,
+              "exhausted": false,
+              "limit": 512
+            },
+            "timeOrigin": 1790914567248.3,
+            "now": 43520,
+            "scroll": [
+              0,
+              0
+            ],
+            "viewport": [
+              890,
+              563,
+              1,
+              0,
+              0
+            ]
+          },
+          "nativeAfter": {
+            "cursor": [
+              605,
+              450
+            ],
+            "hitOwner": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "pointerOwner": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "pointerSurfacePresent": true,
+            "nativeFocus": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "modalTarget": {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            "historyOldToNew": [
+              {
+                "address": "0x5dbb672b9d50",
+                "stableId": "18000001",
+                "pid": 2821187,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  760,
+                  220,
+                  700,
+                  550
+                ]
+              },
+              {
+                "address": "0x5dbb66c747a0",
+                "stableId": "18000000",
+                "pid": 2820728,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  140,
+                  100,
+                  930,
+                  700
+                ]
+              }
+            ],
+            "windows": [
+              {
+                "address": "0x5dbb66c747a0",
+                "stableId": "18000000",
+                "pid": 2820728,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  140,
+                  100,
+                  930,
+                  700
+                ]
+              },
+              {
+                "address": "0x5dbb672b9d50",
+                "stableId": "18000001",
+                "pid": 2821187,
+                "modal": false,
+                "mapped": true,
+                "hidden": false,
+                "acceptsInput": true,
+                "surfaceBox": [
+                  760,
+                  220,
+                  700,
+                  550
+                ]
+              }
+            ],
+            "sessionLocked": false,
+            "exclusiveLayers": 0,
+            "clickMode": 0,
+            "constrained": false,
+            "heldButtons": false,
+            "seatGrab": false,
+            "captured": false,
+            "dnd": false,
+            "dragTarget": false
+          },
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ],
+          "identity": {
+            "address": "0x5dbb66c747a0",
+            "stableId": "18000000",
+            "pid": 2820728,
+            "start": "13703880"
+          }
+        }
+      ],
+      "selectedSequence": 2,
+      "selectedPointerId": 1
+    }
+  ],
+  "focusSetup": {
+    "accepted": true,
+    "originalFeatureAcceptance": false,
+    "identity": {
+      "address": "0x5dbb66c747a0",
+      "stableId": "18000000",
+      "pid": 2820728,
+      "start": "13703880"
+    },
+    "session": "EDFA8F69FBA16F475012B6F364ABA8D1",
+    "observations": [
+      {
+        "native": {
+          "cursor": [
+            605,
+            450
+          ],
+          "hitOwner": {
+            "address": "0x5dbb66c747a0",
+            "stableId": "18000000",
+            "pid": 2820728,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerOwner": {
+            "address": "0x5dbb66c747a0",
+            "stableId": "18000000",
+            "pid": 2820728,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "pointerSurfacePresent": true,
+          "nativeFocus": {
+            "address": "0x5dbb66c747a0",
+            "stableId": "18000000",
+            "pid": 2820728,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "modalTarget": {
+            "address": "0x5dbb66c747a0",
+            "stableId": "18000000",
+            "pid": 2820728,
+            "modal": false,
+            "mapped": true,
+            "hidden": false,
+            "acceptsInput": true,
+            "surfaceBox": [
+              140,
+              100,
+              930,
+              700
+            ]
+          },
+          "historyOldToNew": [
+            {
+              "address": "0x5dbb672b9d50",
+              "stableId": "18000001",
+              "pid": 2821187,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            },
+            {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            }
+          ],
+          "windows": [
+            {
+              "address": "0x5dbb66c747a0",
+              "stableId": "18000000",
+              "pid": 2820728,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                140,
+                100,
+                930,
+                700
+              ]
+            },
+            {
+              "address": "0x5dbb672b9d50",
+              "stableId": "18000001",
+              "pid": 2821187,
+              "modal": false,
+              "mapped": true,
+              "hidden": false,
+              "acceptsInput": true,
+              "surfaceBox": [
+                760,
+                220,
+                700,
+                550
+              ]
+            }
+          ],
+          "sessionLocked": false,
+          "exclusiveLayers": 0,
+          "clickMode": 0,
+          "constrained": false,
+          "heldButtons": false,
+          "seatGrab": false,
+          "captured": false,
+          "dnd": false,
+          "dragTarget": false
+        },
+        "identity": {
+          "address": "0x5dbb66c747a0",
+          "stableId": "18000000",
+          "pid": 2820728,
+          "start": "13703880"
+        },
+        "dom": {
+          "url": "file:///home/hoskinson/window-integration-qa/browser-files-flow-v19/compose.html",
+          "title": "Private local draft QA",
+          "value": "",
+          "selection": [
+            0,
+            0
+          ],
+          "active": "",
+          "rect": [
+            135.953125,
+            79.875,
+            461,
+            222
+          ],
+          "inner": [
+            890,
+            563
+          ],
+          "outer": [
+            930,
+            700
+          ],
+          "screen": [
+            0,
+            0
+          ],
+          "ratio": 1,
+          "clicks": 0,
+          "events": [],
+          "pointerMoves": [],
+          "pointerSequence": 0,
+          "keyboardDiagnostic": {
+            "entries": [],
+            "sequence": 0,
+            "eventSequence": 0,
+            "dropped": 0,
+            "exhausted": false,
+            "limit": 512
+          },
+          "timeOrigin": 1790914567248.3,
+          "now": 42985.89999999106,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            890,
+            563,
+            1,
+            0,
+            0
+          ]
+        }
+      }
+    ],
+    "scope": "Official private native focus fixture setup before layout capture; not a real click or feature acceptance",
+    "beforeDom": {
+      "url": "file:///home/hoskinson/window-integration-qa/browser-files-flow-v19/compose.html",
+      "title": "Private local draft QA",
+      "value": "",
+      "selection": [
+        0,
+        0
+      ],
+      "active": "",
+      "rect": [
+        135.953125,
+        79.875,
+        461,
+        222
+      ],
+      "inner": [
+        890,
+        563
+      ],
+      "outer": [
+        930,
+        700
+      ],
+      "screen": [
+        0,
+        0
+      ],
+      "ratio": 1,
+      "clicks": 0,
+      "events": [],
+      "pointerMoves": [],
+      "pointerSequence": 0,
+      "keyboardDiagnostic": {
+        "entries": [],
+        "sequence": 0,
+        "eventSequence": 0,
+        "dropped": 0,
+        "exhausted": false,
+        "limit": 512
+      },
+      "timeOrigin": 1790914567248.3,
+      "now": 42906.79999999702,
+      "scroll": [
+        0,
+        0
+      ],
+      "viewport": [
+        890,
+        563,
+        1,
+        0,
+        0
+      ]
+    },
+    "beforeNative": {
+      "cursor": [
+        100,
+        100
+      ],
+      "hitOwner": null,
+      "pointerOwner": {
+        "address": "0x5dbb672b9d50",
+        "stableId": "18000001",
+        "pid": 2821187,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          760,
+          220,
+          700,
+          550
+        ]
+      },
+      "pointerSurfacePresent": true,
+      "nativeFocus": {
+        "address": "0x5dbb672b9d50",
+        "stableId": "18000001",
+        "pid": 2821187,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          760,
+          220,
+          700,
+          550
+        ]
+      },
+      "modalTarget": null,
+      "historyOldToNew": [
+        {
+          "address": "0x5dbb66c747a0",
+          "stableId": "18000000",
+          "pid": 2820728,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ]
+        },
+        {
+          "address": "0x5dbb672b9d50",
+          "stableId": "18000001",
+          "pid": 2821187,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            760,
+            220,
+            700,
+            550
+          ]
+        }
+      ],
+      "windows": [
+        {
+          "address": "0x5dbb66c747a0",
+          "stableId": "18000000",
+          "pid": 2820728,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ]
+        },
+        {
+          "address": "0x5dbb672b9d50",
+          "stableId": "18000001",
+          "pid": 2821187,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            760,
+            220,
+            700,
+            550
+          ]
+        }
+      ],
+      "sessionLocked": false,
+      "exclusiveLayers": 0,
+      "clickMode": 0,
+      "constrained": false,
+      "heldButtons": false,
+      "seatGrab": false,
+      "captured": false,
+      "dnd": false,
+      "dragTarget": false
+    },
+    "command": "do\nlocal w=hl.get_window(\"address:0x5dbb66c747a0\")\nassert(w,\"Exact captured private Browser absent\")\nlocal a,s,p=hl.plugin.hyprbars.window_lifetime(w)\nassert(a==\"0x5dbb66c747a0\" and s==\"18000000\" and p==2820728,\"Private Browser lifetime changed before focus setup\")\nlocal result=hl.dispatch(hl.dsp.focus({window=\"address:0x5dbb66c747a0\"}))\nlocal z=hl.get_window(\"address:0x5dbb66c747a0\")\nassert(z,\"Exact captured private Browser absent after focus setup\")\nlocal aa,ss,pp=hl.plugin.hyprbars.window_lifetime(z)\nassert(aa==a and ss==s and pp==p,\"Private Browser lifetime changed during focus setup\")\nlocal fields={}\nif type(result)==\"table\" then\n for k,v in pairs(result) do fields[#fields+1]=tostring(k)..\"=\"..tostring(v) end\n table.sort(fields)\nend\nprint(\"qa-browser-focus-setup-result:\"..type(result)..\":\"..table.concat(fields,\",\"))\nprint(\"qa-browser-focus-setup-ack:0x5dbb66c747a0:18000000:2820728\")\nend",
+    "expectedAcknowledgement": "qa-browser-focus-setup-ack:0x5dbb66c747a0:18000000:2820728",
+    "rawAcknowledgement": "qa-browser-focus-setup-result:table:ok=true,pass_event=false\nqa-browser-focus-setup-ack:0x5dbb66c747a0:18000000:2820728",
+    "afterDom": {
+      "url": "file:///home/hoskinson/window-integration-qa/browser-files-flow-v19/compose.html",
+      "title": "Private local draft QA",
+      "value": "",
+      "selection": [
+        0,
+        0
+      ],
+      "active": "",
+      "rect": [
+        135.953125,
+        79.875,
+        461,
+        222
+      ],
+      "inner": [
+        890,
+        563
+      ],
+      "outer": [
+        930,
+        700
+      ],
+      "screen": [
+        0,
+        0
+      ],
+      "ratio": 1,
+      "clicks": 0,
+      "events": [],
+      "pointerMoves": [],
+      "pointerSequence": 0,
+      "keyboardDiagnostic": {
+        "entries": [],
+        "sequence": 0,
+        "eventSequence": 0,
+        "dropped": 0,
+        "exhausted": false,
+        "limit": 512
+      },
+      "timeOrigin": 1790914567248.3,
+      "now": 42988.79999999702,
+      "scroll": [
+        0,
+        0
+      ],
+      "viewport": [
+        890,
+        563,
+        1,
+        0,
+        0
+      ]
+    },
+    "afterNative": {
+      "cursor": [
+        605,
+        450
+      ],
+      "hitOwner": {
+        "address": "0x5dbb66c747a0",
+        "stableId": "18000000",
+        "pid": 2820728,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          140,
+          100,
+          930,
+          700
+        ]
+      },
+      "pointerOwner": {
+        "address": "0x5dbb66c747a0",
+        "stableId": "18000000",
+        "pid": 2820728,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          140,
+          100,
+          930,
+          700
+        ]
+      },
+      "pointerSurfacePresent": true,
+      "nativeFocus": {
+        "address": "0x5dbb66c747a0",
+        "stableId": "18000000",
+        "pid": 2820728,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          140,
+          100,
+          930,
+          700
+        ]
+      },
+      "modalTarget": {
+        "address": "0x5dbb66c747a0",
+        "stableId": "18000000",
+        "pid": 2820728,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          140,
+          100,
+          930,
+          700
+        ]
+      },
+      "historyOldToNew": [
+        {
+          "address": "0x5dbb672b9d50",
+          "stableId": "18000001",
+          "pid": 2821187,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            760,
+            220,
+            700,
+            550
+          ]
+        },
+        {
+          "address": "0x5dbb66c747a0",
+          "stableId": "18000000",
+          "pid": 2820728,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ]
+        }
+      ],
+      "windows": [
+        {
+          "address": "0x5dbb66c747a0",
+          "stableId": "18000000",
+          "pid": 2820728,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            140,
+            100,
+            930,
+            700
+          ]
+        },
+        {
+          "address": "0x5dbb672b9d50",
+          "stableId": "18000001",
+          "pid": 2821187,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            760,
+            220,
+            700,
+            550
+          ]
+        }
+      ],
+      "sessionLocked": false,
+      "exclusiveLayers": 0,
+      "clickMode": 0,
+      "constrained": false,
+      "heldButtons": false,
+      "seatGrab": false,
+      "captured": false,
+      "dnd": false,
+      "dragTarget": false
+    },
+    "observedFocus": {
+      "address": "0x5dbb66c747a0",
+      "stableId": "18000000",
+      "pid": 2820728,
+      "modal": false,
+      "mapped": true,
+      "hidden": false,
+      "acceptsInput": true,
+      "surfaceBox": [
+        140,
+        100,
+        930,
+        700
+      ]
+    }
+  },
+  "expectedKey": {
+    "identity": {
+      "address": "0x5dbb66c747a0",
+      "stableId": "18000000",
+      "pid": 2820728,
+      "start": "13703880"
+    },
+    "session": "EDFA8F69FBA16F475012B6F364ABA8D1",
+    "surfaceBox": [
+      140,
+      100,
+      930,
+      700
+    ],
+    "inner": [
+      890,
+      563
+    ],
+    "outer": [
+      930,
+      700
+    ],
+    "rect": [
+      135.953125,
+      79.875,
+      461,
+      222
+    ],
+    "ratio": 1,
+    "viewport": [
+      890,
+      563,
+      1,
+      0,
+      0
+    ],
+    "scroll": [
+      0,
+      0
+    ],
+    "timeOrigin": 1790914567248.3,
+    "url": "file:///home/hoskinson/window-integration-qa/browser-files-flow-v19/compose.html",
+    "title": "Private local draft QA"
+  },
+  "beforeDom": {
+    "url": "file:///home/hoskinson/window-integration-qa/browser-files-flow-v19/compose.html",
+    "title": "Private local draft QA",
+    "value": "",
+    "selection": [
+      0,
+      0
+    ],
+    "active": "",
+    "rect": [
+      135.953125,
+      79.875,
+      461,
+      222
+    ],
+    "inner": [
+      890,
+      563
+    ],
+    "outer": [
+      930,
+      700
+    ],
+    "screen": [
+      0,
+      0
+    ],
+    "ratio": 1,
+    "clicks": 0,
+    "events": [],
+    "pointerMoves": [],
+    "pointerSequence": 0,
+    "keyboardDiagnostic": {
+      "entries": [],
+      "sequence": 0,
+      "eventSequence": 0,
+      "dropped": 0,
+      "exhausted": false,
+      "limit": 512
+    },
+    "timeOrigin": 1790914567248.3,
+    "now": 43208.89999999106,
+    "scroll": [
+      0,
+      0
+    ],
+    "viewport": [
+      890,
+      563,
+      1,
+      0,
+      0
+    ]
+  },
+  "beforeNative": {
+    "cursor": [
+      605,
+      450
+    ],
+    "hitOwner": {
+      "address": "0x5dbb66c747a0",
+      "stableId": "18000000",
+      "pid": 2820728,
+      "modal": false,
+      "mapped": true,
+      "hidden": false,
+      "acceptsInput": true,
+      "surfaceBox": [
+        140,
+        100,
+        930,
+        700
+      ]
+    },
+    "pointerOwner": {
+      "address": "0x5dbb66c747a0",
+      "stableId": "18000000",
+      "pid": 2820728,
+      "modal": false,
+      "mapped": true,
+      "hidden": false,
+      "acceptsInput": true,
+      "surfaceBox": [
+        140,
+        100,
+        930,
+        700
+      ]
+    },
+    "pointerSurfacePresent": true,
+    "nativeFocus": {
+      "address": "0x5dbb66c747a0",
+      "stableId": "18000000",
+      "pid": 2820728,
+      "modal": false,
+      "mapped": true,
+      "hidden": false,
+      "acceptsInput": true,
+      "surfaceBox": [
+        140,
+        100,
+        930,
+        700
+      ]
+    },
+    "modalTarget": {
+      "address": "0x5dbb66c747a0",
+      "stableId": "18000000",
+      "pid": 2820728,
+      "modal": false,
+      "mapped": true,
+      "hidden": false,
+      "acceptsInput": true,
+      "surfaceBox": [
+        140,
+        100,
+        930,
+        700
+      ]
+    },
+    "historyOldToNew": [
+      {
+        "address": "0x5dbb672b9d50",
+        "stableId": "18000001",
+        "pid": 2821187,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          760,
+          220,
+          700,
+          550
+        ]
+      },
+      {
+        "address": "0x5dbb66c747a0",
+        "stableId": "18000000",
+        "pid": 2820728,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          140,
+          100,
+          930,
+          700
+        ]
+      }
+    ],
+    "windows": [
+      {
+        "address": "0x5dbb66c747a0",
+        "stableId": "18000000",
+        "pid": 2820728,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          140,
+          100,
+          930,
+          700
+        ]
+      },
+      {
+        "address": "0x5dbb672b9d50",
+        "stableId": "18000001",
+        "pid": 2821187,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          760,
+          220,
+          700,
+          550
+        ]
+      }
+    ],
+    "sessionLocked": false,
+    "exclusiveLayers": 0,
+    "clickMode": 0,
+    "constrained": false,
+    "heldButtons": false,
+    "seatGrab": false,
+    "captured": false,
+    "dnd": false,
+    "dragTarget": false
+  },
+  "candidateIntegerPoints": [
+    [
+      605,
+      450
+    ],
+    [
+      682,
+      508
+    ]
+  ],
+  "orderedIntegerPoints": [
+    [
+      682,
+      508
+    ],
+    [
+      605,
+      450
+    ]
+  ],
+  "key": {
+    "identity": {
+      "address": "0x5dbb66c747a0",
+      "stableId": "18000000",
+      "pid": 2820728,
+      "start": "13703880"
+    },
+    "session": "EDFA8F69FBA16F475012B6F364ABA8D1",
+    "surfaceBox": [
+      140,
+      100,
+      930,
+      700
+    ],
+    "inner": [
+      890,
+      563
+    ],
+    "outer": [
+      930,
+      700
+    ],
+    "rect": [
+      135.953125,
+      79.875,
+      461,
+      222
+    ],
+    "ratio": 1,
+    "viewport": [
+      890,
+      563,
+      1,
+      0,
+      0
+    ],
+    "scroll": [
+      0,
+      0
+    ],
+    "timeOrigin": 1790914567248.3,
+    "url": "file:///home/hoskinson/window-integration-qa/browser-files-flow-v19/compose.html",
+    "title": "Private local draft QA"
+  },
+  "translation": [
+    140.0,
+    237.0
+  ],
+  "insets": [
+    0.0,
+    137.0,
+    40.0,
+    0.0
+  ],
+  "viewportBox": [
+    140.0,
+    237.0,
+    890,
+    563
+  ],
+  "textareaGlobalRect": [
+    275.953125,
+    316.875,
+    461.0,
+    222.0
+  ],
+  "integerPoint": [
+    506,
+    427
+  ],
+  "eventSequences": [
+    1,
+    2
+  ],
+  "wireBasis": "surface origin + round(binary64(cursor-origin)*256)/256; half away, interior only",
+  "afterDom": {
+    "url": "file:///home/hoskinson/window-integration-qa/browser-files-flow-v19/compose.html",
+    "title": "Private local draft QA",
+    "value": "",
+    "selection": [
+      0,
+      0
+    ],
+    "active": "",
+    "rect": [
+      135.953125,
+      79.875,
+      461,
+      222
+    ],
+    "inner": [
+      890,
+      563
+    ],
+    "outer": [
+      930,
+      700
+    ],
+    "screen": [
+      0,
+      0
+    ],
+    "ratio": 1,
+    "clicks": 0,
+    "events": [],
+    "pointerMoves": [
+      {
+        "sequence": 1,
+        "type": "pointermove",
+        "trusted": true,
+        "pointerType": "mouse",
+        "pointerId": 1,
+        "primary": true,
+        "buttons": 0,
+        "modifiers": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "client": [
+          542,
+          271
+        ],
+        "timestamp": 43344.70000000298,
+        "handled": 43347.5
+      },
+      {
+        "sequence": 2,
+        "type": "pointermove",
+        "trusted": true,
+        "pointerType": "mouse",
+        "pointerId": 1,
+        "primary": true,
+        "buttons": 0,
+        "modifiers": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "client": [
+          465,
+          213
+        ],
+        "timestamp": 43492,
+        "handled": 43493.59999999404
+      }
+    ],
+    "pointerSequence": 2,
+    "keyboardDiagnostic": {
+      "entries": [],
+      "sequence": 0,
+      "eventSequence": 0,
+      "dropped": 0,
+      "exhausted": false,
+      "limit": 512
+    },
+    "timeOrigin": 1790914567248.3,
+    "now": 43569.20000000298,
+    "scroll": [
+      0,
+      0
+    ],
+    "viewport": [
+      890,
+      563,
+      1,
+      0,
+      0
+    ]
+  },
+  "afterNative": {
+    "cursor": [
+      605,
+      450
+    ],
+    "hitOwner": {
+      "address": "0x5dbb66c747a0",
+      "stableId": "18000000",
+      "pid": 2820728,
+      "modal": false,
+      "mapped": true,
+      "hidden": false,
+      "acceptsInput": true,
+      "surfaceBox": [
+        140,
+        100,
+        930,
+        700
+      ]
+    },
+    "pointerOwner": {
+      "address": "0x5dbb66c747a0",
+      "stableId": "18000000",
+      "pid": 2820728,
+      "modal": false,
+      "mapped": true,
+      "hidden": false,
+      "acceptsInput": true,
+      "surfaceBox": [
+        140,
+        100,
+        930,
+        700
+      ]
+    },
+    "pointerSurfacePresent": true,
+    "nativeFocus": {
+      "address": "0x5dbb66c747a0",
+      "stableId": "18000000",
+      "pid": 2820728,
+      "modal": false,
+      "mapped": true,
+      "hidden": false,
+      "acceptsInput": true,
+      "surfaceBox": [
+        140,
+        100,
+        930,
+        700
+      ]
+    },
+    "modalTarget": {
+      "address": "0x5dbb66c747a0",
+      "stableId": "18000000",
+      "pid": 2820728,
+      "modal": false,
+      "mapped": true,
+      "hidden": false,
+      "acceptsInput": true,
+      "surfaceBox": [
+        140,
+        100,
+        930,
+        700
+      ]
+    },
+    "historyOldToNew": [
+      {
+        "address": "0x5dbb672b9d50",
+        "stableId": "18000001",
+        "pid": 2821187,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          760,
+          220,
+          700,
+          550
+        ]
+      },
+      {
+        "address": "0x5dbb66c747a0",
+        "stableId": "18000000",
+        "pid": 2820728,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          140,
+          100,
+          930,
+          700
+        ]
+      }
+    ],
+    "windows": [
+      {
+        "address": "0x5dbb66c747a0",
+        "stableId": "18000000",
+        "pid": 2820728,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          140,
+          100,
+          930,
+          700
+        ]
+      },
+      {
+        "address": "0x5dbb672b9d50",
+        "stableId": "18000001",
+        "pid": 2821187,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          760,
+          220,
+          700,
+          550
+        ]
+      }
+    ],
+    "sessionLocked": false,
+    "exclusiveLayers": 0,
+    "clickMode": 0,
+    "constrained": false,
+    "heldButtons": false,
+    "seatGrab": false,
+    "captured": false,
+    "dnd": false,
+    "dragTarget": false
+  }
+}

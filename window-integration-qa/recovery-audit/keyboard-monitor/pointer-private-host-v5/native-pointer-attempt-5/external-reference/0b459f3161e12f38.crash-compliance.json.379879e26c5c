@@ -1,0 +1,20 @@
+{
+  "handoffRead": true,
+  "handoffSHA256": "e905e5fe7cc7b23fb9735b85b8d24a6ba136bbd9c83a4778d63a9729c918ee18",
+  "nativeLaunchOccurred": false,
+  "checks": {
+    "scopeBeforeMutation": "qa.require_qa_scope checks dedicated QA scope and exact (1,1); whole runner qa_run scope then prlimit, root verified smoke",
+    "xwaylandDisabled": "effective fresh Lua appends disabled; source/effective hashes distinct",
+    "explicitLiveParent": "qa.nested_env uses live socket UID/inode/SO_PEERCRED, exact Weston PID/start checked; AQ_BACKENDS=wayland, no DRM fallback",
+    "outsideSandboxUnifiedRuntime": "danger-full-access; root helper creates owned0700 short /run/user/$UID/wqa/<4hex>; no escalation",
+    "clientsFirstCleanup": "caller normal EOF/AX/app shutdown first; owned Hypr, Weston, private bus reversed next; unexpected survivors failure; archive logs before removal"
+  },
+  "rootFinalHelperHashes": {
+    "qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+    "qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1"
+  },
+  "rootReportedOfflineTests": 13,
+  "rootReportedScopeSmoke": "ddd1 owned0700/core parent+child1/render128+129 accessible/runtimegone",
+  "rootReportedDiagnosticSmoke": "backtrace parent+child infinity; no crash/no compositor",
+  "hostOfflineTests": 15
+}

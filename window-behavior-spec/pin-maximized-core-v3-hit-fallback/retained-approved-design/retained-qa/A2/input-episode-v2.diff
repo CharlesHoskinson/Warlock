@@ -1,0 +1,56 @@
+--- A1/native_cases.py
++++ A2/native_cases.py
+@@ -1,6 +1,7 @@
+ """Root-owned real input controller. Importing this module has no side effects."""
+ from pathlib import Path
+ import hashlib, json, os, subprocess, time
++from input_episode import episode
+ from case_authority import Case,token,public,matches,complete,integer_point,move_command,input_safe,cursor_owner,protected_order
+ 
+ QA=Path('/home/hoskinson/window-integration-qa')
+@@ -121,26 +122,33 @@
+     def scene(self):
+         value={'clients':self.session.data('clients'),'native':self.native(),'seat':self.seat(),'stack':self.query('pin_stack_state')}
+         protected_order(value['stack']);return value
++    def input_events(self,route):
++        if route not in ('titlebar','super-p','super-ctrl-t'):raise ValueError('fixed actual input probe route required')
++        function='events' if route=='titlebar' else 'keyboard_events'
++        return self.observe('Actual native delivery rows '+route,lambda:json.loads(self.session.ctl('repl','print(hl.plugin.qt_modal_probe.'+function+'())')))
+     def toggle(self,name,route):
+         captured=self.capture(name);before=self.scene();owner=next(r for r in before['clients'] if matches(r,captured));events=self.query('pin_events');case=Case(captured)
+         row={'name':name,'route':route,'captured':captured,'before':before,'nativeEventsBefore':events,'automaticRetries':0};self.report['inputs'].append(row);self.persist()
+         if route=='titlebar':
+             point,boxes=self.pin_point(captured);row.update(point=point,pinBarWitness=boxes)
+-            row['beforePress']=self.move(point,captured);self.persist();case.press(True,True)
++            row['beforePress']=self.move(point,captured);row['inputEventsBefore']=self.input_events(route);self.persist()
+             self.pointer.stdin.write('button 272 1\n');self.pointer.stdin.flush();self.held=True
+             # No native query can accept the case before the real release.
+-            self.pointer.stdin.write('button 272 0\n');self.pointer.stdin.flush();self.held=False;case.release(True)
++            self.pointer.stdin.write('button 272 0\n');self.pointer.stdin.flush();self.held=False
+         elif route in ('super-p','super-ctrl-t'):
+             seat=self.seat();state=self.query('pin_stack_state');input_safe(self.native())
+             if not matches(seat.get('keyboardOwner'),captured) or not matches(seat.get('coreNativeFocus'),captured) or state.get('keyboardPresent') is not True or type(state.get('keyboardModifiers')) is not int or state['keyboardModifiers']!=0:raise RuntimeError('Exact captured actual Seat/core owner and zero modifier precondition required')
+-            row['keyboardBefore']=seat;row['modifierBefore']=state;case.press(True,True);self.persist()
++            row['keyboardBefore']=seat;row['modifierBefore']=state;row['inputEventsBefore']=self.input_events(route);self.persist()
+             env=dict(self.session.env,WINDOW_QA_COMPOSITOR_PID=str(captured['compositorPid']),WINDOW_QA_COMPOSITOR_START=captured['compositorStart'])
+             process=self.session.host.launch('pin-chord-'+str(len(self.report['inputs'])),[str(KEYBOARD),'--chord',route],env)
+             pid=process.pid;identity=start(pid);process.wait(timeout=4)
+             row['keyboardProcess']={'pid':pid,'start':identity,'argv':[str(KEYBOARD),'--chord',route],'exitCode':process.returncode,'executableSHA256':sha(KEYBOARD),'gone':not Path(f'/proc/{pid}').exists()};self.persist()
+             if process.returncode!=0 or not row['keyboardProcess']['gone']:raise RuntimeError('Real private keyboard normal completion/all releases required')
+-            case.release(True)
+         else:raise ValueError('Genuine admitted frontend input route required')
++        row['inputEventsAfter']=self.input_events(route);self.persist()
++        row['deliveryEvidence']=episode(row['inputEventsBefore'],row['inputEventsAfter'],route,captured,row.get('point'));self.persist()
++        case.press(row['deliveryEvidence']['observedPressAndRelease'],row['deliveryEvidence']['sameCapturedOwner'])
++        case.release(row['deliveryEvidence']['observedPressAndRelease'])
+         def completed():
+             current=self.query('pin_events')
+             if len(current)<=len(events):return None
+@@ -149,6 +157,7 @@
+             complete(fresh[0],captured,owner['pinned']);return fresh[0]
+         row['receipt']=self.wait('Exact complete actual native pin receipt after release',completed);case.receipt=True
+         after=self.scene();row['after']=after;self.persist()
++        if route!='titlebar' and (type(after['stack'].get('keyboardModifiers')) is not int or after['stack']['keyboardModifiers']!=0):raise RuntimeError('Actual final zero keyboard modifiers required')
+         current=self.capture(name)
+         peers=lambda scene:{r['stableId']:{k:r.get(k) for k in ('address','stableId','pid','pinned','floating','at','size','workspace','monitor','fullscreen','fullscreenClient')}for r in scene['clients'] if not matches(r,captured)}
+         if current!=captured or peers(before)!=peers(after):raise RuntimeError('Same lifetime and independent member state required')

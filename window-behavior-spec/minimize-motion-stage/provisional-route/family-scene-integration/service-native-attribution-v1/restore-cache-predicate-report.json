@@ -1,0 +1,214 @@
+{
+  "scope": "read-only retained V11 integration predicate attribution; no native launch or product edit",
+  "sources": {
+    "/home/hoskinson/window-integration-qa/family-service-taskbar-v3/attempt-1/service-evidence.json": "c5260955775e7a64241f015d5a6c17f391fa64da65489e9c9286e9ea28edfaf4",
+    "/home/hoskinson/window-integration-qa/family-service-taskbar-v3/attempt-1/report.json": "cd97803952151c433906cfdcbed38c22ec449702e39a7c52b7813f32503ab033",
+    "/home/hoskinson/window-integration-qa/family-service-taskbar-v3/native_integration.py": "9fdb6b5c0fa45fb5e6326190a8d498291d8ce6cbea51ff3ca87fd534a44133d0",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v11/native_desktop.py": "9463a3b62becbc82472cd7551ccfffdc7fe51e311762bd828886deaf2dba3447",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v11/snapshot_cache.py": "d72bfc68e8f702876e071b2ea51ccc12b076f16fed890bd8f1cfbe3f6b54d967"
+  },
+  "records": [
+    {
+      "token": "39621bf5f279-1",
+      "operation": "minimize",
+      "orderedSources": [
+        {
+          "stableId": "18000000",
+          "pid": 879047,
+          "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8"
+        },
+        {
+          "stableId": "18000003",
+          "pid": 879047,
+          "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070"
+        },
+        {
+          "stableId": "18000002",
+          "pid": 879047,
+          "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c"
+        }
+      ],
+      "validated": true,
+      "ready": true,
+      "profile": {
+        "receivedNs": 92705510741755,
+        "reservedNs": 92705510741949,
+        "ingressCommand": "minimize",
+        "contextPending": false,
+        "managerReceipt": 1,
+        "metadataStartNs": 92705511110580,
+        "resolvedDirection": "minimize",
+        "metadataValidatedNs": 92705522207375,
+        "seedQueuedNs": 92705710831895,
+        "cleanupQueuedNs": 92706093441208,
+        "settlementReason": "native handover complete",
+        "cleanupAckNs": 92706093802239
+      },
+      "nativeResults": [
+        {
+          "identity": [
+            "0x5f6e9f9626c0",
+            "18000000",
+            879047
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 92705773330581
+        },
+        {
+          "identity": [
+            "0x5f6e9ff0af50",
+            "18000003",
+            879047
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 92705805557742
+        },
+        {
+          "identity": [
+            "0x5f6e9fdfce90",
+            "18000002",
+            879047
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 92705837739293
+        }
+      ],
+      "matchingAuthorityEventCount": 1,
+      "matchingPresentationAndSuccessfulSwapSequences": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18"
+      ],
+      "allSourcesInRetainedCache": true,
+      "missingRetainedDigests": [],
+      "sourcePathsExistAfterCleanup": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "token": "39621bf5f279-2",
+      "operation": "restore",
+      "orderedSources": [
+        {
+          "stableId": "18000000",
+          "pid": 879047,
+          "digest": "e2e063e83e27f7562d535a0a9ce5d95ce9fb167c6cff478fbbd361725087c3e0"
+        },
+        {
+          "stableId": "18000003",
+          "pid": 879047,
+          "digest": "0dbe0787c85d0b7385099392d38546a8facc07a203d31dff0b1785e8066357ff"
+        },
+        {
+          "stableId": "18000002",
+          "pid": 879047,
+          "digest": "2e93d3215179c679cc38ec5fe400d292fb0c9330d27f0031406c16253af139ef"
+        }
+      ],
+      "validated": true,
+      "ready": true,
+      "profile": {
+        "receivedNs": 92706343531136,
+        "reservedNs": 92706343531326,
+        "ingressCommand": "restore",
+        "contextPending": false,
+        "managerReceipt": 2,
+        "metadataStartNs": 92706343842588,
+        "resolvedDirection": "restore",
+        "metadataValidatedNs": 92706459675886,
+        "seedQueuedNs": 92706699009995,
+        "cleanupQueuedNs": 92707173523162,
+        "settlementReason": "native handover complete",
+        "cleanupAckNs": 92707174181273
+      },
+      "nativeResults": [
+        {
+          "identity": [
+            "0x5f6e9f9626c0",
+            "18000000",
+            879047
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 92707044377557
+        },
+        {
+          "identity": [
+            "0x5f6e9fdfce90",
+            "18000002",
+            879047
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 92707108789103
+        },
+        {
+          "identity": [
+            "0x5f6e9ff0af50",
+            "18000003",
+            879047
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 92707173180255
+        }
+      ],
+      "matchingAuthorityEventCount": 1,
+      "matchingPresentationAndSuccessfulSwapSequences": [
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34"
+      ],
+      "allSourcesInRetainedCache": false,
+      "missingRetainedDigests": [
+        "e2e063e83e27f7562d535a0a9ce5d95ce9fb167c6cff478fbbd361725087c3e0",
+        "0dbe0787c85d0b7385099392d38546a8facc07a203d31dff0b1785e8066357ff",
+        "2e93d3215179c679cc38ec5fe400d292fb0c9330d27f0031406c16253af139ef"
+      ],
+      "sourcePathsExistAfterCleanup": [
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "retainedPNGDigests": [
+    "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+    "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+    "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070"
+  ],
+  "conclusion": "Restore ordering and matching presented endpoint native commits are present. Final oracle cache-membership predicate rejects every restore composed source digest. Hidden restore uses fresh client composition in epoch images, which cleanup removes; shared cache republishes original full caption-source PNG. Actual composed restore source bytes were not retained by this observer, so independent source evidence remains missing; no whole-raster or overall acceptance claim."
+}

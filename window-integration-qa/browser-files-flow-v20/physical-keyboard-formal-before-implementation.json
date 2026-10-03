@@ -1,0 +1,82 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_keyboard.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_keyboard_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  physical_keyboard_test\n    ok planBeforeConnectionRequiredTest passed 1 test(s)\n    ok denseEscapeAliasRefusedTest passed 1 test(s)\n    ok invalidTextNoSendTest passed 1 test(s)\n    ok peerMismatchNoSendTest passed 1 test(s)\n    ok changedLifetimeNoSendTest passed 1 test(s)\n    ok keymapBeforePressTest passed 1 test(s)\n    ok missingKeymapAckNoSendTest passed 1 test(s)\n    ok exactPairOrderTest passed 1 test(s)\n    ok duplicatePressRefusedTest passed 1 test(s)\n    ok releaseWithoutPressRefusedTest passed 1 test(s)\n    ok advanceHeldRefusedTest passed 1 test(s)\n    ok partialFailureNeverRetriesTest passed 1 test(s)\n    ok partialHoldCanOnlyCleanupSameReleaseTest passed 1 test(s)\n    ok finishCannotInventMissingCharacterTest passed 1 test(s)\n\n  14 passing (1801ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_keyboard.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (4859ms at 412 traces/second).\nUse --seed=0x13b4241 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_code.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_code_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  physical_code_test\n    ok exactMinusPhysicalCodeTest passed 1 test(s)\n    ok denseFirstEscapeAliasRefusedTest passed 1 test(s)\n    ok unknownLogicalSymbolRefusedTest passed 1 test(s)\n    ok xkbOffsetMismatchRefusedTest passed 1 test(s)\n    ok wrongPhysicalNameRefusedTest passed 1 test(s)\n    ok modifiersRefusedTest passed 1 test(s)\n    ok layoutMismatchRefusedTest passed 1 test(s)\n    ok exactLeftPhysicalCodeTest passed 1 test(s)\n    ok negativeWireRefusedTest passed 1 test(s)\n    ok zeroWireRefusedTest passed 1 test(s)\n\n  10 passing (356ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_code.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (2407ms at 831 traces/second).\nUse --seed=0x1415bf9 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "runtimeStillExactFrozenB19": {
+    "private_session.py": "21b0bbf43db3a2c8be90978729c250e79645a8cbd1b355194d95d84d3fafa626",
+    "run_native.py": "7ed77fd56fa54e9e32568f0c0dc67c0a656f9dc692b441081ad01fe4e5b4f1aa",
+    "continuation_evidence.py": "1b4cda46880a7745163d51a7529245089d31a5bd3212e08287a5df1f1f44c369"
+  },
+  "newDriverNotImplemented": true,
+  "nativeExecuted": false
+}

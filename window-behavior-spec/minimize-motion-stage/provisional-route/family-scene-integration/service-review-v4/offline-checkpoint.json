@@ -1,0 +1,178 @@
+{
+  "version": "family-service-v4-offline",
+  "productionChanged": false,
+  "nativeLaunch": false,
+  "pythonTests": 37,
+  "quintNamedScenarios": 23,
+  "quintModels": 4,
+  "quintSamplesPerModel": 2000,
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_scene_manager.py",
+        "test_pipe_transport.py",
+        "test_scene_controller.py",
+        "test_capture_lease.py"
+      ],
+      "exitCode": 0,
+      "log": "check-00.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_scene_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-01.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_scene_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-02.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_scene.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-03.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_destination_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-04.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_destination_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-05.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_destination.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-06.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "transport_dispatch_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-07.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "transport_dispatch_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-08.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "transport_dispatch.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-09.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-10.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-11.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_registry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-12.log"
+    }
+  ],
+  "changed": [
+    {
+      "name": "scene_controller.py",
+      "kind": "modified",
+      "diff": "scene_controller.py.v3-v4.diff"
+    },
+    {
+      "name": "CONTRACT.md",
+      "kind": "modified",
+      "diff": "CONTRACT.md.v3-v4.diff"
+    },
+    {
+      "name": "family_registry.qnt",
+      "kind": "added"
+    },
+    {
+      "name": "family_registry_test.qnt",
+      "kind": "added"
+    },
+    {
+      "name": "scene_manager.py",
+      "kind": "added"
+    },
+    {
+      "name": "test_scene_manager.py",
+      "kind": "added"
+    }
+  ],
+  "scope": "Global exact-identity receipt registry + actor routing/reconciliation, sharing native reservation/effect lock. Current actor frontend/context/lifecycle/atomic replacement and real native validation remain open. Explicit factory only, no daemon/native autostart."
+}

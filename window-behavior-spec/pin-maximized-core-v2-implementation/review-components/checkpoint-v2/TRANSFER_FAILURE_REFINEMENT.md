@@ -1,0 +1,11 @@
+# Transfer failure and owned explicit unpin refinement
+
+This additive refinement retains the approved native MAX/core policy. The selected owner/target/generation and original internal/client modes are captured before owning migration. Source handler ownership stays retained until the destination outcome is observed. A destination failure records the actual partial state, refuses success and invalidates normal-return authority; it does not synthesize a float, unMAX/reMAX, geometry rollback or client acknowledgment.
+
+Both actual WindowTarget and WindowGroupTarget void assignment callers must inspect the result and return before selected-target follow-ups on refusal. The source handler removes only its old record, without window/layout writes. Scrolling removeTarget does not send an unMAX transition while the exact selected transfer is active. The captured algorithm keeps the unique handler alive; its weak handle is borrowed without lock().
+
+Explicit unpin is independent of geometry restoration. Current live mapped visible normal owner, current owning layout target and positive record generation must match the captured intent. A stale space/output/scroll return may refuse geometry and pin admission while this same current owner may clear only its independent pinned intent. Closed/replaced/group-reselected targets cannot clear another owner’s intent. No unrelated callback clears bits.
+
+Mapping: begin/moved/complete/failActual -> NativePinState begin/finish typed outcome; owned -> current live/window/layoutTarget owner checks; generation -> immutable restore capture and operation token; staleReturn -> restoreUsable latch; unpin -> ownedUnpinReady plus ConfigActions selected native-intent branch and plugin transaction. actual mode/client observations survive failed migration. nativeWrites/floatWrites/geometry in this small model express the cancellation/unpin no-write rule, not numerical owning geometry authority. Actual scrolling column/controller and layout target CPU adapters cover numeric return and stale ownership separately. No native reachability acceptance is claimed.
+
+18 selected named cases and 2000 bounded traces passed before these runtime refinements. Earlier parser/effect failures and a zero-selected-tests runner error are retained; only the explicit 18-case selected run is named proof evidence.

@@ -1,0 +1,46 @@
+--- /home/hoskinson/window-integration-qa/recovery-audit/hypr-taskbar-attention.before-recovery	2026-09-30 21:06:26.271165279 -0600
++++ /home/hoskinson/.local/bin/hypr-taskbar-attention	2026-09-30 21:06:26.298165299 -0600
+@@ -61,6 +61,14 @@
+             os.unlink(temporary)
+ 
+ 
++def event_socket_path(runtime, signature):
++    """Event and hyprctl queries must observe the same compositor instance."""
++    if signature:
++        return runtime / "hypr" / signature / ".socket2.sock"
++    candidates = list((runtime / "hypr").glob("*/.socket2.sock"))
++    return max(candidates, key=lambda path: path.stat().st_mtime) if candidates else None
++
++
+ def run():
+     signature = os.getenv("HYPRLAND_INSTANCE_SIGNATURE", "")
+     RUNTIME.mkdir(parents=True, exist_ok=True)
+@@ -70,10 +78,9 @@
+         save(state)
+         while True:
+             try:
+-                candidates = sorted((RUNTIME / "hypr").glob("*/.socket2.sock"),
+-                                    key=lambda path: path.stat().st_mtime, reverse=True)
+-                preferred = RUNTIME / "hypr" / signature / ".socket2.sock"
+-                event_socket = candidates[0] if candidates else preferred
++                event_socket = event_socket_path(RUNTIME, signature)
++                if event_socket is None:
++                    raise FileNotFoundError("No compositor event socket")
+                 with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as connection:
+                     connection.connect(str(event_socket))
+                     with connection.makefile("r") as stream:
+@@ -89,7 +96,13 @@
+                             except (subprocess.SubprocessError, ValueError, OSError):
+                                 continue
+             except (ConnectionError, OSError):
+-                time.sleep(1)
++                pass
++            # EOF and failure both invalidate attention from the old stream.
++            # A restart can lose close/focus events while the connection is down.
++            if state:
++                state.clear()
++                save(state)
++            time.sleep(1)
+ 
+ 
+ if __name__ == "__main__":

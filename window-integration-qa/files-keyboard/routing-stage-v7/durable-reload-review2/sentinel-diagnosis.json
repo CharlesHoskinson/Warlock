@@ -1,0 +1,27 @@
+{
+  "failureKept": {
+    "report": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/durable-reload-review1/attempt-native-1/report.json",
+    "sha256": "5ee2b2d93c3dc1f46bc96a691a919dcce5a18feb937ff7069275f395a24b9644",
+    "cause": "Second source write used identical candidate bytes. QmlScanner hasFileContentChanged compares MD5 and correctly returns false, so no generation reload occurs."
+  },
+  "primarySource": [
+    {
+      "path": "/home/hoskinson/src/quickshell-accessibility/src/core/scan.cpp",
+      "sha256": "6f74d8d2fe577558bcfdf7648ccd91bbee50b712a26decf168f566082225cfdd",
+      "evidence": [
+        "35\u201343 hasFileContentChanged compares bytes MD5",
+        "60\u201375 scanDir scans every uppercase .qml",
+        "249 scanQmlFile calls scanDir(currentdir)"
+      ]
+    },
+    {
+      "path": "/home/hoskinson/src/quickshell-accessibility/src/core/generation.cpp",
+      "sha256": "e9762dab3bc81cb72218f14a37ad82d1ab08b15efe526ce63797b9535f812199",
+      "evidence": [
+        "175\u2013178 watcher registers each scanned file and containing directory",
+        "234 skips unchanged content"
+      ]
+    }
+  ],
+  "freshFixtureOnly": "Place a copied uninstantiated ReloadWitness.qml in copied shell directory before launch; change frozen epoch0 bytes to epoch1 for second reload. Never install witness in production, never mutate executed product inputs."
+}

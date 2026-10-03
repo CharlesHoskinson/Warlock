@@ -1,0 +1,146 @@
+{
+  "updatedUTC": "2026-10-01T18:56:45.968407+00:00",
+  "reportSHA256": "b26aa41b27439c289623fd37552a60597d7d5c33c9299f397406cff38bdc8c7d",
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "independentChecks": {
+    "original561FrozenSourcesExact": true,
+    "copied561FrozenSourcesExact": true,
+    "external3110SourcesExact": true,
+    "external121LinksExact": true,
+    "all19MainPreservationChecks": true,
+    "normalQuiescentNativeUnload": true,
+    "exactAllRecordedIdentitiesGone": true,
+    "ownedRuntimeGone": true,
+    "normalHostCleanup": true,
+    "archivedParentTransportHealthy": true
+  },
+  "normalFixtureLifecycleAccepted": false,
+  "unexpectedPrivateDescendantsRetained": [
+    {
+      "pid": 717237,
+      "start": "9113635",
+      "pgid": 716803
+    },
+    {
+      "pid": 717243,
+      "start": "9113636",
+      "pgid": 716803
+    }
+  ],
+  "processes": [
+    {
+      "pid": 716878,
+      "start": "9113328",
+      "gone": true
+    },
+    {
+      "pid": 716929,
+      "start": "9113341",
+      "gone": true
+    },
+    {
+      "pid": 716947,
+      "start": "9113341",
+      "gone": true
+    },
+    {
+      "pid": 716964,
+      "start": "9113345",
+      "gone": true
+    },
+    {
+      "pid": 716965,
+      "start": "9113345",
+      "gone": true
+    },
+    {
+      "pid": 716968,
+      "start": "9113345",
+      "gone": true
+    },
+    {
+      "pid": 716989,
+      "start": "9113351",
+      "gone": true
+    },
+    {
+      "pid": 717003,
+      "start": "9113379",
+      "gone": true
+    },
+    {
+      "pid": 717008,
+      "start": "9113386",
+      "gone": true
+    },
+    {
+      "pid": 717013,
+      "start": "9113402",
+      "gone": true
+    },
+    {
+      "pid": 717161,
+      "start": "9113561",
+      "gone": true
+    },
+    {
+      "pid": 717229,
+      "start": "9113626",
+      "gone": true
+    },
+    {
+      "pid": 717318,
+      "start": "9113677",
+      "gone": true
+    },
+    {
+      "pid": 717237,
+      "start": "9113635",
+      "gone": true
+    },
+    {
+      "pid": 717243,
+      "start": "9113636",
+      "gone": true
+    },
+    {
+      "pid": 716803,
+      "start": "9113123",
+      "gone": true
+    },
+    {
+      "pid": 716804,
+      "start": "9113127",
+      "gone": true
+    },
+    {
+      "pid": 716835,
+      "start": "9113185",
+      "gone": true
+    }
+  ],
+  "checksReached": 97,
+  "checksPassed": 96,
+  "nativePointerAccepted": false,
+  "fullCampaignAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "failure": "AssertionError('fixture exited PID 717229')",
+  "failures": [
+    {
+      "stage": "startup-or-campaign",
+      "type": "AssertionError",
+      "error": "AssertionError('fixture exited PID 717229')",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v4/native_probe_pointer.py\", line 231, in execute\n    try:module.run(ctx)\n        ~~~~~~~~~~^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v4/native-pointer-attempt-4/native-fixture/pointer_cases.py\", line 315, in run\n    for tag in ('A','B'):request(peers[tag]['process'],'exit');peers[tag]['process'].wait(timeout=5)\n                         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v4/native-pointer-attempt-4/native-fixture/pointer_cases.py\", line 58, in request\n    result=response(process);trace('actual-fixture-response',pid=process.pid,response=result);return result\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v4/native-pointer-attempt-4/native-fixture/pointer_cases.py\", line 53, in response\n    line=process.stdout.readline();assert line,'fixture exited PID '+str(process.pid)\n                                          ^^^^\nAssertionError: fixture exited PID 717229\n"
+    },
+    {
+      "stage": "unexpected-private-client-cleanup",
+      "type": "AssertionError",
+      "error": "AssertionError('terminal normal private client cleanup has no unexpected helper processes')",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v4/native_probe_pointer.py\", line 257, in execute\n    check(report,'terminal normal private client cleanup has no unexpected helper processes',not leftover and not portal_history,unexpected=leftover,portalActivations=portal_history,privateBusLogSHA256=hashlib.sha256(portal_log.read_bytes()).hexdigest())\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v4/native_probe_pointer.py\", line 54, in check\n    if not ok:raise AssertionError(name)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: terminal normal private client cleanup has no unexpected helper processes\n"
+    }
+  ],
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7f07b198d4274f0388cd316364672fc4.scope",
+    "coreLimit": 1
+  }
+}

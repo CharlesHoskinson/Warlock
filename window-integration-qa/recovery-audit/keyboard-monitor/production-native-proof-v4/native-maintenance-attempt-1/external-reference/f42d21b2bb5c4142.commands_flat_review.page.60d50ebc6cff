@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_flat_review" xml:lang="eo">
+  <info>
+    <link type="next" xref="commands_find"/>
+    <link type="guide" xref="commands#reviewing_screen_contents"/>
+    <link type="seealso" xref="howto_flat_review"/>
+    <title type="sort">1. Plata Revizio</title>
+    <title type="link">Plata Revizio</title>
+    <desc>Komandoj por space revizii fenestrojn</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Plataj Revizio-Komandoj</title>
+  <p>La <link xref="howto_flat_review">Plata Revizio</link>-komandoj de Orko estas dezajnitaj por space revizii elementojn montratajn sur la ekrano. Ili ankaŭ provizas rimedon por legi la aktualan linion, vorton, kaj signon dum navigado en la teksto de dokumento. La plej multaj el tiuj komandoj estas "ligitaj" al klavpremoj. Bonvolu vidi <link xref="howto_key_bindings">Modifado de Klavkombinoj</link> por informoj pri kiel ligi neligitajn komandojn.</p>
+  <section id="line">
+    <title>Komandoj por Revizii laŭ Linio</title>
+    <list>
+      <item>
+        <p>Unua linio (La "hejma" pozicio):</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>Orko Modifier</key><key>KP 7</key></keyseq></p></item>
+          <item><p>Tekomputilo: <keyseq><key>Orko Modifier</key><key>Ctrl</key><key>U</key></keyseq></p></item>
+        </list>
+      </item>
+      <item>
+        <p>Antaŭa linio:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 7</key></keyseq></p></item>
+          <item><p>Tekomputilo: <keyseq><key>Orko Modifier</key><key>U</key></keyseq></p></item>
+        </list>
+      </item>
+      <item>
+        <p>Aktuala linio:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 8</key></keyseq></p></item>
+          <item><p>Tekomputilo: <keyseq><key>Orko Modifier</key><key>I</key></keyseq></p></item>
+        </list>
+      </item>
+        <item><p>Literumi aktualan linion:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 8</key></keyseq> (duoble klakita)</p></item>
+          <item><p>Tekomputilo: <keyseq><key>Orko Modifier</key><key>I</key></keyseq> (duoble klakita)</p></item>
+        </list>
+      </item>
+      <item><p>Fonetike literumi aktualan linion:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 8</key></keyseq> (trioble klakita)</p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>I</key></keyseq> (trioble klakita)</p></item>
+        </list>
+      </item>
+      <item><p>Sekva linio:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 9</key></keyseq></p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>O</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Lasta linio (la pozicio "fino"):</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>Orko Modifier</key><key>KP 9</key></keyseq></p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Ctrl</key><key>O</key></keyseq></p></item>
+        </list>
+      </item>
+    </list>
+  </section>
+  <section id="word">
+    <title>Komandoj por Vorta Revizio</title>
+    <list>
+      <item><p>Vorto supre:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>Orko Modifier</key><key>KP 4</key></keyseq></p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Ctrl</key><key>J</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Antaŭa vorto:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 4</key></keyseq></p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>J</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Aktuala vorto:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 5</key></keyseq></p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>K</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Literumi aktualan vorton:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 5</key></keyseq> (duoble klakita)</p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>K</key></keyseq> (duoble klakita)</p></item>
+        </list>
+      </item>
+      <item><p>Fonetike literumi aktualan vorton:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 5</key></keyseq> (trioble klakita)</p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>K</key></keyseq> (trioble klakita)</p></item>
+        </list>
+      </item>
+      <item><p>Sekva vorto:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 6</key></keyseq></p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>L</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Vorto sube:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>Orko Modifier</key><key>KP 6</key></keyseq></p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Ctrl</key><key>L</key></keyseq></p></item>
+        </list>
+      </item>
+    </list>
+  </section>
+  <section id="character">
+    <title>Komandoj por Signa Revizio</title>
+    <list>
+      <item><p>Antaŭa signo:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 1</key></keyseq></p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>M</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Aktuala signo:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 2</key></keyseq></p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Comma</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Fonetike prononci aktualan signon:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 2</key></keyseq> (duoble klakita)</p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Comma</key></keyseq> (duoble klakita)</p></item>
+        </list>
+      </item>
+      <item><p>Diri Unikod-valoron de la aktuala signo:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 2</key></keyseq> (trioble klakita)</p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Comma</key></keyseq> (trioble klakita)</p></item>
+        </list>
+      </item>
+      <item><p>Sekva signo:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>KP 3</key></keyseq></p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Period</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Lasta signo de la aktuala linio:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>Orko Modifier</key><key>KP 1</key></keyseq></p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Ctrl</key><key>M</key></keyseq></p></item>
+        </list>
+      </item>
+    </list>
+  </section>
+  <section id="other">
+    <title>Pliaj Komandoj</title>
+    <list>
+      <item><p>Ŝalti/malŝalti platan revizion (refreŝigas la kuntekston de plata revizio):</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>Orko Modifier</key><key>KP Subtract</key></keyseq></p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>P</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Revizii aktualan elementon/fenestraĵon:</p>
+        <list>
+          <item><p>Labortablo: <keyseq><key>Orko Modifier</key><key>KP 5</key></keyseq></p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Ctrl</key><key>K</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Uzi Diri Ĉion por revizii la aktualan dialogon aŭ fenestron:</p>
+        <list>
+          <item><p>Labortablo: <key>KP Plus</key> (duoble klakita)</p></item>
+          <item><p>Tekokomputilo: <keyseq><key>Orko Modifier</key><key>Semicolon</key></keyseq> (duoble klakita)</p></item>
+        </list>
+      </item>
+      <item>
+      <p>Kopii la enhavon sub plata revizio al la poŝaĵujo: (neligita)</p>
+      </item>
+      <item>
+        <p>Aldoni la enhavon sub plata revizio al la poŝaĵujo: (neligita)</p>
+      </item>
+      <item><p>Movi platan revizion al malsupra-maldekstro: (neligita)</p></item>
+      <item><p>Montri enhavon de plata revizio: (neligita)</p></item>
+      <item><p>Ŝalti/malŝalti limigadon de plata revizio al la aktuala objekto: (neligita)</p></item>
+    </list>
+  </section>
+</page>

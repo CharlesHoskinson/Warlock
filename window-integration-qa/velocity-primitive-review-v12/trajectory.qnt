@@ -1,0 +1,47 @@
+module trajectory {
+  var a:int
+  var b:int
+  var v:int
+  var d:int
+  var t:int
+  pure def cube(x:int):int=x*x*x
+  pure def position(x:int,y:int,speed:int,duration:int,time:int):int =
+    x*cube(duration)+speed*time*cube(duration)
+    +(3*(y-x)-2*speed*duration)*time*time*duration
+    +(2*(x-y)+speed*duration)*cube(time)
+  pure def velocity(x:int,y:int,speed:int,duration:int,time:int):int =
+    speed*cube(duration)+2*(3*(y-x)-2*speed*duration)*time*duration
+    +3*(2*(x-y)+speed*duration)*time*time
+  pure def safe(x:int,y:int,speed:int,duration:int):bool =
+    x>0 and x<=32 and y>0 and y<=32 and duration>0 and
+    speed>= -8 and speed<=8 and 3*x+duration*speed>0 and
+    3*x+duration*speed<=96 and
+    3*(y-x)-speed*duration>= -8*duration and
+    3*(y-x)-speed*duration<=8*duration
+  action init=all {a'=1,b'=1,v'=0,d'=1,t'=0}
+  action step={
+    nondet x=1.to(32).oneOf()
+    nondet y=1.to(32).oneOf()
+    nondet speed=(-8).to(8).oneOf()
+    nondet duration=1.to(12).oneOf()
+    nondet time=0.to(duration).oneOf()
+    all {safe(x,y,speed,duration),a'=x,b'=y,v'=speed,d'=duration,t'=time}
+  }
+  val invariant=all {
+    safe(a,b,v,d),t>=0,t<=d,
+    position(a,b,v,d,0)==a*cube(d),
+    position(a,b,v,d,d)==b*cube(d),
+    velocity(a,b,v,d,0)==v*cube(d),
+    velocity(a,b,v,d,d)==0,
+    position(a,b,v,d,t)>0,position(a,b,v,d,t)<=32*cube(d),
+    velocity(a,b,v,d,t)>= -8*cube(d),velocity(a,b,v,d,t)<=8*cube(d)
+  }
+  action idle=all {a'=a,b'=b,v'=v,d'=d,t'=t}
+  action example(x:int,y:int,speed:int,duration:int,time:int):bool=
+    all {safe(x,y,speed,duration),a'=x,b'=y,v'=speed,d'=duration,t'=time}
+  run initialZeroVelocityTest=init.then(example(30,2,0,12,0)).then(all {assert(velocity(a,b,v,d,0)==0 and invariant),idle})
+  run reversedOriginVelocityTest=init.then(example(20,30,-2,6,0)).then(all {assert(velocity(a,b,v,d,0)== -2*cube(d) and invariant),idle})
+  run reversedPositiveDimensionTest=init.then(all {assert(not(safe(3,30,-8,1))),idle})
+  run endpointZeroVelocityTest=init.then(example(30,2,-2,12,12)).then(all {assert(velocity(a,b,v,d,d)==0 and invariant),idle})
+  run unchangedEndpointTest=init.then(example(20,20,8,3,2)).then(all {assert(invariant),idle})
+}

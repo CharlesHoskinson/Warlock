@@ -1,0 +1,87 @@
+{
+  "formalBeforeRuntime": true,
+  "runtimeSourcesAbsent": true,
+  "nativeLaunch": false,
+  "named": 34,
+  "models": 2,
+  "samplesPerModel": 2000,
+  "maxSteps": 100,
+  "sourceSHA256": {
+    "READONLY_IPC_CONTRACT.md": "53e32adf0aa4840bd281e4d5174470db23e8ff396d3959e940295eedde1be827",
+    "readonly_ipc.qnt": "17fe3940457938fc471c7517a232da49e0426b25a7bdf2c458293c1c1c857b71",
+    "readonly_ipc_test.qnt": "a3c9dabcee08960b21b0c4fa05ac143b8cf650eca711ec65540e4bbb061a32cf",
+    "readonly_registry.qnt": "2200fe845c0d72807247ec3c8b2e120a68f24e546078669da1a34a1ff257e9f9",
+    "readonly_registry_test.qnt": "a3ded4b91f4ba4ebb495204f2473723ac4fb393afbfaf5ddfd86df6f39a364a9"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "readonly_ipc_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "readonly_ipc_test.qnt",
+        "--backend=rust",
+        "--seed=202610020023"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "readonly_ipc.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=202610020023",
+        "--verbosity=0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "readonly_registry_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "readonly_registry_test.qnt",
+        "--backend=rust",
+        "--seed=202610020023"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "readonly_registry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=202610020023",
+        "--verbosity=0"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "retainedEarlierProofs": [
+    "formal-before-implementation.json",
+    "refined-formal-before-implementation.json"
+  ],
+  "completedNs": 1790916248585952772
+}

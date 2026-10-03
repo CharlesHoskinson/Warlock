@@ -1,0 +1,3542 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 1,
+      geometry: 100,
+      intentClears: 0,
+      live: true,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 30,
+      owner: 1,
+      peerPinned: true,
+      phase: 0,
+      pinned: true,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 10,
+      usable: true,
+      visible: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 1,
+      geometry: 100,
+      intentClears: 1,
+      live: true,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 30,
+      owner: 1,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 10,
+      usable: true,
+      visible: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 1,
+      geometry: 100,
+      intentClears: 1,
+      live: true,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 31,
+      owner: 1,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 10,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 1,
+      geometry: 100,
+      intentClears: 1,
+      live: true,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 31,
+      owner: 2,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 11,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 1,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 31,
+      owner: 2,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 11,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 1,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 2,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 11,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 1,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 2,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 11,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 1,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 3,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 12,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 1,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 3,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 12,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 1,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 3,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 12,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 1,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 4,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 13,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 2,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 4,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 13,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 2,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 4,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 13,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 2,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 4,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 13,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 2,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 5,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 14,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 3,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 5,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 14,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 3,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 6,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 15,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 3,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 6,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 15,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 4,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 6,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 15,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 4,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 6,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 15,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 4,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 6,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 15,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 4,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 4,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 5,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 6,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 7,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 7,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 7,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 7,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 32,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 7,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 33,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 7,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 33,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 7,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 34,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 8,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 34,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 8,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 34,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 8,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 34,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 8,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 34,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 8,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 34,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 8,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 34,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 34,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 34,
+      owner: 7,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 16,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 34,
+      owner: 8,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 17,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 41]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 34,
+      owner: 9,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 18,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 42]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 35,
+      owner: 9,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 18,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 43]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 36,
+      owner: 9,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 18,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 44]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 36,
+      owner: 9,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 18,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 45]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 36,
+      owner: 9,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 18,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 46]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 9,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 18,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 47]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 9,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 18,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 48]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 9,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 18,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 49]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 9,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 18,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 50]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 9,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 18,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 51]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 9,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 18,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 52]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 10,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 19,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 53]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 9,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 11,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 20,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 54]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 10,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 11,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 20,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 55]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 10,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 11,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 20,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 56]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 10,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 11,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 20,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 57]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 10,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 11,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 20,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 58]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 10,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 11,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 20,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 59]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 10,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 11,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 20,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 60]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 10,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 12,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 21,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 61]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 10,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 13,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 22,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 62]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 13,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 22,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 63]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 13,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 22,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 64]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 14,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 23,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 65]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 14,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 23,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 66]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 37,
+      owner: 15,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 24,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 67]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 38,
+      owner: 15,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 24,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 68]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 38,
+      owner: 15,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 24,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 69]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 38,
+      owner: 15,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 24,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 70]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 39,
+      owner: 15,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 24,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 71]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 39,
+      owner: 16,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 25,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 72]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 39,
+      owner: 17,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 26,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 73]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 39,
+      owner: 17,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 26,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 74]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 39,
+      owner: 17,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 26,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 75]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 40,
+      owner: 17,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 26,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 76]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 40,
+      owner: 17,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 26,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 77]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 40,
+      owner: 17,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 26,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 78]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 40,
+      owner: 17,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 26,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 79]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 40,
+      owner: 17,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 26,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 80]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 40,
+      owner: 17,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 26,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 81]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 40,
+      owner: 18,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 27,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 82]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 41,
+      owner: 18,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 27,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 83]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 41,
+      owner: 18,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 27,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 84]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 41,
+      owner: 18,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 27,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 85]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 41,
+      owner: 19,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 28,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 86]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 19,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 28,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 87]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 19,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 28,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 88]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 20,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 29,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 89]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 11,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 20,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 29,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 90]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 12,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 20,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 29,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 91]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 12,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 21,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 30,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 92]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 12,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 22,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 31,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 93]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 12,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 22,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 31,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 94]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 12,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 22,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 31,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 95]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 12,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 22,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 31,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 96]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 12,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 22,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 31,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 97]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 12,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 22,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 31,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 98]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 12,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 22,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 31,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 99]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 12,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 22,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 31,
+      usable: false,
+      visible: true
+    }
+}
+
+[State 100]
+{
+  s:
+    {
+      accepted: false,
+      beforeClient: 1,
+      beforeMode: 1,
+      client: 1,
+      expectedGeneration: 1,
+      expectedOutput: 31,
+      expectedSpace: 21,
+      floatWrites: 0,
+      generation: 12,
+      geometry: 100,
+      intentClears: 1,
+      live: false,
+      mode: 1,
+      nativeWrites: 0,
+      normal: true,
+      output: 42,
+      owner: 23,
+      peerPinned: true,
+      phase: 0,
+      pinned: false,
+      recordOwner: 1,
+      recordTarget: 10,
+      reported: false,
+      restore: 101,
+      space: 20,
+      target: 32,
+      usable: false,
+      visible: true
+    }
+}
+
+[ok] No violation found (2497ms at 801 traces/second).
+Trace length statistics: max=101, min=101, average=101.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x78e56385 --backend=rust to reproduce.

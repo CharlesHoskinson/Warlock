@@ -1,0 +1,87 @@
+--- production-v18/familyBridge.cpp
++++ candidate-v19/familyBridge.cpp
+@@ -1,5 +1,8 @@
+ #include "familyBridge.hpp"
+ #include "globals.hpp"
++#include "ancestorHit.hpp"
++#include "modalRegionAuthority.hpp"
++#include <hyprland/src/protocols/core/Compositor.hpp>
+ #include <hyprland/src/desktop/state/WindowState.hpp>
+ #include <hyprland/src/desktop/state/ViewState.hpp>
+ #include <hyprland/src/desktop/state/FocusState.hpp>
+@@ -60,6 +63,30 @@
+         window = child;
+     }
+     return window;
++}
++
++bool modalPointHasAuthority(const PHLWINDOW& owner, const Vector2D& position) {
++    if (!validMapped(owner) || !owner->acceptsInput() || !owner->wlSurface())
++        return false;
++    const auto surfaceBox = owner->wlSurface()->getSurfaceBoxGlobal();
++    if (!surfaceBox)
++        return false;
++    if (surfaceBox->containsPoint(position)) {
++        return ModalRegionAuthority::bodyInput(owner->m_isX11, owner->m_X11SurfaceScaledBy,
++            [&] {
++                Vector2D local;
++                return bool(Desktop::viewState()->hitTest().windowSurfaceAt(position, owner, local));
++            },
++            [&](double scale) {
++                const auto resource = owner->wlSurface()->resource();
++                if (!resource)
++                    return false;
++                const auto local = (position - owner->position(Desktop::View::IGeometric::GEOMETRIC_CURRENT)) * scale;
++                return bool(resource->at(local, true).first);
++            });
++    }
++    // Only compositor-owned decoration extent; never client-body holes.
++    return owner->getWindowBoxUnified(Desktop::View::RESERVED_EXTENTS).containsPoint(position);
+ }
+ 
+ void syncPinnedFamilies(const PHLWORKSPACE& workspace) {
+@@ -199,8 +226,25 @@
+                 return;
+             auto pointerSurface = g_pSeatManager->m_state.pointerFocus.lock();
+             auto pointerOwner = Desktop::viewState()->query().type(Desktop::View::VIEW_TYPE_WINDOW).surface(pointerSurface).runWindow();
+-            const auto owner = Desktop::viewState()->hitTest().windowAt(g_pInputManager->getMouseCoordsInternal(),
+-                Desktop::View::ALLOW_FLOATING | Desktop::View::RESERVED_EXTENTS | Desktop::View::INPUT_EXTENTS);
++            const auto position = g_pInputManager->getMouseCoordsInternal();
++            constexpr auto properties = Desktop::View::ALLOW_FLOATING | Desktop::View::RESERVED_EXTENTS | Desktop::View::INPUT_EXTENTS;
++            const auto filteredOwner = Desktop::viewState()->hitTest().windowAt(position, properties);
++            auto owner = filteredOwner;
++            bool recoveredAncestor = false;
++            // The core intentionally removes XDG ancestors shadowed by a modal.
++            // Discover the top geometry winner without changing global hit/hover.
++            if (!pointerSurface || pointerOwner) {
++                const auto geometric = modalGeometricWindowAt(position, properties);
++                const auto deepest = modalTarget(geometric);
++                if (validMapped(geometric) && geometric->acceptsInput() && deepest != geometric && validMapped(deepest) &&
++                    deepest->acceptsInput() && deepest->m_workspace && deepest->m_workspace->isVisible() &&
++                    (!pointerOwner || pointerOwner == filteredOwner)) {
++                    if (modalPointHasAuthority(geometric, position)) {
++                        owner = geometric;
++                        recoveredAncestor = true;
++                    }
++                }
++            }
+             // A newly presented dialog can already own keyboard focus while the
+             // stationary pointer still targets its owner (or a destroyed dialog).
+             // Core click handling only refocuses when keyboard focus changes.
+@@ -214,10 +258,14 @@
+             // A layer, IME popup or non-window surface owns its own input.
+             if (pointerSurface && !pointerOwner)
+                 return;
+-            if (!owner || (pointerOwner && pointerOwner != owner))
++            if (!owner || (!recoveredAncestor && pointerOwner && pointerOwner != owner))
++                return;
++            if (recoveredAncestor && (modalGeometricWindowAt(position, properties) != owner ||
++                (pointerOwner && pointerOwner != Desktop::viewState()->hitTest().windowAt(position, properties))))
+                 return;
+             const auto target = modalTarget(owner);
+-            if (target == owner || !target || !target->m_workspace || !target->m_workspace->isVisible())
++            if (target == owner || !validMapped(target) || !target->acceptsInput() || !target->m_workspace || !target->m_workspace->isVisible() ||
++                !modalPointHasAuthority(owner, position))
+                 return;
+             consumedButtons.insert(event.button);
+             info.cancelled = true;

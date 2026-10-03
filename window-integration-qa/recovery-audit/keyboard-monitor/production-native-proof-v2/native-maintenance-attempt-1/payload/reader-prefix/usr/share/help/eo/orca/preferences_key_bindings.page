@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_key_bindings" xml:lang="eo">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_pronunciation"/>
+    <link type="seealso" xref="howto_key_bindings"/>
+    <title type="sort">6. Klavkombinaj Ligoj</title>
+    <title type="link">Klavkombinaj Ligoj</title>
+    <desc>Agordi la klavajn mallongigojn de <app>Orko</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Agordoj de Klavkombinaj Ligoj</title>
+  <section id="orca_modifier_keys">
+    <title>Modifilaj Klavoj de Orko</title>
+    <p>La kombokesto <gui>Modifila(j) Klavo(j) de Ekrana Leganto</gui> permesas al vi elekti kiun klavon aŭ klavojn servos kiel la Orko-Modifilo. La disponeblaj opcioj estas:</p>
+    <list>
+      <item>
+        <p><gui>KP_Insert</gui> (la sama klavo kiel la <key>0</key> sur la numerika klavaro)</p></item>
+      <item><p><gui>Insert</gui></p></item>
+      <item><p><gui>Insert, KP_Insert</gui></p></item>
+      <item><p><gui>Caps_Lock</gui></p></item>
+    </list>
+  </section>
+  <section id="key_bindings_table">
+    <title>La Tabelo de Klavkombinaj Ligoj</title>
+    <p>La tabelo de klavkombinaj ligoj provizas liston de operacioj de <app>Orko</app> kaj la klavojn kiuj estas ligitaj al ili.</p>
+    <list>
+      <item>
+        <p>La kolumno <gui>Komando</gui> enhavas priskribon de la komando de <app>Orko</app> por efektivigi.</p>
+      </item>
+      <item>
+        <p>La kolumno <gui>Klavkombino</gui> enhavas la klavkombinon aktualle asignitan al la komando de <app>Orko</app>. Vi povas modifi la valoron de ĉi tiu kolumno premante <key>Return</key>, premante la klavojn por la nova ligo, kaj premante <key>Return</key> denove.</p>
+      </item>
+      <item>
+        <p>La kolumno <gui>Modifita</gui> servas kaj kiel indikilo de tio kio estis ŝanĝita, kaj kiel maniero restarigi la defaŭltajn ligojn asociitajn al tiu komando.</p>
+      </item>
+    </list>
+    <p>Sub la listo de klavkombinaj ligoj de <app>Orko</app>, vi trovos grupon de "neligitaj" komandoj. Ĉi tiuj estas komandoj kiujn ni opinias tre utilaj por iuj uzantoj, sed ne bezonataj de la plimulto. Anstataŭ "elĉerpi" klavpremon por tiaj komandoj, ni lasis ilin neasignitaj defaŭlte. Ĉe la fino de la listo estas la brajlaj ligoj, por uzo kun refreŝebla brajla ekrano.</p>
+  </section>
+</page>

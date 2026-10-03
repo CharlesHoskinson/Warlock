@@ -1,0 +1,127 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v11/native_desktop.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/native_desktop.py
+@@ -4,6 +4,7 @@
+ capture adds whole-window cross-output coordinates without geometry writes.
+ Translucent client backdrop equivalence remains outside the capture guarantee.
+ """
++from copy import deepcopy
+ import hashlib
+ import json
+ import os
+@@ -12,9 +13,12 @@
+ import threading
+ import importlib.util
+ import uuid
++import re
++import stat
+ import production_motion_6d9 as production
+ from scene_controller import key, rectangle
+ from snapshot_cache import SnapshotCache
++from family_order import order_family,needs_active_witness,checked_identity
+ 
+ class NativeDesktop:
+     def __init__(self, root, *, core, target=None, cache_root=None):
+@@ -24,6 +28,9 @@
+             raise ValueError('actor snapshot root must be under private motion runtime')
+         self.root.mkdir(parents=True,mode=0o700,exist_ok=False)
+         self.root.chmod(0o700)
++        info=self.root.lstat()
++        self.directory_identity=(info.st_dev,info.st_ino)
++        parent=self.root.parent.lstat();self.parent_identity=(parent.st_dev,parent.st_ino)
+         # Each actor receives an independent exact production module. ROOT and
+         # CORE in frozen methods cannot be overwritten by another family actor.
+         source=Path(__file__).with_name('production_motion_6d9.py')
+@@ -42,6 +49,53 @@
+         self.shared_cache=SnapshotCache(cache_root,self.base.validate_snapshot,session=os.environ['HYPRLAND_INSTANCE_SIGNATURE']) if cache_root else None
+         self.current_capture_epoch=None
+     def __getattr__(self,name):return getattr(self.base,name)
++    def family(self,window,windows,single=False):
++        members,focus=self.base.family(window,windows,single)
++        if single:
++            self.base.family_trace.evidence={'native':[],'members':[list(key(w)) for w in members],
++                'drawOrder':[list(key(w)) for w in members],'single':True,'paintWitness':'explicit-single-captured-identity'}
++            return members,focus
++        evidence=getattr(self.base.family_trace,'evidence',None)
++        if not evidence or not isinstance(evidence.get('native'),list):raise ValueError('fresh native paint vector unavailable')
++        native=evidence['native'];active=None;observed=False
++        if needs_active_witness(members):
++            active_address=self.base.active()
++            current=self.base.clients()
++            # The active address gains identity only through complete fresh
++            # client/native coverage, never shared PID or focus history.
++            if {checked_identity(w) for w in current if w.get('mapped',True)}!={checked_identity(w) for w in native}:raise ValueError('active paint client/native identity coverage changed')
++            if active_address:
++                match=next((w for w in current if w.get('mapped',True) and w['address']==active_address),None)
++                if match is None:raise ValueError('active tiled native identity unavailable')
++                active=checked_identity(match)
++            observed=True
++        ordered=order_family(members,native,active=active,active_observed=observed)
++        evidence['drawOrder']=[list(key(w)) for w in ordered]
++        evidence['paintWitness']='WindowState-vector+native-render-plane+ancestor-constraints'
++        evidence['activePaintIdentity']=list(active) if active else None
++        return ordered,focus
++    def family_evidence(self):
++        return deepcopy(getattr(self.base.family_trace,'evidence',None))
++    def retire_gestures(self,members,*,env=None):
++        if not isinstance(members,list) or not 1<=len(members)<=64:raise ValueError('complete bounded retirement family required')
++        identities=[checked_identity(w) for w in members]
++        if len(set(identities))!=len(identities):raise ValueError('duplicate exact retirement identity')
++        calls='{'+','.join('{'+json.dumps(address)+','+json.dumps(sid)+'}' for address,sid,pid in identities)+'}'
++        expression=(
++            'local api=hl.plugin.hyprbars.retire_gesture_current; '
++            'if type(api)~="function" then print(\'{"ok":false,"retired":[],"error":"retirement-capability-absent"}\') '
++            'else local retired={}; local ok=true; '
++            'for _,args in ipairs('+calls+') do local success,was=api(args[1],args[2]); '
++            'if type(success)~="boolean" or type(was)~="boolean" or not success then ok=false; break end; '
++            'retired[#retired+1]=was and "true" or "false"; end; '
++            'print(\'{"ok":\'..(ok and "true" or "false")..\',"retired":[\'..table.concat(retired,",")..\']}\'); end')
++        reply=json.loads(subprocess.check_output(['hyprctl','repl',expression],env=env,text=True,timeout=.6))
++        if (not isinstance(reply,dict) or reply.get('ok') is not True or not isinstance(reply.get('retired'),list)
++                or len(reply['retired'])!=len(identities) or any(type(value) is not bool for value in reply['retired'])):
++            error=ValueError('exact gesture retirement refused; no source capture')
++            error.evidence=reply
++            raise error
++        return [{'identity':list(identity),'retired':retired} for identity,retired in zip(identities,reply['retired'],strict=True)]
+     def target(self,window):
+         return self.target_override(window) if self.target_override else self.base.target(window)
+     def capture_source(self,window,scene_token,index):
+@@ -116,3 +170,39 @@
+             if path.parent==self.root and production.re.fullmatch(r'[0-9a-f]{12}-[1-9][0-9]{0,14}\.png',path.name):
+                 path.unlink(missing_ok=True)
+         self.janitor()
++    def dispose(self):
++        # Called only after workers/renderer finish normally. Pin both directory
++        # descriptors so a replacement path cannot redirect file deletion.
++        flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC
++        parent_fd=os.open(self.root.parent,flags)
++        actor_fd=None
++        try:
++            parent=os.fstat(parent_fd)
++            if (not stat.S_ISDIR(parent.st_mode) or parent.st_uid!=os.getuid() or parent.st_mode&0o077
++                    or (parent.st_dev,parent.st_ino)!=self.parent_identity
++                    or self.root.parent.resolve()!=self.root.parent.absolute()):raise ValueError('actor parent directory identity changed')
++            actor_fd=os.open(self.root.name,flags,dir_fd=parent_fd)
++            info=os.fstat(actor_fd)
++            if (not stat.S_ISDIR(info.st_mode) or info.st_uid!=os.getuid() or info.st_mode&0o077
++                    or (info.st_dev,info.st_ino)!=self.directory_identity):raise ValueError('actor snapshot directory identity changed')
++            epoch=r'[0-9a-f]{12}-[1-9][0-9]{0,14}'
++            full=r'full-[0-9a-f]{1,16}-[1-9][0-9]*'
++            pattern=re.compile(r'(?:(?:(?:frame|composed)-)?'+epoch+r'\.png|'+full+r'\.(?:png|json)|'+full+'-'+epoch+r'\.(?:png|json)\.tmp)')
++            entries={}
++            for name in os.listdir(actor_fd):
++                item=os.stat(name,dir_fd=actor_fd,follow_symlinks=False)
++                if (not pattern.fullmatch(name) or not stat.S_ISREG(item.st_mode)
++                        or item.st_uid!=os.getuid() or item.st_mode&0o077):raise ValueError('unexpected actor material refused: '+name)
++                entries[name]=(item.st_dev,item.st_ino,item.st_size,item.st_mtime_ns,item.st_ctime_ns)
++            # No active actor worker remains. Preserve unexpected material before
++            # any deletion; recheck each exact generated inode via the same FD.
++            for name,identity in entries.items():
++                item=os.stat(name,dir_fd=actor_fd,follow_symlinks=False)
++                if (item.st_dev,item.st_ino,item.st_size,item.st_mtime_ns,item.st_ctime_ns)!=identity:raise ValueError('actor material changed during disposal')
++            for name in entries:os.unlink(name,dir_fd=actor_fd)
++            named=os.stat(self.root.name,dir_fd=parent_fd,follow_symlinks=False)
++            if (named.st_dev,named.st_ino)!=self.directory_identity:raise ValueError('actor name replaced before removal')
++            os.rmdir(self.root.name,dir_fd=parent_fd)
++        finally:
++            if actor_fd is not None:os.close(actor_fd)
++            os.close(parent_fd)

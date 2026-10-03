@@ -1,0 +1,72 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1d57c0fecdaf494d9c1b49aebf91c4b8.scope",
+    "coreLimit": 1
+  },
+  "actualSelectedObservation": {
+    "result": false,
+    "error": null,
+    "identity": {
+      "pid": 2835329,
+      "start": "13720663",
+      "pgid": 2835297,
+      "parent": 2835305
+    },
+    "ownedUID": 1000,
+    "openFDIdentity": [
+      24,
+      22035900,
+      1000,
+      33060
+    ],
+    "actualChildExit": 0,
+    "pidfdExitObserved": true,
+    "procPathGone": true
+  },
+  "actualStrictRegistration": {
+    "result": null,
+    "error": {
+      "type": "ProcessLookupError",
+      "errno": 3,
+      "message": "[Errno 3] No such process"
+    },
+    "identity": {
+      "pid": 2835330,
+      "start": "13720667",
+      "pgid": 2835297,
+      "parent": 2835305
+    },
+    "ownedUID": 1000,
+    "openFDIdentity": [
+      24,
+      22031777,
+      1000,
+      33060
+    ],
+    "actualChildExit": 0,
+    "pidfdExitObserved": true,
+    "procPathGone": true
+  },
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12",
+    "-p",
+    "test_process_disappearance.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "test_actual_exact_zombie_stays_live_until_normal_reap (test_process_disappearance.Disappearance.test_actual_exact_zombie_stays_live_until_normal_reap) ... ok\ntest_actual_open_proc_stat_read_after_normal_exit_is_selected_gone (test_process_disappearance.Disappearance.test_actual_open_proc_stat_read_after_normal_exit_is_selected_gone) ... ok\ntest_actual_path_enoent_selected_gone_but_registration_refused (test_process_disappearance.Disappearance.test_actual_path_enoent_selected_gone_but_registration_refused) ... ok\ntest_actual_same_kernel_esrch_stays_strict_for_fresh_registration (test_process_disappearance.Disappearance.test_actual_same_kernel_esrch_stays_strict_for_fresh_registration) ... ok\ntest_entire_v11_module_reconstructed_and_registration_body_exact (test_process_disappearance.Disappearance.test_entire_v11_module_reconstructed_and_registration_body_exact) ... ok\ntest_exact_live_and_wrong_start_or_pgid_remain_distinct (test_process_disappearance.Disappearance.test_exact_live_and_wrong_start_or_pgid_remain_distinct) ... ok\ntest_gone_cannot_supply_missing_duplicate_or_nonzero_terminal (test_process_disappearance.Disappearance.test_gone_cannot_supply_missing_duplicate_or_nonzero_terminal) ... ok\ntest_live_process_still_prevents_normal_completion (test_process_disappearance.Disappearance.test_live_process_still_prevents_normal_completion) ... ok\ntest_only_exact_two_errno_classes_are_selected_gone (test_process_disappearance.Disappearance.test_only_exact_two_errno_classes_are_selected_gone) ... ok\ntest_qs_cpu_fixture_only_adds_source_backed_literal_body_receipt (test_process_disappearance.Disappearance.test_qs_cpu_fixture_only_adds_source_backed_literal_body_receipt) ... ok\ntest_unknown_errors_errnos_owner_and_malformed_data_propagate (test_process_disappearance.Disappearance.test_unknown_errors_errnos_owner_and_malformed_data_propagate) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.215s\n\nOK\n",
+  "sources": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/helper_observer.py": "1a7d8a4744a797ef2b8880a93e0b3c05f4e64a0a9c8dce8696e04899e346e0ed",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/proc_disappearance_fixture.py": "90c79e6fcb0b113d4c802dc3a5f27055842779812335546deda2da43e4c2590a",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/test_process_disappearance.py": "f44853229044160db30e43cc7b420e04cb22f4acc388c68b9531e8774fa5f944"
+  },
+  "syntheticProcReadError": false,
+  "nativeLaunch": false
+}

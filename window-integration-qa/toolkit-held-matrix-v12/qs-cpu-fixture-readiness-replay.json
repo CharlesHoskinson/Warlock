@@ -1,0 +1,883 @@
+{
+  "result": "bounded-replay",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-382224f538034ed6be362e24ef6fc821.scope",
+    "coreLimit": 1
+  },
+  "cases": [
+    {
+      "index": 0,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpxt0d5aw3/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpxt0d5aw3/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819591,
+        "start": "13702425",
+        "pgid": 2819591,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819591,
+        "start": "13702425",
+        "pgid": 2819591,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 1,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpepew_1p0/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpepew_1p0/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819615,
+        "start": "13702428",
+        "pgid": 2819615,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819615,
+        "start": "13702428",
+        "pgid": 2819615,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 2,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpvsy11vv_/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpvsy11vv_/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819617,
+        "start": "13702432",
+        "pgid": 2819617,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819617,
+        "start": "13702432",
+        "pgid": 2819617,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 3,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmplhiej2pz/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmplhiej2pz/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819618,
+        "start": "13702436",
+        "pgid": 2819618,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819618,
+        "start": "13702436",
+        "pgid": 2819618,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 4,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmphn88a9xd/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmphn88a9xd/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819619,
+        "start": "13702439",
+        "pgid": 2819619,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819619,
+        "start": "13702439",
+        "pgid": 2819619,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 5,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpy6k7co6f/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpy6k7co6f/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819620,
+        "start": "13702443",
+        "pgid": 2819620,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819620,
+        "start": "13702443",
+        "pgid": 2819620,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 6,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpoy6d3dc4/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpoy6d3dc4/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819623,
+        "start": "13702447",
+        "pgid": 2819623,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819623,
+        "start": "13702447",
+        "pgid": 2819623,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 7,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpqtoeki9r/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpqtoeki9r/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819626,
+        "start": "13702450",
+        "pgid": 2819626,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819626,
+        "start": "13702450",
+        "pgid": 2819626,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 8,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmppp7ms13x/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmppp7ms13x/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819627,
+        "start": "13702455",
+        "pgid": 2819627,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819627,
+        "start": "13702455",
+        "pgid": 2819627,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 9,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpzvv9hfp8/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpzvv9hfp8/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819628,
+        "start": "13702458",
+        "pgid": 2819628,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819628,
+        "start": "13702458",
+        "pgid": 2819628,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 10,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpavm8alx1/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpavm8alx1/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819630,
+        "start": "13702462",
+        "pgid": 2819630,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819630,
+        "start": "13702462",
+        "pgid": 2819630,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 11,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmp86fx63fg/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmp86fx63fg/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819632,
+        "start": "13702466",
+        "pgid": 2819632,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819632,
+        "start": "13702466",
+        "pgid": 2819632,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 12,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmp5gurn5io/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmp5gurn5io/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819633,
+        "start": "13702469",
+        "pgid": 2819633,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819633,
+        "start": "13702469",
+        "pgid": 2819633,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 13,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpdjiryq_d/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpdjiryq_d/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819634,
+        "start": "13702473",
+        "pgid": 2819634,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819634,
+        "start": "13702473",
+        "pgid": 2819634,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 14,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpd0ozimbt/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpd0ozimbt/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819635,
+        "start": "13702477",
+        "pgid": 2819635,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819635,
+        "start": "13702477",
+        "pgid": 2819635,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 15,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpffxrg4cl/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpffxrg4cl/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819636,
+        "start": "13702480",
+        "pgid": 2819636,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819636,
+        "start": "13702480",
+        "pgid": 2819636,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 16,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpcxd4ch7e/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpcxd4ch7e/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819637,
+        "start": "13702484",
+        "pgid": 2819637,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819637,
+        "start": "13702484",
+        "pgid": 2819637,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 17,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmph_wve241/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmph_wve241/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819638,
+        "start": "13702488",
+        "pgid": 2819638,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819638,
+        "start": "13702488",
+        "pgid": 2819638,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 18,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmp9z2esgba/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmp9z2esgba/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819639,
+        "start": "13702491",
+        "pgid": 2819639,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819639,
+        "start": "13702491",
+        "pgid": 2819639,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 19,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmp86i96mg6/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmp86i96mg6/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819640,
+        "start": "13702495",
+        "pgid": 2819640,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819640,
+        "start": "13702495",
+        "pgid": 2819640,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 20,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpjrame4eh/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpjrame4eh/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819641,
+        "start": "13702499",
+        "pgid": 2819641,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819641,
+        "start": "13702499",
+        "pgid": 2819641,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 21,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpzv_uk097/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpzv_uk097/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819642,
+        "start": "13702503",
+        "pgid": 2819642,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819642,
+        "start": "13702503",
+        "pgid": 2819642,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 22,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmp9tkmbt15/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmp9tkmbt15/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819643,
+        "start": "13702506",
+        "pgid": 2819643,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819643,
+        "start": "13702506",
+        "pgid": 2819643,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 23,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpiacipg2m/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpiacipg2m/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819644,
+        "start": "13702510",
+        "pgid": 2819644,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819644,
+        "start": "13702510",
+        "pgid": 2819644,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 24,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpko35ts7q/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpko35ts7q/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819645,
+        "start": "13702514",
+        "pgid": 2819645,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819645,
+        "start": "13702514",
+        "pgid": 2819645,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 25,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmp7_4_30fx/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmp7_4_30fx/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819646,
+        "start": "13702517",
+        "pgid": 2819646,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819646,
+        "start": "13702517",
+        "pgid": 2819646,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 26,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmps2w3t9tj/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmps2w3t9tj/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819648,
+        "start": "13702521",
+        "pgid": 2819648,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819648,
+        "start": "13702521",
+        "pgid": 2819648,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 27,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpprqnfk9e/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpprqnfk9e/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819649,
+        "start": "13702524",
+        "pgid": 2819649,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819649,
+        "start": "13702524",
+        "pgid": 2819649,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 28,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpkc8fff10/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpkc8fff10/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819650,
+        "start": "13702528",
+        "pgid": 2819650,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819650,
+        "start": "13702528",
+        "pgid": 2819650,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    },
+    {
+      "index": 29,
+      "error": null,
+      "actualArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpneueaw0g/owned.py"
+      ],
+      "expectedArgv": [
+        "/usr/bin/python3",
+        "/tmp/tmpneueaw0g/owned.py"
+      ],
+      "actualExecutable": "/usr/bin/python3.14",
+      "expectedExecutable": "/usr/bin/python3.14",
+      "actualExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "expectedExecutableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "actualIdentity": {
+        "pid": 2819651,
+        "start": "13702531",
+        "pgid": 2819651,
+        "parent": 2819584
+      },
+      "expectedIdentity": {
+        "pid": 2819651,
+        "start": "13702531",
+        "pgid": 2819651,
+        "parent": 2819584
+      },
+      "originalPoll": null
+    }
+  ],
+  "sourceSHA256": "bed687b08ecfef93b34de96e399baefa0442af3ea53b7119b9dde0efcc34a876",
+  "nativeLaunch": false,
+  "installedQSExecuted": false,
+  "fullOfflineFailureRetained": true
+}

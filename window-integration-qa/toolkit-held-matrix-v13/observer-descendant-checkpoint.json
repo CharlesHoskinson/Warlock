@@ -1,0 +1,38 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1b730d25e8f04f2887dcfd5810dd2a77.scope",
+    "coreLimit": 1
+  },
+  "command": [
+    "/usr/bin/python3",
+    "-IS",
+    "-c",
+    "\nimport sys,os,json,hashlib\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1]);import delegate_diagnostics as d\npath=Path(sys.argv[2]);script=sys.argv[3];shebang=len(sys.argv)>4\nentry=path/'actual-backend'\nif shebang:entry.write_text('#!/usr/bin/env python3\\n'+script);entry.chmod(0o700)\ngate,release=os.pipe()\nchild=os.fork()\nif child==0:\n os.close(release)\n if os.read(gate,1)!=b'G':os._exit(125)\n os.close(gate);d.child_bootstrap()\n if shebang:os.execv(str(entry),[str(entry),'list','--json'])\n os.execve('/usr/bin/python3',['/usr/bin/python3','-IS','-c',script],dict(os.environ))\nos.close(gate)\ndef identity(pid):\n fields=Path('/proc',str(pid),'stat').read_text().rsplit(') ',1)[1].split();return dict(pid=pid,start=fields[19])\nparent=identity(os.getppid());delegate=identity(child);journal=d.Journal(path/'trace.jsonl')\nchain=[dict(executable=str(Path('/usr/bin/python3').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/python3').read_bytes()).hexdigest(),argv=['/usr/bin/python3','-IS','-c',script])]\nif shebang:chain=[dict(executable=str(Path('/usr/bin/env').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/env').read_bytes()).hexdigest(),argv=['/usr/bin/env','python3',str(entry),'list','--json']),dict(executable=str(Path('/usr/bin/python3').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/python3').read_bytes()).hexdigest(),argv=['python3',str(entry),'list','--json'])]\ntry:\n observer=d.Observer(journal,delegate,parent,parent,chain,dict(cpuFixture=True,environmentSHA256=hashlib.sha256(Path('/proc/self/environ').read_bytes()).hexdigest()))\n os.write(release,b'G');os.close(release);status,summary=observer.run()\n with (path/'summary.json').open('x') as f:json.dump(dict(status=status,summary=summary,delegate=delegate,parent=parent,originalEnvironmentSHA256=hashlib.sha256(Path('/proc/self/environ').read_bytes()).hexdigest()),f)\nfinally:journal.close()\n",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/observer-kernel-proof/snap-style-descendant",
+    "import os,subprocess;raw=subprocess.check_output(['/usr/bin/python3','-IS','-c',\"import os;os.write(1,b'actual child query\\\\n')\"],timeout=4);os.write(1,raw);os.write(2,b'original backend stderr\\n')"
+  ],
+  "wrapperExit": 0,
+  "stdoutHex": "61637475616c206368696c642071756572790a",
+  "stderrHex": "6f726967696e616c206261636b656e64207374646572720a",
+  "originalDelegate": {
+    "pid": 2632120,
+    "start": "13545115"
+  },
+  "originalDelegateExit": 0,
+  "observerComplete": true,
+  "onlyOriginalExecObserved": true,
+  "traceSHA256": "999af3485d618d3f843833ced602b1b4d6a0590ef25f6c2da5d56bc61b79de12",
+  "genuineSignals": [
+    17
+  ],
+  "sources": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/delegate_diagnostics.py": "8dd90c0c0af397b7a7d13e2d5d8b25cc5c91a217b5718342f6d925af011d7003",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/test_delegate_diagnostics.py": "7f7cad26a34fa7400dd8bbd5a6e3b094056215e62d198ab052d574d4363b7d03",
+    "/usr/bin/python3.14": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/observer_descendant_checkpoint.py": "4882fc0072a1386c94ac789292c3e93cfd66b426bf896e7881c653e5d6b9c6b4"
+  },
+  "noDesktopLaunch": true,
+  "noDescendantAttach": true
+}

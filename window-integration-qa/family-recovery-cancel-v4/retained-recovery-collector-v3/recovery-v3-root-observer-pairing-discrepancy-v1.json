@@ -1,0 +1,42 @@
+{
+  "updatedUTC": "2026-10-02T05:40:25.952818+00:00",
+  "result": "native V19 service pairing unverified",
+  "files": {
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/native_integration.py": "a5e2d7e81ce1fb8a43936e7de3483ea35d9feb465c26124eff616a1415586617",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/service_observer.py": "b90e6fb10ad0bb529545b718a052c10963f21f67d39daf70679322216277e89c",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/recovery_observer.py": "27ab7d8106d433b5f648dc127047fe18a9c95f922e9bbefbc08047184295ded7"
+  },
+  "witnesses": [
+    {
+      "path": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/native_integration.py",
+      "line": 29,
+      "source": "SERVICE = Path('/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19')"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/native_integration.py",
+      "line": 587,
+      "source": "                service_command=['/usr/bin/python3', str(B / 'service_observer.py'),"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/service_observer.py",
+      "line": 30,
+      "source": "SERVICE = Path('/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-terminal-v17')"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/service_observer.py",
+      "line": 32,
+      "source": "import native_runtime"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/family-recovery-cancel-v3/service_observer.py",
+      "line": 33,
+      "source": "from service_runtime import RuntimeService, process_start"
+    }
+  ],
+  "nativeIntegrationClaimsV19": false,
+  "observerSelectsV17": true,
+  "preservedBaselineOutcome": "failed original baseline; no recovery fault acceptance",
+  "frozenFilesChanged": false,
+  "mainWrites": false,
+  "requiredNextProof": "Fresh observer selectors plus actual loaded module paths and hashes attested before original baseline/fault acceptance"
+}

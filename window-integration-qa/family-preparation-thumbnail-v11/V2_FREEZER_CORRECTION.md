@@ -1,0 +1,5 @@
+# Recovery collector V2 packaging correction
+
+Frozen V1 remains immutable and is retained via its entire inputs/modes/links manifest plus root rejection artifact. The only runtime-source difference is in native_integration.freeze(): exclusion is the exact top-level B/frozen-inputs.json, so the retained nested baseline manifest is included, and inherited declared modes are validated before adding modes for new files. V17 and accepted V3 modes are never replaced with a fresh stat value. Baseline/fault service, observers, helpers, strict verification and original 38 check AST remain byte-exact. No product semantics or authority change; earlier formal and original offline evidence remain provenance, not a new native acceptance claim.
+
+The CPU regression runs the actual complete freezer into a temporary descriptor sink, verifies the retained nested manifest exact hash/mode, excludes only the temporary root descriptor, and checks every V17/V3 inherited mode. A second counterexample replaces one declared V17 mode in the read-only parsed packet and requires refusal. Root alone may freeze and run the separate native baseline/fault hosts.

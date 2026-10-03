@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_live_regions" xml:lang="bg">
+  <info>
+    <link type="next" xref="commands_chat"/>
+    <link type="guide" xref="commands#accessing_dynamic_information"/>
+    <link type="seealso" xref="howto_live_regions"/>
+    <title type="sort">1. Live Regions</title>
+    <title type="link">Живи райони</title>
+    <desc>Команди за работа с живи райони в уеб страниците</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Признание-Споделяне на споделеното 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Захари Юруков</mal:name>
+      <mal:email>zahari.yurukov@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Александър Шопов</mal:name>
+      <mal:email>ash@kambanaria.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  </info>
+  <title>Команди за живите райони</title>
+  <p>Следните команди могат да бъдат използвани за достъп до динамично обновяващо се съдържание в уеб страници, които са били направени достъпни чрез ARIA.</p>
+  <list>
+    <item>
+      <p>
+        Monitor live regions:
+        <keyseq><key>Orca Modifier</key><key>Backslash</key></keyseq>
+      </p>
+    </item>
+    <item>
+      <p>Advance live region politeness setting: (Unbound)</p>
+    </item>
+    <item>
+      <p>Set default politeness level to off: (Unbound)</p>
+    </item>
+    <item>
+      <p>
+        Go to next/previous live region in the document's reading order:
+        <keyseq><key>D</key></keyseq>/<keyseq><key>Shift</key><key>D</key></keyseq>
+      </p>
+    </item>
+    <item>
+      <p>Review the next/previous saved live region message: (Unbound)</p>
+    </item>
+    <item>
+      <p>Придвижване до последния жив район, изпратил уведомление: <keyseq><key>Y</key></keyseq></p>
+    </item>
+</list>
+</page>

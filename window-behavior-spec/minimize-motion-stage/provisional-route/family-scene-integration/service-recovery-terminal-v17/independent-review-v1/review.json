@@ -1,0 +1,135 @@
+{
+  "version": "service-recovery-v15-independent-source-review-v1",
+  "reviewPassed": true,
+  "scope": "Definite stale/closed/incompatible-family recovery cancellation only",
+  "nativeAuthorized": false,
+  "nativeLaunch": false,
+  "nativeRecoveryAccepted": false,
+  "currentUserCancellationAccepted": false,
+  "mainChanged": false,
+  "stageChanged": false,
+  "sourceChecks": "/home/hoskinson/window-integration-qa/service-recovery-v15-independent-review-v1/source-checks.json",
+  "sourceChecksSHA256": "5e97afec140f1f81be48a31f854c6fd9b9ac761c4dba4e77105060ad3088fcef",
+  "candidate": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v15",
+  "candidateHashes": {
+    "recovery_runtime.py": "8baacd6ae76560a83f3fea4a77ed19cd9709b01e770fd2bd5e1313546fcf0469",
+    "recovery_cancel.py": "8647a336a7b83ec5de7d60f63ccb0436f7b684f85879e43c7ae8f21ff499b219",
+    "recovery_resources.py": "ab45ef7ba90371dfab94c95414280ebd3cb45de09b0e98f0ec9b5b6c0d7d3733",
+    "CANCELLATION_CONTRACT.md": "6db0b5076300d4270872d7c3bd2af5c7cdb0dcf289f1b5f701644d1504bfea54",
+    "recovery_cancel.qnt": "7986f30a1a3e1b8f8b0df069d33a97eee9461a61e6b3cf8a23286df2a84aab31",
+    "recovery_cancel_test.qnt": "642dc742d8e7f41062c5cfcb7334054def008e771c20b04d9c038e38bd99394b",
+    "offline-checkpoint.json": "ff8e21c09ae7d283c81283b883783359526a2dcc4fbdea0816f1cc1ceca580b7",
+    "CANCELLATION_SOURCE_REVIEW.md": "eb52befded092ab2ee68b7054e6f7eeb43d729fa52ebb12d1a06e802b5f225b3"
+  },
+  "checks": [
+    {
+      "name": "formalOriginalBinding",
+      "passed": true,
+      "evidence": "Original root/lock/session/member-lifetime/receipt remains bound; a refreshed owner cannot substitute intent after acknowledged restart."
+    },
+    {
+      "name": "uncertaintyLatch",
+      "passed": true,
+      "evidence": "Final29-case model latches uncertainty; runtime preflight and archived helper checks reject every unfinished native export/effect before mutation."
+    },
+    {
+      "name": "durableRendererRetirement",
+      "passed": true,
+      "evidence": "Actual exact old lifetime is proven gone then retired outcome is persisted while sources remain; failed persistence blocks cancellation."
+    },
+    {
+      "name": "actualLease",
+      "passed": true,
+      "evidence": "Cancellation accepts only the actual bound RuntimeLease.verify method, startup socket-null state, current kernel root/lock/flock/PID/start/nonce/session and exact journal."
+    },
+    {
+      "name": "freshCompleteClassification",
+      "passed": true,
+      "evidence": "Two equal complete client/output/native-family rounds retain every old member including absent/reused/unmapped status; malformed/unstable observations refuse."
+    },
+    {
+      "name": "exactIntentResults",
+      "passed": true,
+      "evidence": "Cancellation reconstructs original latest scope/receipt/symbolic direction; original resolved endpoint/anchor observations and actual prior returned results are preserved."
+    },
+    {
+      "name": "explicitNonSettlement",
+      "passed": true,
+      "evidence": "Stable stale/incompatible-family outcomes create durable cancellation with no endpointObserved success; no arbitrary exception grants cancellation."
+    },
+    {
+      "name": "ackBeforeDisposal",
+      "passed": true,
+      "evidence": "All prepared outcomes are persisted before source deletion, including mid-settlement cancellation following a returned member result."
+    },
+    {
+      "name": "restartFreshAuthority",
+      "passed": true,
+      "evidence": "Restart authenticates current lease, journal, old helper terminal archive and resource lifetimes; refreshes classification before disposal without recomputing cancellation as settlement."
+    },
+    {
+      "name": "sourceIdentity",
+      "passed": true,
+      "evidence": "Read-only directory inspection precedes effects/ack and repeats before disposal; unknown material, allocation gaps, replaced inode or symlink refuse."
+    },
+    {
+      "name": "queryAndAPIOrdering",
+      "passed": true,
+      "evidence": "Read-only query keeper is stopped and exact terminal closure persisted before source disposal/completion; inherited RuntimeService only proceeds after recover returns resolved state."
+    },
+    {
+      "name": "unchangedOrdinaryAuthority",
+      "passed": true,
+      "evidence": "Ordinary runtime/native adapter/planner/keeper/policy/owned launch/controller/manager/direction intent/cache sources are byte-identical frozen V14."
+    },
+    {
+      "name": "boundedPendingCompatibility",
+      "passed": true,
+      "evidence": "Empty unplanned scene does not shadow the exact accepted pending scope; dedicated actual CPU test passes."
+    },
+    {
+      "name": "inheritedClosure",
+      "passed": true,
+      "evidence": "All11168 frozenV14 bytes/modes and158links exact; tracked final107 proof sources unchanged; retained64 proof commands report exit0."
+    },
+    {
+      "name": "independentFaultReplay",
+      "passed": true,
+      "evidence": "Copied-source nongraphical CPU/kernel replay passes55 tests with no skips and no stage cache mutation."
+    }
+  ],
+  "independentReplay": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "test_recovery_cancel",
+      "test_recovery_runtime",
+      "test_recovery_resources",
+      "-v"
+    ],
+    "cwd": "/home/hoskinson/window-integration-qa/service-recovery-v15-independent-review-v1/cpu-replay",
+    "tests": 55,
+    "skips": 0,
+    "exitCode": 0,
+    "log": "/home/hoskinson/window-integration-qa/service-recovery-v15-independent-review-v1/focused-replay.log",
+    "logSHA256": "d903bfddce42c7bfd553dedb0be4e2343ca8a14da4e2776864d9b8c3ef7c0c7a",
+    "usesActualPrivateKernelResources": true,
+    "nativeDesktopIsDeterministicReadOnlyFixture": true
+  },
+  "producerFullProof": {
+    "pythonTests": 288,
+    "namedScenarios": 170,
+    "models": 21,
+    "samplesPerModel": 2000,
+    "maxSteps": 100,
+    "independentlyReranFullSuite": false,
+    "proofSourceHashesRechecked": true
+  },
+  "limitations": [
+    "Native loss/restart, exact real keeper job groups, stale-family no-write and actual acknowledgment-before-disposal remain root-owned campaign requirements.",
+    "Explicit current compatible user cancellation, live actor cancellation, interruption and reduced-motion ingress remain open; V15 does not implement those product semantics.",
+    "Source/model/CPU evidence does not establish native latency, raster, cadence, frontend or full Windows parity."
+  ]
+}

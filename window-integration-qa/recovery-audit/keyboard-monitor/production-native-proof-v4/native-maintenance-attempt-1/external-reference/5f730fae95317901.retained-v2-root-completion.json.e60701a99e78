@@ -1,0 +1,108 @@
+{
+  "updatedUTC": "2026-10-01T21:06:22.563790+00:00",
+  "reportSHA256": "cf9a69c3e0882f082e15b9daf9d6f58abc44b1901c16dfcb08fca0366b35300e",
+  "manifestSHA256": "009f897d642b362b4c65e3bee71bb75c07ba0d1ac56a393a02590bf6ed91258c",
+  "sourceCounts": {
+    "local": 2449,
+    "external": 6347,
+    "links": 162
+  },
+  "independentChecks": {
+    "allOriginalSourceBytesAndModesExact": true,
+    "allCopiedSourceBytesAndModesExact": true,
+    "allExternalSourceBytesAndModesExact": true,
+    "allExternalLinksExact": true,
+    "all19MainPreservationChecks": true,
+    "allRecordedProcessIdentitiesGone": true,
+    "privateRuntimeGone": true,
+    "noUnexpectedOrRemainingDescendants": true,
+    "archivedParentTransportHealthy": true,
+    "terminalNoHelperGate": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "acceptanceChecks": {
+    "terminalCampaignPass": false,
+    "allNativeChecksPass": true,
+    "actualMaintenanceProved": false,
+    "normalExactRetirementAndUnload": false
+  },
+  "privateMaintenanceAccepted": false,
+  "disabledReaderImportRefusalAccepted": true,
+  "checksReached": 10,
+  "checksPassed": 10,
+  "processes": [
+    {
+      "pid": 1233779,
+      "start": "11096624",
+      "gone": true
+    },
+    {
+      "pid": 1233817,
+      "start": "11096638",
+      "gone": true
+    },
+    {
+      "pid": 1233834,
+      "start": "11096639",
+      "gone": true
+    },
+    {
+      "pid": 1233842,
+      "start": "11096641",
+      "gone": true
+    },
+    {
+      "pid": 1233849,
+      "start": "11096653",
+      "gone": true
+    },
+    {
+      "pid": 1233676,
+      "start": "11096406",
+      "gone": true
+    },
+    {
+      "pid": 1233677,
+      "start": "11096409",
+      "gone": true
+    },
+    {
+      "pid": 1233743,
+      "start": "11096479",
+      "gone": true
+    },
+    {
+      "pid": 1233782,
+      "start": "11096625",
+      "gone": true
+    },
+    {
+      "pid": 1233828,
+      "start": "11096638",
+      "gone": true
+    },
+    {
+      "pid": 1233832,
+      "start": "11096639",
+      "gone": true
+    }
+  ],
+  "failures": [
+    {
+      "stage": "startup-or-campaign",
+      "type": "AssertionError",
+      "error": "AssertionError('actual product maintenance action failed: 1')",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native_probe_maintenance.py\", line 306, in execute\n    proof_cases.run(ctx)\n    ~~~~~~~~~~~~~~~^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/proof_cases.py\", line 14, in run\n    first=c['maintenance_action']('load');check('production native identity is exact current session',first['instance']==env['HYPRLAND_INSTANCE_SIGNATURE'] and len(first['incarnation'])==64,identity=first)\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native_probe_maintenance.py\", line 151, in maintenance_action\n    assert len(output)<=65536 and p.returncode==0,'actual product maintenance action failed: '+str(p.returncode)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: actual product maintenance action failed: 1\n"
+    },
+    {
+      "stage": "normal-unload-cleanup",
+      "type": "Refused",
+      "error": "Refused('loaded mapping identity differs')",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native_probe_maintenance.py\", line 321, in execute\n    retire_private_plugin(control,report)\n    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native_probe_maintenance.py\", line 76, in retire_private_plugin\n    report['cleanupNormalRetirement']=control.unload();report['cleanupNormalUnloadResult']='ok';return True\n                                      ~~~~~~~~~~~~~~^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/payload/control.py\", line 136, in unload\n    first=self.native_identity()\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/payload/control.py\", line 124, in native_identity\n    self._mapped();value=self.lua('identity')\n    ~~~~~~~~~~~~^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/payload/control.py\", line 116, in _mapped\n    if int(parts[4])!=row.st_ino or os.makedev(major,minor)!=row.st_dev:raise Refused('loaded mapping identity differs')\n                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ncontrol.Refused: loaded mapping identity differs\n"
+    }
+  ],
+  "fullWindowsParityAccepted": false,
+  "productionAccepted": false,
+  "mainGUIWrites": false,
+  "physicalHardwareAccepted": false
+}

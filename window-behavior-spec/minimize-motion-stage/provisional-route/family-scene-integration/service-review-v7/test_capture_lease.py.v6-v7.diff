@@ -1,0 +1,11 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v6/test_capture_lease.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v7/test_capture_lease.py
+@@ -61,7 +61,7 @@
+             calls+=1
+             if calls==1:observed.set();release.wait(3)
+             return original(force)
+-        self.t.ensure_outputs=blocked;first=self.request();self.assertTrue(observed.wait(1));second=self.request('restore')
++        self.t.ensure_outputs=blocked;first=self.request();self.assertTrue(observed.wait(1));second=self.request('minimize')
+         self.wait(lambda:any(m['command']=='seed' and m['token']==second['token'] for m in self.t.sent))
+         release.set();self.wait(lambda:len(self.d.removed)==3)
+         old=[p for p in self.d.created if p.name.startswith(first['token']+'-')];new=[p for p in self.d.created if p.name.startswith(second['token']+'-')]

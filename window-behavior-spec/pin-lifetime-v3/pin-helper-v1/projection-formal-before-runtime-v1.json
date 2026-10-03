@@ -1,0 +1,21 @@
+{
+  "result": "fail",
+  "named": 8,
+  "samples": 2000,
+  "steps": 100,
+  "runtimeChanged": false,
+  "runtimeSHA256": "34c00b57fd612d7d078fb2c93cfee0b402081349d965e173ba03d2186b05c1cf",
+  "modelSHA256": "8f1486067413ce4983ad6f8578cb39fb93d0675552608b19e50b6cbd1ff90b5a",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/receipt_projection.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: Expected [accepted,refused] and [] to be the same\nTrying to unify entities ['accepted', 'refused'] and []\nTrying to unify Read[_v302] & Update[_v303] and Read[_v247, 'refused'] & Temporal['accepted', 'refused'] & Update['received']\nTrying to unify (e_e_186) => Read[_v302] & Update[_v303] and (Read[_v247]) => Read[_v247, 'refused'] & Temporal['accepted', 'refused'] & Update['received']\nTrying to unify (_e83, Pure, (_e83) => Read[_v302] & Update[_v303], Pure, (_e83) => Read[_v304] & Update[_v303]) => Read[_v302, _v304] & Update[_v303] and (e_e_186, Pure, (Read[_v247]) => Read[_v247, 'refused'] & Temporal['accepted', 'refused'] & Update['received'], Pure, (_e77) => Read['received', 'accepted', 'refused'] & Update['received', 'accepted', 'refused']) => _e82\nTrying to infer effect for operator application in matchVariant(e, \"Complete\", ((r) => actionAll(assign(received, r), and(assign(accepted, not(refused)), valid(r)), or(assign(refused, refused), not(valid(r))))), \"Idle\", ((_) => actionAll(assign(received, received), assign(accepted, accepted), assign(refused, refused))))\n\n\n  at /home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/receipt_projection.qnt:15:28\n  15:  action fire(e:Event):bool=match e{\n                                 ^^^^^^^^\n  16:   |Complete(r)=>all{received'=r,accepted'=not(refused)and valid(r),refused'=refused or not(valid(r))}\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  17:   |Idle=>all{received'=received,accepted'=accepted,refused'=refused}\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  18:  }\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n"
+    }
+  ]
+}

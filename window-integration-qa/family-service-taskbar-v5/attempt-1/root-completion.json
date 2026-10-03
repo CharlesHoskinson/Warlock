@@ -1,0 +1,31 @@
+{
+  "updatedUTC": "2026-10-01T21:02:18.206776+00:00",
+  "reportSHA256": "0428b94560c9360b6f500b2cfc1c6a5e9eebc663a6ce8f1c13e2d4a4d9e7baa8",
+  "manifestSHA256": "21c53f2e2bf958c49726f7166187a719cd88f2d31e944e7e8610b5b8a51cc35b",
+  "result": "fail",
+  "nativeCampaignAccepted": false,
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "checks": {
+    "all4899FrozenSourcesExact": true,
+    "all8LinksExact": true,
+    "all15MainPreservationChecks": true,
+    "allRecordedHostIdentitiesGone": true,
+    "privateRuntimeGone": true,
+    "noRemainingOrUnexpectedDescendants": true,
+    "noHostCleanupErrors": true,
+    "actualCopiedHomeModeSourceMatchesReproducedRefusal": true
+  },
+  "checksReached": 2,
+  "checksPassed": 2,
+  "attribution": {
+    "sourceConfirmed": "copied HOME/.local mode0755 violates observer required0700",
+    "actualFrozenFunctionSandboxRefusal": "Helper private directory invalid",
+    "nativeIPCInReproduction": false,
+    "diagnosticLimitation": "actual native helper early stderr went to compositor /dev/null; no wrapper record produced; source sandbox identifies definite configuration mismatch"
+  },
+  "normalExplicitPluginUnloadAccepted": false,
+  "nativeHelperLifetimesAccepted": false,
+  "noServiceOrQtStarted": true,
+  "mainGUIWrites": false,
+  "fullWindowsParityAccepted": false
+}

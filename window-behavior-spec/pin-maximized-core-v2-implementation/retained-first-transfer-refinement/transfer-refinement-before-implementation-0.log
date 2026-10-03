@@ -1,0 +1,16 @@
+[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/pin_transfer_refinement.qnt:9:26
+  9:  action complete(ok:bool)=all{s.phase==2,s'=if(owned and s.space==s.expectedSpace and s.output==s.expectedOutput and ok) s.with("phase",3).with("mode",s.beforeMode).with("client",s.beforeClient).with("accepted",true).with("reported",true) else s.with("phase",4).with("usable",false).with("accepted",false).with("reported",true)}
+                              ^
+
+
+ Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/pin_transfer_refinement.qnt:10:2
+  10:  action failActual(mode:int,client:int)=all{s.phase==2,s'=s.with("mode",mode).with("client",client).with("usable",false).with("phase",4).with("accepted",false).with("reported",true)}
+       ^^^^^^
+
+error: parsing failed

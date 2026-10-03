@@ -1,0 +1,634 @@
+{
+  "reader": "Official Arch Orca 50.2",
+  "input": "physical Wayland virtual keyboard, standard evdev keycodes",
+  "output": "silent QA factory",
+  "checks": [
+    {
+      "name": "Orca announces native window menu initial focus",
+      "passed": true,
+      "utterances": [
+        "Window controls dialog",
+        "Restore."
+      ]
+    },
+    {
+      "name": "native controls retain selected item as Orca focus",
+      "passed": true,
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Restore",
+          "role": "menu item",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.ScrollView_QMLTYPE_1.QQuickRectangle_QML_10",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": null
+      }
+    },
+    {
+      "name": "Orca ObjectNavigator traverses native menu siblings",
+      "passed": true,
+      "navigation": {
+        "name": "Move",
+        "role": "menu item",
+        "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.ScrollView_QMLTYPE_1.QQuickRectangle_QML_10",
+        "app": "quickshell"
+      }
+    },
+    {
+      "name": "Orca ObjectNavigator locates Minimize",
+      "passed": true
+    },
+    {
+      "name": "Orca PerformAction minimizes captured disposable window",
+      "passed": true
+    },
+    {
+      "name": "Orca announces Task View selected window",
+      "passed": true,
+      "utterances": [
+        "frame",
+        "Task View",
+        "dialog",
+        "hoskinson@hosk:~",
+        "button.",
+        "Open window.",
+        "opens popup",
+        "claude code quint plugin - Google Search - Brave",
+        "button.",
+        "Minimized window.",
+        "opens popup",
+        "\u283c Explain 6.1 access limitation | hoskinson",
+        "button.",
+        "Open window.",
+        "opens popup",
+        "hosk: ~",
+        "button.",
+        "Open window.",
+        "opens popup",
+        "Orca reader QA two",
+        "button.",
+        "Open window.",
+        "opens popup",
+        "Orca reader QA one",
+        "button.",
+        "Open window.",
+        "opens popup"
+      ]
+    },
+    {
+      "name": "Orca follows Task View keyboard mode into desktop tab",
+      "passed": true,
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Desktop 1",
+          "role": "page tab",
+          "identity": "taskview-desktop:1",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Minimize",
+          "role": "menu item",
+          "identity": "",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "name": "Orca discovers Task View close button from window card",
+      "passed": true,
+      "navigation": {
+        "name": "Close Orca reader QA one",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.QQuickRectangle_QML_540.QQuickRectangle",
+        "app": "quickshell"
+      }
+    },
+    {
+      "name": "Orca activates exact Task View window through native action",
+      "passed": true
+    },
+    {
+      "name": "taskbar retains selected preview as Orca focus",
+      "passed": true,
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Orca reader QA two",
+          "role": "button",
+          "identity": "taskbar-window:180003a4",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Orca reader QA one",
+          "role": "button",
+          "identity": "",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "name": "Orca announces taskbar preview initial keyboard focus",
+      "passed": true,
+      "utterances": [
+        "Window previews",
+        "dialog",
+        "Orca reader QA two",
+        "button.",
+        "Open window, preview available.",
+        "Orca reader QA one",
+        "button.",
+        "Open window, preview available."
+      ],
+      "focus": {
+        "name": "Orca reader QA one",
+        "role": "button",
+        "identity": "taskbar-window:180003a3",
+        "app": "quickshell"
+      }
+    },
+    {
+      "name": "Orca follows taskbar preview arrow navigation",
+      "passed": true,
+      "focus": {
+        "name": "Orca reader QA two",
+        "role": "button",
+        "identity": "taskbar-window:180003a4",
+        "app": "quickshell"
+      }
+    },
+    {
+      "name": "Orca finds taskbar preview close action",
+      "passed": true,
+      "navigation": {
+        "name": "Close Orca reader QA two",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.QQuickFlickable.QQuickRectangle_QML_570.QQuickRectangle",
+        "app": "quickshell"
+      }
+    },
+    {
+      "name": "Orca activates taskbar preview through native action",
+      "passed": true
+    },
+    {
+      "name": "Orca receives taskbar app actions menu focus",
+      "passed": true,
+      "focus": {
+        "name": "Restore all 2 windows",
+        "role": "menu item",
+        "identity": "QGuiApplication.ProxiedWindow.QQuickFlickable.QQuickRectangle_QML_569",
+        "app": "quickshell"
+      }
+    },
+    {
+      "name": "reader QA preserves existing user native window identities",
+      "passed": true
+    },
+    {
+      "name": "physical Orca navigation commands are consumed before native arrow handlers",
+      "passed": true
+    }
+  ],
+  "physical_commands": [
+    {
+      "module": "ObjectNavigator",
+      "command": "MoveToParent",
+      "before": {
+        "kind": "controls",
+        "selected": 0
+      },
+      "after": {
+        "kind": "controls",
+        "selected": 0
+      },
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Restore",
+          "role": "menu item",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.ScrollView_QMLTYPE_1.QQuickRectangle_QML_10",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Window controls",
+          "role": "dialog",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "module": "ObjectNavigator",
+      "command": "MoveToFirstChild",
+      "before": {
+        "kind": "controls",
+        "selected": 0
+      },
+      "after": {
+        "kind": "controls",
+        "selected": 0
+      },
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Restore",
+          "role": "menu item",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.ScrollView_QMLTYPE_1.QQuickRectangle_QML_10",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Restore",
+          "role": "menu item",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.ScrollView_QMLTYPE_1.QQuickRectangle_QML_10",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "module": "ObjectNavigator",
+      "command": "MoveToNextSibling",
+      "before": {
+        "kind": "controls",
+        "selected": 0
+      },
+      "after": {
+        "kind": "controls",
+        "selected": 0
+      },
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Restore",
+          "role": "menu item",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.ScrollView_QMLTYPE_1.QQuickRectangle_QML_10",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Move",
+          "role": "menu item",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.ScrollView_QMLTYPE_1.QQuickRectangle_QML_10",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "module": "ObjectNavigator",
+      "command": "MoveToNextSibling",
+      "before": {
+        "kind": "controls",
+        "selected": 0
+      },
+      "after": {
+        "kind": "controls",
+        "selected": 0
+      },
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Restore",
+          "role": "menu item",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.ScrollView_QMLTYPE_1.QQuickRectangle_QML_10",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Size",
+          "role": "menu item",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.ScrollView_QMLTYPE_1.QQuickRectangle_QML_10",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "module": "ObjectNavigator",
+      "command": "MoveToNextSibling",
+      "before": {
+        "kind": "controls",
+        "selected": 0
+      },
+      "after": {
+        "kind": "controls",
+        "selected": 0
+      },
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Restore",
+          "role": "menu item",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.ScrollView_QMLTYPE_1.QQuickRectangle_QML_10",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Minimize",
+          "role": "menu item",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.ScrollView_QMLTYPE_1.QQuickRectangle_QML_10",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "module": "ObjectNavigator",
+      "command": "PerformAction",
+      "before": {
+        "kind": "controls",
+        "selected": 0
+      },
+      "after": null,
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Restore",
+          "role": "menu item",
+          "identity": "",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Minimize",
+          "role": "menu item",
+          "identity": "",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "module": "WhereAmIPresenter",
+      "command": "WhereAmIBasic",
+      "before": {
+        "kind": "taskview",
+        "selected": 5,
+        "desktopKeys": true
+      },
+      "after": {
+        "kind": "taskview",
+        "selected": 5,
+        "desktopKeys": true
+      },
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Desktop 1",
+          "role": "page tab",
+          "identity": "taskview-desktop:1",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Minimize",
+          "role": "menu item",
+          "identity": "",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "module": "ObjectNavigator",
+      "command": "MoveToFirstChild",
+      "before": {
+        "kind": "taskview",
+        "selected": 5,
+        "desktopKeys": false
+      },
+      "after": {
+        "kind": "taskview",
+        "selected": 5,
+        "desktopKeys": false
+      },
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Orca reader QA one",
+          "role": "button",
+          "identity": "taskview-window:180003a3",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Close Orca reader QA one",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickRectangle.QQuickRectangle_QML_540.QQuickRectangle",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "module": "ObjectNavigator",
+      "command": "MoveToParent",
+      "before": {
+        "kind": "taskview",
+        "selected": 5,
+        "desktopKeys": false
+      },
+      "after": {
+        "kind": "taskview",
+        "selected": 5,
+        "desktopKeys": false
+      },
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Orca reader QA one",
+          "role": "button",
+          "identity": "taskview-window:180003a3",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Orca reader QA one",
+          "role": "button",
+          "identity": "taskview-window:180003a3",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "module": "ObjectNavigator",
+      "command": "PerformAction",
+      "before": {
+        "kind": "taskview",
+        "selected": 5,
+        "desktopKeys": false
+      },
+      "after": null,
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Orca reader QA one",
+          "role": "button",
+          "identity": "",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Orca reader QA one",
+          "role": "button",
+          "identity": "",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "module": "ObjectNavigator",
+      "command": "MoveToFirstChild",
+      "before": {
+        "kind": "taskbar",
+        "selected": 0
+      },
+      "after": {
+        "kind": "taskbar",
+        "selected": 0
+      },
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Orca reader QA two",
+          "role": "button",
+          "identity": "taskbar-window:180003a4",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Close Orca reader QA two",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.QQuickFlickable.QQuickRectangle_QML_570.QQuickRectangle",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "module": "ObjectNavigator",
+      "command": "MoveToParent",
+      "before": {
+        "kind": "taskbar",
+        "selected": 0
+      },
+      "after": {
+        "kind": "taskbar",
+        "selected": 0
+      },
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Orca reader QA two",
+          "role": "button",
+          "identity": "taskbar-window:180003a4",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Orca reader QA two",
+          "role": "button",
+          "identity": "taskbar-window:180003a4",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "module": "ObjectNavigator",
+      "command": "PerformAction",
+      "before": {
+        "kind": "taskbar",
+        "selected": 0
+      },
+      "after": null,
+      "reader_state": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": null,
+        "active_window": null,
+        "navigator": {
+          "name": "Orca reader QA two",
+          "role": "button",
+          "identity": "",
+          "app": "quickshell"
+        }
+      }
+    }
+  ],
+  "legacy_keygrab_fix": true,
+  "failures": [],
+  "result": "pass"
+}

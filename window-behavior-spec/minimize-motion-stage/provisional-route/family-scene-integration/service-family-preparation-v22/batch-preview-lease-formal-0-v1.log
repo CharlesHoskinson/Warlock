@@ -1,0 +1,28 @@
+
+ Error [QNT000]: Couldn't unify int and set
+Trying to unify int and Set[int]
+Trying to unify { Stage: int, Launch: (), Returned: { closed: bool, outputs: bool }, Current: bool, Publish: (), Release: int, Dispose: () } and { Stage: int, Launch: _t37, Returned: { closed: bool, outputs: bool | $tail__t68$tail__t69 }, Current: bool, Publish: _t76, Release: Set[int], Dispose: _t114 }
+Trying to unify (Stage(int) | Launch | Returned({ closed: bool, outputs: bool }) | Current(bool) | Publish | Release(int) | Dispose) and (Stage(int) | Launch(_t37) | Returned({ closed: bool, outputs: bool | $tail__t68$tail__t69 }) | Current(bool) | Publish(_t76) | Release(Set[int]) | Dispose(_t114))
+
+
+  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/batch_preview_lease.qnt:6:32
+  6:  action fire(e:Event):bool={s'=match e {
+                                    ^^^^^^^^^
+  7:  | Stage(id)=>if(not(s.active) and not(s.uncertain) and not(s.disposed) and not(s.pending.contains(id))){...s,pending:s.pending.union(Set(id))} else {...s,refused:true}
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  8:  | Launch=>if(s.pending==Set(1,2,3) and s.current and not(s.disposed) and not(s.active) and not(s.uncertain) and s.launches==0){...s,active:true,launches:1} else {...s,refused:true}
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  9:  | Returned(p)=>if(s.active){...s,active:false,uncertain:not(p.closed),generated:p.closed and p.outputs} else {...s,refused:true}
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10:  | Current(v)=>{...s,current:v}
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11:  | Publish=>if(s.current and s.generated and not(s.active) and not(s.uncertain) and not(s.disposed) and s.pending==Set(1,2,3)){...s,published:true,pending:Set()} else {...s,refused:true}
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12:  | Release(id)=>if(not(s.active) and not(s.uncertain)){...s,pending:s.pending.exclude(id)} else {...s,refused:true}
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13:  | Dispose=>if(s.pending==Set() and not(s.active) and not(s.uncertain)){...s,disposed:true} else {...s,refused:true}
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14:  }}
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

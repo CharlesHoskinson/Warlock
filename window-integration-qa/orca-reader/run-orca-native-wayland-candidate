@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+qa_root=$(cd -- "$(dirname -- "$0")" && pwd)
+exec "$qa_root/run-orca-native-wayland" "$@"

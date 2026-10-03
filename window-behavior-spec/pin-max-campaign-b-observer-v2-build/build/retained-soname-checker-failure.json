@@ -1,0 +1,11 @@
+{
+  "session": 93506,
+  "compileExitCode": 0,
+  "linkExitCode": 0,
+  "collectorExitCode": 1,
+  "error": "AssertionError: ('libjson-c.so.5', [])",
+  "exactSourceSHA256": "6c84910e1d24f1c52a366b233305031af98d4b59706e53b7bb290815d2cfee78",
+  "cause": "collector compared resolved filenames instead of actual ELF SONAME",
+  "repair": "separate post_build_closure_v2.py actual readelf SONAME mapping; compiled source/object/binary unchanged",
+  "productFailureClaim": false
+}

@@ -1,0 +1,56 @@
+--- V2/core/src/desktop/state/ViewHitTester.cpp
++++ proposed/core/src/desktop/state/ViewHitTester.cpp
+@@ -143,14 +143,21 @@
+         if (Fullscreen::controller()->hasFullscreen(PWORKSPACE) && !(properties & SKIP_FULLSCREEN_PRIORITY) && !ONLY_PRIORITY) {
+             const auto FS_WINDOW = Fullscreen::controller()->getFullscreenWindow(PWORKSPACE);
+ 
+-            if (!FS_WINDOW || Desktop::Pin::effective(FS_WINDOW))
++            if (!FS_WINDOW)
+                 return nullptr;
+ 
+-            // for maximized windows, don't return a window if we are not directly on it.
+-            if (!Fullscreen::controller()->isFullscreen(FS_WINDOW, Fullscreen::FSMODE_MAXIMIZED) || FS_WINDOW->getWindowBoxUnified(properties).containsPoint(pos))
+-                return Fullscreen::controller()->getFullscreenWindow(PWORKSPACE);
+-            else
+-                return nullptr;
++            if (Desktop::Pin::effective(FS_WINDOW)) {
++                // A protected native MAX was already subject to every band hit
++                // guard. A miss must not block the existing ordinary scans.
++                if (!Fullscreen::controller()->isFullscreen(FS_WINDOW, Fullscreen::FSMODE_MAXIMIZED))
++                    return nullptr;
++            } else {
++                // Preserve native priority for ordinary MAX and exclusive FS.
++                if (!Fullscreen::controller()->isFullscreen(FS_WINDOW, Fullscreen::FSMODE_MAXIMIZED) || FS_WINDOW->getWindowBoxUnified(properties).containsPoint(pos))
++                    return Fullscreen::controller()->getFullscreenWindow(PWORKSPACE);
++                else
++                    return nullptr;
++            }
+         }
+ 
+         auto found = floating(false);
+--- V2/core/src/managers/input/InputManager.cpp
++++ proposed/core/src/managers/input/InputManager.cpp
+@@ -12,6 +12,7 @@
+ #include "../../desktop/view/WLSurface.hpp"
+ #include "../../desktop/state/FocusState.hpp"
+ #include "../../desktop/state/WindowState.hpp"
++#include "../../desktop/state/pin/NativePinState.hpp"
+ #include "../../protocols/CursorShape.hpp"
+ #include "../../protocols/IdleInhibit.hpp"
+ #include "../../protocols/RelativePointer.hpp"
+@@ -551,8 +552,13 @@
+                         if (pFoundWindow != PWINDOWIDEAL)
+                             pFoundWindow = PWINDOWIDEAL;
+ 
+-                        if (!(pFoundWindow && (pFoundWindow->m_isFloating && pFoundWindow->isAllowedOverFullscreen())))
+-                            pFoundWindow = Fullscreen::controller()->getFullscreenWindow(PWORKSPACE);
++                        if (!(pFoundWindow && (Desktop::Pin::effective(pFoundWindow) || (pFoundWindow->m_isFloating && pFoundWindow->isAllowedOverFullscreen())))) {
++                            const auto FS_WINDOW = Fullscreen::controller()->getFullscreenWindow(PWORKSPACE);
++                            // Keep the filtered ideal, including null, after an
++                            // excluded protected owner. Do not revive its hit.
++                            if (!Desktop::Pin::effective(FS_WINDOW))
++                                pFoundWindow = FS_WINDOW;
++                        }
+                     }
+                 }
+             }

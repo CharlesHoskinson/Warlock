@@ -1,0 +1,93 @@
+{
+  "kind": "private native bridge/official Orca on non-AT-SPI Foot",
+  "checks": [
+    {
+      "name": "private config errors absent",
+      "pass_": true
+    },
+    {
+      "name": "default manager passive",
+      "pass_": true,
+      "state": {
+        "clients": 0,
+        "devices": 0,
+        "quiescent": true,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "no-reader ordinary bytes preserved",
+      "pass_": true,
+      "hex": "616263"
+    },
+    {
+      "name": "no-reader nested compositor shortcut works",
+      "pass_": true
+    }
+  ],
+  "restoration": {
+    "originalClients": true,
+    "originalClientStates": true,
+    "mainPlugins": true,
+    "focus": true,
+    "cursor": true,
+    "a11y": true,
+    "readerDisabled": true,
+    "catalogBytes": false,
+    "outputs": true,
+    "fixturesExited": true,
+    "configErrors": true
+  },
+  "nativeInputProved": false,
+  "physicalHardwareProved": false,
+  "before": {
+    "clients": [
+      [
+        "0x5a02aee429f0",
+        4007,
+        "18000005"
+      ],
+      [
+        "0x5a02b0cc9280",
+        4311,
+        "18000006"
+      ],
+      [
+        "0x5a02afd20bd0",
+        361074,
+        "18000076"
+      ],
+      [
+        "0x5a02afa13e90",
+        252010,
+        "1800006a"
+      ]
+    ],
+    "focus": [
+      "0x5a02afa13e90",
+      252010,
+      "1800006a"
+    ],
+    "cursor": {
+      "x": 527,
+      "y": 539
+    },
+    "a11y": {
+      "dev": 84,
+      "inode": 91312,
+      "connects": true
+    },
+    "readerStatus": "(<false>,)"
+  },
+  "private": {
+    "pid": 3140399,
+    "signature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790836423_27466779",
+    "runtime": "/tmp/kbn-tmbbwllg",
+    "config": "/tmp/kbn-tmbbwllg/hyprland.lua"
+  },
+  "result": "failed",
+  "error": "SyntaxError('invalid syntax', ('<unknown>', 1, 2, '(<\\'{\"device_type\": \"AtspiDeviceA11yManager\", \"focus\": null, \"active_window\": null, \"navigator\": null}\\'>,)', 1, 3))",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/native_probe.py\", line 114, in execute\n    observed=wait(lambda:observation(env),'actual official Orca ready',20)\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/native_probe.py\", line 32, in wait\n    result=fn()\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/native_probe.py\", line 114, in <lambda>\n    observed=wait(lambda:observation(env),'actual official Orca ready',20)\n                         ~~~~~~~~~~~^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/native_probe.py\", line 27, in observation\n    def observation(env):return json.loads(rpc(env,'org.gnome.Orca.Service','/org/gnome/Orca/Service/QAObservation','org.gnome.Orca.Module.ExecuteRuntimeGetter','State'))\n                                           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/native_probe.py\", line 25, in rpc\n    def rpc(env,dest,path,method,*args):return ast.literal_eval(command('gdbus','call','--session','--dest',dest,'--object-path',path,'--method',method,*args,env=env))[0]\n                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/ast.py\", line 60, in literal_eval\n    node_or_string = parse(node_or_string.lstrip(\" \\t\"), mode='eval')\n  File \"/usr/lib/python3.14/ast.py\", line 46, in parse\n    return compile(source, filename, mode, flags,\n                   _feature_version=feature_version, optimize=optimize)\n  File \"<unknown>\", line 1\n    (<'{\"device_type\": \"AtspiDeviceA11yManager\", \"focus\": null, \"active_window\": null, \"navigator\": null}'>,)\n     ^\nSyntaxError: invalid syntax\n",
+  "cleanupUnloadError": "ValueError(\"malformed node or string on line 1: Name(id='true', ctx=Load())\")",
+  "terminalBytes": "616263"
+}

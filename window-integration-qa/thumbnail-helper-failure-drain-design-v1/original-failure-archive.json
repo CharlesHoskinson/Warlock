@@ -1,0 +1,39 @@
+{
+  "config": {
+    "log": "/home/hoskinson/window-integration-qa/thumbnail-helper-failure-drain-design-v1/actual-helper-events.jsonl",
+    "allowed": [
+      "hydrate"
+    ],
+    "fixtureOnly": true
+  },
+  "events": [
+    {
+      "args": [
+        "hydrate"
+      ],
+      "class": "compositor",
+      "compositorAuthorityClaimed": false,
+      "delegate": {
+        "parent": 105313,
+        "pgid": 105306,
+        "pid": 105316,
+        "start": "19219100"
+      },
+      "event": "started",
+      "fixtureOnly": true,
+      "helper": "snap",
+      "operation": "hydrate",
+      "queryRoot": null,
+      "serviceOperation": null,
+      "timeNs": 1790969718166764017,
+      "wrapper": {
+        "parent": 105306,
+        "pgid": 105306,
+        "pid": 105313,
+        "start": "19219089"
+      }
+    }
+  ],
+  "result": "fail",
+  "reason": "Exactly one harness query required"
+}

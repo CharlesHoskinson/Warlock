@@ -1,0 +1,1 @@
+The Down focus/selection trace is valid. The final key value16777264 is Qt.Key_F1; its event label incorrectly said F2. That final event is not F2 evidence. Actual native reader debug/speech independently recorded F2 and selected subfolder payload. Fresh routing-stage-v7 probe uses actual Qt.Key_F2=16777265.

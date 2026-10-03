@@ -1,0 +1,52 @@
+{
+  "result": "pass",
+  "readySHA256": "60115fdf6ba9410e4b80ef69029f056b7c85f42f6fadc1c638cfd28b9e77c57c",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "test_actual_binding",
+        "-v"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/recovery-v4-root-focused-0-v1.log",
+      "logSHA256": "0ef90fd17b4ac93c1316ffc34f876410b7989470d887b1c118e8600bb6e5531f"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "actual_service_binding_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/recovery-v4-root-focused-1-v1.log",
+      "logSHA256": "bf3871653366b1c756dfeef7cd5345195148cddb95da3869dc9320535ac46524"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "actual_service_binding.qnt",
+        "--invariant",
+        "allProps",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20261003",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/recovery-v4-root-focused-2-v1.log",
+      "logSHA256": "4eed45235294c60b3e1f3ae45d09faccabf9bdecb9b07cf6d8fdbd7aa5dca9de"
+    }
+  ],
+  "sourceStable": true,
+  "nativeGrant": false,
+  "reviewFinding": "V4 selects older AQ lifecycle host; root will pair fresh V5 with corrected frozen bootstrap host before native baseline"
+}

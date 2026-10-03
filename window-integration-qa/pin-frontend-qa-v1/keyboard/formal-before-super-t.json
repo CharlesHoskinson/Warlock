@@ -1,0 +1,34 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/pin-frontend-qa-v1/keyboard/chord.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  chord\n    ok heldMetaThroughTargetTest passed 1 test(s)\n    ok heldMetaControlThroughTargetTest passed 1 test(s)\n    ok noPlanNoKeyTest passed 1 test(s)\n    ok wrongPeerNoKeyTest passed 1 test(s)\n    ok errorWhileHeldNoReleaseRequestTest passed 1 test(s)\n    ok changedLifetimeNoModifierRequestTest passed 1 test(s)\n    ok nonzeroModsNoNormalCompletionTest passed 1 test(s)\n    ok heldMetaTaskbarCycleTest passed 1 test(s)\n\n  8 passing (866ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/pin-frontend-qa-v1/keyboard/chord.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (3119ms at 641 traces/second).\nUse --seed=0x13e4f1e --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "planSHA256": "0aca74b2735aa1a903fe4aac9e919c3a42f15e42965157775cb1b939b856cf62",
+  "sourceUnchanged": true,
+  "superTAbsent": true,
+  "nativeExecuted": false
+}

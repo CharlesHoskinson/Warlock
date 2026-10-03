@@ -1,0 +1,52 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-9ecccbcdf5fb4fb08ef60b87022e1b63.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/output_readiness.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/output_readiness_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  output_readiness_test\n    ok exactReadyNoFeatureCreditTest passed 1 test(s)\n    ok emptyThenExactSameDeadlineTest passed 1 test(s)\n    ok emptyNeverReadyTest passed 1 test(s)\n    ok deadlineNoRestartTest passed 1 test(s)\n    ok fallbackWrongTerminalTest passed 1 test(s)\n    ok malformedTerminalTest passed 1 test(s)\n    ok nonListTerminalTest passed 1 test(s)\n    ok missingBeforeAuthorityTest passed 1 test(s)\n    ok changedAfterAuthorityTest passed 1 test(s)\n    ok foreignPeerTest passed 1 test(s)\n    ok missingEOFTest passed 1 test(s)\n    ok oversizedReplyTest passed 1 test(s)\n    ok changeRevokesReadyTest passed 1 test(s)\n    ok timeCannotGoBackwardTest passed 1 test(s)\n    ok expirationRevokesReadyTest passed 1 test(s)\n\n  15 passing (1051ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/output_readiness.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (3123ms at 640 traces/second).\nUse --seed=0x1415bf9 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sources": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/run_native.py": "ef897048ec315469db776820629d28dd84f248ab338fc8ca7c5e0b1d9c780154",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/output_readiness.qnt": "0b8af10487a6be135e4498b1385f1dab8637cc6407f0f6a883a32a7adc5d27ce",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/output_readiness_test.qnt": "9ccb728946e73238b300d3a097bbf23ef39ed03f84597f3bd6ec6d71980971f8",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v13/OUTPUT_READINESS_CONTRACT.md": "dddd7b4cc7d8fbb461eff5922d5745c5f82e46ac6838c189e8ea4c2895702f51"
+  },
+  "nativeLaunch": false,
+  "runtimeChanged": false
+}

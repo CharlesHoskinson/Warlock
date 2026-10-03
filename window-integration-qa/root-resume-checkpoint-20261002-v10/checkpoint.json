@@ -1,0 +1,79 @@
+{
+  "timestampUTC": "2026-10-03T01:18:57.098907+00:00",
+  "fullParity": false,
+  "automaticLoopReactivationConfirmed": false,
+  "mainChanged": false,
+  "nativePinA": {
+    "accepted": true,
+    "featureChecks": 14
+  },
+  "pinB": {
+    "candidate": "pin-max-native-campaign-b-v4",
+    "attemptStatus": "fail",
+    "actualCompletedCases": [
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B06",
+      "B07",
+      "B08",
+      "B09",
+      "B10"
+    ],
+    "fullIncrementAccepted": false,
+    "fullCampaignAccepted": false,
+    "rootFailureSHA256": "758acdd91e7344510fae33b528285fb6e8a17e6d8baae986ee77a5b14d233e71",
+    "normalPrivateClosureObserved": true,
+    "mainPreservationPassed": 18,
+    "primaryFailure": "B11 invalid QA assumption: allows_input=false does not block input; genuine native blocker setup under review.",
+    "actualProducerNamedScenarios": 14,
+    "originalDefaultProducerNamedScenariosExecuted": 0,
+    "correctedNamedProofSHA256": "7e1a026db1f523dad803613eba42e24e6a59754343d0522cd947701a9b4ccb82"
+  },
+  "processV9": {
+    "componentAccepted": true
+  },
+  "processReuse": {
+    "requiredComponents": 5,
+    "actualComponentsAccepted": true,
+    "rootReviewSHA256": "8a5ce827cea04a6d52d161b246435c1122d23b374693fe91ddd604a19cc99db9"
+  },
+  "popupComposition": {
+    "sourceReviewed": true,
+    "formalNamed": 24,
+    "formalTraces": 2000,
+    "actualInstalledQuickshellAccepted": false,
+    "rootReviewSHA256": "c23fe9ac3784569610e758d1ab3aacfc2df865e641f561c7c86344510f15182f"
+  },
+  "restore": {
+    "candidate": "service-restore-focus-transaction-v28",
+    "actualCPU": 444,
+    "baselineResult": "fail",
+    "reachedChecks": 19,
+    "passedChecks": 17,
+    "baselineRequired": 38,
+    "faultsRequired": 34,
+    "baselineAccepted": false,
+    "faultsAuthorized": false,
+    "focusTransactionAndThreeRefreshesCompleted": true,
+    "allHelpersNormal": true,
+    "actualCaptures": 3,
+    "rendererSeedAndUploadsAbsent": true,
+    "rootFailureSHA256": "e01aee0d6c5f57f1e4ed80932fb739922cf50eddeeb0e4031864617daa1f5a6e",
+    "next": "Review fresh fused capture proposal separating normal helper closure and both output files; apply only after model/source approval, then actual original38/34.",
+    "actualCorrectedTransactionNamedScenarios": 45,
+    "originalDefaultTransactionNamedScenariosExecuted": 0,
+    "correctedNamedProofSHA256": "a70e9c06c9f3b455ff8c92b8663cfeedc0460df1a207c930be3591d87e19479b"
+  },
+  "next": [
+    "Review genuine native input blocker setup and independent no-focus case, preserving non-revival assertions; full B13\u2013B24 and broader predicates remain open.",
+    "Review capture fusion refinement; original restore baseline38/recovery34 with unchanged deadlines remain required.",
+    "Review actual Quickshell launcher/owning-header probe; required real routes precede fixed reliability campaign.",
+    "Finish original52 dragging/resize/reload, cancellation and reduced-motion native QA.",
+    "Complete display/hardware cadence/accessibility, combined regression and deployment."
+  ],
+  "automaticGoalStatus": "blocked",
+  "GUIRunning": false
+}

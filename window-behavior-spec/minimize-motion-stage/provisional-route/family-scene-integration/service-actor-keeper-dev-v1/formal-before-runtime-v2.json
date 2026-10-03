@@ -1,0 +1,43 @@
+{
+  "updatedUTC": "2026-10-02T06:14:51.729674+00:00",
+  "runtimeCopiedOrChanged": false,
+  "records": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-actor-keeper-dev-v1/actor_service_binding_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  actor_service_binding_test\n    ok groupGoneAndZeroExitCannotReplaceSemanticCallerTest passed 1 test(s)\n    ok unreturnedNativeCallRemainsQuarantinedTest passed 1 test(s)\n    ok exactSemanticAndPhysicalClosureFullInverseTest passed 1 test(s)\n    ok physicalClosureMayPrecedeGuardedSemanticResultTest passed 1 test(s)\n    ok undurableRegistrationNeverReleasesTest passed 1 test(s)\n    ok nativeFailureCannotBecomeSuccessfulReturnTest passed 1 test(s)\n    ok wrongCallerSourceLifetimeReceiptOrScopeRefusedTest passed 1 test(s)\n    ok semanticJournalFsyncFailureCannotCloseTest passed 1 test(s)\n    ok unauthenticatedKeeperAckCannotCloseTest passed 1 test(s)\n    ok keeperAckCannotReplaceServicePublicationTest passed 1 test(s)\n    ok failedActorRecordPublicationRefusesNormalClosureTest passed 1 test(s)\n    ok sourceReplacementRevokesPartialCompletionTest passed 1 test(s)\n    ok latePublicationFailureRevokesCurrentClosureClaimTest passed 1 test(s)\n    ok lateNativeErrorCannotKeepCurrentClosureClaimTest passed 1 test(s)\n\n  14 passing (1809ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-actor-keeper-dev-v1/actor_service_binding.qnt",
+        "--invariant",
+        "allProps",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20261003",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (3592ms at 557 traces/second).\nUse --seed=0x1383567 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "result": "pass",
+  "retainedLatePublicationCounterexample": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-actor-keeper-dev-v1/late-publication-model-counterexample-v1.json",
+  "sources": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-actor-keeper-dev-v1/ACTOR_SERVICE_BINDING_CONTRACT.md": "8f972a39d22fba07ba7d9400a421507c2c3108e356b7a72d54cab8b10339e418",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-actor-keeper-dev-v1/actor_service_binding.qnt": "8849ba1ee2230c8e944d82e81beec5043c458aa8873457bc84cb5e1714e44272",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-actor-keeper-dev-v1/actor_service_binding_test.qnt": "b6ded5cfcab5e2c473de271803950920f417cd6ff5c14b799bda6bd607a53914"
+  }
+}

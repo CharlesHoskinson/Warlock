@@ -1,0 +1,45 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v2/CONTRACT.md": "6e730db9ccaa188186983797b709786f25c3c350a4b57d94f5111fbd603227b0",
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v2/process_lifecycle.qnt": "5f6e0e84ed466cacaef6f3ae086a5006e23b0139a88c2b1c7e207912067a7d79",
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v2/prove_before.py": "bb428844d24841ab08e4713e983958ec6d6c77c75883fcb53dbdf106d25cbedb",
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v2/initial-proof-runner.py": "3f31d779dfe21b8929b6c96d2f5127beafaf54b1a71fe04aae5fbab580c04bdb",
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v2/initial-process-model.qnt": "5da2bc92519212489d9c6a310e1b4a4cd03e9b4e6f034a3398fc3f3b9a76ce0f",
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v2/first26-process-model.qnt": "8c4fcc7a2fa85bbc644f57e200ad1bff01bf8c6a4f5557650b2dafd09872fac5",
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v2/IDENTITY_MAPPING.md": "b47edd1eba3b129f58c155f47893245b804617b960e38b715e7263070aeb3410",
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v2/IMPLEMENTATION_MAPPING.md": "09e0489df903514d2bcfa0e9790c57d7157dd6bf3e10b74b840ca957d737b124",
+    "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v2/review_ready.py": "c56cf6ab4bd2dcb60dd31e3aaefdea160a599a9d8d3a6bc4c8fa08ffb6617f42"
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v2/process_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  process_lifecycle\n    ok normalCompleteTest passed 1 test(s)\n    ok eofBeforeExitTest passed 1 test(s)\n    ok stderrFirstTest passed 1 test(s)\n    ok missingStartTest passed 1 test(s)\n    ok missingKernelTest passed 1 test(s)\n    ok missingStdoutTest passed 1 test(s)\n    ok missingStderrTest passed 1 test(s)\n    ok missingExitTest passed 1 test(s)\n    ok missingGoneTest passed 1 test(s)\n    ok crashZeroNotNormalTest passed 1 test(s)\n    ok nativeRefusalNormalNotCompleteTest passed 1 test(s)\n    ok malformedReceiptTest passed 1 test(s)\n    ok cancelPreservesNormalLifeTest passed 1 test(s)\n    ok sourceReloadRevokesTest passed 1 test(s)\n    ok processReplacementTest passed 1 test(s)\n    ok collectorReplacementTest passed 1 test(s)\n    ok commandChangedTest passed 1 test(s)\n    ok pidReuseTest passed 1 test(s)\n    ok duplicateStartTest passed 1 test(s)\n    ok duplicateExitTest passed 1 test(s)\n    ok duplicateEOFTest passed 1 test(s)\n    ok lateRawChangeTest passed 1 test(s)\n    ok rearmPendingRefusedTest passed 1 test(s)\n    ok newLeaseIgnoresOldCallbackTest passed 1 test(s)\n    ok callerFlagsCannotCompleteTest passed 1 test(s)\n    ok earlyReceiptCannotBecomeCompletionTest passed 1 test(s)\n    ok changedPidIdentityTest passed 1 test(s)\n    ok changedStartIdentityTest passed 1 test(s)\n    ok changedParentIdentityTest passed 1 test(s)\n    ok changedGroupIdentityTest passed 1 test(s)\n    ok changedUidIdentityTest passed 1 test(s)\n    ok changedCgroupIdentityTest passed 1 test(s)\n    ok changedNamespaceIdentityTest passed 1 test(s)\n    ok changedExeIdentityTest passed 1 test(s)\n    ok changedArgvIdentityTest passed 1 test(s)\n    ok changedEnvironmentIdentityTest passed 1 test(s)\n    ok changedEntryIdentityTest passed 1 test(s)\n    ok changedConfigIdentityTest passed 1 test(s)\n    ok changedProcessIdentityTest passed 1 test(s)\n    ok changedStdoutIdentityTest passed 1 test(s)\n    ok changedStderrIdentityTest passed 1 test(s)\n    ok changedEngineIdentityTest passed 1 test(s)\n    ok changedEpochIdentityTest passed 1 test(s)\n    ok changedProviderIdentityTest passed 1 test(s)\n    ok changedOwnerIdentityTest passed 1 test(s)\n    ok changedNonceIdentityTest passed 1 test(s)\n    ok changedProcessBeforeStartTest passed 1 test(s)\n    ok preStartParentChangeRefusedTest passed 1 test(s)\n    ok preStartGroupChangeRefusedTest passed 1 test(s)\n    ok preStartUidChangeRefusedTest passed 1 test(s)\n    ok preStartCgroupChangeRefusedTest passed 1 test(s)\n    ok preStartNamespaceChangeRefusedTest passed 1 test(s)\n    ok preStartExeChangeRefusedTest passed 1 test(s)\n    ok preStartArgvChangeRefusedTest passed 1 test(s)\n    ok preStartEnvironmentChangeRefusedTest passed 1 test(s)\n    ok preStartEntryChangeRefusedTest passed 1 test(s)\n    ok preStartConfigChangeRefusedTest passed 1 test(s)\n    ok preStartEngineChangeRefusedTest passed 1 test(s)\n    ok preStartEpochChangeRefusedTest passed 1 test(s)\n    ok preStartProviderChangeRefusedTest passed 1 test(s)\n    ok preStartOwnerChangeRefusedTest passed 1 test(s)\n    ok preStartNonceChangeRefusedTest passed 1 test(s)\n    ok preStartStdoutChangeRefusedTest passed 1 test(s)\n    ok preStartStderrChangeRefusedTest passed 1 test(s)\n    ok dynamicPidStartMayBindAtStartedTest passed 1 test(s)\n    ok exhaustedLeaseRefusedTest passed 1 test(s)\n    ok oldStartedPreservesAcceptedSnapshotTest passed 1 test(s)\n    ok oldExitPreservesAcceptedSnapshotTest passed 1 test(s)\n    ok oldOutPreservesAcceptedSnapshotTest passed 1 test(s)\n    ok oldErrPreservesAcceptedSnapshotTest passed 1 test(s)\n    ok oldGonePreservesAcceptedSnapshotTest passed 1 test(s)\n    ok oldReceiptPreservesAcceptedSnapshotTest passed 1 test(s)\n    ok oldOldCallbackPreservesAcceptedSnapshotTest passed 1 test(s)\n    ok currentLeaseOldCallbackNotInertTest passed 1 test(s)\n\n  74 passing (21228ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/qml-process-lifecycle-v2/process_lifecycle.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (6268ms at 319 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceUnchanged": true,
+  "registryImplemented": false,
+  "GUI": false,
+  "rootReviewBeforeRuntime": true
+}

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_key_bindings" xml:lang="eo">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_profiles"/>
+  <title type="sort">8. Klavkombinoj</title>
+  <desc>Ligi, religi, kaj malligi komandojn</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Klavkombinoj</title>
+  <p>Orko havas multajn komandojn, iuj el kiuj estas ligitaj al klavpremo, aliaj el kiuj estas neligitaj. Vi povas ligi, religi, kaj malligi la komandojn de <app>Orko</app> sekvante la paŝojn sube.</p>
+  <steps>
+    <title>Ligi Neligitan Komandon</title>
+    <item>
+      <p>Eniru la dialogon <link xref="preferences">Orko Agordoj</link> per premi <keyseq><key>Orko Modifier</key><key>Space</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Movu al la paĝo <gui>Klavkombinoj</gui>.</p>
+    </item>
+    <item>
+      <p>Per sagaj klavoj, iru al la ĉelo kiu enhavas la komandon al kiu vi volas asigni klavpremon.</p>
+    </item>
+    <item>
+      <p>Premu la dekstran sagon unufoje. Tio metos la fokuson en la kolumnon <gui>Klavkombino</gui>. Premu <key>Return</key>.</p>
+    </item>
+    <item>
+      <p>Premu la deziratan klav-kombinon.</p></item>
+    <item>
+      <p>Premu <key>Return</key> por konfirmi la novan kombinon. La nova klavpremo estos konservita kaj la markobutono en la lasta kolumno (la kolumno <gui>Modifita</gui>) indikos ke la klavkombino estis modifita.</p>
+    </item>
+    <item>
+      <p>Premu la butonon <gui>Apliki</gui>.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Ŝanĝi Ekzistantajn Klavkombinojn</title>
+    <item>
+      <p>Eniru la dialogon <link xref="preferences">Orko Agordoj</link> per premi <keyseq><key>Orko Modifier</key><key>Space</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Movu al la paĝo <gui>Klavkombinoj</gui>.</p>
+    </item>
+    <item>
+      <p>Per sagaj klavoj, iru al la ĉelo kiu enhavas la klavkombinon kiun vi deziras ŝanĝi kaj premu <key>Return</key>.</p>
+    </item>
+    <item>
+        <p>Premu la deziratan klav-kombinon.</p>
+    </item>
+    <item>
+      <p>Premu <key>Return</key> por konfirmi la novan kombinon. La nova klavpremo estos konservita kaj la markobutono en la lasta kolumno (la kolumno <gui>Modifita</gui>) indikos ke la klavkombino estis modifita.</p>
+    </item>
+    <item>
+      <p>Premu la butonon <gui>Apliki</gui>.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Restarigi Originalajn Klavkombinojn</title>
+    <item>
+      <p>Eniru la dialogon <link xref="preferences">Orko Agordoj</link> per premi <keyseq><key>Orko Modifier</key><key>Space</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Movu al la paĝo <gui>Klavkombinoj</gui>.</p>
+    </item>
+    <item>
+      <p>Per sagaj klavoj, iru al la modifita kolumno asociita kun la klavkombino.</p>
+    </item>
+    <item>
+      <p>Malmarku la markobutonon per premi <key>Space</key>.</p>
+    </item>
+    <item>
+      <p>Premu la butonon <gui>Apliki</gui>.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Malligi Ligitajn Komandojn</title>
+    <item>
+      <p>Eniru la dialogon <link xref="preferences">Orko Agordoj</link> per premi <keyseq><key>Orko Modifier</key><key>Space</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Movu al la paĝo <gui>Klavkombinoj</gui>.</p>
+    </item>
+    <item>
+      <p>Per sagaj klavoj, iru al la ĉelo kiu enhavas la klavkombinon kiun vi deziras forigi kaj premu <key>Return</key>.</p>
+    </item>
+    <item>
+      <p>Kiam vi estas petata doni la novan klavkombinon, premu <key>Delete</key> aŭ <key>BackSpace</key>. Vi estos informita ke la klavkombino estis forigita.</p>
+    </item>
+    <item>
+      <p>Premu <key>Return</key> por konfirmi.</p>
+    </item>
+    <item>
+      <p>Premu la butonon <gui>Apliki</gui>.</p>
+    </item>
+  </steps>
+</page>

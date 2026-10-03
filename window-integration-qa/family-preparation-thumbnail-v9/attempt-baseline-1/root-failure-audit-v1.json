@@ -1,0 +1,108 @@
+{
+  "updatedUTC": "2026-10-02T12:40:51.988838+00:00",
+  "result": "retained-native-feature-failure",
+  "nativeBaselineAccepted": false,
+  "originalBaselineGates": 38,
+  "passedBaselineGates": 11,
+  "missingBaselineGates": 27,
+  "fault34Authorized": false,
+  "mainChanged": false,
+  "mainPreservationChecks": {
+    "allStableClientFields": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "typedClipboardAndPrimary": true,
+    "a11ySocketFlagsAndReaderEnabled": true,
+    "outputs": true,
+    "plugins": true,
+    "keyboardStates": true,
+    "fourCatalogNaturalBytes": true,
+    "dashboardBytes": true,
+    "originalFilesProcess": true,
+    "originalFilesPublicState": true,
+    "originalFilesFullUi": true,
+    "originalFilesVisibility": true
+  },
+  "allFrozenInputsExact": true,
+  "manifestSHA256": "1820c23f20e585411a6245b23fb373b2119342ea441dce5dbcbb4000227b0444",
+  "actualCapturedPNGs": 3,
+  "actualRetainedCachePairFiles": 6,
+  "actorHistorySources": 0,
+  "rendererSeedUploadPresentationAccepted": false,
+  "primaryRecordedSceneFailure": "[Errno 11] Resource temporarily unavailable",
+  "primarySceneSourceCallsiteProven": false,
+  "sourceHypothesis": "finish() cache flock LOCK_EX|LOCK_NB can raise errno11 under a concurrent preview writer; actual recorded failure alone does not establish the callsite. Meaningful source/kernel reproduction is next.",
+  "secondaryReadonlyRefusals": [
+    {
+      "request": "j/clients",
+      "outcome": "refused",
+      "error": {
+        "type": "TimeoutError",
+        "message": "read-only complete reply absolute deadline"
+      },
+      "completeServerEOF": false,
+      "replyBytes": 0,
+      "registeredToFinishedMs": 598.541604
+    }
+  ],
+  "terminalArchiveErrors": [
+    {
+      "type": "ValueError",
+      "message": "complete closed actual query proof required"
+    }
+  ],
+  "completeServiceEvidenceAbsent": true,
+  "actualRendererBindingRelationsPass": true,
+  "actualRendererKeeperNormalTerminalRelationsPass": true,
+  "serviceExitCode": 1,
+  "QtAndShellExitCodes": [
+    0,
+    0
+  ],
+  "normalServiceLifecycleAccepted": false,
+  "normalNativeUnload": true,
+  "actualOwnedMainProcessRowsGone": 6,
+  "actualPrivateRuntimeGone": true,
+  "privateUnexpectedAndRemainingDescendants": [],
+  "protectedCrashWatchGrimKeyringUnchanged": true,
+  "normalHostExitAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "next": "Retain exact V9/V24/attempt and original deadlines/guards. Reproduce actual competing preview cache admission/readonly timing in a fresh nongraphical stage; formal-first any product correction. No unchanged native rerun.",
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/report.json": "80abf0ed65ff1f8e5e0f5ba69e76caaa2ec9a3f2478a4f8319efc576556455c7",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-retirement-1.json": "02ff8ddcf07872b8f1f543620ea6eed58ab56bfdcdfa42f059259f00a20c9d73",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/actual-linked-actor-1.json": "8855a897208aa18abeba4396026cff9753e4760e0951882274a3d2e229549ef5",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/actual-linked-actor-1-confirmation.json": "b7d27ecd5110a438710deb38a8be78a6bc17aade7d932fa463782f1416c5c1c5",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/actual-terminal-binding.json": "b6520d7f120e25a7b997e9072e31bbb1a4723cc464524aea0ff8c012cde2c85c",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/actual-terminal-binding-confirmation.json": "262167b0ed66be1e8ffa2bdd6fa5c87e31859f93b96062934c0ca8022e4a45ed",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/family-service.log": "bfae19824b9b0f079d0de5db896851e4f7faf8159c439f7d5fb1f6fc1a2e7d22",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-epochs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-epochs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-epochs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/4e10930e38bbf42fec14f5856635cdac4a9e2e2978b37de02a106cb00961d34f.json": "4e10930e38bbf42fec14f5856635cdac4a9e2e2978b37de02a106cb00961d34f",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/a3de8088213f73a848b4175cb18717fc6355c45da1379b8c6b203ca74482a3bd.json": "a3de8088213f73a848b4175cb18717fc6355c45da1379b8c6b203ca74482a3bd",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/3da4e853e3735c0bb3eb570b294aca0fa1fec6f064d9f734bbb9d6d331542bb6.json": "3da4e853e3735c0bb3eb570b294aca0fa1fec6f064d9f734bbb9d6d331542bb6",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070"
+  },
+  "inputModes": {
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/report.json": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-retirement-1.json": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/actual-linked-actor-1.json": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/actual-linked-actor-1-confirmation.json": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/actual-terminal-binding.json": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/actual-terminal-binding-confirmation.json": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/family-service.log": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-epochs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-epochs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-epochs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/4e10930e38bbf42fec14f5856635cdac4a9e2e2978b37de02a106cb00961d34f.json": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/a3de8088213f73a848b4175cb18717fc6355c45da1379b8c6b203ca74482a3bd.json": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/3da4e853e3735c0bb3eb570b294aca0fa1fec6f064d9f734bbb9d6d331542bb6.json": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png": 384
+  }
+}

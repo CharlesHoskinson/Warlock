@@ -1,0 +1,81 @@
+{
+  "time": "2026-10-01T10:30:39.500221+00:00",
+  "classification": "Actual fresh directed notification from old registration after loss/reclaim without a new caller query. Not prior MainContext callback backlog. Candidate bridge requires owner delivery scheduling repair.",
+  "reportSHA256": "1bf5f0237224170e98891a3a5f0136d3da09be19d9aea4cb01ef65ed91dc09c3",
+  "clientTraceSHA256": "ed8b7456965911731b9f227b456e36d4ac66484ae33d4d6720d1f33ca961446f",
+  "monitorSHA256": "551d713380fb1c82b0fb441a30cfbfbdd5cc4e2aa88e340ebaf2429d7513cda5",
+  "actualWireLoss": {
+    "event": "actual-wire-message",
+    "monotonic": 72586.294296966,
+    "wall": 1790850405.897559,
+    "incoming": true,
+    "messageType": 4,
+    "serial": 30,
+    "replySerial": 0,
+    "sender": "org.freedesktop.DBus",
+    "destination": null,
+    "interface": "org.freedesktop.DBus",
+    "member": "NameOwnerChanged",
+    "body": [
+      "org.omarchy.PointerA.KeyboardMonitor",
+      ":1.5",
+      ""
+    ]
+  },
+  "actualWireReclaim": {
+    "event": "actual-wire-message",
+    "monotonic": 72586.294912955,
+    "wall": 1790850405.8981752,
+    "incoming": true,
+    "messageType": 4,
+    "serial": 31,
+    "replySerial": 0,
+    "sender": "org.freedesktop.DBus",
+    "destination": null,
+    "interface": "org.freedesktop.DBus",
+    "member": "NameOwnerChanged",
+    "body": [
+      "org.omarchy.PointerA.KeyboardMonitor",
+      "",
+      ":1.5"
+    ]
+  },
+  "actualWireReclaimReply": {
+    "event": "actual-wire-message",
+    "monotonic": 72586.295003584,
+    "wall": 1790850405.8982658,
+    "incoming": true,
+    "messageType": 2,
+    "serial": 17,
+    "replySerial": 15,
+    "sender": "org.freedesktop.DBus",
+    "destination": ":1.5",
+    "interface": null,
+    "member": null,
+    "body": [
+      1
+    ]
+  },
+  "actualWireStaleSignal": {
+    "event": "actual-wire-message",
+    "monotonic": 72586.295823263,
+    "wall": 1790850405.8990855,
+    "incoming": true,
+    "messageType": 4,
+    "serial": 33,
+    "replySerial": 0,
+    "sender": ":1.15",
+    "destination": ":1.5",
+    "interface": "org.freedesktop.a11y.PointerLocator",
+    "member": "PointerPositionChanged",
+    "body": null
+  },
+  "independentDaemonMonitorLines": [
+    4103,
+    4120
+  ],
+  "preservation": 14,
+  "normalUnload": true,
+  "privateCompositorAndRuntimeGone": true,
+  "productionChanged": false
+}

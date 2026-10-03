@@ -1,0 +1,69 @@
+--- service-review-v8/scene_manager.py
++++ service-review-v9/scene_manager.py
+@@ -45,8 +45,26 @@
+             self.history.append(record)
+             self.history=self.history[-128:]
+         self.write_journal()
++    def watchdog(self):
++        with self.lock:
++            if self.current and self.current.profile.get('contextPending'):return
++        return super().watchdog()
++    def transport_failure(self,reason):
++        with self.lock:
++            if self.current and self.current.profile.get('contextPending'):
++                self.current.visual=False
++                self.retire(self.current,'provisional transport failure: '+reason)
++                return
++        return super().transport_failure(reason)
+     def event(self,event):
+         with self.lock:
++            current=self.current
++            if (current and current.profile.get('contextPending')
++                    and event.get('token')==current.token and event.get('identities')==ids(current.members)
++                    and event.get('event') in ('cancelled','fatal','rejected')):
++                current.visual=False
++                self.retire(current,'provisional renderer refused before context')
++                return True
+             record=self.retired.get(event.get('token'))
+             if record is not None:
+                 if event.get('event')!='cancelled' or event.get('identities')!=ids(record.members):return False
+@@ -158,6 +176,17 @@
+                 'receivedNs':time.monotonic_ns()}
+             self.pending[self.serial]=ingress
+             self.persist() # acceptance is returned only after durable receipt ownership
++            previous=controller.current
++            if (previous and previous.visual and previous.sources
++                    and 'cleanupQueuedNs' not in previous.profile
++                    and direction.constant is not None and previous.single==single):
++                controller.accepting_receipt=self.serial
++                provisional=controller.request(command,*captured,context=previous.context,
++                    single=single,direction=direction,defer_prepare=True)
++                ingress['provisional']=controller.current
++                ingress['provisionalContext']=previous.context
++                ingress['provisionalToken']=provisional['token']
++                self.persist()
+             return {'ok':True,'accepted':True,'completed':False,'contextPending':True,
+                 'receipt':self.serial,'actor':actor}
+     def finish_ingress(self,ingress,**result):
+@@ -176,7 +205,20 @@
+                 return {'ok':False,'accepted':False,'superseded':True,'receipt':receipt}
+             controller=ingress['controller'];controller.accepting_receipt=receipt
+             captured=ingress['captured']
+-            try:result=controller.request(ingress['command'],*captured,context=context,single=ingress['single'],direction=ingress['direction'])
++            try:
++                provisional=ingress.get('provisional')
++                if provisional is not None:
++                    if controller.current is not provisional or not controller.owns(provisional):
++                        raise ValueError('provisional scene superseded')
++                    if context!=ingress['provisionalContext']:
++                        raise ValueError('retained visual context changed; replacement scene required')
++                    provisional.context=context
++                    provisional.profile['contextPending']=False
++                    provisional.profile['contextAcceptedNs']=time.monotonic_ns()
++                    controller.workers.submit(controller.prepare,provisional)
++                    result={'ok':True,'accepted':True,'token':provisional.token,'completed':False}
++                else:
++                    result=controller.request(ingress['command'],*captured,context=context,single=ingress['single'],direction=ingress['direction'])
+             except Exception as error:
+                 self.fail_ingress(receipt,str(error))
+                 raise

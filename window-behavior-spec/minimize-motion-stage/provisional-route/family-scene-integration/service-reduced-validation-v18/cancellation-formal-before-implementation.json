@@ -1,0 +1,49 @@
+{
+  "formalBeforeRuntimeEdits": true,
+  "nativeLaunch": false,
+  "named": 27,
+  "models": 1,
+  "samples": 2000,
+  "maxSteps": 100,
+  "sourceSHA256": {
+    "CANCELLATION_CONTRACT.md": "6db0b5076300d4270872d7c3bd2af5c7cdb0dcf289f1b5f701644d1504bfea54",
+    "recovery_cancel.qnt": "3b7bf8fa4031befb88b2d448d2a0ba28c4524efbea2e06f0af9044269f1e1115",
+    "recovery_cancel_test.qnt": "34dc6780a18b28cf09499799d0ae9200edd6e34ab22233494ebf164a5037b470",
+    "recovery_runtime.py": "c0bed772d269e033db824c096e792264c99e71efab42ac93742f7e08152f5b39",
+    "service_runtime.py": "f5bf28fb23429d612149d8537683929b257674aeccd732188ae6d221168b88bf"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_cancel_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_cancel_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_cancel.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0
+    }
+  ]
+}

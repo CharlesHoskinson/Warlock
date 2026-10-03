@@ -1,0 +1,642 @@
+{
+  "phase": "terminal-post-disk",
+  "capturedRaw": {
+    "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/actual-terminal-binding.json",
+    "sha256": "b6520d7f120e25a7b997e9072e31bbb1a4723cc464524aea0ff8c012cde2c85c",
+    "identity": {
+      "device": 58,
+      "inode": 15850795,
+      "size": 122246,
+      "mode": 384,
+      "uid": 1000,
+      "gid": 1000
+    }
+  },
+  "errors": [
+    {
+      "type": "ValueError",
+      "message": "terminal binding refused before post-disk acceptance"
+    }
+  ],
+  "owner": {
+    "pid": 1807648,
+    "start": 16704220,
+    "uid": 1000,
+    "nonce": "bbb5e44c0a76442b84dc7c9b9fb1c9c3",
+    "session": "efb50993780079460b0cbed1363e2166a2de1d9f_1790944559_594598025",
+    "root": "/run/user/1000/wqa/92e5/hypr-window-motion/qa-family-service",
+    "rootIdentity": [
+      84,
+      487000
+    ],
+    "lockIdentity": [
+      84,
+      487001
+    ],
+    "compositorPID": 1805506,
+    "compositorStart": 16703249
+  },
+  "ledgerToken": "444863c9b18405bd5ab61d13a48ff857dd80f621f99acbb56b9def2919298bbd",
+  "moduleToken": "3cee19620d2d3aa309c2efa956153403ccc7032dff9b21fec0134b1c58d298b5",
+  "terminalBatchConfirmation": [
+    {
+      "actor": 1,
+      "batch": {
+        "instanceID": 130975436597504,
+        "commandsID": 130975436835728,
+        "root": "/run/user/1000/wqa/92e5/hypr-window-motion/qa-family-service/actors/actor-1-18c7948a5c5843a8962f82d460cc7409",
+        "preview": "/run/user/1000/wqa/92e5/hypr-window-previews"
+      },
+      "relations": {
+        "batchClass": true,
+        "batchCommands": true,
+        "batchRoot": true,
+        "batchPreview": true,
+        "batchActor": true,
+        "finisherFunction": true,
+        "finisherOwner": true,
+        "batchCallback.stage": true,
+        "batchCallback.finish": true,
+        "batchCallback.discard": true,
+        "batchCallback.require_releasable": true,
+        "batchCallback.require_disposable": true
+      },
+      "callbacks": {
+        "controller.event": {
+          "functionID": 130975455224832,
+          "boundOwnerID": 130975436599184,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/scene_manager.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/scene_manager.py",
+            "before": {
+              "device": 58,
+              "inode": 12779737,
+              "size": 20290,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f"
+          }
+        },
+        "controller.prepare": {
+          "functionID": 130975454377088,
+          "boundOwnerID": 130975436599184,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/scene_controller.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/scene_controller.py",
+            "before": {
+              "device": 58,
+              "inode": 12779736,
+              "size": 23041,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "3b47325e7e86b06492ef59576159482c6036297aeafdcb46875cf590d1844657"
+          }
+        },
+        "controller.commit_members": {
+          "functionID": 130975454377264,
+          "boundOwnerID": 130975436599184,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/scene_controller.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/scene_controller.py",
+            "before": {
+              "device": 58,
+              "inode": 12779736,
+              "size": 23041,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "3b47325e7e86b06492ef59576159482c6036297aeafdcb46875cf590d1844657"
+          }
+        },
+        "controller.transport_failure": {
+          "functionID": 130975455224656,
+          "boundOwnerID": 130975436599184,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/scene_manager.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/scene_manager.py",
+            "before": {
+              "device": 58,
+              "inode": 12779737,
+              "size": 20290,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f"
+          }
+        },
+        "native.bind_controller": {
+          "functionID": 130975436327392,
+          "boundOwnerID": 130975484449696,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/native_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/native_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 13775503,
+              "size": 20951,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "2179e2a30c880d5ad88b5ae19b370485ac886979ba8834f182ddcfb59b2006d1"
+          }
+        },
+        "failure.bind": {
+          "functionID": 130975452973360,
+          "boundOwnerID": 130975436597840,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/native_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/native_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 13775503,
+              "size": 20951,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "2179e2a30c880d5ad88b5ae19b370485ac886979ba8834f182ddcfb59b2006d1"
+          }
+        },
+        "desktop.commit": {
+          "functionID": 130975452974592,
+          "boundOwnerID": 130975436592128,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/native_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/native_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 13775503,
+              "size": 20951,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "2179e2a30c880d5ad88b5ae19b370485ac886979ba8834f182ddcfb59b2006d1"
+          }
+        },
+        "desktop.clients": {
+          "functionID": 130975452983216,
+          "boundOwnerID": 130975436596160,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/production_motion_6d9.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/production_motion_6d9.py",
+            "before": {
+              "device": 58,
+              "inode": 12779734,
+              "size": 51974,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa"
+          }
+        },
+        "commands.run": {
+          "functionID": 130975454930096,
+          "boundOwnerID": 130975436835728,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/owned_commands.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/owned_commands.py",
+            "before": {
+              "device": 58,
+              "inode": 12779772,
+              "size": 5619,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba"
+          }
+        },
+        "reader.query": {
+          "functionID": 130975439875488,
+          "boundOwnerID": 130975436590448,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/readonly_ipc.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/readonly_ipc.py",
+            "before": {
+              "device": 58,
+              "inode": 12779832,
+              "size": 19577,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b"
+          }
+        },
+        "runtime.persist": {
+          "functionID": 130975452971072,
+          "boundOwnerID": 130975436588432,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/service_runtime.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/service_runtime.py",
+            "before": {
+              "device": 58,
+              "inode": 12779738,
+              "size": 17931,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f"
+          }
+        },
+        "desktop.finish_capture_previews": {
+          "functionID": 130975455218144,
+          "boundOwnerID": 130975436592128,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/native_desktop.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/native_desktop.py",
+            "before": {
+              "device": 58,
+              "inode": 12779731,
+              "size": 19051,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "31ace97dda5342519aa749c4dcd01dbd70b425b79b507639a543cf9a2c00ba19"
+          }
+        },
+        "batch.stage": {
+          "functionID": 130975455213728,
+          "boundOwnerID": 130975436597504,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 13775489,
+              "size": 20412,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250"
+          }
+        },
+        "batch.finish": {
+          "functionID": 130975455216208,
+          "boundOwnerID": 130975436597504,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 13775489,
+              "size": 20412,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250"
+          }
+        },
+        "batch.discard": {
+          "functionID": 130975455213904,
+          "boundOwnerID": 130975436597504,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 13775489,
+              "size": 20412,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250"
+          }
+        },
+        "batch.require_releasable": {
+          "functionID": 130975455214080,
+          "boundOwnerID": 130975436597504,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 13775489,
+              "size": 20412,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250"
+          }
+        },
+        "batch.require_disposable": {
+          "functionID": 130975455214432,
+          "boundOwnerID": 130975436597504,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 13775489,
+              "size": 20412,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250"
+          }
+        },
+        "batch.bind_renderer": {
+          "functionID": 130975455214960,
+          "boundOwnerID": 130975436597504,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 13775489,
+              "size": 20412,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250"
+          }
+        },
+        "batch._closed": {
+          "functionID": 130975455215312,
+          "boundOwnerID": 130975436597504,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 13775489,
+              "size": 20412,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250"
+          }
+        },
+        "batch._renderer_matches": {
+          "functionID": 130975455214784,
+          "boundOwnerID": 130975436597504,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 13775489,
+              "size": 20412,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250"
+          }
+        },
+        "batch._typed_equal": {
+          "functionID": 130975455214608,
+          "boundOwnerID": 130975484449696,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 13775489,
+              "size": 20412,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250"
+          }
+        },
+        "batch._renderer_witness": {
+          "functionID": 130975455215136,
+          "boundOwnerID": 130975484449696,
+          "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+          "source": {
+            "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py",
+            "before": {
+              "device": 58,
+              "inode": 13775489,
+              "size": 20412,
+              "mode": 420,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "sha256": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250"
+          }
+        }
+      },
+      "renderer": {
+        "stable": {
+          "bindingID": 130975455251904,
+          "transportID": 130975436598176,
+          "launchID": 130975436598512,
+          "processID": 130975436836688,
+          "keeperID": 130975436589776,
+          "job": "42fc3196af5843828be6c7e00d6ad01f",
+          "actor": 1,
+          "ownership": {
+            "pid": 1808084,
+            "start": 16704359,
+            "uid": 1000,
+            "producer": {
+              "device": 1,
+              "inode": 632803,
+              "size": 504432,
+              "sha256": "06185baacd8316adec369ec5453699e8da054bb057f30242d43dc8607ced1865",
+              "seals": 15
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "size": 14424,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "seals": null
+            },
+            "script": {
+              "device": 1,
+              "inode": 632804,
+              "size": 2738,
+              "sha256": "1163ab4a469fae45d51a8d1f2b58d5198de77c22721f0dd45ac1b751b7ea4be6",
+              "seals": 15
+            },
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/6",
+              "10",
+              "13",
+              "9",
+              "[\"/proc/self/fd/9\"]",
+              "elf",
+              "-1"
+            ],
+            "scriptFD": 6,
+            "producerFD": 9,
+            "targetArgv": [
+              "/proc/self/fd/9"
+            ],
+            "mode": "elf",
+            "interpreter": null,
+            "policy": "linux-x86_64-group-confinement-v1",
+            "policySHA256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+            "environment": {
+              "XDG_RUNTIME_DIR": "/run/user/1000/wqa/92e5",
+              "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790944559_594598025",
+              "WAYLAND_DISPLAY": "wayland-1"
+            }
+          },
+          "producerSHA256": "06185baacd8316adec369ec5453699e8da054bb057f30242d43dc8607ced1865",
+          "environment": {
+            "XDG_RUNTIME_DIR": "/run/user/1000/wqa/92e5",
+            "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790944559_594598025",
+            "WAYLAND_DISPLAY": "wayland-1"
+          },
+          "keeperRoot": "/run/user/1000/wqa/92e5/hypr-window-motion/qa-family-service",
+          "keeperRootIdentity": [
+            84,
+            487000
+          ],
+          "keeperNonce": "58d622929df04ddbab043c0635854903",
+          "keeperPID": 1807993,
+          "keeperStart": 16704320
+        },
+        "lifecycle": {
+          "terminalObservation": true,
+          "rendererReturncode": 0,
+          "transportClosed": true,
+          "transportClosing": true,
+          "transportFailed": false,
+          "transportCloseError": null,
+          "launchClosed": true,
+          "keeperClosed": true,
+          "keeperReturncode": 0,
+          "keeperPhase": "closed",
+          "keeperTerminal": {
+            "allGroupsEmpty": true,
+            "closedNs": 154927463934997,
+            "jobs": [
+              {
+                "groupEmpty": true,
+                "job": "519e6bf97a1e4504a8a9f079b526acf8",
+                "normalCompletion": true,
+                "pid": 1808217,
+                "start": 16704401
+              },
+              {
+                "groupEmpty": true,
+                "job": "0ca4efc6c68541118af50c842a34f91d",
+                "normalCompletion": true,
+                "pid": 1808253,
+                "start": 16704419
+              },
+              {
+                "groupEmpty": true,
+                "job": "bae6777f10fc4f3cb163d5776fa449c5",
+                "normalCompletion": true,
+                "pid": 1808308,
+                "start": 16704447
+              },
+              {
+                "groupEmpty": true,
+                "job": "c1b85fb0c3b0420485c12b2e600cfee9",
+                "normalCompletion": true,
+                "pid": 1808398,
+                "start": 16704469
+              },
+              {
+                "groupEmpty": true,
+                "job": "2b2df44de4d64a28b47e13ca181eceae",
+                "normalCompletion": true,
+                "pid": 1808471,
+                "start": 16704499
+              },
+              {
+                "groupEmpty": true,
+                "job": "45223f7b06a44e33b44d8efd82e5e3f1",
+                "normalCompletion": true,
+                "pid": 1808516,
+                "start": 16704518
+              },
+              {
+                "groupEmpty": true,
+                "job": "16f80a48cfa94adeb0ac6ff3a1989fde",
+                "normalCompletion": true,
+                "pid": 1808577,
+                "start": 16704540
+              },
+              {
+                "groupEmpty": true,
+                "job": "271c9ac3281149e3b43f2aef58ed9dc6",
+                "normalCompletion": true,
+                "pid": 1808712,
+                "start": 16704568
+              },
+              {
+                "groupEmpty": true,
+                "job": "d94a74b06bb243dcbc395ac1326afdd7",
+                "normalCompletion": true,
+                "pid": 1808867,
+                "start": 16704609
+              },
+              {
+                "groupEmpty": true,
+                "job": "ba53329c2acb43cdba38a87f8c441b93",
+                "normalCompletion": true,
+                "pid": 1809023,
+                "start": 16704652
+              },
+              {
+                "groupEmpty": true,
+                "job": "42fc3196af5843828be6c7e00d6ad01f",
+                "normalCompletion": true,
+                "pid": 1808084,
+                "start": 16704359
+              }
+            ],
+            "keeperPID": 1807993,
+            "keeperStart": 16704320,
+            "nonce": "58d622929df04ddbab043c0635854903",
+            "normalStop": true,
+            "registrations": 11,
+            "rootIdentity": [
+              84,
+              487000
+            ],
+            "servicePID": 1807648,
+            "serviceStart": 16704220
+          }
+        },
+        "relations": {
+          "bindingShape": true,
+          "rendererClasses": true,
+          "rendererObjectChain": true,
+          "rendererActorJob": true,
+          "rendererPopenPID": true,
+          "rendererSelectedMaterial": true,
+          "rendererOwnership": true,
+          "keeperOwnedContext": true,
+          "rendererNormalClose": true,
+          "rendererRegistrationRetired": true,
+          "keeperNormalStop": true,
+          "rendererGuard.bind_renderer": true,
+          "rendererGuard._closed": true,
+          "rendererGuard._renderer_matches": true,
+          "rendererGuard._typed_equal": true,
+          "rendererGuard._renderer_witness": true
+        },
+        "errors": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+# Explicit terminal retirement before changing a Process command
+
+This is a separate source/model proposal. V7 and every approved predecessor stay immutable. No registry/frontend/runtime/GUI change is authorized by this packet alone.
+
+## Observed source gap
+
+PinWindowMenu.qml uses fixed captureProcess/actionProcess objects and assigns each command before each helper launch. V7 arm checks the previous actor through lifecycle(), strict receipt and stable(old,false). stable requires the old exact Process command and frozen EOF text. Changing that property to the next JSON before arm therefore refuses. The accepted pending-cancel rearm CPU case uses the same command and does not prove changed-command reuse.
+
+## Proposed explicit operation
+
+Add a native provider/Registry terminal retirement operation keyed by the actual existing lexical Process allocation and exact current lease. It is bookkeeping only, containing no helper/native/input control or caller success flags. Before any authority mutation, owner thread drains current fault queue and revalidates exact process/collector/menu/row/popup QPointers and generations, actual factory/contexts/provider/engine/source/config/image, all original process/collector launch semantics and old exact command/EOF contents. It must also establish the registered full historical live kernel witness, exact started PID/start/parent/group/exe/argv/environment/namespaces/mapped-source proof, original worker delivery budget, normal join, actual normal Exit, both independent EOFs, original child gone and strict immutable receipt. Normal refused/uncertain outcomes may close when their exact receipt schema agrees; they never become action success. All existing identity, source, typed pointer, full-byte/mount and receipt guards remain mandatory.
+
+Then revalidate the complete original tuple/source/property/receipt witnesses after getters/callbacks. Only after that complete validation may one owner-thread commit clear current authority/completion, disconnect registered old signal bindings and seal the old record as historical normal closure. Retained readonly worker job must already be normally joined; no old live actor is dropped. Old record/history remains bounded by the existing capacity policy. Repeated or wrong-lease retire calls refuse without retiring a new record. No active-address/current-window fallback. An actor/source/receipt/EOF/exit/gone/join/fault uncertainty refuses retirement and leaves the old record selected; matched current faults continue to deny authority.
+
+Retirement is an observed historical fact, never current source or effect authority. The old immutable raw receipt remains evidence of its own old actor, not the new menu. Old mismatched callbacks leave a new record entirely unchanged. After successful terminal retirement, later command/collector content changes cannot rewrite the sealed past snapshot or revive an old lease. This does not claim that old lexical objects/sources remain currently unchanged after retirement.
+
+## Subsequent new arm
+
+Only after successful retirement may the frontend set a different exact requested command on that same still-live Process allocation. The helper program/entry/role/config/declarations remain the approved frozen product route; only the separately captured request JSON may differ. No guard is weakened to tolerate a changed old command. New arm performs every original fresh current source/object/context/activation/property/pointer/command/owner guard and null processId requirement, allocates a fresh monotonic lease and binds independent new kernel expectations. It resets all actual invocation observations; sealed old proof, exit, streams and receipt supply none of them. The new command is never evidence of current final argv: final argv and all child identity still come from the actual new Started/kernel witness. A rejected new arm cannot restore old current acceptance, launch a helper or infer native effect.
+
+The frontend must consume any current verified receipt before retirement and preserve the exact old raw completion observation. New capture/action feedback still requires the separately reviewed popup/object lifetime and actual source-bound input episode. Menu cancellation may deny current success while an unchanged actor closes normally. It must not kill/relaunch/control/delay a helper merely to obtain retirement. Actual reload may destroy/kill QS children; that remains a failure or uncertainty, never assumed normal closure.
+
+## Observation scope and proof requirements
+
+The finite model describes completed owner observations/operations. SetCommand events include the property observation at the attempted operation; it makes no global interval claim about unseen setters. Its kernel predicate abstracts the full fresh real worker proof, never a QML/caller Boolean. A lease-only finite projection does not replace actual QObject/allocation/source tuple matching. The old stable/receipt reads are bounded samples, not a historical memory backing claim.
+
+Required future actual Registry CPU: unchanged fast helper normal closure, exact retire, changed command verified from actual getter, new arm clears all old proof/EOF/receipt; old real callbacks preserve new record; a real second distinct requested helper obtains its own exact current kernel/EOF/receipt proof without automatic retry or added wait. Pending/missing EOF/crash/source/context/receipt/fault/duplicate/wrong-lease retire refuse and do not drop jobs or substitute current authority. New source/context failure after valid retirement refuses fresh arm without reviving old success. Actual QS/frontend/private GUI remains root-only and requires its own public ABI/parser/normal lifecycle/input proof.
+
+Old sparse baseline reliability refusal remains unresolved, and this proposal is not its repair. Full smooth-UI/threading/source-byte obligations remain unchanged.

@@ -1,0 +1,178 @@
+{
+  "kind": "initial",
+  "terminalAuthority": false,
+  "deadline": 138408.627626134,
+  "budgetSeconds": 8,
+  "attempts": [
+    {
+      "stage": "tentative-current",
+      "monotonic": 138400.701233454,
+      "utcNs": 1790928047819408255,
+      "configChanged": false,
+      "terminalClosed": true,
+      "rowsSHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "rowCount": 0,
+      "exactPendingProcesses": []
+    },
+    {
+      "stage": "prospective-authorized",
+      "monotonic": 138400.70505222,
+      "utcNs": 1790928047823226079,
+      "prospectiveTicket": {
+        "serial": 1,
+        "nonce": "2676e5fb6434bfbc47eb98420a8de17b",
+        "kind": "initial",
+        "count": 1,
+        "relayOrdinal": 1,
+        "command": [
+          "repl",
+          "do\nlocal evaluationNonce=os.getenv(\"WINDOW_QA_EVALUATION_NONCE\")\nlocal evaluationKind=os.getenv(\"WINDOW_QA_EVALUATION_KIND\")\nlocal evaluationLimit=os.getenv(\"WINDOW_QA_EVALUATION_LIMIT\")\nlocal evaluationCounts={initial=1,reload=1,[\"native-load\"]=2,[\"native-unload\"]=1,[\"probe-unload\"]=1}\nassert(evaluationNonce and #evaluationNonce==32 and evaluationNonce:match(\"^[0-9a-f]+$\"),\"Exact private evaluation nonce required\")\nassert(evaluationCounts[evaluationKind] and evaluationLimit==tostring(evaluationCounts[evaluationKind]),\"Exact private evaluation command required\")\nlocal previousOrdinal=os.getenv(\"WINDOW_QA_EVALUATION_ORDINAL\")\nassert(previousOrdinal and previousOrdinal:match(\"^%d+$\"),\"Exact private evaluation ordinal required\")\nlocal evaluationOrdinal=tonumber(previousOrdinal)+1\nhl.env(\"WINDOW_QA_EVALUATION_ORDINAL\",tostring(evaluationOrdinal))\nassert(evaluationOrdinal<=evaluationCounts[evaluationKind],\"Unexpected extra private Lua evaluation\")\n\ndofile(\"/usr/share/omarchy/default/hypr/helpers.lua\")\ndofile(\"/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/installed-snap.lua\")\nprint(\"WQA paired Snap Lua loaded\")\nend"
+        ],
+        "root": {
+          "identity": {
+            "pid": 4189359,
+            "start": "15050925",
+            "pgid": 4189359,
+            "parent": 1275790
+          },
+          "argv": [
+            "/usr/bin/python3",
+            "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+            "--attempt",
+            "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1"
+          ],
+          "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+          "sourceSHA256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+          "executable": "/usr/bin/python3.14",
+          "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+        },
+        "compositor": {
+          "pid": 4189956,
+          "start": "15051687"
+        },
+        "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448",
+        "configuration": {
+          "path": "/run/user/1000/wqa/356c/hyprland.lua",
+          "sha256": "9c4db4ce73dc9ba2058c6f1f91fc4d5f6a18483d1fef6ff87aa1df4f1cad8d52",
+          "identity": [
+            84,
+            429499,
+            1000,
+            33152,
+            2279,
+            1790928043424082938,
+            1790928043424082938
+          ],
+          "completeEOF": true
+        },
+        "artifact": null,
+        "armIPC": {
+          "request": "j/version",
+          "completeServerEOF": true,
+          "peer": {
+            "pid": 4189956,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            429510,
+            1000
+          ],
+          "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d"
+        },
+        "armedNs": 1790928047822100000,
+        "terminalAuthority": false
+      },
+      "published": false
+    },
+    {
+      "stage": "publication-current",
+      "monotonic": 138400.764056104,
+      "utcNs": 1790928047882230268,
+      "configChanged": false,
+      "terminalClosed": true,
+      "rowsSHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "rowCount": 0,
+      "exactPendingProcesses": []
+    },
+    {
+      "stage": "published",
+      "monotonic": 138400.766596163,
+      "utcNs": 1790928047884770143,
+      "ticket": {
+        "serial": 1,
+        "nonce": "2676e5fb6434bfbc47eb98420a8de17b",
+        "kind": "initial",
+        "count": 1,
+        "relayOrdinal": 1,
+        "command": [
+          "repl",
+          "do\nlocal evaluationNonce=os.getenv(\"WINDOW_QA_EVALUATION_NONCE\")\nlocal evaluationKind=os.getenv(\"WINDOW_QA_EVALUATION_KIND\")\nlocal evaluationLimit=os.getenv(\"WINDOW_QA_EVALUATION_LIMIT\")\nlocal evaluationCounts={initial=1,reload=1,[\"native-load\"]=2,[\"native-unload\"]=1,[\"probe-unload\"]=1}\nassert(evaluationNonce and #evaluationNonce==32 and evaluationNonce:match(\"^[0-9a-f]+$\"),\"Exact private evaluation nonce required\")\nassert(evaluationCounts[evaluationKind] and evaluationLimit==tostring(evaluationCounts[evaluationKind]),\"Exact private evaluation command required\")\nlocal previousOrdinal=os.getenv(\"WINDOW_QA_EVALUATION_ORDINAL\")\nassert(previousOrdinal and previousOrdinal:match(\"^%d+$\"),\"Exact private evaluation ordinal required\")\nlocal evaluationOrdinal=tonumber(previousOrdinal)+1\nhl.env(\"WINDOW_QA_EVALUATION_ORDINAL\",tostring(evaluationOrdinal))\nassert(evaluationOrdinal<=evaluationCounts[evaluationKind],\"Unexpected extra private Lua evaluation\")\n\ndofile(\"/usr/share/omarchy/default/hypr/helpers.lua\")\ndofile(\"/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/installed-snap.lua\")\nprint(\"WQA paired Snap Lua loaded\")\nend"
+        ],
+        "root": {
+          "identity": {
+            "pid": 4189359,
+            "start": "15050925",
+            "pgid": 4189359,
+            "parent": 1275790
+          },
+          "argv": [
+            "/usr/bin/python3",
+            "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+            "--attempt",
+            "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1"
+          ],
+          "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+          "sourceSHA256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+          "executable": "/usr/bin/python3.14",
+          "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+        },
+        "compositor": {
+          "pid": 4189956,
+          "start": "15051687"
+        },
+        "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448",
+        "configuration": {
+          "path": "/run/user/1000/wqa/356c/hyprland.lua",
+          "sha256": "9c4db4ce73dc9ba2058c6f1f91fc4d5f6a18483d1fef6ff87aa1df4f1cad8d52",
+          "identity": [
+            84,
+            429499,
+            1000,
+            33152,
+            2279,
+            1790928043424082938,
+            1790928043424082938
+          ],
+          "completeEOF": true
+        },
+        "artifact": null,
+        "armIPC": {
+          "request": "j/version",
+          "completeServerEOF": true,
+          "peer": {
+            "pid": 4189956,
+            "uid": 1000,
+            "gid": 1000
+          },
+          "socketIdentity": [
+            84,
+            429510,
+            1000
+          ],
+          "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d"
+        },
+        "armedNs": 1790928047822100000,
+        "terminalAuthority": false
+      }
+    }
+  ],
+  "eventSnapshots": {
+    "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945": []
+  },
+  "accepted": true,
+  "atomicReplaceOccurred": true,
+  "publicationObservedBeforeDeadline": true,
+  "finishedMonotonic": 138400.766740351
+}

@@ -1,0 +1,13 @@
+{
+  "version": "one-line CPU fixture readiness proposal before implementation",
+  "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-reduced-validation-v18/test_socket_frontend.py",
+  "oldSHA256": "5cde825dffd77ebc9684cf9a55e48ffa8b23ec9eb08c57242b7096c437902f2b",
+  "proposedSHA256": "438f6035aea3bea8290fe6aa06f239b60b4dd871e6b22ec5d2f781f5c8ba06ad",
+  "oldLiteral": "self.gate.set();self.wait(lambda:not self.m.pending)",
+  "proposedLiteral": "self.gate.set();self.wait(lambda:not self.m.pending and not any(a.controller.current for a in self.m.actors))",
+  "inverseReconstructsEntireOriginalFile": true,
+  "originalWaitHelperAnd2sDeadlineExact": true,
+  "allOutcomeAssertionsByteExact": true,
+  "productChanged": false,
+  "nativeLaunch": false
+}

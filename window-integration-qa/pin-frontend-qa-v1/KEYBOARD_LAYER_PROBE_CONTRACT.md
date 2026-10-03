@@ -1,0 +1,7 @@
+# Additive Seat layer observation
+
+The inherited HeldV14 read-only probe has an actual pointer layer query but no actual keyboard layer query. Core nativeFocus is insufficient for a physical Return acceptance. Fresh B probe adds only keyboardSurfacePresent and keyboardLayerOwner to the existing state. It obtains the actual strong SeatManager keyboardFocus surface, resolves it through the existing public ViewState query restricted to VIEW_TYPE_LAYER_SURFACE, and reports the same actual mapped layer row from the owning LayerState enumeration. No inferred owner from Core focus, namespace alone or popup state.
+
+The actual layer row includes native address, PID, namespace, mapped/visible and logicalBox. Before input require one exact current QS-owned mapped/visible Pin popup, identical actual keyboard layer owner and current menu generation/token, plus unchanged private scope/module/QS/input guards. Keyboard-surface absence, different layer/window, owner PID mismatch or changed menu generation refuses input. Actual physical Return and balanced release remain necessary. This bounded observation makes no final delivery claim.
+
+All inherited state fields, button observation semantics, ABI authorization and private scope/core-limit checks remain exact. The frontend_case model's wrongKeyboardRouteRefusedTest and separateFocusRoutesRequiredTest passed before this derivative implementation. Native loading remains root-only.

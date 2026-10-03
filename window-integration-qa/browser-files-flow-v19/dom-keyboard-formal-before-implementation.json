@@ -1,0 +1,52 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v18/dom_keyboard_diagnostic.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Running as unit: qa-harness-406eca18c2eb4f40ba62b2eb5d59c9b3.scope; invocation ID: 7e3ec3c490624efcab8d95332cf57391\n"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v18/dom_keyboard_diagnostic_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  dom_keyboard_diagnostic_test\n    ok sameEventCaptureBubbleTest passed 1 test(s)\n    ok orphanBubbleNotInventedTest passed 1 test(s)\n    ok newEventCannotReplaceCaptureTest passed 1 test(s)\n    ok mismatchedKeyNotJoinedTest passed 1 test(s)\n    ok stalePageBubbleNotJoinedTest passed 1 test(s)\n    ok truncationDoesNotInventHistoryTest passed 1 test(s)\n    ok exhaustionStopsObserverNotOriginalVerdictTest passed 1 test(s)\n    ok diagnosticMatchingNeverAcceptsOriginalFeatureTest passed 1 test(s)\n    ok originalFailureNotChangedByKeyMetadataTest passed 1 test(s)\n    ok missingAndOutOfRangeTokenRefusedTest passed 1 test(s)\n    ok newPageSameTokenKeepsPageSeparationTest passed 1 test(s)\n\n  11 passing (475ms)\n",
+      "stderr": "Running as unit: qa-harness-b04d2cd8aab040ed9d6bd0d59290d78c.scope; invocation ID: b35943b7a3ce444fb681d6d1010bb459\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v18/dom_keyboard_diagnostic.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (1132ms at 1767 traces/second).\nUse --seed=0x13b4241 --backend=rust to reproduce.\n",
+      "stderr": "Running as unit: qa-harness-f0f75f1bd19a4e74985eae25bd82be3d.scope; invocation ID: d41d104bf30144c28071d8eeede599d9\n"
+    }
+  ],
+  "listenersAndRuntimeStillExactFrozenV17": true,
+  "original15StillRequired": true,
+  "sourceSHA256": {
+    "V18_CONTRACT.md": "a5ec1ed2e6dd292a884e25f1c958dac96104b120ade1aea108497e849d586208",
+    "dom_keyboard_diagnostic.qnt": "14b92116d9c02779d35ccd960bb503bcc910c81973598d39ff908b7c246e27b1",
+    "dom_keyboard_diagnostic_test.qnt": "bf68cc81d33326e2d713cf604b502567a1b18fe9209f9acba22a5998d693c15c",
+    "compose.html": "a1c642444107afc648a6f7f62ac9f919a99222e548e601f1694208226cd62a34",
+    "cdp_readonly.py": "aed83ef32b0c8d3babfb4c50a2159847a542c2f4db67a43c057b2b864b98f3e1",
+    "private_session.py": "21b0bbf43db3a2c8be90978729c250e79645a8cbd1b355194d95d84d3fafa626",
+    "run_native.py": "150f5f59fb1b4c785e635a2cca5f0c3b18323da326b25731f28c1bfd82ced1df"
+  },
+  "nativeExecuted": false
+}

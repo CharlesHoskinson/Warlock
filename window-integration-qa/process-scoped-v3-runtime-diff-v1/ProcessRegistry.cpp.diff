@@ -1,0 +1,51 @@
+--- before-scoped/ProcessRegistry.cpp
++++ current/ProcessRegistry.cpp
+@@ -18,13 +18,13 @@
+ int processPID(const QVariant&value){const auto id=value.metaType().id();if(id!=QMetaType::Int&&id!=QMetaType::LongLong&&id!=QMetaType::UInt&&id!=QMetaType::ULongLong)throw Refused("Actual processId exact integer QVariant required");bool ok=false;auto n=value.toLongLong(&ok);if(!ok||n<=0||n>2147483647)throw Refused("Actual processId range refused");return int(n);}
+ }
+ struct KernelOutcome{bool complete=false;KernelWitness witness;QVariantMap evidence;QString failure;std::chrono::steady_clock::time_point completedAt;uint64_t lease=0;};
+-struct KernelWork{int pid=0;uint64_t lease=0;KernelExpected expected;std::chrono::steady_clock::time_point deadline;QPromise<KernelOutcome>promise;};
++struct KernelWork{int pid=0;uint64_t lease=0;std::shared_ptr<const KernelExpected>expected;QString childStart,observerStart;std::chrono::steady_clock::time_point deadline;QPromise<KernelOutcome>promise;};
+ struct KernelJob{std::shared_ptr<KernelWork>work;pthread_t id{};QFutureWatcher<KernelOutcome>*watcher=nullptr;bool created=false,finished=false,joined=false,delivered=false,pollQueued=false;};
+ namespace {
+ void*collectKernel(void*raw){auto&w=*static_cast<KernelWork*>(raw);KernelOutcome result;result.lease=w.lease;QVariantList epochs;setKernelDeadline(w.deadline);
+- try{bindObserver(w.expected);for(int epoch=1;epoch<=16;++epoch){checkKernelBudget();QVariantMap observed{{"epoch",epoch}};try{result.witness=readKernel(w.pid,w.expected,&observed);observed["accepted"]=true;epochs<<observed;result.complete=true;break;}catch(const MappingChanged&e){observed["discarded"]=true;observed["typedMappingChanged"]=QString::fromUtf8(e.what());epochs<<observed;if(epoch==16)throw Refused("Original maximum16 mapping epochs exhausted");}catch(...){epochs<<observed;throw;}}checkKernelBudget();}
++ try{if(!w.expected)throw Refused("Immutable worker declaration missing");KernelExpected expected=*w.expected;expected.childStart=w.childStart;expected.observerStart=w.observerStart;bindObserver(expected);for(int epoch=1;epoch<=16;++epoch){checkKernelBudget();QVariantMap observed{{"epoch",epoch}};try{result.witness=readKernel(w.pid,expected,&observed);observed["accepted"]=true;epochs<<observed;result.complete=true;break;}catch(const MappingChanged&e){observed["discarded"]=true;observed["typedMappingChanged"]=QString::fromUtf8(e.what());epochs<<observed;if(epoch==16)throw Refused("Original maximum16 mapping epochs exhausted");}catch(...){epochs<<observed;throw;}}checkKernelBudget();}
+  catch(const std::exception&e){result.complete=false;result.failure=QString::fromUtf8(e.what());}catch(...){result.complete=false;result.failure="Unknown readonly worker failure";}
+- result.completedAt=std::chrono::steady_clock::now();result.evidence={{"epochs",epochs},{"originalChildStart",w.expected.childStart},{"originalObserverStart",w.expected.observerStart},{"workerQObjectAccesses",0},{"workerNativeWrites",0}};w.promise.addResult(result);w.promise.finish();return nullptr;
++ result.completedAt=std::chrono::steady_clock::now();result.evidence={{"epochs",epochs},{"originalChildStart",w.childStart},{"originalObserverStart",w.observerStart},{"workerQObjectAccesses",0},{"workerNativeWrites",0}};w.promise.addResult(result);w.promise.finish();return nullptr;
+ }
+ // An unexpectedly destroyed CPU/local observer cannot free live worker values.
+ // These unjoined jobs remain registered; no detach, kill or success claim.
+@@ -37,7 +37,7 @@
+  QPointer<QQmlEngine>engine;QPointer<QObject>provider;QMetaProperty outPointer,errPointer,command,pid,outText,errText,outWait,errWait;
+  QVariant expectedOut,expectedErr;ProcessRelay*relay=nullptr;std::vector<QMetaObject::Connection>connections;
+  bool started=false,kernel=false,exited=false,normal=false,out=false,err=false,gone=false,receipt=false,current=true,fault=false,accepted=false,normalLife=false;
+- std::shared_ptr<KernelJob>job;std::chrono::steady_clock::time_point signalTime;
++ std::shared_ptr<const KernelExpected>kernelReference;std::shared_ptr<KernelJob>job;std::chrono::steady_clock::time_point signalTime;
+  int code=-1;QByteArray stdoutBytes,stderrBytes;KernelWitness witness;QVariantMap evidence;QString failure;
+ };
+ ProcessRegistry::ProcessRegistry(Registry&r):base(r){requireOwnerThread();thread=QThread::currentThread();context=new QObject;}
+@@ -61,10 +61,11 @@
+  r->arm.sourceGuard();guards();if(current)r->arm.currentGuard();guards();
+ }
+ uint64_t ProcessRegistry::arm(ProcessArm spec){
+- requireOwnerThread();if(!spec.sourceGuard||!spec.currentGuard||!spec.receiptGuard||!spec.engine||!spec.provider||!spec.menu||!spec.row||!spec.popup||!spec.process||!spec.out||!spec.err||spec.out==spec.err)throw Refused("Complete actual observer scope required");
++ requireOwnerThread();drainFaults();if(!spec.sourceGuard||!spec.currentGuard||!spec.receiptGuard||!spec.engine||!spec.provider||!spec.menu||!spec.row||!spec.popup||!spec.process||!spec.out||!spec.err||spec.out==spec.err)throw Refused("Complete actual observer scope required");
++ if(spec.command.empty())throw Refused("Exact launcher command required");spec.kernel.aliases=std::make_shared<const SourceAliases>(spec.kernel.links,QStringList{spec.command.front(),"/usr/bin/env","/usr/bin/python3",spec.kernel.executable,spec.kernel.observerExecutable});
+  const auto old=rows.find(spec.process);if(old!=rows.end()&&!old->second->guards[3].isNull()&&!lifecycle(old->second))throw Refused("Previous actual helper exit/EOF/gone incomplete");
+  if(old!=rows.end()){for(const auto&c:old->second->connections)QObject::disconnect(c);history.push_back(old->second);rows.erase(old);}checkedCapacity(rows.size()+history.size(),CAPACITY);
+- auto r=std::make_shared<Invocation>();r->arm=std::move(spec);r->lease=base.allocate(nextLease);r->engine=r->arm.engine;r->provider=r->arm.provider;r->activation=base.scope(r->engine.data(),r->provider.data());
++ auto r=std::make_shared<Invocation>();r->arm=std::move(spec);r->kernelReference=std::make_shared<const KernelExpected>(r->arm.kernel);r->lease=base.allocate(nextLease);r->engine=r->arm.engine;r->provider=r->arm.provider;r->activation=base.scope(r->engine.data(),r->provider.data());
+  r->objects={r->arm.menu,r->arm.row,r->arm.popup,r->arm.process,r->arm.out,r->arm.err};std::set<QObject*>seen;
+  auto alive=[&]{if(r->engine.isNull()||r->provider.isNull())throw Refused("Actual observer factory retired");for(size_t i=0;i<r->objects.size();++i)if(r->guards[i].isNull()||r->guards[i].data()!=r->objects[i])throw Refused("Actual observer tuple retired during arm");};
+  for(size_t i=0;i<r->objects.size();++i){if(!seen.insert(r->objects[i]).second||r->objects[i]->thread()!=thread)throw Refused("Actual distinct observer objects/thread required");r->guards[i]=r->objects[i];}alive();
+@@ -91,7 +92,7 @@
+ void ProcessRegistry::event(QObject*p,uint64_t lease,int kind,int code,QProcess::ExitStatus status){
+  auto r=find(p,lease);if(!r)return;r->accepted=false;r->normalLife=false;stable(r,false);
+  if(kind==0){if(r->started)throw Refused("Duplicate actual started");r->started=true;const auto raw=r->pid.read(p);stable(r,false);const auto pid=processPID(raw);r->evidence.insert("observedProcessId",pid);
+-  QVariantMap observation;r->witness=captureStartedRoot(pid,r->arm.kernel,&observation);r->evidence.insert("actualStartedRoot",observation);auto job=std::make_shared<KernelJob>();job->work=std::make_shared<KernelWork>();job->work->pid=pid;job->work->lease=lease;job->work->expected=r->arm.kernel;job->work->expected.childStart=r->witness.start;job->work->expected.observerStart=captureObserverStart();job->work->deadline=r->signalTime+std::chrono::seconds(2);job->work->promise.start();job->watcher=new QFutureWatcher<KernelOutcome>(context);r->job=job;QObject::connect(job->watcher,&QFutureWatcher<KernelOutcome>::finished,context,[this,r]{finishJob(r);});job->watcher->setFuture(job->work->promise.future());const int error=pthread_create(&job->id,nullptr,&collectKernel,job->work.get());if(error){job->joined=true;r->evidence.insert("workerCreateError",error);throw Refused("Owned readonly worker creation failed");}job->created=true;stable(r,false);
++  QVariantMap observation;r->witness=captureStartedRoot(pid,r->arm.kernel,&observation);r->evidence.insert("actualStartedRoot",observation);auto job=std::make_shared<KernelJob>();job->work=std::make_shared<KernelWork>();job->work->pid=pid;job->work->lease=lease;job->work->expected=r->kernelReference;job->work->childStart=r->witness.start;job->work->observerStart=captureObserverStart();job->work->deadline=r->signalTime+std::chrono::seconds(2);job->work->promise.start();job->watcher=new QFutureWatcher<KernelOutcome>(context);r->job=job;QObject::connect(job->watcher,&QFutureWatcher<KernelOutcome>::finished,context,[this,r]{finishJob(r);});job->watcher->setFuture(job->work->promise.future());const int error=pthread_create(&job->id,nullptr,&collectKernel,job->work.get());if(error){job->joined=true;r->evidence.insert("workerCreateError",error);throw Refused("Owned readonly worker creation failed");}job->created=true;stable(r,false);
+ 
+  }else if(kind==1){if(!r->started||r->exited)throw Refused("Missing start/duplicate actual exit");r->exited=true;r->normal=status==QProcess::NormalExit;r->code=code;if(!r->normal)throw Refused("Actual helper CrashExit is not normal lifecycle");
+  }else if(kind==2||kind==3){bool&seen=kind==2?r->out:r->err;if(!r->started||seen)throw Refused("Missing start/duplicate actual EOF");const auto actualText=kind==2?r->outText.read(r->arm.out):r->errText.read(r->arm.err);stable(r,false);if(actualText.metaType()!=QMetaType::fromType<QString>())throw Refused("Actual EOF collector text type differs");const auto bytes=actualText.toString().toUtf8();if(bytes.size()>65536)throw Refused("Actual helper stream bound exceeded");(kind==2?r->stdoutBytes:r->stderrBytes)=bytes;seen=true;

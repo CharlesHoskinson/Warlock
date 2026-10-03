@@ -1,0 +1,249 @@
+
+  window_test
+    ok snapOnlyOnReleaseTest passed 1 test(s)
+    ok dragSnappedAwayTest passed 1 test(s)
+    ok dragMaximizedAwayTest passed 1 test(s)
+    ok focusChangeCancelsDragTest passed 1 test(s)
+    ok minimizeRestoresPriorModeTest passed 1 test(s)
+    ok pinnedAcrossWorkspacesTest passed 1 test(s)
+    ok thirdsGeometryTest passed 1 test(s)
+    ok asymmetricGeometryTest passed 1 test(s)
+    ok layoutWidthBoundaryTest passed 1 test(s)
+    ok chosenLayoutRestoresNormalTest passed 1 test(s)
+
+  10 passing (316ms)
+
+  desktop_test
+    ok appPinWithOpenWindowsTest passed 1 test(s)
+    ok targetedFocusAndPinTest passed 1 test(s)
+    ok minimizeKeepsGroupingTest passed 1 test(s)
+    ok closeDissolvesGroupTest passed 1 test(s)
+    ok movedAndResnappedMembersTest passed 1 test(s)
+    ok foreignWorkspaceRestoreTest passed 1 test(s)
+    ok fourQuarterGroupTest passed 1 test(s)
+    ok mixedHalfQuarterGroupTest passed 1 test(s)
+    ok threeThirdsGroupTest passed 1 test(s)
+    ok asymmetricGroupAndOverlapTest passed 1 test(s)
+
+  10 passing (296ms)
+
+  navigation_test
+    ok batchRestoresNewModalWithOwnerTest passed 1 test(s)
+    ok minimizeOwnerHidesFamilyTest passed 1 test(s)
+    ok minimizeChildHidesFamilyTest passed 1 test(s)
+    ok modalDoesNotBlockUnrelatedTest passed 1 test(s)
+    ok minimizedOwnerNewModalStaysHiddenTest passed 1 test(s)
+    ok movingChildMovesFamilyTest passed 1 test(s)
+    ok allDesktopTabCommitTest passed 1 test(s)
+    ok currentDesktopTabExcludesForeignTest passed 1 test(s)
+    ok batchKeepsPreMinimizedTest passed 1 test(s)
+    ok shakeExcludesOwnerTest passed 1 test(s)
+    ok peekPreservesFocusAndMinimizeTest passed 1 test(s)
+    ok showDesktopRestoresModalChildTest passed 1 test(s)
+    ok altTabCommitsOnlyOnReleaseTest passed 1 test(s)
+    ok closingDesktopMovesModalFamilyTest passed 1 test(s)
+    ok showDesktopIndependentPerDesktopTest passed 1 test(s)
+    ok minimizeBatchIndependentPerDesktopTest passed 1 test(s)
+
+  16 passing (823ms)
+
+  launcher_test
+    ok incrementalFieldsTest passed 1 test(s)
+    ok disconnectFallsBackTest passed 1 test(s)
+    ok appIsolationTest passed 1 test(s)
+    ok hidePreservesValueTest passed 1 test(s)
+    ok quicklistPreservesBadgesTest passed 1 test(s)
+
+  5 passing (80ms)
+
+  taskbar_menu_test
+    ok keyboardWheelTest passed 1 test(s)
+    ok mouseWheelTest passed 1 test(s)
+    ok rapidReopenTest passed 1 test(s)
+    ok closedInputTest passed 1 test(s)
+
+  4 passing (34ms)
+
+  monitor_owner_test
+    ok hiddenWorkspaceIsStorageTest passed 1 test(s)
+    ok desktopMoveTest passed 1 test(s)
+    ok disconnectedOutputTest passed 1 test(s)
+    ok staleAddressTest passed 1 test(s)
+
+  4 passing (52ms)
+
+  pointer_focus_test
+    ok inactiveScrollPreservesTypingTest passed 1 test(s)
+    ok noWindowDoesNotStealFocusTest passed 1 test(s)
+
+  2 passing (20ms)
+
+  native_drag_test
+    ok releaseUsesCapturedOwnerTest passed 1 test(s)
+    ok cancellationRestoresSnapTest passed 1 test(s)
+    ok closeAndReuseRejectsReleaseTest passed 1 test(s)
+    ok reloadRejectsOldReleaseTest passed 1 test(s)
+    ok resizeNeverTriggersMoveSnapTest passed 1 test(s)
+    ok reloadRestoresSourceSnapAndRejectsReleaseTest passed 1 test(s)
+
+  6 passing (133ms)
+
+  drag_hover_test
+    ok minimizedSingleDwellTest passed 1 test(s)
+    ok earlyLeaveCancelsTest passed 1 test(s)
+    ok groupedChooserTest passed 1 test(s)
+    ok reusedWindowCannotActivateTest passed 1 test(s)
+    ok droppedFileNeverConsumedTest passed 1 test(s)
+    ok emptyPinnedLauncherCannotActivateTest passed 1 test(s)
+
+  6 passing (110ms)
+
+  drag_relay_test
+    ok lateMoveCannotReviveCancelledDragTest passed 1 test(s)
+    ok oldLeaveCannotCancelNewHoverTest passed 1 test(s)
+    ok watchdogClearsLostReleaseTest passed 1 test(s)
+
+  3 passing (24ms)
+
+  modal_pointer_test
+    ok ownerClickFocusesChildWithoutDeliveryTest passed 1 test(s)
+    ok unrelatedClickDeliveredTest passed 1 test(s)
+    ok overlayAndGrabKeepInputTest passed 1 test(s)
+    ok releaseAfterDialogCloseConsumedTest passed 1 test(s)
+    ok programmaticFocusRedirectTest passed 1 test(s)
+    ok hoverKeepsUnrelatedKeyboardTest passed 1 test(s)
+    ok reopenedDialogUnderStationaryPointerGetsFirstClickTest passed 1 test(s)
+    ok overlayOverNewDialogKeepsPointerOwnershipTest passed 1 test(s)
+
+  8 passing (150ms)
+
+  modal_stack_test
+    ok pinnedDialogGetsOwnClickTest passed 1 test(s)
+    ok nestedPinnedDialogGetsOwnClickTest passed 1 test(s)
+    ok raisingOwnerRetainsNestedOrderTest passed 1 test(s)
+    ok dialogOpenedAfterPinStaysAboveTest passed 1 test(s)
+    ok unrelatedFocusWithPinnedFamilyTest passed 1 test(s)
+    ok closingNestedKeepsSurvivorInputTest passed 1 test(s)
+    ok pinnedFamilyFollowsTwoDesktopsTest passed 1 test(s)
+    ok unpinnedFamilyDoesNotLeakTest passed 1 test(s)
+    ok newModalAfterPinnedSwitchTest passed 1 test(s)
+
+  9 passing (254ms)
+
+  caption_drag_test
+    ok firstMotionRetainsPressOffsetTest passed 1 test(s)
+    ok crossingPeerKeepsPressedOwnerTest passed 1 test(s)
+    ok leavingAllHitRegionsStillMovesOwnerTest passed 1 test(s)
+    ok snappedCaptionRestoresFractionalPressOffsetTest passed 1 test(s)
+    ok captionClickWithoutMovementDoesNotUnsnapTest passed 1 test(s)
+    ok closeAndReuseCannotContinueCaptionTest passed 1 test(s)
+    ok reloadCannotContinueCaptionTest passed 1 test(s)
+    ok reloadCancelsActiveCaptionAndRestoresSourceTest passed 1 test(s)
+    ok escapeBeforeFirstMotionCancelsPressTest passed 1 test(s)
+
+  9 passing (299ms)
+
+  accessibility_test
+    ok hiddenActionTest passed 1 test(s)
+    ok rebuiltSurfaceRejectsOldNodeTest passed 1 test(s)
+    ok disabledActionTest passed 1 test(s)
+    ok focusChangeKeepsCapturedOwnerTest passed 1 test(s)
+    ok reusedAddressSameProcessTest passed 1 test(s)
+    ok wrongProcessTest passed 1 test(s)
+    ok selectionDoesNotRetargetActionTest passed 1 test(s)
+    ok restoreThenCloseTest passed 1 test(s)
+
+  8 passing (296ms)
+
+  motion_test
+    ok reductionDuringMotionTest passed 1 test(s)
+    ok oldTickAfterRetargetTest passed 1 test(s)
+    ok reversalKeepsRenderedPositionTest passed 1 test(s)
+    ok closeAndReuseRejectsOldTickTest passed 1 test(s)
+    ok reducedTargetHasNoTweenTest passed 1 test(s)
+    ok queuedOldFrameMayPresentAfterReductionTest passed 1 test(s)
+
+  6 passing (167ms)
+[ok] No violation found (21518ms at 93 traces/second).
+Use --seed=0x138351e --backend=rust to reproduce.
+[ok] No violation found (26512ms at 75 traces/second).
+[ok] No violation found (6251ms at 320 traces/second).
+[ok] No violation found (10019ms at 200 traces/second).
+[ok] No violation found (363ms at 5510 traces/second).
+Use --seed=0x138351e --backend=rust to reproduce.
+[ok] No violation found (464ms at 4310 traces/second).
+[ok] No violation found (356ms at 5618 traces/second).
+Use --seed=0x138351e --backend=rust to reproduce.
+[ok] No violation found (425ms at 4706 traces/second).
+Use --seed=0x138351e --backend=rust to reproduce.
+[ok] No violation found (380ms at 5263 traces/second).
+Use --seed=0x138351e --backend=rust to reproduce.
+[ok] No violation found (375ms at 5333 traces/second).
+Use --seed=0x138351e --backend=rust to reproduce.
+[ok] No violation found (418ms at 4785 traces/second).
+Use --seed=0x138351e --backend=rust to reproduce.
+[ok] No violation found (2726ms at 734 traces/second).
+Use --seed=0x138351e --backend=rust to reproduce.
+[ok] No violation found (1166ms at 1715 traces/second).
+Use --seed=0x138351e --backend=rust to reproduce.
+[ok] No violation found (1607ms at 1245 traces/second).
+[ok] No violation found (1162ms at 1721 traces/second).
+Installed QML drag relay: 10 transport/geometry/identity assertions passed
+Launcher backend replay: 20 traces, 2020 checked states, all 9 event types
+{
+  "traces": 40,
+  "states_checked": 4611,
+  "events": {
+    "AddMember": 4,
+    "Close": 224,
+    "CreateGroup": 27,
+    "Focus": 111,
+    "Minimize": 152,
+    "Move": 465,
+    "Open": 206,
+    "PinApp": 270,
+    "PinWindow": 202,
+    "Recall": 3,
+    "Reorder": 317,
+    "Restore": 211,
+    "Snap": 2077,
+    "Switch": 302
+  },
+  "result": "PASS",
+  "scope": "actual backend functions, isolated state, mocked compositor"
+}
+Monitor ownership projection: 20 traces, 2020 installed-helper states passed
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.022s
+
+OK
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.005s
+
+OK
+snap regression, monitor transfer/reflow, and 13,000 randomized geometry checks passed (/home/hoskinson/.config/hypr/snap.lua)
+pin fade and 4,000 randomized operation tests passed (/home/hoskinson/.config/hypr/pin.lua)
+windowctl/desktop QA: 19 stateful scenarios passed
+....
+----------------------------------------------------------------------
+Ran 4 tests in 1.229s
+
+OK
+desktop backend fuzz: 165 mixed operations passed
+...............
+----------------------------------------------------------------------
+Ran 15 tests in 0.105s
+
+OK

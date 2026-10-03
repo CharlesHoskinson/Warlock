@@ -1,0 +1,33 @@
+{
+  "updatedUTC": "2026-10-02T04:24:27.433693+00:00",
+  "checks": {
+    "sourceAndAllPreservationIndependent": true,
+    "original15MainAll": true,
+    "normalActualRendererExit": true,
+    "normalActualServiceExit": true,
+    "durableNormalActualActorRetired": true,
+    "noServiceResourceErrors": true,
+    "actualOnlyTwoCaptures": true,
+    "actualUnpreparedHistory": true,
+    "actualDeadlineFallback": true,
+    "actualCleanupAckAfterQueued": true,
+    "originalBaselineStillFailed": true
+  },
+  "allBoundedChecks": true,
+  "evidence": {
+    "report.json": "a2dedeb0f4a6c65000732cb403e29eb1b8f8a198a14a0579d96fa1691200cc05",
+    "service-evidence.json": "1b30b2a30b50678bd69fdb9cc203f5058595cb19c8a50f08edbd110bf755eb89",
+    "service-retirement-1.json": "7986729bb434b42aef267b2d7cbc6e3038f927a164b7a28f78a2871d1bd43466",
+    "root-baseline-completion-v1.json": "66959b6ea6289bd7b5d746e057962ed6fe42be0b9e8c9c0f9a93d94255829656"
+  },
+  "metadataValidationElapsedMs": 888.601361,
+  "cleanupQueuedElapsedMs": 3833.724995,
+  "cleanupAckElapsedMs": 3835.839276,
+  "originalDeadlineWaived": false,
+  "threeCaptureRequirementWaived": false,
+  "deadlockNativeThreadOwnershipProved": false,
+  "actualIndividualHelperLatencyCausalityProved": false,
+  "baselineAccepted": false,
+  "faultsAuthorized": false,
+  "fullParityAccepted": false
+}

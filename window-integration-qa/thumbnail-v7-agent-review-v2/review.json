@@ -1,0 +1,98 @@
+{
+  "result": "pass",
+  "classification": "all seven retained wrong-function/foreign-owner operations refused before usable, genuine positive bindings accepted",
+  "sourceAndExistingTests": "pass",
+  "collector": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7",
+  "proof": "/home/hoskinson/window-integration-qa/thumbnail-v7-full-proof-v3/report.json",
+  "proofSHA256": "73b5557be1bce9383a4031c68964dbc86b6efaf9b3c7cd68ec284ececddcac47",
+  "fullProof": {
+    "python": 120,
+    "named": 109,
+    "models": 10,
+    "commands": 31,
+    "sourceWitnesses": 428
+  },
+  "focused": {
+    "pythonTests": 31,
+    "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSHA256": "15c160c97da0aeb096fa446c278dd70c4dd3a643f7452688d583c13a7d2914c9"
+  },
+  "sourceConservation": {
+    "inherited": 416,
+    "unchanged": 408,
+    "declaredChanges": {
+      "actual_service_binding.qnt": {
+        "before": "2cae8ff6809417f263cdf384eb2a25f7ab264c2dfa254cc47397a20c67903288",
+        "after": "80562409042afc04c6a233d167f7047c9f1fdba8f630b8d3ddb0a1b28bb32b2c"
+      },
+      "actual_service_binding_test.qnt": {
+        "before": "a32c73f647f8fddd2abe5367e401ec53c6d97e9a31d932e52d003980719e17d4",
+        "after": "d903f5bfef9a35fa3593f8a0704accc2bfc11daccf66b9144d4e9cbc9aea6762"
+      },
+      "native_integration.py": {
+        "before": "ee2d17383a9ce295fa7ff013efa349ceb000234e39367e9835712c92026e0b35",
+        "after": "e8b32b3a385813276495d83e15905599940fc98ebedcd1e50133febf0f4f3b91"
+      },
+      "service_recovery_observer.py": {
+        "before": "2a61d4c5cdbb00671105afd0b427622a077fc24c18b985646d03ea52747c6d74",
+        "after": "07b546f574bd5972b1c20d229c0a7d914745517640db4eb95f277fdf65b83856"
+      },
+      "native_faults.py": {
+        "before": "8201dafd783c72603cc71e19cef4cbbb98cb380b8af53591c952c7335b205568",
+        "after": "d2c1f03ba6750f44af6e644dfd28b11e6d273a92bfd0c019f08c23ac510ce562"
+      },
+      "test_freezer_v2.py": {
+        "before": "e8d02dd5d49bc10aabe0927a981ff6e92c93be69dc09a5141eb5d025ca2dbb72",
+        "after": "271ffdad0c255c24386d88ba117fdf7e82549526fc0d25f2536e308adf988644"
+      },
+      "module_binding.py": {
+        "before": "b3dcb34adb3adbc736380980a0bcca811ed661c8aec9374ccf80477bd38055e1",
+        "after": "35f4e144c9ea720e638e0dd3d5310dff140d80dd52ed902f90bf6e9a71b41ef5"
+      },
+      "test_actual_binding.py": {
+        "before": "518e1985c116cbbad8a65f23b2884d96f3c5eb7c7ce9366981b7cf4b087df155",
+        "after": "14e98533b9d637aaa83b7972ca00e78ec381aa1afba3b86a656d2bf38e88e11c"
+      }
+    },
+    "originalCheckCallASTsExact": {
+      "native_integration.py": 30,
+      "native_faults.py": 34
+    },
+    "completeBaselineAndFaultMainInverseExact": true,
+    "actualCaptureRetirementObserverByteExact": true
+  },
+  "candidateManifest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/manifest-family-preparation-v23.json",
+  "candidateManifestSHA256": "0d2b7b231eaa26c6618783b1cb2305c2a989586b3a7cb371716e2d67603c82e2",
+  "candidateClosure": {
+    "inputs": 15238,
+    "modes": 15238,
+    "links": 158,
+    "fullBytesModesLinksExact": true
+  },
+  "counterexamples": [
+    {
+      "path": "/home/hoskinson/window-integration-qa/thumbnail-v7-agent-review-v2/initial-callback-counterexample.json",
+      "sha256": "da491d12b83a5f56faee7d2754c3efad58680e2a48e9ab7cf46752f46e6099c2"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/thumbnail-v7-agent-review-v2/initial-callback-owner-counterexample.json",
+      "sha256": "b8227ce2a4ccd655c837b1e844832e536357caaea052394a01183cbbb3894d3e"
+    }
+  ],
+  "acceptedWrongInitialBindings": 0,
+  "correctedCallbackIdentityReviewed": true,
+  "formalBeforeRuntime": {
+    "path": "/home/hoskinson/window-integration-qa/thumbnail-v7-callback-formal-before-runtime-v2/report.json",
+    "sha256": "284ce98c05c70f9497e568fbd061a78bc039f23793933faf0cca7647bf8ac7ed",
+    "named": 21
+  },
+  "retainedV1ReviewSHA256": "22f27af97da975619c11fcaf603b09d4708297be1b8f466d9fdb70e64eeb1e0f",
+  "exactRetainedProbeSourcesReplayed": true,
+  "soleRuntimeCorrectionFunction": "batch_relations",
+  "originalPositiveTestASTsRetained": true,
+  "guiPairingSourceReady": true,
+  "nativeLaunch": false,
+  "candidateEdited": false,
+  "original38Accepted": false,
+  "original34FaultsAccepted": false
+}

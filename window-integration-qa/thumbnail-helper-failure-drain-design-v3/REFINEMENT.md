@@ -1,0 +1,1 @@
+V2 formal23/2k PASS retained. V3 strengthens cleanup snapshot: later unauthorized/duplicate/nonzero observation invalidates any earlier closure snapshot; unsafe cannot retain cleanupNormal. Two named negative cases added. No runtime applied. V1 formal failure and V2 proofs retained in complete union.

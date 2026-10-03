@@ -1,0 +1,14 @@
+--- V4/native_probe_pointer.py
++++ V5/native_probe_pointer.py
+@@ -176,9 +176,9 @@
+         session=HOST.PrivateHyprSession(output=HERE/'owned-host',main_env=fixture_parent,width=1280,height=800,nested_lua=config_bytes(),dri_prime='pci-0000_00_02_0',mesa_vendor=True)
+         with session:
+             PRIVATE_SESSION=session;runtime=Path(session.env['XDG_RUNTIME_DIR']);config=Path(session.evidence['compositorConfig']);effective=config.read_bytes()
+-            env={**session.env,'HYPR_WINDOWCTL_MOTION':'0','GSETTINGS_BACKEND':'memory','PYTHONDONTWRITEBYTECODE':'1','GDK_DEBUG':'no-portals','PYTHONPATH':str(HERE),'ORCA_QA_READER_ROOT':str(READER),'POINTER_QA_COMPOSITOR_PID':str(session.evidence['compositorPID']),'POINTER_QA_COMPOSITOR_START':session.evidence['compositorStart']}
++            env={**session.env,'HYPR_WINDOWCTL_MOTION':'0','GSETTINGS_BACKEND':'memory','PYTHONDONTWRITEBYTECODE':'1','GDK_DEBUG':'no-portals','GIO_USE_VFS':'local','PYTHONPATH':str(HERE),'ORCA_QA_READER_ROOT':str(READER),'POINTER_QA_COMPOSITOR_PID':str(session.evidence['compositorPID']),'POINTER_QA_COMPOSITOR_START':session.evidence['compositorStart']}
+             report['private']=session.evidence
+-            report['privateClientEnvironmentDelta']={'GDK_DEBUG':'no-portals'}
++            report['privateClientEnvironmentDelta']={'GDK_DEBUG':'no-portals','GIO_USE_VFS':'local'}
+             for name in ('config','data','cache'):
+                 source=READER/name
+                 if source.exists():shutil.copytree(source,Path(env['XDG_'+name.upper()+'_HOME']),dirs_exist_ok=True,ignore=shutil.ignore_patterns('__pycache__'))

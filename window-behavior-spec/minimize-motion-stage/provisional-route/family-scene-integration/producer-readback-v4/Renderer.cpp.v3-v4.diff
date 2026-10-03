@@ -1,0 +1,94 @@
+--- producer-highp-v3/Renderer.cpp
++++ producer-readback-v4/Renderer.cpp
+@@ -2,6 +2,7 @@
+ #include "CommitLedger.hpp"
+ #include "BackendPolicy.hpp"
+ #include "LibraryMaterial.hpp"
++#include "ReadbackImage.hpp"
+ #include <QByteArray>
+ #include <QCryptographicHash>
+ #include <QJsonArray>
+@@ -26,6 +27,8 @@
+ #include <poll.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
++#include <cstdio>
++#include <set>
+ 
+ using namespace OwnedRoute;
+ static uint64_t monotonicNs(){timespec t{};clock_gettime(CLOCK_MONOTONIC,&t);return uint64_t(t.tv_sec)*1000000000+t.tv_nsec;}
+@@ -62,6 +65,7 @@
+     QJsonObject waitingRetarget;std::vector<Output*> required;
+     uint64_t startedNs=0,durationNs=400000000;bool running=false,readySent=false,endpointSent=false,quit=false,announced=false,surfacesEnabled=true,swapping=false;
+     std::string deferredCancel;uint64_t routeAcceptedNs=0,endpointHeldNs=0;
++    int readbackDirectory=-1;std::set<std::string> readbackSamples;
+     size_t uploadCount=0,transparentCommitCount=0;bool backendSupported=false,rasterFixture=false;double sampleProgress=0;QByteArray input;
+     static GLuint compile(GLenum type,const char* source){GLuint s=glCreateShader(type);glShaderSource(s,1,&source,nullptr);glCompileShader(s);GLint ok=0;glGetShaderiv(s,GL_COMPILE_STATUS,&ok);if(!ok){glDeleteShader(s);throw std::runtime_error("GPU shader compilation failed");}return s;}
+     void initializeEGL(){
+@@ -212,6 +216,26 @@
+         if(!o.alive||!o.configured||!o.frameReady||o.outstanding||o.endpointPresented)return false;
+         return !o.clearCommitted||(ledger.isActive()&&std::find(required.begin(),required.end(),&o)!=required.end());
+     }
++    void diagnosticReadback(Output& o,const Frame& frame){
++        if(readbackDirectory<0)return;
++        const auto sample=frame.token+":"+std::to_string(frame.generation)+":"+std::to_string(frame.progress);
++        if(!readbackSamples.insert(sample).second)return;
++        const uint64_t count=uint64_t(o.bufferWidth)*o.bufferHeight*4;
++        if(o.bufferWidth<=0||o.bufferHeight<=0||count>256*1024*1024)throw std::runtime_error("readback extent exceeded");
++        QJsonObject attributes;bool valid=true;
++        for(auto entry:{std::pair{"red",EGL_RED_SIZE},std::pair{"green",EGL_GREEN_SIZE},std::pair{"blue",EGL_BLUE_SIZE},std::pair{"alpha",EGL_ALPHA_SIZE},std::pair{"buffer",EGL_BUFFER_SIZE},std::pair{"samples",EGL_SAMPLES},std::pair{"sampleBuffers",EGL_SAMPLE_BUFFERS},std::pair{"configId",EGL_CONFIG_ID},std::pair{"colorBufferType",EGL_COLOR_BUFFER_TYPE},std::pair{"nativeVisualId",EGL_NATIVE_VISUAL_ID}}){EGLint value=0;valid=eglGetConfigAttrib(eglDisplay,config,entry.second,&value)&&valid;attributes[entry.first]=value;}
++        QJsonObject surface;for(auto entry:{std::pair{"width",EGL_WIDTH},std::pair{"height",EGL_HEIGHT}}){EGLint value=0;valid=eglQuerySurface(eglDisplay,o.egl,entry.second,&value)&&valid;surface[entry.first]=value;}
++        QJsonObject glBits;for(auto entry:{std::pair{"red",GL_RED_BITS},std::pair{"green",GL_GREEN_BITS},std::pair{"blue",GL_BLUE_BITS},std::pair{"alpha",GL_ALPHA_BITS},std::pair{"readFormat",GL_IMPLEMENTATION_COLOR_READ_FORMAT},std::pair{"readType",GL_IMPLEMENTATION_COLOR_READ_TYPE},std::pair{"sampleBuffers",GL_SAMPLE_BUFFERS},std::pair{"samples",GL_SAMPLES},std::pair{"framebuffer",GL_FRAMEBUFFER_BINDING}}){GLint value=0;glGetIntegerv(entry.second,&value);glBits[entry.first]=value;}
++        const auto eglError=eglGetError();const auto inspectionError=glGetError();
++        if(!valid||eglError!=EGL_SUCCESS||inspectionError!=GL_NO_ERROR)throw std::runtime_error("readback buffer inspection failed");
++        std::vector<unsigned char> pixels(count);GLint pack=0;glGetIntegerv(GL_PACK_ALIGNMENT,&pack);glPixelStorei(GL_PACK_ALIGNMENT,1);
++        glReadPixels(0,0,o.bufferWidth,o.bufferHeight,GL_RGBA,GL_UNSIGNED_BYTE,pixels.data());const auto readError=glGetError();glPixelStorei(GL_PACK_ALIGNMENT,pack);const auto restoreError=glGetError();
++        if(readError!=GL_NO_ERROR||restoreError!=GL_NO_ERROR)throw std::runtime_error("owned framebuffer readback failed");
++        const auto topLeft=OwnedReadback::topLeftRows(pixels,o.bufferWidth,o.bufferHeight);
++        const auto filename="owned-"+std::to_string(frame.sequence)+"-"+std::to_string(frame.generation)+".png";
++        OwnedReadback::publishPNG(readbackDirectory,filename,o.bufferWidth,o.bufferHeight,topLeft);
++        emitEvent({{"event","ownedFramebufferReadback"},{"token",qs(frame.token)},{"digest",qs(frame.digest)},{"stableId",qs(frame.identity.stable)},{"pid",double(frame.identity.pid)},{"sequence",QString::number(frame.sequence)},{"output",qs(frame.output)},{"generation",double(frame.generation)},{"progress",frame.progress},{"members",membersJson(frame.members)},{"bufferWidth",frame.bufferWidth},{"bufferHeight",frame.bufferHeight},{"filename",qs(filename)},{"rawSHA256",QString::fromLatin1(QCryptographicHash::hash(QByteArray(reinterpret_cast<const char*>(topLeft.data()),topLeft.size()),QCryptographicHash::Sha256).toHex())},{"encoding","premultiplied-RGBA8-top-left"},{"eglConfig",attributes},{"eglSurface",surface},{"glBuffer",glBits},{"readError",double(readError)},{"nativeAuthority",false},{"presentationProof",false}});
++    }
+     void draw(Output& o,double p,uint64_t batchNs){
+         if(!needsDraw(o))return;
+         const bool active=ledger.isActive()&&std::find(required.begin(),required.end(),&o)!=required.end();
+@@ -240,7 +264,7 @@
+         uint64_t number=0;std::optional<Frame> submittedScene;
+         if(active){
+             auto frame=ledger.prepareFamily(o.name,o.generation,p,monotonicNs(),o.bufferWidth,o.bufferHeight);if(!frame){cancel("frame ledger rejected submission");return;}
+-            number=frame->sequence;submittedScene=*frame;auto f=std::make_unique<Feedback>(Feedback{this,&o,o.generation,*frame,wp_presentation_feedback(presentation,o.surface),false,false});
++            number=frame->sequence;submittedScene=*frame;diagnosticReadback(o,*frame);auto f=std::make_unique<Feedback>(Feedback{this,&o,o.generation,*frame,wp_presentation_feedback(presentation,o.surface),false,false});
+             static const wp_presentation_feedback_listener feedbackListener={
+                 [](void* p,struct wp_presentation_feedback*,wl_output* output){auto& f=*static_cast<Feedback*>(p);if(output==f.output->proxy)f.sync=true;else f.mismatch=true;},
+                 [](void* p,struct wp_presentation_feedback*,uint32_t hi,uint32_t lo,uint32_t ns,uint32_t,uint32_t seqhi,uint32_t seqlo,uint32_t){auto& f=*static_cast<Feedback*>(p);f.owner->feedbackDone(f,((uint64_t(hi)<<32)|lo)*1000000000+ns,(uint64_t(seqhi)<<32)|seqlo);},
+@@ -379,8 +403,16 @@
+         }
+     }
+ public:
+-    explicit Renderer(bool diagnostic=false):rasterFixture(diagnostic){}
++    explicit Renderer(bool diagnostic=false,const std::string& readback=""):rasterFixture(diagnostic){
++        if(!readback.empty()){
++            if(!diagnostic)throw std::invalid_argument("readback only available in raster diagnostic mode");
++            struct stat before{};if(lstat(readback.c_str(),&before)||!S_ISDIR(before.st_mode)||before.st_uid!=getuid()||(before.st_mode&0777)!=0700)throw std::invalid_argument("readback directory must be private existing owned non-symlink directory");
++            readbackDirectory=open(readback.c_str(),O_RDONLY|O_DIRECTORY|O_NOFOLLOW|O_CLOEXEC);struct stat after{};
++            if(readbackDirectory<0||fstat(readbackDirectory,&after)||before.st_dev!=after.st_dev||before.st_ino!=after.st_ino){if(readbackDirectory>=0)close(readbackDirectory);readbackDirectory=-1;throw std::invalid_argument("readback directory changed");}
++        }
++    }
+     ~Renderer(){
++        if(readbackDirectory>=0)close(readbackDirectory);
+         for(auto& o:outputs)closeOutput(*o);
+         if(eglDisplay!=EGL_NO_DISPLAY){eglMakeCurrent(eglDisplay,EGL_NO_SURFACE,EGL_NO_SURFACE,EGL_NO_CONTEXT);if(context!=EGL_NO_CONTEXT)eglDestroyContext(eglDisplay,context);eglTerminate(eglDisplay);}
+         for(auto& o:outputs){if(o->logical)zxdg_output_v1_destroy(o->logical);if(o->proxy)wl_output_release(o->proxy);}
+@@ -417,7 +449,11 @@
+ #ifndef OWNED_EGL_OFFLINE_TEST
+ int main(int argc,char** argv){
+     if(argc==2&&std::string(argv[1])=="--describe"){emitEvent({{"status","staged prototype"},{"protocols",QJsonArray{"layer-shell","presentation","viewporter","xdg-output","fractional-scale"}},{"namespace","hoskinson-window-motion"},{"nativeTested",false},{"serviceIntegrated",false}});return 0;}
+-    try{if(argc>2||(argc==2&&std::string(argv[1])!="--raster-fixture"))throw std::invalid_argument("unknown producer option");Renderer r(argc==2);r.run();return 0;}catch(const std::exception& e){emitEvent({{"event","fatal"},{"reason",e.what()},{"nativeAuthority",false}});return 1;}
++    try{bool diagnostic=false;std::string readback;
++        if(argc==2&&std::string(argv[1])=="--raster-fixture")diagnostic=true;
++        else if(argc==4&&std::string(argv[1])=="--raster-fixture"&&std::string(argv[2])=="--readback-dir"){diagnostic=true;readback=argv[3];}
++        else if(argc!=1)throw std::invalid_argument("unknown producer option");
++        Renderer r(diagnostic,readback);r.run();return 0;}catch(const std::exception& e){emitEvent({{"event","fatal"},{"reason",e.what()},{"nativeAuthority",false}});return 1;}
+ }
+ 
+ #endif

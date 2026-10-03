@@ -1,0 +1,144 @@
+{
+  "updatedUTC": "2026-10-01T19:27:30.888845+00:00",
+  "reportSHA256": "cd97803952151c433906cfdcbed38c22ec449702e39a7c52b7813f32503ab033",
+  "manifestSHA256": "25c8e1ccabab092ad7898e4524edb7ca274d9e66fe3941f2b240b1290a50f335",
+  "inputCount": 4119,
+  "linkCount": 8,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-77e68d81d7f1456f8a58e2816b1a080b.scope",
+    "coreLimit": 1
+  },
+  "preservationChecks": {
+    "allFrozenInputsExact": true,
+    "allFrozenLinksExact": true,
+    "allProductionCopiesExact": true,
+    "all15MainPreservationChecks": true,
+    "allRecordedPIDStartIdentitiesGone": true,
+    "privateRuntimeGone": true,
+    "privateClientsGoneBeforeUnload": true,
+    "nativePluginUnloadedNormally": true,
+    "noRemainingDescendantsOrCleanupErrors": true,
+    "archivedMandatoryParentTransportHealthy": true
+  },
+  "allPreservationChecks": true,
+  "acceptanceChecks": {
+    "normalClientLifecycle": false,
+    "noUnexpectedHelpers": false,
+    "allReachedProductChecksPass": false,
+    "terminalCampaignPass": false
+  },
+  "privateBaselineAccepted": false,
+  "processes": [
+    {
+      "pid": 878698,
+      "start": "10482339",
+      "gone": true
+    },
+    {
+      "pid": 879047,
+      "start": "10482423",
+      "gone": true
+    },
+    {
+      "pid": 879223,
+      "start": "10482534",
+      "gone": true
+    },
+    {
+      "pid": 878407,
+      "start": "10482181",
+      "gone": true
+    },
+    {
+      "pid": 878408,
+      "start": "10482184",
+      "gone": true
+    },
+    {
+      "pid": 878423,
+      "start": "10482241",
+      "gone": true
+    },
+    {
+      "pid": 878707,
+      "start": "10482341",
+      "gone": true
+    },
+    {
+      "pid": 878715,
+      "start": "10482342",
+      "gone": true
+    },
+    {
+      "pid": 878721,
+      "start": "10482342",
+      "gone": true
+    },
+    {
+      "pid": 878731,
+      "start": "10482342",
+      "gone": true
+    },
+    {
+      "pid": 878739,
+      "start": "10482344",
+      "gone": true
+    },
+    {
+      "pid": 878746,
+      "start": "10482344",
+      "gone": true
+    },
+    {
+      "pid": 878748,
+      "start": "10482345",
+      "gone": true
+    },
+    {
+      "pid": 878752,
+      "start": "10482345",
+      "gone": true
+    },
+    {
+      "pid": 878758,
+      "start": "10482345",
+      "gone": true
+    },
+    {
+      "pid": 878779,
+      "start": "10482349",
+      "gone": true
+    },
+    {
+      "pid": 878407,
+      "start": "10482181",
+      "gone": true
+    },
+    {
+      "pid": 878408,
+      "start": "10482184",
+      "gone": true
+    },
+    {
+      "pid": 878423,
+      "start": "10482241",
+      "gone": true
+    },
+    {
+      "pid": 879229,
+      "start": 10482545,
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false,
+  "physicalCadenceAccepted": false,
+  "rasterAccepted": false
+}

@@ -1,0 +1,42 @@
+{
+  "result": "pass",
+  "named": 14,
+  "samples": 2000,
+  "steps": 100,
+  "runtimeModuleAbsent": true,
+  "beforeImplementation": true,
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/family_preparation_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/family-preparation-formal-0-v1.log",
+      "logSHA256": "944b28c23865793250316e706d0866a1832e8d9cc4001a663bba4516268ad668"
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/family_preparation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/family-preparation-formal-1-v1.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": null,
+  "sources": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/family_preparation.qnt": "fe4f2f9f3100261b3f8fdacd7c3592fba41f422662efcb2aef2a1346f69579a3",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/family_preparation_test.qnt": "e2f84153dc84c0ab098c54f320e5d30a3bc3ad10442745caf957d95a96d20f8e",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/FAMILY_PREPARATION_CONTRACT.md": "5d5b34ac805f06a451c3f44a04d6f69655dae48586d0034ec5cd2d07896d9990"
+  },
+  "time": "2026-10-02T08:13:51.667964+00:00"
+}

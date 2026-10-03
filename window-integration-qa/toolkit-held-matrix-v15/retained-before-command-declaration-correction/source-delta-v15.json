@@ -1,0 +1,100 @@
+{
+  "evaluation_setup.py": {
+    "oldSHA256": "68a3176799add29342f52f4f13ce7c4e9019f2e580f9f44053af77794c223866",
+    "newSHA256": "1c08882cb9b311bd152f1c9414610f3d1f3793bb6ba3a25646a416707f961554",
+    "hunks": [
+      {
+        "oldRange": [
+          11,
+          11
+        ],
+        "old": "",
+        "new": "from arm_lock import locked_until, remaining\nfrom arm_observation import ipc_until, publish_until\n"
+      },
+      {
+        "oldRange": [
+          47,
+          48
+        ],
+        "old": "def pending_helper_processes(config):\n",
+        "new": "def pending_helper_processes(config,deadline=None):\n"
+      },
+      {
+        "oldRange": [
+          52,
+          52
+        ],
+        "old": "",
+        "new": "        if deadline is not None:remaining(deadline)\n"
+      },
+      {
+        "oldRange": [
+          64,
+          64
+        ],
+        "old": "",
+        "new": "    if deadline is not None:remaining(deadline)\n"
+      },
+      {
+        "oldRange": [
+          121,
+          141
+        ],
+        "old": "        while not terminal_closure(events(config),allow_refused=terminal) or pending_helper_processes(config):\n            if time.monotonic()>deadline:raise RuntimeError('Prior actual helpers not normally closed before arm')\n            time.sleep(.03)\n        ticket=dict(serial=len(config['evaluationTickets'])+1,nonce=secrets.token_hex(16),kind=kind,\n                    count=observer.EVALUATION_RULES[kind][0],relayOrdinal=observer.EVALUATION_RULES[kind][1],\n                    command=list(map(str,command)),root=copy.deepcopy(config['queryRoots']['harness']),\n                    compositor=copy.deepcopy(config['compositor']),instance=config['instance'],\n                    configuration=observer.material_witness(config['evaluationConfiguration']['path']),\n                    artifact=observer.material_witness(artifact) if artifact is not None else None,\n                    armIPC=observer.ipc_proof(config),armedNs=time.time_ns(),terminalAuthority=terminal)\n        if ticket['configuration']!=config['evaluationConfiguration']:raise RuntimeError('Startup configuration changed')\n        allowed=observer.evaluation_keys(ticket)\n        # Verify the exact live authorizing root with the same checks the real\n        # callback will perform; no future PID/name authorization is accepted.\n        updated=copy.deepcopy(config);updated['evaluationTickets'].append(ticket);updated['activeEvaluation']=ticket['nonce'];updated['allowed']+=allowed\n        environment=dict(WINDOW_QA_EVALUATION_NONCE=ticket['nonce'],WINDOW_QA_EVALUATION_KIND=kind,WINDOW_QA_EVALUATION_LIMIT=str(ticket['count']),WINDOW_QA_EVALUATION_ORDINAL='1')\n        observer.evaluation_operation(updated,environment,'hydrate')\n        with observer.locked_log(config['log']) as stream:\n            if observer.read_config(path)!=config or not terminal_closure(observer.rows(stream),allow_refused=terminal) or pending_helper_processes(config):raise RuntimeError('Prior helper boundary changed during arm')\n            helper_setup.write_json(path,updated);config.clear();config.update(updated)\n",
+        "new": "        diagnostics=dict(kind=kind,terminalAuthority=terminal,deadline=deadline,budgetSeconds=8,\n                         attempts=[],eventSnapshots={},accepted=False,atomicReplaceOccurred=False)\n        diagnostic_path=self.output/('arm-'+str(len(config['evaluationTickets'])+1)+'-'+secrets.token_hex(8)+'.json')\n        def retain(stage,rows=None,pending=None,**fields):\n            record=dict(stage=stage,monotonic=time.monotonic(),utcNs=time.time_ns(),**fields)\n            if rows is not None:\n                raw=json.dumps(rows,sort_keys=True,separators=(',',':'));key=observer.digest_bytes(raw.encode())\n                diagnostics['eventSnapshots'].setdefault(key,rows);record.update(rowsSHA256=key,rowCount=len(rows))\n            if pending is not None:record['exactPendingProcesses']=pending\n            diagnostics['attempts'].append(record)\n            if len(diagnostics['attempts'])>1200 or len(json.dumps(diagnostics))>33554432:\n                raise RuntimeError('Bounded arm diagnostics limit exceeded')\n        def current_quiet(stream,stage):\n            remaining(deadline)\n            same=observer.read_config(path)==config\n            if not same:\n                retain(stage,configChanged=True);raise RuntimeError('Evaluation configuration changed during arm')\n            rows=observer.rows(stream);remaining(deadline)\n            try:\n                # A completed abnormal helper is fatal even if another helper\n                # has not reached its terminal row yet.\n                ended={row.get('operation') for row in rows if row.get('event')=='terminal'}\n                completed_rows=[row for row in rows if row.get('event')!='started' or row.get('operation') in ended]\n                terminal_closure(completed_rows,allow_refused=terminal)\n                closed=terminal_closure(rows,allow_refused=terminal)\n            except BaseException as error:\n                retain(stage,rows=rows,configChanged=False,terminalError=repr(error));raise\n            remaining(deadline);pending=pending_helper_processes(config,deadline);remaining(deadline)\n            retain(stage,rows=rows,pending=pending,configChanged=False,terminalClosed=closed)\n            return closed and not pending\n        try:\n            while True:\n                remaining(deadline);self.session.guard();remaining(deadline)\n                with locked_until(config['log'],deadline,lambda:retain('lock-busy'))as stream:\n                    quiet=current_quiet(stream,'tentative-current')\n                if not quiet:\n                    time.sleep(min(.03,remaining(deadline)));continue\n                ticket=dict(serial=len(config['evaluationTickets'])+1,nonce=secrets.token_hex(16),kind=kind,\n                            count=observer.EVALUATION_RULES[kind][0],relayOrdinal=observer.EVALUATION_RULES[kind][1],\n                            command=list(map(str,command)),root=copy.deepcopy(config['queryRoots']['harness']),\n                            compositor=copy.deepcopy(config['compositor']),instance=config['instance'],\n                            configuration=observer.material_witness(config['evaluationConfiguration']['path']),\n                            artifact=observer.material_witness(artifact) if artifact is not None else None,\n                            armIPC=ipc_until(config,deadline),armedNs=time.time_ns(),terminalAuthority=terminal)\n                remaining(deadline)\n                if ticket['configuration']!=config['evaluationConfiguration']:raise RuntimeError('Startup configuration changed')\n                allowed=observer.evaluation_keys(ticket)\n                updated=copy.deepcopy(config);updated['evaluationTickets'].append(ticket);updated['activeEvaluation']=ticket['nonce'];updated['allowed']+=allowed\n                environment=dict(WINDOW_QA_EVALUATION_NONCE=ticket['nonce'],WINDOW_QA_EVALUATION_KIND=kind,WINDOW_QA_EVALUATION_LIMIT=str(ticket['count']),WINDOW_QA_EVALUATION_ORDINAL='1')\n                observer.evaluation_operation(updated,environment,'hydrate');remaining(deadline)\n                retain('prospective-authorized',prospectiveTicket=ticket,published=False)\n                with locked_until(config['log'],deadline,lambda:retain('lock-busy'))as stream:\n                    quiet=current_quiet(stream,'publication-current')\n                    if quiet:\n                        # Repeat the actual root/source/artifact checks after the\n                        # current locked scan; no command is dispatched here.\n                        observer.evaluation_operation(updated,environment,'hydrate');remaining(deadline)\n                        publish_until(path,updated,deadline,diagnostics)\n                        config.clear();config.update(updated);diagnostics['accepted']=True\n                        retain('published',ticket=ticket);break\n                time.sleep(min(.03,remaining(deadline)))\n        except BaseException as error:\n            diagnostics['error']=repr(error);diagnostics['accepted']=False\n            raise\n        finally:\n            diagnostics['finishedMonotonic']=time.monotonic()\n            self.report.setdefault('evaluationArmDiagnostics',[]).append(str(diagnostic_path))\n            fd=os.open(diagnostic_path,os.O_CREAT|os.O_EXCL|os.O_WRONLY|os.O_NOFOLLOW|os.O_CLOEXEC,0o600)\n            with os.fdopen(fd,'w')as out:json.dump(diagnostics,out,indent=2);out.write('\\n')\n"
+      }
+    ]
+  },
+  "run_native.py": {
+    "oldSHA256": "c9ea8e839ebf7b31cd29f94c6e90bc64cc7f88cdab417a029cf3a47b8d649af7",
+    "newSHA256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+    "hunks": [
+      {
+        "oldRange": [
+          6,
+          6
+        ],
+        "old": "",
+        "new": "import terminal_drain\n"
+      },
+      {
+        "oldRange": [
+          76,
+          76
+        ],
+        "old": "",
+        "new": "            report['terminalDrainInstall']=terminal_drain.prepare(env)\n"
+      },
+      {
+        "oldRange": [
+          126,
+          126
+        ],
+        "old": "",
+        "new": "            report['featureExecutionEnded']=True\n"
+      },
+      {
+        "oldRange": [
+          146,
+          146
+        ],
+        "old": "",
+        "new": "            if shell and shell_lifecycle is not None and shell_lifecycle.ready and shell.poll() is None:\n                try:report['terminalQueryDrain']=terminal_drain.normal_barrier(shell_lifecycle,env,config,session,report,output,pointer,keyboard)\n                except BaseException:report['terminalQueryDrainError']=traceback.format_exc();report['result']='fail'\n"
+      }
+    ]
+  },
+  "private_shell.py": {
+    "oldSHA256": "96a4a83b866badaa92b8872c96c949ff810e01841462aa018326c3cbb31152a8",
+    "newSHA256": "36e08660a805ba3d45e24ca2768bc0305ab263675e4f320f7707657f106be2f7",
+    "hunks": [
+      {
+        "oldRange": [
+          131,
+          132
+        ],
+        "old": "    if diagnostics and (set(diagnostics)!={'home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.qml','home/.config/omarchy/plugins/hoskinson.windows/widget_v65/TaskbarPopup.qml'} or descriptor.get('widgetDiagnosticsOnly') is not True or descriptor.get('widgetModified') is not True):\n",
+        "new": "    terminal=descriptor.get('widgetTerminalQuiesceOnly') is True\n    if terminal:\n        import terminal_qml\n        control=descriptor.get('terminalControl',{})\n        relative=terminal_qml.REL;current=(B/'payload'/relative).read_text()\n        original=(B.with_name('toolkit-held-matrix-v14')/'payload'/relative).read_text()\n        expected={'sourceOriginalFrozenV14SHA256':hashlib.sha256(original.encode()).hexdigest(),'sourceCopySHA256':sha(B/'payload'/relative),'inverseSourceSHA256':sha(B/'terminal_qml.py'),'nonceEnvironment':'WINDOW_QA_TERMINAL_NONCE','phase':'normal private teardown only','processReceiptAuthority':'actual onStarted PID/command generation and onExited code/status; no inferred PIDstart'}\n        if control!=expected or terminal_qml.reconstruct(current)!=original or descriptor.get('widgetDiagnosticsOnly') is not False:\n            raise ValueError('Exact private terminal QML/source inverse required')\n    if diagnostics and (set(diagnostics)!={'home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.qml','home/.config/omarchy/plugins/hoskinson.windows/widget_v65/TaskbarPopup.qml'} or not (descriptor.get('widgetDiagnosticsOnly') is True and not terminal or terminal) or descriptor.get('widgetModified') is not True):\n"
+      }
+    ]
+  }
+}

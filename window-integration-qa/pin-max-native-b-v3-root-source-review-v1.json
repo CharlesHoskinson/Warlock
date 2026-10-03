@@ -1,0 +1,29 @@
+{
+  "schema": "root-pin-b-markers-v3-review-v1",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-02e4fe26efd44195a8bd5cfc7a144119.scope",
+    "coreLimit": 1
+  },
+  "observedUTC": "2026-10-03T00:13:56.263332+00:00",
+  "sourceInputsSHA256": "71d9ca325fd96be40f792abb741ff9a62c2ea78614685aabf2f9f8c210573416",
+  "files": 64869,
+  "wholeFailedParentFiles": 64699,
+  "allBytesModesLinksDirectoriesMatch": true,
+  "wholeControllerInverse": true,
+  "originalTestMethodsASTExact": true,
+  "reviewed": "Complete typed marker diff, new three CPU cases, conservation/capture and owning ConfigActions/NativePinState/observer mapping.",
+  "priorRootInvariantClassificationIncorrect": true,
+  "expectedPinMarkers": [
+    true,
+    true
+  ],
+  "expectedUnpinMarkers": [
+    false,
+    true
+  ],
+  "remaining18ModeGeometryFieldsConservedImmediately": true,
+  "productChanged": false,
+  "approved": "Freeze exact derivative, actual frozen location preflight then one private B01-B12 attempt.",
+  "nativeExecuted": false,
+  "fullBParityAccepted": false
+}

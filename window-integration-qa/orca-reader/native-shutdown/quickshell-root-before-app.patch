@@ -1,0 +1,23 @@
+--- a/src/launch/launch.cpp
++++ b/src/launch/launch.cpp
+@@ -312,12 +312,14 @@
+ 	qs::ipc::IpcServer::start();
+ 	QsPaths::instance()->createLock();
+ 
+-	auto root = RootWrapper(args.configPath, shellId);
+-	QGuiApplication::setQuitOnLastWindowClosed(false);
+-
+-	exitDaemon(0);
+-
+-	auto code = QGuiApplication::exec();
++	int code;
++	{
++		auto root = RootWrapper(args.configPath, shellId);
++		QGuiApplication::setQuitOnLastWindowClosed(false);
++
++		exitDaemon(0);
++		code = QGuiApplication::exec();
++	} // Destroy the QML engine and windows while QGuiApplication is alive.
+ 	delete app;
+ 	return code;
+ }

@@ -1,0 +1,10 @@
+# Independent held terminal replay
+
+Read-only artifact/proc/filesystem replay outside the frozen producer stage. No native IPC, compositor, QS, toolkit client, input, lifecycle commands or source changes. Existing failures stay failed. All output artifacts use O_EXCL/no-follow/0600 and preserve malformed/missing/unreached evidence as failed checks.
+
+Acceptance requires four exact variants and all 52 distinct expected cases. Replays actual raw down state, exact native target/mode/type, separate independent peer focus, real interruption/retirement without fabricated release, unchanged group head/current/member order and genuine release completion/callback increments. Input command journal must contain legal balanced transitions under one exact PID/start and normal zero EOF. Minimize requires actual shell-owned frontend receipt/full EOF, real widget layer/item/cursor authority and actual presented capture/seed/swap retirement evidence. No ACK alone proves outcomes.
+
+Replay full raw helper JSONL/config archive, uniqueness/cardinality/exact PID starts, zero terminal/delegate status and all recorded processes gone. Require normal public fixture quit/QS/service/input lifetimes, no forced disposal, recorded native unload ordering and actual 'ok' artifact/probe unload. Host/runtime cleanup, all 18 main observations and full current frozen source bytes/modes/links are independently checked. Record unavailable historical geometry/pin or timing observations as replay gaps, not inferred truth.
+
+
+V2 adds HeldV3 exact QS probe replay: explicit normalQuit true, one successful source-backed startup ping following only defined pending replies, actual exact registered PID/config/shell-ID schema, one genuine normal-kill reply, complete raw CLI PID/start/argv/status/stdout/stderr/times and all probe/QS identities gone. Natural startup exit cannot satisfy explicit normal quit. Audit only after the root declares the actual handle terminal. No frozen producer source or prior auditor artifact changes.

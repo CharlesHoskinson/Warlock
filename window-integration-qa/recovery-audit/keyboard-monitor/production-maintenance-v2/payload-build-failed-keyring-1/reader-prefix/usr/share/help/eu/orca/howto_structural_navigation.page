@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_structural_navigation" xml:lang="eu">
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <link type="next" xref="howto_tables"/>
+    <title type="sort">3. Egitura-nabigazioa</title>
+    <desc>Izenburuen eta beste elementu batzuen arabera mugitzea</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Egitura-nabigazioa</title>
+  <p><app>Orca</app> aplikazioaren egitura-nabigazioaren bidez, dokumentu baten barruko elementuen artean mugitu zaitezke. Nabigazioan kontuan hartuko diren elementu motak honakoak dira:</p>
+  <list>
+    <item><p>Izenburuak eta beste testu-bloke batzuk</p></item>
+    <item><p>Inprimaki-kontrolak</p></item>
+    <item><p>Estekak</p></item>
+    <item><p>Zerrendak eta zerrenda-elementuak</p></item>
+    <item><p>Erreferentzia-puntuak, bereizleak eta aingurak</p></item>
+    <item><p>Taulak eta taula-gelaxkak</p></item>
+  </list>
+  <p>Banakako elementuen eta haiei lotutako laster-teklen zerrenda bat ikusteko, joan <link xref="commands_structural_navigation">Egitura-nabigazioko komandoak</link> atalera.</p>
+  <section id="applications">
+      <title>Onartutako aplikazioak</title>
+      <p>
+        Currently, Structural Navigation is fully implemented for web content,
+        including the help content you are reading now. <app>Orca</app>'s
+        Structural Navigation support for table cells has also been implemented
+        for <app>OpenOffice Writer</app> and <app>LibreOffice Writer</app>.
+        Implementing the remainder of the Structural Navigation objects to
+        these office suites requires changes to be made by their respective
+        developers. Implementing any Structural Navigation features within
+        <app>Evince</app> will require a similar effort on the part of its
+        developers.
+      </p>
+      <note style="tip">
+        <title>Ez ahaztu egitura-nabigazioa aktibatzea.</title>
+        <p>Zauden lekuaren arabera, beharrezkoa izan daiteke egitura-nabigazioa esplizituki aktibatzea hura erabili ahal izateko.</p>
+      </note>
+      <section id="toggling_required">
+        <title>Noiz den beharrezkoa egitura-nabigazioa aktibatzea</title>
+        <p>Web-orrietan, egitura-nabigazioa esplizituki aktibatzea ez da gehienetan beharrezkoa, dokumentuarekin duzun interakzioa gehien bat bere edukiak irakurtzea baita. Hortaz, adibidez 'H' sakatzen baduzu hori idazteko komando bat den ala nabigazioko komando bat den jakitea ez da beharrezkoa.</p>
+        <p>
+          On the other hand, in editable documents such as those found in
+          <app>OpenOffice</app> and <app>LibreOffice</app>, it is far more
+          difficult for <app>Orca</app> to accurately predict what you expect
+          to have happen as a result of pressing 'H'. Therefore, before you
+          can use any Structural Navigation command in an editable document,
+          you must first toggle Structural Navigation on by pressing
+          <keyseq><key>Orca Modifier</key><key>Z</key></keyseq>.
+          When you are finished navigating and ready to resume writing, press
+          <keyseq><key>Orca Modifier</key><key>Z</key></keyseq> again to toggle
+          Structural Navigation off.
+        </p>
+      </section>
+  </section>
+  <section id="settings">
+    <title>Ezarpenak</title>
+    <p>Goian aipatutako komandoez gain, <app>Orcak</app> egitura-nabigazioko euskarria duten aplikazioetarako bereziki erabilgarri dauden aukera konfiguragarriak ditu.</p>
+    <steps>
+      <title>Egitura-nabigazioa konfiguratzea</title>
+      <item>
+        <p>Eman fokua <app>Orcak</app> egitura-nabigazioko euskarria hornitzen dion aplikazio bati.</p>
+      </item>
+      <item>
+        <p>Sartu uneko aplikaziorako <link xref="preferences">Orcaren hobespenak</link> elkarrizketa-koadroan <keyseq><key>Orca aldatzailea</key><key>zuriunea</key></keyseq> sakatuz.</p>
+      </item>
+      <item>
+        <p>Joan elkarrizketa-koadroaren azken orrira, zure uneko aplikazioaren izena izango du.</p>
+      </item>
+      <item>
+        <p>Aztertu eta aldatu ezarpenak nahi duzun eran.</p>
+      </item>
+      <item>
+        <p>Sakatu <gui>Ados</gui> botoia.</p>
+      </item>
+    </steps>
+  </section>
+</page>

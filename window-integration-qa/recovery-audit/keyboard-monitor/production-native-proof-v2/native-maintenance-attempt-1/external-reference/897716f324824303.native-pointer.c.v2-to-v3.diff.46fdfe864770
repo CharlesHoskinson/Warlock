@@ -1,0 +1,27 @@
+--- /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v2/native-fixture/native-pointer.c	2026-10-01 03:06:51.172220653 -0600
++++ /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v3/native-fixture/native-pointer.c	2026-10-01 08:24:57.809870951 -0600
+@@ -1,6 +1,8 @@
++#define _GNU_SOURCE
+ #define _POSIX_C_SOURCE 200809L
+ #include <wayland-client.h>
+ #include "virtual-pointer-client.h"
++#include "private-producer-guard.h"
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -16,12 +18,11 @@
+ static void removed(void* data,struct wl_registry* registry,uint32_t name){(void)data;(void)registry;(void)name;}
+ static uint32_t now(void){struct timespec ts;clock_gettime(CLOCK_MONOTONIC,&ts);return (uint32_t)(ts.tv_sec*1000+ts.tv_nsec/1000000);}
+ int main(void) {
+-    const char* runtime=getenv("XDG_RUNTIME_DIR"),*display=getenv("WAYLAND_DISPLAY");struct stat st;
+-    if(!runtime||strncmp(runtime,"/tmp/kbn-",9)||stat(runtime,&st)||st.st_uid!=getuid()||(st.st_mode&0777)!=0700||!display||strchr(display,'/'))return 2;
+-    struct wl_display* connection=wl_display_connect(NULL);if(!connection)return 3;
++    int fd=private_producer_connect();if(fd<0)return 20;
++    struct wl_display* connection=wl_display_connect_to_fd(fd);if(!connection){fprintf(stderr,"private pointer Wayland connection failed\n");return 3;}
+     struct wl_registry* registry=wl_display_get_registry(connection);
+     const struct wl_registry_listener listener={global,removed};wl_registry_add_listener(registry,&listener,NULL);
+-    if(wl_display_roundtrip(connection)<0||!manager)return 4;
++    if(wl_display_roundtrip(connection)<0||!manager){fprintf(stderr,"private pointer registry/manager unavailable\n");return 4;}
+     struct zwlr_virtual_pointer_v1* pointer=zwlr_virtual_pointer_manager_v1_create_virtual_pointer(manager,NULL);
+     char line[256];
+     while(fgets(line,sizeof(line),stdin)) {

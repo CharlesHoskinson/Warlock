@@ -1,0 +1,17 @@
+--- before-scoped/ProcessRegistry.hpp
++++ current/ProcessRegistry.hpp
+@@ -8,12 +8,14 @@
+ #include <chrono>
+ #include <mutex>
+ #include <deque>
++#include "SourceAliases.hpp"
+ namespace Lifetime {
+ struct KernelExpected {
+  int parent=0,group=0;QString childStart,observerStart;QString executable;QByteArray executableSHA256,argv,cgroup;
+  std::map<QString,QString>namespaces;std::map<QByteArray,QByteArray>environment;
+  QString observerExecutable;QByteArray observerSHA256,observerARGV,observerCgroup;std::map<QByteArray,QByteArray>observerEnvironment;
+  std::map<QString,std::pair<QByteArray,uint32_t>>code;std::map<QString,QString>links;
++ std::shared_ptr<const SourceAliases>aliases;
+ };
+ struct KernelWitness {
+  int pid=0,parent=0,group=0;QString start,executable;QByteArray executableSHA256,argv,cgroup,maps,environment;

@@ -1,0 +1,18 @@
+
+  private_runtime_test
+    ok validOwnedPrivateTest passed 1 test(s)
+    ok mainRefusedTest passed 1 test(s)
+    ok legacyTmpRefusedTest passed 1 test(s)
+    ok uppercaseRefusedTest passed 1 test(s)
+    ok nestedSuffixRefusedTest passed 1 test(s)
+    ok implicitRefusedTest passed 1 test(s)
+    ok foreignRuntimeRefusedTest passed 1 test(s)
+    ok foreignParentRefusedTest passed 1 test(s)
+    ok foreignUserRefusedTest passed 1 test(s)
+    ok publicModeRefusedTest passed 1 test(s)
+    ok symlinkRefusedTest passed 1 test(s)
+    ok foreignBusRefusedTest passed 1 test(s)
+
+  12 passing (63ms)
+[ok] No violation found (474ms at 4219 traces/second).
+Use --seed=0x1509cab --backend=rust to reproduce.

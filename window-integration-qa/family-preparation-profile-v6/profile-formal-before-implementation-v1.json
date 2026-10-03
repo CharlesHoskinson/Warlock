@@ -1,0 +1,42 @@
+{
+  "result": "pass",
+  "named": 12,
+  "sampled": 2000,
+  "steps": 100,
+  "runtimeObserverAbsent": true,
+  "beforeImplementation": true,
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/preparation_profile_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/profile-formal-0-v1.log",
+      "logSHA256": "355b375d42dd12dc2f1f054c391d66bbfb6124a401dbb532c3755357198ba717"
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/preparation_profile.qnt",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--invariant=allProps",
+        "--verbosity=0",
+        "--seed=0x6002"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/profile-formal-1-v1.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "sources": {
+    "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/preparation_profile.qnt": "aad07eac412e253a5c519e2760c4f9b5c626f5393f592020f0577c4289ee53f7",
+    "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/preparation_profile_test.qnt": "ba4004f334963fcf9a6dda39236b870989fa50deefc0c8a5aba4da335c589c2b",
+    "/home/hoskinson/window-integration-qa/family-preparation-profile-v6/PREPARATION_PROFILE_CONTRACT.md": "f7a7c3d088b33e1db5499b28c43bc4b8ddd20b7648ce133b8164af0f88957e11"
+  },
+  "scope": null,
+  "time": "2026-10-02T07:41:39.273998+00:00"
+}

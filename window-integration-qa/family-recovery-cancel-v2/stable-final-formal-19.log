@@ -1,0 +1,10 @@
+
+  service_restart_test
+    ok liveOldRootCannotBeReplacedTest passed 1 test(s)
+    ok exactDeadRootCanRegisterFreshLifetimeTest passed 1 test(s)
+    ok sameOldLifetimeCannotBeRefreshedTest passed 1 test(s)
+    ok sourceReplacementCannotResetAuthorityTest passed 1 test(s)
+    ok memberReplacementCannotResetAuthorityTest passed 1 test(s)
+    ok reusedPidWithFreshStartCanRegisterExactNewRootTest passed 1 test(s)
+
+  6 passing (39ms)

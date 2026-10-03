@@ -1,0 +1,17 @@
+{
+  "GLib": "2.88.3",
+  "GVFS": "1.60.2",
+  "source": {
+    "glib-gvfs.c": {
+      "url": "https://raw.githubusercontent.com/GNOME/glib/2.88.3/gio/gvfs.c",
+      "sha256": "83259873dc4ecb91dc37663b9271424886b7ca3532587ab0736236d5e50603ab"
+    },
+    "gvfs-gdaemonvfs.c": {
+      "url": "https://raw.githubusercontent.com/GNOME/gvfs/1.60.2/client/gdaemonvfs.c",
+      "sha256": "950dfb8546aa4e452aa31d8969deb4890fc876312ddfac14e7eccdb85b79a451"
+    }
+  },
+  "retainedReportSHA256": "b26aa41b27439c289623fd37552a60597d7d5c33c9299f397406cff38bdc8c7d",
+  "nativeCorrectedExitProved": false,
+  "nativeNoGVFSAutoloadProved": false
+}

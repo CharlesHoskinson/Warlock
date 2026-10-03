@@ -1,0 +1,38 @@
+{
+  "result": "review-complete",
+  "causalReplaySHA256": "e98da8640b3faff22c9305da70e3583f455dc16a42722bc92b4df39a2da10936",
+  "terminalAuditSHA256": "82d60e8c0bd56b1de15e195e3aa430343fbdb0f4252cbfa8d237d9c7db460476",
+  "sourceDiagnosisSHA256": "cd1016845d25f6648f39a5537f909dac5e50beea03ed0aa5621b5a236a9c2022",
+  "strictTerminalChecks": 12,
+  "allIndependentSafetySourceCleanup": true,
+  "originalBrowserFilesAccepted": false,
+  "sourceFacts": [
+    {
+      "path": "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/primary/KeybindManager.cpp",
+      "sha256": "8d8f35fc84c4a2f8de63ac2bf6f6531c651c6fa6d37b1aac7c8fc5d9342d4e40"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/toolkit-interruption-v5/native-candidate/barDeco.cpp",
+      "sha256": "4b68477742d544ab954743348af063a7b7d61415931cdea7e7ded794bf29267e"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/browser-files-flow-v17/continuation-primary-InputManager.cpp",
+      "sha256": "feedf32e2e3d23aeaed7a02ef4ab94be2d66f4b22873b3166026da1e9ece4765"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/browser-files-flow-v17/continuation-primary-wtype-v0.4-main.c",
+      "sha256": "713597abfc049196864ffcc041bb6683c761b71d68ed2da86cdcfc6b7ed3d244"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/browser-files-flow-v17/attempt-1/host/runtime-archive/hyprland.lua",
+      "sha256": "9ff5918bc0cfb9d363267fbe276426547819341dfdb10ece2048d891d9bc2916"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/browser-files-flow-v17/private-plugin.lua",
+      "sha256": "5323e84d93b08e01a0ef8a1b7e182ec784b9ef47db340e6588744744c5436225"
+    }
+  ],
+  "sourceBranchActualCausalityProved": false,
+  "nativeExecuted": false,
+  "mainWrites": false
+}

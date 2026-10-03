@@ -1,0 +1,31 @@
+{
+  "updatedUTC": "2026-10-01T22:43:37.622381+00:00",
+  "manifestSHA256": "946b791740fb3d0ce4b447ee6361f541d09b1831928dd36184f693508c3cb060",
+  "preflightAll40056BytesModes13758LinksPassed": true,
+  "unchangedOriginalGuards": [
+    "run_native.py",
+    "browser_exec.py",
+    "process_evidence.py",
+    "runtime_inputs.py",
+    "cdp_readonly.py",
+    "main_observations.py",
+    "main_observer.py",
+    "network_guard.py",
+    "catalog_preservation.py",
+    "private_bus_host.py",
+    "draft_focus.qnt",
+    "runtime_authority.qnt"
+  ],
+  "reviewed": [
+    "exact final os.execve3selector witness withPID/start/source/exe hash unchanged",
+    "actual same private daemon socket+kernelpeer around bounded readonly ListNames UnixPID UnixUID queries",
+    "root exact UID/cgroup/exe/PID/start before after every query",
+    "kernel initialrange retained diagnostic only; no currentgetenv/GIO claim",
+    "actual failedquery or absent PIDbinding refuses before input",
+    "all15feature10host18main renderer sandbox/maps/normalhelper/unload gates unchanged"
+  ],
+  "sourceStageReviewSHA256": "9c81b85d563a144efc8e8fefd7fb7cddd17349c4daf3ff45a2b7a4f91c1bc72b",
+  "nativeAccepted": false,
+  "productionAccepted": false,
+  "mainWrites": false
+}

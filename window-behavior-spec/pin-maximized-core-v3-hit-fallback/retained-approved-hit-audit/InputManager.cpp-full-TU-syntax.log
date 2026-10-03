@@ -1,0 +1,21 @@
+/home/hoskinson/window-behavior-spec/pin-maximized-hit-audit-v1/intended/InputManager.cpp: In lambda function:
+/home/hoskinson/window-behavior-spec/pin-maximized-hit-audit-v1/intended/InputManager.cpp:1171:34: warning: ignoring returned value of type ‘Config::Actions::ActionResult’ {aka ‘std::expected<Config::Actions::SActionResult, Config::SConfigError>’}, declared with attribute ‘nodiscard’ [-Wunused-result]
+ 1171 |             Config::Actions::dpms(Config::Actions::TOGGLE_ACTION_ENABLE, std::nullopt);
+      |             ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-hit-audit-v1/intended/InputManager.cpp:9:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/managers/input/../../config/shared/actions/ConfigActions.hpp:91:18: note: in call to ‘Config::Actions::ActionResult Config::Actions::dpms(eTogglableAction, std::optional<Hyprutils::Memory::CSharedPointer<Monitor::CMonitor> >)’, declared here
+   91 |     ActionResult dpms(eTogglableAction action, std::optional<PHLMONITOR> mon);
+      |                  ^~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/managers/input/../../config/shared/actions/ConfigActions.hpp:36:11: note: ‘Config::Actions::ActionResult’ {aka ‘std::expected<Config::Actions::SActionResult, Config::SConfigError>’} declared here
+   36 |     using ActionResult = std::expected<SActionResult, SActionError>;
+      |           ^~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-hit-audit-v1/intended/InputManager.cpp: In lambda function:
+/home/hoskinson/window-behavior-spec/pin-maximized-hit-audit-v1/intended/InputManager.cpp:1183:34: warning: ignoring returned value of type ‘Config::Actions::ActionResult’ {aka ‘std::expected<Config::Actions::SActionResult, Config::SConfigError>’}, declared with attribute ‘nodiscard’ [-Wunused-result]
+ 1183 |             Config::Actions::dpms(Config::Actions::TOGGLE_ACTION_ENABLE, std::nullopt);
+      |             ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/managers/input/../../config/shared/actions/ConfigActions.hpp:91:18: note: in call to ‘Config::Actions::ActionResult Config::Actions::dpms(eTogglableAction, std::optional<Hyprutils::Memory::CSharedPointer<Monitor::CMonitor> >)’, declared here
+   91 |     ActionResult dpms(eTogglableAction action, std::optional<PHLMONITOR> mon);
+      |                  ^~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/managers/input/../../config/shared/actions/ConfigActions.hpp:36:11: note: ‘Config::Actions::ActionResult’ {aka ‘std::expected<Config::Actions::SActionResult, Config::SConfigError>’} declared here
+   36 |     using ActionResult = std::expected<SActionResult, SActionError>;
+      |           ^~~~~~~~~~~~

@@ -1,0 +1,135 @@
+{
+  "result": "retained-negative-parent-attribution-only",
+  "actualRawSHA256": "767b3556c3770d3b3a0ae780db7913fb0c36817822c9612228059cfd54a676cd",
+  "samples": [
+    {
+      "phase": "before",
+      "parentError": {
+        "type": "FileNotFoundError",
+        "errno": 2,
+        "error": "[Errno 2] No such file or directory: '/run/user/1000/wqa/8cfc/browser-profile/BrowserMetrics'"
+      },
+      "directories": {
+        "runtime": {
+          "path": "/run/user/1000/wqa/8cfc",
+          "device": 84,
+          "inode": 330465,
+          "uid": 1000,
+          "mode": 16832
+        },
+        "profile": {
+          "path": "/run/user/1000/wqa/8cfc/browser-profile",
+          "device": 84,
+          "inode": 330525,
+          "uid": 1000,
+          "mode": 16832
+        }
+      },
+      "fdNumber": 7,
+      "fdStat": {
+        "st_mode": 33152,
+        "st_dev": 84,
+        "st_ino": 330537,
+        "st_uid": 1000,
+        "st_gid": 1000,
+        "st_nlink": 0,
+        "st_size": 4194304,
+        "st_mtime_ns": 1790902056197512465,
+        "st_ctime_ns": 1790902056197512465
+      },
+      "fdinfo": {
+        "flags": 32770,
+        "mnt_id": 346,
+        "ino": 330537
+      },
+      "rootIdentity": {
+        "pid": 1953091,
+        "start": "12452662",
+        "uids": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7cced63944e843f6a134a3f06d170737.scope\n",
+        "exe": "/opt/brave-bin/brave",
+        "exeSHA256": "746c3445bb364d76619cb55491dc8bfa98552747ee44e7b1fc8554d16bba6858",
+        "mountNamespace": "mnt:[4026531832]"
+      },
+      "rootAfterExact": true,
+      "compositorAfterExact": true,
+      "rawHashesReplayed": true
+    },
+    {
+      "phase": "after",
+      "parentError": {
+        "type": "FileNotFoundError",
+        "errno": 2,
+        "error": "[Errno 2] No such file or directory: '/run/user/1000/wqa/8cfc/browser-profile/BrowserMetrics'"
+      },
+      "directories": {
+        "runtime": {
+          "path": "/run/user/1000/wqa/8cfc",
+          "device": 84,
+          "inode": 330465,
+          "uid": 1000,
+          "mode": 16832
+        },
+        "profile": {
+          "path": "/run/user/1000/wqa/8cfc/browser-profile",
+          "device": 84,
+          "inode": 330525,
+          "uid": 1000,
+          "mode": 16832
+        }
+      },
+      "fdNumber": 7,
+      "fdStat": {
+        "st_mode": 33152,
+        "st_dev": 84,
+        "st_ino": 330537,
+        "st_uid": 1000,
+        "st_gid": 1000,
+        "st_nlink": 0,
+        "st_size": 4194304,
+        "st_mtime_ns": 1790902056197512465,
+        "st_ctime_ns": 1790902056197512465
+      },
+      "fdinfo": {
+        "flags": 32770,
+        "mnt_id": 346,
+        "ino": 330537
+      },
+      "rootIdentity": {
+        "pid": 1953091,
+        "start": "12452662",
+        "uids": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7cced63944e843f6a134a3f06d170737.scope\n",
+        "exe": "/opt/brave-bin/brave",
+        "exeSHA256": "746c3445bb364d76619cb55491dc8bfa98552747ee44e7b1fc8554d16bba6858",
+        "mountNamespace": "mnt:[4026531832]"
+      },
+      "rootAfterExact": true,
+      "compositorAfterExact": true,
+      "rawHashesReplayed": true
+    }
+  ],
+  "strictV12FailureRetained": true,
+  "postDiskAfterFDObserved": false,
+  "historicalParentInodeModeObserved": false,
+  "parentDeletionActorEstablished": false,
+  "installedSourceBranchEstablished": false,
+  "primaryReference": {
+    "path": "/home/hoskinson/window-integration-qa/browser-files-flow-v12/primary/chromium-persistent-histograms-current.cc",
+    "sha256": "87b5e190634e3e6507f9bf4b8294a48806f7d64417e07d01054454d35a606f08",
+    "localMemoryBranchCreatesMappedFile": false
+  },
+  "nativeAccepted": false,
+  "nativeExecuted": false,
+  "mainWrites": false
+}

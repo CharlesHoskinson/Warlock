@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_structural_navigation" xml:lang="kk">
+  <info>
+    <link type="next" xref="commands_table"/>
+    <link type="guide" xref="commands#reading_documents"/>
+    <link type="seealso" xref="howto_forms"/>
+    <title type="sort">2. Құрылымдық навигация</title>
+    <title type="link">Құрылымдық навигация</title>
+    <desc>Элементтер бойынша навигация жасау командалары</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Құрылымдық навигация командалары</title>
+  <p>Келесі командаларды <app>Orca</app> құрылымдық навигация қолдауын ұсынатын қолданбаларда табылған тақырыптар, сілтемелер және басқа элементтер бойынша навигация жасау үшін пайдалануға болады.</p>
+  <list>
+    <item>
+      <p>Құрылымдық навигация пернелерін іске қосу/сөндіру: <keyseq><key>Orca модификаторы</key><key>Z</key></keyseq></p>
+    </item>
+  </list>
+  <section id="headings">
+    <title>Тақырыптар</title>
+      <list>
+        <item>
+          <p>Келесі және алдыңғы тақырып: <keyseq><key>H</key></keyseq> және <keyseq><key>Shift</key><key>H</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Тақырыптар тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>H</key></keyseq></p>
+        </item>
+        <item>
+          <p>1-ші деңгейдегі келесі және алдыңғы тақырып: <keyseq><key>1</key></keyseq> және <keyseq><key>Shift</key><key>1</key></keyseq></p>
+        </item>
+        <item>
+          <p>1-ші деңгейдегі тақырыптар тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>1</key></keyseq></p>
+        </item>
+        <item>
+          <p>2-ші деңгейдегі келесі және алдыңғы тақырып: <keyseq><key>2</key></keyseq> және <keyseq><key>Shift</key><key>2</key></keyseq></p>
+        </item> 
+        <item>
+          <p>2-ші деңгейдегі тақырыптар тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>2</key></keyseq></p>
+        </item>
+        <item>
+          <p>3-ші деңгейдегі келесі және алдыңғы тақырып: <keyseq><key>3</key></keyseq> және <keyseq><key>Shift</key><key>3</key></keyseq></p>
+        </item> 
+        <item>
+          <p>3-ші деңгейдегі тақырыптар тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>3</key></keyseq></p>
+        </item>
+        <item>
+          <p>4-ші деңгейдегі келесі және алдыңғы тақырып: <keyseq><key>4</key></keyseq> және <keyseq><key>Shift</key><key>4</key></keyseq></p>
+        </item> 
+        <item>
+          <p>4-ші деңгейдегі тақырыптар тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>4</key></keyseq></p>
+        </item>
+        <item>
+          <p>5-ші деңгейдегі келесі және алдыңғы тақырып: <keyseq><key>5</key></keyseq> және <keyseq><key>Shift</key><key>5</key></keyseq></p>
+        </item> 
+        <item>
+          <p>5-ші деңгейдегі тақырыптар тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>5</key></keyseq></p>
+        </item>
+        <item>
+          <p>6-шы деңгейдегі келесі және алдыңғы тақырып: <keyseq><key>6</key></keyseq> және <keyseq><key>Shift</key><key>6</key></keyseq></p>
+        </item> 
+        <item>
+          <p>6-шы деңгейдегі тақырыптар тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>6</key></keyseq></p>
+        </item>
+      </list>
+    </section>
+    <section id="forms">
+      <title>Пішіндер</title>
+      <list>
+        <item>
+          <p>Келесі және алдыңғы пішін өрісі: <keyseq><key>F</key></keyseq> және <keyseq><key>Shift</key><key>F</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Пішін өрістерінің тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>F</key></keyseq></p>
+        </item>
+        <item>
+          <p>Келесі және алдыңғы батырма: <keyseq><key>B</key></keyseq> және <keyseq><key>Shift</key><key>B</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Батырмалар тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>B</key></keyseq></p>
+        </item>
+        <item>
+          <p>Келесі және алдыңғы құрама тізім: <keyseq><key>C</key></keyseq> және <keyseq><key>Shift</key><key>C</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Құрама тізімдердің тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>C</key></keyseq></p>
+        </item>
+        <item>
+          <p>Келесі және алдыңғы енгізу өрісі: <keyseq><key>E</key></keyseq> және <keyseq><key>Shift</key><key>E</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Енгізу өрістерінің тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>E</key></keyseq></p>
+        </item>
+        <item>
+          <p>Келесі және алдыңғы радио батырма: <keyseq><key>R</key></keyseq> және <keyseq><key>Shift</key><key>R</key></keyseq></p>
+        </item>
+        <item>
+          <p>Радио батырмалар тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>R</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Келесі және алдыңғы жалауша: <keyseq><key>X</key></keyseq> және <keyseq><key>Shift</key><key>X</key></keyseq></p>
+        </item>
+        <item>
+          <p>Жалаушалар тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>X</key></keyseq></p>
+        </item> 
+      </list>
+    </section>
+    <section id="links">
+    <title>Сілтемелер</title>
+      <list>
+        <item>
+          <p>Келесі және алдыңғы сілтеме: <keyseq><key>K</key></keyseq> және <keyseq><key>Shift</key><key>K</key></keyseq></p>
+        </item>
+        <item>
+          <p>Сілтемелер тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>K</key></keyseq></p>
+        </item>
+        <item>
+          <p>Келесі және алдыңғы кірілмеген сілтеме: <keyseq><key>U</key></keyseq> және <keyseq><key>Shift</key><key>U</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Кірілмеген сілтемелер тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>U</key></keyseq></p>
+        </item>
+        <item>
+          <p>Келесі және алдыңғы кірілген сілтеме: <keyseq><key>V</key></keyseq> және <keyseq><key>Shift</key><key>V</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Кірілген сілтемелер тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>V</key></keyseq></p>
+        </item>
+      </list>
+    </section>
+    <section id="lists">
+      <title>Тізімдер</title>
+      <list>
+        <item>
+          <p>Келесі және алдыңғы тізім: <keyseq><key>L</key></keyseq> және <keyseq><key>Shift</key><key>L</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Тізімдер тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>L</key></keyseq></p>
+        </item>
+        <item>
+          <p>Келесі және алдыңғы тізім элементі: <keyseq><key>I</key></keyseq> және <keyseq><key>Shift</key><key>I</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Тізім элементтерінің тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>I</key></keyseq></p>
+        </item>
+      </list>
+    </section>
+    <section id="tables">
+      <title>Кестелер</title>
+      <list>
+        <item>
+          <p>Келесі және алдыңғы кесте: <keyseq><key>T</key></keyseq> және <keyseq><key>Shift</key><key>T</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Кестелер тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>T</key></keyseq></p>
+        </item>
+        <item>
+          <p>Сол жақтағы ұяшық: <keyseq><key>Alt</key><key>Shift</key><key>Left</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Оң жақтағы ұяшық: <keyseq><key>Alt</key><key>Shift</key><key>Right</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Жоғарыдағы ұяшық: <keyseq><key>Alt</key><key>Shift</key><key>Up</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Төмендегі ұяшық: <keyseq><key>Alt</key><key>Shift</key><key>Down</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Кестедегі бірінші ұяшық: <keyseq><key>Alt</key><key>Shift</key><key>Home</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Кестедегі соңғы ұяшық: <keyseq><key>Alt</key><key>Shift</key><key>End</key></keyseq></p>
+        </item> 
+      </list>
+    </section>
+    <section id="text_blocks">
+      <title>Мәтін блоктары</title>
+      <list>
+        <item>
+          <p>Келесі және алдыңғы абзац: <keyseq><key>P</key></keyseq> және <keyseq><key>Shift</key><key>P</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Абзацтар тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>P</key></keyseq></p>
+        </item>
+        <item>
+          <p>Келесі және алдыңғы цитата блогы: <keyseq><key>Q</key></keyseq> және <keyseq><key>Shift</key><key>Q</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Цитата блоктарының тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>Q</key></keyseq></p>
+        </item>
+        <item>
+          <p>Келесі және алдыңғы "үлкен объект": <keyseq><key>O</key></keyseq> және <keyseq><key>Shift</key><key>O</key></keyseq></p>
+        </item> 
+        <item>
+          <p>"Үлкен объектілер" тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>O</key></keyseq></p>
+        </item>
+       </list>
+    </section>
+    <section id="other">
+      <title>Басқа элементтер</title>
+      <list>
+        <item>
+          <p>Келесі және алдыңғы бағдар: <keyseq><key>M</key></keyseq> және <keyseq><key>Shift</key><key>M</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Бағдарлар тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>M</key></keyseq></p>
+        </item>
+        <item>
+          <p>Келесі және алдыңғы ажыратқыш: <keyseq><key>S</key></keyseq> және <keyseq><key>Shift</key><key>S</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Келесі және алдыңғы "шертілетін": <keyseq><key>A</key></keyseq> және <keyseq><key>Shift</key><key>A</key></keyseq></p>
+        </item> 
+        <item>
+          <p>"Шертілетіндер" тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>A</key></keyseq></p>
+        </item>
+        <item>
+          <p>Келесі және алдыңғы сурет: <keyseq><key>G</key></keyseq> және <keyseq><key>Shift</key><key>G</key></keyseq></p>
+        </item>
+        <item>
+          <p>Суреттер тізімін көрсету: <keyseq><key>Alt</key><key>Shift</key><key>G</key></keyseq></p>
+        </item>
+        <item>
+          <p>Ағымдағы контейнердің басы мен соңы: <keyseq><key>Shift</key><key>Comma</key></keyseq> және <keyseq><key>Comma</key></keyseq></p>
+        </item>
+      </list>
+    </section>
+</page>

@@ -1,0 +1,29 @@
+{
+  "result": "pass",
+  "original": {
+    "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_desktop.py",
+    "sha256": "e10e83de40ffb3bd3c824a7515066390ecd7c8916454e2fd366451f06521c461",
+    "mode": 420
+  },
+  "proposed": {
+    "path": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v2/native_desktop.py.proposed",
+    "sha256": "a598dc166757f571db56dc1479a197eb33baa391c3e5e05dfdaf6ae1fa2aa7fa",
+    "mode": 384
+  },
+  "patch": {
+    "sha256": "ca3b961a3a88f3dba935d1ccbbaa33cc25e5441dab0c53e035777ef1db983720",
+    "mode": 384
+  },
+  "completeInverseExact": true,
+  "inheritedChangedMethods": [
+    "_capture_source_impl"
+  ],
+  "newMethods": [
+    "_capture_hidden_fused"
+  ],
+  "productionMotionUnchanged": true,
+  "sceneControllerUnchanged": true,
+  "batchPreviewsUnchanged": true,
+  "ownedCommandsUnchanged": true,
+  "applied": false
+}

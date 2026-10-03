@@ -1,0 +1,51 @@
+{
+  "result": "pass",
+  "named": 23,
+  "samples": 2000,
+  "steps": 100,
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "helper_failure_drain_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-helper-failure-drain-design-v2/formal-00.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "helper_failure_drain_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-helper-failure-drain-design-v2/formal-01.log",
+      "sha256": "c3855a0c3dca421da2426944017c1b88a475e7a23b270325412c6292ac1ec1f3"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "helper_failure_drain.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-helper-failure-drain-design-v2/formal-02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "sourceInputs": {
+    "/home/hoskinson/window-integration-qa/thumbnail-helper-failure-drain-design-v2/helper_failure_drain.qnt": "61348c30c923412da124a66baa7ec735eac3fe592ee219c7d075ab36bc6ea8f5",
+    "/home/hoskinson/window-integration-qa/thumbnail-helper-failure-drain-design-v2/helper_failure_drain_test.qnt": "e5b1ee933f42df568ddf776046bb386093aeae8991e8e7dbb8d41eeb1d61f746"
+  },
+  "runtimeApplied": false
+}

@@ -1,0 +1,71 @@
+PASS default typing passes
+PASS default Caps toggles
+PASS watch never consumes
+PASS watch Num toggles
+PASS watch Caps down packet is pre-event unlocked
+PASS watch Caps first up packet sees prior accepted lock
+PASS watch Caps unlock up packet carries prior lock while native clears
+PASS next watch packet uses accepted unlocked lookup
+PASS watch Num unlock release packet is consistently pre-event
+PASS next watch packet reflects accepted unlocked Num
+PASS captured Shift down packet precedes raw modifier change
+PASS captured H down lookup sees raw held Shift
+PASS captured H up retains pre-event Shift mask
+PASS captured Shift up packet includes raw pre-release Shift only
+PASS later lookup clears released raw Shift
+PASS custom Caps packet uses accepted pre-event unlocked lookup
+PASS custom Caps chord retains native unlocked state
+PASS custom Caps release uses same accepted lookup convention
+PASS custom Insert down packet is pre-event
+PASS custom Insert H packet captured with matching lookup state
+PASS custom Insert release preserves lookup identity
+PASS Insert H release stays captured after modifier release
+PASS first custom Caps captured before XKB
+PASS captured Caps has no accepted lock
+PASS second standalone Caps passes
+PASS second Caps toggles accepted lock exactly once
+PASS custom Caps chord captures real H key
+PASS chord release remains captured after modifier release
+PASS chord disarms double tap
+PASS chord never toggles Caps
+PASS full grab blocks accepted Shift modifier
+PASS raw observer retains Shift while native state suppressed
+PASS disconnect retains captured route tombstones
+PASS disconnect releases suppressed without native orphan
+PASS later typing passes after disconnect
+PASS captured repeats do not leave raw Shift stuck
+PASS preexisting accepted press retains real release under new grab
+PASS accepted held keys do not obstruct suppression quiescence
+PASS grab mutation resets native policy tap state
+PASS Caps H Caps is not a consecutive standalone double tap
+PASS release tombstones are device scoped
+PASS same key on two devices retains independent routes
+PASS permission fixture starts captured
+PASS revoked permission release silent and suppressed
+PASS fresh revoked packet passes without observation
+PASS keymap change retains captured original keysym and release
+PASS removed device cannot leak tombstone into reused identity
+PASS other client's exact stroke cannot be bypassed by custom double tap
+PASS explicit captured virtual Caps packet suppressed
+PASS virtual lock correction survives grab end
+PASS next ordinary virtual Caps toggle preserved
+PASS captured depressed modifier filtered while latched/layout preserved
+PASS real XKB generates Num lock virtual mask
+PASS full virtual grab freezes real Num toggle
+PASS real virtual Num correction retained after ungrab
+PASS accepted XKB shadow fixes next Num down timing
+PASS corrected virtual Num release retains accepted lock
+PASS actual keymap distinguishes locking Caps from ordinary H
+PASS repeated virtual Caps cycles match accepted XKB on each down and up
+PASS repeated virtual Caps cycles match accepted XKB on each down and up
+PASS repeated virtual Caps cycles match accepted XKB on each down and up
+PASS repeated virtual Caps cycles match accepted XKB on each down and up
+PASS repeated virtual Caps cycles match accepted XKB on each down and up
+PASS repeated virtual Caps cycles match accepted XKB on each down and up
+PASS repeated virtual Caps cycles match accepted XKB on each down and up
+PASS repeated virtual Caps cycles match accepted XKB on each down and up
+PASS keymap fixture begins with suppressed raw Caps offset
+PASS new-map modifier-only packet establishes accepted off baseline
+PASS new-map explicit zero preserves remapped accepted Caps on baseline
+PASS unrecognized modifier index cannot leak into replacement map
+SUMMARY checks=70 nativeCompositorInput=false

@@ -1,0 +1,25 @@
+{
+  "helperSHA256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+  "windowRequests": 0,
+  "checks": {
+    "repeatedIdleStopSucceeded": true,
+    "idleStopNeverStartedActor": true,
+    "exactReadonlyActorStarted": true,
+    "liveShutdownExitedNormally": true,
+    "listenerAndPIDRemoved": true,
+    "idleStopAfterLiveShutdownSucceeded": true,
+    "acceptedJournalEmpty": true
+  },
+  "diagnostics": {
+    "ok": true,
+    "events": []
+  },
+  "preservation": {
+    "clients": true,
+    "focus": true,
+    "cursor": true,
+    "filesStateHash": true,
+    "catalogHash": true
+  },
+  "passed": true
+}

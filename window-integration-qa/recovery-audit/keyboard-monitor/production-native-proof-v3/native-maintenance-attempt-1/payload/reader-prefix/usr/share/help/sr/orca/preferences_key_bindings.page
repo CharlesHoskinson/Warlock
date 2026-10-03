@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_key_bindings" xml:lang="sr">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_pronunciation"/>
+    <link type="seealso" xref="howto_key_bindings"/>
+    <title type="sort">6. Пречице тастера</title>
+    <title type="link">Пречице тастера</title>
+    <desc>Подешавање <app>Оркиних</app> пречица на тастатури</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Поставке пречица тастера</title>
+  <section id="orca_modifier_keys">
+    <title>Оркини тастери измењивачи</title>
+    <p>Падајућа листа <gui>Тастер(и) измењивача читача екрана</gui> вам омогућава да изаберете који тастер или тастери ће служити као Оркин измењивач. Доступне опције су:</p>
+    <list>
+      <item>
+        <p><gui>KP_Insert</gui> (исти тастер као <key>0</key> на бројевном делу тастатуре)</p></item>
+      <item><p><gui>Insert</gui></p></item>
+      <item><p><gui>Insert, KP_Insert</gui></p></item>
+      <item><p><gui>Caps_Lock</gui></p></item>
+    </list>
+  </section>
+  <section id="key_bindings_table">
+    <title>Табела тастерских пречица</title>
+    <p>Табела тастерских пречица пружа списак операција <app>Орке</app> и тастере који су са њима повезани.</p>
+    <list>
+      <item>
+        <p>Колона <gui>Наредба</gui> садржи опис наредбе <app>Орке</app> која ће бити извршена.</p>
+      </item>
+      <item>
+        <p>Колона <gui>Тастерска пречица</gui> садржи пречицу тастатуре која је тренутно додељена наредби <app>Орке</app>. Можете изменити вредност ове колоне притиском на тастер <key>Return</key>, притиском на тастере за нову пречицу, и поновним притиском на тастер <key>Return</key>.</p>
+      </item>
+      <item>
+        <p>Колона <gui>Измењено</gui> служи и као показатељ онога што је промењено и као начин за враћање подразумеваних пречица повезаних са том наредбом.</p>
+      </item>
+    </list>
+    <p>Испод списка тастерских пречица <app>Орке</app>, наћи ћете групу „недодељених“ наредби. То су наредбе за које сматрамо да ће бити веома корисне неким корисницима, али нису потребне већини корисника. Уместо да „потрошимо“ притисак тастера за такве наредбе, оставили смо их недодељеним по подразумеваним поставкама. На крају списка су пречице Брајевог писма, за коришћење са освеживим Брајевим екраном.</p>
+  </section>
+</page>

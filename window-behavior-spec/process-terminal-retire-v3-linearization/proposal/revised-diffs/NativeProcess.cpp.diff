@@ -1,0 +1,46 @@
+--- /home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/NativeProcess.cpp
++++ /home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/proposal/revised-desired/NativeProcess.cpp
+@@ -11,6 +11,7 @@
+ #include <cmath>
+ #include <cerrno>
+ #include <QSet>
++#include <set>
+ namespace Lifetime {
+ namespace {
+ int integer(const QJsonValue&v,int low=0,int high=2147483647){if(!v.isDouble()||v.toDouble()!=v.toInt(-1)||v.toInt(-1)<low||v.toInt(-1)>high)throw Refused("Exact JSON integer authority required");return v.toInt();}
+@@ -93,6 +94,34 @@
+  for(const auto*name:{"user","mnt","net","pid","ipc","uts","cgroup"})c->expected.namespaces[QString::fromLatin1(name)]=QString::fromStdString(std::filesystem::read_symlink(std::string("/proc/self/ns/")+name).string());const auto selectors=object(c->pin["selectors"]);for(auto i=selectors.begin();i!=selectors.end();++i)c->expected.environment[i.key().toUtf8()]=string(i.value()).toUtf8();
+  int rootCount=0;for(const auto&root:c->pin["requestRoots"].toArray()){const auto r=object(root),id=object(r["identity"]);if(integer(id["pid"],1)!=getpid())continue;++rootCount;c->expected.observerExecutable=string(r["executable"]);c->expected.observerSHA256=string(r["executableSHA256"]).toLatin1();c->expected.observerARGV=finalARGV(r["argv"].toArray());c->expected.observerCgroup=string(r["cgroup"]).toUtf8();for(const auto&[key,_]:c->expected.environment)if(qEnvironmentVariableIsSet(key.constData()))c->expected.observerEnvironment[key]=qgetenv(key.constData());if(string(r["role"])!="shell"||string(id["start"])!=authority.start||integer(id["pgid"],1)!=getpgrp()||finalARGV(r["argv"].toArray())!=boundedFile("/proc/self/cmdline")||string(r["executable"])!=QFileInfo("/proc/self/exe").canonicalFilePath()||string(r["executableSHA256"]).toLatin1()!=digest(boundedFile("/proc/self/exe",128*1024*1024))||string(r["cgroup"]).toUtf8()!=c->expected.cgroup)throw Refused("Actual original shell requester source differs");}if(rootCount!=1)throw Refused("One exact actual shell request root required");
+  const auto state=menuState(menu);c->nonce=state["nonce"];if(!c->nonce.isDouble()||c->nonce.toDouble()<=0||c->nonce.toDouble()>=double(SAFE_MAX)||c->nonce.toDouble()!=std::floor(c->nonce.toDouble()))throw Refused("Actual exact menu nonce required");c->source();c->current();
+- ProcessArm a;a.engine=engine;a.provider=provider;a.menu=menu;a.row=row;a.popup=popup;a.process=process;a.out=out;a.err=err;a.processClass="Process";a.collectorClass="StdioCollector";a.role=role;a.command={c->entry,role,originalJSON};a.kernel=c->expected;a.sourceGuard=[c]{c->source();};a.currentGuard=[c]{c->current();};a.receiptGuard=[c](const QByteArray&o,const QByteArray&e,const KernelWitness&w,int code){c->receipt(o,e,w,code);};return a;
++ ProcessArm a;a.engine=engine;a.provider=provider;a.menu=menu;a.row=row;a.popup=popup;a.process=process;a.out=out;a.err=err;a.processClass="Process";a.collectorClass="StdioCollector";a.role=role;a.command={c->entry,role,originalJSON};a.kernel=c->expected;a.changed=[c,providerGuard=QPointer<QObject>(provider),processGuard=QPointer<QObject>(process)](uint64_t lease){
++  if(providerGuard.isNull()||processGuard.isNull())return;
++  QMetaObject::invokeMethod(providerGuard.data(),[c,providerGuard,processGuard,lease]{
++   if(providerGuard.isNull()||processGuard.isNull())return;
++   try{requireOwnerThread();c->source();if(providerGuard.isNull()||processGuard.isNull()||providerGuard->thread()!=QThread::currentThread()||processGuard->thread()!=QThread::currentThread())return;
++    QMetaObject::invokeMethod(providerGuard.data(),"processLifecycleChanged",Qt::DirectConnection,Q_ARG(QObject*,processGuard.data()),Q_ARG(qulonglong,qulonglong(lease)));
++   }catch(...){} // No hint is proof and retired sources cannot emit one.
++  },Qt::QueuedConnection);
++ };a.sourceGuard=[c]{c->source();};a.currentGuard=[c]{c->current();};a.receiptGuard=[c](const QByteArray&o,const QByteArray&e,const KernelWitness&w,int code){c->receipt(o,e,w,code);};return a;
++}
++ProcessRetireScope nativeProcessRetireScope(QQmlEngine*engine,QObject*provider,QObject*menu,QObject*row,QObject*popup,QObject*process,QObject*out,QObject*err,const QVariant&rawLease,const Authority&authority){
++ requireOwnerThread();verifyQuickshellProcess();const auto owner=QThread::currentThread();QPointer<QQmlEngine>eg=engine;QPointer<QObject>pg=provider;
++ const std::array<QObject*,6>objects={menu,row,popup,process,out,err};std::array<QPointer<QObject>,6>guards;std::array<QPointer<QQmlContext>,6>contexts;std::set<QObject*>distinct;
++ if(!engine||!provider||engine->thread()!=owner||provider->thread()!=owner)throw Refused("Actual terminal factory/thread required");
++ for(size_t i=0;i<objects.size();++i){auto*o=objects[i];if(!o||o->thread()!=owner||!distinct.insert(o).second)throw Refused("Exact terminal lexical tuple required");guards[i]=o;}
++ auto alive=[&]{if(eg.isNull()||pg.isNull()||eg->thread()!=owner||pg->thread()!=owner)throw Refused("Terminal factory retired");for(size_t i=0;i<objects.size();++i)if(guards[i].isNull()||guards[i].data()!=objects[i]||guards[i]->thread()!=owner)throw Refused("Terminal lexical object retired");};
++ alive();const auto activation=Registry::shared().scope(engine,provider);alive();
++ for(size_t i=0;i<objects.size();++i){alive();contexts[i]=QQmlEngine::contextForObject(objects[i]);if(contexts[i].isNull()||!contexts[i]->isValid()||contexts[i]->thread()!=owner||contexts[i]->engine()!=engine||qmlEngine(objects[i])!=engine)throw Refused("Actual terminal lexical context required");alive();}
++ auto sourceGuard=[eg,pg,guards,contexts,activation,authority,owner]{
++  requireOwnerThread();if(QThread::currentThread()!=owner||eg.isNull()||pg.isNull())throw Refused("Terminal source owner/factory changed");
++  auto tuple=[&]{if(eg.isNull()||pg.isNull()||eg->thread()!=owner||pg->thread()!=owner||Registry::shared().scope(eg.data(),pg.data())!=activation)throw Refused("Terminal source activation changed");for(size_t i=0;i<guards.size();++i){if(guards[i].isNull()||contexts[i].isNull()||guards[i]->thread()!=owner||contexts[i]->thread()!=owner||!contexts[i]->isValid()||contexts[i]->engine()!=eg.data()||QQmlEngine::contextForObject(guards[i].data())!=contexts[i].data()||qmlEngine(guards[i].data())!=eg.data())throw Refused("Terminal source lexical generation/context changed");}};
++  tuple();authority.verify();tuple();
++ };
++ sourceGuard();QVariant leaseValue=rawLease;if(leaseValue.metaType()==QMetaType::fromType<QJSValue>()){const auto value=leaseValue.value<QJSValue>();if(!value.isNumber())throw Refused("Exact numeric terminal lease required");leaseValue=QVariant(value.toNumber());}sourceGuard();uint64_t lease=0;
++ if(leaseValue.metaType()==QMetaType::fromType<double>()){const auto n=leaseValue.toDouble();if(!std::isfinite(n)||n<=0||n>=double(SAFE_MAX)||n!=std::floor(n))throw Refused("Exact safe terminal lease required");lease=uint64_t(n);}
++ else if(leaseValue.metaType()==QMetaType::fromType<qulonglong>()||leaseValue.metaType()==QMetaType::fromType<uint>()){lease=leaseValue.toULongLong();}
++ else if(leaseValue.metaType()==QMetaType::fromType<qlonglong>()||leaseValue.metaType()==QMetaType::fromType<int>()){const auto n=leaseValue.toLongLong();if(n<=0)throw Refused("Positive terminal lease required");lease=uint64_t(n);}
++ else throw Refused("Numeric terminal lease type required; Boolean/string refused");
++ if(!lease||lease>=SAFE_MAX)throw Refused("Terminal lease representability refused");sourceGuard();ProcessRetireScope scope;scope.engine=engine;scope.provider=provider;scope.objects=objects;scope.lease=lease;scope.sourceGuard=std::move(sourceGuard);return scope;
+ }
+ }

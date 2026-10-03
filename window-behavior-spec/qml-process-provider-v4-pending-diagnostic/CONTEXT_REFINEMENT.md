@@ -1,0 +1,17 @@
+# Native context presence refinement, before popup runtime
+
+The immutable popup proposal remains `/qml-pin-popup-lifetime-v1` (packet 702e8ee5236f64bb29d4a0f19e4b0f8c0649d1f746f5cd88cb2c2f1e619f9690). Root approved its relationship design. Fresh V3 CPU Qt public API semantics executed before popup implementation:16 checks, actual dynamic alias/native property selection and actual existing/create=false attached lookup. Initial bad moc flags and exact first passing source/proof are retained. No QGuiApplication, QQuickWindow, QS, display or input was created.
+
+The actual diagnostic shows lexical QML root and row have contexts; genuine C++ attached and native content Items have neither QQmlContext nor qmlEngine. Those are CPU stand-ins, not installed QS evidence. Root approved modeling a precise presence refinement before runtime, without assigning a context or inventing engine association.
+
+## Intended selected tuple
+
+Lexical menu, row and popup **must** have valid actual QQmlContext/actual factory engine and guarded context-object generations, plus actual QObject generations. Missing/foreign/invalid lexical context still refuses. No observer `setContextForObject` or caller epoch exists.
+
+For genuine native attached, proxy content, QQuickWindow and native root allocations, capture actual `QQmlEngine::contextForObject` and `qmlEngine` results. If the context is null, the engine must also be null: record explicit contextGeneration0 and enginePresencefalse. If context is nonnull, require guarded QQmlContext valid, its engine and qmlEngine(nativeObject) equal the actual factory engine; record its real registry generation. Both selected raw presence and engine values must be identical before/after each getter/connection/callback and at final observation. A presence change, context allocation replacement, destruction, invalid or conflicting/foreign engine result refuses; do not reconstruct it from QObject parents or set association as repair.
+
+Authenticate these native objects by the exact existing attached object's native window/content properties, native WindowInterface base content property, actual QQuickItem row/content/native-root ancestry and actual same QQuickWindow relations to the genuine lexical objects. Guard all selected object/context QPointers and registry generations. When proxy content is exactly native root, one allocation and one context generation legitimately appear twice; its destruction/presence change invalidates both references. No generic engine-less QObject becomes eligible without these relationships and actual frozen QS/source/loader/thread authorities.
+
+`pin_popup.qnt` refines the approved model with exact native-context observation tokens including explicit0. Tokens represent actual registry allocations (not numbers supplied by QML). Native-context presence/absence/replacement events are observed Qt state changes, not APIs or assignments. Lexical context/source/native input/owner/layout requirements remain exact. The original35 cases remain, plus9 native-context cases. Base exact counter bound and capacity model still governs real allocation; this finite refinement has no numeric authority via metadata.
+
+Actual installed popup/native contexts and relationships remain unproved until root GUI. Runtime must retain selected raw values/types before refusal. No whole reload-interval, native delivery or Process-normal-exit claim follows from this refinement. Root review is required before popup runtime code.

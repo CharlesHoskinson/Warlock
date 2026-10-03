@@ -1,0 +1,95 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-dd96ad04d3e44e17a5e73d3527966a4c.scope",
+    "coreLimit": 1
+  },
+  "cases": [
+    {
+      "name": "both missing",
+      "thumbnailSize": null,
+      "wholeSize": null,
+      "allowed": false,
+      "error": "incomplete hidden pixel outputs"
+    },
+    {
+      "name": "thumbnail missing",
+      "thumbnailSize": null,
+      "wholeSize": 64,
+      "allowed": false,
+      "error": "incomplete hidden pixel outputs"
+    },
+    {
+      "name": "whole missing",
+      "thumbnailSize": 64,
+      "wholeSize": null,
+      "allowed": false,
+      "error": "incomplete hidden pixel outputs"
+    },
+    {
+      "name": "empty thumbnail",
+      "thumbnailSize": 0,
+      "wholeSize": 64,
+      "allowed": false,
+      "error": "incomplete hidden pixel outputs"
+    },
+    {
+      "name": "short thumbnail",
+      "thumbnailSize": 63,
+      "wholeSize": 64,
+      "allowed": false,
+      "error": "incomplete hidden pixel outputs"
+    },
+    {
+      "name": "empty whole",
+      "thumbnailSize": 64,
+      "wholeSize": 0,
+      "allowed": false,
+      "error": "incomplete hidden pixel outputs"
+    },
+    {
+      "name": "short whole",
+      "thumbnailSize": 64,
+      "wholeSize": 63,
+      "allowed": false,
+      "error": "incomplete hidden pixel outputs"
+    },
+    {
+      "name": "both minimal nonempty",
+      "thumbnailSize": 64,
+      "wholeSize": 64,
+      "allowed": true,
+      "error": null
+    },
+    {
+      "name": "both larger nonempty",
+      "thumbnailSize": 128,
+      "wholeSize": 4096,
+      "allowed": true,
+      "error": null
+    }
+  ],
+  "exactCandidateGuardUsed": true,
+  "availabilityBeforeEveryPublication": true,
+  "onlyV1SourceDelta": "                    # Job closure does not prove both private files exist.\n                    if any(not path.is_file() or path.stat().st_size<64 for path in (temporary,composed)):\n                        raise ValueError('incomplete hidden pixel outputs')\n",
+  "v1WholeInverseExact": true,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v2/native_desktop.py.proposed": {
+      "sha256": "a598dc166757f571db56dc1479a197eb33baa391c3e5e05dfdaf6ae1fa2aa7fa",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v2/output_replay.py": {
+      "sha256": "de835d35b2e9f29f960003e6e39d3c13a37aaa5c6980f1bdad9d93a1d57ee1bd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/native_desktop.py.proposed": {
+      "sha256": "79517ffb5d8f24216109cc96880af8a47279c2b645fb3d888625e31e697c678f",
+      "mode": 384
+    }
+  },
+  "minimal64ByteBoundOnly": true,
+  "ownedLaunchProof": false,
+  "PNGPixelProof": "retained unchanged command V1 16 matrices/32 comparisons",
+  "nativeLaunch": false,
+  "runtimeApplied": false
+}

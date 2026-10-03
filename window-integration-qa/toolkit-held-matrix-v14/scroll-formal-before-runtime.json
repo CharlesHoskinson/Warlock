@@ -1,0 +1,47 @@
+{
+  "nativeLaunch": false,
+  "formalBeforeRuntime": true,
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/preview_scroll.qnt"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT404]: Name 'min' not found\n\n  at /home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/preview_scroll.qnt:9:650\n  9:  | Observe(p)=>if(not(s.clicked) and not(s.failed)){val ok=p.epoch==1 and p.scope==1 and p.source==1 and p.layer==1 and p.released and p.valid and p.counter>=0 and p.scroll>=0 and p.scroll<=40;val waiting=s.phase==3;val receipt=p.counter==s.baseCounter+1 and (if(s.direction>0)p.scroll>s.baseScroll else p.scroll<s.baseScroll);val ordinary=p.counter==s.counter and p.scroll==s.scroll;val fresh=ok and (if(waiting)receipt else ordinary);{...s,epoch:p.epoch,scope:p.scope,source:p.source,layer:p.layer,released:p.released,valid:p.valid,visible:p.visible,counter:p.counter,scroll:p.scroll,geometry:p.geometry,stable:if(fresh and p.geometry==s.geometry)min(2,s.stable+1) else 1,phase:if(waiting and fresh)0 else s.phase,failed:not(fresh)}} else s\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^^^^^^^^^^^^^^^^^\n\nerror: parsing failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/preview_scroll.qnt"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT404]: Name 'min' not found\n\n  at /home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/preview_scroll.qnt:9:650\n  9:  | Observe(p)=>if(not(s.clicked) and not(s.failed)){val ok=p.epoch==1 and p.scope==1 and p.source==1 and p.layer==1 and p.released and p.valid and p.counter>=0 and p.scroll>=0 and p.scroll<=40;val waiting=s.phase==3;val receipt=p.counter==s.baseCounter+1 and (if(s.direction>0)p.scroll>s.baseScroll else p.scroll<s.baseScroll);val ordinary=p.counter==s.counter and p.scroll==s.scroll;val fresh=ok and (if(waiting)receipt else ordinary);{...s,epoch:p.epoch,scope:p.scope,source:p.source,layer:p.layer,released:p.released,valid:p.valid,visible:p.visible,counter:p.counter,scroll:p.scroll,geometry:p.geometry,stable:if(fresh and p.geometry==s.geometry)min(2,s.stable+1) else 1,phase:if(waiting and fresh)0 else s.phase,failed:not(fresh)}} else s\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^^^^^^^^^^^^^^^^^\n\nerror: parsing failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/preview_scroll.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=0"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT404]: Name 'min' not found\n\n  at /home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/preview_scroll.qnt:9:650\n  9:  | Observe(p)=>if(not(s.clicked) and not(s.failed)){val ok=p.epoch==1 and p.scope==1 and p.source==1 and p.layer==1 and p.released and p.valid and p.counter>=0 and p.scroll>=0 and p.scroll<=40;val waiting=s.phase==3;val receipt=p.counter==s.baseCounter+1 and (if(s.direction>0)p.scroll>s.baseScroll else p.scroll<s.baseScroll);val ordinary=p.counter==s.counter and p.scroll==s.scroll;val fresh=ok and (if(waiting)receipt else ordinary);{...s,epoch:p.epoch,scope:p.scope,source:p.source,layer:p.layer,released:p.released,valid:p.valid,visible:p.visible,counter:p.counter,scroll:p.scroll,geometry:p.geometry,stable:if(fresh and p.geometry==s.geometry)min(2,s.stable+1) else 1,phase:if(waiting and fresh)0 else s.phase,failed:not(fresh)}} else s\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^^^^^^^^^^^^^^^^^\n\nerror: parsing failed\n"
+    }
+  ],
+  "named": 15,
+  "samples": 2000,
+  "steps": 100,
+  "modelSHA256": "e9f8512fd4b71418937e5f1dbe61ec5b64faa829edfa4caa55a4b806f163d68e",
+  "contractSHA256": "c508f9095c3e240aebfdd591efdbca71fcd64cf5dd23286b7d3095d89d12ec56",
+  "allPassed": false
+}

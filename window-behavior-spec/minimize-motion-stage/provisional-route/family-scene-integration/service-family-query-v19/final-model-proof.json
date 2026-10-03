@@ -1,0 +1,865 @@
+{
+  "result": "pass",
+  "nativeLaunch": false,
+  "models": 23,
+  "named": 191,
+  "samples": 2000,
+  "maxSteps": 100,
+  "sourceUnchangedDuringProof": true,
+  "modelSourceSHA256": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/actor_resources.qnt": "91cbcce02b1bbb4e17e179ef208ddf80e80df4685c6482b8cb61d5876cc2e317",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/actor_resources_test.qnt": "c6461d117bf346cdad078513c4ccfb782a143737275a8b14e317b3f209ef595b",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/family_destination.qnt": "6e7c0df9e7816fa620c13990da70fccb4367bfdb54575e343350cb1ff4a1fd83",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/family_destination_test.qnt": "f7b286ce9443b69cd2ada54a0e4e1aee007ee024a8583aa9536f7455e20176ee",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/family_order.qnt": "a2d4be04904800cead8e7d06312338e983b7c9deb005484b0d7efe5bd1109d25",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/family_order_test.qnt": "44222437bc25a1840d8451c0256fa4148430cdb34fde6f23f3ffe4d94f3beb3f",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/family_query.qnt": "1bbf076049bdd54958c8590935ac93311159ac03a49cdfac922b61355d834d72",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/family_query_test.qnt": "63572eab7dae3fdc1caea5b67456d9907e56c5357877a3394400c664145274cb",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/family_registry.qnt": "f5e9769df7bea01f167190a4b50b640bc2b409b6dc88efbdf63055dda7e43b49",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/family_registry_test.qnt": "92c5c0854eb7616346f63353333f65590f77c9cc664b33d6c37bd14d95c6c637",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/family_scene.qnt": "7b1fd7739efeff5925751fd2ca12977b832ddca044cb08de17bc1005c455f1f1",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/family_scene_test.qnt": "d8b1b2927f1fd3d2100af0cbc7ecf45677b4a00801198933f3e81644ed2ce674",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/gesture_capture.qnt": "85ffe1d5570b350e59ab0dfb7e0c430b8e4577edcb0627b96ca01c9582dae8e1",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/gesture_capture_test.qnt": "cdbfbc57878aa921346c4bb2c26055850f82d7fc87f3c06af1fb91bd6f0d6e1b",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/helper_closure.qnt": "171908cb4db926ad371c0f0fa06317e908ff1326d73bdc32c70e7926294f1340",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/helper_closure_test.qnt": "649f268b976bde8339c9f4da5c473a952f0569e07ecae0c3cd21badc4678640f",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/ingress_context.qnt": "702e7e2fcb3f9d63e3653afd73eafdfec85bf50cd24f2881ad4344a11e16f023",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/ingress_context_test.qnt": "b828e3101cf1566ed45b7f454d6bcfa0af4a04cd3717ca3ff239760725214cd8",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/ipc_guard.qnt": "a6b974ffe4059d6e212fba2d4e613a58eaa00fbb8b623623197d6e17360e3046",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/ipc_guard_test.qnt": "d3958dadcdb511c5b5542d1f99e530824bfc564ab1b152e3d66f38d58ed911f1",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/native_composition.qnt": "9f65bd2314f3dddf57565434610708bf8fdc61bd624d75d4de87735aa0171e65",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/native_composition_test.qnt": "647cd0cebaed4cf463b57be33d1ba17dc7a0ef5b447c251b8904e72ef0fff807",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/native_recovery.qnt": "51e763f2125f0caffe438861a891000eb9af31c40bd86c63e083dfa51d08d8cb",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/native_recovery_test.qnt": "ef7facf9ea92b7aecc60e476fbb659ea9d64e371cd2c35282ecd4b38bee4f804",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/pending_direction.qnt": "ccd3b49807fa4b4063044edb5aae77c6b273ae9a7982e74eb22aaee4ff8d3b53",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/pending_direction_test.qnt": "6c8a4cbc461e0a2d36417b2714a4306073d6046d0566b710f429633be2d84e12",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/persistent_atlas.qnt": "789a8f3682d612091ab60e58f3a5e3f100f0b49556bd56a397284656f6e60934",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/persistent_atlas_test.qnt": "e91850f4abde58f984e3dbd27042324ab87a0efb1c06ea6ffe53f0ab7b31a25d",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/receipt_visual.qnt": "359386bd7a4fc2aeb1ced50627f0e7240695e06cdff1c39a66a3c40fb714c309",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/receipt_visual_test.qnt": "6a99b6accb257f828d364fdc3d05f5e0818658b63ab5e38e6d25a9a6e1959cc3",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/recovery_cancel.qnt": "7986f30a1a3e1b8f8b0df069d33a97eee9461a61e6b3cf8a23286df2a84aab31",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/recovery_cancel_test.qnt": "642dc742d8e7f41062c5cfcb7334054def008e771c20b04d9c038e38bd99394b",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/recovery_constant.qnt": "e2890690010c36e0a1783c3bbb8adc42b9efeaf9e8b1b110b8e556bc7635be08",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/recovery_constant_test.qnt": "2134b3ad035549fbd28e716e35a2431868137313e00969b8cbdcb6cdea2e8882",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/recovery_ownership.qnt": "d7a834da3c7747b4b48b68c5a8e0453465a571a2e47ffa4afa15ce816c795b8e",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/recovery_ownership_test.qnt": "12d8dcbf89537d88b5cb5031385e23c3d5a4a8b065544111a1c58aa7592420cf",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/renderer_terminal.qnt": "24cd7c94cfb96e1ce629732607ae7db7dcb67bec250ed23fe4b8f01a7ef26ea8",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/renderer_terminal_test.qnt": "10acec5bbbb533cb832219db42398aa80bdaea1c404901235b3efce40f7d3dae",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/responsive_preparation.qnt": "146f2cbffa7ff4b8fa8ed10637343910b2051944376e5ab1c66dfeea8b9dbd0d",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/responsive_preparation_test.qnt": "660a0a9d12869e1950839c70a34329e32994d529cf340fbc4476821bd843365a",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/runtime_lease.qnt": "d74f2fa8b561a60e378eea74cf7e1969c0ad9299262b9cee39c7ac5657f0dfb7",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/runtime_lease_test.qnt": "622068ca229c8b50d457d1674bedd13b65d3c8431f58576fd470c9dfd9efc7f6",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/runtime_lifecycle.qnt": "d912775efd0da4e84700b2a85bd6f7d165525488f80ccecb06cd4a80633eae25",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/runtime_lifecycle_test.qnt": "decd75fdf892d132f6657940cc15efb483f770115881fb30e64a68abae652f16",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/transport_dispatch.qnt": "a4e2106254f26ae9ae3b303b64bba683323664732b6c9ab03c0f371756644ad0",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-query-v19/transport_dispatch_test.qnt": "7762ae6395d615c792b14e13f3885947acfb47b287b8134e77de972b08c59b14"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_scene_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_scene-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_scene_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_scene-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_scene.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_scene-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_destination_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_destination-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_destination_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_destination-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_destination.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_destination-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "transport_dispatch_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-transport_dispatch-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "transport_dispatch_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-transport_dispatch-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "transport_dispatch.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-transport_dispatch-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_registry-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_registry_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_registry-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_registry.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_registry-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "ingress_context_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-ingress_context-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "ingress_context_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-ingress_context-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "ingress_context.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-ingress_context-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "persistent_atlas_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-persistent_atlas-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "persistent_atlas_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-persistent_atlas-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "persistent_atlas.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-persistent_atlas-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "pending_direction_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-pending_direction-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "pending_direction_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-pending_direction-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "pending_direction.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-pending_direction-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "runtime_lifecycle_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-runtime_lifecycle-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "runtime_lifecycle_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-runtime_lifecycle-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "runtime_lifecycle.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-runtime_lifecycle-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "receipt_visual_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-receipt_visual-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "receipt_visual_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-receipt_visual-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "receipt_visual.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-receipt_visual-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "native_composition_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-native_composition-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "native_composition_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-native_composition-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "native_composition.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-native_composition-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "ipc_guard_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-ipc_guard-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "ipc_guard_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-ipc_guard-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "ipc_guard.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-ipc_guard-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "actor_resources_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-actor_resources-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "actor_resources_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-actor_resources-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "actor_resources.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-actor_resources-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_order_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_order-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_order_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_order-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_order.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_order-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "gesture_capture_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-gesture_capture-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "gesture_capture_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-gesture_capture-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "gesture_capture.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-gesture_capture-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "responsive_preparation_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-responsive_preparation-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "responsive_preparation_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-responsive_preparation-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "responsive_preparation.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-responsive_preparation-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "native_recovery_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-native_recovery-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "native_recovery_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-native_recovery-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "native_recovery.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-native_recovery-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_ownership_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-recovery_ownership-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_ownership_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-recovery_ownership-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_ownership.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-recovery_ownership-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "helper_closure_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-helper_closure-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "helper_closure_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-helper_closure-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "helper_closure.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-helper_closure-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_constant_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-recovery_constant-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_constant_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-recovery_constant-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_constant.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-recovery_constant-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "runtime_lease_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-runtime_lease-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "runtime_lease_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-runtime_lease-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "runtime_lease.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-runtime_lease-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_cancel_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-recovery_cancel-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_cancel_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-recovery_cancel-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_cancel.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-recovery_cancel-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "renderer_terminal_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-renderer_terminal-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "renderer_terminal_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-renderer_terminal-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "renderer_terminal.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-renderer_terminal-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_query_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_query-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_query_test.qnt",
+        "--backend=rust",
+        "--seed=2026100219"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_query-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_query.qnt",
+        "--backend=rust",
+        "--seed=2026100219",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-model-family_query-run.log"
+    }
+  ],
+  "completedNs": 1790913422218088370
+}

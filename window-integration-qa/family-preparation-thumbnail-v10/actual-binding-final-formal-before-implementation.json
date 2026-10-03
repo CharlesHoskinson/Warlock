@@ -1,0 +1,52 @@
+{
+  "runtimeAbsent": true,
+  "nativeLaunch": false,
+  "sourceSHA256": {
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/V4_ACTUAL_BINDING_CONTRACT.md": "c428af812d5b4c3e503da50aeb5e23401e9c74ecafbdb261ccc35de7eaf1e774",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/LEDGER_LONGEVITY_REQUIREMENT.md": "af1c20e284dbb5c74cb9c6f26155be962c5670b9ab6bd305bdd0d9e4b312ab27",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/actual_service_binding.qnt": "2cae8ff6809417f263cdf384eb2a25f7ab264c2dfa254cc47397a20c67903288",
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v4/actual_service_binding_test.qnt": "a32c73f647f8fddd2abe5367e401ec53c6d97e9a31d932e52d003980719e17d4"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "actual_service_binding_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "actual-binding-typed-before-0.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "actual_service_binding_test.qnt",
+        "--backend=rust",
+        "--seed=2026100205"
+      ],
+      "exitCode": 0,
+      "log": "actual-binding-typed-before-1.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "actual_service_binding.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100205",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "actual-binding-typed-before-2.log"
+    }
+  ],
+  "expectedNamed": 25,
+  "samples": 2000,
+  "steps": 100,
+  "retainedV3ManifestSHA256": "e41e787f2d8c64997f7df7e285f324af82d8ce465ccb131ad0d3a566ac348be7",
+  "selectedV20SourceHandoffSHA256": "8f1a10a036c05055498271ecc21971a08146e14af02d4192da141fb9cf9350c0"
+}

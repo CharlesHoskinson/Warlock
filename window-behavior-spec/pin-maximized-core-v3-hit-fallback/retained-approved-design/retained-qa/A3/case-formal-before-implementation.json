@@ -1,0 +1,36 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/pin-native-qa-v1/pin_case.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pin_case\n    ok actualInputThenReceiptAndStateTest passed 1 test(s)\n    ok setupCannotCountAsPinTest passed 1 test(s)\n    ok directAPICannotCountAsFrontendTest passed 1 test(s)\n    ok missingReleaseRefusedTest passed 1 test(s)\n    ok wrongOwnerInputRefusedTest passed 1 test(s)\n    ok staleObservationRefusedTest passed 1 test(s)\n    ok malformedReceiptRefusedTest passed 1 test(s)\n    ok noAutomaticRetryTest passed 1 test(s)\n\n  8 passing (503ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/pin-native-qa-v1/pin_case.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (2507ms at 798 traces/second).\nUse --seed=0x14468d5 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "pin_case.qnt": "5b6a8aff1948a7754cb6518d86520b276faee4ffd746c4c9dad56fa354ff95a2",
+    "CONTRACT.md": "63554bdb04a929e8c1b06536573d6147a20f70ea9f723499da0de211b495ad25"
+  },
+  "implementationUnchanged": true,
+  "nativeExecuted": false
+}

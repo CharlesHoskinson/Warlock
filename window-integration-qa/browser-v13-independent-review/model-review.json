@@ -1,0 +1,59 @@
+{
+  "result": "contract-model-source-review-pass-before-runtime",
+  "sourceSHA256": {
+    "V13_CONTRACT.md": "3e38e0d94aa0dfd2997b5e8b00b9464c936a5bdd19faf5474b05d49d50d4a62d",
+    "runtime_metrics.qnt": "5359e84b1b4e5964c8e0eb8c80226151e7bea4e1ca52bcbe2860e62a9e2101ec",
+    "runtime_metrics_test.qnt": "b81d66b6a317639c72ae1b722e8306fb57fe1cadf8af197790b0a8c667efd6fe",
+    "metrics-formal-detached-before-implementation.json": "ee8a1b9cc9e0f3dd48ec85447475d57e6b588514b124d2b1e3b39052eb50a01c",
+    "owned_metrics_data.py": "eb65d3c17e0875c07a300ab2f4d65595d1dc71f65c90f6296869cea8b2ea7f74",
+    "runtime_inputs.py": "4b18ec031e0e15f7f8a5c225a70c812e38c5d47f2638c6904459f012b80f7356",
+    "mapping_evidence.py": "29560e771758b740121f1041212f79fb94c387245c8d6d6111e14b8f4febc436",
+    "private_session.py": "4351a20bb62645df2a8b41972d7de692039eef2c079bd2f6533340315d9300e4"
+  },
+  "rootSourcesUnchanged": true,
+  "runtimeFourFilesExactFrozenV12": true,
+  "namedCases": 70,
+  "randomTraces": 2000,
+  "maxSteps": 100,
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "runtime_metrics_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  runtime_metrics_test\n    ok exactRuntimeDataTest passed 1 test(s)\n    ok beforeOnlyRefusedTest passed 1 test(s)\n    ok missingDiskConfirmationTest passed 1 test(s)\n    ok directConfirmationRefusedTest passed 1 test(s)\n    ok lifetimeReplacementRefusedTest passed 1 test(s)\n    ok laterReplacementInvalidatesTest passed 1 test(s)\n    ok duplicateFdRefusedTest passed 1 test(s)\n    ok readOnlyFdRefusedTest passed 1 test(s)\n    ok wrongModeRefusedTest passed 1 test(s)\n    ok specialModeRefusedTest passed 1 test(s)\n    ok linkedDiskRefusedTest passed 1 test(s)\n    ok executableAliasRefusedTest passed 1 test(s)\n    ok executableMappingRefusedTest passed 1 test(s)\n    ok wrongProfileRefusedTest passed 1 test(s)\n    ok wrongFilenameRefusedTest passed 1 test(s)\n    ok unownedBrowserRefusedTest passed 1 test(s)\n    ok unpinnedSourceRefusedTest passed 1 test(s)\n    ok wrongSizeRefusedTest passed 1 test(s)\n    ok wrongRangeRefusedTest passed 1 test(s)\n    ok staleSnapshotRefusedTest passed 1 test(s)\n    ok invalidationRemovesAuthorityTest passed 1 test(s)\n    ok fdNumberReplacementTest passed 1 test(s)\n    ok deviceTokenReplacementTest passed 1 test(s)\n    ok inodeTokenReplacementTest passed 1 test(s)\n    ok mountTokenReplacementTest passed 1 test(s)\n    ok profileTokenReplacementTest passed 1 test(s)\n    ok parentTokenReplacementTest passed 1 test(s)\n    ok rootTokenReplacementTest passed 1 test(s)\n    ok executableTokenReplacementTest passed 1 test(s)\n    ok snapshotTokenReplacementTest passed 1 test(s)\n    ok mappingTokenReplacementTest passed 1 test(s)\n    ok fullFlagsReplacementTest passed 1 test(s)\n    ok stalePartialAfterChangeTest passed 1 test(s)\n    ok staleConfirmedAfterChangeTest passed 1 test(s)\n    ok invalidatedGenerationCannotResumeTest passed 1 test(s)\n    ok fdNumberConfirmReplacementTest passed 1 test(s)\n    ok deviceTokenConfirmReplacementTest passed 1 test(s)\n    ok inodeTokenConfirmReplacementTest passed 1 test(s)\n    ok mountTokenConfirmReplacementTest passed 1 test(s)\n    ok profileTokenConfirmReplacementTest passed 1 test(s)\n    ok parentTokenConfirmReplacementTest passed 1 test(s)\n    ok rootTokenConfirmReplacementTest passed 1 test(s)\n    ok executableTokenConfirmReplacementTest passed 1 test(s)\n    ok snapshotTokenConfirmReplacementTest passed 1 test(s)\n    ok mappingTokenConfirmReplacementTest passed 1 test(s)\n    ok targetTokenConfirmReplacementTest passed 1 test(s)\n    ok fullFlagsConfirmReplacementTest passed 1 test(s)\n    ok pathFdRefusedTest passed 1 test(s)\n    ok mutableDataExcludedTest passed 1 test(s)\n    ok targetTokenReplacementTest passed 1 test(s)\n    ok exactDetachedParentTest passed 1 test(s)\n    ok parentPresentToAbsentTest passed 1 test(s)\n    ok parentAbsentToPresentConfirmTest passed 1 test(s)\n    ok detachedStalePartialInvalidatedTest passed 1 test(s)\n    ok detachedConfirmedChangedEpochTest passed 1 test(s)\n    ok absencePermissionErrorRefusedTest passed 1 test(s)\n    ok absenceUnknownErrorRefusedTest passed 1 test(s)\n    ok fabricatedHistoricalParentRefusedTest passed 1 test(s)\n    ok fabricatedHistoricalModeRefusedTest passed 1 test(s)\n    ok unknownParentStateRefusedTest passed 1 test(s)\n    ok symlinkParentRefusedTest passed 1 test(s)\n    ok danglingSymlinkParentRefusedTest passed 1 test(s)\n    ok specialParentRefusedTest passed 1 test(s)\n    ok detachedUnownedProfileRefusedTest passed 1 test(s)\n    ok detachedParentPathReplacementTest passed 1 test(s)\n    ok detachedLiveProfileReplacementTest passed 1 test(s)\n    ok detachedLiveRuntimeReplacementTest passed 1 test(s)\n    ok presentSpecialParentModeRefusedTest passed 1 test(s)\n    ok detachedLiveRuntimeVerifyReplacementTest passed 1 test(s)\n    ok invalidRuntimeTokenRefusedTest passed 1 test(s)\n\n  70 passing (3975ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "runtime_metrics.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (608ms at 3289 traces/second).\nUse --seed=0x156b5fd --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Bounded current namespace parent state with unchanged exact producer/live-anchor/code/input authority; no historical parent/deletion/sourcebranch equivalence",
+  "requiredRuntimeRefinement": [
+    "Anchored O_DIRECTORY|O_NOFOLLOW profileFD fstat and named identity before+after",
+    "Exact singlecomponent BrowserMetrics follow_symlinksFalse descriptor-relative lstat",
+    "Actual ENOENT errno+filename+canonicalrequestedpath saved; no arbitrary missing path/error acceptance",
+    "Current exactpresent0700 directory token OR absentENOENT no invented historical metadata",
+    "Same parent state and exact live runtime/profile before/after/afterdisk and across successive phases",
+    "All original exact1FD/fullmode600/uid/nlink0/4MiB/O_RDWR/noOPath/fullflags/mount/device/inode/target/lifetime/VMA/alias/rawhash+line gates",
+    "NonENOENT/permission/symlink/dangling/special/replacement/statechange/anchorchange unreadable witnesses revoke before input"
+  ],
+  "nativeExecuted": false,
+  "mainWrites": false,
+  "runtimeHelperAccepted": false,
+  "nativeAcceptancePending": true
+}

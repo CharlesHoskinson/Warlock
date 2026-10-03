@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_toggling_caps_lock" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_key_bindings"/>
+    <title type="sort">7. CapsLock v rozložení pre prenosný počítač</title>
+    <desc>Prepínanie, keď je <key>Modifikátor Orca</key></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>CapsLock v rozložení pre prenosný počítač</title>
+  <p>Orca má dve rozloženia klávesnice: Stolný počítač a Prenosný počítač. Rozloženie, ktoré si vyberiete, ovplyvňuje, ktorý kláves sa použije ako modifikátor Orca. Ak používate rozloženie pre prenosný počítač, predvoleným modifikátorom Orca bude <key>CapsLock</key>. Ak používate rozloženie pre prenosný počítač v <app>Orca</app> a chcete zamknúť alebo odomknúť <key>CapsLock</key>, môžete to urobiť buď dvojitým stlačením <key>CapsLock</key> (vyžaduje sa at-spi2 verzia 2.32 alebo novšia), alebo vykonaním nasledujúcich krokov:</p>
+  <steps>
+    <title>Prepínanie CapsLock v rozložení pre prenosný počítač</title>
+    <item>
+      <p>Stlačením príkazu Obísť, <keyseq><key>Modifikátor Orca</key><key>BackSpace</key> </keyseq>, oznámite <app>Orca</app>, že nasledujúci príkaz by sa mal ignorovať.</p>
+    </item>
+    <item>
+      <p>Stlačte <key>CapsLock</key> na prepnutie jeho stavu zamknutia.</p>
+    </item>
+  </steps>
+</page>

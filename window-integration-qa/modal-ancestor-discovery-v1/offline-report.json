@@ -1,0 +1,41 @@
+{
+  "result": "pass",
+  "pythonSourceChecks": 7,
+  "sourceCheckOutput": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.001s\n\nOK\n",
+  "namedScenarioCounts": {
+    "ancestor_policy": 12,
+    "atlas_coordinates": 3,
+    "caption_cache": 8
+  },
+  "namedScenarioTotal": 23,
+  "randomizedModels": {
+    "quint-random.json": "ok",
+    "atlas_coordinates-random.json": "ok",
+    "caption_cache-random.json": "ok"
+  },
+  "samplesPerModel": 2000,
+  "stepsPerSample": 100,
+  "seedArgument": "20260930",
+  "ancestorRandomCommand": [
+    "quint",
+    "run",
+    "/home/hoskinson/window-integration-qa/modal-ancestor-discovery-v1/ancestor_policy.qnt",
+    "--max-samples=2000",
+    "--max-steps=100",
+    "--seed=20260930",
+    "--invariant=allProps",
+    "--out",
+    "/home/hoskinson/window-integration-qa/modal-ancestor-discovery-v1/quint-random.json"
+  ],
+  "legacyCounterexample": "expected failed assertion retained; old !owner route keeps peer instead of child",
+  "cppHelperCounts": {
+    "coordinates": 72,
+    "cache": 38
+  },
+  "nativeCandidateSHA256": "a831496a26e6363b85a5bd549d9ace553de5a39a8709bbaafc5d6be407388259",
+  "compilerClosureInputs": 759,
+  "mainLoaded": false,
+  "nativeExecuted": false,
+  "contractSHA256": "aab8bd8ac8c9f915c021d5fe20db8c3b05886e38e38b89edd486758861d8a26f",
+  "modelSHA256": "4b4e61d81ed96fd921e63a8c71aab823408e3161456623a570b58b1fcd2a0c1e"
+}

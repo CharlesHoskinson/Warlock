@@ -1,0 +1,70 @@
+{
+  "result": "pass",
+  "javascriptScenarios": 22,
+  "formalNamedScenarios": 8,
+  "samples": 2000,
+  "steps": 100,
+  "nativeIntegrated": false,
+  "trustedBoundary": "Renderer probe submission/presentation records; metadata equality alone does not prove GPU pixels.",
+  "hashes": {
+    "GlobalRoute.js": "38ef458ac516b21e18e133f6ebd1ab9b14d5ce11bf85e5f44d9aea35c0d346d6",
+    "test_global_route.js": "c3ab1fc49ad2eb279c184d08635355eaa116839b6c2f04edce6731173b440d12",
+    "presentation.qnt": "a4d95b1fd6d45f69eb12e595c68115bb502e6bd2488721b86b5e063ccc652dea",
+    "presentation_test.qnt": "90471028adc712766322fe31cbc1f7be7b435330a17c39522c111e6c16a2f511"
+  },
+  "checks": [
+    {
+      "command": [
+        "node",
+        "test_global_route.js"
+      ],
+      "returncode": 0,
+      "stdout": "PASS immediate reversal moves pixels while validation is blocked\nPASS unvalidated endpoint has no native authority\nPASS promotion retains exact current rect texture and route progress\nPASS third request during blocked second keeps current visual origin\nPASS stale validation and replacement identity cannot promote\nPASS all output presentation acknowledgements gate native ready\nPASS endpoint needs actual final frame from each output\nPASS rejection uses prior fresh authority and current visual rectangle\nPASS destination/output removal requires fresh service settlement\nPASS closed/reused route rejects old authority\nPASS frame diagnostic retention is bounded\nPASS older timestamp after newer presentation cannot certify readiness\nPASS arbitrary rectangle even same token cannot certify pixels\nPASS close and idle reject subsequent presentation\nPASS already presented sequence cannot repeat after newer submission\nPASS wrong actual atlas digest and identity fail submission\nPASS new request rejects same-atlas old epoch presentation\nPASS invalid public seed boundary is rejected\nPASS idle endpoint handover rejects late presentation\nPASS delayed but ordered frames survive a newer render submission\nPASS reordered numeric geometry preserves native handover\nPASS bounded in-flight records fail safely on evicted frames\n22 provisional route scenarios PASS\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "presentation.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "presentation_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "presentation_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  presentation_test\n    ok arbitraryRectangleCannotCertifyAtlasTest passed 1 test(s)\n    ok olderPresentationAfterNewerFrameRejectedTest passed 1 test(s)\n    ok cancelledRouteRejectsPresentationTest passed 1 test(s)\n    ok reusedAtlasDigestCannotCertifyNewIdentityTest passed 1 test(s)\n    ok finalHandoverNeedsNewEpochFramesTest passed 1 test(s)\n    ok completedRouteRejectsLateFrameTest passed 1 test(s)\n    ok delayedOrderedPresentationStillReadyTest passed 1 test(s)\n    ok oldPresentedSequenceAfterNewerRejectedTest passed 1 test(s)\n\n  8 passing (401ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "presentation.qnt",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--invariant=allProps",
+        "--verbosity=0"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

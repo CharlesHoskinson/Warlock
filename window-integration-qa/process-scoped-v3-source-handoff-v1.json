@@ -1,0 +1,156 @@
+{
+  "schema": "process-scoped-source-handoff-v1",
+  "sourceCheckpoint": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/scoped-source-checkpoint-inputs.json",
+  "sourceCheckpointSHA256": "e43fe72f584a32bd6b5df3b87930a240599ea621ad7814b80b7180b3b27a3e11",
+  "sourceInputs": 25087,
+  "sourceModes": 25087,
+  "links": 13862,
+  "runtimeDiff": [
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/ProcessRegistry.cpp",
+      "sha256": "307dcd03e650f37cec7981c0e7d97c4eecc4df0a41984113562319ccea81005f",
+      "mode": 420,
+      "beforeSHA256": "cbc74744f7a50b351f4cba72ba33b2bcd883f0b07df79153cc5129c533019720",
+      "diff": "/home/hoskinson/window-integration-qa/process-scoped-v3-runtime-diff-v1/ProcessRegistry.cpp.diff",
+      "diffSHA256": "02a43f5f28cb24f3f83cbb92ca27692a61dcb9f0a8609269b8e60b3c0c27b5e0"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/ProcessRegistry.hpp",
+      "sha256": "7a078081894d204c291a8e3672f23bd66b8dd773ad064113c0cb0ce7c88aa0df",
+      "mode": 420,
+      "beforeSHA256": "40a8248d59c344a26a2856cfccc16fb1c7acba6814673148805c1684087ada40",
+      "diff": "/home/hoskinson/window-integration-qa/process-scoped-v3-runtime-diff-v1/ProcessRegistry.hpp.diff",
+      "diffSHA256": "c9e4a1b709ddbca426234a4a3eecc9898f9cd180701255fb1d1f758eb307772b"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/ProcessKernel.cpp",
+      "sha256": "243e34350e75526d50899cccd875618bd3a6ccb529b8555b093b48595c37fc31",
+      "mode": 420,
+      "beforeSHA256": "9904c7307418419bbdc3e5ee21fab723b389a31d8a90a3718c66d32e56655c08",
+      "diff": "/home/hoskinson/window-integration-qa/process-scoped-v3-runtime-diff-v1/ProcessKernel.cpp.diff",
+      "diffSHA256": "4c2214bfd561f5fa5ea00cc12e18db04a98f4728bdd562a61eacc48d62d31bb7"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/MappingBatch.cpp",
+      "sha256": "3cad8ffa7bf7d4d0e959881ec434dbd3d0930a38837a5458488fe44c17528108",
+      "mode": 420,
+      "beforeSHA256": "48a7dfa3f5de2541a1071ef1cc2013102504ce7bb671fd2853de4d1d799d23b7",
+      "diff": "/home/hoskinson/window-integration-qa/process-scoped-v3-runtime-diff-v1/MappingBatch.cpp.diff",
+      "diffSHA256": "f5a27785b38af71a30cde94d5e049eb40c9a623370487928a9949f3a6b60ac19"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/MappingWitness.hpp",
+      "sha256": "e776363d2d962b4acc0571febcd29059ab981029e53ef2ea65fce8b3c191f51a",
+      "mode": 420,
+      "beforeSHA256": "dd89957e99b427ed1f6770226c63547691b8340dfe931ac0ca6d7d6ea9efd3be",
+      "diff": "/home/hoskinson/window-integration-qa/process-scoped-v3-runtime-diff-v1/MappingWitness.hpp.diff",
+      "diffSHA256": "fb15cc3d4473f987adbef6f0c6eef2a26c843235d7ea5f1f2c72edf9e8ca439b"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/SourceAliases.hpp",
+      "sha256": "95585bbfd72a3e92c0e973e21b5719328b96f9eb607578d151c8190c35a4e970",
+      "mode": 420,
+      "beforeSHA256": null,
+      "diff": "/home/hoskinson/window-integration-qa/process-scoped-v3-runtime-diff-v1/SourceAliases.hpp.diff",
+      "diffSHA256": "9562b5b7bad617c097500280f085efc449cca338b6d2db6cafd5536dc0828164"
+    }
+  ],
+  "actualRegistryCases": [
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/registry-product-collector-pointer-1790972151373040971.json",
+      "sha256": "d7d88da278fbea63726b7298d6163aca74120e66601dff5751c0f82ddc843c4c",
+      "result": "pass",
+      "stderr": "",
+      "normalFixtureCleanup": true,
+      "normalCPUPrivateRuntimeRemoved": true
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/registry-product-context-replacement-1790971704846969866.json",
+      "sha256": "7c5535286c61ed8be6e2fcc4c97ced314ee42d9ea43c52a79c48c409e4a93832",
+      "result": "fail",
+      "stderr": "actual lexical QQmlContext replacement revokes completion\n",
+      "normalFixtureCleanup": true,
+      "normalCPUPrivateRuntimeRemoved": true
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/registry-product-context-replacement-1790971858855403880.json",
+      "sha256": "9637c8e9d1d493da3355ffaeb97f6a1af964177b987eb88802d40325dfba7fd3",
+      "result": "fail",
+      "stderr": "Actual unchanged fast helper must be accepted before registry negative\n",
+      "normalFixtureCleanup": true,
+      "normalCPUPrivateRuntimeRemoved": true
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/registry-product-context-retire-1790972078571012515.json",
+      "sha256": "0387d0d724cf444d70d301c738902af86a208f05b83687a9a29b06377561d0c6",
+      "result": "pass",
+      "stderr": "",
+      "normalFixtureCleanup": true,
+      "normalCPUPrivateRuntimeRemoved": true
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/registry-product-duplicate-eof-1790971687744446493.json",
+      "sha256": "f01da48ab3663b53a73dbd67e96ae2cb39dac0f2938ace1f5644a144dab3a696",
+      "result": "pass",
+      "stderr": "",
+      "normalFixtureCleanup": true,
+      "normalCPUPrivateRuntimeRemoved": true
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/registry-product-duplicate-start-1790972112861214992.json",
+      "sha256": "17b825e4e41e890ab93e9a7ddbc256476dcd10bd291ee7892089171290c10c4b",
+      "result": "pass",
+      "stderr": "",
+      "normalFixtureCleanup": true,
+      "normalCPUPrivateRuntimeRemoved": true
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/registry-product-old-current-rearm-1790971679691056974.json",
+      "sha256": "d4e1da8d48fe78af4cfe9d17203706909b8f48276020fd4ed0361a26b4b0f927",
+      "result": "pass",
+      "stderr": "",
+      "normalFixtureCleanup": true,
+      "normalCPUPrivateRuntimeRemoved": true
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/registry-product-retire-1790972144220487210.json",
+      "sha256": "8d8d054d5cd25673fe168eed9f5bdc1618cb8fac1d6bfaaf0aa99900e6cea8d2",
+      "result": "pass",
+      "stderr": "",
+      "normalFixtureCleanup": true,
+      "normalCPUPrivateRuntimeRemoved": true
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/registry-product-source-replacement-1790971714109591529.json",
+      "sha256": "35b6bc11d760524a17e7cd9b2b0d1f14c5b3c5a233867f223f861ae220b9a520",
+      "result": "pass",
+      "stderr": "",
+      "normalFixtureCleanup": true,
+      "normalCPUPrivateRuntimeRemoved": true
+    }
+  ],
+  "actualUnchangedCapturePositive": {
+    "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/product-capture-runtime-1790971453742602930.json",
+    "sha256": "212e9b0c731895fb9e84a74cda89525ce05f652a089aaa80ebd20f3fc54f58da"
+  },
+  "productionModule": {
+    "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/libobjectlifetime-process.so",
+    "sha256": "8b7765fe8ed5a043aad96684ce67a5e5ffecc0defd5caf4fd56bde3dc19599f7",
+    "build": "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/production-module-build.json",
+    "buildSHA256": "77e709622480b1dd1008114d536be867a6b96c1b6f4bb43f9d19b5a9fdd53f5f",
+    "nativeLoaded": false
+  },
+  "rootReviewPending": true,
+  "nativeReady": false,
+  "reliabilityAccepted": false,
+  "pending": [
+    "baseline kernel-precondition failure cause unavailable in old fixture; diagnostic now saves full state",
+    "actual pending-result retirement and context loss",
+    "actual distinct duplicate-worker result notification/current lease; old live-worker result",
+    "actual installed QS Process/collectors/parser ABI/context/popup route and kernel/EOF/gone/receipt",
+    "frontend/config source route mapping and full Pin B private campaign"
+  ],
+  "GUI": false,
+  "mainChanges": false,
+  "frozen": false
+}

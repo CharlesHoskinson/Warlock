@@ -1,0 +1,52 @@
+{
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "readonly_predecessor_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/verified-refinement-0.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "readonly_predecessor_test.qnt",
+        "--backend=rust",
+        "--seed=2026100215"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/verified-refinement-1.log",
+      "logSHA256": "48514a55e33e7e31af7d3de73a2d9c128bea8eab154848cb347081d07abd757c"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "readonly_predecessor.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100215",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/verified-refinement-2.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "sourceSHA256": {
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/readonly_predecessor.qnt": "981edebc02eff5cc149b2b89d4e7d0030355a06c3aa58a91283643f271cf0a47",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/readonly_predecessor_test.qnt": "27d5110534b1214a60e3f947ff1fc12bc33bd95dcbe0aa0fa8150fcd150a0bda"
+  },
+  "named": 19,
+  "samples": 2000,
+  "steps": 100,
+  "passed": true,
+  "sourceUnchanged": true,
+  "nativeLaunch": false
+}

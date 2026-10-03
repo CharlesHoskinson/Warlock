@@ -1,0 +1,28 @@
+{
+  "result": "pass",
+  "scope": "Read-only original mandatory-parent transport replay only",
+  "originalAttemptResult": "fail",
+  "nativeHeldCasesAccepted": false,
+  "nativeCommands": false,
+  "sourceASTExact": true,
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "artifacts": [
+    {
+      "path": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/attempt-1/qt-wayland/host/hyprland.log",
+      "sha256": "c26e45b6a1cfd60f4303dbdb21ceb083e4a9876a4f333615c16c3d55773097d9",
+      "bytes": 103742,
+      "completeEOF": true
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/attempt-1/qt-wayland/host/weston-renderer.log",
+      "sha256": "d53a10be8c844f26f35acadcbb0e540735950c6dddf1870d7b9d5ee0e4a5977f",
+      "bytes": 3480,
+      "completeEOF": true
+    }
+  ]
+}

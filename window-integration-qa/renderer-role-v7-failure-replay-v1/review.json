@@ -1,0 +1,112 @@
+{
+  "result": "bounded-failure-replay-pass",
+  "campaignResult": "fail",
+  "nativeAccepted": false,
+  "original38BaselineAccepted": false,
+  "original34FaultsAccepted": false,
+  "sourceSHA256": {
+    "report.json": "98a11f29c984a04dd5509b3d21846cb3d6eb0fafa38747580b8d3eeeeacb82f9",
+    "service-retirement-1.json": "e420c73b257a0c76cf1aedaa12222a33a10eb16755fc97aa787276719192dbc8",
+    "actual-terminal-binding.json": "add989f7f8493f30a4a1c9958e2a6e92eb9413503e25a1355963f9e8c35a6585",
+    "root-failure-audit-v1.json": "32ded82b88058f6e37adb1958b40c73fc61678e370b00b224b425c22eef565b0"
+  },
+  "executedOriginalGates": 11,
+  "passedOriginalGates": 11,
+  "exactPreparationFailure": "outstanding actor helper prevents thumbnail launch",
+  "captures": [
+    {
+      "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/attempt-baseline-1/service-epochs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png",
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "captureEpoch": "058b7a3d26cb-1",
+      "identity": [
+        "18000000",
+        833756
+      ]
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/attempt-baseline-1/service-epochs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png",
+      "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "captureEpoch": "058b7a3d26cb-2",
+      "identity": [
+        "18000002",
+        833756
+      ]
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/attempt-baseline-1/service-epochs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png",
+      "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+      "captureEpoch": "058b7a3d26cb-3",
+      "identity": [
+        "18000003",
+        833756
+      ]
+    }
+  ],
+  "rendererSeedUploadsAccepted": false,
+  "normalNativeUnload": true,
+  "mainPreservation": {
+    "allStableClientFields": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "typedClipboardAndPrimary": true,
+    "a11ySocketFlagsAndReaderEnabled": true,
+    "outputs": true,
+    "plugins": true,
+    "keyboardStates": true,
+    "fourCatalogNaturalBytes": true,
+    "dashboardBytes": true,
+    "originalFilesProcess": true,
+    "originalFilesPublicState": true,
+    "originalFilesFullUi": true,
+    "originalFilesVisibility": true
+  },
+  "normalRendererRetirement": {
+    "actor": 1,
+    "timeNs": 146826822145445,
+    "root": "/run/user/1000/wqa/d00b/hypr-window-motion/qa-family-service/actors/actor-1-b47ce3f5287e4f0f8b486a5e4fa7bfe3",
+    "actorDirectoryGone": true,
+    "originalRetirementDelegatedOnce": true,
+    "productRegistryRemoved": true,
+    "observedControllerBindings": 1,
+    "rendererClosed": true,
+    "rendererExitCode": 0
+  },
+  "serviceNormalExit": false,
+  "clientCleanup": {
+    "family-service": {
+      "pid": 834007,
+      "start": "15894241",
+      "exitCode": 1,
+      "gone": true,
+      "error": "RuntimeError('Owned client did not exit normally')"
+    },
+    "qt-fixture": {
+      "pid": 833756,
+      "start": "15894016",
+      "exitCode": 0,
+      "gone": true
+    },
+    "taskbar-shell": {
+      "pid": 833190,
+      "start": "15893683",
+      "selectedInstance": {
+        "config_path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/payload/omarchy/shell/shell.qml",
+        "id": "6wuh4fz9mt",
+        "launch_time": "2026-10-02T04:21:04",
+        "pid": 833190,
+        "shell_id": "4878aa44fcba6c97dd8cae0944e6c708"
+      },
+      "exitCode": 0,
+      "gone": true
+    }
+  },
+  "terminalReadOnlyLedgerAccepted": false,
+  "terminalErrors": [
+    {
+      "type": "ValueError",
+      "message": "complete closed actual query proof required"
+    }
+  ],
+  "claimLimit": "Retained actual original baseline evidence only. Normal native unload and renderer0 are distinct from strict rejected service/terminal closure; harness secondary query/confirmation errors remain unchanged. No native timing/cancellation/remaining38/fault acceptance."
+}

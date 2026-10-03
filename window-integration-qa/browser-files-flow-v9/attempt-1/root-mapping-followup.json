@@ -1,0 +1,25 @@
+{
+  "result": "partial-data-proof-accepted/full-flow-failed",
+  "updatedUTC": "2026-10-01T23:58:38.186387+00:00",
+  "exactModeZeroBeforeAfterFDProof": true,
+  "ownedReadonlyUUIDDataPhaseAccepted": true,
+  "postDiskConfirmationNotReached": true,
+  "deletedBrowserMetricsObservedDespiteFixtureFlag": [
+    {
+      "identity": {
+        "pid": 1785424,
+        "start": "12141236",
+        "ppid": 1785138,
+        "pgid": 1785424
+      },
+      "line": "739448400000-739448800000 rw-s 00000000 00:54 317766                     /run/user/1000/wqa/8932/browser-profile/BrowserMetrics/BrowserMetrics-6ABEF2FB-1B3E50.pma (deleted)",
+      "rawMapsSHA256": "05cc1e4760e177132477fefd2668f2c0cb4134e6a7ddcd5d6c66a39cecc2518d"
+    }
+  ],
+  "metadataOfMetricsNotRecorded": true,
+  "sourceAttributionNotProved": true,
+  "all18MainAndNormalCleanup": true,
+  "beforeFocusInput": true,
+  "browserFocusAccepted": false,
+  "mainWrites": false
+}

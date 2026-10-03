@@ -1,0 +1,14 @@
+module owned_commit_test {
+ import owned_commit.* from "./owned_commit"
+ val left={id:1,epoch:1,output:0,generation:1,sequence:1,x:10,endpoint:true}
+ val right={...left,output:1,sequence:2}
+ run preparingFeedbackCannotAuthorizeTest=init.then(fire(Prepare(left))).then(fire(Present(1))).then(fire(Promote)).then(fire(Ack)).then(all{assert(not(s.grant) and s.early==Set(1) and allProps),fire(Cancel)})
+ run earlyFeedbackBecomesEligibleOnlyOnSuccessTest=init.then(fire(Prepare(left))).then(fire(Present(1))).then(fire(Swap({seq:1,ok:true}))).then(all{assert(s.seen==Set(0) and allProps),fire(Cancel)})
+ run failedSwapRetiresEarlyFeedbackTest=init.then(fire(Prepare(left))).then(fire(Present(1))).then(fire(Swap({seq:1,ok:false}))).then(fire(Present(1))).then(all{assert(not(s.active) and s.seen==Set() and allProps),fire(Cancel)})
+ run allOutputsAndPromotionRequiredTest=init.then(fire(Prepare(left))).then(fire(Swap({seq:1,ok:true}))).then(fire(Present(1))).then(fire(Prepare(right))).then(fire(Swap({seq:2,ok:true}))).then(fire(Present(2))).then(fire(Ack)).then(all{assert(not(s.grant) and allProps),fire(Promote)}).then(fire(Ack)).then(all{assert(s.grant and allProps),fire(Cancel)})
+ run discardedCommitCancelsRouteTest=init.then(fire(Prepare(left))).then(fire(Swap({seq:1,ok:true}))).then(fire(Discard(1))).then(fire(Present(1))).then(all{assert(not(s.active) and allProps),fire(Cancel)})
+ run outputGenerationChangeRejectsFeedbackTest=init.then(fire(Prepare(left))).then(fire(Swap({seq:1,ok:true}))).then(fire(OutputRemove)).then(fire(Present(1))).then(all{assert(s.generation==2 and s.seen==Set() and allProps),fire(Cancel)})
+ run identityReuseCannotInheritPixelsTest=init.then(fire(Prepare(left))).then(fire(Swap({seq:1,ok:true}))).then(fire(Reuse)).then(fire(Present(1))).then(all{assert(s.id==2 and s.seen==Set() and allProps),fire(Cancel)})
+ run outstandingCommitCannotSupplyUndisplayedHandoverTest=init.then(fire(Prepare(left))).then(fire(Retarget)).then(all{assert(s.epoch==1 and allProps),fire(Cancel)})
+ run newerReservedIntentRetiresOldNativeAuthorityTest=init.then(fire(Prepare(left))).then(fire(Swap({seq:1,ok:true}))).then(fire(Present(1))).then(fire(Prepare(right))).then(fire(Swap({seq:2,ok:true}))).then(fire(Present(2))).then(fire(Promote)).then(fire(Reserve)).then(fire(Promote)).then(fire(Ack)).then(all{assert(s.queued and not(s.grant) and allProps),fire(Retarget)}).then(all{assert(s.epoch==2 and not(s.queued) and not(s.promoted) and allProps),fire(Cancel)})
+}

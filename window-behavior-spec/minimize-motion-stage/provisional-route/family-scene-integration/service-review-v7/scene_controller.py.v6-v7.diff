@@ -1,0 +1,103 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v6/scene_controller.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v7/scene_controller.py
+@@ -12,6 +12,7 @@
+ import threading
+ import time
+ import uuid
++from direction import compose, Direction
+ 
+ TOKEN = re.compile(r'[0-9a-f]{12}-[1-9][0-9]{0,14}')
+ 
+@@ -42,6 +43,7 @@
+     profile: dict = field(default_factory=dict)
+     results: list = field(default_factory=list)
+     single: bool = False
++    direction: Direction | None = None
+ 
+ class SceneController:
+     """One active exact family scene. Multiple families require separate actors.
+@@ -73,7 +75,7 @@
+     def owns(self, record):
+         return self.current is record
+ 
+-    def request(self, command, address, stable_id, pid, *, context, single=False):
++    def request(self, command, address, stable_id, pid, *, context, single=False, direction=None):
+         if command not in ('minimize','restore','toggle','activate'):
+             raise ValueError('invalid motion operation')
+         captured = (address, str(stable_id), int(pid))
+@@ -85,21 +87,19 @@
+                 # One renderer scene cannot accidentally absorb an unrelated
+                 # same-process window. A service scene manager must route it.
+                 raise ValueError('actor belongs to a different captured family')
+-            operation = command
+-            if command in ('toggle','activate'):
+-                if previous:
+-                    operation = 'restore' if previous.operation == 'minimize' else 'minimize'
+-                else:
+-                    # This metadata is resolved asynchronously below.
+-                    operation = command
++            if direction is None:
++                prior=(Direction(previous.operation) if previous.operation in ('minimize','restore') else previous.direction) if previous else None
++                direction=compose(command,prior,captured=captured)
++            if not isinstance(direction,Direction):raise ValueError('invalid internal direction')
++            operation=direction.constant or direction.anchor
+             self.serial += 1
+             record = Scene(f'{self.session}-{self.serial}', operation, captured, context,
+                 members=deepcopy(previous.members) if previous else [],
+                 sources=deepcopy(previous.sources) if previous and 'cleanupQueuedNs' not in previous.profile else [],
+                 focus=previous.focus if previous else None,
+                 accepted_operation=previous.accepted_operation if previous else None,
+-                previous=previous, single=single,
+-                profile={'receivedNs':time.monotonic_ns(),'reservedNs':time.monotonic_ns()})
++                previous=previous, single=single, direction=direction,
++                profile={'receivedNs':time.monotonic_ns(),'reservedNs':time.monotonic_ns(),'ingressCommand':command})
+             self.current = record # ALL member authority changes atomically here.
+             self.write_journal()
+             if previous and previous.visual and record.sources and context == previous.context:
+@@ -141,18 +141,29 @@
+         """Hook for an explicit shared family ownership registry."""
+         return None
+ 
++    def direction_for(self,record,members):
++        return record.direction
++
+     def prepare(self, record):
+         sources=[]
+         try:
+             record.profile['metadataStartNs'] = time.monotonic_ns()
+             members, focus = self.fresh(record)
+-            if record.operation in ('toggle','activate'):
+-                window = next(m for m in members if key(m)==record.requested)
+-                minimized = window.get('workspace',{}).get('name') == 'special:win-minimized'
+-                record.operation = ('restore' if minimized else 'minimize') if record.operation=='toggle' else (
+-                    'minimize' if not minimized and self.desktop.active()==window['address'] else 'restore')
+             with self.lock:
+                 if not self.owns(record):return
++                direction=self.direction_for(record,members)
++            active=self.desktop.active() if direction.anchor=='activate' else None
++            with self.lock:
++                if not self.owns(record):return
++                # The sampled relation and native state have no authority until
++                # this reservation still owns every exact member.
++                direction=self.direction_for(record,members)
++                anchor=direction.identity or record.requested
++                window=next((m for m in members if key(m)==anchor),None)
++                if window is None:raise ValueError('relative direction anchor closed or left exact family')
++                record.operation=direction.resolve(window,active)
++                record.direction=Direction(record.operation)
++                record.profile['resolvedDirection']=record.operation
+                 self.validate_scope(record, members)
+                 if record.operation == 'restore':
+                     # Irreversible destination effects belong to the current
+@@ -167,6 +178,11 @@
+                 record.validated = True
+                 record.accepted_operation = record.operation
+                 self.write_journal()
++                endpoint_matches=all((m.get('workspace',{}).get('name')=='special:win-minimized')==(record.operation=='minimize') for m in members)
++                if endpoint_matches and not record.visual and not (record.previous and record.previous.visual):
++                    record.profile['nativeEndpointAlreadySatisfied']=True
++                    self.settle(record,'native endpoint already satisfied')
++                    return
+                 if reduced:
+                     self.settle(record,'reduced motion')
+                     return

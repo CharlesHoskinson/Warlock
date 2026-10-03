@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_controlling_orca" xml:lang="eo">
+  <info>
+    <link type="next" xref="commands_where_am_i"/>
+    <link type="guide" xref="commands#getting_started"/>
+    <title type="sort">1. Kontrolado kaj Lernado pri Uzo de Orko</title>
+    <title type="link">Kontrolado kaj Lernado pri Uzo de Orko</title>
+    <desc>Komandoj por interagi kun <app>Orko</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Kontrolado kaj Lernado pri Uzo de Orko</title>
+  <section id="controlling">
+    <title>Komandoj por Kontroli <app>Orko</app></title>
+    <p>La sekvaj komandoj povas esti uzataj por atingi la Preferoj-dialogojn de <app>Orko</app>, ŝalti/malŝalti <app>Orko</app>, kaj preterpasi <app>Orko</app>-komandojn por eviti klavkombinajn konfliktojn en la uzata aplikaĵo.</p>
+    <list>
+      <item>
+        <p>Ŝalti/malŝalti <app>Orko</app> en subtenataj labortablaj medioj: <keyseq><key>Super</key><key>Alt</key><key>S</key></keyseq>.</p>
+        <note style="tip">
+           <p>Se vi uzas <app>Orko</app> en alia labortabla medio en kiu ne ekzistas komando por ŝalti/malŝalti <app>Orko</app>, vi eble trovos utila la komandon por ĉesigi <app>Orko</app>. Ĉi tiu komando estas neligita defaŭlte. Bonvolu vidi <link xref="howto_key_bindings">Modifado de Klavkombinoj</link> por informoj pri kiel ligi neligitajn komandojn.</p>
+        </note>
+      </item>
+      <item>
+        <p><link xref="preferences">Preferoj de Orko</link>-dialogo: <keyseq><key>Orko Modifier</key><key>Space</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>La Preferoj-dialogo de Orko por la aplikaĵo kun fokuso: <keyseq><key>Ctrl</key><key>Orko Modifier</key><key>Space</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Ŝalti/malŝalti ĉiujn Orko-komandklavojn: <keyseq><key>Alt&gt;</key><key>BackSpace</key></keyseq></p>
+      </item>
+      <item>
+        <p>Ŝalti/malŝalti klavaran aranĝon: (neligita)</p>
+      </item>
+      <item>
+        <p>Iri al la sekva klava eĥa nivelo: (neligita)</p>
+      </item>
+      <item>
+        <p>Ĉesigi la ekranan leganton: (neligita)</p>
+      </item>
+    </list>
+  </section>
+  <section id="braille_keyboard_bindings">
+    <title>Brajlaj Komandoj</title>
+    <p>La sekvaj komandoj povas esti uzataj por kontroli kaj personecigi la brajlan eligon de Orko.</p>
+    <list>
+      <item>
+        <p>Pompi la brajlan ekranon maldekstren: (neligita)</p>
+      </item>
+      <item>
+        <p>Pompi la brajlan ekranon dekstren: (neligita)</p>
+      </item>
+      <item>
+        <p>Ŝalti kaj malŝalti mallongigitan brajlon: (neligita)</p>
+      </item>
+    </list>
+  </section>
+  <section id="learning">
+    <title>Komandoj por Lerni Uzi <app>Orko</app></title>
+    <p>En Lerna Reĝimo, <app>Orko</app> anoncos ĉiun klavpremon kiun vi premis kune kun ajna asociita <app>Orko</app>-komando al kiu tiu klavpremo estas ligita. En ĉi tiu reĝimo, vi ankaŭ povas ricevi liston de klavkombinoj enhavantaj ĉiujn <app>Orko</app>-komandojn kiujn vi povas uzi.</p>
+    <list>
+      <item>
+        <p>Eniri Lernan Reĝimon: <keyseq><key>Orko Modifier</key><key>H</key></keyseq></p>
+      </item>
+      <item>
+        <p>Eliri Lernan Reĝimon: <keyseq><key>Esc</key></keyseq></p>
+      </item>
+    </list>
+  </section>
+</page>

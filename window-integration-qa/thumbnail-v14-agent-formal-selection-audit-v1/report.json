@@ -1,0 +1,1001 @@
+{
+  "result": "pass",
+  "meaning": "bounded actual selector audit; affected nominal focus counts explicitly held",
+  "defaultSelector": "name.endsWith('Test')",
+  "owningCLI": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/@informalsystems/quint/dist/src/cliHelpers.js",
+  "affectedFocusDesigns": [
+    {
+      "version": 3,
+      "reportedNamed": 36,
+      "declaredRuns": 36,
+      "selectedRuns": 0,
+      "logBytes": 27,
+      "command": [
+        "quint",
+        "test",
+        "focus_transaction_test.qnt",
+        "--backend=rust",
+        "--seed=2026100228"
+      ],
+      "model": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v3/focus_transaction_test.qnt",
+      "log": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v3/formal-1.log",
+      "reportedNamedAuthority": "not demonstrated by actual test command; held",
+      "invariantCommand": {
+        "command": [
+          "quint",
+          "run",
+          "focus_transaction.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=100",
+          "--backend=rust",
+          "--seed=2026100228",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "seconds": 5.3760531579901,
+        "log": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v3/formal-2.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "mode": 384
+      }
+    },
+    {
+      "version": 4,
+      "reportedNamed": 44,
+      "declaredRuns": 44,
+      "selectedRuns": 0,
+      "logBytes": 27,
+      "command": [
+        "quint",
+        "test",
+        "focus_transaction_test.qnt",
+        "--backend=rust",
+        "--seed=2026100228"
+      ],
+      "model": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v4/focus_transaction_test.qnt",
+      "log": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v4/formal-1.log",
+      "reportedNamedAuthority": "not demonstrated by actual test command; held",
+      "invariantCommand": {
+        "command": [
+          "quint",
+          "run",
+          "focus_transaction.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=100",
+          "--backend=rust",
+          "--seed=2026100228",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "seconds": 5.829843257990433,
+        "log": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v4/formal-2.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "mode": 384
+      }
+    },
+    {
+      "version": 5,
+      "reportedNamed": 45,
+      "declaredRuns": 45,
+      "selectedRuns": 0,
+      "logBytes": 27,
+      "command": [
+        "quint",
+        "test",
+        "focus_transaction_test.qnt",
+        "--backend=rust",
+        "--seed=2026100228"
+      ],
+      "model": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/focus_transaction_test.qnt",
+      "log": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/formal-1.log",
+      "reportedNamedAuthority": "not demonstrated by actual test command; held",
+      "invariantCommand": {
+        "command": [
+          "quint",
+          "run",
+          "focus_transaction.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=100",
+          "--backend=rust",
+          "--seed=2026100228",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "seconds": 7.282660326978657,
+        "log": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/formal-2.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "mode": 384
+      }
+    },
+    {
+      "version": 6,
+      "reportedNamed": 45,
+      "declaredRuns": 45,
+      "selectedRuns": 0,
+      "logBytes": 27,
+      "command": [
+        "quint",
+        "test",
+        "focus_transaction_test.qnt",
+        "--backend=rust",
+        "--seed=2026100228"
+      ],
+      "model": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/focus_transaction_test.qnt",
+      "log": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/formal-1.log",
+      "reportedNamedAuthority": "not demonstrated by actual test command; held",
+      "invariantCommand": {
+        "command": [
+          "quint",
+          "run",
+          "focus_transaction.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=100",
+          "--backend=rust",
+          "--seed=2026100228",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "seconds": 4.176522871013731,
+        "log": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/formal-2.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "mode": 384
+      }
+    }
+  ],
+  "B14RetainedOriginalModels": [
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/helper_lifecycle.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/helper_lifecycle.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 4,
+      "selectedNames": [
+        "startedCannotUnloadTest",
+        "failedCannotUnloadTest",
+        "completedPrefixCannotUnloadTest",
+        "allNormalCanUnloadTest"
+      ],
+      "loggedSuccesses": [
+        "startedCannotUnloadTest",
+        "failedCannotUnloadTest",
+        "completedPrefixCannotUnloadTest",
+        "allNormalCanUnloadTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/helper_lifecycle-test.log",
+      "logHashExact": true
+    },
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/query_lifecycle.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/query_lifecycle.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 4,
+      "selectedNames": [
+        "gateBeforeExecTest",
+        "failedQueryCannotUnloadTest",
+        "runningQueryCannotUnloadTest",
+        "completedQueriesCanUnloadTest"
+      ],
+      "loggedSuccesses": [
+        "gateBeforeExecTest",
+        "failedQueryCannotUnloadTest",
+        "runningQueryCannotUnloadTest",
+        "completedQueriesCanUnloadTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/query_lifecycle-test.log",
+      "logHashExact": true
+    },
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/capture_lifecycle.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/capture_lifecycle.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 4,
+      "selectedNames": [
+        "fallbackCannotAcceptTest",
+        "captureWithoutSeedCannotAcceptTest",
+        "actualSeedAndPairsCanAcceptTest",
+        "changedPairsRevokeAcceptanceTest"
+      ],
+      "loggedSuccesses": [
+        "fallbackCannotAcceptTest",
+        "captureWithoutSeedCannotAcceptTest",
+        "actualSeedAndPairsCanAcceptTest",
+        "changedPairsRevokeAcceptanceTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/capture_lifecycle-test.log",
+      "logHashExact": true
+    },
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/service_queries.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/service_queries.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 4,
+      "selectedNames": [
+        "registerBeforeExecTest",
+        "boundedMemberQueryTest",
+        "unknownQueryRefusesAcceptanceTest",
+        "incompleteQueriesCannotAcceptTest"
+      ],
+      "loggedSuccesses": [
+        "registerBeforeExecTest",
+        "boundedMemberQueryTest",
+        "unknownQueryRefusesAcceptanceTest",
+        "incompleteQueriesCannotAcceptTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/service_queries-test.log",
+      "logHashExact": true
+    },
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/reversal.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/reversal.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 6,
+      "selectedNames": [
+        "oldFeedbackBecomesDisplayedOriginTest",
+        "provisionalRetargetHasNoAuthorityTest",
+        "oldReceiptCannotCommitTest",
+        "currentValidatedReceiptCanCommitTest",
+        "secondReversalRetainsSourcesTest",
+        "shutdownRevokesAuthorityTest"
+      ],
+      "loggedSuccesses": [
+        "oldFeedbackBecomesDisplayedOriginTest",
+        "provisionalRetargetHasNoAuthorityTest",
+        "oldReceiptCannotCommitTest",
+        "currentValidatedReceiptCanCommitTest",
+        "secondReversalRetainsSourcesTest",
+        "shutdownRevokesAuthorityTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/reversal-test.log",
+      "logHashExact": true
+    },
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/service_restart_test.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/service_restart_test.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 6,
+      "selectedNames": [
+        "liveOldRootCannotBeReplacedTest",
+        "exactDeadRootCanRegisterFreshLifetimeTest",
+        "sameOldLifetimeCannotBeRefreshedTest",
+        "sourceReplacementCannotResetAuthorityTest",
+        "memberReplacementCannotResetAuthorityTest",
+        "reusedPidWithFreshStartCanRegisterExactNewRootTest"
+      ],
+      "loggedSuccesses": [
+        "liveOldRootCannotBeReplacedTest",
+        "exactDeadRootCanRegisterFreshLifetimeTest",
+        "sameOldLifetimeCannotBeRefreshedTest",
+        "sourceReplacementCannotResetAuthorityTest",
+        "memberReplacementCannotResetAuthorityTest",
+        "reusedPidWithFreshStartCanRegisterExactNewRootTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/service_restart-test.log",
+      "logHashExact": true
+    },
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/recovery_collection_test.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/recovery_collection_test.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 19,
+      "selectedNames": [
+        "completeOriginalBaselineAndCancellationEvidenceMayReportTest",
+        "missingOriginalBaselineCannotReportTest",
+        "replacementReceiptCannotAcknowledgeTest",
+        "replacementScopeCannotAcknowledgeTest",
+        "replacementSourceCannotAcknowledgeTest",
+        "uncertainNativeEffectRemainsQuarantineAfterGroupsEmptyTest",
+        "missingKeeperTerminalCannotAcknowledgeTest",
+        "incompleteMembersCannotAcknowledgeTest",
+        "noCapturesAtDurableAckCannotAuthorizeDisposalTest",
+        "failedAckFsyncCannotAuthorizeDisposalTest",
+        "missingNewHelperClosureCannotExposeApiTest",
+        "forcedFixtureCleanupCannotClaimNormalAcceptanceTest",
+        "missingMainPreservationCannotReportTest",
+        "missingSourceClosureCannotReportTest",
+        "missingNativeUnloadCannotReportTest",
+        "expectedProductQuarantineCannotBecomeCancellationAcceptanceTest",
+        "laterMissingHelperProofRevokesApiAuthorityTest",
+        "lateUncertaintyRevokesApiAuthorityTest",
+        "freshReplacementReceiptRevokesPartialAuthorityTest"
+      ],
+      "loggedSuccesses": [
+        "completeOriginalBaselineAndCancellationEvidenceMayReportTest",
+        "missingOriginalBaselineCannotReportTest",
+        "replacementReceiptCannotAcknowledgeTest",
+        "replacementScopeCannotAcknowledgeTest",
+        "replacementSourceCannotAcknowledgeTest",
+        "uncertainNativeEffectRemainsQuarantineAfterGroupsEmptyTest",
+        "missingKeeperTerminalCannotAcknowledgeTest",
+        "incompleteMembersCannotAcknowledgeTest",
+        "noCapturesAtDurableAckCannotAuthorizeDisposalTest",
+        "failedAckFsyncCannotAuthorizeDisposalTest",
+        "missingNewHelperClosureCannotExposeApiTest",
+        "forcedFixtureCleanupCannotClaimNormalAcceptanceTest",
+        "missingMainPreservationCannotReportTest",
+        "missingSourceClosureCannotReportTest",
+        "missingNativeUnloadCannotReportTest",
+        "expectedProductQuarantineCannotBecomeCancellationAcceptanceTest",
+        "laterMissingHelperProofRevokesApiAuthorityTest",
+        "lateUncertaintyRevokesApiAuthorityTest",
+        "freshReplacementReceiptRevokesPartialAuthorityTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/recovery_collection-test.log",
+      "logHashExact": true
+    },
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/actual_service_binding_test.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/actual_service_binding_test.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 25,
+      "selectedNames": [
+        "actualV3StaleInnerObserverRefusedTest",
+        "declaredOuterCannotReplaceLoadedModuleTest",
+        "recoveryObserverCannotRemainStaleTest",
+        "missingActualModuleRefusedTest",
+        "aliasOrWrongPathRefusedTest",
+        "wrongSourceHashRefusedTest",
+        "wrongSourceModeRefusedTest",
+        "newlyImportedUnlinkedModuleCannotSubstituteTest",
+        "undurableRawBindingCannotAcceptTest",
+        "oldServiceLedgerRefusedTest",
+        "absentLedgerRefusedTest",
+        "unclosedLedgerCannotAcceptTest",
+        "pendingOrPartialLedgerCannotAcceptTest",
+        "ledgerDiskMismatchCannotAcceptTest",
+        "finalSourceReplacementRefusedTest",
+        "originalBaselineCannotBeWaivedTest",
+        "faultNeedsSamePacketAcceptedBaselineTest",
+        "exactOriginalBaselineAndFaultFullInverseTest",
+        "refusalCannotBeOverwrittenByLaterValidBindingTest",
+        "stillValidModuleReplacementIsNotCapturedWitnessTest",
+        "stillValidOwnerReplacementCannotUseOldLedgerTest",
+        "freshFinalModuleTokenMustEqualCapturedTest",
+        "freshFinalLedgerTokenMustEqualCapturedBatchTest",
+        "freshFinalOwnerTokenCannotReplaceCaptureTest",
+        "newLedgerBatchRevokesPartialFinalProofTest"
+      ],
+      "loggedSuccesses": [
+        "actualV3StaleInnerObserverRefusedTest",
+        "declaredOuterCannotReplaceLoadedModuleTest",
+        "recoveryObserverCannotRemainStaleTest",
+        "missingActualModuleRefusedTest",
+        "aliasOrWrongPathRefusedTest",
+        "wrongSourceHashRefusedTest",
+        "wrongSourceModeRefusedTest",
+        "newlyImportedUnlinkedModuleCannotSubstituteTest",
+        "undurableRawBindingCannotAcceptTest",
+        "oldServiceLedgerRefusedTest",
+        "absentLedgerRefusedTest",
+        "unclosedLedgerCannotAcceptTest",
+        "pendingOrPartialLedgerCannotAcceptTest",
+        "ledgerDiskMismatchCannotAcceptTest",
+        "finalSourceReplacementRefusedTest",
+        "originalBaselineCannotBeWaivedTest",
+        "faultNeedsSamePacketAcceptedBaselineTest",
+        "exactOriginalBaselineAndFaultFullInverseTest",
+        "refusalCannotBeOverwrittenByLaterValidBindingTest",
+        "stillValidModuleReplacementIsNotCapturedWitnessTest",
+        "stillValidOwnerReplacementCannotUseOldLedgerTest",
+        "freshFinalModuleTokenMustEqualCapturedTest",
+        "freshFinalLedgerTokenMustEqualCapturedBatchTest",
+        "freshFinalOwnerTokenCannotReplaceCaptureTest",
+        "newLedgerBatchRevokesPartialFinalProofTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/actual_service_binding-test.log",
+      "logHashExact": true
+    },
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/batch_service_binding_test.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/batch_service_binding_test.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 16,
+      "selectedNames": [
+        "exact19ModulesBatchOwnerAndOriginalGatesMayAcceptTest",
+        "oldInnerObserverRefusesTest",
+        "oldRecoveryObserverRefusesTest",
+        "incompleteLoadedModuleInventoryRefusesTest",
+        "missingBatchModuleRefusesTest",
+        "foreignExtraModuleCannotSupplyCoverageTest",
+        "wrongActualBatchClassRefusesTest",
+        "wrongActorCommandFacadeRefusesTest",
+        "wrongActorSourceRootRefusesTest",
+        "wrongPrivatePreviewRootRefusesTest",
+        "missingInstalledFinisherCallbackRefusesTest",
+        "changedActualModuleObjectsRefuseTest",
+        "sourceOnlyCannotAcceptNativeTest",
+        "failedOriginalBaselineCannotBeNormalizedTest",
+        "incompleteNormalLifecycleRefusesTest",
+        "changedOwnerTokenRefusesTest"
+      ],
+      "loggedSuccesses": [
+        "exact19ModulesBatchOwnerAndOriginalGatesMayAcceptTest",
+        "oldInnerObserverRefusesTest",
+        "oldRecoveryObserverRefusesTest",
+        "incompleteLoadedModuleInventoryRefusesTest",
+        "missingBatchModuleRefusesTest",
+        "foreignExtraModuleCannotSupplyCoverageTest",
+        "wrongActualBatchClassRefusesTest",
+        "wrongActorCommandFacadeRefusesTest",
+        "wrongActorSourceRootRefusesTest",
+        "wrongPrivatePreviewRootRefusesTest",
+        "missingInstalledFinisherCallbackRefusesTest",
+        "changedActualModuleObjectsRefuseTest",
+        "sourceOnlyCannotAcceptNativeTest",
+        "failedOriginalBaselineCannotBeNormalizedTest",
+        "incompleteNormalLifecycleRefusesTest",
+        "changedOwnerTokenRefusesTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/batch_service_binding-test.log",
+      "logHashExact": true
+    },
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/batch_callback_identity_test.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/batch_callback_identity_test.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 21,
+      "selectedNames": [
+        "exactActorAndDesktopRolesAcceptTest",
+        "frozenFinishCannotBeStageTest",
+        "frozenStageCannotBeFinishTest",
+        "frozenReleasableCannotBeDiscardTest",
+        "frozenDiscardCannotBeReleasableTest",
+        "frozenOtherMethodCannotBeDisposableTest",
+        "frozenOtherMethodCannotBeFinisherTest",
+        "genuineForeignBatchCannotOwnStageTest",
+        "genuineForeignBatchCannotOwnFinishTest",
+        "genuineForeignBatchCannotOwnDiscardTest",
+        "genuineForeignBatchCannotOwnReleaseGuardTest",
+        "genuineForeignBatchCannotOwnDisposeGuardTest",
+        "genuineForeignDesktopCannotOwnFinisherTest",
+        "missingRoleCannotAcceptTest",
+        "extraRoleCannotAcceptTest",
+        "sourceEvidenceAloneCannotAcceptTest",
+        "wrongRoleAfterDiskRefusesTest",
+        "foreignOwnerAtTerminalRefusesTest",
+        "wrongModuleCannotAcceptTest",
+        "wrongOwnerCannotAcceptTest",
+        "refusalCannotBeClearedByCorrectRolesTest"
+      ],
+      "loggedSuccesses": [
+        "exactActorAndDesktopRolesAcceptTest",
+        "frozenFinishCannotBeStageTest",
+        "frozenStageCannotBeFinishTest",
+        "frozenReleasableCannotBeDiscardTest",
+        "frozenDiscardCannotBeReleasableTest",
+        "frozenOtherMethodCannotBeDisposableTest",
+        "frozenOtherMethodCannotBeFinisherTest",
+        "genuineForeignBatchCannotOwnStageTest",
+        "genuineForeignBatchCannotOwnFinishTest",
+        "genuineForeignBatchCannotOwnDiscardTest",
+        "genuineForeignBatchCannotOwnReleaseGuardTest",
+        "genuineForeignBatchCannotOwnDisposeGuardTest",
+        "genuineForeignDesktopCannotOwnFinisherTest",
+        "missingRoleCannotAcceptTest",
+        "extraRoleCannotAcceptTest",
+        "sourceEvidenceAloneCannotAcceptTest",
+        "wrongRoleAfterDiskRefusesTest",
+        "foreignOwnerAtTerminalRefusesTest",
+        "wrongModuleCannotAcceptTest",
+        "wrongOwnerCannotAcceptTest",
+        "refusalCannotBeClearedByCorrectRolesTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/batch_callback_identity-test.log",
+      "logHashExact": true
+    },
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/terminal_confirmation_test.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/terminal_confirmation_test.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 16,
+      "selectedNames": [
+        "normalCompleteArchiveAcceptsTest",
+        "ownerFailureRemainsRefusedTest",
+        "moduleFailureRemainsRefusedTest",
+        "serviceFailureRemainsRefusedTest",
+        "genuineRefusedQueryRemainsRefusedTest",
+        "retainedQueryFailureRemainsRefusedTest",
+        "actorFailureRemainsRefusedTest",
+        "sourceBeforeDiskFailureRemainsRefusedTest",
+        "batchBeforeDiskFailureRemainsRefusedTest",
+        "freshSourceMissingAfterDiskRefusesTest",
+        "freshBatchChangedAfterDiskRefusesTest",
+        "ownerLedgerModuleChangeAfterDiskRefusesTest",
+        "noPublishedEvidenceCannotAcceptTest",
+        "noConfirmationCannotAcceptTest",
+        "freshGoodObservationCannotClearOriginalFailureTest",
+        "changedSourceCannotRetainPriorAcceptanceTest"
+      ],
+      "loggedSuccesses": [
+        "normalCompleteArchiveAcceptsTest",
+        "ownerFailureRemainsRefusedTest",
+        "moduleFailureRemainsRefusedTest",
+        "serviceFailureRemainsRefusedTest",
+        "genuineRefusedQueryRemainsRefusedTest",
+        "retainedQueryFailureRemainsRefusedTest",
+        "actorFailureRemainsRefusedTest",
+        "sourceBeforeDiskFailureRemainsRefusedTest",
+        "batchBeforeDiskFailureRemainsRefusedTest",
+        "freshSourceMissingAfterDiskRefusesTest",
+        "freshBatchChangedAfterDiskRefusesTest",
+        "ownerLedgerModuleChangeAfterDiskRefusesTest",
+        "noPublishedEvidenceCannotAcceptTest",
+        "noConfirmationCannotAcceptTest",
+        "freshGoodObservationCannotClearOriginalFailureTest",
+        "changedSourceCannotRetainPriorAcceptanceTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/terminal_confirmation-test.log",
+      "logHashExact": true
+    },
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/renderer_collector_binding_test.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/renderer_collector_binding_test.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 37,
+      "selectedNames": [
+        "genuineNormalCloseAcceptTest",
+        "terminalIdentityDoesNotRequireLiveRegistryTest",
+        "terminalAloneCannotAuthorizeFeatureTest",
+        "originalElevenGateFailureRemainsFailTest",
+        "laterPassCannotClearOriginalFailureTest",
+        "cachedV23ModuleRefusesTest",
+        "missingNineteenthModuleRefusesTest",
+        "extraTwentiethModuleRefusesTest",
+        "missingV24FrozenClosureRefusesTest",
+        "missingV7FrozenClosureRefusesTest",
+        "missingV7ActualFailureRefusesTest",
+        "missingV8ComponentRefusesTest",
+        "foreignTransportRefusesTest",
+        "foreignLaunchRefusesTest",
+        "foreignKeeperRefusesTest",
+        "wrongRegisteredChildRefusesTest",
+        "canonicalPopenWrongPIDRefusesTest",
+        "processSubclassRefusesTest",
+        "registryBooleanDeviceAliasRefusesTest",
+        "launchFloatDeviceAliasRefusesTest",
+        "actorBooleanAliasRefusesTest",
+        "outstandingSecondSameActorJobRefusesTest",
+        "changedBindingAfterRawDiskRefusesTest",
+        "wrongNewCallbackRoleRefusesTest",
+        "genuineNewCallbackForeignOwnerRefusesTest",
+        "staticCallbackBoundOwnerRefusesTest",
+        "nonzeroRendererExitRefusesTerminalTest",
+        "floatZeroExitRefusesTerminalTest",
+        "selectedJobStillRegisteredRefusesTerminalTest",
+        "launchNotClosedRefusesTerminalTest",
+        "changedTerminalBindingRefusesTest",
+        "changedTerminalAfterDiskRefusesTest",
+        "unknownOtherJobPreventsTerminalTest",
+        "keeperNotNormallyClosedPreventsTerminalTest",
+        "abortWithZeroCodeRefusesTerminalTest",
+        "normalStopIntegerAliasRefusesTerminalTest",
+        "normalStopMissingRefusesTerminalTest"
+      ],
+      "loggedSuccesses": [
+        "genuineNormalCloseAcceptTest",
+        "terminalIdentityDoesNotRequireLiveRegistryTest",
+        "terminalAloneCannotAuthorizeFeatureTest",
+        "originalElevenGateFailureRemainsFailTest",
+        "laterPassCannotClearOriginalFailureTest",
+        "cachedV23ModuleRefusesTest",
+        "missingNineteenthModuleRefusesTest",
+        "extraTwentiethModuleRefusesTest",
+        "missingV24FrozenClosureRefusesTest",
+        "missingV7FrozenClosureRefusesTest",
+        "missingV7ActualFailureRefusesTest",
+        "missingV8ComponentRefusesTest",
+        "foreignTransportRefusesTest",
+        "foreignLaunchRefusesTest",
+        "foreignKeeperRefusesTest",
+        "wrongRegisteredChildRefusesTest",
+        "canonicalPopenWrongPIDRefusesTest",
+        "processSubclassRefusesTest",
+        "registryBooleanDeviceAliasRefusesTest",
+        "launchFloatDeviceAliasRefusesTest",
+        "actorBooleanAliasRefusesTest",
+        "outstandingSecondSameActorJobRefusesTest",
+        "changedBindingAfterRawDiskRefusesTest",
+        "wrongNewCallbackRoleRefusesTest",
+        "genuineNewCallbackForeignOwnerRefusesTest",
+        "staticCallbackBoundOwnerRefusesTest",
+        "nonzeroRendererExitRefusesTerminalTest",
+        "floatZeroExitRefusesTerminalTest",
+        "selectedJobStillRegisteredRefusesTerminalTest",
+        "launchNotClosedRefusesTerminalTest",
+        "changedTerminalBindingRefusesTest",
+        "changedTerminalAfterDiskRefusesTest",
+        "unknownOtherJobPreventsTerminalTest",
+        "keeperNotNormallyClosedPreventsTerminalTest",
+        "abortWithZeroCodeRefusesTerminalTest",
+        "normalStopIntegerAliasRefusesTerminalTest",
+        "normalStopMissingRefusesTerminalTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/renderer_collector_binding-test.log",
+      "logHashExact": true
+    },
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/closure_alias_identity_test.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/closure_alias_identity_test.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 18,
+      "selectedNames": [
+        "originalRegularAcceptedTest",
+        "exactSelectedAliasAcceptedTest",
+        "inheritedExactAliasAcceptedTest",
+        "byteLinkOverlapSameExactIdentityAcceptedTest",
+        "unknownAliasMatchingBytesRefusedTest",
+        "sameBytesWrongNamedTargetRefusedTest",
+        "conflictingPriorTargetRefusedTest",
+        "conflictingPriorDigestRefusedTest",
+        "conflictingPriorModeRefusedTest",
+        "wrongTargetModeRefusedTest",
+        "targetNotRegularRefusedTest",
+        "missingTargetRefusedTest",
+        "unknownKindRefusedTest",
+        "regularOverwritesPinnedLinkRefusedTest",
+        "laterGoodCannotEraseRefusalTest",
+        "resolvedBackingUncapturedRefusedTest",
+        "selectedLinkMismatchBeforeBytesRefusedTest",
+        "selectedLinkMismatchAfterBytesRefusedTest"
+      ],
+      "loggedSuccesses": [
+        "originalRegularAcceptedTest",
+        "exactSelectedAliasAcceptedTest",
+        "inheritedExactAliasAcceptedTest",
+        "byteLinkOverlapSameExactIdentityAcceptedTest",
+        "unknownAliasMatchingBytesRefusedTest",
+        "sameBytesWrongNamedTargetRefusedTest",
+        "conflictingPriorTargetRefusedTest",
+        "conflictingPriorDigestRefusedTest",
+        "conflictingPriorModeRefusedTest",
+        "wrongTargetModeRefusedTest",
+        "targetNotRegularRefusedTest",
+        "missingTargetRefusedTest",
+        "unknownKindRefusedTest",
+        "regularOverwritesPinnedLinkRefusedTest",
+        "laterGoodCannotEraseRefusalTest",
+        "resolvedBackingUncapturedRefusedTest",
+        "selectedLinkMismatchBeforeBytesRefusedTest",
+        "selectedLinkMismatchAfterBytesRefusedTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/closure_alias_identity-test.log",
+      "logHashExact": true
+    },
+    {
+      "model": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/helper_failure_drain_test.qnt",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/helper_failure_drain_test.qnt",
+        "--backend=rust",
+        "--seed=2026100701"
+      ],
+      "declaredRuns": 25,
+      "selectedNames": [
+        "originalLiveJobCounterexampleTest",
+        "normalDrainStillRaisesOriginalTest",
+        "laterCountCannotEraseFirstErrorTest",
+        "pendingTerminalCannotAcceptCleanupTest",
+        "liveWrapperCannotAcceptCleanupTest",
+        "wrongLifetimeCannotCloseTest",
+        "nonzeroTerminalRefusesTest",
+        "mismatchedTerminalRefusesTest",
+        "unknownAuthorityRefusesTest",
+        "duplicateRegistrationRefusesTest",
+        "foreignRegistrationRefusesTest",
+        "extraTerminalRefusesTest",
+        "terminalWithoutStartRefusesTest",
+        "deadlineNeverResetsAfterFailureTest",
+        "exactDeadlineNoNormalDrainTest",
+        "clockAdvancesUnderSnapshotLockTest",
+        "expiredLockAcquisitionCannotEnterTest",
+        "archiveRequiredBeforeRaiseTest",
+        "snapshotLockCannotCoverWaitFinishTest",
+        "completeOriginalWorkloadStillPassesTest",
+        "incompleteOriginalWorkloadNeverPassesTest",
+        "unsafeCannotBeClearedByLaterClosureTest",
+        "lateInitialEntryUsesOneOriginalBudgetTest",
+        "laterInvalidTerminalInvalidatesSnapshotTest",
+        "laterUnknownInvalidatesSnapshotTest"
+      ],
+      "loggedSuccesses": [
+        "originalLiveJobCounterexampleTest",
+        "normalDrainStillRaisesOriginalTest",
+        "laterCountCannotEraseFirstErrorTest",
+        "pendingTerminalCannotAcceptCleanupTest",
+        "liveWrapperCannotAcceptCleanupTest",
+        "wrongLifetimeCannotCloseTest",
+        "nonzeroTerminalRefusesTest",
+        "mismatchedTerminalRefusesTest",
+        "unknownAuthorityRefusesTest",
+        "duplicateRegistrationRefusesTest",
+        "foreignRegistrationRefusesTest",
+        "extraTerminalRefusesTest",
+        "terminalWithoutStartRefusesTest",
+        "deadlineNeverResetsAfterFailureTest",
+        "exactDeadlineNoNormalDrainTest",
+        "clockAdvancesUnderSnapshotLockTest",
+        "expiredLockAcquisitionCannotEnterTest",
+        "archiveRequiredBeforeRaiseTest",
+        "snapshotLockCannotCoverWaitFinishTest",
+        "completeOriginalWorkloadStillPassesTest",
+        "incompleteOriginalWorkloadNeverPassesTest",
+        "unsafeCannotBeClearedByLaterClosureTest",
+        "lateInitialEntryUsesOneOriginalBudgetTest",
+        "laterInvalidTerminalInvalidatesSnapshotTest",
+        "laterUnknownInvalidatesSnapshotTest"
+      ],
+      "missingSelected": [],
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/helper_failure_drain-test.log",
+      "logHashExact": true
+    }
+  ],
+  "B14ActualNamedLogged": 205,
+  "B14ActualModels": 14,
+  "sampledPlanningV4ActualLogged": 24,
+  "sources": {
+    "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/@informalsystems/quint/dist/src/cliHelpers.js": {
+      "sha256": "6014561f50c050ca948c042a97133668ccecf885b31189942b1e037aca6bd706",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v3/focus_transaction_test.qnt": {
+      "sha256": "fba824a9e8d19f4024eb19ce97ca054a152a18309a5954fc3836ba6793f9b82f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v3/formal-before-runtime.json": {
+      "sha256": "b2c83c8db1a7224c73122f71a1ba7710770263ef11d6a3288addcd023e7bda35",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v3/formal-1.log": {
+      "sha256": "ad7a882ec934131e35211101fc9a7c60fc0cf232fbb292eb6ede828816e79971",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v4/focus_transaction_test.qnt": {
+      "sha256": "03ff8221e064c9564b638af742a831d369b0aae5fbc5410d60367cbf0d7fa00b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v4/formal-before-runtime.json": {
+      "sha256": "3478163af87656ab409c03741f0108480642998512aefa7827a0cc35e3d5e1cd",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v4/formal-1.log": {
+      "sha256": "ad7a882ec934131e35211101fc9a7c60fc0cf232fbb292eb6ede828816e79971",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/focus_transaction_test.qnt": {
+      "sha256": "5d8643e26efe5a6e35d1662f1254e0b773d9da181a31d43d5f99e47142aa90bd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/formal-before-runtime.json": {
+      "sha256": "9400dbb66eb79c7a254c0a0fe522f2f0b59fa3aa032506d0422b65207a88fb7e",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/formal-1.log": {
+      "sha256": "ad7a882ec934131e35211101fc9a7c60fc0cf232fbb292eb6ede828816e79971",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/focus_transaction_test.qnt": {
+      "sha256": "8541fe17e93925dfeae1ac7a66528e03fece0a84f273ead8451a4e13ca2cb3a4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/formal-before-runtime.json": {
+      "sha256": "1b5edb69bb6d77be4a34444ee65de168fe6857ba597caa77baf1ae4f2253abd3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/formal-1.log": {
+      "sha256": "ad7a882ec934131e35211101fc9a7c60fc0cf232fbb292eb6ede828816e79971",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v14-cpu-proof-v1/report.json": {
+      "sha256": "8acac3c2c5a52ee81af0f4e6cb8a876dfbc51c584929a773c22dc03bf6da7eb3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/helper_lifecycle.qnt": {
+      "sha256": "60b55937111914b6e1483b96f8ebb91f522d9e879a4d0a7a64a3088ba2619fae",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/helper_lifecycle-test.log": {
+      "sha256": "3a7ca55c3fff8e9e6875f00a2b71b4357d2c330955823a39c484e4f36c5e6df4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/query_lifecycle.qnt": {
+      "sha256": "8c2ef24906d86a45903d66f1127e01cf884161f8c69c57b7c0be92e8a5c4cd45",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/query_lifecycle-test.log": {
+      "sha256": "026c9a35b35ecfd1ae58261408b8ec74f56eb8be1447d6fe9b1651cc091bf2d9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/capture_lifecycle.qnt": {
+      "sha256": "fa38546a401f4964431518aea60eea4518fcaff9815fe5210d8ecb3f915b5abd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/capture_lifecycle-test.log": {
+      "sha256": "7f3a27462ae1380b07ce809377c4bfb6bec03ecf3710bc0566f578dbece5b31b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/service_queries.qnt": {
+      "sha256": "bd30cbb22f2b1e7c4ce70286204ebfa63d4272c9efc25e4bc5ad5a228319e937",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/service_queries-test.log": {
+      "sha256": "fb8af97689fb763379d5dbd0b7d4cdfa48deaca297dab4dd10002cba62c9b9d2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/reversal.qnt": {
+      "sha256": "5d956a4cddb8b592860c1af331a77fe1fec384c0f3423834ec486585486d0fc8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/reversal-test.log": {
+      "sha256": "21a8ebf15e3af15e6103206dc3187822f3f24cbb7f8f35dcc70460421cac616b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/service_restart_test.qnt": {
+      "sha256": "e9cecc3e907991cc136eb4ac5d601f8ca733cee151c0b27b05e76bc1f7824677",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/service_restart-test.log": {
+      "sha256": "2fbf84e18e55c7c6715d1183559b0ed6533210f61566a84f8f17734a0bfb219b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/recovery_collection_test.qnt": {
+      "sha256": "6a21b61146b32867e8f6664d70a0c28542824f28a19b1225465cbf3beb837f8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/recovery_collection-test.log": {
+      "sha256": "93fcce4891e6e62959235df0d7ea8ffa2810eb0507505bb47638c92812738f81",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/actual_service_binding_test.qnt": {
+      "sha256": "d903f5bfef9a35fa3593f8a0704accc2bfc11daccf66b9144d4e9cbc9aea6762",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/actual_service_binding-test.log": {
+      "sha256": "195a14d6fcf26604967d72940fc6a9cd826df321a42f7d6ab1ecb96e8b9cc29d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/batch_service_binding_test.qnt": {
+      "sha256": "17159a606e67a448ed61c40bfdbffb04fd246b0708699a00d150097bd344c8f2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/batch_service_binding-test.log": {
+      "sha256": "88baffa1010b2cf51c7928f90b0b28f3b808f6895fa1ac9a804859f6dfc43c8a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/batch_callback_identity_test.qnt": {
+      "sha256": "b48b89f83923abaa2b2a2a3312701bda91686cf6f05ca5ad6d583a71c357e4a8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/batch_callback_identity-test.log": {
+      "sha256": "ca469320599a3d5b551d38ab9c18f38fb03b9e832ff4fca9a5a16ddecb92eaa2",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/terminal_confirmation_test.qnt": {
+      "sha256": "6037267968725314723ca1eb3b54e9616267f58e9aefe68cf6e029056cb1455d",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/terminal_confirmation-test.log": {
+      "sha256": "8439acb6119c58a824581d26fd64acf3d547eed9317d9f9abb1189d6e9a147d4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/renderer_collector_binding_test.qnt": {
+      "sha256": "22fd59606b2669e6eac0864925753ad8c864aef356d9d523ae083a892b0e28e5",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/renderer_collector_binding-test.log": {
+      "sha256": "a4483407be0098f7aa26e50ea8fc5c412f7702d94d5364e9bdfb8372b389f4aa",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/closure_alias_identity_test.qnt": {
+      "sha256": "c232390de416e8ebbf77ea4123531462556106047b2ca39ef6145a8eb4f39e67",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/closure_alias_identity-test.log": {
+      "sha256": "66398aa55f84756a8b29b8e621f709d146ffd00a6aa6543574243303b39fffc9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/helper_failure_drain_test.qnt": {
+      "sha256": "91cb01dd482255e9824fa5be4c9030105c734fb5fed36c08126c220f2f8ee058",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-full-proof-v1/helper_failure_drain-test.log": {
+      "sha256": "479f9e1347f914e9e342a7a66c6f5932f4241b97b720c74c81087d6f1e1e67ad",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/parallel_planning_test.qnt": {
+      "sha256": "75f6860b8bd7b8eda2c13c0006af2fc77332e89a2f40f90720a47836aaf9d93f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/formal-1.log": {
+      "sha256": "4451a7e8810953493505319281b48cbe8ac36c00403409b3a4e120b49dbe72fb",
+      "mode": 384
+    }
+  },
+  "ancestorReruns": false,
+  "sourceEdits": false,
+  "nativeLaunch": false,
+  "limitations": [
+    "Does not audit every ancestral formal packet",
+    "Default zero-match exit0 is not named-test authority",
+    "CPU, source reviews, invariant traces and native outcomes remain separate"
+  ]
+}

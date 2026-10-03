@@ -1,0 +1,165 @@
+{
+  "changedQml": [
+    {
+      "path": "Ui/Btn.qml",
+      "baselineSha256": "c701e710ea1dd275a124f296f273426cd9b05c0fe4f7afa75943f73e16cc0855",
+      "candidateSha256": "69fb4803c6c85996e950cee058c27f204d417579f14c94af289894641353a0a7"
+    },
+    {
+      "path": "Ui/Chip.qml",
+      "baselineSha256": "413bd300daf57dfff1fe1a6a14cea1f9779de1a6c45f7be7e4af8fdeb7747469",
+      "candidateSha256": "2c00945151b414dba99463a0ba45a16b0a4d89f3ca12e7955eafe5fd7e320f28"
+    },
+    {
+      "path": "Ui/ContextMenu.qml",
+      "baselineSha256": "f7c21a0d6f68f92788bb581aeca0bf09b473a85cab23b5861717fcc9880a45f2",
+      "candidateSha256": "cc1df4497f7c211c30534cb808a52acc7d8623732fa1d4387a006de375e00f72"
+    },
+    {
+      "path": "Ui/Ico.qml",
+      "baselineSha256": "1ad78967f062cbd95cf930572530e5281d8e68e8891c941641ca9b377dc039d2",
+      "candidateSha256": "7b2db1f4651f1ba388183036e752d45df8fba299b58b3d7ffcc448aaf7577e9d"
+    },
+    {
+      "path": "Ui/Prompt.qml",
+      "baselineSha256": "109d0fa777ba175fa1e70800139bec1881ad06a8911e21248fc7c272c67452e1",
+      "candidateSha256": "378285a3bb67eab784292e6bd6c7f78e500f93cab998394be8f0803856efb2d1"
+    },
+    {
+      "path": "explorer/Cell.qml",
+      "baselineSha256": "274b7a86663f934278422d7a4a519eb3441dccbcd68a84ea7a04b51988ee62af",
+      "candidateSha256": "8dff5efc8e31ec098d118bac3ca91d4a0fb463f2e62c31bdd64531fe30e2d0b1"
+    },
+    {
+      "path": "explorer/Dashboard.qml",
+      "baselineSha256": "153c95e55a33670f09c68d0bf0fd7b48dd8cae810f243b806bac478a644be251",
+      "candidateSha256": "99f27a3ffcea3145c44c316e9a1a84e16b3338d524b7292a80e51b0b46c7afd9"
+    },
+    {
+      "path": "explorer/Detail.qml",
+      "baselineSha256": "fe960fbb6ce315bb73dd908018d2aa32bbd08a4fd4bc0aeb6a7a2c7ff0d04736",
+      "candidateSha256": "a415763b2fef5fbd9faf1cc3908cd9c1e1087c6b1812b1e871d4e6ea96c0a6be"
+    },
+    {
+      "path": "explorer/Explorer.qml",
+      "baselineSha256": "30832668009b0932550fb8a99725c909cf23629e9b3ea0eea6b136c5f3e3ad64",
+      "candidateSha256": "7706ae0d2589a32dd352e7dc4faa3feed5e5e4b7591f4593df36761bb93ad651"
+    },
+    {
+      "path": "explorer/FileArea.qml",
+      "baselineSha256": "fb6a4b91bf8bdceeec258308d7e80f69c0a50230358cc61e5eceb4518ede2ba1",
+      "candidateSha256": "329800900d88f17ee359b8630ac293a5402867bbda3ba3872e4baf0fab875b94"
+    },
+    {
+      "path": "explorer/Lightbox.qml",
+      "baselineSha256": "dfe4d5a3c7476a655ff64b4f16e53c11e95b28e170a6b78f9855765e2b716760",
+      "candidateSha256": "9519c9fa5ce742cfa56e27c80d965b076e0d421174fdee477d984390f873e3cc"
+    },
+    {
+      "path": "explorer/PathBar.qml",
+      "baselineSha256": "b08cad5e2299e3fe2b06bbdc7accc3552c81e02d1b33b73a9718888884c935c9",
+      "candidateSha256": "2ff3a0e0adddf8ac564cdca736ea778b811e49835904723a18f96a834868cf83"
+    },
+    {
+      "path": "explorer/Tree.qml",
+      "baselineSha256": "14e1ac4417cefcc6b999a5c0151fe62daaa7f536f1b03c85fdf98a95ce1558f3",
+      "candidateSha256": "e2a5faee1ab9814276d579c590002ef44c2db483d6bc51e1a4f026192fcbcba7"
+    },
+    {
+      "path": "explorer/Treemap.qml",
+      "baselineSha256": "7c4412fd40cfdc5e1920ec9433f191003c9a116600fbc51743d0b83f51d76b16",
+      "candidateSha256": "1b6fc7da8f6d703d26123ab3bb4f7d5d5f484292cd24b220142aaae4c281cab2"
+    },
+    {
+      "path": "shell.qml",
+      "baselineSha256": "6b3451c44e83587db6895be5343c169a8989dca095ec5603b51eb0d391130f42",
+      "candidateSha256": "45c7b00feb9ea220bb66636607a992d841991666902cfa97f1c0fecc28f8eea1"
+    }
+  ],
+  "unchangedOperationsAndSpec": [
+    {
+      "path": "scripts/collect.sh",
+      "sha256": "35426c28325254cd0eef0d62bd917e7a696bdb5a28119b894ac5106658a5873d"
+    },
+    {
+      "path": "scripts/du.sh",
+      "sha256": "69d59a1cd8e7fc4fcdb6623f1593fb4a234fe2dacefb27b371236aeea27df14a"
+    },
+    {
+      "path": "scripts/elevate.sh",
+      "sha256": "8d1caa84bb219978b870a159b51f2009976a0bd8daa4eb24f2bf9d2883d16bd7"
+    },
+    {
+      "path": "scripts/list.sh",
+      "sha256": "abb3a32d2c64014322ba3a89846c587052d3a04fa3817342568d31ea1ec3520a"
+    },
+    {
+      "path": "scripts/meta.sh",
+      "sha256": "27d16e63096a3809f8af3626e7200e053075ad71f323a178b3432c5d4bd6b91d"
+    },
+    {
+      "path": "scripts/ops.sh",
+      "sha256": "6678d6b84b4bc5c2e86414b6250848119dd372a9a701dba880f4dcfdb8f3236a"
+    },
+    {
+      "path": "scripts/preview.sh",
+      "sha256": "d64df3f5fa7dfd56700c73cd7ce52131bd9f52e26a8c05d403570c56c9015772"
+    },
+    {
+      "path": "scripts/recent.sh",
+      "sha256": "d45962baf2ad0308d82e0d73de02e63b09461c70c864f4a1c54b7022a9a07751"
+    },
+    {
+      "path": "scripts/search.sh",
+      "sha256": "e0d5dc0b67dd54e05710d878f4e18c60b0cb598d49417bcc36693898df1936d2"
+    },
+    {
+      "path": "scripts/thumb.sh",
+      "sha256": "59f008aa9c306bda1660b8975bc8eaad77e655434bf05c9c80752fac49bcd7c5"
+    },
+    {
+      "path": "spec/fileops.qnt",
+      "sha256": "ba116b777b98d9cb2f9d6b8b3adfdf2958fdeffc6f11548faae805b6b6cf5974"
+    }
+  ],
+  "native": [
+    {
+      "path": "native-source/CMakeLists.txt",
+      "sha256": "ba754d3c3689fd5995cd12c7e13ba95e5c16cf1d57c533f65606d01815e81e5d"
+    },
+    {
+      "path": "native-source/bridge.cpp",
+      "sha256": "08e1b457f10485f462f33cae43d351a60361f3fc2e7e098acb3557e0935e8b22"
+    },
+    {
+      "path": "native-source/shutdownfocus.h",
+      "sha256": "4b5442fc01f9aa9720e7224ea1d82cd7ef2cee8c5fb93aa06f85474a4df5f07b"
+    },
+    {
+      "path": "WindowAccessibilityV6/libwindowaccessibility.so",
+      "sha256": "ec58c692d7102147f2fa66afe69298afc51057c93e9cccc7fec309db3aec7e00"
+    },
+    {
+      "path": "WindowAccessibilityV6/qmldir",
+      "sha256": "e64128eafe0b018b9ab1536c24ea176adde258080eb9a5135e410d210cc453af"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/text_authority.qnt",
+      "sha256": "99e5ed6030aea39c6a09660b45e49085f81ee66a60296b20eea95ead76df5b7d"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/text_authority_test.qnt",
+      "sha256": "3906fc878e8e9d220d8a3735fabbf3685a551bc20f4e4b4aae9b3e050adab6e0"
+    }
+  ],
+  "formal": [
+    {
+      "path": "keyboard_focus.qnt",
+      "sha256": "c116ee5a46787f947c4fe54e9d4e51694d0692340be1149651d78e486b43091f"
+    },
+    {
+      "path": "keyboard_focus_test.qnt",
+      "sha256": "7f14e5296beca6dde6ce8465b35b5739776e3275a1d426c893520266d32772a7"
+    }
+  ]
+}

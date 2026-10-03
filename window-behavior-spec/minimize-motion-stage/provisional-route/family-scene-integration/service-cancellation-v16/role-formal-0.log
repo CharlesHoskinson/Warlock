@@ -1,0 +1,9 @@
+[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-cancellation-v16/actor_role_test.qnt:4:25
+  4:  action attempt(c:Claim)=init.then(register(c,true)).then(release)
+                             ^
+
+error: parsing failed

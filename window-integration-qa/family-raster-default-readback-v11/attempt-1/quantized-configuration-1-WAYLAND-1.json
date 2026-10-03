@@ -1,0 +1,621 @@
+{
+  "configuration": {
+    "policy": "per-layer-explicit-over-nearest-rgba8-v1",
+    "sequence": "796",
+    "output": "WAYLAND-1",
+    "generation": 13,
+    "familyPassCount": 3,
+    "controlPassCount": 0,
+    "actualConfigurationGate": true,
+    "sampling": {
+      "policy": "four-nearest-centers-highp-bilinear-v1",
+      "familyTextureCount": 3,
+      "controlTextureCount": 3,
+      "actualGetterGate": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    "pixelProof": false,
+    "nativeAuthority": false
+  },
+  "actualEvent": {
+    "bufferHeight": 240,
+    "bufferWidth": 320,
+    "event": "quantizedOverFrameConfigured",
+    "finalCopy": {
+      "attachedTexture": 0,
+      "attachmentType": 0,
+      "blend": false,
+      "extentUniform": [
+        320,
+        240
+      ],
+      "framebuffer": 0,
+      "inspectionError": 0,
+      "magFilter": 9728,
+      "minFilter": 9728,
+      "program": 6,
+      "texture": 5,
+      "unit": 1,
+      "wrapS": 33071,
+      "wrapT": 33071
+    },
+    "generation": 13,
+    "logicalOutput": {
+      "height": 240,
+      "width": 320,
+      "x": 0,
+      "y": 0
+    },
+    "members": [
+      {
+        "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+        "pid": 1504804,
+        "rectangle": {
+          "height": 59,
+          "width": 70.8,
+          "x": 309.8,
+          "y": 89.4
+        },
+        "stableId": "abc1"
+      },
+      {
+        "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+        "pid": 1504805,
+        "rectangle": {
+          "height": 38.2,
+          "width": 55.2,
+          "x": 333.4,
+          "y": 105
+        },
+        "stableId": "abc2"
+      },
+      {
+        "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+        "pid": 1504806,
+        "rectangle": {
+          "height": 27.8,
+          "width": 39.6,
+          "x": 351.8,
+          "y": 112.8
+        },
+        "stableId": "abc3"
+      }
+    ],
+    "nativeAuthority": false,
+    "output": "WAYLAND-1",
+    "passes": [
+      {
+        "attachedTexture": 5,
+        "attachmentType": 5890,
+        "bits": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "blend": false,
+        "controlIndex": -1,
+        "coverageInspectionError": 0,
+        "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+        "coverageUniform": [
+          310,
+          89,
+          320,
+          148
+        ],
+        "extentUniform": [
+          320,
+          240
+        ],
+        "fullscreenPositions": [
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "inspectionError": 0,
+        "logicalOutput": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "magFilter": 9728,
+        "minFilter": 9728,
+        "pixels": [
+          96,
+          80
+        ],
+        "prefixCopy": {
+          "attachedTexture": 5,
+          "attachmentType": 5890,
+          "blend": false,
+          "extentUniform": [
+            320,
+            240
+          ],
+          "framebuffer": 2,
+          "inspectionError": 0,
+          "magFilter": 9728,
+          "minFilter": 9728,
+          "program": 6,
+          "texture": 4,
+          "unit": 1,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "prefixCount": 1,
+        "prefixUnit": 1,
+        "readTexture": 4,
+        "readTextureBinding": 4,
+        "sampleRectUniform": [
+          309.79998779296875,
+          89.4000015258789,
+          70.80000305175781,
+          59
+        ],
+        "samples": 0,
+        "shaderProgram": 3,
+        "sourceDigest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+        "sourceRectangle": {
+          "height": 59,
+          "width": 70.8,
+          "x": 309.8,
+          "y": 89.4
+        },
+        "sourceTexture": 1,
+        "sourceTextureBinding": 1,
+        "sourceUnit": 0,
+        "vertexState": {
+          "buffer": 0,
+          "enabled": 1,
+          "inspectionError": 0,
+          "normalized": 0,
+          "size": 2,
+          "stride": 0,
+          "type": 5126
+        },
+        "viewport": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "wrapS": 33071,
+        "wrapT": 33071,
+        "writeFramebuffer": 2,
+        "writeTexture": 5
+      },
+      {
+        "attachedTexture": 4,
+        "attachmentType": 5890,
+        "bits": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "blend": false,
+        "controlIndex": -1,
+        "coverageInspectionError": 0,
+        "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+        "coverageUniform": [
+          320,
+          105,
+          320,
+          143
+        ],
+        "extentUniform": [
+          320,
+          240
+        ],
+        "fullscreenPositions": [
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "inspectionError": 0,
+        "logicalOutput": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "magFilter": 9728,
+        "minFilter": 9728,
+        "pixels": [
+          72,
+          48
+        ],
+        "prefixCopy": {
+          "attachedTexture": 4,
+          "attachmentType": 5890,
+          "blend": false,
+          "extentUniform": [
+            320,
+            240
+          ],
+          "framebuffer": 1,
+          "inspectionError": 0,
+          "magFilter": 9728,
+          "minFilter": 9728,
+          "program": 6,
+          "texture": 5,
+          "unit": 1,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "prefixCount": 2,
+        "prefixUnit": 1,
+        "readTexture": 5,
+        "readTextureBinding": 5,
+        "sampleRectUniform": [
+          333.3999938964844,
+          105,
+          55.20000076293945,
+          38.20000076293945
+        ],
+        "samples": 0,
+        "shaderProgram": 3,
+        "sourceDigest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+        "sourceRectangle": {
+          "height": 38.2,
+          "width": 55.2,
+          "x": 333.4,
+          "y": 105
+        },
+        "sourceTexture": 2,
+        "sourceTextureBinding": 2,
+        "sourceUnit": 0,
+        "vertexState": {
+          "buffer": 0,
+          "enabled": 1,
+          "inspectionError": 0,
+          "normalized": 0,
+          "size": 2,
+          "stride": 0,
+          "type": 5126
+        },
+        "viewport": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "wrapS": 33071,
+        "wrapT": 33071,
+        "writeFramebuffer": 1,
+        "writeTexture": 4
+      },
+      {
+        "attachedTexture": 5,
+        "attachmentType": 5890,
+        "bits": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "blend": false,
+        "controlIndex": -1,
+        "coverageInspectionError": 0,
+        "coveragePolicy": "top-left-half-open-pixel-centers-v1",
+        "coverageUniform": [
+          320,
+          113,
+          320,
+          141
+        ],
+        "extentUniform": [
+          320,
+          240
+        ],
+        "fullscreenPositions": [
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "inspectionError": 0,
+        "logicalOutput": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "magFilter": 9728,
+        "minFilter": 9728,
+        "pixels": [
+          48,
+          32
+        ],
+        "prefixCopy": {
+          "attachedTexture": 5,
+          "attachmentType": 5890,
+          "blend": false,
+          "extentUniform": [
+            320,
+            240
+          ],
+          "framebuffer": 2,
+          "inspectionError": 0,
+          "magFilter": 9728,
+          "minFilter": 9728,
+          "program": 6,
+          "texture": 4,
+          "unit": 1,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "prefixCount": 3,
+        "prefixUnit": 1,
+        "readTexture": 4,
+        "readTextureBinding": 4,
+        "sampleRectUniform": [
+          351.79998779296875,
+          112.80000305175781,
+          39.599998474121094,
+          27.799999237060547
+        ],
+        "samples": 0,
+        "shaderProgram": 3,
+        "sourceDigest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+        "sourceRectangle": {
+          "height": 27.8,
+          "width": 39.6,
+          "x": 351.8,
+          "y": 112.8
+        },
+        "sourceTexture": 3,
+        "sourceTextureBinding": 3,
+        "sourceUnit": 0,
+        "vertexState": {
+          "buffer": 0,
+          "enabled": 1,
+          "inspectionError": 0,
+          "normalized": 0,
+          "size": 2,
+          "stride": 0,
+          "type": 5126
+        },
+        "viewport": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "wrapS": 33071,
+        "wrapT": 33071,
+        "writeFramebuffer": 2,
+        "writeTexture": 5
+      }
+    ],
+    "pixelProof": false,
+    "policy": "per-layer-explicit-over-nearest-rgba8-v1",
+    "sequence": "796",
+    "token": "abcdef123456-1"
+  },
+  "binding": {
+    "readback": {
+      "bufferHeight": 240,
+      "bufferWidth": 320,
+      "digest": "6c20c1b0d26d9bf4e6ba81bef20894817dabc56dea4cd1575411f4b9a14b661f",
+      "eglConfig": {
+        "alpha": 8,
+        "blue": 8,
+        "buffer": 32,
+        "colorBufferType": 12430,
+        "configId": 51,
+        "green": 8,
+        "nativeVisualId": 875713089,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "eglSurface": {
+        "height": 240,
+        "width": 320
+      },
+      "encoding": "premultiplied-RGBA8-top-left",
+      "event": "ownedFramebufferReadback",
+      "filename": "owned-796-13.png",
+      "generation": 13,
+      "glBuffer": {
+        "alpha": 8,
+        "blue": 8,
+        "framebuffer": 0,
+        "green": 8,
+        "readFormat": 32993,
+        "readType": 5121,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "members": [
+        {
+          "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+          "pid": 1504804,
+          "rectangle": {
+            "height": 59,
+            "width": 70.8,
+            "x": 309.8,
+            "y": 89.4
+          },
+          "stableId": "abc1"
+        },
+        {
+          "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+          "pid": 1504805,
+          "rectangle": {
+            "height": 38.2,
+            "width": 55.2,
+            "x": 333.4,
+            "y": 105
+          },
+          "stableId": "abc2"
+        },
+        {
+          "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+          "pid": 1504806,
+          "rectangle": {
+            "height": 27.8,
+            "width": 39.6,
+            "x": 351.8,
+            "y": 112.8
+          },
+          "stableId": "abc3"
+        }
+      ],
+      "nativeAuthority": false,
+      "output": "WAYLAND-1",
+      "pid": 1504804,
+      "presentationProof": false,
+      "progress": 0.35,
+      "rawSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449",
+      "readError": 0,
+      "sequence": "796",
+      "stableId": "abc1",
+      "token": "abcdef123456-1"
+    },
+    "swap": {
+      "batchNs": "104027356666832",
+      "bufferHeight": 240,
+      "bufferWidth": 320,
+      "digest": "6c20c1b0d26d9bf4e6ba81bef20894817dabc56dea4cd1575411f4b9a14b661f",
+      "drawDoneNs": "104027371813837",
+      "drawStartedNs": "104027356667049",
+      "event": "swap",
+      "generation": 13,
+      "lastFrameCallbackNs": "104027340954946",
+      "members": [
+        {
+          "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+          "pid": 1504804,
+          "rectangle": {
+            "height": 59,
+            "width": 70.8,
+            "x": 309.8,
+            "y": 89.4
+          },
+          "stableId": "abc1"
+        },
+        {
+          "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+          "pid": 1504805,
+          "rectangle": {
+            "height": 38.2,
+            "width": 55.2,
+            "x": 333.4,
+            "y": 105
+          },
+          "stableId": "abc2"
+        },
+        {
+          "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+          "pid": 1504806,
+          "rectangle": {
+            "height": 27.8,
+            "width": 39.6,
+            "x": 351.8,
+            "y": 112.8
+          },
+          "stableId": "abc3"
+        }
+      ],
+      "output": "WAYLAND-1",
+      "pid": 1504804,
+      "progress": 0.35,
+      "rectangle": {
+        "height": 59,
+        "width": 81.60000000000002,
+        "x": 309.8,
+        "y": 89.4
+      },
+      "sequence": "796",
+      "stableId": "abc1",
+      "success": true,
+      "swapReturnedNs": "104027473867226",
+      "swapStartedNs": "104027473843200",
+      "token": "abcdef123456-1",
+      "uploadCount": 3
+    },
+    "presented": {
+      "accepted": true,
+      "bufferHeight": 240,
+      "bufferWidth": 320,
+      "digest": "6c20c1b0d26d9bf4e6ba81bef20894817dabc56dea4cd1575411f4b9a14b661f",
+      "endpoint": false,
+      "event": "presented",
+      "feedbackDeliveredNs": "104027592651089",
+      "generation": 13,
+      "members": [
+        {
+          "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+          "pid": 1504804,
+          "rectangle": {
+            "height": 59,
+            "width": 70.8,
+            "x": 309.8,
+            "y": 89.4
+          },
+          "stableId": "abc1"
+        },
+        {
+          "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+          "pid": 1504805,
+          "rectangle": {
+            "height": 38.2,
+            "width": 55.2,
+            "x": 333.4,
+            "y": 105
+          },
+          "stableId": "abc2"
+        },
+        {
+          "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+          "pid": 1504806,
+          "rectangle": {
+            "height": 27.8,
+            "width": 39.6,
+            "x": 351.8,
+            "y": 112.8
+          },
+          "stableId": "abc3"
+        }
+      ],
+      "output": "WAYLAND-1",
+      "outputSequence": "0",
+      "pid": 1504804,
+      "progress": 0.35,
+      "rectangle": {
+        "height": 59,
+        "width": 81.60000000000002,
+        "x": 309.8,
+        "y": 89.4
+      },
+      "sequence": "796",
+      "stableId": "abc1",
+      "submittedNs": "104027371814809",
+      "timestampNs": "104027484496949",
+      "token": "abcdef123456-1"
+    }
+  },
+  "expectedShaderSHA256": [
+    "eeff9248264975b7cd456d9e9399614f704f01bed6634b66c3cd23d579b2efa7",
+    "ceae6422cafc16b2eafe0a7fa82402227127b51c6f6a0d9d0025d0b15153adc4"
+  ]
+}

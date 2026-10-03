@@ -1,0 +1,6 @@
+{
+  "error": "CalledProcessError: ldd /usr/bin/ldd exit1 'not a dynamic executable'",
+  "sourceMeaning": "ldd itself is a shell script; ELF-only collector assumption failed",
+  "productFailure": false,
+  "repair": "source-pin explicit shebang interpreter; collect its actual ELF libraries without executing ldd script as a target"
+}

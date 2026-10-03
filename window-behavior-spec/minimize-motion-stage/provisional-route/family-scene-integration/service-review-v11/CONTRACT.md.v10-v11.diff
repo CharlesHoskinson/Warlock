@@ -1,0 +1,19 @@
+--- service-review-v10/CONTRACT.md
++++ service-review-v11/CONTRACT.md
+@@ -304,3 +304,16 @@
+ SO_PEERCRED PID/start before sending. No response is truthful failure with unknown
+ acceptance; completion remains separate from accepted receipt. Native recovery
+ and automatic production frontend replacement are not included in this stage.
++
++## Complete read-only compositor IPC probe (V11)
++
++A credential/inode proof on the compositor IPC socket does not authorize closing
++a zero-request connection: the actual server may write an error after disconnect.
++The IPC guard must send exactly nonempty `j/version`, consume a bounded complete
++JSON reply through server EOF, then validate exact compositor PID/start and socket
++inode again before closing. Empty/malformed/oversized replies, errors, missing EOF
++or peer/session change refuse the native runtime before actor effects. The maximum
++reply is 65536 bytes and the whole exchange has a 0.5 second deadline. This is a
++read-only version observation; no compositor dispatcher/window/input command.
++The separate Wayland socket credential probe sends no protocol messages and is
++closed without creating registry/output/surface resources.

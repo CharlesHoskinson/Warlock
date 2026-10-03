@@ -1,0 +1,108 @@
+import os
+import fcntl
+import threading
+from pathlib import Path
+import tempfile
+import time
+import unittest
+from pipe_transport import PipeTransport
+
+SCRIPT='''#!/usr/bin/env python3
+import json,sys
+print(json.dumps({'event':'outputs','outputs':[{'name':'test','generation':1}]}),flush=True)
+for line in sys.stdin:
+ m=json.loads(line)
+ if m['command']=='stop':break
+ if m['command']=='exitBad':sys.exit(7)
+ if m['command']=='malformed':print('{bad',flush=True);break
+ if m['command']=='burst':
+  print(json.dumps({'event':'ready','token':'0123456789ab-1'}),flush=True)
+  for i in range(m['count']):print(json.dumps({'event':'state','observationId':'burst-'+str(i),'payload':'x'*8192}),flush=True)
+  print(json.dumps({'event':'state','observationId':'burst-complete'}),flush=True)
+  continue
+ if m['command']=='callbacks':
+  for i in range(m['count']):print(json.dumps({'event':'ready','token':'0123456789ab-'+str(i+1)}),flush=True)
+  continue
+ print(json.dumps({'event':'state','observationId':m.get('observationId'),'payload':m.get('payload')}),flush=True)
+'''
+class TransportTests(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory();self.path=Path(self.temp.name)/'fake-renderer';self.path.write_text(SCRIPT);self.path.chmod(0o700);self.failures=[]
+        self.t=PipeTransport(self.path,env=dict(os.environ),failure=self.failures.append)
+    def tearDown(self):
+        try:self.t.close()
+        except RuntimeError:pass
+        self.temp.cleanup()
+    def wait(self,p):
+        end=time.monotonic()+2
+        while time.monotonic()<end:
+            if p():return
+            time.sleep(.002)
+        self.fail('pipe boundary timeout')
+    def test_persistent_ordered_json_pipe_and_normal_exit(self):
+        self.wait(lambda:self.t.outputs());self.assertEqual(self.t.outputs(),[{'name':'test','generation':1}])
+        for i in range(30):self.t.send({'command':'state','observationId':i,'payload':'line\n雪'})
+        self.wait(lambda:len([e for e in self.t.events if e['event']=='state'])==30)
+        states=[e for e in self.t.events if e['event']=='state'];self.assertEqual([e['observationId'] for e in states],list(range(30)));self.assertEqual(states[-1]['payload'],'line\n雪')
+        self.assertEqual(self.t.close(),0);self.assertFalse(self.failures)
+    def test_blocked_native_callback_does_not_block_actual_pipe_drain(self):
+        blocked=threading.Event();release=threading.Event()
+        def callback(event):blocked.set();release.wait(3)
+        self.t.set_callback(callback)
+        capacity=fcntl.fcntl(self.t.process.stdout.fileno(),fcntl.F_GETPIPE_SZ)
+        count=max(40,capacity*4//8192+2)
+        self.t.send({'command':'burst','count':count});self.assertTrue(blocked.wait(1))
+        try:
+            self.wait(lambda:any(e.get('observationId')=='burst-complete' for e in self.t.events))
+            self.assertEqual(len([e for e in self.t.events if str(e.get('observationId','')).startswith('burst-')]),count+1)
+            self.assertGreater(count*8192,capacity)
+            self.assertFalse(self.t.failed)
+        finally:release.set()
+        self.assertEqual(self.t.close(),0)
+    def test_callback_queue_exhaustion_truthfully_fails_and_retires_actor(self):
+        blocked=threading.Event();release=threading.Event();called=[]
+        def callback(event):called.append(event);blocked.set();release.wait(3)
+        self.t.set_callback(callback)
+        self.t.send({'command':'callbacks','count':1});self.assertTrue(blocked.wait(1))
+        self.t.send({'command':'callbacks','count':400})
+        try:
+            self.wait(lambda:self.t.failed and self.failures)
+            self.assertIn('queue exhausted',self.failures[0]);self.assertEqual(len(self.failures),1)
+            self.wait(lambda:self.t.process.poll() is not None)
+            self.assertNotEqual(self.t.process.returncode,0)
+        finally:release.set()
+        with self.assertRaises(RuntimeError):self.t.close()
+        self.assertEqual(len(called),1)
+    def test_blocked_callback_shutdown_cannot_pass_on_zero_process_exit(self):
+        blocked=threading.Event();release=threading.Event()
+        def callback(event):blocked.set();release.wait(3)
+        self.t.set_callback(callback)
+        self.t.send({'command':'callbacks','count':1});self.assertTrue(blocked.wait(1))
+        try:
+            with self.assertRaisesRegex(RuntimeError,'dispatch remained active'):self.t.close(timeout=.1)
+            self.assertEqual(self.t.process.returncode,0)
+            self.assertTrue(all(s.closed for s in (self.t.process.stdin,self.t.process.stdout,self.t.process.stderr)))
+            with self.assertRaisesRegex(RuntimeError,'dispatch remained active'):self.t.close()
+        finally:release.set();self.t.threads[-1].join(timeout=1)
+    def test_failed_transport_zero_exit_never_passes_normal_close(self):
+        self.wait(lambda:self.t.outputs())
+        # A failure remains authoritative even if the process independently
+        # handles termination by returning zero.
+        self.t.failed=True
+        self.t.process.stdin.write('{"command":"stop"}\n');self.t.process.stdin.flush()
+        self.t.process.wait(timeout=1)
+        with self.assertRaisesRegex(RuntimeError,'already failed'):self.t.close()
+        self.assertEqual(self.t.process.returncode,0)
+    def test_nonfinite_and_unbounded_commands_reject_before_wire(self):
+        with self.assertRaises(ValueError):self.t.send({'command':'state','payload':float('nan')})
+        with self.assertRaises(ValueError):self.t.send({'command':'state','payload':'x'*1048576})
+        self.assertEqual(self.t.close(),0)
+    def test_malformed_event_retires_transport_once(self):
+        self.t.send({'command':'malformed'});self.wait(lambda:self.t.failed);self.assertEqual(len(self.failures),1)
+        with self.assertRaises(BrokenPipeError):self.t.send({'command':'state'})
+    def test_nonzero_shutdown_cannot_be_accepted_as_cleanup(self):
+        self.t.send({'command':'exitBad'});self.wait(lambda:self.t.failed)
+        with self.assertRaises(RuntimeError):self.t.close()
+        self.assertEqual(self.t.process.returncode,7)
+
+if __name__=='__main__':unittest.main()

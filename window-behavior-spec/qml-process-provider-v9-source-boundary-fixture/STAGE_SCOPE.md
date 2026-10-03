@@ -1,0 +1,3 @@
+# Granted correction fixture only
+
+Exact reviewed V3 CPU fixture proposals are applied here. Production module, ProcessRegistry sources, helper and frontend are unchanged. Reuse the actual reviewed V8 core objects and their full recorded .d/dependency/source/compiler provenance; compile only the changed fixture translation unit with current moc and link a new CPU binary. No whole-module rebuild or QCore46 repetition. Root grant f1e808e2995f04988da7847317a300bd6fe02bba074ffef7f7e88b3465c0c642 authorizes exactly one source-boundary attempt, original2s helper8s observation5s EOF cleanup ceilings. No helper control, delay, retry, native/GUI acceptance.

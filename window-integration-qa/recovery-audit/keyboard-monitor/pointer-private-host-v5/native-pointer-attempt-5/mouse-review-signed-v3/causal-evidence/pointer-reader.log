@@ -1,0 +1,21 @@
+
+(pointer_reader_entry.py:615181): dbind-WARNING **: 08:57:42.341: AT-SPI: Error in GetItems, sender=:1.6, error=Object does not exist at path “/org/a11y/atspi/cache”
+
+(pointer_reader_entry.py:615181): dbind-WARNING **: 08:57:42.921: AT-SPI: Error in GetItems, sender=:1.7, error=Object does not exist at path “/org/a11y/atspi/cache”
+Traceback (most recent call last):
+  File "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v3/native-pointer-attempt-3/mouse-review-v2/orca-compat/orca/mouse_review.py", line 924, in _process_event
+    self._on_mouse_moved(obj, x, y)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v3/native-pointer-attempt-3/mouse-review-v2/orca-compat/orca/mouse_review.py", line 830, in _on_mouse_moved
+    self._mouse_moved_common(obj, point_x, point_y)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v3/native-pointer-attempt-3/mouse-review-v2/orca-compat/orca/mouse_review.py", line 857, in _mouse_moved_common
+    obj = AXUtilities.get_descendant_at_point(window, window_x, window_y)
+  File "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v3/native-pointer-attempt-3/mouse-review-v2/orca-compat/orca/ax_utilities_component.py", line 254, in get_descendant_at_point
+    result = AXUtilitiesComponent._get_descendant_at_point(obj, x, y)
+  File "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v3/native-pointer-attempt-3/mouse-review-v2/orca-compat/orca/ax_utilities_component.py", line 235, in _get_descendant_at_point
+    child = AXComponent.get_object_at_point(obj, x, y)
+  File "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v3/native-pointer-attempt-3/mouse-review-v2/orca-compat/orca/ax_component.py", line 124, in get_object_at_point
+    result = Atspi.Component.get_accessible_at_point(obj, x, y, Atspi.CoordType.WINDOW)
+OverflowError: 4294967282 not in range -2147483648 to 2147483647
+Speech system “%s” is unavailable (available: %s)

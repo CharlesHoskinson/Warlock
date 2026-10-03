@@ -1,0 +1,20 @@
+module accessibility_test {
+  import accessibility.* from "./accessibility"
+  run hiddenActionTest=init.then(fire(Show(1))).then(fire(Capture((1,MinimizeWindow)))).then(fire(Hide)).then(fire(Invoke))
+    .then(all{assert(not(s.accepted) and not(s.windows.get(1).minimized) and allProps),fire(Hide)})
+  run rebuiltSurfaceRejectsOldNodeTest=init.then(fire(Show(1))).then(fire(Capture((1,MinimizeWindow)))).then(fire(Hide)).then(fire(Rebuild)).then(fire(Show(1))).then(fire(Invoke))
+    .then(all{assert(not(s.accepted) and allProps),fire(Hide)})
+  run disabledActionTest=init.then(fire(Show(1))).then(fire(Capture((1,CloseWindow)))).then(fire(Enable(false))).then(fire(Invoke))
+    .then(all{assert(not(s.accepted) and s.windows.get(1).live and allProps),fire(Hide)})
+  run focusChangeKeepsCapturedOwnerTest=init.then(fire(Show(1))).then(fire(Capture((1,MinimizeWindow)))).then(fire(Focus(2))).then(fire(Invoke))
+    .then(all{assert(s.accepted and s.windows.get(1).minimized and not(s.windows.get(2).minimized) and s.focus==2 and allProps),fire(Hide)})
+  run reusedAddressSameProcessTest=init.then(fire(Show(2))).then(fire(Capture((1,CloseWindow)))).then(fire(Close(1))).then(fire(Open(1))).then(fire(Invoke))
+    .then(all{assert(not(s.accepted) and s.windows.get(1).live and allProps),fire(Hide)})
+  run wrongProcessTest=init.then(fire(Show(2))).then(fire(CaptureWrongPid(1))).then(fire(Invoke))
+    .then(all{assert(not(s.accepted) and allProps),fire(Hide)})
+  run selectionDoesNotRetargetActionTest=init.then(fire(Show(2))).then(fire(Capture((1,TogglePin)))).then(fire(Select(2))).then(fire(Invoke))
+    .then(all{assert(s.accepted and s.windows.get(1).pinned and not(s.windows.get(2).pinned) and allProps),fire(Hide)})
+  run restoreThenCloseTest=init.then(fire(Show(3))).then(fire(Capture((1,MinimizeWindow)))).then(fire(Invoke)).then(fire(Capture((1,RestoreWindow)))).then(fire(Invoke))
+    .then(all{assert(s.focus==1 and not(s.windows.get(1).minimized)),fire(Capture((1,CloseWindow)))}).then(fire(Invoke))
+    .then(all{assert(not(s.windows.get(1).live) and s.focus==0 and allProps),fire(Hide)})
+}

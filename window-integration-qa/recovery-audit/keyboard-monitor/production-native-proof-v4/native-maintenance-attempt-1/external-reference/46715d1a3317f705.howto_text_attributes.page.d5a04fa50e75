@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_text_attributes" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <link type="next" xref="howto_structural_navigation"/>
+    <title type="sort">2. Atribúty textu</title>
+    <desc>Skúmanie formátovania textu</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Atribúty textu</title>
+  <p>Pojem „atribúty textu“ sa vzťahuje na všetky fonty, štýly, zarovnania a iné formátovania spojené s daným znakom alebo sériou znakov.</p>
+  <section id="obtaining">
+    <title>Získavanie informácií o formátovaní</title>
+    <p>Keď stlačíte <keyseq><key>Modifikátor Orca</key><key>F</key> </keyseq>, <app>Orca</app> vysloví zistené informácie o atribútoch textu objektu. Okrem toho môže <app>Orca</app> voliteľne označovať atribúty textu v braillovom písme ich „podčiarknutím“ pri navigácii v dokumente.</p>
+    <p>Pretože počet atribútov textu je veľký a nie všetci sa zaujímajú o každý atribút, <link xref="preferences_text_attributes"> Stránka Atribúty textu v dialógu predvolieb</link> vám umožňuje prispôsobiť, ktoré atribúty textu bude <app>Orca</app> vyslovovať v reči, v akom poradí sa majú vyslovovať a ktoré z nich bude <app>Orca</app> označovať v braillovom písme.</p>
+    <p>Pretože <link xref="preferences_text_attributes">Stránka Atribúty textu</link> je súčasťou aj nastavení špecifických pre aplikáciu, môžete zobrazenie atribútov textu prispôsobiť podľa potreby pre každú používanú aplikáciu.</p>
+  </section>
+  <section id="identifying_misspelled_words">
+    <title>Identifikácia preklepov</title>
+    <p>Väčšina aplikácií a nástrojových súprav označuje, že slovo je napísané nesprávne, podčiarknutím tohto slova červenou zvlnenou čiarou. Prítomnosť tejto čiary je zvyčajne prístupná asistenčným technológiám ako atribút textu. V dôsledku toho nájdete pravopisné chyby medzi atribútmi textu, ktoré si môžete vybrať. Predvolene je atribút pravopisnej chyby povolený pre reč aj braillovo písmo, a preto bude zobrazený spolu s akýmikoľvek inými atribútmi, ktorých indikáciu ste povolili.</p>
+    <p>Okrem prístupu k prítomnosti pravopisných chýb ako atribútu textu, ak máte povolenú ozvenu kláves a/alebo ozvenu slov a zadáte slovo, ktoré je napísané nesprávne, keď sa objaví indikácia pravopisnej chyby, <app>Orca</app> oznámi „preklep“, aby ste sa mohli okamžite vrátiť a chybu opraviť.</p>
+    <p>Nakoniec, keď navigujete v dokumente a kurzor sa presunie do slova, ktoré je napísané nesprávne, <app>Orca</app> oznámi prítomnosť pravopisnej chyby.</p>
+  </section>
+</page>

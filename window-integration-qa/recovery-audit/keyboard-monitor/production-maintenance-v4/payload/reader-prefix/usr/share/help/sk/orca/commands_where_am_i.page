@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_where_am_i" xml:lang="sk">
+  <info>
+    <link type="next" xref="commands_time_date_notifications"/>
+    <link type="guide" xref="commands#getting_started"/>
+    <link type="seealso" xref="howto_whereami"/>
+    <title type="sort">3. Kde som</title>
+    <title type="link">Kde som</title>
+    <desc>Príkazy na zistenie vašej polohy</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Príkazy Kde som</title>
+  <p>Funkcia Kde som v <app>Orca</app> vám poskytuje kontextovo citlivé podrobnosti o vašej aktuálnej polohe. Napríklad v tabuľkách vám Kde som poskytne podrobnosti o bunke, v ktorej sa nachádzate, ale v texte zobrazí aktuálny riadok spolu s akýmkoľvek vybraným textom. Úplný zoznam toho, čo môžete očakávať, že <app>Orca</app> zobrazí, nájdete v časti <link xref="howto_whereami">Úvod do Kde som</link>.</p>
+  <p><app>Orca</app> poskytuje nasledujúce príkazy Kde som:</p>
+  <list>
+    <item>
+      <p>Vykonať základné Kde som:</p>
+      <list>
+        <item>
+          <p>Stolný počítač: <key>KP Enter</key></p>
+        </item>
+        <item>
+          <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>Return</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Vykonať podrobné Kde som:</p>
+      <list>
+        <item>
+          <p>Stolný počítač: <key>KP Enter</key> (dvojklik)</p>
+        </item>
+        <item>
+          <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>Return</key></keyseq> (dvojklik)</p>
+        </item>
+      </list>
+    </item>
+  </list>
+  <p>Okrem vyhradených príkazov Kde som má <app>Orca</app> aj ďalšie príkazy súvisiace so získavaním informácií o vašej aktuálnej polohe:</p>
+  <list>
+    <item>
+      <p>Zobraziť titulkový riadok:</p>
+      <list>
+        <item>
+          <p>Stolný počítač: <keyseq><key>Modifikátor Orca</key><key>KP Enter</key></keyseq></p>
+        </item>
+        <item>
+          <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>Lomítko</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Zobraziť stavový riadok:</p>
+      <list>
+        <item>
+          <p>Stolný počítač: <keyseq><key>Modifikátor Orca</key><key>KP Enter</key></keyseq> (dvojklik)</p>
+        </item>
+        <item>
+          <p>Prenosný počítač: <keyseq><key>Modifikátor Orca</key><key>Lomítko</key></keyseq> (dvojklik)</p>
+        </item>
+        <item>
+          <p>Zobraziť veľkosť a polohu aktuálneho objektu v pixeloch: (Nepriradené)</p>
+        </item>
+      </list>
+    </item>
+  </list>
+</page>

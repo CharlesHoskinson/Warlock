@@ -1,0 +1,44 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v6/CONTRACT.md
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v7/CONTRACT.md
+@@ -189,3 +189,41 @@
+ restorable; failed publication does not replace an in-use immutable image. The
+ pointer's basename must match the exact identity and digest, preventing traversal
+ or a same-byte unrelated path from acquiring cached source provenance.
++
++## Pending input direction before context activation
++
++An accepted explicit minimize/restore determines a known pending family direction
++even before context activates a controller Scene. A newer toggle/activate reverses
++that pending direction. It cannot re-resolve against unchanged native visibility
++and thereby repeat the older request. Out-of-order context replies remain unable
++to revive a superseded direction. An initial unresolved toggle needs native state
++observation; unknown-direction parity is a distinct case and must not be guessed.
++
++If fresh complete native members already satisfy the latest endpoint and no
++visual scene was shown, the request completes through native idempotent/focus
++semantics without seeding an icon-origin expansion over visible native windows.
++A retained actual visual scene still reverses continuously through its presented
++origin, irrespective of whether native endpoint state already matches.
++
++Accepted direction algebra
++--------------------------
++Minimize and Restore replace the current accepted direction. Toggle and Activate
++reverse an earlier accepted direction in the same exact family. Without an
++earlier accepted direction, Toggle is anchored to fresh native minimized state;
++Activate is anchored to fresh native minimized state and active identity of its
++original captured request, even when a later peer command resolves that anchor. Repeated
++requests compose symbolically before these observations, so two initial toggles
++return to the observed original endpoint. No symbolic direction is native authority.
++An unknown peer may join this algebra only after a fresh complete native family
++observation proves its exact identity membership. Apply the accepted receipt order
++over that proved family, never PID/workspace inference. Earlier context replies
++cannot replace the newest receipt. A bounded unresolved receipt ledger must refuse
++new acceptance before mutating ownership when full; it may compress a family prefix
++only after fresh complete relation evidence. Context failure clears its latest
++unvalidated direction chain; later toggles observe native state again.
++
++A first operation whose complete native family already matches its requested
++endpoint performs the native idempotent/focus operation without capturing or
++publishing a visual actor. This exception requires no displayed previous actor.
++A retained displayed actor must still reverse from its actual per-output origins,
++even if the native endpoint already matches.

@@ -1,0 +1,26 @@
+{
+  "result": "pass",
+  "cases": [
+    {
+      "case": "qtSignalOrder",
+      "returncode": 0,
+      "stdout": "{\"ok\":true,\"receipt\":{\"accepted\":true,\"button\":1,\"generation\":1,\"identity\":\"control:Show list\",\"modifiers\":0,\"name\":\"Show list\",\"ownerToken\":1,\"postHandlerIdentity\":\"control:Show grid\",\"postHandlerName\":\"Show grid\",\"press\":{\"button\":1,\"enabled\":true,\"enabled2\":true,\"generation\":1,\"identity\":\"control:Show list\",\"modifiers\":0,\"name\":\"Show list\",\"ownerToken\":1,\"viewMode\":\"grid\",\"visible\":true},\"refusal\":\"\",\"time\":1790908287601,\"viewMode\":\"list\"},\"scope\":\"CPU-only QObject/Connections and exact copied callback bodies; not actual MouseArea/physical input\"}\n",
+      "stderr": "Running as unit: qa-harness-7bce3d7239d34756a2cef159cd19ddb6.scope; invocation ID: 9d70d342d6f344b19c274f0dad3b2f0d\n"
+    },
+    {
+      "case": "keyboardCannotProducePointerReceipt",
+      "returncode": 0,
+      "stdout": "{\"ok\":true}\n",
+      "stderr": "Running as unit: qa-harness-070ed2e173194e26b54b78ca1003de7b.scope; invocation ID: 557d55cc8d24420c885df63f5c3e6b7e\n"
+    },
+    {
+      "case": "qtCancellation",
+      "returncode": 0,
+      "stdout": "{\"ok\":true}\n",
+      "stderr": "Running as unit: qa-harness-816d7bb3875148b2a0051723192b12c9.scope; invocation ID: 17c968c60c5d4160ab8c83ac8f5277c6\n"
+    }
+  ],
+  "guiApplication": false,
+  "nativeWaylandInput": false,
+  "scope": "CPU-only actual QtQml QObject/Connections and unchanged projected Btn/Explorer callback bodies; not actual MouseArea/physical-input proof"
+}

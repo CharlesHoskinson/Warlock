@@ -1,0 +1,23 @@
+{
+  "result": "fail",
+  "checks": {
+    "wholeFrozenBytesModesLinks": true,
+    "exactFrozenPrecommandAndPostgateControlFlow": true,
+    "qt-waylandExactEvaluationReplay": false,
+    "terminalAuthorityCannotEraseFeatureFailure": true,
+    "actualVariantPresent": true
+  },
+  "errors": {
+    "qt-wayland": "ValueError('Missing/extra actual completion records')"
+  },
+  "rows": [],
+  "producerResult": "fail",
+  "producerReachedCases": 4,
+  "sourceManifestSHA256": "3b46fa64cfcb74d996b93386a8581121b77f840393bc6b918a914126e38c106e",
+  "auditorSHA256": "13b0aee49e6b8ff16eccaade946a060ad055d08ac9ad95e99eadb30ea149ff49",
+  "readerSHA256": "5d35dd6a4f31e71073faa44241d0368055523787040c3842436345236d2fc011",
+  "nativeCommands": false,
+  "mainWrites": false,
+  "fullHeld52Accepted": false,
+  "boundary": "Evaluation ticket/queue evidence only. Existing whole52 terminal and retirement auditors remain mandatory and failures preserved. Root command timing and postgate selector checks rely on exact frozen code paths plus retained actual callbacks/ACKs; no separate command-send or postgate snapshot is fabricated."
+}

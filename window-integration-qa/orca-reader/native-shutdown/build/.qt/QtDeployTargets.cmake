@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_windowaccessibility_FILE /home/hoskinson/window-integration-qa/orca-reader/native-shutdown/WindowAccessibilityV4/libwindowaccessibility.so)
+set(__QT_DEPLOY_TARGET_windowaccessibility_TYPE MODULE_LIBRARY)

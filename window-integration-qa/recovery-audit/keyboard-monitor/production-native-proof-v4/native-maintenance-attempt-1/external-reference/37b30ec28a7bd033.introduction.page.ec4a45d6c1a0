@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="sr">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_setting_up_orca"/>
+    <title type="sort">1. Добро дошли у Орку</title>
+    <desc>Представљамо читач екрана <app>Орка</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Добро дошли у Орку</title>
+  <p><app>Орка</app> је слободан, отворен, прилагодљив и проширив читач екрана који омогућава приступ графичкој радној површи путем говора и обновљиве Брајеве азбуке.</p>
+  <p><app>Орка</app> ради са програмима и комплетима алата који подржавају интерфејс пружаоца услуга технологије за испомоћ (AT-SPI), што је главна инфраструктура технологије за испомоћ за Линукс и Соларис. Програми и комплети алата који подржавају AT-SPI укључују Гтк+, Кут, Java Swing, LibreOffice, Gecko, WebKitGtk и Chrome/Chromium.</p>
+  <section id="launching">
+    <title>Покретање <app>Орке</app></title>
+    <p>За покретање <app>Орке</app>:</p>
+    <list>
+      <item>
+        <p>Начин подешавања <app>Орке</app> за аутоматско покретање као вашег жељеног читача екрана зависиће од тога које радно окружење користите.</p>
+      </item>
+      <item>
+        <p>Да бисте укључили или искључили <app>Орку</app> у Гному, притисните <keyseq><key>Super</key><key>Alt</key><key>S</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Укуцајте <cmd>orca</cmd>, заједно са свим опционим параметрима, у прозору терминала или унутар прозорчета <gui>Покрени</gui> а затим притисните <key>Return</key>.</p>
+      </item>
+    </list>
+  </section>
+    <section id="loadtime">
+      <title>Опције приликом покретања</title>
+      <p>Следеће опције се могу навести приликом покретања <app>Орке</app> у прозору терминала или унутар прозорчета <gui>Покрени</gui>:</p>
+      <list>
+        <item>
+          <p><cmd>-h</cmd>, <cmd>--help</cmd>: Приказује поруку помоћи</p>
+        </item>
+        <item>
+          <p><cmd>-v</cmd>, <cmd>--version</cmd>: Приказује издање <app>Орке</app></p>
+        </item>
+        <item>
+          <p><cmd>-s</cmd>, <cmd>--setup</cmd>: Подешава корисничке поставке</p>
+        </item>
+        <item>
+          <p><cmd>-u</cmd>, <cmd>--user-prefs=<em>назив_директоријума</em></cmd>: Користи <em>назив_директоријума</em> као алтернативни директоријум за корисничке поставке</p>
+        </item>
+        <item>
+          <p><cmd>-e</cmd>, <cmd>--enable=<em>опција</em></cmd>: Приморава коришћење опције, где <em>опција</em> може бити једна од следећих:</p>
+          <list>
+            <item><p><cmd>speech</cmd></p></item>
+            <item><p><cmd>braille</cmd></p></item>
+            <item><p><cmd>braille-monitor</cmd></p></item>
+          </list>
+        </item>
+        <item>
+          <p><cmd>-d</cmd>, <cmd>--disable=<em>опција</em></cmd>: Спречава коришћење опције, где <em>опција</em> може бити једна од следећих:</p>
+          <list>
+            <item><p><cmd>speech</cmd></p></item>
+            <item><p><cmd>braille</cmd></p></item>
+            <item><p><cmd>braille-monitor</cmd></p></item>
+          </list>
+        </item>
+        <item>
+            <p><cmd>-p</cmd>, <cmd>--profile=<em>назив_датотеке</em></cmd>: Увози профил из дате датотеке профила <app>Орке</app></p>
+        </item>
+        <item>
+          <p><cmd>-r</cmd>, <cmd>--replace</cmd>: Замењује тренутно покренуту <app>Орку</app></p>
+        </item>
+        <item>
+          <p><cmd>-l</cmd>, <cmd>--list-apps</cmd>: Исписује познате покренуте програме</p>
+        </item>
+        <item>
+          <p><cmd>--debug</cmd>: Шаље излаз прочишћавања у debug-YYYY-MM-DD-HH:MM:SS.out</p>
+        </item>
+        <item>
+          <p><cmd>--debug-file=<em>назив_датотеке</em></cmd>: Шаље излаз прочишћавања у наведену датотеку</p>
+        </item>
+      </list>
+    </section>
+
+</page>

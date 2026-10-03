@@ -1,0 +1,704 @@
+{
+  "687": {
+    "label": "actual new owning read",
+    "startedNs": 197364957131536,
+    "value": "{\"schema\":1,\"queryKind\":\"metadata\",\"queryProperties\":null,\"ignoreOwner\":null,\"hitOwner\":null,\"body\":{\"owner\":{\"address\":\"0x5919592d0fa0\",\"stableId\":\"1800000c\",\"pid\":1904874},\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"noFocus\":false,\"priorityFocus\":false,\"pinned\":true,\"floating\":false,\"internalMode\":0,\"clientMode\":0,\"fullscreenHandler\":\"0x591957d9d3c0\",\"target\":\"0x591957af50f0\",\"space\":\"0x591957dafc40\",\"workspace\":\"0x591957d88c60\",\"output\":\"0x591957dbd8d0\",\"logicalBox\":[\"800\",\"20\",\"780\",\"960\"],\"visualBox\":[\"0\",\"0\",\"0\",\"0\"],\"restoreValid\":true,\"restoreGeneration\":\"5\",\"restoreLogicalBox\":[\"800\",\"20\",\"780\",\"960\"],\"restoreVisualBox\":[\"0\",\"0\",\"0\",\"0\"],\"restoreFloating\":false,\"restoreLayoutHandled\":true,\"restoreTarget\":\"0x591957af50f0\",\"restoreLayoutTarget\":\"0x591957af50f0\",\"restoreSpace\":\"0x591957dafc40\",\"restoreOrigin\":true,\"restoreManaged\":true,\"ownedUnpinReady\":true,\"group\":\"0x0\",\"groupMembers\":[],\"cursor\":[\"800\",\"512\"],\"coreFocus\":{\"address\":\"0x5919592d0fa0\",\"stableId\":\"1800000c\",\"pid\":1904874},\"scroll\":null,\"transfer\":null},\"postBody\":{\"owner\":{\"address\":\"0x5919592d0fa0\",\"stableId\":\"1800000c\",\"pid\":1904874},\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"noFocus\":false,\"priorityFocus\":false,\"pinned\":true,\"floating\":false,\"internalMode\":0,\"clientMode\":0,\"fullscreenHandler\":\"0x591957d9d3c0\",\"target\":\"0x591957af50f0\",\"space\":\"0x591957dafc40\",\"workspace\":\"0x591957d88c60\",\"output\":\"0x591957dbd8d0\",\"logicalBox\":[\"800\",\"20\",\"780\",\"960\"],\"visualBox\":[\"0\",\"0\",\"0\",\"0\"],\"restoreValid\":true,\"restoreGeneration\":\"5\",\"restoreLogicalBox\":[\"800\",\"20\",\"780\",\"960\"],\"restoreVisualBox\":[\"0\",\"0\",\"0\",\"0\"],\"restoreFloating\":false,\"restoreLayoutHandled\":true,\"restoreTarget\":\"0x591957af50f0\",\"restoreLayoutTarget\":\"0x591957af50f0\",\"restoreSpace\":\"0x591957dafc40\",\"restoreOrigin\":true,\"restoreManaged\":true,\"ownedUnpinReady\":true,\"group\":\"0x0\",\"groupMembers\":[],\"cursor\":[\"800\",\"512\"],\"coreFocus\":{\"address\":\"0x5919592d0fa0\",\"stableId\":\"1800000c\",\"pid\":1904874},\"scroll\":null,\"transfer\":null},\"corePolicyBuild\":\"59a1485d5f900db177414814bae9577898d687d17f2dc6a533ecec40a21590d3\",\"compositorPid\":1878127,\"compositorPgid\":1878127,\"compositorStart\":\"20908103\",\"session\":\"efb50993780079460b0cbed1363e2166a2de1d9f_1790986608_1596633239\",\"sequence\":\"41\",\"observedNs\":\"197365566229112\",\"ok\":true,\"error\":null}\n",
+    "completedNs": 197365568259806
+  },
+  "690": {
+    "label": "actual current public clients",
+    "startedNs": 197367870828694,
+    "value": [
+      {
+        "address": "0x591958e18b70",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          21,
+          45
+        ],
+        "size": [
+          773,
+          934
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": false,
+        "monitor": 0,
+        "class": "qt-window-modal-fixture",
+        "title": "Qt WindowModal QA peer",
+        "initialClass": "qt-window-modal-fixture",
+        "initialTitle": "Qt WindowModal QA peer",
+        "pid": 1904874,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "1800000d"
+      },
+      {
+        "address": "0x5919592d0fa0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          806,
+          45
+        ],
+        "size": [
+          773,
+          934
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": false,
+        "monitor": 0,
+        "class": "qt-window-modal-fixture",
+        "title": "Qt WindowModal QA owner",
+        "initialClass": "qt-window-modal-fixture",
+        "initialTitle": "Qt WindowModal QA owner",
+        "pid": 1904874,
+        "xwayland": false,
+        "pinned": true,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "1800000c"
+      }
+    ],
+    "completedNs": 197368318493799
+  },
+  "692": {
+    "label": "actual current public clients",
+    "startedNs": 197369697101415,
+    "value": [
+      {
+        "address": "0x591958e18b70",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          21,
+          45
+        ],
+        "size": [
+          773,
+          934
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": false,
+        "monitor": 0,
+        "class": "qt-window-modal-fixture",
+        "title": "Qt WindowModal QA peer",
+        "initialClass": "qt-window-modal-fixture",
+        "initialTitle": "Qt WindowModal QA peer",
+        "pid": 1904874,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "1800000d"
+      },
+      {
+        "address": "0x5919592d0fa0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          806,
+          45
+        ],
+        "size": [
+          773,
+          934
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": false,
+        "monitor": 0,
+        "class": "qt-window-modal-fixture",
+        "title": "Qt WindowModal QA owner",
+        "initialClass": "qt-window-modal-fixture",
+        "initialTitle": "Qt WindowModal QA owner",
+        "pid": 1904874,
+        "xwayland": false,
+        "pinned": true,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "1800000c"
+      }
+    ],
+    "completedNs": 197370237108390
+  },
+  "694": {
+    "label": "actual current public clients",
+    "startedNs": 197371495085701,
+    "value": [
+      {
+        "address": "0x591958e18b70",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          21,
+          45
+        ],
+        "size": [
+          773,
+          934
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": false,
+        "monitor": 0,
+        "class": "qt-window-modal-fixture",
+        "title": "Qt WindowModal QA peer",
+        "initialClass": "qt-window-modal-fixture",
+        "initialTitle": "Qt WindowModal QA peer",
+        "pid": 1904874,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "1800000d"
+      },
+      {
+        "address": "0x5919592d0fa0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          806,
+          45
+        ],
+        "size": [
+          773,
+          934
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": false,
+        "monitor": 0,
+        "class": "qt-window-modal-fixture",
+        "title": "Qt WindowModal QA owner",
+        "initialClass": "qt-window-modal-fixture",
+        "initialTitle": "Qt WindowModal QA owner",
+        "pid": 1904874,
+        "xwayland": false,
+        "pinned": true,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "1800000c"
+      }
+    ],
+    "completedNs": 197372124830052
+  },
+  "699": {
+    "label": "actual current public clients",
+    "startedNs": 197377249317418,
+    "value": [
+      {
+        "address": "0x591958e18b70",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          21,
+          45
+        ],
+        "size": [
+          1558,
+          934
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": false,
+        "monitor": 0,
+        "class": "qt-window-modal-fixture",
+        "title": "Qt WindowModal QA peer",
+        "initialClass": "qt-window-modal-fixture",
+        "initialTitle": "Qt WindowModal QA peer",
+        "pid": 1904874,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 1,
+        "fullscreenClient": 1,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "1800000d"
+      },
+      {
+        "address": "0x5919592d0fa0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          806,
+          45
+        ],
+        "size": [
+          773,
+          934
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": false,
+        "monitor": 0,
+        "class": "qt-window-modal-fixture",
+        "title": "Qt WindowModal QA owner",
+        "initialClass": "qt-window-modal-fixture",
+        "initialTitle": "Qt WindowModal QA owner",
+        "pid": 1904874,
+        "xwayland": false,
+        "pinned": true,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "1800000c"
+      }
+    ],
+    "completedNs": 197377676537514
+  },
+  "703": {
+    "label": "actual new owning read",
+    "startedNs": 197381953640618,
+    "value": "{\"schema\":1,\"queryKind\":\"metadata\",\"queryProperties\":null,\"ignoreOwner\":null,\"hitOwner\":null,\"body\":{\"owner\":{\"address\":\"0x591958e18b70\",\"stableId\":\"1800000d\",\"pid\":1904874},\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"noFocus\":false,\"priorityFocus\":false,\"pinned\":false,\"floating\":false,\"internalMode\":1,\"clientMode\":1,\"fullscreenHandler\":\"0x591957d9d3c0\",\"target\":\"0x591959231500\",\"space\":\"0x591957dafc40\",\"workspace\":\"0x591957d88c60\",\"output\":\"0x591957dbd8d0\",\"logicalBox\":[\"20\",\"20\",\"1560\",\"960\"],\"visualBox\":[\"0\",\"0\",\"0\",\"0\"],\"restoreValid\":true,\"restoreGeneration\":\"6\",\"restoreLogicalBox\":[\"20\",\"20\",\"780\",\"960\"],\"restoreVisualBox\":[\"0\",\"0\",\"0\",\"0\"],\"restoreFloating\":false,\"restoreLayoutHandled\":true,\"restoreTarget\":\"0x591959231500\",\"restoreLayoutTarget\":\"0x591959231500\",\"restoreSpace\":\"0x591957dafc40\",\"restoreOrigin\":false,\"restoreManaged\":false,\"ownedUnpinReady\":false,\"group\":\"0x0\",\"groupMembers\":[],\"cursor\":[\"800\",\"512\"],\"coreFocus\":{\"address\":\"0x5919592d0fa0\",\"stableId\":\"1800000c\",\"pid\":1904874},\"scroll\":null,\"transfer\":null},\"postBody\":{\"owner\":{\"address\":\"0x591958e18b70\",\"stableId\":\"1800000d\",\"pid\":1904874},\"mapped\":true,\"hidden\":false,\"acceptsInput\":true,\"noFocus\":false,\"priorityFocus\":false,\"pinned\":false,\"floating\":false,\"internalMode\":1,\"clientMode\":1,\"fullscreenHandler\":\"0x591957d9d3c0\",\"target\":\"0x591959231500\",\"space\":\"0x591957dafc40\",\"workspace\":\"0x591957d88c60\",\"output\":\"0x591957dbd8d0\",\"logicalBox\":[\"20\",\"20\",\"1560\",\"960\"],\"visualBox\":[\"0\",\"0\",\"0\",\"0\"],\"restoreValid\":true,\"restoreGeneration\":\"6\",\"restoreLogicalBox\":[\"20\",\"20\",\"780\",\"960\"],\"restoreVisualBox\":[\"0\",\"0\",\"0\",\"0\"],\"restoreFloating\":false,\"restoreLayoutHandled\":true,\"restoreTarget\":\"0x591959231500\",\"restoreLayoutTarget\":\"0x591959231500\",\"restoreSpace\":\"0x591957dafc40\",\"restoreOrigin\":false,\"restoreManaged\":false,\"ownedUnpinReady\":false,\"group\":\"0x0\",\"groupMembers\":[],\"cursor\":[\"800\",\"512\"],\"coreFocus\":{\"address\":\"0x5919592d0fa0\",\"stableId\":\"1800000c\",\"pid\":1904874},\"scroll\":null,\"transfer\":null},\"corePolicyBuild\":\"59a1485d5f900db177414814bae9577898d687d17f2dc6a533ecec40a21590d3\",\"compositorPid\":1878127,\"compositorPgid\":1878127,\"compositorStart\":\"20908103\",\"session\":\"efb50993780079460b0cbed1363e2166a2de1d9f_1790986608_1596633239\",\"sequence\":\"42\",\"observedNs\":\"197382572229672\",\"ok\":true,\"error\":null}\n",
+    "completedNs": 197382573148194
+  },
+  "706": {
+    "label": "actual current public clients",
+    "startedNs": 197385889142202,
+    "value": [
+      {
+        "address": "0x591958e18b70",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          21,
+          45
+        ],
+        "size": [
+          1558,
+          934
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": false,
+        "monitor": 0,
+        "class": "qt-window-modal-fixture",
+        "title": "Qt WindowModal QA peer",
+        "initialClass": "qt-window-modal-fixture",
+        "initialTitle": "Qt WindowModal QA peer",
+        "pid": 1904874,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 1,
+        "fullscreenClient": 1,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "1800000d"
+      },
+      {
+        "address": "0x5919592d0fa0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          806,
+          45
+        ],
+        "size": [
+          773,
+          934
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": false,
+        "monitor": 0,
+        "class": "qt-window-modal-fixture",
+        "title": "Qt WindowModal QA owner",
+        "initialClass": "qt-window-modal-fixture",
+        "initialTitle": "Qt WindowModal QA owner",
+        "pid": 1904874,
+        "xwayland": false,
+        "pinned": true,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "1800000c"
+      }
+    ],
+    "completedNs": 197386527902073
+  },
+  "707": {
+    "label": "actual current Qt state",
+    "startedNs": 197387136218204,
+    "value": {
+      "activeWindow": "owner",
+      "commandEpoch": -1,
+      "pid": 1904874,
+      "platform": "wayland",
+      "qtVersion": "6.11.2",
+      "windows": {
+        "owner": {
+          "active": true,
+          "buttonClient": [
+            11,
+            456,
+            751,
+            22
+          ],
+          "buttonGlobal": [
+            11,
+            456,
+            751,
+            22
+          ],
+          "clicks": 0,
+          "enabled": true,
+          "geometryGlobal": [
+            0,
+            0,
+            773,
+            934
+          ],
+          "layoutGeometry": [
+            0,
+            0,
+            773,
+            934
+          ],
+          "modality": 0,
+          "native": true,
+          "transientParentTitle": "",
+          "visible": true
+        },
+        "peer": {
+          "active": false,
+          "buttonClient": [
+            11,
+            456,
+            1536,
+            22
+          ],
+          "buttonGlobal": [
+            11,
+            456,
+            1536,
+            22
+          ],
+          "clicks": 0,
+          "enabled": true,
+          "geometryGlobal": [
+            0,
+            0,
+            1558,
+            934
+          ],
+          "layoutGeometry": [
+            0,
+            0,
+            1558,
+            934
+          ],
+          "modality": 0,
+          "native": true,
+          "transientParentTitle": "",
+          "visible": true
+        }
+      }
+    },
+    "completedNs": 197387743598793
+  },
+  "708": {
+    "label": "actual unchanged probe state",
+    "startedNs": 197388377849353,
+    "value": {
+      "cursor": [
+        800,
+        512
+      ],
+      "hitOwner": {
+        "address": "0x591958e18b70",
+        "stableId": "1800000d",
+        "pid": 1904874,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          21,
+          45,
+          1558,
+          934
+        ]
+      },
+      "pointerOwner": {
+        "address": "0x5919592d0fa0",
+        "stableId": "1800000c",
+        "pid": 1904874,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          806,
+          45,
+          773,
+          934
+        ]
+      },
+      "pointerSurfacePresent": true,
+      "nativeFocus": {
+        "address": "0x5919592d0fa0",
+        "stableId": "1800000c",
+        "pid": 1904874,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          806,
+          45,
+          773,
+          934
+        ]
+      },
+      "modalTarget": {
+        "address": "0x591958e18b70",
+        "stableId": "1800000d",
+        "pid": 1904874,
+        "modal": false,
+        "mapped": true,
+        "hidden": false,
+        "acceptsInput": true,
+        "surfaceBox": [
+          21,
+          45,
+          1558,
+          934
+        ]
+      },
+      "historyOldToNew": [
+        {
+          "address": "0x591958e18b70",
+          "stableId": "1800000d",
+          "pid": 1904874,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            21,
+            45,
+            1558,
+            934
+          ]
+        },
+        {
+          "address": "0x5919592d0fa0",
+          "stableId": "1800000c",
+          "pid": 1904874,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            806,
+            45,
+            773,
+            934
+          ]
+        }
+      ],
+      "windows": [
+        {
+          "address": "0x591958e18b70",
+          "stableId": "1800000d",
+          "pid": 1904874,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            21,
+            45,
+            1558,
+            934
+          ]
+        },
+        {
+          "address": "0x5919592d0fa0",
+          "stableId": "1800000c",
+          "pid": 1904874,
+          "modal": false,
+          "mapped": true,
+          "hidden": false,
+          "acceptsInput": true,
+          "surfaceBox": [
+            806,
+            45,
+            773,
+            934
+          ]
+        }
+      ],
+      "sessionLocked": false,
+      "exclusiveLayers": 0,
+      "clickMode": 0,
+      "constrained": false,
+      "heldButtons": false,
+      "seatGrab": false,
+      "captured": false,
+      "dnd": false,
+      "dragTarget": false
+    },
+    "completedNs": 197388959379522
+  }
+}

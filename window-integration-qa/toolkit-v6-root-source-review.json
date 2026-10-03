@@ -1,0 +1,39 @@
+{
+  "updatedUTC": "2026-10-02T00:31:30.994155+00:00",
+  "sourceReadySHA256": "0f4546ceae461034c81cd5a33d01352fc11907989b4501213959f9f2a3721d75",
+  "allBytesAndModesExact": 21595,
+  "allLinksExact": 327,
+  "exactNativeDelta": {
+    "dragBridge.cpp": {
+      "before": "130868c4eda7ef6fd9e683f2a9ef8272548d72fca5f4e004f059a95e983a9a19",
+      "after": "f8ba303484ae321e70d354353cde2565f4022b932fdee1fa6300725406366486",
+      "delta": "--- \n+++ \n@@ -203,6 +203,14 @@\n         throw std::runtime_error(\"hyprbars drag bridge: hook failed for \" + name);\n     return hook;\n }\n+}\n+\n+bool preserveCapturedGestureFocus(const PHLWINDOW& owner, const PHLWINDOW& independentlyFocused, Desktop::eFocusReason reason) {\n+    if (!enabled || !enabled->value() || reason != Desktop::FOCUS_REASON_FFM || !validMapped(owner) || !validMapped(independentlyFocused) ||\n+        owner->isHidden() || independentlyFocused->isHidden() || !owner->m_isFloating || independentlyFocused == owner)\n+        return false;\n+    const auto target = g_layoutManager->dragController()->target();\n+    return sameGesture(target) && target->window() == owner && g_layoutManager->dragController()->mode() == gesture->mode;\n }\n \n void initDragBridge() {\n"
+    },
+    "familyBridge.cpp": {
+      "before": "eb8c7215d1f123e20be11c070482de768582e84e4d07e7453a2d53b1a610b67d",
+      "after": "99f5e281ccaf3a27846583a741f4bea03ebbfbde31f5add6340e1a1b82ca890d",
+      "delta": "--- \n+++ \n@@ -1,4 +1,5 @@\n #include \"familyBridge.hpp\"\n+#include \"dragBridge.hpp\"\n #include \"globals.hpp\"\n #include \"ancestorHit.hpp\"\n #include \"modalRegionAuthority.hpp\"\n@@ -136,6 +137,8 @@\n }\n \n void hookedFocus(Desktop::CFocusState* state, PHLWINDOW window, Desktop::eFocusReason reason, SP<CWLSurfaceResource> surface) {\n+    if (preserveCapturedGestureFocus(window, state->window(), reason))\n+        return;\n     const auto target = modalTarget(window);\n     if (target != window) {\n         window = target;\n"
+    },
+    "dragBridge.hpp": {
+      "before": "56df53c0d3fc343838cafad69eca92987742286578ca12d6d59155ec9729a0f8",
+      "after": "f650e50f986a00956954376c7d54b67e13fb80dc25fc873eade3f1b821a8aab9",
+      "delta": "--- \n+++ \n@@ -1,6 +1,7 @@\n #pragma once\n #include <hyprland/src/helpers/math/Math.hpp>\n #include <hyprland/src/desktop/view/Window.hpp>\n+#include <hyprland/src/desktop/state/FocusState.hpp>\n \n void initDragBridge();\n void exitDragBridge();\n@@ -10,3 +11,5 @@\n int luaRetireGestureCurrent(lua_State* state);\n int luaWindowLifetime(lua_State* state);\n bool startCaptionDrag(const PHLWINDOW& owner, const Vector2D& press);\n+\n+bool preserveCapturedGestureFocus(const PHLWINDOW& owner, const PHLWINDOW& independentlyFocused, Desktop::eFocusReason reason);\n"
+    }
+  },
+  "inheritedImplementationBodiesExact": true,
+  "makefileOnlyOutputName": true,
+  "reviewed": [
+    "FFM-only early return at existing raw focus hook before modal delegation",
+    "mapped visible distinct current native window",
+    "floating captured owner exact weak target/owner/stable ID and current controller mode",
+    "sameGesture guards optional gesture and target before dereferences",
+    "ordinary explicit/click/keyboard/WM focus and source-focused drag delegate",
+    "no mutation, controller retirement, synthetic focus or new hook",
+    "old failed genuine HeldV5 evidence retained; no Escape-only attribution",
+    "full native acceptance and old strict52 oracle mandatory"
+  ],
+  "candidateSHA256": "92a7c9bc1e4416dfd5eb2d1aab28a6bac1cbd5153e2e5ecdcbedd2bcdf046fb6",
+  "nativeAccepted": false,
+  "productionDeployed": false,
+  "mainWrites": false
+}

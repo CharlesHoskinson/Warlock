@@ -1,0 +1,127 @@
+{
+  "result": "pass",
+  "checks": {
+    "samePidInstanceStart": true,
+    "hiddenBeforeBackingMap": true,
+    "exact15InstalledQml": true,
+    "operationsAndSpecExact": true,
+    "durableNativeAssetsExact": true,
+    "unchangedFrozenManifestBytes": true,
+    "allFrozenInputsExact": true
+  },
+  "preservation": {
+    "allStableClientFields": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "typedClipboardAndPrimary": true,
+    "a11ySocketFlagsAndReaderEnabled": true,
+    "outputs": true,
+    "plugins": true,
+    "keyboardStates": true,
+    "fourCatalogNaturalBytes": true,
+    "dashboardBytes": true,
+    "originalFilesProcess": true,
+    "originalFilesPublicState": true,
+    "originalFilesHidden": true,
+    "originalFilesFullUiWithEmptyAddedFocusIdentity": true
+  },
+  "sourceManifestSHA256": "bc9aefce52100d4b4457f07a0ea3b7119f88ff7f9d914ddb7780805e7732a2fb",
+  "acceptedReloadReportSHA256": "3e928800f3240e000254762223bbcfc220b7b78c4fefe1f38613e61206275f08",
+  "rollbackPackageRetained": true,
+  "sourcePlanSHA256": "f3f6c11f21cc80623377a624a25070fe521d5fecfff5d10062b4c35ace9da71f",
+  "loadedInitialization": {
+    "resumed": true,
+    "visible": false,
+    "backingVisible": false,
+    "historyLength": 3,
+    "historyIndex": 2
+  },
+  "resumedOnce": true,
+  "replacedPaths": [
+    "Ui/Btn.qml",
+    "Ui/Chip.qml",
+    "Ui/ContextMenu.qml",
+    "Ui/Ico.qml",
+    "Ui/Prompt.qml",
+    "explorer/Cell.qml",
+    "explorer/Dashboard.qml",
+    "explorer/Detail.qml",
+    "explorer/Explorer.qml",
+    "explorer/FileArea.qml",
+    "explorer/Lightbox.qml",
+    "explorer/PathBar.qml",
+    "explorer/Tree.qml",
+    "explorer/Treemap.qml",
+    "shell.qml"
+  ],
+  "preservationDetails": {
+    "currentTitleHashesBefore": {
+      "0x5a02aee429f0": "5d48eac09d17489ce011af63b5d37700a395e24810b96bfc3f21976c904cce18",
+      "0x5a02b0cc9280": "a7b8aa98953e573ee61bb4e66d1206f8e4dfba0730b657472f7db8da97049000",
+      "0x5a02afd20bd0": "f0d08d998f5f6b55bde59764974e7e53c35e816939f697edaf4cc40c0836b170",
+      "0x5a02afa13e90": "102607aba0aca07600ed90354604dd4f2164a9ea9a674a5727b90bdfc8f648ab"
+    },
+    "currentTitleHashesAfter": {
+      "0x5a02aee429f0": "5d48eac09d17489ce011af63b5d37700a395e24810b96bfc3f21976c904cce18",
+      "0x5a02b0cc9280": "a7b8aa98953e573ee61bb4e66d1206f8e4dfba0730b657472f7db8da97049000",
+      "0x5a02afd20bd0": "98f1ea14a44727c3bedc0d2937af1a3eed4e2583a61e95f4ca8a5c1c684b1a34",
+      "0x5a02afa13e90": "102607aba0aca07600ed90354604dd4f2164a9ea9a674a5727b90bdfc8f648ab"
+    },
+    "catalogNaturalComparison": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": {
+        "exactBytes": true,
+        "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+        "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0"
+      },
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": {
+        "exactBytes": true,
+        "expectedSHA256": null,
+        "actualSHA256": null
+      },
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": {
+        "exactBytes": true,
+        "expectedSHA256": null,
+        "actualSHA256": null
+      },
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": {
+        "exactBytes": true,
+        "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+        "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+      }
+    },
+    "stableFields": [
+      "address",
+      "pid",
+      "stableId",
+      "at",
+      "size",
+      "workspace",
+      "pinned",
+      "fullscreen",
+      "fullscreenClient",
+      "grouped",
+      "tags",
+      "floating",
+      "monitor",
+      "mapped",
+      "hidden",
+      "visible",
+      "acceptsInput",
+      "class",
+      "initialClass",
+      "initialTitle",
+      "xwayland",
+      "pinFullscreened",
+      "fullscreenHandler",
+      "allowedOverFullscreen",
+      "swallowing",
+      "inhibitingIdle",
+      "xdgTag",
+      "xdgDescription",
+      "contentType",
+      "tearingHint"
+    ]
+  },
+  "recovery": "Retain this private backup and raw before/after evidence. After a post-resume failure, root reviews exact current state before any source rollback; no implicit source rollback/retry."
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "argv": [
+      "quint",
+      "typecheck",
+      "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/max_pin.qnt"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 6.7708792140183505,
+    "log": "proof/max_pin-0.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "quint",
+      "test",
+      "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/max_pin_test.qnt",
+      "--max-samples=1"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 61.79408114400576,
+    "log": "proof/max_pin-1.log",
+    "sha256": "f41661cd2ad014d4d26034e562da7c36ccdc24af05bd9996a9365313695878d1"
+  },
+  {
+    "argv": [
+      "quint",
+      "run",
+      "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/max_pin.qnt",
+      "--max-samples=2000",
+      "--max-steps=100",
+      "--invariant=allProps",
+      "--n-threads=2"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 26.589021304011112,
+    "log": "proof/max_pin-2.log",
+    "sha256": "3f0adac5ff751ea371c696b2ec93fbb4a27996c22d86b24823126d5a55f69efc"
+  },
+  {
+    "argv": [
+      "quint",
+      "run",
+      "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/max_pin.qnt",
+      "--step=validStep",
+      "--max-samples=2000",
+      "--max-steps=100",
+      "--invariant=allProps",
+      "--n-threads=2"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 65.4428791020182,
+    "log": "proof/max_pin-3.log",
+    "sha256": "7aa98df654f7ad003f47506ca568da0f097bfb8e995f1c9b5c20867dc73feb88"
+  }
+]

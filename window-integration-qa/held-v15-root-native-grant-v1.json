@@ -1,0 +1,23 @@
+{
+  "result": "root original52 private native grant",
+  "candidate": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15",
+  "manifestSHA256": "3b46fa64cfcb74d996b93386a8581121b77f840393bc6b918a914126e38c106e",
+  "rootSourceReviewSHA256": "56779874d1261b942130ef6eceb103da47ee15cc5dcc7e970b272c19811a715f",
+  "sourceReadySHA256": "0ffea334af9cd5b6130aec43dde259d32f5bacde43f3366fad4f350992f7dc0a",
+  "rootFocusedCPU": 40,
+  "rootNamedQuint": 59,
+  "rootSampledQuint": 10000,
+  "original52MatrixUnchanged": true,
+  "originalActionsOraclesBudgetsUnchanged": true,
+  "nativeLaunchAccepted": false,
+  "mainWritesAuthorized": false,
+  "mainRestorationWritesAuthorized": false,
+  "fiveCrashNoiseSafeguards": [
+    "Unique prlimit core1 qa-harness scope",
+    "Xwayland off unless genuinely authenticated private X11 under test",
+    "Verified private live Weston parent and explicit nested socket; no DRM fallback",
+    "Unrestricted launcher in one 0700 owned /run/user/1000/wqa runtime scheme",
+    "Normal input releases and clients first, drained QS, native unload, compositor last"
+  ],
+  "time": "2026-10-02T07:59:54.936918+00:00"
+}

@@ -1,0 +1,119 @@
+{
+  "result": "pass",
+  "runtimeAbsent": true,
+  "formalBeforeRuntime": true,
+  "nativeLaunch": false,
+  "frozenV20ManifestSHA256": "d3d836eda0e2a25681df4ca80740ca94f8d2084ea1c48f8834293b740122c068",
+  "sourceSHA256": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/READONLY_LONGEVITY_CONTRACT.md": "1e029072608da87cd13d7d63a877607f23a93207c5e1e6c8f454cbdd62bfb59e",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_archival.qnt": "8daafb229ad34d868de3ec5099378bed08a78a477dd940ac1cf5ab58a2eb79ff",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_archival_test.qnt": "bdbbdec4cd51b9de0bf45dec2b0ba83bfc6138b28f3f164127707f4c6621595b",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_predecessor.qnt": "385f86dbcde3dc7f755b9bfe58a9d136d9a5215da9da2376e5983089bdc60371",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_predecessor_test.qnt": "c28b3099d7a78152b7c44763c00084dee8002cb29bccd7234095ea893087e131"
+  },
+  "sourceUnchanged": true,
+  "models": 2,
+  "named": 51,
+  "samplesPerModel": 2000,
+  "stepsPerSample": 100,
+  "results": [
+    {
+      "model": "readonly_archival",
+      "checks": [
+        {
+          "command": [
+            "quint",
+            "typecheck",
+            "readonly_archival_test.qnt"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_archival-final-typed.log",
+          "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsedNs": 11559460984,
+          "named": 0
+        },
+        {
+          "command": [
+            "quint",
+            "test",
+            "readonly_archival_test.qnt",
+            "--backend=rust",
+            "--seed=2026100305"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_archival-final-named.log",
+          "logSHA256": "4e6ce80af55599481165cbcd4c1c3d570892af2310cb9e1df34997b095cf0203",
+          "elapsedNs": 39434987332,
+          "named": 33
+        },
+        {
+          "command": [
+            "quint",
+            "run",
+            "readonly_archival.qnt",
+            "--invariant=allProps",
+            "--max-samples=2000",
+            "--max-steps=100",
+            "--backend=rust",
+            "--seed=2026100305",
+            "--verbosity=1"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_archival-final-run.log",
+          "logSHA256": "b15aa0495a5032661ac173ec43217ba93b0940ee1825041be873fcd0951dcd70",
+          "elapsedNs": 16457759298,
+          "named": 0
+        }
+      ]
+    },
+    {
+      "model": "readonly_predecessor",
+      "checks": [
+        {
+          "command": [
+            "quint",
+            "typecheck",
+            "readonly_predecessor_test.qnt"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_predecessor-final-typed.log",
+          "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsedNs": 5383290861,
+          "named": 0
+        },
+        {
+          "command": [
+            "quint",
+            "test",
+            "readonly_predecessor_test.qnt",
+            "--backend=rust",
+            "--seed=2026100305"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_predecessor-final-named.log",
+          "logSHA256": "37b1b5c81487116990687e6e08756c26f35fd8398205f6a65c53c2a09aa4e344",
+          "elapsedNs": 13210202044,
+          "named": 18
+        },
+        {
+          "command": [
+            "quint",
+            "run",
+            "readonly_predecessor.qnt",
+            "--invariant=allProps",
+            "--max-samples=2000",
+            "--max-steps=100",
+            "--backend=rust",
+            "--seed=2026100305",
+            "--verbosity=1"
+          ],
+          "exitCode": 0,
+          "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_predecessor-final-run.log",
+          "logSHA256": "7b347fa56d99a925a6a6c86c3387b2af14f39b84a968a96bbd0752fee1388418",
+          "elapsedNs": 14357252473,
+          "named": 0
+        }
+      ]
+    }
+  ]
+}

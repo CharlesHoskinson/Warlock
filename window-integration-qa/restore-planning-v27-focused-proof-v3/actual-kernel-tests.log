@@ -1,0 +1,20 @@
+test_actual_controller_successor_context_cancels_old_plans_then_drains (test_restore_planning.RestorePlanningTests.test_actual_controller_successor_context_cancels_old_plans_then_drains) ... ok
+test_actual_malformed_query_error_drains_without_focus (test_restore_planning.RestorePlanningTests.test_actual_malformed_query_error_drains_without_focus) ... ok
+test_actual_max_three_workers_for_sixty_four_slots_then_cancel_drain (test_restore_planning.RestorePlanningTests.test_actual_max_three_workers_for_sixty_four_slots_then_cancel_drain) ... ok
+test_actual_ordered_three_plans_keep_six_focus_and_three_refresh (test_restore_planning.RestorePlanningTests.test_actual_ordered_three_plans_keep_six_focus_and_three_refresh) ... ok
+test_deadline_during_real_query_drains_normal_eof_then_refuses (test_restore_planning.RestorePlanningTests.test_deadline_during_real_query_drains_normal_eof_then_refuses) ... ok
+test_duplicate_identity_refuses_before_actual_query (test_restore_planning.RestorePlanningTests.test_duplicate_identity_refuses_before_actual_query) ... ok
+test_expired_plan_admission_has_no_query_or_effect (test_restore_planning.RestorePlanningTests.test_expired_plan_admission_has_no_query_or_effect) ... ok
+test_original_all_visible_restore_keeps_late_endpoint_noop_without_focus (test_restore_planning.RestorePlanningTests.test_original_all_visible_restore_keeps_late_endpoint_noop_without_focus) ... ok
+test_original_atomic_six_focus_can_cross_deadline_but_cannot_seed (test_restore_planning.RestorePlanningTests.test_original_atomic_six_focus_can_cross_deadline_but_cannot_seed) ... ok
+test_original_live_lifetime_apply_guard_before_focus (test_restore_planning.RestorePlanningTests.test_original_live_lifetime_apply_guard_before_focus) ... ok
+test_original_native_focus_timeout_keeps_uncertain_job_and_exact_cleanup (test_restore_planning.RestorePlanningTests.test_original_native_focus_timeout_keeps_uncertain_job_and_exact_cleanup) ... ok
+test_original_nonzero_native_focus_keeps_exact_unknown_job (test_restore_planning.RestorePlanningTests.test_original_nonzero_native_focus_keeps_exact_unknown_job) ... ok
+test_original_stored_material_apply_guard_before_focus (test_restore_planning.RestorePlanningTests.test_original_stored_material_apply_guard_before_focus) ... ok
+test_original_wrong_plan_identity_refused_before_focus (test_restore_planning.RestorePlanningTests.test_original_wrong_plan_identity_refused_before_focus) ... ok
+test_sixty_five_refuses_before_actual_query (test_restore_planning.RestorePlanningTests.test_sixty_five_refuses_before_actual_query) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 14.697s
+
+OK

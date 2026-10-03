@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+qa_root=$(cd -- "$(dirname -- "$0")" && pwd)
+export PYTHONPATH="$qa_root:$qa_root/prefix/usr/lib/python3.14/site-packages"
+export LD_LIBRARY_PATH="$qa_root/prefix/usr/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export GI_TYPELIB_PATH="$qa_root/prefix/usr/lib/girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}"
+export XDG_DATA_HOME="$qa_root/data"
+export XDG_CONFIG_HOME="$qa_root/config"
+export XDG_CACHE_HOME="$qa_root/cache"
+export XDG_DATA_DIRS="$qa_root/prefix/usr/share:/usr/local/share:/usr/share"
+export GSETTINGS_BACKEND=memory
+export ORCA_QA_UTTERANCES="${ORCA_QA_UTTERANCES:-$qa_root/utterances.jsonl}"
+exec python "$qa_root/prefix/usr/bin/orca" --speech-system silent_factory "$@"

@@ -1,0 +1,1 @@
+First complete 253/136/19 review is retained. The freeze tool then changed to query exact compiler helpers instead of guessing their version directory; complete proof is repeated against the final source. Historical source paths in the first report identify that earlier review and are not current packet authority.

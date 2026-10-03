@@ -1,0 +1,34 @@
+{
+  "nativeLaunch": false,
+  "sourceSHA256": {
+    "readonly_archive.py": "57702ce603875a652a1368be9c3b39f1298d4c131ad0bdc5c4989bc009bca7bd",
+    "readonly_ipc.py": "89abb25c478fedc9e83e5400475a6239cb94b5c429e50882682694a5f9accb0f",
+    "native_runtime.py": "dd62f690d527fcbbe9719ed0250dcc9011561f7f3c1320f386464afadd907b8c",
+    "service_runtime.py": "f8c34476e065e6312412df6778fcbdc6c5042c7a942c45810ba75742c93a8b0a"
+  },
+  "actualNewLeaseNonce": true,
+  "fullOldDatasetUnchanged": true,
+  "firstPointer": {
+    "kind": "predecessor",
+    "name": "predecessor-33647d6a9da89b789c8fe99b8899d261c266c7e392f1fdc9a1f2df6a11195873-1-3daa5ea88e4e372b755ff05eb0f3484233fb6a9606c18469651127d027f0faab.json",
+    "sha256": "f45e830d90d0cb2f927ddaba32f6adc54485ab23190266b5e7db4fda39250962",
+    "identity": [
+      57,
+      1109661,
+      33152,
+      1000,
+      1000,
+      1,
+      2150
+    ],
+    "issuerSHA256": "33647d6a9da89b789c8fe99b8899d261c266c7e392f1fdc9a1f2df6a11195873",
+    "epoch": 1
+  },
+  "secondSealRefused": {
+    "type": "FileExistsError",
+    "errno": 17,
+    "filename": "predecessor-33647d6a9da89b789c8fe99b8899d261c266c7e392f1fdc9a1f2df6a11195873-1-3daa5ea88e4e372b755ff05eb0f3484233fb6a9606c18469651127d027f0faab.json"
+  },
+  "sourceUnchanged": true,
+  "counterexampleConfirmed": true
+}

@@ -1,0 +1,125 @@
+{
+  "result": "no counterexample",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-fdf6c3cd9d4c48a18dedd963b40ab2f9.scope",
+    "coreLimit": 1
+  },
+  "collector": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7",
+  "sourceSHA256": "35f4e144c9ea720e638e0dd3d5310dff140d80dd52ed902f90bf6e9a71b41ef5",
+  "cases": [
+    {
+      "symbol": "batch.stage",
+      "exactExpectedFunction": true,
+      "expectedOwnerID": 137576812788912,
+      "actualOwnerID": 137576812439632,
+      "accepted": false,
+      "error": {
+        "type": "ValueError",
+        "message": "actual linked actor refused; raw evidence retained"
+      },
+      "raw": {
+        "phase": "actor-linked",
+        "actor": 1,
+        "errors": [
+          {
+            "type": "ValueError",
+            "message": "actual actor/runtime links differ"
+          }
+        ],
+        "callbacks": {},
+        "relations": {
+          "desktop": true,
+          "transport": true,
+          "controller": true,
+          "controllerDesktop": true,
+          "controllerTransport": true,
+          "eventOwner": true,
+          "eventFunction": true,
+          "ownedCommands": true,
+          "readonly": true,
+          "productionCommands": true,
+          "baseClass": true,
+          "failureBinding": true,
+          "failureClosure": true,
+          "batchClass": true,
+          "batchCommands": true,
+          "batchRoot": true,
+          "batchPreview": true,
+          "batchActor": true,
+          "finisherFunction": true,
+          "finisherOwner": true,
+          "batchCallback.stage": false,
+          "batchCallback.finish": true,
+          "batchCallback.discard": true,
+          "batchCallback.require_releasable": true,
+          "batchCallback.require_disposable": true
+        },
+        "usable": false,
+        "batch": {
+          "instanceID": 137576812788912,
+          "commandsID": 137576812788240,
+          "root": "/tmp/readonly-cpu-e3vjogin/service/actors/actor-1-cpu",
+          "preview": "/tmp/readonly-cpu-e3vjogin/hypr-window-previews"
+        }
+      }
+    },
+    {
+      "symbol": "desktop.finish_capture_previews",
+      "exactExpectedFunction": true,
+      "expectedOwnerID": 137576812436432,
+      "actualOwnerID": 137576812443792,
+      "accepted": false,
+      "error": {
+        "type": "ValueError",
+        "message": "actual linked actor refused; raw evidence retained"
+      },
+      "raw": {
+        "phase": "actor-linked",
+        "actor": 1,
+        "errors": [
+          {
+            "type": "ValueError",
+            "message": "actual actor/runtime links differ"
+          }
+        ],
+        "callbacks": {},
+        "relations": {
+          "desktop": true,
+          "transport": true,
+          "controller": true,
+          "controllerDesktop": true,
+          "controllerTransport": true,
+          "eventOwner": true,
+          "eventFunction": true,
+          "ownedCommands": true,
+          "readonly": true,
+          "productionCommands": true,
+          "baseClass": true,
+          "failureBinding": true,
+          "failureClosure": true,
+          "batchClass": true,
+          "batchCommands": true,
+          "batchRoot": true,
+          "batchPreview": true,
+          "batchActor": true,
+          "finisherFunction": true,
+          "finisherOwner": false,
+          "batchCallback.stage": true,
+          "batchCallback.finish": true,
+          "batchCallback.discard": true,
+          "batchCallback.require_releasable": true,
+          "batchCallback.require_disposable": true
+        },
+        "usable": false,
+        "batch": {
+          "instanceID": 137576812443472,
+          "commandsID": 137576812443152,
+          "root": "/tmp/readonly-cpu-kknp506c/service/actors/actor-1-cpu",
+          "preview": "/tmp/readonly-cpu-kknp506c/hypr-window-previews"
+        }
+      }
+    }
+  ],
+  "nativeLaunch": false,
+  "candidateEdited": false
+}

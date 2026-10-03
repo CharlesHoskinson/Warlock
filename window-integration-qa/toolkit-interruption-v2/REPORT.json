@@ -1,0 +1,26 @@
+{
+  "scope": "Offline pre-group-suppression revision, retained for review; no native acceptance",
+  "nativeExecuted": false,
+  "mainChanged": false,
+  "sourceTests": 14,
+  "exactFunctionMockCases": 14,
+  "unchangedCPP": {
+    "coordinates": 72,
+    "cache": 38,
+    "mixedProtocol": 17
+  },
+  "formal": {
+    "named": 15,
+    "samples": 2000,
+    "steps": 100,
+    "seed": "20260930"
+  },
+  "binarySHA256": "1b1c431985648ff25e98ea3cdb3ec955c90403ce36ba9d9c3e80deb62aadfb40",
+  "openRequiredFixes": [
+    "nonrelease dragEnd decoration/group drop suppression",
+    "nonrelease core focus override suppression",
+    "actual four-variant held-input regression",
+    "motion source-capture API integration",
+    "grouped actual cancellation fixture"
+  ]
+}

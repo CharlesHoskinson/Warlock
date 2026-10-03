@@ -1,0 +1,23 @@
+{
+  "result": "attributed",
+  "logLine": 909,
+  "message": "ERR ]: Couldn't write to socket. Error: Broken pipe",
+  "precedingLine": "DEBUG ]: Hyprctl: new connection from pid 295885",
+  "peerPID": 295885,
+  "runnerIdentityEvidence": "run_private_raster.py109 generates first fixture pid=os.getpid(); presented primary abc1 records295885",
+  "emitSource": "HyprCtl.cpp2192 successWrite; hyprCtlFDTick EOF empty request reply at2286/2307; getReply empty result returns unknown request at2124",
+  "probeSource": "private-weston-host-v2/weston_host.py76-79 connect then close; PrivateHyprSession.__enter__203 uses same function for .socket.sock",
+  "conclusion": "Exact recorded line is Hyprctl IPC response EPIPE to runner-owned readiness probe, not AQ parent Wayland display transport emission. Original false transport gate remains unchanged.",
+  "limits": [
+    "No strace/socket FD recording was captured during the retained attempt. Attribution combines peer PID log, runner identity, exact source message, and probe call order.",
+    "Other Broken pipe messages must not be accepted generically.",
+    "Primary actual presentation passed; scaled raster remained failed. This attribution does not make broad raster PASS."
+  ],
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v3/attempt-private-1/private-session/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790860721_1562635606/hyprland.log": "038caf73a2e660f031a03d3e907adb08d80fc9e28a759fa71be5fab65194f132",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/weston_host.py": "0bb343488eb4c04ef53af2550f01a35cc737888bfec797208431f799a28c5d27",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v3/run_private_raster.py": "3df1edb4450854e6c07dff0c9c50563ea1ee185d21695b9832aaab213ea0a000",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v3/attempt-private-1/presented-0-WAYLAND-1.json": "aa040a1e3e9e8eb94d95fa89fc7076895db702ffbe12fb1a894f168877715a12",
+    "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v8c/primary/HyprCtl.cpp": "798b7c6c4c1684557842463d46ac99c96629be4179e0e461dca77670247b91fa"
+  }
+}

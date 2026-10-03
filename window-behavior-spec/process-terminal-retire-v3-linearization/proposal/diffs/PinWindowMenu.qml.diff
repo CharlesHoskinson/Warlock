@@ -1,0 +1,135 @@
+--- /home/hoskinson/window-behavior-spec/pin-lifetime-v3/frontend/widget_v66/PinWindowMenu.qml
++++ /home/hoskinson/window-behavior-spec/process-terminal-retire-v2-conservation/proposal/desired/PinWindowMenu.qml
+@@ -2,6 +2,7 @@
+ import Quickshell
+ import Quickshell.Io
+ import Quickshell.Wayland
++import WindowObjectLifetimeV1 1.0 as NativeLifetime
+ import qs.Commons
+ import "PinMenu.js" as Policy
+ 
+@@ -16,6 +17,10 @@
+     property string status: "closed"
+     property bool keyboardMode: false
+     property var lastReceipt: null
++    property real captureLease: 0
++    property real actionLease: 0
++    property bool capturePublished: false
++    property bool actionPublished: false
+     property real captureNonce: 0
+     property var captureTarget: null
+     property bool captureExitSeen: false
+@@ -39,33 +44,93 @@
+                 visible:toggleButton.visible,enabled:toggleMouse.enabled,label:"Toggle pin"}:null};
+     }
+     function sync() { menuOpen=menuState.open;status=menuState.status; }
+-    function close() { Policy.dismiss(menuState);keyboardMode=false;sync(); }
++    function close() {
++        if(captureLease>0) NativeLifetime.Lifetime.cancelProcess(captureProcess,Quickshell);
++        if(actionLease>0) NativeLifetime.Lifetime.cancelProcess(actionProcess,Quickshell);
++        Policy.dismiss(menuState);keyboardMode=false;sync();
++    }
++    function retirePrevious(process,out,err,lease) {
++        if(lease===0) return true;
++        var result=NativeLifetime.Lifetime.retireProcess(root,toggleButton,pinPopup,process,out,err,lease,Quickshell);
++        return result && !result.error && result.schema==="qml-pin-process-lifecycle-v1" &&
++            result.lease===lease && result.terminalRetired===true && result.normalLifecycle===true &&
++            result.current===false && result.kernelBound===false && result.complete===false;
++    }
++    function armActual(process,out,err,role,originalJSON) {
++        var result=NativeLifetime.Lifetime.armProcess(root,toggleButton,pinPopup,process,out,err,role,originalJSON,Quickshell);
++        if(!result || result.error || result.schema!=="qml-pin-process-lifecycle-v1" || result.armed!==true ||
++            !Number.isSafeInteger(result.lease) || result.lease<=0) throw Error("Actual native Process arm refused");
++        return result.lease;
++    }
++    function actualState(process,lease) {
++        var state=NativeLifetime.Lifetime.processState(process,Quickshell);
++        if(!state || state.error || state.schema!=="qml-pin-process-lifecycle-v1" || state.lease!==lease)
++            return {error:"Actual selected Process state refused"};
++        return state;
++    }
++    Connections {
++        target:NativeLifetime.Lifetime
++        function onProcessLifecycleChanged(process,lease) {
++            // This signal contains no proof; stale leases are inert before query.
++            if(process===captureProcess && lease===root.captureLease) root.captureFinished();
++            else if(process===actionProcess && lease===root.actionLease) root.actionFinished();
++        }
++    }
+     function openWindow(w) {
+         // Busy capture is refused locally. Its eventual old reply cannot enable
+         // the new generation; no automatic queued query or action is inserted.
+         try {
+             Policy.open(menuState,w);keyboardMode=true;sync();
+             if(captureProcess.running || actionProcess.running) { menuState.status="capture-refused";sync();return; }
+-            captureNonce=menuState.nonce;captureTarget=menuState.target;
++            if(!retirePrevious(captureProcess,captureOut,captureErr,captureLease)) { menuState.status="capture-refused";sync();return; }
++            captureLease=0;captureNonce=menuState.nonce;captureTarget=menuState.target;capturePublished=false;
+             captureExitSeen=false;captureOutDone=false;captureErrDone=false;captureCode=-1;
+-            captureProcess.command=[homeDir+"/.local/bin/hypr-pin-capture","capture",JSON.stringify(captureTarget)];captureProcess.running=true;
++            var originalJSON=JSON.stringify(captureTarget);
++            captureProcess.command=[homeDir+"/.local/bin/hypr-pin-capture","capture",originalJSON];
++            captureLease=armActual(captureProcess,captureOut,captureErr,"capture",originalJSON);
++            captureProcess.running=true;
+         } catch(e) { close(); }
+     }
+     function captureFinished() {
+-        if(!captureExitSeen || !captureOutDone || !captureErrDone) return;
+-        var receipt=null;try { receipt=JSON.parse(captureOut.text); } catch(e) {}
+-        Policy.captured(menuState,captureNonce,captureTarget,captureCode,receipt);sync();
++        if(capturePublished || captureLease<=0) return;
++        var registered=actualState(captureProcess,captureLease);
++        if(registered.error || registered.fault===true) {
++            capturePublished=true;Policy.captured(menuState,captureNonce,captureTarget,-1,null);sync();return;
++        }
++        if(!captureExitSeen || !captureOutDone || !captureErrDone || registered.normalLifecycle!==true) return;
++        if(registered.stdoutEOF!==true || registered.stderrEOF!==true || registered.workerJoined!==true ||
++            registered.kernelGone!==true || registered.receiptVerified!==true || registered.exitCode!==captureCode ||
++            registered.stdout!==captureOut.text || registered.stderr!==captureErr.text) return;
++        var receipt=null;try { receipt=JSON.parse(registered.stdout); } catch(e) {}
++        capturePublished=true;
++        Policy.captured(menuState,captureNonce,captureTarget,registered.complete===true?captureCode:-1,receipt);sync();
+     }
+     function toggle() {
+         if(actionProcess.running) return;
+-        invocation=Policy.invoke(menuState);if(!invocation) return;sync();
+-        actionExitSeen=false;actionOutDone=false;actionErrDone=false;actionCode=-1;
+-        actionProcess.command=[homeDir+"/.local/bin/hypr-pin-toggle","toggle",JSON.stringify(invocation.token)];actionProcess.running=true;
++        try {
++            if(!retirePrevious(actionProcess,actionOut,actionErr,actionLease)) return;
++            actionLease=0;
++            invocation=Policy.invoke(menuState);if(!invocation) return;sync();
++            actionPublished=false;actionExitSeen=false;actionOutDone=false;actionErrDone=false;actionCode=-1;
++            var originalJSON=JSON.stringify(invocation.token);
++            actionProcess.command=[homeDir+"/.local/bin/hypr-pin-toggle","toggle",originalJSON];
++            actionLease=armActual(actionProcess,actionOut,actionErr,"toggle",originalJSON);
++            actionProcess.running=true;
++        } catch(e) { lastReceipt=null;Policy.completed(menuState,invocation,-1,null);sync();operationFinished(false); }
+     }
+     function actionFinished() {
+-        if(!actionExitSeen || !actionOutDone || !actionErrDone) return;
+-        var receipt=null;try { receipt=JSON.parse(actionOut.text || actionErr.text); } catch(e) {}
+-        lastReceipt=receipt;var complete=Policy.completed(menuState,invocation,actionCode,receipt);sync();operationFinished(complete);
++        if(actionPublished || actionLease<=0) return;
++        var registered=actualState(actionProcess,actionLease);
++        if(registered.error || registered.fault===true) {
++            actionPublished=true;lastReceipt=null;Policy.completed(menuState,invocation,-1,null);sync();operationFinished(false);return;
++        }
++        if(!actionExitSeen || !actionOutDone || !actionErrDone || registered.normalLifecycle!==true) return;
++        if(registered.stdoutEOF!==true || registered.stderrEOF!==true || registered.workerJoined!==true ||
++            registered.kernelGone!==true || registered.receiptVerified!==true || registered.exitCode!==actionCode ||
++            registered.stdout!==actionOut.text || registered.stderr!==actionErr.text) return;
++        var receipt=null;try { receipt=JSON.parse(registered.stdout || registered.stderr); } catch(e) {}
++        actionPublished=true;lastReceipt=receipt;
++        var complete=Policy.completed(menuState,invocation,registered.complete===true?actionCode:-1,receipt);sync();operationFinished(complete);
+     }
+     Process {
+         id: captureProcess
+@@ -80,6 +145,7 @@
+         onExited:function(code){root.actionCode=code;root.actionExitSeen=true;root.actionFinished();}
+     }
+     TaskbarPopup {
++        id:pinPopup
+         anchorItem:root.anchorItem;bar:root.bar;owner:root
+         WlrLayershell.namespace:"hoskinson-pin-window-menu"
+         open:root.menuOpen;keyboardMode:root.keyboardMode;reducedMotion:root.reducedMotion

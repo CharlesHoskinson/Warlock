@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-10-02T02:55:23.457610+00:00",
+  "result": "pass",
+  "scope": "Independent actual wheel, allocation, lifetime and original two preview case replay; whole campaign remains failed",
+  "cases": [
+    {
+      "case": "move-minimize-preview",
+      "journalSHA256": "876eecbdf563c808eed6af223d3951035c8f5af7d39237157c4fa4390e9c79b7",
+      "records": 61,
+      "realWheelReceipts": 6,
+      "actualScroll": [
+        40,
+        80,
+        120,
+        160,
+        200,
+        206
+      ],
+      "sameSourcePopupLifetime": true,
+      "wholeCardActuallyVisible": true,
+      "originalNativeCursorOwnerPredicate": true,
+      "point": [
+        170.0,
+        431.5
+      ],
+      "originalCaseGates": 12,
+      "originalCasePassed": true
+    },
+    {
+      "case": "resize-minimize-preview",
+      "journalSHA256": "782f322d1e4021535a0df2278b41b4d63e55ff4c17eddd1db3283cc23d60a4c0",
+      "records": 61,
+      "realWheelReceipts": 6,
+      "actualScroll": [
+        40,
+        80,
+        120,
+        160,
+        200,
+        206
+      ],
+      "sameSourcePopupLifetime": true,
+      "wholeCardActuallyVisible": true,
+      "originalNativeCursorOwnerPredicate": true,
+      "point": [
+        170.0,
+        431.5
+      ],
+      "originalCaseGates": 11,
+      "originalCasePassed": true
+    }
+  ],
+  "whole52Accepted": false,
+  "helperFailureUnchanged": true,
+  "nativeLaunch": false,
+  "mainChanges": false
+}

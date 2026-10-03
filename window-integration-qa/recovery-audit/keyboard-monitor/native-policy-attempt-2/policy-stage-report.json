@@ -1,0 +1,36 @@
+{
+  "status": "corrected startup-deny/enforcement-toggle fixture frozen offline; native attempt1 failure retained",
+  "files": {
+    "native_probe_policy.py": "c45625d1ac4e64bf805c83162365a3ef4d1c4f68ac8773672885e1efe84128ff",
+    "native-fixture/policy_cases.py": "49235cebf92cfd72d4be2982cb28f2cd99b37079d27a48c608391ea33634484c",
+    "native-fixture/policy_client.py": "8627cff1cbed866113a75b309bce2a2bcc7f892878001b8cbff0faf35c923d22",
+    "native-fixture/native-input.c": "6f7c96842d2230a7100e2cdb79d49a42e54196c1f2bc5d1f623b737ed99e9791",
+    "native-fixture/native-input": "0da1f97985ff94579b7a52a9a344d0f72ce801147fc61ab9cf1a9e84145d4e48",
+    "POLICY_REVIEW.md": "1e789c52697dd919a7cc931fb1d3abcbf4b77e48e17f39683b38c8e07abe9b99",
+    "PRODUCTION_PLAN.md": "1058d8fc6e0166c3ec2055410a30b0306e49829c28a8fe29fd2f6692838a4ccf",
+    "native/plugin-v5.cpp": "9694faa8c8185ed146bdef91e3aca148756b59bcbe7e0f767041e5031e0f850c",
+    "native/libkeyboard-monitor-private-v5.so": "4341227f55586f247502cadd5b591762e73a24972ff31389e12089c5ad99454b",
+    "host_event_observer.py": "b2f8a0289ab57bd6ae956d18a91c358602736b2830ec2bccb2ae988181b44ac1",
+    "CONTRACT.md": "6a6e86c5437dc5917e3fcf99a62b7ce6f0436abc132439ecab4cbe9d16bd85b3"
+  },
+  "verification": {
+    "cCompile": "cc -std=gnu11 -O2 -Wall -Wextra -Werror -Wno-misleading-indentation + wayland-client/xkbcommon PASS",
+    "pythonCompile": true,
+    "publicSignaturePacking": true,
+    "actualUSAndDvorakHardwareLookup": true,
+    "rejectMainRuntimeExit20": true
+  },
+  "nativeExecution": false,
+  "mainPluginLoad": false,
+  "mainConfigChanges": false,
+  "GUIOwner": "root",
+  "contract": "POLICY_REVIEW.md",
+  "permissionSemantics": {
+    "startupPluginEnforced": true,
+    "staticStartupDeny": "hl-virtual-keyboard-native-input",
+    "policyPhaseEnforced": false,
+    "revoke": "enforcement=true plus exact hl.device refresh",
+    "restore": "enforcement=false plus exact hl.device refresh",
+    "required": "silent captured repeat/release + no denied fresh Foot bytes"
+  }
+}

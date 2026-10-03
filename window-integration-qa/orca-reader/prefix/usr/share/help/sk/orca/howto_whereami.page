@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_whereami" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#reviewing"/>
+    <link type="next" xref="howto_flat_review"/>
+    <title type="sort">1. Kde som</title>
+    <desc>Zisťovanie vašej polohy</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Kde som</title>
+  <p>Okrem vyhradených príkazov na čítanie titulkového a stavového riadku poskytuje Orca dva kontextovo citlivé príkazy Kde som: Základné Kde som a Podrobné Kde som. Základné Kde som je implementované pre všetky objekty. Podrobné Kde som je implementované len pre tie objekty, pre ktoré existuje značné množstvo informácií, ktoré možno budete chcieť vedieť, ale pravdepodobne nie vždy.</p>
+  <p>Najlepší spôsob, ako sa zoznámiť s tým, čo Kde som zobrazí, je vyskúšať <link xref="commands_where_am_i">príkazy Kde som</link>. Aby sme vám však lepšie priblížili kontextovo citlivú povahu funkcie Kde som v <app>Orca</app>, zvážte nasledujúce:</p>
+  <p>Pre väčšinu widgetov vám bude aspoň oznámený popis a/alebo názov, typ alebo rola widgetu a mnemonický a/alebo akceleračný kláves, ak existujú. Okrem toho:</p>
+  <list>
+    <item>
+      <p>Ak je widget textový a vykonáte základné Kde som, budete informovaní o aktuálnom riadku, ak nie je vybraný žiadny text. Ak je však text vybraný, základné Kde som vám oznámi, aký text je vybraný. Podrobné Kde som v rámci textu bude obsahovať aj atribúty textu.</p>
+    </item>
+    <item>
+      <p>Ak je možné widget začiarknuť, ako je to v prípade začiarkavacích polí a prepínacích tlačidiel, bude zahrnutý aj stav začiarknutia.</p>
+    </item>
+    <item>
+      <p>Ak je widget zoznamom alebo objektom podobným zoznamu, ako je rozbaľovací zoznam, skupina prepínacích tlačidiel alebo zoznam kariet stránky, bude zahrnutá pozícia aktuálnej položky.</p>
+    </item>
+    <item>
+      <p>Ak je widget hierarchický, napríklad strom, a nachádzate sa na rozbaľovacom uzle, budete informovaní, či je tento uzol rozbalený alebo nie. A ak je rozbalený, budete tiež informovaní o tom, koľko obsahuje potomkov. Okrem toho bude poskytnutá aj úroveň zanořenia.</p>
+    </item>
+    <item>
+      <p>Ak je widget ukazovateľom priebehu alebo posuvníkom, bude vám oznámená aktuálna percentuálna hodnota.</p>
+    </item>
+    <item>
+      <p>Ak je widget ikonou v skupine ikon, základné Kde som bude obsahovať objekt, v ktorom sa nachádzate, položku, na ktorej ste, a počet vybraných položiek. V podrobnom Kde som vám bude tiež oznámené, ktoré položky sú vybrané.</p>
+    </item>
+    <item>
+      <p>Ak sa nachádzate na odkaze, bude zahrnutý typ odkazu (rovnaká stránka, iná stránka, FTP odkaz atď.).</p>
+    </item>
+    <item>
+      <p>Ak sa nachádzate v bunke tabuľky, budú zahrnuté súradnice tejto bunky a záhlavia buniek.</p>
+    </item>
+    <item>
+      <p>Ak sa nachádzate v kontrole pravopisu aplikácie, kde <app>Orca</app> poskytuje rozšírenú podporu, základné Kde som zopakuje chybu s rešpektovaním vašich <link xref="preferences_spellcheck">nastavení kontroly pravopisu</link>. Podrobné Kde som spôsobí, že <app>Orca</app> zobrazí úplné podrobnosti o chybe.</p>
+    </item>
+  </list>
+  <p>A tak ďalej. Cieľom funkcie Kde som v <app>Orca</app> je opäť poskytnúť vám podrobnosti, ktoré vás s najväčšou pravdepodobnosťou zaujímajú o objekte, v ktorom sa aktuálne nachádzate. Ak si chcete Kde som vyskúšať, pozrite si zoznam <link xref="commands_where_am_i">príkazov Kde som</link>.</p>
+</page>

@@ -1,0 +1,515 @@
+#!/usr/bin/env python3
+"""Root-only exact production recovery fault collector; no launch on import.
+
+Original38 baseline runs in a separate owned host first. Fault cleanup/service
+SIGKILL never counts as normal fixture acceptance. V17 reviewed freeze required.
+"""
+import argparse,copy,json,os,re,signal,subprocess,sys,time,traceback
+from pathlib import Path
+from contextlib import ExitStack
+import private_shell,helper_setup,capture_evidence
+from recovery_evidence import validate_baseline,runtime_peer_witness
+from native_integration import B,QA,QT,SERVICE,PRODUCER,CORE,PLUGIN,EXPECTED_PLUGIN_SHA256,module,sha,save,verify,require_qa_scope
+
+def main():
+    parser = argparse.ArgumentParser(); parser.add_argument('--attempt',type=Path,required=True)
+    parser.add_argument('--baseline',type=Path,required=True);parser.add_argument('--case',choices=['compatible','closed-peer'],required=True)
+    args = parser.parse_args()
+    if not args.attempt:
+        parser.error('explicit fresh --attempt required')
+    require_qa_scope(); verify()
+    if SERVICE.name!='service-family-preparation-v23':raise ValueError('Reviewed corrected terminal candidate pairing required before native faults')
+    baseline=json.loads(args.baseline.read_text())
+    if args.baseline.resolve().parent.parent!=B or not args.baseline.parent.name.startswith('attempt-'):raise ValueError('Owned original baseline attempt required')
+    validate_baseline(baseline,sha(B/'frozen-inputs.json'))
+    from module_binding import validate_evidence
+    binding=validate_evidence(json.loads((args.baseline.parent/'service-evidence.json').read_text()))
+    if baseline.get('actualServiceBinding')!=binding:raise ValueError('Same frozen packet actual V23 baseline binding required')
+    main_env = dict(os.environ); os.umask(0o077)
+    output = args.attempt.resolve()
+    if output.parent != B or not output.name.startswith('attempt-'):
+        raise ValueError('Owned fresh attempt required')
+    output.mkdir(mode=0o700)
+    sys.path.insert(0, str(QT))
+    qt = module('_family_qt_observer', QT / 'run_native.py')
+    host_api = module('_family_private_host', QA / 'private-weston-aq-bootstrap-host-v5/weston_host.py')
+    report = {'result': 'pending', 'checks': [], 'mainGUIWrites': False,
+              'mainRestorationWrites': False, 'fullContractAccepted': False,
+              'physicalCadenceAccepted': False, 'rasterAccepted': False,
+              'fullWindowsParityAccepted': False, 'sourceManifestSHA256': sha(B / 'frozen-inputs.json'),'case':args.case,'baselineReport':str(args.baseline),'baselineSHA256':sha(args.baseline)}
+    before = host = session = None
+    shell = fixture = daemon = None; cleanup = {}; epoch = 0
+    helper_config=None
+    snapshot = output / 'main-before.json'
+    process_records = []; logs = []
+
+    def check(name, value, **details):
+        report['checks'].append({'name': name, 'passed': bool(value), **details})
+        if not value:
+            raise AssertionError(name)
+
+    def wait(fn, name, seconds=12):
+        end = time.monotonic() + seconds; error = None
+        while time.monotonic() < end:
+            try:
+                value = fn()
+                if value:
+                    return value
+            except (subprocess.SubprocessError, OSError, ValueError) as problem:
+                error = repr(problem)
+            time.sleep(.06)
+        raise RuntimeError(name + ': ' + str(error))
+
+    def launch(label, command, env, register=None):
+        session.guard()
+        log = (output / (label + '.log')).open('w'); logs.append(log)
+        read_fd=write_fd=None
+        try:
+            actual_command=command
+            if register is not None:
+                read_fd,write_fd=os.pipe2(os.O_CLOEXEC)
+                actual_command=['/usr/bin/python3',str(B/'exec_gate.py'),str(read_fd),'--',*command]
+            process = subprocess.Popen(actual_command, env=env, stdout=log, stderr=log,
+                                       start_new_session=True,pass_fds=() if read_fd is None else (read_fd,))
+            record = host_api.original.process(process.pid)
+            record['role'] = label; process_records.append(record)
+            if register is not None:
+                os.close(read_fd);read_fd=None
+                register(helper_setup.observer.process(process.pid))
+                session.guard()
+                os.write(write_fd,b'1')
+            return process
+        except BaseException:
+            if write_fd is not None:os.close(write_fd);write_fd=None
+            if 'process' in locals():process.wait(timeout=5)
+            raise
+        finally:
+            if read_fd is not None:os.close(read_fd)
+            if write_fd is not None:os.close(write_fd)
+
+    def ipc(*words):
+        session.guard()
+        return subprocess.check_output([str(B / 'payload/omarchy/bin/omarchy-shell'),
+                                        *words], env=env, text=True, timeout=3).strip()
+
+    def own(name):
+        rows = [w for w in session.data('clients')
+                if fixture and w['pid'] == fixture.pid and w['title'] == 'Qt WindowModal QA ' + name]
+        if not rows:
+            return None
+        if len(rows) != 1:
+            raise ValueError('Ambiguous public Qt fixture identity')
+        return rows[0]
+
+    def command(name):
+        nonlocal epoch
+        epoch += 1; pending = output / 'qt/command.new'
+        pending.write_text(json.dumps({'epoch': epoch, 'command': name}))
+        pending.replace(output / 'qt/command.json')
+        if name == 'quit':
+            fixture.wait(timeout=8)
+            events = [json.loads(x) for x in (output / 'qt/events.jsonl').read_text().splitlines()]
+            if fixture.returncode != 0 or not any(e.get('command') == name and e.get('epoch') == epoch for e in events):
+                raise ValueError('Normal Qt quit with exact acknowledgement required')
+        else:
+            wait(lambda: json.loads((output / 'qt/state.json').read_text()).get('commandEpoch') == epoch,
+                 'Actual Qt command ' + name)
+
+    def arrange(name, x, y, width, height):
+        window = wait(lambda: own(name), 'Actual mapped Qt ' + name)
+        address = json.dumps('address:' + window['address'])
+        if not window['floating']:
+            session.ctl('dispatch', 'hl.dsp.window.float({action="set",window=' + address + '})')
+        session.ctl('dispatch', f'hl.dsp.window.resize({{x={width},y={height},window={address}}})')
+        session.ctl('dispatch', f'hl.dsp.window.move({{x={x},y={y},window={address}}})')
+        wait(lambda: own(name)['at'] == [x, y] and own(name)['size'] == [width, height],
+             'Stable private geometry ' + name)
+
+    def service_request(operation, name):
+        window = own(name)
+        request = {'command': 'request', 'operation': operation,
+                   'address': window['address'], 'stableId': str(window['stableId']),
+                   'pid': window['pid']}
+        code = 'import json,sys;from native_runtime import request_runtime;from service_runtime import JournalStore;a=request_runtime(sys.argv[1],sys.argv[2],json.load(sys.stdin));print(json.dumps({"answer":a,"journal":JournalStore(sys.argv[1],sys.argv[2]).read()}))'
+        result = subprocess.run(['/usr/bin/python3', '-c', code, str(service_root),
+                                 env['HYPRLAND_INSTANCE_SIGNATURE']],
+                                input=json.dumps(request), text=True, env=env,
+                                cwd=str(SERVICE), capture_output=True, timeout=5, check=True)
+        observed = json.loads(result.stdout)
+        answer = observed['answer']; journal = observed['journal']
+        check('Durable accepted ' + operation + ' receipt precedes native completion',
+              answer.get('ok') and answer.get('accepted') and not answer.get('completed')
+              and journal['serial'] >= answer['receipt'], answer=answer,
+              journalSnapshot=journal['snapshot'], request=request)
+        report.setdefault('requests', []).append({'request': request, 'answer': answer,
+                                                  'journalAfterACK': journal})
+        return answer
+
+    def visual_quiescent():
+        body=json.loads((service_root/'journal.json').read_text())['body']
+        return not body['scenes'] and not body['pending']
+
+    def service_request_live(operation):
+        # Exact unchanged V12 client protocol, avoiding a Python startup delay
+        # between an observed interior presentation and the next intent.
+        sys.path.insert(0,str(SERVICE))
+        from native_runtime import request_runtime
+        from service_runtime import JournalStore
+        window=own('owner')
+        request={'command':'request','operation':operation,'address':window['address'],
+                 'stableId':str(window['stableId']),'pid':window['pid']}
+        session.guard();before_ns=time.monotonic_ns()
+        answer=request_runtime(str(service_root),env['HYPRLAND_INSTANCE_SIGNATURE'],request)
+        after_ns=time.monotonic_ns()
+        journal=JournalStore(str(service_root),env['HYPRLAND_INSTANCE_SIGNATURE']).read()
+        check('Continuous episode durable accepted '+operation+' receipt',
+              answer.get('ok') and answer.get('accepted') and not answer.get('completed')
+              and journal['serial']>=answer['receipt'],answer=answer,request=request)
+        report.setdefault('continuousRequests',[]).append({'request':request,'answer':answer,
+            'beforeNs':before_ns,'afterNs':after_ns,'journalAfterACK':journal})
+        return answer
+
+    def actual_interior(answer, previous_token=None):
+        deadline=time.monotonic()+8
+        while time.monotonic()<deadline:
+            session.guard()
+            path=output/'initial/actual-live-events.json'
+            if path.exists():
+                body=json.loads(path.read_text())
+                actors=[a for a in body['actors'] if a['actor']==answer['actor']]
+                if len(actors)==1:
+                    events=actors[0]['events']
+                    intents=[e for e in events if e.get('event') in ('seeded','retargetAccepted')]
+                    if intents:
+                        token=intents[-1]['token']
+                        presented=[e for e in events if e.get('event')=='presented' and e.get('accepted') is True and e.get('token')==token]
+                        if token!=previous_token and presented and 0<presented[-1]['progress']<1:
+                            frame=presented[-1]
+                            report.setdefault('continuousInteriorObservations',[]).append(
+                                {'answer':answer,'actor':actors[0]['actor'],'rendererPID':actors[0]['pid'],
+                                 'actualPresentation':frame,'observedNs':body['observedNs']})
+                            return frame
+            time.sleep(.005)
+        raise RuntimeError('Required actual interior presentation missing; no simulated reversal accepted')
+
+    def actors_retired():
+        body = json.loads((service_root / 'journal.json').read_text())['body']
+        if (not body['scenes'] and not body['pending'] and not body['liveActors']
+                and not body['retiringActors']):
+            return body
+        return None
+
+    def retirement_packet(body):
+        path=output/'initial'/('service-retirement-'+str(body['actorSerial'])+'.json')
+        return wait(lambda: json.loads(path.read_text()) if path.exists() else None,
+                    'Actual capture and renderer retirement evidence')
+
+    try:
+        before = qt.observer('capture', output / 'before-main', main_env, snapshot)
+        host = host_api.PrivateHyprSession(output / 'host', main_env, 1600, 1000,
+                                          (QT / 'nested-qt.lua').read_bytes(),
+                                          dri_prime='pci-0000_00_02_0', mesa_vendor=True)
+        with host as session, helper_setup.retain_before_runtime_delete(
+                lambda:helper_config,output/'terminal-helpers',report), ExitStack() as native_retirement:
+            loaded = False
+            def retire_private_module():
+                # Failed acceptance gates cannot bypass clients-first retirement.
+                if not loaded or report.get('normalNativeUnload') is True:
+                    return
+                session.guard()
+                clients=session.data('clients')
+                report['clientsBeforeDeferredUnload']=clients
+                if clients:
+                    raise RuntimeError('Owned clients remain; deferred native unload refused')
+                session.ctl('plugin','unload',str(PLUGIN))
+                report['normalNativeUnload']=session.data('plugin','list')==[]
+                if not report['normalNativeUnload']:
+                    raise RuntimeError('Owned native module failed deferred normal unload')
+            native_retirement.callback(retire_private_module)
+            try:
+                check('Private actual output and disabled Xwayland',
+                      len(session.data('monitors')) == 1 and
+                      json.loads(session.ctl('getoption', 'xwayland:enabled', '-j'))['bool'] is False)
+                check('Exact candidate module selected before private load',
+                      sha(PLUGIN) == EXPECTED_PLUGIN_SHA256)
+                if session.ctl('plugin', 'load', str(PLUGIN)).strip() != 'ok':
+                    raise RuntimeError('Native candidate load failed')
+                loaded = True
+                session.ctl('repl', qt.repl_script((QT / 'private-plugin.lua').read_text()))
+                env = private_shell.prepare_home(session.env, session.evidence['compositorPID'],
+                                                  session.evidence['compositorStart'])
+                helper_config=helper_setup.prepare(env,session)
+                qs_command=['/usr/bin/qs','-p',str(B/'payload/omarchy/shell')]
+                def register_queries(identity):
+                    helper_setup.register_query_roots(env,helper_config,identity,qs_command,
+                        helper_setup.observer.process(os.getpid()),helper_setup.observer.cmdline(os.getpid()),harness_source=B/'native_faults.py')
+                shell = launch('taskbar-shell',qs_command,env,register=register_queries)
+                report['queryRootRegistration']=helper_config['queryRoots']
+                wait(lambda: ipc('shell', 'ping') == 'ok', 'Actual private production shell IPC before full Snap load')
+                report['pairedLuaLoad']=helper_setup.install_lua(env,helper_config,session,qt.repl_script)
+                hydration=helper_setup.wait_and_archive(helper_config,output/'hydrate-helper.json')
+                check('Actual full paired Snap Lua hydrate and inactive relay complete with exact ancestry and no surviving process',
+                      hydration['allNormal'] and hydration['allExactProcessesGone'] and set(hydration['operations'])=={'hydrate','inactive-fileDrag'})
+                plugins = wait(lambda: json.loads(ipc('shell', 'listPlugins')), 'Actual shell registry')
+                check('Only production bar and window widget enabled',
+                      {p['id'] for p in plugins if p['enabled']} == {'omarchy.bar', 'hoskinson.windows'},
+                      plugins=plugins)
+                accessibility = str(private_shell.ACCESSIBILITY / 'libwindowaccessibility.so')
+                maps = wait(lambda: (r if (r := host_api.original.mapped_files(shell.pid))['files'].get(accessibility) == sha(accessibility) else None),
+                            'Actual accessibility module mapped after asynchronous widget load')
+                check('Actual unmodified absolute accessibility module mapped exactly',
+                      maps['files'].get(accessibility) == sha(accessibility),
+                      expectedSHA256=sha(accessibility), mappedSHA256=maps['files'].get(accessibility))
+                (output / 'qt').mkdir(mode=0o700)
+                fixture = launch('qt-fixture', [str(QT / 'build-v7/qt-window-modal-fixture'),
+                                                str(output / 'qt')], env)
+                arrange('owner', 100, 250, 460, 300); arrange('peer', 1000, 300, 460, 300)
+                command('open'); arrange('child', 260, 310, 320, 180)
+                command('nested'); arrange('nested', 330, 350, 240, 140)
+                names = ('owner', 'child', 'nested')
+                original = {name: own(name) for name in (*names, 'peer')}
+                report['originalWindows'] = original
+                helper_setup.allow_closes(env,helper_config,list(original.values()))
+                identity = original['owner']
+                probe = ('local ok,retired=hl.plugin.hyprbars.retire_gesture_current('
+                         + json.dumps(identity['address']) + ',' + json.dumps(str(identity['stableId']))
+                         + '); print(string.format(\'{"ok":%s,"retired":%s}\',tostring(ok),tostring(retired)))')
+                observed = json.loads(session.ctl('repl', probe))
+                check('Actual paired gesture retirement API accepts exact idle identity without pretending release',
+                      observed == {'ok': True, 'retired': False}, actualReply=observed)
+                native = json.loads(session.ctl('repl', 'print(hl.plugin.hyprbars.window_families())'))
+                native_rows = {r['address']: r for r in native}
+                child = native_rows.get(original['child']['address'], {})
+                nested = native_rows.get(original['nested']['address'], {})
+                check('Actual Qt family metadata includes exactly owned hierarchy',
+                      all(any(r['address'] == original[n]['address'] and r['stableId'] == original[n]['stableId'] and r['pid'] == fixture.pid for r in native) for n in names)
+                      and child.get('modal') and nested.get('modal')
+                      and child.get('parent') == original['owner']['address']
+                      and str(child.get('parentStableId')) == str(original['owner']['stableId'])
+                      and nested.get('parent') == original['child']['address']
+                      and str(nested.get('parentStableId')) == str(original['child']['stableId']), native=native)
+                targets = {}
+                for name in names:
+                    window = own(name)
+                    captured = {k: window[k] for k in ('address', 'stableId', 'pid')}
+                    captured['stableId'] = str(captured['stableId'])
+                    targets[name] = wait(lambda: json.loads(ipc('hoskinson.windows', 'motionTarget', json.dumps(captured))),
+                                         'Rendered production icon for ' + name)
+                    target = targets[name]
+                    check('Actual visible taskbar icon endpoint ' + name,
+                          target['visible'] and target['screenName'] == 'WAYLAND-1'
+                          and target['rect']['width'] > 0 and target['rect']['height'] > 0,
+                          identity=captured, target=target)
+                report['actualTaskbarTargets'] = targets
+                report['actualTaskbarState'] = json.loads(ipc('hoskinson.windows', 'state'))
+                subprocess.run(['/usr/bin/grim', '-o', 'WAYLAND-1', str(output / 'actual-taskbar.png')],
+                               env=env, timeout=5, check=True)
+                (output/'initial').mkdir(mode=0o700)
+                runtime = Path(env['XDG_RUNTIME_DIR'])
+                (runtime / 'hypr-window-motion').mkdir(mode=0o700, exist_ok=True)
+                service_root = runtime / 'hypr-window-motion/qa-family-service'
+                service_command=['/usr/bin/python3', str(B / 'service_recovery_observer.py'),
+                    '--root', str(service_root), '--session', env['HYPRLAND_INSTANCE_SIGNATURE'],
+                    '--pid', str(session.evidence['compositorPID']), '--start', session.evidence['compositorStart'],
+                    '--display', env['WAYLAND_DISPLAY'], '--producer', str(PRODUCER),
+                    '--producer-sha256', sha(PRODUCER), '--core', str(CORE), '--core-sha256', sha(CORE),
+                    '--evidence', str(output / 'initial/service-evidence.json'), '--collector-sha256',sha(B/'frozen-inputs.json')]
+                def register_service(identity):
+                    helper_setup.register_service_root(env,helper_config,identity,service_command,
+                        [original[name] for name in names],SERVICE)
+                    helper_config['queryRoots']['service']['sources'].update({str(B/name):sha(B/name) for name in ('service_observer.py','recovery_observer.py','service_recovery_observer.py')})
+                    helper_config['serviceTargetLimitPerMember']=2
+                    helper_config['serviceRefreshLimit']=9
+                    helper_setup.write_json(Path(env['WINDOW_QA_HELPER_CONFIG']),helper_config)
+                daemon = launch('family-service',service_command,env,register=register_service)
+                report['serviceQueryRootRegistration']=helper_config['queryRoots']['service']
+                wait(lambda: (service_root / 'api.sock').exists() and daemon.poll() is None,
+                     'Exact staged service ready')
+                service_request('minimize', 'owner')
+                wait(lambda: all(own(n)['workspace']['name'] == 'special:win-minimized' for n in names),
+                     'Actual complete native family minimize')
+                wait(visual_quiescent,
+                     'Baseline minimize actual visual cleanup completes before restore')
+                minimized_retirement = wait(actors_retired, 'Normal minimized idle actor retirement')
+                minimized_packet=retirement_packet(minimized_retirement)
+                minimized_captures=capture_evidence.captured_and_seeded(minimized_packet,'minimize',[original[n] for n in names])
+                check('Durable minimized journal records no live retiring or quarantined actor',
+                      minimized_retirement['actorSerial'] >= 1
+                      and not minimized_retirement['resourceErrors']
+                      and not minimized_retirement['housekeepingErrors'], journal=minimized_retirement,
+                      actualCapturesAndSeed=minimized_captures)
+                fields = ('address', 'stableId', 'pid', 'at', 'size', 'workspace', 'pinned')
+                check('Independent same-process peer unchanged by family minimize',
+                      all(own('peer')[k] == original['peer'][k] for k in fields))
+                ipc('hoskinson.windows', 'motionRefresh', '{}')
+                snapshot_data = json.loads(subprocess.check_output([str(Path(env['HOME']) / '.local/bin/hypr-taskbar'), 'snapshot'],
+                                                                   env=env, text=True, timeout=5))
+                minimized = [w for g in snapshot_data['groups'] for w in g['windows'] if w['address'] in {original[n]['address'] for n in names}]
+                check('Minimized family retains taskbar presence and real previews',
+                      len(minimized) == 3 and all(w['previewReady'] for w in minimized), windows=minimized)
+                cached = [p for p in (service_root / 'snapshot-cache').iterdir() if p.is_file()]
+                minimized_pairs=capture_evidence.unchanged_pairs(minimized_packet,[original[n] for n in names])
+                check('Actor retirement preserves exact minimized persistent source cache',
+                      len([p for p in cached if p.suffix == '.png']) == 3
+                      and len([p for p in cached if p.suffix == '.json']) == 3,
+                      retainedFiles=[{'path': str(p), 'sha256': sha(p)} for p in cached],
+                      actualCaptureTimePairs=minimized_packet['cachePairsAtCapture'],unchangedPairs=minimized_pairs)
+                second=service_request_live('restore');frame=actual_interior(second)
+                sys.path.insert(0,str(SERVICE))
+                from service_runtime import JournalStore,process_start
+                from recovery_resources import dispose_directory,renderer_terminal_state
+                from recovery_observer import retain_regular
+                before_root=service_root.lstat();before_lock=(service_root/'runtime.lock').lstat()
+                service_identity=helper_config['queryRoots']['service']['identity']
+                # The exact direct Popen child remains unreaped until the kill
+                # and wait. pidfd plus one start check cannot signal a replacement.
+                pidfd=os.pidfd_open(daemon.pid)
+                try:
+                    if process_start(daemon.pid)!=int(service_identity['start']):raise RuntimeError('Selected service lifetime changed before fault')
+                    signaled_ns=time.monotonic_ns()
+                    if not (0<frame['progress']<.5 and 0<=signaled_ns-int(frame['timestampNs'])<50000000):raise RuntimeError('Fresh early actual interior required before service fault')
+                    signal.pidfd_send_signal(pidfd,signal.SIGKILL)
+                finally:os.close(pidfd)
+                daemon.wait(timeout=5)
+                check('Only exact accepted interior service lifetime receives expected fault',daemon.returncode==-signal.SIGKILL and not Path('/proc/'+str(daemon.pid)).exists(),identity=service_identity,actualFrame=frame,signalNs=signaled_ns)
+                report['expectedServiceFault']={'pid':daemon.pid,'start':service_identity['start'],'exitCode':daemon.returncode,'normalClosure':False,'actualInterior':frame}
+                old_store=JournalStore(service_root,env['HYPRLAND_INSTANCE_SIGNATURE']);old=old_store.read()
+                old_scenes=[r for r in old['scenes'] if r['actor']==second['actor'] and r['profile']['managerReceipt']==second['receipt']]
+                check('Fault retains exact latest unresolved original restore intent',old['serial']==second['receipt'] and len(old_scenes)==1 and old_scenes[0]['direction']['anchor']=='restore' and not old_scenes[0]['direction']['inverted'] and len(old_scenes[0]['members'])==3,journal=old)
+                old_description={'captured':old_scenes[0]['requested'],'scope':old_scenes[0]['members']}
+                fault_folder=output/'before-restart';fault_folder.mkdir(mode=0o700)
+                report['oldRawJournal']=retain_regular(service_root/'journal.json',fault_folder/'journal.json',limit=8388608)
+                report['oldOwner']=retain_regular(service_root/'owner.json',fault_folder/'owner.json',limit=1048576)
+                report['oldLock']=retain_regular(service_root/'runtime.lock',fault_folder/'runtime.lock',limit=1048576)
+                owner=json.loads((fault_folder/'owner.json').read_text())
+                from module_binding import archive_fault_binding
+                from types import SimpleNamespace
+                old_guard=SimpleNamespace(session=env['HYPRLAND_INSTANCE_SIGNATURE'],pid=session.evidence['compositorPID'],start=int(session.evidence['compositorStart']),env=env,sockets=[Path(env['XDG_RUNTIME_DIR'])/'hypr'/env['HYPRLAND_INSTANCE_SIGNATURE']/'.socket.sock'])
+                report['oldActualServiceBinding']=archive_fault_binding(output/'initial',old,owner,old_guard,fault_folder/'actual-old-binding.json')
+                check('Old owner and live root lock bind the exact stopped service',owner['pid']==daemon.pid and owner['start']==int(service_identity['start']) and owner['session']==env['HYPRLAND_INSTANCE_SIGNATURE'],owner=owner,rootIdentity=[before_root.st_dev,before_root.st_ino],lockIdentity=[before_lock.st_dev,before_lock.st_ino])
+                from helper_supervisor import checked_keeper,await_terminal
+                keeper=old['helperOwnership']['keeper'];checked_keeper(keeper,root=service_root,environment={k:env[k] for k in ('XDG_RUNTIME_DIR','HYPRLAND_INSTANCE_SIGNATURE','WAYLAND_DISPLAY')});terminal_path=service_root/('keeper-'+keeper['nonce']+'.json')
+                terminal=wait(lambda:json.loads(terminal_path.read_text()) if terminal_path.exists() else None,'Actual old keeper terminal',seconds=15)
+                report['oldKeeperRawTerminal']=retain_regular(terminal_path,fault_folder/'keeper-terminal.json',limit=1048576)
+                validated_terminal,terminal_jobs=await_terminal(keeper,timeout=15)
+                check('Old exact keeper physically exits with complete authenticated retained group terminal',validated_terminal==terminal and terminal['keeperPID']==keeper['pid'] and terminal['keeperStart']==keeper['start'] and terminal['nonce']==keeper['nonce'] and terminal['allGroupsEmpty'] is True,terminal=terminal,jobs=terminal_jobs)
+                retained=[]
+                for resource in old['actorResources']:
+                    if resource['phase']=='closed':continue
+                    lifetime=renderer_terminal_state(resource['renderer']) if resource['renderer'] is not None else {'oldLifetimeGone':True,'kind':'never-launched'}
+                    if lifetime['oldLifetimeGone'] is not True:raise RuntimeError('Old exact renderer still executes')
+                    inspected=dispose_directory(resource['directory'],renderer_gone=True,inspection_only=True)
+                    path=Path(resource['directory']['path']);files=[]
+                    fd=os.open(path,os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC)
+                    try:
+                        info=os.fstat(fd)
+                        if [info.st_dev,info.st_ino]!=resource['directory']['identity']:raise RuntimeError('Retained actor identity changed')
+                        names_before=sorted(os.listdir(fd))
+                        for name in names_before:files.append(retain_regular(path/name,fault_folder/'actors'/str(resource['actor'])/name,dir_fd=fd))
+                        if sorted(os.listdir(fd))!=names_before:raise RuntimeError('Retained capture namespace changed')
+                    finally:os.close(fd)
+                    retained.append({'resource':resource,'terminal':lifetime,'inspection':inspected,'files':files})
+                check('Old actual renderer terminal precedes retained complete capture archive',bool(retained) and all(r['files'] for r in retained),resources=retained)
+                if args.case=='closed-peer':
+                    command('closeNested');wait(lambda:own('nested') is None,'Actual nested peer closed')
+                survivors={n:own(n) for n in (*names,'peer') if own(n) is not None};current_focus=session.data('activewindow')
+                report['beforeRecoverySurvivors']=survivors;report['beforeRecoveryFocus']=current_focus
+                current=service_root.lstat();lock=(service_root/'runtime.lock').lstat()
+                check('Restart retains exact anchored old runtime root and lock', (current.st_dev,current.st_ino)==(before_root.st_dev,before_root.st_ino) and (lock.st_dev,lock.st_ino)==(before_lock.st_dev,before_lock.st_ino))
+                (output/'restart').mkdir(mode=0o700);restart_command=list(service_command);restart_command[restart_command.index('--evidence')+1]=str(output/'restart/service-evidence.json')
+                def register_restart(identity):
+                    helper_setup.register_service_restart(env,helper_config,identity,restart_command,[original[n] for n in names])
+                daemon=launch('recovered-service',restart_command,env,register=register_restart)
+                report['restartQueryRootRegistration']=helper_config['queryRoots']['service']
+                def recovered_ready():
+                    if daemon.poll() is not None:raise RuntimeError('Recovery service exited before API confirmation')
+                    body=old_store.read()
+                    owner_ready=json.loads((service_root/'owner.json').read_text())
+                    return body if (service_root/'api.sock').exists() and isinstance(owner_ready.get('socket'),list) and len(owner_ready['socket'])==2 and body.get('recoveryHistory') and body['recoveryHistory'][-1].get('state')=='completed' and not body['pending'] and not body['scenes'] and not body['liveActors'] and not body['retiringActors'] else None
+                recovered=wait(recovered_ready,'Real guarded recovery completes before API',seconds=20)
+                new_owner=json.loads((service_root/'owner.json').read_text())
+                lease_peer=runtime_peer_witness(service_root,env['HYPRLAND_INSTANCE_SIGNATURE'],helper_config['queryRoots']['service']['identity'],owner,[before_root.st_dev,before_root.st_ino],[before_lock.st_dev,before_lock.st_ino],output/'restart/lease-api-peer.json')
+                check('New exact live service lease owner and actual API peer are fresh after durable recovery',lease_peer.get('confirmed') is True and lease_peer['ownerAfter']==new_owner,oldOwner=owner,newOwner=new_owner,journal=recovered,actualLeasePeer=lease_peer)
+                plans=[p for p in recovered['recoveryHistory'][-1]['plans'] if p['receipt']==second['receipt']]
+                check('Recovery preserves original exact receipt captured scope',len(plans)==1 and plans[0]['captured']==old_description['captured'] and plans[0]['scope']==old_description['scope'],plans=plans)
+                observations=[json.loads(p.read_text()) for p in sorted((output/'restart/durable-recovery').glob('*/observation.json'))]
+                report['durableRecoveryObservations']=observations
+                completed=[r['body'] for r in observations if r['phase']=='persisted' and r['body'].get('recovery',{}).get('state')=='completed']
+                check('API startup history equals exact durable completed recovery snapshot',len(completed)==1 and completed[0]['recovery']==recovered['recoveryHistory'][-1])
+                resource_completion=completed[0]
+                if args.case=='closed-peer':
+                    plan=plans[0];ack=[r for r in observations if any(p.get('cancellation',{}).get('acknowledged') for p in r['body'].get('recovery',{}).get('plans',[])) and any(x.get('exists') and x['files'] for x in r['resources'])]
+                    check('Closed peer produces durable explicit cancellation while original captures remain',plan['operation']=='cancel' and plan['cancellation']['outcome']=='non-settlement' and plan['cancellation']['acknowledged'] is True and plan['cancellation']['reason']=='member-absent' and bool(ack),acknowledgments=ack)
+                    fields=('address','stableId','pid','at','size','workspace','monitor','pinned')
+                    check('Cancellation leaves every actual survivor geometry workspace pin and focus unchanged',all(all(own(n)[k]==w[k] for k in fields) for n,w in survivors.items()) and session.data('activewindow').get('stableId')==current_focus.get('stableId') and own('nested') is None)
+                    check('Cancellation never records endpoint success or current member writes',not plan['results'] and 'endpointObserved' not in plan and plan['cancellation']['observations'][0]==plan['cancellation']['observations'][1] and len(plan['cancellation']['observations'][0]['members'])==3)
+                else:
+                    check('Compatible restart settles original restore once through exact guards',plans[0]['operation']=='restore' and plans[0]['endpointObserved'] is True and len(plans[0]['results'])==3)
+                    check('Compatible restart restores original whole family geometry pin and deepest focus',all(all(own(n)[k]==original[n][k] for k in ('address','stableId','pid','at','size','workspace','monitor','pinned')) for n in names) and session.data('activewindow')['stableId']==original['nested']['stableId'])
+                check('Independent peer keeps exact original identity geometry workspace output and pin after recovery',all(own('peer')[k]==original['peer'][k] for k in ('address','stableId','pid','at','size','workspace','monitor','pinned')))
+                check('Actual recovery source disposal follows durable journal outcomes',all(r['phase']=='closed' and r['outcome']['oldLifetimeGone'] is True and r['outcome']['directoryGone'] is True for r in resource_completion['actorResources']) and all(not Path(r['directory']['path']).exists() for r in old['actorResources']),observations=observations)
+            finally:
+                for label,process in [('recovered-service',daemon),('qt-fixture',fixture),('taskbar-shell',shell)]:
+                    if process is None:continue
+                    record=next(r for r in process_records if r['pid']==process.pid);row={'pid':process.pid,'start':record['start']}
+                    try:
+                        if label=='recovered-service' and report.get('expectedServiceFault',{}).get('pid')==process.pid:
+                            row.update(expectedFault=True,exitCode=process.poll(),normalClosure=False);cleanup[label]=row;continue
+                        if process.poll() is None:
+                            session.guard()
+                            if not host_api.original.same_process(record):raise RuntimeError('Owned fixture lifetime changed')
+                            if label=='recovered-service':subprocess.run(['/usr/bin/python3',str(SERVICE/'native_runtime.py'),'--root',str(service_root),'--session',env['HYPRLAND_INSTANCE_SIGNATURE'],'--stop'],env=env,timeout=5,check=True,capture_output=True,text=True)
+                            elif label=='qt-fixture':command('quit')
+                            else:
+                                instances=json.loads(subprocess.check_output(['/usr/bin/qs','list','-a','-j'],env=env,text=True,timeout=5));exact=[item for item in instances if item.get('pid')==process.pid and Path(item.get('config_path','')).resolve()==(B/'payload/omarchy/shell/shell.qml').resolve()]
+                                if len(exact)!=1:raise RuntimeError('Exact owned shell PID/config required')
+                                row['selectedInstance']=exact[0];subprocess.run(['/usr/bin/qs','kill','--pid',str(process.pid)],env=env,timeout=5,check=True,capture_output=True,text=True)
+                            process.wait(timeout=8)
+                        row.update(exitCode=process.poll(),gone=not Path('/proc/'+str(process.pid)).exists())
+                        if process.returncode!=0 or not row['gone']:raise RuntimeError('Fixture did not exit normally')
+                    except BaseException as error:
+                        row['error']=repr(error)
+                        if process.poll() is None and host_api.original.same_process(record):
+                            row['forcedTermination']=True;os.killpg(process.pid,signal.SIGTERM)
+                            try:process.wait(timeout=5)
+                            except subprocess.TimeoutExpired:
+                                if host_api.original.same_process(record):row['forcedKill']=True;os.killpg(process.pid,signal.SIGKILL);process.wait(timeout=3)
+                    cleanup[label]=row
+                if any(r.get('error') or r.get('forcedTermination') for r in cleanup.values()):raise RuntimeError('Normal fixture closure failed')
+                clients=session.data('clients');report['clientsBeforeUnload']=clients
+                if clients:raise RuntimeError('Clients remain before native unload')
+                helpers=helper_setup.wait_and_archive(helper_config,output/'completed-helpers.json',expect_harness=True,expect_service=False)
+                check('All actual query and fixture close helpers terminate normally',helpers['allNormal'] and helpers['allExactProcessesGone'] and helpers['allQueriesNormal'],helpers=helpers)
+                recovered_evidence=json.loads((output/'restart/service-evidence.json').read_text())
+                check('Restart service normally closes after actual recovery and helper closure',recovered_evidence['serviceClosed'] and not recovered_evidence['failure'] and not recovered_evidence['serviceFailure'],evidence=recovered_evidence)
+                bus_text=Path(session.evidence['privateBus']['log']).read_text();activations=re.findall(r"Activating service name='([^']+)'",bus_text)
+                registered={row['pid'] for _,row in session.host.processes};unexpected=[row for row in session.host.descendants() if row['pid'] not in registered]
+                check('Private fault bus activates no unexpected helper services or descendants',not activations and not unexpected,activations=activations,unexpectedDescendants=unexpected,logSHA256=sha(session.evidence['privateBus']['log']))
+                if loaded:session.ctl('plugin','unload',str(PLUGIN));report['normalNativeUnload']=session.data('plugin','list')==[]
+                host_logs=[Path(session.evidence['hyprland']['log']),output/'host/weston-renderer.log'];transport=qt.transport_log_gate([p.read_text() for p in host_logs])
+                check('Mandatory actual parent transport remains healthy through clients-first teardown',transport['passed'],transport=transport,logHashes={str(p):sha(p) for p in host_logs})
+        report['actualServiceBinding']=validate_evidence(recovered_evidence)
+        from module_binding import validate_recovery_evidence
+        report['actualServiceRecoveryBinding']=validate_recovery_evidence(recovered_evidence)
+        report['result']='pass'
+    except BaseException:
+        report['error']=traceback.format_exc();report['result']='fail'
+    finally:
+        for log in logs:log.close()
+        report['clientCleanup']=cleanup;report['processes']=process_records
+        if host:
+            report['hostEvidence']=host.evidence
+            if host.evidence.get('unexpectedInnerDescendants') or host.evidence.get('remainingDescendants') or host.evidence.get('cleanupErrors') or not host.evidence.get('runtimeGone'):report['result']='fail'
+        if before:
+            try:
+                comparison=qt.observer('compare',output/'after-main',main_env,snapshot,before['snapshotSHA256']);report['mainPreservation']=comparison['checks']
+                if not all(comparison['checks'].values()):report['result']='fail'
+            except BaseException:report['mainObserverError']=traceback.format_exc();report['result']='fail'
+        try:verify();report['allFrozenInputsExact']=True
+        except BaseException:report['allFrozenInputsExact']=False;report['result']='fail'
+        if not report.get('normalNativeUnload') or any(row.get('error') or row.get('forcedTermination') for row in cleanup.values()):report['result']='fail'
+        save(output/'report.json',report)
+    print(json.dumps({'result':report['result'],'case':args.case,'checks':len(report['checks']),'passed':sum(r['passed'] for r in report['checks']),'report':str(output/'report.json')}))
+    return int(report['result']!='pass')
+
+if __name__=='__main__':raise SystemExit(main())

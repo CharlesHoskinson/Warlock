@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-10-02T03:25:04.582025+00:00",
+  "result": "rejected-before-native",
+  "sourceReadySHA256": "2c40e04b5073b8b0f4933aa59467930763d0c6c421a016363916a232485003c7",
+  "manifestSHA256": "5b47484c89fd7183f7ea9c4586134f932b6a96e82845aa6e1fc1941c9ed6f286",
+  "frozenInputs": 13150,
+  "frozenModes": 13150,
+  "frozenLinks": 158,
+  "localHandoffInputs": 366,
+  "missingLocalHandoffRecords": [
+    "/home/hoskinson/window-integration-qa/family-recovery-cancel-v1/retained-baseline-v3/frozen-inputs.json"
+  ],
+  "reason": "Freezer skips nested retained manifest by basename; handed-off complete closure is not represented",
+  "rootFocusedTests": 15,
+  "rootTestsPassed": true,
+  "originalBaselineCheckASTExact": true,
+  "allV17AndV3AncestralBytesModesLinksExact": true,
+  "nativeAuthorized": false,
+  "nativeLaunch": false,
+  "frozenV1RetainedUnchanged": true,
+  "requiredFix": "Fresh V2 freezer excludes only its own root descriptor and includes retained nested manifest with original byte/mode proof"
+}

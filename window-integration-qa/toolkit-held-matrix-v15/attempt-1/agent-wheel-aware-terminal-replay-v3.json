@@ -1,0 +1,58 @@
+{
+  "result": "fail",
+  "checks": {
+    "terminalReportRetainsActualFailure": true,
+    "completeFrozenBytesModesLinks": true,
+    "exactSourceManifest": true,
+    "all18MainPreservation": true,
+    "mainWritesAbsent": true,
+    "allFourExactVariants": false,
+    "qt-wayland:all13ExactCases": false,
+    "qt-wayland:move-escape:nativeReplay": true,
+    "qt-wayland:move-escape:normalPublicQuit": true,
+    "qt-wayland:move-reload:nativeReplay": true,
+    "qt-wayland:move-reload:normalPublicQuit": true,
+    "qt-wayland:move-unload-reload:nativeReplay": true,
+    "qt-wayland:move-unload-reload:normalPublicQuit": true,
+    "qt-wayland:move-minimize-preview:nativeReplay": false,
+    "qt-wayland:move-minimize-preview:normalPublicQuit": true,
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:exactQSReadinessAndExplicitNormalQuit": false,
+    "qt-wayland:normalQSAndService": true,
+    "qt-wayland:nativeUnloadNormalOrdered": false,
+    "qt-wayland:hostRuntimeCleanup": true,
+    "qt-wayland:rawHelpersNormalExact": false,
+    "qt-wayland:allRecordedOriginalIdentitiesGone": true,
+    "qt-wayland:bothGenuineShellPreviewReceipts": false
+  },
+  "errors": {
+    "qt-wayland:nativeUnloadNormalOrdered": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 193, in check\n    try:self.checks[name]=fn() is True\n                          ~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v3/audit.py\", line 213, in <lambda>\n    self.check(prefix+'nativeUnloadNormalOrdered',lambda:variant['normalNativeUnload'] is True and variant['actualNativeUnloadReply'].strip()=='ok' and variant['actualProbeUnloadReply'].strip()=='ok' and all(variant['nativeUnloadOrdering'][key] is True for key in ('genuineInputsReleasedNormally','normalToolkitLifetimesGone','normalShellServiceLifetimesGone','allExactHelperProcessesGone','clientListEmpty')))\n                                                                                                                                                        ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'actualProbeUnloadReply'\n"
+  },
+  "inventory": [
+    {
+      "variant": "qt-wayland",
+      "reachedCases": 4,
+      "retainedResult": "fail",
+      "errors": {
+        "error": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py\", line 115, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/held_controller.py\", line 112, in run\n    else:ack=route.interrupt(end,target,current_geometry)\n             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/held_route.py\", line 174, in interrupt\n    if end=='minimize-preview':return self.frontend.minimize(self,target,current_geometry)\n                                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/frontend_route.py\", line 77, in minimize\n    packet,evidence=self.retired(route,'minimize');self.pairs=evidence['cachePairs']\n                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/frontend_route.py\", line 64, in retired\n    evidence=validate_presentation(value,operation,self.members)\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_presentations.py\", line 20, in validate\n    if len(matches)!=1:raise ValueError('One exact complete family native handover from actual presentation required')\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: One exact complete family native handover from actual presentation required\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py\", line 210, in variant_run\n    probe_ticket=evaluations.arm('probe-unload',['plugin','unload',str(probe)],probe,terminal=True) if evaluations is not None else None\n                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/evaluation_setup.py\", line 116, in arm\n    if any(ordering.get(name) is not True for name in fields) or self.session.data('clients'):\n                                                                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/private-weston-host-v2/weston_host.py\", line 225, in data\n    def data(self,*args):return json.loads(self.ctl('-j',*args))\n                                           ~~~~~~~~^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/private-weston-host-v2/weston_host.py\", line 222, in ctl\n    result=subprocess.run(['/usr/bin/hyprctl','-i',self.evidence['signature'],*map(str,args)],env=self.env,capture_output=True,text=True,timeout=5)\n  File \"/usr/lib/python3.14/subprocess.py\", line 557, in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/subprocess.py\", line 1221, in communicate\n    stdout, stderr = self._communicate(input, endtime, timeout)\n                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/subprocess.py\", line 2154, in _communicate\n    self._check_timeout(endtime, orig_timeout, stdout, stderr)\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/subprocess.py\", line 1268, in _check_timeout\n    raise TimeoutExpired(\n    ...<2 lines>...\n            stderr=b''.join(stderr_seq) if stderr_seq else None)\nsubprocess.TimeoutExpired: Command '['/usr/bin/hyprctl', '-i', 'efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448', '-j', 'clients']' timed out after 5 seconds\n",
+        "helperAcceptanceError": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py\", line 115, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/held_controller.py\", line 112, in run\n    else:ack=route.interrupt(end,target,current_geometry)\n             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/held_route.py\", line 174, in interrupt\n    if end=='minimize-preview':return self.frontend.minimize(self,target,current_geometry)\n                                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/frontend_route.py\", line 77, in minimize\n    packet,evidence=self.retired(route,'minimize');self.pairs=evidence['cachePairs']\n                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/frontend_route.py\", line 64, in retired\n    evidence=validate_presentation(value,operation,self.members)\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_presentations.py\", line 20, in validate\n    if len(matches)!=1:raise ValueError('One exact complete family native handover from actual presentation required')\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: One exact complete family native handover from actual presentation required\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py\", line 181, in variant_run\n    report['completedHelpers']=helper_setup.wait_and_archive(config,output/'completed-helpers.json',expect_harness=expectation['harnessSnapshotAttempted'],expect_service=expectation['serviceRegistered'])\n                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/helper_setup.py\", line 368, in wait_and_archive\n    result = observer.summarize(events, config['allowed'], require_all,expect_harness,expected)\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/helper_observer.py\", line 473, in summarize\n    if actual!=expected_service:raise RuntimeError('Incomplete/extra service helper queries')\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Incomplete/extra service helper queries\n"
+      }
+    }
+  ],
+  "sourceManifestSHA256": "3b46fa64cfcb74d996b93386a8581121b77f840393bc6b918a914126e38c106e",
+  "sourceCount": 26280,
+  "modeCount": 26280,
+  "linkCount": 342,
+  "actualReachedCases": 4,
+  "expectedCases": 52,
+  "producerResult": "fail",
+  "nativeCommands": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false,
+  "fullHeld52ReplayAccepted": false,
+  "replayLimitations": [
+    "Historical geometry/pin and native IPC command timing are accepted only where actual samples are retained; gate booleans alone do not supply missing observations."
+  ],
+  "auditorSourceSHA256": "cc787853b6ec5686b7c5e09e27f397eef906ef6863a49aa6001766daf904e454"
+}

@@ -1,0 +1,42 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_transport.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_transport_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pin_transport_test\n    ok exactOneRequestTest passed 1 test(s)\n    ok noCaptureNoFallbackTest passed 1 test(s)\n    ok staleOwnerRefusedTest passed 1 test(s)\n    ok staleLifetimeRefusedTest passed 1 test(s)\n    ok staleEpochRefusedTest passed 1 test(s)\n    ok stalePluginRefusedTest passed 1 test(s)\n    ok staleCompositorRefusedTest passed 1 test(s)\n    ok guardChangeBeforeSendRefusedTest passed 1 test(s)\n    ok noRetryAfterSendTest passed 1 test(s)\n    ok missingEOFUncertainTest passed 1 test(s)\n    ok malformedResultUncertainTest passed 1 test(s)\n    ok changedAfterUncertainTest passed 1 test(s)\n    ok lifecycleAfterSendUncertainTest passed 1 test(s)\n    ok nativeRefusalExplicitTest passed 1 test(s)\n    ok uncertaintyCannotBeGreenOnLaterReplyTest passed 1 test(s)\n\n  15 passing (1814ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_transport.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (2615ms at 765 traces/second).\nUse --seed=0x13b4241 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "helperNotImplementedYet": true,
+  "nativeExecuted": false
+}

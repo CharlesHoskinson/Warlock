@@ -1,0 +1,774 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      accepted: false,
+      after: false,
+      area: 0,
+      bound: false,
+      capturedEpoch: 0,
+      capturedOwner: 0,
+      capturedSession: 0,
+      capturedSource: 0,
+      confirmed: false,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 1,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: false,
+      nativeReach: false,
+      owner: 1,
+      prepared: false,
+      raw: false,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      accepted: false,
+      after: false,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: false,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 1,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: false,
+      nativeReach: false,
+      owner: 1,
+      prepared: false,
+      raw: false,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      accepted: false,
+      after: false,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: false,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 1,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: false,
+      nativeReach: false,
+      owner: 1,
+      prepared: false,
+      raw: false,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      accepted: false,
+      after: false,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: false,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 1,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: false,
+      nativeReach: true,
+      owner: 1,
+      prepared: true,
+      raw: false,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      accepted: false,
+      after: false,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: false,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 1,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: true,
+      nativeReach: true,
+      owner: 1,
+      prepared: true,
+      raw: false,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      accepted: false,
+      after: false,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: false,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 1,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: true,
+      nativeReach: true,
+      owner: 1,
+      prepared: true,
+      raw: false,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      accepted: false,
+      after: true,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: false,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 0,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: true,
+      nativeReach: true,
+      owner: 1,
+      prepared: true,
+      raw: true,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      accepted: false,
+      after: true,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: false,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 0,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: false,
+      nativeReach: true,
+      owner: 1,
+      prepared: true,
+      raw: true,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      accepted: false,
+      after: true,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: false,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 0,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: true,
+      nativeReach: true,
+      owner: 1,
+      prepared: true,
+      raw: true,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      accepted: false,
+      after: true,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: false,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: false,
+          scrollSame: true,
+          seat: 1,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: true,
+      nativeReach: true,
+      owner: 1,
+      prepared: true,
+      raw: true,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      accepted: false,
+      after: true,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: false,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 1,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: true,
+      nativeReach: true,
+      owner: 1,
+      prepared: true,
+      raw: true,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      accepted: false,
+      after: true,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: true,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 1,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: true,
+      nativeReach: true,
+      owner: 1,
+      prepared: true,
+      raw: true,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      accepted: false,
+      after: true,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: true,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 1,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: true,
+      nativeReach: true,
+      owner: 1,
+      prepared: true,
+      raw: true,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      accepted: false,
+      after: true,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: true,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 1,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: true,
+      nativeReach: true,
+      owner: 1,
+      prepared: true,
+      raw: true,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      accepted: true,
+      after: true,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: true,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 1,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: true,
+      nativeReach: true,
+      owner: 1,
+      prepared: true,
+      raw: true,
+      session: 1,
+      source: 1
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      accepted: true,
+      after: true,
+      area: 2,
+      bound: true,
+      capturedEpoch: 1,
+      capturedOwner: 1,
+      capturedSession: 1,
+      capturedSource: 1,
+      confirmed: true,
+      epoch: 1,
+      facts:
+        {
+          claimedSuccess: true,
+          core: 1,
+          excluded: 2,
+          hit: 1,
+          independentBits: true,
+          modesSame: true,
+          partial: false,
+          peersSame: true,
+          refused: false,
+          renderObserved: true,
+          replacementWrites: false,
+          returnSame: true,
+          revived: false,
+          scrollObserved: true,
+          scrollSame: true,
+          seat: 1,
+          synthetic: false,
+          transferObserved: true,
+          truthful: true,
+          unpinUsable: true
+        },
+      fault: false,
+      input: false,
+      nativeReach: true,
+      owner: 1,
+      prepared: true,
+      raw: true,
+      session: 1,
+      source: 1
+    }
+}
+
+[violation] Found an issue (699ms at 1564 traces/second).
+Use --verbosity=3 to show executions.
+Use --seed=0x24b0fa --backend=rust to reproduce.
+error: Invariant violated

@@ -1,0 +1,32 @@
+test_absent_capture_refused_on_success (test_pin_report_decoder.TestDecoder.test_absent_capture_refused_on_success) ... ok
+test_all_boolean_aliases (test_pin_report_decoder.TestDecoder.test_all_boolean_aliases) ... ok
+test_changed_native_modes_refused (test_pin_report_decoder.TestDecoder.test_changed_native_modes_refused) ... ok
+test_closed_refused (test_pin_report_decoder.TestDecoder.test_closed_refused) ... ok
+test_duplicate_key (test_pin_report_decoder.TestDecoder.test_duplicate_key) ... ok
+test_extra_fields (test_pin_report_decoder.TestDecoder.test_extra_fields) ... ok
+test_false_complete_refused (test_pin_report_decoder.TestDecoder.test_false_complete_refused) ... ok
+test_full_snapshot_schema (test_pin_report_decoder.TestDecoder.test_full_snapshot_schema) ... ok
+test_generation_bounds (test_pin_report_decoder.TestDecoder.test_generation_bounds) ... ok
+test_geometry_changed_refused (test_pin_report_decoder.TestDecoder.test_geometry_changed_refused) ... ok
+test_integer_bool_float_aliases (test_pin_report_decoder.TestDecoder.test_integer_bool_float_aliases) ... ok
+test_native_current_context_equality (test_pin_report_decoder.TestDecoder.test_native_current_context_equality) ... ok
+test_native_max_unpin_preserves_return (test_pin_report_decoder.TestDecoder.test_native_max_unpin_preserves_return) ... ok
+test_native_missing_restore_refused (test_pin_report_decoder.TestDecoder.test_native_missing_restore_refused) ... ok
+test_nonfinite_or_numeric_geometry (test_pin_report_decoder.TestDecoder.test_nonfinite_or_numeric_geometry) ... ok
+test_ordinary_does_not_fabricate_float (test_pin_report_decoder.TestDecoder.test_ordinary_does_not_fabricate_float) ... ok
+test_ordinary_original_float_pin_projection (test_pin_report_decoder.TestDecoder.test_ordinary_original_float_pin_projection) ... ok
+test_partial_flag_truth (test_pin_report_decoder.TestDecoder.test_partial_flag_truth) ... ok
+test_refusal_keeps_partial_raw_observations (test_pin_report_decoder.TestDecoder.test_refusal_keeps_partial_raw_observations) ... ok
+test_same_intent_refused (test_pin_report_decoder.TestDecoder.test_same_intent_refused) ... ok
+test_schema_alias (test_pin_report_decoder.TestDecoder.test_schema_alias) ... ok
+test_stale_cannot_pin (test_pin_report_decoder.TestDecoder.test_stale_cannot_pin) ... ok
+test_stale_exclusive_owned_unpin_preserves_mode (test_pin_report_decoder.TestDecoder.test_stale_exclusive_owned_unpin_preserves_mode) ... ok
+test_stale_owned_unpin_has_no_return_authority (test_pin_report_decoder.TestDecoder.test_stale_owned_unpin_has_no_return_authority) ... ok
+test_token_lifetime_equality (test_pin_report_decoder.TestDecoder.test_token_lifetime_equality) ... ok
+test_unmapped_scope_refused (test_pin_report_decoder.TestDecoder.test_unmapped_scope_refused) ... ok
+test_wrong_build (test_pin_report_decoder.TestDecoder.test_wrong_build) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.118s
+
+OK

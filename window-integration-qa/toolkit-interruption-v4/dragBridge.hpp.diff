@@ -1,0 +1,8 @@
+--- window-integration-qa/toolkit-interruption-v3/native-candidate/dragBridge.hpp
++++ window-integration-qa/toolkit-interruption-v4/native-candidate/dragBridge.hpp
+@@ -8,4 +8,5 @@
+ int luaDragBridgeAvailable(lua_State* state);
+ int luaFileDragActive(lua_State* state);
+ int luaRetireGestureCurrent(lua_State* state);
++int luaWindowLifetime(lua_State* state);
+ bool startCaptionDrag(const PHLWINDOW& owner, const Vector2D& press);

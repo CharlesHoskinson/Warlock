@@ -1,0 +1,69 @@
+{
+  "result": "pass",
+  "source": "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_process_semantics.cpp",
+  "sourceSHA256": "4c16c632fe5c31cfe92801e6da963977bccd35435719e7b3ea3be2c565918af9",
+  "sourceUnchanged": true,
+  "commands": [
+    {
+      "command": [
+        "/usr/lib/qt6/moc",
+        "-I/usr/include/qt6/QtQml",
+        "-I/usr/include/qt6",
+        "-DQT_QML_LIB",
+        "-I/usr/include/qt6/QtQmlIntegration",
+        "-DQT_QMLINTEGRATION_LIB",
+        "-I/usr/include/qt6/QtNetwork",
+        "-DQT_NETWORK_LIB",
+        "-I/usr/include/qt6/QtCore",
+        "-DQT_CORE_LIB",
+        "-I/usr/lib/qt6/mkspecs/linux-g++",
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_process_semantics.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_process_semantics.moc"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu_process_semantics.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu-process-semantics",
+        "-I/usr/include/qt6/QtQml",
+        "-I/usr/include/qt6",
+        "-DQT_QML_LIB",
+        "-I/usr/include/qt6/QtQmlIntegration",
+        "-DQT_QMLINTEGRATION_LIB",
+        "-I/usr/include/qt6/QtNetwork",
+        "-DQT_NETWORK_LIB",
+        "-I/usr/include/qt6/QtCore",
+        "-DQT_CORE_LIB",
+        "-I/usr/lib/qt6/mkspecs/linux-g++",
+        "-lQt6Qml",
+        "-lQt6Network",
+        "-lQt6Core"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu-process-semantics"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"GUI\":false,\"checks\":9,\"installedQSProcessAccepted\":false,\"result\":\"pass\",\"runtimeRegistryImplemented\":false}\n",
+      "stderr": ""
+    }
+  ],
+  "GUI": false,
+  "registryStillAbsent": true,
+  "installedQSProcessAccepted": false
+}

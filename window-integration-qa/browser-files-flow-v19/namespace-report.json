@@ -1,0 +1,29 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7b0f68ec77294d7dbdbce7c7e92b69c6.scope",
+    "coreLimit": 1
+  },
+  "parentNetNamespace": "net:[4026531833]",
+  "returncode": 0,
+  "stdout": "{\"scope\": {\"cgroup\": \"0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7b0f68ec77294d7dbdbce7c7e92b69c6.scope\", \"coreLimit\": 1}, \"network\": {\"ipv4\": \"\", \"ipv6\": \"00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo\\n00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo\\n\", \"parentNetNamespace\": \"net:[4026531833]\", \"netNamespace\": \"net:[4026533448]\", \"uid\": 1000, \"interfaces\": [\"lo\"]}, \"browserExecuted\": false}\n",
+  "stderr": "",
+  "browserExecuted": false,
+  "child": {
+    "scope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7b0f68ec77294d7dbdbce7c7e92b69c6.scope",
+      "coreLimit": 1
+    },
+    "network": {
+      "ipv4": "",
+      "ipv6": "00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo\n00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo\n",
+      "parentNetNamespace": "net:[4026531833]",
+      "netNamespace": "net:[4026533448]",
+      "uid": 1000,
+      "interfaces": [
+        "lo"
+      ]
+    },
+    "browserExecuted": false
+  }
+}

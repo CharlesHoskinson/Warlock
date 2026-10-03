@@ -1,0 +1,58 @@
+{
+  "scope": "retained actual V4 causal control;108 producer sources immutable",
+  "actualDither": {
+    "before": true,
+    "after": false,
+    "error": 0
+  },
+  "actualPrivateCursorInvisible": true,
+  "cursorErrorsRemoved": 369,
+  "remainingMemberCoordinates": [
+    [
+      48,
+      107
+    ],
+    [
+      65,
+      107
+    ],
+    [
+      65,
+      108
+    ],
+    [
+      23,
+      109
+    ],
+    [
+      23,
+      110
+    ],
+    [
+      23,
+      111
+    ],
+    [
+      23,
+      112
+    ]
+  ],
+  "remainingMaxChannelError": 2,
+  "ditherCausalForRemainingError": false,
+  "primaryOutputExactPixels": 76800,
+  "shaderCausalityUnproved": true,
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v4/attempt-private-1/actual-0-ORACLE-SECOND.png": "899a2d1eec1694275b755b87da5b7e292bb118a71faf0761d9164c87f81f9473",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v4/attempt-private-1/expected-0-ORACLE-SECOND.png": "a45e552c77493374434a67e16f8978bd41b992784717d53077bfa0116fdd0b9f",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v4/attempt-private-1/comparison-0-ORACLE-SECOND.json": "090cded060fe2039ccf02640a995da12e9c033b5f1a7a10652adfefe9cc4ba6d",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v4/attempt-private-1/producer-events.jsonl": "14ea6cd08255e6e15bf1727be896faa280fa592cd4d74eeacad22ed328c02c61",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v4/attempt-private-1/report.json": "57e70a8c424dc0dcaaf4b2a9dc9cf3284e2ca215b5675cf46bc58c7a7163ea63"
+  },
+  "GLSLPrimary": "https://registry.khronos.org/OpenGL/specs/es/2.0/GLSL_ES_Specification_1.00.pdf",
+  "GLSLSections": [
+    "4.5.3 default sampler2D is lowp independently of default float precision",
+    "8 built-in texture-function result precision follows sampler precision"
+  ],
+  "noToleranceChange": true,
+  "noPixelRegionsExcluded": true
+}

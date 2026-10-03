@@ -1,0 +1,51 @@
+{
+  "result": "pass",
+  "counterexampleConfirmed": true,
+  "initial": {
+    "historyCount": 1,
+    "failure": "original scene receipt deadline before seed",
+    "removedCount": 0,
+    "createdCount": 3,
+    "actualPNGStillExists": [
+      true,
+      true,
+      true
+    ],
+    "seeded": false,
+    "observedNs": 179027005134720
+  },
+  "final": {
+    "removedCount": 3,
+    "actualPNGStillExists": [
+      false,
+      false,
+      false
+    ],
+    "observedNs": 179027006532095
+  },
+  "originalDeadlineSeconds": 2,
+  "originalFixtureWaitSeconds": 3,
+  "gateIsExplicitCPUFixture": true,
+  "noProductEdits": true,
+  "nativeAccepted": false,
+  "scope": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-43b4480351b647018c015e8456c08f0b.scope",
+  "sources": {
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/replay.py": {
+      "sha256": "ffffe2e16a9f49bfee67c735b3358da6f74beca4871f1f2ac59b89cff22e1167",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/scene_controller.py": {
+      "sha256": "8e8935b83496aa85a16dd939e9961cee2bfcbcadd8d92bcbc8d335bcd353b11b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/test_preview_admission.py": {
+      "sha256": "8c113199975a207738faf0767e9d8227ed80d7661ea2281272275d2172f082a9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-housekeeping-admission-v26/test_capture_lease.py": {
+      "sha256": "e301c95d2fc7ac21fb91118493b9323f0acddfb89080251f91959ce74ad05607",
+      "mode": 420
+    }
+  },
+  "sourceUnchanged": true
+}

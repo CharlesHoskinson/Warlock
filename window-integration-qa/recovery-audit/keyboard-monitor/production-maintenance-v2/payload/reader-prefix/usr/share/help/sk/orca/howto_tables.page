@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_tables" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <link type="next" xref="howto_forms"/>
+    <title type="sort">4. Tabuľky</title>
+    <desc>Navigácia a nastavenie dynamických záhlaví</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Tabuľky</title>
+  <p><app>Orca</app> poskytuje niekoľko funkcií špeciálne navrhnutých na zlepšenie prístupu k tabuľkám nájdeným na webových stránkach a iných dokumentoch: konfigurovateľné čítanie buniek verzus riadkov, <link xref="howto_structural_navigation">Štrukturálna navigácia</link> a Dynamické záhlavia.</p>
+  <section id="cell_row">
+    <title>Čítanie bunky verzus riadku</title>
+    <p>Zvážte proces skúmania zoznamu správ v priečinku Doručená pošta. Aby Orca oznámila odosielateľa, predmet, dátum a prítomnosť príloh, potrebovali by ste, aby <app>Orca</app> čítala celý riadok. Na druhej strane, pri navigácii medzi riadkami v tabuľkovom procesore nemusíte chcieť počuť celý riadok, ak už len kvôli veľkému počtu buniek v každom riadku. Preto v takom prípade budete chcieť, aby <app>Orca</app> čítala iba bunku s fokusom. Podobné situácie sa vyskytujú aj v tabuľkách dokumentov.</p>
+    <p><app>Orca</app> vám umožňuje prispôsobiť, či sa má čítať iba bunka alebo celý riadok, a to pre tabuľky v grafickom používateľskom rozhraní, tabuľky dokumentov a tabuľkové procesory. Pretože tieto nastavenia sú navzájom nezávislé, nemusíte si vyberať jeden režim čítania tabuliek pre viacero typov tabuliek.</p>
+    <p>Každé z nastavení čítania tabuliek v <app>Orca</app> môžete nastaviť globálne pre celú aplikáciu <app>Orca</app>, ako aj pre jednotlivé aplikácie. Ako to urobiť, je popísané v príručke <link xref="preferences">Dialógové okná predvolieb <app>Orca</app></link>. Nastavenia nájdete na stránke <link xref="preferences_speech"> <gui>Reč</gui></link>.</p>
+    <p>Na záver existuje aj príkaz v <app>Orca</app>, ktorý vám umožňuje priebežne prepínať medzi čítaním bunky a riadku pre aktuálne aktívnu tabuľku: <keyseq><key>Modifikátor Orca</key><key>F11</key></keyseq>.</p>
+  </section>
+  <section id="structural_navigation">
+    <title>Štrukturálna navigácia</title>
+    <p><link xref="commands_structural_navigation#tables">Príkazy štrukturálnej navigácie pre tabuľky</link> v <app>Orca</app> vám umožňujú rýchlo nájsť tabuľky, okamžite skočiť na prvú alebo poslednú bunku tabuľky a presunúť sa na ďalšiu bunku v ľubovoľnom smere.</p>
+    <p>Počas navigácie medzi a vnútri tabuliek pomocou štrukturálnej navigácie <app>Orca</app> oznámi ďalšie podrobnosti, ktoré vám pomôžu pochopiť vašu polohu, napríklad rozmery tabuľky, do ktorej ste práve vstúpili, a skutočnosť, že ste dosiahli okraj tabuľky v smere, ktorým sa pohybujete.</p>
+    <p>Okrem toho <app>Orca</app> poskytuje konfigurovateľné <link xref="preferences_table_navigation">možnosti zobrazenia</link>, ktoré spolupracujú so štrukturálnou navigáciou a umožňujú vám ovládať, či sa budú zobrazovať súradnice buniek, označovať viacnásobné rozsahy buniek a oznamovať záhlavia buniek.</p>
+    <note style="tip">
+      <title>Nezabudnite zapnúť štrukturálnu navigáciu!</title>
+      <p>V závislosti od toho, kde sa nachádzate, môže byť potrebné pred použitím štrukturálnej navigácie ju výslovne zapnúť. Viac informácií nájdete v časti <link xref="howto_structural_navigation#toggling_required"> kedy je potrebné zapnúť štrukturálnu navigáciu.</link></p>
+    </note>
+  </section>
+  <section id="dynamic_headers">
+    <title>Dynamické záhlavia</title>
+    <p>Mnohé z tabuliek, s ktorými sa pri čítaní stretnete, majú bunky, ktoré slúžia ako záhlavie riadku alebo stĺpca. Či tvorca tabuľky tieto bunky správne označil ako záhlavia, je ťažké povedať. V mnohých prípadoch bol text jednoducho formátovaný väčšie a/alebo tučné. A aj keď je tabuľka správne označená, nie je to záruka, že aplikácia alebo nástrojová sada sprístupní tento text ako informáciu o záhlaví asistenčným technológiám. Podpora dynamických záhlaví v <app>Orca</app> umožňuje tieto výzvy prekonať.</p>
+    <steps>
+      <title>Nastavenie záhlaví stĺpcov</title>
+      <item>
+        <p>Presuňte sa na riadok, ktorý obsahuje všetky záhlavia stĺpcov.</p>
+      </item>
+      <item>
+        <p>Stlačte <keyseq><key>Modifikátor Orca</key><key>R</key></keyseq> a tým <app>Orca</app> oznámite, že aktuálny riadok obsahuje záhlavia.</p>
+      </item>
+    </steps>
+    <steps>
+      <title>Nastavenie záhlaví riadkov</title>
+      <item>
+        <p>Presuňte sa na stĺpec, ktorý obsahuje všetky záhlavia riadkov.</p>
+      </item>
+      <item>
+        <p>Stlačte <keyseq><key>Modifikátor Orca</key><key>C</key></keyseq> a tým <app>Orca</app> oznámite, že aktuálny stĺpec obsahuje záhlavia.</p>
+      </item>
+    </steps>
+    <p>Po nastavení buď záhlaví stĺpcov, alebo záhlaví riadkov zistíte, že pri navigácii medzi bunkami <app>Orca</app> zobrazí každé záhlavie, ktoré sa zmenilo. Inak povedané, <app>Orca</app> nebude zobrazovať záhlavie stĺpca znova a znova, keď sa pohybujete hore alebo dole v rámci aktuálneho stĺpca. Rovnako nebude zobrazovať záhlavie riadku znova a znova, keď sa pohybujete doľava alebo doprava v rámci aktuálneho riadku. Ak však zmeníte riadok a existujú záhlavia riadkov, zobrazí sa záhlavie spojené s novým riadkom. A ak zmeníte stĺpec a existujú záhlavia stĺpcov, zobrazí sa záhlavie spojené s novým stĺpcom.</p>
+    <p>Na vymazanie záhlaví jednoducho dvojklikom stlačte príkaz, ktorý ste použili na ich nastavenie. Dvojklik na <keyseq><key>Modifikátor Orca</key><key>R</key></keyseq> teda oznámi <app>Orca</app>, že neexistujú žiadne záhlavia stĺpcov. Dvojklik na <keyseq><key>Modifikátor Orca</key><key>C</key></keyseq> oznámi <app>Orca</app>, že neexistujú žiadne záhlavia riadkov.</p>
+  </section>
+</page>

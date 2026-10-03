@@ -1,0 +1,115 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-470bed95651648db9cf7d50f5498228e.scope",
+    "coreLimit": 1
+  },
+  "records": [
+    {
+      "name": "inherited-streams",
+      "command": [
+        "/usr/bin/python3",
+        "-IS",
+        "-c",
+        "\nimport sys,os,json,hashlib\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1]);import delegate_diagnostics as d\npath=Path(sys.argv[2]);script=sys.argv[3];shebang=len(sys.argv)>4\nentry=path/'actual-backend'\nif shebang:entry.write_text('#!/usr/bin/env python3\\n'+script);entry.chmod(0o700)\ngate,release=os.pipe()\nchild=os.fork()\nif child==0:\n os.close(release)\n if os.read(gate,1)!=b'G':os._exit(125)\n os.close(gate);d.child_bootstrap()\n if shebang:os.execv(str(entry),[str(entry),'list','--json'])\n os.execve('/usr/bin/python3',['/usr/bin/python3','-IS','-c',script],dict(os.environ))\nos.close(gate)\ndef identity(pid):\n fields=Path('/proc',str(pid),'stat').read_text().rsplit(') ',1)[1].split();return dict(pid=pid,start=fields[19])\nparent=identity(os.getppid());delegate=identity(child);journal=d.Journal(path/'trace.jsonl')\nchain=[dict(executable=str(Path('/usr/bin/python3').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/python3').read_bytes()).hexdigest(),argv=['/usr/bin/python3','-IS','-c',script])]\nif shebang:chain=[dict(executable=str(Path('/usr/bin/env').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/env').read_bytes()).hexdigest(),argv=['/usr/bin/env','python3',str(entry),'list','--json']),dict(executable=str(Path('/usr/bin/python3').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/python3').read_bytes()).hexdigest(),argv=['python3',str(entry),'list','--json'])]\ntry:\n observer=d.Observer(journal,delegate,parent,parent,chain,dict(cpuFixture=True,environmentSHA256=hashlib.sha256(Path('/proc/self/environ').read_bytes()).hexdigest()))\n os.write(release,b'G');os.close(release);status,summary=observer.run()\n with (path/'summary.json').open('x') as f:json.dump(dict(status=status,summary=summary,delegate=delegate,parent=parent,originalEnvironmentSHA256=hashlib.sha256(Path('/proc/self/environ').read_bytes()).hexdigest()),f)\nfinally:journal.close()\n",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/observer-kernel-proof/inherited-streams",
+        "import os;os.write(1,b'actual stdout\\x00bytes');os.write(2,b'actual stderr\\n')"
+      ],
+      "wrapperExit": 0,
+      "stdoutHex": "61637475616c207374646f7574006279746573",
+      "stderrHex": "61637475616c207374646572720a",
+      "passed": true,
+      "traceSHA256": "9b9d496af823388fc9fc4861904afa00cbaf4f8c58238ef00bf8a89ec297d509",
+      "summarySHA256": "db14d8c3d6b2fc3b15cde73012f5edf27d508ede6b25ac64554e428d18ab94eb",
+      "originalDelegateExit": 0,
+      "observerComplete": true
+    },
+    {
+      "name": "shebang-chain",
+      "command": [
+        "/usr/bin/python3",
+        "-IS",
+        "-c",
+        "\nimport sys,os,json,hashlib\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1]);import delegate_diagnostics as d\npath=Path(sys.argv[2]);script=sys.argv[3];shebang=len(sys.argv)>4\nentry=path/'actual-backend'\nif shebang:entry.write_text('#!/usr/bin/env python3\\n'+script);entry.chmod(0o700)\ngate,release=os.pipe()\nchild=os.fork()\nif child==0:\n os.close(release)\n if os.read(gate,1)!=b'G':os._exit(125)\n os.close(gate);d.child_bootstrap()\n if shebang:os.execv(str(entry),[str(entry),'list','--json'])\n os.execve('/usr/bin/python3',['/usr/bin/python3','-IS','-c',script],dict(os.environ))\nos.close(gate)\ndef identity(pid):\n fields=Path('/proc',str(pid),'stat').read_text().rsplit(') ',1)[1].split();return dict(pid=pid,start=fields[19])\nparent=identity(os.getppid());delegate=identity(child);journal=d.Journal(path/'trace.jsonl')\nchain=[dict(executable=str(Path('/usr/bin/python3').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/python3').read_bytes()).hexdigest(),argv=['/usr/bin/python3','-IS','-c',script])]\nif shebang:chain=[dict(executable=str(Path('/usr/bin/env').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/env').read_bytes()).hexdigest(),argv=['/usr/bin/env','python3',str(entry),'list','--json']),dict(executable=str(Path('/usr/bin/python3').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/python3').read_bytes()).hexdigest(),argv=['python3',str(entry),'list','--json'])]\ntry:\n observer=d.Observer(journal,delegate,parent,parent,chain,dict(cpuFixture=True,environmentSHA256=hashlib.sha256(Path('/proc/self/environ').read_bytes()).hexdigest()))\n os.write(release,b'G');os.close(release);status,summary=observer.run()\n with (path/'summary.json').open('x') as f:json.dump(dict(status=status,summary=summary,delegate=delegate,parent=parent,originalEnvironmentSHA256=hashlib.sha256(Path('/proc/self/environ').read_bytes()).hexdigest()),f)\nfinally:journal.close()\n",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/observer-kernel-proof/shebang-chain",
+        "import os,sys;assert sys.argv[1:]==['list','--json'];os.write(1,b'actual query\\n')",
+        "shebang"
+      ],
+      "wrapperExit": 0,
+      "stdoutHex": "61637475616c2071756572790a",
+      "stderrHex": "",
+      "passed": true,
+      "traceSHA256": "94db4628586fd36d1e80c6bd1e925089384f023fdcdb0d2bad06c9edf0de0f32",
+      "summarySHA256": "0a70e47dc71496ee516c446f30d27fe41ff82d4ffc6177a7369c1e7cc1bc23d6",
+      "originalDelegateExit": 0,
+      "observerComplete": true
+    },
+    {
+      "name": "actual-epipe",
+      "command": [
+        "/usr/bin/python3",
+        "-IS",
+        "-c",
+        "\nimport sys,os,json,hashlib\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1]);import delegate_diagnostics as d\npath=Path(sys.argv[2]);script=sys.argv[3];shebang=len(sys.argv)>4\nentry=path/'actual-backend'\nif shebang:entry.write_text('#!/usr/bin/env python3\\n'+script);entry.chmod(0o700)\ngate,release=os.pipe()\nchild=os.fork()\nif child==0:\n os.close(release)\n if os.read(gate,1)!=b'G':os._exit(125)\n os.close(gate);d.child_bootstrap()\n if shebang:os.execv(str(entry),[str(entry),'list','--json'])\n os.execve('/usr/bin/python3',['/usr/bin/python3','-IS','-c',script],dict(os.environ))\nos.close(gate)\ndef identity(pid):\n fields=Path('/proc',str(pid),'stat').read_text().rsplit(') ',1)[1].split();return dict(pid=pid,start=fields[19])\nparent=identity(os.getppid());delegate=identity(child);journal=d.Journal(path/'trace.jsonl')\nchain=[dict(executable=str(Path('/usr/bin/python3').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/python3').read_bytes()).hexdigest(),argv=['/usr/bin/python3','-IS','-c',script])]\nif shebang:chain=[dict(executable=str(Path('/usr/bin/env').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/env').read_bytes()).hexdigest(),argv=['/usr/bin/env','python3',str(entry),'list','--json']),dict(executable=str(Path('/usr/bin/python3').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/python3').read_bytes()).hexdigest(),argv=['python3',str(entry),'list','--json'])]\ntry:\n observer=d.Observer(journal,delegate,parent,parent,chain,dict(cpuFixture=True,environmentSHA256=hashlib.sha256(Path('/proc/self/environ').read_bytes()).hexdigest()))\n os.write(release,b'G');os.close(release);status,summary=observer.run()\n with (path/'summary.json').open('x') as f:json.dump(dict(status=status,summary=summary,delegate=delegate,parent=parent,originalEnvironmentSHA256=hashlib.sha256(Path('/proc/self/environ').read_bytes()).hexdigest()),f)\nfinally:journal.close()\n",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/observer-kernel-proof/actual-epipe",
+        "import os;\ntry:os.write(1,b'actual offered JSON\\n')\nexcept OSError as e:os.write(2,('actual errno='+str(e.errno)+'\\n').encode());os._exit(120)"
+      ],
+      "wrapperExit": 0,
+      "stdoutHex": null,
+      "stderrHex": "61637475616c206572726e6f3d33320a",
+      "passed": true,
+      "traceSHA256": "6df4538752fc8273d80b0f6bcb28f83c7f8df0eab7a960f26c13c93cd10aff7e",
+      "summarySHA256": "578b8f49a2525e2a51a41780f35b5a752dd56174d398ccb95c94afd7381b937f",
+      "originalDelegateExit": 120,
+      "observerComplete": true
+    },
+    {
+      "name": "genuine-signal",
+      "command": [
+        "/usr/bin/python3",
+        "-IS",
+        "-c",
+        "\nimport sys,os,json,hashlib\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1]);import delegate_diagnostics as d\npath=Path(sys.argv[2]);script=sys.argv[3];shebang=len(sys.argv)>4\nentry=path/'actual-backend'\nif shebang:entry.write_text('#!/usr/bin/env python3\\n'+script);entry.chmod(0o700)\ngate,release=os.pipe()\nchild=os.fork()\nif child==0:\n os.close(release)\n if os.read(gate,1)!=b'G':os._exit(125)\n os.close(gate);d.child_bootstrap()\n if shebang:os.execv(str(entry),[str(entry),'list','--json'])\n os.execve('/usr/bin/python3',['/usr/bin/python3','-IS','-c',script],dict(os.environ))\nos.close(gate)\ndef identity(pid):\n fields=Path('/proc',str(pid),'stat').read_text().rsplit(') ',1)[1].split();return dict(pid=pid,start=fields[19])\nparent=identity(os.getppid());delegate=identity(child);journal=d.Journal(path/'trace.jsonl')\nchain=[dict(executable=str(Path('/usr/bin/python3').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/python3').read_bytes()).hexdigest(),argv=['/usr/bin/python3','-IS','-c',script])]\nif shebang:chain=[dict(executable=str(Path('/usr/bin/env').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/env').read_bytes()).hexdigest(),argv=['/usr/bin/env','python3',str(entry),'list','--json']),dict(executable=str(Path('/usr/bin/python3').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/python3').read_bytes()).hexdigest(),argv=['python3',str(entry),'list','--json'])]\ntry:\n observer=d.Observer(journal,delegate,parent,parent,chain,dict(cpuFixture=True,environmentSHA256=hashlib.sha256(Path('/proc/self/environ').read_bytes()).hexdigest()))\n os.write(release,b'G');os.close(release);status,summary=observer.run()\n with (path/'summary.json').open('x') as f:json.dump(dict(status=status,summary=summary,delegate=delegate,parent=parent,originalEnvironmentSHA256=hashlib.sha256(Path('/proc/self/environ').read_bytes()).hexdigest()),f)\nfinally:journal.close()\n",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/observer-kernel-proof/genuine-signal",
+        "import os,signal;os.kill(os.getpid(),signal.SIGTERM)"
+      ],
+      "wrapperExit": 0,
+      "stdoutHex": "",
+      "stderrHex": "",
+      "passed": true,
+      "traceSHA256": "f2e48b0e83427e63c6ee2c7291e247cefb780f39670b6bf287e35ac002bf8105",
+      "summarySHA256": "779990d886794e7781c29e1066552c3276a4c3583ab882b7a5279442d340ccc9",
+      "originalDelegateExit": -15,
+      "observerComplete": true
+    },
+    {
+      "name": "unknown-stop-refusal",
+      "command": [
+        "/usr/bin/python3",
+        "-IS",
+        "-c",
+        "\nimport sys,os,json,hashlib\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1]);import delegate_diagnostics as d\npath=Path(sys.argv[2]);script=sys.argv[3];shebang=len(sys.argv)>4\nentry=path/'actual-backend'\nif shebang:entry.write_text('#!/usr/bin/env python3\\n'+script);entry.chmod(0o700)\ngate,release=os.pipe()\nchild=os.fork()\nif child==0:\n os.close(release)\n if os.read(gate,1)!=b'G':os._exit(125)\n os.close(gate);d.child_bootstrap()\n if shebang:os.execv(str(entry),[str(entry),'list','--json'])\n os.execve('/usr/bin/python3',['/usr/bin/python3','-IS','-c',script],dict(os.environ))\nos.close(gate)\ndef identity(pid):\n fields=Path('/proc',str(pid),'stat').read_text().rsplit(') ',1)[1].split();return dict(pid=pid,start=fields[19])\nparent=identity(os.getppid());delegate=identity(child);journal=d.Journal(path/'trace.jsonl')\nchain=[dict(executable=str(Path('/usr/bin/python3').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/python3').read_bytes()).hexdigest(),argv=['/usr/bin/python3','-IS','-c',script])]\nif shebang:chain=[dict(executable=str(Path('/usr/bin/env').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/env').read_bytes()).hexdigest(),argv=['/usr/bin/env','python3',str(entry),'list','--json']),dict(executable=str(Path('/usr/bin/python3').resolve()),executableSHA256=hashlib.sha256(Path('/usr/bin/python3').read_bytes()).hexdigest(),argv=['python3',str(entry),'list','--json'])]\ntry:\n observer=d.Observer(journal,delegate,parent,parent,chain,dict(cpuFixture=True,environmentSHA256=hashlib.sha256(Path('/proc/self/environ').read_bytes()).hexdigest()))\n os.write(release,b'G');os.close(release);status,summary=observer.run()\n with (path/'summary.json').open('x') as f:json.dump(dict(status=status,summary=summary,delegate=delegate,parent=parent,originalEnvironmentSHA256=hashlib.sha256(Path('/proc/self/environ').read_bytes()).hexdigest()),f)\nfinally:journal.close()\n",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/observer-kernel-proof/unknown-stop-refusal",
+        "import os,signal;signal.signal(signal.SIGTRAP,lambda *a:os.write(1,b'original trap handler\\n'));os.kill(os.getpid(),signal.SIGTRAP)"
+      ],
+      "wrapperExit": 0,
+      "stdoutHex": "6f726967696e616c20747261702068616e646c65720a",
+      "stderrHex": "",
+      "passed": true,
+      "traceSHA256": "ca6b8c192bbdc666cfc9f2f5d93af48483fc19256544460ad485fe9a5e834381",
+      "summarySHA256": "2dad16af2fc8346f2ed8ea5254610d585fcdfb6795e6cbc81bc7fcf9b1e9bf22",
+      "originalDelegateExit": 0,
+      "observerComplete": false
+    }
+  ],
+  "noDesktopLaunch": true,
+  "actualKernelEvidence": true,
+  "timingAcceptance": false,
+  "sourceSHA256": "8dd90c0c0af397b7a7d13e2d5d8b25cc5c91a217b5718342f6d925af011d7003",
+  "fixtureSHA256": "7f7cad26a34fa7400dd8bbd5a6e3b094056215e62d198ab052d574d4363b7d03"
+}

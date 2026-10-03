@@ -1,0 +1,16 @@
+
+  nested_selection
+    ok mandatoryWaylandConstructedWithoutDrmTest passed 1 test(s)
+    ok strictInitialDrmRequestsRefusedTest passed 1 test(s)
+    ok lateGpuCannotCreateDrmTest passed 1 test(s)
+    ok failedMandatoryParentCannotUseAuxiliaryTest passed 1 test(s)
+    ok auxiliaryBeforeMandatoryStartRefusedTest passed 1 test(s)
+    ok successfulParentAllowsAuxiliaryTest passed 1 test(s)
+    ok parentLossCannotFallbackToLiveAuxiliaryTest passed 1 test(s)
+    ok lostParentIgnoresLateStartAndGpuTest passed 1 test(s)
+    ok invalidSelectionMakesNoBackendTest passed 1 test(s)
+    ok unsetPreservesDrmStartupTest passed 1 test(s)
+    ok unsetPreservesLateGpuTest passed 1 test(s)
+    ok rejectedParentNotRetargetedByLateSelectionTest passed 1 test(s)
+
+  12 passing (103ms)

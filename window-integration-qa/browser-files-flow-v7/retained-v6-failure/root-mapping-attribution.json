@@ -1,0 +1,245 @@
+{
+  "updatedUTC": "2026-10-01T22:59:39.000424+00:00",
+  "rawEvidenceSHA256": "9eed8e1afe3eee8dce892a31a209351e192bd1261f38c799c0019bdbca79f094",
+  "allRawBytesHashesDecodedExactly": true,
+  "capturedProcesses": [
+    {
+      "identity": {
+        "pid": 1595499,
+        "start": "11784568",
+        "ppid": 1594998,
+        "pgid": 1595499
+      },
+      "rawBytes": 81598,
+      "rawSHA256": "8036eb421d37a3c0d1fd5a1fb954e4588bfe705086b55f45acfa610e1e0d9bcf",
+      "lifetimeBefore": true,
+      "lifetimeAfter": true,
+      "accepted": false,
+      "validationError": {
+        "type": "RuntimeError",
+        "errno": null,
+        "error": "Actual disk mapping absent from frozen closure:/usr/lib/gvfs/libgvfscommon.so"
+      }
+    },
+    {
+      "identity": {
+        "pid": 1595512,
+        "start": "11784590",
+        "ppid": 1595499,
+        "pgid": 1595499
+      },
+      "rawBytes": 41755,
+      "rawSHA256": "2e01b3a9bbf740952234e7418f114b0effb37b8cc88abd5fffc5125c7f7a5897",
+      "lifetimeBefore": true,
+      "lifetimeAfter": true,
+      "accepted": false,
+      "validationError": {
+        "type": "RuntimeError",
+        "errno": null,
+        "error": "Actual disk mapping absent from frozen closure:/usr/lib/locale/C.utf8/LC_CTYPE"
+      }
+    },
+    {
+      "identity": {
+        "pid": 1595513,
+        "start": "11784590",
+        "ppid": 1595499,
+        "pgid": 1595499
+      },
+      "rawBytes": 41706,
+      "rawSHA256": "ad87608a27718f7c22877d86babf4604f860567b4e6d97d69141101d345c6b2e",
+      "lifetimeBefore": true,
+      "lifetimeAfter": true,
+      "accepted": false,
+      "validationError": {
+        "type": "RuntimeError",
+        "errno": null,
+        "error": "Actual disk mapping absent from frozen closure:/usr/lib/locale/C.utf8/LC_CTYPE"
+      }
+    },
+    {
+      "identity": {
+        "pid": 1595515,
+        "start": "11784592",
+        "ppid": 1595513,
+        "pgid": 1595499
+      },
+      "rawBytes": 41706,
+      "rawSHA256": "fb4f64f30757f14121234bd1add8fdfdb37a972133db1e9a4e4ace7e1d0808f3",
+      "lifetimeBefore": true,
+      "lifetimeAfter": true,
+      "accepted": false,
+      "validationError": {
+        "type": "RuntimeError",
+        "errno": null,
+        "error": "Actual disk mapping absent from frozen closure:/usr/lib/locale/C.utf8/LC_CTYPE"
+      }
+    },
+    {
+      "identity": {
+        "pid": 1595545,
+        "start": "11784597",
+        "ppid": 1595499,
+        "pgid": 1595499
+      },
+      "rawBytes": 43293,
+      "rawSHA256": "2656482b405f644aa2bd67845d5aa13d047e887993a3c3b6c09cb49bb5e86a5d",
+      "lifetimeBefore": true,
+      "lifetimeAfter": true,
+      "accepted": false,
+      "validationError": {
+        "type": "RuntimeError",
+        "errno": null,
+        "error": "Actual disk mapping absent from frozen closure:/usr/lib/locale/C.utf8/LC_CTYPE"
+      }
+    },
+    {
+      "identity": {
+        "pid": 1595543,
+        "start": "11784597",
+        "ppid": 1595512,
+        "pgid": 1595499
+      },
+      "rawBytes": 78189,
+      "rawSHA256": "a64235d957a9885f67e00e32eb1ec0bb6c918fdcee147eae05aa68a9c3be7249",
+      "lifetimeBefore": true,
+      "lifetimeAfter": true,
+      "accepted": false,
+      "validationError": {
+        "type": "RuntimeError",
+        "errno": null,
+        "error": "Actual disk mapping absent from frozen closure:/usr/lib/dri/iHD_drv_video.so"
+      }
+    },
+    {
+      "identity": {
+        "pid": 1595603,
+        "start": "11784607",
+        "ppid": 1595515,
+        "pgid": 1595499
+      },
+      "rawBytes": 52983,
+      "rawSHA256": "7fb4fea629aad98a99a39b9b136c0c6e7866ab3f31075b619e38b41bc41f9c50",
+      "lifetimeBefore": true,
+      "lifetimeAfter": true,
+      "accepted": false,
+      "validationError": {
+        "type": "RuntimeError",
+        "errno": null,
+        "error": "Actual disk mapping absent from frozen closure:/usr/lib/locale/C.utf8/LC_CTYPE"
+      }
+    },
+    {
+      "identity": {
+        "pid": 1595607,
+        "start": "11784607",
+        "ppid": 1595515,
+        "pgid": 1595499
+      },
+      "rawBytes": 55228,
+      "rawSHA256": "0fe41d04779cd6dacdf5856b94530e509276c686081f1fa5b73d6702280da877",
+      "lifetimeBefore": true,
+      "lifetimeAfter": true,
+      "accepted": false,
+      "validationError": {
+        "type": "RuntimeError",
+        "errno": null,
+        "error": "Actual disk mapping absent from frozen closure:/usr/lib/locale/C.utf8/LC_CTYPE"
+      }
+    },
+    {
+      "identity": {
+        "pid": 1595580,
+        "start": "11784600",
+        "ppid": 1595515,
+        "pgid": 1595499
+      },
+      "rawBytes": 44150,
+      "rawSHA256": "f4dda2d77df06000ba2573e172a67c9a9f158ba2a903e591670bec30c8ddd6f9",
+      "lifetimeBefore": true,
+      "lifetimeAfter": true,
+      "accepted": false,
+      "validationError": {
+        "type": "RuntimeError",
+        "errno": null,
+        "error": "Actual disk mapping absent from frozen closure:/usr/lib/locale/C.utf8/LC_CTYPE"
+      }
+    },
+    {
+      "identity": {
+        "pid": 1595709,
+        "start": "11784729",
+        "ppid": 1594998,
+        "pgid": 1595709
+      },
+      "rawBytes": 109881,
+      "rawSHA256": "c56409acaa00e469d7317913b62d3b942f777fb4c5e12445bac4fa07d63244e0",
+      "lifetimeBefore": true,
+      "lifetimeAfter": true,
+      "accepted": false,
+      "validationError": {
+        "type": "RuntimeError",
+        "errno": null,
+        "error": "Actual disk mapping absent from frozen closure:/usr/lib/libLLVM.so.22.1"
+      }
+    },
+    {
+      "identity": {
+        "pid": 1595188,
+        "start": "11784258",
+        "classification": "Read-only owned compositor mapping observation; not an app cleanup target"
+      },
+      "rawBytes": 96168,
+      "rawSHA256": "8dcb5165235037f0d111d093555d671de615ddef7e2cb4b75d170e7b60663206",
+      "lifetimeBefore": true,
+      "lifetimeAfter": true,
+      "accepted": false,
+      "validationError": {
+        "type": "RuntimeError",
+        "errno": null,
+        "error": "Actual disk mapping absent from frozen closure:/usr/lib/libLLVM.so.22.1"
+      }
+    }
+  ],
+  "missingStableDiskPaths": [
+    "/usr/lib/dri/iHD_drv_video.so",
+    "/usr/lib/gbm/dri_gbm.so",
+    "/usr/lib/gconv/gconv-modules.cache",
+    "/usr/lib/gio/modules/libdconfsettings.so",
+    "/usr/lib/gio/modules/libgvfsdbus.so",
+    "/usr/lib/gvfs/libgvfscommon.so",
+    "/usr/lib/libFcitx5Qt6DBusAddons.so.5.1.15",
+    "/usr/lib/libLLVM.so.22.1",
+    "/usr/lib/libdrm_amdgpu.so.1.134.0",
+    "/usr/lib/libdrm_intel.so.1.134.0",
+    "/usr/lib/libedit.so.0.0.78",
+    "/usr/lib/libigdgmm.so.12.10.0",
+    "/usr/lib/libpciaccess.so.0.11.1",
+    "/usr/lib/libsensors.so.5.0.0",
+    "/usr/lib/libva-drm.so.2.2400.0",
+    "/usr/lib/libva.so.2.2400.0",
+    "/usr/lib/libxcb-dri3.so.0.1.0",
+    "/usr/lib/libxcb-present.so.0.0.0",
+    "/usr/lib/libxshmfence.so.1.0.0",
+    "/usr/lib/locale/C.utf8/LC_ADDRESS",
+    "/usr/lib/locale/C.utf8/LC_COLLATE",
+    "/usr/lib/locale/C.utf8/LC_CTYPE",
+    "/usr/lib/locale/C.utf8/LC_IDENTIFICATION",
+    "/usr/lib/locale/C.utf8/LC_MEASUREMENT",
+    "/usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES",
+    "/usr/lib/locale/C.utf8/LC_MONETARY",
+    "/usr/lib/locale/C.utf8/LC_NAME",
+    "/usr/lib/locale/C.utf8/LC_NUMERIC",
+    "/usr/lib/locale/C.utf8/LC_PAPER",
+    "/usr/lib/locale/C.utf8/LC_TELEPHONE",
+    "/usr/lib/locale/C.utf8/LC_TIME",
+    "/usr/share/glib-2.0/schemas/gschemas.compiled"
+  ],
+  "deletedDiskMappings": [
+    "/dev/shm/58bfd51c-effe-4d75-8b70-7a9664122c14 (deleted)",
+    "/run/user/1000/wqa/f0a5/browser-profile/BrowserMetrics/BrowserMetrics-6ABEE50D-18586B.pma (deleted)"
+  ],
+  "completeMappingAccepted": false,
+  "nativeFocusFlowAccepted": false,
+  "newWhitelistGranted": false
+}

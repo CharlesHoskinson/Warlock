@@ -1,0 +1,84 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-62b68f5d9a8740ed9ea4398e934b326c.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "hidden_capture_test.qnt"
+      ],
+      "exitCode": 0,
+      "seconds": 2.729185554984724,
+      "log": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "hidden_capture_test.qnt",
+        "--backend=rust",
+        "--seed=2026100229"
+      ],
+      "exitCode": 0,
+      "seconds": 2.5197485260141548,
+      "log": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal-1.log",
+      "sha256": "090cc4daa782a08824e3d01e5d9f2aa8f595c713f615a5dcfd9fdc952d559828",
+      "mode": 384
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "hidden_capture.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100229",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "seconds": 5.134475094004301,
+      "log": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal-2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    }
+  ],
+  "named": 18,
+  "samples": 2000,
+  "steps": 100,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel_replay.py": {
+      "sha256": "21d2778e94153066280b312336eb2692aaef672a4fc903938605c972b99cc56f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/pixel-replay.json": {
+      "sha256": "22fb16452b7599674326c8b6c521c18720245741b4a19bf9743e18d96d77c98b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/CONTRACT.md": {
+      "sha256": "5be3a534dd006e37dab64f7bc258d43265fa27bd7b693df3591218236c608fc1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/hidden_capture.qnt": {
+      "sha256": "9427768b5afc9ca5b2b7c502cb46c8d5aa22bf81e5b4af4925d37d63f33a0c8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/hidden_capture_test.qnt": {
+      "sha256": "796f0e2cb811aac5d8bc1b15ee5465bcced351649acd2cc3585bbd4cf3c6ecd3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal_driver.py": {
+      "sha256": "08378778bf5a49ffc4634d5b026616fa1c6172fb447b6df8c27bbb15d97f4f6a",
+      "mode": 384
+    }
+  },
+  "sourceUnchanged": true,
+  "runtimeApplied": false
+}

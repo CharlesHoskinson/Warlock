@@ -1,0 +1,46 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/CONTRACT.md": "5ae1c7fed0e3dedfceb85d522a69d13b76a8ffb24a855f79f890d03d94addb81",
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/mapping_device.qnt": "d4510fb39c71ae688b61d150dd7938cc715c8d821272cf32d6fcd98807d11118",
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/prove_before.py": "a3d235562aa227616a12273ce211f2d70e135b02b125118696820960c72e9ea4",
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/IMPLEMENTATION_MAPPING.md": "793f7941e552a653510087e4a77240b7052310cebf0b0d7f7561f08895d6baf4",
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/device_relation.qnt": "ea08378f0c0ad20762a9575d25f1a48a95c8769e9e78793a42431f62b54a8345",
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/temporal-proof-runner.py": "a3d235562aa227616a12273ce211f2d70e135b02b125118696820960c72e9ea4",
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/prove_complete_before.py": "8a3ce997cf82e3a75d7bbe9d28386399971c468990663e77413901bb9cca67d7",
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/device-relation-first-parse-failure.qnt": "ea0a4d887cac7fb4654638335413fac7e9f81ec6af2bcf652e4a5b4d009cee10",
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/device-relation-second-parse-failure.qnt": "25832d814cd80bb92aaa4d74a90129b0595ae3730a3076f0bb77ce5fb5f5ae67",
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/prove_relation_before.py": "b2334885cd605488c047ab8da91bbea12e46207c942ca7380f7c6527207f13e6"
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/device_relation.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  device_relation\n    ok distinctBtrfsDeviceDomainsTest passed 1 test(s)\n    ok identicalNonBtrfsDevicesTest passed 1 test(s)\n    ok nonBtrfsCannotUseMountFallbackTest passed 1 test(s)\n    ok wrongMapsDeviceTest passed 1 test(s)\n    ok wrongMountDeviceTest passed 1 test(s)\n    ok wrongStatDeviceTest passed 1 test(s)\n    ok wrongFDDeviceTest passed 1 test(s)\n    ok wrongStatxDeviceTest passed 1 test(s)\n    ok wrongFDInodeTest passed 1 test(s)\n    ok wrongMapInodeTest passed 1 test(s)\n    ok wrongStatxInodeTest passed 1 test(s)\n    ok wrongMountIDTest passed 1 test(s)\n    ok wrongFDInfoMountIDTest passed 1 test(s)\n    ok zeroMountIDTest passed 1 test(s)\n    ok wrongSubvolumeTest passed 1 test(s)\n    ok zeroSubvolumeTest passed 1 test(s)\n    ok falseBtrfsMountTypeTest passed 1 test(s)\n    ok writableFDTest passed 1 test(s)\n    ok OPathFDTest passed 1 test(s)\n    ok missingStatxProofTest passed 1 test(s)\n    ok frozenSourceMismatchTest passed 1 test(s)\n    ok mapFilesPathMismatchTest passed 1 test(s)\n    ok changedRawVMATest passed 1 test(s)\n    ok changedBoundedLifetimeTest passed 1 test(s)\n\n  24 passing (899ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/device_relation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (9193ms at 218 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceUnchanged": true,
+  "mappingPredicateChanged": false,
+  "GUI": false,
+  "rootReviewBeforeRuntime": true
+}

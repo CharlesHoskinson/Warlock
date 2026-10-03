@@ -1,0 +1,13 @@
+
+ Error [QNT000]: Expected [s] and [] to be the same
+Trying to unify entities ['s'] and []
+Trying to unify Read[_v849] & Update['s'] and Read['s']
+Trying to unify (Read[_v847] & Update[_v848], Read[_v849] & Update[_v848]) => Read[_v850] & Update[_v848] and (Read[_v834] & Update['s'], Read['s']) => _e198
+Trying to infer effect for operator application in then(then(then(then(then(init, begin), moved), staleReturn), complete(true)), assert(and(not(field(s, "accepted")), field(s, "reported"))))
+
+
+  at /home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/pin_transfer_refinement.qnt:21:31
+  21:  run staleReturnCannotPromote=init.then(begin).then(moved).then(staleReturn).then(complete(true)).then(assert(not(s.accepted) and s.reported))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

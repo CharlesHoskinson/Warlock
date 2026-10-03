@@ -1,0 +1,641 @@
+
+  signed_coordinates_test
+    ok negativePopupTest passed 1 test(s)
+    ok signedNegativeTest passed 1 test(s)
+    ok positiveTest passed 1 test(s)
+    ok minimumTest passed 1 test(s)
+    ok maximumTest passed 1 test(s)
+    ok nonintegerTest passed 1 test(s)
+    ok overflowTest passed 1 test(s)
+    ok underflowTest passed 1 test(s)
+
+  8 passing (60ms)
+An example execution:
+
+[State 0] { called: true, exactInt: true, rawX: 0, rawY: 0, x: 0, y: 0 }
+
+[State 1]
+{ called: false, exactInt: false, rawX: 4294967296, rawY: -14, x: 0, y: 0 }
+
+[State 2]
+{
+  called: true,
+  exactInt: true,
+  rawX: -2147483648,
+  rawY: -1,
+  x: -2147483648,
+  y: -1
+}
+
+[State 3]
+{
+  called: false,
+  exactInt: false,
+  rawX: 4294967295,
+  rawY: -2147483648,
+  x: 0,
+  y: 0
+}
+
+[State 4]
+{
+  called: true,
+  exactInt: true,
+  rawX: -1,
+  rawY: -2147483648,
+  x: -1,
+  y: -2147483648
+}
+
+[State 5] { called: false, exactInt: false, rawX: 0, rawY: 0, x: 0, y: 0 }
+
+[State 6] { called: true, exactInt: true, rawX: -14, rawY: -14, x: -14, y: -14 }
+
+[State 7]
+{
+  called: false,
+  exactInt: false,
+  rawX: 4294967296,
+  rawY: 2147483648,
+  x: 0,
+  y: 0
+}
+
+[State 8]
+{
+  called: true,
+  exactInt: true,
+  rawX: -1,
+  rawY: 2147483647,
+  x: -1,
+  y: 2147483647
+}
+
+[State 9]
+{ called: false, exactInt: true, rawX: -2147483649, rawY: -14, x: 0, y: 0 }
+
+[State 10]
+{ called: false, exactInt: false, rawX: -14, rawY: -2147483649, x: 0, y: 0 }
+
+[State 11]
+{ called: false, exactInt: false, rawX: 4294967296, rawY: -1, x: 0, y: 0 }
+
+[State 12] { called: false, exactInt: false, rawX: 0, rawY: -14, x: 0, y: 0 }
+
+[State 13]
+{
+  called: false,
+  exactInt: false,
+  rawX: 4294967295,
+  rawY: 2147483647,
+  x: 0,
+  y: 0
+}
+
+[State 14] { called: false, exactInt: false, rawX: -1, rawY: 14, x: 0, y: 0 }
+
+[State 15]
+{ called: false, exactInt: true, rawX: -14, rawY: -2147483649, x: 0, y: 0 }
+
+[State 16]
+{
+  called: false,
+  exactInt: false,
+  rawX: 4294967296,
+  rawY: -2147483649,
+  x: 0,
+  y: 0
+}
+
+[State 17]
+{ called: false, exactInt: false, rawX: 2147483648, rawY: -14, x: 0, y: 0 }
+
+[State 18]
+{ called: false, exactInt: false, rawX: -2147483649, rawY: 0, x: 0, y: 0 }
+
+[State 19]
+{
+  called: false,
+  exactInt: false,
+  rawX: 4294967296,
+  rawY: -2147483649,
+  x: 0,
+  y: 0
+}
+
+[State 20]
+{
+  called: false,
+  exactInt: true,
+  rawX: -2147483649,
+  rawY: 2147483647,
+  x: 0,
+  y: 0
+}
+
+[State 21]
+{
+  called: true,
+  exactInt: true,
+  rawX: 2147483648,
+  rawY: -1,
+  x: -2147483648,
+  y: -1
+}
+
+[State 22]
+{
+  called: true,
+  exactInt: true,
+  rawX: -1,
+  rawY: 2147483647,
+  x: -1,
+  y: 2147483647
+}
+
+[State 23]
+{
+  called: false,
+  exactInt: true,
+  rawX: 2147483647,
+  rawY: 4294967296,
+  x: 0,
+  y: 0
+}
+
+[State 24]
+{
+  called: true,
+  exactInt: true,
+  rawX: 2147483648,
+  rawY: 2147483647,
+  x: -2147483648,
+  y: 2147483647
+}
+
+[State 25]
+{
+  called: true,
+  exactInt: true,
+  rawX: 2147483648,
+  rawY: -14,
+  x: -2147483648,
+  y: -14
+}
+
+[State 26]
+{
+  called: false,
+  exactInt: false,
+  rawX: 4294967296,
+  rawY: -2147483649,
+  x: 0,
+  y: 0
+}
+
+[State 27]
+{ called: false, exactInt: true, rawX: -2147483649, rawY: -14, x: 0, y: 0 }
+
+[State 28]
+{
+  called: false,
+  exactInt: false,
+  rawX: 2147483647,
+  rawY: 4294967295,
+  x: 0,
+  y: 0
+}
+
+[State 29]
+{
+  called: false,
+  exactInt: false,
+  rawX: 4294967296,
+  rawY: 2147483647,
+  x: 0,
+  y: 0
+}
+
+[State 30] { called: true, exactInt: true, rawX: 14, rawY: 0, x: 14, y: 0 }
+
+[State 31]
+{
+  called: true,
+  exactInt: true,
+  rawX: 2147483648,
+  rawY: 0,
+  x: -2147483648,
+  y: 0
+}
+
+[State 32]
+{
+  called: false,
+  exactInt: false,
+  rawX: 2147483648,
+  rawY: 4294967295,
+  x: 0,
+  y: 0
+}
+
+[State 33] { called: false, exactInt: false, rawX: -1, rawY: 14, x: 0, y: 0 }
+
+[State 34]
+{
+  called: true,
+  exactInt: true,
+  rawX: -1,
+  rawY: 2147483648,
+  x: -1,
+  y: -2147483648
+}
+
+[State 35]
+{ called: false, exactInt: false, rawX: 2147483647, rawY: -1, x: 0, y: 0 }
+
+[State 36]
+{
+  called: true,
+  exactInt: true,
+  rawX: -2147483648,
+  rawY: -2147483648,
+  x: -2147483648,
+  y: -2147483648
+}
+
+[State 37]
+{ called: false, exactInt: true, rawX: 14, rawY: 4294967296, x: 0, y: 0 }
+
+[State 38] { called: false, exactInt: false, rawX: 0, rawY: -14, x: 0, y: 0 }
+
+[State 39]
+{ called: false, exactInt: false, rawX: -1, rawY: -2147483649, x: 0, y: 0 }
+
+[State 40]
+{ called: false, exactInt: false, rawX: 4294967295, rawY: -14, x: 0, y: 0 }
+
+[State 41]
+{
+  called: false,
+  exactInt: true,
+  rawX: -2147483649,
+  rawY: 2147483647,
+  x: 0,
+  y: 0
+}
+
+[State 42]
+{
+  called: false,
+  exactInt: false,
+  rawX: 2147483648,
+  rawY: 4294967296,
+  x: 0,
+  y: 0
+}
+
+[State 43]
+{
+  called: false,
+  exactInt: false,
+  rawX: -2147483649,
+  rawY: -2147483648,
+  x: 0,
+  y: 0
+}
+
+[State 44]
+{
+  called: true,
+  exactInt: true,
+  rawX: 2147483648,
+  rawY: 2147483648,
+  x: -2147483648,
+  y: -2147483648
+}
+
+[State 45] { called: true, exactInt: true, rawX: 14, rawY: 0, x: 14, y: 0 }
+
+[State 46]
+{
+  called: false,
+  exactInt: true,
+  rawX: 2147483647,
+  rawY: -2147483649,
+  x: 0,
+  y: 0
+}
+
+[State 47]
+{ called: false, exactInt: false, rawX: 0, rawY: 4294967296, x: 0, y: 0 }
+
+[State 48]
+{ called: false, exactInt: true, rawX: -1, rawY: 4294967296, x: 0, y: 0 }
+
+[State 49]
+{
+  called: false,
+  exactInt: false,
+  rawX: 4294967296,
+  rawY: -2147483648,
+  x: 0,
+  y: 0
+}
+
+[State 50]
+{
+  called: true,
+  exactInt: true,
+  rawX: 2147483647,
+  rawY: -14,
+  x: 2147483647,
+  y: -14
+}
+
+[State 51]
+{ called: false, exactInt: false, rawX: 0, rawY: 2147483648, x: 0, y: 0 }
+
+[State 52]
+{ called: false, exactInt: true, rawX: -2147483649, rawY: -14, x: 0, y: 0 }
+
+[State 53]
+{
+  called: false,
+  exactInt: false,
+  rawX: 4294967296,
+  rawY: 2147483648,
+  x: 0,
+  y: 0
+}
+
+[State 54] { called: true, exactInt: true, rawX: -1, rawY: 0, x: -1, y: 0 }
+
+[State 55]
+{
+  called: true,
+  exactInt: true,
+  rawX: 14,
+  rawY: -2147483648,
+  x: 14,
+  y: -2147483648
+}
+
+[State 56]
+{
+  called: false,
+  exactInt: false,
+  rawX: -2147483648,
+  rawY: -2147483648,
+  x: 0,
+  y: 0
+}
+
+[State 57]
+{ called: false, exactInt: false, rawX: 2147483648, rawY: 14, x: 0, y: 0 }
+
+[State 58]
+{ called: false, exactInt: false, rawX: -1, rawY: 4294967296, x: 0, y: 0 }
+
+[State 59]
+{ called: false, exactInt: false, rawX: 14, rawY: 4294967295, x: 0, y: 0 }
+
+[State 60]
+{ called: false, exactInt: true, rawX: 0, rawY: 4294967296, x: 0, y: 0 }
+
+[State 61]
+{
+  called: false,
+  exactInt: true,
+  rawX: 4294967296,
+  rawY: 2147483648,
+  x: 0,
+  y: 0
+}
+
+[State 62]
+{ called: false, exactInt: false, rawX: 4294967296, rawY: -1, x: 0, y: 0 }
+
+[State 63]
+{ called: false, exactInt: false, rawX: 4294967295, rawY: 0, x: 0, y: 0 }
+
+[State 64] { called: false, exactInt: false, rawX: 0, rawY: -1, x: 0, y: 0 }
+
+[State 65]
+{ called: false, exactInt: false, rawX: -14, rawY: 2147483648, x: 0, y: 0 }
+
+[State 66]
+{ called: false, exactInt: false, rawX: 14, rawY: -2147483649, x: 0, y: 0 }
+
+[State 67]
+{
+  called: false,
+  exactInt: false,
+  rawX: 2147483647,
+  rawY: 4294967295,
+  x: 0,
+  y: 0
+}
+
+[State 68]
+{ called: false, exactInt: false, rawX: 4294967296, rawY: 14, x: 0, y: 0 }
+
+[State 69]
+{ called: true, exactInt: true, rawX: 14, rawY: 4294967295, x: 14, y: -1 }
+
+[State 70]
+{ called: false, exactInt: true, rawX: 4294967296, rawY: -1, x: 0, y: 0 }
+
+[State 71]
+{ called: true, exactInt: true, rawX: -14, rawY: 4294967295, x: -14, y: -1 }
+
+[State 72]
+{
+  called: false,
+  exactInt: true,
+  rawX: 2147483648,
+  rawY: 4294967296,
+  x: 0,
+  y: 0
+}
+
+[State 73]
+{
+  called: true,
+  exactInt: true,
+  rawX: 2147483648,
+  rawY: -1,
+  x: -2147483648,
+  y: -1
+}
+
+[State 74]
+{ called: false, exactInt: false, rawX: -1, rawY: -2147483649, x: 0, y: 0 }
+
+[State 75]
+{
+  called: false,
+  exactInt: true,
+  rawX: -2147483649,
+  rawY: 4294967295,
+  x: 0,
+  y: 0
+}
+
+[State 76]
+{
+  called: true,
+  exactInt: true,
+  rawX: 2147483647,
+  rawY: 2147483648,
+  x: 2147483647,
+  y: -2147483648
+}
+
+[State 77]
+{
+  called: true,
+  exactInt: true,
+  rawX: -2147483648,
+  rawY: 14,
+  x: -2147483648,
+  y: 14
+}
+
+[State 78]
+{ called: true, exactInt: true, rawX: 0, rawY: 4294967295, x: 0, y: -1 }
+
+[State 79]
+{
+  called: true,
+  exactInt: true,
+  rawX: -14,
+  rawY: 2147483647,
+  x: -14,
+  y: 2147483647
+}
+
+[State 80]
+{
+  called: false,
+  exactInt: false,
+  rawX: 2147483648,
+  rawY: 2147483648,
+  x: 0,
+  y: 0
+}
+
+[State 81]
+{ called: false, exactInt: true, rawX: -2147483649, rawY: -14, x: 0, y: 0 }
+
+[State 82] { called: true, exactInt: true, rawX: 0, rawY: 0, x: 0, y: 0 }
+
+[State 83] { called: true, exactInt: true, rawX: 14, rawY: 0, x: 14, y: 0 }
+
+[State 84]
+{
+  called: true,
+  exactInt: true,
+  rawX: 2147483647,
+  rawY: -2147483648,
+  x: 2147483647,
+  y: -2147483648
+}
+
+[State 85] { called: false, exactInt: false, rawX: 0, rawY: -1, x: 0, y: 0 }
+
+[State 86] { called: true, exactInt: true, rawX: 14, rawY: 14, x: 14, y: 14 }
+
+[State 87]
+{
+  called: false,
+  exactInt: false,
+  rawX: 4294967295,
+  rawY: -2147483649,
+  x: 0,
+  y: 0
+}
+
+[State 88]
+{
+  called: false,
+  exactInt: false,
+  rawX: 4294967295,
+  rawY: 4294967296,
+  x: 0,
+  y: 0
+}
+
+[State 89]
+{ called: false, exactInt: false, rawX: 2147483647, rawY: -1, x: 0, y: 0 }
+
+[State 90]
+{
+  called: true,
+  exactInt: true,
+  rawX: -14,
+  rawY: 2147483648,
+  x: -14,
+  y: -2147483648
+}
+
+[State 91]
+{ called: false, exactInt: true, rawX: 14, rawY: -2147483649, x: 0, y: 0 }
+
+[State 92]
+{
+  called: false,
+  exactInt: false,
+  rawX: 4294967295,
+  rawY: 2147483648,
+  x: 0,
+  y: 0
+}
+
+[State 93]
+{
+  called: false,
+  exactInt: false,
+  rawX: -2147483649,
+  rawY: 4294967296,
+  x: 0,
+  y: 0
+}
+
+[State 94] { called: false, exactInt: false, rawX: 0, rawY: 14, x: 0, y: 0 }
+
+[State 95]
+{
+  called: false,
+  exactInt: false,
+  rawX: -2147483649,
+  rawY: -2147483648,
+  x: 0,
+  y: 0
+}
+
+[State 96] { called: true, exactInt: true, rawX: -14, rawY: 0, x: -14, y: 0 }
+
+[State 97]
+{
+  called: false,
+  exactInt: false,
+  rawX: -2147483648,
+  rawY: 4294967296,
+  x: 0,
+  y: 0
+}
+
+[State 98]
+{ called: false, exactInt: false, rawX: -1, rawY: 2147483647, x: 0, y: 0 }
+
+[State 99]
+{ called: false, exactInt: false, rawX: 4294967295, rawY: 14, x: 0, y: 0 }
+
+[State 100]
+{ called: false, exactInt: false, rawX: 2147483647, rawY: -1, x: 0, y: 0 }
+
+[ok] No violation found (957ms at 2090 traces/second).
+Trace length statistics: max=101, min=101, average=101.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1415c62 --backend=rust to reproduce.

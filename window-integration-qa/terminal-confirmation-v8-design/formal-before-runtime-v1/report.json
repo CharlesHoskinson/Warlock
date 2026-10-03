@@ -1,0 +1,18 @@
+{
+  "result": "fail",
+  "checks": [
+    {
+      "label": "typecheck",
+      "exitCode": 1,
+      "log": "/home/hoskinson/window-integration-qa/terminal-confirmation-v8-design/formal-before-runtime-v1/typecheck.log"
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/terminal-confirmation-v8-design/CONTRACT.md": "f1f5a80d765ed915e54a2a2e59dff722fd0b1f044d2d1c03daf3a209b27aae5c",
+    "/home/hoskinson/window-integration-qa/terminal-confirmation-v8-design/terminal_confirmation.qnt": "30bd948005835c345200e0bafa93381a7958d32711e3523d27c744c5ca51929c",
+    "/home/hoskinson/window-integration-qa/terminal-confirmation-v8-design/terminal_confirmation_test.qnt": "595eb8ae2f337202ccea56c96d363573d46f35d4e7f5d6d067768ee7e6255353",
+    "/home/hoskinson/window-integration-qa/terminal-confirmation-v8-design/prove.py": "ac031f1a877cafb0a6f3b52e6186f2d4f78c767cd7a908ba9b2b97a1c4e7d5df"
+  },
+  "runtimeChanged": false,
+  "nativeGrant": false
+}

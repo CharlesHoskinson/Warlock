@@ -1,0 +1,1421 @@
+An example execution:
+
+[State 0]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 0,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 1]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: true,
+  epoch: 1,
+  generation: 0,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 2]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 1,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 3]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: true,
+  epoch: 1,
+  generation: 1,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 4]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: true,
+  epoch: 1,
+  generation: 1,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 5]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: true,
+  epoch: 1,
+  generation: 1,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 6]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 1,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 7]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 1,
+  held: false,
+  ready: true,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 8]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 2,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 9]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 3,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 10]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: true,
+  epoch: 1,
+  generation: 3,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 11]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: true,
+  epoch: 1,
+  generation: 3,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 12]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 3,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 13]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 3,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 14]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 3,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 15]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: true,
+  epoch: 1,
+  generation: 3,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 16]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: true,
+  epoch: 1,
+  generation: 3,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 17]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 4,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 18]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 4,
+  held: false,
+  ready: true,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 19]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 4,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 20]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: true,
+  epoch: 1,
+  generation: 4,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 21]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 4,
+  held: false,
+  ready: true,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 22]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: true,
+  epoch: 1,
+  generation: 4,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 23]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 4,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 24]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 5,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 25]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 6,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 26]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 7,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 27]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 7,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 28]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 7,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 29]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 7,
+  held: false,
+  ready: true,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 30]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: true,
+  epoch: 1,
+  generation: 7,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 31]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 7,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 32]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 7,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 33]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 1,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 34]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 2,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 35]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 2,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 36]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 2,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 37]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 2,
+  generation: 8,
+  held: false,
+  ready: true,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 38]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 39]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: true,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 40]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: true,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 41]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 42]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 43]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 44]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 45]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 46]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 47]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 48]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 49]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: true,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 50]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 51]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: true,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 52]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 53]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 54]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 8,
+  held: false,
+  ready: true,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 55]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 9,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 56]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 9,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 57]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 9,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 58]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 10,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 59]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: true,
+  epoch: 3,
+  generation: 10,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 60]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 10,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 61]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 11,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 62]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 12,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 63]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 12,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 64]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: true,
+  epoch: 3,
+  generation: 12,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 65]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 12,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 66]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 12,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 67]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 12,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 68]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 3,
+  generation: 13,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 69]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 4,
+  generation: 13,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 70]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 4,
+  generation: 13,
+  held: false,
+  ready: true,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 71]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: true,
+  epoch: 4,
+  generation: 13,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 72]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 4,
+  generation: 13,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 73]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 13,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 74]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 14,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 75]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 14,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 76]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 15,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 77]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: true,
+  epoch: 5,
+  generation: 15,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 78]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 16,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 79]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 16,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 80]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 16,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 81]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: true,
+  epoch: 5,
+  generation: 16,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 82]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: true,
+  epoch: 5,
+  generation: 16,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 83]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: true,
+  epoch: 5,
+  generation: 16,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 84]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: true,
+  epoch: 5,
+  generation: 16,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 85]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: true,
+  epoch: 5,
+  generation: 16,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 86]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 16,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[State 87]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 16,
+  held: false,
+  ready: true,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 88]
+{
+  adopted: 0,
+  currentOwner: 1,
+  debt: false,
+  denied: true,
+  epoch: 5,
+  generation: 16,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 89]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 17,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 90]
+{
+  adopted: 0,
+  currentOwner: 0,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 17,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 91]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 18,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 92]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 18,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 93]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 18,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 94]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 18,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 95]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 18,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 96]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 18,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 97]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 18,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 98]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: true,
+  epoch: 5,
+  generation: 18,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 99]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 5,
+  generation: 18,
+  held: false,
+  ready: false,
+  retiring: true,
+  subscriptions: Set()
+}
+
+[State 100]
+{
+  adopted: 0,
+  currentOwner: 2,
+  debt: false,
+  denied: false,
+  epoch: 6,
+  generation: 18,
+  held: false,
+  ready: false,
+  retiring: false,
+  subscriptions: Set()
+}
+
+[ok] No violation found (97ms at 20619 traces/second).
+Trace length statistics: max=101, min=101, average=101.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x95e28f41e3677d45 --backend=rust to reproduce.

@@ -1,0 +1,48 @@
+{
+  "formalBeforeRuntime": true,
+  "runtimeSourcesAbsent": true,
+  "nativeLaunch": false,
+  "named": 17,
+  "samples": 2000,
+  "maxSteps": 100,
+  "sourceSHA256": {
+    "READONLY_IPC_CONTRACT.md": "62ebcb2f82461ad1a5c8e191612e09eca976f601dc5ce2c6f15ff0f6fcee94bf",
+    "readonly_ipc.qnt": "aae3478603d666a7b1c10e51b7dc46dcc21d9308809006fd796b19e8a28bc63b",
+    "readonly_ipc_test.qnt": "8adb485bf4dd125cb201cba7bc90232160d69f48392210dfec8bb2b1cca3d0f4"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "readonly_ipc_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "readonly_ipc_test.qnt",
+        "--backend=rust",
+        "--seed=202610020020"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "readonly_ipc.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=202610020020",
+        "--verbosity=0"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "completedNs": 1790915587075589678
+}

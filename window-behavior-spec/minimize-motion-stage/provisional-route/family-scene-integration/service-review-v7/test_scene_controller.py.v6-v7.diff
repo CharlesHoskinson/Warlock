@@ -1,0 +1,17 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v6/test_scene_controller.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v7/test_scene_controller.py
+@@ -141,9 +141,11 @@
+     def test_same_captured_identity_can_supersede_initial_pending_family(self):
+         self.d.block=threading.Event();self.d.started.clear();first=self.request();self.assertTrue(self.d.started.wait(1))
+         second=self.request('restore');self.assertNotEqual(first['token'],second['token']);self.assertFalse(self.t.sent)
+-        self.d.block.set();self.wait(lambda:self.c.current.validated)
+-        self.assertEqual(self.c.current.token,second['token'])
+-        self.assertFalse(any(m['token']==first['token'] for m in self.t.sent))
++        self.d.block.set();self.wait(lambda:self.c.current is None and len(self.d.commits)==3)
++        self.assertEqual(self.c.history[-1].token,second['token'])
++        self.assertTrue(self.c.history[-1].profile['nativeEndpointAlreadySatisfied'])
++        self.assertTrue(all(op=='restore' for op,*_ in self.d.commits))
++        self.assertFalse(self.t.sent)
+     def test_request_after_endpoint_before_cancel_ack_seeds_fresh_scene(self):
+         old=self.seed();self.event(old,'ready');self.event(old,'endpoint');self.assertIn('cleanupQueuedNs',old.profile)
+         latest=self.request('restore');self.wait(lambda:any(m['command']=='seed' and m['token']==latest['token'] for m in self.t.sent))

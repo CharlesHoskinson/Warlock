@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_where_am_i" xml:lang="eu">
+  <info>
+    <link type="next" xref="commands_time_date_notifications"/>
+    <link type="guide" xref="commands#getting_started"/>
+    <link type="seealso" xref="howto_whereami"/>
+    <title type="sort">3. Non nago</title>
+    <title type="link">Non nago</title>
+    <desc>Zure kokalekua ezagutzeko komandoak</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Non zauden jakiteko komandoak</title>
+  <p>
+    <app>Orca</app>'s Where Am I feature gives you context-sensitive details
+    about your present location. For instance, in tables, Where Am I will give
+    you details about the table cell you are in, but in text it will present
+    the current line along with any text which happens to be selected. The full
+    list of what you can expect <app>Orca</app> to present can be found in the
+    <link xref="howto_whereami">Introduction to Where Am I</link>.
+  </p>
+  <p><app>Orcak</app> honako 'Non nago' komandoak eskaintzen ditu:</p>
+  <list>
+    <item>
+      <p>Gauzatu 'Non nago' oinarrizko eragiketa:</p>
+      <list>
+        <item>
+          <p>Mahaigaina: <key>ZT Enter</key></p>
+        </item>
+        <item>
+          <p>Eramangarria: <keyseq><key>Orca aldatzailea</key><key>Return</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Gauzatu 'Non nago' xehea:</p>
+      <list>
+        <item>
+          <p>Mahaigaina: <key>ZT Enter</key> (klik bikoitza)</p>
+        </item>
+        <item>
+          <p>Eramangarria: <keyseq><key>Orca aldatzailea</key><key>Return</key></keyseq> (klik bikoitza)</p>
+        </item>
+      </list>
+    </item>
+  </list>
+  <p>GNOMEren parte diren 'Non nago' komandoez gain, <app>Orca</app> aplikazioak zure uneko kokalekuari buruzko informazioa eskuratzeko komando gehiago eskaintzen ditu.</p>
+  <list>
+    <item>
+      <p>Aurkeztu titulu-barra:</p>
+      <list>
+        <item>
+          <p>Mahaigaina: <keyseq><key>Orca aldatzailea</key><key>ZT Enter</key></keyseq></p>
+        </item>
+        <item>
+          <p>Eramangarria: <keyseq><key>Orca aldatzailea</key><key>Barra</key></keyseq></p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Aurkeztu egoera-barra:</p>
+      <list>
+        <item>
+          <p>Mahaigaina: <keyseq><key>Orca aldatzailea</key><key>ZT Enter</key></keyseq> (klik bikoitza)</p>
+        </item>
+        <item>
+          <p>Eramangarria: <keyseq><key>Orca aldatzailea</key><key>Barra</key></keyseq> (klik bikoitza)</p>
+        </item>
+        <item>
+          <p>Aurkeztu uneko objektuaren tamaina eta kokalekua: (Lotu gabea)</p>
+        </item>
+      </list>
+    </item>
+  </list>
+</page>

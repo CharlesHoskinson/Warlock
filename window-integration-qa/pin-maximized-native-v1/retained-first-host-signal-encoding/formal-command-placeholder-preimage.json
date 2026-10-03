@@ -1,0 +1,48 @@
+{
+  "nativeExecuted": false,
+  "observationalRuntimeChanged": false,
+  "named": 13,
+  "traces": 2000,
+  "maxSteps": 100,
+  "modelSHA256": "5a00c36f732948a5da2a40914bd1ee14f3610c031933dba266978e6850f86d6d",
+  "contractSHA256": "94483fbcacae7f59209ef22a791f8a6faf591fff27f683d305f45332fb1d41f1",
+  "commands": [
+    {
+      "argv": [
+        "quint",
+        "typecheck",
+        "host_closure.qnt"
+      ],
+      "log": "host-closure-typecheck.log",
+      "exitCode": 0,
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "quint",
+        "test",
+        "host_closure.qnt",
+        "--max-samples=1",
+        "--match",
+        "explicit13named"
+      ],
+      "log": "host-closure-named-selected.log",
+      "exitCode": 0,
+      "logSHA256": "de967a7a4d47f44135e1885f18c4c8018a488654aecfafd45c2cc349ab974f18"
+    },
+    {
+      "argv": [
+        "quint",
+        "run",
+        "host_closure.qnt",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--invariant=allProps"
+      ],
+      "log": "host-closure-traces.log",
+      "exitCode": 0,
+      "logSHA256": "0579d01ee995902aee6579dcb0f5dc88a1b840ff1e7e63bb926443c197a01554"
+    }
+  ],
+  "initialZeroSelectedLog": "host-closure-named.log"
+}

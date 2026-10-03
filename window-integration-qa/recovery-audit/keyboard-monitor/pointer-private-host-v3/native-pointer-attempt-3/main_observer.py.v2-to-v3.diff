@@ -1,0 +1,26 @@
+--- /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v2/main_observer.py	2026-10-01 07:40:35.900974872 -0600
++++ /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v3/main_observer.py	2026-10-01 08:27:28.688588631 -0600
+@@ -4,6 +4,8 @@
+ import lifecycle_preservation as p
+ def sha(blob):return hashlib.sha256(blob).hexdigest() if blob is not None else None
+ class MainObserver:
++ @staticmethod
++ def focus_identity(value):return {k:value.get(k) for k in ('address','stableId','pid')} if isinstance(value,dict) else value
+  def __init__(self,env):
+   self.env=dict(env);self.home=Path(self.env['HOME']);self.signature=self.env['HYPRLAND_INSTANCE_SIGNATURE']
+   if self.home!=Path('/home/hoskinson') or self.env['XDG_RUNTIME_DIR']!=str(Path('/run/user')/str(os.getuid())):raise RuntimeError('observer must use original main environment')
+@@ -44,11 +46,13 @@
+   for name in catalogs:
+    path=Path(name);blob=path.read_bytes() if path.exists() else None
+    catalogs[name]=dict(base64=base64.b64encode(blob).decode() if blob is not None else None,sha256=sha(blob))
+-  return dict(clients=p.project_clients(clients),focus=self.data('activewindow'),cursor=self.data('cursorpos'),outputs=p.project_outputs(self.data('monitors')),a11y=self.accessibility(),reader=self.reader(),files=self.files(),plugins=self.ctl('plugin','list'),keyboards=[{k:r.get(k) for k in keyboard_fields} for r in self.data('devices')['keyboards']],catalogs=catalogs,clipboard=self.clipboard(),configErrors=self.ctl('configerrors'))
++  focus=self.data('activewindow')
++  return dict(clients=p.project_clients(clients),focus=focus,focusTitleSHA256=sha(str(focus.get('title','')).encode()),cursor=self.data('cursorpos'),outputs=p.project_outputs(self.data('monitors')),a11y=self.accessibility(),reader=self.reader(),files=self.files(),plugins=self.ctl('plugin','list'),keyboards=[{k:r.get(k) for k in keyboard_fields} for r in self.data('devices')['keyboards']],catalogs=catalogs,clipboard=self.clipboard(),configErrors=self.ctl('configerrors'))
+  @staticmethod
+  def compare(before,after):
+   fields=('clients','focus','cursor','outputs','a11y','reader','files','plugins','keyboards','catalogs','clipboard','configErrors')
+   checks={name:before[name]==after[name] for name in fields}
++  checks['focus']=MainObserver.focus_identity(before['focus'])==MainObserver.focus_identity(after['focus'])
+   checks['originalFilesExactProcessAndCapturedVisibility']=checks['files']
+   checks['canonicalFullClientSet']=set((w['address'],w['pid'],w['stableId']) for w in before['clients'])==set((w['address'],w['pid'],w['stableId']) for w in after['clients'])
+   checks['readerRemainsFalse']='false' in before['reader'] and before['reader']==after['reader']

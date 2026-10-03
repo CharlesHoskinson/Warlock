@@ -1,0 +1,66 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pin_stacking_test\n    ok maintainedAfterOtherRaiseTest passed 1 test(s)\n    ok modalStillAboveOwnerTest passed 1 test(s)\n    ok independentPinBitsUnchangedTest passed 1 test(s)\n    ok noCaptureNoWriteTest passed 1 test(s)\n    ok closedCaptureNoWriteTest passed 1 test(s)\n    ok reusedCaptureNoWriteTest passed 1 test(s)\n    ok reloadCaptureNoWriteTest passed 1 test(s)\n    ok pinCallbackInvalidatesTest passed 1 test(s)\n    ok focusCallbackInvalidatesTest passed 1 test(s)\n    ok minimizedCaptureNoWriteTest passed 1 test(s)\n    ok backendRefusalNoCompleteTest passed 1 test(s)\n    ok incompletePassNoSuccessTest passed 1 test(s)\n    ok reentrantCaptureNoRestartTest passed 1 test(s)\n    ok coreLowerPinnedStillProtectedTest passed 1 test(s)\n    ok coreLowerDuringPassInvalidatesTest passed 1 test(s)\n\n  15 passing (2214ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (4621ms at 433 traces/second).\nUse --seed=0x13e4f1d --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_frontend_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pin_frontend_test\n    ok actualCapturedOwnerTest passed 1 test(s)\n    ok noCaptureNoInvokeTest passed 1 test(s)\n    ok noAuthorityCaptureTest passed 1 test(s)\n    ok refocusNeverRedirectsTest passed 1 test(s)\n    ok dismissedNoActionTest passed 1 test(s)\n    ok oldMenuReplyCannotEnableNewTest passed 1 test(s)\n    ok wrongMemberReplyNoActionTest passed 1 test(s)\n    ok oldLifetimeNoWriteTest passed 1 test(s)\n    ok reloadNoWriteTest passed 1 test(s)\n    ok duplicateInvokeOneSendTest passed 1 test(s)\n    ok failureAckNoRetryTest passed 1 test(s)\n    ok actualCompleteTest passed 1 test(s)\n\n  12 passing (1283ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_frontend.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (4032ms at 496 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking.qnt": "8c5779212458694e54b1bc4d1aea936a64d10206893bd5815d0e4c5dca48dc6a",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking_test.qnt": "f8f0a0d55d584b8a0c14b337c27b239a109383f95eaf63f5685d099f0db002b3",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_frontend.qnt": "5bad139122398b91059ff7dbb42f8a7bc98a6a235e5ed1c208b7f81f4e8fcc0b",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_frontend_test.qnt": "95655d29c3462295df3c5e25c3b68fe31761c22dbf16a830c4c901e5dc12fd5c",
+    "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/STACKING_FRONTEND_CONTRACT.md": "595d9f19e2f8b005bac286a9973ba26d305ba7b4609b4280350713f1409bedbc"
+  },
+  "newStackImplementationAbsent": false,
+  "lowerHookImplementationAbsent": true,
+  "frontendImplementationAbsent": false,
+  "nativeExecuted": false
+}

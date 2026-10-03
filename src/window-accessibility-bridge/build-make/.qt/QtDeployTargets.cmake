@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_windowaccessibility_FILE /home/hoskinson/.local/share/hypr-window-controls/qml/WindowAccessibilityV2/libwindowaccessibility.so)
+set(__QT_DEPLOY_TARGET_windowaccessibility_TYPE MODULE_LIBRARY)

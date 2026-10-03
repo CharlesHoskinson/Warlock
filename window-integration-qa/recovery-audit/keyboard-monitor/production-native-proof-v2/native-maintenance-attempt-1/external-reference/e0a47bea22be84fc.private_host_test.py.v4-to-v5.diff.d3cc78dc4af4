@@ -1,0 +1,17 @@
+--- V4/private_host_test.py
++++ V5/private_host_test.py
+@@ -38,9 +38,11 @@
+   prior=source.parent/'pointer-private-host-v3/native-fixture/pointer_cases.py'
+   def checks(path):
+    return [ast.dump(n,include_attributes=False) for n in ast.walk(ast.parse(path.read_text())) if isinstance(n,ast.Call) and isinstance(n.func,ast.Name) and n.func.id=='check']
+-  before,after=checks(prior),checks(source/'native-fixture/pointer_cases.py')
+-  self.assertGreater(len(before),60)
+-  for oracle in before:self.assertIn(oracle,after)
++  after=checks(source/'native-fixture/pointer_cases.py')
++  for name in ['pointer-private-host-v3','pointer-private-host-v4']:
++   before=checks(source.parent/name/'native-fixture/pointer_cases.py')
++   self.assertGreater(len(before),60)
++   for oracle in before:self.assertIn(oracle,after)
+   self.assertEqual(hashlib.sha256((source/'native-fixture/popup_geometry.py').read_bytes()).hexdigest(),'ae8098f52e7961ef1035d2c6a800c5d7e0f709c4c6838b12e9c0ceedcefbb76c')
+   for name in ['policy_cases.py','lifecycle_cases.py']:
+    self.assertEqual((source/'native-fixture'/name).read_bytes(),(source.parent/'pointer-private-host-v3/native-fixture'/name).read_bytes())

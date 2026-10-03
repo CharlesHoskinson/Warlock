@@ -1,0 +1,31 @@
+--- service-review-v8/CONTRACT.md
++++ service-review-v9/CONTRACT.md
+@@ -253,3 +253,28 @@
+ controller semantics through fresh guarded core, destroys clients before any
+ external compositor cleanup and releases only its own PID/socket identities.
+ A failed actor shutdown is explicit; it is not normal success.
++
++## Receipt-time retained visual reversal (V9)
++
++A new accepted receipt revokes every previous native callback for its known exact
++family before any external context work. If the owned scene has immutable retained
++sources, displayed visual state, a resolved constant new direction, and the same
++family mode, receipt handling queues one provisional renderer retarget immediately.
++The renderer chooses each output's actual presented origin and a shared progress
++clock; the service never substitutes a computed rectangle. This visual continuation
++is not workspace, family, capture or native authority.
++
++The provisional scene is journaled with its new receipt/token before retarget is
++queued. It cannot receive native authority until a fresh consistent context equals
++its retained context and exact fresh family/geometry validation succeeds. Context
++rejection or mismatch cancels the provisional scene without committing the newly
++unvalidated direction. Unknown families, unresolved initial directions and changed
++single-family modes wait for context and fresh relation proof. A failed retarget
++queue is recorded and cannot authorize old callbacks; after fresh validation the
++latest native intent may settle through the ordinary guarded failure path.
++
++Superseded context completions cannot create a second token, enqueue validation,
++or change workspace. A subsequent receipt can reuse the same retained textures
++even while the previous provisional request still waits for context. A successful
++activation starts metadata work on the already reserved scene, preserving its
++token and source provenance. Fresh native replacement/recovery remains separate.

@@ -1,0 +1,79 @@
+{
+  "result": "confirmed-repeat-submission-evidence",
+  "primaryReplaySHA256": "d85cd6de89a4264b993011d1ee5ac7687d8a69de1ec8ca0047a57acc6e4c79a9",
+  "presentedReadyResults": [
+    {
+      "identity": [
+        "0x626065b88680",
+        "18000000",
+        2352450
+      ],
+      "operation": "minimize",
+      "reason": "presented ready",
+      "committedNs": 159410080551379
+    },
+    {
+      "identity": [
+        "0x62606632eae0",
+        "18000002",
+        2352450
+      ],
+      "operation": "minimize",
+      "reason": "presented ready",
+      "committedNs": 159410339368007
+    },
+    {
+      "identity": [
+        "0x626066345380",
+        "18000003",
+        2352450
+      ],
+      "operation": "minimize",
+      "reason": "presented ready",
+      "committedNs": 159410612050414
+    }
+  ],
+  "controllerDeadlineResults": [
+    {
+      "identity": [
+        "0x626065b88680",
+        "18000000",
+        2352450
+      ],
+      "operation": "minimize",
+      "reason": "controller deadline",
+      "committedNs": 159410938579298
+    },
+    {
+      "identity": [
+        "0x62606632eae0",
+        "18000002",
+        2352450
+      ],
+      "operation": "minimize",
+      "reason": "controller deadline",
+      "committedNs": 159411146105418
+    },
+    {
+      "identity": [
+        "0x626066345380",
+        "18000003",
+        2352450
+      ],
+      "operation": "minimize",
+      "reason": "controller deadline",
+      "committedNs": 159411358370298
+    }
+  ],
+  "sameExactIdentitySet": true,
+  "allDeadlineResultsAfterReady": true,
+  "coreSource": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v10/payload/home/.local/bin/hypr-windowctl-core",
+  "coreSHA256": "30232bb4ffbfca0f0a34dd677ea4bc9fc53f8828bf75c662ce8a0ec15f35db3a",
+  "coreSpecialWorkspaceNoOpBranch": true,
+  "repeatNativeCommandSubmissionsObserved": true,
+  "duplicateNativeStateMutationProven": false,
+  "skipReadyFallbackAuthorized": false,
+  "primaryFailureRemainsHousekeepingTimeout": true,
+  "queryExactBlockingSiteProven": false,
+  "nativeAccepted": false
+}

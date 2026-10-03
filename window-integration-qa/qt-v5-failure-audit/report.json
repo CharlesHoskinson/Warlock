@@ -1,0 +1,88 @@
+{
+  "result": "diagnosed-fixture-and-infrastructure; routing-cause-unresolved",
+  "originalReportSHA256": "595d5c5d9d81aee37a807993951a3e8944b7d7c354e1d67619d301792fab6acb",
+  "modalEvidence": {
+    "ownerCallbackCount": 0,
+    "nativeFocusStayedPeer": {
+      "address": "0x57f1fe88fcd0",
+      "stableId": "18000001",
+      "pid": 389740
+    },
+    "pointerLogical": {
+      "x": 125,
+      "y": 525
+    },
+    "modalAndParentMetadataPassed": true,
+    "routingGateStillFailed": true,
+    "weakCallbackPoint": "lower body outside vertically centered QPushButton; cannot independently prove callback inhibition",
+    "missingDiagnostics": [
+      "hit owner",
+      "actual pointer surface owner",
+      "modal target/history",
+      "seat grab",
+      "held buttons",
+      "constraint/capture/layer/drag guards"
+    ]
+  },
+  "quitEvidence": {
+    "cleanupRecord": {
+      "pid": 389740,
+      "start": "8505898",
+      "normalStopAttempted": true,
+      "normalStopError": "AssertionError('actual fixture command quit')",
+      "exitCode": 0,
+      "gone": true
+    },
+    "quitHandled": [
+      {
+        "command": "quit",
+        "epoch": 2,
+        "event": "commandHandled",
+        "timeMS": 1790862588167
+      }
+    ],
+    "destructionEvents": [
+      {
+        "event": "destroyed",
+        "timeMS": 1790862588167,
+        "window": "child"
+      },
+      {
+        "event": "destroyed",
+        "timeMS": 1790862588167,
+        "window": "peer"
+      },
+      {
+        "event": "destroyed",
+        "timeMS": 1790862588167,
+        "window": "owner"
+      }
+    ],
+    "cause": "synchronous quit+event recording succeeded; runner waited on QTimer-scheduled state save after quit and falsely recorded normalStopError"
+  },
+  "privateBusEvidence": {
+    "firstActivation": "Qt fixture389740 org.freedesktop.portal.Desktop; portal gtk/hyprland plus permission/docs/AX/GVfs dependencies",
+    "unexpectedOwnedDescendants": 10,
+    "allRemainingGone": true,
+    "supportedFreshEnvironment": "QT_NO_XDG_DESKTOP_PORTAL=1 only Qt fixture env; official Qt6.11.2 QDesktopUnixServices constructor exits before portal property request",
+    "noAllowlistWaiver": true
+  },
+  "freshV6Scope": "Read-only native guard/hit/history/button-event observations, strict same19 callback/focus oracles, Qt client bounds mapped through actual native surface, tested owner baseline, corrected quit oracle and private Qt portal opt-out. No production semantic change.",
+  "primarySourceURLs": {
+    "qwaylandwindow.cpp": "https://raw.githubusercontent.com/qt/qtbase/v6.11.2/src/plugins/platforms/wayland/qwaylandwindow.cpp",
+    "qdesktopunixservices.cpp": "https://raw.githubusercontent.com/qt/qtbase/v6.11.2/src/gui/platform/unix/qdesktopunixservices.cpp",
+    "Window.cpp": "https://raw.githubusercontent.com/hyprwm/Hyprland/v0.56.2/src/desktop/view/Window.cpp",
+    "InputManager.cpp": "https://raw.githubusercontent.com/hyprwm/Hyprland/v0.56.2/src/managers/input/InputManager.cpp"
+  },
+  "sources": {
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v5/attempt-1/qt/report.json": "88304d2830d501deb3ff38b35ca2876e88e72aa21afa0232afd5dfe47d51b7ab",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v5/attempt-1/qt/state.json": "657d4eb72017c2cb596534987e88e2cb55e91acbbb7af5c14c921b481137a0cc",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v5/attempt-1/qt/events.jsonl": "5288fe33632bd0829715499671968c888817bec0a68b7ed5e205b1a5ac6ba78a",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v5/attempt-1/host/privateBus.log": "6d9a08c7563bf49aaa63256904c9fd2e17d4a3a21bb36f1da940a8bb6423708c",
+    "/home/hoskinson/window-integration-qa/qt-v5-failure-audit/qwaylandwindow.cpp": "d1cc3816f86e1cb7b2671a035d0943b3826c30de176e3f29766da3b0c87fe58c",
+    "/home/hoskinson/window-integration-qa/qt-v5-failure-audit/qdesktopunixservices.cpp": "e5e2181f4384fddd07d85e1c9e9c5b7890af9f3ae7c0a06970cb3273a86120e4",
+    "/home/hoskinson/window-integration-qa/qt-v5-failure-audit/Window.cpp": "d735d454cc4b7983f19626514d310669047da46780c509ffae68ccf072211ded",
+    "/home/hoskinson/window-integration-qa/qt-v5-failure-audit/InputManager.cpp": "feedf32e2e3d23aeaed7a02ef4ab94be2d66f4b22873b3166026da1e9ece4765"
+  },
+  "nativeLaunch": false
+}

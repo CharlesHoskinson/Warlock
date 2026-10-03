@@ -1,0 +1,38 @@
+{
+  "schema": "process-async-thread-semantics-component-v1",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/formal-source-review-inputs.json": "52c07e1c6ce69bb043020e11adc3eeb39db3e55bc754571f0f2a6059f8870ad1",
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async-predecessor-inputs.json": "e7f034d1f51b0167a8f93855102d54efd39c92140c0f4960da628e7f4fb14aa8",
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async-semantics-first-compile/cpu_async_semantics.cpp": "8c10481e3c6cb307cbbdc2d48385dc8a4efdb55d34824b612f1e68b01bcd26b7",
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async-semantics-first-compile/report.json": "c6ae642707929c57f5114d9d44a839c7c9aff60030fd7c0984d840b7b54d90c8",
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async-semantics-proof.json": "0567a6c9a233f72f3c115d98d5e23bd5056a23f7f9da45a3f0d543878c93ba1b",
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async_semantics_build.py": "ade78abd7a439def104ce28834d1400aea5dd1511eb09cad8544ed830cba7f39",
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/cpu-async-semantics": "60c9ffeb3dd3325b22936844e78af064e4f00380eec49db4a5b9b6ca1a1393fa",
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/cpu_async_semantics.cpp": "6bb7215aa74f5dba5bd732ac07bc6b7f4c3aecdafcf7ffb3bd35a73817704aaa",
+    "/usr/include/pthread.h": "5479c95276c6693fdd1baa448f5d457dee57fc02b31277bfa04df63cc0b26a94",
+    "/usr/include/qt6/QtCore/qfuture.h": "b97761fe95235964bf1ffc02b57f46f7fd11e5373784538c1470acf923fd4846",
+    "/usr/include/qt6/QtCore/qfutureinterface.h": "c9e27a52b05405e4692a6e257ecbe437e49c9a5ad63c72658368f2a6f65f3d3d",
+    "/usr/include/qt6/QtCore/qfuturewatcher.h": "a032724e0f55c41236e0c9bc3e2a427c6662c8138792904899e5e11e06252f20",
+    "/usr/include/qt6/QtCore/qpromise.h": "abd19d5caf237e1fc272096d893cc63eede4470cb87d9ce1af6745855b5b7108"
+  },
+  "inputModes": {
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/formal-source-review-inputs.json": 420,
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async-predecessor-inputs.json": 420,
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async-semantics-first-compile/cpu_async_semantics.cpp": 420,
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async-semantics-first-compile/report.json": 420,
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async-semantics-proof.json": 420,
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async_semantics_build.py": 420,
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/cpu-async-semantics": 493,
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/cpu_async_semantics.cpp": 420,
+    "/usr/include/pthread.h": 420,
+    "/usr/include/qt6/QtCore/qfuture.h": 420,
+    "/usr/include/qt6/QtCore/qfutureinterface.h": 420,
+    "/usr/include/qt6/QtCore/qfuturewatcher.h": 420,
+    "/usr/include/qt6/QtCore/qpromise.h": 420
+  },
+  "actualChecks": 10,
+  "GUI": false,
+  "productionHelperAccepted": false,
+  "productionRegistryRuntimeAccepted": false,
+  "fixtureBarrierExplicitlyNotProduct": true
+}

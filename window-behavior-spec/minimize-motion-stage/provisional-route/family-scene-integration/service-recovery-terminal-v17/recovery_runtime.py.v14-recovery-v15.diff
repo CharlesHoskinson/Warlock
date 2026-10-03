@@ -1,0 +1,233 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v14/recovery_runtime.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v15-frozen-v2/recovery_runtime.py
+@@ -15,6 +15,7 @@
+ from service_runtime import JournalStore
+ from scene_controller import key
+ from context_provider import monitor_fingerprint
++import recovery_cancel as cancellation
+ 
+ class NativeRecovery:
+     def __init__(self,factory,*,store=None,desktop=None,lease_verify=None,retire=retire_renderer,dispose=dispose_directory):
+@@ -47,20 +48,21 @@
+             if number in numbers:raise ValueError('duplicate actor resource identity')
+             numbers.add(number)
+             phase=row.get('phase')
+-            if phase not in ('reserved','directory','gated','launched','closed'):raise ValueError('explicit actor allocation phase required')
++            if phase not in ('reserved','directory','gated','launched','retired','closed'):raise ValueError('explicit actor allocation phase required')
+             directory=row.get('directory')
+             if not isinstance(directory,dict) or set(directory)!={'path','parentIdentity','identity'}:raise ValueError('complete durable directory identity required')
+             path=Path(directory['path'])
+             if path.parent!=expected_parent or re.fullmatch(f'actor-{number}-[0-9a-f]{{32}}',path.name) is None:raise ValueError('actor path outside exact reserved private root')
+             for field in ('parentIdentity','identity'):
+                 value=directory[field]
+-                if value is None and phase=='reserved' and field=='identity':continue
++                if value is None and field=='identity' and (phase=='reserved' or phase in ('retired','closed') and row.get('outcome',{}).get('allocationPhase')=='reserved' and row.get('renderer') is None):continue
+                 if not isinstance(value,list) or len(value)!=2 or any(type(x) is not int or x<0 for x in value) or value[1]<1:raise ValueError('typed positive directory inode required')
+             renderer=row.get('renderer')
+             if phase in ('gated','launched') or renderer is not None:
+                 checked_renderer(renderer)
+                 if renderer['environment']!=environment or renderer['producer']['sha256']!=self.factory.producer_hash:raise ValueError('renderer selected session/producer provenance differs')
+-            elif phase not in ('reserved','directory','closed'):raise ValueError('missing renderer allocation ownership')
++            elif phase not in ('reserved','directory','retired','closed'):raise ValueError('missing renderer allocation ownership')
++            if phase=='retired' and (not isinstance(row.get('outcome'),dict) or row['outcome'].get('oldLifetimeGone') is not True or row['outcome'].get('directoryGone') is not False):raise ValueError('retired actor authority requires retained source outcome')
+             if phase=='closed' and (not isinstance(row.get('outcome'),dict) or row['outcome'].get('oldLifetimeGone') is not True or row['outcome'].get('directoryGone') is not True):raise ValueError('durable terminal resource outcomes required')
+         required=set()
+         for field in ('liveActors','retiringActors'):
+@@ -106,8 +108,25 @@
+             seen_plans=set()
+             for plan in recovery['plans']:
+                 receipt=positive(plan['receipt']);scope=[identity(v) for v in plan['members']];order=[identity(v) for v in plan['order']]
+-                if receipt>body['serial'] or receipt in seen_plans or len(set(scope))!=len(scope) or set(order)!=set(scope) or len(order)!=len(scope) or identity(plan['captured']) not in scope or identity(plan['focus']) not in scope or type(plan['single']) is not bool:raise ValueError('exact bounded prepared recovery scope/order required')
++                if receipt>body['serial'] or receipt in seen_plans or len(set(scope))!=len(scope) or plan.get('operation')!='cancel' and (set(order)!=set(scope) or len(order)!=len(scope)) or identity(plan['captured']) not in scope or identity(plan['focus']) not in scope or type(plan['single']) is not bool:raise ValueError('exact bounded prepared recovery scope/order required')
+                 seen_plans.add(receipt)
++                if plan.get('operation')=='cancel':
++                    proof=cancellation.validate(plan,ledger,body['serial'],recovery['state']=='completed')
++                    cancellation.checked_lease(proof['lease'],self.factory.root,self.factory.guard.session)
++                    for observation in proof['observations']:cancellation.checked_observation(self,plan,observation)
++                    for refresh in proof['refreshes']:
++                        if not isinstance(refresh,dict) or set(refresh)!={'lease','observations','helperClosures'}:raise ValueError('complete fresh cancellation authority required')
++                        cancellation.checked_lease(refresh['lease'],self.factory.root,self.factory.guard.session)
++                        if any(refresh['lease'][k]!=proof['lease'][k] for k in ('root','rootIdentity','lockIdentity')):raise ValueError('cancellation refresh changed runtime/root/lock')
++                        if len(refresh['observations'])!=2 or refresh['observations'][0]!=refresh['observations'][1]:raise ValueError('fresh complete cancellation pair required')
++                        for observation in refresh['observations']:cancellation.checked_observation(self,plan,observation)
++                        self.check_closures(refresh['helperClosures'],environment)
++                    self.check_closures(proof['helperClosures'],environment)
++                    if not proof['helperClosures'] or proof['helperClosures']!=body.get('helperClosureArchive',[])[:len(proof['helperClosures'])]:raise ValueError('cancellation must retain exact old helper closure archive')
++                    if not isinstance(proof['resources'],list) or len(proof['resources'])!=len(resources) or any(v['phase'] not in ('retired','closed') or v['outcome'].get('oldLifetimeGone') is not True for v in proof['resources']):raise ValueError('complete acknowledged resource terminal authority required')
++                    if any(v['actor']!=w['actor'] or v['directory']!=w['directory'] or v['renderer']!=w['renderer'] for v,w in zip(proof['resources'],resources)):raise ValueError('acknowledged actor/source ownership changed')
++                    if plan['results']!=plan.get('priorResults'):raise ValueError('cancelled intent must preserve exact prior returned results')
++                    continue
+                 if recovery['state']!='completed':
+                     intent=reconstruct(ledger,plan['members'],body['serial']);basis=plan['resolvedFrom']
+                     if intent.receipt!=receipt or basis['symbolic']!=json.loads(json.dumps(asdict(intent.direction))) or type(basis['activeObserved']) is not bool or basis['activeObserved']!=(intent.direction.anchor=='activate'):raise ValueError('prepared symbolic direction differs from durable accepted ledger')
+@@ -123,13 +142,42 @@
+                     member=identity(result['identity'])
+                     if member not in scope or member in identities or result.get('operation')!=plan['operation'] or type(result.get('receipt')) is not int or result['receipt']!=receipt or result.get('guardedCoreReturned') is not True:raise ValueError('exact unique per-member native result required')
+                     identities.add(member)
++        self.check_closures(body.get('helperClosureArchive',[]),environment)
+         self.owners=owners;self.environment=environment
++    def check_closures(self,archive,environment):
++        if not isinstance(archive,list) or len(archive)>64:raise ValueError('bounded exact helper closure archive required')
++        seen=set()
++        for record in archive:
++            if not isinstance(record,dict) or set(record)!={'ownership','terminal'}:raise ValueError('complete retained helper closure required')
++            helper=record['ownership']
++            if not isinstance(helper,dict) or set(helper)!={'keeper','jobs'} or not isinstance(helper['jobs'],list):raise ValueError('exact retained helper ownership required')
++            row=checked_keeper(helper['keeper'],root=self.factory.root,environment=environment)
++            if row['nonce'] in seen:raise ValueError('duplicate archived keeper lifetime')
++            seen.add(row['nonce']);terminal,jobs=await_terminal(row)
++            if terminal!=record['terminal']:raise ValueError('archived terminal differs from actual old helper proof')
++            jobids=set()
++            if len(helper['jobs'])>512:raise ValueError('bounded old helper closure jobs required')
++            for job in helper['jobs']:
++                if not isinstance(job,dict) or set(job)-{'groupEmpty'}!={'job','kind','actor','phase','ownership'} or job['phase'] not in ('gated','released','closed') or job['kind'] not in ('renderer','helper','native-export','native-effect') or not isinstance(job['job'],str) or re.fullmatch('[0-9a-f]{32}',job['job']) is None:raise ValueError('exact archived helper job schema required')
++                if job['actor'] is not None:positive(job['actor'])
++                if job['kind'] in ('native-export','native-effect') and job['phase']!='closed':raise ValueError('unfinished native effect cannot be archived as cancellation safety')
++                from owned_launch import checked_owned
++                if job['kind']=='renderer':checked_renderer(job['ownership'])
++                else:checked_owned(job['ownership'],environment=environment)
++                completed=jobs.get(job['job'])
++                if job['job'] in jobids or completed is None or (completed['pid'],completed['start'])!=(job['ownership']['pid'],job['ownership']['start']) or job['phase']=='closed' and not completed['normalCompletion']:raise ValueError('archive lacks exact helper job terminal proof')
++                jobids.add(job['job'])
+     def close_helpers(self):
+         terminal,jobs=await_terminal(self.body['helperOwnership']['keeper'])
+         for job in self.body['helperOwnership']['jobs']:
+             completed=jobs.get(job['job'])
+             if completed is None or (completed['pid'],completed['start'])!=(job['ownership']['pid'],job['ownership']['start']):raise ValueError('durable helper job absent from exact keeper terminal closure')
+             if job['phase']=='closed' and completed['normalCompletion'] is not True:raise ValueError('durable normal helper closure differs from keeper proof')
++        closure={'ownership':deepcopy(self.body['helperOwnership']),'terminal':deepcopy(terminal)}
++        archive=self.body.setdefault('helperClosureArchive',[])
++        if not any(row['ownership']['keeper']['nonce']==closure['ownership']['keeper']['nonce'] for row in archive):
++            if len(archive)>=64:raise ValueError('bounded exact helper closure archive exceeded')
++            archive.append(closure)
+         self.body['helperOwnership']['keeper']['phase']='closed'
+         self.body['helperOwnership']['keeper']['terminal']=terminal
+         self.body['helperOwnership']['jobs']=[]
+@@ -182,6 +230,9 @@
+             receipt=positive(row['profile']['managerReceipt']);captured=identity(row['requested'])
+             single=row.get('single');scope=[identity(v) for v in row['members']]
+             if type(single) is not bool:raise ValueError('durable scene family mode required')
++            # An unplanned scene has no observed scope; the exact accepted
++            # pending record carries its provenance and must not be shadowed.
++            if not scope:continue
+             if self.owners.get(captured)==receipt:
+                 records[receipt]={'receipt':receipt,'captured':list(captured),'single':single,'scope':[list(v) for v in scope],
+                     'focus':row.get('focus'),'observedFamily':bool(scope)}
+@@ -193,11 +244,53 @@
+                 records[receipt]={'receipt':receipt,'captured':list(captured),'single':single,'scope':[list(identity(v)) for v in row['scope']],
+                     'focus':None,'observedFamily':False}
+         return list(records.values())
++    def finish_queries(self):
++        if self.keeper is not None:
++            self.keeper.stop();self.close_helpers();self.keeper=None;self.desktop=None
++    def cancellation_candidate(self,description,prepared=None):
++        # Observe malformed/unstable material as refusal; never translate an
++        # arbitrary planning exception into permission to cancel.
++        original=cancellation.original(self,description)
++        observations=cancellation.observe(self,description)
++        operation=prepared['operation'] if prepared else direction(original['symbolic']).constant
++        focus=prepared['focus'] if prepared else description.get('focus')
++        cause=cancellation.reason(description,observations,operation,focus)
++        if cause is None:return None
++        if cause=='family-focus-changed' and getattr(self.lease_verify,'__self__',None) is None:raise ValueError('captured recovery focus differs; cancellation requires actual lease')
++        lease=cancellation.lease_proof(self)
++        self.finish_queries();self.current()
++        for row in self.body['actorResources']:dispose_directory(row['directory'],renderer_gone=row['outcome'].get('oldLifetimeGone'),inspection_only=True)
++        resources=deepcopy(self.body['actorResources'])
++        if any(row['phase'] not in ('retired','closed') or row['outcome'].get('oldLifetimeGone') is not True for row in resources):raise ValueError('cancellation requires terminal old actor authority')
++        proof=dict(outcome='non-settlement',acknowledged=True,reason=cause,original=original,
++            prepared={'operation':prepared['operation'],'resolvedFrom':deepcopy(prepared['resolvedFrom'])} if prepared else None,
++            lease=lease,observations=observations,helperClosures=deepcopy(self.body['helperClosureArchive']),resources=resources,refreshes=[])
++        results=deepcopy(prepared['results']) if prepared else []
++        return {**description,'members':deepcopy(description['scope']),'order':[],'focus':deepcopy(description['captured']),
++            'previousFocus':deepcopy(focus),'operation':'cancel','results':results,'priorResults':deepcopy(results),'cancellation':proof}
++    def refresh_cancellation(self,plan):
++        proof=cancellation.validate(plan,self.body['recoveryIntent'],self.body['serial'])
++        cancellation.original(self,plan)
++        lease=cancellation.lease_proof(self)
++        if any(lease[k]!=proof['lease'][k] for k in ('root','rootIdentity','lockIdentity')):raise ValueError('acknowledged cancellation runtime/root/lock changed')
++        for row in self.body['actorResources']:
++            if row['renderer'] is not None:
++                from recovery_resources import process_start
++                if process_start(row['renderer']['pid'])==row['renderer']['start']:raise ValueError('cancelled old renderer lifetime remains live')
++        for row in self.body['actorResources']:dispose_directory(row['directory'],renderer_gone=row['outcome'].get('oldLifetimeGone'),inspection_only=True)
++        observations=cancellation.observe(self,plan)
++        self.finish_queries();self.current()
++        if len(proof['refreshes'])>=32:raise ValueError('bounded cancellation restart observations exceeded')
++        proof['refreshes'].append(dict(lease=lease,observations=observations,helperClosures=deepcopy(self.body['helperClosureArchive'])))
++        self.persist()
+     def prepare_plans(self):
+-        plans=[];covered=set()
++        plans=[];covered=set();ledger=deepcopy(self.body['recoveryIntent'])
+         for description in sorted(self.descriptions(),key=lambda r:r['receipt'],reverse=True):
+             captured=identity(description['captured']);receipt=description['receipt']
+             if captured in covered:continue
++            cancelled=self.cancellation_candidate(description)
++            if cancelled is not None:
++                plans.append(cancelled);covered.update(identity(k) for k in description['scope']);continue
+             members,focus,context=self.observe(captured,description['single'])
+             scope={key(w) for w in members}
+             if description['observedFamily'] and scope!={identity(v) for v in description['scope']}:raise ValueError('previous complete recovery family changed; explicit cancellation policy required')
+@@ -242,16 +335,24 @@
+         recovery=self.body['recovery']
+         if recovery['state'] not in ('closing-resources','prepared','settling','completed'):raise ValueError('invalid durable recovery phase')
+         for row in self.body['actorResources']:
+-            if row['phase']=='closed':continue
++            if row['phase'] in ('retired','closed') and row['renderer'] is not None:
++                from recovery_resources import process_start
++                if process_start(row['renderer']['pid'])==row['renderer']['start']:raise ValueError('durable terminal actor still has old live renderer lifetime')
++            if row['phase'] in ('retired','closed'):continue
+             self.current()
+             outcome=self.retire(row['renderer'],expected_environment=self.environment) if row['renderer'] is not None else {'oldLifetimeGone':True,'signaled':False,'forced':False}
+-            outcome.update(self.dispose(row['directory'],renderer_gone=outcome.get('oldLifetimeGone')))
+-            row['phase']='closed';row['outcome']=outcome;self.persist()
++            if outcome.get('oldLifetimeGone') is not True:raise ValueError('old renderer authority is not proven terminal')
++            row['outcome']={**outcome,'directoryGone':False,'allocationPhase':row['phase']};row['phase']='retired';self.persist()
++        for row in self.body['actorResources']:
++            self.current();dispose_directory(row['directory'],renderer_gone=row['outcome'].get('oldLifetimeGone'),inspection_only=True)
+         if recovery['state']=='closing-resources':
+             recovery['plans']=self.prepare_plans();recovery['state']='prepared';self.persist()
++        for plan in recovery['plans']:
++            if plan['operation']=='cancel':self.refresh_cancellation(plan)
+         recovery['state']='settling';self.persist()
+         for plan in recovery['plans']:
+             receipt=positive(plan['receipt']);captured=identity(plan['captured']);expected={identity(v) for v in plan['members']}
++            if plan['operation']=='cancel':continue
+             if plan['operation'] not in ('minimize','restore'):raise ValueError('durable resolved recovery endpoint required')
+             intent=reconstruct(self.body['recoveryIntent'],plan['members'],self.body['serial'])
+             if intent.receipt!=receipt or any(self.owners.get(k)!=receipt for k in expected):raise ValueError('latest exact family recovery receipt changed')
+@@ -259,6 +360,9 @@
+             for encoded in plan['order']:
+                 target=identity(encoded)
+                 if target in completed:continue
++                cancelled=self.cancellation_candidate({**plan,'scope':plan['members'],'observedFamily':True},plan)
++                if cancelled is not None:
++                    plan.clear();plan.update(cancelled);self.persist();break
+                 members,focus,context=self.observe(captured,plan['single'])
+                 if {key(w) for w in members}!=expected:raise ValueError('prepared recovery family changed before guarded endpoint')
+                 if plan['operation']=='restore' and list(focus)!=plan['focus']:raise ValueError('prepared exact recovery focus changed')
+@@ -267,10 +371,23 @@
+                 self.query_desktop().commit(plan['operation'],window,False)
+                 plan['results'].append({'identity':list(target),'operation':plan['operation'],'receipt':receipt,'guardedCoreReturned':True})
+                 self.persist()
++            if plan['operation']=='cancel':continue
++            cancelled=self.cancellation_candidate({**plan,'scope':plan['members'],'observedFamily':True},plan)
++            if cancelled is not None:
++                plan.clear();plan.update(cancelled);self.persist();continue
+             members,_,_=self.observe(captured,plan['single'])
+             if any((w.get('workspace',{}).get('name')=='special:win-minimized')!=(plan['operation']=='minimize') for w in members):raise ValueError('actual complete native recovery endpoint not observed')
+             plan['endpointObserved']=True;self.persist()
+-        if self.keeper:self.keeper.stop()
++        self.finish_queries()
++        if any(plan['operation']=='cancel' for plan in recovery['plans']):
++            for plan in recovery['plans']:
++                if plan['operation']=='cancel':self.refresh_cancellation(plan)
++        for row in self.body['actorResources']:
++            if row['phase']=='closed':continue
++            self.current()
++            outcome=deepcopy(row['outcome']);outcome.update(self.dispose(row['directory'],renderer_gone=outcome.get('oldLifetimeGone')))
++            row['phase']='closed';row['outcome']=outcome;self.persist()
++        recovery['helperClosures']=deepcopy(self.body.get('helperClosureArchive',[]))
+         recovery['state']='completed'
+         self.body['recoveryHistory']=(self.body.get('recoveryHistory',[])+[deepcopy(recovery)])[-32:]
+         self.body.update(pending=[],scenes=[],liveActors=[],retiringActors=[],receipts=[],recoveryIntent={'anchors':[],'events':[],'receipts':[]})

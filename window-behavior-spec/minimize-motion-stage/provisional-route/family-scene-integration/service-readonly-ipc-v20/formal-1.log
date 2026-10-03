@@ -1,0 +1,21 @@
+
+  readonly_ipc_test
+    ok actualClosedPublishedDataMayReturnTest passed 1 test(s)
+    ok unknownRequestCannotConnectTest passed 1 test(s)
+    ok failedRegistrationCannotSendTest passed 1 test(s)
+    ok wrongKernelPeerCannotBorrowDataTest passed 1 test(s)
+    ok partialReplyCannotReturnTest passed 1 test(s)
+    ok oversizedReplyCannotReturnTest passed 1 test(s)
+    ok undecodedReplyCannotReturnTest passed 1 test(s)
+    ok timeoutCannotResetForAnotherChunkTest passed 1 test(s)
+    ok actualDescriptorClosureRequiredTest passed 1 test(s)
+    ok completionPublicationRequiredTest passed 1 test(s)
+    ok everyReplacementBeforeConfirmRefusesTest passed 1 test(s)
+    ok everyReplacementAfterConfirmInvalidatesTest passed 1 test(s)
+    ok oldConnectionCannotBeReusedTest passed 1 test(s)
+    ok anotherConnectionInvalidatesPartialResultTest passed 1 test(s)
+    ok staleSourceCannotRegisterTest passed 1 test(s)
+    ok completeEOFCannotReplaceDurabilityTest passed 1 test(s)
+    ok crashNeverPromotesReadOnlyResultTest passed 1 test(s)
+
+  17 passing (3853ms)

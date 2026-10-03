@@ -1,0 +1,25 @@
+test_effect_syntax_cannot_be_registered_as_readonly_helper (test_actor_ledger.ActorLedgerKernelTests.test_effect_syntax_cannot_be_registered_as_readonly_helper) ... FAIL
+test_declared_target_argv_cannot_replace_actual_gate_argv (test_actor_ledger.ActorLedgerKernelTests.test_declared_target_argv_cannot_replace_actual_gate_argv) ... FAIL
+
+======================================================================
+FAIL: test_effect_syntax_cannot_be_registered_as_readonly_helper (test_actor_ledger.ActorLedgerKernelTests.test_effect_syntax_cannot_be_registered_as_readonly_helper)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-cancellation-v16/runtime/test_actor_ledger.py", line 249, in test_effect_syntax_cannot_be_registered_as_readonly_helper
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_declared_target_argv_cannot_replace_actual_gate_argv (test_actor_ledger.ActorLedgerKernelTests.test_declared_target_argv_cannot_replace_actual_gate_argv)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-cancellation-v16/runtime/test_actor_ledger.py", line 259, in test_declared_target_argv_cannot_replace_actual_gate_argv
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.386s
+
+FAILED (failures=2)

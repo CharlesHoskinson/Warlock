@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_spellcheck" xml:lang="sk">
+  <info>
+    <link type="guide" xref="preferences#application"/>
+    <title type="sort">4. Kontrola pravopisu</title>
+    <title type="link">Kontrola pravopisu</title>
+    <desc>Konfigurácia podpory kontroly pravopisu v <app>Orca</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Predvoľby kontroly pravopisu</title>
+  <p><app>Orca</app> sa snaží poskytnúť konzistentný používateľský zážitok pri interakcii s kontrolami pravopisu v aplikáciách. Pre aplikácie, kde bola poskytnutá táto rozšírená podpora, nájdete niekoľko možností, ktoré môžete upraviť, aby ste dosiahli úroveň podrobnosti, ktorá vám najviac vyhovuje.</p>
+  <note style="tip">
+    <title>Môžete mať stručné aj podrobné informácie o kontrole pravopisu</title>
+    <p>Ak zvyčajne chcete veľmi málo podrobností pri používaní kontroly pravopisu, ale príležitostne potrebujete podrobné informácie o danej chybe, môžete tieto možnosti vypnúť. Keď potrebujete ďalšie podrobnosti, stačí použiť podrobný príkaz <app>Orca</app> <link xref="howto_whereami">Kde som</link>, aby <app>Orca</app> zobrazila aktuálnu chybu, akoby boli všetky tieto možnosti povolené.</p>
+  </note>
+  <section id="spell_error">
+    <title>Hláskovať chybu</title>
+    <p>Ak je toto políčko začiarknuté, <app>Orca</app> po prečítaní slova s preklepom ho vyhláskuje.</p>
+    <p>Predvolená hodnota: začiarknuté</p>
+  </section>
+  <section id="spell_suggestion">
+    <title>Hláskovať návrh</title>
+    <p>Ak je toto políčko začiarknuté, <app>Orca</app> po prečítaní navrhovanej opravy ju vyhláskuje.</p>
+    <p>Predvolená hodnota: začiarknuté</p>
+  </section>
+  <section id="error_context">
+    <title>Zobraziť kontext chyby</title>
+    <p>Ak je toto políčko začiarknuté, <app>Orca</app> prečíta vetu alebo riadok z dokumentu, v ktorom sa chyba nachádza.</p>
+    <p>Predvolená hodnota: začiarknuté</p>
+  </section>
+</page>

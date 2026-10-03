@@ -1,0 +1,1330 @@
+00000000000f2890 V PHANDLE
+                 w _ITM_deregisterTMCloneTable
+                 w _ITM_registerTMCloneTable
+                 U _Unwind_Resume@GCC_3.0
+00000000000321c2 W void assertImpl<>(int, std::basic_string_view<char, std::char_traits<char> >, std::basic_format_string<char>)
+000000000004a590 T onNewButton(char const*, char const*)
+00000000000b7790 T luaPinEvents(lua_State*)
+000000000004b390 T newLuaButton(lua_State*)
+00000000000b9ef0 T exitPinBridge()
+00000000000bc5b0 T initPinBridge()
+00000000000c6a70 T luaPinCapture(lua_State*)
+00000000000c5920 T luaPinRequest(lua_State*)
+000000000007c2a0 T exitDragBridge()
+000000000007dd30 T initDragBridge()
+00000000000be290 T luaPinBarState(lua_State*)
+00000000000be1b0 T luaPinIdentity(lua_State*)
+0000000000094290 T luaWindowAtlas(lua_State*)
+00000000000b76e0 T reloadPinBridge()
+00000000000b0470 T atlasCaptionClip(Hyprutils::Math::CBox const&)
+00000000000b0020 T exitAtlasAdapter()
+00000000000852c0 T exitFamilyBridge()
+00000000000b0170 T initAtlasAdapter()
+0000000000085510 T initFamilyBridge()
+00000000000c7820 T luaPinStackState(lua_State*)
+00000000000b8890 T pinFeedbackAlpha(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&)
+000000000007ed20 T startCaptionDrag(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&, Hyprutils::Math::Vector2D const&)
+000000000007bd20 T luaFileDragActive(lua_State*)
+0000000000089770 T luaWindowFamilies(lua_State*)
+0000000000081990 T luaWindowLifetime(lua_State*)
+00000000000ba710 T repairPinStacking()
+00000000000c5390 T toggleCapturedPin(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+00000000000ac110 T makeCanonicalAtlas(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, Hyprutils::Memory::CSharedPointer<Monitor::CMonitor>, Hyprutils::Math::Vector2D const&, Hyprutils::Math::Vector2D const&)
+00000000000b0350 T endAtlasCoordinates()
+00000000000c5630 T luaPinCapturedWindow(lua_State*)
+00000000000b01c0 T beginAtlasCoordinates(Hyprutils::Math::Vector2D const&, Hyprutils::Memory::CSharedPointer<Monitor::CMonitor>)
+00000000000b7720 T luaPinFeedbackEnabled(lua_State*)
+000000000007b980 T luaDragBridgeAvailable(lua_State*)
+00000000000942b0 T luaWholeWindowSnapshot(lua_State*)
+000000000008d8d0 T modalGeometricWindowAt(Hyprutils::Math::Vector2D const&, unsigned short, Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>)
+0000000000081170 T luaRetireGestureCurrent(lua_State*)
+00000000000b0460 T validateAtlasCoordinates()
+0000000000085e80 T luaModalFocusBridgeAvailable(lua_State*)
+000000000007c980 T preserveCapturedGestureFocus(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&, Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&, Desktop::eFocusReason)
+                 U truthy(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+00000000000f32a0 V HYPRATOMS[abi:cxx11]
+00000000000f3280 V guard variable for g_pXWayland
+00000000000f2768 V guard variable for g_pCompositor
+00000000000f2758 V guard variable for g_pGlobalState
+00000000000f2750 V guard variable for g_pSeatManager
+00000000000f2d78 V guard variable for g_layoutManager
+00000000000f2790 V guard variable for g_pHyprRenderer
+00000000000f2748 V guard variable for g_pInputManager
+00000000000f2780 V guard variable for g_pKeybindManager
+00000000000f2788 V guard variable for g_pXWaylandManager
+00000000000f2d88 V guard variable for g_pEventLoopManager
+00000000000f2760 V guard variable for g_pFunctionHookSystem
+00000000000f2778 V guard variable for g_pSessionLockManager
+00000000000f2770 V guard variable for g_pDecorationPositioner
+00000000000f3278 V guard variable for HYPRATOMS[abi:cxx11]
+00000000000f27b0 V guard variable for NProtocols::compositor
+00000000000f2d80 V guard variable for NProtocols::layerShell
+00000000000f30d0 V guard variable for NProtocols::inputCapture
+00000000000f3028 V guard variable for NProtocols::data
+00000000000f27b8 V guard variable for NProtocols::sync
+00000000000f30e0 V guard variable for NProtocols::xdgShell
+00000000000f30d8 V guard variable for NProtocols::xdgDialog
+00000000000f27d8 V guard variable for NColorManagement::SCRGB_IMAGE_DESCRIPTION
+00000000000f27d0 V guard variable for NColorManagement::BT2100_IMAGE_DESCRIPTION
+00000000000f27c8 V guard variable for NColorManagement::LINEAR_IMAGE_DESCRIPTION
+00000000000f27c0 V guard variable for NColorManagement::LINEAR_NN_IMAGE_DESCRIPTION
+00000000000f27e0 V guard variable for NColorManagement::DEFAULT_HDR_IMAGE_DESCRIPTION
+00000000000f27e8 V guard variable for NColorManagement::DEFAULT_SRGB_IMAGE_DESCRIPTION
+00000000000f27f0 V guard variable for NColorManagement::DEFAULT_GAMMA22_IMAGE_DESCRIPTION
+00000000000f2850 V guard variable for Log::logger
+00000000000f2800 V guard variable for Colors::LIGHT_BLUE
+00000000000f2830 V guard variable for Colors::RED
+00000000000f2838 V guard variable for Colors::BLUE
+00000000000f2808 V guard variable for Colors::LIME
+00000000000f27f8 V guard variable for Colors::BLACK
+00000000000f2840 V guard variable for Colors::GREEN
+00000000000f2848 V guard variable for Colors::WHITE
+00000000000f2828 V guard variable for Colors::ORANGE
+00000000000f2810 V guard variable for Colors::PURPLE
+00000000000f2820 V guard variable for Colors::YELLOW
+00000000000f2818 V guard variable for Colors::MAGENTA
+00000000000f2798 V guard variable for Config::CFontWeightConfigValueData::WEIGHTS[abi:cxx11]
+00000000000f27a8 V guard variable for Render::g_pShaderLoader
+00000000000f27a0 V guard variable for Render::GL::g_pHyprOpenGL
+00000000000f2898 V guard variable for __hyprland_api_get_client_hash::ver[abi:cxx11]
+00000000000f3338 V guard variable for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, false, false>::operator()(char) const::__nul
+00000000000f3328 V guard variable for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, false, true>::operator()(char) const::__nul
+00000000000f3318 V guard variable for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, true, false>::operator()(char) const::__nul
+00000000000f3308 V guard variable for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, true, true>::operator()(char) const::__nul
+                 U CHyprColor::CHyprColor(float, float, float, float)
+                 U CHyprColor::CHyprColor(unsigned long)
+                 U CHyprColor::CHyprColor()
+                 U CWorkspace::isVisible()
+                 U Fullscreen::controller()
+                 U Fullscreen::CFullscreenController::isFullscreen(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, std::optional<Fullscreen::eFullscreenMode>, std::optional<bool>)
+                 U Fullscreen::CFullscreenController::hasFullscreen(Hyprutils::Memory::CSharedPointer<CWorkspace>, std::optional<bool>)
+                 U Fullscreen::CFullscreenController::getFullscreenModes(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>)
+                 U Fullscreen::CFullscreenController::getFullscreenWindow(Hyprutils::Memory::CSharedPointer<CWorkspace>, std::optional<bool>)
+00000000000f2990 V NProtocols::compositor
+00000000000f2da0 V NProtocols::layerShell
+00000000000f30f0 V NProtocols::inputCapture
+00000000000f3030 V NProtocols::data
+00000000000f29a0 V NProtocols::sync
+00000000000f3110 V NProtocols::xdgShell
+00000000000f3100 V NProtocols::xdgDialog
+00000000000cd100 W PinLifetime<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow> >::fresh(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&)
+00000000000cd2d0 W PinLifetime<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow> >::~PinLifetime()
+00000000000cd2d0 W PinLifetime<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow> >::~PinLifetime()
+00000000000cd640 W PinStacking::contextSame(PinStacking::Snapshot const&, PinStacking::Snapshot const&)
+00000000000cb3e0 W PinStacking::Plan::~Plan()
+00000000000cb3e0 W PinStacking::Plan::~Plan()
+00000000000cab50 W PinStacking::Report::~Report()
+00000000000cab50 W PinStacking::Report::~Report()
+00000000000ceb40 W PinStacking::makePlan(PinStacking::Snapshot const&)
+00000000000cc3e0 W PinStacking::satisfied(PinStacking::Snapshot const&, PinStacking::Plan const&)
+0000000000053d60 W SHyprButton::~SHyprButton()
+0000000000053d60 W SHyprButton::~SHyprButton()
+00000000000658d0 W CConfigValue<bool>::~CConfigValue()
+00000000000658d0 W CConfigValue<bool>::~CConfigValue()
+000000000008e7d0 W CConfigValue<long>::~CConfigValue()
+000000000008e7d0 W CConfigValue<long>::~CConfigValue()
+                 U IPassElement::opaqueRegion()
+                 U IPassElement::undiscardable()
+                 U IPassElement::disableSimplification()
+                 U IPassElement::discard()
+0000000000053e50 W SGlobalState::{unnamed type#1}::~SGlobalState()
+0000000000053e50 W SGlobalState::{unnamed type#1}::~SGlobalState()
+                 U CFunctionHook::hook()
+                 U CFunctionHook::unhook()
+                 U CInputManager::getClickMode()
+                 U CInputManager::isConstrained()
+                 U CInputManager::hasHeldButtons()
+                 U CInputManager::simulateMouseMovement()
+                 U CInputManager::getMouseCoordsInternal()
+0000000000079fd0 T CBarPassElement::boundingBox()
+000000000007a5d0 T CBarPassElement::needsLiveBlur()
+0000000000079fc0 T CBarPassElement::needsPrecomputeBlur()
+000000000007a3e0 T CBarPassElement::draw()
+000000000007a850 W CBarPassElement::type()
+000000000007a840 W CBarPassElement::passName()
+000000000007a820 T CBarPassElement::CBarPassElement(CBarPassElement::SBarData const&)
+000000000007a820 T CBarPassElement::CBarPassElement(CBarPassElement::SBarData const&)
+00000000000656a0 W CBarPassElement::~CBarPassElement()
+000000000006aec0 W CBarPassElement::~CBarPassElement()
+000000000006aec0 W CBarPassElement::~CBarPassElement()
+                 U CEventLoopTimer::updateTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000000000l> > >)
+                 U CEventLoopTimer::cancel()
+                 U CEventLoopTimer::CEventLoopTimer(std::optional<std::chrono::duration<long, std::ratio<1l, 1000000000l> > >, std::function<void (Hyprutils::Memory::CSharedPointer<CEventLoopTimer>, void*)>, void*)
+                 U CKeybindManager::changeMouseBindMode(eMouseBindMode)
+00000000000b3680 W CTexPassElement::SRenderData::~SRenderData()
+00000000000b3680 W CTexPassElement::SRenderData::~SRenderData()
+                 U CConfigValueBase::bindInternal(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+                 U CConfigValueBase::CConfigValueBase()
+                 U CConfigValueBase::~CConfigValueBase()
+                 U CXWaylandSurface::wantsFocus()
+                 U NColorManagement::getPrimaries(NColorManagement::ePrimaries)
+                 U NColorManagement::CImageDescription::from(NColorManagement::SImageDescription const&)
+0000000000052a10 W NColorManagement::SImageDescription::SICCData::~SICCData()
+0000000000052a10 W NColorManagement::SImageDescription::SICCData::~SICCData()
+00000000000f29e0 V NColorManagement::SCRGB_IMAGE_DESCRIPTION
+00000000000f29d0 V NColorManagement::BT2100_IMAGE_DESCRIPTION
+00000000000f29c0 V NColorManagement::LINEAR_IMAGE_DESCRIPTION
+00000000000f29b0 V NColorManagement::LINEAR_NN_IMAGE_DESCRIPTION
+00000000000f29f0 V NColorManagement::DEFAULT_HDR_IMAGE_DESCRIPTION
+00000000000f2a00 V NColorManagement::DEFAULT_SRGB_IMAGE_DESCRIPTION
+00000000000f2a10 V NColorManagement::DEFAULT_GAMMA22_IMAGE_DESCRIPTION
+                 U CEventLoopManager::doLaterLock(std::function<void ()> const&)
+                 U CEventLoopManager::removeTimer(Hyprutils::Memory::CSharedPointer<CEventLoopTimer>)
+                 U CEventLoopManager::addTimer(Hyprutils::Memory::CSharedPointer<CEventLoopTimer>)
+000000000006a850 W SAnimationContext::~SAnimationContext()
+000000000006a850 W SAnimationContext::~SAnimationContext()
+00000000000b38a0 W CBorderPassElement::SBorderData::~SBorderData()
+00000000000b38a0 W CBorderPassElement::SBorderData::~SBorderData()
+                 U CWLSurfaceResource::at(Hyprutils::Math::Vector2D const&, bool)
+                 U CSessionLockManager::isSessionLocked()
+00000000000b3470 W CSurfacePassElement::SRenderData::~SRenderData()
+00000000000b3470 W CSurfacePassElement::SRenderData::~SRenderData()
+                 U CDecorationPositioner::repositionDeco(IHyprWindowDecoration*)
+                 U CDecorationPositioner::getEdgeDefinedPoint(unsigned int, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>)
+                 U CInputCaptureProtocol::isCaptured()
+                 U CWLDataDeviceProtocol::dndActive()
+                 U IHyprWindowDecoration::onInputOnDeco(eInputType, Hyprutils::Math::Vector2D const&, std::any)
+                 U IHyprWindowDecoration::IHyprWindowDecoration(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>)
+00000000000f2ce0 V Log::logger
+                 U Log::CLogger::log(Hyprutils::CLI::eLogLevel, std::basic_string_view<char, std::char_traits<char> > const&)
+0000000000079cf0 W void Log::CLogger::log<unsigned long>(Hyprutils::CLI::eLogLevel, std::basic_format_string<char, std::type_identity<unsigned long>::type>, unsigned long&&)
+                 U Log::CLogger::CLogger()
+                 U Time::millis(std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long, std::ratio<1l, 1000000000l> > > const&)
+                 U Time::steadyNow()
+                 U Event::bus()
+                 U Event::CEventBus::CCustomEvent::emit(std::vector<std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> >, std::allocator<std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> > > > const&)
+                 U Event::CEventBus::CCustomEvent::CCustomEvent(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<Event::CEventBus::CCustomEvent::eType, std::allocator<Event::CEventBus::CCustomEvent::eType> >)
+                 U Event::CEventBus::CCustomEvent::~CCustomEvent()
+                 U Event::CEventBus::addPluginEvent[abi:cxx11](Hyprutils::Memory::CSharedPointer<Event::CEventBus::CCustomEvent>)
+                 U Event::CEventBus::removePluginEvent(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+                 U State::monitorState()
+000000000008eb40 W State::CMonitorQuery::~CMonitorQuery()
+000000000008eb40 W State::CMonitorQuery::~CMonitorQuery()
+                 U State::workspaceState()
+00000000000f2a60 V Colors::LIGHT_BLUE
+00000000000f2be0 V Colors::RED
+00000000000f2c20 V Colors::BLUE
+00000000000f2aa0 V Colors::LIME
+00000000000f2a20 V Colors::BLACK
+00000000000f2c60 V Colors::GREEN
+00000000000f2ca0 V Colors::WHITE
+00000000000f2ba0 V Colors::ORANGE
+00000000000f2ae0 V Colors::PURPLE
+00000000000f2b60 V Colors::YELLOW
+00000000000f2b20 V Colors::MAGENTA
+                 U Config::ParserUtils::parseColor[abi:cxx11](std::basic_string_view<char, std::char_traits<char> >)
+                 U Config::Supplementary::executor()
+                 U Config::Supplementary::CExecutor::spawn(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+                 U Config::animationTree()
+00000000000b32f0 W Config::CGradientValueData::getDataType()
+00000000000b3430 W Config::CGradientValueData::~CGradientValueData()
+00000000000b33c0 W Config::CGradientValueData::~CGradientValueData()
+00000000000b33c0 W Config::CGradientValueData::~CGradientValueData()
+                 U Config::CAnimationTreeController::getAnimationPropertyConfig(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+00000000000f2940 V Config::CFontWeightConfigValueData::WEIGHTS[abi:cxx11]
+                 U Config::Lua::CConfigManager::fromLuaState(lua_State*)
+                 U Config::Lua::CLuaConfigColor::parse(lua_State*)
+                 U Config::Lua::CLuaConfigColor::parsed()
+                 U Config::Lua::CLuaConfigColor::CLuaConfigColor(long)
+                 U Config::Lua::CLuaEventHandler::addCustomEvent[abi:cxx11](Hyprutils::Memory::CSharedPointer<Event::CEventBus::CCustomEvent>)
+                 U Config::Lua::CLuaEventHandler::removeCustomEvent(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+                 U Config::Lua::Objects::CLuaWindow::push(lua_State*, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>)
+                 U Config::Lua::Bindings::Internal::configError(lua_State*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Config::eConfigErrorLevel, Config::eConfigErrorCode, int)
+                 U Config::mgr()
+                 U Config::Values::CBoolValue::CBoolValue(char const*, char const*, bool, Config::Values::SBoolValueOptions&&)
+0000000000051360 W Config::Values::CBoolValue::~CBoolValue()
+0000000000055140 W Config::Values::CBoolValue::~CBoolValue()
+0000000000055140 W Config::Values::CBoolValue::~CBoolValue()
+                 U Config::Values::CColorValue::CColorValue(char const*, char const*, long, Config::Values::SColorValueOptions&&)
+0000000000051300 W Config::Values::CColorValue::~CColorValue()
+0000000000055020 W Config::Values::CColorValue::~CColorValue()
+0000000000055020 W Config::Values::CColorValue::~CColorValue()
+                 U Config::Values::CStringValue::CStringValue(char const*, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Config::Values::SStringValueOptions&&)
+0000000000051890 W Config::Values::CStringValue::~CStringValue()
+0000000000055160 W Config::Values::CStringValue::~CStringValue()
+0000000000055160 W Config::Values::CStringValue::~CStringValue()
+                 U Config::Values::CFontWeightValue::CFontWeightValue(char const*, char const*, long, Config::Values::SFontWeightValueOptions&&)
+0000000000051330 W Config::Values::CFontWeightValue::~CFontWeightValue()
+0000000000055120 W Config::Values::CFontWeightValue::~CFontWeightValue()
+0000000000055120 W Config::Values::CFontWeightValue::~CFontWeightValue()
+                 U Config::Values::CIntValue::CIntValue(char const*, char const*, long, Config::Values::SIntValueOptions&&)
+00000000000516a0 W Config::Values::CIntValue::~CIntValue()
+0000000000055040 W Config::Values::CIntValue::~CIntValue()
+0000000000055040 W Config::Values::CIntValue::~CIntValue()
+                 U Config::Actions::floatWindow(Config::Actions::eTogglableAction, std::optional<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> >)
+                 U Config::Actions::pinWindow(Config::Actions::eTogglableAction, std::optional<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> >)
+                 U Layout::CLayoutManager::endDragTarget()
+                 U Layout::CLayoutManager::setTargetGeom(Hyprutils::Math::CBox const&, Hyprutils::Memory::CSharedPointer<Layout::ITarget>)
+                 U Layout::CLayoutManager::dragController()
+                 U Layout::CLayoutManager::beginDragTarget(Hyprutils::Memory::CSharedPointer<Layout::ITarget>, eMouseBindMode, std::optional<Layout::eRectCorner>, bool)
+                 U Layout::ITarget::setPositionGlobal(Hyprutils::Math::CBox const&, unsigned char)
+                 U Render::CRenderPass::removeAllOfType(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+                 U Render::CRenderPass::add(Hyprutils::Memory::CUniquePointer<IPassElement>&&)
+00000000000ad7d0 W Render::CRenderPass::~CRenderPass()
+00000000000ad7d0 W Render::CRenderPass::~CRenderPass()
+00000000000adaa0 W Render::SRenderData::SRenderData(Render::SRenderData const&)
+00000000000adaa0 W Render::SRenderData::SRenderData(Render::SRenderData const&)
+00000000000ad540 W Render::SRenderData::~SRenderData()
+00000000000ad540 W Render::SRenderData::~SRenderData()
+                 U Render::IFramebuffer::setImageDescription(Hyprutils::Memory::CWeakPointer<NColorManagement::CImageDescription const>)
+                 U Render::IHyprRenderer::damageWindow(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, bool)
+                 U Render::IHyprRenderer::renderWindow(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, Hyprutils::Memory::CSharedPointer<Monitor::CMonitor>, std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long, std::ratio<1l, 1000000000l> > > const&, bool, Render::eRenderPassMode, bool, bool)
+                 U Render::IHyprRenderer::makeSnapshotFB(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>)
+                 U Render::IHyprRenderer::setProjectionType(Render::eRenderProjectionType)
+                 U Render::IHyprRenderer::beginFullFakeRender(Hyprutils::Memory::CSharedPointer<Monitor::CMonitor>, Hyprutils::Math::CRegion&, Hyprutils::Memory::CSharedPointer<Render::IFramebuffer>)
+                 U Render::IHyprRenderer::popMonitorTransformEnabled()
+                 U Render::IHyprRenderer::pushMonitorTransformEnabled(bool)
+                 U Render::IHyprRenderer::draw(CClearPassElement::SClearData const&, Hyprutils::Math::CRegion const&)
+                 U Render::IHyprRenderer::damageBox(Hyprutils::Math::CBox const&, bool)
+00000000000f2980 V Render::g_pShaderLoader
+00000000000f2970 V Render::GL::g_pHyprOpenGL
+                 U Render::GL::CGLFramebuffer::getFBID()
+                 U Render::GL::CHyprOpenGLImpl::renderRect(Hyprutils::Math::CBox const&, CHyprColor const&, Render::GL::CHyprOpenGLImpl::SRectRenderData)
+                 U Render::GL::CHyprOpenGLImpl::setViewport(int, int, int, int)
+                 U Render::GL::CHyprOpenGLImpl::setCapStatus(int, bool)
+                 U Render::GL::CHyprOpenGLImpl::renderTexture(Hyprutils::Memory::CSharedPointer<Render::ITexture>, Hyprutils::Math::CBox const&, Render::GL::CHyprOpenGLImpl::STextureRenderData)
+                 U Render::GL::CHyprOpenGLImpl::makeEGLCurrent()
+0000000000067e80 W Render::GL::CHyprOpenGLImpl::STextureRenderData::~STextureRenderData()
+0000000000067e80 W Render::GL::CHyprOpenGLImpl::STextureRenderData::~STextureRenderData()
+                 U Render::GL::CHyprOpenGLImpl::blend(bool)
+                 U Render::GL::CHyprOpenGLImpl::scissor(pixman_box32 const*, bool)
+                 U Render::GL::CHyprOpenGLImpl::scissor(Hyprutils::Math::CBox const&, bool)
+                 U Render::GL::CHyprOpenGLImpl::scissor(int, int, int, int, bool)
+                 U Render::GL::CHyprOpenGLImpl::useShader(Hyprutils::Memory::CWeakPointer<CShader>)
+000000000008a4e0 W Desktop::CViewQuery::~CViewQuery()
+000000000008a4e0 W Desktop::CViewQuery::~CViewQuery()
+                 U Desktop::focusState()
+                 U Desktop::CFocusState::fullWindowFocus(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, Desktop::eFocusReason, Hyprutils::Memory::CSharedPointer<CWLSurfaceResource>, bool)
+                 U Desktop::CFocusState::window()
+                 U Desktop::CFocusState::monitor()
+                 U Desktop::CFocusState::surface()
+                 U Desktop::windowState()
+                 U Desktop::CWindowState::raise(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>)
+                 U Desktop::CViewHitTester::CViewHitTester(Desktop::IViewStateTracker const&)
+                 U Desktop::globalWindowController()
+                 U Desktop::Pin::capabilityVersion()
+                 U Desktop::Pin::policyBuildIdentity()
+                 U Desktop::Pin::band()
+                 U Desktop::Pin::state()
+                 U Desktop::Pin::effective(Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>)
+                 U Desktop::Pin::effective(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>)
+                 U Desktop::Rule::windowEffects()
+00000000000519f0 W Desktop::Rule::IEffectContainer<Desktop::Rule::eWindowRuleEffect>::unregisterEffect(unsigned short)
+                 U Desktop::View::CWindow::hasPopupAt(Hyprutils::Math::Vector2D const&)
+                 U Desktop::View::CWindow::workspaceID()
+                 U Desktop::View::CWindow::layoutTarget()
+                 U Desktop::View::CWindow::priorityFocus()
+                 U Desktop::View::CWindow::roundingPower()
+                 U Desktop::View::CWindow::updateWindowDecos()
+                 U Desktop::View::CWindow::onSpecialWorkspace()
+                 U Desktop::View::CWindow::getWindowBoxUnified(unsigned long)
+                 U Desktop::View::CWindow::isX11OverrideRedirect()
+                 U Desktop::View::CWindow::getPID()
+                 U Desktop::View::CWindow::parent()
+                 U Desktop::View::CWindow::isModal()
+                 U Desktop::View::CWindow::rounding()
+                 U Desktop::History::windowTracker()
+                 U Desktop::History::CWindowHistoryTracker::fullHistory()
+                 U Desktop::viewState()
+                 U Monitor::CMonitor::activeWorkspaceID()
+                 U Monitor::CMonitor::activeSpecialWorkspaceID()
+                 U Monitor::CMonitor::workBufferImageDescription()
+00000000000cb5b0 W PinJson::PinJson(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+00000000000cbf20 W PinJson::PinJson(std::vector<PinJson, std::allocator<PinJson> > const&)
+00000000000cbe30 W PinJson::PinJson(std::initializer_list<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson> >)
+00000000000cb530 W PinJson::PinJson(bool)
+00000000000cb5b0 W PinJson::PinJson(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+00000000000cbf20 W PinJson::PinJson(std::vector<PinJson, std::allocator<PinJson> > const&)
+00000000000cbe30 W PinJson::PinJson(std::initializer_list<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson> >)
+00000000000cb530 W PinJson::PinJson(bool)
+000000000005f2f0 T CHyprBar::renderPass(Hyprutils::Memory::CSharedPointer<Monitor::CMonitor>, float const&)
+0000000000063b40 T CHyprBar::onMouseMove(Hyprutils::Math::Vector2D)
+00000000000652a0 T CHyprBar::onTouchDown(Event::SCallbackInfo&, ITouch::SDownEvent)
+0000000000061b30 T CHyprBar::onTouchMove(Event::SCallbackInfo&, ITouch::SMotionEvent)
+0000000000058340 T CHyprBar::updateRules()
+0000000000059c40 T CHyprBar::damageEntire()
+0000000000057150 T CHyprBar::inputIsValid()
+000000000005b050 T CHyprBar::updateWindow(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>)
+0000000000062b30 T CHyprBar::doButtonPress(long, long, long, Hyprutils::Math::Vector2D, bool)
+00000000000631f0 T CHyprBar::handleUpEvent(Event::SCallbackInfo&)
+0000000000059d40 T CHyprBar::hoveredButton()
+0000000000064cd0 T CHyprBar::onMouseButton(Event::SCallbackInfo&, IPointer::SButtonEvent)
+0000000000055fe0 T CHyprBar::getDisplayName[abi:cxx11]()
+0000000000063780 T CHyprBar::handleMovement()
+000000000005a890 T CHyprBar::pinButtonBoxes()
+0000000000058dd0 T CHyprBar::renderBarTitle(Hyprutils::Math::Vector2D const&, float)
+0000000000063c20 T CHyprBar::handleDownEvent(Event::SCallbackInfo&, std::optional<ITouch::SDownEvent>)
+000000000005b5a0 T CHyprBar::onConfigReloaded()
+0000000000057a30 T CHyprBar::renderBarButtons(Hyprutils::Math::CBox*, float, float)
+00000000000598c0 T CHyprBar::assignedBoxGlobal()
+0000000000055680 T CHyprBar::getDecorationType()
+0000000000055830 T CHyprBar::getDecorationFlags()
+0000000000055690 T CHyprBar::getDecorationLayer()
+00000000000556d0 T CHyprBar::getPositioningInfo()
+0000000000055890 T CHyprBar::onPositioningReply(SDecorationPositioningReply const&)
+0000000000059cb0 T CHyprBar::cursorRelativeToBar()
+000000000005b100 T CHyprBar::damageOnButtonHover()
+0000000000057f10 T CHyprBar::retireCaptionIntent()
+000000000005a0e0 T CHyprBar::updateMaximizeHover()
+000000000005b8c0 T CHyprBar::renderBarButtonsText(Hyprutils::Math::CBox*, float, float)
+0000000000057990 T CHyprBar::getVisibleButtonCount(long, long, Hyprutils::Math::Vector2D const&, float)
+0000000000058020 T CHyprBar::draw(Hyprutils::Memory::CSharedPointer<Monitor::CMonitor>, float const&)
+0000000000057f50 T CHyprBar::getOwner()
+0000000000063730 T CHyprBar::onTouchUp(Event::SCallbackInfo&, ITouch::SUpEvent)
+000000000005ce20 T CHyprBar::CHyprBar(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>)
+000000000005ce20 T CHyprBar::CHyprBar(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>)
+0000000000056e60 T CHyprBar::~CHyprBar()
+0000000000056560 T CHyprBar::~CHyprBar()
+0000000000056560 T CHyprBar::~CHyprBar()
+                 U Hyprlang::CParseResult::setError(char const*)
+000000000006a950 W void Animation::CHyprAnimationManager::createAnimation<CHyprColor>(CHyprColor const&, Hyprutils::Memory::CUniquePointer<Hyprutils::Animation::CGenericAnimatedVariable<CHyprColor, SAnimationContext> >&, Hyprutils::Memory::CSharedPointer<Hyprutils::Animation::SAnimationPropertyConfig>, eAVarDamagePolicy)
+                 U Animation::mgr()
+                 U CSeatGrab::accepts(Hyprutils::Memory::CSharedPointer<CWLSurfaceResource>)
+                 U Hyprutils::CLI::CLogger::~CLogger()
+                 U Hyprutils::Math::CBox::round()
+                 U Hyprutils::Math::CBox::scale(double)
+                 U Hyprutils::Math::CBox::expand(double const&)
+                 U Hyprutils::Math::CBox::transform(Hyprutils::Math::eTransform, double, double)
+                 U Hyprutils::Math::CBox::translate(Hyprutils::Math::Vector2D const&)
+                 U Hyprutils::Math::CRegion::translate(Hyprutils::Math::Vector2D const&)
+                 U Hyprutils::Math::CRegion::CRegion(Hyprutils::Math::CRegion&&)
+                 U Hyprutils::Math::CRegion::CRegion(Hyprutils::Math::CBox const&)
+                 U Hyprutils::Math::CRegion::CRegion(Hyprutils::Math::CRegion const&)
+                 U Hyprutils::Math::CRegion::CRegion()
+                 U Hyprutils::Math::CRegion::~CRegion()
+                 U Hyprutils::Utils::CScopeGuard::CScopeGuard(std::function<void ()> const&)
+                 U Hyprutils::Utils::CScopeGuard::~CScopeGuard()
+00000000000b3ca0 W Hyprutils::Memory::CWeakPointer<IPassElement>::decrementWeak()
+0000000000052670 W Hyprutils::Memory::CWeakPointer<NColorManagement::CImageDescription const>::~CWeakPointer()
+0000000000052670 W Hyprutils::Memory::CWeakPointer<NColorManagement::CImageDescription const>::~CWeakPointer()
+0000000000068940 W Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>::decrementWeak()
+00000000000820f0 W Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>::~CWeakPointer()
+00000000000820f0 W Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>::~CWeakPointer()
+0000000000068750 W Hyprutils::Memory::CWeakPointer<Hyprutils::Animation::CBaseAnimatedVariable>::decrementWeak()
+0000000000065a40 W Hyprutils::Memory::CSharedPointer<CEventLoopTimer>::_delete(void*)
+00000000000cad50 W Hyprutils::Memory::CSharedPointer<CEventLoopTimer>::~CSharedPointer()
+00000000000cad50 W Hyprutils::Memory::CSharedPointer<CEventLoopTimer>::~CSharedPointer()
+0000000000081d40 W Hyprutils::Memory::CSharedPointer<Event::CEventBus::CCustomEvent>::_delete(void*)
+0000000000081f00 W Hyprutils::Memory::CSharedPointer<Event::CEventBus::CCustomEvent>::~CSharedPointer()
+0000000000081f00 W Hyprutils::Memory::CSharedPointer<Event::CEventBus::CCustomEvent>::~CSharedPointer()
+0000000000051400 W Hyprutils::Memory::CSharedPointer<Config::Values::CBoolValue>::_delete(void*)
+0000000000081d80 W Hyprutils::Memory::CSharedPointer<Config::Values::CBoolValue>::~CSharedPointer()
+0000000000081d80 W Hyprutils::Memory::CSharedPointer<Config::Values::CBoolValue>::~CSharedPointer()
+00000000000514c0 W Hyprutils::Memory::CSharedPointer<Config::Values::CColorValue>::_delete(void*)
+0000000000051960 W Hyprutils::Memory::CSharedPointer<Config::Values::CStringValue>::_delete(void*)
+0000000000051460 W Hyprutils::Memory::CSharedPointer<Config::Values::CFontWeightValue>::_delete(void*)
+0000000000051790 W Hyprutils::Memory::CSharedPointer<Config::Values::CIntValue>::_delete(void*)
+0000000000051b90 W Hyprutils::Memory::CSharedPointer<Hyprutils::Signal::CSignalListener>::~CSharedPointer()
+0000000000051b90 W Hyprutils::Memory::CSharedPointer<Hyprutils::Signal::CSignalListener>::~CSharedPointer()
+0000000000052300 W Hyprutils::Memory::CUniquePointer<CCompositor>::~CUniquePointer()
+0000000000052300 W Hyprutils::Memory::CUniquePointer<CCompositor>::~CUniquePointer()
+00000000000523b0 W Hyprutils::Memory::CUniquePointer<CHookSystem>::~CUniquePointer()
+00000000000523b0 W Hyprutils::Memory::CUniquePointer<CHookSystem>::~CUniquePointer()
+0000000000052460 W Hyprutils::Memory::CUniquePointer<CSeatManager>::~CUniquePointer()
+0000000000052460 W Hyprutils::Memory::CUniquePointer<CSeatManager>::~CUniquePointer()
+00000000000525c0 W Hyprutils::Memory::CUniquePointer<SGlobalState>::~CUniquePointer()
+00000000000525c0 W Hyprutils::Memory::CUniquePointer<SGlobalState>::~CUniquePointer()
+0000000000052510 W Hyprutils::Memory::CUniquePointer<CInputManager>::~CUniquePointer()
+0000000000052510 W Hyprutils::Memory::CUniquePointer<CInputManager>::~CUniquePointer()
+00000000000520f0 W Hyprutils::Memory::CUniquePointer<CKeybindManager>::~CUniquePointer()
+00000000000520f0 W Hyprutils::Memory::CUniquePointer<CKeybindManager>::~CUniquePointer()
+0000000000065b70 W Hyprutils::Memory::CUniquePointer<CEventLoopManager>::~CUniquePointer()
+0000000000065b70 W Hyprutils::Memory::CUniquePointer<CEventLoopManager>::~CUniquePointer()
+000000000008a0f0 W Hyprutils::Memory::CUniquePointer<CXDGShellProtocol>::~CUniquePointer()
+000000000008a0f0 W Hyprutils::Memory::CUniquePointer<CXDGShellProtocol>::~CUniquePointer()
+000000000008a1a0 W Hyprutils::Memory::CUniquePointer<CXDGDialogProtocol>::~CUniquePointer()
+000000000008a1a0 W Hyprutils::Memory::CUniquePointer<CXDGDialogProtocol>::~CUniquePointer()
+0000000000051cd0 W Hyprutils::Memory::CUniquePointer<CDRMSyncobjProtocol>::~CUniquePointer()
+0000000000051cd0 W Hyprutils::Memory::CUniquePointer<CDRMSyncobjProtocol>::~CUniquePointer()
+0000000000065c20 W Hyprutils::Memory::CUniquePointer<CLayerShellProtocol>::~CUniquePointer()
+0000000000065c20 W Hyprutils::Memory::CUniquePointer<CLayerShellProtocol>::~CUniquePointer()
+00000000000521a0 W Hyprutils::Memory::CUniquePointer<CSessionLockManager>::~CUniquePointer()
+00000000000521a0 W Hyprutils::Memory::CUniquePointer<CSessionLockManager>::~CUniquePointer()
+0000000000052040 W Hyprutils::Memory::CUniquePointer<CHyprXWaylandManager>::~CUniquePointer()
+0000000000052040 W Hyprutils::Memory::CUniquePointer<CHyprXWaylandManager>::~CUniquePointer()
+0000000000052250 W Hyprutils::Memory::CUniquePointer<CDecorationPositioner>::~CUniquePointer()
+0000000000052250 W Hyprutils::Memory::CUniquePointer<CDecorationPositioner>::~CUniquePointer()
+000000000008a250 W Hyprutils::Memory::CUniquePointer<CInputCaptureProtocol>::~CUniquePointer()
+000000000008a250 W Hyprutils::Memory::CUniquePointer<CInputCaptureProtocol>::~CUniquePointer()
+0000000000051d80 W Hyprutils::Memory::CUniquePointer<CWLCompositorProtocol>::~CUniquePointer()
+0000000000051d80 W Hyprutils::Memory::CUniquePointer<CWLCompositorProtocol>::~CUniquePointer()
+0000000000081f90 W Hyprutils::Memory::CUniquePointer<CWLDataDeviceProtocol>::~CUniquePointer()
+0000000000081f90 W Hyprutils::Memory::CUniquePointer<CWLDataDeviceProtocol>::~CUniquePointer()
+0000000000082040 W Hyprutils::Memory::CUniquePointer<SEventLoopDoLaterLock>::~CUniquePointer()
+0000000000082040 W Hyprutils::Memory::CUniquePointer<SEventLoopDoLaterLock>::~CUniquePointer()
+000000000008e920 W Hyprutils::Memory::CUniquePointer<CXWayland>::~CUniquePointer()
+000000000008e920 W Hyprutils::Memory::CUniquePointer<CXWayland>::~CUniquePointer()
+0000000000051c20 W Hyprutils::Memory::CUniquePointer<Log::CLogger>::~CUniquePointer()
+0000000000051c20 W Hyprutils::Memory::CUniquePointer<Log::CLogger>::~CUniquePointer()
+0000000000065cd0 W Hyprutils::Memory::CUniquePointer<Layout::CLayoutManager>::~CUniquePointer()
+0000000000065cd0 W Hyprutils::Memory::CUniquePointer<Layout::CLayoutManager>::~CUniquePointer()
+0000000000051e30 W Hyprutils::Memory::CUniquePointer<Render::CShaderLoader>::~CUniquePointer()
+0000000000051e30 W Hyprutils::Memory::CUniquePointer<Render::CShaderLoader>::~CUniquePointer()
+0000000000051f90 W Hyprutils::Memory::CUniquePointer<Render::IHyprRenderer>::~CUniquePointer()
+0000000000051f90 W Hyprutils::Memory::CUniquePointer<Render::IHyprRenderer>::~CUniquePointer()
+0000000000051ee0 W Hyprutils::Memory::CUniquePointer<Render::GL::CHyprOpenGLImpl>::~CUniquePointer()
+0000000000051ee0 W Hyprutils::Memory::CUniquePointer<Render::GL::CHyprOpenGLImpl>::~CUniquePointer()
+0000000000068a40 W Hyprutils::Memory::CUniquePointer<Hyprutils::Animation::CGenericAnimatedVariable<CHyprColor, SAnimationContext> >::decrement()
+0000000000052920 W Hyprutils::Memory::Impl_::impl_base::_destroy()
+                 U Hyprutils::Signal::CSignalBase::registerListenerInternal(std::function<void (void*)>)
+0000000000054ce0 W Hyprutils::Signal::CSignalT<>::listen(std::function<void ()>)
+0000000000054a60 W Hyprutils::Signal::CSignalT<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> >::listen(std::function<void (Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&)>)
+                 U Hyprutils::String::CVarList::CVarList(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long, char, bool)
+                 U Hyprutils::Animation::CBaseAnimatedVariable::onAnimationEnd()
+                 U Hyprutils::Animation::CBaseAnimatedVariable::onAnimationBegin(bool, float)
+                 U Hyprutils::Animation::CBaseAnimatedVariable::setUpdateCallback(std::function<void (Hyprutils::Memory::CWeakPointer<Hyprutils::Animation::CBaseAnimatedVariable>)>)
+                 U Hyprutils::Animation::CBaseAnimatedVariable::disconnectFromActive()
+                 U Hyprutils::Animation::CBaseAnimatedVariable::create2(Hyprutils::Animation::CAnimationManager*, int, Hyprutils::Memory::CWeakPointer<Hyprutils::Animation::CBaseAnimatedVariable>)
+                 U Hyprutils::Animation::CBaseAnimatedVariable::onUpdate()
+0000000000066930 W Hyprutils::Animation::CBaseAnimatedVariable::~CBaseAnimatedVariable()
+00000000000667f0 W Hyprutils::Animation::CBaseAnimatedVariable::~CBaseAnimatedVariable()
+00000000000667f0 W Hyprutils::Animation::CBaseAnimatedVariable::~CBaseAnimatedVariable()
+00000000000658e0 W Hyprutils::Animation::CGenericAnimatedVariable<CHyprColor, SAnimationContext>::warp(bool, bool)
+00000000000665b0 W Hyprutils::Animation::CGenericAnimatedVariable<CHyprColor, SAnimationContext>::~CGenericAnimatedVariable()
+0000000000066380 W Hyprutils::Animation::CGenericAnimatedVariable<CHyprColor, SAnimationContext>::~CGenericAnimatedVariable()
+0000000000066380 W Hyprutils::Animation::CGenericAnimatedVariable<CHyprColor, SAnimationContext>::~CGenericAnimatedVariable()
+                 U IKeyboard::getModifiers()
+00000000000cadc0 W PinAction::nativePath(PinAction::Snapshot const&)
+00000000000cb1c0 W PinAction::completedState(PinAction::Snapshot const&, PinAction::Snapshot const&, bool)
+00000000000cb020 W PinAction::ownedUnpinPath(PinAction::Snapshot const&)
+00000000000cb0a0 W PinAction::intentContextSame(PinAction::Snapshot const&, PinAction::Snapshot const&)
+00000000000caef0 W PinAction::nativeContextSame(PinAction::Snapshot const&, PinAction::Snapshot const&)
+00000000000cb6a0 W PinAction::Report::~Report()
+00000000000cb6a0 W PinAction::Report::~Report()
+00000000000cb640 W PinAction::Result::~Result()
+00000000000cb640 W PinAction::Result::~Result()
+                 U CHyprColor::getAsHex() const
+000000000008f150 W CConfigValue<long>::operator*() const
+00000000000b3d00 W Config::CGradientValueData::toString[abi:cxx11]() const
+                 U Config::Values::CBoolValue::value() const
+                 U Config::Values::CColorValue::value() const
+                 U Config::Values::CStringValue::value[abi:cxx11]() const
+                 U Config::Values::CFontWeightValue::value() const
+                 U Config::Values::CIntValue::value() const
+                 U Layout::Supplementary::CDragStateController::mode() const
+                 U Layout::Supplementary::CDragStateController::target() const
+                 U Layout::CSpace::workArea(bool) const
+                 U CShader::program() const
+                 U Desktop::CWindowState::windows() const
+                 U Desktop::CViewHitTester::layerSurfaceAt(Hyprutils::Math::Vector2D const&, std::vector<Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, std::allocator<Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface> > >*, Hyprutils::Math::Vector2D*, Hyprutils::Memory::CSharedPointer<Desktop::View::CLayerSurface>*, bool) const
+                 U Desktop::CViewHitTester::windowSurfaceAt(Hyprutils::Math::Vector2D const&, Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, Hyprutils::Math::Vector2D&) const
+                 U Desktop::CViewHitTester::windowAt(Hyprutils::Math::Vector2D const&, unsigned short, Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>) const
+                 U Desktop::CGlobalWindowController::moveWindowToWorkspace(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, Hyprutils::Memory::CSharedPointer<CWorkspace>) const
+                 U Desktop::Pin::CNativePinState::ownedUnpinReady(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>) const
+                 U Desktop::Pin::CNativePinState::admits(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>) const
+                 U Desktop::Pin::CNativePinState::snapshot(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>) const
+                 U Desktop::Pin::CNativePinState::maxOrigin(Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>) const
+                 U Desktop::View::CWLSurface::getSurfaceBoxGlobal() const
+                 U Desktop::View::CWLSurface::resource() const
+                 U Desktop::View::CWindow::acceptsInput() const
+                 U Desktop::View::CWindow::getRealBorderSize() const
+                 U Desktop::View::CWindow::isAllowedOverFullscreen() const
+                 U Desktop::View::CWindow::getFullWindowBoundingBox() const
+                 U Desktop::View::CWindow::isHidden() const
+                 U Desktop::View::CWindow::layoutBox() const
+000000000008ec60 W Desktop::Types::COverridableVar<bool, true>::valueOrDefault() const
+000000000008ec60 W _ZNK7Desktop5Types15COverridableVarIbLb1EE14valueOrDefaultEvQoontT0_9is_same_vIT_bE
+                 U Hyprutils::Math::CBox::containsPoint(Hyprutils::Math::Vector2D const&) const
+                 U Hyprutils::Math::CBox::pos() const
+                 U Hyprutils::Math::CBox::copy() const
+                 U Hyprutils::Math::CBox::size() const
+                 U Hyprutils::Math::CBox::empty() const
+                 U Hyprutils::Math::CRegion::empty() const
+                 U Hyprutils::Math::Vector2D::floor() const
+000000000008a710 W Hyprutils::Memory::CWeakPointer<CWLSurfaceResource>::lock() const
+0000000000082260 W Hyprutils::Memory::CWeakPointer<Layout::ITarget>::lock() const
+0000000000068470 W Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>::lock() const
+                 U Hyprutils::Animation::CBaseAnimatedVariable::isSpringCurve() const
+                 U std::filesystem::__cxx11::path::parent_path() const@GLIBCXX_3.4.26
+                 U std::filesystem::__cxx11::path::_List::_Impl_deleter::operator()(std::filesystem::__cxx11::path::_List::_Impl*) const@GLIBCXX_3.4.26
+                 U std::filesystem::__cxx11::path::_List::end() const@GLIBCXX_3.4.26
+                 U std::filesystem::__cxx11::path::compare(std::filesystem::__cxx11::path const&) const@GLIBCXX_3.4.26
+00000000000955c0 W std::filesystem::__cxx11::path::filename() const
+                 U std::runtime_error::what() const@GLIBCXX_3.4
+                 U std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::_M_handle_unrecognized() const@GLIBCXX_3.4.36
+0000000000065590 W std::bad_optional_access::what() const
+00000000000cdc20 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::arg(unsigned long) const
+                 U std::ctype<char>::_M_widen_init() const@GLIBCXX_3.4.11
+00000000000942d0 W std::ctype<char>::do_widen(char) const
+00000000000942e0 W std::ctype<char>::do_narrow(char, char) const
+                 U std::locale::id::_M_id() const@GLIBCXX_3.4
+                 U std::locale::name[abi:cxx11]() const@GLIBCXX_3.4.21
+                 U std::locale::operator==(std::locale const&) const@GLIBCXX_3.4
+0000000000098910 W std::__cxx11::regex_traits<char>::_RegexMask std::__cxx11::regex_traits<char>::lookup_classname<char const*>(char const*, char const*, bool) const
+0000000000099b90 W std::__cxx11::regex_traits<char>::translate_nocase(char) const
+0000000000099be0 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::__cxx11::regex_traits<char>::transform_primary<char const*>(char const*, char const*) const
+000000000009e730 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::__cxx11::regex_traits<char>::transform_primary<char*>(char*, char*) const
+00000000000cd360 W std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::find(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const
+                 U std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const@GLIBCXX_3.4.18
+                 U std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const@GLIBCXX_3.4.18
+000000000009b2f0 W std::__detail::_RegexTranslatorBase<std::__cxx11::regex_traits<char>, false, true>::_M_transform(char) const
+000000000009bda0 W std::__detail::_RegexTranslatorBase<std::__cxx11::regex_traits<char>, true, true>::_M_transform(char) const
+000000000009e5e0 W std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char> >::_M_word_boundary() const
+00000000000a6b10 W std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char> >::_M_is_line_terminator(char) const
+0000000000065660 W std::__format::_Padding_sink<std::__format::_Sink_iter<char>, char>::_M_discarding() const
+000000000006f520 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_fp<char>::format<double, std::__format::_Sink_iter<char> >(double, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+000000000006e2f0 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_fp<char>::format<long double, std::__format::_Sink_iter<char> >(long double, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+00000000000706e0 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_fp<char>::format<float, std::__format::_Sink_iter<char> >(float, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+000000000006cee0 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_fp<char>::format<__float128, std::__format::_Sink_iter<char> >(__float128, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+000000000006caf0 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_int<char>::_M_format_int<std::__format::_Sink_iter<char> >(std::basic_string_view<char, std::char_traits<char> >, unsigned long, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+0000000000073890 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_int<char>::_M_format_character<std::__format::_Sink_iter<char> >(char, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+00000000000775e0 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_int<char>::format<std::__format::_Sink_iter<char> >(bool, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+0000000000073a20 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_int<char>::format<unsigned char, std::__format::_Sink_iter<char> >(unsigned char, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+0000000000073f00 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_int<char>::format<int, std::__format::_Sink_iter<char> >(int, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+00000000000745c0 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_int<char>::format<unsigned int, std::__format::_Sink_iter<char> >(unsigned int, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+0000000000075c00 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_int<char>::format<unsigned long, std::__format::_Sink_iter<char> >(unsigned long, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+00000000000763c0 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_int<char>::format<__int128, std::__format::_Sink_iter<char> >(__int128, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+0000000000076d00 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_int<char>::format<unsigned __int128, std::__format::_Sink_iter<char> >(unsigned __int128, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+0000000000074c00 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_int<char>::format<long long, std::__format::_Sink_iter<char> >(long long, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+0000000000075440 W std::basic_format_context<std::__format::_Sink_iter<char>, char>::iterator std::__format::__formatter_int<char>::format<unsigned long long, std::__format::_Sink_iter<char> >(unsigned long long, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+0000000000077bc0 W std::__format::_Sink_iter<char> std::__format::__formatter_str<char>::_M_format_escaped<std::__format::_Sink_iter<char> >(std::basic_string_view<char, std::char_traits<char> >, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+00000000000d01b0 W std::__format::_Sink_iter<char> std::__format::__formatter_str<char>::format<std::__format::_Sink_iter<char> >(std::basic_string_view<char, std::char_traits<char> >, std::basic_format_context<std::__format::_Sink_iter<char>, char>&) const
+0000000000065650 W std::__format::_Sink<char>::_M_discarding() const
+0000000000071870 W std::__unicode::__v16_0_0::_Grapheme_cluster_view<std::basic_string_view<char, std::char_traits<char> > >::_Iterator::_M_is_break(std::__unicode::__v16_0_0::_Gcb_property, std::__unicode::__v16_0_0::_Gcb_property, std::__unicode::_Utf_iterator<char, char32_t, char const*, char const*, std::__unicode::_Repl>) const
+                 U State::CMonitorQuery::run() &&
+                 U State::CMonitorQuery::vec(Hyprutils::Math::Vector2D) &&
+                 U State::CWorkspaceQuery::id(long const&) &&
+                 U State::CWorkspaceQuery::run() &&
+                 U Desktop::CViewQuery::type(Desktop::View::eViewType) &&
+                 U Desktop::CViewQuery::surface(Hyprutils::Memory::CSharedPointer<CWLSurfaceResource>) &&
+                 U Desktop::CViewQuery::runWindow() &&
+                 U std::ostream::operator<<(int)@GLIBCXX_3.4
+000000000008ed80 W std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, unsigned int>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, unsigned int> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, unsigned int>, true>*, unsigned long)
+000000000008ece0 W std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, unsigned int>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, unsigned int> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::~_Hashtable()
+000000000008ece0 W std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, unsigned int>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, unsigned int> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::~_Hashtable()
+000000000008b0c0 W std::pair<std::__detail::_Node_iterator<CWorkspace*, true, false>, bool> std::_Hashtable<CWorkspace*, CWorkspace*, std::allocator<CWorkspace*>, std::__detail::_Identity, std::equal_to<CWorkspace*>, std::hash<CWorkspace*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::_M_emplace_uniq<CWorkspace*>(CWorkspace*&&)
+000000000008ae80 W std::_Hashtable<CWorkspace*, CWorkspace*, std::allocator<CWorkspace*>, std::__detail::_Identity, std::equal_to<CWorkspace*>, std::hash<CWorkspace*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<CWorkspace*, false>*, unsigned long)
+000000000008ad00 W std::pair<std::__detail::_Node_iterator<Desktop::View::CWindow*, true, false>, bool> std::_Hashtable<Desktop::View::CWindow*, Desktop::View::CWindow*, std::allocator<Desktop::View::CWindow*>, std::__detail::_Identity, std::equal_to<Desktop::View::CWindow*>, std::hash<Desktop::View::CWindow*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::_M_emplace_uniq<Desktop::View::CWindow*>(Desktop::View::CWindow*&&)
+000000000008aac0 W std::_Hashtable<Desktop::View::CWindow*, Desktop::View::CWindow*, std::allocator<Desktop::View::CWindow*>, std::__detail::_Identity, std::equal_to<Desktop::View::CWindow*>, std::hash<Desktop::View::CWindow*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<Desktop::View::CWindow*, false>*, unsigned long)
+000000000008a590 W std::_Hashtable<Desktop::View::CWindow*, Desktop::View::CWindow*, std::allocator<Desktop::View::CWindow*>, std::__detail::_Identity, std::equal_to<Desktop::View::CWindow*>, std::hash<Desktop::View::CWindow*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::~_Hashtable()
+000000000008a590 W std::_Hashtable<Desktop::View::CWindow*, Desktop::View::CWindow*, std::allocator<Desktop::View::CWindow*>, std::__detail::_Identity, std::equal_to<Desktop::View::CWindow*>, std::hash<Desktop::View::CWindow*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::~_Hashtable()
+000000000008b240 W std::_Hashtable<unsigned int, unsigned int, std::allocator<unsigned int>, std::__detail::_Identity, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<unsigned int, false>*, unsigned long)
+000000000008a920 W std::_Hashtable<unsigned int, unsigned int, std::allocator<unsigned int>, std::__detail::_Identity, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::erase(unsigned int const&)
+                 U std::filesystem::weakly_canonical(std::filesystem::__cxx11::path const&)@GLIBCXX_3.4.26
+                 U std::filesystem::__cxx11::path::_M_split_cmpts()@GLIBCXX_3.4.26
+                 U std::filesystem::__cxx11::path::_List::_List(std::filesystem::__cxx11::path::_List const&)@GLIBCXX_3.4.26
+                 U std::filesystem::__cxx11::path::_List::_List()@GLIBCXX_3.4.26
+                 U std::filesystem::__cxx11::path::operator/=(std::filesystem::__cxx11::path const&)@GLIBCXX_3.4.26
+00000000000955a0 W std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr()
+00000000000955a0 W std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr()
+0000000000099630 W std::_Deque_base<long, std::allocator<long> >::_M_initialize_map(unsigned long)
+0000000000098780 W std::_Deque_base<long, std::allocator<long> >::~_Deque_base()
+0000000000098780 W std::_Deque_base<long, std::allocator<long> >::~_Deque_base()
+                 U std::regex_error::~regex_error()@GLIBCXX_3.4.15
+00000000000b3970 W std::_Vector_base<CHyprColor, std::allocator<CHyprColor> >::~_Vector_base()
+00000000000b3970 W std::_Vector_base<CHyprColor, std::allocator<CHyprColor> >::~_Vector_base()
+00000000000cc870 W std::_Vector_base<PinStacking::Node, std::allocator<PinStacking::Node> >::~_Vector_base()
+00000000000cc870 W std::_Vector_base<PinStacking::Node, std::allocator<PinStacking::Node> >::~_Vector_base()
+0000000000082520 W std::_Vector_base<Event::CEventBus::CCustomEvent::eType, std::allocator<Event::CEventBus::CCustomEvent::eType> >::~_Vector_base()
+0000000000082520 W std::_Vector_base<Event::CEventBus::CCustomEvent::eType, std::allocator<Event::CEventBus::CCustomEvent::eType> >::~_Vector_base()
+00000000000685d0 W std::_Vector_base<Hyprutils::Math::CBox, std::allocator<Hyprutils::Math::CBox> >::~_Vector_base()
+00000000000685d0 W std::_Vector_base<Hyprutils::Math::CBox, std::allocator<Hyprutils::Math::CBox> >::~_Vector_base()
+0000000000096130 W std::_Vector_base<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >::~_Vector_base()
+0000000000096130 W std::_Vector_base<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >::~_Vector_base()
+0000000000097540 W std::_Vector_base<std::__detail::_ExecutorFrame<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, true>, std::allocator<std::__detail::_ExecutorFrame<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, true> > >::~_Vector_base()
+0000000000097540 W std::_Vector_base<std::__detail::_ExecutorFrame<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, true>, std::allocator<std::__detail::_ExecutorFrame<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, true> > >::~_Vector_base()
+0000000000097cc0 W std::_Vector_base<std::pair<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, int>, std::allocator<std::pair<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, int> > >::~_Vector_base()
+0000000000097cc0 W std::_Vector_base<std::pair<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, int>, std::allocator<std::pair<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, int> > >::~_Vector_base()
+0000000000098810 W std::_Vector_base<std::pair<char, char>, std::allocator<std::pair<char, char> > >::~_Vector_base()
+0000000000098810 W std::_Vector_base<std::pair<char, char>, std::allocator<std::pair<char, char> > >::~_Vector_base()
+00000000000987e0 W std::_Vector_base<char, std::allocator<char> >::~_Vector_base()
+00000000000987e0 W std::_Vector_base<char, std::allocator<char> >::~_Vector_base()
+0000000000053e20 W std::_Vector_base<unsigned char, std::allocator<unsigned char> >::~_Vector_base()
+0000000000053e20 W std::_Vector_base<unsigned char, std::allocator<unsigned char> >::~_Vector_base()
+0000000000096040 W std::_Vector_base<unsigned int, std::allocator<unsigned int> >::~_Vector_base()
+0000000000096040 W std::_Vector_base<unsigned int, std::allocator<unsigned int> >::~_Vector_base()
+00000000000cc3b0 W std::_Vector_base<unsigned long, std::allocator<unsigned long> >::~_Vector_base()
+00000000000cc3b0 W std::_Vector_base<unsigned long, std::allocator<unsigned long> >::~_Vector_base()
+                 U std::__basic_file<char>::~__basic_file()@GLIBCXX_3.4
+                 U std::__cow_string::__cow_string(char const*)@GLIBCXX_3.4.35
+                 U std::__cow_string::__cow_string(char const*, unsigned long)@GLIBCXX_3.4.35
+                 U std::__cow_string::~__cow_string()@GLIBCXX_3.4.35
+00000000000658a0 W std::format_error::~format_error()
+0000000000065870 W std::format_error::~format_error()
+0000000000065870 W std::format_error::~format_error()
+                 U std::out_of_range::~out_of_range()@GLIBCXX_3.4
+                 U std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode)@GLIBCXX_3.4
+                 U std::basic_filebuf<char, std::char_traits<char> >::close()@GLIBCXX_3.4
+                 U std::basic_filebuf<char, std::char_traits<char> >::basic_filebuf()@GLIBCXX_3.4
+                 U std::basic_filebuf<char, std::char_traits<char> >::~basic_filebuf()@GLIBCXX_3.4
+                 U std::runtime_error::~runtime_error()@GLIBCXX_3.4
+000000000008e880 W std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, unsigned int> > >::~unordered_map()
+000000000008e880 W std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, unsigned int> > >::~unordered_map()
+000000000008a090 W std::unordered_set<unsigned int, std::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<unsigned int> >::~unordered_set()
+000000000008a090 W std::unordered_set<unsigned int, std::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<unsigned int> >::~unordered_set()
+00000000000526d0 W std::_Function_base::~_Function_base()
+00000000000526d0 W std::_Function_base::~_Function_base()
+00000000000cdeb0 W std::__shared_count<(__gnu_cxx::_Lock_policy)2>::__shared_count<json_object*, PinJson::hold(json_object*)::{lambda(json_object*)#1}, std::allocator<void>, void>(json_object*, PinJson::hold(json_object*)::{lambda(json_object*)#1}, std::allocator<void>)
+00000000000cdeb0 W std::__shared_count<(__gnu_cxx::_Lock_policy)2>::__shared_count<json_object*, PinJson::hold(json_object*)::{lambda(json_object*)#1}, std::allocator<void>, void>(json_object*, PinJson::hold(json_object*)::{lambda(json_object*)#1}, std::allocator<void>)
+                 U std::basic_ifstream<char, std::char_traits<char> >::~basic_ifstream()@GLIBCXX_3.4
+00000000000942f0 W std::_Sp_counted_ptr<decltype(nullptr), (__gnu_cxx::_Lock_policy)2>::_M_dispose()
+0000000000094900 W std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_destroy()
+00000000000953e0 W std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release()
+0000000000095290 W std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release_last_use_cold()
+00000000000698b0 W decltype(auto) std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::_M_visit<std::__format::__do_vformat_to<char, 1u>(std::__format::_Sink_iter<char>, std::basic_string_view<char, std::char_traits<char> >, std::basic_format_context<std::__format::_Sink_iter<char>, char>&)::{lambda(auto:1&)#1}>(std::__format::__do_vformat_to<char, 1u>(std::__format::_Sink_iter<char>, std::basic_string_view<char, std::char_traits<char> >, std::basic_format_context<std::__format::_Sink_iter<char>, char>&)::{lambda(auto:1&)#1}&&)
+00000000000782b0 W decltype(auto) std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::_M_visit<std::__format::_Formatting_scanner<std::__format::_Sink_iter<char>, char>::_M_format_arg(unsigned long)::{lambda(auto:1&)#1}>(std::__format::_Formatting_scanner<std::__format::_Sink_iter<char>, char>::_M_format_arg(unsigned long)::{lambda(auto:1&)#1}&&)
+0000000000094300 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+0000000000094480 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, false, false> >::_M_invoke(std::_Any_data const&, char&&)
+0000000000094780 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, false, true> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+00000000000943f0 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, false, true> >::_M_invoke(std::_Any_data const&, char&&)
+0000000000094750 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, true, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+0000000000095010 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, true, false> >::_M_invoke(std::_Any_data const&, char&&)
+0000000000094720 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, true, true> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+0000000000095100 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, true, true> >::_M_invoke(std::_Any_data const&, char&&)
+0000000000094350 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+0000000000094330 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, false, false> >::_M_invoke(std::_Any_data const&, char&&)
+00000000000946f0 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, false, true> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+0000000000094380 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, false, true> >::_M_invoke(std::_Any_data const&, char&&)
+00000000000946c0 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, true, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+0000000000094e90 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, true, false> >::_M_invoke(std::_Any_data const&, char&&)
+0000000000094690 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, true, true> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+0000000000094f50 W std::_Function_handler<bool (char), std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, true, true> >::_M_invoke(std::_Any_data const&, char&&)
+0000000000094660 W std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+00000000000943a0 W std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&)
+0000000000094630 W std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, true> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+00000000000943b0 W std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, true> >::_M_invoke(std::_Any_data const&, char&&)
+0000000000094600 W std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, true, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+0000000000094d50 W std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, true, false> >::_M_invoke(std::_Any_data const&, char&&)
+00000000000945d0 W std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, true, true> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+0000000000094da0 W std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, true, true> >::_M_invoke(std::_Any_data const&, char&&)
+00000000000a9b80 W std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+000000000009a230 W std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&)
+00000000000aa4f0 W std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, true> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+000000000009b7e0 W std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, true> >::_M_invoke(std::_Any_data const&, char&&)
+00000000000a9f40 W std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+000000000009a6a0 W std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, false> >::_M_invoke(std::_Any_data const&, char&&)
+00000000000aa890 W std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, true> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+000000000009c2f0 W std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, true> >::_M_invoke(std::_Any_data const&, char&&)
+00000000000ca520 W std::_Function_handler<unsigned long (unsigned long), PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+00000000000ca9c0 W std::_Function_handler<unsigned long (unsigned long), PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long)#1}>::_M_invoke(std::_Any_data const&, unsigned long&&)
+0000000000052810 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<>::mkHandler(std::function<void ()>)::{lambda(void*)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+00000000000512e0 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<>::mkHandler(std::function<void ()>)::{lambda(void*)#1}>::_M_invoke(std::_Any_data const&, void*&&)
+0000000000066080 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<ITouch::SDownEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (ITouch::SDownEvent const&, Event::SCallbackInfo&)>)::{lambda(void*)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+00000000000659f0 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<ITouch::SDownEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (ITouch::SDownEvent const&, Event::SCallbackInfo&)>)::{lambda(void*)#1}>::_M_invoke(std::_Any_data const&, void*&&)
+0000000000065e80 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<ITouch::SMotionEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (ITouch::SMotionEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+0000000000065980 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<ITouch::SMotionEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (ITouch::SMotionEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}>::_M_invoke(std::_Any_data const&, void*&&)
+0000000000065f80 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<ITouch::SUpEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (ITouch::SUpEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+0000000000065790 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<ITouch::SUpEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (ITouch::SUpEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}>::_M_invoke(std::_Any_data const&, void*&&)
+0000000000066280 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<IPointer::SButtonEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (IPointer::SButtonEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+00000000000656b0 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<IPointer::SButtonEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (IPointer::SButtonEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}>::_M_invoke(std::_Any_data const&, void*&&)
+0000000000066180 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<IKeyboard::SKeyEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (IKeyboard::SKeyEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+0000000000065720 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<IKeyboard::SKeyEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (IKeyboard::SKeyEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}>::_M_invoke(std::_Any_data const&, void*&&)
+0000000000065d80 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<Hyprutils::Math::Vector2D, Event::SCallbackInfo&>::mkHandler(std::function<void (Hyprutils::Math::Vector2D, Event::SCallbackInfo&)>)::{lambda(void*)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+0000000000065800 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<Hyprutils::Math::Vector2D, Event::SCallbackInfo&>::mkHandler(std::function<void (Hyprutils::Math::Vector2D, Event::SCallbackInfo&)>)::{lambda(void*)#1}>::_M_invoke(std::_Any_data const&, void*&&)
+000000000008a300 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<Hyprutils::Memory::CSharedPointer<CWorkspace> >::mkHandler(std::function<void (Hyprutils::Memory::CSharedPointer<CWorkspace> const&)>)::{lambda(void*)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+000000000008a070 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<Hyprutils::Memory::CSharedPointer<CWorkspace> >::mkHandler(std::function<void (Hyprutils::Memory::CSharedPointer<CWorkspace> const&)>)::{lambda(void*)#1}>::_M_invoke(std::_Any_data const&, void*&&)
+0000000000052700 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> >::mkHandler(std::function<void (Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&)>)::{lambda(void*)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+00000000000512c0 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> >::mkHandler(std::function<void (Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&)>)::{lambda(void*)#1}>::_M_invoke(std::_Any_data const&, void*&&)
+00000000000cac50 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, Hyprutils::Memory::CSharedPointer<CWorkspace> >::mkHandler(std::function<void (Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&, Hyprutils::Memory::CSharedPointer<CWorkspace> const&)>)::{lambda(void*)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+00000000000ca300 W std::_Function_handler<void (void*), Hyprutils::Signal::CSignalT<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, Hyprutils::Memory::CSharedPointer<CWorkspace> >::mkHandler(std::function<void (Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&, Hyprutils::Memory::CSharedPointer<CWorkspace> const&)>)::{lambda(void*)#1}>::_M_invoke(std::_Any_data const&, void*&&)
+00000000000ca490 W std::_Function_handler<void (unsigned long), PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long)#2}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+00000000000cfda0 W std::_Function_handler<void (unsigned long), PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long)#2}>::_M_invoke(std::_Any_data const&, unsigned long&&)
+00000000000ca2c0 W std::_Sp_counted_deleter<json_object*, PinJson::hold(json_object*)::{lambda(json_object*)#1}, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()
+00000000000ca2d0 W std::_Sp_counted_deleter<json_object*, PinJson::hold(json_object*)::{lambda(json_object*)#1}, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()
+00000000000ca6d0 W std::_Sp_counted_deleter<json_object*, PinJson::hold(json_object*)::{lambda(json_object*)#1}, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)
+00000000000ca290 W std::_Sp_counted_deleter<json_object*, PinJson::hold(json_object*)::{lambda(json_object*)#1}, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_deleter()
+00000000000ca270 W std::_Sp_counted_deleter<json_object*, PinJson::hold(json_object*)::{lambda(json_object*)#1}, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_deleter()
+00000000000ca270 W std::_Sp_counted_deleter<json_object*, PinJson::hold(json_object*)::{lambda(json_object*)#1}, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_deleter()
+000000000006aed0 W std::_UninitDestroyGuard<CaptionCache::Raster<CaptionCache::IconKey, Hyprutils::Memory::CSharedPointer<Render::ITexture> >*, void>::~_UninitDestroyGuard()
+000000000006aed0 W std::_UninitDestroyGuard<CaptionCache::Raster<CaptionCache::IconKey, Hyprutils::Memory::CSharedPointer<Render::ITexture> >*, void>::~_UninitDestroyGuard()
+00000000000ada40 W std::_UninitDestroyGuard<std::pair<Render::SRenderModifData::eRenderModifType, std::any>*, void>::~_UninitDestroyGuard()
+00000000000ada40 W std::_UninitDestroyGuard<std::pair<Render::SRenderModifData::eRenderModifType, std::any>*, void>::~_UninitDestroyGuard()
+0000000000065690 W std::bad_optional_access::~bad_optional_access()
+00000000000655a0 W std::bad_optional_access::~bad_optional_access()
+00000000000655a0 W std::bad_optional_access::~bad_optional_access()
+                 U std::bad_array_new_length::~bad_array_new_length()@CXXABI_1.3.8
+00000000000689a0 W std::_Optional_payload_base<CaptionCache::TitleKey>::_M_reset()
+0000000000054f60 W std::_Optional_payload_base<std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, long, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, long> > > >::_M_reset()
+00000000000943e0 W std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()
+0000000000094df0 W std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()
+0000000000094930 W std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)
+00000000000943d0 W std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()
+00000000000943c0 W std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()
+00000000000943c0 W std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()
+00000000000ca2b0 W std::_Sp_counted_ptr_inplace<std::mutex, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()
+00000000000ca280 W std::_Sp_counted_ptr_inplace<std::mutex, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()
+00000000000ca2a0 W std::_Sp_counted_ptr_inplace<std::mutex, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()
+00000000000d01a0 W std::_Sp_counted_ptr_inplace<std::mutex, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()
+00000000000d01a0 W std::_Sp_counted_ptr_inplace<std::mutex, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()
+00000000000b3300 W std::any::_Manager_external<Hyprutils::Math::Vector2D>::_S_manage(std::any::_Op, std::any const*, std::any::_Arg*)
+0000000000081e10 W std::any::_Manager_external<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> >::_S_manage(std::any::_Op, std::any const*, std::any::_Arg*)
+000000000007a860 W std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > >::map(std::initializer_list<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > const&)
+000000000007a860 W std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > >::map(std::initializer_list<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > const&)
+00000000000518f0 W std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > >::~map()
+00000000000518f0 W std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > >::~map()
+00000000000ca790 W std::set<Desktop::View::CWindow*, std::less<Desktop::View::CWindow*>, std::allocator<Desktop::View::CWindow*> >::~set()
+00000000000ca790 W std::set<Desktop::View::CWindow*, std::less<Desktop::View::CWindow*>, std::allocator<Desktop::View::CWindow*> >::~set()
+00000000000cc760 W std::set<unsigned long, std::less<unsigned long>, std::allocator<unsigned long> >::insert(unsigned long const&)
+00000000000cb8d0 W std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson>::pair<char const (&) [15], bool&>(char const (&) [15], bool&)
+00000000000cb9e0 W std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson>::pair<char const (&) [23], bool&>(char const (&) [23], bool&)
+00000000000cb7c0 W std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson>::pair<char const (&) [3], bool>(char const (&) [3], bool&&)
+00000000000cc8a0 W std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson>::pair<char const (&) [6], char const*>(char const (&) [6], char const*&&)
+00000000000cbaf0 W std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson>::pair<char const (&) [7], char const (&) [27]>(char const (&) [7], char const (&) [27])
+00000000000cb8d0 W std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson>::pair<char const (&) [15], bool&>(char const (&) [15], bool&)
+00000000000cb9e0 W std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson>::pair<char const (&) [23], bool&>(char const (&) [23], bool&)
+00000000000cb7c0 W std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson>::pair<char const (&) [3], bool>(char const (&) [3], bool&&)
+00000000000cc8a0 W std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson>::pair<char const (&) [6], char const*>(char const (&) [6], char const*&&)
+00000000000cbaf0 W std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson>::pair<char const (&) [7], char const (&) [27]>(char const (&) [7], char const (&) [27])
+00000000000cc1b0 W std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson>::~pair()
+00000000000cc1b0 W std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, PinJson>::~pair()
+                 U std::ctype<char>::id@GLIBCXX_3.4
+0000000000099a60 W void std::deque<std::__detail::_StateSeq<std::__cxx11::regex_traits<char> >, std::allocator<std::__detail::_StateSeq<std::__cxx11::regex_traits<char> > > >::_M_push_back_aux<std::__detail::_StateSeq<std::__cxx11::regex_traits<char> > const&>(std::__detail::_StateSeq<std::__cxx11::regex_traits<char> > const&)
+0000000000099970 W void std::deque<std::__detail::_StateSeq<std::__cxx11::regex_traits<char> >, std::allocator<std::__detail::_StateSeq<std::__cxx11::regex_traits<char> > > >::_M_push_back_aux<std::__detail::_StateSeq<std::__cxx11::regex_traits<char> > >(std::__detail::_StateSeq<std::__cxx11::regex_traits<char> >&&)
+0000000000099770 W std::deque<std::__detail::_StateSeq<std::__cxx11::regex_traits<char> >, std::allocator<std::__detail::_StateSeq<std::__cxx11::regex_traits<char> > > >::_M_reallocate_map(unsigned long, bool)
+0000000000099b50 W std::deque<std::__detail::_StateSeq<std::__cxx11::regex_traits<char> >, std::allocator<std::__detail::_StateSeq<std::__cxx11::regex_traits<char> > > >::push_back(std::__detail::_StateSeq<std::__cxx11::regex_traits<char> > const&)
+00000000000a3010 W void std::deque<long, std::allocator<long> >::_M_push_back_aux<long const&>(long const&)
+00000000000a2e10 W std::deque<long, std::allocator<long> >::_M_reallocate_map(unsigned long, bool)
+                 U std::locale::classic()@GLIBCXX_3.4
+                 U std::locale::locale(std::locale const&)@GLIBCXX_3.4
+                 U std::locale::locale()@GLIBCXX_3.4
+                 U std::locale::~locale()@GLIBCXX_3.4
+                 U std::locale::operator=(std::locale const&)@GLIBCXX_3.4
+00000000000cbff0 W std::vector<PinJson, std::allocator<PinJson> >::~vector()
+00000000000cbff0 W std::vector<PinJson, std::allocator<PinJson> >::~vector()
+0000000000069010 W std::vector<CaptionCache::Raster<CaptionCache::IconKey, Hyprutils::Memory::CSharedPointer<Render::ITexture> >, std::allocator<CaptionCache::Raster<CaptionCache::IconKey, Hyprutils::Memory::CSharedPointer<Render::ITexture> > > >::_M_default_append(unsigned long)
+0000000000068320 W std::vector<CaptionCache::Raster<CaptionCache::IconKey, Hyprutils::Memory::CSharedPointer<Render::ITexture> >, std::allocator<CaptionCache::Raster<CaptionCache::IconKey, Hyprutils::Memory::CSharedPointer<Render::ITexture> > > >::~vector()
+0000000000068320 W std::vector<CaptionCache::Raster<CaptionCache::IconKey, Hyprutils::Memory::CSharedPointer<Render::ITexture> >, std::allocator<CaptionCache::Raster<CaptionCache::IconKey, Hyprutils::Memory::CSharedPointer<Render::ITexture> > > >::~vector()
+000000000008a600 W std::vector<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, std::allocator<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> > >::~vector()
+000000000008a600 W std::vector<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, std::allocator<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> > >::~vector()
+000000000009eb00 W std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+00000000000a9a00 W std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+00000000000a9a00 W std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+0000000000095840 W std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()
+0000000000095840 W std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()
+00000000000513d0 W std::vector<char const*, std::allocator<char const*> >::~vector()
+00000000000513d0 W std::vector<char const*, std::allocator<char const*> >::~vector()
+00000000000aa310 W std::vector<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::vector(std::vector<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&)
+00000000000aa310 W std::vector<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::vector(std::vector<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&)
+00000000000986f0 W std::vector<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::~vector()
+00000000000986f0 W std::vector<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::~vector()
+0000000000097570 W std::vector<std::pair<long, std::vector<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > > >, std::allocator<std::pair<long, std::vector<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > > > > >::~vector()
+0000000000097570 W std::vector<std::pair<long, std::vector<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > > >, std::allocator<std::pair<long, std::vector<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > > > > >::~vector()
+00000000000827f0 W void std::vector<std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> >, std::allocator<std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> > > >::_M_realloc_append<double const&>(double const&)
+0000000000082b90 W void std::vector<std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> >, std::allocator<std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> > > >::_M_realloc_append<bool&>(bool&)
+0000000000082330 W std::vector<std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> >, std::allocator<std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> > > >::~vector()
+0000000000082330 W std::vector<std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> >, std::allocator<std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> > > >::~vector()
+00000000000a5870 W std::__cxx11::basic_regex<char, std::__cxx11::regex_traits<char> >::_M_compile(char const*, char const*, std::regex_constants::syntax_option_type)
+00000000000958b0 W std::__cxx11::basic_regex<char, std::__cxx11::regex_traits<char> >::~basic_regex()
+00000000000958b0 W std::__cxx11::basic_regex<char, std::__cxx11::regex_traits<char> >::~basic_regex()
+0000000000053160 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose()
+0000000000068540 W void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<true>(char const*, unsigned long)
+                 U std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace_cold(char*, unsigned long, char const*, unsigned long, unsigned long)@GLIBCXX_3.4.31
+00000000000cb460 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(char const*)
+000000000008a410 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(char const*, unsigned long)
+0000000000068600 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long)
+00000000000687b0 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+0000000000052b00 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long)
+00000000000681b0 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::push_back(char)
+0000000000052970 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
+0000000000052970 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
+0000000000051670 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()
+0000000000051670 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()
+0000000000082150 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+                 U std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::_M_sync(char*, unsigned long, unsigned long)@GLIBCXX_3.4.21
+                 U std::__cxx11::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_istringstream()@GLIBCXX_3.4.21
+                 U std::__cxx11::collate<char>::id@GLIBCXX_3.4.21
+                 U std::__cxx11::numpunct<char>::id@GLIBCXX_3.4.21
+00000000000ccc40 W std::__cxx11::to_string(unsigned long)
+00000000000cdab0 W std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_get_insert_unique_pos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+00000000000cdf30 W std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+00000000000551c0 W std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > >::_M_get_insert_unique_pos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+0000000000055330 W std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+00000000000cd4b0 W std::_Rb_tree_iterator<std::pair<unsigned long const, PinStacking::Node> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, PinStacking::Node>, std::_Select1st<std::pair<unsigned long const, PinStacking::Node> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, PinStacking::Node> > >::_M_emplace_hint_unique<unsigned long const&, PinStacking::Node const&>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, PinStacking::Node> >, unsigned long const&, PinStacking::Node const&)
+00000000000cd930 W std::_Rb_tree_iterator<std::pair<unsigned long const, Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> > > std::_Rb_tree<unsigned long, std::pair<unsigned long const, Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> >, std::_Select1st<std::pair<unsigned long const, Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> > >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> > > >::_M_emplace_hint_unique<unsigned long, Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> > >, unsigned long&&, Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&)
+00000000000ccac0 W std::to_chars_result std::__detail::__to_chars_8<unsigned int>(char*, char*, unsigned int)
+00000000000ccb80 W std::to_chars_result std::__detail::__to_chars_8<unsigned long>(char*, char*, unsigned long)
+000000000008a800 W std::to_chars_result std::__detail::__to_chars_16<unsigned int>(char*, char*, unsigned int)
+0000000000082580 W std::to_chars_result std::__detail::__to_chars_16<unsigned long>(char*, char*, unsigned long)
+000000000009ac20 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::_M_ready()
+0000000000098090 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::~_BracketMatcher()
+0000000000098090 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::~_BracketMatcher()
+000000000009c8c0 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, true>::_M_make_range(char, char)
+0000000000098150 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, true>::~_BracketMatcher()
+0000000000098150 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, true>::~_BracketMatcher()
+0000000000098250 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, false>::~_BracketMatcher()
+0000000000098250 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, false>::~_BracketMatcher()
+000000000009d750 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, true>::_M_make_range(char, char)
+0000000000098310 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, true>::~_BracketMatcher()
+0000000000098310 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, true>::~_BracketMatcher()
+0000000000068010 W void std::__detail::__to_chars_10_impl<unsigned int>(char*, unsigned int, unsigned int)
+00000000000695d0 W void std::__detail::__to_chars_10_impl<unsigned __int128>(char*, unsigned int, unsigned __int128)
+00000000000cbcc0 W void std::__detail::__to_chars_10_impl<unsigned long long>(char*, unsigned int, unsigned long long)
+00000000000951f0 W std::__detail::__lookup_collatename(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+00000000000d5d80 V std::__detail::__from_chars_alnum_to_val_table<false>::value
+00000000000968d0 W std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_dummy()
+0000000000096180 W std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_state(std::__detail::_State<char>)
+0000000000098410 W std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_repeat(long, long, bool)
+0000000000097e90 W std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_backref(unsigned long)
+0000000000098560 W std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_matcher(std::function<bool (char)>)
+0000000000096770 W std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_end()
+00000000000964a0 W std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_begin()
+00000000000975e0 W std::__detail::_Scanner<char>::_M_eat_class(char)
+0000000000096e20 W std::__detail::_Scanner<char>::_M_scan_normal()
+0000000000097200 W std::__detail::_Scanner<char>::_M_scan_in_brace()
+0000000000096a70 W std::__detail::_Scanner<char>::_M_eat_escape_awk()
+0000000000095ae0 W std::__detail::_Scanner<char>::_M_eat_escape_ecma()
+0000000000097810 W std::__detail::_Scanner<char>::_M_scan_in_bracket()
+0000000000096cc0 W std::__detail::_Scanner<char>::_M_eat_escape_posix()
+0000000000097a00 W std::__detail::_Scanner<char>::_Scanner(char const*, char const*, std::regex_constants::syntax_option_type, std::locale)
+0000000000097a00 W std::__detail::_Scanner<char>::_Scanner(char const*, char const*, std::regex_constants::syntax_option_type, std::locale)
+0000000000097df0 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_try_char()
+00000000000a5b10 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_assertion()
+00000000000a3da0 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_quantifier()
+00000000000a4940 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative()
+00000000000a4c90 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction()
+0000000000097cf0 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_cur_int_value(int)
+00000000000a1e00 W bool std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_expression_term<false, false>(std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_BracketState&, std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>&)
+00000000000a0f40 W bool std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_expression_term<false, true>(std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_BracketState&, std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, true>&)
+000000000009fe40 W bool std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_expression_term<true, false>(std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_BracketState&, std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, false>&)
+000000000009ef20 W bool std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_expression_term<true, true>(std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_BracketState&, std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, true>&)
+00000000000a2d80 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_bracket_expression()
+00000000000a2880 W void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_bracket_matcher<false, false>(bool)
+00000000000a1780 W void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_bracket_matcher<false, true>(bool)
+00000000000a08e0 W void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_bracket_matcher<true, false>(bool)
+000000000009f780 W void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_bracket_matcher<true, true>(bool)
+000000000009af70 W void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>()
+000000000009b880 W void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, true>()
+000000000009a740 W void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<true, false>()
+000000000009c380 W void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<true, true>()
+0000000000096070 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_pop()
+00000000000a60e0 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom()
+00000000000a50c0 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type)
+00000000000a50c0 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type)
+00000000000a8f40 W std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char> >::_M_main_bfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char> >::_Match_mode)
+00000000000a94c0 W std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char> >::_M_lookahead(long)
+00000000000a6c60 W std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char> >::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char> >::_Match_mode, long)
+00000000000969a0 W std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char> >::~_Executor()
+00000000000969a0 W std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char> >::~_Executor()
+0000000000068b00 W std::__detail::_Map_base<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::function<SDispatchResult (std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)> >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::function<SDispatchResult (std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)> > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true>, true>::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+00000000000b39c0 W std::__detail::_Map_base<CShader*, std::pair<CShader* const, Hyprutils::Math::Vector2D>, std::allocator<std::pair<CShader* const, Hyprutils::Math::Vector2D> >, std::__detail::_Select1st, std::equal_to<CShader*>, std::hash<CShader*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](CShader* const&)
+00000000000a30e0 W std::__detail::_StateSeq<std::__cxx11::regex_traits<char> >::_M_clone()
+00000000000826a0 W std::__detail::__variant::_Variant_storage<false, bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> >::_M_reset()
+000000000008e7e0 W std::__format::_File_sink::_M_overflow()
+000000000008e9d0 W std::__format::_File_sink::~_File_sink()
+000000000008e9d0 W std::__format::_File_sink::~_File_sink()
+0000000000072020 W unsigned long std::__format::__truncate<char>(std::basic_string_view<char, std::char_traits<char> >&, unsigned long)
+000000000006beb0 W std::__format::_Padding_sink<std::__format::_Sink_iter<char>, char>::_M_reserve(unsigned long)
+00000000000729f0 W std::__format::_Padding_sink<std::__format::_Sink_iter<char>, char>::_M_overflow()
+0000000000072610 W std::__format::_Padding_sink<std::__format::_Sink_iter<char>, char>::_M_force_update()
+00000000000729a0 W std::__format::_Padding_sink<std::__format::_Sink_iter<char>, char>::_M_bump(unsigned long)
+0000000000065680 W std::__format::_Fixedbuf_sink<char>::_M_overflow()
+000000000006afd0 W std::__format::__formatter_fp<char>::parse(std::basic_format_parse_context<char>&)
+000000000006c070 W std::__format::_Sink_iter<char> std::__format::__write_padded<std::__format::_Sink_iter<char>, char>(std::__format::_Sink_iter<char>, std::basic_string_view<char, std::char_traits<char> >, std::__format::_Align, unsigned long, char32_t)
+0000000000078d80 W std::__format::_Sink_iter<char> std::__format::__do_vformat_to<char, 1u>(std::__format::_Sink_iter<char>, std::basic_string_view<char, std::char_traits<char> >, std::basic_format_context<std::__format::_Sink_iter<char>, char>&)
+0000000000066c50 W std::__format::__formatter_int<char>::_M_do_parse(std::basic_format_parse_context<char>&, std::__format::_Pres_type)
+000000000006b970 W std::__format::__formatter_ptr<char>::parse(std::basic_format_parse_context<char>&)
+00000000000679a0 W std::__format::__formatter_str<char>::parse(std::basic_format_parse_context<char>&)
+0000000000073630 W std::__format::_Sink_iter<char> std::__format::__write_escaped<char, std::__format::_Sink_iter<char> >(std::__format::_Sink_iter<char>, std::basic_string_view<char, std::char_traits<char> >, std::__format::_Term_char)
+0000000000072c40 W std::__format::_Sink_iter<char> std::__format::__write_escape_seq<std::__format::_Sink_iter<char>, char>(std::__format::_Sink_iter<char>, unsigned int, std::basic_string_view<char, std::char_traits<char> >)
+0000000000065a90 W std::__format::_Formatting_scanner<std::__format::_Sink_iter<char>, char>::_M_on_chars(char const*)
+0000000000078cb0 W std::__format::_Formatting_scanner<std::__format::_Sink_iter<char>, char>::_M_format_arg(unsigned long)
+000000000006c7c0 W std::__format::_Sink_iter<char> std::__format::__write_padded_as_spec<char, std::__format::_Sink_iter<char> >(std::basic_string_view<std::type_identity<char>::type, std::char_traits<std::type_identity<char>::type> >, unsigned long, std::basic_format_context<std::__format::_Sink_iter<char>, char>&, std::__format::_Spec<char> const&, std::__format::_Align)
+0000000000072ec0 W std::__format::_Sink_iter<char> std::__format::__write_escaped_unicode_part<char, std::__format::_Sink_iter<char> >(std::__format::_Sink_iter<char>, std::basic_string_view<char, std::char_traits<char> >&, bool&, std::__format::_Term_char)
+000000000002e87a W std::__format::__failed_to_parse_format_spec()
+000000000002e86d W std::__format::__invalid_arg_id_in_format_string()
+000000000002e860 W std::__format::__conflicting_indexing_in_format_string()
+00000000000655b0 W std::__format::_Sink<char>::_M_reserve(unsigned long)
+0000000000065640 W std::__format::_Sink<char>::_M_bump(unsigned long)
+000000000006be10 W std::__format::_Sink<char>::_M_write(std::basic_string_view<char, std::char_traits<char> >)
+0000000000066a70 W std::__format::_Spec<char>::_S_parse_width_or_precision(char const*, char const*, unsigned short&, bool&, std::basic_format_parse_context<char>&)
+0000000000067510 W std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::_M_reserve(unsigned long)
+00000000000672e0 W std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::_M_overflow()
+00000000000673e0 W std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::_M_bump(unsigned long)
+                 U std::ios_base::ios_base()@GLIBCXX_3.4
+                 U std::ios_base::~ios_base()@GLIBCXX_3.4
+00000000000d7180 V std::__unicode::__v16_0_0::__gcb_edges
+00000000000d6360 V std::__unicode::__v16_0_0::__incb_edges
+00000000000da3e0 V std::__unicode::__v16_0_0::__width_edges
+00000000000d8ca0 V std::__unicode::__v16_0_0::__escape_edges
+00000000000d7120 V std::__unicode::__v16_0_0::__incb_linkers
+00000000000d5e80 V std::__unicode::__v16_0_0::__xpicto_edges
+00000000000cabe0 W std::__unicode::__v16_0_0::__incb_property(char32_t)
+0000000000071ca0 W std::__unicode::__v16_0_0::_Grapheme_cluster_view<std::basic_string_view<char, std::char_traits<char> > >::_Iterator::operator++()
+                 U std::bad_alloc::~bad_alloc()@GLIBCXX_3.4
+                 U std::basic_ios<char, std::char_traits<char> >::init(std::basic_streambuf<char, std::char_traits<char> >*)@GLIBCXX_3.4
+                 U std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)@GLIBCXX_3.4
+                 U std::_Hash_bytes(void const*, unsigned long, unsigned long)@CXXABI_1.3.5
+00000000000ce230 W void std::__adjust_heap<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, long, unsigned long, PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long, unsigned long)#1}>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, long, long, unsigned long, PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long, unsigned long)#1})
+000000000006c920 W char* std::__add_grouping<char>(char*, char, char const*, unsigned long, char const*, char const*)
+0000000000082f30 W std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> >* std::__do_uninit_copy<std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> > const*, std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> > const*, std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> >*>(std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> > const*, std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> > const*, std::variant<bool, int, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Hyprutils::Memory::CWeakPointer<Desktop::View::CWindow>, Hyprutils::Memory::CWeakPointer<CWorkspace>, Hyprutils::Memory::CWeakPointer<Desktop::View::CLayerSurface>, Hyprutils::Memory::CWeakPointer<Monitor::CMonitor> >*)
+00000000000cdc90 W void std::__insertion_sort<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long, unsigned long)#1}>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long, unsigned long)#1})
+00000000000ce480 W void std::__introsort_loop<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, long, PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long, unsigned long)#1}>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, long, PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long, unsigned long)#1})
+                 U std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@GLIBCXX_3.4.9
+                 U std::__throw_bad_cast()@GLIBCXX_3.4
+000000000008ef30 W std::vprint_nonunicode(_IO_FILE*, std::basic_string_view<char, std::char_traits<char> >, std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >)
+                 U std::_Rb_tree_decrement(std::_Rb_tree_node_base*)@GLIBCXX_3.4
+                 U std::_Rb_tree_increment(std::_Rb_tree_node_base*)@GLIBCXX_3.4
+                 U std::__throw_logic_error(char const*)@GLIBCXX_3.4
+                 U std::__throw_regex_error(std::regex_constants::error_type)@GLIBCXX_3.4.15
+00000000000331ac W std::__throw_regex_error(std::regex_constants::error_type, char const*)
+000000000002e7fc W std::__throw_format_error(char const*)
+                 U std::__throw_length_error(char const*)@GLIBCXX_3.4
+                 U std::__throw_out_of_range(char const*)@GLIBCXX_3.4
+                 U std::__throw_system_error(int)@GLIBCXX_3.4.11
+                 U std::ios_base_library_init()@GLIBCXX_3.4.32
+                 U std::__throw_invalid_argument(char const*)@GLIBCXX_3.4
+                 U std::__throw_out_of_range_fmt(char const*, ...)@GLIBCXX_3.4.20
+                 U std::__throw_bad_function_call()@GLIBCXX_3.4.14
+                 U std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@GLIBCXX_3.4
+                 U std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@GLIBCXX_3.4
+                 U std::cerr@GLIBCXX_3.4
+00000000000ce940 W void std::__sort<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long, unsigned long)#1}>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long, unsigned long)#1})
+                 U std::basic_istream<char, std::char_traits<char> >& std::getline<char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, char)@GLIBCXX_3.4.21
+00000000000798f0 W std::vformat[abi:cxx11](std::basic_string_view<char, std::char_traits<char> >, std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >)
+                 U std::to_chars(char*, char*, _Float128)@GLIBCXX_3.4.31
+                 U std::to_chars(char*, char*, _Float128, std::chars_format)@GLIBCXX_3.4.31
+                 U std::to_chars(char*, char*, _Float128, std::chars_format, int)@GLIBCXX_3.4.31
+                 U std::to_chars(char*, char*, double)@GLIBCXX_3.4.29
+                 U std::to_chars(char*, char*, double, std::chars_format)@GLIBCXX_3.4.29
+                 U std::to_chars(char*, char*, double, std::chars_format, int)@GLIBCXX_3.4.29
+                 U std::to_chars(char*, char*, long double)@GLIBCXX_3.4.29
+                 U std::to_chars(char*, char*, long double, std::chars_format)@GLIBCXX_3.4.29
+                 U std::to_chars(char*, char*, long double, std::chars_format, int)@GLIBCXX_3.4.29
+                 U std::to_chars(char*, char*, float)@GLIBCXX_3.4.29
+                 U std::to_chars(char*, char*, float, std::chars_format)@GLIBCXX_3.4.29
+                 U std::to_chars(char*, char*, float, std::chars_format, int)@GLIBCXX_3.4.29
+                 U std::terminate()@GLIBCXX_3.4
+0000000000067950 W bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+0000000000068170 W bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+00000000000ccec0 W std::operator==(std::_Rb_tree<unsigned long, std::pair<unsigned long const, PinStacking::Node>, std::_Select1st<std::pair<unsigned long const, PinStacking::Node> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, PinStacking::Node> > > const&, std::_Rb_tree<unsigned long, std::pair<unsigned long const, PinStacking::Node>, std::_Select1st<std::pair<unsigned long const, PinStacking::Node> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, PinStacking::Node> > > const&)
+                 U std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)@GLIBCXX_3.4
+0000000000052ce0 W std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+                 U std::basic_istream<char, std::char_traits<char> >& std::operator>><char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)@GLIBCXX_3.4.21
+                 U typeinfo for IPassElement
+00000000000efdc8 V typeinfo for CBarPassElement
+                 U typeinfo for CTexPassElement
+                 U typeinfo for CRectPassElement
+                 U typeinfo for CBorderPassElement
+                 U typeinfo for CSurfacePassElement
+                 U typeinfo for IHyprWindowDecoration
+00000000000efb30 V typeinfo for CHyprBar
+00000000000f00d0 V typeinfo for Config::CGradientValueData
+00000000000f00c0 V typeinfo for Config::IComplexConfigValue
+00000000000f0148 V typeinfo for Hyprutils::Math::Vector2D
+00000000000efe50 V typeinfo for Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>
+00000000000efb20 V typeinfo for Hyprutils::Animation::CBaseAnimatedVariable
+00000000000efb48 V typeinfo for Hyprutils::Animation::CGenericAnimatedVariable<CHyprColor, SAnimationContext>
+                 U typeinfo for std::__cxx11::collate<char>@GLIBCXX_3.4.21
+00000000000eff68 V typeinfo for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, false, false>
+00000000000eff78 V typeinfo for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, false, true>
+00000000000eff88 V typeinfo for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, true, false>
+00000000000eff98 V typeinfo for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, true, true>
+00000000000effa8 V typeinfo for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, false, false>
+00000000000effb8 V typeinfo for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, false, true>
+00000000000effc8 V typeinfo for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, true, false>
+00000000000effd8 V typeinfo for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, true, true>
+00000000000effe8 V typeinfo for std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false>
+00000000000efff8 V typeinfo for std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, true>
+00000000000f0008 V typeinfo for std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, true, false>
+00000000000f0018 V typeinfo for std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, true, true>
+00000000000f0028 V typeinfo for std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>
+00000000000f0038 V typeinfo for std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, true>
+00000000000f0048 V typeinfo for std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, false>
+00000000000f0058 V typeinfo for std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, true>
+00000000000efed0 V typeinfo for std::__format::_File_sink
+00000000000efa28 V typeinfo for std::__format::_Padding_sink<std::__format::_Sink_iter<char>, char>
+00000000000efa10 V typeinfo for std::__format::_Fixedbuf_sink<char>
+00000000000efbf0 V typeinfo for std::__format::_Formatting_scanner<std::__format::_Sink_iter<char>, char>
+00000000000efad0 V typeinfo for std::__format::_Sink<char>
+00000000000efb10 V typeinfo for std::__format::_Scanner<char>
+00000000000efae0 V typeinfo for std::__format::_Buf_sink<char>
+00000000000efaf8 V typeinfo for std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >
+00000000000eff28 V typeinfo for std::_Mutex_base<(__gnu_cxx::_Lock_policy)2>
+                 U typeinfo for std::regex_error@GLIBCXX_3.4.15
+00000000000efab8 V typeinfo for std::format_error
+                 U typeinfo for std::out_of_range@GLIBCXX_3.4
+                 U typeinfo for std::runtime_error@GLIBCXX_3.4
+00000000000eff38 V typeinfo for std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>
+00000000000f0218 V typeinfo for std::_Sp_counted_deleter<json_object*, PinJson::hold(json_object*)::{lambda(json_object*)#1}, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>
+00000000000efaa0 V typeinfo for std::bad_optional_access
+                 U typeinfo for std::bad_array_new_length@CXXABI_1.3.8
+00000000000eff50 V typeinfo for std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>
+                 U typeinfo for std::bad_alloc@GLIBCXX_3.4
+                 U typeinfo for std::exception@GLIBCXX_3.4
+00000000000f0198 V typeinfo for PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long)#2}
+00000000000f0188 V typeinfo for PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long)#1}
+00000000000efa00 V typeinfo for Hyprutils::Signal::CSignalT<>::mkHandler(std::function<void ()>)::{lambda(void*)#1}
+00000000000efc28 V typeinfo for Hyprutils::Signal::CSignalT<ITouch::SDownEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (ITouch::SDownEvent const&, Event::SCallbackInfo&)>)::{lambda(void*)#1}
+00000000000efc48 V typeinfo for Hyprutils::Signal::CSignalT<ITouch::SMotionEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (ITouch::SMotionEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}
+00000000000efc38 V typeinfo for Hyprutils::Signal::CSignalT<ITouch::SUpEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (ITouch::SUpEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}
+00000000000efc08 V typeinfo for Hyprutils::Signal::CSignalT<IPointer::SButtonEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (IPointer::SButtonEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}
+00000000000efc18 V typeinfo for Hyprutils::Signal::CSignalT<IKeyboard::SKeyEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (IKeyboard::SKeyEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}
+00000000000efc58 V typeinfo for Hyprutils::Signal::CSignalT<Hyprutils::Math::Vector2D, Event::SCallbackInfo&>::mkHandler(std::function<void (Hyprutils::Math::Vector2D, Event::SCallbackInfo&)>)::{lambda(void*)#1}
+00000000000efec0 V typeinfo for Hyprutils::Signal::CSignalT<Hyprutils::Memory::CSharedPointer<CWorkspace> >::mkHandler(std::function<void (Hyprutils::Memory::CSharedPointer<CWorkspace> const&)>)::{lambda(void*)#1}
+00000000000ef9f0 V typeinfo for Hyprutils::Signal::CSignalT<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> >::mkHandler(std::function<void (Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&)>)::{lambda(void*)#1}
+00000000000f0230 V typeinfo for Hyprutils::Signal::CSignalT<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, Hyprutils::Memory::CSharedPointer<CWorkspace> >::mkHandler(std::function<void (Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&, Hyprutils::Memory::CSharedPointer<CWorkspace> const&)>)::{lambda(void*)#1}
+                 U typeinfo for bool@CXXABI_1.3
+                 U typeinfo for long@CXXABI_1.3
+                 U typeinfo for void@CXXABI_1.3
+00000000000da780 V typeinfo name for CBarPassElement
+00000000000d59d0 V typeinfo name for CHyprBar
+00000000000dbc30 V typeinfo name for Config::CGradientValueData
+00000000000dbc10 V typeinfo name for Config::IComplexConfigValue
+00000000000dbc50 V typeinfo name for Hyprutils::Math::Vector2D
+00000000000daa00 V typeinfo name for Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>
+00000000000d59a0 V typeinfo name for Hyprutils::Animation::CBaseAnimatedVariable
+00000000000d59e0 V typeinfo name for Hyprutils::Animation::CGenericAnimatedVariable<CHyprColor, SAnimationContext>
+00000000000db040 V typeinfo name for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, false, false>
+00000000000db0a0 V typeinfo name for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, false, true>
+00000000000db100 V typeinfo name for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, true, false>
+00000000000db160 V typeinfo name for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, true, true>
+00000000000db1c0 V typeinfo name for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, false, false>
+00000000000db220 V typeinfo name for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, false, true>
+00000000000db280 V typeinfo name for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, true, false>
+00000000000db2e0 V typeinfo name for std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, true, true, true>
+00000000000db340 V typeinfo name for std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false>
+00000000000db3a0 V typeinfo name for std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, true>
+00000000000db400 V typeinfo name for std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, true, false>
+00000000000db460 V typeinfo name for std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, true, true>
+00000000000db4c0 V typeinfo name for std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>
+00000000000db520 V typeinfo name for std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, true>
+00000000000db580 V typeinfo name for std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, false>
+00000000000db5e0 V typeinfo name for std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, true>
+00000000000dad00 V typeinfo name for std::__format::_File_sink
+00000000000d5860 V typeinfo name for std::__format::_Padding_sink<std::__format::_Sink_iter<char>, char>
+00000000000d5820 V typeinfo name for std::__format::_Fixedbuf_sink<char>
+00000000000d5a40 V typeinfo name for std::__format::_Formatting_scanner<std::__format::_Sink_iter<char>, char>
+00000000000d58e0 V typeinfo name for std::__format::_Sink<char>
+00000000000d5970 V typeinfo name for std::__format::_Scanner<char>
+00000000000d5900 V typeinfo name for std::__format::_Buf_sink<char>
+00000000000d5920 V typeinfo name for std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >
+00000000000daf20 V typeinfo name for std::_Mutex_base<(__gnu_cxx::_Lock_policy)2>
+00000000000d58c0 V typeinfo name for std::format_error
+00000000000daf80 V typeinfo name for std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>
+00000000000dc0e0 V typeinfo name for std::_Sp_counted_deleter<json_object*, PinJson::hold(json_object*)::{lambda(json_object*)#1}, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>
+00000000000daf50 V typeinfo name for std::_Sp_make_shared_tag
+00000000000d58a0 V typeinfo name for std::bad_optional_access
+00000000000dafc0 V typeinfo name for std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>
+00000000000dc0a0 V typeinfo name for PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long)#2}
+00000000000dc060 V typeinfo name for PinStacking::makePlan(PinStacking::Snapshot const&)::{lambda(unsigned long)#1}
+00000000000dc020 V typeinfo name for PinJson::hold(json_object*)::{lambda(json_object*)#1}
+00000000000d4980 V typeinfo name for Hyprutils::Signal::CSignalT<>::mkHandler(std::function<void ()>)::{lambda(void*)#1}
+00000000000d5b80 V typeinfo name for Hyprutils::Signal::CSignalT<ITouch::SDownEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (ITouch::SDownEvent const&, Event::SCallbackInfo&)>)::{lambda(void*)#1}
+00000000000d5c80 V typeinfo name for Hyprutils::Signal::CSignalT<ITouch::SMotionEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (ITouch::SMotionEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}
+00000000000d5c00 V typeinfo name for Hyprutils::Signal::CSignalT<ITouch::SUpEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (ITouch::SUpEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}
+00000000000d5a80 V typeinfo name for Hyprutils::Signal::CSignalT<IPointer::SButtonEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (IPointer::SButtonEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}
+00000000000d5b00 V typeinfo name for Hyprutils::Signal::CSignalT<IKeyboard::SKeyEvent, Event::SCallbackInfo&>::mkHandler(std::function<void (IKeyboard::SKeyEvent, Event::SCallbackInfo&)>)::{lambda(void*)#1}
+00000000000d5d00 V typeinfo name for Hyprutils::Signal::CSignalT<Hyprutils::Math::Vector2D, Event::SCallbackInfo&>::mkHandler(std::function<void (Hyprutils::Math::Vector2D, Event::SCallbackInfo&)>)::{lambda(void*)#1}
+00000000000dabe0 V typeinfo name for Hyprutils::Signal::CSignalT<Hyprutils::Memory::CSharedPointer<CWorkspace> >::mkHandler(std::function<void (Hyprutils::Memory::CSharedPointer<CWorkspace> const&)>)::{lambda(void*)#1}
+00000000000d4900 V typeinfo name for Hyprutils::Signal::CSignalT<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> >::mkHandler(std::function<void (Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&)>)::{lambda(void*)#1}
+00000000000dc160 V typeinfo name for Hyprutils::Signal::CSignalT<Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow>, Hyprutils::Memory::CSharedPointer<CWorkspace> >::mkHandler(std::function<void (Hyprutils::Memory::CSharedPointer<Desktop::View::CWindow> const&, Hyprutils::Memory::CSharedPointer<CWorkspace> const&)>)::{lambda(void*)#1}
+                 U VTT for std::__cxx11::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >@GLIBCXX_3.4.21
+                 U VTT for std::basic_ifstream<char, std::char_traits<char> >@GLIBCXX_3.4
+00000000000efde0 V vtable for CBarPassElement
+                 U vtable for IHyprWindowDecoration
+00000000000efd38 V vtable for CHyprBar
+                 U vtable for __cxxabiv1::__class_type_info@CXXABI_1.3
+                 U vtable for __cxxabiv1::__si_class_type_info@CXXABI_1.3
+                 U vtable for __cxxabiv1::__vmi_class_type_info@CXXABI_1.3
+00000000000f0158 V vtable for Config::CGradientValueData
+                 U vtable for Config::Values::CBoolValue
+                 U vtable for Config::Values::CColorValue
+                 U vtable for Config::Values::CStringValue
+                 U vtable for Config::Values::CFontWeightValue
+                 U vtable for Config::Values::CIntValue
+00000000000efce8 V vtable for Hyprutils::Animation::CBaseAnimatedVariable
+00000000000efd10 V vtable for Hyprutils::Animation::CGenericAnimatedVariable<CHyprColor, SAnimationContext>
+                 U vtable for std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >@GLIBCXX_3.4.21
+                 U vtable for std::__cxx11::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >@GLIBCXX_3.4.21
+00000000000efef8 V vtable for std::__format::_File_sink
+00000000000efa70 V vtable for std::__format::_Padding_sink<std::__format::_Sink_iter<char>, char>
+00000000000efa40 V vtable for std::__format::_Fixedbuf_sink<char>
+00000000000efda8 V vtable for std::__format::_Formatting_scanner<std::__format::_Sink_iter<char>, char>
+00000000000efcb8 V vtable for std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >
+                 U vtable for std::logic_error@GLIBCXX_3.4
+                 U vtable for std::regex_error@GLIBCXX_3.4.15
+00000000000efc90 V vtable for std::format_error
+                 U vtable for std::out_of_range@GLIBCXX_3.4
+                 U vtable for std::basic_filebuf<char, std::char_traits<char> >@GLIBCXX_3.4
+                 U vtable for std::runtime_error@GLIBCXX_3.4
+                 U vtable for std::basic_ifstream<char, std::char_traits<char> >@GLIBCXX_3.4
+                 U vtable for std::basic_streambuf<char, std::char_traits<char> >@GLIBCXX_3.4
+00000000000f0240 V vtable for std::_Sp_counted_deleter<json_object*, PinJson::hold(json_object*)::{lambda(json_object*)#1}, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>
+00000000000efc68 V vtable for std::bad_optional_access
+                 U vtable for std::bad_array_new_length@CXXABI_1.3.8
+00000000000f0068 V vtable for std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>
+                 U vtable for std::bad_alloc@GLIBCXX_3.4
+                 U vtable for std::basic_ios<char, std::char_traits<char> >@GLIBCXX_3.4
+00000000000f28a0 V __hyprland_api_get_client_hash::ver[abi:cxx11]
+00000000000548a0 W Hyprutils::Memory::CUniquePointer<SGlobalState>::CUniquePointer(SGlobalState*)::{lambda(void*)#1}::_FUN(void*)
+0000000000065a10 W Hyprutils::Memory::CUniquePointer<CBarPassElement>::CUniquePointer(CBarPassElement*)::{lambda(void*)#1}::_FUN(void*)
+00000000000512a0 W Hyprutils::Memory::CUniquePointer<CHyprBar>::CUniquePointer(CHyprBar*)::{lambda(void*)#1}::_FUN(void*)
+0000000000051390 W Hyprutils::Memory::CUniquePointer<Log::CLogger>::CUniquePointer(Log::CLogger*)::{lambda(void*)#1}::_FUN(void*)
+0000000000065620 W Hyprutils::Memory::CUniquePointer<Hyprutils::Animation::CGenericAnimatedVariable<CHyprColor, SAnimationContext> >::CUniquePointer(Hyprutils::Animation::CGenericAnimatedVariable<CHyprColor, SAnimationContext>*)::{lambda(void*)#1}::_FUN(void*)
+0000000000098840 W std::__cxx11::regex_traits<char>::lookup_classname<char const*>(char const*, char const*, bool) const::{lambda(char const*)#1}::operator()(char const*) const
+00000000000f3340 V std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, false, false>::operator()(char) const::__nul
+00000000000f3330 V std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, false, true>::operator()(char) const::__nul
+00000000000f3320 V std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, true, false>::operator()(char) const::__nul
+00000000000f3310 V std::__detail::_AnyMatcher<std::__cxx11::regex_traits<char>, false, true, true>::operator()(char) const::__nul
+0000000000099f80 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::_M_apply(char) const::{lambda()#1}::operator()() const
+000000000009b420 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, true>::_M_apply(char) const::{lambda()#1}::operator()() const
+000000000009a2c0 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, false>::_M_apply(char) const::{lambda()#1}::operator()() const
+000000000009bee0 W std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, true>::_M_apply(char) const::{lambda()#1}::operator()() const
+00000000000db626 V std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char> >::_M_is_word(char) const::__s
+00000000000db628 V std::_Sp_make_shared_tag::_S_ti()::__tag
+00000000000ef440 V std::__detail::__lookup_collatename(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)::__collatenames
+0000000000098f50 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_expression_term<false, false>(std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_BracketState&, std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>&)::{lambda(char)#1}::operator()(char) const
+00000000000990e0 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_expression_term<false, true>(std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_BracketState&, std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, true>&)::{lambda(char)#1}::operator()(char) const
+0000000000099270 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_expression_term<true, false>(std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_BracketState&, std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, false>&)::{lambda(char)#1}::operator()(char) const
+0000000000099450 W std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_expression_term<true, true>(std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_BracketState&, std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, true, true>&)::{lambda(char)#1}::operator()(char) const
+                 U operator delete[](void*)@GLIBCXX_3.4
+                 U operator delete(void*, unsigned long)@CXXABI_1.3.9
+                 U operator new[](unsigned long)@GLIBCXX_3.4
+                 U operator new(unsigned long)@GLIBCXX_3.4
+                 U __cxa_allocate_exception@CXXABI_1.3
+                 U __cxa_atexit@GLIBC_2.2.5
+                 U __cxa_begin_catch@CXXABI_1.3
+                 U __cxa_call_terminate@CXXABI_1.3.15
+                 U __cxa_end_catch@CXXABI_1.3
+                 w __cxa_finalize@GLIBC_2.2.5
+                 U __cxa_free_exception@CXXABI_1.3
+                 U __cxa_guard_abort@CXXABI_1.3
+                 U __cxa_guard_acquire@CXXABI_1.3
+                 U __cxa_guard_release@CXXABI_1.3
+                 w __cxa_pure_virtual@CXXABI_1.3
+                 U __cxa_rethrow@CXXABI_1.3
+                 U __cxa_throw@CXXABI_1.3
+                 U __dynamic_cast@CXXABI_1.3
+                 U __errno_location@GLIBC_2.2.5
+                 U __extendbfsf2@GCC_13.0.0
+                 U __extendhfsf2@GCC_12.0.0
+                 U __fbufsize@GLIBC_2.2.5
+                 U __flbf@GLIBC_2.2.5
+                 U __fwritable@GLIBC_2.2.5
+                 w __gmon_start__
+                 U __gttf2@GCC_4.3.0
+                 U __gxx_personality_v0@CXXABI_1.3
+0000000000053190 W __hyprland_api_get_client_hash
+                 U __hyprland_api_get_hash
+                 U __libc_single_threaded@GLIBC_2.32
+                 U __overflow@GLIBC_2.2.5
+                 U __stack_chk_fail@GLIBC_2.4
+                 U __udivti3@GCC_3.0
+                 U __unordtf2@GCC_4.3.0
+                 U addConfigKeyword
+                 U addConfigValueV2
+                 U addLuaFunction
+                 U addNotification
+                 U addWindowDecoration
+                 U cairo_format_stride_for_width
+                 U cairo_image_surface_create_for_data
+                 U cairo_surface_destroy
+                 U cairo_surface_write_to_png_stream
+                 U ceil@GLIBC_2.2.5
+                 U close@GLIBC_2.2.5
+                 U createFunctionHook
+                 U eglGetCurrentContext
+                 U eglGetCurrentDisplay
+                 U eglGetCurrentSurface
+                 U eglMakeCurrent
+                 U fflush_unlocked@GLIBC_2.2.5
+                 U findFunctionsByName
+                 U flockfile@GLIBC_2.2.5
+                 U floor@GLIBC_2.2.5
+                 U frexp@GLIBC_2.2.5
+                 U frexpf@GLIBC_2.2.5
+                 U frexpl@GLIBC_2.2.5
+                 U funlockfile@GLIBC_2.2.5
+                 U fwrite_unlocked@GLIBC_2.2.5
+00000000000f2d90 V g_layoutManager
+00000000000f28d0 V g_pCompositor
+00000000000f28e0 V g_pDecorationPositioner
+00000000000f2db0 V g_pEventLoopManager
+00000000000f28c0 V g_pFunctionHookSystem
+00000000000f2880 V g_pGlobalState
+00000000000f2920 V g_pHyprRenderer
+00000000000f2860 V g_pInputManager
+00000000000f2900 V g_pKeybindManager
+00000000000f2870 V g_pSeatManager
+00000000000f28f0 V g_pSessionLockManager
+00000000000f32e0 V g_pXWayland
+00000000000f2910 V g_pXWaylandManager
+                 U getenv@GLIBC_2.2.5
+                 U getpid@GLIBC_2.2.5
+                 U getrandom@GLIBC_2.25
+                 U glActiveTexture
+                 U glBindBuffer
+                 U glBindFramebuffer
+                 U glBindRenderbuffer
+                 U glBindTexture
+                 U glBindVertexArray
+                 U glBlendEquationSeparate
+                 U glBlendFuncSeparate
+                 U glCheckFramebufferStatus
+                 U glClear
+                 U glClearStencil
+                 U glColorMask
+                 U glGetBooleanv
+                 U glGetError
+                 U glGetIntegerv
+                 U glGetStringi
+                 U glIsEnabled
+                 U glPixelStorei
+                 U glReadPixels
+                 U glStencilFunc
+                 U glStencilFuncSeparate
+                 U glStencilMask
+                 U glStencilMaskSeparate
+                 U glStencilOp
+                 U glStencilOpSeparate
+                 U json_object_array_add@JSONC_0.14
+                 U json_object_equal@JSONC_0.14
+                 U json_object_get@JSONC_0.14
+                 U json_object_get_boolean@JSONC_0.14
+                 U json_object_get_string@JSONC_0.14
+                 U json_object_get_string_len@JSONC_0.14
+                 U json_object_get_type@JSONC_0.14
+                 U json_object_new_array@JSONC_0.14
+                 U json_object_new_boolean@JSONC_0.14
+                 U json_object_new_int@JSONC_0.14
+                 U json_object_new_object@JSONC_0.14
+                 U json_object_new_string_len@JSONC_0.14
+                 U json_object_object_add@JSONC_0.14
+                 U json_object_object_get_ex@JSONC_0.14
+                 U json_object_object_length@JSONC_0.14
+                 U json_object_put@JSONC_0.14
+                 U json_object_to_json_string_ext@JSONC_0.14
+                 U luaL_checkinteger
+                 U luaL_checklstring
+                 U lua_compare
+                 U lua_getfield
+                 U lua_getmetatable
+                 U lua_gettop
+                 U lua_isinteger
+                 U lua_isnumber
+                 U lua_isstring
+                 U lua_next
+                 U lua_pushboolean
+                 U lua_pushinteger
+                 U lua_pushlstring
+                 U lua_pushnil
+                 U lua_pushstring
+                 U lua_rawequal
+                 U lua_settop
+                 U lua_toboolean
+                 U lua_tointegerx
+                 U lua_tolstring
+                 U lua_type
+                 U memchr@GLIBC_2.2.5
+                 U memcmp@GLIBC_2.2.5
+                 U memcpy@GLIBC_2.14
+                 U memmove@GLIBC_2.2.5
+                 U memset@GLIBC_2.2.5
+                 U open@GLIBC_2.2.5
+                 U pixman_region32_copy
+000000000004a560 T pluginAPIVersion
+000000000004c2d0 T pluginExit
+000000000004cbd0 T pluginInit
+                 U raise@GLIBC_2.2.5
+                 U reloadConfig
+                 U removeFunctionHook
+                 U round@GLIBC_2.2.5
+                 U roundf@GLIBC_2.2.5
+                 U stdout@GLIBC_2.2.5
+                 U strchr@GLIBC_2.2.5
+                 U strcmp@GLIBC_2.2.5
+                 U strlen@GLIBC_2.2.5
+                 U strtof@GLIBC_2.2.5
+                 U toupper@GLIBC_2.2.5
+                 U unlink@GLIBC_2.2.5
+                 U write@GLIBC_2.2.5

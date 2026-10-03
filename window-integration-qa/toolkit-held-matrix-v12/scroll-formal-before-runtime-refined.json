@@ -1,0 +1,47 @@
+{
+  "nativeLaunch": false,
+  "formalBeforeRuntime": true,
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/preview_scroll.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/preview_scroll.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  preview_scroll\n    ok hiddenCannotClickTest passed 1 test(s)\n    ok wheelReceiptDoesNotGrantClickTest passed 1 test(s)\n    ok realWheelStableAllocationNativeOwnerClickTest passed 1 test(s)\n    ok missingCounterRefusesTest passed 1 test(s)\n    ok duplicateCounterRefusesTest passed 1 test(s)\n    ok noProgressRefusesTest passed 1 test(s)\n    ok oppositeProgressRefusesTest passed 1 test(s)\n    ok exactPopupEpochABARefusesTest passed 1 test(s)\n    ok exactSourceLifetimeABARefusesTest passed 1 test(s)\n    ok exactOrderedScopeChangeRefusesTest passed 1 test(s)\n    ok exactLayerChangeRefusesTest passed 1 test(s)\n    ok heldInputRefusesTest passed 1 test(s)\n    ok wheelWithoutActualOwnerRefusesTest passed 1 test(s)\n    ok invalidWheelDirectionRefusesTest passed 1 test(s)\n    ok closeCannotResumeTest passed 1 test(s)\n    ok oldReceiptRemainsPendingWithoutClickTest passed 1 test(s)\n    ok at32DetentsAnotherWheelRefusesTest passed 1 test(s)\n\n  17 passing (776ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/preview_scroll.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "named": 17,
+  "samples": 2000,
+  "steps": 100,
+  "modelSHA256": "39ecf6c397fdc123ea6b97b0cfa90994a8321f59ef406fcd438e9a335dec20bc",
+  "contractSHA256": "c508f9095c3e240aebfdd591efdbca71fcd64cf5dd23286b7d3095d89d12ec56",
+  "allPassed": true
+}

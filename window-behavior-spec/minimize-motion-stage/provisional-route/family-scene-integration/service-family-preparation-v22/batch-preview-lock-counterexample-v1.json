@@ -1,0 +1,15 @@
+{
+  "result": "confirmed-lock-inversion",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-754df2421f45447fa2a706233a00c4c8.scope",
+    "coreLimit": 1
+  },
+  "observed": {
+    "helperReceiptAcquiredWhileCleanup": false,
+    "cleanupReturnedAfterCaptureReleased": true,
+    "allThreadsClosed": true
+  },
+  "source": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/native_desktop.py",
+  "sourceSHA256": "46d6277f21d6378da0009548c74b926aac26896ee482a9a62ff9ff939f5080e1",
+  "nativeEffects": false
+}

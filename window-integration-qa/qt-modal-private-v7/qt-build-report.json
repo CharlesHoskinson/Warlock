@@ -1,0 +1,44 @@
+{
+  "result": "compiled",
+  "qtWidgetsVersion": "6.11.2 EXACT",
+  "qaBuildScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-5ed264c3d8a04667a41ff06ab4b4419a.scope",
+    "coreLimit": 1
+  },
+  "coreLimits": [
+    1,
+    1
+  ],
+  "commands": [
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "/home/hoskinson/window-integration-qa/qt-modal-private-v7",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qt-modal-private-v7/build-v7",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "exitCode": 0,
+      "stdout": "-- The CXX compiler identification is GNU 16.2.1\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n-- Found Threads: TRUE\n-- Performing Test HAVE_STDATOMIC\n-- Performing Test HAVE_STDATOMIC - Success\n-- Found WrapAtomic: TRUE\n-- Found OpenGL: /usr/lib/libOpenGL.so\n-- Found WrapOpenGL: TRUE\n-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) \n-- Configuring done (0.5s)\n-- Generating done (0.0s)\n-- Build files have been written to: /home/hoskinson/window-integration-qa/qt-modal-private-v7/build-v7\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "/home/hoskinson/window-integration-qa/qt-modal-private-v7/build-v7",
+        "--parallel",
+        "2"
+      ],
+      "exitCode": 0,
+      "stdout": "[ 50%] Building CXX object CMakeFiles/qt-window-modal-fixture.dir/fixture.cpp.o\n[100%] Linking CXX executable qt-window-modal-fixture\n[100%] Built target qt-window-modal-fixture\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": "de1cfc6634f8d57fcff2d9fc45f2034d8dd069b185b17d6f88eb015de11b9662",
+  "binarySHA256": "fb73af7e53e1805ba953a3050acdaeb58b3cf8e0d9588c508fe761c767dd534e",
+  "originalQt203BinarySHA256": "e74f73fbf86a7c30deb47d89a3cfe240b19c545c04b465986c430b35a50b92c8",
+  "nativeExecuted": false,
+  "sourceDelta": "Observation-only Resize/Move/LayoutRequest snapshot refresh and QVBoxLayout geometry; window creation, command actions, callback code unchanged."
+}

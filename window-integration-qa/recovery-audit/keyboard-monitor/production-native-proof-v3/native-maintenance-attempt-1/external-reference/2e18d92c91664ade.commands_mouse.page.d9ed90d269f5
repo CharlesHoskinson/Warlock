@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_mouse" xml:lang="kk">
+  <info>
+    <link type="next" xref="commands_live_regions"/>
+    <link type="guide" xref="commands#reviewing_screen_contents"/>
+    <title type="sort">3. Тышқанға/курсорға қатысты</title>
+    <title type="link">Тышқанға/курсорға қатысты</title>
+    <link type="seealso" xref="howto_flat_review"/>
+    <link type="seealso" xref="howto_mouse_review"/>
+    <desc>Курсорды басқару командалары</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Тышқанға/курсорға қатысты командалар</title>
+  <p><app>Orca</app> тышқан курсорын басқаруға және оның астындағы мазмұнды оқуға пайдалануға болатын бірнеше команданы ұсынады. Командалардың барлығы бір ерекшеліктен басқа пернелер тіркесімдеріне "тағайындалған": Тышқанмен шолу режимін ауыстыру. Бұл команданы пернелер тіркесіміне тағайындау туралы ақпаратты <link xref="howto_key_bindings">Пернелер тіркесімдерін өзгерту</link> бөлімінен қараңыз.</p>
+  <note style="tip">
+    <p>Төменде "KP" туралы бірнеше сілтемелерді көресіз. Барлық "KP" пернелері сандық пернетақтада орналасқан. Сондай-ақ, жұмыс үстелін немесе ноутбукті пайдалануыңызға немесе дәлірек айтқанда <app>Orca</app>-ның жұмыс үстелі пернетақта жаймасын немесе ноутбук пернетақта жаймасын пайдалануыңызға байланысты әртүрлі пернелер тіркесімдері бар екенін байқайсыз. Қосымша ақпарат алу үшін <link xref="howto_keyboard_layout">Пернетақта жаймасы</link> тақырыбын қараңыз.</p>
+  </note>
+  <list>
+    <item>
+      <p>Ағымдағы элементті сол жақ батырмамен шерту:</p>
+      <list>
+        <item><p>Жұмыс үстелі: <keyseq><key>KP Divide</key></keyseq></p></item>
+        <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>7</key></keyseq></p></item>
+      </list>
+    </item>
+    <item>
+      <p>Ағымдағы элементті оң жақ батырмамен шерту:</p>
+      <list>
+        <item><p>Жұмыс үстелі: <keyseq><key>KP Multiply</key></keyseq></p></item>
+        <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>8</key></keyseq></p></item>
+      </list>
+    </item>
+    <item>
+      <p>Курсорды ағымдағы элементке бағыттау:</p>
+      <list>
+        <item><p>Жұмыс үстелі: <keyseq><key>Orca модификаторы</key><key>KP Divide</key></keyseq></p></item>
+        <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>9</key></keyseq></p></item>
+      </list>
+    </item>
+    <item>
+      <p>Фокусты ағымдағы тышқан үстіне немесе одан ары жылжыту (тек веб үшін):</p>
+      <list>
+        <item><p>Жұмыс үстелі: <keyseq><key>Orca модификаторы</key><key>KP Multiply</key></keyseq></p></item>
+        <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>0</key></keyseq></p></item>
+      </list>
+    </item>
+    <item>
+      <p>Тышқанмен шолу режимін іске қосу/сөндіру: (Тағайындалмаған)</p>
+    </item>
+  </list>
+</page>

@@ -1,0 +1,50 @@
+{
+  "timestampUTC": "2026-10-02T23:59:53.513468+00:00",
+  "fullParity": false,
+  "automaticLoopReactivationConfirmed": false,
+  "mainChanged": false,
+  "nativePinA": {
+    "accepted": true,
+    "featureChecks": 14
+  },
+  "pinB": {
+    "accepted": false,
+    "completedCases": [
+      "B01",
+      "B02",
+      "B03"
+    ],
+    "firstFailure": "B04: conservation incorrectly required invariant pin-management markers",
+    "owningSourceExplainsIntendedMarkerChanges": true,
+    "modeAndRestoreGeometryConserved": true,
+    "rootFailureAudit": "/home/hoskinson/window-integration-qa/pin-max-native-b-v2-root-failure-v1.json",
+    "privateClosureNormal": true,
+    "mainChecks": 18,
+    "mainChecksPassed": true,
+    "typedOracleRefinementPending": true
+  },
+  "processV9": {
+    "componentAccepted": true,
+    "rootReview": "/home/hoskinson/window-integration-qa/process-terminal-v9-root-component-review-v1.json",
+    "actualOutsideNotificationQtSignalContained": true,
+    "installedQSPositive": false,
+    "variedReliability": false
+  },
+  "processReuse": {
+    "sourceApproved": true,
+    "fiveCPUComponentsReportedPassed": true,
+    "independentRootActualReviewPending": true
+  },
+  "restore": {
+    "baseline38Accepted": false,
+    "recovery34Accepted": false,
+    "unappliedTransactionProposal": true,
+    "finalDeadlineAdmissionCorrectionPending": true
+  },
+  "next": [
+    "Review/refreeze corrected B oracle and one private B01-B12 run",
+    "Review restore final deadline correction, apply fresh derivative and original CPU/Quint suite then private baseline38",
+    "Review five actual process-reuse CPU results; actual Quickshell/menu and reliability still required",
+    "Complete dragging52, native pin scroll/transfer, reduced/cancellation, physical display/accessibility, combined regression/deployment"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v1/CONTRACT.md": {
+      "sha256": "7cc128bb93e49a9797d7ae317541654cdc5f231dab6f9fd264b004b2f4da8946",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v1/IMPLEMENTATION_MAPPING.md": {
+      "sha256": "3117072fd6e99aa03c23941a236ce40eefdfce48dce788093a7d2857897f335e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v1/SOURCE_BASELINE.json": {
+      "sha256": "afe47b1eb82482285168429f5f6b61c4ceb19a8b4c6a0100801286779bc95af5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v1/terminal_retire.qnt": {
+      "sha256": "608fe2dbc1cdc7836c46572a6412075fbe73aa9055b72990b2eb5a37aaa54281",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/process-terminal-retire-v1/prove_before.py": {
+      "sha256": "9dfd7c7b3beee8664c5038a5f88dea9d9db0c6f51db68e51cc3683d50c42d84c",
+      "mode": 420
+    }
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/process-terminal-retire-v1/terminal_retire.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  terminal_retire\n    ok positiveOriginalCommandTest passed 1 test(s)\n    ok exactTerminalRetireSealsPastNoCurrentTest passed 1 test(s)\n    ok changeCommandWithoutRetireRefusesTest passed 1 test(s)\n    ok wrongLeaseRetirePreservesCurrentAuthorityTest passed 1 test(s)\n    ok pendingRetireLeavesRegisteredOldActorTest passed 1 test(s)\n    ok armWithoutExplicitRetireRefusesTest passed 1 test(s)\n    ok sameCommandStillNeedsFreshProofTest passed 1 test(s)\n    ok changedCommandFreshArmResetsProofTest passed 1 test(s)\n    ok changedCommandIndependentNewPositiveTest passed 1 test(s)\n    ok oldCallbackAfterNewArmEntireSnapshotInertTest passed 1 test(s)\n    ok oldCallbackAfterNewAcceptanceEntireSnapshotInertTest passed 1 test(s)\n    ok oldProofDoesNotSupplyNewReceiptTest passed 1 test(s)\n    ok missingStdoutRetireRefusesTest passed 1 test(s)\n    ok missingStderrRetireRefusesTest passed 1 test(s)\n    ok missingGoneRetireRefusesTest passed 1 test(s)\n    ok missingReceiptRetireRefusesTest passed 1 test(s)\n    ok unjoinedRetireRefusesTest passed 1 test(s)\n    ok crashCannotSealNormalPastTest passed 1 test(s)\n    ok malformedReceiptCannotRetireTest passed 1 test(s)\n    ok observedActorRetirementCannotSealTest passed 1 test(s)\n    ok observedSourceChangeCannotSealTest passed 1 test(s)\n    ok currentDuplicateCannotRetireTest passed 1 test(s)\n    ok cancelledActorNormalClosureCanRetireTest passed 1 test(s)\n    ok normalRefusalCanRetireNeverAcceptsTest passed 1 test(s)\n    ok duplicateRetireCannotDuplicatePastTest passed 1 test(s)\n    ok changedSourceAfterRetireCannotArmTest passed 1 test(s)\n    ok changedContextAfterRetireCannotArmTest passed 1 test(s)\n    ok newUnregisteredLivePIDCannotArmTest passed 1 test(s)\n    ok expiredWorkerCannotRetireTest passed 1 test(s)\n    ok finiteLeaseHistoryLimitNeverWrapsTest passed 1 test(s)\n\n  30 passing (7820ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/process-terminal-retire-v1/terminal_retire.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (3161ms at 633 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceUnchanged": true,
+  "V7AndFrontendExact": true,
+  "runtimeImplemented": false,
+  "GUI": false,
+  "reviewRequiredBeforeRuntime": true
+}

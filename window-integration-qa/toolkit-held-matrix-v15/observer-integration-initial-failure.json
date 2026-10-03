@@ -1,0 +1,9 @@
+{
+  "result": "fail",
+  "phase": "First full CPU harness run before source-conservation test integration",
+  "tests": 113,
+  "failures": 1,
+  "failedTest": "test_all_original_native_ticket_controller_oracle_sources_exact",
+  "reason": "Fresh diagnostic additions differed from original helper source; complete reversible source hunk reconstruction added and tested subsequently",
+  "nativeLaunch": false
+}

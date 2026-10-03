@@ -1,0 +1,23 @@
+module caption_drag_test {
+  import caption_drag.* from "./caption_drag"
+  run firstMotionRetainsPressOffsetTest=init.then(fire(Press({id:1,dx:20}))).then(fire(Motion({point:{x:60,y:35},hit:1})))
+    .then(all {assert(boxes.get(1)=={x:40,y:37,w:60,h:35} and allProps),fire(Release)})
+  run crossingPeerKeepsPressedOwnerTest=init.then(fire(Press({id:1,dx:20}))).then(fire(Focus(2))).then(fire(Motion({point:{x:120,y:50},hit:2})))
+    .then(all {assert(owner==1 and boxes.get(2)==PEER and boxes.get(1).x==100 and allProps),fire(Release)})
+  run leavingAllHitRegionsStillMovesOwnerTest=init.then(fire(Press({id:1,dx:20}))).then(fire(Motion({point:{x:90,y:10},hit:0})))
+    .then(all {assert(owner==1 and boxes.get(1).x==70 and allProps),fire(Release)})
+  run snappedCaptionRestoresFractionalPressOffsetTest=init.then(fire(Snap(1))).then(fire(Press({id:1,dx:20}))).then(fire(Motion({point:{x:34,y:7},hit:0})))
+    .then(all {assert(boxes.get(1)=={x:19,y:9,w:60,h:35} and allProps),fire(Cancel)})
+    .then(all {assert(boxes.get(1)==SNAP and phase==0 and allProps),fire(Release)})
+  run captionClickWithoutMovementDoesNotUnsnapTest=init.then(fire(Snap(1))).then(fire(Press({id:1,dx:20}))).then(fire(Release))
+    .then(all {assert(boxes.get(1)==SNAP and phase==0 and allProps),fire(Cancel)})
+  run closeAndReuseCannotContinueCaptionTest=init.then(fire(Press({id:1,dx:20}))).then(fire(Close(1))).then(fire(Open(1))).then(fire(Motion({point:{x:120,y:50},hit:2})))
+    .then(all {assert(boxes.get(1)==NORMAL and phase==0 and changed==Set() and allProps),fire(Release)})
+  run reloadCannotContinueCaptionTest=init.then(fire(Press({id:1,dx:20}))).then(fire(Reload)).then(fire(Motion({point:{x:120,y:50},hit:2})))
+    .then(all {assert(boxes.get(1)==NORMAL and phase==0 and allProps),fire(Release)})
+  run reloadCancelsActiveCaptionAndRestoresSourceTest=init.then(fire(Snap(1))).then(fire(Press({id:1,dx:20}))).then(fire(Motion({point:{x:34,y:7},hit:0})))
+    .then(fire(Reload)).then(fire(Motion({point:{x:120,y:50},hit:2})))
+    .then(all {assert(boxes.get(1)==SNAP and phase==0 and allProps),fire(Release)})
+  run escapeBeforeFirstMotionCancelsPressTest=init.then(fire(Press({id:1,dx:20}))).then(fire(Cancel)).then(fire(Motion({point:{x:120,y:50},hit:2})))
+    .then(all {assert(boxes.get(1)==NORMAL and phase==0 and held and allProps),fire(Release)})
+}

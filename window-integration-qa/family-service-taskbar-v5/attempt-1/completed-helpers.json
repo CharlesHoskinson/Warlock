@@ -1,0 +1,27 @@
+{
+  "config": {
+    "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790888258_1755291192",
+    "compositor": {
+      "pid": 1222522,
+      "start": "11073162"
+    },
+    "socket": "/run/user/1000/wqa/5c56/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790888258_1755291192/.socket.sock",
+    "socketIdentity": [
+      84,
+      275159,
+      1000
+    ],
+    "versionSHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+    "wrapper": "/run/user/1000/wqa/5c56/taskbar-home/.local/bin/hypr-snap-groups",
+    "wrapperSHA256": "b32645e41d2b2edc6e604328e81d25c71fe0e7089f32e4b8e485677c67526d29",
+    "actual": "/run/user/1000/wqa/5c56/taskbar-home/.local/bin/hypr-snap-groups.actual",
+    "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+    "log": "/run/user/1000/wqa/5c56/taskbar-home/helper-events.jsonl",
+    "allowed": [
+      "hydrate"
+    ]
+  },
+  "events": [],
+  "result": "fail",
+  "reason": "completion timeout"
+}

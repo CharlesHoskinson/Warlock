@@ -1,0 +1,28 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl/Renderer.cpp
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v3/Renderer.cpp
+@@ -1,6 +1,7 @@
+ // Standalone staged producer. Own Wayland connection/context, no Qt QPA.
+ #include "CommitLedger.hpp"
+ #include "BackendPolicy.hpp"
++#include "LibraryMaterial.hpp"
+ #include <QByteArray>
+ #include <QCryptographicHash>
+ #include <QJsonArray>
+@@ -77,10 +78,13 @@
+         shader=glCreateProgram();glAttachShader(shader,vertex);glAttachShader(shader,fragment);glLinkProgram(shader);glDeleteShader(vertex);glDeleteShader(fragment);
+         GLint ok=0;glGetProgramiv(shader,GL_LINK_STATUS,&ok);if(!ok)throw std::runtime_error("GPU shader linking failed");
+         positionLocation=glGetAttribLocation(shader,"position");uvLocation=glGetAttribLocation(shader,"uv");
+-        const auto vendor=std::string(eglQueryString(eglDisplay,EGL_VENDOR));
+-        const auto renderer=std::string(reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
+-        const auto version=std::string(reinterpret_cast<const char*>(glGetString(GL_VERSION)));
+-        if(!reviewedGPUBackend(vendor,version,renderer))throw std::runtime_error("unreviewed EGL commit backend; no route authority");
++        const auto safe=[](const char* value){return std::string(value?value:"");};
++        const auto vendor=safe(eglQueryString(eglDisplay,EGL_VENDOR));
++        const auto renderer=safe(reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
++        const auto version=safe(reinterpret_cast<const char*>(glGetString(GL_VERSION)));
++        const bool material=reviewedInstalledMesaMaterial();
++        emitEvent({{"event","backendObserved"},{"eglVendor",qs(vendor)},{"renderer",qs(renderer)},{"version",qs(version)},{"eglVersion",qs(safe(eglQueryString(eglDisplay,EGL_VERSION)))},{"nativeAuthority",false},{"reviewed",reviewedGPUBackend(vendor,version,renderer) && material},{"mappedMaterialMatches",material}});
++        if(!reviewedGPUBackend(vendor,version,renderer)||!material)throw std::runtime_error("unreviewed EGL commit backend; no route authority");
+         backendSupported=true;
+         emitEvent({{"event","gpu"},{"eglVendor",qs(vendor)},{"renderer",qs(renderer)},{"version",reinterpret_cast<const char*>(glGetString(GL_VERSION))}});
+     }

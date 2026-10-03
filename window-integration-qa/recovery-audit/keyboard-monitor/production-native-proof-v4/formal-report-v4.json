@@ -1,0 +1,91 @@
+{
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v4/proof_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v4/proof_lifecycle.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "output": "\n  proof_lifecycle\n    ok disabledNoProfileMutationTest passed 1 test(s)\n    ok passiveLoadPreservesFalseIntentTest passed 1 test(s)\n    ok falsePreparePreservesHeldTest passed 1 test(s)\n    ok falsePreparePreservesDirtyTest passed 1 test(s)\n    ok trueNormalUnloadTest passed 1 test(s)\n    ok reloadNewNonceTest passed 1 test(s)\n    ok privateEnabledRestartPreservesIntentTest passed 1 test(s)\n\n  7 passing (64ms)\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v4/proof_lifecycle.qnt",
+        "--invariant",
+        "safe",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20461013",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "output": "[ok] No violation found (357ms at 5602 traces/second).\nUse --seed=0x159c349 --backend=rust to reproduce.\n"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v4/refusal_observation.qnt"
+      ],
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v4/refusal_observation.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "output": "\n  refusal_observation\n    ok genuineExactNativeRefusalTest passed 1 test(s)\n    ok genericErrorCannotAcceptTest passed 1 test(s)\n    ok nativeSuccessCannotAcceptRefusalTest passed 1 test(s)\n    ok refusalPreservesNoncePolicyTest passed 100 test(s)\n\n  4 passing (24ms)\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v4/refusal_observation.qnt",
+        "--invariant",
+        "invariant",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20461013",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "output": "[ok] No violation found (448ms at 4464 traces/second).\nUse --seed=0x142b8c7 --backend=rust to reproduce.\n"
+    }
+  ],
+  "specs": {
+    "proof_lifecycle.qnt": "334a304467671f69992581875ca3d643a5a0fe121bd7def8a5ac2c31459dc006",
+    "refusal_observation.qnt": "310b09729d8af0678ad15ee0cad939b66764bf1c660dfd132c6f7fa657caa467"
+  },
+  "named": 11,
+  "samplesPerModel": 2000,
+  "maxSteps": 100,
+  "seed": 20461013,
+  "nativeAccepted": false
+}

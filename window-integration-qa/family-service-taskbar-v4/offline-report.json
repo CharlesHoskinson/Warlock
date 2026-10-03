@@ -1,0 +1,46 @@
+{
+  "result": "fail",
+  "tests": 12,
+  "output": "test_actual_bytes_retained_after_release (test_observer.RetentionTests.test_actual_bytes_retained_after_release) ... ok\ntest_foreign_actor_refused (test_observer.RetentionTests.test_foreign_actor_refused) ... ok\ntest_unsafe_permissions_refused (test_observer.RetentionTests.test_unsafe_permissions_refused) ... ok\ntest_wrong_digest_refused (test_observer.RetentionTests.test_wrong_digest_refused) ... ok\ntest_wrong_epoch_refused (test_observer.RetentionTests.test_wrong_epoch_refused) ... ok\ntest_actual_all_copied_sources_and_absolute_imports_match (test_packaging.Packaging.test_actual_all_copied_sources_and_absolute_imports_match) ... ok\ntest_all_implicitly_enabled_production_services_are_disabled (test_packaging.Packaging.test_all_implicitly_enabled_production_services_are_disabled) ... ok\ntest_changed_source_is_not_accepted_from_unchanged_copy (test_packaging.Packaging.test_changed_source_is_not_accepted_from_unchanged_copy) ... ok\ntest_offscope_home_materialization_refuses_before_any_copy (test_packaging.Packaging.test_offscope_home_materialization_refuses_before_any_copy) ... ERROR\ntest_only_actual_window_widget_is_on_left_bar (test_packaging.Packaging.test_only_actual_window_widget_is_on_left_bar) ... ok\ntest_payload_has_no_links_into_main_catalogs (test_packaging.Packaging.test_payload_has_no_links_into_main_catalogs) ... ok\ntest_retained_absolute_import_is_explicit_and_unmodified (test_packaging.Packaging.test_retained_absolute_import_is_explicit_and_unmodified) ... ok\n\n======================================================================\nERROR: test_offscope_home_materialization_refuses_before_any_copy (test_packaging.Packaging.test_offscope_home_materialization_refuses_before_any_copy)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/family-service-taskbar-v4/test_packaging.py\", line 46, in test_offscope_home_materialization_refuses_before_any_copy\n    p.prepare_home({})\n    ~~~~~~~~~~~~~~^^^^\n  File \"/home/hoskinson/window-integration-qa/family-service-taskbar-v4/private_shell.py\", line 154, in prepare_home\n    runtime = verify_runtime(private_env['XDG_RUNTIME_DIR'])\n                             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nKeyError: 'XDG_RUNTIME_DIR'\n\n----------------------------------------------------------------------\nRan 12 tests in 0.038s\n\nFAILED (errors=1)\n",
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a2a23136c73945048ab78ff198ef0ff7.scope",
+    "coreLimit": 1
+  },
+  "coreLimits": [
+    1,
+    1
+  ],
+  "actualQsParserProbes": [
+    {
+      "command": [
+        "/usr/bin/qs",
+        "kill",
+        "--pid",
+        "2147483647",
+        "-p",
+        "/run/user/1000/wqa/a06e"
+      ],
+      "exitCode": 108,
+      "stdout": "",
+      "stderr": "[Option Group: Instance Selection] excludes [Option Group: Config Selection]\nRun with --help for more information.\n",
+      "nativeShellLaunched": false,
+      "mainIPCContacted": false
+    },
+    {
+      "command": [
+        "/usr/bin/qs",
+        "kill",
+        "--pid",
+        "2147483647"
+      ],
+      "exitCode": 255,
+      "stdout": "No instance found for pid 2147483647\n",
+      "stderr": "",
+      "nativeShellLaunched": false,
+      "mainIPCContacted": false
+    }
+  ],
+  "nativeLaunch": false,
+  "mainIPCContacted": false,
+  "immutableV3Retained": true
+}

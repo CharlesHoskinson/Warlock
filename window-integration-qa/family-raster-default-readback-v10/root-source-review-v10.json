@@ -1,0 +1,41 @@
+{
+  "updatedUTC": "2026-10-01T21:59:15.692135+00:00",
+  "producerManifestSHA256": "987cf532583424e4bacc55e4dafd362ce28d86d60a5b68162e7fdd7624144688",
+  "all1418ProducerBytesModesExact": true,
+  "all49ProducerLinksExact": true,
+  "all5OriginalOracleGeometryBindingInputsUnchanged": true,
+  "reviewed": [
+    "each causal copy queries owned default framebuffer0 before both full reads",
+    "prefix count kind generation extent and texture bound before copy",
+    "actual compiled copy program sampler target disabled blend and full extent independently checked",
+    "original pair equality and all44 pixels unchanged",
+    "normal resource cleanup before compositor",
+    "no native authority or cadence claim"
+  ],
+  "gateTestsPassed": 5,
+  "collectorSources": {
+    "run_private_raster.py": "f7aa2cf933752630f490cc622f7ae52062e2938c40e904cd832e146a894ed892",
+    "producer_observer.py": "a55780355c633cc8772641c5cd3abd77e03445ae81ce0d0d0f37c45187ec9019",
+    "observations.py": "9f9b1bb282081c6f73422a40b41beede27f04a8c276d4ff3e07d1269e15c5f37",
+    "catalog_preservation.py": "c579d169e9b7093331fd4b78d015cc9fbbcd38c9ceb3772aef1bd0f5056fc54d",
+    "raster_oracle.py": "3a542d7de3376c7bfce276dbc18efc9134a6ab9ae0b3e235d4b58af7c0b01602",
+    "compare_scene.py": "eb7e632824b76c07f7a0fb7c3c6a8cb6a46a87389948c97245841160f989ef34",
+    "test_raster_oracle.py": "6fba5dfa6cc73284290f8ea59baafb789efc956695103c39d57a75003a389cad",
+    "test_scene_evidence.py": "90e5e9e06f4317487c2493fa9518f0d932690a92147911fa30e6608235c0c1ba",
+    "cursor_fixture.py": "d4892e5cc9d51b57cb6d09157c4930f690062d8df1931b5cd7587f612c22f4a3",
+    "test_private_raster_state.py": "b8bce0c39a1016472d707cdc568dd43b3efe48cbe342a2095c1fa198c57a1ec5",
+    "precision_fixture.py": "83d00e49f36a924206aab6732e73f03a0b78f12b2f5bd6e47894493933d1d22a",
+    "test_shader_precision_gate.py": "6b128990bafec7b8113038ed61b08dbcada9dc5f0098436fc46cccc235b94e7b",
+    "readback_evidence.py": "df4702d4b24040a7a3e2cb7ba7cf121e09b809ab8b2ffac73d5bc83c9d378816",
+    "test_readback_evidence.py": "61ec685c94b511cb548df66cb4749765911c9b7bc6fcf0ab9beb21ae3252cde5",
+    "test_observer_drain.py": "d367c0b4c3d98367adddd4b4aa4502c274a14f92f87ec4217a89f9c596ebe0cf",
+    "sampler_evidence.py": "7978a48c80f1407e65421d5586296e7f1b10e4ab7304271f1993552d7afcd93e",
+    "test_sampler_evidence.py": "a74b004542008c64d3ff77d4e73cfb95fb3d2900bf130d35dfafc9488ce313eb",
+    "freeze_collector.py": "14bf6af02a99eac8d33757b3138db1256d5c8be5784a088c3da6d03356b74bc3",
+    "verify_causal_target.py": "5e5b6253a4c07807750302048472886a7030ad198d49ed90b73e136dcc9f6a52",
+    "test_causal_target.py": "a00fccb4944fc7323cbf42f33465a565ff8e266990005ac684b7612e2dc04a70"
+  },
+  "nativeAccepted": false,
+  "productionAccepted": false,
+  "mainWrites": false
+}

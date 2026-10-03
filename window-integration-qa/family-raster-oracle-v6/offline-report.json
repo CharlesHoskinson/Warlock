@@ -1,0 +1,18 @@
+{
+  "updatedUTC": "2026-10-01T14:50:26.028155+00:00",
+  "result": "pass",
+  "tests": 32,
+  "nativeLaunch": false,
+  "scope": "complete-image raster/binding + new7 raw framebuffer evidence/refusal/continuation tests",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/home/hoskinson/window-integration-qa/family-raster-oracle-v6",
+    "-p",
+    "test_*.py",
+    "-v"
+  ]
+}

@@ -1,0 +1,542 @@
+--- /dev/null
++++ native/plugin-v2.cpp
+@@ -0,0 +1,297 @@
++// Offline/private candidate only. This file has never been loaded on the main compositor.
++#include "key_policy.hpp"
++#include <hyprland/src/plugins/PluginAPI.hpp>
++#include <hyprland/src/Compositor.hpp>
++#include <hyprland/src/devices/IKeyboard.hpp>
++#include <hyprland/src/managers/input/InputManager.hpp>
++#include <dbus/dbus.h>
++#include <wayland-server-core.h>
++#include <xkbcommon/xkbcommon.h>
++#include <chrono>
++#include <cstdlib>
++#include <filesystem>
++#include <memory>
++#include <stdexcept>
++#include <sys/stat.h>
++#include <unistd.h>
++
++using namespace KeyboardMonitor;
++namespace {
++constexpr auto HASH="efb50993780079460b0cbed1363e2166a2de1d9f";
++constexpr auto PATH="/org/freedesktop/a11y/Manager";
++constexpr auto IFACE="org.freedesktop.a11y.KeyboardMonitor";
++HANDLE handle=nullptr;
++Policy policy;
++DBusConnection* bus=nullptr;
++wl_event_source* timer=nullptr;
++std::map<std::string,std::string> registrations;
++CFunctionHook *pressedHook=nullptr,*keyHook=nullptr,*maskHook=nullptr;
++using PressedFn=bool(*)(IKeyboard*,uint32_t,bool);
++using KeyFn=void(*)(CInputManager*,const IKeyboard::SKeyEvent&,SP<IKeyboard>);
++using MaskFn=void(*)(IKeyboard*,uint32_t,uint32_t,uint32_t,uint32_t);
++struct Device {
++    xkb_keymap* map=nullptr;
++    xkb_state *passed=nullptr,*captured=nullptr,*lookup=nullptr;
++    VirtualMaskGuard virtualMask;
++    uint32_t controlledLocks=0;
++    bool passedDirty=false;
++    bool mapDirty=false;
++    bool lastPermission=true;
++    std::map<uint32_t,uint32_t> lockRoutes;
++    std::map<uint32_t,Result> pending;
++    CHyprSignalListener removed,keymap;
++    Device(IKeyboard* kb):map(xkb_keymap_ref(kb->m_xkbKeymap)) {
++        passed=xkb_state_new(map);captured=xkb_state_new(map);lookup=xkb_state_new(map);
++        if(!passed||!captured||!lookup) throw std::runtime_error("XKB state allocation");
++        // Reconstruct already accepted physical keys, so reader startup cannot
++        // steal their matching release or clear their modifier contributions.
++        for(auto key=xkb_keymap_min_keycode(map);key<=xkb_keymap_max_keycode(map);++key)
++            if(key>=8&&kb->getPressed(key-8)) xkb_state_update_key(passed,key,XKB_KEY_DOWN);
++        const auto n=kb->m_modifiersState;
++        xkb_state_update_mask(passed,n.depressed,n.latched,n.locked,0,0,n.group);
++    }
++    ~Device(){if(passed)xkb_state_unref(passed);if(captured)xkb_state_unref(captured);if(lookup)xkb_state_unref(lookup);if(map)xkb_keymap_unref(map);}
++    void refreshPassed(IKeyboard* kb) {
++        // A passive service may have skipped ordinary input since last use.
++        // Rebuild from native bookkeeping before handling this new packet.
++        xkb_state_unref(passed);passed=xkb_state_new(map);
++        if(!passed)throw std::runtime_error("XKB passed-state allocation");
++        for(auto key=xkb_keymap_min_keycode(map);key<=xkb_keymap_max_keycode(map);++key)
++            if(key>=8&&kb->getPressed(key-8))xkb_state_update_key(passed,key,XKB_KEY_DOWN);
++        const auto n=kb->m_modifiersState;
++        xkb_state_update_mask(passed,n.depressed,n.latched,n.locked,0,0,n.group);
++        passedDirty=false;
++    }
++    void replaceMap(IKeyboard* kb) {
++        xkb_state_unref(passed);xkb_state_unref(captured);xkb_state_unref(lookup);xkb_keymap_unref(map);
++        map=xkb_keymap_ref(kb->m_xkbKeymap);passed=xkb_state_new(map);captured=xkb_state_new(map);lookup=xkb_state_new(map);
++        if(!passed||!captured||!lookup)throw std::runtime_error("XKB replacement allocation");
++        refreshPassed(kb);
++        for(auto key:policy.capturedKeys(reinterpret_cast<uintptr_t>(kb)))xkb_state_update_key(captured,key+8,XKB_KEY_DOWN);
++        xkb_state_update_mask(captured,xkb_state_serialize_mods(captured,XKB_STATE_MODS_DEPRESSED),0,0,0,0,kb->m_modifiersState.group);
++        virtualMask=VirtualMaskGuard{};controlledLocks=0;lockRoutes.clear();pending.clear();mapDirty=false;
++        policy.resetTaps();
++    }
++};
++std::map<IKeyboard*,std::unique_ptr<Device>> devices;
++uint64_t clockMs(){return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now().time_since_epoch()).count();}
++bool interested(){return !policy.clients.empty();}
++bool permitted(IKeyboard* kb){return kb&&kb->m_enabled&&kb->m_allowed&&(!kb->isVirtual()||!g_pInputManager->shouldIgnoreVirtualKeyboard(kb->m_self.lock()));}
++void removeDevice(IKeyboard* kb){policy.removeDevice(reinterpret_cast<uintptr_t>(kb));devices.erase(kb);}
++Device& getDevice(IKeyboard* kb) {
++    if(auto it=devices.find(kb);it!=devices.end()) {
++        if(it->second->mapDirty||it->second->map!=kb->m_xkbKeymap)it->second->replaceMap(kb);
++        return *it->second;
++    }
++    auto owned=std::make_unique<Device>(kb);
++    owned->removed=kb->m_events.destroy.listen([kb]{removeDevice(kb);});
++    // Map replacement rebuilds symbolic state on the next key; hardware route
++    // tombstones survive and use their original press keysym through release.
++    owned->keymap=kb->m_keyboardEvents.keymap.listen([kb](const auto&){if(auto it=devices.find(kb);it!=devices.end())it->second->mapDirty=true;policy.resetTaps();});
++    auto& result=*owned;devices.emplace(kb,std::move(owned));return result;
++}
++bool registered(const char* sender) {
++    if(!sender) return false;
++    for(const auto& [name,owner]:registrations) if(owner==sender) return true;
++    return false;
++}
++bool monitorName(const std::string& name){return name.size()>16&&name.ends_with(".KeyboardMonitor")&&dbus_validate_bus_name(name.c_str(),nullptr);}
++void prune(const std::string& owner){if(!registered(owner.c_str())) policy.drop(owner);}
++void send(DBusMessage* m){if(!m)return;dbus_connection_send(bus,m,nullptr);dbus_message_unref(m);}
++void reply(DBusMessage* m){send(dbus_message_new_method_return(m));}
++void error(DBusMessage* m,const char* name,const char* why){send(dbus_message_new_error(m,name,why));}
++void event(const Result& result,bool released,uint32_t state,uint32_t unicode,uint32_t key) {
++    if(!bus||key+8>UINT16_MAX)return;
++    for(const auto& recipient:result.recipients) {
++        if(!registered(recipient.c_str()))continue;
++        auto* m=dbus_message_new_signal(PATH,IFACE,"KeyEvent");if(!m)continue;
++        dbus_message_set_destination(m,recipient.c_str());
++        dbus_bool_t release=released;dbus_uint32_t mask=state,sym=result.sym,uni=unicode;dbus_uint16_t code=key+8;
++        dbus_message_append_args(m,DBUS_TYPE_BOOLEAN,&release,DBUS_TYPE_UINT32,&mask,DBUS_TYPE_UINT32,&sym,DBUS_TYPE_UINT32,&uni,DBUS_TYPE_UINT16,&code,DBUS_TYPE_INVALID);send(m);
++    }
++}
++bool onPressed(IKeyboard* kb,uint32_t key,bool press) {
++    auto original=reinterpret_cast<PressedFn>(pressedHook->m_original);
++    const auto identity=reinterpret_cast<uintptr_t>(kb);
++    const bool allowed=permitted(kb);
++    if(auto it=devices.find(kb);it!=devices.end()) {
++        if(it->second->lastPermission!=allowed)policy.resetTaps();
++        it->second->lastPermission=allowed;
++    }
++    if(!allowed||!kb->m_xkbKeymap||!kb->m_xkbState) {
++        if(!policy.captured(identity,key))return original(kb,key,press);
++        // Revocation cannot turn a captured press into an orphan native
++        // release. Retain its routing while exposing no forbidden observation.
++        auto result=policy.key(identity,key,0,0,press,clockMs(),1,false,false);
++        if(auto it=devices.find(kb);it!=devices.end()) {
++            it->second->pending[key]=result;
++            if(!press&&it->second->captured) {
++                xkb_state_update_key(it->second->captured,key+8,XKB_KEY_UP);
++                it->second->controlledLocks|=it->second->lockRoutes[key];
++                it->second->lockRoutes.erase(key);
++            }
++        }
++        return false;
++    }
++    // No subscription: the original code handles every new packet unchanged.
++    if(!interested()&&!policy.captured(reinterpret_cast<uintptr_t>(kb),key)) {
++        if(auto it=devices.find(kb);it!=devices.end())it->second->passedDirty=true;
++        return original(kb,key,press);
++    }
++    auto& d=getDevice(kb);if(d.passedDirty)d.refreshPassed(kb);const auto native=kb->m_modifiersState;
++    const auto rawDep=native.depressed|xkb_state_serialize_mods(d.captured,XKB_STATE_MODS_DEPRESSED);
++    xkb_state_update_mask(d.lookup,rawDep,native.latched,native.locked,0,0,native.group);
++    auto sym=xkb_state_key_get_one_sym(d.lookup,key+8);
++    auto state=xkb_state_serialize_mods(d.lookup,XKB_STATE_MODS_EFFECTIVE);
++    const auto device=reinterpret_cast<uintptr_t>(kb);
++    const bool known=policy.known(device,key),alreadyNative=kb->getPressed(key);
++    auto result=policy.key(device,key,sym,state,press,clockMs(),std::max(kb->m_repeatDelay,1),alreadyNative);
++    d.pending[key]=result;
++    auto shadow=result.consumed?d.captured:d.passed;
++    const auto before=xkb_state_serialize_mods(shadow,XKB_STATE_MODS_LOCKED);
++    // Like native updatePressed, a repeat/unmatched release must not change
++    // XKB key counts. Captured repeat packets still reach the reader.
++    if(press?(!known&&!alreadyNative):(known||alreadyNative))
++        xkb_state_update_key(shadow,key+8,press?XKB_KEY_DOWN:XKB_KEY_UP);
++    const auto changedLocks=before^xkb_state_serialize_mods(shadow,XKB_STATE_MODS_LOCKED);
++    if(press&&changedLocks)d.lockRoutes[key]=changedLocks;
++    d.controlledLocks|=changedLocks|d.lockRoutes[key];
++    if(!press)d.lockRoutes.erase(key);
++    if(result.consumed) {
++        xkb_state_update_mask(shadow,xkb_state_serialize_mods(shadow,XKB_STATE_MODS_DEPRESSED),xkb_state_serialize_mods(shadow,XKB_STATE_MODS_LATCHED),0,0,0,native.group);
++    }
++    // Emit observer state after non-locking modifier transition, with only
++    // accepted lock state. Directed signal queueing never waits on a client.
++    state=xkb_state_serialize_mods(d.passed,XKB_STATE_MODS_DEPRESSED)|xkb_state_serialize_mods(d.captured,XKB_STATE_MODS_DEPRESSED)|native.latched|native.locked;
++    event(result,!press,state,xkb_keysym_to_utf32(result.sym),key);
++    if(result.consumed)return false; // physical callback skips XKB update
++    return original(kb,key,press);
++}
++void onKey(CInputManager* input,const IKeyboard::SKeyEvent& ev,SP<IKeyboard> kb) {
++    if(auto it=devices.find(kb.get());it!=devices.end()) {
++        auto packet=it->second->pending.find(ev.keycode);
++        if(packet!=it->second->pending.end()) {bool consumed=packet->second.consumed;it->second->pending.erase(packet);if(consumed)return;}
++    }
++    reinterpret_cast<KeyFn>(keyHook->m_original)(input,ev,kb);
++}
++void onMask(IKeyboard* kb,uint32_t depressed,uint32_t latched,uint32_t locked,uint32_t group) {
++    auto original=reinterpret_cast<MaskFn>(maskHook->m_original);
++    if(!kb||!kb->isVirtual()) {original(kb,depressed,latched,locked,group);return;}
++    auto it=devices.find(kb);
++    if(it==devices.end()){original(kb,depressed,latched,locked,group);return;}
++    auto& d=*it->second;
++    const auto captured=xkb_state_serialize_mods(d.captured,XKB_STATE_MODS_DEPRESSED);
++    const auto passed=xkb_state_serialize_mods(d.passed,XKB_STATE_MODS_DEPRESSED);
++    bool full=false;if(permitted(kb))for(const auto& [id,c]:policy.clients)full|=c.full;
++    auto n=kb->m_modifiersState;
++    auto filtered=d.virtualMask.filter({depressed,latched,locked,group},{n.depressed,n.latched,n.locked,n.group},captured&~passed,d.controlledLocks,full,xkb_state_serialize_mods(d.passed,XKB_STATE_MODS_LOCKED));
++    d.controlledLocks=0;
++    xkb_state_update_mask(d.passed,filtered.depressed,filtered.latched,filtered.locked,0,0,filtered.group);
++    original(kb,filtered.depressed,filtered.latched,filtered.locked,filtered.group);
++}
++DBusHandlerResult dispatch(DBusConnection*,DBusMessage* m,void*) {
++    if(dbus_message_is_signal(m,DBUS_INTERFACE_DBUS,"NameOwnerChanged")) {
++        const char *name=nullptr,*old=nullptr,*owner=nullptr;
++        if(dbus_message_get_args(m,nullptr,DBUS_TYPE_STRING,&name,DBUS_TYPE_STRING,&old,DBUS_TYPE_STRING,&owner,DBUS_TYPE_INVALID)) {
++            if(monitorName(name)){registrations.erase(name);if(*owner)registrations[name]=owner;prune(old);policy.resetTaps();}
++            else if(*name==':'&&!*owner) {for(auto it=registrations.begin();it!=registrations.end();)if(it->second==name)it=registrations.erase(it);else ++it;policy.drop(name);}
++        }
++        return DBUS_HANDLER_RESULT_HANDLED;
++    }
++    if(dbus_message_get_type(m)!=DBUS_MESSAGE_TYPE_METHOD_CALL||std::string(dbus_message_get_path(m)?dbus_message_get_path(m):"")!=PATH)return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
++    const char* sender=dbus_message_get_sender(m);
++    if(dbus_message_is_method_call(m,DBUS_INTERFACE_INTROSPECTABLE,"Introspect")) {
++        constexpr const char* xml="<node><interface name='org.freedesktop.a11y.KeyboardMonitor'><method name='WatchKeyboard'/><method name='UnwatchKeyboard'/><method name='GrabKeyboard'/><method name='UngrabKeyboard'/><method name='SetKeyGrabs'><arg type='au' direction='in'/><arg type='a(uu)' direction='in'/></method><signal name='KeyEvent'><arg type='b'/><arg type='u'/><arg type='u'/><arg type='u'/><arg type='q'/></signal></interface><interface name='org.omarchy.KeyboardMonitorProbe'><method name='State'><arg type='s' direction='out'/></method><method name='PrepareUnload'><arg type='b' direction='out'/></method></interface></node>";
++        auto* r=dbus_message_new_method_return(m);dbus_message_append_args(r,DBUS_TYPE_STRING,&xml,DBUS_TYPE_INVALID);send(r);return DBUS_HANDLER_RESULT_HANDLED;
++    }
++    if(dbus_message_has_interface(m,"org.omarchy.KeyboardMonitorProbe")) {
++        if(dbus_message_has_member(m,"PrepareUnload")) {
++            dbus_bool_t ready=policy.quiescent();if(ready)policy.stop();
++            auto* r=dbus_message_new_method_return(m);dbus_message_append_args(r,DBUS_TYPE_BOOLEAN,&ready,DBUS_TYPE_INVALID);send(r);return DBUS_HANDLER_RESULT_HANDLED;
++        }
++        if(dbus_message_has_member(m,"State")) {
++            const auto value=std::string("{\"clients\":")+std::to_string(policy.clients.size())+",\"devices\":"+std::to_string(devices.size())+",\"quiescent\":"+(policy.quiescent()?"true":"false")+",\"nativeInputProved\":false}";
++            const char* s=value.c_str();auto* r=dbus_message_new_method_return(m);dbus_message_append_args(r,DBUS_TYPE_STRING,&s,DBUS_TYPE_INVALID);send(r);return DBUS_HANDLER_RESULT_HANDLED;
++        }
++    }
++    if(!dbus_message_has_interface(m,IFACE)) {error(m,DBUS_ERROR_UNKNOWN_INTERFACE,"keyboard-only staged service");return DBUS_HANDLER_RESULT_HANDLED;}
++    if(!registered(sender)){error(m,DBUS_ERROR_ACCESS_DENIED,"caller must own its KeyboardMonitor registration");return DBUS_HANDLER_RESULT_HANDLED;}
++    auto& c=policy.clients[sender];
++    if(dbus_message_has_member(m,"WatchKeyboard")&&dbus_message_has_signature(m,""))c.watch=true;
++    else if(dbus_message_has_member(m,"UnwatchKeyboard")&&dbus_message_has_signature(m,""))c.watch=false;
++    else if(dbus_message_has_member(m,"GrabKeyboard")&&dbus_message_has_signature(m,"")){c.full=true;policy.resetTaps();}
++    else if(dbus_message_has_member(m,"UngrabKeyboard")&&dbus_message_has_signature(m,"")){c.full=false;policy.resetTaps();}
++    else if(dbus_message_has_member(m,"SetKeyGrabs")&&dbus_message_has_signature(m,"aua(uu)")) {
++        DBusMessageIter args,array,entry;dbus_message_iter_init(m,&args);dbus_message_iter_recurse(&args,&array);
++        Client next=c;next.modifiers.clear();next.strokes.clear();
++        while(dbus_message_iter_get_arg_type(&array)!=DBUS_TYPE_INVALID){uint32_t v;dbus_message_iter_get_basic(&array,&v);next.modifiers.insert(v);dbus_message_iter_next(&array);}
++        dbus_message_iter_next(&args);dbus_message_iter_recurse(&args,&array);
++        while(dbus_message_iter_get_arg_type(&array)!=DBUS_TYPE_INVALID){uint32_t sym,mask;dbus_message_iter_recurse(&array,&entry);dbus_message_iter_get_basic(&entry,&sym);dbus_message_iter_next(&entry);dbus_message_iter_get_basic(&entry,&mask);next.strokes.insert({sym,mask});dbus_message_iter_next(&array);}
++        c=std::move(next);policy.resetTaps();
++    } else {error(m,DBUS_ERROR_INVALID_ARGS,"unknown method or signature");return DBUS_HANDLER_RESULT_HANDLED;}
++    if(!c.watch&&!c.full&&c.modifiers.empty()&&c.strokes.empty())policy.clients.erase(sender);
++    reply(m);return DBUS_HANDLER_RESULT_HANDLED;
++}
++int poll(void*) {
++    if(!bus)return 0;
++    if(!dbus_connection_read_write(bus,0)||!dbus_connection_get_is_connected(bus))policy.stop();
++    else for(unsigned int budget=0;budget<32&&dbus_connection_get_dispatch_status(bus)==DBUS_DISPATCH_DATA_REMAINS;++budget)dbus_connection_dispatch(bus);
++    wl_event_source_timer_update(timer,5);return 0;
++}
++void cleanup() {
++    if(timer){wl_event_source_remove(timer);timer=nullptr;}
++    if(bus){dbus_connection_remove_filter(bus,dispatch,nullptr);dbus_connection_close(bus);dbus_connection_unref(bus);bus=nullptr;}
++    policy.stop();devices.clear();registrations.clear();
++}
++void hook(CFunctionHook*& output,const char* name,void* target) {
++    auto matches=HyprlandAPI::findFunctionsByName(handle,name);
++    if(matches.size()!=1)throw std::runtime_error(std::string("non-unique ABI target: ")+name);
++    output=HyprlandAPI::createFunctionHook(handle,matches.front().address,target);
++    if(!output||!output->hook())throw std::runtime_error(std::string("hook failed: ")+name);
++}
++}
++APICALL EXPORT std::string PLUGIN_API_VERSION(){return HYPRLAND_API_VERSION;}
++APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE h) {
++    handle=h;
++    const char* enabled=getenv("HYPR_A11Y_BRIDGE_PRIVATE");const char* runtime=getenv("XDG_RUNTIME_DIR");
++    const char* address=getenv("DBUS_SESSION_BUS_ADDRESS");
++    struct stat st{};
++    if(!enabled||std::string(enabled)!="1"||!runtime||!std::string(runtime).starts_with("/tmp/kbn-")||stat(runtime,&st)||st.st_uid!=getuid()||(st.st_mode&0777)!=0700)
++        throw std::runtime_error("candidate restricted to explicit private keyboard-native runtime");
++    const auto expected=std::string("unix:path=")+runtime+"/bus";
++    const auto configured=address?std::string(address):std::string();
++    struct stat socketStat{};
++    if((configured!=expected&&!configured.starts_with(expected+","))||lstat((std::string(runtime)+"/bus").c_str(),&socketStat)||!S_ISSOCK(socketStat.st_mode)||socketStat.st_uid!=getuid())
++        throw std::runtime_error("candidate requires its own D-Bus socket inside private runtime");
++    if(HyprlandAPI::getHyprlandVersion(handle).hash!=HASH)throw std::runtime_error("exact Hyprland ABI mismatch");
++    try {
++        DBusError err;dbus_error_init(&err);
++        bus=dbus_bus_get_private(DBUS_BUS_SESSION,&err);
++        if(!bus){std::string why=err.message?err.message:"private D-Bus unavailable";dbus_error_free(&err);throw std::runtime_error(why);}
++        dbus_connection_set_exit_on_disconnect(bus,false);
++        // Control-plane calls during init; never used by a key route.
++        const int result=dbus_bus_request_name(bus,"org.freedesktop.a11y.Manager",DBUS_NAME_FLAG_DO_NOT_QUEUE,&err);
++        if(result!=DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER)throw std::runtime_error("manager already owned or unavailable");
++        dbus_bus_add_match(bus,"type='signal',sender='org.freedesktop.DBus',interface='org.freedesktop.DBus',member='NameOwnerChanged'",&err);
++        if(dbus_error_is_set(&err)){std::string why=err.message;dbus_error_free(&err);throw std::runtime_error(why);}
++        dbus_connection_add_filter(bus,dispatch,nullptr,nullptr);
++        // The isolated trial starts official clients only after this service.
++        // Adoption of preexisting registrations remains an explicit startup gate.
++        hook(pressedHook,"_ZN9IKeyboard13updatePressedEjb",reinterpret_cast<void*>(onPressed));
++        hook(keyHook,"_ZN13CInputManager13onKeyboardKeyERKN9IKeyboard9SKeyEventEN9Hyprutils6Memory14CSharedPointerIS0_EE",reinterpret_cast<void*>(onKey));
++        hook(maskHook,"_ZN9IKeyboard15updateModifiersEjjjj",reinterpret_cast<void*>(onMask));
++        timer=wl_event_loop_add_timer(g_pCompositor->m_wlEventLoop,poll,nullptr);
++        if(!timer)throw std::runtime_error("Wayland dispatch timer allocation");
++        wl_event_source_timer_update(timer,5);
++    } catch(...) {
++        for(auto* entry:{pressedHook,keyHook,maskHook})if(entry)HyprlandAPI::removeFunctionHook(handle,entry);
++        pressedHook=keyHook=maskHook=nullptr;cleanup();throw;
++    }
++    return {"keyboard-monitor-private","Exact ABI keyboard monitor isolated candidate","local parity QA","0.1-staged"};
++}
++APICALL EXPORT void PLUGIN_EXIT() {
++    // PrepareUnload is the normal quiescence precondition. Accepted keys stay
++    // in Hyprland and receive their natural releases; no synthetic duplicates.
++    // Forced/error unload while captured keys are held is explicitly unproved.
++    cleanup();
++}
+--- /dev/null
++++ native/key_policy.hpp
+@@ -0,0 +1,118 @@
++#pragma once
++
++// Staged local policy. No D-Bus calls, compositor calls, or state publication.
++#include <cstdint>
++#include <map>
++#include <optional>
++#include <set>
++#include <string>
++#include <utility>
++
++namespace KeyboardMonitor {
++struct Client {
++    bool watch = false, full = false;
++    std::set<uint32_t> modifiers;
++    std::set<std::pair<uint32_t,uint32_t>> strokes;
++};
++struct Route {
++    bool consumed = false;
++    uint32_t sym = 0;
++    std::set<std::string> recipients;
++};
++struct Result {
++    bool consumed = false;
++    uint32_t sym = 0;
++    std::set<std::string> recipients;
++};
++class Policy {
++    using Key = std::pair<uintptr_t,uint32_t>;
++    struct Tap { uint32_t sym=0; uint64_t time=0; bool armed=false; };
++    std::map<Key,Route> held;
++    std::map<uintptr_t,Tap> taps;
++public:
++    std::map<std::string,Client> clients;
++    void resetTaps() { taps.clear(); }
++    void drop(const std::string& id) { clients.erase(id); resetTaps(); }
++    void stop() { clients.clear(); resetTaps(); }
++    void removeDevice(uintptr_t device) {
++        for (auto it=held.begin();it!=held.end();) {
++            if(it->first.first==device) it=held.erase(it); else ++it;
++        }
++        taps.erase(device);
++    }
++    bool quiescent() const {
++        for(const auto& [key,route]:held) if(route.consumed) return false;
++        return true;
++    }
++    bool captured(uintptr_t device,uint32_t key) const {
++        const auto it=held.find({device,key});
++        return it!=held.end() && it->second.consumed;
++    }
++    bool known(uintptr_t device,uint32_t key) const { return held.contains({device,key}); }
++    std::set<uint32_t> capturedKeys(uintptr_t device) const {
++        std::set<uint32_t> keys;
++        for(const auto& [identity,route]:held)if(identity.first==device&&route.consumed)keys.insert(identity.second);
++        return keys;
++    }
++    Result key(uintptr_t device,uint32_t key,uint32_t sym,uint32_t state,bool press,uint64_t now,uint32_t delay,bool alreadyNativePressed=false,bool allowed=true) {
++        const Key identity{device,key};
++        if(!allowed)resetTaps();
++        auto previous=held.find(identity);
++        // Routes retain suppression and original keysym even after policy/layout changes.
++        if(previous!=held.end()) {
++            Result result{previous->second.consumed,previous->second.sym,{}};
++            for(const auto& [id,c]:clients) {
++                if(!allowed)continue;
++                if(c.watch || c.full || previous->second.recipients.contains(id)) result.recipients.insert(id);
++            }
++            if(!press) held.erase(previous);
++            return result;
++        }
++        Result result{false,sym,{}};
++        if(!allowed) {
++            if(press)held.emplace(identity,Route{false,sym,{}});
++            return result;
++        }
++        // Preexisting native presses/releases keep their original delivery route.
++        if(!press || alreadyNativePressed) {
++            for(const auto& [id,c]:clients) if(c.watch) result.recipients.insert(id);
++            if(press) held.emplace(identity,Route{false,sym,result.recipients});
++            return result;
++        }
++        bool modifier=false, chord=false, full=false,exactStroke=false;
++        for(const auto& [id,c]:clients) {
++            full |= c.full;
++            exactStroke |= c.strokes.contains({sym,state});
++            modifier |= c.modifiers.contains(sym);
++            bool customHeld=false;
++            for(const auto& [k,r]:held) if(k.first==device && c.modifiers.contains(r.sym) && r.sym!=sym) customHeld=true;
++            bool claim=c.full || c.modifiers.contains(sym) || customHeld || c.strokes.contains({sym,state});
++            if(c.watch || claim) result.recipients.insert(id);
++            result.consumed |= claim;
++            chord |= customHeld;
++        }
++        auto& tap=taps[device];
++        const bool second=modifier && !full && !chord && !exactStroke && tap.armed && tap.sym==sym && now>=tap.time && now-tap.time<=delay;
++        if(second) { result.consumed=false; tap.armed=false; }
++        else if(modifier && !full && !chord && result.consumed) tap={sym,now,true};
++        else if(chord) tap.armed=false;
++        held.emplace(identity,Route{result.consumed,sym,result.recipients});
++        return result;
++    }
++};
++
++struct Mask { uint32_t depressed=0,latched=0,locked=0,group=0; };
++// Explicit virtual-mask policy. Accepted/raw lock differences are retained after
++// grabs end. The caller supplies per-packet suppressed lock/depressed masks from
++// actual XKB key routes. Ambiguous batched modifier attribution remains a gate.
++class VirtualMaskGuard {
++    uint32_t correction=0;
++public:
++    Mask filter(Mask raw,Mask accepted,uint32_t suppressedDepressed,uint32_t controlledLocks,bool fullGrab,std::optional<uint32_t> expectedLocks=std::nullopt) {
++        const auto mask=fullGrab ? UINT32_MAX : controlledLocks;
++        correction=(correction & ~mask) | ((raw.locked ^ expectedLocks.value_or(accepted.locked)) & mask);
++        return {raw.depressed & ~suppressedDepressed,raw.latched,raw.locked ^ correction,raw.group};
++    }
++    uint32_t parity() const { return correction; }
++};
++}
+--- /dev/null
++++ native/xkb_replay.cpp
+@@ -0,0 +1,118 @@
++#include "key_policy.hpp"
++#include <xkbcommon/xkbcommon.h>
++#include <xkbcommon/xkbcommon-keysyms.h>
++#include <linux/input-event-codes.h>
++#include <iostream>
++#include <stdexcept>
++#include <memory>
++using namespace KeyboardMonitor;
++static int checks=0;
++static void require(bool ok,const char* label) {
++    if(!ok) throw std::runtime_error(label);
++    ++checks; std::cout<<"PASS "<<label<<'\n';
++}
++struct Rig {
++    xkb_context* context=xkb_context_new(XKB_CONTEXT_NO_FLAGS);
++    xkb_keymap* map=nullptr;
++    xkb_state *raw=nullptr,*accepted=nullptr;
++    Policy policy;
++    uint64_t now=1000;
++    Rig() {
++        xkb_rule_names rules{.rules="evdev",.model="pc105",.layout="us",.variant=nullptr,.options=nullptr};
++        map=xkb_keymap_new_from_names(context,&rules,XKB_KEYMAP_COMPILE_NO_FLAGS);
++        if(!map) throw std::runtime_error("real XKB keymap");
++        raw=xkb_state_new(map);accepted=xkb_state_new(map);
++    }
++    ~Rig(){xkb_state_unref(raw);xkb_state_unref(accepted);xkb_keymap_unref(map);xkb_context_unref(context);}
++    uint32_t locks() const{return xkb_state_serialize_mods(accepted,XKB_STATE_MODS_LOCKED);}
++    uint32_t mods() const{return xkb_state_serialize_mods(accepted,XKB_STATE_MODS_EFFECTIVE);}
++    Result key(uint32_t evdev,bool press,uintptr_t dev=1) {
++        auto key=evdev+8;
++        auto sym=xkb_state_key_get_one_sym(raw,key);
++        auto state=xkb_state_serialize_mods(raw,XKB_STATE_MODS_EFFECTIVE);
++        const bool known=policy.known(dev,evdev);
++        auto result=policy.key(dev,evdev,sym,state,press,now++,300);
++        if(press?!known:known) {
++            xkb_state_update_key(raw,key,press?XKB_KEY_DOWN:XKB_KEY_UP);
++            if(!result.consumed) xkb_state_update_key(accepted,key,press?XKB_KEY_DOWN:XKB_KEY_UP);
++        }
++        // Observer retains raw held non-locking modifiers and accepted locks.
++        xkb_state_update_mask(raw,xkb_state_serialize_mods(raw,XKB_STATE_MODS_DEPRESSED),xkb_state_serialize_mods(raw,XKB_STATE_MODS_LATCHED),locks(),0,0,xkb_state_serialize_layout(accepted,XKB_STATE_LAYOUT_EFFECTIVE));
++        return result;
++    }
++};
++int main(){try{
++    {Rig r; require(!r.key(KEY_H,true).consumed,"default typing passes");r.key(KEY_H,false);
++     r.key(KEY_CAPSLOCK,true);r.key(KEY_CAPSLOCK,false);require(r.locks()!=0,"default Caps toggles");}
++    {Rig r;r.policy.clients[":watch"].watch=true;
++     require(!r.key(KEY_H,true).consumed,"watch never consumes");r.key(KEY_H,false);
++     r.key(KEY_NUMLOCK,true);r.key(KEY_NUMLOCK,false);require(r.locks()!=0,"watch Num toggles");}
++    {Rig r;r.policy.clients[":reader"].modifiers.insert(XKB_KEY_Caps_Lock);
++     require(r.key(KEY_CAPSLOCK,true).consumed,"first custom Caps captured before XKB");r.key(KEY_CAPSLOCK,false);
++     require(r.locks()==0,"captured Caps has no accepted lock");
++     require(!r.key(KEY_CAPSLOCK,true).consumed,"second standalone Caps passes");r.key(KEY_CAPSLOCK,false);
++     require(r.locks()!=0,"second Caps toggles accepted lock exactly once");}
++    {Rig r;r.policy.clients[":reader"].modifiers.insert(XKB_KEY_Caps_Lock);
++     r.key(KEY_CAPSLOCK,true);require(r.key(KEY_H,true).consumed,"custom Caps chord captures real H key");
++     r.key(KEY_CAPSLOCK,false);require(r.key(KEY_H,false).consumed,"chord release remains captured after modifier release");
++     require(r.key(KEY_CAPSLOCK,true).consumed,"chord disarms double tap");r.key(KEY_CAPSLOCK,false);require(r.locks()==0,"chord never toggles Caps");}
++    {Rig r;r.policy.clients[":reader"].full=true;
++     r.key(KEY_LEFTSHIFT,true);require(r.mods()==0,"full grab blocks accepted Shift modifier");
++     auto h=r.key(KEY_H,true);require(h.consumed&&h.sym==XKB_KEY_H,"raw observer retains Shift while native state suppressed");
++     r.policy.drop(":reader");require(!r.policy.quiescent(),"disconnect retains captured route tombstones");
++     require(r.key(KEY_H,false).consumed&&r.key(KEY_LEFTSHIFT,false).consumed,"disconnect releases suppressed without native orphan");
++     require(r.policy.quiescent()&&!r.key(KEY_H,true).consumed,"later typing passes after disconnect");r.key(KEY_H,false);}
++    {Rig r;r.policy.clients[":reader"].full=true;r.key(KEY_LEFTSHIFT,true);r.key(KEY_LEFTSHIFT,true);r.key(KEY_LEFTSHIFT,false);
++     r.policy.stop();auto h=r.key(KEY_H,true);
++     require(h.sym==XKB_KEY_h&&!h.consumed,"captured repeats do not leave raw Shift stuck");r.key(KEY_H,false);}
++    {Rig r;r.key(KEY_H,true);r.policy.clients[":reader"].full=true;
++     require(!r.key(KEY_H,false).consumed,"preexisting accepted press retains real release under new grab");
++     require(r.policy.quiescent(),"accepted held keys do not obstruct suppression quiescence");}
++    {Rig r;r.policy.clients[":reader"].modifiers.insert(XKB_KEY_Caps_Lock);
++     r.key(KEY_CAPSLOCK,true);r.key(KEY_CAPSLOCK,false);r.policy.resetTaps();
++     require(r.key(KEY_CAPSLOCK,true).consumed,"grab mutation resets native policy tap state");r.key(KEY_CAPSLOCK,false);}
++    {Rig r;r.policy.clients[":reader"].full=true;r.key(KEY_H,true,1);r.policy.stop();
++     require(!r.key(KEY_H,true,2).consumed,"release tombstones are device scoped");
++     require(r.key(KEY_H,false,1).consumed&&!r.key(KEY_H,false,2).consumed,"same key on two devices retains independent routes");}
++    {Policy p;p.clients[":reader"].watch=true;p.clients[":reader"].full=true;
++     auto press=p.key(1,KEY_H,XKB_KEY_h,0,true,1,300);require(press.consumed,"permission fixture starts captured");
++     auto release=p.key(1,KEY_H,XKB_KEY_H,0,false,2,300,false,false);
++     require(release.consumed&&release.recipients.empty()&&p.quiescent(),"revoked permission release silent and suppressed");
++     auto denied=p.key(1,KEY_J,XKB_KEY_j,0,true,3,300,false,false);
++     require(!denied.consumed&&denied.recipients.empty(),"fresh revoked packet passes without observation");}
++    {Policy p;p.clients[":reader"].full=true;p.key(1,KEY_H,XKB_KEY_h,0,true,1,300);
++     p.resetTaps();auto release=p.key(1,KEY_H,XKB_KEY_H,1,false,2,300);
++     require(release.consumed&&release.sym==XKB_KEY_h,"keymap change retains captured original keysym and release");
++     p.key(1,KEY_H,XKB_KEY_h,0,true,3,300);p.removeDevice(1);p.stop();
++     require(p.quiescent()&&!p.key(1,KEY_H,XKB_KEY_h,0,true,4,300).consumed,"removed device cannot leak tombstone into reused identity");}
++    {Policy p;p.clients[":reader"].modifiers.insert(XKB_KEY_Caps_Lock);p.clients[":second"].strokes.insert({XKB_KEY_Caps_Lock,0});
++     p.key(1,KEY_CAPSLOCK,XKB_KEY_Caps_Lock,0,true,1,300);p.key(1,KEY_CAPSLOCK,XKB_KEY_Caps_Lock,0,false,2,300);
++     require(p.key(1,KEY_CAPSLOCK,XKB_KEY_Caps_Lock,0,true,3,300).consumed,"other client's exact stroke cannot be bypassed by custom double tap");}
++    {VirtualMaskGuard v;Mask accepted{},raw{0,0,2,0};
++     auto filtered=v.filter(raw,accepted,0,2,false);
++     require(filtered.locked==0&&v.parity()==2,"explicit captured virtual Caps packet suppressed");
++     filtered=v.filter(raw,filtered,0,0,false);require(filtered.locked==0,"virtual lock correction survives grab end");
++     raw.locked=0;filtered=v.filter(raw,filtered,0,0,false);require(filtered.locked==2,"next ordinary virtual Caps toggle preserved");
++     raw.depressed=1;raw.latched=4;raw.group=1;filtered=v.filter(raw,filtered,1,0,false);
++     require(filtered.depressed==0&&filtered.latched==4&&filtered.group==1,"captured depressed modifier filtered while latched/layout preserved");}
++    {Rig r;VirtualMaskGuard v;Mask accepted{};
++     xkb_state_update_key(r.raw,KEY_NUMLOCK+8,XKB_KEY_DOWN);
++     Mask raw{0,0,xkb_state_serialize_mods(r.raw,XKB_STATE_MODS_LOCKED),0};
++     require(raw.locked!=0,"real XKB generates Num lock virtual mask");
++     accepted=v.filter(raw,accepted,0,0,true);require(accepted.locked==0,"full virtual grab freezes real Num toggle");
++     xkb_state_update_key(r.raw,KEY_NUMLOCK+8,XKB_KEY_UP);
++     raw.locked=xkb_state_serialize_mods(r.raw,XKB_STATE_MODS_LOCKED);
++     accepted=v.filter(raw,accepted,0,0,false);require(accepted.locked==0,"real virtual Num correction retained after ungrab");
++     xkb_state_update_key(r.raw,KEY_NUMLOCK+8,XKB_KEY_DOWN);
++     raw.locked=xkb_state_serialize_mods(r.raw,XKB_STATE_MODS_LOCKED);
++     xkb_state_update_key(r.accepted,KEY_NUMLOCK+8,XKB_KEY_DOWN);
++     const auto expected=xkb_state_serialize_mods(r.accepted,XKB_STATE_MODS_LOCKED);
++     accepted=v.filter(raw,accepted,0,16,false,expected);
++     require(accepted.locked==expected&&expected!=0,"accepted XKB shadow fixes next Num down timing");
++     xkb_state_update_key(r.raw,KEY_NUMLOCK+8,XKB_KEY_UP);xkb_state_update_key(r.accepted,KEY_NUMLOCK+8,XKB_KEY_UP);
++     raw.locked=xkb_state_serialize_mods(r.raw,XKB_STATE_MODS_LOCKED);
++     accepted=v.filter(raw,accepted,0,16,false,xkb_state_serialize_mods(r.accepted,XKB_STATE_MODS_LOCKED));
++     require(accepted.locked!=0,"corrected virtual Num release retains accepted lock");}
++    std::cout<<"SUMMARY checks="<<checks<<" nativeCompositorInput=false\n";
++    return 0;
++}catch(const std::exception& e){std::cerr<<"FAIL "<<e.what()<<'\n';return 1;}}

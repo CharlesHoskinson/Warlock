@@ -1,0 +1,96 @@
+{
+  "result": "fail",
+  "error": "AssertionError()",
+  "records": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/configure_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  configure_lifecycle\n    ok initialCommitRefusedTest passed 1 test(s)\n    ok toplevelDoesNotPublishTest passed 1 test(s)\n    ok ackAloneDoesNotCommitTest passed 1 test(s)\n    ok acknowledgedPublicationAllowsBufferTest passed 1 test(s)\n    ok destroyedOutputCannotReappearTest passed 1 test(s)\n    ok repeatedConfigureStaysUsableTest passed 1 test(s)\n    ok publishedDestructionRefusesMoreTest passed 1 test(s)\n    ok ackThenDestroyedQueuedCallbackRefusedTest passed 1 test(s)\n    ok stateListenerDestructionRefusesFrameTest passed 1 test(s)\n    ok publishedThenDestroyedQueuedReconfigureRefusedTest passed 1 test(s)\n    ok idleFrameBeforeAnnouncementRefusedTest passed 1 test(s)\n    ok publishedFrameAndBufferRecordedSeparatelyTest passed 1 test(s)\n    ok parentLossBeforeAckInvalidatesQueuedWorkTest passed 1 test(s)\n    ok parentLossAfterAckRefusesAnnouncementTest passed 1 test(s)\n    ok publishedParentLossStopsBuffersFramesAndReconfigureTest passed 1 test(s)\n\n  15 passing (840ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/configure_lifecycle.qnt",
+        "--invariant",
+        "safe",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20261001",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (2314ms at 864 traces/second).\nUse --seed=0x14d8f69 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/nested_selection.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  nested_selection\n    ok mandatoryWaylandConstructedWithoutDrmTest passed 1 test(s)\n    ok strictInitialDrmRequestsRefusedTest passed 1 test(s)\n    ok lateGpuCannotCreateDrmTest passed 1 test(s)\n    ok failedMandatoryParentCannotUseAuxiliaryTest passed 1 test(s)\n    ok auxiliaryBeforeMandatoryStartRefusedTest passed 1 test(s)\n    ok successfulParentAllowsAuxiliaryTest passed 1 test(s)\n    ok parentLossCannotFallbackToLiveAuxiliaryTest passed 1 test(s)\n    ok lostParentIgnoresLateStartAndGpuTest passed 1 test(s)\n    ok invalidSelectionMakesNoBackendTest passed 1 test(s)\n    ok unsetPreservesDrmStartupTest passed 1 test(s)\n    ok unsetPreservesLateGpuTest passed 1 test(s)\n    ok rejectedParentNotRetargetedByLateSelectionTest passed 1 test(s)\n\n  12 passing (348ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/nested_selection.qnt",
+        "--invariant",
+        "safe",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20261001",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (3228ms at 620 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/version_guard.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  version_guard\n    ok compositor5Binds5Test passed 1 test(s)\n    ok lowCompositorRefusesDamageBufferTest passed 1 test(s)\n    ok lowDmabufRefusesDefaultFeedbackTest passed 1 test(s)\n    ok futureVersionClampsToClientTest passed 1 test(s)\n    ok absentGlobalDoesNotBindTest passed 1 test(s)\n\n  5 passing (107ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/version_guard.qnt",
+        "--invariant",
+        "validBinding and truthfulRefusal",
+        "--max-steps",
+        "100",
+        "--max-samples",
+        "2000",
+        "--seed",
+        "20261001",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1942ms at 1030 traces/second).\nUse --seed=0x13b4241 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ]
+}

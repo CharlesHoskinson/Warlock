@@ -1,0 +1,63 @@
+{
+  "config": "/home/hoskinson/window-integration-qa/orca-reader/native-shutdown/disposable-controls",
+  "plugin": "fresh staged V4",
+  "normal_shutdown": true,
+  "pid": 2493588,
+  "pre_layers": {
+    "eDP-2": {
+      "levels": {
+        "0": [
+          {
+            "address": "0x5a02ae1c7670",
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000,
+            "alpha": 1,
+            "namespace": "owe-background",
+            "pid": 1701
+          }
+        ],
+        "1": [],
+        "2": [
+          {
+            "address": "0x5a02b02f9170",
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 26,
+            "alpha": 1,
+            "namespace": "omarchy-bar",
+            "pid": 2359683
+          }
+        ],
+        "3": [
+          {
+            "address": "0x5a02af4f3b10",
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000,
+            "alpha": 1,
+            "namespace": "omarchy-notifications",
+            "pid": 2359683
+          }
+        ]
+      }
+    }
+  },
+  "focus_before_normal_kill": {
+    "opened": true,
+    "leafFocus": true,
+    "leafActiveFocus": true,
+    "panelActiveFocus": false,
+    "contentFocus": false,
+    "contentActiveFocus": false
+  },
+  "kill_command": {
+    "returncode": 0,
+    "stdout": "Killed c2gh1bfm7mt\n",
+    "stderr": ""
+  },
+  "process_exitcode": 0
+}

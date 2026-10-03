@@ -1,0 +1,3 @@
+# Inactive old signal refinement
+
+Original30 model and original proof runner/report remain exact. The first model left implicit current-lease EOF/exit variants faulting when no record was active; actual callbacks always carry the tuple/lease and find no selected record after retirement. The V2 refinement leaves all native signal variants inert when no record is selected, in addition to explicit wrong-lease preservation while a new record is selected. Five named exact-snapshot cases cover retired EOF/exit/result and old worker proof/result after changed-command rearm. No runtime or frontend source has changed.

@@ -1,0 +1,6 @@
+{
+  "result": "root-checker-error",
+  "reason": "Root incorrectly required every files row to be a nonsymlink. This inherited Browser manifest intentionally records both named symlink target bytes/mode and exact link target, plus resolved target row. Frozen source was not changed.",
+  "nativeLaunch": false,
+  "mainWrites": false
+}

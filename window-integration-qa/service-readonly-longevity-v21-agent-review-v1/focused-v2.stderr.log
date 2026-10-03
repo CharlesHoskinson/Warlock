@@ -1,0 +1,11 @@
+test_actual_keeper_first_startup_publication_keeps_lineage_before_reader (test_readonly_longevity.LongevityKernelTests.test_actual_keeper_first_startup_publication_keeps_lineage_before_reader) ... ok
+test_genuine_640_queries_exceed_original_512_without_discard_or_replay (test_readonly_longevity.LongevityKernelTests.test_genuine_640_queries_exceed_original_512_without_discard_or_replay) ... ok
+test_pending_actual_connection_survives_disjoint_closed_reclamation (test_readonly_longevity.LongevityKernelTests.test_pending_actual_connection_survives_disjoint_closed_reclamation) ... ok
+test_live_postdisk_confirmation_reference_cannot_be_reclaimed (test_readonly_longevity.LongevityKernelTests.test_live_postdisk_confirmation_reference_cannot_be_reclaimed) ... ok
+test_unpublished_refusal_is_retained_raw_and_not_reclaimed (test_readonly_longevity.LongevityKernelTests.test_unpublished_refusal_is_retained_raw_and_not_reclaimed) ... ok
+test_real_child_crash_after_durable_tip_restarts_with_exact_new_lifetime (test_readonly_longevity.LongevityKernelTests.test_real_child_crash_after_durable_tip_restarts_with_exact_new_lifetime) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 139.341s
+
+OK

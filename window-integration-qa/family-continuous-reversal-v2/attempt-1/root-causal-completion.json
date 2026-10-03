@@ -1,0 +1,173 @@
+{
+  "result": "strict-reversal-evidence-pass-campaign-failed",
+  "reportSHA256": "3e17c677286f415f8285a199a9224f321bd390077673def4e8342e88946baec6",
+  "actualRequestLatenciesMs": [
+    {
+      "receipt": 3,
+      "milliseconds": 4.437792
+    },
+    {
+      "receipt": 4,
+      "milliseconds": 2.746973
+    },
+    {
+      "receipt": 5,
+      "milliseconds": 1.60739
+    }
+  ],
+  "originalReversalOracle": {
+    "reversals": [
+      {
+        "token": "6fd33038a8ed-2",
+        "origins": [
+          {
+            "origin": {
+              "generation": 6,
+              "members": [
+                {
+                  "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+                  "pid": 1645424,
+                  "rectangle": {
+                    "height": 286.0394124,
+                    "width": 399.8869361818182,
+                    "x": 84.9371502,
+                    "y": 183.81665541818182
+                  },
+                  "stableId": "18000000"
+                },
+                {
+                  "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+                  "pid": 1645424,
+                  "rectangle": {
+                    "height": 185.58571494545455,
+                    "width": 282.6909558181818,
+                    "x": 218.87541347272727,
+                    "y": 234.04350414545456
+                  },
+                  "stableId": "18000002"
+                },
+                {
+                  "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+                  "pid": 1645424,
+                  "rectangle": {
+                    "height": 152.10114912727272,
+                    "width": 215.7218241818182,
+                    "x": 277.47340365454545,
+                    "y": 267.52806996363637
+                  },
+                  "stableId": "18000003"
+                }
+              ],
+              "output": "WAYLAND-1",
+              "rectangle": {
+                "height": 286.0394124,
+                "width": 416.62921909090903,
+                "x": 84.9371502,
+                "y": 183.81665541818182
+              },
+              "sequence": "14",
+              "timestampNs": "106667508897663"
+            },
+            "actualPresentedToken": "6fd33038a8ed-1"
+          }
+        ],
+        "sourceReused": true
+      },
+      {
+        "token": "6fd33038a8ed-3",
+        "origins": [
+          {
+            "origin": {
+              "generation": 6,
+              "members": [
+                {
+                  "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+                  "pid": 1645424,
+                  "rectangle": {
+                    "height": 290.0387085294156,
+                    "width": 405.5912613820818,
+                    "x": 85.55773063387484,
+                    "y": 186.5246427659993
+                  },
+                  "stableId": "18000000"
+                },
+                {
+                  "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+                  "pid": 1645424,
+                  "rectangle": {
+                    "height": 188.08057365941602,
+                    "width": 286.6401040337489,
+                    "x": 221.50191046054096,
+                    "y": 237.50371020099908
+                  },
+                  "stableId": "18000002"
+                },
+                {
+                  "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+                  "pid": 1645424,
+                  "rectangle": {
+                    "height": 154.09452870274947,
+                    "width": 218.66801412041588,
+                    "x": 280.9774891347074,
+                    "y": 271.4897551576656
+                  },
+                  "stableId": "18000003"
+                }
+              ],
+              "output": "WAYLAND-1",
+              "rectangle": {
+                "height": 290.03870852941566,
+                "width": 422.58428386041504,
+                "x": 85.55773063387484,
+                "y": 186.5246427659993
+              },
+              "sequence": "16",
+              "timestampNs": "106667542286925"
+            },
+            "actualPresentedToken": "6fd33038a8ed-2"
+          }
+        ],
+        "sourceReused": true
+      }
+    ],
+    "sourceUploads": 3,
+    "displayedOriginsBound": true,
+    "rendererEvidenceAccepted": true,
+    "nativeCommitAccepted": false,
+    "physicalCadenceAccepted": false,
+    "fullWindowsParityAccepted": false
+  },
+  "actualOrigins": [
+    {
+      "token": "6fd33038a8ed-1",
+      "sequence": "14",
+      "progress": 0.16288585454545454,
+      "strictInterior": true
+    },
+    {
+      "token": "6fd33038a8ed-2",
+      "sequence": "16",
+      "progress": 0.07696787727272728,
+      "strictInterior": true
+    }
+  ],
+  "cacheRepresentation": {
+    "fileCount": 6,
+    "jsonCount": 3,
+    "pngCount": 3,
+    "files": {
+      "/run/user/1000/wqa/6b48/hypr-window-motion/qa-family-service/snapshot-cache/full-18000000-1645424.json": "b6d96f39d18dde2a73c868c616c4d744984724ac931649e8e8bf86c61dce8abe",
+      "/run/user/1000/wqa/6b48/hypr-window-motion/qa-family-service/snapshot-cache/full-18000000-1645424-86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "/run/user/1000/wqa/6b48/hypr-window-motion/qa-family-service/snapshot-cache/full-18000002-1645424.json": "53341a615e43a7aa0e38ce39ae363264cdd7e711464f4641c91d5343254cfa91",
+      "/run/user/1000/wqa/6b48/hypr-window-motion/qa-family-service/snapshot-cache/full-18000002-1645424-26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "/run/user/1000/wqa/6b48/hypr-window-motion/qa-family-service/snapshot-cache/full-18000003-1645424.json": "3f14cf3da6bac2c7549524728d8e5335cf568f8cc61fe05c12f5d00b9b524c34",
+      "/run/user/1000/wqa/6b48/hypr-window-motion/qa-family-service/snapshot-cache/full-18000003-1645424-a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070"
+    }
+  },
+  "allNativeTaskbarMembersPresent": true,
+  "failedConjunct": "len(final_pairs)==3 counts dictionary entries; unchanged_pairs returns6 files for3 exact preview pairs",
+  "fullCampaignAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "nativeCommitAccepted": false,
+  "mainWrites": false
+}

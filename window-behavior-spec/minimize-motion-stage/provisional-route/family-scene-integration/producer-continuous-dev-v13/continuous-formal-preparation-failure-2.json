@@ -1,0 +1,31 @@
+{
+  "beforeRuntimeImplementation": true,
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/continuous_integration_test.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: Couldn't unify set and list\nTrying to unify Set[_t235] and List[Frame]\nTrying to unify (Set[_t235], (_t235) => _t236) => Set[_t236] and (List[Frame], ({ pos: _t234 | tail__t234 }) => _t234) => _t237\n\n\n  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/continuous_integration.qnt:21:148\n  21:       if(lower>0 and lower<=upper){...s,token:p.token,epoch:s.epoch+1,promoted:false,running:true,starts:1,hasIssue:false,accepted:Set(),originPos:s.origins.map(f=>f.pos),originVel:s.origins.map(f=>f.vel),carryPos:s.origins.map(f=>f.pos),carryVel:s.origins.map(f=>f.vel),carried:true,duration:upper} else retire(s)\n                                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/continuous_integration.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT000]: Couldn't unify set and list\nTrying to unify Set[_t235] and List[Frame]\nTrying to unify (Set[_t235], (_t235) => _t236) => Set[_t236] and (List[Frame], ({ pos: _t234 | tail__t234 }) => _t234) => _t237\n\n\n  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/continuous_integration.qnt:21:148\n  21:       if(lower>0 and lower<=upper){...s,token:p.token,epoch:s.epoch+1,promoted:false,running:true,starts:1,hasIssue:false,accepted:Set(),originPos:s.origins.map(f=>f.pos),originVel:s.origins.map(f=>f.vel),carryPos:s.origins.map(f=>f.pos),carryVel:s.origins.map(f=>f.vel),carried:true,duration:upper} else retire(s)\n                                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n"
+    }
+  ],
+  "result": "fail"
+}

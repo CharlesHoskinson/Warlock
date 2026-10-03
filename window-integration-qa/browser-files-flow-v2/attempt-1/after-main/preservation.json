@@ -1,0 +1,88 @@
+{
+  "checks": {
+    "allStableClientFields": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "typedClipboardAndPrimary": true,
+    "a11ySocketFlagsAndReaderEnabled": true,
+    "outputs": true,
+    "plugins": true,
+    "keyboardStates": true,
+    "fourCatalogNaturalBytes": true,
+    "dashboardBytes": true,
+    "originalFilesProcess": true,
+    "originalFilesPublicState": true,
+    "originalFilesFullUi": true,
+    "originalFilesVisibility": true
+  },
+  "details": {
+    "currentTitleHashesBefore": {
+      "0x5a02b0cc9280": "a7b8aa98953e573ee61bb4e66d1206f8e4dfba0730b657472f7db8da97049000",
+      "0x5a02afa13e90": "102607aba0aca07600ed90354604dd4f2164a9ea9a674a5727b90bdfc8f648ab",
+      "0x5a02aee429f0": "5d48eac09d17489ce011af63b5d37700a395e24810b96bfc3f21976c904cce18",
+      "0x5a02afd20bd0": "955409ed1ec51afd6a72768611ff73825fbda874456c7697bb56f5054a90cf6e"
+    },
+    "currentTitleHashesAfter": {
+      "0x5a02b0cc9280": "a7b8aa98953e573ee61bb4e66d1206f8e4dfba0730b657472f7db8da97049000",
+      "0x5a02afa13e90": "102607aba0aca07600ed90354604dd4f2164a9ea9a674a5727b90bdfc8f648ab",
+      "0x5a02aee429f0": "5d48eac09d17489ce011af63b5d37700a395e24810b96bfc3f21976c904cce18",
+      "0x5a02afd20bd0": "955409ed1ec51afd6a72768611ff73825fbda874456c7697bb56f5054a90cf6e"
+    },
+    "catalogNaturalComparison": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": {
+        "exactBytes": true,
+        "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+        "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0"
+      },
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": {
+        "exactBytes": true,
+        "expectedSHA256": null,
+        "actualSHA256": null
+      },
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": {
+        "exactBytes": true,
+        "expectedSHA256": null,
+        "actualSHA256": null
+      },
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": {
+        "exactBytes": true,
+        "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+        "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+      }
+    },
+    "stableFields": [
+      "address",
+      "pid",
+      "stableId",
+      "at",
+      "size",
+      "workspace",
+      "pinned",
+      "fullscreen",
+      "fullscreenClient",
+      "grouped",
+      "tags",
+      "floating",
+      "monitor",
+      "mapped",
+      "hidden",
+      "visible",
+      "acceptsInput",
+      "class",
+      "initialClass",
+      "initialTitle",
+      "xwayland",
+      "pinFullscreened",
+      "fullscreenHandler",
+      "allowedOverFullscreen",
+      "swallowing",
+      "inhibitingIdle",
+      "xdgTag",
+      "xdgDescription",
+      "contentType",
+      "tearingHint"
+    ]
+  },
+  "mainRestorationWrites": false
+}

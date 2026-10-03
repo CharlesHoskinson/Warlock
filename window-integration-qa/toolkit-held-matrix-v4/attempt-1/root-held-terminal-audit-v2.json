@@ -1,0 +1,52 @@
+{
+  "result": "fail",
+  "checks": {
+    "terminalReportRetainsActualFailure": true,
+    "completeFrozenBytesModesLinks": true,
+    "exactSourceManifest": true,
+    "all18MainPreservation": true,
+    "mainWritesAbsent": true,
+    "allFourExactVariants": false,
+    "qt-wayland:all13ExactCases": false,
+    "qt-wayland:move-escape:nativeReplay": false,
+    "qt-wayland:move-escape:normalPublicQuit": true,
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:exactQSReadinessAndExplicitNormalQuit": true,
+    "qt-wayland:normalQSAndService": true,
+    "qt-wayland:nativeUnloadNormalOrdered": true,
+    "qt-wayland:hostRuntimeCleanup": false,
+    "qt-wayland:rawHelpersNormalExact": false,
+    "qt-wayland:allRecordedOriginalIdentitiesGone": true,
+    "qt-wayland:bothGenuineShellPreviewReceipts": false
+  },
+  "errors": {
+    "qt-wayland:move-escape:nativeReplay": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/audit.py\", line 169, in check\n    try:self.checks[name]=fn() is True\n                          ~~^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/audit.py\", line 184, in <lambda>\n    self.check(prefix+case.get('case','unidentified')+':nativeReplay',lambda case=case,index=index:case_replay(case,wanted[index],toolkit))\n                                                                                                   ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/audit.py\", line 69, in case_replay\n    trace=case['trace'];gates=case['gates'];initial=one(trace,'label','case baseline')['native'];press=one(trace,'label','actual press');target=press['target'];focus=one(trace,'label','separate WM focus intervention')['native'];peer=focus['nativeFocus']\n                                                    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-terminal-audit-v2/audit.py\", line 65, in one\n    if len(hits)!=1:raise ValueError('One exact '+value+' observation required')\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: One exact case baseline observation required\n"
+  },
+  "inventory": [
+    {
+      "variant": "qt-wayland",
+      "reachedCases": 1,
+      "retainedResult": "fail",
+      "errors": {
+        "error": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/run_native.py\", line 113, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n        ~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/held_route.py\", line 122, in prepare\n    backend=actual_backend(self.fixture.state(),windows,self.variant,self.process.pid,self.host_api.original.mapped_files(self.process.pid)['files'],self.closure)\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/public_toolkit.py\", line 54, in actual_backend\n    if not matches or any(path not in frozen or frozen[path]!=loaded[path] for path in matches):raise ValueError('Actual toolkit backend module outside frozen exact bytes')\n                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Actual toolkit backend module outside frozen exact bytes\n",
+        "helperAcceptanceError": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/run_native.py\", line 113, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n        ~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/held_route.py\", line 122, in prepare\n    backend=actual_backend(self.fixture.state(),windows,self.variant,self.process.pid,self.host_api.original.mapped_files(self.process.pid)['files'],self.closure)\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/public_toolkit.py\", line 54, in actual_backend\n    if not matches or any(path not in frozen or frozen[path]!=loaded[path] for path in matches):raise ValueError('Actual toolkit backend module outside frozen exact bytes')\n                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Actual toolkit backend module outside frozen exact bytes\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/run_native.py\", line 172, in variant_run\n    report['completedHelpers']=helper_setup.wait_and_archive(config,output/'completed-helpers.json',expect_harness=True,expect_service=True)\n                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/helper_setup.py\", line 254, in wait_and_archive\n    expected={'service-motionTarget:'+observer.service_member(row):config['serviceTargetLimitPerMember'] for row in config['serviceMembers']}\n                                                                                                                    ~~~~~~^^^^^^^^^^^^^^^^^^\nKeyError: 'serviceMembers'\n"
+      }
+    }
+  ],
+  "sourceManifestSHA256": "59d0098bc13139efe89325011a760f635d3392ee7883ddff9caa3d3c6e77b361",
+  "sourceCount": 21004,
+  "modeCount": 21004,
+  "linkCount": 320,
+  "actualReachedCases": 1,
+  "expectedCases": 52,
+  "producerResult": "fail",
+  "nativeCommands": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false,
+  "fullHeld52ReplayAccepted": false,
+  "replayLimitations": [
+    "Historical geometry/pin and native IPC command timing are accepted only where actual samples are retained; gate booleans alone do not supply missing observations."
+  ],
+  "auditorSourceSHA256": "5d35dd6a4f31e71073faa44241d0368055523787040c3842436345236d2fc011"
+}

@@ -1,0 +1,14 @@
+{
+  "sourceSHA256": "76cd578ef37ca1a08116d4e9cc03bc0b1dfefffaabde1cf3b0987105517d8a01",
+  "counterexample": "read_config accepts replacement descriptor while pathname inode restored",
+  "observed": {
+    "origin": "replacement"
+  },
+  "pathAfter": {
+    "origin": "original"
+  },
+  "originalPathInodeRestored": true,
+  "expected": "reject fd inode differs from initial lstat",
+  "nativeLaunched": false,
+  "rootFilesModified": false
+}

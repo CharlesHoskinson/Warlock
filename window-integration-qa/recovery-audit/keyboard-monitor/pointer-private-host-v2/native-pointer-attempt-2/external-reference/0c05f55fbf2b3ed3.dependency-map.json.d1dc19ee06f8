@@ -1,0 +1,706 @@
+{
+  "weston": [
+    {
+      "soname": "libexec_weston.so.0",
+      "path": "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/weston/libexec_weston.so.0.0.0",
+      "sha256": "ddd1ba3516f9ca6272890701712ca904e3a68141ff356a5b5d513eb090931107",
+      "owner": "verified user-local Weston package"
+    },
+    {
+      "soname": "libc.so.6",
+      "path": "/usr/lib/libc.so.6",
+      "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+      "owner": "/usr/lib/libc.so.6 is owned by glibc 2.44+r24+g16be1518495f-1"
+    },
+    {
+      "soname": "libweston-15.so.0",
+      "path": "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15.so.0.0.1",
+      "sha256": "4f69699a64ef12138ead0bb24a1a19ecd5b87a0d723e3bc06a5d0af9177aa300",
+      "owner": "verified user-local Weston package"
+    },
+    {
+      "soname": "libwayland-client.so.0",
+      "path": "/usr/lib/libwayland-client.so.0.26.0",
+      "sha256": "39c83ae7b73d22f18b4f81da14749c4535c304b7e62910a2f1aae682f279cc9d",
+      "owner": "/usr/lib/libwayland-client.so.0.26.0 is owned by wayland 1.26.0-1"
+    },
+    {
+      "soname": "libwayland-server.so.0",
+      "path": "/usr/lib/libwayland-server.so.0.26.0",
+      "sha256": "7e89d8a177a78343a7cf92e3c1c756dc98a437489de4861ff6de907c7e48af89",
+      "owner": "/usr/lib/libwayland-server.so.0.26.0 is owned by wayland 1.26.0-1"
+    },
+    {
+      "soname": "libinput.so.10",
+      "path": "/usr/lib/libinput.so.10.13.0",
+      "sha256": "9e8eb024885dc1710e08848b84cc620a72e1b3841102e11a5894c825f4bcb75d",
+      "owner": "/usr/lib/libinput.so.10.13.0 is owned by libinput 1.31.3-1"
+    },
+    {
+      "soname": "libevdev.so.2",
+      "path": "/usr/lib/libevdev.so.2.3.0",
+      "sha256": "98e2d73830670af85de7612e16d60757d2bed91046bf11e574a58bc2cc783a6a",
+      "owner": "/usr/lib/libevdev.so.2.3.0 is owned by libevdev 1.13.7-1"
+    },
+    {
+      "soname": "libdisplay-info.so.3",
+      "path": "/usr/lib/libdisplay-info.so.0.3.0",
+      "sha256": "98f632c36bdd89d75914200cb6d1b3cfce8b21067e73845b8a6c4d959903f97f",
+      "owner": "/usr/lib/libdisplay-info.so.0.3.0 is owned by libdisplay-info 0.3.0-1"
+    },
+    {
+      "soname": "/lib64/ld-linux-x86-64.so.2",
+      "path": "/usr/lib/ld-linux-x86-64.so.2",
+      "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+      "owner": "/usr/lib/ld-linux-x86-64.so.2 is owned by glibc 2.44+r24+g16be1518495f-1"
+    },
+    {
+      "soname": "libm.so.6",
+      "path": "/usr/lib/libm.so.6",
+      "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+      "owner": "/usr/lib/libm.so.6 is owned by glibc 2.44+r24+g16be1518495f-1"
+    },
+    {
+      "soname": "libpixman-1.so.0",
+      "path": "/usr/lib/libpixman-1.so.0.46.4",
+      "sha256": "97d04f1a534e26e26cf993a350b13ddc33fa4f9741444b08c27bc04582c70fd8",
+      "owner": "/usr/lib/libpixman-1.so.0.46.4 is owned by pixman 0.46.4-1"
+    },
+    {
+      "soname": "libdrm.so.2",
+      "path": "/usr/lib/libdrm.so.2.134.0",
+      "sha256": "8b97afc5e15a07442768b302660cf844b0962623f8dcecbaebccadf288c611b1",
+      "owner": "/usr/lib/libdrm.so.2.134.0 is owned by libdrm 2.4.134-1"
+    },
+    {
+      "soname": "libxkbcommon.so.0",
+      "path": "/usr/lib/libxkbcommon.so.0.13.2",
+      "sha256": "e475adbf5abd181b1bdfdeba70ad4d501cb296bbf05b13e8649fd71b3989ee07",
+      "owner": "/usr/lib/libxkbcommon.so.0.13.2 is owned by libxkbcommon 1.13.2-1"
+    },
+    {
+      "soname": "libpam.so.0",
+      "path": "/usr/lib/libpam.so.0.85.1",
+      "sha256": "d21473e0f7835c55ff5244b09db1bf795bb42cea579cd3f9d1e1feffe41b0c67",
+      "owner": "/usr/lib/libpam.so.0.85.1 is owned by pam 1.7.2-2"
+    },
+    {
+      "soname": "libffi.so.8",
+      "path": "/usr/lib/libffi.so.8.5.0",
+      "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c",
+      "owner": "/usr/lib/libffi.so.8.5.0 is owned by libffi 3.8.0-1"
+    },
+    {
+      "soname": "libmtdev.so.1",
+      "path": "/usr/lib/libmtdev.so.1.0.0",
+      "sha256": "f941d4873a8b84906eac55ec75cd247d0c35d2880be3c2ff1c91a8b88d544210",
+      "owner": "/usr/lib/libmtdev.so.1.0.0 is owned by mtdev 1.1.7-1"
+    },
+    {
+      "soname": "libudev.so.1",
+      "path": "/usr/lib/libudev.so.1.7.14",
+      "sha256": "50a90d73bff7cab00616225384e40f741d7290787a1f8b650ad6156ea47b0ae9",
+      "owner": "/usr/lib/libudev.so.1.7.14 is owned by systemd-libs 261.2-1"
+    },
+    {
+      "soname": "libwacom.so.9",
+      "path": "/usr/lib/libwacom.so.9.0.0",
+      "sha256": "c1c7c2cb42013aa6926877d0e7fd52fad804ad0d18ff2ab788fe5cd5541f39a9",
+      "owner": "/usr/lib/libwacom.so.9.0.0 is owned by libwacom 2.19.1-1"
+    },
+    {
+      "soname": "liblua5.4.so.5.4",
+      "path": "/usr/lib/liblua5.4.so.5.4.9",
+      "sha256": "45eb418acdd907c3164ac9f56b01625e323689d3f5d28c13f620e3ee26d51f19",
+      "owner": "/usr/lib/liblua5.4.so.5.4.9 is owned by lua54 5.4.9-1"
+    },
+    {
+      "soname": "libgcc_s.so.1",
+      "path": "/usr/lib/libgcc_s.so.1",
+      "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+      "owner": "/usr/lib/libgcc_s.so.1 is owned by libgcc 16.2.1+r23+gd564253eb6c8-1"
+    },
+    {
+      "soname": "libaudit.so.1",
+      "path": "/usr/lib/libaudit.so.1.0.0",
+      "sha256": "16813308197ab091526836d4d9ee79b7780a49e63a0ee1d7e01da2b662d057c3",
+      "owner": "/usr/lib/libaudit.so.1.0.0 is owned by audit 4.2.1-1"
+    },
+    {
+      "soname": "libgudev-1.0.so.0",
+      "path": "/usr/lib/libgudev-1.0.so.0.3.0",
+      "sha256": "cc7cb00d6eaa44fca055ab0d6b6d7ef7f5494c9ef806a42383adad72e10fc257",
+      "owner": "/usr/lib/libgudev-1.0.so.0.3.0 is owned by libgudev 238-3"
+    },
+    {
+      "soname": "libgobject-2.0.so.0",
+      "path": "/usr/lib/libgobject-2.0.so.0.8800.3",
+      "sha256": "27bf7b1dbd23e444f8d7a24daeb6b1f094c02860af2ae255f2e6c9b1d4465f49",
+      "owner": "/usr/lib/libgobject-2.0.so.0.8800.3 is owned by glib2 2.88.3-1"
+    },
+    {
+      "soname": "libglib-2.0.so.0",
+      "path": "/usr/lib/libglib-2.0.so.0.8800.3",
+      "sha256": "a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+      "owner": "/usr/lib/libglib-2.0.so.0.8800.3 is owned by glib2 2.88.3-1"
+    },
+    {
+      "soname": "libcap-ng.so.0",
+      "path": "/usr/lib/libcap-ng.so.0.0.0",
+      "sha256": "583c413d5a6d6dbe43fbcb7e1d41eb347fc68b0afe8d48dd4a8022af12ec32e9",
+      "owner": "/usr/lib/libcap-ng.so.0.0.0 is owned by libcap-ng 0.9.5-1"
+    },
+    {
+      "soname": "libpcre2-8.so.0",
+      "path": "/usr/lib/libpcre2-8.so.0.16.0",
+      "sha256": "cb615af32644bbb8f13a582b45dd52a73b0b94fe365f149f94b577c711fb534c",
+      "owner": "/usr/lib/libpcre2-8.so.0.16.0 is owned by pcre2 10.48-1"
+    }
+  ],
+  "headless": [
+    {
+      "soname": "libweston-15.so.0",
+      "path": "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15.so.0.0.1",
+      "sha256": "4f69699a64ef12138ead0bb24a1a19ecd5b87a0d723e3bc06a5d0af9177aa300",
+      "owner": "verified user-local Weston package"
+    },
+    {
+      "soname": "libwayland-server.so.0",
+      "path": "/usr/lib/libwayland-server.so.0.26.0",
+      "sha256": "7e89d8a177a78343a7cf92e3c1c756dc98a437489de4861ff6de907c7e48af89",
+      "owner": "/usr/lib/libwayland-server.so.0.26.0 is owned by wayland 1.26.0-1"
+    },
+    {
+      "soname": "libm.so.6",
+      "path": "/usr/lib/libm.so.6",
+      "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+      "owner": "/usr/lib/libm.so.6 is owned by glibc 2.44+r24+g16be1518495f-1"
+    },
+    {
+      "soname": "libpixman-1.so.0",
+      "path": "/usr/lib/libpixman-1.so.0.46.4",
+      "sha256": "97d04f1a534e26e26cf993a350b13ddc33fa4f9741444b08c27bc04582c70fd8",
+      "owner": "/usr/lib/libpixman-1.so.0.46.4 is owned by pixman 0.46.4-1"
+    },
+    {
+      "soname": "libcairo.so.2",
+      "path": "/usr/lib/libcairo.so.2.11804.4",
+      "sha256": "f64d0a970ce4bbc63afad18fe2d6ff18ef0b4d4f88aade037f3dc3e68026d63f",
+      "owner": "/usr/lib/libcairo.so.2.11804.4 is owned by cairo 1.18.4-1"
+    },
+    {
+      "soname": "libpng16.so.16",
+      "path": "/usr/lib/libpng16.so.16.58.0",
+      "sha256": "c13e6aa88f5fe0dae5d5bf3d27edf8dce96ad91d130b4b81239ae72a3be36b8f",
+      "owner": "/usr/lib/libpng16.so.16.58.0 is owned by libpng 1.6.58-2"
+    },
+    {
+      "soname": "libpango-1.0.so.0",
+      "path": "/usr/lib/libpango-1.0.so.0.5800.2",
+      "sha256": "ea03a7e253f59f3876282947e23880e3ac313ec28e5de314c9ccbd124289978d",
+      "owner": "/usr/lib/libpango-1.0.so.0.5800.2 is owned by pango 1:1.58.2-1"
+    },
+    {
+      "soname": "libgobject-2.0.so.0",
+      "path": "/usr/lib/libgobject-2.0.so.0.8800.3",
+      "sha256": "27bf7b1dbd23e444f8d7a24daeb6b1f094c02860af2ae255f2e6c9b1d4465f49",
+      "owner": "/usr/lib/libgobject-2.0.so.0.8800.3 is owned by glib2 2.88.3-1"
+    },
+    {
+      "soname": "libpangocairo-1.0.so.0",
+      "path": "/usr/lib/libpangocairo-1.0.so.0.5800.2",
+      "sha256": "e5e08c1444829436f85dbef91897578b7f3740107ac55a86e24458d55c99af88",
+      "owner": "/usr/lib/libpangocairo-1.0.so.0.5800.2 is owned by pango 1:1.58.2-1"
+    },
+    {
+      "soname": "libfontconfig.so.1",
+      "path": "/usr/lib/libfontconfig.so.1.17.0",
+      "sha256": "9d103ae2234c4a8140250935ec6f8d72b0ce1a389fc1a75e17a485c16adc566b",
+      "owner": "/usr/lib/libfontconfig.so.1.17.0 is owned by fontconfig 2:2.18.3-2"
+    },
+    {
+      "soname": "libjpeg.so.8",
+      "path": "/usr/lib/libjpeg.so.8.3.2",
+      "sha256": "d6cd94abf2b7a9aa59a0e056c83bbfdf8900fbf7101bfba8ea0ee1ca45958665",
+      "owner": "/usr/lib/libjpeg.so.8.3.2 is owned by libjpeg-turbo 3.2.0-2"
+    },
+    {
+      "soname": "libwebp.so.7",
+      "path": "/usr/lib/libwebp.so.7.2.0",
+      "sha256": "267dcd6cda1106607130a61a047f3ea28807137d45c56255dd7ca4bf32efcbf2",
+      "owner": "/usr/lib/libwebp.so.7.2.0 is owned by libwebp 1.6.0-2"
+    },
+    {
+      "soname": "libc.so.6",
+      "path": "/usr/lib/libc.so.6",
+      "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+      "owner": "/usr/lib/libc.so.6 is owned by glibc 2.44+r24+g16be1518495f-1"
+    },
+    {
+      "soname": "libdrm.so.2",
+      "path": "/usr/lib/libdrm.so.2.134.0",
+      "sha256": "8b97afc5e15a07442768b302660cf844b0962623f8dcecbaebccadf288c611b1",
+      "owner": "/usr/lib/libdrm.so.2.134.0 is owned by libdrm 2.4.134-1"
+    },
+    {
+      "soname": "libxkbcommon.so.0",
+      "path": "/usr/lib/libxkbcommon.so.0.13.2",
+      "sha256": "e475adbf5abd181b1bdfdeba70ad4d501cb296bbf05b13e8649fd71b3989ee07",
+      "owner": "/usr/lib/libxkbcommon.so.0.13.2 is owned by libxkbcommon 1.13.2-1"
+    },
+    {
+      "soname": "libpam.so.0",
+      "path": "/usr/lib/libpam.so.0.85.1",
+      "sha256": "d21473e0f7835c55ff5244b09db1bf795bb42cea579cd3f9d1e1feffe41b0c67",
+      "owner": "/usr/lib/libpam.so.0.85.1 is owned by pam 1.7.2-2"
+    },
+    {
+      "soname": "libffi.so.8",
+      "path": "/usr/lib/libffi.so.8.5.0",
+      "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c",
+      "owner": "/usr/lib/libffi.so.8.5.0 is owned by libffi 3.8.0-1"
+    },
+    {
+      "soname": "libz.so.1",
+      "path": "/usr/lib/libz.so.1.3.2",
+      "sha256": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+      "owner": "/usr/lib/libz.so.1.3.2 is owned by zlib 1:1.3.2-3"
+    },
+    {
+      "soname": "libfreetype.so.6",
+      "path": "/usr/lib/libfreetype.so.6.20.6",
+      "sha256": "8617439444dda4fc8bb4d53e9c5e888e7338543778d477723a6b69ee1e64c602",
+      "owner": "/usr/lib/libfreetype.so.6.20.6 is owned by freetype2 2.14.3-1"
+    },
+    {
+      "soname": "libX11.so.6",
+      "path": "/usr/lib/libX11.so.6.4.0",
+      "sha256": "97736fa2855baf2022d80a8881ffc79cdbecca11c96935e4ca3cfeb47eae1ea4",
+      "owner": "/usr/lib/libX11.so.6.4.0 is owned by libx11 1.8.13-1"
+    },
+    {
+      "soname": "libXext.so.6",
+      "path": "/usr/lib/libXext.so.6.4.0",
+      "sha256": "e131bd58bb319d99a19ea280232e4bd982abc70775bb1a7a832c64e5c69f739f",
+      "owner": "/usr/lib/libXext.so.6.4.0 is owned by libxext 1.3.7-1"
+    },
+    {
+      "soname": "libXrender.so.1",
+      "path": "/usr/lib/libXrender.so.1.3.0",
+      "sha256": "de3f96e7c33bef6c69e69558a519385ffa74f321fa0ab8ccbbae196b4c7221c7",
+      "owner": "/usr/lib/libXrender.so.1.3.0 is owned by libxrender 0.9.12-1"
+    },
+    {
+      "soname": "libxcb.so.1",
+      "path": "/usr/lib/libxcb.so.1.1.0",
+      "sha256": "40df5eff95408b67d969e559f2689b3e50e6151251b1f4e03608ce5cd9c9a133",
+      "owner": "/usr/lib/libxcb.so.1.1.0 is owned by libxcb 1.17.0-1"
+    },
+    {
+      "soname": "libxcb-render.so.0",
+      "path": "/usr/lib/libxcb-render.so.0.0.0",
+      "sha256": "402feded6ecab1d6070a3cd0ce0e2b69efe32d849a90c535cdf93948b34c451f",
+      "owner": "/usr/lib/libxcb-render.so.0.0.0 is owned by libxcb 1.17.0-1"
+    },
+    {
+      "soname": "libxcb-shm.so.0",
+      "path": "/usr/lib/libxcb-shm.so.0.0.0",
+      "sha256": "e04329f8117411113e6094e3dc354ed50b8b3b10e6cf5f8a21a6b7bec4786eec",
+      "owner": "/usr/lib/libxcb-shm.so.0.0.0 is owned by libxcb 1.17.0-1"
+    },
+    {
+      "soname": "libglib-2.0.so.0",
+      "path": "/usr/lib/libglib-2.0.so.0.8800.3",
+      "sha256": "a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+      "owner": "/usr/lib/libglib-2.0.so.0.8800.3 is owned by glib2 2.88.3-1"
+    },
+    {
+      "soname": "libgio-2.0.so.0",
+      "path": "/usr/lib/libgio-2.0.so.0.8800.3",
+      "sha256": "3cc245fc1d3071b164d544cda090a529eed9f6e37ca2fec0373b15a924bb83cc",
+      "owner": "/usr/lib/libgio-2.0.so.0.8800.3 is owned by glib2 2.88.3-1"
+    },
+    {
+      "soname": "libfribidi.so.0",
+      "path": "/usr/lib/libfribidi.so.0.4.0",
+      "sha256": "a469db629fc9f299dec7647cfaeb0bb30cb4ec7a73984313038fc303e721b057",
+      "owner": "/usr/lib/libfribidi.so.0.4.0 is owned by fribidi 1.0.16-2"
+    },
+    {
+      "soname": "libthai.so.0",
+      "path": "/usr/lib/libthai.so.0.3.2",
+      "sha256": "7a6e4bcfb7bd2ae8c20f0c85f33e829520f12bd7536a5eaf6d2d81129649399b",
+      "owner": "/usr/lib/libthai.so.0.3.2 is owned by libthai 0.1.30-1"
+    },
+    {
+      "soname": "libharfbuzz.so.0",
+      "path": "/usr/lib/libharfbuzz.so.0.61440.0",
+      "sha256": "ea4f2a4d4593dd5645cf3b5c856b0e22fb72c2b515f331b3243886649e9639a1",
+      "owner": "/usr/lib/libharfbuzz.so.0.61440.0 is owned by harfbuzz 14.4.0-1"
+    },
+    {
+      "soname": "libpangoft2-1.0.so.0",
+      "path": "/usr/lib/libpangoft2-1.0.so.0.5800.2",
+      "sha256": "e12b401cf24f82e42d8ceff7fd6d0af975f6596e1ff6b413efd551d0f8c41262",
+      "owner": "/usr/lib/libpangoft2-1.0.so.0.5800.2 is owned by pango 1:1.58.2-1"
+    },
+    {
+      "soname": "libexpat.so.1",
+      "path": "/usr/lib/libexpat.so.1.12.4",
+      "sha256": "516a880ec607ee15f664d92eeb587deeb609f6ef6d05c947e9bfeb781a9debaf",
+      "owner": "/usr/lib/libexpat.so.1.12.4 is owned by expat 2.8.4-1"
+    },
+    {
+      "soname": "libsharpyuv.so.0",
+      "path": "/usr/lib/libsharpyuv.so.0.1.2",
+      "sha256": "cb3c84af219c532d6e3dad31cce657ae5d087a9dfb3aea491dee6486c2883566",
+      "owner": "/usr/lib/libsharpyuv.so.0.1.2 is owned by libwebp 1.6.0-2"
+    },
+    {
+      "soname": "libaudit.so.1",
+      "path": "/usr/lib/libaudit.so.1.0.0",
+      "sha256": "16813308197ab091526836d4d9ee79b7780a49e63a0ee1d7e01da2b662d057c3",
+      "owner": "/usr/lib/libaudit.so.1.0.0 is owned by audit 4.2.1-1"
+    },
+    {
+      "soname": "libbz2.so.1.0",
+      "path": "/usr/lib/libbz2.so.1.0.8",
+      "sha256": "3265f0647d9157aaa820c5094eba03c5be0f101c49e9ffd21289978b8e1875af",
+      "owner": "/usr/lib/libbz2.so.1.0.8 is owned by bzip2 1.0.8-6"
+    },
+    {
+      "soname": "libbrotlidec.so.1",
+      "path": "/usr/lib/libbrotlidec.so.1.2.0",
+      "sha256": "0883fb05fa42aa6a883722098530ab08551ed317e38a2311f5c96e94dd460979",
+      "owner": "/usr/lib/libbrotlidec.so.1.2.0 is owned by brotli 1.2.0-1"
+    },
+    {
+      "soname": "libXau.so.6",
+      "path": "/usr/lib/libXau.so.6.0.0",
+      "sha256": "3e229dba702d7b56f1c58ac0e004ae691ae2ad5ede7b50968e1cd7d8b2ccdecc",
+      "owner": "/usr/lib/libXau.so.6.0.0 is owned by libxau 1.0.12-1"
+    },
+    {
+      "soname": "libXdmcp.so.6",
+      "path": "/usr/lib/libXdmcp.so.6.0.0",
+      "sha256": "0c572ba75de0f967c9c4d088161d3e435ea721bd99c169aae707aba6870a71b1",
+      "owner": "/usr/lib/libXdmcp.so.6.0.0 is owned by libxdmcp 1.1.5-2"
+    },
+    {
+      "soname": "libpcre2-8.so.0",
+      "path": "/usr/lib/libpcre2-8.so.0.16.0",
+      "sha256": "cb615af32644bbb8f13a582b45dd52a73b0b94fe365f149f94b577c711fb534c",
+      "owner": "/usr/lib/libpcre2-8.so.0.16.0 is owned by pcre2 10.48-1"
+    },
+    {
+      "soname": "libgmodule-2.0.so.0",
+      "path": "/usr/lib/libgmodule-2.0.so.0.8800.3",
+      "sha256": "9acc4b380b291cbc5f4098d04689c6933879d0a85b039ef62088fde935f65e83",
+      "owner": "/usr/lib/libgmodule-2.0.so.0.8800.3 is owned by glib2 2.88.3-1"
+    },
+    {
+      "soname": "libmount.so.1",
+      "path": "/usr/lib/libmount.so.1.1.0",
+      "sha256": "7e93ecba2899f4f11cb9442ff5e3aa864c561df0c8f963c9ba947553d990d495",
+      "owner": "/usr/lib/libmount.so.1.1.0 is owned by util-linux-libs 2.42.3-1"
+    },
+    {
+      "soname": "libdatrie.so.1",
+      "path": "/usr/lib/libdatrie.so.1.4.1",
+      "sha256": "ab76b51c7066731c916f3badbba0b84e546adbf2a66419d6988e16a0ac7311ea",
+      "owner": "/usr/lib/libdatrie.so.1.4.1 is owned by libdatrie 0.2.14-1"
+    },
+    {
+      "soname": "libgraphite2.so.3",
+      "path": "/usr/lib/libgraphite2.so.3.3.1",
+      "sha256": "70eebd2fda11b867ebff5a8e3bdf272875acdde0851d258c98b3b046b01b4fc7",
+      "owner": "/usr/lib/libgraphite2.so.3.3.1 is owned by graphite 1:1.3.15-1"
+    },
+    {
+      "soname": "libcap-ng.so.0",
+      "path": "/usr/lib/libcap-ng.so.0.0.0",
+      "sha256": "583c413d5a6d6dbe43fbcb7e1d41eb347fc68b0afe8d48dd4a8022af12ec32e9",
+      "owner": "/usr/lib/libcap-ng.so.0.0.0 is owned by libcap-ng 0.9.5-1"
+    },
+    {
+      "soname": "libbrotlicommon.so.1",
+      "path": "/usr/lib/libbrotlicommon.so.1.2.0",
+      "sha256": "4f895094b7b6ff9c82909e6516bc9cf212e2ec5af451d39bf1bcbc5e5fa225b2",
+      "owner": "/usr/lib/libbrotlicommon.so.1.2.0 is owned by brotli 1.2.0-1"
+    },
+    {
+      "soname": "libblkid.so.1",
+      "path": "/usr/lib/libblkid.so.1.1.0",
+      "sha256": "8a7cccd9e1cffecf17e19f68f4ccddcaabea882f56521f5801a3afebcd6f4ee5",
+      "owner": "/usr/lib/libblkid.so.1.1.0 is owned by util-linux-libs 2.42.3-1"
+    },
+    {
+      "soname": "libsystemd.so.0",
+      "path": "/usr/lib/libsystemd.so.0.44.0",
+      "sha256": "2e971237c56af98844a847344edeae0f59ae2e3437de84162b37f308f82c1615",
+      "owner": "/usr/lib/libsystemd.so.0.44.0 is owned by systemd-libs 261.2-1"
+    },
+    {
+      "soname": "libgcc_s.so.1",
+      "path": "/usr/lib/libgcc_s.so.1",
+      "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+      "owner": "/usr/lib/libgcc_s.so.1 is owned by libgcc 16.2.1+r23+gd564253eb6c8-1"
+    }
+  ],
+  "gl": [
+    {
+      "soname": "libweston-15.so.0",
+      "path": "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15.so.0.0.1",
+      "sha256": "4f69699a64ef12138ead0bb24a1a19ecd5b87a0d723e3bc06a5d0af9177aa300",
+      "owner": "verified user-local Weston package"
+    },
+    {
+      "soname": "libm.so.6",
+      "path": "/usr/lib/libm.so.6",
+      "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+      "owner": "/usr/lib/libm.so.6 is owned by glibc 2.44+r24+g16be1518495f-1"
+    },
+    {
+      "soname": "libpixman-1.so.0",
+      "path": "/usr/lib/libpixman-1.so.0.46.4",
+      "sha256": "97d04f1a534e26e26cf993a350b13ddc33fa4f9741444b08c27bc04582c70fd8",
+      "owner": "/usr/lib/libpixman-1.so.0.46.4 is owned by pixman 0.46.4-1"
+    },
+    {
+      "soname": "libwayland-server.so.0",
+      "path": "/usr/lib/libwayland-server.so.0.26.0",
+      "sha256": "7e89d8a177a78343a7cf92e3c1c756dc98a437489de4861ff6de907c7e48af89",
+      "owner": "/usr/lib/libwayland-server.so.0.26.0 is owned by wayland 1.26.0-1"
+    },
+    {
+      "soname": "libgbm.so.1",
+      "path": "/usr/lib/libgbm.so.1.0.0",
+      "sha256": "9ff0105801e62ed4335e036eee25c4d42421668b4887d77ee35c400db389d8f6",
+      "owner": "/usr/lib/libgbm.so.1.0.0 is owned by mesa 1:26.2.2-1"
+    },
+    {
+      "soname": "libEGL.so.1",
+      "path": "/usr/lib/libEGL.so.1.1.0",
+      "sha256": "89d5d0f68f7e42397544db26347c24a893be2e08b81406e8e8714803c29db03b",
+      "owner": "/usr/lib/libEGL.so.1.1.0 is owned by libglvnd 1.7.0-3"
+    },
+    {
+      "soname": "libGLESv2.so.2",
+      "path": "/usr/lib/libGLESv2.so.2.1.0",
+      "sha256": "341a5154f501b2b06330161efedecd0ef111fe76b8ce5d092528545c7c714133",
+      "owner": "/usr/lib/libGLESv2.so.2.1.0 is owned by libglvnd 1.7.0-3"
+    },
+    {
+      "soname": "libc.so.6",
+      "path": "/usr/lib/libc.so.6",
+      "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+      "owner": "/usr/lib/libc.so.6 is owned by glibc 2.44+r24+g16be1518495f-1"
+    },
+    {
+      "soname": "libdrm.so.2",
+      "path": "/usr/lib/libdrm.so.2.134.0",
+      "sha256": "8b97afc5e15a07442768b302660cf844b0962623f8dcecbaebccadf288c611b1",
+      "owner": "/usr/lib/libdrm.so.2.134.0 is owned by libdrm 2.4.134-1"
+    },
+    {
+      "soname": "libxkbcommon.so.0",
+      "path": "/usr/lib/libxkbcommon.so.0.13.2",
+      "sha256": "e475adbf5abd181b1bdfdeba70ad4d501cb296bbf05b13e8649fd71b3989ee07",
+      "owner": "/usr/lib/libxkbcommon.so.0.13.2 is owned by libxkbcommon 1.13.2-1"
+    },
+    {
+      "soname": "libpam.so.0",
+      "path": "/usr/lib/libpam.so.0.85.1",
+      "sha256": "d21473e0f7835c55ff5244b09db1bf795bb42cea579cd3f9d1e1feffe41b0c67",
+      "owner": "/usr/lib/libpam.so.0.85.1 is owned by pam 1.7.2-2"
+    },
+    {
+      "soname": "libffi.so.8",
+      "path": "/usr/lib/libffi.so.8.5.0",
+      "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c",
+      "owner": "/usr/lib/libffi.so.8.5.0 is owned by libffi 3.8.0-1"
+    },
+    {
+      "soname": "libexpat.so.1",
+      "path": "/usr/lib/libexpat.so.1.12.4",
+      "sha256": "516a880ec607ee15f664d92eeb587deeb609f6ef6d05c947e9bfeb781a9debaf",
+      "owner": "/usr/lib/libexpat.so.1.12.4 is owned by expat 2.8.4-1"
+    },
+    {
+      "soname": "libgcc_s.so.1",
+      "path": "/usr/lib/libgcc_s.so.1",
+      "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+      "owner": "/usr/lib/libgcc_s.so.1 is owned by libgcc 16.2.1+r23+gd564253eb6c8-1"
+    },
+    {
+      "soname": "libGLdispatch.so.0",
+      "path": "/usr/lib/libGLdispatch.so.0.0.0",
+      "sha256": "b6d068112d4fd36750b6fedcddea0df7719b707495611cbe6fd92f6887eda467",
+      "owner": "/usr/lib/libGLdispatch.so.0.0.0 is owned by libglvnd 1.7.0-3"
+    },
+    {
+      "soname": "libaudit.so.1",
+      "path": "/usr/lib/libaudit.so.1.0.0",
+      "sha256": "16813308197ab091526836d4d9ee79b7780a49e63a0ee1d7e01da2b662d057c3",
+      "owner": "/usr/lib/libaudit.so.1.0.0 is owned by audit 4.2.1-1"
+    },
+    {
+      "soname": "libcap-ng.so.0",
+      "path": "/usr/lib/libcap-ng.so.0.0.0",
+      "sha256": "583c413d5a6d6dbe43fbcb7e1d41eb347fc68b0afe8d48dd4a8022af12ec32e9",
+      "owner": "/usr/lib/libcap-ng.so.0.0.0 is owned by libcap-ng 0.9.5-1"
+    }
+  ],
+  "kiosk": [
+    {
+      "soname": "libexec_weston.so.0",
+      "path": "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/weston/libexec_weston.so.0.0.0",
+      "sha256": "ddd1ba3516f9ca6272890701712ca904e3a68141ff356a5b5d513eb090931107",
+      "owner": "verified user-local Weston package"
+    },
+    {
+      "soname": "libweston-15.so.0",
+      "path": "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15.so.0.0.1",
+      "sha256": "4f69699a64ef12138ead0bb24a1a19ecd5b87a0d723e3bc06a5d0af9177aa300",
+      "owner": "verified user-local Weston package"
+    },
+    {
+      "soname": "libwayland-server.so.0",
+      "path": "/usr/lib/libwayland-server.so.0.26.0",
+      "sha256": "7e89d8a177a78343a7cf92e3c1c756dc98a437489de4861ff6de907c7e48af89",
+      "owner": "/usr/lib/libwayland-server.so.0.26.0 is owned by wayland 1.26.0-1"
+    },
+    {
+      "soname": "libc.so.6",
+      "path": "/usr/lib/libc.so.6",
+      "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+      "owner": "/usr/lib/libc.so.6 is owned by glibc 2.44+r24+g16be1518495f-1"
+    },
+    {
+      "soname": "libwayland-client.so.0",
+      "path": "/usr/lib/libwayland-client.so.0.26.0",
+      "sha256": "39c83ae7b73d22f18b4f81da14749c4535c304b7e62910a2f1aae682f279cc9d",
+      "owner": "/usr/lib/libwayland-client.so.0.26.0 is owned by wayland 1.26.0-1"
+    },
+    {
+      "soname": "libinput.so.10",
+      "path": "/usr/lib/libinput.so.10.13.0",
+      "sha256": "9e8eb024885dc1710e08848b84cc620a72e1b3841102e11a5894c825f4bcb75d",
+      "owner": "/usr/lib/libinput.so.10.13.0 is owned by libinput 1.31.3-1"
+    },
+    {
+      "soname": "libevdev.so.2",
+      "path": "/usr/lib/libevdev.so.2.3.0",
+      "sha256": "98e2d73830670af85de7612e16d60757d2bed91046bf11e574a58bc2cc783a6a",
+      "owner": "/usr/lib/libevdev.so.2.3.0 is owned by libevdev 1.13.7-1"
+    },
+    {
+      "soname": "libdisplay-info.so.3",
+      "path": "/usr/lib/libdisplay-info.so.0.3.0",
+      "sha256": "98f632c36bdd89d75914200cb6d1b3cfce8b21067e73845b8a6c4d959903f97f",
+      "owner": "/usr/lib/libdisplay-info.so.0.3.0 is owned by libdisplay-info 0.3.0-1"
+    },
+    {
+      "soname": "libm.so.6",
+      "path": "/usr/lib/libm.so.6",
+      "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+      "owner": "/usr/lib/libm.so.6 is owned by glibc 2.44+r24+g16be1518495f-1"
+    },
+    {
+      "soname": "libpixman-1.so.0",
+      "path": "/usr/lib/libpixman-1.so.0.46.4",
+      "sha256": "97d04f1a534e26e26cf993a350b13ddc33fa4f9741444b08c27bc04582c70fd8",
+      "owner": "/usr/lib/libpixman-1.so.0.46.4 is owned by pixman 0.46.4-1"
+    },
+    {
+      "soname": "libdrm.so.2",
+      "path": "/usr/lib/libdrm.so.2.134.0",
+      "sha256": "8b97afc5e15a07442768b302660cf844b0962623f8dcecbaebccadf288c611b1",
+      "owner": "/usr/lib/libdrm.so.2.134.0 is owned by libdrm 2.4.134-1"
+    },
+    {
+      "soname": "libxkbcommon.so.0",
+      "path": "/usr/lib/libxkbcommon.so.0.13.2",
+      "sha256": "e475adbf5abd181b1bdfdeba70ad4d501cb296bbf05b13e8649fd71b3989ee07",
+      "owner": "/usr/lib/libxkbcommon.so.0.13.2 is owned by libxkbcommon 1.13.2-1"
+    },
+    {
+      "soname": "libpam.so.0",
+      "path": "/usr/lib/libpam.so.0.85.1",
+      "sha256": "d21473e0f7835c55ff5244b09db1bf795bb42cea579cd3f9d1e1feffe41b0c67",
+      "owner": "/usr/lib/libpam.so.0.85.1 is owned by pam 1.7.2-2"
+    },
+    {
+      "soname": "libffi.so.8",
+      "path": "/usr/lib/libffi.so.8.5.0",
+      "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c",
+      "owner": "/usr/lib/libffi.so.8.5.0 is owned by libffi 3.8.0-1"
+    },
+    {
+      "soname": "libmtdev.so.1",
+      "path": "/usr/lib/libmtdev.so.1.0.0",
+      "sha256": "f941d4873a8b84906eac55ec75cd247d0c35d2880be3c2ff1c91a8b88d544210",
+      "owner": "/usr/lib/libmtdev.so.1.0.0 is owned by mtdev 1.1.7-1"
+    },
+    {
+      "soname": "libudev.so.1",
+      "path": "/usr/lib/libudev.so.1.7.14",
+      "sha256": "50a90d73bff7cab00616225384e40f741d7290787a1f8b650ad6156ea47b0ae9",
+      "owner": "/usr/lib/libudev.so.1.7.14 is owned by systemd-libs 261.2-1"
+    },
+    {
+      "soname": "libwacom.so.9",
+      "path": "/usr/lib/libwacom.so.9.0.0",
+      "sha256": "c1c7c2cb42013aa6926877d0e7fd52fad804ad0d18ff2ab788fe5cd5541f39a9",
+      "owner": "/usr/lib/libwacom.so.9.0.0 is owned by libwacom 2.19.1-1"
+    },
+    {
+      "soname": "liblua5.4.so.5.4",
+      "path": "/usr/lib/liblua5.4.so.5.4.9",
+      "sha256": "45eb418acdd907c3164ac9f56b01625e323689d3f5d28c13f620e3ee26d51f19",
+      "owner": "/usr/lib/liblua5.4.so.5.4.9 is owned by lua54 5.4.9-1"
+    },
+    {
+      "soname": "libgcc_s.so.1",
+      "path": "/usr/lib/libgcc_s.so.1",
+      "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+      "owner": "/usr/lib/libgcc_s.so.1 is owned by libgcc 16.2.1+r23+gd564253eb6c8-1"
+    },
+    {
+      "soname": "libaudit.so.1",
+      "path": "/usr/lib/libaudit.so.1.0.0",
+      "sha256": "16813308197ab091526836d4d9ee79b7780a49e63a0ee1d7e01da2b662d057c3",
+      "owner": "/usr/lib/libaudit.so.1.0.0 is owned by audit 4.2.1-1"
+    },
+    {
+      "soname": "libgudev-1.0.so.0",
+      "path": "/usr/lib/libgudev-1.0.so.0.3.0",
+      "sha256": "cc7cb00d6eaa44fca055ab0d6b6d7ef7f5494c9ef806a42383adad72e10fc257",
+      "owner": "/usr/lib/libgudev-1.0.so.0.3.0 is owned by libgudev 238-3"
+    },
+    {
+      "soname": "libgobject-2.0.so.0",
+      "path": "/usr/lib/libgobject-2.0.so.0.8800.3",
+      "sha256": "27bf7b1dbd23e444f8d7a24daeb6b1f094c02860af2ae255f2e6c9b1d4465f49",
+      "owner": "/usr/lib/libgobject-2.0.so.0.8800.3 is owned by glib2 2.88.3-1"
+    },
+    {
+      "soname": "libglib-2.0.so.0",
+      "path": "/usr/lib/libglib-2.0.so.0.8800.3",
+      "sha256": "a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+      "owner": "/usr/lib/libglib-2.0.so.0.8800.3 is owned by glib2 2.88.3-1"
+    },
+    {
+      "soname": "libcap-ng.so.0",
+      "path": "/usr/lib/libcap-ng.so.0.0.0",
+      "sha256": "583c413d5a6d6dbe43fbcb7e1d41eb347fc68b0afe8d48dd4a8022af12ec32e9",
+      "owner": "/usr/lib/libcap-ng.so.0.0.0 is owned by libcap-ng 0.9.5-1"
+    },
+    {
+      "soname": "libpcre2-8.so.0",
+      "path": "/usr/lib/libpcre2-8.so.0.16.0",
+      "sha256": "cb615af32644bbb8f13a582b45dd52a73b0b94fe365f149f94b577c711fb534c",
+      "owner": "/usr/lib/libpcre2-8.so.0.16.0 is owned by pcre2 10.48-1"
+    }
+  ]
+}

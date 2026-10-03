@@ -1,0 +1,16 @@
+{
+  "commit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+  "luaDispatchLines": [
+    1016,
+    1020
+  ],
+  "actionFocusLines": [
+    418,
+    434
+  ],
+  "evidence": "dsp_focusWindowBySelector delegates Actions::focus; fullWindowFocus followed by unconditional window->warpCursor",
+  "sources": {
+    "ConfigActions.cpp": "a83abeb57175e65908d8d67ddc9802310134e5a4752fa3764f980401b48a7637",
+    "LuaBindingsDispatchers.cpp": "a109eeb982856e0fe2ac9d88c29115a09984511787e19a20e7b4804e14a9d4de"
+  }
+}

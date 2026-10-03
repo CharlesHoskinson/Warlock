@@ -1,0 +1,49 @@
+{
+  "named": 29,
+  "samples": 2000,
+  "maxSteps": 100,
+  "runtimeUnchangedDuringReviewRefinement": true,
+  "formalBeforeRuntimeInitial27": "cancellation-formal-before-implementation.json",
+  "reviewGap": "latch uncertain native effects; model durable retirement separate from physical disappearance",
+  "sourceSHA256": {
+    "recovery_cancel.qnt": "7986f30a1a3e1b8f8b0df069d33a97eee9461a61e6b3cf8a23286df2a84aab31",
+    "recovery_cancel_test.qnt": "642dc742d8e7f41062c5cfcb7334054def008e771c20b04d9c038e38bd99394b",
+    "CANCELLATION_CONTRACT.md": "6db0b5076300d4270872d7c3bd2af5c7cdb0dcf289f1b5f701644d1504bfea54",
+    "recovery_runtime.py": "3dfb0f51fabdf4108b145e01c10b859f72635966d6b73bfa58cec2df7ba24536",
+    "recovery_cancel.py": "a055cd5d5a9a5443f8a624df13dc2be10ec4b99fe7be4766677318746792462e"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_cancel_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_cancel_test.qnt",
+        "--backend=rust",
+        "--seed=2026100115"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_cancel.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100115",
+        "--verbosity=0"
+      ],
+      "exitCode": 0
+    }
+  ]
+}

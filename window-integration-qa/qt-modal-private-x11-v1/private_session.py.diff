@@ -1,0 +1,38 @@
+--- accepted V9/private_session.py
++++ fresh X11/private_session.py
+@@ -12,18 +12,19 @@
+ from private_target import verify_socket
+ from button_geometry import button_point,contains,geometry_key,layout_ready
+ from cursor_readiness import native_arrived,native_delta
++from xcb_loader import native_loader_gate
+ B=Path(__file__).resolve().parent
+ HOME=Path('/home/hoskinson')
+ 
+ def run_session(private_env,output,main_env,host_evidence,target_guard):
+  require_qa_scope();verify_runtime(Path(private_env['XDG_RUNTIME_DIR']))
+- socket_evidence=verify_socket(main_env,private_env)
++ target_guard();socket_evidence=verify_socket(main_env,private_env,allow_x11=True)
+  O=Path(output);assert O.is_absolute() and not O.exists();os.umask(0o077);O.mkdir(mode=0o700)
+  obs=PrivateDesktop(private_env,target_guard)
+  host_pid=host_evidence['compositorPID'];assert obs.start(host_pid)==host_evidence['compositorStart']
+  config=Path(host_evidence['compositorConfig']);assert config.resolve().is_relative_to(Path(private_env['XDG_RUNTIME_DIR']).resolve())
+  assert str(config).encode() in Path(f'/proc/{host_pid}/cmdline').read_bytes()
+- report={'scope':'QtWidgets6.11.2 QDialog.open WindowModal, same QApplication independent peer, real native virtual-pointer callback delivery and installed family helper integration','checks':[],'preservation':{},'physicalHardwareProved':False,'inputSource':'Wayland virtual-pointer protocol','result':'pending','mainGUIWrites':False,'mainRestorationWrites':False,'privateSocketAuthority':socket_evidence,'hostEvidence':host_evidence}
++ report={'scope':'QtWidgets6.11.2 QDialog.open WindowModal, same QApplication independent peer, real native virtual-pointer callback delivery and installed family helper integration','checks':[],'preservation':{},'physicalHardwareProved':False,'inputSource':'Wayland virtual-pointer protocol','result':'pending','mainGUIWrites':False,'mainRestorationWrites':False,'privateSocketAuthority':socket_evidence,'hostEvidence':host_evidence,'x11ProtocolGates':[]}
+  process=pointer=motion=None;identity={};epoch=0;held=False;log=(O/'fixture.log').open('w')
+  def check(name,value,**details):report['checks'].append({'name':name,'passed':bool(value),**details});assert value,name
+  
+@@ -118,10 +119,11 @@
+   w=own(name);assert w;assert not blocked();obs.run(HOME/'.local/bin/hypr-windowctl',operation,w['address'],w['stableId'],str(w['pid']))
+  try:
+   assert not blocked(),'foreign input grab';screen=logical_output(obs.data('monitors'));report['monitorCoordinateContract']=screen
+-  env=dict(private_env,QT_QPA_PLATFORM='wayland',QT_QPA_PLATFORMTHEME='',QT_STYLE_OVERRIDE='Fusion',QT_NO_XDG_DESKTOP_PORTAL='1');env.pop('DISPLAY',None)
++  env=dict(private_env,QT_QPA_PLATFORM='xcb',QT_QPA_PLATFORMTHEME='',QT_STYLE_OVERRIDE='Fusion',QT_NO_XDG_DESKTOP_PORTAL='1');env.pop('WAYLAND_SOCKET',None)
+   process=subprocess.Popen([str(B/'build-v7/qt-window-modal-fixture'),str(O)],env=env,stdout=log,stderr=log,start_new_session=True);report['fixtureStart']=obs.start(process.pid)
+   wait(lambda:own('owner') and own('peer'),'native Qt owner and same-app peer');wait(state,'public Qt fixture state')
+-  check('real public Qt6.11.2 native Wayland same-process owner/peer',state()['qtVersion']=='6.11.2' and state()['platform']=='wayland' and own('owner')['pid']==own('peer')['pid']==process.pid and not own('owner')['xwayland'] and not own('peer')['xwayland'])
++  loader=native_loader_gate(process.pid);report['x11ProtocolGates'].append({'name':'actual owned X11 Qt process loads exact XCB/Qt6XcbQpa modules',**loader})
++  check('real public Qt6.11.2 native X11 same-process owner/peer',state()['qtVersion']=='6.11.2' and state()['platform']=='xcb' and own('owner')['pid']==own('peer')['pid']==process.pid and own('owner')['xwayland'] and own('peer')['xwayland'])
+   arrange('owner',100,250,460,300);arrange('peer',1000,300,460,300)
+   pointer=subprocess.Popen([str(HOME/'.local/share/hypr-window-controls/qa/virtual-pointer'),str(screen['logicalWidth']),str(screen['logicalHeight'])],stdin=subprocess.PIPE,text=True,stdout=subprocess.DEVNULL,stderr=log,start_new_session=True,env=private_env);report['pointerStart']=obs.start(pointer.pid)
+   owner_button,owner_surface=capture_button('owner');owner_point=button_point(owner_button,owner_surface)

@@ -1,0 +1,103 @@
+{
+  "kwin-interface.xml": {
+    "url": "https://raw.githubusercontent.com/KDE/kwin/master/src/org.freedesktop.a11y.xml",
+    "sha256": "1f36e575d930abc62010c86ca5b722b451c5812dfbf087c62df1829b7ba7b6f0"
+  },
+  "kwin-a11ymanager.cpp": {
+    "url": "https://raw.githubusercontent.com/KDE/kwin/master/src/a11ymanager.cpp",
+    "sha256": "786ecaf7de12e61da1305d6ef6d6b4fdb6f4dd5f070abaa572352328fe3d5649"
+  },
+  "mutter-a11y-manager.c": {
+    "url": "https://raw.githubusercontent.com/GNOME/mutter/main/src/backends/meta-a11y-manager.c",
+    "sha256": "0ada1b104f2eea14f94be6c6693f60c089d0bb17638ced19e73b7e865b6ca9a5"
+  },
+  "orca-ax_device_manager.py": {
+    "url": "https://raw.githubusercontent.com/GNOME/orca/main/src/orca/ax_device_manager.py",
+    "sha256": "a4ec333a8dd87ffd8e53d27b20714fb1f7970a7a1651a4117995b848d0b25614"
+  },
+  "hyprland-IKeyboard.cpp": {
+    "commit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+    "path": "src/devices/IKeyboard.cpp",
+    "sha256": "8a800efe9baa7f375a3781744372eecd98a88be2c4bedaae96c90a1102a1aa3d"
+  },
+  "hyprland-Keyboard.cpp": {
+    "commit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+    "path": "src/devices/Keyboard.cpp",
+    "sha256": "276e4f155e6808798930b577ad1921a88deba964070164790338472d192e361f"
+  },
+  "hyprland-VirtualKeyboard.cpp": {
+    "commit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+    "path": "src/devices/VirtualKeyboard.cpp",
+    "sha256": "bc6d984a4c9e62313501c1cdb4ace3659c16d3b77e029a3c082a77f21500ed86"
+  },
+  "hyprland-InputManager.cpp": {
+    "commit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+    "path": "src/managers/input/InputManager.cpp",
+    "sha256": "feedf32e2e3d23aeaed7a02ef4ab94be2d66f4b22873b3166026da1e9ece4765"
+  },
+  "hyprland-KeybindManager.cpp": {
+    "commit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+    "path": "src/managers/KeybindManager.cpp",
+    "sha256": "8d8f35fc84c4a2f8de63ac2bf6f6531c651c6fa6d37b1aac7c8fc5d9342d4e40"
+  },
+  "aquamarine-v0.15.0-Wayland.cpp": {
+    "url": "https://raw.githubusercontent.com/hyprwm/aquamarine/v0.15.0/src/backend/Wayland.cpp",
+    "sha256": "1dd79e1cf212f5d13447c848fb83845d5d0491dfc897dce838165fe9449608fe"
+  },
+  "wtype-v0.4-main.c": {
+    "url": "https://raw.githubusercontent.com/atx/wtype/v0.4/main.c",
+    "sha256": "713597abfc049196864ffcc041bb6683c761b71d68ed2da86cdcfc6b7ed3d244"
+  },
+  "hyprland-PluginSystem.cpp": {
+    "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/plugins/PluginSystem.cpp",
+    "sha256": "966d00f8bda2f254a8f19c375218b9049a07f3b7893af3270abdce457d81f7f9"
+  },
+  "hyprland-PluginAPI.cpp": {
+    "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/plugins/PluginAPI.cpp",
+    "sha256": "db3c12780de4996afdab8250c2f6e68054c5710e132dadb8d13491dc61adc9cb"
+  },
+  "kwin-keyboard_input.cpp": {
+    "url": "https://raw.githubusercontent.com/KDE/kwin/master/src/keyboard_input.cpp",
+    "sha256": "db59c85c5f60815a0d31f10cfe62a2820fbf21ddcd7161a26d7dea2ecd308acc"
+  },
+  "mutter-meta-seat-impl.c": {
+    "url": "https://raw.githubusercontent.com/GNOME/mutter/main/src/backends/native/meta-seat-impl.c",
+    "sha256": "6dc5df8378406e42e96efa104bf10395923e6c1180f44950e3d2fd18a01be9d3"
+  },
+  "mutter-meta-xkb-utils.c": {
+    "url": "https://raw.githubusercontent.com/GNOME/mutter/main/src/backends/native/meta-xkb-utils.c",
+    "sha256": "3c1b48b95676fe38314423a4cc6b0e79720cc26cee2e8c5ec9fe552c329ed76d"
+  },
+  "input-method-unstable-v2.xml": {
+    "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/protocols/input-method-unstable-v2.xml",
+    "sha256": "99414dbad9458e71aa1fa01bc45f94ca6685787bfcb4d98948f72c1b45b60703"
+  },
+  "hyprland-InputMethodV2.cpp": {
+    "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/protocols/InputMethodV2.cpp",
+    "sha256": "a1f5f7827fa44cffac0352bdb2e5bacb01b83f6f2f984fc69b73ade12e89677f"
+  },
+  "hyprland-InputMethodRelay.cpp": {
+    "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/managers/input/InputMethodRelay.cpp",
+    "sha256": "f3abdcb490650be96b90f6f23e5f0cae6d62ab967ae39be8e99611b8c9ff570b"
+  },
+  "hyprland-DynamicPermissionManager.cpp": {
+    "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/managers/permissions/DynamicPermissionManager.cpp",
+    "sha256": "c1d3f08df2fc3eeb336d9fdd75bb7eab14c76925eba2312aeb6ea13a7a386526"
+  },
+  "hyprland-LuaConfigManager.cpp": {
+    "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/config/lua/ConfigManager.cpp",
+    "sha256": "94b5c6891326e7a3e490019d26fd9d6f5b3137fb5318a94dff0a6cb6dfdaf502"
+  },
+  "hyprland-Lua-LuaBindings.cpp": {
+    "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/config/lua/LuaBindings.cpp",
+    "sha256": "3b8f9a55049a740cd71add02a3de230ae9fab809baf400c63871838e63ccbd50"
+  },
+  "hyprland-LuaBindingsConfigRules.cpp": {
+    "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/config/lua/bindings/LuaBindingsConfigRules.cpp",
+    "sha256": "157c3e45b364f3e41b6fd7cf13fd19e7477e8c03a6a75c6c46fde5e2b5715be9"
+  },
+  "hyprland-LuaBindingsToplevel.cpp": {
+    "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/config/lua/bindings/LuaBindingsToplevel.cpp",
+    "sha256": "706b29eb52de087c1d6e64770cf85fb3ebc0f2fbe9ddcff086905499bcd332f5"
+  }
+}

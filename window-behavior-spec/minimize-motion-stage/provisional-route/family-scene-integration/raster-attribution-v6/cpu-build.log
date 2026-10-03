@@ -1,0 +1,20 @@
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonarray.h:8,
+                 from /usr/include/qt6/QtCore/QJsonArray:1,
+                 from ../producer-readback-v4/LibraryMaterial.hpp:4,
+                 from ../producer-readback-v4/Renderer.cpp:4,
+                 from decode_upload_cpu.cpp:25:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/vector:70,
+                 from decode_upload_cpu.cpp:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+/usr/bin/ld: /tmp/cc4y0Sgb.o: copy relocation against non-copyable protected symbol `_ZN10QByteArray6_emptyE@@Qt_6' in /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/libQt6Core.so
+collect2: error: ld returned 1 exit status

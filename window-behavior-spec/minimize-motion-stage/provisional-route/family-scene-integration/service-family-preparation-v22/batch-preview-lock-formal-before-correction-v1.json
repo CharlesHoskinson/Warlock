@@ -1,0 +1,45 @@
+{
+  "result": "pass",
+  "named": 4,
+  "samples": 2000,
+  "steps": 100,
+  "beforeLockCorrection": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-4d90223237f7440d8731599d24736b78.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/batch_preview_lock_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/batch-preview-lock-formal-0-v1.log",
+      "sha256": "b803d551bcd0d55d500f3510ea3d9f04b44cb5364ce4b5696370e4ed77aa0072"
+    },
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/batch_preview_lock.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/batch-preview-lock-formal-1-v1.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "sources": {
+    "batch_preview_lock.qnt": "f947cc7dff32d2b199f61821555328e8d592ba817077f157ba97bbe80c1e6f6e",
+    "batch_preview_lock_test.qnt": "be0478ca6da6f0fcebde884954659f8c7abb2f233aa6b5924c3c9d8762b628cf",
+    "native_desktop.py": "46d6277f21d6378da0009548c74b926aac26896ee482a9a62ff9ff939f5080e1",
+    "batch_preview.py": "a858eff55609382a40be36206fb84b268d42a0b517d01fb4ad2521fe4372ddb5"
+  },
+  "counterexample": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v22/batch-preview-lock-counterexample-v1.json"
+}

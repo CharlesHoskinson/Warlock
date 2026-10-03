@@ -1,0 +1,657 @@
+Running main() from /usr/src/debug/gtest/googletest-1.18.0/googletest/src/gtest_main.cc
+[==========] Running 270 tests from 21 test suites.
+[----------] Global test environment set-up.
+[----------] 22 tests from Config
+[ RUN      ] Config.monitorParserName
+[       OK ] Config.monitorParserName (0 ms)
+[ RUN      ] Config.monitorParserDefaults
+[       OK ] Config.monitorParserDefaults (0 ms)
+[ RUN      ] Config.monitorParserModeStandard
+[       OK ] Config.monitorParserModeStandard (0 ms)
+[ RUN      ] Config.monitorParserModeKeywords
+[       OK ] Config.monitorParserModeKeywords (0 ms)
+[ RUN      ] Config.monitorParserModeOmitted
+[       OK ] Config.monitorParserModeOmitted (0 ms)
+[ RUN      ] Config.monitorParserModeInvalid
+[       OK ] Config.monitorParserModeInvalid (0 ms)
+[ RUN      ] Config.monitorParserPositionExplicit
+[       OK ] Config.monitorParserPositionExplicit (0 ms)
+[ RUN      ] Config.monitorParserPositionAuto
+[       OK ] Config.monitorParserPositionAuto (0 ms)
+[ RUN      ] Config.monitorParserPositionOmitted
+[       OK ] Config.monitorParserPositionOmitted (0 ms)
+[ RUN      ] Config.monitorParserPositionAutoCenter
+[       OK ] Config.monitorParserPositionAutoCenter (0 ms)
+[ RUN      ] Config.monitorParserScaleValid
+[       OK ] Config.monitorParserScaleValid (0 ms)
+[ RUN      ] Config.monitorParserScaleOmitted
+[       OK ] Config.monitorParserScaleOmitted (0 ms)
+[ RUN      ] Config.monitorParserScaleInvalid
+[       OK ] Config.monitorParserScaleInvalid (0 ms)
+[ RUN      ] Config.monitorParserTransformValid
+[       OK ] Config.monitorParserTransformValid (0 ms)
+[ RUN      ] Config.monitorParserTransformInvalid
+[1;31mERR [0m]: Invalid transform 8 in monitor
+[1;31mERR [0m]: Invalid transform -1 in monitor
+[       OK ] Config.monitorParserTransformInvalid (0 ms)
+[ RUN      ] Config.monitorParserBitdepth
+[       OK ] Config.monitorParserBitdepth (0 ms)
+[ RUN      ] Config.monitorParserCM
+[       OK ] Config.monitorParserCM (0 ms)
+[ RUN      ] Config.monitorParserVRR
+[       OK ] Config.monitorParserVRR (0 ms)
+[ RUN      ] Config.monitorParserSDRBrightness
+[       OK ] Config.monitorParserSDRBrightness (0 ms)
+[ RUN      ] Config.monitorParserICC
+[       OK ] Config.monitorParserICC (0 ms)
+[ RUN      ] Config.monitorParserSetDisabled
+[       OK ] Config.monitorParserSetDisabled (0 ms)
+[ RUN      ] Config.monitorParserSetMirror
+[       OK ] Config.monitorParserSetMirror (0 ms)
+[----------] 22 tests from Config (0 ms total)
+
+[----------] 11 tests from ConfigLuaValueTypes
+[ RUN      ] ConfigLuaValueTypes.boolParseAndReset
+[       OK ] ConfigLuaValueTypes.boolParseAndReset (0 ms)
+[ RUN      ] ConfigLuaValueTypes.boolBadType
+[       OK ] ConfigLuaValueTypes.boolBadType (0 ms)
+[ RUN      ] ConfigLuaValueTypes.intBooleanCastAndRangeAndMap
+[       OK ] ConfigLuaValueTypes.intBooleanCastAndRangeAndMap (0 ms)
+[ RUN      ] ConfigLuaValueTypes.floatParseAndRange
+[       OK ] ConfigLuaValueTypes.floatParseAndRange (0 ms)
+[ RUN      ] ConfigLuaValueTypes.stringValidatorAndEmptyPush
+[       OK ] ConfigLuaValueTypes.stringValidatorAndEmptyPush (0 ms)
+[ RUN      ] ConfigLuaValueTypes.colorParseAndPush
+[       OK ] ConfigLuaValueTypes.colorParseAndPush (0 ms)
+[ RUN      ] ConfigLuaValueTypes.vec2ParseValidateAndPush
+[       OK ] ConfigLuaValueTypes.vec2ParseValidateAndPush (0 ms)
+[ RUN      ] ConfigLuaValueTypes.expressionVec2AcceptsStringNumberAndTableForms
+[       OK ] ConfigLuaValueTypes.expressionVec2AcceptsStringNumberAndTableForms (0 ms)
+[ RUN      ] ConfigLuaValueTypes.cssGapParseFormsAndRange
+[       OK ] ConfigLuaValueTypes.cssGapParseFormsAndRange (0 ms)
+[ RUN      ] ConfigLuaValueTypes.fontWeightParse
+[       OK ] ConfigLuaValueTypes.fontWeightParse (0 ms)
+[ RUN      ] ConfigLuaValueTypes.gradientParseAndPush
+[       OK ] ConfigLuaValueTypes.gradientParseAndPush (0 ms)
+[----------] 11 tests from ConfigLuaValueTypes (1 ms total)
+
+[----------] 9 tests from ConfigLuaBindingsInternal
+[ RUN      ] ConfigLuaBindingsInternal.parseDirectionAliases
+[       OK ] ConfigLuaBindingsInternal.parseDirectionAliases (0 ms)
+[ RUN      ] ConfigLuaBindingsInternal.parseToggleAliases
+[       OK ] ConfigLuaBindingsInternal.parseToggleAliases (0 ms)
+[ RUN      ] ConfigLuaBindingsInternal.argStrConvertsStringsAndNumbers
+[       OK ] ConfigLuaBindingsInternal.argStrConvertsStringsAndNumbers (0 ms)
+[ RUN      ] ConfigLuaBindingsInternal.tableOptHelpersReadOptionalFields
+[       OK ] ConfigLuaBindingsInternal.tableOptHelpersReadOptionalFields (0 ms)
+[ RUN      ] ConfigLuaBindingsInternal.selectorHelpersAcceptStringAndNumberSelectors
+[       OK ] ConfigLuaBindingsInternal.selectorHelpersAcceptStringAndNumberSelectors (0 ms)
+[ RUN      ] ConfigLuaBindingsInternal.pushWindowUpvalAcceptsNumberAndStringSelectors
+[       OK ] ConfigLuaBindingsInternal.pushWindowUpvalAcceptsNumberAndStringSelectors (0 ms)
+[ RUN      ] ConfigLuaBindingsInternal.parseTableFieldMissingFieldAndPrefixedErrors
+[       OK ] ConfigLuaBindingsInternal.parseTableFieldMissingFieldAndPrefixedErrors (0 ms)
+[ RUN      ] ConfigLuaBindingsInternal.pluginBindingIsTableWithLoadFunction
+[       OK ] ConfigLuaBindingsInternal.pluginBindingIsTableWithLoadFunction (0 ms)
+[ RUN      ] ConfigLuaBindingsInternal.pluginLuaFnIsUnloadedWithoutDanglingCall
+[       OK ] ConfigLuaBindingsInternal.pluginLuaFnIsUnloadedWithoutDanglingCall (0 ms)
+[----------] 9 tests from ConfigLuaBindingsInternal (1 ms total)
+
+[----------] 6 tests from ConfigLuaRequire
+[ RUN      ] ConfigLuaRequire.absolutePathLoadsAndTracksFile
+[       OK ] ConfigLuaRequire.absolutePathLoadsAndTracksFile (1 ms)
+[ RUN      ] ConfigLuaRequire.relativePathResolvesFromConfigDirectory
+[       OK ] ConfigLuaRequire.relativePathResolvesFromConfigDirectory (0 ms)
+[ RUN      ] ConfigLuaRequire.wildcardLoadsSortedTableAndTracksFilesAndDirectory
+[       OK ] ConfigLuaRequire.wildcardLoadsSortedTableAndTracksFilesAndDirectory (0 ms)
+[ RUN      ] ConfigLuaRequire.wildcardNoMatchIsCatchableError
+[       OK ] ConfigLuaRequire.wildcardNoMatchIsCatchableError (0 ms)
+[ RUN      ] ConfigLuaRequire.normalModuleRequireStillUsesConfigDirectoryPackagePath
+[       OK ] ConfigLuaRequire.normalModuleRequireStillUsesConfigDirectoryPackagePath (0 ms)
+[ RUN      ] ConfigLuaRequire.packagePathPreservesLuaDefaultsAfterConfigDirectory
+[       OK ] ConfigLuaRequire.packagePathPreservesLuaDefaultsAfterConfigDirectory (0 ms)
+[----------] 6 tests from ConfigLuaRequire (5 ms total)
+
+[----------] 4 tests from ConfigLuaUtils
+[ RUN      ] ConfigLuaUtils.fromGenericValueMapsSupportedTypes
+[       OK ] ConfigLuaUtils.fromGenericValueMapsSupportedTypes (0 ms)
+[ RUN      ] ConfigLuaUtils.fromGenericValueReturnsNullForUnsupportedType
+[       OK ] ConfigLuaUtils.fromGenericValueReturnsNullForUnsupportedType (0 ms)
+[ RUN      ] ConfigLuaUtils.fromGenericValueCopiesRefreshBits
+[       OK ] ConfigLuaUtils.fromGenericValueCopiesRefreshBits (0 ms)
+[ RUN      ] ConfigLuaUtils.typedAccessorsReadStoredValues
+[       OK ] ConfigLuaUtils.typedAccessorsReadStoredValues (0 ms)
+[----------] 4 tests from ConfigLuaUtils (0 ms total)
+
+[----------] 8 tests from ConfigLuaEventHandler
+[ RUN      ] ConfigLuaEventHandler.knownEventsContainsExpectedEntries
+[       OK ] ConfigLuaEventHandler.knownEventsContainsExpectedEntries (0 ms)
+[ RUN      ] ConfigLuaEventHandler.registerDispatchAndUnregister
+[       OK ] ConfigLuaEventHandler.registerDispatchAndUnregister (0 ms)
+[ RUN      ] ConfigLuaEventHandler.registerUnknownEventReturnsNullopt
+[       OK ] ConfigLuaEventHandler.registerUnknownEventReturnsNullopt (0 ms)
+[ RUN      ] ConfigLuaEventHandler.callbackLuaErrorDoesNotCrashDispatch
+[       OK ] ConfigLuaEventHandler.callbackLuaErrorDoesNotCrashDispatch (0 ms)
+[ RUN      ] ConfigLuaEventHandler.addCustomEventAndDispatchToLua
+[       OK ] ConfigLuaEventHandler.addCustomEventAndDispatchToLua (0 ms)
+[ RUN      ] ConfigLuaEventHandler.removingPluginEventUnregistersLuaEvent
+[       OK ] ConfigLuaEventHandler.removingPluginEventUnregistersLuaEvent (0 ms)
+[ RUN      ] ConfigLuaEventHandler.addCustomEventDuplicateFails
+[       OK ] ConfigLuaEventHandler.addCustomEventDuplicateFails (0 ms)
+[ RUN      ] ConfigLuaEventHandler.removeNonexistentCustomEventFails
+[       OK ] ConfigLuaEventHandler.removeNonexistentCustomEventFails (0 ms)
+[----------] 8 tests from ConfigLuaEventHandler (1 ms total)
+
+[----------] 7 tests from ConfigLuaObjects
+[ RUN      ] ConfigLuaObjects.keybindCanToggleEnabledFromLua
+[       OK ] ConfigLuaObjects.keybindCanToggleEnabledFromLua (0 ms)
+[ RUN      ] ConfigLuaObjects.workspaceRuleCanToggleEnabledFromLua
+[       OK ] ConfigLuaObjects.workspaceRuleCanToggleEnabledFromLua (0 ms)
+[ RUN      ] ConfigLuaObjects.keybindExposesMetadataAndRemoveMethods
+[       OK ] ConfigLuaObjects.keybindExposesMetadataAndRemoveMethods (0 ms)
+[ RUN      ] ConfigLuaObjects.objectsAreReadOnlyFromLua
+[1;31mERR [0m]: Lua error (unknown): kb.foo = 1:1: attempt to modify read-only hl object
+[       OK ] ConfigLuaObjects.objectsAreReadOnlyFromLua (0 ms)
+[ RUN      ] ConfigLuaObjects.keybindSupportsEqAndToString
+[       OK ] ConfigLuaObjects.keybindSupportsEqAndToString (0 ms)
+[ RUN      ] ConfigLuaObjects.eventSubscriptionRemoveAndIsActive
+[       OK ] ConfigLuaObjects.eventSubscriptionRemoveAndIsActive (0 ms)
+[ RUN      ] ConfigLuaObjects.eventSubscriptionSupportsEqAndToString
+[       OK ] ConfigLuaObjects.eventSubscriptionSupportsEqAndToString (0 ms)
+[----------] 7 tests from ConfigLuaObjects (1 ms total)
+
+[----------] 6 tests from ParserUtils
+[ RUN      ] ParserUtils.parseIntDecimal
+[       OK ] ParserUtils.parseIntDecimal (0 ms)
+[ RUN      ] ParserUtils.parseIntHex
+[       OK ] ParserUtils.parseIntHex (0 ms)
+[ RUN      ] ParserUtils.parseIntBooleanStrings
+[       OK ] ParserUtils.parseIntBooleanStrings (0 ms)
+[ RUN      ] ParserUtils.parseIntInvalid
+[       OK ] ParserUtils.parseIntInvalid (0 ms)
+[ RUN      ] ParserUtils.parseColor
+[       OK ] ParserUtils.parseColor (0 ms)
+[ RUN      ] ParserUtils.parseColorBad
+[       OK ] ParserUtils.parseColorBad (0 ms)
+[----------] 6 tests from ParserUtils (0 ms total)
+
+[----------] 6 tests from WorkspaceRuleManager
+[ RUN      ] WorkspaceRuleManager.defaultWorkspaceMatchesMonitorName
+[       OK ] WorkspaceRuleManager.defaultWorkspaceMatchesMonitorName (0 ms)
+[ RUN      ] WorkspaceRuleManager.defaultWorkspaceMatchesMonitorDescription
+[       OK ] WorkspaceRuleManager.defaultWorkspaceMatchesMonitorDescription (0 ms)
+[ RUN      ] WorkspaceRuleManager.defaultWorkspaceMatchesMonitorShortDescription
+[       OK ] WorkspaceRuleManager.defaultWorkspaceMatchesMonitorShortDescription (0 ms)
+[ RUN      ] WorkspaceRuleManager.defaultWorkspaceSkipsNonMatchingMonitor
+[       OK ] WorkspaceRuleManager.defaultWorkspaceSkipsNonMatchingMonitor (0 ms)
+[ RUN      ] WorkspaceRuleManager.disabledDefaultWorkspaceIsSkipped
+[       OK ] WorkspaceRuleManager.disabledDefaultWorkspaceIsSkipped (0 ms)
+[ RUN      ] WorkspaceRuleManager.replaceOrAddKeepsExistingSharedRule
+[       OK ] WorkspaceRuleManager.replaceOrAddKeepsExistingSharedRule (0 ms)
+[----------] 6 tests from WorkspaceRuleManager (0 ms total)
+
+[----------] 1 test from Desktop
+[ RUN      ] Desktop.reservedArea
+[1;31mERR [0m]: CReservedArea: attempted to create a reserved area from parent [[Vector2D: x: 20, y: 30], [Vector2D: x: 900, y: 900]] and child [[Vector2D: x: 0, y: 0], [Vector2D: x: 100, y: 100]] which is invalid
+[       OK ] Desktop.reservedArea (0 ms)
+[----------] 1 test from Desktop (0 ms total)
+
+[----------] 10 tests from BoolMatchEngine
+[ RUN      ] BoolMatchEngine.truthyStringOne
+[       OK ] BoolMatchEngine.truthyStringOne (0 ms)
+[ RUN      ] BoolMatchEngine.truthyStringTrue
+[       OK ] BoolMatchEngine.truthyStringTrue (0 ms)
+[ RUN      ] BoolMatchEngine.truthyStringYes
+[       OK ] BoolMatchEngine.truthyStringYes (0 ms)
+[ RUN      ] BoolMatchEngine.truthyStringOn
+[       OK ] BoolMatchEngine.truthyStringOn (0 ms)
+[ RUN      ] BoolMatchEngine.truthyCaseInsensitive
+[       OK ] BoolMatchEngine.truthyCaseInsensitive (0 ms)
+[ RUN      ] BoolMatchEngine.falsyStringZero
+[       OK ] BoolMatchEngine.falsyStringZero (0 ms)
+[ RUN      ] BoolMatchEngine.falsyStringFalse
+[       OK ] BoolMatchEngine.falsyStringFalse (0 ms)
+[ RUN      ] BoolMatchEngine.falsyStringNo
+[       OK ] BoolMatchEngine.falsyStringNo (0 ms)
+[ RUN      ] BoolMatchEngine.falsyStringEmpty
+[       OK ] BoolMatchEngine.falsyStringEmpty (0 ms)
+[ RUN      ] BoolMatchEngine.falsyStringArbitrary
+[       OK ] BoolMatchEngine.falsyStringArbitrary (0 ms)
+[----------] 10 tests from BoolMatchEngine (0 ms total)
+
+[----------] 8 tests from IntMatchEngine
+[ RUN      ] IntMatchEngine.positiveInteger
+[       OK ] IntMatchEngine.positiveInteger (0 ms)
+[ RUN      ] IntMatchEngine.zero
+[       OK ] IntMatchEngine.zero (0 ms)
+[ RUN      ] IntMatchEngine.negativeInteger
+[       OK ] IntMatchEngine.negativeInteger (0 ms)
+[ RUN      ] IntMatchEngine.invalidStringDefaultsToZero
+[1;31mERR [0m]: CIntMatchEngine: invalid input abc
+[       OK ] IntMatchEngine.invalidStringDefaultsToZero (0 ms)
+[ RUN      ] IntMatchEngine.emptyStringDefaultsToZero
+[1;31mERR [0m]: CIntMatchEngine: invalid input 
+[       OK ] IntMatchEngine.emptyStringDefaultsToZero (0 ms)
+[ RUN      ] IntMatchEngine.leadingWhitespace
+[       OK ] IntMatchEngine.leadingWhitespace (0 ms)
+[ RUN      ] IntMatchEngine.trailingNonDigits
+[       OK ] IntMatchEngine.trailingNonDigits (0 ms)
+[ RUN      ] IntMatchEngine.largeValue
+[       OK ] IntMatchEngine.largeValue (0 ms)
+[----------] 8 tests from IntMatchEngine (0 ms total)
+
+[----------] 9 tests from RegexMatchEngine
+[ RUN      ] RegexMatchEngine.exactMatch
+[       OK ] RegexMatchEngine.exactMatch (0 ms)
+[ RUN      ] RegexMatchEngine.wildcardPattern
+[       OK ] RegexMatchEngine.wildcardPattern (0 ms)
+[ RUN      ] RegexMatchEngine.fullMatchRequired
+[       OK ] RegexMatchEngine.fullMatchRequired (0 ms)
+[ RUN      ] RegexMatchEngine.characterClass
+[       OK ] RegexMatchEngine.characterClass (0 ms)
+[ RUN      ] RegexMatchEngine.negativePrefix
+[       OK ] RegexMatchEngine.negativePrefix (0 ms)
+[ RUN      ] RegexMatchEngine.negativeWithWildcard
+[       OK ] RegexMatchEngine.negativeWithWildcard (0 ms)
+[ RUN      ] RegexMatchEngine.emptyPattern
+[       OK ] RegexMatchEngine.emptyPattern (0 ms)
+[ RUN      ] RegexMatchEngine.dotMatchesSingleChar
+[       OK ] RegexMatchEngine.dotMatchesSingleChar (0 ms)
+[ RUN      ] RegexMatchEngine.alternation
+[       OK ] RegexMatchEngine.alternation (0 ms)
+[----------] 9 tests from RegexMatchEngine (0 ms total)
+
+[----------] 7 tests from TagMatchEngine
+[ RUN      ] TagMatchEngine.matchesExistingTag
+[       OK ] TagMatchEngine.matchesExistingTag (0 ms)
+[ RUN      ] TagMatchEngine.doesNotMatchMissingTag
+[       OK ] TagMatchEngine.doesNotMatchMissingTag (0 ms)
+[ RUN      ] TagMatchEngine.emptyKeeper
+[       OK ] TagMatchEngine.emptyKeeper (0 ms)
+[ RUN      ] TagMatchEngine.negativeTagMatching
+[       OK ] TagMatchEngine.negativeTagMatching (0 ms)
+[ RUN      ] TagMatchEngine.dynamicTagMatchesWithoutStrict
+[       OK ] TagMatchEngine.dynamicTagMatchesWithoutStrict (0 ms)
+[ RUN      ] TagMatchEngine.caseSensitive
+[       OK ] TagMatchEngine.caseSensitive (0 ms)
+[ RUN      ] TagMatchEngine.tagRemoval
+[       OK ] TagMatchEngine.tagRemoval (0 ms)
+[----------] 7 tests from TagMatchEngine (0 ms total)
+
+[----------] 5 tests from EventBusCustomEvent
+[ RUN      ] EventBusCustomEvent.emitWithCorrectArgsSucceedsAndDelivers
+[       OK ] EventBusCustomEvent.emitWithCorrectArgsSucceedsAndDelivers (0 ms)
+[ RUN      ] EventBusCustomEvent.emitWithTooFewArgsFails
+[       OK ] EventBusCustomEvent.emitWithTooFewArgsFails (0 ms)
+[ RUN      ] EventBusCustomEvent.emitWithTooManyArgsFails
+[       OK ] EventBusCustomEvent.emitWithTooManyArgsFails (0 ms)
+[ RUN      ] EventBusCustomEvent.emitWithWrongArgTypeFails
+[       OK ] EventBusCustomEvent.emitWithWrongArgTypeFails (0 ms)
+[ RUN      ] EventBusCustomEvent.listenerReceivesCorrectArgTypes
+[       OK ] EventBusCustomEvent.listenerReceivesCorrectArgTypes (0 ms)
+[----------] 5 tests from EventBusCustomEvent (0 ms total)
+
+[----------] 66 tests from Helpers
+[ RUN      ] Helpers.byteOperatorsIntegral
+[       OK ] Helpers.byteOperatorsIntegral (0 ms)
+[ RUN      ] Helpers.byteOperatorsFloating
+[       OK ] Helpers.byteOperatorsFloating (0 ms)
+[ RUN      ] Helpers.byteOperatorsZero
+[       OK ] Helpers.byteOperatorsZero (0 ms)
+[ RUN      ] Helpers.byteConversionFunctions
+[       OK ] Helpers.byteConversionFunctions (0 ms)
+[ RUN      ] Helpers.byteOperatorsChain
+[       OK ] Helpers.byteOperatorsChain (0 ms)
+[ RUN      ] Helpers.cmTypeFromStringValid
+[       OK ] Helpers.cmTypeFromStringValid (0 ms)
+[ RUN      ] Helpers.cmTypeFromStringInvalid
+[       OK ] Helpers.cmTypeFromStringInvalid (0 ms)
+[ RUN      ] Helpers.cmTypeToString
+[       OK ] Helpers.cmTypeToString (0 ms)
+[ RUN      ] Helpers.cmTypeRoundTrip
+[       OK ] Helpers.cmTypeRoundTrip (0 ms)
+[ RUN      ] Helpers.colorConstructorDefault
+[       OK ] Helpers.colorConstructorDefault (0 ms)
+[ RUN      ] Helpers.colorConstructorFloats
+[       OK ] Helpers.colorConstructorFloats (0 ms)
+[ RUN      ] Helpers.colorConstructorHex
+[       OK ] Helpers.colorConstructorHex (0 ms)
+[ RUN      ] Helpers.colorGetAsHex
+[       OK ] Helpers.colorGetAsHex (0 ms)
+[ RUN      ] Helpers.colorStripA
+[       OK ] Helpers.colorStripA (0 ms)
+[ RUN      ] Helpers.colorModifyA
+[       OK ] Helpers.colorModifyA (0 ms)
+[ RUN      ] Helpers.colorEquality
+[       OK ] Helpers.colorEquality (0 ms)
+[ RUN      ] Helpers.colorConstants
+[       OK ] Helpers.colorConstants (0 ms)
+[ RUN      ] Helpers.directionFromCharValid
+[       OK ] Helpers.directionFromCharValid (0 ms)
+[ RUN      ] Helpers.directionFromCharInvalid
+[       OK ] Helpers.directionFromCharInvalid (0 ms)
+[ RUN      ] Helpers.directionToString
+[       OK ] Helpers.directionToString (0 ms)
+[ RUN      ] Helpers.directionFromCharToString
+[       OK ] Helpers.directionFromCharToString (0 ms)
+[ RUN      ] Helpers.drmDevIDFromFDCharacterDevice
+[       OK ] Helpers.drmDevIDFromFDCharacterDevice (0 ms)
+[ RUN      ] Helpers.drmDevIDFromFDRejectsRegularFiles
+[       OK ] Helpers.drmDevIDFromFDRejectsRegularFiles (0 ms)
+[ RUN      ] Helpers.expressionBasicArithmetic
+[       OK ] Helpers.expressionBasicArithmetic (0 ms)
+[ RUN      ] Helpers.expressionOrderOfOperations
+[       OK ] Helpers.expressionOrderOfOperations (0 ms)
+[ RUN      ] Helpers.expressionNegativeNumbers
+[       OK ] Helpers.expressionNegativeNumbers (0 ms)
+[ RUN      ] Helpers.expressionFloatingPoint
+[       OK ] Helpers.expressionFloatingPoint (0 ms)
+[ RUN      ] Helpers.expressionWithVariables
+[       OK ] Helpers.expressionWithVariables (0 ms)
+[ RUN      ] Helpers.expressionMultipleVariables
+[       OK ] Helpers.expressionMultipleVariables (0 ms)
+[ RUN      ] Helpers.expressionInvalidInput
+[1;31mERR [0m]: CExpression::compute: mu threw: Expression is empty.
+[1;31mERR [0m]: CExpression::compute: mu threw: Unexpected end of expression at position 4
+[1;31mERR [0m]: CExpression::compute: mu threw: Unexpected token "abc" found at position 0.
+[1;31mERR [0m]: CExpression::compute: mu threw: Unexpected operator "*" found at position 0
+[       OK ] Helpers.expressionInvalidInput (0 ms)
+[ RUN      ] Helpers.expressionZero
+[       OK ] Helpers.expressionZero (0 ms)
+[ RUN      ] Helpers.expressionVec2ParsesLegacyString
+[       OK ] Helpers.expressionVec2ParsesLegacyString (0 ms)
+[ RUN      ] Helpers.formatDrmToShm
+[       OK ] Helpers.formatDrmToShm (0 ms)
+[ RUN      ] Helpers.formatShmToDrm
+[       OK ] Helpers.formatShmToDrm (0 ms)
+[ RUN      ] Helpers.formatDrmShmRoundTrip
+[       OK ] Helpers.formatDrmShmRoundTrip (0 ms)
+[ RUN      ] Helpers.formatIsFormatYUV
+[       OK ] Helpers.formatIsFormatYUV (0 ms)
+[ RUN      ] Helpers.formatGetPixelFormatFromDRM
+[       OK ] Helpers.formatGetPixelFormatFromDRM (0 ms)
+[ RUN      ] Helpers.formatIsFormatOpaque
+[       OK ] Helpers.formatIsFormatOpaque (0 ms)
+[ RUN      ] Helpers.formatPixelsPerBlock
+[       OK ] Helpers.formatPixelsPerBlock (0 ms)
+[ RUN      ] Helpers.formatMinStride
+[       OK ] Helpers.formatMinStride (0 ms)
+[ RUN      ] Helpers.formatShmBufferLayoutValid
+[       OK ] Helpers.formatShmBufferLayoutValid (0 ms)
+[ RUN      ] Helpers.formatDrmFormatName
+[       OK ] Helpers.formatDrmFormatName (0 ms)
+[ RUN      ] Helpers.formatAlphaFormat
+[       OK ] Helpers.formatAlphaFormat (0 ms)
+[ RUN      ] Helpers.mathWlTransformToHyprutils
+[       OK ] Helpers.mathWlTransformToHyprutils (0 ms)
+[ RUN      ] Helpers.mathWlTransformToHyprutilsInvalid
+[       OK ] Helpers.mathWlTransformToHyprutilsInvalid (0 ms)
+[ RUN      ] Helpers.mathInvertTransformNonRotated
+[       OK ] Helpers.mathInvertTransformNonRotated (0 ms)
+[ RUN      ] Helpers.mathInvertTransformRotated
+[       OK ] Helpers.mathInvertTransformRotated (0 ms)
+[ RUN      ] Helpers.mathInvertTransformFlippedRotated
+[       OK ] Helpers.mathInvertTransformFlippedRotated (0 ms)
+[ RUN      ] Helpers.mathInvertTransformDoubleInvert
+[       OK ] Helpers.mathInvertTransformDoubleInvert (0 ms)
+[ RUN      ] Helpers.mathComposeTransformIdentity
+[       OK ] Helpers.mathComposeTransformIdentity (0 ms)
+[ RUN      ] Helpers.mathComposeTransformRotation
+[       OK ] Helpers.mathComposeTransformRotation (0 ms)
+[ RUN      ] Helpers.escapeJSONStringsBasic
+[       OK ] Helpers.escapeJSONStringsBasic (0 ms)
+[ RUN      ] Helpers.escapeJSONStringsSpecialChars
+[       OK ] Helpers.escapeJSONStringsSpecialChars (0 ms)
+[ RUN      ] Helpers.isDirectionString
+[       OK ] Helpers.isDirectionString (0 ms)
+[ RUN      ] Helpers.normalizeAngleRadInRange
+[       OK ] Helpers.normalizeAngleRadInRange (0 ms)
+[ RUN      ] Helpers.normalizeAngleRadNegative
+[       OK ] Helpers.normalizeAngleRadNegative (0 ms)
+[ RUN      ] Helpers.normalizeAngleRadLarge
+[       OK ] Helpers.normalizeAngleRadLarge (0 ms)
+[ RUN      ] Helpers.stringToPercentagePercent
+[       OK ] Helpers.stringToPercentagePercent (0 ms)
+[ RUN      ] Helpers.stringToPercentageAbsolute
+[       OK ] Helpers.stringToPercentageAbsolute (0 ms)
+[ RUN      ] Helpers.truthyTrue
+[       OK ] Helpers.truthyTrue (0 ms)
+[ RUN      ] Helpers.truthyFalse
+[       OK ] Helpers.truthyFalse (0 ms)
+[ RUN      ] Helpers.transferFunctionFromStringNamed
+[       OK ] Helpers.transferFunctionFromStringNamed (0 ms)
+[ RUN      ] Helpers.transferFunctionFromStringNumeric
+[       OK ] Helpers.transferFunctionFromStringNumeric (0 ms)
+[ RUN      ] Helpers.transferFunctionFromStringInvalid
+[       OK ] Helpers.transferFunctionFromStringInvalid (0 ms)
+[ RUN      ] Helpers.transferFunctionToString
+[       OK ] Helpers.transferFunctionToString (0 ms)
+[ RUN      ] Helpers.transferFunctionRoundTrip
+[       OK ] Helpers.transferFunctionRoundTrip (0 ms)
+[----------] 66 tests from Helpers (1 ms total)
+
+[----------] 29 tests from DamageRing
+[ RUN      ] DamageRing.setSizeMarksDamageEntire
+[       OK ] DamageRing.setSizeMarksDamageEntire (0 ms)
+[ RUN      ] DamageRing.setSizeSameSizeNoChange
+[       OK ] DamageRing.setSizeSameSizeNoChange (0 ms)
+[ RUN      ] DamageRing.setSizeNewSizeReDamages
+[       OK ] DamageRing.setSizeNewSizeReDamages (0 ms)
+[ RUN      ] DamageRing.setSizeZeroSize
+[       OK ] DamageRing.setSizeZeroSize (0 ms)
+[ RUN      ] DamageRing.damageReturnsTrueForRegionInsideSize
+[       OK ] DamageRing.damageReturnsTrueForRegionInsideSize (0 ms)
+[ RUN      ] DamageRing.damageReturnsTrueForBoxInsideSize
+[       OK ] DamageRing.damageReturnsTrueForBoxInsideSize (0 ms)
+[ RUN      ] DamageRing.damageReturnsFalseForEmptyRegion
+[       OK ] DamageRing.damageReturnsFalseForEmptyRegion (0 ms)
+[ RUN      ] DamageRing.damageReturnsFalseForInvalidBox
+[       OK ] DamageRing.damageReturnsFalseForInvalidBox (0 ms)
+[ RUN      ] DamageRing.damageReturnsFalseForRegionOutsideSize
+[       OK ] DamageRing.damageReturnsFalseForRegionOutsideSize (0 ms)
+[ RUN      ] DamageRing.damageClipsRegionToSize
+[       OK ] DamageRing.damageClipsRegionToSize (0 ms)
+[ RUN      ] DamageRing.damageSetsHasChanged
+[       OK ] DamageRing.damageSetsHasChanged (0 ms)
+[ RUN      ] DamageRing.damageEntireSetsHasChanged
+[       OK ] DamageRing.damageEntireSetsHasChanged (0 ms)
+[ RUN      ] DamageRing.damageEntireOnZeroSizeDoesNotSetHasChanged
+[       OK ] DamageRing.damageEntireOnZeroSizeDoesNotSetHasChanged (0 ms)
+[ RUN      ] DamageRing.rotateClearsCurrentDamage
+[       OK ] DamageRing.rotateClearsCurrentDamage (0 ms)
+[ RUN      ] DamageRing.rotatePreservesCurrentAsPreviousForNextFrame
+[       OK ] DamageRing.rotatePreservesCurrentAsPreviousForNextFrame (0 ms)
+[ RUN      ] DamageRing.rotateMultipleTimes
+[       OK ] DamageRing.rotateMultipleTimes (0 ms)
+[ RUN      ] DamageRing.getBufferDamageAge0ReturnsFullScreen
+[       OK ] DamageRing.getBufferDamageAge0ReturnsFullScreen (0 ms)
+[ RUN      ] DamageRing.getBufferDamageNegativeAgeReturnsFullScreen
+[       OK ] DamageRing.getBufferDamageNegativeAgeReturnsFullScreen (0 ms)
+[ RUN      ] DamageRing.getBufferDamageExceedsRingLengthReturnsFullScreen
+[       OK ] DamageRing.getBufferDamageExceedsRingLengthReturnsFullScreen (0 ms)
+[ RUN      ] DamageRing.getBufferDamageAge1ReturnCurrentOnly
+[       OK ] DamageRing.getBufferDamageAge1ReturnCurrentOnly (0 ms)
+[ RUN      ] DamageRing.getBufferDamageAge2AccumulatesOnePreviousFrame
+[       OK ] DamageRing.getBufferDamageAge2AccumulatesOnePreviousFrame (0 ms)
+[ RUN      ] DamageRing.getBufferDamageAccumulatesUpToRingLength
+[       OK ] DamageRing.getBufferDamageAccumulatesUpToRingLength (0 ms)
+[ RUN      ] DamageRing.getBufferDamageCoalescesWhenTooManyRects
+[       OK ] DamageRing.getBufferDamageCoalescesWhenTooManyRects (0 ms)
+[ RUN      ] DamageRing.getBufferDamageEmptyRingReturnsEmptyForValidAge
+[       OK ] DamageRing.getBufferDamageEmptyRingReturnsEmptyForValidAge (0 ms)
+[ RUN      ] DamageRing.hasChangedFalseInitially
+[       OK ] DamageRing.hasChangedFalseInitially (0 ms)
+[ RUN      ] DamageRing.hasChangedTrueAfterDamage
+[       OK ] DamageRing.hasChangedTrueAfterDamage (0 ms)
+[ RUN      ] DamageRing.hasChangedFalseAfterRotate
+[       OK ] DamageRing.hasChangedFalseAfterRotate (0 ms)
+[ RUN      ] DamageRing.hasChangedTrueAfterDamageEntire
+[       OK ] DamageRing.hasChangedTrueAfterDamageEntire (0 ms)
+[ RUN      ] DamageRing.hasChangedFalseAfterDamageOutsideBounds
+[       OK ] DamageRing.hasChangedFalseAfterDamageOutsideBounds (0 ms)
+[----------] 29 tests from DamageRing (0 ms total)
+
+[----------] 19 tests from TagKeeper
+[ RUN      ] TagKeeper.applyTagSetAddsTag
+[       OK ] TagKeeper.applyTagSetAddsTag (0 ms)
+[ RUN      ] TagKeeper.applyTagSetReturnsFalseIfAlreadySet
+[       OK ] TagKeeper.applyTagSetReturnsFalseIfAlreadySet (0 ms)
+[ RUN      ] TagKeeper.applyTagUnsetRemovesTag
+[       OK ] TagKeeper.applyTagUnsetRemovesTag (0 ms)
+[ RUN      ] TagKeeper.applyTagUnsetReturnsFalseIfNotSet
+[       OK ] TagKeeper.applyTagUnsetReturnsFalseIfNotSet (0 ms)
+[ RUN      ] TagKeeper.applyTagToggleSetsWhenAbsent
+[       OK ] TagKeeper.applyTagToggleSetsWhenAbsent (0 ms)
+[ RUN      ] TagKeeper.applyTagToggleUnsetsWhenPresent
+[       OK ] TagKeeper.applyTagToggleUnsetsWhenPresent (0 ms)
+[ RUN      ] TagKeeper.applyTagDynamicAppendsStar
+[       OK ] TagKeeper.applyTagDynamicAppendsStar (0 ms)
+[ RUN      ] TagKeeper.applyTagDynamicDoesNotDoubleAppendStar
+[       OK ] TagKeeper.applyTagDynamicDoesNotDoubleAppendStar (0 ms)
+[ RUN      ] TagKeeper.isTaggedReturnsFalseWhenEmpty
+[       OK ] TagKeeper.isTaggedReturnsFalseWhenEmpty (0 ms)
+[ RUN      ] TagKeeper.isTaggedExactMatch
+[       OK ] TagKeeper.isTaggedExactMatch (0 ms)
+[ RUN      ] TagKeeper.isTaggedMatchesDynamicWhenNotStrict
+[       OK ] TagKeeper.isTaggedMatchesDynamicWhenNotStrict (0 ms)
+[ RUN      ] TagKeeper.isTaggedStrictDoesNotMatchDynamic
+[       OK ] TagKeeper.isTaggedStrictDoesNotMatchDynamic (0 ms)
+[ RUN      ] TagKeeper.isTaggedStrictMatchesExact
+[       OK ] TagKeeper.isTaggedStrictMatchesExact (0 ms)
+[ RUN      ] TagKeeper.isTaggedNegativeInvertsResult
+[       OK ] TagKeeper.isTaggedNegativeInvertsResult (0 ms)
+[ RUN      ] TagKeeper.isTaggedNegativeWithDynamic
+[       OK ] TagKeeper.isTaggedNegativeWithDynamic (0 ms)
+[ RUN      ] TagKeeper.removeDynamicTagRemovesStarVariant
+[       OK ] TagKeeper.removeDynamicTagRemovesStarVariant (0 ms)
+[ RUN      ] TagKeeper.removeDynamicTagReturnsFalseIfNoDynamic
+[       OK ] TagKeeper.removeDynamicTagReturnsFalseIfNoDynamic (0 ms)
+[ RUN      ] TagKeeper.removeDynamicTagOnEmpty
+[       OK ] TagKeeper.removeDynamicTagOnEmpty (0 ms)
+[ RUN      ] TagKeeper.getTagsReturnsAllStoredTags
+[       OK ] TagKeeper.getTagsReturnsAllStoredTags (0 ms)
+[----------] 19 tests from TagKeeper (0 ms total)
+
+[----------] 9 tests from MonitorPositionController
+[ RUN      ] MonitorPositionController.explicitPositionsAreAppliedFirst
+[1;32mDEBUG [0m]: arrangeMonitors: left explicit [-100, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: right explicit [100, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto auto [200, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: left xwayland [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto xwayland [100, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: right xwayland [150, 0]
+[       OK ] MonitorPositionController.explicitPositionsAreAppliedFirst (0 ms)
+[ RUN      ] MonitorPositionController.autoRightPlacesAfterRightmostEdge
+[1;32mDEBUG [0m]: arrangeMonitors: explicit explicit [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto auto [100, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: explicit xwayland [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto xwayland [100, 0]
+[       OK ] MonitorPositionController.autoRightPlacesAfterRightmostEdge (0 ms)
+[ RUN      ] MonitorPositionController.autoLeftPlacesBeforeLeftmostEdge
+[1;32mDEBUG [0m]: arrangeMonitors: explicit explicit [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto auto [-50, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: explicit xwayland [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto xwayland [100, 0]
+[       OK ] MonitorPositionController.autoLeftPlacesBeforeLeftmostEdge (0 ms)
+[ RUN      ] MonitorPositionController.autoDownPlacesBelowLowestEdge
+[1;32mDEBUG [0m]: arrangeMonitors: explicit explicit [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto auto [0, 100]
+[1;32mDEBUG [0m]: arrangeMonitors: explicit xwayland [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto xwayland [100, 0]
+[       OK ] MonitorPositionController.autoDownPlacesBelowLowestEdge (0 ms)
+[ RUN      ] MonitorPositionController.autoUpPlacesAboveHighestEdge
+[1;32mDEBUG [0m]: arrangeMonitors: explicit explicit [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto auto [0, -50]
+[1;32mDEBUG [0m]: arrangeMonitors: explicit xwayland [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto xwayland [100, 0]
+[       OK ] MonitorPositionController.autoUpPlacesAboveHighestEdge (0 ms)
+[ RUN      ] MonitorPositionController.autoCenterRightCentersVertically
+[1;32mDEBUG [0m]: arrangeMonitors: explicit explicit [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto auto [100, 30]
+[1;32mDEBUG [0m]: arrangeMonitors: explicit xwayland [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto xwayland [100, 0]
+[       OK ] MonitorPositionController.autoCenterRightCentersVertically (0 ms)
+[ RUN      ] MonitorPositionController.autoCenterDownCentersHorizontally
+[1;32mDEBUG [0m]: arrangeMonitors: explicit explicit [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto auto [30, 100]
+[1;32mDEBUG [0m]: arrangeMonitors: explicit xwayland [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: auto xwayland [100, 0]
+[       OK ] MonitorPositionController.autoCenterDownCentersHorizontally (0 ms)
+[ RUN      ] MonitorPositionController.xwaylandPositionsUseLogicalSizeByDefault
+[1;32mDEBUG [0m]: arrangeMonitors: first explicit [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: second explicit [100, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: first xwayland [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: second xwayland [100, 0]
+[       OK ] MonitorPositionController.xwaylandPositionsUseLogicalSizeByDefault (0 ms)
+[ RUN      ] MonitorPositionController.xwaylandPositionsUseTransformedSizeWhenForceZeroScaling
+[1;32mDEBUG [0m]: arrangeMonitors: first explicit [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: second explicit [100, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: first xwayland [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: second xwayland [200, 0]
+[       OK ] MonitorPositionController.xwaylandPositionsUseTransformedSizeWhenForceZeroScaling (0 ms)
+[----------] 9 tests from MonitorPositionController (0 ms total)
+
+[----------] 14 tests from MonitorQueryCore
+[ RUN      ] MonitorQueryCore.queryById
+[       OK ] MonitorQueryCore.queryById (0 ms)
+[ RUN      ] MonitorQueryCore.queryByName
+[       OK ] MonitorQueryCore.queryByName (0 ms)
+[ RUN      ] MonitorQueryCore.queryByDescriptionPrefix
+[       OK ] MonitorQueryCore.queryByDescriptionPrefix (0 ms)
+[ RUN      ] MonitorQueryCore.queryByVectorInsideBox
+[       OK ] MonitorQueryCore.queryByVectorInsideBox (0 ms)
+[ RUN      ] MonitorQueryCore.closestMonitorForVectorOutsideAllBoxes
+[       OK ] MonitorQueryCore.closestMonitorForVectorOutsideAllBoxes (0 ms)
+[ RUN      ] MonitorQueryCore.directionLookupRight
+[       OK ] MonitorQueryCore.directionLookupRight (0 ms)
+[ RUN      ] MonitorQueryCore.directionLookupChoosesLongestIntersection
+[       OK ] MonitorQueryCore.directionLookupChoosesLongestIntersection (0 ms)
+[ RUN      ] MonitorQueryCore.configCurrentReturnsRelativeMonitor
+[       OK ] MonitorQueryCore.configCurrentReturnsRelativeMonitor (0 ms)
+[ RUN      ] MonitorQueryCore.configDirectionUsesRelativeMonitor
+[       OK ] MonitorQueryCore.configDirectionUsesRelativeMonitor (0 ms)
+[ RUN      ] MonitorQueryCore.configRelativePositiveWraps
+[       OK ] MonitorQueryCore.configRelativePositiveWraps (0 ms)
+[ RUN      ] MonitorQueryCore.configRelativeNegativeWraps
+[       OK ] MonitorQueryCore.configRelativeNegativeWraps (0 ms)
+[ RUN      ] MonitorQueryCore.configNumericId
+[       OK ] MonitorQueryCore.configNumericId (0 ms)
+[ RUN      ] MonitorQueryCore.configSelectorSkipsNoOutput
+[       OK ] MonitorQueryCore.configSelectorSkipsNoOutput (0 ms)
+[ RUN      ] MonitorQueryCore.selectorQueryUsesInterfaceMatcher
+[       OK ] MonitorQueryCore.selectorQueryUsesInterfaceMatcher (0 ms)
+[----------] 14 tests from MonitorQueryCore (0 ms total)
+
+[----------] 14 tests from WorkspaceQueryCore
+[ RUN      ] WorkspaceQueryCore.queryById
+[       OK ] WorkspaceQueryCore.queryById (0 ms)
+[ RUN      ] WorkspaceQueryCore.queryByName
+[       OK ] WorkspaceQueryCore.queryByName (0 ms)
+[ RUN      ] WorkspaceQueryCore.queryByNameString
+[       OK ] WorkspaceQueryCore.queryByNameString (0 ms)
+[ RUN      ] WorkspaceQueryCore.queryByNumericString
+[       OK ] WorkspaceQueryCore.queryByNumericString (0 ms)
+[ RUN      ] WorkspaceQueryCore.queryByPlainNameString
+[       OK ] WorkspaceQueryCore.queryByPlainNameString (0 ms)
+[ RUN      ] WorkspaceQueryCore.queryBySpecialString
+[       OK ] WorkspaceQueryCore.queryBySpecialString (0 ms)
+[ RUN      ] WorkspaceQueryCore.inertWorkspacesAreIgnored
+[       OK ] WorkspaceQueryCore.inertWorkspacesAreIgnored (0 ms)
+[ RUN      ] WorkspaceQueryCore.invalidLookupReturnsNullopt
+[       OK ] WorkspaceQueryCore.invalidLookupReturnsNullopt (0 ms)
+[ RUN      ] WorkspaceQueryCore.specialIdsMatchWorkspaceRange
+[       OK ] WorkspaceQueryCore.specialIdsMatchWorkspaceRange (0 ms)
+[ RUN      ] WorkspaceQueryCore.newSpecialIDUsesHighestExistingSpecial
+[       OK ] WorkspaceQueryCore.newSpecialIDUsesHighestExistingSpecial (0 ms)
+[ RUN      ] WorkspaceQueryCore.newSpecialIDUsesStartWhenNoneExist
+[       OK ] WorkspaceQueryCore.newSpecialIDUsesStartWhenNoneExist (0 ms)
+[ RUN      ] WorkspaceQueryCore.nextAvailableNamedWorkspaceUsesExistingNamedWorkspaces
+[       OK ] WorkspaceQueryCore.nextAvailableNamedWorkspaceUsesExistingNamedWorkspaces (0 ms)
+[ RUN      ] WorkspaceQueryCore.nextAvailableNamedWorkspaceIncludesPersistentRules
+[       OK ] WorkspaceQueryCore.nextAvailableNamedWorkspaceIncludesPersistentRules (0 ms)
+[ RUN      ] WorkspaceQueryCore.idOutOfBoundsIgnoresSpecialAndInertWorkspaces
+[       OK ] WorkspaceQueryCore.idOutOfBoundsIgnoresSpecialAndInertWorkspaces (0 ms)
+[----------] 14 tests from WorkspaceQueryCore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 270 tests from 21 test suites ran. (15 ms total)
+[  PASSED  ] 270 tests.

@@ -1,0 +1,25 @@
+--- /home/hoskinson/window-behavior-spec/qml-process-provider-v8-terminal-retire/frontend/PinWindowMenu.qml
++++ /home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend/PinWindowMenu.qml
+@@ -34,14 +34,21 @@
+     property int actionCode: -1
+     signal operationFinished(bool complete)
+     function diagnosticState() {
++        var engineBefore=NativeLifetime.Lifetime.engineScope();
++        var popupBefore=menuState.open?NativeLifetime.Lifetime.observePopup(root,toggleButton,pinPopup,Quickshell):null;
+         var window=toggleButton.QsWindow.window;
+         var position=window?toggleButton.mapToItem(window.contentItem,0,0):null;
+-        return {nonce:menuState.nonce,open:menuState.open,status:menuState.status,
++        var projection={nonce:menuState.nonce,open:menuState.open,status:menuState.status,
+             publicIdentity:menuState.target,captured:menuState.token,sent:menuState.sent,
+             invocation:invocation,receipt:lastReceipt,
+             layerNamespace:"hoskinson-pin-window-menu",
+             button:position?{x:position.x,y:position.y,width:toggleButton.width,height:toggleButton.height,
+                 visible:toggleButton.visible,enabled:toggleMouse.enabled,label:"Toggle pin"}:null};
++        projection.popupBefore=popupBefore;
++        projection.popupAfter=menuState.open?NativeLifetime.Lifetime.observePopup(root,toggleButton,pinPopup,Quickshell):null;
++        projection.engineBefore=engineBefore;
++        projection.engineAfter=NativeLifetime.Lifetime.engineScope();
++        return projection;
+     }
+     function sync() { menuOpen=menuState.open;status=menuState.status; }
+     function close() {

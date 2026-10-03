@@ -1,0 +1,34 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v11/snapshot_cache.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/snapshot_cache.py
+@@ -36,12 +36,12 @@
+             return data
+         finally:os.close(fd)
+     @contextmanager
+-    def pair(self,stem):
++    def pair(self,stem,*,nonblocking=False):
+         fd=os.open(self.root/'cache.lock',os.O_RDWR|os.O_CREAT|os.O_NOFOLLOW|os.O_NONBLOCK,0o600)
+         try:
+             info=os.fstat(fd)
+             if not stat.S_ISREG(info.st_mode) or info.st_uid!=os.getuid() or info.st_mode&0o077:raise ValueError('invalid private cache lock')
+-            fcntl.flock(fd,fcntl.LOCK_EX)
++            fcntl.flock(fd,fcntl.LOCK_EX | (fcntl.LOCK_NB if nonblocking else 0))
+             yield
+         finally:os.close(fd)
+     def validate(self,window,metadata,pixels):
+@@ -82,14 +82,14 @@
+             self.write_atomic(pointer,json.dumps(metadata,separators=(',',':')).encode())
+             if isinstance(old,str) and old!=destination.name and re.fullmatch(re.escape(stem)+r'-[0-9a-f]{64}\.png',old):
+                 (self.root/old).unlink(missing_ok=True)
+-    def prune(self,live_identities,*,complete):
++    def prune(self,live_identities,*,complete,nonblocking=False):
+         if complete is not True:raise ValueError('cache pruning requires complete live identity observation')
+         live=set(live_identities)
+         pattern=re.compile(r'full-([0-9a-f]{1,16})-([1-9][0-9]*)\.json')
+         immutable=re.compile(r'full-[0-9a-f]{1,16}-[1-9][0-9]*-[0-9a-f]{64}\.png')
+         scratch=re.compile(r'\.cache-[0-9a-f]{32}\.tmp')
+         removed=[]
+-        with self.pair('janitor'):
++        with self.pair('janitor',nonblocking=nonblocking):
+             referenced=set()
+             for path in list(self.root.iterdir()):
+                 match=pattern.fullmatch(path.name)

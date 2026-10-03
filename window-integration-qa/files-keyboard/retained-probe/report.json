@@ -1,0 +1,112 @@
+{
+  "scope": "Actual frozen candidate QML/V4 dispatch in copied offscreen Qt; no Orca or compositor input. Media metadata injected only to probe logical rebinding.",
+  "observations": [
+    {
+      "name": "visible native press sanity",
+      "interfaceId": "2147483665",
+      "dispatch": {
+        "class": "Btn_QMLTYPE_8",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "Show list",
+        "objectAlive": true,
+        "valid": true
+      },
+      "before": "grid",
+      "after": "list",
+      "callbackExecuted": true
+    },
+    {
+      "name": "hidden window retained native press",
+      "dispatch": {
+        "class": "Btn_QMLTYPE_8",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": true,
+        "name": "Show grid",
+        "objectAlive": true,
+        "valid": true
+      },
+      "before": "list",
+      "after": "grid",
+      "callbackExecuted": true,
+      "requiredRefusal": false
+    },
+    {
+      "name": "hidden window raw retained QML activate",
+      "returned": "true",
+      "before": "grid",
+      "after": "list",
+      "callbackExecuted": true,
+      "requiredRefusal": false
+    },
+    {
+      "name": "prompt Ctrl L routing",
+      "before": "Prompt.input",
+      "after": "PathBar.input",
+      "promptStillVisible": true,
+      "pathEditing": true
+    },
+    {
+      "name": "static media logical-path rebind through retained native peer",
+      "interfaceId": "2147483687",
+      "before": {
+        "class": "MediaTile",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "image.svg",
+        "objectAlive": true,
+        "valid": true
+      },
+      "after": {
+        "class": "MediaTile",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "beta.svg",
+        "objectAlive": true,
+        "valid": true
+      },
+      "selected": [
+        "beta.svg"
+      ],
+      "samePeerAlive": true,
+      "capturedOldIdentityRefused": false
+    },
+    {
+      "name": "destroyed file delegate retained native peer",
+      "interfaceId": "2147483961",
+      "before": {
+        "class": "QQuickItem_QML_38",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "subfolder",
+        "objectAlive": true,
+        "valid": true
+      },
+      "after": {
+        "interfaceFound": false,
+        "objectAlive": false
+      },
+      "refused": true
+    },
+    {
+      "name": "actual same PID focused file reload",
+      "before": "FileArea.row",
+      "after": "Explorer.keys",
+      "exportedFocus": "main",
+      "samePid": true,
+      "requiredFocusPreserved": false
+    }
+  ],
+  "exitCode": -15,
+  "result": "observed"
+}

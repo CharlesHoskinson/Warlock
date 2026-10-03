@@ -1,0 +1,68 @@
+{
+  "version": "retained-raster-v6-causal-audit",
+  "nativeLaunch": false,
+  "GPUOperation": false,
+  "productionChanged": false,
+  "executedProducerChanged": false,
+  "oracleChanged": false,
+  "toleranceChanged": false,
+  "pythonTests": 8,
+  "quintNamedScenarios": 6,
+  "quintModels": 1,
+  "quintSamples": 2000,
+  "completeSourceTextureChecks": 3,
+  "exactRationalFailedPixelChecks": 9,
+  "CPUFloat32CornerChecks": 9,
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_pixel_arithmetic"
+      ],
+      "exitCode": 0,
+      "log": "check-00.log"
+    },
+    {
+      "command": [
+        "python3",
+        "audit_pixels.py"
+      ],
+      "exitCode": 0,
+      "log": "check-01.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "pixel_math_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-02.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "pixel_math_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-03.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "pixel_math.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-04.log"
+    }
+  ]
+}

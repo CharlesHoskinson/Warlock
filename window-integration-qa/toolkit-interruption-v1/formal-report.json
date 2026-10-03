@@ -1,0 +1,24 @@
+{
+  "result": "ok",
+  "namedScenarios": 15,
+  "samples": 2000,
+  "steps": 100,
+  "seedArgument": "20260930",
+  "engineReturnedSeed": 20660730,
+  "command": [
+    "quint",
+    "run",
+    "window-integration-qa/toolkit-interruption-v1/interruption.qnt",
+    "--invariant",
+    "allProps",
+    "--max-samples",
+    "2000",
+    "--max-steps",
+    "100",
+    "--seed",
+    "20260930",
+    "--out",
+    "window-integration-qa/toolkit-interruption-v1/quint-random.json"
+  ],
+  "nativeExecuted": false
+}

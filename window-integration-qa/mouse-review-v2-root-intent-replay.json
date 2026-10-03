@@ -1,0 +1,46 @@
+{
+  "native": false,
+  "actualSourceMethods": true,
+  "sourceSHA256": "ecbb50dcf506c26e6df043cce6127404e283e2734eac14e8962711e8d2553ac2",
+  "checks": [
+    {
+      "name": "disableDuringLoss",
+      "afterDisable": {
+        "request": false,
+        "active": false,
+        "returned": true
+      },
+      "afterReturn": {
+        "request": false,
+        "active": false
+      },
+      "pass": true
+    },
+    {
+      "name": "disableWhileTemporarilyInactive",
+      "afterDisable": {
+        "request": false,
+        "active": false,
+        "returned": true
+      },
+      "afterReturn": {
+        "request": false,
+        "active": false
+      },
+      "pass": true
+    },
+    {
+      "name": "toggleCancelsDuringLoss",
+      "afterDisable": {
+        "request": false,
+        "active": false,
+        "returned": true
+      },
+      "afterReturn": {
+        "request": false,
+        "active": false
+      },
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_braille" xml:lang="eo">
+  <info>
+    <title type="sort">3. Brajlo</title>
+    <title type="link">Brajlo</title>
+    <desc>Agordi la brajlan ekransubtenadon de <app>Orko</app></desc>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_key_echo"/>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Brajlaj Preferaĵoj</title>
+  <section id="braillesupport">
+    <title>Ebligi Brajlan Subtenadon</title>
+    <p>Tiu ĉi markobulono ŝaltas/malŝaltas ĉu <app>Orko</app> uzos brajlan ekranon. Se BrlTTY ne funkcias, <app>Orko</app> reakiros gracie kaj ne komunikos kun la brajla ekrano.</p>
+    <p>Defaŭlta valoro: nemarkita</p>
+    <note style="tip">
+      <p>Se vi agordas BrlTTY poste, vi devas restarigi <app>Orko</app> por uzi brajlon.</p>
+    </note>
+  </section>
+  <section id="braillewordwrap">
+    <title>Ebligi vorttransigon</title>
+    <p>Se <gui>Ebligi vorttransigon</gui> estas markita, <app>Orko</app> alĝustigos la tekston por ke nur kompletaj vortoj estu montrataj sur la brajla ekrano. Se ĝi ne estas markita, <app>Orko</app> uzos ĉiujn ĉelojn sur la ekrano por ke pli da teksto povu esti montrata samtempe.</p>
+    <p>Defaŭlta valoro: nemarkita</p>
+  </section>
+  <section id="contractedbraille">
+    <title>Ebligi Mallongigitan Brajlon</title>
+    <p>Orko subtenas mallongigitan brajlon per la projekto liblouis. Ĉar multaj distribucioj inkluzivas liblouis, vi verŝajne aŭtomate havos aliron al mallongigita brajla subteno en <app>Orko</app>.</p>
+    <p>Por ebligi mallongigitan brajlon en sistemo kie liblouis estas instalita, certigu ke la <gui>Ebligi Mallongigitan Brajlon</gui> markobulono estas markita. Poste elektu vian dezirindan traduk-tabelon el la <gui>Kuntigtabelo</gui> kombinujo.</p>
+    <p>Defaŭlta valoro: nemarkita</p>
+  </section>
+  <section id="rolenames">
+    <title>Mallongigitaj Rolnomoj</title>
+    <p>Tiu ĉi markobulono determinas la manieron en kiu rolnomoj estas montrataj kaj povas esti uzata por helpi konservi spacon sur la brajla ekrano. Ekzemple, se glitilo havus fokuson, la vorto "slider" estus montrota se mallongigitaj rolnomoj ne estas markita; se ĝi estus markita, "sldr" estus montrata anstataŭe.</p>
+    <p>Defaŭlta valoro: nemarkita</p>
+  </section>
+  <section id="eolindicator">
+    <title>Malebligi findolinian simbolon</title>
+    <p>Markante tiun ĉi markobulonon, oni diras al <app>Orko</app> ne prezenti la ĉenon "$l" ĉe la fino de teksta linio.</p>
+    <p>Defaŭlta valoro: nemarkita</p>
+  </section>
+  <section id="verbosity">
+    <title>Parolindeco</title>
+    <p>Tiu ĉi radikbutona grupo determinas la kvanton da informo kiu estos brajlita en certaj situacioj. Ekzemple, se ĝi estas agordita al detala, klavkombinaj kaj rolnomaj informoj estas montrataj. Tiu informo ne estas montrata en mallonga reĝimo.</p>
+    <p>Defaŭlta valoro: <gui>Detala</gui></p>
+  </section>
+  <section id="selectionandhyperlink">
+    <title>Elektaj kaj Hiperligaj Indikatoroj</title>
+    <p>La <gui>Elekta Indikatorio</gui> kaj <gui>Hiperliga Indikatorio</gui> radikbutonaj grupoj permesas al vi agordi la konduton de <app>Orko</app> dum montrado de elektita teksto kaj hiperligiloj. Defaŭlte, kiam vi renkontas iu ajn, <app>Orko</app> "substrekos" tiun tekston sur via brajla ekrano per Punktoj 7 kaj 8. Se vi preferas, vi povas ŝanĝi la indikatorilon por esti nur Punkto 7, nur Punkto 8, aŭ tute ne ĉeesti.</p>
+    <p>Defaŭlta valoro: <gui>Punktoj 7 kaj 8</gui></p>
+    <note style="tip">
+      <title>Tekstatributaj Indikatoroj</title>
+      <p>Vi ankaŭ opcie povas havi tekstatributojn indikatajn en brajlo. Ebligo de tiu ĉi trajto kaj elekto de kiuj atributoj estas interesaj estas farata sur la <link xref="preferences_text_attributes"> <gui>Tekstatributoj</gui> paĝo</link> de la preferaĵa dialogo.</p>
+    </note>
+  </section>
+  <section id="flashMessageSettings">
+    <title>Agordoj pri Ekbrilaj Mesaĝoj</title>
+    <p>Ekbrilaj mesaĝoj estas similaj laŭ naturo al sciigoj aŭ anoncoj: Ili estas montrataj sur via ĝisdatigebla brajla ekrano por mallonga tempo, post kio la originalaj enhavoj de la brajla ekrano estas restarigitaj. <app>Orko</app> havas plurajn agordojn kiujn vi povas uzi por kontroli la prezentadon de ekbrilaj mesaĝoj.</p>
+    <section id="flashMessageSettings_enable">
+      <title>Ebligi ekbrilajn mesaĝojn</title>
+      <p>Se <gui>Ebligi ekbrilajn mesaĝojn</gui> estas markita, <app>Orko</app> prezentados mesaĝojn al vi en brajlo. Se vi preferas havi nur la mesaĝojn de <app>Orko</app> parolditajn, vi devus malmarki tiun ĉi markobulonon.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="flashMessageSettings_detailed">
+      <title>Mesaĝoj estas detalaj</title>
+      <p>Se <gui>Mesaĝoj estas detalaj</gui> estas markita, <app>Orko</app> prezentados detalajn mesaĝojn al vi en brajlo. Ekzemple, se vi uzas la komandon de <app>Orko</app> por ŝanĝi eĥon, <app>Orko</app> eble montros "Eĥo agordita al vorto." Se vi preferas pli mallongajn mesaĝojn, kiel simple "vorto," vi devus malmarki tiun ĉi markobulonon.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="flashMessageSettings_persistent">
+      <title>Mesaĝoj estas persistaj</title>
+      <p>Kiel menciite supre, ekbrilaj mesaĝoj estas montrataj nur dum mallonga tempoperiodo. Se vi preferas ke mesaĝoj restu montrataj ĝis vi efektigas agon kaŭzantan ĝisdatigon de via ekrano, vi devus marki la <gui>Mesaĝoj estas persistaj</gui> markobulonon.</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+    </section>
+    <section id="flashMessageSettings_duration">
+      <title>Daŭro (sekundoj)</title>
+      <p>La tempokvanto kiun <app>Orko</app> atendos antaŭ ol forigi la mesaĝon kaj restarigi la originalan enhavon de via ekrano povas esti agordita en la <gui> Daŭro (sekundoj)</gui> rotacilo. Rimarku ke la valoro de tiu ĉi agordo estos ignorata se vi ebligis persistajn ekbrilajn mesaĝojn.</p>
+      <p>Defaŭlta valoro: 5</p>
+    </section>
+  </section>
+</page>

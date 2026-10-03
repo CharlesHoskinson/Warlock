@@ -1,0 +1,84 @@
+{
+  "result": "fail",
+  "sourceReview": {
+    "result": "pass",
+    "singleTargetExact": true,
+    "delegateExact": true,
+    "fullInverseReconstruction": true,
+    "otherFrontendExact": true,
+    "parentUnchanged": true,
+    "nativeExecuted": false
+  },
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=c++20",
+        "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/test_qjs.cpp",
+        "-o",
+        "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/test-qjs",
+        "-I/usr/include/qt6/QtQml",
+        "-I/usr/include/qt6",
+        "-DQT_QML_LIB",
+        "-I/usr/include/qt6/QtQmlIntegration",
+        "-DQT_QMLINTEGRATION_LIB",
+        "-I/usr/include/qt6/QtNetwork",
+        "-DQT_NETWORK_LIB",
+        "-I/usr/include/qt6/QtCore",
+        "-DQT_CORE_LIB",
+        "-I/usr/lib/qt6/mkspecs/linux-g++",
+        "-lQt6Qml",
+        "-lQt6Network",
+        "-lQt6Core"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/test-qjs",
+        "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/widget_v67/MotionTargets.js",
+        "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/test_motion_targets.js"
+      ],
+      "returncode": 0,
+      "stdout": "batch policy assertions: 28\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/test-qjs",
+        "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/widget_v67/MotionTargets.js",
+        "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/test_actual_lookup_combined.js"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: real observation changed generation line 49\n"
+    }
+  ],
+  "sourceSHA256": {
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/CONTRACT.md": "744e35e11107b779564b5ac3f30389698f0c760b2b13056417426b2afaceeb91",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/motion_targets.qnt": "1386a6729bb71e8c3c650917b37149b7a72649ee350fc053a3cf93dd5b9eaecb",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/prove_before.py": "16baf8e8c19a43477dd37f0e8658a7f5b0a9a19a8657ce217d5b0ce1b4f068b6",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/formal-before-implementation.json": "add8b21bfd6d158bb9d2a16104a175ce1b05b3555f86d753ca9f246bf990007b",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/inherited-source.json": "11048aad8b6fb8541a89ed9461606055f1d907579d96dd4d7b0c8906e213ff2a",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/test_qjs.cpp": "c98882e50885b8954983cb09b80abb7d2526b4de78e3c5d48b52bb4c4a142d74",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/test_motion_targets.js": "af205e2a908c58576c53d0ff34a8fc04620cc6c30f291155b716664ef89d6421",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/test_actual_lookup.js": "94908133f7397a419cb3b5fc78a46eee1d84cf3d0d33a7857d142ec32aca2c79",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/check_source.py": "e9bc625124b1aa6b014a01220aecca1be1a89256fc93a93b46cc4c27413b2b6b",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/offline.py": "36002a1a0e20d81672d5b8175918419f0c466d7117fb110a42eba882bdd55e08",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/source-check-first-failure.json": "deb59111ea7855f26d60e0a26ec2f19021f6ac1d59a53373420be8723648b332",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/test_actual_lookup_combined.js": "14c5bbbc55556c838ce17f4b2cd2bc5e52f57eebb9ab194ac46815fbdebc9a9c",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/widget_v67/TaskbarPopup.qml": "f517a32d2d604348e17c9a3c2776cff8b98f389564967482122a4923a2bb5dc7",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/widget_v67/WindowMotion.qml": "6812a49f86ff33c30a307a6d424ef2efb0514543339c16b9a915bf60c96f2a95",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/widget_v67/Windows.diff": "184c3a8cbd875ea57dca095f40c4376c01c2e0766143e9a4783c766831f8db76",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/widget_v67/Windows.qml": "8b917945c6eceea44ad612ef85a15358df1c80608e12fe84e61d26fb15407c10",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/widget_v67/PinMenu.js": "e53903405a3dc828b51259056d24bd9772e4da9c5142f86b572a78274515192a",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/widget_v67/PinWindowMenu.qml": "c4816d46872f03035f8c8ba81c43f75c294de09e26e446db64afd50c1fa79345",
+    "/home/hoskinson/window-integration-qa/taskbar-motion-target-batch-v1/widget_v67/MotionTargets.js": "42a5f59e0423806fdb7657e6df9d6953b2a16beb42ffeeed60eb0d02038b1254"
+  },
+  "sourceUnchanged": true,
+  "nativeExecuted": false,
+  "GUIAcceptance": false,
+  "latencyAcceptance": false
+}

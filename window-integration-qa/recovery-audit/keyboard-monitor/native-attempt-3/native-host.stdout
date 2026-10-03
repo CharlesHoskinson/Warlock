@@ -1,0 +1,632 @@
+{
+  "kind": "private native bridge/official Orca on non-AT-SPI Foot",
+  "checks": [
+    {
+      "name": "private config errors absent",
+      "pass_": true
+    },
+    {
+      "name": "pre-plugin stable host evdev typing preserved",
+      "pass_": true,
+      "before": "1b",
+      "after": "1b61",
+      "host": [
+        "0x5a02aef99790",
+        3191187,
+        "180003e9"
+      ]
+    },
+    {
+      "name": "default manager passive",
+      "pass_": true,
+      "state": {
+        "clients": 0,
+        "devices": 0,
+        "quiescent": true,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "no-reader ordinary bytes preserved",
+      "pass_": true,
+      "hex": "1b61616263"
+    },
+    {
+      "name": "no-reader nested compositor shortcut works",
+      "pass_": true
+    },
+    {
+      "name": "actual official reader uses DeviceA11yManager",
+      "pass_": true,
+      "reader": {
+        "device_type": "AtspiDeviceA11yManager",
+        "focus": null,
+        "active_window": null,
+        "navigator": null
+      }
+    },
+    {
+      "name": "actual global learn mode command on focused non-AT-SPI Foot",
+      "pass_": true,
+      "utterances": [
+        {
+          "time": 59479.219409496,
+          "kind": "speech",
+          "text": "Entering learn mode.  Press any key to hear its function.  To view the screen reader's documentation, press F1. To get a list of the screen reader's shortcuts, press F2. To exit learn mode, press the escape key.",
+          "voice": {
+            "established": false
+          }
+        }
+      ],
+      "packets": [
+        {
+          "time": 59479.123225055,
+          "released": false,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        },
+        {
+          "time": 59479.21322919,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 59479.303430507,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 59479.393468834,
+          "released": true,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        }
+      ]
+    },
+    {
+      "name": "private virtual exact paired Insert+h packets",
+      "pass_": true,
+      "packets": [
+        {
+          "time": 59479.123225055,
+          "released": false,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        },
+        {
+          "time": 59479.21322919,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 59479.303430507,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 59479.393468834,
+          "released": true,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        }
+      ]
+    },
+    {
+      "name": "global command bytes consumed exactly",
+      "pass_": true,
+      "before": "1b61616263",
+      "after": "1b61616263"
+    },
+    {
+      "name": "ordinary post-command typing preserved",
+      "pass_": true,
+      "hex": "1b6161626364"
+    },
+    {
+      "name": "actual reader command through nested physical pre-XKB path",
+      "pass_": true,
+      "utterances": [
+        {
+          "time": 59481.157420203,
+          "kind": "speech",
+          "text": "Entering learn mode.  Press any key to hear its function.  To view the screen reader's documentation, press F1. To get a list of the screen reader's shortcuts, press F2. To exit learn mode, press the escape key.",
+          "voice": {
+            "established": false
+          }
+        }
+      ],
+      "packets": [
+        {
+          "time": 59481.059885809,
+          "released": false,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        },
+        {
+          "time": 59481.150317221,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 59481.24027511,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 59481.330246726,
+          "released": true,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        }
+      ],
+      "classification": "stable US evdev Wayland host input through CKeyboard; no physical hardware claim"
+    },
+    {
+      "name": "host physical exact paired Insert+h packets",
+      "pass_": true,
+      "packets": [
+        {
+          "time": 59481.059885809,
+          "released": false,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        },
+        {
+          "time": 59481.150317221,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 59481.24027511,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 59481.330246726,
+          "released": true,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        }
+      ]
+    },
+    {
+      "name": "host path command bytes consumed exactly",
+      "pass_": true,
+      "before": "1b6161626364",
+      "after": "1b6161626364"
+    },
+    {
+      "name": "captured routes quiescent before unload",
+      "pass_": true
+    },
+    {
+      "name": "post-unload ordinary bytes preserved",
+      "pass_": true
+    }
+  ],
+  "restoration": {
+    "keyboards": true,
+    "originalClients": true,
+    "originalClientStates": true,
+    "mainPlugins": true,
+    "focus": true,
+    "cursor": true,
+    "a11y": true,
+    "readerDisabled": true,
+    "catalogBytes": true,
+    "outputs": true,
+    "fixturesExited": true,
+    "configErrors": true
+  },
+  "nativeInputProved": true,
+  "physicalHardwareProved": false,
+  "before": {
+    "clients": [
+      [
+        "0x5a02aee429f0",
+        4007,
+        "18000005"
+      ],
+      [
+        "0x5a02b0cc9280",
+        4311,
+        "18000006"
+      ],
+      [
+        "0x5a02afd20bd0",
+        361074,
+        "18000076"
+      ],
+      [
+        "0x5a02afa13e90",
+        252010,
+        "1800006a"
+      ]
+    ],
+    "focus": [
+      "0x5a02afa13e90",
+      252010,
+      "1800006a"
+    ],
+    "cursor": {
+      "x": 527,
+      "y": 539
+    },
+    "a11y": {
+      "dev": 84,
+      "inode": 91312,
+      "connects": true
+    },
+    "readerStatus": "(<false>,)",
+    "catalogHashes": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    },
+    "catalogBackup": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/catalog-before.json"
+  },
+  "private": {
+    "pid": 3191187,
+    "signature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790837294_1658133979",
+    "runtime": "/tmp/kbn-pas7v7yk",
+    "config": "/tmp/kbn-pas7v7yk/hyprland.lua"
+  },
+  "nestedBackendBaseline": {
+    "pluginLoaded": false,
+    "wtypeExpectedHex": "78",
+    "wtypeActualHex": "1b",
+    "keymapTranslationCorrect": false,
+    "classification": "nested backend keymap translation; retained separately from bridge gates"
+  },
+  "result": "pass",
+  "terminalBytes": "1b61616263647a",
+  "catalogComparison": {
+    "/home/hoskinson/.config/omarchy/virtual-desktops.json": {
+      "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-settings.json": {
+      "expectedSHA256": null,
+      "actualSHA256": null,
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-order.json": {
+      "expectedSHA256": null,
+      "actualSHA256": null,
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-session-order.json": {
+      "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "exactBytes": true
+    }
+  },
+  "mainKeyboardComparison": {
+    "before": [
+      {
+        "address": "0x5a02b0b335a0",
+        "name": "video-bus",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d38ea0",
+        "name": "ideapad-extra-buttons",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d76090",
+        "name": "video-bus-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afcd3dd0",
+        "name": "ite-tech.-inc.-ite-device(8258)-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d8f5f0",
+        "name": "ite-tech.-inc.-ite-device(8258)-wireless-radio-control",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02ae1c49c0",
+        "name": "hda-intel-pch-headphone",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afb42100",
+        "name": "power-button",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02af2ea440",
+        "name": "power-button-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afaa1ad0",
+        "name": "at-translated-set-2-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b04bf700",
+        "name": "hl-virtual-keyboard-fcitx5",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": true
+      }
+    ],
+    "after": [
+      {
+        "address": "0x5a02b0b335a0",
+        "name": "video-bus",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d38ea0",
+        "name": "ideapad-extra-buttons",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d76090",
+        "name": "video-bus-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afcd3dd0",
+        "name": "ite-tech.-inc.-ite-device(8258)-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d8f5f0",
+        "name": "ite-tech.-inc.-ite-device(8258)-wireless-radio-control",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02ae1c49c0",
+        "name": "hda-intel-pch-headphone",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afb42100",
+        "name": "power-button",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02af2ea440",
+        "name": "power-button-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afaa1ad0",
+        "name": "at-translated-set-2-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b04bf700",
+        "name": "hl-virtual-keyboard-fcitx5",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": true
+      }
+    ]
+  }
+}

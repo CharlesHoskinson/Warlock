@@ -1,0 +1,15 @@
+
+  actor_attestation_test
+    ok exactReturnedAndClosedActorMayAttestTest passed 1 test(s)
+    ok emptyGroupCannotClearUnknownNativeReturnTest passed 1 test(s)
+    ok nonDurableNativeReturnCannotAttestTest passed 1 test(s)
+    ok WrongNativeResultCannotAttestTest passed 1 test(s)
+    ok activeRendererCannotAttestTest passed 1 test(s)
+    ok droppedHistoricalLedgerCannotBecomeEmptyProofTest passed 1 test(s)
+    ok selfReportedClosureCannotAttestTest passed 1 test(s)
+    ok validReplacementIssuerRevokesPartialProofTest passed 1 test(s)
+    ok lateActorJobRevokesPartialProofTest passed 1 test(s)
+    ok otherActorJobDoesNotRequireWholeKeeperStopTest passed 1 test(s)
+    ok exactActorIdsCannotBorrowOtherClosureTest passed 1 test(s)
+
+  11 passing (374ms)

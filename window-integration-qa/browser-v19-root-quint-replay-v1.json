@@ -1,0 +1,42 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v19/output_readiness.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v19/output_readiness_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  output_readiness_test\n    ok exactReadyNoFeatureCreditTest passed 1 test(s)\n    ok emptyThenExactSameDeadlineTest passed 1 test(s)\n    ok emptyNeverReadyTest passed 1 test(s)\n    ok deadlineNoRestartTest passed 1 test(s)\n    ok fallbackWrongTerminalTest passed 1 test(s)\n    ok malformedTerminalTest passed 1 test(s)\n    ok nonListTerminalTest passed 1 test(s)\n    ok missingBeforeAuthorityTest passed 1 test(s)\n    ok changedAfterAuthorityTest passed 1 test(s)\n    ok foreignPeerTest passed 1 test(s)\n    ok missingEOFTest passed 1 test(s)\n    ok oversizedReplyTest passed 1 test(s)\n    ok changeRevokesReadyTest passed 1 test(s)\n    ok timeCannotGoBackwardTest passed 1 test(s)\n    ok expirationRevokesReadyTest passed 1 test(s)\n\n  15 passing (876ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v19/output_readiness.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (2465ms at 811 traces/second).\nUse --seed=0x1415bfa --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "modelSHA256": "0b8af10487a6be135e4498b1385f1dab8637cc6407f0f6a883a32a7adc5d27ce",
+  "nativeGuiExecuted": false
+}

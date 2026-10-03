@@ -1,0 +1,32 @@
+{
+  "result": "pass",
+  "sourceSHA256": {
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/prove_composition_before.py": "56dc0636fbd5d593c4746fbed672d5ac2b58445686db80d2d75a7a359ff1d728",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/prove_composition_v2_before.py": "cc8292e300b425d557d6a082a11d3d2bf846617f419d89962c26c5ee7d1ff9e3",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/prove_composition_v3_before.py": "26ade1cbe92aafd7aad4b6b847a516565012cb8c33a2fe13e8788830c06df8f6",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend_authority.py": "72802d3d16e414944021e48d6d44349c5dbdf309df290fb2b0c57cf5f21f05be",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend_cases.py": "f3ffafaebd9e76079a6bf2d8a5c35dc6d711513ae9addd20c5c6c37db0ad6deb",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/native_authority.py": "7e1acaff08e496dae5401486f08e2b55c4fcc3df4b059a30e57bd9c2b15c8023",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/root_pin_helper.py": "30cf295bbc3032b10996e9b6db7c602f6044d38cf73d4eb6ef917e72dd80f0f2",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/popup_authority.py": "f1d5dc41babad3efb390812c81a763b121eb8c2d49283be7f0235bb4e558be16",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/layer_episode.py": "829d2f9cca3869ef26c8fda660197ebccb58de7c3750e77e31eda6d808e3dd6f",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/test_composition.py": "ab6cfe38dd25228417ea16a43531790dc8ca9a37450abc0578267033cdeb407a",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/build_probe.py": "d3454bc5291683f3d5e86083d9bf434a9999cf88783ec20e578f10324eb4d0b2",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/run_cpu.py": "0ec3835fb53becdf85b2219175208ff2f7bf49f54658a409c44c827bfc42e17c",
+    "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend/PinWindowMenu.qml": "e1b890a6f501f9863bc0513894b04a746aadca02a57c07333cee3746d08bc9b2"
+  },
+  "sourceStable": true,
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "-v",
+    "test_composition"
+  ],
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "test_actual_episode_redecoded_before_release (test_composition.Composition.test_actual_episode_redecoded_before_release) ... ok\ntest_actual_return_resource_and_symbol_required (test_composition.Composition.test_actual_return_resource_and_symbol_required) ... ok\ntest_allocation_boolean_or_null_refused (test_composition.Composition.test_allocation_boolean_or_null_refused) ... ok\ntest_complete_row_retains_full_popup (test_composition.Composition.test_complete_row_retains_full_popup) ... ok\ntest_context_boolean_alias_refused (test_composition.Composition.test_context_boolean_alias_refused) ... ok\ntest_controller_event_query_route_is_fixed_readonly (test_composition.Composition.test_controller_event_query_route_is_fixed_readonly) ... ok\ntest_controller_missing_raw_engine_refuses_before_input (test_composition.Composition.test_controller_missing_raw_engine_refuses_before_input) ... ok\ntest_controller_scope_uses_actual_fixed_query_not_flags (test_composition.Composition.test_controller_scope_uses_actual_fixed_query_not_flags) ... ok\ntest_each_allocation_getter_change_refused (test_composition.Composition.test_each_allocation_getter_change_refused) ... ok\ntest_each_bool_numeric_event_refused (test_composition.Composition.test_each_bool_numeric_event_refused) ... ok\ntest_each_context_change_refused (test_composition.Composition.test_each_context_change_refused) ... ok\ntest_engine_before_after_or_external_change_refused (test_composition.Composition.test_engine_before_after_or_external_change_refused) ... ok\ntest_every_generation_boolean_refused (test_composition.Composition.test_every_generation_boolean_refused) ... ok\ntest_fresh_valid_tuple_not_old_current (test_composition.Composition.test_fresh_valid_tuple_not_old_current) ... ok\ntest_full_pair_positive (test_composition.Composition.test_full_pair_positive) ... ok\ntest_integral_float_cursor_exactly_admitted (test_composition.Composition.test_integral_float_cursor_exactly_admitted) ... ok\ntest_intent_and_normal_exit_cannot_release (test_composition.Composition.test_intent_and_normal_exit_cannot_release) ... ok\ntest_metadata_flags_cannot_supply_tuple (test_composition.Composition.test_metadata_flags_cannot_supply_tuple) ... ok\ntest_native_absent_engine_conflict_refused (test_composition.Composition.test_native_absent_engine_conflict_refused) ... ok\ntest_nonfinite_or_fractional_cursor_refused (test_composition.Composition.test_nonfinite_or_fractional_cursor_refused) ... ok\ntest_null_window_refused (test_composition.Composition.test_null_window_refused) ... ok\ntest_pending_same_suffix_not_acceptance (test_composition.Composition.test_pending_same_suffix_not_acceptance) ... ok\ntest_pointer_episode_positive (test_composition.Composition.test_pointer_episode_positive) ... ok\ntest_prefix_eviction_sequence_replacement_and_extra_refused (test_composition.Composition.test_prefix_eviction_sequence_replacement_and_extra_refused) ... ok\ntest_return_episode_positive (test_composition.Composition.test_return_episode_positive) ... ok\ntest_source_supported_content_root_alias (test_composition.Composition.test_source_supported_content_root_alias) ... ok\ntest_unknown_popup_cancellation_refused (test_composition.Composition.test_unknown_popup_cancellation_refused) ... ok\ntest_wrong_layer_or_surface_refused (test_composition.Composition.test_wrong_layer_or_surface_refused) ... ok\n\n----------------------------------------------------------------------\nRan 28 tests in 0.023s\n\nOK\n",
+  "actualUnprojectedCPU": true,
+  "controlledDataNotNativeAuthority": true,
+  "GUI": false
+}

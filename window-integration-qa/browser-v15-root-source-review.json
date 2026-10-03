@@ -1,0 +1,39 @@
+{
+  "updatedUTC": "2026-10-02T02:16:50.225679+00:00",
+  "manifestSHA256": "e77798d559f064354e3cbf5730917b9092ad57ed5937f7040dc29cd9b1733d11",
+  "sourceReadySHA256": "b0b5d13b4e4ea4ce751b3898f327a246e980aff3edef2d763a0326d1fcaed2e6",
+  "files": 41458,
+  "links": 13770,
+  "inheritedV14RecordsExact": 41111,
+  "inheritedV14LinksExact": 13770,
+  "focusedPythonTestsPassed": 56,
+  "preflightPassed": true,
+  "originalStaticCheckCallsExact": 11,
+  "originalDynamicFeatureGatesRequired": 15,
+  "reviewedSources": {
+    "focus_setup.py": "b7e33aeba3906d077f7a670d089590db7db5b69415ffe76e9a625bf9611c3a95",
+    "focus_setup.qnt": "049890dfea2d59de24ca4fd86976a27010f746b4eb0aa708cffcf63da228b5b2",
+    "focus_setup_test.qnt": "bb74974afc795b6dcc77c42b9678a887ea4d3611f9dafd686600e08cb0d3c5bc",
+    "private_session.py": "21cd22d5a347c9f6d039719d1e5c0f942efe2d4c14ff20f8b8660463b0098f72",
+    "test_focus_setup.py": "193dcd4f65e2779ba9bbc2a064ef287e8140e87220e6405e0cf31ffd39b11d3e",
+    "V15_CONTRACT.md": "6ded8c2b3e3e5da88597f423892274eb1417f3c8ed2ba301a6f87c76d908affb"
+  },
+  "setupNotFeatureCredit": true,
+  "exactNativeFocusSeparatelyObserved": true,
+  "nonzeroIntegerPointerMoves": true,
+  "followMousePolicyUnchanged": true,
+  "reviewPassed": true,
+  "rootLaunchedAttempt": "/home/hoskinson/window-integration-qa/browser-files-flow-v15/attempt-1",
+  "absolutePythonExecutableRequired": "/usr/bin/python3",
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false,
+  "rootRecordPreparationFailure": {
+    "error": "AssertionError: root script incorrectly required15 static check AST nodes; actual11 static calls expand to15 dynamic checks through original loop",
+    "original11ASTsExact": true,
+    "sourceReviewAnd56TestsAndPreflightCompletedBeforeLaunch": true,
+    "launchOccurredBeforeRootReviewRecordSuccessfullyWritten": true,
+    "retrospectiveRecordNotPrelaunchGrant": true,
+    "nativeScope": "qa-harness-93f96343165c4699b6584f5d6c2891cb",
+    "terminalAcceptancePending": true
+  }
+}

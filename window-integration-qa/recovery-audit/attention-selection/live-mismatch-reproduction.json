@@ -1,0 +1,28 @@
+{
+  "reproduced": true,
+  "selectedStream": "nested (newest socket)",
+  "queryDefaultTarget": "main",
+  "queryEnvironment": [
+    {
+      "args": [
+        "clients",
+        "-j"
+      ],
+      "signature": ""
+    },
+    {
+      "args": [
+        "activewindow",
+        "-j"
+      ],
+      "signature": ""
+    }
+  ],
+  "resultingFalseMainUrgency": {
+    "0x123": {
+      "pid": 42,
+      "stableId": "main-id"
+    }
+  },
+  "cachedStateChangedBeforeAmbiguityResolved": true
+}

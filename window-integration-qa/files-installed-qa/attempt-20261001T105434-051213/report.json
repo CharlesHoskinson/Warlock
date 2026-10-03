@@ -1,0 +1,20 @@
+{
+  "scope": "Actual installed Files sources copied into private offscreen Qt fixtures; no original launch/kill/input, native reader or physical hardware claim",
+  "checks": [
+    {
+      "name": "installed Qt private-interface version matches native build",
+      "passed": true
+    },
+    {
+      "name": "keys owned runner exits without timeout",
+      "passed": false
+    }
+  ],
+  "result": "fail",
+  "attempt": "/home/hoskinson/window-integration-qa/files-installed-qa/attempt-20261001T105434-051213",
+  "sourceManifestSHA256": "01ab33162f512b5d6bed9bc7e3bd09c9219a1af6d67f5fec29a5c45759ebf7c7",
+  "reports": {},
+  "error": "AssertionError('keys owned runner exits without timeout')",
+  "frozenSourcesAfterExact": true,
+  "manifestBytesExact": true
+}

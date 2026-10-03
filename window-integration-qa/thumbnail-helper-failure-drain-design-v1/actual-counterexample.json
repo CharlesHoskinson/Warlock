@@ -1,0 +1,129 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-9071cc1bf1f4488ba883cc734f03cd8c.scope",
+    "coreLimit": 1
+  },
+  "fixtureOnly": true,
+  "nativeLaunched": false,
+  "compositorAuthorityClaimed": false,
+  "sourceInputs": {
+    "/home/hoskinson/window-integration-qa/thumbnail-helper-failure-drain-design-v1/replay.py": {
+      "sha256": "527b368d092727ba53a8cf12ec84fc3dd2eefd2ba7c5fac8a8c5255ad289b8c4",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-helper-failure-drain-design-v1/fixture_wrapper.py": {
+      "sha256": "26c9136251f0071ae3386cdc45c71b674a25350f3a3428ede1e782a963b18383",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v10/helper_setup.py": {
+      "sha256": "3eb460716b8580c692b59508c9012d450b4ee7798c1e7486af558d4bc7eaf8cd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v10/helper_observer.py": {
+      "sha256": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+      "mode": 420
+    }
+  },
+  "wrapperArgv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/window-integration-qa/thumbnail-helper-failure-drain-design-v1/fixture_wrapper.py",
+    "/home/hoskinson/window-integration-qa/thumbnail-helper-failure-drain-design-v1/actual-helper-events.jsonl",
+    "/home/hoskinson/window-integration-qa/thumbnail-helper-failure-drain-design-v1/actual-ready.json",
+    "/home/hoskinson/window-integration-qa/thumbnail-helper-failure-drain-design-v1/delegate.fifo",
+    "/home/hoskinson/window-integration-qa/thumbnail-helper-failure-drain-design-v1/replay.py"
+  ],
+  "actualRegistration": {
+    "wrapper": {
+      "pid": 105313,
+      "start": "19219089",
+      "pgid": 105306,
+      "parent": 105306
+    },
+    "delegate": {
+      "pid": 105316,
+      "start": "19219100",
+      "pgid": 105306,
+      "parent": 105313
+    }
+  },
+  "originalError": "Exactly one harness query required",
+  "errorAfterClosure": "Exactly one harness query required",
+  "originalErrorSeconds": 0.0008462260011583567,
+  "liveAtOriginalError": {
+    "wrapper": true,
+    "delegate": true
+  },
+  "actualWrapperExitCode": 0,
+  "actualTerminalClosure": {
+    "events": [
+      {
+        "args": [
+          "hydrate"
+        ],
+        "class": "compositor",
+        "compositorAuthorityClaimed": false,
+        "delegate": {
+          "parent": 105313,
+          "pgid": 105306,
+          "pid": 105316,
+          "start": "19219100"
+        },
+        "event": "started",
+        "fixtureOnly": true,
+        "helper": "snap",
+        "operation": "hydrate",
+        "queryRoot": null,
+        "serviceOperation": null,
+        "timeNs": 1790969718166764017,
+        "wrapper": {
+          "parent": 105306,
+          "pgid": 105306,
+          "pid": 105313,
+          "start": "19219089"
+        }
+      },
+      {
+        "args": [
+          "hydrate"
+        ],
+        "class": "compositor",
+        "compositorAuthorityClaimed": false,
+        "delegate": {
+          "parent": 105313,
+          "pgid": 105306,
+          "pid": 105316,
+          "start": "19219100"
+        },
+        "event": "terminal",
+        "exitCode": 0,
+        "fixtureOnly": true,
+        "helper": "snap",
+        "operation": "hydrate",
+        "queryRoot": null,
+        "serviceOperation": null,
+        "timeNs": 1790969718260974257,
+        "wrapper": {
+          "parent": 105306,
+          "pgid": 105306,
+          "pid": 105313,
+          "start": "19219089"
+        }
+      }
+    ],
+    "operations": [
+      "hydrate"
+    ],
+    "allNormal": true,
+    "allExactProcessesGone": true,
+    "nameExemptions": false,
+    "queryEvents": [],
+    "queryOperations": [],
+    "allQueriesNormal": true,
+    "harnessQueries": 0,
+    "serviceQueries": 0
+  },
+  "allSelectedLifetimesGone": true,
+  "productionWrapperEnvelopeExercised": false
+}

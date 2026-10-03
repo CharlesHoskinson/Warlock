@@ -1,0 +1,941 @@
+{
+  "nativeLaunch": false,
+  "mainChanged": false,
+  "actualCpuElfOnly": true,
+  "scope": "legacy gated renderer ownership accepted by current preflight; registered modern keeper case refused correctly",
+  "exactCurrentPreflightAccepted": true,
+  "pid": 2238108,
+  "start": 12990597,
+  "actualState": "Z",
+  "inheritedRetire": {
+    "oldLifetimeGone": true,
+    "signaled": false,
+    "forced": false
+  },
+  "error": "cancelled old renderer lifetime remains live",
+  "exceptionType": "ValueError",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/service-recovery-v15-zombie-counterexample/probe-legacy.py\", line 27, in <module>\n    try:coordinator.recover(b);result['accepted']=True\n        ~~~~~~~~~~~~~~~~~~~^^^\n  File \"/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v15-frozen-v2/recovery_runtime.py\", line 397, in recover\n    try:return self._recover(previous)\n               ~~~~~~~~~~~~~^^^^^^^^^^\n  File \"/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v15-frozen-v2/recovery_runtime.py\", line 351, in _recover\n    if plan['operation']=='cancel':self.refresh_cancellation(plan)\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v15-frozen-v2/recovery_runtime.py\", line 279, in refresh_cancellation\n    if process_start(row['renderer']['pid'])==row['renderer']['start']:raise ValueError('cancelled old renderer lifetime remains live')\n                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: cancelled old renderer lifetime remains live\n",
+  "captureDirectoryRetained": true,
+  "journal": {
+    "actorResources": [
+      {
+        "actor": 1,
+        "directory": {
+          "identity": [
+            57,
+            626070
+          ],
+          "parentIdentity": [
+            57,
+            626069
+          ],
+          "path": "/tmp/tmpyty4yy3_/actors/actor-1-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "outcome": {
+          "allocationPhase": "launched",
+          "directoryGone": false,
+          "forced": false,
+          "oldLifetimeGone": true,
+          "signaled": false
+        },
+        "phase": "retired",
+        "renderer": {
+          "argv": [
+            "/usr/bin/python3.14",
+            "/proc/self/fd/3",
+            "5",
+            "4",
+            "3"
+          ],
+          "environment": {
+            "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+            "WAYLAND_DISPLAY": "never-connect",
+            "XDG_RUNTIME_DIR": "/tmp/tmpyty4yy3_"
+          },
+          "launcher": {
+            "device": 32,
+            "inode": 72938,
+            "seals": null,
+            "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+            "size": 14424
+          },
+          "pid": 2238108,
+          "producer": {
+            "device": 1,
+            "inode": 316037,
+            "seals": 15,
+            "sha256": "8bc9a73afd7d85061160857536e093ded799dae7a2f0cf5758c4553f2f83002d",
+            "size": 43320
+          },
+          "producerFD": 4,
+          "script": {
+            "device": 1,
+            "inode": 316038,
+            "seals": 15,
+            "sha256": "cbf01c36b53e8f0c618dad4d7f4eb8b6581839f09a29603d3623c86dea2fdb5f",
+            "size": 257
+          },
+          "scriptFD": 3,
+          "start": 12990597,
+          "uid": 1000
+        }
+      }
+    ],
+    "actorSerial": 1,
+    "helperClosureArchive": [
+      {
+        "ownership": {
+          "jobs": [],
+          "keeper": {
+            "argv": [
+              "/usr/bin/python3.14",
+              "/proc/self/fd/5",
+              "4",
+              "{\"nonce\":\"5fa44d13d7974686adcde15c9c4f6eb7\",\"root\":\"/tmp/tmpyty4yy3_\",\"root_identity\":[57,626068],\"service_pid\":2238099,\"service_start\":12990588}"
+            ],
+            "environment": {
+              "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+              "WAYLAND_DISPLAY": "never-connect",
+              "XDG_RUNTIME_DIR": "/tmp/tmpyty4yy3_"
+            },
+            "launcher": {
+              "device": 32,
+              "inode": 72938,
+              "seals": null,
+              "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+              "size": 14424
+            },
+            "nonce": "5fa44d13d7974686adcde15c9c4f6eb7",
+            "phase": "closed",
+            "pid": 2238107,
+            "root": "/tmp/tmpyty4yy3_",
+            "rootIdentity": [
+              57,
+              626068
+            ],
+            "script": {
+              "device": 1,
+              "inode": 316036,
+              "seals": 15,
+              "sha256": "82d17836a702a4849ad4eac791bb3806a54a6779cb8e3443886e47218a215119",
+              "size": 9030
+            },
+            "scriptFD": 5,
+            "servicePID": 2238099,
+            "serviceStart": 12990588,
+            "start": 12990595,
+            "terminal": {
+              "allGroupsEmpty": true,
+              "closedNs": 117786013164086,
+              "jobs": [],
+              "keeperPID": 2238107,
+              "keeperStart": 12990595,
+              "nonce": "5fa44d13d7974686adcde15c9c4f6eb7",
+              "normalStop": true,
+              "registrations": 0,
+              "rootIdentity": [
+                57,
+                626068
+              ],
+              "servicePID": 2238099,
+              "serviceStart": 12990588
+            },
+            "uid": 1000
+          }
+        },
+        "terminal": {
+          "allGroupsEmpty": true,
+          "closedNs": 117786013164086,
+          "jobs": [],
+          "keeperPID": 2238107,
+          "keeperStart": 12990595,
+          "nonce": "5fa44d13d7974686adcde15c9c4f6eb7",
+          "normalStop": true,
+          "registrations": 0,
+          "rootIdentity": [
+            57,
+            626068
+          ],
+          "servicePID": 2238099,
+          "serviceStart": 12990588
+        }
+      }
+    ],
+    "helperOwnership": {
+      "jobs": [],
+      "keeper": {
+        "argv": [
+          "/usr/bin/python3.14",
+          "/proc/self/fd/5",
+          "4",
+          "{\"nonce\":\"5fa44d13d7974686adcde15c9c4f6eb7\",\"root\":\"/tmp/tmpyty4yy3_\",\"root_identity\":[57,626068],\"service_pid\":2238099,\"service_start\":12990588}"
+        ],
+        "environment": {
+          "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+          "WAYLAND_DISPLAY": "never-connect",
+          "XDG_RUNTIME_DIR": "/tmp/tmpyty4yy3_"
+        },
+        "launcher": {
+          "device": 32,
+          "inode": 72938,
+          "seals": null,
+          "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+          "size": 14424
+        },
+        "nonce": "5fa44d13d7974686adcde15c9c4f6eb7",
+        "phase": "closed",
+        "pid": 2238107,
+        "root": "/tmp/tmpyty4yy3_",
+        "rootIdentity": [
+          57,
+          626068
+        ],
+        "script": {
+          "device": 1,
+          "inode": 316036,
+          "seals": 15,
+          "sha256": "82d17836a702a4849ad4eac791bb3806a54a6779cb8e3443886e47218a215119",
+          "size": 9030
+        },
+        "scriptFD": 5,
+        "servicePID": 2238099,
+        "serviceStart": 12990588,
+        "start": 12990595,
+        "terminal": {
+          "allGroupsEmpty": true,
+          "closedNs": 117786013164086,
+          "jobs": [],
+          "keeperPID": 2238107,
+          "keeperStart": 12990595,
+          "nonce": "5fa44d13d7974686adcde15c9c4f6eb7",
+          "normalStop": true,
+          "registrations": 0,
+          "rootIdentity": [
+            57,
+            626068
+          ],
+          "servicePID": 2238099,
+          "serviceStart": 12990588
+        },
+        "uid": 1000
+      }
+    },
+    "liveActors": [
+      1
+    ],
+    "pending": [
+      {
+        "actor": 1,
+        "captured": [
+          "0xaa01",
+          "aa01",
+          41
+        ],
+        "direction": {
+          "anchor": "toggle",
+          "identity": [
+            "0xaa01",
+            "aa01",
+            41
+          ],
+          "inverted": false
+        },
+        "operation": "toggle",
+        "receipt": 1,
+        "scope": [
+          [
+            "0xaa01",
+            "aa01",
+            41
+          ],
+          [
+            "0xbb02",
+            "bb02",
+            42
+          ],
+          [
+            "0xcc03",
+            "cc03",
+            43
+          ]
+        ],
+        "single": false
+      }
+    ],
+    "receipts": [
+      [
+        [
+          "0xaa01",
+          "aa01",
+          41
+        ],
+        1
+      ],
+      [
+        [
+          "0xbb02",
+          "bb02",
+          42
+        ],
+        1
+      ],
+      [
+        [
+          "0xcc03",
+          "cc03",
+          43
+        ],
+        1
+      ]
+    ],
+    "recovery": {
+      "plans": [
+        {
+          "cancellation": {
+            "acknowledged": true,
+            "helperClosures": [
+              {
+                "ownership": {
+                  "jobs": [],
+                  "keeper": {
+                    "argv": [
+                      "/usr/bin/python3.14",
+                      "/proc/self/fd/5",
+                      "4",
+                      "{\"nonce\":\"5fa44d13d7974686adcde15c9c4f6eb7\",\"root\":\"/tmp/tmpyty4yy3_\",\"root_identity\":[57,626068],\"service_pid\":2238099,\"service_start\":12990588}"
+                    ],
+                    "environment": {
+                      "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+                      "WAYLAND_DISPLAY": "never-connect",
+                      "XDG_RUNTIME_DIR": "/tmp/tmpyty4yy3_"
+                    },
+                    "launcher": {
+                      "device": 32,
+                      "inode": 72938,
+                      "seals": null,
+                      "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+                      "size": 14424
+                    },
+                    "nonce": "5fa44d13d7974686adcde15c9c4f6eb7",
+                    "phase": "closed",
+                    "pid": 2238107,
+                    "root": "/tmp/tmpyty4yy3_",
+                    "rootIdentity": [
+                      57,
+                      626068
+                    ],
+                    "script": {
+                      "device": 1,
+                      "inode": 316036,
+                      "seals": 15,
+                      "sha256": "82d17836a702a4849ad4eac791bb3806a54a6779cb8e3443886e47218a215119",
+                      "size": 9030
+                    },
+                    "scriptFD": 5,
+                    "servicePID": 2238099,
+                    "serviceStart": 12990588,
+                    "start": 12990595,
+                    "terminal": {
+                      "allGroupsEmpty": true,
+                      "closedNs": 117786013164086,
+                      "jobs": [],
+                      "keeperPID": 2238107,
+                      "keeperStart": 12990595,
+                      "nonce": "5fa44d13d7974686adcde15c9c4f6eb7",
+                      "normalStop": true,
+                      "registrations": 0,
+                      "rootIdentity": [
+                        57,
+                        626068
+                      ],
+                      "servicePID": 2238099,
+                      "serviceStart": 12990588
+                    },
+                    "uid": 1000
+                  }
+                },
+                "terminal": {
+                  "allGroupsEmpty": true,
+                  "closedNs": 117786013164086,
+                  "jobs": [],
+                  "keeperPID": 2238107,
+                  "keeperStart": 12990595,
+                  "nonce": "5fa44d13d7974686adcde15c9c4f6eb7",
+                  "normalStop": true,
+                  "registrations": 0,
+                  "rootIdentity": [
+                    57,
+                    626068
+                  ],
+                  "servicePID": 2238099,
+                  "serviceStart": 12990588
+                }
+              }
+            ],
+            "lease": {
+              "lockIdentity": [
+                57,
+                626075
+              ],
+              "owner": {
+                "nonce": "d5993a288dc04e269a7f9af40cff8d8d",
+                "pid": 2238099,
+                "session": "offline",
+                "socket": null,
+                "start": 12990588
+              },
+              "root": "/tmp/tmpyty4yy3_",
+              "rootIdentity": [
+                57,
+                626068
+              ]
+            },
+            "observations": [
+              {
+                "clients": [
+                  {
+                    "address": "0xbb02",
+                    "at": [
+                      150,
+                      150
+                    ],
+                    "mapped": true,
+                    "monitor": null,
+                    "pid": 42,
+                    "pinned": false,
+                    "size": [
+                      250,
+                      160
+                    ],
+                    "stableId": "bb02",
+                    "workspace": {
+                      "name": "1"
+                    }
+                  },
+                  {
+                    "address": "0xcc03",
+                    "at": [
+                      200,
+                      200
+                    ],
+                    "mapped": true,
+                    "monitor": null,
+                    "pid": 43,
+                    "pinned": false,
+                    "size": [
+                      200,
+                      120
+                    ],
+                    "stableId": "cc03",
+                    "workspace": {
+                      "name": "1"
+                    }
+                  }
+                ],
+                "context": [
+                  [
+                    "offline",
+                    1,
+                    0,
+                    0,
+                    1000,
+                    800,
+                    1,
+                    0,
+                    1,
+                    "1"
+                  ]
+                ],
+                "families": [
+                  {
+                    "captured": [
+                      "0xbb02",
+                      "bb02",
+                      42
+                    ],
+                    "focus": [
+                      "0xcc03",
+                      "cc03",
+                      43
+                    ],
+                    "members": [
+                      [
+                        "0xbb02",
+                        "bb02",
+                        42
+                      ],
+                      [
+                        "0xcc03",
+                        "cc03",
+                        43
+                      ]
+                    ]
+                  },
+                  {
+                    "captured": [
+                      "0xcc03",
+                      "cc03",
+                      43
+                    ],
+                    "focus": [
+                      "0xcc03",
+                      "cc03",
+                      43
+                    ],
+                    "members": [
+                      [
+                        "0xbb02",
+                        "bb02",
+                        42
+                      ],
+                      [
+                        "0xcc03",
+                        "cc03",
+                        43
+                      ]
+                    ]
+                  }
+                ],
+                "members": [
+                  {
+                    "current": null,
+                    "identity": [
+                      "0xaa01",
+                      "aa01",
+                      41
+                    ],
+                    "state": "absent"
+                  },
+                  {
+                    "current": {
+                      "address": "0xbb02",
+                      "at": [
+                        150,
+                        150
+                      ],
+                      "mapped": true,
+                      "monitor": null,
+                      "pid": 42,
+                      "pinned": false,
+                      "size": [
+                        250,
+                        160
+                      ],
+                      "stableId": "bb02",
+                      "workspace": {
+                        "name": "1"
+                      }
+                    },
+                    "identity": [
+                      "0xbb02",
+                      "bb02",
+                      42
+                    ],
+                    "state": "present"
+                  },
+                  {
+                    "current": {
+                      "address": "0xcc03",
+                      "at": [
+                        200,
+                        200
+                      ],
+                      "mapped": true,
+                      "monitor": null,
+                      "pid": 43,
+                      "pinned": false,
+                      "size": [
+                        200,
+                        120
+                      ],
+                      "stableId": "cc03",
+                      "workspace": {
+                        "name": "1"
+                      }
+                    },
+                    "identity": [
+                      "0xcc03",
+                      "cc03",
+                      43
+                    ],
+                    "state": "present"
+                  }
+                ]
+              },
+              {
+                "clients": [
+                  {
+                    "address": "0xbb02",
+                    "at": [
+                      150,
+                      150
+                    ],
+                    "mapped": true,
+                    "monitor": null,
+                    "pid": 42,
+                    "pinned": false,
+                    "size": [
+                      250,
+                      160
+                    ],
+                    "stableId": "bb02",
+                    "workspace": {
+                      "name": "1"
+                    }
+                  },
+                  {
+                    "address": "0xcc03",
+                    "at": [
+                      200,
+                      200
+                    ],
+                    "mapped": true,
+                    "monitor": null,
+                    "pid": 43,
+                    "pinned": false,
+                    "size": [
+                      200,
+                      120
+                    ],
+                    "stableId": "cc03",
+                    "workspace": {
+                      "name": "1"
+                    }
+                  }
+                ],
+                "context": [
+                  [
+                    "offline",
+                    1,
+                    0,
+                    0,
+                    1000,
+                    800,
+                    1,
+                    0,
+                    1,
+                    "1"
+                  ]
+                ],
+                "families": [
+                  {
+                    "captured": [
+                      "0xbb02",
+                      "bb02",
+                      42
+                    ],
+                    "focus": [
+                      "0xcc03",
+                      "cc03",
+                      43
+                    ],
+                    "members": [
+                      [
+                        "0xbb02",
+                        "bb02",
+                        42
+                      ],
+                      [
+                        "0xcc03",
+                        "cc03",
+                        43
+                      ]
+                    ]
+                  },
+                  {
+                    "captured": [
+                      "0xcc03",
+                      "cc03",
+                      43
+                    ],
+                    "focus": [
+                      "0xcc03",
+                      "cc03",
+                      43
+                    ],
+                    "members": [
+                      [
+                        "0xbb02",
+                        "bb02",
+                        42
+                      ],
+                      [
+                        "0xcc03",
+                        "cc03",
+                        43
+                      ]
+                    ]
+                  }
+                ],
+                "members": [
+                  {
+                    "current": null,
+                    "identity": [
+                      "0xaa01",
+                      "aa01",
+                      41
+                    ],
+                    "state": "absent"
+                  },
+                  {
+                    "current": {
+                      "address": "0xbb02",
+                      "at": [
+                        150,
+                        150
+                      ],
+                      "mapped": true,
+                      "monitor": null,
+                      "pid": 42,
+                      "pinned": false,
+                      "size": [
+                        250,
+                        160
+                      ],
+                      "stableId": "bb02",
+                      "workspace": {
+                        "name": "1"
+                      }
+                    },
+                    "identity": [
+                      "0xbb02",
+                      "bb02",
+                      42
+                    ],
+                    "state": "present"
+                  },
+                  {
+                    "current": {
+                      "address": "0xcc03",
+                      "at": [
+                        200,
+                        200
+                      ],
+                      "mapped": true,
+                      "monitor": null,
+                      "pid": 43,
+                      "pinned": false,
+                      "size": [
+                        200,
+                        120
+                      ],
+                      "stableId": "cc03",
+                      "workspace": {
+                        "name": "1"
+                      }
+                    },
+                    "identity": [
+                      "0xcc03",
+                      "cc03",
+                      43
+                    ],
+                    "state": "present"
+                  }
+                ]
+              }
+            ],
+            "original": {
+              "receipt": 1,
+              "scope": [
+                [
+                  "0xaa01",
+                  "aa01",
+                  41
+                ],
+                [
+                  "0xbb02",
+                  "bb02",
+                  42
+                ],
+                [
+                  "0xcc03",
+                  "cc03",
+                  43
+                ]
+              ],
+              "symbolic": {
+                "anchor": "toggle",
+                "identity": [
+                  "0xaa01",
+                  "aa01",
+                  41
+                ],
+                "inverted": false
+              }
+            },
+            "outcome": "non-settlement",
+            "prepared": null,
+            "reason": "member-absent",
+            "refreshes": [],
+            "resources": [
+              {
+                "actor": 1,
+                "directory": {
+                  "identity": [
+                    57,
+                    626070
+                  ],
+                  "parentIdentity": [
+                    57,
+                    626069
+                  ],
+                  "path": "/tmp/tmpyty4yy3_/actors/actor-1-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "outcome": {
+                  "allocationPhase": "launched",
+                  "directoryGone": false,
+                  "forced": false,
+                  "oldLifetimeGone": true,
+                  "signaled": false
+                },
+                "phase": "retired",
+                "renderer": {
+                  "argv": [
+                    "/usr/bin/python3.14",
+                    "/proc/self/fd/3",
+                    "5",
+                    "4",
+                    "3"
+                  ],
+                  "environment": {
+                    "HYPRLAND_INSTANCE_SIGNATURE": "offline",
+                    "WAYLAND_DISPLAY": "never-connect",
+                    "XDG_RUNTIME_DIR": "/tmp/tmpyty4yy3_"
+                  },
+                  "launcher": {
+                    "device": 32,
+                    "inode": 72938,
+                    "seals": null,
+                    "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+                    "size": 14424
+                  },
+                  "pid": 2238108,
+                  "producer": {
+                    "device": 1,
+                    "inode": 316037,
+                    "seals": 15,
+                    "sha256": "8bc9a73afd7d85061160857536e093ded799dae7a2f0cf5758c4553f2f83002d",
+                    "size": 43320
+                  },
+                  "producerFD": 4,
+                  "script": {
+                    "device": 1,
+                    "inode": 316038,
+                    "seals": 15,
+                    "sha256": "cbf01c36b53e8f0c618dad4d7f4eb8b6581839f09a29603d3623c86dea2fdb5f",
+                    "size": 257
+                  },
+                  "scriptFD": 3,
+                  "start": 12990597,
+                  "uid": 1000
+                }
+              }
+            ]
+          },
+          "captured": [
+            "0xaa01",
+            "aa01",
+            41
+          ],
+          "focus": [
+            "0xaa01",
+            "aa01",
+            41
+          ],
+          "members": [
+            [
+              "0xaa01",
+              "aa01",
+              41
+            ],
+            [
+              "0xbb02",
+              "bb02",
+              42
+            ],
+            [
+              "0xcc03",
+              "cc03",
+              43
+            ]
+          ],
+          "observedFamily": false,
+          "operation": "cancel",
+          "order": [],
+          "previousFocus": null,
+          "priorResults": [],
+          "receipt": 1,
+          "results": [],
+          "scope": [
+            [
+              "0xaa01",
+              "aa01",
+              41
+            ],
+            [
+              "0xbb02",
+              "bb02",
+              42
+            ],
+            [
+              "0xcc03",
+              "cc03",
+              43
+            ]
+          ],
+          "single": false
+        }
+      ],
+      "state": "prepared"
+    },
+    "recoveryIntent": {
+      "anchors": [],
+      "events": [
+        {
+          "captured": [
+            "0xaa01",
+            "aa01",
+            41
+          ],
+          "command": "toggle",
+          "receipt": 1
+        }
+      ],
+      "receipts": [
+        [
+          [
+            "0xaa01",
+            "aa01",
+            41
+          ],
+          1
+        ],
+        [
+          [
+            "0xbb02",
+            "bb02",
+            42
+          ],
+          1
+        ],
+        [
+          [
+            "0xcc03",
+            "cc03",
+            43
+          ],
+          1
+        ]
+      ]
+    },
+    "recoveryVersion": 1,
+    "retiringActors": [],
+    "scenes": [],
+    "serial": 1,
+    "session": "offline",
+    "snapshot": 5,
+    "version": 1
+  },
+  "nativeWrites": [],
+  "frozenManifestSHA256": "2e2cf006d8aef8c27cea8ea0a1d12aca9122f35e4d42ab5570b1816c8e787d8e"
+}

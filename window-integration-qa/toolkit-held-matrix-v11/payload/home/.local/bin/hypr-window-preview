@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Captures window thumbnails for the hoskinson.windows bar plugin. Called every
+# few seconds and on focus change, so every path here must be cheap, bounded in
+# time, and quiet: a capture that fails or hangs must never pile up or retry hot.
+#   - capture-all and per-window captures take non-blocking locks: if one is
+#     already running, the new call just skips.
+#   - grim/magick are wrapped in timeouts (with a hard kill).
+#   - unmapped/hidden windows and special workspaces are skipped; a minimized
+#     window (special:win-minimized) is captured only once, if no preview exists.
+#   - consecutive failures per window back off exponentially (3s .. 5min);
+#     a success or a new window identity resets the counter.
+
+operation=${1:-}
+[[ $operation == capture || $operation == capture-both || $operation == capture-all ]] || exit 2
+
+cache_dir="${XDG_RUNTIME_DIR:-$HOME/.cache}/hypr-window-previews"
+umask 077
+mkdir -p "$cache_dir"
+
+if [[ $operation == capture-all ]]; then
+  exec 8>"$cache_dir/.capture-all.lock"
+  flock -n 8 || exit 0
+  clients=$(timeout 2s hyprctl clients -j) || exit 0
+  mapfile -t addresses < <(jq -r '.[] | select(.mapped and (.hidden | not) and ((.workspace.name | test("^[0-9]+$")) or .workspace.name == "special:win-minimized")) | .address' <<<"$clients")
+  for target in "${addresses[@]}"; do
+    "$0" capture-both "$target" 0 || true
+  done
+  exit 0
+fi
+address=${2:-}
+[[ $address =~ ^0x[[:xdigit:]]+$ ]] || exit 2
+slot=${3:-0}
+[[ $slot == 0 || $slot == 1 ]] || exit 2
+
+exec 9>"$cache_dir/$address.lock"
+flock -n 9 || exit 0
+
+clients=$(timeout 2s hyprctl clients -j) || exit 0
+window=$(jq -c --arg a "$address" '.[] | select(.address == $a and .mapped and (.hidden | not))' <<<"$clients" | head -n 1)
+[[ -n $window ]] || exit 0
+identity=$(jq -c '{pid,stableId:(.stableId // "")}' <<<"$window")
+stable_id=$(jq -r '.stableId // ""' <<<"$window")
+workspace=$(jq -r '.workspace.name // ""' <<<"$window")
+metadata="$cache_dir/$address.json"
+failures="$cache_dir/$address.fail"
+if [[ -f $metadata && $(cat "$metadata") != "$identity" ]]; then
+  rm -f "$cache_dir/$address-0.png" "$cache_dir/$address-1.png" "$metadata" "$failures"
+fi
+
+# Only real workspaces; a minimized window keeps the preview it already has.
+if [[ ! $workspace =~ ^[0-9]+$ ]]; then
+  [[ $workspace == special:win-minimized && ! -f $cache_dir/$address-0.png ]] || exit 0
+fi
+
+# Back off after consecutive failures: 3s * 2^(n-1), capped at 300s.
+fail_count=0
+if [[ -f $failures ]]; then
+  read -r fail_count fail_at fail_identity <"$failures" || true
+  if [[ ${fail_identity:-} != "$identity" || ! $fail_count =~ ^[0-9]+$ || ! ${fail_at:-} =~ ^[0-9]+$ ]]; then
+    fail_count=0
+  elif (( fail_count > 0 )); then
+    backoff=$(( 3 << (fail_count > 7 ? 7 : fail_count - 1) ))
+    (( backoff > 300 )) && backoff=300
+    (( EPOCHSECONDS - fail_at < backoff )) && exit 0
+  fi
+fi
+record_failure() {
+  printf '%s %s %s\n' "$((fail_count + 1))" "$EPOCHSECONDS" "$identity" >"$failures"
+  exit 0
+}
+
+read -r x y width height < <(jq -r '[.at[0],.at[1],.size[0],.size[1]] | @tsv' <<<"$window")
+[[ $x =~ ^-?[0-9]+$ && $y =~ ^-?[0-9]+$ && $width =~ ^[0-9]+$ && $height =~ ^[0-9]+$ ]] || exit 3
+(( width > 0 && height > 0 )) || exit 3
+
+raw=$(mktemp "$cache_dir/.capture.XXXXXX.png")
+trap 'rm -f "$raw"' EXIT
+captured=false
+if [[ $stable_id =~ ^[a-zA-Z0-9_-]+$ ]] && timeout -k 1s 3s grim -T "$stable_id" "$raw" >/dev/null 2>&1 && [[ -s $raw ]]; then
+  captured=true
+else
+  active=$(timeout 2s hyprctl activewindow -j) || active='{}'
+  if [[ $(jq -r '.address // empty' <<<"$active") == "$address" ]] &&
+     timeout -k 1s 3s grim -g "$x,$y ${width}x${height}" "$raw" >/dev/null 2>&1 && [[ -s $raw ]]; then
+    captured=true
+  fi
+fi
+[[ $captured == true ]] || record_failure
+current=$(timeout 2s hyprctl clients -j | jq -c --arg a "$address" '.[] | select(.address == $a)' | head -n 1) || exit 0
+[[ -n $current && $(jq -c '{pid,stableId:(.stableId // "")}' <<<"$current") == "$identity" ]] || exit 0
+
+output="$cache_dir/$address-$slot.png"
+timeout -k 1s 5s magick "$raw" -thumbnail '300x180>' "$output.tmp.png" 2>/dev/null || { rm -f "$output.tmp.png"; record_failure; }
+mv -f "$output.tmp.png" "$output"
+if [[ $operation == capture-both ]]; then
+  other=$((1 - slot))
+  cp -f "$output" "$cache_dir/$address-$other.png"
+fi
+
+rm -f "$failures"
+printf '%s\n' "$identity" >"$metadata.tmp"
+mv -f "$metadata.tmp" "$metadata"

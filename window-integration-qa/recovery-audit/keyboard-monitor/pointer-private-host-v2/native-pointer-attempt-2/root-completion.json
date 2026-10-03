@@ -1,0 +1,58 @@
+{
+  "terminalExitCode": 1,
+  "reportSHA256": "300d5f93dcd3bd9efd303914155badb69ef570bd2b432c9434e20ae85051556d",
+  "nativeCampaignAccepted": false,
+  "checks": {
+    "local331Exact": true,
+    "external2913Exact": true,
+    "links121Exact": true,
+    "runtimeGone": true,
+    "noUnexpectedDescendants": true,
+    "noSurvivors": true,
+    "noCleanupErrors": true,
+    "normalQuiescentUnload": true,
+    "actualStartupTransportGatePassed": true,
+    "actualArchivedTransportGatePassed": true,
+    "exactPID457586Gone": true,
+    "exactPID457597Gone": true,
+    "exactPID457618Gone": true,
+    "exactPID457648Gone": true,
+    "exactPID457691Gone": true,
+    "exactPID457704Gone": true,
+    "exactPID457721Gone": true,
+    "exactPID457722Gone": true,
+    "exactPID457728Gone": true,
+    "exactPID457742Gone": true
+  },
+  "allIndependentLifecycleChecks": true,
+  "mainPreservation": {
+    "clients": true,
+    "focus": false,
+    "cursor": true,
+    "outputs": true,
+    "a11y": true,
+    "reader": true,
+    "files": true,
+    "plugins": true,
+    "keyboards": true,
+    "catalogs": true,
+    "clipboard": true,
+    "configErrors": true,
+    "originalFilesExactProcessAndCapturedVisibility": true,
+    "canonicalFullClientSet": true,
+    "readerRemainsFalse": true,
+    "frozenDependencies": true,
+    "fixtureProcessesGone": true,
+    "ownedRuntimeGone": true,
+    "ownedInfrastructureGone": true
+  },
+  "failedMainPreservation": [
+    "focus"
+  ],
+  "focusIdentityUnchanged": true,
+  "changedFocusFields": [
+    "title"
+  ],
+  "noMainRestorePerformed": true,
+  "mainGUIWrites": false
+}

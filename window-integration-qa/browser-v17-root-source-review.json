@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-10-02T03:10:55.217905+00:00",
+  "manifestSHA256": "ffb189fca1eea2808085a00e45c9fcc032b77726789261c1af9de966a1b1f8f2",
+  "files": 42223,
+  "symlinks": 13770,
+  "allInheritedV16BytesModesLinksExact": true,
+  "all392StageReadyRecordsExact": true,
+  "reviewedSources": [
+    "continuation_evidence.py",
+    "private_session.py continuation additions",
+    "native-keyboard-probe/probe.cpp",
+    "test_continuation_evidence.py",
+    "test_keyboard_probe_source.py",
+    "V17_SOURCE_REVIEW.md"
+  ],
+  "rootUnprojectedTests": 34,
+  "rootTestsPassed": true,
+  "rootTestsScope": "19 evidence behavior,7 source preservation,8 source/compiledABI; no compositor executed",
+  "projectedInheritedChecksRuntimeProof": false,
+  "preflightPassed": true,
+  "original15DynamicChecksAndEqualityUnchanged": true,
+  "keyboardObserverPreCoreNotDeliveryProof": true,
+  "safetyCrashHandoffFiveApplied": true,
+  "nativeAuthorized": true,
+  "nativeScope": "One exact owned private browserV17 attempt-1 via absolute Python wrapper",
+  "mainWrites": false,
+  "originalFeatureAccepted": false
+}

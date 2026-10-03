@@ -1,0 +1,983 @@
+[
+  {
+    "phase": "both actual clients initialized",
+    "accepted": true,
+    "mappings": {
+      "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)": {
+        "mapping": {
+          "line": "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+          "begin": 132398438461440,
+          "end": 132398438465536,
+          "offset": 0,
+          "permissions": "r--p",
+          "device": 33,
+          "inode": 80554,
+          "path": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)"
+        },
+        "accepted": true,
+        "matchingProducerFDs": [
+          32
+        ],
+        "producerFDDiagnosticBefore": {
+          "pid": 2048801,
+          "fd": 32,
+          "expectedMapping": {
+            "line": "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "begin": 132398438461440,
+            "end": 132398438465536,
+            "offset": 0,
+            "permissions": "r--p",
+            "device": 33,
+            "inode": 80554,
+            "path": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)"
+          },
+          "selectedMount": {
+            "id": 35,
+            "device": 33,
+            "root": "/",
+            "path": "/dev/shm",
+            "type": "tmpfs",
+            "source": "tmpfs",
+            "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+          },
+          "accepted": true,
+          "errors": {},
+          "stat": {
+            "st_mode": 32768,
+            "st_ino": 80554,
+            "st_dev": 33,
+            "st_nlink": 0,
+            "st_uid": 1000,
+            "st_gid": 1000,
+            "st_size": 2960,
+            "st_atime_ns": 1790903891917987564,
+            "st_mtime_ns": 1790903887094748663,
+            "st_ctime_ns": 1790903887094748663,
+            "st_blocks": 8,
+            "st_blksize": 4096,
+            "st_rdev": 0,
+            "fileType": 32768,
+            "fullMode": 0,
+            "deviceMajor": 0,
+            "deviceMinor": 33
+          },
+          "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+          "rawFdinfo": {
+            "base64": "cG9zOgkwCmZsYWdzOgkwMjUwMDAwMAptbnRfaWQ6CTM1CmlubzoJODA1NTQK",
+            "bytes": 45,
+            "sha256": "4bf1e3c2e4265359b47f3609641023ed091d9f0f4e3d121381e1e7c3c8920a4d"
+          },
+          "rawMountinfo": {
+            "base64": "MjYgMzMgMDoyNCAvIC9wcm9jIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjUgLSBwcm9jIHByb2MgcncKMjcgMzMgMDoyNSAvIC9zeXMgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6NiAtIHN5c2ZzIHN5cyBydwoyOCAzMyAwOjcgLyAvZGV2IHJ3LG5vc3VpZCxyZWxhdGltZSBzaGFyZWQ6MiAtIGRldnRtcGZzIGRldiBydyxzaXplPTMyNDI0NDA0ayxucl9pbm9kZXM9ODEwNjEwMSxtb2RlPTc1NSxpbm9kZTY0LGh1Z2U9YWR2aXNlCjI5IDMzIDA6MjYgLyAvcnVuIHJ3LG5vc3VpZCxub2RldixyZWxhdGltZSBzaGFyZWQ6MTIgLSB0bXBmcyBydW4gcncsbW9kZT03NTUsaW5vZGU2NCxodWdlPWFkdmlzZQozMCAyNyAwOjI3IC8gL3N5cy9maXJtd2FyZS9lZmkvZWZpdmFycyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDo3IC0gZWZpdmFyZnMgZWZpdmFyZnMgcncKMzIgMjggMDoyOSAvIC9kZXYvcHRzIHJ3LG5vc3VpZCxub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjMgLSBkZXZwdHMgZGV2cHRzIHJ3LGdpZD01LG1vZGU9NjIwLHB0bXhtb2RlPTAwMAozMyAyIDA6MzAgL0AgLyBydyxyZWxhdGltZSBzaGFyZWQ6MSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTYsc3Vidm9sPS9ACjM0IDI3IDA6OCAvIC9zeXMva2VybmVsL3NlY3VyaXR5IHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjggLSBzZWN1cml0eWZzIHNlY3VyaXR5ZnMgcncKMzUgMjggMDozMyAvIC9kZXYvc2htIHJ3LG5vc3VpZCxub2RldiBzaGFyZWQ6NCAtIHRtcGZzIHRtcGZzIHJ3LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKMzYgMjcgMDozNCAvIC9zeXMvZnMvY2dyb3VwIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjkgLSBjZ3JvdXAyIGNncm91cDIgcncsbnNkZWxlZ2F0ZSxtZW1vcnlfcmVjdXJzaXZlcHJvdCxtZW1vcnlfaHVnZXRsYl9hY2NvdW50aW5nCjM3IDI3IDA6MzUgLyAvc3lzL2ZzL3BzdG9yZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMCAtIHBzdG9yZSBub25lIHJ3CjM4IDI3IDA6MzYgLyAvc3lzL2ZzL2JwZiBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMSAtIGJwZiBicGYgcncsbW9kZT03MDAKMzkgMjYgMDozOCAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxyZWxhdGltZSBzaGFyZWQ6MTMgLSBhdXRvZnMgc3lzdGVtZC0xIHJ3LGZkPTQzLHBncnA9MSx0aW1lb3V0PTAsbWlucHJvdG89NSxtYXhwcm90bz01LGRpcmVjdCxwaXBlX2lubz0xNzE4NAo0MCAyOSAwOjM5IC8gL3J1bi9jcmVkZW50aWFscy9zeXN0ZW1kLWpvdXJuYWxkLnNlcnZpY2Ugcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSxub3N5bWZvbGxvdyBzaGFyZWQ6MTUgLSB0bXBmcyBub25lIHJvLHNpemU9MTAyNGssbnJfaW5vZGVzPTEwMjQsbW9kZT03MDAsaW5vZGU2NCxodWdlPWFkdmlzZSxub3N3YXAKNDMgMjggMDoyMiAvIC9kZXYvbXF1ZXVlIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE3IC0gbXF1ZXVlIG1xdWV1ZSBydwo0NCAyNyAwOjQyIC8gL3N5cy9mcy9mdXNlL2Nvbm5lY3Rpb25zIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE4IC0gZnVzZWN0bCBmdXNlY3RsIHJ3CjQ1IDI3IDA6MjAgLyAvc3lzL2tlcm5lbC9jb25maWcgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6MTkgLSBjb25maWdmcyBjb25maWdmcyBydwo0NiAyNyAwOjkgLyAvc3lzL2tlcm5lbC9kZWJ1ZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMCAtIGRlYnVnZnMgZGVidWdmcyBydwo0NyAyNyAwOjE0IC8gL3N5cy9rZXJuZWwvdHJhY2luZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMSAtIHRyYWNlZnMgdHJhY2VmcyBydwo0OCAyOCAwOjQzIC8gL2Rldi9odWdlcGFnZXMgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDoyMiAtIGh1Z2V0bGJmcyBodWdldGxiZnMgcncscGFnZXNpemU9Mk0KNzQgMzkgMDo0NSAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxNiAtIGJpbmZtdF9taXNjIGJpbmZtdF9taXNjIHJ3CjUxIDI5IDA6NDYgLyAvcnVuL2NyZWRlbnRpYWxzL3N5c3RlbWQtcmVzb2x2ZWQuc2VydmljZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lLG5vc3ltZm9sbG93IHNoYXJlZDo1MSAtIHRtcGZzIG5vbmUgcm8sc2l6ZT0xMDI0ayxucl9pbm9kZXM9MTAyNCxtb2RlPTcwMCxpbm9kZTY0LGh1Z2U9YWR2aXNlLG5vc3dhcAo2MCAzMyAwOjU3IC8gL3RtcCBydyxub3N1aWQsbm9kZXYgc2hhcmVkOjE4OSAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9MzI2MjExMTZrLG5yX2lub2Rlcz0xMDQ4NTc2LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKNTggMzMgMDozMCAvQGhvbWUgL2hvbWUgcncscmVsYXRpbWUgc2hhcmVkOjE5NSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTcsc3Vidm9sPS9AaG9tZQo2NiAzMyAwOjMwIC9AbG9nIC92YXIvbG9nIHJ3LHJlbGF0aW1lIHNoYXJlZDoyMDEgLSBidHJmcyAvZGV2L21hcHBlci9yb290IHJ3LGNvbXByZXNzPXpzdGQ6Myxzc2Qsc3BhY2VfY2FjaGU9djIsc3Vidm9saWQ9MjU4LHN1YnZvbD0vQGxvZwo1OSAzMyAwOjMwIC9AcGtnIC92YXIvY2FjaGUvcGFjbWFuL3BrZyBydyxyZWxhdGltZSBzaGFyZWQ6MjA3IC0gYnRyZnMgL2Rldi9tYXBwZXIvcm9vdCBydyxjb21wcmVzcz16c3RkOjMsc3NkLHNwYWNlX2NhY2hlPXYyLHN1YnZvbGlkPTI1OSxzdWJ2b2w9L0Bwa2cKMjUwIDMzIDI1OToxIC8gL2Jvb3QgcncscmVsYXRpbWUgc2hhcmVkOjIxMyAtIHZmYXQgL2Rldi9udm1lMG4xcDEgcncsZm1hc2s9MDA3NyxkbWFzaz0wMDc3LGNvZGVwYWdlPTQzNyxpb2NoYXJzZXQ9YXNjaWksc2hvcnRuYW1lPW1peGVkLHV0ZjgsZXJyb3JzPXJlbW91bnQtcm8KMzQ2IDI5IDA6ODQgLyAvcnVuL3VzZXIvMTAwMCBydyxub3N1aWQsbm9kZXYscmVsYXRpbWUgc2hhcmVkOjY1MyAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9NjUyNDIyMGssbnJfaW5vZGVzPTE2MzEwNTUsbW9kZT03MDAsdWlkPTEwMDAsZ2lkPTEwMDAsaW5vZGU2NCxodWdlPWFkdmlzZQozNDkgMzQ2IDA6NzggLyAvcnVuL3VzZXIvMTAwMC9kb2Mgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDo1NDAgLSBmdXNlLnBvcnRhbCBwb3J0YWwgcncsdXNlcl9pZD0xMDAwLGdyb3VwX2lkPTEwMDAK",
+            "bytes": 3414,
+            "sha256": "68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8"
+          },
+          "fdinfo": {
+            "flags": 688128,
+            "mnt_id": 35,
+            "ino": 80554
+          },
+          "conjuncts": {
+            "targetMatches": true,
+            "mappingDeviceInodeMatches": true,
+            "regular": true,
+            "fullModeZero": true,
+            "uidMatches": true,
+            "unlinked": true,
+            "sizeBounded": true,
+            "mountDeviceMatches": true
+          }
+        },
+        "producerFDBefore": {
+          "fd": 32,
+          "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+          "device": 33,
+          "inode": 80554,
+          "uid": 1000,
+          "mode": 0,
+          "nlink": 0,
+          "size": 2960,
+          "mtimeNs": 1790903887094748663,
+          "ctimeNs": 1790903887094748663,
+          "fdinfo": {
+            "flags": 688128,
+            "mnt_id": 35,
+            "ino": 80554
+          }
+        },
+        "producerFDDiagnosticAfter": {
+          "pid": 2048801,
+          "fd": 32,
+          "expectedMapping": {
+            "line": "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "begin": 132398438461440,
+            "end": 132398438465536,
+            "offset": 0,
+            "permissions": "r--p",
+            "device": 33,
+            "inode": 80554,
+            "path": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)"
+          },
+          "selectedMount": {
+            "id": 35,
+            "device": 33,
+            "root": "/",
+            "path": "/dev/shm",
+            "type": "tmpfs",
+            "source": "tmpfs",
+            "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+          },
+          "accepted": true,
+          "errors": {},
+          "stat": {
+            "st_mode": 32768,
+            "st_ino": 80554,
+            "st_dev": 33,
+            "st_nlink": 0,
+            "st_uid": 1000,
+            "st_gid": 1000,
+            "st_size": 2960,
+            "st_atime_ns": 1790903891917987564,
+            "st_mtime_ns": 1790903887094748663,
+            "st_ctime_ns": 1790903887094748663,
+            "st_blocks": 8,
+            "st_blksize": 4096,
+            "st_rdev": 0,
+            "fileType": 32768,
+            "fullMode": 0,
+            "deviceMajor": 0,
+            "deviceMinor": 33
+          },
+          "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+          "rawFdinfo": {
+            "base64": "cG9zOgkwCmZsYWdzOgkwMjUwMDAwMAptbnRfaWQ6CTM1CmlubzoJODA1NTQK",
+            "bytes": 45,
+            "sha256": "4bf1e3c2e4265359b47f3609641023ed091d9f0f4e3d121381e1e7c3c8920a4d"
+          },
+          "rawMountinfo": {
+            "base64": "MjYgMzMgMDoyNCAvIC9wcm9jIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjUgLSBwcm9jIHByb2MgcncKMjcgMzMgMDoyNSAvIC9zeXMgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6NiAtIHN5c2ZzIHN5cyBydwoyOCAzMyAwOjcgLyAvZGV2IHJ3LG5vc3VpZCxyZWxhdGltZSBzaGFyZWQ6MiAtIGRldnRtcGZzIGRldiBydyxzaXplPTMyNDI0NDA0ayxucl9pbm9kZXM9ODEwNjEwMSxtb2RlPTc1NSxpbm9kZTY0LGh1Z2U9YWR2aXNlCjI5IDMzIDA6MjYgLyAvcnVuIHJ3LG5vc3VpZCxub2RldixyZWxhdGltZSBzaGFyZWQ6MTIgLSB0bXBmcyBydW4gcncsbW9kZT03NTUsaW5vZGU2NCxodWdlPWFkdmlzZQozMCAyNyAwOjI3IC8gL3N5cy9maXJtd2FyZS9lZmkvZWZpdmFycyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDo3IC0gZWZpdmFyZnMgZWZpdmFyZnMgcncKMzIgMjggMDoyOSAvIC9kZXYvcHRzIHJ3LG5vc3VpZCxub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjMgLSBkZXZwdHMgZGV2cHRzIHJ3LGdpZD01LG1vZGU9NjIwLHB0bXhtb2RlPTAwMAozMyAyIDA6MzAgL0AgLyBydyxyZWxhdGltZSBzaGFyZWQ6MSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTYsc3Vidm9sPS9ACjM0IDI3IDA6OCAvIC9zeXMva2VybmVsL3NlY3VyaXR5IHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjggLSBzZWN1cml0eWZzIHNlY3VyaXR5ZnMgcncKMzUgMjggMDozMyAvIC9kZXYvc2htIHJ3LG5vc3VpZCxub2RldiBzaGFyZWQ6NCAtIHRtcGZzIHRtcGZzIHJ3LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKMzYgMjcgMDozNCAvIC9zeXMvZnMvY2dyb3VwIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjkgLSBjZ3JvdXAyIGNncm91cDIgcncsbnNkZWxlZ2F0ZSxtZW1vcnlfcmVjdXJzaXZlcHJvdCxtZW1vcnlfaHVnZXRsYl9hY2NvdW50aW5nCjM3IDI3IDA6MzUgLyAvc3lzL2ZzL3BzdG9yZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMCAtIHBzdG9yZSBub25lIHJ3CjM4IDI3IDA6MzYgLyAvc3lzL2ZzL2JwZiBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMSAtIGJwZiBicGYgcncsbW9kZT03MDAKMzkgMjYgMDozOCAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxyZWxhdGltZSBzaGFyZWQ6MTMgLSBhdXRvZnMgc3lzdGVtZC0xIHJ3LGZkPTQzLHBncnA9MSx0aW1lb3V0PTAsbWlucHJvdG89NSxtYXhwcm90bz01LGRpcmVjdCxwaXBlX2lubz0xNzE4NAo0MCAyOSAwOjM5IC8gL3J1bi9jcmVkZW50aWFscy9zeXN0ZW1kLWpvdXJuYWxkLnNlcnZpY2Ugcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSxub3N5bWZvbGxvdyBzaGFyZWQ6MTUgLSB0bXBmcyBub25lIHJvLHNpemU9MTAyNGssbnJfaW5vZGVzPTEwMjQsbW9kZT03MDAsaW5vZGU2NCxodWdlPWFkdmlzZSxub3N3YXAKNDMgMjggMDoyMiAvIC9kZXYvbXF1ZXVlIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE3IC0gbXF1ZXVlIG1xdWV1ZSBydwo0NCAyNyAwOjQyIC8gL3N5cy9mcy9mdXNlL2Nvbm5lY3Rpb25zIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE4IC0gZnVzZWN0bCBmdXNlY3RsIHJ3CjQ1IDI3IDA6MjAgLyAvc3lzL2tlcm5lbC9jb25maWcgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6MTkgLSBjb25maWdmcyBjb25maWdmcyBydwo0NiAyNyAwOjkgLyAvc3lzL2tlcm5lbC9kZWJ1ZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMCAtIGRlYnVnZnMgZGVidWdmcyBydwo0NyAyNyAwOjE0IC8gL3N5cy9rZXJuZWwvdHJhY2luZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMSAtIHRyYWNlZnMgdHJhY2VmcyBydwo0OCAyOCAwOjQzIC8gL2Rldi9odWdlcGFnZXMgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDoyMiAtIGh1Z2V0bGJmcyBodWdldGxiZnMgcncscGFnZXNpemU9Mk0KNzQgMzkgMDo0NSAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxNiAtIGJpbmZtdF9taXNjIGJpbmZtdF9taXNjIHJ3CjUxIDI5IDA6NDYgLyAvcnVuL2NyZWRlbnRpYWxzL3N5c3RlbWQtcmVzb2x2ZWQuc2VydmljZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lLG5vc3ltZm9sbG93IHNoYXJlZDo1MSAtIHRtcGZzIG5vbmUgcm8sc2l6ZT0xMDI0ayxucl9pbm9kZXM9MTAyNCxtb2RlPTcwMCxpbm9kZTY0LGh1Z2U9YWR2aXNlLG5vc3dhcAo2MCAzMyAwOjU3IC8gL3RtcCBydyxub3N1aWQsbm9kZXYgc2hhcmVkOjE4OSAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9MzI2MjExMTZrLG5yX2lub2Rlcz0xMDQ4NTc2LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKNTggMzMgMDozMCAvQGhvbWUgL2hvbWUgcncscmVsYXRpbWUgc2hhcmVkOjE5NSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTcsc3Vidm9sPS9AaG9tZQo2NiAzMyAwOjMwIC9AbG9nIC92YXIvbG9nIHJ3LHJlbGF0aW1lIHNoYXJlZDoyMDEgLSBidHJmcyAvZGV2L21hcHBlci9yb290IHJ3LGNvbXByZXNzPXpzdGQ6Myxzc2Qsc3BhY2VfY2FjaGU9djIsc3Vidm9saWQ9MjU4LHN1YnZvbD0vQGxvZwo1OSAzMyAwOjMwIC9AcGtnIC92YXIvY2FjaGUvcGFjbWFuL3BrZyBydyxyZWxhdGltZSBzaGFyZWQ6MjA3IC0gYnRyZnMgL2Rldi9tYXBwZXIvcm9vdCBydyxjb21wcmVzcz16c3RkOjMsc3NkLHNwYWNlX2NhY2hlPXYyLHN1YnZvbGlkPTI1OSxzdWJ2b2w9L0Bwa2cKMjUwIDMzIDI1OToxIC8gL2Jvb3QgcncscmVsYXRpbWUgc2hhcmVkOjIxMyAtIHZmYXQgL2Rldi9udm1lMG4xcDEgcncsZm1hc2s9MDA3NyxkbWFzaz0wMDc3LGNvZGVwYWdlPTQzNyxpb2NoYXJzZXQ9YXNjaWksc2hvcnRuYW1lPW1peGVkLHV0ZjgsZXJyb3JzPXJlbW91bnQtcm8KMzQ2IDI5IDA6ODQgLyAvcnVuL3VzZXIvMTAwMCBydyxub3N1aWQsbm9kZXYscmVsYXRpbWUgc2hhcmVkOjY1MyAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9NjUyNDIyMGssbnJfaW5vZGVzPTE2MzEwNTUsbW9kZT03MDAsdWlkPTEwMDAsZ2lkPTEwMDAsaW5vZGU2NCxodWdlPWFkdmlzZQozNDkgMzQ2IDA6NzggLyAvcnVuL3VzZXIvMTAwMC9kb2Mgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDo1NDAgLSBmdXNlLnBvcnRhbCBwb3J0YWwgcncsdXNlcl9pZD0xMDAwLGdyb3VwX2lkPTEwMDAK",
+            "bytes": 3414,
+            "sha256": "68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8"
+          },
+          "fdinfo": {
+            "flags": 688128,
+            "mnt_id": 35,
+            "ino": 80554
+          },
+          "conjuncts": {
+            "targetMatches": true,
+            "mappingDeviceInodeMatches": true,
+            "regular": true,
+            "fullModeZero": true,
+            "uidMatches": true,
+            "unlinked": true,
+            "sizeBounded": true,
+            "mountDeviceMatches": true
+          }
+        },
+        "producerFDAfter": {
+          "fd": 32,
+          "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+          "device": 33,
+          "inode": 80554,
+          "uid": 1000,
+          "mode": 0,
+          "nlink": 0,
+          "size": 2960,
+          "mtimeNs": 1790903887094748663,
+          "ctimeNs": 1790903887094748663,
+          "fdinfo": {
+            "flags": 688128,
+            "mnt_id": 35,
+            "ino": 80554
+          }
+        },
+        "matchingProducerFDsAfter": [
+          32
+        ]
+      }
+    },
+    "scope": "Captured owned batch plus before/after copied Files and private compositor maps; not global or continuous inspection",
+    "consumerBefore": {
+      "pid": 2049362,
+      "start": "12636457",
+      "uids": [
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1eb9819ff2a7436e926bc0d5e65d568d.scope\n",
+      "exe": "/usr/bin/quickshell",
+      "exeSHA256": "2dc99382c032710fe495ed115cdee9dc9c69bdb3a21af4d86a9a8ea16733069b",
+      "mountNamespace": "mnt:[4026531832]"
+    },
+    "producerBefore": {
+      "pid": 2048801,
+      "start": "12635981",
+      "uids": [
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1eb9819ff2a7436e926bc0d5e65d568d.scope\n",
+      "exe": "/usr/bin/Hyprland",
+      "exeSHA256": "da8fcacf347bcbed83edc40108c6e2298da095e22246bd764e9bb382786cebb2",
+      "mountNamespace": "mnt:[4026531832]"
+    },
+    "privatePeerBefore": {
+      "path": "/run/user/1000/wqa/01c9/wayland-1",
+      "pid": 2048801,
+      "uid": 1000,
+      "gid": 1000,
+      "device": 84,
+      "inode": 339049
+    },
+    "consumerRawMapsSHA256": "3cdb067ea1be4ffa7c5f6d788bb3ecc688782b20fdddb75ea8e6bd938f1bcb96",
+    "consumerMapsBeforeSHA256": "3cdb067ea1be4ffa7c5f6d788bb3ecc688782b20fdddb75ea8e6bd938f1bcb96",
+    "producerMapsBeforeSHA256": "55b05ac2c4c33e675f3bd6b59f9ec3eb48059bb5b12d1b62c67d02557965766f",
+    "mountBefore": {
+      "id": 35,
+      "device": 33,
+      "root": "/",
+      "path": "/dev/shm",
+      "type": "tmpfs",
+      "source": "tmpfs",
+      "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+    },
+    "observations": [
+      {
+        "mapping": {
+          "line": "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+          "begin": 132398438461440,
+          "end": 132398438465536,
+          "offset": 0,
+          "permissions": "r--p",
+          "device": 33,
+          "inode": 80554,
+          "path": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)"
+        },
+        "accepted": true,
+        "matchingProducerFDs": [
+          32
+        ],
+        "producerFDDiagnosticBefore": {
+          "pid": 2048801,
+          "fd": 32,
+          "expectedMapping": {
+            "line": "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "begin": 132398438461440,
+            "end": 132398438465536,
+            "offset": 0,
+            "permissions": "r--p",
+            "device": 33,
+            "inode": 80554,
+            "path": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)"
+          },
+          "selectedMount": {
+            "id": 35,
+            "device": 33,
+            "root": "/",
+            "path": "/dev/shm",
+            "type": "tmpfs",
+            "source": "tmpfs",
+            "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+          },
+          "accepted": true,
+          "errors": {},
+          "stat": {
+            "st_mode": 32768,
+            "st_ino": 80554,
+            "st_dev": 33,
+            "st_nlink": 0,
+            "st_uid": 1000,
+            "st_gid": 1000,
+            "st_size": 2960,
+            "st_atime_ns": 1790903891917987564,
+            "st_mtime_ns": 1790903887094748663,
+            "st_ctime_ns": 1790903887094748663,
+            "st_blocks": 8,
+            "st_blksize": 4096,
+            "st_rdev": 0,
+            "fileType": 32768,
+            "fullMode": 0,
+            "deviceMajor": 0,
+            "deviceMinor": 33
+          },
+          "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+          "rawFdinfo": {
+            "base64": "cG9zOgkwCmZsYWdzOgkwMjUwMDAwMAptbnRfaWQ6CTM1CmlubzoJODA1NTQK",
+            "bytes": 45,
+            "sha256": "4bf1e3c2e4265359b47f3609641023ed091d9f0f4e3d121381e1e7c3c8920a4d"
+          },
+          "rawMountinfo": {
+            "base64": "MjYgMzMgMDoyNCAvIC9wcm9jIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjUgLSBwcm9jIHByb2MgcncKMjcgMzMgMDoyNSAvIC9zeXMgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6NiAtIHN5c2ZzIHN5cyBydwoyOCAzMyAwOjcgLyAvZGV2IHJ3LG5vc3VpZCxyZWxhdGltZSBzaGFyZWQ6MiAtIGRldnRtcGZzIGRldiBydyxzaXplPTMyNDI0NDA0ayxucl9pbm9kZXM9ODEwNjEwMSxtb2RlPTc1NSxpbm9kZTY0LGh1Z2U9YWR2aXNlCjI5IDMzIDA6MjYgLyAvcnVuIHJ3LG5vc3VpZCxub2RldixyZWxhdGltZSBzaGFyZWQ6MTIgLSB0bXBmcyBydW4gcncsbW9kZT03NTUsaW5vZGU2NCxodWdlPWFkdmlzZQozMCAyNyAwOjI3IC8gL3N5cy9maXJtd2FyZS9lZmkvZWZpdmFycyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDo3IC0gZWZpdmFyZnMgZWZpdmFyZnMgcncKMzIgMjggMDoyOSAvIC9kZXYvcHRzIHJ3LG5vc3VpZCxub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjMgLSBkZXZwdHMgZGV2cHRzIHJ3LGdpZD01LG1vZGU9NjIwLHB0bXhtb2RlPTAwMAozMyAyIDA6MzAgL0AgLyBydyxyZWxhdGltZSBzaGFyZWQ6MSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTYsc3Vidm9sPS9ACjM0IDI3IDA6OCAvIC9zeXMva2VybmVsL3NlY3VyaXR5IHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjggLSBzZWN1cml0eWZzIHNlY3VyaXR5ZnMgcncKMzUgMjggMDozMyAvIC9kZXYvc2htIHJ3LG5vc3VpZCxub2RldiBzaGFyZWQ6NCAtIHRtcGZzIHRtcGZzIHJ3LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKMzYgMjcgMDozNCAvIC9zeXMvZnMvY2dyb3VwIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjkgLSBjZ3JvdXAyIGNncm91cDIgcncsbnNkZWxlZ2F0ZSxtZW1vcnlfcmVjdXJzaXZlcHJvdCxtZW1vcnlfaHVnZXRsYl9hY2NvdW50aW5nCjM3IDI3IDA6MzUgLyAvc3lzL2ZzL3BzdG9yZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMCAtIHBzdG9yZSBub25lIHJ3CjM4IDI3IDA6MzYgLyAvc3lzL2ZzL2JwZiBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMSAtIGJwZiBicGYgcncsbW9kZT03MDAKMzkgMjYgMDozOCAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxyZWxhdGltZSBzaGFyZWQ6MTMgLSBhdXRvZnMgc3lzdGVtZC0xIHJ3LGZkPTQzLHBncnA9MSx0aW1lb3V0PTAsbWlucHJvdG89NSxtYXhwcm90bz01LGRpcmVjdCxwaXBlX2lubz0xNzE4NAo0MCAyOSAwOjM5IC8gL3J1bi9jcmVkZW50aWFscy9zeXN0ZW1kLWpvdXJuYWxkLnNlcnZpY2Ugcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSxub3N5bWZvbGxvdyBzaGFyZWQ6MTUgLSB0bXBmcyBub25lIHJvLHNpemU9MTAyNGssbnJfaW5vZGVzPTEwMjQsbW9kZT03MDAsaW5vZGU2NCxodWdlPWFkdmlzZSxub3N3YXAKNDMgMjggMDoyMiAvIC9kZXYvbXF1ZXVlIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE3IC0gbXF1ZXVlIG1xdWV1ZSBydwo0NCAyNyAwOjQyIC8gL3N5cy9mcy9mdXNlL2Nvbm5lY3Rpb25zIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE4IC0gZnVzZWN0bCBmdXNlY3RsIHJ3CjQ1IDI3IDA6MjAgLyAvc3lzL2tlcm5lbC9jb25maWcgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6MTkgLSBjb25maWdmcyBjb25maWdmcyBydwo0NiAyNyAwOjkgLyAvc3lzL2tlcm5lbC9kZWJ1ZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMCAtIGRlYnVnZnMgZGVidWdmcyBydwo0NyAyNyAwOjE0IC8gL3N5cy9rZXJuZWwvdHJhY2luZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMSAtIHRyYWNlZnMgdHJhY2VmcyBydwo0OCAyOCAwOjQzIC8gL2Rldi9odWdlcGFnZXMgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDoyMiAtIGh1Z2V0bGJmcyBodWdldGxiZnMgcncscGFnZXNpemU9Mk0KNzQgMzkgMDo0NSAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxNiAtIGJpbmZtdF9taXNjIGJpbmZtdF9taXNjIHJ3CjUxIDI5IDA6NDYgLyAvcnVuL2NyZWRlbnRpYWxzL3N5c3RlbWQtcmVzb2x2ZWQuc2VydmljZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lLG5vc3ltZm9sbG93IHNoYXJlZDo1MSAtIHRtcGZzIG5vbmUgcm8sc2l6ZT0xMDI0ayxucl9pbm9kZXM9MTAyNCxtb2RlPTcwMCxpbm9kZTY0LGh1Z2U9YWR2aXNlLG5vc3dhcAo2MCAzMyAwOjU3IC8gL3RtcCBydyxub3N1aWQsbm9kZXYgc2hhcmVkOjE4OSAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9MzI2MjExMTZrLG5yX2lub2Rlcz0xMDQ4NTc2LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKNTggMzMgMDozMCAvQGhvbWUgL2hvbWUgcncscmVsYXRpbWUgc2hhcmVkOjE5NSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTcsc3Vidm9sPS9AaG9tZQo2NiAzMyAwOjMwIC9AbG9nIC92YXIvbG9nIHJ3LHJlbGF0aW1lIHNoYXJlZDoyMDEgLSBidHJmcyAvZGV2L21hcHBlci9yb290IHJ3LGNvbXByZXNzPXpzdGQ6Myxzc2Qsc3BhY2VfY2FjaGU9djIsc3Vidm9saWQ9MjU4LHN1YnZvbD0vQGxvZwo1OSAzMyAwOjMwIC9AcGtnIC92YXIvY2FjaGUvcGFjbWFuL3BrZyBydyxyZWxhdGltZSBzaGFyZWQ6MjA3IC0gYnRyZnMgL2Rldi9tYXBwZXIvcm9vdCBydyxjb21wcmVzcz16c3RkOjMsc3NkLHNwYWNlX2NhY2hlPXYyLHN1YnZvbGlkPTI1OSxzdWJ2b2w9L0Bwa2cKMjUwIDMzIDI1OToxIC8gL2Jvb3QgcncscmVsYXRpbWUgc2hhcmVkOjIxMyAtIHZmYXQgL2Rldi9udm1lMG4xcDEgcncsZm1hc2s9MDA3NyxkbWFzaz0wMDc3LGNvZGVwYWdlPTQzNyxpb2NoYXJzZXQ9YXNjaWksc2hvcnRuYW1lPW1peGVkLHV0ZjgsZXJyb3JzPXJlbW91bnQtcm8KMzQ2IDI5IDA6ODQgLyAvcnVuL3VzZXIvMTAwMCBydyxub3N1aWQsbm9kZXYscmVsYXRpbWUgc2hhcmVkOjY1MyAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9NjUyNDIyMGssbnJfaW5vZGVzPTE2MzEwNTUsbW9kZT03MDAsdWlkPTEwMDAsZ2lkPTEwMDAsaW5vZGU2NCxodWdlPWFkdmlzZQozNDkgMzQ2IDA6NzggLyAvcnVuL3VzZXIvMTAwMC9kb2Mgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDo1NDAgLSBmdXNlLnBvcnRhbCBwb3J0YWwgcncsdXNlcl9pZD0xMDAwLGdyb3VwX2lkPTEwMDAK",
+            "bytes": 3414,
+            "sha256": "68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8"
+          },
+          "fdinfo": {
+            "flags": 688128,
+            "mnt_id": 35,
+            "ino": 80554
+          },
+          "conjuncts": {
+            "targetMatches": true,
+            "mappingDeviceInodeMatches": true,
+            "regular": true,
+            "fullModeZero": true,
+            "uidMatches": true,
+            "unlinked": true,
+            "sizeBounded": true,
+            "mountDeviceMatches": true
+          }
+        },
+        "producerFDBefore": {
+          "fd": 32,
+          "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+          "device": 33,
+          "inode": 80554,
+          "uid": 1000,
+          "mode": 0,
+          "nlink": 0,
+          "size": 2960,
+          "mtimeNs": 1790903887094748663,
+          "ctimeNs": 1790903887094748663,
+          "fdinfo": {
+            "flags": 688128,
+            "mnt_id": 35,
+            "ino": 80554
+          }
+        },
+        "producerFDDiagnosticAfter": {
+          "pid": 2048801,
+          "fd": 32,
+          "expectedMapping": {
+            "line": "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "begin": 132398438461440,
+            "end": 132398438465536,
+            "offset": 0,
+            "permissions": "r--p",
+            "device": 33,
+            "inode": 80554,
+            "path": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)"
+          },
+          "selectedMount": {
+            "id": 35,
+            "device": 33,
+            "root": "/",
+            "path": "/dev/shm",
+            "type": "tmpfs",
+            "source": "tmpfs",
+            "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+          },
+          "accepted": true,
+          "errors": {},
+          "stat": {
+            "st_mode": 32768,
+            "st_ino": 80554,
+            "st_dev": 33,
+            "st_nlink": 0,
+            "st_uid": 1000,
+            "st_gid": 1000,
+            "st_size": 2960,
+            "st_atime_ns": 1790903891917987564,
+            "st_mtime_ns": 1790903887094748663,
+            "st_ctime_ns": 1790903887094748663,
+            "st_blocks": 8,
+            "st_blksize": 4096,
+            "st_rdev": 0,
+            "fileType": 32768,
+            "fullMode": 0,
+            "deviceMajor": 0,
+            "deviceMinor": 33
+          },
+          "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+          "rawFdinfo": {
+            "base64": "cG9zOgkwCmZsYWdzOgkwMjUwMDAwMAptbnRfaWQ6CTM1CmlubzoJODA1NTQK",
+            "bytes": 45,
+            "sha256": "4bf1e3c2e4265359b47f3609641023ed091d9f0f4e3d121381e1e7c3c8920a4d"
+          },
+          "rawMountinfo": {
+            "base64": "MjYgMzMgMDoyNCAvIC9wcm9jIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjUgLSBwcm9jIHByb2MgcncKMjcgMzMgMDoyNSAvIC9zeXMgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6NiAtIHN5c2ZzIHN5cyBydwoyOCAzMyAwOjcgLyAvZGV2IHJ3LG5vc3VpZCxyZWxhdGltZSBzaGFyZWQ6MiAtIGRldnRtcGZzIGRldiBydyxzaXplPTMyNDI0NDA0ayxucl9pbm9kZXM9ODEwNjEwMSxtb2RlPTc1NSxpbm9kZTY0LGh1Z2U9YWR2aXNlCjI5IDMzIDA6MjYgLyAvcnVuIHJ3LG5vc3VpZCxub2RldixyZWxhdGltZSBzaGFyZWQ6MTIgLSB0bXBmcyBydW4gcncsbW9kZT03NTUsaW5vZGU2NCxodWdlPWFkdmlzZQozMCAyNyAwOjI3IC8gL3N5cy9maXJtd2FyZS9lZmkvZWZpdmFycyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDo3IC0gZWZpdmFyZnMgZWZpdmFyZnMgcncKMzIgMjggMDoyOSAvIC9kZXYvcHRzIHJ3LG5vc3VpZCxub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjMgLSBkZXZwdHMgZGV2cHRzIHJ3LGdpZD01LG1vZGU9NjIwLHB0bXhtb2RlPTAwMAozMyAyIDA6MzAgL0AgLyBydyxyZWxhdGltZSBzaGFyZWQ6MSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTYsc3Vidm9sPS9ACjM0IDI3IDA6OCAvIC9zeXMva2VybmVsL3NlY3VyaXR5IHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjggLSBzZWN1cml0eWZzIHNlY3VyaXR5ZnMgcncKMzUgMjggMDozMyAvIC9kZXYvc2htIHJ3LG5vc3VpZCxub2RldiBzaGFyZWQ6NCAtIHRtcGZzIHRtcGZzIHJ3LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKMzYgMjcgMDozNCAvIC9zeXMvZnMvY2dyb3VwIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjkgLSBjZ3JvdXAyIGNncm91cDIgcncsbnNkZWxlZ2F0ZSxtZW1vcnlfcmVjdXJzaXZlcHJvdCxtZW1vcnlfaHVnZXRsYl9hY2NvdW50aW5nCjM3IDI3IDA6MzUgLyAvc3lzL2ZzL3BzdG9yZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMCAtIHBzdG9yZSBub25lIHJ3CjM4IDI3IDA6MzYgLyAvc3lzL2ZzL2JwZiBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMSAtIGJwZiBicGYgcncsbW9kZT03MDAKMzkgMjYgMDozOCAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxyZWxhdGltZSBzaGFyZWQ6MTMgLSBhdXRvZnMgc3lzdGVtZC0xIHJ3LGZkPTQzLHBncnA9MSx0aW1lb3V0PTAsbWlucHJvdG89NSxtYXhwcm90bz01LGRpcmVjdCxwaXBlX2lubz0xNzE4NAo0MCAyOSAwOjM5IC8gL3J1bi9jcmVkZW50aWFscy9zeXN0ZW1kLWpvdXJuYWxkLnNlcnZpY2Ugcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSxub3N5bWZvbGxvdyBzaGFyZWQ6MTUgLSB0bXBmcyBub25lIHJvLHNpemU9MTAyNGssbnJfaW5vZGVzPTEwMjQsbW9kZT03MDAsaW5vZGU2NCxodWdlPWFkdmlzZSxub3N3YXAKNDMgMjggMDoyMiAvIC9kZXYvbXF1ZXVlIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE3IC0gbXF1ZXVlIG1xdWV1ZSBydwo0NCAyNyAwOjQyIC8gL3N5cy9mcy9mdXNlL2Nvbm5lY3Rpb25zIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE4IC0gZnVzZWN0bCBmdXNlY3RsIHJ3CjQ1IDI3IDA6MjAgLyAvc3lzL2tlcm5lbC9jb25maWcgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6MTkgLSBjb25maWdmcyBjb25maWdmcyBydwo0NiAyNyAwOjkgLyAvc3lzL2tlcm5lbC9kZWJ1ZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMCAtIGRlYnVnZnMgZGVidWdmcyBydwo0NyAyNyAwOjE0IC8gL3N5cy9rZXJuZWwvdHJhY2luZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMSAtIHRyYWNlZnMgdHJhY2VmcyBydwo0OCAyOCAwOjQzIC8gL2Rldi9odWdlcGFnZXMgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDoyMiAtIGh1Z2V0bGJmcyBodWdldGxiZnMgcncscGFnZXNpemU9Mk0KNzQgMzkgMDo0NSAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxNiAtIGJpbmZtdF9taXNjIGJpbmZtdF9taXNjIHJ3CjUxIDI5IDA6NDYgLyAvcnVuL2NyZWRlbnRpYWxzL3N5c3RlbWQtcmVzb2x2ZWQuc2VydmljZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lLG5vc3ltZm9sbG93IHNoYXJlZDo1MSAtIHRtcGZzIG5vbmUgcm8sc2l6ZT0xMDI0ayxucl9pbm9kZXM9MTAyNCxtb2RlPTcwMCxpbm9kZTY0LGh1Z2U9YWR2aXNlLG5vc3dhcAo2MCAzMyAwOjU3IC8gL3RtcCBydyxub3N1aWQsbm9kZXYgc2hhcmVkOjE4OSAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9MzI2MjExMTZrLG5yX2lub2Rlcz0xMDQ4NTc2LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKNTggMzMgMDozMCAvQGhvbWUgL2hvbWUgcncscmVsYXRpbWUgc2hhcmVkOjE5NSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTcsc3Vidm9sPS9AaG9tZQo2NiAzMyAwOjMwIC9AbG9nIC92YXIvbG9nIHJ3LHJlbGF0aW1lIHNoYXJlZDoyMDEgLSBidHJmcyAvZGV2L21hcHBlci9yb290IHJ3LGNvbXByZXNzPXpzdGQ6Myxzc2Qsc3BhY2VfY2FjaGU9djIsc3Vidm9saWQ9MjU4LHN1YnZvbD0vQGxvZwo1OSAzMyAwOjMwIC9AcGtnIC92YXIvY2FjaGUvcGFjbWFuL3BrZyBydyxyZWxhdGltZSBzaGFyZWQ6MjA3IC0gYnRyZnMgL2Rldi9tYXBwZXIvcm9vdCBydyxjb21wcmVzcz16c3RkOjMsc3NkLHNwYWNlX2NhY2hlPXYyLHN1YnZvbGlkPTI1OSxzdWJ2b2w9L0Bwa2cKMjUwIDMzIDI1OToxIC8gL2Jvb3QgcncscmVsYXRpbWUgc2hhcmVkOjIxMyAtIHZmYXQgL2Rldi9udm1lMG4xcDEgcncsZm1hc2s9MDA3NyxkbWFzaz0wMDc3LGNvZGVwYWdlPTQzNyxpb2NoYXJzZXQ9YXNjaWksc2hvcnRuYW1lPW1peGVkLHV0ZjgsZXJyb3JzPXJlbW91bnQtcm8KMzQ2IDI5IDA6ODQgLyAvcnVuL3VzZXIvMTAwMCBydyxub3N1aWQsbm9kZXYscmVsYXRpbWUgc2hhcmVkOjY1MyAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9NjUyNDIyMGssbnJfaW5vZGVzPTE2MzEwNTUsbW9kZT03MDAsdWlkPTEwMDAsZ2lkPTEwMDAsaW5vZGU2NCxodWdlPWFkdmlzZQozNDkgMzQ2IDA6NzggLyAvcnVuL3VzZXIvMTAwMC9kb2Mgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDo1NDAgLSBmdXNlLnBvcnRhbCBwb3J0YWwgcncsdXNlcl9pZD0xMDAwLGdyb3VwX2lkPTEwMDAK",
+            "bytes": 3414,
+            "sha256": "68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8"
+          },
+          "fdinfo": {
+            "flags": 688128,
+            "mnt_id": 35,
+            "ino": 80554
+          },
+          "conjuncts": {
+            "targetMatches": true,
+            "mappingDeviceInodeMatches": true,
+            "regular": true,
+            "fullModeZero": true,
+            "uidMatches": true,
+            "unlinked": true,
+            "sizeBounded": true,
+            "mountDeviceMatches": true
+          }
+        },
+        "producerFDAfter": {
+          "fd": 32,
+          "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+          "device": 33,
+          "inode": 80554,
+          "uid": 1000,
+          "mode": 0,
+          "nlink": 0,
+          "size": 2960,
+          "mtimeNs": 1790903887094748663,
+          "ctimeNs": 1790903887094748663,
+          "fdinfo": {
+            "flags": 688128,
+            "mnt_id": 35,
+            "ino": 80554
+          }
+        },
+        "matchingProducerFDsAfter": [
+          32
+        ]
+      }
+    ],
+    "consumerAfter": {
+      "pid": 2049362,
+      "start": "12636457",
+      "uids": [
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1eb9819ff2a7436e926bc0d5e65d568d.scope\n",
+      "exe": "/usr/bin/quickshell",
+      "exeSHA256": "2dc99382c032710fe495ed115cdee9dc9c69bdb3a21af4d86a9a8ea16733069b",
+      "mountNamespace": "mnt:[4026531832]"
+    },
+    "producerAfter": {
+      "pid": 2048801,
+      "start": "12635981",
+      "uids": [
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1eb9819ff2a7436e926bc0d5e65d568d.scope\n",
+      "exe": "/usr/bin/Hyprland",
+      "exeSHA256": "da8fcacf347bcbed83edc40108c6e2298da095e22246bd764e9bb382786cebb2",
+      "mountNamespace": "mnt:[4026531832]"
+    },
+    "privatePeerAfter": {
+      "path": "/run/user/1000/wqa/01c9/wayland-1",
+      "pid": 2048801,
+      "uid": 1000,
+      "gid": 1000,
+      "device": 84,
+      "inode": 339049
+    },
+    "consumerMapsAfterSHA256": "3cdb067ea1be4ffa7c5f6d788bb3ecc688782b20fdddb75ea8e6bd938f1bcb96",
+    "producerMapsAfterSHA256": "55b05ac2c4c33e675f3bd6b59f9ec3eb48059bb5b12d1b62c67d02557965766f",
+    "mountAfter": {
+      "id": 35,
+      "device": 33,
+      "root": "/",
+      "path": "/dev/shm",
+      "type": "tmpfs",
+      "source": "tmpfs",
+      "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+    },
+    "afterDiskValidation": {
+      "accepted": true,
+      "mappings": {
+        "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)": {
+          "mapping": {
+            "line": "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "begin": 132398438461440,
+            "end": 132398438465536,
+            "offset": 0,
+            "permissions": "r--p",
+            "device": 33,
+            "inode": 80554,
+            "path": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)"
+          },
+          "accepted": true,
+          "matchingProducerFDs": [
+            32
+          ],
+          "producerFDDiagnosticBefore": {
+            "pid": 2048801,
+            "fd": 32,
+            "expectedMapping": {
+              "line": "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+              "begin": 132398438461440,
+              "end": 132398438465536,
+              "offset": 0,
+              "permissions": "r--p",
+              "device": 33,
+              "inode": 80554,
+              "path": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)"
+            },
+            "selectedMount": {
+              "id": 35,
+              "device": 33,
+              "root": "/",
+              "path": "/dev/shm",
+              "type": "tmpfs",
+              "source": "tmpfs",
+              "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+            },
+            "accepted": true,
+            "errors": {},
+            "stat": {
+              "st_mode": 32768,
+              "st_ino": 80554,
+              "st_dev": 33,
+              "st_nlink": 0,
+              "st_uid": 1000,
+              "st_gid": 1000,
+              "st_size": 2960,
+              "st_atime_ns": 1790903891917987564,
+              "st_mtime_ns": 1790903887094748663,
+              "st_ctime_ns": 1790903887094748663,
+              "st_blocks": 8,
+              "st_blksize": 4096,
+              "st_rdev": 0,
+              "fileType": 32768,
+              "fullMode": 0,
+              "deviceMajor": 0,
+              "deviceMinor": 33
+            },
+            "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "rawFdinfo": {
+              "base64": "cG9zOgkwCmZsYWdzOgkwMjUwMDAwMAptbnRfaWQ6CTM1CmlubzoJODA1NTQK",
+              "bytes": 45,
+              "sha256": "4bf1e3c2e4265359b47f3609641023ed091d9f0f4e3d121381e1e7c3c8920a4d"
+            },
+            "rawMountinfo": {
+              "base64": "MjYgMzMgMDoyNCAvIC9wcm9jIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjUgLSBwcm9jIHByb2MgcncKMjcgMzMgMDoyNSAvIC9zeXMgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6NiAtIHN5c2ZzIHN5cyBydwoyOCAzMyAwOjcgLyAvZGV2IHJ3LG5vc3VpZCxyZWxhdGltZSBzaGFyZWQ6MiAtIGRldnRtcGZzIGRldiBydyxzaXplPTMyNDI0NDA0ayxucl9pbm9kZXM9ODEwNjEwMSxtb2RlPTc1NSxpbm9kZTY0LGh1Z2U9YWR2aXNlCjI5IDMzIDA6MjYgLyAvcnVuIHJ3LG5vc3VpZCxub2RldixyZWxhdGltZSBzaGFyZWQ6MTIgLSB0bXBmcyBydW4gcncsbW9kZT03NTUsaW5vZGU2NCxodWdlPWFkdmlzZQozMCAyNyAwOjI3IC8gL3N5cy9maXJtd2FyZS9lZmkvZWZpdmFycyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDo3IC0gZWZpdmFyZnMgZWZpdmFyZnMgcncKMzIgMjggMDoyOSAvIC9kZXYvcHRzIHJ3LG5vc3VpZCxub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjMgLSBkZXZwdHMgZGV2cHRzIHJ3LGdpZD01LG1vZGU9NjIwLHB0bXhtb2RlPTAwMAozMyAyIDA6MzAgL0AgLyBydyxyZWxhdGltZSBzaGFyZWQ6MSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTYsc3Vidm9sPS9ACjM0IDI3IDA6OCAvIC9zeXMva2VybmVsL3NlY3VyaXR5IHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjggLSBzZWN1cml0eWZzIHNlY3VyaXR5ZnMgcncKMzUgMjggMDozMyAvIC9kZXYvc2htIHJ3LG5vc3VpZCxub2RldiBzaGFyZWQ6NCAtIHRtcGZzIHRtcGZzIHJ3LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKMzYgMjcgMDozNCAvIC9zeXMvZnMvY2dyb3VwIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjkgLSBjZ3JvdXAyIGNncm91cDIgcncsbnNkZWxlZ2F0ZSxtZW1vcnlfcmVjdXJzaXZlcHJvdCxtZW1vcnlfaHVnZXRsYl9hY2NvdW50aW5nCjM3IDI3IDA6MzUgLyAvc3lzL2ZzL3BzdG9yZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMCAtIHBzdG9yZSBub25lIHJ3CjM4IDI3IDA6MzYgLyAvc3lzL2ZzL2JwZiBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMSAtIGJwZiBicGYgcncsbW9kZT03MDAKMzkgMjYgMDozOCAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxyZWxhdGltZSBzaGFyZWQ6MTMgLSBhdXRvZnMgc3lzdGVtZC0xIHJ3LGZkPTQzLHBncnA9MSx0aW1lb3V0PTAsbWlucHJvdG89NSxtYXhwcm90bz01LGRpcmVjdCxwaXBlX2lubz0xNzE4NAo0MCAyOSAwOjM5IC8gL3J1bi9jcmVkZW50aWFscy9zeXN0ZW1kLWpvdXJuYWxkLnNlcnZpY2Ugcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSxub3N5bWZvbGxvdyBzaGFyZWQ6MTUgLSB0bXBmcyBub25lIHJvLHNpemU9MTAyNGssbnJfaW5vZGVzPTEwMjQsbW9kZT03MDAsaW5vZGU2NCxodWdlPWFkdmlzZSxub3N3YXAKNDMgMjggMDoyMiAvIC9kZXYvbXF1ZXVlIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE3IC0gbXF1ZXVlIG1xdWV1ZSBydwo0NCAyNyAwOjQyIC8gL3N5cy9mcy9mdXNlL2Nvbm5lY3Rpb25zIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE4IC0gZnVzZWN0bCBmdXNlY3RsIHJ3CjQ1IDI3IDA6MjAgLyAvc3lzL2tlcm5lbC9jb25maWcgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6MTkgLSBjb25maWdmcyBjb25maWdmcyBydwo0NiAyNyAwOjkgLyAvc3lzL2tlcm5lbC9kZWJ1ZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMCAtIGRlYnVnZnMgZGVidWdmcyBydwo0NyAyNyAwOjE0IC8gL3N5cy9rZXJuZWwvdHJhY2luZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMSAtIHRyYWNlZnMgdHJhY2VmcyBydwo0OCAyOCAwOjQzIC8gL2Rldi9odWdlcGFnZXMgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDoyMiAtIGh1Z2V0bGJmcyBodWdldGxiZnMgcncscGFnZXNpemU9Mk0KNzQgMzkgMDo0NSAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxNiAtIGJpbmZtdF9taXNjIGJpbmZtdF9taXNjIHJ3CjUxIDI5IDA6NDYgLyAvcnVuL2NyZWRlbnRpYWxzL3N5c3RlbWQtcmVzb2x2ZWQuc2VydmljZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lLG5vc3ltZm9sbG93IHNoYXJlZDo1MSAtIHRtcGZzIG5vbmUgcm8sc2l6ZT0xMDI0ayxucl9pbm9kZXM9MTAyNCxtb2RlPTcwMCxpbm9kZTY0LGh1Z2U9YWR2aXNlLG5vc3dhcAo2MCAzMyAwOjU3IC8gL3RtcCBydyxub3N1aWQsbm9kZXYgc2hhcmVkOjE4OSAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9MzI2MjExMTZrLG5yX2lub2Rlcz0xMDQ4NTc2LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKNTggMzMgMDozMCAvQGhvbWUgL2hvbWUgcncscmVsYXRpbWUgc2hhcmVkOjE5NSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTcsc3Vidm9sPS9AaG9tZQo2NiAzMyAwOjMwIC9AbG9nIC92YXIvbG9nIHJ3LHJlbGF0aW1lIHNoYXJlZDoyMDEgLSBidHJmcyAvZGV2L21hcHBlci9yb290IHJ3LGNvbXByZXNzPXpzdGQ6Myxzc2Qsc3BhY2VfY2FjaGU9djIsc3Vidm9saWQ9MjU4LHN1YnZvbD0vQGxvZwo1OSAzMyAwOjMwIC9AcGtnIC92YXIvY2FjaGUvcGFjbWFuL3BrZyBydyxyZWxhdGltZSBzaGFyZWQ6MjA3IC0gYnRyZnMgL2Rldi9tYXBwZXIvcm9vdCBydyxjb21wcmVzcz16c3RkOjMsc3NkLHNwYWNlX2NhY2hlPXYyLHN1YnZvbGlkPTI1OSxzdWJ2b2w9L0Bwa2cKMjUwIDMzIDI1OToxIC8gL2Jvb3QgcncscmVsYXRpbWUgc2hhcmVkOjIxMyAtIHZmYXQgL2Rldi9udm1lMG4xcDEgcncsZm1hc2s9MDA3NyxkbWFzaz0wMDc3LGNvZGVwYWdlPTQzNyxpb2NoYXJzZXQ9YXNjaWksc2hvcnRuYW1lPW1peGVkLHV0ZjgsZXJyb3JzPXJlbW91bnQtcm8KMzQ2IDI5IDA6ODQgLyAvcnVuL3VzZXIvMTAwMCBydyxub3N1aWQsbm9kZXYscmVsYXRpbWUgc2hhcmVkOjY1MyAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9NjUyNDIyMGssbnJfaW5vZGVzPTE2MzEwNTUsbW9kZT03MDAsdWlkPTEwMDAsZ2lkPTEwMDAsaW5vZGU2NCxodWdlPWFkdmlzZQozNDkgMzQ2IDA6NzggLyAvcnVuL3VzZXIvMTAwMC9kb2Mgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDo1NDAgLSBmdXNlLnBvcnRhbCBwb3J0YWwgcncsdXNlcl9pZD0xMDAwLGdyb3VwX2lkPTEwMDAK",
+              "bytes": 3414,
+              "sha256": "68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8"
+            },
+            "fdinfo": {
+              "flags": 688128,
+              "mnt_id": 35,
+              "ino": 80554
+            },
+            "conjuncts": {
+              "targetMatches": true,
+              "mappingDeviceInodeMatches": true,
+              "regular": true,
+              "fullModeZero": true,
+              "uidMatches": true,
+              "unlinked": true,
+              "sizeBounded": true,
+              "mountDeviceMatches": true
+            }
+          },
+          "producerFDBefore": {
+            "fd": 32,
+            "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "device": 33,
+            "inode": 80554,
+            "uid": 1000,
+            "mode": 0,
+            "nlink": 0,
+            "size": 2960,
+            "mtimeNs": 1790903887094748663,
+            "ctimeNs": 1790903887094748663,
+            "fdinfo": {
+              "flags": 688128,
+              "mnt_id": 35,
+              "ino": 80554
+            }
+          },
+          "producerFDDiagnosticAfter": {
+            "pid": 2048801,
+            "fd": 32,
+            "expectedMapping": {
+              "line": "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+              "begin": 132398438461440,
+              "end": 132398438465536,
+              "offset": 0,
+              "permissions": "r--p",
+              "device": 33,
+              "inode": 80554,
+              "path": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)"
+            },
+            "selectedMount": {
+              "id": 35,
+              "device": 33,
+              "root": "/",
+              "path": "/dev/shm",
+              "type": "tmpfs",
+              "source": "tmpfs",
+              "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+            },
+            "accepted": true,
+            "errors": {},
+            "stat": {
+              "st_mode": 32768,
+              "st_ino": 80554,
+              "st_dev": 33,
+              "st_nlink": 0,
+              "st_uid": 1000,
+              "st_gid": 1000,
+              "st_size": 2960,
+              "st_atime_ns": 1790903891917987564,
+              "st_mtime_ns": 1790903887094748663,
+              "st_ctime_ns": 1790903887094748663,
+              "st_blocks": 8,
+              "st_blksize": 4096,
+              "st_rdev": 0,
+              "fileType": 32768,
+              "fullMode": 0,
+              "deviceMajor": 0,
+              "deviceMinor": 33
+            },
+            "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "rawFdinfo": {
+              "base64": "cG9zOgkwCmZsYWdzOgkwMjUwMDAwMAptbnRfaWQ6CTM1CmlubzoJODA1NTQK",
+              "bytes": 45,
+              "sha256": "4bf1e3c2e4265359b47f3609641023ed091d9f0f4e3d121381e1e7c3c8920a4d"
+            },
+            "rawMountinfo": {
+              "base64": "MjYgMzMgMDoyNCAvIC9wcm9jIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjUgLSBwcm9jIHByb2MgcncKMjcgMzMgMDoyNSAvIC9zeXMgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6NiAtIHN5c2ZzIHN5cyBydwoyOCAzMyAwOjcgLyAvZGV2IHJ3LG5vc3VpZCxyZWxhdGltZSBzaGFyZWQ6MiAtIGRldnRtcGZzIGRldiBydyxzaXplPTMyNDI0NDA0ayxucl9pbm9kZXM9ODEwNjEwMSxtb2RlPTc1NSxpbm9kZTY0LGh1Z2U9YWR2aXNlCjI5IDMzIDA6MjYgLyAvcnVuIHJ3LG5vc3VpZCxub2RldixyZWxhdGltZSBzaGFyZWQ6MTIgLSB0bXBmcyBydW4gcncsbW9kZT03NTUsaW5vZGU2NCxodWdlPWFkdmlzZQozMCAyNyAwOjI3IC8gL3N5cy9maXJtd2FyZS9lZmkvZWZpdmFycyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDo3IC0gZWZpdmFyZnMgZWZpdmFyZnMgcncKMzIgMjggMDoyOSAvIC9kZXYvcHRzIHJ3LG5vc3VpZCxub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjMgLSBkZXZwdHMgZGV2cHRzIHJ3LGdpZD01LG1vZGU9NjIwLHB0bXhtb2RlPTAwMAozMyAyIDA6MzAgL0AgLyBydyxyZWxhdGltZSBzaGFyZWQ6MSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTYsc3Vidm9sPS9ACjM0IDI3IDA6OCAvIC9zeXMva2VybmVsL3NlY3VyaXR5IHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjggLSBzZWN1cml0eWZzIHNlY3VyaXR5ZnMgcncKMzUgMjggMDozMyAvIC9kZXYvc2htIHJ3LG5vc3VpZCxub2RldiBzaGFyZWQ6NCAtIHRtcGZzIHRtcGZzIHJ3LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKMzYgMjcgMDozNCAvIC9zeXMvZnMvY2dyb3VwIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjkgLSBjZ3JvdXAyIGNncm91cDIgcncsbnNkZWxlZ2F0ZSxtZW1vcnlfcmVjdXJzaXZlcHJvdCxtZW1vcnlfaHVnZXRsYl9hY2NvdW50aW5nCjM3IDI3IDA6MzUgLyAvc3lzL2ZzL3BzdG9yZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMCAtIHBzdG9yZSBub25lIHJ3CjM4IDI3IDA6MzYgLyAvc3lzL2ZzL2JwZiBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMSAtIGJwZiBicGYgcncsbW9kZT03MDAKMzkgMjYgMDozOCAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxyZWxhdGltZSBzaGFyZWQ6MTMgLSBhdXRvZnMgc3lzdGVtZC0xIHJ3LGZkPTQzLHBncnA9MSx0aW1lb3V0PTAsbWlucHJvdG89NSxtYXhwcm90bz01LGRpcmVjdCxwaXBlX2lubz0xNzE4NAo0MCAyOSAwOjM5IC8gL3J1bi9jcmVkZW50aWFscy9zeXN0ZW1kLWpvdXJuYWxkLnNlcnZpY2Ugcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSxub3N5bWZvbGxvdyBzaGFyZWQ6MTUgLSB0bXBmcyBub25lIHJvLHNpemU9MTAyNGssbnJfaW5vZGVzPTEwMjQsbW9kZT03MDAsaW5vZGU2NCxodWdlPWFkdmlzZSxub3N3YXAKNDMgMjggMDoyMiAvIC9kZXYvbXF1ZXVlIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE3IC0gbXF1ZXVlIG1xdWV1ZSBydwo0NCAyNyAwOjQyIC8gL3N5cy9mcy9mdXNlL2Nvbm5lY3Rpb25zIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE4IC0gZnVzZWN0bCBmdXNlY3RsIHJ3CjQ1IDI3IDA6MjAgLyAvc3lzL2tlcm5lbC9jb25maWcgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6MTkgLSBjb25maWdmcyBjb25maWdmcyBydwo0NiAyNyAwOjkgLyAvc3lzL2tlcm5lbC9kZWJ1ZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMCAtIGRlYnVnZnMgZGVidWdmcyBydwo0NyAyNyAwOjE0IC8gL3N5cy9rZXJuZWwvdHJhY2luZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMSAtIHRyYWNlZnMgdHJhY2VmcyBydwo0OCAyOCAwOjQzIC8gL2Rldi9odWdlcGFnZXMgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDoyMiAtIGh1Z2V0bGJmcyBodWdldGxiZnMgcncscGFnZXNpemU9Mk0KNzQgMzkgMDo0NSAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxNiAtIGJpbmZtdF9taXNjIGJpbmZtdF9taXNjIHJ3CjUxIDI5IDA6NDYgLyAvcnVuL2NyZWRlbnRpYWxzL3N5c3RlbWQtcmVzb2x2ZWQuc2VydmljZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lLG5vc3ltZm9sbG93IHNoYXJlZDo1MSAtIHRtcGZzIG5vbmUgcm8sc2l6ZT0xMDI0ayxucl9pbm9kZXM9MTAyNCxtb2RlPTcwMCxpbm9kZTY0LGh1Z2U9YWR2aXNlLG5vc3dhcAo2MCAzMyAwOjU3IC8gL3RtcCBydyxub3N1aWQsbm9kZXYgc2hhcmVkOjE4OSAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9MzI2MjExMTZrLG5yX2lub2Rlcz0xMDQ4NTc2LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKNTggMzMgMDozMCAvQGhvbWUgL2hvbWUgcncscmVsYXRpbWUgc2hhcmVkOjE5NSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTcsc3Vidm9sPS9AaG9tZQo2NiAzMyAwOjMwIC9AbG9nIC92YXIvbG9nIHJ3LHJlbGF0aW1lIHNoYXJlZDoyMDEgLSBidHJmcyAvZGV2L21hcHBlci9yb290IHJ3LGNvbXByZXNzPXpzdGQ6Myxzc2Qsc3BhY2VfY2FjaGU9djIsc3Vidm9saWQ9MjU4LHN1YnZvbD0vQGxvZwo1OSAzMyAwOjMwIC9AcGtnIC92YXIvY2FjaGUvcGFjbWFuL3BrZyBydyxyZWxhdGltZSBzaGFyZWQ6MjA3IC0gYnRyZnMgL2Rldi9tYXBwZXIvcm9vdCBydyxjb21wcmVzcz16c3RkOjMsc3NkLHNwYWNlX2NhY2hlPXYyLHN1YnZvbGlkPTI1OSxzdWJ2b2w9L0Bwa2cKMjUwIDMzIDI1OToxIC8gL2Jvb3QgcncscmVsYXRpbWUgc2hhcmVkOjIxMyAtIHZmYXQgL2Rldi9udm1lMG4xcDEgcncsZm1hc2s9MDA3NyxkbWFzaz0wMDc3LGNvZGVwYWdlPTQzNyxpb2NoYXJzZXQ9YXNjaWksc2hvcnRuYW1lPW1peGVkLHV0ZjgsZXJyb3JzPXJlbW91bnQtcm8KMzQ2IDI5IDA6ODQgLyAvcnVuL3VzZXIvMTAwMCBydyxub3N1aWQsbm9kZXYscmVsYXRpbWUgc2hhcmVkOjY1MyAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9NjUyNDIyMGssbnJfaW5vZGVzPTE2MzEwNTUsbW9kZT03MDAsdWlkPTEwMDAsZ2lkPTEwMDAsaW5vZGU2NCxodWdlPWFkdmlzZQozNDkgMzQ2IDA6NzggLyAvcnVuL3VzZXIvMTAwMC9kb2Mgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDo1NDAgLSBmdXNlLnBvcnRhbCBwb3J0YWwgcncsdXNlcl9pZD0xMDAwLGdyb3VwX2lkPTEwMDAK",
+              "bytes": 3414,
+              "sha256": "68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8"
+            },
+            "fdinfo": {
+              "flags": 688128,
+              "mnt_id": 35,
+              "ino": 80554
+            },
+            "conjuncts": {
+              "targetMatches": true,
+              "mappingDeviceInodeMatches": true,
+              "regular": true,
+              "fullModeZero": true,
+              "uidMatches": true,
+              "unlinked": true,
+              "sizeBounded": true,
+              "mountDeviceMatches": true
+            }
+          },
+          "producerFDAfter": {
+            "fd": 32,
+            "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "device": 33,
+            "inode": 80554,
+            "uid": 1000,
+            "mode": 0,
+            "nlink": 0,
+            "size": 2960,
+            "mtimeNs": 1790903887094748663,
+            "ctimeNs": 1790903887094748663,
+            "fdinfo": {
+              "flags": 688128,
+              "mnt_id": 35,
+              "ino": 80554
+            }
+          },
+          "matchingProducerFDsAfter": [
+            32
+          ]
+        }
+      },
+      "scope": "Captured owned batch plus before/after copied Files and private compositor maps; not global or continuous inspection",
+      "consumerBefore": {
+        "pid": 2049362,
+        "start": "12636457",
+        "uids": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1eb9819ff2a7436e926bc0d5e65d568d.scope\n",
+        "exe": "/usr/bin/quickshell",
+        "exeSHA256": "2dc99382c032710fe495ed115cdee9dc9c69bdb3a21af4d86a9a8ea16733069b",
+        "mountNamespace": "mnt:[4026531832]"
+      },
+      "producerBefore": {
+        "pid": 2048801,
+        "start": "12635981",
+        "uids": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1eb9819ff2a7436e926bc0d5e65d568d.scope\n",
+        "exe": "/usr/bin/Hyprland",
+        "exeSHA256": "da8fcacf347bcbed83edc40108c6e2298da095e22246bd764e9bb382786cebb2",
+        "mountNamespace": "mnt:[4026531832]"
+      },
+      "privatePeerBefore": {
+        "path": "/run/user/1000/wqa/01c9/wayland-1",
+        "pid": 2048801,
+        "uid": 1000,
+        "gid": 1000,
+        "device": 84,
+        "inode": 339049
+      },
+      "consumerRawMapsSHA256": "3cdb067ea1be4ffa7c5f6d788bb3ecc688782b20fdddb75ea8e6bd938f1bcb96",
+      "consumerMapsBeforeSHA256": "3cdb067ea1be4ffa7c5f6d788bb3ecc688782b20fdddb75ea8e6bd938f1bcb96",
+      "producerMapsBeforeSHA256": "0cd347815c0acd1c031485db71757cfa8e09d5ff50847051442a506c0591dd85",
+      "mountBefore": {
+        "id": 35,
+        "device": 33,
+        "root": "/",
+        "path": "/dev/shm",
+        "type": "tmpfs",
+        "source": "tmpfs",
+        "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+      },
+      "observations": [
+        {
+          "mapping": {
+            "line": "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "begin": 132398438461440,
+            "end": 132398438465536,
+            "offset": 0,
+            "permissions": "r--p",
+            "device": 33,
+            "inode": 80554,
+            "path": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)"
+          },
+          "accepted": true,
+          "matchingProducerFDs": [
+            32
+          ],
+          "producerFDDiagnosticBefore": {
+            "pid": 2048801,
+            "fd": 32,
+            "expectedMapping": {
+              "line": "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+              "begin": 132398438461440,
+              "end": 132398438465536,
+              "offset": 0,
+              "permissions": "r--p",
+              "device": 33,
+              "inode": 80554,
+              "path": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)"
+            },
+            "selectedMount": {
+              "id": 35,
+              "device": 33,
+              "root": "/",
+              "path": "/dev/shm",
+              "type": "tmpfs",
+              "source": "tmpfs",
+              "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+            },
+            "accepted": true,
+            "errors": {},
+            "stat": {
+              "st_mode": 32768,
+              "st_ino": 80554,
+              "st_dev": 33,
+              "st_nlink": 0,
+              "st_uid": 1000,
+              "st_gid": 1000,
+              "st_size": 2960,
+              "st_atime_ns": 1790903891917987564,
+              "st_mtime_ns": 1790903887094748663,
+              "st_ctime_ns": 1790903887094748663,
+              "st_blocks": 8,
+              "st_blksize": 4096,
+              "st_rdev": 0,
+              "fileType": 32768,
+              "fullMode": 0,
+              "deviceMajor": 0,
+              "deviceMinor": 33
+            },
+            "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "rawFdinfo": {
+              "base64": "cG9zOgkwCmZsYWdzOgkwMjUwMDAwMAptbnRfaWQ6CTM1CmlubzoJODA1NTQK",
+              "bytes": 45,
+              "sha256": "4bf1e3c2e4265359b47f3609641023ed091d9f0f4e3d121381e1e7c3c8920a4d"
+            },
+            "rawMountinfo": {
+              "base64": "MjYgMzMgMDoyNCAvIC9wcm9jIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjUgLSBwcm9jIHByb2MgcncKMjcgMzMgMDoyNSAvIC9zeXMgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6NiAtIHN5c2ZzIHN5cyBydwoyOCAzMyAwOjcgLyAvZGV2IHJ3LG5vc3VpZCxyZWxhdGltZSBzaGFyZWQ6MiAtIGRldnRtcGZzIGRldiBydyxzaXplPTMyNDI0NDA0ayxucl9pbm9kZXM9ODEwNjEwMSxtb2RlPTc1NSxpbm9kZTY0LGh1Z2U9YWR2aXNlCjI5IDMzIDA6MjYgLyAvcnVuIHJ3LG5vc3VpZCxub2RldixyZWxhdGltZSBzaGFyZWQ6MTIgLSB0bXBmcyBydW4gcncsbW9kZT03NTUsaW5vZGU2NCxodWdlPWFkdmlzZQozMCAyNyAwOjI3IC8gL3N5cy9maXJtd2FyZS9lZmkvZWZpdmFycyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDo3IC0gZWZpdmFyZnMgZWZpdmFyZnMgcncKMzIgMjggMDoyOSAvIC9kZXYvcHRzIHJ3LG5vc3VpZCxub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjMgLSBkZXZwdHMgZGV2cHRzIHJ3LGdpZD01LG1vZGU9NjIwLHB0bXhtb2RlPTAwMAozMyAyIDA6MzAgL0AgLyBydyxyZWxhdGltZSBzaGFyZWQ6MSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTYsc3Vidm9sPS9ACjM0IDI3IDA6OCAvIC9zeXMva2VybmVsL3NlY3VyaXR5IHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjggLSBzZWN1cml0eWZzIHNlY3VyaXR5ZnMgcncKMzUgMjggMDozMyAvIC9kZXYvc2htIHJ3LG5vc3VpZCxub2RldiBzaGFyZWQ6NCAtIHRtcGZzIHRtcGZzIHJ3LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKMzYgMjcgMDozNCAvIC9zeXMvZnMvY2dyb3VwIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjkgLSBjZ3JvdXAyIGNncm91cDIgcncsbnNkZWxlZ2F0ZSxtZW1vcnlfcmVjdXJzaXZlcHJvdCxtZW1vcnlfaHVnZXRsYl9hY2NvdW50aW5nCjM3IDI3IDA6MzUgLyAvc3lzL2ZzL3BzdG9yZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMCAtIHBzdG9yZSBub25lIHJ3CjM4IDI3IDA6MzYgLyAvc3lzL2ZzL2JwZiBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMSAtIGJwZiBicGYgcncsbW9kZT03MDAKMzkgMjYgMDozOCAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxyZWxhdGltZSBzaGFyZWQ6MTMgLSBhdXRvZnMgc3lzdGVtZC0xIHJ3LGZkPTQzLHBncnA9MSx0aW1lb3V0PTAsbWlucHJvdG89NSxtYXhwcm90bz01LGRpcmVjdCxwaXBlX2lubz0xNzE4NAo0MCAyOSAwOjM5IC8gL3J1bi9jcmVkZW50aWFscy9zeXN0ZW1kLWpvdXJuYWxkLnNlcnZpY2Ugcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSxub3N5bWZvbGxvdyBzaGFyZWQ6MTUgLSB0bXBmcyBub25lIHJvLHNpemU9MTAyNGssbnJfaW5vZGVzPTEwMjQsbW9kZT03MDAsaW5vZGU2NCxodWdlPWFkdmlzZSxub3N3YXAKNDMgMjggMDoyMiAvIC9kZXYvbXF1ZXVlIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE3IC0gbXF1ZXVlIG1xdWV1ZSBydwo0NCAyNyAwOjQyIC8gL3N5cy9mcy9mdXNlL2Nvbm5lY3Rpb25zIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE4IC0gZnVzZWN0bCBmdXNlY3RsIHJ3CjQ1IDI3IDA6MjAgLyAvc3lzL2tlcm5lbC9jb25maWcgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6MTkgLSBjb25maWdmcyBjb25maWdmcyBydwo0NiAyNyAwOjkgLyAvc3lzL2tlcm5lbC9kZWJ1ZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMCAtIGRlYnVnZnMgZGVidWdmcyBydwo0NyAyNyAwOjE0IC8gL3N5cy9rZXJuZWwvdHJhY2luZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMSAtIHRyYWNlZnMgdHJhY2VmcyBydwo0OCAyOCAwOjQzIC8gL2Rldi9odWdlcGFnZXMgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDoyMiAtIGh1Z2V0bGJmcyBodWdldGxiZnMgcncscGFnZXNpemU9Mk0KNzQgMzkgMDo0NSAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxNiAtIGJpbmZtdF9taXNjIGJpbmZtdF9taXNjIHJ3CjUxIDI5IDA6NDYgLyAvcnVuL2NyZWRlbnRpYWxzL3N5c3RlbWQtcmVzb2x2ZWQuc2VydmljZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lLG5vc3ltZm9sbG93IHNoYXJlZDo1MSAtIHRtcGZzIG5vbmUgcm8sc2l6ZT0xMDI0ayxucl9pbm9kZXM9MTAyNCxtb2RlPTcwMCxpbm9kZTY0LGh1Z2U9YWR2aXNlLG5vc3dhcAo2MCAzMyAwOjU3IC8gL3RtcCBydyxub3N1aWQsbm9kZXYgc2hhcmVkOjE4OSAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9MzI2MjExMTZrLG5yX2lub2Rlcz0xMDQ4NTc2LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKNTggMzMgMDozMCAvQGhvbWUgL2hvbWUgcncscmVsYXRpbWUgc2hhcmVkOjE5NSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTcsc3Vidm9sPS9AaG9tZQo2NiAzMyAwOjMwIC9AbG9nIC92YXIvbG9nIHJ3LHJlbGF0aW1lIHNoYXJlZDoyMDEgLSBidHJmcyAvZGV2L21hcHBlci9yb290IHJ3LGNvbXByZXNzPXpzdGQ6Myxzc2Qsc3BhY2VfY2FjaGU9djIsc3Vidm9saWQ9MjU4LHN1YnZvbD0vQGxvZwo1OSAzMyAwOjMwIC9AcGtnIC92YXIvY2FjaGUvcGFjbWFuL3BrZyBydyxyZWxhdGltZSBzaGFyZWQ6MjA3IC0gYnRyZnMgL2Rldi9tYXBwZXIvcm9vdCBydyxjb21wcmVzcz16c3RkOjMsc3NkLHNwYWNlX2NhY2hlPXYyLHN1YnZvbGlkPTI1OSxzdWJ2b2w9L0Bwa2cKMjUwIDMzIDI1OToxIC8gL2Jvb3QgcncscmVsYXRpbWUgc2hhcmVkOjIxMyAtIHZmYXQgL2Rldi9udm1lMG4xcDEgcncsZm1hc2s9MDA3NyxkbWFzaz0wMDc3LGNvZGVwYWdlPTQzNyxpb2NoYXJzZXQ9YXNjaWksc2hvcnRuYW1lPW1peGVkLHV0ZjgsZXJyb3JzPXJlbW91bnQtcm8KMzQ2IDI5IDA6ODQgLyAvcnVuL3VzZXIvMTAwMCBydyxub3N1aWQsbm9kZXYscmVsYXRpbWUgc2hhcmVkOjY1MyAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9NjUyNDIyMGssbnJfaW5vZGVzPTE2MzEwNTUsbW9kZT03MDAsdWlkPTEwMDAsZ2lkPTEwMDAsaW5vZGU2NCxodWdlPWFkdmlzZQozNDkgMzQ2IDA6NzggLyAvcnVuL3VzZXIvMTAwMC9kb2Mgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDo1NDAgLSBmdXNlLnBvcnRhbCBwb3J0YWwgcncsdXNlcl9pZD0xMDAwLGdyb3VwX2lkPTEwMDAK",
+              "bytes": 3414,
+              "sha256": "68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8"
+            },
+            "fdinfo": {
+              "flags": 688128,
+              "mnt_id": 35,
+              "ino": 80554
+            },
+            "conjuncts": {
+              "targetMatches": true,
+              "mappingDeviceInodeMatches": true,
+              "regular": true,
+              "fullModeZero": true,
+              "uidMatches": true,
+              "unlinked": true,
+              "sizeBounded": true,
+              "mountDeviceMatches": true
+            }
+          },
+          "producerFDBefore": {
+            "fd": 32,
+            "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "device": 33,
+            "inode": 80554,
+            "uid": 1000,
+            "mode": 0,
+            "nlink": 0,
+            "size": 2960,
+            "mtimeNs": 1790903887094748663,
+            "ctimeNs": 1790903887094748663,
+            "fdinfo": {
+              "flags": 688128,
+              "mnt_id": 35,
+              "ino": 80554
+            }
+          },
+          "producerFDDiagnosticAfter": {
+            "pid": 2048801,
+            "fd": 32,
+            "expectedMapping": {
+              "line": "786a69e4b000-786a69e4c000 r--p 00000000 00:21 80554                      /dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+              "begin": 132398438461440,
+              "end": 132398438465536,
+              "offset": 0,
+              "permissions": "r--p",
+              "device": 33,
+              "inode": 80554,
+              "path": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)"
+            },
+            "selectedMount": {
+              "id": 35,
+              "device": 33,
+              "root": "/",
+              "path": "/dev/shm",
+              "type": "tmpfs",
+              "source": "tmpfs",
+              "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+            },
+            "accepted": true,
+            "errors": {},
+            "stat": {
+              "st_mode": 32768,
+              "st_ino": 80554,
+              "st_dev": 33,
+              "st_nlink": 0,
+              "st_uid": 1000,
+              "st_gid": 1000,
+              "st_size": 2960,
+              "st_atime_ns": 1790903891917987564,
+              "st_mtime_ns": 1790903887094748663,
+              "st_ctime_ns": 1790903887094748663,
+              "st_blocks": 8,
+              "st_blksize": 4096,
+              "st_rdev": 0,
+              "fileType": 32768,
+              "fullMode": 0,
+              "deviceMajor": 0,
+              "deviceMinor": 33
+            },
+            "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "rawFdinfo": {
+              "base64": "cG9zOgkwCmZsYWdzOgkwMjUwMDAwMAptbnRfaWQ6CTM1CmlubzoJODA1NTQK",
+              "bytes": 45,
+              "sha256": "4bf1e3c2e4265359b47f3609641023ed091d9f0f4e3d121381e1e7c3c8920a4d"
+            },
+            "rawMountinfo": {
+              "base64": "MjYgMzMgMDoyNCAvIC9wcm9jIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjUgLSBwcm9jIHByb2MgcncKMjcgMzMgMDoyNSAvIC9zeXMgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6NiAtIHN5c2ZzIHN5cyBydwoyOCAzMyAwOjcgLyAvZGV2IHJ3LG5vc3VpZCxyZWxhdGltZSBzaGFyZWQ6MiAtIGRldnRtcGZzIGRldiBydyxzaXplPTMyNDI0NDA0ayxucl9pbm9kZXM9ODEwNjEwMSxtb2RlPTc1NSxpbm9kZTY0LGh1Z2U9YWR2aXNlCjI5IDMzIDA6MjYgLyAvcnVuIHJ3LG5vc3VpZCxub2RldixyZWxhdGltZSBzaGFyZWQ6MTIgLSB0bXBmcyBydW4gcncsbW9kZT03NTUsaW5vZGU2NCxodWdlPWFkdmlzZQozMCAyNyAwOjI3IC8gL3N5cy9maXJtd2FyZS9lZmkvZWZpdmFycyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDo3IC0gZWZpdmFyZnMgZWZpdmFyZnMgcncKMzIgMjggMDoyOSAvIC9kZXYvcHRzIHJ3LG5vc3VpZCxub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjMgLSBkZXZwdHMgZGV2cHRzIHJ3LGdpZD01LG1vZGU9NjIwLHB0bXhtb2RlPTAwMAozMyAyIDA6MzAgL0AgLyBydyxyZWxhdGltZSBzaGFyZWQ6MSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTYsc3Vidm9sPS9ACjM0IDI3IDA6OCAvIC9zeXMva2VybmVsL3NlY3VyaXR5IHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjggLSBzZWN1cml0eWZzIHNlY3VyaXR5ZnMgcncKMzUgMjggMDozMyAvIC9kZXYvc2htIHJ3LG5vc3VpZCxub2RldiBzaGFyZWQ6NCAtIHRtcGZzIHRtcGZzIHJ3LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKMzYgMjcgMDozNCAvIC9zeXMvZnMvY2dyb3VwIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjkgLSBjZ3JvdXAyIGNncm91cDIgcncsbnNkZWxlZ2F0ZSxtZW1vcnlfcmVjdXJzaXZlcHJvdCxtZW1vcnlfaHVnZXRsYl9hY2NvdW50aW5nCjM3IDI3IDA6MzUgLyAvc3lzL2ZzL3BzdG9yZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMCAtIHBzdG9yZSBub25lIHJ3CjM4IDI3IDA6MzYgLyAvc3lzL2ZzL2JwZiBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxMSAtIGJwZiBicGYgcncsbW9kZT03MDAKMzkgMjYgMDozOCAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxyZWxhdGltZSBzaGFyZWQ6MTMgLSBhdXRvZnMgc3lzdGVtZC0xIHJ3LGZkPTQzLHBncnA9MSx0aW1lb3V0PTAsbWlucHJvdG89NSxtYXhwcm90bz01LGRpcmVjdCxwaXBlX2lubz0xNzE4NAo0MCAyOSAwOjM5IC8gL3J1bi9jcmVkZW50aWFscy9zeXN0ZW1kLWpvdXJuYWxkLnNlcnZpY2Ugcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSxub3N5bWZvbGxvdyBzaGFyZWQ6MTUgLSB0bXBmcyBub25lIHJvLHNpemU9MTAyNGssbnJfaW5vZGVzPTEwMjQsbW9kZT03MDAsaW5vZGU2NCxodWdlPWFkdmlzZSxub3N3YXAKNDMgMjggMDoyMiAvIC9kZXYvbXF1ZXVlIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE3IC0gbXF1ZXVlIG1xdWV1ZSBydwo0NCAyNyAwOjQyIC8gL3N5cy9mcy9mdXNlL2Nvbm5lY3Rpb25zIHJ3LG5vc3VpZCxub2Rldixub2V4ZWMscmVsYXRpbWUgc2hhcmVkOjE4IC0gZnVzZWN0bCBmdXNlY3RsIHJ3CjQ1IDI3IDA6MjAgLyAvc3lzL2tlcm5lbC9jb25maWcgcncsbm9zdWlkLG5vZGV2LG5vZXhlYyxyZWxhdGltZSBzaGFyZWQ6MTkgLSBjb25maWdmcyBjb25maWdmcyBydwo0NiAyNyAwOjkgLyAvc3lzL2tlcm5lbC9kZWJ1ZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMCAtIGRlYnVnZnMgZGVidWdmcyBydwo0NyAyNyAwOjE0IC8gL3N5cy9rZXJuZWwvdHJhY2luZyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoyMSAtIHRyYWNlZnMgdHJhY2VmcyBydwo0OCAyOCAwOjQzIC8gL2Rldi9odWdlcGFnZXMgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDoyMiAtIGh1Z2V0bGJmcyBodWdldGxiZnMgcncscGFnZXNpemU9Mk0KNzQgMzkgMDo0NSAvIC9wcm9jL3N5cy9mcy9iaW5mbXRfbWlzYyBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lIHNoYXJlZDoxNiAtIGJpbmZtdF9taXNjIGJpbmZtdF9taXNjIHJ3CjUxIDI5IDA6NDYgLyAvcnVuL2NyZWRlbnRpYWxzL3N5c3RlbWQtcmVzb2x2ZWQuc2VydmljZSBydyxub3N1aWQsbm9kZXYsbm9leGVjLHJlbGF0aW1lLG5vc3ltZm9sbG93IHNoYXJlZDo1MSAtIHRtcGZzIG5vbmUgcm8sc2l6ZT0xMDI0ayxucl9pbm9kZXM9MTAyNCxtb2RlPTcwMCxpbm9kZTY0LGh1Z2U9YWR2aXNlLG5vc3dhcAo2MCAzMyAwOjU3IC8gL3RtcCBydyxub3N1aWQsbm9kZXYgc2hhcmVkOjE4OSAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9MzI2MjExMTZrLG5yX2lub2Rlcz0xMDQ4NTc2LGlub2RlNjQsaHVnZT1hZHZpc2UsdXNycXVvdGEKNTggMzMgMDozMCAvQGhvbWUgL2hvbWUgcncscmVsYXRpbWUgc2hhcmVkOjE5NSAtIGJ0cmZzIC9kZXYvbWFwcGVyL3Jvb3QgcncsY29tcHJlc3M9enN0ZDozLHNzZCxzcGFjZV9jYWNoZT12MixzdWJ2b2xpZD0yNTcsc3Vidm9sPS9AaG9tZQo2NiAzMyAwOjMwIC9AbG9nIC92YXIvbG9nIHJ3LHJlbGF0aW1lIHNoYXJlZDoyMDEgLSBidHJmcyAvZGV2L21hcHBlci9yb290IHJ3LGNvbXByZXNzPXpzdGQ6Myxzc2Qsc3BhY2VfY2FjaGU9djIsc3Vidm9saWQ9MjU4LHN1YnZvbD0vQGxvZwo1OSAzMyAwOjMwIC9AcGtnIC92YXIvY2FjaGUvcGFjbWFuL3BrZyBydyxyZWxhdGltZSBzaGFyZWQ6MjA3IC0gYnRyZnMgL2Rldi9tYXBwZXIvcm9vdCBydyxjb21wcmVzcz16c3RkOjMsc3NkLHNwYWNlX2NhY2hlPXYyLHN1YnZvbGlkPTI1OSxzdWJ2b2w9L0Bwa2cKMjUwIDMzIDI1OToxIC8gL2Jvb3QgcncscmVsYXRpbWUgc2hhcmVkOjIxMyAtIHZmYXQgL2Rldi9udm1lMG4xcDEgcncsZm1hc2s9MDA3NyxkbWFzaz0wMDc3LGNvZGVwYWdlPTQzNyxpb2NoYXJzZXQ9YXNjaWksc2hvcnRuYW1lPW1peGVkLHV0ZjgsZXJyb3JzPXJlbW91bnQtcm8KMzQ2IDI5IDA6ODQgLyAvcnVuL3VzZXIvMTAwMCBydyxub3N1aWQsbm9kZXYscmVsYXRpbWUgc2hhcmVkOjY1MyAtIHRtcGZzIHRtcGZzIHJ3LHNpemU9NjUyNDIyMGssbnJfaW5vZGVzPTE2MzEwNTUsbW9kZT03MDAsdWlkPTEwMDAsZ2lkPTEwMDAsaW5vZGU2NCxodWdlPWFkdmlzZQozNDkgMzQ2IDA6NzggLyAvcnVuL3VzZXIvMTAwMC9kb2Mgcncsbm9zdWlkLG5vZGV2LHJlbGF0aW1lIHNoYXJlZDo1NDAgLSBmdXNlLnBvcnRhbCBwb3J0YWwgcncsdXNlcl9pZD0xMDAwLGdyb3VwX2lkPTEwMDAK",
+              "bytes": 3414,
+              "sha256": "68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8"
+            },
+            "fdinfo": {
+              "flags": 688128,
+              "mnt_id": 35,
+              "ino": 80554
+            },
+            "conjuncts": {
+              "targetMatches": true,
+              "mappingDeviceInodeMatches": true,
+              "regular": true,
+              "fullModeZero": true,
+              "uidMatches": true,
+              "unlinked": true,
+              "sizeBounded": true,
+              "mountDeviceMatches": true
+            }
+          },
+          "producerFDAfter": {
+            "fd": 32,
+            "target": "/dev/shm/0e57239e-b9ae-4ff7-8b82-ef63de6096bd (deleted)",
+            "device": 33,
+            "inode": 80554,
+            "uid": 1000,
+            "mode": 0,
+            "nlink": 0,
+            "size": 2960,
+            "mtimeNs": 1790903887094748663,
+            "ctimeNs": 1790903887094748663,
+            "fdinfo": {
+              "flags": 688128,
+              "mnt_id": 35,
+              "ino": 80554
+            }
+          },
+          "matchingProducerFDsAfter": [
+            32
+          ]
+        }
+      ],
+      "consumerAfter": {
+        "pid": 2049362,
+        "start": "12636457",
+        "uids": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1eb9819ff2a7436e926bc0d5e65d568d.scope\n",
+        "exe": "/usr/bin/quickshell",
+        "exeSHA256": "2dc99382c032710fe495ed115cdee9dc9c69bdb3a21af4d86a9a8ea16733069b",
+        "mountNamespace": "mnt:[4026531832]"
+      },
+      "producerAfter": {
+        "pid": 2048801,
+        "start": "12635981",
+        "uids": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1eb9819ff2a7436e926bc0d5e65d568d.scope\n",
+        "exe": "/usr/bin/Hyprland",
+        "exeSHA256": "da8fcacf347bcbed83edc40108c6e2298da095e22246bd764e9bb382786cebb2",
+        "mountNamespace": "mnt:[4026531832]"
+      },
+      "privatePeerAfter": {
+        "path": "/run/user/1000/wqa/01c9/wayland-1",
+        "pid": 2048801,
+        "uid": 1000,
+        "gid": 1000,
+        "device": 84,
+        "inode": 339049
+      },
+      "consumerMapsAfterSHA256": "3cdb067ea1be4ffa7c5f6d788bb3ecc688782b20fdddb75ea8e6bd938f1bcb96",
+      "producerMapsAfterSHA256": "0cd347815c0acd1c031485db71757cfa8e09d5ff50847051442a506c0591dd85",
+      "mountAfter": {
+        "id": 35,
+        "device": 33,
+        "root": "/",
+        "path": "/dev/shm",
+        "type": "tmpfs",
+        "source": "tmpfs",
+        "line": "35 28 0:33 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64,huge=advise,usrquota"
+      }
+    },
+    "confirmedAfterDiskValidation": true,
+    "usableForInput": true
+  }
+]

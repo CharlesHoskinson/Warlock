@@ -1,0 +1,185 @@
+{
+  "result": "actual loader-triggered evaluation authority gap confirmed",
+  "sourceManifestSHA256": "29b5dc5274f440b6bcf35b88027eadff01fa74f876cdff10d19c9a607ecec9ac",
+  "sourceCount": 21804,
+  "modeCount": 21804,
+  "linkCount": 327,
+  "completeFrozenBytesModesLinks": true,
+  "refused": [
+    {
+      "line": 35,
+      "event": {
+        "ancestry": [
+          {
+            "parent": 1918230,
+            "pgid": 1918394,
+            "pid": 1918394,
+            "start": "12384081"
+          }
+        ],
+        "args": [
+          "hydrate"
+        ],
+        "delegateExecuted": false,
+        "event": "refused",
+        "exitCode": 125,
+        "helper": "snap",
+        "operation": "generation:2:hydrate",
+        "reason": "Duplicate or unauthorized helper operation",
+        "stderr": "Exact private helper refused: RuntimeError('Duplicate or unauthorized helper operation')\n",
+        "timeNs": 1790901372083663435,
+        "wrapper": {
+          "parent": 1918394,
+          "pgid": 1918394,
+          "pid": 1919372,
+          "start": "12384489"
+        }
+      }
+    },
+    {
+      "line": 36,
+      "event": {
+        "ancestry": [
+          {
+            "parent": 1918230,
+            "pgid": 1918394,
+            "pid": 1918394,
+            "start": "12384081"
+          }
+        ],
+        "args": [
+          "hydrate"
+        ],
+        "delegateExecuted": false,
+        "event": "refused",
+        "exitCode": 125,
+        "helper": "snap",
+        "operation": "generation:2:hydrate",
+        "reason": "Duplicate or unauthorized helper operation",
+        "stderr": "Exact private helper refused: RuntimeError('Duplicate or unauthorized helper operation')\n",
+        "timeNs": 1790901372141432317,
+        "wrapper": {
+          "parent": 1918394,
+          "pgid": 1918394,
+          "pid": 1919382,
+          "start": "12384495"
+        }
+      }
+    },
+    {
+      "line": 37,
+      "event": {
+        "ancestry": [
+          {
+            "parent": 1918230,
+            "pgid": 1918394,
+            "pid": 1918394,
+            "start": "12384081"
+          }
+        ],
+        "args": [
+          "hydrate"
+        ],
+        "delegateExecuted": false,
+        "event": "refused",
+        "exitCode": 125,
+        "helper": "snap",
+        "operation": "generation:2:hydrate",
+        "reason": "Duplicate or unauthorized helper operation",
+        "stderr": "Exact private helper refused: RuntimeError('Duplicate or unauthorized helper operation')\n",
+        "timeNs": 1790901372144372543,
+        "wrapper": {
+          "parent": 1918394,
+          "pgid": 1918394,
+          "pid": 1919383,
+          "start": "12384495"
+        }
+      }
+    },
+    {
+      "line": 42,
+      "event": {
+        "ancestry": [
+          {
+            "parent": 1918230,
+            "pgid": 1918394,
+            "pid": 1918394,
+            "start": "12384081"
+          }
+        ],
+        "args": [
+          "hoskinson.windows",
+          "fileDrag",
+          "false",
+          "1230",
+          "265",
+          "0",
+          "111725091"
+        ],
+        "delegateExecuted": false,
+        "event": "refused",
+        "exitCode": 125,
+        "helper": "shell",
+        "operation": "generation:2:inactive-fileDrag",
+        "reason": "Duplicate or unauthorized helper operation",
+        "stderr": "Exact private helper refused: RuntimeError('Duplicate or unauthorized helper operation')\n",
+        "timeNs": 1790901372253480206,
+        "wrapper": {
+          "parent": 1918394,
+          "pgid": 1918394,
+          "pid": 1919424,
+          "start": "12384505"
+        }
+      }
+    }
+  ],
+  "hostLines": {
+    "firstUnload": 1825,
+    "reloadPlugin": 1864,
+    "refusedSpawn": {
+      "1919372": 1827,
+      "1919382": 1866,
+      "1919383": 1869,
+      "1919424": 1959
+    },
+    "finalProbeUnload": 1992,
+    "lateHydrateSpawn": 1994
+  },
+  "nativeUnloadRetirement": {
+    "exactControllerRetired": true,
+    "independentNativeFocusPreserved": true,
+    "realRawButtonUnchanged": true,
+    "groupsPreserved": true
+  },
+  "coreCommit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+  "expectedAutomaticEvaluations": {
+    "unload": 1,
+    "load": 2
+  },
+  "explicitReloadNotReached": true,
+  "watcherReloadMarkerAbsent": true,
+  "duplicateProductLuaListenerEstablished": false,
+  "allRefusedBeforeDelegate": true,
+  "retainedProducerFailure": true,
+  "full52Accepted": false,
+  "nativeCommands": false,
+  "mainWrites": false,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/attempt-1/qt-wayland/terminal-helpers/helper-events.jsonl": "91a7c3f64f0607fa0832c24d73f9fbd6018a5874f1523f4bbe0b5e0276b5b3b4",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/attempt-1/qt-wayland/terminal-helpers/helper-config.json": "8af2e4277e889d0de7385eed0b0c38ceca693eb22e5433cf425636616f73a6d1",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/attempt-1/qt-wayland/host/hyprland.log": "dd82f26e512c883ab63706ef35369ceb35e4c33943c35fa4aa3d94218bfdb1ae",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/attempt-1/qt-wayland/host/runtime-archive/hyprland.lua": "b842e7ecbad4f485ddf74c54960649589114b642860b76037416c2c85dd389b7",
+    "/home/hoskinson/window-integration-qa/held-load-causal-review-v1/primary/src_plugins_PluginSystem.cpp": "966d00f8bda2f254a8f19c375218b9049a07f3b7893af3270abdce457d81f7f9",
+    "/home/hoskinson/window-integration-qa/held-load-causal-review-v1/primary/src_plugins_PluginAPI.cpp": "db3c12780de4996afdab8250c2f6e68054c5710e132dadb8d13491dc61adc9cb",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/main.cpp": "9e6957e2db4048d06f13193357d364828d9226cc6e75b123f8af06737c36f4e1",
+    "/home/hoskinson/window-integration-qa/held-load-causal-review-v1/primary/src_managers_eventLoop_EventLoopManager.cpp": "104ff43a4c02fcc88e8711cade68becd3a1fe099e970e4b1306774c85dd76f7c",
+    "/home/hoskinson/window-integration-qa/held-load-causal-review-v1/primary/src_config_lua_ConfigManager.cpp": "94b5c6891326e7a3e490019d26fd9d6f5b3137fb5318a94dff0a6cb6dfdaf502",
+    "/home/hoskinson/window-integration-qa/held-load-causal-review-v1/primary/version.h": "8c22333a7415317e1eff96a6a046ecbcc2ddb8444d63d924e06c388b97b66efe",
+    "/home/hoskinson/window-integration-qa/held-load-causal-review-v1/primary-sources.json": "acd337680cb91489a5746bc2aa1f1d4b765c362c0b3d139a4c7ce144351f2e7e",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/held_route.py": "17cb3f70e22ab6a6a6121e8d81c5e8fb10be08ca53bcbd3844c871b1fc093177",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/helper_setup.py": "d4638a930a8e6ab31b4b8de5d40b62e527518c7891dd47a552854cb0a6ad14c8",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/helper_observer.py": "1dfd0c8e1ec16275a85d9b1c472fbc08e3f4c14e245018adb7f8dd1972788b77",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/attempt-1/qt-wayland/case-3/report.json": "55cc4d381a64dc33cce469c69e8841804d0325725bf3f015eaac9fe06e83575b"
+  },
+  "boundary": "Core control flow comes from advertised clean exact commit and corroborating retained execution log; not a rebuilt core or native callback trace"
+}

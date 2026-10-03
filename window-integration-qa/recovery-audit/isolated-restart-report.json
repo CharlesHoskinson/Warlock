@@ -1,0 +1,64 @@
+{
+  "scope": "dedicated nested compositor shutdown/restart, not main restart or physical hotplug",
+  "checks": {
+    "nativeGroupRecorded": true,
+    "sameInstanceReloadHydratesExactNormalRect": true,
+    "newInstanceClearsForeignGroups": true,
+    "newClientReceivesNoStaleSnap": true,
+    "mainClientsPreserved": true,
+    "mainA11yUnchanged": true,
+    "mainFocusPreserved": true,
+    "mainCursorPreserved": true
+  },
+  "sessions": [
+    {
+      "pid": 2572638,
+      "signature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790827514_1324217800"
+    },
+    {
+      "pid": 2572780,
+      "signature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790827515_1611921156"
+    }
+  ],
+  "result": "pass",
+  "isolation": {
+    "a11yBefore": {
+      "identity": [
+        84,
+        91312
+      ],
+      "connects": true
+    },
+    "a11yAfter": {
+      "identity": [
+        84,
+        91312
+      ],
+      "connects": true
+    },
+    "originalClientIdentities": 4,
+    "originalFocus": [
+      "0x5a02afa13e90",
+      252010,
+      "1800006a"
+    ],
+    "restoredFocus": [
+      "0x5a02afa13e90",
+      252010,
+      "1800006a"
+    ],
+    "originalCursor": {
+      "x": 527,
+      "y": 539
+    },
+    "restoredCursor": {
+      "x": 527,
+      "y": 539
+    }
+  },
+  "cleanup": {
+    "compositorPidsExited": true,
+    "fixtureWindowsRemoved": true,
+    "privateRuntimeRemoved": true
+  }
+}

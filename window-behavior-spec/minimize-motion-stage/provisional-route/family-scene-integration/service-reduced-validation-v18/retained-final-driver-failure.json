@@ -1,0 +1,10 @@
+{
+  "result": "fail outer driver after completed offline proof and source collection",
+  "exitCode": 1,
+  "driverSHA256": "f2d6bec64d2a23ea250094861f70c4b80d5c425bd412b39bae6f641b6a368b33",
+  "error": "AttributeError: 'str' object has no attribute 'read_bytes' at post-proof changed-source inspection (final_reduced_gate.py:13, sha lambda:6)",
+  "offlineProofPresent": true,
+  "originalSourceReadyPresent": true,
+  "productChangedByFailure": false,
+  "nativeLaunch": false
+}

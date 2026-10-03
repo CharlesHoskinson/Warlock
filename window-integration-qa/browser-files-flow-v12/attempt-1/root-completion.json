@@ -1,0 +1,199 @@
+{
+  "updatedUTC": "2026-10-02T00:49:38.114111+00:00",
+  "reportSHA256": "157118abe47bfbab15be625458e4e063d2020fe6e32b7375752d8f616db18899",
+  "manifestSHA256": "488185c660d297cc363bd45de8d7b5ce3ab743735776a0fe1d7006b02b235e9e",
+  "fileCount": 40477,
+  "linkCount": 13770,
+  "independentChecks": {
+    "allFrozenBytesModesExact": true,
+    "allFrozenLinksExact": true,
+    "all18MainPreserved": true,
+    "allRecordedPIDStartGone": true,
+    "privateRuntimeGone": true,
+    "noUnexpectedOrRemainingHelpers": true,
+    "normalBrowserAndNoForcedCleanup": true,
+    "nativeProbeAndPluginUnloadedNormally": true,
+    "healthyArchivedParentTransport": true,
+    "actualPrivateBusActivationPolicyVerified": true,
+    "initialRangeDiagnosticIndependentlyReplayed": true,
+    "actualBrowserPrivateBusPIDBindingIndependentlyReplayed": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "privateBrowserFilesAccepted": false,
+  "processes": [
+    {
+      "pid": 1952937,
+      "start": "12452289",
+      "gone": true
+    },
+    {
+      "pid": 1952944,
+      "start": "12452293",
+      "gone": true
+    },
+    {
+      "pid": 1952961,
+      "start": "12452354",
+      "gone": true
+    },
+    {
+      "pid": 1952937,
+      "start": "12452289",
+      "gone": true
+    },
+    {
+      "pid": 1952944,
+      "start": "12452293",
+      "gone": true
+    },
+    {
+      "pid": 1952961,
+      "start": "12452354",
+      "gone": true
+    },
+    {
+      "pid": 1953091,
+      "start": "12452662",
+      "gone": true
+    },
+    {
+      "pid": 1953135,
+      "start": "12452690",
+      "gone": true
+    },
+    {
+      "pid": 1953104,
+      "start": "12452683",
+      "gone": true
+    },
+    {
+      "pid": 1953137,
+      "start": "12452691",
+      "gone": true
+    },
+    {
+      "pid": 1953106,
+      "start": "12452685",
+      "gone": true
+    },
+    {
+      "pid": 1953103,
+      "start": "12452683",
+      "gone": true
+    },
+    {
+      "pid": 1953207,
+      "start": "12452700",
+      "gone": true
+    },
+    {
+      "pid": 1953208,
+      "start": "12452700",
+      "gone": true
+    },
+    {
+      "pid": 1953179,
+      "start": "12452694",
+      "gone": true
+    },
+    {
+      "pid": 1953305,
+      "start": "12452822",
+      "gone": true
+    },
+    {
+      "pid": 1953350,
+      "start": "12452839",
+      "gone": true
+    },
+    {
+      "pid": 1953328,
+      "start": "12452838",
+      "gone": true
+    },
+    {
+      "pid": 1953329,
+      "start": "12452838",
+      "gone": true
+    },
+    {
+      "pid": 1953330,
+      "start": "12452838",
+      "gone": true
+    },
+    {
+      "pid": 1953331,
+      "start": "12452838",
+      "gone": true
+    },
+    {
+      "pid": 1953332,
+      "start": "12452838",
+      "gone": true
+    },
+    {
+      "pid": 1953362,
+      "start": "12452843",
+      "gone": true
+    },
+    {
+      "pid": 1953363,
+      "start": "12452843",
+      "gone": true
+    },
+    {
+      "pid": 1953366,
+      "start": "12452843",
+      "gone": true
+    },
+    {
+      "pid": 1953091,
+      "start": "12452662",
+      "gone": true
+    },
+    {
+      "pid": 1953305,
+      "start": "12452822",
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "environmentObservations": [
+    {
+      "name": "browser",
+      "identity": {
+        "pid": 1953091,
+        "start": "12452662",
+        "ppid": 1952630,
+        "pgid": 1953091
+      },
+      "bytes": 10166,
+      "nonzeroBytes": 0,
+      "initialRangeMatches": false,
+      "currentLibcSelectorsProved": false
+    },
+    {
+      "name": "files",
+      "identity": {
+        "pid": 1953305,
+        "start": "12452822",
+        "ppid": 1952630,
+        "pgid": 1953305
+      },
+      "bytes": 10293,
+      "nonzeroBytes": 10072,
+      "initialRangeMatches": true,
+      "currentLibcSelectorsProved": false
+    }
+  ],
+  "failure": "RuntimeError('Metrics witness observation unavailable:{\\'directory:parent\\': {\\'type\\': \\'FileNotFoundError\\', \\'errno\\': 2, \\'error\\': \"[Errno 2] No such file or directory: \\'/run/user/1000/wqa/8cfc/browser-profile/BrowserMetrics\\'\"}}')",
+  "rawOwnedProcessEvidenceSHA256": "ab6e530251c5a47c557af194c2dc1ed7fcf38392e4943c3d11d867a49d6b76e9",
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false
+}

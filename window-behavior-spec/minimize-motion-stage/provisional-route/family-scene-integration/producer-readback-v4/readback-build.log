@@ -1,0 +1,36 @@
+g++ -std=c++20 -O2 -fPIC -Wall -Wextra -Wno-misleading-indentation test_readback_image.cpp -o test-readback-image -I/usr/include/qt6/QtCore -I/usr/include/qt6 -DQT_CORE_LIB -I/usr/lib/qt6/mkspecs/linux-g++ -I/usr/include/libpng16 -lQt6Core -lpng16 -lEGL -lGLESv2 -lwayland-egl -lwayland-client -lm
+g++ -std=c++20 -O2 -fPIC -Wall -Wextra -Wno-misleading-indentation Renderer.cpp layer-shell-protocol.o presentation-protocol.o viewporter-protocol.o xdg-output-protocol.o fractional-scale-protocol.o xdg-shell-protocol.o -o hypr-motion-renderer-staged -I/usr/include/qt6/QtCore -I/usr/include/qt6 -DQT_CORE_LIB -I/usr/lib/qt6/mkspecs/linux-g++ -I/usr/include/libpng16 -lQt6Core -lpng16 -lEGL -lGLESv2 -lwayland-egl -lwayland-client -lm
+In file included from test_readback_image.cpp:1:
+ReadbackImage.hpp: In function ‘std::vector<unsigned char> OwnedReadback::topLeftRows(const std::vector<unsigned char>&, int, int)’:
+ReadbackImage.hpp:12:29: error: ‘uint64_t’ was not declared in this scope
+   12 |     if(width<=0||height<=0||uint64_t(width)*height*4>256*1024*1024||pixels.size()!=uint64_t(width)*height*4)throw std::invalid_argument("readback extent disagrees");
+      |                             ^~~~~~~~
+ReadbackImage.hpp:10:1: note: ‘uint64_t’ is defined in header ‘<cstdint>’; this is probably fixable by adding ‘#include <cstdint>’
+    9 | #include <vector>
+  +++ |+#include <cstdint>
+   10 | namespace OwnedReadback {
+ReadbackImage.hpp: In function ‘void OwnedReadback::publishPNG(int, const std::string&, int, int, const std::vector<unsigned char>&)’:
+ReadbackImage.hpp:18:133: error: ‘uint64_t’ was not declared in this scope
+   18 |     if(filename.empty()||filename.find('/')!=std::string::npos||filename=="."||filename==".."||width<=0||height<=0||topLeft.size()!=uint64_t(width)*height*4)throw std::invalid_argument("invalid readback publication");
+      |                                                                                                                                     ^~~~~~~~
+ReadbackImage.hpp:18:133: note: ‘uint64_t’ is defined in header ‘<cstdint>’; this is probably fixable by adding ‘#include <cstdint>’
+make: *** [Makefile:27: test-readback-image] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonarray.h:8,
+                 from /usr/include/qt6/QtCore/QJsonArray:1,
+                 from LibraryMaterial.hpp:4,
+                 from Renderer.cpp:4:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/map:67,
+                 from CommitLedger.hpp:5,
+                 from Renderer.cpp:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~

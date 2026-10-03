@@ -1,0 +1,138 @@
+{
+  "result": "confirmed-unexpected-close-helper-lifetimes",
+  "originalReplaySHA256": "d85cd6de89a4264b993011d1ee5ac7687d8a69de1ec8ca0047a57acc6e4c79a9",
+  "exactPIDStartMatches": [
+    {
+      "hostUnexpected": {
+        "pid": 2354286,
+        "start": "17153362",
+        "pgid": 2351444
+      },
+      "exactHelperMatches": [
+        {
+          "role": "wrapper",
+          "operation": "forget-closed:0x626065b7acd0:18000001:2352450",
+          "args": [
+            "forget-closed",
+            "0x626065b7acd0",
+            "18000001",
+            "2352450"
+          ],
+          "actualBackend": "/run/user/1000/wqa/dc95/taskbar-home/.local/bin/hypr-snap-groups.actual",
+          "backendSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+          "startedNsRealtime": 1790949060986034044,
+          "identity": {
+            "parent": 2351444,
+            "pgid": 2351444,
+            "pid": 2354286,
+            "start": "17153362"
+          },
+          "compositorAncestry": [
+            {
+              "parent": 2350344,
+              "pgid": 2351444,
+              "pid": 2351444,
+              "start": "17151754"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "hostUnexpected": {
+        "pid": 2354287,
+        "start": "17153363",
+        "pgid": 2351444
+      },
+      "exactHelperMatches": [
+        {
+          "role": "wrapper",
+          "operation": "forget-closed:0x626065b88680:18000000:2352450",
+          "args": [
+            "forget-closed",
+            "0x626065b88680",
+            "18000000",
+            "2352450"
+          ],
+          "actualBackend": "/run/user/1000/wqa/dc95/taskbar-home/.local/bin/hypr-snap-groups.actual",
+          "backendSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+          "startedNsRealtime": 1790949060992062818,
+          "identity": {
+            "parent": 2351444,
+            "pgid": 2351444,
+            "pid": 2354287,
+            "start": "17153363"
+          },
+          "compositorAncestry": [
+            {
+              "parent": 2350344,
+              "pgid": 2351444,
+              "pid": 2351444,
+              "start": "17151754"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "hostUnexpected": {
+        "pid": 2354298,
+        "start": "17153383",
+        "pgid": 2351444
+      },
+      "exactHelperMatches": [
+        {
+          "role": "delegate",
+          "operation": "forget-closed:0x626065b88680:18000000:2352450",
+          "args": [
+            "forget-closed",
+            "0x626065b88680",
+            "18000000",
+            "2352450"
+          ],
+          "actualBackend": "/run/user/1000/wqa/dc95/taskbar-home/.local/bin/hypr-snap-groups.actual",
+          "backendSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+          "startedNsRealtime": 1790949060992062818,
+          "identity": {
+            "parent": 2354287,
+            "pgid": 2351444,
+            "pid": 2354298,
+            "start": "17153383"
+          },
+          "compositorAncestry": [
+            {
+              "parent": 2350344,
+              "pgid": 2351444,
+              "pid": 2351444,
+              "start": "17151754"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "all3UnexpectedIdentitiesMatched": true,
+  "allSelectedLifetimesCurrentlyGone": true,
+  "allHelperTerminalsNormalProven": false,
+  "unexpectedDescendantsGatePass": false,
+  "normalHostExitProven": false,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v10/native_integration.py": "464f6c6c2d7264a0b86275996242973a217115cef9e1737c0e0f3e479ed39093",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v10/helper_setup.py": "3eb460716b8580c692b59508c9012d450b4ee7798c1e7486af558d4bc7eaf8cd",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v10/helper_observer.py": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v10/attempt-baseline-1/host/hyprland.log": "df664aa3c9cde0d2c34fb595af0dc852479a573649c516694455563e148597c3"
+  },
+  "actualChronology": [
+    "public Qt windows unmapped and executor starts exact forget-closed invocations, recorded in native log",
+    "normal Qt exit0 and QS exit0 retained",
+    "wait_and_archive calls summarize(expect_harness=True); source checks exactly-oneharness BEFORE terminal-count/still_live polling",
+    "actual original helper summary raises Exactly one harness query required, matching harness0 because failed feature gate precedes original snapshot call",
+    "deferred clients-first candidate unload callback retained normalNativeUnload=true",
+    "host archive records3 exact unexpected helper lifetimes and missing3terminal rows; later all selected lifetimes gone"
+  ],
+  "preciseBoundary": "source-backed early helper-summary failure skips the normal completion polling branch; individual missing delegate exit statuses and normal host exit remain unproved",
+  "featureFailurePreserved": true,
+  "normalPrivateClosureAccepted": false,
+  "nativeAccepted": false,
+  "mainChanged": false
+}

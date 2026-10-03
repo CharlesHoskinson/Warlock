@@ -1,0 +1,242 @@
+[
+  {
+    "id": "B01",
+    "area": 0,
+    "name": "ordinary floating conservation",
+    "genuineSetupAndStimulus": "Existing fixture owner already floating; real helper/titlebar/physical pin toggle",
+    "rawOracle": "Compare actual modes/workspace/output/geometry and peers; ordinary native pin result",
+    "prerequisites": "existing snapshots",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B02",
+    "area": 0,
+    "name": "unprotected native MAX",
+    "genuineSetupAndStimulus": "Owner tiled at spawn; native MAX set; real pointer/key focus",
+    "rawOracle": "MAX actual selected fullscreen target and original hit/Seat; ordinary blocked tiled peer remains blocked",
+    "prerequisites": "existing snapshots",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B03",
+    "area": 0,
+    "name": "exclusive pin refusal",
+    "genuineSetupAndStimulus": "Native exclusive set on exact current owner; captured helper request",
+    "rawOracle": "No pin action/native writes; modes/geometry/peers conserved; refusal remains raw",
+    "prerequisites": "negative helper route needs strict refusal decoder",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B04",
+    "area": 1,
+    "name": "tiled MAX pin/unpin and normal return",
+    "genuineSetupAndStimulus": "Tiled owner; native MAX; genuine titlebar pin then unpin; native MAX unset",
+    "rawOracle": "Both modes+restore generation/box unchanged through pin; exact owning normal return afterward",
+    "prerequisites": "existing snapshots plus native fullscreen event observer",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B05",
+    "area": 1,
+    "name": "floating MAX pin/unpin and floating return",
+    "genuineSetupAndStimulus": "Already floating owner save exact normal box; native MAX; physical chord pin/unpin; MAX unset",
+    "rawOracle": "Original floating/box/workspace/output and peers; no resize MAX emulation",
+    "prerequisites": "existing snapshots plus native fullscreen event observer",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B06",
+    "area": 1,
+    "name": "retained tiled pin after MAX exit",
+    "genuineSetupAndStimulus": "Tiled MAX; genuine pin; native MAX unset while pinned; explicit current captured unpin",
+    "rawOracle": "Normal tiled remains pinned until explicit intent; unpin does not invent floating/geometry",
+    "prerequisites": "existing snapshots",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B07",
+    "area": 2,
+    "name": "protected tiled versus ordinary MAX",
+    "genuineSetupAndStimulus": "B06 normal tiled still pinned; independent peer native MAX; real overlapping point/button",
+    "rawOracle": "Presented owner ROI, actual hit/pointer/core/Seat and Qt click owner; independent peer bit false",
+    "prerequisites": "output capture/presentation prerequisite",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B08",
+    "area": 2,
+    "name": "protected tiled versus protected MAX",
+    "genuineSetupAndStimulus": "Same real protected tiled owner; peer native MAX then genuine pin; independent bits true",
+    "rawOracle": "Actual protected winner from native band at overlap, presentation and core/Seat; both mode owners actual",
+    "prerequisites": "output capture/presentation prerequisite; require genuine simultaneous reach",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B09",
+    "area": 2,
+    "name": "independent child without ancestor intent",
+    "genuineSetupAndStimulus": "Unpinned owner with real Qt child/nested; genuine child pin; unrelated peer focus",
+    "rawOracle": "Child independent bit true and ancestor false; family protection/focus does not fabricate ancestor or sibling intent",
+    "prerequisites": "existing snapshots; presentation prerequisite",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B10",
+    "area": 2,
+    "name": "unrelated ordinary focus with modals elsewhere",
+    "genuineSetupAndStimulus": "Real open modal/nested family; independently focus unrelated peer by real input",
+    "rawOracle": "Actual core+Seat unrelated peer accepted; no routing into other family; original modal source conserved",
+    "prerequisites": "existing snapshots",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B11",
+    "area": 3,
+    "name": "allows_input refusal",
+    "genuineSetupAndStimulus": "Real pin admitted first; setprop address allows_input0; real pointer move into displayed box",
+    "rawOracle": "Excluded owner never actual hit/Seat/click; no blocked tiled peer revival",
+    "prerequisites": "fixed exclusion movement primitive rather than original move() owner expectation",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B12",
+    "area": 3,
+    "name": "no_focus refusal",
+    "genuineSetupAndStimulus": "Real pin admitted first; setprop address no_focus1; real focus/pointer stimulus",
+    "rawOracle": "Native refusal or eligible alternate; excluded owner not accepted core+Seat; no follow-up fake success",
+    "prerequisites": "fixed exclusion movement/focus observation",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B13",
+    "area": 3,
+    "name": "outside protected return box",
+    "genuineSetupAndStimulus": "Real pinned tiled normal return; physical cursor in eligible independent floating peer interior outside owner",
+    "rawOracle": "Protected owner not returned; actual eligible peer pointer/Seat; ordinary input blocks stay exact",
+    "prerequisites": "existing default probe and genuine pointer",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B14",
+    "area": 3,
+    "name": "ignoreWindow native query",
+    "genuineSetupAndStimulus": "Genuine existing protected MAX; physically recorded point; read-only exact windowAt ignoring captured owner",
+    "rawOracle": "Native result is eligible peer or null; excluded owner never returned",
+    "prerequisites": "additive read-only masked query; actual caller reachability separately pending",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B15",
+    "area": 3,
+    "name": "floatingOnly and floating mask",
+    "genuineSetupAndStimulus": "Genuine protected tiled+floating lifetimes; fixed read-only floating-only/mask queries at observed point",
+    "rawOracle": "Actual native query obeys typed masks and never revives excluded tiled/floating owner",
+    "prerequisites": "additive read-only masked query",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B16",
+    "area": 3,
+    "name": "focus priority and skip-fullscreen masks",
+    "genuineSetupAndStimulus": "Genuine ordinary/protected MAX scene; fixed priority/skip queries",
+    "rawOracle": "Original priority/native full-screen eligibility unchanged; no absent eligibility fabrication",
+    "prerequisites": "additive read-only masked query; priority actual precondition required",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B17",
+    "area": 4,
+    "name": "scrolling column return",
+    "genuineSetupAndStimulus": "Fixed private scrolling config before launch; real consume multirow; nondefault colresize; nonzero move; native layout MAX then genuine pin and MAX unset",
+    "rawOracle": "Original column/order/rowsizes/width/camera+peer/client state exact",
+    "prerequisites": "read-only actual scroll observer",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B18",
+    "area": 4,
+    "name": "stale scrolling remaining peer close",
+    "genuineSetupAndStimulus": "Same real scrolling MAX+pin; close genuine old peer in saved column; attempt actual native MAX exit; explicit current unpin",
+    "rawOracle": "Return refused actual state truthful; same-owned unpin succeeds; no replacement writes",
+    "prerequisites": "read-only actual scroll and native event observer; genuine stale precondition",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B19",
+    "area": 4,
+    "name": "stale scrolling membership change",
+    "genuineSetupAndStimulus": "Same real scrolling MAX+pin; move/promote genuine remaining row; native return request; explicit current unpin",
+    "rawOracle": "Actual column/row mismatch invalidates return; no fabricated restoration; unpin usable",
+    "prerequisites": "read-only scroll and event observer; confirm stale record actually reached",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B20",
+    "area": 5,
+    "name": "ordinary workspace dispatcher conservation",
+    "genuineSetupAndStimulus": "Real native MAX owner; dispatch movetoworkspace/movetoworkspacesilent to known workspace",
+    "rawOracle": "Raw mode event trajectory, final native/public fields and peers; ordinary upstream mode cycling labelled",
+    "prerequisites": "native event observer; not direct no-mode-cycle proof",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B21",
+    "area": 5,
+    "name": "direct owning workspace transfer",
+    "genuineSetupAndStimulus": "Real pin-managed tiled normal or native MAX; supported owning layout assign into known space",
+    "rawOracle": "New actual transferOutcome operation/generation accepted, actual mode/return/space identities",
+    "prerequisites": "read-only transfer observer; genuine supported caller reaching beginTransfer required",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B22",
+    "area": 5,
+    "name": "native output transfer",
+    "genuineSetupAndStimulus": "Real pin-managed window move to known workspace on distinct actual private output",
+    "rawOracle": "Actual output offset translation/restore/native state and source/destination peers",
+    "prerequisites": "separately reviewed two-output host and transfer observer",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B23",
+    "area": 5,
+    "name": "pre-existing group owning transfer",
+    "genuineSetupAndStimulus": "Create actual group before MAX; independent third peer from second immutable Qt actor; pin native group owner; owning group space move",
+    "rawOracle": "Actual exact group/member/current selection/target outcome and preserved independent bits/modes",
+    "prerequisites": "read-only group/transfer observer plus explicit new producer registry",
+    "nativeAccepted": false,
+    "original14Credit": false
+  },
+  {
+    "id": "B24",
+    "area": 5,
+    "name": "truthful partial transfer refusal",
+    "genuineSetupAndStimulus": "Genuine supported operation must actually trigger specific owning handler/scope refusal; retain its exact terminal outcome",
+    "rawOracle": "No false success/rollback/float/unMAX/reMAX/replacement compensation; current same-owned explicit unpin remains usable",
+    "prerequisites": "deterministic native trigger NOT established; pending, never counted from seed",
+    "nativeAccepted": false,
+    "original14Credit": false
+  }
+]

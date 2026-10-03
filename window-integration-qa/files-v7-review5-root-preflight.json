@@ -1,0 +1,15 @@
+{
+  "time": "2026-10-01T09:43:23.544013+00:00",
+  "verifiedInputs": 370,
+  "manifestSHA256": "99ee5d8438d89bc460de7fe6e1bf8c8bd91a3da1182554c4f0eac5cdacd65fe0",
+  "allSourcesMatch": true,
+  "review": "Same V7 product/native/formal candidate. Retained actual debug proves parent reached exact row, fresh fixture checks exact target after every command with no-progress and cycle bound; feature counts separate command acknowledgments. Existing preservation guards unchanged.",
+  "command": [
+    "python3",
+    "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/run_native.py",
+    "--attempt",
+    "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1"
+  ],
+  "oneAttemptOnly": true,
+  "noDeploymentGrant": true
+}

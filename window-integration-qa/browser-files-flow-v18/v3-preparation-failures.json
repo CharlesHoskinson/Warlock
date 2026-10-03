@@ -1,0 +1,15 @@
+{
+  "nativeExecuted": false,
+  "failures": [
+    {
+      "source": "process_evidence.qnt",
+      "error": "Quint annotated action lacked return type then assignment missing RHS parentheses",
+      "fixedBeforeImplementation": true
+    },
+    {
+      "source": "prepare_stage_review.py",
+      "error": "Source-obligation literal shell-generated invalid quoting",
+      "fixedBeforeFreeze": true
+    }
+  ]
+}

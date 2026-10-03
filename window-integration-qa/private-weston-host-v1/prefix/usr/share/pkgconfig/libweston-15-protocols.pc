@@ -1,0 +1,10 @@
+prefix=/usr
+includedir=${prefix}/include
+
+datarootdir=${prefix}/share
+pkgdatadir=${pc_sysrootdir}${datarootdir}/libweston-15/protocols
+
+Name: libWeston Protocols
+Description: libWeston protocol files
+Version: 15.0.1
+Cflags: -I${includedir}

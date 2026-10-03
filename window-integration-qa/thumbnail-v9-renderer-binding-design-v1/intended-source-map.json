@@ -1,0 +1,59 @@
+{
+  "result": "design-only-pass",
+  "runtimeEdited": false,
+  "nativeLaunch": false,
+  "sources": {
+    "module_binding.py": {
+      "oldSHA256": "468b84d888e7f9d53dcbf1a00f68a5ed43385d923e7dbff41ca4430e2f74cac0",
+      "intendedSHA256": "853152fd1208d9d4de567d62cf8a5a113302d29f5006b4925c101830fa4db1d2",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended/module_binding.py.txt"
+    },
+    "collector_v9_closure.py": {
+      "oldSHA256": null,
+      "intendedSHA256": "d2d37c91acc2f6d93a9421a5ca2e799d2fcfce7c15d9de062aef62a90e8f3128",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended/collector_v9_closure.py.txt"
+    },
+    "native_faults.py": {
+      "oldSHA256": "d2c1f03ba6750f44af6e644dfd28b11e6d273a92bfd0c019f08c23ac510ce562",
+      "intendedSHA256": "7c43d7c09c2c3e2b5021f60d5ee6491cc9fdf700f4f5ac35e834d80fe9fedb41",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended/native_faults.py.txt"
+    },
+    "native_integration.py": {
+      "oldSHA256": "e8b32b3a385813276495d83e15905599940fc98ebedcd1e50133febf0f4f3b91",
+      "intendedSHA256": "464f6c6c2d7264a0b86275996242973a217115cef9e1737c0e0f3e479ed39093",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended/native_integration.py.txt"
+    },
+    "renderer_binding_fixture.py": {
+      "oldSHA256": null,
+      "intendedSHA256": "3c079e146d580f9c26b24b8e61d2bb2e97f948653cc7b017bd2b9a9fde3b1256",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended/renderer_binding_fixture.py.txt"
+    },
+    "test_actual_binding.py": {
+      "oldSHA256": "14e98533b9d637aaa83b7972ca00e78ec381aa1afba3b86a656d2bf38e88e11c",
+      "intendedSHA256": "87b95e4b9c32f5b067a53b0a6e99f29047a7330c97be3de451728847391ce4bb",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended/test_actual_binding.py.txt"
+    },
+    "test_batch_binding.py": {
+      "oldSHA256": "a4789f78326e7832630f7e6058b5f35e1ac2272d777e3959ce9851480226a281",
+      "intendedSHA256": "1d57b926c9e3571343b37a22dd1742c5985570297a5405d78d5e2b573fe6ecfb",
+      "intendedPath": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/intended/test_batch_binding.py.txt"
+    }
+  },
+  "checks": {
+    "all19SelectorsUnchanged": true,
+    "wholeOriginal.batch_relations": true,
+    "wholeOriginal.batch_identity": true,
+    "wholeOriginal.archive_final": true,
+    "wholeOriginal.validate_evidence": true,
+    "wholeOriginal.validate_ledger": true,
+    "wholeOriginal.data_probe": true,
+    "wholeOriginal.bind_recovery": true,
+    "wholeOriginal.validate_recovery_evidence": true,
+    "baselineMainWholeExact": true,
+    "faultMainInverseExact": true,
+    "allOriginalOutcomeAssertions.test_actual_binding.py": true,
+    "allOriginalOutcomeAssertions.test_batch_binding.py": true
+  },
+  "patchSHA256": "cfcfade537357568c04874d528db181b112e91914635b1cd29fc8fafa2113303",
+  "retainedEvidenceSHA256": "0771396da43f5018362e103ba8d37cf2495ddca9dfde0a14eee33b92db08b3b4"
+}

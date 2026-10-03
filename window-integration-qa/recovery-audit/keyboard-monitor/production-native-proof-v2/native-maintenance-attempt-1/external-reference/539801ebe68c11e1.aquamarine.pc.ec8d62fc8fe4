@@ -1,0 +1,10 @@
+prefix=/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/prefix
+includedir=/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/prefix/include
+libdir=/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/prefix/lib
+
+Name: aquamarine
+URL: https://github.com/hyprwm/aquamarine
+Description: A very light linux rendering backend library
+Version: 0.15.0
+Cflags: -I${includedir}
+Libs: -L${libdir} -laquamarine

@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+"""Captured transient-family plan for windowctl; no window mutations here."""
+import json, sys
+from pathlib import Path
+sys.path.insert(0, str(Path.home()/'.local/share/hypr-window-controls'))
+from window_state import enrich_families, family_members, family_focus, family_root
+windows = enrich_families(json.load(sys.stdin))
+target = next((w for w in windows if w.get('address') == sys.argv[1]), None)
+if target is None: sys.exit(3)
+root = family_root(target, windows)
+print(json.dumps({'windows': family_members(target, windows), 'focus': family_focus(root, windows)}))

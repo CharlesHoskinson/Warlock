@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_key_bindings" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_profiles"/>
+  <title type="sort">8. Klávesové skratky</title>
+  <desc>Priraďovanie, zmena a rušenie priradenia príkazov</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Klávesové skratky</title>
+  <p>Orca má mnoho príkazov, z ktorých niektoré sú priradené ku klávesovej skratke a iné nie. Príkazy <app>Orca</app> môžete priraďovať, meniť a rušiť ich priradenie pomocou nasledujúcich krokov.</p>
+  <steps>
+    <title>Priradenie nepriradeného príkazu</title>
+    <item>
+      <p>Otvorte dialógové okno <link xref="preferences">Predvoľby Orca</link> stlačením <keyseq><key>Modifikátor Orca</key><key>Medzerník</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Presuňte sa na stránku <gui>Klávesové skratky</gui>.</p>
+    </item>
+    <item>
+      <p>Klávesmi so šípkami prejdite na bunku obsahujúcu príkaz, ku ktorému chcete priradiť klávesovú skratku.</p>
+    </item>
+    <item>
+      <p>Stlačte šípku doprava. Tým sa fokus umiestni do stĺpca <gui>Klávesová skratka</gui>. Stlačte <key>Return</key>.</p>
+    </item>
+    <item>
+      <p>Stlačte požadovanú kombináciu klávesov.</p></item>
+    <item>
+      <p>Stlačte <key>Return</key> na potvrdenie novej kombinácie. Nová klávesová skratka sa uloží a začiarkavacie políčko v poslednom stĺpci (stĺpec <gui>Zmenené</gui>) bude indikovať, že priradenie klávesov bolo upravené.</p>
+    </item>
+    <item>
+      <p>Stlačte tlačidlo <gui>Použiť</gui>.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Zmena existujúcich priradení</title>
+    <item>
+      <p>Otvorte dialógové okno <link xref="preferences">Predvoľby Orca</link> stlačením <keyseq><key>Modifikátor Orca</key><key>Medzerník</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Presuňte sa na stránku <gui>Klávesové skratky</gui>.</p>
+    </item>
+    <item>
+      <p>Klávesmi so šípkami prejdite na bunku obsahujúcu priradenie, ktoré chcete zmeniť, a stlačte <key>Return</key>.</p>
+    </item>
+    <item>
+        <p>Stlačte požadovanú kombináciu klávesov.</p>
+    </item>
+    <item>
+      <p>Stlačte <key>Return</key> na potvrdenie novej kombinácie. Nová klávesová skratka sa uloží a začiarkavacie políčko v poslednom stĺpci (stĺpec <gui>Zmenené</gui>) bude indikovať, že priradenie klávesov bolo upravené.</p>
+    </item>
+    <item>
+      <p>Stlačte tlačidlo <gui>Použiť</gui>.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Obnovenie pôvodných priradení</title>
+    <item>
+      <p>Otvorte dialógové okno <link xref="preferences">Predvoľby Orca</link> stlačením <keyseq><key>Modifikátor Orca</key><key>Medzerník</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Presuňte sa na stránku <gui>Klávesové skratky</gui>.</p>
+    </item>
+    <item>
+      <p>Klávesmi so šípkami prejdite na upravený stĺpec spojený s priradením klávesov.</p>
+    </item>
+    <item>
+      <p>Zrušte začiarknutie políčka stlačením <key>Medzerník</key>.</p>
+    </item>
+    <item>
+      <p>Stlačte tlačidlo <gui>Použiť</gui>.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Odpriradenie priradených príkazov</title>
+    <item>
+      <p>Otvorte dialógové okno <link xref="preferences">Predvoľby Orca</link> stlačením <keyseq><key>Modifikátor Orca</key><key>Medzerník</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Presuňte sa na stránku <gui>Klávesové skratky</gui>.</p>
+    </item>
+    <item>
+      <p>Klávesmi so šípkami prejdite na bunku obsahujúcu priradenie, ktoré chcete odstrániť, a stlačte <key>Return</key>.</p>
+    </item>
+    <item>
+      <p>Keď sa zobrazí výzva na zadanie novej klávesovej skratky, stlačte <key>Delete</key> alebo <key>BackSpace</key>. Zobrazí sa informácia, že priradenie klávesov bolo odstránené.</p>
+    </item>
+    <item>
+      <p>Stlačte <key>Return</key> na potvrdenie.</p>
+    </item>
+    <item>
+      <p>Stlačte tlačidlo <gui>Použiť</gui>.</p>
+    </item>
+  </steps>
+</page>

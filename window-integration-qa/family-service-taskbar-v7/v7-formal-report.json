@@ -1,0 +1,91 @@
+{
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v7/helper_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v7/helper_lifecycle.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "output": "\n  helper_lifecycle\n    ok startedCannotUnloadTest passed 100 test(s)\n    ok failedCannotUnloadTest passed 100 test(s)\n    ok completedPrefixCannotUnloadTest passed 100 test(s)\n    ok allNormalCanUnloadTest passed 100 test(s)\n\n  4 passing (41ms)\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v7/helper_lifecycle.qnt",
+        "--invariant",
+        "invariant",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20261001",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "output": "[ok] No violation found (794ms at 2519 traces/second).\nUse --seed=0x14605b4 --backend=rust to reproduce.\n"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v7/query_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v7/query_lifecycle.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "output": "\n  query_lifecycle\n    ok gateBeforeExecTest passed 1 test(s)\n    ok failedQueryCannotUnloadTest passed 100 test(s)\n    ok runningQueryCannotUnloadTest passed 100 test(s)\n    ok completedQueriesCanUnloadTest passed 100 test(s)\n\n  4 passing (40ms)\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v7/query_lifecycle.qnt",
+        "--invariant",
+        "invariant",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20261001",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "output": "[ok] No violation found (692ms at 2890 traces/second).\nUse --seed=0x14e9776 --backend=rust to reproduce.\n"
+    }
+  ],
+  "specs": {
+    "helper_lifecycle.qnt": "60b55937111914b6e1483b96f8ebb91f522d9e879a4d0a7a64a3088ba2619fae",
+    "query_lifecycle.qnt": "8c2ef24906d86a45903d66f1127e01cf884161f8c69c57b7c0be92e8a5c4cd45"
+  },
+  "named": 8,
+  "samplesPerModel": 2000,
+  "maxSteps": 100,
+  "seed": 20261001,
+  "nativeAccepted": false
+}

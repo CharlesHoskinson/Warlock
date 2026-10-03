@@ -1,0 +1,14 @@
+{
+  "counterexample": "A user disabling mouse review during backend loss must prevent activation on return",
+  "afterDisableDuringLoss": {
+    "disableReturned": false,
+    "requested": true,
+    "active": false
+  },
+  "afterBackendReturn": {
+    "requested": true,
+    "active": true
+  },
+  "sourceSHA256": "1ce58f95781ed564ab34e20f6076802d56dc772003b58df39b9ed9bb5af6cc39",
+  "native": false
+}

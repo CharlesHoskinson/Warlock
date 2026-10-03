@@ -1,0 +1,28 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f7175ac3b61148319dca61894e09b9bf.scope",
+    "coreLimit": 1
+  },
+  "sourceSHA256": {
+    "batch_preview.py": "875e9e25973458691607503a5293db423b8a6510dfc856f22c99a9121c6037de",
+    "native_desktop.py": "31ace97dda5342519aa749c4dcd01dbd70b425b79b507639a543cf9a2c00ba19"
+  },
+  "observation": {
+    "actualOwnedPNGReadEntered": true,
+    "actualStageHeldLifecycleLock": false,
+    "exactStagingEpochRefusedDuringScan": true,
+    "actualCleanupEnteredSharedReceipt": true,
+    "unrelatedOldEpoch": "abcdef123456-99",
+    "cleanupReturnedBeforeReadRelease": true,
+    "receiptAcquiredBeforeReadRelease": true,
+    "observationSeconds": 8.727976819500327e-06,
+    "cleanupReturnedAfterReadRelease": true,
+    "receiptAcquiredAfterReadRelease": true,
+    "oldSourceGone": true,
+    "allThreadsTerminal": true
+  },
+  "nativeLaunch": false,
+  "productChanged": true,
+  "scopeLimit": "actual fresh BatchPreviews.stage and NativeDesktop.release_sources; shared receipt lock as actual cleanup caller; CPU gated material read, no claim of measured native stall"
+}

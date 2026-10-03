@@ -1,0 +1,64 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-e62b44a5ad3e42af99c9a36f33c5999a.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/renderer_job_role_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/renderer_job_role_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  renderer_job_role_test\n    ok genuinePersistentRendererAcceptTest passed 1 test(s)\n    ok originalIndependentEmptyHelperRouteAcceptTest passed 1 test(s)\n    ok rendererBeforeBindRefusesTest passed 1 test(s)\n    ok boundButMissingJobRefusesTest passed 1 test(s)\n    ok rebindingRefusesAndPreservesOriginalTest passed 1 test(s)\n    ok foreignTransportCannotBindTest passed 1 test(s)\n    ok foreignLaunchCannotBindTest passed 1 test(s)\n    ok foreignRegisteredChildCannotBindTest passed 1 test(s)\n    ok wrongSelectedProducerCannotBindTest passed 1 test(s)\n    ok rendererLabelImpostorRefusesTest passed 1 test(s)\n    ok rightWrapperWrongRegisteredOwnershipRefusesTest passed 1 test(s)\n    ok replacedPIDRefusesTest passed 1 test(s)\n    ok reusedStartRefusesTest passed 1 test(s)\n    ok exitedRendererRefusesTest passed 1 test(s)\n    ok unexecutedGatedRendererRefusesTest passed 1 test(s)\n    ok duplicateSameActorRendererRefusesTest passed 1 test(s)\n    ok outstandingThumbnailHelperRefusesTest passed 1 test(s)\n    ok outstandingNativeExportRefusesTest passed 1 test(s)\n    ok outstandingNativeEffectRefusesTest passed 1 test(s)\n    ok unknownActorJobRefusesTest passed 1 test(s)\n    ok genuineOtherActorWorkFollowsOriginalPolicyTest passed 1 test(s)\n    ok actualExecutableMismatchRefusesTest passed 1 test(s)\n    ok exactArgvMismatchRefusesTest passed 1 test(s)\n    ok keeperReplacementRefusesTest passed 1 test(s)\n    ok changedSnapshotDuringIORefusesTest passed 1 test(s)\n    ok correctKindAndMaterialWrongObjectsRefuseTest passed 1 test(s)\n    ok gatedRegistryPhaseRefusesTest passed 1 test(s)\n    ok closedRegistryPhaseCannotClaimLiveTest passed 1 test(s)\n    ok changedSessionCannotBindTest passed 1 test(s)\n    ok helperKindCannotBorrowRendererBindingTest passed 1 test(s)\n    ok correctWrappersWrongActualPopenPIDRefuseTest passed 1 test(s)\n    ok nonCanonicalPopenWrapperRefusesTest passed 1 test(s)\n    ok bothOwnershipsProducerDeviceBooleanAliasRefuseTest passed 1 test(s)\n    ok registryOnlyProducerDeviceDecimalAliasRefusesTest passed 1 test(s)\n    ok launchOnlyPIDTextAliasRefusesTest passed 1 test(s)\n    ok actorBooleanTypeCannotBorrowIntegerIdentityTest passed 1 test(s)\n\n  36 passing (2341ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/renderer_job_role.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=2026100703",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (4617ms at 433 traces/second).\nUse --seed=0x78d62507 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "namedCases": 36,
+  "samples": 2000,
+  "steps": 100,
+  "runtimeUnchanged": true,
+  "runtimeBeforeSHA256": {
+    "batch_preview.py": "875e9e25973458691607503a5293db423b8a6510dfc856f22c99a9121c6037de",
+    "native_runtime.py": "a690e79fcb1231debce7a66fe7712d31942db6301fce79bc92effaa453a35c73",
+    "scene_controller.py": "3b47325e7e86b06492ef59576159482c6036297aeafdcb46875cf590d1844657",
+    "helper_supervisor.py": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+    "owned_launch.py": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+    "pipe_transport.py": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8",
+    "owned_commands.py": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba"
+  },
+  "baseManifestSHA256": "0d2b7b231eaa26c6618783b1cb2305c2a989586b3a7cb371716e2d67603c82e2",
+  "modelSHA256": {
+    "renderer_job_role.qnt": "63406f57d2a03fe62935f51d174cee915214074eea5c4155df2ea2a1edea073f",
+    "renderer_job_role_test.qnt": "d85e6e9a257892ac5e3e4ae9dd46b266ad169d351ca34e09fd1f533205429629",
+    "RENDERER_JOB_ROLE_CONTRACT.md": "d3466185a257199d4c6b3a9fb4b8399cd98404a5eb830641b2d021194f52baab"
+  },
+  "nativeLaunch": false
+}

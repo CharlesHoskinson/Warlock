@@ -1,0 +1,29 @@
+{
+  "updatedUTC": "2026-10-02T05:55:34.814826+00:00",
+  "result": "pass",
+  "checks": {
+    "initialExactLiveParentAndShell": true,
+    "queryOffersCompleteEmptyList": true,
+    "shellNormalQuitPrecedesWrite": true,
+    "actualWriteHasEPIPEAndNoDeliveredBytes": true,
+    "exactParentGoneAtWrite": true,
+    "exactShellGoneAtWrite": true,
+    "originalWaitRetains120AfterEPIPE": true,
+    "diagnosticCompleteWithoutErrors": true
+  },
+  "scope": "Actual V14 QS query failed pipe after normal shell quit; no inference about historical V10 or exact arm disjunction branch",
+  "sourcePath": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/attempt-1/qt-wayland/terminal-helpers/delegate-diagnostics/3455195-14245997.jsonl",
+  "sourceSHA256": "cf5d01978c0031f3e6a938997341a061f21179094adc317851943b583f520250",
+  "timestamps": {
+    "quitComplete": 1790919987630073155,
+    "shellGone": 1790919987695139357,
+    "writeEntry": 1790919987734214448,
+    "writeReturn": 1790919987734433463,
+    "wait120": 1790919987759817339
+  },
+  "armExactBranchClassified": false,
+  "historicalV10CauseProved": false,
+  "helperNormalAcceptance": false,
+  "nativeCommandsIssued": false,
+  "mainWrites": false
+}

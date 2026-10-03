@@ -1,0 +1,35 @@
+{
+  "created": "2026-10-02T11:25:07.363092+00:00",
+  "result": "approved-for-root-private-campaign-A-only",
+  "candidate": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/hyprbars-v25-pin-stacking-candidate.so",
+  "candidateSHA256": "84716c7a1042429fd89cbf44551541df42331ca89f26247049bac3069b984a97",
+  "actualBuildReport": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-v25-module-build-report.json",
+  "actualBuildReportSHA256": "ca3c023e44ad706441214ce3e71fda8a8308851e8e8bc9225b96994b3c154435",
+  "completeModelCPUReport": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/offline-final-report.json",
+  "completeModelCPUReportSHA256": "ddb476e952afa8050a92ad22f5bc5e14b01a6351795e13cd47e9533245679671",
+  "commandsVerified": 46,
+  "namedScenarios": 193,
+  "models": 15,
+  "CPUAssertionsReported": 112,
+  "reviewedProductSource": [
+    "PinLifetime.hpp",
+    "PinAction.hpp",
+    "PinBoundary.hpp",
+    "PinStacking.hpp",
+    "pinBridge.cpp full",
+    "main.cpp plugin registration/reload/exit",
+    "familyBridge.cpp owning raise/lower/focus hook mapping",
+    "barDeco.cpp captured reserved pin dispatch/button geometry/release"
+  ],
+  "QAComponent": "pin-input-episode-v2-component-handoff-v1.json",
+  "originalStaticGateASTs": 6,
+  "originalExecutedFeatureCases": 14,
+  "nativeAccepted": false,
+  "mainChanged": false,
+  "scope": "Legacy adoption, titlebar/chords, pin band/modal focus/lifetime/reload actual A; full frontend B, preview/minimize, max+pin, lower/reorder feedback/cadence and full parity remain separate.",
+  "remaining": [
+    "Freeze complete A1 ancestral closure and fresh A2 sources/proofs with bytes+modes+symlinks exact.",
+    "Audit crash-handoff5 and actual private parent/runtime/noX/noDRM/scope before launch.",
+    "Root serial original14 A cases and10host/18main/normal client/input/native unload acceptance."
+  ]
+}

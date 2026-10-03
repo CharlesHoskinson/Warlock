@@ -1,0 +1,46 @@
+{
+  "result": "fail",
+  "records": [
+    {
+      "command": [
+        "/usr/bin/pkg-config",
+        "--cflags",
+        "--libs",
+        "Qt6Core"
+      ],
+      "exitCode": 0,
+      "stdout": "-I/usr/include/qt6/QtCore -I/usr/include/qt6 -DQT_CORE_LIB -I/usr/lib/qt6/mkspecs/linux-g++ -lQt6Core\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++20",
+        "-O2",
+        "-o",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/command-declaration-kernel",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/command-declaration-kernel.cpp",
+        "-I/usr/include/qt6/QtCore",
+        "-I/usr/include/qt6",
+        "-DQT_CORE_LIB",
+        "-I/usr/lib/qt6/mkspecs/linux-g++",
+        "-lQt6Core"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "/usr/bin/ld: /tmp/ccE3TqvR.o: copy relocation against non-copyable protected symbol `_ZN8QProcess16staticMetaObjectE@@Qt_6' in /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/libQt6Core.so\ncollect2: error: ld returned 1 exit status\n"
+    }
+  ],
+  "actual": null,
+  "primarySourceSHA256": "61af633eb2b0b58872a2d7c57f06d5781332e971d243e01f93b6871b9587c98a",
+  "primaryChecks": {
+    "declaredPropertyMutable": true,
+    "activeGuard": true,
+    "copiesLaunchArguments": true,
+    "startsCopiedArguments": true
+  },
+  "binarySHA256": null,
+  "nativeGuiLaunch": false,
+  "actualQuickshellExecuted": false,
+  "markerRuntimeNotChanged": true
+}

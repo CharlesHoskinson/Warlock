@@ -1,0 +1,72 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_action.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Running as unit: qa-harness-6d909b77150240209ba4fb584748fe84.scope; invocation ID: 78bed66cbaa5431ab4c5388657210990\n"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_action_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pin_action_test\n    ok fullPinTest passed 1 test(s)\n    ok floatFailureVisiblePartialTest passed 1 test(s)\n    ok floatFailureBeforeMutationTest passed 1 test(s)\n    ok pinFailureRetainsFloatTest passed 1 test(s)\n    ok pinFailureAfterMutationTest passed 1 test(s)\n    ok raiseFailureRetainsActualPinTest passed 1 test(s)\n    ok raiseClosureCallbackRefusesSuccessTest passed 1 test(s)\n    ok raiseMinimizeCallbackKeepsPinIntentTest passed 1 test(s)\n    ok raiseReloadCallbackRefusesSuccessTest passed 1 test(s)\n    ok floatClosureCallbackRefusesPinTest passed 1 test(s)\n    ok floatMinimizeCallbackRefusesPinTest passed 1 test(s)\n    ok pinClosureCallbackRefusesRaiseTest passed 1 test(s)\n    ok sameOwnerReentryRefusedTest passed 1 test(s)\n    ok sameOwnerReentryDoesNotRedirectOuterIntentTest passed 1 test(s)\n    ok focusCannotRedirectOwnerTest passed 1 test(s)\n    ok independentlyPinnedPeerPreservedTest passed 1 test(s)\n    ok fullscreenRefusedBeforeFloatTest passed 1 test(s)\n    ok fullscreenCallbackAfterFloatRefusedTest passed 1 test(s)\n    ok staleAddressRefusedTest passed 1 test(s)\n    ok staleStableIdRefusedTest passed 1 test(s)\n    ok stalePidRefusedTest passed 1 test(s)\n    ok staleSessionRefusedTest passed 1 test(s)\n    ok reloadChangesEpochNotCompositorSessionTest passed 1 test(s)\n    ok closedReusedAddressOldIdentityRefusedTest passed 1 test(s)\n    ok partialActionNoSuccessfulFeedbackTest passed 1 test(s)\n    ok latestGenerationRejectsOldFeedbackTest passed 1 test(s)\n    ok reducedMotionRetiresFeedbackTest passed 1 test(s)\n    ok minimizeRetiresFeedbackAndKeepsIntentTest passed 1 test(s)\n    ok reloadRetiresFeedbackTest passed 1 test(s)\n    ok closeRetiresFeedbackTest passed 1 test(s)\n    ok unpinBeforeMinimizeRemainsUnpinnedTest passed 1 test(s)\n\n  31 passing (4290ms)\n",
+      "stderr": "Running as unit: qa-harness-34ed3c7710c74878bc0aeadfcb3df20a.scope; invocation ID: d646d9c52c744707b230433ca97ae1d4\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_action.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (1356ms at 1475 traces/second).\nUse --seed=0x13b4241 --backend=rust to reproduce.\n",
+      "stderr": "Running as unit: qa-harness-7d5671f7feeb450bbe0be57092de499b.scope; invocation ID: 984dd51ff6084e7e8b40c0b87a972bcc\n"
+    }
+  ],
+  "nativeStillExactV23": true,
+  "nativeSHA256": {
+    "native-candidate/BarPassElement.cpp": "0e607597b130ec8277fb301b2b97b0fcde977a64e2163b53024907e4b4476fe7",
+    "native-candidate/barDeco.cpp": "f9dccc594d9ba9a9dd39c982c89f8370d90c0723f154564ae285a7bc8ca78374",
+    "native-candidate/dragBridge.cpp": "f8ba303484ae321e70d354353cde2565f4022b932fdee1fa6300725406366486",
+    "native-candidate/familyBridge.cpp": "99f5e281ccaf3a27846583a741f4bea03ebbfbde31f5add6340e1a1b82ca890d",
+    "native-candidate/main.cpp": "bb96b94930088e62b969681f3a2c828f9554995d87c68669ca51536468caaf5f",
+    "native-candidate/BarPassElement.hpp": "9a460848366edc61c55500f5577180d10f383b65022b3952648efe3b4e7208f8",
+    "native-candidate/barDeco.hpp": "b5f9dd911761738c597e272e8c6702751ae60fa360b56f5540d8e06efc0efb63",
+    "native-candidate/dragBridge.hpp": "f650e50f986a00956954376c7d54b67e13fb80dc25fc873eade3f1b821a8aab9",
+    "native-candidate/familyBridge.hpp": "3543dc46226c03337cac712cc4fc856c50b37b07d2e0341d19d6c71ee67a1fa8",
+    "native-candidate/globals.hpp": "4a4d25fdcd2d2845df9d05abf9b9306a8f95f4d29654e3bc1049a6c59a796cd5",
+    "native-candidate/Makefile": "ab7d57d5d6639b6eb0ab241bc06adf4387cc5ab7419a6745eb292b685d0350eb",
+    "native-candidate/snapshotBridge.hpp": "2153c5d39df74695fd631508a1f4fcf4f2fb02f0e7f476b6cc7d6983b0a4cad4",
+    "native-candidate/snapshotBridge.cpp": "bf83de4b0d7d1b444c90a0d0de4936fdbffcf48ae28bdfec0b8dd78966abae32",
+    "native-candidate/atlasRenderer.hpp": "3ed9d71824a0dc70df1e1d7655dabec1e50884bebce7fd23612dd79d5c8dc278",
+    "native-candidate/atlasRenderer.cpp": "727866d8e5f0139355c627edd3d23fcbc1d4bbea3be73465687bfa41eed457b3",
+    "native-candidate/atlasCoordinates.hpp": "32950ba8eecdbf6a6e925570ad52eda103a6b46436d83f6588c6e52d709beb22",
+    "native-candidate/test_atlas_coordinates.cpp": "cf7aa77aad715ad3815564e77300816d6a81b22df2cfc1b15ac38ccebff76fc3",
+    "native-candidate/atlasAdapter.hpp": "ea7168a5ed9435e76ef8dffc58a36c7398e2b33d05cb77412630697e281a0a02",
+    "native-candidate/atlasAdapter.cpp": "f1d2de8ef06b997dfc7bfd1074714922d0dbde3b9cde766943ba1dd786fcdff8",
+    "native-candidate/captionCache.hpp": "a21c13585faf1e26694e172cf3ad49ca56f5191317e1fbb1cdbba73ccb5357f8",
+    "native-candidate/test_caption_cache.cpp": "d5ee50bd1b9b23ae2c28c065c7a58e97dd4eef7c087467a581395c0afa7ee74b",
+    "native-candidate/ancestorHit.hpp": "415c0533cc9e785498d78037b5a47a758976971a0ab46870f32492819343a355",
+    "native-candidate/ancestorHit.cpp": "5c83ade6d97be46f692e204006cde90fead3b1532718351b9f36528b0dbb2c5f",
+    "native-candidate/modalRegionAuthority.hpp": "71f0b52b87c0bca13130ab72d6d5c0571855892c1ce2a3c40779abdcf9473997",
+    "native-candidate/test_modal_region.cpp": "b601bea50a369db790ac673f6e3c28f4bfff3e1f42d19cd88c016ccb9afd4117",
+    "native-candidate/pinBridge.hpp": "4972871817daa9c751bd4882b5631db113fae5e80d680709effb6695bde9581a",
+    "native-candidate/pinBridge.cpp": "447cc485d198421b608976a428e7f1db06d0c8a28bfdedd24ca96ff538667d36",
+    "native-candidate/hyprbars-v23-pin-lifetime-candidate.so": "9a6da98ee32b85c81e51f901db11c04fdad3a8b5d110828351f153e7bd0a1045"
+  },
+  "nativeGuiExecuted": false
+}

@@ -1,0 +1,57 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/native_desktop.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v14/native_desktop.py
+@@ -22,7 +22,9 @@
+ from family_order import order_family,needs_active_witness,checked_identity
+ 
+ class NativeDesktop:
+-    def __init__(self, root, *, core, target=None, cache_root=None):
++    commands=subprocess
++    def __init__(self, root, *, core, target=None, cache_root=None, commands=None):
++        self.commands=commands or subprocess
+         self.root=Path(root)
+         expected=Path(os.environ['XDG_RUNTIME_DIR'])/'hypr-window-motion'
+         if not self.root.resolve().is_relative_to(expected.resolve()) or self.root.resolve()==expected.resolve():
+@@ -42,6 +44,7 @@
+         spec.loader.exec_module(self.production)
+         self.production.ROOT=self.root
+         self.production.CORE=Path(core)
++        self.production.subprocess=self.commands
+         self.base=self.production.Desktop()
+         self.target_override=target
+         self.capture_serial=0
+@@ -94,7 +97,7 @@
+             raise ValueError('stored destination identity is stale or incomplete')
+         destination=fields[0]
+         monitors=self.base.monitors()
+-        workspaces=json.loads(subprocess.check_output(['hyprctl','workspaces','-j'],text=True,timeout=2))
++        workspaces=json.loads(self.commands.check_output(['hyprctl','workspaces','-j'],text=True,timeout=2))
+         workspace=next((w for w in workspaces if w.get('name')==destination),None)
+         monitor=next((m for m in monitors if workspace and (m.get('id')==workspace.get('monitorID') or m.get('name')==workspace.get('monitor'))),None)
+         monitor=monitor or next((m for m in monitors if m.get('name')==metadata.get('monitorName')),None)
+@@ -112,7 +115,7 @@
+         if not any(key(current)==key(window) for current in self.base.clients()):raise ValueError('destination identity changed before native focus')
+         for expression in ['hl.dsp.focus({ monitor = '+json.dumps(plan['monitor']['name'])+' })',
+                            'hl.dsp.focus({ workspace = '+json.dumps(plan['destination'])+' })']:
+-            subprocess.run(['hyprctl','dispatch',expression],check=True,stdout=subprocess.DEVNULL,timeout=2)
++            self.commands.run(['hyprctl','dispatch',expression],check=True,stdout=subprocess.DEVNULL,timeout=2)
+         return plan['monitor']
+     def refresh_destination(self,window,plan):
+         if plan.get('identity')!=list(key(window)):raise ValueError('destination refresh identity differs')
+@@ -130,7 +133,7 @@
+             'if type(success)~="boolean" or type(was)~="boolean" or not success then ok=false; break end; '
+             'retired[#retired+1]=was and "true" or "false"; end; '
+             'print(\'{"ok":\'..(ok and "true" or "false")..\',"retired":[\'..table.concat(retired,",")..\']}\'); end')
+-        reply=json.loads(subprocess.check_output(['hyprctl','repl',expression],env=env,text=True,timeout=.6))
++        reply=json.loads(self.commands.check_output(['hyprctl','repl',expression],env=env,text=True,timeout=.6))
+         if (not isinstance(reply,dict) or reply.get('ok') is not True or not isinstance(reply.get('retired'),list)
+                 or len(reply['retired'])!=len(identities) or any(type(value) is not bool for value in reply['retired'])):
+             error=ValueError('exact gesture retirement refused; no source capture')
+@@ -185,7 +188,7 @@
+                 image=Path(captured['image'])
+             else:
+                 expression='print(hl.plugin.hyprbars.window_atlas('+','.join((json.dumps(window['address']),json.dumps(str(window['stableId'])),str(window['pid']),json.dumps(str(image)),json.dumps(epoch)))+'))'
+-                metadata=json.loads(subprocess.check_output(['hyprctl','repl',expression],text=True,timeout=1))
++                metadata=json.loads(self.commands.check_output(['hyprctl','repl',expression],text=True,timeout=1))
+                 if (not metadata.get('ok') or not metadata.get('whole') or not metadata.get('canonical') or metadata.get('captureEpoch')!=epoch
+                         or str(metadata.get('stableId'))!=str(window['stableId']) or metadata.get('pid')!=window['pid']):
+                     image.unlink(missing_ok=True)

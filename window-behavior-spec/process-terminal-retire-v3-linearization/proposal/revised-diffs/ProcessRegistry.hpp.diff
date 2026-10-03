@@ -1,0 +1,33 @@
+--- /home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/ProcessRegistry.hpp
++++ /home/hoskinson/window-behavior-spec/process-terminal-retire-v3-linearization/proposal/revised-desired/ProcessRegistry.hpp
+@@ -39,8 +39,14 @@
+  QString processClass,collectorClass,role;QStringList command;KernelExpected kernel;
+  // Compiled production callbacks derive observations from sealed sources and
+  // actual lexical objects. No QML success/kernel/EOF flags are accepted.
++ // Optional owning-thread non-authoritative change hint; never a kernel proof.
++ std::function<void(uint64_t)>changed;
+  std::function<void()>sourceGuard,currentGuard;
+  std::function<void(const QByteArray&,const QByteArray&,const KernelWitness&,int)>receiptGuard;
++};
++struct ProcessRetireScope {
++ QQmlEngine*engine=nullptr;QObject*provider=nullptr;std::array<QObject*,6>objects{};uint64_t lease=0;
++ std::function<void()>sourceGuard;
+ };
+ class ProcessRegistry {
+  struct Invocation;
+@@ -49,6 +55,7 @@
+  std::vector<std::shared_ptr<Invocation>>history;
+  std::mutex faultMutex;std::deque<std::pair<QObject*,uint64_t>>queuedFaults;std::atomic_bool faultOverflow{false};
+  void drainFaults();
++ void changed(const std::shared_ptr<Invocation>&);
+  std::shared_ptr<Invocation>find(QObject*,uint64_t);
+  void event(QObject*,uint64_t,int,int code=0,QProcess::ExitStatus=QProcess::NormalExit);
+  void finishJob(const std::shared_ptr<Invocation>&,bool nativeNotification=false);
+@@ -58,6 +65,7 @@
+  explicit ProcessRegistry(Registry&);
+  ~ProcessRegistry();
+  uint64_t arm(ProcessArm);
++ QVariantMap retire(const ProcessRetireScope&);
+  QVariantMap state(QObject*);
+  QVariantMap terminalInventory();
+  // Guarded readonly C++ CPU diagnostic only, never a QML/Provider API.

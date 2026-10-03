@@ -1,0 +1,6 @@
+{
+  "error": "SyntaxError: unmatched ')'",
+  "statement": "assert p.read_bytes()==q.read_bytes() and stat.S_IMODE(p.stat().st_mode)==stat.S_IMODE(q.stat().st_mode)),p",
+  "mutationsBeforeParseFailure": false,
+  "nativeLaunch": false
+}

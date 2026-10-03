@@ -1,0 +1,33 @@
+--- /home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/controller/minimal_controller.py
++++ REVIEW_ONLY_NEW_DERIVATIVE/controller/minimal_controller.py
+@@ -114,7 +114,7 @@
+   require(type(result)is dict and set(result)=={'ok','pass_event'}and result['ok']is True and type(result['pass_event'])is bool,'exact typed preparation result; no feature authority')
+   return result
+  def launch_actor(self,case,ordinal=1):
+-  require(case in {'B%02d'%i for i in range(1,13)},'fixed reachable B01–B12 proposal only')
++  require(case in {'B%02d'%i for i in range(1,17)},'fixed reachable B01–B12 proposal only')
+   self.attest('before-private-actor')
+   actors=self.output/'actors';actors.mkdir(mode=0o700,exist_ok=True)
+   parent=actors/case;parent.mkdir(mode=0o700,exist_ok=True)
+--- /home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/producer-registry/registry.py
++++ REVIEW_ONLY_NEW_DERIVATIVE/producer-registry/registry.py
+@@ -37,7 +37,7 @@
+   require(type(self.frozen['inputModes'][key])is int and mode==self.frozen['inputModes'][key]and digest==self.frozen['inputs'][key],'selected frozen producer bytes/modes')
+   return dict(path=key,sha256=digest,mode=mode)
+  def launch(self,case,kind,ordinal,*,route=None,actor_output=None,width=1600,height=1000,output_name=None):
+-  require(not self.sealed and len(self.rows)<256 and type(case)is str and re.fullmatch(r'B(?:0[1-9]|1[0-2])',case)is not None,'fixed bounded reviewed first-phase B01–B12 case; B13–B24 not executable')
++  require(not self.sealed and len(self.rows)<256 and type(case)is str and re.fullmatch(r'B(?:0[1-9]|1[0-6])',case)is not None,'fixed bounded reviewed first-phase B01–B12 case; B13–B24 not executable')
+   require(type(ordinal)is int and 1<=ordinal<=64 and kind in {'qt','pointer','key'},'fixed bounded producer role')
+   name='pin-'+case.lower()+'-'+kind+'-'+str(ordinal)
+   require(not any(r['name']==name for r in self.rows),'no producer retry/replacement')
+--- /home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/host/b_closure.py
++++ REVIEW_ONLY_NEW_DERIVATIVE/host/b_closure.py
+@@ -43,7 +43,7 @@
+  lives=[identity(r)for r in selected];require(len(set(tuple(v)for v in lives))==len(lives)and len(set(v[0]for v in lives))==len(lives),'unique selected lifetime/PGID')
+  names=[];bindings=[]
+  for row,registered in zip(rows,selected[3:],strict=True):
+-  require(type(row)is dict and row.get('kind')in {'qt','pointer','key'}and type(row.get('case'))is str and re.fullmatch(r'B(?:0[1-9]|1[0-2])',row['case'])is not None and type(row.get('ordinal'))is int and 1<=row['ordinal']<=64,'bounded known B source role')
++  require(type(row)is dict and row.get('kind')in {'qt','pointer','key'}and type(row.get('case'))is str and re.fullmatch(r'B(?:0[1-9]|1[0-6])',row['case'])is not None and type(row.get('ordinal'))is int and 1<=row['ordinal']<=64,'bounded known B source role')
+   name='pin-'+row['case'].lower()+'-'+row['kind']+'-'+str(row['ordinal']);require(row.get('name')==name and name not in names,'unique exact reviewed role');names.append(name)
+   kind=row['kind'];argv=row.get('argv')
+   if kind=='qt':expected=[str(registry.FIXTURE),str(Path(output)/'actors'/row['case']/('qt-'+str(row['ordinal'])))]

@@ -1,0 +1,177 @@
+-- Change the default Omarchy look'n'feel.
+
+-- https://wiki.hypr.land/Configuring/Basics/Variables/#general
+-- hl.config({
+--   general = {
+--     -- No gaps between windows or borders.
+--     gaps_in = 0,
+--     gaps_out = 0,
+--     border_size = 0,
+--
+--     -- Change to niri-like side-scrolling layout.
+--     layout = "scrolling",
+--   },
+-- })
+
+-- https://wiki.hypr.land/Configuring/Basics/Variables/#decoration
+-- hl.config({
+--   decoration = {
+--     -- Use round window corners.
+--     rounding = 8,
+--
+--     -- Dim unfocused windows (0.0 = no dim, 1.0 = fully dimmed).
+--     dim_inactive = true,
+--     dim_strength = 0.15,
+--   },
+-- })
+
+-- https://wiki.hypr.land/Configuring/Basics/Variables/#animations
+-- hl.config({
+--   animations = {
+--     -- Disable all animations.
+--     enabled = false,
+--   },
+-- })
+
+-- https://wiki.hypr.land/Configuring/Basics/Variables/#layout
+-- hl.config({
+--   layout = {
+--     -- Avoid overly wide single-window layouts on wide screens.
+--     single_window_aspect_ratio = { 1, 1 },
+--   },
+-- })
+
+-- https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/
+-- hl.config({
+--   scrolling = {
+--     -- See only one column per screen instead of two.
+--     column_width = 0.97,
+--   },
+-- })
+
+-- Windows-like window handling: theme colors, edge resize, active-window highlight.
+-- Colors come from the current Omarchy theme so they follow `omarchy theme set`.
+local function theme_colors()
+  local c = {}
+  local f = io.open(os.getenv("HOME") .. "/.local/state/omarchy/current/theme/colors.toml")
+  if f then
+    for k, v in f:read("*a"):gmatch('([%w_]+)%s*=%s*"#(%x+)"') do c[k] = v end
+    f:close()
+  end
+  return c
+end
+local tc = theme_colors()
+local function rgb(name, fallback) return "rgb(" .. (tc[name] or fallback) .. ")" end
+
+hl.config({
+  general = {
+    -- Grab any window edge or corner to resize it; the cursor changes on hover.
+    resize_on_border = true,
+    extend_border_grab_area = 12,
+    hover_icon_on_border = true,
+  },
+  decoration = {
+    rounding = 8,
+    -- Make the focused window stand out among overlapping floats.
+    dim_inactive = true,
+    dim_strength = 0.15,
+    shadow = {
+      enabled = true,
+      range = 24,
+      render_power = 3,
+      offset = { 0, 6 },
+      color = "rgba(000000cc)",
+      color_inactive = "rgba(00000040)",
+    },
+  },
+})
+
+-- Snap rectangles and maximized windows meet the work area with square edges.
+o.window({ tag = "win-snapped" }, { rounding = 0 })
+o.window({ fullscreen = true }, { rounding = 0 })
+o.window({ tag = "omarchy-peek" }, { opacity = "0.03 override 0.03 override" })
+
+-- Fluid snapping/moving: a critically damped spring (Apple-style, no bounce) instead of
+-- Omarchy's front-loaded easeOutQuint, so position and size glide together.
+hl.curve("glide", { type = "spring", mass = 1, stiffness = 450, dampening = 43 })
+hl.animation({ leaf = "windowsMove", enabled = true, speed = 4, spring = "glide", style = "slide" })
+
+local motion = io.open(os.getenv("HOME") .. "/.config/hypr/reduced-motion")
+hypr_reduced_motion = false
+if motion then
+  local reduced = motion:read("*a"):match("1") ~= nil
+  hypr_reduced_motion = reduced
+  motion:close()
+  hl.config({ animations = { enabled = not reduced } })
+end
+
+-- Pinned (always-on-top) windows get a soft accent-to-violet gradient border.
+local function rgba(name, fallback, alpha) return "rgba(" .. (tc[name] or fallback) .. alpha .. ")" end
+o.window({ pin = true }, {
+  border_color = rgba("accent", "7aa2f7", "ee") .. " " .. rgba("magenta", "bb9af7", "cc") .. " 45deg",
+  border_size = 3,
+})
+
+-- Window title bars with close / maximize / minimize buttons (hyprbars plugin).
+-- The plugin is loaded in autostart.lua; this block only applies once it is loaded.
+if hl.plugin.hyprbars ~= nil then
+  local native_drag = hl.plugin.hyprbars.drag_bridge and hl.plugin.hyprbars.drag_bridge()
+  hl.config({
+    plugin = {
+      hyprbars = {
+        bar_height = 24,
+        bar_color = rgb("background", "1e1e2e"),
+        ["col.text"] = rgb("bright_foreground", "cdd6f4"),
+        -- Buttons grey out on unfocused windows, like Windows title bars.
+        inactive_button_color = rgb("muted", "414868"),
+        bar_text_size = 10,
+        bar_padding = 10,
+        bar_button_padding = 8,
+        bar_precedence_over_border = true,
+        bar_part_of_window = true,
+        on_double_click = [[hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle", window = "address:%WINDOW_ADDRESS%" })']],
+        -- Older patched builds use subprocess callbacks; the native bridge
+        -- handles titlebar and modifier drags synchronously.
+        on_drag_start = native_drag and "" or [[hyprctl eval 'hypr_snap_drag_start("%WINDOW_ADDRESS%")']],
+        on_drag_end = native_drag and "" or [[hyprctl eval 'hypr_snap_drag_end("%WINDOW_ADDRESS%")']],
+        on_right_click = os.getenv("HOME") .. "/.local/bin/hypr-window-menu system %WINDOW_ADDRESS%",
+        on_maximize_hover = os.getenv("HOME") .. "/.local/bin/hypr-window-menu layouts %WINDOW_ADDRESS%",
+      },
+    },
+  })
+
+  -- Buttons are listed right to left: close, maximize, minimize, pin.
+  hl.plugin.hyprbars.add_button({
+    bg_color = "rgb(f38ba8)",
+    fg_color = "rgb(1e1e2e)",
+    size = 14,
+    icon = "✕",
+    action = [[hyprctl dispatch 'hl.dsp.window.close({ window = "address:%WINDOW_ADDRESS%" })']],
+  })
+
+  hl.plugin.hyprbars.add_button({
+    bg_color = "rgb(a6e3a1)",
+    fg_color = "rgb(1e1e2e)",
+    size = 14,
+    icon = "□",
+    action = [[hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle", window = "address:%WINDOW_ADDRESS%" })']],
+  })
+
+  -- Minimized windows stay in a dedicated hidden workspace and on the taskbar.
+  hl.plugin.hyprbars.add_button({
+    bg_color = "rgb(f9e2af)",
+    fg_color = "rgb(1e1e2e)",
+    size = 14,
+    icon = "_",
+    action = os.getenv("HOME") .. "/.local/bin/hypr-minimize-toggle %WINDOW_ADDRESS%",
+  })
+
+  -- Pin: keep the window on top of all others and on every workspace (SUPER+P).
+  hl.plugin.hyprbars.add_button({
+    bg_color = rgb("blue", "89b4fa"),
+    fg_color = rgb("background", "1e1e2e"),
+    size = 14,
+    icon = "📌",
+    action = os.getenv("HOME") .. "/.local/bin/hypr-pin-toggle %WINDOW_ADDRESS%",
+  })
+end

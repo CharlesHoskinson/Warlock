@@ -1,0 +1,35 @@
+test_actual_bound_owned_capture_preserves_both_original_pixels_and_six_observations (test_hidden_capture_fusion.HiddenFusionTests.test_actual_bound_owned_capture_preserves_both_original_pixels_and_six_observations) ... ERROR
+test_actual_failed_durable_helper_completion_quarantines_exact_epoch (test_hidden_capture_fusion.HiddenFusionTests.test_actual_failed_durable_helper_completion_quarantines_exact_epoch) ... ok
+test_actual_grim_timeout_retains_unknown_job_and_epoch (test_hidden_capture_fusion.HiddenFusionTests.test_actual_grim_timeout_retains_unknown_job_and_epoch) ... ok
+test_actual_magick_nonzero_refuses_and_closes_real_job (test_hidden_capture_fusion.HiddenFusionTests.test_actual_magick_nonzero_refuses_and_closes_real_job) ... ok
+test_cancelled_controller_after_real_pixels_cannot_seed (test_hidden_capture_fusion.HiddenFusionTests.test_cancelled_controller_after_real_pixels_cannot_seed) ... ok
+test_changed_cached_client_size_refuses_before_grim (test_hidden_capture_fusion.HiddenFusionTests.test_changed_cached_client_size_refuses_before_grim) ... ok
+test_changed_cached_identity_refuses_before_grim (test_hidden_capture_fusion.HiddenFusionTests.test_changed_cached_identity_refuses_before_grim) ... ok
+test_legacy_standalone_keeps_two_original_real_magick_jobs (test_hidden_capture_fusion.HiddenFusionTests.test_legacy_standalone_keeps_two_original_real_magick_jobs) ... ok
+test_noncanonical_direct_hidden_helper_refuses_before_material (test_hidden_capture_fusion.HiddenFusionTests.test_noncanonical_direct_hidden_helper_refuses_before_material) ... ok
+test_normal_empty_grim_refuses_with_known_closure (test_hidden_capture_fusion.HiddenFusionTests.test_normal_empty_grim_refuses_with_known_closure) ... ok
+test_normal_magick_missing_thumbnail_refuses_before_publication (test_hidden_capture_fusion.HiddenFusionTests.test_normal_magick_missing_thumbnail_refuses_before_publication) ... ok
+test_normal_magick_missing_whole_refuses_before_publication (test_hidden_capture_fusion.HiddenFusionTests.test_normal_magick_missing_whole_refuses_before_publication) ... ok
+test_normal_magick_short_whole_refuses_before_publication (test_hidden_capture_fusion.HiddenFusionTests.test_normal_magick_short_whole_refuses_before_publication) ... ok
+test_post_helper_actual_geometry_change_refuses_publication (test_hidden_capture_fusion.HiddenFusionTests.test_post_helper_actual_geometry_change_refuses_publication) ... ok
+test_post_helper_actual_lifetime_change_refuses_publication (test_hidden_capture_fusion.HiddenFusionTests.test_post_helper_actual_lifetime_change_refuses_publication) ... ok
+test_real_receipt_deadline_after_pixels_cannot_seed (test_hidden_capture_fusion.HiddenFusionTests.test_real_receipt_deadline_after_pixels_cannot_seed) ... ok
+test_shared_immutable_whole_cache_is_preserved_for_reuse (test_hidden_capture_fusion.HiddenFusionTests.test_shared_immutable_whole_cache_is_preserved_for_reuse) ... ok
+test_three_members_use_three_real_grim_and_three_real_combined_jobs (test_hidden_capture_fusion.HiddenFusionTests.test_three_members_use_three_real_grim_and_three_real_combined_jobs) ... ok
+
+======================================================================
+ERROR: test_actual_bound_owned_capture_preserves_both_original_pixels_and_six_observations (test_hidden_capture_fusion.HiddenFusionTests.test_actual_bound_owned_capture_preserves_both_original_pixels_and_six_observations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_hidden_capture_fusion.py", line 102, in test_actual_bound_owned_capture_preserves_both_original_pixels_and_six_observations
+    self.assertTrue(all(h['phase']=='closed' and h['groupEmpty'] and h['normalCompletion'] for h in helpers))
+                    ^^^
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-hidden-capture-fusion-v29/test_hidden_capture_fusion.py", line 102, in <genexpr>
+    self.assertTrue(all(h['phase']=='closed' and h['groupEmpty'] and h['normalCompletion'] for h in helpers))
+                                                                     ~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'normalCompletion'
+
+----------------------------------------------------------------------
+Ran 18 tests in 6.210s
+
+FAILED (errors=1)

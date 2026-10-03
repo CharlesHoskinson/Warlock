@@ -1,0 +1,18 @@
+{
+  "result": "fail",
+  "beforeCollectorRuntimeCorrection": true,
+  "moduleBindingBeforeSHA256": "3c8d80067575ee36d3980dcecfb121678b07e89509e1ea0c856c6f27a18acbea",
+  "checks": [
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/batch_callback_identity_test.qnt"
+      ],
+      "exitCode": 1,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v7-callback-formal-before-runtime-v1/0.log",
+      "sha256": "4c25087898587c98f789a8de0491d0cdb2e7f276d7715b577ec4ef41a94e30f9"
+    }
+  ],
+  "nativeRun": false
+}

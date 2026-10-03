@@ -1,0 +1,30 @@
+{
+  "result": "pass actual read changes only access time",
+  "originalReaderFailed": true,
+  "before": {
+    "st_dev": 57,
+    "st_ino": 1116849,
+    "st_mode": 33188,
+    "st_uid": 1000,
+    "st_gid": 1000,
+    "st_size": 22,
+    "st_mtime_ns": 1790929006824706347,
+    "st_ctime_ns": 1790929006824687279,
+    "st_atime_ns": 1
+  },
+  "after": {
+    "st_dev": 57,
+    "st_ino": 1116849,
+    "st_mode": 33188,
+    "st_uid": 1000,
+    "st_gid": 1000,
+    "st_size": 22,
+    "st_mtime_ns": 1790929006824706347,
+    "st_ctime_ns": 1790929006824687279,
+    "st_atime_ns": 1790929006824752938
+  },
+  "actualEOFBytes": "actual immutable bytes",
+  "sourceSHA256": "1f26b7e9aa3c23cf542665870a369c29d88569fe01810c8bb017bee402db0e98",
+  "scope": "reader-only identity witness correction; no producer/root attempt mutation",
+  "nativeCommands": false
+}

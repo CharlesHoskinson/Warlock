@@ -1,0 +1,93 @@
+{
+  "result": "pass",
+  "unapplied": true,
+  "wholeFileInverses": true,
+  "originalGuardByteExact": true,
+  "allOriginalPreparationTailAndCaptureBodiesExact": true,
+  "conservation": {
+    "native_desktop.py": {
+      "original": {
+        "sha256": "1710013ef0fe5e05da92ab0b8ca95ff024d94eba7f0aeff6b7ab6fc6a1c19dba",
+        "mode": 420
+      },
+      "proposedSHA256": "dfd6319a8c3e123bed82d618356377c96dec78795a26d21db6d5b0090a3927bc",
+      "originalMethodCount": 16,
+      "unchangedMethods": 16,
+      "changedMethods": [],
+      "addedMethods": [
+        [
+          "NativeDesktop",
+          "_guard_destination"
+        ],
+        [
+          "NativeDesktop",
+          "_focus_pair_expression"
+        ],
+        [
+          "NativeDesktop",
+          "apply_destinations"
+        ],
+        [
+          "NativeDesktop",
+          "refresh_destinations"
+        ]
+      ]
+    },
+    "owned_commands.py": {
+      "original": {
+        "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba",
+        "mode": 420
+      },
+      "proposedSHA256": "cfb78222b3a819f2d9b5b98ec26d101179d1a94483ff0c86f85649180c4c647f",
+      "originalMethodCount": 8,
+      "unchangedMethods": 7,
+      "changedMethods": [
+        [
+          "OwnedCommands",
+          "classify"
+        ]
+      ],
+      "addedMethods": [
+        [
+          "OwnedCommands",
+          "_focus_reply"
+        ],
+        [
+          "OwnedCommands",
+          "focus_transaction"
+        ]
+      ]
+    },
+    "scene_controller.py": {
+      "original": {
+        "sha256": "7c8039b5acc1cc1333d72566558d09a5c6162f8495c436dc522e0d23d1a368b7",
+        "mode": 420
+      },
+      "proposedSHA256": "aaf111982a67fa9d713b078e7241ccab3ef5ad087e49bd6b04448bd7b70079cc",
+      "originalMethodCount": 18,
+      "unchangedMethods": 17,
+      "changedMethods": [
+        [
+          "SceneController",
+          "prepare"
+        ]
+      ],
+      "addedMethods": []
+    }
+  },
+  "patchSHA256": "71e43ac07f306b87b29760a777752955b873e587f12031c1abfa755cd0aba2f4",
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/intended/generate_proposal.py": {
+      "sha256": "e9066fc3d1e07626209d8ee46564a40cbe3918b61cd10da93b3a47d7b3eac891",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/intended/native_methods.py.proposed": {
+      "sha256": "0b23494e9e04be9007e544d19205f2cafe6b5c030b60f4e2926b6feade98d9ce",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v5/intended/owned_methods.py.proposed": {
+      "sha256": "4cc3b4f2848095e74a07fdd1ca9d45b6153691063e143cf5c07abd40bb3820ae",
+      "mode": 420
+    }
+  }
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_controlling_orca" xml:lang="eu">
+  <info>
+    <link type="next" xref="commands_where_am_i"/>
+    <link type="guide" xref="commands#getting_started"/>
+    <title type="sort">1. Orca kontrolatzen eta erabiltzen ikastea</title>
+    <title type="link">Orca kontrolatzen eta erabiltzen ikastea</title>
+    <desc><app>Orca</app> aplikazioarekin aritzeko komandoak</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Orca kontrolatzen eta erabiltzen ikastea</title>
+  <section id="controlling">
+    <title><app>Orca</app> aplikazioa kontrolatzeko komandoak</title>
+    <p>Hurrengo komandoen bidez, <app>Orca</app> aplikazioaren hobespenen elkarrizketa-koadrora joan daiteke, <app>Orca</app> aktibatu eta desaktibatu daiteke eta <app>Orca</app> komandoak saltatu daitezke, aplikaziora sartzean lasterbideen gatazkak saihesteko.</p>
+    <list>
+      <item>
+        <p>Aktibatu/desaktibatu <app>Orca</app> onartutako mahaigain-inguruneetan: <keyseq><key>Super</key><key>Alt</key><key>S</key></keyseq>.</p>
+        <note style="tip">
+           <p>
+             If you are using <app>Orca</app> in another desktop environment in which
+             there is no command to toggle <app>Orca</app> on and off, you may find the
+             command to quit <app>Orca</app> helpful. This command is unbound by default.
+             Please see <link xref="howto_key_bindings">Modifying Keybindings</link> for
+             information on how to bind unbound commands.
+           </p>
+        </note>
+      </item>
+      <item>
+        <p><link xref="preferences">Orcaren hobespenen</link> elkarrizketa-koadroa: <keyseq><key>Orca aldatzailea</key><key>Space</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Orcaren hobespenen elkarrizketa-koadroa fokuratutako aplikazioetarako: <keyseq><key>Ctrl</key><key>Orca Modifier</key><key>Space</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Tandakatu Orcaren komando-tekla guztiak: <keyseq><key>Alt&gt;</key><key>Atzera tekla</key></keyseq></p>
+      </item>
+      <item>
+        <p>Txandakatu teklatuaren diseinua: (Lotu gabea)</p>
+      </item>
+      <item>
+        <p>Joan teklen hurrengo oihartzun-mailara: (Lotu gabea)</p>
+      </item>
+      <item>
+        <p>Irten pantaila-irakurletik: (Lotu gabea)</p>
+      </item>
+    </list>
+  </section>
+  <section id="braille_keyboard_bindings">
+    <title>Braille komandoak</title>
+    <p>Hurrengo komandoak Orcaren braille irteera kontrolatu eta pertsonalizatzeko erabili daitezke.</p>
+    <list>
+      <item>
+        <p>Eraman braille-gailua ezkerrera: (Lotu gabea)</p>
+      </item>
+      <item>
+        <p>Eraman braille-gailua eskuinera: (Lotu gabea)</p>
+      </item>
+      <item>
+        <p>Gaitu eta desgaitu uzkurtutako braille-a: (Lotu gabea)</p>
+      </item>
+    </list>
+  </section>
+  <section id="learning">
+    <title><app>Orca</app> erabiltzen ikasteko komandoak</title>
+    <p>
+      In Learn Mode, <app>Orca</app> will announce each keystroke you pressed
+      along with any associated <app>Orca</app> command that keystroke is bound
+      to. In this mode, you can also get a list of shortcuts containing all the
+      <app>Orca</app> commands you can use.
+    </p>
+    <list>
+      <item>
+        <p>Sartu ikasteko moduan: <keyseq><key>Orca aldatzailea</key><key>H</key></keyseq></p>
+      </item>
+      <item>
+        <p>Irten ikasteko modutik: <keyseq><key>Esc</key></keyseq></p>
+      </item>
+    </list>
+  </section>
+</page>

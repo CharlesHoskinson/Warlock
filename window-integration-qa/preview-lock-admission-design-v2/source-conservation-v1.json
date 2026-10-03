@@ -1,0 +1,32 @@
+{
+  "result": "pass",
+  "draftOnly": true,
+  "v1InputsModesExact": 30,
+  "wholeFileInverses": [
+    "native_desktop.py",
+    "scene_controller.py",
+    "test_batch_preview.py"
+  ],
+  "batchInheritedMethodsExact": [
+    "__init__",
+    "stage",
+    "discard",
+    "require_releasable",
+    "require_idle",
+    "require_disposable",
+    "_typed_equal",
+    "_renderer_matches",
+    "bind_renderer",
+    "_renderer_witness",
+    "_closed",
+    "check_family",
+    "write_exclusive",
+    "_reserve"
+  ],
+  "sourceMapSHA256": "8959e05fba6f7cf4b3beb095ec307e2ea5b3d454ed3258021d30aef4cf5f1ae4",
+  "patchSHA256": "687f8f6f2d565346850b4ab2ef2d276dd9c42f7e152ecd7db84f56708f2edbbf",
+  "formalReportSHA256": "32f08fdeedd2ebcfbe4d5f8beb6b340b5be8d0c0065d67d14c8aff41be2bdf7c",
+  "modelNamedCases": 42,
+  "runtimeExecuted": false,
+  "nativeAccepted": false
+}

@@ -1,0 +1,9 @@
+{
+  "result": "initial-auditor-schema-failure",
+  "originalSourceSHA256": "950a0869ec7af40075953a13627429910925d98aa6a55845532fe1ecbc0415fd",
+  "message": "actual module authority incomplete",
+  "cause": "Auditor mistakenly demanded usable=True in deliberately rawEvidenceOnly module observation; actual authorized post-disk terminal packet is service-evidence.actualTerminalBinding and has usable=True. Raw artifacts remain non-authoritative.",
+  "correction": "Read canonical usable terminal with exact raw token/ledger equivalence; independently require rawEvidenceOnly=True, usable=False, same canonical moduleToken,19 exact selected source bytes/modes and empty errors in each raw observation.",
+  "productChanges": false,
+  "nativeLaunch": false
+}

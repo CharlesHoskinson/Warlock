@@ -1,0 +1,22 @@
+{
+  "time": "2026-10-02T11:14:51.778511+00:00",
+  "stage": "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup",
+  "reviewedPacket": "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v3-popup/context-review-inputs.json",
+  "packetSHA256": "9a464b1b9446dc3be59590fd155651243bde5a222c3d20453ad7724ecd4eaba7",
+  "inputsVerified": 18,
+  "result": "approve-source-and-CPU-implementation",
+  "nativeLaunchAuthorized": false,
+  "installedPopupAccepted": false,
+  "formalNamed": 44,
+  "randomTraces": 2000,
+  "steps": 100,
+  "QtSemanticsChecks": 16,
+  "obligations": [
+    "Mandatory actual lexical menu/row/popup contexts and factory engine; never synthesize native context.",
+    "Optional native contexts require explicit absence plus absent engine or actual guarded valid context and factory engine; raw presence and generation resampled around getters/callbacks.",
+    "Actual attached create=false lookup, native base content property, ancestry and same QQuickWindow authenticate native objects.",
+    "Content/native-root allocation aliases share context generation; all destruction and presence mutations rechecked.",
+    "Preserve base V2 registry/thread/loader authority, initial35 model and context44 evidence; retain failures.",
+    "Actual installed Quickshell popup, input and helper lifecycle remain separate native acceptance gates."
+  ]
+}

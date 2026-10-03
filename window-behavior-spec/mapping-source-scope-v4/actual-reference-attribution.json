@@ -1,0 +1,63 @@
+{
+  "schema": "actual-retained-map-frozen-reference-attribution-v1",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/product-capture-runtime-1790969789274993790.json": "fd3f3ebf2c29c1cd32051739411a90d5a7eac8a948359bd1dcce047f9224525b",
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v5-popup/source-ready-inputs.json": "acc63a9583dce38a8beefab5d6263f4267f528c8673b3f662f426ff051648165",
+    "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/source_relevance.py": "15f7d3a1c19ce9f305ac6441451e34cbf09bc65b19ddb944232412c1bc31fc91",
+    "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/attribution.py": "e113438c7388d6cc2d669de6b2dec074105bafa03d0a0c86d38153ffa90ac374"
+  },
+  "inventoryLinkCount": 13862,
+  "actualCapturedDiskPaths": [
+    "/etc/ld.so.cache",
+    "/usr/bin/python3.14",
+    "/usr/lib/gconv/gconv-modules.cache",
+    "/usr/lib/ld-linux-x86-64.so.2",
+    "/usr/lib/libbrotlicommon.so.1.2.0",
+    "/usr/lib/libbrotlidec.so.1.2.0",
+    "/usr/lib/libbrotlienc.so.1.2.0",
+    "/usr/lib/libc.so.6",
+    "/usr/lib/libcrypto.so.3",
+    "/usr/lib/libm.so.6",
+    "/usr/lib/libpython3.14.so.1.0",
+    "/usr/lib/libz.so.1.3.2",
+    "/usr/lib/libzstd.so.1.5.7",
+    "/usr/lib/locale/C.utf8/LC_CTYPE",
+    "/usr/lib/locale/locale-archive",
+    "/usr/lib/python3.14/lib-dynload/_blake2.cpython-314-x86_64-linux-gnu.so",
+    "/usr/lib/python3.14/lib-dynload/_hashlib.cpython-314-x86_64-linux-gnu.so",
+    "/usr/lib/python3.14/lib-dynload/_json.cpython-314-x86_64-linux-gnu.so",
+    "/usr/lib/python3.14/lib-dynload/_socket.cpython-314-x86_64-linux-gnu.so",
+    "/usr/lib/python3.14/lib-dynload/_struct.cpython-314-x86_64-linux-gnu.so",
+    "/usr/lib/python3.14/lib-dynload/binascii.cpython-314-x86_64-linux-gnu.so",
+    "/usr/lib/python3.14/lib-dynload/fcntl.cpython-314-x86_64-linux-gnu.so",
+    "/usr/lib/python3.14/lib-dynload/grp.cpython-314-x86_64-linux-gnu.so"
+  ],
+  "actualCapturedRawMapsSHA256": "2d2391f59f656422e4f055fb56a8e23b3cff6a3ae15c1c57bdffc54e3d96f7fe",
+  "selectedLiteralAliases": {
+    "/lib64": "usr/lib",
+    "/usr/bin/python3": "python3.14",
+    "/usr/lib/libbrotlicommon.so.1": "libbrotlicommon.so.1.2.0",
+    "/usr/lib/libbrotlidec.so.1": "libbrotlidec.so.1.2.0",
+    "/usr/lib/libbrotlienc.so.1": "libbrotlienc.so.1.2.0",
+    "/usr/lib/libz.so.1": "libz.so.1.3.2",
+    "/usr/lib/libzstd.so.1": "libzstd.so.1.5.7",
+    "/usr/lib64": "lib"
+  },
+  "selectedAliasCount": 8,
+  "unresolvedFrozenInventoryReferences": [],
+  "actualFullInventoryBefore": {
+    "count": 13862,
+    "elapsedMicroseconds": 71713
+  },
+  "observerBeforeMicroseconds": 2459,
+  "actualNativeExit": {
+    "exitCode": 0,
+    "microsecondsFromStarted": 115741,
+    "monotonicNanoseconds": 180142092367638,
+    "normalExit": true
+  },
+  "kernelAccepted": false,
+  "runtimePredicateChanged": false,
+  "GUI": false,
+  "claim": "retained failed live sample attribution only; no source FD/lifetime acceptance"
+}

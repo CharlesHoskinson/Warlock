@@ -1,0 +1,3 @@
+# Additive source attribution correction
+
+Root reread selected V3 HyprCtl.cpp1126–1140: CONFIG_LUA dispatch evaluates return hl.dispatch(expression), so Lua dispatcher expressions were supported. Earlier preliminary reviewer attribution of all expressions as invalid was wrong. The explicit repl/typed result source path remains valid; legacy plain setprop text under Lua was problematic and is replaced with the selected native window.set_prop dispatcher. Old packets/reviews/failures stay unchanged. Actual B prehost failure was QA output-location refusal, with no product behavior defect or native feature attribution.

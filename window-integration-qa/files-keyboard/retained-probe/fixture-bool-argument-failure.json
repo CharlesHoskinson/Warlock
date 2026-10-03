@@ -1,0 +1,25 @@
+{
+  "scope": "Actual frozen candidate QML/V4 dispatch in copied offscreen Qt; no Orca or compositor input. Media metadata injected only to probe logical rebinding.",
+  "observations": [
+    {
+      "name": "visible native press sanity",
+      "interfaceId": "2147483665",
+      "dispatch": {
+        "class": "Btn_QMLTYPE_34",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "Show list",
+        "objectAlive": true,
+        "valid": true
+      },
+      "before": "grid",
+      "after": "list",
+      "callbackExecuted": true
+    }
+  ],
+  "error": "CalledProcessError(109, ['qs', 'ipc', '--pid', '3227309', 'call', 'files-retained-qa', 'show', 'false'])",
+  "exitCode": -15,
+  "result": "fixture-error"
+}

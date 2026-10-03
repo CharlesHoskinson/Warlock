@@ -1,0 +1,109 @@
+{
+  "result": "pass",
+  "commit": "efb50993780079460b0cbed1363e2166a2de1d9f",
+  "actualSelectedCore": {
+    "path": "/usr/bin/Hyprland",
+    "sha256": "da8fcacf347bcbed83edc40108c6e2298da095e22246bd764e9bb382786cebb2",
+    "actualB13Log": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v13/attempt-baseline-1/host/hyprland.log",
+    "cleanVersionLine": "Hyprland 0.56.2 built from branch v0.56.2 at commit efb50993780079460b0cbed1363e2166a2de1d9f clean",
+    "compilerReproducibilityProven": false
+  },
+  "actualSelectedHyprctl": {
+    "path": "/usr/bin/hyprctl",
+    "sha256": "2780a8bb56494917a725f817c9cf70fb5cc2f39aac5abc62ecf2e619a1f13ec5"
+  },
+  "sources": {
+    "hyprctl/src/main.cpp": {
+      "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/hyprctl/src/main.cpp",
+      "sha256": "f6b0d1fcfc6695194c70964250591a35ffe90274309303d8f5fd0ac6f8c1c93f",
+      "status": 200,
+      "bytes": 17168,
+      "copy": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/primary/hyprctl/src/main.cpp",
+      "mode": 420,
+      "existingInverseExact": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/hyprctl/src/main.cpp"
+    },
+    "src/debug/HyprCtl.cpp": {
+      "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/debug/HyprCtl.cpp",
+      "sha256": "798b7c6c4c1684557842463d46ac99c96629be4179e0e461dca77670247b91fa",
+      "status": 200,
+      "bytes": 97582,
+      "copy": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/primary/src/debug/HyprCtl.cpp",
+      "mode": 420,
+      "existingInverseExact": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/src/debug/HyprCtl.cpp"
+    },
+    "src/config/lua/ConfigManager.cpp": {
+      "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/config/lua/ConfigManager.cpp",
+      "sha256": "94b5c6891326e7a3e490019d26fd9d6f5b3137fb5318a94dff0a6cb6dfdaf502",
+      "status": 200,
+      "bytes": 46294,
+      "copy": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/primary/src/config/lua/ConfigManager.cpp",
+      "mode": 420,
+      "existingInverseExact": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/src/config/lua/ConfigManager.cpp"
+    },
+    "src/config/lua/bindings/LuaBindingsToplevel.cpp": {
+      "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/config/lua/bindings/LuaBindingsToplevel.cpp",
+      "sha256": "706b29eb52de087c1d6e64770cf85fb3ebc0f2fbe9ddcff086905499bcd332f5",
+      "status": 200,
+      "bytes": 18649,
+      "copy": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/primary/src/config/lua/bindings/LuaBindingsToplevel.cpp",
+      "mode": 420,
+      "existingInverseExact": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/src/config/lua/bindings/LuaBindingsToplevel.cpp"
+    },
+    "src/config/lua/bindings/LuaBindingsQuery.cpp": {
+      "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/config/lua/bindings/LuaBindingsQuery.cpp",
+      "sha256": "af0d274b5616ae69b8f62bdf2534a29586eab2a3d20b28c1b0e620d313ca66db",
+      "status": 200,
+      "bytes": 12451,
+      "copy": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/primary/src/config/lua/bindings/LuaBindingsQuery.cpp",
+      "mode": 420,
+      "existingInverseExact": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/src/config/lua/bindings/LuaBindingsQuery.cpp"
+    },
+    "src/config/lua/bindings/LuaBindingsInternal.cpp": {
+      "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/config/lua/bindings/LuaBindingsInternal.cpp",
+      "sha256": "5f6534641d58073bbcbd3e004b168659d497072596cf10c9f2b189c55c2233e9",
+      "status": 200,
+      "bytes": 18847,
+      "copy": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/primary/src/config/lua/bindings/LuaBindingsInternal.cpp",
+      "mode": 420,
+      "existingInverseExact": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/src/config/lua/bindings/LuaBindingsInternal.cpp"
+    },
+    "src/config/lua/bindings/LuaBindingsDispatcherUtils.cpp": {
+      "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/config/lua/bindings/LuaBindingsDispatcherUtils.cpp",
+      "sha256": "48ca22a88b47cd17c84deaa17dea74d7c2e0a113b9689e2d9e35e80ee6060e92",
+      "status": 200,
+      "bytes": 3711,
+      "copy": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/primary/src/config/lua/bindings/LuaBindingsDispatcherUtils.cpp",
+      "mode": 420,
+      "existingInverseExact": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/src/config/lua/bindings/LuaBindingsDispatcherUtils.cpp"
+    },
+    "src/config/lua/bindings/LuaBindingsDispatchers.cpp": {
+      "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/config/lua/bindings/LuaBindingsDispatchers.cpp",
+      "sha256": "a109eeb982856e0fe2ac9d88c29115a09984511787e19a20e7b4804e14a9d4de",
+      "status": 200,
+      "bytes": 53992,
+      "copy": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/primary/src/config/lua/bindings/LuaBindingsDispatchers.cpp",
+      "mode": 420,
+      "existingInverseExact": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/src/config/lua/bindings/LuaBindingsDispatchers.cpp"
+    },
+    "src/config/lua/objects/LuaWindow.cpp": {
+      "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/config/lua/objects/LuaWindow.cpp",
+      "sha256": "0755621ac698e5afa4bdb2e65e8475d3b7ee7a766e9389de05c797b3ae6d5ced",
+      "status": 200,
+      "bytes": 9636,
+      "copy": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/primary/src/config/lua/objects/LuaWindow.cpp",
+      "mode": 420,
+      "existingInverseExact": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/src/config/lua/objects/LuaWindow.cpp"
+    },
+    "src/config/lua/objects/LuaMonitor.cpp": {
+      "url": "https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/config/lua/objects/LuaMonitor.cpp",
+      "sha256": "91e23b022b12c875b668713c49889653806d9d71c1f7fde8642f1c02cdade2d5",
+      "status": 200,
+      "bytes": 6750,
+      "copy": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v1/primary/src/config/lua/objects/LuaMonitor.cpp",
+      "mode": 420,
+      "existingInverseExact": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/inverses/core/src/config/lua/objects/LuaMonitor.cpp"
+    }
+  },
+  "nativeLaunch": false,
+  "runtimeApplied": false
+}

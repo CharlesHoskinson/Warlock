@@ -1,0 +1,10 @@
+from pathlib import Path
+import hashlib,json,subprocess,sys,time
+sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
+B=Path(__file__).resolve().parent
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def main():
+ require_qa_scope();build=json.loads((B/'process-cpu-build.json').read_text());template=next(v['command']for v in build['commands']if '-c'in v['command']and any(x.endswith('/ProcessRegistry.cpp')for x in v['command']));command=[v.replace('/home/hoskinson/window-behavior-spec/qml-process-provider-v1',str(B)).replace('ProcessRegistry.cpp','NativeProcess.cpp')for v in template];before={str(p):sha(p)for p in B.iterdir()if p.suffix in('.cpp','.hpp')};r=subprocess.run(command,capture_output=True,text=True,timeout=120);stable=all(sha(p)==h for p,h in before.items());good=r.returncode==0 and stable;row=dict(result='pass'if good else'fail',command=command,exitCode=r.returncode,stdout=r.stdout,stderr=r.stderr,sources=before,sourceUnchanged=stable,GUI=False,productionNativeCPPCompiled=good,productionNativeRuntimeAccepted=False)
+ if good:row['objectSHA256']=sha(B/'process-build/NativeProcess.cpp.o')
+ p=B/('native-process-compile.json'if good else f'native-process-compile-failure-{time.time_ns()}.json');p.write_text(json.dumps(row,indent=2)+'\n');print(json.dumps(dict(result=row['result'],report=str(p))));return int(not good)
+if __name__=='__main__':raise SystemExit(main())

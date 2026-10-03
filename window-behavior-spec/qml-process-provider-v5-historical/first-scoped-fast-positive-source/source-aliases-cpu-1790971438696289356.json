@@ -1,0 +1,58 @@
+{
+  "result": "pass",
+  "sources": {
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/SourceAliases.hpp": "95585bbfd72a3e92c0e973e21b5719328b96f9eb607578d151c8190c35a4e970",
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/Lifetime.hpp": "6c623cd64e45c3306e727b0d079fd9b870ec5a27cecb40f5512b441755cd0173",
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/cpu_source_aliases.cpp": "8a111b81ce5c1a891af39be19248abe96cb0e5512d09973ce293f3bad683a1ce",
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/source_aliases_cpu.py": "000db1d6ae47dd16f6ed10c7d03345ca470dca4e6c18786f93fe2c5859bd101a"
+  },
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/cpu_source_aliases.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/cpu-source-aliases",
+        "-I/usr/include/qt6/QtQuick",
+        "-I/usr/include/qt6",
+        "-DQT_QUICK_LIB",
+        "-I/usr/include/qt6/QtOpenGL",
+        "-DQT_OPENGL_LIB",
+        "-I/usr/include/qt6/QtGui",
+        "-DQT_GUI_LIB",
+        "-I/usr/include/qt6/QtQml",
+        "-DQT_QML_LIB",
+        "-I/usr/include/qt6/QtQmlIntegration",
+        "-DQT_QMLINTEGRATION_LIB",
+        "-I/usr/include/qt6/QtNetwork",
+        "-DQT_NETWORK_LIB",
+        "-I/usr/include/qt6/QtCore",
+        "-DQT_CORE_LIB",
+        "-I/usr/lib/qt6/mkspecs/linux-g++",
+        "-lQt6Quick",
+        "-lQt6OpenGL",
+        "-lQt6Gui",
+        "-lQt6Qml",
+        "-lQt6Network",
+        "-lQt6Core"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v3-scoped/cpu-source-aliases"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"result\":\"pass\",\"actualCPPChecks\":11,\"GUI\":false}\n",
+      "stderr": ""
+    }
+  ],
+  "GUI": false
+}

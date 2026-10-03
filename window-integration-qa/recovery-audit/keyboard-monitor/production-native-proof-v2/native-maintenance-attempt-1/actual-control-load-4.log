@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/proof_control_entry.py", line 14, in <module>
+    control.main()
+    ~~~~~~~~~~~~^^
+  File "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/payload/control.py", line 173, in main
+    else:value=getattr(control,args.action)()
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/payload/control.py", line 134, in load
+    return self.native_identity()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/payload/control.py", line 124, in native_identity
+    self._mapped();value=self.lua('identity')
+    ~~~~~~~~~~~~^^
+  File "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/payload/control.py", line 116, in _mapped
+    if int(parts[4])!=row.st_ino or os.makedev(major,minor)!=row.st_dev:raise Refused('loaded mapping identity differs')
+                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+control.Refused: loaded mapping identity differs

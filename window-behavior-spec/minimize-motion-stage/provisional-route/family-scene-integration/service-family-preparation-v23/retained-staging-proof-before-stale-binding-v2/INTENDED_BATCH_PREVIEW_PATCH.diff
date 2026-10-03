@@ -1,0 +1,68 @@
+--- V22/batch_preview.py
++++ proposed-V23/batch_preview.py
+@@ -97,25 +97,50 @@
+         self.root=Path(root);self.preview=Path(preview);self.commands=commands
+         self.pending={};self.active=False;self.quarantined=False;self.retained_folder=None
+         self.lock=threading.RLock();self.active_epochs=set()
++        self.staging={};self.staging_serial=0
+     def stage(self,window,epoch,image,metadata):
++        image=Path(image)
++        if image!=self.root/(epoch+'.png') or not ADDRESS.fullmatch(window['address']):raise ValueError('exact pending crop path/identity required')
++        crop,dimensions=crop_geometry(window,metadata)
++        snapshot={'window':deepcopy(window),'metadata':deepcopy(metadata),'path':image,
++            'crop':crop,'dimensions':dimensions}
+         with self.lock:
+-            if self.active or self.quarantined or not EPOCH.fullmatch(epoch) or epoch in self.pending or len(self.pending)>=64:raise ValueError('pending crop lifecycle unavailable')
+-            image=Path(image)
+-            if image!=self.root/(epoch+'.png') or not ADDRESS.fullmatch(window['address']):raise ValueError('exact pending crop path/identity required')
+-            crop,dimensions=crop_geometry(window,metadata)
+-            with PinnedPNG(image,dimensions=metadata['pixels']) as pinned:
+-                self.pending[epoch]={'window':deepcopy(window),'metadata':deepcopy(metadata),'path':image,
+-                    'digest':pinned.digest,'inode':pinned.identity,'crop':crop,'dimensions':dimensions}
++            if (self.active or self.quarantined or not EPOCH.fullmatch(epoch) or epoch in self.pending
++                    or epoch in self.staging or len(self.pending)+len(self.staging)>=64):raise ValueError('pending crop lifecycle unavailable')
++            self.staging_serial+=1
++            reservation={'serial':self.staging_serial,'snapshot':snapshot}
++            self.staging[epoch]=reservation
++        try:
++            # All material I/O, validation, hashing and descriptor closure occur
++            # outside lifecycle/receipt locks. Exact reservation retains epoch.
++            with PinnedPNG(image,dimensions=snapshot['metadata']['pixels']) as pinned:
++                material={**snapshot,'digest':pinned.digest,'inode':pinned.identity}
++            with self.lock:
++                if self.staging.get(epoch) is not reservation:
++                    raise ValueError('exact staging reservation changed')
++                if self.active or self.quarantined or epoch in self.pending:
++                    raise ValueError('staging publication lifecycle unavailable')
++                self.pending[epoch]=material
++                del self.staging[epoch]
++        except BaseException:
++            with self.lock:
++                if self.staging.get(epoch) is reservation:
++                    del self.staging[epoch]
++                else:
++                    self.quarantined=True;self.active_epochs.add(epoch)
++            raise
+     def discard(self,epoch):
+         with self.lock:
+             self.require_releasable({epoch});self.pending.pop(epoch,None)
+     def require_releasable(self,epochs):
++        if set(epochs)&self.staging.keys():raise ValueError('unfinished crop staging retains capture material')
+         if (self.active or self.quarantined) and set(epochs)&self.active_epochs:raise ValueError('unfinished thumbnail helper retains capture material')
+     def require_idle(self):
+         if self.active or self.quarantined:raise ValueError('unfinished thumbnail helper retains capture material')
+     def require_disposable(self):
+         with self.lock:
+             self.require_idle()
++            if self.staging:raise ValueError('staging crops prevent normal disposal')
+             if self.pending:raise ValueError('pending crops prevent normal disposal')
+     def _closed(self):
+         keeper=self.commands.keeper
+@@ -135,6 +160,7 @@
+             output.write(data);output.flush();os.fsync(output.fileno())
+     def _reserve(self,sources,members):
+         self.require_idle()
++        if self.staging:raise ValueError('unfinished staging crop prevents thumbnail launch')
+         if not 1<=len(sources)==len(members)<=64 or len({key(w) for w in members})!=len(members):raise ValueError('complete unique capture family required')
+         rows=[]
+         for source,member in zip(sources,members,strict=True):

@@ -1,0 +1,40 @@
+{
+  "result": "core-policy-design-approved-for-fresh-isolated-implementation",
+  "updatedUTC": "2026-10-02T12:04:46.318152+00:00",
+  "designPacket": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/SOURCE_READY.json",
+  "designSHA256": "0903dae804f1c4568ed13b68c843854cb4d067821f20687ec630f96281435d31",
+  "checkpoint": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/proof/formal-design-checkpoint.json",
+  "checkpointSHA256": "76a2fd0e96f9199d514b0d99286845990a1d893906c5bac440f78b791b1468eb",
+  "verifiedDesignFilesAndModes": 238,
+  "originalSourceRecordsIndependentlyVerified": 180,
+  "namedCases": 129,
+  "mixedAndValidTraces": 6000,
+  "boundedTraceLimitation": "validStep composes several native model phases; its expanded state traces can exceed100 states. Simulation is bounded and not exhaustive proof.",
+  "policyDecisions": {
+    "nativeMaxPin": "Keep real native per-owner MAX mode and complete core-owned restore record; no float/resize/unmax-remax imitation.",
+    "protectedMaxCoexistence": "Required; preserve unrelated exclusive and ordinary unprotected policy, with actual entry/exit ordinary regression evidence. Finite seed abstraction is not native reachability proof.",
+    "restoredTiledOrigin": "Max-origin pin persists through genuine native tiled restore; unpin does not force float.",
+    "familyIntent": "Derived protected family band, independent explicit child pin bits; do not infer/clear unknown legacy intent.",
+    "explicitFocus": "Resolve actual eligible modal before parent blocking. Ordinary and unrelated app focus remains native. Report real selected core owner/surface plus exact Seat keyboard focus; preserve partial refusal without rollback.",
+    "followUp": "Cursor/forcedFocus/monitor actions only for still-current actually accepted native target; preserve no_warps/follow_mouse.",
+    "layouts": "Explicit native record/ownership interfaces for all supported handlers, including scrolling; missing authority is an incomplete requirement, not parity acceptance."
+  },
+  "sourceWorkAuthorized": "Fresh isolated core/plugin derivative implementing approved mapped policy. Capture every original whole function/field before editing, maintain precise inverse and source mapping, then compile and run meaningful actual CPU adapters plus inherited regressions. Root reviews all final actual code/diff before source freeze and native use.",
+  "nativeApproved": false,
+  "mainDeploymentApproved": false,
+  "mustRemainImmutable": [
+    "Reviewed design238files",
+    "V25 candidate/source/proofs",
+    "A2 native failure and A3 observer component",
+    "V22/V24 service freezes",
+    "Original audit checkout and installed main desktop"
+  ],
+  "futureAcceptance": [
+    "Actual matching core/plugin/header/API/source binding",
+    "Real native tiled/floating MAX restoration and coexistence",
+    "Shared renderer/hit/layer/family behavior without copied child bits",
+    "Actual accepted Seat/core focus and ordinary/refused regressions",
+    "Original14PinA unchanged plus full native/frontendB/max/lifetime/monitor/workspace/reload cases",
+    "Full goal regression and deployment remain pending"
+  ]
+}

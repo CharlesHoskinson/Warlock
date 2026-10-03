@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_controlling_orca" xml:lang="sr">
+  <info>
+    <link type="next" xref="commands_where_am_i"/>
+    <link type="guide" xref="commands#getting_started"/>
+    <title type="sort">1. Управљање и учење коришћења Орке</title>
+    <title type="link">Управљање и учење коришћења Орке</title>
+    <desc>Наредбе за интеракцију са <app>Орком</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Управљање и учење коришћења Орке</title>
+  <section id="controlling">
+    <title>Наредбе за управљање <app>Орком</app></title>
+    <p>Следеће наредбе се могу користити за приступ прозорчићима са поставкама <app>Орке</app>, укључивање и искључивање <app>Орке</app>, и заобилажење наредби <app>Орке</app> како би се избегли сукоби пречица унутар апликације којој се приступа.</p>
+    <list>
+      <item>
+        <p>Укључите и искључите <app>Орку</app> у подржаним десктоп окружењима: <keyseq><key>Super</key><key>Alt</key><key>S</key></keyseq>.</p>
+        <note style="tip">
+           <p>Ако користите <app>Орку</app> у другом десктоп окружењу у којем не постоји наредба за укључивање и искључивање <app>Орке</app>, можда ће вам наредба за напуштање <app>Орке</app> бити корисна. Ова наредба је подразумевано недодељена. Погледајте <link xref="howto_key_bindings">Мењање пречица</link> за информације о томе како да доделите недодељене наредбе.</p>
+        </note>
+      </item>
+      <item>
+        <p>Прозорче за <link xref="preferences">поставке Орке</link>: <keyseq><key>Измењивач Орке</key><key>Space</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Оркино прозорче са поставкама за фокусирану апликацију: <keyseq><key>Ctrl</key><key>Измењивач Орке</key><key>Space</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Пребаци све тастере наредби Орке: <keyseq><key>Alt&gt;</key><key>BackSpace</key></keyseq></p>
+      </item>
+      <item>
+        <p>Пребаци распоред тастатуре: (Није додељено)</p>
+      </item>
+      <item>
+        <p>Кружи до следећег нивоа одјека тастера: (Није додељено)</p>
+      </item>
+      <item>
+        <p>Напусти читач екрана: (Није додељено)</p>
+      </item>
+    </list>
+  </section>
+  <section id="braille_keyboard_bindings">
+    <title>Наредбе Брајевог писма</title>
+    <p>Следеће наредбе се могу користити за управљање и прилагођавање Оркиног излаза за Брајево писмо.</p>
+    <list>
+      <item>
+        <p>Помери приказ за Брајево писмо улево: (није додељено)</p>
+      </item>
+      <item>
+        <p>Помери приказ за Брајево писмо удесно: (није додељено)</p>
+      </item>
+      <item>
+        <p>Укључи или искључи скраћено Брајево писмо: (није додељено)</p>
+      </item>
+    </list>
+  </section>
+  <section id="learning">
+    <title>Наредбе за учење коришћења <app>Орке</app></title>
+    <p>У режиму учења, <app>Орка</app> ће изговорити сваки тастер који притиснете заједно са било којом придруженом наредбом <app>Орке</app> за коју је тај тастер везан. У овом режиму такође можете добити списак пречица које садрже све наредбе <app>Орке</app> које можете користити.</p>
+    <list>
+      <item>
+        <p>Уђи у режим учења: <keyseq><key>Оркин мењач</key><key>H</key></keyseq></p>
+      </item>
+      <item>
+        <p>Изађи из режима учења: <keyseq><key>Esc</key></keyseq></p>
+      </item>
+    </list>
+  </section>
+</page>

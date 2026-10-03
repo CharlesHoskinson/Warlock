@@ -1,0 +1,6 @@
+{
+  "returncode": 1,
+  "stderr": "  File \"/home/hoskinson/window-integration-qa/pin-native-input-components-v1/run_native.py\", line 105\n    report['componentIncrementAccepted']=bool(before and not report.get('error')and not report.get('mainObserverError')and not report.get('controllerBlocked')and len(results)==len(selectedCases)and [r.get('case')for r in results]==selectedCases and report.get('components',{}).get('originalTwelveCaseIncrementAccepted')is Falseand report.get('normalHostClosure',{}).get('normal')is True and all(r['passed']is True for r in report['hostChecks'])and all(report['mainPreservation'].values()))\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: invalid syntax. Perhaps you forgot a comma?\n",
+  "sha256": "c6d8c51367424c2481c450c7ef2eb626ccc306598a8415659cbd8fed37314184",
+  "nativeLaunched": false
+}

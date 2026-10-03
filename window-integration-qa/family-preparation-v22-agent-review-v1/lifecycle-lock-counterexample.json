@@ -1,0 +1,27 @@
+{
+  "result": "lifecycle material read blocks unrelated receipt cleanup",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-418f9e26a2994c7ca56f954b057735b4.scope",
+    "coreLimit": 1
+  },
+  "sourceSHA256": {
+    "batch_preview.py": "adec7073a1ab80af04ab511393aa433e67eb44b31bf0adf647b9afd348f24c10",
+    "native_desktop.py": "31ace97dda5342519aa749c4dcd01dbd70b425b79b507639a543cf9a2c00ba19"
+  },
+  "observation": {
+    "actualOwnedPNGReadEntered": true,
+    "actualStageHeldLifecycleLock": true,
+    "actualCleanupEnteredSharedReceipt": true,
+    "unrelatedOldEpoch": "abcdef123456-99",
+    "cleanupReturnedBeforeReadRelease": false,
+    "receiptAcquiredBeforeReadRelease": false,
+    "observationSeconds": 0.1510782859986648,
+    "cleanupReturnedAfterReadRelease": true,
+    "receiptAcquiredAfterReadRelease": true,
+    "oldSourceGone": true,
+    "allThreadsTerminal": true
+  },
+  "nativeLaunch": false,
+  "productChanged": false,
+  "scopeLimit": "actual frozen BatchPreviews.stage and NativeDesktop.release_sources; shared receipt lock as actual cleanup caller; CPU gated material read, no claim of measured native stall"
+}

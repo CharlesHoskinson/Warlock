@@ -1,0 +1,93 @@
+{
+  "updatedUTC": "2026-10-02T13:04:59.984436+00:00",
+  "result": "bounded Btrfs source-device translation contract approved for isolated implementation",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/CONTRACT.md": {
+      "sha256": "5ae1c7fed0e3dedfceb85d522a69d13b76a8ffb24a855f79f890d03d94addb81",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/mapping_device.qnt": {
+      "sha256": "d4510fb39c71ae688b61d150dd7938cc715c8d821272cf32d6fcd98807d11118",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/formal-before-guard-change.json": {
+      "sha256": "c42478254d288985a026c46329775baad18370bdb0e12df8f755a679ab5c07bb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/primary-sources.json": {
+      "sha256": "c34a820d2f00e301054e70387aeafca8b0cd769a7dc40e76094704bdb0b1a2de",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/actual-owned-map-diagnostic.json": {
+      "sha256": "5342f0e16766ebde6e7567d79c466617bab649d94a467b57bf56676220efe390",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/actual-owned-map-diagnostic-v2.json": {
+      "sha256": "7718f66c9e65204e7829d372233501236d8e2d0e1502f5507ba1c75869813097",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/task_mmu.c": {
+      "sha256": "f3afb0ed8f36a77440640a821d0572f448c856db5c7c310bc4d7dbdcf82d684d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/btrfs-inode.c": {
+      "sha256": "76a195f07159fe5c4f0dbc5abb35164976462371bde6271fa31d8df2902d1b15",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/proc-base.c": {
+      "sha256": "f13f7adf038170dfa9b5f2bd077bda95307499bfb708440e9b9251a849d70732",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/proc_namespace.c": {
+      "sha256": "fd82c0db52055ae807ee0b46c7c9bc5d47a9239805eb8ca5c47d2ba81d695776",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/MappingDiagnostic.cpp": {
+      "sha256": "c38f2ec90ea294fff5541362fb9141749cdd0c509b6620a38b5666ec07102a19",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/MappingDiagnostic.hpp": {
+      "sha256": "695e91d389d97e53420f7f3e0a0bb1d017f983c9f8dd5dbf409024e368abed96",
+      "mode": 420
+    }
+  },
+  "initialFormal": {
+    "namedCases": 84,
+    "traces": 2000,
+    "maxSteps": 100,
+    "scope": "before/after snapshot, current epoch and explicit metadata fault abstraction; actual corrected C++ guards still require source/kernel/refusal proof",
+    "runnerChangedAfterProof": [
+      {
+        "path": "/home/hoskinson/window-behavior-spec/mapping-device-semantics-v1/prove_before.py",
+        "reportedSHA256": "a3d235562aa227616a12273ce211f2d70e135b02b125118696820960c72e9ea4",
+        "currentSHA256": "8a3ce997cf82e3a75d7bbe9d28386399971c468990663e77413901bb9cca67d7"
+      }
+    ],
+    "fullReportInputConservation": false,
+    "modelInputConservation": true
+  },
+  "actualEvidence": {
+    "processIdentityBeforeAfterEqual": true,
+    "sourceFDMetadataBeforeAfterEqual": true,
+    "selectedMountBeforeAfterEqual": true,
+    "actualMapFilesReadlink": true,
+    "actualMapFilesFollowDeniedEPERM": true,
+    "originalRegistryRefusalPreserved": true
+  },
+  "kernelSourceMapping": [
+    "show_map_vma: inode superblock s_dev plus i_ino.",
+    "btrfs_getattr: stat device root anon_dev, root subvolume ID.",
+    "show_mountinfo: mount device sb s_dev.",
+    "proc_map_files_get_link: following needs initial namespace checkpoint/admin capability, distinct from readlink."
+  ],
+  "authorizedChange": "Exact fstatfs Btrfs branch, descriptor statx/mount/subvolume guards and before/after observer/child selected mount-device translation; all original frozen-source/process/VMA guards retained. Non-Btrfs direct-device comparison remains.",
+  "property": "Current frozen disk-code source, current mapping name/inode/superblock device and unchanged owned process/namespace agree at bounded before/after observations.",
+  "limits": [
+    "No map_files backing FD, historical backing mount, process memory bytes or absence of intervening change claim.",
+    "Reference v6.19 not asserted byte identical to installed kernel.",
+    "Initial formal abstracts metadata predicates; next device relation model and final actual CPU packet remain pending."
+  ],
+  "GUI": false,
+  "nativeAccepted": false,
+  "mainChanged": false
+}

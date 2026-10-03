@@ -1,0 +1,24 @@
+{
+  "case": "actual-public-provider-refusal",
+  "command": [
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/cpu-public-provider-retire-refusal",
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v8-terminal-retire/libobjectlifetime-process-terminal.so"
+  ],
+  "actualCurrentBinarySHA256": "171b78ea7139ca1e50ecf254121f6f60b0a0550d9be23b8cca137ea23879e1e5",
+  "actualBuildPath": "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/terminal-module-build-v1.json",
+  "actualBuildSHA256": "093a1bec06d01acf83a3654086a951df502fbc3c1287b5338f76778bf6c603f3",
+  "GUI": false,
+  "helperLaunches": 0,
+  "retries": 0,
+  "observerDeadlineSeconds": 8,
+  "EOFWaitSeconds": 5,
+  "stdout": "{\"GUI\":false,\"actualPublicMarshalling\":true,\"installedQSRetirePositive\":false,\"nativeTypedParserReachedClaim\":false,\"observations\":[{\"argumentType\":\"qulonglong\",\"result\":{\"automaticRetries\":0,\"error\":\"Exact private runtime required\",\"nativeWrites\":0,\"schema\":\"qml-pin-process-lifecycle-v1\"},\"route\":\"actualProviderMetaobject\"},{\"argumentType\":\"bool\",\"result\":{\"automaticRetries\":0,\"error\":\"Exact private runtime required\",\"nativeWrites\":0,\"schema\":\"qml-pin-process-lifecycle-v1\"},\"route\":\"actualProviderMetaobject\"},{\"argumentType\":\"QString\",\"result\":{\"automaticRetries\":0,\"error\":\"Exact private runtime required\",\"nativeWrites\":0,\"schema\":\"qml-pin-process-lifecycle-v1\"},\"route\":\"actualProviderMetaobject\"},{\"argumentExpression\":\"1\",\"result\":{\"automaticRetries\":0,\"error\":\"Exact private runtime required\",\"nativeWrites\":0,\"schema\":\"qml-pin-process-lifecycle-v1\"},\"route\":\"actualProviderJsMarshalling\"},{\"argumentExpression\":\"true\",\"result\":{\"automaticRetries\":0,\"error\":\"Exact private runtime required\",\"nativeWrites\":0,\"schema\":\"qml-pin-process-lifecycle-v1\"},\"route\":\"actualProviderJsMarshalling\"},{\"argumentExpression\":\"'1'\",\"result\":{\"automaticRetries\":0,\"error\":\"Exact private runtime required\",\"nativeWrites\":0,\"schema\":\"qml-pin-process-lifecycle-v1\"},\"route\":\"actualProviderJsMarshalling\"}],\"result\":\"pass\"}\n",
+  "stderr": "",
+  "exitCode": 0,
+  "result": "pass",
+  "elapsedSeconds": 0.019851511024171486,
+  "normalProcessExitObserved": true,
+  "actualChildExitCode": 0,
+  "actualActorGone": true,
+  "sourcesUnchanged": true
+}

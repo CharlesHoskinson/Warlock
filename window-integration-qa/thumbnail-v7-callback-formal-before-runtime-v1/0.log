@@ -1,0 +1,9 @@
+[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/batch_callback_identity_test.qnt:6:27
+  6:  action refuses(p:Binding)=fire(Link(p)).then(fire(Original(true))).then(fire(Confirm(p))).then(fire(Accept)).then(check(s.refused and not(s.accepted)))
+                               ^
+
+error: parsing failed

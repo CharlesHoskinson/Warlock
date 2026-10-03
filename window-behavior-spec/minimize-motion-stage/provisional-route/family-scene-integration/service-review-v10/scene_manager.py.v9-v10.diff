@@ -1,0 +1,11 @@
+--- service-review-v9/scene_manager.py
++++ service-review-v10/scene_manager.py
+@@ -159,6 +159,8 @@
+                 number=len(self.actors)+1
+                 desktop,transport=self.factory(number)
+                 controller=ManagedController(self,desktop,transport,**self.options)
++                bind=getattr(transport,'bind_controller',None)
++                if bind:bind(controller)
+                 self.actors.append(Actor(number,controller))
+                 self.owners[captured]=controller
+             self.serial+=1

@@ -1,0 +1,286 @@
+{
+  "checks": [
+    {
+      "name": "actual native client accepts 330x320",
+      "passed": true,
+      "requested": [
+        330,
+        320
+      ],
+      "size": [
+        330,
+        320
+      ],
+      "allowedFractionalScaleRounding": 1,
+      "pathWidth": 302,
+      "filterWidth": 226
+    },
+    {
+      "name": "actual native client accepts 487x320",
+      "passed": true,
+      "requested": [
+        487,
+        320
+      ],
+      "size": [
+        487,
+        320
+      ],
+      "allowedFractionalScaleRounding": 1,
+      "pathWidth": 459,
+      "filterWidth": 383
+    },
+    {
+      "name": "actual native client accepts 500x320",
+      "passed": true,
+      "requested": [
+        500,
+        320
+      ],
+      "size": [
+        500,
+        320
+      ],
+      "allowedFractionalScaleRounding": 1,
+      "pathWidth": 472,
+      "filterWidth": 396
+    },
+    {
+      "name": "actual native client accepts 533x320",
+      "passed": true,
+      "requested": [
+        533,
+        320
+      ],
+      "size": [
+        533,
+        320
+      ],
+      "allowedFractionalScaleRounding": 1,
+      "pathWidth": 505,
+      "filterWidth": 429
+    },
+    {
+      "name": "actual native client accepts 800x500",
+      "passed": true,
+      "requested": [
+        800,
+        500
+      ],
+      "size": [
+        801,
+        500
+      ],
+      "allowedFractionalScaleRounding": 1,
+      "pathWidth": 511,
+      "filterWidth": 250
+    },
+    {
+      "name": "actual left snap fits minimum",
+      "passed": true,
+      "requestedRect": [
+        10.0,
+        60.0,
+        785,
+        930.0
+      ],
+      "actualRect": [
+        10,
+        60,
+        784,
+        930
+      ],
+      "allowedFractionalScaleRounding": 1
+    },
+    {
+      "name": "actual left unsnap restores normal",
+      "passed": true
+    },
+    {
+      "name": "actual top_left snap fits minimum",
+      "passed": true,
+      "requestedRect": [
+        10.0,
+        60.0,
+        785,
+        448
+      ],
+      "actualRect": [
+        10,
+        60,
+        784,
+        447
+      ],
+      "allowedFractionalScaleRounding": 1
+    },
+    {
+      "name": "actual top_left unsnap restores normal",
+      "passed": true
+    },
+    {
+      "name": "actual third_left snap fits minimum",
+      "passed": true,
+      "requestedRect": [
+        10.0,
+        60.0,
+        520,
+        930.0
+      ],
+      "actualRect": [
+        10,
+        60,
+        519,
+        930
+      ],
+      "allowedFractionalScaleRounding": 1
+    },
+    {
+      "name": "actual third_left unsnap restores normal",
+      "passed": true
+    },
+    {
+      "name": "physical New Folder opens mkdir prompt",
+      "passed": true
+    },
+    {
+      "name": "physical New File opens newfile prompt",
+      "passed": true
+    },
+    {
+      "name": "physical CtrlF filter works at330",
+      "passed": true
+    },
+    {
+      "name": "physical Escape clears filter",
+      "passed": true
+    },
+    {
+      "name": "physical CtrlL navigates compact path",
+      "passed": true
+    },
+    {
+      "name": "physical AltLeft restores folder history",
+      "passed": true
+    },
+    {
+      "name": "physical View button switches grid",
+      "passed": true
+    },
+    {
+      "name": "physical grid switch keeps filename/meta visible at330x320",
+      "passed": true
+    },
+    {
+      "name": "physical View button restores list",
+      "passed": true
+    },
+    {
+      "name": "physical Sort menu reaches compact hidden Kind column",
+      "passed": true
+    },
+    {
+      "name": "physical CtrlB opens compact sidebar",
+      "passed": true
+    },
+    {
+      "name": "physical sidebar wheel reaches tree",
+      "passed": true
+    },
+    {
+      "name": "physical Escape dismisses sidebar",
+      "passed": true
+    },
+    {
+      "name": "physical selection preserves full compact file area",
+      "passed": true
+    },
+    {
+      "name": "physical CtrlI opens details overlay",
+      "passed": true
+    },
+    {
+      "name": "physical details wheel reaches Trash action",
+      "passed": true,
+      "button": {
+        "x": 47,
+        "y": 248,
+        "w": 129.5,
+        "h": 32,
+        "visible": true
+      }
+    },
+    {
+      "name": "physical compact details Rename preserves prompt payload",
+      "passed": true
+    },
+    {
+      "name": "physical Escape dismisses details",
+      "passed": true
+    },
+    {
+      "name": "physical Space opens compact preview",
+      "passed": true
+    },
+    {
+      "name": "physical Escape closes preview",
+      "passed": true
+    },
+    {
+      "name": "original explorer remains same hidden process",
+      "passed": true
+    },
+    {
+      "name": "original clients and geometries preserved",
+      "passed": true
+    },
+    {
+      "name": "original cursor restored",
+      "passed": true
+    },
+    {
+      "name": "original focus restored",
+      "passed": true
+    },
+    {
+      "name": "original catalog bytes unchanged",
+      "passed": true
+    },
+    {
+      "name": "original explorer dashboard bytes unchanged",
+      "passed": true
+    },
+    {
+      "name": "original explorer navigation selection history unchanged",
+      "passed": true
+    },
+    {
+      "name": "clipboard and primary selection unchanged by raw byte hash and MIME hash",
+      "passed": true
+    },
+    {
+      "name": "accessibility flags unchanged",
+      "passed": true
+    },
+    {
+      "name": "original physical keyboard layouts and locks preserved",
+      "passed": true
+    },
+    {
+      "name": "copied fixture exits normally",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "scope": "Copied real Files QML on main Wayland compositor; own window physical input and actual snap",
+  "fixtureIdentity": [
+    "0x5a02aef99790",
+    "180003d7",
+    2975632
+  ],
+  "clipboardPreservation": {
+    "method": "wl-paste --no-newline and --list-types, SHA256 comparison in memory; contents never printed/stored",
+    "matched": true
+  },
+  "exitCode": -15,
+  "result": "pass"
+}

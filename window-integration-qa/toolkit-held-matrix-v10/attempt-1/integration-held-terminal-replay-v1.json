@@ -1,0 +1,73 @@
+{
+  "result": "fail",
+  "checks": {
+    "terminalReportRetainsActualFailure": true,
+    "completeFrozenBytesModesLinks": true,
+    "exactSourceManifest": true,
+    "all18MainPreservation": true,
+    "mainWritesAbsent": true,
+    "allFourExactVariants": false,
+    "qt-wayland:all13ExactCases": true,
+    "qt-wayland:move-escape:nativeReplay": true,
+    "qt-wayland:move-escape:normalPublicQuit": true,
+    "qt-wayland:move-reload:nativeReplay": true,
+    "qt-wayland:move-reload:normalPublicQuit": true,
+    "qt-wayland:move-unload-reload:nativeReplay": true,
+    "qt-wayland:move-unload-reload:normalPublicQuit": true,
+    "qt-wayland:move-minimize-preview:nativeReplay": true,
+    "qt-wayland:move-minimize-preview:normalPublicQuit": true,
+    "qt-wayland:move-close-reopen:nativeReplay": true,
+    "qt-wayland:move-close-reopen:normalPublicQuit": true,
+    "qt-wayland:resize-escape:nativeReplay": true,
+    "qt-wayland:resize-escape:normalPublicQuit": true,
+    "qt-wayland:resize-reload:nativeReplay": true,
+    "qt-wayland:resize-reload:normalPublicQuit": true,
+    "qt-wayland:resize-unload-reload:nativeReplay": true,
+    "qt-wayland:resize-unload-reload:normalPublicQuit": true,
+    "qt-wayland:resize-minimize-preview:nativeReplay": true,
+    "qt-wayland:resize-minimize-preview:normalPublicQuit": true,
+    "qt-wayland:resize-close-reopen:nativeReplay": true,
+    "qt-wayland:resize-close-reopen:normalPublicQuit": true,
+    "qt-wayland:genuine-group-release-positive:nativeReplay": true,
+    "qt-wayland:genuine-group-release-positive:normalPublicQuit": true,
+    "qt-wayland:pending-caption-escape:nativeReplay": true,
+    "qt-wayland:pending-caption-escape:normalPublicQuit": true,
+    "qt-wayland:pending-caption-reload:nativeReplay": true,
+    "qt-wayland:pending-caption-reload:normalPublicQuit": true,
+    "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": false,
+    "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": true,
+    "qt-wayland:exactQSReadinessAndExplicitNormalQuit": true,
+    "qt-wayland:normalQSAndService": true,
+    "qt-wayland:nativeUnloadNormalOrdered": true,
+    "qt-wayland:hostRuntimeCleanup": true,
+    "qt-wayland:rawHelpersNormalExact": false,
+    "qt-wayland:allRecordedOriginalIdentitiesGone": true,
+    "qt-wayland:bothGenuineShellPreviewReceipts": true
+  },
+  "errors": {},
+  "inventory": [
+    {
+      "variant": "qt-wayland",
+      "reachedCases": 13,
+      "retainedResult": "fail",
+      "errors": {
+        "helperAcceptanceError": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/run_native.py\", line 172, in variant_run\n    report['completedHelpers']=helper_setup.wait_and_archive(config,output/'completed-helpers.json',expect_harness=expectation['harnessSnapshotAttempted'],expect_service=expectation['serviceRegistered'])\n                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/helper_setup.py\", line 271, in wait_and_archive\n    result = observer.summarize(events, config['allowed'], require_all,expect_harness,expected)\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v10/helper_observer.py\", line 452, in summarize\n    raise RuntimeError('Helper normal completion mismatch')\nRuntimeError: Helper normal completion mismatch\n"
+      }
+    }
+  ],
+  "sourceManifestSHA256": "f3424b7465351ac016a38499ebf4a23f8eeed686476f6c9bcaaca8ed880404dc",
+  "sourceCount": 23343,
+  "modeCount": 23343,
+  "linkCount": 332,
+  "actualReachedCases": 13,
+  "expectedCases": 52,
+  "producerResult": "fail",
+  "nativeCommands": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false,
+  "fullHeld52ReplayAccepted": false,
+  "replayLimitations": [
+    "Historical geometry/pin and native IPC command timing are accepted only where actual samples are retained; gate booleans alone do not supply missing observations."
+  ],
+  "auditorSourceSHA256": "5d35dd6a4f31e71073faa44241d0368055523787040c3842436345236d2fc011"
+}

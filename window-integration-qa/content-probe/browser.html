@@ -1,0 +1,41 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Content repaint QA</title>
+<style>
+html,body{margin:0;background:#162033;color:white;font:20px sans-serif;overflow:hidden}
+canvas{display:block;width:100vw;height:100vh}
+</style>
+<canvas id="view"></canvas>
+<script>
+// A changing full-frame raster plus a bounded main-thread workload. Stats use
+// memory and a low-frequency localhost POST, without per-frame logging.
+const canvas=document.querySelector('#view'),ctx=canvas.getContext('2d');
+const stats={frames:[],clicks:[],work:0,iterations:0,ready:false};
+let previous=0,phase=0;
+function paint(t){
+  if(previous)stats.frames.push([t,t-previous]);previous=t;
+  if(stats.frames.length>8000)stats.frames.shift();
+  const begin=performance.now();let n=0,value=0;
+  while(performance.now()-begin<stats.work){
+    for(let i=0;i<1000;i++)value+=Math.sin(i+n);n+=1000;
+  }
+  stats.iterations+=n;
+  canvas.width=Math.max(1,innerWidth);canvas.height=Math.max(1,innerHeight);
+  phase++;
+  for(let i=0;i<16;i++){
+    ctx.fillStyle=`hsl(${(i*22+phase*3)%360} 75% 45%)`;
+    ctx.fillRect(i*canvas.width/16,0,canvas.width/16+1,canvas.height);
+  }
+  ctx.fillStyle='white';ctx.fillRect(20+(phase*5)%(canvas.width-50),40,25,100);
+  ctx.fillStyle='black';ctx.fillText(`Frame ${phase}; work ${stats.work}ms`,20,25);
+  stats.ready=true;requestAnimationFrame(paint);
+}
+canvas.addEventListener('click',e=>stats.clicks.push([performance.now(),e.clientX,e.clientY]));
+setInterval(async()=>{
+  try{
+    const r=await fetch('/state',{method:'POST',body:JSON.stringify(stats)});
+    const command=await r.json();stats.work=command.work;
+  }catch(e){}
+},250);
+requestAnimationFrame(paint);
+</script>

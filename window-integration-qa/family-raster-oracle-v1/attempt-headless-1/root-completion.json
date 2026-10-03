@@ -1,0 +1,22 @@
+{
+  "completed": "2026-10-01T11:32:10.619426+00:00",
+  "nativeExecution": "failed before producer start",
+  "nativeRasterProved": false,
+  "nativeCadenceProved": false,
+  "mainGUIWrites": false,
+  "mainIdentitiesPreserved": true,
+  "oracleInputCount": 13,
+  "producerInputCount": 77,
+  "allSourcesUnchanged": true,
+  "exactPrivatePIDsGone": [
+    4099128,
+    4099132
+  ],
+  "exactRuntimeGone": true,
+  "coreMechanism": "private Hyprland SIGABRT, uncaught startup std::runtime_error CBackend::create() failed; resource worker waiting",
+  "OOMObserved": false,
+  "coreBacktraceSHA256": "e9fd926ee67b3d396aa0a937b100f1d942bbe5adfe253969e17446433f78db21",
+  "primaryBackendSource": "https://raw.githubusercontent.com/hyprwm/aquamarine/v0.15.0/src/backend/Backend.cpp",
+  "inference": "Backend startup without a DRM/Wayland allocator is consistent with failure; actual per-backend runtime log was removed with temporary runtime, so exact inner cause is not independently established. No renderer/plugin was launched.",
+  "nextAction": "prepare independent private headless GL host to supply an actual Wayland allocator without main desktop surfaces"
+}

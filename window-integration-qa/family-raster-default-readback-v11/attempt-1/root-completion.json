@@ -1,0 +1,1074 @@
+{
+  "updatedUTC": "2026-10-01T22:28:24.534830+00:00",
+  "reportSHA256": "e5aba445a9d0db553a9ab6d61e3ac9596c8fb3ff9ad8cc4dd2c45739d458b421",
+  "manifestSHA256": "9e5fb1224ec6786617ff14dfbb765616ad7888e76324325fbf17f8d5d99e7712",
+  "inputCount": 4048,
+  "linkCount": 55,
+  "independentChecks": {
+    "allFrozenInputsExact": true,
+    "allFrozenLinksExact": true,
+    "allDeclaredFrozenModesExact": true,
+    "all15MainPreservation": true,
+    "allRecordedPIDStartGone": true,
+    "actualProducerNormalWaitZeroAndGone": true,
+    "ownedRuntimeGone": true,
+    "strictHostCleanup": true,
+    "archivedMandatoryParentTransportHealthy": true,
+    "all44ImagesIndependentlyReplayed": true,
+    "allActualEventsValidAndNoAuthority": true,
+    "all4ActualQuantizedFramesIndependentlyBound": true,
+    "all18CausalDefaultTargetsIndependentlyBound": true
+  },
+  "allIndependentChecks": true,
+  "replayedComparisons": [
+    {
+      "name": "0-ORACLE-SECOND/raw",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 1,
+        "firstFailures": [],
+        "actualSHA256": "586adacba11e61d0e2adb55e92595fef09f79d7ae16ce930569edb91d5a824f8",
+        "expectedSHA256": "875bbb8a143d61066cdcc674801b544a12e8ccb962d806e44d863d1a13f4ec0b"
+      }
+    },
+    {
+      "name": "0-ORACLE-SECOND/composed",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 1,
+        "firstFailures": [],
+        "actualSHA256": "70da08408e99cf26c9f506cb864e42082d283067eff2a0df851c32a8f31c206d",
+        "expectedSHA256": "0929b5abd9b8680987653c85ef3b27cba89c0856023d039326b3917394eb8de0"
+      }
+    },
+    {
+      "name": "causal-0-ORACLE-SECOND-0.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "5399f7de0d3c178f063db51e13f470eb0b744e032301b7a5226b5e262e85dd06",
+        "expectedSHA256": "5399f7de0d3c178f063db51e13f470eb0b744e032301b7a5226b5e262e85dd06"
+      }
+    },
+    {
+      "name": "causal-0-ORACLE-SECOND-0.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "5399f7de0d3c178f063db51e13f470eb0b744e032301b7a5226b5e262e85dd06",
+        "expectedSHA256": "5399f7de0d3c178f063db51e13f470eb0b744e032301b7a5226b5e262e85dd06"
+      }
+    },
+    {
+      "name": "causal-0-ORACLE-SECOND-1.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "918f1aa87fb87ec3a31bfa6013eb86db825a2d28eeb1b20b07f77597b6a073c0",
+        "expectedSHA256": "918f1aa87fb87ec3a31bfa6013eb86db825a2d28eeb1b20b07f77597b6a073c0"
+      }
+    },
+    {
+      "name": "causal-0-ORACLE-SECOND-1.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "918f1aa87fb87ec3a31bfa6013eb86db825a2d28eeb1b20b07f77597b6a073c0",
+        "expectedSHA256": "918f1aa87fb87ec3a31bfa6013eb86db825a2d28eeb1b20b07f77597b6a073c0"
+      }
+    },
+    {
+      "name": "causal-0-ORACLE-SECOND-2.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "da5023caa4b9c9751ad6d9e2e507a54d9f16eb13dc726a0c810e4142a861b9f5",
+        "expectedSHA256": "da5023caa4b9c9751ad6d9e2e507a54d9f16eb13dc726a0c810e4142a861b9f5"
+      }
+    },
+    {
+      "name": "causal-0-ORACLE-SECOND-2.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "da5023caa4b9c9751ad6d9e2e507a54d9f16eb13dc726a0c810e4142a861b9f5",
+        "expectedSHA256": "da5023caa4b9c9751ad6d9e2e507a54d9f16eb13dc726a0c810e4142a861b9f5"
+      }
+    },
+    {
+      "name": "causal-0-ORACLE-SECOND-3.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "46494c5bf25bb8efefd33e3d485bcb370f02d4a006d079ce2ec619ef8a9324e0",
+        "expectedSHA256": "46494c5bf25bb8efefd33e3d485bcb370f02d4a006d079ce2ec619ef8a9324e0"
+      }
+    },
+    {
+      "name": "causal-0-ORACLE-SECOND-3.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "46494c5bf25bb8efefd33e3d485bcb370f02d4a006d079ce2ec619ef8a9324e0",
+        "expectedSHA256": "46494c5bf25bb8efefd33e3d485bcb370f02d4a006d079ce2ec619ef8a9324e0"
+      }
+    },
+    {
+      "name": "causal-0-ORACLE-SECOND-4.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 1,
+        "firstFailures": [],
+        "actualSHA256": "198053c590202cbec164ebbea2b7c2d4236deb1667c769c3cb442190b1f25691",
+        "expectedSHA256": "aafb6da641211cd64509762cee9fcdd77e7abdd61c29a669512e0b4ca2bb7946"
+      }
+    },
+    {
+      "name": "causal-0-ORACLE-SECOND-4.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 1,
+        "firstFailures": [],
+        "actualSHA256": "198053c590202cbec164ebbea2b7c2d4236deb1667c769c3cb442190b1f25691",
+        "expectedSHA256": "aafb6da641211cd64509762cee9fcdd77e7abdd61c29a669512e0b4ca2bb7946"
+      }
+    },
+    {
+      "name": "causal-0-ORACLE-SECOND-5.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 1,
+        "firstFailures": [],
+        "actualSHA256": "586adacba11e61d0e2adb55e92595fef09f79d7ae16ce930569edb91d5a824f8",
+        "expectedSHA256": "875bbb8a143d61066cdcc674801b544a12e8ccb962d806e44d863d1a13f4ec0b"
+      }
+    },
+    {
+      "name": "causal-0-ORACLE-SECOND-5.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 1,
+        "firstFailures": [],
+        "actualSHA256": "586adacba11e61d0e2adb55e92595fef09f79d7ae16ce930569edb91d5a824f8",
+        "expectedSHA256": "875bbb8a143d61066cdcc674801b544a12e8ccb962d806e44d863d1a13f4ec0b"
+      }
+    },
+    {
+      "name": "0-WAYLAND-1/raw",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0",
+        "expectedSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0"
+      }
+    },
+    {
+      "name": "0-WAYLAND-1/composed",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "2f4de4ee257e960a099d8923df0c93bb852e637dede2f19ddb8e7173c6fef2f3",
+        "expectedSHA256": "2f4de4ee257e960a099d8923df0c93bb852e637dede2f19ddb8e7173c6fef2f3"
+      }
+    },
+    {
+      "name": "causal-0-WAYLAND-1-0.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "3a81632ebe6fa6197cedcfac5d494485f7b850b2b112c61ffd34916687250a9a",
+        "expectedSHA256": "3a81632ebe6fa6197cedcfac5d494485f7b850b2b112c61ffd34916687250a9a"
+      }
+    },
+    {
+      "name": "causal-0-WAYLAND-1-0.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "3a81632ebe6fa6197cedcfac5d494485f7b850b2b112c61ffd34916687250a9a",
+        "expectedSHA256": "3a81632ebe6fa6197cedcfac5d494485f7b850b2b112c61ffd34916687250a9a"
+      }
+    },
+    {
+      "name": "causal-0-WAYLAND-1-1.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4",
+        "expectedSHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4"
+      }
+    },
+    {
+      "name": "causal-0-WAYLAND-1-1.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4",
+        "expectedSHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4"
+      }
+    },
+    {
+      "name": "causal-0-WAYLAND-1-2.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "89fd0f121a35e324bac99c5c6c399212e7198724c8452bc8442129d161afc53d",
+        "expectedSHA256": "89fd0f121a35e324bac99c5c6c399212e7198724c8452bc8442129d161afc53d"
+      }
+    },
+    {
+      "name": "causal-0-WAYLAND-1-2.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "89fd0f121a35e324bac99c5c6c399212e7198724c8452bc8442129d161afc53d",
+        "expectedSHA256": "89fd0f121a35e324bac99c5c6c399212e7198724c8452bc8442129d161afc53d"
+      }
+    },
+    {
+      "name": "causal-0-WAYLAND-1-3.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "f33fbc0bdfe3b9b4ba19927f8b2490edb658a9846ba1027dc81b764f96142f85",
+        "expectedSHA256": "f33fbc0bdfe3b9b4ba19927f8b2490edb658a9846ba1027dc81b764f96142f85"
+      }
+    },
+    {
+      "name": "causal-0-WAYLAND-1-3.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "f33fbc0bdfe3b9b4ba19927f8b2490edb658a9846ba1027dc81b764f96142f85",
+        "expectedSHA256": "f33fbc0bdfe3b9b4ba19927f8b2490edb658a9846ba1027dc81b764f96142f85"
+      }
+    },
+    {
+      "name": "causal-0-WAYLAND-1-4.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0",
+        "expectedSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0"
+      }
+    },
+    {
+      "name": "causal-0-WAYLAND-1-4.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0",
+        "expectedSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0"
+      }
+    },
+    {
+      "name": "causal-0-WAYLAND-1-5.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0",
+        "expectedSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0"
+      }
+    },
+    {
+      "name": "causal-0-WAYLAND-1-5.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0",
+        "expectedSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0"
+      }
+    },
+    {
+      "name": "1-ORACLE-SECOND/raw",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "67bc54fdf089074395f098cbb14514f672279366fcd17a00dcbd5a25df6c0a56",
+        "expectedSHA256": "67bc54fdf089074395f098cbb14514f672279366fcd17a00dcbd5a25df6c0a56"
+      }
+    },
+    {
+      "name": "1-ORACLE-SECOND/composed",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "d4e470307cda3f003374ca51b7a537b58a3e93aea2b2a906b55a287a23ea69f7",
+        "expectedSHA256": "d4e470307cda3f003374ca51b7a537b58a3e93aea2b2a906b55a287a23ea69f7"
+      }
+    },
+    {
+      "name": "causal-1-ORACLE-SECOND-0.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "fb828db9f30046e4d0953edc95b08c34c44392131d6de7b19c876402d795da09",
+        "expectedSHA256": "fb828db9f30046e4d0953edc95b08c34c44392131d6de7b19c876402d795da09"
+      }
+    },
+    {
+      "name": "causal-1-ORACLE-SECOND-0.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "fb828db9f30046e4d0953edc95b08c34c44392131d6de7b19c876402d795da09",
+        "expectedSHA256": "fb828db9f30046e4d0953edc95b08c34c44392131d6de7b19c876402d795da09"
+      }
+    },
+    {
+      "name": "causal-1-ORACLE-SECOND-1.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "cebd4a226263b01427bcff23b732d5b2ebb943d7d85949dc133ce5d292c4934b",
+        "expectedSHA256": "cebd4a226263b01427bcff23b732d5b2ebb943d7d85949dc133ce5d292c4934b"
+      }
+    },
+    {
+      "name": "causal-1-ORACLE-SECOND-1.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "cebd4a226263b01427bcff23b732d5b2ebb943d7d85949dc133ce5d292c4934b",
+        "expectedSHA256": "cebd4a226263b01427bcff23b732d5b2ebb943d7d85949dc133ce5d292c4934b"
+      }
+    },
+    {
+      "name": "causal-1-ORACLE-SECOND-2.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "67bc54fdf089074395f098cbb14514f672279366fcd17a00dcbd5a25df6c0a56",
+        "expectedSHA256": "67bc54fdf089074395f098cbb14514f672279366fcd17a00dcbd5a25df6c0a56"
+      }
+    },
+    {
+      "name": "causal-1-ORACLE-SECOND-2.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "67bc54fdf089074395f098cbb14514f672279366fcd17a00dcbd5a25df6c0a56",
+        "expectedSHA256": "67bc54fdf089074395f098cbb14514f672279366fcd17a00dcbd5a25df6c0a56"
+      }
+    },
+    {
+      "name": "1-WAYLAND-1/raw",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449",
+        "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+      }
+    },
+    {
+      "name": "1-WAYLAND-1/composed",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "3d872bd29a6a5733d75dc81f861adf78cdbcae996a1c7e8eefe93619d5d27125",
+        "expectedSHA256": "3d872bd29a6a5733d75dc81f861adf78cdbcae996a1c7e8eefe93619d5d27125"
+      }
+    },
+    {
+      "name": "causal-1-WAYLAND-1-0.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449",
+        "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+      }
+    },
+    {
+      "name": "causal-1-WAYLAND-1-0.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449",
+        "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+      }
+    },
+    {
+      "name": "causal-1-WAYLAND-1-1.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449",
+        "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+      }
+    },
+    {
+      "name": "causal-1-WAYLAND-1-1.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449",
+        "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+      }
+    },
+    {
+      "name": "causal-1-WAYLAND-1-2.json/RGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449",
+        "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+      }
+    },
+    {
+      "name": "causal-1-WAYLAND-1-2.json/nativeRGBA",
+      "passed": true,
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449",
+        "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+      }
+    }
+  ],
+  "processes": [
+    {
+      "pid": 1504934,
+      "start": "11613758",
+      "gone": true
+    },
+    {
+      "pid": 1504935,
+      "start": "11613761",
+      "gone": true
+    },
+    {
+      "pid": 1504950,
+      "start": "11613821",
+      "gone": true
+    },
+    {
+      "pid": 1504934,
+      "start": "11613758",
+      "gone": true
+    },
+    {
+      "pid": 1504935,
+      "start": "11613761",
+      "gone": true
+    },
+    {
+      "pid": 1504950,
+      "start": "11613821",
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "sampling": null,
+  "eventsSHA256": "f614da9447e09c63be716f2a66b88ebadd52e4303f4752aa0434276cb1b2ef0c",
+  "logSHA256": {
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v11/attempt-1/private-session/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790893665_444947/hyprland.log": "aabf1f68ee1cccdf137838aeb4db1061e603bbc18a67bf6fe05253c9a251ced9",
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v11/attempt-1/private-session/weston-renderer.log": "e4a42f2888314ce17ce7af8a5fbfb9dfc44fe946dc77906803d77ce4b74c9437"
+  },
+  "quantizedConfigurations": [
+    {
+      "policy": "per-layer-explicit-over-nearest-rgba8-v1",
+      "sequence": "2",
+      "output": "ORACLE-SECOND",
+      "generation": 14,
+      "familyPassCount": 3,
+      "controlPassCount": 6,
+      "actualConfigurationGate": true,
+      "sampling": {
+        "policy": "four-nearest-centers-highp-bilinear-v1",
+        "familyTextureCount": 3,
+        "controlTextureCount": 3,
+        "actualGetterGate": true,
+        "pixelProof": false,
+        "nativeAuthority": false
+      },
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "policy": "per-layer-explicit-over-nearest-rgba8-v1",
+      "sequence": "1",
+      "output": "WAYLAND-1",
+      "generation": 13,
+      "familyPassCount": 3,
+      "controlPassCount": 6,
+      "actualConfigurationGate": true,
+      "sampling": {
+        "policy": "four-nearest-centers-highp-bilinear-v1",
+        "familyTextureCount": 3,
+        "controlTextureCount": 3,
+        "actualGetterGate": true,
+        "pixelProof": false,
+        "nativeAuthority": false
+      },
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "policy": "per-layer-explicit-over-nearest-rgba8-v1",
+      "sequence": "797",
+      "output": "ORACLE-SECOND",
+      "generation": 14,
+      "familyPassCount": 3,
+      "controlPassCount": 0,
+      "actualConfigurationGate": true,
+      "sampling": {
+        "policy": "four-nearest-centers-highp-bilinear-v1",
+        "familyTextureCount": 3,
+        "controlTextureCount": 3,
+        "actualGetterGate": true,
+        "pixelProof": false,
+        "nativeAuthority": false
+      },
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "policy": "per-layer-explicit-over-nearest-rgba8-v1",
+      "sequence": "796",
+      "output": "WAYLAND-1",
+      "generation": 13,
+      "familyPassCount": 3,
+      "controlPassCount": 0,
+      "actualConfigurationGate": true,
+      "sampling": {
+        "policy": "four-nearest-centers-highp-bilinear-v1",
+        "familyTextureCount": 3,
+        "controlTextureCount": 3,
+        "actualGetterGate": true,
+        "pixelProof": false,
+        "nativeAuthority": false
+      },
+      "pixelProof": false,
+      "nativeAuthority": false
+    }
+  ],
+  "causalTargetBindings": [
+    {
+      "sequence": "2",
+      "output": "ORACLE-SECOND",
+      "generation": 14,
+      "kind": "constant-control",
+      "observedPrefixCount": 1,
+      "prefixTexture": 10,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "2",
+      "output": "ORACLE-SECOND",
+      "generation": 14,
+      "kind": "constant-control",
+      "observedPrefixCount": 2,
+      "prefixTexture": 9,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "2",
+      "output": "ORACLE-SECOND",
+      "generation": 14,
+      "kind": "constant-control",
+      "observedPrefixCount": 3,
+      "prefixTexture": 10,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "2",
+      "output": "ORACLE-SECOND",
+      "generation": 14,
+      "kind": "member-prefix",
+      "observedPrefixCount": 1,
+      "prefixTexture": 10,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "2",
+      "output": "ORACLE-SECOND",
+      "generation": 14,
+      "kind": "member-prefix",
+      "observedPrefixCount": 2,
+      "prefixTexture": 9,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "2",
+      "output": "ORACLE-SECOND",
+      "generation": 14,
+      "kind": "member-prefix",
+      "observedPrefixCount": 3,
+      "prefixTexture": 10,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "1",
+      "output": "WAYLAND-1",
+      "generation": 13,
+      "kind": "constant-control",
+      "observedPrefixCount": 1,
+      "prefixTexture": 5,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "1",
+      "output": "WAYLAND-1",
+      "generation": 13,
+      "kind": "constant-control",
+      "observedPrefixCount": 2,
+      "prefixTexture": 4,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "1",
+      "output": "WAYLAND-1",
+      "generation": 13,
+      "kind": "constant-control",
+      "observedPrefixCount": 3,
+      "prefixTexture": 5,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "1",
+      "output": "WAYLAND-1",
+      "generation": 13,
+      "kind": "member-prefix",
+      "observedPrefixCount": 1,
+      "prefixTexture": 5,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "1",
+      "output": "WAYLAND-1",
+      "generation": 13,
+      "kind": "member-prefix",
+      "observedPrefixCount": 2,
+      "prefixTexture": 4,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "1",
+      "output": "WAYLAND-1",
+      "generation": 13,
+      "kind": "member-prefix",
+      "observedPrefixCount": 3,
+      "prefixTexture": 5,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "797",
+      "output": "ORACLE-SECOND",
+      "generation": 14,
+      "kind": "member-prefix",
+      "observedPrefixCount": 1,
+      "prefixTexture": 10,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "797",
+      "output": "ORACLE-SECOND",
+      "generation": 14,
+      "kind": "member-prefix",
+      "observedPrefixCount": 2,
+      "prefixTexture": 9,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "797",
+      "output": "ORACLE-SECOND",
+      "generation": 14,
+      "kind": "member-prefix",
+      "observedPrefixCount": 3,
+      "prefixTexture": 10,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "796",
+      "output": "WAYLAND-1",
+      "generation": 13,
+      "kind": "member-prefix",
+      "observedPrefixCount": 1,
+      "prefixTexture": 5,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "796",
+      "output": "WAYLAND-1",
+      "generation": 13,
+      "kind": "member-prefix",
+      "observedPrefixCount": 2,
+      "prefixTexture": 4,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "sequence": "796",
+      "output": "WAYLAND-1",
+      "generation": 13,
+      "kind": "member-prefix",
+      "observedPrefixCount": 3,
+      "prefixTexture": 5,
+      "readFramebuffer": 0,
+      "actualCausalTargetBound": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    }
+  ],
+  "rasterAccepted": true,
+  "physicalCadenceAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false
+}

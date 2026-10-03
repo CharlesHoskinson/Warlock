@@ -1,0 +1,70 @@
+{
+  "result": "pass",
+  "nativeExecuted": false,
+  "mainWrites": false,
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-p",
+        "test_*.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "...................................................................................................\n----------------------------------------------------------------------\nRan 99 tests in 1.516s\n\nOK\n"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "c1_audit.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  c1_audit\n    ok exactDisplayedPairTest passed 1 test(s)\n    ok submittedOnlyRefusedTest passed 1 test(s)\n    ok swapOnlyRefusedTest passed 1 test(s)\n    ok failedSwapRefusedTest passed 1 test(s)\n    ok earlyFeedbackRefusedTest passed 1 test(s)\n    ok velocityChangeRefusedTest passed 1 test(s)\n    ok outputGenerationRefusedTest passed 1 test(s)\n    ok differentDurationRefusedTest passed 1 test(s)\n    ok differentStartRefusedTest passed 1 test(s)\n    ok closeRevokesTest passed 1 test(s)\n\n  10 passing (111ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "c1_audit.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (388ms at 5155 traces/second).\nUse --seed=0x156b5fd --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "reversal.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  reversal\n    ok oldFeedbackBecomesDisplayedOriginTest passed 1 test(s)\n    ok provisionalRetargetHasNoAuthorityTest passed 1 test(s)\n    ok oldReceiptCannotCommitTest passed 1 test(s)\n    ok currentValidatedReceiptCanCommitTest passed 1 test(s)\n    ok secondReversalRetainsSourcesTest passed 1 test(s)\n    ok shutdownRevokesAuthorityTest passed 1 test(s)\n\n  6 passing (48ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "reversal.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (366ms at 5464 traces/second).\nUse --seed=0x153a921 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ]
+}

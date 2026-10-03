@@ -1,0 +1,258 @@
+{
+  "config": {
+    "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790936461_1080168132",
+    "compositor": {
+      "pid": 833039,
+      "start": "15893395"
+    },
+    "socket": "/run/user/1000/wqa/d00b/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790936461_1080168132/.socket.sock",
+    "socketIdentity": [
+      84,
+      458286,
+      1000
+    ],
+    "versionSHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+    "helpers": {
+      "snap": {
+        "wrapper": "/run/user/1000/wqa/d00b/taskbar-home/.local/bin/hypr-snap-groups",
+        "wrapperSHA256": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+        "actual": "/run/user/1000/wqa/d00b/taskbar-home/.local/bin/hypr-snap-groups.actual",
+        "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+        "invocation": "/run/user/1000/wqa/d00b/taskbar-home/.local/bin/hypr-snap-groups"
+      },
+      "shell": {
+        "wrapper": "/run/user/1000/wqa/d00b/taskbar-home/.local/bin/omarchy-shell",
+        "wrapperSHA256": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+        "actual": "/run/user/1000/wqa/d00b/taskbar-home/.local/bin/omarchy-shell.actual",
+        "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+        "invocation": "omarchy-shell"
+      }
+    },
+    "log": "/run/user/1000/wqa/d00b/taskbar-home/helper-events.jsonl",
+    "allowed": [
+      "hydrate",
+      "inactive-fileDrag"
+    ],
+    "queryTaskbar": {
+      "path": "/run/user/1000/wqa/d00b/taskbar-home/.local/bin/hypr-taskbar",
+      "sha256": "58215e6cb07b364988a0d5c38e9a4f63d7803e2b7f78481ea3a7104fa55f02e1",
+      "python": "/usr/bin/python3",
+      "pythonSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+    },
+    "queryEnvironment": {
+      "HOME": "/run/user/1000/wqa/d00b/taskbar-home",
+      "PATH": "/run/user/1000/wqa/d00b/taskbar-home/.local/bin:/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/payload/omarchy/bin:/usr/bin",
+      "XDG_RUNTIME_DIR": "/run/user/1000/wqa/d00b",
+      "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790936461_1080168132",
+      "OMARCHY_PATH": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/payload/omarchy",
+      "WINDOW_QA_HELPER_CONFIG": "/run/user/1000/wqa/d00b/taskbar-home/helper-config.json"
+    },
+    "queryRoots": {
+      "qs": {
+        "identity": {
+          "pid": 833190,
+          "start": "15893683",
+          "pgid": 833190,
+          "parent": 832141
+        },
+        "argv": [
+          "/usr/bin/qs",
+          "-p",
+          "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/payload/omarchy/shell"
+        ],
+        "config": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/payload/omarchy/shell",
+        "executable": "/usr/bin/quickshell",
+        "executableSHA256": "2dc99382c032710fe495ed115cdee9dc9c69bdb3a21af4d86a9a8ea16733069b",
+        "configSHA256": "4a4b7694e5b9e0bd952ce0efa2d6dc2cea44cdfa98cc2f442e40fe41cbc1beab"
+      },
+      "harness": {
+        "identity": {
+          "pid": 832141,
+          "start": "15892775",
+          "pgid": 832135,
+          "parent": 832135
+        },
+        "argv": [
+          "/usr/bin/python3",
+          "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/native_integration.py",
+          "--attempt",
+          "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/attempt-baseline-1"
+        ],
+        "source": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/native_integration.py",
+        "sourceSHA256": "e8b32b3a385813276495d83e15905599940fc98ebedcd1e50133febf0f4f3b91",
+        "executable": "/usr/bin/python3.14",
+        "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+      }
+    }
+  },
+  "events": [
+    {
+      "actual": "/run/user/1000/wqa/d00b/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 832141,
+          "pgid": 833039,
+          "pid": 833039,
+          "start": "15893395"
+        }
+      ],
+      "args": [
+        "hydrate"
+      ],
+      "class": "compositor",
+      "delegate": {
+        "parent": 833423,
+        "pgid": 833039,
+        "pid": 833479,
+        "start": "15893770"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 833039,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          458286,
+          1000
+        ]
+      },
+      "operation": "hydrate",
+      "queryRoot": null,
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-aa4724d85c0a44609d810158c421dc89.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790936464866514849,
+      "wrapper": {
+        "parent": 833039,
+        "pgid": 833039,
+        "pid": 833423,
+        "start": "15893759"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/d00b/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "ancestry": [
+        {
+          "parent": 832141,
+          "pgid": 833039,
+          "pid": 833039,
+          "start": "15893395"
+        }
+      ],
+      "args": [
+        "hoskinson.windows",
+        "fileDrag",
+        "false",
+        "100",
+        "100",
+        "0",
+        "146817730"
+      ],
+      "class": "compositor",
+      "delegate": {
+        "parent": 833475,
+        "pgid": 833039,
+        "pid": 833515,
+        "start": "15893779"
+      },
+      "event": "started",
+      "helper": "shell",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 833039,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          458286,
+          1000
+        ]
+      },
+      "operation": "inactive-fileDrag",
+      "queryRoot": null,
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-aa4724d85c0a44609d810158c421dc89.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790936464955838114,
+      "wrapper": {
+        "parent": 833039,
+        "pgid": 833039,
+        "pid": 833475,
+        "start": "15893769"
+      }
+    },
+    {
+      "class": "compositor",
+      "delegate": {
+        "parent": 833423,
+        "pgid": 833039,
+        "pid": 833479,
+        "start": "15893770"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "snap",
+      "operation": "hydrate",
+      "queryRoot": null,
+      "serviceOperation": null,
+      "timeNs": 1790936465068821090,
+      "wrapper": {
+        "parent": 833039,
+        "pgid": 833039,
+        "pid": 833423,
+        "start": "15893759"
+      }
+    },
+    {
+      "class": "compositor",
+      "delegate": {
+        "parent": 833475,
+        "pgid": 833039,
+        "pid": 833515,
+        "start": "15893779"
+      },
+      "event": "terminal",
+      "exitCode": 0,
+      "helper": "shell",
+      "operation": "inactive-fileDrag",
+      "queryRoot": null,
+      "serviceOperation": null,
+      "timeNs": 1790936465081536160,
+      "wrapper": {
+        "parent": 833039,
+        "pgid": 833039,
+        "pid": 833475,
+        "start": "15893769"
+      }
+    }
+  ],
+  "operations": [
+    "hydrate",
+    "inactive-fileDrag"
+  ],
+  "allNormal": true,
+  "allExactProcessesGone": true,
+  "nameExemptions": false,
+  "queryEvents": [],
+  "queryOperations": [],
+  "allQueriesNormal": true,
+  "harnessQueries": 0,
+  "serviceQueries": 0
+}

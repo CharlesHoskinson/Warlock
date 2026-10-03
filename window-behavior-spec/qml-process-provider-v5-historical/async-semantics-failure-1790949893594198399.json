@@ -1,0 +1,50 @@
+{
+  "result": "fail",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/cpu_async_semantics.cpp": "8c10481e3c6cb307cbbdc2d48385dc8a4efdb55d34824b612f1e68b01bcd26b7",
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/async_semantics_build.py": "ade78abd7a439def104ce28834d1400aea5dd1511eb09cad8544ed830cba7f39",
+    "/usr/include/qt6/QtCore/qpromise.h": "abd19d5caf237e1fc272096d893cc63eede4470cb87d9ce1af6745855b5b7108",
+    "/usr/include/qt6/QtCore/qfuture.h": "b97761fe95235964bf1ffc02b57f46f7fd11e5373784538c1470acf923fd4846",
+    "/usr/include/qt6/QtCore/qfuturewatcher.h": "a032724e0f55c41236e0c9bc3e2a427c6662c8138792904899e5e11e06252f20",
+    "/usr/include/qt6/QtCore/qfutureinterface.h": "c9e27a52b05405e4692a6e257ecbe437e49c9a5ad63c72658368f2a6f65f3d3d",
+    "/usr/include/pthread.h": "5479c95276c6693fdd1baa448f5d457dee57fc02b31277bfa04df63cc0b26a94"
+  },
+  "commands": [
+    {
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "Qt6Core"
+      ],
+      "exitCode": 0,
+      "stdout": "-I/usr/include/qt6/QtCore -I/usr/include/qt6 -DQT_CORE_LIB -I/usr/lib/qt6/mkspecs/linux-g++ -lQt6Core\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pthread",
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/cpu_async_semantics.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/cpu-async-semantics",
+        "-I/usr/include/qt6/QtCore",
+        "-I/usr/include/qt6",
+        "-DQT_CORE_LIB",
+        "-I/usr/lib/qt6/mkspecs/linux-g++",
+        "-lQt6Core"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "/home/hoskinson/window-behavior-spec/qml-process-provider-v2-async/cpu_async_semantics.cpp:18:377: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]\n   18 |  auto finish=[&]{for(const auto&v:rows)failed=failed||!v.toObject()[\"passed\"].toBool();QJsonObject report{{\"checks\",rows},{\"result\",failed?\"fail\":\"pass\"},{\"actualPthread\",true},{\"actualQFutureWatcher\",true},{\"GUI\",false},{\"QProcessHelperClaimed\",false},{\"fixtureOnlyWorkerBarrier\",true},{\"normalWorkerJoined\",complete}};const auto raw=QJsonDocument(report).toJson();QFile out;out.open(stdout,QIODevice::WriteOnly);out.write(raw);out.flush();app.exit(failed?1:0);};\n      |                                                                                                                                                                                                                                                                                                                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n"
+    }
+  ],
+  "sourceUnchanged": true,
+  "GUI": false,
+  "productionRuntimeAccepted": false
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_time_date_notifications" xml:lang="eo">
+  <info>
+    <link type="next" xref="commands_profiles"/>
+    <link type="guide" xref="commands#getting_started"/>
+    <link type="seealso" xref="howto_notifications"/>
+    <title type="sort">4. Horo, dato kaj sciigo</title>
+    <title type="link">Horo, dato kaj sciigo</title>
+    <desc>Komandoj por ricevi horon, daton kaj sciigmesaĝojn</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Komandoj pri horo, dato kaj sciigo</title>
+  <p>La jenajn komandojn eblas uzi por ricevi la aktualan horon kaj daton kaj por revizii antaŭe montritajn sciigmesaĝojn:</p>
+  <section id="time_and_date">
+    <title>Akirado de horo kaj dato</title>
+    <list>
+      <item>
+        <p>Prezenti la horon: <keyseq><key>Orko Modifier</key><key>T</key></keyseq></p>
+      </item>
+      <item>
+        <p>Prezenti la daton: <keyseq><key>Orko Modifier</key><key>T</key></keyseq> (duoble klakita)</p>
+      </item>
+    </list>
+  </section>
+  <section id="notifications">
+    <title>Reviziado de sciigmesaĝoj</title>
+    <p>Orko havas tri neligitajn komandojn por aliri antaŭe montritajn <link xref="howto_notifications">sciigmesaĝojn</link>. Bonvolu vidi <link xref="howto_key_bindings">Modifado de klavkombinojn</link> por informo pri kiel ligi ĉi tiujn komandojn al klavpremoj.</p>
+    <list>
+      <item>
+        <p>Prezenti la lastan (plej novan) sciigmesaĝon: (neligita)</p>
+      </item>
+      <item>
+        <p>Prezenti la antaŭan sciigmesaĝon: (neligita)</p>
+      </item>
+      <item>
+        <p>Prezenti la sekvan sciigmesaĝon: (neligita)</p>
+      </item>
+      <item>
+        <p>Prezenti liston de ĉiuj sciigmesaĝoj: (neligita)</p>
+      </item>
+    </list>
+  </section>
+</page>

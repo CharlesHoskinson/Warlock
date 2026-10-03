@@ -1,0 +1,63 @@
+{
+  "updatedUTC": "2026-10-01T14:51:57.570966+00:00",
+  "reportSHA256": "b1c087aff8b10ea37e701c4c77f9577f588530f83fb00fb543346c86354ecb05",
+  "frozenFileCount": 3290,
+  "frozenLinkCount": 6,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-17069dce9d2b47ad9f9eec0e4b81bd80.scope",
+    "coreLimit": 1
+  },
+  "independentChecks": {
+    "allFrozenFilesExact": true,
+    "allFrozenLinksExact": true,
+    "all18MainPreservationChecks": true,
+    "normalOwnedFixtureShutdown": true,
+    "privateClientsGoneBeforeUnload": true,
+    "bothNativeModulesUnloadedNormally": true,
+    "allRecordedProcessIdentitiesGone": true,
+    "privateRuntimeGone": true,
+    "noCleanupErrorsOrUnexpectedSurvivors": true,
+    "archivedParentTransportHealthy": true
+  },
+  "allIndependentChecks": true,
+  "processes": [
+    {
+      "pid": 589779,
+      "start": "8866730",
+      "gone": true
+    },
+    {
+      "pid": 589780,
+      "start": "8866733",
+      "gone": true
+    },
+    {
+      "pid": 589838,
+      "start": "8866791",
+      "gone": true
+    },
+    {
+      "pid": 589968,
+      "start": "8867057",
+      "gone": true
+    },
+    {
+      "pid": 590086,
+      "start": "8867108",
+      "gone": true
+    }
+  ],
+  "archivedTransport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "logHashes": {
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v8/attempt-1/host/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790866195_1931701995/hyprland.log": "5357aa879bd5f58412be0b548463957d4d1d4fd32aaa6dc4d429c3cde73cce25",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v8/attempt-1/host/weston-renderer.log": "4c595dbdbafeb218039b3d3be661d69807464e25365e43b43319435e35570166"
+  },
+  "toolkitAccepted": false,
+  "toolkitFailure": "RuntimeError(\"Actual private Qt session failed:AssertionError('window-modal owner body refuses callback and routes to child')\")",
+  "fullWindowsParityAccepted": false
+}

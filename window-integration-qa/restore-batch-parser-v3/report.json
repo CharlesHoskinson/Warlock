@@ -1,0 +1,35 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-d544c33812914b6d9fa1bc7ee18d9d0c.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    "dispatch hl.dsp.focus({ monitor = \"CPU-1\" })",
+    "dispatch hl.dsp.focus({ workspace = \"1\" })",
+    "dispatch hl.dsp.focus({ monitor = \"CPU-1\" })",
+    "dispatch hl.dsp.focus({ workspace = \"1\" })",
+    "dispatch hl.dsp.focus({ monitor = \"CPU-1\" })",
+    "dispatch hl.dsp.focus({ workspace = \"1\" })"
+  ],
+  "reply": "ok\n\n\nerror: CPU second action\n\n\nok\n\n\nok\n\n\nok\n\n\nok",
+  "seen": [
+    "dispatch hl.dsp.focus({ monitor = \"CPU-1\" })",
+    "dispatch hl.dsp.focus({ workspace = \"1\" })",
+    "dispatch hl.dsp.focus({ monitor = \"CPU-1\" })",
+    "dispatch hl.dsp.focus({ workspace = \"1\" })",
+    "dispatch hl.dsp.focus({ monitor = \"CPU-1\" })",
+    "dispatch hl.dsp.focus({ workspace = \"1\" })"
+  ],
+  "exitCode": 0,
+  "actualBodyUnchanged": true,
+  "bodySHA256": "51cd1d3e2e5884741162301e30f8a1069466b4ed549f590908e99099825aaa70",
+  "sources": {
+    "/home/hoskinson/window-integration-qa/restore-batch-parser-v3/actual_dispatch_batch.cpp": "1f1470568fb331385f4212ba2c216ffce40aa2e397002588d85cfab265f75818",
+    "/home/hoskinson/window-integration-qa/restore-batch-parser-v3/parser-extraction.json": "1e8f3e5162f3ff64f6d4feeaf8c81095b02213e028f4e6453ca0f533f75c0b9e",
+    "/home/hoskinson/window-integration-qa/restore-batch-parser-v3/actual_dispatch_batch.epoch1.cpp": "7d6394fc7e7a9c8c0fb2d9a78a7f08b156efb41bdc5fb5b04a15f5ce679e75c1",
+    "/home/hoskinson/window-integration-qa/restore-batch-parser-v3/actual_dispatch_batch": "edca44bcf39632993267c2f0defbfc29b09cfa27a4b58efa24990315af0125cc",
+    "/home/hoskinson/window-integration-qa/restore-batch-parser-v3/replay.py": "2faa5b41ef16ee0ef330c3bf2446e2e9b73d018b6f36540b51be5341b32fc99b"
+  },
+  "limit": "Exact selected primary parser body with recording getReply fixture; no native effects or backend timing claim."
+}

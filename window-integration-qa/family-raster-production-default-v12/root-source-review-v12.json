@@ -1,0 +1,23 @@
+{
+  "updatedUTC": "2026-10-01T22:45:27.985264+00:00",
+  "producerManifestSHA256": "7789616932b896590db95476421c5209484a76842d4e177fb896700e4aadda2a",
+  "all1847BytesModes49LinksExact": true,
+  "unchangedAcceptedShadersCoverageLedgerOracle": [
+    "QuantizedOver.hpp",
+    "PixelCoverage.hpp",
+    "SamplingExperiment.hpp",
+    "CommitLedger.hpp",
+    "CausalImage.hpp",
+    "verify_causal.py",
+    "verify_quantized_over.py"
+  ],
+  "reviewed": [
+    "default sampler/over selected by immutable explicit mode",
+    "ordinary production rasterFixture false; diagnostics cannot enable authority",
+    "original production ledger/resource/drawing methods unchanged",
+    "default44collector removes experiment flag and requires actual role before upload"
+  ],
+  "nativeAccepted": false,
+  "productionAccepted": false,
+  "mainWrites": false
+}

@@ -1,0 +1,67 @@
+--- /home/hoskinson/window-integration-qa/aquamarine-version-guard-v1/upstream/aquamarine-0.15.0/src/backend/Wayland.cpp
++++ /home/hoskinson/window-integration-qa/aquamarine-version-guard-v1/candidate/src/backend/Wayland.cpp
+@@ -1,4 +1,5 @@
+ #include <algorithm>
++#include "GlobalVersion.hpp"
+ #include <aquamarine/backend/Wayland.hpp>
+ #include <wayland.hpp>
+ #include <xdg-shell.hpp>
+@@ -117,23 +118,48 @@
+         const std::string NAME = name;
+ 
+         if (NAME == "wl_seat") {
+-            TRACE(backend->log(AQ_LOG_TRACE, std::format("  > binding to global: {} (version {}) with id {}", name, 9, id)));
+-            waylandState.seat = makeShared<CCWlSeat>((wl_proxy*)wl_registry_bind((wl_registry*)waylandState.registry->resource(), id, &wl_seat_interface, 9));
++            const auto chosen = RegistryVersion::negotiate(version, 9, 5);
++            if (!chosen) {
++                backend->log(AQ_LOG_ERROR, std::format("Wayland: {} advertised version {} below required 5", name, version));
++                return;
++            }
++            TRACE(backend->log(AQ_LOG_TRACE, std::format("  > binding to global: {} (version {}) with id {}", name, chosen, id)));
++            waylandState.seat = makeShared<CCWlSeat>((wl_proxy*)wl_registry_bind((wl_registry*)waylandState.registry->resource(), id, &wl_seat_interface, chosen));
+             initSeat();
+         } else if (NAME == "xdg_wm_base") {
+-            TRACE(backend->log(AQ_LOG_TRACE, std::format("  > binding to global: {} (version {}) with id {}", name, 6, id)));
+-            waylandState.xdg = makeShared<CCXdgWmBase>((wl_proxy*)wl_registry_bind((wl_registry*)waylandState.registry->resource(), id, &xdg_wm_base_interface, 6));
++            const auto chosen = RegistryVersion::negotiate(version, 6, 1);
++            if (!chosen) {
++                backend->log(AQ_LOG_ERROR, std::format("Wayland: {} advertised version {} below required 1", name, version));
++                return;
++            }
++            TRACE(backend->log(AQ_LOG_TRACE, std::format("  > binding to global: {} (version {}) with id {}", name, chosen, id)));
++            waylandState.xdg = makeShared<CCXdgWmBase>((wl_proxy*)wl_registry_bind((wl_registry*)waylandState.registry->resource(), id, &xdg_wm_base_interface, chosen));
+             initShell();
+         } else if (NAME == "wl_compositor") {
+-            TRACE(backend->log(AQ_LOG_TRACE, std::format("  > binding to global: {} (version {}) with id {}", name, 6, id)));
+-            waylandState.compositor = makeShared<CCWlCompositor>((wl_proxy*)wl_registry_bind((wl_registry*)waylandState.registry->resource(), id, &wl_compositor_interface, 6));
++            const auto chosen = RegistryVersion::negotiate(version, 6, 4);
++            if (!chosen) {
++                backend->log(AQ_LOG_ERROR, std::format("Wayland: {} advertised version {} below required 4", name, version));
++                return;
++            }
++            TRACE(backend->log(AQ_LOG_TRACE, std::format("  > binding to global: {} (version {}) with id {}", name, chosen, id)));
++            waylandState.compositor = makeShared<CCWlCompositor>((wl_proxy*)wl_registry_bind((wl_registry*)waylandState.registry->resource(), id, &wl_compositor_interface, chosen));
+         } else if (NAME == "wl_shm") {
+-            TRACE(backend->log(AQ_LOG_TRACE, std::format("  > binding to global: {} (version {}) with id {}", name, 1, id)));
+-            waylandState.shm = makeShared<CCWlShm>((wl_proxy*)wl_registry_bind((wl_registry*)waylandState.registry->resource(), id, &wl_shm_interface, 1));
++            const auto chosen = RegistryVersion::negotiate(version, 1, 1);
++            if (!chosen) {
++                backend->log(AQ_LOG_ERROR, std::format("Wayland: {} advertised version {} below required 1", name, version));
++                return;
++            }
++            TRACE(backend->log(AQ_LOG_TRACE, std::format("  > binding to global: {} (version {}) with id {}", name, chosen, id)));
++            waylandState.shm = makeShared<CCWlShm>((wl_proxy*)wl_registry_bind((wl_registry*)waylandState.registry->resource(), id, &wl_shm_interface, chosen));
+         } else if (NAME == "zwp_linux_dmabuf_v1") {
+-            TRACE(backend->log(AQ_LOG_TRACE, std::format("  > binding to global: {} (version {}) with id {}", name, 4, id)));
++            const auto chosen = RegistryVersion::negotiate(version, 4, 4);
++            if (!chosen) {
++                backend->log(AQ_LOG_ERROR, std::format("Wayland: {} advertised version {} below required 4", name, version));
++                return;
++            }
++            TRACE(backend->log(AQ_LOG_TRACE, std::format("  > binding to global: {} (version {}) with id {}", name, chosen, id)));
+             waylandState.dmabuf =
+-                makeShared<CCZwpLinuxDmabufV1>((wl_proxy*)wl_registry_bind((wl_registry*)waylandState.registry->resource(), id, &zwp_linux_dmabuf_v1_interface, 4));
++                makeShared<CCZwpLinuxDmabufV1>((wl_proxy*)wl_registry_bind((wl_registry*)waylandState.registry->resource(), id, &zwp_linux_dmabuf_v1_interface, chosen));
+             if (!initDmabuf()) {
+                 backend->log(AQ_LOG_ERROR, "Wayland backend cannot start: zwp_linux_dmabuf_v1 init failed");
+                 waylandState.dmabufFailed = true;

@@ -1,0 +1,56 @@
+{
+  "updatedUTC": "2026-10-02T02:21:49.829133+00:00",
+  "checks": {
+    "completeMonotonicJournal": true,
+    "proposedPointFromActualItem": true,
+    "pointOutsideActualCard": true,
+    "pointOutsideActualClippedViewport": true,
+    "actualHoverMaskCard": true,
+    "noSuccessfulPreviewArrival": true,
+    "terminalTimeoutRetained": true,
+    "all18MainPreserved": true
+  },
+  "journalSHA256": "1ae535f07938b8a034c71059ffec9044c7feca0154bbe6f43652adff2f71853d",
+  "journalRows": 102,
+  "previewArrivalSamples": 95,
+  "pointGlobal": [
+    170.0,
+    637.5
+  ],
+  "pointLayerLocal": [
+    170.0,
+    611.5
+  ],
+  "actualLayerBox": [
+    0,
+    26,
+    1600,
+    1000
+  ],
+  "actualItem": {
+    "address": "0x558aa2257b70",
+    "height": 149,
+    "width": 288,
+    "x": 26,
+    "y": 537
+  },
+  "actualCard": {
+    "height": 460,
+    "width": 320,
+    "x": 10,
+    "y": 36
+  },
+  "actualViewport": {
+    "clip": true,
+    "contentHeight": 634,
+    "contentY": 0,
+    "coordinateSpace": "layer-window",
+    "height": 428,
+    "width": 288,
+    "x": 26,
+    "y": 52
+  },
+  "interpretation": "The unchanged QA route selected a source-card center outside actual clipped viewport and hover mask; no native click authority was obtained. This proves a QA navigation gap, not that real wheel navigation or preview restoration already works.",
+  "all52Accepted": false,
+  "mainWrites": false
+}

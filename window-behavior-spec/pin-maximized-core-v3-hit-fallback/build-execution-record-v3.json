@@ -1,0 +1,30 @@
+{
+  "nativeExecuted": false,
+  "cachedObjectsUsed": false,
+  "core": {
+    "session": 57713,
+    "exitCode": 0,
+    "command": [
+      "cmake",
+      "--build",
+      "build-core-make",
+      "--parallel",
+      "2"
+    ],
+    "log": "build-core-final-fixed-v3.log",
+    "logSHA256": "0567e10cd2a320797625214e4d8cdd458979af8b70a8dd5872d3424613a4da67",
+    "sha256": "8b18c39ec980a5d9e8fa27018a70fc104617562e008d75113f2c7c1c50a3bbbc",
+    "buildID": "80d708338880c0b466a92bd233623b7f5d5496dd"
+  },
+  "plugin": {
+    "session": 73151,
+    "exitCode": 0,
+    "command": [
+      "make"
+    ],
+    "log": "plugin-final-fixed-v3.log",
+    "logSHA256": "fabb282fc6bb0a4ede215289400be4822083efd025490821a1b09286152500c8",
+    "sha256": "0c9084e237194faf91e61fc7a8bba9fc17e6862dc3dd0082a9af1d8fbaeecbc9"
+  },
+  "sourceFixedBeforeBuildSHA256": "b799c97b2c9f3c50758cb851076e2271094cb9f27f4a06551b6eedc00eda8be3"
+}

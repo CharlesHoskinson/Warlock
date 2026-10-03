@@ -1,0 +1,37 @@
+--- frozen-v6/reader_reconnect.py
++++ staged-v7/reader_reconnect_v7.py
+@@ -8,7 +8,8 @@
+ 
+ 
+ class Reconnector:
+-    def __init__(self, ax, inputs, commands, modifiers, bus, glib, gio, report=None):
++    def __init__(self, ax, inputs, commands, modifiers, bus, glib, gio, report=None, mouse_refresh=None):
++        self.mouse_refresh = mouse_refresh
+         self.ax, self.inputs = ax, inputs
+         self.commands, self.modifiers = commands, modifiers
+         self.bus, self.glib, self.gio = bus, glib, gio
+@@ -105,6 +106,10 @@
+             self.originals["stop_key_watcher"]()
+             self.ax.deactivate()
+             self.ax.activate()  # real public Atspi.Device factory, never a fake
++            if self.mouse_refresh is not None:
++                # Capability negotiation completes on this same fresh device
++                # before any selected/full interception definitions are replayed.
++                self.mouse_refresh(self.ax.get_device())
+             self.originals["start_key_watcher"]()  # replaces retained input _device
+             if self._current_owner() != owner or epoch != self.epoch:
+                 self.report("owner-raced", epoch=epoch, owner=owner)
+@@ -159,6 +164,12 @@
+     import os
+     if os.environ.get("DISPLAY"):
+         raise RuntimeError("staged reconnect requires the strict native Wayland reader launcher")
++    def refresh_mouse(device):
++        from orca import mouse_review
++        reviewer = mouse_review.get_reviewer()
++        if not hasattr(reviewer, "refresh_device"):
++            raise RuntimeError("pointer reconnect requires the reviewed Omarchy Orca compat package")
++        return reviewer.refresh_device(device)
+     return Reconnector(ax_device_manager.get_manager(), input_event_manager.get_manager(),
+                        command_manager.get_manager(), orca_modifier_manager.get_manager(),
+-                       Gio.bus_get_sync(Gio.BusType.SESSION, None), GLib, Gio, report).start()
++                       Gio.bus_get_sync(Gio.BusType.SESSION, None), GLib, Gio, report, refresh_mouse).start()

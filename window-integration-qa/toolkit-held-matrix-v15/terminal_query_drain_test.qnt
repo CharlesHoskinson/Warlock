@@ -1,0 +1,21 @@
+module terminal_query_drain_test {
+ import terminal_query_drain.* from "./terminal_query_drain"
+ action prepare=init.then(fire(FeatureEnd)).then(fire(Release)).then(fire(FixturesGone))
+ run duringFeatureCannotPausePollingTest=init.then(fire(BeginQuiesce)).then(all { s'=s, assert(s.failed and s.polling and not(s.quiesced)) })
+ run genuineHeldInputBlocksQuiesceTest=init.then(fire(FeatureEnd)).then(fire(FixturesGone)).then(fire(BeginQuiesce)).then(all { s'=s, assert(s.failed and not(s.quiesced)) })
+ run livePublicFixtureBlocksQuiesceTest=init.then(fire(FeatureEnd)).then(fire(Release)).then(fire(BeginQuiesce)).then(all { s'=s, assert(s.failed and not(s.quiesced)) })
+ run explicitOwnedAckStopsOnlyNewSchedulingTest=prepare.then(fire(SpawnQuery)).then(fire(BeginQuiesce)).then(fire(SpawnQuery)).then(all { s'=s, assert(s.queries==1 and s.helpers==1 and s.ack and not(s.polling)) })
+ run activeOriginalQueryMustCompleteNormallyBeforeQuitTest=prepare.then(fire(SpawnQuery)).then(fire(BeginQuiesce)).then(fire(Drain)).then(all { s'=s, assert(not(s.drainProof)) }).then(fire(CompleteQuery)).then(fire(CompleteHelper)).then(fire(Drain)).then(fire(Quit)).then(all { s'=s, assert(s.quit and allProps) })
+ run queuedUnloggedHelperStillBlocksDrainTest=prepare.then(fire(SpawnQuery)).then(fire(BeginQuiesce)).then(fire(CompleteQuery)).then(fire(Drain)).then(all { s'=s, assert(not(s.drainProof) and s.helpers==1) })
+ run helperTerminalDoesNotInventProcessReceiptTest=prepare.then(fire(SpawnQuery)).then(fire(BeginQuiesce)).then(fire(CompleteHelper)).then(fire(Drain)).then(all { s'=s, assert(not(s.drainProof) and s.queries==1) })
+ run normalProcessAndHelperMustBothCloseTest=prepare.then(fire(SpawnQuery)).then(fire(BeginQuiesce)).then(fire(CompleteHelper)).then(fire(CompleteQuery)).then(fire(Drain)).then(all { s'=s, assert(s.drainProof) })
+ run badExit120NeverNormalizedTest=prepare.then(fire(SpawnQuery)).then(fire(BeginQuiesce)).then(fire(BadProcessExit)).then(fire(CompleteQuery)).then(fire(CompleteHelper)).then(fire(Drain)).then(all { s'=s, assert(s.failed and not(s.drainProof) and not(s.quit)) })
+ run absentNormalReceiptNeverGrantsQuitTest=prepare.then(fire(BeginQuiesce)).then(fire(MissingReceipt)).then(fire(Drain)).then(fire(Quit)).then(all { s'=s, assert(s.failed and not(s.quit)) })
+ run changedQSOwnerRefusesTeardownAuthorityTest=prepare.then(fire(OwnerChanged)).then(fire(BeginQuiesce)).then(all { s'=s, assert(s.failed and not(s.quiesced)) })
+ run changedSourceRefusesTeardownAuthorityTest=prepare.then(fire(SourceChanged)).then(fire(BeginQuiesce)).then(all { s'=s, assert(s.failed and not(s.quiesced)) })
+ run wrongNonceRefusesTeardownAuthorityTest=prepare.then(fire(WrongNonce)).then(fire(BeginQuiesce)).then(all { s'=s, assert(s.failed and not(s.quiesced)) })
+ run reopenedPhaseInvalidatesDrainTest=prepare.then(fire(BeginQuiesce)).then(fire(Reopen)).then(fire(Drain)).then(all { s'=s, assert(s.failed and not(s.drainProof)) })
+ run originalFixedDrainDeadlineNeverResetsTest=prepare.then(fire(SpawnQuery)).then(fire(BeginQuiesce)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(Tick)).then(fire(CompleteQuery)).then(fire(CompleteHelper)).then(fire(Drain)).then(all { s'=s, assert(s.failed and s.deadline==8 and not(s.quit)) })
+ run terminalProofCannotEraseFeatureFailureTest=init.then(fire(FeatureFail)).then(fire(Release)).then(fire(FixturesGone)).then(fire(BeginQuiesce)).then(fire(Drain)).then(fire(Quit)).then(all { s'=s, assert(s.quit and s.featureFailed and not(s.featureCredit)) })
+ run unknownEarlyQuitRefusesTest=prepare.then(fire(Quit)).then(all { s'=s, assert(s.failed and not(s.quit)) })
+}

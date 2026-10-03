@@ -1,0 +1,34 @@
+--- v1/host_observation.py
++++ v2/host_observation.py
+@@ -1,5 +1,6 @@
+ """Observe unchanged owned signals/stop limits and actual reaped return codes."""
+ import json,os,signal,time
++from client_closure_binding import capture as capture_clients,normal_clients
+ 
+ def normal_row(row):
+  if type(row)is not dict or row.get('registeredExact')is not True or row.get('reaped')is not True or row.get('stopError')is not None:return False
+@@ -14,6 +15,8 @@
+ def normal_closure(row):
+  if type(row)is not dict or row.get('closeError')is not None:return False
+  rows=row.get('rows');order=row.get('registeredStopOrder')
++ if type(rows)is list and len(rows)==9:
++  return normal_clients(row)and all(normal_row(r)for r in rows[:3])
+  if type(rows)is not list or len(rows)!=3 or any(type(r)is not dict for r in rows) or type(order)is not list or any(type(v)is not str for v in order) or order!=['hyprland','weston','privateBus']:return False
+  if [r.get('name')for r in rows]!=['privateBus','weston','hyprland']:return False
+  return all(normal_row(r)for r in rows)
+@@ -39,6 +42,7 @@
+  def close(self):
+   if not self.runtime:return super().close()
+   selected=list(self.processes);error=None
++  clients=capture_clients(self,selected)if len(selected)>3 else None
+   try:return super().close()
+   except BaseException as caught:error=repr(caught);raise
+   finally:
+@@ -50,6 +54,7 @@
+     rows.append(dict(**row,registeredExact=len(matching)==1 and proc.pid==row['pid'],reaped=type(proc.returncode)is int,returncode=proc.returncode,signals=events,stopError=errors[0]if errors else None))
+    order=[s['row']['name']for s in stops if s['registeredExact']is True]
+    observation=dict(rows=rows,registeredStopOrder=order,closeError=error,originalStopSeconds=4,originalWaitSeconds=4,scope='observed host closure only; named bus termination distinguished')
++   if clients is not None:observation['clientClosureBinding']=clients
+    observation['normal']=normal_closure(observation);self.evidence['ownedNormalClosure']=observation
+    destination=self.output/'host-normal-closure.json'
+    fd=os.open(destination,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)

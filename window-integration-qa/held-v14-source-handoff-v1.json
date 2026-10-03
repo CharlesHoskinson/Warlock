@@ -1,0 +1,54 @@
+{
+  "result": "source-ready",
+  "path": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14",
+  "sourceReadySHA256": "d87e3037d4e2b38760c614ce8ddd97c093cd79147c108d51f6746679f54403c0",
+  "counts": {
+    "inputs": 25720,
+    "modes": 25720,
+    "links": 342
+  },
+  "frozenAQHostPackets": {
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/frozen-inputs.json": "edc94b14ab8837011911d3e1730d8a85f29d6fd62aa6541c3f1983efc1ff6da1",
+    "/home/hoskinson/window-integration-qa/private-weston-aq-bootstrap-host-v5/frozen-inputs.json": "edc94b14ab8837011911d3e1730d8a85f29d6fd62aa6541c3f1983efc1ff6da1",
+    "/home/hoskinson/window-integration-qa/private-weston-x11-bootstrap-host-v3/frozen-inputs.json": "edc94b14ab8837011911d3e1730d8a85f29d6fd62aa6541c3f1983efc1ff6da1"
+  },
+  "soleReadyDeltaThreeFrozenPackets": true,
+  "checks": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/offline-review-v14.json": "62542c603b51763575ca3e5bb3ea078c8a689362ea65f5b2e464831a0d449918",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/bootstrap-pairing-source-conservation-final.json": "79b35f828212fd6d0ddfb80cf11e561e0584230198d472ad2e8e475387dabfac",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/bootstrap-formal-before-source.json": "a565c7e5b69fce4c47b995b045521288e5f36726eb5691541c5b02703f667a89",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/build-cpu-checkpoint.json": "c6b99aac0953f441f39a296c95c159f97eb53fa0b65bc672140ee127ba243815",
+    "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/source-abi-formal-checkpoint.json": "8cd2b1a3d893d5b400ece7d624cbffab28b70036bc324322d1c268e5ab2050c7",
+    "/home/hoskinson/window-integration-qa/aquamarine-bootstrap-v2-root-source-review-v1.json": "ee1cd9d0b496100166f8ec125aa0c5f631530ca1ca08d9bbd545bf838ed65002",
+    "/home/hoskinson/window-integration-qa/held-bootstrap-full-export-replay-v1.json": "abec96c21d1330ef31dac5e0b0eaa9c4373d148e3b763d77ab4e29f151e99d98"
+  },
+  "offline": {
+    "harnessTests": 166,
+    "frontendTests": 18,
+    "externalAuditorTests": 12,
+    "cProtocolCases": 16,
+    "named": 131,
+    "models": 11,
+    "samplesPerModel": 2000,
+    "steps": 100,
+    "sourceChecks": 9
+  },
+  "candidateSO": {
+    "path": "/home/hoskinson/window-integration-qa/aquamarine-nested-bootstrap-v2/prefix/lib/libaquamarine.so.0.15.0",
+    "sha256": "4ee1f9958ec83a9d2774f760ba66f90f1d646d1c198dd49d9dfbf1763c2fd296"
+  },
+  "nativeLaunch": false,
+  "nativeLoaded": false,
+  "full52Accepted": false,
+  "actualFailedWireCauseProved": false,
+  "rootFreezeReviewPending": true,
+  "absoluteLaunchCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/run_native.py",
+    "--attempt",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v14/attempt-1"
+  ]
+}

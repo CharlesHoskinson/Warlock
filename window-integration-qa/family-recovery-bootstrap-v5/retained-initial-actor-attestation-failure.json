@@ -1,0 +1,10 @@
+{
+  "result": "fail",
+  "pythonTests": 16,
+  "passed": 15,
+  "failed": "test_exact_actual_actor_class_and_callback_chain",
+  "sourceSHA256": "487059a340446df2375fb858a80630ec110f67ceeb965193509c1375c30c93df",
+  "actualRelation": "eventOwner true/eventFunction false",
+  "reason": "Initial QA guard compared installed ManagedController.event callback to base SceneController.event; actual unchanged service has a ManagedController override. Correct exact actual callback is ManagedController.event. Product/callback/timing untouched.",
+  "nativeLaunch": false
+}

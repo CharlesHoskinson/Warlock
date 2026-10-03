@@ -1,0 +1,38 @@
+--- v17/atlasRenderer.cpp
++++ v18/atlasRenderer.cpp
+@@ -85,6 +85,7 @@
+     const auto priorData=renderer->m_renderData;
+     const auto priorMode=renderer->*Access::mode();
+     const auto priorSnapshot=renderer->m_bRenderingSnapshot;
++    const bool priorSurfaceFeedback=renderer->m_bBlockSurfaceFeedback;
+     const bool priorBlurNeeded=monitor->m_blurFBShouldRender;
+     auto priorPass=std::move(renderer->m_renderPass);
+     GLint viewport[4],scissor[4],vao=0,activeTexture=0;
+@@ -93,7 +94,7 @@
+     const GLState priorGL;
+     const bool blend=glIsEnabled(GL_BLEND),stencil=glIsEnabled(GL_STENCIL_TEST),scissoring=glIsEnabled(GL_SCISSOR_TEST);
+     struct Restore {
+-        IHyprRenderer* r;GL::CHyprOpenGLImpl* gl;SRenderData data;eRenderMode mode;bool snapshot;
++        IHyprRenderer* r;GL::CHyprOpenGLImpl* gl;SRenderData data;eRenderMode mode;bool snapshot;bool surfaceFeedback;
+         CRenderPass pass;SP<CShader> shader;PHLMONITOR monitor;bool blurNeeded;GLint* viewport;GLint* scissor;GLint vao,texture;GLState state;bool blend,stencil,scissoring;bool begun=false;
+         ~Restore() {
+             if(begun) {try {r->endRender();}catch(...) {}}
+@@ -102,15 +103,16 @@
+             gl->scissor(scissor[0],scissor[1],scissor[2],scissor[3],false);
+             gl->blend(blend);gl->setCapStatus(GL_STENCIL_TEST,stencil);gl->setCapStatus(GL_SCISSOR_TEST,scissoring);
+             gl->useShader(shader);glBindVertexArray(vao);state.restore();glActiveTexture(texture);
+-            r->m_renderData=data;r->*Access::mode()=mode;r->m_bRenderingSnapshot=snapshot;monitor->m_blurFBShouldRender=blurNeeded;
++            r->m_renderData=data;r->*Access::mode()=mode;r->m_bRenderingSnapshot=snapshot;r->m_bBlockSurfaceFeedback=surfaceFeedback;monitor->m_blurFBShouldRender=blurNeeded;
+         }
+-    } restore{renderer,gl,priorData,priorMode,priorSnapshot,std::move(priorPass),priorShader,monitor,priorBlurNeeded,viewport,scissor,vao,activeTexture,priorGL,blend,stencil,scissoring};
++    } restore{renderer,gl,priorData,priorMode,priorSnapshot,priorSurfaceFeedback,std::move(priorPass),priorShader,monitor,priorBlurNeeded,viewport,scissor,vao,activeTexture,priorGL,blend,stencil,scissoring};
+     const auto fb=renderer->createFB("canonical decorated motion atlas");
+     fb->alloc(size.x,size.y,DRM_FORMAT_ABGR8888);fb->setImageDescription(monitor->workBufferImageDescription());
+     CRegion damage{CBox{0,0,size.x,size.y}};
+     if(!renderer->beginFullFakeRender(monitor,damage,fb))throw std::runtime_error("atlas fake render unavailable");
+     restore.begun=true;
+     renderer->m_bRenderingSnapshot=true;
++    renderer->m_bBlockSurfaceFeedback=true;
+     renderer->m_renderData.fbSize=size;
+     renderer->setProjectionType(RPT_EXPORT);
+     renderer->setViewport(0,0,size.x,size.y);

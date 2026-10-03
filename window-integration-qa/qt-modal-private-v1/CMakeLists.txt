@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(QtWindowModalFixture LANGUAGES CXX)
+find_package(Qt6 6.11.2 EXACT REQUIRED COMPONENTS Widgets)
+add_executable(qt-window-modal-fixture fixture.cpp)
+target_compile_features(qt-window-modal-fixture PRIVATE cxx_std_20)
+target_compile_options(qt-window-modal-fixture PRIVATE -Wall -Wextra -Werror)
+target_link_libraries(qt-window-modal-fixture PRIVATE Qt6::Widgets)

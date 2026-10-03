@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_structural_navigation" xml:lang="sr">
+  <info>
+    <link type="next" xref="commands_table"/>
+    <link type="guide" xref="commands#reading_documents"/>
+    <link type="seealso" xref="howto_forms"/>
+    <title type="sort">2. Структурна навигација</title>
+    <title type="link">Структурна навигација</title>
+    <desc>Наредбе за кретање по елементима</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Наредбе структурне навигације</title>
+  <p>Следеће наредбе се могу користити за кретање по заглављима, везама и осталим елементима који се налазе у програмима за које <app>Орка</app> пружа подршку структурне навигације.</p>
+  <list>
+    <item>
+      <p>Омогући/онемогући тастере структурне навигације: <keyseq><key>Измењивач Орке</key><key>Z</key></keyseq></p>
+    </item>
+  </list>
+  <section id="headings">
+    <title>Заглавља</title>
+      <list>
+        <item>
+          <p>Следеће и претходно заглавље: <keyseq><key>H</key></keyseq> и <keyseq><key>Shift</key><key>H</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак заглавља: <keyseq><key>Alt</key><key>Shift</key><key>H</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следеће и претходно заглавље на нивоу 1: <keyseq><key>1</key></keyseq> и <keyseq><key>Shift</key><key>1</key></keyseq></p>
+        </item>
+        <item>
+          <p>Прикажи списак заглавља на нивоу 1: <keyseq><key>Alt</key><key>Shift</key><key>1</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следеће и претходно заглавље на нивоу 2: <keyseq><key>2</key></keyseq> и <keyseq><key>Shift</key><key>2</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак заглавља на нивоу 2: <keyseq><key>Alt</key><key>Shift</key><key>2</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следеће и претходно заглавље на нивоу 3: <keyseq><key>3</key></keyseq> и <keyseq><key>Shift</key><key>3</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак заглавља на нивоу 3: <keyseq><key>Alt</key><key>Shift</key><key>3</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следеће и претходно заглавље на нивоу 4: <keyseq><key>4</key></keyseq> и <keyseq><key>Shift</key><key>4</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак заглавља на нивоу 4: <keyseq><key>Alt</key><key>Shift</key><key>4</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следеће и претходно заглавље на нивоу 5: <keyseq><key>5</key></keyseq> и <keyseq><key>Shift</key><key>5</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак заглавља на нивоу 5: <keyseq><key>Alt</key><key>Shift</key><key>5</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следеће и претходно заглавље на нивоу 6: <keyseq><key>6</key></keyseq> и <keyseq><key>Shift</key><key>6</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак заглавља на нивоу 6: <keyseq><key>Alt</key><key>Shift</key><key>6</key></keyseq></p>
+        </item>
+      </list>
+    </section>
+    <section id="forms">
+      <title>Обрасци</title>
+      <list>
+        <item>
+          <p>Следеће и претходно поље обрасца: <keyseq><key>F</key></keyseq> и <keyseq><key>Shift</key><key>F</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак поља обрасца: <keyseq><key>Alt</key><key>Shift</key><key>F</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следеће и претходно дугме: <keyseq><key>B</key></keyseq> и <keyseq><key>Shift</key><key>B</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак дугмади: <keyseq><key>Alt</key><key>Shift</key><key>B</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следеће и претходно поље са списком: <keyseq><key>C</key></keyseq> и <keyseq><key>Shift</key><key>C</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак поља са списком: <keyseq><key>Alt</key><key>Shift</key><key>C</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следећа и претходна ставка: <keyseq><key>E</key></keyseq> и <keyseq><key>Shift</key><key>E</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак уноса: <keyseq><key>Alt</key><key>Shift</key><key>E</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следеће и претходно радио дугме: <keyseq><key>R</key></keyseq> и <keyseq><key>Shift</key><key>R</key></keyseq></p>
+        </item>
+        <item>
+          <p>Прикажи списак радио дугмића: <keyseq><key>Alt</key><key>Shift</key><key>R</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Следећа и претходна кућица за избор: <keyseq><key>X</key></keyseq> и <keyseq><key>Shift</key><key>X</key></keyseq></p>
+        </item>
+        <item>
+          <p>Прикажи списак кућица за избор: <keyseq><key>Alt</key><key>Shift</key><key>X</key></keyseq></p>
+        </item> 
+      </list>
+    </section>
+    <section id="links">
+    <title>Везе</title>
+      <list>
+        <item>
+          <p>Следећа и претходна веза: <keyseq><key>K</key></keyseq> и <keyseq><key>Shift</key><key>K</key></keyseq></p>
+        </item>
+        <item>
+          <p>Прикажи списак  <keyseq><key>Alt</key><key>Shift</key><key>K</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следећа и претходна непосећена веза: <keyseq><key>U</key></keyseq> и <keyseq><key>Shift</key><key>U</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак непосећених  <keyseq><key>Alt</key><key>Shift</key><key>U</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следећа и претходна посећена веза: <keyseq><key>V</key></keyseq> и <keyseq><key>Shift</key><key>V</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак посећених  <keyseq><key>Alt</key><key>Shift</key><key>V</key></keyseq></p>
+        </item>
+      </list>
+    </section>
+    <section id="lists">
+      <title>Листе</title>
+      <list>
+        <item>
+          <p>Следећи и претходни списак: <keyseq><key>L</key></keyseq> и <keyseq><key>Shift</key><key>L</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак спискова: <keyseq><key>Alt</key><key>Shift</key><key>L</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следећа и претходна ставка списка: <keyseq><key>I</key></keyseq> и <keyseq><key>Shift</key><key>I</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак ставки списка: <keyseq><key>Alt</key><key>Shift</key><key>I</key></keyseq></p>
+        </item>
+      </list>
+    </section>
+    <section id="tables">
+      <title>Табеле</title>
+      <list>
+        <item>
+          <p>Следећа и претходна табела: <keyseq><key>T</key></keyseq> и <keyseq><key>Shift</key><key>T</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак табела: <keyseq><key>Alt</key><key>Shift</key><key>T</key></keyseq></p>
+        </item>
+        <item>
+          <p>Ћелија лево: <keyseq><key>Alt</key><key>Shift</key><key>Left</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Ћелија десно: <keyseq><key>Alt</key><key>Shift</key><key>Right</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Ћелија изнад: <keyseq><key>Alt</key><key>Shift</key><key>Up</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Ћелија испод: <keyseq><key>Alt</key><key>Shift</key><key>Down</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прва ћелија у табели: <keyseq><key>Alt</key><key>Shift</key><key>Home</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Последња ћелија у табели: <keyseq><key>Alt</key><key>Shift</key><key>End</key></keyseq></p>
+        </item> 
+      </list>
+    </section>
+    <section id="text_blocks">
+      <title>Блокови текста</title>
+      <list>
+        <item>
+          <p>Следећи и претходни пасус: <keyseq><key>P</key></keyseq> и <keyseq><key>Shift</key><key>P</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак пасуса: <keyseq><key>Alt</key><key>Shift</key><key>P</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следећи и претходни блок цитата: <keyseq><key>Q</key></keyseq> и <keyseq><key>Shift</key><key>Q</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак блокова цитата: <keyseq><key>Alt</key><key>Shift</key><key>Q</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следећи и претходни „велики објекат“: <keyseq><key>O</key></keyseq> и <keyseq><key>Shift</key><key>O</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак „великих објеката“: <keyseq><key>Alt</key><key>Shift</key><key>O</key></keyseq></p>
+        </item>
+       </list>
+    </section>
+    <section id="other">
+      <title>Остали елементи</title>
+      <list>
+        <item>
+          <p>Следећи и претходни оријентир: <keyseq><key>M</key></keyseq> и <keyseq><key>Shift</key><key>M</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак оријентира: <keyseq><key>Alt</key><key>Shift</key><key>M</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следећи и претходни раздвајач: <keyseq><key>S</key></keyseq> и <keyseq><key>Shift</key><key>S</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Следећи и претходни „објекат на који се може кликнути“: <keyseq><key>A</key></keyseq> и <keyseq><key>Shift</key><key>A</key></keyseq></p>
+        </item> 
+        <item>
+          <p>Прикажи списак „објеката на које се може кликнути“: <keyseq><key>Alt</key><key>Shift</key><key>A</key></keyseq></p>
+        </item>
+        <item>
+          <p>Следећа и претходна слика: <keyseq><key>G</key></keyseq> и <keyseq><key>Shift</key><key>G</key></keyseq></p>
+        </item>
+        <item>
+          <p>Прикажи списак слика: <keyseq><key>Alt</key><key>Shift</key><key>G</key></keyseq></p>
+        </item>
+        <item>
+          <p>Почетак и крај тренутног контејнера: <keyseq><key>Shift</key><key>Comma</key></keyseq> и <keyseq><key>Comma</key></keyseq></p>
+        </item>
+      </list>
+    </section>
+</page>

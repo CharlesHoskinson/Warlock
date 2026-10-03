@@ -1,0 +1,60 @@
+{
+  "scope": "Isolated copied Files on native Wayland; physical Qt keyboard plus actual Orca focus/navigation/press actions; silent speech log",
+  "checks": [
+    {
+      "name": "native minimum330x320",
+      "passed": true
+    },
+    {
+      "name": "real Orca native Wayland loop ready",
+      "passed": true
+    },
+    {
+      "name": "Orca recognizes actual named Home button",
+      "passed": false
+    }
+  ],
+  "failures": [
+    "Orca recognizes actual named Home button"
+  ],
+  "fixtureIdentity": [
+    "0x5a02af3e9d40",
+    "180003e1",
+    3111360
+  ],
+  "focusTrace": [
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Home",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": null
+    }
+  ],
+  "error": "AssertionError('Orca recognizes actual named Home button')",
+  "preservation": {
+    "originalClientsGeometries": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "clipboardAndPrimaryRawAndMimeHashes": true,
+    "catalogBytes": true,
+    "dashboardBytes": true,
+    "originalExplorerPublicState": true,
+    "originalExplorerPID": true,
+    "originalExplorerHidden": true,
+    "a11yFlags": true,
+    "a11ySocketInode": true,
+    "responsiveManifestBytes": true
+  },
+  "result": "fail"
+}

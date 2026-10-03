@@ -1,0 +1,210 @@
+{
+  "schema": 1,
+  "kind": "immutable draft component checkpoint",
+  "timestampNs": 1790946527506258585,
+  "rootDesignReviewSha256": "e8a8f20512c94460be13b99a8772dab977e458cd94705e8cf4c207912931acf9",
+  "files": [
+    {
+      "path": "core/src/animation/WorkspaceAnimationController.cpp",
+      "sha256": "f1f5689e3eedfcfc63dcd56651e1937f8d61aaa849fda7fcb206825af598f7b0",
+      "mode": 436
+    },
+    {
+      "path": "core/src/config/shared/actions/ConfigActions.cpp",
+      "sha256": "190cd5999f5c387ee18d18496126cdcec1305c651bbf751595debca81e6de402",
+      "mode": 436
+    },
+    {
+      "path": "core/src/desktop/state/FocusState.cpp",
+      "sha256": "dceaf4a15da2ee92c19c9323920569e23f8f0385d2e874cd1c159476fa545723",
+      "mode": 436
+    },
+    {
+      "path": "core/src/desktop/state/FocusState.hpp",
+      "sha256": "f9b57ed3cc4b19c07e7fef2c098351f4901c0f83cf7e85c75d8be6cf70fa9d7f",
+      "mode": 436
+    },
+    {
+      "path": "core/src/desktop/state/ViewHitTester.cpp",
+      "sha256": "a61ab5e04b36e2c16d3e6c83945e65899ddb6fb8646ba5f0dd299a53b04ef37e",
+      "mode": 436
+    },
+    {
+      "path": "core/src/desktop/state/pin/CorePolicyBuild.hpp",
+      "sha256": "66120296e8a870755ed66d6e4c323bc80b7c777ead879b8eeb50f022391b3858",
+      "mode": 420
+    },
+    {
+      "path": "core/src/desktop/state/pin/NativePinPolicy.cpp",
+      "sha256": "2b59e7ed47ad680dd7a1bad8e089dc77e60909059114f51de741af216d19bbd3",
+      "mode": 420
+    },
+    {
+      "path": "core/src/desktop/state/pin/NativePinPolicy.hpp",
+      "sha256": "03a80b14f1437bb326cbde55a1a32e05ce29b52331f31fb8f533475db6fbad7f",
+      "mode": 420
+    },
+    {
+      "path": "core/src/desktop/state/pin/NativePinState.cpp",
+      "sha256": "14dd790348698f4d73de26a39464e50e119014a444fec32c7ce2743276d20c7a",
+      "mode": 420
+    },
+    {
+      "path": "core/src/desktop/state/pin/NativePinState.hpp",
+      "sha256": "67657dbb7cc86e769dcfee36277a246ece269bf1bc71c234e41803d44c9d8418",
+      "mode": 420
+    },
+    {
+      "path": "core/src/desktop/view/Window.cpp",
+      "sha256": "6ee11dd9a94c2d5f592d2ccdd25f49bd37e4b1f6ac6b79da10b4f499f6b4483a",
+      "mode": 436
+    },
+    {
+      "path": "core/src/layout/algorithm/floating/default/DefaultFloatingAlgorithm.cpp",
+      "sha256": "fe54e3fce7da81c724c89217137fd36b1b0ced9e5a149cc25a15b538bb5b8be6",
+      "mode": 436
+    },
+    {
+      "path": "core/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.cpp",
+      "sha256": "96e37fb2973de49db4bdf288514d10fb84ec7679f18f3b2a4585170da14fb92f",
+      "mode": 436
+    },
+    {
+      "path": "core/src/layout/algorithm/tiled/scrolling/ScrollingFullscreenHandler.hpp",
+      "sha256": "ef114d8cfb2427d0847455baebfce5ee4c30aa825fdc891daf069a29c957c80f",
+      "mode": 436
+    },
+    {
+      "path": "core/src/layout/target/Target.cpp",
+      "sha256": "4c1b0353e5c03b6411860a5e34283c90bc5d5a3f0227f97df55fca430aa6b87e",
+      "mode": 436
+    },
+    {
+      "path": "core/src/layout/target/Target.hpp",
+      "sha256": "ed91dd75b15b2f67698a443581ccee9eff5b773baa533f2983babff8b0a058e0",
+      "mode": 436
+    },
+    {
+      "path": "core/src/layout/target/WindowGroupTarget.cpp",
+      "sha256": "5e502bb3e4d827e5a2ccd86eef8a923f84a5f747f785e1fff3c8f368ae6a3dab",
+      "mode": 436
+    },
+    {
+      "path": "core/src/layout/target/WindowTarget.cpp",
+      "sha256": "efd7867d51de087b5c64eac525b1c9a7372f04d4e70e5cdbc261bc1b2c97b2cb",
+      "mode": 436
+    },
+    {
+      "path": "core/src/managers/fullscreen/FullscreenController.cpp",
+      "sha256": "5486165668c0dc3676e23297e2ef1e06f601d4129911cb672de572e2e599ad29",
+      "mode": 436
+    },
+    {
+      "path": "core/src/managers/fullscreen/FullscreenController.hpp",
+      "sha256": "836fbec1db3aa5a49f7f4ad8ef3d97004788bda127d97e8ac4e45ec81d911efd",
+      "mode": 436
+    },
+    {
+      "path": "core/src/managers/fullscreen/handler/FullscreenHandler.cpp",
+      "sha256": "4261bb7f2c3b0fd7251fdb44ea667c1dffdbe92b187ad4842086335bd65d1635",
+      "mode": 436
+    },
+    {
+      "path": "core/src/managers/fullscreen/handler/FullscreenHandler.hpp",
+      "sha256": "f29c154fb297c0cff4a5b0328d3d87361fcb9ce39119818cc34ff85f745f125b",
+      "mode": 436
+    },
+    {
+      "path": "core/src/managers/screenshare/ScreenshareFrame.cpp",
+      "sha256": "6ed84406a4ba3aedbbf00dbbf075f407f2835e60ca4b574a85f45d70460f4f53",
+      "mode": 436
+    },
+    {
+      "path": "core/src/output/Monitor.cpp",
+      "sha256": "98c8931ac11b151b79903cdfc0a89bf4c33c47c940ffc01becd0234ae80f093d",
+      "mode": 436
+    },
+    {
+      "path": "core/src/protocols/XDGShell.cpp",
+      "sha256": "b4dad8e0c6e1a10b420a9e50ea2f945ffa2dcb08d68aa99056dc756abd32d55f",
+      "mode": 436
+    },
+    {
+      "path": "core/src/render/OpenGL.cpp",
+      "sha256": "e34a3ae8f8c0325c252da42130cf1e6f52603eccfaa9fea325e725eeb91e8da8",
+      "mode": 436
+    },
+    {
+      "path": "core/src/render/Renderer.cpp",
+      "sha256": "718eb7cc3fb21e36783c865e3a32c2a3b6c7ab5878592354555044620a528481",
+      "mode": 436
+    },
+    {
+      "path": "core/src/render/decorations/CHyprBorderDecoration.cpp",
+      "sha256": "a3f018f73fc8e1833a8b9e5ec62e08e0b70c56529a0be9789bb5ea8bea70088b",
+      "mode": 436
+    },
+    {
+      "path": "core/src/render/decorations/CHyprDropShadowDecoration.cpp",
+      "sha256": "c08c23999dad1c243bc22808bf1064079661e282985ddce10d24c8bde3b44a22",
+      "mode": 436
+    },
+    {
+      "path": "core/src/render/decorations/CHyprGroupBarDecoration.cpp",
+      "sha256": "a4ea9af684c0d66a8fd89b651a34548f07ac9056b34d2be7e7594aa594e7918b",
+      "mode": 436
+    },
+    {
+      "path": "core/src/state/WorkspacePlacementController.cpp",
+      "sha256": "ad5e56cd389afb8dd71546d03bb46ee746665aa61934ee3e7f56a3550a744358",
+      "mode": 436
+    },
+    {
+      "path": "plugin/barDeco.cpp",
+      "sha256": "8fc188e915fedee5a4f68067aff2b4364c7e9c84818b974285e3f02f5a107f44",
+      "mode": 420
+    },
+    {
+      "path": "plugin/main.cpp",
+      "sha256": "dfd143556d37fb8d04c3c6c39b8758dd591ea870ebf31baf64e828645c466804",
+      "mode": 420
+    },
+    {
+      "path": "plugin/Makefile",
+      "sha256": "cd774cdf3f25d550805c75aa031e02e10bfa7631bc9123d8e67b440ac052e3c1",
+      "mode": 420
+    },
+    {
+      "path": "plugin/pinBridge.cpp",
+      "sha256": "e5390dcb9935c5087a5f8d18f4c430534ee646eb7e1956cebf0489d3a4d5098f",
+      "mode": 420
+    },
+    {
+      "path": "plugin/PinAction.hpp",
+      "sha256": "e134855f8f532365e362171fb8f483a74eeacbe0327374ba104876f657a983ad",
+      "mode": 420
+    },
+    {
+      "path": "plugin/PinStacking.hpp",
+      "sha256": "37144d56f4a3ee80fb4a49d82bfe3e814d4bb3cf9cd0fb6a57c36a74d4784cfa",
+      "mode": 420
+    }
+  ],
+  "completeSourceReady": false,
+  "nativeAuthorized": false,
+  "buildRunning": {
+    "session": 96364,
+    "parallel": 2,
+    "log": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/build-core-third.log"
+  },
+  "pending": [
+    "full compatible build/CPU verification",
+    "scrolling invalid-return refinement",
+    "typed schema2 decoder and kernel/source tests",
+    "final core source identity hash regeneration",
+    "complete inverse/ordinary conservation/ABI handoff"
+  ],
+  "notes": [
+    "Full pre-edit file inverses are retained at stage/inverses. Source mapping approved V1 copied unchanged. No original PinA14 QA source edited. This is draft actual source for concurrent review; it is not a frozen native pairing."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "result": "fail",
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt"
+      ],
+      "exitCode": 1,
+      "log": "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/formal-before-source-v2/check-0.log",
+      "sha256": "47b5648a8d7ca99ad508f9d1af404e27c1bddbf3f6236179fca8c4fde18f1b11"
+    }
+  ],
+  "sources": {
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission.qnt": "67bcc45e867cda285d2e10be56c803a608d9cf98ac232ba1c627efc0c0eb27ee",
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt": "a1d430751e50627481987324f3ce21106e5a323c58598661c96b9ffb58ffaf84",
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/ADMISSION_CONTRACT.md": "f4490b2947477b316daeb8d9dfa7299f215e21a9deb8274d7c69bd75d56daea8"
+  },
+  "runtimeEdited": false,
+  "nativeAccepted": false,
+  "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7b2d25022a264bfaa8f85030b0a226f1.scope"
+}

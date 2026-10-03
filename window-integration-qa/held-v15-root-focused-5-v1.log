@@ -1,0 +1,14 @@
+
+  terminal_process_receipts_test
+    ok actualRequestStartExitRequiredTest passed 1 test(s)
+    ok failedToStartCannotInferNormalFromNotRunningTest passed 1 test(s)
+    ok queuedActionCanStartAfterQuiesceWithOriginalBudgetTest passed 1 test(s)
+    ok freshPollingAfterQuiesceRefusesTest passed 1 test(s)
+    ok newQueuedActionAfterQuiesceRefusesTest passed 1 test(s)
+    ok wrongOrDuplicateGenerationCannotBorrowExitTest passed 1 test(s)
+    ok normalHistoricalReceiptCannotCloseNewRequestTest passed 1 test(s)
+    ok exit120IsNeverNormalCompletionTest passed 1 test(s)
+    ok identityOrEpochChangeRevokesDrainTest passed 1 test(s)
+    ok resetCannotEraseReceiptFailureTest passed 1 test(s)
+
+  10 passing (312ms)

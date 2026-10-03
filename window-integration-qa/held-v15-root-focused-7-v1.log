@@ -1,0 +1,13 @@
+
+  service_terminal_authority_test
+    ok originalAttemptedStopIsInsufficientTest passed 1 test(s)
+    ok normalExactClosedServiceCanQuiesceTest passed 1 test(s)
+    ok capturedLiveServiceCannotQuiesceTest passed 1 test(s)
+    ok exactGoneWithoutNormalExitDoesNotQuiesceTest passed 1 test(s)
+    ok rendererResourceUnknownCannotQuiesceTest passed 1 test(s)
+    ok sourceRootMismatchAndUnknownExitRefuseTest passed 1 test(s)
+    ok verifiedNoServiceMayQuiesceTest passed 1 test(s)
+    ok notCreatedIsInsufficientWithoutObservedAbsenceTest passed 1 test(s)
+    ok laterUnknownRevokesAuthorityPreservesPhysicalQuiesceTest passed 1 test(s)
+
+  9 passing (303ms)

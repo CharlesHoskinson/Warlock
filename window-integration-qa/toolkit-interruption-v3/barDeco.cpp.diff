@@ -1,0 +1,26 @@
+--- window-integration-qa/modal-ancestor-discovery-v2/native-candidate/barDeco.cpp
++++ window-integration-qa/toolkit-interruption-v3/native-candidate/barDeco.cpp
+@@ -747,14 +747,20 @@
+     damageEntire();
+ }
+ 
+-void CHyprBar::onConfigReloaded() {
+-    // Keep the swallowed press's release consumed, but discard its old drag
+-    // intent. A later movement must not revive a caption press from before reload.
++bool CHyprBar::retireCaptionIntent() {
++    // Preserve swallowed-release authority until the genuine release arrives.
++    const bool hadIntent = m_bDragPending || m_bDraggingThis;
+     m_bDragPending = false;
+     m_bDraggingThis = false;
+     m_bTouchEv = false;
+     m_touchId = 0;
+     m_captionPress = {};
++    return hadIntent;
++}
++
++void CHyprBar::onConfigReloaded() {
++    // A later movement must not revive a caption press from before reload.
++    retireCaptionIntent();
+     m_bButtonsDirty      = true;
+     m_bTitleColorChanged = true;
+     m_pTextTex           = nullptr;

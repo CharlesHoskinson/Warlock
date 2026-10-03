@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_forms" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#reading"/>
+     <link type="next" xref="howto_live_regions"/>
+    <title type="sort">5. Vypĺňanie formulárov</title>
+    <desc>Prístup k widgetom vloženým do dokumentov</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Vypĺňanie formulárov</title>
+  <p>Pri interakcii s webovými stránkami a inými dokumentmi pomocou <app>Orca</app> komunikujete priamo s dokumentom, nie s jeho vyrovnávacou kópiou. Režimy prehliadania a fokusu v <app>Orca</app> vám umožňujú prepínať medzi čítaním a vypĺňaním formulárov.</p>
+  <section id="navigating_amongst_form_fields">
+    <title>Navigácia medzi formulárovými poliami</title>
+    <p>Na navigáciu medzi formulárovými poliami máte niekoľko možností:</p>
+    <list>
+      <item>
+        <p>Použite <key>Tab</key> a <keyseq><key>Shift</key><key>Tab</key></keyseq> na navigáciu medzi zaostrovateľnými objektmi bez ohľadu na typ.</p>
+      </item>
+      <item>
+        <p>Použite <link xref="commands_structural_navigation#forms">príkazy štrukturálnej navigácie pre formuláre</link> v <app>Orca</app>.</p>
+      </item>
+      <item>
+        <p>V závislosti od formulára a aplikácie možno budete môcť na navigáciu k danému formulárovému poľu použiť aj klávesy so šípkami.</p>
+      </item>
+   </list>
+   <note style="tip">
+     <p>Aby ste mohli používať navigáciu kurzora alebo príkazy štrukturálnej navigácie <app>Orca</app> na navigáciu k formulárovému poľu, musíte byť v režime prehliadania. Ak ste v režime fokusu, môžete na režim prehliadania prepnúť stlačením <keyseq><key>Modifikátor Orca</key><key>A</key></keyseq>.</p>
+   </note>
+  </section>
+  <section id="exiting_form_fields">
+    <title>Opúšťanie formulárových polí</title>
+    <p>Na opustenie formulárového poľa máte niekoľko možností:</p>
+    <list>
+      <item>
+        <p>Použite <key>Tab</key>/<keyseq><key>Shift</key><key>Tab</key></keyseq>, ak chcete opustiť aktuálne zamerané formulárové pole a presunúť sa na ďalší/predchádzajúci zaostrovateľný objekt bez ohľadu na typ.</p>
+      </item>
+      <item>
+        <p>Použite <link xref="commands_structural_navigation#forms">príkazy štrukturálnej navigácie pre formuláre</link> v <app>Orca</app> na presun na ďalšie alebo predchádzajúce formulárové pole.</p>
+      </item>
+      <item>
+        <p>V závislosti od formulára a aplikácie možno budete môcť na navigáciu z daného formulárového poľa použiť aj klávesy so šípkami.</p>
+      </item>
+    </list>
+   <note style="tip">
+     <p>Aby ste mohli používať navigáciu kurzora alebo príkazy štrukturálnej navigácie <app>Orca</app> na opustenie formulárového poľa, musíte byť v režime prehliadania. Ak ste v režime fokusu, môžete na režim prehliadania prepnúť stlačením <keyseq><key>Modifikátor Orca</key><key>A</key></keyseq>.</p>
+   </note>
+  </section>
+</page>

@@ -1,0 +1,210 @@
+{
+  "GUI": false,
+  "nativePinEffectAccepted": false,
+  "actualQSProcessAccepted": false,
+  "helperWaitSleepOrRetryAdded": false,
+  "originalHelperTransactionSeconds": 2,
+  "fixtureSource": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/frontend/test_capture.py",
+  "fixtureSourceSHA256": "9c15c3b1a5212ad282d090eee465dc49b8287a1a286761802f34d4525702e4e3",
+  "result": "fail",
+  "command": [
+    "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu-product-capture"
+  ],
+  "exitCode": 1,
+  "stdout": "{\"actualQSProcessAccepted\":false,\"actualUnchangedFastCaptureHelperExecuted\":true,\"actualUnchangedFastCaptureHelperRegistryAccepted\":false,\"helperWaitSleepOrRetryAdded\":false,\"lease\":1,\"nativePinEffectAccepted\":false,\"originalHelperTransactionSeconds\":2,\"result\":\"fail\",\"state\":{\"automaticRetries\":0,\"complete\":false,\"current\":true,\"evidence\":{\"failure\":\"Actual before VMA backing name differs/unavailable\",\"kernelObservationBefore\":{\"identity\":{\"argvSHA256\":\"eb0696ce04ee9632db548a76162197df050ec74fccb2a613a87c26fb42318594\",\"cgroupSHA256\":\"474005900e3fb26cb8c8d5b0951075d653e543bfb42926f9c3d55cd856f6b0ae\",\"executable\":\"/usr/bin/python3.14\",\"executableSHA256\":\"d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c\",\"group\":2207876,\"mapsSHA256\":\"b5393d5784df0d2468b26ecfdb8766d4304e8c637b500c4666d93318498d51bb\",\"parent\":2207974,\"pid\":2208018,\"selectedEnvironmentSHA256\":\"2d4102905d0871a5b833f9a5ce4e5156119519870f8d901aaf2929ef71ff2d93\",\"start\":\"17053394\"},\"ownedMappingBatch\":{\"accepted\":false,\"cacheScope\":\"one-readKernel-call\",\"consumerMountsBeforeSHA256\":\"68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8\",\"directMappedTargetFDClaimed\":false,\"failure\":\"Actual before VMA backing name differs/unavailable\",\"identityBefore\":{\"argvSHA256\":\"eb0696ce04ee9632db548a76162197df050ec74fccb2a613a87c26fb42318594\",\"cgroupSHA256\":\"474005900e3fb26cb8c8d5b0951075d653e543bfb42926f9c3d55cd856f6b0ae\",\"executable\":\"/usr/bin/python3.14\",\"group\":\"2207876\",\"namespaces\":{\"cgroup\":\"cgroup:[4026531835]\",\"ipc\":\"ipc:[4026531839]\",\"mnt\":\"mnt:[4026531832]\",\"net\":\"net:[4026531833]\",\"pid\":\"pid:[4026531836]\",\"user\":\"user:[4026531837]\",\"uts\":\"uts:[4026531838]\"},\"parent\":\"2207974\",\"pid\":2208018,\"start\":\"17053394\",\"uid\":1000},\"mappingMemoryBytesClaimed\":false,\"mapsBeforeSHA256\":\"b5393d5784df0d2468b26ecfdb8766d4304e8c637b500c4666d93318498d51bb\",\"observerMountsBeforeSHA256\":\"68b8b01d9e6ebc8a5e5843e520d5e007b3bb52543732ca15baba94b3bccb89a8\",\"schema\":\"owned-map-device-batch-v1\",\"sources\":{},\"vmas\":[{\"after\":{},\"before\":{\"link\":\"/usr/bin/python3.14\"},\"path\":\"/usr/bin/python3.14\",\"range\":\"58bd25e0e000-58bd25e0f000\",\"rawLine\":\"58bd25e0e000-58bd25e0f000 r--p 00000000 00:1e 72938                      /usr/bin/python3.14\"},{\"after\":{},\"before\":{\"link\":\"/usr/bin/python3.14\"},\"path\":\"/usr/bin/python3.14\",\"range\":\"58bd25e0f000-58bd25e10000\",\"rawLine\":\"58bd25e0f000-58bd25e10000 r-xp 00001000 00:1e 72938                      /usr/bin/python3.14\"},{\"after\":{},\"before\":{\"link\":\"/usr/bin/python3.14\"},\"path\":\"/usr/bin/python3.14\",\"range\":\"58bd25e10000-58bd25e11000\",\"rawLine\":\"58bd25e10000-58bd25e11000 r--p 00002000 00:1e 72938                      /usr/bin/python3.14\"},{\"after\":{},\"before\":{\"error\":\"filesystem error: read_symlink: No such file or directory [/proc/2208018/map_files/58bd25e11000-58bd25e13000]\"},\"path\":\"/usr/bin/python3.14\",\"range\":\"58bd25e11000-58bd25e13000\",\"rawLine\":\"58bd25e11000-58bd25e13000 rw-p 00002000 00:1e 72938                      /usr/bin/python3.14\"}]},\"rawMaps\":\"58bd25e0e000-58bd25e0f000 r--p 00000000 00:1e 72938                      /usr/bin/python3.14\\n58bd25e0f000-58bd25e10000 r-xp 00001000 00:1e 72938                      /usr/bin/python3.14\\n58bd25e10000-58bd25e11000 r--p 00002000 00:1e 72938                      /usr/bin/python3.14\\n58bd25e11000-58bd25e13000 rw-p 00002000 00:1e 72938                      /usr/bin/python3.14\\n780c3fc00000-780c3fc24000 r--p 00000000 00:1e 3434                       /usr/lib/libc.so.6\\n780c3fc24000-780c3fd9f000 r-xp 00024000 00:1e 3434                       /usr/lib/libc.so.6\\n780c3fd9f000-780c3fe15000 r--p 0019f000 00:1e 3434                       /usr/lib/libc.so.6\\n780c3fe15000-780c3fe19000 r--p 00214000 00:1e 3434                       /usr/lib/libc.so.6\\n780c3fe19000-780c3fe1b000 rw-p 00218000 00:1e 3434                       /usr/lib/libc.so.6\\n780c3fe1b000-780c3fe23000 rw-p 00000000 00:00 0 \\n780c3fec9000-780c3fed9000 r--p 00000000 00:1e 3444                       /usr/lib/libm.so.6\\n780c3fed9000-780c3ff75000 r-xp 00010000 00:1e 3444                       /usr/lib/libm.so.6\\n780c3ff75000-780c3fffe000 r--p 000ac000 00:1e 3444                       /usr/lib/libm.so.6\\n780c3fffe000-780c3ffff000 r--p 00134000 00:1e 3444                       /usr/lib/libm.so.6\\n780c3ffff000-780c40000000 rw-p 00135000 00:1e 3444                       /usr/lib/libm.so.6\\n780c40000000-780c4003d000 r--p 00000000 00:1e 73229                      /usr/lib/libpython3.14.so.1.0\\n780c4003d000-780c4039a000 r-xp 0003d000 00:1e 73229                      /usr/lib/libpython3.14.so.1.0\\n780c4039a000-780c4052d000 r--p 0039a000 00:1e 73229                      /usr/lib/libpython3.14.so.1.0\\n780c4052d000-780c40612000 rw-p 0052c000 00:1e 73229                      /usr/lib/libpython3.14.so.1.0\\n780c40612000-780c40684000 rw-p 00000000 00:00 0 \\n780c406bf000-780c406c3000 rw-p 00000000 00:00 0 \\n780c406c3000-780c406e8000 r--p 00000000 00:1e 448372                     /etc/ld.so.cache\\n780c406e8000-780c406ec000 r--p 00000000 00:00 0                          [vvar]\\n780c406ec000-780c406ee000 r--p 00000000 00:00 0                          [vvar_vclock]\\n780c406ee000-780c406f0000 r-xp 00000000 00:00 0                          [vdso]\\n780c406f0000-780c406f1000 r--p 00000000 00:1e 3425                       /usr/lib/ld-linux-x86-64.so.2\\n780c406f1000-780c4071e000 r-xp 00001000 00:1e 3425                       /usr/lib/ld-linux-x86-64.so.2\\n780c4071e000-780c4072d000 r--p 0002e000 00:1e 3425                       /usr/lib/ld-linux-x86-64.so.2\\n780c4072d000-780c40730000 rw-p 0003d000 00:1e 3425                       /usr/lib/ld-linux-x86-64.so.2\\n780c40730000-780c40731000 rw-p 00000000 00:00 0 \\n7ffd463aa000-7ffd463cb000 rw-p 00000000 00:00 0                          [stack]\\nffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]\\n\"},\"observedProcessId\":2208018},\"exitCode\":0,\"exited\":true,\"failure\":\"Actual before VMA backing name differs/unavailable\",\"fault\":true,\"kernelBound\":false,\"kernelGone\":false,\"lease\":1,\"nativeWrites\":0,\"normalExit\":true,\"normalLifecycle\":false,\"receiptVerified\":false,\"started\":true,\"stderr\":\"\",\"stderrEOF\":true,\"stdout\":\"{\\\"nativeCompletionClaimed\\\": false, \\\"automaticRetries\\\": 0, \\\"nativeWrites\\\": 0, \\\"result\\\": \\\"captured\\\", \\\"publicIdentity\\\": {\\\"address\\\": \\\"0x1234\\\", \\\"stableId\\\": \\\"abcd\\\", \\\"pid\\\": 123}, \\\"authority\\\": {\\\"frontend\\\": {\\\"pid\\\": 2208018, \\\"start\\\": \\\"17053394\\\", \\\"parent\\\": 2207974, \\\"pgid\\\": 2207876}, \\\"requester\\\": {\\\"pid\\\": 2207974, \\\"start\\\": \\\"17053354\\\", \\\"parent\\\": 2207876, \\\"pgid\\\": 2207876}, \\\"compositor\\\": {\\\"pid\\\": 2207958, \\\"start\\\": \\\"17053348\\\", \\\"parent\\\": 2207876, \\\"pgid\\\": 2207876}, \\\"role\\\": \\\"harness\\\"}, \\\"transport\\\": {\\\"commandBase64\\\": \\\"cmVwbCBwcmludChobC5wbHVnaW4uaHlwcmJhcnMucGluX2NhcHR1cmUoe2FkZHJlc3M9IjB4MTIzNCIsc3RhYmxlSWQ9ImFiY2QiLHBpZD0xMjN9KSk=\\\", \\\"sendStarted\\\": true, \\\"completeServerEOF\\\": true, \\\"rawReplyBase64\\\": \\\"eyJhZGRyZXNzIjogIjB4MTIzNCIsICJzdGFibGVJZCI6ICJhYmNkIiwgInBpZCI6IDEyMywgInNlc3Npb24iOiAidGVzdHNlc3Npb24iLCAiY29tcG9zaXRvclBpZCI6IDIyMDc5NTgsICJjb21wb3NpdG9yU3RhcnQiOiAiMTcwNTMzNDgiLCAiaW5jYXJuYXRpb24iOiAiYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWEiLCAiZXBvY2giOiAiMSIsICJnZW5lcmF0aW9uIjogIjEifQ==\\\", \\\"deadlineMonotonic\\\": 158416.056929505, \\\"peer\\\": {\\\"pid\\\": 2207958, \\\"uid\\\": 1000, \\\"gid\\\": 1000}, \\\"replyBytes\\\": 220}, \\\"rawNativeResult\\\": {\\\"address\\\": \\\"0x1234\\\", \\\"stableId\\\": \\\"abcd\\\", \\\"pid\\\": 123, \\\"session\\\": \\\"testsession\\\", \\\"compositorPid\\\": 2207958, \\\"compositorStart\\\": \\\"17053348\\\", \\\"incarnation\\\": \\\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\\", \\\"epoch\\\": \\\"1\\\", \\\"generation\\\": \\\"1\\\"}, \\\"captured\\\": {\\\"address\\\": \\\"0x1234\\\", \\\"stableId\\\": \\\"abcd\\\", \\\"pid\\\": 123, \\\"session\\\": \\\"testsession\\\", \\\"compositorPid\\\": 2207958, \\\"compositorStart\\\": \\\"17053348\\\", \\\"incarnation\\\": \\\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\\", \\\"epoch\\\": \\\"1\\\", \\\"generation\\\": \\\"1\\\"}}\\n\",\"stdoutEOF\":true},\"syntheticNativeServerOnly\":true}\n",
+  "stderr": "",
+  "elapsedSeconds": 0.4896917470032349,
+  "helperSource": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/frontend/pin_capture.py",
+  "helperSourceSHA256": "31bcc600f7d9d51a365ca50639445696b6f2db9fc5487a011fe70b4f5287f84a",
+  "entryCopySHA256": "31bcc600f7d9d51a365ca50639445696b6f2db9fc5487a011fe70b4f5287f84a",
+  "exactHelperCommand": [
+    "/tmp/tmp06u4268h/home/pin_capture.py",
+    "capture",
+    "{\"address\": \"0x1234\", \"stableId\": \"abcd\", \"pid\": 123}"
+  ],
+  "selectedEnvironment": {
+    "HOME": "/tmp/tmp06u4268h/home",
+    "XDG_RUNTIME_DIR": "/tmp/tmp06u4268h",
+    "HYPRLAND_INSTANCE_SIGNATURE": "testsession",
+    "WAYLAND_DISPLAY": "cpu-no-wayland",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/tmp/tmp06u4268h/bus",
+    "WINDOW_PIN_NATIVE_CONFIG": "/tmp/tmp06u4268h/home/pin-config.json",
+    "PATH": "/usr/bin"
+  },
+  "actualRequester": {
+    "identity": {
+      "pid": 2207974,
+      "start": "17053354",
+      "parent": 2207876,
+      "pgid": 2207876
+    },
+    "argv": [
+      "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu-product-capture"
+    ],
+    "executable": "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu-product-capture",
+    "executableSHA256": "71ac7190ada2b38b67b1adb7f04b038bb984e2e307f1709708c8a0c028235a24",
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-79640ae55b114748b6069293d05f8022.scope\n",
+    "environment": {
+      "PATH": "/usr/bin"
+    },
+    "role": "harness"
+  },
+  "config": {
+    "version": 1,
+    "runtime": "/tmp/tmp06u4268h",
+    "selectors": {
+      "HOME": "/tmp/tmp06u4268h/home",
+      "XDG_RUNTIME_DIR": "/tmp/tmp06u4268h",
+      "HYPRLAND_INSTANCE_SIGNATURE": "testsession",
+      "WAYLAND_DISPLAY": "cpu-no-wayland",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/tmp/tmp06u4268h/bus",
+      "WINDOW_PIN_NATIVE_CONFIG": "/tmp/tmp06u4268h/home/pin-config.json"
+    },
+    "entry": {
+      "path": "/tmp/tmp06u4268h/home/pin_helper.py",
+      "sha256": "30cf295bbc3032b10996e9b6db7c602f6044d38cf73d4eb6ef917e72dd80f0f2"
+    },
+    "interpreter": {
+      "path": "/usr/bin/python3.14",
+      "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+    },
+    "requestRoots": [
+      {
+        "identity": {
+          "pid": 2207974,
+          "start": "17053354",
+          "parent": 2207876,
+          "pgid": 2207876
+        },
+        "argv": [
+          "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu-product-capture"
+        ],
+        "executable": "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/cpu-product-capture",
+        "executableSHA256": "71ac7190ada2b38b67b1adb7f04b038bb984e2e307f1709708c8a0c028235a24",
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-79640ae55b114748b6069293d05f8022.scope\n",
+        "environment": {
+          "PATH": "/usr/bin"
+        },
+        "role": "harness"
+      }
+    ],
+    "compositor": {
+      "identity": {
+        "pid": 2207958,
+        "start": "17053348",
+        "parent": 2207876,
+        "pgid": 2207876
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "-I",
+        "-S",
+        "/tmp/tmp06u4268h/home/server.py",
+        "/tmp/tmp06u4268h/hypr/testsession/.socket.sock",
+        "/tmp/tmp06u4268h/home/inert-mapped-cpu-fixture.bin",
+        "/tmp/tmp06u4268h/home/ready",
+        "/tmp/tmp06u4268h/home/reply.json",
+        "/tmp/tmp06u4268h/home/stop"
+      ],
+      "executable": "/usr/bin/python3.14",
+      "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-79640ae55b114748b6069293d05f8022.scope\n",
+      "environment": {
+        "PATH": "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path:/home/hoskinson/.codex/tmp/arg0/codex-arg0myPzKw:/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path:/home/hoskinson/.codex/tmp/arg0/codex-arg00eUFId:/home/hoskinson/.codex/packages/app-server-daemon/releases/0.159.3-x86_64-unknown-linux-musl/codex-path:/home/hoskinson/.codex/tmp/arg0/codex-arg0UKwy92:/home/hoskinson/.codex/packages/app-server-daemon/releases/0.159.2-x86_64-unknown-linux-musl/codex-path:/home/hoskinson/.codex/tmp/arg0/codex-arg0otyuRP:/home/hoskinson/.codex/packages/app-server-daemon/releases/0.158.0-x86_64-unknown-linux-musl/codex-path:/home/hoskinson/.codex/tmp/arg0/codex-arg0tK1oak:/home/hoskinson/.local/share/mise/installs/codex/0.159.2/codex-path:/home/hoskinson/.local/share/mise/installs/claude/latest:/home/hoskinson/.local/share/mise/installs/codex/latest/bin:/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin:/home/hoskinson/.local/share/mise/installs/node/latest/bin:/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin:/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin:/home/hoskinson/.local/share/mise/installs/pi/latest/pi:/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin:/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins:/home/hoskinson/.local/share/mise/shims:/usr/share/omarchy/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/hoskinson/.local/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+      }
+    },
+    "socket": {
+      "path": "/tmp/tmp06u4268h/hypr/testsession/.socket.sock",
+      "identity": [
+        57,
+        1205213
+      ]
+    },
+    "module": {
+      "path": "/tmp/tmp06u4268h/home/inert-mapped-cpu-fixture.bin",
+      "sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+      "mode": 384
+    },
+    "evidenceDirectory": "/tmp/tmp06u4268h/home/evidence",
+    "captureEntry": {
+      "path": "/tmp/tmp06u4268h/home/pin_capture.py",
+      "sha256": "31bcc600f7d9d51a365ca50639445696b6f2db9fc5487a011fe70b4f5287f84a"
+    }
+  },
+  "configSHA256": "e8414bcf6bd1be42a49d283d369521b69a2c3c403531f1c71d328b384f83713b",
+  "receivedRequest": "repl print(hl.plugin.hyprbars.pin_capture({address=\"0x1234\",stableId=\"abcd\",pid=123}))",
+  "buildPath": "/home/hoskinson/window-behavior-spec/qml-process-provider-v1/product-capture-build.json",
+  "buildSHA256": "8942aca305cec475401d3c16b2fcc4232f70fadf7fa5c8f35bf332e056e56764",
+  "sourcesUnchanged": true,
+  "durableReceipts": {
+    "2208018-17053394.json": {
+      "nativeCompletionClaimed": false,
+      "automaticRetries": 0,
+      "nativeWrites": 0,
+      "result": "captured",
+      "publicIdentity": {
+        "address": "0x1234",
+        "stableId": "abcd",
+        "pid": 123
+      },
+      "authority": {
+        "frontend": {
+          "pid": 2208018,
+          "start": "17053394",
+          "parent": 2207974,
+          "pgid": 2207876
+        },
+        "requester": {
+          "pid": 2207974,
+          "start": "17053354",
+          "parent": 2207876,
+          "pgid": 2207876
+        },
+        "compositor": {
+          "pid": 2207958,
+          "start": "17053348",
+          "parent": 2207876,
+          "pgid": 2207876
+        },
+        "role": "harness"
+      },
+      "transport": {
+        "commandBase64": "cmVwbCBwcmludChobC5wbHVnaW4uaHlwcmJhcnMucGluX2NhcHR1cmUoe2FkZHJlc3M9IjB4MTIzNCIsc3RhYmxlSWQ9ImFiY2QiLHBpZD0xMjN9KSk=",
+        "sendStarted": true,
+        "completeServerEOF": true,
+        "rawReplyBase64": "eyJhZGRyZXNzIjogIjB4MTIzNCIsICJzdGFibGVJZCI6ICJhYmNkIiwgInBpZCI6IDEyMywgInNlc3Npb24iOiAidGVzdHNlc3Npb24iLCAiY29tcG9zaXRvclBpZCI6IDIyMDc5NTgsICJjb21wb3NpdG9yU3RhcnQiOiAiMTcwNTMzNDgiLCAiaW5jYXJuYXRpb24iOiAiYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWEiLCAiZXBvY2giOiAiMSIsICJnZW5lcmF0aW9uIjogIjEifQ==",
+        "deadlineMonotonic": 158416.056929505,
+        "peer": {
+          "pid": 2207958,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "replyBytes": 220
+      },
+      "rawNativeResult": {
+        "address": "0x1234",
+        "stableId": "abcd",
+        "pid": 123,
+        "session": "testsession",
+        "compositorPid": 2207958,
+        "compositorStart": "17053348",
+        "incarnation": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "1",
+        "generation": "1"
+      },
+      "captured": {
+        "address": "0x1234",
+        "stableId": "abcd",
+        "pid": 123,
+        "session": "testsession",
+        "compositorPid": 2207958,
+        "compositorStart": "17053348",
+        "incarnation": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "1",
+        "generation": "1"
+      }
+    }
+  },
+  "normalFixtureCleanup": true,
+  "normalCPUPrivateRuntimeRemoved": true
+}

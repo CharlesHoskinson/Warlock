@@ -1,0 +1,95 @@
+/home/hoskinson/window-integration-qa/live_accessible_controls.py:67: DeprecationWarning: Atspi.Action.get_action_name is deprecated
+  names = [iface.get_action_name(i) for i in range(iface.get_n_actions())]
+{
+  "checks": [
+    {
+      "name": "nine named native menu actions exposed",
+      "passed": true,
+      "names": [
+        "Restore",
+        "Move",
+        "Size",
+        "Minimize",
+        "Maximize",
+        "Snap layouts",
+        "Pin always on top",
+        "Reduce motion",
+        "Close   Alt+F4"
+      ]
+    },
+    {
+      "name": "only selected menu action reports focused",
+      "passed": true
+    },
+    {
+      "name": "assistive minimize moves own window to dedicated minimized workspace",
+      "passed": true
+    },
+    {
+      "name": "hidden stale assistive action cannot minimize restored window",
+      "passed": true,
+      "stale_action_exposed": false,
+      "stale_action_accepted": false
+    },
+    {
+      "name": "pin begins unchecked",
+      "passed": true
+    },
+    {
+      "name": "assistive pin changes native pinned state",
+      "passed": true
+    },
+    {
+      "name": "pinned action reports checked",
+      "passed": true
+    },
+    {
+      "name": "assistive unpin changes native pinned state",
+      "passed": true
+    },
+    {
+      "name": "assistive Snap layout changes native geometry",
+      "passed": true,
+      "geometry": [
+        10,
+        60,
+        784,
+        930
+      ],
+      "tags": [
+        "default-opacity*",
+        "win-snapped"
+      ]
+    },
+    {
+      "name": "assistive Restore returns exact original geometry",
+      "passed": true,
+      "actual": [
+        260,
+        300,
+        600,
+        350
+      ],
+      "expected": [
+        260,
+        300,
+        600,
+        350
+      ]
+    },
+    {
+      "name": "assistive motion toggle changes persisted setting",
+      "passed": true
+    },
+    {
+      "name": "stale captured window identity rejects assistive action",
+      "passed": true
+    },
+    {
+      "name": "assistive Close closes only its captured window",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "result": "pass"
+}

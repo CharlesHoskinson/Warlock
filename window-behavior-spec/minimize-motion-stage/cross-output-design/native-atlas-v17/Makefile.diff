@@ -1,0 +1,11 @@
+--- frozen-v16/Makefile
++++ staged-v17/Makefile
+@@ -11,7 +11,7 @@
+ LIBS = `pkg-config --libs cairo`
+ 
+ SRC = main.cpp barDeco.cpp BarPassElement.cpp dragBridge.cpp familyBridge.cpp snapshotBridge.cpp atlasRenderer.cpp atlasAdapter.cpp
+-TARGET = hyprbars-v16-atlas-candidate.so
++TARGET = hyprbars-v17-atlas-candidate.so
+ 
+ all: $(TARGET)
+ 

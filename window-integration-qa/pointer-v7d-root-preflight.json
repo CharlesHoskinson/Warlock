@@ -1,0 +1,17 @@
+{
+  "time": "2026-10-01T10:25:36.827364+00:00",
+  "manifestSHA256": "fbf4fdaf7ced042f0668b6eed5f1d428dd87e66910a3cfe20160e04f1c43de29",
+  "verifiedLocalInputs": 235,
+  "verifiedExternalInputs": 26,
+  "allSourcesMatch": true,
+  "review": "Unchanged v7 candidate and runner; real GDBus wire filter preserves identical messages, independent private daemon monitor, request/reply timestamps and complete baseline/after signal lists. No forced drain or lifecycle policy repair. Original normal unload and14preservation retained; proposed deferred owner formal model is not implemented.",
+  "oneAttemptOnly": true,
+  "command": [
+    "python3",
+    "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v7d/native_probe_pointer.py",
+    "--execute",
+    "--output",
+    "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v7d/native-pointer-attempt-4"
+  ],
+  "pendingGuiRelease": "ownedEGLv3"
+}

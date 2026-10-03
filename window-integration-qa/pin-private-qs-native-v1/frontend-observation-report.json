@@ -1,0 +1,14 @@
+{
+  "schema": "pin-process-diagnostics-source-v1",
+  "originalPinSHA256": "e1b890a6f501f9863bc0513894b04a746aadca02a57c07333cee3746d08bc9b2",
+  "originalWindowsSHA256": "b175301e6384412f1cbd8332c3dc3e750cc1983eaa153f88b4f8dabc07403a9f",
+  "additions": {
+    "processStates": "Actual public terminal state with raw kernel evidence",
+    "retirements": "Actual public response before unchanged predicate/command mutation",
+    "typedRefusals": "Only four fixed malformed public arguments after complete terminal positive"
+  },
+  "sourceOnly": true,
+  "QtExecution": false,
+  "negativeIPCNeedsRootReview": true,
+  "GUI": false
+}

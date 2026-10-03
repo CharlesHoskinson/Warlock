@@ -1,0 +1,16 @@
+{
+  "result": "external reviewer timeout, no product cause assigned",
+  "observerAggregateLimitSeconds": 90,
+  "acceptedFull357SuiteActualSeconds": 152.29,
+  "selectedTests": 6,
+  "oldReviewerSHA256": "d9c21c05f0cdb67db54507e6f33064da20de34944a70efe16b8c0c54a841f4ff",
+  "failure": "TimeoutExpired from external subprocess.run90; partial child output was not archived",
+  "sourceChecksBeforeTestPassed": [
+    "130 final proof hashes exact",
+    "91 recorded commands exit0",
+    "four-file delta exact",
+    "full original validator AST exact after function rename"
+  ],
+  "nativeLaunch": false,
+  "productChanged": false
+}

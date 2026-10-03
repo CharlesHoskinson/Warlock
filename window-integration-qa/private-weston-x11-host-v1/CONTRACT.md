@@ -1,0 +1,13 @@
+# Explicit private X11 fixture contract
+
+This adapter is confined to the private Qt X11 campaign. Frozen HostV4 and its default Xwayland-disabled configuration remain unchanged. The reviewed Lua is followed by explicit Xwayland enabled and create_abstract_socket=false. Parent Weston/Aquamarine, scope/core1, runtime ownership, and complete IPC readiness retain HostV4 behavior.
+
+The compositor alone chooses the X display and creates its standard filesystem listener. A private PATH Xwayland launcher validates the exact owned QA runtime, QA scope/core1, direct Hyprland parent executable/configuration, full upstream argument shape, actual inherited listener/Wayland/WM descriptors and DISPLAY agreement. It adds only -auth with an owned0600 real MIT-MAGIC-COOKIE-1 authority file and execs the unchanged installed /usr/bin/Xwayland. No main DISPLAY or authority is inherited; no -ac and no main/global authentication fallback.
+
+Before Qt launch the session captures direct server PID/start/PGID, unchanged executable, exact display and argv, private runtime, real authority flag/file metadata, selected lock containing this compositor PID, stable socket path/inode, and matching listening kernel FD in both compositor and server. SO_PEERCRED may identify the compositor that created the socket; that is recorded honestly and must match the captured compositor. Complete bounded X11 setup without a cookie must be refused; setup with the private cookie must return actual protocol11 success. Cookies are never included in evidence, logs or archives.
+
+Only clients launched with this exact DISPLAY and XAUTHORITY use xcb; the pointer remains on the exact private Wayland socket. Qt platform, Xwayland native identity, and actual loaded libqxcb.so/Qt6XcbQpa loader mapping are separate strict gates. All nineteen public Qt callback/modal/family oracles remain required. This proves the private same-process X11 case only.
+
+Cleanup is clients first, diagnostic/native unload next, compositor shutdown next. The exact registered Xwayland child must exit on its private compositor disconnect before the ordinary host cleanup handles Weston and bus. Unknown descendants, forced child termination, replaced identity/socket, retained authorization, or retained display artifacts fail cleanup. Failure cleanup is PID/start guarded and cannot target main apps. Main observations are explicit read-only snapshots; no main restoration writes occur.
+
+Offline tests establish parser, authority encoding, refusal and ownership logic; they do not establish native X11 compatibility. A fresh frozen packet and exclusive root grant are required before any server or GUI launch.

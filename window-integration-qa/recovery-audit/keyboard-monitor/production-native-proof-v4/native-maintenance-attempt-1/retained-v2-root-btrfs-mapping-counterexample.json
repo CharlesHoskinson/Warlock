@@ -1,0 +1,25 @@
+{
+  "updatedUTC": "2026-10-01T21:04:55.426289+00:00",
+  "sourceSHA256": "913cbc06c6f16a001a3726b24ee8009af24629051822a3344f97ee0a7b181b43",
+  "sourceChanged": false,
+  "artifactStat": {
+    "device": 58,
+    "major": 0,
+    "minor": 58,
+    "inode": 943561
+  },
+  "actualReadonlySelfMap": {
+    "line": "754f948af000-754f9491a000 r--s 00000000 00:1e 943561                     /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/payload/native/libomarchy-a11y-prod-v2.so",
+    "major": 0,
+    "minor": 30,
+    "device": 30,
+    "inode": 943561,
+    "exactPath": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v2/native-maintenance-attempt-1/payload/native/libomarchy-a11y-prod-v2.so"
+  },
+  "sameExactArtifactAndInode": true,
+  "existingGuardRejectsActualDeviceDifference": true,
+  "filesystem": "btrfs /home subvolid257 /@home",
+  "nativeCodeExecuted": false,
+  "nativeGUIContacted": false,
+  "diagnostic": "Source confirmed guard mismatch under real mmap; actual candidate load log separately reports same guard refusal"
+}

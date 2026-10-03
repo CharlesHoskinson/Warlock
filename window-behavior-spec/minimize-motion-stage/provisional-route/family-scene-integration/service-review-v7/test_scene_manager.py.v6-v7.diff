@@ -1,0 +1,32 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v6/test_scene_manager.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v7/test_scene_manager.py
+@@ -52,11 +52,13 @@
+             transport=Transport();self.boundaries.append((desktop,transport));return desktop,transport
+         self.m=SceneManager(factory)
+         self.request(0,'restore');old=self.m.actors[0].controller;self.assertTrue(self.boundaries[0][0].started.wait(1))
+-        newest=self.request(2,'minimize');new=self.m.actors[1].controller;r=self.seeded(new)
++        newest=self.request(2,'minimize');new=self.m.actors[1].controller;self.wait(lambda:new.current is None and len(self.d.commits)==3)
++        r=new.history[-1]
+         self.assertEqual(newest['actor'],2);self.assertEqual(len(r.members),3)
++        self.assertTrue(r.profile['nativeEndpointAlreadySatisfied'])
+         self.boundaries[0][0].gate.set();self.wait(lambda:old.current is None)
+-        self.assertFalse(self.d.destinations);self.assertFalse(self.d.commits)
+-        self.assertTrue(self.ready(new,r));self.assertEqual(len(self.d.commits),3)
++        self.assertFalse(self.d.destinations);self.assertFalse(self.boundaries[1][1].sent)
++        self.assertEqual(len(self.d.commits),3)
+         self.assertEqual({member for _,member,_ in self.d.commits},{key(w) for w in self.d.windows})
+     def test_newer_still_unvalidated_peer_blocks_old_observed_restore(self):
+         for w in self.d.windows:w['workspace']['name']='special:win-minimized'
+@@ -71,8 +73,10 @@
+         self.boundaries[0][0].gate.set();self.wait(lambda:old.current is None)
+         self.assertFalse(self.d.destinations);self.assertFalse(self.d.commits)
+         self.assertFalse(self.boundaries[0][1].sent)
+-        self.boundaries[1][0].gate.set();r=self.seeded(new)
+-        self.assertTrue(self.ready(new,r));self.assertEqual(len(self.d.commits),3)
++        self.boundaries[1][0].gate.set();self.wait(lambda:new.current is None and len(self.d.commits)==3)
++        self.assertTrue(new.history[-1].profile['nativeEndpointAlreadySatisfied'])
++        self.assertFalse(self.boundaries[1][1].sent)
++        self.assertEqual(len(self.d.commits),3)
+     def test_slow_ready_observation_does_not_hold_manager_reservation(self):
+         self.request();c=self.m.actors[0].controller;r=self.seeded(c)
+         original=c.fresh;blocked=threading.Event();release=threading.Event()

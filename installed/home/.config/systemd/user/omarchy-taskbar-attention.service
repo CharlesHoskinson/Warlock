@@ -1,0 +1,11 @@
+[Unit]
+Description=Track Hyprland window attention for the Omarchy taskbar
+After=graphical-session.target
+
+[Service]
+ExecStart=%h/.local/bin/hypr-taskbar-attention
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

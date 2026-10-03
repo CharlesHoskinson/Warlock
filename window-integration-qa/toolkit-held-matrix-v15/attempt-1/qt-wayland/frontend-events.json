@@ -1,0 +1,112 @@
+{
+  "config": {
+    "config": "/run/user/1000/wqa/356c/taskbar-home/held-native-frontend.json",
+    "log": "/run/user/1000/wqa/356c/taskbar-home/held-native-frontend.jsonl",
+    "entry": "/run/user/1000/wqa/356c/taskbar-home/.local/bin/hypr-windowctl",
+    "configSHA256": "ffbad0c872b5712189bb8c12aa57d95e0d29dc6a1e6d6040cc8ad12109820e67",
+    "entrySHA256": "9ab18a4d3093e9b96da0b0376874b1bfa4d9d733890b5f341ebc637807ac7d94",
+    "environment": {
+      "WINDOW_MOTION_NATIVE_CONFIG": "/run/user/1000/wqa/356c/taskbar-home/held-native-frontend.json"
+    }
+  },
+  "events": [
+    {
+      "answer": {
+        "accepted": true,
+        "actor": 1,
+        "completed": false,
+        "contextPending": true,
+        "ok": true,
+        "receipt": 1
+      },
+      "authority": {
+        "configAuthority": {
+          "device": 84,
+          "inode": 429862,
+          "mtimeNs": 1790928063881109788,
+          "path": "/run/user/1000/wqa/356c/taskbar-home/held-native-frontend.json",
+          "sha256": "ffbad0c872b5712189bb8c12aa57d95e0d29dc6a1e6d6040cc8ad12109820e67",
+          "size": 12924
+        },
+        "currentWindow": {
+          "acceptsInput": true,
+          "address": "0x648f116d8850",
+          "allowedOverFullscreen": true,
+          "at": [
+            1110,
+            278
+          ],
+          "class": "qt-window-modal-fixture",
+          "contentType": "none",
+          "floating": true,
+          "focusHistoryID": 1,
+          "fullscreen": 0,
+          "fullscreenClient": 0,
+          "fullscreenHandler": "default",
+          "grouped": [],
+          "hidden": false,
+          "inhibitingIdle": false,
+          "initialClass": "qt-window-modal-fixture",
+          "initialTitle": "Qt WindowModal QA nested",
+          "mapped": true,
+          "monitor": 0,
+          "pid": 4192198,
+          "pinFullscreened": false,
+          "pinned": false,
+          "size": [
+            240,
+            140
+          ],
+          "stableId": "1800000f",
+          "swallowing": "0x0",
+          "tags": [],
+          "tearingHint": false,
+          "title": "Qt WindowModal QA nested",
+          "visible": true,
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "xdgDescription": "",
+          "xdgTag": "",
+          "xwayland": false
+        },
+        "frontend": {
+          "parent": 4189359,
+          "pgid": 4189359,
+          "pid": 4192471,
+          "start": "15053673"
+        },
+        "requester": {
+          "parent": 1275790,
+          "pgid": 4189359,
+          "pid": 4189359,
+          "start": "15050925"
+        },
+        "root": "harness"
+      },
+      "nativeCompletionClaimed": false,
+      "nativeReceiptVerified": true,
+      "request": {
+        "address": "0x648f116d8850",
+        "command": "request",
+        "operation": "minimize",
+        "pid": 4192198,
+        "stableId": "1800000f"
+      },
+      "result": "accepted",
+      "timeNs": 138416842826157,
+      "transport": {
+        "actualPeer": {
+          "pid": 4192464,
+          "start": "15053644",
+          "uid": 1000
+        },
+        "completeServerEOF": true,
+        "replyBytes": 90,
+        "replySHA256": "e42dff0ae6cf5142ff260137d27276f77a2faefdb9a93b34750890198c8a90b0",
+        "sendStarted": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+--- frozen-v2/build_package.py
++++ fresh-v3/build_package.py
+@@ -1,6 +1,6 @@
+ """Offline package construction from frozen accepted sources and signed archives."""
+ from pathlib import Path
+-import hashlib,json,shutil,subprocess
++import hashlib,json,shutil,stat,subprocess
+ HERE=Path(__file__).resolve().parent
+ QA=Path('/home/hoskinson/window-integration-qa')
+ READER=QA/'orca-reader'
+@@ -61,7 +61,8 @@
+         privateCampaignReportSHA256='fd4c8678b208f5ff56ce0e6e35f403a6e40e6a3329947b9792336fae9816d2b4',readerDefault='disabled; existing org.a11y.Status.ScreenReaderEnabled required',
+         originalReaderSigned=True,modifiedModules=['mouse_review.py'],systemLibrariesModified=False)
+     (payload/'package.json').write_text(json.dumps(package,indent=2))
+-    closure={str(p.relative_to(payload)):sha(p) for p in sorted(payload.rglob('*')) if p.is_file()}
++    closure={str(p.relative_to(payload)):{'sha256':sha(p),'mode':stat.S_IMODE(p.stat().st_mode)} for p in sorted(payload.rglob('*')) if p.is_file()}
++    if any(row['mode'] not in (0o644,0o755) for row in closure.values()):raise RuntimeError('unsafe or unexpected payload source mode')
+     (payload/'payload-manifest.json').write_text(json.dumps(closure,indent=2))
+     print(json.dumps(dict(payload=str(payload),files=len(closure),packageSHA256=sha(payload/'package.json'),payloadManifestSHA256=sha(payload/'payload-manifest.json'),productionAccepted=False)))
+ if __name__=='__main__':construct()

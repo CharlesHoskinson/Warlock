@@ -1,0 +1,43 @@
+{
+  "result": "pass",
+  "checks": [
+    {
+      "name": "Distinct confined private target accepted without native access",
+      "passed": true
+    },
+    {
+      "name": "Main target/handle escape refused:XDG_RUNTIME_DIR",
+      "passed": true
+    },
+    {
+      "name": "Main target/handle escape refused:HYPRLAND_INSTANCE_SIGNATURE",
+      "passed": true
+    },
+    {
+      "name": "Main target/handle escape refused:WAYLAND_DISPLAY",
+      "passed": true
+    },
+    {
+      "name": "Main target/handle escape refused:WAYLAND_DISPLAY",
+      "passed": true
+    },
+    {
+      "name": "Main target/handle escape refused:HOME",
+      "passed": true
+    },
+    {
+      "name": "Main target/handle escape refused:DBUS_SESSION_BUS_ADDRESS",
+      "passed": true
+    },
+    {
+      "name": "Main target/handle escape refused:AT_SPI_BUS_ADDRESS",
+      "passed": true
+    },
+    {
+      "name": "Private snapshot JSON roundtrip preserves catalog bytes and clipboard tuple types",
+      "passed": true
+    }
+  ],
+  "nativeExecution": false,
+  "accepted203Exact": true
+}

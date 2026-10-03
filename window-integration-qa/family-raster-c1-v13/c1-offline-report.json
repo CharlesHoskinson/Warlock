@@ -1,0 +1,16 @@
+{
+  "result": "pass",
+  "nativeExecuted": false,
+  "mainWrites": false,
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-p",
+    "test_*.py"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "...................................................................................\n----------------------------------------------------------------------\nRan 83 tests in 0.072s\n\nOK\n"
+}

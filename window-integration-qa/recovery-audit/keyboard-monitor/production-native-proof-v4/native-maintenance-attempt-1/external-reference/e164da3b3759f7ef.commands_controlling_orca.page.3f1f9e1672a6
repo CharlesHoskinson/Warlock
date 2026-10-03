@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_controlling_orca" xml:lang="id">
+  <info>
+    <link type="next" xref="commands_where_am_i"/>
+    <link type="guide" xref="commands#getting_started"/>
+    <title type="sort">1. Mengontrol dan Belajar Menggunakan Orca</title>
+    <title type="link">Mengontrol dan Belajar Menggunakan Orca</title>
+    <desc>Perintah untuk berinteraksi dengan <app>Orca</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020, 2025.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Mengontrol dan Belajar Menggunakan Orca</title>
+  <section id="controlling">
+    <title>Perintah untuk Mengendalikan <app>Orca</app></title>
+    <p>Perintah berikut dapat digunakan untuk masuk ke dialog Preferensi <app>Orca</app>, menyalakan dan mematikan <app>Orca</app>, dan melewati perintah <app>Orca</app> untuk menghindari konflik pintasan dalam aplikasi yang diakses.</p>
+    <list>
+      <item>
+        <p>
+          Toggle <app>Orca</app> on and off in supported desktop environments:
+          <keyseq><key>Super</key><key>Alt</key><key>S</key></keyseq>.
+        </p>
+        <note style="tip">
+           <p>
+             If you are using <app>Orca</app> in another desktop environment in which
+             there is no command to toggle <app>Orca</app> on and off, you may find the
+             command to quit <app>Orca</app> helpful. This command is unbound by default.
+             Please see <link xref="howto_key_bindings">Modifying Keybindings</link> for
+             information on how to bind unbound commands.
+           </p>
+        </note>
+      </item>
+      <item>
+        <p>
+          <link xref="preferences">Orca Preferences</link> dialog:
+          <keyseq><key>Orca Modifier</key><key>Space</key></keyseq>.
+        </p>
+      </item>
+      <item>
+        <p>
+          Orca's Preferences dialog for the focused application:
+          <keyseq><key>Ctrl</key><key>Orca Modifier</key><key>Space</key></keyseq>.
+        </p>
+      </item>
+      <item>
+        <p>
+          Toggle all Orca command keys:
+          <keyseq><key>Alt&gt;</key><key>BackSpace</key></keyseq>
+        </p>
+      </item>
+      <item>
+        <p>Toggle keyboard layout: (Unbound)</p>
+      </item>
+      <item>
+        <p>Cycle to the next key echo level: (Unbound)</p>
+      </item>
+      <item>
+        <p>Quit the screen reader: (Unbound)</p>
+      </item>
+    </list>
+  </section>
+  <section id="braille_keyboard_bindings">
+    <title>Perintah Braille</title>
+    <p>The following commands can be used to control and customize Orca's braille output.</p>
+    <list>
+      <item>
+        <p>Pan the braille display to the left: (Unbound)</p>
+      </item>
+      <item>
+        <p>Pan the braille display to the right: (Unbound)</p>
+      </item>
+      <item>
+        <p>Turn contracted braille on and off: (Unbound)</p>
+      </item>
+    </list>
+  </section>
+  <section id="learning">
+    <title>Perintah untuk Belajar Menggunakan <app>Orca</app></title>
+    <p>Dalam Mode Belajar, <app>Orca</app> akan mengumumkan setiap tombol yang Anda tekan bersama dengan perintah <app>Orca</app> terkait yang tombol itu terikat padanya. Dalam mode ini, Anda juga bisa mendapatkan daftar pintasan yang berisi semua perintah <app>Orca</app> yang dapat Anda gunakan.</p>
+    <list>
+      <item>
+        <p>Memasuki Mode Belajar: <keyseq><key>Pengubah Orca</key><key>H</key></keyseq></p>
+      </item>
+      <item>
+        <p>Keluar Mode Belajar: <keyseq><key>Esc</key></keyseq></p>
+      </item>
+    </list>
+  </section>
+</page>

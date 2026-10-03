@@ -1,0 +1,24 @@
+--- installed-widget65/Windows.qml
++++ staged-widget66/Windows.qml
+@@ -91,6 +91,13 @@
+     function motionStart(encoded:string):bool { return root.motionDispatch("start",JSON.parse(encoded)) }
+     function motionCancel(encoded:string):bool { return root.motionDispatch("cancel",JSON.parse(encoded)) }
+     function motionState():string { return JSON.stringify(windowMotion.requests) }
++    function motionPresentedFrames(after:int):string { return JSON.stringify(windowMotion.presentedFrames(after)) }
++    function motionQueuedFrames():string {
++      var items=root.bar && typeof root.bar.moduleWidgets==="function" ? root.bar.moduleWidgets(root.moduleName) : [root]
++      var result=[]
++      items.forEach(function(item) { if(item && item.motionQueuedFramesFor)result=result.concat(item.motionQueuedFramesFor()) })
++      return JSON.stringify(result)
++    }
+     function motionVisualState():string {
+       var items=root.bar && typeof root.bar.moduleWidgets==="function" ? root.bar.moduleWidgets(root.moduleName) : [root]
+       var result=[]
+@@ -390,6 +397,7 @@
+     items.forEach(function(item) { if(item && item.motionReceive && item.motionReceive(method,request))accepted=true })
+     return accepted
+   }
++  function motionQueuedFramesFor() { return windowMotion.queuedFrames() }
+   function motionVisualStateFor() { return windowMotion.visualState() }
+   function motionReceive(method,request) {
+     if(!barScreen || !request.target || request.target.screenName!==barScreen.name)return false

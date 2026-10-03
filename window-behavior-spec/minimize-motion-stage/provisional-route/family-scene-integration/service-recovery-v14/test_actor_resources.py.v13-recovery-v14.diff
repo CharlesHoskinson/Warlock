@@ -1,0 +1,20 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_actor_resources.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v14/test_actor_resources.py
+@@ -177,7 +177,7 @@
+         class Guard:
+             env={'SELECTED_PRIVATE':'yes'}
+             def verify(self):calls.append('guard')
+-        factory.guard=Guard()
++        factory.guard=Guard();factory.housekeeping_commands=__import__('subprocess')
+         def observation(command,**options):
+             self.assertEqual(options['env'],factory.guard.env)
+             return __import__('json').dumps([windows[0]])
+@@ -194,7 +194,7 @@
+         class Guard:
+             env={}
+             def verify(self):pass
+-        factory.guard=Guard()
++        factory.guard=Guard();factory.housekeeping_commands=__import__('subprocess')
+         with patch('native_runtime.subprocess.check_output',side_effect=[__import__('json').dumps([w]),'[]',__import__('json').dumps([w])]):
+             self.assertRaisesRegex(ValueError,'coverage',factory.housekeep)
+         self.assertEqual({p.name:p.read_bytes() for p in cache.root.iterdir()},before)

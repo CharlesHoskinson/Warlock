@@ -1,0 +1,39 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/CONTRACT.md": "0396acce01643ec07b698251706baa57b649a46db5c4c6ae4b6a71e2015374bb",
+    "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/source_scope.qnt": "9b6245aa69de853358e8c444287335bf57b8c3940bd5afdae37a7fe9b5395779",
+    "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/prove_before.py": "7bcbedcfac4424b7f4d0df02b4d08f35acdfec067c554c2f5cddfec4dd4d76d1"
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/source_scope.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  source_scope\n    ok exactMappedAndLaunchSourcesTest passed 1 test(s)\n    ok mappedAliasChangeRefusesTest passed 1 test(s)\n    ok declaredLauncherAliasChangeRefusesTest passed 1 test(s)\n    ok unrelatedInventoryAliasNotClaimedTest passed 1 test(s)\n    ok unknownNewMappedSourceRefusesTest passed 1 test(s)\n    ok sourceFDHashModeMountChangeRefusesTest passed 1 test(s)\n    ok declaredGraphReplacementRefusesTest passed 1 test(s)\n    ok rootPIDStartReplacementRefusesTest passed 1 test(s)\n    ok missingBeforeAliasProofRefusesTest passed 1 test(s)\n    ok missingAfterAliasProofRefusesTest passed 1 test(s)\n    ok newImageAfterOldAliasScopeRefusesTest passed 1 test(s)\n    ok freshNewImageCompleteScopeCanOnlyDiscardTest passed 1 test(s)\n    ok newImageAliasChangeCannotDiscardTest passed 1 test(s)\n    ok discardClearsAllCurrentProofTest passed 1 test(s)\n    ok deadChildCannotCreateSourceProofTest passed 1 test(s)\n    ok expiredBudgetCannotCreateSourceProofTest passed 1 test(s)\n    ok callerCannotChooseAliasRelevanceTest passed 1 test(s)\n    ok missingNamedFDProofCannotUseAliasAloneTest passed 1 test(s)\n\n  18 passing (1898ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/mapping-source-scope-v4/source_scope.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (3308ms at 605 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceUnchanged": true,
+  "mappingPredicateChanged": false,
+  "GUI": false,
+  "rootReviewBeforeRuntime": true
+}

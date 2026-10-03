@@ -1,0 +1,80 @@
+{
+  "scope": "Read-only actual review5 same-name mismatch diagnosis; recent action unproved",
+  "retainedReportSha256": "adf38774ef1b02d52cf0f442b3cc0c717b8c0a559e630b1842081ef7542e34cd",
+  "debugSha256": "96e30e2c7e86a88aaae4581fad5bf2a9144f64c8a9391238610348cc215bb72f",
+  "capturedRequestAndWrongObservation": {
+    "target": "Dashboard.rr",
+    "observed": {
+      "description": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home/Pictures/native-image.svg",
+      "height": 38,
+      "invisible": false,
+      "logicalIdentity": "recent:/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/home/Pictures/native-image.svg",
+      "name": "native-image.svg",
+      "role": 34,
+      "valid": true,
+      "width": 302,
+      "x": 14,
+      "y": 256
+    },
+    "readerFocus": {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "native-image.svg",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483901",
+        "app_bus": ":1.176"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483902",
+        "app_bus": ":1.176"
+      },
+      "navigator": {
+        "name": "native-image.svg",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.mt",
+        "app": "quickshell",
+        "object_path": "/org/a11y/atspi/accessible/2147483901",
+        "app_bus": ":1.176"
+      }
+    }
+  },
+  "classification": "Name-only reader wait immediately accepted previous media Button peer despite intended recent ListItem. Official PerformAction uses navigator_focus directly; actual debug press at03:44:41.564680 was the media button. Recent focus arrived asynchronously but the fixture did not navigate to its new exact peer. No product failure or opener-path change is justified.",
+  "excerpt": [
+    {
+      "line": 57071,
+      "text": "03:44:41.530992 - DBUS SERVICE: Getter 'State' returned: {\"device_type\": \"AtspiDeviceLegacy\", \"focus\": {\"name\": \"native-image.svg\", \"role\": \"button\", \"identity\": \"QGuiApplication.ProxiedWindow.Dashboard.mt\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483901\", \"app_bus\": \":1.176\"}, \"active_window\": {\"name\": \"Files Responsive QA\", \"role\": \"frame\", \"identity\": \"QGuiApplication.ProxiedWindow\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483902\", \"app_bus\": \":1.176\"}, \"navigator\": {\"name\": \"native-image.svg\", \"role\": \"button\", \"identity\": \"QGuiApplication.ProxiedWindow.Dashboard.mt\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483901\", \"app_bus\": \":1.176\"}}"
+    },
+    {
+      "line": 57111,
+      "text": "03:44:41.533619 - DBUS SERVICE: Getter 'State' returned: {\"device_type\": \"AtspiDeviceLegacy\", \"focus\": {\"name\": \"native-image.svg\", \"role\": \"button\", \"identity\": \"QGuiApplication.ProxiedWindow.Dashboard.mt\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483901\", \"app_bus\": \":1.176\"}, \"active_window\": {\"name\": \"Files Responsive QA\", \"role\": \"frame\", \"identity\": \"QGuiApplication.ProxiedWindow\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483902\", \"app_bus\": \":1.176\"}, \"navigator\": {\"name\": \"native-image.svg\", \"role\": \"button\", \"identity\": \"QGuiApplication.ProxiedWindow.Dashboard.mt\", \"app\": \"quickshell\", \"object_path\": \"/org/a11y/atspi/accessible/2147483901\", \"app_bus\": \":1.176\"}}"
+    },
+    {
+      "line": 57157,
+      "text": "03:44:41.543417 - FOCUS MANAGER: Changing locus of focus from [button: 'native-image.svg' (0x7237d6c80040)]  to [list item: 'native-image.svg' (0x7237d6c910c0)] . Notify: True"
+    },
+    {
+      "line": 57367,
+      "text": "03:44:41.562187 - DBUS SERVICE: About to execute 'PerformAction' in 'ObjectNavigator'."
+    },
+    {
+      "line": 57369,
+      "text": "03:44:41.562238 - OBJECT NAVIGATOR: perform_action. Script: quickshell (module=orca.scripts.toolkits.Qt.script) Event: <orca.input_event.RemoteControllerEvent object at 0x7237d6b0b290> notify_user: True"
+    },
+    {
+      "line": 57371,
+      "text": "03:44:41.564680 - AXEventSynthesizer: ' press ' on [button: 'native-image.svg' (0x7237d6c80040)]  performed successfully"
+    }
+  ],
+  "nativeHelperProvenance": {
+    "binarySha256": "6ea69e51595af41360f97da3e9c4e2a75d6f93d8513e33df5170bfe9f141733f",
+    "sameAs": "/home/hoskinson/window-integration-qa/files-keyboard/guard-stage/native-qa/fixture-keys/build/libfixturekeys.so",
+    "source": "/home/hoskinson/window-integration-qa/files-keyboard/guard-stage/native-qa/fixture-keys/keys.cpp",
+    "freshSourceCopiedTo": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review6/qa-app/FixtureKeys/keys.cpp"
+  }
+}

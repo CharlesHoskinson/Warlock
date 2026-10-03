@@ -1,0 +1,10 @@
+--- /home/hoskinson/window-integration-qa/family-raster-oracle-v3/private-nested.lua
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/private-cursor-fixture-v1/private-nested.lua
+@@ -2,6 +2,7 @@
+ hl.monitor({output="WAYLAND-1",mode="320x240@60",position="0x0",scale=1,transform=0})
+ hl.monitor({output="ORACLE-SECOND",mode="480x360@60",position="320x0",scale=1.5,transform=0})
+ hl.config({
++  cursor={invisible=true},
+   animations={enabled=false},
+   general={border_size=0},
+   decoration={rounding=0,blur={enabled=false},shadow={enabled=false}},

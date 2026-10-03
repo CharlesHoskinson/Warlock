@@ -1,0 +1,12 @@
+
+  exit_ack_test
+    ok explicitExitTest passed 1 test(s)
+    ok beforeAckQuitRefusedTest passed 1 test(s)
+    ok ackBeforeQuitTest passed 1 test(s)
+    ok noRequestEOFTest passed 1 test(s)
+    ok localVFSNoDaemonTest passed 1 test(s)
+    ok repeatedFileInitNoDaemonTest passed 1 test(s)
+
+  6 passing (33ms)
+[ok] No violation found (336ms at 5952 traces/second).
+Use --seed=0x147761c --backend=rust to reproduce.

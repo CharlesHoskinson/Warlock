@@ -1,0 +1,55 @@
+--- frozen BaseV2.__enter__
++++ fresh X11.__enter__
+@@ -1,19 +1,23 @@
+  def __enter__(self):
++  # This is the reviewed base entry sequence, with only the explicit X11 config,
++  # private PATH launcher setup, and post-readiness X11 registration added.
+   self.host.__enter__()
+   try:
+-   self.evidence['actualDmabuf']=self.host.probe()
+-   config=self.host.runtime/'hyprland.lua'
+-   fd=os.open(config,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
+-   effective=effective_lua(self.lua)
+-   with os.fdopen(fd,'wb') as out:out.write(effective)
+-   self.evidence['sourceLuaSHA256']=hashlib.sha256(self.lua).hexdigest();self.evidence['xwaylandEnabled']=False
+-   base,parent=nested_base(self.host)
++   self.evidence['actualDmabuf']=self.host.probe();runtime=self.host.runtime
++   config=runtime/'hyprland.lua';effective=effective_lua(self.lua);write_exclusive(config,effective)
++   self.evidence.update(sourceLuaSHA256=hashlib.sha256(self.lua).hexdigest(),xwaylandEnabled=True)
++   privatebin=runtime/'bin';privatebin.mkdir(mode=0o700)
++   launcher=b'#!/bin/sh\nexec /usr/bin/python3 -I -B '+str(STAGE/'x11_authority.py').encode()+b' "$@"\n'
++   write_exclusive(privatebin/'Xwayland',launcher,0o700)
++   write_exclusive(runtime/'x11-cookie',secrets.token_bytes(16))
++   write_exclusive(runtime/'x11-control.json',json.dumps({'configSHA256':auth.sha(config),'mainDisplay':self.host.main_env.get('DISPLAY'),'launcherSHA256':hashlib.sha256(launcher).hexdigest()}).encode())
++   base,parent=original.nested_base(self.host);base.update(PATH=str(privatebin)+':/usr/bin:/bin',WQA_X11_CONFIG=str(config));base.pop('DISPLAY',None);base.pop('XAUTHORITY',None);base.pop('SESSION_MANAGER',None)
+    self.evidence['parentSocket']=parent
+    self.child=self.host.launch('hyprland',['/usr/bin/Hyprland','--config',str(config)],env=base)
+    deadline=time.monotonic()+15;info=None
+    while time.monotonic()<deadline:
+     if self.child.poll() is not None:raise RuntimeError('private Hyprland exited '+str(self.child.returncode))
+-    result=subprocess.run(['/usr/bin/hyprctl','instances','-j'],env=base,capture_output=True,text=True,timeout=2)
++    result=original.subprocess.run(['/usr/bin/hyprctl','instances','-j'],env=base,capture_output=True,text=True,timeout=2)
+     try:matches=[r for r in json.loads(result.stdout) if r['pid']==self.child.pid]
+     except (ValueError,KeyError,TypeError):matches=[]
+     if len(matches)>1:raise RuntimeError('ambiguous private instance')
+@@ -22,15 +26,10 @@
+    if info is None:raise RuntimeError('private instance discovery timeout')
+    signature=info['instance'];display=info['wl_socket']
+    if not re.fullmatch(r'[A-Za-z0-9_]+',signature) or not re.fullmatch(r'wayland-[0-9]+',display):raise RuntimeError('unsafe private instance/socket name')
+-   ipc=self.host.runtime/'hypr'/signature/'.socket.sock'
+-   self.host.wait_socket(str(ipc.relative_to(self.host.runtime)),self.child)
+-   self.host.wait_socket(display,self.child)
+-   self.sockets=[socket_identity(ipc,self.host.runtime),socket_identity(self.host.runtime/display,self.host.runtime)]
+-   self.child_identity=process(self.child.pid)
+-   self.env={**base,'HYPRLAND_INSTANCE_SIGNATURE':signature,'WAYLAND_DISPLAY':display}
+-   self.env.pop('WESTON_MODULE_MAP',None)
+-   self.evidence.update(compositorPID=self.child.pid,compositorStart=self.child_identity['start'],compositorPGID=self.child_identity['pgid'],compositorConfig=str(config),compositorConfigSHA256=digest(config),signature=signature,waylandSocket=display,sockets=self.sockets,hyprlandMaps=mapped_files(self.child.pid))
+-   self.ctl('version')
+-   return self
++   ipc=runtime/'hypr'/signature/'.socket.sock';self.host.wait_socket(str(ipc.relative_to(runtime)),self.child);self.host.wait_socket(display,self.child)
++   self.sockets=[original.socket_identity(ipc,runtime),original.socket_identity(runtime/display,runtime)]
++   self.child_identity=original.process(self.child.pid);self.env={**base,'HYPRLAND_INSTANCE_SIGNATURE':signature,'WAYLAND_DISPLAY':display};self.env.pop('WESTON_MODULE_MAP',None);self.env.pop('WQA_X11_CONFIG',None)
++   self.evidence.update(compositorPID=self.child.pid,compositorStart=self.child_identity['start'],compositorPGID=self.child_identity['pgid'],compositorConfig=str(config),compositorConfigSHA256=auth.sha(config),signature=signature,waylandSocket=display,sockets=self.sockets,hyprlandMaps=original.mapped_files(self.child.pid))
++   self.ctl('version');self.register_x11();return self
+   except BaseException:
+    self.host.close();raise

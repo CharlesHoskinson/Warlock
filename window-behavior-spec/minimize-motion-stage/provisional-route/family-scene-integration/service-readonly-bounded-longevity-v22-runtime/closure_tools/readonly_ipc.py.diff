@@ -1,0 +1,246 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_ipc.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-bounded-longevity-v22-runtime/readonly_ipc.py
+@@ -17,6 +17,8 @@
+ 
+ from recovery_resources import material_path, process_start
+ from readonly_archive import ArchiveStore, segment_chain
++from readonly_current import CurrentReads, CurrentReadWitness
++import readonly_current
+ 
+ MAX_REPLY = 1048576
+ MAX_HISTORY = 512
+@@ -63,6 +65,7 @@
+         self.source = material_path(__file__)
+         self.session_source = material_path(Path(__file__).with_name('native_runtime.py'))
+         self.archive_source = material_path(Path(__file__).with_name('readonly_archive.py'))
++        self.current_source = material_path(readonly_current.__file__)
+         selected = shutil.which('hyprctl', path=guard.env.get('PATH'))
+         if selected is None:
+             raise FileNotFoundError('selected hyprctl')
+@@ -84,10 +87,12 @@
+             'compositorPID': guard.pid, 'compositorStart': guard.start,
+             'socket': str(self.socket_path), 'socketIdentity': self.socket_identity,
+             'adapter': self.source, 'sessionSource': self.session_source,
+-            'archiveSource': self.archive_source,
++            'archiveSource': self.archive_source, 'currentSource': self.current_source,
+             'executable': self.executable, 'executableMaterial': self.executable_material,
+         }
+-        self.authority()
++        self.current = None
++        self.authority()  # Full history before constructing any current-only proof.
++        self.current = CurrentReads(self.archive, self.lease, self.issuer, self.predecessor)
+         with self.reservation_lock, self.lock:
+             self.publish()
+ 
+@@ -99,9 +104,16 @@
+                 'predecessor': deepcopy(self.predecessor)}
+ 
+     def assert_closed(self):
+-        with self.reservation_lock,self.lock:
+-            if self.fault or self.references or any(r['closed'] is not True or r['published'] is not True or r['outcome'] not in ('complete','refused') for r in self.rows.values()):
+-                raise ValueError('read-only connection closure incomplete; normal shutdown refused')
++        if not self.rotation.acquire(blocking=False):
++            raise ValueError('read-only append incomplete; normal shutdown refused')
++        try:
++            with self.reservation_lock,self.lock:
++                if self.fault or self.references or any(r['closed'] is not True or r['published'] is not True or r['outcome'] not in ('complete','refused') for r in self.rows.values()):
++                    raise ValueError('read-only connection closure incomplete; normal shutdown refused')
++            self.audit_history()  # Older unborrowed mutation must refuse normal closure.
++            self.current.close()
++        finally:
++            self.rotation.release()
+ 
+     def publish(self):
+         try:
+@@ -140,6 +152,93 @@
+             raise
+         return digest(self.issuer)
+ 
++    def _read_owner(self):
++        if self.fault:
++            raise ValueError('read-only journal failed; authority revoked')
++        self.lease.verify()
++        self.guard.verify()
++        if (self.guard.pid,self.guard.start,self.guard.session)!=(self.issuer['compositorPID'],self.issuer['compositorStart'],self.issuer['session']) or any(self.guard.env.get(k)!=v for k,v in self.issuer['environment'].items()):
++            raise ValueError('selected compositor/session identity changed')
++        if self.lease.root!=self.root or list(self.lease.root_identity)!=self.issuer['rootIdentity'] or list(self.lease.lock_identity)!=self.issuer['lockIdentity'] or self.lease.nonce!=self.issuer['nonce'] or any(self.lease.owner.get(k)!=v for k,v in [('pid',self.issuer['pid']),('start',self.issuer['start']),('nonce',self.issuer['nonce']),('session',self.issuer['session'])]):
++            raise ValueError('selected runtime lease identity changed')
++        if os.getpid() != self.issuer['pid'] or process_start(os.getpid()) != self.issuer['start']:
++            raise ValueError('read-only service lifetime changed')
++        if self.socket_path.resolve() != self.socket_path.absolute():
++            raise ValueError('selected control socket alias refused')
++        info = self.socket_path.lstat()
++        if not stat.S_ISSOCK(info.st_mode) or info.st_uid != os.getuid() or [info.st_dev, info.st_ino] != self.socket_identity:
++            raise ValueError('selected control socket identity changed')
++        if material_path(__file__) != self.source or material_path(Path(__file__).with_name('native_runtime.py')) != self.session_source or material_path(Path(__file__).with_name('readonly_archive.py')) != self.archive_source or material_path(readonly_current.__file__) != self.current_source:
++            raise ValueError('reviewed read-only/session source changed')
++        if shutil.which('hyprctl', path=self.guard.env.get('PATH')) != self.executable or material_path(self.executable) != self.executable_material:
++            raise ValueError('selected hyprctl executable changed')
++        return digest(self.issuer)
++
++    def audit_history(self):
++        """Explicit full historical verification; current-data proofs never substitute."""
++        return self.authority()
++
++    def _current_authority(self, *, borrow=False):
++        """Typed current-only result, exclusively fresh data/owned archive publication."""
++        latest = None
++        try:
++            issuer = self._read_owner()
++            self.current.verify_owner(self.lease, self.issuer, self.predecessor)
++            with self.reservation_lock, self.lock:
++                latest = self.current.acquire_latest(self.tip, self.epoch)
++                snapshot = self.snapshot()
++                fields = {'version', 'issuer', 'history', 'fault', 'serial', 'epoch',
++                          'archiveTip', 'archiveDirectory', 'predecessor'}
++                if (not isinstance(snapshot, dict) or set(snapshot) != fields or
++                        type(snapshot['version']) is not int or snapshot['version'] != 2 or
++                        snapshot['fault'] is not False or type(snapshot['serial']) is not int or
++                        snapshot['serial'] < 0 or type(snapshot['epoch']) is not int or snapshot['epoch'] < 0 or
++                        not isinstance(snapshot['issuer'], dict) or
++                        not readonly_current.same_material(snapshot['issuer'], self.issuer) or
++                        not readonly_current.same_material(snapshot['archiveDirectory'], self.archive.directory) or
++                        not readonly_current.same_material(snapshot['predecessor'], self.predecessor) or
++                        not readonly_current.same_material(snapshot['archiveTip'], self.tip)):
++                    raise ValueError('complete unfaulted typed current archival dataset required')
++                for pointer in (snapshot['archiveTip'], snapshot['predecessor']):
++                    if pointer is not None: self.archive.check_pointer(pointer)
++                frames = getattr(self.local, 'borrowed', None)
++                if borrow and (not isinstance(frames, list) or not frames or
++                               not getattr(self.local, 'frames', None)):
++                    raise ValueError('current borrowing requires owned live query frame')
++                borrowed = frames[-1] if frames else None
++                if borrow and borrowed is None:
++                    borrowed = self.current.acquire_latest(self.tip, self.epoch, borrow=True,limit=MAX_HISTORY)
++                    frames[-1] = borrowed
++            token = latest.token.verify()
++            _validate_rows(snapshot['history'], self.issuer, root=self.root,
++                           environment=self.issuer['environment'], guard=self.guard)
++            if (token['issuerSHA256'] != issuer or token['archivedCount'] + len(snapshot['history']) != snapshot['serial'] or
++                    any(row['serial'] > snapshot['serial'] for row in snapshot['history'])):
++                raise ValueError('bounded current row/count/issuer binding changed')
++            body = latest.verify(self.archive, self.current.directory_fd)
++            if body is not None:
++                fields = {'version','kind','issuerSHA256','epoch','previous','rows','first','last'}
++                rows = body.get('rows')
++                if set(body) != fields or not isinstance(rows,list) or not rows or len(rows)>MAX_HISTORY:
++                    raise ValueError('complete bounded current segment required')
++                _validate_rows(rows,self.issuer,root=self.root,environment=self.issuer['environment'],guard=self.guard)
++                if (any(not(row['closed'] and row['published']) or row['outcome'] not in ('complete','refused') for row in rows) or
++                        type(body['first']) is not int or type(body['last']) is not int or
++                        body['first'] != rows[0]['serial'] or body['last'] != rows[-1]['serial'] or
++                        {row['id'] for row in rows}.intersection(row['id'] for row in snapshot['history'])):
++                    raise ValueError('bounded current segment interval/closure/rows differ')
++            witness = self.current.witness(latest,borrowed or latest,self.issuer)
++            if type(witness) is not CurrentReadWitness or witness.issuerSHA256 != issuer:
++                raise ValueError('typed current-only witness required')
++            self._read_owner()
++            self.current.verify_owner(self.lease,self.issuer,self.predecessor)
++            return witness
++        except BaseException:
++            self.fault = True
++            raise
++        finally:
++            if latest is not None:self.current.release(latest)
++
+     def ensure_capacity(self, remaining):
+         with self.reservation_lock, self.lock:
+             if self.fault: raise ValueError('read-only authority revoked')
+@@ -150,8 +249,10 @@
+         # The same guarded rotation also supports proactive owned maintenance.
+         if not self.rotation.acquire(timeout=remaining()):
+             raise TimeoutError('read-only complete reply absolute deadline')
+-        try:
+-            before = self.authority()
++        prepared = None
++        adopted = False
++        try:
++            before = self._current_authority().issuerSHA256
+             remaining()
+             with self.reservation_lock, self.lock:
+                 candidates = [deepcopy(row) for identifier, row in self.rows.items()
+@@ -166,7 +267,9 @@
+                     'first': candidates[0]['serial'], 'last': candidates[-1]['serial']}
+             # All filesystem/source/peer observations precede the short publication lock.
+             pointer = self.archive.write(body)
+-            if self.authority() != before: raise ValueError('archive issuer changed during write')
++            if self._current_authority().issuerSHA256 != before: raise ValueError('archive issuer changed during write')
++            old_token = self.current.latest.token.verify()
++            prepared = self.current.prepare(pointer,old_tip,old_epoch+1,old_token['archivedCount']+len(candidates),self.issuer)
+             remaining()
+             with self.reservation_lock, self.lock:
+                 if (self.fault or self.tip != old_tip or self.epoch != old_epoch or
+@@ -177,15 +280,18 @@
+                 compact['archiveTip'] = pointer
+                 compact['epoch'] = old_epoch + 1
+                 self.record(compact)  # Durable tip before any in-memory reclamation.
++                self.current.adopt(prepared,old_tip)
++                adopted = True
+                 self.tip = deepcopy(pointer)
+                 self.epoch = old_epoch + 1
+                 for row in candidates: del self.rows[row['id']]
+-            if self.authority() != before: raise ValueError('archive owner changed after publication')
++            if self._current_authority().issuerSHA256 != before: raise ValueError('archive owner changed after publication')
+             remaining()
+         except BaseException:
+             self.fault = True
+             raise
+         finally:
++            if prepared is not None and not adopted: prepared.close()
+             self.rotation.release()
+ 
+     def register(self, row):
+@@ -218,11 +324,16 @@
+         if frames is None: self.local.frames = frames = []
+         owned = set()
+         frames.append(owned)
++        borrowed = getattr(self.local,'borrowed',None)
++        if borrowed is None:self.local.borrowed = borrowed = []
++        borrowed.append(None)
+         try:
+             return self._query(wire, shape, timeout, actor)
+         finally:
+             with self.reservation_lock, self.lock:
+                 self.references.difference_update(owned)
++            tip = borrowed.pop()
++            if tip is not None:self.current.release(tip,borrow=True)
+             if frames.pop() is not owned:
+                 self.fault = True
+                 raise ValueError('query reference stack changed')
+@@ -238,7 +349,7 @@
+             if value <= 0:
+                 raise TimeoutError('read-only complete reply absolute deadline')
+             return value
+-        before = self.authority()
++        before = self._current_authority(borrow=True).issuerSHA256
+         remaining()
+         self.ensure_capacity(remaining)
+         remaining()
+@@ -298,7 +409,7 @@
+                 raise error
+             raise RuntimeError('unregistered read-only connection')
+         try:
+-            if error is None and self.authority() != before:
++            if error is None and self._current_authority().issuerSHA256 != before:
+                 raise ValueError('read-only owner changed before confirmation')
+             if error is None:
+                 remaining()
+@@ -310,7 +421,7 @@
+         if error is not None:
+             raise error
+         try:
+-            if self.authority() != before:
++            if self._current_authority().issuerSHA256 != before:
+                 raise ValueError('read-only owner changed after disk confirmation')
+             remaining()
+             with self.reservation_lock,self.lock:
+@@ -396,6 +507,9 @@
+     if not isinstance(rows, list) or len(rows) > MAX_HISTORY:
+         raise ValueError('bounded active or archived rows required')
+     original_issuer = deepcopy(issuer)
++    current_source = original_issuer.pop('currentSource', None)
++    if current_source != material_path(Path(__file__).with_name('readonly_current.py')):
++        raise ValueError('retained current-read source replaced')
+     archive_source = original_issuer.pop('archiveSource', None)
+     if archive_source != material_path(Path(__file__).with_name('readonly_archive.py')):
+         raise ValueError('retained archive source replaced')

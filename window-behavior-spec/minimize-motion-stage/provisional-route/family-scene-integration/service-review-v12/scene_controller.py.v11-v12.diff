@@ -1,0 +1,60 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v11/scene_controller.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/scene_controller.py
+@@ -146,6 +146,10 @@
+         """Hook for an explicit shared family ownership registry."""
+         return None
+ 
++    def reserve_retirement_scope(self,record,members):
++        """Registry hook before irreversible gesture retirement; no native authority."""
++        return None
++
+     def direction_for(self,record,members):
+         return record.direction
+ 
+@@ -162,6 +166,24 @@
+                 if not self.owns(record):return
+                 # The sampled relation and native state have no authority until
+                 # this reservation still owns every exact member.
++                retire=getattr(self.desktop,'retire_gestures',None)
++                if retire is not None:
++                    self.reserve_retirement_scope(record,members)
++                    before_scope={key(m) for m in members}
++                    record.profile['gestureRetirementScope']=[list(key(m)) for m in members]
++                    record.profile['gestureRetirementStartNs']=time.monotonic_ns()
++                    self.write_journal()
++                    try:retired=retire(members)
++                    except Exception as error:
++                        record.profile['gestureRetirementFailure']=getattr(error,'evidence',str(error))
++                        raise
++                    record.profile['gestureRetirementReply']=retired
++                    members,focus=self.fresh(record)
++                    if {key(m) for m in members}!=before_scope:raise ValueError('exact family changed after gesture retirement')
++                    record.profile['gestureRetirementFreshNs']=time.monotonic_ns()
++                    record.profile['postRetirementFamily']=[{field:deepcopy(m.get(field)) for field in
++                        ('address','stableId','pid','at','size','pinned','floating','fullscreen','parent','parentStableId','modal')} for m in members]
++                    active=self.desktop.active() if direction.anchor=='activate' else None
+                 direction=self.direction_for(record,members)
+                 anchor=direction.identity or record.requested
+                 window=next((m for m in members if key(m)==anchor),None)
+@@ -169,6 +191,8 @@
+                 record.operation=direction.resolve(window,active)
+                 record.direction=Direction(record.operation)
+                 record.profile['resolvedDirection']=record.operation
++                witness=getattr(self.desktop,'family_evidence',None)
++                if witness is not None:record.profile['familyDrawEvidence']=witness()
+                 self.validate_scope(record, members)
+                 if record.operation == 'restore':
+                     # Irreversible destination effects belong to the current
+@@ -214,6 +238,12 @@
+                 if not self.owns(record):
+                     return
+                 fresh, focus = self.fresh(record)
++                witness=getattr(self.desktop,'family_evidence',None)
++                if witness is not None:
++                    evidence=witness()
++                    if (not evidence or evidence.get('drawOrder')!=[list(key(m)) for m in fresh]
++                            or [key(m) for m in fresh]!=[key(m) for m in members]):raise ValueError('native draw order changed during capture; replacement scene required')
++                    record.profile['familyDrawEvidence']=evidence
+                 for member,source in zip(fresh,sources,strict=True):
+                     if rectangle(member)!=source['nativeRect']:
+                         raise ValueError('native geometry drifted during family capture')

@@ -1,0 +1,48 @@
+--- compat-v1/mouse_review.py
++++ compat-v2/mouse_review.py
+@@ -539,7 +539,7 @@
+     def activate(self) -> None:
+         """Activates mouse review."""
+ 
+-        if self._active:
++        if self._active or not self.get_is_enabled():
+             return
+ 
+         if not self._mouse_review_capable:
+@@ -676,22 +676,13 @@
+     def set_is_enabled(self, value: bool) -> bool:
+         """Sets whether mouse review is enabled (requires Wnck)."""
+ 
+-        if not self._mouse_review_capable:
+-            msg = "MOUSE REVIEW ERROR: Wnck is not available"
+-            debug.print_message(debug.LEVEL_INFO, msg, True)
+-            return False
+-
+-        msg = f"MOUSE REVIEW: Setting enable mouse review to {value}."
+-        debug.print_message(debug.LEVEL_INFO, msg, True)
+-        if value == self._active:
+-            return True
+-
++        # Explicit user intent survives temporary backend loss. Write it before
++        # any active/capability shortcut, including False while already inactive.
+         gsettings_registry.get_registry().set_runtime_value(self._SCHEMA, self.KEY_ENABLED, value)
+-        if value:
++        if not value:
++            self.deactivate()
++        elif self._mouse_review_capable:
+             self.activate()
+-        else:
+-            self.deactivate()
+-
+         return True
+ 
+     @dbus_service.command
+@@ -713,7 +704,7 @@
+         ]
+         debug.print_tokens(debug.LEVEL_INFO, tokens, True)
+ 
+-        new_state = not self._active
++        new_state = not self.get_is_enabled()
+         if not self.set_is_enabled(new_state):
+             return False
+ 

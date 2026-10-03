@@ -1,0 +1,575 @@
+{
+  "manifest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/manifest-responsive-v13.json",
+  "manifestSHA256": "2a2aac11a562bae6b98c254f77384ffc505e05fb9e881b5f0936386d0f27467a",
+  "inputCount": 3126,
+  "modeCount": 3126,
+  "linkCount": 138,
+  "offline": {
+    "version": "family-service-responsive-v13-offline",
+    "productionChanged": false,
+    "nativeLaunch": false,
+    "pythonTests": 187,
+    "quintNamedScenarios": 98,
+    "quintModels": 15,
+    "quintSamplesPerModel": 2000,
+    "checks": [
+      {
+        "command": [
+          "/usr/bin/python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          ".",
+          "-p",
+          "test_*.py",
+          "-v"
+        ],
+        "exitCode": 0,
+        "log": "check-00.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "family_scene_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-01.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "family_scene_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-02.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "family_scene.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-03.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "family_destination_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-04.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "family_destination_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-05.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "family_destination.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-06.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "transport_dispatch_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-07.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "transport_dispatch_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-08.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "transport_dispatch.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-09.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "family_registry_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-10.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "family_registry_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-11.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "family_registry.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-12.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "ingress_context_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-13.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "ingress_context_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-14.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "ingress_context.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-15.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "persistent_atlas_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-16.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "persistent_atlas_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-17.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "persistent_atlas.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-18.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "pending_direction_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-19.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "pending_direction_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-20.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "pending_direction.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-21.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "runtime_lifecycle_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-22.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "runtime_lifecycle_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-23.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "runtime_lifecycle.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-24.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "receipt_visual_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-25.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "receipt_visual_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-26.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "receipt_visual.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-27.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "native_composition_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-28.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "native_composition_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-29.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "native_composition.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-30.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "ipc_guard_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-31.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "ipc_guard_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-32.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "ipc_guard.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-33.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "actor_resources_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-34.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "actor_resources_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-35.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "actor_resources.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-36.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "family_order_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-37.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "family_order_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-38.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "family_order.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-39.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "gesture_capture_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-40.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "gesture_capture_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-41.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "gesture_capture.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-42.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "responsive_preparation_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-43.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "responsive_preparation_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-44.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "responsive_preparation.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-45.log"
+      }
+    ],
+    "sourceSHA256": {
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/CONTRACT.md": "20f78ff6233467bce46bcba59df861e11783244dd3620d5bb2b762ebf9eca2fc",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/GESTURE_CONTRACT.md": "28e149135c0ccf8f8e3a7a737891e8a32b46db18835f8539346a653eb9a5b18f",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/NATIVE_ENTRYPOINT.md": "b7115256dcea7f3700a49659d2e47aa87d680c6ae3f2c9ea9b16f7eaa6a44364",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/ORDERING_CONTRACT.md": "249d8e35a02b8e485149d5cb8be85c147a9d2b08f99ef061e77524cf7cdaf000",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/RESOURCE_CONTRACT.md": "05cce76091863d80b765741a86edfe75950a1bac65ae113d3e9d4a5e1b31a0da",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/RESPONSIVE_PREPARATION_CONTRACT.md": "d43219c124119842a3772c84374551f55b71d7446e4ef433a3c9a053ac319ed1",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/actor_resources.qnt": "91cbcce02b1bbb4e17e179ef208ddf80e80df4685c6482b8cb61d5876cc2e317",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/actor_resources_test.qnt": "c6461d117bf346cdad078513c4ccfb782a143737275a8b14e317b3f209ef595b",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/check_offline.py": "aa5109ef4e5b45ffc5b3871c6e2560df2b9caf2aeac1a658bffddda06c184d6e",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/context_provider.py": "0e3daea910a49f44e63c6321859dd8598c4e610d16e1cc445070602e5bec1b78",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/direction.py": "486f57b77d0d34fa8ef23f7906a4c8728c614beba6ebe4c267afe8e623c20c35",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/family_destination.qnt": "6e7c0df9e7816fa620c13990da70fccb4367bfdb54575e343350cb1ff4a1fd83",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/family_destination_test.qnt": "f7b286ce9443b69cd2ada54a0e4e1aee007ee024a8583aa9536f7455e20176ee",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/family_order.py": "0792d94a67ddb5b8181d54487b048b990a2cc879ece3d981ed30d4b0d4a2ec54",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/family_order.qnt": "a2d4be04904800cead8e7d06312338e983b7c9deb005484b0d7efe5bd1109d25",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/family_order_test.qnt": "44222437bc25a1840d8451c0256fa4148430cdb34fde6f23f3ffe4d94f3beb3f",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/family_registry.qnt": "f5e9769df7bea01f167190a4b50b640bc2b409b6dc88efbdf63055dda7e43b49",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/family_registry_test.qnt": "92c5c0854eb7616346f63353333f65590f77c9cc664b33d6c37bd14d95c6c637",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/family_scene.qnt": "7b1fd7739efeff5925751fd2ca12977b832ddca044cb08de17bc1005c455f1f1",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/family_scene_test.qnt": "d8b1b2927f1fd3d2100af0cbc7ecf45677b4a00801198933f3e81644ed2ce674",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/freeze_packet.py": "380a8843538b6c87a7ec4fb3dfe58b08749e1e4e6cf909ac1977aeb99f9ebada",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/gesture_capture.qnt": "85ffe1d5570b350e59ab0dfb7e0c430b8e4577edcb0627b96ca01c9582dae8e1",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/gesture_capture_test.qnt": "cdbfbc57878aa921346c4bb2c26055850f82d7fc87f3c06af1fb91bd6f0d6e1b",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/ingress_context.qnt": "702e7e2fcb3f9d63e3653afd73eafdfec85bf50cd24f2881ad4344a11e16f023",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/ingress_context_test.qnt": "b828e3101cf1566ed45b7f454d6bcfa0af4a04cd3717ca3ff239760725214cd8",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/ipc_guard.qnt": "a6b974ffe4059d6e212fba2d4e613a58eaa00fbb8b623623197d6e17360e3046",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/ipc_guard_test.qnt": "d3958dadcdb511c5b5542d1f99e530824bfc564ab1b152e3d66f38d58ed911f1",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/native_composition.qnt": "9f65bd2314f3dddf57565434610708bf8fdc61bd624d75d4de87735aa0171e65",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/native_composition_test.qnt": "647cd0cebaed4cf463b57be33d1ba17dc7a0ef5b447c251b8904e72ef0fff807",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/native_desktop.py": "a8a245a11a8cfd2d03c9abab24c46474a4601e5d4f2b3a389fa6045d7b2cf39d",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/native_runtime.py": "26d0cd2a1f9eddb88024073fa12e8bd9f5fb88215df3a35be723b63dd440c7bc",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/pending_direction.qnt": "ccd3b49807fa4b4063044edb5aae77c6b273ae9a7982e74eb22aaee4ff8d3b53",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/pending_direction_test.qnt": "6c8a4cbc461e0a2d36417b2714a4306073d6046d0566b710f429633be2d84e12",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/persistent_atlas.qnt": "789a8f3682d612091ab60e58f3a5e3f100f0b49556bd56a397284656f6e60934",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/persistent_atlas_test.qnt": "e91850f4abde58f984e3dbd27042324ab87a0efb1c06ea6ffe53f0ab7b31a25d",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/pipe_transport.py": "16be75b85efe3d16483cd176872eade5e9bb5f6b8f124cc338d6a735a39525c8",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/production_motion_6d9.py": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/receipt_visual.qnt": "359386bd7a4fc2aeb1ced50627f0e7240695e06cdff1c39a66a3c40fb714c309",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/receipt_visual_test.qnt": "6a99b6accb257f828d364fdc3d05f5e0818658b63ab5e38e6d25a9a6e1959cc3",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/responsive_preparation.qnt": "146f2cbffa7ff4b8fa8ed10637343910b2051944376e5ab1c66dfeea8b9dbd0d",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/responsive_preparation_test.qnt": "660a0a9d12869e1950839c70a34329e32994d529cf340fbc4476821bd843365a",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/runtime_fixture.py": "385d01079b0607d9e6f4519d99cae1fda9f0438e5696b79e55273265a9ddfa8a",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/runtime_lifecycle.qnt": "d912775efd0da4e84700b2a85bd6f7d165525488f80ccecb06cd4a80633eae25",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/runtime_lifecycle_test.qnt": "decd75fdf892d132f6657940cc15efb483f770115881fb30e64a68abae652f16",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/scene_controller.py": "459135eec7abd238b9366c775cec39df72d75312b6a2ef6850cb1fdf655a7ba5",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/scene_manager.pre-model-review.py": "80d8232bce8d8fa02f7416859f84853ddefd128e92d32b72d459f0517a93ba07",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/scene_manager.py": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/service_runtime.py": "d48e1c3133bf84bd4a9fc3539060e05ce83c8c90f36b023bb5aeca6da832b615",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/snapshot_cache.py": "21f0d47313c053964fd8e81736843d8b62ecadab5eee3ebba80ef5801e8bf8ee",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/socket_frontend.py": "0ea4c81cbf975104bb4ae17f9a8807f4af74a974a793a4b36a0aac7569c2647f",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_actor_resources.py": "f10d901953886256a8574dddf6976fab5c7b73e3dc25b32e89f8fb73f3b66d82",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_capture_lease.py": "e301c95d2fc7ac21fb91118493b9323f0acddfb89080251f91959ce74ad05607",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_context_provider.py": "32fdddb492653f08a3bee1d2145903417f6a7fe90e3d0ad89469736672a2c950",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_family_order.py": "c08c2a8d0660204627aa671b347e7429f86e536cf7650ab62a4c98d267ad269b",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_gesture_retirement.py": "d1b8cac3bb3fcd14281703177a7c92ad79179170ad8696752d350d5237b11e7b",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_ingress_context.py": "04a7c158a2c430b3967da74366b3ac73a62d57b4c37fce93f50e1cb08b077e82",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_ipc_complete_probe.py": "ba53f204516a3ca7a2d8764951d261a2aa4c0de2e47ca11fb881cac42546d62f",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_native_runtime.py": "75728cd42743ec3251e92ff4a2624760bf5472c070d50bb9ea22ae3ddd243140",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_pending_direction.py": "c621906e5e6e4d7d4fb9ccd0cd81e25e48ff519868576a9a780ee7a00bbe2fea",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_pipe_transport.py": "fcd791e2165b92b1d5878e4678785071290cb96febdb75f50d9501fcb565981d",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_receipt_visual.py": "c0d4fa8fc4b063ab450a5ad18a043edbb3334487fd3a7a822c20841e8f7d952e",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_responsive_preparation.py": "f79a3f2f6bb409c8fc6bc5943a6c54d1e79a8d39160a5b0449fe46f867e9497d",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_scene_controller.py": "22e97f7440ca476eb659f3e329e8123e6ab69c9f8edc913326c07f2895456bd6",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_scene_manager.py": "461f4740fe823791f7c0c2d0e9fc5d9e091744015bd621a0adf9e4f578dfc6d9",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_service_runtime.py": "e1d3e584021f5ee2d49e3dfad559bb7a16811dcc3a3ce4f0721a4321763e6ba3",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_snapshot_cache.py": "655003df776a41314101248404b2cf88c48ae054cb4b5f49a64852fb7a0e032a",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_socket_frontend.py": "5cde825dffd77ebc9684cf9a55e48ffa8b23ec9eb08c57242b7096c437902f2b",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/test_split_destination.py": "74a8edc4ec3c64e166e02c80d5a4713bd5171a6de62a5fa7754c39b2856c1041",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/transport_dispatch.qnt": "a4e2106254f26ae9ae3b303b64bba683323664732b6c9ab03c0f371756644ad0",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/transport_dispatch_test.qnt": "7762ae6395d615c792b14e13f3885947acfb47b287b8134e77de972b08c59b14"
+    },
+    "sourceUnchangedDuringProof": true,
+    "scope": "responsive preparation observations and atomic native effects; original interior reversal/native family acceptance pending"
+  },
+  "currentStageFrozen": true,
+  "nativeLaunch": false,
+  "mainChanged": false
+}

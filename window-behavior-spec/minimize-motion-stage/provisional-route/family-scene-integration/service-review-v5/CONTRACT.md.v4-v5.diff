@@ -1,0 +1,22 @@
+--- frozen-v4/CONTRACT.md
++++ review-v5/CONTRACT.md
+@@ -152,3 +152,19 @@
+ Membership/geometry replacement and an authoritative desktop-context provider
+ remain separate required work. The manager cannot turn caller-supplied context
+ into proof of current native desktop/output identity.
++
++## Frontend ingress before context observation
++
++Untrusted frontend messages cannot provide a desktop-context fingerprint. An
++exact captured request first reserves its globally ordered receipt and revokes
++older native authority over the known family. Context observation then runs
++outside the reservation/effect lock. Existing immutable pixels may keep moving
++while this observation waits, but no old endpoint can commit native effects.
++Only the latest current receipt may activate the controller using the provider's
++fresh context. Out-of-order context replies never reserve a new epoch or retarget.
++
++A context failure/deadline explicitly fails that pending request and retires the
++older provisional visual scene without conferring native settlement authority.
++Native windows keep the last committed state and exact geometry. Failure is
++observable, never reported as completed minimize/restore. Initial unknown peers
++are still reconciled only by the fresh native graph when preparation proceeds.

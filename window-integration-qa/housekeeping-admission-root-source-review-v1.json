@@ -1,0 +1,181 @@
+{
+  "result": "pass",
+  "design": "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/source-handoff.json",
+  "designSHA256": "13ff54ec3499572efa9457dcaa9b96f9b64a0229670aab90a7f5925afd504038",
+  "verifiedInputs": 37,
+  "namedScenarios": 26,
+  "traces": 2000,
+  "steps": 100,
+  "wholeProductInverseExact": true,
+  "wholeFixtureInverseExact": true,
+  "approvedRuntimeScope": "Fresh service-housekeeping-admission-v26; only per-query NativeFactory.housekeep reentrant journal-lock wrapper and two genuine fixture lock assembly statements. All original readonly query/receipt/controller/keeper/source/deadline/oracle behavior retained.",
+  "sourceImplementationAuthorized": true,
+  "actualCPURequirements": [
+    "actual UnixPeer RuntimeLease NativeSession ReadonlyIPC before/after controlled actual SceneController ready commit; no timeout while admission waits",
+    "actual already-registered postEOF deadline refusal retained in unchanged direct reader",
+    "healthy exact3observations + source/EOF/peer/deadline/ledger proof, measure each admitted transaction",
+    "actual native/ingress lock opportunity BETWEEN observations",
+    "malformed/incomplete/foreign/stale/source replacement/slowreply refuse with exact closed durable rows",
+    "query failure releases caller admission; original housekeepingErrors remains",
+    "complete-family changing identity coverage refuses prune/all existing cache assertions",
+    "entire original unfiltered source proof including original receipt/context/reduction/fallback assertions"
+  ],
+  "limits": [
+    "Per-query .6s deadline remains unchanged and starts once at unchanged query entry after scheduler admission.",
+    "Admission acquisition/all authority-journal IO have no promised global wall bound; actual latency/ingress/shutdown gates required.",
+    "No baseline38/fault34 acceptance or native performance claim. Three unexpected close-helper lifetimes at V10 teardown remain separately unaccepted."
+  ],
+  "nativeAuthorized": false,
+  "fault34Authorized": false,
+  "mainChanged": false,
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-preview-lock-admission-v25/helper_supervisor.py": {
+      "sha256": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-preview-lock-admission-v25/manifest-preview-admission-v25.json": {
+      "sha256": "f0b6916151c587501ae73a8fcfacdcc5156c661289592358d13bce66e23ef6e2",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-preview-lock-admission-v25/native_runtime.py": {
+      "sha256": "2179e2a30c880d5ad88b5ae19b370485ac886979ba8834f182ddcfb59b2006d1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-preview-lock-admission-v25/owned_commands.py": {
+      "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-preview-lock-admission-v25/readonly_ipc.py": {
+      "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-preview-lock-admission-v25/scene_controller.py": {
+      "sha256": "8e8935b83496aa85a16dd939e9961cee2bfcbcadd8d92bcbc8d335bcd353b11b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-preview-lock-admission-v25/scene_manager.py": {
+      "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-preview-lock-admission-v25/service_runtime.py": {
+      "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-preview-lock-admission-v25/snapshot_cache.py": {
+      "sha256": "21f0d47313c053964fd8e81736843d8b62ecadab5eee3ebba80ef5801e8bf8ee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-preview-lock-admission-v25/test_actor_resources.py": {
+      "sha256": "4a7c1bd0d507aad67821e6edf68cb4719647208027819b7152a623ab70d8c05b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/controller-housekeeping-contention-root-v1/replay.py": {
+      "sha256": "5b215e78a40bd88110767382034e8e9f18e1ee4292fac10cd37e497c11dcf02f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/controller-housekeeping-contention-root-v1/report.json": {
+      "sha256": "571e740617230dc952d2555fbc266c3a062c2736fa9700d13cf8ab3e4e146336",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/controller-housekeeping-post-eof-root-v1/replay.py": {
+      "sha256": "d37f207e8696d058895b8e372c05c48a97ed6e4077b7c6ec0fff01368ef53e74",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/controller-housekeeping-post-eof-root-v1/report.json": {
+      "sha256": "77df72f605ca34c1de6d7588768362cb43ae72b3a5fd72497ae4cb5e3fe77547",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v10/frozen-inputs.json": {
+      "sha256": "bcabc3433ce35d76a9fb403fc9dac9f4c6f5444b0e14e83108a213ee688811d9",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/CONTRACT.md": {
+      "sha256": "c42bf8e27a57e11baa35b3a8be7b2fadb0f6ffb8ffda1079408d83264f3f4bcc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/formal-0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/formal-1.log": {
+      "sha256": "95c867105537fb2ba7ffb5dfaffac75da911421bf6ab138767783bf6d378e138",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/formal-2.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/formal-before-runtime.json": {
+      "sha256": "1879f6893b82b1c463848e0126a5cdb66941fcba83b54185d37da89044708564",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/formal_gate.py": {
+      "sha256": "cc2fb7a06ed4f020aea71e3b4558901006b565581b298ba924b19e740c47f1c1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/housekeeping_admission.qnt": {
+      "sha256": "4cc24029581ce7b4f6d6bbfd59b2882047e8abeb65b4f3c6cdfdf0d7a39084d9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/housekeeping_admission_test.qnt": {
+      "sha256": "8b8aeafd27d37b4500215f4d060f50b9c9ee628a059120e650c1698c74bef4ae",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/intended-source-map.json": {
+      "sha256": "31295b32cd4752a105c211db03633c9f5781087f200cdad789ab569196b32428",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/intended.patch": {
+      "sha256": "5a16a94e271a17ff438d28f301a2b728e888421d5710fc1f40dfd448a96799f7",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/native_runtime.py.proposed": {
+      "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/prepare_patch.py": {
+      "sha256": "d2a9946934de614e383a223bd1d090a1445626d3e233defcda12dc7aefd7575b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/retained-parser-epoch-v1/housekeeping_admission.qnt": {
+      "sha256": "b38639903225d3d935178530274eaf4098a7d1c8e00cda87d1c56993558a26e3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/retained-parser-epoch-v1/housekeeping_admission_test.qnt": {
+      "sha256": "8b8aeafd27d37b4500215f4d060f50b9c9ee628a059120e650c1698c74bef4ae",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/retained-parser-epoch-v1/typecheck-failure.log": {
+      "sha256": "5be366ca64cc825c4d680c49ee7038f48fcdca1813f0e57d1cc342119e1854c3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/runtime-mapping.json": {
+      "sha256": "b257f8ee6a53a7947663889caf9cb891cfbb7e539b42c68c6ca5eb126b9eba26",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-design-v1/test_actor_resources.py.proposed": {
+      "sha256": "ce016e51f0dde51b541483a15ae6bffb0fdacf0f19cd022065075568a902bca5",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/readonly-reservation-contention-root-v1/replay.py": {
+      "sha256": "01f067d72026d27c63c32ce1f7e3d7aca12b6dc78a8699bb2bb3f121a16f18f8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/readonly-reservation-contention-root-v1/report.json": {
+      "sha256": "40b713c814021727c684b924b88b7864c49d02c9b1edb4a0d9a13908803197d1",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v10-agent-baseline-failure-v1/repeat-submission-addendum.json": {
+      "sha256": "4983680fbcf0a56f4ae8d61b0c50f2ddb4b6138e8dc5d28206ad9a05d24f32ce",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v10-agent-baseline-failure-v1/replay.py": {
+      "sha256": "b540aadca2cdee80b936a4735b4ecac35477d1f3b14278088dafbb2161d4ee6a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v10-agent-baseline-failure-v1/report.json": {
+      "sha256": "d85cd6de89a4264b993011d1ee5ac7687d8a69de1ec8ca0047a57acc6e4c79a9",
+      "mode": 384
+    }
+  }
+}

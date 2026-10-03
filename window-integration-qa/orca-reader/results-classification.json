@@ -1,0 +1,70 @@
+{
+  "reader": "official Arch Orca 50.2, silent output adapter",
+  "raw_result": "evidence-v4-clean/report.json result pass",
+  "classification": "pass: clean exclusive-slot actual Orca reader fixture and native AX regressions",
+  "passed_actual_reader_checks": 15,
+  "passed_preservation_checks": 1,
+  "controls_reader_checks": "5/5 pass",
+  "taskview_reader_checks": "4/4 pass including exact disposable window native activation",
+  "taskbar_reader_checks": "6/6 pass including exact disposable preview activation and app-menu focus",
+  "foreign_grabs": "Root verified sudo\u2192bash\u2192external Claude PID8372 ancestry for askpass2403239/2403440; no privileged operations issued by reader fixture or root",
+  "genuine_preexisting_ax_issues_fixed": [
+    "real keyboard focus-container event overwrote selected accessible child in Orca",
+    "hidden snap/layout/menu items exposed to Orca object traversal",
+    "JS array Repeater churn invalidated accessible object identity"
+  ],
+  "restoration": "Original false/false AX flags restored, reader/disposable windows closed, existing user identities preserved, initial focus/cursor restored during clean run",
+  "shutdown": "Exact copied-controls V4 normal qs kill passed with leafActiveFocus=true immediately before shutdown; no hide/SIGKILL shortcut used",
+  "not_verified": [
+    "audible synthesizer",
+    "hardware braille",
+    "Orca physical command interception on Hyprland",
+    "human usability"
+  ],
+  "previous_run": {
+    "reader": "official Arch Orca 50.2, silent output adapter",
+    "raw_result": "fail (preserved unchanged in evidence-before-grab-resolution/report.json)",
+    "classification": "partial actual-reader verification; backend focus actions inconclusive under unrelated exclusive sudo-askpass layers",
+    "passed_actual_reader_checks": 12,
+    "passed_preservation_checks": 1,
+    "controls_reader_checks": "5/5 pass: announcement, retained selected-item focus, sibling navigation, Minimize discovery, real PerformAction minimizes own disposable window",
+    "taskview_reader_checks": "3 observed passes: selected-window announcement, desktop Tab focus, nested close discovery; final backend restore/focus inconclusive",
+    "taskbar_reader_checks": "4 observed passes: selected-preview locus, initial announcement, arrow focus navigation, close-child discovery; final backend restore/focus inconclusive; app-actions menu follow-up not reached",
+    "foreign_grabs": "Root verified sudo\u2192bash\u2192external Claude PID8372 ancestry for askpass2403239/2403440; no privileged operations issued by reader fixture or root",
+    "genuine_preexisting_ax_issues_fixed": [
+      "real keyboard focus-container event overwrote selected accessible child in Orca",
+      "hidden snap/layout/menu items exposed to Orca object traversal",
+      "JS array Repeater churn invalidated accessible object identity"
+    ],
+    "restoration": "Reader stopped; own disposable windows closed; user catalog identities preserved; original AX flags false/false restored; focus restore was attempted but cannot be guaranteed while foreign input grab active",
+    "shutdown": "V4 candidate built/tested offscreen only; live focused controls normal qs kill still required",
+    "not_verified": [
+      "audible synthesizer",
+      "hardware braille",
+      "Orca physical command interception on Hyprland",
+      "human usability",
+      "backend focus/restore after grabs cleared",
+      "taskbar app-menu follow-up",
+      "live focused-controls graceful shutdown with V4"
+    ]
+  },
+  "native_ax_regression": {
+    "controls": "13/13 pass",
+    "shell": "19/19 pass"
+  },
+  "live_candidates": {
+    "bridge": "WindowAccessibilityV4",
+    "taskbar": "widget_reader_v3",
+    "taskview": "overlay_v13"
+  },
+  "physical_command_audit": {
+    "stock_reader": "recognizes but leaks native keys; confirmed source mismatch",
+    "opt_in_legacy_keycode_fix": "17/17 checks pass,13 physical Wayland commands; no Orca command RPC",
+    "v62_activation": "7/7 focused native AX regression pass",
+    "evidence": "physical-commands/README.md",
+    "global_non_toolkit_interception": "not implemented: no compositor org.freedesktop.a11y.Manager",
+    "stock_xkb_restoration": "BadValue warning; success not claimed",
+    "native_wayland_candidate": "validated17/17,13 real Wayland commands; no XKB restoration warning; focus/cursor/input options/physical devices/keyboards settings/layers restored",
+    "supported_qa_launcher": "run-orca-native-wayland"
+  }
+}

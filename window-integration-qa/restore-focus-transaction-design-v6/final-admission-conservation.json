@@ -1,0 +1,65 @@
+{
+  "result": "pass",
+  "runtimeApplied": false,
+  "nativeAcceptance": false,
+  "threeProposedFileDelta": {
+    "native_desktop.py": {
+      "v5": {
+        "sha256": "e10e83de40ffb3bd3c824a7515066390ecd7c8916454e2fd366451f06521c461",
+        "mode": 384
+      },
+      "v6": {
+        "sha256": "e10e83de40ffb3bd3c824a7515066390ecd7c8916454e2fd366451f06521c461",
+        "mode": 384
+      },
+      "onlyFinalRemainingAdded": false,
+      "otherwiseByteExact": true
+    },
+    "owned_commands.py": {
+      "v5": {
+        "sha256": "63f83950fa61db3efed43186bd918496477021f33e339047582b2eb3099a1f74",
+        "mode": 384
+      },
+      "v6": {
+        "sha256": "6f348647be1f8cbcaae2d0582543b6359968c681a0dd711f9be9802fd8b4f1a3",
+        "mode": 384
+      },
+      "onlyFinalRemainingAdded": true,
+      "otherwiseByteExact": true
+    },
+    "scene_controller.py": {
+      "v5": {
+        "sha256": "aaf111982a67fa9d713b078e7241ccab3ef5ad087e49bd6b04448bd7b70079cc",
+        "mode": 384
+      },
+      "v6": {
+        "sha256": "aaf111982a67fa9d713b078e7241ccab3ef5ad087e49bd6b04448bd7b70079cc",
+        "mode": 384
+      },
+      "onlyFinalRemainingAdded": false,
+      "otherwiseByteExact": true
+    }
+  },
+  "finalObservationExpiry": {
+    "source": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/focused-observations.json",
+    "sourceMaterial": {
+      "sha256": "ab6825c28a179de890468ef9db21c5e7b17d585dc103745e0fc9c4add3e743b0",
+      "mode": 384
+    },
+    "completed": 6,
+    "requests": 3,
+    "normalComplete": false,
+    "deadlineNs": 196001426540854,
+    "observations": {
+      "startNs": 195999467103480,
+      "endNs": 196001442207844
+    },
+    "registeredJobPhase": "released",
+    "normalStopAfterAbort": false
+  },
+  "v5HandoffUnchanged": {
+    "sha256": "383d0d15998b747a4f16bfdcf7d1163b5909f157dc98cd949e2f7ae8a3496786",
+    "mode": 384
+  },
+  "formalEpoch1Retained": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/formal-epoch-1"
+}

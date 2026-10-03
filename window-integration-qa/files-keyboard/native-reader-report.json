@@ -1,0 +1,399 @@
+{
+  "scope": "Isolated copied Files on native Wayland; physical Qt keyboard plus actual Orca focus/navigation/press actions; silent speech log",
+  "checks": [
+    {
+      "name": "native minimum330x320",
+      "passed": true
+    },
+    {
+      "name": "real Orca native Wayland loop ready",
+      "passed": true
+    },
+    {
+      "name": "Orca recognizes actual named Home button",
+      "passed": true
+    },
+    {
+      "name": "physical Tab produces actual Orca button focus",
+      "passed": true,
+      "readerState": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Show hidden files",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": null
+      }
+    },
+    {
+      "name": "physical Return activates existing View",
+      "passed": true
+    },
+    {
+      "name": "physical arrow moves real file row reader focus",
+      "passed": true
+    },
+    {
+      "name": "physical next file arrow retains named reader focus",
+      "passed": true
+    },
+    {
+      "name": "physical F2 opens named text prompt",
+      "passed": true
+    },
+    {
+      "name": "native prompt Tab traps at text input",
+      "passed": true
+    },
+    {
+      "name": "native prompt Escape preserves fixture files",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToParent",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToFirstChild",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "real Orca command MoveToNextSibling",
+      "passed": true
+    },
+    {
+      "name": "actual Orca ObjectNavigator reaches Sort",
+      "passed": true,
+      "readerState": {
+        "device_type": "AtspiDeviceLegacy",
+        "focus": {
+          "name": "Sort",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+          "app": "quickshell"
+        },
+        "active_window": {
+          "name": "Files Responsive QA",
+          "role": "frame",
+          "identity": "QGuiApplication.ProxiedWindow",
+          "app": "quickshell"
+        },
+        "navigator": {
+          "name": "Sort",
+          "role": "button",
+          "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+          "app": "quickshell"
+        }
+      }
+    },
+    {
+      "name": "real Orca command PerformAction",
+      "passed": true
+    },
+    {
+      "name": "actual Orca press opens existing Sort menu",
+      "passed": true
+    },
+    {
+      "name": "menu arrow gives real named reader row focus",
+      "passed": true
+    },
+    {
+      "name": "compact sidebar reader focus follows collection",
+      "passed": true
+    },
+    {
+      "name": "Home filter has actual button reader role",
+      "passed": true
+    },
+    {
+      "name": "physical Home filter Tab announces next name",
+      "passed": true
+    },
+    {
+      "name": "real reader generated silent utterances",
+      "passed": true,
+      "utteranceCount": 73
+    }
+  ],
+  "failures": [],
+  "fixtureIdentity": [
+    "0x5a02af3e9d40",
+    "180003e2",
+    3113104
+  ],
+  "focusTrace": [
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Home",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Show list",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "subfolder",
+        "role": "list item",
+        "identity": "QGuiApplication.ProxiedWindow.FileArea.row",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "alpha-long-file-name-to-test-eliding.txt",
+        "role": "list item",
+        "identity": "QGuiApplication.ProxiedWindow.FileArea.row",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Rename",
+        "role": "text",
+        "identity": "QGuiApplication.ProxiedWindow.Prompt.card.Prompt.input",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Cancel",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Prompt.card.Prompt.cancelBtn",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Rename",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Prompt.card.Prompt.acceptBtn",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Rename",
+        "role": "text",
+        "identity": "QGuiApplication.ProxiedWindow.Prompt.card.Prompt.input",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": null
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Name",
+        "role": "menu item",
+        "identity": "QGuiApplication.ProxiedWindow.ContextMenu.card.ContextMenu.menuRow",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Recent activity",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Explorer.cr",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "All",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell"
+      }
+    },
+    {
+      "device_type": "AtspiDeviceLegacy",
+      "focus": {
+        "name": "Documents",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Dashboard.filterChip",
+        "app": "quickshell"
+      },
+      "active_window": {
+        "name": "Files Responsive QA",
+        "role": "frame",
+        "identity": "QGuiApplication.ProxiedWindow",
+        "app": "quickshell"
+      },
+      "navigator": {
+        "name": "Sort",
+        "role": "button",
+        "identity": "QGuiApplication.ProxiedWindow.Btn.root",
+        "app": "quickshell"
+      }
+    }
+  ],
+  "preservation": {
+    "originalClientsGeometries": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "clipboardAndPrimaryRawAndMimeHashes": true,
+    "catalogBytes": true,
+    "dashboardBytes": true,
+    "originalExplorerPublicState": true,
+    "originalExplorerPID": true,
+    "originalExplorerHidden": true,
+    "a11yFlags": true,
+    "a11ySocketInode": true,
+    "responsiveManifestBytes": true
+  },
+  "result": "pass"
+}

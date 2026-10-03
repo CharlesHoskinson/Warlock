@@ -1,0 +1,36 @@
+{
+  "result": "fail",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/chord.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT101]: Built-in name 'Map' is redefined in module 'chord'\n\n  at /home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/chord.qnt:2:38\n  2:  type Event=Plan(bool)|Connect(bool)|Map(bool)|Press(int)|Release(int)|Modifiers(Set[int])|Change|Error|Finish|Retry\n                                          ^^^^^^^^^\n\n\n Error [QNT101]: Built-in name 'keys' is redefined in module 'chord'\n\n  at /home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/chord.qnt:5:11\n  5:  pure val keys=Set(1,2,3)\n               ^^^^\n\nerror: parsing failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/chord.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT101]: Built-in name 'Map' is redefined in module 'chord'\n\n  at /home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/chord.qnt:2:38\n  2:  type Event=Plan(bool)|Connect(bool)|Map(bool)|Press(int)|Release(int)|Modifiers(Set[int])|Change|Error|Finish|Retry\n                                          ^^^^^^^^^\n\n\n Error [QNT101]: Built-in name 'keys' is redefined in module 'chord'\n\n  at /home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/chord.qnt:5:11\n  5:  pure val keys=Set(1,2,3)\n               ^^^^\n\nerror: parsing failed\n"
+    }
+  ],
+  "sourceSHA256": {
+    "chord.qnt": "d7b329682f290ddd23463d55dfc06e19b5da60953ce730cd1aedaf1aa0d58aff",
+    "CONTRACT.md": "e53442cb5f664b5a5f5592bb15f54ca57d298e6a3a13ca131eca113c00c1c659"
+  },
+  "implementationUnchanged": true,
+  "nativeExecuted": false
+}

@@ -1,0 +1,234 @@
+{
+  "updatedUTC": "2026-10-01T19:13:13.927565+00:00",
+  "reportSHA256": "fd4c8678b208f5ff56ce0e6e35f403a6e40e6a3329947b9792336fae9816d2b4",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-6ca4730753e245c688961a9944981f3a.scope",
+    "coreLimit": 1
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "independentChecks": {
+    "originalFrozenSourcesExact": true,
+    "copiedFrozenSourcesExact": true,
+    "externalFrozenSourcesExact": true,
+    "externalFrozenLinksExact": true,
+    "all19MainPreservationChecks": true,
+    "normalQuiescentNativeUnload": true,
+    "exactAllRecordedIdentitiesGone": true,
+    "ownedRuntimeGone": true,
+    "normalHostCleanup": true,
+    "archivedParentTransportHealthy": true
+  },
+  "sourceCounts": {
+    "local": 587,
+    "external": 3165,
+    "links": 122
+  },
+  "normalFixtureLifecycleAccepted": true,
+  "fullPrivateCampaignAccepted": true,
+  "nativePointerAccepted": true,
+  "nativeKeyboardAccepted": true,
+  "checksReached": 185,
+  "checksPassed": 185,
+  "phases": [
+    {
+      "name": "pointer",
+      "started": 92214.568926263,
+      "startCheck": 6,
+      "completed": 92226.855093959,
+      "checks": 96,
+      "pass_": true
+    },
+    {
+      "name": "policy",
+      "started": 92226.855107695,
+      "startCheck": 102,
+      "completed": 92245.785825853,
+      "checks": 45,
+      "pass_": true
+    },
+    {
+      "name": "lifecycle",
+      "started": 92245.785837592,
+      "startCheck": 147,
+      "completed": 92252.906825835,
+      "checks": 36,
+      "pass_": true
+    }
+  ],
+  "helperGates": [
+    {
+      "name": "pointer normal client shutdown has no activated or leaked private helpers",
+      "pass_": true,
+      "unexpected": [],
+      "portalActivations": [],
+      "privateBusLogSHA256": "ef41ceee77993fc45ea59230e34e76d1a8f7aca10a120cc595c48ac9a2e38e57"
+    },
+    {
+      "name": "policy normal client shutdown has no activated or leaked private helpers",
+      "pass_": true,
+      "unexpected": [],
+      "portalActivations": [],
+      "privateBusLogSHA256": "ef41ceee77993fc45ea59230e34e76d1a8f7aca10a120cc595c48ac9a2e38e57"
+    },
+    {
+      "name": "lifecycle normal client shutdown has no activated or leaked private helpers",
+      "pass_": true,
+      "unexpected": [],
+      "portalActivations": [],
+      "privateBusLogSHA256": "ef41ceee77993fc45ea59230e34e76d1a8f7aca10a120cc595c48ac9a2e38e57"
+    },
+    {
+      "name": "terminal normal private client cleanup has no unexpected helper processes",
+      "pass_": true,
+      "unexpected": [],
+      "portalActivations": [],
+      "privateBusLogSHA256": "ef41ceee77993fc45ea59230e34e76d1a8f7aca10a120cc595c48ac9a2e38e57"
+    }
+  ],
+  "processes": [
+    {
+      "pid": 831938,
+      "start": "10433420",
+      "gone": true
+    },
+    {
+      "pid": 831980,
+      "start": "10433446",
+      "gone": true
+    },
+    {
+      "pid": 831992,
+      "start": "10433447",
+      "gone": true
+    },
+    {
+      "pid": 832022,
+      "start": "10433455",
+      "gone": true
+    },
+    {
+      "pid": 832023,
+      "start": "10433455",
+      "gone": true
+    },
+    {
+      "pid": 832024,
+      "start": "10433455",
+      "gone": true
+    },
+    {
+      "pid": 832055,
+      "start": "10433468",
+      "gone": true
+    },
+    {
+      "pid": 832065,
+      "start": "10433507",
+      "gone": true
+    },
+    {
+      "pid": 832071,
+      "start": "10433515",
+      "gone": true
+    },
+    {
+      "pid": 832076,
+      "start": "10433539",
+      "gone": true
+    },
+    {
+      "pid": 832126,
+      "start": "10433701",
+      "gone": true
+    },
+    {
+      "pid": 832206,
+      "start": "10433807",
+      "gone": true
+    },
+    {
+      "pid": 832241,
+      "start": "10433897",
+      "gone": true
+    },
+    {
+      "pid": 833345,
+      "start": "10434689",
+      "gone": true
+    },
+    {
+      "pid": 833355,
+      "start": "10434803",
+      "gone": true
+    },
+    {
+      "pid": 833374,
+      "start": "10434873",
+      "gone": true
+    },
+    {
+      "pid": 833375,
+      "start": "10434875",
+      "gone": true
+    },
+    {
+      "pid": 834254,
+      "start": "10435713",
+      "gone": true
+    },
+    {
+      "pid": 835455,
+      "start": "10436577",
+      "gone": true
+    },
+    {
+      "pid": 835481,
+      "start": "10436658",
+      "gone": true
+    },
+    {
+      "pid": 835493,
+      "start": "10436679",
+      "gone": true
+    },
+    {
+      "pid": 835507,
+      "start": "10436747",
+      "gone": true
+    },
+    {
+      "pid": 831548,
+      "start": "10433108",
+      "gone": true
+    },
+    {
+      "pid": 831564,
+      "start": "10433111",
+      "gone": true
+    },
+    {
+      "pid": 831730,
+      "start": "10433177",
+      "gone": true
+    },
+    {
+      "pid": 831941,
+      "start": "10433422",
+      "gone": true
+    },
+    {
+      "pid": 831990,
+      "start": "10433447",
+      "gone": true
+    },
+    {
+      "pid": 831991,
+      "start": "10433447",
+      "gone": true
+    }
+  ],
+  "fullWindowsParityAccepted": false,
+  "physicalHardwareAccepted": false,
+  "productionDeployment": false,
+  "failures": []
+}

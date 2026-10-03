@@ -1,0 +1,12 @@
+
+  actor_resources_test
+    ok capacityRefusesNewActorTest passed 1 test(s)
+    ok existingOwnerCanReverseAtCapacityTest passed 1 test(s)
+    ok pendingActorCannotDetachTest passed 1 test(s)
+    ok displayedActorCannotDetachTest passed 1 test(s)
+    ok awaitingCancelActorCannotDetachTest passed 1 test(s)
+    ok normalCloseFreesOnlyAfterRetirementTest passed 1 test(s)
+    ok failedCloseRemainsQuarantinedTest passed 1 test(s)
+    ok actorNumbersNeverReuseTest passed 1 test(s)
+
+  8 passing (141ms)

@@ -1,0 +1,80 @@
+{
+  "version": 2,
+  "designOnly": true,
+  "runtimeCopied": false,
+  "nativeLaunch": false,
+  "before": {
+    "fd": 3,
+    "target": "/memfd:readonly-v22-design-only-1 (deleted)",
+    "device": 1,
+    "inode": 589576,
+    "mode": 384,
+    "uid": 1000,
+    "gid": 1000,
+    "links": 0,
+    "size": 68,
+    "fullFlags": 32770,
+    "accessMode": 2,
+    "fdFlags": 1,
+    "seals": 47,
+    "sha256": "ff0a3703e6e5fc98b42a2ac8cb98f385b9346cd981420929549f422abb7a4aa2"
+  },
+  "after": {
+    "fd": 3,
+    "target": "/memfd:readonly-v22-design-only-1 (deleted)",
+    "device": 1,
+    "inode": 589576,
+    "mode": 384,
+    "uid": 1000,
+    "gid": 1000,
+    "links": 0,
+    "size": 68,
+    "fullFlags": 32770,
+    "accessMode": 2,
+    "fdFlags": 1,
+    "seals": 47,
+    "sha256": "ff0a3703e6e5fc98b42a2ac8cb98f385b9346cd981420929549f422abb7a4aa2"
+  },
+  "replacement": {
+    "fd": 4,
+    "target": "/memfd:readonly-v22-design-only-2 (deleted)",
+    "device": 1,
+    "inode": 589577,
+    "mode": 384,
+    "uid": 1000,
+    "gid": 1000,
+    "links": 0,
+    "size": 68,
+    "fullFlags": 32770,
+    "accessMode": 2,
+    "fdFlags": 1,
+    "seals": 47,
+    "sha256": "ff0a3703e6e5fc98b42a2ac8cb98f385b9346cd981420929549f422abb7a4aa2"
+  },
+  "individuallyValidBoth": true,
+  "sameBytes": true,
+  "exactReplacementAccepted": false,
+  "sameBeforeAfter": true,
+  "attempts": [
+    {
+      "operation": "write",
+      "refused": true,
+      "errno": 1
+    },
+    {
+      "operation": "truncate",
+      "refused": true,
+      "errno": 1
+    },
+    {
+      "operation": "chmodExecute",
+      "refused": true,
+      "errno": 1
+    }
+  ],
+  "doesNotClaimPROTEXECPrevention": true,
+  "headerSHA256": {
+    "/usr/include/linux/memfd.h": "d06dd37df2ad2df29391c38239c1af6944efef8dc4040ed41833169cd4c4a3c9",
+    "/usr/include/linux/fcntl.h": "97a6f7544099b95d90b217acd59ec32301ef9f950d12532deed07eea50ab2356"
+  }
+}

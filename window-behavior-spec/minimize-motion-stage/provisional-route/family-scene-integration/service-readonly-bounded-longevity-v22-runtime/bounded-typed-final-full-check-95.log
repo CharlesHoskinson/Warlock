@@ -1,0 +1,12 @@
+
+  readonly_current_close_test
+    ok closeDuringUnwrittenAppendRefusesTest passed 1 test(s)
+    ok closeDuringDurableFileRefusesTest passed 1 test(s)
+    ok closeDuringPublishedUnadoptedTipRefusesTest passed 1 test(s)
+    ok completeAppendThenFullAuditClosesTest passed 1 test(s)
+    ok actualBorrowBlocksNormalCloseTest passed 1 test(s)
+    ok oldCorruptionOrIncompleteAuditRefusesNormalCloseTest passed 1 test(s)
+    ok incompleteAuditNeverClosesTest passed 1 test(s)
+    ok crashNeverCountsAsNormalCompletionTest passed 1 test(s)
+
+  8 passing (492ms)

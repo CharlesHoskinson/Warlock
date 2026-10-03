@@ -1,0 +1,255 @@
+{
+  "nativeExecuted": false,
+  "commands": [
+    {
+      "source": "plugin/test_pin_action.cpp",
+      "sourceSHA256": "ee00c4a4626b2fcbcc3f37fa36236c6df84a5bfed9d9ddbf2c61eb2ea49e7250",
+      "phase": "compile",
+      "argv": [
+        "g++",
+        "-std=c++26",
+        "-O1",
+        "-UNDEBUG",
+        "-I/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/plugin",
+        "plugin/test_pin_action.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_pin_action"
+      ],
+      "exitCode": 0,
+      "elapsed": 2.3741733230126556,
+      "log": "cpu-tests/final-test_pin_action-compile.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "plugin/test_pin_action.cpp",
+      "sourceSHA256": "ee00c4a4626b2fcbcc3f37fa36236c6df84a5bfed9d9ddbf2c61eb2ea49e7250",
+      "phase": "run",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_pin_action"
+      ],
+      "exitCode": 0,
+      "elapsed": 0.0032235539983958006,
+      "log": "cpu-tests/final-test_pin_action-run.log",
+      "logSHA256": "2b7db2139cb1f78d0c085628f8e8f980a38b64d223499bc2a04225e0d2e3a6e4"
+    },
+    {
+      "source": "test_pin_boundary.cpp",
+      "sourceSHA256": "a037095f79c5687470a90fea1826c9c97b727d1ab04270196949cb9c26f498f0",
+      "phase": "compile",
+      "argv": [
+        "g++",
+        "-std=c++26",
+        "-O1",
+        "-UNDEBUG",
+        "-I/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/plugin",
+        "test_pin_boundary.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_pin_boundary"
+      ],
+      "exitCode": 0,
+      "elapsed": 2.184387651999714,
+      "log": "cpu-tests/final-test_pin_boundary-compile.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "test_pin_boundary.cpp",
+      "sourceSHA256": "a037095f79c5687470a90fea1826c9c97b727d1ab04270196949cb9c26f498f0",
+      "phase": "run",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_pin_boundary"
+      ],
+      "exitCode": 0,
+      "elapsed": 0.004207886988297105,
+      "log": "cpu-tests/final-test_pin_boundary-run.log",
+      "logSHA256": "64cea4abe9149bc22d36ec0929335d631692d94ce8781b06ebedd71af3a6ce8b"
+    },
+    {
+      "source": "test_pin_stacking.cpp",
+      "sourceSHA256": "8ce2c6bd4b3e2a01b01f236f5809a8829d77b1483e8d76c9f7eb47692681b6ee",
+      "phase": "compile",
+      "argv": [
+        "g++",
+        "-std=c++26",
+        "-O1",
+        "-UNDEBUG",
+        "-I/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/plugin",
+        "test_pin_stacking.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_pin_stacking"
+      ],
+      "exitCode": 0,
+      "elapsed": 3.403528680995805,
+      "log": "cpu-tests/final-test_pin_stacking-compile.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "test_pin_stacking.cpp",
+      "sourceSHA256": "8ce2c6bd4b3e2a01b01f236f5809a8829d77b1483e8d76c9f7eb47692681b6ee",
+      "phase": "run",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_pin_stacking"
+      ],
+      "exitCode": 0,
+      "elapsed": 0.004434066009707749,
+      "log": "cpu-tests/final-test_pin_stacking-run.log",
+      "logSHA256": "6c18172d3836c73208cb9f2dd7243ad455bcdf5063b883f054962241abe10fbf"
+    },
+    {
+      "source": "test_pin_lifetime.cpp",
+      "sourceSHA256": "18db965fdf76af7ff038176a88e920b972df647d18f73af926b79c49fc69865d",
+      "phase": "compile",
+      "argv": [
+        "g++",
+        "-std=c++26",
+        "-O1",
+        "-UNDEBUG",
+        "-I/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/plugin",
+        "test_pin_lifetime.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_pin_lifetime",
+        "-ljson-c"
+      ],
+      "exitCode": 0,
+      "elapsed": 2.7008705270127393,
+      "log": "cpu-tests/final-test_pin_lifetime-compile.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "test_pin_lifetime.cpp",
+      "sourceSHA256": "18db965fdf76af7ff038176a88e920b972df647d18f73af926b79c49fc69865d",
+      "phase": "run",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_pin_lifetime"
+      ],
+      "exitCode": 0,
+      "elapsed": 0.004064084991114214,
+      "log": "cpu-tests/final-test_pin_lifetime-run.log",
+      "logSHA256": "9f3100fe0638afcfbbdb3953c61d12a01505a160c4e6ce1cd9fdc441c1d0fc03"
+    },
+    {
+      "source": "plugin/test_modal_region.cpp",
+      "sourceSHA256": "b601bea50a369db790ac673f6e3c28f4bfff3e1f42d19cd88c016ccb9afd4117",
+      "phase": "compile",
+      "argv": [
+        "g++",
+        "-std=c++26",
+        "-O1",
+        "-UNDEBUG",
+        "-I/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/plugin",
+        "plugin/test_modal_region.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_modal_region"
+      ],
+      "exitCode": 0,
+      "elapsed": 1.6167126430082135,
+      "log": "cpu-tests/final-test_modal_region-compile.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "plugin/test_modal_region.cpp",
+      "sourceSHA256": "b601bea50a369db790ac673f6e3c28f4bfff3e1f42d19cd88c016ccb9afd4117",
+      "phase": "run",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_modal_region"
+      ],
+      "exitCode": 0,
+      "elapsed": 0.0036155389971099794,
+      "log": "cpu-tests/final-test_modal_region-run.log",
+      "logSHA256": "3ef1c77085b2aa4f2575fef40335083e02764be7e6a8722f1758f7d4183b5171"
+    },
+    {
+      "source": "plugin/test_caption_cache.cpp",
+      "sourceSHA256": "d5ee50bd1b9b23ae2c28c065c7a58e97dd4eef7c087467a581395c0afa7ee74b",
+      "phase": "compile",
+      "argv": [
+        "g++",
+        "-std=c++26",
+        "-O1",
+        "-UNDEBUG",
+        "-I/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/plugin",
+        "plugin/test_caption_cache.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_caption_cache"
+      ],
+      "exitCode": 0,
+      "elapsed": 2.659969415020896,
+      "log": "cpu-tests/final-test_caption_cache-compile.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "plugin/test_caption_cache.cpp",
+      "sourceSHA256": "d5ee50bd1b9b23ae2c28c065c7a58e97dd4eef7c087467a581395c0afa7ee74b",
+      "phase": "run",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_caption_cache"
+      ],
+      "exitCode": 0,
+      "elapsed": 0.0033031670027412474,
+      "log": "cpu-tests/final-test_caption_cache-run.log",
+      "logSHA256": "cbd3f65dec23835fe08c6f2341a4c824affea101a90eca4ec2734f26dfcc6e0e"
+    },
+    {
+      "source": "plugin/test_atlas_coordinates.cpp",
+      "sourceSHA256": "cf7aa77aad715ad3815564e77300816d6a81b22df2cfc1b15ac38ccebff76fc3",
+      "phase": "compile",
+      "argv": [
+        "g++",
+        "-std=c++26",
+        "-O1",
+        "-UNDEBUG",
+        "-I/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/plugin",
+        "plugin/test_atlas_coordinates.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_atlas_coordinates",
+        "-lhyprutils"
+      ],
+      "exitCode": 0,
+      "elapsed": 1.4669128689856734,
+      "log": "cpu-tests/final-test_atlas_coordinates-compile.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "plugin/test_atlas_coordinates.cpp",
+      "sourceSHA256": "cf7aa77aad715ad3815564e77300816d6a81b22df2cfc1b15ac38ccebff76fc3",
+      "phase": "run",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_atlas_coordinates"
+      ],
+      "exitCode": 0,
+      "elapsed": 0.003463032015133649,
+      "log": "cpu-tests/final-test_atlas_coordinates-run.log",
+      "logSHA256": "bedda9547cb6053aecf2ec8e2a9c91c9e8740aa64fb72298b72c968a77e83b67"
+    },
+    {
+      "source": "cpu-tests/test_max_action.cpp",
+      "sourceSHA256": "d448774233feceafe154e9cd86b8eee4cfb2e90c49df4beae9c58721482bf2c7",
+      "phase": "compile",
+      "argv": [
+        "g++",
+        "-std=c++26",
+        "-O1",
+        "-UNDEBUG",
+        "-I/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/plugin",
+        "cpu-tests/test_max_action.cpp",
+        "-o",
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_max_action"
+      ],
+      "exitCode": 0,
+      "elapsed": 2.693657447001897,
+      "log": "cpu-tests/final-test_max_action-compile.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "cpu-tests/test_max_action.cpp",
+      "sourceSHA256": "d448774233feceafe154e9cd86b8eee4cfb2e90c49df4beae9c58721482bf2c7",
+      "phase": "run",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/cpu-tests/final-test_max_action"
+      ],
+      "exitCode": 0,
+      "elapsed": 0.003166557988151908,
+      "log": "cpu-tests/final-test_max_action-run.log",
+      "logSHA256": "07a10b2cd9a654cd43589846d455e7645290649fb676e8dc2ead1fc225c9271d"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_forms" xml:lang="eo">
+  <info>
+    <link type="guide" xref="index#reading"/>
+     <link type="next" xref="howto_live_regions"/>
+    <title type="sort">5. Plenumi formulojn</title>
+    <desc>Aliri regiletojn enkorporigitajn en dokumentoj</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Plenumi formulojn</title>
+  <p>Kiam interagante kun retpaĝoj kaj aliaj dokumentoj per <app>Orko</app>, vi interagas kun la dokumento mem; ne kun bufurigita kopio de tiu dokumento. La foliuma kaj fokusa reĝimoj de <app>Orko</app> permesas al vi ŝanĝi inter legado kaj plenumado de formuloj.</p>
+  <section id="navigating_amongst_form_fields">
+    <title>Navigi inter Formulkampoj</title>
+    <p>Por navigi inter formulkampoj, vi havas kelkajn eblojn:</p>
+    <list>
+      <item>
+        <p>Uzu <key>Tab</key> kaj <keyseq><key>Shift</key><key>Tab</key></keyseq> por navigi inter fokuseblaj objektoj, sendepende de tipo.</p>
+      </item>
+      <item>
+        <p>Uzu la <link xref="commands_structural_navigation#forms"> strukturajn navigadajn komandojn por formuloj</link> de <app>Orko</app>.</p>
+      </item>
+      <item>
+        <p>Depende de la formularo kaj la aplikaĵo, vi eble ankaŭ povos uzi la sagajn klavojn por navigi al difinita formulkampo.</p>
+      </item>
+   </list>
+   <note style="tip">
+     <p>Por uzi la karenan navigadon aŭ strukturajn navigadajn komandojn de <app>Orko</app> por navigi al formulkampo, vi devas esti en foliuma reĝimo. Se vi estas en fokusa reĝimo, vi povas ŝanĝi al foliuma reĝimo per premi <keyseq><key>Orko Modifier</key><key>A</key></keyseq>.</p>
+   </note>
+  </section>
+  <section id="exiting_form_fields">
+    <title>Eliri el Formulkampoj</title>
+    <p>Por eliri el formulkampo, vi havas kelkajn eblojn:</p>
+    <list>
+      <item>
+        <p>Uzu <key>Tab</key>/<keyseq><key>Shift</key><key>Tab</key></keyseq> se vi deziras forlasi la nuntempe fokusatan formulkampon kaj movi al la sekva/antaŭa fokusebla objekto, sendepende de tipo.</p>
+      </item>
+      <item>
+        <p>Uzu la <link xref="commands_structural_navigation#forms"> strukturajn navigadajn komandojn por formuloj</link> de <app>Orko</app> por movi al la sekva aŭ antaŭa formulkampo.</p>
+      </item>
+      <item>
+        <p>Depende de la formularo kaj la aplikaĵo, vi eble ankaŭ povos uzi la sagajn klavojn por elnavigi el difinita formulkampo.</p>
+      </item>
+    </list>
+   <note style="tip">
+     <p>Por uzi la karenan navigadon aŭ strukturajn navigadajn komandojn de <app>Orko</app> por eliri el formulkampo, vi devas esti en foliuma reĝimo. Se vi estas en fokusa reĝimo, vi povas ŝanĝi al foliuma reĝimo per premi <keyseq><key>Orko Modifier</key><key>A</key></keyseq>.</p>
+   </note>
+  </section>
+</page>

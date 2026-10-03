@@ -1,0 +1,7 @@
+{
+  "result": "auditor-fail",
+  "sourceSHA256": "1d93b7d92683f46df1d040d101ff9a9762e2e822a8b2c5c179df486e4e2485b6",
+  "scope": "qa-harness-79ae99ff3cba4e9091af11c9c1a5baa0",
+  "exitCode": 1,
+  "reason": "Cross-thread planner spans have per-thread parent stacks; they cannot be descendants of prepare in another thread. Correct replay uses bounded plan_destinations envelope plus canonical actor2 ledger/thread proof. Product/frozen trace unchanged."
+}

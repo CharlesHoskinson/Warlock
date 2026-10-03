@@ -1,0 +1,11 @@
+prefix=/usr
+includedir=${prefix}/include
+libexecdir=${prefix}/lib/weston
+
+pkglibexecdir=${libexecdir}/weston
+
+Name: Weston Plugin API
+Description: Header files for Weston plugin development
+Version: 15.0.1
+Requires.private: libweston-15
+Cflags: -I${includedir}/weston

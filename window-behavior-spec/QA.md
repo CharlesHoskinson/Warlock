@@ -1,0 +1,2046 @@
+# Window management QA — 2026-09-30
+
+This is a chronological evidence ledger. The initial complete suite passed;
+the table below describes that initial run. Later sections record additions,
+fixes, failures and superseding native checks. The latest completed central suite passes 50 typechecks, 179 named scenarios and
+50,000 samples across 25 models against the installed helper 6d9, plus backend replay,
+Lua fuzz and 112 frozen motion Python checks/17 actual QML scenarios. [Machine
+summary](qa-summary.json) records exact source hashes. The previous 44-file run
+against helper 6add remains preserved as qa-summary-responsive-v65.json; the 48-file
+helper 836 run is preserved as qa-summary-family-reservation-v65.json. Strict native Qt, GTK4, pinned Foot
+and maximized Foot reversal trials passed on widget65. The reproduced modal-family
+race is now fixed and its strict pinned-family replay passes; failed traces are
+retained below. Tool: Quint 0.33.0, Rust simulator, seed
+`20260930`. Current full-run output: [qa-run.log](qa-run.log).
+
+| Executed check | Result | Coverage |
+| --- | --- | --- |
+| Typecheck twenty-eight Quint files | PASS | Fourteen models and their scenario modules |
+| `quint test window_test.qnt` | 10 PASS | Drag release timing, geometry restore, focus cleanup, minimize mode, window pin, thirds/asymmetric splits, layout-family partitions and logical-width threshold |
+| `quint test desktop_test.qnt` | 10 PASS | Persistent app pins, address ownership, app grouping, group recall/close/move, mixed, four-quarter, three-third, and asymmetric groups; half/third overlap rejection |
+| `quint test navigation_test.qnt` | 16 PASS | Current/all desktop scope and foreign-window commit; per-desktop minimize batches, Shake, Peek, independent Show Desktop on two desktops/modal child, Alt+Tab release/cancel, desktop closure/modal family; owner/child minimize and restore, unrelated focus, new modal under minimized owner, family moves, batch restoration of a newly opened modal |
+| `quint test launcher_test.qnt` | 5 PASS | Partial indicator fields, publisher disconnect/fallback, app isolation, visibility/value preservation and quicklist replacement |
+| `quint test taskbar_menu_test.qnt` | 4 PASS | Keyboard/mouse wheel, rapid reopen reset, closed-input safety |
+| `taskbar_menu.qnt` simulator | 2,000 samples PASS | Up to 100 steps per sample; viewport bounds and keyboard-focus lifecycle |
+| Installed desktop scope helper | 7 PASS | Current/all desktop MRU, minimized/pinned ownership, legacy metadata, stale identity exclusion, minimized home displays, named-output fallback and monitor-ID reuse |
+| Installed family state helper | 6 PASS | Parent stable identity, same-process independence, nested modal focus, nonmodal transient focus, snapshot reuse guard and blocked owner exclusion from Alt+Tab |
+| `quint test monitor_owner_test.qnt` | 4 PASS | Minimized display ownership, deleted home workspace, moved desktop, output removal/name reuse and stale window |
+| `monitor_owner.qnt` simulator | 2,000 samples PASS | Up to 100 lifecycle steps per sample; display ownership and identity invariants |
+| Installed monitor ownership projection | 20 traces / 2,020 states PASS | Actual helper and on-disk metadata reader; generated snapshots, not compositor hotplug replay |
+| `quint test pointer_focus_test.qnt` | 2 PASS | Inactive wheel preserves typing, click commits focus, empty hover retains focus |
+| `quint test native_drag_test.qnt` | 6 PASS | Captured owner after focus change, source snap cancellation, close/reused address, reload invalidation/source-snap restoration and resize exclusion |
+| `quint test drag_hover_test.qnt` | 6 PASS | Single/group dwell, early leave, reused identity, dropped payload rejection and zero-window launcher |
+| `quint test drag_relay_test.qnt` | 3 PASS | Old move cannot revive ended drag, old end cannot cancel newer hover, watchdog clears lost release |
+| `quint test modal_pointer_test.qnt` | 8 PASS | Disabled owner redirects without click delivery, unrelated app input, overlay/grab ownership, dialog closing while held, programmatic focus, hover preserving keyboard focus, first click on a reopened dialog beneath a stationary pointer and overlay ownership |
+| `quint test modal_stack_test.qnt` | 6 PASS | Pinned owner/dialog ordering, nested dialog input, raising ancestors, opening dialogs after pinning, unrelated focus and closing nested dialogs |
+| `quint test caption_drag_test.qnt` | 9 PASS | First displacement, captured owner after focus/cross-window motion, empty hit regions, fractional unsnap, no-motion click, close/reuse, pending/active reload and Escape before motion |
+| `quint test accessibility_test.qnt` | 8 PASS | Hidden/disabled/rebuilt node rejection, captured owner after focus or selection change, reused address, wrong PID and restore/close lifecycle |
+| `accessibility.qnt` simulator | 2,000 samples PASS | Up to 100 actions per sample; abstract surface/node lifetime, window identity and focus invariants |
+| `caption_drag.qnt` simulator | 2,000 samples PASS | Up to 100 events per sample; press identity, geometry, held-button and cancellation invariants |
+| `modal_stack.qnt` simulator | 2,000 samples PASS | Up to 100 transitions per sample; family stacking and disabled-owner input invariants |
+| `modal_pointer.qnt` simulator | 2,000 samples PASS | Up to 100 transitions per sample; consumed press/release and focus invariants |
+| `drag_hover.qnt` and `drag_relay.qnt` simulators | 4,000 samples PASS | Up to 100 steps per sample; abstract hover and monotonic transport |
+| Installed QML relay function | 10 assertions PASS | Actual source function with offset/bottom bar, foreign display, old message, preview capture/dwell, exit and idle-menu fixtures |
+| `native_drag.qnt` simulator | 2,000 samples PASS | Up to 100 ownership/lifecycle steps per sample; geometry abstracted |
+| `pointer_focus.qnt` simulator | 2,000 samples PASS | Up to 100 pointer/keyboard routing steps per sample |
+| `window.qnt` simulator | 2,000 samples PASS | Up to 100 steps per sample |
+| `desktop.qnt` simulator | 2,000 samples PASS | Up to 150 steps per sample |
+| `navigation.qnt` simulator | 2,000 samples PASS | Up to 100 steps per sample |
+| `launcher.qnt` simulator | 2,000 samples PASS | Up to 100 steps per sample; nine event types across two apps and two publishers |
+| Launcher receiver implementation replay | 20 traces / 2,020 states PASS | Actual installed incremental update/selection/disconnect functions; progress discretized into 0, 1/2, 1 |
+| Quint trace replay, actual Python backends | 40 traces / 4,611 states PASS | Taskbar and Snap Group state functions behind compositor mocks |
+| Installed `snap.lua` harness | 13,000 random geometry cases + regressions PASS | Offsets, scale, reserved areas, eleven rectangular zones, third/asymmetric partition gutters, held drag, owning address, tags/rounding, reload normal-size/position hydration, vertical maximize/restore, Shake and Snap Bar hooks, drag-start restore and canceled asynchronous release; 2,000 inactive-monitor origin/size/scale reflows |
+| Installed `pin.lua` harness | 4,000 random operations + regressions PASS | Concurrent fades, rapid toggles, reload cleanup, always-on-top raises, reduced motion |
+| Installed menu host | 5 PASS | 1279/1280 logical-pixel boundaries at several scales; owning address; Snap Bar drop/fallback |
+| Installed adjacent resize backend | 7 PASS | 1,000 random separator changes, center-third double-edge adjustment, titlebar gap, minimum rejection, diagonal safety, custom ratio resize/recall CLI, reload hydration and stableId reuse |
+| Window/desktop integration suite | 19 PASS | Actual scripts behind stateful Hyprland mock, including workspace batch isolation, stableId reuse and new-desktop drop |
+| Desktop backend fuzz | 165 mixed operations PASS | Seeds 7, 23, 101; new/close/switch/move/minimize/restore/rename/reorder |
+| Taskbar/preview integration suite | 15 PASS | Pins, grouping/scratchpad exclusion, order, desktop actions, minimized export, preview identity, urgency lifecycle, indicator validation/cleanup, quicklist visibility/submenu/disabled actions and path replacement |
+
+## Reproduce
+
+Run from this directory:
+
+```bash
+./qa.sh
+```
+
+The script executes these simulation commands after all typechecks and scenario
+tests:
+
+```bash
+quint run window.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run desktop.qnt --invariant allProps --max-steps 150 --max-samples 2000 --seed 20260930 --verbosity 1 --out-itf 'qa-traces/desktop-{seq}.itf.json' --n-traces 30
+quint run navigation.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1 --out-itf 'qa-traces/navigation-{seq}.itf.json' --n-traces 10
+quint run launcher.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1 --out-itf 'qa-traces/launcher-{seq}.itf.json' --n-traces 20
+python3 mbt_launcher.py
+python3 mbt_desktop.py
+python3 mbt_monitor_owner.py
+lua fuzz_snap.lua ~/.config/hypr/snap.lua
+lua test_pin.lua ~/.config/hypr/pin.lua
+python3 test_layouts.py
+python3 test_desktop_scope.py
+python3 test_group_resize.py
+python3 /home/hoskinson/window-integration-qa/test_windowctl.py
+python3 /home/hoskinson/window-integration-qa/fuzz_desktops.py
+python3 ~/.local/share/hypr-taskbar/test_backend.py
+```
+
+The replay imports installed `~/.local/bin/hypr-taskbar` and
+`~/.local/bin/hypr-snap-groups`. It redirects configuration and runtime state to
+a temporary directory, supplies modeled compositor clients, and mocks transport.
+It checks exact app/pin/window sets after every trace state and executes actual
+reorder command code. This run replayed 270 app-pin toggles, 317 reorder commands,
+2,077 snap events, 224 closes, 465 workspace moves, and the named group scenarios.
+Scratchpad exclusion is also checked in the taskbar integration suite.
+
+Snap Group checks cover disjoint occupied slots, unique membership, retained
+identity/workspace, closed/reused address and monitor cleanup, minimized group
+preservation, four-quarter/third/asymmetric membership, stable IDs during repeated recall records,
+and actual recall CLI restore/eval addresses. The implementation forms groups
+automatically; the model has explicit group creation. The replay compares group
+safety and target membership rather than asserting identical group IDs, greedy
+assembly order, or exact equivalence of both machines.
+
+## Failures found and resolved
+
+- The Lua pre-snap table lost normal restore size after configuration reload.
+  The compositor workstream now persists/hydrates normal size with identity
+  checks. Reload, corner state, and reused-stableId regressions pass.
+- Adjacent resizing of a four-quarter group's corner originally overlapped the
+  untouched diagonal window. A regression found this; separator propagation
+  now moves every matching boundary, and the disjoint-rectangle test passes.
+- The integration workstream found Show Desktop batch state leaking across
+  desktops, stale address reuse in minimize batches, and compositor Peek opacity
+  not changing from the tag rule alone. The implementation and named regressions
+  now cover per-desktop state, stable identity, and explicit opacity restoration.
+
+- A new installed-source regression found that vertical maximize on a snapped
+  window changed its width from 785 to 420 pixels because `unsnap` restored the
+  old width first. The compositor workstream fixed horizontal geometry
+  preservation; the regression passes for normal and snapped windows.
+- The pin opacity fade initially ignored reduced motion. The compositor
+  workstream connected the custom effect to the motion toggle. A regression
+  verifies that changing the setting during a fade clears the opacity override
+  and that the next pin action creates no fade timer.
+- Navigation random QA found a specification bug: Show Desktop restored a
+  parent's saved focus after its modal child opened. The model now resolves the
+  saved owner to its modal child, with a passing named regression.
+- The missing top-right native corner trial exposed a restore-position bug:
+  snapping saved the window's final dragged location instead of its normal
+  rectangle before the drag. Restore could then put the window partly off
+  screen. Native titlebar snapping now retains drag-start geometry for corners,
+  Snap Bar and drag-to-top maximize; canceled Snap Bar releases discard staging.
+  Top-right, bottom-left and maximize trials restore `[260,300,600,350]` and
+  subsequent pointer motion leaves the released window still.
+- Native GTK input QA found follow_mouse=0 sent a hovered inactive window's
+  wheel input to the keyboard-focused peer. follow_mouse=2 now routes wheel
+  input to the hovered surface, keeps keyboard input in the active peer and
+  changes keyboard focus on click. The live run compares both modes and
+  passes again after the persistent config reload.
+- Native minimized-window QA found that the shared hidden workspace changed
+  raw monitor placement and moved a minimized taskbar entry to the wrong display.
+  Taskbar filtering now follows the home desktop's display or validated saved
+  output name. Deleted home workspaces are recreated on that display when
+  restoring; desktop moves update saved ownership; disconnected outputs fall
+  back to a surviving monitor. The expanded native fixture passes all five cases.
+- Monitor transfer previously unsnapped windows and scale changes left inactive
+  snapped windows outside the usable area. Transfers now retain snap/maximized
+  mode, translate normal restore geometry and reflow inactive snaps. Native
+  headless-output transfer, scale change and removal regressions pass.
+- The taskbar read a nonexistent bar.screen and silently skipped monitor
+  filtering. It now uses its attached window's screen. The live fixture first
+  populates both windows before asserting exclusion to avoid a false positive.
+- Taskbar keyboard menus accepted keys through a separate proxy surface but
+  dropped wheel input; focus-grab replacement could close a freshly reopened
+  menu. A single masked layer surface now handles keyboard, wheel and outside
+  clicks. Closed menus have an empty input mask during their fade.
+- Taskbar snapshot signatures omitted urgency and monitor identity, allowing
+  changed backend data to leave the QML icon stale. The v35 widget includes
+  those fields and launcher properties; independent live urgency toggles pass.
+
+## Separate live desktop evidence
+
+These checks were run by the compositor and integration workstreams on
+disposable windows. They are separate from `qa.sh`, which uses mocks.
+
+| Evidence | Observed behavior |
+| --- | --- |
+| [Inactive scrolling live QA](/home/hoskinson/.cache/window-inactive-scroll-live-qa.json) | Two disposable GTK windows: old mode sent wheel to active peer; deployed mode sent wheel only to hovered inactive window; synthetic x remained in active peer; click focused hovered window; original focus/cursor restored |
+| [Desktop scope live QA](/home/hoskinson/.cache/window-scope-live-qa.json) | Actual QML current/all filtering, foreign minimized identity exclusion, cross-desktop Alt+Tab commit and captured PID protection; settings/focus/cursor restored |
+| [Minimized monitor live QA](/home/hoskinson/.cache/window-minimized-monitor-live-qa.json) | Foreign minimized entry excluded from physical taskbar; deleted workspace retains saved named output; restore recreates it on that output; minimized desktop move updates display; output removal leaves window restorable on the surviving monitor |
+| [Virtual monitor live QA](/home/hoskinson/.cache/window-monitor-live-qa.json) | Native Win+Shift+Right retained snapped/maximized mode, destination-scale half geometry, inactive scale reflow, normal restore, output removal and real QML monitor filtering; temporary output/windows removed |
+| [Taskbar menu live QA](/home/hoskinson/.cache/taskbar-scroll-live-qa.json) | Native arrows reveal final row; wheel works in keyboard and right-click menus; five immediate reopen cycles; Escape and outside-click dismissal in both modes |
+| [Native taskbar file drag](/home/hoskinson/.cache/taskbar-file-drag-live-qa.json) | Real URI-list offer: direct GTK baseline; early leave keeps destination minimized; single destination hover restores then receives exact URI; grouped preview restores only the selected peer and receives the payload; Escape closes chooser and clears delayed activation. Source file contents unchanged; COPY drag never requests source deletion; focus/cursor and disposable clients restored |
+| [Native modifier drag](/home/hoskinson/.cache/window-modifier-drag-qa.json) | Deployed hyprbars v8: Super/Alt held-edge pause, single release snap, exact normal geometry restore, Super/titlebar Escape cancellation and subsequent motion, snapped unsnap cursor anchoring, source snap cancellation and Alt snap after reload; disposable window/focus/cursor/input settings restored |
+| [Isolated native bridge](/home/hoskinson/.cache/window-drag-bridge-nested-qa.json) | Nine native checks pass including modifier/titlebar lifecycle, Escape, Lua event reconnection, held release, snap cancellation, resize exclusion and maximized-to-snap normal restoration. Shell commands recorded in memory; shared user Snap Group state untouched |
+| [Remaining corners and drag maximize](/home/hoskinson/.cache/window-controls-remaining-corners-qa.json) | Native top-right/bottom-left release and drag-to-top maximize pass; exact normal rectangle restored in each trial; no movement after release; deployed pointer-focus mode2 |
+| [Native pointer trials](/home/hoskinson/.cache/window-controls-pointer-qa.json) | Owner titlebar menu; six native release trials covering left/right/top-left/bottom-right with repeated halves; cancellation; Snap Bar drop; subsequent move without stuck drag |
+| [Hyprbars v6 lifecycle and Shake](/home/hoskinson/.cache/window-controls-lifecycle-qa.json) | Release reached the dragged owner after focus changed to a covering window; later cursor motion moved neither window. Three real titlebar reversals minimized only the disposable peer; peer restored. Original desktop, focus, cursor and input setting restored |
+| [Size, corners and custom ratio](/home/hoskinson/.cache/window-controls-size-qa.json) | Square snapped rounding0 and restored rounding8; reload restores600×350; custom ratios persist. This earlier artifact captured x=-20 before the boundary clamp fix |
+| [Final rectangle checks](/home/hoskinson/.cache/window-controls-rect-qa.json) | Exact position/size restore `[260,300,600,350]`; adjacent resize clamps left edge to10; recall retains the bounded custom rectangles |
+| [Native Alt+Tab](/home/hoskinson/.cache/window-controls-combined-alt-qa.json) | Held chooser; selected address equals active address on release; reverse starts at last candidate; Escape cancels. Original input option restored |
+| [Urgent taskbar dot](/tmp/taskbar-urgency-v31.png) | A matching synthetic urgency state made the existing Brave icon show a dot; taskbar snapshot marked the window urgent. The real event listener service was active and connected to Hyprland's event socket; no application-generated urgent request was available for a live end-to-end event |
+| [Live count/progress/urgency QA](/home/hoskinson/.cache/taskbar-launcher-live-qa.json), [taskbar rendering](/tmp/taskbar-count-progress-v33.png) | Real D-Bus signals reached QML, count12 survived a partial progress0.4 update, hide flags refreshed, disconnect cleared publisher state, and independent compositor urgency changes refreshed without another window change |
+| [Dynamic app menu QA](/home/hoskinson/.cache/taskbar-quicklist-live-qa.json), [menu rendering](/tmp/taskbar-quicklist-v35.png) | A fixture exporting the real DBusmenu interface imported visible actions, refreshed lazy AboutToShow and LayoutUpdated content, received the click Event, rejected a disabled action, and cleared on disconnect |
+| [Minimized taskbar preview](/tmp/taskbar-minimized-preview.png), [Task View previews](/tmp/taskview-fresh-minimized-preview.png) | `grim -T` captured the already minimized browser by stable ID without restoring or focusing it; the taskbar popup and Task View showed its content alongside other windows |
+| [Peek screenshot](/tmp/omarchy-peek-fixed.png) | Root verified opacity with live getprop: before1, during0.03, after1; those getprop values are in tool output, not a saved JSON report |
+| [Task View screenshot](/tmp/taskview-v5.png), [v7 pre-test state](/tmp/taskview-validation/v7-before.json) | Task View workstream reports actual pointer moves of visible/minimized windows, reorder/rename, and New Desktop drop. No consolidated saved pointer test log exists |
+
+The original pointer artifact omitted top-right and bottom-left; the separate
+remaining-corners artifact now covers both and drag-to-top maximize, including
+exact restoration. All six edge/corner rectangles and extended zones are also
+exercised by the Lua mocks. The v6 lifecycle change received its own native pointer repeat.
+Full compositor restart, physical monitor hotplug, and
+application-specific modal behavior remain separate acceptance work.
+
+The live taskbar protocol fixtures are reproducible with
+`python3 /home/hoskinson/window-integration-qa/live_taskbar_launcher.py` and
+`python3 /home/hoskinson/window-integration-qa/live_taskbar_quicklist.py`.
+They require the current shell/services and an existing Brave taskbar group,
+temporarily publish synthetic data for that icon, and dismiss the test menu.
+These fixtures test the protocol and actual QML service, not a browser's own
+unread-count or menu implementation. Quicklist submenus retain their parent
+labels in a flat app-action list.
+
+## Limits and remaining acceptance work
+
+These results establish bounded model invariants and behavior of the exercised
+implementation code. The navigation and taskbar-menu models specify intended behavior; it is
+not an implementation replay. It abstracts MRU ordering, monitor selection,
+desktop reorder/adjacent fallback, and application-specific modal protocols.
+The one-window model now checks half, quarter, mixed half/quarter, thirds and
+asymmetric families for complete partitioning without overlap. The menu exposes
+extended zones at 1280 logical pixels; this is the product's UX contract and does
+not claim Microsoft's undocumented internal threshold or identical popup cards.
+Full Windows parity still requires accessibility and application compatibility
+checks and the remaining acceptance rows in [requirements.md](requirements.md).
+
+Normal restore size and position are now persisted in Snap Group session state
+and hydrated across Lua reloads with identity checks. The Lua reload,
+keyboard/system-menu restore, drag-under-cursor, corner-state, and actual backend
+stableId reuse regressions pass. The separate live rectangle artifact records
+exact `[260,300,600,350]` restoration after reload.
+
+The mocked Lua and Python runs do not verify popup pixels, hover input delivery,
+animation quality, titlebar geometry, shell reloads, or keyboard release delivery.
+The separate live desktop checks cover selected paths, including per-window
+minimized capture. A passing Quint run is not a proof of unbounded
+correctness or complete desktop parity.
+
+The virtual-monitor fixture exercises compositor output lifecycle, not physical cable or graphics-driver hotplug. The dedicated minimized ownership fixture now passes on the headless second output. The menu model abstracts QML/protocol scheduling; the rapid-reopen evidence comes from native input against the installed widget.
+
+Pointer routing uses Hyprland [follow_mouse=2](https://wiki.hypr.land/Configuring/Basics/Variables/), separating pointer and keyboard focus. The input fixture records events only inside disposable QA windows.
+
+## Native drag bridge update
+
+The Escape fixture originally exited its pointer helper before sending Escape.
+That helper deliberately releases buttons on exit. The corrected fixture keeps
+one virtual pointer connection alive through cancellation, and asserts only a
+begin event exists before sending the key. The original native bridge then passed;
+no extra keyboard interception was needed.
+
+The deployed version uses compositor drag start/end hooks and custom Lua events.
+It captures normal geometry before native movement and snaps after native cleanup.
+Source geometry, PID, prior snap membership and maximized restore state are saved
+for cancellation. The Lua handler reconnects plugin events after config reload.
+The plugin is built against the installed Hyprland hash; fallback v6 and previous
+configuration backups remain available. A Hyprland update requires rebuilding the
+plugin. The new `native_drag.qnt` model abstracts geometry and checks captured
+ownership, close/reuse, reload invalidation, cancellation and resize exclusion;
+it is not a proof of compositor ABI or frame timing.
+
+### Corner follow-up
+
+The first corner fixture immediately after configuration edits timed out waiting
+for a snap. Its original report did not record the drag events, so the cause is
+unproven. Event diagnostics were added to failures. The next run and three further
+runs passed all three paths (top-right, bottom-left and maximize), including exact
+normal restore and no movement after release. This remains a recorded transient,
+not evidence that every interaction timing is correct. Frame timing, concurrent
+reload and cross-application soak checks remain in the acceptance backlog.
+
+## Taskbar file-drag candidate investigation
+
+The deployed taskbar remains `widget_v51`; candidates `widget_v52` through
+`widget_v55` are retained for development. Six scenarios in
+`drag_hover_test.qnt` pass, and `drag_hover.qnt` passes 2,000 samples of up to
+100 steps using seed 20260930. These are abstract dwell/identity checks, not
+proof of native event delivery.
+
+Native fixture `window-integration-qa/live_taskbar_file_drag.py` offers a real
+`text/uri-list` plus its string form using a disposable GTK source. Direct GTK
+transfer passes and preserves the source file. An independent Quickshell panel
+receives drag-enter with both ordinary environment and the main shell's
+fcitx/GTK platform settings. The main bar receives no `DropArea` enter, so its
+candidate delayed restore fails. Reparenting above the Flickable and directly
+onto the bar's content item did not resolve it. Dynamic preview geometry queries
+also needed guards while their layer window was not instantiated.
+
+Authoritative failure: [taskbar-file-drag-live-qa.json](/home/hoskinson/.cache/taskbar-file-drag-live-qa.json).
+The next candidate adds a read-only native `hyprbars.file_drag_active()` getter.
+It is compiled separately as `hyprbars-v8-candidate.so` and is not loaded on the
+user's compositor. It reads only the public active-drag flag, without clipboard
+or payload access. The intended integration uses the existing Lua timer to
+forward drag coordinates to taskbar dwell handling, retaining GTK-to-app data
+transfer. Live delivery and cancellation gates remain open.
+
+## Deployed file-drag navigation
+
+Hyprbars v8 exposes the compositor's public active-drag flag with a monotonic
+stamp. The installed snap timer forwards transition/movement messages and a
+held-drag heartbeat to taskbar widget_v59. The widget routes coordinates through
+screen/bar geometry, opens previews after dwell, validates address/PID/stableId
+before restore, rejects old messages, and clears hover state on end or watchdog.
+No payload is read by this bridge; the destination application receives the
+original Wayland drag offer. The main bar's Qt DropArea routing failure remains
+unexplained, but file navigation now works through native compositor state.
+
+A live grouped-drag check exposed unstable app order: the backend had preserved
+compositor client enumeration order, which changes on raise/focus. A locked
+session cache now retains running-app key order, prunes absent groups, adds new
+groups at the end, and gives explicit user reordering priority. Two backend
+regressions cover raise ordering, closed/reopened apps, malformed cache recovery
+and explicit reorder. Session identity separates compositor lifetimes.
+
+`drag_hover.qnt` adds six dwell/identity/drop cases and 2,000 samples.
+`drag_relay.qnt` adds three stale-packet/watchdog cases and 2,000 samples.
+`test_drag_relay.js` executes the installed QML function with offset/bottom-bar,
+foreign-display, stale-message, preview capture/dwell and idle-menu fixtures.
+The installed Lua harness checks inactive silence, held heartbeat and end relay.
+These fixtures complement the live primary-display file transfer; they do not
+prove every application MIME format or physical multi-display drag interaction.
+
+Latest complete `qa.sh` result: exit 0, twenty-two typechecks, eleven models, 71 named Quint scenarios and 22,000 simulator samples. Native live fixture results are recorded separately above.
+
+## Native modal-family audit and deployment — hyprbars v9
+
+The installed v9 plugin adds a read-only native family snapshot with address,
+PID, stable identity, transient parent identity and modal state. It reads both
+XWayland modal flags and the Wayland `xdg-dialog-v1` resource. The running
+Hyprland revision's `CWindow::isModal()` alone only covers XWayland, so it is
+insufficient for this GTK Wayland test. Source references:
+[Hyprland window implementation](https://github.com/hyprwm/Hyprland/blob/efb50993780079460b0cbed1363e2166a2de1d9f/src/desktop/view/Window.cpp),
+[GTK modal semantics](https://docs.gtk.org/gtk4/method.Window.set_modal.html).
+
+Backend family operations use actual transient links, with matching parent
+stable identity; they never group independent windows by PID or app class.
+Minimize/restore operate on the family, restore selects its modal descendant,
+and desktop moves update visible or minimized members together. Shake excludes
+the whole selected family. Alt+Tab skips blocked owners; Snap Assist excludes
+transients and blocked owners. The six helper checks cover identity and focus
+selection; native acceptance below covers the actual metadata and window/desktop
+operations. Native Alt+Tab gesture, Snap Assist picker and Shake with a modal
+family remain separate acceptance checks.
+
+| Native fixture | Result and scope |
+| --- | --- |
+| [Isolated family backend](/home/hoskinson/.cache/window-family-backend-nested-qa.json) | PASS: GTK Wayland parent/modal snapshot, owner and child minimize/restore, exact modal focus, moving child and moving minimized family |
+| [Main desktop family backend](/home/hoskinson/.cache/window-family-backend-qa.json) | PASS: same five paths with deployed v9 |
+| [Pre-v10 main desktop modal click audit](/home/hoskinson/.cache/window-modal-family-before-v10-qa.json) | Historical result: four of five paths pass. Clicking the exposed owner focused a lower window; resolved by the v10 deployment below. |
+
+The first stronger navigation simulator run caught a newly created modal left
+minimized after its owner's batch restoration. The intended contract now expands
+the restored batch to each current family, with a named regression and 2,000
+passing randomized samples. This is model evidence; application behavior is
+tested by the native fixtures above. Application coverage currently includes
+GTK Wayland only, with XWayland and other toolkit modal compatibility pending.
+
+Reproduce native backend checks with `python3 ../window-integration-qa/live_family_backend.py`.
+The click acceptance audit is `python3 ../window-integration-qa/live_modal_family.py`.
+The v9 result failed for the exposed-owner click; v10 results are below. Both use
+disposable windows, restore desktop/focus state and remove their own stale
+minimize metadata. The nested compositor used for candidate QA has been stopped.
+
+The v9 deployment also passes the six main-desktop modifier drag checks and five
+taskbar file-drag checks, including grouped minimized preview selection and a
+real file drop. Existing artifact links above now contain that v9 regression run.
+
+### Exposed-owner pointer failure diagnosed before v10
+
+The click audit keeps one virtual pointer connected throughout the fixture and
+records the actual click position and window order. It still fails at the exposed
+owner, with the cursor confirmed at `(180,540)` inside the owner rectangle
+`(120,250,580,380)`. The owner and dialog report accepting input, and are raised
+before the click. Backend restore correctly focuses the modal child afterward.
+
+The running configuration reports `general:modal_parent_blocking = true`.
+The matching revision's
+[ViewHitTester implementation](https://github.com/hyprwm/Hyprland/blob/efb50993780079460b0cbed1363e2166a2de1d9f/src/desktop/state/ViewHitTester.cpp)
+explicitly excludes a Wayland window with a modal child when that option is
+enabled. This explains the click reaching a lower window. The next fix must
+retain the visual owner's hit region and redirect focus to its modal child,
+while preserving unrelated apps, layers/popups, pointer grabs and drag controls.
+Simply disabling owner blocking is not yet accepted without proving modal focus
+and preventing owner interaction. Native XWayland/toolkit checks also remain open.
+
+## Modal input fix deployed — hyprbars v10
+
+The main desktop now loads `libhyprbars-controls-v10.so`. Its native focus hook
+resolves explicit modal descendants before keyboard focus reaches an owner's
+surface. A native mouse listener consumes clicks on the disabled owner and keeps
+ownership of their releases, including a dialog closing while the button is held.
+It respects session lock, exclusive layers, pointer constraints/grabs, input
+capture, existing held buttons and active window/file drags. Titlebar handlers
+respect an already-consumed event.
+
+The Lua configuration preserves owner hit regions by setting
+`general.modal_parent_blocking=false` only when this native bridge is available.
+With the packaged/older plugin fallback, core blocking remains enabled. This
+setting follows the running revision's actual focus/hit-test implementations;
+the native bridge supplies the disabled-owner semantics. Configuration reload
+reports no errors.
+
+| Native v10 fixture | Result |
+| --- | --- |
+| [Isolated Wayland modal input](/home/hoskinson/.cache/window-modal-pointer-nested-qa.json) | 13 checks PASS, including owner body/titlebar click, dialog click, programmatic focus, family stack, shell overlay, unrelated hover/click, dialog close during held press and family minimize/restore/desktop move |
+| [Main desktop Wayland modal input](/home/hoskinson/.cache/window-modal-family-qa.json) | Same 13 checks PASS |
+| [Main desktop XWayland modal input](/home/hoskinson/.cache/window-modal-family-xwayland-qa.json) | Same 13 checks PASS; captured clients identify XWayland and the native snapshot records the modal/parent identities |
+| [Modifier drag regression](/home/hoskinson/.cache/window-modifier-drag-qa.json) | Six paths PASS with v10, including held-edge pause, release, Escape, unsnap anchoring and reload |
+| [Taskbar file drag regression](/home/hoskinson/.cache/taskbar-file-drag-live-qa.json) | Five paths PASS with v10, including exact grouped minimized preview selection and real file transfer |
+
+Reproduce XWayland input checks with
+`GDK_BACKEND=x11 MODAL_QA_REPORT="$HOME/.cache/window-modal-family-xwayland-qa.json" python3 ../window-integration-qa/live_modal_family.py`.
+All fixtures use disposable windows and restore original focus, cursor and
+desktop catalog. The candidate compositor and temporary shell overlay have been
+stopped. Test overlay methods deliberately avoid the name `show`: Quickshell's
+CLI treated it as its IPC introspection subcommand instead of invoking the
+fixture method. Live layer geometry verifies the corrected overlay was mapped
+above the exposed owner when its click was delivered.
+
+Remaining modal acceptance work includes native Alt+Tab/Shake/Snap Assist with
+modal families, pinned owners, nested dialogs and non-GTK toolkit compatibility.
+
+Modifier QA cleanup also dismisses an application menu opened by its synthetic Super release, while preserving a menu present before the test. That overlay had retained keyboard focus after the disposable window closed; cleanup now restores the original application focus.
+
+## Pinned and nested modal input deployed — hyprbars v11
+
+The desktop loads `~/.local/lib/libhyprbars-controls-v11.so`, built from
+`src/hyprbars-dragend/hyprbars-v11d-candidate.so`. V10 remains available for
+rollback. Configuration reload succeeds with no errors and the native bridge
+reports available.
+
+V11 fixes three observed paths:
+
+- Hyprland's pinned-window hit priority masked an unpinned modal child. Hits
+  within the child's input box now select that child; exposed disabled-owner
+  clicks retain the existing consume-and-focus behavior.
+- Raising an owner now raises its modal descendants in ancestor-to-leaf order.
+- A dialog opened under a stationary pointer could already own keyboard focus,
+  leaving pointer focus on the old owner or destroyed dialog. Its first press
+  now refreshes pointer focus before delivery. Layers, captures, constraints,
+  grabs, held-button gestures and file/window drags keep their guards.
+
+The initial load on the main compositor was rejected cleanly. Its plugin API
+returned the correct `raise` ELF symbol paired with a demangled `lower` name.
+V10 was restored before retrying. Family hook selection now validates the actual
+ELF symbol prefix, rejects ambiguous matches and retains the compositor ABI hash
+check. The [API implementation](https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/plugins/PluginAPI.cpp)
+uses separate cached symbol and demangled listings; the observed mismatched pair
+is evidence for this change, without claiming the reason those listings differed.
+
+| V11 live acceptance artifact | Result |
+| --- | --- |
+| [Isolated pinned/nested dialogs](/home/hoskinson/.cache/window-modal-depth-pin-v11b-nested-qa.json) | 11 PASS: pinned stacking/input, minimize/restore, first click after reopening, deepest modal redirection, intermediate minimize, nested restore and close |
+| [Isolated ordinary modal input](/home/hoskinson/.cache/window-modal-pointer-v11b-nested-qa.json) | 13 PASS: ordinary owner/dialog input and overlay guards |
+| [Main Wayland pinned/nested dialogs](/home/hoskinson/.cache/window-modal-depth-pin-qa.json) | Same 11 PASS |
+| [Main XWayland pinned/nested dialogs](/home/hoskinson/.cache/window-modal-depth-pin-xwayland-qa.json) | Same 11 PASS; report identifies XWayland |
+| [Main Wayland ordinary modal input](/home/hoskinson/.cache/window-modal-family-qa.json) | Same 13 PASS |
+| [Main XWayland ordinary modal input](/home/hoskinson/.cache/window-modal-family-xwayland-qa.json) | Same 13 PASS |
+| [Modifier/titlebar drag](/home/hoskinson/.cache/window-modifier-drag-qa.json) | Six PASS with v11 |
+| [Taskbar file drop/navigation](/home/hoskinson/.cache/taskbar-file-drag-live-qa.json) | Five PASS with v11 |
+
+The old pinned-dialog failures are preserved in
+[pre-v11 evidence](/home/hoskinson/.cache/window-modal-depth-pin-before-v11-qa.json).
+The updated complete `qa.sh` run passes 24 Quint typechecks, 79 named scenarios,
+12 models and 24,000 simulator samples. Existing trace replay, Lua geometry/pin
+fuzz and backend suites also pass. These model checks and native fixture checks
+are separate evidence; the new modal models do not replay traces against the
+compositor yet.
+
+Reproduce pinned/nested input with
+`python3 ../window-integration-qa/live_modal_depth_pin.py`, or set
+`GDK_BACKEND=x11 MODAL_DEPTH_REPORT="$HOME/.cache/window-modal-depth-pin-xwayland-qa.json"`
+for XWayland. Fixtures preserve focus/cursor and catalog, terminate their own
+clients and clean their own minimize metadata. The isolated compositor is stopped.
+
+Native modal navigation results follow below. Pinned modal desktop transitions
+and other toolkits remain separate acceptance work. Smoothness/frame timing,
+physical hotplug and restart recovery are still open in the full parity audit.
+
+### Native modal navigation and picker acceptance
+
+[Wayland navigation evidence](/home/hoskinson/.cache/window-modal-navigation-qa.json)
+passes ten paths with v11 on Wayland. The same ten pass on
+[XWayland](/home/hoskinson/.cache/window-modal-navigation-xwayland-qa.json): actual Alt+Tab excludes disabled ancestors and lists
+its deepest dialog; physical Alt release commits that identity; Shift reverses
+selection; Escape followed by Alt release cancels; a titlebar Shake keeps all
+three family members visible while minimizing the independent peer; repeating
+restores the peer and modal focus; Snap Assist excludes the family while modal,
+rejects the blocked owner as source, restores owner eligibility after dialog
+closure, and Return in the actual picker creates a complementary Snap Group.
+
+Reproduce with `python3 ../window-integration-qa/live_modal_navigation.py`.
+It uses a vacant temporary workspace, separate GTK processes, the deployed
+Quickshell picker, and persistent virtual pointer/keyboard devices. Its settings,
+focus, cursor and catalog are restored and its own minimized/group state is
+cleaned. Physical key press/release events are required for the Alt-release
+check: virtual modifier masks alone do not generate that key event. Cancellation
+is sent by the same keyboard that holds Alt. Shake leaves caption controls after
+release so the normal maximize-hover menu does not cover the following gesture.
+
+The recorded drag trace also shows the first titlebar movement initializing the
+native drag anchor at the moved pointer, rather than preserving the original
+press offset. A direct first-movement displacement regression and correction
+remain open. Passing the existing edge/release tests does not prove this path.
+
+### Direct first-movement drag regression — still failing
+
+[Caption anchor evidence](/home/hoskinson/.cache/window-titlebar-anchor-qa.json)
+uses a normal floating foot window at `(260,300)`, presses its caption at
+`(460,288)`, then moves the held pointer to `(600,350)`. Expected window position
+is `(400,362)` with the same press offset. Deployed v11 leaves it at `(260,300)`.
+The test releases input, closes its disposable client and restores focus/cursor.
+Reproduce with `python3 ../window-integration-qa/live_titlebar_anchor.py`.
+This remains a required failing acceptance check, outside the currently green
+bounded `qa.sh` suite. The native drag controller
+[records its start pointer during drag initialization](https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/layout/supplementary/DragController.cpp);
+our caption currently starts that controller on the first movement. Preserving
+the down-position and processing the first displacement is the next correction.
+
+The XWayland modal navigation run also passes the same ten paths. No QA windows
+remain on the desktop; original input settings, focus and desktop catalog were
+restored, and `hyprctl configerrors` is empty.
+
+## Caption offset and interruption fixes deployed — hyprbars v12
+
+The desktop now loads `~/.local/lib/libhyprbars-controls-v12.so`, copied from
+`src/hyprbars-dragend/hyprbars-v12c-candidate.so`. V11 and config backups
+`autostart.lua.bak.before-v12` / `snap.lua.bak.before-v12` remain for rollback.
+Reload has no errors and both native bridge getters report available.
+
+The pressed caption stores its pointer position. On first motion it starts the
+native drag for that caption's explicit window target, even when the pointer
+has crossed another app or empty space. The start event supplies press coordinates
+so fractional unsnap restoration uses the original point. After Lua captures
+source geometry, the native bridge applies the first displacement before core
+records its drag rectangle. Pending presses are invalidated by keyboard input
+and reload; active captured moves are canceled before Lua reload so their source
+geometry is restored. Swallowed pointer releases remain consumed.
+
+| V12 acceptance | Result |
+| --- | --- |
+| [Isolated live captions](/home/hoskinson/.cache/window-caption-full-v12c-nested-qa.json) | 14 PASS: first and later offset, release, cross-window/focus routing, empty space, snapped fractional restore, exact Escape restore, no-motion click, pending Escape, pending/active reload, close before motion |
+| [Native Quint caption replay](/home/hoskinson/.cache/window-caption-native-mbt-qa.json) | 10 generated traces, 400 mixed events, 410 checked states PASS; actual foot windows, persistent pointer and keyboard input, native rectangle comparison |
+| [Main live captions](/home/hoskinson/.cache/window-titlebar-anchor-qa.json) | Same 14 PASS; the former first-motion failure is resolved |
+| [Modifier drag](/home/hoskinson/.cache/window-modifier-drag-qa.json) | Six PASS |
+| [Taskbar file drop](/home/hoskinson/.cache/taskbar-file-drag-live-qa.json) | Five PASS |
+| [Wayland modal navigation](/home/hoskinson/.cache/window-modal-navigation-qa.json) | Ten PASS with v12 |
+| [XWayland modal navigation](/home/hoskinson/.cache/window-modal-navigation-xwayland-qa.json) | Ten PASS with v12 |
+| [Ordinary modal input](/home/hoskinson/.cache/window-modal-family-qa.json) | Thirteen PASS with v12 |
+| [Pinned/nested modal input](/home/hoskinson/.cache/window-modal-depth-pin-qa.json) | Eleven PASS with v12 |
+
+The previous failure is preserved in
+[pre-v12 caption evidence](/home/hoskinson/.cache/window-titlebar-anchor-before-v12-qa.json).
+The full updated `qa.sh` run passes 26 typechecks, 89 named Quint scenarios,
+13 models, 26,000 simulator samples and the existing replay/fuzz/backend suites.
+The snap fuzz run used `SNAP_SOURCE=../window-integration-qa/snap_caption_candidate.lua`;
+its bytes exactly match the deployed `~/.config/hypr/snap.lua` (SHA256
+`389bc19a23e090e1a43d446fc927a65e265b1742bbbd15a88b1163ef0fc59e7c`).
+
+The native replay requires the dedicated `nested_caption.lua` compositor. It
+installs the model's snap rectangle and normal-size precondition, rehydrates that
+metadata after Lua reload, and spaces moves to avoid turning them into the separate
+Shake gesture. It proves caption identity/geometry projection; persistence,
+interactive Snap Assist and gesture timing use the other live fixtures. Its
+400 events include 17 presses, 98 motions (13 active), 31 reloads, 65 closes,
+67 opens, 25 cancels, 26 releases, 61 focus changes and 10 snap preconditions.
+Commands and bounds are in `../window-integration-qa/mbt_caption_native.py`.
+
+All disposable clients and the nested compositor have stopped. Full parity is
+still open for other toolkits, minimize/restore motion toward the taskbar,
+real screen-reader interaction, physical hotplug and full-session restart recovery.
+Subsequent sections record pinned-family desktop and physical-motion results.
+## Window-menu accessibility repair — 2026-09-30
+
+`python3 ../window-integration-qa/live_accessible_controls.py` enables the two
+AT-SPI status flags temporarily, then invokes actual assistive actions against
+one disposable foot window. It restores the flags, reduced-motion file, focus,
+pointer and hides the menu on exit. The current result is **13 PASS**. The
+checks cover nine named menu actions, one selected focused row, actual minimize,
+hidden action rejection, pin/unpin and checked state, native Snap geometry/exact
+Restore, reduced-motion setting, captured PID rejection and Close.
+Evidence: `~/.cache/window-accessible-controls-qa.json`.
+
+Before repair the test failed with `timeout: Minimize`: the application exposed
+zero children even with AT-SPI enabled and forced-on Qt accessibility. A native
+probe reproduced the cause: Quickshell deletes a temporary QCoreApplication,
+which clears Qt Quick's installed accessibility factories, before constructing
+its GUI application. The local WindowAccessibility QML extension reinstalls the
+factory using Qt's existing interfaces. The native probe reports one accessible
+window without application recreation, and zero after recreation; an isolated
+Quickshell probe exposes its button after repair. The real window-menu test then
+passes through AT-SPI, rather than a test-only IPC action.
+
+The extension uses Qt 6.11.2 private interfaces and must be rebuilt and rechecked
+after a Qt update; its runtime version guard skips installation on mismatch.
+Real screen-reader compatibility remains unaccepted. Taskbar and Task View
+native accessibility evidence is recorded in the following section.
+
+Qt's documented activation conditions were checked in its
+[accessibility documentation](https://doc.qt.io/qt-6/qaccessible.html).
+The latest complete `qa.sh` run passes 34 typechecks, 124 named Quint scenarios,
+17 models and 34,000 simulator samples, plus replay/fuzz/backend checks. The
+accessibility model explores action ownership/lifetime; it does not replay
+assistive input against the compositor or claim screen-reader speech correctness.
+
+## Taskbar and Task View accessibility — 2026-09-30
+
+Deployed taskbar `widget_v61` and Task View `overlay_v10` use the V2 accessibility
+extension. Qt's standard ShowMenu action invokes the actual QML context-menu
+handler. Names, window IDs, minimized state, selected/focused rows and checked
+settings are exposed through the native accessibility interface.
+
+`python3 ../window-integration-qa/live_accessible_shell.py` passes **19 native
+checks**. It invokes taskbar minimize, minimized-preview restore, context menus,
+individual preview Close, Task View focus/Close, New desktop, window move,
+desktop switch, editable-text rename, reorder in both directions and desktop
+Close. It checks hidden-action rejection and preserves existing user window
+identities. Disposable windows/desktops, desktop catalog bytes, focus, cursor
+and assistive status flags are restored. Evidence:
+`~/.cache/window-accessible-shell-qa.json`.
+
+This run found and fixed three real bugs: implicit default settings were not
+announced as checked; Task View could retain the old desktop after an external
+switch; and Return in the desktop rename field propagated into window activation.
+Desktop snapshots now carry stable IDs/PIDs, and queued focus/close/move actions
+validate those captured values. Four installed-backend tests check valid
+identity forwarding, stale ID/PID rejection, minimized home preservation and
+absence of ghost desktops after rejected New-and-move actions.
+
+After deployment, native file-drag QA passes five paths, menu wheel/keyboard/
+reopen/dismissal QA passes, the installed QML relay passes ten assertions,
+window/desktop backend QA passes 19 scenarios and desktop fuzz passes 165 mixed
+operations. Actual screen-reader use, broader toolkit/app compatibility,
+physical hotplug and full compositor restart remain open. The subsequent
+physical-output motion audit is recorded below.
+
+## Physical-output motion and interruption audit — 2026-09-30
+
+The temporary [native observer](/home/hoskinson/window-integration-qa/motion-probe/README.md)
+records one captured disposable window's rendered geometry, successful DRM
+submissions and presentation feedback. ABI checks precede load; a nested
+compositor smoke check passed load/capture/stale-PID rejection/unload. The main
+run used the existing physical eDP-2 at 2560×1600, scale 1.6, 240 Hz. Hardware
+VSYNC/clock/completion flags were verified. The observer was unloaded afterward.
+
+**27 native cases pass**, with **3,634 paired presentations**. For each of Foot,
+GTK4 and Qt Quick: caption drag, snap-left/restore, maximize/restore, rapid
+left/right/restore reversal, reduced snap/restore and enabling reduced motion
+while snapping. Restore reaches the exact original rectangle. Reduced-mode
+submissions have no intermediate geometry, including submissions after the
+mid-transition reduction marker. Non-retargeted spring transitions show zero
+overshoot. Existing user window identities, motion settings, focus and pointer
+are preserved; disposable apps are terminated.
+
+| Toolkit | Maximum presentation gap during movement | Maximum active geometry-update gap |
+| --- | --- | --- |
+| Foot | 12.502 ms | 20.835 ms |
+| GTK4 | 16.666 ms | 20.833 ms |
+| Qt Quick | 16.669 ms | 16.666 ms |
+
+Raw captures and [report](/home/hoskinson/.cache/window-motion-native-v3/report.json)
+retain unmatched feedback, repeated frames and missed refreshes. There were no
+ambiguous commit associations and no >33.4 ms presentation/geometry stalls in
+the tested movement. At 240 Hz, a refresh is 4.167 ms: these results **do not
+claim every refresh receives a new frame**. Geometry cadence excludes spring
+tails below one logical pixel; final settling is checked independently.
+Application content repaint latency, minimize/restore animation toward the
+taskbar, browser/GPU stress and other display/rate combinations remain open.
+
+`motion.qnt` and `motion_test.qnt` add six passing qualitative scenarios and
+2,000 simulator samples. They check reversal from current position, reduced
+motion during an animation, stale ticks after retarget/close/reuse, settled
+reduced submissions and a pre-reduction queued frame legitimately presenting
+after reduction. Tick is an abstract progress step, **not a millisecond bound**.
+This model is not native trace replay; the physical captures independently
+measure timing. The model is included in `qa.sh`.
+
+
+## Pinned modal families across desktops — deployed hyprbars v13
+
+A native regression reproduced a compositor bug: Hyprland carried a pinned
+owner to the next desktop but left its unpinned modal children behind. The
+owner stayed disabled and the dialog was no longer visible. This also happened
+with windows that existed before the latest changes.
+
+The workspace-activation listener now follows actual mapped parent links and
+moves each family member through Hyprland's window controller. It preserves
+layout/monitor state, skips minimized/special members, and never groups unrelated
+windows merely because they share a PID. Pinning a child also carries its owner.
+An idle callback after plugin initialization repairs already-split pinned
+families without another desktop switch. Existing deepest-modal focus and
+stationary-pointer input handling remain in effect.
+
+The loaded binary is `~/.local/lib/libhyprbars-controls-v13.so`, copied from
+`src/hyprbars-dragend/hyprbars-v13b-candidate.so`. Autostart references the fresh
+filename; `libhyprbars-controls-v12.so` and
+`autostart.lua.bak.before-v13` remain available for rollback. Configuration errors
+are empty after deployment and all subsequent checks.
+
+| Native evidence | Result |
+| --- | --- |
+| [V12 reproduction](/home/hoskinson/.cache/window-pinned-modal-v12-nested.json) | Baseline input passes; six desktop/family/input assertions fail |
+| [Isolated V13 Wayland](/home/hoskinson/.cache/window-pinned-modal-v13b-nested.json) | 13 PASS, including repair of a split family on reload |
+| [Isolated V13 XWayland](/home/hoskinson/.cache/window-pinned-modal-v13b-xwayland-nested.json) | Same 13 PASS |
+| [Main Wayland](/home/hoskinson/.cache/window-pinned-modal-desktops-qa.json) | 12 PASS; no live plugin unload required |
+| [Main XWayland](/home/hoskinson/.cache/window-pinned-modal-desktops-xwayland-qa.json) | Same 12 PASS |
+| [V13 captions](/home/hoskinson/.cache/window-titlebar-v13-qa.json) | 14 PASS, including pending/active reload and release cleanup |
+| [V13 ordinary modal regression](/home/hoskinson/.cache/window-modal-family-v13-qa.json) | 13 PASS |
+| [V13 pinned/nested modal regression](/home/hoskinson/.cache/window-modal-depth-pin-v13-qa.json) | 11 PASS |
+
+The desktop fixture checks two desktop switches, deepest-dialog clicks, disabled
+owner input, a new nested dialog after switching, return input, unpinning, and
+pinning the child instead of the owner. It restores original window identities,
+focus, cursor and desktop catalog bytes. Reproduce the main checks with
+`python3 ../window-integration-qa/live_pinned_modal_desktops.py`; set
+`GDK_BACKEND=x11` and a distinct `PINNED_MODAL_DESKTOP_REPORT` for XWayland.
+
+Isolated XWayland input requires the nested host window to be visible and
+active. Runs with an occluded host or an external password popup's input grab
+failed the baseline input check and are excluded from acceptance evidence.
+Neither nested output tests nor this live plugin reload establish full main
+compositor restart or physical monitor hotplug recovery.
+
+`modal_stack.qnt` adds desktop ownership and three scenarios for pinned-family
+carry, unpinned-family isolation, and modal creation after a pinned switch.
+These are independent model checks, not a native trace replay. The complete
+`qa.sh` run at that stage exited 0 with **30 typechecks, 106 named Quint scenarios, 15 models
+and 30,000 simulator samples**, plus geometry/pin fuzz and installed backend
+replay suites. The complete log is [qa-run.log](qa-run.log).
+
+## Overnight integration evidence — motion, accessibility and recovery
+
+The subsequent complete `qa.sh` run passed **34 typechecks, 124 named Quint
+scenarios, 17 models and 34,000 simulator samples**, plus the backend/replay/fuzz
+suites. This adds nine minimize lifecycle and nine compositor-session recovery
+scenarios. The minimize model is qualitative; it does not establish native
+frame timing. Installed minimize helpers were deployed after that complete run;
+the installed window backend then passed 19 scenarios and 165 mixed desktop
+operations separately. Native motion evidence follows below.
+
+### Actual reader and focused process teardown
+
+The official Arch Orca 50.2 event loop passes **16 checks** with its supported
+silent speech adapter: 15 announcement/navigation/action checks and one
+preservation check. Native assistive regression checks pass **13 controls and
+19 shell paths**. These runs used WindowAccessibilityV4, keyed persistent QML
+models, Task View `overlay_v13`, and the reader taskbar candidate preceding
+`widget_v62`. See [classification](/home/hoskinson/window-integration-qa/orca-reader/results-classification.json)
+and [reader evidence](/home/hoskinson/window-integration-qa/orca-reader/evidence-v4-clean/report.json).
+Audible synthesis, braille, physical reader command interception and human
+usability remain unverified.
+
+V4 clears window and leaf focus while the GUI application still exists during
+normal shutdown. A copied controls process with an actively focused leaf exits
+normally through `qs kill`; no forced termination or pre-hide substitutes for
+this test. The original crash was symbolized to focused item destruction after
+QGuiApplication destruction. The source lifetime correction is also staged
+separately. See [normal shutdown report](/home/hoskinson/window-integration-qa/orca-reader/native-shutdown/disposable-controls-report.json)
+and [symbolized diagnosis](/home/hoskinson/window-integration-qa/orca-reader/native-shutdown/controls-teardown-symbolized.txt).
+
+### Physical client repaint under bounded load
+
+Six additional physical-output captures cover animated GTK4, Qt Quick and Brave
+clients at baseline and under two bounded CPU workers; Brave additionally runs
+8 ms of JavaScript work per animation frame. **4,353 paired presentations**
+pass buffer observation, hardware clock/completion, changed native screenshots
+and exact native geometry restoration. Maximum observed distinct content-epoch
+gaps are 25.001 ms for GTK4, 12.5 ms for Qt Quick and 16.668 ms for Brave across
+the tested cases. No observed content gap exceeds 33.4 ms. The latest submitted
+buffer epoch reaches presentation within at most 16.447 ms in these captures.
+
+The observer measures the latest surface-buffer epoch at output submission;
+it does not decode individual pixels or prove every application interaction is
+responsive. These geometry operations were direct compositor requests, rather
+than caption input trials. Only the current physical output/rate is covered.
+[Corrected report](/home/hoskinson/.cache/window-content-native-noinput/report.json)
+retains the initial analysis separately: an intentional settled pause between
+independent transitions was initially counted as an active geometry stall.
+The analyzer now ends a movement interval on reaching the goal, and two
+regression tests distinguish that pause from a real unchanged off-target
+60 ms freeze. Raw captures were retained; the previous 27 motion captures
+produce unchanged timing results under the corrected analysis.
+
+### Attention, application publishing and session identity
+
+The installed attention service selects the exact compositor signature, clears
+stale urgency on EOF and reconnects with bounded backoff. Actual Unix socket
+process checks and 15 taskbar backend checks pass. Snap Group persistence now
+rejects foreign compositor session tags and safely migrates legacy state only
+against current identities. Nine Quint scenarios and **10 installed-helper
+traces / 1,010 replay states** pass, alongside 40 existing desktop replay traces
+and seven adjacent-resize checks. Main compositor restart and physical hotplug
+are separate pending acceptance gates.
+
+An actual Brave download publishes count/progress updates from the browser PID
+through the main D-Bus receiver into live QML; completion and publisher exit
+clear state. The user-local `brave-browser` wrapper and desktop override include
+private libunity dependencies for future launches. The existing browser was
+preserved and will inherit this integration on its next normal restart.
+[Recovery summary](/home/hoskinson/window-integration-qa/recovery-audit/audit-summary.json)
+and [actual Brave/QML report](/home/hoskinson/window-integration-qa/recovery-audit/real-brave-main-qml-report.json)
+record isolation and compatibility limits. These checks do not establish
+application-specific unread counts or general proprietary application support.
+
+The subsequent [isolated restart report](/home/hoskinson/window-integration-qa/recovery-audit/isolated-restart-report.json)
+passes eight checks through two real private Wayland compositor instances:
+native group recording, same-instance reload with exact normal-rectangle
+hydration, foreign-session group clearing, no stale snap on a new client, and
+preservation of main client identities, accessibility connection, focus and
+cursor. Both disposable compositor/app sets and their private runtime were
+removed. This is actual nested compositor lifecycle evidence; the main desktop
+was not restarted and physical hotplug remains untested.
+
+`minimize_commit.qnt` adds a separate endpoint authority contract with eight
+passing scenarios and 2,000 invariant samples. Thirty generated traces replay
+**3,030 states / 13 event types against the installed controller**, including
+reenabling motion, readiness, stale completions, rapid activate requests,
+watchdog settlement, actual journal recovery and identity reuse. Two additional
+race events deliver readiness to a replacement PID/stable ID before the
+watchdog can remove the old request. Every step
+compares pending phase/intent, native minimized state, stable identity, pin and
+geometry and checks abandoned snapshots/journal cleanup. The compositor and
+renderer endpoints are deterministic adapters; controller source is loaded
+unchanged. [Replay report](minimize-commit-mbt-report.json) records its SHA256.
+This replay is included in `qa.sh`; its recorded controller hash matches the
+installed v14 whole-window service. The expanded installed-source suite now passes; see [summary](qa-summary.json).
+
+The installed Files launcher previously moved minimized clients directly and
+could toggle an unrelated special workspace closed. It now retargets minimized
+home state through `hypr-desktops` and restores through `hypr-windowctl`, passing
+both captured stable ID and PID and propagating rejection status. Legacy
+scratchpad recovery uses the backend without toggling unrelated views.
+[Eight isolated launcher checks](/home/hoskinson/window-integration-qa/test_files_summon.py)
+pass command ordering, retargeting, exact identity forwarding, invalid
+destination/identity rejection and absence of direct compositor dispatch.
+The existing Files launcher Quint contract passes 2,000 samples of 100 steps.
+The [native copied-app fixture](/home/hoskinson/.cache/window-files-summon-native.json)
+now passes ten checks, including actual pinned restore geometry, minimized
+state consumption, focus/identity and preservation of original window states.
+The original live Files MBT kills the explorer process and was not used against
+the user's existing explorer.
+
+### Compositor-delivered Orca commands
+
+The Qt-focused reader fixture now passes **17 checks using 13 actual key-driven
+Orca commands**, with a reader-process Legacy key-grab compatibility adapter.
+The original unfixed run exposed command leakage: Orca navigated while the
+same key moved the QML selection, or presented information while Return closed
+Task View. The adapter supplies GDK hardware keycodes missing from Orca's
+keysym-only Legacy grab definitions; command handlers and announcements remain
+the official reader implementation. It is opt-in, and the QA speech adapter
+remains silent. These are compositor-delivered virtual Wayland keyboard events,
+not a human-operated keyboard test.
+
+A separate **seven-check v62 activation regression** verifies active-app
+minimize, minimized semantic projection, exact restore/focus/geometry and
+raising an inactive app without minimizing it. User windows and catalog bytes
+are preserved. See [scoped keyboard evidence](/home/hoskinson/window-integration-qa/orca-reader/physical-commands/README.md).
+The strictly Wayland reader adapter subsequently passes the same 17 checks and
+13 commands without XKB restoration warnings. It uses the public device
+modifier mapping API with actual GDK hardware codes and unsets DISPLAY only
+inside the reader process. Focus, cursor, input options, physical devices,
+keyboard settings/locks and layer surfaces are restored; an ephemeral IME
+keyboard object was recreated during normal focus transitions. The supported
+[QA launcher](/home/hoskinson/window-integration-qa/orca-reader/run-orca-native-wayland)
+is private and silent; it is not a default system reader installation. The
+current compositor lacks the AT-SPI KeyboardMonitor service needed for global
+commands with non-AT-SPI clients. Neither global non-toolkit interception nor
+audible/braille use is accepted.
+
+### Deployed decorated-window minimize and restore
+
+The installed v14 native extension, `widget_v64` and three window helpers are
+paired. The native export captures client, titlebar, buttons, borders and
+shadows independently of occluding windows. A passive layer routes that whole
+image to the actual taskbar icon without changing the native client rectangle.
+Minimize commits after image readiness; restore commits at the endpoint.
+Identity/token guards, reduced-motion settlement, journal recovery and modal
+family focus decisions remain authoritative. Cross-screen and unsupported
+capture paths currently settle directly.
+
+The [17-check native snapshot report](/home/hoskinson/.cache/window-whole-snapshot-smoke-v14-edge/snapshot-smoke.json)
+checks caption pixels, exact client rows, occlusion independence, clipped
+output-edge decorations, rejection of spanning clients and stale identity/PID,
+alpha corners and preservation of the main desktop. Pixel cropping was fixed
+against actual GL framebuffer coordinates before deployment.
+
+Native Foot runs pass six paths each: minimize, restore, an interruption during
+an actually running tween, reversal cleanup, reduction during an actually
+running tween and direct reduced restore. Both ordinary and pinned windows
+retain exact geometry, identity, desktop and pin:
+[ordinary](/home/hoskinson/.cache/window-minimize-native-v14-active/motion-trial.json),
+[pinned](/home/hoskinson/.cache/window-minimize-native-v14-pinned/motion-trial.json).
+The separate [pixel replay](/home/hoskinson/.cache/window-minimize-native-v14-pixels/motion-trial.json)
+records real moving decorated-window images and screenshot capture latency.
+Readiness/progress assertions use observation without blocking screenshot work.
+The observer now additionally rejects reversal origins at either endpoint,
+even when the timing bound saturates. The first tighter native Qt trial fails its reversal-origin gate: replacement
+arrives after the previous endpoint. Original windows, focus and cursor are
+preserved. [Failure evidence](/home/hoskinson/.cache/window-minimize-native-v14-qt/motion-trial.json).
+The request delay is under repair before acceptance; the Qt/GTK, maximized and
+modal-family matrix remains pending.
+
+`whole_snapshot.qnt` adds six named scenarios and 2,000 invariant samples for
+complete frames, identity reuse, failed capture and cache pruning. It preserves
+minimized previews while removing closed identities. These checks describe the
+capture/cache contract; the actual native PNG and occlusion trials provide
+pixel evidence. Controller replay covers 3,030 installed states independently.
+The complete updated `qa.sh` run passes against the current installed sources;
+strict native reversal repair and its follow-up acceptance remain pending.
+
+The previous v62 client-only endpoint runs and the initial screenshot-blocked
+observer failure remain as historical evidence. They are superseded by the
+v14 whole-window captures and progress-gated native interruption checks.
+
+### Cross-display native file dragging
+
+The installed widget64 passes **11 acceptance assertions across eight paths**
+and **11 restoration checks** with a real GTK source, destination taskbar and
+temporary scaled second output. Direct drop, early leave, singleton dwell,
+group chooser, exact peer selection, Escape and removal during an open chooser
+are exercised. Three native `Gdk.FileList` drops each copy 262,166 bytes and
+verify the destination SHA256 against the original source. COPY never deletes
+source bytes. [Native report](/home/hoskinson/window-integration-qa/recovery-audit/cross-display/native-cross-display-report.json).
+
+Earlier runs exposed a fixture input issue: restore/focus warped the pointer
+to its requested position, so repeating the same absolute position generated
+no target-entry motion. Both drag source and receiver now require an actual
+entry move before button/drop. Those failed attempts are retained. Transient
+`Target not found.` diagnostic queries during widget ownership changes are
+recorded and retried; native input and transfers are real. Main client states,
+physical output, catalog bytes, focus, cursor and accessibility socket are
+preserved. The second output is headless; physical visibility and cable hotplug
+are not established by this run.
+
+### Attention instance selection and latest complete suite
+
+The absence of `HYPRLAND_INSTANCE_SIGNATURE` could select a newer event socket
+while querying another compositor, producing false urgency and clearing cache
+before ambiguity was resolved. The installed helper now resolves an explicit
+or unique instance before persistence and uses that same target for queries
+and reconnects. Six Quint scenarios and 2,000 samples, six installed-daemon
+selection tests and the existing EOF/reconnect/focus regression pass. The guarded main daemon restart is now complete: PID2850234 is bound to
+the verified main signature and has an active event socket. Seven preservation
+checks pass, including original clients/input/output/catalog/accessibility and
+LauncherEntry cache state.
+[Reproduction and deployment evidence](/home/hoskinson/window-integration-qa/recovery-audit/attention-selection/README.md).
+
+The first full expanded run passed its formal/backend gates but failed an audit
+bookkeeping assertion when an observer suite grew during development. The
+frozen installed-source runner now discovers the observer's actual test count
+while retaining fixed controller/core/socket/snapshot counts. The next full
+run exits zero: **40 Quint files, 144 named scenarios, 20 models × 2,000 samples,
+all included backend/replay/Lua fuzz checks, and 62 frozen motion Python tests
+plus actual QML functions and parser checks**. It loads the current installed
+whole-window helper, not the obsolete client-only candidate. This establishes
+bounded implementation checks; the separate strict native reversal failure
+remains explicitly open.
+
+### Compact Files native acceptance and reload preservation
+
+The responsive copied Files GUI passes **41 native checks**, including five
+requested sizes, half/quarter/third Snap and exact normal restore, actual
+compact New Folder/New File controls, filter/path/history, view/sort, sidebar,
+selection, details actions and preview. Native fractional scaling can round
+requested geometry by one pixel; requested and actual rectangles are both
+recorded. The [native report](/home/hoskinson/window-integration-qa/files-responsive/native-report.json)
+also verifies the original hidden explorer process/history/state, client
+geometry, focus/cursor/catalog, clipboard and primary selection hashes,
+physical keyboard state and accessibility flags. The copied app exits normally.
+
+Editing the original loaded QML would reconstruct its UI state despite keeping
+the same PID. Deployment therefore remains pending a tested reload migration
+that preserves navigation history, suppresses `FILES_OPEN=home` reinitialization
+and keeps the original launcher/IPC paths. The original file-operation scripts
+and their formal semantics remain untouched.
+
+The tighter Qt animation retry passes six native paths on the same installed
+helper, with first reversal origin at0.99761 of the previous route and only1.57
+pixels remaining. An earlier identical-version run failed the endpoint gate;
+that near-endpoint retry does not close the latency race. The staged reservation
+contract now requires freshly checked captured/current identity before terminal
+settlement and tests stale replacement/deadlines before the candidate is accepted.
+
+
+## Reversal freeze deployment: widget65
+
+The installed helper reserves a replacement before client/family metadata work,
+freezes the actual displayed rectangle, and reuses its exact pixels. QML stops
+its tween immediately for a local action; delayed begins cannot revive canceled
+identities, including still-live minimized clients and repeated daemon restarts.
+A third request retains the visible ancestor image while a replacement loads.
+
+The complete installed suite exits zero: **42 typechecked Quint files, 156 named
+scenarios, 21 models × 2,000 samples**, all backend/replay/Lua fuzz gates,
+**76 unique Python tests and 17 actual QML JavaScript scenarios**. The frozen
+offline runner additionally exercises its 12 named freeze scenarios/2,000 samples;
+these overlap the central freeze model and are not added to the central totals.
+Installed model-based commit replay passes 30 traces/3,030 states/13 event types.
+See [source-bound report](minimize-motion-stage/reversal-freeze/installed-offline-report.json)
+and [full suite summary](qa-summary.json).
+
+Each native trial below passes six paths, including both strict interior
+reversals, endpoint state preservation and interruption by reduced motion:
+
+| Native fixture | Evidence |
+| --- | --- |
+| Qt Quick | [Motion report](/home/hoskinson/.cache/window-minimize-freeze-qt/motion-trial.json) |
+| GTK4 | [Motion report](/home/hoskinson/.cache/window-minimize-freeze-gtk/motion-trial.json) |
+| Pinned Foot | [Motion report](/home/hoskinson/.cache/window-minimize-freeze-foot-pinned/motion-trial.json) |
+| Maximized Foot | [Motion report](/home/hoskinson/.cache/window-minimize-freeze-foot-maximized/motion-trial.json) |
+
+Qt's two acknowledged frozen origins are at 28.75% and 28.19% progress,
+468.27 and 135.71 pixels from their old endpoints. The freeze acknowledgement
+precedes metadata queries; the next tween starts at that exact acknowledged
+rectangle with unchanged image and identity. Original clients, geometry, pin
+flags, maximization, focus and cursor are preserved by each fixture's cleanup
+report. This supersedes the earlier late/failed Qt observations without removing
+their evidence.
+
+The first modal-family run failed before animation because its setup directly
+pinned only the owner but demanded all child pin bits be true. The corrected
+fixture verifies exact native family identity, owner pin and unchanged individual
+peer bits. The failed run is retained; corrected native acceptance remains open.
+Cross-output, spanning and transformed animation routes remain direct fallback.
+
+
+### Corrected family reversal counterexample
+
+The corrected fixture passes exact native-family identity and pin setup, then
+fails `latest rapid minimize intent lost`. Its final nested dialog is minimized
+while the child and pinned owner stay visible. This is a product race under
+repair, independently of the earlier fixture assertion. Original clients, focus
+and cursor restore successfully. [Failed native report](/home/hoskinson/.cache/window-minimize-freeze-family-pinned-corrected/motion-trial.json).
+
+
+## Responsive Files installed and central QA expanded
+
+The frozen responsive candidate is installed in the original hidden Files
+process, preserving public state/history and idle hidden pre-map initialization.
+The file-operation scripts and fileops Quint spec are unchanged. See
+[deployment evidence](/home/hoskinson/window-integration-qa/files-responsive/deployment-report.json)
+and [scope and native layout/reload evidence](/home/hoskinson/window-integration-qa/files-responsive/REPORT.md).
+The seven responsive-layout scenarios join the central suite; 2,000 samples
+with up to 100 steps pass at seed20260930. The complete updated suite exits zero:
+**44 typechecked files, 163 named scenarios, 22models/44,000 sampled traces**
+plus the installed backend/replay/fuzz and frozen76Python/17QML gates.
+This does not close the modal-family rapid-intent counterexample or Files
+keyboard/screen-reader completeness.
+
+
+## Atomic family acceptance: installed helper 836
+
+The old accepted restore could finish between a family relation snapshot and
+reservation of the owner. A later minimize then mistook the stale minimized
+snapshot for a completed endpoint and skipped the visible owner. Native helper
+143e did not fix this; its failed replay remains preserved.
+
+The new contract refreshes every captured member's exact ID/PID under the
+callback lock and reserves the entire family before any peer freeze or
+preparation. An identity reuse rejects the new scope. Cleanup now cancels current
+pixels first, deduplicates token/identity pairs, and keeps the pending record until
+all cancellation attempts finish. A bounded diagnostic ledger records plans,
+commits and cancellations.
+
+- Installed helper SHA: `83609014a0a860c5d1e6228c8a8aa64799e5df9e35365e95d75daee1c12a653a`.
+- Deployment: six original-state gates passed, widget65/core/frontend unchanged.
+- Frozen candidate: 105 Python checks, 17 actual QML scenarios, 12 freeze/eight family-scope/four ordering Quint scenarios; 2,000 samples per model.
+- Strict pinned owner/child/nested fixture: six paths PASS, two interior reversals, latest third intent and reduced interruption PASS; each member's geometry/pin/max state preserved.
+- Fresh Qt regression: six paths, interior reversal and reduced interruption PASS.
+- Both native fixtures restored original clients, focus and cursor.
+- Native reports: [family](/home/hoskinson/.cache/window-minimize-family-reservation-native/motion-trial.json), [family cleanup](/home/hoskinson/.cache/window-minimize-family-reservation-native/fixture-cleanup.json), [Qt](/home/hoskinson/.cache/window-minimize-family-reservation-qt/motion-trial.json).
+- Previous failed 143e replay: [counterexample](/home/hoskinson/.cache/window-minimize-family-native-143e/motion-trial.json).
+
+The family race is closed for these bounded cases. Visual preparation still
+pauses a reversal, and cross-output/spanning/transformed routes still use direct
+settling; neither is claimed smooth or complete.
+
+The expanded central installed-source run completed with exit 0: 48 typechecked files, 175 named scenarios, 24 models ×2,000 samples (seed20260930), backend/model-based replay, Lua fuzz and 105 Python/17 QML motion checks. [Log](qa-run-family-reservation-v65.log). Native smoothness and accessibility gaps above remain open.
+
+
+## Private KeyboardMonitor v5 native checkpoint
+
+The exact-ABI candidate remains unloaded on the main compositor. First isolated
+attempt failed the fixture's Python GVariant parser before command input; its
+catalog-byte preservation gate also failed. The fixture did not retain its
+before bytes, so that exact difference cannot be reconstructed; later session-order
+bytes match a previously accepted hash. The attempt remains failed and retained.
+
+The corrected private attempt2 passed eight checks: passive ordinary typing,
+compositor shortcut, official Orca DeviceA11yManager, actual virtual-keyboard
+Insert+h learn mode on non-AT-SPI Foot, exact consumed command bytes and ordinary
+post-command typing. The host wtype path failed: wtype's synthetic scancodes1/2
+were interpreted as Escape/1 by the nested Aquamarine backend/configured US map.
+Source indicates this backend does not receive the host keymap; a preplugin
+baseline and stable evdev-code host trial are being prepared to distinguish this
+fixture limitation from bridge correctness. The host-path requirement is open.
+
+PrepareUnload was quiescent, the private plugin unloaded, and all11 original-state
+restoration gates passed, including exact four catalog files and accessibility
+socket inode91312. No main plugin/settings/autostart change was made. Both failed
+attempts are retained under `recovery-audit/keyboard-monitor/native-attempt-1/`
+and `native-attempt-2/`. No hardware, audible speech or general keymap/native
+policy compatibility claim follows from the virtual command result.
+
+
+## Installed guarded stop: helper 6d9
+
+The current helper is `6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa`.
+Only its guarded idle stop and CLI branch changed; the Desktop/Controller prefix
+is byte-identical to accepted836. Deployment preserved six state/source gates.
+Installed-source replay passes112 Python checks,17 actual QML checks and the four
+stop scenarios/2,000 samples, along with freeze/family/order model regressions.
+The actual main-session actor test passes seven lifecycle checks plus five
+preservation gates: idle stop never starts an actor, exact read-only daemon starts,
+shutdown exits normally and removes its PID/socket, and repeated idle stop succeeds.
+No window request or GUI input was sent. [Incremental record](qa-increment-stop-836.json).
+
+The previous full central48/175/48,000 result remains scoped to836. `qa.sh` now
+includes stop's two files/four scenarios and the current112-check runner, for an
+expected50 files/179 scenarios/25 models; a full run of that expanded script has
+not been claimed.
+
+## Private global keyboard command: accepted native attempt3
+
+The unchanged private v5 library passes15 actual native checks plus12 exact
+main-state restoration gates. Official Orca on non-AT-SPI Foot enters learn mode
+from both private virtual input and stable US host input through CKeyboard before
+its XKB update. Exact paired down/up packets are118/43 with keysyms65379/104, and
+all command bytes are consumed. Ordinary typing, default passive behavior,
+compositor shortcuts, quiescent unload and post-unload typing pass.
+
+The pre-plugin host wtype baseline produces Escape (`1b`) for expected x (`78`),
+establishing the nested Aquamarine host keymap mismatch independently of the
+bridge. That false baseline is retained separately. The successful bridge paths
+use stable US evdev codes; physical hardware, other keymaps and the wider
+permission/IME/repeat/disconnect matrix remain open. All fixtures exited, the
+main reader remains disabled, and no main plugin or service was installed.
+[Report](/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/native-attempt-3/native-host-report.json).
+
+## Canonical atlas v15: rejected native candidate
+
+The isolated nested trial failed client offset/inset, legacy compatibility,
+all16 transform/scale cases and gap-pixel gates. Server caption/client rendering
+retains native offsets inside the atlas-sized framebuffer. Successful capture
+metadata did not establish complete pixels; fullscreen/no-caption, occlusion,
+ID/PID/epoch rejection and unload gates passed. All12 original desktop restoration
+gates passed. V15 was never loaded into the main compositor.
+
+The executed runner was160b, which included additional epoch/compatibility/
+fullscreen checks added just before the root freeze message; the root review
+label had been e709. This coordination mismatch is explicit in the frozen
+[source provenance](/home/hoskinson/.cache/window-atlas-v15-nested/source-provenance.json).
+The failed source, pixel captures and [report](/home/hoskinson/.cache/window-atlas-v15-nested/snapshot-smoke.json)
+remain unchanged for the next correction; no acceptance result is inferred.
+
+### Private keyboard policy fixture: first wider trial
+
+The frozen unchanged v5 private bridge passed 34 assertions, including actual
+Orca terminal commands, Shift/Caps/Num packet state, selected/full/custom grabs,
+Caps double tap, repeat/disconnect/device cleanup, US-to-Dvorak replacement and
+modifier-only rebuild. The next permission-denial assertion failed. All 12 main
+desktop preservation checks passed, the private compositor exited and its runtime
+was removed. Evidence is retained in
+`../window-integration-qa/recovery-audit/keyboard-monitor/native-policy-attempt-1/`.
+
+Exact core source review found that `hl.permission` adds rules only on first
+launch (`LuaBindingsConfigRules.cpp`, lines 618–619). This fixture's reload never
+changed permission policy. The failed assertion therefore establishes a fixture
+assumption error, rather than a bridge revocation defect. A startup denial rule
+and actual enforcement/input refresh transition will exercise the remaining gate.
+No broad policy pass or main deployment is claimed.
+
+### Provisional route visible-origin counterexamples
+
+Root independently exercised the staged `GlobalRoute.js` at SHA256
+`38ef458ac516b21e18e133f6ebd1ab9b14d5ce11bf85e5f44d9aea35c0d346d6`.
+After a tick with no presentation, reserve chose the computed rectangle rather
+than the displayed rectangle. With two outputs at different presented frames,
+one shared origin matched only one output. The reserve API also accepted a token
+with an extra suffix. The source and reproducible root probe are retained; the
+prototype remains undeployed. The corrected contract requires actual per-output
+handoff evidence, a shared progress clock and full token validation before
+QML/service integration. This metadata contract still requires native pixel and
+presentation proof. See
+`../window-integration-qa/provisional-route-visible-origin-report.json`.
+
+### Current installed-source central suite: helper 6d9
+
+`qa.sh` exited 0. The full run passes 50 typechecked Quint files, 179 named
+scenarios and 50,000 samples across 25 models, seed 20260930. Backend model-based
+replay, 13,000 Lua snap geometry checks, 4,000 pin operations, installed controller
+checks, 112 frozen motion Python checks and 17 actual QML scenarios pass.
+The motion helper, attention helper, widget QML, central models and QA script
+retain identical hashes from before to after the run.
+
+The before/after manifests are `qa-stop-836-source-before.json` and
+`qa-stop-836-source-after.json`; `qa-summary.json` identifies the exact installed
+sources and `qa-run-stop-836.log` retains the full output. The earlier helper 836
+summary remains in `qa-summary-family-reservation-v65.json`. Candidate atlas,
+provisional motion, new Files accessibility and broader reader policy tests are
+separate pending gates and are not implied by this central pass.
+
+### Corrected wider private keyboard policy: attempt 2 accepted
+
+The corrected startup-deny/enforcement-toggle fixture passed 51 native assertions
+and all 12 main preservation gates. Source hashes remained unchanged. Actual
+enforcement false → true → false is recorded; denial blocks fresh typing and
+silently drains a previously captured repeat/release. Device disable, real
+same-client IME transitions, two-device retirement, disconnect, keymap and
+modifier-only replacements, raw lock batching and refused/quiescent unload are
+separate passing checks. The private compositor exited and its runtime was removed.
+
+Retained report:
+`../window-integration-qa/recovery-audit/keyboard-monitor/native-policy-attempt-2/native-policy-report.json`,
+SHA256 `3e5b109c20095bbbe5b955f5595c70229c660ff02846331b262bc9572fe212cd`.
+The failed first fixture is retained. Main deployment, startup adoption, irreversible
+retirement, pointer-manager integration and physical hardware remain open.
+
+### Per-output provisional origin repair: root replay
+
+Root replay against staged source SHA256
+`519f5f117153c88e123d11f28029712f7fec9a8eae03d90d5f7afd57494e8449`
+confirms that an unpresented tick cannot advance the reversal origin, asynchronous
+outputs retain their own observed origins and the extra token suffix is refused.
+All four probe checks pass; native presentation is explicitly unproved. The
+prototype now requires drained old submissions and observed records before
+handoff, with output-specific origins and a shared progress clock. Actual
+QML/service integration, pixel continuity and cadence remain acceptance gates.
+Evidence: `../window-integration-qa/provisional-origin-repair-report.json`.
+
+### Atlas v16: pixels pass; normal-frame controls still gate acceptance
+
+The first v16 run passes actual caption/client pixels, edges, spanning windows,
+display gaps, fullscreen, alpha, occlusion independence and identity guards.
+Its full-frame restoration checks fail alongside changing uncaptured controls.
+The moving startup warning is retained in the evidence; this run cannot prove
+renderer restoration. All 12 main preservation gates pass.
+
+The fresh controlled run disables that warning only in its private compositor
+and requires three identical complete RGBA frames before each capture. Scale 1
+passes actual pixels, unchanged normal frames and equality after the occluded
+export. The run then stops before the fractional-scale capture: requesting 1.5
+with a 1000×760 mode produces a separate moving invalid-scale warning and an
+effective 1.6 scale. A valid test mode and exact actual-scale assertions are being
+prepared. No atlas candidate is deployed.
+
+Controlled evidence: `~/.cache/window-atlas-v16-controlled-nested/snapshot-smoke.json`
+(SHA256 `06c25ed09bf50acc6b095d3f0e5b15f61b7877e1c057c3902afeadb276a4ba41`).
+All 12 main preservation gates pass. `root-completion.json` verifies all 27 frozen
+source/library/dependency hashes were unchanged. The earlier evidence remains in
+`~/.cache/window-atlas-v16-nested/`.
+
+The subsequent exact-mode runner uses 960×720 and asserts the actual scale and
+transform. All 16 trials pass actual atlas pixels, stable normal controls and
+full-frame equality after the first capture. Nine also pass equality after the
+occluded export; seven scale-1 transformed trials fail that final gate. All
+differences are confined to the cover window's caption: its previously larger
+glyphs become smaller after moving/resizing it. Source review finds that the
+caption texture cache does not include monitor scale. That is the current cause
+hypothesis; a no-capture control and a fresh cache repair are required. Full
+acceptance remains incomplete, and v16 remains undeployed.
+
+Exact-mode evidence: `~/.cache/window-atlas-v16-exactmode-nested/snapshot-smoke.json`
+(SHA256 `0155c591787bc8630b64aef9a580ce2b7ea6742f73f2e534235d8430df47c5aa`).
+All 12 main preservation gates pass; all sources match the frozen preflight.
+`after-occlusion-differences.json` retains complete RGBA comparison counts and
+bounding boxes, without masking any pixels.
+
+Fresh v17 passes 46 checks: 34 feature checks and all 12 main preservation
+gates. All 16 exact transform/scale trials pass atlas pixels, stable normal
+controls, equality after the first capture and equality after the occluded
+export. Two no-capture scale/resize/return controls also pass with unchanged
+geometry and focus. Caption rasters now include the effective scale/configuration
+in their cache key; button rasters belong to each decoration. Export restores
+normal raster references and flags. The cache model passes eight scenarios and
+2,000 samples; actual C++ cache/scope checks pass 38 cases.
+
+Evidence: `~/.cache/window-atlas-v17-nested/snapshot-smoke.json`, SHA256
+`0379f17116ea624926aa631b56b99418a23e7c4d369fac8901f7535c63f63894`.
+All 33 build/execution dependencies match their frozen hashes. This is private
+native acceptance; main-style effects/regressions and deployment remain gated.
+The v17 no-capture cases are positive controls, not a separately executed v16
+no-capture counterexample. Earlier v16 failures remain retained.
+
+### PointerLocator: formal-first staged contract
+
+The independent PointerLocator stage passes 11 named scenarios and 2,000 samples
+of 100 steps, seed 20260930. The actual C++ state helper builds with warnings as
+errors and its assertions pass. Owner epochs, directed one-shot motion signals,
+coalescing, unauthorized queries, unknown targets and irreversible retirement
+are covered. This stage has no native integration. Actual hovered geometry,
+exact accessible toplevel mapping and official reader pointer navigation remain
+required gates; PID-only multi-window targeting is insufficient.
+
+Evidence: `../window-integration-qa/pointer-locator/stage-report.json`.
+
+Model-based replay also passes 41 retained traces (11 named and 30 randomized),
+covering 3,066 actual C++ helper transitions. Every transition compares pending
+counts, query authorization, exact directed recipients/epochs and quarter-unit
+relative coordinates against the model. This tests the staged helper itself;
+compositor hit testing and DBus/reader integration remain unproved.
+Evidence: `../window-integration-qa/pointer-locator/replay-report.json`.
+
+### Private reader lifecycle: guarded v6a accepted
+
+The fresh private native run passes 35 acceptance checks and all 14 preservation
+gates. Actual Orca starts before the manager in Legacy, transitions through the
+public factory, and reconnects across two real service unload/load cycles. Owner
+churn overlaps startup adoption. Native paired Insert+h and h packets agree with
+real reader learn-mode actions and suppressed Foot bytes. Held keys and dirty
+Caps/Num correction refuse unload without deleting subscriptions; reconciliation
+allows retirement. All five subscription methods reject the retired service.
+The 219 command definitions/active/suspended states and requested learn full grab
+survive restart. One surviving virtual keyboard retains accepted Caps/Num state
+and produces uppercase bytes before and after reload.
+
+Report: `../window-integration-qa/recovery-audit/keyboard-monitor/native-lifecycle-attempt-1/native-lifecycle-report.json`,
+SHA256 `7f379553522031cabe4ba192dfc056389ad66d8c79a496965ccdc6ffa4b5b0c3`.
+All 33 stage/external dependency hashes remain unchanged. The original hidden
+Files process/state, complete stable client set including monitor, keyboards,
+plugins, focus/cursor, accessibility socket/disabled reader, four catalog bytes,
+outputs and config state are preserved. All private fixtures exit.
+
+Private Registry activation warnings and a reader shutdown deregistration
+traceback are retained in the logs. Physical hardware/general keymap behavior,
+main deployment, production maintenance packaging and PointerLocator integration
+remain separate gates.
+
+### Files revised native runner: prelaunch failure retained
+
+The first revised broad reader attempt fails before launching any fixture or
+reader or changing accessibility flags: a Path variable shadows the imported
+socket module in the preservation observation. Its private attempt/backups and
+failure artifact are retained; all 344 frozen input hashes are unchanged.
+No broad native success is claimed.
+
+Separately, actual offscreen V5 editable-interface probes execute 88 calls and
+observe 46 unauthorized changes through editable text, selection/cursor and
+Value setters while hidden, disabled or behind a prompt. A destroyed peer is
+defunct; a retained editable interface can still edit after a read-only change.
+Fresh native guards and an amended formal contract are required before deployment.
+Evidence: `../window-integration-qa/files-keyboard/guard-stage/editable-probe-v5/report.json`.
+
+### Files V6 native attempt: Rename observation and selection diagnosis
+
+Fresh V6 adds editable-interface guards and passes 90 actual offscreen outcome
+gates over 88 calls, 58 keyboard regressions, and 12 named authority scenarios
+with 2,000 samples at 100 steps. The broad copied-Files actual Orca attempt stops
+after seven checks at `Orca focus Rename`; it is not a deployment acceptance.
+The reader debug/speech records the actual Rename input. The observation adapter
+uses the wrong public Atspi Text call, raising TypeError. A separate arrow path
+appears to leave selection behind the focused row and is being investigated.
+
+Report: `../window-integration-qa/files-keyboard/editable-stage-v6/native-review3/attempt-1/native-reader-report.json`,
+SHA256 `0c4a778da04fcb7e71af40cce677ff29044d355eb176c8123570d9d857d5994d`.
+The exact manifest remains
+`85973ab5ff91842da4efbe7d86f9242be2141750371dd9d588f5de9c2043c6e7`;
+all 349 inputs are unchanged. Both owned fixtures exit without forced kill.
+23 of 24 preservation gates pass, including all four catalog bytes, original
+hidden Files/full UI/PID/start, input/accessibility/output/plugin state,
+focus/cursor and clipboard. One original terminal title differs; its hashed
+field difference is retained. No title restoration or preservation override was
+performed.
+
+### Mouse-review explicit intent counterexample
+
+The fresh private Omarchy Orca compat stage fixes the official AT-SPI active flag
+and adds a public device refresh method. Root replay of the actual extracted
+methods exposes another bug: enable, lose backend, disable, recover reactivates
+mouse review because the disable request was refused during loss. The existing
+model also froze requested intent while incapable. A fresh contract/model repair
+must preserve explicit setting changes independently of backend availability.
+Evidence: `../window-integration-qa/mouse-review-disable-loss-counterexample.json`.
+This is an offline source counterexample; native integration is pending.
+
+Fresh mouse-review v2 passes 12 formal scenarios / 2,000 samples and 14 actual
+source-method tests. Root independently replays disable during loss, disable
+while temporarily inactive, and toggle cancellation during loss against the
+actual changed methods. All three retain a false request after backend return.
+Evidence: `../window-integration-qa/mouse-review-v2-root-intent-replay.json`.
+Native pointer/service integration remains pending.
+
+### Atlas v18 styled/native controls attempt
+
+The fresh v18 adds explicit unsupported blurred-caption rejection and scopes
+surface-feedback blocking across fake rendering. The native run passes 58 of
+59 checks: all 16 exact scale/transform full-pixel and normal-frame cases,
+two controls without capture, styled shadow and exact normal restoration,
+blur rejection without artifact/native change, installed Snap/restore and pin,
+private virtual-pointer caption drag, exact modal relation/focus and pinned
+family workspace following. All 12 main-session preservation checks pass.
+
+The sole failed gate is the new glyph classifier: it expects RGB below 80 for
+the square and pushpin. Actual PNG inspection confirms the antialiased square
+and colored emoji are visible. Retained pixel metrics show square foreground
+values at 107/142/112 and a red pin at 244/67/54. A fresh classifier must verify
+contrast/colored glyph pixels; the failed report is not rewritten.
+
+Report: `~/.cache/window-atlas-v18-styled-nested/snapshot-smoke.json`, SHA256
+`00b573d3e7db4af406bb251a92894fbc8d9c9eabc1970948d76b3e58e9ee2642`.
+All 43 executed inputs and manifest
+`7189c22e52e13bf00de271b243f7b9f268c3df502d3c892fb0c23f424fa8aa0e`
+remain unchanged and are copied to frozen evidence. The GUI slot is released.
+No main deployment or translucent-client backdrop-blur equivalence is claimed.
+
+The corrected fixture keeps all prior gates and recognizes interior glyph
+contrast and the colored pin. It passes all 59 checks (47 feature and 12
+preservation). All 46 inputs are unchanged and frozen. Report:
+`~/.cache/window-atlas-v18-styled-v2-nested/snapshot-smoke.json`, SHA256
+`fc43088f5c643533346b01f4d3bdbf18c9aa7cf4629074c69993821338cb4883`.
+
+### Guarded native v18 deployment
+
+The main desktop now loads fresh `libhyprbars-controls-v18.so`, SHA256
+`908f134af0fc266d4b4e982c35b3cbd125659d1585584c23f31511b008282eba`.
+The original v14 library is retained. Autostart changes only its library path;
+helpers, widget65 and Files sources/scripts remain byte-identical. All 18
+deployment/preservation gates pass, including complete stable client fields,
+original hidden Files/PID/start/full UI, outputs/input/accessibility state,
+focus/cursor, four catalog bytes, other plugins and autostart permissions.
+App-owned current title hashes are separate telemetry; the original Codex
+terminal animates its title. They happen to match in this successful attempt.
+
+Report: `../window-integration-qa/atlas-deployment-v18-v2/deployment.json`, SHA256
+`30e02afe8ffe9b4c9b7eaec0fb2a526ad2a093f1e12b5e45a2c4876f50cf46b2`.
+The earlier runner failed while parsing silent successful idle-stop stdout,
+before any compositor mutation. Its original desktop/product state is verified
+unchanged and its executed script/report remain frozen. The fresh runner checks
+the CLI exit status and records every rollback step on failure.
+
+Integrated installed-source QA passes with the two atlas models added:
+54 Quint files, 190 named scenarios and 27 models / 54,000 samples at seed
+20260930, alongside backend fuzz/replay, 112 Python and 17 actual QML checks,
+72 actual coordinate C++ cases and 38 caption/icon cache C++ checks. All 82
+source hashes are unchanged between `qa-v18-source-before.json` and
+`qa-v18-source-after.json`. Output: `qa-run-v18-integrated.log`; exit code 0.
+The earlier 50-file run and its source evidence remain retained.
+
+### Files V7 broad native attempt: retained failure
+
+The frozen review4 attempt passed22 feature gates, including real Down-selected file agreement, exact F2 payload, prompt Tab trapping, Sort actions, gallery directory activation and tree branch state change. Exact ObjectNavigator navigation to the tree row then failed; later Home/media/recent/storage/details/rename coverage was not reached. The258 command acknowledgments are transport observations and do not add feature acceptance gates. All25 preservation gates passed and all365 frozen sources remained unchanged. Reader and copied Files exited without forced kill. Root independently verified the terminal report, sources and absent owned processes. No Files deployment follows this failed attempt. Offline diagnosis is comparing the actual row/child hierarchy against the fixture traversal sequence.
+
+[Native report](/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review4/attempt-1/native-reader-report.json), [root completion](/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review4/attempt-1/root-completion.json).
+
+### Files V7 review5: tree fixed in fixture; recent action incomplete
+
+The unchanged product passed31 completed feature gates, including the actual tree-row action and Home collection/pinned/media actions. The recent-file opener wait then failed before storage/details/rename coverage. All25 preservation gates and370 source hashes passed; root verified the owned processes exited. The183 command acknowledgments are recorded separately. Actual recent/media peers sharing a name are under offline observation diagnosis. This remains a failed broad attempt, with no deployment.
+
+[Retained report](/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review5/attempt-1/native-reader-report.json).
+
+### PointerLocator V7 native attempt1: retained IPC-precision failure
+
+Twelve reached gates passed, including actual held-key capability refusal, suppressed real Foot bytes, same-device ownership/capability negotiation, and initial query arming. The next check compared fractional requested coordinates against hyprctl cursorpos, which the exact installed compositor source explicitly floors; one-shot pending0 was observed, but official callback rearming and later GTK/reader gates were not reached. All14 main preservation gates and237 frozen input hashes passed; root confirmed private compositor/runtime removal. Failed-attempt cleanup also ended the private bus before PrepareUnload; this did not prove normal API unload, and no forced API unload occurred. Fresh fixture precision and infrastructure cleanup changes are required before another authorized trial. No main plugin deployment.
+
+[Retained report](/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v7/native-pointer-attempt-1/native-pointer-report.json), [exact cursorPosRequest source](https://raw.githubusercontent.com/hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f/src/debug/HyprCtl.cpp).
+
+### PointerLocator V7b attempt2: official callback/reconnect passed; hover setup failed
+
+Twenty-three reached checks passed, including both real early cursor motions consumed0 followed by the official libatspi callback rearming1, normal initial retirement, actual Legacy-to-Manager reader recovery and actual GTK AX identities. Focusing peerB then warped the cursor to its center; QueryPointer returned B with180,120, so the fixture did not establish independent hoverA/focusB. Exact compositor Actions::focus source confirms warpCursor. All14 preservation gates and241 frozen source hashes passed; failed-attempt cleanup now proved PrepareUnload true and normal unload ok before infrastructure shutdown. Private compositor/runtime were removed. The fresh fixture must focusB then move the real pointerA and assert both states before querying; no mapper bug or full pointer acceptance is claimed.
+
+[Retained report](/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v7b/native-pointer-attempt-2/native-pointer-report.json).
+
+### Pointer owner replacement remains under causal investigation
+
+Private V7c attempt3 passed29 reached gates: independent keyboard-focus/hover setup, typed fractional coordinates, actual same-pixel fractional motion, directed one shot, no unsolicited repeat and repeated-query coalescing. Registration replacement then failed. All14 preservation gates and244 frozen input hashes passed; normal quiescent unload succeeded. Raw wire versus delayed client-callback telemetry was absent, so the exact cause remains unresolved. An unchanged-source C++ scheduler replay demonstrates a possible cached-epoch emission before the5ms owner poll; this is a source counterexample, not native causal classification. A separate queued-owner/deferred-notification integration contract and causal fixture are being prepared.
+
+[Attempt3](/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-v7c/native-pointer-attempt-3/native-pointer-report.json), [source replay](/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-owner-audit/source-counterexample-report.json).
+
+### Files review7: actual recent action and backend rename observed
+
+The unchanged candidate passed41 completed feature gates, including exact recent ListItem/opener, storage, details, context menu, edited native text, WhereAmI and exact Rename accept peer. The final file transition wait failed because it hardcoded alpha as source, while the actual backend renamed image.svg to reader-renamed.txt. Root confirmed the sandbox file transition; retained source/destination hashes show byte preservation. Selection/focus/F2-payload coherence was not captured at this final operation, so fresh exact source capture is required before broad acceptance. All25 preservation gates and380 inputs passed; fixtures exited. No deployment.
+
+[Attempt](/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review7/attempt-1/native-reader-report.json).
+
+### Owned GPU producer V2 native rejection retained
+
+The first private native smoke refused the runtime EGL backend before outputs/readiness/source upload. No pixels, cadence or reversal acceptance is claimed. All74 frozen inputs and12 preservation gates passed. Actual runtime GL strings were not emitted before refusal. Official Arch package provenance identifies Mesa26.2.2-arch1.1, but actual runtime classification requires a fresh diagnostic-bearing candidate. A separate exact distro-release allowance requires source/archive/package/runtime hash evidence; generic prefix acceptance remains rejected.
+
+[Retained smoke](/home/hoskinson/.cache/window-owned-egl-private-v2/snapshot-smoke.json).
+
+### Files V7 exact captured rename coherence: review8 accepted
+
+The fresh frozen review8 actual reader run passes all48 feature gates and359 command acknowledgements, with all25 original-preservation gates. Native activeFocusItem, reader peer, full/public selection and F2 payload all refer to the existing image.svg under modified-descending sort. The real unchanged backend renames it and retains all115 original bytes (SHA90225a0f), with the source absent. All383 frozen plus executed-profile hashes remain unchanged; both fixtures exit without forced kill. Report SHA21c83ac52507a730fe3385a7bb42f8333ce0fd3a782baee7d496afac88549530. Original hidden Files667402 remains unchanged; durableURLreload and production migration are still pending. Prior hardcoded-alpha failure remains retained.
+
+### Owned EGL v3: actual Intel renderer; mapped material refusal
+
+The fresh v3 private attempt observes Mesa Project / Intel(R) Graphics (ARL) / OpenGL ES3.2 Mesa26.2.2-arch1.1. Its exact mapped-library material guard returnsfalse, so no output readiness, source upload or animation authority is granted. All83 inputs stay frozen and all12 main-preservation gates pass, including original hiddenFiles and disabled reader. Cleanup unload is normal. Report SHA1ab4c93b47a009ad5d21abd42eae814bce8857a5db101d051681d683892a1a09. This is retained rejected evidence, with no pixel/cadence/reversal claim; a fresh diagnostic candidate is required.
+
+### Pointer v7d actual owner signal race confirmed
+
+The unchanged candidate reproduces the same failed registration-replacement gate after29 passing feature gates. All14 main-preservation and261 source-hash checks pass; PrepareUnload returns true and normal unload returnsok, with private compositor/runtime independently gone. Actual independent client wire telemetry records owner loss, same-connection reclaim and successful reclaim reply before fresh directed PointerPositionChanged serial33. Its callback refers to this same new packet; no new A QueryPointer occurs between loss and emission. The private daemon monitor independently records the same order at lines4103–4120. This is an actual obsolete registration notification, rather than earlier callback backlog. Report SHA1bf5f0237224170e98891a3a5f0136d3da09be19d9aea4cb01ef65ed91dc09c3; root-causal-classification.json retains exact headers and file hashes. A formal-first bounded deferred owner-authority fence repair is in progress; root pureState and production desktop are unchanged.
+
+### Durable Files native reload first transition accepted; repeated fixture trigger rejected
+
+Fresh user-owned nativeURLassets are installed with exact acceptedV6 SO bytes; original Files remains unchanged. Offscreen baseline cannot parse PanelWindow, exits255 and never reaches a feature gate; this fixture-platform rejection is retained. The exact supported Wayland copied first transition passes12 reached feature gates, including durable SO actual mapping, samePID/start/instance, hidden premap initialization, exact full/public Home/history and15 productionQML bytes. The copied rich snapshot holds actual prompt/selection/clipboard. Rewriting the same candidate bytes does not cause a second source-watcher reload: the local Quickshell scanner compares contentMD5, so the explicit completion gate times out. All21 preservation gates and493 frozen inputs pass; owned fixture exits normally and is independently gone. Native report SHA5ee2b2d93c3dc1f46bc96a691a919dcce5a18feb937ff7069275f395a24b9644. A fresh isolated real reload trigger is required for the rich-state gate; no original-process deployment occurs from this partial proof.
+
+### Files V7 durable reload and original deployment accepted
+
+Fresh copied review2 adds a declared uninstantiated source-watcher witness to induce the second real reload; actual product QML stays exact. All20 feature and21 preservation gates pass, including samePID/start/instance, hidden premap/full Home/history/public state, actual durableSO load and rich pending prompt/selection/clipboard persistence. All599 frozen and executedproduct hashes remain exact, and the fixture exits normally. Report SHA3e928800f3240e000254762223bbcfc220b7b78c4fefe1f38613e61206275f08. Witness is never installed in production.
+
+Guarded original deployment passes all7 deployment and15 preservation gates. Original Files667402/start1275224/instanceyyaefmu6mt remains hidden with the exact prior public/history/preferences/fullUI, plus the explicit new empty focusIdentity. Fifteen accepted QML files and the fresh durableV6 nativeURL are installed; operations/scripts/fileops spec remain byte-identical. Original clients/focus/cursor/layers/catalogs/clipboard/outputs/plugins/input/accessibility/disabledreader stay exact. Backups are retained at durable-reload-review2/deployment-attempt-1/backup. Report SHA1e54e5683971ad8de60ce636c5601d508eea4fde4f9a1bc20546604d2bcf5601. Central installed-source QA will be freshly integrated for this new deployment; oldv18 QA remains historical accepted evidence.
+
+### Owned EGL v4 material/idle/pixel/lifecycle accepted; cadence failure retained
+
+Same-domain kernel mapped-library proof accepts the actual installed Intel Mesa library hashes/inodes/buildIDs, including Btrfs device semantics. The private run passes23 of24 gates: idle transparent commits stay exactly2; representative client/titlebar pixels appear; bothoutput retargets use exact interior presented origins; metadata-unvalidated motion has no native authority; one immutable texture upload remains across rapidintent; cancel/removal destroy ownedlayers; geometry andnormalexit remain exact. All87 inputs and12 main-preservation checks pass, with cleanupUnloadok. The cadence gate fails genuine activepresentation gaps:54.016ms onWAYLAND1 and61.296ms onSECOND, both during first token movingprogress. This is not static capture or client callback backlog; affectedframes were submitted promptly but presentationfeedback delayed. Root report retains exact frame pairs and alltimestamps. Source/cause investigation remains open; no relaxedthreshold/warmup omission is accepted. Native report SHA664845468c07dcaf0e9cbe3e3dd1447dab9bb2ef32aa07d675fda7a78648aaf5. Fullraster/service/family/physical240 integration remains pending.
+
+
+## Installed v18 and Files V7 central QA
+
+Root run `qa-run-v18-files-v7-integrated.log` exits0:58 typechecked Quint files,231 named cases,29 models ×2,000 samples at seed20260930. Backend replay/Lua fuzz,112 Python and17 actual QML scenarios pass; atlas72 coordinate/38 cache C++ checks pass. Actual installed-source copied Qt fixtures pass58 keyboard,14 routing and90 editable checks plus12 source/fixture checks. All177 frozen hashes remain unchanged; before/after manifests and `qa-v18-files-v7-summary.json` retain provenance. This run adds no native reader, physical input or smoothness claim.
+
+## Private PointerLocator V8 partial native acceptance
+
+Attempt5 exits1 after69 reached native gates pass: actual held-capability refusal/early official callback priming, fractional coordinates,8 owner-loss/reclaim/rearm cases,4 alias churn cases, CSD hit and actual Omarchy Orca spoken GTK child. The next actual GTK popup picked-child wait times out; full campaign acceptance remains incomplete. Report SHA e3342b7b81732567f92405cbd2f7f410a3a605ecbd9625aeced0fd7a4d6b2867. All14 original-preservation gates and296 frozen hashes pass, true quiescent preparation/normal unload succeed, and root independently verifies exact private PID/runtime absence. The report and root-completion remain under pointer-v8/native-pointer-attempt-5.
+
+
+## Composite independent raster oracle and private host boundary
+
+The independent CPU oracle passes18 meaningful raster/evidence checks: handdeclared owner/overlapping child, alpha/linear sampling, every-channel comparison, shift/order/flip/missing-child negatives and exact source/lifetime/output binding. It imports no renderer/ledger/interpolation implementation. The producer checkpoint freezes77 inputs and passes80 base ledger plus73 composite actual C++ consumer checks. Native pixels/cadence/service acceptance remains open.
+
+Root direct standalone-headless attempt1 aborts before any producer/plugin launch with CBackend::create startup failure; actual private core confirms initServer std::terminate/SIGABRT, with its other resource thread waiting. No OOM observed. All13 oracle/tool and77 producer hashes remain unchanged; original main client identities are exact. Launcher4099128/private4099132/runtime absence is independently verified. Report635054890b3161d65733086834720b73b5eaece45bcda25293de3d22ba905266 and core backtrace/root-completion are retained under family-raster-oracle-v1/attempt-headless-1. A private headless GL host is being prepared to supply actual Wayland/GBM allocation without main desktop surfaces or input. This failed setup supplies no native raster or timing claim.
+
+
+## Independent family destination repair replay
+
+Root replays the original controlled obsolete-after-fresh barrier through the actual frozen service-review-v2 coordinator copy. Newer minimize remains current/validated, obsolete restore emits no validation, and all destination callbacks remain absent after all workers join. `family-controller-root-audit-v2/repair-replay.json` retains the result; the original v1 three-obsolete-effects counterexample remains immutable. The18 service snapshot hashes match checkpoint793504669c48048ce5e04eeb1af572cc27546c7947045adf7f703447b6c22a35. This source replay grants no native transaction/cadence acceptance.
+
+The corrected pointerV8c311-input packet passes the exact runner `--preflight` import of owned copied case/helper without GUI/native calls. QtV2 retains203 exact frozen inputs and seven logical-coordinate preflight gates. Their full native campaigns remain pending the independent private host; no main reader/input/flags change is claimed.
+
+## Crash-noise handoff launch safeguards
+
+All five requested changes are implemented before the next nested run. Dedicated
+user scope plus `prlimit --core=1:1` gives actual parent/child limits `(1,1)`;
+this systemd rejects `LimitCORE` as a scope property, so the failed command and
+equivalent working launch are retained. Explicit diagnostic mode gives parent
+and child infinity. Short owned `0700` runtime allocation/device access/cleanup
+passed actual harmless scope checks; no scope survivors remain.
+
+Shared launch guards pass13 offline cases; fresh private hostV2 passes15 and
+its1508 local/4 link/216 external inputs match manifest08bc911b36ac6f9910b12513333a3d1d0d7149b12d56776b5ff57703e4fe3900.
+Fresh Manager-only ABI safeguard passes10 offline/subprocess cases; V3's27
+inputs match manifest47d99bada9125a35ee840c36da7efc120c8ade96f0e0cfb7fd1d209d80e02593.
+Its executable sources are byte-identical to tested safeV2. Unexpected X11
+fallback is rejected before key conversion; transport/owner guards and actual
+client-before-service subprocess cleanup are covered. Current ordinary nested
+configs disable Xwayland; explicit X11 cases use a separate config. Live parent
+socket and backend checks prevent implicit DRM fallback. Legacy drag/pin routing
+uses owned current descriptors rather than stale files/first-instance selection.
+
+No compositor, actual ABI or GUI campaign ran during this handoff. Hardware
+renderer/DMABUF foundation and full fixture cleanup remain native gates.
+Crash-watch override and installed grim/gnome-keyring remain untouched. Exact
+backups, hashes, command correction and test provenance are in
+`~/window-integration-qa/crash-handoff-v1/verification.json`.
+
+### 2026-10-01 crash handoff follow-up
+
+All five launch changes are applied; systemd scopes use inherited prlimit1:1
+because scope LimitCORE assignment is unsupported here. Existing38 launch/ABI
+checks and new7strict legacy backend guards pass. Actual initial foundation
+found a compositor-version mismatch; retained follow-ups found ACK/publication
+ordering and AQ_BACKENDS being ignored. Fresh privateAQ now enforces mandatory
+Wayland, noDRM/libseat construction, ACK-before-publication/render and parentloss
+invalidation. Frozen888 inputs:32named Quint/6000random100step traces,46656actual
+C++ lifecycle sequences/72version cases,14wiring checks and5counterexamples pass.
+Actual rasterV3 proves parent feedback and firstoutput76800RGBApixels exactly,
+with15desktop-preservation checks and independent normal cleanup/no survivors.
+Full raster remainsfailed: scaledoutput369cursorpixels and7memberpixels >tol1.
+RawtransportFalse was conservative genericBrokenpipe classification; independent
+source/PID evidence attributes its exact line to a closed Hyprctl readinessprobe.
+Reports remainunchanged; freshadapterV4 resolves probe atsource with bounded
+read-only j/version reply and23offline socketchecks. NativeQt/pointer/fullraster
+campaigns remainpending; no mainGUI writes and no fullparity/cadence closure.
+See ../window-integration-qa/crash-handoff-v2/verification.json and retainednative
+family-raster-oracle-v3/attempt-private-1 artifacts.
+
+### Safeguarded private QtV5 native follow-up
+
+All five handoff changes were enforced before this run: inherited core1 in a dedicated scope, effective Xwayland false, verified live mandatory Wayland parent using actual private AQ4ed46, unrestricted owned short runtime, and client-first teardown. Eight host gates passed; independent archived compositor/parent logs contain no DRM/libseat/protocol/Broken-pipe failures. All18 main preservation checks,2827 frozen input hashes/6 links and exact owned PID/runtime cleanup pass.
+
+The campaign remains FAILED after3 of4 reached toolkit gates: modal-owner body click did not meet routing assertion. Fixture shutdown was abnormal and10 unexpected private bus descendants were observed; all are gone. No toolkit/lifecycle acceptance is claimed. QtV4 packaging failure and this failure remain immutable. See ../window-integration-qa/crash-handoff-v3/verification.json and qt-modal-private-v5/attempt-1/report.json.
+
+### Private pointer startup and deterministic rasterV4
+
+PointerPrivateV1 attempt1 failed before fixture/native phases: live startup configure-ACK polling did not observe the buffered log; null received.exists cleanup masked the primary exception. Five startup gates and archived full-transport gate passed, all19 original-preservation/lifecycle gates passed, and independent316+2913file/121link hashes plus exact PID/runtime cleanup pass. No pointer/policy/reader acceptance is claimed. A fresh fixture revision is required; original freeze/failure remains unchanged.
+
+RasterV4 (2736 frozen sources/6links;108-input producer) observes actual private cursor invisibility and GL_DITHER beforetrue/afterfalse/error0. Actual complete V4 IPC reply, AQ4ed46mapping, primary presentation and archived parent/compositor transport pass; nativeTransportAccepted is true. Primary full76800pixels/307200channels exact; scaled full172800pixels/691200channels remains FAILED at exactly7memberpixels/8channels maxerror2 under unchangedtol1. All369cursor failures removed; disabled dithering did not remove the seven member failures. Progress0.35 was not reached. Normal producer exit0 and host cleanup, all15 main preservation, complete frozen sources/links and exact owned PIDs/runtime disappearance pass independently. No native window/taskbar/cadence/physical claim. Full pixel acceptance requires a precision/sampling diagnosis and fresh producer experiment, with no fitted oracle/tolerance changes. See family-raster-oracle-v4/attempt-private-1 report/root-completion and pointer-private-host-v1/native-pointer-attempt-1 report/root-completion.
+
+### Flushed startup and explicit shader precision native follow-up
+
+PointerPrivateV2 (331local/2913external/121links;65fixture checks) passes actual live startup transport beforeclients, all13 reached gates including protocol registration/fullcapture. First native-input stdin flush fails because old producer exits before input; its source requires obsolete/tmp/kbn- runtime, as does native-pointer. Normal PrepareUnload true/unloadok and all exact owned PID/runtime cleanup pass; sources/links unchanged.18 of19 preservation checks pass: old focus fullJSON comparison fails solely on application-owned title, while exactaddress/stableId/PID stay unchanged. Report/failure are retained; no main restoration. A fresh guard/readiness and scope-correct focus contract is required before fullcampaign.
+
+RasterV5 (2807inputs/6links;131producer;25offlinechecks) compiles actual explicit highp shader and reports all6stage/kind precision records23bits/ranges127/error0. Full scaledcomparison is byte-identicalV4:7pixels/8channels/max2 failtol1. Thus explicit highp did not remove the mismatch; no precision-cause claim or oracle/tolerance change is made. Primary fullpixels, actual parent transport,15main preservation, normal producerexit0 and complete frozen source/PID/runtime cleanup pass independently. Progress0.35 remains unreached; no nativefamily/taskbar/cadence/physical proof. Retained reports/root-completion artifacts are under pointer-private-host-v2/native-pointer-attempt-2 and family-raster-oracle-v5/attempt-private-1.
+
+## Crash handoff and configured Qt geometry follow-up
+
+All five crash-handoff safeguards verified again in the fresh private Qt V7 nested run; evidence: `/home/hoskinson/window-integration-qa/crash-handoff-v4/verification.json`. Core1, disabled Xwayland, mandatory live private Wayland parent, unrestricted owned short runtime and clients-first normal teardown passed. All18 desktop preservation checks,3280 frozen files+6 links and independent exact process/runtime/log checks passed.
+
+QtV6 failed before modal creation because stale Qt geometry mapped the intended point outside its real button. QtV7 fixes configured/layout readiness and retains that failure. V7 remains failed before any click: integer IPC cursor115 for requested116 while actual floating-point native diagnostic reads115.99999999999999. No modal/callback acceptance is claimed. A fresh observation correction is being prepared offline without increasing tolerance or changing product routing.
+
+## Actual Qt, full raster boundary, and pointer follow-up
+
+Fresh QtV8 passes real owner-button baseline callback, native Qt WindowModal metadata and independent same-process peer callback. Blocked ancestor body still fails deepest child focus; before/after native hitOwner/pointerOwner/modalTarget are null despite correct real float cursor and no grabs/locks/constraints. Main18/source3290+6/normal cleanup passed. Core modal-parent filtering is a concrete source boundary for a fresh press-only candidate; no corrected routing is accepted yet.
+
+RasterV6 now retains all4 complete screenshot comparisons and4 producer readbacks at progress0/.35 across scale1/1.5. Primaryp0 exact and primaryp.35 tolerance1 pass. Scaledp0 fails7pixels/8channels/max2; scaledp.35 fails2pixels/2channels/max2. All4 screenshots exactly match raw producer RGB over opaque black, with identical raw/composed failure vectors. This locates errors before compositor composition, without identifying shader versus sampling/blend/readback/oracle cause. All15 preservation/2881inputs+6links/186producerinputs/normal private cleanup pass. Separate collection Quint7named+2000×100 traces pass bookkeeping/refusal only; the real fullraster result remains FAIL.
+
+PointerV3 actual keyboard and pointer sync readiness passed;78 reached gates passed, including actual official Orca pointer/frame/child behavior and fractional/negative/native geometry cases. Popup toolkit hit succeeds, but Orca current-item fails: correct negative y=-14 wraps to GObject unsigned4294967282 and overflows signed WINDOW component query. Fresh formal signed-boundary correction is being prepared; full popup/policy/lifecycle acceptance remains open. All19 preservation/source356+2915/121links/normal quiescent native unload/final exactPID/runtime cleanup pass. Seven unexpected portal/helper descendants were present before cleanup; abnormal fixture lifecycle is retained as failure even though all are gone.
+
+ServiceV10 explicit native composition is frozen with112 candidate Python/61named/10models×2000 offline checks. It has not been run natively. Root review found zero-request IPC credential checks can reproduce retained IPC BrokenPipe; V11 must consume a bounded actual read-only version reply before its first native run. Actual taskbar/native family runtime/frontend/recovery, fullcadence and broad physical parity are still required. No main desktop input or restoration, installed module replacement, or relaxed gate occurred in these runs.
+
+## Corrected private Qt modal candidate accepted; full goal remains open
+
+The fresh modal-ancestor discoveryV2 avoids the rejectedV1 X11-only assertion by selecting protocol-specific region authority; both source/model branches were checked before loading. Actual private QtV9 now passes all19 unchanged public Qt6.11.2 toolkit gates and10 host gates. The reproduced blocked-owner body route, caption route, nested/deepest modal input, independent same-process peer action, exact family minimize/restore, actionable restored dialogs and normal destruction all pass. Report SHAe7f0a07338e1e84b8db468206f9bf1d1295ee8d55aea1757eac3ff72811467c5.
+
+All18 original desktop preservation fields,3644 frozen files/6 links, normal fixture/pointer/daemon exit, native unload, exact ownedPID/start disappearance, runtime removal and archived parent transport pass independent audits. Candidate SO412c0fee was loaded only privately; installedv18 remains unchanged. Native X11/cross-toolkit/pinned family coverage and production deployment remain open. RetainedV1 review rejection and QtV8 failure remain unchanged.
+
+Full PointerPrivateV4 is running in root's exclusive private slot, with all original pointer/policy/lifecycle cases and actual signedAX/speech/no-helper gates. No success is inferred before its terminal result. ServiceV11 has121 candidatePython/65named/11×2000 offline checks; its actual taskbar/native service/recovery proof remains pending. RasterV6 attribution preserves scaled pixel and cadence failures, excludes only proved CPU/ideal-math boundaries, and proposes further controlled GPU evidence. Full Windows11 parity remains incomplete.
+
+Evidence: [QtV9 report](../window-integration-qa/qt-modal-private-v9/attempt-1/report.json), [independent cleanup](../window-integration-qa/qt-modal-private-v9/attempt-1/root-completion.json), [motion lifetime audit](../window-integration-qa/qt-modal-private-v9/attempt-1/root-motion-completion.json), [handoff53 guards](../window-integration-qa/crash-handoff-v5/review.json).
+
+### PointerPrivateV4 terminal outcome
+
+The97 reached native gates include96PASS, including the full negative-origin popup raw signal→signed original AX query→exact actual child→real Orca speech, plus public disable/toggle and actual pointer service absence/restart/current-item recovery. The full campaign is FAIL: normalGTK A exits0 without the requested exit acknowledgement, and strictterminal cleanup retains an actual org.gtk.vfs.Daemon activation/two unexpected helpers. Policy/lifecycle phases were not reached. Fullpointer/keyboard acceptance is not claimed.
+
+All19 originaldesktop preservation fields,561 local/copy+3110external sources/121links, normalquiescent nativeunload, exactPID/start disappearance, runtime removal and archivedtransport pass independentroot audit. Normalfixture lifecycle remainsFAIL despite final ownedcleanup. Fresh causalV5 preparation is assigned;V4 remains immutable. [Report](../window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v4/native-pointer-attempt-4/native-pointer-report.json), [independent audit](../window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v4/native-pointer-attempt-4/root-completion.json).
+
+## Resumed acceptance update
+
+- PointerPrivateV5 passed all 185 actual pointer, policy and lifecycle checks. All 19 main desktop preservation checks and independent frozen-input/process/runtime/transport verification passed. Normal client acknowledgements and exits, no unexpected helper activation, and native unload are required and passed. This remains a private candidate; production deployment and physical hardware acceptance remain open.
+- Family/taskbar V3 is retained as FAIL. Actual production icons, family minimize/restore, independent peer preservation and minimized previews passed. Its restore source evidence archive lacks the freshly composed epoch images; normal shell close selection returned 108 and forced cleanup was needed. Private portal activation caused unexpected helpers. All 15 original desktop preservation checks, 4119 inputs/8 links, recorded PID/start disappearance and mandatory parent transport independently passed. These failures are not waived.
+- Root reviewed the separate X11 authentication/authority/cleanup packet and launched its first private Qt campaign. Native acceptance is pending.
+
+## XWayland and GPU causal acceptance update
+
+- QtX11V2 passed 19 toolkit/10 host gates with seven actual command acknowledgements. Real private no-cookie refusal/cookie acceptance and XCB mappings were verified. All 18 main preservation checks and independent 3823 files/176 links, normal fixture/pointer/motion/X server/host cleanup, display artifacts gone, runtime gone and archived parent transport passed. Modal candidate remains private and uninstalled. X11V1 launcher-permission failure remains retained.
+- GPU causal V7 retained all eight final images and eighteen prefix/control read pairs. 92 gates reached, 82 passed. The original scaled 7+2 pixel failures remain; constant controls passed exactly and both read formats matched for all full images. Scaled progress0 first fails after member3; scaled progress0.35 first fails after member2 and gains a second failed coordinate after member3. This narrows attribution but does not uniquely identify filtering versus blend/attachment quantization. All 15 main preservation, 2983 inputs/6 links, normal producer wait zero, no helpers, owned process/runtime disappearance and archived mandatory parent transport independently passed. No raster or cadence acceptance.
+- New collection model: seven named Quint scenarios plus 2000 samples at 100 steps passed. Collection and bindings establish bookkeeping; actual pixel failures remain failures.
+
+## Actual taskbar/native family baseline accepted
+
+Fresh familyV4 passed all19 native baseline gates, report eab144c1cdc4334f2487d8ee09f6b55a144cae07e79274356342dc4fd90f1539. The unmodified production taskbar supplied actual icon endpoints. Three-member owner/modal/nested minimize and restore used six retained actual epoch PNGs, matched actual uploads and complete accepted presentation/successful swaps before native commits. Minimized windows retained previews; independent same-PID peer and restored geometry/pin/deepest-modal focus were preserved. Service/producer/Qt/shell exited normally with no unexpected helper activation before native unload.
+
+Independent root audit passed4345 inputs/8 links,203 exact production copies,15 main desktop preservation checks, every recorded PID/start disappearance, ownedruntimegone, no cleanup errors and archived mandatory parent transport. V3 failure remains immutable. This accepts only the private baseline: family draw-order, rapid reversals, membership changes, resource retirement/native recovery, full raster/cadence and deployment remain open.
+
+
+## Resumed QA: manual sampler V8 and concrete interruption gaps
+
+The explicit four-center highp bilinear diagnostic completed privately through
+`family-raster-sampler-v8/attempt-1/report.json` (SHA
+`0a3ed7ea819401a97e48e2fa0acaf32ad80a3411df8b1d136298552359976374`).
+The run retained all44 full-image comparisons and eighteen causal read pairs.
+It FAILED: scaled progress0 has10 bad pixels and progress0.35 has1, with maximum
+channel error2 against the unchanged limit1. Raw producer and composed failures
+match. Constant controls and complete paired read-format equality pass; actual
+sampler state/digests/extents/shader match the reviewed candidate. Manual
+sampling did not establish a repair or uniquely identify the failing GPU stage.
+
+Root independently replayed every comparison from retained immutable pixels and
+scene/presentation bindings, with the same failures. All3157 frozen inputs,6
+links,15 main preservation checks, normal producer exit0, recorded host process
+lifetimes, owned runtime deletion and archived mandatory parent transport pass.
+The source/model collector passed37 Python tests,7 named Quint tests and2000
+samples at100steps. Models validate bookkeeping and refusal; actual pixels remain
+failed. No cadence, deployment, or full parity acceptance follows.
+
+The feature audit found move-only cancellation tracking: held resize rollback
+and ending the exact native controller during reload/unload need fresh fixes.
+Minimize during a held gesture also needs separate current-geometry retirement
+before capture, avoiding accidental rollback. Fresh native/SnapLua and ServiceV12
+integration are staged; actual GTK/Qt Wayland/X11 interruption proof is pending.
+The original Brave drafting/Files focus scenario is assigned a private local
+compose-like fixture with an isolated browser profile and copied real Files.
+
+Production accessibility maintenanceV2 is frozen with8 named/2000 Quint
+samples,24 Lua/runtime scenarios,19 source/filesystem tests and7 signatures;
+actual wrapper acceptance remains false. Review found installer mode stripping
+and explicit-instance reader launcher routing gaps. Fresh V3 corrections and
+actual private proof are underway; frozen V2 stays unchanged. Main desktop and
+installed code/config were untouched during this resumed run.
+
+
+### Further source corrections this resumed pass
+
+Fresh production maintenanceV3 preserves byte+mode closure for2392 payload files
+including38 executable helpers. It restores previous launcher modes during guarded
+rollback and routes explicit reader --instance arguments correctly. Six mode
+model cases and2000 samples plus26 source/filesystem tests pass. Root independently
+verified2436 local,846 external,89 links and local modes; frozenV2 remains unchanged.
+Actual production wrapper/reader acceptance remains false.
+
+Fresh gestureV3 has19 named Quint cases/2000samples,16 source gates and33
+source-derived extracted-function assertions. Root verified all835 frozen files
+and reviewed exact weak target/lifetime capture, separate current-geometry
+retirement, resize rollback and cancellation hooks that suppress unintended
+nonrelease decoration/group drops and focus theft. Real input proof remains open.
+A further source-backed delayed close bug was found: address-only asynchronous
+unsnap can remove a newer lifetime's snap state. An exact native old-lifetime
+notification and guarded helper correction are being staged formally. Touch
+classification is unverified and is explicitly retained as required device work.
+
+Fresh family-taskbarV5 preparation keeps product actors disposable and retains
+QA histories externally through delegated bind/retirement seams. Its16 offline
+checks pass; planned27 native order/retirement/cache/restore gates remain unrun
+and unfrozen pending the reviewed native/SnapLua/service pair.
+
+
+### Resumed native integration: 2026-10-01 21:05 UTC
+
+Frozen ServiceV12 adds bounded live/retiring actors, monotonic actor numbers,
+normal worker/renderer shutdown before exact directory disposal, cache pruning
+without losing minimized previews, ancestor/native paint ordering and gesture
+retirement before fresh capture. Its165 Python/90 named/14 models×2000 samples
+pass; root verified all1148 inputs. Native gestureV4 adds a public Lua native
+identity getter and exact old-lifetime close helper, preserving reviewed V3
+cancellation guards. Root verified all936 inputs. Neither is main-deployed.
+
+Fresh familyV5 actual full-Snap/helper run failed before Qt/service startup.
+Copied HOME/.local mode0755 violates the observer's required0700. An actual
+frozen-function sandbox reproduces this before any IPC. Two early gates pass;
+29-gate integration remains unaccepted. All4899 frozen inputs/8 links, all15
+main preservation checks, recorded processes and owned runtime cleanup pass
+independent root audit. Normal explicit plugin unload and helper lifetimes are
+not accepted. Fresh V6 corrects runtime-only directory modes, explicit private
+OMARCHY_PATH and genuine inactive fileDrag relay supervision; full Snap bytes
+and production taskbar remain unchanged.
+
+Production proofV1 stopped before host creation: copied import-preflight.json
+collided with the fresh runtime output. V2 corrected this with actual attempt
+materialization testing (21 checks), then ran a real private host. Ten reached
+gates pass, including disabled reader refusal before Orca imports and unchanged
+owned profile. Actual Control.load loaded the candidate but its device guard
+rejected the correct Btrfs mapping: statdevice58 versus procmapdevice30 with
+the same exact path/inode. A read-only self mmap independently reproduces the
+mismatch without executing native code. Normal explicit unload also refused
+the guard; full maintenance/reader proof remains false. Root independently
+verified2449 local+6347 external source bytes/modes and162 links, all19 main
+preservation checks, no private helpers, processes gone/runtime removed and
+archived healthy parent transport. A fresh formal-first calibrated kernel
+mapping identity guard is required; do not remove device/inode checking.
+
+The full Windows parity goal remains active. Required native held gestures,
+group/focus positive-negative controls, original Brave draft/copied Files,
+continuous family reversal/recovery, strict scaled GPU pixels/cadence, physical
+displays/input/audio/braille and final integrated deployment are still open.
+
+
+## Resume evidence — 2026-10-01T21:39:40.858464+00:00
+
+Root ran three actual owned private campaigns, each in its own QA scope/Core1.
+
+- Family/taskbarV6: full paired Snap hydration and actual QS taskbar query complete normally; five early gates pass. Idle exact `retire_gesture_current` aborts V20 at `WeakPtr.hpp:180`: uniquely owned CHyprBar weak references cannot be promoted with `.lock()`. Actual plugin offset0x294e8 and frozen source symbolization identify the call. No service or motion gates reached. All4912 frozen inputs/8links,15main preservation checks, recorded PID/start identities and runtime cleanup independently verified. Normal client lifecycle/native unload and full helper terminals unaccepted. Fresh V21 repair and V7 complete early JSONL archival are underway; old failures unchanged.
+- Quantized rasterV9: actual primary raw and composed images match exactly; real shader/program/frame/attachment configuration passes. First causal binding fails because intermediate RGBA read pair6408 differs from required actual default BGRA pair32993. Original pair guard,44image oracle and tolerance remain unchanged. Two reached comparisons independently replayed; all3649 inputs/1286producer modes/55links,15main checks, producer exit0 and normal private transport/cleanup verified. Full raster acceptance false; fresh producerV8 must capture each causal prefix on the required owned target.
+- Production proofV3/V4 mapping: actual calibrated Btrfs device30/inode guard now accepts exact loaded module despite statdevice58. Real load/reload/fresh incarnation and normal exact quiescent retirement/unload pass.43checks reached/42pass;19main preservation/source bytes+modes/links/processes/runtime/healthy transport independently verified. Stale incarnation specificity gate fails because the QA transport reports `IPC failed: ` without native Lua error text; the full proof remains false and later reader/pointer phases were not reached. Fresh proofV4 must preserve genuine error and unchanged policy evidence.
+
+Browser draft/Files packet is frozen and preflight passes; its native run and52held Qt/GTK Wayland/authenticated-X11 scenarios wait for corrected gesture candidate review. Remaining full scope includes strict scaled raster, continuous motion reversal/recovery/cadence, physical display/input/audio/braille and final integrated acceptance/deployment. Main installed GUI and reader state remain unchanged.
+
+
+## Resume evidence — 2026-10-01T22:04:25.820705+00:00
+
+- V21 idle retirement now succeeds on the actual private compositor. FamilyV7 reaches19 gates/17pass and shuts down normally. Service `motionTarget` is rejected with exit125 before capture, so minimized fallback occurs and no cache publication is attempted; this establishes a harness registration defect, not a V12 cache defect. Source, helper identities and private cleanup are verified. Main preservation is12/15: a client workspace/focus/cursor changed during the run, origin unestablished. The failure remains retained; no main restoration writes. FreshV8 stages exact ServicePID/start/argv/source/environment registration.
+- BrowserV2 reaches the isolated local draft page on a fresh profile and network namespace with only loopback. Renderer sandbox identification times out before Files/input tests. Ten actual private-bus helper activations are unexpected. Full focus/Files acceptance remains false. Browser exits normally, V21 unloads normally and18main preservation checks pass. FreshV3 retains raw renderer process evidence and corrects private helper startup.
+- Default-target rasterV10 completes and independently replays all44 original full-image comparisons. All18 causal target/prefix/read-format bindings pass. Secondary output at progress.35 fails83pixels; the child top boundary lands on pixel center y157.5 and the failed top row retains the preceding prefix. Fresh explicit coverage diagnostic is being staged; oracle/tolerance remain unchanged. All3813 frozen bytes+modes/55links,15main checks, producer exit0, host/runtime/process/transport cleanup independently pass. Raster/cadence/production acceptance remains false.
+- ProductionproofV4 passes61/61 actual maintenance/reader checks and19main preservation checks. Real enabled private reader uses Manager, pointer capability reaches actual GTK child, selected global command consumes client bytes, normal reload restores learn configuration and exact balanced H packets, stale native incarnation is specifically refused without changing new capture policy. Root verifies2461local/13703external bytes+modes/162links and normal helper/process/runtime/transport cleanup. Original root-completion conservatively lacks its finally-only unload field because proof_cases already unloaded normally. Additive root-retirement-completion independently replays3exact identity→prepare ready→same identity→artifact unload ok→module absent sequences. Private maintenance acceptance passes; main deployment/audio/braille/physical input remain open.
+
+Remaining: fresh service/taskbar and browser campaigns, real minimized-preview frontend routing,52held move/resize interruption cases, scaled raster repair, continuous reversal/recovery/cadence, physical display/input/audio/braille, and final integrated production acceptance/deployment. Full Windows parity is incomplete; the continuation goal remains active.
+
+
+## Accepted familyV8 private baseline — 2026-10-01T22:11:28.314333+00:00
+
+Fresh source-reviewed V8 passes29/29actual native gates and15/15main preservation checks. Exact service PID/start/PGID/source/argv/environment registration permits the real six motionTargets and three motionRefresh calls through unchanged production helpers, with all query/helper processes completing normally. Root independently verifies5612frozen inputs,1354declared modes and137links, normal Qt/QS/service/two renderer exits, clients/helpers before normal V21 unload, complete raw helper archive and healthy parent/runtime/process cleanup.
+
+Causal supplement independently validates six real returned capture sources, two matching renderer seeds/uploads, and three immutable cache PNG/pointer pairs unchanged at capture, minimized actor disposal, restore actor disposal and final archive. Minimized previews remain available; restore preserves geometry, per-member pin state and deepest modal focus. The prior missing-cache failure was caused by harness service-query rejection; ServiceV12 remains unchanged.
+
+This accepts the private full-Snap/taskbar/directServiceAPI baseline. Genuine preview pointer/keyboard callbacks,52held input interruption cases, continuous reversal/recovery, strict scaled raster/cadence, physical device/display/audio/braille and integrated production deployment remain open. Full Windows parity is not accepted.
+
+
+## BrowserV3 retained failure — 2026-10-01T22:17:48.056494+00:00
+
+Fresh40036file/mode+13758link packet passes source review/preflight and runs on an explicit activation-free owned private bus. Actual readonly ListActivatableNames contains only builtin org.freedesktop.DBus and exact socket peer is the owned bus process. No unexpected private helpers remain; browser/native module/host shutdown is normal. All18main preservation checks and frozen closure/process/runtime/transport checks independently pass.
+
+The flow stops before renderer attach/Files/input on its added actual /proc-environ selector check. Exact pre-exec bus selectors passed, but the failing checker did not retain actual parsed/raw selector bytes. Retained browser cmdline shows actual flattened process title. Upstream Chromium process-title code copies libc environment and clears the original argument/environment memory range; a representation mismatch is a source-backed hypothesis, not yet actual selector proof. Fresh diagnostic must retain raw evidence and establish meaningful exact private bus authority before input. No browser focus acceptance or full parity claim.
+
+
+## Resume checkpoint — 2026-10-01T22:54:07.915919+00:00
+
+- [x] Re-read crash handoff: all five previously applied protections remain mandatory for these private runs.
+- [x] Half-open coverage candidate: actual 114 checks; independently replayed all original 44 images, 18 default-target bindings and four configuration records.
+- [x] Default renderer: actual 115 checks without experiment flag; independently replayed the same 44 images and verified exact default role. Original tolerance and oracle unchanged.
+- [x] Browser V5: actual private-bus PID binding, renderer seccomp/network isolation, local DOM/native identity and real copied Files launch reached. All18main/normal cleanup independently verified. Full flow **failed** on unlisted libnss_resolve disk mapping before input.
+- [x] Continuous campaign preparation: 72 Python checks/two parser probes, six Quint scenarios/2,000×100 traces and 23 adversarial evidence tests.
+- [ ] Continuous native acceptance: V1 **failed**. An API request began while the restore frame was interior, but acceptance took **334.778 ms**; actual renderer receipt took333.816ms, after the previous endpoint. Second origin was progress1. Strict oracle retained unchanged. Main15/source/mode/link/process/runtime checks passed; explicit native unload gate remains unmet after failed workload/helper count. FreshV2 stages guaranteed clients-first unload on failure.
+- [ ] Fix request responsiveness with receipt-safe locking/queue semantics, then replay both interior reversals and ordinary default-renderer retirement.
+- [ ] Complete BrowserV6 NSS closure/raw-mapping diagnostics, then real draft→Files focus and dragging.
+- [ ] Run all52 held gesture cases and genuine minimized-preview→CLI→service input.
+- [ ] Complete durable recovery, mixed-output animation, physical cadence/device QA and final guarded deployment.
+
+Default raster is accepted in the isolated diagnostic route. Full Windows parity remains incomplete and these candidates are not installed on the main desktop.
+
+Evidence: [default raster](../window-integration-qa/family-raster-production-default-v12/attempt-1/root-completion.json), [browser failure](../window-integration-qa/browser-files-flow-v5/attempt-1/root-completion.json), [actual reversal latency](../window-integration-qa/family-continuous-reversal-v1/attempt-1/root-latency-attribution.json).
+
+
+### Follow-up to resume checkpoint
+
+BrowserV6 also retains a failed full-flow result: all18main/privatebus/process/runtime gates independently pass, while raw maps expose33 unlisted stable disk inputs andtwo deleted data mappings before real focus input. A fresh dependency/provenance candidate is being prepared; the strict V6 failure remains unchanged. Held52V2 is source ready (47 tests,24 formal scenarios,4,000 traces;20,363 inputs/modes and320 links), awaiting root review and actual execution. The reversal stall is source-confirmed: a shared reservation lock encloses slow native observations and shell refresh; a fresh responsive service fix is in preparation.
+
+
+## 2026-10-01T23:17:41.687649+00:00 — responsive animation integration accepted; full parity remains open
+
+- Frozen responsive service V13: 187 Python regressions, 98 named Quint scenarios, 15 models × 2,000 traces pass. Root separately reviewed exact 3,126 inputs/modes and 138 links. Slow preparation observations no longer hold the reservation lock; atomic native effects retain ownership checks.
+- Fresh continuous V3 actual campaign: **38/38 pass**, independently replayed. Both reversals originate from actual displayed interior frames (progress 0.167293 and 0.074576), reuse three immutable uploads, and bind the latest exact three-member commits to real presentations. Four actors and 12 retained source images validate independently. Requests took 3.174, 1.627, 1.393 and 3.452 ms. The prior 334.778 ms stall and all failed V1/V2 evidence remain immutable.
+- All 7,939 frozen file bytes/modes and 146 links, all 15 main observations, normal explicit native unload, client/renderer/helper retirement, private runtime disposal and mandatory parent transport passed. No main GUI or restoration writes.
+- V2's full campaign failure was a harness representation error: three exact PNG/JSON pairs produce a six-entry dictionary. V3 checks six entries with three of each after the unchanged three-pair identity/hash validator. Original strict reversal oracle remains byte-identical.
+- Held52 V2 stopped before its first case on taskbar readiness/shutdown schema. All 18 main checks and 20,364 files/modes + 320 links stayed exact; forced private shell shutdown means normal unload is unaccepted. A fresh V3 harness correction is in progress; no actual dragging/preview claim follows from this failure.
+- Browser V7 is preparing all **32** observed missing stable inputs (prior 33 count was a typo) and exact owned read-only tmpfs data provenance with temporal replacement refusal. The real draft-to-Files focus/input scenario is still unaccepted.
+
+Evidence: [continuous terminal audit](../window-integration-qa/family-continuous-reversal-v3/attempt-1/root-completion.json), [independent causal replay](../window-integration-qa/family-continuous-reversal-v3/attempt-1/root-causal-completion.json), [held failure audit](../window-integration-qa/toolkit-held-matrix-v2/attempt-1/root-held-terminal-audit-v1.json).
+
+Remaining: genuine taskbar hover/preview restoration and all 52 toolkit drag interruptions; real browser draft/focus/drag; pin/legacy lifetime coverage; durable recovery/resource fault interleavings; full mixed-output/default animation and velocity/cadence; physical monitor/input/audio/braille/reader routing; final guarded deployment and regression. Full Windows parity and production readiness remain **unaccepted**. The active loop retains the complete requirements scope.
+
+
+## 2026-10-01T23:28:47.078072+00:00 — remaining velocity defect isolated and primitive implemented
+
+Independent source-to-native replay of continuous V3 confirms every displayed
+member rectangle follows the frozen V10 linear interpolation. Its two reversal
+boundaries reset derivative by up to 2,414.17 and 2,093.98 logical pixels/second.
+The existing 38 position/lifecycle checks remain accepted; they do not establish
+velocity continuity. [Retained audit](../window-integration-qa/family-continuous-reversal-v3/attempt-1/root-velocity-audit.json).
+
+A fresh isolated cubic Hermite family primitive carries the origin derivative,
+uses one common duration, preserves positive dimensions, and reaches the exact
+endpoint at zero velocity. Five named Quint scenarios, 2,000 × 100 model traces,
+and 2,000 randomized numeric families / 2,012,018 checks pass. The initial Quint
+test-action preparation failure is retained. [Contract and implementation](minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/CONTRACT.md).
+
+Renderer integration must bind derivatives to the same immutable accepted
+per-output frame as positions and preserve static diagnostic geometry, source
+order, cache/native authority and all original raster/reversal/retirement gates.
+No renderer, native velocity, physical cadence or deployment acceptance follows
+from these primitive checks. Browser V7 and Held52 V3 source work continues.
+
+
+## 2026-10-01T23:46:50.444806+00:00 — resume: bounded primitive passes; live setup failures retained
+
+- Held52 V3: exact Quickshell readiness and normal shutdown passed. First child fixture failed native mapping readiness before any held gesture. Early helper lifetime registration and transportchecker import also need correction; fresh V4 is preparing them. All18 main observations and frozen20,680 bytes/modes +320 links remain exact. Full held/preview and complete helper/transport acceptance remain false. [Retained actual audit](../window-integration-qa/toolkit-held-matrix-v3/attempt-1/root-held-terminal-audit-v2.json).
+- Browser V7: original focus/input flow stopped before input on strict producer FD metadata. One exact compositor FD matched the Files read-only deleted UUID mapping, but raw stat was not retained, so the failed conjunct is unknown. All18 main observations,40,164 bytes/modes +13,770 links, normal clients/unload and private runtime/transport pass independently. V8 records raw metadata before the unchanged predicate. [Retained actual audit](../window-integration-qa/browser-files-flow-v7/attempt-1/root-completion.json).
+- Independent V11 numeric review found trajectories exceeding its own admitted geometry/velocity bounds. Prior passing tests and both concrete counterexamples remain retained. V12 constrains geometry and derivative Bezier control hulls with a common duration intersection, refusing impossible intersections before submission. Five named Quint scenarios,2,000×100 model traces and2,012,523 numeric checks over2,000 random families pass. [Isolated checkpoint](minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/offline-checkpoint.json).
+
+Remaining: all52 live held input cases/genuine minimized previews; original browser draft-to-Files focus/drag; legacy pin correctness; renderer integration of accepted position and velocity together; durable recovery/resource faults; mixed-output/cadence; physical display/input/audio/braille/reader routing; guarded deployment and final full regression. Main GUI/restoration writes are absent in these runs. Full Windows parity remains incomplete.
+
+
+## 2026-10-01T23:54:33.310610+00:00 — exact shared-data mismatch isolated; mapped fixture correction verified
+
+Browser V8's retained failed diagnostic establishes the exact mismatch: the producer FD is a regular, owned, unlinked, read-only tmpfs object with mode0000 and size2960. Only the old fullMode600 conjunct fails; raw fdinfo/mount hashes and inode/device identity independently replay. Installed Hyprland explicitly fchmods this shared allocation to zero. V9 must specify exact0000 first and retain all other authority checks; prior failures remain unchanged. All18main,40,172 byte/mode inputs +13,770 links and normal cleanup/transport/privatebus pass. [Cause](../window-integration-qa/browser-files-flow-v8/attempt-1/root-shared-data-attribution.json), [terminal audit](../window-integration-qa/browser-files-flow-v8/attempt-1/root-completion.json).
+
+Held V4 verifies four mapped fixture lifetimes and early close registrations, normal public/QS/input EOF and ordered unload. Actual mandatory parent transport now passes. Before any held gesture it fails strict toolkit backend module closure; raw candidate paths were not retained. Partial cleanup also asks for serviceMembers before that workload is registered. V5 must retain raw mapping evidence and correct partial-failure accounting without accepting missing full workload. All18main,21,004 byte/mode inputs +320 links remain exact. [Retained full failure](../window-integration-qa/toolkit-held-matrix-v4/attempt-1/root-held-terminal-audit-v2.json).
+
+V12 trajectory primitive now independently passes the copied2,012,523-check suite and an additional64-member40-reversal campaign (2,560 exact origin pairs;258,560 bounded samples). [Review and integration design](../window-integration-qa/velocity-primitive-review-v12/INTEGRATION_REVIEW.md). Renderer/native C1 acceptance remains open. Full Windows parity is incomplete.
+
+
+### 2026-10-01T23:58:38.186387+00:00 — Browser V9 progress and retained full-flow failure
+
+Fresh exact mode0000 contract/model precedes runtime change; root verifies the helper differs only in that exact permission predicate and diagnostic label. 114 Python tests,69 named cases,7 models×2,000 traces pass. Actual V9 accepts owned Files/compositor before/after read-only UUID FD provenance. Full input flow still stops before input because root Brave retains a4MiB rw-s deleted BrowserMetrics profile allocation despite the fixture prevention flag. Raw maps identify the allocation; its FD metadata and source attribution are not established. No exception or altered prior result was added. All18main,40,179 byte/mode inputs +13,770 links, normal clients/unload/runtime/transport/privatebus independently pass. [Terminal audit](../window-integration-qa/browser-files-flow-v9/attempt-1/root-completion.json), [mapping follow-up](../window-integration-qa/browser-files-flow-v9/attempt-1/root-mapping-followup.json).
+
+Active source work: HeldV5 backend closure/evidence and partial failure accounting; fresh C1 renderer V13 integration; durable recovery V13. All52 actual gestures/genuine previews, original browser focus/drag, legacy pin correctness, mixed-output/cadence, physical accessibility/device QA and guarded final deployment remain outstanding. Full Windows parity is incomplete.
+
+## 2026-10-02T00:34:04.007712+00:00 — retained drag failure isolated; fresh source fixes reviewed
+
+- BrowserV10 LocalMemory fixture still failed before input. BrowserV11 read-only actual diagnostic binds root PID/start/scope/UID/source and exact FD7: owned mode0600 regular unlinked4194304-byte file on runtime tmpfs, exact rw-s offset0 mapping under owned0700 browser profile. Strict old deleted-mapping failure remains. Both terminal packets independently preserve all18main and complete byte/mode/link closure with normal cleanup. BrowserV12 formal-first bounded owned data contract exists; independent review requires concrete replacement identity tokens before implementation. Original browser15 focus/draft/Files gates remain unaccepted.
+- Genuine HeldV5 reached the actual gesture and failed independent-focus oracle. Retained trace proves pointer movement reactivated captured source before Escape. No complete after-retirement sample was persisted; Escape-specific theft cannot be concluded. Two exact gone host descendants remain unattributed, so full host/full52 acceptance is false. Fresh V22 preserves independent native focus only against FFM back to exact live captured source. Root independently reconstructed every inherited implementation body, reviewed exact3native deltas and output-only Makefile change, froze/verified21595files+modes327links. Original strict HeldV6 actions/intervention/oracle remain; full52/genuine previews pending.
+- C1V13 renderer source ready: root verified2019files+modes49links and37successfulofflinecommands, byte-exact V12primitive and inherited raster native sources. Immutable sample supplies drawing/submission and accepted presentation position+analyticvelocity; all-output duration plan precedes token advance and duplicate start is idempotent. Native original44raster/38reversal/kinematics/mixed-output/reduced/cadence remain pending.
+- RecoveryV14 frozen source proof259Python141named20models×2000: journaled gated sources/authenticated retained keeper/restart guards. Actual restart/new latency not accepted. Explicit cancellation discharge remains unimplemented.
+- Crash handofffive safeguards remain required. No main desktop/config/deployment writes in these runs. Full parity remains incomplete and goal active; classification: progress.
+
+### 2026-10-02T00:37:38.067154+00:00 — first actual V22 drag regressions pass; full matrix retained failed
+
+HeldV6 root93842 exited1 in uniqueqa-harness-ad1484709b8d4c79bd0dd746dd10d37d scope. Actual QtWayland move-Escape and move-reload passed the unchanged strict original oracles. Independent terminal replay accepts both native cases and public quits; additive retirement replay binds both exact O_EXCL observations and proves independent native focus before/after, core retirement, groups and rawhold preserved. Third move-unload-reload stopped on an actual refused helper before next load generation/retirement observation. Original whole campaign remains failed. Terminal replay16/22 checks pass; all18main/full21804bytes+modes327links/normal inputEOF/explicitQSquit/nativeorderedunload/allrecordedidentitiesgone accepted. Fullhost/helper acceptance false: one exact unexpected gone host lifetime is unattributed and refused event invalidates helperbudget. Full52/genuine previews/remainingbackends/deployment unaccepted. Root is tracing exact helper ownership/argv/generation before a fresh derivative.
+
+### 2026-10-02T00:51:02.717789+00:00 — browser witness reaches exact deleted-data state; parent assumption fails
+
+BrowserV12 root7504 terminal exit1, scopeqa-harness-7cced63944e843f6a134a3f06d170737. Formal refinement50named/2000traces precedes runtime; offline152Python119named8models×2000 and independent31actualkernel tests passed. Root proves all7oldmodels and completeRunSessionAST outside approved mapping/anchor insertions unchanged. Frozen40477files+modes13770links/preflight accepted. Actual run passes4original gates and stops beforeinput because BrowserMetrics parent is absent bothbefore/after samples while actualrootFD7 retains exact owned0600 regular unlinked4194304bytes/O_RDWR/noO_PATH flags32770/mount346/device84/inode330537 and fullrw-s offset0VMA. The strict proof remains rejected. Root terminal audit all12independent safety/source/cleanup gates and18main preservation pass; allrecordedlifetimesgone, normalbrowser/Files/input/plugin/probe/host/runtime/transport/bus accepted. Original15/browserfocus/drag unaccepted. Fresh actual parent-state semantics/fixture review precedes any new authority.
+
+HeldV6 source/log attribution now explains three refusedhydrations: nativeplugin unload schedulesone actualconfigreload and load schedulestwo (core+unchangedpluginAPI request). The original harness reserved only explicitloadgeneration. Late probe-unload also queueshydrate, explaining the exact unexpectedgone hostPID. This attribution does not accept existingfullhost/helperbudget or original52campaign. FreshHeldV7 must bind every exact actualevaluation with per-occurrence/root/lifetime/argv authority and retain duplicate/unrelated refusal, originalexplicitreload and allstrictfeatureoracles.
+
+Full parity remains incomplete; current goal active, classification progress. C1V13 source independently reviewed; fresh44raster/38reversal/kinematics packets in preparation. RecoveryV14 native/restart/cancellation/mixedoutputs/cadence/physicalcompatibility/finaldeployment remain required. No main GUI/config/deployment writes.
+
+
+## 2026-10-02T01:11:47.428398+00:00 — C1 renderer passes private integration and mixed-output QA
+
+- Fresh C1V13 default raster:115 native gates and independent44 original image comparisons pass, retaining18 causal targets/4quantized bindings/defaultrole and full4519byte-mode/55link closure/all15main/normalcleanup.
+- ContinuousC1V4: all39 actual gates pass, preserving the original38 and adding exact accepted presentation position/analyticvelocity replay.29 accepted samples include both nonzero-velocity interior origins; independent root8433byte-mode/146link closure/all15main/clients-before-unload/normalprivate lifecycle passes. Complete independent native causal replay is pending; physical cadence and deployment are not accepted.
+- Mixed-scale C1 software:11 actual gates plus13 independent preservation/replay checks pass.49 actual samples and4 exact displayed-origin pairs span scale1/1.5 outputs; duplicate start keeps its epoch clock. Exact cancellation delegate clears readiness/pending/active state and commits transparent layers. Sources8478/modes/146links, all15main and normalparent/runtime cleanup pass. Generated software fixtures do not accept a native window family or the end-user reduced-motion setting.
+- BrowserV13 formal70named/2000x100 precedes narrow runtime parent-state refinement;162Python/139named/8modelsx2000 and41kernel fixtures pass. Independent runtime review, rootfreeze/preflight and original15 actual focus/draft/drag flow remain pending.
+- HeldV7 evaluation-ticket model15named/2000x100 passes before implementation; original52 actual held gestures/genuine previews remain open. Recovery/cancellation, pinlegacy completeness, physical cadence/devices/accessibility and guarded deployment remain required.
+
+All five crash-handoff safeguards remain applied. No main GUI/config/deployment changes in these runs. Full Windows parity remains incomplete; goal active and this continuation made progress.
+
+
+### 2026-10-02T01:13:43.657651+00:00 — continuous C1 independent replay accepted
+
+All39 gates and original38 names/oracles survive independent replay. Across4actual renderer actors,88accepted frames match2,112 independent Hermite position/derivative component checks. Both nonzero displayed origins match retained exact position+velocity samples,12source PNGs and immutablepairs remain exact, and4native commit triples bind to current successfulswap/ready/endpoint. Full8433byte-mode/146links/all15main/normalprivate lifecycle pass. [Root completion](../window-integration-qa/family-continuous-c1-v4/attempt-1/root-causal-completion.json). Genuinewidget preview routing, native mixedfamily/reducedsetting/physical cadence and production deployment remain open.
+
+
+## 2026-10-02T01:28:23.960479+00:00 — browser data witness accepted; original flow stops at geometry
+
+BrowserV13 fresh actual4original gatesPASS after rootfreeze40780bytes/modes13770links. StrictFiles and BrowserMetrics witnesses now accepted, including before/after/postdisk detached-parent state anchored to exactprofileFD and oneFD7/full0600/O_RDWR32770/unlinked4MiB/tmpfs/fullrw-s VMA. Independent4snapshot raw/hash/metadata/parent-state replay passes. Full original15 remainsfailed before input:105identical layoutpairs have native/DOMouter930×700, DOMinner890×563, ratio1, while old readiness assumes zero horizontal viewport inset. Widthdifference does not establish viewportorigin. Rootall12safety/source/cleanup/all18main passes, normalclients/unload/host/runtime/transport/privatebus preserved. [Data/layout replay](../window-integration-qa/browser-files-flow-v13/attempt-1/root-data-and-layout-replay.json). FreshV14 exacttrustedpointer coordinate witness/integer point selection is formal-first; no guessedoffset/tolerance.
+
+HeldV7 source/rootCPU/freeze/preflight passes22167modes327links, original52actions/oracles unchanged. Late independent review finds actual extraevaluation ordinal3 while model kept2 and allowed unreachablecleanup. NoV7native run was launched; freshV8 will model permanentviolatedboundary/quarantine without changing actualguard/budget. PriorfrozenV7 and failures remain. Pinread-onlyaudit finds address-only asynchronous/timer and legacytwofieldstate provenance gaps; concrete fix/nativecoverage remains queued. RecoveryV15 cancellationformal22named/2000 passesbeforeimplementation; usercancel/interruption/reducedmotion ingress remains open.
+
+Fullparity remains incomplete. C1raster/continuous/mixedsoftware private acceptance retained. No main GUI/config/deployment changes; goal active, progress.
+
+
+## 2026-10-02T02:02:17.775522+00:00 — drag unload/reload passes; preview and browser calibration failures retained
+
+- HeldV8: original Qt Wayland move–Escape, move–reload and move–unload/reload pass. Fourth move–minimize–preview fails entering the native preview layer. Four independent native retirements pass; whole52 remains failed. Terminal replay19/24 preserves all18main/full22476bytes+modes327links/normal lifecycle. All112 helper events are normal. The new evaluation auditor also rejects a separate root invocation mistake (bare `python3` instead of reviewed absolute `/usr/bin/python3`); auditor stays strict and failure is retained.
+- BrowserV14: source198Python/184named/11models×2000; root36focused tests/preflight pass. Actual flow stops before first click at button-free coordinate calibration. Independent48snapshots show exact Browser geometric hit/cursor but pointer and keyboard focus remain Files under actualfollow_mouse0, with no DOM pointermove. Full original15 remains open. All12independent safety/all18main/full41111bytes+modes13770links and normal cleanup pass. FreshV15 explicitly establishes Browser focus as fixture setup before the same strict witness; setup is not feature evidence.
+- Pin: new14named/2000×100 lifetime/ordering model precedes compiled V23 synchronous captured-owner native action. It is a source prototype; feedback, external helper lifetime, legacy records, maximized policy and real UI/native checks remain open. Installed files are unchanged.
+- RecoveryV15 source proof288Python/170named/21models×2000 supports definite stale/incompatible-family cancellation and durable non-settlement acknowledgment before source disposal. Independent review/freeze/native restart tests remain pending. User/current-receipt cancel and interruption/reduced-motion ingress remain separate work.
+
+All five crash-handoff safeguards remain applied. No native handle remains live; no main GUI/configuration/deployment writes. Full Windows parity remains incomplete; active goal made progress.
+
+
+### 2026-10-02T02:07:06.370037+00:00 — recovery source closure accepted
+
+Root independently verified the corrected RecoveryV15-frozen-v2 packet:11963bytes/modes and158links, all eight reviewed candidate hashes exact. Source288Python/170named/21models×2000 and independent15checks/55kernel tests remain accepted. The earlier stdout self-capture freeze failure remains retained. This accepts the source closure only; real restart/fault/cancellation and current-receipt live ingress remain open. No main changes or native run live.
+
+
+## Resumed private QA — 2026-10-02T02:23:31.979913+00:00
+
+BrowserV15 passed exact fixture focus setup, two trusted nonzero pointer calibration
+moves, and real browser draft editing with an interior caret. The exposed Files
+click focused Files and changed its view. The original feature check still failed:
+the QA listener read the reactive button identity after its real handler changed
+Show list to Show grid. No feature check was relaxed. A fresh immutable press
+receipt correction is being modeled. All12 independent safety/source/cleanup
+checks, all18 main preservation checks, 41,458 byte/mode inputs and13,770 links
+passed. Full15 acceptance remains false. Root's static-count bookkeeping mistake
+and launch-before-review-record-write are retained explicitly in the root review.
+
+HeldV9 passed the first3 unchanged QtWayland drag cases and failed fourth preview
+entry. Its102 durable diagnostic records include95 native arrival samples. The
+selected global point170,637.5 was outside the actual clipped viewport and popup
+hover mask. This proves a QA navigation gap; real wheel navigation and preview
+restore remain unaccepted. All18 main preservation checks,22,902 frozen inputs,
+332 links and4 independently replayed native retirements pass. Whole52/service
+workload/evaluation acceptance remain false. A fresh genuine wheel route preserves
+the existing click/family/frontend oracles and fixed helper expectations.
+
+RecoveryV15's accepted legacy renderer route has a CPU counterexample: an exited
+unreaped Z lifetime passes inherited retirement but is rejected by a new
+process_start-only cancellation refresh. Its retired journal and captures remain
+retained with zero native writes. Modern authenticated Keeper group closure
+correctly refused the separate probe. A fresh formal terminal-state source repair
+is required before native recovery collection. PinV2 partial-action/reentrant and
+feedback modeling continues; full Windows parity and deployment remain open.
+
+Evidence: [browser actual](../window-integration-qa/browser-files-flow-v15/attempt-1/report.json),
+[browser independent](../window-integration-qa/browser-files-flow-v15/attempt-1/root-completion.json),
+[preview geometry](../window-integration-qa/toolkit-held-matrix-v9/attempt-1/root-preview-geometry-replay-v1.json),
+[held retirements](../window-integration-qa/toolkit-held-matrix-v9/attempt-1/root-held-retirement-audit-v1.json).
+
+
+## Resumed private QA — 2026-10-02T02:57:14.003628+00:00
+
+- BrowserV16 passes the first eight original checks, including real exposed Files
+  click/focus, unchanged draft/caret, and returning to Browser. Typing continuation
+  still times out. B17 will retain failed DOM observations and actual Seat keyboard
+  focus; the cause is unproved. All12 safety and all18 main checks pass.
+- HeldV10 passes all13 QtWayland cases, including move and resize followed by
+  minimized preview restore. Each preview uses six genuine wheel receipts and
+  preserves the original exact native/frontend/family/cache/focus checks. Root
+  independently replays12 receipts and both actual visible source allocations.
+  The whole52 campaign remains failed: one Snap query delegate exits120 among
+  142 started/terminal helpers, with no refusals; other39 cases remain unrun.
+  All18 main, normal unload and process closure pass. Independent retirement
+  replay12/12 passes. Original terminal/evaluation failures remain retained;
+  fresh wheel-aware audit and actual helper-exit attribution are pending.
+- RecoveryV17 fixes the reproduced legacy zombie refusal through exact pidfd
+  terminal evidence. Root11 CPU/kernel tests and independent66 tests pass, with
+  modern group-closure and uncertainty/ack/disposal guards retained. Full frozen
+  12742 byte/mode inputs and158 links independently pass. Native fault/restart
+  collection and current-receipt cancellation remain pending.
+- A separate unchanged-controller CPU counterexample reproduces loss of an
+  accepted request during reduced-motion validation. A16-scenario/2000×100 Quint
+  repair model passes before runtime changes. Fresh scene/token, exact visual
+  retirement ACK, current context and latest receipt handling require the full
+  source repair and real setting-command/native QA.
+
+Evidence: [actual previews](../window-integration-qa/toolkit-held-matrix-v10/attempt-1/root-wheel-causal-replay-v1.json),
+[browser safety](../window-integration-qa/browser-files-flow-v16/attempt-1/root-completion.json),
+[recovery closure](../window-integration-qa/service-recovery-v17-root-frozen-preflight.json),
+[reduction counterexample](../window-integration-qa/reduced-validation-counterexample-v1/result.json).
+
+No main desktop changes or deployment. Goal remains active; full parity remains incomplete.
+
+
+## Private acceptance checkpoint — 2026-10-02T03:44:06.826593+00:00
+
+- Recovery collector V2 fixes the missing nested manifest and preserves ancestral
+  permissions. Root 17 CPU/kernel tests, 13,507 byte/mode inputs and 158 links pass.
+  The actual original baseline reaches 11 passing checks, then stalls waiting for
+  minimize visual cleanup. Service shutdown requires TERM/KILL; baseline and fault
+  acceptance remain false. All 15 main checks and 12 independent preservation
+  gates pass, including native unload and actual private process/runtime closure.
+- Actual source replay independently reproduces an endpoint/watchdog lock deadlock.
+  The endpoint holds the family-query lock while waiting for the manager lock; the
+  deadline watchdog holds the manager lock while waiting for the family-query lock.
+  Native thread stacks were not archived, so the live cause remains unproved.
+  Fresh V19 repair is modeled before source changes; deadlines/oracles stay intact.
+- Browser V17 retains the exact first-character omission: `continued0` arrives at
+  the original caret, while the leading hyphen does not. Seat focus remains on
+  Browser and wtype exits normally. B18 adds read-only capture/bubble key and
+  beforeinput metadata with the original 15 checks/runtime unchanged. Root 10
+  focused tests, 21 actual CPU JavaScript cases, 11 Quint scenarios and 2,000
+  randomized traces pass. Its actual private run is in progress.
+- The fresh wheel-aware HeldV10 auditor passes 40/42 checks. Remaining failures are
+  incomplete four-toolkit coverage and the actual query delegate exit 120. V11
+  adds bounded attribution without redirecting streams or increasing budgets.
+- Current-receipt cancellation, reduced-validation request preservation, pin
+  lifetime/feedback/legacy/max policy, real mixed outputs, physical cadence and
+  accessibility, final integrated regression and deployment remain open.
+
+Evidence: [recovery failure](../window-integration-qa/family-recovery-cancel-v2/attempt-baseline-1/report.json),
+[terminal preservation](../window-integration-qa/family-recovery-cancel-v2/attempt-baseline-1/root-terminal-preservation-v1.json),
+[independent deadlock replay](../window-integration-qa/recovery-baseline-v2-lock-counterexample-v1/root-independent-replay-v1.json),
+[browser Quint replay](../window-integration-qa/browser-v18-root-quint-replay-v1.json).
+
+No main desktop changes or deployment. Full Windows parity remains incomplete.
+
+## QA checkpoint 2026-10-02T04:21:36.255811+00:00
+
+- BrowserB19 actual startup succeeds; original first8 checks pass, continuation remains failed. New real DOM evidence shows leading hyphen key `-` with physical code `Escape` and keyCode27, no canceled handler and no beforeinput; next10 characters insert at original caret. Driver mapping investigation required; full15 not accepted. Original independent auditor all preservation/source/normal cleanup checks pass, all18main intact.
+- HeldV11 actual diagnostic run ends before cases on `/proc` ESRCH selected-lifetime observation; strict auditor retains failure. Actual selected delegate is normal0/stdout[] here, so exit120 cause remains unproved. FreshV12 narrow checker fix formal15named/2000 and10actualCPU/kernel tests pass; fullproof pending.
+- RecoveryV19 source correction: original family body/TLS/atomicguards/deadlines retained;304CPU/191named/23modelsx2000 source proof plus root35focused pass. Frozen13074/158. Fresh collectorV3 pairs this exactservice, ToolkitV21 anddefaultV10; original38baseline andfault ASTs exact, root15observer/restart pass, frozen14192/158. Actual new baseline/recovery acceptance pending.
+- PinV2 freshV24 compiles;53lifecycle Quint cases/2000traces +48transaction/37lifetime-codec CPU tests pass. Actual UI/helper/native/legacy/max acceptance remains open.
+- FullWindows parity, physical cadence/device/a11y, integratedC1/reduction/cancel and deployment remain unaccepted.
+
+### Native outcome correction 2026-10-02T04:30:07.007372+00:00
+
+Recovery collector V3 is terminal failed: normal service/renderer/actor retirement now completes, but deadline fallback occurs after only two actual family captures. The original three-capture requirement and four-actor/default-selection checks remain failed. The unchanged-oracle independent auditor passes all 11 preservation gates, including all 15 main checks. No fault campaign was launched. Fresh V20 preparation performance work retains the original deadline and capture requirements.
+
+Held V12 is now frozen (24,338 byte/mode records,332links, exact V11 ancestry) and passes root20actualCPU/kernel/fixture tests, root15named/2000Quint traces, fullsourceproof andpreflight. The actual52-case private campaign is running under root ownership; result pending.
+
+### Held startup result 2026-10-02T04:32:56.871421+00:00
+
+Held V12 is terminal failed before loading plugins or launching feature clients: the original private-output gate ran before any parent configure was observed. The strict transport gate also fails. All 18 main checks and actual process/runtime closure pass; root independent startup replay passes seven preservation/source gates. This grants no feature acceptance. Fresh V13 will use the reviewed B19 actual empty-only output readiness within the same original startup deadline, preserving original52 checks and X11 variants. No blind retry or original budget increase is authorized.
+
+
+## Resume checkpoint — 2026-10-02T19:58:21.485395+00:00
+
+- V26 required full source proof: 409 Python checks and 403 named Quint scenarios across 35 models, 2,000 traces of up to 100 steps per model; all106 commands passed and original103 command vectors were retained. Root independently froze20,170 input bytes/modes and287links in `service-housekeeping-admission-v26/manifest-housekeeping-admission-v26.json`. No native acceptance follows from these checks.
+- Helper failure-drain source approved for fresh B11 after full patch/AST inverse,25 named Quint scenarios and original unchanged live-helper counterexample review. Only helper_setup changes; helper_observer and original38/fault34 feature assertions remain unchanged. Original acceptance failure is permanent; exact registered normal closure gets the same original10-second budget. Implementation/actual CPU checks/new collector freeze/native baseline remain pending. Root review: `../window-integration-qa/thumbnail-helper-failure-drain-root-source-review-v1.json`.
+- MAX/pin hit audit reproduces8 affected cases and conserves18 others using the entire actual hit body/InputManager MAX override with CPU fixtures.24 named Quint scenarios and2,000 traces pass. Exact ViewHitTester/InputManager fix approved; clean V3 compositor build in progress. Actual native Pin14 and separate MAX/focus/scroll/transfer acceptance remain pending. Review: `../window-integration-qa/pin-max-hit-fallback-root-review-v1.json`.
+- Current disk-source alias refinement reviewed81 exact inputs/modes,19 named Quint scenarios,2,000 traces and10 graph tests. Retained failed live sample has23 named disk paths and8 relevant aliases out of13,862 whole-QA inventory links. Whole inventory remains mandatory campaign authority. Fresh provider implementation, unchanged fast-helper complete live kernel positive/normal joined worker and actual production Registry negatives remain pending. Review: `../window-integration-qa/mapping-source-scope-v4-root-source-review-v1.json`.
+- Latest actual native baseline remains V10:11PASS/1FAIL/26unreached. Preview capture/publication/seed/upload/presentation pass; original0.6s post-EOF housekeeping timeout and normal helper teardown remain unaccepted. No new main desktop deployment occurred in this resumed work.

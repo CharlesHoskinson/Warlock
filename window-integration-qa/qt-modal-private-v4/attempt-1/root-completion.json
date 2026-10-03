@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "348629": true,
+    "348630": true,
+    "348649": true,
+    "runtimeGone": true,
+    "noUnexpected": true,
+    "noRemaining": true,
+    "noCleanupErrors": true,
+    "normalPluginUnload": true,
+    "privateClientsGone": true,
+    "preservation18": true,
+    "all2822FilesExact": true,
+    "all6LinksExact": true
+  },
+  "toolkitAccepted": false,
+  "failure": "Lua leadingcomment parsedasCLIflag beforeIPC; nofixturelaunched",
+  "hostBootstrapSevenGatesPassed": true,
+  "independentNormalCleanupAndPreservation": true,
+  "compositorTransportLogs": "NoDRM/libseat/protocol/Brokenpipe diagnostics; mandatoryWayland+surfaceACK observed"
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_controlling_orca" xml:lang="sk">
+  <info>
+    <link type="next" xref="commands_where_am_i"/>
+    <link type="guide" xref="commands#getting_started"/>
+    <title type="sort">1. Ovládanie a učenie sa používať Orca</title>
+    <title type="link">Ovládanie a učenie sa používať Orca</title>
+    <desc>Príkazy na interakciu s <app>Orca</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Ovládanie a učenie sa používať Orca</title>
+  <section id="controlling">
+    <title>Príkazy na ovládanie <app>Orca</app></title>
+    <p>Nasledujúce príkazy možno použiť na otvorenie dialógových okien <app>Predvoľby Orca</app>, zapnutie a vypnutie <app>Orca</app> a obídenie príkazov <app>Orca</app>, aby sa predišlo konfliktom skratiek v prístupnej aplikácii.</p>
+    <list>
+      <item>
+        <p>Zapnúť a vypnúť <app>Orca</app> v podporovaných prostrediach pracovnej plochy: <keyseq><key>Super</key><key>Alt</key><key>S</key></keyseq>.</p>
+        <note style="tip">
+           <p>Ak používate <app>Orca</app> v inom prostredí pracovnej plochy, kde nie je k dispozícii príkaz na zapínanie a vypínanie <app>Orca</app>, môže sa vám hodiť príkaz na ukončenie <app>Orca</app>. Tento príkaz je predvolene nepriradený. Informácie o tom, ako nepriradené príkazy priradiť, nájdete v časti <link xref="howto_key_bindings">Úprava klávesových skratiek</link>.</p>
+        </note>
+      </item>
+      <item>
+        <p>Dialógové okno <link xref="preferences">Predvoľby Orca</link>: <keyseq><key>Modifikátor Orca</key><key>Medzerník</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Dialógové okno predvolieb Orca pre zameranú aplikáciu: <keyseq><key>Ctrl</key><key>Modifikátor Orca</key><key>Medzerník</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Prepnúť všetky príkazové klávesy Orca: <keyseq><key>Alt&gt;</key><key>BackSpace</key></keyseq></p>
+      </item>
+      <item>
+        <p>Prepnúť rozloženie klávesnice: (Nepriradené)</p>
+      </item>
+      <item>
+        <p>Prepnúť na ďalšiu úroveň ozveny kláves: (Nepriradené)</p>
+      </item>
+      <item>
+        <p>Ukončiť čítačku obrazovky: (Nepriradené)</p>
+      </item>
+    </list>
+  </section>
+  <section id="braille_keyboard_bindings">
+    <title>Príkazy pre braillovo písmo</title>
+    <p>Nasledujúce príkazy možno použiť na ovládanie a prispôsobenie braillovského výstupu Orca.</p>
+    <list>
+      <item>
+        <p>Posunúť braillsky zobrazovač doľava: (Nepriradené)</p>
+      </item>
+      <item>
+        <p>Posunúť braillsky zobrazovač doprava: (Nepriradené)</p>
+      </item>
+      <item>
+        <p>Zapnúť a vypnúť skrátené braillovo písmo: (Nepriradené)</p>
+      </item>
+    </list>
+  </section>
+  <section id="learning">
+    <title>Príkazy na učenie sa používať <app>Orca</app></title>
+    <p>V režime učenia <app>Orca</app> oznámi každú stlačenú klávesu spolu s prípadným priradeným príkazom <app>Orca</app>. V tomto režime si môžete tiež zobraziť zoznam všetkých dostupných skratiek a príkazov <app>Orca</app>.</p>
+    <list>
+      <item>
+        <p>Vstúpiť do režimu učenia: <keyseq><key>Modifikátor Orca</key><key>H</key></keyseq></p>
+      </item>
+      <item>
+        <p>Opustiť režim učenia: <keyseq><key>Esc</key></keyseq></p>
+      </item>
+    </list>
+  </section>
+</page>

@@ -1,0 +1,13 @@
+# B01–B12 bounded controller source packet
+
+Root source/freeze/native review required before any GUI. No new native grant is implied. This packet never changes owning V3, accepted A14 V2, observer draft/failures/built observer or prior source-ready records.
+
+Read CONTROLLER_CONTRACT.md, SOURCE_MAPPING.md, complete current runtime Python sources and SOURCE_INVERSES.json. New producer closure14-name/2000x100 protocol proof precedes B closure code; retained first parser/source quote failures are included. Focused16 CPU tests invoke real validators/controller methods and test bad lifetimes/roles/source/signal/partial closure, typed Lua preparation, canonical peers and first-MAX-pin corruption before a compensating inverse.
+
+PAIR_READY retains exact completed V3 core/plugin/helper, V2 read-only Seat/button/key probe and root accepted observer2 BuildID/SHA/header/build source review. No new build/load happened here. SOURCE_INPUTS preserves literal whole64116-row frozen V2/core/A14 ancestry, its descriptor/source-ready records, full built observer1316/39/56, accepted68-source B design plus root source/build/header reviews and their tools. No descendant-only interpretation. No replacement/geometry/native compensation.
+
+Root may run source-only `PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 .../run_native.py --source-check` and focused test file. Fresh frozen manifest must be created by root only using capture_packet.inventory() + publish(B/'frozen-inputs.json',row); this includes quiescent ready/input records and retains every complete declared ancestor. Use stdout outside B. ROOT_NATIVE_GRANT.json must bind exact frozenManifest SHA + PAIR_READY SHA and explicit nativeAuthorized true before --attempt. That grant is absent.
+
+Root later owns serial actual component execution. The runner reuses original startup/output/main/transport host checks, loads all three exact modules, attempts12 genuine components, all clients normal quit first, unloads observer/probe/product, delegates original host stop/wait, then separately checks B normal closure. Raw inherited fixed-A classification remains unchanged, even when false for different B role counts. Separate B classification references raw file SHA; host.evidence gains additive fields after inherited raw file write, never claiming byte equality. All feature/refusal evidence failures persist and cannot be accepted from cleanup alone.
+
+Full B is false, A14 credit false. B03 helper wire is not CLI ingress; B07–9 ROI, B11–12 third blocked peer, exhaustive native trajectory and every B13–24 remain required. No ordinary native mode/restore/scroll/transfer acceptance from model or CPU tests.

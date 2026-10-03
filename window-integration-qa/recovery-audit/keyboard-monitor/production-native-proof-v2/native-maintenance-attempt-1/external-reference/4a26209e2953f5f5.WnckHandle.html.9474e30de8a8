@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WnckHandle: Libwnck Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Libwnck Reference Manual">
+<link rel="up" href="core.html" title="Part III. Libwnck Core Window Management Support">
+<link rel="prev" href="core.html" title="Part III. Libwnck Core Window Management Support">
+<link rel="next" href="WnckWindow.html" title="WnckWindow">
+<meta name="generator" content="GTK-Doc V1.34.0 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#WnckHandle.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#WnckHandle.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#WnckHandle.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="core.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="core.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="WnckWindow.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="WnckHandle"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="WnckHandle.top_of_page"></a>WnckHandle</span></h2>
+<p>WnckHandle — an object representing a handle.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="WnckHandle.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="WnckHandle.html" title="WnckHandle"><span class="returnvalue">WnckHandle</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="WnckHandle.html#wnck-handle-new" title="wnck_handle_new ()">wnck_handle_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="WnckScreen.html" title="WnckScreen"><span class="returnvalue">WnckScreen</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="WnckHandle.html#wnck-handle-get-default-screen" title="wnck_handle_get_default_screen ()">wnck_handle_get_default_screen</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="WnckScreen.html" title="WnckScreen"><span class="returnvalue">WnckScreen</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="WnckHandle.html#wnck-handle-get-screen" title="wnck_handle_get_screen ()">wnck_handle_get_screen</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="WnckScreen.html" title="WnckScreen"><span class="returnvalue">WnckScreen</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="WnckHandle.html#wnck-handle-get-screen-for-root" title="wnck_handle_get_screen_for_root ()">wnck_handle_get_screen_for_root</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="WnckHandle.html#wnck-handle-set-default-icon-size" title="wnck_handle_set_default_icon_size ()">wnck_handle_set_default_icon_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="WnckHandle.html#wnck-handle-set-default-mini-icon-size" title="wnck_handle_set_default_mini_icon_size ()">wnck_handle_set_default_mini_icon_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="WnckClassGroup.html" title="WnckClassGroup"><span class="returnvalue">WnckClassGroup</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="WnckHandle.html#wnck-handle-get-class-group" title="wnck_handle_get_class_group ()">wnck_handle_get_class_group</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="WnckApplication.html" title="WnckApplication"><span class="returnvalue">WnckApplication</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="WnckHandle.html#wnck-handle-get-application" title="wnck_handle_get_application ()">wnck_handle_get_application</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="WnckWindow.html" title="WnckWindow"><span class="returnvalue">WnckWindow</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="WnckHandle.html#wnck-handle-get-window" title="wnck_handle_get_window ()">wnck_handle_get_window</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="WnckHandle.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type"><a class="link" href="libwnck-Miscellaneous-Functions.html#WnckClientType" title="enum WnckClientType"><span class="type">WnckClientType</span></a></td>
+<td class="property_name"><a class="link" href="WnckHandle.html#WnckHandle--client-type" title="The “client-type” property">client-type</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="WnckHandle.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="WnckHandle.html#WNCK-TYPE-HANDLE:CAPS" title="WNCK_TYPE_HANDLE">WNCK_TYPE_HANDLE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="WnckHandle.html#WnckHandle-struct" title="WnckHandle">WnckHandle</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="WnckHandle.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> WnckHandle
+</pre>
+</div>
+<div class="refsect1">
+<a name="WnckHandle.description"></a><h2>Description</h2>
+<p>This is the main entry point into the libwnck library.</p>
+</div>
+<div class="refsect1">
+<a name="WnckHandle.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="wnck-handle-new"></a><h3>wnck_handle_new ()</h3>
+<pre class="programlisting"><a class="link" href="WnckHandle.html" title="WnckHandle"><span class="returnvalue">WnckHandle</span></a> *
+wnck_handle_new (<em class="parameter"><code><a class="link" href="libwnck-Miscellaneous-Functions.html#WnckClientType" title="enum WnckClientType"><span class="type">WnckClientType</span></a> client_type</code></em>);</pre>
+<p>Creates a new <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> object with a given <em class="parameter"><code>client_type</code></em>
+.</p>
+<div class="refsect3">
+<a name="wnck-handle-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client_type</p></td>
+<td class="parameter_description"><p>a role for the client</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="wnck-handle-new.returns"></a><h4>Returns</h4>
+<p>newly created <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-handle-get-default-screen"></a><h3>wnck_handle_get_default_screen ()</h3>
+<pre class="programlisting"><a class="link" href="WnckScreen.html" title="WnckScreen"><span class="returnvalue">WnckScreen</span></a> *
+wnck_handle_get_default_screen (<em class="parameter"><code><a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> *self</code></em>);</pre>
+<p>Gets the default <a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> on the default display.</p>
+<div class="refsect3">
+<a name="wnck-handle-get-default-screen.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="wnck-handle-get-default-screen.returns"></a><h4>Returns</h4>
+<p>the default <a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a>. The
+returned <a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> is owned by <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> and must not be referenced
+or unreferenced. This can return <code class="literal">NULL</code> if not on X11. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-handle-get-screen"></a><h3>wnck_handle_get_screen ()</h3>
+<pre class="programlisting"><a class="link" href="WnckScreen.html" title="WnckScreen"><span class="returnvalue">WnckScreen</span></a> *
+wnck_handle_get_screen (<em class="parameter"><code><a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> *self</code></em>,
+                        <em class="parameter"><code><span class="type">int</span> index</code></em>);</pre>
+<p>Gets the <a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> for a given screen on the default display.</p>
+<div class="refsect3">
+<a name="wnck-handle-get-screen.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>index</p></td>
+<td class="parameter_description"><p>screen number, starting from 0.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="wnck-handle-get-screen.returns"></a><h4>Returns</h4>
+<p>the <a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> for screen <em class="parameter"><code>index</code></em>
+, or <code class="literal">NULL</code>
+if no such screen exists. The returned <a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> is owned by <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a>
+and must not be referenced or unreferenced. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-handle-get-screen-for-root"></a><h3>wnck_handle_get_screen_for_root ()</h3>
+<pre class="programlisting"><a class="link" href="WnckScreen.html" title="WnckScreen"><span class="returnvalue">WnckScreen</span></a> *
+wnck_handle_get_screen_for_root (<em class="parameter"><code><a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> *self</code></em>,
+                                 <em class="parameter"><code><span class="type">gulong</span> root_window_id</code></em>);</pre>
+<p>Gets the <a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> for the root window at <em class="parameter"><code>root_window_id</code></em>
+, or
+<code class="literal">NULL</code> if no <a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> exists for this root window.</p>
+<p>This function does not work if <a class="link" href="WnckHandle.html#wnck-handle-get-screen" title="wnck_handle_get_screen ()"><code class="function">wnck_handle_get_screen()</code></a> was not called
+for the sought <a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> before, and returns <code class="literal">NULL</code>.</p>
+<div class="refsect3">
+<a name="wnck-handle-get-screen-for-root.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>root_window_id</p></td>
+<td class="parameter_description"><p>an X window ID.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="wnck-handle-get-screen-for-root.returns"></a><h4>Returns</h4>
+<p>the <a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> for the root window at
+<em class="parameter"><code>root_window_id</code></em>
+, or <code class="literal">NULL</code>. The returned <a class="link" href="WnckScreen.html" title="WnckScreen"><span class="type">WnckScreen</span></a> is owned by
+<a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> and must not be referenced or unreferenced. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-handle-set-default-icon-size"></a><h3>wnck_handle_set_default_icon_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+wnck_handle_set_default_icon_size (<em class="parameter"><code><a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> *self</code></em>,
+                                   <em class="parameter"><code><span class="type">gsize</span> icon_size</code></em>);</pre>
+<p>The default main icon size is <a class="link" href="libwnck-Icons-Functions.html#WNCK-DEFAULT-ICON-SIZE:CAPS" title="WNCK_DEFAULT_ICON_SIZE"><code class="literal">WNCK_DEFAULT_ICON_SIZE</code></a>. This function allows
+to change this value.</p>
+<div class="refsect3">
+<a name="wnck-handle-set-default-icon-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>icon_size</p></td>
+<td class="parameter_description"><p>the default size for windows and application standard icons.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-handle-set-default-mini-icon-size"></a><h3>wnck_handle_set_default_mini_icon_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+wnck_handle_set_default_mini_icon_size
+                               (<em class="parameter"><code><a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> *self</code></em>,
+                                <em class="parameter"><code><span class="type">gsize</span> icon_size</code></em>);</pre>
+<p>The default main icon size is <a class="link" href="libwnck-Icons-Functions.html#WNCK-DEFAULT-MINI-ICON-SIZE:CAPS" title="WNCK_DEFAULT_MINI_ICON_SIZE"><code class="literal">WNCK_DEFAULT_MINI_ICON_SIZE</code></a>. This function
+allows to change this value.</p>
+<div class="refsect3">
+<a name="wnck-handle-set-default-mini-icon-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>icon_size</p></td>
+<td class="parameter_description"><p>the default size for windows and application mini icons.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-handle-get-class-group"></a><h3>wnck_handle_get_class_group ()</h3>
+<pre class="programlisting"><a class="link" href="WnckClassGroup.html" title="WnckClassGroup"><span class="returnvalue">WnckClassGroup</span></a> *
+wnck_handle_get_class_group (<em class="parameter"><code><a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> *self</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> *id</code></em>);</pre>
+<p>Gets the <a class="link" href="WnckClassGroup.html" title="WnckClassGroup"><span class="type">WnckClassGroup</span></a> corresponding to <em class="parameter"><code>id</code></em>
+.</p>
+<div class="refsect3">
+<a name="wnck-handle-get-class-group.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>identifier name of the sought resource class.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="wnck-handle-get-class-group.returns"></a><h4>Returns</h4>
+<p>the <a class="link" href="WnckClassGroup.html" title="WnckClassGroup"><span class="type">WnckClassGroup</span></a> corresponding to
+<em class="parameter"><code>id</code></em>
+, or <code class="literal">NULL</code> if there is no <a class="link" href="WnckClassGroup.html" title="WnckClassGroup"><span class="type">WnckClassGroup</span></a> with the specified
+<em class="parameter"><code>id</code></em>
+. The returned <a class="link" href="WnckClassGroup.html" title="WnckClassGroup"><span class="type">WnckClassGroup</span></a> is owned by libwnck and must not be
+referenced or unreferenced. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-handle-get-application"></a><h3>wnck_handle_get_application ()</h3>
+<pre class="programlisting"><a class="link" href="WnckApplication.html" title="WnckApplication"><span class="returnvalue">WnckApplication</span></a> *
+wnck_handle_get_application (<em class="parameter"><code><a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> *self</code></em>,
+                             <em class="parameter"><code><span class="type">gulong</span> xwindow</code></em>);</pre>
+<p>Gets the <a class="link" href="WnckApplication.html" title="WnckApplication"><span class="type">WnckApplication</span></a> corresponding to the group leader with <em class="parameter"><code>xwindow</code></em>
+
+as X window ID.</p>
+<div class="refsect3">
+<a name="wnck-handle-get-application.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>xwindow</p></td>
+<td class="parameter_description"><p>the X window ID of a group leader.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="wnck-handle-get-application.returns"></a><h4>Returns</h4>
+<p>the <a class="link" href="WnckApplication.html" title="WnckApplication"><span class="type">WnckApplication</span></a> corresponding to
+<em class="parameter"><code>xwindow</code></em>
+, or <code class="literal">NULL</code> if there no such <a class="link" href="WnckApplication.html" title="WnckApplication"><span class="type">WnckApplication</span></a> could be found. The
+returned <a class="link" href="WnckApplication.html" title="WnckApplication"><span class="type">WnckApplication</span></a> is owned by libwnck and must not be referenced or
+unreferenced. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="wnck-handle-get-window"></a><h3>wnck_handle_get_window ()</h3>
+<pre class="programlisting"><a class="link" href="WnckWindow.html" title="WnckWindow"><span class="returnvalue">WnckWindow</span></a> *
+wnck_handle_get_window (<em class="parameter"><code><a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> *self</code></em>,
+                        <em class="parameter"><code><span class="type">gulong</span> xwindow</code></em>);</pre>
+<p>Gets a preexisting <a class="link" href="WnckWindow.html" title="WnckWindow"><span class="type">WnckWindow</span></a> for the X window <em class="parameter"><code>xwindow</code></em>
+. This will not
+create a <a class="link" href="WnckWindow.html" title="WnckWindow"><span class="type">WnckWindow</span></a> if none exists. The function is robust against bogus
+window IDs.</p>
+<div class="refsect3">
+<a name="wnck-handle-get-window.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>xwindow</p></td>
+<td class="parameter_description"><p>an X window ID.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="wnck-handle-get-window.returns"></a><h4>Returns</h4>
+<p>the <a class="link" href="WnckWindow.html" title="WnckWindow"><span class="type">WnckWindow</span></a> for <em class="parameter"><code>xwindow</code></em>
+. The returned
+<a class="link" href="WnckWindow.html" title="WnckWindow"><span class="type">WnckWindow</span></a> is owned by libwnck and must not be referenced or unreferenced. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="WnckHandle.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="WNCK-TYPE-HANDLE:CAPS"></a><h3>WNCK_TYPE_HANDLE</h3>
+<pre class="programlisting">#define WNCK_TYPE_HANDLE (wnck_handle_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="WnckHandle-struct"></a><h3>WnckHandle</h3>
+<pre class="programlisting">typedef struct _WnckHandle WnckHandle;</pre>
+<p>The <a class="link" href="WnckHandle.html" title="WnckHandle"><span class="type">WnckHandle</span></a> struct contains only private fields and should not be
+directly accessed.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="WnckHandle.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="WnckHandle--client-type"></a><h3>The <code class="literal">“client-type”</code> property</h3>
+<pre class="programlisting">  “client-type”              <a class="link" href="libwnck-Miscellaneous-Functions.html#WnckClientType" title="enum WnckClientType"><span class="type">WnckClientType</span></a></pre>
+<p>client-type.</p>
+<p>Owner: WnckHandle</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: WNCK_CLIENT_TYPE_APPLICATION</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body>
+</html>

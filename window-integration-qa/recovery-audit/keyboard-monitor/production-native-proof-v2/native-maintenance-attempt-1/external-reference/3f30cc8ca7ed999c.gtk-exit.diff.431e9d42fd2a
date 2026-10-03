@@ -1,0 +1,13 @@
+--- V4/gtk_peer.py
++++ V5/gtk_peer.py
+@@ -68,7 +68,9 @@
+         popover=Gtk.Popover();popup_button=Gtk.Button(label='Actual popup target '+tag)
+         popover.set_child(popup_button);popover.set_parent(buttons[0]);popover.set_position(Gtk.PositionType.TOP);track(popover);popover.popup()
+     elif op=='close-popover' and popover:popover.popdown();popover.unparent();popover=None
+-    elif op=='exit':app.quit();return False
++    elif op=='exit':
++        print(json.dumps(dict(pass_=True,operation=op)),flush=True)
++        app.quit();return False
+     snapshot();print(json.dumps(dict(pass_=True,operation=op)),flush=True);return True
+ GLib.io_add_watch(sys.stdin.fileno(),GLib.IO_IN,command)
+ GLib.timeout_add(100,snapshot)

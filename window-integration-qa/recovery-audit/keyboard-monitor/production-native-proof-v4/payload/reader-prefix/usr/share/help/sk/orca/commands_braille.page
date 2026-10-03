@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_braille" xml:lang="sk">
+  <info>
+    <link type="next" xref="commands_reading"/>
+    <link type="guide" xref="commands#speech_braille"/>
+    <link type="seealso" xref="preferences_braille"/>
+    <title type="sort">2. Braillovo písmo</title>
+    <title type="link">Braillovo písmo</title>
+    <desc>Príkazy spúšťané na braillskych zobrazovačoch</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Príkazy pre braillovo písmo</title>
+  <p>Nasledujúce príkazy vám umožňujú ovládať <app>Orca</app> z obnoviteľného braillskeho zobrazovača namiesto klávesnice:</p>
+  <list>
+    <item><p>Posun braillskeho zobrazovača doľava: Line Left</p></item>
+    <item><p>Posun braillskeho zobrazovača doprava: Line Right</p></item>
+    <item><p>Prepnutie režimu plochého prehliadania: Freeze</p></item>
+    <item><p>Preskúmanie slova vyššie: Line Up</p></item>
+    <item><p>Preskúmanie slova nižšie: Line Down</p></item>
+    <item><p>Preskúmanie vľavo dole: Bottom Right</p></item>
+    <item><p>Preskúmanie východiskovej pozície: Top Left</p></item>
+    <item><p>Skrátené braillovo písmo: Six Dots</p></item>
+    <item><p>Označenie začiatku výberu textu: Cut Begin</p></item>
+    <item><p>Označenie konca výberu textu: Cut Line</p></item>
+    <item><p>Spracovanie smerovacej klávesy kurzora: Cursor Routing</p></item>
+    <item><p>Návrat k objektu s fokusom klávesnice: Cursor Position</p></item>
+  </list>
+</page>

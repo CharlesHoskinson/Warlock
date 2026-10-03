@@ -1,0 +1,117 @@
+test_complete_exact_observation (test_verify_sampling.SamplerConfiguration.test_complete_exact_observation) ... ok
+test_duplicate_texture_cannot_attest_two_sources (test_verify_sampling.SamplerConfiguration.test_duplicate_texture_cannot_attest_two_sources) ... ok
+test_missing_family_and_control_records (test_verify_sampling.SamplerConfiguration.test_missing_family_and_control_records) ... ok
+test_native_window_extent_is_not_source_extent (test_verify_sampling.SamplerConfiguration.test_native_window_extent_is_not_source_extent) ... ok
+test_numeric_booleans_are_invalid_getters (test_verify_sampling.SamplerConfiguration.test_numeric_booleans_are_invalid_getters) ... ok
+test_one_pixel_control_never_substitutes_family (test_verify_sampling.SamplerConfiguration.test_one_pixel_control_never_substitutes_family) ... ok
+test_pixels_and_presentation_are_separate (test_verify_sampling.SamplerConfiguration.test_pixels_and_presentation_are_separate) ... ok
+test_queried_state_and_errors (test_verify_sampling.SamplerConfiguration.test_queried_state_and_errors) ... ok
+test_stale_source_digest (test_verify_sampling.SamplerConfiguration.test_stale_source_digest) ... ok
+test_sticky_control_uniform (test_verify_sampling.SamplerConfiguration.test_sticky_control_uniform) ... ok
+test_wrong_fragment_is_not_experiment (test_verify_sampling.SamplerConfiguration.test_wrong_fragment_is_not_experiment) ... ok
+test_changed_actual_full_raw_digest_refused (test_verify_causal.BindingTests.test_changed_actual_full_raw_digest_refused) ... ok
+test_changed_member_order_refused (test_verify_causal.BindingTests.test_changed_member_order_refused) ... ok
+test_changed_prefix_digest_refused (test_verify_causal.BindingTests.test_changed_prefix_digest_refused) ... ok
+test_equivalent_reordered_rectangle_keys_accepted (test_verify_causal.BindingTests.test_equivalent_reordered_rectangle_keys_accepted) ... ok
+test_false_declared_read_format_equality_refused (test_verify_causal.BindingTests.test_false_declared_read_format_equality_refused) ... ok
+test_missing_swap_success_refused (test_verify_causal.BindingTests.test_missing_swap_success_refused) ... ok
+test_native_read_pair_must_match_actual_query (test_verify_causal.BindingTests.test_native_read_pair_must_match_actual_query) ... ok
+test_partial_or_out_of_range_prefix_refused (test_verify_causal.BindingTests.test_partial_or_out_of_range_prefix_refused) ... ok
+test_predetermined_constant_controls_complete_exact_images (test_verify_causal.BindingTests.test_predetermined_constant_controls_complete_exact_images) ... ok
+test_prefix_does_not_substitute_for_actual_full_presentation (test_verify_causal.BindingTests.test_prefix_does_not_substitute_for_actual_full_presentation) ... ok
+test_retained_actual_full_prefix_error_is_preserved (test_verify_causal.BindingTests.test_retained_actual_full_prefix_error_is_preserved) ... ok
+test_stale_sequence_refused_before_pixels (test_verify_causal.BindingTests.test_stale_sequence_refused_before_pixels) ... ok
+test_symlink_evidence_refused (test_verify_causal.BindingTests.test_symlink_evidence_refused) ... ok
+test_wrong_scene_token_suffix_refused (test_verify_causal.BindingTests.test_wrong_scene_token_suffix_refused) ... ok
+test_actual_full_buffer_viewport_must_match_every_coordinate (test_quantized_gate.Gate.test_actual_full_buffer_viewport_must_match_every_coordinate) ... ok
+test_actual_output_generation_geometry_required (test_quantized_gate.Gate.test_actual_output_generation_geometry_required) ... ok
+test_all_over_programs_swapped_rejects (test_quantized_gate.Gate.test_all_over_programs_swapped_rejects) ... ok
+test_boolean_coverage_coordinate_refused (test_quantized_gate.Gate.test_boolean_coverage_coordinate_refused) ... ok
+test_compiled_program_roles_must_be_distinct_and_typed (test_quantized_gate.Gate.test_compiled_program_roles_must_be_distinct_and_typed) ... ok
+test_complete_actual_configuration_never_claims_pixels (test_quantized_gate.Gate.test_complete_actual_configuration_never_claims_pixels) ... ok
+test_conflicting_same_generation_output_geometry_refused (test_quantized_gate.Gate.test_conflicting_same_generation_output_geometry_refused) ... ok
+test_control_must_cover_exact_logical_output (test_quantized_gate.Gate.test_control_must_cover_exact_logical_output) ... ok
+test_copy_feedback_attachment_rejects (test_quantized_gate.Gate.test_copy_feedback_attachment_rejects) ... ok
+test_copy_wrong_destination_rejects (test_quantized_gate.Gate.test_copy_wrong_destination_rejects) ... ok
+test_coverage_policy_and_compiled_vertex_digest_refused_on_drift (test_quantized_gate.Gate.test_coverage_policy_and_compiled_vertex_digest_refused_on_drift) ... ok
+test_coverage_query_error_refused (test_quantized_gate.Gate.test_coverage_query_error_refused) ... ok
+test_default_target_not_final_prefix_rejects (test_quantized_gate.Gate.test_default_target_not_final_prefix_rejects) ... ok
+test_different_buffer_extent_rejects (test_quantized_gate.Gate.test_different_buffer_extent_rejects) ... ok
+test_different_final_pass_program_rejects (test_quantized_gate.Gate.test_different_final_pass_program_rejects) ... ok
+test_each_coverage_limit_and_sample_coordinate_queried (test_quantized_gate.Gate.test_each_coverage_limit_and_sample_coordinate_queried) ... ok
+test_every_actual_vertex_state_field_refused_on_drift (test_quantized_gate.Gate.test_every_actual_vertex_state_field_refused_on_drift) ... ok
+test_final_copy_blended_rejects (test_quantized_gate.Gate.test_final_copy_blended_rejects) ... ok
+test_final_copy_program_swapped_rejects (test_quantized_gate.Gate.test_final_copy_program_swapped_rejects) ... ok
+test_fullscreen_positions_cannot_be_member_quad (test_quantized_gate.Gate.test_fullscreen_positions_cannot_be_member_quad) ... ok
+test_hardware_linear_selection_cannot_masquerade_as_experiment (test_quantized_gate.Gate.test_hardware_linear_selection_cannot_masquerade_as_experiment) ... ok
+test_later_frame_without_controls_still_has_complete_family (test_quantized_gate.Gate.test_later_frame_without_controls_still_has_complete_family) ... ok
+test_member_pass_output_geometry_drift_refused (test_quantized_gate.Gate.test_member_pass_output_geometry_drift_refused) ... ok
+test_member_rectangle_cannot_borrow_another_pass_geometry (test_quantized_gate.Gate.test_member_rectangle_cannot_borrow_another_pass_geometry) ... ok
+test_missing_coverage_uniform_refused (test_quantized_gate.Gate.test_missing_coverage_uniform_refused) ... ok
+test_missing_or_duplicate_configuration_rejects (test_quantized_gate.Gate.test_missing_or_duplicate_configuration_rejects) ... ok
+test_nonfinite_sample_coordinate_refused (test_quantized_gate.Gate.test_nonfinite_sample_coordinate_refused) ... ok
+test_old_local_sequence_rejects (test_quantized_gate.Gate.test_old_local_sequence_rejects) ... ok
+test_old_output_generation_rejects (test_quantized_gate.Gate.test_old_output_generation_rejects) ... ok
+test_output_observation_missing_refused (test_quantized_gate.Gate.test_output_observation_missing_refused) ... ok
+test_partial_family_prefix_rejects (test_quantized_gate.Gate.test_partial_family_prefix_rejects) ... ok
+test_prefix_copy_program_swapped_rejects (test_quantized_gate.Gate.test_prefix_copy_program_swapped_rejects) ... ok
+test_previous_prefix_changed_mid_group_rejects (test_quantized_gate.Gate.test_previous_prefix_changed_mid_group_rejects) ... ok
+test_reordered_source_digests_rejects (test_quantized_gate.Gate.test_reordered_source_digests_rejects) ... ok
+test_same_attachment_read_write_rejects (test_quantized_gate.Gate.test_same_attachment_read_write_rejects) ... ok
+test_same_bytes_unknown_source_texture_rejects (test_quantized_gate.Gate.test_same_bytes_unknown_source_texture_rejects) ... ok
+test_source_must_not_alias_prefix_attachment (test_quantized_gate.Gate.test_source_must_not_alias_prefix_attachment) ... ok
+test_unquantized_or_multisampled_state_rejects (test_quantized_gate.Gate.test_unquantized_or_multisampled_state_rejects) ... ok
+test_v10_half_center_child_top_row_included (test_quantized_gate.Gate.test_v10_half_center_child_top_row_included) ... ok
+test_wrong_compiled_shader_hash_rejects (test_quantized_gate.Gate.test_wrong_compiled_shader_hash_rejects) ... ok
+test_wrong_control_order_or_boolean_index_rejects (test_quantized_gate.Gate.test_wrong_control_order_or_boolean_index_rejects) ... ok
+test_causal_copy_has_no_swap_prefix_or_presentation_authority (test_causal_target_source.TargetSource.test_causal_copy_has_no_swap_prefix_or_presentation_authority) ... ok
+test_copy_default_before_native_query_and_both_reads (test_causal_target_source.TargetSource.test_copy_default_before_native_query_and_both_reads) ... ok
+test_original_pair_guard_and_default_shader_bytes_unchanged (test_causal_target_source.TargetSource.test_original_pair_guard_and_default_shader_bytes_unchanged) ... FAIL
+test_retained_actual_native_mismatch_stays_rejected (test_causal_target_source.TargetSource.test_retained_actual_native_mismatch_stays_rejected) ... ok
+test_accepted_raster_drawing_and_resource_methods_unchanged (test_production_pipeline.ProductionPipelineTests.test_accepted_raster_drawing_and_resource_methods_unchanged) ... 
+  test_accepted_raster_drawing_and_resource_methods_unchanged (test_production_pipeline.ProductionPipelineTests.test_accepted_raster_drawing_and_resource_methods_unchanged) (start='    void diagnosticReadback') ... FAIL
+test_all_preexisting_pixel_shader_coverage_readback_bytes_preserved (test_production_pipeline.ProductionPipelineTests.test_all_preexisting_pixel_shader_coverage_readback_bytes_preserved) ... ok
+test_default_diagnostic_selects_same_pipeline_without_experiment (test_production_pipeline.ProductionPipelineTests.test_default_diagnostic_selects_same_pipeline_without_experiment) ... ok
+test_diagnostic_default_cannot_claim_production (test_production_pipeline.ProductionPipelineTests.test_diagnostic_default_cannot_claim_production) ... ok
+test_every_mode_getter_typed_and_exact (test_production_pipeline.ProductionPipelineTests.test_every_mode_getter_typed_and_exact) ... ok
+test_exact_production_mode_remains_configuration_only (test_production_pipeline.ProductionPipelineTests.test_exact_production_mode_remains_configuration_only) ... ok
+test_experiment_cannot_masquerade_as_default (test_production_pipeline.ProductionPipelineTests.test_experiment_cannot_masquerade_as_default) ... ok
+test_extra_mode_authority_cannot_be_inferred (test_production_pipeline.ProductionPipelineTests.test_extra_mode_authority_cannot_be_inferred) ... ok
+test_missing_duplicate_and_unknown_role_reject (test_production_pipeline.ProductionPipelineTests.test_missing_duplicate_and_unknown_role_reject) ... ok
+test_production_cannot_masquerade_as_raster_scope (test_production_pipeline.ProductionPipelineTests.test_production_cannot_masquerade_as_raster_scope) ... ok
+test_raster_mode_is_const_and_has_no_postconstruction_assignment (test_production_pipeline.ProductionPipelineTests.test_raster_mode_is_const_and_has_no_postconstruction_assignment) ... ok
+test_accepted_primitive_exact (test_continuous_source.ContinuousSourceTests.test_accepted_primitive_exact) ... ok
+test_complete_planning_precedes_token_mutation (test_continuous_source.ContinuousSourceTests.test_complete_planning_precedes_token_mutation) ... ok
+test_diagnostic_mix_and_geometry_exact (test_continuous_source.ContinuousSourceTests.test_diagnostic_mix_and_geometry_exact) ... ok
+test_diagnostic_sample_and_validate_exact (test_continuous_source.ContinuousSourceTests.test_diagnostic_sample_and_validate_exact) ... ok
+test_formal_contract_first (test_continuous_source.ContinuousSourceTests.test_formal_contract_first) ... ok
+test_no_duration_nanosecond_truncation (test_continuous_source.ContinuousSourceTests.test_no_duration_nanosecond_truncation) ... ok
+test_only_one_ordinary_sample_reused_in_draw_and_submission (test_continuous_source.ContinuousSourceTests.test_only_one_ordinary_sample_reused_in_draw_and_submission) ... ok
+test_ordinary_duplicate_start_uses_idempotent_ledger (test_continuous_source.ContinuousSourceTests.test_ordinary_duplicate_start_uses_idempotent_ledger) ... ok
+test_original_drawing_upload_and_retirement_exact (test_continuous_source.ContinuousSourceTests.test_original_drawing_upload_and_retirement_exact) ... ok
+test_original_member_json_exact (test_continuous_source.ContinuousSourceTests.test_original_member_json_exact) ... ok
+test_predecessors_exact (test_continuous_source.ContinuousSourceTests.test_predecessors_exact) ... ok
+test_shaders_pixels_resource_policy_exact (test_continuous_source.ContinuousSourceTests.test_shaders_pixels_resource_policy_exact) ... ok
+
+======================================================================
+FAIL: test_original_pair_guard_and_default_shader_bytes_unchanged (test_causal_target_source.TargetSource.test_original_pair_guard_and_default_shader_bytes_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/test_causal_target_source.py", line 13, in test_original_pair_guard_and_default_shader_bytes_unchanged
+    self.assertEqual((B/name).read_bytes(),(OLD/name).read_bytes())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'#pr[197 chars]or>\n#include "CommonTrajectoryPlan.hpp"\n\nna[20042 chars]n}\n' != b'#pr[197 chars]or>\n\nnamespace OwnedRoute {\nstruct Identity[11931 chars]n}\n'
+
+======================================================================
+FAIL: test_accepted_raster_drawing_and_resource_methods_unchanged (test_production_pipeline.ProductionPipelineTests.test_accepted_raster_drawing_and_resource_methods_unchanged) (start='    void diagnosticReadback')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-continuous-dev-v13/test_production_pipeline.py", line 49, in test_accepted_raster_drawing_and_resource_methods_unchanged
+    self.assertTrue(a);self.assertEqual(a,b)
+    ~~~~~~~~~~~~~~~^^^
+AssertionError: '' is not true
+
+----------------------------------------------------------------------
+Ran 93 tests in 5.425s
+
+FAILED (failures=2)

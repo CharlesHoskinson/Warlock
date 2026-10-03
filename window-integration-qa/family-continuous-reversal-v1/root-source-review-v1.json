@@ -1,0 +1,61 @@
+{
+  "updatedUTC": "2026-10-01T22:48:23.000281+00:00",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-continuous-reversal-v1/reversal.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  reversal\n    ok oldFeedbackBecomesDisplayedOriginTest passed 1 test(s)\n    ok provisionalRetargetHasNoAuthorityTest passed 1 test(s)\n    ok oldReceiptCannotCommitTest passed 1 test(s)\n    ok currentValidatedReceiptCanCommitTest passed 1 test(s)\n    ok secondReversalRetainsSourcesTest passed 1 test(s)\n    ok shutdownRevokesAuthorityTest passed 1 test(s)\n\n  6 passing (55ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-continuous-reversal-v1/reversal.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (410ms at 4878 traces/second).\nUse --seed=0x153a8da --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "/home/hoskinson/window-integration-qa/family-continuous-reversal-v1/test_reversal.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".......................\n----------------------------------------------------------------------\nRan 23 tests in 0.008s\n\nOK\n"
+    }
+  ],
+  "result": "pass",
+  "namedScenarios": 6,
+  "samples": 2000,
+  "maxSteps": 100,
+  "adversarialEvidenceTests": 23,
+  "allOfflineTests": 72,
+  "parserProbes": 2,
+  "sourceChecks": {
+    "formalContractBeforeCampaign": true,
+    "originalV8UnchangedRetained": true,
+    "sameV12APIAndGuardedPrivateHost": true,
+    "plainV10ProductionBinaryNoExperimentalFlag": true,
+    "actualInteriorPresentationBeforeOppositeRequest": true,
+    "observerReadOnlyLocksAndBoundedEvidenceNoCallbacks": true,
+    "sourceRecaptureReuploadOriginStaleAuthorityRefused": true,
+    "all38GatesMandatory": true,
+    "strictLimitedExactMemberQueriesAndNormalEOF": true,
+    "allMainReadOnlyAndClientsFirstCleanupRetained": true
+  },
+  "productionAccepted": false,
+  "nativeExecuted": false,
+  "fullWindowsParityAccepted": false
+}

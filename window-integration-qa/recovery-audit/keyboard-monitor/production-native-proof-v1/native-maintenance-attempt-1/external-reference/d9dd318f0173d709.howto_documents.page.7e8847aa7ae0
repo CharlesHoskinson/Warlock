@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_documents" xml:lang="eu">
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <link type="next" xref="howto_text_attributes"/>
+    <title type="sort">1. Dokumentuak</title>
+    <desc>Edukia irakurtzea</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Dokumentuak</title>
+  <p>Edozein dokumenturen edukiak irakurtzeko, erabili aplikazioak integratuta duen kurtsore-nabigazioa. Dokumentuaren testuaren barruan nabigatzen duzunean, <app>Orcak</app> zure kokaleku berria aurkeztuko dizu. Emaitza gisa, ziur arki ezagutuko duzu <app>Orca</app> erabiliz dokumentu bat nola irakurri. Adibidez:</p>
+  <list>
+    <item>
+      <p>Erabili <key>←</key> eta <key>→</key> karakterez karaktere mugitu eta irakurtzeko.</p>
+    </item>
+    <item>
+      <p>Erabili <keyseq><key>Ctrl</key><key>←</key></keyseq> eta <keyseq><key>Ctrl</key><key>→</key></keyseq> hitzez hitz mugitu eta irakurtzeko.</p>
+    </item>
+    <item>
+      <p>Erabili <key>↓</key> eta <key>↑</key> lerroz lerro mugitu eta irakurtzeko.</p>
+    </item>
+    <item>
+      <p>Erabili <key>⇧</key> goiko komandoekin konbinatuta testua hautatu eta desautatzeko.</p>
+    </item>
+  </list>
+  <note style="tip">
+    <title>Kurtsore-nabigazioa gaitzea aplikazio batean</title>
+    <p>Aplikazio guztiek ez dute kurtsore-nabigazioa gaituta lehenespenez. GNOME aplikazio askotan, kurtsore-nabigazioa <key>F7</key> tekla sakatuz aktibatzen eta desaktibatzen da.</p>
+  </note>
+  <p>
+    In addition to reading a document by caret navigation, you may find it helpful
+    to read, spell, and obtain the Unicode value for the current text. You can do
+    these things through <app>Orca</app>'s <link xref="howto_flat_review">Flat
+    Review feature</link>.
+  </p>
+  <p>
+    Finally, in order to have <app>Orca</app> speak the entire document from your
+    present location, use the Say All command. It, along with a more complete
+    listing of <app>Orca</app>'s commands for accessing document text, can
+    be found in the <link xref="commands_reading">Reading Commands</link> guide.
+  </p>
+</page>

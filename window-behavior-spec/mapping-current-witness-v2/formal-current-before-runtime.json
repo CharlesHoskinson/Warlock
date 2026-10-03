@@ -1,0 +1,39 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v2/CONTRACT.md": "d95b2c74a24b9f37eab0e206ff58f36f5c3eebc9cf3a7326dc837378bde4a74a",
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v2/current_witness.qnt": "170ac161a4e530e701e613d517f86cddf0c00f8768d14cce23b0d59882a97b20",
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v2/prove_before.py": "0a4c0379462d436c29fdfd40f5ce6a1fa1e8ffa0f3be18412f05ae3e8f155296"
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/mapping-current-witness-v2/current_witness.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  current_witness\n    ok firstCompleteEpochTest passed 1 test(s)\n    ok incompleteNeverAuthorizedTest passed 1 test(s)\n    ok changedLoaderEpochDiscardsTest passed 1 test(s)\n    ok entirelyFreshCurrentEpochTest passed 1 test(s)\n    ok vanishedRangeNeedsFreshEpochTest passed 1 test(s)\n    ok oldBeforeNewAfterRefusedTest passed 1 test(s)\n    ok oldVerificationCannotAuthorizeTest passed 1 test(s)\n    ok oldWitnessAfterNewAcceptanceInertTest passed 1 test(s)\n    ok unknownOrDeletedCodeHardFaultTest passed 1 test(s)\n    ok sourceChangedCannotRebindTest passed 1 test(s)\n    ok PIDStartReplacementHardFaultTest passed 1 test(s)\n    ok capturedOwnerChangedRefusedTest passed 1 test(s)\n    ok helperSuccessDoesNotCreateKernelProofTest passed 1 test(s)\n    ok helperSuccessDoesNotRestoreExpiredProofTest passed 1 test(s)\n    ok callerCannotCreateKernelProofTest passed 1 test(s)\n    ok childGoneCannotReobserveTest passed 1 test(s)\n    ok deadlineCannotExtendTest passed 1 test(s)\n    ok duplicateStartedNeverRelaunchesTest passed 1 test(s)\n    ok epochLimitRefusesTest passed 1 test(s)\n    ok noProofFromNameChangeAloneTest passed 1 test(s)\n\n  20 passing (1809ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/mapping-current-witness-v2/current_witness.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (2741ms at 730 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceUnchanged": true,
+  "mappingPredicateChanged": false,
+  "GUI": false,
+  "rootReviewBeforeRuntime": true
+}

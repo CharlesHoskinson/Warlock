@@ -1,0 +1,27 @@
+{
+  "updatedUTC": "2026-10-02T01:55:56.204707+00:00",
+  "actualObservationChecks": {
+    "noTrustedPageMotion": true,
+    "actualCursorReachedIntegerCandidate": true,
+    "exactGeometricHitBrowser": true,
+    "pointerAndKeyboardFocusRemainFiles": true,
+    "draftCaretActiveUnchanged": true
+  },
+  "actualSamples": 48,
+  "sourceArtifacts": {
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v14/attempt-1/flow/browser-coordinate-witness.json": "a78711b35877404fd17b92eda88f767e35401d7c4f059836cff9380328fc4dbe",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v14/attempt-1/flow/report.json": "0781909041ee2e36d0cb4da3978da6a97a652e0d09b84e51d24c7c157485f263",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v14/attempt-1/host/runtime-archive/hyprland.lua": "9ff5918bc0cfb9d363267fbe276426547819341dfdb10ece2048d891d9bc2916",
+    "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/primary/InputManager.cpp": "feedf32e2e3d23aeaed7a02ef4ab94be2d66f4b22873b3166026da1e9ece4765"
+  },
+  "sourceLines": [
+    679,
+    700
+  ],
+  "sourcePolicy": "FOLLOWMOUSE==0 with different active and found floating windows retains pointer focus and sends pointer motion only when focused surface matches. Observed focus/pointerFiles and hitBrowser match that branch.",
+  "causalAttribution": "Inference from retained actual48snapshots, actualfollow_mouse0 configuration and primary source at advertised core revision; no independent core rebuild equivalence claim.",
+  "featureAcceptance": false,
+  "nativeCommands": false,
+  "mainWrites": false,
+  "next": "FreshV15 explicit Browser focus fixture setup before same strict buttonfree witness; setup is not click/feature evidence and original15 remains mandatory."
+}

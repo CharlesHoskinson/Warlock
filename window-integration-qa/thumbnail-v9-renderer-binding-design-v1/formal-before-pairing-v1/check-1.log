@@ -1,0 +1,51 @@
+
+  renderer_collector_binding_test
+    ok genuineNormalCloseAcceptTest passed 1 test(s)
+    ok terminalIdentityDoesNotRequireLiveRegistryTest passed 1 test(s)
+    ok terminalAloneCannotAuthorizeFeatureTest passed 1 test(s)
+    ok originalElevenGateFailureRemainsFailTest passed 1 test(s)
+    ok laterPassCannotClearOriginalFailureTest passed 1 test(s)
+    ok cachedV23ModuleRefusesTest passed 1 test(s)
+    ok missingNineteenthModuleRefusesTest passed 1 test(s)
+    1) extraTwentiethModuleRefusesTest failed after 1 test(s)
+    ok missingV24FrozenClosureRefusesTest passed 1 test(s)
+    ok missingV7FrozenClosureRefusesTest passed 1 test(s)
+    ok missingV7ActualFailureRefusesTest passed 1 test(s)
+    ok missingV8ComponentRefusesTest passed 1 test(s)
+    ok foreignTransportRefusesTest passed 1 test(s)
+    ok foreignLaunchRefusesTest passed 1 test(s)
+    ok foreignKeeperRefusesTest passed 1 test(s)
+    ok wrongRegisteredChildRefusesTest passed 1 test(s)
+    ok canonicalPopenWrongPIDRefusesTest passed 1 test(s)
+    ok processSubclassRefusesTest passed 1 test(s)
+    ok registryBooleanDeviceAliasRefusesTest passed 1 test(s)
+    ok launchFloatDeviceAliasRefusesTest passed 1 test(s)
+    ok actorBooleanAliasRefusesTest passed 1 test(s)
+    ok outstandingSecondSameActorJobRefusesTest passed 1 test(s)
+    ok changedBindingAfterRawDiskRefusesTest passed 1 test(s)
+    ok wrongNewCallbackRoleRefusesTest passed 1 test(s)
+    ok genuineNewCallbackForeignOwnerRefusesTest passed 1 test(s)
+    ok staticCallbackBoundOwnerRefusesTest passed 1 test(s)
+    ok nonzeroRendererExitRefusesTerminalTest passed 1 test(s)
+    ok floatZeroExitRefusesTerminalTest passed 1 test(s)
+    ok selectedJobStillRegisteredRefusesTerminalTest passed 1 test(s)
+    ok launchNotClosedRefusesTerminalTest passed 1 test(s)
+    ok changedTerminalBindingRefusesTest passed 1 test(s)
+    ok changedTerminalAfterDiskRefusesTest passed 1 test(s)
+    ok unknownOtherJobPreventsTerminalTest passed 1 test(s)
+    ok keeperNotNormallyClosedPreventsTerminalTest passed 1 test(s)
+
+  33 passing (3009ms)
+  1 failed
+
+  1) extraTwentiethModuleRefusesTest:
+       Error [QNT507]: Called 'set' with a non-existing key
+        at /home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/renderer_collector_binding_test.qnt:11:91
+        11:  run extraTwentiethModuleRefusesTest=init.then(fire(Link({package:{...goodPackage,modules:goodPackage.modules.set(20,V24)},observation:live}))).then(check(s.refused))
+                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xe2140d983e70d74a --match=extraTwentiethModuleRefusesTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/renderer_collector_binding_test.qnt
+error: Tests failed

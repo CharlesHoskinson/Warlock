@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_voice" xml:lang="eu">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_speech"/>
+    <title type="sort">2.0 Ahotsa</title>
+    <title type="link">Ahotsa</title>
+    <desc><app>Orca</app> aplikazioak darabilen ahotsa konfiguratzea</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Ahots-hobespenak</title>
+  <section id="voice_type_settings">
+    <title>Ahots moten ezarpenak</title>
+    <section id="voice_type">
+      <title>Ahots mota</title>
+      <p>
+        This combo box makes it possible for you to use different voices so that
+        you can better distinguish uppercase and linked text from other text,
+        and on-screen text from text added by <app>Orca</app>.
+      </p>
+      <note style="tip">
+        <title>Ahots anitz konfiguratzea</title>
+        <p>
+          For each voice you wish to configure, first select the
+          voice in the <gui>Voice type</gui> combo box. Then
+          configure the person, rate, pitch, and volume to be used
+          for that voice.
+        </p>
+      </note>
+    </section>
+    <section id="speech_system">
+      <title>Irakurketa-sistema</title>
+      <p>
+        This combo box allows you to select your preferred speech system from
+        those you have installed, such as Speech Dispatcher.
+      </p>
+    </section>
+    <section id="speech_synthesizer">
+      <title>Irakurketa-sintetizatzailea</title>
+      <p>
+        This combo box allows you to select the speech synthesizer to be used
+        with your chosen Speech system.
+      </p>
+    </section>
+    <section id="person">
+      <title>Pertsona</title>
+      <p>
+        This combo box allows you to choose which "person" or "speaker" should
+        be used with the selected voice. For instance, you might wish to have
+        David speak by default, but have hyperlinks spoken by Alice. Note that
+        what you find in the <gui>Person</gui> combo box will depend on which
+        speech synthesizers you have installed.
+      </p>
+    </section>
+    <section id="capitalization_style">
+      <title>Maiuskulen estiloa</title>
+      <p>
+       This combo box allows you to choose which Speech Dispatcher capitalization
+       indication styles you wish to use in addition to <app>Orca</app>'s
+       capitalization voice. The options, which are named using Speech Dispatcher's
+       terminology, are:
+     </p>
+     <list>
+       <item><p><gui>Ikonoa</gui>: Tonu bat erreproduzitzen du</p></item>
+       <item><p><gui>Spell</gui>: Speaks the word "capital"</p></item>
+       <item><p><gui>Bat ere ez</gui></p></item>
+    </list>
+    <note style="tip">
+      <title>Ezarpen hau dinamikoki aldatu daiteke</title>
+      <p>
+        <app>Orca</app> also has a command to cycle through the available
+        capitalization styles. See <link xref="commands_speech_settings">
+        Speech Settings Commands</link> for more information.
+      </p>
+    </note>
+    <p>Balio lehenetsia: Bat ere ez</p>
+    </section>
+    <section id="rate_pitch_and_volume">
+      <title>Rate, Pitch, and Volume</title>
+      <p>
+        These three left-right sliders allow you to further customize the sound
+        of the person you have just selected.
+      </p>
+    </section>
+  </section>
+  <section id="global_voice_settings">
+  <title>Ahots orokorraren ezarpenak</title>
+    <section id="pauses">
+      <title>Break speech into chunks between pauses</title>
+      <p>
+        Depending on the enabled speech settings, <app>Orca</app> may have quite
+        a bit to say about a particular object such as its name, its role, its
+        state, its mnemonic, its tutorial message, and so on. Checking the
+        <gui>Break speech into chunks between pauses</gui> checkbox will cause
+        <app>Orca</app> to insert brief pauses in between each of these pieces
+        of information.
+      </p>
+      <p>Balio lehenetsia: markatuta</p>
+    </section>
+    <section id="numbers_as_digits">
+      <title>Speak numbers as digits</title>
+      <p>
+        Checking the <gui>Speak numbers as digits</gui> checkbox will cause
+        <app>Orca</app> to break a number like "123" into separate digits
+        ("1," "2," and "3") prior to passing it along to the speech synthesizer.
+      </p>
+      <p>Balio lehenetsia: markatu gabe</p>
+    </section>
+  </section>
+</page>

@@ -1,0 +1,67 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-fdf6c3cd9d4c48a18dedd963b40ab2f9.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/thumbnail-v7-agent-review-v2/initial_callback_probe.py"
+      ],
+      "cwd": "/home/hoskinson",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "/home/hoskinson/window-integration-qa/thumbnail-v7-agent-review-v2/initial_callback_probe.py.stdout.log",
+          "sha256": "680603825955d7b73b5773017978ca90970bedea15da64f50ad9bbf448bea057"
+        },
+        {
+          "path": "/home/hoskinson/window-integration-qa/thumbnail-v7-agent-review-v2/initial_callback_probe.py.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/thumbnail-v7-agent-review-v2/initial_callback_owner_probe_v2.py"
+      ],
+      "cwd": "/home/hoskinson",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "/home/hoskinson/window-integration-qa/thumbnail-v7-agent-review-v2/initial_callback_owner_probe_v2.py.stdout.log",
+          "sha256": "543890c19550cd4393bb93da56aa1643b681c114b37bd62844dd9cafcf97f1d1"
+        },
+        {
+          "path": "/home/hoskinson/window-integration-qa/thumbnail-v7-agent-review-v2/initial_callback_owner_probe_v2.py.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/thumbnail-v7-agent-review-v2/focused.py"
+      ],
+      "cwd": "/home/hoskinson",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "/home/hoskinson/window-integration-qa/thumbnail-v7-agent-review-v2/focused.py.stdout.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "/home/hoskinson/window-integration-qa/thumbnail-v7-agent-review-v2/focused.py.stderr.log",
+          "sha256": "15c160c97da0aeb096fa446c278dd70c4dd3a643f7452688d583c13a7d2914c9"
+        }
+      ]
+    }
+  ],
+  "nativeLaunch": false
+}

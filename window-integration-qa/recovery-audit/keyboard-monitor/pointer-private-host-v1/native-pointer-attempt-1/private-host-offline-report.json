@@ -1,0 +1,42 @@
+{
+  "frozen": false,
+  "nativeLaunched": false,
+  "hostHealthyTransportAccepted": true,
+  "nativeGuardOnly": true,
+  "nativeSO": "241432e788b77775a8d73438d3dcc03fe3c11ca30d96fa7c38f31c2690a066fa",
+  "offline": {
+    "runtimeScenarios": 12,
+    "runtimeSamples": 2000,
+    "maxSteps": 100,
+    "cppAssertions": 15,
+    "pythonFixtureChecks": 57,
+    "actualMouseSourceChecks": 14
+  },
+  "reviewFiles": {
+    "PRIVATE_HOST_CONTRACT.md": "4b774e3d9227d1331cde395a4a7b358943f87dfaf143fda78f51a19000bdd68f",
+    "PRIVATE_HOST_REVIEW.md": "fa26830dacc379eb73f39a31c7f5a6c7dae7b665f4b8b49d59f4736227c7c9c6",
+    "private_runtime.qnt": "171fb99a67f0a63091e84795293133d4cb9697a8d68ec00c9ea0a8833ce5d8e8",
+    "private_runtime_test.qnt": "0fdb54e4939defe34c137a7a916de18dce772ec6464d0c7543b5f40ff3c8536f",
+    "native/private_runtime.hpp": "075343e5d22898a36764d76af5ac842d8fdd321e3215b8729e8c3104b43175bc",
+    "native/test_private_runtime.cpp": "1c0e3429ae4ba3342ad7c6a7dc9ae8f15716726d181eeb616f7851d48f92b1c2",
+    "native/plugin-v8-host.cpp": "8b2fbfc1a34a51f47db12caa63b089cde70f8448daeb11f7ab19281fc77824b8",
+    "native/libkeyboard-monitor-private-v8-host.so": "241432e788b77775a8d73438d3dcc03fe3c11ca30d96fa7c38f31c2690a066fa",
+    "native/v8-to-private-host.diff": "bb18317bf791fc45a03247bbdbd9d33dc40f8dfaa60991fda6543899eac08dc6",
+    "native_probe_pointer.py": "76bd077f3fae11fefb40b234327645582872555d1cd8f68a3c92f1a41e6b8efe",
+    "main_observer.py": "b0d91ec3911c59b2821c73229fa2cac1ba4b866428fa507b379f61b740078362",
+    "private_runtime_guard.py": "e7284af1d92bcb38b3a9abe698189b33496f5a6f4f37f69af50b61bb30f34f4a",
+    "private_host_test.py": "9115684f05b70f3a518d29aab5bd7f2c0c25fdd7080bec17004dd261fb0db1c7",
+    "private-host-offline-tests.log": "da874bba4d39e30018a73e8f927f4d3194b9044a70a56db09f61bf60097e61af",
+    "private-runtime-formal.log": "285d6cb2cd89a48ca410e30f094a46bb340ee05a71112b52c1af8fe77bc90bca",
+    "private-host-import-preflight.json": "eb332689e7f0b6279751b54fe8fecfb3938c6afbcf8eedb03b0a7d55f45044f5",
+    "private-host-mouse-source-tests.log": "0ef3170d9d2806c807bc1ecb135912f4d3f30a03055f018ebc866e364c76fbea",
+    "build_private_packet.py": "7dd6c23fda686c217dec866a0064a144693bc5772b1f22f1df909d77dbba5dc5",
+    "host_acceptance.py": "4b159ff908d72ba5b20ad7481fc21486be63ae84bef5a0cee81aacd9e66af35b",
+    "host_acceptance_test.py": "23f30e9d22b7e30ed1140806f76c44e62b4426c9467161cf25b20c471647be9d",
+    "host-bootstrap-evidence.json": "0de42ffe26d25c0d78ddbe4f8a34f452ce8348d6d68a94660cf24965632ba33f",
+    "native-dependency-map.json": "9e8564a8b2d7161f6b5d1fcd514e42536970ab73e33e992c8ea4fded630be2a2"
+  },
+  "ownNativeGuardAccepted": false,
+  "ownFullCampaignAccepted": false,
+  "hostAdapter": "private-weston-aq-host-v4"
+}

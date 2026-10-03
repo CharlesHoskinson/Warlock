@@ -1,0 +1,103 @@
+{
+  "identity": {
+    "pid": 2715379,
+    "start": "13606475",
+    "pgid": 2715379,
+    "parent": 2714507
+  },
+  "ready": true,
+  "killSent": true,
+  "records": [
+    {
+      "role": "startup-ping",
+      "command": [
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/payload/omarchy/bin/omarchy-shell",
+        "shell",
+        "ping"
+      ],
+      "startedNs": 123944912676796,
+      "startedUtcNs": 1790913592030853617,
+      "qsIdentity": {
+        "pid": 2715379,
+        "start": "13606475",
+        "pgid": 2715379,
+        "parent": 2714507
+      },
+      "nativeOutcomeNotInferred": true,
+      "processIdentity": {
+        "pid": 2715397,
+        "start": "13606487",
+        "pgid": 2715397,
+        "parent": 2714507
+      },
+      "returncode": 0,
+      "stdout": "ok\n",
+      "stderr": "",
+      "completedNs": 123945607363144,
+      "completedUtcNs": 1790913592725538411,
+      "originalProbeGone": true
+    },
+    {
+      "role": "instance-selection",
+      "command": [
+        "/usr/bin/qs",
+        "--no-color",
+        "list",
+        "-a",
+        "-j"
+      ],
+      "startedNs": 123946895902425,
+      "startedUtcNs": 1790913594014078966,
+      "qsIdentity": {
+        "pid": 2715379,
+        "start": "13606475",
+        "pgid": 2715379,
+        "parent": 2714507
+      },
+      "nativeOutcomeNotInferred": true,
+      "processIdentity": {
+        "pid": 2715746,
+        "start": "13606685",
+        "pgid": 2715746,
+        "parent": 2714507
+      },
+      "returncode": 0,
+      "stdout": "[\n    {\n        \"config_path\": \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v11/payload/omarchy/shell/shell.qml\",\n        \"id\": \"777m1srh9mt\",\n        \"launch_time\": \"2026-10-01T21:59:52\",\n        \"pid\": 2715379,\n        \"shell_id\": \"29f357c6e2a8fbace19c955b7a6a4856\"\n    }\n]\n",
+      "stderr": "",
+      "completedNs": 123946973972778,
+      "completedUtcNs": 1790913594092147700,
+      "originalProbeGone": true
+    },
+    {
+      "role": "normal-kill",
+      "command": [
+        "/usr/bin/qs",
+        "--no-color",
+        "kill",
+        "--pid",
+        "2715379"
+      ],
+      "startedNs": 123947006356484,
+      "startedUtcNs": 1790913594124532079,
+      "qsIdentity": {
+        "pid": 2715379,
+        "start": "13606475",
+        "pgid": 2715379,
+        "parent": 2714507
+      },
+      "nativeOutcomeNotInferred": true,
+      "processIdentity": {
+        "pid": 2715754,
+        "start": "13606696",
+        "pgid": 2715754,
+        "parent": 2714507
+      },
+      "returncode": 0,
+      "stdout": "Killed 777m1srh9mt\n",
+      "stderr": "",
+      "completedNs": 123947114616862,
+      "completedUtcNs": 1790913594232791523,
+      "originalProbeGone": true
+    }
+  ]
+}

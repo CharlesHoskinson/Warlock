@@ -1,0 +1,49 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-8e14338ea9874647a19c90af44e8dacb.scope",
+    "coreLimit": 1
+  },
+  "sourceSHA256": "5f14bc797dd17546263acf9d820750851ec2ee097f01130e13660cb57f82175d",
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/evaluation_tickets.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/evaluation_tickets.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  evaluation_tickets\n    ok loadHasTwoDistinctEvaluationSlotsTest passed 1 test(s)\n    ok extraEvaluationRefusesTest passed 1 test(s)\n    ok staleTicketCannotDelegateTest passed 1 test(s)\n    ok duplicateHydrateCannotDelegateTwiceTest passed 1 test(s)\n    ok supersededTimerCannotConsumeCurrentRelayTest passed 1 test(s)\n    ok currentContextRelayHasExactSlotTest passed 1 test(s)\n    ok incompletePriorCallbacksBlockFeatureArmTest passed 1 test(s)\n    ok refusedFeatureCannotAuthorizeNewFeatureTest passed 1 test(s)\n    ok failedFeatureStillAllowsBoundTerminalCleanupTest passed 1 test(s)\n    ok finalQueueMustFinishBeforeArchiveTest passed 1 test(s)\n    ok wrongRootCannotDelegateTest passed 1 test(s)\n    ok changedSourceCannotDelegateTest passed 1 test(s)\n    ok incompleteEOFNeverDelegatesTest passed 1 test(s)\n    ok duplicateTerminalRemainsFailureTest passed 1 test(s)\n    ok failedFeatureNormalFinalQueueDoesNotEraseFailureTest passed 1 test(s)\n\n  15 passing (864ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v7/evaluation_tickets.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "named": 15,
+  "traces": 2000,
+  "steps": 100,
+  "nativeLaunch": false
+}

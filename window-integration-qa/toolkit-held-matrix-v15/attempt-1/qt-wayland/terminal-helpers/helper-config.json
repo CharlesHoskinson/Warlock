@@ -1,0 +1,666 @@
+{
+  "delegateDiagnostic": {
+    "source": "/run/user/1000/wqa/356c/taskbar-home/.local/bin/delegate_diagnostics.py",
+    "sourceSHA256": "8dd90c0c0af397b7a7d13e2d5d8b25cc5c91a217b5718342f6d925af011d7003",
+    "directory": "/run/user/1000/wqa/356c/taskbar-home/delegate-diagnostics"
+  },
+  "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448",
+  "compositor": {
+    "pid": 4189956,
+    "start": "15051687"
+  },
+  "socket": "/run/user/1000/wqa/356c/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448/.socket.sock",
+  "socketIdentity": [
+    84,
+    429510,
+    1000
+  ],
+  "versionSHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+  "helpers": {
+    "snap": {
+      "wrapper": "/run/user/1000/wqa/356c/taskbar-home/.local/bin/hypr-snap-groups",
+      "wrapperSHA256": "1a7d8a4744a797ef2b8880a93e0b3c05f4e64a0a9c8dce8696e04899e346e0ed",
+      "actual": "/run/user/1000/wqa/356c/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "invocation": "/run/user/1000/wqa/356c/taskbar-home/.local/bin/hypr-snap-groups"
+    },
+    "shell": {
+      "wrapper": "/run/user/1000/wqa/356c/taskbar-home/.local/bin/omarchy-shell",
+      "wrapperSHA256": "1a7d8a4744a797ef2b8880a93e0b3c05f4e64a0a9c8dce8696e04899e346e0ed",
+      "actual": "/run/user/1000/wqa/356c/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "invocation": "omarchy-shell"
+    }
+  },
+  "log": "/run/user/1000/wqa/356c/taskbar-home/helper-events.jsonl",
+  "allowed": [
+    "evaluation:1:2676e5fb6434bfbc47eb98420a8de17b:1:hydrate",
+    "evaluation:1:2676e5fb6434bfbc47eb98420a8de17b:1:inactive-fileDrag",
+    "forget-closed:0x648f10f15770:18000000:4190380",
+    "forget-closed:0x648f10edb1f0:18000001:4190380",
+    "forget-closed:0x648f11696410:18000002:4190380",
+    "forget-closed:0x648f11776bd0:18000003:4190380",
+    "forget-closed:0x648f10edb1f0:18000004:4190876",
+    "forget-closed:0x648f115aa1d0:18000005:4190876",
+    "forget-closed:0x648f1106f8b0:18000006:4190876",
+    "forget-closed:0x648f10ebf110:18000007:4190876",
+    "evaluation:2:f1e8ce8b235329821008a13a869c78ad:1:hydrate",
+    "evaluation:2:f1e8ce8b235329821008a13a869c78ad:1:inactive-fileDrag",
+    "forget-closed:0x648f10edb1f0:18000008:4191218",
+    "forget-closed:0x648f1106f8b0:18000009:4191218",
+    "forget-closed:0x648f115aa1d0:1800000a:4191218",
+    "forget-closed:0x648f116d8950:1800000b:4191218",
+    "evaluation:3:47993e4e8cb8cbf881b8356a39530df8:1:hydrate",
+    "evaluation:4:cae984cd549948b7ed1c39a8181dbf83:1:hydrate",
+    "evaluation:4:cae984cd549948b7ed1c39a8181dbf83:2:hydrate",
+    "evaluation:4:cae984cd549948b7ed1c39a8181dbf83:2:inactive-fileDrag",
+    "evaluation:5:4d0f03b47e36ca35c796ab051149c8de:1:hydrate",
+    "evaluation:5:4d0f03b47e36ca35c796ab051149c8de:1:inactive-fileDrag",
+    "forget-closed:0x648f10edb1f0:1800000c:4192198",
+    "forget-closed:0x648f1106f8b0:1800000d:4192198",
+    "forget-closed:0x648f11037b50:1800000e:4192198",
+    "forget-closed:0x648f116d8850:1800000f:4192198",
+    "evaluation:6:1bfd9a52e7501df79d730c469de88ead:1:hydrate"
+  ],
+  "evaluationTickets": [
+    {
+      "serial": 1,
+      "nonce": "2676e5fb6434bfbc47eb98420a8de17b",
+      "kind": "initial",
+      "count": 1,
+      "relayOrdinal": 1,
+      "command": [
+        "repl",
+        "do\nlocal evaluationNonce=os.getenv(\"WINDOW_QA_EVALUATION_NONCE\")\nlocal evaluationKind=os.getenv(\"WINDOW_QA_EVALUATION_KIND\")\nlocal evaluationLimit=os.getenv(\"WINDOW_QA_EVALUATION_LIMIT\")\nlocal evaluationCounts={initial=1,reload=1,[\"native-load\"]=2,[\"native-unload\"]=1,[\"probe-unload\"]=1}\nassert(evaluationNonce and #evaluationNonce==32 and evaluationNonce:match(\"^[0-9a-f]+$\"),\"Exact private evaluation nonce required\")\nassert(evaluationCounts[evaluationKind] and evaluationLimit==tostring(evaluationCounts[evaluationKind]),\"Exact private evaluation command required\")\nlocal previousOrdinal=os.getenv(\"WINDOW_QA_EVALUATION_ORDINAL\")\nassert(previousOrdinal and previousOrdinal:match(\"^%d+$\"),\"Exact private evaluation ordinal required\")\nlocal evaluationOrdinal=tonumber(previousOrdinal)+1\nhl.env(\"WINDOW_QA_EVALUATION_ORDINAL\",tostring(evaluationOrdinal))\nassert(evaluationOrdinal<=evaluationCounts[evaluationKind],\"Unexpected extra private Lua evaluation\")\n\ndofile(\"/usr/share/omarchy/default/hypr/helpers.lua\")\ndofile(\"/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/installed-snap.lua\")\nprint(\"WQA paired Snap Lua loaded\")\nend"
+      ],
+      "root": {
+        "identity": {
+          "pid": 4189359,
+          "start": "15050925",
+          "pgid": 4189359,
+          "parent": 1275790
+        },
+        "argv": [
+          "/usr/bin/python3",
+          "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+          "--attempt",
+          "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1"
+        ],
+        "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+        "sourceSHA256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+        "executable": "/usr/bin/python3.14",
+        "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+      },
+      "compositor": {
+        "pid": 4189956,
+        "start": "15051687"
+      },
+      "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448",
+      "configuration": {
+        "path": "/run/user/1000/wqa/356c/hyprland.lua",
+        "sha256": "9c4db4ce73dc9ba2058c6f1f91fc4d5f6a18483d1fef6ff87aa1df4f1cad8d52",
+        "identity": [
+          84,
+          429499,
+          1000,
+          33152,
+          2279,
+          1790928043424082938,
+          1790928043424082938
+        ],
+        "completeEOF": true
+      },
+      "artifact": null,
+      "armIPC": {
+        "request": "j/version",
+        "completeServerEOF": true,
+        "peer": {
+          "pid": 4189956,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "socketIdentity": [
+          84,
+          429510,
+          1000
+        ],
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d"
+      },
+      "armedNs": 1790928047822100000,
+      "terminalAuthority": false
+    },
+    {
+      "serial": 2,
+      "nonce": "f1e8ce8b235329821008a13a869c78ad",
+      "kind": "reload",
+      "count": 1,
+      "relayOrdinal": 1,
+      "command": [
+        "reload"
+      ],
+      "root": {
+        "identity": {
+          "pid": 4189359,
+          "start": "15050925",
+          "pgid": 4189359,
+          "parent": 1275790
+        },
+        "argv": [
+          "/usr/bin/python3",
+          "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+          "--attempt",
+          "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1"
+        ],
+        "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+        "sourceSHA256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+        "executable": "/usr/bin/python3.14",
+        "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+      },
+      "compositor": {
+        "pid": 4189956,
+        "start": "15051687"
+      },
+      "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448",
+      "configuration": {
+        "path": "/run/user/1000/wqa/356c/hyprland.lua",
+        "sha256": "9c4db4ce73dc9ba2058c6f1f91fc4d5f6a18483d1fef6ff87aa1df4f1cad8d52",
+        "identity": [
+          84,
+          429499,
+          1000,
+          33152,
+          2279,
+          1790928043424082938,
+          1790928043424082938
+        ],
+        "completeEOF": true
+      },
+      "artifact": null,
+      "armIPC": {
+        "request": "j/version",
+        "completeServerEOF": true,
+        "peer": {
+          "pid": 4189956,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "socketIdentity": [
+          84,
+          429510,
+          1000
+        ],
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d"
+      },
+      "armedNs": 1790928053440065388,
+      "terminalAuthority": false
+    },
+    {
+      "serial": 3,
+      "nonce": "47993e4e8cb8cbf881b8356a39530df8",
+      "kind": "native-unload",
+      "count": 1,
+      "relayOrdinal": 0,
+      "command": [
+        "plugin",
+        "unload",
+        "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/hyprbars-v22-interruption-candidate.so"
+      ],
+      "root": {
+        "identity": {
+          "pid": 4189359,
+          "start": "15050925",
+          "pgid": 4189359,
+          "parent": 1275790
+        },
+        "argv": [
+          "/usr/bin/python3",
+          "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+          "--attempt",
+          "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1"
+        ],
+        "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+        "sourceSHA256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+        "executable": "/usr/bin/python3.14",
+        "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+      },
+      "compositor": {
+        "pid": 4189956,
+        "start": "15051687"
+      },
+      "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448",
+      "configuration": {
+        "path": "/run/user/1000/wqa/356c/hyprland.lua",
+        "sha256": "9c4db4ce73dc9ba2058c6f1f91fc4d5f6a18483d1fef6ff87aa1df4f1cad8d52",
+        "identity": [
+          84,
+          429499,
+          1000,
+          33152,
+          2279,
+          1790928043424082938,
+          1790928043424082938
+        ],
+        "completeEOF": true
+      },
+      "artifact": {
+        "path": "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/hyprbars-v22-interruption-candidate.so",
+        "sha256": "92a7c9bc1e4416dfd5eb2d1aab28a6bac1cbd5153e2e5ecdcbedd2bcdf046fb6",
+        "identity": [
+          58,
+          1007684,
+          1000,
+          33261,
+          934736,
+          1790900294139620021,
+          1790900294140738805
+        ],
+        "completeEOF": true
+      },
+      "armIPC": {
+        "request": "j/version",
+        "completeServerEOF": true,
+        "peer": {
+          "pid": 4189956,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "socketIdentity": [
+          84,
+          429510,
+          1000
+        ],
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d"
+      },
+      "armedNs": 1790928057222797881,
+      "terminalAuthority": false
+    },
+    {
+      "serial": 4,
+      "nonce": "cae984cd549948b7ed1c39a8181dbf83",
+      "kind": "native-load",
+      "count": 2,
+      "relayOrdinal": 2,
+      "command": [
+        "plugin",
+        "load",
+        "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/hyprbars-v22-interruption-candidate.so"
+      ],
+      "root": {
+        "identity": {
+          "pid": 4189359,
+          "start": "15050925",
+          "pgid": 4189359,
+          "parent": 1275790
+        },
+        "argv": [
+          "/usr/bin/python3",
+          "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+          "--attempt",
+          "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1"
+        ],
+        "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+        "sourceSHA256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+        "executable": "/usr/bin/python3.14",
+        "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+      },
+      "compositor": {
+        "pid": 4189956,
+        "start": "15051687"
+      },
+      "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448",
+      "configuration": {
+        "path": "/run/user/1000/wqa/356c/hyprland.lua",
+        "sha256": "9c4db4ce73dc9ba2058c6f1f91fc4d5f6a18483d1fef6ff87aa1df4f1cad8d52",
+        "identity": [
+          84,
+          429499,
+          1000,
+          33152,
+          2279,
+          1790928043424082938,
+          1790928043424082938
+        ],
+        "completeEOF": true
+      },
+      "artifact": {
+        "path": "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/hyprbars-v22-interruption-candidate.so",
+        "sha256": "92a7c9bc1e4416dfd5eb2d1aab28a6bac1cbd5153e2e5ecdcbedd2bcdf046fb6",
+        "identity": [
+          58,
+          1007684,
+          1000,
+          33261,
+          934736,
+          1790900294139620021,
+          1790900294140738805
+        ],
+        "completeEOF": true
+      },
+      "armIPC": {
+        "request": "j/version",
+        "completeServerEOF": true,
+        "peer": {
+          "pid": 4189956,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "socketIdentity": [
+          84,
+          429510,
+          1000
+        ],
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d"
+      },
+      "armedNs": 1790928058585218985,
+      "terminalAuthority": false
+    },
+    {
+      "serial": 5,
+      "nonce": "4d0f03b47e36ca35c796ab051149c8de",
+      "kind": "reload",
+      "count": 1,
+      "relayOrdinal": 1,
+      "command": [
+        "reload"
+      ],
+      "root": {
+        "identity": {
+          "pid": 4189359,
+          "start": "15050925",
+          "pgid": 4189359,
+          "parent": 1275790
+        },
+        "argv": [
+          "/usr/bin/python3",
+          "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+          "--attempt",
+          "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1"
+        ],
+        "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+        "sourceSHA256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+        "executable": "/usr/bin/python3.14",
+        "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+      },
+      "compositor": {
+        "pid": 4189956,
+        "start": "15051687"
+      },
+      "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448",
+      "configuration": {
+        "path": "/run/user/1000/wqa/356c/hyprland.lua",
+        "sha256": "9c4db4ce73dc9ba2058c6f1f91fc4d5f6a18483d1fef6ff87aa1df4f1cad8d52",
+        "identity": [
+          84,
+          429499,
+          1000,
+          33152,
+          2279,
+          1790928043424082938,
+          1790928043424082938
+        ],
+        "completeEOF": true
+      },
+      "artifact": null,
+      "armIPC": {
+        "request": "j/version",
+        "completeServerEOF": true,
+        "peer": {
+          "pid": 4189956,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "socketIdentity": [
+          84,
+          429510,
+          1000
+        ],
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d"
+      },
+      "armedNs": 1790928059757704665,
+      "terminalAuthority": false
+    },
+    {
+      "serial": 6,
+      "nonce": "1bfd9a52e7501df79d730c469de88ead",
+      "kind": "native-unload",
+      "count": 1,
+      "relayOrdinal": 0,
+      "command": [
+        "plugin",
+        "unload",
+        "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/hyprbars-v22-interruption-candidate.so"
+      ],
+      "root": {
+        "identity": {
+          "pid": 4189359,
+          "start": "15050925",
+          "pgid": 4189359,
+          "parent": 1275790
+        },
+        "argv": [
+          "/usr/bin/python3",
+          "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+          "--attempt",
+          "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1"
+        ],
+        "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+        "sourceSHA256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+        "executable": "/usr/bin/python3.14",
+        "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+      },
+      "compositor": {
+        "pid": 4189956,
+        "start": "15051687"
+      },
+      "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448",
+      "configuration": {
+        "path": "/run/user/1000/wqa/356c/hyprland.lua",
+        "sha256": "9c4db4ce73dc9ba2058c6f1f91fc4d5f6a18483d1fef6ff87aa1df4f1cad8d52",
+        "identity": [
+          84,
+          429499,
+          1000,
+          33152,
+          2279,
+          1790928043424082938,
+          1790928043424082938
+        ],
+        "completeEOF": true
+      },
+      "artifact": {
+        "path": "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/hyprbars-v22-interruption-candidate.so",
+        "sha256": "92a7c9bc1e4416dfd5eb2d1aab28a6bac1cbd5153e2e5ecdcbedd2bcdf046fb6",
+        "identity": [
+          58,
+          1007684,
+          1000,
+          33261,
+          934736,
+          1790900294139620021,
+          1790900294140738805
+        ],
+        "completeEOF": true
+      },
+      "armIPC": {
+        "request": "j/version",
+        "completeServerEOF": true,
+        "peer": {
+          "pid": 4189956,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "socketIdentity": [
+          84,
+          429510,
+          1000
+        ],
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d"
+      },
+      "armedNs": 1790928069387298275,
+      "terminalAuthority": true
+    }
+  ],
+  "activeEvaluation": "1bfd9a52e7501df79d730c469de88ead",
+  "evaluationInitialCommand": [
+    "repl",
+    "do\nlocal evaluationNonce=os.getenv(\"WINDOW_QA_EVALUATION_NONCE\")\nlocal evaluationKind=os.getenv(\"WINDOW_QA_EVALUATION_KIND\")\nlocal evaluationLimit=os.getenv(\"WINDOW_QA_EVALUATION_LIMIT\")\nlocal evaluationCounts={initial=1,reload=1,[\"native-load\"]=2,[\"native-unload\"]=1,[\"probe-unload\"]=1}\nassert(evaluationNonce and #evaluationNonce==32 and evaluationNonce:match(\"^[0-9a-f]+$\"),\"Exact private evaluation nonce required\")\nassert(evaluationCounts[evaluationKind] and evaluationLimit==tostring(evaluationCounts[evaluationKind]),\"Exact private evaluation command required\")\nlocal previousOrdinal=os.getenv(\"WINDOW_QA_EVALUATION_ORDINAL\")\nassert(previousOrdinal and previousOrdinal:match(\"^%d+$\"),\"Exact private evaluation ordinal required\")\nlocal evaluationOrdinal=tonumber(previousOrdinal)+1\nhl.env(\"WINDOW_QA_EVALUATION_ORDINAL\",tostring(evaluationOrdinal))\nassert(evaluationOrdinal<=evaluationCounts[evaluationKind],\"Unexpected extra private Lua evaluation\")\n\ndofile(\"/usr/share/omarchy/default/hypr/helpers.lua\")\ndofile(\"/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/installed-snap.lua\")\nprint(\"WQA paired Snap Lua loaded\")\nend"
+  ],
+  "evaluationConfiguration": {
+    "path": "/run/user/1000/wqa/356c/hyprland.lua",
+    "sha256": "9c4db4ce73dc9ba2058c6f1f91fc4d5f6a18483d1fef6ff87aa1df4f1cad8d52",
+    "identity": [
+      84,
+      429499,
+      1000,
+      33152,
+      2279,
+      1790928043424082938,
+      1790928043424082938
+    ],
+    "completeEOF": true
+  },
+  "evaluationArtifacts": {
+    "native": {
+      "path": "/home/hoskinson/window-integration-qa/toolkit-interruption-v6/native-candidate/hyprbars-v22-interruption-candidate.so",
+      "sha256": "92a7c9bc1e4416dfd5eb2d1aab28a6bac1cbd5153e2e5ecdcbedd2bcdf046fb6",
+      "identity": [
+        58,
+        1007684,
+        1000,
+        33261,
+        934736,
+        1790900294139620021,
+        1790900294140738805
+      ],
+      "completeEOF": true
+    },
+    "probe": {
+      "path": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v6/native-probe/libtoolkit-held-probe.so",
+      "sha256": "0d15c23c79865bb05ed19798a265646b3d113d3365f8cfa3347f2e3bb47bb4c6",
+      "identity": [
+        58,
+        1007035,
+        1000,
+        33261,
+        422808,
+        1790893022820282011,
+        1790899973299493548
+      ],
+      "completeEOF": true
+    }
+  },
+  "queryTaskbar": {
+    "path": "/run/user/1000/wqa/356c/taskbar-home/.local/bin/hypr-taskbar",
+    "sha256": "58215e6cb07b364988a0d5c38e9a4f63d7803e2b7f78481ea3a7104fa55f02e1",
+    "python": "/usr/bin/python3",
+    "pythonSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+  },
+  "queryEnvironment": {
+    "HOME": "/run/user/1000/wqa/356c/taskbar-home",
+    "PATH": "/run/user/1000/wqa/356c/taskbar-home/.local/bin:/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/bin:/usr/bin",
+    "XDG_RUNTIME_DIR": "/run/user/1000/wqa/356c",
+    "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448",
+    "OMARCHY_PATH": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy",
+    "WINDOW_QA_HELPER_CONFIG": "/run/user/1000/wqa/356c/taskbar-home/helper-config.json"
+  },
+  "queryRoots": {
+    "qs": {
+      "identity": {
+        "pid": 4190060,
+        "start": "15051977",
+        "pgid": 4190060,
+        "parent": 4189359
+      },
+      "argv": [
+        "/usr/bin/qs",
+        "-p",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell"
+      ],
+      "config": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/omarchy/shell",
+      "executable": "/usr/bin/quickshell",
+      "executableSHA256": "2dc99382c032710fe495ed115cdee9dc9c69bdb3a21af4d86a9a8ea16733069b",
+      "configSHA256": "4a4b7694e5b9e0bd952ce0efa2d6dc2cea44cdfa98cc2f442e40fe41cbc1beab"
+    },
+    "harness": {
+      "identity": {
+        "pid": 4189359,
+        "start": "15050925",
+        "pgid": 4189359,
+        "parent": 1275790
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+        "--attempt",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1"
+      ],
+      "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py",
+      "sourceSHA256": "187b74538114e247ea31a6fbad6ca82002659763f27983d542f9ab1e93460bb3",
+      "executable": "/usr/bin/python3.14",
+      "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+    },
+    "service": {
+      "identity": {
+        "pid": 4192464,
+        "start": "15053644",
+        "pgid": 4192464,
+        "parent": 4189359
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_observer.py",
+        "--root",
+        "/run/user/1000/wqa/356c/hypr-window-motion/held-service",
+        "--session",
+        "efb50993780079460b0cbed1363e2166a2de1d9f_1790928044_427489448",
+        "--pid",
+        "4189956",
+        "--start",
+        "15051687",
+        "--display",
+        "wayland-1",
+        "--producer",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-readback-v4/hypr-motion-renderer-staged",
+        "--producer-sha256",
+        "fa1c3e5b3d61d06abc09dee438b62bcbd066df0bbd7582acfec509299a40bd64",
+        "--core",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/payload/home/.local/bin/hypr-windowctl-core",
+        "--core-sha256",
+        "30232bb4ffbfca0f0a34dd677ea4bc9fc53f8828bf75c662ce8a0ec15f35db3a",
+        "--evidence",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/attempt-1/qt-wayland/service-evidence.json"
+      ],
+      "executable": "/usr/bin/python3.14",
+      "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_observer.py",
+      "sourceSHA256": "6f2ced491a07a68fee4d674971ec574f69d8da9981255911ea0dab8eaedee158",
+      "sources": {
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/native_desktop.py": "76c601f706c3431987b5c31603931e326f50e367e9ff2bc98db7a7f82bd1466f",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/production_motion_6d9.py": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/scene_controller.py": "8410ba83b9598c81d69e95759f1592fcb95a018b900d83bb6360d103cffaf90c",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/native_runtime.py": "12e791d3e483547d37f49a2dcac6c0dfbc0d7d367ff0ad3ea248e1e60293bd21",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/context_provider.py": "0e3daea910a49f44e63c6321859dd8598c4e610d16e1cc445070602e5bec1b78",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/service_runtime.py": "d48e1c3133bf84bd4a9fc3539060e05ce83c8c90f36b023bb5aeca6da832b615"
+      }
+    }
+  },
+  "serviceMembers": [
+    {
+      "address": "0x648f10edb1f0",
+      "stableId": "1800000c",
+      "pid": 4192198
+    },
+    {
+      "address": "0x648f11037b50",
+      "stableId": "1800000e",
+      "pid": 4192198
+    },
+    {
+      "address": "0x648f116d8850",
+      "stableId": "1800000f",
+      "pid": 4192198
+    }
+  ],
+  "serviceTargetLimitPerMember": 2,
+  "serviceRefreshLimit": 3
+}

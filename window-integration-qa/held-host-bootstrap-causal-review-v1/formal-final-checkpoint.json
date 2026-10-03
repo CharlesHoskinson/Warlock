@@ -1,0 +1,47 @@
+{
+  "result": "pass",
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap_flush.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap_flush_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  bootstrap_flush_test\n    ok queuedInitialCommitWithoutReadableTrafficDoesNotFlushTest passed 1 test(s)\n    ok explicitInitialFlushLetsParentRespondTest passed 1 test(s)\n    ok incidentalParentTrafficCanMaskMissingFlushTest passed 1 test(s)\n\n  3 passing (113ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap_flush.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1302ms at 1536 traces/second).\nUse --seed=0x1415bf9 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sources": {
+    "bootstrap_flush.qnt": "5f637a5f0a3375a47fb33ffb60a685c0b9e2b1961ee5400732b19ab146ba14da",
+    "bootstrap_flush_test.qnt": "b646d16e35c7c5be6d16f4c7c5844d3277337a4a3fa26cbbdac67cfe7040031f",
+    "CONTRACT.md": "e8a91e97a13aa5aaf607c2200ae584c2a5ee2200baaec25b63ddc42e26fc61e4"
+  },
+  "nativeGUI": false,
+  "sourceRepair": false
+}

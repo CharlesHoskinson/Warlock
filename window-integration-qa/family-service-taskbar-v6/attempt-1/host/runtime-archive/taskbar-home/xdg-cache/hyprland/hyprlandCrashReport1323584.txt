@@ -1,0 +1,201 @@
+--------------------------------------------
+   Hyprland Crash Report
+--------------------------------------------
+I hope you didn't have any unsaved progress.
+
+Hyprland received signal 6(ABRT)
+Version: efb50993780079460b0cbed1363e2166a2de1d9f
+Tag: v0.56.2
+Date: Wed Aug 5 14:13:21 2026
+Flags:
+
+Hyprland seems to be running with plugins. This crash might not be Hyprland's fault.
+Plugins:
+	hyprbars (Vaxry) 1.0
+
+
+System info:
+	System name: Linux
+	Node name: hosk
+	Release: 7.2.7-1-omarchy
+	Version: #1 SMP PREEMPT_DYNAMIC Sun, 27 Sep 2026 22:42:08 +0000
+
+GPU:
+	00:02.0 VGA compatible controller [0300]: Intel Corporation Arrow Lake-S [Intel Graphics] [8086:7d67] (rev 06) (prog-if 00 [VGA controller])
+02:00.0 VGA compatible controller [0300]: NVIDIA Corporation GB203M / GN22-X11 [GeForce RTX 5090 Max-Q / Mobile] [10de:2c58] (rev a1) (prog-if 00 [VGA controller])
+80:14.5 Non-VGA unclassified device [0000]: Intel Corporation Device [8086:7f2f] (rev 10)
+
+
+os-release:
+	NAME="Omarchy"
+	PRETTY_NAME="Omarchy"
+	ID=omarchy
+	ID_LIKE=arch
+	BUILD_ID="4.0.4.legion"
+	VERSION_ID="4.0.4.legion"
+	ANSI_COLOR="38;2;158;206;106"
+	HOME_URL="https://omarchy.org/"
+	DOCUMENTATION_URL="https://learn.omacom.io/2/the-omarchy-manual"
+	SUPPORT_URL="https://discord.gg/tXFUdasqhY"
+	BUG_REPORT_URL="https://github.com/basecamp/omarchy/issues"
+	LOGO=omarchy
+
+Libraries:
+Hyprgraphics: built against 0.5.1, system has 0.5.1
+Hyprutils: built against 0.14.1, system has 0.14.2
+Hyprcursor: built against 0.1.13, system has 0.1.13
+Hyprlang: built against 0.6.8, system has 0.6.8
+Aquamarine: built against 0.15.0, system has 0.15.0
+
+Backtrace:
+	#0 | /usr/bin/Hyprland(_Z12getBacktracev+0x73) [0x565b765764f3]
+		getBacktrace()
+		??:?
+	#1 | /usr/bin/Hyprland(_ZN13CrashReporter18createAndSaveCrashEi+0xad4) [0x565b7649a9d4]
+		CrashReporter::createAndSaveCrash(int)
+		??:?
+	#2 | /usr/bin/Hyprland(+0x3bc7ee) [0x565b763707ee]
+		void std::println<>(_IO_FILE*, std::basic_format_string<char>)
+		??:?
+	#3 | /usr/lib/libc.so.6(+0x3e6f0) [0x77126be3e6f0]
+		??
+		??:0
+	#4 | /usr/lib/libc.so.6(+0x9a17c) [0x77126be9a17c]
+		??
+		??:0
+	#5 | /usr/lib/libc.so.6(gsignal+0x20) [0x77126be3e5d0]
+		??
+		??:0
+	#6 | /usr/lib/libc.so.6(abort+0x26) [0x77126be25685]
+		??
+		??:0
+	#7 | /usr/lib/libstdc++.so.6(+0x9ac54) [0x77126c29ac54]
+		??
+		??:0
+	#8 | /usr/lib/libstdc++.so.6(+0xb581a) [0x77126c2b581a]
+		??
+		??:0
+	#9 | /usr/lib/libstdc++.so.6(_ZSt10unexpectedv+0) [0x77126c29a5ed]
+		??
+		??:0
+	#10 | /home/hoskinson/window-integration-qa/toolkit-interruption-v4/native-candidate/hyprbars-v20-interruption-candidate.so(+0x294e8) [0x7712586a34e8]
+		??
+		??:0
+	#11 | /usr/lib/liblua.so.5.5(+0xef68) [0x77126d10bf68]
+		??
+		??:0
+	#12 | /usr/lib/liblua.so.5.5(+0x23bcb) [0x77126d120bcb]
+		??
+		??:0
+	#13 | /usr/lib/liblua.so.5.5(+0xfba0) [0x77126d10cba0]
+		??
+		??:0
+	#14 | /usr/lib/liblua.so.5.5(+0xb1f3) [0x77126d1081f3]
+		??
+		??:0
+	#15 | /usr/lib/liblua.so.5.5(+0xb974) [0x77126d108974]
+		??
+		??:0
+	#16 | /usr/lib/liblua.so.5.5(lua_pcallk+0x99) [0x77126d10ccb9]
+		??
+		??:0
+	#17 | /usr/bin/Hyprland(_ZN6Config3Lua14CConfigManager12guardedPCallEiiiiSt17basic_string_viewIcSt11char_traitsIcEE+0x152) [0x565b763c9fc2]
+		Config::Lua::CConfigManager::guardedPCall(int, int, int, int, std::basic_string_view<char, std::char_traits<char> >)
+		??:?
+	#18 | /usr/bin/Hyprland(_ZN6Config3Lua14CConfigManager4evalERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEb+0x281) [0x565b763d1e11]
+		Config::Lua::CConfigManager::eval(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
+		??:?
+	#19 | /usr/bin/Hyprland(+0x4b5aff) [0x565b76469aff]
+		CHyprCtl::getTearingBlockedReason[abi:cxx11](Hyprutils::Memory::CSharedPointer<Monitor::CMonitor>, eHyprCtlOutputFormat)
+		??:?
+	#20 | /usr/bin/Hyprland(_ZNSt17_Function_handlerIFNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE20eHyprCtlOutputFormatS5_EPS7_E9_M_invokeERKSt9_Any_dataOS6_OS5_+0x75) [0x565b7648e335]
+		std::_Function_handler<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > (eHyprCtlOutputFormat, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >), std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > (*)(eHyprCtlOutputFormat, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)>::_M_invoke(std::_Any_data const&, eHyprCtlOutputFormat&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+		??:?
+	#21 | /usr/bin/Hyprland(_ZN8CHyprCtl8getReplyENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE+0x5ee) [0x565b76464a3e]
+		CHyprCtl::getReply(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+		??:?
+	#22 | /usr/bin/Hyprland(+0x4ba613) [0x565b7646e613]
+		CHyprCtl::CHyprCtl()
+		??:?
+	#23 | /usr/lib/libwayland-server.so.0(wl_event_loop_dispatch+0x1e2) [0x77126d840992]
+		??
+		??:0
+	#24 | /usr/lib/libwayland-server.so.0(wl_display_run+0x37) [0x77126d842b87]
+		??
+		??:0
+	#25 | /usr/bin/Hyprland(_ZN17CEventLoopManager9enterLoopEv+0x2f3) [0x565b76657b73]
+		CEventLoopManager::enterLoop()
+		??:?
+	#26 | /usr/bin/Hyprland(main+0x1174) [0x565b76230d44]
+		main
+		??:?
+	#27 | /usr/lib/libc.so.6(+0x27781) [0x77126be27781]
+		??
+		??:0
+	#28 | /usr/lib/libc.so.6(__libc_start_main+0x89) [0x77126be278b9]
+		??
+		??:0
+	#29 | /usr/bin/Hyprland(_start+0x25) [0x565b763595e5]
+		_start
+		??:?
+
+
+Log tail:
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 565b7b4fbf70 requests geometry 0x0 460x300
+DEBUG ]: [CWLCompositorResource] New wl_region with id 55 at 565b7b837180
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 565b7b5d3610 requests geometry 0x0 460x300
+DEBUG ]: [CWLCompositorResource] New wl_region with id 68 at 565b7b837180
+DEBUG ]: Hyprctl: new connection from pid 1324546
+DEBUG ]: Hyprctl: new connection from pid 1324547
+DEBUG ]: Hyprctl: new connection from pid 1324538
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 57 at 565b7c045b80
+DEBUG ]: [CWLCompositorResource] New wl_region with id 68 at 565b7b836c70
+DEBUG ]: [CXDGWMBase] New xdg_surface at 565b7c136430
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 565b7b642570 gets a toplevel 565b7c1d3c20
+DEBUG ]: CWLSurface 565b7bf6f9a0 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: [CXDGToplevelResource] Toplevel 565b7c1d3c20 sets parent to 565b7a8310f0
+DEBUG ]: Window 565b7bf6f270 set title to Qt WindowModal QA child
+DEBUG ]: Window 565b7bf6f270 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 565b7bf6f270: title: "Qt WindowModal QA child"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 53a85fb6-1bd3-44a4-9db0-1b4a83521312
+DEBUG ]: Hyprctl: new connection from pid 1324549
+DEBUG ]: Hyprctl: new connection from pid 1324550
+DEBUG ]: compiling feature set 4 for surface.frag
+DEBUG ]: Hyprctl: new connection from pid 1324552
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 565b7c136430 requests geometry 0x0 320x180
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000565b7bf6f270
+DEBUG ]: Set keyboard focus to surface 565b7c045b80, with [Window 565b7bf6f270: title: "Qt WindowModal QA child"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [170.00000, 310.00000], window size: [320.00000, 180.00000]
+DEBUG ]: Hyprctl: new connection from pid 1324553
+DEBUG ]: Hyprctl: new connection from pid 1324554
+DEBUG ]: Hyprctl: new connection from pid 1324555
+DEBUG ]: Hyprctl: new connection from pid 1324556
+DEBUG ]: Hyprctl: new connection from pid 1324557
+DEBUG ]: [CWLCompositorResource] New wl_surface with id 53 at 565b7bf6e0b0
+DEBUG ]: [CWLCompositorResource] New wl_region with id 59 at 565b7bf6e990
+DEBUG ]: [CXDGWMBase] New xdg_surface at 565b7b9edca0
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 565b7b642570 gets a toplevel 565b7bf6ec30
+DEBUG ]: CWLSurface 565b7bb67990 called init()
+DEBUG ]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+DEBUG ]: [CXDGToplevelResource] Toplevel 565b7bf6ec30 sets parent to 565b7c1d3c20
+DEBUG ]: Window 565b7be11ce0 set title to Qt WindowModal QA nested
+DEBUG ]: Window 565b7be11ce0 set class to qt-window-modal-fixture
+DEBUG ]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 565b7be11ce0: title: "Qt WindowModal QA nested"]
+DEBUG ]: [CXDGActivationToken] assigned new xdg-activation token 933a1f80-44e7-47f4-900a-706563d94362
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 565b7b9edca0 requests geometry 0x0 320x180
+DEBUG ]: [CForeignToplevelWlrManager] Newly mapped window 0000565b7be11ce0
+DEBUG ]: Set keyboard focus to surface 565b7bf6e0b0, with [Window 565b7be11ce0: title: "Qt WindowModal QA nested"]
+DEBUG ]: Map request dispatched, monitor WAYLAND-1, window pos: [260.00000, 310.00000], window size: [320.00000, 180.00000]
+DEBUG ]: Hyprctl: new connection from pid 1324558
+DEBUG ]: Hyprctl: new connection from pid 1324559
+DEBUG ]: [CXDGSurfaceResource] xdg_surface 565b7b9edca0 requests geometry 0x0 240x140
+DEBUG ]: [CWLCompositorResource] New wl_region with id 36 at 565b7bcc0b40
+DEBUG ]: Hyprctl: new connection from pid 1324560
+DEBUG ]: Hyprctl: new connection from pid 1324561
+DEBUG ]: Hyprctl: new connection from pid 1324562
+DEBUG ]: Hyprctl: new connection from pid 1324563
+DEBUG ]: Hyprctl: new connection from pid 1324564
+DEBUG ]: Hyprctl: new connection from pid 1324565
+DEBUG ]: Hyprctl: new connection from pid 1324566
+DEBUG ]: Hyprctl: new connection from pid 1324567

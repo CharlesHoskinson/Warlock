@@ -1,0 +1,36 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/chord.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  chord\n    ok heldMetaThroughTargetTest passed 1 test(s)\n    ok heldMetaControlThroughTargetTest passed 1 test(s)\n    ok noPlanNoKeyTest passed 1 test(s)\n    ok wrongPeerNoKeyTest passed 1 test(s)\n    ok errorWhileHeldNoReleaseRequestTest passed 1 test(s)\n    ok changedLifetimeNoModifierRequestTest passed 1 test(s)\n    ok nonzeroModsNoNormalCompletionTest passed 1 test(s)\n\n  7 passing (687ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/chord.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (3201ms at 625 traces/second).\nUse --seed=0x13e4f1d --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "chord.qnt": "3b665fb2a6b8438668a3c511f73dce72f8744f9ba0bad1f32eac3b6f511f48f3",
+    "CONTRACT.md": "e53442cb5f664b5a5f5592bb15f54ca57d298e6a3a13ca131eca113c00c1c659"
+  },
+  "implementationUnchanged": true,
+  "nativeExecuted": false
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_time_date_notifications" xml:lang="sr">
+  <info>
+    <link type="next" xref="commands_profiles"/>
+    <link type="guide" xref="commands#getting_started"/>
+    <link type="seealso" xref="howto_notifications"/>
+    <title type="sort">4. Време, датум и обавештења</title>
+    <title type="link">Време, датум и обавештења</title>
+    <desc>Наредбе за добављање времена, датума и порука обавештења</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Наредбе за време, датум и обавештења</title>
+  <p>Следеће наредбе се могу користити за добављање тренутног времена и датума и за преглед претходно приказаних порука обавештења:</p>
+  <section id="time_and_date">
+    <title>Добављање времена и датума</title>
+    <list>
+      <item>
+        <p>Изговори време: <keyseq><key>Оркин измењивач</key><key>T</key></keyseq></p>
+      </item>
+      <item>
+        <p>Изговори датум: <keyseq><key>Оркин измењивач</key><key>T</key></keyseq> (двоструки клик)</p>
+      </item>
+    </list>
+  </section>
+  <section id="notifications">
+    <title>Преглед порука обавештења</title>
+    <p>Орка има три недодељене наредбе за приступ претходно приказаним <link xref="howto_notifications">порукама обавештења</link>. Погледајте <link xref="howto_key_bindings">Мењање пречица</link> за информације о томе како да доделите ове наредбе тастерима.</p>
+    <list>
+      <item>
+        <p>Изговори последњу (најновију) поруку обавештења: (недодељено)</p>
+      </item>
+      <item>
+        <p>Изговори претходну поруку обавештења: (недодељено)</p>
+      </item>
+      <item>
+        <p>Изговори следећу поруку обавештења: (недодељено)</p>
+      </item>
+      <item>
+        <p>Изговори списак свих порука обавештења: (Није додељено)</p>
+      </item>
+    </list>
+  </section>
+</page>

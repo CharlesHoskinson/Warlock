@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_the_orca_modifier" xml:lang="sr">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_learn_modes"/>
+    <title type="sort">3. Измењивач Орке</title>
+    <desc>Тастер који ради као <key>Shift</key>, <key>Ctrl</key> и <key>Alt</key></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Измењивач Орке</title>
+  <p>Орка има посебан тастер измењивач који ради као <key>Shift</key>, <key>Ctrl</key> и <key>Alt</key>. Дизајниран је посебно за извршавање наредби <app>Орке</app> и то без увођења сукоба са наредбама програма којима приступате.</p>
+  <p>За који је тастер везан „измењивач Орке“ ће, подразумевано, зависити од тога да ли користите <app>Оркин</app> распоред тастатуре за преносни рачунар или њен распоред за стони рачунар:</p>
+  <list>
+    <item>
+      <p>Ако користите преносни распоред, подразумевани Оркин измењивач биће <key>CapsLock</key></p>
+    </item>
+    <item>
+      <p>Ако користите стони распоред, Оркин измењивач биће и <key>Insert</key> и <key>KP_Insert</key>, при чему је овај други исти тастер као и <key>KP_0</key>.</p>
+    </item>
+  </list>
+  <p>Ако желите да задржите свој тренутни распоред тастатуре али изаберете други тастер измењивач, то можете учинити извршавањем следећих корака:</p>
+  <steps>
+    <title>Промена измењивача Орке</title>
+    <item>
+      <p>Уђите у прозорче за <link xref="preferences">поставке Орке</link> притиском на <keyseq><key>измењивач Орке</key><key>Размак</key></keyseq>. Алтернативно, можете покренути Орку са отвореним прозорчетом поставки из терминала: укуцајте <cmd>orca -s</cmd> и притисните <key>Return</key>.</p>
+    </item>
+    <item>
+      <p>Идите на страну <gui>Пречице тастатуре</gui>.</p>
+    </item>
+    <item>
+      <p>Померите се до поља за избор <gui>Тастер(и) измењивача читача екрана</gui>.</p>
+    </item>
+    <item>
+      <p>Стрелицом идите до жељеног измењивача. Доступне опције су:</p>
+      <list>
+        <item><p>Инсерт, КП_инсерт</p></item>
+        <item><p>Insert (бројевни одељак)</p></item>
+        <item><p>Убаци</p></item>
+        <item><p>Закључавање_слова</p></item>
+      </list>
+    </item>
+    <item><p>Притисните дугме <gui>Примени</gui>.</p></item>
+  </steps>
+</page>

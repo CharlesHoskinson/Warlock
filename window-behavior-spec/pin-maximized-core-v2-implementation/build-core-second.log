@@ -1,0 +1,148 @@
+[  0%] Generating Lua API stubs for LuaLS
+[  1%] Built target libudis86
+[  1%] Linking CXX executable hyprctl
+[lua-stubs] unchanged: /home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/meta/hl.meta.lua
+[  1%] Built target generate-lua-stubs
+[  2%] Built target start-hyprland
+[  3%] Built target hyprctl
+[  3%] Building CXX object CMakeFiles/hyprland_lib.dir/cmake_pch.hxx.gch
+[  3%] Building CXX object CMakeFiles/hyprland_lib.dir/src/Compositor.cpp.o
+[  3%] Building CXX object CMakeFiles/hyprland_lib.dir/src/animation/AnimationManager.cpp.o
+[  4%] Building CXX object CMakeFiles/hyprland_lib.dir/src/animation/WorkspaceAnimationController.cpp.o
+[  4%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/ConfigManager.cpp.o
+[  4%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/ConfigValue.cpp.o
+[  4%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/legacy/ConfigManager.cpp.o
+[  4%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/legacy/DispatcherTranslator.cpp.o
+[  4%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/ConfigManager.cpp.o
+[  5%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/LuaBindings.cpp.o
+[  5%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/LuaEventHandler.cpp.o
+[  5%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/bindings/Check.cpp.o
+[  5%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/bindings/LuaBindingsConfigRules.cpp.o
+[  5%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/bindings/LuaBindingsDispatcherUtils.cpp.o
+[  5%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/bindings/LuaBindingsDispatchers.cpp.o
+[  6%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/bindings/LuaBindingsInternal.cpp.o
+[  6%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/bindings/LuaBindingsNotification.cpp.o
+[  6%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/bindings/LuaBindingsQuery.cpp.o
+[  6%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/bindings/LuaBindingsRegistration.cpp.o
+[  6%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/bindings/LuaBindingsToplevel.cpp.o
+[  6%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/layout/LuaLayoutContext.cpp.o
+[  7%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/layout/LuaLayoutProvider.cpp.o
+[  7%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/layout/LuaLayoutTarget.cpp.o
+[  7%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/objects/LuaEventSubscription.cpp.o
+[  7%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/objects/LuaGroup.cpp.o
+[  7%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/objects/LuaKeybind.cpp.o
+[  7%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/objects/LuaLayerRule.cpp.o
+[  9%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/objects/LuaLayerSurface.cpp.o
+[  9%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/objects/LuaMonitor.cpp.o
+[  9%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/objects/LuaNotification.cpp.o
+[  9%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/objects/LuaTimer.cpp.o
+[  9%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/objects/LuaWindow.cpp.o
+[ 10%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/objects/LuaWindowRule.cpp.o
+[ 10%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/objects/LuaWorkspace.cpp.o
+[ 10%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/objects/LuaWorkspaceRule.cpp.o
+[ 10%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/types/LuaConfigBool.cpp.o
+[ 10%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/types/LuaConfigColor.cpp.o
+[ 10%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/types/LuaConfigCssGap.cpp.o
+[ 11%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/types/LuaConfigExpressionVec2.cpp.o
+[ 11%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/types/LuaConfigFloat.cpp.o
+[ 11%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/types/LuaConfigFontWeight.cpp.o
+[ 11%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/types/LuaConfigGradient.cpp.o
+[ 11%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/types/LuaConfigInt.cpp.o
+[ 11%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/types/LuaConfigString.cpp.o
+[ 12%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/types/LuaConfigUtils.cpp.o
+[ 12%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/types/LuaConfigValue.cpp.o
+[ 12%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/lua/types/LuaConfigVec2.cpp.o
+[ 12%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/shared/actions/ConfigActions.cpp.o
+[ 12%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/shared/animation/AnimationTree.cpp.o
+[ 12%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/shared/inotify/ConfigWatcher.cpp.o
+[ 13%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/shared/monitor/MonitorRule.cpp.o
+[ 13%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/shared/monitor/MonitorRuleManager.cpp.o
+[ 13%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/shared/monitor/Parser.cpp.o
+[ 13%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/shared/parserUtils/ParserUtils.cpp.o
+[ 13%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/shared/workspace/WorkspaceRule.cpp.o
+[ 13%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/shared/workspace/WorkspaceRuleManager.cpp.o
+[ 14%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/supplementary/executor/Executor.cpp.o
+[ 14%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/supplementary/jeremy/Jeremy.cpp.o
+[ 14%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/supplementary/propRefresher/PropRefresher.cpp.o
+[ 14%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/values/ConfigValues.cpp.o
+[ 14%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/values/types/BoolValue.cpp.o
+[ 14%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/values/types/ColorValue.cpp.o
+[ 15%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/values/types/CssGapValue.cpp.o
+[ 15%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/values/types/FloatValue.cpp.o
+[ 15%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/values/types/FontWeightValue.cpp.o
+[ 15%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/values/types/GradientValue.cpp.o
+[ 15%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/values/types/IValue.cpp.o
+[ 15%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/values/types/IntValue.cpp.o
+[ 17%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/values/types/StringValue.cpp.o
+[ 17%] Building CXX object CMakeFiles/hyprland_lib.dir/src/config/values/types/Vec2Value.cpp.o
+[ 17%] Building CXX object CMakeFiles/hyprland_lib.dir/src/debug/HyprCtl.cpp.o
+[ 17%] Building CXX object CMakeFiles/hyprland_lib.dir/src/debug/Overlay.cpp.o
+[ 17%] Building CXX object CMakeFiles/hyprland_lib.dir/src/debug/crash/CrashReporter.cpp.o
+[ 18%] Building CXX object CMakeFiles/hyprland_lib.dir/src/debug/crash/SignalSafe.cpp.o
+[ 18%] Building CXX object CMakeFiles/hyprland_lib.dir/src/debug/log/Logger.cpp.o
+[ 18%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/Workspace.cpp.o
+[ 18%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/history/WindowHistoryTracker.cpp.o
+[ 18%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/history/WorkspaceHistoryTracker.cpp.o
+[ 18%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/reserved/ReservedArea.cpp.o
+[ 19%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/Engine.cpp.o
+[ 19%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/Rule.cpp.o
+[ 19%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/layerRule/LayerRule.cpp.o
+[ 19%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/layerRule/LayerRuleApplicator.cpp.o
+[ 19%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/layerRule/LayerRuleEffectContainer.cpp.o
+[ 19%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/matchEngine/BoolMatchEngine.cpp.o
+[ 20%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/matchEngine/IntMatchEngine.cpp.o
+[ 20%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/matchEngine/MatchEngine.cpp.o
+[ 20%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/matchEngine/RegexMatchEngine.cpp.o
+[ 20%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/matchEngine/TagMatchEngine.cpp.o
+[ 20%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/matchEngine/WorkspaceMatchEngine.cpp.o
+[ 20%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/windowRule/WindowRule.cpp.o
+[ 21%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/windowRule/WindowRuleApplicator.cpp.o
+[ 21%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/rule/windowRule/WindowRuleEffectContainer.cpp.o
+[ 21%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/Fadeout.cpp.o
+[ 21%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/FadingOutState.cpp.o
+[ 21%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/FloatState.cpp.o
+[ 21%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/FocusState.cpp.o
+[ 22%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/GlobalWindowController.cpp.o
+[ 22%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/LayerFadeout.cpp.o
+[ 22%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/LayerState.cpp.o
+[ 22%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/OtherViewState.cpp.o
+[ 22%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/PopupFadeout.cpp.o
+[ 22%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/ViewHitTester.cpp.o
+[ 23%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/ViewQuery.cpp.o
+[ 23%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/ViewState.cpp.o
+[ 23%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/ViewStateTracker.cpp.o
+[ 23%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/WindowFadeout.cpp.o
+[ 23%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/WindowQuery.cpp.o
+[ 23%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/WindowState.cpp.o
+[ 25%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/pin/NativePinPolicy.cpp.o
+[ 25%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/state/pin/NativePinState.cpp.o
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/desktop/state/pin/NativePinState.cpp: In member function ‘bool Desktop::Pin::CNativePinState::admits(PHLWINDOW) const’:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/desktop/state/pin/NativePinState.cpp:93:68: error: ‘WP<Fullscreen::IFullscreenHandler> Fullscreen::CFullscreenController::getFsHandler(PHLWINDOW, std::optional<bool>)’ is private within this context
+   93 |         const auto handler = Fullscreen::controller()->getFsHandler(window, r.layoutHandled);
+      |                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/desktop/state/pin/NativePinState.hpp:5,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/desktop/state/pin/NativePinState.cpp:1:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/desktop/state/pin/../../../managers/fullscreen/FullscreenController.hpp:105:33: note: declared private here
+  105 |         WP<IFullscreenHandler>  getFsHandler(const PHLWINDOW window, std::optional<bool> layoutHandled = std::nullopt);
+      |                                 ^~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/desktop/state/pin/NativePinState.cpp: In member function ‘std::optional<Desktop::Pin::SNativeMaxTransfer> Desktop::Pin::CNativePinState::beginTransfer(PHLWINDOW, SP<Layout::CSpace>&)’:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/desktop/state/pin/NativePinState.cpp:229:64: error: ‘WP<Fullscreen::IFullscreenHandler> Fullscreen::CFullscreenController::getFsHandler(PHLWINDOW, std::optional<bool>)’ is private within this context
+  229 |     const auto handler = Fullscreen::controller()->getFsHandler(window, restoreRecord->layoutHandled);
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/desktop/state/pin/../../../managers/fullscreen/FullscreenController.hpp:105:33: note: declared private here
+  105 |         WP<IFullscreenHandler>  getFsHandler(const PHLWINDOW window, std::optional<bool> layoutHandled = std::nullopt);
+      |                                 ^~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/desktop/state/pin/NativePinState.cpp: In member function ‘bool Desktop::Pin::CNativePinState::finishTransfer(const Desktop::Pin::SNativeMaxTransfer&)’:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/desktop/state/pin/NativePinState.cpp:259:64: error: ‘WP<Fullscreen::IFullscreenHandler> Fullscreen::CFullscreenController::getFsHandler(PHLWINDOW, std::optional<bool>)’ is private within this context
+  259 |     const auto handler = Fullscreen::controller()->getFsHandler(window, next.layoutHandled);
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/desktop/state/pin/../../../managers/fullscreen/FullscreenController.hpp:105:33: note: declared private here
+  105 |         WP<IFullscreenHandler>  getFsHandler(const PHLWINDOW window, std::optional<bool> layoutHandled = std::nullopt);
+      |                                 ^~~~~~~~~~~~
+[ 25%] Building CXX object CMakeFiles/hyprland_lib.dir/src/desktop/view/GlobalViewMethods.cpp.o
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-gnu-zero-variadic-macro-arguments’ may have been intended to silence earlier diagnostics
+make[2]: *** [CMakeFiles/hyprland_lib.dir/build.make:2288: CMakeFiles/hyprland_lib.dir/src/desktop/state/pin/NativePinState.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1150: CMakeFiles/hyprland_lib.dir/all] Error 2
+make: *** [Makefile:166: all] Error 2

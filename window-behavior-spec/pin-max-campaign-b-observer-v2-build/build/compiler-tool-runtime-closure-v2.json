@@ -1,0 +1,833 @@
+{
+  "/usr/bin/as": {
+    "tool": {
+      "sha256": "3dfdf6007545ea36176c350eef201d1ece55c347a182697bb5f9bac815a1f34b",
+      "mode": "0o755",
+      "size": 879712,
+      "mtimeNs": 1786462112000000000,
+      "resolved": "/usr/bin/as",
+      "literalLink": null
+    },
+    "kind": "ELF",
+    "interpreter": null,
+    "actualELFTarget": "/usr/bin/as",
+    "rawLdd": "\tlinux-vdso.so.1 (0x0000787c9ea94000)\n\tlibbfd-2.47.so => /usr/lib/libbfd-2.47.so (0x0000787c9e839000)\n\tlibz.so.1 => /usr/lib/libz.so.1 (0x0000787c9e81e000)\n\tlibzstd.so.1 => /usr/lib/libzstd.so.1 (0x0000787c9e738000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x0000787c9e400000)\n\tlibsframe.so.3 => /usr/lib/libsframe.so.3 (0x0000787c9e72c000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x0000787c9ea96000)\n",
+    "libraries": {
+      "/usr/lib/libbfd-2.47.so": {
+        "sha256": "730687d04c52164e1386a4e82c587e829747bc375f84fd06de79250655d159fa",
+        "mode": "0o755",
+        "size": 1364584,
+        "mtimeNs": 1786462112000000000,
+        "resolved": "/usr/lib/libbfd-2.47.so",
+        "literalLink": null
+      },
+      "/usr/lib/libz.so.1": {
+        "sha256": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+        "mode": "0o755",
+        "size": 104464,
+        "mtimeNs": 1772984636000000000,
+        "resolved": "/usr/lib/libz.so.1.3.2",
+        "literalLink": "libz.so.1.3.2"
+      },
+      "/usr/lib/libzstd.so.1": {
+        "sha256": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+        "mode": "0o755",
+        "size": 939976,
+        "mtimeNs": 1771173791000000000,
+        "resolved": "/usr/lib/libzstd.so.1.5.7",
+        "literalLink": "libzstd.so.1.5.7"
+      },
+      "/usr/lib/libc.so.6": {
+        "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+        "mode": "0o755",
+        "size": 2215072,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/libc.so.6",
+        "literalLink": null
+      },
+      "/usr/lib/libsframe.so.3": {
+        "sha256": "cdac88518dc3eb29fb5766463c4f9c3e6f8c8abb5223df759fc27e5d79b82d33",
+        "mode": "0o755",
+        "size": 43032,
+        "mtimeNs": 1786462112000000000,
+        "resolved": "/usr/lib/libsframe.so.3.0.0",
+        "literalLink": "libsframe.so.3.0.0"
+      },
+      "/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      },
+      "/usr/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      }
+    }
+  },
+  "/usr/bin/c++": {
+    "tool": {
+      "sha256": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9",
+      "mode": "0o755",
+      "size": 1738072,
+      "mtimeNs": 1786392286000000000,
+      "resolved": "/usr/bin/c++",
+      "literalLink": null
+    },
+    "kind": "ELF",
+    "interpreter": null,
+    "actualELFTarget": "/usr/bin/c++",
+    "rawLdd": "\tlinux-vdso.so.1 (0x00007635b4f7b000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x00007635b4c00000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007635b4f7d000)\n",
+    "libraries": {
+      "/usr/lib/libc.so.6": {
+        "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+        "mode": "0o755",
+        "size": 2215072,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/libc.so.6",
+        "literalLink": null
+      },
+      "/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      },
+      "/usr/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      }
+    }
+  },
+  "/usr/bin/g++": {
+    "tool": {
+      "sha256": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9",
+      "mode": "0o755",
+      "size": 1738072,
+      "mtimeNs": 1786392286000000000,
+      "resolved": "/usr/bin/g++",
+      "literalLink": null
+    },
+    "kind": "ELF",
+    "interpreter": null,
+    "actualELFTarget": "/usr/bin/g++",
+    "rawLdd": "\tlinux-vdso.so.1 (0x000079c29f256000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x000079c29f000000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x000079c29f258000)\n",
+    "libraries": {
+      "/usr/lib/libc.so.6": {
+        "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+        "mode": "0o755",
+        "size": 2215072,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/libc.so.6",
+        "literalLink": null
+      },
+      "/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      },
+      "/usr/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      }
+    }
+  },
+  "/usr/bin/ld": {
+    "tool": {
+      "sha256": "4d83828f709f0eade25bcae2f4a2508c47db2f01b58daaca5c1c4cefce897847",
+      "mode": "0o755",
+      "size": 1611760,
+      "mtimeNs": 1786462112000000000,
+      "resolved": "/usr/bin/ld",
+      "literalLink": null
+    },
+    "kind": "ELF",
+    "interpreter": null,
+    "actualELFTarget": "/usr/bin/ld",
+    "rawLdd": "\tlinux-vdso.so.1 (0x000074ced957c000)\n\tlibbfd-2.47.so => /usr/lib/libbfd-2.47.so (0x000074ced9276000)\n\tlibctf.so.0 => /usr/lib/libctf.so.0 (0x000074ced923a000)\n\tlibjansson.so.4 => /usr/lib/libjansson.so.4 (0x000074ced9222000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x000074ced8e00000)\n\tlibz.so.1 => /usr/lib/libz.so.1 (0x000074ced9207000)\n\tlibzstd.so.1 => /usr/lib/libzstd.so.1 (0x000074ced9121000)\n\tlibsframe.so.3 => /usr/lib/libsframe.so.3 (0x000074ced9113000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x000074ced957e000)\n",
+    "libraries": {
+      "/usr/lib/libbfd-2.47.so": {
+        "sha256": "730687d04c52164e1386a4e82c587e829747bc375f84fd06de79250655d159fa",
+        "mode": "0o755",
+        "size": 1364584,
+        "mtimeNs": 1786462112000000000,
+        "resolved": "/usr/lib/libbfd-2.47.so",
+        "literalLink": null
+      },
+      "/usr/lib/libctf.so.0": {
+        "sha256": "efc76fbe2cf2c73101a77fdc2cb09cb81d72e64a40fb45f5f1d44076c13d0450",
+        "mode": "0o755",
+        "size": 239640,
+        "mtimeNs": 1786462112000000000,
+        "resolved": "/usr/lib/libctf.so.0.0.0",
+        "literalLink": "libctf.so.0.0.0"
+      },
+      "/usr/lib/libjansson.so.4": {
+        "sha256": "d8af5bd21fe80114ca9fa747c1d84998af122a49c6ca26276802f1f813f2995e",
+        "mode": "0o755",
+        "size": 92272,
+        "mtimeNs": 1782932124000000000,
+        "resolved": "/usr/lib/libjansson.so.4.15.1",
+        "literalLink": "libjansson.so.4.15.1"
+      },
+      "/usr/lib/libc.so.6": {
+        "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+        "mode": "0o755",
+        "size": 2215072,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/libc.so.6",
+        "literalLink": null
+      },
+      "/usr/lib/libz.so.1": {
+        "sha256": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+        "mode": "0o755",
+        "size": 104464,
+        "mtimeNs": 1772984636000000000,
+        "resolved": "/usr/lib/libz.so.1.3.2",
+        "literalLink": "libz.so.1.3.2"
+      },
+      "/usr/lib/libzstd.so.1": {
+        "sha256": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+        "mode": "0o755",
+        "size": 939976,
+        "mtimeNs": 1771173791000000000,
+        "resolved": "/usr/lib/libzstd.so.1.5.7",
+        "literalLink": "libzstd.so.1.5.7"
+      },
+      "/usr/lib/libsframe.so.3": {
+        "sha256": "cdac88518dc3eb29fb5766463c4f9c3e6f8c8abb5223df759fc27e5d79b82d33",
+        "mode": "0o755",
+        "size": 43032,
+        "mtimeNs": 1786462112000000000,
+        "resolved": "/usr/lib/libsframe.so.3.0.0",
+        "literalLink": "libsframe.so.3.0.0"
+      },
+      "/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      },
+      "/usr/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      }
+    }
+  },
+  "/usr/bin/ldd": {
+    "tool": {
+      "sha256": "94f332c23cf00596d0387d6f54693664f9a53334d65953b2ff308057cc8530b1",
+      "mode": "0o755",
+      "size": 5440,
+      "mtimeNs": 1786390742000000000,
+      "resolved": "/usr/bin/ldd",
+      "literalLink": null
+    },
+    "kind": "shell-script",
+    "interpreter": {
+      "sha256": "575e03ac834b739349a4484de481abcd06a6f7193cefc795260a32a1943f20a5",
+      "mode": "0o755",
+      "size": 1195144,
+      "mtimeNs": 1781065932000000000,
+      "resolved": "/usr/bin/bash",
+      "literalLink": null
+    },
+    "actualELFTarget": "/bin/bash",
+    "rawLdd": "\tlinux-vdso.so.1 (0x00007b6874a79000)\n\tlibreadline.so.8 => /usr/lib/libreadline.so.8 (0x00007b68748bd000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x00007b6874600000)\n\tlibncursesw.so.6 => /usr/lib/libncursesw.so.6 (0x00007b687484c000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007b6874a7b000)\n",
+    "libraries": {
+      "/usr/lib/libreadline.so.8": {
+        "sha256": "e860c46c8ec8a37d9ade7cc5eb75e6973a3bb12c8cdc50f849887f88095da200",
+        "mode": "0o755",
+        "size": 367640,
+        "mtimeNs": 1765404106000000000,
+        "resolved": "/usr/lib/libreadline.so.8.3",
+        "literalLink": "libreadline.so.8.3"
+      },
+      "/usr/lib/libc.so.6": {
+        "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+        "mode": "0o755",
+        "size": 2215072,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/libc.so.6",
+        "literalLink": null
+      },
+      "/usr/lib/libncursesw.so.6": {
+        "sha256": "7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+        "mode": "0o755",
+        "size": 457936,
+        "mtimeNs": 1774173645000000000,
+        "resolved": "/usr/lib/libncursesw.so.6.6",
+        "literalLink": "libncursesw.so.6.6"
+      },
+      "/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      },
+      "/usr/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      }
+    }
+  },
+  "/usr/bin/nm": {
+    "tool": {
+      "sha256": "b16707aadd1c1953f51fa32d462b2d463a54031f7a743d63e8333c6bf3985abd",
+      "mode": "0o755",
+      "size": 44432,
+      "mtimeNs": 1786462112000000000,
+      "resolved": "/usr/bin/nm",
+      "literalLink": null
+    },
+    "kind": "ELF",
+    "interpreter": null,
+    "actualELFTarget": "/usr/bin/nm",
+    "rawLdd": "\tlinux-vdso.so.1 (0x00007d53abac5000)\n\tlibbfd-2.47.so => /usr/lib/libbfd-2.47.so (0x00007d53ab93e000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x00007d53ab600000)\n\tlibz.so.1 => /usr/lib/libz.so.1 (0x00007d53ab923000)\n\tlibzstd.so.1 => /usr/lib/libzstd.so.1 (0x00007d53ab83d000)\n\tlibsframe.so.3 => /usr/lib/libsframe.so.3 (0x00007d53ab831000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007d53abac7000)\n",
+    "libraries": {
+      "/usr/lib/libbfd-2.47.so": {
+        "sha256": "730687d04c52164e1386a4e82c587e829747bc375f84fd06de79250655d159fa",
+        "mode": "0o755",
+        "size": 1364584,
+        "mtimeNs": 1786462112000000000,
+        "resolved": "/usr/lib/libbfd-2.47.so",
+        "literalLink": null
+      },
+      "/usr/lib/libc.so.6": {
+        "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+        "mode": "0o755",
+        "size": 2215072,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/libc.so.6",
+        "literalLink": null
+      },
+      "/usr/lib/libz.so.1": {
+        "sha256": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+        "mode": "0o755",
+        "size": 104464,
+        "mtimeNs": 1772984636000000000,
+        "resolved": "/usr/lib/libz.so.1.3.2",
+        "literalLink": "libz.so.1.3.2"
+      },
+      "/usr/lib/libzstd.so.1": {
+        "sha256": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+        "mode": "0o755",
+        "size": 939976,
+        "mtimeNs": 1771173791000000000,
+        "resolved": "/usr/lib/libzstd.so.1.5.7",
+        "literalLink": "libzstd.so.1.5.7"
+      },
+      "/usr/lib/libsframe.so.3": {
+        "sha256": "cdac88518dc3eb29fb5766463c4f9c3e6f8c8abb5223df759fc27e5d79b82d33",
+        "mode": "0o755",
+        "size": 43032,
+        "mtimeNs": 1786462112000000000,
+        "resolved": "/usr/lib/libsframe.so.3.0.0",
+        "literalLink": "libsframe.so.3.0.0"
+      },
+      "/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      },
+      "/usr/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      }
+    }
+  },
+  "/usr/bin/pkg-config": {
+    "tool": {
+      "sha256": "6b445a4786f5ac89bfcbf0aeab5ee80b10cafb8aebeb0d5e24237f99545423fe",
+      "mode": "0o755",
+      "size": 51400,
+      "mtimeNs": 1788555574000000000,
+      "resolved": "/usr/bin/pkgconf",
+      "literalLink": "pkgconf"
+    },
+    "kind": "ELF",
+    "interpreter": null,
+    "actualELFTarget": "/usr/bin/pkg-config",
+    "rawLdd": "\tlinux-vdso.so.1 (0x000070994007e000)\n\tlibpkgconf.so.8 => /usr/lib/libpkgconf.so.8 (0x0000709940027000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x000070993fe00000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x0000709940080000)\n",
+    "libraries": {
+      "/usr/lib/libpkgconf.so.8": {
+        "sha256": "788277f8760875fb46c06d3e8057aade77d46c99f593ed311d57a8cd70933442",
+        "mode": "0o755",
+        "size": 112720,
+        "mtimeNs": 1788555574000000000,
+        "resolved": "/usr/lib/libpkgconf.so.8.0.0",
+        "literalLink": "libpkgconf.so.8.0.0"
+      },
+      "/usr/lib/libc.so.6": {
+        "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+        "mode": "0o755",
+        "size": 2215072,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/libc.so.6",
+        "literalLink": null
+      },
+      "/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      },
+      "/usr/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      }
+    }
+  },
+  "/usr/bin/readelf": {
+    "tool": {
+      "sha256": "a72f12f3dd8c560554a3ba818bcecbda9178db5befbcc64d91bbb6a241fc21bc",
+      "mode": "0o755",
+      "size": 810072,
+      "mtimeNs": 1786462112000000000,
+      "resolved": "/usr/bin/readelf",
+      "literalLink": null
+    },
+    "kind": "ELF",
+    "interpreter": null,
+    "actualELFTarget": "/usr/bin/readelf",
+    "rawLdd": "\tlinux-vdso.so.1 (0x0000744e875ca000)\n\tlibctf-nobfd.so.0 => /usr/lib/libctf-nobfd.so.0 (0x0000744e87498000)\n\tlibz.so.1 => /usr/lib/libz.so.1 (0x0000744e8747d000)\n\tlibzstd.so.1 => /usr/lib/libzstd.so.1 (0x0000744e87397000)\n\tlibdebuginfod.so.1 => /usr/lib/libdebuginfod.so.1 (0x0000744e8738b000)\n\tlibsframe.so.3 => /usr/lib/libsframe.so.3 (0x0000744e8737f000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x0000744e87000000)\n\tlibcurl.so.4 => /usr/lib/libcurl.so.4 (0x0000744e87273000)\n\tlibelf.so.1 => /usr/lib/libelf.so.1 (0x0000744e87255000)\n\tlibjson-c.so.5 => /usr/lib/libjson-c.so.5 (0x0000744e87240000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x0000744e875cc000)\n\tlibnghttp3.so.9 => /usr/lib/libnghttp3.so.9 (0x0000744e86fd8000)\n\tlibngtcp2_crypto_ossl.so.0 => /usr/lib/libngtcp2_crypto_ossl.so.0 (0x0000744e87233000)\n\tlibngtcp2.so.16 => /usr/lib/libngtcp2.so.16 (0x0000744e86f7c000)\n\tlibnghttp2.so.14 => /usr/lib/libnghttp2.so.14 (0x0000744e86f52000)\n\tlibidn2.so.0 => /usr/lib/libidn2.so.0 (0x0000744e86f30000)\n\tlibssh2.so.1 => /usr/lib/libssh2.so.1 (0x0000744e86ee2000)\n\tlibpsl.so.5 => /usr/lib/libpsl.so.5 (0x0000744e86ece000)\n\tlibssl.so.3 => /usr/lib/libssl.so.3 (0x0000744e86dd7000)\n\tlibcrypto.so.3 => /usr/lib/libcrypto.so.3 (0x0000744e86800000)\n\tlibgssapi_krb5.so.2 => /usr/lib/libgssapi_krb5.so.2 (0x0000744e867a8000)\n\tlibbrotlidec.so.1 => /usr/lib/libbrotlidec.so.1 (0x0000744e86dc8000)\n\tlibunistring.so.5 => /usr/lib/libunistring.so.5 (0x0000744e865c1000)\n\tlibbrotlienc.so.1 => /usr/lib/libbrotlienc.so.1 (0x0000744e86501000)\n\tlibkrb5.so.3 => /usr/lib/libkrb5.so.3 (0x0000744e86432000)\n\tlibk5crypto.so.3 => /usr/lib/libk5crypto.so.3 (0x0000744e86404000)\n\tlibcom_err.so.2 => /usr/lib/libcom_err.so.2 (0x0000744e87227000)\n\tlibkrb5support.so.0 => /usr/lib/libkrb5support.so.0 (0x0000744e86db9000)\n\tlibkeyutils.so.1 => /usr/lib/libkeyutils.so.1 (0x0000744e86db2000)\n\tlibresolv.so.2 => /usr/lib/libresolv.so.2 (0x0000744e863f1000)\n\tlibbrotlicommon.so.1 => /usr/lib/libbrotlicommon.so.1 (0x0000744e863ce000)\n\tlibm.so.6 => /usr/lib/libm.so.6 (0x0000744e86297000)\n",
+    "libraries": {
+      "/usr/lib/libctf-nobfd.so.0": {
+        "sha256": "41213c0efa98beae1c3903f41a47ef49ccd71b5dd092ea0e96ac98262c2ff554",
+        "mode": "0o755",
+        "size": 231456,
+        "mtimeNs": 1786462112000000000,
+        "resolved": "/usr/lib/libctf-nobfd.so.0.0.0",
+        "literalLink": "libctf-nobfd.so.0.0.0"
+      },
+      "/usr/lib/libz.so.1": {
+        "sha256": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+        "mode": "0o755",
+        "size": 104464,
+        "mtimeNs": 1772984636000000000,
+        "resolved": "/usr/lib/libz.so.1.3.2",
+        "literalLink": "libz.so.1.3.2"
+      },
+      "/usr/lib/libzstd.so.1": {
+        "sha256": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+        "mode": "0o755",
+        "size": 939976,
+        "mtimeNs": 1771173791000000000,
+        "resolved": "/usr/lib/libzstd.so.1.5.7",
+        "literalLink": "libzstd.so.1.5.7"
+      },
+      "/usr/lib/libdebuginfod.so.1": {
+        "sha256": "6ab44fd72161495d2cc7b90eeff91ad146d16492ce2fe61028722cf354ce1f78",
+        "mode": "0o755",
+        "size": 47056,
+        "mtimeNs": 1786787797000000000,
+        "resolved": "/usr/lib/libdebuginfod-0.196.so",
+        "literalLink": "libdebuginfod-0.196.so"
+      },
+      "/usr/lib/libsframe.so.3": {
+        "sha256": "cdac88518dc3eb29fb5766463c4f9c3e6f8c8abb5223df759fc27e5d79b82d33",
+        "mode": "0o755",
+        "size": 43032,
+        "mtimeNs": 1786462112000000000,
+        "resolved": "/usr/lib/libsframe.so.3.0.0",
+        "literalLink": "libsframe.so.3.0.0"
+      },
+      "/usr/lib/libc.so.6": {
+        "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+        "mode": "0o755",
+        "size": 2215072,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/libc.so.6",
+        "literalLink": null
+      },
+      "/usr/lib/libcurl.so.4": {
+        "sha256": "0126b6046cc17ae3b8a298397a348e43add21dd5c4d84a4d035e785eb2e060f6",
+        "mode": "0o755",
+        "size": 1082984,
+        "mtimeNs": 1788342649000000000,
+        "resolved": "/usr/lib/libcurl.so.4.8.0",
+        "literalLink": "libcurl.so.4.8.0"
+      },
+      "/usr/lib/libelf.so.1": {
+        "sha256": "13d3e3cb54d6120d87a0569ac67be05c029f8cd2e4bf44e75936b2721c8e08af",
+        "mode": "0o755",
+        "size": 116824,
+        "mtimeNs": 1786787797000000000,
+        "resolved": "/usr/lib/libelf-0.196.so",
+        "literalLink": "libelf-0.196.so"
+      },
+      "/usr/lib/libjson-c.so.5": {
+        "sha256": "24467730b77639c8463442aa44e00347af2628c1090e59b136ca7db6abb6d699",
+        "mode": "0o755",
+        "size": 84248,
+        "mtimeNs": 1782585078000000000,
+        "resolved": "/usr/lib/libjson-c.so.5.5.0",
+        "literalLink": "libjson-c.so.5.5.0"
+      },
+      "/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      },
+      "/usr/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      },
+      "/usr/lib/libnghttp3.so.9": {
+        "sha256": "7d826dfe4128cab08a32609c56d67c9ce1383295cbce7ac0fa50449704b7479a",
+        "mode": "0o755",
+        "size": 160768,
+        "mtimeNs": 1785070179000000000,
+        "resolved": "/usr/lib/libnghttp3.so.9.9.0",
+        "literalLink": "libnghttp3.so.9.9.0"
+      },
+      "/usr/lib/libngtcp2_crypto_ossl.so.0": {
+        "sha256": "867135c8d1f2787c1bd5eca09f204e086d6c2c1e3030613f1b5792d92034fb2f",
+        "mode": "0o755",
+        "size": 47064,
+        "mtimeNs": 1785070193000000000,
+        "resolved": "/usr/lib/libngtcp2_crypto_ossl.so.0.3.1",
+        "literalLink": "libngtcp2_crypto_ossl.so.0.3.1"
+      },
+      "/usr/lib/libngtcp2.so.16": {
+        "sha256": "524535e51383d20818e3878e0c819cae6249662dcfc168c0bfbb30aa8ba4f2b3",
+        "mode": "0o755",
+        "size": 374768,
+        "mtimeNs": 1785070193000000000,
+        "resolved": "/usr/lib/libngtcp2.so.16.11.0",
+        "literalLink": "libngtcp2.so.16.11.0"
+      },
+      "/usr/lib/libnghttp2.so.14": {
+        "sha256": "dc9f6c8c911dc14aef9585aed5cadf35ae5037175130753cd058d7eb353fb717",
+        "mode": "0o755",
+        "size": 165928,
+        "mtimeNs": 1785356662000000000,
+        "resolved": "/usr/lib/libnghttp2.so.14.29.5",
+        "literalLink": "libnghttp2.so.14.29.5"
+      },
+      "/usr/lib/libidn2.so.0": {
+        "sha256": "9a36fa67dc82ce0e5dc38ef190c76231f532676f7ba13e363fc1df16a9c50a15",
+        "mode": "0o755",
+        "size": 133064,
+        "mtimeNs": 1765190164000000000,
+        "resolved": "/usr/lib/libidn2.so.0.4.0",
+        "literalLink": "libidn2.so.0.4.0"
+      },
+      "/usr/lib/libssh2.so.1": {
+        "sha256": "8e31bb8758d4f780fd635aa47ca3c0306ccbfbadd7de6c85478a7d712d5ae4b4",
+        "mode": "0o755",
+        "size": 317984,
+        "mtimeNs": 1785457864000000000,
+        "resolved": "/usr/lib/libssh2.so.1.0.1",
+        "literalLink": "libssh2.so.1.0.1"
+      },
+      "/usr/lib/libpsl.so.5": {
+        "sha256": "b5189c9a4b32b15f0bb1bab989069acd2d0dc89723b990266ad5566cd16f1924",
+        "mode": "0o755",
+        "size": 75640,
+        "mtimeNs": 1715019593000000000,
+        "resolved": "/usr/lib/libpsl.so.5.3.5",
+        "literalLink": "libpsl.so.5.3.5"
+      },
+      "/usr/lib/libssl.so.3": {
+        "sha256": "6aa98455a5fcbaa821cbc06495704b493057208ab0ad046e145083411499313c",
+        "mode": "0o755",
+        "size": 1011672,
+        "mtimeNs": 1787681754000000000,
+        "resolved": "/usr/lib/libssl.so.3",
+        "literalLink": null
+      },
+      "/usr/lib/libcrypto.so.3": {
+        "sha256": "24882a9ce56d9bf2f4c3722772aa8ce99e53b7165d70072ad06c9dd35cee13e3",
+        "mode": "0o755",
+        "size": 5922312,
+        "mtimeNs": 1787681754000000000,
+        "resolved": "/usr/lib/libcrypto.so.3",
+        "literalLink": null
+      },
+      "/usr/lib/libgssapi_krb5.so.2": {
+        "sha256": "db71de39831ad557f7c75fadf772575f1180c4e1e7f83ec7318fabd78e129296",
+        "mode": "0o755",
+        "size": 360736,
+        "mtimeNs": 1779131694000000000,
+        "resolved": "/usr/lib/libgssapi_krb5.so.2.2",
+        "literalLink": "libgssapi_krb5.so.2.2"
+      },
+      "/usr/lib/libbrotlidec.so.1": {
+        "sha256": "0883fb05fa42aa6a883722098530ab08551ed317e38a2311f5c96e94dd460979",
+        "mode": "0o755",
+        "size": 55168,
+        "mtimeNs": 1767465015000000000,
+        "resolved": "/usr/lib/libbrotlidec.so.1.2.0",
+        "literalLink": "libbrotlidec.so.1.2.0"
+      },
+      "/usr/lib/libunistring.so.5": {
+        "sha256": "ba7a4afb4b6f823d64ebe324416e182cd42a981dba049e3ddcfa1c9af03cb7f3",
+        "mode": "0o755",
+        "size": 1992752,
+        "mtimeNs": 1776196267000000000,
+        "resolved": "/usr/lib/libunistring.so.5.2.1",
+        "literalLink": "libunistring.so.5.2.1"
+      },
+      "/usr/lib/libbrotlienc.so.1": {
+        "sha256": "8dbc539197d276310ce2750dcb73de5465a1259d46a5d1894e6138fd354bf5c7",
+        "mode": "0o755",
+        "size": 780768,
+        "mtimeNs": 1767465015000000000,
+        "resolved": "/usr/lib/libbrotlienc.so.1.2.0",
+        "literalLink": "libbrotlienc.so.1.2.0"
+      },
+      "/usr/lib/libkrb5.so.3": {
+        "sha256": "eb8369680ba30529b30abeaca57429b67f9af42ac43efdd5d95ca1901bb9c44c",
+        "mode": "0o755",
+        "size": 845896,
+        "mtimeNs": 1779131694000000000,
+        "resolved": "/usr/lib/libkrb5.so.3.3",
+        "literalLink": "libkrb5.so.3.3"
+      },
+      "/usr/lib/libk5crypto.so.3": {
+        "sha256": "e9ea7950674f25a6951b830036f95a595e1fc112247a69d11bc0003124ab7338",
+        "mode": "0o755",
+        "size": 182320,
+        "mtimeNs": 1779131694000000000,
+        "resolved": "/usr/lib/libk5crypto.so.3.1",
+        "literalLink": "libk5crypto.so.3.1"
+      },
+      "/usr/lib/libcom_err.so.2": {
+        "sha256": "67ed8a11c44542ffdbaa04b3521f48729afddf936568632b6aa9d04c595316cd",
+        "mode": "0o755",
+        "size": 18376,
+        "mtimeNs": 1772899526000000000,
+        "resolved": "/usr/lib/libcom_err.so.2.1",
+        "literalLink": "libcom_err.so.2.1"
+      },
+      "/usr/lib/libkrb5support.so.0": {
+        "sha256": "941f17df15bc3ed160b392dee2930bd68565f445b8fe8d87ad522256c972967f",
+        "mode": "0o755",
+        "size": 55544,
+        "mtimeNs": 1779131694000000000,
+        "resolved": "/usr/lib/libkrb5support.so.0.1",
+        "literalLink": "libkrb5support.so.0.1"
+      },
+      "/usr/lib/libkeyutils.so.1": {
+        "sha256": "a82e692581b6215475c03538fa4b25681b5c71e8554c67afa7e34074b968b0d7",
+        "mode": "0o755",
+        "size": 22480,
+        "mtimeNs": 1776025534000000000,
+        "resolved": "/usr/lib/libkeyutils.so.1.10",
+        "literalLink": "libkeyutils.so.1.10"
+      },
+      "/usr/lib/libresolv.so.2": {
+        "sha256": "ee828b251a61761a9e529a791758ec8a1fbefd85693e2dc23501fedb8cf2f31d",
+        "mode": "0o755",
+        "size": 67904,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/libresolv.so.2",
+        "literalLink": null
+      },
+      "/usr/lib/libbrotlicommon.so.1": {
+        "sha256": "4f895094b7b6ff9c82909e6516bc9cf212e2ec5af451d39bf1bcbc5e5fa225b2",
+        "mode": "0o755",
+        "size": 141264,
+        "mtimeNs": 1767465015000000000,
+        "resolved": "/usr/lib/libbrotlicommon.so.1.2.0",
+        "literalLink": "libbrotlicommon.so.1.2.0"
+      },
+      "/usr/lib/libm.so.6": {
+        "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+        "mode": "0o755",
+        "size": 1268336,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/libm.so.6",
+        "literalLink": null
+      }
+    }
+  },
+  "/usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1plus": {
+    "tool": {
+      "sha256": "0026a9e66550c7f470558dfbe99f861073294e601d62b7b74eeb50fdebb09bef",
+      "mode": "0o755",
+      "size": 50921144,
+      "mtimeNs": 1786392286000000000,
+      "resolved": "/usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1plus",
+      "literalLink": null
+    },
+    "kind": "ELF",
+    "interpreter": null,
+    "actualELFTarget": "/usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1plus",
+    "rawLdd": "\tlinux-vdso.so.1 (0x00007522d22ed000)\n\tlibisl.so.23 => /usr/lib/libisl.so.23 (0x00007522d2000000)\n\tlibmpc.so.3 => /usr/lib/libmpc.so.3 (0x00007522d229c000)\n\tlibmpfr.so.6 => /usr/lib/libmpfr.so.6 (0x00007522d1f42000)\n\tlibgmp.so.10 => /usr/lib/libgmp.so.10 (0x00007522d1e9b000)\n\tlibz.so.1 => /usr/lib/libz.so.1 (0x00007522d227f000)\n\tlibzstd.so.1 => /usr/lib/libzstd.so.1 (0x00007522d1db5000)\n\tlibm.so.6 => /usr/lib/libm.so.6 (0x00007522d1c7e000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x00007522d1a00000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007522d22ef000)\n",
+    "libraries": {
+      "/usr/lib/libisl.so.23": {
+        "sha256": "98f00d0ab8bbd3e41b7ad99596e06bb79b846c6e736613320d9705e2716013b4",
+        "mode": "0o755",
+        "size": 2394960,
+        "mtimeNs": 1783280771000000000,
+        "resolved": "/usr/lib/libisl.so.23.5.0",
+        "literalLink": "libisl.so.23.5.0"
+      },
+      "/usr/lib/libmpc.so.3": {
+        "sha256": "2d704dc90ca7cf3ff5bfb43e26625752bcacf35fda71065fb33b9f9012ae3841",
+        "mode": "0o755",
+        "size": 145272,
+        "mtimeNs": 1776353775000000000,
+        "resolved": "/usr/lib/libmpc.so.3.4.1",
+        "literalLink": "libmpc.so.3.4.1"
+      },
+      "/usr/lib/libmpfr.so.6": {
+        "sha256": "90043d803c6c205aa842f3e79a54f7c6151ef98ea4964729915d2f9fc584ea25",
+        "mode": "0o755",
+        "size": 775744,
+        "mtimeNs": 1742488201000000000,
+        "resolved": "/usr/lib/libmpfr.so.6.2.2",
+        "literalLink": "libmpfr.so.6.2.2"
+      },
+      "/usr/lib/libgmp.so.10": {
+        "sha256": "0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49",
+        "mode": "0o755",
+        "size": 678528,
+        "mtimeNs": 1771229851000000000,
+        "resolved": "/usr/lib/libgmp.so.10.5.0",
+        "literalLink": "libgmp.so.10.5.0"
+      },
+      "/usr/lib/libz.so.1": {
+        "sha256": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+        "mode": "0o755",
+        "size": 104464,
+        "mtimeNs": 1772984636000000000,
+        "resolved": "/usr/lib/libz.so.1.3.2",
+        "literalLink": "libz.so.1.3.2"
+      },
+      "/usr/lib/libzstd.so.1": {
+        "sha256": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+        "mode": "0o755",
+        "size": 939976,
+        "mtimeNs": 1771173791000000000,
+        "resolved": "/usr/lib/libzstd.so.1.5.7",
+        "literalLink": "libzstd.so.1.5.7"
+      },
+      "/usr/lib/libm.so.6": {
+        "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+        "mode": "0o755",
+        "size": 1268336,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/libm.so.6",
+        "literalLink": null
+      },
+      "/usr/lib/libc.so.6": {
+        "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+        "mode": "0o755",
+        "size": 2215072,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/libc.so.6",
+        "literalLink": null
+      },
+      "/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      },
+      "/usr/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      }
+    }
+  },
+  "/usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2": {
+    "tool": {
+      "sha256": "6a575bbac80e335d20fc2ca631798899956cbbef882d6c3b83f8b13d01865155",
+      "mode": "0o755",
+      "size": 699168,
+      "mtimeNs": 1786392286000000000,
+      "resolved": "/usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2",
+      "literalLink": null
+    },
+    "kind": "ELF",
+    "interpreter": null,
+    "actualELFTarget": "/usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2",
+    "rawLdd": "\tlinux-vdso.so.1 (0x00007ad5f8804000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x00007ad5f8400000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007ad5f8806000)\n",
+    "libraries": {
+      "/usr/lib/libc.so.6": {
+        "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+        "mode": "0o755",
+        "size": 2215072,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/libc.so.6",
+        "literalLink": null
+      },
+      "/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      },
+      "/usr/lib64/ld-linux-x86-64.so.2": {
+        "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+        "mode": "0o755",
+        "size": 263152,
+        "mtimeNs": 1786390742000000000,
+        "resolved": "/usr/lib/ld-linux-x86-64.so.2",
+        "literalLink": null
+      }
+    }
+  }
+}

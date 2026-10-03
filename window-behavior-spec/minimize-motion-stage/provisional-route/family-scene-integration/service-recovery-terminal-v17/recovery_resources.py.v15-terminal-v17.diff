@@ -1,0 +1,46 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v15-frozen-v2/recovery_resources.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-terminal-v17/recovery_resources.py
+@@ -21,6 +21,43 @@
+ def process_start(pid):
+     try:return int(Path(f'/proc/{positive(pid)}/stat').read_text().rsplit(') ',1)[1].split()[19])
+     except (FileNotFoundError,ProcessLookupError):return None
++
++
++def renderer_terminal_state(row):
++    """Read-only exact lifetime closure; an unreaped PID is not execution."""
++    checked_renderer(row)
++    pid=row['pid'];expected=row['start']
++    def observe():
++        try:raw=Path(f'/proc/{pid}/stat').read_text()
++        except (FileNotFoundError,ProcessLookupError):return None
++        # State and start must come from ONE kernel stat record. Never join
++        # independently sampled state/start into a fabricated lifetime.
++        head,tail=raw.rsplit(') ',1);fields=tail.split()
++        if head.split(' ',1)[0]!=str(pid) or len(fields)<20:
++            raise ValueError('complete exact renderer stat required')
++        state=fields[0]
++        if state not in ('R','S','D','T','t','Z','X','x','K','W','P','I'):
++            raise ValueError('unknown renderer execution state; quarantined')
++        start=positive(int(fields[19]))
++        return {'start':start,'state':state}
++    def absent_or_reused(current):
++        if current is None:return {'oldLifetimeGone':True,'kind':'absent','observed':None}
++        if current['start']!=expected:return {'oldLifetimeGone':True,'kind':'reused','observed':current}
++        return None
++    current=observe();gone=absent_or_reused(current)
++    if gone is not None:return gone
++    try:pidfd=os.pidfd_open(pid)
++    except ProcessLookupError:return {'oldLifetimeGone':True,'kind':'absent','observed':None}
++    try:
++        current=observe();gone=absent_or_reused(current)
++        if gone is not None:return gone
++        poll=select.poll();poll.register(pidfd,select.POLLIN)
++        events=poll.poll(0)
++        if events and (len(events)!=1 or events[0][0]!=pidfd or not(events[0][1]&select.POLLIN) or events[0][1]&~(select.POLLIN|select.POLLHUP)):
++            raise ValueError('unexpected renderer pidfd terminal event; quarantined')
++        terminal=bool(events)
++        return {'oldLifetimeGone':terminal,'kind':'exited' if terminal else 'running','observed':current}
++    finally:os.close(pidfd)
+ 
+ 
+ def material_fd(fd,*,sealed=False):

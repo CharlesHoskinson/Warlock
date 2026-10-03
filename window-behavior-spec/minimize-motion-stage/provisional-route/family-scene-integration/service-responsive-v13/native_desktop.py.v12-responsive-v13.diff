@@ -1,0 +1,68 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/native_desktop.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/native_desktop.py
+@@ -4,6 +4,7 @@
+ capture adds whole-window cross-output coordinates without geometry writes.
+ Translucent client backdrop equivalence remains outside the capture guarantee.
+ """
++from contextlib import nullcontext
+ from copy import deepcopy
+ import hashlib
+ import json
+@@ -48,8 +49,15 @@
+         self.capture_lock=threading.RLock()
+         self.shared_cache=SnapshotCache(cache_root,self.base.validate_snapshot,session=os.environ['HYPRLAND_INSTANCE_SIGNATURE']) if cache_root else None
+         self.current_capture_epoch=None
++        self.family_query_lock=threading.RLock();self.family_query_local=threading.local()
+     def __getattr__(self,name):return getattr(self.base,name)
+     def family(self,window,windows,single=False):
++        with getattr(self,'family_query_lock',nullcontext()):
++            result=self._family_locked(window,windows,single)
++            local=getattr(self,'family_query_local',None)
++            if local is not None:local.evidence=deepcopy(getattr(self.base.family_trace,'evidence',None))
++            return result
++    def _family_locked(self,window,windows,single=False):
+         members,focus=self.base.family(window,windows,single)
+         if single:
+             self.base.family_trace.evidence={'native':[],'members':[list(key(w)) for w in members],
+@@ -75,7 +83,40 @@
+         evidence['activePaintIdentity']=list(active) if active else None
+         return ordered,focus
+     def family_evidence(self):
+-        return deepcopy(getattr(self.base.family_trace,'evidence',None))
++        local=getattr(self,'family_query_local',None)
++        return deepcopy(getattr(local,'evidence',None) if local is not None else getattr(self.base.family_trace,'evidence',None))
++    def plan_destination(self,window):
++        """Read-only exact stored destination/output plan; no focus or refresh."""
++        state=self.production.RUNTIME/'hypr-windowctl'/window['address']
++        fields=state.read_text().split()
++        metadata=json.loads(state.with_name(state.name+'.monitor.json').read_text())
++        if len(fields)<3 or not fields[0].isdigit() or fields[2]!=str(window['stableId']) or metadata.get('pid')!=window['pid'] or metadata.get('stableId')!=window['stableId'] or str(metadata.get('homeWorkspace'))!=fields[0]:
++            raise ValueError('stored destination identity is stale or incomplete')
++        destination=fields[0]
++        monitors=self.base.monitors()
++        workspaces=json.loads(subprocess.check_output(['hyprctl','workspaces','-j'],text=True,timeout=2))
++        workspace=next((w for w in workspaces if w.get('name')==destination),None)
++        monitor=next((m for m in monitors if workspace and (m.get('id')==workspace.get('monitorID') or m.get('name')==workspace.get('monitor'))),None)
++        monitor=monitor or next((m for m in monitors if m.get('name')==metadata.get('monitorName')),None)
++        monitor=monitor or next((m for m in monitors if m.get('focused')),None)
++        if not monitor:raise ValueError('destination output unavailable')
++        if not any(key(current)==key(window) for current in self.base.clients()):raise ValueError('destination identity changed')
++        return {'identity':list(key(window)),'destination':destination,'monitor':deepcopy(monitor),
++            'storedFields':fields,'storedMetadata':metadata}
++    def apply_destination(self,window,plan):
++        """Short native focus effect; caller holds complete family receipt lock."""
++        if plan.get('identity')!=list(key(window)):raise ValueError('destination plan identity differs')
++        state=self.production.RUNTIME/'hypr-windowctl'/window['address']
++        if state.read_text().split()!=plan['storedFields'] or json.loads(state.with_name(state.name+'.monitor.json').read_text())!=plan['storedMetadata']:
++            raise ValueError('stored destination changed before native focus')
++        if not any(key(current)==key(window) for current in self.base.clients()):raise ValueError('destination identity changed before native focus')
++        for expression in ['hl.dsp.focus({ monitor = '+json.dumps(plan['monitor']['name'])+' })',
++                           'hl.dsp.focus({ workspace = '+json.dumps(plan['destination'])+' })']:
++            subprocess.run(['hyprctl','dispatch',expression],check=True,stdout=subprocess.DEVNULL,timeout=2)
++        return plan['monitor']
++    def refresh_destination(self,window,plan):
++        if plan.get('identity')!=list(key(window)):raise ValueError('destination refresh identity differs')
++        return self.base.ipc('motionRefresh',{})
+     def retire_gestures(self,members,*,env=None):
+         if not isinstance(members,list) or not 1<=len(members)<=64:raise ValueError('complete bounded retirement family required')
+         identities=[checked_identity(w) for w in members]

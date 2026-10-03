@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_speech" xml:lang="eo">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_braille"/>
+    <title type="sort">2.1 Parolo</title>
+    <title type="link">Parolo</title>
+    <desc>Agordi kio estas parolata</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Parolaj agordoj</title>
+  <section id="enable_speech">
+    <title>Ebligi parolon</title>
+    <p>La markobulono <gui>Ebligi parolon</gui> regas ĉu <app>Orko</app> uzos parolan sintezilon. Uzantoj, kiuj uzas nur brajlon, verŝajne volas malmarki ĉi tiun markobutonon.</p>
+    <p>Defaŭlta valoro: markita</p>
+  </section>
+  <section id="verbosity">
+    <title>Parolindeco</title>
+    <p>La agordo <gui>Parolindeco</gui> determinas la kvanton de informo, kiu estos parolata en diversaj situacioj. Ekzemple, se ĝi estas metita al parolinda, kaj vi sagumas al vorto, kiu estas misortografita, <app>Orko</app> anoncas, ke la vorto estas misortografita. Kiam la nivelo estas metita al mallonga, ĉi tiu anonco ne estos farata.</p>
+    <p>Defaŭlta valoro: <gui>Detala</gui></p>
+  </section>
+  <section id="punctuation_level">
+    <title>Interpunkcia Nivelo</title>
+    <p>La radikbutona grupo <gui>Interpunkcia Nivelo</gui> estas uzata por agordi la kvanton da interpunkcio parolata de la sintezilo. La disponeblaj niveloj estas <gui>Nenio</gui>, <gui>Iom</gui>, <gui>Plej multe</gui>, kaj <gui>Ĉio</gui>.</p>
+    <p>Defaŭlta valoro: <gui>Plej multe</gui></p>
+    <section id="punctuation_level_none">
+      <title>Nenio</title>
+      <p>Elekti interpunkcian nivelon de <gui>Nenio</gui>, kiel atendite, kaŭzus, ke nenia interpunkcio estu parolata. Notu tamen, ke specialaj simboloj kiel subskribitaj kaj superskribitaj nombroj, Unikodaj frakcioj, kaj buloj ankoraŭ estas parolataj ĉe ĉi tiu nivelo, eĉ se iuj eble konsideras tiujn tipojn de simboloj kiel interpunkcio.</p>
+    </section>
+    <section id="punctuation_level_some">
+      <title>Iom</title>
+      <p>Elekti interpunkcian nivelon de <gui>Iom</gui> kaŭzas, ke ĉiuj antaŭe menciitaj simboloj estu parolataj. Aldone, <app>Orko</app> parolos konatajn matematikajn simbolojn, valutajn simbolojn, kaj "^", "@", "/", "&amp;", "#".</p>
+    </section>
+    <section id="punctuation_level_most">
+      <title>Plej multe</title>
+      <p>Elekti interpunkcian nivelon de <gui>Plej multe</gui> kaŭzas, ke ĉiuj antaŭe menciitaj simboloj estu parolataj. Aldone, <app>Orko</app> parolos ĉiujn aliajn konatajn interpunkciajn simbolojn <em>aliajn ol</em> "!", "'", ",", ".", "?".</p>
+    </section>
+    <section id="punctuation_level_all">
+      <title>Ĉio</title>
+      <p>Elekti interpunkcian nivelon de <gui>Ĉio</gui>, kiel atendite, kaŭzas, ke <app>Orko</app> parolas ĉiujn konatajn interpunkciajn simbolojn.</p>
+    </section>
+  </section>
+  <section id="spoken_context">
+    <title>Parolata Kunteksto</title>
+    <p>La sekvaj eroj regas la prezentadon de diversaj aldonaj, "sistema" informoj pri la ero kun fokuso. Ĉar la asociita teksto ne aperas sur ekrano, ĉi tiu informo estas prezentata en la Sistema voĉo de <app>Orko</app>.</p>
+    <section id="only_speak_displayed_text">
+      <title>Paroli nur montrotan tekston</title>
+      <p>Marki ĉi tiun markobutonon kaŭzas, ke <app>Orko</app> parolu nur efektivan tekston montrotan sur ekrano. Ĉi tiu opcio estas celita primarle por uzantoj kun malforta vidado kaj uzantoj kun vida lerna malfacileco.</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+      <note style="note">
+        <p>La sekvaj eroj ne estos disponeblaj por agordi, se la markobulono <gui>Paroli nur montrotan tekston</gui> estas markita.</p>
+      </note>
+    </section>
+    <section id="speak_blank_lines">
+      <title>Paroli malplenajn liniojn</title>
+      <p>Se la markobulono <gui>Paroli malplenajn liniojn</gui> estas markita, <app>Orko</app> diros "malplena" ĉiufoje, kiam vi sagumas al malplena linio. Se ĝi estas malmarkita, <app>Orko</app> nenion diros, kiam vi moviĝas al malplena linio.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="indentation_and_justification">
+      <title>Paroli pri denteligo kaj vicigo</title>
+      <p>Kiam vi laboras kun kodo aŭ redaktas aliajn dokumentojn, estas ofte dezirinde scii pri vicigo kaj denteligo. Marki la markobutonon <gui>Paroli pri denteligo kaj vicigo</gui> kaŭzos, ke <app>Orko</app> anoncos ĉi tiun informon.</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+    </section>
+    <section id="speak_misspelled_word_indicator">
+      <title>Paroli pri misortografia indikilo</title>
+      <p>La misortografia indikilo estas la ruĝa ondolinia streketo, kiu aperas sub misortografitaj vortoj en redakteblaj tekstaj kampoj. Se <gui>Paroli pri misortografia indikilo</gui> estas markita, kiam vi navigas al vorto kun ĉi tiu indikilo, aŭ skribas vorton malĝuste, kaŭzante, ke ĉi tiu indikilo aperas, <app>Orko</app> parolos "misortografita."</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="mnemonics">
+     <title>Paroli pri objektaj mnemonikoj</title>
+      <p>Se la markobulono <gui>Paroli pri objektaj mnemonikoj</gui> estas markita, <app>Orko</app> anoncas la mnemonikon asociitan kun la objekto kun fokuso (kiel <keyseq><key>Alt</key><key>O</key> </keyseq> por butono <gui>Bone</gui>).</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+    </section>
+    <section id="child_position">
+      <title>Paroli pri fila pozicio</title>
+      <p>Marki la markobutonon <gui>Paroli pri fila pozicio</gui> kaŭzos, ke <app>Orko</app> anoncos la pozicion de la fokusita ero en menuoj, listoj kaj arboj (ekz. "9 el 16").</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+    </section>
+    <section id="speak_tutorial_messages">
+      <title>Paroli instrukciajn mesaĝojn</title>
+      <p>Se la markobulono <gui>Paroli instrukciajn mesaĝojn</gui> estas markita, dum vi moviĝas inter objektoj en interfaco, <app>Orko</app> provizos aldonajn informojn, kiel ekzemple kiel interagi kun la nunmomente fokusita objekto.</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+    </section>
+    <section id="speak_description">
+      <title>Paroli priskribon</title>
+      <p>Se la markobulono <gui>Paroli priskribon</gui> estas markita, dum vi moviĝas inter objektoj en interfaco, <app>Orko</app> parolos la alireblecan priskribon aldone al la alirebleca nomo de la objekto.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="system_messages_are_detailed">
+      <title>Sistemaj mesaĝoj estas detalaj</title>
+      <p>Se <gui>Sistemaj mesaĝoj estas detalaj</gui> estas markita, <app>Orko</app> prezentados detalajn mesaĝojn al vi per parolo. Ekzemple, se vi uzas la komandon de <app>Orko</app> por ŝanĝi eĥon, <app>Orko</app> eble diras "Eĥo agordita al vorto." Se vi preferas pli mallongajn mesaĝojn, kiel simple "vorto," vi devus malmarki ĉi tiun markobutonon.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="speak_colors_as_names">
+      <title>Paroli kolorojn kiel nomojn</title>
+      <p>Se <gui>Paroli kolorojn kiel nomojn</gui> estas markita, <app>Orko</app> priskribas kolorojn, serĉante la plej proksiman aproksimaton. Ekzemple, RGB 0, 27, 51 estus parolata kiel "noktomeza bluo." Se vi preferas aŭdi la ekzaktan RGB-valoron, vi devus malmarki ĉi tiun markobutonon.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="announce_blockquotes_during_navigation">
+      <title>Anonci blokcitaĵojn dum navigado</title>
+      <p>Se <gui>Anonci blokcitaĵojn dum navigado</gui> estas markita, <app>Orko</app> sciigos vin kiam vi navigas en aŭ el blokcitaĵo. Notu, ke ĉi tiu agordo estas sendependa de ĉu ĉi tiu anonco estas farata dum Diri Ĉion. Vidu <link xref="preferences_general#say_all_announce_context">Anonci Kuntekstajn Informojn en Diri Ĉion</link> por pliaj informoj.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="announce_forms_during_navigation">
+      <title>Anonci formularojn dum navigado</title>
+      <p>Se <gui>Anonci formularojn dum navigado</gui> estas markita, <app>Orko</app> sciigos vin kiam vi navigas en aŭ el formularo. Notu, ke ĉi tiu agordo temas pri formularoj, kiuj ne estas ARIA-ŝildomarkoj. Vi povas agordi la prezentadon de ARIA-ŝildomarkoj per la markobulono <gui>Anonci ŝildomarkojn dum navigado</gui>. Aldone, notu, ke ĉi tiu agordo estas sendependa de ĉu ĉi tiu anonco estas farata dum Diri Ĉion. Vidu <link xref="preferences_general#say_all_announce_context">Anonci Kuntekstajn Informojn en Diri Ĉion</link> por pliaj informoj.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="announce_landmarks_during_navigation">
+      <title>Anonci ŝildomarkojn dum navigado</title>
+      <p>Se <gui>Anonci ŝildomarkojn dum navigado</gui> estas markita, <app>Orko</app> sciigos vin kiam vi navigas en aŭ el ARIA-ŝildomerko. Notu, ke ĉi tiu agordo estas sendependa de ĉu ĉi tiu anonco estas farata dum Diri Ĉion. Vidu <link xref="preferences_general#say_all_announce_context">Anonci Kuntekstajn Informojn en Diri Ĉion</link> por pliaj informoj.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="announce_lists_during_navigation">
+      <title>Anonci listojn dum navigado</title>
+      <p>Se <gui>Anonci listojn dum navigado</gui> estas markita, <app>Orko</app> sciigos vin kiam vi navigas en aŭ el listo. Notu, ke ĉi tiu agordo estas sendependa de ĉu ĉi tiu anonco estas farata dum Diri Ĉion. Vidu <link xref="preferences_general#say_all_announce_context">Anonci Kuntekstajn Informojn en Diri Ĉion</link> por pliaj informoj.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="announce_panels_during_navigation">
+      <title>Anonci panelojn dum navigado</title>
+      <p>Se <gui>Anonci panelojn dum navigado</gui> estas markita, <app>Orko</app> sciigos vin kiam vi navigas en aŭ el panelo. Notu, ke ĉi tiu agordo estas sendependa de ĉu ĉi tiu anonco estas farata dum Diri Ĉion. Vidu <link xref="preferences_general#say_all_announce_context">Anonci Kuntekstajn Informojn en Diri Ĉion</link> por pliaj informoj.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="announce_tables_during_navigation">
+      <title>Anonci tabelojn dum navigado</title>
+      <p>Se <gui>Anonci tabelojn dum navigado</gui> estas markita, <app>Orko</app> sciigos vin kiam vi navigas en aŭ el tabelo. Notu, ke ĉi tiu agordo estas sendependa de ĉu ĉi tiu anonco estas farata dum Diri Ĉion. Vidu <link xref="preferences_general#say_all_announce_context">Anonci Kuntekstajn Informojn en Diri Ĉion</link> por pliaj informoj.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="speak_full_row_in_gui_tables">
+      <title>Paroli tutan vicon en GUI-tabeloj</title>
+      <p>Se <gui>Paroli tutan vicon en GUI-tabeloj</gui> estas markita, dum vi sagumas supren kaj malsupren en aplikaĵaj tabeloj kiel ekzemple la listo de mesaĝoj en via Ricevujo, <app>Orko</app> parolos la tutan vicon. Se vi preferas aŭdi nur la ĉelon kun fokuso, vi devus malmarki ĉi tiun markobutonon.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="speak_full_row_in_document_tables">
+      <title>Paroli tutan vicon en dokumentaj tabeloj</title>
+      <p>Se <gui>Paroli tutan vicon en dokumentaj tabeloj</gui> estas markita, dum vi sagumas supren kaj malsupren en tabeloj kiel tiuj trovitaj en <app>Writer</app> kaj retdokumentoj, <app>Orko</app> parolos la tutan vicon. Se vi preferas aŭdi nur la ĉelon kun fokuso, vi devus malmarki ĉi tiun markobutonon.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="speak_full_row_in_spreadsheets">
+      <title>Paroli tutan vicon en kalkultabeloj</title>
+      <p>Se <gui>Paroli tutan vicon en kalkultabeloj</gui> estas markita, dum vi sagumas supren kaj malsupren en kalkultabeloj, <app>Orko</app> parolos la tutan vicon. Se vi preferas aŭdi nur la ĉelon kun fokuso, vi devus malmarki ĉi tiun markobutonon.</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+    </section>
+  </section>
+</page>

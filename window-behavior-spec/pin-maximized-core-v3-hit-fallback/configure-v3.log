@@ -1,0 +1,129 @@
+-- The C compiler identification is GNU 16.2.1
+-- The CXX compiler identification is GNU 16.2.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Gathering git info
+-- Generating shader includes
+--	CM.glsl
+--	blur1.frag
+--	blur1.glsl
+--	blur2.frag
+--	blur2.glsl
+--	blurFinish.glsl
+--	blurfinish.frag
+--	blurprepare.frag
+--	blurprepare.glsl
+--	border.frag
+--	border.glsl
+--	cm_helpers.glsl
+--	constants.h
+--	defines.h
+--	ext.frag
+--	gain.glsl
+--	glitch.frag
+--	gradient.glsl
+--	inner_glow.frag
+--	inner_glow.glsl
+--	motion_blur.glsl
+--	passthru.frag
+--	quad.frag
+--	rgbamatte.frag
+--	rounding.glsl
+--	shadow.frag
+--	shadow.glsl
+--	surface.frag
+--	tex300.vert
+--	tex320.vert
+--	tonemap.glsl
+-- Found PkgConfig: /usr/bin/pkg-config (found version "3.0.7")
+-- Checking for module 'udis86>=1.7.2'
+--   Package 'udis86' not found
+-- udis86 dependency not found, falling back to subproject
+-- Found wayland-protocols at /usr/share/wayland-protocols
+-- Found wayland-scanner pkgdatadir at /usr/share/wayland
+-- Configuring Hyprland in Release with CMake
+-- Checking deps...
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found OpenGL: /usr/lib/libOpenGL.so  found components: GLES3
+-- glaze dependency not found, retrieving v7.2.0 with FetchContent
+-- Checking for module 'aquamarine>=0.9.3'
+--   Found aquamarine, version 0.15.0
+-- Checking for module 'hyprlang>=0.6.7'
+--   Found hyprlang, version 0.6.8
+-- Checking for module 'hyprcursor>=0.1.7'
+--   Found hyprcursor, version 0.1.13
+-- Checking for module 'hyprutils>=0.14.0'
+--   Found hyprutils, version 0.14.2
+-- Checking for module 'hyprgraphics>=0.5.1'
+--   Found hyprgraphics, version 0.5.1
+-- Detected git repository root: /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core
+-- Checking for modules 'xkbcommon>=1.11.0;uuid;wayland-server>=1.22.91;wayland-protocols>=1.49;cairo;pango;pangocairo;pixman-1;xcursor;libdrm;libinput>=1.29;libeis-1.0;gbm;gio-2.0;re2;muparser;lcms2'
+--   Found xkbcommon, version 1.13.2
+--   Found uuid, version 2.42.3
+--   Found wayland-server, version 1.26.0
+--   Found wayland-protocols, version 1.49
+--   Found cairo, version 1.18.4
+--   Found pango, version 1.58.2
+--   Found pangocairo, version 1.58.2
+--   Found pixman-1, version 0.46.4
+--   Found xcursor, version 1.2.3
+--   Found libdrm, version 2.4.134
+--   Found libinput, version 1.31.3
+--   Found libeis-1.0, version 1.6.0
+--   Found gbm, version 26.2.2-arch1.1
+--   Found gio-2.0, version 2.88.3
+--   Found re2, version 11.0.0
+--   Found muparser, version 2.3.5
+--   Found lcms2, version 2.19
+-- Checking for one of the modules 'lua55;lua5.5;lua-55;lua-5.5;lua>=5.5;lua<5.6'
+-- Looking for execinfo.h
+-- Looking for execinfo.h - found
+-- Configuration supports execinfo
+-- Looking for backtrace in execinfo
+-- Looking for backtrace in execinfo - not found
+-- Looking for sys/timerfd.h
+-- Looking for sys/timerfd.h - found
+-- Checking for module 'epoll-shim'
+--   Package 'epoll-shim' not found
+-- Looking for sys/inotify.h
+-- Looking for sys/inotify.h - found
+-- Checking for module 'libinotify'
+--   Package 'libinotify' not found
+-- XWAYLAND Enabled (NO_XWAYLAND not defined) checking deps...
+-- Checking for modules 'xcb;xcb-render;xcb-xfixes;xcb-icccm;xcb-composite;xcb-res;xcb-errors'
+--   Found xcb, version 1.17.0
+--   Found xcb-render, version 1.17.0
+--   Found xcb-xfixes, version 1.17.0
+--   Found xcb-icccm, version 0.4.2
+--   Found xcb-composite, version 1.17.0
+--   Found xcb-res, version 1.17.0
+--   Found xcb-errors, version 1.0.1
+-- SYSTEMD support is requested (NO_SYSTEMD not defined)...
+-- UWSM support is disabled...
+-- Setting precompiled headers
+-- Setting link libraries
+-- Checking for module 'hyprland-protocols>=0.7.0'
+--   Package 'hyprland-protocols' not found
+-- hyprland-protocols subproject set to subprojects/hyprland-protocols
+-- Checking for modules 'hyprutils>=0.2.4;hyprwire;re2;readline'
+--   Found hyprutils, version 0.14.2
+--   Found hyprwire, version 0.3.1
+--   Found re2, version 11.0.0
+--   Found readline, version 8.3
+-- Checking for module 'hyprutils>=0.10.3'
+--   Found hyprutils, version 0.14.2
+-- hyprpm is disabled
+-- Testing is disabled
+-- Configuring done (4.2s)
+-- Generating done (0.3s)
+-- Build files have been written to: /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_flat_review" xml:lang="kk">
+  <info>
+    <link type="next" xref="commands_find"/>
+    <link type="guide" xref="commands#reviewing_screen_contents"/>
+    <link type="seealso" xref="howto_flat_review"/>
+    <title type="sort">1. Жалпақ шолу</title>
+    <title type="link">Жалпақ шолу</title>
+    <desc>Терезелерді кеңістіктік қарап шығу командалары</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Жалпақ шолу командалары</title>
+  <p>Orca-ның <link xref="howto_flat_review">Жалпақ шолу</link> командалары экранда көрсетілген элементтерді кеңістіктік қарап шығуға арналған. Олар сондай-ақ құжат мәтінінде навигация жасаған кезде ағымдағы жолды, сөзді және таңбаны оқу құралын ұсынады. Бұл командалардың көпшілігі пернелер тіркесімдеріне "тағайындалған". Тағайындалмаған командаларды тағайындау туралы ақпаратты <link xref="howto_key_bindings">Пернелер тіркесімдерін өзгерту</link> бөлімінен қараңыз.</p>
+  <section id="line">
+    <title>Жол бойынша қарап шығу командалары</title>
+    <list>
+      <item>
+        <p>Бірінші жол ("үй" позициясы):</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>Orca модификаторы</key><key>KP 7</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Ctrl</key><key>U</key></keyseq></p></item>
+        </list>
+      </item>
+      <item>
+        <p>Алдыңғы жол:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 7</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>U</key></keyseq></p></item>
+        </list>
+      </item>
+      <item>
+        <p>Ағымдағы жол:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 8</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>I</key></keyseq></p></item>
+        </list>
+      </item>
+        <item><p>Ағымдағы жолды әріптеп оқу:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 8</key></keyseq> (екі рет шертілген)</p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>I</key></keyseq> (екі рет шертілген)</p></item>
+        </list>
+      </item>
+      <item><p>Ағымдағы жолды фонетикалық әріптеп оқу:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 8</key></keyseq> (үш рет шертілген)</p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>I</key></keyseq> (үш рет шертілген)</p></item>
+        </list>
+      </item>
+      <item><p>Келесі жол:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 9</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>O</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Соңғы жол ("соңғы" позиция):</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>Orca модификаторы</key><key>KP 9</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Ctrl</key><key>O</key></keyseq></p></item>
+        </list>
+      </item>
+    </list>
+  </section>
+  <section id="word">
+    <title>Сөз бойынша қарап шығу командалары</title>
+    <list>
+      <item><p>Жоғарыдағы сөз:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>Orca модификаторы</key><key>KP 4</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Ctrl</key><key>J</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Алдыңғы сөз:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 4</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>J</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Ағымдағы сөз:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 5</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>K</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Ағымдағы сөзді әріптеп оқу:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 5</key></keyseq> (екі рет шертілген)</p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>K</key></keyseq> (екі рет шертілген)</p></item>
+        </list>
+      </item>
+      <item><p>Ағымдағы сөзді фонетикалық әріптеп оқу:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 5</key></keyseq> (үш рет шертілген)</p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>K</key></keyseq> (үш рет шертілген)</p></item>
+        </list>
+      </item>
+      <item><p>Келесі сөз:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 6</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>L</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Төмендегі сөз:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>Orca модификаторы</key><key>KP 6</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Ctrl</key><key>L</key></keyseq></p></item>
+        </list>
+      </item>
+    </list>
+  </section>
+  <section id="character">
+    <title>Таңба бойынша қарап шығу командалары</title>
+    <list>
+      <item><p>Алдыңғы таңба:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 1</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>M</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Ағымдағы таңба:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 2</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Comma</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Ағымдағы таңбаны фонетикалық дыбыстау:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 2</key></keyseq> (екі рет шертілген)</p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Comma</key></keyseq> (екі рет шертілген)</p></item>
+        </list>
+      </item>
+      <item><p>Ағымдағы таңбаның Unicode мәнін дыбыстау:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 2</key></keyseq> (үш рет шертілген)</p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Comma</key></keyseq> (үш рет шертілген)</p></item>
+        </list>
+      </item>
+      <item><p>Келесі таңба:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>KP 3</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Period</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Ағымдағы жолдағы соңғы таңба:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>Orca модификаторы</key><key>KP 1</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Ctrl</key><key>M</key></keyseq></p></item>
+        </list>
+      </item>
+    </list>
+  </section>
+  <section id="other">
+    <title>Қосымша командалар</title>
+    <list>
+      <item><p>Жалпақ шолуды ауыстыру (жалпақ шолу контекстін жаңартады):</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>Orca модификаторы</key><key>KP Subtract</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>P</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Ағымдағы элементті/виджетті қарап шығу:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <keyseq><key>Orca модификаторы</key><key>KP 5</key></keyseq></p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Ctrl</key><key>K</key></keyseq></p></item>
+        </list>
+      </item>
+      <item><p>Ағымдағы сұхбат терезесін немесе терезені қарап шығу үшін "Барлығын айту" мүмкіндігін пайдалану:</p>
+        <list>
+          <item><p>Жұмыс үстелі: <key>KP Plus</key> (екі рет шертілген)</p></item>
+          <item><p>Ноутбук: <keyseq><key>Orca модификаторы</key><key>Semicolon</key></keyseq> (екі рет шертілген)</p></item>
+        </list>
+      </item>
+      <item>
+      <p>Жалпақ шолудағы мазмұнды алмасу буферіне көшіру: (Тағайындалмаған)</p>
+      </item>
+      <item>
+        <p>Жалпақ шолудағы мазмұнды алмасу буферіне қосу: (Тағайындалмаған)</p>
+      </item>
+      <item><p>Жалпақ шолуды төменгі сол жаққа жылжыту: (Тағайындалмаған)</p></item>
+      <item><p>Жалпақ шолу мазмұнын көрсету: (Тағайындалмаған)</p></item>
+      <item><p>Жалпақ шолуды ағымдағы объектімен шектеуді ауыстыру: (Тағайындалмаған)</p></item>
+    </list>
+  </section>
+</page>

@@ -1,0 +1,12 @@
+{
+  "result": "fail",
+  "scope": "qa-harness-9e19837f53494f35baeb3c616fe7c251",
+  "handle": 42373,
+  "tests": 18,
+  "passed": 17,
+  "failed": [
+    "ParserTests.test_actual_retained_cli_stream"
+  ],
+  "cause": "Fixture cumulative prompt offset incorrect; correct offset is prior boundary minus exactly two retained prompt bytes. All seven owned kernel conversations passed. No source runtime applied.",
+  "inputSHA256": "cb586fa4a245e987948bd05688cddd8097d43fc9b43fe84adeccdee4f6698940"
+}

@@ -1,0 +1,27 @@
+--- failedV1/weston_host.py
++++ freshV2/weston_host.py
+@@ -14,6 +14,7 @@
+ 
+ def write_exclusive(path,raw,mode=0o600):
+  fd=os.open(path,os.O_WRONLY|os.O_CREAT|os.O_EXCL,mode)
++ os.fchmod(fd,mode)  # Keep reviewed availability bits under the harness umask077.
+  with os.fdopen(fd,'wb') as out:out.write(raw)
+ 
+ def verify_inputs():
+@@ -89,7 +90,7 @@
+    self.evidence.update(sourceLuaSHA256=hashlib.sha256(self.lua).hexdigest(),xwaylandEnabled=True)
+    privatebin=runtime/'bin';privatebin.mkdir(mode=0o700)
+    launcher=b'#!/bin/sh\nexec /usr/bin/python3 -I -B '+str(STAGE/'x11_authority.py').encode()+b' "$@"\n'
+-   write_exclusive(privatebin/'Xwayland',launcher,0o700)
++   write_exclusive(privatebin/'Xwayland',launcher,0o755)
+    write_exclusive(runtime/'x11-cookie',secrets.token_bytes(16))
+    write_exclusive(runtime/'x11-control.json',json.dumps({'configSHA256':auth.sha(config),'mainDisplay':self.host.main_env.get('DISPLAY'),'launcherSHA256':hashlib.sha256(launcher).hexdigest()}).encode())
+    base,parent=original.nested_base(self.host);base.update(PATH=str(privatebin)+':/usr/bin:/bin',WQA_X11_CONFIG=str(config));base.pop('DISPLAY',None);base.pop('XAUTHORITY',None);base.pop('SESSION_MANAGER',None)
+@@ -118,6 +119,7 @@
+   end=time.monotonic()+12;path=self.host.runtime/'x11-launch.json'
+   while not path.exists() and time.monotonic()<end:
+    self.guard();time.sleep(.03)
++  if not path.exists():raise RuntimeError('owned Xwayland launcher registration timed out; no server authority available')
+   auth.private_file(path);record=json.loads(path.read_text());server=record['server'];parent=record['parent']
+   if parent['pid']!=self.child.pid or parent['start']!=self.child_identity['start'] or server['ppid']!=self.child.pid or server['pgid']!=self.child_identity['pgid']:raise RuntimeError('Xwayland launch parent/start/group mismatch')
+   # Wait only for the exact captured launcher PID to exec the unchanged binary.

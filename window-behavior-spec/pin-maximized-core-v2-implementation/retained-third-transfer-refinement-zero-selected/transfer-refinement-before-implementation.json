@@ -1,0 +1,46 @@
+{
+  "runtimeRefinementImplemented": false,
+  "sourceSha256": "c9d97e14c53f1d8fff03753464eb9941ac577b2d2eab74df4fda6a2153ddb12a",
+  "commands": [
+    {
+      "argv": [
+        "quint",
+        "typecheck",
+        "pin_transfer_refinement.qnt"
+      ],
+      "exitCode": 0,
+      "elapsed": 3.6445469856262207,
+      "log": "proof/transfer-refinement-before-implementation-0.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "quint",
+        "test",
+        "pin_transfer_refinement.qnt",
+        "--max-samples=1"
+      ],
+      "exitCode": 0,
+      "elapsed": 3.522057056427002,
+      "log": "proof/transfer-refinement-before-implementation-1.log",
+      "logSha256": "2151eba893da08078ab4c52e7ed63a52fb7ef147d64eab736ae83dc54bbd7d12"
+    },
+    {
+      "argv": [
+        "quint",
+        "run",
+        "pin_transfer_refinement.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=2026100241"
+      ],
+      "exitCode": 0,
+      "elapsed": 6.0078887939453125,
+      "log": "proof/transfer-refinement-before-implementation-2.log",
+      "logSha256": "66745bb355dd633dbc6c5ecb80cc9e6cad932071c1f2154202d98e4e83d85bf3"
+    }
+  ],
+  "passed": true,
+  "nativeAuthorized": false
+}

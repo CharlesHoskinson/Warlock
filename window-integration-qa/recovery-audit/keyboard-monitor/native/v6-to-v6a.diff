@@ -1,0 +1,18 @@
+diff --git 1/native/plugin-v6.cpp 2/native/plugin-v6a.cpp
+index a439cbe..4a6dc78 100644
+--- 1/native/plugin-v6.cpp
++++ 2/native/plugin-v6a.cpp
+@@ -314,7 +314,12 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE h) {
+             auto* request=dbus_message_new_method_call(DBUS_SERVICE_DBUS,DBUS_PATH_DBUS,DBUS_INTERFACE_DBUS,method);
+             if(!request)throw std::runtime_error("registration request allocation");
+             if(arg)dbus_message_append_args(request,DBUS_TYPE_STRING,&arg,DBUS_TYPE_INVALID);
+-            auto* response=dbus_connection_send_with_reply_and_block(bus,request,std::min<uint64_t>(500,deadline-clockMs()),&err);
++            const auto now=clockMs();
++            if(now>=deadline){dbus_message_unref(request);throw std::runtime_error("registration adoption deadline");}
++            // Capture time once, then check before unsigned subtraction and
++            // bounded signed conversion. Never pass zero/default infinity.
++            const int timeout=static_cast<int>(std::clamp<uint64_t>(deadline-now,1,500));
++            auto* response=dbus_connection_send_with_reply_and_block(bus,request,timeout,&err);
+             dbus_message_unref(request);
+             if(!response&&dbus_error_is_set(&err)&&dbus_error_has_name(&err,DBUS_ERROR_NAME_HAS_NO_OWNER)){dbus_error_free(&err);return response;}
+             if(!response){std::string why=err.message?err.message:"registration response unavailable";dbus_error_free(&err);throw std::runtime_error(why);}

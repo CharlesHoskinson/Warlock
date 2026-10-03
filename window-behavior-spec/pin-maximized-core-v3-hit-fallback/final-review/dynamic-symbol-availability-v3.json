@@ -1,0 +1,1974 @@
+{
+  "nativeLoaded": false,
+  "coreExecuted": false,
+  "method": "Actual version-sensitive nm -D strong U names; exports from actual core and recursively captured DT_NEEDED system libraries. This is source/build compatibility evidence, not native relocation/lifecycle proof.",
+  "closureSHA256": "9c16a87c3e129ebb19be02627e885cf6b334e5c064ec74c1c9107ca1d739edb7",
+  "objects": [
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/plugin/hyprbars-native-max-core-v2-candidate.so",
+      "sha256": "0c9084e237194faf91e61fc7a8bba9fc17e6862dc3dd0082a9af1d8fbaeecbc9",
+      "strongUndefined": 467,
+      "missing": [],
+      "resolution": {
+        "_Unwind_Resume@GCC_3.0": [
+          "/usr/lib/libgcc_s.so.1"
+        ],
+        "_Z6truthyRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN10CHyprColorC1Effff": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN10CHyprColorC1Em": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN10CHyprColorC1Ev": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN10CWorkspace9isVisibleEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN10Fullscreen10controllerEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN10Fullscreen21CFullscreenController12isFullscreenEN9Hyprutils6Memory14CSharedPointerIN7Desktop4View7CWindowEEESt8optionalINS_15eFullscreenModeEES8_IbE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN10Fullscreen21CFullscreenController13hasFullscreenEN9Hyprutils6Memory14CSharedPointerI10CWorkspaceEESt8optionalIbE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN10Fullscreen21CFullscreenController18getFullscreenModesEN9Hyprutils6Memory14CSharedPointerIN7Desktop4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN10Fullscreen21CFullscreenController19getFullscreenWindowEN9Hyprutils6Memory14CSharedPointerI10CWorkspaceEESt8optionalIbE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN12IPassElement12opaqueRegionEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN12IPassElement13undiscardableEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN12IPassElement21disableSimplificationEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN12IPassElement7discardEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN13CFunctionHook4hookEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN13CFunctionHook6unhookEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN13CInputManager12getClickModeEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN13CInputManager13isConstrainedEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN13CInputManager14hasHeldButtonsEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN13CInputManager21simulateMouseMovementEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN13CInputManager22getMouseCoordsInternalEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN15CEventLoopTimer13updateTimeoutESt8optionalINSt6chrono8durationIlSt5ratioILl1ELl1000000000EEEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN15CEventLoopTimer6cancelEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN15CEventLoopTimerC1ESt8optionalINSt6chrono8durationIlSt5ratioILl1ELl1000000000EEEEESt8functionIFvN9Hyprutils6Memory14CSharedPointerIS_EEPvEESC_": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN15CKeybindManager19changeMouseBindModeE14eMouseBindMode": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN16CConfigValueBase12bindInternalERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN16CConfigValueBaseC2Ev": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN16CConfigValueBaseD2Ev": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN16CXWaylandSurface10wantsFocusEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN16NColorManagement12getPrimariesENS_10ePrimariesE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN16NColorManagement17CImageDescription4fromERKNS_17SImageDescriptionE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN17CEventLoopManager11doLaterLockERKSt8functionIFvvEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN17CEventLoopManager11removeTimerEN9Hyprutils6Memory14CSharedPointerI15CEventLoopTimerEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN17CEventLoopManager8addTimerEN9Hyprutils6Memory14CSharedPointerI15CEventLoopTimerEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN18CWLSurfaceResource2atERKN9Hyprutils4Math8Vector2DEb": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN19CSessionLockManager15isSessionLockedEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN21CDecorationPositioner14repositionDecoEP21IHyprWindowDecoration": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN21CDecorationPositioner19getEdgeDefinedPointEjN9Hyprutils6Memory12CWeakPointerIN7Desktop4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN21CInputCaptureProtocol10isCapturedEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN21CWLDataDeviceProtocol9dndActiveEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN21IHyprWindowDecoration13onInputOnDecoE10eInputTypeRKN9Hyprutils4Math8Vector2DESt3any": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN21IHyprWindowDecorationC2EN9Hyprutils6Memory14CSharedPointerIN7Desktop4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN3Log7CLogger3logEN9Hyprutils3CLI9eLogLevelERKSt17basic_string_viewIcSt11char_traitsIcEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN3Log7CLoggerC1Ev": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN4Time6millisERKNSt6chrono10time_pointINS0_3_V212steady_clockENS0_8durationIlSt5ratioILl1ELl1000000000EEEEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN4Time9steadyNowEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN5Event3busEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN5Event9CEventBus12CCustomEvent4emitERKSt6vectorISt7variantIJbidNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEN9Hyprutils6Memory12CWeakPointerIN7Desktop4View7CWindowEEENSC_I10CWorkspaceEENSC_INSE_13CLayerSurfaceEEENSC_IN7Monitor8CMonitorEEEEESaISO_EE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN5Event9CEventBus12CCustomEventC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorINS1_5eTypeESaIS9_EE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN5Event9CEventBus12CCustomEventD1Ev": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN5Event9CEventBus14addPluginEventB5cxx11EN9Hyprutils6Memory14CSharedPointerINS0_12CCustomEventEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN5Event9CEventBus17removePluginEventERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN5State12monitorStateEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN5State14workspaceStateEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config11ParserUtils10parseColorB5cxx11ESt17basic_string_viewIcSt11char_traitsIcEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config13Supplementary8executorEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config13Supplementary9CExecutor5spawnERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config13animationTreeEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config24CAnimationTreeController26getAnimationPropertyConfigERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config3Lua14CConfigManager12fromLuaStateEP9lua_State": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config3Lua15CLuaConfigColor5parseEP9lua_State": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config3Lua15CLuaConfigColor6parsedEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config3Lua15CLuaConfigColorC1El": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config3Lua16CLuaEventHandler14addCustomEventB5cxx11EN9Hyprutils6Memory14CSharedPointerIN5Event9CEventBus12CCustomEventEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config3Lua16CLuaEventHandler17removeCustomEventERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config3Lua7Objects10CLuaWindow4pushEP9lua_StateN9Hyprutils6Memory12CWeakPointerIN7Desktop4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config3Lua8Bindings8Internal11configErrorEP9lua_StateNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENS_17eConfigErrorLevelENS_16eConfigErrorCodeEi": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config3mgrEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config6Values10CBoolValueC1EPKcS3_bONS0_17SBoolValueOptionsE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config6Values11CColorValueC1EPKcS3_lONS0_18SColorValueOptionsE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config6Values12CStringValueC1EPKcS3_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEONS0_19SStringValueOptionsE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config6Values16CFontWeightValueC1EPKcS3_lONS0_23SFontWeightValueOptionsE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config6Values9CIntValueC1EPKcS3_lONS0_16SIntValueOptionsE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config7Actions11floatWindowENS0_16eTogglableActionESt8optionalIN9Hyprutils6Memory14CSharedPointerIN7Desktop4View7CWindowEEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Config7Actions9pinWindowENS0_16eTogglableActionESt8optionalIN9Hyprutils6Memory14CSharedPointerIN7Desktop4View7CWindowEEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Layout14CLayoutManager13endDragTargetEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Layout14CLayoutManager13setTargetGeomERKN9Hyprutils4Math4CBoxENS1_6Memory14CSharedPointerINS_7ITargetEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Layout14CLayoutManager14dragControllerEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Layout14CLayoutManager15beginDragTargetEN9Hyprutils6Memory14CSharedPointerINS_7ITargetEEE14eMouseBindModeSt8optionalINS_11eRectCornerEEb": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Layout7ITarget17setPositionGlobalERKN9Hyprutils4Math4CBoxEh": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render11CRenderPass15removeAllOfTypeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render11CRenderPass3addEON9Hyprutils6Memory14CUniquePointerI12IPassElementEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render12IFramebuffer19setImageDescriptionEN9Hyprutils6Memory12CWeakPointerIKN16NColorManagement17CImageDescriptionEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render13IHyprRenderer12damageWindowEN9Hyprutils6Memory14CSharedPointerIN7Desktop4View7CWindowEEEb": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render13IHyprRenderer12renderWindowEN9Hyprutils6Memory14CSharedPointerIN7Desktop4View7CWindowEEENS3_IN7Monitor8CMonitorEEERKNSt6chrono10time_pointINSB_3_V212steady_clockENSB_8durationIlSt5ratioILl1ELl1000000000EEEEEEbNS_15eRenderPassModeEbb": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render13IHyprRenderer14makeSnapshotFBEN9Hyprutils6Memory14CSharedPointerIN7Desktop4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render13IHyprRenderer17setProjectionTypeENS_21eRenderProjectionTypeE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render13IHyprRenderer19beginFullFakeRenderEN9Hyprutils6Memory14CSharedPointerIN7Monitor8CMonitorEEERNS1_4Math7CRegionENS3_INS_12IFramebufferEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render13IHyprRenderer26popMonitorTransformEnabledEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render13IHyprRenderer27pushMonitorTransformEnabledEb": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render13IHyprRenderer4drawERKN17CClearPassElement10SClearDataERKN9Hyprutils4Math7CRegionE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render13IHyprRenderer9damageBoxERKN9Hyprutils4Math4CBoxEb": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render2GL14CGLFramebuffer7getFBIDEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render2GL15CHyprOpenGLImpl10renderRectERKN9Hyprutils4Math4CBoxERK10CHyprColorNS1_15SRectRenderDataE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render2GL15CHyprOpenGLImpl11setViewportEiiii": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render2GL15CHyprOpenGLImpl12setCapStatusEib": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render2GL15CHyprOpenGLImpl13renderTextureEN9Hyprutils6Memory14CSharedPointerINS_8ITextureEEERKNS2_4Math4CBoxENS1_18STextureRenderDataE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render2GL15CHyprOpenGLImpl14makeEGLCurrentEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render2GL15CHyprOpenGLImpl5blendEb": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render2GL15CHyprOpenGLImpl7scissorEPK12pixman_box32b": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render2GL15CHyprOpenGLImpl7scissorERKN9Hyprutils4Math4CBoxEb": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render2GL15CHyprOpenGLImpl7scissorEiiiib": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Render2GL15CHyprOpenGLImpl9useShaderEN9Hyprutils6Memory12CWeakPointerI7CShaderEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop10focusStateEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop11CFocusState15fullWindowFocusEN9Hyprutils6Memory14CSharedPointerINS_4View7CWindowEEENS_12eFocusReasonENS3_I18CWLSurfaceResourceEEb": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop11CFocusState6windowEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop11CFocusState7monitorEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop11CFocusState7surfaceEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop11windowStateEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop12CWindowState5raiseEN9Hyprutils6Memory14CSharedPointerINS_4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop14CViewHitTesterC1ERKNS_17IViewStateTrackerE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop22globalWindowControllerEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop3Pin17capabilityVersionEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop3Pin19policyBuildIdentityEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop3Pin4bandEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop3Pin5stateEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop3Pin9effectiveEN9Hyprutils6Memory12CWeakPointerINS_4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop3Pin9effectiveEN9Hyprutils6Memory14CSharedPointerINS_4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4Rule13windowEffectsEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow10hasPopupAtERKN9Hyprutils4Math8Vector2DE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow11workspaceIDEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow12layoutTargetEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow13priorityFocusEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow13roundingPowerEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow17updateWindowDecosEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow18onSpecialWorkspaceEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow19getWindowBoxUnifiedEm": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow21isX11OverrideRedirectEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow6getPIDEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow6parentEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow7isModalEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow8roundingEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop7History13windowTrackerEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop7History21CWindowHistoryTracker11fullHistoryEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop9viewStateEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Monitor8CMonitor17activeWorkspaceIDEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Monitor8CMonitor24activeSpecialWorkspaceIDEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Monitor8CMonitor26workBufferImageDescriptionEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN8Hyprlang12CParseResult8setErrorEPKc": [
+          "/usr/lib/libhyprlang.so.0.6.8"
+        ],
+        "_ZN9Animation3mgrEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN9CSeatGrab7acceptsEN9Hyprutils6Memory14CSharedPointerI18CWLSurfaceResourceEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN9Hyprutils3CLI7CLoggerD1Ev": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils4Math4CBox5roundEv": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils4Math4CBox5scaleEd": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils4Math4CBox6expandERKd": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils4Math4CBox9transformENS0_10eTransformEdd": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils4Math4CBox9translateERKNS0_8Vector2DE": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils4Math7CRegion9translateERKNS0_8Vector2DE": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils4Math7CRegionC1EOS1_": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils4Math7CRegionC1ERKNS0_4CBoxE": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils4Math7CRegionC1ERKS1_": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils4Math7CRegionC1Ev": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils4Math7CRegionD1Ev": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils5Utils11CScopeGuardC1ERKSt8functionIFvvEE": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils5Utils11CScopeGuardD1Ev": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils6Signal11CSignalBase24registerListenerInternalESt8functionIFvPvEE": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils6String8CVarListC1ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEmcb": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils9Animation21CBaseAnimatedVariable14onAnimationEndEv": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils9Animation21CBaseAnimatedVariable16onAnimationBeginEbf": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils9Animation21CBaseAnimatedVariable17setUpdateCallbackESt8functionIFvNS_6Memory12CWeakPointerIS1_EEEE": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils9Animation21CBaseAnimatedVariable20disconnectFromActiveEv": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils9Animation21CBaseAnimatedVariable7create2EPNS0_17CAnimationManagerEiNS_6Memory12CWeakPointerIS1_EE": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils9Animation21CBaseAnimatedVariable8onUpdateEv": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9IKeyboard12getModifiersEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK10CHyprColor8getAsHexEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK6Config6Values10CBoolValue5valueEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK6Config6Values11CColorValue5valueEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK6Config6Values12CStringValue5valueB5cxx11Ev": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK6Config6Values16CFontWeightValue5valueEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK6Config6Values9CIntValue5valueEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK6Layout13Supplementary20CDragStateController4modeEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK6Layout13Supplementary20CDragStateController6targetEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK6Layout6CSpace8workAreaEb": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7CShader7programEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop12CWindowState7windowsEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop14CViewHitTester14layerSurfaceAtERKN9Hyprutils4Math8Vector2DEPSt6vectorINS1_6Memory12CWeakPointerINS_4View13CLayerSurfaceEEESaISB_EEPS3_PNS7_14CSharedPointerISA_EEb": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop14CViewHitTester15windowSurfaceAtERKN9Hyprutils4Math8Vector2DENS1_6Memory14CSharedPointerINS_4View7CWindowEEERS3_": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop14CViewHitTester8windowAtERKN9Hyprutils4Math8Vector2DEtNS1_6Memory14CSharedPointerINS_4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop23CGlobalWindowController21moveWindowToWorkspaceEN9Hyprutils6Memory14CSharedPointerINS_4View7CWindowEEENS3_I10CWorkspaceEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop3Pin15CNativePinState15ownedUnpinReadyEN9Hyprutils6Memory14CSharedPointerINS_4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop3Pin15CNativePinState6admitsEN9Hyprutils6Memory14CSharedPointerINS_4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop3Pin15CNativePinState8snapshotEN9Hyprutils6Memory14CSharedPointerINS_4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop3Pin15CNativePinState9maxOriginEN9Hyprutils6Memory14CSharedPointerINS_4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop4View10CWLSurface19getSurfaceBoxGlobalEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop4View10CWLSurface8resourceEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop4View7CWindow12acceptsInputEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop4View7CWindow17getRealBorderSizeEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop4View7CWindow23isAllowedOverFullscreenEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop4View7CWindow24getFullWindowBoundingBoxEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop4View7CWindow8isHiddenEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop4View7CWindow9layoutBoxEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK9Hyprutils4Math4CBox13containsPointERKNS0_8Vector2DE": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZNK9Hyprutils4Math4CBox3posEv": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZNK9Hyprutils4Math4CBox4copyEv": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZNK9Hyprutils4Math4CBox4sizeEv": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZNK9Hyprutils4Math4CBox5emptyEv": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZNK9Hyprutils4Math7CRegion5emptyEv": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZNK9Hyprutils4Math8Vector2D5floorEv": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZNK9Hyprutils9Animation21CBaseAnimatedVariable13isSpringCurveEv": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZNKSt10filesystem7__cxx114path11parent_pathEv@GLIBCXX_3.4.26": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt10filesystem7__cxx114path5_List13_Impl_deleterclEPNS2_5_ImplE@GLIBCXX_3.4.26": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt10filesystem7__cxx114path5_List3endEv@GLIBCXX_3.4.26": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt10filesystem7__cxx114path7compareERKS1_@GLIBCXX_3.4.26": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt13runtime_error4whatEv@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt16basic_format_argISt20basic_format_contextINSt8__format10_Sink_iterIcEEcEE22_M_handle_unrecognizedEv@GLIBCXX_3.4.36": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt5ctypeIcE13_M_widen_initEv@GLIBCXX_3.4.11": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt6locale2id5_M_idEv@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt6locale4nameB5cxx11Ev@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt6localeeqERKS_@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt8__detail20_Prime_rehash_policy11_M_next_bktEm@GLIBCXX_3.4.18": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt8__detail20_Prime_rehash_policy14_M_need_rehashEmmm@GLIBCXX_3.4.18": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNO5State13CMonitorQuery3runEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNO5State13CMonitorQuery3vecEN9Hyprutils4Math8Vector2DE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNO5State15CWorkspaceQuery2idERKl": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNO5State15CWorkspaceQuery3runEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNO7Desktop10CViewQuery4typeENS_4View9eViewTypeE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNO7Desktop10CViewQuery7surfaceEN9Hyprutils6Memory14CSharedPointerI18CWLSurfaceResourceEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNO7Desktop10CViewQuery9runWindowEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNSolsEi@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt10filesystem16weakly_canonicalERKNS_7__cxx114pathE@GLIBCXX_3.4.26": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt10filesystem7__cxx114path14_M_split_cmptsEv@GLIBCXX_3.4.26": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt10filesystem7__cxx114path5_ListC1ERKS2_@GLIBCXX_3.4.26": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt10filesystem7__cxx114path5_ListC1Ev@GLIBCXX_3.4.26": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt10filesystem7__cxx114pathdVERKS1_@GLIBCXX_3.4.26": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt11regex_errorD1Ev@GLIBCXX_3.4.15": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt12__basic_fileIcED1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt12__cow_stringC2EPKc@GLIBCXX_3.4.35": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt12__cow_stringC2EPKcm@GLIBCXX_3.4.35": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt12__cow_stringD2Ev@GLIBCXX_3.4.35": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt12out_of_rangeD1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt13basic_filebufIcSt11char_traitsIcEED1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt13runtime_errorD1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt20bad_array_new_lengthD1Ev@CXXABI_1.3.8": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt5ctypeIcE2idE@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt6locale7classicEv@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt6localeC1ERKS_@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt6localeC1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt6localeD1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt6localeaSERKS_@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE15_M_replace_coldEPcmPKcmm@GLIBCXX_3.4.31": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEE7_M_syncEPcmm@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEED1Ev@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt7__cxx117collateIcE2idE@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt7__cxx118numpunctIcE2idE@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNSt8ios_baseC2Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt8ios_baseD2Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt9bad_allocD1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt11_Hash_bytesPKvmm@CXXABI_1.3.5": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@GLIBCXX_3.4.9": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt16__throw_bad_castv@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt19__throw_logic_errorPKc@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt19__throw_regex_errorNSt15regex_constants10error_typeE@GLIBCXX_3.4.15": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt20__throw_length_errorPKc@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt20__throw_out_of_rangePKc@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt20__throw_system_errori@GLIBCXX_3.4.11": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt21ios_base_library_initv@GLIBCXX_3.4.32": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt24__throw_invalid_argumentPKc@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt24__throw_out_of_range_fmtPKcz@GLIBCXX_3.4.20": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt25__throw_bad_function_callv@GLIBCXX_3.4.14": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt28_Rb_tree_rebalance_for_erasePSt18_Rb_tree_node_baseRS_@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt4cerr@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZSt7getlineIcSt11char_traitsIcESaIcEERSt13basic_istreamIT_T0_ES7_RNSt7__cxx1112basic_stringIS4_S5_T1_EES4_@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_DF128_@GLIBCXX_3.4.31": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_DF128_St12chars_format@GLIBCXX_3.4.31": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_DF128_St12chars_formati@GLIBCXX_3.4.31": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_d@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_dSt12chars_format@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_dSt12chars_formati@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_e@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_eSt12chars_format@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_eSt12chars_formati@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_f@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_fSt12chars_format@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_fSt12chars_formati@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt9terminatev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZStrsIcSt11char_traitsIcESaIcEERSt13basic_istreamIT_T0_ES7_RNSt7__cxx1112basic_stringIS4_S5_T1_EE@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTI12IPassElement": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTI15CTexPassElement": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTI16CRectPassElement": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTI18CBorderPassElement": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTI19CSurfacePassElement": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTI21IHyprWindowDecoration": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTINSt7__cxx117collateIcEE@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTISt11regex_error@GLIBCXX_3.4.15": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTISt12out_of_range@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTISt13runtime_error@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTISt20bad_array_new_length@CXXABI_1.3.8": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTISt9bad_alloc@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTISt9exception@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTIb@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTIl@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTIv@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTTNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTTSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTV21IHyprWindowDecoration": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVN10__cxxabiv117__class_type_infoE@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTVN10__cxxabiv120__si_class_type_infoE@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTVN10__cxxabiv121__vmi_class_type_infoE@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTVN6Config6Values10CBoolValueE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVN6Config6Values11CColorValueE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVN6Config6Values12CStringValueE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVN6Config6Values16CFontWeightValueE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVN6Config6Values9CIntValueE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEEE@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVSt11logic_error@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTVSt11regex_error@GLIBCXX_3.4.15": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTVSt12out_of_range@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTVSt13basic_filebufIcSt11char_traitsIcEE@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVSt13runtime_error@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVSt15basic_streambufIcSt11char_traitsIcEE@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVSt20bad_array_new_length@CXXABI_1.3.8": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVSt9bad_alloc@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVSt9basic_iosIcSt11char_traitsIcEE@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZdaPv@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZdlPvm@CXXABI_1.3.9": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_Znam@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_Znwm@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_allocate_exception@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_atexit@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "__cxa_begin_catch@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_call_terminate@CXXABI_1.3.15": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_end_catch@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_free_exception@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_guard_abort@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_guard_acquire@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_guard_release@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_rethrow@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_throw@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__dynamic_cast@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__errno_location@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "__extendbfsf2@GCC_13.0.0": [
+          "/usr/lib/libgcc_s.so.1"
+        ],
+        "__extendhfsf2@GCC_12.0.0": [
+          "/usr/lib/libgcc_s.so.1"
+        ],
+        "__fbufsize@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "__flbf@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "__fwritable@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "__gttf2@GCC_4.3.0": [
+          "/usr/lib/libgcc_s.so.1"
+        ],
+        "__gxx_personality_v0@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__hyprland_api_get_hash": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "__libc_single_threaded@GLIBC_2.32": [
+          "/usr/lib/libc.so.6",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "__overflow@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "__stack_chk_fail@GLIBC_2.4": [
+          "/usr/lib/libc.so.6"
+        ],
+        "__udivti3@GCC_3.0": [
+          "/usr/lib/libgcc_s.so.1"
+        ],
+        "__unordtf2@GCC_4.3.0": [
+          "/usr/lib/libgcc_s.so.1"
+        ],
+        "addConfigKeyword": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "addConfigValueV2": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "addLuaFunction": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "addNotification": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "addWindowDecoration": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "cairo_format_stride_for_width": [
+          "/usr/lib/libcairo.so.2.11804.4"
+        ],
+        "cairo_image_surface_create_for_data": [
+          "/usr/lib/libcairo.so.2.11804.4"
+        ],
+        "cairo_surface_destroy": [
+          "/usr/lib/libcairo.so.2.11804.4"
+        ],
+        "cairo_surface_write_to_png_stream": [
+          "/usr/lib/libcairo.so.2.11804.4"
+        ],
+        "ceil@GLIBC_2.2.5": [
+          "/usr/lib/libm.so.6"
+        ],
+        "close@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "createFunctionHook": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "eglGetCurrentContext": [
+          "/usr/lib/libEGL.so.1.1.0"
+        ],
+        "eglGetCurrentDisplay": [
+          "/usr/lib/libEGL.so.1.1.0"
+        ],
+        "eglGetCurrentSurface": [
+          "/usr/lib/libEGL.so.1.1.0"
+        ],
+        "eglMakeCurrent": [
+          "/usr/lib/libEGL.so.1.1.0"
+        ],
+        "fflush_unlocked@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "findFunctionsByName": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "flockfile@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "floor@GLIBC_2.2.5": [
+          "/usr/lib/libm.so.6"
+        ],
+        "frexp@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6",
+          "/usr/lib/libm.so.6"
+        ],
+        "frexpf@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6",
+          "/usr/lib/libm.so.6"
+        ],
+        "frexpl@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6",
+          "/usr/lib/libm.so.6"
+        ],
+        "funlockfile@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "fwrite_unlocked@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "getenv@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "getpid@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "getrandom@GLIBC_2.25": [
+          "/usr/lib/libc.so.6"
+        ],
+        "glActiveTexture": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glBindBuffer": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glBindFramebuffer": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glBindRenderbuffer": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glBindTexture": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glBindVertexArray": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glBlendEquationSeparate": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glBlendFuncSeparate": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glCheckFramebufferStatus": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glClear": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glClearStencil": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glColorMask": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glGetBooleanv": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glGetError": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glGetIntegerv": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glGetStringi": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glIsEnabled": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glPixelStorei": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glReadPixels": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glStencilFunc": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glStencilFuncSeparate": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glStencilMask": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glStencilMaskSeparate": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glStencilOp": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "glStencilOpSeparate": [
+          "/usr/lib/libOpenGL.so.0.0.0",
+          "/usr/lib/libGLESv2.so.2.1.0"
+        ],
+        "json_object_array_add@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_equal@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_get@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_get_boolean@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_get_string@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_get_string_len@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_get_type@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_new_array@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_new_boolean@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_new_int@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_new_object@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_new_string_len@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_object_add@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_object_get_ex@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_object_length@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_put@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "json_object_to_json_string_ext@JSONC_0.14": [
+          "/usr/lib/libjson-c.so.5.5.0"
+        ],
+        "luaL_checkinteger": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "luaL_checklstring": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_compare": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_getfield": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_getmetatable": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_gettop": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_isinteger": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_isnumber": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_isstring": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_next": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_pushboolean": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_pushinteger": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_pushlstring": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_pushnil": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_pushstring": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_rawequal": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_settop": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_toboolean": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_tointegerx": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_tolstring": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "lua_type": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "memchr@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "memcmp@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "memcpy@GLIBC_2.14": [
+          "/usr/lib/libc.so.6"
+        ],
+        "memmove@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "memset@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "open@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "pixman_region32_copy": [
+          "/usr/lib/libpixman-1.so.0.46.4"
+        ],
+        "raise@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "reloadConfig": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "removeFunctionHook": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "round@GLIBC_2.2.5": [
+          "/usr/lib/libm.so.6"
+        ],
+        "roundf@GLIBC_2.2.5": [
+          "/usr/lib/libm.so.6"
+        ],
+        "stdout@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "strchr@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "strcmp@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "strlen@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "strtof@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "toupper@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "unlink@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "write@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ]
+      }
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/readonly-probe/libqt-modal-probe.so",
+      "sha256": "cb2828cd9ad93500e0e4ea26a3ec4272d6b8fcc7a0f666369c991adaa4f29762",
+      "strongUndefined": 153,
+      "missing": [],
+      "resolution": {
+        "_Unwind_Resume@GCC_3.0": [
+          "/usr/lib/libgcc_s.so.1"
+        ],
+        "_ZN10CHyprColorC1Effff": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN13CInputManager12getClickModeEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN13CInputManager13isConstrainedEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN13CInputManager14hasHeldButtonsEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN13CInputManager22getMouseCoordsInternalEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN16NColorManagement12getPrimariesENS_10ePrimariesE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN16NColorManagement17CImageDescription4fromERKNS_17SImageDescriptionE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN19CSessionLockManager15isSessionLockedEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN21CInputCaptureProtocol10isCapturedEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN21CWLDataDeviceProtocol9dndActiveEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN3Log7CLoggerC1Ev": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN5Event3busEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN6Layout14CLayoutManager14dragControllerEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop10focusStateEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop11CFocusState6windowEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop11windowStateEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow6getPIDEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow6parentEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop4View7CWindow7isModalEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop7History13windowTrackerEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop7History21CWindowHistoryTracker11fullHistoryEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN7Desktop9viewStateEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZN9Hyprutils3CLI7CLoggerD1Ev": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZN9Hyprutils6Signal11CSignalBase24registerListenerInternalESt8functionIFvPvEE": [
+          "/usr/lib/libhyprutils.so.0.14.2"
+        ],
+        "_ZNK6Layout13Supplementary20CDragStateController6targetEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop12CWindowState7windowsEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop14CViewHitTester8windowAtERKN9Hyprutils4Math8Vector2DEtNS1_6Memory14CSharedPointerINS_4View7CWindowEEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop4View10CWLSurface19getSurfaceBoxGlobalEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop4View7CWindow12acceptsInputEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNK7Desktop4View7CWindow8isHiddenEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNKSt13runtime_error4whatEv@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt16basic_format_argISt20basic_format_contextINSt8__format10_Sink_iterIcEEcEE22_M_handle_unrecognizedEv@GLIBCXX_3.4.36": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt5ctypeIcE13_M_widen_initEv@GLIBCXX_3.4.11": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt6locale2id5_M_idEv@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt6locale4nameB5cxx11Ev@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt6localeeqERKS_@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNKSt8__detail20_Prime_rehash_policy14_M_need_rehashEmmm@GLIBCXX_3.4.18": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNO7Desktop10CViewQuery4typeENS_4View9eViewTypeE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNO7Desktop10CViewQuery7surfaceEN9Hyprutils6Memory14CSharedPointerI18CWLSurfaceResourceEE": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNO7Desktop10CViewQuery9runWindowEv": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNSolsEi@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt11regex_errorD1Ev@GLIBCXX_3.4.15": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt12__basic_fileIcED1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt12__cow_stringC2EPKc@GLIBCXX_3.4.35": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt12__cow_stringD2Ev@GLIBCXX_3.4.35": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt13basic_filebufIcSt11char_traitsIcEED1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt13runtime_errorD1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt20bad_array_new_lengthD1Ev@CXXABI_1.3.8": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt5ctypeIcE2idE@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt6locale7classicEv@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt6localeC1ERKS_@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt6localeC1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt6localeD1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt6localeaSERKS_@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE15_M_replace_coldEPcmPKcmm@GLIBCXX_3.4.31": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt7__cxx117collateIcE2idE@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt7__cxx118numpunctIcE2idE@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZNSt8ios_baseC2Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt8ios_baseD2Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt9bad_allocD1Ev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt16__throw_bad_castv@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt19__throw_logic_errorPKc@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt19__throw_regex_errorNSt15regex_constants10error_typeE@GLIBCXX_3.4.15": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt20__throw_length_errorPKc@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt21ios_base_library_initv@GLIBCXX_3.4.32": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt24__throw_out_of_range_fmtPKcz@GLIBCXX_3.4.20": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt25__throw_bad_function_callv@GLIBCXX_3.4.14": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt4cerr@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZSt8to_charsPcS_DF128_@GLIBCXX_3.4.31": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_DF128_St12chars_format@GLIBCXX_3.4.31": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_DF128_St12chars_formati@GLIBCXX_3.4.31": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_d@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_dSt12chars_format@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_dSt12chars_formati@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_e@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_eSt12chars_format@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_eSt12chars_formati@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_f@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_fSt12chars_format@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt8to_charsPcS_fSt12chars_formati@GLIBCXX_3.4.29": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZSt9terminatev@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTINSt7__cxx117collateIcEE@GLIBCXX_3.4.21": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTISt11regex_error@GLIBCXX_3.4.15": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTISt13runtime_error@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTISt20bad_array_new_length@CXXABI_1.3.8": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTISt9bad_alloc@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTISt9exception@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTTSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVN10__cxxabiv117__class_type_infoE@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTVN10__cxxabiv120__si_class_type_infoE@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTVSt11regex_error@GLIBCXX_3.4.15": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZTVSt13basic_filebufIcSt11char_traitsIcEE@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVSt13runtime_error@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVSt15basic_streambufIcSt11char_traitsIcEE@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVSt20bad_array_new_length@CXXABI_1.3.8": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVSt9bad_alloc@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZTVSt9basic_iosIcSt11char_traitsIcEE@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "_ZdaPv@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_ZdlPvm@CXXABI_1.3.9": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_Znam@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "_Znwm@GLIBCXX_3.4": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_allocate_exception@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_atexit@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "__cxa_begin_catch@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_end_catch@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_free_exception@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_guard_abort@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_guard_acquire@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_guard_release@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_rethrow@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__cxa_throw@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__extendbfsf2@GCC_13.0.0": [
+          "/usr/lib/libgcc_s.so.1"
+        ],
+        "__extendhfsf2@GCC_12.0.0": [
+          "/usr/lib/libgcc_s.so.1"
+        ],
+        "__gttf2@GCC_4.3.0": [
+          "/usr/lib/libgcc_s.so.1"
+        ],
+        "__gxx_personality_v0@CXXABI_1.3": [
+          "/usr/lib/libstdc++.so.6.0.36"
+        ],
+        "__hyprland_api_get_hash": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "__libc_single_threaded@GLIBC_2.32": [
+          "/usr/lib/libc.so.6",
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "__stack_chk_fail@GLIBC_2.4": [
+          "/usr/lib/libc.so.6"
+        ],
+        "__udivti3@GCC_3.0": [
+          "/usr/lib/libgcc_s.so.1"
+        ],
+        "__unordtf2@GCC_4.3.0": [
+          "/usr/lib/libgcc_s.so.1"
+        ],
+        "addLuaFunction": [
+          "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland"
+        ],
+        "frexp@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6",
+          "/usr/lib/libm.so.6"
+        ],
+        "frexpf@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6",
+          "/usr/lib/libm.so.6"
+        ],
+        "frexpl@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6",
+          "/usr/lib/libm.so.6"
+        ],
+        "getenv@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "getrlimit@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "getuid@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "lstat@GLIBC_2.33": [
+          "/usr/lib/libc.so.6"
+        ],
+        "lua_pushlstring": [
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9"
+        ],
+        "memchr@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "memcmp@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "memcpy@GLIBC_2.14": [
+          "/usr/lib/libc.so.6"
+        ],
+        "memmove@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "memset@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "strchr@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "strcmp@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "strlen@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "toupper@GLIBC_2.2.5": [
+          "/usr/lib/libc.so.6"
+        ],
+        "xkb_keymap_max_keycode": [
+          "/usr/lib/libxkbcommon.so.0.13.2"
+        ],
+        "xkb_keymap_min_keycode": [
+          "/usr/lib/libxkbcommon.so.0.13.2"
+        ],
+        "xkb_state_key_get_one_sym": [
+          "/usr/lib/libxkbcommon.so.0.13.2"
+        ]
+      }
+    }
+  ]
+}

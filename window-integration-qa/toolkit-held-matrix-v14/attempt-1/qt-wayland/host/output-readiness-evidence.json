@@ -1,0 +1,171 @@
+{
+  "accepted": true,
+  "originalFeatureAcceptance": false,
+  "observations": [
+    {
+      "sequence": 1,
+      "startedMonotonic": 130333.489151552,
+      "hostClassModule": "private_output_host",
+      "before": {
+        "expectedChild": {
+          "pid": 3453165,
+          "start": "14245114",
+          "pgid": 3453165
+        },
+        "expectedSockets": [
+          {
+            "path": "/run/user/1000/wqa/3f98/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790919978_780238110/.socket.sock",
+            "uid": 1000,
+            "device": 84,
+            "inode": 400017
+          },
+          {
+            "path": "/run/user/1000/wqa/3f98/wayland-1",
+            "uid": 1000,
+            "device": 84,
+            "inode": 400016
+          }
+        ],
+        "selected": {
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790919978_780238110",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/3f98",
+          "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/wqa/3f98/bus"
+        },
+        "actualChild": {
+          "pid": 3453165,
+          "start": "14245114",
+          "pgid": 3453165
+        }
+      },
+      "socketBefore": {
+        "path": "/run/user/1000/wqa/3f98/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790919978_780238110/.socket.sock",
+        "uid": 1000,
+        "device": 84,
+        "inode": 400017
+      },
+      "request": "j/monitors",
+      "completeServerEOF": true,
+      "rawReplyBase64": "W3sKICAgICJpZCI6IDAsCiAgICAibmFtZSI6ICJXQVlMQU5ELTEiLAogICAgImRlc2NyaXB0aW9uIjogIiIsCiAgICAibWFrZSI6ICIiLAogICAgIm1vZGVsIjogIiIsCiAgICAic2VyaWFsIjogIiIsCiAgICAid2lkdGgiOiAxNjAwLAogICAgImhlaWdodCI6IDEwMDAsCiAgICAicGh5c2ljYWxXaWR0aCI6IDAsCiAgICAicGh5c2ljYWxIZWlnaHQiOiAwLAogICAgInJlZnJlc2hSYXRlIjogNjAuMDAwMDAsCiAgICAieCI6IDAsCiAgICAieSI6IDAsCiAgICAiYWN0aXZlV29ya3NwYWNlIjogewogICAgICAgICJpZCI6IDEsCiAgICAgICAgIm5hbWUiOiAiMSIKICAgIH0sCiAgICAic3BlY2lhbFdvcmtzcGFjZSI6IHsKICAgICAgICAiaWQiOiAwLAogICAgICAgICJuYW1lIjogIiIKICAgIH0sCiAgICAicmVzZXJ2ZWQiOiBbMCwgMCwgMCwgMF0sCiAgICAic2NhbGUiOiAxLAogICAgInRyYW5zZm9ybSI6IDAsCiAgICAiZm9jdXNlZCI6IHRydWUsCiAgICAiZHBtc1N0YXR1cyI6IHRydWUsCiAgICAidnJyIjogZmFsc2UsCiAgICAic29saXRhcnkiOiAiMCIsCiAgICAic29saXRhcnlCbG9ja2VkQnkiOiBbIldJTkRPV0VEIiwiQ0FORElEQVRFIl0sCiAgICAiYWN0aXZlbHlUZWFyaW5nIjogZmFsc2UsCiAgICAidGVhcmluZ0Jsb2NrZWRCeSI6IFsiTk9UX1RPUk4iLCJVU0VSIiwiU1VQUE9SVCIsIkNBTkRJREFURSIsIkhXX0NVUlNPUiJdLAogICAgImRpcmVjdFNjYW5vdXRUbyI6ICIwIiwKICAgICJkaXJlY3RTY2Fub3V0QmxvY2tlZEJ5IjogWyJVU0VSIiwiQ0FORElEQVRFIl0sCiAgICAiZGlzYWJsZWQiOiBmYWxzZSwKICAgICJjdXJyZW50Rm9ybWF0IjogIlhSR0I4ODg4IiwKICAgICJtaXJyb3JPZiI6ICJub25lIiwKICAgICJhdmFpbGFibGVNb2RlcyI6IFtdLAogICAgImNvbG9yTWFuYWdlbWVudFByZXNldCI6ICJzcmdiIiwKICAgICJzZHJCcmlnaHRuZXNzIjogMSwKICAgICJzZHJTYXR1cmF0aW9uIjogMSwKICAgICJzZHJNaW5MdW1pbmFuY2UiOiAwLjIsCiAgICAic2RyTWF4THVtaW5hbmNlIjogODAsCiAgICAiaGFyZHdhcmVDdXJzb3JzSW5Vc2UiOiB0cnVlCn1d",
+      "replyBytes": 1065,
+      "peer": {
+        "pid": 3453165,
+        "uid": 1000,
+        "gid": 1000
+      },
+      "replySHA256": "f745a7b7d1660fea0abc087974e60bf6f4e33a00953dc838fbb2ddee060ab185",
+      "socketAfter": {
+        "path": "/run/user/1000/wqa/3f98/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790919978_780238110/.socket.sock",
+        "uid": 1000,
+        "device": 84,
+        "inode": 400017
+      },
+      "after": {
+        "expectedChild": {
+          "pid": 3453165,
+          "start": "14245114",
+          "pgid": 3453165
+        },
+        "expectedSockets": [
+          {
+            "path": "/run/user/1000/wqa/3f98/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790919978_780238110/.socket.sock",
+            "uid": 1000,
+            "device": 84,
+            "inode": 400017
+          },
+          {
+            "path": "/run/user/1000/wqa/3f98/wayland-1",
+            "uid": 1000,
+            "device": 84,
+            "inode": 400016
+          }
+        ],
+        "selected": {
+          "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790919978_780238110",
+          "WAYLAND_DISPLAY": "wayland-1",
+          "XDG_RUNTIME_DIR": "/run/user/1000/wqa/3f98",
+          "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/wqa/3f98/bus"
+        },
+        "actualChild": {
+          "pid": 3453165,
+          "start": "14245114",
+          "pgid": 3453165
+        }
+      },
+      "actualOutputs": [
+        {
+          "id": 0,
+          "name": "WAYLAND-1",
+          "description": "",
+          "make": "",
+          "model": "",
+          "serial": "",
+          "width": 1600,
+          "height": 1000,
+          "physicalWidth": 0,
+          "physicalHeight": 0,
+          "refreshRate": 60.0,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "0",
+          "solitaryBlockedBy": [
+            "WINDOWED",
+            "CANDIDATE"
+          ],
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "SUPPORT",
+            "CANDIDATE",
+            "HW_CURSOR"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "CANDIDATE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        }
+      ],
+      "completedMonotonic": 130333.499037917
+    }
+  ],
+  "budgetSeconds": 15,
+  "budgetReset": false,
+  "startupBudget": {
+    "launchReturnedMonotonic": 130331.182677671,
+    "deadlineMonotonic": 130346.182677671,
+    "seconds": 15,
+    "origin": "same actual child launch return before inherited original15s instance discovery starts",
+    "pid": 3453165
+  }
+}

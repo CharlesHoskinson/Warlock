@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_mouse" xml:lang="eu">
+  <info>
+    <link type="next" xref="commands_live_regions"/>
+    <link type="guide" xref="commands#reviewing_screen_contents"/>
+    <title type="sort">3. Saguari/erakusleari lotutakoak</title>
+    <title type="link">Saguari/erakusleari lotutakoak</title>
+    <link type="seealso" xref="howto_flat_review"/>
+    <link type="seealso" xref="howto_mouse_review"/>
+    <desc>Erakuslea manipulatzeko komandoak</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Saguari/erakusleari lotutako komandoak</title>
+  <p>
+    <app>Orca</app> provides several commands which can be used to manipulate
+    the mouse pointer and read the contents under it. All of the commands are
+    "bound" to keystrokes with one exception: Toggling Mouse Review Mode.
+    Please see <link xref="howto_key_bindings">Modifying Keybindings</link>
+    for information on how to bind this command to a keystroke.
+  </p>
+  <note style="tip">
+    <p>
+      Below you will see several references to "KP". All
+      "KP" keys are located on the numeric keypad. You will also notice that
+      there are different keystrokes depending upon whether you are using a
+      desktop or a laptop -- or more accurately, whether you are using
+      <app>Orca</app>'s Desktop keyboard layout or its Laptop keyboard layout.
+      For additional information, please see the
+      <link xref="howto_keyboard_layout">Keyboard Layout</link> topic.
+    </p>
+  </note>
+  <list>
+    <item>
+      <p>Ezkerreko klik uneko elementuan:</p>
+      <list>
+        <item><p>Mahaigaina: <keyseq><key>ZT Zatitu</key></keyseq></p></item>
+        <item><p>Eramangarria: <keyseq><key>Orca aldatzailea</key><key>7</key></keyseq></p></item>
+      </list>
+    </item>
+    <item>
+      <p>Eskuineko klik uneko elementuan:</p>
+      <list>
+        <item><p>Mahaigaina: <keyseq><key>ZT Biderkatu</key></keyseq></p></item>
+        <item><p>Eramangarria: <keyseq><key>Orca aldatzailea</key><key>8</key></keyseq></p></item>
+      </list>
+    </item>
+    <item>
+      <p>Bideratu erakuslea uneko elementura:</p>
+      <list>
+        <item><p>Mahaigaina: <keyseq><key>Orca aldatzailea</key><key>ZT Zatitu</key></keyseq></p></item>
+        <item><p>Eramangarria: <keyseq><key>Orca aldatzailea</key><key>9</key></keyseq></p></item>
+      </list>
+    </item>
+    <item>
+      <p>Eraman fokua saguaren uneko posiziora eta kanpora (weba soilik):</p>
+      <list>
+        <item><p>Mahaigaina: <keyseq><key>Orca aldatzailea</key><key>ZT Biderkatu</key></keyseq></p></item>
+        <item><p>Eramangarria: <keyseq><key>Orca aldatzailea</key><key>0</key></keyseq></p></item>
+      </list>
+    </item>
+    <item>
+      <p>Gaitu/desgaitu saguaren berrikuspen-modua: (Lotu gabea)</p>
+    </item>
+  </list>
+</page>

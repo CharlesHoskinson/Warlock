@@ -1,0 +1,22 @@
+--- frozen-v2/test_scene_controller.py
++++ review-v3/test_scene_controller.py
+@@ -151,6 +151,19 @@
+         self.assertEqual(self.d.captures,6);new=self.c.current
+         self.assertFalse(self.event(old,'cancelled'));self.assertIs(self.c.current,new)
+         self.assertNotIn('cleanupAckNs',new.profile)
++    def test_slow_ready_observation_allows_new_visual_intent_and_cannot_hide_old(self):
++        old=self.seed();original=self.c.fresh;observed=threading.Event();release=threading.Event()
++        def slow(record):
++            result=original(record)
++            if threading.current_thread().name=='old-ready':observed.set();release.wait(3)
++            return result
++        self.c.fresh=slow
++        callback=threading.Thread(name='old-ready',target=lambda:self.event(old,'ready'));callback.start();self.assertTrue(observed.wait(1))
++        newest=self.request('restore')
++        self.assertEqual(self.t.sent[-1]['token'],newest['token']);self.assertEqual(self.t.sent[-1]['command'],'retarget')
++        release.set();callback.join(2)
++        self.assertFalse(self.d.commits)
++        self.assertFalse(any(m['command']=='start' and m['token']==old.token for m in self.t.sent))
+     def test_changed_native_geometry_does_not_replace_retained_pixels(self):
+         old=self.seed();self.event(old,'ready');self.d.windows[1]['size'][0]+=10
+         r=self.request('restore');self.wait(lambda:'failure' in self.c.current.profile)

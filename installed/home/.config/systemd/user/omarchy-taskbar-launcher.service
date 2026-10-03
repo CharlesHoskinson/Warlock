@@ -1,0 +1,11 @@
+[Unit]
+Description=Receive application taskbar counts and progress for Omarchy
+After=graphical-session.target
+
+[Service]
+ExecStart=%h/.local/bin/hypr-taskbar-launcher
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

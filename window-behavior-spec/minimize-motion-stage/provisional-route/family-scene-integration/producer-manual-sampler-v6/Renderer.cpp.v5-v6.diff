@@ -1,0 +1,113 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-causal-v5/Renderer.cpp
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/Renderer.cpp
+@@ -4,6 +4,7 @@
+ #include "LibraryMaterial.hpp"
+ #include "ReadbackImage.hpp"
+ #include "CausalImage.hpp"
++#include "SamplingExperiment.hpp"
+ #include <QByteArray>
+ #include <QCryptographicHash>
+ #include <QJsonArray>
+@@ -67,6 +68,7 @@
+     uint64_t startedNs=0,durationNs=400000000;bool running=false,readySent=false,endpointSent=false,quit=false,announced=false,surfacesEnabled=true,swapping=false;
+     std::string deferredCancel;uint64_t routeAcceptedNs=0,endpointHeldNs=0;
+     int readbackDirectory=-1;std::set<std::string> readbackSamples,causalSamples;
++    bool manualSampling=false;GLint atlasSizeLocation=-1;std::map<GLuint,OwnedSampling::Texture> samplerTextures;
+     bool causalFixture=false;std::array<GLuint,3> controlTextures{};std::set<uint64_t> controlledGenerations;
+     struct CausalObservation {std::string kind;size_t prefix=0;std::vector<int> controls;std::vector<unsigned char> rgba,nativeRGBA;unsigned nativeFormat=0,nativeType=0;std::string nativeBytesDigest;};
+     size_t uploadCount=0,transparentCommitCount=0;bool backendSupported=false,rasterFixture=false;double sampleProgress=0;QByteArray input;
+@@ -92,10 +94,12 @@
+         emitEvent({{"event","shaderPrecision"},{"observed",precisionRecords},{"error",double(precisionError)},{"supported",precisionSupported&&precisionError==GL_NO_ERROR},{"pixelProof",false}});
+         if(!precisionSupported||precisionError!=GL_NO_ERROR)throw std::runtime_error("required actual highp shader precision unavailable; no source upload");
+         GLuint vertex=compile(GL_VERTEX_SHADER,"precision highp float;attribute highp vec2 position;attribute highp vec2 uv;varying highp vec2 tex;void main(){tex=uv;gl_Position=vec4(position,0.,1.);}");
+-        GLuint fragment=compile(GL_FRAGMENT_SHADER,"precision highp float;uniform highp sampler2D atlas;varying highp vec2 tex;void main(){gl_FragColor=texture2D(atlas,tex);}");
++        GLuint fragment=compile(GL_FRAGMENT_SHADER,manualSampling?OwnedSampling::manualFragment:OwnedSampling::linearFragment);
+         shader=glCreateProgram();glAttachShader(shader,vertex);glAttachShader(shader,fragment);glLinkProgram(shader);glDeleteShader(vertex);glDeleteShader(fragment);
+         GLint ok=0;glGetProgramiv(shader,GL_LINK_STATUS,&ok);if(!ok)throw std::runtime_error("GPU shader linking failed");
+         positionLocation=glGetAttribLocation(shader,"position");uvLocation=glGetAttribLocation(shader,"uv");
++        if(manualSampling){atlasSizeLocation=glGetUniformLocation(shader,"atlasSize");if(atlasSizeLocation<0)throw std::runtime_error("manual bilinear extent uniform absent");
++            emitEvent({{"event","samplingExperiment"},{"policy",OwnedSampling::policy},{"fragmentSHA256",QString::fromLatin1(QCryptographicHash::hash(QByteArray(OwnedSampling::manualFragment),QCryptographicHash::Sha256).toHex())},{"rasterDiagnostic",rasterFixture},{"nativeAuthority",false},{"pixelProof",false}});}
+         const auto safe=[](const char* value){return std::string(value?value:"");};
+         const auto vendor=safe(eglQueryString(eglDisplay,EGL_VENDOR));
+         const auto renderer=safe(reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
+@@ -188,10 +192,11 @@
+         if(!png_image_finish_read(&image,nullptr,rgba.data(),0,nullptr))throw std::runtime_error("PNG pixel decode failed");
+         for(size_t i=0;i<rgba.size();i+=4)for(size_t c=0;c<3;c++)rgba[i+c]=(unsigned(rgba[i+c])*rgba[i+3]+127)/255;
+         GLuint uploaded=0;glGenTextures(1,&uploaded);glBindTexture(GL_TEXTURE_2D,uploaded);
+-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
++        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,manualSampling?GL_NEAREST:GL_LINEAR);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,manualSampling?GL_NEAREST:GL_LINEAR);
+         glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_CLAMP_TO_EDGE);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_CLAMP_TO_EDGE);
+         glPixelStorei(GL_UNPACK_ALIGNMENT,1);glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,image.width,image.height,0,GL_RGBA,GL_UNSIGNED_BYTE,rgba.data());
+-        if(glGetError()!=GL_NO_ERROR){glDeleteTextures(1,&uploaded);throw std::runtime_error("GPU snapshot upload failed");}++uploadCount;
++        if(glGetError()!=GL_NO_ERROR){glDeleteTextures(1,&uploaded);throw std::runtime_error("GPU snapshot upload failed");}
++        if(manualSampling)samplerTextures[uploaded]={int(image.width),int(image.height),-1,expected,false};++uploadCount;
+         emitEvent({{"event","uploaded"},{"digest",qs(expected)},{"pixels",QJsonArray{int(image.width),int(image.height)}},{"uploadCount",int(uploadCount)}});return uploaded;
+     }
+     QJsonArray sourceDigests()const{QJsonArray array;for(const auto& source:ledger.familySources())array.append(QJsonObject{{"stableId",qs(source.identity.stable)},{"pid",double(source.identity.pid)},{"digest",qs(source.digest)}});return array;}
+@@ -223,7 +228,19 @@
+         const GLfloat left=2*(rect.x-o.x)/o.width-1,right=2*(rect.x+rect.width-o.x)/o.width-1;
+         const GLfloat top=1-2*(rect.y-o.y)/o.height,bottom=1-2*(rect.y+rect.height-o.y)/o.height;
+         const GLfloat positions[]={left,top,right,top,left,bottom,right,bottom},uv[]={0,0,1,0,0,1,1,1};
+-        glBindTexture(GL_TEXTURE_2D,texture);glVertexAttribPointer(positionLocation,2,GL_FLOAT,GL_FALSE,0,positions);glVertexAttribPointer(uvLocation,2,GL_FLOAT,GL_FALSE,0,uv);glDrawArrays(GL_TRIANGLE_STRIP,0,4);
++        glBindTexture(GL_TEXTURE_2D,texture);
++        if(manualSampling){
++            auto found=samplerTextures.find(texture);if(found==samplerTextures.end())throw std::runtime_error("manual sampler texture extent unavailable");
++            auto& source=found->second;OwnedSampling::requireExtent(source);glUniform2f(atlasSizeLocation,source.width,source.height);
++            if(!source.announced){
++                GLint min=0,mag=0,s=0,t=0;GLfloat extent[2]={0,0};
++                glGetTexParameteriv(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,&min);glGetTexParameteriv(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,&mag);
++                glGetTexParameteriv(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,&s);glGetTexParameteriv(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,&t);glGetUniformfv(shader,atlasSizeLocation,extent);
++                const auto error=glGetError();OwnedSampling::requireState(source,min,mag,s,t,extent[0],extent[1],error);source.announced=true;
++                emitEvent({{"event","samplingConfigured"},{"policy",OwnedSampling::policy},{"textureId",int(texture)},{"sourceDigest",qs(source.digest)},{"pixels",QJsonArray{source.width,source.height}},{"controlIndex",source.controlIndex},{"minFilter",min},{"magFilter",mag},{"wrapS",s},{"wrapT",t},{"extentUniform",QJsonArray{extent[0],extent[1]}},{"inspectionError",double(error)},{"nativeAuthority",false},{"pixelProof",false}});
++            }
++        }
++        glVertexAttribPointer(positionLocation,2,GL_FLOAT,GL_FALSE,0,positions);glVertexAttribPointer(uvLocation,2,GL_FLOAT,GL_FALSE,0,uv);glDrawArrays(GL_TRIANGLE_STRIP,0,4);
+     }
+     static std::string byteDigest(const std::vector<unsigned char>& bytes){return QCryptographicHash::hash(QByteArray(reinterpret_cast<const char*>(bytes.data()),bytes.size()),QCryptographicHash::Sha256).toHex().toStdString();}
+     CausalObservation observeCausal(Output& o,const std::string& kind,size_t prefix=0,std::vector<int> controls={}){
+@@ -244,7 +261,7 @@
+     void initializeControls(){
+         if(controlTextures[0])return;
+         GLint unpack=0;glGetIntegerv(GL_UNPACK_ALIGNMENT,&unpack);glPixelStorei(GL_UNPACK_ALIGNMENT,1);glGenTextures(3,controlTextures.data());
+-        for(size_t i=0;i<controlTextures.size();++i){glBindTexture(GL_TEXTURE_2D,controlTextures[i]);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_CLAMP_TO_EDGE);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_CLAMP_TO_EDGE);glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,1,1,0,GL_RGBA,GL_UNSIGNED_BYTE,OwnedCausal::controls()[i].data());}
++        for(size_t i=0;i<controlTextures.size();++i){glBindTexture(GL_TEXTURE_2D,controlTextures[i]);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,manualSampling?GL_NEAREST:GL_LINEAR);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,manualSampling?GL_NEAREST:GL_LINEAR);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_CLAMP_TO_EDGE);glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_CLAMP_TO_EDGE);glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,1,1,0,GL_RGBA,GL_UNSIGNED_BYTE,OwnedCausal::controls()[i].data());if(manualSampling)samplerTextures[controlTextures[i]]={1,1,int(i),"",false};}
+         const auto uploaded=glGetError();glPixelStorei(GL_UNPACK_ALIGNMENT,unpack);const auto restored=glGetError();
+         if(uploaded!=GL_NO_ERROR||restored!=GL_NO_ERROR)throw std::runtime_error("constant control texture upload failed");
+         emitEvent({{"event","diagnosticControlsUploaded"},{"textureCount",3},{"familyUploadCount",int(uploadCount)},{"sourceProof",false},{"nativeAuthority",false}});
+@@ -397,8 +414,8 @@
+             }
+             if(selected.empty())throw std::invalid_argument("no ready required outputs");
+             if(!makeCurrent(*selected.front()))throw std::runtime_error("snapshot upload context unavailable");
+-            std::vector<GLuint> uploaded;try{for(const auto& m:inputs){auto pixels=m["pixels"].toArray();uploaded.push_back(upload(m["path"].toString().toStdString(),m["digest"].toString().toStdString(),pixels[0].toInt(),pixels[1].toInt()));}}catch(...){for(auto t:uploaded)glDeleteTextures(1,&t);throw;}
+-            for(auto t:familyTextures)glDeleteTextures(1,&t);familyTextures=std::move(uploaded);familyIdentities=std::move(ids);
++            std::vector<GLuint> uploaded;try{for(const auto& m:inputs){auto pixels=m["pixels"].toArray();uploaded.push_back(upload(m["path"].toString().toStdString(),m["digest"].toString().toStdString(),pixels[0].toInt(),pixels[1].toInt()));}}catch(...){for(auto t:uploaded){samplerTextures.erase(t);glDeleteTextures(1,&t);}throw;}
++            for(auto t:familyTextures){samplerTextures.erase(t);glDeleteTextures(1,&t);}familyTextures=std::move(uploaded);familyIdentities=std::move(ids);
+             ledger.configure(generations);ledger.seedFamily(sources,token,hash,op.toStdString());
+             routeIdentity=familyIdentities.front();digest=hash;operation=op.toStdString();durationNs=duration*1000000ULL;required=selected;
+             for(auto* o:required){o->from=bounds(ledger.sceneRectangles(o->name,0));o->endpointPresented=false;}
+@@ -468,7 +485,8 @@
+         }
+     }
+ public:
+-    explicit Renderer(bool diagnostic=false,const std::string& readback="",bool causal=false):causalFixture(causal),rasterFixture(diagnostic){
++    explicit Renderer(bool diagnostic=false,const std::string& readback="",bool causal=false,bool manual=false):manualSampling(manual),causalFixture(causal),rasterFixture(diagnostic){
++        OwnedSampling::requireDiagnostic(manual,diagnostic,causal,!readback.empty());
+         if(causal&&(!diagnostic||readback.empty()))throw std::invalid_argument("causal observations require owned raster readback directory");
+         if(!readback.empty()){
+             if(!diagnostic)throw std::invalid_argument("readback only available in raster diagnostic mode");
+@@ -515,12 +533,13 @@
+ #ifndef OWNED_EGL_OFFLINE_TEST
+ int main(int argc,char** argv){
+     if(argc==2&&std::string(argv[1])=="--describe"){emitEvent({{"status","staged prototype"},{"protocols",QJsonArray{"layer-shell","presentation","viewporter","xdg-output","fractional-scale"}},{"namespace","hoskinson-window-motion"},{"nativeTested",false},{"serviceIntegrated",false}});return 0;}
+-    try{bool diagnostic=false,causal=false;std::string readback;
++    try{bool diagnostic=false,causal=false,manual=false;std::string readback;
+         if(argc==2&&std::string(argv[1])=="--raster-fixture")diagnostic=true;
+         else if(argc==4&&std::string(argv[1])=="--raster-fixture"&&std::string(argv[2])=="--readback-dir"){diagnostic=true;readback=argv[3];}
+         else if(argc==4&&std::string(argv[1])=="--raster-fixture"&&std::string(argv[2])=="--causal-readback-dir"){diagnostic=true;causal=true;readback=argv[3];}
++        else if(argc==5&&std::string(argv[1])=="--raster-fixture"&&std::string(argv[2])=="--causal-readback-dir"&&std::string(argv[4])=="--manual-bilinear-experiment"){diagnostic=true;causal=true;manual=true;readback=argv[3];}
+         else if(argc!=1)throw std::invalid_argument("unknown producer option");
+-        Renderer r(diagnostic,readback,causal);r.run();return 0;}catch(const std::exception& e){emitEvent({{"event","fatal"},{"reason",e.what()},{"nativeAuthority",false}});return 1;}
++        Renderer r(diagnostic,readback,causal,manual);r.run();return 0;}catch(const std::exception& e){emitEvent({{"event","fatal"},{"reason",e.what()},{"nativeAuthority",false}});return 1;}
+ }
+ 
+ #endif

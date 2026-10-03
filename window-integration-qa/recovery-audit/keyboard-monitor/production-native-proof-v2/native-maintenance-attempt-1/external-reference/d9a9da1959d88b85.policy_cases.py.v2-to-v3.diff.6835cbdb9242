@@ -1,0 +1,10 @@
+--- /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v2/native-fixture/policy_cases.py	2026-10-01 01:24:36.296258328 -0600
++++ /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v3/native-fixture/policy_cases.py	2026-10-01 08:27:28.657950505 -0600
+@@ -58,6 +58,7 @@
+     try:
+         reload()
+         keyboard=pipe([here/'native-fixture/native-input'],'policy-input')
++        ctx['producer_ready'](keyboard,here/'policy-input.log','policy keyboard')
+         a=client('A')
+         native('auto')
+         check(report,'native producer matches predeclared startup deny',len(device_rows())==1 and device_rows()[0]['name']==ctx['deny_name'],declared=ctx['deny_name'],devices=device_rows())

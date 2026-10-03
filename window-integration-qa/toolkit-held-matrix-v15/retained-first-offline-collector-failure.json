@@ -1,0 +1,10 @@
+{
+  "result": "fail",
+  "gate": "offline_review collect",
+  "error": "Source differs beyond explicit arm/terminal hunks: run_native.py",
+  "cause": "collector double-applied V14 runner inverse to already reconstructed bytes",
+  "commandsNotDurablyArchived": true,
+  "nativeLaunch": false,
+  "checkerSHA256": "175126ab892530f00e8b27df06d0f2562bd1a579f404f175a4a1219e49210c1b",
+  "collectorSHA256": "d34a63495046339f0ac628cf8d34a0875438a2f07f18e841eafff903f5a99834"
+}

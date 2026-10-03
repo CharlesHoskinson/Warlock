@@ -1,0 +1,53 @@
+--- /home/hoskinson/.local/bin/hypr-snap-groups	2026-09-30 17:29:20.612321913 -0600
++++ /home/hoskinson/window-integration-qa/recovery-audit/staged/hypr-snap-groups	2026-09-30 21:24:57.058628063 -0600
+@@ -81,6 +81,31 @@
+ def valid_address(a):
+     return isinstance(a, str) and re.fullmatch(r'0x[0-9a-fA-F]+', a)
+ 
++def session_state(state, instance):
++    """Keep reload hydration within its original compositor incarnation."""
++    if not isinstance(state, dict) or (state.get('instance') and state['instance'] != instance):
++        state = {'version': 1, 'snapped': {}, 'groups': [], 'next_id': 0}
++    state['instance'] = instance
++    return state
++
++def compositor_instance():
++    """Select one compositor before loading or replacing persistent state."""
++    instance = os.getenv('HYPRLAND_INSTANCE_SIGNATURE', '')
++    if instance:
++        return instance
++    try:
++        instances = json.loads(ctl('instances', '-j'))
++    except (OSError, ValueError, subprocess.SubprocessError) as error:
++        raise ValueError('Unable to identify the compositor instance') from error
++    if not isinstance(instances, list) or len(instances) != 1:
++        raise ValueError('Set HYPRLAND_INSTANCE_SIGNATURE when no unique compositor instance is available')
++    instance = instances[0].get('instance') if isinstance(instances[0], dict) else None
++    if not isinstance(instance, str) or not instance:
++        raise ValueError('The compositor instance has no valid signature')
++    # hyprctl queries and mutations must use the instance that owns the tag.
++    os.environ['HYPRLAND_INSTANCE_SIGNATURE'] = instance
++    return instance
++
+ def sync(state, windows):
+     live = {w['address']: w for w in windows if w.get('mapped', True)}
+     for a, member in list(state['snapped'].items()):
+@@ -188,6 +213,10 @@
+     parser.add_argument('args', nargs='*')
+     parser.add_argument('--json', action='store_true')
+     ns = parser.parse_args()
++    try:
++        instance = compositor_instance()
++    except ValueError as error:
++        parser.error(str(error))
+     ROOT.mkdir(parents=True, exist_ok=True)
+     with (ROOT / 'lock').open('a') as lock:
+         fcntl.flock(lock, fcntl.LOCK_EX)
+@@ -195,6 +224,7 @@
+             state = json.loads((ROOT / 'state.json').read_text())
+         except (OSError, ValueError):
+             state = {'version': 1, 'snapped': {}, 'groups': [], 'next_id': 0}
++        state = session_state(state, instance)
+         windows = clients()
+         sync(state, windows)
+         args = ns.args

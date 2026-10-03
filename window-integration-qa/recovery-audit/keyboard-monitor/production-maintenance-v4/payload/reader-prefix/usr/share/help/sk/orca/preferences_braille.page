@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_braille" xml:lang="sk">
+  <info>
+    <title type="sort">3. Braillovo písmo</title>
+    <title type="link">Braillovo písmo</title>
+    <desc>Konfigurácia podpory braillskeho zobrazovača v <app>Orca</app></desc>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_key_echo"/>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Predvoľby braillovho písma</title>
+  <section id="braillesupport">
+    <title>Povoliť podporu braillovho písma</title>
+    <p>Toto začiarkavacie políčko prepína, či <app>Orca</app> bude používať braillsky zobrazovač alebo nie. Ak BrlTTY nebeží, <app>Orca</app> sa elegantne zotaví a nebude komunikovať s braillskym zobrazovačom.</p>
+    <p>Predvolená hodnota: nezačiarknuté</p>
+    <note style="tip">
+      <p>Ak neskôr nakonfigurujete BrlTTY, budete musieť reštartovať <app>Orca</app>, aby ste mohli používať braillovo písmo.</p>
+    </note>
+  </section>
+  <section id="braillewordwrap">
+    <title>Povoliť zalamovanie slov</title>
+    <p>Ak je začiarknuté <gui>Povoliť zalamovanie slov</gui>, <app>Orca</app> upraví text tak, aby sa na braillskom zobrazovači zobrazovali iba celé slová. Ak nie je začiarknuté, <app>Orca</app> použije všetky bunky na zobrazovači, aby sa naraz zobrazilo viac textu.</p>
+    <p>Predvolená hodnota: nezačiarknuté</p>
+  </section>
+  <section id="contractedbraille">
+    <title>Povoliť skrátené braillovo písmo</title>
+    <p>Orca podporuje skrátené braillovo písmo prostredníctvom projektu liblouis. Pretože mnoho distribúcií obsahuje liblouis, pravdepodobne budete mať automaticky prístup k podpore skráteného braillovho písma v <app>Orca</app>.</p>
+    <p>Na povolenie skráteného braillovho písma v systéme, kde je nainštalovaný liblouis, uistite sa, že je začiarknuté políčko <gui>Povoliť skrátené braillovo písmo</gui>. Potom si z rozbaľovacieho zoznamu <gui>Tabuľka kontrakcií</gui> vyberte požadovanú prekladovú tabuľku.</p>
+    <p>Predvolená hodnota: nezačiarknuté</p>
+  </section>
+  <section id="rolenames">
+    <title>Skrátené názvy rolí</title>
+    <p>Toto začiarkavacie políčko určuje spôsob zobrazenia názvov rolí a možno ho použiť na úsporu miesta na braillskom zobrazovači. Napríklad, ak by mal fokus posuvník, slovo „slider“ (posuvník) by sa zobrazilo, ak nie sú začiarknuté skrátené názvy rolí; ak by boli začiarknuté, zobrazilo by sa namiesto toho „sldr“.</p>
+    <p>Predvolená hodnota: nezačiarknuté</p>
+  </section>
+  <section id="eolindicator">
+    <title>Zakázať symbol konca riadku</title>
+    <p>Začiarknutie tohto políčka oznámi <app>Orca</app>, aby nezobrazoval reťazec „$l“ na konci riadku textu.</p>
+    <p>Predvolená hodnota: nezačiarknuté</p>
+  </section>
+  <section id="verbosity">
+    <title>Ukecanosť</title>
+    <p>Táto skupina prepínačov určuje množstvo informácií, ktoré sa budú zobrazovať v braillovom písme v určitých situáciách. Napríklad, ak je nastavená na podrobnú, zobrazujú sa informácie o klávesových skratkách a názvoch rolí. Tieto informácie sa v stručnom režime nezobrazujú.</p>
+    <p>Predvolená hodnota: <gui>Podrobná</gui></p>
+  </section>
+  <section id="selectionandhyperlink">
+    <title>Indikátory výberu a hypertextových odkazov</title>
+    <p>Skupiny prepínačov <gui>Indikátor výberu</gui> a <gui>Indikátor hypertextového odkazu</gui> vám umožňujú konfigurovať správanie <app>Orca</app> pri zobrazovaní vybraného textu a hypertextových odkazov. Predvolene, keď narazíte na niektorý z nich, <app>Orca</app> tento text na braillskom zobrazovači „podčiarkne“ bodkami 7 a 8. Ak chcete, môžete zmeniť indikátor tak, aby bola iba bodka 7, iba bodka 8, alebo aby indikátor vôbec nebol prítomný.</p>
+    <p>Predvolená hodnota: <gui>Bodky 7 a 8</gui></p>
+    <note style="tip">
+      <title>Indikátory atribútov textu</title>
+      <p>Voliteľne môžete mať atribúty textu označené aj v braillovom písme. Povolenie tejto funkcie a výber atribútov, ktoré vás zaujímajú, sa vykonáva na stránke <link xref="preferences_text_attributes"> <gui>Atribúty textu</gui></link> dialógového okna predvolieb.</p>
+    </note>
+  </section>
+  <section id="flashMessageSettings">
+    <title>Nastavenia blikajúcich správ</title>
+    <p>Blikajúce správy sú podobné oznámeniam alebo vyhláseniam: Zobrazujú sa na vašom obnoviteľnom braillskom zobrazovači krátky čas, po ktorom sa obnoví pôvodný obsah braillskeho zobrazovača. <app>Orca</app> má niekoľko nastavení, ktoré môžete použiť na ovládanie zobrazenia blikajúcich správ.</p>
+    <section id="flashMessageSettings_enable">
+      <title>Povoliť blikajúce správy</title>
+      <p>Ak je začiarknuté <gui>Povoliť blikajúce správy</gui>, <app>Orca</app> vám bude zobrazovať správy v braillovom písme. Ak uprednostňujete, aby sa správy <app>Orca</app> iba oznamovali, mali by ste zrušiť začiarknutie tohto políčka.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="flashMessageSettings_detailed">
+      <title>Správy sú podrobné</title>
+      <p>Ak je začiarknuté <gui>Správy sú podrobné</gui>, <app>Orca</app> vám bude v braillovom písme zobrazovať podrobné správy. Napríklad, ak použijete príkaz <app>Orca</app> na zmenu ozveny, <app>Orca</app> môže zobraziť „Ozvena nastavená na slovo.“ Ak by ste uprednostnili kratšie správy, napríklad jednoducho „slovo“, mali by ste zrušiť začiarknutie tohto políčka.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="flashMessageSettings_persistent">
+      <title>Správy sú trvalé</title>
+      <p>Ako je uvedené vyššie, blikajúce správy sa zobrazujú iba krátky čas. Ak uprednostňujete, aby správy zostali zobrazené, kým nevykonáte akciu, ktorá spôsobí aktualizáciu vášho zobrazovača, mali by ste začiarknuť políčko <gui>Správy sú trvalé</gui>.</p>
+      <p>Predvolená hodnota: nezačiarknuté</p>
+    </section>
+    <section id="flashMessageSettings_duration">
+      <title>Trvanie (s)</title>
+      <p>Množstvo času, ktorý bude <app>Orca</app> čakať pred odstránením správy a obnovením pôvodného obsahu vášho zobrazovača, je možné nastaviť v poli <gui> Trvanie (s)</gui>. Upozorňujeme, že hodnota tohto nastavenia sa bude ignorovať, ak ste povolili trvalé blikajúce správy.</p>
+      <p>Predvolená hodnota: 5</p>
+    </section>
+  </section>
+</page>

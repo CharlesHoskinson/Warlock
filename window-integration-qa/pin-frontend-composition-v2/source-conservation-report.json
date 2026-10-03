@@ -1,0 +1,200 @@
+{
+  "result": "pass",
+  "checks": [
+    {
+      "name": "Unchanged controller __init__",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller persist",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller observe",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller wait",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller query",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller native",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller snapshots",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller chord",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller item_point",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller pointer_live",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller move_layer",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller buttons",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller hover_preview",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller open_right",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller open_keyboard",
+      "passed": true
+    },
+    {
+      "name": "Unchanged controller press_args",
+      "passed": true
+    },
+    {
+      "name": "Complete original toggle/effect AST reconstructs exactly",
+      "passed": true
+    },
+    {
+      "name": "No external reader flag call",
+      "passed": true
+    },
+    {
+      "name": "No boolean release in applied controller",
+      "passed": true
+    },
+    {
+      "name": "Unchanged acceptance integer",
+      "passed": true
+    },
+    {
+      "name": "Unchanged acceptance numeric",
+      "passed": true
+    },
+    {
+      "name": "Unchanged acceptance exact",
+      "passed": true
+    },
+    {
+      "name": "Unchanged acceptance layer",
+      "passed": true
+    },
+    {
+      "name": "Unchanged acceptance current",
+      "passed": true
+    },
+    {
+      "name": "Unchanged acceptance pointer",
+      "passed": true
+    },
+    {
+      "name": "Unchanged acceptance keyboard",
+      "passed": true
+    },
+    {
+      "name": "Unchanged acceptance process_identity",
+      "passed": true
+    },
+    {
+      "name": "Unchanged acceptance helper",
+      "passed": true
+    },
+    {
+      "name": "Unchanged acceptance shell_requester",
+      "passed": true
+    },
+    {
+      "name": "Unchanged acceptance focus_projection",
+      "passed": true
+    },
+    {
+      "name": "Unchanged acceptance one_native_event",
+      "passed": true
+    },
+    {
+      "name": "Unchanged FrontendCase __init__",
+      "passed": true
+    },
+    {
+      "name": "Unchanged FrontendCase invalidate",
+      "passed": true
+    },
+    {
+      "name": "Unchanged FrontendCase accept",
+      "passed": true
+    },
+    {
+      "name": "Original press readiness AST conserved",
+      "passed": true
+    },
+    {
+      "name": "Original completion predicates conserved",
+      "passed": true
+    },
+    {
+      "name": "Original native layer/row binding predicates conserved",
+      "passed": true
+    },
+    {
+      "name": "Native authority exact",
+      "passed": true
+    },
+    {
+      "name": "Root helper exact",
+      "passed": true
+    },
+    {
+      "name": "Actual frozen driver exact",
+      "passed": true
+    },
+    {
+      "name": "V8 action/capture/retire/feedback QML exact outside diagnostic",
+      "passed": true
+    },
+    {
+      "name": "V8 QML factory exact Windows.qml",
+      "passed": true
+    },
+    {
+      "name": "V8 QML factory exact TaskbarPopup.qml",
+      "passed": true
+    },
+    {
+      "name": "V8 QML factory exact PinMenu.js",
+      "passed": true
+    },
+    {
+      "name": "Existing readonly probe/listeners exact outside episode additions",
+      "passed": true
+    },
+    {
+      "name": "Model/contract before source still exact",
+      "passed": true
+    },
+    {
+      "name": "All1518 ancestry bytes unchanged",
+      "passed": true
+    },
+    {
+      "name": "All original A2 component protocol bytes unchanged",
+      "passed": true
+    }
+  ],
+  "sourceReconstructionOnly": true,
+  "actualCPUProofSeparate": true,
+  "GUI": false
+}

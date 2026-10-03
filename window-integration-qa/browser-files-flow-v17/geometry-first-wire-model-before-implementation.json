@@ -1,0 +1,75 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/viewport_geometry_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  viewport_geometry_test\n    ok exactPairTest passed 1 test(s)\n    ok beforePairRefusedTest passed 1 test(s)\n    ok syntheticRefusedTest passed 1 test(s)\n    ok staleSequenceRefusedTest passed 1 test(s)\n    ok wrongTranslationRefusedTest passed 1 test(s)\n    ok buttonsRefusedTest passed 1 test(s)\n    ok wrongLifetimeRefusedTest passed 1 test(s)\n    ok sessionChangeRevokesTest passed 1 test(s)\n    ok layoutChangeRevokesTest passed 1 test(s)\n    ok surfaceChangeRevokesTest passed 1 test(s)\n    ok basisChangeRevokesTest passed 1 test(s)\n    ok focusOrDraftChangeRefusedTest passed 1 test(s)\n    ok wrongHitRefusedTest passed 1 test(s)\n    ok nonfiniteRefusedTest passed 1 test(s)\n    ok outOfBoundsRefusedTest passed 1 test(s)\n    ok duplicatePointRefusedTest passed 1 test(s)\n    ok touchRefusedTest passed 1 test(s)\n    ok nonprimaryRefusedTest passed 1 test(s)\n    ok invalidationRevokesTest passed 1 test(s)\n    ok modifierRefusedTest passed 1 test(s)\n    ok captureRefusedTest passed 1 test(s)\n    ok oldQueuedTimestampRefusedTest passed 1 test(s)\n    ok unpreparedRefusedTest passed 1 test(s)\n\n  23 passing (635ms)\n",
+      "stderr": "Running as unit: qa-harness-b651fe8b205a49fe90355dcb37ed8a10.scope; invocation ID: 7c78744500314049a3ee5715b81c4749\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/viewport_geometry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (1064ms at 1880 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": "Running as unit: qa-harness-c18033388ec1412d951b1b817dc995df.scope; invocation ID: 6514eecdf8a14efaa19b09fb53c33d62\n"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/coordinate_representation_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  coordinate_representation_test\n    ok integerExactTest passed 10000 test(s)\n    ok halfAwayTest passed 10000 test(s)\n    ok belowHalfTest passed 10000 test(s)\n    ok aboveHalfTest passed 10000 test(s)\n    ok fractionalExactTest passed 10000 test(s)\n    ok zeroDenominatorRefusedTest passed 10000 test(s)\n    ok surfaceEdgeRefusedTest passed 10000 test(s)\n    ok integerInteriorTest passed 10000 test(s)\n    ok fractionalCommandNotInteriorAuthorityTest passed 10000 test(s)\n\n  9 passing (1490ms)\n",
+      "stderr": "Running as unit: qa-harness-804e9bc9775541d1b3736a0a7241e677.scope; invocation ID: a3d4053670884132a12e628067d666b6\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v14/coordinate_representation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (431ms at 4640 traces/second).\nUse --seed=0x13e4f1e --backend=rust to reproduce.\n",
+      "stderr": "Running as unit: qa-harness-7b4f8983cffe4f63ba9a0b3a9d0f226a.scope; invocation ID: d0dfaa0098cd4c29bc014feffe1e1829\n"
+    }
+  ],
+  "nativeExecuted": false,
+  "runtimeStillExactFrozenV13": true,
+  "namedCases": 32,
+  "models": 2,
+  "randomTracesPerModel": 2000,
+  "maxSteps": 100,
+  "sourceSHA256": {
+    "V14_GEOMETRY_CONTRACT.md": "3517cf5aacfed90496036db552cb4f4912b4c4388c357f49f53d18a4cd080c55",
+    "viewport_geometry.qnt": "30604b7fb9c83b37bd9234f302bc0c871f2e0450e13b991d517ffc092e8b835e",
+    "viewport_geometry_test.qnt": "6d3b95c9fdcb8aaee9c971d7ccdb565558e23a030dc3901e53ad167ba788ec5b",
+    "coordinate_representation.qnt": "914e260a498079bd6f01a813688a122a6adc8fd7b74463cccd6d52663bfee75b",
+    "coordinate_representation_test.qnt": "9bcb24dd9a380cf36c934a03e73d1970f4e853923d8357030f8051e75cdb13e4",
+    "private_session.py": "4351a20bb62645df2a8b41972d7de692039eef2c079bd2f6533340315d9300e4",
+    "compose.html": "2f59cfe679c48691ff82b245a8f299953b934367992e5fa04f06ac7d25c17638",
+    "cdp_readonly.py": "8f544e6604aba21c37f2fea5b762326c3dc99067ac9de7d93502706c03949d63"
+  },
+  "retainedPreparationFailures": [
+    "Missing assignment parentheses QNT000 fixed before runtime",
+    "Undefined abs QNT404 fixed with pure absolute before runtime"
+  ]
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_table" xml:lang="sr">
+  <info>
+    <link type="next" xref="commands_flat_review"/>
+    <link type="guide" xref="commands#reading_documents"/>
+    <link type="seealso" xref="howto_tables"/>
+    <title type="sort">3. Кретање табелом</title>
+    <title type="link">Кретање табелом</title>
+    <desc>Наредбе за приступ подацима у табелама</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Наредбе за кретање табелом</title>
+  <p>Оркина подршка за кретање по ћелијама табеле је део њених <link xref="commands_structural_navigation#tables">наредби за структурну навигацију</link>. Додатно можете да:</p>
+  <list>
+    <item>
+      <p>Поставите динамичка заглавља редова на тренутну колону: <keyseq><key>Оркин измењивач</key><key>C</key></keyseq></p>
+    </item>
+    <item>
+      <p>Поставите динамичка заглавља колона на тренутни ред: <keyseq><key>Оркин измењивач</key><key>R</key></keyseq></p>
+    </item>
+    <item>
+      <p>Очистите динамичка заглавља редова: <keyseq><key>Оркин измењивач</key><key>C</key></keyseq> (двоструки клик)</p>
+    </item>
+    <item>
+      <p>Очистите динамичка заглавља колона: <keyseq><key>Оркин измењивач</key><key>R</key></keyseq> (двоструки клик)</p>
+    </item>
+    <item>
+      <p>Промена између читања ћелије и реда у табели: <keyseq><key>Орка измењивач</key><key>F11</key></keyseq></p>
+    </item>
+  </list>
+</page>

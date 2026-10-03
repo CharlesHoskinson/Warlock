@@ -1,0 +1,82 @@
+{
+  "checks": [
+    {
+      "name": "taskbar exposes Task View and Show desktop controls",
+      "passed": true
+    },
+    {
+      "name": "assistive taskbar press minimizes exact active window",
+      "passed": true
+    },
+    {
+      "name": "minimized preview remains exposed without restoring window",
+      "passed": true
+    },
+    {
+      "name": "assistive preview restores and focuses exact minimized identity",
+      "passed": true
+    },
+    {
+      "name": "standard app menu action exposes current checked setting",
+      "passed": true
+    },
+    {
+      "name": "dismissed app menu action cannot change settings",
+      "passed": true
+    },
+    {
+      "name": "assistive taskbar Close targets only selected preview",
+      "passed": true
+    },
+    {
+      "name": "Task View exposes named window and captured identity",
+      "passed": true
+    },
+    {
+      "name": "assistive Task View press focuses exact window",
+      "passed": true
+    },
+    {
+      "name": "hidden Task View action cannot reopen or change window",
+      "passed": true
+    },
+    {
+      "name": "assistive New desktop creates native desktops",
+      "passed": true
+    },
+    {
+      "name": "assistive window context menu moves captured window",
+      "passed": true
+    },
+    {
+      "name": "assistive desktop tab switches native workspace",
+      "passed": true
+    },
+    {
+      "name": "assistive rename edits native persisted desktop name",
+      "passed": true
+    },
+    {
+      "name": "assistive desktop action reorders native catalog",
+      "passed": true
+    },
+    {
+      "name": "assistive reverse reorder restores desktop order",
+      "passed": true
+    },
+    {
+      "name": "assistive close removes only disposable desktop",
+      "passed": true
+    },
+    {
+      "name": "assistive Task View Close closes only own window",
+      "passed": true
+    },
+    {
+      "name": "existing user windows retain native identities",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "result": "pass"
+}

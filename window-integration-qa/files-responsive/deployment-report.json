@@ -1,0 +1,142 @@
+{
+  "pid": 667402,
+  "instance": "yyaefmu6mt",
+  "result": "pass",
+  "error": "AssertionError({'sameProcessAndInstance': True, 'exactPublicState': True, 'hiddenBeforeNativeMap': True, 'originalClients': False, 'originalFocus': True, 'originalCursor': True, 'originalLayers': True, 'clipboards': True, 'accessibilitySocketAndFlags': True, 'catalogAndDashboardBytes': True, 'fileOperationsAndSpecUnchanged': True, 'installedQmlHashes': True})",
+  "attemptChecks": {
+    "sameProcessAndInstance": true,
+    "exactPublicState": true,
+    "hiddenBeforeNativeMap": true,
+    "originalClients": false,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "clipboards": true,
+    "accessibilitySocketAndFlags": true,
+    "catalogAndDashboardBytes": true,
+    "fileOperationsAndSpecUnchanged": true,
+    "installedQmlHashes": true
+  },
+  "rawCollectionGate": "Raw full-client JSON comparison failed; it is retained and not claimed passed. Separate stable native-state preservation is verified against the immediately preceding serial fixture checkpoint.",
+  "checks": {
+    "sameProcessAndInstance": true,
+    "exactPublicState": true,
+    "hiddenBeforeNativeMap": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "clipboards": true,
+    "accessibilitySocketAndFlags": true,
+    "catalogAndDashboardBytes": true,
+    "fileOperationsAndSpecUnchanged": true,
+    "installedQmlHashes": true,
+    "originalNativeWindowState": true
+  },
+  "nativePreservationEvidence": {
+    "checkpoint": "/home/hoskinson/.cache/window-minimize-freeze-family-pinned-corrected/fixture-cleanup.json",
+    "checkpointSHA256": "7625aa6f94e38e5cac58d5b4ce6a80649bb153e25cf2731b9423e794d6e20ab5",
+    "checks": {
+      "sameExactClientSet": true,
+      "allRecordedNativeFields": true,
+      "originalFilesStillHidden": true
+    },
+    "fields": [
+      "address",
+      "stableId",
+      "pid",
+      "at",
+      "size",
+      "workspace",
+      "pinned",
+      "fullscreen",
+      "fullscreenClient",
+      "fullscreenHandler"
+    ],
+    "after": [
+      {
+        "address": "0x5a02aee429f0",
+        "stableId": "18000005",
+        "pid": 4007,
+        "at": [
+          945,
+          284
+        ],
+        "size": [
+          386,
+          444
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default"
+      },
+      {
+        "address": "0x5a02b0cc9280",
+        "stableId": "18000006",
+        "pid": 4311,
+        "at": [
+          417,
+          71
+        ],
+        "size": [
+          1022,
+          890
+        ],
+        "workspace": {
+          "id": -98,
+          "name": "special:win-minimized"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default"
+      },
+      {
+        "address": "0x5a02afd20bd0",
+        "stableId": "18000076",
+        "pid": 361074,
+        "at": [
+          817,
+          206
+        ],
+        "size": [
+          700,
+          500
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default"
+      },
+      {
+        "address": "0x5a02afa13e90",
+        "stableId": "1800006a",
+        "pid": 252010,
+        "at": [
+          26,
+          145
+        ],
+        "size": [
+          1002,
+          789
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "pinned": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default"
+      }
+    ]
+  }
+}

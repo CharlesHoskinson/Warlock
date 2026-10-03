@@ -1,0 +1,14 @@
+{
+  "sourceSHA256": "143e278624bd2ec244fe2c7e818e174f134c7a12e1fdbc638603471a49430c2f",
+  "test_file": "test_family_reservation.py",
+  "before_changes": {
+    "tests": 3,
+    "failures": 3,
+    "cases": [
+      "stale minimized snapshot skips visible owner after old restore settles",
+      "peer freeze runs before entire family reserved",
+      "identity reuse after relation query not rejected"
+    ]
+  },
+  "nativeDesktopTouched": false
+}

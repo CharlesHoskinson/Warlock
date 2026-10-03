@@ -1,0 +1,133 @@
+{
+  "scope": "read-only retained V3 attribution; not acceptance/reclassification",
+  "records": [
+    {
+      "operation": "minimize",
+      "token": "39621bf5f279-1",
+      "validated": true,
+      "ready": true,
+      "settlementReason": "native handover complete",
+      "commits": [
+        {
+          "identity": [
+            "0x5f6e9f9626c0",
+            "18000000",
+            879047
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 92705773330581
+        },
+        {
+          "identity": [
+            "0x5f6e9ff0af50",
+            "18000003",
+            879047
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 92705805557742
+        },
+        {
+          "identity": [
+            "0x5f6e9fdfce90",
+            "18000002",
+            879047
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 92705837739293
+        }
+      ],
+      "exactPresentationSwapPairs": 18,
+      "sourceUploads": [
+        {
+          "stableId": "18000000",
+          "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+          "uploaded": true,
+          "presentInPersistentDecorationCache": true
+        },
+        {
+          "stableId": "18000003",
+          "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+          "uploaded": true,
+          "presentInPersistentDecorationCache": true
+        },
+        {
+          "stableId": "18000002",
+          "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+          "uploaded": true,
+          "presentInPersistentDecorationCache": true
+        }
+      ],
+      "legacyAllSourcesInCache": true
+    },
+    {
+      "operation": "restore",
+      "token": "39621bf5f279-2",
+      "validated": true,
+      "ready": true,
+      "settlementReason": "native handover complete",
+      "commits": [
+        {
+          "identity": [
+            "0x5f6e9f9626c0",
+            "18000000",
+            879047
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 92707044377557
+        },
+        {
+          "identity": [
+            "0x5f6e9fdfce90",
+            "18000002",
+            879047
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 92707108789103
+        },
+        {
+          "identity": [
+            "0x5f6e9ff0af50",
+            "18000003",
+            879047
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 92707173180255
+        }
+      ],
+      "exactPresentationSwapPairs": 16,
+      "sourceUploads": [
+        {
+          "stableId": "18000000",
+          "digest": "e2e063e83e27f7562d535a0a9ce5d95ce9fb167c6cff478fbbd361725087c3e0",
+          "uploaded": true,
+          "presentInPersistentDecorationCache": false
+        },
+        {
+          "stableId": "18000003",
+          "digest": "0dbe0787c85d0b7385099392d38546a8facc07a203d31dff0b1785e8066357ff",
+          "uploaded": true,
+          "presentInPersistentDecorationCache": false
+        },
+        {
+          "stableId": "18000002",
+          "digest": "2e93d3215179c679cc38ec5fe400d292fb0c9330d27f0031406c16253af139ef",
+          "uploaded": true,
+          "presentInPersistentDecorationCache": false
+        }
+      ],
+      "legacyAllSourcesInCache": false
+    }
+  ],
+  "retainedFailureSHA256": "cd97803952151c433906cfdcbed38c22ec449702e39a7c52b7813f32503ab033",
+  "qsKillFailure": "actualCLI108 config/instance selector mutual exclusion",
+  "privateHelpers": "actual privateBus log attributes portal Desktop activation to shell878698, GTK portal causes a11y/gvfs descendants",
+  "productSourcesChanged": false,
+  "nativeLaunch": false,
+  "mainActions": false
+}

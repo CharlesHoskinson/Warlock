@@ -1,0 +1,25 @@
+{
+  "command": [
+    "python3",
+    "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/native_probe_lifecycle_guarded.py",
+    "--execute",
+    "--output",
+    "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/native-lifecycle-attempt-1"
+  ],
+  "manifestSHA256": "7d80172526752827e8efb7c7d5698a4fe37ee4d163c8070f43484ea2c9deb492",
+  "externalActualSources": {
+    "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/bin/orca": "fff9be47907c68db0a708b2beb301738a01ee548afa7b5135b398a247043be63",
+    "/home/hoskinson/window-integration-qa/orca-reader/data/orca/orca-customizations.py": "2695588930b6093a52a025934424d1f8f72e833e9922d296debe9dbcbc0b70eb",
+    "/home/hoskinson/window-integration-qa/orca-reader/legacy_keygrab_compat.py": "e8c3e9759d54038ecea0a51edbdd194d7942d5f241ee6e39407f64f8b4c46b0a",
+    "/home/hoskinson/window-integration-qa/orca-reader/silent_factory.py": "cd5d8c3ed299662b9bb2d719231168f99834a348cd4bc405b8ebb65693705270",
+    "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/ax_device_manager.py": "722845f017bbaefbcaccfb82de6e0138f231ce4d3104bc59f0135f4e50215942",
+    "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/input_event_manager.py": "82690ab2f5bf124824ae2852478012b50b6679151585ac543fe31ef54db49fef",
+    "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/command_manager.py": "fe48cf41fcc4c55a5a0bb7f9e4a35350d6c850365d8368c7991adfa06381a39d",
+    "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/keybindings.py": "6dea8ea7206b3c52ce5ccba12c0386a7199610d4f77c9812c1fa43d0bf3dd5b2",
+    "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/orca_modifier_manager.py": "f2dba51f45610e3c2261a16eac00a8144bdeb4d54efce34bdd19ec4172ef4418",
+    "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/learn_mode_presenter.py": "d583360690b8c8935591925161fb193bec12e5d93472a6964fa4179bc9409d02",
+    "/usr/lib/libatspi.so.0.0.1": "999a75bb6f7c3d5fb962671936faea7471f0728ed4cf7f0ea81fefc544e7071b",
+    "/usr/lib/girepository-1.0/Atspi-2.0.typelib": "102b98b6e1d6a37731c602b7c045bec4ebeca61a2f00c5cf5a266191f110873d",
+    "/usr/bin/Hyprland": "da8fcacf347bcbed83edc40108c6e2298da095e22246bd764e9bb382786cebb2"
+  }
+}

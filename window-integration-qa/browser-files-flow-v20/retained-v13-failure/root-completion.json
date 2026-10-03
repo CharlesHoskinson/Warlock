@@ -1,0 +1,209 @@
+{
+  "updatedUTC": "2026-10-02T01:19:08.132075+00:00",
+  "reportSHA256": "df614caa108c53d17b77db55da4eb2f0a73d9f4c3ba1095ebb5c6ada03f678bd",
+  "manifestSHA256": "dade8f0e50bbf92dccb2a4a2c1d966d923911ee09bd457ab6d24453f044e211e",
+  "fileCount": 40780,
+  "linkCount": 13770,
+  "independentChecks": {
+    "allFrozenBytesModesExact": true,
+    "allFrozenLinksExact": true,
+    "all18MainPreserved": true,
+    "allRecordedPIDStartGone": true,
+    "privateRuntimeGone": true,
+    "noUnexpectedOrRemainingHelpers": true,
+    "normalBrowserAndNoForcedCleanup": true,
+    "nativeProbeAndPluginUnloadedNormally": true,
+    "healthyArchivedParentTransport": true,
+    "actualPrivateBusActivationPolicyVerified": true,
+    "initialRangeDiagnosticIndependentlyReplayed": true,
+    "actualBrowserPrivateBusPIDBindingIndependentlyReplayed": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "privateBrowserFilesAccepted": false,
+  "processes": [
+    {
+      "pid": 2048780,
+      "start": "12635917",
+      "gone": true
+    },
+    {
+      "pid": 2048785,
+      "start": "12635921",
+      "gone": true
+    },
+    {
+      "pid": 2048801,
+      "start": "12635981",
+      "gone": true
+    },
+    {
+      "pid": 2048780,
+      "start": "12635917",
+      "gone": true
+    },
+    {
+      "pid": 2048785,
+      "start": "12635921",
+      "gone": true
+    },
+    {
+      "pid": 2048801,
+      "start": "12635981",
+      "gone": true
+    },
+    {
+      "pid": 2049073,
+      "start": "12636294",
+      "gone": true
+    },
+    {
+      "pid": 2049160,
+      "start": "12636318",
+      "gone": true
+    },
+    {
+      "pid": 2049159,
+      "start": "12636318",
+      "gone": true
+    },
+    {
+      "pid": 2049193,
+      "start": "12636327",
+      "gone": true
+    },
+    {
+      "pid": 2049162,
+      "start": "12636321",
+      "gone": true
+    },
+    {
+      "pid": 2049196,
+      "start": "12636327",
+      "gone": true
+    },
+    {
+      "pid": 2049265,
+      "start": "12636337",
+      "gone": true
+    },
+    {
+      "pid": 2049266,
+      "start": "12636337",
+      "gone": true
+    },
+    {
+      "pid": 2049243,
+      "start": "12636330",
+      "gone": true
+    },
+    {
+      "pid": 2049362,
+      "start": "12636457",
+      "gone": true
+    },
+    {
+      "pid": 2049376,
+      "start": "12636473",
+      "gone": true
+    },
+    {
+      "pid": 2049377,
+      "start": "12636473",
+      "gone": true
+    },
+    {
+      "pid": 2049378,
+      "start": "12636473",
+      "gone": true
+    },
+    {
+      "pid": 2049379,
+      "start": "12636473",
+      "gone": true
+    },
+    {
+      "pid": 2049380,
+      "start": "12636473",
+      "gone": true
+    },
+    {
+      "pid": 2049401,
+      "start": "12636474",
+      "gone": true
+    },
+    {
+      "pid": 2049416,
+      "start": "12636478",
+      "gone": true
+    },
+    {
+      "pid": 2049417,
+      "start": "12636479",
+      "gone": true
+    },
+    {
+      "pid": 2049421,
+      "start": "12636479",
+      "gone": true
+    },
+    {
+      "pid": 2050494,
+      "start": "12637983",
+      "gone": true
+    },
+    {
+      "pid": 2049073,
+      "start": "12636294",
+      "gone": true
+    },
+    {
+      "pid": 2049362,
+      "start": "12636457",
+      "gone": true
+    },
+    {
+      "pid": 2050494,
+      "start": "12637983",
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "environmentObservations": [
+    {
+      "name": "browser",
+      "identity": {
+        "pid": 2049073,
+        "start": "12636294",
+        "ppid": 2048643,
+        "pgid": 2049073
+      },
+      "bytes": 10167,
+      "nonzeroBytes": 0,
+      "initialRangeMatches": false,
+      "currentLibcSelectorsProved": false
+    },
+    {
+      "name": "files",
+      "identity": {
+        "pid": 2049362,
+        "start": "12636457",
+        "ppid": 2048643,
+        "pgid": 2049362
+      },
+      "bytes": 10294,
+      "nonzeroBytes": 10073,
+      "initialRangeMatches": true,
+      "currentLibcSelectorsProved": false
+    }
+  ],
+  "failure": "RuntimeError('Bounded actual observation timed out:browser actual stable viewport/native layout pairing')",
+  "rawOwnedProcessEvidenceSHA256": "46e60005d122b532b8af8cd2083a24aff111f884def9f9cc1f91427c4a75aab3",
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false
+}

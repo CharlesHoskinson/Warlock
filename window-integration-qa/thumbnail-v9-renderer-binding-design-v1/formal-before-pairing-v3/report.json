@@ -1,0 +1,57 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a3727726b572442795b0f1ae42c21999.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/renderer_collector_binding_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/formal-before-pairing-v3/check-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/renderer_collector_binding_test.qnt",
+        "--backend=rust"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/formal-before-pairing-v3/check-1.log",
+      "sha256": "2dcae9eb9f1fc5562d362a1440c20fe8b9ffa2cf8eae98d0d514326c40c11999"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/renderer_collector_binding.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100705",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/formal-before-pairing-v3/check-2.log",
+      "sha256": "25f7cddd51e8983072248cdcaa29e533c5ce3551bdd9a3af4f091eb0dd350de3"
+    }
+  ],
+  "models": {
+    "renderer_collector_binding.qnt": "793001c9d5f3179d28aae1535aede4661bb2940b6e4138a5bbed0e63c300a1af",
+    "renderer_collector_binding_test.qnt": "22fd59606b2669e6eac0864925753ad8c864aef356d9d523ae083a892b0e28e5",
+    "RENDERER_COLLECTOR_BINDING_CONTRACT.md": "47364134a32bc42c2c59127ad58131e0d558cab311f31269e4e88970d75f07a5"
+  },
+  "inheritedV8Untouched": true,
+  "inheritedV8InputCount": 439,
+  "selectedV24ManifestSHA256": "b017d8d2a126f76c637429fffc2d77d510161fb89d3f3826795abb47d30b9f2c",
+  "runtimeEdited": false,
+  "nativeLaunch": false,
+  "nativeAccepted": false
+}

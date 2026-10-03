@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.20)
+project(FixtureKeys LANGUAGES CXX)
+set(CMAKE_AUTOMOC ON)
+find_package(Qt6 REQUIRED COMPONENTS Quick QuickPrivate Qml)
+add_library(fixturekeys MODULE keys.cpp)
+target_link_libraries(fixturekeys PRIVATE Qt6::QuickPrivate Qt6::Qml)

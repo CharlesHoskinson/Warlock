@@ -1,0 +1,17 @@
+{
+  "result": "retained original QA refusal",
+  "pythonTestsExecuted": 118,
+  "errors": 26,
+  "failures": 1,
+  "actualStaleModules": [
+    "recovery_runtime",
+    "recovery_cancel",
+    "helper_supervisor"
+  ],
+  "cause": "Original archival tests insert V17 source during unittest discovery before actual nineteen-module candidate bootstrap",
+  "correction": "Fresh source-only CPU entrypoint bootstraps and checks all actual selected candidate sources before discovering all original unmodified tests; no filters or altered assertions",
+  "productChanged": false,
+  "nativeRun": false,
+  "originalFullFailedLog": "/home/hoskinson/window-integration-qa/thumbnail-v7-full-proof-v1/cpu.log",
+  "sha256": "cabb3e8fc907842a088c3112bfe8a2f3f8e45f534a79df086c243075ca2374d2"
+}

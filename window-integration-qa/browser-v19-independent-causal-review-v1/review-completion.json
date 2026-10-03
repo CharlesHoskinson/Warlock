@@ -1,0 +1,24 @@
+{
+  "result": "pass",
+  "boundedCausalChecks": 187,
+  "causalSHA256": "77a3cf3d5381d6149d07dc1a15cc54fa2f731bc637f3ac88765e52e195d0e022",
+  "rootOriginalTerminalAuditSHA256": "aecb7f75a9096134134d4553db999ebe2eda26c3081af8259b81477f96e72325",
+  "rootOriginalSafetyChecks": {
+    "allFrozenBytesModesExact": true,
+    "allFrozenLinksExact": true,
+    "all18MainPreserved": true,
+    "allRecordedPIDStartGone": true,
+    "privateRuntimeGone": true,
+    "noUnexpectedOrRemainingHelpers": true,
+    "normalBrowserAndNoForcedCleanup": true,
+    "nativeProbeAndPluginUnloadedNormally": true,
+    "healthyArchivedParentTransport": true,
+    "actualPrivateBusActivationPolicyVerified": true,
+    "initialRangeDiagnosticIndependentlyReplayed": true,
+    "actualBrowserPrivateBusPIDBindingIndependentlyReplayed": true
+  },
+  "actualOriginalFeatureAccepted": false,
+  "finding": "actual leading minus has physical Escape/keyCode27; no beforeinput/input; remaining10 exactcaret inserts, nofocusloss",
+  "nativeExecuted": false,
+  "mainWrites": false
+}

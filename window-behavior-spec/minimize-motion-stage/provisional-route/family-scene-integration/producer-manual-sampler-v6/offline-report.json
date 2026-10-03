@@ -1,0 +1,156 @@
+{
+  "nativeLaunch": false,
+  "GPUOperation": false,
+  "commands": [
+    {
+      "label": "build",
+      "command": [
+        "make",
+        "-j2",
+        "hypr-motion-renderer-staged",
+        "test-manual-sampling",
+        "test-family-scene",
+        "test-commit-ledger",
+        "test-backend-policy",
+        "test-library-material",
+        "test-readback-image",
+        "test-causal-image"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/offline-build.log",
+      "logSHA256": "3dbeaf09e4c257fa9ae4fe3f22dc21646151d93a2070cdcfb4f3d80e8ec0bdd1"
+    },
+    {
+      "label": "manual-consumer",
+      "command": [
+        "./test-manual-sampling"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/offline-manual-consumer.log",
+      "logSHA256": "96eff2e0e023e4178938492f008f034cbafb53739f1ac6ee0edb7321f756353e"
+    },
+    {
+      "label": "family-consumer",
+      "command": [
+        "./test-family-scene"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/offline-family-consumer.log",
+      "logSHA256": "e5f9a0fc36e7042a63c65ce96e6a88512a2ff35ece8373d6fd5bed9cb42a2df8"
+    },
+    {
+      "label": "commit-ledger",
+      "command": [
+        "./test-commit-ledger"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/offline-commit-ledger.log",
+      "logSHA256": "b523a9d46b00238960bf4b3b8fc66ef2f20a89c4ca6ada4082c51d4d72518872"
+    },
+    {
+      "label": "backend",
+      "command": [
+        "./test-backend-policy"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/offline-backend.log",
+      "logSHA256": "02b1002f19a52ba7db9de2014fad973f71cc796747244ca3a7700e1a01cac3ea"
+    },
+    {
+      "label": "material",
+      "command": [
+        "./test-library-material"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/offline-material.log",
+      "logSHA256": "9bb0d6a51a6530b3aca12899fcc753a0465a66dbdab491fa0addc54a0217980e"
+    },
+    {
+      "label": "readback",
+      "command": [
+        "./test-readback-image"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/offline-readback.log",
+      "logSHA256": "cd7ce0f38c73d4563a95c0e0bb2779a2aa738b7068789d6ace3b47d733fc946d"
+    },
+    {
+      "label": "causal",
+      "command": [
+        "./test-causal-image"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/offline-causal.log",
+      "logSHA256": "61422d8557aae61a6b367f34548c3a115a36153d19b19c8b041f7d01f3f47a0b"
+    },
+    {
+      "label": "binding",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_verify_sampling",
+        "test_verify_causal"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/offline-binding.log",
+      "logSHA256": "f3b1dbeb96e8a12a03701283144932111269748fef29c3372eb57a962e2e86bc"
+    },
+    {
+      "label": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "manual_sampling_test.qnt"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/offline-typecheck.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "named",
+      "command": [
+        "quint",
+        "test",
+        "manual_sampling_test.qnt"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/offline-named.log",
+      "logSHA256": "cc6c204ff404d367644ae51fb696942f6d9d7bfbd9879c318128939af844a221"
+    },
+    {
+      "label": "model",
+      "command": [
+        "quint",
+        "run",
+        "manual_sampling.qnt",
+        "--invariant",
+        "allProps",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "40",
+        "--seed",
+        "2026100114",
+        "--verbosity",
+        "0"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-manual-sampler-v6/offline-model.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "manualConsumerChecks": 52,
+  "familyConsumerChecks": 73,
+  "ledgerChecks": 80,
+  "backendChecks": 20,
+  "materialChecks": 34,
+  "readbackChecks": 10,
+  "causalChecks": 15,
+  "PythonBindingTests": 25,
+  "newSamplerBindingTests": 11,
+  "namedSamplingScenarios": 8,
+  "samplingModelSamples": 2000,
+  "scope": "offline guards/math only; no native pixel or cadence acceptance"
+}

@@ -1,0 +1,14 @@
+
+  renderer_terminal_test
+    ok zombieExactPidfdIsTerminalTest passed 1 test(s)
+    ok absentOldLifetimeIsTerminalTest passed 1 test(s)
+    ok reusedPidDoesNotWriteReplacementTest passed 1 test(s)
+    ok liveSameLifetimeRefusesTest passed 1 test(s)
+    ok unboundTerminalWitnessRefusesTest passed 1 test(s)
+    ok unreadableWitnessRefusesTest passed 1 test(s)
+    ok modernZombieWithoutHelperClosureRefusesTest passed 1 test(s)
+    ok terminalRendererDoesNotClearNativeUncertaintyTest passed 1 test(s)
+    ok physicalExitWithoutDurableRetiredCannotAcknowledgeTest passed 1 test(s)
+    ok terminalSnapshotCannotBlessLaterLiveObservationTest passed 1 test(s)
+
+  10 passing (483ms)

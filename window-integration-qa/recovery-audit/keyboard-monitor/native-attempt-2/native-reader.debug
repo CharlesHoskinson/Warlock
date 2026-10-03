@@ -1,0 +1,1460 @@
+00:41:17.714564 - INFO: Preparing to launch.
+00:41:17.714912 - REMOTE CONTROLLER: Service not ready; queuing decorated registration for QAObservation.
+00:41:17.715010 - QA LEGACY KEYGRAB COMPAT: resolves command keysyms to actual GDK hardware keycodes for DeviceLegacy only
+00:41:17.715526 - ORCA: Attempt to load orca-customizations from /tmp/kbn-z74ch4m6/data/orca/orca-customizations.py succeeded.
+00:41:17.715581 - ORCA: Invalid speech server factory: silent_factory
+00:41:17.731238 - INFO: About to launch Orca.
+00:41:17.732911 - ORCA: Accessibility enabled: false
+00:41:17.732930 - ORCA: Enabling accessibility.
+00:41:17.734995 - GSETTINGS REGISTRY: No dconf settings found; proceeding with migration.
+00:41:17.735039 - GSETTINGS REGISTRY: Migrating 'live-regions' settings to GSettings.
+00:41:17.735069 - GSETTINGS REGISTRY: Schema org.gnome.Orca.LiveRegions loaded
+00:41:17.735112 - GSETTINGS REGISTRY: Migrating 'sound' settings to GSettings.
+00:41:17.735125 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Sound loaded
+00:41:17.735149 - GSETTINGS REGISTRY: Migrating 'structural-navigation' settings to GSettings.
+00:41:17.735161 - GSETTINGS REGISTRY: Schema org.gnome.Orca.StructuralNavigation loaded
+00:41:17.735184 - GSETTINGS REGISTRY: Migrating 'say-all' settings to GSettings.
+00:41:17.735194 - GSETTINGS REGISTRY: Schema org.gnome.Orca.SayAll loaded
+00:41:17.735214 - GSETTINGS REGISTRY: Migrating 'caret-navigation' settings to GSettings.
+00:41:17.735222 - GSETTINGS REGISTRY: Schema org.gnome.Orca.CaretNavigation loaded
+00:41:17.735237 - GSETTINGS REGISTRY: Migrating 'table-navigation' settings to GSettings.
+00:41:17.735244 - GSETTINGS REGISTRY: Schema org.gnome.Orca.TableNavigation loaded
+00:41:17.735260 - GSETTINGS REGISTRY: Migrating 'document' settings to GSettings.
+00:41:17.735271 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Document loaded
+00:41:17.735301 - GSETTINGS REGISTRY: Migrating 'speech' settings to GSettings.
+00:41:17.735309 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Speech loaded
+00:41:17.735325 - GSETTINGS REGISTRY: Migrating 'voice' settings to GSettings.
+00:41:17.735332 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Voice loaded
+00:41:17.735348 - GSETTINGS REGISTRY: Migrating 'typing-echo' settings to GSettings.
+00:41:17.735355 - GSETTINGS REGISTRY: Schema org.gnome.Orca.TypingEcho loaded
+00:41:17.735370 - GSETTINGS REGISTRY: Migrating 'chat' settings to GSettings.
+00:41:17.735377 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Chat loaded
+00:41:17.735390 - GSETTINGS REGISTRY: Migrating 'flat-review' settings to GSettings.
+00:41:17.735396 - GSETTINGS REGISTRY: Schema org.gnome.Orca.FlatReview loaded
+00:41:17.735409 - GSETTINGS REGISTRY: Migrating 'mouse-review' settings to GSettings.
+00:41:17.735417 - GSETTINGS REGISTRY: Schema org.gnome.Orca.MouseReview loaded
+00:41:17.735433 - GSETTINGS REGISTRY: Migrating 'spellcheck' settings to GSettings.
+00:41:17.735439 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Spellcheck loaded
+00:41:17.735452 - GSETTINGS REGISTRY: Migrating 'system-information' settings to GSettings.
+00:41:17.735459 - GSETTINGS REGISTRY: Schema org.gnome.Orca.SystemInformation loaded
+00:41:17.735472 - GSETTINGS REGISTRY: Migrating 'text-attributes' settings to GSettings.
+00:41:17.735478 - GSETTINGS REGISTRY: Schema org.gnome.Orca.TextAttributes loaded
+00:41:17.735497 - GSETTINGS REGISTRY: Migrating 'braille' settings to GSettings.
+00:41:17.735504 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Braille loaded
+00:41:17.735518 - GSETTINGS REGISTRY: Migrating 'keybindings' settings to GSettings.
+00:41:17.735524 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Keybindings loaded
+00:41:17.735538 - GSETTINGS REGISTRY: Schema org.gnome.Orca.ProfileMetadata loaded
+00:41:17.735609 - ORCA: Loading User Settings
+00:41:17.735617 - EVENT MANAGER: Pause queueing: True. Clear queue: True. Loading user settings.
+00:41:17.735632 - INPUT EVENT MANAGER: Pause queueing: True. Loading user settings.
+00:41:17.735895 - DEFAULT: Setting up commands for None
+00:41:17.736214 - DEFAULT: Braille bindings unavailable.
+00:41:17.736252 - BRAILLE PRESENTER: Commands set up.
+00:41:17.736269 - NOTIFICATION PRESENTER: Commands set up.
+00:41:17.736276 - CLIPBOARD PRESENTER: Commands set up.
+00:41:17.736280 - COMMAND MANAGER: Setting up commands.
+00:41:17.736305 - SAY ALL PRESENTER: Commands set up.
+00:41:17.736312 - TYPING ECHO PRESENTER: Commands set up.
+00:41:17.736344 - SPEECH MANAGER: Commands set up.
+00:41:17.736402 - SPEECH PRESENTER: Commands set up.
+00:41:17.736435 - SLEEP MODE MANAGER: Commands set up.
+00:41:17.736458 - SYSTEM INFORMATION PRESENTER: Commands set up.
+00:41:17.736527 - OBJECT NAVIGATOR: Commands set up.
+00:41:17.736561 - GSETTINGS REGISTRY: Schema org.gnome.Orca.CaretNavigation loaded
+00:41:17.736583 - GSETTINGS SCHEMA HANDLE: caret-navigation/enabled not set [profile:default]
+00:41:17.736588 - GSETTINGS REGISTRY: caret-navigation/enabled using default value = True
+00:41:17.736630 - CARET NAVIGATOR: Commands set up. Suspended: False
+00:41:17.737180 - STRUCTURAL NAVIGATOR: Commands set up. Suspended: False
+00:41:17.737211 - TABLE NAVIGATOR: Commands set up.
+00:41:17.737223 - DOCUMENT PRESENTER: Commands set up.
+00:41:17.737247 - LIVE REGION PRESENTER: Commands set up.
+00:41:17.737254 - LEARN MODE PRESENTER: Commands set up.
+00:41:17.737259 - MOUSE REVIEW: Commands set up.
+00:41:17.737269 - ACTION PRESENTER: Commands set up.
+00:41:17.737298 - FLAT REVIEW PRESENTER: Braille bindings unavailable.
+00:41:17.737423 - FLAT REVIEW PRESENTER: Commands set up.
+00:41:17.737445 - FLAT REVIEW FINDER: Commands set up.
+00:41:17.737485 - WHERE AM I PRESENTER: Commands set up.
+00:41:17.737492 - DEBUGGING TOOLS MANAGER: Commands set up.
+00:41:17.737501 - CHAT PRESENTER: Commands set up.
+00:41:17.737507 - PROFILE MANAGER: Commands set up.
+00:41:17.737514 - BRAILLE: Setting up key ranges.
+00:41:17.737535 - BRAILLE: Initializing. Callback: None
+00:41:17.737539 - BRAILLE: Initialization failed: BrlApi is not defined.
+00:41:17.737542 - BRAILLE: Not setting up key ranges: BrlAPI not running.
+00:41:17.737548 - DEFAULT: Commands set up: 219 keyboard commands
+00:41:17.737554 - SCRIPT: default (module=orca.scripts.default) initialized
+00:41:17.737565 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Keybindings loaded
+00:41:17.737583 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:17.737587 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:17.737592 - COMMAND MANAGER: Setting keyboard layout is_desktop to True.
+00:41:17.737617 - GSETTINGS SCHEMA HANDLE: keybindings/entries no dict values set
+00:41:17.737621 - GSETTINGS REGISTRY: keybindings/entries using default value = {}
+00:41:17.737624 - COMMAND MANAGER: No user overrides to apply
+00:41:17.737627 - COMMAND MANAGER: Device not ready, skipping grab updates.
+00:41:17.737630 - COMMAND MANAGER: Keyboard layout set to desktop.
+00:41:17.737635 - PRESENTATION MANAGER: Starting presenters
+00:41:17.737677 - SPEECH MANAGER: start_speech. Script: None Event: None notify_user: False
+00:41:17.737681 - SPEECH MANAGER: Initializing server
+00:41:17.737690 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Speech loaded
+00:41:17.737701 - GSETTINGS SCHEMA HANDLE: speech/speech-server-factory not set [profile:default]
+00:41:17.737705 - GSETTINGS REGISTRY: speech/speech-server-factory using default value = 'speechdispatcherfactory'
+00:41:17.738367 - ERROR: Speech Dispatcher is not available
+00:41:17.738378 - SPEECH MANAGER: No speech server for factory: speechdispatcherfactory
+00:41:17.738513 - SPEECH MANAGER: Using speech server factory: silent_factory
+00:41:17.738534 - GSETTINGS SCHEMA HANDLE: speech/synthesizer not set [profile:default]
+00:41:17.738550 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Voice loaded
+00:41:17.738565 - GSETTINGS SCHEMA HANDLE: voice/established not set [profile:default]
+00:41:17.738576 - GSETTINGS SCHEMA HANDLE: voice/rate not set [profile:default]
+00:41:17.738585 - GSETTINGS SCHEMA HANDLE: voice/pitch not set [profile:default]
+00:41:17.738593 - GSETTINGS SCHEMA HANDLE: voice/volume not set [profile:default]
+00:41:17.738603 - GSETTINGS SCHEMA HANDLE: voice/family-name not set [profile:default]
+00:41:17.738615 - GSETTINGS SCHEMA HANDLE: voice/family-lang not set [profile:default]
+00:41:17.738623 - GSETTINGS SCHEMA HANDLE: voice/family-dialect not set [profile:default]
+00:41:17.738631 - GSETTINGS SCHEMA HANDLE: voice/family-gender not set [profile:default]
+00:41:17.738637 - GSETTINGS SCHEMA HANDLE: voice/family-variant not set [profile:default]
+00:41:17.738651 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+00:41:17.738654 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+00:41:17.738666 - GSETTINGS SCHEMA HANDLE: speech/capitalization-style not set [profile:default]
+00:41:17.738670 - GSETTINGS REGISTRY: speech/capitalization-style using default value = 'none'
+00:41:17.738676 - SPEECH MANAGER: Server initialized
+00:41:17.738685 - GSETTINGS REGISTRY: braille/enabled runtime override = False
+00:41:17.738693 - GSETTINGS REGISTRY: sound/enabled runtime override = False
+00:41:17.738704 - GSETTINGS REGISTRY: Schema org.gnome.Orca.MouseReview loaded
+00:41:17.738716 - GSETTINGS SCHEMA HANDLE: mouse-review/enabled not set [profile:default]
+00:41:17.738719 - GSETTINGS REGISTRY: mouse-review/enabled using default value = False
+00:41:17.738725 - ORCA MODIFIER MANAGER: Refreshing Orca modifiers: Loading user settings.
+00:41:17.738735 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:17.738738 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:17.738746 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:17.738750 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:17.738759 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:17.738762 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:17.738768 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:17.738772 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:17.738807 - INPUT EVENT MANAGER: No device to add grab for Insert
+00:41:17.738824 - INPUT EVENT MANAGER: No device to add grab for KP_Insert
+00:41:17.738831 - ORCA MODIFIER MANAGER: DISPLAY not set, skipping xkbcomp operations
+00:41:17.738836 - EVENT MANAGER: Pause queueing: False. Clear queue: False. User settings loaded.
+00:41:17.738840 - INPUT EVENT MANAGER: Pause queueing: False. User settings loaded.
+00:41:17.738843 - ORCA: User Settings Loaded
+00:41:17.738854 - DEBUGGING TOOLS MANAGER: Orca version 50.2 (rev 56a193527), AT-SPI2 version: 2.60.6, Session: Hyprland
+00:41:17.742509 - DEBUGGING TOOLS MANAGER: Desktop has 0 app(s):
+00:41:17.742536 - ORCA: Running under systemd: True
+00:41:17.742546 - REMOTE CONTROLLER: Attempting to start D-Bus service.
+00:41:17.742592 - REMOTE CONTROLLER: SessionMessageBus acquired: :1.3
+00:41:17.743699 - REMOTE CONTROLLER: Service started name=org.gnome.Orca.Service path=/org/gnome/Orca/Service.
+00:41:17.743716 - REMOTE CONTROLLER: Processing 25 pending module registrations.
+00:41:17.743723 - REMOTE CONTROLLER: Processing pending registration for LiveRegionPresenter.
+00:41:17.743787 - REMOTE CONTROLLER: Processing pending registration for SoundPresenter.
+00:41:17.743876 - DBUS SERVICE: OrcaModuleDBusInterface for SoundPresenter initialized with 0 command(s), 0 parameterized command(s), 5 getter(s), 5 setter(s).
+00:41:17.744047 - DBUS SERVICE: Successfully published SoundPresenter at /org/gnome/Orca/Service/SoundPresenter.
+00:41:17.744057 - REMOTE CONTROLLER: Successfully registered 10 commands/getters/setters for module SoundPresenter.
+00:41:17.744063 - REMOTE CONTROLLER: Processing pending registration for StructuralNavigator.
+00:41:17.744453 - DBUS SERVICE: OrcaModuleDBusInterface for StructuralNavigator initialized with 85 command(s), 0 parameterized command(s), 4 getter(s), 4 setter(s).
+00:41:17.744608 - DBUS SERVICE: Successfully published StructuralNavigator at /org/gnome/Orca/Service/StructuralNavigator.
+00:41:17.744616 - REMOTE CONTROLLER: Successfully registered 93 commands/getters/setters for module StructuralNavigator.
+00:41:17.744622 - REMOTE CONTROLLER: Processing pending registration for SayAllPresenter.
+00:41:17.744723 - DBUS SERVICE: OrcaModuleDBusInterface for SayAllPresenter initialized with 3 command(s), 0 parameterized command(s), 10 getter(s), 10 setter(s).
+00:41:17.744855 - DBUS SERVICE: Successfully published SayAllPresenter at /org/gnome/Orca/Service/SayAllPresenter.
+00:41:17.744862 - REMOTE CONTROLLER: Successfully registered 23 commands/getters/setters for module SayAllPresenter.
+00:41:17.744867 - REMOTE CONTROLLER: Processing pending registration for CaretNavigator.
+00:41:17.744943 - DBUS SERVICE: OrcaModuleDBusInterface for CaretNavigator initialized with 12 command(s), 0 parameterized command(s), 3 getter(s), 3 setter(s).
+00:41:17.745070 - DBUS SERVICE: Successfully published CaretNavigator at /org/gnome/Orca/Service/CaretNavigator.
+00:41:17.745078 - REMOTE CONTROLLER: Successfully registered 18 commands/getters/setters for module CaretNavigator.
+00:41:17.745083 - REMOTE CONTROLLER: Processing pending registration for TableNavigator.
+00:41:17.745156 - DBUS SERVICE: OrcaModuleDBusInterface for TableNavigator initialized with 15 command(s), 0 parameterized command(s), 2 getter(s), 2 setter(s).
+00:41:17.745283 - DBUS SERVICE: Successfully published TableNavigator at /org/gnome/Orca/Service/TableNavigator.
+00:41:17.745290 - REMOTE CONTROLLER: Successfully registered 19 commands/getters/setters for module TableNavigator.
+00:41:17.745295 - REMOTE CONTROLLER: Processing pending registration for DocumentPresenter.
+00:41:17.745399 - DBUS SERVICE: OrcaModuleDBusInterface for DocumentPresenter initialized with 3 command(s), 0 parameterized command(s), 10 getter(s), 7 setter(s).
+00:41:17.745520 - DBUS SERVICE: Successfully published DocumentPresenter at /org/gnome/Orca/Service/DocumentPresenter.
+00:41:17.745527 - REMOTE CONTROLLER: Successfully registered 20 commands/getters/setters for module DocumentPresenter.
+00:41:17.745531 - REMOTE CONTROLLER: Processing pending registration for SpeechPresenter.
+00:41:17.745782 - DBUS SERVICE: OrcaModuleDBusInterface for SpeechPresenter initialized with 5 command(s), 0 parameterized command(s), 33 getter(s), 33 setter(s).
+00:41:17.745908 - DBUS SERVICE: Successfully published SpeechPresenter at /org/gnome/Orca/Service/SpeechPresenter.
+00:41:17.745915 - REMOTE CONTROLLER: Successfully registered 71 commands/getters/setters for module SpeechPresenter.
+00:41:17.745920 - REMOTE CONTROLLER: Processing pending registration for SpeechManager.
+00:41:17.746149 - DBUS SERVICE: OrcaModuleDBusInterface for SpeechManager initialized with 14 command(s), 1 parameterized command(s), 18 getter(s), 15 setter(s).
+00:41:17.746283 - DBUS SERVICE: Successfully published SpeechManager at /org/gnome/Orca/Service/SpeechManager.
+00:41:17.746290 - REMOTE CONTROLLER: Successfully registered 48 commands/getters/setters for module SpeechManager.
+00:41:17.746295 - REMOTE CONTROLLER: Processing pending registration for TypingEchoPresenter.
+00:41:17.746407 - DBUS SERVICE: OrcaModuleDBusInterface for TypingEchoPresenter initialized with 1 command(s), 0 parameterized command(s), 14 getter(s), 14 setter(s).
+00:41:17.746617 - DBUS SERVICE: Successfully published TypingEchoPresenter at /org/gnome/Orca/Service/TypingEchoPresenter.
+00:41:17.746625 - REMOTE CONTROLLER: Successfully registered 29 commands/getters/setters for module TypingEchoPresenter.
+00:41:17.746630 - REMOTE CONTROLLER: Processing pending registration for SleepModeManager.
+00:41:17.746659 - DBUS SERVICE: OrcaModuleDBusInterface for SleepModeManager initialized with 1 command(s), 0 parameterized command(s), 0 getter(s), 0 setter(s).
+00:41:17.746778 - DBUS SERVICE: Successfully published SleepModeManager at /org/gnome/Orca/Service/SleepModeManager.
+00:41:17.746784 - REMOTE CONTROLLER: Successfully registered 1 commands/getters/setters for module SleepModeManager.
+00:41:17.746789 - REMOTE CONTROLLER: Processing pending registration for ActionPresenter.
+00:41:17.746823 - DBUS SERVICE: OrcaModuleDBusInterface for ActionPresenter initialized with 1 command(s), 0 parameterized command(s), 0 getter(s), 0 setter(s).
+00:41:17.746942 - DBUS SERVICE: Successfully published ActionPresenter at /org/gnome/Orca/Service/ActionPresenter.
+00:41:17.746948 - REMOTE CONTROLLER: Successfully registered 1 commands/getters/setters for module ActionPresenter.
+00:41:17.746953 - REMOTE CONTROLLER: Processing pending registration for ChatPresenter.
+00:41:17.747019 - DBUS SERVICE: OrcaModuleDBusInterface for ChatPresenter initialized with 5 command(s), 0 parameterized command(s), 5 getter(s), 5 setter(s).
+00:41:17.747139 - DBUS SERVICE: Successfully published ChatPresenter at /org/gnome/Orca/Service/ChatPresenter.
+00:41:17.747145 - REMOTE CONTROLLER: Successfully registered 15 commands/getters/setters for module ChatPresenter.
+00:41:17.747150 - REMOTE CONTROLLER: Processing pending registration for ClipboardPresenter.
+00:41:17.747186 - DBUS SERVICE: OrcaModuleDBusInterface for ClipboardPresenter initialized with 1 command(s), 0 parameterized command(s), 0 getter(s), 0 setter(s).
+00:41:17.747306 - DBUS SERVICE: Successfully published ClipboardPresenter at /org/gnome/Orca/Service/ClipboardPresenter.
+00:41:17.747312 - REMOTE CONTROLLER: Successfully registered 1 commands/getters/setters for module ClipboardPresenter.
+00:41:17.747316 - REMOTE CONTROLLER: Processing pending registration for FlatReviewPresenter.
+00:41:17.747423 - DBUS SERVICE: OrcaModuleDBusInterface for FlatReviewPresenter initialized with 33 command(s), 0 parameterized command(s), 1 getter(s), 1 setter(s).
+00:41:17.747542 - DBUS SERVICE: Successfully published FlatReviewPresenter at /org/gnome/Orca/Service/FlatReviewPresenter.
+00:41:17.747549 - REMOTE CONTROLLER: Successfully registered 35 commands/getters/setters for module FlatReviewPresenter.
+00:41:17.747553 - REMOTE CONTROLLER: Processing pending registration for NotificationPresenter.
+00:41:17.747590 - DBUS SERVICE: OrcaModuleDBusInterface for NotificationPresenter initialized with 4 command(s), 0 parameterized command(s), 0 getter(s), 0 setter(s).
+00:41:17.747704 - DBUS SERVICE: Successfully published NotificationPresenter at /org/gnome/Orca/Service/NotificationPresenter.
+00:41:17.747711 - REMOTE CONTROLLER: Successfully registered 4 commands/getters/setters for module NotificationPresenter.
+00:41:17.747715 - REMOTE CONTROLLER: Processing pending registration for ObjectNavigator.
+00:41:17.747756 - DBUS SERVICE: OrcaModuleDBusInterface for ObjectNavigator initialized with 6 command(s), 0 parameterized command(s), 0 getter(s), 0 setter(s).
+00:41:17.747881 - DBUS SERVICE: Successfully published ObjectNavigator at /org/gnome/Orca/Service/ObjectNavigator.
+00:41:17.747888 - REMOTE CONTROLLER: Successfully registered 6 commands/getters/setters for module ObjectNavigator.
+00:41:17.747892 - REMOTE CONTROLLER: Processing pending registration for ProfileManager.
+00:41:17.747944 - DBUS SERVICE: OrcaModuleDBusInterface for ProfileManager initialized with 2 command(s), 0 parameterized command(s), 3 getter(s), 2 setter(s).
+00:41:17.748059 - DBUS SERVICE: Successfully published ProfileManager at /org/gnome/Orca/Service/ProfileManager.
+00:41:17.748066 - REMOTE CONTROLLER: Successfully registered 7 commands/getters/setters for module ProfileManager.
+00:41:17.748071 - REMOTE CONTROLLER: Processing pending registration for SpellCheckPresenter.
+00:41:17.748137 - DBUS SERVICE: OrcaModuleDBusInterface for SpellCheckPresenter initialized with 0 command(s), 0 parameterized command(s), 3 getter(s), 3 setter(s).
+00:41:17.748250 - DBUS SERVICE: Successfully published SpellCheckPresenter at /org/gnome/Orca/Service/SpellCheckPresenter.
+00:41:17.748257 - REMOTE CONTROLLER: Successfully registered 6 commands/getters/setters for module SpellCheckPresenter.
+00:41:17.748261 - REMOTE CONTROLLER: Processing pending registration for SystemInformationPresenter.
+00:41:17.748317 - DBUS SERVICE: OrcaModuleDBusInterface for SystemInformationPresenter initialized with 4 command(s), 0 parameterized command(s), 4 getter(s), 2 setter(s).
+00:41:17.748433 - DBUS SERVICE: Successfully published SystemInformationPresenter at /org/gnome/Orca/Service/SystemInformationPresenter.
+00:41:17.748440 - REMOTE CONTROLLER: Successfully registered 10 commands/getters/setters for module SystemInformationPresenter.
+00:41:17.748444 - REMOTE CONTROLLER: Processing pending registration for TextAttributeManager.
+00:41:17.748479 - DBUS SERVICE: OrcaModuleDBusInterface for TextAttributeManager initialized with 0 command(s), 0 parameterized command(s), 2 getter(s), 2 setter(s).
+00:41:17.748594 - DBUS SERVICE: Successfully published TextAttributeManager at /org/gnome/Orca/Service/TextAttributeManager.
+00:41:17.748600 - REMOTE CONTROLLER: Successfully registered 4 commands/getters/setters for module TextAttributeManager.
+00:41:17.748605 - REMOTE CONTROLLER: Processing pending registration for WhereAmIPresenter.
+00:41:17.748649 - DBUS SERVICE: OrcaModuleDBusInterface for WhereAmIPresenter initialized with 11 command(s), 0 parameterized command(s), 0 getter(s), 0 setter(s).
+00:41:17.748764 - DBUS SERVICE: Successfully published WhereAmIPresenter at /org/gnome/Orca/Service/WhereAmIPresenter.
+00:41:17.748770 - REMOTE CONTROLLER: Successfully registered 11 commands/getters/setters for module WhereAmIPresenter.
+00:41:17.748774 - REMOTE CONTROLLER: Processing pending registration for BraillePresenter.
+00:41:17.748970 - DBUS SERVICE: OrcaModuleDBusInterface for BraillePresenter initialized with 1 command(s), 0 parameterized command(s), 26 getter(s), 25 setter(s).
+00:41:17.749094 - DBUS SERVICE: Successfully published BraillePresenter at /org/gnome/Orca/Service/BraillePresenter.
+00:41:17.749101 - REMOTE CONTROLLER: Successfully registered 52 commands/getters/setters for module BraillePresenter.
+00:41:17.749106 - REMOTE CONTROLLER: Processing pending registration for CommandManager.
+00:41:17.749185 - DBUS SERVICE: OrcaModuleDBusInterface for CommandManager initialized with 1 command(s), 0 parameterized command(s), 3 getter(s), 3 setter(s).
+00:41:17.749307 - DBUS SERVICE: Successfully published CommandManager at /org/gnome/Orca/Service/CommandManager.
+00:41:17.749314 - REMOTE CONTROLLER: Successfully registered 7 commands/getters/setters for module CommandManager.
+00:41:17.749319 - REMOTE CONTROLLER: Processing pending registration for QAObservation.
+00:41:17.749344 - DBUS SERVICE: OrcaModuleDBusInterface for QAObservation initialized with 0 command(s), 0 parameterized command(s), 1 getter(s), 0 setter(s).
+00:41:17.749462 - DBUS SERVICE: Successfully published QAObservation at /org/gnome/Orca/Service/QAObservation.
+00:41:17.749469 - REMOTE CONTROLLER: Successfully registered 1 commands/getters/setters for module QAObservation.
+00:41:17.749496 - REMOTE CONTROLLER: Registration complete. Summary: 24 modules, 209 module commands, 147 module getters, 136 module setters, 6 system commands. Total handlers: 498.
+00:41:17.749527 - GSETTINGS SCHEMA HANDLE: speech/enable not set [profile:default]
+00:41:17.749534 - GSETTINGS REGISTRY: speech/enable using default value = True
+00:41:17.749551 - GSETTINGS SCHEMA HANDLE: speech/messages-are-detailed not set [profile:default]
+00:41:17.749556 - GSETTINGS REGISTRY: speech/messages-are-detailed using default value = True
+00:41:17.749570 - GSETTINGS SCHEMA HANDLE: speech/only-speak-displayed-text not set [profile:default]
+00:41:17.749575 - GSETTINGS REGISTRY: speech/only-speak-displayed-text using default value = False
+00:41:17.749598 - GSETTINGS SCHEMA HANDLE: voice/established not set [profile:default]
+00:41:17.749612 - GSETTINGS SCHEMA HANDLE: voice/rate not set [profile:default]
+00:41:17.749625 - GSETTINGS SCHEMA HANDLE: voice/pitch not set [profile:default]
+00:41:17.749636 - GSETTINGS SCHEMA HANDLE: voice/volume not set [profile:default]
+00:41:17.749650 - GSETTINGS SCHEMA HANDLE: voice/family-name not set [profile:default]
+00:41:17.749662 - GSETTINGS SCHEMA HANDLE: voice/family-lang not set [profile:default]
+00:41:17.749672 - GSETTINGS SCHEMA HANDLE: voice/family-dialect not set [profile:default]
+00:41:17.749683 - GSETTINGS SCHEMA HANDLE: voice/family-gender not set [profile:default]
+00:41:17.749698 - GSETTINGS SCHEMA HANDLE: voice/family-variant not set [profile:default]
+00:41:17.749715 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+00:41:17.749720 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+00:41:17.749759 - SPEECH PRESENTER: Adjusting 'Screen reader on.' from None start_offset: None
+00:41:17.749772 - GSETTINGS SCHEMA HANDLE: speech/repeated-character-limit not set [profile:default]
+00:41:17.749777 - GSETTINGS REGISTRY: speech/repeated-character-limit using default value = 4
+00:41:17.749886 - GSETTINGS SCHEMA HANDLE: speech/use-pronunciation-dictionary not set [profile:default]
+00:41:17.749894 - GSETTINGS REGISTRY: speech/use-pronunciation-dictionary using default value = True
+00:41:17.749946 - GSETTINGS REGISTRY: Schema org.gnome.Orca.Pronunciations loaded
+00:41:17.749967 - GSETTINGS SCHEMA HANDLE: pronunciations/entries no dict values set
+00:41:17.749974 - GSETTINGS REGISTRY: pronunciations/entries using default value = {}
+00:41:17.749984 - SPEECH PRESENTER: Adjusted text: 'Screen reader on.'
+00:41:17.749992 - SPEECH: Speak 'Screen reader on.' acss: {'established': False}
+00:41:17.749999 - SPEECH OUTPUT: 'Screen reader on.' {'established': False}
+00:41:17.750482 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:17.750521 - GSETTINGS SCHEMA HANDLE: speech/capitalization-style not set [profile:default]
+00:41:17.750530 - GSETTINGS REGISTRY: speech/capitalization-style using default value = 'none'
+00:41:17.750893 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:17.750929 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+00:41:17.750938 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+00:41:17.750949 - GSETTINGS REGISTRY: braille/enabled runtime override = False
+00:41:17.750955 - BRAILLE PRESENTER: Braille is disabled.
+00:41:17.750963 - EVENT MANAGER: Activating <unknown>.<module>:373 > orca._activate_services:248 > event_manager.activate:85
+00:41:17.755542 - INPUT EVENT MANAGER: Starting key watcher.
+00:41:17.755613 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:17.755622 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:17.755638 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:17.755646 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:17.755758 - INPUT EVENT MANAGER: Grab id for Insert: 1
+00:41:17.755777 - INPUT EVENT MANAGER: Grab id for KP_Insert: 2
+00:41:17.755784 - EVENT MANAGER: Activated
+00:41:17.755791 - SCRIPT MANAGER: Activating <unknown>.<module>:373 > orca._activate_services:249 > script_manager.activate:56
+00:41:17.756113 - EVENT MANAGER: Registering listeners for: default (module=orca.scripts.default)
+00:41:17.756124 - EVENT MANAGER: registering listener for: document:attributes-changed
+00:41:17.758110 - EVENT MANAGER: registering listener for: document:load-complete
+00:41:17.759616 - EVENT MANAGER: registering listener for: document:load-stopped
+00:41:17.760620 - EVENT MANAGER: registering listener for: document:page-changed
+00:41:17.762228 - EVENT MANAGER: registering listener for: document:reload
+00:41:17.764084 - EVENT MANAGER: registering listener for: mouse:button
+00:41:17.765229 - EVENT MANAGER: registering listener for: object:active-descendant-changed
+00:41:17.766091 - EVENT MANAGER: registering listener for: object:announcement
+00:41:17.766925 - EVENT MANAGER: registering listener for: object:attributes-changed
+00:41:17.767848 - EVENT MANAGER: registering listener for: object:children-changed:add
+00:41:17.768661 - EVENT MANAGER: registering listener for: object:children-changed:remove
+00:41:17.769485 - EVENT MANAGER: registering listener for: object:column-reordered
+00:41:17.770258 - EVENT MANAGER: registering listener for: object:property-change:accessible-description
+00:41:17.771202 - EVENT MANAGER: registering listener for: object:property-change:accessible-name
+00:41:17.772024 - EVENT MANAGER: registering listener for: object:property-change:accessible-value
+00:41:17.772933 - EVENT MANAGER: registering listener for: object:row-reordered
+00:41:17.774116 - EVENT MANAGER: registering listener for: object:selection-changed
+00:41:17.775515 - EVENT MANAGER: registering listener for: object:state-changed:active
+00:41:17.776440 - EVENT MANAGER: registering listener for: object:state-changed:busy
+00:41:17.777449 - EVENT MANAGER: registering listener for: object:state-changed:checked
+00:41:17.778149 - EVENT MANAGER: registering listener for: object:state-changed:expanded
+00:41:17.778854 - EVENT MANAGER: registering listener for: object:state-changed:focused
+00:41:17.779513 - EVENT MANAGER: registering listener for: object:state-changed:indeterminate
+00:41:17.780150 - EVENT MANAGER: registering listener for: object:state-changed:invalid-entry
+00:41:17.780774 - EVENT MANAGER: registering listener for: object:state-changed:pressed
+00:41:17.781373 - EVENT MANAGER: registering listener for: object:state-changed:selected
+00:41:17.781962 - EVENT MANAGER: registering listener for: object:state-changed:sensitive
+00:41:17.782555 - EVENT MANAGER: registering listener for: object:state-changed:showing
+00:41:17.783133 - EVENT MANAGER: registering listener for: object:text-attributes-changed
+00:41:17.783807 - EVENT MANAGER: registering listener for: object:text-caret-moved
+00:41:17.784401 - EVENT MANAGER: registering listener for: object:text-changed:delete
+00:41:17.784993 - EVENT MANAGER: registering listener for: object:text-changed:insert
+00:41:17.785593 - EVENT MANAGER: registering listener for: object:text-selection-changed
+00:41:17.786195 - EVENT MANAGER: registering listener for: object:value-changed
+00:41:17.786761 - EVENT MANAGER: registering listener for: window:activate
+00:41:17.787494 - EVENT MANAGER: registering listener for: window:create
+00:41:17.788160 - EVENT MANAGER: registering listener for: window:deactivate
+00:41:17.788732 - EVENT MANAGER: registering listener for: window:destroy
+00:41:17.789360 - SCRIPT MANAGER: Setting active script to default (module=orca.scripts.default) reason: activate
+00:41:17.789383 - DEFAULT: Activating script for None
+00:41:17.789512 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:17.789563 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+00:41:17.789572 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+00:41:17.789643 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:17.789665 - GSETTINGS SCHEMA HANDLE: speech/capitalization-style not set [profile:default]
+00:41:17.789671 - GSETTINGS REGISTRY: speech/capitalization-style using default value = 'none'
+00:41:17.789728 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:17.789748 - GSETTINGS SCHEMA HANDLE: speech/synthesizer not set [profile:default]
+00:41:17.789776 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:17.789783 - CARET NAVIGATOR: Commands suspended: False: script activation, no prior state
+00:41:17.789802 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:17.789807 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:17.789818 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:17.789824 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:17.789868 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:17.789875 - STRUCTURAL NAVIGATOR: Suspended: False: script activation, no prior state
+00:41:17.789887 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:17.789892 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:17.789902 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:17.789914 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:17.789965 - STRUCTURAL NAVIGATOR: Setting mode for default (module=orca.scripts.default) to NavigationMode.OFF
+00:41:17.789983 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:17.789996 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:17.790001 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:17.790011 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:17.790016 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:17.790067 - CARET NAVIGATOR: Setting enabled state for default (module=orca.scripts.default) to False
+00:41:17.790085 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:17.790097 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:17.790101 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:17.790110 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:17.790115 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:17.790146 - GSETTINGS REGISTRY: Schema org.gnome.Orca.TableNavigation loaded
+00:41:17.790174 - GSETTINGS SCHEMA HANDLE: table-navigation/enabled not set [profile:default]
+00:41:17.790179 - GSETTINGS REGISTRY: table-navigation/enabled using default value = True
+00:41:17.790184 - TABLE NAVIGATOR: Refreshing enabled state for active app: True.
+00:41:17.790196 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:17.790201 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:17.790210 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:17.790215 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:17.790229 - COMMAND MANAGER: Activating commands: activated default (module=orca.scripts.default)
+00:41:17.790322 - GSETTINGS SCHEMA HANDLE: keybindings/entries no dict values set
+00:41:17.790329 - GSETTINGS REGISTRY: keybindings/entries using default value = {}
+00:41:17.790333 - COMMAND MANAGER: No user overrides to apply
+00:41:17.790392 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:17.790397 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:17.790406 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:17.790411 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+vvvvv COMMAND MANAGER: Grab diff: activated default (module=orca.scripts.default) (old: 77, new: 77) vvvvv
+00:41:17.791159 -   Added (63):
+00:41:17.791176 -     Orca+KP_Divide: routePointerToItemHandler
+00:41:17.791183 -     KP_Divide: leftClickReviewItemHandler
+00:41:17.791188 -     KP_Multiply: rightClickReviewItemHandler
+00:41:17.791195 -     Orca+space: preferencesSettingsHandler
+00:41:17.791202 -     Orca+Control+space: appPreferencesSettingsHandler
+00:41:17.791206 -     KP_Add: sayAllHandler
+00:41:17.791212 -     Orca+s: toggleSilenceSpeechHandler
+00:41:17.791217 -     Orca+v: toggleSpeechVerbosityHandler
+00:41:17.791223 -     Orca+F11: toggleTableCellReadModeHandler
+00:41:17.791228 -     Orca+Shift+d: toggle_speech_monitor
+00:41:17.791234 -     Alt+BackSpace: bypass_mode_toggle
+00:41:17.791240 -     Alt+Control+Shift+q: toggle_sleep_mode
+00:41:17.791246 -     Orca+t: presentTimeHandler
+00:41:17.791252 -     Orca+Control+Up: object_navigator_up
+00:41:17.791258 -     Orca+Control+Down: object_navigator_down
+00:41:17.791267 -     Orca+Control+Right: object_navigator_next
+00:41:17.791273 -     Orca+Control+Left: object_navigator_previous
+00:41:17.791278 -     Orca+Control+Return: object_navigator_perform_action
+00:41:17.791283 -     Orca+Control+s: object_navigator_toggle_simplify
+00:41:17.791289 -     Orca+F12: toggle_enabled
+00:41:17.791294 -     Orca+z: structural_navigator_mode_cycle
+00:41:17.791299 -     Orca+Shift+t: table_navigator_toggle_enabled
+00:41:17.791305 -     Alt+Shift+Left: table_cell_left
+00:41:17.791310 -     Alt+Shift+Right: table_cell_right
+00:41:17.791316 -     Alt+Shift+Up: table_cell_up
+00:41:17.791321 -     Alt+Shift+Down: table_cell_down
+00:41:17.791326 -     Alt+Shift+Home: table_cell_first
+00:41:17.791331 -     Alt+Shift+End: table_cell_last
+00:41:17.791337 -     Orca+Alt+Shift+Left: table_cell_beginning_of_row
+00:41:17.791342 -     Orca+Alt+Shift+Right: table_cell_end_of_row
+00:41:17.791348 -     Orca+Alt+Shift+Up: table_cell_top_of_column
+00:41:17.791353 -     Orca+Alt+Shift+Down: table_cell_bottom_of_column
+00:41:17.791358 -     Orca+Shift+r: set_dynamic_column_headers_row
+00:41:17.791364 -     Orca+Shift+c: set_dynamic_row_headers_column
+00:41:17.791369 -     Orca+a: toggle_presentation_mode
+00:41:17.791374 -     Orca+backslash: toggle_live_region_support
+00:41:17.791379 -     Orca+h: enterLearnModeHandler
+00:41:17.791385 -     Orca+Shift+a: show_actions_list
+00:41:17.791389 -     KP_Subtract: toggleFlatReviewModeHandler
+00:41:17.791394 -     Orca+KP_Home: reviewHomeHandler
+00:41:17.791399 -     Orca+KP_Page_Up: reviewEndHandler
+00:41:17.791403 -     KP_Home: reviewPreviousLineHandler
+00:41:17.791407 -     KP_Up: reviewCurrentLineHandler
+00:41:17.791411 -     KP_Page_Up: reviewNextLineHandler
+00:41:17.791416 -     Orca+KP_End: reviewEndOfLineHandler
+00:41:17.791420 -     KP_Left: reviewPreviousItemHandler
+00:41:17.791424 -     KP_Begin: reviewCurrentItemHandler
+00:41:17.791427 -     KP_Right: reviewNextItemHandler
+00:41:17.791431 -     KP_End: reviewPreviousCharacterHandler
+00:41:17.791434 -     KP_Down: reviewCurrentCharacterHandler
+00:41:17.791438 -     KP_Page_Down: reviewNextCharacterHandler
+00:41:17.791444 -     Orca+KP_Begin: reviewCurrentAccessibleHandler
+00:41:17.791449 -     Orca+KP_Left: reviewAboveHandler
+00:41:17.791455 -     Orca+KP_Right: reviewBelowHandler
+00:41:17.791459 -     KP_Delete: findHandler
+00:41:17.791464 -     Orca+KP_Delete: findNextHandler
+00:41:17.791469 -     Orca+Shift+KP_Delete: findPreviousHandler
+00:41:17.791474 -     Orca+f: readCharAttributesHandler
+00:41:17.791480 -     Orca+KP_Enter: getTitleHandler
+00:41:17.791485 -     Orca+e: present_default_button
+00:41:17.791490 -     Orca+equal: present_cell_formula
+00:41:17.791494 -     KP_Enter: whereAmIBasicHandler
+00:41:17.791499 -     Orca+Shift+Up: whereAmISelectionHandler
+^^^^^ COMMAND MANAGER: Diff completed in 0.0011s. Removed 0, added 63, transferred 0 ^^^^^
+
+00:41:17.791528 - GSETTINGS SCHEMA HANDLE: speech/enable not set [profile:default]
+00:41:17.791533 - GSETTINGS REGISTRY: speech/enable using default value = True
+00:41:17.791538 - SPEECH MANAGER: Speech is enabled.
+00:41:17.791577 - SPEECH MANAGER: start_speech. Script: None Event: None notify_user: False
+00:41:17.791582 - SPEECH MANAGER: Initializing server
+00:41:17.791587 - SPEECH MANAGER: Already initialized
+00:41:17.791603 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:17.791608 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:17.791614 - COMMAND MANAGER: Setting keyboard layout is_desktop to True.
+00:41:17.791676 - GSETTINGS SCHEMA HANDLE: keybindings/entries no dict values set
+00:41:17.791681 - GSETTINGS REGISTRY: keybindings/entries using default value = {}
+00:41:17.791685 - COMMAND MANAGER: No user overrides to apply
+00:41:17.791732 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:17.791738 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:17.791748 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:17.791752 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+vvvvv COMMAND MANAGER: Grab diff: keyboard layout change (old: 77, new: 77) vvvvv
+00:41:17.791890 -   No grab changes
+^^^^^ COMMAND MANAGER: Diff completed in 0.0001s. Removed 0, added 0, transferred 0 ^^^^^
+
+00:41:17.791901 - COMMAND MANAGER: Keyboard layout set to desktop.
+00:41:17.791917 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:17.791923 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:17.791932 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:17.791938 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:17.791943 - SCRIPT MANAGER: Activated
+00:41:17.793054 - AXUtilities: Unable to find active window from []
+00:41:17.793075 - CLIPBOARD PRESENTER: Activating
+00:41:17.794992 - CLIPBOARD PRESENTER: Could not access klipper interface: The name org.kde.klipper was not provided by any .service files
+00:41:17.795157 - CLIPBOARD PRESENTER: Could not access GPaste interface: The name org.gnome.GPaste was not provided by any .service files
+00:41:17.795369 - CLIPBOARD PRESENTER: Using Gtk.Clipboard as fallback.
+00:41:17.795380 - CLIPBOARD PRESENTER: Activated
+00:41:17.795397 - SYSTEMD: Sending: READY=1
+00:41:17.795420 - ORCA: Starting Atspi main event loop
+00:41:17.799057 - FOCUS MANAGER: Locus of focus is None
+00:41:17.799089 - FOCUS MANAGER: Active window is None handler._handle_call:265 > dbus_service.ExecuteRuntimeGetter:224 > dbus_service._wrapper:711 > focus_manager.get_active_window:342
+00:41:17.800168 - DBUS SERVICE: Getter 'State' returned: {"device_type": "AtspiDeviceA11yManager", "focus": null, "active_window": null, "navigator": null}
+00:41:18.311060 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.311093 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.311110 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.311120 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.311132 - ORCA MODIFIER MANAGER: Setting pressed state to True
+00:41:18.311170 - FOCUS MANAGER: Active window is None <unknown>.<module>:373 > input_event_manager._on_key_pressed:261 > input_event_manager.process_keyboard_event:297 > focus_manager.get_active_window:342
+00:41:18.313673 - AXUtilities: Unable to find active window from []
+00:41:18.313712 - WARNING: None cannot be active window. No alternative found.
+00:41:18.314019 - FOCUS MANAGER: Locus of focus is None
+00:41:18.314199 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+
+KEYBOARD_EVENT:  type=ATSPI_KEY_PRESSED_EVENT
+                 id=65379
+                 hw_code=118
+                 modifiers=256
+                 text=''
+                 keyval_name='Insert'
+                 timestamp=1790836878.310995
+                 clickCount=1
+
+vvvvv PROCESS ATSPI_KEY_PRESSED_EVENT: 'Insert' (118) vvvvv
+00:41:18.314412 - SCRIPT: default (module=orca.scripts.default)
+00:41:18.314431 - WINDOW: None
+00:41:18.314448 - LOCATION: None
+00:41:18.314497 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.314504 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.314518 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.314524 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.314538 - PRESENTATION MANAGER: Interrupting presentation
+00:41:18.314579 - SPEECH MANAGER: interrupt_speech. Script: None Event: None notify_user: False
+00:41:18.314906 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:18.314997 - BRAILLE: Kill flash message input_event._present:603 > presentation_manager.interrupt_presentation:88 > braille_presenter.kill_flash:1829 > braille.kill_flash:2182
+00:41:18.315772 - TYPING ECHO PRESENTER: should_echo_keyboard_event: 'insert'?
+00:41:18.315806 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.315815 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.315828 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.315836 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.315864 - GSETTINGS REGISTRY: Schema org.gnome.Orca.TypingEcho loaded
+00:41:18.315891 - GSETTINGS SCHEMA HANDLE: typing-echo/key-echo not set [profile:default]
+00:41:18.315897 - GSETTINGS REGISTRY: typing-echo/key-echo using default value = True
+00:41:18.315909 - GSETTINGS SCHEMA HANDLE: typing-echo/modifier-keys not set [profile:default]
+00:41:18.315914 - GSETTINGS REGISTRY: typing-echo/modifier-keys using default value = True
+00:41:18.315919 - TYPING ECHO PRESENTER: Echoing modifier Orca modifier event: True.
+00:41:18.315939 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.315944 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.315953 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.315958 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.315987 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:18.316023 - FOCUS MANAGER: Active mode: None Object of interest: None
+00:41:18.316037 - GSETTINGS SCHEMA HANDLE: speech/enable not set [profile:default]
+00:41:18.316042 - GSETTINGS REGISTRY: speech/enable using default value = True
+00:41:18.316054 - GSETTINGS SCHEMA HANDLE: speech/verbosity-level not set [profile:default]
+00:41:18.316059 - GSETTINGS REGISTRY: speech/verbosity-level using default value = 'verbose'
+00:41:18.316075 - FOCUS MANAGER: Locus of focus is None
+00:41:18.316096 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:18.316113 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:18.316127 - GSETTINGS SCHEMA HANDLE: speech/only-speak-displayed-text not set [profile:default]
+00:41:18.316131 - GSETTINGS REGISTRY: speech/only-speak-displayed-text using default value = False
+00:41:18.316141 - GSETTINGS SCHEMA HANDLE: speech/speak-description not set [profile:default]
+00:41:18.316146 - GSETTINGS REGISTRY: speech/speak-description using default value = True
+00:41:18.316155 - GSETTINGS SCHEMA HANDLE: speech/speak-tutorial-messages not set [profile:default]
+00:41:18.316161 - GSETTINGS REGISTRY: speech/speak-tutorial-messages using default value = True
+00:41:18.316171 - GSETTINGS SCHEMA HANDLE: speech/speak-position-in-set not set [profile:default]
+00:41:18.316176 - GSETTINGS REGISTRY: speech/speak-position-in-set using default value = False
+00:41:18.316185 - GSETTINGS SCHEMA HANDLE: speech/speak-widget-mnemonic not set [profile:default]
+00:41:18.316189 - GSETTINGS REGISTRY: speech/speak-widget-mnemonic using default value = True
+00:41:18.316198 - GSETTINGS SCHEMA HANDLE: speech/speak-blank-lines not set [profile:default]
+00:41:18.316202 - GSETTINGS REGISTRY: speech/speak-blank-lines using default value = True
+00:41:18.316212 - GSETTINGS SCHEMA HANDLE: speech/speak-indentation-and-justification not set [profile:default]
+00:41:18.316216 - GSETTINGS REGISTRY: speech/speak-indentation-and-justification using default value = False
+00:41:18.316226 - GSETTINGS SCHEMA HANDLE: speech/announce-cell-headers not set [profile:default]
+00:41:18.316231 - GSETTINGS REGISTRY: speech/announce-cell-headers using default value = True
+00:41:18.316240 - GSETTINGS SCHEMA HANDLE: speech/announce-cell-coordinates not set [profile:default]
+00:41:18.316244 - GSETTINGS REGISTRY: speech/announce-cell-coordinates using default value = True
+00:41:18.316254 - GSETTINGS SCHEMA HANDLE: speech/announce-spreadsheet-cell-coordinates not set [profile:default]
+00:41:18.316258 - GSETTINGS REGISTRY: speech/announce-spreadsheet-cell-coordinates using default value = True
+00:41:18.316270 - GSETTINGS SCHEMA HANDLE: speech/announce-blockquote not set [profile:default]
+00:41:18.316280 - GSETTINGS REGISTRY: speech/announce-blockquote using default value = True
+00:41:18.316290 - GSETTINGS SCHEMA HANDLE: speech/announce-form not set [profile:default]
+00:41:18.316294 - GSETTINGS REGISTRY: speech/announce-form using default value = True
+00:41:18.316303 - GSETTINGS SCHEMA HANDLE: speech/announce-landmark not set [profile:default]
+00:41:18.316307 - GSETTINGS REGISTRY: speech/announce-landmark using default value = True
+00:41:18.316316 - GSETTINGS SCHEMA HANDLE: speech/announce-list not set [profile:default]
+00:41:18.316320 - GSETTINGS REGISTRY: speech/announce-list using default value = True
+00:41:18.316329 - GSETTINGS SCHEMA HANDLE: speech/announce-grouping not set [profile:default]
+00:41:18.316333 - GSETTINGS REGISTRY: speech/announce-grouping using default value = True
+00:41:18.316342 - GSETTINGS SCHEMA HANDLE: speech/announce-table not set [profile:default]
+00:41:18.316346 - GSETTINGS REGISTRY: speech/announce-table using default value = True
+00:41:18.316371 - GSETTINGS SCHEMA HANDLE: voice/established not set [profile:default]
+00:41:18.316384 - GSETTINGS SCHEMA HANDLE: voice/rate not set [profile:default]
+00:41:18.316395 - GSETTINGS SCHEMA HANDLE: voice/pitch not set [profile:default]
+00:41:18.316406 - GSETTINGS SCHEMA HANDLE: voice/volume not set [profile:default]
+00:41:18.316418 - GSETTINGS SCHEMA HANDLE: voice/family-name not set [profile:default]
+00:41:18.316428 - GSETTINGS SCHEMA HANDLE: voice/family-lang not set [profile:default]
+00:41:18.316438 - GSETTINGS SCHEMA HANDLE: voice/family-dialect not set [profile:default]
+00:41:18.316448 - GSETTINGS SCHEMA HANDLE: voice/family-gender not set [profile:default]
+00:41:18.316457 - GSETTINGS SCHEMA HANDLE: voice/family-variant not set [profile:default]
+00:41:18.316494 - SPEECH GENERATOR: None voice requested for None language='', dialect='' Unmodified voice={'established': False}
+00:41:18.316525 - SPEECH GENERATOR: Reported locale of None is 
+00:41:18.316531 - SPEECH GENERATOR: Updated to: '', ''
+00:41:18.316549 - GSETTINGS SCHEMA HANDLE: speech/auto-language-switching not set [profile:default]
+00:41:18.316554 - GSETTINGS REGISTRY: speech/auto-language-switching using default value = True
+00:41:18.316618 - SPEECH GENERATOR: Final voice is {'established': 'False', 'family': '{}'}
+00:41:18.316642 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.316648 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.316657 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.316662 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.316670 - SPEECH OUTPUT: 'insert' {'established': False, 'family': {'name': None, 'gender': None, 'lang': None, 'dialect': None, 'variant': None}}
+00:41:18.316721 - TOTAL PROCESSING TIME: 0.0024
+^^^^^ PROCESS ATSPI_KEY_PRESSED_EVENT: 'Insert' (118) ^^^^^
+
+00:41:18.316775 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.316781 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.316791 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.316796 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.400347 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.400377 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.400393 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.400401 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.400438 - FOCUS MANAGER: Active window is None <unknown>.<module>:373 > input_event_manager._on_key_pressed:261 > input_event_manager.process_keyboard_event:297 > focus_manager.get_active_window:342
+00:41:18.402519 - AXUtilities: Unable to find active window from []
+00:41:18.402564 - WARNING: None cannot be active window. No alternative found.
+00:41:18.402739 - FOCUS MANAGER: Locus of focus is None
+00:41:18.402873 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:18.403031 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.403037 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.403048 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.403052 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+KEYBOARD_EVENT:  type=ATSPI_KEY_PRESSED_EVENT
+                 id=104
+                 hw_code=43
+                 modifiers=256
+                 text='h'
+                 keyval_name='h'
+                 timestamp=1790836878.4002993
+                 clickCount=1
+
+vvvvv PROCESS ATSPI_KEY_PRESSED_EVENT: 'h' (43) vvvvv
+00:41:18.403089 - SCRIPT: default (module=orca.scripts.default)
+00:41:18.403101 - WINDOW: None
+00:41:18.403113 - LOCATION: None
+00:41:18.403141 - COMMAND: enterLearnModeHandler
+00:41:18.403159 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.403163 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.403170 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.403173 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.403181 - PRESENTATION MANAGER: Interrupting presentation
+00:41:18.403210 - SPEECH MANAGER: interrupt_speech. Script: None Event: None notify_user: False
+00:41:18.403472 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:18.403530 - BRAILLE: Kill flash message input_event._present:603 > presentation_manager.interrupt_presentation:88 > braille_presenter.kill_flash:1829 > braille.kill_flash:2182
+00:41:18.403821 - TYPING ECHO PRESENTER: should_echo_keyboard_event: 'h'?
+00:41:18.403838 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.403843 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.403851 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.403854 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.403867 - TYPING ECHO PRESENTER: Not echoing keyboard event: modifier.
+00:41:18.403895 - TOTAL PROCESSING TIME: 0.0008
+^^^^^ PROCESS ATSPI_KEY_PRESSED_EVENT: 'h' (43) ^^^^^
+
+00:41:18.403914 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.403917 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.403924 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.403927 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+vvvvv HANDLE ATSPI_KEY_PRESSED_EVENT: 'h' (43) vvvvv
+00:41:18.404971 - GSETTINGS SCHEMA HANDLE: speech/enable not set [profile:default]
+00:41:18.404975 - GSETTINGS REGISTRY: speech/enable using default value = True
+00:41:18.404986 - GSETTINGS SCHEMA HANDLE: speech/messages-are-detailed not set [profile:default]
+00:41:18.404989 - GSETTINGS REGISTRY: speech/messages-are-detailed using default value = True
+00:41:18.404997 - GSETTINGS SCHEMA HANDLE: speech/only-speak-displayed-text not set [profile:default]
+00:41:18.405000 - GSETTINGS REGISTRY: speech/only-speak-displayed-text using default value = False
+00:41:18.405012 - GSETTINGS SCHEMA HANDLE: voice/established not set [profile:default]
+00:41:18.405020 - GSETTINGS SCHEMA HANDLE: voice/rate not set [profile:default]
+00:41:18.405027 - GSETTINGS SCHEMA HANDLE: voice/pitch not set [profile:default]
+00:41:18.405034 - GSETTINGS SCHEMA HANDLE: voice/volume not set [profile:default]
+00:41:18.405042 - GSETTINGS SCHEMA HANDLE: voice/family-name not set [profile:default]
+00:41:18.405054 - GSETTINGS SCHEMA HANDLE: voice/family-lang not set [profile:default]
+00:41:18.405061 - GSETTINGS SCHEMA HANDLE: voice/family-dialect not set [profile:default]
+00:41:18.405067 - GSETTINGS SCHEMA HANDLE: voice/family-gender not set [profile:default]
+00:41:18.405072 - GSETTINGS SCHEMA HANDLE: voice/family-variant not set [profile:default]
+00:41:18.405085 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+00:41:18.405089 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+00:41:18.405113 - SPEECH PRESENTER: Adjusting 'Screen reader version 50.2.' from None start_offset: None
+00:41:18.405122 - GSETTINGS SCHEMA HANDLE: speech/repeated-character-limit not set [profile:default]
+00:41:18.405125 - GSETTINGS REGISTRY: speech/repeated-character-limit using default value = 4
+00:41:18.405140 - GSETTINGS SCHEMA HANDLE: speech/use-pronunciation-dictionary not set [profile:default]
+00:41:18.405143 - GSETTINGS REGISTRY: speech/use-pronunciation-dictionary using default value = True
+00:41:18.405156 - SPEECH PRESENTER: Adjusted text: 'Screen reader version 50.2.'
+00:41:18.405161 - SPEECH: Speak 'Screen reader version 50.2.' acss: {'established': False}
+00:41:18.405165 - SPEECH OUTPUT: 'Screen reader version 50.2.' {'established': False}
+00:41:18.405303 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:18.405320 - GSETTINGS SCHEMA HANDLE: speech/capitalization-style not set [profile:default]
+00:41:18.405324 - GSETTINGS REGISTRY: speech/capitalization-style using default value = 'none'
+00:41:18.405463 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:18.405475 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+00:41:18.405478 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+00:41:18.405486 - GSETTINGS REGISTRY: braille/enabled runtime override = False
+00:41:18.405489 - BRAILLE PRESENTER: Braille is disabled.
+00:41:18.405498 - GSETTINGS SCHEMA HANDLE: speech/only-speak-displayed-text not set [profile:default]
+00:41:18.405501 - GSETTINGS REGISTRY: speech/only-speak-displayed-text using default value = False
+00:41:18.405509 - GSETTINGS SCHEMA HANDLE: voice/established not set [profile:default]
+00:41:18.405516 - GSETTINGS SCHEMA HANDLE: voice/rate not set [profile:default]
+00:41:18.405522 - GSETTINGS SCHEMA HANDLE: voice/pitch not set [profile:default]
+00:41:18.405528 - GSETTINGS SCHEMA HANDLE: voice/volume not set [profile:default]
+00:41:18.405535 - GSETTINGS SCHEMA HANDLE: voice/family-name not set [profile:default]
+00:41:18.405541 - GSETTINGS SCHEMA HANDLE: voice/family-lang not set [profile:default]
+00:41:18.405547 - GSETTINGS SCHEMA HANDLE: voice/family-dialect not set [profile:default]
+00:41:18.405553 - GSETTINGS SCHEMA HANDLE: voice/family-gender not set [profile:default]
+00:41:18.405559 - GSETTINGS SCHEMA HANDLE: voice/family-variant not set [profile:default]
+00:41:18.405567 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+00:41:18.405570 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+00:41:18.405588 - SPEECH PRESENTER: Adjusting 'Entering learn mode.  Press any key to hear its function.  To view the screen reader's documentation, press F1. To get a list of the screen reader's shortcuts, press F2. To exit learn mode, press the escape key.' from None start_offset: None
+00:41:18.405596 - GSETTINGS SCHEMA HANDLE: speech/repeated-character-limit not set [profile:default]
+00:41:18.405599 - GSETTINGS REGISTRY: speech/repeated-character-limit using default value = 4
+00:41:18.405610 - GSETTINGS SCHEMA HANDLE: speech/use-pronunciation-dictionary not set [profile:default]
+00:41:18.405613 - GSETTINGS REGISTRY: speech/use-pronunciation-dictionary using default value = True
+00:41:18.405636 - SPEECH PRESENTER: Adjusted text: 'Entering learn mode.  Press any key to hear its function.  To view the screen reader's documentation, press F1. To get a list of the screen reader's shortcuts, press F2. To exit learn mode, press the escape key.'
+00:41:18.405640 - SPEECH: Speak 'Entering learn mode.  Press any key to hear its function.  To view the screen reader's documentation, press F1. To get a list of the screen reader's shortcuts, press F2. To exit learn mode, press the escape key.' acss: {'established': False}
+00:41:18.405643 - SPEECH OUTPUT: 'Entering learn mode.  Press any key to hear its function.  To view the screen reader's documentation, press F1. To get a list of the screen reader's shortcuts, press F2. To exit learn mode, press the escape key.' {'established': False}
+00:41:18.405907 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:18.405920 - GSETTINGS SCHEMA HANDLE: speech/capitalization-style not set [profile:default]
+00:41:18.405923 - GSETTINGS REGISTRY: speech/capitalization-style using default value = 'none'
+00:41:18.406175 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:18.406187 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+00:41:18.406190 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+00:41:18.406196 - GSETTINGS REGISTRY: braille/enabled runtime override = False
+00:41:18.406199 - BRAILLE PRESENTER: Braille is disabled.
+00:41:18.406203 - INPUT EVENT MANAGER: Grabbing keyboard Reason: Entering learn mode
+00:41:18.407853 - LEARN MODE PRESENTER: Is now active
+00:41:18.407865 - COMMAND MANAGER: Learn mode is now active.
+00:41:18.407876 - TOTAL PROCESSING TIME: 0.0029
+^^^^^ HANDLE ATSPI_KEY_PRESSED_EVENT: 'h' (43) ^^^^^
+
+00:41:18.490300 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.490323 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.490336 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.490341 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.490776 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.490782 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.490791 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.490794 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+KEYBOARD_EVENT:  type=ATSPI_KEY_RELEASED_EVENT
+                 id=104
+                 hw_code=43
+                 modifiers=256
+                 text='h'
+                 keyval_name='h'
+                 timestamp=1790836878.4902577
+                 clickCount=1
+
+vvvvv PROCESS ATSPI_KEY_RELEASED_EVENT: 'h' (43) vvvvv
+00:41:18.490833 - SCRIPT: default (module=orca.scripts.default)
+00:41:18.490845 - WINDOW: None
+00:41:18.490857 - LOCATION: None
+00:41:18.490878 - COMMAND: enterLearnModeHandler
+00:41:18.490890 - KEYBOARD EVENT: Learn mode is active
+00:41:18.490901 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.490904 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.490910 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.490914 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.490923 - TOTAL PROCESSING TIME: 0.0001
+^^^^^ PROCESS ATSPI_KEY_RELEASED_EVENT: 'h' (43) ^^^^^
+
+00:41:18.490938 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.490940 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.490946 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.490949 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.580575 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.580604 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.580628 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.580635 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.580643 - ORCA MODIFIER MANAGER: Setting pressed state to False
+00:41:18.581119 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.581126 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.581135 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.581139 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+KEYBOARD_EVENT:  type=ATSPI_KEY_RELEASED_EVENT
+                 id=65379
+                 hw_code=118
+                 modifiers=0
+                 text=''
+                 keyval_name='Insert'
+                 timestamp=1790836878.580521
+                 clickCount=1
+
+vvvvv PROCESS ATSPI_KEY_RELEASED_EVENT: 'Insert' (118) vvvvv
+00:41:18.581180 - SCRIPT: default (module=orca.scripts.default)
+00:41:18.581193 - WINDOW: None
+00:41:18.581204 - LOCATION: None
+00:41:18.581223 - KEYBOARD EVENT: Learn mode is active
+00:41:18.581233 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.581236 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.581242 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.581246 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:18.581256 - TOTAL PROCESSING TIME: 0.0001
+^^^^^ PROCESS ATSPI_KEY_RELEASED_EVENT: 'Insert' (118) ^^^^^
+
+00:41:18.581274 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:18.581278 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:18.581284 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:18.581287 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.071368 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.071395 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.071408 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.071414 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.071441 - FOCUS MANAGER: Active window is None <unknown>.<module>:373 > input_event_manager._on_key_pressed:261 > input_event_manager.process_keyboard_event:297 > focus_manager.get_active_window:342
+00:41:19.073927 - AXUtilities: Unable to find active window from []
+00:41:19.073991 - WARNING: None cannot be active window. No alternative found.
+00:41:19.074244 - FOCUS MANAGER: Locus of focus is None
+00:41:19.074424 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:19.074641 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.074651 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.074665 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.074672 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+KEYBOARD_EVENT:  type=ATSPI_KEY_PRESSED_EVENT
+                 id=65307
+                 hw_code=9
+                 modifiers=0
+                 text=''
+                 keyval_name='Escape'
+                 timestamp=1790836879.0713186
+                 clickCount=1
+
+vvvvv PROCESS ATSPI_KEY_PRESSED_EVENT: 'Escape' (9) vvvvv
+00:41:19.074722 - SCRIPT: default (module=orca.scripts.default)
+00:41:19.074739 - WINDOW: None
+00:41:19.074755 - LOCATION: None
+00:41:19.074778 - KEYBOARD EVENT: Learn mode is active
+00:41:19.074793 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.074799 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.074809 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.074814 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.074824 - PRESENTATION MANAGER: Interrupting presentation
+00:41:19.074863 - SPEECH MANAGER: interrupt_speech. Script: None Event: None notify_user: False
+00:41:19.075230 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:19.075311 - BRAILLE: Kill flash message input_event._present:603 > presentation_manager.interrupt_presentation:88 > braille_presenter.kill_flash:1829 > braille.kill_flash:2182
+00:41:19.075715 - TOTAL PROCESSING TIME: 0.0010
+^^^^^ PROCESS ATSPI_KEY_PRESSED_EVENT: 'Escape' (9) ^^^^^
+
+00:41:19.075752 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.075760 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.075772 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.075778 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+vvvvv HANDLE ATSPI_KEY_PRESSED_EVENT: 'Escape' (9) vvvvv
+00:41:19.076851 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:19.076902 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:19.076936 - FOCUS MANAGER: Active mode: None Object of interest: None
+00:41:19.076955 - GSETTINGS SCHEMA HANDLE: speech/enable not set [profile:default]
+00:41:19.076960 - GSETTINGS REGISTRY: speech/enable using default value = True
+00:41:19.076973 - GSETTINGS SCHEMA HANDLE: speech/verbosity-level not set [profile:default]
+00:41:19.076978 - GSETTINGS REGISTRY: speech/verbosity-level using default value = 'verbose'
+00:41:19.076995 - FOCUS MANAGER: Locus of focus is None
+00:41:19.077014 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:19.077031 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:19.077045 - GSETTINGS SCHEMA HANDLE: speech/only-speak-displayed-text not set [profile:default]
+00:41:19.077049 - GSETTINGS REGISTRY: speech/only-speak-displayed-text using default value = False
+00:41:19.077060 - GSETTINGS SCHEMA HANDLE: speech/speak-description not set [profile:default]
+00:41:19.077064 - GSETTINGS REGISTRY: speech/speak-description using default value = True
+00:41:19.077075 - GSETTINGS SCHEMA HANDLE: speech/speak-tutorial-messages not set [profile:default]
+00:41:19.077080 - GSETTINGS REGISTRY: speech/speak-tutorial-messages using default value = True
+00:41:19.077090 - GSETTINGS SCHEMA HANDLE: speech/speak-position-in-set not set [profile:default]
+00:41:19.077094 - GSETTINGS REGISTRY: speech/speak-position-in-set using default value = False
+00:41:19.077103 - GSETTINGS SCHEMA HANDLE: speech/speak-widget-mnemonic not set [profile:default]
+00:41:19.077107 - GSETTINGS REGISTRY: speech/speak-widget-mnemonic using default value = True
+00:41:19.077116 - GSETTINGS SCHEMA HANDLE: speech/speak-blank-lines not set [profile:default]
+00:41:19.077120 - GSETTINGS REGISTRY: speech/speak-blank-lines using default value = True
+00:41:19.077131 - GSETTINGS SCHEMA HANDLE: speech/speak-indentation-and-justification not set [profile:default]
+00:41:19.077135 - GSETTINGS REGISTRY: speech/speak-indentation-and-justification using default value = False
+00:41:19.077145 - GSETTINGS SCHEMA HANDLE: speech/announce-cell-headers not set [profile:default]
+00:41:19.077149 - GSETTINGS REGISTRY: speech/announce-cell-headers using default value = True
+00:41:19.077158 - GSETTINGS SCHEMA HANDLE: speech/announce-cell-coordinates not set [profile:default]
+00:41:19.077162 - GSETTINGS REGISTRY: speech/announce-cell-coordinates using default value = True
+00:41:19.077172 - GSETTINGS SCHEMA HANDLE: speech/announce-spreadsheet-cell-coordinates not set [profile:default]
+00:41:19.077176 - GSETTINGS REGISTRY: speech/announce-spreadsheet-cell-coordinates using default value = True
+00:41:19.077193 - GSETTINGS SCHEMA HANDLE: speech/announce-blockquote not set [profile:default]
+00:41:19.077198 - GSETTINGS REGISTRY: speech/announce-blockquote using default value = True
+00:41:19.077207 - GSETTINGS SCHEMA HANDLE: speech/announce-form not set [profile:default]
+00:41:19.077211 - GSETTINGS REGISTRY: speech/announce-form using default value = True
+00:41:19.077220 - GSETTINGS SCHEMA HANDLE: speech/announce-landmark not set [profile:default]
+00:41:19.077224 - GSETTINGS REGISTRY: speech/announce-landmark using default value = True
+00:41:19.077233 - GSETTINGS SCHEMA HANDLE: speech/announce-list not set [profile:default]
+00:41:19.077238 - GSETTINGS REGISTRY: speech/announce-list using default value = True
+00:41:19.077247 - GSETTINGS SCHEMA HANDLE: speech/announce-grouping not set [profile:default]
+00:41:19.077251 - GSETTINGS REGISTRY: speech/announce-grouping using default value = True
+00:41:19.077260 - GSETTINGS SCHEMA HANDLE: speech/announce-table not set [profile:default]
+00:41:19.077266 - GSETTINGS REGISTRY: speech/announce-table using default value = True
+00:41:19.077295 - GSETTINGS SCHEMA HANDLE: voice/established not set [profile:default]
+00:41:19.077308 - GSETTINGS SCHEMA HANDLE: voice/rate not set [profile:default]
+00:41:19.077319 - GSETTINGS SCHEMA HANDLE: voice/pitch not set [profile:default]
+00:41:19.077329 - GSETTINGS SCHEMA HANDLE: voice/volume not set [profile:default]
+00:41:19.077342 - GSETTINGS SCHEMA HANDLE: voice/family-name not set [profile:default]
+00:41:19.077351 - GSETTINGS SCHEMA HANDLE: voice/family-lang not set [profile:default]
+00:41:19.077361 - GSETTINGS SCHEMA HANDLE: voice/family-dialect not set [profile:default]
+00:41:19.077371 - GSETTINGS SCHEMA HANDLE: voice/family-gender not set [profile:default]
+00:41:19.077381 - GSETTINGS SCHEMA HANDLE: voice/family-variant not set [profile:default]
+00:41:19.077418 - SPEECH GENERATOR: None voice requested for None language='', dialect='' Unmodified voice={'established': False}
+00:41:19.077450 - SPEECH GENERATOR: Reported locale of None is 
+00:41:19.077457 - SPEECH GENERATOR: Updated to: '', ''
+00:41:19.077476 - GSETTINGS SCHEMA HANDLE: speech/auto-language-switching not set [profile:default]
+00:41:19.077481 - GSETTINGS REGISTRY: speech/auto-language-switching using default value = True
+00:41:19.077538 - SPEECH GENERATOR: Final voice is {'established': 'False', 'family': '{}'}
+00:41:19.077561 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.077566 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.077575 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.077580 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.077611 - SPEECH OUTPUT: 'escape' {'established': False, 'family': {'name': None, 'gender': None, 'lang': None, 'dialect': None, 'variant': None}}
+00:41:19.077687 - GSETTINGS SCHEMA HANDLE: speech/enable not set [profile:default]
+00:41:19.077694 - GSETTINGS REGISTRY: speech/enable using default value = True
+00:41:19.077704 - GSETTINGS SCHEMA HANDLE: speech/messages-are-detailed not set [profile:default]
+00:41:19.077709 - GSETTINGS REGISTRY: speech/messages-are-detailed using default value = True
+00:41:19.077718 - GSETTINGS SCHEMA HANDLE: speech/only-speak-displayed-text not set [profile:default]
+00:41:19.077722 - GSETTINGS REGISTRY: speech/only-speak-displayed-text using default value = False
+00:41:19.077734 - GSETTINGS SCHEMA HANDLE: voice/established not set [profile:default]
+00:41:19.077744 - GSETTINGS SCHEMA HANDLE: voice/rate not set [profile:default]
+00:41:19.077754 - GSETTINGS SCHEMA HANDLE: voice/pitch not set [profile:default]
+00:41:19.077764 - GSETTINGS SCHEMA HANDLE: voice/volume not set [profile:default]
+00:41:19.077775 - GSETTINGS SCHEMA HANDLE: voice/family-name not set [profile:default]
+00:41:19.077784 - GSETTINGS SCHEMA HANDLE: voice/family-lang not set [profile:default]
+00:41:19.077794 - GSETTINGS SCHEMA HANDLE: voice/family-dialect not set [profile:default]
+00:41:19.077803 - GSETTINGS SCHEMA HANDLE: voice/family-gender not set [profile:default]
+00:41:19.077813 - GSETTINGS SCHEMA HANDLE: voice/family-variant not set [profile:default]
+00:41:19.077826 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+00:41:19.077831 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+00:41:19.077862 - SPEECH PRESENTER: Adjusting 'Exiting learn mode.' from None start_offset: None
+00:41:19.077873 - GSETTINGS SCHEMA HANDLE: speech/repeated-character-limit not set [profile:default]
+00:41:19.077878 - GSETTINGS REGISTRY: speech/repeated-character-limit using default value = 4
+00:41:19.077896 - GSETTINGS SCHEMA HANDLE: speech/use-pronunciation-dictionary not set [profile:default]
+00:41:19.077900 - GSETTINGS REGISTRY: speech/use-pronunciation-dictionary using default value = True
+00:41:19.077913 - SPEECH PRESENTER: Adjusted text: 'Exiting learn mode.'
+00:41:19.077919 - SPEECH: Speak 'Exiting learn mode.' acss: {'established': False}
+00:41:19.077924 - SPEECH OUTPUT: 'Exiting learn mode.' {'established': False}
+00:41:19.078181 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:19.078204 - GSETTINGS SCHEMA HANDLE: speech/capitalization-style not set [profile:default]
+00:41:19.078209 - GSETTINGS REGISTRY: speech/capitalization-style using default value = 'none'
+00:41:19.078300 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:19.078318 - GSETTINGS SCHEMA HANDLE: speech/punctuation-level not set [profile:default]
+00:41:19.078323 - GSETTINGS REGISTRY: speech/punctuation-level using default value = 'most'
+00:41:19.078331 - GSETTINGS REGISTRY: braille/enabled runtime override = False
+00:41:19.078336 - BRAILLE PRESENTER: Braille is disabled.
+00:41:19.078342 - INPUT EVENT MANAGER: Ungrabbing keyboard Reason: Exiting learn mode
+00:41:19.081116 - LEARN MODE PRESENTER: Is now inactive
+00:41:19.081132 - COMMAND MANAGER: Learn mode is now inactive.
+00:41:19.081139 - COMMAND MANAGER: Updating NumLock grabs. NumLock is on: False.
+00:41:19.081158 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.081163 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.081173 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.081178 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.081212 - TOTAL PROCESSING TIME: 0.0044
+^^^^^ HANDLE ATSPI_KEY_PRESSED_EVENT: 'Escape' (9) ^^^^^
+
+00:41:19.161583 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.161614 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.161630 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.161638 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.162212 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.162221 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.162232 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.162238 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+KEYBOARD_EVENT:  type=ATSPI_KEY_RELEASED_EVENT
+                 id=65307
+                 hw_code=9
+                 modifiers=0
+                 text=''
+                 keyval_name='Escape'
+                 timestamp=1790836879.1615345
+                 clickCount=1
+
+vvvvv PROCESS ATSPI_KEY_RELEASED_EVENT: 'Escape' (9) vvvvv
+00:41:19.162296 - SCRIPT: default (module=orca.scripts.default)
+00:41:19.162315 - WINDOW: None
+00:41:19.162331 - LOCATION: None
+00:41:19.162357 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.162363 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.162382 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.162388 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.162409 - TOTAL PROCESSING TIME: 0.0002
+^^^^^ PROCESS ATSPI_KEY_RELEASED_EVENT: 'Escape' (9) ^^^^^
+
+00:41:19.162430 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.162435 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.162444 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.162448 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.502428 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.502463 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.502479 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.502487 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.502522 - FOCUS MANAGER: Active window is None <unknown>.<module>:373 > input_event_manager._on_key_pressed:261 > input_event_manager.process_keyboard_event:297 > focus_manager.get_active_window:342
+00:41:19.504589 - AXUtilities: Unable to find active window from []
+00:41:19.504633 - WARNING: None cannot be active window. No alternative found.
+00:41:19.504860 - FOCUS MANAGER: Locus of focus is None
+00:41:19.505038 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:19.505244 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.505254 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.505272 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.505280 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+KEYBOARD_EVENT:  type=ATSPI_KEY_PRESSED_EVENT
+                 id=100
+                 hw_code=40
+                 modifiers=0
+                 text='d'
+                 keyval_name='d'
+                 timestamp=1790836879.502366
+                 clickCount=1
+
+vvvvv PROCESS ATSPI_KEY_PRESSED_EVENT: 'd' (40) vvvvv
+00:41:19.505325 - SCRIPT: default (module=orca.scripts.default)
+00:41:19.505342 - WINDOW: None
+00:41:19.505358 - LOCATION: None
+00:41:19.505388 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.505394 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.505404 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.505409 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.505418 - PRESENTATION MANAGER: Interrupting presentation
+00:41:19.505457 - SPEECH MANAGER: interrupt_speech. Script: None Event: None notify_user: False
+00:41:19.505699 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:19.505778 - BRAILLE: Kill flash message input_event._present:603 > presentation_manager.interrupt_presentation:88 > braille_presenter.kill_flash:1829 > braille.kill_flash:2182
+00:41:19.506158 - TYPING ECHO PRESENTER: should_echo_keyboard_event: 'd'?
+00:41:19.506179 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.506186 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.506197 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.506203 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.506222 - GSETTINGS SCHEMA HANDLE: typing-echo/character-echo not set [profile:default]
+00:41:19.506228 - GSETTINGS REGISTRY: typing-echo/character-echo using default value = False
+00:41:19.506240 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.506245 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.506255 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.506259 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.506280 - GSETTINGS SCHEMA HANDLE: typing-echo/key-echo not set [profile:default]
+00:41:19.506286 - GSETTINGS REGISTRY: typing-echo/key-echo using default value = True
+00:41:19.506359 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.506365 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.506374 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.506380 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.506548 - GSETTINGS SCHEMA HANDLE: typing-echo/alphabetic-keys not set [profile:default]
+00:41:19.506554 - GSETTINGS REGISTRY: typing-echo/alphabetic-keys using default value = True
+00:41:19.506562 - TYPING ECHO PRESENTER: Echoing alphabetic keyboard event: True.
+00:41:19.506580 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.506585 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.506595 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.506600 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.506632 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:19.506664 - FOCUS MANAGER: Active mode: None Object of interest: None
+00:41:19.506680 - GSETTINGS SCHEMA HANDLE: speech/enable not set [profile:default]
+00:41:19.506685 - GSETTINGS REGISTRY: speech/enable using default value = True
+00:41:19.506696 - GSETTINGS SCHEMA HANDLE: speech/verbosity-level not set [profile:default]
+00:41:19.506700 - GSETTINGS REGISTRY: speech/verbosity-level using default value = 'verbose'
+00:41:19.506717 - FOCUS MANAGER: Locus of focus is None
+00:41:19.506734 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:19.506751 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:19.506762 - GSETTINGS SCHEMA HANDLE: speech/only-speak-displayed-text not set [profile:default]
+00:41:19.506767 - GSETTINGS REGISTRY: speech/only-speak-displayed-text using default value = False
+00:41:19.506776 - GSETTINGS SCHEMA HANDLE: speech/speak-description not set [profile:default]
+00:41:19.506781 - GSETTINGS REGISTRY: speech/speak-description using default value = True
+00:41:19.506790 - GSETTINGS SCHEMA HANDLE: speech/speak-tutorial-messages not set [profile:default]
+00:41:19.506795 - GSETTINGS REGISTRY: speech/speak-tutorial-messages using default value = True
+00:41:19.506804 - GSETTINGS SCHEMA HANDLE: speech/speak-position-in-set not set [profile:default]
+00:41:19.506808 - GSETTINGS REGISTRY: speech/speak-position-in-set using default value = False
+00:41:19.506817 - GSETTINGS SCHEMA HANDLE: speech/speak-widget-mnemonic not set [profile:default]
+00:41:19.506821 - GSETTINGS REGISTRY: speech/speak-widget-mnemonic using default value = True
+00:41:19.506830 - GSETTINGS SCHEMA HANDLE: speech/speak-blank-lines not set [profile:default]
+00:41:19.506834 - GSETTINGS REGISTRY: speech/speak-blank-lines using default value = True
+00:41:19.506843 - GSETTINGS SCHEMA HANDLE: speech/speak-indentation-and-justification not set [profile:default]
+00:41:19.506847 - GSETTINGS REGISTRY: speech/speak-indentation-and-justification using default value = False
+00:41:19.506856 - GSETTINGS SCHEMA HANDLE: speech/announce-cell-headers not set [profile:default]
+00:41:19.506860 - GSETTINGS REGISTRY: speech/announce-cell-headers using default value = True
+00:41:19.506869 - GSETTINGS SCHEMA HANDLE: speech/announce-cell-coordinates not set [profile:default]
+00:41:19.506873 - GSETTINGS REGISTRY: speech/announce-cell-coordinates using default value = True
+00:41:19.506890 - GSETTINGS SCHEMA HANDLE: speech/announce-spreadsheet-cell-coordinates not set [profile:default]
+00:41:19.506895 - GSETTINGS REGISTRY: speech/announce-spreadsheet-cell-coordinates using default value = True
+00:41:19.506903 - GSETTINGS SCHEMA HANDLE: speech/announce-blockquote not set [profile:default]
+00:41:19.506907 - GSETTINGS REGISTRY: speech/announce-blockquote using default value = True
+00:41:19.506916 - GSETTINGS SCHEMA HANDLE: speech/announce-form not set [profile:default]
+00:41:19.506920 - GSETTINGS REGISTRY: speech/announce-form using default value = True
+00:41:19.506929 - GSETTINGS SCHEMA HANDLE: speech/announce-landmark not set [profile:default]
+00:41:19.506933 - GSETTINGS REGISTRY: speech/announce-landmark using default value = True
+00:41:19.506941 - GSETTINGS SCHEMA HANDLE: speech/announce-list not set [profile:default]
+00:41:19.506945 - GSETTINGS REGISTRY: speech/announce-list using default value = True
+00:41:19.506954 - GSETTINGS SCHEMA HANDLE: speech/announce-grouping not set [profile:default]
+00:41:19.506958 - GSETTINGS REGISTRY: speech/announce-grouping using default value = True
+00:41:19.506967 - GSETTINGS SCHEMA HANDLE: speech/announce-table not set [profile:default]
+00:41:19.506971 - GSETTINGS REGISTRY: speech/announce-table using default value = True
+00:41:19.506994 - GSETTINGS SCHEMA HANDLE: voice/established not set [profile:default]
+00:41:19.507006 - GSETTINGS SCHEMA HANDLE: voice/rate not set [profile:default]
+00:41:19.507017 - GSETTINGS SCHEMA HANDLE: voice/pitch not set [profile:default]
+00:41:19.507028 - GSETTINGS SCHEMA HANDLE: voice/volume not set [profile:default]
+00:41:19.507041 - GSETTINGS SCHEMA HANDLE: voice/family-name not set [profile:default]
+00:41:19.507051 - GSETTINGS SCHEMA HANDLE: voice/family-lang not set [profile:default]
+00:41:19.507061 - GSETTINGS SCHEMA HANDLE: voice/family-dialect not set [profile:default]
+00:41:19.507076 - GSETTINGS SCHEMA HANDLE: voice/family-gender not set [profile:default]
+00:41:19.507087 - GSETTINGS SCHEMA HANDLE: voice/family-variant not set [profile:default]
+00:41:19.507121 - SPEECH GENERATOR: None voice requested for None language='', dialect='' Unmodified voice={'established': False}
+00:41:19.507150 - SPEECH GENERATOR: Reported locale of None is 
+00:41:19.507155 - SPEECH GENERATOR: Updated to: '', ''
+00:41:19.507170 - GSETTINGS SCHEMA HANDLE: speech/auto-language-switching not set [profile:default]
+00:41:19.507175 - GSETTINGS REGISTRY: speech/auto-language-switching using default value = True
+00:41:19.507228 - SPEECH GENERATOR: Final voice is {'established': 'False', 'family': '{}'}
+00:41:19.507317 - SPEECH OUTPUT: 'd' {'established': 'False', 'family': "{'dialect': 'None', 'gender': 'None', 'lang': 'None', 'name': 'None', 'variant': 'None'}"}
+00:41:19.507369 - TOTAL PROCESSING TIME: 0.0021
+^^^^^ PROCESS ATSPI_KEY_PRESSED_EVENT: 'd' (40) ^^^^^
+
+00:41:19.507398 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.507403 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.507413 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.507418 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.592522 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.592560 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.592579 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.592588 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.593180 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.593188 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.593201 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.593207 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+KEYBOARD_EVENT:  type=ATSPI_KEY_RELEASED_EVENT
+                 id=100
+                 hw_code=40
+                 modifiers=0
+                 text='d'
+                 keyval_name='d'
+                 timestamp=1790836879.5924559
+                 clickCount=1
+
+vvvvv PROCESS ATSPI_KEY_RELEASED_EVENT: 'd' (40) vvvvv
+00:41:19.593268 - SCRIPT: default (module=orca.scripts.default)
+00:41:19.593288 - WINDOW: None
+00:41:19.593305 - LOCATION: None
+00:41:19.593333 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.593339 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.593349 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.593355 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.593376 - TOTAL PROCESSING TIME: 0.0002
+^^^^^ PROCESS ATSPI_KEY_RELEASED_EVENT: 'd' (40) ^^^^^
+
+00:41:19.593399 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:19.593403 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:19.593412 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:19.593417 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:19.661148 - GENERATOR: Clearing cache.
+00:41:20.250508 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.250542 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.250559 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.250568 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.250602 - FOCUS MANAGER: Active window is None <unknown>.<module>:373 > input_event_manager._on_key_pressed:261 > input_event_manager.process_keyboard_event:297 > focus_manager.get_active_window:342
+00:41:20.254507 - AXUtilities: Unable to find active window from []
+00:41:20.254549 - WARNING: None cannot be active window. No alternative found.
+00:41:20.254767 - FOCUS MANAGER: Locus of focus is None
+00:41:20.254939 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:20.255139 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.255147 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.255161 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.255168 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+KEYBOARD_EVENT:  type=ATSPI_KEY_PRESSED_EVENT
+                 id=65307
+                 hw_code=9
+                 modifiers=0
+                 text=''
+                 keyval_name='Escape'
+                 timestamp=1790836880.250445
+                 clickCount=1
+
+vvvvv PROCESS ATSPI_KEY_PRESSED_EVENT: 'Escape' (9) vvvvv
+00:41:20.255214 - SCRIPT: default (module=orca.scripts.default)
+00:41:20.255232 - WINDOW: None
+00:41:20.255247 - LOCATION: None
+00:41:20.255278 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.255285 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.255295 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.255301 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.255312 - PRESENTATION MANAGER: Interrupting presentation
+00:41:20.255351 - SPEECH MANAGER: interrupt_speech. Script: None Event: None notify_user: False
+00:41:20.255977 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:20.256068 - BRAILLE: Kill flash message input_event._present:603 > presentation_manager.interrupt_presentation:88 > braille_presenter.kill_flash:1829 > braille.kill_flash:2182
+00:41:20.256495 - TYPING ECHO PRESENTER: should_echo_keyboard_event: 'escape'?
+00:41:20.256527 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.256535 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.256549 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.256555 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.256573 - GSETTINGS SCHEMA HANDLE: typing-echo/character-echo not set [profile:default]
+00:41:20.256579 - GSETTINGS REGISTRY: typing-echo/character-echo using default value = False
+00:41:20.256592 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.256597 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.256606 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.256611 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.256627 - GSETTINGS SCHEMA HANDLE: typing-echo/key-echo not set [profile:default]
+00:41:20.256632 - GSETTINGS REGISTRY: typing-echo/key-echo using default value = True
+00:41:20.256662 - GSETTINGS SCHEMA HANDLE: typing-echo/action-keys not set [profile:default]
+00:41:20.256667 - GSETTINGS REGISTRY: typing-echo/action-keys using default value = True
+00:41:20.256673 - TYPING ECHO PRESENTER: Echoing action keyboard event: True.
+00:41:20.256688 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.256693 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.256701 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.256708 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.256737 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:20.256769 - FOCUS MANAGER: Active mode: None Object of interest: None
+00:41:20.256784 - GSETTINGS SCHEMA HANDLE: speech/enable not set [profile:default]
+00:41:20.256788 - GSETTINGS REGISTRY: speech/enable using default value = True
+00:41:20.256799 - GSETTINGS SCHEMA HANDLE: speech/verbosity-level not set [profile:default]
+00:41:20.256803 - GSETTINGS REGISTRY: speech/verbosity-level using default value = 'verbose'
+00:41:20.256820 - FOCUS MANAGER: Locus of focus is None
+00:41:20.256838 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:20.256854 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:20.256866 - GSETTINGS SCHEMA HANDLE: speech/only-speak-displayed-text not set [profile:default]
+00:41:20.256870 - GSETTINGS REGISTRY: speech/only-speak-displayed-text using default value = False
+00:41:20.256880 - GSETTINGS SCHEMA HANDLE: speech/speak-description not set [profile:default]
+00:41:20.256884 - GSETTINGS REGISTRY: speech/speak-description using default value = True
+00:41:20.256894 - GSETTINGS SCHEMA HANDLE: speech/speak-tutorial-messages not set [profile:default]
+00:41:20.256899 - GSETTINGS REGISTRY: speech/speak-tutorial-messages using default value = True
+00:41:20.256908 - GSETTINGS SCHEMA HANDLE: speech/speak-position-in-set not set [profile:default]
+00:41:20.256912 - GSETTINGS REGISTRY: speech/speak-position-in-set using default value = False
+00:41:20.256921 - GSETTINGS SCHEMA HANDLE: speech/speak-widget-mnemonic not set [profile:default]
+00:41:20.256925 - GSETTINGS REGISTRY: speech/speak-widget-mnemonic using default value = True
+00:41:20.256934 - GSETTINGS SCHEMA HANDLE: speech/speak-blank-lines not set [profile:default]
+00:41:20.256937 - GSETTINGS REGISTRY: speech/speak-blank-lines using default value = True
+00:41:20.256946 - GSETTINGS SCHEMA HANDLE: speech/speak-indentation-and-justification not set [profile:default]
+00:41:20.256950 - GSETTINGS REGISTRY: speech/speak-indentation-and-justification using default value = False
+00:41:20.256959 - GSETTINGS SCHEMA HANDLE: speech/announce-cell-headers not set [profile:default]
+00:41:20.256963 - GSETTINGS REGISTRY: speech/announce-cell-headers using default value = True
+00:41:20.256972 - GSETTINGS SCHEMA HANDLE: speech/announce-cell-coordinates not set [profile:default]
+00:41:20.256976 - GSETTINGS REGISTRY: speech/announce-cell-coordinates using default value = True
+00:41:20.256985 - GSETTINGS SCHEMA HANDLE: speech/announce-spreadsheet-cell-coordinates not set [profile:default]
+00:41:20.256989 - GSETTINGS REGISTRY: speech/announce-spreadsheet-cell-coordinates using default value = True
+00:41:20.256998 - GSETTINGS SCHEMA HANDLE: speech/announce-blockquote not set [profile:default]
+00:41:20.257002 - GSETTINGS REGISTRY: speech/announce-blockquote using default value = True
+00:41:20.257010 - GSETTINGS SCHEMA HANDLE: speech/announce-form not set [profile:default]
+00:41:20.257014 - GSETTINGS REGISTRY: speech/announce-form using default value = True
+00:41:20.257022 - GSETTINGS SCHEMA HANDLE: speech/announce-landmark not set [profile:default]
+00:41:20.257026 - GSETTINGS REGISTRY: speech/announce-landmark using default value = True
+00:41:20.257035 - GSETTINGS SCHEMA HANDLE: speech/announce-list not set [profile:default]
+00:41:20.257039 - GSETTINGS REGISTRY: speech/announce-list using default value = True
+00:41:20.257048 - GSETTINGS SCHEMA HANDLE: speech/announce-grouping not set [profile:default]
+00:41:20.257052 - GSETTINGS REGISTRY: speech/announce-grouping using default value = True
+00:41:20.257060 - GSETTINGS SCHEMA HANDLE: speech/announce-table not set [profile:default]
+00:41:20.257064 - GSETTINGS REGISTRY: speech/announce-table using default value = True
+00:41:20.257086 - GSETTINGS SCHEMA HANDLE: voice/established not set [profile:default]
+00:41:20.257098 - GSETTINGS SCHEMA HANDLE: voice/rate not set [profile:default]
+00:41:20.257109 - GSETTINGS SCHEMA HANDLE: voice/pitch not set [profile:default]
+00:41:20.257123 - GSETTINGS SCHEMA HANDLE: voice/volume not set [profile:default]
+00:41:20.257135 - GSETTINGS SCHEMA HANDLE: voice/family-name not set [profile:default]
+00:41:20.257145 - GSETTINGS SCHEMA HANDLE: voice/family-lang not set [profile:default]
+00:41:20.257155 - GSETTINGS SCHEMA HANDLE: voice/family-dialect not set [profile:default]
+00:41:20.257165 - GSETTINGS SCHEMA HANDLE: voice/family-gender not set [profile:default]
+00:41:20.257174 - GSETTINGS SCHEMA HANDLE: voice/family-variant not set [profile:default]
+00:41:20.257209 - SPEECH GENERATOR: None voice requested for None language='', dialect='' Unmodified voice={'established': False}
+00:41:20.257238 - SPEECH GENERATOR: Reported locale of None is 
+00:41:20.257243 - SPEECH GENERATOR: Updated to: '', ''
+00:41:20.257259 - GSETTINGS SCHEMA HANDLE: speech/auto-language-switching not set [profile:default]
+00:41:20.257266 - GSETTINGS REGISTRY: speech/auto-language-switching using default value = True
+00:41:20.257318 - SPEECH GENERATOR: Final voice is {'established': 'False', 'family': '{}'}
+00:41:20.257338 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.257343 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.257352 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.257356 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.257366 - SPEECH OUTPUT: 'escape' {'established': False, 'family': {'name': None, 'gender': None, 'lang': None, 'dialect': None, 'variant': None}}
+00:41:20.257412 - TOTAL PROCESSING TIME: 0.0022
+^^^^^ PROCESS ATSPI_KEY_PRESSED_EVENT: 'Escape' (9) ^^^^^
+
+00:41:20.257437 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.257442 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.257452 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.257457 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.339955 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.340011 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.340029 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.340038 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.340075 - FOCUS MANAGER: Active window is None <unknown>.<module>:373 > input_event_manager._on_key_pressed:261 > input_event_manager.process_keyboard_event:297 > focus_manager.get_active_window:342
+00:41:20.341892 - AXUtilities: Unable to find active window from []
+00:41:20.341930 - WARNING: None cannot be active window. No alternative found.
+00:41:20.342144 - FOCUS MANAGER: Locus of focus is None
+00:41:20.342323 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:20.342521 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.342529 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.342543 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.342549 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+KEYBOARD_EVENT:  type=ATSPI_KEY_PRESSED_EVENT
+                 id=49
+                 hw_code=10
+                 modifiers=0
+                 text='1'
+                 keyval_name='1'
+                 timestamp=1790836880.3398895
+                 clickCount=1
+
+vvvvv PROCESS ATSPI_KEY_PRESSED_EVENT: '1' (10) vvvvv
+00:41:20.342592 - SCRIPT: default (module=orca.scripts.default)
+00:41:20.342610 - WINDOW: None
+00:41:20.342626 - LOCATION: None
+00:41:20.342653 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.342658 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.342668 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.342674 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.342685 - PRESENTATION MANAGER: Interrupting presentation
+00:41:20.342724 - SPEECH MANAGER: interrupt_speech. Script: None Event: None notify_user: False
+00:41:20.342996 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:20.343081 - BRAILLE: Kill flash message input_event._present:603 > presentation_manager.interrupt_presentation:88 > braille_presenter.kill_flash:1829 > braille.kill_flash:2182
+00:41:20.343482 - TYPING ECHO PRESENTER: should_echo_keyboard_event: '1'?
+00:41:20.343510 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.343518 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.343531 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.343537 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.343556 - GSETTINGS SCHEMA HANDLE: typing-echo/character-echo not set [profile:default]
+00:41:20.343561 - GSETTINGS REGISTRY: typing-echo/character-echo using default value = False
+00:41:20.343574 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.343579 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.343589 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.343594 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.343609 - GSETTINGS SCHEMA HANDLE: typing-echo/key-echo not set [profile:default]
+00:41:20.343614 - GSETTINGS REGISTRY: typing-echo/key-echo using default value = True
+00:41:20.343648 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.343653 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.343662 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.343666 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.343793 - GSETTINGS SCHEMA HANDLE: typing-echo/numeric-keys not set [profile:default]
+00:41:20.343799 - GSETTINGS REGISTRY: typing-echo/numeric-keys using default value = True
+00:41:20.343805 - TYPING ECHO PRESENTER: Echoing numeric keyboard event: True.
+00:41:20.343821 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.343826 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.343836 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.343841 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.343874 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:20.343906 - FOCUS MANAGER: Active mode: None Object of interest: None
+00:41:20.343921 - GSETTINGS SCHEMA HANDLE: speech/enable not set [profile:default]
+00:41:20.343926 - GSETTINGS REGISTRY: speech/enable using default value = True
+00:41:20.343937 - GSETTINGS SCHEMA HANDLE: speech/verbosity-level not set [profile:default]
+00:41:20.343942 - GSETTINGS REGISTRY: speech/verbosity-level using default value = 'verbose'
+00:41:20.343959 - FOCUS MANAGER: Locus of focus is None
+00:41:20.343977 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:20.343995 - SCRIPT MANAGER: Active script is: default (module=orca.scripts.default)
+00:41:20.344007 - GSETTINGS SCHEMA HANDLE: speech/only-speak-displayed-text not set [profile:default]
+00:41:20.344011 - GSETTINGS REGISTRY: speech/only-speak-displayed-text using default value = False
+00:41:20.344021 - GSETTINGS SCHEMA HANDLE: speech/speak-description not set [profile:default]
+00:41:20.344025 - GSETTINGS REGISTRY: speech/speak-description using default value = True
+00:41:20.344034 - GSETTINGS SCHEMA HANDLE: speech/speak-tutorial-messages not set [profile:default]
+00:41:20.344039 - GSETTINGS REGISTRY: speech/speak-tutorial-messages using default value = True
+00:41:20.344048 - GSETTINGS SCHEMA HANDLE: speech/speak-position-in-set not set [profile:default]
+00:41:20.344052 - GSETTINGS REGISTRY: speech/speak-position-in-set using default value = False
+00:41:20.344061 - GSETTINGS SCHEMA HANDLE: speech/speak-widget-mnemonic not set [profile:default]
+00:41:20.344065 - GSETTINGS REGISTRY: speech/speak-widget-mnemonic using default value = True
+00:41:20.344074 - GSETTINGS SCHEMA HANDLE: speech/speak-blank-lines not set [profile:default]
+00:41:20.344078 - GSETTINGS REGISTRY: speech/speak-blank-lines using default value = True
+00:41:20.344087 - GSETTINGS SCHEMA HANDLE: speech/speak-indentation-and-justification not set [profile:default]
+00:41:20.344091 - GSETTINGS REGISTRY: speech/speak-indentation-and-justification using default value = False
+00:41:20.344100 - GSETTINGS SCHEMA HANDLE: speech/announce-cell-headers not set [profile:default]
+00:41:20.344104 - GSETTINGS REGISTRY: speech/announce-cell-headers using default value = True
+00:41:20.344113 - GSETTINGS SCHEMA HANDLE: speech/announce-cell-coordinates not set [profile:default]
+00:41:20.344117 - GSETTINGS REGISTRY: speech/announce-cell-coordinates using default value = True
+00:41:20.344127 - GSETTINGS SCHEMA HANDLE: speech/announce-spreadsheet-cell-coordinates not set [profile:default]
+00:41:20.344131 - GSETTINGS REGISTRY: speech/announce-spreadsheet-cell-coordinates using default value = True
+00:41:20.344140 - GSETTINGS SCHEMA HANDLE: speech/announce-blockquote not set [profile:default]
+00:41:20.344143 - GSETTINGS REGISTRY: speech/announce-blockquote using default value = True
+00:41:20.344152 - GSETTINGS SCHEMA HANDLE: speech/announce-form not set [profile:default]
+00:41:20.344156 - GSETTINGS REGISTRY: speech/announce-form using default value = True
+00:41:20.344164 - GSETTINGS SCHEMA HANDLE: speech/announce-landmark not set [profile:default]
+00:41:20.344169 - GSETTINGS REGISTRY: speech/announce-landmark using default value = True
+00:41:20.344185 - GSETTINGS SCHEMA HANDLE: speech/announce-list not set [profile:default]
+00:41:20.344190 - GSETTINGS REGISTRY: speech/announce-list using default value = True
+00:41:20.344199 - GSETTINGS SCHEMA HANDLE: speech/announce-grouping not set [profile:default]
+00:41:20.344203 - GSETTINGS REGISTRY: speech/announce-grouping using default value = True
+00:41:20.344212 - GSETTINGS SCHEMA HANDLE: speech/announce-table not set [profile:default]
+00:41:20.344216 - GSETTINGS REGISTRY: speech/announce-table using default value = True
+00:41:20.344239 - GSETTINGS SCHEMA HANDLE: voice/established not set [profile:default]
+00:41:20.344251 - GSETTINGS SCHEMA HANDLE: voice/rate not set [profile:default]
+00:41:20.344262 - GSETTINGS SCHEMA HANDLE: voice/pitch not set [profile:default]
+00:41:20.344276 - GSETTINGS SCHEMA HANDLE: voice/volume not set [profile:default]
+00:41:20.344288 - GSETTINGS SCHEMA HANDLE: voice/family-name not set [profile:default]
+00:41:20.344299 - GSETTINGS SCHEMA HANDLE: voice/family-lang not set [profile:default]
+00:41:20.344309 - GSETTINGS SCHEMA HANDLE: voice/family-dialect not set [profile:default]
+00:41:20.344318 - GSETTINGS SCHEMA HANDLE: voice/family-gender not set [profile:default]
+00:41:20.344328 - GSETTINGS SCHEMA HANDLE: voice/family-variant not set [profile:default]
+00:41:20.344363 - SPEECH GENERATOR: None voice requested for None language='', dialect='' Unmodified voice={'established': False}
+00:41:20.344392 - SPEECH GENERATOR: Reported locale of None is 
+00:41:20.344397 - SPEECH GENERATOR: Updated to: '', ''
+00:41:20.344413 - GSETTINGS SCHEMA HANDLE: speech/auto-language-switching not set [profile:default]
+00:41:20.344417 - GSETTINGS REGISTRY: speech/auto-language-switching using default value = True
+00:41:20.344469 - SPEECH GENERATOR: Final voice is {'established': 'False', 'family': '{}'}
+00:41:20.344545 - SPEECH OUTPUT: '1' {'established': 'False', 'family': "{'dialect': 'None', 'gender': 'None', 'lang': 'None', 'name': 'None', 'variant': 'None'}"}
+00:41:20.344594 - TOTAL PROCESSING TIME: 0.0020
+^^^^^ PROCESS ATSPI_KEY_PRESSED_EVENT: '1' (10) ^^^^^
+
+00:41:20.344621 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.344626 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.344635 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.344640 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.344711 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.344717 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.344727 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.344732 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.345248 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.345256 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.345270 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.345276 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+KEYBOARD_EVENT:  type=ATSPI_KEY_RELEASED_EVENT
+                 id=49
+                 hw_code=10
+                 modifiers=0
+                 text='1'
+                 keyval_name='1'
+                 timestamp=1790836880.3446999
+                 clickCount=1
+
+vvvvv PROCESS ATSPI_KEY_RELEASED_EVENT: '1' (10) vvvvv
+00:41:20.345308 - SCRIPT: default (module=orca.scripts.default)
+00:41:20.345324 - WINDOW: None
+00:41:20.345340 - LOCATION: None
+00:41:20.345357 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.345363 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.345372 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.345377 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.345390 - TOTAL PROCESSING TIME: 0.0001
+^^^^^ PROCESS ATSPI_KEY_RELEASED_EVENT: '1' (10) ^^^^^
+
+00:41:20.345410 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.345415 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.345423 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.345427 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.434895 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.434927 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.434945 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.434955 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.435540 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.435549 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.435562 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.435567 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+
+KEYBOARD_EVENT:  type=ATSPI_KEY_RELEASED_EVENT
+                 id=65307
+                 hw_code=9
+                 modifiers=0
+                 text=''
+                 keyval_name='Escape'
+                 timestamp=1790836880.4348302
+                 clickCount=1
+
+vvvvv PROCESS ATSPI_KEY_RELEASED_EVENT: 'Escape' (9) vvvvv
+00:41:20.435623 - SCRIPT: default (module=orca.scripts.default)
+00:41:20.435641 - WINDOW: None
+00:41:20.435657 - LOCATION: None
+00:41:20.435681 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.435687 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.435696 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.435701 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:20.435723 - TOTAL PROCESSING TIME: 0.0001
+^^^^^ PROCESS ATSPI_KEY_RELEASED_EVENT: 'Escape' (9) ^^^^^
+
+00:41:20.435745 - GSETTINGS SCHEMA HANDLE: keybindings/keyboard-layout not set [profile:default]
+00:41:20.435750 - GSETTINGS REGISTRY: keybindings/keyboard-layout using default value = 'desktop'
+00:41:20.435759 - GSETTINGS SCHEMA HANDLE: keybindings/desktop-modifier-keys not set [profile:default]
+00:41:20.435764 - GSETTINGS REGISTRY: keybindings/desktop-modifier-keys using default value = ['Insert', 'KP_Insert']
+00:41:21.661393 - GENERATOR: Clearing cache.
+00:41:23.661521 - GENERATOR: Clearing cache.
+00:41:25.661645 - GENERATOR: Clearing cache.
+00:41:27.661844 - GENERATOR: Clearing cache.
+00:41:29.662035 - GENERATOR: Clearing cache.
+00:41:31.662233 - GENERATOR: Clearing cache.
+00:41:32.486110 - ORCA: GLib handler received shutdown signal
+00:41:32.486148 - ORCA: Shutting down
+00:41:32.486173 - PRESENTATION MANAGER: Interrupting presentation
+00:41:32.486228 - SPEECH MANAGER: interrupt_speech. Script: None Event: None notify_user: False
+00:41:32.486668 - SPEECH MANAGER: Speech server is <silent_factory.SpeechServer object at 0x71516b03dd30>
+00:41:32.486738 - BRAILLE: Kill flash message orca.shutdown:118 > presentation_manager.interrupt_presentation:88 > braille_presenter.kill_flash:1829 > braille.kill_flash:2182
+00:41:32.487027 - GSETTINGS SCHEMA HANDLE: speech/enable not set [profile:default]
+00:41:32.487034 - GSETTINGS REGISTRY: speech/enable using default value = True
+00:41:32.487048 - GSETTINGS SCHEMA HANDLE: speech/messages-are-detailed not set [profile:default]
+00:41:32.487052 - GSETTINGS REGISTRY: speech/messages-are-detailed using default value = True
+00:41:32.487060 - GSETTINGS SCHEMA HANDLE: speech/only-speak-displayed-text not set [profile:default]

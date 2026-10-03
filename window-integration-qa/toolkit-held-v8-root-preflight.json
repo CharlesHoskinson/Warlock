@@ -1,0 +1,30 @@
+{
+  "updatedUTC": "2026-10-02T01:55:02.507841+00:00",
+  "records": [
+    {
+      "command": [
+        "python3",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/freeze_packet.py",
+        "--freeze"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"result\": \"pass\", \"inputs\": 22476, \"links\": 327, \"modes\": 22476, \"nativeLaunch\": false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/run_native.py",
+        "--preflight"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"result\": \"pass\", \"inputs\": 22476, \"links\": 327, \"nativeLaunch\": false}\n",
+      "stderr": ""
+    }
+  ],
+  "passed": true,
+  "manifestSHA256": "fa37d12a3a0fd7eaa69401835efb3376a6a8b8ca410d691aa87e6ea8b52cc688",
+  "nativeAuthorizedForExactOneAttempt": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v8/attempt-1",
+  "nativeLaunch": false,
+  "mainWrites": false
+}

@@ -1,0 +1,186 @@
+{
+  "result": "pass",
+  "components": [
+    {
+      "case": "normal-changed-command",
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/terminal-disconnect-evidence/1790985407877274376/terminal-registry-normal-changed-command-1790985408426294055.json",
+      "sha256": "1479986c6b5259732376e2666b796fe12861c17ba8e6ba1f88fde95dfabf69d1",
+      "elapsedSeconds": 0.4860277360130567,
+      "helperActors": 2
+    },
+    {
+      "case": "cancelled-changed-command",
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/terminal-disconnect-evidence/1790985413974953289/terminal-registry-cancelled-changed-command-1790985414681199380.json",
+      "sha256": "28d7644a83420ca156a29f558cedb4a61543959dafdd475c364b674e596b37bd",
+      "elapsedSeconds": 0.47794582598726265,
+      "helperActors": 2
+    },
+    {
+      "case": "same-command-reuse",
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/terminal-disconnect-evidence/1790985428716163766/terminal-registry-same-command-reuse-1790985429214182376.json",
+      "sha256": "c9ef92ee95faac14afd2565449bdc3be696e6d4a24ef3f73bd5b61272508d4e1",
+      "elapsedSeconds": 0.4372570469859056,
+      "helperActors": 2
+    },
+    {
+      "case": "actual-public-provider-refusal",
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/narrow-components/actual-public-provider-refusal/report.json",
+      "sha256": "738fc9014e776eae4a7491b4157953955a805f50a603333fd8f4b440552b8f37",
+      "elapsedSeconds": 0.019851511024171486,
+      "helperActors": 0
+    },
+    {
+      "case": "final-admission-primitive",
+      "path": "/home/hoskinson/window-behavior-spec/qml-process-provider-v10-required-route-components/narrow-components/final-admission-primitive/report.json",
+      "sha256": "1b5263c7d8557a98778efb31a4d70c3fc82f5c19b3daa8c6a8ab0ffa9f0f52d3",
+      "elapsedSeconds": 0.01574990598601289,
+      "helperActors": 0
+    }
+  ],
+  "checks": {
+    "normal-changed-command": {
+      "normalCPUExit0": true,
+      "noRepeatOrHelperControl": true,
+      "freshLeaseAndKernelProof": true,
+      "noInheritedProofBeforeSecondLaunch": true,
+      "firstNormalActorClosure": true,
+      "typedEightRefusals": true,
+      "privateCleanupAndSourceStable": true,
+      "exactTwoDurableReceipts": true,
+      "durableReport0600": true,
+      "receiptsEqualBoundExactOutputs": true,
+      "actualRequest0EqualsUnchangedCommand": true,
+      "actualRequest1EqualsUnchangedCommand": true,
+      "durableFirstStateExact": true,
+      "durableFreshArmExact": true,
+      "firstComplete": true,
+      "explicitTypedRetireBeforeChangedCommand": true,
+      "distinctIndependentActors": true
+    },
+    "cancelled-changed-command": {
+      "normalCPUExit0": true,
+      "noRepeatOrHelperControl": true,
+      "freshLeaseAndKernelProof": true,
+      "noInheritedProofBeforeSecondLaunch": true,
+      "firstNormalActorClosure": true,
+      "typedEightRefusals": true,
+      "privateCleanupAndSourceStable": true,
+      "exactTwoDurableReceipts": true,
+      "durableReport0600": true,
+      "receiptsEqualBoundExactOutputs": true,
+      "actualRequest0EqualsUnchangedCommand": true,
+      "actualRequest1EqualsUnchangedCommand": true,
+      "durableFirstStateExact": true,
+      "durableFreshArmExact": true,
+      "consumerCancelledWithoutActorClosureLoss": true,
+      "explicitTypedRetireBeforeChangedCommand": true,
+      "distinctIndependentActors": true
+    },
+    "same-command-reuse": {
+      "normalCPUExit0": true,
+      "noRepeatOrHelperControl": true,
+      "freshLeaseAndKernelProof": true,
+      "noInheritedProofBeforeSecondLaunch": true,
+      "firstNormalActorClosure": true,
+      "typedEightRefusals": true,
+      "privateCleanupAndSourceStable": true,
+      "exactTwoDurableReceipts": true,
+      "durableReport0600": true,
+      "receiptsEqualBoundExactOutputs": true,
+      "actualRequest0EqualsUnchangedCommand": true,
+      "actualRequest1EqualsUnchangedCommand": true,
+      "durableFirstStateExact": true,
+      "durableFreshArmExact": true,
+      "firstComplete": true,
+      "sameCommandExact": true,
+      "distinctIndependentActors": true
+    },
+    "actual-public-provider-refusal": {
+      "normalExit0": true,
+      "actualActorGone": true,
+      "sourcesStable": true,
+      "durableReport0600": true,
+      "actualSixPublicRefusals": true,
+      "positiveNotClaimed": true
+    },
+    "final-admission-primitive": {
+      "normalExit0": true,
+      "actualActorGone": true,
+      "sourcesStable": true,
+      "durableReport0600": true,
+      "exactWhiteboxFourChecks": true
+    }
+  },
+  "actualReplayChecks": 62,
+  "capturedCPUActors": [
+    {
+      "pid": 1772299,
+      "expectedStart": "20788100",
+      "present": false
+    },
+    {
+      "pid": 1772305,
+      "expectedStart": "20788118",
+      "present": false
+    },
+    {
+      "pid": 1772290,
+      "expectedStart": "20788074",
+      "present": false
+    },
+    {
+      "pid": 1772289,
+      "expectedStart": "20788072",
+      "present": false
+    },
+    {
+      "pid": 1772904,
+      "expectedStart": "20788727",
+      "present": false
+    },
+    {
+      "pid": 1772906,
+      "expectedStart": "20788745",
+      "present": false
+    },
+    {
+      "pid": 1772879,
+      "expectedStart": "20788684",
+      "present": false
+    },
+    {
+      "pid": 1772878,
+      "expectedStart": "20788681",
+      "present": false
+    },
+    {
+      "pid": 1774063,
+      "expectedStart": "20790181",
+      "present": false
+    },
+    {
+      "pid": 1774067,
+      "expectedStart": "20790198",
+      "present": false
+    },
+    {
+      "pid": 1774062,
+      "expectedStart": "20790158",
+      "present": false
+    },
+    {
+      "pid": 1774061,
+      "expectedStart": "20790155",
+      "present": false
+    }
+  ],
+  "helperTransactions": 6,
+  "namedComponentsExecuted": 5,
+  "eachExecutedOnce": true,
+  "publicProviderRefusalAtPrivateRuntimeGuardOnly": true,
+  "publicQSPositive": false,
+  "finalAdmissionPrimitiveScopeOnly": true,
+  "reliabilityAccepted": false,
+  "firstHungFixtureCauseKnown": false,
+  "GUI": false
+}

@@ -1,0 +1,23 @@
+{
+  "result": "pass",
+  "designSHA256": "faa4fb598b503de8ba91a25d5e48c7b25f121361e782be49bf60f0e5b570335d",
+  "scope": "Acceptance protocol and source mapping only",
+  "namedQuint": 35,
+  "boundedTraces": 2000,
+  "steps": 100,
+  "actualOriginHashesVerified": 50,
+  "fixedCaseCount": 24,
+  "sourceDraftAuthorized": true,
+  "observerBuildAuthorized": false,
+  "runtimeProductEditsAuthorizedByThisReview": false,
+  "nativeAuthorized": false,
+  "original14Credit": false,
+  "unknownPartialTransferTriggerPending": true,
+  "constraints": [
+    "Exact observer code/read-only calls and typed schema require review before build/load",
+    "New explicit B producer registry and two-output/presentation prerequisites require source review",
+    "Workspace dispatcher mode cycle conserved and cannot prove direct owning no-mode-cycle transfer",
+    "No native private stored scroll record claim from public geometry alone",
+    "No model/CPU/ACK/list order substituted for native or presentation acceptance"
+  ]
+}

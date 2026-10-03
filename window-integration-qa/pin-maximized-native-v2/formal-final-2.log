@@ -1,0 +1,2431 @@
+An example execution:
+
+[State 0]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 1]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: 1,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 10,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 2]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: 1,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 3]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 8,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 4]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 10,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 5]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 3,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 6]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 6,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 7]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -9,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 0,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 8]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 2,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 9]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 10]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -9,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 8,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 11]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 2,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 12]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: -15,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 13]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -9,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 6,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 14]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 6,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 15]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 16]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 17]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 18]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 8,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 19]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 20]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 5,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 21]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: 0,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 22]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 5,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 23]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: 0,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 10,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 24]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 0,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 25]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 10,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 26]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: -9,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 27]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 1,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 28]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 8,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 29]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 1,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 30]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 7,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 31]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 10,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 32]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 7,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 33]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 5,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 34]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 35]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: 0,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 36]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: 0,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 10,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 37]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: 1,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 38]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: -9,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 0,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 39]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 2,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 40]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 41]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 7,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 42]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 43]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 44]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 45]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 0,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 46]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 6,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 47]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 5,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 48]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 3,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 49]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 1,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 50]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: -15,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 3,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 51]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 52]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 6,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 53]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 54]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 1,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 55]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -9,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 1,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 56]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -9,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 57]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 3,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 58]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 3,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 59]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 2,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 60]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 3,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 61]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 3,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 62]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 6,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 63]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 5,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 64]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: 0,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 2,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 65]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 5,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 66]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: 0,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 67]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 5,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 68]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 2,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 69]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 0,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 0,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 70]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 71]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 6,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 72]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 3,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 73]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 5,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 74]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 1,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 75]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 10,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 76]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 3,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 77]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 1,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 78]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 2,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 79]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 10,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 80]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: -15,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 2,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 81]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 82]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 3,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 83]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: 0,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 7,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 84]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: -9,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 7,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 85]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 1,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 86]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 87]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 1,
+      signals: 1,
+      source: 1
+    }
+}
+
+[State 88]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 5,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 89]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: 0,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 90]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 8,
+      signals: 0,
+      source: 1
+    }
+}
+
+[State 91]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: -9,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 10,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 92]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: -9,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 6,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 93]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: 1,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 1,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 94]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: 0,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 2,
+      signals: 2,
+      source: 2
+    }
+}
+
+[State 95]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: 1,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 0,
+      signals: 0,
+      source: 2
+    }
+}
+
+[State 96]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: -15,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 4,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 97]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 0,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 98]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: true,
+      beforeRc: 1,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 9,
+      signals: 1,
+      source: 2
+    }
+}
+
+[State 99]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 1,
+      beforeGone: false,
+      beforeRc: 1,
+      error: false,
+      forced: false,
+      frozenSource: 1,
+      life: 1,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 1,
+      signals: 2,
+      source: 1
+    }
+}
+
+[State 100]
+{
+  client:
+    {
+      afterRc: 0,
+      argv: 2,
+      beforeGone: false,
+      beforeRc: 0,
+      error: false,
+      forced: true,
+      frozenSource: 1,
+      life: 2,
+      reaped: true,
+      registered: true,
+      reportArgv: 1,
+      reportGone: true,
+      reportLife: 1,
+      reportRc: 0,
+      role: 3,
+      signals: 0,
+      source: 1
+    }
+}
+
+[ok] No violation found (1917ms at 1043 traces/second).
+Trace length statistics: max=101, min=101, average=101.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x186f79 --backend=rust to reproduce.

@@ -1,0 +1,60 @@
+{
+  "result": "confirmed offline negative counterexample",
+  "actualSource": "/home/hoskinson/.local/bin/hypr-snap-groups",
+  "actualSourceSHA256": "c15899f36497529ce4ed9e7e2a4d9c1d78756583d31d96f042b694d84fe8eeba",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-ffb6eaacce9041bfaff9fb896090ce8d.scope",
+    "coreLimit": 1
+  },
+  "noIPC": true,
+  "nativeExecuted": false,
+  "syntheticFixtureIdentityOnly": true,
+  "before": {
+    "version": 1,
+    "instance": "offline-owned-sandbox",
+    "snapped": {
+      "0xbeef": {
+        "identity": [
+          "0xbeef",
+          123,
+          "owned-fixture",
+          "new-lifetime"
+        ],
+        "zone": "left",
+        "workspace": "1",
+        "monitor": 0,
+        "rect": [
+          100,
+          250,
+          460,
+          300
+        ],
+        "normalSize": [
+          460,
+          300
+        ],
+        "normalRect": [
+          100,
+          250,
+          460,
+          300
+        ]
+      }
+    },
+    "groups": [],
+    "next_id": 0
+  },
+  "after": {
+    "version": 1,
+    "instance": "offline-owned-sandbox",
+    "snapped": {},
+    "groups": [],
+    "next_id": 0
+  },
+  "oldCloseRequest": [
+    "unsnap",
+    "0xbeef"
+  ],
+  "newRecordRemoved": true,
+  "boundary": "Executes unchanged helper against sandbox state and synthetic client snapshot; actual address-reuse/native scheduling not exercised"
+}

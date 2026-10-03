@@ -1,0 +1,9 @@
+{
+  "phase": "root source-plan assembly before candidate mutations",
+  "error": "Expected 38 static baseline check calls; original has 30 syntactic calls executing 38 gates through loops",
+  "originalBaselineStaticCalls": 30,
+  "originalFaultStaticCalls": 34,
+  "candidateChangedBeforeFailure": false,
+  "correction": "Require exact 30 baseline and34 fault check-call AST equality, preserve original executed38 count gate",
+  "nativeRun": false
+}

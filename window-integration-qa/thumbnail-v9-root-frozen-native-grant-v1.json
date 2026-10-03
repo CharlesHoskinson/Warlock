@@ -1,0 +1,68 @@
+{
+  "updatedUTC": "2026-10-02T12:35:44.451224+00:00",
+  "result": "pass",
+  "scope": "exact frozen original38 private preview/animation baseline only",
+  "manifest": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/frozen-inputs.json",
+  "manifestSHA256": "1820c23f20e585411a6245b23fb373b2119342ea441dce5dbcbb4000227b0444",
+  "frozenInputs": 18807,
+  "frozenModes": 18807,
+  "frozenLinks": 287,
+  "fullReadyUnionConserved": true,
+  "rootActualDryClosureAndFreezeCommandsExitZero": true,
+  "rootFreezerVerifiedCompleteActualBytesModesLinksBeforeWriteAndPersistedUnionAfterWrite": true,
+  "sourceProof": {
+    "python": 155,
+    "namedQuint": 180,
+    "models": 13,
+    "samplesPerModel": 2000,
+    "maxSteps": 100,
+    "actualCommands": 40,
+    "actualSourceHashesModes": 451
+  },
+  "wholeOriginalBaselineMainASTExact": true,
+  "originalBaselineGates": 38,
+  "crashHandoffFiveChangesRechecked": true,
+  "nativeBaselineAuthorized": true,
+  "nativeBaselineAccepted": false,
+  "fault34Authorized": false,
+  "normalHostExitAccepted": false,
+  "mainChangesAuthorized": false,
+  "fullWindowsParityAccepted": false,
+  "nativeCommand": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/native_integration.py",
+    "--attempt",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1"
+  ],
+  "constraints": [
+    "Root sole serial native owner; cwd /home/hoskinson and inherited PYTHONDONTWRITEBYTECODE=1.",
+    "Exact private mandatory Weston/Wayland parent, AQwayland, scoped core1, owned0700 runtime, Xwayland disabled.",
+    "Original38 checks and unchanged deadlines; preserve failures and all15 main snapshot gates.",
+    "Normal service/renderers/Qt/shell/helpers first, clients-empty then unload, nested compositor/Weston/bus last. Forced cleanup is not acceptance.",
+    "Do not start original34 faults until independent actual baseline acceptance.",
+    "Source QA and private baseline cannot establish full parity, new core/pin/frontend, C1/reduction/cancel/hardware/accessibility or production deployment."
+  ],
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/frozen-inputs.json": "1820c23f20e585411a6245b23fb373b2119342ea441dce5dbcbb4000227b0444",
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-source-ready-v1/source-ready.json": "9ea22f32727145f0b373ee3c71a1ee99ba88950718d7abd1477e1100fa3c9295",
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-freeze-proposal-v3/freeze_collector_v9.py": "e523d668115886059a30f2021e36bbb9218c883446e16f596a601b79000390a1",
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-root-closure-preview-v1.log": "af19a91a0d67404cd3e562c2a870b5f294a981270ba6d03b2a84e8f49d791208",
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-root-freeze-v1.log": "bd9894b27f16b6c8c27475f00c70f030a88241b66c0e9f2ddb1a411c99da6eed",
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-root-full-source-review-v1.json": "dd1c964522f436de138d40097240a71ec9f1d001b8cb82f8f0994f3ba6caed21",
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-root-crash-and-kernel-source-review-v1.json": "22068652ebb4af9f11c301eb7077e5181b0bf58aeeae3a07221e950c36ef7450"
+  },
+  "inputModes": {
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/frozen-inputs.json": 384,
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-source-ready-v1/source-ready.json": 384,
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-freeze-proposal-v3/freeze_collector_v9.py": 384,
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-root-closure-preview-v1.log": 420,
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-root-freeze-v1.log": 420,
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-root-full-source-review-v1.json": 384,
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-root-crash-and-kernel-source-review-v1.json": 384
+  }
+}

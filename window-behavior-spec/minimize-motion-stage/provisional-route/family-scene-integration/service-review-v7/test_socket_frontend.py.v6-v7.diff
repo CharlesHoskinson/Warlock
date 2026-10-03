@@ -1,0 +1,14 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v6/test_socket_frontend.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v7/test_socket_frontend.py
+@@ -48,7 +48,10 @@
+         first=self.request();self.assertTrue(self.entered.wait(1));second=self.request(op='restore')
+         self.gate.set();self.wait(lambda:not self.m.pending)
+         active=[a.controller.current for a in self.m.actors if a.controller.current]
+-        self.assertEqual(len(active),1);self.assertEqual(active[0].profile['managerReceipt'],second['receipt']);self.assertEqual(active[0].operation,'restore')
++        self.assertFalse(active);self.wait(lambda:len(self.d.commits)==3)
++        done=self.m.actors[0].controller.history[-1]
++        self.assertEqual(done.profile['managerReceipt'],second['receipt']);self.assertEqual(done.operation,'restore')
++        self.assertTrue(done.profile['nativeEndpointAlreadySatisfied']);self.assertFalse(any(t.sent for t in self.transports))
+         self.assertTrue(any(h.get('superseded') and h['receipt']==first['receipt'] for h in self.m.ingress_history))
+     def test_shutdown_only_removes_own_socket_identity(self):
+         self.f.path.unlink();replacement=self.f.path;replacement.write_text('other-owned-file')

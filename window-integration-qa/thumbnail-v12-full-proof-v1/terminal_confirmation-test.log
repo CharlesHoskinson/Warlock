@@ -1,0 +1,20 @@
+
+  terminal_confirmation_test
+    ok normalCompleteArchiveAcceptsTest passed 1 test(s)
+    ok ownerFailureRemainsRefusedTest passed 1 test(s)
+    ok moduleFailureRemainsRefusedTest passed 1 test(s)
+    ok serviceFailureRemainsRefusedTest passed 1 test(s)
+    ok genuineRefusedQueryRemainsRefusedTest passed 1 test(s)
+    ok retainedQueryFailureRemainsRefusedTest passed 1 test(s)
+    ok actorFailureRemainsRefusedTest passed 1 test(s)
+    ok sourceBeforeDiskFailureRemainsRefusedTest passed 1 test(s)
+    ok batchBeforeDiskFailureRemainsRefusedTest passed 1 test(s)
+    ok freshSourceMissingAfterDiskRefusesTest passed 1 test(s)
+    ok freshBatchChangedAfterDiskRefusesTest passed 1 test(s)
+    ok ownerLedgerModuleChangeAfterDiskRefusesTest passed 1 test(s)
+    ok noPublishedEvidenceCannotAcceptTest passed 1 test(s)
+    ok noConfirmationCannotAcceptTest passed 1 test(s)
+    ok freshGoodObservationCannotClearOriginalFailureTest passed 1 test(s)
+    ok changedSourceCannotRetainPriorAcceptanceTest passed 1 test(s)
+
+  16 passing (397ms)

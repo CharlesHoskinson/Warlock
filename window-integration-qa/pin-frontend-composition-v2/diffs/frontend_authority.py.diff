@@ -1,0 +1,53 @@
+--- /home/hoskinson/window-integration-qa/pin-frontend-qa-v1/frontend_authority.py
++++ /home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend_authority.py
+@@ -3,6 +3,8 @@
+ import base64,json,math,os,re
+ from native_authority import token,public,complete,integer_point,input_safe,protected_order
+ from root_pin_helper import command,strict_json
++from popup_authority import popup_pair
++from layer_episode import episode
+ 
+ def integer(v,low=1,high=2**53-1):
+  if type(v)is not int or not low<=v<=high:raise ValueError('Typed bounded integer required')
+@@ -24,9 +26,7 @@
+  if w<=0 or h<=0:raise ValueError('Positive actual layer allocation required')
+  return dict(row)
+ def binding(menu,native,shell_scope,width=1600,height=1000):
+- if type(shell_scope)is not dict or set(shell_scope)!= {'pid','start','configSHA256','engineEpoch'}:raise ValueError('Exact external shell/config/engine scope required')
+- integer(shell_scope['pid'],high=2147483647);integer(shell_scope['engineEpoch'])
+- if type(shell_scope['start'])is not str or not re.fullmatch(r'[1-9][0-9]*',shell_scope['start'])or type(shell_scope['configSHA256'])is not str or not re.fullmatch(r'[0-9a-f]{64}',shell_scope['configSHA256']):raise ValueError('External scope representation differs')
++ popup_witness=popup_pair(menu,shell_scope)
+  if type(menu)is not dict or menu.get('open')is not True or menu.get('status')!='ready' or menu.get('sent')is not False:raise ValueError('Actual current captured eligible menu required')
+  captured=token(menu.get('captured'));integer(menu.get('nonce'))
+  if not exact(menu.get('publicIdentity'),public(captured))or menu.get('layerNamespace')!='hoskinson-pin-window-menu':raise ValueError('Same captured actual menu member required')
+@@ -35,7 +35,7 @@
+  local=[numeric(button.get(k))for k in('x','y','width','height')];x,y,w,h=map(numeric,row['box']);bx,by,bw,bh=local
+  if bx<0 or by<0 or bw<=0 or bh<=0 or bx+bw>w or by+bh>h:raise ValueError('Whole actual row must lie inside witnessed layer')
+  point=integer_point([str(x+bx),str(y+by),str(bw),str(bh)],width,height)
+- return dict(shell=dict(shell_scope),nonce=menu['nonce'],captured=captured,layer=row,button=dict(button),point=point)
++ return dict(popupWitness=popup_witness,shell=dict(shell_scope),nonce=menu['nonce'],captured=captured,layer=row,button=dict(button),point=point)
+ def current(menu,native,shell_scope,expected):
+  value=binding(menu,native,shell_scope)
+  if not exact(value,expected):raise ValueError('Current menu/object/output/row/engine witness changed')
+@@ -81,9 +81,11 @@
+   if route=='pointer':pointer(native,self.expected)
+   elif route=='return':keyboard(native,self.expected)
+   else:raise ValueError('Genuine admitted frontend input route required')
+-  self.pressed=True;self.released=False
++  self.pressed=True;self.released=False;self.route=route
+  def release(self,actual):
+-  if actual is not True or not self.current or not self.pressed:raise ValueError('Actual matching release required')
++  if not self.current or not self.pressed or type(actual)is not dict or actual.get('profile')!='b-popup-layer-input-v1' or not exact(actual.get('popupWitness'),self.expected['popupWitness']):raise ValueError('Actual current source-bound B episode required')
++  decoded=episode(actual.get('before'),actual.get('after'),self.route,self.expected)
++  if not exact(decoded,actual):raise ValueError('Whole actual input evidence differs')
+   self.released=True
+  def invalidate(self):self.current=False;self.receipt=False;self.observed=False
+  def accept(self):
+@@ -101,6 +103,7 @@
+  return own
+ 
+ def completion_current(menu,native,scope,expected):
++ if not exact(popup_pair(menu,scope),expected['popupWitness']):raise ValueError('Completed actual popup generation/context tuple changed')
+  # The same real row becomes disabled after its one-shot action is sent.
+  if type(menu)is not dict or menu.get('open')is not True or menu.get('status')!='complete' or menu.get('sent')is not True or type(menu.get('nonce'))is not int or menu['nonce']!=expected['nonce'] or not exact(token(menu.get('captured')),expected['captured']) or not exact(scope,expected['shell']):raise ValueError('Completed menu/action/engine identity changed')
+  if not exact(menu.get('publicIdentity'),public(expected['captured']))or menu.get('layerNamespace')!=expected['layer']['namespace']or not exact(layer(native,scope['pid'],menu['layerNamespace']),expected['layer']):raise ValueError('Same completed real native layer/member required')

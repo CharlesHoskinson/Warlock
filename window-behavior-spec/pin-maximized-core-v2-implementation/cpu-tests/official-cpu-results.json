@@ -1,0 +1,2942 @@
+{
+  "tests": 270,
+  "failures": 0,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-10-02T08:44:14Z",
+  "time": "0.015s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "Config",
+      "tests": 22,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "monitorParserName",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserDefaults",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 13,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserModeStandard",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 22,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserModeKeywords",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 38,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserModeOmitted",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 56,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserModeInvalid",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 63,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserPositionExplicit",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 69,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserPositionAuto",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 79,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserPositionOmitted",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 101,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserPositionAutoCenter",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 109,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserScaleValid",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 127,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserScaleOmitted",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 145,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserScaleInvalid",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 152,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserTransformValid",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 158,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserTransformInvalid",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 166,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserBitdepth",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 177,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserCM",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 187,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserVRR",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 201,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserSDRBrightness",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 220,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserICC",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 230,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserSetDisabled",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 240,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        },
+        {
+          "name": "monitorParserSetMirror",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/MonitorParser.cpp",
+          "line": 246,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Config"
+        }
+      ]
+    },
+    {
+      "name": "ConfigLuaValueTypes",
+      "tests": 11,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "boolParseAndReset",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 63,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "boolBadType",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 86,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "intBooleanCastAndRangeAndMap",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 100,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "floatParseAndRange",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 132,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "stringValidatorAndEmptyPush",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 150,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "colorParseAndPush",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 179,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "vec2ParseValidateAndPush",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 202,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "expressionVec2AcceptsStringNumberAndTableForms",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 246,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "cssGapParseFormsAndRange",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 290,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "fontWeightParse",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 333,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        },
+        {
+          "name": "gradientParseAndPush",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/ConfigValueTypes.cpp",
+          "line": 356,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaValueTypes"
+        }
+      ]
+    },
+    {
+      "name": "ConfigLuaBindingsInternal",
+      "tests": 9,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "parseDirectionAliases",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 148,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "parseToggleAliases",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 160,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "argStrConvertsStringsAndNumbers",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 169,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "tableOptHelpersReadOptionalFields",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 182,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "selectorHelpersAcceptStringAndNumberSelectors",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 208,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "pushWindowUpvalAcceptsNumberAndStringSelectors",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 235,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "parseTableFieldMissingFieldAndPrefixedErrors",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 266,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "pluginBindingIsTableWithLoadFunction",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 288,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        },
+        {
+          "name": "pluginLuaFnIsUnloadedWithoutDanglingCall",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 305,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaBindingsInternal"
+        }
+      ]
+    },
+    {
+      "name": "ConfigLuaRequire",
+      "tests": 6,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0.005s",
+      "testsuite": [
+        {
+          "name": "absolutePathLoadsAndTracksFile",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 351,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0.001s",
+          "classname": "ConfigLuaRequire"
+        },
+        {
+          "name": "relativePathResolvesFromConfigDirectory",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 375,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaRequire"
+        },
+        {
+          "name": "wildcardLoadsSortedTableAndTracksFilesAndDirectory",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 401,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaRequire"
+        },
+        {
+          "name": "wildcardNoMatchIsCatchableError",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 430,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaRequire"
+        },
+        {
+          "name": "normalModuleRequireStillUsesConfigDirectoryPackagePath",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 450,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaRequire"
+        },
+        {
+          "name": "packagePathPreservesLuaDefaultsAfterConfigDirectory",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaBindingsInternal.cpp",
+          "line": 476,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaRequire"
+        }
+      ]
+    },
+    {
+      "name": "ConfigLuaUtils",
+      "tests": 4,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "fromGenericValueMapsSupportedTypes",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaConfigUtils.cpp",
+          "line": 46,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaUtils"
+        },
+        {
+          "name": "fromGenericValueReturnsNullForUnsupportedType",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaConfigUtils.cpp",
+          "line": 94,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaUtils"
+        },
+        {
+          "name": "fromGenericValueCopiesRefreshBits",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaConfigUtils.cpp",
+          "line": 99,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaUtils"
+        },
+        {
+          "name": "typedAccessorsReadStoredValues",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaConfigUtils.cpp",
+          "line": 107,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaUtils"
+        }
+      ]
+    },
+    {
+      "name": "ConfigLuaEventHandler",
+      "tests": 8,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "knownEventsContainsExpectedEntries",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 55,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "registerDispatchAndUnregister",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 62,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "registerUnknownEventReturnsNullopt",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 91,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "callbackLuaErrorDoesNotCrashDispatch",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 105,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "addCustomEventAndDispatchToLua",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 120,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "removingPluginEventUnregistersLuaEvent",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 149,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "addCustomEventDuplicateFails",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 162,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        },
+        {
+          "name": "removeNonexistentCustomEventFails",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaEventHandler.cpp",
+          "line": 173,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaEventHandler"
+        }
+      ]
+    },
+    {
+      "name": "ConfigLuaObjects",
+      "tests": 7,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "keybindCanToggleEnabledFromLua",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 61,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        },
+        {
+          "name": "workspaceRuleCanToggleEnabledFromLua",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 83,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        },
+        {
+          "name": "keybindExposesMetadataAndRemoveMethods",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 105,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        },
+        {
+          "name": "objectsAreReadOnlyFromLua",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 163,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        },
+        {
+          "name": "keybindSupportsEqAndToString",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 178,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        },
+        {
+          "name": "eventSubscriptionRemoveAndIsActive",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 210,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        },
+        {
+          "name": "eventSubscriptionSupportsEqAndToString",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/lua\/LuaObjectsBasic.cpp",
+          "line": 250,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ConfigLuaObjects"
+        }
+      ]
+    },
+    {
+      "name": "ParserUtils",
+      "tests": 6,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "parseIntDecimal",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/shared\/ParserUtils.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ParserUtils"
+        },
+        {
+          "name": "parseIntHex",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/shared\/ParserUtils.cpp",
+          "line": 14,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ParserUtils"
+        },
+        {
+          "name": "parseIntBooleanStrings",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/shared\/ParserUtils.cpp",
+          "line": 20,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ParserUtils"
+        },
+        {
+          "name": "parseIntInvalid",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/shared\/ParserUtils.cpp",
+          "line": 30,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ParserUtils"
+        },
+        {
+          "name": "parseColor",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/shared\/ParserUtils.cpp",
+          "line": 37,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ParserUtils"
+        },
+        {
+          "name": "parseColorBad",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/shared\/ParserUtils.cpp",
+          "line": 53,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "ParserUtils"
+        }
+      ]
+    },
+    {
+      "name": "WorkspaceRuleManager",
+      "tests": 6,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "defaultWorkspaceMatchesMonitorName",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/shared\/WorkspaceRuleManager.cpp",
+          "line": 50,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceRuleManager"
+        },
+        {
+          "name": "defaultWorkspaceMatchesMonitorDescription",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/shared\/WorkspaceRuleManager.cpp",
+          "line": 60,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceRuleManager"
+        },
+        {
+          "name": "defaultWorkspaceMatchesMonitorShortDescription",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/shared\/WorkspaceRuleManager.cpp",
+          "line": 71,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceRuleManager"
+        },
+        {
+          "name": "defaultWorkspaceSkipsNonMatchingMonitor",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/shared\/WorkspaceRuleManager.cpp",
+          "line": 82,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceRuleManager"
+        },
+        {
+          "name": "disabledDefaultWorkspaceIsSkipped",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/shared\/WorkspaceRuleManager.cpp",
+          "line": 93,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceRuleManager"
+        },
+        {
+          "name": "replaceOrAddKeepsExistingSharedRule",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/config\/shared\/WorkspaceRuleManager.cpp",
+          "line": 104,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceRuleManager"
+        }
+      ]
+    },
+    {
+      "name": "Desktop",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "reservedArea",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/Reserved.cpp",
+          "line": 6,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Desktop"
+        }
+      ]
+    },
+    {
+      "name": "BoolMatchEngine",
+      "tests": 10,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "truthyStringOne",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "truthyStringTrue",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 13,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "truthyStringYes",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 19,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "truthyStringOn",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 25,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "truthyCaseInsensitive",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 31,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "falsyStringZero",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 42,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "falsyStringFalse",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 48,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "falsyStringNo",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 54,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "falsyStringEmpty",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 60,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        },
+        {
+          "name": "falsyStringArbitrary",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/BoolMatchEngine.cpp",
+          "line": 66,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "BoolMatchEngine"
+        }
+      ]
+    },
+    {
+      "name": "IntMatchEngine",
+      "tests": 8,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "positiveInteger",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "zero",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 14,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "negativeInteger",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 20,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "invalidStringDefaultsToZero",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 26,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "emptyStringDefaultsToZero",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 32,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "leadingWhitespace",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 38,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "trailingNonDigits",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 43,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        },
+        {
+          "name": "largeValue",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/IntMatchEngine.cpp",
+          "line": 48,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "IntMatchEngine"
+        }
+      ]
+    },
+    {
+      "name": "RegexMatchEngine",
+      "tests": 9,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "exactMatch",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "wildcardPattern",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 14,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "fullMatchRequired",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 21,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "characterClass",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 28,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "negativePrefix",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 36,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "negativeWithWildcard",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 43,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "emptyPattern",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 50,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "dotMatchesSingleChar",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 56,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        },
+        {
+          "name": "alternation",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/RegexMatchEngine.cpp",
+          "line": 64,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "RegexMatchEngine"
+        }
+      ]
+    },
+    {
+      "name": "TagMatchEngine",
+      "tests": 7,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "matchesExistingTag",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 8,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        },
+        {
+          "name": "doesNotMatchMissingTag",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 16,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        },
+        {
+          "name": "emptyKeeper",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 24,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        },
+        {
+          "name": "negativeTagMatching",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 31,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        },
+        {
+          "name": "dynamicTagMatchesWithoutStrict",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 42,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        },
+        {
+          "name": "caseSensitive",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 50,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        },
+        {
+          "name": "tagRemoval",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/desktop\/rule\/matchEngine\/TagMatchEngine.cpp",
+          "line": 61,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagMatchEngine"
+        }
+      ]
+    },
+    {
+      "name": "EventBusCustomEvent",
+      "tests": 5,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "emitWithCorrectArgsSucceedsAndDelivers",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/event\/EventBusCustomEvent.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "EventBusCustomEvent"
+        },
+        {
+          "name": "emitWithTooFewArgsFails",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/event\/EventBusCustomEvent.cpp",
+          "line": 23,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "EventBusCustomEvent"
+        },
+        {
+          "name": "emitWithTooManyArgsFails",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/event\/EventBusCustomEvent.cpp",
+          "line": 31,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "EventBusCustomEvent"
+        },
+        {
+          "name": "emitWithWrongArgTypeFails",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/event\/EventBusCustomEvent.cpp",
+          "line": 39,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "EventBusCustomEvent"
+        },
+        {
+          "name": "listenerReceivesCorrectArgTypes",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/event\/EventBusCustomEvent.cpp",
+          "line": 47,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "EventBusCustomEvent"
+        }
+      ]
+    },
+    {
+      "name": "Helpers",
+      "tests": 66,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "byteOperatorsIntegral",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/ByteOperations.cpp",
+          "line": 5,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "byteOperatorsFloating",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/ByteOperations.cpp",
+          "line": 13,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "byteOperatorsZero",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/ByteOperations.cpp",
+          "line": 20,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "byteConversionFunctions",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/ByteOperations.cpp",
+          "line": 27,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "byteOperatorsChain",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/ByteOperations.cpp",
+          "line": 35,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "cmTypeFromStringValid",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/CMType.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "cmTypeFromStringInvalid",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/CMType.cpp",
+          "line": 19,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "cmTypeToString",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/CMType.cpp",
+          "line": 27,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "cmTypeRoundTrip",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/CMType.cpp",
+          "line": 39,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorConstructorDefault",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Color.cpp",
+          "line": 5,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorConstructorFloats",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Color.cpp",
+          "line": 13,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorConstructorHex",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Color.cpp",
+          "line": 21,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorGetAsHex",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Color.cpp",
+          "line": 42,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorStripA",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Color.cpp",
+          "line": 53,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorModifyA",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Color.cpp",
+          "line": 66,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorEquality",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Color.cpp",
+          "line": 79,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "colorConstants",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Color.cpp",
+          "line": 90,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "directionFromCharValid",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Direction.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "directionFromCharInvalid",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Direction.cpp",
+          "line": 16,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "directionToString",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Direction.cpp",
+          "line": 24,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "directionFromCharToString",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Direction.cpp",
+          "line": 32,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "drmDevIDFromFDCharacterDevice",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Drm.cpp",
+          "line": 9,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "drmDevIDFromFDRejectsRegularFiles",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Drm.cpp",
+          "line": 23,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionBasicArithmetic",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Expression.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionOrderOfOperations",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Expression.cpp",
+          "line": 15,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionNegativeNumbers",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Expression.cpp",
+          "line": 23,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionFloatingPoint",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Expression.cpp",
+          "line": 30,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionWithVariables",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Expression.cpp",
+          "line": 37,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionMultipleVariables",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Expression.cpp",
+          "line": 45,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionInvalidInput",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Expression.cpp",
+          "line": 54,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionZero",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Expression.cpp",
+          "line": 62,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "expressionVec2ParsesLegacyString",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Expression.cpp",
+          "line": 69,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatDrmToShm",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Format.cpp",
+          "line": 13,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatShmToDrm",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Format.cpp",
+          "line": 18,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatDrmShmRoundTrip",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Format.cpp",
+          "line": 23,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatIsFormatYUV",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Format.cpp",
+          "line": 28,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatGetPixelFormatFromDRM",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Format.cpp",
+          "line": 36,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatIsFormatOpaque",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Format.cpp",
+          "line": 50,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatPixelsPerBlock",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Format.cpp",
+          "line": 55,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatMinStride",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Format.cpp",
+          "line": 61,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatShmBufferLayoutValid",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Format.cpp",
+          "line": 69,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatDrmFormatName",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Format.cpp",
+          "line": 87,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "formatAlphaFormat",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/Format.cpp",
+          "line": 93,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathWlTransformToHyprutils",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MathTransform.cpp",
+          "line": 10,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathWlTransformToHyprutilsInvalid",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MathTransform.cpp",
+          "line": 21,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathInvertTransformNonRotated",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MathTransform.cpp",
+          "line": 28,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathInvertTransformRotated",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MathTransform.cpp",
+          "line": 36,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathInvertTransformFlippedRotated",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MathTransform.cpp",
+          "line": 42,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathInvertTransformDoubleInvert",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MathTransform.cpp",
+          "line": 48,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathComposeTransformIdentity",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MathTransform.cpp",
+          "line": 58,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "mathComposeTransformRotation",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MathTransform.cpp",
+          "line": 67,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "escapeJSONStringsBasic",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MiscFunctions.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "escapeJSONStringsSpecialChars",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MiscFunctions.cpp",
+          "line": 12,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "isDirectionString",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MiscFunctions.cpp",
+          "line": 22,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "normalizeAngleRadInRange",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MiscFunctions.cpp",
+          "line": 44,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "normalizeAngleRadNegative",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MiscFunctions.cpp",
+          "line": 50,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "normalizeAngleRadLarge",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MiscFunctions.cpp",
+          "line": 55,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "stringToPercentagePercent",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MiscFunctions.cpp",
+          "line": 62,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "stringToPercentageAbsolute",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MiscFunctions.cpp",
+          "line": 69,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "truthyTrue",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MiscFunctions.cpp",
+          "line": 77,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "truthyFalse",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/MiscFunctions.cpp",
+          "line": 88,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "transferFunctionFromStringNamed",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TransferFunction.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "transferFunctionFromStringNumeric",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TransferFunction.cpp",
+          "line": 15,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "transferFunctionFromStringInvalid",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TransferFunction.cpp",
+          "line": 22,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "transferFunctionToString",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TransferFunction.cpp",
+          "line": 29,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        },
+        {
+          "name": "transferFunctionRoundTrip",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TransferFunction.cpp",
+          "line": 37,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "Helpers"
+        }
+      ]
+    },
+    {
+      "name": "DamageRing",
+      "tests": 29,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "setSizeMarksDamageEntire",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 9,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "setSizeSameSizeNoChange",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 17,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "setSizeNewSizeReDamages",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 27,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "setSizeZeroSize",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 36,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageReturnsTrueForRegionInsideSize",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 46,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageReturnsTrueForBoxInsideSize",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 55,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageReturnsFalseForEmptyRegion",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 63,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageReturnsFalseForInvalidBox",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 72,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageReturnsFalseForRegionOutsideSize",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 84,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageClipsRegionToSize",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 94,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageSetsHasChanged",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 105,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageEntireSetsHasChanged",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 119,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "damageEntireOnZeroSizeDoesNotSetHasChanged",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 129,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "rotateClearsCurrentDamage",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 140,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "rotatePreservesCurrentAsPreviousForNextFrame",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 148,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "rotateMultipleTimes",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 162,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageAge0ReturnsFullScreen",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 176,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageNegativeAgeReturnsFullScreen",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 186,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageExceedsRingLengthReturnsFullScreen",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 195,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageAge1ReturnCurrentOnly",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 205,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageAge2AccumulatesOnePreviousFrame",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 217,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageAccumulatesUpToRingLength",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 233,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageCoalescesWhenTooManyRects",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 250,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "getBufferDamageEmptyRingReturnsEmptyForValidAge",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 278,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "hasChangedFalseInitially",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 293,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "hasChangedTrueAfterDamage",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 299,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "hasChangedFalseAfterRotate",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 309,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "hasChangedTrueAfterDamageEntire",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 317,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        },
+        {
+          "name": "hasChangedFalseAfterDamageOutsideBounds",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/DamageRing.cpp",
+          "line": 326,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "DamageRing"
+        }
+      ]
+    },
+    {
+      "name": "TagKeeper",
+      "tests": 19,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "applyTagSetAddsTag",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagSetReturnsFalseIfAlreadySet",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 13,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagUnsetRemovesTag",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 21,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagUnsetReturnsFalseIfNotSet",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 28,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagToggleSetsWhenAbsent",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 35,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagToggleUnsetsWhenPresent",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 41,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagDynamicAppendsStar",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 50,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "applyTagDynamicDoesNotDoubleAppendStar",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 57,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedReturnsFalseWhenEmpty",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 66,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedExactMatch",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 71,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedMatchesDynamicWhenNotStrict",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 80,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedStrictDoesNotMatchDynamic",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 86,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedStrictMatchesExact",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 92,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedNegativeInvertsResult",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 100,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "isTaggedNegativeWithDynamic",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 108,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "removeDynamicTagRemovesStarVariant",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 116,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "removeDynamicTagReturnsFalseIfNoDynamic",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 123,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "removeDynamicTagOnEmpty",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 130,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        },
+        {
+          "name": "getTagsReturnsAllStoredTags",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/helpers\/TagKeeper.cpp",
+          "line": 137,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "TagKeeper"
+        }
+      ]
+    },
+    {
+      "name": "MonitorPositionController",
+      "tests": 9,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "explicitPositionsAreAppliedFirst",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorPositionController.cpp",
+          "line": 134,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "autoRightPlacesAfterRightmostEdge",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorPositionController.cpp",
+          "line": 150,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "autoLeftPlacesBeforeLeftmostEdge",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorPositionController.cpp",
+          "line": 162,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "autoDownPlacesBelowLowestEdge",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorPositionController.cpp",
+          "line": 174,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "autoUpPlacesAboveHighestEdge",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorPositionController.cpp",
+          "line": 186,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "autoCenterRightCentersVertically",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorPositionController.cpp",
+          "line": 198,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "autoCenterDownCentersHorizontally",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorPositionController.cpp",
+          "line": 210,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "xwaylandPositionsUseLogicalSizeByDefault",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorPositionController.cpp",
+          "line": 222,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        },
+        {
+          "name": "xwaylandPositionsUseTransformedSizeWhenForceZeroScaling",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorPositionController.cpp",
+          "line": 239,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorPositionController"
+        }
+      ]
+    },
+    {
+      "name": "MonitorQueryCore",
+      "tests": 14,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "queryById",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 126,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "queryByName",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 134,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "queryByDescriptionPrefix",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 142,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "queryByVectorInsideBox",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 152,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "closestMonitorForVectorOutsideAllBoxes",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 160,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "directionLookupRight",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 168,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "directionLookupChoosesLongestIntersection",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 176,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "configCurrentReturnsRelativeMonitor",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 185,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "configDirectionUsesRelativeMonitor",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 193,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "configRelativePositiveWraps",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 201,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "configRelativeNegativeWraps",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 211,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "configNumericId",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 220,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "configSelectorSkipsNoOutput",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 228,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        },
+        {
+          "name": "selectorQueryUsesInterfaceMatcher",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/MonitorQueryCore.cpp",
+          "line": 238,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "MonitorQueryCore"
+        }
+      ]
+    },
+    {
+      "name": "WorkspaceQueryCore",
+      "tests": 14,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-02T08:44:14Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "queryById",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 17,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "queryByName",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 26,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "queryByNameString",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 35,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "queryByNumericString",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 44,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "queryByPlainNameString",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 53,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "queryBySpecialString",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 62,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "inertWorkspacesAreIgnored",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 72,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "invalidLookupReturnsNullopt",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 81,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "specialIdsMatchWorkspaceRange",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 90,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "newSpecialIDUsesHighestExistingSpecial",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 97,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "newSpecialIDUsesStartWhenNoneExist",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 108,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "nextAvailableNamedWorkspaceUsesExistingNamedWorkspaces",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 116,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "nextAvailableNamedWorkspaceIncludesPersistentRules",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 126,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        },
+        {
+          "name": "idOutOfBoundsIgnoresSpecialAndInertWorkspaces",
+          "file": "\/home\/hoskinson\/window-behavior-spec\/pin-maximized-core-v2-implementation\/core\/tests\/state\/WorkspaceQueryCore.cpp",
+          "line": 135,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-02T08:44:14Z",
+          "time": "0s",
+          "classname": "WorkspaceQueryCore"
+        }
+      ]
+    }
+  ]
+}

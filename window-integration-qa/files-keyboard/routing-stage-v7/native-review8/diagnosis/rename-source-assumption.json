@@ -1,0 +1,21 @@
+{
+  "scope": "Read-only actual review7 rename timeout diagnosis; strict old failure unchanged",
+  "retainedReportSha256": "b38a5be1191e59a9ca197e2d437c84bb2ed73bdc85132213fc8b90326760acbe",
+  "filesDryrun": "Explorer.dry is FILES_DRYRUN===1; frozen runner passes0 so backend active",
+  "scriptMode": "0o755",
+  "invocation": "Fs.run invokes bash with unchanged ops.sh path and args; script executable bit is not required by that invocation",
+  "actualBackendLog": " DEBUG qml: [files] op rename /home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review7/attempt-1/home/fixture/image.svg /home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review7/attempt-1/home/fixture/reader-renamed.txt",
+  "capturedOriginalImage": {
+    "path": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review7/home/fixture/image.svg",
+    "bytes": 115,
+    "sha256": "90225a0ff4e0c7266ef57f6a0f3f7b8cbe93cf75bcdaa7a12ac62ada0a78db7d"
+  },
+  "actualRenamedFile": {
+    "path": "/home/hoskinson/window-integration-qa/files-keyboard/routing-stage-v7/native-review7/attempt-1/home/fixture/reader-renamed.txt",
+    "bytes": 115,
+    "sha256": "90225a0ff4e0c7266ef57f6a0f3f7b8cbe93cf75bcdaa7a12ac62ada0a78db7d"
+  },
+  "oldImageAbsent": true,
+  "alphaUnchanged": true,
+  "classification": "Actual backend/action renamed image.svg to reader-renamed.txt with exact original image bytes. Old runner incorrectly waited for alpha absence. Actual focus and prompt initial text were image.svg; old full selection state was not captured, so next fixture explicitly proves complete focus/selection/payload coherence before editing."
+}

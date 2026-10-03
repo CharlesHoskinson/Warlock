@@ -1,0 +1,68 @@
+test_actual_live_initial_source_verified_before_gate_then_target_runs (test_legacy_fixture_ready.LegacyReadinessTests.test_actual_live_initial_source_verified_before_gate_then_target_runs) ... ok
+test_empty_kernel_observation_is_pending_not_acceptance_and_full_inverse (test_legacy_fixture_ready.LegacyReadinessTests.test_empty_kernel_observation_is_pending_not_acceptance_and_full_inverse) ... ok
+test_expired_or_unknown_observation_never_counts_as_ready (test_legacy_fixture_ready.LegacyReadinessTests.test_expired_or_unknown_observation_never_counts_as_ready) ... ok
+test_nonempty_mismatches_and_replaced_lifetime_source_never_ready (test_legacy_fixture_ready.LegacyReadinessTests.test_nonempty_mismatches_and_replaced_lifetime_source_never_ready) ... ok
+test_actual_unreaped_legacy_cancel_ack_then_dispose_without_native_write (test_renderer_terminal.RendererTerminalTests.test_actual_unreaped_legacy_cancel_ack_then_dispose_without_native_write) ... ok
+test_boolean_and_nonpositive_pid_start_never_prove_terminal (test_renderer_terminal.RendererTerminalTests.test_boolean_and_nonpositive_pid_start_never_prove_terminal) ... ok
+test_modern_zombie_pidfd_does_not_bless_nonempty_keeper_group (test_renderer_terminal.RendererTerminalTests.test_modern_zombie_pidfd_does_not_bless_nonempty_keeper_group) ... ok
+test_reaped_old_pid_is_separately_absent (test_renderer_terminal.RendererTerminalTests.test_reaped_old_pid_is_separately_absent) ... ok
+test_reused_start_never_signals_actual_live_replacement (test_renderer_terminal.RendererTerminalTests.test_reused_start_never_signals_actual_live_replacement) ... ok
+test_running_durable_retired_claim_refuses_without_disposal (test_renderer_terminal.RendererTerminalTests.test_running_durable_retired_claim_refuses_without_disposal) ... ok
+test_same_live_lifetime_is_not_terminal (test_renderer_terminal.RendererTerminalTests.test_same_live_lifetime_is_not_terminal) ... ERROR
+test_same_unreaped_lifetime_restart_refreshes_durable_ack (test_renderer_terminal.RendererTerminalTests.test_same_unreaped_lifetime_restart_refreshes_durable_ack) ... ok
+test_unexpected_pidfd_error_event_refuses (test_renderer_terminal.RendererTerminalTests.test_unexpected_pidfd_error_event_refuses) ... ok
+test_unknown_and_malformed_stat_quarantine (test_renderer_terminal.RendererTerminalTests.test_unknown_and_malformed_stat_quarantine) ... ok
+test_unknown_procfs_and_pidfd_errors_are_not_absence (test_renderer_terminal.RendererTerminalTests.test_unknown_procfs_and_pidfd_errors_are_not_absence) ... ok
+test_blocked_metadata_reproduces_empty_pending_then_full_inverse (test_frontend_completion.CompletionObservationTests.test_blocked_metadata_reproduces_empty_pending_then_full_inverse) ... ok
+test_actual_socket_acceptance_precedes_blocked_context_and_state_stays_responsive (test_socket_frontend.FrontendTests.test_actual_socket_acceptance_precedes_blocked_context_and_state_stays_responsive) ... ok
+test_bounded_context_queue_refuses_before_second_receipt (test_socket_frontend.FrontendTests.test_bounded_context_queue_refuses_before_second_receipt) ... ok
+test_frontend_cannot_forge_context_or_trigger_native_operation (test_socket_frontend.FrontendTests.test_frontend_cannot_forge_context_or_trigger_native_operation) ... ok
+test_reversed_context_completion_never_changes_latest_scene (test_socket_frontend.FrontendTests.test_reversed_context_completion_never_changes_latest_scene) ... ok
+test_shutdown_only_removes_own_socket_identity (test_socket_frontend.FrontendTests.test_shutdown_only_removes_own_socket_identity) ... ok
+test_absolute_timeout_is_not_reset_for_chunks (test_readonly_ipc.ReadonlyKernelTests.test_absolute_timeout_is_not_reset_for_chunks) ... ok
+test_actual_peer_eof_fd_and_durable_history_before_return (test_readonly_ipc.ReadonlyKernelTests.test_actual_peer_eof_fd_and_durable_history_before_return) ... ok
+test_all_exact_fixed_requests_use_original_top_level_shapes (test_readonly_ipc.ReadonlyKernelTests.test_all_exact_fixed_requests_use_original_top_level_shapes) ... ok
+test_changed_socket_identity_during_reply_refuses (test_readonly_ipc.ReadonlyKernelTests.test_changed_socket_identity_during_reply_refuses) ... ok
+test_completion_fsync_failure_never_returns_bytes (test_readonly_ipc.ReadonlyKernelTests.test_completion_fsync_failure_never_returns_bytes) ... ok
+test_direct_path_does_not_touch_keeper_or_execute_helper (test_readonly_ipc.ReadonlyKernelTests.test_direct_path_does_not_touch_keeper_or_execute_helper) ... ok
+test_exact_selected_peer_change_refuses_before_data_request (test_readonly_ipc.ReadonlyKernelTests.test_exact_selected_peer_change_refuses_before_data_request) ... ok
+test_extra_flags_or_effect_or_user_expression_never_enter_direct_path (test_readonly_ipc.ReadonlyKernelTests.test_extra_flags_or_effect_or_user_expression_never_enter_direct_path) ... ok
+test_healthy_parallel_rows_do_not_hold_manager_lock_during_io (test_readonly_ipc.ReadonlyKernelTests.test_healthy_parallel_rows_do_not_hold_manager_lock_during_io) ... ok
+test_history_capacity_is_checked_before_connection (test_readonly_ipc.ReadonlyKernelTests.test_history_capacity_is_checked_before_connection) ... ok
+test_normal_factory_closure_refuses_actual_pending_connection (test_readonly_ipc.ReadonlyKernelTests.test_normal_factory_closure_refuses_actual_pending_connection) ... ok
+test_oversized_reply_refuses_and_closes_actual_descriptor (test_readonly_ipc.ReadonlyKernelTests.test_oversized_reply_refuses_and_closes_actual_descriptor) ... ok
+test_owner_replacement_during_reply_refuses (test_readonly_ipc.ReadonlyKernelTests.test_owner_replacement_during_reply_refuses) ... ok
+test_partial_json_even_with_eof_is_terminal_refusal (test_readonly_ipc.ReadonlyKernelTests.test_partial_json_even_with_eof_is_terminal_refusal) ... ok
+test_postdisk_owner_replacement_revokes_completed_partial_proof (test_readonly_ipc.ReadonlyKernelTests.test_postdisk_owner_replacement_revokes_completed_partial_proof) ... ok
+test_registration_fsync_failure_prevents_query_send_and_latches (test_readonly_ipc.ReadonlyKernelTests.test_registration_fsync_failure_prevents_query_send_and_latches) ... ok
+test_retained_history_schema_does_not_bless_effect_or_partial_return (test_readonly_ipc.ReadonlyKernelTests.test_retained_history_schema_does_not_bless_effect_or_partial_return) ... ok
+test_source_alias_and_executable_path_replacement_refuse (test_readonly_ipc.ReadonlyKernelTests.test_source_alias_and_executable_path_replacement_refuse) ... ok
+test_wrong_shape_and_invalid_utf8_refuse (test_readonly_ipc.ReadonlyKernelTests.test_wrong_shape_and_invalid_utf8_refuse) ... ok
+
+======================================================================
+ERROR: test_same_live_lifetime_is_not_terminal (test_renderer_terminal.RendererTerminalTests.test_same_live_lifetime_is_not_terminal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/test_renderer_terminal.py", line 66, in test_same_live_lifetime_is_not_terminal
+    with self.legacy('/usr/bin/cat') as (f,s,d,a,b,l,child,row):
+         ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/test_renderer_terminal.py", line 25, in legacy
+    child=gated_process('/proc/self/fd/'+str(selected.fd),env=f.guard.env,pass_fds=(selected.fd,),record=owners.append,process_factory=__import__('fixture_legacy_ready').ready_process)
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/recovery_resources.py", line 108, in gated_process
+    child=process_factory(argv,env=env,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,bufsize=1,pass_fds=(*pass_fds,script,gate_read))
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/fixture_legacy_ready.py", line 53, in ready_process
+    wait_ready(row,deadline)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/fixture_legacy_ready.py", line 36, in wait_ready
+    complete=observe_ready(row)
+  File "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-ipc-v20/fixture_legacy_ready.py", line 26, in observe_ready
+    if any(env.get(k.encode())!=v.encode() for k,v in row['environment'].items()):raise ValueError('fixture nonempty initial environment differs')
+                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: fixture nonempty initial environment differs
+
+----------------------------------------------------------------------
+Ran 40 tests in 9.747s
+
+FAILED (errors=1)

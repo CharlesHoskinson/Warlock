@@ -1,0 +1,91 @@
+{
+  "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790898699_42657393",
+  "compositor": {
+    "pid": 1771921,
+    "start": "12117204"
+  },
+  "socket": "/run/user/1000/wqa/8a72/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790898699_42657393/.socket.sock",
+  "socketIdentity": [
+    84,
+    316741,
+    1000
+  ],
+  "versionSHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+  "helpers": {
+    "snap": {
+      "wrapper": "/run/user/1000/wqa/8a72/taskbar-home/.local/bin/hypr-snap-groups",
+      "wrapperSHA256": "1dfd0c8e1ec16275a85d9b1c472fbc08e3f4c14e245018adb7f8dd1972788b77",
+      "actual": "/run/user/1000/wqa/8a72/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "invocation": "/run/user/1000/wqa/8a72/taskbar-home/.local/bin/hypr-snap-groups"
+    },
+    "shell": {
+      "wrapper": "/run/user/1000/wqa/8a72/taskbar-home/.local/bin/omarchy-shell",
+      "wrapperSHA256": "1dfd0c8e1ec16275a85d9b1c472fbc08e3f4c14e245018adb7f8dd1972788b77",
+      "actual": "/run/user/1000/wqa/8a72/taskbar-home/.local/bin/omarchy-shell.actual",
+      "actualSHA256": "538ece231aba80154c76ab48df8ab013b2f02c5171241d08bddbf08a5fe5ac34",
+      "invocation": "omarchy-shell"
+    }
+  },
+  "log": "/run/user/1000/wqa/8a72/taskbar-home/helper-events.jsonl",
+  "allowed": [
+    "generation:1:hydrate",
+    "generation:1:inactive-fileDrag",
+    "forget-closed:0x5f664c0bef70:18000000:1772357",
+    "forget-closed:0x5f664c0a3e30:18000001:1772357",
+    "forget-closed:0x5f664c87c410:18000002:1772357",
+    "forget-closed:0x5f664c91a1b0:18000003:1772357"
+  ],
+  "loadGeneration": 1,
+  "queryTaskbar": {
+    "path": "/run/user/1000/wqa/8a72/taskbar-home/.local/bin/hypr-taskbar",
+    "sha256": "58215e6cb07b364988a0d5c38e9a4f63d7803e2b7f78481ea3a7104fa55f02e1",
+    "python": "/usr/bin/python3",
+    "pythonSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+  },
+  "queryEnvironment": {
+    "HOME": "/run/user/1000/wqa/8a72/taskbar-home",
+    "PATH": "/run/user/1000/wqa/8a72/taskbar-home/.local/bin:/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/payload/omarchy/bin:/usr/bin",
+    "XDG_RUNTIME_DIR": "/run/user/1000/wqa/8a72",
+    "HYPRLAND_INSTANCE_SIGNATURE": "efb50993780079460b0cbed1363e2166a2de1d9f_1790898699_42657393",
+    "OMARCHY_PATH": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/payload/omarchy",
+    "WINDOW_QA_HELPER_CONFIG": "/run/user/1000/wqa/8a72/taskbar-home/helper-config.json"
+  },
+  "queryRoots": {
+    "qs": {
+      "identity": {
+        "pid": 1772146,
+        "start": "12117304",
+        "pgid": 1772146,
+        "parent": 1771782
+      },
+      "argv": [
+        "/usr/bin/qs",
+        "-p",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/payload/omarchy/shell"
+      ],
+      "config": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/payload/omarchy/shell",
+      "executable": "/usr/bin/quickshell",
+      "executableSHA256": "2dc99382c032710fe495ed115cdee9dc9c69bdb3a21af4d86a9a8ea16733069b",
+      "configSHA256": "4a4b7694e5b9e0bd952ce0efa2d6dc2cea44cdfa98cc2f442e40fe41cbc1beab"
+    },
+    "harness": {
+      "identity": {
+        "pid": 1771782,
+        "start": "12117029",
+        "pgid": 1771782,
+        "parent": 1275790
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/run_native.py",
+        "--attempt",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/attempt-1"
+      ],
+      "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v4/run_native.py",
+      "sourceSHA256": "48fe1ae35cfd42469ed35516c9dc1df4606efd2be6754ad91c1400da2ed97833",
+      "executable": "/usr/bin/python3.14",
+      "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+    }
+  }
+}

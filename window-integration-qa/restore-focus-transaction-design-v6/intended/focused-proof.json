@@ -1,0 +1,75 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-3e3c31c92c8f4694923d2cf55926f8b0.scope",
+    "coreLimit": 1
+  },
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/test_proposal.py"
+  ],
+  "exitCode": 0,
+  "seconds": 3.4248795960156713,
+  "log": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/focused-proof.log",
+  "logMaterial": {
+    "sha256": "7536af6736ffccd097074fd98b5229a8aa61c2fa8551b492b15c5bd6c59d3736",
+    "mode": 384
+  },
+  "sources": {
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/native_methods.py.proposed": {
+      "sha256": "4c13944f6ff1008a2fbccf92940431cbe1f7efbcd04354212901ffada33d66ae",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/owned_methods.py.proposed": {
+      "sha256": "0ad1dded24cb0d11d83bcba8198a774fccec831698d13cfd13804852d8cc1ec8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/generate_proposal.py": {
+      "sha256": "e9066fc3d1e07626209d8ee46564a40cbe3918b61cd10da93b3a47d7b3eac891",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/test_proposal.py": {
+      "sha256": "eace9ed03068e86317b169aad378f346ab23cf4dbbe1ca357a548dd22d41549c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/focused_driver.py": {
+      "sha256": "3c82f0b5f2274470c5eae7e77bb90d634beb8c72e89fd14fe0e7d94c06aad2ae",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/lua_guard_fixture.py": {
+      "sha256": "e17bfeeb36a59cf6a8b812e39542beb07b87155076ce43a724e60dee380bd2c6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/native_desktop.py.proposed": {
+      "sha256": "e10e83de40ffb3bd3c824a7515066390ecd7c8916454e2fd366451f06521c461",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/owned_commands.py.proposed": {
+      "sha256": "6f348647be1f8cbcaae2d0582543b6359968c681a0dd711f9be9802fd8b4f1a3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/scene_controller.py.proposed": {
+      "sha256": "aaf111982a67fa9d713b078e7241ccab3ef5ad087e49bd6b04448bd7b70079cc",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/intended.patch": {
+      "sha256": "b5e0ed850a9b878ab27f6dcf435b390caa475f24e4e105b37ce8fda61e79ada8",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/source-conservation.json": {
+      "sha256": "546500c3a7b435b0850659b3b7abe5481392fa0dcfca1e7aabf9f62e58cbf90e",
+      "mode": 384
+    }
+  },
+  "sourceUnchanged": true,
+  "tests": 20,
+  "CPUProtocolOnly": true,
+  "nativeLuaExecuted": false,
+  "runtimeApplied": false,
+  "observations": "/home/hoskinson/window-integration-qa/restore-focus-transaction-design-v6/intended/focused-observations.json",
+  "observationMaterial": {
+    "sha256": "ab6825c28a179de890468ef9db21c5e7b17d585dc103745e0fc9c4add3e743b0",
+    "mode": 384
+  }
+}

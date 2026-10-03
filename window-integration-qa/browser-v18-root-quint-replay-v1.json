@@ -1,0 +1,59 @@
+{
+  "updatedUTC": "2026-10-02T03:41:49.600316+00:00",
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v18/dom_keyboard_diagnostic.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Running as unit: qa-harness-9f94450e8e0c4f8e85d9e0ce56d8dca9.scope; invocation ID: 7aeecf8733e44dd9acc36b032b6a4153\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v18/dom_keyboard_diagnostic_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  dom_keyboard_diagnostic_test\n    ok sameEventCaptureBubbleTest passed 1 test(s)\n    ok orphanBubbleNotInventedTest passed 1 test(s)\n    ok newEventCannotReplaceCaptureTest passed 1 test(s)\n    ok mismatchedKeyNotJoinedTest passed 1 test(s)\n    ok stalePageBubbleNotJoinedTest passed 1 test(s)\n    ok truncationDoesNotInventHistoryTest passed 1 test(s)\n    ok exhaustionStopsObserverNotOriginalVerdictTest passed 1 test(s)\n    ok diagnosticMatchingNeverAcceptsOriginalFeatureTest passed 1 test(s)\n    ok originalFailureNotChangedByKeyMetadataTest passed 1 test(s)\n    ok missingAndOutOfRangeTokenRefusedTest passed 1 test(s)\n    ok newPageSameTokenKeepsPageSeparationTest passed 1 test(s)\n\n  11 passing (722ms)\n",
+      "stderr": "Running as unit: qa-harness-1846f518e6dd4a7c8e9a56c966255d44.scope; invocation ID: 988edb2f36f249db855161cbd9f7bc2a\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v18/dom_keyboard_diagnostic.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (1808ms at 1106 traces/second).\nUse --seed=0x13b4242 --backend=rust to reproduce.\n",
+      "stderr": "Running as unit: qa-harness-6676c6a9277b421b9b25c98b8c5c8f62.scope; invocation ID: 37790325b6174f7bbbfd034c9ec843db\n"
+    }
+  ],
+  "sourceSHA256": {
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v18/dom_keyboard_diagnostic.qnt": "14b92116d9c02779d35ccd960bb503bcc910c81973598d39ff908b7c246e27b1",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v18/dom_keyboard_diagnostic_test.qnt": "bf68cc81d33326e2d713cf604b502567a1b18fe9209f9acba22a5998d693c15c"
+  },
+  "named": 11,
+  "samples": 2000,
+  "maxSteps": 100,
+  "actualDomOrNativeDeliveryProof": false,
+  "mainWrites": false
+}

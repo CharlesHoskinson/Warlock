@@ -1,0 +1,32 @@
+{
+  "result": "fail",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking_test.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT404]: Name 'toSet' not found\n\n  at /home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking.qnt:29:19\n  29:  val allProps=all{s.order.toSet()==s.live,s.order.length()==s.live.size(),s.lastWrite==0 or(s.live.contains(s.lastWrite)and same),s.complete implies same and stacked}\n                        ^^^^^^^^^^^^^^^\n\nerror: parsing failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT404]: Name 'toSet' not found\n\n  at /home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_stacking.qnt:29:19\n  29:  val allProps=all{s.order.toSet()==s.live,s.order.length()==s.live.size(),s.lastWrite==0 or(s.live.contains(s.lastWrite)and same),s.complete implies same and stacked}\n                        ^^^^^^^^^^^^^^^\n\nerror: parsing failed\n"
+    }
+  ],
+  "newStackImplementationAbsent": true,
+  "nativeExecuted": false
+}

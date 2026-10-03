@@ -1,0 +1,19 @@
+test_backend_loss_and_return_preserve_request (__main__.SourceTests.test_backend_loss_and_return_preserve_request) ... ok
+test_capability_exception_is_inactive_and_preserves_request (__main__.SourceTests.test_capability_exception_is_inactive_and_preserves_request) ... ok
+test_default_and_true_false (__main__.SourceTests.test_default_and_true_false) ... ok
+test_direct_activate_respects_disabled_intent (__main__.SourceTests.test_direct_activate_respects_disabled_intent) ... ok
+test_disable_during_outage_does_not_reenable_on_return (__main__.SourceTests.test_disable_during_outage_does_not_reenable_on_return) ... ok
+test_disable_temporarily_inactive_clears_request (__main__.SourceTests.test_disable_temporarily_inactive_clears_request) ... ok
+test_disabled_replacement_passive (__main__.SourceTests.test_disabled_replacement_passive) ... ok
+test_disabling_invalidates_pending_item (__main__.SourceTests.test_disabling_invalidates_pending_item) ... ok
+test_enable_during_outage_replays_only_explicit_request (__main__.SourceTests.test_enable_during_outage_replays_only_explicit_request) ... ok
+test_enabled_replacement_uses_same_actual_argument (__main__.SourceTests.test_enabled_replacement_uses_same_actual_argument) ... ok
+test_initial_unsupported_backend_registers_on_recovery (__main__.SourceTests.test_initial_unsupported_backend_registers_on_recovery) ... ok
+test_old_device_and_timeout_cannot_consume_new_queue (__main__.SourceTests.test_old_device_and_timeout_cannot_consume_new_queue) ... ok
+test_outage_toggle_cancels_requested_enable (__main__.SourceTests.test_outage_toggle_cancels_requested_enable) ... ok
+test_toggle_and_activation_idempotence (__main__.SourceTests.test_toggle_and_activation_idempotence) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.057s
+
+OK

@@ -1,0 +1,457 @@
+{
+  "manifest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/manifest-v10.json",
+  "manifestSHA256": "7789616932b896590db95476421c5209484a76842d4e177fb896700e4aadda2a",
+  "inputCount": 1847,
+  "modeCount": 1847,
+  "linkCount": 49,
+  "binarySHA256": "06185baacd8316adec369ec5453699e8da054bb057f30242d43dc8607ced1865",
+  "fragmentSHA256": "eeff9248264975b7cd456d9e9399614f704f01bed6634b66c3cd23d579b2efa7",
+  "copyFragmentSHA256": "ceae6422cafc16b2eafe0a7fa82402227127b51c6f6a0d9d0025d0b15153adc4",
+  "nativeLaunch": false,
+  "GPUOperation": false,
+  "currentStageFrozen": true,
+  "offline": {
+    "sourceSHA256": {
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/BackendPolicy.hpp": "050e2275525445438d4142a7669351dd6bd5043a680b8034a02f3796c62f8127",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/CausalImage.hpp": "269639f9b59f2c9e072013c962829a9008ec9ed1e88ad886e796f7bf8312123a",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/CommitLedger.hpp": "8ff5a3dd59098bdcbd2c0599eca2c7163d889c3775ada547d4f0143d2efc1182",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/LibraryMaterial.hpp": "f398e845a2f234e711e050bff3b946e2d14b67fd8d9b1fac0a8190cf52b50416",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/PixelCoverage.hpp": "5e21743958a7fa3e8e28663d94f9e01fdceda432ad23f6aea3375f252b1495d0",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/ProductionPipeline.hpp": "1991733c3fa641464ad3321ef169d19e25c05e0a824a0800ea5b4dbe3e9b1c81",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/QuantizedOver.hpp": "771d1dda7a09110e61856a07caac81e31b1a08cb633558d3111a4d311a7a6685",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/ReadbackImage.hpp": "9d36a979b35ccd767b942f3c2031d8a25282770657b067316682339384e01660",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/Renderer.cpp": "c8827caec73f6889cb01b3396714e12c0c9320c760508c9d18bd35e6ea34316b",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/SamplingExperiment.hpp": "324f5590b524890007817250aa484c62ab528fd13e7045300b6eff175b4fdc78",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/analyze_retained_v10.py": "93d61bba05e891cfe7064a94555761e589f0a01cdb6636f8aa2ed961508c90db",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/causal_binding.qnt": "4a45d657b1291ae641a35db4f96b0cc1e6df9a86d5c738bc433439fc3077e7f1",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/causal_binding_test.qnt": "3ae7ff40ea9995569e39ac593df987a1f5eee565b519ef9023676b02034c052a",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/causal_target.qnt": "43906ccca76059f1d5a544d3b9671898e6745d1e2407ee78f90ab31e9571f0cb",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/causal_target_test.qnt": "8ff614f5871208c34a8d9c53618ae60b71cfb830feac6694615fadb4a6c6279d",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/check_offline.py": "700461e234bb6adc5784abd6c274883532277595ff5365dfe2d47ef2a9e57517",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/check_shaders.py": "5f3c469d33312d5a6af9016b3a64c5b0e6bb935ae229382c8dffa70d755b58a2",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/freeze_packet.py": "6d92a31af61c34bf73103b3bf2b00d9ab08a9f3af1bd5c101c66f5626aad424f",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/manual_sampling.qnt": "5587e51d45e32b1ab4721fc2dcb6225b0d89c7c9cc9b770a6b6e0629547f4825",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/manual_sampling_test.qnt": "cfc7fde44cb8d72ed3f064960f41bc031ff866bbc92050eb20eaa99a282a0ea7",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/pixel_coverage.qnt": "689f2bea55326fbbbefb0a60b65c71e59877f3abc33969627f685ccc219347d1",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/pixel_coverage_test.qnt": "e5e6e5916e34fd94b90b7e62004790a6d183c8a59cbca714fa16e569af6549a8",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/production_pipeline.qnt": "897632ee4001a8a3d5af98b8a2130c83f4d5f9e510caf7faf9ae4a3a4ad79557",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/production_pipeline_test.qnt": "05cdb9a42de43c6c39f04d66a4f7b7603cd5a35dfe3345a63c76c3e4a0b05d3c",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/quantized_over.qnt": "8027ff3dc917839fbb1ab5ea23f90c66ffcf12aeeca06cc4dab629cba38e5b2f",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/quantized_over_test.qnt": "c22a6840cf05df3b5f7e31df3a68f691eb1c9c19bfb761930d1f3da4224f8576",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/test_backend_policy.cpp": "8890626ae998222fbd145358f904b6bc9a00cf2aa51961e3338c40b27672d68c",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/test_causal_image.cpp": "b91f988ff861ad4ebfd7583f9f9948fc54539b57a27ed7da366fc3ab51ec0ad9",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/test_causal_target_source.py": "888f503eadc87272e697003a797ab1c13ed4e2ff08bb698989286f31a7ece0fb",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/test_commit_ledger.cpp": "a1e5b4aabbbb5016868ed219fcb7892df3bd88a4fe63fae51a46b9c874fa7abe",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/test_family_scene.cpp": "75120782e5c2f7abdfffda150ed06d3e21ee63114808d5cdba05579a1d9ab6be",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/test_library_material.cpp": "57a56462a44a34b0e7da7d8b29ba912f0e7cfeb4cb30a4984e133bd944055f90",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/test_manual_sampling.cpp": "a04d2088535ef3c21b33c3fbee9a00d87065d5734c5935941be5000b058bce7d",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/test_production_pipeline.py": "ba0d33160a4c388374aa27042e0d00a150912aeee250cbaa43eb90113f18e1ec",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/test_quantized_gate.py": "5db503a3f0046980488fa161bba89c06b496674d9e042b49eb61ba402530eee7",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/test_quantized_over.cpp": "b81fa8c16b0f7531ad524e825cbc7ad1af3d218a49aba9126b38a94a94084664",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/test_readback_image.cpp": "d2627e34a438cbee0f9c520ea2b6932c29be4b07c485ccb97a0aefe37f060b44",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/test_verify_causal.py": "a95f1f5454851e82a37f7ab6b6dc34bdd44a17ee56d02bdd036d060142d23e9a",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/test_verify_sampling.py": "256ec7e95485c404a7ca185e8e66792ca1f2ddc6a20199817ae8e664d5d6ab92",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/verify_causal.py": "bda6e1afa12702ef988619783463ad9d66a518371c2217309130aa02de15196a",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/verify_production_pipeline.py": "be14c59b9a4eaf75140a053138e9b887cfd6a7a02db9c3d20bfe6f8ec0edaccb",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/verify_quantized_over.py": "29fdedc2f15188315940b836260673a6b707438e793f0fff944195fba3fd3878",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/verify_sampling.py": "9c5fa4ee71b356aef8be514bfb47a156fa44f3ada162fad43887f45f71ced55e",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/Makefile": "51128322a79913715641ea8aaef93c145c0f8d114d76c69663eb61316f9322e6"
+    },
+    "sourceUnchangedDuringProof": true,
+    "nativeLaunch": false,
+    "GPUOperation": false,
+    "commands": [
+      {
+        "label": "build",
+        "command": [
+          "make",
+          "-B",
+          "-j2",
+          "hypr-motion-renderer-staged",
+          "test-quantized-over",
+          "test-manual-sampling",
+          "test-family-scene",
+          "test-commit-ledger",
+          "test-backend-policy",
+          "test-library-material",
+          "test-readback-image",
+          "test-causal-image"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-build.log",
+        "logSHA256": "45ba3e4500c1f9ee97c3849cd80173a03cd6ea66c7a0da7d23115dbfe9a1cbbe"
+      },
+      {
+        "label": "quantized-consumer",
+        "command": [
+          "./test-quantized-over"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-quantized-consumer.log",
+        "logSHA256": "f51559838bcc81611bd2e9c305664fe9791853ff461043f0abad905a9a2e423c"
+      },
+      {
+        "label": "manual-consumer",
+        "command": [
+          "./test-manual-sampling"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-manual-consumer.log",
+        "logSHA256": "96eff2e0e023e4178938492f008f034cbafb53739f1ac6ee0edb7321f756353e"
+      },
+      {
+        "label": "family-consumer",
+        "command": [
+          "./test-family-scene"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-family-consumer.log",
+        "logSHA256": "327fd447b7ec34da5df36ac74fd97d8d822ed39b3f27f6ec65a3bb176431fa2b"
+      },
+      {
+        "label": "commit-ledger",
+        "command": [
+          "./test-commit-ledger"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-commit-ledger.log",
+        "logSHA256": "b523a9d46b00238960bf4b3b8fc66ef2f20a89c4ca6ada4082c51d4d72518872"
+      },
+      {
+        "label": "backend",
+        "command": [
+          "./test-backend-policy"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-backend.log",
+        "logSHA256": "02b1002f19a52ba7db9de2014fad973f71cc796747244ca3a7700e1a01cac3ea"
+      },
+      {
+        "label": "material",
+        "command": [
+          "./test-library-material"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-material.log",
+        "logSHA256": "e1d8be07f2df51ce4059a803386688b166fc49b5d0598baac19958f0a3e5634a"
+      },
+      {
+        "label": "readback",
+        "command": [
+          "./test-readback-image"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-readback.log",
+        "logSHA256": "cd7ce0f38c73d4563a95c0e0bb2779a2aa738b7068789d6ace3b47d733fc946d"
+      },
+      {
+        "label": "causal",
+        "command": [
+          "./test-causal-image"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-causal.log",
+        "logSHA256": "61422d8557aae61a6b367f34548c3a115a36153d19b19c8b041f7d01f3f47a0b"
+      },
+      {
+        "label": "shader-syntax",
+        "command": [
+          "python3",
+          "check_shaders.py"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-shader-syntax.log",
+        "logSHA256": "da668b117e6bf00b3659d5c020eef3bb287204a62f4519f27776e7db3f316764"
+      },
+      {
+        "label": "binding",
+        "command": [
+          "python3",
+          "-m",
+          "unittest",
+          "-v",
+          "test_verify_sampling",
+          "test_verify_causal",
+          "test_quantized_gate",
+          "test_causal_target_source",
+          "test_production_pipeline"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-binding.log",
+        "logSHA256": "789ee2f54c6d1f39ca533cace66150a639af9d8d3576e4715e4e0c660a0cd6a2"
+      },
+      {
+        "label": "production-typecheck",
+        "command": [
+          "quint",
+          "typecheck",
+          "production_pipeline_test.qnt"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-production-typecheck.log",
+        "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "production-named",
+        "command": [
+          "quint",
+          "test",
+          "production_pipeline_test.qnt"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-production-named.log",
+        "logSHA256": "f7fe44ef29687d4b1c99620cb40858320512ef661c0c879c27a5f5b4df65599b"
+      },
+      {
+        "label": "production-model",
+        "command": [
+          "quint",
+          "run",
+          "production_pipeline.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=100",
+          "--seed=2026100110",
+          "--verbosity=0"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-production-model.log",
+        "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "target-typecheck",
+        "command": [
+          "quint",
+          "typecheck",
+          "causal_target_test.qnt"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-target-typecheck.log",
+        "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "coverage-typecheck",
+        "command": [
+          "quint",
+          "typecheck",
+          "pixel_coverage_test.qnt"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-coverage-typecheck.log",
+        "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "coverage-named",
+        "command": [
+          "quint",
+          "test",
+          "pixel_coverage_test.qnt"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-coverage-named.log",
+        "logSHA256": "ba1d417934399b672c5e132522a9ba6857175a74ded2c8a1e91a1d19c0a8b4e0"
+      },
+      {
+        "label": "coverage-model",
+        "command": [
+          "quint",
+          "run",
+          "pixel_coverage.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=100",
+          "--seed=2026100109",
+          "--verbosity=0"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-coverage-model.log",
+        "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "target-named",
+        "command": [
+          "quint",
+          "test",
+          "causal_target_test.qnt"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-target-named.log",
+        "logSHA256": "154c3997cbf914a2353c8fba468b3b7f7cfed54277cad5789cb83d57751046fa"
+      },
+      {
+        "label": "target-model",
+        "command": [
+          "quint",
+          "run",
+          "causal_target.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=100",
+          "--seed=2026100108",
+          "--verbosity=0"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-target-model.log",
+        "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "quantized-typecheck",
+        "command": [
+          "quint",
+          "typecheck",
+          "quantized_over_test.qnt"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-quantized-typecheck.log",
+        "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "quantized-named",
+        "command": [
+          "quint",
+          "test",
+          "quantized_over_test.qnt"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-quantized-named.log",
+        "logSHA256": "39f85e049996e3de1377c3761ac8dc62e44784889e04cd8fe2176e13958aa360"
+      },
+      {
+        "label": "quantized-model",
+        "command": [
+          "quint",
+          "run",
+          "quantized_over.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--seed=2026100115",
+          "--verbosity=0"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-quantized-model.log",
+        "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "causal-typecheck",
+        "command": [
+          "quint",
+          "typecheck",
+          "causal_binding_test.qnt"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-causal-typecheck.log",
+        "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "causal-named",
+        "command": [
+          "quint",
+          "test",
+          "causal_binding_test.qnt"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-causal-named.log",
+        "logSHA256": "95a3a084a9db79493a48e929b36eaf461b45a7cb19d22cdcb4cea7212cdf0893"
+      },
+      {
+        "label": "causal-model",
+        "command": [
+          "quint",
+          "run",
+          "causal_binding.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--seed=2026100116",
+          "--verbosity=0"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-causal-model.log",
+        "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "typecheck",
+        "command": [
+          "quint",
+          "typecheck",
+          "manual_sampling_test.qnt"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-typecheck.log",
+        "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "named",
+        "command": [
+          "quint",
+          "test",
+          "manual_sampling_test.qnt"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-named.log",
+        "logSHA256": "3ea5922e76989ed29cf6ce706fecb3d940e4c3e34d20948fb25b84c658f2b47a"
+      },
+      {
+        "label": "model",
+        "command": [
+          "quint",
+          "run",
+          "manual_sampling.qnt",
+          "--invariant",
+          "allProps",
+          "--max-samples",
+          "2000",
+          "--max-steps",
+          "40",
+          "--seed",
+          "2026100114",
+          "--verbosity",
+          "0"
+        ],
+        "exit": 0,
+        "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-production-default-v10/offline-model.log",
+        "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "quantizedConsumerChecks": 213,
+    "manualConsumerChecks": 52,
+    "familyConsumerChecks": 73,
+    "ledgerChecks": 80,
+    "backendChecks": 20,
+    "materialChecks": 34,
+    "readbackChecks": 10,
+    "causalChecks": 15,
+    "PythonBindingTests": 81,
+    "quantizedConfigurationTests": 41,
+    "causalTargetSourceTests": 4,
+    "productionSelectionTests": 11,
+    "newSamplerBindingTests": 11,
+    "namedSamplingScenarios": 8,
+    "namedQuantizedScenarios": 12,
+    "namedCausalTargetScenarios": 10,
+    "namedCausalScenarios": 6,
+    "samplingModelSamples": 2000,
+    "causalModelSamples": 2000,
+    "quantizedModelSamples": 2000,
+    "causalTargetModelSamples": 2000,
+    "namedCoverageScenarios": 10,
+    "coverageModelSamples": 2000,
+    "offlineShadersParsed": 3,
+    "observedCounts": {
+      "quantized-consumer": 213,
+      "binding": 81,
+      "production-named": 11,
+      "coverage-named": 10,
+      "target-named": 10,
+      "quantized-named": 12,
+      "causal-named": 6,
+      "named": 8
+    },
+    "totalNamedScenarios": 57,
+    "namedProductionScenarios": 11,
+    "productionModelSamples": 2000,
+    "scope": "offline guards/math only; no native pixel or cadence acceptance"
+  },
+  "pending": "root independent source/mode review, fresh default-path original44-image native campaign and ordinary ServiceV12 family/retirement/continuous reversal; recovery and cadence remain pending; no native grant assumed"
+}

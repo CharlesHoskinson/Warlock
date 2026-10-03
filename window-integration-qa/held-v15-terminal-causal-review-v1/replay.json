@@ -1,0 +1,143 @@
+{
+  "result": "fail bounded evidence replay",
+  "checks": {
+    "originalCasesAndFailures": true,
+    "frozenMainAndPrivateClosure": true,
+    "actualRawHelperIntegrity": true,
+    "sixBoundedArmDecisions": true,
+    "normalPrivateTerminalDrain": false,
+    "partialFinalNativeRetirement": true
+  },
+  "errors": {
+    "normalPrivateTerminalDrain": "ValueError('drain erased failure/authority')"
+  },
+  "details": {
+    "originalCasesAndFailures": {
+      "passedCases": 3,
+      "reachedCases": 4,
+      "expectedCases": 52,
+      "unrun": 48,
+      "failedCase": "move-minimize-preview",
+      "strictAuditorChecks": {
+        "terminalReportRetainsActualFailure": true,
+        "completeFrozenBytesModesLinks": true,
+        "exactSourceManifest": true,
+        "all18MainPreservation": true,
+        "mainWritesAbsent": true,
+        "allFourExactVariants": false,
+        "qt-wayland:all13ExactCases": false,
+        "qt-wayland:move-escape:nativeReplay": true,
+        "qt-wayland:move-escape:normalPublicQuit": true,
+        "qt-wayland:move-reload:nativeReplay": true,
+        "qt-wayland:move-reload:normalPublicQuit": true,
+        "qt-wayland:move-unload-reload:nativeReplay": true,
+        "qt-wayland:move-unload-reload:normalPublicQuit": true,
+        "qt-wayland:move-minimize-preview:nativeReplay": false,
+        "qt-wayland:move-minimize-preview:normalPublicQuit": true,
+        "qt-wayland:pointerLegalBalancedActualTransitionsNormalEOF": true,
+        "qt-wayland:keyboardLegalBalancedActualTransitionsNormalEOF": true,
+        "qt-wayland:exactQSReadinessAndExplicitNormalQuit": false,
+        "qt-wayland:normalQSAndService": true,
+        "qt-wayland:nativeUnloadNormalOrdered": false,
+        "qt-wayland:hostRuntimeCleanup": true,
+        "qt-wayland:rawHelpersNormalExact": false,
+        "qt-wayland:allRecordedOriginalIdentitiesGone": true,
+        "qt-wayland:bothGenuineShellPreviewReceipts": false
+      },
+      "causeOfPresentationFailure": "unclassified"
+    },
+    "frozenMainAndPrivateClosure": {
+      "inputs": 26280,
+      "modes": 26280,
+      "links": 342,
+      "mainGates": 18,
+      "privateRuntimeGone": true,
+      "allRecordedOriginalLifetimesGone": true
+    },
+    "actualRawHelperIntegrity": {
+      "started": 46,
+      "terminal": 46,
+      "refusals": 0,
+      "nonzero": 0,
+      "completeWorkloadAccepted": false,
+      "missingWorkloadFailure": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py\", line 115, in variant_run\n    try:active.prepare(case,index+1);HeldController(active).run(case);active.report['result']='pass'\n                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/held_controller.py\", line 112, in run\n    else:ack=route.interrupt(end,target,current_geometry)\n             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/held_route.py\", line 174, in interrupt\n    if end=='minimize-preview':return self.frontend.minimize(self,target,current_geometry)\n                                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/frontend_route.py\", line 77, in minimize\n    packet,evidence=self.retired(route,'minimize');self.pairs=evidence['cachePairs']\n                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/frontend_route.py\", line 64, in retired\n    evidence=validate_presentation(value,operation,self.members)\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/service_presentations.py\", line 20, in validate\n    if len(matches)!=1:raise ValueError('One exact complete family native handover from actual presentation required')\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: One exact complete family native handover from actual presentation required\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/run_native.py\", line 181, in variant_run\n    report['completedHelpers']=helper_setup.wait_and_archive(config,output/'completed-helpers.json',expect_harness=expectation['harnessSnapshotAttempted'],expect_service=expectation['serviceRegistered'])\n                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/helper_setup.py\", line 368, in wait_and_archive\n    result = observer.summarize(events, config['allowed'], require_all,expect_harness,expected)\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/helper_observer.py\", line 473, in summarize\n    if actual!=expected_service:raise RuntimeError('Incomplete/extra service helper queries')\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Incomplete/extra service helper queries\n"
+    },
+    "sixBoundedArmDecisions": [
+      {
+        "serial": 1,
+        "kind": "initial",
+        "attemptRecords": 4,
+        "durationSeconds": 0.13911421701777726,
+        "ticketNonce": "2676e5fb6434bfbc47eb98420a8de17b",
+        "publishedOnce": true,
+        "artifactSHA256": "246a4b52660352534db90814f150d3b7e33044c4a6255c2cf5ea3a0e65cee3b6"
+      },
+      {
+        "serial": 2,
+        "kind": "reload",
+        "attemptRecords": 4,
+        "durationSeconds": 0.09084157101460733,
+        "ticketNonce": "f1e8ce8b235329821008a13a869c78ad",
+        "publishedOnce": true,
+        "artifactSHA256": "e2dcdf9508cea2a4c885c5b4e05e6bafa80c0c18c0b1c3cbb3604841b19e4098"
+      },
+      {
+        "serial": 3,
+        "kind": "native-unload",
+        "attemptRecords": 4,
+        "durationSeconds": 0.10803677199874073,
+        "ticketNonce": "47993e4e8cb8cbf881b8356a39530df8",
+        "publishedOnce": true,
+        "artifactSHA256": "6cf218eb3e766bfb4c32a59ea3eb0f3c11927f6378dad31a4646e74b08d8435f"
+      },
+      {
+        "serial": 4,
+        "kind": "native-load",
+        "attemptRecords": 11,
+        "durationSeconds": 0.77954344599857,
+        "ticketNonce": "cae984cd549948b7ed1c39a8181dbf83",
+        "publishedOnce": true,
+        "artifactSHA256": "1d26041f8603ef61d557d05f658f2e216fb8121d96e15616dfaf90f123dcf1d8"
+      },
+      {
+        "serial": 5,
+        "kind": "reload",
+        "attemptRecords": 4,
+        "durationSeconds": 0.14684600199689157,
+        "ticketNonce": "4d0f03b47e36ca35c796ab051149c8de",
+        "publishedOnce": true,
+        "artifactSHA256": "f4b0200a8fca15bc4e0145883de72e8c1b2513f160eeca4131e5d53a1adc24da"
+      },
+      {
+        "serial": 6,
+        "kind": "native-unload",
+        "attemptRecords": 4,
+        "durationSeconds": 0.17249050800455734,
+        "ticketNonce": "1bfd9a52e7501df79d730c469de88ead",
+        "publishedOnce": true,
+        "artifactSHA256": "8762431af1a15d85e7c9dfd186f1c4ae43739534acb1dedc877c3487f39c05c8"
+      }
+    ],
+    "partialFinalNativeRetirement": {
+      "candidateUnloadReplyRecorded": true,
+      "finalNativeEvaluationComplete": false,
+      "probeUnloadSubmittedOrReplied": false,
+      "actualFinalEvaluationOperations": [],
+      "finalOrdinalReplTimeoutSeconds": 5,
+      "probePreArmClientsTimeoutSeconds": 5,
+      "timeoutCause": "unclassified",
+      "fullNormalNativeRetirementAccepted": false
+    }
+  },
+  "originalWhole52Result": "fail",
+  "fullHeld52Accepted": false,
+  "fullNormalNativeRetirementAccepted": false,
+  "nativeCommands": false,
+  "mainWrites": false,
+  "originalAuditorArtifacts": {
+    "agent-wheel-aware-terminal-replay-v3.json": "3da3fa76a65c27ff5c68558b2f4d5d44f029e8a6ce0748fee7f8dfe6a14d50b0",
+    "agent-retirement-replay-v1.json": "ee17877c22096c86fe49d637a0c9625ab0c4b5fb95eee1d68e323874771f8fb7",
+    "agent-evaluation-replay-v1.json": "046db8889905570fa185c15b1034461db5901c7a33ea67a9c82b88c50939dd1f"
+  },
+  "auditorSHA256": "97f57341271739608ebb03b6ef455a2a8ec4e57527a21abf7454aa5a2ba8c13b"
+}

@@ -1,0 +1,157 @@
+{
+  "phase": "owner-post-disk",
+  "capturedRaw": {
+    "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/attempt-baseline-1/actual-owner-binding.json",
+    "sha256": "856780a9aeb2acff1c36ee1fd7d6451aba7e39dd1a4501b5118883bb02ad3afa",
+    "identity": {
+      "device": 58,
+      "inode": 35512196,
+      "size": 5781,
+      "mode": 384,
+      "uid": 1000,
+      "gid": 1000
+    }
+  },
+  "errors": [],
+  "owner": {
+    "pid": 1995611,
+    "start": 21048760,
+    "uid": 1000,
+    "nonce": "2c68c39e026a472dbd7aaabe2b3b42b2",
+    "session": "efb50993780079460b0cbed1363e2166a2de1d9f_1790988008_1873330624",
+    "root": "/run/user/1000/wqa/f7e2/hypr-window-motion/qa-family-service",
+    "rootIdentity": [
+      84,
+      641786
+    ],
+    "lockIdentity": [
+      84,
+      641787
+    ],
+    "compositorPID": 1994531,
+    "compositorStart": 21048142
+  },
+  "callbacks": {
+    "__call__": {
+      "functionID": 131747489819888,
+      "boundOwnerID": 131747490513312,
+      "filename": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/service_observer.py",
+      "source": {
+        "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/service_observer.py",
+        "before": {
+          "device": 58,
+          "inode": 35343479,
+          "size": 16977,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "9ea62c79ef8eca627df3d588a9f4d61022d58403124ecd8f98c5d85698a1a98b"
+      }
+    },
+    "bind_lease": {
+      "functionID": 131747489819712,
+      "boundOwnerID": 131747490513312,
+      "filename": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/service_observer.py",
+      "source": {
+        "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v14/service_observer.py",
+        "before": {
+          "device": 58,
+          "inode": 35343479,
+          "size": 16977,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "9ea62c79ef8eca627df3d588a9f4d61022d58403124ecd8f98c5d85698a1a98b"
+      }
+    },
+    "context": {
+      "functionID": 131747489818656,
+      "boundOwnerID": 131747490513312,
+      "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+        "before": {
+          "device": 58,
+          "inode": 35073393,
+          "size": 20989,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b"
+      }
+    },
+    "helper_changed": {
+      "functionID": 131747489817600,
+      "boundOwnerID": 131747490513312,
+      "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+        "before": {
+          "device": 58,
+          "inode": 35073393,
+          "size": 20989,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b"
+      }
+    },
+    "readonly_changed": {
+      "functionID": 131747489817248,
+      "boundOwnerID": 131747490513312,
+      "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+        "before": {
+          "device": 58,
+          "inode": 35073393,
+          "size": 20989,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b"
+      }
+    },
+    "recover": {
+      "functionID": 131747489819008,
+      "boundOwnerID": 131747490513312,
+      "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/native_runtime.py",
+        "before": {
+          "device": 58,
+          "inode": 35073393,
+          "size": 20989,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b"
+      }
+    },
+    "lease.verify": {
+      "functionID": 131747489811968,
+      "boundOwnerID": 131747490513984,
+      "filename": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/service_runtime.py",
+      "source": {
+        "path": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-focus-transaction-v28/service_runtime.py",
+        "before": {
+          "device": 58,
+          "inode": 35073225,
+          "size": 17931,
+          "mode": 420,
+          "uid": 1000,
+          "gid": 1000
+        },
+        "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f"
+      }
+    }
+  },
+  "usable": false,
+  "moduleToken": "3fb530316b7cdbf865d2fd0d5d94741c0a1bf4c9c67cd8b65c8deb9c0432ae62"
+}

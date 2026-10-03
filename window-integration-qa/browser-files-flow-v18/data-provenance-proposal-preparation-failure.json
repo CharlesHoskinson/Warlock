@@ -1,0 +1,32 @@
+{
+  "result": "fail",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v7/data_provenance_proposal_test.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT101]: Built-in name 'size' is redefined in module 'data_provenance_proposal'\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v7/data_provenance_proposal.qnt:16:169\n  16:   nondet mode=Bool.oneOf();nondet unlink=Bool.oneOf();nondet tmpfs=Bool.oneOf();nondet uuid=Bool.oneOf();nondet readonly=Bool.oneOf();nondet noexec=Bool.oneOf();nondet size=Bool.oneOf();nondet source=Bool.oneOf()\n                                                                                                                                                                              ^^^^\n\nerror: parsing failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v7/data_provenance_proposal.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--verbosity=1"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT101]: Built-in name 'size' is redefined in module 'data_provenance_proposal'\n\n  at /home/hoskinson/window-integration-qa/browser-files-flow-v7/data_provenance_proposal.qnt:16:169\n  16:   nondet mode=Bool.oneOf();nondet unlink=Bool.oneOf();nondet tmpfs=Bool.oneOf();nondet uuid=Bool.oneOf();nondet readonly=Bool.oneOf();nondet noexec=Bool.oneOf();nondet size=Bool.oneOf();nondet source=Bool.oneOf()\n                                                                                                                                                                              ^^^^\n\nerror: parsing failed\n"
+    }
+  ],
+  "authorityImplemented": false,
+  "nativeExecuted": false
+}

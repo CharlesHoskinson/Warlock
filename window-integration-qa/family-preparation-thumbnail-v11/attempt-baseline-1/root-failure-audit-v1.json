@@ -1,0 +1,486 @@
+{
+  "schema": "root-thumbnail-v11-native-failure-audit-v1",
+  "result": "failure-evidence-independently-verified",
+  "time": "2026-10-02T20:12:31.235811+00:00",
+  "manifestSHA256": "53f6ddde08633dc3bfab3cbadfde2997695bf189b095382e2805cd1e8441a3c9",
+  "frozenInputsVerified": 20726,
+  "frozenLinksVerified": 287,
+  "nativeSession": 37821,
+  "nativeExitCode": 1,
+  "checksRecorded": 19,
+  "checksPassed": 17,
+  "fullOriginal38Accepted": false,
+  "firstWorkloadFailure": "restore requires three actual family captures; only owner capture returned",
+  "laterFailedPredicates": [
+    "Every ordinary actor selects repaired production default without experimental flags",
+    "Every exact closed native lifetime completes its registered helper normally before unload"
+  ],
+  "restoreMetadataElapsedMs": 1841.047499,
+  "restoreCapturedSources": 1,
+  "restoreReady": false,
+  "restoreVisual": false,
+  "restoreSettlementReason": "controller deadline",
+  "helperStarts": 32,
+  "helperTerminals": 32,
+  "actualAllRegisteredHelpersNormal": true,
+  "actualAllRegisteredHelperIdentitiesGone": true,
+  "harnessQueries": 1,
+  "serviceQueries": 7,
+  "fullWorkloadHelperCountsAccepted": false,
+  "actualClientsNormal0Gone": true,
+  "all15MainPreservation": true,
+  "nativeUnloaded": true,
+  "noUnexpectedOrRemainingDescendants": true,
+  "privateRuntimeGone": true,
+  "hostNormalExitAndNoEscalationProved": false,
+  "hostExitStatusLimit": "Original host stop/close does not record signal/escalation/returncode; empty descendants is not normal-exit proof.",
+  "selectedLifetimesCurrentlyGone": 70,
+  "artifacts": {
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-linked-actor-1-confirmation.json": {
+      "sha256": "c61b7a07d7f0a61817fd6000ab627fc71c9293db5406ec6a3f705cfef3360104",
+      "mode": 384,
+      "bytes": 21054
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-linked-actor-1.json": {
+      "sha256": "99872c44babc9e0bf487102d0e641dafce2b9051f95954bc9b66fb0599e14a6a",
+      "mode": 384,
+      "bytes": 35248
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-linked-actor-2-confirmation.json": {
+      "sha256": "71cfad150d8bb1e1c38eab7cd62b3c614a8098298a159ed1d5daa4424bec701c",
+      "mode": 384,
+      "bytes": 21054
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-linked-actor-2.json": {
+      "sha256": "dd452d3b41d7f138e2af374f56bbc772808c0f575e6dea73bdace57ff4c3e89c",
+      "mode": 384,
+      "bytes": 35248
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-live-events.json": {
+      "sha256": "403c33b71719f744909d51727894fb5da8b6172e0a56c5e1ff808c0024da6394",
+      "mode": 384,
+      "bytes": 1783
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-modules-after-confirmation.json": {
+      "sha256": "cf83b41fb8fe0a7360f427a1e0807c67185d418c126bd09785861c7dda9dfd08",
+      "mode": 384,
+      "bytes": 114888
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-modules-after.json": {
+      "sha256": "4b97e862c76af4f4b68dd7a5c0edbff5be21eabe36c876de4b2c7808d7e55bab",
+      "mode": 384,
+      "bytes": 114494
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-modules-at-owner-bind-confirmation.json": {
+      "sha256": "c028b6112a87f6ef3cc93269f2afe808618d22d0cd7acea9b43a85b0f2d985a3",
+      "mode": 384,
+      "bytes": 114915
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-modules-at-owner-bind.json": {
+      "sha256": "2476695e100ac256e3bb3c6663689c146a186962b8884f5b89bbbadbbe47d2da",
+      "mode": 384,
+      "bytes": 114513
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-modules-before-confirmation.json": {
+      "sha256": "883aed0c25d27218ee7fff899b8aeecfcd71208589fa1e0ccd3276df9244ab4c",
+      "mode": 384,
+      "bytes": 114890
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-modules-before.json": {
+      "sha256": "1b5a41380c493e7b3fdb3ca860bcb8bb2b5c279533abaf1d466a30a7ad658673",
+      "mode": 384,
+      "bytes": 114495
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-modules-final-confirm-confirmation.json": {
+      "sha256": "15c942da93e9bf91e672f55bf4c3831487a4e5bafae7e1ec5c2fad96f47e94e1",
+      "mode": 384,
+      "bytes": 114909
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-modules-final-confirm.json": {
+      "sha256": "942bfe7c9c308fa22a02d05da6c3f3c823b781a34b90e1aabd64eb4595f578f7",
+      "mode": 384,
+      "bytes": 114507
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-modules-owner-post-disk-confirmation.json": {
+      "sha256": "ba797754a51cc5ba39eb762787b59d7253a69c3ff9029b3b0ce90d242b306e21",
+      "mode": 384,
+      "bytes": 114908
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-modules-owner-post-disk.json": {
+      "sha256": "a00d4ea353bff7826925ac4a6e4742446c3689059eaf3f380c0a07c9a910e119",
+      "mode": 384,
+      "bytes": 114504
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-owned-data-probe-confirmation.json": {
+      "sha256": "3a36e296c0f704eec584f4816ea13ce59e2d16a62f9903ed921849ac199442a7",
+      "mode": 384,
+      "bytes": 1382
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-owned-data-probe.json": {
+      "sha256": "4eba5b86e92d85f29c563bc15565bc2bfefe77b6efb11e12945f18d0ecb13b99",
+      "mode": 384,
+      "bytes": 1147
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-owner-binding-confirmation.json": {
+      "sha256": "87f52d826a05b82ef24d5f5a49472cd05c89fb2023de49f3c63f2bc9693199a8",
+      "mode": 384,
+      "bytes": 5941
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-owner-binding.json": {
+      "sha256": "e7a62661c31c2c6ce7bedb935ae540e7bf8cbcc3a338615c33bfbdf06cd02854",
+      "mode": 384,
+      "bytes": 5749
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-taskbar.png": {
+      "sha256": "7848bde4d52af506b7e9d57d35eda491e8fe1ca29ee04aa8867dff21541e8305",
+      "mode": 384,
+      "bytes": 22072
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-terminal-binding-confirmation.json": {
+      "sha256": "58a4cc327ee47ff612db0635d7bb1585f8782e9a3e6cd51a609c2a82a3481847",
+      "mode": 384,
+      "bytes": 62734
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/actual-terminal-binding.json": {
+      "sha256": "7536dbda856de9d6b065a55b84cc35f2909080ad1ad92d6db32048badeab999f",
+      "mode": 384,
+      "bytes": 360853
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/after-main/catalog-comparison.json": {
+      "sha256": "28f0ff4a5d14f2e349eaf1ca67257eb5e4c8ca388670f718ca86151864dc9a15",
+      "mode": 384,
+      "bytes": 825
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/after-main/clients-raw.json": {
+      "sha256": "16a36a5f73ced64bdb2212ce51b8ed2d946313b597065fb2ee7554c4bb80ce37",
+      "mode": 384,
+      "bytes": 5704
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/after-main/files-state.json": {
+      "sha256": "cba8d229c58470f66a3f27d7ac7273ceca9fa3ef29657b73d7c07dd1974ad05f",
+      "mode": 384,
+      "bytes": 2328
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/after-main/preservation.json": {
+      "sha256": "8abd0bb51ee82739dfb9ca7883be8109a8c0dc0406e639c9f0b0c4d12128bc08",
+      "mode": 384,
+      "bytes": 3283
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/before-main/catalog-before.json": {
+      "sha256": "3ff553b6cf5c21b8db8923641e239bebf2b6048ee8250e61bfea0b256cb7a362",
+      "mode": 384,
+      "bytes": 741
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/before-main/clients-raw.json": {
+      "sha256": "3d6ae9f18acab234a7ab0a411683d7019bc06df4e17d965fe0b47495d928807d",
+      "mode": 384,
+      "bytes": 5704
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/before-main/files-state.json": {
+      "sha256": "cba8d229c58470f66a3f27d7ac7273ceca9fa3ef29657b73d7c07dd1974ad05f",
+      "mode": 384,
+      "bytes": 2328
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/completed-helpers.json": {
+      "sha256": "3b12a8c2aa201162791592285e200dc7e66785f7cd75e0710aa2bf15324bb9f1",
+      "mode": 384,
+      "bytes": 117069
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/family-service.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384,
+      "bytes": 0
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/dmabuf-probe.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384,
+      "bytes": 0
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/dmabuf-probe.stdout": {
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "mode": 384,
+      "bytes": 174
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/host-evidence.json": {
+      "sha256": "4299a23141433f605616336ce7d01c33fdde68b38ef9839d6bf524f0a0b9196f",
+      "mode": 384,
+      "bytes": 190893
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/hyprland.log": {
+      "sha256": "2c98ce46d5deacc2a9ba9c8c5a729cec368a710f4aaee59307b06f30fd3077f2",
+      "mode": 384,
+      "bytes": 157219
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/privateBus.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384,
+      "bytes": 0
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790971663_1930574594/hyprland.log": {
+      "sha256": "d91d81a5a49fffee9790a7a3e8cda5fd6c9e59cfd74270ee7bc9ed16dcabb9de",
+      "mode": 384,
+      "bytes": 133567
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/hypr-snap-groups/state.json": {
+      "sha256": "187b432f33adbd735af997030d579f42ad194a581c1184dd1c7bde8a4fe39e57",
+      "mode": 384,
+      "bytes": 135
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/hypr-window-motion/qa-family-service/journal.json": {
+      "sha256": "5e7a9486a79592ebc7d0fc1beddba500fd44fadeccc41081630e94d6330a7715",
+      "mode": 384,
+      "bytes": 72176
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/hypr-window-motion/qa-family-service/keeper-f249da6a584340ab89394042a93402d3.json": {
+      "sha256": "22959db8c203a4d898e517b201271ad5483b442ec3595a6caa123d3aca31f019",
+      "mode": 384,
+      "bytes": 4047
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/hypr-window-motion/qa-family-service/snapshot-cache/full-18000000-360183.json": {
+      "sha256": "9a091eef0f2955ad2e3a6035915a50d5ae6686e544eed1d69f2ea1c7993aafa7",
+      "mode": 384,
+      "bytes": 567
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/hypr-window-motion/qa-family-service/snapshot-cache/full-18000002-360183.json": {
+      "sha256": "e3cb2d8c7cb850ae7b8f265d162aa0e1d27907d70b087379ec1f7c3ac519e2e7",
+      "mode": 384,
+      "bytes": 568
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/hypr-window-motion/qa-family-service/snapshot-cache/full-18000003-360183.json": {
+      "sha256": "3999ff2eef3a53c09ffd80fd8cfa0e20d653369f00255de9bfa6fcd7b839bb9d",
+      "mode": 384,
+      "bytes": 568
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/hypr-window-previews/0x5ed6967d4370.json": {
+      "sha256": "6d948d660bf1712bc8d220c9a5ecc664e82acf410b175d2b287a9681a1378f66",
+      "mode": 384,
+      "bytes": 37
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/hypr-window-previews/0x5ed696983ac0.json": {
+      "sha256": "b82fde7aa00f13279adf75e2c7809ca5a92aee1dc6ccdff0cb02ccebb500d941",
+      "mode": 384,
+      "bytes": 37
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/hypr-window-previews/0x5ed696ef9680.json": {
+      "sha256": "6c67383c5c4e2ce3f4ddf31ba1a023ba296dcf7825749641f7ad39d098f28396",
+      "mode": 384,
+      "bytes": 37
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/hypr-window-previews/0x5ed69724e740.json": {
+      "sha256": "c15fbdb5ff339306660ff9b29713b5328fd528ceff9f781e0e7c8e533182e63b",
+      "mode": 384,
+      "bytes": 37
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/hyprland.lua": {
+      "sha256": "5578351d6d0332ecd422df4d06c202ebd4850672d95243ff2b1431cfc561bb32",
+      "mode": 384,
+      "bytes": 658
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/quickshell/by-id/ddp7xkqamt/log.log": {
+      "sha256": "ff1185e4ee34cb1eb552653bda941a0c845718dfd180e4f4b99b62f7f8b84d61",
+      "mode": 384,
+      "bytes": 1077
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/quickshell/by-id/ddp7xkqamt/log.qslog": {
+      "sha256": "864f9c1a629564b60a412aae445d4f3a9d44454f7e68c18d7f6d9750189eebc3",
+      "mode": 384,
+      "bytes": 39645
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/taskbar-home/.config/omarchy/plugins/hoskinson.windows/manifest.json": {
+      "sha256": "5380cf44ab03cf6a78f0423ae04a18e854b2490a2bce90287120eee4e126fcc1",
+      "mode": 384,
+      "bytes": 523
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/taskbar-home/.config/omarchy/shell.json": {
+      "sha256": "c3dcdacec4c7d4b42c30b3ffbece6ef7946f579bba1ed0f1dac72dcfc71fe3b4",
+      "mode": 384,
+      "bytes": 1213
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/taskbar-home/.config/omarchy/taskbar-pins.json": {
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "mode": 384,
+      "bytes": 3
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/taskbar-home/.config/omarchy/taskbar-session-order.json": {
+      "sha256": "e11a9666d5d991fc5508958c5ed112658fc378fc071d1c69f46bc0b31d20cd5f",
+      "mode": 384,
+      "bytes": 121
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/taskbar-home/.config/omarchy/taskbar-settings.json": {
+      "sha256": "0c1a51f36542408c3b076f5a829cfac16bd82abb07ca3cd13c0f76731d210c3a",
+      "mode": 384,
+      "bytes": 79
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/runtime-archive/taskbar-home/helper-config.json": {
+      "sha256": "c207059142016657f0e5b29b46b1ac16f0975ec1def37ff3954227dc4cf82446",
+      "mode": 384,
+      "bytes": 7566
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/weston-renderer.log": {
+      "sha256": "064cd97b8c949c87012f36692657689aa86fb560ee5af38787fe4435d010f598",
+      "mode": 384,
+      "bytes": 3488
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/host/weston.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384,
+      "bytes": 0
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/hydrate-helper.json": {
+      "sha256": "555c38bd7129c6dff837e32f76cea42e57ad5520eb4f889b4081e8b54f2e83aa",
+      "mode": 384,
+      "bytes": 8215
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/main-before.json": {
+      "sha256": "c27e30d1356dc30a63a2c124d7daa0084595aaa46de20ebc7622d72aaa442fb2",
+      "mode": 384,
+      "bytes": 16935
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/qt/command.json": {
+      "sha256": "364e29626dcce88d1bc1015444857da43c8b4dc6504255a1887af71339bddd23",
+      "mode": 384,
+      "bytes": 31
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/qt/events.jsonl": {
+      "sha256": "b8737ed2ecfc2770f6711259aa4a62053de8303346882bd181e3bcd756a3219b",
+      "mode": 384,
+      "bytes": 7470
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/qt/state.json": {
+      "sha256": "82059b268f5735371af99724c5b811bf33bf9fd0789cf926d67aceb643cfc921",
+      "mode": 384,
+      "bytes": 3153
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/qt-fixture.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384,
+      "bytes": 0
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/report.json": {
+      "sha256": "c9953e5ad21492da60bdd7ce21f32994bc488621ac29f81ea88310d8c0a126c7",
+      "mode": 384,
+      "bytes": 626871
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-atlases/full-18000000-360183-86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png": {
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "mode": 384,
+      "bytes": 6280
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-atlases/full-18000000-360183.json": {
+      "sha256": "9a091eef0f2955ad2e3a6035915a50d5ae6686e544eed1d69f2ea1c7993aafa7",
+      "mode": 384,
+      "bytes": 567
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-atlases/full-18000002-360183-26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png": {
+      "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "mode": 384,
+      "bytes": 5626
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-atlases/full-18000002-360183.json": {
+      "sha256": "e3cb2d8c7cb850ae7b8f265d162aa0e1d27907d70b087379ec1f7c3ac519e2e7",
+      "mode": 384,
+      "bytes": 568
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-atlases/full-18000003-360183-a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png": {
+      "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+      "mode": 384,
+      "bytes": 5615
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-atlases/full-18000003-360183.json": {
+      "sha256": "3999ff2eef3a53c09ffd80fd8cfa0e20d653369f00255de9bfa6fcd7b839bb9d",
+      "mode": 384,
+      "bytes": 568
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-cache-pairs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png": {
+      "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "mode": 384,
+      "bytes": 5626
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-cache-pairs/3999ff2eef3a53c09ffd80fd8cfa0e20d653369f00255de9bfa6fcd7b839bb9d.json": {
+      "sha256": "3999ff2eef3a53c09ffd80fd8cfa0e20d653369f00255de9bfa6fcd7b839bb9d",
+      "mode": 384,
+      "bytes": 568
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-cache-pairs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png": {
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "mode": 384,
+      "bytes": 6280
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-cache-pairs/9a091eef0f2955ad2e3a6035915a50d5ae6686e544eed1d69f2ea1c7993aafa7.json": {
+      "sha256": "9a091eef0f2955ad2e3a6035915a50d5ae6686e544eed1d69f2ea1c7993aafa7",
+      "mode": 384,
+      "bytes": 567
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-cache-pairs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png": {
+      "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+      "mode": 384,
+      "bytes": 5615
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-cache-pairs/e3cb2d8c7cb850ae7b8f265d162aa0e1d27907d70b087379ec1f7c3ac519e2e7.json": {
+      "sha256": "e3cb2d8c7cb850ae7b8f265d162aa0e1d27907d70b087379ec1f7c3ac519e2e7",
+      "mode": 384,
+      "bytes": 568
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-epochs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png": {
+      "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "mode": 384,
+      "bytes": 5626
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-epochs/6cb3e3dae177b8a6a6faaad18e466159f932687d7e2275b1bb77bfb50ab186d7.png": {
+      "sha256": "6cb3e3dae177b8a6a6faaad18e466159f932687d7e2275b1bb77bfb50ab186d7",
+      "mode": 384,
+      "bytes": 3860
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-epochs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png": {
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "mode": 384,
+      "bytes": 6280
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-epochs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png": {
+      "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+      "mode": 384,
+      "bytes": 5615
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-evidence.json": {
+      "sha256": "455aea6ca2d64dadcfc49ec51dca3273ed2f058b6d74dac56aa54c00178b3a1d",
+      "mode": 384,
+      "bytes": 1391341
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-retirement-1.json": {
+      "sha256": "3b7a8f445076d39769b4e338cfb5f6f78f76148ab32ee3a37e90af28756b70ae",
+      "mode": 384,
+      "bytes": 633723
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/service-retirement-2.json": {
+      "sha256": "cb27e78aba936bf3d8e46892912e384012c2ad4802e1ed0df94c89d292f9d180",
+      "mode": 384,
+      "bytes": 22634
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/taskbar-shell.log": {
+      "sha256": "2921b94bac0b6c48a742271db3da5bade123cdc96b08b39633c2383acbf1ad5c",
+      "mode": 384,
+      "bytes": 939
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/terminal-helpers/archive.json": {
+      "sha256": "fb742b2450fc303a8c36a643a888d0750186c55a58604d1c09d219af40ac0889",
+      "mode": 384,
+      "bytes": 80236
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/terminal-helpers/helper-config.json": {
+      "sha256": "c207059142016657f0e5b29b46b1ac16f0975ec1def37ff3954227dc4cf82446",
+      "mode": 384,
+      "bytes": 7566
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v11/attempt-baseline-1/terminal-helpers/helper-events.jsonl": {
+      "sha256": "39c8a8f738f4cfa58129aa1fa9b588bd88f6cd5a89212efb1c2f948c742a7fac",
+      "mode": 384,
+      "bytes": 47150
+    }
+  },
+  "source": {
+    "path": "/home/hoskinson/window-integration-qa/thumbnail-v11-root-audit-v1/audit.py",
+    "sha256": "c7c0d9c6100d95f15abed47a1a231ed571a9685cd97ebcbd75794b31780ef4bc"
+  },
+  "fault34Authorized": false,
+  "fullParityAccepted": false
+}

@@ -1,0 +1,40 @@
+{
+  "result": "pass",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/async_witness.qnt": "964b88ed705622e63681dd762a85071b079edbc66ef2b445f6ef5562742a7e29",
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/prove_before.py": "afc28f587b82463a6c185bbba6fb6a32316a93ef1d542e1e5d13b2118c4e2e09",
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/CONTRACT.md": "f9f989d2cd91f8007f5e452f4589fa25072cf8d66b0550ed6df5751ae313d76b",
+    "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/IMPLEMENTATION_MAPPING.md": "9c39f12025b1a5dfcf80fd1e2d68e8d4d01b4f84132fff0e941aca35a03ba84e"
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/async_witness.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  async_witness\n    ok retiredWorkerStillCompletesWithoutAuthorityTest passed 1 test(s)\n    ok ownerChangedWorkerCannotMintUIAuthorityTest passed 1 test(s)\n    ok contextChangedWorkerCannotMintUIAuthorityTest passed 1 test(s)\n    ok positiveNormalProcessWorkerTest passed 1 test(s)\n    ok actualLiveProofMayDeliverAfterObservedExitTest passed 1 test(s)\n    ok receiptBeforeResultCannotAuthorizeTest passed 1 test(s)\n    ok workerDoneAloneDoesNotCreateProofTest passed 1 test(s)\n    ok callerCannotCreateProofTest passed 1 test(s)\n    ok beforeWithoutAfterNeverProofTest passed 1 test(s)\n    ok staleEpochCannotVerifyNewFrameTest passed 1 test(s)\n    ok oldBeforeNewAfterRefusedTest passed 1 test(s)\n    ok thirdEpochPositiveTest passed 1 test(s)\n    ok finalEpochPositiveTest passed 1 test(s)\n    ok finalEpochChangeRefusedTest passed 1 test(s)\n    ok vanishedChildCannotProveAfterExitTest passed 1 test(s)\n    ok retiredResultInertTest passed 1 test(s)\n    ok lateResultInertWithObservedTeardownTest passed 1 test(s)\n    ok oldResultAfterAcceptancePreservesTest passed 1 test(s)\n    ok oldProcessCallbacksAfterAcceptanceInertTest passed 1 test(s)\n    ok duplicateCurrentResultInvalidatesTest passed 1 test(s)\n    ok rootChangedWhileQueuedRefusesTest passed 1 test(s)\n    ok declaredChangedWhileQueuedRefusesTest passed 1 test(s)\n    ok ownerChangedWhileQueuedRefusesTest passed 1 test(s)\n    ok contextChangedWhileQueuedRefusesTest passed 1 test(s)\n    ok wrongThreadCommitRefusedTest passed 1 test(s)\n    ok workerMustFinishBeforeCommitTest passed 1 test(s)\n    ok workerNotJoinedBlocksCompletionTest passed 1 test(s)\n    ok retiredJobStillRequiresNormalJoinTest passed 1 test(s)\n    ok sourceFaultStillRequiresNormalWorkerJoinTest passed 1 test(s)\n    ok missingEOFBlocksCompletionTest passed 1 test(s)\n    ok missingReceiptBlocksCompletionTest passed 1 test(s)\n    ok crashBlocksCompletionTest passed 1 test(s)\n    ok duplicateStartedNoRelaunchTest passed 1 test(s)\n    ok duplicateCurrentEOFRevokesTest passed 1 test(s)\n    ok postAcceptanceRetirementRevokesTest passed 1 test(s)\n\n  35 passing (5466ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/mapping-current-witness-v3-async/async_witness.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (2632ms at 760 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceUnchanged": true,
+  "mappingPredicateChanged": false,
+  "GUI": false,
+  "rootReviewBeforeRuntime": true
+}

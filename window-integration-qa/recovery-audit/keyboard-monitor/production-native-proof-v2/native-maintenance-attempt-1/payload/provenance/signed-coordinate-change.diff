@@ -1,0 +1,23 @@
+--- compat-v2/mouse_review.py
++++ compat-signed-v3/mouse_review.py
+@@ -820,8 +820,20 @@
+         window, window_x, window_y = self._accessible_window_at_point_deprecated(point_x, point_y)
+         self._mouse_moved_common(window, window_x, window_y)
+ 
++    @staticmethod
++    def _decode_pointer_coordinate(value):
++        """Recover the signed gint encoded by libatspi's guint signal types."""
++        if type(value) is not int or not -2147483648 <= value <= 4294967295:
++            return None
++        return value - 4294967296 if value > 2147483647 else value
++
+     def _on_mouse_moved(self, obj, point_x, point_y) -> None:
+         """Callback for pointer-moved events."""
++
++        point_x = self._decode_pointer_coordinate(point_x)
++        point_y = self._decode_pointer_coordinate(point_y)
++        if point_x is None or point_y is None:
++            return
+ 
+         if AXObject.get_role(obj) == Atspi.Role.APPLICATION:
+             window, window_x, window_y = self._accessible_window_at_point(obj, point_x, point_y)

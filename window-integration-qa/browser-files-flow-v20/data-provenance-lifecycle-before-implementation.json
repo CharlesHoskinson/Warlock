@@ -1,0 +1,32 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v7/data_provenance_lifecycle_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  data_provenance_lifecycle_test\n    ok stableAcceptedTest passed 1 test(s)\n    ok consumerReplacedBeforeCommitTest passed 1 test(s)\n    ok producerReplacedBeforeCommitTest passed 1 test(s)\n    ok fdReplacedBeforeCommitTest passed 1 test(s)\n    ok vmaChangedBeforeCommitTest passed 1 test(s)\n    ok peerChangedBeforeCommitTest passed 1 test(s)\n    ok acceptedConsumerInvalidationTest passed 1 test(s)\n    ok acceptedProducerInvalidationTest passed 1 test(s)\n    ok acceptedFdInvalidationTest passed 1 test(s)\n    ok acceptedVmaInvalidationTest passed 1 test(s)\n    ok recaptureFreshIdentityTest passed 1 test(s)\n    ok invalidEvidenceRefusedTest passed 1 test(s)\n\n  12 passing (96ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v7/data_provenance_lifecycle.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (273ms at 7326 traces/second).\nUse --seed=0x1405b5c --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "authorityImplemented": false,
+  "nativeExecuted": false
+}

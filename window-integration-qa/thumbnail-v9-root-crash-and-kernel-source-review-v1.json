@@ -1,0 +1,66 @@
+{
+  "updatedUTC": "2026-10-02T12:23:29.866160+00:00",
+  "result": "pre-native-launcher-source-review-pass",
+  "nativeLaunch": false,
+  "nativeAccepted": false,
+  "mainChanged": false,
+  "allFiveChangesPresent": true,
+  "requirements": {
+    "dedicatedScopeCoreLimit": "qa_run actual systemd scope/prlimit1:1; qa_launch actual getrlimit checked inside child. systemd261 rejects LimitCORE scope property.",
+    "xwayland": "effective private Lua explicitly disables Xwayland; original baseline checks actual option.",
+    "parentWayland": "private Weston owned PID/socket/SO_PEERCRED verified; AQ_BACKENDS wayland explicitly; inherited DRM/X11/session fields removed.",
+    "runtimeDevices": "unrestricted exec profile, actual render nodes opened O_RDWR during this review; owned nonsymlink runtime0700 and unique short wqa scheme.",
+    "teardown": "original baseline normal service/renderer then Qt/shell/helper drain, clients-empty before unload, private Hyprland/Weston/bus last. Failed normal client teardown or forced cleanup retains failure."
+  },
+  "actualDeviceAccess": [
+    "/dev/dri/renderD128",
+    "/dev/dri/renderD129"
+  ],
+  "actualRuntimeDirectory": {
+    "path": "/run/user/1000",
+    "uid": 1000,
+    "mode": 448
+  },
+  "abiProbe": "Not used by original38 preview baseline; later input/AT-SPI campaign requires separately verified backend/ABI guard before keysym calls.",
+  "hostEvidenceLimit": "Inherited host records descendant/runtime closure; host stop may escalate and does not separately record host normal exit codes. Closure alone does not prove normal host termination or feature acceptance.",
+  "reviewedKernelFixture": "Root read full genuine sealed C renderer/OwnedLaunch/Keeper fixtures and all21 concrete kernel test methods, including foreign actual Keeper, exact typed metadata/callbacks, extra own helper refusal, permitted unrelated helper and abort-zero normalStop=false refusal. Full corrected suite still pending.",
+  "protectedInstalledInputs": {
+    "/home/hoskinson/.config/systemd/user/omarchy-crash-watch.service.d/override.conf": {
+      "exists": true,
+      "sha256": "89f366e9f014056cc7ea0c44d2cc56f894a2366437d163e8eea354556f2ca1c7",
+      "mode": 420
+    },
+    "/usr/bin/grim": {
+      "exists": true,
+      "sha256": "8fb2e84762652dd82dea186f415577cb40ff7e4fab7f6ae59100848c7428e23d",
+      "mode": 493
+    },
+    "/usr/bin/gnome-keyring-daemon": {
+      "exists": true,
+      "sha256": "fea5b23bf3e9922599ecb3cd26a4084f334dbca6dad42f335ad1e1e2208f874b",
+      "mode": 493
+    }
+  },
+  "inputs": {
+    "/home/hoskinson/Documents/crash-noise/HANDOFF-codex-window-qa.md": "e905e5fe7cc7b23fb9735b85b8d24a6ba136bbd9c83a4778d63a9729c918ee18",
+    "/home/hoskinson/window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+    "/home/hoskinson/window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/weston_host.py": "0bb343488eb4c04ef53af2550f01a35cc737888bfec797208431f799a28c5d27",
+    "/home/hoskinson/window-integration-qa/private-weston-aq-bootstrap-host-v5/weston_host.py": "61eaa572b923c31e622dbc7f2c7b8b293beda90bca4c933b2789ce65bb3d7aa6",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/native_integration.py": "464f6c6c2d7264a0b86275996242973a217115cef9e1737c0e0f3e479ed39093",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v9/nested-qt.lua": "39f3d4121311206e8dce270fdf89c1b7ea3dc645b30977abec8f3594dfc9c2d8",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/renderer_binding_fixture.py": "3c079e146d580f9c26b24b8e61d2bb2e97f948653cc7b017bd2b9a9fde3b1256",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/test_renderer_collector_binding.py": "e76a71d39d68c17a25e56c40ac12990591a31454f2d9200e0762f09ede62bb60"
+  },
+  "inputModes": {
+    "/home/hoskinson/Documents/crash-noise/HANDOFF-codex-window-qa.md": 420,
+    "/home/hoskinson/window-integration-qa/qa_run.py": 420,
+    "/home/hoskinson/window-integration-qa/qa_launch.py": 420,
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/weston_host.py": 420,
+    "/home/hoskinson/window-integration-qa/private-weston-aq-bootstrap-host-v5/weston_host.py": 420,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/native_integration.py": 493,
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v9/nested-qt.lua": 420,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/renderer_binding_fixture.py": 384,
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/test_renderer_collector_binding.py": 420
+  }
+}

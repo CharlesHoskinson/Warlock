@@ -1,0 +1,1513 @@
+{
+  "kind": "private native bridge/official Orca on non-AT-SPI Foot",
+  "checks": [
+    {
+      "name": "private config errors absent",
+      "pass_": true
+    },
+    {
+      "name": "private startup plugin load has permission enforcement",
+      "pass_": true
+    },
+    {
+      "name": "default manager passive",
+      "pass_": true,
+      "state": {
+        "clients": 0,
+        "devices": 0,
+        "quiescent": true,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "no-reader ordinary bytes preserved",
+      "pass_": true,
+      "hex": "616263"
+    },
+    {
+      "name": "no-reader nested compositor shortcut works",
+      "pass_": true
+    },
+    {
+      "name": "actual official reader uses DeviceA11yManager",
+      "pass_": true,
+      "reader": {
+        "device_type": "AtspiDeviceA11yManager",
+        "focus": null,
+        "active_window": null,
+        "navigator": null
+      }
+    },
+    {
+      "name": "actual global learn mode command on focused non-AT-SPI Foot",
+      "pass_": true,
+      "utterances": [
+        {
+          "time": 61750.838158618,
+          "kind": "speech",
+          "text": "Entering learn mode.  Press any key to hear its function.  To view the screen reader's documentation, press F1. To get a list of the screen reader's shortcuts, press F2. To exit learn mode, press the escape key.",
+          "voice": {
+            "established": false
+          }
+        }
+      ],
+      "packets": [
+        {
+          "time": 61750.741481769,
+          "released": false,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        },
+        {
+          "time": 61750.831539436,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61750.921679876,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61751.011765946,
+          "released": true,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        }
+      ]
+    },
+    {
+      "name": "private virtual exact paired Insert+h packets",
+      "pass_": true,
+      "packets": [
+        {
+          "time": 61750.741481769,
+          "released": false,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        },
+        {
+          "time": 61750.831539436,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61750.921679876,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61751.011765946,
+          "released": true,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        }
+      ]
+    },
+    {
+      "name": "global command bytes consumed exactly",
+      "pass_": true,
+      "before": "616263",
+      "after": "616263"
+    },
+    {
+      "name": "ordinary post-command typing preserved",
+      "pass_": true,
+      "hex": "61626364"
+    },
+    {
+      "name": "native producer matches predeclared startup deny",
+      "pass_": true,
+      "declared": "hl-virtual-keyboard-native-input",
+      "devices": [
+        {
+          "address": "0x650d202667d0",
+          "name": "hl-virtual-keyboard-native-input",
+          "rules": "",
+          "model": "",
+          "layout": "us",
+          "variant": "",
+          "options": "",
+          "active_layout_index": 0,
+          "active_keymap": "English (US)",
+          "capsLock": false,
+          "numLock": false,
+          "main": true
+        }
+      ]
+    },
+    {
+      "name": "native watch Shift/H pre-event masks and ordinary bytes",
+      "pass_": true,
+      "before": "61626364",
+      "after": "6162636448",
+      "packets": [
+        {
+          "time": 61761.309593604,
+          "released": false,
+          "mask": 0,
+          "keysym": 65505,
+          "unicode": 0,
+          "keycode": 50
+        },
+        {
+          "time": 61761.369619404,
+          "released": false,
+          "mask": 1,
+          "keysym": 72,
+          "unicode": 72,
+          "keycode": 43
+        },
+        {
+          "time": 61761.429907044,
+          "released": true,
+          "mask": 1,
+          "keysym": 72,
+          "unicode": 72,
+          "keycode": 43
+        },
+        {
+          "time": 61761.489907759,
+          "released": true,
+          "mask": 1,
+          "keysym": 65505,
+          "unicode": 0,
+          "keycode": 50
+        }
+      ]
+    },
+    {
+      "name": "native watch Caps toggle and packet lock state",
+      "pass_": true,
+      "before": "6162636448",
+      "after": "616263644848",
+      "packets": [
+        {
+          "time": 61761.610728729,
+          "released": false,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61761.670906605,
+          "released": true,
+          "mask": 2,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61761.851739405,
+          "released": false,
+          "mask": 2,
+          "keysym": 72,
+          "unicode": 72,
+          "keycode": 43
+        },
+        {
+          "time": 61761.911479353,
+          "released": true,
+          "mask": 2,
+          "keysym": 72,
+          "unicode": 72,
+          "keycode": 43
+        }
+      ],
+      "caps": [
+        [
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "name": "native watched Caps accepted lock",
+      "pass_": true
+    },
+    {
+      "name": "native watch Num toggle leaves ordinary letter",
+      "pass_": true,
+      "before": "616263644848",
+      "after": "61626364484868",
+      "packets": [
+        {
+          "time": 61762.393141322,
+          "released": false,
+          "mask": 0,
+          "keysym": 65407,
+          "unicode": 0,
+          "keycode": 77
+        },
+        {
+          "time": 61762.453130202,
+          "released": true,
+          "mask": 16,
+          "keysym": 65407,
+          "unicode": 0,
+          "keycode": 77
+        },
+        {
+          "time": 61762.633425504,
+          "released": false,
+          "mask": 16,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61762.693673707,
+          "released": true,
+          "mask": 16,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        }
+      ]
+    },
+    {
+      "name": "native watched Num accepted lock",
+      "pass_": true
+    },
+    {
+      "name": "native selected h balanced capture and a passthrough",
+      "pass_": true,
+      "before": "61626364484868",
+      "after": "6162636448486861",
+      "packets": [
+        {
+          "time": 61763.204992078,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61763.265076926,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61763.446081552,
+          "released": false,
+          "mask": 0,
+          "keysym": 97,
+          "unicode": 97,
+          "keycode": 38
+        },
+        {
+          "time": 61763.506154334,
+          "released": true,
+          "mask": 0,
+          "keysym": 97,
+          "unicode": 97,
+          "keycode": 38
+        }
+      ]
+    },
+    {
+      "name": "native grab definition change preserves captured release",
+      "pass_": true,
+      "before": "6162636448486861",
+      "after": "616263644848686168",
+      "packets": [
+        {
+          "time": 61763.687043012,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61763.84199017,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61763.962917341,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61764.022889809,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        }
+      ]
+    },
+    {
+      "name": "native full grab suppresses typing and locking keys",
+      "pass_": true,
+      "before": "616263644848686168",
+      "after": "616263644848686168",
+      "packets": [
+        {
+          "time": 61764.235986779,
+          "released": false,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61764.296158401,
+          "released": true,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61764.477139856,
+          "released": false,
+          "mask": 0,
+          "keysym": 65407,
+          "unicode": 0,
+          "keycode": 77
+        },
+        {
+          "time": 61764.537024888,
+          "released": true,
+          "mask": 0,
+          "keysym": 65407,
+          "unicode": 0,
+          "keycode": 77
+        },
+        {
+          "time": 61764.718052811,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61764.778184001,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        }
+      ]
+    },
+    {
+      "name": "native full grab keeps accepted Caps Num unchanged",
+      "pass_": true,
+      "locks": [
+        [
+          false,
+          false
+        ]
+      ]
+    },
+    {
+      "name": "native custom Caps chord keeps lowercase symbol without toggle",
+      "pass_": true,
+      "before": "616263644848686168",
+      "after": "616263644848686168",
+      "packets": [
+        {
+          "time": 61765.290638309,
+          "released": false,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61765.290702299,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61765.290727413,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61765.290746914,
+          "released": true,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        }
+      ]
+    },
+    {
+      "name": "native custom Caps accepted lock stays off",
+      "pass_": true,
+      "locks": [
+        [
+          false,
+          false
+        ]
+      ]
+    },
+    {
+      "name": "native custom Insert chord paired capture",
+      "pass_": true,
+      "before": "616263644848686168",
+      "after": "616263644848686168",
+      "packets": [
+        {
+          "time": 61765.749063847,
+          "released": false,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        },
+        {
+          "time": 61765.749123662,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61765.749150811,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61765.749182416,
+          "released": true,
+          "mask": 0,
+          "keysym": 65379,
+          "unicode": 0,
+          "keycode": 118
+        }
+      ]
+    },
+    {
+      "name": "native consecutive custom Caps double tap preserves normal toggle",
+      "pass_": true,
+      "before": "616263644848686168",
+      "after": "616263644848686168",
+      "packets": [
+        {
+          "time": 61766.198737406,
+          "released": false,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61766.258881352,
+          "released": true,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61766.439908125,
+          "released": false,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61766.499944732,
+          "released": true,
+          "mask": 2,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        }
+      ]
+    },
+    {
+      "name": "native second Caps tap toggles accepted lock",
+      "pass_": true,
+      "locks": [
+        [
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "name": "native intervening ordinary h disarms Caps double tap",
+      "pass_": true,
+      "before": "616263644848686168",
+      "after": "61626364484868616868",
+      "packets": [
+        {
+          "time": 61767.009025927,
+          "released": false,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61767.069586352,
+          "released": true,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61767.250268413,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61767.310206297,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61767.491249392,
+          "released": false,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61767.55163164,
+          "released": true,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        }
+      ]
+    },
+    {
+      "name": "native nonconsecutive Caps stays suppressed",
+      "pass_": true,
+      "locks": [
+        [
+          false,
+          false
+        ]
+      ]
+    },
+    {
+      "name": "native capture repeats share one release route",
+      "pass_": true,
+      "before": "61626364484868616868",
+      "after": "61626364484868616868",
+      "packets": [
+        {
+          "time": 61768.066099369,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61768.066170688,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61768.06619999,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61768.066223599,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        }
+      ]
+    },
+    {
+      "name": "native repeat ledger quiescent after one release",
+      "pass_": true
+    },
+    {
+      "name": "native client disconnect retains captured release and future passthrough",
+      "pass_": true,
+      "before": "61626364484868616868",
+      "after": "6162636448486861686868",
+      "packets": [
+        {
+          "time": 61768.197151661,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61768.521986457,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61768.642792769,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61768.703106122,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        }
+      ]
+    },
+    {
+      "name": "native device retire preserves other captured device",
+      "pass_": true,
+      "state": {
+        "clients": 2,
+        "devices": 2,
+        "quiescent": false,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "native independent device removal leaves no user bytes",
+      "pass_": true,
+      "before": "6162636448486861686868",
+      "after": "6162636448486861686868",
+      "packets": [
+        {
+          "time": 61769.267047521,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61769.270300457,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61769.41069219,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        }
+      ]
+    },
+    {
+      "name": "native retired and released device routes quiescent",
+      "pass_": true
+    },
+    {
+      "name": "native keymap replacement retains release sym and new-map fresh key",
+      "pass_": true,
+      "before": "6162636448486861686868",
+      "after": "616263644848686168686864",
+      "packets": [
+        {
+          "time": 61769.992277281,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61769.995022012,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61770.150256587,
+          "released": false,
+          "mask": 0,
+          "keysym": 100,
+          "unicode": 100,
+          "keycode": 43
+        },
+        {
+          "time": 61770.210385942,
+          "released": true,
+          "mask": 0,
+          "keysym": 100,
+          "unicode": 100,
+          "keycode": 43
+        }
+      ]
+    },
+    {
+      "name": "native locking keymap modifier-only rebuild retains release identity",
+      "pass_": true,
+      "before": "616263644848686168686864",
+      "after": "61626364484868616868686468",
+      "packets": [
+        {
+          "time": 61770.839072683,
+          "released": false,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61770.841060614,
+          "released": true,
+          "mask": 4,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61770.996830306,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61771.05690855,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        }
+      ]
+    },
+    {
+      "name": "native locking keymap replacement has no lock residue",
+      "pass_": true,
+      "locks": [
+        [
+          false,
+          false
+        ]
+      ]
+    },
+    {
+      "name": "native permission target still matches startup deny",
+      "pass_": true,
+      "declared": "hl-virtual-keyboard-native-input",
+      "actual": "hl-virtual-keyboard-native-input"
+    },
+    {
+      "name": "native actual permission deny drains captured release silently",
+      "pass_": true,
+      "before": "61626364484868616868686468",
+      "after": "61626364484868616868686468",
+      "packets": [
+        {
+          "time": 61771.695847688,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        }
+      ],
+      "device": "hl-virtual-keyboard-native-input"
+    },
+    {
+      "name": "native actual permission deny ledger quiescent",
+      "pass_": true
+    },
+    {
+      "name": "native permission allow restores ordinary bytes",
+      "pass_": true,
+      "before": "61626364484868616868686468",
+      "after": "6162636448486861686868646861",
+      "packets": [
+        {
+          "time": 61772.808894581,
+          "released": false,
+          "mask": 0,
+          "keysym": 97,
+          "unicode": 97,
+          "keycode": 38
+        },
+        {
+          "time": 61772.869039656,
+          "released": true,
+          "mask": 0,
+          "keysym": 97,
+          "unicode": 97,
+          "keycode": 38
+        }
+      ]
+    },
+    {
+      "name": "native enabled-device revoke drains silent captured release",
+      "pass_": true,
+      "before": "6162636448486861686868646861",
+      "after": "6162636448486861686868646861",
+      "packets": [
+        {
+          "time": 61773.375951162,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        }
+      ]
+    },
+    {
+      "name": "native enabled-device restore passes ordinary bytes",
+      "pass_": true,
+      "before": "6162636448486861686868646861",
+      "after": "616263644848686168686864686161",
+      "packets": [
+        {
+          "time": 61774.738708185,
+          "released": false,
+          "mask": 0,
+          "keysym": 97,
+          "unicode": 97,
+          "keycode": 38
+        },
+        {
+          "time": 61774.798869159,
+          "released": true,
+          "mask": 0,
+          "keysym": 97,
+          "unicode": 97,
+          "keycode": 38
+        }
+      ]
+    },
+    {
+      "name": "native real same-client IME-ignore transition drains capture silently",
+      "pass_": true,
+      "before": "616263644848686168686864686161",
+      "after": "61626364484868616868686468616161",
+      "packets": [
+        {
+          "time": 61775.307819409,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        }
+      ]
+    },
+    {
+      "name": "native IME exit restores monitored ordinary input",
+      "pass_": true,
+      "before": "61626364484868616868686468616161",
+      "after": "6162636448486861686868646861616161",
+      "packets": [
+        {
+          "time": 61775.705086662,
+          "released": false,
+          "mask": 0,
+          "keysym": 97,
+          "unicode": 97,
+          "keycode": 38
+        },
+        {
+          "time": 61775.765037971,
+          "released": true,
+          "mask": 0,
+          "keysym": 97,
+          "unicode": 97,
+          "keycode": 38
+        }
+      ]
+    },
+    {
+      "name": "native explicit virtual batching preserves capture and accepted locks",
+      "pass_": true,
+      "before": "6162636448486861686868646861616161",
+      "after": "6162636448486861686868646861616161",
+      "packets": [
+        {
+          "time": 61776.274653936,
+          "released": false,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        },
+        {
+          "time": 61776.274722924,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61776.274764928,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61776.274793013,
+          "released": true,
+          "mask": 0,
+          "keysym": 65509,
+          "unicode": 0,
+          "keycode": 66
+        }
+      ]
+    },
+    {
+      "name": "native batched captured Caps does not toggle accepted lock",
+      "pass_": true,
+      "locks": [
+        [
+          false,
+          false
+        ]
+      ]
+    },
+    {
+      "name": "native PrepareUnload refuses captured held key",
+      "pass_": true
+    },
+    {
+      "name": "native refused unload keeps balanced release and active subscription",
+      "pass_": true,
+      "before": "6162636448486861686868646861616161",
+      "after": "6162636448486861686868646861616161",
+      "packets": [
+        {
+          "time": 61776.732300183,
+          "released": false,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        },
+        {
+          "time": 61776.865787691,
+          "released": true,
+          "mask": 0,
+          "keysym": 104,
+          "unicode": 104,
+          "keycode": 43
+        }
+      ]
+    },
+    {
+      "name": "native all policy routes quiescent at end",
+      "pass_": true
+    },
+    {
+      "name": "captured routes quiescent before unload",
+      "pass_": true
+    },
+    {
+      "name": "post-unload ordinary bytes preserved",
+      "pass_": true
+    }
+  ],
+  "restoration": {
+    "keyboards": true,
+    "originalClients": true,
+    "originalClientStates": true,
+    "mainPlugins": true,
+    "focus": true,
+    "cursor": true,
+    "a11y": true,
+    "readerDisabled": true,
+    "catalogBytes": true,
+    "outputs": true,
+    "fixturesExited": true,
+    "configErrors": true
+  },
+  "nativeInputProved": true,
+  "widerPolicyInputProved": true,
+  "physicalHardwareProved": false,
+  "before": {
+    "clients": [
+      [
+        "0x5a02aee429f0",
+        4007,
+        "18000005"
+      ],
+      [
+        "0x5a02b0cc9280",
+        4311,
+        "18000006"
+      ],
+      [
+        "0x5a02afd20bd0",
+        361074,
+        "18000076"
+      ],
+      [
+        "0x5a02afa13e90",
+        252010,
+        "1800006a"
+      ]
+    ],
+    "focus": [
+      "0x5a02afa13e90",
+      252010,
+      "1800006a"
+    ],
+    "cursor": {
+      "x": 527,
+      "y": 539
+    },
+    "a11y": {
+      "dev": 84,
+      "inode": 91312,
+      "connects": true
+    },
+    "readerStatus": "(<false>,)",
+    "catalogHashes": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    },
+    "catalogBackup": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/catalog-before.json"
+  },
+  "private": {
+    "pid": 3321608,
+    "signature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790839567_1750835492",
+    "runtime": "/tmp/kbn-rjo6kf17",
+    "config": "/tmp/kbn-rjo6kf17/hyprland.lua"
+  },
+  "privatePolicyReloads": [
+    {
+      "snapshot": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/private-policy-config-1.lua",
+      "expectedEnforcement": false,
+      "actualOption": {
+        "option": "ecosystem:enforce_permissions",
+        "bool": false,
+        "set": true
+      }
+    },
+    {
+      "snapshot": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/private-policy-config-2.lua",
+      "expectedEnforcement": true,
+      "actualOption": {
+        "option": "ecosystem:enforce_permissions",
+        "bool": true,
+        "set": true
+      }
+    },
+    {
+      "snapshot": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/private-policy-config-3.lua",
+      "expectedEnforcement": false,
+      "actualOption": {
+        "option": "ecosystem:enforce_permissions",
+        "bool": false,
+        "set": true
+      }
+    },
+    {
+      "snapshot": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/private-policy-config-4.lua",
+      "expectedEnforcement": false,
+      "actualOption": {
+        "option": "ecosystem:enforce_permissions",
+        "bool": false,
+        "set": true
+      }
+    },
+    {
+      "snapshot": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/private-policy-config-5.lua",
+      "expectedEnforcement": false,
+      "actualOption": {
+        "option": "ecosystem:enforce_permissions",
+        "bool": false,
+        "set": true
+      }
+    }
+  ],
+  "result": "pass",
+  "terminalBytes": "61626364484868616868686468616161617a",
+  "catalogComparison": {
+    "/home/hoskinson/.config/omarchy/virtual-desktops.json": {
+      "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-settings.json": {
+      "expectedSHA256": null,
+      "actualSHA256": null,
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-order.json": {
+      "expectedSHA256": null,
+      "actualSHA256": null,
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-session-order.json": {
+      "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "exactBytes": true
+    }
+  },
+  "mainKeyboardComparison": {
+    "before": [
+      {
+        "address": "0x5a02b0b335a0",
+        "name": "video-bus",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d38ea0",
+        "name": "ideapad-extra-buttons",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d76090",
+        "name": "video-bus-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afcd3dd0",
+        "name": "ite-tech.-inc.-ite-device(8258)-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d8f5f0",
+        "name": "ite-tech.-inc.-ite-device(8258)-wireless-radio-control",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02ae1c49c0",
+        "name": "hda-intel-pch-headphone",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afb42100",
+        "name": "power-button",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02af2ea440",
+        "name": "power-button-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afaa1ad0",
+        "name": "at-translated-set-2-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b04bf700",
+        "name": "hl-virtual-keyboard-fcitx5",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": true
+      }
+    ],
+    "after": [
+      {
+        "address": "0x5a02b0b335a0",
+        "name": "video-bus",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d38ea0",
+        "name": "ideapad-extra-buttons",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d76090",
+        "name": "video-bus-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afcd3dd0",
+        "name": "ite-tech.-inc.-ite-device(8258)-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b0d8f5f0",
+        "name": "ite-tech.-inc.-ite-device(8258)-wireless-radio-control",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02ae1c49c0",
+        "name": "hda-intel-pch-headphone",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afb42100",
+        "name": "power-button",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02af2ea440",
+        "name": "power-button-1",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02afaa1ad0",
+        "name": "at-translated-set-2-keyboard",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": false
+      },
+      {
+        "address": "0x5a02b04bf700",
+        "name": "hl-virtual-keyboard-fcitx5",
+        "rules": "",
+        "model": "",
+        "layout": "us",
+        "variant": "",
+        "options": "compose:caps,shift:both_capslock_cancel",
+        "active_layout_index": 0,
+        "active_keymap": "English (US)",
+        "capsLock": false,
+        "numLock": true,
+        "main": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "updatedUTC": "2026-10-02T02:40:43.872428+00:00",
+  "result": "fail",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "[DEBUG] generating undefined expr to fill hole in: s'=(matche{|ReduceOn=>{...s,reduced:true\n",
+      "stderr": "\n Error [QNT000]: mismatched input ',' expecting {'->', '=>', ')'}\n\n  at /home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt:6:72\n  6:   type Event = ReduceOn | ReduceOff | Watchdog | Context | Validate(int,int)\n                                                                            ^\n\n\n Error [QNT000]: mismatched input ',' expecting {'->', '=>', ')'}\n\n  at /home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt:7:58\n  7:     | Ack(int) | NewRequest | StartVisual | Presented(int,int) | LoseScope\n                                                              ^\n\n\n Error [QNT000]: mismatched input ',' expecting {'->', '=>', ')'}\n\n  at /home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt:8:30\n  8:     | Deadline | OldReady(int,int)\n                                  ^\n\n\n Error [QNT000]: no viable alternative at input '(matche{|ReduceOn=>{...s,reduced:true}|ReduceOff=>{...s,reduced:false}|Watchdog=>if(s.reducedandmayCommit(s))commit(s)elseif(s.aliveandnot(s.error)ands.reducedands.visualands.validated!=s.receiptands.retiring==0){...s,retiring:s.token,validated:0,fresh:false}elses|Context=>if(s.aliveandnot(s.error)){...s,context:true}elses|Validate(r,'\n\n  at /home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt:30:17\n  30:     | Validate(r,t) => if(s.alive and not(s.error) and s.context\n                      ^\n\n\n Error [QNT000]: extraneous input '|' expecting {<EOF>, 'module', DOCCOMMENT}\n\n  at /home/hoskinson/window-integration-qa/reduced-validation-counterexample-v1/reduction_validation.qnt:24:5\n  24:     | ReduceOff => {...s,reduced:false}\n          ^\n\nerror: parsing failed\n"
+    }
+  ],
+  "models": 1,
+  "named": 16,
+  "samples": 2000,
+  "steps": 100,
+  "sourceOnly": true,
+  "productChanged": false,
+  "nativeExecuted": false,
+  "hashes": {
+    "REPAIR_CONTRACT.md": "ade3d552a346bb02a06afdf97905e76b409d4382ef8ce8f7bf569190610328a3",
+    "reduction_validation.qnt": "17b1409840c1f2550983d0617286adbaaee343fb72e7d08bbc7eb4a3cd850c9f",
+    "reduction_validation_test.qnt": "bae0cbd763721ac82ae4b53c428f681efc918be5c458fa95803565d3faab127d",
+    "probe.py": "abc233610daa80e7528f27f2e2395dfcb2a3bcb103870bff97a44c855542b119",
+    "result.json": "b2989f43710bec5b238cb98f59b39097616ec82a3bf011904ae7514f55744b19"
+  }
+}

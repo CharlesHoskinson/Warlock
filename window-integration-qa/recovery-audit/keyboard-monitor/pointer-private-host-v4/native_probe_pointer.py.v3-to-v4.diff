@@ -1,0 +1,59 @@
+--- V3/native_probe_pointer.py
++++ V4/native_probe_pointer.py
+@@ -9,6 +9,7 @@
+ import host_acceptance
+ import startup_reporting
+ import producer_control
++import private_helpers
+ from gi.repository import GLib
+ STAGE=Path(__file__).resolve().parent
+ HERE=STAGE
+@@ -87,6 +88,7 @@
+ def import_preflight(root):
+     module=load_cases(root);helper=Path(module._geometry.__file__).resolve()
+     assert helper==Path(root).resolve()/'native-fixture/popup_geometry.py'
++    assert Path(module._ax_wire.__file__).resolve()==Path(root).resolve()/'ax_wire_trace.py'
+     extra={}
+     for name in ('policy_cases.py','lifecycle_cases.py'):
+         source=Path(root)/'native-fixture'/name;loaded=load_additional(name,root)
+@@ -174,8 +176,9 @@
+         session=HOST.PrivateHyprSession(output=HERE/'owned-host',main_env=fixture_parent,width=1280,height=800,nested_lua=config_bytes(),dri_prime='pci-0000_00_02_0',mesa_vendor=True)
+         with session:
+             PRIVATE_SESSION=session;runtime=Path(session.env['XDG_RUNTIME_DIR']);config=Path(session.evidence['compositorConfig']);effective=config.read_bytes()
+-            env={**session.env,'HYPR_WINDOWCTL_MOTION':'0','GSETTINGS_BACKEND':'memory','PYTHONDONTWRITEBYTECODE':'1','PYTHONPATH':str(HERE),'ORCA_QA_READER_ROOT':str(READER),'POINTER_QA_COMPOSITOR_PID':str(session.evidence['compositorPID']),'POINTER_QA_COMPOSITOR_START':session.evidence['compositorStart']}
++            env={**session.env,'HYPR_WINDOWCTL_MOTION':'0','GSETTINGS_BACKEND':'memory','PYTHONDONTWRITEBYTECODE':'1','GDK_DEBUG':'no-portals','PYTHONPATH':str(HERE),'ORCA_QA_READER_ROOT':str(READER),'POINTER_QA_COMPOSITOR_PID':str(session.evidence['compositorPID']),'POINTER_QA_COMPOSITOR_START':session.evidence['compositorStart']}
+             report['private']=session.evidence
++            report['privateClientEnvironmentDelta']={'GDK_DEBUG':'no-portals'}
+             for name in ('config','data','cache'):
+                 source=READER/name
+                 if source.exists():shutil.copytree(source,Path(env['XDG_'+name.upper()+'_HOME']),dirs_exist_ok=True,ignore=shutil.ignore_patterns('__pycache__'))
+@@ -215,6 +218,8 @@
+                 def producer_ready(process,stderr_path,label):
+                     session.guard();return producer_control.ready(process,report,stderr_path,label)
+                 ctx['producer_ready']=producer_ready
++                infrastructure_baseline=session.host.descendants()
++                report['privateInfrastructureBaseline']=infrastructure_baseline
+                 report['phases']=[]
+                 for name,module in [('pointer',load_cases(HERE)),('policy',load_additional('policy_cases.py')),('lifecycle',load_additional('lifecycle_cases.py'))]:
+                     phase_checkpoint=len(processes);start=len(report['checks']);phase={'name':name,'started':time.monotonic(),'startCheck':start};report['phases'].append(phase)
+@@ -225,6 +230,9 @@
+                         policy_baseline(ctx)
+                     try:module.run(ctx)
+                     finally:finish_scenario(processes,phase_checkpoint)
++                    helper_rows=private_helpers.unexpected(session.host.descendants(),infrastructure_baseline)
++                    portal_log=HERE/'owned-host/privateBus.log';portal_history=private_helpers.portal_activations(portal_log.read_text())
++                    check(report,name+' normal client shutdown has no activated or leaked private helpers',not helper_rows and not portal_history,unexpected=helper_rows,portalActivations=portal_history,privateBusLogSHA256=hashlib.sha256(portal_log.read_bytes()).hexdigest())
+                     if 'keyboard-monitor-private' in ctl(env,'plugin','list'):retire_private_plugin(env,LIB,report)
+                     phase.update(completed=time.monotonic(),checks=len(report['checks'])-start,pass_=True)
+                     if name=='pointer':report['nativePointerProved']=True
+@@ -244,6 +252,10 @@
+                 owned={row['pid'] for _,row in session.host.processes}
+                 leftover=[row for row in session.host.descendants() if row['pid'] not in owned]
+                 report['unexpectedPrivateClientSurvivors']=leftover
++                try:
++                    portal_log=HERE/'owned-host/privateBus.log';portal_history=private_helpers.portal_activations(portal_log.read_text())
++                    check(report,'terminal normal private client cleanup has no unexpected helper processes',not leftover and not portal_history,unexpected=leftover,portalActivations=portal_history,privateBusLogSHA256=hashlib.sha256(portal_log.read_bytes()).hexdigest())
++                except Exception as error:startup_reporting.failure(report,error,'unexpected-private-client-cleanup')
+                 if leftover:
+                     report['result']='failed'
+                     for row in reversed(leftover):session.host.stop(row)

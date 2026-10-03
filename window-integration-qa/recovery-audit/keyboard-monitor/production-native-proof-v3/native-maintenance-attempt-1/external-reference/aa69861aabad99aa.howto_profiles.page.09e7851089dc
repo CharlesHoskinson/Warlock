@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_profiles" xml:lang="eu">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_documents"/>
+    <title type="sort">9. Profilak</title>
+    <desc>Konfigurazio anitz mantentzea</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Profilak</title>
+  <p>Orcaren profilei esker, konfigurazio anitz gorde eta kargatu daitezke, behar dituzun ezarpenetara ahalik eta azkarren joan ahal izateko.</p>
+  <steps>
+    <title>Profil berria gordetzea</title>
+    <item>
+      <p>
+        Get into the <link xref="preferences">Orca Preferences</link> dialog box.
+      </p>
+    </item>
+    <item>
+      <p>Aldatu ezarpenak nahieran.</p>
+    </item>
+    <item>
+      <p><gui>Orokorra</gui> orrian, sakatu <gui>Gorde honela</gui> botoia.</p>
+    </item>
+    <item>
+      <p>Idatzi profil berriaren izena <gui>Gorde profila honela</gui> elkarrizketa-koadroan.</p>
+    </item>
+    <item>
+      <p>Sakatu <gui>Gorde profila honela</gui> elkarrizketa-koadroko <gui>Ados</gui> botoia.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Lehendik dagoen profil bat kargatzea</title>
+    <item>
+      <p>
+        Get into the <link xref="preferences">Orca Preferences</link> dialog box.
+      </p>
+    </item>
+    <item>
+      <p><gui>Orokorra</gui> orrian, hautatu kargatu nahi duzun profila <gui>Profil aktiboa</gui> konbinazio-koadroan.</p>
+    </item>
+    <item>
+      <p>Sakatu <gui>Kargatu</gui> botoia.</p>
+    </item>
+    <item>
+      <p>Berresteko eskatuko dizu sistemak. Sakatu <gui>Bai</gui> botoia.</p>
+    </item>
+    <item>
+      <p>Sakatu <gui>Ados</gui> botoia.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Lehendik dagoen profil bat aldatzea</title>
+    <item>
+      <p>Jarraitu goian adierazitako urratsak aldatu nahi duzun profila kargatzeko.</p>
+    </item>
+    <item>
+      <p>Jarraitu goian adierazitako urratsak profil berri bat gordetzeko.</p>
+    </item>
+    <item>
+      <p>Orcak profil berriaren izena galdetzen dizunean, idatzi uneko profilaren izen bera. <gui>Adoz</gui> botoia sakatzen duzunean, izenekin gatazka bat dagoela ikusiko duzu.</p>
+    </item>
+    <item>
+      <p>Sakatu <gui>Bai</gui> botoia lehendik dagoen profila ezarpen berriekin gainidatzi nahi duzula adierazteko.</p>
+    </item>
+  </steps>
+  <steps>
+    <title><gui>Abioko profila</gui> aldatzea</title>
+    <item>
+      <p>
+        Get into the <link xref="preferences">Orca Preferences</link> dialog box.
+      </p>
+    </item>
+    <item>
+      <p><gui>Orokorra</gui> orrian, hautatu kargatu nahi duzun profila <gui>Hasierako profila</gui> konbinazio-koadroan.</p>
+    </item>
+    <item>
+      <p>Sakatu <gui>Ados</gui> botoia. <app>Orca</app> aplikazioa abiarazten den hurrengoan, hautatu berri den profila erabiliko da.</p>
+    </item>
+  </steps>
+</page>

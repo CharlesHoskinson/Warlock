@@ -1,0 +1,205 @@
+{
+  "updatedUTC": "2026-10-01T21:32:29.816771+00:00",
+  "manifestSHA256": "4cff3970c85f34b0adda49bab35eb86663e207487f841f8ba7f58a66a3890693",
+  "reportSHA256": "6b149048bc7bf7ca07b32dcc0f790c6194256470f7e35760944f46fef9fc85c6",
+  "checks": {
+    "all4912FrozenInputsExact": true,
+    "all8FrozenLinksExact": true,
+    "allProductionCopiesExact": true,
+    "all15MainPreservationChecks": true,
+    "allRetainedPIDStartIdentitiesGone": true,
+    "privateRuntimeGone": true,
+    "noRemainingDescendantsOrCleanupErrors": true,
+    "noUnexpectedInnerDescendants": true,
+    "archivedRuntimeHashesExact": true,
+    "coreLimit1PrivateScope": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "actualReachedGates": 5,
+  "actualReachedGatesPassed": true,
+  "privateBaselineAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "normalNativeUnload": false,
+  "normalClientLifecycle": false,
+  "failure": {
+    "signal": "SIGABRT",
+    "actualAssertion": "CWeakPointer over CUniquePointer at WeakPtr.hpp:180",
+    "crashReport": "/home/hoskinson/window-integration-qa/family-service-taskbar-v6/attempt-1/host/runtime-archive/taskbar-home/xdg-cache/hyprland/hyprlandCrashReport1323584.txt",
+    "crashReportSHA256": "d6f6ff2d2c1c9bdd5969fdc2304a3d7202674c7ff97bf99012c6a05a02a79be0",
+    "pluginOffset": "0x294e8",
+    "trigger": "idle retire_gesture_current exact identity",
+    "coreSuppressed": true
+  },
+  "queryAndHelperHydrationAccepted": true,
+  "fullHelperTerminalAcceptance": false,
+  "limitation": "Full event log not archived after early compositor crash; retained hydration queries only. No service started; minimize/restore/resource/order checks not reached.",
+  "identities": [
+    {
+      "pid": 1324228,
+      "start": "11270368",
+      "pgid": 1324228,
+      "role": "taskbar-shell",
+      "gone": true
+    },
+    {
+      "pid": 1324525,
+      "start": "11270474",
+      "pgid": 1324525,
+      "role": "qt-fixture",
+      "gone": true
+    },
+    {
+      "pid": 1323067,
+      "start": "11270196",
+      "pgid": 1323067,
+      "gone": true
+    },
+    {
+      "pid": 1323068,
+      "start": "11270199",
+      "pgid": 1323068,
+      "gone": true
+    },
+    {
+      "pid": 1323584,
+      "start": "11270268",
+      "pgid": 1323584,
+      "gone": true
+    },
+    {
+      "pid": 1323067,
+      "start": "11270196",
+      "pgid": 1323067,
+      "name": "privateBus",
+      "command": [
+        "/usr/bin/dbus-daemon",
+        "--session",
+        "--nofork",
+        "--address=unix:path=/run/user/1000/wqa/2af7/bus"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/family-service-taskbar-v6/attempt-1/host/privateBus.log",
+      "gone": true
+    },
+    {
+      "pid": 1323068,
+      "start": "11270199",
+      "pgid": 1323068,
+      "name": "weston",
+      "command": [
+        "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston",
+        "--backend=headless",
+        "--renderer=gl",
+        "--shell=kiosk-shell.so",
+        "--fake-seat",
+        "--no-config",
+        "--socket=weston-host",
+        "--width=1600",
+        "--height=1000",
+        "--scale=1",
+        "--idle-time=0",
+        "--log=/home/hoskinson/window-integration-qa/family-service-taskbar-v6/attempt-1/host/weston-renderer.log"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/family-service-taskbar-v6/attempt-1/host/weston.log",
+      "gone": true
+    },
+    {
+      "pid": 1323584,
+      "start": "11270268",
+      "pgid": 1323584,
+      "name": "hyprland",
+      "command": [
+        "/usr/bin/Hyprland",
+        "--config",
+        "/run/user/1000/wqa/2af7/hyprland.lua"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/family-service-taskbar-v6/attempt-1/host/hyprland.log",
+      "gone": true
+    },
+    {
+      "parent": 1323584,
+      "pgid": 1323584,
+      "pid": 1324335,
+      "start": "11270388",
+      "gone": true
+    },
+    {
+      "parent": 1324335,
+      "pgid": 1323584,
+      "pid": 1324367,
+      "start": "11270391",
+      "gone": true
+    },
+    {
+      "parent": 1323584,
+      "pgid": 1323584,
+      "pid": 1324335,
+      "start": "11270388",
+      "gone": true
+    },
+    {
+      "parent": 1324335,
+      "pgid": 1323584,
+      "pid": 1324367,
+      "start": "11270391",
+      "gone": true
+    },
+    {
+      "parent": 1324371,
+      "pgid": 1324228,
+      "pid": 1324415,
+      "start": "11270397",
+      "gone": true
+    },
+    {
+      "parent": 1324415,
+      "pgid": 1324228,
+      "pid": 1324443,
+      "start": "11270400",
+      "gone": true
+    },
+    {
+      "parent": 1323584,
+      "pgid": 1323584,
+      "pid": 1324419,
+      "start": "11270398",
+      "gone": true
+    },
+    {
+      "parent": 1324419,
+      "pgid": 1323584,
+      "pid": 1324444,
+      "start": "11270401",
+      "gone": true
+    },
+    {
+      "parent": 1323584,
+      "pgid": 1323584,
+      "pid": 1324419,
+      "start": "11270398",
+      "gone": true
+    },
+    {
+      "parent": 1324419,
+      "pgid": 1323584,
+      "pid": 1324444,
+      "start": "11270401",
+      "gone": true
+    },
+    {
+      "parent": 1324371,
+      "pgid": 1324228,
+      "pid": 1324415,
+      "start": "11270397",
+      "gone": true
+    },
+    {
+      "parent": 1324415,
+      "pgid": 1324228,
+      "pid": 1324443,
+      "start": "11270400",
+      "gone": true
+    }
+  ],
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false
+}

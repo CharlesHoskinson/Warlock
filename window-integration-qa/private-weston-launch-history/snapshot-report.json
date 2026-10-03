@@ -1,0 +1,16 @@
+{
+  "v1ExternalDriftObserved": false,
+  "note": "Actual frozen V1 manifest already records final short-runtime helper bytes. V1 obsolete local probe/docs remain unexecuted; V2 corrects them without modifying V1.",
+  "files": {
+    "qa_launch.py": {
+      "expectedV1": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+      "archivedSHA256": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+      "currentSHA256": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+    },
+    "qa_run.py": {
+      "expectedV1": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+      "archivedSHA256": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+      "currentSHA256": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+
+  native_recovery_test
+    ok journalValidationAloneNeverAuthorizesSettlementTest passed 1 test(s)
+    ok oldVisualResourceMustRetireBeforeNativeWriteTest passed 1 test(s)
+    ok durabilityRequiredBeforeFreshObservationTest passed 1 test(s)
+    ok olderReceiptCannotCommitTest passed 1 test(s)
+    ok latestFreshCompleteProofMaySettleTest passed 1 test(s)
+    ok reusedIdentityCannotSettleTest passed 1 test(s)
+    ok familyChangeCannotSettleTest passed 1 test(s)
+    ok outputChangeCannotSettleTest passed 1 test(s)
+    ok revocationRemovesFreshAuthorityTest passed 1 test(s)
+    ok repeatedCrashNeedsNewResourceAndNativeProofTest passed 1 test(s)
+    ok unresolvedRecoveryNeverListensTest passed 1 test(s)
+    ok observationWithoutSettlementCannotClearJournalTest passed 1 test(s)
+    ok oldJournalWithoutProvenanceStillRefusesTest passed 1 test(s)
+
+  13 passing (1431ms)

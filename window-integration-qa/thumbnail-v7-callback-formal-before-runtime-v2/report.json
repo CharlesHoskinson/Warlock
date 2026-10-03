@@ -1,0 +1,41 @@
+{
+  "result": "pass",
+  "beforeCollectorRuntimeCorrection": true,
+  "moduleBindingBeforeSHA256": "3c8d80067575ee36d3980dcecfb121678b07e89509e1ea0c856c6f27a18acbea",
+  "checks": [
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/batch_callback_identity_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v7-callback-formal-before-runtime-v2/0.log",
+      "sha256": "f3b7ee4d779358efb0540a00b79b45f1428654864766554d0f6b601b5a2ad813"
+    },
+    {
+      "argv": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7/batch_callback_identity.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=2026100702",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/thumbnail-v7-callback-formal-before-runtime-v2/1.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "named": 21,
+  "samples": 2000,
+  "steps": 100,
+  "modelSHA256": {
+    "batch_callback_identity.qnt": "10a46b0008af8e3b68b6f148c42b015cb8075ade346edc3e906c623aa7f7a15c",
+    "batch_callback_identity_test.qnt": "b48b89f83923abaa2b2a2a3312701bda91686cf6f05ca5ad6d583a71c357e4a8",
+    "BATCH_CALLBACK_IDENTITY_CONTRACT.md": "15e321c0a505e126505cd405e1cc3df7f352a7d66a39866d981cc258f16fc2c9"
+  },
+  "nativeRun": false
+}

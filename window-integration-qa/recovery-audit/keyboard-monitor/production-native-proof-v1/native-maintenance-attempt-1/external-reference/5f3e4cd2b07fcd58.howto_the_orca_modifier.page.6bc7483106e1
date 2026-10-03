@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_the_orca_modifier" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_learn_modes"/>
+    <title type="sort">3. Modifikátor Orca</title>
+    <desc>Kláves, ktorý funguje ako <key>Shift</key>, <key>Ctrl</key> a <key>Alt</key></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Modifikátor Orca</title>
+  <p>Orca má špeciálny modifikačný kláves, ktorý funguje ako <key>Shift</key>, <key>Ctrl</key> a <key>Alt</key>. Je navrhnutý špeciálne na vykonávanie príkazov <app>Orca</app> a robí tak bez toho, aby spôsoboval konflikty s príkazmi aplikácií, ku ktorým pristupujete.</p>
+  <p>Ktorému klávesu je priradený „Modifikátor Orca“, bude predvolene závisieť od toho, či používate rozloženie klávesnice pre prenosný počítač alebo pre stolný počítač v <app>Orca</app>:</p>
+  <list>
+    <item>
+      <p>Ak používate rozloženie pre prenosný počítač, predvoleným modifikátorom Orca bude <key>CapsLock</key></p>
+    </item>
+    <item>
+      <p>Ak používate rozloženie pre stolný počítač, modifikátorom Orca budú <key>Insert</key> aj <key>KP_Insert</key>, pričom druhý z nich je ten istý kláves ako <key>KP_0</key>.</p>
+    </item>
+  </list>
+  <p>Ak chcete zachovať aktuálne rozloženie klávesnice, ale vybrať iný modifikačný kláves, môžete to urobiť vykonaním nasledujúcich krokov:</p>
+  <steps>
+    <title>Zmena modifikátora Orca</title>
+    <item>
+      <p>Otvorte dialógové okno <link xref="preferences">Predvoľby Orca</link> stlačením <keyseq><key>Modifikátor Orca</key><key>Medzerník</key></keyseq>. Prípadne môžete spustiť Orca s otvoreným dialógom predvolieb z terminálu: zadajte <cmd>orca -s</cmd> a stlačte <key>Return</key>.</p>
+    </item>
+    <item>
+      <p>Presuňte sa na stránku <gui>Klávesové skratky</gui>.</p>
+    </item>
+    <item>
+      <p>Presuňte sa na rozbaľovací zoznam <gui>Modifikačné klávesy čítačky obrazovky</gui>.</p>
+    </item>
+    <item>
+      <p>Klávesmi so šípkami vyberte požadovaný modifikátor. Dostupné možnosti sú:</p>
+      <list>
+        <item><p>Insert, KP_Insert</p></item>
+        <item><p>KP_Insert</p></item>
+        <item><p>Insert</p></item>
+        <item><p>Caps_Lock</p></item>
+      </list>
+    </item>
+    <item><p>Stlačte tlačidlo <gui>Použiť</gui>.</p></item>
+  </steps>
+</page>

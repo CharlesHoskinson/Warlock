@@ -1,0 +1,209 @@
+{
+  "scope": "Fresh guarded candidate QML/V5 dispatch in copied offscreen Qt; no Orca or compositor input. Media metadata injected only to probe logical rebinding.",
+  "observations": [
+    {
+      "name": "visible native press sanity",
+      "interfaceId": "2147483665",
+      "dispatch": {
+        "class": "Btn_QMLTYPE_9",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "Show list",
+        "objectAlive": true,
+        "valid": true
+      },
+      "before": "grid",
+      "after": "list",
+      "callbackExecuted": true
+    },
+    {
+      "name": "hidden window retained native press",
+      "dispatch": {
+        "class": "Btn_QMLTYPE_9",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": true,
+        "name": "Show grid",
+        "objectAlive": true,
+        "valid": true
+      },
+      "before": "list",
+      "after": "list",
+      "callbackExecuted": false,
+      "requiredRefusal": true
+    },
+    {
+      "name": "hidden window raw retained QML activate",
+      "returned": "true",
+      "before": "list",
+      "after": "list",
+      "callbackExecuted": false,
+      "requiredRefusal": true
+    },
+    {
+      "name": "prompt rejects retained background native and raw attached press",
+      "dispatch": {
+        "class": "Btn_QMLTYPE_9",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "Show grid",
+        "objectAlive": true,
+        "valid": true
+      },
+      "rawReturned": "true",
+      "modeBefore": "list",
+      "modeAfter": "list",
+      "refused": true
+    },
+    {
+      "name": "prompt Ctrl B routing",
+      "sidebarRequested": false,
+      "focus": "Prompt.input",
+      "refused": true
+    },
+    {
+      "name": "prompt Ctrl L routing",
+      "before": "Prompt.input",
+      "after": "Prompt.input",
+      "promptStillVisible": true,
+      "pathEditing": false
+    },
+    {
+      "name": "static media logical-path rebind through retained native peer",
+      "interfaceId": "2147483919",
+      "before": {
+        "class": "MediaTile",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "image.svg",
+        "objectAlive": true,
+        "valid": true
+      },
+      "after": {
+        "interfaceFound": false,
+        "objectAlive": false
+      },
+      "selected": [],
+      "samePeerAlive": false,
+      "capturedOldIdentityRefused": true
+    },
+    {
+      "name": "new media logical peer remains actionable",
+      "newInterfaceId": "2147483922",
+      "oldInterfaceId": "2147483919",
+      "dispatch": {
+        "class": "MediaTile",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "beta.svg",
+        "objectAlive": true,
+        "valid": true
+      },
+      "selected": [
+        "beta.svg"
+      ],
+      "newPeer": true
+    },
+    {
+      "name": "destroyed file delegate retained native peer",
+      "interfaceId": "2147483926",
+      "before": {
+        "class": "QQuickItem_QML_38",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "subfolder",
+        "objectAlive": true,
+        "valid": true
+      },
+      "after": {
+        "interfaceFound": false,
+        "objectAlive": false
+      },
+      "refused": true
+    },
+    {
+      "name": "hidden file row native and raw attached callback authority",
+      "dispatch": {
+        "class": "QQuickItem_QML_38",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": true,
+        "name": "subfolder",
+        "objectAlive": true,
+        "valid": true
+      },
+      "rawReturned": "true",
+      "refused": true
+    },
+    {
+      "name": "actual same PID focused file reload",
+      "before": "FileArea.row",
+      "after": "FileArea.row",
+      "exportedFocus": "file:/home/hoskinson/window-integration-qa/files-keyboard/guard-stage/retained-probe/home/fixture/image.svg",
+      "debugBefore": {
+        "pending": "",
+        "current": "file:/home/hoskinson/window-integration-qa/files-keyboard/guard-stage/retained-probe/home/fixture/image.svg",
+        "persisted": "file:/home/hoskinson/window-integration-qa/files-keyboard/guard-stage/retained-probe/home/fixture/image.svg",
+        "visible": true,
+        "backing": true
+      },
+      "debugAfter": {
+        "pending": "",
+        "current": "file:/home/hoskinson/window-integration-qa/files-keyboard/guard-stage/retained-probe/home/fixture/image.svg",
+        "persisted": "file:/home/hoskinson/window-integration-qa/files-keyboard/guard-stage/retained-probe/home/fixture/image.svg",
+        "visible": true,
+        "backing": true
+      },
+      "loaded": {
+        "restoredFocus": "file:/home/hoskinson/window-integration-qa/files-keyboard/guard-stage/retained-probe/home/fixture/image.svg",
+        "resumed": true,
+        "visible": true,
+        "backingVisible": false,
+        "historyLength": 6,
+        "historyIndex": 5
+      },
+      "samePid": true,
+      "requiredFocusPreserved": true
+    },
+    {
+      "name": "actual hidden same PID reload preserves logical focus token without mapping",
+      "beforeIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/guard-stage/retained-probe/home/fixture/image.svg",
+      "afterIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/guard-stage/retained-probe/home/fixture/image.svg",
+      "visible": false,
+      "backing": false,
+      "loaded": {
+        "restoredFocus": "file:/home/hoskinson/window-integration-qa/files-keyboard/guard-stage/retained-probe/home/fixture/image.svg",
+        "resumed": true,
+        "visible": false,
+        "backingVisible": false,
+        "historyLength": 6,
+        "historyIndex": 5
+      },
+      "refusedMapping": true,
+      "identityPreserved": true
+    },
+    {
+      "name": "deferred file restoration cannot override newer toolbar focus",
+      "savedIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/guard-stage/retained-probe/home/fixture/image.svg",
+      "newerLocus": "Btn.root",
+      "newerIdentity": "control:Sort",
+      "after": "FileArea.row",
+      "afterIdentity": "file:/home/hoskinson/window-integration-qa/files-keyboard/guard-stage/retained-probe/home/fixture/image.svg",
+      "newerFocusPreserved": false
+    }
+  ],
+  "exitCode": -15,
+  "result": "observed"
+}

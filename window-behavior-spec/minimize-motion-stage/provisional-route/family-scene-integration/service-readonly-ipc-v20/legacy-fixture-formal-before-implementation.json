@@ -1,0 +1,52 @@
+{
+  "formalBeforeFreshFixtureCorrection": true,
+  "productResourcesUnchanged": true,
+  "named": 10,
+  "samples": 2000,
+  "steps": 100,
+  "fixtureHelperAbsent": true,
+  "sourceSHA256": {
+    "legacy_fixture_ready.qnt": "b1688a8d5f845918d994498d88a352612bc69a40105acbc7bb4acabc5c10ed4b",
+    "legacy_fixture_ready_test.qnt": "36cead55b1f7d0bfad58a2098a34ba7cf1e5e93626d1ab51a615a691fbbec936",
+    "LEGACY_FIXTURE_READINESS_CONTRACT.md": "dbb46d144ccc85efc736d04ee21d5ddb25585232cdf5a01aab735d8d8e7ec6bd",
+    "test_renderer_terminal.py": "88c07af901f1e67499acc10333016565a2a8647a3b79fb582ae111722a141fce",
+    "recovery_resources.py": "133edcf7b92aaa2f521af90922c571d1637ab8e8c9536a7cf57a6475fa18ce02"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "legacy_fixture_ready_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "legacy-fixture-final-before-0.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "legacy_fixture_ready_test.qnt",
+        "--backend=rust",
+        "--seed=2026100202"
+      ],
+      "exitCode": 0,
+      "log": "legacy-fixture-final-before-1.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "legacy_fixture_ready.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100202",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "legacy-fixture-final-before-2.log"
+    }
+  ]
+}

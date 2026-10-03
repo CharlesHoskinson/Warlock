@@ -1,0 +1,67 @@
+{
+  "updatedUTC": "2026-10-02T01:08:11.225545+00:00",
+  "manifestSHA256": "993dc8781f80346fb1dd7bb0d15fe4c90e0379c4390560420994cd319c00ab99",
+  "reviewedSources": {
+    "/home/hoskinson/window-integration-qa/producer-c1-software-cases-v1/run_software.py": "7e6bf318ab310091e14a54baa5921608414889de9313a0b978746ebebaeb44ef",
+    "/home/hoskinson/window-integration-qa/producer-c1-software-cases-v1/private-nested.lua": "63f097245129fea03423289db6a659e9d953489f1b4b3dc30e61c1808496a091",
+    "/home/hoskinson/window-integration-qa/producer-c1-software-cases-v1/SOFTWARE_CONTRACT.md": "6c41402924205dcbccb875aabb91ebbbb97cab1fd03bffa8847f29eefdcbec26",
+    "/home/hoskinson/window-integration-qa/producer-c1-software-cases-v1/freeze_software.py": "c825a5bcccb6935497b07787d7d78db5c1fa7fb8989dbf7debe33df78e6c10bb"
+  },
+  "exactInheritedHelpers": {
+    "c1_pairing.py": {
+      "source": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/c1_pairing.py",
+      "sha256": "a30e532c583193b7519e5181920af6e9f82602f88878f08ed8cc35af3f7444a9"
+    },
+    "verify_c1.py": {
+      "source": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/verify_c1.py",
+      "sha256": "565d2d7dcbabd821d883a4f55b159f20f5bd370f506a671bcbaac46ab6ff34be"
+    },
+    "verify_reversal.py": {
+      "source": "/home/hoskinson/window-integration-qa/family-continuous-c1-v4/verify_reversal.py",
+      "sha256": "0bce792c511f78c029eb843e7de3c4a5615d2ebaeeadad96943a7dd4e6d21ae5"
+    },
+    "producer_observer.py": {
+      "source": "/home/hoskinson/window-integration-qa/family-raster-c1-v13/producer_observer.py",
+      "sha256": "a55780355c633cc8772641c5cd3abd77e03445ae81ce0d0d0f37c45187ec9019"
+    },
+    "raster_oracle.py": {
+      "source": "/home/hoskinson/window-integration-qa/family-raster-c1-v13/raster_oracle.py",
+      "sha256": "3a542d7de3376c7bfce276dbc18efc9134a6ab9ae0b3e235d4b58af7c0b01602"
+    },
+    "observations.py": {
+      "source": "/home/hoskinson/window-integration-qa/family-raster-c1-v13/observations.py",
+      "sha256": "9f9b1bb282081c6f73422a40b41beede27f04a8c276d4ff3e07d1269e15c5f37"
+    },
+    "catalog_preservation.py": {
+      "source": "/home/hoskinson/window-integration-qa/family-raster-c1-v13/catalog_preservation.py",
+      "sha256": "c579d169e9b7093331fd4b78d015cc9fbbcd38c9ceb3772aef1bd0f5056fc54d"
+    }
+  },
+  "checks": {
+    "complete8478BytesModes146Links": true,
+    "exactReviewedProducerPair": true,
+    "exactReviewedAuditAndObservers": true,
+    "realScopeGuardAndOwnedFreshAttempt": true,
+    "softwareIdentitiesDoNotClaimNativeEffect": true,
+    "mixedOutputActualPresentationBeforeBothRetargets": true,
+    "duplicateStartSameEpochClockAudited": true,
+    "exactSwapPresentationOriginPairs": true,
+    "cancelDelegateTransparentCommitAndReadinessRetirement": true,
+    "normalClientsFirstCompleteEOF": true,
+    "allMainPreservationAndStrictParentTransport": true,
+    "noPhysicalOrEndUserReducedMotionClaim": true
+  },
+  "preflight": {
+    "command": [
+      "/usr/bin/python3",
+      "/home/hoskinson/window-integration-qa/producer-c1-software-cases-v1/run_software.py"
+    ],
+    "returncode": 0,
+    "stdout": "{\"preflight\": \"pass\", \"nativeLaunch\": false, \"inputs\": 8478}\n",
+    "stderr": ""
+  },
+  "reviewPassed": true,
+  "nativeLaunched": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false
+}

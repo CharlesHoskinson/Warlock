@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_pronunciation" xml:lang="sk">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_text_attributes"/>
+    <title type="sort">7. Výslovnosť</title>
+    <title type="link">Výslovnosť</title>
+    <desc>Definovanie, ako sa konkrétne slová vyslovujú</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Predvoľby výslovnosti</title>
+  <p>Niekedy váš syntetizátor reči jednoducho neprečíta správnu vec pre daný reťazec. Možno radšej počujete „smiech nahlas“ namiesto „LOL“ alebo „prístupnosť“ namiesto „a11y“. Alebo môže existovať meno alebo technický termín, ktorý syntetizátor vyslovuje nesprávne.</p>
+  <p>Stránka <gui>Výslovnosť</gui> v dialógovom okne predvolieb <app>Orca</app> vám umožňuje pridávať, upravovať a mazať položky v slovníku výslovnosti <app>Orca</app>.</p>
+  <p>Pretože stránka <gui>Výslovnosť</gui> je súčasťou aj nastavení špecifických pre aplikáciu, môžete si svoje položky prispôsobiť podľa potreby pre každú používanú aplikáciu.</p>
+  <steps>
+    <title>Pridanie novej položky slovníka</title>
+    <item>
+      <p>Stlačte tlačidlo <gui>Nová položka</gui> (<keyseq><key>Alt</key><key>N</key></keyseq>)</p>
+    </item>
+    <item>
+      <p>Zadajte text novej položky a stlačte <key>Return</key> na dokončenie úprav skutočného reťazca.</p>
+    </item>
+    <item>
+      <p>Presuňte sa do stĺpca <gui>Náhradný reťazec</gui> a stlačením <key>Return</key> začnite úpravy.</p>
+    </item>
+    <item>
+      <p>Zadajte text, ktorý chcete namiesto toho prečítať a stlačením <key> Return</key> dokončite úpravy náhradného reťazca.</p>
+    </item>
+  </steps>
+  <steps>
+  <title>Úprava existujúcej položky slovníka</title>
+    <item>
+      <p>Presuňte sa na bunku, ktorú chcete upraviť, a stlačením <key>Return</key> začnite úpravy.</p>
+    </item>
+    <item>
+      <p>Vykonajte zmeny a potom stlačením <key>Return</key> dokončite úpravy.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Odstránenie existujúcej položky slovníka</title>
+    <item>
+      <p>Presuňte sa na položku, ktorú chcete odstrániť.</p>
+    </item>
+    <item>
+      <p>Stlačte tlačidlo <gui>Odstrániť</gui> alebo <keyseq><key>Alt</key><key>D</key></keyseq>.</p>
+    </item>
+  </steps>
+</page>

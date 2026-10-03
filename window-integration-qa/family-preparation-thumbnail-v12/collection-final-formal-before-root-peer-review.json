@@ -1,0 +1,298 @@
+{
+  "result": "pass",
+  "nativeLaunch": false,
+  "named": 47,
+  "models": 7,
+  "samplesPerModel": 2000,
+  "maxSteps": 100,
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "helper_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-helper_lifecycle-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "helper_lifecycle.qnt",
+        "--backend=rust",
+        "--seed=2026100117"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-helper_lifecycle-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "helper_lifecycle.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100117",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-helper_lifecycle-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "query_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-query_lifecycle-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "query_lifecycle.qnt",
+        "--backend=rust",
+        "--seed=2026100117"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-query_lifecycle-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "query_lifecycle.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100117",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-query_lifecycle-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "service_queries.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-service_queries-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "service_queries.qnt",
+        "--backend=rust",
+        "--seed=2026100117"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-service_queries-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "service_queries.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100117",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-service_queries-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "capture_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-capture_lifecycle-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "capture_lifecycle.qnt",
+        "--backend=rust",
+        "--seed=2026100117"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-capture_lifecycle-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "capture_lifecycle.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100117",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-capture_lifecycle-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "reversal.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-reversal-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "reversal.qnt",
+        "--backend=rust",
+        "--seed=2026100117"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-reversal-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "reversal.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100117",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-reversal-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_collection_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-recovery_collection-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_collection_test.qnt",
+        "--backend=rust",
+        "--seed=2026100117"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-recovery_collection-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_collection.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100117",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-recovery_collection-run.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "service_restart_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-service_restart-typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "service_restart_test.qnt",
+        "--backend=rust",
+        "--seed=2026100117"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-service_restart-test.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "service_restart.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100117",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "final-formal-service_restart-run.log"
+    }
+  ],
+  "sourceSHA256": {
+    "COLLECTION_CONTRACT.md": "b8cdcdcf4c10560aeee3614081ab42af31a1f2bbdcff189c630340dd42cc2a6a",
+    "recovery_collection.qnt": "4c2aa548dea38d7562c5db0303f315adaead26f1b19f629801f586df3153fa24",
+    "recovery_collection_test.qnt": "6a21b61146b32867e8f6664d70a0c28542824f28a19b1225465cbf3beb837f8c",
+    "CONTRACT.md": "52fe8c2c5fe936cf86d10a631dd28d4f553b82b90f76173d89cb4073dc602f66",
+    "reversal.qnt": "5d956a4cddb8b592860c1af331a77fe1fec384c0f3423834ec486585486d0fc8",
+    "verify_reversal.py": "0bce792c511f78c029eb843e7de3c4a5615d2ebaeeadad96943a7dd4e6d21ae5",
+    "test_reversal.py": "9eeea44a1a8ec43824ab901bd0595dd942ee676c40acf461bce5641a5ac7bb29",
+    "NATIVE_FOLLOWON_CONTRACT.md": "b31b9104c1d8471dccb1cbeaddac112cceaa8831b88cb7b1cbf2fe7756faf65d",
+    "native_integration.py": "c613aa84fb00f21c729cbabdb6fc15ee79a1e1cc3b66fd7f43b267642128f936",
+    "private_shell.py": "673847b93cbf129bed84cb2f0c42c7c9df9c1f873f25fbb1e310087cb6b4d5c4",
+    "service_observer.py": "b90e6fb10ad0bb529545b718a052c10963f21f67d39daf70679322216277e89c",
+    "test_observer.py": "eff3c1773834f0c2a0b747256e246daf629022ba7493c1709217c9ca2439dbd5",
+    "test_packaging.py": "8da3e1fe659cfb88ed95219cbafcd6fad42db5b5aba2d8b2ab7233788093aa8f",
+    "run_offline.py": "03330c9b9a779b5aedb708e0cb19abe3fc2cd165d0cef0b7594c9f8adf9d617e",
+    "HELPER_OBSERVER_CONTRACT.md": "077d2da261495f946f84acd9e62f9f4bbcab3bc4852fb9893daaed3cbb055859",
+    "helper_lifecycle.qnt": "60b55937111914b6e1483b96f8ebb91f522d9e879a4d0a7a64a3088ba2619fae",
+    "helper_observer.py": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+    "helper_setup.py": "3eb460716b8580c692b59508c9012d450b4ee7798c1e7486af558d4bc7eaf8cd",
+    "test_helpers.py": "d74f17cc867e8df9d4d2b66f6401496d57210e6b42bab1c53f02e99518f8033a",
+    "test_v6_helpers.py": "960f164084377be2efd5271f2f7ebf82df111fadb9f6716589ddcb80049c7810",
+    "exec_gate.py": "fba80e877ed4275cb51cf401166ffd35d20711f5464bbe241735d10903c97314",
+    "query_lifecycle.qnt": "8c2ef24906d86a45903d66f1127e01cf884161f8c69c57b7c0be92e8a5c4cd45",
+    "test_query_roles.py": "3dadcbdaf7977f0fedcaffbf50572aa5f24d562731de9c949d968418380c4b19",
+    "test_failure_archive.py": "cb54d0a39a64fad2504c27dee1da718182ef76c86d89980d47030115ce345cd2",
+    "service_queries.qnt": "bd30cbb22f2b1e7c4ce70286204ebfa63d4272c9efc25e4bc5ad5a228319e937",
+    "test_service_queries.py": "3a0d4de96ce0eeb1bebda0bf94118d0bafe1d185b9f743221e4cb54283fbd4ac",
+    "capture_evidence.py": "7d01fe5ffdbca33a3d3eaa4eafe2a925042414ef9fe3e65f895ec8f1acb19be6",
+    "test_capture_evidence.py": "f7c01ae25e297375685ef0f5b04641ba3a9f8528628b0cb633b48d5577d8a94e",
+    "capture_lifecycle.qnt": "fa38546a401f4964431518aea60eea4518fcaff9815fe5210d8ecb3f915b5abd",
+    "FAILED_ACCEPTANCE_RETIREMENT.md": "6712642bb8a31673acf6930ea6545860bbc84a91d6f58ef9229635ae8421add9",
+    "CACHE_PAIR_REPRESENTATION.md": "d417bedacb26253c09aefad0bf49b69658b6411d746e998fbc5ab9913a658d4e",
+    "recovery_observer.py": "27ab7d8106d433b5f648dc127047fe18a9c95f922e9bbefbc08047184295ded7",
+    "service_recovery_observer.py": "d40c345cf98d09517dcaafa02f118817a3e239460c4601f8f665c4e0ad676b4b",
+    "test_recovery_observer.py": "b93106e8271c2635f5a5d00ffa664bf7b2b92142a2e2a9b95066973a817933c1",
+    "service_restart.qnt": "51812ecb7de0ef512f5b99e9ea20142aa993f1740b373fd0d239ea5cdf695973",
+    "service_restart_test.qnt": "e9cecc3e907991cc136eb4ac5d601f8ca733cee151c0b27b05e76bc1f7824677",
+    "native_faults.py": "5e84bb3004cc9500f348ee1527d87a36df17f9d4482665cc58ecdd8fbda0edc8",
+    "test_recovery_restart.py": "82560583bf6dcef35c34dd0c31fbd3aea1e2fb769d7688c2b1b8ac56107f5d02",
+    "recovery_evidence.py": "968639ee547dee44357a305e52546730f87ee860c55e9d63608cdbcd72d0e58d",
+    "run_native.py": "749030749a8e28311d0083eba114bf8d3048764f316617ab06d52b711e41cf93",
+    "ROOT_REVIEW_REQUEST.md": "05afc272412c0acc201dacdafaef3f4bccff6c2aadfd2c2d877ac1555e6711a4"
+  }
+}

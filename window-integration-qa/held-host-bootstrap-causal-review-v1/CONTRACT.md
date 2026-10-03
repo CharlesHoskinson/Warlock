@@ -1,0 +1,5 @@
+# Read-only private host bootstrap attribution
+
+HeldV13 deadline and all137 exact peer/fullEOF empty monitor observations remain a failed campaign. Preserve all predecessors and main-state failures. Source hypothesis: start dispatches before constructor queues initial xdg empty commit, with no later initial flush. Parent-readability-only dispatch may need incidental parent traffic to flush that queued request, whereas successful predecessors received configure. Existing regular buffer commit explicitly flushes. No claim of observed exact actual wire bytes or socket scheduling in the failed compositor.
+
+A standalone own Unixsocket/libwayland CPU fixture may test actual client marshalling/flush semantics without creating a compositor, display server, surface, GUI or connecting to the desktop. The pure model records queued outbound request, incidental parent readability and explicit flush, with no native acceptance. Fresh repair requires root authorization, formal exact startup/lifetime/transport/flush/EAGAIN policy and complete sources before actual private integration.

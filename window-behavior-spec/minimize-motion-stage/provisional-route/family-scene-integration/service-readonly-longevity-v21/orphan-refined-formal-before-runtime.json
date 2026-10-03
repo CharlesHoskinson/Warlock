@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "beforeOrphanRuntimeRefinement": true,
+  "originalFormal51Preserved": true,
+  "named": 19,
+  "samples": 2000,
+  "steps": 100,
+  "nativeLaunch": false,
+  "formalReport": "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/verified-refinement-report.json",
+  "formalReportSHA256": "c484bcc8c2a25a3f38f3165e60ec4c4fd4bdc177d16298f6693ee2460ee07a0d",
+  "runtimeBeforeSHA256": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_archive.py": "57702ce603875a652a1368be9c3b39f1298d4c131ad0bdc5c4989bc009bca7bd",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/readonly_ipc.py": "89abb25c478fedc9e83e5400475a6239cb94b5c429e50882682694a5f9accb0f",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/native_runtime.py": "dd62f690d527fcbbe9719ed0250dcc9011561f7f3c1320f386464afadd907b8c",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-readonly-longevity-v21/service_runtime.py": "f8c34476e065e6312412df6778fcbdc6c5042c7a942c45810ba75742c93a8b0a"
+  },
+  "evidence": {
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/kernel-counterexample.json": "e88a27a2a776152b0a46e8fbd56be255f13aee40821b1b6f75ce7f62d44f71be",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/old-model-counterexample.log": "561abb125995a8da576ebba5c9f96798e9d2ae7a72a50c3d0d0227ff10b573d4",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/old-model-inputs.json": "b3f2c5e1a60710b5295e715ca3d8b0e49f1398a7baaca4ecc9e6f22ff17369d3",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/readonly_predecessor.qnt": "981edebc02eff5cc149b2b89d4e7d0030355a06c3aa58a91283643f271cf0a47",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/readonly_predecessor_test.qnt": "27d5110534b1214a60e3f947ff1fc12bc33bd95dcbe0aa0fa8150fcd150a0bda",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/refined-named.log": "012270a23f997d8bc7aa0e2f41d1294721e655496d558ef164417abe881ba2a9",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/refined-run.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/refined-type.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/retained-failing-model/old-model-counterexample.log": "561abb125995a8da576ebba5c9f96798e9d2ae7a72a50c3d0d0227ff10b573d4",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/retained-failing-model/old-model-inputs.json": "b3f2c5e1a60710b5295e715ca3d8b0e49f1398a7baaca4ecc9e6f22ff17369d3",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/retained-failing-model/readonly_predecessor.qnt": "385f86dbcde3dc7f755b9bfe58a9d136d9a5215da9da2376e5983089bdc60371",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/retained-failing-model/readonly_predecessor_test.qnt": "27d5110534b1214a60e3f947ff1fc12bc33bd95dcbe0aa0fa8150fcd150a0bda",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/retained-summary-checker-error.json": "e6bfebd0b6389024b6f3bfb102e93b51e285513f78d70192a6e0b5d7a5b5608e",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/verified-refinement-0.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/verified-refinement-1.log": "48514a55e33e7e31af7d3de73a2d9c128bea8eab154848cb347081d07abd757c",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/verified-refinement-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/window-integration-qa/readonly-v21-orphan-reseal-formal-v1/verified-refinement-report.json": "c484bcc8c2a25a3f38f3165e60ec4c4fd4bdc177d16298f6693ee2460ee07a0d"
+  }
+}

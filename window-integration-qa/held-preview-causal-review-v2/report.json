@@ -1,0 +1,160 @@
+{
+  "version": "held-v9-actual-preview-clipping-replay-v1",
+  "nativeLaunch": false,
+  "mainChanged": false,
+  "frozenStageChanged": false,
+  "actualClipMismatchProved": true,
+  "featureFailurePreserved": true,
+  "fullHeld52Accepted": false,
+  "journal": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v9/attempt-1/qt-wayland/case-4/preview-motion-observation.jsonl",
+  "journalSHA256": "1ae535f07938b8a034c71059ffec9044c7feca0154bbe6f43652adff2f71853d",
+  "journalFullEOF": true,
+  "rows": 102,
+  "arrivalSamples": 95,
+  "target": {
+    "acceptsInput": true,
+    "address": "0x558aa2257b70",
+    "allowedOverFullscreen": true,
+    "at": [
+      330,
+      350
+    ],
+    "class": "qt-window-modal-fixture",
+    "contentType": "none",
+    "floating": true,
+    "focusHistoryID": 1,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "fullscreenHandler": "default",
+    "grouped": [],
+    "hidden": false,
+    "inhibitingIdle": false,
+    "initialClass": "qt-window-modal-fixture",
+    "initialTitle": "Qt WindowModal QA nested",
+    "mapped": true,
+    "monitor": 0,
+    "pid": 2246775,
+    "pinFullscreened": false,
+    "pinned": false,
+    "size": [
+      240,
+      140
+    ],
+    "stableId": "1800000f",
+    "swallowing": "0x0",
+    "tags": [],
+    "tearingHint": false,
+    "title": "Qt WindowModal QA nested",
+    "visible": true,
+    "workspace": {
+      "id": 1,
+      "name": "1"
+    },
+    "xdgDescription": "",
+    "xdgTag": "",
+    "xwayland": false
+  },
+  "shellLifetime": {
+    "parent": 2245574,
+    "pgid": 2245715,
+    "pid": 2245715,
+    "start": "13005929"
+  },
+  "inputLifetime": {
+    "parent": 2245574,
+    "pgid": 2246006,
+    "pid": 2246006,
+    "start": "13005972"
+  },
+  "previewItem": {
+    "address": "0x558aa2257b70",
+    "height": 149,
+    "width": 288,
+    "x": 26,
+    "y": 537
+  },
+  "nativeLayer": {
+    "address": "0x558aa2b00b20",
+    "box": [
+      0,
+      26,
+      1600,
+      1000
+    ],
+    "mapped": true,
+    "namespace": "hoskinson-taskbar-popup",
+    "pid": 2245715,
+    "visible": true
+  },
+  "pointGlobal": [
+    170.0,
+    637.5
+  ],
+  "pointLayerLocal": [
+    170.0,
+    611.5
+  ],
+  "cardLocal": {
+    "height": 460,
+    "width": 320,
+    "x": 10,
+    "y": 36
+  },
+  "clippedViewportLocal": {
+    "clip": true,
+    "contentHeight": 634,
+    "contentY": 0,
+    "coordinateSpace": "layer-window",
+    "height": 428,
+    "width": 288,
+    "x": 26,
+    "y": 52
+  },
+  "actualPopupMask": "card",
+  "pointOutsideCard": true,
+  "pointOutsideClippedViewport": true,
+  "all95CursorsExactlyRequested": true,
+  "all95PointerOwnersNull": true,
+  "all95OriginalArrivalRefused": true,
+  "genuineInputsReleased": true,
+  "proposalPersistedBeforeActualMotion": true,
+  "actualMotion": [
+    {
+      "command": "absolute 170 637.5 1600 1000",
+      "nativeOutcomeNotInferred": true,
+      "pid": 2246006,
+      "sentNs": 117945991857217,
+      "start": "13005972"
+    },
+    {
+      "command": "sync",
+      "nativeOutcomeNotInferred": true,
+      "pid": 2246006,
+      "sentNs": 117945992663135,
+      "start": "13005972"
+    }
+  ],
+  "actualPreviewClick": false,
+  "terminal": {
+    "error": "TimeoutError('Actual pointer enters exact preview card layer')",
+    "event": "terminal",
+    "featureAcceptedNotInferred": true,
+    "index": 101,
+    "result": "error",
+    "timeNs": 117954017842596
+  },
+  "first3CasesPassed": [
+    "move-escape",
+    "move-reload",
+    "move-unload-reload"
+  ],
+  "factualNormalNativeUnload": true,
+  "allFrozenBytesModesLinksExact": true,
+  "frozenCounts": {
+    "inputs": 22902,
+    "modes": 22902,
+    "links": 332
+  },
+  "frozenManifestSHA256": "9dc69109356cb72a557189493d86e77501f1acf08c83a19dd47fadec52df9146",
+  "conclusion": "The source preview center lies beyond the actual card mask and clipped viewport. The actual cursor reached precisely the command for95samples, but no layer/window pointer owner existed; the original strict arrival gate correctly refused and no click occurred. A genuine scroll selection is required to bring the exact same source card into the actual viewport; pointer parsing/delivery succeeded. No oracle or helper-budget waiver is justified."
+}

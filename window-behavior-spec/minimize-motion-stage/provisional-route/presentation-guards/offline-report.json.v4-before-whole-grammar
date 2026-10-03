@@ -1,0 +1,78 @@
+{
+  "result": "pass",
+  "javascriptScenarios": 27,
+  "formalNamedScenarios": {
+    "presentation": 8,
+    "handoff": 5
+  },
+  "samplesPerModel": 2000,
+  "steps": 100,
+  "nativeIntegrated": false,
+  "hashes": {
+    "GlobalRoute.js": "519f5f117153c88e123d11f28029712f7fec9a8eae03d90d5f7afd57494e8449",
+    "test_global_route.js": "7b0a17ccf7cb0eb6fe9216293f8ca38ff36f1a89e84c076f07ddef5c0269af94",
+    "presentation.qnt": "a4d95b1fd6d45f69eb12e595c68115bb502e6bd2488721b86b5e063ccc652dea",
+    "presentation_test.qnt": "90471028adc712766322fe31cbc1f7be7b435330a17c39522c111e6c16a2f511",
+    "handoff.qnt": "c0cc88bbd53ad7ec0794a6858972750270a4a9bd51ca1727a047089d50bcecaa",
+    "handoff_test.qnt": "35ab4325d149c7c2f6c7247fb9539d3bfda85a28d9292111719b2d764f2dcf18"
+  },
+  "checks": [
+    {
+      "command": [
+        "node",
+        "test_global_route.js"
+      ],
+      "returncode": 0,
+      "stdout": "PASS immediate reversal moves pixels while validation is blocked\nPASS unvalidated endpoint has no native authority\nPASS promotion retains exact current rect texture and route progress\nPASS third request during blocked second keeps current visual origin\nPASS stale validation and replacement identity cannot promote\nPASS all output presentation acknowledgements gate native ready\nPASS endpoint needs actual final frame from each output\nPASS rejection uses prior fresh authority and current visual rectangle\nPASS destination/output removal requires fresh service settlement\nPASS closed/reused route rejects old authority\nPASS frame diagnostic retention is bounded\nPASS older timestamp after newer presentation cannot certify readiness\nPASS arbitrary rectangle even same token cannot certify pixels\nPASS close and idle reject subsequent presentation\nPASS already presented sequence cannot repeat after newer submission\nPASS wrong actual atlas digest and identity fail submission\nPASS new request rejects same-atlas old epoch presentation\nPASS invalid public seed boundary is rejected\nPASS idle endpoint handover rejects late presentation\nPASS delayed but ordered frames survive a newer render submission\nPASS reordered numeric geometry preserves native handover\nPASS bounded in-flight records fail safely on evicted frames\nPASS undisplayed computed geometry cannot become reversal origin\nPASS asynchronous output handoffs keep individual visible origins\nPASS in-flight old frame must drain before visual handoff\nPASS missing output evidence cannot invent a handoff\nPASS complete token grammar rejects suffix and malformed sequence\n27 provisional route scenarios PASS\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "presentation_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  presentation_test\n    ok arbitraryRectangleCannotCertifyAtlasTest passed 1 test(s)\n    ok olderPresentationAfterNewerFrameRejectedTest passed 1 test(s)\n    ok cancelledRouteRejectsPresentationTest passed 1 test(s)\n    ok reusedAtlasDigestCannotCertifyNewIdentityTest passed 1 test(s)\n    ok finalHandoverNeedsNewEpochFramesTest passed 1 test(s)\n    ok completedRouteRejectsLateFrameTest passed 1 test(s)\n    ok delayedOrderedPresentationStillReadyTest passed 1 test(s)\n    ok oldPresentedSequenceAfterNewerRejectedTest passed 1 test(s)\n\n  8 passing (401ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "handoff_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  handoff_test\n    ok undisplayedComputedTickCannotBecomeOriginTest passed 1 test(s)\n    ok asynchronousFragmentsKeepOwnActualOriginsTest passed 1 test(s)\n    ok missingFragmentCannotInventHandoffTest passed 1 test(s)\n    ok pendingOldFrameMustDrainBeforeReserveTest passed 1 test(s)\n    ok malformedWholeTokenCannotReserveTest passed 1 test(s)\n\n  5 passing (76ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "presentation.qnt",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--invariant=allProps",
+        "--verbosity=0"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "handoff.qnt",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--invariant=allProps",
+        "--verbosity=0"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

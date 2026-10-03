@@ -1,0 +1,47 @@
+test_fsync_failure_propagates (helper.test_helper.EvidenceTests.test_fsync_failure_propagates) ... ok
+test_full_short_writes_and_fsync (helper.test_helper.EvidenceTests.test_full_short_writes_and_fsync) ... ok
+test_zero_write_refused (helper.test_helper.EvidenceTests.test_zero_write_refused) ... ok
+test_actual_direct_shebang_exact_executable_argv_and_durable_evidence (helper.test_helper.ExecutableTests.test_actual_direct_shebang_exact_executable_argv_and_durable_evidence) ... ok
+test_actual_malformed_completed_token_is_exit3_without_completion (helper.test_helper.ExecutableTests.test_actual_malformed_completed_token_is_exit3_without_completion) ... ok
+test_actual_native_refusal_is_exit2 (helper.test_helper.ExecutableTests.test_actual_native_refusal_is_exit2) ... ok
+test_actual_wrong_argv_refuses_before_any_send (helper.test_helper.ExecutableTests.test_actual_wrong_argv_refuses_before_any_send) ... ok
+test_actual_wrong_interpreter_refuses_before_any_send (helper.test_helper.ExecutableTests.test_actual_wrong_interpreter_refuses_before_any_send) ... ok
+test_actual_projection_counterexamples_now_uncertain (helper.test_helper.ParserTests.test_actual_projection_counterexamples_now_uncertain) ... ok
+test_before_pin_must_be_boolean_and_toggled (helper.test_helper.ParserTests.test_before_pin_must_be_boolean_and_toggled) ... ok
+test_command_has_only_full_token_and_no_fallback (helper.test_helper.ParserTests.test_command_has_only_full_token_and_no_fallback) ... ok
+test_duplicate_and_nonfinite_json_refused (helper.test_helper.ParserTests.test_duplicate_and_nonfinite_json_refused) ... ok
+test_explicit_native_partial_failure_stays_visible (helper.test_helper.ParserTests.test_explicit_native_partial_failure_stays_visible) ... ok
+test_explicit_native_validation_refusal (helper.test_helper.ParserTests.test_explicit_native_validation_refusal) ... ok
+test_foreign_native_refusal_token_is_uncertain (helper.test_helper.ParserTests.test_foreign_native_refusal_token_is_uncertain) ... ok
+test_foreign_token_is_uncertain (helper.test_helper.ParserTests.test_foreign_token_is_uncertain) ... ok
+test_inconsistent_native_refusal_phase_is_uncertain (helper.test_helper.ParserTests.test_inconsistent_native_refusal_phase_is_uncertain) ... ok
+test_inconsistent_partial_flag_is_uncertain (helper.test_helper.ParserTests.test_inconsistent_partial_flag_is_uncertain) ... ok
+test_missing_or_malformed_completed_token_is_uncertain (helper.test_helper.ParserTests.test_missing_or_malformed_completed_token_is_uncertain) ... ok
+test_no_action_cannot_claim_complete (helper.test_helper.ParserTests.test_no_action_cannot_claim_complete) ... ok
+test_original_malformed_completion_counterexample (helper.test_helper.ParserTests.test_original_malformed_completion_counterexample) ... ok
+test_owner_projection_and_state_guards (helper.test_helper.ParserTests.test_owner_projection_and_state_guards) ... 
+  test_owner_projection_and_state_guards (helper.test_helper.ParserTests.test_owner_projection_and_state_guards) (field='fullscreen') ... FAIL
+test_seeded_1000_malformed_projection_mutations (helper.test_helper.ParserTests.test_seeded_1000_malformed_projection_mutations) ... ok
+test_toggle_from_pinned_to_unpinned (helper.test_helper.ParserTests.test_toggle_from_pinned_to_unpinned) ... ok
+test_valid_exact_toggle (helper.test_helper.ParserTests.test_valid_exact_toggle) ... ok
+test_actual_drip_cannot_reset_deadline (helper.test_helper.TransportTests.test_actual_drip_cannot_reset_deadline) ... ok
+test_actual_peer_full_eof_raw_before_parse (helper.test_helper.TransportTests.test_actual_peer_full_eof_raw_before_parse) ... ok
+test_malformed_after_send_uncertain (helper.test_helper.TransportTests.test_malformed_after_send_uncertain) ... ok
+test_post_send_publication_failure_cannot_reclassify (helper.test_helper.TransportTests.test_post_send_publication_failure_cannot_reclassify) ... ok
+test_pre_send_guard_uses_original_deadline (helper.test_helper.TransportTests.test_pre_send_guard_uses_original_deadline) ... ok
+test_socket_replacement_after_send_uncertain (helper.test_helper.TransportTests.test_socket_replacement_after_send_uncertain) ... ok
+test_wrong_actual_peer_before_send (helper.test_helper.TransportTests.test_wrong_actual_peer_before_send) ... ok
+
+======================================================================
+FAIL: test_owner_projection_and_state_guards (helper.test_helper.ParserTests.test_owner_projection_and_state_guards) (field='fullscreen')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/helper/test_helper.py", line 45, in test_owner_projection_and_state_guards
+    with self.subTest(field=field),self.assertRaises(h.Uncertain):h.result(r,captured())
+                                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: Uncertain not raised
+
+----------------------------------------------------------------------
+Ran 32 tests in 7.071s
+
+FAILED (failures=1)

@@ -1,0 +1,30 @@
+{
+  "kind": "fresh offline private v7 native implementation, fixture not frozen",
+  "capabilityFormalNamed": 9,
+  "mappingFormalNamed": 8,
+  "formalSamplesEach": 2000,
+  "formalSteps": 100,
+  "adapterControlFlowTests": 9,
+  "exactABIBuild": true,
+  "mainLoaded": false,
+  "nativePointerProved": false,
+  "dependencies": {
+    "CAPABILITY_CONTRACT.md": "063e00022d3436411ffa05280f95dfaf1777e74075e3ef688585f5d7fd7d057c",
+    "capability_probe.qnt": "6773750574b7d8b7617245a3a535c073c49d1042708fd0b6f885b78ffe51dbde",
+    "capability_probe_test.qnt": "356ff19989668e5d1880cba0665fdcca739ffd26e13c77ddf2dc52011400de00",
+    "capability_adapter.py": "bae4da79997d0d17b90a338f31eb39454bdd829747f102a67dfb0e3189525413",
+    "capability_adapter_test.py": "c1962839bf9bade799be0e5f5b6f2e1d1685fe39b2d5add47723d0b72e4882d5",
+    "AX_MAPPING_CONTRACT.md": "a299061ee0496ef3792731239d4ad5bbfec8cccce92cbfc7f7ddb3e9803a431f",
+    "ax_mapping.qnt": "76e2c8908d139f7a7e6fd426d4eaa1eabf9a2afb2c9fc4c5479ca687c0fe99fe",
+    "ax_mapping_test.qnt": "f569d27f9ea8303e81e287b00efb6c7cfce32d24b8c29e7d86d969c34154a0e1",
+    "reader_reconnect_v7.py": "5beee4916f4e248b7977609ec82209bfd3e4f0b75db7ad652a9684b6567eacc7",
+    "reader-reconnect-v6-to-v7.diff": "77410b33fa563f99473eb22bc683aff92fac599a9a516553664395b170d3301a",
+    "native/plugin-v7.cpp": "453433da4c488db1a4fbdad75d5ca4073c43e512fbdf81de27985fa90f5cf756",
+    "native/pointer_native.hpp": "ad50b39d8027bbb7591bda68f84abfb17a71950cc3809a016d778e9df88eaaf1",
+    "native/libkeyboard-monitor-private-v7.so": "5826de866eecdde8095ead1ab138c102ac412706f1d15873974b42b8fbc143bf",
+    "native/v6a-to-v7.diff": "9d687bdf7e0ee1eb671219c78d9196d476d17ba8c0797f05cf47f77656a64148",
+    "native/key_policy.hpp": "4d6fa06baea24fdac69069a4ccfa02c62827359bc94f9027ff0bab4ac8c80983",
+    "native/xkb_helpers.hpp": "8e084f002f82d996ad44dc100f01ba9e33e763189ba6872890f722b60d96b895",
+    "native/PointerLocatorState.hpp": "e7d4c49993b45855bd3f1870f2a2db4f7b4d8c04ce99b25b69305b5d309a351c"
+  }
+}

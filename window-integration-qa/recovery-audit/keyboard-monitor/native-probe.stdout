@@ -1,0 +1,157 @@
+{
+  "kind": "private native bridge/official Orca on non-AT-SPI Foot",
+  "checks": [
+    {
+      "name": "private config errors absent",
+      "pass_": true
+    },
+    {
+      "name": "default manager passive",
+      "pass_": true,
+      "state": {
+        "clients": 0,
+        "devices": 0,
+        "quiescent": true,
+        "nativeInputProved": false
+      }
+    },
+    {
+      "name": "no-reader ordinary bytes preserved",
+      "pass_": true,
+      "hex": "616263"
+    },
+    {
+      "name": "no-reader nested compositor shortcut works",
+      "pass_": true
+    },
+    {
+      "name": "actual official reader uses DeviceA11yManager",
+      "pass_": true,
+      "reader": {
+        "device_type": "AtspiDeviceA11yManager",
+        "focus": null,
+        "active_window": null,
+        "navigator": null
+      }
+    },
+    {
+      "name": "actual global learn mode command on focused non-AT-SPI Foot",
+      "pass_": true,
+      "utterances": [
+        {
+          "time": 59058.802393503,
+          "kind": "speech",
+          "text": "Entering learn mode.  Press any key to hear its function.  To view the screen reader's documentation, press F1. To get a list of the screen reader's shortcuts, press F2. To exit learn mode, press the escape key.",
+          "voice": {
+            "established": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "global command bytes consumed exactly",
+      "pass_": true,
+      "before": "616263",
+      "after": "616263"
+    },
+    {
+      "name": "ordinary post-command typing preserved",
+      "pass_": true,
+      "hex": "61626364"
+    }
+  ],
+  "restoration": {
+    "originalClients": true,
+    "originalClientStates": true,
+    "mainPlugins": true,
+    "focus": true,
+    "cursor": true,
+    "a11y": true,
+    "readerDisabled": true,
+    "catalogBytes": true,
+    "outputs": true,
+    "fixturesExited": true,
+    "configErrors": true
+  },
+  "nativeInputProved": false,
+  "physicalHardwareProved": false,
+  "before": {
+    "clients": [
+      [
+        "0x5a02aee429f0",
+        4007,
+        "18000005"
+      ],
+      [
+        "0x5a02b0cc9280",
+        4311,
+        "18000006"
+      ],
+      [
+        "0x5a02afd20bd0",
+        361074,
+        "18000076"
+      ],
+      [
+        "0x5a02afa13e90",
+        252010,
+        "1800006a"
+      ]
+    ],
+    "focus": [
+      "0x5a02afa13e90",
+      252010,
+      "1800006a"
+    ],
+    "cursor": {
+      "x": 527,
+      "y": 539
+    },
+    "a11y": {
+      "dev": 84,
+      "inode": 91312,
+      "connects": true
+    },
+    "readerStatus": "(<false>,)",
+    "catalogHashes": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    },
+    "catalogBackup": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/catalog-before.json"
+  },
+  "private": {
+    "pid": 3169649,
+    "signature": "efb50993780079460b0cbed1363e2166a2de1d9f_1790836875_871488430",
+    "runtime": "/tmp/kbn-z74ch4m6",
+    "config": "/tmp/kbn-z74ch4m6/hyprland.lua"
+  },
+  "result": "failed",
+  "error": "AssertionError('nested physical CKeyboard path command: None')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/native_probe.py\", line 134, in execute\n    heard=wait(lambda:[x for x in speech() if x['time']>=start and 'learn mode' in x.get('text','').lower()],'nested physical CKeyboard path command')\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/native_probe.py\", line 37, in wait\n    raise AssertionError(label+': '+str(last))\nAssertionError: nested physical CKeyboard path command: None\n",
+  "cleanupUnloadQuiescent": true,
+  "terminalBytes": "616263641b31",
+  "catalogComparison": {
+    "/home/hoskinson/.config/omarchy/virtual-desktops.json": {
+      "expectedSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "actualSHA256": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-settings.json": {
+      "expectedSHA256": null,
+      "actualSHA256": null,
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-order.json": {
+      "expectedSHA256": null,
+      "actualSHA256": null,
+      "exactBytes": true
+    },
+    "/home/hoskinson/.config/omarchy/taskbar-session-order.json": {
+      "expectedSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "actualSHA256": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf",
+      "exactBytes": true
+    }
+  }
+}

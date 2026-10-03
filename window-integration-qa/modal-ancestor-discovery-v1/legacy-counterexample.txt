@@ -1,0 +1,17 @@
+
+  legacy_counterexample
+    1) blockedAncestorMustRouteTest failed after 1 test(s)
+
+  1 failed
+
+  1) blockedAncestorMustRouteTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/window-integration-qa/modal-ancestor-discovery-v1/legacy_counterexample.qnt:5:77
+        5:  run blockedAncestorMustRouteTest=init.then(oldFilteredOwnerPress).then(all{assert(focus==3),oldFilteredOwnerPress})
+                                                                                       ^^^^^^^^^^^^^^^^
+    Use --seed=0x9292b99e68244bc3 --match=blockedAncestorMustRouteTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/window-integration-qa/modal-ancestor-discovery-v1/legacy_counterexample.qnt
+error: Tests failed

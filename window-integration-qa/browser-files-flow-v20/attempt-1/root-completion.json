@@ -1,0 +1,199 @@
+{
+  "updatedUTC": "2026-10-02T05:26:01.574512+00:00",
+  "reportSHA256": "8c60d8f6f6468f7d14d0a355f2b0b94c94886914eaa2d4df9ff7913828e0cd71",
+  "manifestSHA256": "a470821ed03bdf574dfe1c3179ecc242ecdc4656b854deaff927ec2bf3fb8b18",
+  "fileCount": 44182,
+  "linkCount": 13774,
+  "independentChecks": {
+    "allFrozenBytesModesExact": true,
+    "allFrozenLinksExact": true,
+    "all18MainPreserved": true,
+    "allRecordedPIDStartGone": true,
+    "privateRuntimeGone": true,
+    "noUnexpectedOrRemainingHelpers": true,
+    "normalBrowserAndNoForcedCleanup": true,
+    "nativeProbeAndPluginUnloadedNormally": true,
+    "healthyArchivedParentTransport": true,
+    "actualPrivateBusActivationPolicyVerified": true,
+    "initialRangeDiagnosticIndependentlyReplayed": true,
+    "actualBrowserPrivateBusPIDBindingIndependentlyReplayed": true
+  },
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "privateBrowserFilesAccepted": true,
+  "processes": [
+    {
+      "pid": 3280855,
+      "start": "14090771",
+      "gone": true
+    },
+    {
+      "pid": 3280866,
+      "start": "14090775",
+      "gone": true
+    },
+    {
+      "pid": 3281082,
+      "start": "14091017",
+      "gone": true
+    },
+    {
+      "pid": 3280855,
+      "start": "14090771",
+      "gone": true
+    },
+    {
+      "pid": 3280866,
+      "start": "14090775",
+      "gone": true
+    },
+    {
+      "pid": 3281082,
+      "start": "14091017",
+      "gone": true
+    },
+    {
+      "pid": 3281985,
+      "start": "14092066",
+      "gone": true
+    },
+    {
+      "pid": 3282122,
+      "start": "14092208",
+      "gone": true
+    },
+    {
+      "pid": 3282027,
+      "start": "14092137",
+      "gone": true
+    },
+    {
+      "pid": 3282028,
+      "start": "14092137",
+      "gone": true
+    },
+    {
+      "pid": 3282123,
+      "start": "14092209",
+      "gone": true
+    },
+    {
+      "pid": 3282030,
+      "start": "14092142",
+      "gone": true
+    },
+    {
+      "pid": 3282063,
+      "start": "14092163",
+      "gone": true
+    },
+    {
+      "pid": 3282065,
+      "start": "14092164",
+      "gone": true
+    },
+    {
+      "pid": 3282106,
+      "start": "14092183",
+      "gone": true
+    },
+    {
+      "pid": 3282544,
+      "start": "14092573",
+      "gone": true
+    },
+    {
+      "pid": 3282629,
+      "start": "14092630",
+      "gone": true
+    },
+    {
+      "pid": 3282607,
+      "start": "14092628",
+      "gone": true
+    },
+    {
+      "pid": 3282608,
+      "start": "14092628",
+      "gone": true
+    },
+    {
+      "pid": 3282613,
+      "start": "14092628",
+      "gone": true
+    },
+    {
+      "pid": 3282615,
+      "start": "14092629",
+      "gone": true
+    },
+    {
+      "pid": 3282616,
+      "start": "14092629",
+      "gone": true
+    },
+    {
+      "pid": 3282697,
+      "start": "14092665",
+      "gone": true
+    },
+    {
+      "pid": 3287465,
+      "start": "14097425",
+      "gone": true
+    },
+    {
+      "pid": 3281985,
+      "start": "14092066",
+      "gone": true
+    },
+    {
+      "pid": 3282544,
+      "start": "14092573",
+      "gone": true
+    },
+    {
+      "pid": 3287465,
+      "start": "14097425",
+      "gone": true
+    }
+  ],
+  "transport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "environmentObservations": [
+    {
+      "name": "browser",
+      "identity": {
+        "pid": 3281985,
+        "start": "14092066",
+        "ppid": 3279310,
+        "pgid": 3281985
+      },
+      "bytes": 10167,
+      "nonzeroBytes": 0,
+      "initialRangeMatches": false,
+      "currentLibcSelectorsProved": false
+    },
+    {
+      "name": "files",
+      "identity": {
+        "pid": 3282544,
+        "start": "14092573",
+        "ppid": 3279310,
+        "pgid": 3282544
+      },
+      "bytes": 10294,
+      "nonzeroBytes": 10073,
+      "initialRangeMatches": true,
+      "currentLibcSelectorsProved": false
+    }
+  ],
+  "failure": null,
+  "rawOwnedProcessEvidenceSHA256": "b9882de2a0b050092a53a14ca8d93192ec66cf03d40048f973f93d0e446c10e3",
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false,
+  "fullWindowsParityAccepted": false
+}

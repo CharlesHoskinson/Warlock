@@ -1,0 +1,100 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1982b744f77141ac9864223b754b5d9d.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "parallel_planning_test.qnt"
+      ],
+      "exitCode": 0,
+      "seconds": 3.3768796710064635,
+      "log": "/home/hoskinson/window-integration-qa/restore-planning-design-v4/formal-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "parallel_planning_test.qnt",
+        "--backend=rust",
+        "--seed=2026100227"
+      ],
+      "exitCode": 0,
+      "seconds": 11.90759539901046,
+      "log": "/home/hoskinson/window-integration-qa/restore-planning-design-v4/formal-1.log",
+      "sha256": "4451a7e8810953493505319281b48cbe8ac36c00403409b3a4e120b49dbe72fb",
+      "mode": 384
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "parallel_planning.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100227",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "seconds": 5.6300837750022765,
+      "log": "/home/hoskinson/window-integration-qa/restore-planning-design-v4/formal-2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    }
+  ],
+  "named": 24,
+  "samples": 2000,
+  "steps": 100,
+  "sources": {
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/CONTRACT.md": {
+      "sha256": "115df958e2d2842bd28021fa35f1c716bab215ff58a044416b150b98d2118e10",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/SOURCE_MAPPING.md": {
+      "sha256": "ab3f94f18bb23135eefb86cc2f731ad24765351ae26a6bfc84394d1137357d55",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/parallel_planning.qnt": {
+      "sha256": "a0997196d6e60404b01fa1edf0debd427cb86f72023ff3550c1c49b1e698c123",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/parallel_planning_test.qnt": {
+      "sha256": "75f6860b8bd7b8eda2c13c0006af2fc77332e89a2f40f90720a47836aaf9d93f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/prepare_patch.py": {
+      "sha256": "1fa192373834a73490dbba4d7b09bcc38f8cfc078d9c83ea424fce229b7b4b98",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/formal_driver.py": {
+      "sha256": "32f048b6cc1eb9e625687b82d9f6ed6bfa4605564d27f3010b41d7d379a7a500",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/native_desktop.py.proposed": {
+      "sha256": "1710013ef0fe5e05da92ab0b8ca95ff024d94eba7f0aeff6b7ab6fc6a1c19dba",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/scene_controller.py.proposed": {
+      "sha256": "7c8039b5acc1cc1333d72566558d09a5c6162f8495c436dc522e0d23d1a368b7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/intended.patch": {
+      "sha256": "c9b22146c6f609b0f594ea9347ab9c88e52707d7704d0cd605b812c0fadcf099",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/restore-planning-design-v4/intended-source-map.json": {
+      "sha256": "28500a055fe61195b52087f66d7b9282d06cf587b1d01d7699ad539db9fbaa98",
+      "mode": 384
+    }
+  },
+  "sourceUnchanged": true,
+  "runtimeApplied": false
+}

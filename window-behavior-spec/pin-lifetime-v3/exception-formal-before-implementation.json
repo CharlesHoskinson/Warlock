@@ -1,0 +1,36 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_exception.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pin_exception\n    ok noWriteExceptionTest passed 1 test(s)\n    ok afterActionSnapshotExceptionTest passed 1 test(s)\n    ok serializationAfterWriteTest passed 1 test(s)\n    ok failureCannotBecomeCompleteTest passed 1 test(s)\n    ok noRetryTest passed 1 test(s)\n\n  5 passing (193ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_exception.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (2990ms at 669 traces/second).\nUse --seed=0x1383565 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceSHA256": {
+    "pin_exception.qnt": "5c702bb1f6ec6cfad1a8ec5dd55c3bcec6a3f22311466dd1b012835b8b9c43d7",
+    "EXCEPTION_CONTRACT.md": "b363e0fa828cfa1d3c5c0a5461e43fe95592ebb4fea9178f0863922b8bba8758"
+  },
+  "implementationUnchanged": true,
+  "nativeExecuted": false
+}

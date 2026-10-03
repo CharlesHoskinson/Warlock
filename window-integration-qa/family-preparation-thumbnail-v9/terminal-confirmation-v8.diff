@@ -1,0 +1,12 @@
+--- V7/module_binding.py
++++ V8/module_binding.py
+@@ -293,7 +293,9 @@
+         confirmation['owner']=owner_projection(factory,service.lease)
+         fresh=service.store.read();confirmation['ledgerToken']=digest(fresh['readonlyOwnership'])
+         confirmation['moduleToken']=capture(Path(destination).with_name('actual-modules-final-confirm.json'),'terminal-post-disk',previous=modules)['moduleToken']
++        packet=source_packet()
+         confirmation['terminalBatchConfirmation']=terminal_batch_confirmation(factory,raw['actors'],packet)
++        if raw['errors']:raise ValueError('terminal binding refused before post-disk acceptance')
+         if confirmation['terminalBatchConfirmation']!=raw['terminalBatchConfirmation']:raise ValueError('actual terminal batch witness changed after disk')
+         if fresh!=raw['journal'] or factory.readonly.snapshot()!=raw['ledger'] or confirmation['owner']!=raw['owner'] or confirmation['ledgerToken']!=raw['ledgerToken'] or confirmation['moduleToken']!=raw['moduleToken']:raise ValueError('terminal proof replaced after disk confirmation')
+     except BaseException as failure:confirmation['errors'].append({'type':type(failure).__name__,'message':str(failure)})

@@ -1,0 +1,86 @@
+    def _guard_destination(self,window,plan):
+        # Exact original apply_destination pre-effect material/identity guard.
+        if plan.get('identity')!=list(key(window)):raise ValueError('destination plan identity differs')
+        state=self.production.RUNTIME/'hypr-windowctl'/window['address']
+        if state.read_text().split()!=plan['storedFields'] or json.loads(state.with_name(state.name+'.monitor.json').read_text())!=plan['storedMetadata']:
+            raise ValueError('stored destination changed before native focus')
+        if not any(key(current)==key(window) for current in self.base.clients()):raise ValueError('destination identity changed before native focus')
+
+    def _focus_pair_expression(self,window,plan,nonce,expected,completed):
+        import math
+        identity=checked_identity(window)
+        if (re.fullmatch(r'[0-9a-f]{32}',nonce or '') is None or type(expected) is not int
+                or not 2<=expected<=128 or expected%2 or type(completed) is not int
+                or completed<0 or completed%2 or completed+2>expected):raise ValueError('exact focus receipt prefix required')
+        monitor=plan['monitor']
+        if type(monitor.get('name')) is not str or not monitor['name'] or type(plan.get('destination')) is not str or not plan['destination'].isdigit():raise ValueError('exact destination monitor/workspace required')
+        fields=('id','x','y','width','height','scale','transform')
+        if any(type(monitor.get(field)) not in (int,float) or not math.isfinite(monitor[field]) for field in fields):raise ValueError('complete finite destination output required')
+        if any(type(monitor[field]) is not int for field in ('id','x','y','width','height','transform')) or monitor['width']<=0 or monitor['height']<=0 or monitor['scale']<=0:raise ValueError('typed destination output required')
+        # No files or caller Boolean inside the compositor. Userdata guards run
+        # immediately before each original synchronous monitor/workspace action.
+        guard=('local w=hl.get_window('+json.dumps('address:'+identity[0])+'); local m=hl.get_monitor('+json.dumps(monitor['name'])+'); '
+            'if not w or not m or w.address~='+json.dumps(identity[0])+' or w.mapped~=true or w.pid~='+str(identity[2])+
+            ' or string.format("%x",w.stable_id)~='+json.dumps(identity[1])+' or m.name~='+json.dumps(monitor['name'])+
+            ''.join(' or m.'+field+'~='+json.dumps(monitor[field],allow_nan=False) for field in fields)+' then error("exact-focus-identity-output") end; ')
+        actions=['hl.dsp.focus({ monitor = '+json.dumps(monitor['name'])+' })',
+                 'hl.dsp.focus({ workspace = '+json.dumps(plan['destination'])+' })']
+        body=''.join(guard+'local r=hl.dispatch('+action+'); if type(r)~="table" or type(r.ok)~="boolean" or not r.ok then error("focus-dispatch-refused") end; n=n+1; ' for action in actions)
+        reply_prefix=json.dumps({'nonce':nonce,'expected':expected},separators=(',',':'))[:-1]+',"completed":'
+        expression=('local n='+str(completed)+'; local ok=pcall(function() '+body+'end); '
+            'print('+json.dumps(reply_prefix)+'..n..\',"ok":\'..(ok and "true" or "false")..\'}\')')
+        if '\n' in expression or '\r' in expression or '\x00' in expression or len(expression.encode())>16384:raise ValueError('bounded single-line focus expression required')
+        return expression
+
+    def apply_destinations(self,plans,*,current,reservation_lock,deadline_ns,record):
+        import time
+        if not isinstance(self.commands,OwnedCommands):raise ValueError('owned native-effect transaction required')
+        if not isinstance(plans,list) or not 1<=len(plans)<=64 or type(deadline_ns) is not int:raise ValueError('bounded complete focus plan required')
+        identities=[checked_identity(window) for window,plan in plans]
+        if len(set(identities))!=len(identities) or any(plan.get('identity')!=list(identity) for (window,plan),identity in zip(plans,identities,strict=True)):raise ValueError('exact ordered focus plan required')
+        immutable=deepcopy(plans)
+        with reservation_lock:
+            if not current():raise ValueError('destination transaction superseded')
+            if time.monotonic_ns()>=deadline_ns:raise TimeoutError('original scene receipt deadline before destination focus')
+            nonce=os.urandom(16).hex()
+            record.profile['ownedDestinationTransaction']={'nonce':nonce,'expected':2*len(immutable),
+                'identities':[list(identity) for identity in identities],'deadlineNs':deadline_ns,'completed':0}
+            result=self.commands.focus_transaction(self,immutable,nonce=nonce,record=record,current=current,deadline_ns=deadline_ns)
+            if not current():raise ValueError('destination transaction superseded after normal completion')
+            if time.monotonic_ns()>=deadline_ns:raise TimeoutError('original scene receipt deadline after destination focus')
+            return result
+
+    def refresh_destinations(self,plans,*,current,reservation_lock,deadline_ns):
+        from concurrent.futures import ThreadPoolExecutor
+        import time
+        if not isinstance(plans,list) or not 1<=len(plans)<=64 or type(deadline_ns) is not int:raise ValueError('bounded exact refresh scope required')
+        identities=[checked_identity(window) for window,plan in plans]
+        if len(set(identities))!=len(identities) or any(plan.get('identity')!=list(identity) for (window,plan),identity in zip(plans,identities,strict=True)):raise ValueError('ordered refresh plan identity differs')
+        immutable=deepcopy(plans);stopped=threading.Event()
+        def guard():
+            with reservation_lock:
+                if stopped.is_set() or not current():raise ValueError('destination refresh superseded or failed')
+                if time.monotonic_ns()>=deadline_ns:raise TimeoutError('original scene receipt deadline during destination refresh')
+        def refresh(pair):
+            try:
+                guard()
+                result=self.refresh_destination(*pair)
+                guard()
+                return result
+            except BaseException:
+                stopped.set();raise
+        pool=ThreadPoolExecutor(max_workers=min(3,len(immutable)),thread_name_prefix='destination-refresh')
+        futures=[]
+        try:
+            futures=[pool.submit(refresh,pair) for pair in immutable]
+            results=[future.result() for future in futures]
+        except BaseException:
+            stopped.set()
+            for future in futures:future.cancel()
+            raise
+        finally:
+            # All original real IPC helpers finish outside the scene lock.
+            pool.shutdown(wait=True,cancel_futures=True)
+        guard()
+        return results
+

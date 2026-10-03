@@ -1,0 +1,60 @@
+-- Gathering git info
+-- Generating shader includes
+--	CM.glsl
+--	blur1.frag
+--	blur1.glsl
+--	blur2.frag
+--	blur2.glsl
+--	blurFinish.glsl
+--	blurfinish.frag
+--	blurprepare.frag
+--	blurprepare.glsl
+--	border.frag
+--	border.glsl
+--	cm_helpers.glsl
+--	constants.h
+--	defines.h
+--	ext.frag
+--	gain.glsl
+--	glitch.frag
+--	gradient.glsl
+--	inner_glow.frag
+--	inner_glow.glsl
+--	motion_blur.glsl
+--	passthru.frag
+--	quad.frag
+--	rgbamatte.frag
+--	rounding.glsl
+--	shadow.frag
+--	shadow.glsl
+--	surface.frag
+--	tex300.vert
+--	tex320.vert
+--	tonemap.glsl
+-- Checking for module 'udis86>=1.7.2'
+--   Package 'udis86' not found
+-- udis86 dependency not found, falling back to subproject
+-- Found wayland-protocols at /usr/share/wayland-protocols
+-- Found wayland-scanner pkgdatadir at /usr/share/wayland
+-- Configuring Hyprland in Release with CMake
+-- Checking deps...
+-- glaze dependency not found, retrieving v7.2.0 with FetchContent
+-- Detected git repository root: /home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core
+-- Configuration supports execinfo
+-- Checking for module 'epoll-shim'
+--   Package 'epoll-shim' not found
+-- Checking for module 'libinotify'
+--   Package 'libinotify' not found
+-- XWAYLAND Enabled (NO_XWAYLAND not defined) checking deps...
+-- SYSTEMD support is requested (NO_SYSTEMD not defined)...
+-- UWSM support is disabled...
+-- Setting precompiled headers
+-- Setting link libraries
+-- Checking for module 'hyprland-protocols>=0.7.0'
+--   Package 'hyprland-protocols' not found
+-- hyprland-protocols subproject set to subprojects/hyprland-protocols
+-- hyprpm is disabled
+-- Testing is disabled
+-- Configuring done (1.3s)
+-- Generating done (0.5s)
+-- Build files have been written to: /home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/build-core-make

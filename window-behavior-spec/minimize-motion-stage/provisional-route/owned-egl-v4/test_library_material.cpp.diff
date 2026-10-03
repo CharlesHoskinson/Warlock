@@ -1,0 +1,66 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v3/test_library_material.cpp
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/owned-egl-v4/test_library_material.cpp
+@@ -1,23 +1,49 @@
+ #include "LibraryMaterial.hpp"
+ #include <cassert>
++#include <QJsonDocument>
++#include <filesystem>
+ #include <iostream>
+ #include <sys/mman.h>
++#include <sys/vfs.h>
+ using namespace OwnedRoute;
+-int main(){int count=0;auto check=[&](bool x){assert(x);++count;};char path[]="/tmp/egl-material-XXXXXX";
+- int fd=mkstemp(path);assert(fd>=0);assert(write(fd,"provenance",10)==10);
++static int count=0;
++static void check(bool x){assert(x);++count;}
++static void writeBytes(const std::string& path,const QByteArray& bytes){int fd=open(path.c_str(),O_CREAT|O_EXCL|O_WRONLY,0600);assert(fd>=0);size_t offset=0;while(offset<size_t(bytes.size())){auto n=write(fd,bytes.data()+offset,bytes.size()-offset);assert(n>0);offset+=n;}close(fd);}
++static void simple(const std::string& dir){
++ std::string path=dir+"/sample";writeBytes(path,QByteArray("provenance"));int fd=open(path.c_str(),O_RDONLY);assert(fd>=0);
+  const auto digest=QCryptographicHash::hash(QByteArray("provenance"),QCryptographicHash::Sha256).toHex().toStdString();
+- check(!mappedMaterialMatches(path,digest)); // Right file, not mapped.
++ check(!mappedMaterialMatches(path,digest));
+  void* mapped=mmap(nullptr,10,PROT_READ,MAP_PRIVATE,fd,0);assert(mapped!=MAP_FAILED);
+- check(mappedMaterialMatches(path,digest));
+- check(!mappedMaterialMatches(path,std::string(64,'0')));
+- std::string alias=std::string(path)+"-link";assert(symlink(path,alias.c_str())==0);
+- check(mappedMaterialMatches(alias,digest));
+- std::string old=std::string(path)+"-old";assert(rename(path,old.c_str())==0);
+- int replacement=open(path,O_CREAT|O_EXCL|O_WRONLY,0600);assert(replacement>=0);assert(write(replacement,"provenance",10)==10);close(replacement);
+- check(!mappedMaterialMatches(path,digest)); // Same bytes/path, wrong mapped inode.
+- check(mappedMaterialMatches(old,digest));
+- assert(unlink(old.c_str())==0);check(!mappedMaterialMatches(old,digest));
+- check(!mappedMaterialMatches("/tmp/does-not-exist-owned-egl-material",digest));
+- munmap(mapped,10);close(fd);unlink(path);unlink(alias.c_str());
++ check(mappedMaterialMatches(path,digest));check(!mappedMaterialMatches(path,std::string(64,'0')));
++ check(!inspectMappedMaterial(path,digest,std::string(40,'1')).matches);
++ std::string alias=path+"-link";assert(symlink(path.c_str(),alias.c_str())==0);check(mappedMaterialMatches(alias,digest));
++ std::string old=path+"-old";assert(rename(path.c_str(),old.c_str())==0);writeBytes(path,QByteArray("provenance"));
++ check(!mappedMaterialMatches(path,digest));check(mappedMaterialMatches(old,digest));
++ assert(unlink(old.c_str())==0);check(!mappedMaterialMatches(old,digest));check(!mappedMaterialMatches(dir+"/missing",digest));
++ munmap(mapped,10);close(fd);unlink(path.c_str());unlink(alias.c_str());
++}
++static void elf(const std::string& dir){
++ const auto hash="15c06ccfe5054c95059f2526a284b8fb2d10c9000bbec20c531eb9d6815abc6d";
++ const auto id="6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac";
++ std::ifstream source("/usr/lib/libEGL_mesa.so.0",std::ios::binary);std::string data((std::istreambuf_iterator<char>(source)),{});assert(!data.empty());
++ std::string path=dir+"/elf";writeBytes(path,QByteArray(data.data(),data.size()));
++ check(!inspectMappedMaterial(path,hash,id).matches);
++ int fd=open(path.c_str(),O_RDONLY);assert(fd>=0);void* mapped=mmap(nullptr,4096,PROT_READ,MAP_PRIVATE,fd,0);assert(mapped!=MAP_FAILED);
++ auto proof=inspectMappedMaterial(path,hash,id);if(!proof.matches)std::cerr<<QJsonDocument(proof.json()).toJson().constData();check(proof.matches);
++ check(proof.probe.buildId==id && proof.maps.size()==1 && proof.maps[0].buildId==id && proof.maps[0].major==proof.probe.major && proof.maps[0].minor==proof.probe.minor);
++ check(!inspectMappedMaterial(path,hash,std::string(40,'0')).matches);check(!inspectMappedMaterial(path,std::string(64,'0'),id).matches);
++ struct statfs fs{};assert(fstatfs(fd,&fs)==0);
++ const bool devicesEqual=proof.statMajor==proof.probe.major&&proof.statMinor==proof.probe.minor;
++ check(fs.f_type==0x9123683E?!devicesEqual:devicesEqual);
++ std::cout<<QJsonDocument(proof.json()).toJson(QJsonDocument::Compact).constData()<<'\n';
++ std::string old=path+"-old";assert(rename(path.c_str(),old.c_str())==0);writeBytes(path,QByteArray(data.data(),data.size()));check(!inspectMappedMaterial(path,hash,id).matches);
++ assert(unlink(old.c_str())==0);check(!inspectMappedMaterial(old,hash,id).matches);
++ munmap(mapped,4096);close(fd);unlink(path.c_str());
++}
++int main(){
++ for(const auto& base:{std::string("/tmp"),std::string(getenv("HOME"))+"/.cache"}){
++  std::string pattern=base+"/egl-material-XXXXXX";std::vector<char> name(pattern.begin(),pattern.end());name.push_back(0);char* made=mkdtemp(name.data());assert(made);std::string dir=made;
++  simple(dir);elf(dir);assert(rmdir(dir.c_str())==0);
++ }
+  std::cout<<count<<" mapped material identity/hash checks PASS\n";
+ }

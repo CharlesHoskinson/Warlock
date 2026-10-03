@@ -1,0 +1,50 @@
+{
+  "result": "pass",
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/preview_admission_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/formal-before-source-v1/check-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/preview_admission_test.qnt",
+        "--backend=rust"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/formal-before-source-v1/check-1.log",
+      "sha256": "4d9db8540dd9dbc645151ca75d1f3abf8ee2e669e7b6dbc43f93467147385703"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/preview_admission.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100225",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/formal-before-source-v1/check-2.log",
+      "sha256": "108e55f197d62e75e5cc7f71ca98c24021158f4a7c171764d427e1561bcce336"
+    }
+  ],
+  "sources": {
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/preview_admission.qnt": "42f3a69bdf9516a0488424da95f9e078311d049c59989faf7474366d47baad6b",
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/preview_admission_test.qnt": "d467e99ee5420aa7c88c3726f933411e9a126d86fbc29d6c6cef9c1bacb0bf39",
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v2/ADMISSION_CONTRACT.md": "2b03dbbb78980ae14402af8f2e242a3e562f2587d021b695561372e5598faecf"
+  },
+  "runtimeEdited": false,
+  "nativeAccepted": false,
+  "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-39019cad71664ec98f9a1d7f51da417c.scope"
+}

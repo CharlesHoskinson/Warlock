@@ -1,0 +1,42 @@
+{
+  "result": "retained-failure-and-correction",
+  "initial": {
+    "report": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal-before-runtime.json",
+    "reportSHA256": "3521b761f7a77f31e162efda31c9e6dcf9fdf798adcd4e191a235ba0ea8c3de3",
+    "namedActuallySelected": 0,
+    "reportedNamed18Authority": "held; false nominal count",
+    "invariantSamples": 2000,
+    "invariantSteps": 100,
+    "invariantExit0": true
+  },
+  "broadDiagnostic": {
+    "command": [
+      "quint",
+      "test",
+      "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/hidden_capture_test.qnt",
+      "--match=.*",
+      "--backend=rust",
+      "--seed=2026100229"
+    ],
+    "scope": "qa-harness-63c3be35d3cd465dbff7c4ad86631269",
+    "toolHandle": 29932,
+    "exitCode": 1,
+    "observedPassing": 19,
+    "intendedNamedPassing": 18,
+    "otherPassing": "imported init action",
+    "observedFailed": 31,
+    "reason": "Regex selected imported constructors, operators and state invariants as tests",
+    "rawOutputAvailability": "Retained tool transcript is truncated; no complete durable raw log was captured",
+    "proofAuthority": false
+  },
+  "corrected": {
+    "report": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/formal-complete.json",
+    "reportSHA256": "132b7cbfc00a985f39888cafd59a632b36d57addc96a932a65df65dd7c7b33c5",
+    "actualNamed": 18,
+    "log": "/home/hoskinson/window-integration-qa/hidden-capture-fusion-design-v1/named-exact.log",
+    "logSHA256": "2baabfad22966b4595734e0fa4b7880b65167b1a7396f5aa2252ca2bc925e758",
+    "all18ExplicitSourceNamesLogged": true
+  },
+  "sourceEditedAfterHandoff": false,
+  "nativeLaunch": false
+}

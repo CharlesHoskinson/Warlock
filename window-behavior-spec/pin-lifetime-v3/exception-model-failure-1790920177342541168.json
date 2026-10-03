@@ -1,0 +1,36 @@
+{
+  "result": "fail",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_exception.qnt"
+      ],
+      "returncode": 1,
+      "stdout": "\n  pin_exception\n    ok noWriteExceptionTest passed 1 test(s)\n    ok afterActionSnapshotExceptionTest passed 1 test(s)\n    ok serializationAfterWriteTest passed 1 test(s)\n    1) failureCannotBecomeCompleteTest failed after 1 test(s)\n    ok noRetryTest passed 1 test(s)\n\n  4 passing (202ms)\n  1 failed\n\n  1) failureCannotBecomeCompleteTest:\n       Error [QNT508]: Assertion failed\n        at /home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_exception.qnt:17:32\n        17:  action check(v:bool):bool=all{assert(v),s'=s}\n                                           ^^^^^^^^^\n          at check(s.partial and not(s.complete)) (/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_exception.qnt:21:127)\n    Use --seed=0x3c3e310e0b6c802f --match=failureCannotBecomeCompleteTest to repeat.\n\n\n  Use --verbosity=3 to show executions.\n  Further debug with: quint test --verbosity=3 /home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_exception.qnt\n",
+      "stderr": "error: Tests failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_exception.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 1,
+      "stdout": "[violation] Found an issue (69ms at 116 traces/second).\nUse --seed=0x1352b45 --backend=rust to reproduce.\n",
+      "stderr": "error: Invariant violated\n"
+    }
+  ],
+  "sourceSHA256": {
+    "pin_exception.qnt": "c37c1b1149250fb710b34e57d145826c3663594aa82b860d2320188afabfde80",
+    "EXCEPTION_CONTRACT.md": "b363e0fa828cfa1d3c5c0a5461e43fe95592ebb4fea9178f0863922b8bba8758"
+  },
+  "implementationUnchanged": true,
+  "nativeExecuted": false
+}

@@ -1,0 +1,136 @@
+{
+  "scope": "Observed actual session-bus connection plus verified launch selectors; not direct current getenv or GIO inspection",
+  "queries": [
+    {
+      "method": "ListNames",
+      "arguments": [],
+      "command": [
+        "/usr/bin/gdbus",
+        "call",
+        "--address",
+        "unix:path=/run/user/1000/wqa/f0a5/bus",
+        "--dest",
+        "org.freedesktop.DBus",
+        "--object-path",
+        "/org/freedesktop/DBus",
+        "--method",
+        "org.freedesktop.DBus.ListNames"
+      ],
+      "peer": {
+        "pid": 1595132,
+        "uid": 1000,
+        "gid": 1000
+      },
+      "returncode": 0,
+      "stdout": "(['org.freedesktop.DBus', ':1.3', ':1.4', ':1.1', ':1.2'],)\n",
+      "stderr": "",
+      "parsed": [
+        "org.freedesktop.DBus",
+        ":1.3",
+        ":1.4",
+        ":1.1",
+        ":1.2"
+      ]
+    },
+    {
+      "method": "GetConnectionUnixProcessID",
+      "arguments": [
+        ":1.1"
+      ],
+      "command": [
+        "/usr/bin/gdbus",
+        "call",
+        "--address",
+        "unix:path=/run/user/1000/wqa/f0a5/bus",
+        "--dest",
+        "org.freedesktop.DBus",
+        "--object-path",
+        "/org/freedesktop/DBus",
+        "--method",
+        "org.freedesktop.DBus.GetConnectionUnixProcessID",
+        ":1.1"
+      ],
+      "peer": {
+        "pid": 1595132,
+        "uid": 1000,
+        "gid": 1000
+      },
+      "returncode": 0,
+      "stdout": "(uint32 1595499,)\n",
+      "stderr": "",
+      "parsed": 1595499
+    },
+    {
+      "method": "GetConnectionUnixUser",
+      "arguments": [
+        ":1.1"
+      ],
+      "command": [
+        "/usr/bin/gdbus",
+        "call",
+        "--address",
+        "unix:path=/run/user/1000/wqa/f0a5/bus",
+        "--dest",
+        "org.freedesktop.DBus",
+        "--object-path",
+        "/org/freedesktop/DBus",
+        "--method",
+        "org.freedesktop.DBus.GetConnectionUnixUser",
+        ":1.1"
+      ],
+      "peer": {
+        "pid": 1595132,
+        "uid": 1000,
+        "gid": 1000
+      },
+      "returncode": 0,
+      "stdout": "(uint32 1000,)\n",
+      "stderr": "",
+      "parsed": 1000
+    }
+  ],
+  "result": "pass",
+  "root": {
+    "pid": 1595499,
+    "start": "11784568",
+    "ppid": 1594998,
+    "pgid": 1595499
+  },
+  "bus": {
+    "pid": 1595132,
+    "start": "11784194",
+    "pgid": 1595132,
+    "name": "privateBus",
+    "command": [
+      "/usr/bin/dbus-daemon",
+      "--config-file=/run/user/1000/wqa/f0a5/browser-session-bus.conf",
+      "--nofork",
+      "--address=unix:path=/run/user/1000/wqa/f0a5/bus"
+    ],
+    "log": "/home/hoskinson/window-integration-qa/browser-files-flow-v6/attempt-1/host/privateBus.log"
+  },
+  "preExecWitness": {
+    "source": "Guarded final os.execve environment witness, not direct current getenv/GIO inspection",
+    "witnessPID": 1595499,
+    "witnessStart": "11784568",
+    "appBusSelectors": {
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/wqa/f0a5/bus",
+      "DBUS_SYSTEM_BUS_ADDRESS": "unix:path=/run/user/1000/wqa/f0a5/bus"
+    },
+    "privateGioVfs": "local",
+    "binarySHA256": "746c3445bb364d76619cb55491dc8bfa98552747ee44e7b1fc8554d16bba6858",
+    "guardedExecSource": "/home/hoskinson/window-integration-qa/browser-files-flow-v6/browser_exec.py",
+    "guardedExecSourceSHA256": "caef96576ad0cbfd261e34c7f546104d6c18363e12dd6f8240e369ea57bbfa7a"
+  },
+  "rootLifetimeBefore": true,
+  "socketIdentity": [
+    84,
+    303002
+  ],
+  "connection": {
+    "name": ":1.1",
+    "pid": 1595499,
+    "uid": 1000
+  },
+  "rootLifetimeAfter": true
+}

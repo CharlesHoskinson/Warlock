@@ -1,0 +1,6 @@
+{
+  "result": "fail",
+  "error": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication_kernel_regression.py\", line 54, in <module>\n    evidence=json.loads(Path(evaluation.report['evaluationArmDiagnostics'][0]).read_text());assert evidence['accepted'] and evidence['atomicReplaceOccurred'] and evidence['publicationObservedBeforeDeadline'];assert any(row.get('exactPendingProcesses')for row in evidence['attempts']);assert len([row for row in evidence['attempts']if row['stage']=='published'])==1\n                                                                                                                                                                                                                       ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "nativeLaunch": false
+}

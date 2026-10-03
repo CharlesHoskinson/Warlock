@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_windowaccessibility_FILE /home/hoskinson/window-integration-qa/files-keyboard/guard-stage/WindowAccessibilityV5/libwindowaccessibility.so)
+set(__QT_DEPLOY_TARGET_windowaccessibility_TYPE MODULE_LIBRARY)

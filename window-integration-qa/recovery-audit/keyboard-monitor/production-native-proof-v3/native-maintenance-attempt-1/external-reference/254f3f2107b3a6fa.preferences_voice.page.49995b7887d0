@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_voice" xml:lang="sk">
+  <info>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_speech"/>
+    <title type="sort">2.0 Hlas</title>
+    <title type="link">Hlas</title>
+    <desc>Konfigurácia hlasu používaného <app>Orca</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Predvoľby hlasu</title>
+  <section id="voice_type_settings">
+    <title>Nastavenia typu hlasu</title>
+    <section id="voice_type">
+      <title>Typ hlasu</title>
+      <p>Tento rozbaľovací zoznam vám umožňuje používať rôzne hlasy, aby ste mohli lepšie odlíšiť text veľkými písmenami a text odkazov od ostatného textu, ako aj text na obrazovke od textu pridaného <app>Orca</app>.</p>
+      <note style="tip">
+        <title>Konfigurácia viacerých hlasov</title>
+        <p>Pre každý hlas, ktorý chcete konfigurovať, najprv vyberte hlas v rozbaľovacom zozname <gui>Typ hlasu</gui>. Potom nastavte osobu, rýchlosť, výšku tónu a hlasitosť, ktoré sa majú pre daný hlas používať.</p>
+      </note>
+    </section>
+    <section id="speech_system">
+      <title>Rečový systém</title>
+      <p>Tento rozbaľovací zoznam vám umožňuje vybrať preferovaný rečový systém z tých, ktoré máte nainštalované, ako je napríklad Speech Dispatcher.</p>
+    </section>
+    <section id="speech_synthesizer">
+      <title>Syntetizátor reči</title>
+      <p>Tento rozbaľovací zoznam vám umožňuje vybrať syntetizátor reči, ktorý sa má používať s vami zvoleným rečovým systémom.</p>
+    </section>
+    <section id="person">
+      <title>Osoba</title>
+      <p>Tento rozbaľovací zoznam vám umožňuje vybrať, ktorá „osoba“ alebo „rečník“ sa má používať s vybraným hlasom. Napríklad môžete chcieť, aby predvolene hovoril David, ale hypertextové odkazy čítala Alice. Upozorňujeme, že to, čo nájdete v rozbaľovacom zozname <gui>Osoba</gui>, bude závisieť od toho, ktoré syntetizátory reči máte nainštalované.</p>
+    </section>
+    <section id="capitalization_style">
+      <title>Štýl označovania veľkých písmen</title>
+      <p>Tento rozbaľovací zoznam vám umožňuje vybrať, ktoré štýly označovania veľkých písmen Speech Dispatcher chcete používať okrem hlasu veľkých písmen <app>Orca</app>. Možnosti, ktoré sú pomenované pomocou terminológie Speech Dispatcher, sú:</p>
+     <list>
+       <item><p><gui>Ikona</gui>: Prehrá tón</p></item>
+       <item><p><gui>Hláskovať</gui>: Prečíta slovo „veľké písmeno“</p></item>
+       <item><p><gui>Žiadny</gui></p></item>
+    </list>
+    <note style="tip">
+      <title>Toto nastavenie je možné prepínať priebežne</title>
+      <p><app>Orca</app> má tiež príkaz na prepínanie dostupných štýlov označovania veľkých písmen. Viac informácií nájdete v časti <link xref="commands_speech_settings"> Príkazy nastavenia reči</link>.</p>
+    </note>
+    <p>Predvolená hodnota: žiadny</p>
+    </section>
+    <section id="rate_pitch_and_volume">
+      <title>Rýchlosť, výška tónu a hlasitosť</title>
+      <p>Tieto tri posuvníky doľava-doprava vám umožňujú ďalej prispôsobiť zvuk práve vybranej osoby.</p>
+    </section>
+  </section>
+  <section id="global_voice_settings">
+  <title>Globálne nastavenia hlasu</title>
+    <section id="pauses">
+      <title>Rozdeliť reč na časti medzi pauzami</title>
+      <p>V závislosti od povolených nastavení reči môže mať <app>Orca</app> o konkrétnom objekte čo povedať, napríklad jeho názov, rolu, stav, mnemonický kláves, výukovú správu atď. Začiarknutie políčka <gui>Rozdeliť reč na časti medzi pauzami</gui> spôsobí, že <app>Orca</app> vloží krátke pauzy medzi každú z týchto informácií.</p>
+      <p>Predvolená hodnota: začiarknuté</p>
+    </section>
+    <section id="numbers_as_digits">
+      <title>Čítať čísla ako číslice</title>
+      <p>Začiarknutie políčka <gui>Čítať čísla ako číslice</gui> spôsobí, že <app>Orca</app> rozdelí číslo ako „123“ na jednotlivé číslice („1“, „2“ a „3“) pred jeho odoslaním do syntetizátora reči.</p>
+      <p>Predvolená hodnota: nezačiarknuté</p>
+    </section>
+  </section>
+</page>

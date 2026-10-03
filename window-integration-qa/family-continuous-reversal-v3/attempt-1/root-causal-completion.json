@@ -1,0 +1,418 @@
+{
+  "result": "accepted-private-continuous-family",
+  "reportSHA256": "90a8923ed041cc2e9c7d2733c003001df6a966d0955fae37fee7db2ae887fb07",
+  "all38Gates": true,
+  "independentPreservation": true,
+  "ordinaryDefaultSelections": [
+    {
+      "launchRole": "production-default",
+      "repairedDefault": true,
+      "actualModeSelectionGate": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "launchRole": "production-default",
+      "repairedDefault": true,
+      "actualModeSelectionGate": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "launchRole": "production-default",
+      "repairedDefault": true,
+      "actualModeSelectionGate": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    {
+      "launchRole": "production-default",
+      "repairedDefault": true,
+      "actualModeSelectionGate": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    }
+  ],
+  "originalStrictReversal": {
+    "reversals": [
+      {
+        "token": "cd4ffa07e329-2",
+        "origins": [
+          {
+            "origin": {
+              "generation": 6,
+              "members": [
+                {
+                  "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+                  "pid": 1655430,
+                  "rectangle": {
+                    "height": 284.63359825,
+                    "width": 397.8817780681818,
+                    "x": 84.719006625,
+                    "y": 182.86475618181817
+                  },
+                  "stableId": "18000000"
+                },
+                {
+                  "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+                  "pid": 1655430,
+                  "rectangle": {
+                    "height": 184.70873370454547,
+                    "width": 281.3027694318182,
+                    "x": 217.95215935227273,
+                    "y": 232.82718845454545
+                  },
+                  "stableId": "18000002"
+                },
+                {
+                  "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+                  "pid": 1655430,
+                  "rectangle": {
+                    "height": 151.40044552272727,
+                    "width": 214.6861930681818,
+                    "x": 276.24166367045456,
+                    "y": 266.13547663636365
+                  },
+                  "stableId": "18000003"
+                }
+              ],
+              "output": "WAYLAND-1",
+              "rectangle": {
+                "height": 284.63359825,
+                "width": 414.5359221590909,
+                "x": 84.719006625,
+                "y": 182.86475618181817
+              },
+              "sequence": "14",
+              "timestampNs": "106841354080255"
+            },
+            "actualPresentedToken": "cd4ffa07e329-1"
+          }
+        ],
+        "sourceReused": true
+      },
+      {
+        "token": "cd4ffa07e329-3",
+        "origins": [
+          {
+            "origin": {
+              "generation": 6,
+              "members": [
+                {
+                  "digest": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+                  "pid": 1655430,
+                  "rectangle": {
+                    "height": 288.6134449625441,
+                    "width": 403.5583619371711,
+                    "x": 85.33656904591203,
+                    "y": 185.55957401852518
+                  },
+                  "stableId": "18000000"
+                },
+                {
+                  "digest": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+                  "pid": 1655430,
+                  "rectangle": {
+                    "height": 187.19145939669684,
+                    "width": 285.23271211034927,
+                    "x": 220.56588313370847,
+                    "y": 236.27056680144887
+                  },
+                  "stableId": "18000002"
+                },
+                {
+                  "digest": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+                  "pid": 1655430,
+                  "rectangle": {
+                    "height": 153.3841308747477,
+                    "width": 217.61805506645103,
+                    "x": 279.7287080471194,
+                    "y": 270.07789532339797
+                  },
+                  "stableId": "18000003"
+                }
+              ],
+              "output": "WAYLAND-1",
+              "rectangle": {
+                "height": 288.6134449625441,
+                "width": 420.46202619814574,
+                "x": 85.33656904591203,
+                "y": 185.55957401852518
+              },
+              "sequence": "16",
+              "timestampNs": "106841387457062"
+            },
+            "actualPresentedToken": "cd4ffa07e329-2"
+          }
+        ],
+        "sourceReused": true
+      }
+    ],
+    "sourceUploads": 3,
+    "displayedOriginsBound": true,
+    "rendererEvidenceAccepted": true,
+    "nativeCommitAccepted": false,
+    "physicalCadenceAccepted": false,
+    "fullWindowsParityAccepted": false
+  },
+  "actualInteriorOrigins": [
+    {
+      "token": "cd4ffa07e329-1",
+      "sequence": "14",
+      "progress": 0.16729279545454545
+    },
+    {
+      "token": "cd4ffa07e329-2",
+      "sequence": "16",
+      "progress": 0.07457588636363637
+    }
+  ],
+  "exactCurrentNativeCommits": [
+    {
+      "actor": 1,
+      "token": "c97a98df7bbe-1",
+      "operation": "minimize",
+      "exactThreeNativeResults": [
+        {
+          "identity": [
+            "0x5b101ca93af0",
+            "18000000",
+            1655430
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 106838068006099
+        },
+        {
+          "identity": [
+            "0x5b101d15bfd0",
+            "18000002",
+            1655430
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 106838132672264
+        },
+        {
+          "identity": [
+            "0x5b101d2cff20",
+            "18000003",
+            1655430
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 106838197430189
+        }
+      ],
+      "matchingActualPresentedFrames": 22,
+      "sourceUploadCount": 3
+    },
+    {
+      "actor": 2,
+      "token": "dc5e3c488b94-1",
+      "operation": "restore",
+      "exactThreeNativeResults": [
+        {
+          "identity": [
+            "0x5b101ca93af0",
+            "18000000",
+            1655430
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 106839897555278
+        },
+        {
+          "identity": [
+            "0x5b101d15bfd0",
+            "18000002",
+            1655430
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 106839962400027
+        },
+        {
+          "identity": [
+            "0x5b101d2cff20",
+            "18000003",
+            1655430
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 106840026778859
+        }
+      ],
+      "matchingActualPresentedFrames": 1,
+      "sourceUploadCount": 3
+    },
+    {
+      "actor": 3,
+      "token": "cd4ffa07e329-3",
+      "operation": "minimize",
+      "exactThreeNativeResults": [
+        {
+          "identity": [
+            "0x5b101ca93af0",
+            "18000000",
+            1655430
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 106841481193565
+        },
+        {
+          "identity": [
+            "0x5b101d15bfd0",
+            "18000002",
+            1655430
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 106841514532128
+        },
+        {
+          "identity": [
+            "0x5b101d2cff20",
+            "18000003",
+            1655430
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 106841547329346
+        }
+      ],
+      "matchingActualPresentedFrames": 15,
+      "sourceUploadCount": 3
+    },
+    {
+      "actor": 4,
+      "token": "2043ee3d760a-1",
+      "operation": "restore",
+      "exactThreeNativeResults": [
+        {
+          "identity": [
+            "0x5b101ca93af0",
+            "18000000",
+            1655430
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 106843840866605
+        },
+        {
+          "identity": [
+            "0x5b101d15bfd0",
+            "18000002",
+            1655430
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 106843906371068
+        },
+        {
+          "identity": [
+            "0x5b101d2cff20",
+            "18000003",
+            1655430
+          ],
+          "operation": "restore",
+          "reason": "presented endpoint",
+          "committedNs": 106843971767408
+        }
+      ],
+      "matchingActualPresentedFrames": 1,
+      "sourceUploadCount": 3
+    }
+  ],
+  "retainedSourceChecks": [
+    {
+      "actor": 1,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/service-epochs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png",
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8"
+    },
+    {
+      "actor": 1,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/service-epochs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png",
+      "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c"
+    },
+    {
+      "actor": 1,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/service-epochs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png",
+      "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070"
+    },
+    {
+      "actor": 2,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/service-epochs/3333cea55177197dd8e9277b744cde04d99d489ba12575ed8baa107d1cfc6cf9.png",
+      "sha256": "3333cea55177197dd8e9277b744cde04d99d489ba12575ed8baa107d1cfc6cf9"
+    },
+    {
+      "actor": 2,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/service-epochs/dd5c8206e4b3a71671bc35d3321045605a847b865cb4d5636784a7e9664bdbd0.png",
+      "sha256": "dd5c8206e4b3a71671bc35d3321045605a847b865cb4d5636784a7e9664bdbd0"
+    },
+    {
+      "actor": 2,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/service-epochs/f396e9b4cfee915633c39d08f165c60c46d6df8768464ec3e252c6a2bf83f7ed.png",
+      "sha256": "f396e9b4cfee915633c39d08f165c60c46d6df8768464ec3e252c6a2bf83f7ed"
+    },
+    {
+      "actor": 3,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/service-epochs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png",
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8"
+    },
+    {
+      "actor": 3,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/service-epochs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png",
+      "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c"
+    },
+    {
+      "actor": 3,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/service-epochs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png",
+      "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070"
+    },
+    {
+      "actor": 4,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/service-epochs/1ca5024e025ea63ed2a633d12056135bbf711f2b7aa7cb7d432a7912e97bb3a9.png",
+      "sha256": "1ca5024e025ea63ed2a633d12056135bbf711f2b7aa7cb7d432a7912e97bb3a9"
+    },
+    {
+      "actor": 4,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/service-epochs/8fe5b91e2f35eab6176f014345c844596e32f623173036bbf394fed95cfee6a0.png",
+      "sha256": "8fe5b91e2f35eab6176f014345c844596e32f623173036bbf394fed95cfee6a0"
+    },
+    {
+      "actor": 4,
+      "path": "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/service-epochs/67ccdbe5c9e2e6c2dd9991ff1de6c6532f0547ba75d09b13969b9574313d205c.png",
+      "sha256": "67ccdbe5c9e2e6c2dd9991ff1de6c6532f0547ba75d09b13969b9574313d205c"
+    }
+  ],
+  "actualRequestLatenciesMs": [
+    {
+      "receipt": 3,
+      "actor": 3,
+      "milliseconds": 3.174333
+    },
+    {
+      "receipt": 4,
+      "actor": 3,
+      "milliseconds": 1.627202
+    },
+    {
+      "receipt": 5,
+      "actor": 3,
+      "milliseconds": 1.393141
+    },
+    {
+      "receipt": 6,
+      "actor": 4,
+      "milliseconds": 3.452295
+    }
+  ],
+  "mainWrites": false,
+  "genuineWidgetPreviewAccepted": false,
+  "physicalCadenceAccepted": false,
+  "velocityContinuityAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "productionDeployed": false
+}

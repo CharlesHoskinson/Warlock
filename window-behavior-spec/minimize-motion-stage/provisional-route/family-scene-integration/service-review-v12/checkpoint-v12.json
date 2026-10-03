@@ -1,0 +1,469 @@
+{
+  "manifest": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/manifest-v12.json",
+  "manifestSHA256": "44a34f5bbff1d4e35576c272016d4c5e178c057ff1340db3f82ff123dd55282d",
+  "inputCount": 1148,
+  "offline": {
+    "version": "family-service-v12-offline",
+    "productionChanged": false,
+    "nativeLaunch": false,
+    "pythonTests": 165,
+    "quintNamedScenarios": 90,
+    "quintModels": 14,
+    "quintSamplesPerModel": 2000,
+    "checks": [
+      {
+        "command": [
+          "/usr/bin/python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          ".",
+          "-p",
+          "test_*.py",
+          "-v"
+        ],
+        "exitCode": 0,
+        "log": "check-00.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "family_scene_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-01.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "family_scene_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-02.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "family_scene.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-03.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "family_destination_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-04.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "family_destination_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-05.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "family_destination.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-06.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "transport_dispatch_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-07.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "transport_dispatch_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-08.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "transport_dispatch.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-09.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "family_registry_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-10.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "family_registry_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-11.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "family_registry.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-12.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "ingress_context_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-13.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "ingress_context_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-14.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "ingress_context.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-15.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "persistent_atlas_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-16.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "persistent_atlas_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-17.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "persistent_atlas.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-18.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "pending_direction_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-19.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "pending_direction_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-20.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "pending_direction.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-21.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "runtime_lifecycle_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-22.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "runtime_lifecycle_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-23.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "runtime_lifecycle.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-24.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "receipt_visual_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-25.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "receipt_visual_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-26.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "receipt_visual.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-27.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "native_composition_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-28.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "native_composition_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-29.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "native_composition.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-30.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "ipc_guard_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-31.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "ipc_guard_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-32.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "ipc_guard.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-33.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "actor_resources_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-34.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "actor_resources_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-35.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "actor_resources.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-36.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "family_order_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-37.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "family_order_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-38.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "family_order.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-39.log"
+      },
+      {
+        "command": [
+          "quint",
+          "typecheck",
+          "gesture_capture_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-40.log"
+      },
+      {
+        "command": [
+          "quint",
+          "test",
+          "gesture_capture_test.qnt"
+        ],
+        "exitCode": 0,
+        "log": "check-41.log"
+      },
+      {
+        "command": [
+          "quint",
+          "run",
+          "gesture_capture.qnt",
+          "--invariant=allProps",
+          "--max-samples=2000",
+          "--max-steps=40",
+          "--verbosity=0"
+        ],
+        "exitCode": 0,
+        "log": "check-42.log"
+      }
+    ],
+    "scope": "actor bound and normal retirement/shutdown, exact native topological order and ownership-locked gesture retirement; native family/raster/cadence/recovery acceptance remains open"
+  },
+  "currentStageFrozen": true,
+  "nativeLaunch": false,
+  "productionChanged": false
+}

@@ -1,0 +1,487 @@
+{
+  "result": "pass",
+  "source": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2",
+  "files": [
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/CONTRACT.md",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/CONTRACT.md",
+      "sha256": "299b1c57cf45bf819434a3a609e5a674c681f7b39b742cea1f60fab309208e5e"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_lifetime.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_lifetime.qnt",
+      "sha256": "f52360fd5d8839c101ef4665b22bffad7bcd86b1d113c12b700c72c7a2c842a1"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/formal-before-implementation.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/formal-before-implementation.json",
+      "sha256": "b632420cb38070c17eaf391226111089c487a787709f2f50b5ebcb0d66386b15"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/formal-refined-before-implementation.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/formal-refined-before-implementation.json",
+      "sha256": "7846796499bf3c7f90489659dcf2a6adb9cea33025a13d178f20c3e42f8fb6a5"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-copy-provenance.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-copy-provenance.json",
+      "sha256": "19f1d91ccacc7e3ce9757099069e85ca026ad6292ffce85c6c06da40302c4919"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-build-report.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-build-report.json",
+      "sha256": "6a900b1aa612160ff37c10a96932a3937c0254033f003b703ff520b287c091d2"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/v1-preserved-baseline.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/v1-preserved-baseline.json",
+      "sha256": "91b13631987d6750110803d485aa873f7e0c6e2ba815e58544c6a9ad106d64b1"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/PARTIAL_ACTION_CONTRACT.md",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/PARTIAL_ACTION_CONTRACT.md",
+      "sha256": "efad51392af89b600a3459c857092fe89a5db299e21229b47d20e7380bdcbfb0"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_action.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_action.qnt",
+      "sha256": "0dc0d4fe1a0b2b4a38d17cbfd58836b590e73aba88037792ae38c91d88eaba52"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_action_test.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_action_test.qnt",
+      "sha256": "e0fb55bd315e9cd9047f990c5bdf315170a811b6f331533a94d679aa0136e843"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/partial-formal-before-implementation.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/partial-formal-before-implementation.json",
+      "sha256": "b9d76e6bc52e747919bb7333884571ebee5a5ab42bf6cbaefcbf2c914811ae57"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/prove_pin_refinement.py",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/prove_pin_refinement.py",
+      "sha256": "c6084408214e95871380e3390e536f9c241633e9e58062e066fc5e57e145df2d"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/lifetime-refined-before-implementation.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/lifetime-refined-before-implementation.json",
+      "sha256": "354b018ec341e80009a42cae62546edd5d078d02552344b50687fcc2cefba5c7"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-action-cpu-initial-build-failure.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-action-cpu-initial-build-failure.json",
+      "sha256": "62301559164c12030f979fa363c97811e430754266e4dc113b1e09dbada62b62"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-v24-build-failure-1790912332169763760.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-v24-build-failure-1790912332169763760.json",
+      "sha256": "16247efaa87304748515664503443978e81cdc1033d4bd59f4e1ad7d261fd1c7"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-bridge-strict-pass.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-bridge-strict-pass.json",
+      "sha256": "2a692266f311d8fd8ee15af0cfbc21f97f258ec9bf61a6c87fbd02af4a188f5f"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/LIFECYCLE_RETIREMENT_CONTRACT.md",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/LIFECYCLE_RETIREMENT_CONTRACT.md",
+      "sha256": "5ebef672be80eb3db81a3b8d9d0709645b0a70423a4c248dca88c15ad479581e"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/lifecycle-first52-timeout.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/lifecycle-first52-timeout.json",
+      "sha256": "90abc8dcec2909bb1c2c780a89b0b68ccc69730487a185e7c8d69e5ec6475f03"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/lifecycle-refined-before-implementation.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/lifecycle-refined-before-implementation.json",
+      "sha256": "b21e36f809bba109affba33781920d8f862ba5191a14506e1f32a04eb436e872"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/test_pin_lifetime.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/test_pin_lifetime.cpp",
+      "sha256": "18db965fdf76af7ff038176a88e920b972df647d18f73af926b79c49fc69865d"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/test-pin-lifetime",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/test-pin-lifetime",
+      "sha256": "be7b30c48cdcc742e58f221986e73e0d938dbf6027328230696d9738c0604432"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-bridge-lifecycle-strict-pass.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-bridge-lifecycle-strict-pass.json",
+      "sha256": "b0485d2b19dcc482c0b42ef7454ca88521c5012f38b3aad456afeb8ca0e97094"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-v24-lifecycle-build-report.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-v24-lifecycle-build-report.json",
+      "sha256": "39cf493b4ed10f71050d9e4b0938af2284655d05d38b149d18ac6da12603de4b"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/DELAYED_REQUEST_CONTRACT.md",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/DELAYED_REQUEST_CONTRACT.md",
+      "sha256": "52297f076bd7ef14943dae5b55788ba138be5123c51eb6b694a30adad534a310"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_transport.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_transport.qnt",
+      "sha256": "d4bc69ccb3d11387fc3d136c5400179da78f96e0e7d66c143a02412af38e4e85"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_transport_test.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_transport_test.qnt",
+      "sha256": "f1e232cb93f73a42362627da51e3799bc1c6b82858b6f226eac4fc4f6f386c57"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-transport-formal-before-implementation.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-transport-formal-before-implementation.json",
+      "sha256": "ac559fe35ce7d87a74cc0d51cd1ce1104cf8a2592bf9f8a9f9e316020b435b4b"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-bridge-lifecycle-final-strict-pass.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-bridge-lifecycle-final-strict-pass.json",
+      "sha256": "f8e50370a1f60321b5f64abf4e497c975c21c1799ed09c6fba9ff4b06246105e"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_helper.py",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin_helper.py",
+      "sha256": "b125dd94cd7d3f201279b3b0f16619fa2bf0b530f43c4c352deb6eca2d941842"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/BarPassElement.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/BarPassElement.cpp",
+      "sha256": "0e607597b130ec8277fb301b2b97b0fcde977a64e2163b53024907e4b4476fe7"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/barDeco.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/barDeco.cpp",
+      "sha256": "0bff1775b7c89a06bac113a2e19a06eaa7b40c088ce8b92f76cefcdcd993b2f7"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/dragBridge.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/dragBridge.cpp",
+      "sha256": "f8ba303484ae321e70d354353cde2565f4022b932fdee1fa6300725406366486"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/familyBridge.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/familyBridge.cpp",
+      "sha256": "99f5e281ccaf3a27846583a741f4bea03ebbfbde31f5add6340e1a1b82ca890d"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/main.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/main.cpp",
+      "sha256": "bd3dd96476938a3d49215f1f4912bd11e661f44c99bac424b77e829fb2ecb301"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/BarPassElement.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/BarPassElement.hpp",
+      "sha256": "9a460848366edc61c55500f5577180d10f383b65022b3952648efe3b4e7208f8"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/barDeco.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/barDeco.hpp",
+      "sha256": "b5f9dd911761738c597e272e8c6702751ae60fa360b56f5540d8e06efc0efb63"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/dragBridge.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/dragBridge.hpp",
+      "sha256": "f650e50f986a00956954376c7d54b67e13fb80dc25fc873eade3f1b821a8aab9"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/familyBridge.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/familyBridge.hpp",
+      "sha256": "3543dc46226c03337cac712cc4fc856c50b37b07d2e0341d19d6c71ee67a1fa8"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/globals.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/globals.hpp",
+      "sha256": "4a4d25fdcd2d2845df9d05abf9b9306a8f95f4d29654e3bc1049a6c59a796cd5"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/Makefile",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/Makefile",
+      "sha256": "1ad0afb40a62dff2c03fc0728c6ee5e339e23e3033a02dd85420a3d2a7c51f44"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/snapshotBridge.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/snapshotBridge.hpp",
+      "sha256": "2153c5d39df74695fd631508a1f4fcf4f2fb02f0e7f476b6cc7d6983b0a4cad4"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/snapshotBridge.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/snapshotBridge.cpp",
+      "sha256": "bf83de4b0d7d1b444c90a0d0de4936fdbffcf48ae28bdfec0b8dd78966abae32"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/atlasRenderer.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/atlasRenderer.hpp",
+      "sha256": "3ed9d71824a0dc70df1e1d7655dabec1e50884bebce7fd23612dd79d5c8dc278"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/atlasRenderer.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/atlasRenderer.cpp",
+      "sha256": "727866d8e5f0139355c627edd3d23fcbc1d4bbea3be73465687bfa41eed457b3"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/atlasCoordinates.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/atlasCoordinates.hpp",
+      "sha256": "32950ba8eecdbf6a6e925570ad52eda103a6b46436d83f6588c6e52d709beb22"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/test_atlas_coordinates.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/test_atlas_coordinates.cpp",
+      "sha256": "cf7aa77aad715ad3815564e77300816d6a81b22df2cfc1b15ac38ccebff76fc3"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/atlasAdapter.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/atlasAdapter.hpp",
+      "sha256": "ea7168a5ed9435e76ef8dffc58a36c7398e2b33d05cb77412630697e281a0a02"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/atlasAdapter.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/atlasAdapter.cpp",
+      "sha256": "f1d2de8ef06b997dfc7bfd1074714922d0dbde3b9cde766943ba1dd786fcdff8"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/captionCache.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/captionCache.hpp",
+      "sha256": "a21c13585faf1e26694e172cf3ad49ca56f5191317e1fbb1cdbba73ccb5357f8"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/test_caption_cache.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/test_caption_cache.cpp",
+      "sha256": "d5ee50bd1b9b23ae2c28c065c7a58e97dd4eef7c087467a581395c0afa7ee74b"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/ancestorHit.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/ancestorHit.hpp",
+      "sha256": "415c0533cc9e785498d78037b5a47a758976971a0ab46870f32492819343a355"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/ancestorHit.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/ancestorHit.cpp",
+      "sha256": "5c83ade6d97be46f692e204006cde90fead3b1532718351b9f36528b0dbb2c5f"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/modalRegionAuthority.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/modalRegionAuthority.hpp",
+      "sha256": "71f0b52b87c0bca13130ab72d6d5c0571855892c1ce2a3c40779abdcf9473997"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/test_modal_region.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/test_modal_region.cpp",
+      "sha256": "b601bea50a369db790ac673f6e3c28f4bfff3e1f42d19cd88c016ccb9afd4117"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/pinBridge.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/pinBridge.hpp",
+      "sha256": "336ae384c2f9856e1acb87cb49fce62cc1d668175e21f205d517038b99fa0aba"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/pinBridge.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/pinBridge.cpp",
+      "sha256": "ed9c46e56d23672cb455ed081eb98bb3688b68292499c1027d2230b5fe3d9951"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/hyprbars-v23-pin-lifetime-candidate.so",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/hyprbars-v23-pin-lifetime-candidate.so",
+      "sha256": "9a6da98ee32b85c81e51f901db11c04fdad3a8b5d110828351f153e7bd0a1045"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/PinAction.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/PinAction.hpp",
+      "sha256": "26264089ca579205429d42451688f29cb9f99c9d65b70bbd01d5f30298c9f643"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/test_pin_action.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/test_pin_action.cpp",
+      "sha256": "ee00c4a4626b2fcbcc3f37fa36236c6df84a5bfed9d9ddbf2c61eb2ea49e7250"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/test-pin-action",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/test-pin-action",
+      "sha256": "4def04325060161ee8ac33d0d56ae12ef37267e2d9e636ecaeb5bef0c5c686a6"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/PinJson.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/PinJson.hpp",
+      "sha256": "c948529073cdf085e03cc474e497c75ed042c030168824e95ca708c56fb890ec"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/pinBridge.d",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/pinBridge.d",
+      "sha256": "f9c168bcac0545c51c6cc74ff6a389f3750adf3dc4473be74850623746777c34"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/PinLifetime.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/PinLifetime.hpp",
+      "sha256": "fdb17fc720ebe959ba9dc958729d16404b9e8b3cfaa8400b39e83feb796cc572"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/hyprbars-v24-pin-lifetime-candidate.so",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/hyprbars-v24-pin-lifetime-candidate.so",
+      "sha256": "1182209cdcd77f338245c13b3b32645abb29e81059d406a3dd3cac1971193c27"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/native-candidate/pinBridge.o",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/native-candidate/pinBridge.o",
+      "sha256": "e50988314da68be2ca0a079bfc47f811183d757119d39a3b223128f2b9946290"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-v1/CONTRACT.md",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-v1/CONTRACT.md",
+      "sha256": "299b1c57cf45bf819434a3a609e5a674c681f7b39b742cea1f60fab309208e5e"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-v1/pin_lifetime.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-v1/pin_lifetime.qnt",
+      "sha256": "f52360fd5d8839c101ef4665b22bffad7bcd86b1d113c12b700c72c7a2c842a1"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-v1/native-build-report.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-v1/native-build-report.json",
+      "sha256": "6a900b1aa612160ff37c10a96932a3937c0254033f003b703ff520b287c091d2"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-partial-31/PARTIAL_ACTION_CONTRACT.md",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-partial-31/PARTIAL_ACTION_CONTRACT.md",
+      "sha256": "b897a6254b323960e8c272d704de18d10ab52c9bb67f4e853f540142dfbce3de"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-partial-31/pin_action.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-partial-31/pin_action.qnt",
+      "sha256": "87da817e9c292573214446468212c6b97788e81082b6d6e8d0c724fde5a37d74"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-partial-31/pin_action_test.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-partial-31/pin_action_test.qnt",
+      "sha256": "76bf2e953c6105309bf609a37bd599e5f0327b3cd26345d850f022f0024e0cb2"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-partial-31/partial-formal-before-implementation.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-partial-31/partial-formal-before-implementation.json",
+      "sha256": "b9d76e6bc52e747919bb7333884571ebee5a5ab42bf6cbaefcbf2c914811ae57"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-lifetime-41/pin_action.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-lifetime-41/pin_action.qnt",
+      "sha256": "54d7f80b18b23e4b394d92e8dcdb1dbb6bec10d37654c25eec85a788a23c2a38"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-lifetime-41/pin_action_test.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-lifetime-41/pin_action_test.qnt",
+      "sha256": "aab23f9cdc1802e5a55d4e27b24313d85b0112f023594bc9e9611b5016763857"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-lifetime-41/lifetime-refined-before-implementation.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-lifetime-41/lifetime-refined-before-implementation.json",
+      "sha256": "354b018ec341e80009a42cae62546edd5d078d02552344b50687fcc2cefba5c7"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-lifecycle-first52/pin_action.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-lifecycle-first52/pin_action.qnt",
+      "sha256": "e81bfe8a86b8d71b046a1147fca11035f929f7c4ecb602ed5999a257da729bba"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-lifecycle-first52/pin_action_test.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-lifecycle-first52/pin_action_test.qnt",
+      "sha256": "e413205b5ccbde76e695ff0fbfa11ea60adf4988a33b64b5b3bcec713f443458"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/retained-initial.py",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/retained-initial.py",
+      "sha256": "b125dd94cd7d3f201279b3b0f16619fa2bf0b530f43c4c352deb6eca2d941842"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/initial-counterexample.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/initial-counterexample.json",
+      "sha256": "3def8d606393570ad8917c3a6743abe142dfd7741c6932d3f87e51ca9bb2bb60"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/BOUNDARY_CONTRACT.md",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/BOUNDARY_CONTRACT.md",
+      "sha256": "f67e66b5b02040248d972044c12f2602432d9006f6ef20d9536ce8cbd89874b4"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/helper_boundary.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/helper_boundary.qnt",
+      "sha256": "435d5d7cdf7f6bec092dce1f9188e31223cb07fad6c72013c1d0168876607734"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/formal-before-runtime-v1.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/formal-before-runtime-v1.json",
+      "sha256": "6b76d6d8123fe95831dbaefb7a53b89552c689ffef6ceaafa11e84e58a274588"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/pin_helper.py",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/pin_helper.py",
+      "sha256": "30cf295bbc3032b10996e9b6db7c602f6044d38cf73d4eb6ef917e72dd80f0f2"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/test_helper.py",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/test_helper.py",
+      "sha256": "8f2183f8331e8c9e47c78ea87411ba4780bc6e97dd7c92d35fc6cee9de0ab0f4"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/root-cpu-kernel-checkpoint-v1.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/root-cpu-kernel-checkpoint-v1.json",
+      "sha256": "c819624affc7a8dc3047d63e1b69f27c712ced3ba4674711fa001d1963f86b85"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/projection-type-counterexample-v1.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/projection-type-counterexample-v1.json",
+      "sha256": "8da6fad421ca8d26f9fe3889955b6ace9f7d408eadb4c493d6a15f47a65f12f6"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/retained-projection-failure.py",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/retained-projection-failure.py",
+      "sha256": "34c00b57fd612d7d078fb2c93cfee0b402081349d965e173ba03d2186b05c1cf"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/receipt_projection.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/receipt_projection.qnt",
+      "sha256": "fde3da7ecc46fde680e651c8ef443cf675b4e4f586c475bb49e87175736906f9"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/PROJECTION_REFINEMENT.md",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/PROJECTION_REFINEMENT.md",
+      "sha256": "c0fbffc1662ee469288789db86baa591601d80b19f9ad6f8f156594cc0208b71"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/projection-formal-before-runtime-v1.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/projection-formal-before-runtime-v1.json",
+      "sha256": "817c9c5937c1c86eb19aba24585ff7665045fff7af868df0b6f1d0924edc93e9"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/retained-projection-model-type-failure.qnt",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/retained-projection-model-type-failure.qnt",
+      "sha256": "8f1486067413ce4983ad6f8578cb39fb93d0675552608b19e50b6cbd1ff90b5a"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/projection-formal-before-runtime-v2.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/projection-formal-before-runtime-v2.json",
+      "sha256": "df05c95c84edf7d5dbd9b1bcf5c80a3b49194884779a5c266d41f197fea95e94"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/root-cpu-kernel-checkpoint-v2.json",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/pin-helper-v1/root-cpu-kernel-checkpoint-v2.json",
+      "sha256": "88b19a0d8ed99b8d6531b1beeb45e3e0c01664dd543449e1bec56a1cc680bf15"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-lifetime-41/native-candidate/pinBridge.cpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-lifetime-41/native-candidate/pinBridge.cpp",
+      "sha256": "0bcfd2446f448bb9f053a46ec2d6f34ea762cb174fef8a3d0cfad71595a06ef0"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-lifetime-41/native-candidate/pinBridge.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-lifetime-41/native-candidate/pinBridge.hpp",
+      "sha256": "336ae384c2f9856e1acb87cb49fce62cc1d668175e21f205d517038b99fa0aba"
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/retained-lifetime-41/native-candidate/PinAction.hpp",
+      "copy": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/retained-lifetime-41/native-candidate/PinAction.hpp",
+      "sha256": "26264089ca579205429d42451688f29cb9f99c9d65b70bbd01d5f30298c9f643"
+    }
+  ],
+  "nativeExecuted": false
+}

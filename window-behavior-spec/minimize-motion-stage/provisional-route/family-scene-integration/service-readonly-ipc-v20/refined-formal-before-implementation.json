@@ -1,0 +1,50 @@
+{
+  "formalBeforeRuntime": true,
+  "runtimeSourcesAbsent": true,
+  "nativeLaunch": false,
+  "named": 24,
+  "samples": 2000,
+  "maxSteps": 100,
+  "sourceSHA256": {
+    "READONLY_IPC_CONTRACT.md": "3653f64bc446a9b68bffd51adc3e648b59cc669a665e67ead19c86d7e48c1fee",
+    "readonly_ipc.qnt": "17fe3940457938fc471c7517a232da49e0426b25a7bdf2c458293c1c1c857b71",
+    "readonly_ipc_test.qnt": "a3c9dabcee08960b21b0c4fa05ac143b8cf650eca711ec65540e4bbb061a32cf"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "readonly_ipc_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "readonly_ipc_test.qnt",
+        "--backend=rust",
+        "--seed=202610020022"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "readonly_ipc.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=202610020022",
+        "--verbosity=0"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "retainedInitialProof": "retained-initial-model/formal-before-implementation.json",
+  "rootCounterexample": "/home/hoskinson/window-integration-qa/readonly-ipc-v20-root-counterexample-v1/result-v3.json",
+  "completedNs": 1790916065695372731
+}

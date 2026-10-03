@@ -1,0 +1,39 @@
+{
+  "result": "fail",
+  "sourceSHA256": {
+    "/home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/CONTRACT.md": "29cd97390da9317006e8bb5e4bd0d02e8cb74fb135f1b50f9ff5f18dc87367f4",
+    "/home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt": "a320974e8891ea5dc9c7491da6bef065a43cbd7ee36df7b66733645b09ce395d",
+    "/home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/prove.py": "909927dfbf3c88caa64154f1021718ed21fe89cd08e2d5656f85a374aab3e92c"
+  },
+  "sourceUnchanged": true,
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT404]: Name 'check' not found\n\n  at /home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt:54:17\n  54:  action refused=check(not(s.accepted))\n                      ^^^^^^^^^^^^^^^^^^^^^^\n\n\n Error [QNT404]: Name 'check' not found\n\n  at /home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt:55:71\n  55:  run exactPopupTest=init.then(ready).then(capture).then(confirm).then(check(s.accepted))\n                                                                            ^^^^^^^^^^^^^^^^^\n\n\n Error [QNT404]: Name 'check' not found\n\n  at /home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt:56:93\n  56:  run separateMenuVisualParentUnneededTest=init.then(ready).then(capture).then(confirm).then(check(s.accepted and s.lexical and s.rowAncestry))\n                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n\n Error [QNT404]: Name 'check' not found\n\n  at /home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt:57:114\n  57:  run sameContentNativeRootAllowedTest=init.then(ready).then(fire(AliasContent)).then(capture).then(confirm).then(check(s.accepted and s.g.get(5)==s.g.get(7)))\n                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n\n Error [QNT404]: Name 'check' not found\n\n  at /home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt:67:157\n  67:  run staleCallbackTest=init.then(ready).then(fire(Destroy(2))).then(fire(Recreate(2))).then(capture).then(fire(OldDestroyed({r:2,g:2}))).then(confirm).then(check(s.accepted))\n                                                                                                                                                                  ^^^^^^^^^^^^^^^^^\n\nerror: parsing failed\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT404]: Name 'check' not found\n\n  at /home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt:54:17\n  54:  action refused=check(not(s.accepted))\n                      ^^^^^^^^^^^^^^^^^^^^^^\n\n\n Error [QNT404]: Name 'check' not found\n\n  at /home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt:55:71\n  55:  run exactPopupTest=init.then(ready).then(capture).then(confirm).then(check(s.accepted))\n                                                                            ^^^^^^^^^^^^^^^^^\n\n\n Error [QNT404]: Name 'check' not found\n\n  at /home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt:56:93\n  56:  run separateMenuVisualParentUnneededTest=init.then(ready).then(capture).then(confirm).then(check(s.accepted and s.lexical and s.rowAncestry))\n                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n\n Error [QNT404]: Name 'check' not found\n\n  at /home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt:57:114\n  57:  run sameContentNativeRootAllowedTest=init.then(ready).then(fire(AliasContent)).then(capture).then(confirm).then(check(s.accepted and s.g.get(5)==s.g.get(7)))\n                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n\n Error [QNT404]: Name 'check' not found\n\n  at /home/hoskinson/window-behavior-spec/qml-pin-popup-lifetime-v1/pin_popup.qnt:67:157\n  67:  run staleCallbackTest=init.then(ready).then(fire(Destroy(2))).then(fire(Recreate(2))).then(capture).then(fire(OldDestroyed({r:2,g:2}))).then(confirm).then(check(s.accepted))\n                                                                                                                                                                  ^^^^^^^^^^^^^^^^^\n\nerror: parsing failed\n"
+    }
+  ],
+  "popupRuntimeImplemented": false,
+  "nativeLaunch": false,
+  "rootReviewRequiredBeforeRuntime": true
+}

@@ -1,0 +1,5 @@
+/home/hoskinson/.local/bin/hypr-taskbar-launcher:196: DeprecationWarning: Gio.DBusConnection.register_object is deprecated
+  connection.register_object('/org/omarchy/Taskbar', info.interfaces[0], taskbar_method, None, None)
+[2364871:2364871:0930/211333.210084:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.Properties.Get: object_path= /org/freedesktop/portal/desktop: org.freedesktop.DBus.Error.InvalidArgs: No such interface “org.freedesktop.portal.FileChooser”
+/home/hoskinson/.local/bin/hypr-taskbar-launcher:196: DeprecationWarning: Gio.DBusConnection.register_object is deprecated
+  connection.register_object('/org/omarchy/Taskbar', info.interfaces[0], taskbar_method, None, None)

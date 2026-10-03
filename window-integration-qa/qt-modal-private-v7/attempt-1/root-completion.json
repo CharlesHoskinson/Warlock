@@ -1,0 +1,61 @@
+{
+  "updatedUTC": "2026-10-01T14:44:48.217812+00:00",
+  "reportSHA256": "a68069dd7481ac3007ada2dcd9577b5c4906fd2298dcf44fe23ef265a743e861",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-10724e23f0264db8aaca9aa4b89ddf29.scope",
+    "coreLimit": 1
+  },
+  "independentChecks": {
+    "all3280FrozenFilesExact": true,
+    "all6FrozenLinksExact": true,
+    "all18MainPreservationChecks": true,
+    "normalOwnedFixtureShutdown": true,
+    "privateClientsGoneBeforeUnload": true,
+    "bothNativeModulesUnloadedNormally": true,
+    "allRecordedProcessIdentitiesGone": true,
+    "privateRuntimeGone": true,
+    "noCleanupErrorsOrUnexpectedSurvivors": true,
+    "archivedParentTransportHealthy": true
+  },
+  "allIndependentChecks": true,
+  "processes": [
+    {
+      "pid": 562774,
+      "start": "8818783",
+      "gone": true
+    },
+    {
+      "pid": 562775,
+      "start": "8818786",
+      "gone": true
+    },
+    {
+      "pid": 562791,
+      "start": "8818842",
+      "gone": true
+    },
+    {
+      "pid": 563010,
+      "start": "8819121",
+      "gone": true
+    },
+    {
+      "pid": 563048,
+      "start": "8819177",
+      "gone": true
+    }
+  ],
+  "archivedTransport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "logHashes": {
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v7/attempt-1/host/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790865715_213956845/hyprland.log": "e7f4d896d13e27f1b969a92bdf6d69a0c1687187bf720c6000e565459a2971e5",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v7/attempt-1/host/weston-renderer.log": "74fc5f11b137a2e71c4bef066ea2fe70cecb86a78c04e67382fa714c9e18bd9a"
+  },
+  "toolkitAccepted": false,
+  "toolkitFailure": "RuntimeError(\"Actual private Qt session failed:AssertionError('actual logical IPC cursor arrives before owner click')\")",
+  "fullWindowsParityAccepted": false
+}

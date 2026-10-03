@@ -1,0 +1,327 @@
+{
+  "result": "pass actual owned kernel repaired gap",
+  "observations": {
+    "configBeforeSpawn": true,
+    "quietBeforeSpawn": true,
+    "identity": {
+      "pid": 3678314,
+      "start": "14462633",
+      "pgid": 3678176,
+      "parent": 3678176
+    },
+    "exactPendingAfterAuth": [
+      {
+        "identity": {
+          "pid": 3678314,
+          "start": "14462633",
+          "pgid": 3678176,
+          "parent": 3678176
+        },
+        "argv": [
+          "/usr/bin/python3",
+          "/tmp/tmpd64r7t5t/exact-owned-entry"
+        ],
+        "exactEntry": true,
+        "exactCompositorShell": false
+      }
+    ]
+  },
+  "configurationPublishedExactlyOnce": true,
+  "prospectiveTicketUnpublishedUntilQuiet": true,
+  "armEvidence": {
+    "kind": "reload",
+    "terminalAuthority": false,
+    "deadline": 132514.293101633,
+    "budgetSeconds": 8,
+    "attempts": [
+      {
+        "stage": "tentative-current",
+        "monotonic": 132506.332095332,
+        "utcNs": 1790922153450269750,
+        "configChanged": false,
+        "terminalClosed": true,
+        "rowsSHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "rowCount": 0,
+        "exactPendingProcesses": []
+      },
+      {
+        "stage": "prospective-authorized",
+        "monotonic": 132506.435834323,
+        "utcNs": 1790922153554008648,
+        "prospectiveTicket": {
+          "serial": 2,
+          "nonce": "99083df57ce86a44b5113c769b0fd123",
+          "kind": "reload",
+          "count": 1,
+          "relayOrdinal": 1,
+          "command": [
+            "reload"
+          ],
+          "root": {
+            "identity": {
+              "pid": 3678176,
+              "start": "14462565",
+              "pgid": 3678176,
+              "parent": 1275790
+            },
+            "argv": [
+              "/usr/bin/python3",
+              "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication_kernel_regression.py"
+            ],
+            "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication_kernel_regression.py",
+            "sourceSHA256": "85a4924027dea2f5a1f4ac03ea93c8d3bc5b35d26f3aaa30b02878b5afed866d",
+            "executable": "/usr/bin/python3.14",
+            "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+          },
+          "compositor": {
+            "pid": 3678176,
+            "start": "14462565"
+          },
+          "instance": "actual-test-lifetime",
+          "configuration": {
+            "path": "/tmp/tmpd64r7t5t/hyprland.lua",
+            "sha256": "5913f7bd809bcbd5d5c60cfea39fd2b9bb75e59a4a6fa75a890e9334e446fa3c",
+            "identity": [
+              57,
+              1054426,
+              1000,
+              33152,
+              23,
+              1790922153407560617,
+              1790922153407560617
+            ],
+            "completeEOF": true
+          },
+          "artifact": null,
+          "armIPC": {
+            "request": "j/version",
+            "completeServerEOF": true,
+            "peer": {
+              "pid": 3678176,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "socketIdentity": [
+              57,
+              1054429,
+              1000
+            ],
+            "replySHA256": "df0c466f312f0c2b302a466993dd7108ec4e24652e4c90632164a9f561bec40a"
+          },
+          "armedNs": 1790922153451150339,
+          "terminalAuthority": false
+        },
+        "published": false
+      },
+      {
+        "stage": "publication-current",
+        "monotonic": 132506.471823844,
+        "utcNs": 1790922153589997921,
+        "configChanged": false,
+        "terminalClosed": true,
+        "rowsSHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "rowCount": 0,
+        "exactPendingProcesses": [
+          {
+            "identity": {
+              "pid": 3678314,
+              "start": "14462633",
+              "pgid": 3678176,
+              "parent": 3678176
+            },
+            "argv": [
+              "/usr/bin/python3",
+              "/tmp/tmpd64r7t5t/exact-owned-entry"
+            ],
+            "exactEntry": true,
+            "exactCompositorShell": false
+          }
+        ]
+      },
+      {
+        "stage": "tentative-current",
+        "monotonic": 132506.548570356,
+        "utcNs": 1790922153666744573,
+        "configChanged": false,
+        "terminalClosed": true,
+        "rowsSHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "rowCount": 0,
+        "exactPendingProcesses": []
+      },
+      {
+        "stage": "prospective-authorized",
+        "monotonic": 132506.592480058,
+        "utcNs": 1790922153710654323,
+        "prospectiveTicket": {
+          "serial": 2,
+          "nonce": "3be558af159e4535af1fce1cc53e3bc0",
+          "kind": "reload",
+          "count": 1,
+          "relayOrdinal": 1,
+          "command": [
+            "reload"
+          ],
+          "root": {
+            "identity": {
+              "pid": 3678176,
+              "start": "14462565",
+              "pgid": 3678176,
+              "parent": 1275790
+            },
+            "argv": [
+              "/usr/bin/python3",
+              "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication_kernel_regression.py"
+            ],
+            "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication_kernel_regression.py",
+            "sourceSHA256": "85a4924027dea2f5a1f4ac03ea93c8d3bc5b35d26f3aaa30b02878b5afed866d",
+            "executable": "/usr/bin/python3.14",
+            "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+          },
+          "compositor": {
+            "pid": 3678176,
+            "start": "14462565"
+          },
+          "instance": "actual-test-lifetime",
+          "configuration": {
+            "path": "/tmp/tmpd64r7t5t/hyprland.lua",
+            "sha256": "5913f7bd809bcbd5d5c60cfea39fd2b9bb75e59a4a6fa75a890e9334e446fa3c",
+            "identity": [
+              57,
+              1054426,
+              1000,
+              33152,
+              23,
+              1790922153407560617,
+              1790922153407560617
+            ],
+            "completeEOF": true
+          },
+          "artifact": null,
+          "armIPC": {
+            "request": "j/version",
+            "completeServerEOF": true,
+            "peer": {
+              "pid": 3678176,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "socketIdentity": [
+              57,
+              1054429,
+              1000
+            ],
+            "replySHA256": "df0c466f312f0c2b302a466993dd7108ec4e24652e4c90632164a9f561bec40a"
+          },
+          "armedNs": 1790922153667789898,
+          "terminalAuthority": false
+        },
+        "published": false
+      },
+      {
+        "stage": "publication-current",
+        "monotonic": 132506.635613722,
+        "utcNs": 1790922153753787890,
+        "configChanged": false,
+        "terminalClosed": true,
+        "rowsSHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "rowCount": 0,
+        "exactPendingProcesses": []
+      },
+      {
+        "stage": "published",
+        "monotonic": 132506.679431914,
+        "utcNs": 1790922153797605865,
+        "ticket": {
+          "serial": 2,
+          "nonce": "3be558af159e4535af1fce1cc53e3bc0",
+          "kind": "reload",
+          "count": 1,
+          "relayOrdinal": 1,
+          "command": [
+            "reload"
+          ],
+          "root": {
+            "identity": {
+              "pid": 3678176,
+              "start": "14462565",
+              "pgid": 3678176,
+              "parent": 1275790
+            },
+            "argv": [
+              "/usr/bin/python3",
+              "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication_kernel_regression.py"
+            ],
+            "source": "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/arm_publication_kernel_regression.py",
+            "sourceSHA256": "85a4924027dea2f5a1f4ac03ea93c8d3bc5b35d26f3aaa30b02878b5afed866d",
+            "executable": "/usr/bin/python3.14",
+            "executableSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+          },
+          "compositor": {
+            "pid": 3678176,
+            "start": "14462565"
+          },
+          "instance": "actual-test-lifetime",
+          "configuration": {
+            "path": "/tmp/tmpd64r7t5t/hyprland.lua",
+            "sha256": "5913f7bd809bcbd5d5c60cfea39fd2b9bb75e59a4a6fa75a890e9334e446fa3c",
+            "identity": [
+              57,
+              1054426,
+              1000,
+              33152,
+              23,
+              1790922153407560617,
+              1790922153407560617
+            ],
+            "completeEOF": true
+          },
+          "artifact": null,
+          "armIPC": {
+            "request": "j/version",
+            "completeServerEOF": true,
+            "peer": {
+              "pid": 3678176,
+              "uid": 1000,
+              "gid": 1000
+            },
+            "socketIdentity": [
+              57,
+              1054429,
+              1000
+            ],
+            "replySHA256": "df0c466f312f0c2b302a466993dd7108ec4e24652e4c90632164a9f561bec40a"
+          },
+          "armedNs": 1790922153667789898,
+          "terminalAuthority": false
+        }
+      }
+    ],
+    "eventSnapshots": {
+      "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945": []
+    },
+    "accepted": true,
+    "atomicReplaceOccurred": true,
+    "publicationObservedBeforeDeadline": true,
+    "finishedMonotonic": 132506.679598505
+  },
+  "controls": [
+    [
+      "repl",
+      "do\nhl.env(\"WINDOW_QA_EVALUATION_NONCE\",\"3be558af159e4535af1fce1cc53e3bc0\")\nhl.env(\"WINDOW_QA_EVALUATION_KIND\",\"reload\")\nhl.env(\"WINDOW_QA_EVALUATION_LIMIT\",\"1\")\nhl.env(\"WINDOW_QA_EVALUATION_ORDINAL\",\"0\")\nend"
+    ],
+    [
+      "repl",
+      "do\nprint(table.concat({os.getenv(\"WINDOW_QA_EVALUATION_NONCE\") or \"\",os.getenv(\"WINDOW_QA_EVALUATION_KIND\") or \"\",os.getenv(\"WINDOW_QA_EVALUATION_LIMIT\") or \"\",os.getenv(\"WINDOW_QA_EVALUATION_ORDINAL\") or \"\"},\"\\n\"))\nend"
+    ]
+  ],
+  "helperExitedNormally": true,
+  "ipcRequests": [
+    "j/version",
+    "j/version"
+  ],
+  "selectedIPCFullEOF": true,
+  "originalEvaluationSourceSHA256": "68a3176799add29342f52f4f13ce7c4e9019f2e580f9f44053af77794c223866",
+  "cpuFixtureOnly": true,
+  "actualV14ArmBranchProved": false,
+  "nativeLaunch": false
+}

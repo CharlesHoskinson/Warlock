@@ -1,0 +1,50 @@
+{
+  "schema": "pin-private-qs-payload-v1",
+  "ancestor": "/home/hoskinson/window-integration-qa/pin-frontend-qa-v1/payload-manifest.json",
+  "ancestorSHA256": "693edac0d4c7fc13b521ae426972d1f9547d55f47597b3614da45834cf1687bc",
+  "copies": [
+    {
+      "source": "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend/Windows.qml",
+      "destination": "/home/hoskinson/window-integration-qa/pin-private-qs-native-v1/payload/home/.config/omarchy/plugins/hoskinson.windows/private_pin_process_v1/Windows.qml",
+      "sha256": "b175301e6384412f1cbd8332c3dc3e750cc1983eaa153f88b4f8dabc07403a9f"
+    },
+    {
+      "source": "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend/TaskbarPopup.qml",
+      "destination": "/home/hoskinson/window-integration-qa/pin-private-qs-native-v1/payload/home/.config/omarchy/plugins/hoskinson.windows/private_pin_process_v1/TaskbarPopup.qml",
+      "sha256": "f517a32d2d604348e17c9a3c2776cff8b98f389564967482122a4923a2bb5dc7"
+    },
+    {
+      "source": "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend/PinWindowMenu.qml",
+      "destination": "/home/hoskinson/window-integration-qa/pin-private-qs-native-v1/payload/home/.config/omarchy/plugins/hoskinson.windows/private_pin_process_v1/PinWindowMenu.qml",
+      "sha256": "e1b890a6f501f9863bc0513894b04a746aadca02a57c07333cee3746d08bc9b2"
+    },
+    {
+      "source": "/home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend/PinMenu.js",
+      "destination": "/home/hoskinson/window-integration-qa/pin-private-qs-native-v1/payload/home/.config/omarchy/plugins/hoskinson.windows/private_pin_process_v1/PinMenu.js",
+      "sha256": "e53903405a3dc828b51259056d24bd9772e4da9c5142f86b572a78274515192a"
+    },
+    {
+      "source": "/home/hoskinson/window-integration-qa/pin-frontend-qa-v1/payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/WindowMotion.qml",
+      "destination": "/home/hoskinson/window-integration-qa/pin-private-qs-native-v1/payload/home/.config/omarchy/plugins/hoskinson.windows/private_pin_process_v1/WindowMotion.qml",
+      "sha256": "6812a49f86ff33c30a307a6d424ef2efb0514543339c16b9a915bf60c96f2a95"
+    },
+    {
+      "source": "/home/hoskinson/window-behavior-spec/qml-process-provider-v8-terminal-retire/libobjectlifetime-process-terminal.so",
+      "destination": "/home/hoskinson/window-integration-qa/pin-private-qs-native-v1/payload/home/.local/share/qml/WindowObjectLifetimeV1/libobjectlifetime.so",
+      "sha256": "bc0ae560515d5206819a00d12248ed1a9ab75529ecc1f291d9fef74d897a968b"
+    },
+    {
+      "source": "/home/hoskinson/window-behavior-spec/qml-process-provider-v8-terminal-retire/qmldir",
+      "destination": "/home/hoskinson/window-integration-qa/pin-private-qs-native-v1/payload/home/.local/share/qml/WindowObjectLifetimeV1/qmldir",
+      "sha256": "a294743b8437b72ae9b5351816fc3e743194d462fdb68165df8d93023ac00c70"
+    }
+  ],
+  "manifestBeforeSHA256": "6e60c27aed8b695371015ca0b95139643adfb6320c851067c605638de40f99e4",
+  "generatedManifestSHA256": "313fc1cb3b11d933c7c19b45f466bc76b9c6105529f3b557eb75b6201b45f015",
+  "privateEntry": "private_pin_process_v1",
+  "providerModuleUnchanged": true,
+  "providerNeverLoaded": true,
+  "frontendUnchanged": true,
+  "mainChanges": false,
+  "GUI": false
+}

@@ -1,0 +1,25 @@
+{
+  "result": "root baseline diagnostic grant",
+  "candidate": "/home/hoskinson/window-integration-qa/family-preparation-profile-v6",
+  "manifestSHA256": "f570f9c5fc1c3b31afcf215549c8c89ed4f150cf40c7d06ef42460059d1ff8e4",
+  "rootSourceReviewSHA256": "31f75e6410e509dcbe76ddbd8f8db2232825dcd8a37daf6ff1caddf6b6bf263a",
+  "formalBeforeRuntimeSHA256": "0d137959319928c8ac6ecf599c930788900e58624bf750fa282ac0963364b69c",
+  "parentFailureReplaySHA256": "20d18e37235e2a0bc30874ba8af23ad03b472f434625d4f64a16bde0a14cc9a0",
+  "mode": "baseline",
+  "originalBaselineChecksAndBudgetsUnchanged": true,
+  "profilingOnly": true,
+  "productSourceUnchanged": true,
+  "nativeLaunchAccepted": false,
+  "faultsAuthorized": false,
+  "mainWritesAuthorized": false,
+  "mainRestorationWritesAuthorized": false,
+  "crashNoiseHandoffRead": "/home/hoskinson/Documents/crash-noise/HANDOFF-codex-window-qa.md",
+  "safeguards": [
+    "Unique qa-harness scope with prlimit core=1:1",
+    "Xwayland disabled",
+    "Verified live private Weston parent; explicit private Wayland; no DRM fallback",
+    "Unrestricted commands, one 0700 /run/user/1000/wqa scheme",
+    "Client-first, native unload, compositor-last normal teardown"
+  ],
+  "time": "2026-10-02T07:49:47.239847+00:00"
+}

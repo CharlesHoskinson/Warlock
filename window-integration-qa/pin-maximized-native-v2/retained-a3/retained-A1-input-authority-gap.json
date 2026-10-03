@@ -1,0 +1,27 @@
+{
+  "result": "source-authority-gap",
+  "scope": "Pure Case and caller mapping; no native input or kernel delivery claim",
+  "originalSourceSHA256": "56237a1e6b3de953b9ec7aca582842847e920195d623a4aad895dfec8bcdb700",
+  "unconditionalCallerCalls": [
+    {
+      "line": 129,
+      "call": "case.press(True, True)"
+    },
+    {
+      "line": 132,
+      "call": "case.release(True)"
+    },
+    {
+      "line": 136,
+      "call": "case.press(True, True)"
+    },
+    {
+      "line": 142,
+      "call": "case.release(True)"
+    }
+  ],
+  "observedDeliveryEvents": [],
+  "legacyCallerCanSetBothFlagsWithoutProbeEvidence": true,
+  "nativeLaunch": false,
+  "formalBeforeCorrection": "/home/hoskinson/window-integration-qa/pin-input-episode-v2-design/formal-before-runtime-v1/report.json"
+}

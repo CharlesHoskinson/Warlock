@@ -1,0 +1,80 @@
+{
+  "attention": {
+    "source": "/home/hoskinson/.local/bin/hypr-taskbar-attention",
+    "backup": "/home/hoskinson/window-integration-qa/recovery-audit/hypr-taskbar-attention.before-recovery",
+    "deployedSource": true,
+    "liveDaemonRestarted": true,
+    "checks": [
+      "preferred compositor signature wins over newer nested socket",
+      "missing preferred signature never falls back to unrelated compositor",
+      "EOF clears old urgency",
+      "reconnect uses replacement identity",
+      "focus clears recovered urgency"
+    ],
+    "tests": {
+      "daemonSocketProcessTest": "pass",
+      "existingTaskbarBackendTests": 15
+    },
+    "livePid": 2470611
+  },
+  "brave": {
+    "deploymentManifest": "/home/hoskinson/window-integration-qa/recovery-audit/deployment-manifest.json",
+    "wrapper": "/home/hoskinson/.local/bin/brave-browser",
+    "desktopOverride": "/home/hoskinson/.local/share/applications/brave-browser.desktop",
+    "libraryDir": "/home/hoskinson/.local/lib/brave-launcher",
+    "libraryManifest": "/home/hoskinson/window-integration-qa/recovery-audit/staged-library-manifest.json",
+    "packageManifest": "/home/hoskinson/window-integration-qa/recovery-audit/private-package-manifest.json",
+    "wrapperPrivatePublisherReport": "/home/hoskinson/window-integration-qa/recovery-audit/real-brave-wrapper-report.json",
+    "baselineReport": "/home/hoskinson/window-integration-qa/recovery-audit/real-brave-baseline-report.json",
+    "deployed": true,
+    "existingBrowserRestarted": false,
+    "mainQmlAcceptance": "pass: actual app-published count/progress plus publisher disconnect cleanup",
+    "mainQmlReport": "/home/hoskinson/window-integration-qa/recovery-audit/real-brave-main-qml-report.json"
+  },
+  "snapSession": {
+    "candidate": "/home/hoskinson/window-integration-qa/recovery-audit/staged/hypr-snap-groups",
+    "deployed": true,
+    "model": "/home/hoskinson/window-integration-qa/recovery-audit/session_recovery.qnt",
+    "scenarios": 9,
+    "samples": 2000,
+    "replayedTraces": 10,
+    "replayedStates": 1010,
+    "eventTypes": 11,
+    "diskMigrationProcessTest": "pass",
+    "unknownEnvironment": "Unique instance resolves and targets subsequent queries; ambiguous/unavailable fails before persistence",
+    "installedHelper": "/home/hoskinson/.local/bin/hypr-snap-groups",
+    "backup": "/home/hoskinson/window-integration-qa/recovery-audit/hypr-snap-groups.before-session-guard",
+    "testedSource": "installed",
+    "existingDesktopReplayStates": 4611,
+    "existingDesktopReplayTraces": 40,
+    "existingSharedResizeTests": 7
+  },
+  "evidenceLimits": [
+    "Private publisher initial run activated a private a11y service with the outer runtime; corrected harness establishes isolated runtime before dbus-daemon. Subsequent wrapper/baseline runs verify main a11y inode and connectivity unchanged.",
+    "No main compositor restart, physical hotplug, cross-display file drag or new display/rate test performed.",
+    "Installed current Brave process requires its next normal restart to inherit the wrapper integration.",
+    "Main-bus actual headless Brave reaches live QML; this does not establish general proprietary app unread-count/quicklist support or screenshot/device rendering compatibility.",
+    "A dedicated private nested compositor actually shut down/restarted and passed group cleanup/reload hydration; main compositor restart and physical hotplug remain untested."
+  ],
+  "primarySources": [
+    "https://raw.githubusercontent.com/chromium/chromium/main/chrome/browser/download/download_status_updater_linux.cc",
+    "https://raw.githubusercontent.com/chromium/chromium/main/base/nix/xdg_util.cc",
+    "https://raw.githubusercontent.com/chromium/chromium/main/chrome/common/channel_info_posix.cc",
+    "https://archive.ubuntu.com/ubuntu/dists/noble/main/binary-amd64/Packages.xz"
+  ],
+  "isolatedRestartPlan": {
+    "script": "/home/hoskinson/window-integration-qa/recovery-audit/isolated_restart.py",
+    "config": "/home/hoskinson/window-integration-qa/recovery-audit/isolated_restart.lua",
+    "executed": true,
+    "requires": "root agent native slot grant",
+    "scope": "dedicated nested shutdown/restart only",
+    "result": "pass",
+    "report": "/home/hoskinson/window-integration-qa/recovery-audit/isolated-restart-report.json",
+    "nativeChecks": 8,
+    "cleanup": {
+      "compositorPidsExited": true,
+      "fixtureWindowsRemoved": true,
+      "privateRuntimeRemoved": true
+    }
+  }
+}

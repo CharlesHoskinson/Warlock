@@ -1,0 +1,51 @@
+{
+  "sourceFiles": 3810,
+  "symlinks": 176,
+  "changedFiles": [],
+  "changedLinks": [],
+  "capturedProcessesGone": [
+    {
+      "pid": 916466,
+      "start": "10534318",
+      "pgid": 916466,
+      "gone": true
+    },
+    {
+      "pid": 916467,
+      "start": "10534321",
+      "pgid": 916467,
+      "gone": true
+    },
+    {
+      "pid": 916514,
+      "start": "10534449",
+      "pgid": 916514,
+      "gone": true
+    }
+  ],
+  "runtimeGone": true,
+  "mainPreservation": {
+    "allStableClientFields": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "typedClipboardAndPrimary": true,
+    "a11ySocketFlagsAndReaderEnabled": true,
+    "outputs": true,
+    "plugins": true,
+    "keyboardStates": true,
+    "fourCatalogNaturalBytes": true,
+    "dashboardBytes": true,
+    "originalFilesProcess": true,
+    "originalFilesPublicState": true,
+    "originalFilesFullUi": true,
+    "originalFilesVisibility": true,
+    "originalProcessEnvironmentUnchanged": true,
+    "frozenManifestBytes": true,
+    "allFrozenInputsExact": true
+  },
+  "retainedFailureSHA256": "27d0506aca2cad6a7525d9a189b6382dbf7791404aedd4bf9dbf792092609422",
+  "actualLog": "Starting XWayland; Unable to find XWayland; not starting it.",
+  "cause": "official first regular PATH candidate requires others_exec; owned0700 launcher fails availability predicate",
+  "nativeRetried": false
+}

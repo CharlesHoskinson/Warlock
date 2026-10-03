@@ -1,0 +1,14 @@
+{
+  "updatedUTC": "2026-10-01T22:56:54.884896+00:00",
+  "actualLatencyAttributionSHA256": "032edf30b7cc171ef9bcab4d0d30850d3f505e5612d1f2542302bdb5eff40983",
+  "sources": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/scene_manager.py": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/scene_controller.py": "8410ba83b9598c81d69e95759f1592fcb95a018b900d83bb6360d103cffaf90c",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/production_motion_6d9.py": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa"
+  },
+  "confirmedMechanism": "ManagedController uses manager reservation lock. prepare holds it across fresh native queries, reduced read and per-member select_destination. select_destination performs synchronous subprocess observations, focus commands and motionRefresh, delaying the next reserve before provisional retarget construction.",
+  "componentTimingAttribution": "Exact333.816ms per-call breakdown not established; total API-to-renderer delay observed independently.",
+  "repair": "Move slow readonly observations/planning/refresh outside lock, recheck exact receipt/members before native effect or promotion, preserve atomic native ownership semantics. Fresh service-responsive-v13 being prepared.",
+  "oracleRelaxed": false,
+  "productionFixAccepted": false
+}

@@ -1,0 +1,33 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_keyboard_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  physical_keyboard_test\n    ok planBeforeConnectionRequiredTest passed 1 test(s)\n    ok denseEscapeAliasRefusedTest passed 1 test(s)\n    ok invalidTextNoSendTest passed 1 test(s)\n    ok peerMismatchNoSendTest passed 1 test(s)\n    ok changedLifetimeNoSendTest passed 1 test(s)\n    ok keymapBeforePressTest passed 1 test(s)\n    ok missingKeymapAckNoSendTest passed 1 test(s)\n    ok exactPairOrderTest passed 1 test(s)\n    ok duplicatePressRefusedTest passed 1 test(s)\n    ok releaseWithoutPressRefusedTest passed 1 test(s)\n    ok advanceHeldRefusedTest passed 1 test(s)\n    ok partialFailureNeverRetriesTest passed 1 test(s)\n    ok partialHoldFailureSendsNoFurtherReleaseTest passed 1 test(s)\n    ok finishCannotInventMissingCharacterTest passed 1 test(s)\n    ok exactlyElevenPairsCompleteOriginalPlanTest passed 1 test(s)\n\n  15 passing (2141ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_keyboard.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (5590ms at 358 traces/second).\nUse --seed=0x13b4241 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "driverSourceUnchanged": true,
+  "runtimeAlreadyStricter": true,
+  "nativeExecuted": false
+}

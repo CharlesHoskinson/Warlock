@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_chat" xml:lang="sk">
+  <info>
+    <link type="guide" xref="preferences#application"/>
+    <link type="next" xref="preferences_spellcheck"/>
+    <title type="sort">3. Chat</title>
+    <title type="link">Chat</title>
+    <desc>Konfigurácia podpory <app>Orca</app> pre IM a IRC</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Predvoľby chatu</title>
+  <p>Nasledujúce možnosti vám umožňujú prispôsobiť správanie <app>Orca</app> pri poskytovaní prístupu ku klientom okamžitých správ a internetového relay chatu.</p>
+  <section id="speak_name">
+    <title>Oznamovať názov chatovacej miestnosti</title>
+    <p>Ak je toto políčko začiarknuté, <app>Orca</app> bude prichádzajúce správy označovať názvom miestnosti alebo kontaktu, z ktorého prišli, pokiaľ neprišli z aktuálne zameranej konverzácie.</p>
+    <p>Predvolená hodnota: nezačiarknuté</p>
+  </section>
+  <section id="announce_typing">
+    <title>Oznamovať, keď vaši kontakty píšu</title>
+    <p>Ak je toto políčko začiarknuté a ak má <app>Orca</app> dostatok informácií na identifikáciu, že váš kontakt píše, <app>Orca</app> bude oznamovať zmeny v stave písania.</p>
+    <p>Predvolená hodnota: nezačiarknuté</p>
+  </section>
+  <section id="message_histories">
+    <title>Poskytovať histórie správ špecifické pre chatovaciu miestnosť</title>
+    <p>Ak je toto políčko začiarknuté, príkazy <app>Orca</app> na prehliadanie nedávnych správ sa budú vzťahovať iba na aktuálne zameranú konverzáciu. V opačnom prípade história bude obsahovať najnovšie správy bez ohľadu na to, z akej konverzácie prišli.</p>
+    <p>Predvolená hodnota: nezačiarknuté</p>
+  </section>
+  <section id="speak_messages_from">
+    <title>Čítať správy z</title>
+    <p>Táto skupina prepínačov vám umožňuje ovládať, za akých okolností vám <app>Orca</app> zobrazí prichádzajúcu správu. Vaše možnosti sú:</p>
+    <list>
+      <item>
+        <p><gui>Všetky kanály</gui></p>
+      </item>
+      <item>
+        <p><gui>Kanál len ak je jeho okno aktívne</gui></p>
+      </item>
+      <item>
+        <p><gui>Všetky kanály, keď je aktívne akékoľvek chatovacie okno</gui></p>
+      </item>
+    </list>
+    <p>Predvolená hodnota: všetky kanály</p>
+  </section>
+</page>

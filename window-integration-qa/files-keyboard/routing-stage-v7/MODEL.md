@@ -1,0 +1,7 @@
+# Files routing and authority model evidence
+
+Contract precedes fresh QML patch. keyboard_focus.qnt extends the prior focus/lifetime model with explicit selected paths, single-selection F2 payload capture, Shift ranges, and raw gallery Toggle authority. Independent current file peers remain actionable when keyboard selection moves elsewhere. Current/stale dynamically generated epochs are exercised. Prompt background commands are rejected in transitions, random generation remains unfiltered, unmapped/hidden/disabled/stale peers cannot act, and deferred restoration cancels on newer input/focus/modal intent.
+
+29 named tests pass (model-named.log). 2,000 samples, 100 steps, seed 20260930 pass (model-seeded.log; Rust seed 0x138351e). The model abstracts four file peers and grid columns. It does not claim exact whole-trace replay at every responsive width. Actual Qt330x320 list/grid navigation, selected path, Shift range and prompt payload are separately verified in routing-report.json / row-selection-probe/report.json. Native platform and actual reader proof remain pending.
+
+text_authority.qnt and text_authority_test.qnt are byte-identical to frozen V6: 12 named cases and 2,000×100 seeded traces passed there. The native binary is also exact V6. Its 90 outcome gates over88 actual native text mutators remain inherited evidence, not a new run. Selection on visible readOnly text remains allowed according to native Qt semantics; independent editable content methods refuse hidden/disabled/modal/readOnly/invalid authority.

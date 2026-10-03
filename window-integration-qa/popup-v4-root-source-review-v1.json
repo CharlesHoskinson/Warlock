@@ -1,0 +1,31 @@
+{
+  "result": "source-build-cpu-proof-verified-native-window-context-refinement-required",
+  "updatedUTC": "2026-10-02T11:54:30.661765+00:00",
+  "packet": "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v4-popup/source-ready-inputs.json",
+  "packetSHA256": "54764a30227707bc506a0e0a8d2107703c7fd17709b36d6c1272fef1ca859d9f",
+  "verifiedInputs": 24872,
+  "verifiedModes": 24872,
+  "verifiedSymlinks": 13862,
+  "buildCommands": 17,
+  "CPUChecks": 297,
+  "CPUCases": 12,
+  "popupChecks": 60,
+  "everyLoggedCommandExitZero": true,
+  "runtimeDirectoriesGone": true,
+  "reviewedSources": {
+    "Popup.cpp": "466b8c2e2f3d25499c4ef59c27df5b7562117f023887d22e46dd6b9fb1ec270d",
+    "Seal.cpp": "fbec9a771dcf245f8969b02babc07db80abb482bcaa7b85c9dfba94c875a30c4",
+    "Provider.cpp": "15cdffe002734ebf0290e854fcc0eb46ede96ec70bde5945c84f62602fb024d3",
+    "source_ready.py": "537ecc34481bad7382a7d51c234160582142bfe8b3bb72b7f132e0fb000ad32d",
+    "SOURCE_HANDOFF.md": "9725b0097fa8a496ed85babb55cabe2010dbc093ce6098a5f9d51a7ab1b2fa17"
+  },
+  "finding": {
+    "source": "Popup.cpp samplePopup capturePre sequence",
+    "observation": "Actual QQuickWindow is pointer-anchored before first content getter, but its context is not explicitly captured; it is not necessarily an object in the QQuickItem parent path.",
+    "required": "Fresh derivative adds window and nativeRoot to pre-getter context anchors, deduplicated; retain V4 evidence and honest CPU nativeWindow=false scope."
+  },
+  "sourceApproval": "Requires that narrow refinement before native pairing. Other sampled source checks and retained proofs verified.",
+  "nativeApproved": false,
+  "actualInstalledQuickshellPopupAccepted": false,
+  "mainChanges": false
+}

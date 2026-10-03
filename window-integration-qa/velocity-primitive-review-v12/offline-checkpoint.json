@@ -1,0 +1,68 @@
+{
+  "updatedUTC": "2026-10-01T23:45:56.368589+00:00",
+  "result": "isolated-primitive-pass",
+  "namedScenarios": 5,
+  "namedTest": {
+    "command": [
+      "quint",
+      "test",
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/trajectory.qnt"
+    ],
+    "returncode": 0,
+    "stdout": "\n  trajectory\n    ok initialZeroVelocityTest passed 1 test(s)\n    ok reversedOriginVelocityTest passed 1 test(s)\n    ok reversedPositiveDimensionTest passed 1 test(s)\n    ok endpointZeroVelocityTest passed 1 test(s)\n    ok unchangedEndpointTest passed 1 test(s)\n\n  5 passing (44ms)\n",
+    "stderr": ""
+  },
+  "randomModel": {
+    "session": 42839,
+    "returncode": 0,
+    "traces": 2000,
+    "maxSteps": 100,
+    "stdout": "[ok] No violation found (17858ms at 112 traces/second).\nUse --seed=0x16d6140 --backend=rust to reproduce.\n",
+    "reproductionSeed": "0x16d6140",
+    "originalCommandNotRetained": true
+  },
+  "numeric": {
+    "command": [
+      "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/test-trajectory"
+    ],
+    "returncode": 0,
+    "numericChecks": 2012523,
+    "randomFamilies": 2000,
+    "result": "pass"
+  },
+  "sourceHashes": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/CONTRACT.md": "c0820ea962044ac8c4635ffd41b44909fe4467ee30d987ae2941ac888e38adc9",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/ContinuousTrajectory.hpp": "46d352975357c3137a9e1411835684363f0ed57c1182636443147fdd0c49e181",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/trajectory.qnt": "caedc9718a18a706d3eca6f184305c2aa1dbeec234ab7f1c45a52e8893c164d1",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/test_trajectory.cpp": "2c34f737b51bfeb16921194a76046a158f914744b0f38bc0fa050fd304c8df38",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/trajectory.preparation-failed.txt": "2c536f1aa958d31e3390406c3ba7fdc80faa6689ba80e5d925ff82e1c70ad547",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/formal-preparation-failure.json": "35ca444c484c348d309ebb452f5914b4c4df4592b3d9e5368da04a0e68e56108",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/retained-v11-offline-checkpoint.json": "3e473794bcd6077683cef4d44ec2f1727b9a9963bf41e13cfdf1c850a7fd692e",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/retained-v11-boundary-failure.json": "6a452ddced7e99bb7aaf0b4edf58fc9d13562d8657021badf428e43007f4474b",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/test-trajectory": "9d994fa75773bbab3ca7f9283607e0a306a5a7162de5884372d322393457378c"
+  },
+  "sourceModes": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/CONTRACT.md": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/ContinuousTrajectory.hpp": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/trajectory.qnt": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/test_trajectory.cpp": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/trajectory.preparation-failed.txt": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/formal-preparation-failure.json": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/retained-v11-offline-checkpoint.json": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/retained-v11-boundary-failure.json": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12/test-trajectory": 493
+  },
+  "bounds": "All geometry and derivative Bezier controls must remain within admitted bounds; one common duration in constraint intersection; impossible intersections refuse before submission",
+  "v11Counterexamples": "retained-v11-boundary-failure.json",
+  "rendererIntegrated": false,
+  "nativeAccepted": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false,
+  "remaining": [
+    "Independent source/numeric review",
+    "Common duration across all output/member controls",
+    "Immutable presented position and derivative frame integration",
+    "Preserve original diagnostic raster and strict native reversal gates",
+    "Default, reduced and mixed-output native QA plus physical cadence"
+  ]
+}

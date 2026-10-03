@@ -1,0 +1,53 @@
+{
+  "formalBeforeFreshFixtureCorrection": true,
+  "productRuntimeUnchanged": true,
+  "named": 7,
+  "samples": 2000,
+  "steps": 100,
+  "sourceSHA256": {
+    "fixture_completion.qnt": "0b27a99e38a414dd593939a4c3c819ef7ad41bb733b94d5f7af760acc1127559",
+    "fixture_completion_test.qnt": "bfc299ee6f62305406decd5fda1b11787632ab1ac86351ae00db40d79fc0ec9d",
+    "FIXTURE_COMPLETION_CONTRACT.md": "0a356f342826974207a16051796e4eb1d437fc98f54f98f8c35b4b86b0368685",
+    "test_socket_frontend.py": "5cde825dffd77ebc9684cf9a55e48ffa8b23ec9eb08c57242b7096c437902f2b",
+    "scene_manager.py": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+    "scene_controller.py": "459135eec7abd238b9366c775cec39df72d75312b6a2ef6850cb1fdf655a7ba5",
+    "socket_frontend.py": "0ea4c81cbf975104bb4ae17f9a8807f4af74a974a793a4b36a0aac7569c2647f"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "fixture_completion_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "fixture-formal-before-0.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "fixture_completion_test.qnt",
+        "--backend=rust",
+        "--seed=2026100201"
+      ],
+      "exitCode": 0,
+      "log": "fixture-formal-before-1.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "fixture_completion.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100201",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "fixture-formal-before-2.log"
+    }
+  ]
+}

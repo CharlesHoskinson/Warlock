@@ -1,0 +1,305 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-c64eedfead3e4c3687138b47c4629b83.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "name": "Frozen descriptor matches reviewed V5",
+      "passed": true
+    },
+    {
+      "name": "All frozen input hashes and modes remain exact",
+      "passed": true
+    },
+    {
+      "name": "All frozen links remain exact",
+      "passed": true
+    },
+    {
+      "name": "Original baseline remains rejected after eleven completed gates",
+      "passed": true
+    },
+    {
+      "name": "Required renderer seed and upload failure retained",
+      "passed": true
+    },
+    {
+      "name": "Actual repaired Aquamarine mapped, not merely selected",
+      "passed": true
+    },
+    {
+      "name": "One actual startup readiness query",
+      "passed": true
+    },
+    {
+      "name": "Actual service source and owner tokens retained equal",
+      "passed": true
+    },
+    {
+      "name": "Three distinct actual captures with unchanged declared bytes",
+      "passed": true
+    },
+    {
+      "name": "Actual history shows no seeded sources and controller deadline",
+      "passed": true
+    },
+    {
+      "name": "Incomplete query archive correctly remains unusable",
+      "passed": true
+    },
+    {
+      "name": "Actual refused housekeeping query and absolute deadline retained",
+      "passed": true
+    },
+    {
+      "name": "Harness-query count failure is zero, not an excess query",
+      "passed": true
+    },
+    {
+      "name": "Three missing terminal helper records prevent normal completion claim",
+      "passed": true
+    },
+    {
+      "name": "Every recorded helper and client lifetime actually absent now",
+      "passed": true
+    },
+    {
+      "name": "Native unload and private teardown recorded without leftover runtime",
+      "passed": true
+    },
+    {
+      "name": "Observer exit one prevents a normal-service cleanup claim",
+      "passed": true
+    },
+    {
+      "name": "No main writes; unclassified layer mismatch remains a failed preservation item",
+      "passed": true
+    }
+  ],
+  "classification": "Independent failure replay; original native baseline FAIL",
+  "originalBaselineAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "allNativeHelpersNormal": false,
+  "normalServiceClosure": false,
+  "mainPreservationAccepted": false,
+  "mainWrites": false,
+  "metadataDurationMs": 260.918085,
+  "completeReadonlyQueryCount": 40,
+  "completeReadonlyQueryMeanMs": 8.337573525,
+  "completeReadonlyQueryMaxMs": 22.046057,
+  "refusedQuery": [
+    {
+      "id": "fdb8470361cc4cc9b91e0e9b39458364",
+      "actor": null,
+      "thread": 3913903,
+      "fd": 23,
+      "fdIdentity": [
+        10,
+        27415646
+      ],
+      "issuerSHA256": "30379c522d7902199cc5e34c6ab62e09e9f0c11910fdc506d6bfcf5eccbfc447",
+      "request": "j/clients",
+      "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+      "registeredNs": 135181680373944,
+      "closed": true,
+      "published": true,
+      "outcome": "refused",
+      "evidence": {
+        "completeServerEOF": false,
+        "replyBytes": 0,
+        "replySHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "peer": null,
+        "socketIdentity": [
+          84,
+          417794
+        ]
+      },
+      "error": {
+        "type": "TimeoutError",
+        "message": "read-only complete reply absolute deadline"
+      },
+      "finishedNs": 135182652287250
+    }
+  ],
+  "missingHelperTerminals": [
+    {
+      "actual": "/run/user/1000/wqa/3d6e/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 3911574,
+          "pgid": 3912243,
+          "pid": 3912243,
+          "start": "14728655"
+        }
+      ],
+      "args": [
+        "forget-closed",
+        "0x5850a1e479d0",
+        "18000001",
+        "3913328"
+      ],
+      "class": "compositor",
+      "delegate": {
+        "parent": 3914858,
+        "pgid": 3912243,
+        "pid": 3914887,
+        "start": "14730377"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 3912243,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          417794,
+          1000
+        ]
+      },
+      "operation": "forget-closed:0x5850a1e479d0:18000001:3913328",
+      "queryRoot": null,
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7760315ea4c14715ab6b01b856c6d8c9.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790924830929118126,
+      "wrapper": {
+        "parent": 3912243,
+        "pgid": 3912243,
+        "pid": 3914858,
+        "start": "14730362"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/3d6e/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 3911574,
+          "pgid": 3912243,
+          "pid": 3912243,
+          "start": "14728655"
+        }
+      ],
+      "args": [
+        "forget-closed",
+        "0x5850a1e42520",
+        "18000000",
+        "3913328"
+      ],
+      "class": "compositor",
+      "delegate": {
+        "parent": 3914864,
+        "pgid": 3912243,
+        "pid": 3914888,
+        "start": "14730377"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 3912243,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          417794,
+          1000
+        ]
+      },
+      "operation": "forget-closed:0x5850a1e42520:18000000:3913328",
+      "queryRoot": null,
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7760315ea4c14715ab6b01b856c6d8c9.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790924830936764167,
+      "wrapper": {
+        "parent": 3912243,
+        "pgid": 3912243,
+        "pid": 3914864,
+        "start": "14730363"
+      }
+    },
+    {
+      "actual": "/run/user/1000/wqa/3d6e/taskbar-home/.local/bin/hypr-snap-groups.actual",
+      "actualSHA256": "981eb232b63dfb0d083a32674cba94b8b3919716db6136bec3d62ff741bcdf73",
+      "ancestry": [
+        {
+          "parent": 3911574,
+          "pgid": 3912243,
+          "pid": 3912243,
+          "start": "14728655"
+        }
+      ],
+      "args": [
+        "forget-closed",
+        "0x5850a24613a0",
+        "18000002",
+        "3913328"
+      ],
+      "class": "compositor",
+      "delegate": {
+        "parent": 3914856,
+        "pgid": 3912243,
+        "pid": 3914897,
+        "start": "14730388"
+      },
+      "event": "started",
+      "helper": "snap",
+      "ipc": {
+        "completeServerEOF": true,
+        "peer": {
+          "gid": 1000,
+          "pid": 3912243,
+          "uid": 1000
+        },
+        "replySHA256": "ea46a9e057a36b03e150da5904bbee1a933a3f4195e62fb290b05fdb010eb33d",
+        "request": "j/version",
+        "socketIdentity": [
+          84,
+          417794,
+          1000
+        ]
+      },
+      "operation": "forget-closed:0x5850a24613a0:18000002:3913328",
+      "queryRoot": null,
+      "scope": {
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7760315ea4c14715ab6b01b856c6d8c9.scope",
+        "coreLimit": 1
+      },
+      "serviceOperation": null,
+      "timeNs": 1790924831045454358,
+      "wrapper": {
+        "parent": 3912243,
+        "pgid": 3912243,
+        "pid": 3914856,
+        "start": "14730362"
+      }
+    }
+  ],
+  "individualPreparationCause": "Unclassified; no full phase timing trace exists in this run",
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/family-recovery-bootstrap-v5/frozen-inputs.json": "bbd142db7116de7e076df508dcb6d9b57ceda4d6cc5035cec7da6a5867b2e492",
+    "/home/hoskinson/window-integration-qa/family-recovery-bootstrap-v5/attempt-baseline-1/report.json": "3f1287a6b19879c4522888dc435f248334d4674ca6b157d287758113652d6381",
+    "/home/hoskinson/window-integration-qa/family-recovery-bootstrap-v5/attempt-baseline-1/completed-helpers.json": "c78b5f2f1862e74c9dff015dfd653830cf7c7a610ccafce00260a972fb24e071",
+    "/home/hoskinson/window-integration-qa/family-recovery-bootstrap-v5/attempt-baseline-1/actual-terminal-binding.json": "28f4a357affc1cd533294bcec9d385a2265e717155a7a344b4324c86169c6311",
+    "/home/hoskinson/window-integration-qa/family-recovery-bootstrap-v5/attempt-baseline-1/service-retirement-1.json": "924eedbd2ffedfc129fdbae29b7f17287f123760f447223db7b5f04d29e0b24f"
+  },
+  "replaySourceSHA256": "0cfefccdbbbc3a44d0136d0aa6c14e312161ff325a1806c8fb5511a3554b78bc"
+}

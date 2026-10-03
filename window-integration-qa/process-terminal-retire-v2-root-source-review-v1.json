@@ -1,0 +1,24 @@
+{
+  "result": "changes-required",
+  "handoffSHA256": "b9e5117a371161cf12ffa1817cf1c51f01bf19bf140c05101b8449996463825c",
+  "inputsVerified": 63,
+  "fullSevenDiffsReviewed": true,
+  "conservationNamed": 41,
+  "hintNamed": 49,
+  "randomTracesPerModel": 2000,
+  "stepsPerTrace": 100,
+  "sourceImplemented": false,
+  "buildAuthorized": false,
+  "nativeAuthorized": false,
+  "requiredCorrections": [
+    "matched wrong-thread fault queued during reentrant getter/disconnect must be drained before retiring; final commit must admit no preexisting matched queued fault or overflow",
+    "visible action retirement refusal feedback before changing command or launching helper"
+  ],
+  "preserve": [
+    "normal same-command implicit rearm",
+    "all source/object/context/receipt/kernel/EOF/gone/join and original budgets",
+    "old unrelated lease inertness and bounded history",
+    "original worker/event/arm bodies"
+  ],
+  "mainChanged": false
+}

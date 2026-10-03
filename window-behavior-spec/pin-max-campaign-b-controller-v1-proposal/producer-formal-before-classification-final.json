@@ -1,0 +1,47 @@
+{
+  "runtimeClassificationNotYetChanged": true,
+  "modelSHA256": "80baba7aa866171269068baa2b94c1589c279e16d25ac6c32fae42052cb0af57",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/shims/quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/producer_closure.qnt"
+      ],
+      "startedNs": 1790982006418372234,
+      "finishedNs": 1790982007083983534,
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/producer-formal-final-0.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/shims/quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/producer_closure.qnt",
+        "--backend=rust"
+      ],
+      "startedNs": 1790982007084100234,
+      "finishedNs": 1790982007950527133,
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/producer-formal-final-1.log",
+      "logSHA256": "1eab99bdfa8d3ccce70335ff3858494ba715e498c3c442da82d577c0dfa9e0d6"
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/shims/quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/producer_closure.qnt",
+        "--backend=rust",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100"
+      ],
+      "startedNs": 1790982007950612963,
+      "finishedNs": 1790982009067137798,
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-behavior-spec/pin-max-campaign-b-controller-v1-proposal/producer-formal-final-2.log",
+      "logSHA256": "d4a3108a311abd98fee137ae3b55959d6b2473ad53ee2880b7274a98dd8ffde6"
+    }
+  ]
+}

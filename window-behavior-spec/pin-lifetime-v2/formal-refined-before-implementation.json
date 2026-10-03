@@ -1,0 +1,53 @@
+{
+  "updatedUTC": "2026-10-02T01:46:11.890449+00:00",
+  "result": "pass",
+  "sourceSHA256": "f52360fd5d8839c101ef4665b22bffad7bcd86b1d113c12b700c72c7a2c842a1",
+  "contractSHA256": "299b1c57cf45bf819434a3a609e5a674c681f7b39b742cea1f60fab309208e5e",
+  "coreLimit": [
+    1,
+    1
+  ],
+  "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-0cb8b783578d484db288eb4becb63fd1.scope",
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v1/pin_lifetime.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v1/pin_lifetime.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  pin_lifetime\n    ok focusCannotRedirectCapturedPinTest passed 1 test(s)\n    ok otherMemberNeverToggledTest passed 1 test(s)\n    ok twoRealClicksToggleTwiceTest passed 1 test(s)\n    ok closedOwnerGetsNoPinWriteTest passed 1 test(s)\n    ok reusedAddressCannotReceiveOldOwnerPinTest passed 1 test(s)\n    ok noActiveWindowFallbackTest passed 1 test(s)\n    ok backendRefusalPreservesAllPinsTest passed 1 test(s)\n    ok oldSessionCannotPinTest passed 1 test(s)\n    ok newerFadeRejectsOldGenerationTest passed 1 test(s)\n    ok closedAndReusedWindowRejectsOldFadeTest passed 1 test(s)\n    ok reducedMotionRejectsOldFadeTest passed 1 test(s)\n    ok reloadRejectsOldFadeTest passed 1 test(s)\n    ok minimizeRetiresFadeWithoutLosingPinIntentTest passed 1 test(s)\n    ok unpinBeforeMinimizeStaysUnpinnedOnRestoreTest passed 1 test(s)\n\n  14 passing (478ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v1/pin_lifetime.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1186ms at 1686 traces/second).\nUse --seed=0x13b4242 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "beforeImplementation": true,
+  "nativeLaunch": false,
+  "mainWrites": false,
+  "fullPinParityAccepted": false,
+  "previousFailureRetained": "formal-before-implementation.json"
+}

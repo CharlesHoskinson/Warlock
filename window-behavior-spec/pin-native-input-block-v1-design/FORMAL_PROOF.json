@@ -1,0 +1,89 @@
+{
+  "sourceModelSHA256": "bab5212c8d081b8954b4a5504cebbb3775b6facc37e85f957577e269f8fab895",
+  "sourceNamed": [
+    "falsePropertyDoesNotBlock",
+    "declarationAckNotNativeBlock",
+    "actualIsolatedBlockAccepted",
+    "noPhysicalInputRefused",
+    "noCurrentConfirmationRefused",
+    "revivedOwnerHitRefused",
+    "ownerCoreRefused",
+    "ownerSeatRefused",
+    "ownerCallbackRefused",
+    "hiddenNotIsolated",
+    "replacementRevokes",
+    "nativeClearRevokesOldBlock",
+    "sourceReplacementRevokes",
+    "lateDeclarationCannotRebindOldObservation"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "quint",
+        "typecheck",
+        "input_block.qnt"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 0.5142266819893848,
+      "log": "/home/hoskinson/window-behavior-spec/pin-native-input-block-v1-design/formal-0.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "quint",
+        "test",
+        "input_block.qnt",
+        "--match",
+        "^(falsePropertyDoesNotBlock|declarationAckNotNativeBlock|actualIsolatedBlockAccepted|noPhysicalInputRefused|noCurrentConfirmationRefused|revivedOwnerHitRefused|ownerCoreRefused|ownerSeatRefused|ownerCallbackRefused|hiddenNotIsolated|replacementRevokes|nativeClearRevokesOldBlock|sourceReplacementRevokes|lateDeclarationCannotRebindOldObservation)$",
+        "--max-samples",
+        "1"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 0.7762013549800031,
+      "log": "/home/hoskinson/window-behavior-spec/pin-native-input-block-v1-design/formal-1.log",
+      "logSHA256": "ddc2227d574df1f1fda20d159319873d0ec8b2dc7798cd4480af7906260388df",
+      "actualPassedNames": [
+        "falsePropertyDoesNotBlock",
+        "declarationAckNotNativeBlock",
+        "actualIsolatedBlockAccepted",
+        "noPhysicalInputRefused",
+        "noCurrentConfirmationRefused",
+        "revivedOwnerHitRefused",
+        "ownerCoreRefused",
+        "ownerSeatRefused",
+        "ownerCallbackRefused",
+        "hiddenNotIsolated",
+        "replacementRevokes",
+        "nativeClearRevokesOldBlock",
+        "sourceReplacementRevokes",
+        "lateDeclarationCannotRebindOldObservation"
+      ],
+      "actualCount": 14,
+      "exactSelectedNamesPassed": true
+    },
+    {
+      "argv": [
+        "quint",
+        "run",
+        "input_block.qnt",
+        "--invariant",
+        "allProps",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "26100411"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 1.1074978059914429,
+      "log": "/home/hoskinson/window-behavior-spec/pin-native-input-block-v1-design/formal-2.log",
+      "logSHA256": "1147f37449399870c9c114c879dee021ebeff639c9b67d85eeb6ab56294ff442"
+    }
+  ],
+  "allPass": true,
+  "actualNamedCount": 14,
+  "sourceOnly": true,
+  "nativeReachabilityProved": false,
+  "runtimeImplemented": false
+}

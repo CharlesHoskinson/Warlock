@@ -1,0 +1,166 @@
+import QtQuick
+import Quickshell
+import Quickshell.Hyprland
+import Quickshell.Wayland
+import qs.Commons
+import qs.Ui
+
+PanelWindow {
+  id: root
+
+  required property Item anchorItem
+  required property QtObject bar
+  property var owner: null
+  property bool keyboardMode: false
+  property bool reducedMotion: false
+  property int margin: Style.gapsOut
+  property int padding: Style.spacing.popupPadding
+  property int contentWidth: Style.space(280)
+  property int contentHeight: Style.space(200)
+  property color borderColor: Color.popups.border
+  property var borderSpec: Border.localOrSurfaceSpec("popups", "border", borderColor, Color.popups.border, Math.max(1, Style.space(2)))
+  property bool open: false
+  property int openGeneration: 0
+  property bool grabReady: false
+  Timer {
+    id: grabDelay
+    interval: 40
+    onTriggered: root.grabReady = root.open
+  }
+  property bool centerOnBar: false
+  // "click" — uses HyprlandFocusGrab so clicking outside dismisses the popup.
+  // "hover" — passive overlay; the owning widget controls open via hover.
+  property string triggerMode: "click"
+
+  readonly property var coordinatorKey: owner || root
+  readonly property var anchorWindow: anchorItem ? anchorItem.QsWindow.window : null
+  readonly property var popupScreen: anchorWindow ? anchorWindow.screen : null
+  readonly property bool containsMouse: cardHover.hovered
+  readonly property real screenW: popupScreen ? popupScreen.width : 0
+  readonly property real screenH: popupScreen ? popupScreen.height : 0
+  readonly property real barW: anchorWindow ? anchorWindow.width : 0
+  readonly property real barH: anchorWindow ? anchorWindow.height : 0
+  readonly property real availableCardWidth: screenW > 0
+    ? Math.max(120, screenW - ((bar && (bar.position === "left" || bar.position === "right")) ? barW : 0) - root.margin * 2)
+    : 0
+  readonly property real availableCardHeight: screenH > 0
+    ? Math.max(120, screenH - ((bar && (bar.position === "top" || bar.position === "bottom")) ? barH : 0) - root.margin * 2)
+    : 0
+  readonly property real verticalContentInset: padding * 2 + Border.top(borderSpec) + Border.bottom(borderSpec)
+
+  function fittedContentWidth(width, cap) {
+    var desired = Math.max(1, Number(width) || 1)
+    var maxWidth = root.availableCardWidth > 0 ? root.availableCardWidth : desired
+    if (cap !== undefined && Number(cap) > 0) maxWidth = Math.min(maxWidth, Number(cap))
+    return Math.round(Math.min(desired, maxWidth))
+  }
+
+  function fittedContentHeight(implicitHeight, cap) {
+    var desired = Math.max(root.verticalContentInset, (Number(implicitHeight) || 0) + root.verticalContentInset)
+    var maxHeight = root.availableCardHeight > 0 ? root.availableCardHeight : desired
+    if (cap !== undefined && Number(cap) > 0) maxHeight = Math.min(maxHeight, Number(cap))
+    return Math.round(Math.min(desired, maxHeight))
+  }
+
+  function cappedContentHeight(height) {
+    var desired = Math.max(root.padding * 2, Number(height) || root.padding * 2)
+    var maxHeight = root.availableCardHeight > 0 ? root.availableCardHeight : desired
+    return Math.round(Math.min(desired, maxHeight))
+  }
+
+  function close() {
+    if (owner && "close" in owner) owner.close()
+    else root.open = false
+  }
+
+  default property alias contentItem: contentHolder.children
+
+  visible: open || card.opacity > 0
+  color: "transparent"
+  implicitWidth: contentWidth
+  implicitHeight: contentHeight
+  screen: popupScreen
+  anchors { top: true; left: true }
+  exclusiveZone: 0
+  WlrLayershell.namespace: "hoskinson-taskbar-popup"
+  WlrLayershell.layer: WlrLayer.Overlay
+  WlrLayershell.keyboardFocus: open && keyboardMode ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None
+  readonly property var popupPosition: positionPopup()
+  margins.left: popupPosition.x
+  margins.top: popupPosition.y
+
+  function positionPopup() {
+    if (!anchorItem || !anchorWindow || !bar) return {x: 0, y: 0}
+    // Explicit dependencies keep the layer position synced with the task row.
+    var anchorX = anchorItem.x, anchorY = anchorItem.y
+    var pw = contentWidth, ph = contentHeight
+    var x = anchorItem.width / 2 - pw / 2
+    var y = anchorItem.height + margin
+    var originX = bar.position === "right" ? screenW - barW : 0
+    var originY = bar.position === "bottom" ? screenH - barH : 0
+    if (bar.position === "bottom") y = -ph - margin
+    else if (bar.position === "left") { x = anchorItem.width + margin; y = anchorItem.height / 2 - ph / 2 }
+    else if (bar.position === "right") { x = -pw - margin; y = anchorItem.height / 2 - ph / 2 }
+    var point = anchorWindow.contentItem.mapFromItem(anchorItem, x, y)
+    if (centerOnBar) {
+      if (bar.position === "top" || bar.position === "bottom") point.x = (barW - pw) / 2
+      else point.y = (barH - ph) / 2
+    }
+    return {x: Math.round(Math.max(margin, Math.min(point.x + originX, screenW - pw - margin))),
+            y: Math.round(Math.max(margin, Math.min(point.y + originY, screenH - ph - margin)))}
+  }
+
+  onOpenChanged: {
+    openGeneration++
+    grabReady = false
+    grabDelay.stop()
+    if (open) grabDelay.start()
+    if (!bar) return
+    if (open) bar.requestPopout(coordinatorKey)
+    else if (bar.activePopout === coordinatorKey) bar.releasePopout(coordinatorKey)
+  }
+
+  // Outside-click dismissal via Hyprland's focus grab. While `active`, input
+  // is routed only to the listed windows; clicking anywhere else clears the
+  // grab and we close the popup. Skipped for hover-mode popups so the cursor
+  // can move freely between the trigger and the popup.
+  Loader {
+    active: root.open && root.grabReady && root.triggerMode === "click"
+    sourceComponent: Component {
+      HyprlandFocusGrab {
+        property int generation: -1
+        Component.onCompleted: generation = root.openGeneration
+        active: true
+        windows: root.anchorWindow ? [root, root.anchorWindow] : [root]
+        onCleared: { if (root.open && generation === root.openGeneration) root.close() }
+      }
+    }
+  }
+
+  BorderSurface {
+    id: card
+    anchors.fill: parent
+    color: Color.popups.background
+    borderSpec: root.borderSpec
+    padding: root.padding
+    radius: Style.cornerRadius
+    opacity: root.open ? 1.0 : 0
+
+    Behavior on opacity {
+      NumberAnimation { duration: root.reducedMotion ? 0 : 140; easing.type: Easing.OutCubic }
+    }
+
+    Item {
+      id: contentHolder
+      anchors.fill: parent
+      anchors.topMargin: card.contentTopInset
+      anchors.rightMargin: card.contentRightInset
+      anchors.bottomMargin: card.contentBottomInset
+      anchors.leftMargin: card.contentLeftInset
+    }
+
+    HoverHandler {
+      id: cardHover
+    }
+  }
+}

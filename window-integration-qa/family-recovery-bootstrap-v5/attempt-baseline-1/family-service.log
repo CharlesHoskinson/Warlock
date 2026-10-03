@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/window-integration-qa/family-recovery-bootstrap-v5/service_observer.py", line 291, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/hoskinson/window-integration-qa/family-recovery-bootstrap-v5/service_observer.py", line 227, in main
+    terminal_binding=archive_final(factory,service,evidence.parent/'actual-terminal-binding.json',module_after)
+  File "/home/hoskinson/window-integration-qa/family-recovery-bootstrap-v5/module_binding.py", line 251, in archive_final
+    if raw['errors'] or confirmation['errors']:raise ValueError('actual terminal binding refused; raw evidence retained')
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: actual terminal binding refused; raw evidence retained

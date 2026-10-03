@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_live_regions" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <link type="next" xref="howto_whereami"/>
+    <title type="sort">6. Živé oblasti</title>
+    <desc>Interakcia s dynamickým webovým obsahom</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Živé oblasti</title>
+  <p>Živá oblasť je dynamicky aktualizovaná časť webovej stránky, ako je tabuľka športových štatistík, zoznam aktuálnych cien akcií, záznam z chatu alebo upozornenie zobrazené na stránke, ktorú čítate. Hoci sa živé oblasti vyskytujú pomerne často, plne prístupné webové stránky so živými oblasťami sa stretávajú menej často. Tento problém aktívne rieši množstvo organizácií.</p>
+  <section id="politeness_levels">
+    <title>Úrovne slušnosti živých oblastí</title>
+    <p>Živé oblasti majú priradenú úroveň „slušnosti“, ktorú nastavuje autor ako prostriedok na vyjadrenie dôležitosti informácií a na navrhnutie, kedy by mali byť používatelia prostredníctvom svojej asistenčnej technológie informovaní o aktualizáciách vykonaných v danej oblasti. Živé oblasti môžu byť „vypnuté“, „zdvorilé“ alebo „asertívne“.</p>
+  </section>
+  <section id="orca_support">
+    <title>Podpora živých oblastí v <app>Orca</app></title>
+    <p>Pretože nemusíte súhlasiť s úrovňou slušnosti, ktorú špecifikoval autor stránky, ktorú si prezeráte, <app>Orca</app> poskytuje množstvo <link xref="commands_live_regions">príkazov pre živé oblasti</link>, ktoré vám umožňujú upraviť úroveň akejkoľvek alebo všetkých oblastí na stránke. Okrem toho môžete:</p>
+    <list>
+      <item>
+        <p>Zapnúť alebo vypnúť podporu živých oblastí</p>
+      </item>
+      <item>
+        <p>Priestorovo skočiť na nasledujúcu alebo predchádzajúcu živú oblasť</p>
+      </item>
+      <item>
+        <p>Skočiť na poslednú živú oblasť, ktorá zobrazila informácie</p>
+      </item>
+      <item>
+        <p>Preskúmať posledných deväť zobrazených správ živých oblastí</p>
+    </item>
+    </list>
+  </section>
+</page>

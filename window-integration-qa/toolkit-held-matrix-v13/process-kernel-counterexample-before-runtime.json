@@ -1,0 +1,34 @@
+{
+  "result": "counterexample-established",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7131080b9066432b961c9c0b608f9b2c.scope",
+    "coreLimit": 1
+  },
+  "actualProcFDRead": {
+    "result": null,
+    "error": {
+      "type": "ProcessLookupError",
+      "errno": 3,
+      "message": "[Errno 3] No such process"
+    },
+    "identity": {
+      "pid": 2762472,
+      "start": "13647632",
+      "pgid": 2762420,
+      "parent": 2762420
+    },
+    "ownedUID": 1000,
+    "openFDIdentity": [
+      24,
+      21749003,
+      1000,
+      33060
+    ],
+    "actualChildExit": 0,
+    "pidfdExitObserved": true,
+    "procPathGone": true
+  },
+  "sourceSHA256": "5d31aeff84ed68f8fe30e02c27394155f4efebac030ce7290262a1772ca5b1d8",
+  "noNative": true,
+  "syntheticReadError": false
+}

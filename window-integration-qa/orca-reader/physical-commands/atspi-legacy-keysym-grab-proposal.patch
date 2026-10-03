@@ -1,0 +1,13 @@
+--- a/atspi/atspi-device.c
++++ b/atspi/atspi-device.c
+@@ -314,7 +314,9 @@
+   for (l = priv->keygrabs; l; l = l->next)
+     {
+       AtspiKeyGrab *grab = l->data;
+-      if (keycode == grab->keycode && key_matches_modifiers (keycode, state, grab->modifiers))
++      if (((grab->keycode && keycode == grab->keycode) ||
++           (!grab->keycode && grab->keysym && keysym == grab->keysym)) &&
++          key_matches_modifiers (keycode, state, grab->modifiers))
+         {
+           if (grab->callback)
+             grab->callback (device, pressed, keycode, keysym, state, text, grab->callback_data);

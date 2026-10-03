@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_forms" xml:lang="eu">
+  <info>
+    <link type="guide" xref="index#reading"/>
+     <link type="next" xref="howto_live_regions"/>
+    <title type="sort">5. Inprimakiak betetzea</title>
+    <desc>Dokumentuetan kapsulatutako trepetak atzitzea</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Inprimakiak betetzea</title>
+  <p>
+    When interacting with web pages and other documents using <app>Orca</app>,
+    you are interacting with the document itself; not a buffered copy of that
+    document. <app>Orca</app>'s browse and focus modes let you switch between
+    reading and filling out forms.
+  </p>
+  <section id="navigating_amongst_form_fields">
+    <title>Inprimaki-eremuen artean mugitzea</title>
+    <p>Inprimaki-eremu batetik bestera mugitzeko hainbat aukera daude:</p>
+    <list>
+      <item>
+        <p>Erabili <key>Tab</key> eta <keyseq><key>Shift</key><key>Tab</key></keyseq> teklak fokuragarriak diren objektuen artean mugitzeko, berdin dio zein motatakoak diren.</p>
+      </item>
+      <item>
+        <p>Erabili <app>Orcaren</app> <link xref="commands_structural_navigation#forms"> egitura-nabigazioko komandoak inprimakietarako</link>.</p>
+      </item>
+      <item>
+        <p>Inprimakiaren eta aplikazioaren arabera, gezi-teklak ere erabili ahal dituzu inprimaki-eremu batera joateko.</p>
+      </item>
+   </list>
+   <note style="tip">
+     <p>
+       In order to use <app>Orca</app>'s caret navigation or structural navigation
+       commands to navigate to a form field, you must be in browse mode. If you are
+       in focus mode, you can switch to browse mode by pressing <keyseq><key>Orca
+       Modifier</key><key>A</key></keyseq>.
+     </p>
+   </note>
+  </section>
+  <section id="exiting_form_fields">
+    <title>Inprimaki-eremuetatik irtetea</title>
+    <p>Hainbat aukera daude inprimaki-eremu batetik irteteko:</p>
+    <list>
+      <item>
+        <p>Erabili <key>Tab</key>/<keyseq><key>Shift</key><key>Tab</key></keyseq> teklak unean fokuratutako inprimaki-eremua utzi eta hurrengo/aurreko objektu fokuragarrira joan nahi baduzu, berdin dio zein motatakoak diren.</p>
+      </item>
+      <item>
+        <p>Erabili <app>Orca</app>ren <link xref="commands_structural_navigation#forms">egitura-nabigazioko komandoak inprimakietarako</link> aurreko edo hurrengo inprimaki-eremura joateko.</p>
+      </item>
+      <item>
+        <p>Inprimakiaren eta aplikazioaren arabera, gezi-teklak ere erabili ahal dituzu inprimaki-eremu batetik irteteko.</p>
+      </item>
+    </list>
+   <note style="tip">
+     <p>
+       In order to use <app>Orca</app>'s caret navigation or structural navigation
+       commands to exit a form field, you must be in browse mode. If you are in
+       focus mode, you can switch to browse mode by pressing <keyseq><key>Orca
+       Modifier</key><key>A</key></keyseq>.
+     </p>
+   </note>
+  </section>
+</page>

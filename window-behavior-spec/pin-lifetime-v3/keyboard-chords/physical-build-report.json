@@ -1,0 +1,4153 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "physical_map_generator.c",
+        "-o",
+        "physical-map-generator",
+        "-lxkbcommon"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-map-generator",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keymap-regenerated.tmp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "physical_keyboard.c",
+        "physical_plan.c",
+        "virtual-keyboard-protocol.c",
+        "-o",
+        "physical-keyboard",
+        "-lwayland-client",
+        "-lxkbcommon",
+        "-lcrypto"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "physical_keyboard.c",
+        "physical_plan.c",
+        "virtual-keyboard-protocol.c",
+        "physical_protocol_cpu.c",
+        "-o",
+        "physical-protocol-cpu",
+        "-lwayland-client",
+        "-lxkbcommon",
+        "-lcrypto"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-M",
+        "physical_keyboard.c"
+      ],
+      "returncode": 0,
+      "stdout": "physical_keyboard.o: physical_keyboard.c /usr/include/stdc-predef.h \\\n physical_plan.h /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h \\\n /usr/include/stdint.h /usr/include/bits/libc-header-start.h \\\n /usr/include/features.h /usr/include/features-time64.h \\\n /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \\\n /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \\\n /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \\\n /usr/include/bits/types.h /usr/include/bits/typesizes.h \\\n /usr/include/bits/time64.h /usr/include/bits/wchar.h \\\n /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \\\n /usr/include/bits/stdint-least.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h \\\n /usr/include/xkbcommon/xkbcommon.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdbool.h \\\n /usr/include/stdio.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h \\\n /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \\\n /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \\\n /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \\\n /usr/include/bits/types/cookie_io_functions_t.h \\\n /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \\\n /usr/include/bits/floatn-common.h \\\n /usr/include/xkbcommon/xkbcommon-names.h \\\n /usr/include/xkbcommon/xkbcommon-keysyms.h \\\n /usr/include/xkbcommon/xkbcommon-compat.h virtual-keyboard-client.h \\\n /usr/include/wayland-client.h /usr/include/wayland-client-core.h \\\n /usr/include/wayland-util.h /usr/include/math.h \\\n /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \\\n /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \\\n /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \\\n /usr/include/bits/mathcalls-helper-functions.h \\\n /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \\\n /usr/include/bits/iscanonical.h /usr/include/inttypes.h \\\n /usr/include/wayland-version.h /usr/include/wayland-client-protocol.h \\\n /usr/include/wayland-client.h /usr/include/sys/socket.h \\\n /usr/include/bits/types/struct_iovec.h /usr/include/bits/socket.h \\\n /usr/include/sys/types.h /usr/include/bits/types/clock_t.h \\\n /usr/include/bits/types/clockid_t.h /usr/include/bits/types/time_t.h \\\n /usr/include/bits/types/timer_t.h /usr/include/endian.h \\\n /usr/include/bits/endian.h /usr/include/bits/endianness.h \\\n /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \\\n /usr/include/sys/select.h /usr/include/bits/select.h \\\n /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \\\n /usr/include/bits/types/struct_timeval.h \\\n /usr/include/bits/types/struct_timespec.h \\\n /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \\\n /usr/include/bits/pthreadtypes-arch.h \\\n /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \\\n /usr/include/bits/struct_rwlock.h /usr/include/bits/socket_type.h \\\n /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \\\n /usr/include/asm-generic/socket.h /usr/include/linux/posix_types.h \\\n /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \\\n /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \\\n /usr/include/asm/bitsperlong.h /usr/include/asm-generic/bitsperlong.h \\\n /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \\\n /usr/include/bits/types/struct_osockaddr.h /usr/include/sys/un.h \\\n /usr/include/string.h /usr/include/bits/types/locale_t.h \\\n /usr/include/bits/types/__locale_t.h /usr/include/strings.h \\\n /usr/include/sys/stat.h /usr/include/bits/stat.h \\\n /usr/include/bits/struct_stat.h /usr/include/bits/statx.h \\\n /usr/include/linux/stat.h /usr/include/linux/types.h \\\n /usr/include/asm/types.h /usr/include/asm-generic/types.h \\\n /usr/include/asm-generic/int-ll64.h /usr/include/bits/statx-generic.h \\\n /usr/include/bits/types/struct_statx_timestamp.h \\\n /usr/include/bits/types/struct_statx.h /usr/include/sys/mman.h \\\n /usr/include/bits/mman.h /usr/include/bits/mman-map-flags-generic.h \\\n /usr/include/bits/mman-linux.h /usr/include/bits/mman-shared.h \\\n /usr/include/bits/mman_ext.h /usr/include/fcntl.h \\\n /usr/include/bits/fcntl.h /usr/include/bits/fcntl-linux.h \\\n /usr/include/bits/cloexec.h /usr/include/linux/falloc.h \\\n /usr/include/linux/openat2.h /usr/include/bits/openat2.h \\\n /usr/include/errno.h /usr/include/bits/errno.h \\\n /usr/include/linux/errno.h /usr/include/asm/errno.h \\\n /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \\\n /usr/include/bits/types/error_t.h /usr/include/stdlib.h \\\n /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \\\n /usr/include/alloca.h /usr/include/bits/types/once_flag.h \\\n /usr/include/bits/stdlib-float.h /usr/include/unistd.h \\\n /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \\\n /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \\\n /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \\\n /usr/include/linux/close_range.h /usr/include/ctype.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h \\\n /usr/include/limits.h /usr/include/bits/posix1_lim.h \\\n /usr/include/bits/local_lim.h /usr/include/linux/limits.h \\\n /usr/include/bits/pthread_stack_min-dynamic.h \\\n /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \\\n /usr/include/bits/uio_lim.h\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-M",
+        "physical_plan.c"
+      ],
+      "returncode": 0,
+      "stdout": "physical_plan.o: physical_plan.c /usr/include/stdc-predef.h \\\n physical_plan.h /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h \\\n /usr/include/stdint.h /usr/include/bits/libc-header-start.h \\\n /usr/include/features.h /usr/include/features-time64.h \\\n /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \\\n /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \\\n /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \\\n /usr/include/bits/types.h /usr/include/bits/typesizes.h \\\n /usr/include/bits/time64.h /usr/include/bits/wchar.h \\\n /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \\\n /usr/include/bits/stdint-least.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h \\\n /usr/include/xkbcommon/xkbcommon.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdbool.h \\\n /usr/include/stdio.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h \\\n /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \\\n /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \\\n /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \\\n /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \\\n /usr/include/bits/floatn-common.h \\\n /usr/include/xkbcommon/xkbcommon-names.h \\\n /usr/include/xkbcommon/xkbcommon-keysyms.h \\\n /usr/include/xkbcommon/xkbcommon-compat.h physical_keymap.inc \\\n /usr/include/linux/input-event-codes.h /usr/include/openssl/sha.h \\\n /usr/include/openssl/macros.h /usr/include/openssl/opensslconf.h \\\n /usr/include/openssl/configuration.h /usr/include/openssl/opensslv.h \\\n /usr/include/openssl/e_os2.h /usr/include/sys/types.h \\\n /usr/include/bits/types/clockid_t.h /usr/include/bits/types/time_t.h \\\n /usr/include/bits/types/timer_t.h /usr/include/inttypes.h \\\n /usr/include/string.h\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-M",
+        "physical_map_generator.c"
+      ],
+      "returncode": 0,
+      "stdout": "physical_map_generator.o: physical_map_generator.c \\\n /usr/include/stdc-predef.h /usr/include/xkbcommon/xkbcommon.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdbool.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h \\\n /usr/include/stdint.h /usr/include/bits/libc-header-start.h \\\n /usr/include/features.h /usr/include/features-time64.h \\\n /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \\\n /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \\\n /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \\\n /usr/include/bits/types.h /usr/include/bits/typesizes.h \\\n /usr/include/bits/time64.h /usr/include/bits/wchar.h \\\n /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \\\n /usr/include/bits/stdint-least.h /usr/include/stdio.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h \\\n /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \\\n /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \\\n /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \\\n /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \\\n /usr/include/bits/floatn-common.h \\\n /usr/include/xkbcommon/xkbcommon-names.h \\\n /usr/include/xkbcommon/xkbcommon-keysyms.h \\\n /usr/include/xkbcommon/xkbcommon-compat.h /usr/include/stdlib.h \\\n /usr/include/bits/stdlib-float.h /usr/include/string.h\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-M",
+        "physical_protocol_cpu.c"
+      ],
+      "returncode": 0,
+      "stdout": "physical_protocol_cpu.o: physical_protocol_cpu.c \\\n /usr/include/stdc-predef.h /usr/include/wayland-client.h \\\n /usr/include/wayland-client-core.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h \\\n /usr/include/stdint.h /usr/include/bits/libc-header-start.h \\\n /usr/include/features.h /usr/include/features-time64.h \\\n /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \\\n /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \\\n /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \\\n /usr/include/bits/types.h /usr/include/bits/typesizes.h \\\n /usr/include/bits/time64.h /usr/include/bits/wchar.h \\\n /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \\\n /usr/include/bits/stdint-least.h /usr/include/wayland-util.h \\\n /usr/include/math.h /usr/include/bits/math-vector.h \\\n /usr/include/bits/libm-simd-decl-stubs.h /usr/include/bits/floatn.h \\\n /usr/include/bits/floatn-common.h /usr/include/bits/flt-eval-method.h \\\n /usr/include/bits/fp-logb.h /usr/include/bits/fp-fast.h \\\n /usr/include/bits/mathcalls-macros.h \\\n /usr/include/bits/mathcalls-helper-functions.h \\\n /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \\\n /usr/include/bits/iscanonical.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h \\\n /usr/include/inttypes.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h \\\n /usr/include/wayland-version.h /usr/include/wayland-client-protocol.h \\\n /usr/include/wayland-client.h /usr/include/wayland-client-core.h \\\n virtual-keyboard-client.h /usr/include/stdio.h \\\n /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \\\n /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \\\n /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \\\n /usr/include/bits/types/cookie_io_functions_t.h \\\n /usr/include/bits/stdio_lim.h /usr/include/stdlib.h \\\n /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \\\n /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \\\n /usr/include/sys/types.h /usr/include/bits/types/clock_t.h \\\n /usr/include/bits/types/clockid_t.h /usr/include/bits/types/time_t.h \\\n /usr/include/bits/types/timer_t.h /usr/include/endian.h \\\n /usr/include/bits/endian.h /usr/include/bits/endianness.h \\\n /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \\\n /usr/include/sys/select.h /usr/include/bits/select.h \\\n /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \\\n /usr/include/bits/types/struct_timeval.h \\\n /usr/include/bits/types/struct_timespec.h \\\n /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \\\n /usr/include/bits/pthreadtypes-arch.h \\\n /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \\\n /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \\\n /usr/include/bits/types/once_flag.h /usr/include/bits/stdlib-float.h \\\n /usr/include/unistd.h /usr/include/bits/posix_opt.h \\\n /usr/include/bits/environments.h /usr/include/bits/confname.h \\\n /usr/include/bits/getopt_posix.h /usr/include/bits/getopt_core.h \\\n /usr/include/bits/unistd_ext.h /usr/include/linux/close_range.h \\\n /usr/include/fcntl.h /usr/include/bits/fcntl.h \\\n /usr/include/bits/fcntl-linux.h /usr/include/bits/types/struct_iovec.h \\\n /usr/include/bits/cloexec.h /usr/include/linux/falloc.h \\\n /usr/include/linux/openat2.h /usr/include/linux/types.h \\\n /usr/include/asm/types.h /usr/include/asm-generic/types.h \\\n /usr/include/asm-generic/int-ll64.h /usr/include/asm/bitsperlong.h \\\n /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \\\n /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \\\n /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \\\n /usr/include/bits/openat2.h /usr/include/bits/stat.h \\\n /usr/include/bits/struct_stat.h /usr/include/sys/stat.h \\\n /usr/include/bits/statx.h /usr/include/linux/stat.h \\\n /usr/include/bits/statx-generic.h \\\n /usr/include/bits/types/struct_statx_timestamp.h \\\n /usr/include/bits/types/struct_statx.h /usr/include/openssl/sha.h \\\n /usr/include/openssl/macros.h /usr/include/openssl/opensslconf.h \\\n /usr/include/openssl/configuration.h /usr/include/openssl/opensslv.h \\\n /usr/include/openssl/e_os2.h\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-M",
+        "virtual-keyboard-protocol.c"
+      ],
+      "returncode": 0,
+      "stdout": "virtual-keyboard-protocol.o: virtual-keyboard-protocol.c \\\n /usr/include/stdc-predef.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdbool.h \\\n /usr/include/stdlib.h /usr/include/bits/libc-header-start.h \\\n /usr/include/features.h /usr/include/features-time64.h \\\n /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \\\n /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \\\n /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h \\\n /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \\\n /usr/include/bits/stdlib-float.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h \\\n /usr/include/stdint.h /usr/include/bits/types.h \\\n /usr/include/bits/typesizes.h /usr/include/bits/time64.h \\\n /usr/include/bits/wchar.h /usr/include/bits/stdint-intn.h \\\n /usr/include/bits/stdint-uintn.h /usr/include/bits/stdint-least.h \\\n /usr/include/wayland-util.h /usr/include/math.h \\\n /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \\\n /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \\\n /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \\\n /usr/include/bits/mathcalls-helper-functions.h \\\n /usr/include/bits/mathcalls.h /usr/include/inttypes.h \\\n /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/ldd",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-map-generator"
+      ],
+      "returncode": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007f2585399000)\n\tlibxkbcommon.so.0 => /usr/lib/libxkbcommon.so.0 (0x00007f2585308000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x00007f2585000000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007f258539b000)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/ldd",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard"
+      ],
+      "returncode": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x000075f0743aa000)\n\tlibwayland-client.so.0 => /usr/lib/libwayland-client.so.0 (0x000075f07435a000)\n\tlibxkbcommon.so.0 => /usr/lib/libxkbcommon.so.0 (0x000075f0742fb000)\n\tlibcrypto.so.3 => /usr/lib/libcrypto.so.3 (0x000075f073c00000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x000075f073800000)\n\tlibffi.so.8 => /usr/lib/libffi.so.8 (0x000075f0742eb000)\n\tlibz.so.1 => /usr/lib/libz.so.1 (0x000075f0742d0000)\n\tlibbrotlienc.so.1 => /usr/lib/libbrotlienc.so.1 (0x000075f074210000)\n\tlibbrotlidec.so.1 => /usr/lib/libbrotlidec.so.1 (0x000075f074201000)\n\tlibzstd.so.1 => /usr/lib/libzstd.so.1 (0x000075f073b1a000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x000075f0743ac000)\n\tlibm.so.6 => /usr/lib/libm.so.6 (0x000075f0736c9000)\n\tlibbrotlicommon.so.1 => /usr/lib/libbrotlicommon.so.1 (0x000075f0741dc000)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/ldd",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-protocol-cpu"
+      ],
+      "returncode": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x0000738ab84d9000)\n\tlibwayland-client.so.0 => /usr/lib/libwayland-client.so.0 (0x0000738ab8488000)\n\tlibxkbcommon.so.0 => /usr/lib/libxkbcommon.so.0 (0x0000738ab8429000)\n\tlibcrypto.so.3 => /usr/lib/libcrypto.so.3 (0x0000738ab7e00000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x0000738ab7a00000)\n\tlibffi.so.8 => /usr/lib/libffi.so.8 (0x0000738ab8419000)\n\tlibz.so.1 => /usr/lib/libz.so.1 (0x0000738ab83fe000)\n\tlibbrotlienc.so.1 => /usr/lib/libbrotlienc.so.1 (0x0000738ab7d40000)\n\tlibbrotlidec.so.1 => /usr/lib/libbrotlidec.so.1 (0x0000738ab83ef000)\n\tlibzstd.so.1 => /usr/lib/libzstd.so.1 (0x0000738ab7c5a000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x0000738ab84db000)\n\tlibm.so.6 => /usr/lib/libm.so.6 (0x0000738ab78c9000)\n\tlibbrotlicommon.so.1 => /usr/lib/libbrotlicommon.so.1 (0x0000738ab83ca000)\n",
+      "stderr": ""
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical_keyboard.c",
+      "sha256": "71f48602347e483dd32ee15df618a70246690525519d793dd2095624906dd2f1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/stdc-predef.h",
+      "sha256": "383ff8bd7dcc87deefedd062637f4afe28f85f8be443beda8b41d15e45ef1679",
+      "mode": 420
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical_plan.h",
+      "sha256": "66f10801bc955df9112be92bacf990f016e0af86c1632b467353c86561ce8b98",
+      "mode": 420
+    },
+    {
+      "path": "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h",
+      "sha256": "64ab730bb09eba38f01a62174fb8371ef281778ac33f141a6fa4217a9b39466a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/stdint.h",
+      "sha256": "fbd21c7a64b876eddd4e179172fb58a4921fd616d103b8107a28a54cf687289b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/libc-header-start.h",
+      "sha256": "9ec1af1a58b5d6431708a7ca71ef65944622921ca6fce878ae2ab486f3145296",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/features.h",
+      "sha256": "5ac21294ba6a85013ead693eba6b5587ddbb8afd6922e4fb351e858b14833a12",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/features-time64.h",
+      "sha256": "c7c33cddd4ffbbca1eb0de042131a51201a42f29139820d0a36c1e1dd0d16ba5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/wordsize.h",
+      "sha256": "948177c0fc84c4746588f62252029880ec4c6f88b743ba55d952f980303ebfbb",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/timesize.h",
+      "sha256": "9d075412fa9c84e68a59e22944daad36905cb2eb19c3a7613d652b85ece4f207",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/sys/cdefs.h",
+      "sha256": "a5a71b01109709190529d0c3532751869d05db6a5e8ce01c8c73229b797cfb83",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/long-double.h",
+      "sha256": "9b3fe370666b72e74d2c19c9fa44bd18a72f671e5ca24fbf4cca6a29b114459d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/gnu/stubs.h",
+      "sha256": "ef444295a0a9e8f5c40918399a00cc91ba0bd79774110cdf6e652baa6cfadb2e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/gnu/stubs-64.h",
+      "sha256": "3836bee19ddace5e06e967be88015d8492335daa08ce39a236618f520ccc40db",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types.h",
+      "sha256": "3fcf066dbf9fac9c5a15ff6327ca6a437e955e9aa571de1c3347cd0f4da4f93d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/typesizes.h",
+      "sha256": "a52fb9d6cca3d305618b036183fe11fbb1789afea64f5436197bbb058e5edf0f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/time64.h",
+      "sha256": "c502af2b2d265699b53ccb52e7a20521ab3ec4d346deb1366f494d1e22354ff9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/wchar.h",
+      "sha256": "9a3e6e246753da1e142227f6a81a9d0064cbb3189073c367263a491b4044373f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/stdint-intn.h",
+      "sha256": "ed15fd5be7a39b8145b2beb08fd4a316bb72f0bd5ebca707399b4f5b0c0bf304",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/stdint-uintn.h",
+      "sha256": "f0d1ad8c0effab436bebd7a4c177a28a567f0faaae69877e9ccbe3d631a7cd68",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/stdint-least.h",
+      "sha256": "24c527a005947517a1d3032fdf161577e5a62184f4419066a2112a79ab2da788",
+      "mode": 420
+    },
+    {
+      "path": "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h",
+      "sha256": "868352506950054491b9c76a4e2814f4f3601d227d3dea62a3e75875f327f2c1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/xkbcommon/xkbcommon.h",
+      "sha256": "17e58db5edc299d13b4365adce6c6d805e16642977ffaacf98d9be0c4c7071ff",
+      "mode": 420
+    },
+    {
+      "path": "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdbool.h",
+      "sha256": "f2a112e8b2128fb1d76e7c0b625cec8760955ebeae5cdf6b419ccf0c6d62768f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/stdio.h",
+      "sha256": "7b9d4ea5a3d988998113785f389c635428dbfd25f503197d81688ec9ef0149fa",
+      "mode": 420
+    },
+    {
+      "path": "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h",
+      "sha256": "173a81bfbe88a2da5ed5d238e14e0eaca61b090ee6d7b12b5f9614daeea21600",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/__fpos_t.h",
+      "sha256": "603e58ab31ed75b7e0ab09a2ca94e99955f7fbc63310466321ce27c906227eb4",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/__mbstate_t.h",
+      "sha256": "c561df72d5b987ccbd022059fdb1bcb6899c3e94b403997a0576ef3e1afb0f94",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/__fpos64_t.h",
+      "sha256": "8afae3abf006beb39fd9d4d4bae38745cdf08a91e6217ddf25833c8d4b04751b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/__FILE.h",
+      "sha256": "26c909942e8a6bc82725e9c402f393aed9e32d94190257ddf71e1b5f819b4e5e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/FILE.h",
+      "sha256": "37515f78be386f2edad4746f2947c928f480728c56d9a94e25302ebbdaef3c96",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/struct_FILE.h",
+      "sha256": "5e9432ad4ca91afc6849cc610093b81721f425e24f38bb60e756ffa37a09a075",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/cookie_io_functions_t.h",
+      "sha256": "68dd9728ed4cb7d36d745e4131588a700fd2071f7218a93637a6d4035df4dd4f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/stdio_lim.h",
+      "sha256": "7f6274022abc6b0a4970c9c78280abdf548660656e76f066949fedbfe6445920",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/floatn.h",
+      "sha256": "00524c02db9c4aa6dce6cdee90183bfca40fb254a93f0ea22a397f3355711d1f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/floatn-common.h",
+      "sha256": "8d5c5517e58c6d7ac4c915037f3af518fadc41ceb47999ee3387e4fb91cb4eaa",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/xkbcommon/xkbcommon-names.h",
+      "sha256": "a5b0ed01c8b1816da8b5ed29cf776eb2ad1f707cf03ff74e62e36a5ca9009f61",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/xkbcommon/xkbcommon-keysyms.h",
+      "sha256": "13023369f65a17411606084e3e09557b4886aeb15f89affba4aaa86490a463f3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/xkbcommon/xkbcommon-compat.h",
+      "sha256": "fb0384a704897c0dcfcc49f021ad38fadbbedc3307d5390f4f0d1019e3d1a4d9",
+      "mode": 420
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/virtual-keyboard-client.h",
+      "sha256": "628386a445ce9f263b3f7deecb6ceca42edae82ad99e875f2cfbd0761ebff3f0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/wayland-client.h",
+      "sha256": "e9dd1fb014aa6ad848cb7d241cc223b1a70fc0b17fed5997262024e4c05532f7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/wayland-client-core.h",
+      "sha256": "936e6d191144358aec15edf1271781ea333a15da96e81bb9c99d137292a8403b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/wayland-util.h",
+      "sha256": "f336a00a03fcf442a59dc9e5fcce3fc94b2cbfcbcf0befba018be3657b7ea381",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/math.h",
+      "sha256": "c727536544246f3c48d2d116cae82e02539bdec1b905799bf93579ba35527ecf",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/math-vector.h",
+      "sha256": "fcf87dafedf439e56ba593a614b78216e3d7a51a661528ee4c6749ef52fda04a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/libm-simd-decl-stubs.h",
+      "sha256": "bff48d9c0882ed7b833047e463d6f56878c7827cff13b9e9720bbc6a88467bf9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/flt-eval-method.h",
+      "sha256": "a6f8c3b06e50fc4f0df226abbab5bdcfe73a596b0a22b4ade08fb2fd2293b8d1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/fp-logb.h",
+      "sha256": "44fb675f5fd2fee75005ede827719e61fd169f31d27bb9f8de3a42e3fb6b79dc",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/fp-fast.h",
+      "sha256": "e779cf7b858bc3bb506b0145832f66dc31bef4a75dd00edd64f290c81cfcf331",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/mathcalls-macros.h",
+      "sha256": "502a8c7704161110b71b5533d39a20ee986c4abd9ea3321a3e6ebab7c0480d6a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/mathcalls-helper-functions.h",
+      "sha256": "7587e45507eb8280820251e66530b1341d8eac5d1347a5ee5d99d9bdbf3c58b0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/mathcalls.h",
+      "sha256": "2cd79b60f1e381ef50d2d9aac13f0a780025f14ac88f04aba50c880b50c06376",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/mathcalls-narrow.h",
+      "sha256": "a1b6bb2f135f2b90e69f525a0b6bb53854403d104efabeeacb22ea3167a5a454",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/iscanonical.h",
+      "sha256": "6d36b036d25df4e90d0a98b474a572836fc00d13862b288bbea9135cf33e7d3c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/inttypes.h",
+      "sha256": "f7b6d71ce5912c40209b716a7e681f69f208b97809397f33fdcedf3eb8ff6e13",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/wayland-version.h",
+      "sha256": "35578b408ab6a91bea914a1b6e462c5b85018ee1c4f83ce89ddc5b36d4ad74ed",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/wayland-client-protocol.h",
+      "sha256": "09d49cd7a692a122a76d0bf5cc1dabd5b5f84c2af634353ffbe67d4ee23fb0e4",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/sys/socket.h",
+      "sha256": "2b9e697ced87ca6af942029904a069fa4e0338ba5c9e4e0a7b344f66cf63a725",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/struct_iovec.h",
+      "sha256": "81521ecd97170ff2f8ca8e972b4dc8986994477891a84eece68954f2d0166878",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/socket.h",
+      "sha256": "a791222711a273ab0ef952f8c6a0e73103beff048c46966097dba1349572f42d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/sys/types.h",
+      "sha256": "25d29436b206e2b36e3fbe7057fa8b9822fa9f0f7823659c489a8fc71c8cd1db",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/clock_t.h",
+      "sha256": "81e60e8a8d99b28bc723c14b156d7f7fc8ff663d98a857a3f5aea90431f577e3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/clockid_t.h",
+      "sha256": "dcd64d184855b245e5c7acf21910a0aaca590f1faf094e400da5d30551d11eb0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/time_t.h",
+      "sha256": "d1cc45e24a80009117f61ee4ae9cae5d12f69f38d691e0a933f989f7a1d27bb0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/timer_t.h",
+      "sha256": "d96a2452da0d933941273d11d1048ea525f033306892835b0a7a0999b13853aa",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/endian.h",
+      "sha256": "5eef32c1a3965adcc0f4a838c8b631f4f42541e0de1692bb424de75d22b656ff",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/endian.h",
+      "sha256": "112b43d5b891adcb526fbbbd582625d1d92d68612f8251dc2ee5b47ba488899f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/endianness.h",
+      "sha256": "659a7060004eda113671a38852c4d1e9cb97a35932bcd1d8540f98c09c180747",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/byteswap.h",
+      "sha256": "6462236f7c0743d1fd371e12fd318c7f65595604744bbd564d2942096e96fd07",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/uintn-identity.h",
+      "sha256": "9546f287d641234edb1dc1082032b7256f9dae76b2244cef63d0769d5b4d536b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/sys/select.h",
+      "sha256": "9becffb0018558dd368e025bffb8cb75d6b531cb8d18806e859172991a41f1a5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/select.h",
+      "sha256": "e879dad16c60061ac0ef11e917ddcb39b0ccb6fa082f7033479c3ce96fc18eef",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/sigset_t.h",
+      "sha256": "3db5ded9d98a694e8c7196a06690b2e816ec6bb82689940d281f6504533f37e1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/__sigset_t.h",
+      "sha256": "05291a7d38bb1d0da1ed01c09fe85fa2b1f4d5bc708e06bb930efec672db08d5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/struct_timeval.h",
+      "sha256": "6585bf0dcd3d5a780d6246da841031f9b314ceb7400a3210f34815f5da93b1fa",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/struct_timespec.h",
+      "sha256": "798e773d0c7f3796033c043910db2b093d1e43116c4b3d2cf3be85f8c4304cf1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/pthreadtypes.h",
+      "sha256": "aa3af8683d56aa08f5fcedf866212c48f227f1f9f7045944f7977c0ad58ffe81",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/thread-shared-types.h",
+      "sha256": "2c1bcabe7b6b7e9192feb703d888f4e871749070b8fb30f96878386e869ff21b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/pthreadtypes-arch.h",
+      "sha256": "1e4016c31b2b5412c4984f7f12f6659cf93ec5c55cad21dfb0ecf2813ba3116c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/atomic_wide_counter.h",
+      "sha256": "7d508b02d7ed3a94c1a556779fdd590fd2e0668a34b0d736e40eab6df7d60154",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/struct_mutex.h",
+      "sha256": "dca410963a519c04fa3ed4175b13d0baaf20c22723c67414cf2433b00237d1e3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/struct_rwlock.h",
+      "sha256": "309124e37fac2b64a00fd0a93973fef769943cfeb36e8fc8678f83f705635255",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/socket_type.h",
+      "sha256": "9bc2114ad1b1f39b8698b7d5e2c956ca9c5314b9eb167a4b4c5e2ff86a276a47",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/sockaddr.h",
+      "sha256": "e9c4b4f870e2c6306c3d219acde15e041ca3c166d01f17049d9a4567f58ee89c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm/socket.h",
+      "sha256": "48e0940e8a6e8861eaaaf90853a685fa803c4e039166060a3c921c8d79001e3c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm-generic/socket.h",
+      "sha256": "e833d32d3d8d03732021da6968665431d693ab4effdd4d39965ff05115a4ed21",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/linux/posix_types.h",
+      "sha256": "bc68636a383418f235d3457e4b21cf27cefc7c7f3edea4c1f6706f1018db196f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/linux/stddef.h",
+      "sha256": "8de0ac8eae3695cbf769f27069f44dd622f9bb4ba2ca8e35e4af8c2a14f0bf5f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm/posix_types.h",
+      "sha256": "983090c7e5e7eaff27114ec216889a8ad26e40ad8fbb78b8ae6c09391dc61543",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm/posix_types_64.h",
+      "sha256": "5cdabc01dac0a3e9731ac16353210a615ca44e85b6ec9eafd2e79206e0b26c76",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm-generic/posix_types.h",
+      "sha256": "f9b2bcd020a7041ca71acdc66ed04113d37d4141eba74a26f9a9fd81286c14fe",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm/bitsperlong.h",
+      "sha256": "8ef5efeb3f25ae47ce03ba892f5caf77631b1257715fc12de72c21e61db17e43",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm-generic/bitsperlong.h",
+      "sha256": "3a8e58cc67210c5a2b3bf24c84a96328e974dfe94206c74e5478d3142c991cf7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm/sockios.h",
+      "sha256": "ac496b3bcc37452f0caa104b2205a8a19dde0196a7791988b3b74e23c2174c1e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm-generic/sockios.h",
+      "sha256": "3e46cdcb281f87f1b532901e6388eed77fa687c3c5c56f72aceb8640696a4ef9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/struct_osockaddr.h",
+      "sha256": "63619500aa6095b881f62d7a255bd31eeeab9a829cf34ec40e20a62729323efc",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/sys/un.h",
+      "sha256": "baff6e49d79eebce4c4cfdf74a349aaaaa4b156d4defea58bdbcbc43590bce73",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/string.h",
+      "sha256": "6284f89702acd61ff489bc6d20b38f6a942c438783076b9b64633d073be3337d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/locale_t.h",
+      "sha256": "8675fb9fc99a2763f278421e4adf57ecc8838ac5668b2db3cac52fabb440d802",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/__locale_t.h",
+      "sha256": "293f874c654c206b3f18021510b2612487177d9010a333b9313991ae1877fc96",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/strings.h",
+      "sha256": "9103b78ed40bae6ad74f43ea4536f96d2f1405adcd52c070a66614207f1429dd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/sys/stat.h",
+      "sha256": "5a6911efebb00a64e838cf7a8b88ed8a433a3c640ddcea660040dd4f6fc2c2d7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/stat.h",
+      "sha256": "13945ae82e81d5433007b1da37c5a4a98ecd3906e58e6e16abf8880c05e89061",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/struct_stat.h",
+      "sha256": "b19478cbd3055193a7b184d8f8b7e36b2ebbf637c660c68b184603b247e17f6f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/statx.h",
+      "sha256": "1bedf57c04aebf74f2116bfde1abf0e78b8e203c31d7a37c48b3401f5f9c5941",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/linux/stat.h",
+      "sha256": "32bb5a3e3064a8c83db9666783fa1196c606580a179cd9c8f993203eddb4af73",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/linux/types.h",
+      "sha256": "4152b3c5d095f5cf0adf5cc13ee0670e737eb7c4efef5fa08e9d1eb87e68ed78",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm/types.h",
+      "sha256": "b6bdcd528bce555b2ecb58e8a1624e3e13e09312c31318023c4e86b957e2b01f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm-generic/types.h",
+      "sha256": "09b4477d655ddd2c5657e83a0761700d6706f012c7365f310a6b0a6696936a10",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm-generic/int-ll64.h",
+      "sha256": "eb8b891e775ebb50af0353fdcbc625854fd98780399b3a57a404d36af6c29749",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/statx-generic.h",
+      "sha256": "57a7c1dbc6b85c8e7197ca59aaf4a14a8fb1b864192257795e618181fd3c82f3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/struct_statx_timestamp.h",
+      "sha256": "6744471600ad2bfc67f2d38c8cef2f60cdac905f199dfd397acee12780606696",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/struct_statx.h",
+      "sha256": "80eddd8c371d25a096f0a26ead003e172ce2bfeb65469a881fd6daba178e7998",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/sys/mman.h",
+      "sha256": "aebf7874a8c61ef2b62d989ee437c0a10ef5b493b79bc711ca37365bee0ed7d2",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/mman.h",
+      "sha256": "790b4736ef9bdcc2ca101a1a1f3fe2db007016fb6c4377e40481bb07b905e11b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/mman-map-flags-generic.h",
+      "sha256": "2cb9af9f89d9f5904ddff1806268e99c71564361770064ffd0f4c682209928fe",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/mman-linux.h",
+      "sha256": "f4af12399c841716e2318ca5b7d18ae7a23ae7ed29c603d81f86b05d6b4ee44a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/mman-shared.h",
+      "sha256": "c4adc07904fd01652f225879d6134234d4bf63e5946e1303d630ed50191facd2",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/mman_ext.h",
+      "sha256": "6276988239dba1a3d70ecd553b0084303827294850f6549262e98991997b7409",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/fcntl.h",
+      "sha256": "91c6a8ff5eee5863af4f6b15b325741ef28c61c9ba5fe6c4e0168d3ecdabd254",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/fcntl.h",
+      "sha256": "385d7a9118790e783bb2c6273602faca25ffe71046606d1e3afbe19d5d67d4a8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/fcntl-linux.h",
+      "sha256": "33ca5fffcf66a26c3c115c82ef3458f0147c86a4c6932645839d800a657222a3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/cloexec.h",
+      "sha256": "fe4bf3585d48939dc11fe267943518a6714acc3cd6abd07efab46bb805376946",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/linux/falloc.h",
+      "sha256": "67210a836eee09c18aa02e4c18d12291f97267d3fbaaf5d6ae215837852cd777",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/linux/openat2.h",
+      "sha256": "8db1c89e62b93f8e08e2700a1fd5fa7349da815b63083e0dcf025a6fbe56239f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/openat2.h",
+      "sha256": "1b89059bfc8622770f5d4b398c49b3c4cc6bb966a59cefa8cf75f816dc918f5a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/errno.h",
+      "sha256": "6af988372fbf273c6e462f4a488674bfe53fd4f535491c52b658357b46ede3dd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/errno.h",
+      "sha256": "2c169b750ca9bdf063ae033299426bf1c858213df8ca6df0ef43dd9c7e9d500b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/linux/errno.h",
+      "sha256": "a47fb2f49bce0546a1e88805cec954338abb1b2ac87de042166e8e3a74b23261",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm/errno.h",
+      "sha256": "4ee384515a4325315992e61dd957f0fa91f3858fe7c079de59f56edded51de86",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm-generic/errno.h",
+      "sha256": "66a5ad60566fdd62e41701bcfc42bfeca5e5696ad1d47d78981575e0c51622be",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/asm-generic/errno-base.h",
+      "sha256": "2c148e92b8318deeb767fabd60822113e575ee664ff09a1873aed8f7a495793c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/error_t.h",
+      "sha256": "3ebc9695bacdc88623dc0dd8b88e071b51521d2a3d9ade39b86ca81045c9a446",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/stdlib.h",
+      "sha256": "936ffcdf6161aa702d9fe433879e59b039731effebea7a9c02506da183a99d02",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/waitflags.h",
+      "sha256": "e9d5a8255131a9b555f35b04c5a1596bb3cdc96e6fd518cf43c473cbf41b6016",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/waitstatus.h",
+      "sha256": "cc93cc0c23d21e2695414318d79124a5ca08e1a0ea60f81c2842a7a566b06711",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/alloca.h",
+      "sha256": "cb5ea6285def24864da9698db30ba6fbff156e263625e1be33064f94a8dc64b3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/types/once_flag.h",
+      "sha256": "1cda55270e969dca774272ec5e2dbf417442bc40183e4fbfeab3f0e22a31f4da",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/stdlib-float.h",
+      "sha256": "8900ab8d754778a6df25a040202726097d29f65954c4525de4542abef79c0c01",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/unistd.h",
+      "sha256": "0dfb7a26409b84548986b0cd2d991a25e2f629f724cf68b0fcb4fc22c391f82f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/posix_opt.h",
+      "sha256": "b2825f0ce2b045cff606a35ca14c2e47d990d94cf0092c9a8c7d25042feaff83",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/environments.h",
+      "sha256": "26080a9c9e54409330a6e05c9022e03d97c066ea0412fb5a2d04e5f0e527f441",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/confname.h",
+      "sha256": "dbed2d3724ad68fac2eeb79b553ef113c008c4f3f787e1acec1b874802497182",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/getopt_posix.h",
+      "sha256": "660e8e89f9b4df5722c3ac2d57320bdf1c1fafcff17db9f0e57c681fcc8d3a79",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/getopt_core.h",
+      "sha256": "238ff9f16662d515d6b191662965bb27e208b04dc929d04a69399de41bcd7d45",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/unistd_ext.h",
+      "sha256": "40f5c4a876a8cd22796eb07359505082515db6ef4540b07be0e88c5925579d8f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/linux/close_range.h",
+      "sha256": "54f02dee64fba028529c5265273d23a96629f3217d6abc31574ef7cce5a63f70",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/ctype.h",
+      "sha256": "e0efaf66349e83de92c289c5c67198ff042422fb84814fc9aa633c4f26ab3696",
+      "mode": 420
+    },
+    {
+      "path": "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h",
+      "sha256": "1492db6302662cd0d533a8b1d5a8b7a07a1424d9ae4c7ab100c6c4e7c86b07eb",
+      "mode": 420
+    },
+    {
+      "path": "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h",
+      "sha256": "9409a59233daef9339a757c58b3dd1cee980a65f1ef2590040fe5e106222a4bc",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/limits.h",
+      "sha256": "7505220f742ab30ef635baa0849f26e1dfdb4fb22f2b506f4f2b0f4879f82dfb",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/posix1_lim.h",
+      "sha256": "7ea61c3da402843e85e830259c7b911f5330b1708981a5461e16c95b375fc0a7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/local_lim.h",
+      "sha256": "a925303c7eb6dc10aefead6580f721c77b97c04b9c9ce0b4b2bbcde5e185c1f9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/linux/limits.h",
+      "sha256": "567dbb4893d20bb986996f0a8b8f774b02ca6cb7df8e4b642895eade7e7ffcd9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/pthread_stack_min-dynamic.h",
+      "sha256": "e0b0204279c085ebe23ee9f6b374d2cdf2f6bdb233f2fae179104eddfac2827f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/posix2_lim.h",
+      "sha256": "c60d757837eda19102c5ad7085c97fba283b4891e43bb906ce3d8a7d4426dc22",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/xopen_lim.h",
+      "sha256": "29dcc96d2565ec4e4959eb068e1b6255cac7286b539ca771d142ddb0cb139574",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/bits/uio_lim.h",
+      "sha256": "abdee1164222c9831cd5f9994c89ab736d05444ff9fa4ae9c329098f5e19c1dd",
+      "mode": 420
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical_plan.c",
+      "sha256": "0aca74b2735aa1a903fe4aac9e919c3a42f15e42965157775cb1b939b856cf62",
+      "mode": 420
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical_keymap.inc",
+      "sha256": "983b87f00eb70f67557f0a8a156df600c7c6f8d0de53ff9702d826aa2da2b041",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/linux/input-event-codes.h",
+      "sha256": "ab968a3396f61fc674af9b796a212c98edf5331d0ef1c25734668491d090495a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/openssl/sha.h",
+      "sha256": "7e006accd6565cc97dee672c097acc5e38482be7cd4fa1e0c316bf466425b895",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/openssl/macros.h",
+      "sha256": "756bc73d844bb73b62f3e5b5e6141ec5c912a230f58310e1fea6b44f3a7244d7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/openssl/opensslconf.h",
+      "sha256": "7f4b522c049d0bd0d651e6f6ebe71d6df0c37231a94e32524da3f4642ebda3be",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/openssl/configuration.h",
+      "sha256": "72cc7bc3e9c8ed98558478039d5d2f18ca6c5b2262e50fccc1b966fca1c8ea16",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/openssl/opensslv.h",
+      "sha256": "c1941c5dbb9aabf9c02105918290918c1ba457f7c50e89ff7defa11431b58575",
+      "mode": 420
+    },
+    {
+      "path": "/usr/include/openssl/e_os2.h",
+      "sha256": "d7300e16ec04f764e8fd45ae5288c37ab5af09dd1ea204d17c54c0155c69921c",
+      "mode": 420
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical_map_generator.c",
+      "sha256": "c3a42acd5cb3b0fac01793526ef6e8a41e6cde45652f3e7fa7272dc26bd3cdeb",
+      "mode": 420
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical_protocol_cpu.c",
+      "sha256": "295ab3166599cb442a32ea7ec489b30856ef86f8f851e4cad17ccd611a1fe373",
+      "mode": 420
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/virtual-keyboard-protocol.c",
+      "sha256": "0f77293faf9e092ee1e0c934865df1a21be0a6e4d17791b70f67d712c3daf5c5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/README",
+      "sha256": "ab88a02b01ce646a5a3965a05f1876b70b97b24e4d6409973126a0baa59126a5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/README",
+      "sha256": "ab88a02b01ce646a5a3965a05f1876b70b97b24e4d6409973126a0baa59126a5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/accessx",
+      "sha256": "e7f0630dbf09f3bb3adf3bb8e8d2464afbd6e616fe0075dbef29b7e82bd2a50d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/accessx",
+      "sha256": "e7f0630dbf09f3bb3adf3bb8e8d2464afbd6e616fe0075dbef29b7e82bd2a50d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/basic",
+      "sha256": "381cdef43f910f7f4ddb476b2ff258afe3af6881051f9c71efa5554108c30b4a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/basic",
+      "sha256": "381cdef43f910f7f4ddb476b2ff258afe3af6881051f9c71efa5554108c30b4a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/caps",
+      "sha256": "26f9917f6d36d13d23b5d303e8554e3e4d57ec02576ff47b0d34bc1fed90e5c4",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/caps",
+      "sha256": "26f9917f6d36d13d23b5d303e8554e3e4d57ec02576ff47b0d34bc1fed90e5c4",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/complete",
+      "sha256": "11d1fd1f5364ef778eb0edc36b4f1955ca165c1900703f163c1406aa8ae767cd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/complete",
+      "sha256": "11d1fd1f5364ef778eb0edc36b4f1955ca165c1900703f163c1406aa8ae767cd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/grab",
+      "sha256": "dd2cb97f79b171685828595ce7460c606450faf6b75739e4a947d013e70a000b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/grab",
+      "sha256": "dd2cb97f79b171685828595ce7460c606450faf6b75739e4a947d013e70a000b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/grp_led",
+      "sha256": "dae5c94cf49d642191f3bc5bc7c16d9f964c48a2f1e36d6d224c636658dd1bfb",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/grp_led",
+      "sha256": "dae5c94cf49d642191f3bc5bc7c16d9f964c48a2f1e36d6d224c636658dd1bfb",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/iso9995",
+      "sha256": "bfb9feee868fde37f9f5f4ba43924f2b70f621ebe058e1d4c7cef6f7aa4278ca",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/iso9995",
+      "sha256": "bfb9feee868fde37f9f5f4ba43924f2b70f621ebe058e1d4c7cef6f7aa4278ca",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/japan",
+      "sha256": "6a3c404ed599ee6d1ac25dcec0f7c924a7ee715e45555f9a851d52cf3d86716b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/japan",
+      "sha256": "6a3c404ed599ee6d1ac25dcec0f7c924a7ee715e45555f9a851d52cf3d86716b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/ledcaps",
+      "sha256": "7d3882ccecb24b1621975fde25fc7e90e5c1c00197cf67820622458f35bb34ae",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/ledcaps",
+      "sha256": "7d3882ccecb24b1621975fde25fc7e90e5c1c00197cf67820622458f35bb34ae",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/ledcompose",
+      "sha256": "09cae37cfd89ec390045d51bca7c53c865416e881fa209dcd412fb2249d0d9ae",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/ledcompose",
+      "sha256": "09cae37cfd89ec390045d51bca7c53c865416e881fa209dcd412fb2249d0d9ae",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/lednum",
+      "sha256": "811b0afbcfe43d891cc53de9d275ba8787363f99c7f601ce2d3e316e58481f78",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/lednum",
+      "sha256": "811b0afbcfe43d891cc53de9d275ba8787363f99c7f601ce2d3e316e58481f78",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/ledscroll",
+      "sha256": "736397f179253795f116607fa5588a4bc88dc620f87af4c38bbd9bdc20a17db5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/ledscroll",
+      "sha256": "736397f179253795f116607fa5588a4bc88dc620f87af4c38bbd9bdc20a17db5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/level5",
+      "sha256": "e07406a8982fa3fc94c9bbedbd6a3e3a0159d3e7426960e3b60d7f5bcb8bba1a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/level5",
+      "sha256": "e07406a8982fa3fc94c9bbedbd6a3e3a0159d3e7426960e3b60d7f5bcb8bba1a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/misc",
+      "sha256": "aff8f280e2ce71e7752b75c8b2893c628cfa33f279ba25d918fae4ed43705f5d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/misc",
+      "sha256": "aff8f280e2ce71e7752b75c8b2893c628cfa33f279ba25d918fae4ed43705f5d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/mod_led",
+      "sha256": "3f5e55d28d7cc4f7f92397a40bb601a761ae725d8c541c60f82ca794ac4d9a7f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/mod_led",
+      "sha256": "3f5e55d28d7cc4f7f92397a40bb601a761ae725d8c541c60f82ca794ac4d9a7f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/mousekeys",
+      "sha256": "b4de6898f10617c8172f9a35aae362def187793e1d995f5bb646e0c220b31255",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/mousekeys",
+      "sha256": "b4de6898f10617c8172f9a35aae362def187793e1d995f5bb646e0c220b31255",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/olpc",
+      "sha256": "e5f6842436020fdac82ea8b48e0bcb0cd936944635a2b69240a96fe5b77cdf98",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/olpc",
+      "sha256": "e5f6842436020fdac82ea8b48e0bcb0cd936944635a2b69240a96fe5b77cdf98",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/pc",
+      "sha256": "6e1fc869ac431eaa287475c434be6bb1d9eaba79f9592e1949aea60e5605dc96",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/pc",
+      "sha256": "6e1fc869ac431eaa287475c434be6bb1d9eaba79f9592e1949aea60e5605dc96",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/pc98",
+      "sha256": "5a38d69bc01936edcb19ac2013af10258c020d45bb3391abd0bea59edb88c9c5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/pc98",
+      "sha256": "5a38d69bc01936edcb19ac2013af10258c020d45bb3391abd0bea59edb88c9c5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/xfree86",
+      "sha256": "ade96d0e9fa4427c48e50ec708407bbd94c1bf4560fd05581391647e5f9ee9bb",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/xfree86",
+      "sha256": "ade96d0e9fa4427c48e50ec708407bbd94c1bf4560fd05581391647e5f9ee9bb",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/compat/xtest",
+      "sha256": "978f3f50180025e7de1bbd3b6cd93fab05e1dfa28d48bcf30b8d10eaddb0363d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/compat/xtest",
+      "sha256": "978f3f50180025e7de1bbd3b6cd93fab05e1dfa28d48bcf30b8d10eaddb0363d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/README",
+      "sha256": "f0d444a24488ccc5e905ff5fc0e8190a613c3938851cb14641660c466a983297",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/README",
+      "sha256": "f0d444a24488ccc5e905ff5fc0e8190a613c3938851cb14641660c466a983297",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/amiga",
+      "sha256": "ea2cdb8acf152877963564965865873ff1d1b7838695fb487b93eaa7c923d0b5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/amiga",
+      "sha256": "ea2cdb8acf152877963564965865873ff1d1b7838695fb487b93eaa7c923d0b5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/ataritt",
+      "sha256": "ca9cea12436c8b04fb9bd26b7d324aa8b1ad2c3843d358370f7b4a8bf30998b7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/ataritt",
+      "sha256": "ca9cea12436c8b04fb9bd26b7d324aa8b1ad2c3843d358370f7b4a8bf30998b7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/chicony",
+      "sha256": "2ba104cfa6aa1efaced20e0b4f12df8015b473ccc0832e2898dabf153e15b184",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/chicony",
+      "sha256": "2ba104cfa6aa1efaced20e0b4f12df8015b473ccc0832e2898dabf153e15b184",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/dell",
+      "sha256": "72dc75198eca15320563a47da33b0eec93699df3f740552bc0e64ec070d6a05a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/dell",
+      "sha256": "72dc75198eca15320563a47da33b0eec93699df3f740552bc0e64ec070d6a05a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/everex",
+      "sha256": "02bba936b15c726757b5eaef267994d31ad3af8090f259f59e3904aa9ba66013",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/everex",
+      "sha256": "02bba936b15c726757b5eaef267994d31ad3af8090f259f59e3904aa9ba66013",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/fujitsu",
+      "sha256": "fdfdc37ea7e0599d5811ff4be05cc54915dcba6fe521a22bc82d3fc4ddc00110",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/fujitsu",
+      "sha256": "fdfdc37ea7e0599d5811ff4be05cc54915dcba6fe521a22bc82d3fc4ddc00110",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/hhk",
+      "sha256": "90d19f2f14dacc76a75353c7aa20518e6a244bb9cf132e6ad01532f9d969fae8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/hhk",
+      "sha256": "90d19f2f14dacc76a75353c7aa20518e6a244bb9cf132e6ad01532f9d969fae8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/hp",
+      "sha256": "8532049b1e4081644d8dff6e4b95aad643072c7acff1f816654b944490fd2076",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/hp",
+      "sha256": "8532049b1e4081644d8dff6e4b95aad643072c7acff1f816654b944490fd2076",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/keytronic",
+      "sha256": "bb69ce82e59cd77acf169e299747ade9e79c1f07edbfe62674ede353aec2a57b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/keytronic",
+      "sha256": "bb69ce82e59cd77acf169e299747ade9e79c1f07edbfe62674ede353aec2a57b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/kinesis",
+      "sha256": "f8f6edc9f23f59fb71b5c40a386b920cb9b50cf375f2fa1a6fa799e2d1094c5b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/kinesis",
+      "sha256": "f8f6edc9f23f59fb71b5c40a386b920cb9b50cf375f2fa1a6fa799e2d1094c5b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/macintosh",
+      "sha256": "086eb3a63e382bf3f678e2fc6e005864e3533250b84f4caa65c4a31e9e6e9787",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/macintosh",
+      "sha256": "086eb3a63e382bf3f678e2fc6e005864e3533250b84f4caa65c4a31e9e6e9787",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/microsoft",
+      "sha256": "867259b20312d6de2ed2ae3f64de8ba50985e7c7ab33696623c5a1abb39449f6",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/microsoft",
+      "sha256": "867259b20312d6de2ed2ae3f64de8ba50985e7c7ab33696623c5a1abb39449f6",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/nec",
+      "sha256": "053c5be4fa72d2a2729aaf91880780abacac2f130d48bc123d68b9478d312c28",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/nec",
+      "sha256": "053c5be4fa72d2a2729aaf91880780abacac2f130d48bc123d68b9478d312c28",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/northgate",
+      "sha256": "7ceffcafaff8fa7b0cd30c68c9bc08988ddfa01269fa1b03fdd29941d68ba430",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/northgate",
+      "sha256": "7ceffcafaff8fa7b0cd30c68c9bc08988ddfa01269fa1b03fdd29941d68ba430",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/pc",
+      "sha256": "76a8d3c15451770719f5ad6b817ac18cb1496ecde9b165763af2ba57cda55336",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/pc",
+      "sha256": "76a8d3c15451770719f5ad6b817ac18cb1496ecde9b165763af2ba57cda55336",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/sanwa",
+      "sha256": "e8a2e1347479a910d2da18aa09a53e992802106f415d349f40e691d0d32de7b2",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/sanwa",
+      "sha256": "e8a2e1347479a910d2da18aa09a53e992802106f415d349f40e691d0d32de7b2",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/sony",
+      "sha256": "2e76a6a112c7606f72a293b41f3b58f733cc444d8160f0c741770c8e058e3d81",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/sony",
+      "sha256": "2e76a6a112c7606f72a293b41f3b58f733cc444d8160f0c741770c8e058e3d81",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/steelseries",
+      "sha256": "d1b3a84216e73c5279044c72002c9f3ebc7b3b79364e496294272172843f19c4",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/steelseries",
+      "sha256": "d1b3a84216e73c5279044c72002c9f3ebc7b3b79364e496294272172843f19c4",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/sun",
+      "sha256": "1d44df4f47fb06220495c61b2892274fb78df4879ac4626c737484a8d5006e51",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/sun",
+      "sha256": "1d44df4f47fb06220495c61b2892274fb78df4879ac4626c737484a8d5006e51",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/teck",
+      "sha256": "90b60ffb32d3c8465756b7563579ef57542f9c9747b17925f5c05c05122db91a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/teck",
+      "sha256": "90b60ffb32d3c8465756b7563579ef57542f9c9747b17925f5c05c05122db91a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/thinkpad",
+      "sha256": "22dcd7964e2074d1562c0431b0ed1cf6c32d16f53e0f487c3aef7be91616b368",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/thinkpad",
+      "sha256": "22dcd7964e2074d1562c0431b0ed1cf6c32d16f53e0f487c3aef7be91616b368",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/typematrix",
+      "sha256": "461881f4189849959faac5e13e005625379a72da478a91cbd66ae232e44f8288",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/typematrix",
+      "sha256": "461881f4189849959faac5e13e005625379a72da478a91cbd66ae232e44f8288",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/winbook",
+      "sha256": "4127b78751d12f032f2bc49e5cbdd45e6882a9708077ed0d39e3c53cdf7fc220",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/winbook",
+      "sha256": "4127b78751d12f032f2bc49e5cbdd45e6882a9708077ed0d39e3c53cdf7fc220",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/README",
+      "sha256": "e074717ddf8dbfda1e911efb80cf22ebad64e30c74766c0da24a084b1261056b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/README",
+      "sha256": "e074717ddf8dbfda1e911efb80cf22ebad64e30c74766c0da24a084b1261056b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/aliases",
+      "sha256": "85f774170fc1526e8a909a1e2952423dae3891b721abc293a27dc450818dcc6d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/aliases",
+      "sha256": "85f774170fc1526e8a909a1e2952423dae3891b721abc293a27dc450818dcc6d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/amiga",
+      "sha256": "d8469bc1c9375625b62c93847e6e1505598d825bb29d176a5a5f028f0e6a45d0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/amiga",
+      "sha256": "d8469bc1c9375625b62c93847e6e1505598d825bb29d176a5a5f028f0e6a45d0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/ataritt",
+      "sha256": "8d39211d4948fe77c483d45f953ea983c0e11c120ababe634fdc696300106fa2",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/ataritt",
+      "sha256": "8d39211d4948fe77c483d45f953ea983c0e11c120ababe634fdc696300106fa2",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/empty",
+      "sha256": "69997f35044955d76a14361f4751a5aca361d3edca6ba2007368ee7c7e8c024f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/empty",
+      "sha256": "69997f35044955d76a14361f4751a5aca361d3edca6ba2007368ee7c7e8c024f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/evdev",
+      "sha256": "5f48b3c4c5f6d7db41699bc1e7c714743508ee22fe2948640d3660b2c438d4f9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/evdev",
+      "sha256": "5f48b3c4c5f6d7db41699bc1e7c714743508ee22fe2948640d3660b2c438d4f9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/fujitsu",
+      "sha256": "8526ca756290d468e390f0c3b8b06c56068c1ea71c7d0f44bffd95a2efb66a43",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/fujitsu",
+      "sha256": "8526ca756290d468e390f0c3b8b06c56068c1ea71c7d0f44bffd95a2efb66a43",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/hp",
+      "sha256": "2410b73208fdb5addbf85c6f245207c07b1e4f0f0d3771c7a297413205f93161",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/hp",
+      "sha256": "2410b73208fdb5addbf85c6f245207c07b1e4f0f0d3771c7a297413205f93161",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/ibm",
+      "sha256": "a49eb0ebdcd564a3050bd0df6158f8586791e1ba9a2fc63ff8109e8b9b6a492f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/ibm",
+      "sha256": "a49eb0ebdcd564a3050bd0df6158f8586791e1ba9a2fc63ff8109e8b9b6a492f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/jolla",
+      "sha256": "7f1a36f508f43c9f5613e0b167f4cebec3e6efba4c24e09eff2473fa7261f1d2",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/jolla",
+      "sha256": "7f1a36f508f43c9f5613e0b167f4cebec3e6efba4c24e09eff2473fa7261f1d2",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/macintosh",
+      "sha256": "ce481327af62fbf34c9da7a6fcc7efd9e5425eee30b56f914af7375efa77083f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/macintosh",
+      "sha256": "ce481327af62fbf34c9da7a6fcc7efd9e5425eee30b56f914af7375efa77083f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/olpc",
+      "sha256": "b0ccc40066ba04bba9afd68a002ace2b1adedde2f16caa044b7b5b1d2c167b26",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/olpc",
+      "sha256": "b0ccc40066ba04bba9afd68a002ace2b1adedde2f16caa044b7b5b1d2c167b26",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/sony",
+      "sha256": "d139cbf6038f8b03e870727a101aa89a7891bc745e92aaf15ba0bbb6007c084c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/sony",
+      "sha256": "d139cbf6038f8b03e870727a101aa89a7891bc745e92aaf15ba0bbb6007c084c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/sun",
+      "sha256": "82a6c5dd6b6a0804efa2fc0f301705d86742198db6773fe5df926c2e53cff3dd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/sun",
+      "sha256": "82a6c5dd6b6a0804efa2fc0f301705d86742198db6773fe5df926c2e53cff3dd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/xfree86",
+      "sha256": "fe02da14c9216fce5278c4dbb7059a12063649b3bade565a808c1f5bb2f3a602",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/xfree86",
+      "sha256": "fe02da14c9216fce5278c4dbb7059a12063649b3bade565a808c1f5bb2f3a602",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/xfree98",
+      "sha256": "cd7b8343937d98653b3a2f698fcc5dc3aff3a6b523d2cce5307d6eead5006602",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/xfree98",
+      "sha256": "cd7b8343937d98653b3a2f698fcc5dc3aff3a6b523d2cce5307d6eead5006602",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/README",
+      "sha256": "808e2a1f26cbfd2e26830f26179365312d0a167bfc11365cd553c8670718279d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/rules/README",
+      "sha256": "808e2a1f26cbfd2e26830f26179365312d0a167bfc11365cd553c8670718279d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/base",
+      "sha256": "dc080e4470d277f879d380ae02052329188c7af861e74d03ac3276442733649a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/rules/base",
+      "sha256": "dc080e4470d277f879d380ae02052329188c7af861e74d03ac3276442733649a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/base.extras.xml",
+      "sha256": "3c2521f13616b9b18017bae240749af6cbdeff961a04c58c79a7f59400685588",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/rules/base.extras.xml",
+      "sha256": "3c2521f13616b9b18017bae240749af6cbdeff961a04c58c79a7f59400685588",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/base.lst",
+      "sha256": "1a3406eb5243178870d3c27c1a70899eaeebf2270800eac27fa486ac25ed9022",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/rules/base.lst",
+      "sha256": "1a3406eb5243178870d3c27c1a70899eaeebf2270800eac27fa486ac25ed9022",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/base.xml",
+      "sha256": "d075cd216137780495984b9570d20434dc16ccd404a42065e3397a61939a23e1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/rules/base.xml",
+      "sha256": "d075cd216137780495984b9570d20434dc16ccd404a42065e3397a61939a23e1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/evdev",
+      "sha256": "0cc48ee1279d91045fe2cf092ee5a0744cbee1c02bd164f02871d13140d12132",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/rules/evdev",
+      "sha256": "0cc48ee1279d91045fe2cf092ee5a0744cbee1c02bd164f02871d13140d12132",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/evdev.extras.xml",
+      "sha256": "3c2521f13616b9b18017bae240749af6cbdeff961a04c58c79a7f59400685588",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/rules/evdev.extras.xml",
+      "sha256": "3c2521f13616b9b18017bae240749af6cbdeff961a04c58c79a7f59400685588",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/evdev.lst",
+      "sha256": "1a3406eb5243178870d3c27c1a70899eaeebf2270800eac27fa486ac25ed9022",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/rules/evdev.lst",
+      "sha256": "1a3406eb5243178870d3c27c1a70899eaeebf2270800eac27fa486ac25ed9022",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/evdev.xml",
+      "sha256": "d075cd216137780495984b9570d20434dc16ccd404a42065e3397a61939a23e1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/rules/evdev.xml",
+      "sha256": "d075cd216137780495984b9570d20434dc16ccd404a42065e3397a61939a23e1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/xfree98",
+      "sha256": "24a6a3c997dcc1c1535556140afb06e94df5d8199291c3078f89e4b6af43a278",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/rules/xfree98",
+      "sha256": "24a6a3c997dcc1c1535556140afb06e94df5d8199291c3078f89e4b6af43a278",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/xkb.dtd",
+      "sha256": "63aada3760407202d5aa366ffba231cfa6f24f1d22dbe6aaad04970e2930af7e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/rules/xkb.dtd",
+      "sha256": "63aada3760407202d5aa366ffba231cfa6f24f1d22dbe6aaad04970e2930af7e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/xorg",
+      "sha256": "dc080e4470d277f879d380ae02052329188c7af861e74d03ac3276442733649a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/xorg.lst",
+      "sha256": "1a3406eb5243178870d3c27c1a70899eaeebf2270800eac27fa486ac25ed9022",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/xorg.xml",
+      "sha256": "d075cd216137780495984b9570d20434dc16ccd404a42065e3397a61939a23e1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/af",
+      "sha256": "5b831de719d172c851b7c91da630e96d6520870a90690226d695d8501850c74d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/af",
+      "sha256": "5b831de719d172c851b7c91da630e96d6520870a90690226d695d8501850c74d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/al",
+      "sha256": "b2c689f19123dd19d2097fbfe1b260cf1ec90b7caba8f0094089863f7bd99bd0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/al",
+      "sha256": "b2c689f19123dd19d2097fbfe1b260cf1ec90b7caba8f0094089863f7bd99bd0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/altwin",
+      "sha256": "085c134b47e092b955722f2165246eaae9bd5420d36b304175ae482012250601",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/altwin",
+      "sha256": "085c134b47e092b955722f2165246eaae9bd5420d36b304175ae482012250601",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/am",
+      "sha256": "3f3db7a60e794f6d137b0a9a021d266cc254d4c137dbd6df7d70f8f77eab85b3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/am",
+      "sha256": "3f3db7a60e794f6d137b0a9a021d266cc254d4c137dbd6df7d70f8f77eab85b3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ancient",
+      "sha256": "a157f3ec085d3642f88018ac22ee33dcc7f338587837e324a83acdba0233a429",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ancient",
+      "sha256": "a157f3ec085d3642f88018ac22ee33dcc7f338587837e324a83acdba0233a429",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/apl",
+      "sha256": "6a33ab642e28e629d107a207a177a22b3a2f38208dea4733f9c145a5aecb0e81",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/apl",
+      "sha256": "6a33ab642e28e629d107a207a177a22b3a2f38208dea4733f9c145a5aecb0e81",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ara",
+      "sha256": "425cb398bca83c54915d9ba24a995a6dca576718cc68f3a8042c857e367859dd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ara",
+      "sha256": "425cb398bca83c54915d9ba24a995a6dca576718cc68f3a8042c857e367859dd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/at",
+      "sha256": "e878e22e81bc7e0dd1f04aabbc7981e6605eee94f64150822f209eb1f31017fc",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/at",
+      "sha256": "e878e22e81bc7e0dd1f04aabbc7981e6605eee94f64150822f209eb1f31017fc",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/au",
+      "sha256": "6d54de90977bd0e50751a9413247b338a237e16bd91ac7d588c9340aae60604e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/au",
+      "sha256": "6d54de90977bd0e50751a9413247b338a237e16bd91ac7d588c9340aae60604e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/az",
+      "sha256": "244f3748072dd88d1ff2e597b21f7d3e896b551ffcb003432960ee0ca9c29a2d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/az",
+      "sha256": "244f3748072dd88d1ff2e597b21f7d3e896b551ffcb003432960ee0ca9c29a2d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ba",
+      "sha256": "fde993c5a87ca245efd331948d4a1212805107aeebe720b1233c855c045c42d3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ba",
+      "sha256": "fde993c5a87ca245efd331948d4a1212805107aeebe720b1233c855c045c42d3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/bd",
+      "sha256": "fc21d55bac4ef2fdb96f92f52aa9f3633653ebcadf907f785d0ab3c6d49a7b12",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/bd",
+      "sha256": "fc21d55bac4ef2fdb96f92f52aa9f3633653ebcadf907f785d0ab3c6d49a7b12",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/be",
+      "sha256": "6a21c2d346803db405ca3aa8acfdea03fb284a30da9c91f675b29de9e51cfcd5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/be",
+      "sha256": "6a21c2d346803db405ca3aa8acfdea03fb284a30da9c91f675b29de9e51cfcd5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/bg",
+      "sha256": "95f97e580ab1537c4eb4a30e20a4b83f0b5bcb2cee351731864c000290392687",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/bg",
+      "sha256": "95f97e580ab1537c4eb4a30e20a4b83f0b5bcb2cee351731864c000290392687",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/bqn",
+      "sha256": "d22cb1cd606d450430f07f4b485aaed40a033782c731c09ff38454300268c76e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/bqn",
+      "sha256": "d22cb1cd606d450430f07f4b485aaed40a033782c731c09ff38454300268c76e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/br",
+      "sha256": "8cf65550e08b598407d5f7317f297e186561a94c866ab95d0c9a8737ef3bf35e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/br",
+      "sha256": "8cf65550e08b598407d5f7317f297e186561a94c866ab95d0c9a8737ef3bf35e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/brai",
+      "sha256": "175912eab851524570710884176eb890c778b3204f4eb3e3bbc648a9660a6385",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/brai",
+      "sha256": "175912eab851524570710884176eb890c778b3204f4eb3e3bbc648a9660a6385",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/bt",
+      "sha256": "a14842315c52340a6f8273a610b255bfe3af765bdf669117c94d4e9f227652d7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/bt",
+      "sha256": "a14842315c52340a6f8273a610b255bfe3af765bdf669117c94d4e9f227652d7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/bw",
+      "sha256": "d038072be9eee7b2ce64079f9bcc95bbc0b91009e3d1c8ed9049e65e5a35da21",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/bw",
+      "sha256": "d038072be9eee7b2ce64079f9bcc95bbc0b91009e3d1c8ed9049e65e5a35da21",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/by",
+      "sha256": "20e4241858341092487714aa0ca6aa789647fbc06f7b95a42f4a3f3c3fa810aa",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/by",
+      "sha256": "20e4241858341092487714aa0ca6aa789647fbc06f7b95a42f4a3f3c3fa810aa",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ca",
+      "sha256": "49b8958b328eaa8d7ff770a9211e0fde4ae3015c4789136ee32dc90be099c630",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ca",
+      "sha256": "49b8958b328eaa8d7ff770a9211e0fde4ae3015c4789136ee32dc90be099c630",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/capslock",
+      "sha256": "1181722e79a4c46319dea21d6f4eb723de49e798ec2e91f8929e4dfb528882cd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/capslock",
+      "sha256": "1181722e79a4c46319dea21d6f4eb723de49e798ec2e91f8929e4dfb528882cd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/cd",
+      "sha256": "803a5f118daef69c590e9243dfb27051abe8dd40b61b42d9028c629a5cc74e15",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/cd",
+      "sha256": "803a5f118daef69c590e9243dfb27051abe8dd40b61b42d9028c629a5cc74e15",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ch",
+      "sha256": "92fe0b2ead0fe61f0b8b1d913a2f423fa80f614f7f58f22ef24e9dcafa05f0fd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ch",
+      "sha256": "92fe0b2ead0fe61f0b8b1d913a2f423fa80f614f7f58f22ef24e9dcafa05f0fd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/cm",
+      "sha256": "07c90370b6fa96f69b8c9645788032892bed7e7936c41379f0e77aa6d8f4c265",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/cm",
+      "sha256": "07c90370b6fa96f69b8c9645788032892bed7e7936c41379f0e77aa6d8f4c265",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/cn",
+      "sha256": "d533595453978274ab2837cc54a5f847c00121281221296e7e79a455131ed58e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/cn",
+      "sha256": "d533595453978274ab2837cc54a5f847c00121281221296e7e79a455131ed58e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/compose",
+      "sha256": "10947142db6939e7adf1004b5cde6b190d577706ff4b7c0f0ca0a0ddb57262d9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/compose",
+      "sha256": "10947142db6939e7adf1004b5cde6b190d577706ff4b7c0f0ca0a0ddb57262d9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ctrl",
+      "sha256": "8365f54106e3101f67281e6b92bfe2afbc23618f6646e71362b10e468652d41e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ctrl",
+      "sha256": "8365f54106e3101f67281e6b92bfe2afbc23618f6646e71362b10e468652d41e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/cz",
+      "sha256": "76e4dcdfc1fecc30fa0fb263917494cc41fb3988d07ca44bb3e3f73b1b9b965a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/cz",
+      "sha256": "76e4dcdfc1fecc30fa0fb263917494cc41fb3988d07ca44bb3e3f73b1b9b965a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/de",
+      "sha256": "6a547ad042a1e44db483c40f974ec0b639aae198ccb26fc7eb6d6c0f4801fb69",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/de",
+      "sha256": "6a547ad042a1e44db483c40f974ec0b639aae198ccb26fc7eb6d6c0f4801fb69",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/dk",
+      "sha256": "f5db8cbccb2c979c02bba534acc63d6040d65da9012a5194a5b3a552457fd02f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/dk",
+      "sha256": "f5db8cbccb2c979c02bba534acc63d6040d65da9012a5194a5b3a552457fd02f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/dz",
+      "sha256": "2cee960f73ca520c90142105bdb90796e1084d733711938e6b533d565aca08b2",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/dz",
+      "sha256": "2cee960f73ca520c90142105bdb90796e1084d733711938e6b533d565aca08b2",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ee",
+      "sha256": "64f8a15e421dcfc4d48201f817f78a16f58c34442a35e7c760fc4eae0b56d8e7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ee",
+      "sha256": "64f8a15e421dcfc4d48201f817f78a16f58c34442a35e7c760fc4eae0b56d8e7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/eg",
+      "sha256": "a91c117ff0507c529cb21b52276480316ebd242278c6e4c5c2b00da100f046be",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/eg",
+      "sha256": "a91c117ff0507c529cb21b52276480316ebd242278c6e4c5c2b00da100f046be",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/empty",
+      "sha256": "887e05c9d27f1269ee87908c81bccef237b34e22f5db7e30ff8c3381691c6ac8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/empty",
+      "sha256": "887e05c9d27f1269ee87908c81bccef237b34e22f5db7e30ff8c3381691c6ac8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/epo",
+      "sha256": "e8978a60f6f5bf13aace45098f0f0530c0487f10b1ab200b46171e5963d90078",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/epo",
+      "sha256": "e8978a60f6f5bf13aace45098f0f0530c0487f10b1ab200b46171e5963d90078",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/es",
+      "sha256": "5f56c53ce9d35c5ec9457f6f6850e459f11c55071555cd5dd8507561aa14dfbd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/es",
+      "sha256": "5f56c53ce9d35c5ec9457f6f6850e459f11c55071555cd5dd8507561aa14dfbd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/et",
+      "sha256": "b38196b423ffaee0c4f1737c559ca848943378a806aee16bdd1660993ecd8e05",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/et",
+      "sha256": "b38196b423ffaee0c4f1737c559ca848943378a806aee16bdd1660993ecd8e05",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/eu",
+      "sha256": "ea1046b55da6f71e6b72d55c6b3833c7989aa9b0637cfa174af56d7009c58f00",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/eu",
+      "sha256": "ea1046b55da6f71e6b72d55c6b3833c7989aa9b0637cfa174af56d7009c58f00",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/eurosign",
+      "sha256": "8563e64d139d1fe4df789e760822c42d20f5036a0d4b109bf8353db968eca666",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/eurosign",
+      "sha256": "8563e64d139d1fe4df789e760822c42d20f5036a0d4b109bf8353db968eca666",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/fi",
+      "sha256": "7cc55979949a158f01585706c2ead364188498d651370215d2f1e92562638c1b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/fi",
+      "sha256": "7cc55979949a158f01585706c2ead364188498d651370215d2f1e92562638c1b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/fkeys",
+      "sha256": "5e52e79433881737f067094387913a56f70a589d82262fbd0e788d81b51811f8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/fkeys",
+      "sha256": "5e52e79433881737f067094387913a56f70a589d82262fbd0e788d81b51811f8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/fo",
+      "sha256": "d5709657f18d40e542b93b3cdc56afc75bbe7806f669a5608e11306ff7561d6d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/fo",
+      "sha256": "d5709657f18d40e542b93b3cdc56afc75bbe7806f669a5608e11306ff7561d6d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/fr",
+      "sha256": "cc93334b7dd531de98484b118fc16281c36305c306275e430848dda78da23999",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/fr",
+      "sha256": "cc93334b7dd531de98484b118fc16281c36305c306275e430848dda78da23999",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/gb",
+      "sha256": "603e3674a8793d818a944fdd1f12720f5e21469a88dae767815a987f1f9ebcc9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/gb",
+      "sha256": "603e3674a8793d818a944fdd1f12720f5e21469a88dae767815a987f1f9ebcc9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ge",
+      "sha256": "c373d734fe34bdea78569ae8dee654cabbcbc84803f57344a10d8e11db473bf0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ge",
+      "sha256": "c373d734fe34bdea78569ae8dee654cabbcbc84803f57344a10d8e11db473bf0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/gh",
+      "sha256": "843c5769823dbbc74335ac7cbddf521d92069a9201636df4716d0dcd03a3cad5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/gh",
+      "sha256": "843c5769823dbbc74335ac7cbddf521d92069a9201636df4716d0dcd03a3cad5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/gn",
+      "sha256": "7aed3035f7298571a2ce93029d2fcd7f515be9cf0daca97ccb0e81b0b23893a9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/gn",
+      "sha256": "7aed3035f7298571a2ce93029d2fcd7f515be9cf0daca97ccb0e81b0b23893a9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/gr",
+      "sha256": "6db0892ea654f4930630f354cc2bdf89fb871dfd3d6ffe1af52e927ac13c710c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/gr",
+      "sha256": "6db0892ea654f4930630f354cc2bdf89fb871dfd3d6ffe1af52e927ac13c710c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/grab",
+      "sha256": "0a0697a38cd31952f45a5828a95a97cbaf535076fd464fda79a5f88ac05408c3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/grab",
+      "sha256": "0a0697a38cd31952f45a5828a95a97cbaf535076fd464fda79a5f88ac05408c3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/group",
+      "sha256": "d962772859c00eb77223056cf3ec22e12c11b31ae8204760ca94e1c31f220000",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/group",
+      "sha256": "d962772859c00eb77223056cf3ec22e12c11b31ae8204760ca94e1c31f220000",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/hr",
+      "sha256": "0891f79bed0f754db251fa6a381ac05b96b060e91206c9612c49e3614e49ee11",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/hr",
+      "sha256": "0891f79bed0f754db251fa6a381ac05b96b060e91206c9612c49e3614e49ee11",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/hu",
+      "sha256": "a07fcdb0445d182e06dd9db208113ba044940724339b46790008ea2476b82a2c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/hu",
+      "sha256": "a07fcdb0445d182e06dd9db208113ba044940724339b46790008ea2476b82a2c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/hyper",
+      "sha256": "19fd70bfe2e8811669b531718964c7fa0bdf899b158cae6267b9c241abceeb85",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/hyper",
+      "sha256": "19fd70bfe2e8811669b531718964c7fa0bdf899b158cae6267b9c241abceeb85",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/id",
+      "sha256": "e863d4174eed1172524a168b54b90c72849c658d3212b43910cea99042c384ea",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/id",
+      "sha256": "e863d4174eed1172524a168b54b90c72849c658d3212b43910cea99042c384ea",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ie",
+      "sha256": "e841894f01c499f3598c3fbb09f930b6b0cca703b65bbc984ea7a8dcbe5408b9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ie",
+      "sha256": "e841894f01c499f3598c3fbb09f930b6b0cca703b65bbc984ea7a8dcbe5408b9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/il",
+      "sha256": "f42072a57f056b3bfe05c781f24d913d9cf18a604f5a7e53008e3416fe270aff",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/il",
+      "sha256": "f42072a57f056b3bfe05c781f24d913d9cf18a604f5a7e53008e3416fe270aff",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/in",
+      "sha256": "aee2183b3b2ecdad404163440f3345e114287c28065292ddee3a132de17ea150",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/in",
+      "sha256": "aee2183b3b2ecdad404163440f3345e114287c28065292ddee3a132de17ea150",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/inet",
+      "sha256": "c48bf5a9c97b782994ac2407971e81c75963b27a32120bf31b08204c4f367cce",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/inet",
+      "sha256": "c48bf5a9c97b782994ac2407971e81c75963b27a32120bf31b08204c4f367cce",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/iq",
+      "sha256": "a1252c14090c5003fa6e60fa9778c29ea00af6e3dcfad86bf64159dee9f64640",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/iq",
+      "sha256": "a1252c14090c5003fa6e60fa9778c29ea00af6e3dcfad86bf64159dee9f64640",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ir",
+      "sha256": "38a4ebd89cd0e02d1eeba2aa28d6f8575417e87830ddfeda872b05add5d5b8e0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ir",
+      "sha256": "38a4ebd89cd0e02d1eeba2aa28d6f8575417e87830ddfeda872b05add5d5b8e0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/is",
+      "sha256": "c7ac379e288142cab096db9a0c93d4e37255c7a9b3cf1ecd5b1cd43646fdb10e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/is",
+      "sha256": "c7ac379e288142cab096db9a0c93d4e37255c7a9b3cf1ecd5b1cd43646fdb10e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/it",
+      "sha256": "260bcbb28179f3eff5d37bc8e031700b94bd6dbba217eae225f9e0ef5216444a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/it",
+      "sha256": "260bcbb28179f3eff5d37bc8e031700b94bd6dbba217eae225f9e0ef5216444a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/jp",
+      "sha256": "f4f8dd810e46727e26b09b102be1910732001553dfaafd251631deed667856d7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/jp",
+      "sha256": "f4f8dd810e46727e26b09b102be1910732001553dfaafd251631deed667856d7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ke",
+      "sha256": "1436f69081864e1807242029f44b144d4d631e52e8a58c6767602b33b0b52d1b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ke",
+      "sha256": "1436f69081864e1807242029f44b144d4d631e52e8a58c6767602b33b0b52d1b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/keypad",
+      "sha256": "c4044b7ae212b78f9bfa31dbe0deb2d25123d8e8f40b7f241f2b5508cfcf482f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/keypad",
+      "sha256": "c4044b7ae212b78f9bfa31dbe0deb2d25123d8e8f40b7f241f2b5508cfcf482f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/kg",
+      "sha256": "2612789b3aeb9cfec78ad7ae330fa15216a1165ca7f1f23cd7cf3af95c0b7e13",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/kg",
+      "sha256": "2612789b3aeb9cfec78ad7ae330fa15216a1165ca7f1f23cd7cf3af95c0b7e13",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/kh",
+      "sha256": "e49599f6871af00a457f60206621ef2f1916415756a08cabe44750778c13c0a6",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/kh",
+      "sha256": "e49599f6871af00a457f60206621ef2f1916415756a08cabe44750778c13c0a6",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/kpdl",
+      "sha256": "b81ef8aa7cfa4b3272986272150fd445b8effeff986c2097cd88fba880fed1bb",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/kpdl",
+      "sha256": "b81ef8aa7cfa4b3272986272150fd445b8effeff986c2097cd88fba880fed1bb",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/kr",
+      "sha256": "6a45389b0e158c11c9df41a0ea5e8cd14533a2356dc7ab93a3fe53e73912e745",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/kr",
+      "sha256": "6a45389b0e158c11c9df41a0ea5e8cd14533a2356dc7ab93a3fe53e73912e745",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/kz",
+      "sha256": "5bedd1321907880e83f8ab5a1146bf50dfa5e5a45cb2d62189a2a069b8a0ca0b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/kz",
+      "sha256": "5bedd1321907880e83f8ab5a1146bf50dfa5e5a45cb2d62189a2a069b8a0ca0b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/la",
+      "sha256": "3f0adb95edd2b8bb03204f6896781820fbd9c3fdba1c50cca389007b136d6de8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/la",
+      "sha256": "3f0adb95edd2b8bb03204f6896781820fbd9c3fdba1c50cca389007b136d6de8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/latam",
+      "sha256": "5040c4684ae4a5e0d45acdd58a8c96ce4aa3ebf5888feb7f60d0314934c9a6a9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/latam",
+      "sha256": "5040c4684ae4a5e0d45acdd58a8c96ce4aa3ebf5888feb7f60d0314934c9a6a9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/latin",
+      "sha256": "442253255e7aade71aab3caf325041cd2242d248ce856252e7eb364fef30b91b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/latin",
+      "sha256": "442253255e7aade71aab3caf325041cd2242d248ce856252e7eb364fef30b91b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/level2",
+      "sha256": "ab1f791d69969eb8444f9661138cf5e28b38420dbd14bcac1adb1cda70742180",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/level2",
+      "sha256": "ab1f791d69969eb8444f9661138cf5e28b38420dbd14bcac1adb1cda70742180",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/level3",
+      "sha256": "cdeddada22f8593f89cb8693d728dc02a24abef92d62cf0ce61c4f947b6d47d0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/level3",
+      "sha256": "cdeddada22f8593f89cb8693d728dc02a24abef92d62cf0ce61c4f947b6d47d0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/level5",
+      "sha256": "8009418071d2bc55d0f5d38522fc9552a910af4e930945b261a7cdfc2ea7e750",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/level5",
+      "sha256": "8009418071d2bc55d0f5d38522fc9552a910af4e930945b261a7cdfc2ea7e750",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/lk",
+      "sha256": "881d6d40a3964c766af10874618ca342c610656e7a1bba598f8c1cbefeca98af",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/lk",
+      "sha256": "881d6d40a3964c766af10874618ca342c610656e7a1bba598f8c1cbefeca98af",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/lt",
+      "sha256": "b8791e812fbfb49429552c83c6d23d922044a3f5bfe6f0835c5023dcd1f46cc0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/lt",
+      "sha256": "b8791e812fbfb49429552c83c6d23d922044a3f5bfe6f0835c5023dcd1f46cc0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/lv",
+      "sha256": "33d9ea8d7ae8cde486db38c64c80f508215471a71b928255566f890f43e12740",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/lv",
+      "sha256": "33d9ea8d7ae8cde486db38c64c80f508215471a71b928255566f890f43e12740",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ma",
+      "sha256": "3d8e3875fe3881bfdaac645a7d72062d9c8efd0638464ff5c73e0bcf4406732c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ma",
+      "sha256": "3d8e3875fe3881bfdaac645a7d72062d9c8efd0638464ff5c73e0bcf4406732c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/md",
+      "sha256": "27585ef75113257fc6436a92f90c50c955a2ecc27f8415dbd6fbdf70bc2db8da",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/md",
+      "sha256": "27585ef75113257fc6436a92f90c50c955a2ecc27f8415dbd6fbdf70bc2db8da",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/me",
+      "sha256": "691b7050e5b415d95d59ff60d7a1ceb173f48cc677f00bbfe6872fe6dcea0907",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/me",
+      "sha256": "691b7050e5b415d95d59ff60d7a1ceb173f48cc677f00bbfe6872fe6dcea0907",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/mk",
+      "sha256": "6d3a9e38a8e04fbf7b6054a1408399f75ac17f1612362a1985866279e7a3f88f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/mk",
+      "sha256": "6d3a9e38a8e04fbf7b6054a1408399f75ac17f1612362a1985866279e7a3f88f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ml",
+      "sha256": "f437f0f5dd3c3f5217358b342528cc34d748b2c8cdb8c3574a7091b2949c0a28",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ml",
+      "sha256": "f437f0f5dd3c3f5217358b342528cc34d748b2c8cdb8c3574a7091b2949c0a28",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/mm",
+      "sha256": "782bfaf496b09412744394f791406b90552a44a5711be70e69070ae61bbd773a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/mm",
+      "sha256": "782bfaf496b09412744394f791406b90552a44a5711be70e69070ae61bbd773a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/mn",
+      "sha256": "e4cd56da6ba817e6ef50ceb431c3d6be07e10a24358011634849452acb353c27",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/mn",
+      "sha256": "e4cd56da6ba817e6ef50ceb431c3d6be07e10a24358011634849452acb353c27",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/mt",
+      "sha256": "7f783ac5138aa04990552b2e82d0cf513c1adf6e986a3c0ef7a3c5e1cb94e9c4",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/mt",
+      "sha256": "7f783ac5138aa04990552b2e82d0cf513c1adf6e986a3c0ef7a3c5e1cb94e9c4",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/mv",
+      "sha256": "812bd0d66f8c88dcaae408eac78a078dabaf2151df53a620b571337c86c4ec1c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/mv",
+      "sha256": "812bd0d66f8c88dcaae408eac78a078dabaf2151df53a620b571337c86c4ec1c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/my",
+      "sha256": "4f8971b7a72d64457cfbe075403d3cd33cd255ef55dc282518f426d6ed9a3db9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/my",
+      "sha256": "4f8971b7a72d64457cfbe075403d3cd33cd255ef55dc282518f426d6ed9a3db9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/nbsp",
+      "sha256": "fcdebe89f88e385ca2ba178274cd3b04c0e7066afa10395e8c30671997baa441",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/nbsp",
+      "sha256": "fcdebe89f88e385ca2ba178274cd3b04c0e7066afa10395e8c30671997baa441",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ng",
+      "sha256": "a44bb469226af83ab9dc344f31e38395c3957d51179c5a1d7b77bfeafb487a8b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ng",
+      "sha256": "a44bb469226af83ab9dc344f31e38395c3957d51179c5a1d7b77bfeafb487a8b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/nl",
+      "sha256": "38240f8f1a00e3ba119b9af91c01422b9eec6d5dc00ac25438530bb9d12f8b2e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/nl",
+      "sha256": "38240f8f1a00e3ba119b9af91c01422b9eec6d5dc00ac25438530bb9d12f8b2e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/no",
+      "sha256": "5e2a406778524167eb4ed8d17e6b838af0bd781d932f8d3e0d68cfe9319012f9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/no",
+      "sha256": "5e2a406778524167eb4ed8d17e6b838af0bd781d932f8d3e0d68cfe9319012f9",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/np",
+      "sha256": "3bdc658d1739df8a5e8ed0649d02ab73e59b2006c78f4fee2a85992b7f5cd5d6",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/np",
+      "sha256": "3bdc658d1739df8a5e8ed0649d02ab73e59b2006c78f4fee2a85992b7f5cd5d6",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/nz",
+      "sha256": "7874d1ad55d3b80246bba95c85a437310587581e900c7f735e73b5c9590403a6",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/nz",
+      "sha256": "7874d1ad55d3b80246bba95c85a437310587581e900c7f735e73b5c9590403a6",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/olpc",
+      "sha256": "5dd585565e873ed7ea2d264e186ab6c90bda7528a9de05180efd8a21ca8f0151",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/olpc",
+      "sha256": "5dd585565e873ed7ea2d264e186ab6c90bda7528a9de05180efd8a21ca8f0151",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/parens",
+      "sha256": "67295705ae19cf0bc047a4f1e975dce4535329cf62319b5401534a60e3a2ec33",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/parens",
+      "sha256": "67295705ae19cf0bc047a4f1e975dce4535329cf62319b5401534a60e3a2ec33",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/pc",
+      "sha256": "e2e1c1501d8eedf2ba41ca153e244edf29ff8d7d83f9fa1a20d07d4729421794",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/pc",
+      "sha256": "e2e1c1501d8eedf2ba41ca153e244edf29ff8d7d83f9fa1a20d07d4729421794",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ph",
+      "sha256": "831eb3897c208f9449561dcd3da49e8db39c6f107df80379424f136ba6cb699f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ph",
+      "sha256": "831eb3897c208f9449561dcd3da49e8db39c6f107df80379424f136ba6cb699f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/pk",
+      "sha256": "de24cb85203c49568649e16c273419fa15ba361ed2e7326395690ea2b664a183",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/pk",
+      "sha256": "de24cb85203c49568649e16c273419fa15ba361ed2e7326395690ea2b664a183",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/pl",
+      "sha256": "c2dd4801cea7c6cf0ef7271e60bbd09696f355546cd27095a36610e8c1f1e499",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/pl",
+      "sha256": "c2dd4801cea7c6cf0ef7271e60bbd09696f355546cd27095a36610e8c1f1e499",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/pt",
+      "sha256": "ea7cd7f44ec223c60468f0b6f24896884eae2db4e937dacb5b68636cc4c3cb25",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/pt",
+      "sha256": "ea7cd7f44ec223c60468f0b6f24896884eae2db4e937dacb5b68636cc4c3cb25",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ro",
+      "sha256": "ddb2b5b024924e5205b014fb784e5a9b3cc77ecc7f4085fb0de3d836ff75bd51",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ro",
+      "sha256": "ddb2b5b024924e5205b014fb784e5a9b3cc77ecc7f4085fb0de3d836ff75bd51",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/rs",
+      "sha256": "f9cd6947f3eb509a7e3776d7f2b7143cf8e7d92b1cfb165f04552cbe6e6732cb",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/rs",
+      "sha256": "f9cd6947f3eb509a7e3776d7f2b7143cf8e7d92b1cfb165f04552cbe6e6732cb",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ru",
+      "sha256": "426a0d19fce3645017f1d7602a62958aeb57c519bcef5dc5470bd2f78435b259",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ru",
+      "sha256": "426a0d19fce3645017f1d7602a62958aeb57c519bcef5dc5470bd2f78435b259",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/rupeesign",
+      "sha256": "24dde1d4fca8228394270b3b2cf71ab029466f8353a0345f8129ad4e56c59c93",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/rupeesign",
+      "sha256": "24dde1d4fca8228394270b3b2cf71ab029466f8353a0345f8129ad4e56c59c93",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/scrolllock",
+      "sha256": "3e729b0a579df9fec1e1cf4d03b1ac1cb0eb2ccc1f25465f82fb77c2a63d908b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/scrolllock",
+      "sha256": "3e729b0a579df9fec1e1cf4d03b1ac1cb0eb2ccc1f25465f82fb77c2a63d908b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/se",
+      "sha256": "7af05ca453ee91254a744e74747b260553443ecb15bcb535825ef58491a8e3c8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/se",
+      "sha256": "7af05ca453ee91254a744e74747b260553443ecb15bcb535825ef58491a8e3c8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/shift",
+      "sha256": "f78597c70f29261bf49c2254e36e9d11718cc0c3665fb47bf0218d9761ed1605",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/shift",
+      "sha256": "f78597c70f29261bf49c2254e36e9d11718cc0c3665fb47bf0218d9761ed1605",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/si",
+      "sha256": "8ea12df796d51f64e688ef876ca50b0f77eee77daf2eb36d7b6797da7962cdae",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/si",
+      "sha256": "8ea12df796d51f64e688ef876ca50b0f77eee77daf2eb36d7b6797da7962cdae",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sk",
+      "sha256": "5579d42a8f2ff5eb50faf261543ca36e50678c02bbfd6ece4bc338f9aa10781b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sk",
+      "sha256": "5579d42a8f2ff5eb50faf261543ca36e50678c02bbfd6ece4bc338f9aa10781b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sn",
+      "sha256": "08e1ad5524f54a9ef776a8dbf60c33228cccb5dced3873f0573ceb6020f236c6",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sn",
+      "sha256": "08e1ad5524f54a9ef776a8dbf60c33228cccb5dced3873f0573ceb6020f236c6",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/srvr_ctrl",
+      "sha256": "652d16838143dbeb218aff2997cc603f9e9731e1e55e2300dee910d167e25d85",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/srvr_ctrl",
+      "sha256": "652d16838143dbeb218aff2997cc603f9e9731e1e55e2300dee910d167e25d85",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/srvrkeys",
+      "sha256": "026f03dd024e5bd630ab85cb98e772bdd0a7c431ea17346651c33c74ee0a645f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/srvrkeys",
+      "sha256": "026f03dd024e5bd630ab85cb98e772bdd0a7c431ea17346651c33c74ee0a645f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sy",
+      "sha256": "e7e1843e8b9b28b438a79109ac622f7814860ef8ca744afafe7bcf6d0771aede",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sy",
+      "sha256": "e7e1843e8b9b28b438a79109ac622f7814860ef8ca744afafe7bcf6d0771aede",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/terminate",
+      "sha256": "0bf67addb6f096da3de29be0c8fd2ca7546e9164a4d0e874202d95c34d745598",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/terminate",
+      "sha256": "0bf67addb6f096da3de29be0c8fd2ca7546e9164a4d0e874202d95c34d745598",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/tg",
+      "sha256": "230a4b89e9dbb7a0c71dabfb9082ebcf0febedf3ab1720f2a5eb68ce4685cc25",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/tg",
+      "sha256": "230a4b89e9dbb7a0c71dabfb9082ebcf0febedf3ab1720f2a5eb68ce4685cc25",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/th",
+      "sha256": "4b2567f6f0afc04119697cdba8a7e7f40d8b97c7716a772e03dd25b4617cd0a4",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/th",
+      "sha256": "4b2567f6f0afc04119697cdba8a7e7f40d8b97c7716a772e03dd25b4617cd0a4",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/tj",
+      "sha256": "86998ddb19288374722a120ae597d25d381f81027fa0a9a4143942f4a5138521",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/tj",
+      "sha256": "86998ddb19288374722a120ae597d25d381f81027fa0a9a4143942f4a5138521",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/tm",
+      "sha256": "6d909052fdb7b4eb19c18ffecf9a78162d7432a2f2cc9011d1efe5dd069d5be5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/tm",
+      "sha256": "6d909052fdb7b4eb19c18ffecf9a78162d7432a2f2cc9011d1efe5dd069d5be5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/tr",
+      "sha256": "b942b363002e9b6141173be97b0609e8ab1dfbcfb5241368c9bad655d05404c7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/tr",
+      "sha256": "b942b363002e9b6141173be97b0609e8ab1dfbcfb5241368c9bad655d05404c7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/trans",
+      "sha256": "471d549573a8a2c4fb720c9134d23dda1e29df2b4164d003d01b41332e65c15c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/trans",
+      "sha256": "471d549573a8a2c4fb720c9134d23dda1e29df2b4164d003d01b41332e65c15c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/tw",
+      "sha256": "9c843f82050c69e83f90b05200f061409643dd5e688dcc3dc0297c6449eaadee",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/tw",
+      "sha256": "9c843f82050c69e83f90b05200f061409643dd5e688dcc3dc0297c6449eaadee",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/typo",
+      "sha256": "3020278bd1a50e05d6596d770990b50a6186d2228c282a86376831d2a2ba36bd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/typo",
+      "sha256": "3020278bd1a50e05d6596d770990b50a6186d2228c282a86376831d2a2ba36bd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/tz",
+      "sha256": "5f8a7b2a0408fc0cd9e6e2e25e181df047b8ac5024ec0f68f10a55d39be94363",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/tz",
+      "sha256": "5f8a7b2a0408fc0cd9e6e2e25e181df047b8ac5024ec0f68f10a55d39be94363",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/ua",
+      "sha256": "332cc88de866b826abfd407f13e80296926aaf7218e7d8ee3dc4fce42503edce",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/ua",
+      "sha256": "332cc88de866b826abfd407f13e80296926aaf7218e7d8ee3dc4fce42503edce",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/us",
+      "sha256": "d70b84ee6b8bc7aa796690d5e93d6a7382d919ddca03f3b05338efc3a4aa2739",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/us",
+      "sha256": "d70b84ee6b8bc7aa796690d5e93d6a7382d919ddca03f3b05338efc3a4aa2739",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/uz",
+      "sha256": "7fe72abc792fd38e7b17dd0636aab83c603d5d4af093e3fd9c0ac896469f782e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/uz",
+      "sha256": "7fe72abc792fd38e7b17dd0636aab83c603d5d4af093e3fd9c0ac896469f782e",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/vn",
+      "sha256": "4ef686847cbde54e030af22e50d37e7d91f0524c1178b2943769061220933907",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/vn",
+      "sha256": "4ef686847cbde54e030af22e50d37e7d91f0524c1178b2943769061220933907",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/za",
+      "sha256": "1e765c9f7f5391e369cdbe64e4020c292478022f9da24f3ace11ce2d96d46527",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/za",
+      "sha256": "1e765c9f7f5391e369cdbe64e4020c292478022f9da24f3ace11ce2d96d46527",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/types/README",
+      "sha256": "025721133e20380f998c5c6dce07aea624baad997855cba6e389ca3c26fe05b1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/types/README",
+      "sha256": "025721133e20380f998c5c6dce07aea624baad997855cba6e389ca3c26fe05b1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/types/basic",
+      "sha256": "4c18eb87250a3ba92b9d9881a4f07316bcda47d186c5f4e9c76e6d4fcbfbf948",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/types/basic",
+      "sha256": "4c18eb87250a3ba92b9d9881a4f07316bcda47d186c5f4e9c76e6d4fcbfbf948",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/types/cancel",
+      "sha256": "047acba53c463dc55d40d664210b5ffee85ba061aeb06949c56473ca012c2a68",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/types/cancel",
+      "sha256": "047acba53c463dc55d40d664210b5ffee85ba061aeb06949c56473ca012c2a68",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/types/caps",
+      "sha256": "5ac5228e8b373eeea8095f5877fb18ca1f878629d86798036e5fb97f272beaea",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/types/caps",
+      "sha256": "5ac5228e8b373eeea8095f5877fb18ca1f878629d86798036e5fb97f272beaea",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/types/complete",
+      "sha256": "038d66c8861dbc797b7d2226bc9135698e62adf3d6d9f99f1be60b768f591aee",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/types/complete",
+      "sha256": "038d66c8861dbc797b7d2226bc9135698e62adf3d6d9f99f1be60b768f591aee",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/types/default",
+      "sha256": "205a4131e04cf5ecb1c4d831c61594c56db731ef46d0eb5844b1c744666b3677",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/types/default",
+      "sha256": "205a4131e04cf5ecb1c4d831c61594c56db731ef46d0eb5844b1c744666b3677",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/types/extra",
+      "sha256": "da69c081fb12189f8a4d1260a5d12d377e1182a9e2dcea834e105213c07ffa9d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/types/extra",
+      "sha256": "da69c081fb12189f8a4d1260a5d12d377e1182a9e2dcea834e105213c07ffa9d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/types/iso9995",
+      "sha256": "37dc0a4905d8eae972fb8e4eb87a2f5b3050a86aa2fcbe217630647163aea975",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/types/iso9995",
+      "sha256": "37dc0a4905d8eae972fb8e4eb87a2f5b3050a86aa2fcbe217630647163aea975",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/types/level5",
+      "sha256": "61850daaae74dd5603c7820a5c99c86f68e312a6d1f1d3cff271b421b6993861",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/types/level5",
+      "sha256": "61850daaae74dd5603c7820a5c99c86f68e312a6d1f1d3cff271b421b6993861",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/types/mousekeys",
+      "sha256": "8cd68606f38aa725915ea7a0de775f322a27b5b79bcd871569ac72b31b93585f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/types/mousekeys",
+      "sha256": "8cd68606f38aa725915ea7a0de775f322a27b5b79bcd871569ac72b31b93585f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/types/numpad",
+      "sha256": "bbec251cb67a76d3982d45f9ffb31507593138f7ee27dfd1d46c5febeb686587",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/types/numpad",
+      "sha256": "bbec251cb67a76d3982d45f9ffb31507593138f7ee27dfd1d46c5febeb686587",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/types/pc",
+      "sha256": "e81005ed84bcb567497d269a85c9416b45be6bf717cc5d172a064b3607a4e2ba",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/types/pc",
+      "sha256": "e81005ed84bcb567497d269a85c9416b45be6bf717cc5d172a064b3607a4e2ba",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/digital_vndr/lk",
+      "sha256": "e7fd8f7c8b3d9662f70854a4ecd7a97e33f1047783226434a919312fe936d0f7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/digital_vndr/lk",
+      "sha256": "e7fd8f7c8b3d9662f70854a4ecd7a97e33f1047783226434a919312fe936d0f7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/digital_vndr/pc",
+      "sha256": "34c3fdc8757f9e13d194731bdc0b36ba88559c79904f53ed5a23a269be18bb18",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/digital_vndr/pc",
+      "sha256": "34c3fdc8757f9e13d194731bdc0b36ba88559c79904f53ed5a23a269be18bb18",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/digital_vndr/us",
+      "sha256": "e87eca7d5567ef11c613f5f70430331853ab99dd1fe4b92c02b61ac27a07be61",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/digital_vndr/us",
+      "sha256": "e87eca7d5567ef11c613f5f70430331853ab99dd1fe4b92c02b61ac27a07be61",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/digital_vndr/vt",
+      "sha256": "020d1c7ebf389e4ff9193a1427b25e6550fbe1435a598ec51d451238aa772360",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/digital_vndr/vt",
+      "sha256": "020d1c7ebf389e4ff9193a1427b25e6550fbe1435a598ec51d451238aa772360",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/fujitsu_vndr/jp",
+      "sha256": "989052df4b33f585ce2a5c6a1fd8b8dd4150f9853e4d636be35076ad6a87030c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/fujitsu_vndr/jp",
+      "sha256": "989052df4b33f585ce2a5c6a1fd8b8dd4150f9853e4d636be35076ad6a87030c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/fujitsu_vndr/us",
+      "sha256": "62f4c9f93395f16ceb95a78b5979c59433472b3a4abe587d3158a45a91dfa694",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/fujitsu_vndr/us",
+      "sha256": "62f4c9f93395f16ceb95a78b5979c59433472b3a4abe587d3158a45a91dfa694",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/hp_vndr/us",
+      "sha256": "a45716601c3bc5bff86656e1d5cc3158b5e46a21acafc853699e6d52087ae0e5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/hp_vndr/us",
+      "sha256": "a45716601c3bc5bff86656e1d5cc3158b5e46a21acafc853699e6d52087ae0e5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/jolla_vndr/sbj",
+      "sha256": "3ef5c6a29a7d25956eca1f900f045d861d5bdfe6b85cbf09a28a05cf61a31286",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/jolla_vndr/sbj",
+      "sha256": "3ef5c6a29a7d25956eca1f900f045d861d5bdfe6b85cbf09a28a05cf61a31286",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/apple",
+      "sha256": "596c132fcec067473f9a48aa2ec006ffd1fdbbdcd22e45a0c2a6b3db5dc50977",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/apple",
+      "sha256": "596c132fcec067473f9a48aa2ec006ffd1fdbbdcd22e45a0c2a6b3db5dc50977",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/ch",
+      "sha256": "10dcd817b72838f9eba34558738c6fbb2026034692ca552dcdc437b7f5e44e56",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/ch",
+      "sha256": "10dcd817b72838f9eba34558738c6fbb2026034692ca552dcdc437b7f5e44e56",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/de",
+      "sha256": "f93279eb36f97c4397ca4dbc3efcad09fb153bcb1f74b41152851cbf2ce7e230",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/de",
+      "sha256": "f93279eb36f97c4397ca4dbc3efcad09fb153bcb1f74b41152851cbf2ce7e230",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/dk",
+      "sha256": "d8fecc8088f523f903c0685a30597c3be440bf6ca3bfc965c08328eaa9e1026c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/dk",
+      "sha256": "d8fecc8088f523f903c0685a30597c3be440bf6ca3bfc965c08328eaa9e1026c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/fi",
+      "sha256": "5fc12dd83db63d4b35efca9eb2c955f45006d27ce2abc32ebd191e12ed870a96",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/fi",
+      "sha256": "5fc12dd83db63d4b35efca9eb2c955f45006d27ce2abc32ebd191e12ed870a96",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/fr",
+      "sha256": "45f7f0653fa0671ae74b698a8ab8eebb921dd157d1e243169049c4734ce788ed",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/fr",
+      "sha256": "45f7f0653fa0671ae74b698a8ab8eebb921dd157d1e243169049c4734ce788ed",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/gb",
+      "sha256": "b0e5fdb135b80faae8b0c7435241864b3e38c7905b59189a1a2bb9a1adc0b4dc",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/gb",
+      "sha256": "b0e5fdb135b80faae8b0c7435241864b3e38c7905b59189a1a2bb9a1adc0b4dc",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/is",
+      "sha256": "8d0287f1b8f6a655e268bfd5dfc71bff3caa31c7853cb3673fa398d3aecb1dd8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/is",
+      "sha256": "8d0287f1b8f6a655e268bfd5dfc71bff3caa31c7853cb3673fa398d3aecb1dd8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/it",
+      "sha256": "7360d0542bb7fb4901eb071cf29f4bd2d21ddbacaa99ce96cfa199d326ff4ff3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/it",
+      "sha256": "7360d0542bb7fb4901eb071cf29f4bd2d21ddbacaa99ce96cfa199d326ff4ff3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/jp",
+      "sha256": "cc6f20990c535877ca482725f9a21ba9399e3698dbc3cd1b4a75a275947383dc",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/jp",
+      "sha256": "cc6f20990c535877ca482725f9a21ba9399e3698dbc3cd1b4a75a275947383dc",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/latam",
+      "sha256": "41936426a52fa6f10d8bb60363db621327ab304d5a2627ef5e2766ddfb599aca",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/latam",
+      "sha256": "41936426a52fa6f10d8bb60363db621327ab304d5a2627ef5e2766ddfb599aca",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/nl",
+      "sha256": "314f2bf3761863f307fa668045dfb424348183a91901fd20d69785c36a5a056d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/nl",
+      "sha256": "314f2bf3761863f307fa668045dfb424348183a91901fd20d69785c36a5a056d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/no",
+      "sha256": "45ebf16d0384dc24cb96ff795472d52a617b58bc82f89b6fa56ef481cdd012ca",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/no",
+      "sha256": "45ebf16d0384dc24cb96ff795472d52a617b58bc82f89b6fa56ef481cdd012ca",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/pt",
+      "sha256": "3d29f0dba6bf08c28f0080c6f415353ddd5ac8d68d3953c49385b8d6b2adaf24",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/pt",
+      "sha256": "3d29f0dba6bf08c28f0080c6f415353ddd5ac8d68d3953c49385b8d6b2adaf24",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/se",
+      "sha256": "5076f5e05e66bd7f43b714b858167583ef39f7d00766ce8d60764bbd8e99c540",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/se",
+      "sha256": "5076f5e05e66bd7f43b714b858167583ef39f7d00766ce8d60764bbd8e99c540",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/macintosh_vndr/us",
+      "sha256": "13d95a5276acbcf0caf7819f588f14ea77c03f27e3bb0f7309343473826ebc91",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/macintosh_vndr/us",
+      "sha256": "13d95a5276acbcf0caf7819f588f14ea77c03f27e3bb0f7309343473826ebc91",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/nec_vndr/jp",
+      "sha256": "a58ccea8be39be827031194f77369bf8a7d6c09dc051e7f748b142aa6b403a7f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/nec_vndr/jp",
+      "sha256": "a58ccea8be39be827031194f77369bf8a7d6c09dc051e7f748b142aa6b403a7f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sgi_vndr/jp",
+      "sha256": "6e522b6a50470e0de33259e8360bda0524790049b284cbed8e3817f9c08f6889",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sgi_vndr/jp",
+      "sha256": "6e522b6a50470e0de33259e8360bda0524790049b284cbed8e3817f9c08f6889",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sharp_vndr/sl-c3x00",
+      "sha256": "794b99d7b4aa0fba135d3a48685879673720c62f50192364a128d94de64fac58",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sharp_vndr/sl-c3x00",
+      "sha256": "794b99d7b4aa0fba135d3a48685879673720c62f50192364a128d94de64fac58",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sharp_vndr/ws003sh",
+      "sha256": "c6bbd8c17341074097e18919fefb61403a1955562d42ef88e7be9c06eca97993",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sharp_vndr/ws003sh",
+      "sha256": "c6bbd8c17341074097e18919fefb61403a1955562d42ef88e7be9c06eca97993",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sharp_vndr/ws007sh",
+      "sha256": "5f11587248f3ad72c9d4db5d7b3397cc493ad73ebb4eb749aa96657200fe4d7b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sharp_vndr/ws007sh",
+      "sha256": "5f11587248f3ad72c9d4db5d7b3397cc493ad73ebb4eb749aa96657200fe4d7b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sharp_vndr/ws011sh",
+      "sha256": "74edf4e8ce1fd45ddc8615d7e4af3a4ff056e82fd088de9e05c361c9c01b5b62",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sharp_vndr/ws011sh",
+      "sha256": "74edf4e8ce1fd45ddc8615d7e4af3a4ff056e82fd088de9e05c361c9c01b5b62",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sharp_vndr/ws020sh",
+      "sha256": "df6a2ec02e3b33721a37c4f141997a53ef275d1bd105cf44e1562a2134b6c248",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sharp_vndr/ws020sh",
+      "sha256": "df6a2ec02e3b33721a37c4f141997a53ef275d1bd105cf44e1562a2134b6c248",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sony_vndr/us",
+      "sha256": "0bad62591381a64e630cbe1f5962fe5971b489bda8d6bf62a40a10b131fdb52c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sony_vndr/us",
+      "sha256": "0bad62591381a64e630cbe1f5962fe5971b489bda8d6bf62a40a10b131fdb52c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/ara",
+      "sha256": "bfbd2509febc16f9ca047e871704511a88733c917adb11ddf0ef959b507bdbe0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/ara",
+      "sha256": "bfbd2509febc16f9ca047e871704511a88733c917adb11ddf0ef959b507bdbe0",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/be",
+      "sha256": "e598145751d5c043add3dc535a8f7c739d9a08e213137ac460ed53f5b2770350",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/be",
+      "sha256": "e598145751d5c043add3dc535a8f7c739d9a08e213137ac460ed53f5b2770350",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/br",
+      "sha256": "3216c22463aaf10f0a095d7f61bfeddad4783c003e735e835661986dc5c16851",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/br",
+      "sha256": "3216c22463aaf10f0a095d7f61bfeddad4783c003e735e835661986dc5c16851",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/ca",
+      "sha256": "df1583e37382d01fc3c1df9dde11e584c3f5f5df38b2056b8836fc0940d10382",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/ca",
+      "sha256": "df1583e37382d01fc3c1df9dde11e584c3f5f5df38b2056b8836fc0940d10382",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/ch",
+      "sha256": "df6857d331b15fa9ef2640ea0664b58727ec4f26c84654c305de5a968ac352a3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/ch",
+      "sha256": "df6857d331b15fa9ef2640ea0664b58727ec4f26c84654c305de5a968ac352a3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/cz",
+      "sha256": "c4ee239f72f66cd9d93ec5d65b73e702b87b79fc8a1176f229ba92426098006c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/cz",
+      "sha256": "c4ee239f72f66cd9d93ec5d65b73e702b87b79fc8a1176f229ba92426098006c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/de",
+      "sha256": "5c65c189f2356fe2a41e26fdb4644721a0a4bf69f4e8172f4e2711582d33a704",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/de",
+      "sha256": "5c65c189f2356fe2a41e26fdb4644721a0a4bf69f4e8172f4e2711582d33a704",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/dk",
+      "sha256": "214486a2195225e68132f8626a39f79f1efe9f7b023db0d9251298e64f644afd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/dk",
+      "sha256": "214486a2195225e68132f8626a39f79f1efe9f7b023db0d9251298e64f644afd",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/ee",
+      "sha256": "e3f3b1a527cf9b67f27ad008aa7c7fe56f9babfd4228c85135a8b63a1ba67fb1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/ee",
+      "sha256": "e3f3b1a527cf9b67f27ad008aa7c7fe56f9babfd4228c85135a8b63a1ba67fb1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/es",
+      "sha256": "e17147db2c526226db08bbf9a4378aeb6b81ae901de34fb4ba10d09126b98605",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/es",
+      "sha256": "e17147db2c526226db08bbf9a4378aeb6b81ae901de34fb4ba10d09126b98605",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/fi",
+      "sha256": "a3cbf7ad9cde215e89f6866c8aecfa77d818df61e84e07cac0ef609b01bf4bba",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/fi",
+      "sha256": "a3cbf7ad9cde215e89f6866c8aecfa77d818df61e84e07cac0ef609b01bf4bba",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/fr",
+      "sha256": "788de9d69c564e238a17eb0c6f146bd5e4bb65f87b97229d95752f1b2fc84fde",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/fr",
+      "sha256": "788de9d69c564e238a17eb0c6f146bd5e4bb65f87b97229d95752f1b2fc84fde",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/gb",
+      "sha256": "839aced021b020d28f2b059bc7610bb720d5a06c00fdb6f9b37151b83b3bbe8a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/gb",
+      "sha256": "839aced021b020d28f2b059bc7610bb720d5a06c00fdb6f9b37151b83b3bbe8a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/gr",
+      "sha256": "1ba895800e26726495c0ac6d080771e6cdc7438a77261b7c36b1283ab2341d36",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/gr",
+      "sha256": "1ba895800e26726495c0ac6d080771e6cdc7438a77261b7c36b1283ab2341d36",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/it",
+      "sha256": "3b5ca2873bc67e2ccce02e710a41bf9a534d4808bc070e1a7b20d7874dd72e89",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/it",
+      "sha256": "3b5ca2873bc67e2ccce02e710a41bf9a534d4808bc070e1a7b20d7874dd72e89",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/jp",
+      "sha256": "6cc17caecba8b7856ca85e5bf76387014989c9a11d663d918d288168d7109e1f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/jp",
+      "sha256": "6cc17caecba8b7856ca85e5bf76387014989c9a11d663d918d288168d7109e1f",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/kr",
+      "sha256": "7f4d4e0e8156c588071dd41654dc296f3c7eda127772c742cd2df1367c61422b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/kr",
+      "sha256": "7f4d4e0e8156c588071dd41654dc296f3c7eda127772c742cd2df1367c61422b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/lt",
+      "sha256": "461a7a46d88ae49c318203b9679dbb55eac98d43cf7f839d979ae4c13e0fc4f7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/lt",
+      "sha256": "461a7a46d88ae49c318203b9679dbb55eac98d43cf7f839d979ae4c13e0fc4f7",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/lv",
+      "sha256": "ab5b0f6997428c2ee2b87e32364230e0413ca9bd7d65f318b206b04ac99107f1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/lv",
+      "sha256": "ab5b0f6997428c2ee2b87e32364230e0413ca9bd7d65f318b206b04ac99107f1",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/nl",
+      "sha256": "8d69c0fcd5b8c6ebae7178868fae940329b4c5109f77a80ed4cc24c453cd49e5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/nl",
+      "sha256": "8d69c0fcd5b8c6ebae7178868fae940329b4c5109f77a80ed4cc24c453cd49e5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/no",
+      "sha256": "f6d99d7face0432ad5e1a9731174681368e5806c1ced67145f37831d87979a2d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/no",
+      "sha256": "f6d99d7face0432ad5e1a9731174681368e5806c1ced67145f37831d87979a2d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/pl",
+      "sha256": "6f9521b5d7a687b8b5cfe4a40cd5f9f1ceed38144993633188d5aef912c47eed",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/pl",
+      "sha256": "6f9521b5d7a687b8b5cfe4a40cd5f9f1ceed38144993633188d5aef912c47eed",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/pt",
+      "sha256": "91c4246a6e7728e85a4c6f8427a1eca723c79856924fd3ffeaf01925f722bfc5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/pt",
+      "sha256": "91c4246a6e7728e85a4c6f8427a1eca723c79856924fd3ffeaf01925f722bfc5",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/ro",
+      "sha256": "ee756aad63da40ea02a952d9441eb8e5e679fe9298fcbf309c57e958d15c603b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/ro",
+      "sha256": "ee756aad63da40ea02a952d9441eb8e5e679fe9298fcbf309c57e958d15c603b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/ru",
+      "sha256": "5e951ba392797ccd16e26cd1b2d6fef8c5110cdb6fd6d05611dc040afaa595ae",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/ru",
+      "sha256": "5e951ba392797ccd16e26cd1b2d6fef8c5110cdb6fd6d05611dc040afaa595ae",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/se",
+      "sha256": "391bc4ed53655897ae6a9d1d34fc2ec6e0047505e9ca2cccaa4425d0ae60bbd6",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/se",
+      "sha256": "391bc4ed53655897ae6a9d1d34fc2ec6e0047505e9ca2cccaa4425d0ae60bbd6",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/sk",
+      "sha256": "790faef3abe4a3e7651a65d826f137164ec1cdfd633a7334091c4eb43879ea6a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/sk",
+      "sha256": "790faef3abe4a3e7651a65d826f137164ec1cdfd633a7334091c4eb43879ea6a",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/solaris",
+      "sha256": "364f88f9d81591d0cfb2a7d137cc31a2e27b0b12028ffadc64b6903f9e84dc97",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/solaris",
+      "sha256": "364f88f9d81591d0cfb2a7d137cc31a2e27b0b12028ffadc64b6903f9e84dc97",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/tr",
+      "sha256": "638be80b30d0b2fcec4338ae9faa28feb545972bea0e8379bc7e5a40b1c9fe5b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/tr",
+      "sha256": "638be80b30d0b2fcec4338ae9faa28feb545972bea0e8379bc7e5a40b1c9fe5b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/tw",
+      "sha256": "0baabd4d32381903c0cf80afa6d27e5f42f2d704b93da6d9a8b89e3232ec012d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/tw",
+      "sha256": "0baabd4d32381903c0cf80afa6d27e5f42f2d704b93da6d9a8b89e3232ec012d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/ua",
+      "sha256": "d74d7689a6888aafd50c7f8a22665f2db44dfdc7fc938184d3028bfe3eb2f333",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/ua",
+      "sha256": "d74d7689a6888aafd50c7f8a22665f2db44dfdc7fc938184d3028bfe3eb2f333",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/sun_vndr/us",
+      "sha256": "2b992104515732074474e52df36ce1b18a3998d114d924485950608d553a607b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/sun_vndr/us",
+      "sha256": "2b992104515732074474e52df36ce1b18a3998d114d924485950608d553a607b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/xfree68_vndr/amiga",
+      "sha256": "5076bc17b2083f346a05dd13b3ebf44cbd4526064bd5ec48154343a133dbda8b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/xfree68_vndr/amiga",
+      "sha256": "5076bc17b2083f346a05dd13b3ebf44cbd4526064bd5ec48154343a133dbda8b",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/symbols/xfree68_vndr/ataritt",
+      "sha256": "bb4b57d006e1eec048ecb57ee0326d3e2cb47320a8888eeb0962f4fcb9f99f3d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/symbols/xfree68_vndr/ataritt",
+      "sha256": "bb4b57d006e1eec048ecb57ee0326d3e2cb47320a8888eeb0962f4fcb9f99f3d",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/digital_vndr/lk",
+      "sha256": "2edf152ecdba233761f41559374454c53332251d8a98a787b1ec60d12a0987ae",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/digital_vndr/lk",
+      "sha256": "2edf152ecdba233761f41559374454c53332251d8a98a787b1ec60d12a0987ae",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/digital_vndr/pc",
+      "sha256": "ae823d2f59bfa9df036ac82972c7e2faf51a892fb11d0336b0b8d5ab9b039613",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/digital_vndr/pc",
+      "sha256": "ae823d2f59bfa9df036ac82972c7e2faf51a892fb11d0336b0b8d5ab9b039613",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/sgi_vndr/indigo",
+      "sha256": "e7567e5fc5892eb1c23b82d3bcfc2a1e2c8eb6e499bac24e641ff300a066cbe3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/sgi_vndr/indigo",
+      "sha256": "e7567e5fc5892eb1c23b82d3bcfc2a1e2c8eb6e499bac24e641ff300a066cbe3",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/sgi_vndr/indy",
+      "sha256": "a8e49f04133afdbbcf18b1039f9b9fdd912729ce5d6dc89eacecde2a8263a82c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/sgi_vndr/indy",
+      "sha256": "a8e49f04133afdbbcf18b1039f9b9fdd912729ce5d6dc89eacecde2a8263a82c",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/keycodes/sgi_vndr/iris",
+      "sha256": "ce07fdaefbf422068d81ad11db84e97e5293e623815707b1bff37ee5089a38f8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/keycodes/sgi_vndr/iris",
+      "sha256": "ce07fdaefbf422068d81ad11db84e97e5293e623815707b1bff37ee5089a38f8",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/digital_vndr/lk",
+      "sha256": "bcaf380ea202b768b0b6de1d087685dc972d830550826a20f4c05634ab300aeb",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/digital_vndr/lk",
+      "sha256": "bcaf380ea202b768b0b6de1d087685dc972d830550826a20f4c05634ab300aeb",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/digital_vndr/pc",
+      "sha256": "54208cfcc92b209356668aa25fd6791d874a142219b851cf05ff9904b63cafb4",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/digital_vndr/pc",
+      "sha256": "54208cfcc92b209356668aa25fd6791d874a142219b851cf05ff9904b63cafb4",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/digital_vndr/unix",
+      "sha256": "a4c55d89a1ccd5741d8b36d24e18c2b5bc64ca26a4eaabe3c2f7e8e3b3039e99",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/digital_vndr/unix",
+      "sha256": "a4c55d89a1ccd5741d8b36d24e18c2b5bc64ca26a4eaabe3c2f7e8e3b3039e99",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/sgi_vndr/O2",
+      "sha256": "53b0ebfaa77d50df3281854f56aaf838494afdebdbe6dbe0356f93b7ec67a7c2",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/sgi_vndr/O2",
+      "sha256": "53b0ebfaa77d50df3281854f56aaf838494afdebdbe6dbe0356f93b7ec67a7c2",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/sgi_vndr/indigo",
+      "sha256": "ad5059622a0b70e9555cb09515f73474abd16035b28742ca3b4b685530ef09ed",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/sgi_vndr/indigo",
+      "sha256": "ad5059622a0b70e9555cb09515f73474abd16035b28742ca3b4b685530ef09ed",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/X11/xkb/geometry/sgi_vndr/indy",
+      "sha256": "e108ef5dc954bd6f4fa8ce1588822b4dfdea3552975b4d6d64a3b58a4bbada49",
+      "mode": 420
+    },
+    {
+      "path": "/usr/share/xkeyboard-config-2/geometry/sgi_vndr/indy",
+      "sha256": "e108ef5dc954bd6f4fa8ce1588822b4dfdea3552975b4d6d64a3b58a4bbada49",
+      "mode": 420
+    },
+    {
+      "path": "/usr/bin/gcc",
+      "sha256": "8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287",
+      "mode": 493
+    },
+    {
+      "path": "/usr/bin/cc",
+      "sha256": "8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287",
+      "mode": 493
+    },
+    {
+      "path": "/usr/bin/ldd",
+      "sha256": "94f332c23cf00596d0387d6f54693664f9a53334d65953b2ff308057cc8530b1",
+      "mode": 493
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-map-generator",
+      "sha256": "d882a2b7f8a2ee9e1ba84f8b7f15657bc11f5394bc72a88110bb18eca08d730d",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libxkbcommon.so.0.13.2",
+      "sha256": "e475adbf5abd181b1bdfdeba70ad4d501cb296bbf05b13e8649fd71b3989ee07",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libxkbcommon.so.0",
+      "sha256": "e475adbf5abd181b1bdfdeba70ad4d501cb296bbf05b13e8649fd71b3989ee07",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libc.so.6",
+      "sha256": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+      "mode": 493
+    },
+    {
+      "path": "/lib64/ld-linux-x86-64.so.2",
+      "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/ld-linux-x86-64.so.2",
+      "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib64/ld-linux-x86-64.so.2",
+      "sha256": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+      "mode": 493
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+      "sha256": "9a4409e5f00efe5a0f6bf570b00d28c57579f892fa99e6cea276b80d51f17820",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libwayland-client.so.0.26.0",
+      "sha256": "39c83ae7b73d22f18b4f81da14749c4535c304b7e62910a2f1aae682f279cc9d",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libwayland-client.so.0",
+      "sha256": "39c83ae7b73d22f18b4f81da14749c4535c304b7e62910a2f1aae682f279cc9d",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libcrypto.so.3",
+      "sha256": "24882a9ce56d9bf2f4c3722772aa8ce99e53b7165d70072ad06c9dd35cee13e3",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libffi.so.8.5.0",
+      "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libffi.so.8",
+      "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libz.so.1.3.2",
+      "sha256": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libz.so.1",
+      "sha256": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libbrotlienc.so.1.2.0",
+      "sha256": "8dbc539197d276310ce2750dcb73de5465a1259d46a5d1894e6138fd354bf5c7",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libbrotlienc.so.1",
+      "sha256": "8dbc539197d276310ce2750dcb73de5465a1259d46a5d1894e6138fd354bf5c7",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libbrotlidec.so.1.2.0",
+      "sha256": "0883fb05fa42aa6a883722098530ab08551ed317e38a2311f5c96e94dd460979",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libbrotlidec.so.1",
+      "sha256": "0883fb05fa42aa6a883722098530ab08551ed317e38a2311f5c96e94dd460979",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libzstd.so.1.5.7",
+      "sha256": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libzstd.so.1",
+      "sha256": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libm.so.6",
+      "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libbrotlicommon.so.1.2.0",
+      "sha256": "4f895094b7b6ff9c82909e6516bc9cf212e2ec5af451d39bf1bcbc5e5fa225b2",
+      "mode": 493
+    },
+    {
+      "path": "/usr/lib/libbrotlicommon.so.1",
+      "sha256": "4f895094b7b6ff9c82909e6516bc9cf212e2ec5af451d39bf1bcbc5e5fa225b2",
+      "mode": 493
+    },
+    {
+      "path": "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-protocol-cpu",
+      "sha256": "6fc541d42eff75f621ae86c3ed786aa2e4c7694fb67b7c0c50b9a629c2e7312b",
+      "mode": 493
+    }
+  ],
+  "symlinks": [
+    {
+      "path": "/usr/bin/cc",
+      "target": "gcc"
+    },
+    {
+      "path": "/usr/lib/libbrotlicommon.so.1",
+      "target": "libbrotlicommon.so.1.2.0"
+    },
+    {
+      "path": "/usr/lib/libbrotlidec.so.1",
+      "target": "libbrotlidec.so.1.2.0"
+    },
+    {
+      "path": "/usr/lib/libbrotlienc.so.1",
+      "target": "libbrotlienc.so.1.2.0"
+    },
+    {
+      "path": "/usr/lib/libffi.so.8",
+      "target": "libffi.so.8.5.0"
+    },
+    {
+      "path": "/usr/lib/libwayland-client.so.0",
+      "target": "libwayland-client.so.0.26.0"
+    },
+    {
+      "path": "/usr/lib/libxkbcommon.so.0",
+      "target": "libxkbcommon.so.0.13.2"
+    },
+    {
+      "path": "/usr/lib/libz.so.1",
+      "target": "libz.so.1.3.2"
+    },
+    {
+      "path": "/usr/lib/libzstd.so.1",
+      "target": "libzstd.so.1.5.7"
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/xorg",
+      "target": "base"
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/xorg.lst",
+      "target": "base.lst"
+    },
+    {
+      "path": "/usr/share/X11/xkb/rules/xorg.xml",
+      "target": "base.xml"
+    }
+  ],
+  "perTranslationUnitHeaders": true,
+  "completeExpandedMapGeneratorSourceTreePinned": true,
+  "sourceUnchanged": true,
+  "nativeExecuted": false,
+  "mainWrites": false,
+  "binaries": {
+    "physical-map-generator": "d882a2b7f8a2ee9e1ba84f8b7f15657bc11f5394bc72a88110bb18eca08d730d",
+    "physical-keyboard": "9a4409e5f00efe5a0f6bf570b00d28c57579f892fa99e6cea276b80d51f17820",
+    "physical-protocol-cpu": "6fc541d42eff75f621ae86c3ed786aa2e4c7694fb67b7c0c50b9a629c2e7312b"
+  }
+}

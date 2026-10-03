@@ -1,0 +1,32 @@
+--- service-review-v7/CONTRACT.md
++++ service-review-v8/CONTRACT.md
+@@ -227,3 +227,29 @@
+ publishing a visual actor. This exception requires no displayed previous actor.
+ A retained displayed actor must still reverse from its actual per-output origins,
+ even if the native endpoint already matches.
++
++Private runtime lifecycle candidate
++-----------------------------------
++A runtime owns one private UID directory, one never-replaced flock inode and an
++exact PID/start-time/nonce record. It binds one socket under that lease. An
++existing socket may be removed only when the archived exact owner is dead and
++the stored socket device/inode still matches. Unknown/foreign/replaced socket,
++symlink, public directory or live owner refuses startup. Missing state queries
++and idle stop never create a directory, actor, lock or daemon.
++
++Accepted input is durably journaled (atomic replace, file and directory fsync)
++before its API acceptance can be returned. Complete receipt ownership, pending
++commands and current scene validation/intent are one journal snapshot under the
++reservation lock. Journal failure revokes native authority and refuses all later
++requests; no callback may commit from an undurable reservation. Repeated writes
++use one monotonic snapshot number and exact compositor session.
++
++A restart refuses nonempty unresolved journals before listening or constructing
++an actor unless an explicit recovery handler is supplied. Such a handler is not
++authority merely because a journal says validated: fresh native exact family,
++identity/PID, workspace/output and latest receipt proof are still required. This
++revision provides the recovery boundary and refusal, not a production native
++recovery implementation. Normal shutdown stops acceptance, settles existing
++controller semantics through fresh guarded core, destroys clients before any
++external compositor cleanup and releases only its own PID/socket identities.
++A failed actor shutdown is explicit; it is not normal success.

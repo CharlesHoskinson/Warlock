@@ -1,0 +1,23 @@
+module responsive_layout_test {
+  import responsive_layout.* from "./responsive_layout"
+  run minimumGalleryKeepsWholeNamedCellTest=init.then(all{assert(gridH==88 and thumbH==36 and thumbH+52==gridH),fire(Select)})
+  run minimumClientKeepsEditableFieldsAndListTest=init.then(all{assert(pathW==302 and filterW==226 and listH==60),fire(Select)})
+    .then(all{assert(fileW==330 and not(overlay)),fire(Details)})
+    .then(all{assert(overlay and fileW==330),fire(Clear)})
+    .then(all{assert(not(overlay)),fire(Navigate)})
+  run quarterAndThirdKeepFullListBehindOverlayTest=init.then(fire(Resize({w:487,h:487}))).then(fire(Select)).then(fire(Details))
+    .then(all{assert(overlay and fileW==487),fire(Resize({w:533,h:1000}))})
+    .then(all{assert(fileW==533),fire(Navigate)})
+  run halfCanDockDetailsWithoutErasingFilesTest=init.then(fire(Resize({w:800,h:320}))).then(fire(Select))
+    .then(all{assert(docks(width) and fileW==500 and listH==96),fire(Details)})
+    .then(all{assert(fileW==800),fire(Navigate)})
+  run desktopSidebarAndDetailsLeavePositiveMainTest=init.then(fire(Resize({w:1320,h:800}))).then(fire(Select))
+    .then(all{assert(mainW(width)==1076 and fileW==776),fire(Filter)})
+    .then(all{assert(pathW>=100),fire(Navigate)})
+  run breakpointChangesDismissTransientOverlaysTest=init.then(fire(Select)).then(fire(Details)).then(fire(Sidebar))
+    .then(fire(Resize({w:1000,h:800}))).then(all{assert(not(overlay) and not(sidebar)),fire(Resize({w:330,h:320}))})
+    .then(all{assert(fileW==330 and not(overlay)),fire(Navigate)})
+  run shortestSidebarResizeStillKeepsTreeReachableTest=init.then(fire(Sidebar)).then(fire(Resize({w:487,h:320})))
+    .then(all{assert(sidebar and bodyH==166 and fileW==487),fire(Navigate)})
+    .then(all{assert(not(sidebar)),fire(Clear)})
+}

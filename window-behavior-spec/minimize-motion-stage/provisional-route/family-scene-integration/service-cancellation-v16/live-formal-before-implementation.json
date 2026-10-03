@@ -1,0 +1,47 @@
+{
+  "contractModelOnly": true,
+  "nativeLaunch": false,
+  "baseFreezePending": true,
+  "named": 31,
+  "samples": 2000,
+  "maxSteps": 100,
+  "sourceSHA256": {
+    "LIVE_CANCELLATION_CONTRACT.md": "c5de78bddd0105ff3fd044990e5883d235e561e2486d7c59edc121897ae5c579",
+    "live_cancel.qnt": "860a6a9cd933624ef619733c053a948627a90c89331c28d0f07803d7a1770049",
+    "live_cancel_test.qnt": "b91bc884de7edd1a10138863d0dbc65fa42e468f4e7616098ae284466df8bc9b"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "live_cancel_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "live_cancel_test.qnt",
+        "--backend=rust",
+        "--seed=2026100116"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "live_cancel.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100116",
+        "--verbosity=0"
+      ],
+      "exitCode": 0
+    }
+  ]
+}

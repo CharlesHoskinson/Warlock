@@ -1,0 +1,23 @@
+{
+  "source": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/reversal-freeze/hypr-window-motion",
+  "sourceSHA256": "6add5c333c639b4f926be4ff4c983e96f8c199ef8271de2859dad7b5478806fc",
+  "traces": 30,
+  "states": 3030,
+  "eventTypes": [
+    "Activate",
+    "Close",
+    "EnableMotion",
+    "Finish",
+    "Minimize",
+    "PIDChangeBeforeReady",
+    "Ready",
+    "Reduce",
+    "Reload",
+    "Restore",
+    "Reuse",
+    "ReuseBeforeReady",
+    "Watchdog"
+  ],
+  "result": "pass",
+  "scope": "Selected controller source; deterministic compositor/renderer adapter; no native GUI timing"
+}

@@ -1,0 +1,10 @@
+
+  ingress_context_test
+    ok receiptBeforeContextRevokesOldEndpointTest passed 1 test(s)
+    ok reorderedOldContextCannotRetargetLatestTest passed 1 test(s)
+    ok contextFailureHasNoUnvalidatedNativeSettlementTest passed 1 test(s)
+    ok inconsistentNativeContextCannotStartExpansionTest passed 1 test(s)
+    ok staleFailureCannotCancelLatestActivationTest passed 1 test(s)
+    ok freshValidatedLatestNativeCommitTest passed 1 test(s)
+
+  6 passing (324ms)

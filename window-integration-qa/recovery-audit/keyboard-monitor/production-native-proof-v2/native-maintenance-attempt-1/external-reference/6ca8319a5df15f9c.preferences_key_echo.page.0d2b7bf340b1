@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_key_echo" xml:lang="eo">
+  <info>
+    <title type="link">Eĥo</title>
+    <title type="sort">4. Eĥo</title>
+    <desc>Agordi kion oni parolas dum vi tajpas</desc>
+    <link type="guide" xref="preferences#orca"/>
+    <link type="next" xref="preferences_key_bindings"/>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Agordoj de Eĥo</title>
+  <section id="keyecho">
+    <title>Ebligi klavan eĥon</title>
+    <p>La agordo de klava eĥo de Orko kontrolas kio okazas ĉiufoje kiam vi premas klavon. Por ebligi klavan eĥon, marku la markobutonon "Ebligi klavan eĥon". Farante tion, aldoniĝas pliaj markobutonaj opcioj tra kiuj vi povas elekti precize kiujn klavojn eĥi aŭ ne eĥi por plej bone taŭgi al viaj bezonoj.</p>
+    <p>Defaŭlta valoro: markita</p>  
+    <section id="keyecho_enable_alphanumeric">
+      <title>Ebligi alfabetajn klavojn</title>
+      <p>Ĉi tiu opcio kontrolas ĉu klavoj kiel <key>a</key>, <key>b</key>, kaj <key>c</key> estu parolataj dum premado.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="keyecho_enable_numeric">
+      <title>Ebligi numerajn klavojn</title>
+      <p>Ĉi tiu opcio kontrolas ĉu klavoj kiel <key>1</key>, <key>2</key>, kaj <key>3</key> estu parolataj dum premado.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="keyecho_enable_punctuation">
+      <title>Ebligi interpunkciajn klavojn</title>
+      <p>Ĉi tiu opcio kontrolas ĉu klavoj kiel <key>%</key>, <key>;</key>, kaj <key>?</key> estu parolataj dum premado.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="keyecho_enable_space">
+      <title>Ebligi spacon</title>
+      <p>Ĉi tiu opcio kontrolas ĉu <key>Space</key> estu parolata dum premado.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="keyecho_enable_modifier">
+      <title>Ebligi modifilajn klavojn</title>
+      <p>Ĉi tiu opcio kontrolas ĉu <key>Shift</key>, <key>Ctrl</key>, <key>Alt</key> kaj <key>Meta</key> estu parolataj dum premado.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="keyecho_enable_function">
+      <title>Ebligi funkciklavorojn</title>
+      <p>Ĉi tiu opcio kontrolas ĉu <key>F1</key> ĝis <key>F12</key> estu parolataj dum premado.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="keyecho_enable_action">
+      <title>Ebligi agoklavojn</title>
+      <p>Ĉi tiu opcio kontrolas ĉu <key>BackSpace</key>, <key>Delete </key>, <key>Return</key>, <key>Esc</key>, <key>Tab</key>, <key>Page Up</key>, <key>Page Down</key>, <key>Home</key>, kaj <key>End</key> estu parolataj dum premado.</p>
+      <p>Defaŭlta valoro: markita</p>
+    </section>
+    <section id="keyecho_enable_navigation">
+      <title>Ebligi navigajn klavojn</title>
+      <p>Ĉi tiu opcio kontrolas ĉu <key>Left</key>, <key>Right</key>, <key>Up</key>, kaj <key>Down</key> estu parolataj dum premado. Ĉi tiu opcio ankaŭ aplikiĝas al iu ajn klavkombino en kiu <key>Orko Modifier</key> estas tenata, ekzemple dum plata revizio estas uzata.</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+    </section>
+    <section id="keyecho_enable_diacritical">
+      <title>Ebligi ne-spacigan diakritikan klavon</title>
+      <p>Ĉi tiu opcio kontrolas ĉu "mortaj klavoj" uzataj por generi akcentitajn literojn estu parolataj dum premado.</p>
+      <p>Defaŭlta valoro: nemarkita</p>
+    </section>
+  </section>
+  <section id="characterecho">
+    <title>Ebligi eĥon laŭ signo</title>
+    <p>Ebligi ĉi tiun opcion igas Orko-n eĥi la signon kiun vi ĵus tajpis.</p>
+    <p>Kvankam eĥo laŭ signo ŝajnas tre simila al klava eĥo de alfabetaj, numeraj kaj interpunkciaj klavoj, ekzistas gravaj diferencoj, precipe rilate al akcentitaj literoj kaj aliaj simboloj por kiuj ne ekzistas dediĉita klavo:</p>
+    <list>
+      <item>
+        <p>Klava eĥo igas <app>Orko</app> anonci tion kion vi ĵus <em> premis</em>.</p>
+      </item>
+      <item>
+        <p>Signa eĥo igas <app>Orko</app> anonci tion kio ĵus estis <em>enigita</em>.</p>
+      </item>
+    </list>
+    <p>Do por ke akcentitaj signoj estu parolataj dum vi tajpas ilin, vi devas ebligi signan eĥon.</p>
+    <p>Defaŭlta valoro: nemarkita</p>
+    <note style="tip">
+      <title>Ebligi kaj klavan eĥon kaj signan eĥon</title>
+      <p>Se vi ŝatas klavan eĥon kaj vi ofte tajpas akcentitajn signojn, konsideru ebligi ambaŭ. La logiko de signa eĥo de <app>Orko</app> provas filtri signojn kiuj estis parolataj pro klava eĥo, tiel minimumigante la verŝajnecon de "duobla parolo" dum vi tajpas.</p>
+    </note>
+  </section>
+  <section id="wordandsentenceecho">
+    <title>Ebligi eĥon laŭ vorto kaj Ebligi eĥon laŭ frazo</title>
+    <p>Markante la markobutonon <gui>Ebligi eĥon laŭ vorto</gui> igas <app>Orko</app> eĥi la vorton kiun vi ĵus tajpis. Simile, markante la markobutonon <gui>Ebligi eĥon laŭ frazo</gui> igas <app>Orko</app> eĥi la frazon kiun vi ĵus tajpis.</p>
+    <p>Defaŭlta valoro: nemarkita</p>
+  </section>
+</page>

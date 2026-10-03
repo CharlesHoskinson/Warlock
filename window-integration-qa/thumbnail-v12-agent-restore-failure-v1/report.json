@@ -1,0 +1,1653 @@
+{
+  "result": "bounded-failure-replay-pass",
+  "campaignResult": "fail",
+  "nativeAcceptance": false,
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/report.json": {
+      "sha256": "d3dbddcb4653874cf93e1df59a4624ce580f44d06514b02f1052e56a1efacf7b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-evidence.json": {
+      "sha256": "99c464bdab6d0dc9aee9fb8fedda4a446312b91ff290800a485545a7cf9b0edc",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/actual-terminal-binding.json": {
+      "sha256": "f52b9a7ba73ad3e1618507f830c499bc047744764fdb2cdff50e17767c299747",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/completed-helpers.json": {
+      "sha256": "4f3504703102b807df6a3fff24c2ec28b4e7b6ced0ab647cd23342798d0bdb65",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-retirement-1.json": {
+      "sha256": "1f5e965e8359be757536438b15e8af5e6bde4152a0cc8dca9a161e9b1c75458f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-retirement-2.json": {
+      "sha256": "c6f6e448c293ca37b1d1a640a9aa394e24cf1310c8466d95a5c3dd2779eac2bc",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v12-root-failure-audit-v1.json": {
+      "sha256": "f3d2476e1d062bf664659fffb40ec431780e3b89b6e79654fd9623af8ba2601f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/frozen-inputs.json": {
+      "sha256": "27816ce53607b0217d41974ecf2f88f91390053a916b310d106a5c851fe87d4b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/manifest-restore-planning-v27.json": {
+      "sha256": "54857ba311e2862e37037195283cf98b6fba8bb286cb33d32e92685671304e40",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/actual-modules-before.json": {
+      "sha256": "c298ac2e548fd14b0321e0f8daa9392e32c3260d05acd52729e81dbf6c7dbd17",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/native_runtime.py": {
+      "sha256": "062916be26cd261232e3abce5053272aa21ca5798a2d3d09415b9af037c0b70b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/service_runtime.py": {
+      "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/native_desktop.py": {
+      "sha256": "1710013ef0fe5e05da92ab0b8ca95ff024d94eba7f0aeff6b7ab6fc6a1c19dba",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/scene_manager.py": {
+      "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/scene_controller.py": {
+      "sha256": "7c8039b5acc1cc1333d72566558d09a5c6162f8495c436dc522e0d23d1a368b7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/pipe_transport.py": {
+      "sha256": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/context_provider.py": {
+      "sha256": "0e3daea910a49f44e63c6321859dd8598c4e610d16e1cc445070602e5bec1b78",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/recovery_runtime.py": {
+      "sha256": "5c77942c9afdfbc87c8cc28a93d3285de191c66b1390d770859f22173cfae892",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/recovery_resources.py": {
+      "sha256": "133edcf7b92aaa2f521af90922c571d1637ab8e8c9536a7cf57a6475fa18ce02",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/recovery_cancel.py": {
+      "sha256": "8647a336a7b83ec5de7d60f63ccb0436f7b684f85879e43c7ae8f21ff499b219",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/readonly_ipc.py": {
+      "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/owned_commands.py": {
+      "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/helper_supervisor.py": {
+      "sha256": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/owned_launch.py": {
+      "sha256": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/helper_policy.py": {
+      "sha256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/timeout_adapter.py": {
+      "sha256": "14ccc4078364fdced5a8fa9a499567dd0e2eb592ff1b7f88ad38a39743e9e165",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/snapshot_cache.py": {
+      "sha256": "21f0d47313c053964fd8e81736843d8b62ecadab5eee3ebba80ef5801e8bf8ee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/production_motion_6d9.py": {
+      "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/batch_preview.py": {
+      "sha256": "8df983db741a6a39b3b48d707f17f5b680056b94da14cfb2068fed238dc42746",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/actual-modules-at-owner-bind.json": {
+      "sha256": "4d05736c48ef2bafcf1d6fff05b1c4532cb4338beb54a0cf87e53327a9068ce9",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/actual-modules-after.json": {
+      "sha256": "4f004a8e22987a5f48b4a8c8987fb99925e097e0acfa08f9af109affa249e8d8",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/actual-modules-final-confirm.json": {
+      "sha256": "4914db54e55e62637156b6f9a8fe39b79a655bc327a6c688b9e0db4e0357e2f7",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/native_integration.py": {
+      "sha256": "464f6c6c2d7264a0b86275996242973a217115cef9e1737c0e0f3e479ed39093",
+      "mode": 493
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/service_observer.py": {
+      "sha256": "9ea62c79ef8eca627df3d588a9f4d61022d58403124ecd8f98c5d85698a1a98b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/module_binding.py": {
+      "sha256": "a38675bade47aa0e2998448c43c079c945c337b15e300575c99d42efb03d27a7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/capture_evidence.py": {
+      "sha256": "7d01fe5ffdbca33a3d3eaa4eafe2a925042414ef9fe3e65f895ec8f1acb19be6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/helper_setup.py": {
+      "sha256": "435106340de615c71a93b84a584fee877e209bdfc47eb144977460f71cb7031a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/helper_observer.py": {
+      "sha256": "911655aeeaeb835533ccc0a3712fc38833979aa744ed4aaf9152a33cfa48b10a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-epochs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png": {
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-epochs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png": {
+      "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-epochs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png": {
+      "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-cache-pairs/4363c72dc22e1501e30ff652064329700c3131a12b9e90d747b26ce6ab695eef.json": {
+      "sha256": "4363c72dc22e1501e30ff652064329700c3131a12b9e90d747b26ce6ab695eef",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-cache-pairs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png": {
+      "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-cache-pairs/a023d5f764f488d239359559161ca725d29d820dabe5a9a7b4d4a56b6e1e2769.json": {
+      "sha256": "a023d5f764f488d239359559161ca725d29d820dabe5a9a7b4d4a56b6e1e2769",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-cache-pairs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png": {
+      "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-cache-pairs/5e87ec758d45f28a79883d3f87da75587cc8483396f67e17aed49231a5289b12.json": {
+      "sha256": "5e87ec758d45f28a79883d3f87da75587cc8483396f67e17aed49231a5289b12",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-cache-pairs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png": {
+      "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-epochs/67abcae3977e4e78e420ee9e52aad8fc4f0edaca3a9964506fa2f1b7ea9f48fe.png": {
+      "sha256": "67abcae3977e4e78e420ee9e52aad8fc4f0edaca3a9964506fa2f1b7ea9f48fe",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v12/attempt-baseline-1/service-epochs/80a6644518c786dd95a3651a683c3df26516dfcd5c7141b3854edbd7a7ba7a58.png": {
+      "sha256": "80a6644518c786dd95a3651a683c3df26516dfcd5c7141b3854edbd7a7ba7a58",
+      "mode": 384
+    }
+  },
+  "modulePhases": [
+    {
+      "phase": "before",
+      "servicePID": 946679,
+      "serviceStart": 19952373,
+      "all19ActualPathsAndHashesExact": true
+    },
+    {
+      "phase": "owner-module-observation",
+      "servicePID": 946679,
+      "serviceStart": 19952373,
+      "all19ActualPathsAndHashesExact": true
+    },
+    {
+      "phase": "after",
+      "servicePID": 946679,
+      "serviceStart": 19952373,
+      "all19ActualPathsAndHashesExact": true
+    },
+    {
+      "phase": "terminal-post-disk",
+      "servicePID": 946679,
+      "serviceStart": 19952373,
+      "all19ActualPathsAndHashesExact": true
+    }
+  ],
+  "actors": [
+    {
+      "actor": 1,
+      "operation": "minimize",
+      "profile": {
+        "receivedNs": 187404879721660,
+        "reservedNs": 187404879722307,
+        "ingressCommand": "minimize",
+        "contextPending": false,
+        "managerReceipt": 1,
+        "metadataStartNs": 187404881397556,
+        "gestureRetirementScope": [
+          [
+            "0x618a60704010",
+            "18000000",
+            946215
+          ],
+          [
+            "0x618a60de7070",
+            "18000002",
+            946215
+          ],
+          [
+            "0x618a60dc2750",
+            "18000003",
+            946215
+          ]
+        ],
+        "gestureRetirementStartNs": 187404928467935,
+        "gestureRetirementReply": [
+          {
+            "identity": [
+              "0x618a60704010",
+              "18000000",
+              946215
+            ],
+            "retired": false
+          },
+          {
+            "identity": [
+              "0x618a60de7070",
+              "18000002",
+              946215
+            ],
+            "retired": false
+          },
+          {
+            "identity": [
+              "0x618a60dc2750",
+              "18000003",
+              946215
+            ],
+            "retired": false
+          }
+        ],
+        "gestureRetirementFreshNs": 187405041133029,
+        "postRetirementFamily": [
+          {
+            "address": "0x618a60704010",
+            "stableId": "18000000",
+            "pid": 946215,
+            "at": [
+              100,
+              250
+            ],
+            "size": [
+              460,
+              300
+            ],
+            "pinned": false,
+            "floating": true,
+            "fullscreen": 0,
+            "parent": "",
+            "parentStableId": "",
+            "modal": false
+          },
+          {
+            "address": "0x618a60de7070",
+            "stableId": "18000002",
+            "pid": 946215,
+            "at": [
+              260,
+              310
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "pinned": false,
+            "floating": true,
+            "fullscreen": 0,
+            "parent": "0x618a60704010",
+            "parentStableId": "18000000",
+            "modal": true
+          },
+          {
+            "address": "0x618a60dc2750",
+            "stableId": "18000003",
+            "pid": 946215,
+            "at": [
+              330,
+              350
+            ],
+            "size": [
+              240,
+              140
+            ],
+            "pinned": false,
+            "floating": true,
+            "fullscreen": 0,
+            "parent": "0x618a60de7070",
+            "parentStableId": "18000002",
+            "modal": true
+          }
+        ],
+        "resolvedDirection": "minimize",
+        "familyDrawEvidence": {
+          "attempts": 1,
+          "native": [
+            {
+              "address": "0x618a60704010",
+              "stableId": "18000000",
+              "pid": 946215,
+              "parent": "",
+              "parentStableId": "",
+              "modal": false
+            },
+            {
+              "address": "0x618a60a6f450",
+              "stableId": "18000001",
+              "pid": 946215,
+              "parent": "",
+              "parentStableId": "",
+              "modal": false
+            },
+            {
+              "address": "0x618a60de7070",
+              "stableId": "18000002",
+              "pid": 946215,
+              "parent": "0x618a60704010",
+              "parentStableId": "18000000",
+              "modal": true
+            },
+            {
+              "address": "0x618a60dc2750",
+              "stableId": "18000003",
+              "pid": 946215,
+              "parent": "0x618a60de7070",
+              "parentStableId": "18000002",
+              "modal": true
+            }
+          ],
+          "members": [
+            [
+              "0x618a60704010",
+              "18000000",
+              946215
+            ],
+            [
+              "0x618a60dc2750",
+              "18000003",
+              946215
+            ],
+            [
+              "0x618a60de7070",
+              "18000002",
+              946215
+            ]
+          ],
+          "focus": [
+            "0x618a60dc2750",
+            "18000003",
+            946215
+          ],
+          "drawOrder": [
+            [
+              "0x618a60704010",
+              "18000000",
+              946215
+            ],
+            [
+              "0x618a60de7070",
+              "18000002",
+              946215
+            ],
+            [
+              "0x618a60dc2750",
+              "18000003",
+              946215
+            ]
+          ],
+          "paintWitness": "WindowState-vector+native-render-plane+ancestor-constraints",
+          "activePaintIdentity": null
+        },
+        "metadataValidatedNs": 187405042175716,
+        "seedQueuedNs": 187405917220219,
+        "cleanupQueuedNs": 187406652062606,
+        "settlementReason": "native handover complete",
+        "cleanupAckNs": 187406656269486
+      },
+      "relativeProfileMs": {
+        "receivedNs": 0.0,
+        "reservedNs": 0.000647,
+        "metadataStartNs": 1.675896,
+        "gestureRetirementStartNs": 48.746275,
+        "gestureRetirementFreshNs": 161.411369,
+        "metadataValidatedNs": 162.454056,
+        "seedQueuedNs": 1037.498559,
+        "cleanupQueuedNs": 1772.340946,
+        "cleanupAckNs": 1776.547826
+      },
+      "actualReturnedCaptures": 3,
+      "capturedStableIds": [
+        "18000000",
+        "18000002",
+        "18000003"
+      ],
+      "recordSourceCount": 3,
+      "ready": true,
+      "results": [
+        {
+          "identity": [
+            "0x618a60704010",
+            "18000000",
+            946215
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 187406097207432
+        },
+        {
+          "identity": [
+            "0x618a60de7070",
+            "18000002",
+            946215
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 187406264177730
+        },
+        {
+          "identity": [
+            "0x618a60dc2750",
+            "18000003",
+            946215
+          ],
+          "operation": "minimize",
+          "reason": "presented ready",
+          "committedNs": 187406375568345
+        }
+      ],
+      "rendererEvents": [
+        "shaderPrecision",
+        "samplingExperiment",
+        "quantizedOverExperiment",
+        "rasterPathSelected",
+        "renderPipelineSelected",
+        "backendObserved",
+        "rasterState",
+        "gpu",
+        "outputs",
+        "uploaded",
+        "uploaded",
+        "uploaded",
+        "seeded",
+        "samplingConfigured",
+        "samplingConfigured",
+        "samplingConfigured",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "ready",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "quantizedOverFrameConfigured",
+        "swap",
+        "presented",
+        "endpoint",
+        "cancelled"
+      ]
+    },
+    {
+      "actor": 2,
+      "operation": "restore",
+      "profile": {
+        "receivedNs": 187408325540830,
+        "reservedNs": 187408325541332,
+        "ingressCommand": "restore",
+        "contextPending": false,
+        "managerReceipt": 2,
+        "metadataStartNs": 187408327935772,
+        "gestureRetirementScope": [
+          [
+            "0x618a60704010",
+            "18000000",
+            946215
+          ],
+          [
+            "0x618a60de7070",
+            "18000002",
+            946215
+          ],
+          [
+            "0x618a60dc2750",
+            "18000003",
+            946215
+          ]
+        ],
+        "gestureRetirementStartNs": 187408378438303,
+        "gestureRetirementReply": [
+          {
+            "identity": [
+              "0x618a60704010",
+              "18000000",
+              946215
+            ],
+            "retired": false
+          },
+          {
+            "identity": [
+              "0x618a60de7070",
+              "18000002",
+              946215
+            ],
+            "retired": false
+          },
+          {
+            "identity": [
+              "0x618a60dc2750",
+              "18000003",
+              946215
+            ],
+            "retired": false
+          }
+        ],
+        "gestureRetirementFreshNs": 187408475052038,
+        "postRetirementFamily": [
+          {
+            "address": "0x618a60704010",
+            "stableId": "18000000",
+            "pid": 946215,
+            "at": [
+              100,
+              250
+            ],
+            "size": [
+              460,
+              300
+            ],
+            "pinned": false,
+            "floating": true,
+            "fullscreen": 0,
+            "parent": "",
+            "parentStableId": "",
+            "modal": false
+          },
+          {
+            "address": "0x618a60de7070",
+            "stableId": "18000002",
+            "pid": 946215,
+            "at": [
+              260,
+              310
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "pinned": false,
+            "floating": true,
+            "fullscreen": 0,
+            "parent": "0x618a60704010",
+            "parentStableId": "18000000",
+            "modal": true
+          },
+          {
+            "address": "0x618a60dc2750",
+            "stableId": "18000003",
+            "pid": 946215,
+            "at": [
+              330,
+              350
+            ],
+            "size": [
+              240,
+              140
+            ],
+            "pinned": false,
+            "floating": true,
+            "fullscreen": 0,
+            "parent": "0x618a60de7070",
+            "parentStableId": "18000002",
+            "modal": true
+          }
+        ],
+        "resolvedDirection": "restore",
+        "familyDrawEvidence": {
+          "attempts": 1,
+          "native": [
+            {
+              "address": "0x618a60704010",
+              "stableId": "18000000",
+              "pid": 946215,
+              "parent": "",
+              "parentStableId": "",
+              "modal": false
+            },
+            {
+              "address": "0x618a60a6f450",
+              "stableId": "18000001",
+              "pid": 946215,
+              "parent": "",
+              "parentStableId": "",
+              "modal": false
+            },
+            {
+              "address": "0x618a60de7070",
+              "stableId": "18000002",
+              "pid": 946215,
+              "parent": "0x618a60704010",
+              "parentStableId": "18000000",
+              "modal": true
+            },
+            {
+              "address": "0x618a60dc2750",
+              "stableId": "18000003",
+              "pid": 946215,
+              "parent": "0x618a60de7070",
+              "parentStableId": "18000002",
+              "modal": true
+            }
+          ],
+          "members": [
+            [
+              "0x618a60704010",
+              "18000000",
+              946215
+            ],
+            [
+              "0x618a60dc2750",
+              "18000003",
+              946215
+            ],
+            [
+              "0x618a60de7070",
+              "18000002",
+              946215
+            ]
+          ],
+          "focus": [
+            "0x618a60dc2750",
+            "18000003",
+            946215
+          ],
+          "drawOrder": [
+            [
+              "0x618a60704010",
+              "18000000",
+              946215
+            ],
+            [
+              "0x618a60de7070",
+              "18000002",
+              946215
+            ],
+            [
+              "0x618a60dc2750",
+              "18000003",
+              946215
+            ]
+          ],
+          "paintWitness": "WindowState-vector+native-render-plane+ancestor-constraints",
+          "activePaintIdentity": null
+        },
+        "metadataValidatedNs": 187409417692188,
+        "cleanupQueuedNs": 187410987418030,
+        "settlementReason": "controller deadline",
+        "cleanupAckNs": 187410992754953
+      },
+      "relativeProfileMs": {
+        "receivedNs": 0.0,
+        "reservedNs": 0.000502,
+        "metadataStartNs": 2.394942,
+        "gestureRetirementStartNs": 52.897473,
+        "gestureRetirementFreshNs": 149.511208,
+        "metadataValidatedNs": 1092.151358,
+        "cleanupQueuedNs": 2661.8772,
+        "cleanupAckNs": 2667.214123
+      },
+      "actualReturnedCaptures": 2,
+      "capturedStableIds": [
+        "18000000",
+        "18000002"
+      ],
+      "recordSourceCount": 0,
+      "ready": false,
+      "results": [
+        {
+          "identity": [
+            "0x618a60704010",
+            "18000000",
+            946215
+          ],
+          "operation": "restore",
+          "reason": "controller deadline",
+          "committedNs": 187410611009836
+        },
+        {
+          "identity": [
+            "0x618a60de7070",
+            "18000002",
+            946215
+          ],
+          "operation": "restore",
+          "reason": "controller deadline",
+          "committedNs": 187410789967429
+        },
+        {
+          "identity": [
+            "0x618a60dc2750",
+            "18000003",
+            946215
+          ],
+          "operation": "restore",
+          "reason": "controller deadline",
+          "committedNs": 187410981493279
+        }
+      ],
+      "rendererEvents": [
+        "shaderPrecision",
+        "samplingExperiment",
+        "quantizedOverExperiment",
+        "rasterPathSelected",
+        "renderPipelineSelected",
+        "backendObserved",
+        "rasterState",
+        "gpu",
+        "outputs"
+      ]
+    }
+  ],
+  "restoreOriginalDeadlineNs": 187410325540830,
+  "restoreWorkerObservations": [
+    {
+      "thread": 947151,
+      "observations": [
+        {
+          "index": 58,
+          "request": "j/monitors",
+          "actor": 2,
+          "thread": 947151,
+          "startNs": 187408483182127,
+          "endNs": 187408496191872,
+          "startAfterReceiptMs": 157.641297,
+          "endAfterReceiptMs": 170.651042
+        },
+        {
+          "index": 61,
+          "request": "j/workspaces",
+          "actor": 2,
+          "thread": 947151,
+          "startNs": 187408517191638,
+          "endNs": 187408531653679,
+          "startAfterReceiptMs": 191.650808,
+          "endAfterReceiptMs": 206.112849
+        },
+        {
+          "index": 65,
+          "request": "j/clients",
+          "actor": 2,
+          "thread": 947151,
+          "startNs": 187408552102280,
+          "endNs": 187408568369165,
+          "startAfterReceiptMs": 226.56145,
+          "endAfterReceiptMs": 242.828335
+        }
+      ]
+    },
+    {
+      "thread": 947150,
+      "observations": [
+        {
+          "index": 59,
+          "request": "j/monitors",
+          "actor": 2,
+          "thread": 947150,
+          "startNs": 187408487525553,
+          "endNs": 187408503158900,
+          "startAfterReceiptMs": 161.984723,
+          "endAfterReceiptMs": 177.61807
+        },
+        {
+          "index": 62,
+          "request": "j/workspaces",
+          "actor": 2,
+          "thread": 947150,
+          "startNs": 187408521899734,
+          "endNs": 187408535208042,
+          "startAfterReceiptMs": 196.358904,
+          "endAfterReceiptMs": 209.667212
+        },
+        {
+          "index": 64,
+          "request": "j/clients",
+          "actor": 2,
+          "thread": 947150,
+          "startNs": 187408549005710,
+          "endNs": 187408564664386,
+          "startAfterReceiptMs": 223.46488,
+          "endAfterReceiptMs": 239.123556
+        }
+      ]
+    },
+    {
+      "thread": 947152,
+      "observations": [
+        {
+          "index": 60,
+          "request": "j/monitors",
+          "actor": 2,
+          "thread": 947152,
+          "startNs": 187408488333847,
+          "endNs": 187408507239440,
+          "startAfterReceiptMs": 162.793017,
+          "endAfterReceiptMs": 181.69861
+        },
+        {
+          "index": 63,
+          "request": "j/workspaces",
+          "actor": 2,
+          "thread": 947152,
+          "startNs": 187408525417572,
+          "endNs": 187408538777844,
+          "startAfterReceiptMs": 199.876742,
+          "endAfterReceiptMs": 213.237014
+        },
+        {
+          "index": 66,
+          "request": "j/clients",
+          "actor": 2,
+          "thread": 947152,
+          "startNs": 187408553669819,
+          "endNs": 187408572868393,
+          "startAfterReceiptMs": 228.128989,
+          "endAfterReceiptMs": 247.327563
+        }
+      ]
+    }
+  ],
+  "restoreReadonlyTimeline": [
+    {
+      "index": 50,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187408332698696,
+      "endNs": 187408339619337,
+      "startAfterReceiptMs": 7.157866,
+      "endAfterReceiptMs": 14.078507
+    },
+    {
+      "index": 51,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187408346690197,
+      "endNs": 187408352360108,
+      "startAfterReceiptMs": 21.149367,
+      "endAfterReceiptMs": 26.819278
+    },
+    {
+      "index": 52,
+      "request": "/repl print(hl.plugin.hyprbars.window_families())",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187408358834538,
+      "endNs": 187408363570406,
+      "startAfterReceiptMs": 33.293708,
+      "endAfterReceiptMs": 38.029576
+    },
+    {
+      "index": 53,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187408369519212,
+      "endNs": 187408374198438,
+      "startAfterReceiptMs": 43.978382,
+      "endAfterReceiptMs": 48.657608
+    },
+    {
+      "index": 54,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187408435269035,
+      "endNs": 187408440173096,
+      "startAfterReceiptMs": 109.728205,
+      "endAfterReceiptMs": 114.632266
+    },
+    {
+      "index": 55,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187408445657968,
+      "endNs": 187408450493819,
+      "startAfterReceiptMs": 120.117138,
+      "endAfterReceiptMs": 124.952989
+    },
+    {
+      "index": 56,
+      "request": "/repl print(hl.plugin.hyprbars.window_families())",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187408455680603,
+      "endNs": 187408459453683,
+      "startAfterReceiptMs": 130.139773,
+      "endAfterReceiptMs": 133.912853
+    },
+    {
+      "index": 57,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187408465381103,
+      "endNs": 187408470234564,
+      "startAfterReceiptMs": 139.840273,
+      "endAfterReceiptMs": 144.693734
+    },
+    {
+      "index": 58,
+      "request": "j/monitors",
+      "actor": 2,
+      "thread": 947151,
+      "startNs": 187408483182127,
+      "endNs": 187408496191872,
+      "startAfterReceiptMs": 157.641297,
+      "endAfterReceiptMs": 170.651042
+    },
+    {
+      "index": 59,
+      "request": "j/monitors",
+      "actor": 2,
+      "thread": 947150,
+      "startNs": 187408487525553,
+      "endNs": 187408503158900,
+      "startAfterReceiptMs": 161.984723,
+      "endAfterReceiptMs": 177.61807
+    },
+    {
+      "index": 60,
+      "request": "j/monitors",
+      "actor": 2,
+      "thread": 947152,
+      "startNs": 187408488333847,
+      "endNs": 187408507239440,
+      "startAfterReceiptMs": 162.793017,
+      "endAfterReceiptMs": 181.69861
+    },
+    {
+      "index": 61,
+      "request": "j/workspaces",
+      "actor": 2,
+      "thread": 947151,
+      "startNs": 187408517191638,
+      "endNs": 187408531653679,
+      "startAfterReceiptMs": 191.650808,
+      "endAfterReceiptMs": 206.112849
+    },
+    {
+      "index": 62,
+      "request": "j/workspaces",
+      "actor": 2,
+      "thread": 947150,
+      "startNs": 187408521899734,
+      "endNs": 187408535208042,
+      "startAfterReceiptMs": 196.358904,
+      "endAfterReceiptMs": 209.667212
+    },
+    {
+      "index": 63,
+      "request": "j/workspaces",
+      "actor": 2,
+      "thread": 947152,
+      "startNs": 187408525417572,
+      "endNs": 187408538777844,
+      "startAfterReceiptMs": 199.876742,
+      "endAfterReceiptMs": 213.237014
+    },
+    {
+      "index": 64,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947150,
+      "startNs": 187408549005710,
+      "endNs": 187408564664386,
+      "startAfterReceiptMs": 223.46488,
+      "endAfterReceiptMs": 239.123556
+    },
+    {
+      "index": 65,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947151,
+      "startNs": 187408552102280,
+      "endNs": 187408568369165,
+      "startAfterReceiptMs": 226.56145,
+      "endAfterReceiptMs": 242.828335
+    },
+    {
+      "index": 66,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947152,
+      "startNs": 187408553669819,
+      "endNs": 187408572868393,
+      "startAfterReceiptMs": 228.128989,
+      "endAfterReceiptMs": 247.327563
+    },
+    {
+      "index": 67,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187408583692109,
+      "endNs": 187408588656154,
+      "startAfterReceiptMs": 258.151279,
+      "endAfterReceiptMs": 263.115324
+    },
+    {
+      "index": 68,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187408697950611,
+      "endNs": 187408702130688,
+      "startAfterReceiptMs": 372.409781,
+      "endAfterReceiptMs": 376.589858
+    },
+    {
+      "index": 69,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187408811886504,
+      "endNs": 187408816820023,
+      "startAfterReceiptMs": 486.345674,
+      "endAfterReceiptMs": 491.279193
+    },
+    {
+      "index": 73,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187409424784155,
+      "endNs": 187409430476989,
+      "startAfterReceiptMs": 1099.243325,
+      "endAfterReceiptMs": 1104.936159
+    },
+    {
+      "index": 74,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187409438294210,
+      "endNs": 187409444230572,
+      "startAfterReceiptMs": 1112.75338,
+      "endAfterReceiptMs": 1118.689742
+    },
+    {
+      "index": 75,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187409646584196,
+      "endNs": 187409654286023,
+      "startAfterReceiptMs": 1321.043366,
+      "endAfterReceiptMs": 1328.745193
+    },
+    {
+      "index": 76,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187409760623907,
+      "endNs": 187409766793654,
+      "startAfterReceiptMs": 1435.083077,
+      "endAfterReceiptMs": 1441.252824
+    },
+    {
+      "index": 77,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187409869248862,
+      "endNs": 187409876049483,
+      "startAfterReceiptMs": 1543.708032,
+      "endAfterReceiptMs": 1550.508653
+    },
+    {
+      "index": 79,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187410011443928,
+      "endNs": 187410036806456,
+      "startAfterReceiptMs": 1685.903098,
+      "endAfterReceiptMs": 1711.265626
+    },
+    {
+      "index": 82,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187410055424963,
+      "endNs": 187410060438208,
+      "startAfterReceiptMs": 1729.884133,
+      "endAfterReceiptMs": 1734.897378
+    },
+    {
+      "index": 83,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187410070533674,
+      "endNs": 187410076261456,
+      "startAfterReceiptMs": 1744.992844,
+      "endAfterReceiptMs": 1750.720626
+    },
+    {
+      "index": 84,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187410081879926,
+      "endNs": 187410086838131,
+      "startAfterReceiptMs": 1756.339096,
+      "endAfterReceiptMs": 1761.297301
+    },
+    {
+      "index": 85,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187410234177133,
+      "endNs": 187410238653576,
+      "startAfterReceiptMs": 1908.636303,
+      "endAfterReceiptMs": 1913.112746
+    },
+    {
+      "index": 86,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187410312808793,
+      "endNs": 187410318791042,
+      "startAfterReceiptMs": 1987.267963,
+      "endAfterReceiptMs": 1993.250212
+    },
+    {
+      "index": 87,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 946679,
+      "startNs": 187410389859145,
+      "endNs": 187410397367089,
+      "startAfterReceiptMs": 2064.318315,
+      "endAfterReceiptMs": 2071.826259
+    },
+    {
+      "index": 88,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 946679,
+      "startNs": 187410404825362,
+      "endNs": 187410412593497,
+      "startAfterReceiptMs": 2079.284532,
+      "endAfterReceiptMs": 2087.052667
+    },
+    {
+      "index": 89,
+      "request": "/repl print(hl.plugin.hyprbars.window_families())",
+      "actor": 2,
+      "thread": 946679,
+      "startNs": 187410418809714,
+      "endNs": 187410424695966,
+      "startAfterReceiptMs": 2093.268884,
+      "endAfterReceiptMs": 2099.155136
+    },
+    {
+      "index": 90,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 946679,
+      "startNs": 187410430777748,
+      "endNs": 187410437194188,
+      "startAfterReceiptMs": 2105.236918,
+      "endAfterReceiptMs": 2111.653358
+    },
+    {
+      "index": 91,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187411007378676,
+      "endNs": 187411013722929,
+      "startAfterReceiptMs": 2681.837846,
+      "endAfterReceiptMs": 2688.182099
+    },
+    {
+      "index": 95,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187411141251138,
+      "endNs": 187411147288392,
+      "startAfterReceiptMs": 2815.710308,
+      "endAfterReceiptMs": 2821.747562
+    },
+    {
+      "index": 96,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187411152994821,
+      "endNs": 187411158169306,
+      "startAfterReceiptMs": 2827.453991,
+      "endAfterReceiptMs": 2832.628476
+    },
+    {
+      "index": 97,
+      "request": "j/clients",
+      "actor": 2,
+      "thread": 947145,
+      "startNs": 187411166018036,
+      "endNs": 187411171164606,
+      "startAfterReceiptMs": 2840.477206,
+      "endAfterReceiptMs": 2845.623776
+    }
+  ],
+  "all98ReadonlyRowsCompleteEOFClosedPublished": true,
+  "serviceHelperSpansWallClockOnly": [
+    {
+      "operation": "service-motionTarget:0x618a60704010:18000000:946215:1",
+      "wrapper": {
+        "parent": 946679,
+        "pgid": 946825,
+        "pid": 946825,
+        "start": "19952501"
+      },
+      "delegate": {
+        "parent": 946825,
+        "pgid": 946825,
+        "pid": 946831,
+        "start": "19952512"
+      },
+      "startWallNs": 1790977052285614478,
+      "endWallNs": 1790977052348820812,
+      "wallDurationMs": 63.206334,
+      "exitCode": 0,
+      "monotonicDurationClaimed": false
+    },
+    {
+      "operation": "service-motionTarget:0x618a60de7070:18000002:946215:1",
+      "wrapper": {
+        "parent": 946679,
+        "pgid": 946847,
+        "pid": 946847,
+        "start": "19952531"
+      },
+      "delegate": {
+        "parent": 946847,
+        "pgid": 946847,
+        "pid": 946852,
+        "start": "19952539"
+      },
+      "startWallNs": 1790977052552094541,
+      "endWallNs": 1790977052591699358,
+      "wallDurationMs": 39.604817,
+      "exitCode": 0,
+      "monotonicDurationClaimed": false
+    },
+    {
+      "operation": "service-motionTarget:0x618a60dc2750:18000003:946215:1",
+      "wrapper": {
+        "parent": 946679,
+        "pgid": 946860,
+        "pid": 946860,
+        "start": "19952553"
+      },
+      "delegate": {
+        "parent": 946860,
+        "pgid": 946860,
+        "pid": 946862,
+        "start": "19952559"
+      },
+      "startWallNs": 1790977052749294435,
+      "endWallNs": 1790977052788715440,
+      "wallDurationMs": 39.421005,
+      "exitCode": 0,
+      "monotonicDurationClaimed": false
+    },
+    {
+      "operation": "service-motionRefresh:1",
+      "wrapper": {
+        "parent": 946679,
+        "pgid": 947184,
+        "pid": 947184,
+        "start": "19952892"
+      },
+      "delegate": {
+        "parent": 947184,
+        "pgid": 947184,
+        "pid": 947187,
+        "start": "19952901"
+      },
+      "startWallNs": 1790977056167849073,
+      "endWallNs": 1790977056215412803,
+      "wallDurationMs": 47.56373,
+      "exitCode": 0,
+      "monotonicDurationClaimed": false
+    },
+    {
+      "operation": "service-motionRefresh:2",
+      "wrapper": {
+        "parent": 946679,
+        "pgid": 947194,
+        "pid": 947194,
+        "start": "19952907"
+      },
+      "delegate": {
+        "parent": 947194,
+        "pgid": 947194,
+        "pid": 947198,
+        "start": "19952915"
+      },
+      "startWallNs": 1790977056311118137,
+      "endWallNs": 1790977056355157482,
+      "wallDurationMs": 44.039345,
+      "exitCode": 0,
+      "monotonicDurationClaimed": false
+    },
+    {
+      "operation": "service-motionRefresh:3",
+      "wrapper": {
+        "parent": 946679,
+        "pgid": 947208,
+        "pid": 947208,
+        "start": "19952922"
+      },
+      "delegate": {
+        "parent": 947208,
+        "pgid": 947208,
+        "pid": 947218,
+        "start": "19952930"
+      },
+      "startWallNs": 1790977056467128698,
+      "endWallNs": 1790977056516231166,
+      "wallDurationMs": 49.102468,
+      "exitCode": 0,
+      "monotonicDurationClaimed": false
+    },
+    {
+      "operation": "service-motionTarget:0x618a60704010:18000000:946215:2",
+      "wrapper": {
+        "parent": 946679,
+        "pgid": 947231,
+        "pid": 947231,
+        "start": "19952941"
+      },
+      "delegate": {
+        "parent": 947231,
+        "pgid": 947231,
+        "pid": 947234,
+        "start": "19952950"
+      },
+      "startWallNs": 1790977056660361862,
+      "endWallNs": 1790977056728043172,
+      "wallDurationMs": 67.68131,
+      "exitCode": 0,
+      "monotonicDurationClaimed": false
+    },
+    {
+      "operation": "service-motionTarget:0x618a60de7070:18000002:946215:2",
+      "wrapper": {
+        "parent": 946679,
+        "pgid": 947317,
+        "pid": 947317,
+        "start": "19953005"
+      },
+      "delegate": {
+        "parent": 947317,
+        "pgid": 947317,
+        "pid": 947319,
+        "start": "19953012"
+      },
+      "startWallNs": 1790977057282218253,
+      "endWallNs": 1790977057327669561,
+      "wallDurationMs": 45.451308,
+      "exitCode": 0,
+      "monotonicDurationClaimed": false
+    }
+  ],
+  "all30HelpersNormalExactPairedGone": true,
+  "harnessQueries": 1,
+  "serviceQueries": 8,
+  "checks": [
+    {
+      "name": "Private actual output and disabled Xwayland",
+      "passed": true
+    },
+    {
+      "name": "Exact candidate module selected before private load",
+      "passed": true
+    },
+    {
+      "name": "Actual full paired Snap Lua hydrate and inactive relay complete with exact ancestry and no surviving process",
+      "passed": true
+    },
+    {
+      "name": "Only production bar and window widget enabled",
+      "passed": true
+    },
+    {
+      "name": "Actual unmodified absolute accessibility module mapped exactly",
+      "passed": true
+    },
+    {
+      "name": "Actual paired gesture retirement API accepts exact idle identity without pretending release",
+      "passed": true
+    },
+    {
+      "name": "Actual Qt family metadata includes exactly owned hierarchy",
+      "passed": true
+    },
+    {
+      "name": "Actual visible taskbar icon endpoint owner",
+      "passed": true
+    },
+    {
+      "name": "Actual visible taskbar icon endpoint child",
+      "passed": true
+    },
+    {
+      "name": "Actual visible taskbar icon endpoint nested",
+      "passed": true
+    },
+    {
+      "name": "Durable accepted minimize receipt precedes native completion",
+      "passed": true
+    },
+    {
+      "name": "Durable minimized journal records no live retiring or quarantined actor",
+      "passed": true
+    },
+    {
+      "name": "Independent same-process peer unchanged by family minimize",
+      "passed": true
+    },
+    {
+      "name": "Minimized family retains taskbar presence and real previews",
+      "passed": true
+    },
+    {
+      "name": "Actor retirement preserves exact minimized persistent source cache",
+      "passed": true
+    },
+    {
+      "name": "Durable accepted restore receipt precedes native completion",
+      "passed": true
+    },
+    {
+      "name": "Native service and every producer exit normally",
+      "passed": true
+    },
+    {
+      "name": "Every ordinary actor selects repaired production default without experimental flags",
+      "passed": false
+    },
+    {
+      "name": "Every exact closed native lifetime completes its registered helper normally before unload",
+      "passed": false
+    }
+  ],
+  "normalClientsAndRenderers": true,
+  "original15MainPreservation": {
+    "allStableClientFields": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "typedClipboardAndPrimary": true,
+    "a11ySocketFlagsAndReaderEnabled": true,
+    "outputs": true,
+    "plugins": true,
+    "keyboardStates": true,
+    "fourCatalogNaturalBytes": true,
+    "dashboardBytes": true,
+    "originalFilesProcess": true,
+    "originalFilesPublicState": true,
+    "originalFilesFullUi": true,
+    "originalFilesVisibility": true
+  },
+  "nativeUnloadNormal": true,
+  "hostUnexpected": [],
+  "hostRemaining": [],
+  "runtimeGone": true,
+  "normalHostExitCodeProven": false,
+  "timingPerturbedByExistingObserver": true,
+  "rootWholeSourceAudit": "/home/hoskinson/window-integration-qa/thumbnail-v12-root-failure-audit-v1.json",
+  "limits": [
+    "Three concurrent original planners are established by exact sources and native thread/EOF ledger; per-method start/return spans and exact six focus durations are not retained.",
+    "Capture2 returned normally; before third capture the original lease/current check may stop after watchdog settlement, but precise preemption/return boundary is unobserved.",
+    "Wall-clock helper stamps cannot be substituted for original receipt monotonic deadline without an actual clock bridge.",
+    "B11 metadata1841ms and B12 metadata1092ms are different native attempts, not a controlled performance comparison.",
+    "Only2 actors executed, so original default4/helper complete-workload counts remain false; normal closure supplies no feature acceptance.",
+    "No CPU fixture timing is substituted for actual native timing; original38/fault34 remain unaccepted."
+  ]
+}

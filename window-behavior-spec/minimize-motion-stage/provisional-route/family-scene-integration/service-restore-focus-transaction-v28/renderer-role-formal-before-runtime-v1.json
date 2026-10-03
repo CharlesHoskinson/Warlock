@@ -1,0 +1,39 @@
+{
+  "result": "fail",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-89465ee87fed40d8b6be3d1f1576d6ba.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/renderer_job_role_test.qnt"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "\n Error [QNT404]: Name 'isEmpty' not found\n\n  at /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/renderer_job_role.qnt:14:96\n  14:  pure def allowed(s:State):bool={val own=s.jobs.filter(j=>j.binding.actor==17);if(not(s.bound))own.isEmpty() and s.observation.keeper else validBinding(s.binding) and verified(s.observation) and own==Set(renderer)}\n                                                                                                     ^^^^^^^^^^^^^\n\nerror: parsing failed\n"
+    }
+  ],
+  "namedCases": 30,
+  "samples": 2000,
+  "steps": 100,
+  "runtimeUnchanged": true,
+  "runtimeBeforeSHA256": {
+    "batch_preview.py": "875e9e25973458691607503a5293db423b8a6510dfc856f22c99a9121c6037de",
+    "native_runtime.py": "a690e79fcb1231debce7a66fe7712d31942db6301fce79bc92effaa453a35c73",
+    "scene_controller.py": "3b47325e7e86b06492ef59576159482c6036297aeafdcb46875cf590d1844657",
+    "helper_supervisor.py": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+    "owned_launch.py": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+    "pipe_transport.py": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8",
+    "owned_commands.py": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba"
+  },
+  "baseManifestSHA256": "0d2b7b231eaa26c6618783b1cb2305c2a989586b3a7cb371716e2d67603c82e2",
+  "modelSHA256": {
+    "renderer_job_role.qnt": "445e1f123f39c54546e3e370a85624a85623ae69dac6fc87db6b8874ae2b9d1b",
+    "renderer_job_role_test.qnt": "bc8904cf5c6d26d74cea7f8af540657a0dde7b2326660e4cc6f7cf2841b29246",
+    "RENDERER_JOB_ROLE_CONTRACT.md": "5fb12c0aa2b6a9d3d635de97153c51550da2daca82cc1e64579813643cafb2b2"
+  },
+  "nativeLaunch": false
+}

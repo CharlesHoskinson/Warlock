@@ -1,0 +1,224 @@
+{
+  "result": "pass",
+  "GUI": false,
+  "nativeWidgetAccepted": false,
+  "QtCpuLibraryLoaded": true,
+  "sources": {
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/Lifetime.hpp": {
+      "sha256": "b1848d124cbee12a39d1089adda1162157aa3a9810eba14916dc74a8b9b4cf4f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/Lifetime.cpp": {
+      "sha256": "5fe5af2559a8c416d35f8ca8946e2b5ece80a8f654fe166649914ccdea3e4b12",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/ReloadRelay.hpp": {
+      "sha256": "b9b0dfee22c3cc15b96534c95aa1f00a5ce5572fa96d0f853d1567d6fa6f9125",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/Seal.cpp": {
+      "sha256": "e1a7f66e30e685f65a364fd4d1581c59893b5e4aee2ca538e9fe73b3b6768e79",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/Provider.hpp": {
+      "sha256": "0aa610853869eea9312f412b7ec854007bbc5b235ce796b890f5bebd013bd1c4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/Provider.cpp": {
+      "sha256": "1ad833f6ea0521214a785b7f4ad6f67b784555babdb434d5f12e6b3da5a68095",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/qmldir": {
+      "sha256": "a294743b8437b72ae9b5351816fc3e743194d462fdb68165df8d93023ac00c70",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu_registry.cpp": {
+      "sha256": "905a8fbd969f8ca50a03f8c0205ac1acc059fc19ef804041620fdb267d5da59f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/build.py": {
+      "sha256": "dfd61bb7a557e8b2de8bbedcfa24b81d0bedbdd1b2c260b7237a37e7876d1879",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/KnownQuickshell.hpp": {
+      "sha256": "e16a2941acd580d969c9fd7881ff8c65a8509d352ed2e83bed41167f9625154d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/moc_Provider.cpp": {
+      "sha256": "79738def7a2d0b3ab42321b83d5893b912f9c696b014749dd1b0cc5269ed1488",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/moc_ReloadRelay.cpp": {
+      "sha256": "17bb7d4aaec1e0ce89effba0a20b3f4ffbb82ad37c1d2785e9942da2d10df0ad",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu_dso.cpp": {
+      "sha256": "b071538a1da53b60db5a4640bada266d714ca6f82508235423946ee4d8f15b52",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu_run.py": {
+      "sha256": "546e33206535d83949208653ee2b3ae0bc118ea111964f3da8a9d13f21ee4d51",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/libobjectlifetime.so": {
+      "sha256": "e189670d3f1d54b779e3a4b461b914f9d2e6b4d2e014d49078e6ffad446d7629",
+      "mode": 493
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu-registry": {
+      "sha256": "4e693e131e2bc41b5673df5cd591a1975e7623a304e4fe9c79947e6f32cb53aa",
+      "mode": 493
+    },
+    "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu-dso": {
+      "sha256": "07178d2c1fa18e5e8ae344c176d53e1be8d4c8ceecff53430c3a9c5637534e98",
+      "mode": 493
+    }
+  },
+  "sourceUnchanged": true,
+  "rows": [
+    {
+      "mode": "actual-registry",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu-registry"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"GUI\":false,\"checks\":23,\"nativeWidgetAccepted\":false,\"result\":\"pass\"}\n",
+      "stderr": ""
+    },
+    {
+      "mode": "lifecycle",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu-dso",
+        "/run/user/1000/wqa/a25c/home/libobjectlifetime.so",
+        "lifecycle"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"GUI\":false,\"checks\":46,\"mode\":\"lifecycle\",\"nativeWidgetAccepted\":false,\"providerLoadedInCPU\":true,\"result\":\"pass\"}\n",
+      "stderr": "",
+      "initialImage": {
+        "sha256": "e189670d3f1d54b779e3a4b461b914f9d2e6b4d2e014d49078e6ffad446d7629",
+        "mode": 420
+      },
+      "actualRuntime": "/run/user/1000/wqa/a25c",
+      "normalExit": true
+    },
+    {
+      "mode": "image-mode",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu-dso",
+        "/run/user/1000/wqa/c9d2/home/libobjectlifetime.so",
+        "image-mode"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"GUI\":false,\"checks\":22,\"mode\":\"image-mode\",\"nativeWidgetAccepted\":false,\"providerLoadedInCPU\":true,\"result\":\"pass\"}\n",
+      "stderr": "",
+      "initialImage": {
+        "sha256": "e189670d3f1d54b779e3a4b461b914f9d2e6b4d2e014d49078e6ffad446d7629",
+        "mode": 420
+      },
+      "actualRuntime": "/run/user/1000/wqa/c9d2",
+      "normalExit": true
+    },
+    {
+      "mode": "config-mode",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu-dso",
+        "/run/user/1000/wqa/1540/home/libobjectlifetime.so",
+        "config-mode"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"GUI\":false,\"checks\":18,\"mode\":\"config-mode\",\"nativeWidgetAccepted\":false,\"providerLoadedInCPU\":true,\"result\":\"pass\"}\n",
+      "stderr": "",
+      "initialImage": {
+        "sha256": "e189670d3f1d54b779e3a4b461b914f9d2e6b4d2e014d49078e6ffad446d7629",
+        "mode": 420
+      },
+      "actualRuntime": "/run/user/1000/wqa/1540",
+      "normalExit": true
+    },
+    {
+      "mode": "config-duplicate",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu-dso",
+        "/run/user/1000/wqa/9217/home/libobjectlifetime.so",
+        "config-duplicate"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"GUI\":false,\"checks\":19,\"mode\":\"config-duplicate\",\"nativeWidgetAccepted\":false,\"providerLoadedInCPU\":true,\"result\":\"pass\"}\n",
+      "stderr": "",
+      "initialImage": {
+        "sha256": "e189670d3f1d54b779e3a4b461b914f9d2e6b4d2e014d49078e6ffad446d7629",
+        "mode": 420
+      },
+      "actualRuntime": "/run/user/1000/wqa/9217",
+      "normalExit": true
+    },
+    {
+      "mode": "config-replacement",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu-dso",
+        "/run/user/1000/wqa/d5da/home/libobjectlifetime.so",
+        "config-replacement"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"GUI\":false,\"checks\":19,\"mode\":\"config-replacement\",\"nativeWidgetAccepted\":false,\"providerLoadedInCPU\":true,\"result\":\"pass\"}\n",
+      "stderr": "",
+      "initialImage": {
+        "sha256": "e189670d3f1d54b779e3a4b461b914f9d2e6b4d2e014d49078e6ffad446d7629",
+        "mode": 420
+      },
+      "actualRuntime": "/run/user/1000/wqa/d5da",
+      "normalExit": true
+    },
+    {
+      "mode": "fake-quickshell",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu-dso",
+        "/run/user/1000/wqa/694f/home/libobjectlifetime.so",
+        "fake-quickshell"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"GUI\":false,\"checks\":17,\"mode\":\"fake-quickshell\",\"nativeWidgetAccepted\":false,\"providerLoadedInCPU\":true,\"result\":\"pass\"}\n",
+      "stderr": "",
+      "initialImage": {
+        "sha256": "e189670d3f1d54b779e3a4b461b914f9d2e6b4d2e014d49078e6ffad446d7629",
+        "mode": 420
+      },
+      "actualRuntime": "/run/user/1000/wqa/694f",
+      "normalExit": true
+    },
+    {
+      "mode": "wrong-thread",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu-dso",
+        "/run/user/1000/wqa/a2a0/home/libobjectlifetime.so",
+        "wrong-thread"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"GUI\":false,\"checks\":19,\"mode\":\"wrong-thread\",\"nativeWidgetAccepted\":false,\"providerLoadedInCPU\":true,\"result\":\"pass\"}\n",
+      "stderr": "",
+      "initialImage": {
+        "sha256": "e189670d3f1d54b779e3a4b461b914f9d2e6b4d2e014d49078e6ffad446d7629",
+        "mode": 420
+      },
+      "actualRuntime": "/run/user/1000/wqa/a2a0",
+      "normalExit": true
+    },
+    {
+      "mode": "duplicate-image",
+      "argv": [
+        "/home/hoskinson/window-behavior-spec/qml-object-lifetime-v2/cpu-dso",
+        "/run/user/1000/wqa/c571/home/libobjectlifetime.so",
+        "duplicate-image"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"GUI\":false,\"checks\":22,\"mode\":\"duplicate-image\",\"nativeWidgetAccepted\":false,\"providerLoadedInCPU\":true,\"result\":\"pass\"}\n",
+      "stderr": "",
+      "initialImage": {
+        "sha256": "e189670d3f1d54b779e3a4b461b914f9d2e6b4d2e014d49078e6ffad446d7629",
+        "mode": 420
+      },
+      "actualRuntime": "/run/user/1000/wqa/c571",
+      "normalExit": true
+    }
+  ]
+}

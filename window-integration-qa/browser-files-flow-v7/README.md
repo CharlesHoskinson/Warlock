@@ -1,0 +1,108 @@
+# Private Brave draft + copied real Files flow V7
+
+Fresh source candidate; root owns native execution. Prior V6 and all failures are immutable. No V7 browser/compositor/Files/input run or main change has occurred.
+
+## All retained actual mappings
+
+V6 reached four feature gates and nine host gates, preserved all18 main properties, and exited every helper normally. Its strict mapping check refused the first missing `libgvfscommon.so` before any input/callback/editing. Unlike V5, the full eleven-process raw map batch was saved and independently replayed by root.
+
+V7 pins every one of the **32** stable missing system paths, including GIO/GVFS, Fcitx, DRM/VA/LLVM, locale data, gconv and GLib schemas, plus their trace-only ELF dependencies. No linked resolved path is excluded from that count; the earlier33 was a counting error. The loader report is4,841 exact files /1,559 loader links /136 ELF traces, without browser/GUI/NSS initialization. Every historical raw byte hash/decode, stable inode and prior frozen bytes/modes are checked. Stable disk device metadata is recorded; no new superblock-device equality is inferred for ordinary subvolume files. Dynamic tmpfs FD/device equality remains mandatory.
+
+The two deleted non-executable maps remain retained: private Brave metrics and a copied Files read-only UUID tmpfs mapping. Frozen V6 refused them and is unchanged. `--disable-features` adds only `PersistentHistograms` to prevent metrics persistence in the already-required fresh empty private profile; primary source supports the switch, but installed source equality is not inferred and actual absence must be verified.
+
+## Narrow shared-data authority
+
+Root reviewed a separate formal property before implementation. The candidate permits only a copied Files `r--p` deleted UUID tmpfs VMA with exactly one actual matching read-only FD in the captured private compositor. It verifies UID1000, full mode0600 including special bits, nlink0, regular type, exact inode/device, fdinfo access/mount, unambiguous observed /dev/shm tmpfs mount, VMA offset/page/file-size bounds, owned process/executable/cgroup identity and real private socket kernel peer. It retains all observed failures. The same VMA, FD/stat, consumer/producer lifetimes and private peer must hold before/after observation and again after strict disk validation; changes invalidate acceptance and refuse input.
+
+Executable aliases are refused across the full captured owned batch and fresh before/after Files/compositor maps. This is the exact bounded observation scope; no global or continuous monitoring is claimed. Only matching FD names and metadata are retained after a bounded stat-only owned producer inventory; no data contents, process memory, unrelated/main processes or secrets are read. Filename/source resemblance alone grants nothing. The actual V6 UUID was not attributed to a keymap and had no retained FD proof.
+
+All other missing, unreadable, executable-runtime, deleted disk/code, changed bytes/modes/inodes, sandbox, network, original callback, CDP observation, private bus/helper and main preservation gates remain mandatory. No exception permits ordinary deleted code. `DATA_PROVENANCE_PROPOSAL.md` states the reviewed scope and primary source limits.
+
+## Source verification
+
+Expected final totals:108 Python tests,62 named formal cases and seven models ×2,000×100. Twenty-four new tests use real owned producer/consumer processes, kernel Unix peer credentials, actual unlinked tmpfs inode/FD/read-only maps and normal teardown. These are explicit non-GUI metadata fixtures, not native browser/toolkit outcomes. Eight more tests verify complete retained-map enumeration and refusal. Preparation failures are retained. Initial thirteen static and twelve temporal cases passed before implementation; final sixteen static cases add offset/mount/access counterexamples.
+
+The actual full V7 mapping closure, producer FD evidence (if shared data is present), original Files public callback, retained draft/caret/continuation, genuine private reload/release and all15 feature/10 host/18 main gates remain pending root's exact native command.
+
+## Inherited history
+
+# Private Brave draft + copied real Files flow V6
+
+Fresh source-stage derivative; V5 and its executed failure are immutable. No V6 native run, pointer input or main change has been performed. Root owns the exact exclusive native command.
+
+## Retained actual V5 result
+
+The actual V5 run passed PID-bound private session-bus authority, sandboxed renderer verification, local Brave DOM and copied real Files initialization. The first strict disk mapping check refused `/usr/lib/libnss_resolve.so.2` before any pointer input, editing or original callback. All eighteen main preservation checks and normal client/module/host cleanup passed. V5 did not persist the mapping batch before validation; only that first missing path is retained. There is no separate full actual V5 mapping artifact, and V6 makes no inferred complete actual mapping claim.
+
+## V6 closure and evidence correction
+
+The offline closure adds `/etc/nsswitch.conf`, every configured and all seventeen installed NSS modules, their exact trace-only ELF dependencies and symlink chains. The trace method initializes no browser, GUI or NSS module. Frozen inputs retain exact hashes, modes and links. Any configured missing module refuses preparation.
+
+V6 captures the raw `/proc/maps` bytes for every exact owned descendant and private compositor before validating any mapping. It records Base64, byte count, hash, decoded map lines, read errors, PID/start identity and lifetime observations, then saves the entire batch to an owned private `owned-mapping-evidence.json`. Every validation outcome/error is also saved in a finally block. Live unreadable maps, changed lifetimes, missing or changed frozen code, deleted inputs and executable runtime files still fail. `runtime_inputs.py` is byte-identical to V5. Normal already-exited identities and a missing proc file with an observed exited lifetime keep the prior bounded normal-exit policy.
+
+The six named mapping-evidence model cases and 2,000×100 samples passed before implementing the helper. Ten new snapshot/persistence/refusal tests and six NSS enumeration tests supplement the inherited sixty Python tests. Final review totals: 76 Python tests, 34 named formal cases and five models ×2,000×100 samples. Preparation failures are retained. Actual full mapped closure, original Files public callback, retained draft/caret, continuation, genuine private reload and release remain required native gates.
+
+## Inherited V5 reviewed property and scope
+
+
+Preparation only. No browser, Quickshell fixture, compositor or main input has been launched by this packet. The first native attempt requires root's reviewed exclusive grant.
+
+## V5 observed session-bus authority
+
+V4 root native diagnostic retained exact owned BravePID1509582/start11622265 initial kernel environment range10167 bytes, every byte zero, all three selected values absent, with unchanged lifetime. Root independently accepted its strict source/namespace/privatebus/nohelper/normalcleanup/all18main preservation evidence. The initial range cannot establish current libc getenv after process-title relocation.
+
+V5 changes that erroneous browser-only predicate to the property's meaningful authority: exact final guarded pre-exec session/system/VFS selector witness and its source provenance; the same browser PID/start/UID/cgroup/executable/hash before and after enumeration; the actual owned private session-bus daemon kernel peer and unchanged socket/process identity; and bounded real read-only ListNames/GetConnectionUnixProcessID/GetConnectionUnixUser observations binding one live connection to the exact owned browser root PID/UID. Every refused query, missing connection, malformed response or live/socket change is retained and fails. These are the only allowed bus methods. Kernel initial-range raw evidence remains diagnostic. Files keeps the existing root initial-range equality gate.
+
+This property is scoped to an observed actual session-bus connection plus verified launch selectors and source-backed private bus lookup. It does not claim direct current getenv, system-bus connection, current GIO implementation, libc memory or comprehensive browser syscall inspection. No ptrace, process memory read, input through debugger, main bus query or secret dump is used. Namespace/sandbox/mapping/realinput/normalhelper/main gates remain mandatory.
+
+The new bus authority model preceded its implementation: nine named property/refusal cases and 2,000×100 samples. Ten tests use a real owned Unix kernel peer with an explicitly mocked bus-message protocol fixture, proving parser/binding/refusal logic without claiming a real D-Bus, browser or GUI run. Accepted source-stage totals are60Python/28named/4models×2,000×100.
+
+## Retained V4 diagnostic boundary
+
+The frozen V3 actual attempt passed isolated pre-exec selectors, the private bus builtin-only activation query, no unexpected helpers, normal cleanup and all eighteen main checks. It stopped before local target attachment, renderer, Files or input at the added `/proc/environ` equality check. Actual retained root cmdline is already one flattened process title. The upstream process-title code copies libc environment strings and clears the original kernel environment range. V3 did not save raw environ values, so the precise cause remains unproven.
+
+V4 saves exact raw initial-range Base64 bytes, length/hash, the three selected values or absence, read errors, expected values and PID/start checks before validation. The selector acceptance predicate remains unchanged. A mismatch is explicitly a diagnostic unproven current-libc-selector result; it does not infer unsafe actual environment. No native product/app behavior pass can be claimed if this diagnostic gate fails. A meaningful alternative actual authority must be independently reviewed and formalized in a fresh derivative after the retained diagnostic. Sandbox, maps, namespace, helper and cleanup gates remain mandatory.
+
+The actual generated private bus XML is now retained in host evidence before runtime deletion. V3 sources and actual failed reports stay immutable.
+
+## Fresh V3 changes and retained V2 failure
+
+V2 attempt 1 reached the isolated browser, namespace/pre-exec gate, CDP version and exact local-page attachment. It then timed out waiting for a renderer whose cmdline contained a separate NUL-delimited `--type=renderer`. The private bus log also records real Brave requests starting GVFS, accessibility and portal helpers. Browser.close returned normal exit; all fourteen registered app descendants disappeared without force, and all eighteen main checks passed. Files and user input were not reached. Complete copies of the failed reports and bus log remain under `retained-v2-failure/`; the frozen V2 packet remains unchanged.
+
+V3 captures every owned process before filtering, including raw Base64 cmdline bytes, the literal NUL split, complete kernel status/stat, namespace targets, executable target or exact read errors, and PID/start checks before and after capture. A renderer can be recognized from an exact argv switch or the narrowly defined single Chromium process-title form with exact executable prefix and leading renderer switch. It does not reconstruct argv from process-title text. Unknown, ambiguous, duplicate, conflicting or sandbox-disabled forms fail recognition/acceptance. UID, Seccomp2, NoNewPrivs1, distinct netns and lifetime gates still apply; no live unreadable mapping is excused. The title explanation is a hypothesis about V2 until fresh raw evidence confirms it.
+
+The fresh private host adapter inherits V4's host, compositor IPC, Aquamarine, ownership and teardown guards. It changes only the exact private session bus invocation to an owned0600 config without service directories, includes or activation helpers. The real read-only ListActivatableNames query must return only the builtin bus name, with exact registered PID, kernel peer and socket identity checked around the query. Unexpected descendants remain fatal. This explicitly isolates fixture service availability; portal, remote VFS and accessibility integration are not exercised here. The actual browser retains its default toolkit. The proposed fallback toolkit flag was discarded after source tracing found an unconditional separate portal-settings constructor.
+
+Both browser and Files explicitly route session and system bus lookups to this owned bus; actual owned root /proc/environ must show both selectors and GIO_USE_VFS=local before input. GLib source chooses a default bus address only when the corresponding environment value is absent. Direct browser pre-exec checks reject a foreign address. If the copied Files app cannot initialize or perform its original callback with this service availability, the native flow fails.
+
+Exact installed CDP source revision retrieval errors are retained. Current upstream Chromium sources are pinned to `24f55f4b7461e81b6aa95a4a91f6f871c9ac675b` and are explanatory, without claiming correspondence to the unavailable installed revision. Installed D-Bus manual/config, official D-Bus1.16.2 client/activation source, and GLib2.88.3/GVFS sources document the private bus and local VFS choices. Real kernel/bus/callback observations are the acceptance gates.
+
+## What the run must prove
+
+Fifteen feature gates cover the exact isolated launcher/renderer, real browser Wayland window and copied Files, trusted textarea editing with actual interior caret, exposed Files callback/focus, unchanged draft/caret, actual browser-caption return and trusted continuation, then the same continuity after genuine private configuration reload. Ten host gates retain accepted host/DMA-BUF/AQ/private IPC/native mapping/transport checks. Command acknowledgments are counted separately. This is the actual app combination behind the reported focus issue; it does not repeat or replace Qt/GTK gesture/modal tests, and does not claim hardware input, raster cadence, email, network or production deployment success.
+
+The reviewed V5/V21 native candidate is loaded only in the private child. Full SnapLua is not loaded here. Main production plugin/apps/profiles/Files are only observed. The copied app has forty-one unchanged files and one copied host with additional observation methods/signal listeners. Existing callbacks and operations are byte-identical; listeners can affect timing, so no timing claim is made.
+
+## Input and isolation
+
+Virtual pointer and wtype perform actual input. CDP uses inherited fd3/fd4; its method/parameter/expression allowlist permits only read-only DOM/public event observations and lifecycle close. It cannot synthesize input, assign DOM values, focus elements or open URLs. Real DOM `isTrusted`, value/caret and Files clicked signal/native focus provide evidence beyond successful commands.
+
+Brave executes directly from frozen `/opt/brave-bin/brave`; no main launcher or flags file is read. Explicit new profile, HOME/XDG/TMPDIR, user+network namespace and actual owned compositor peer are mandatory. Namespace-only subprocess proof shows UID1000, loopback only, no external routes. Browser sandbox stays requested/enabled; actual renderer Seccomp2/NoNewPrivs1 and distinct netns are a separate kernel-state gate. No `--no-sandbox`, external URL, TCP debugger, main profile or mail account is used.
+
+Main before/after observation encloses the entire private host, captures current original Files identity/visibility, and compares all eighteen accepted preservation gates without any restoration writes. Clients and descendants must close normally before native unload/host cleanup. Exact PID/start ancestry registration authorizes fallback signals only for owned fixtures; forced cleanup keeps the run failed. Unknown helpers are never exempted by process name.
+
+## Offline proof and retained boundaries
+
+- Nineteen process-evidence classification/UID/seccomp/netns/read-error/lifetime tests; five private-bus config/routing refusal tests; eight named process-evidence Quint cases and 2,000 samples ×100 steps.
+- Ten CDP framing/identity/mutation-refusal/route checks.
+- Sixteen actual sandbox-file mapping/instance refusal tests; eight mapping-authority named Quint cases plus 2,000 samples ×100 steps. Runtime exemptions permit only non-executable owned profile/cache data. Unreadable owned descendant maps fail acceptance; anonymous memfd/JIT maps are recorded separately from disk input closure.
+- Eleven source obligations, including importing every runner/observer, exact original callback reconstruction and byte-identical accepted catalog observer. Missing observer import discovered during source review was corrected before freeze.
+- Three real subprocess pipe remapping cases in core1 scope, including destination collision.
+- One actual namespace-only core1 subprocess proof; browser never executed.
+- Three named Quint scenarios and 2,000 samples ×100 steps, requested seed20260930. This model concerns draft chunks and focus authority; the real DOM caret/bytes remain native gates.
+- glibc LD_TRACE closure: 101 relevant ELF traces, complete browser resources, Qt QML/plugin resources and loader dependencies. Unused optional Qt5/Firebird/QtQuick3D failures remain retained. Actual mapped owned app descendants and compositor modules must match frozen bytes/modes and cannot include the missing Qt5 shim.
+- QML lint only parses the copied host; existing qs.Commons/unqualified warnings are retained. No running QML or browser claim is inferred from lint.
+
+The full immutable transitive byte/mode/link packet and exact command appear in `frozen-inputs.json`. Mutable attempts/profiles/sandbox fixture data are excluded. Preflight is read-only. Keep all executed failures and attempt output; no retries without root review.
+
+Primary Chromium defines the inherited pipe descriptors in [devtools_pipe.h](https://chromium.googlesource.com/chromium/src/+/12a7862a280dbb36a57c5e6f38c4a21f3c77ea6c/components/devtools/devtools_pipe/devtools_pipe.h). Local downloaded primary source and retrieval results are retained under `primary/`. The public [Runtime protocol](https://chromedevtools.github.io/devtools-protocol/tot/Runtime/) supports evaluating the fixed observation expression; the runner refuses all other expressions.

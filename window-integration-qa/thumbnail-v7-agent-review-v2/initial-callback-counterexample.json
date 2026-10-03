@@ -1,0 +1,294 @@
+{
+  "result": "no counterexample",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-fdf6c3cd9d4c48a18dedd963b40ab2f9.scope",
+    "coreLimit": 1
+  },
+  "collector": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v7",
+  "sourceSHA256": "35f4e144c9ea720e638e0dd3d5310dff140d80dd52ed902f90bf6e9a71b41ef5",
+  "cases": [
+    {
+      "symbol": "stage",
+      "replacement": "finish",
+      "originalFunctionID": 129675930806480,
+      "actualFunctionID": 129675930808064,
+      "accepted": false,
+      "error": {
+        "type": "ValueError",
+        "message": "actual linked actor refused; raw evidence retained"
+      },
+      "raw": {
+        "phase": "actor-linked",
+        "actor": 1,
+        "errors": [
+          {
+            "type": "ValueError",
+            "message": "actual actor/runtime links differ"
+          }
+        ],
+        "callbacks": {},
+        "relations": {
+          "desktop": true,
+          "transport": true,
+          "controller": true,
+          "controllerDesktop": true,
+          "controllerTransport": true,
+          "eventOwner": true,
+          "eventFunction": true,
+          "ownedCommands": true,
+          "readonly": true,
+          "productionCommands": true,
+          "baseClass": true,
+          "failureBinding": true,
+          "failureClosure": true,
+          "batchClass": true,
+          "batchCommands": true,
+          "batchRoot": true,
+          "batchPreview": true,
+          "batchActor": true,
+          "finisherFunction": true,
+          "finisherOwner": true,
+          "batchCallback.stage": false,
+          "batchCallback.finish": true,
+          "batchCallback.discard": true,
+          "batchCallback.require_releasable": true,
+          "batchCallback.require_disposable": true
+        },
+        "usable": false,
+        "batch": {
+          "instanceID": 129675927960752,
+          "commandsID": 129675927960080,
+          "root": "/tmp/readonly-cpu-drwfhk2a/service/actors/actor-1-cpu",
+          "preview": "/tmp/readonly-cpu-drwfhk2a/hypr-window-previews"
+        }
+      }
+    },
+    {
+      "symbol": "finish",
+      "replacement": "stage",
+      "originalFunctionID": 129675930808064,
+      "actualFunctionID": 129675930806480,
+      "accepted": false,
+      "error": {
+        "type": "ValueError",
+        "message": "actual linked actor refused; raw evidence retained"
+      },
+      "raw": {
+        "phase": "actor-linked",
+        "actor": 1,
+        "errors": [
+          {
+            "type": "ValueError",
+            "message": "actual actor/runtime links differ"
+          }
+        ],
+        "callbacks": {},
+        "relations": {
+          "desktop": true,
+          "transport": true,
+          "controller": true,
+          "controllerDesktop": true,
+          "controllerTransport": true,
+          "eventOwner": true,
+          "eventFunction": true,
+          "ownedCommands": true,
+          "readonly": true,
+          "productionCommands": true,
+          "baseClass": true,
+          "failureBinding": true,
+          "failureClosure": true,
+          "batchClass": true,
+          "batchCommands": true,
+          "batchRoot": true,
+          "batchPreview": true,
+          "batchActor": true,
+          "finisherFunction": true,
+          "finisherOwner": true,
+          "batchCallback.stage": true,
+          "batchCallback.finish": false,
+          "batchCallback.discard": true,
+          "batchCallback.require_releasable": true,
+          "batchCallback.require_disposable": true
+        },
+        "usable": false,
+        "batch": {
+          "instanceID": 129675927598928,
+          "commandsID": 129675927598608,
+          "root": "/tmp/readonly-cpu-t5prb_g8/service/actors/actor-1-cpu",
+          "preview": "/tmp/readonly-cpu-t5prb_g8/hypr-window-previews"
+        }
+      }
+    },
+    {
+      "symbol": "discard",
+      "replacement": "require_releasable",
+      "originalFunctionID": 129675930806656,
+      "actualFunctionID": 129675930806832,
+      "accepted": false,
+      "error": {
+        "type": "ValueError",
+        "message": "actual linked actor refused; raw evidence retained"
+      },
+      "raw": {
+        "phase": "actor-linked",
+        "actor": 1,
+        "errors": [
+          {
+            "type": "ValueError",
+            "message": "actual actor/runtime links differ"
+          }
+        ],
+        "callbacks": {},
+        "relations": {
+          "desktop": true,
+          "transport": true,
+          "controller": true,
+          "controllerDesktop": true,
+          "controllerTransport": true,
+          "eventOwner": true,
+          "eventFunction": true,
+          "ownedCommands": true,
+          "readonly": true,
+          "productionCommands": true,
+          "baseClass": true,
+          "failureBinding": true,
+          "failureClosure": true,
+          "batchClass": true,
+          "batchCommands": true,
+          "batchRoot": true,
+          "batchPreview": true,
+          "batchActor": true,
+          "finisherFunction": true,
+          "finisherOwner": true,
+          "batchCallback.stage": true,
+          "batchCallback.finish": true,
+          "batchCallback.discard": false,
+          "batchCallback.require_releasable": true,
+          "batchCallback.require_disposable": true
+        },
+        "usable": false,
+        "batch": {
+          "instanceID": 129675660428304,
+          "commandsID": 129675927589328,
+          "root": "/tmp/readonly-cpu-rf42x0k7/service/actors/actor-1-cpu",
+          "preview": "/tmp/readonly-cpu-rf42x0k7/hypr-window-previews"
+        }
+      }
+    },
+    {
+      "symbol": "require_releasable",
+      "replacement": "discard",
+      "originalFunctionID": 129675930806832,
+      "actualFunctionID": 129675930806656,
+      "accepted": false,
+      "error": {
+        "type": "ValueError",
+        "message": "actual linked actor refused; raw evidence retained"
+      },
+      "raw": {
+        "phase": "actor-linked",
+        "actor": 1,
+        "errors": [
+          {
+            "type": "ValueError",
+            "message": "actual actor/runtime links differ"
+          }
+        ],
+        "callbacks": {},
+        "relations": {
+          "desktop": true,
+          "transport": true,
+          "controller": true,
+          "controllerDesktop": true,
+          "controllerTransport": true,
+          "eventOwner": true,
+          "eventFunction": true,
+          "ownedCommands": true,
+          "readonly": true,
+          "productionCommands": true,
+          "baseClass": true,
+          "failureBinding": true,
+          "failureClosure": true,
+          "batchClass": true,
+          "batchCommands": true,
+          "batchRoot": true,
+          "batchPreview": true,
+          "batchActor": true,
+          "finisherFunction": true,
+          "finisherOwner": true,
+          "batchCallback.stage": true,
+          "batchCallback.finish": true,
+          "batchCallback.discard": true,
+          "batchCallback.require_releasable": false,
+          "batchCallback.require_disposable": true
+        },
+        "usable": false,
+        "batch": {
+          "instanceID": 129675660489568,
+          "commandsID": 129675660488960,
+          "root": "/tmp/readonly-cpu-ui8z2uu2/service/actors/actor-1-cpu",
+          "preview": "/tmp/readonly-cpu-ui8z2uu2/hypr-window-previews"
+        }
+      }
+    },
+    {
+      "symbol": "require_disposable",
+      "replacement": "require_idle",
+      "originalFunctionID": 129675930807184,
+      "actualFunctionID": 129675930807008,
+      "accepted": false,
+      "error": {
+        "type": "ValueError",
+        "message": "actual linked actor refused; raw evidence retained"
+      },
+      "raw": {
+        "phase": "actor-linked",
+        "actor": 1,
+        "errors": [
+          {
+            "type": "ValueError",
+            "message": "actual actor/runtime links differ"
+          }
+        ],
+        "callbacks": {},
+        "relations": {
+          "desktop": true,
+          "transport": true,
+          "controller": true,
+          "controllerDesktop": true,
+          "controllerTransport": true,
+          "eventOwner": true,
+          "eventFunction": true,
+          "ownedCommands": true,
+          "readonly": true,
+          "productionCommands": true,
+          "baseClass": true,
+          "failureBinding": true,
+          "failureClosure": true,
+          "batchClass": true,
+          "batchCommands": true,
+          "batchRoot": true,
+          "batchPreview": true,
+          "batchActor": true,
+          "finisherFunction": true,
+          "finisherOwner": true,
+          "batchCallback.stage": true,
+          "batchCallback.finish": true,
+          "batchCallback.discard": true,
+          "batchCallback.require_releasable": true,
+          "batchCallback.require_disposable": false
+        },
+        "usable": false,
+        "batch": {
+          "instanceID": 129675927752032,
+          "commandsID": 129675927753248,
+          "root": "/tmp/readonly-cpu-f7xvom2y/service/actors/actor-1-cpu",
+          "preview": "/tmp/readonly-cpu-f7xvom2y/hypr-window-previews"
+        }
+      }
+    }
+  ],
+  "nativeLaunch": false,
+  "candidateEdited": false,
+  "scopeLimit": "Owned CPU RuntimeLease/reader/actor fixture, initial real frozen-method replacement before actual linked_actor; no timing/native feature conclusion"
+}

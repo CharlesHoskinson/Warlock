@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences_table_navigation" xml:lang="kk">
+  <info>
+    <link type="guide" xref="preferences#application"/>
+    <link type="next" xref="preferences_chat"/>
+    <link type="seealso" xref="commands_structural_navigation"/>
+    <link type="seealso" xref="commands_table"/>
+    <title type="sort">2. Кесте навигациясы</title>
+    <title type="link">Кесте навигациясы</title>
+    <desc><app>Orca</app>-ның кестелер ішіндегі навигациясын теңшеу</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Кесте навигациясы баптаулары</title>
+  <p>Келесі опциялар <link xref="howto_structural_navigation">Құрылымдық навигация</link> іске қосылған қолданбаларда кесте ішінде навигация жасаған кезде <app>Orca</app> әрекетін теңшеуге мүмкіндік береді.</p>
+  <section id="speak_cell_coordinates">
+    <title>Ұяшық координаттарын дыбыстау</title>
+    <p>Егер бұл жалауша белгіленсе, <app>Orca</app> сіз навигация жасаған әрбір ұяшықтың координаттарын хабарлайды.</p>
+    <p>Әдепкі мәні: белгіленген</p>
+  </section>
+  <section id="speak_multiple_cell_spans">
+    <title>Бірнеше ұяшық ауқымын дыбыстау</title>
+    <p>Егер бұл жалауша белгіленсе, ұяшық бірнеше жолды және/немесе бағанды қамтыған кезде <app>Orca</app> оның қанша жолды және/немесе бағанды қамтитынын хабарлайды.</p>
+    <p>Әдепкі мәні: белгіленген</p>
+  </section>
+  <section id="announce_cell_header">
+    <title>Ұяшық жоғарғы колонтитулын хабарлау</title>
+    <p>Егер бұл жалауша белгіленсе, ағымдағы ұяшық үшін жоғарғы колонтитулдарды анықтау мүмкін болса, <app>Orca</app> жоғарғы колонтитулдағы өзгерістерді хабарлайды.</p>
+    <p>Әдепкі мәні: белгіленген</p>
+  </section>
+  <section id="skip_blank_cells">
+    <title>Бос ұяшықтарды өткізіп жіберу</title>
+    <p>Егер бұл жалауша белгіленсе, кестеге қол жеткізу үшін <app>Orca</app>-ның кестелік құрылымдық навигация командаларын пайдаланған кезде <app>Orca</app> бос ұяшықтарды өткізіп жібереді.</p>
+    <p>Әдепкі мәні: белгіленбеген</p>
+  </section>
+</page>

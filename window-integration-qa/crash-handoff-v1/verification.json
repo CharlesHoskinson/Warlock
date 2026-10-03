@@ -1,0 +1,94 @@
+{
+  "handoff": "/home/hoskinson/Documents/crash-noise/HANDOFF-codex-window-qa.md",
+  "handoffSHA256": "e905e5fe7cc7b23fb9735b85b8d24a6ba136bbd9c83a4778d63a9729c918ee18",
+  "updatedUTC": "2026-10-01T12:13:50.272542+00:00",
+  "allFiveImplemented": true,
+  "nestedLaunchOccurred": false,
+  "mainGUIWrites": false,
+  "corePropertyAttempt": {
+    "exitCode": 1,
+    "stderr": "Unknown assignment: LimitCORE=1",
+    "resolution": "systemd-run --user --scope --slice=qa-harness.slice --unit=qa-harness-<unique> -- prlimit --core=1:1 -- <bootstrap> -- <runner>"
+  },
+  "actualSmoke": {
+    "normalScope": "qa-harness-4a7fe4daee4d427e98d81c5fa7a188bf.scope",
+    "normalLimits": [
+      1,
+      1
+    ],
+    "childLimits": [
+      1,
+      1
+    ],
+    "diagnosticScope": "qa-harness-b65c52bfe32e4c15ae821efe0c56fea2.scope",
+    "diagnosticLimits": [
+      -1,
+      -1
+    ],
+    "diagnosticChildLimits": [
+      -1,
+      -1
+    ],
+    "runtime": "/run/user/1000/wqa/ddd1",
+    "runtimeMode": "0700",
+    "runtimeGone": true,
+    "accessibleRenderNodes": [
+      "/dev/dri/renderD128",
+      "/dev/dri/renderD129"
+    ],
+    "scopeSurvivors": 0
+  },
+  "offlineTests": {
+    "launchGuards": 13,
+    "hostGuards": 15,
+    "abiGuardsAndSubprocessCleanup": 10,
+    "total": 38,
+    "rootABITestSource": "abi-safe-v2/test_guard.py",
+    "newABIExecutableSourcesByteIdentical": true
+  },
+  "hostManifest": {
+    "path": "/home/hoskinson/window-integration-qa/private-weston-host-v2/host-stage-report.json",
+    "sha256": "08bc911b36ac6f9910b12513333a3d1d0d7149b12d56776b5ff57703e4fe3900",
+    "local": 1508,
+    "symlink": 4,
+    "external": 216,
+    "verified": true
+  },
+  "abiManifest": {
+    "path": "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/abi-safe-v3/frozen-inputs.json",
+    "sha256": "47d99bada9125a35ee840c36da7efc120c8ade96f0e0cfb7fd1d209d80e02593",
+    "inputs": 27,
+    "verified": true
+  },
+  "sources": {
+    "qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+    "qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+    "qa_nested_target.py": "63ba2cb5812a8c5058e9fedd6745ee46faa10a2c1a9185a87f2e0b0783b9c8d5",
+    "test_qa_launch.py": "a2f5ec88398af10b30bf251137ccb400940ea5d0ccbe8f69610cfbe6a09b15c3",
+    "README.md": "8403b79bb085a4df6380281da18a6f68ef817d8a6bc93a97fc1d2030fac4a40b",
+    "live_drag_bridge_nested.py": "f002dbc8955c526e8a14d54aec922234ebc2d795de3766947d7d2456bf29c0db",
+    "run_pinned_modal_nested.py": "e8d2d74aec420b978139e080a1432f24135375d7436cb0ca96e3fe543c78a8d3",
+    "nested_drag.lua": "3f7b4c4367105d9e0e34b8b282b529bbd289ccbc3e95a62ec69cd975c4e8afd3",
+    "nested_pinned.lua": "1f2d9389c5213e645f92e11a0b93357ee6005cf92002d1e0d8e69824cc2b367f",
+    "nested_pinned_x11.lua": "a11acf691142bd245f9df56c5ff813a320fb7f3f1f0a0fa30785637fc0cdf794",
+    "nested_caption.lua": "011eebbf1a5c1b69ca67eba4ec127f7ebfef77ff0bef417dc267725fc4131d44",
+    "motion-probe/nested.lua": "1d993fda953559127d68c820f09bcb087da358fc563310b222f32b4605e199a2",
+    "content-probe/smoke.py": "5e79d39adbb9d1abedaf6ba4210b8c7363b6a52a7ec5b19d492fa75f11b51505",
+    "recovery-audit/isolated_restart.py": "9eb09fcadd5569929e24d70c976a0168883c9fd204a7c657bfcc99b8a3046d05",
+    "recovery-audit/isolated_restart.lua": "d3adeaf23525b500b6b733666bf162d408325605047cdee5bae59568ab9b5bda",
+    "recovery-audit/real_brave_publisher.py": "aa09d337bf935300b768842a5de49ba3a3352918660714f5ca81219c98b73723",
+    "family-raster-oracle-v2/run_private_raster.py": "be72e06f75f6030cff9d91af5a649cfcabae926bf5bfede9c7d339b717fa51ca",
+    "family-raster-oracle-v2/private-nested.lua": "c25dc88f48ebbd55494efac8ca4e384c4bc958ffdea8b58c5c7bb92b3dda0448"
+  },
+  "remainingRuntimeProof": [
+    "private host actual hardware GL and DMA-BUF",
+    "nested fixture normal shutdown and no survivors",
+    "full window parity QA campaigns"
+  ],
+  "untouched": [
+    "desktop crash-watch override",
+    "installed grim",
+    "installed gnome-keyring",
+    "prior frozen evidence"
+  ]
+}

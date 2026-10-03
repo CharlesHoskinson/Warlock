@@ -1,0 +1,6 @@
+{
+  "import": "from metrics_diagnostic import observe as observe_metrics\n",
+  "block": "  metrics_proof={'phase':label};report.setdefault('browserMetricsDiagnostic',[]).append(metrics_proof)\n  try:\n   observe_metrics(metrics_proof,evidence,owned_roots['browser'],profile,expected,target_guard)\n  except Exception as error:\n   metrics_proof.setdefault('errors',{})['observation']={'type':type(error).__name__,'errno':getattr(error,'errno',None),'error':str(error)};raise\n  finally:\n   PrivateDesktop.private_json(out/'browser-metrics-diagnostic.json',report['browserMetricsDiagnostic'])\n",
+  "authorityChanged": false,
+  "priorSessionSHA256": "229cd6d9d06258e8bf11c78e9b6116c011318f316b05bbddb7da3e1077ccf998"
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_learn_modes" xml:lang="sr">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_keyboard_layout"/>
+    <title type="sort">5. Режим учења</title>
+    <desc>Откривање наредби <app>Орке</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Режим учења</title>
+  <p>У режиму учења, <app>Орка</app> ће изговорити сваки тастер који притиснете заједно са било којом придруженом наредбом <app>Орке</app> за коју је тај тастер везан. У овом режиму такође можете добити списак пречица које садрже све наредбе <app>Орке</app> које можете користити.</p>
+  <steps>
+    <title>Коришћење режима учења</title>
+    <item>
+      <p>Уђите у режим учења притиском на <keyseq><key>Оркин измењивач</key> <key>H</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Притисните било који тастер или низ тастера. <app>Орка</app> ће изговорити тастере и сваку придружену наредбу.</p>
+    </item>
+    <item>
+      <p>Притисните <key>Esc</key> за излазак из режима учења.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Добијање списка пречица</title>
+    <item>
+      <p>Уђите у режим учења притиском на <keyseq><key>Оркин измењивач</key> <key>H</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Притисните <key>F2</key> ако желите списак пречица које се примењују на читаву <app>Орку</app>, или притисните <key>F3</key> ако желите списак пречица које су специфичне за програм у фокусу.</p>
+    </item>
+    <item>
+      <p>Притисните <key>Горе</key> или <key>Доле</key> да бисте испитали садржај списка.</p>
+    </item>
+    <item>
+      <p>Притисните <key>Esc</key> за излазак из списка.</p>
+    </item>
+  </steps>
+</page>

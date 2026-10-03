@@ -1,0 +1,112 @@
+--- frozen-v6a/plugin-v6a.cpp
++++ fresh-v7/plugin-v7.cpp
+@@ -1,6 +1,20 @@
+ // Offline/private candidate only. This file has never been loaded on the main compositor.
+ #include "key_policy.hpp"
+ #include "xkb_helpers.hpp"
++#include "PointerLocatorState.hpp"
++#include <hyprland/src/desktop/state/ViewState.hpp>
++#include <hyprland/src/desktop/state/ViewHitTester.hpp>
++#include <hyprland/src/desktop/state/WindowState.hpp>
++#include <hyprland/src/desktop/view/Window.hpp>
++#include <hyprland/src/state/MonitorState.hpp>
++#include <hyprland/src/state/MonitorQuery.hpp>
++#include <hyprland/src/output/Monitor.hpp>
++#include <hyprland/src/pointer/PointerManager.hpp>
++#include <hyprland/src/managers/SessionLockManager.hpp>
++#include <hyprland/src/protocols/LayerShell.hpp>
++#include <atspi/atspi-constants.h>
++#include <fstream>
++#include <sstream>
+ #include <hyprland/src/plugins/PluginAPI.hpp>
+ #include <hyprland/src/Compositor.hpp>
+ #include <hyprland/src/devices/IKeyboard.hpp>
+@@ -221,6 +235,7 @@
+     original(kb,filtered.depressed,filtered.latched,filtered.locked,filtered.group);
+     if(d.virtualMask.parity()==0&&d.lockRoutes.empty()&&policy.capturedKeys(reinterpret_cast<uintptr_t>(kb)).empty())d.lockFiltering=false;
+ }
++#include "pointer_native.hpp"
+ DBusHandlerResult dispatch(DBusConnection*,DBusMessage* m,void*) {
+     if(dbus_message_is_signal(m,DBUS_INTERFACE_DBUS,"NameOwnerChanged")&&dbus_message_has_sender(m,DBUS_SERVICE_DBUS)) {
+         const char *name=nullptr,*old=nullptr,*owner=nullptr;
+@@ -228,23 +243,32 @@
+             if(monitorName(name)){registrations.erase(name);if(*owner)registrations[name]=owner;prune(old);policy.resetTaps();}
+             else if(*name==':'&&!*owner) {for(auto it=registrations.begin();it!=registrations.end();)if(it->second==name)it=registrations.erase(it);else ++it;policy.drop(name);}
+         }
++        reconcilePointerOwners();
+         return DBUS_HANDLER_RESULT_HANDLED;
+     }
+     if(dbus_message_get_type(m)!=DBUS_MESSAGE_TYPE_METHOD_CALL||std::string(dbus_message_get_path(m)?dbus_message_get_path(m):"")!=PATH)return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
+     const char* sender=dbus_message_get_sender(m);
+     if(dbus_message_is_method_call(m,DBUS_INTERFACE_INTROSPECTABLE,"Introspect")) {
+-        constexpr const char* xml="<node><interface name='org.freedesktop.a11y.KeyboardMonitor'><method name='WatchKeyboard'/><method name='UnwatchKeyboard'/><method name='GrabKeyboard'/><method name='UngrabKeyboard'/><method name='SetKeyGrabs'><arg type='au' direction='in'/><arg type='a(uu)' direction='in'/></method><signal name='KeyEvent'><arg type='b'/><arg type='u'/><arg type='u'/><arg type='u'/><arg type='q'/></signal></interface><interface name='org.omarchy.KeyboardMonitorProbe'><method name='State'><arg type='s' direction='out'/></method><method name='PrepareUnload'><arg type='b' direction='out'/></method></interface></node>";
++        constexpr const char* xml="<node><interface name='org.freedesktop.a11y.KeyboardMonitor'><method name='WatchKeyboard'/><method name='UnwatchKeyboard'/><method name='GrabKeyboard'/><method name='UngrabKeyboard'/><method name='SetKeyGrabs'><arg type='au' direction='in'/><arg type='a(uu)' direction='in'/></method><signal name='KeyEvent'><arg type='b'/><arg type='u'/><arg type='u'/><arg type='u'/><arg type='q'/></signal></interface><interface name='org.freedesktop.a11y.PointerLocator'><method name='QueryPointer'><arg type='a{sv}' direction='out'/><arg type='d' direction='out'/><arg type='d' direction='out'/></method><signal name='PointerPositionChanged'/></interface><interface name='org.omarchy.KeyboardMonitorProbe'><method name='State'><arg type='s' direction='out'/></method><method name='PrepareUnload'><arg type='b' direction='out'/></method></interface></node>";
+         auto* r=dbus_message_new_method_return(m);dbus_message_append_args(r,DBUS_TYPE_STRING,&xml,DBUS_TYPE_INVALID);send(r);return DBUS_HANDLER_RESULT_HANDLED;
+     }
+     if(dbus_message_has_interface(m,"org.omarchy.KeyboardMonitorProbe")) {
+         if(dbus_message_has_member(m,"PrepareUnload")) {
+-            dbus_bool_t ready=unloadQuiescent();if(ready){retiring=true;policy.stop();}
++            dbus_bool_t ready=unloadQuiescent();if(ready){retiring=true;policy.stop();pointerRetire();}
+             auto* r=dbus_message_new_method_return(m);dbus_message_append_args(r,DBUS_TYPE_BOOLEAN,&ready,DBUS_TYPE_INVALID);send(r);return DBUS_HANDLER_RESULT_HANDLED;
+         }
+         if(dbus_message_has_member(m,"State")) {
+-            const auto value=std::string("{\"retiring\":")+(retiring?"true":"false")+",\"unloadQuiescent\":"+(unloadQuiescent()?"true":"false")+",\"registrations\":"+std::to_string(registrations.size())+",\"clients\":"+std::to_string(policy.clients.size())+",\"devices\":"+std::to_string(devices.size())+",\"quiescent\":"+(policy.quiescent()?"true":"false")+",\"nativeInputProved\":false}";
++            const auto caller=sender?policy.clients.find(sender):policy.clients.end();
++            const bool preReplay=sender&&registered(sender)&&(caller==policy.clients.end()||(!caller->second.full&&caller->second.modifiers.empty()&&caller->second.strokes.empty()));
++            const auto value=std::string("{\"retiring\":")+(retiring?"true":"false")+",\"unloadQuiescent\":"+(unloadQuiescent()?"true":"false")+",\"registrations\":"+std::to_string(registrations.size())+",\"clients\":"+std::to_string(policy.clients.size())+",\"devices\":"+std::to_string(devices.size())+",\"quiescent\":"+(policy.quiescent()?"true":"false")+",\"callerPreReplay\":"+(preReplay?"true":"false")+",\"pointerPending\":"+std::to_string(pointerState.pendingCount())+",\"nativeInputProved\":false}";
+             const char* s=value.c_str();auto* r=dbus_message_new_method_return(m);dbus_message_append_args(r,DBUS_TYPE_STRING,&s,DBUS_TYPE_INVALID);send(r);return DBUS_HANDLER_RESULT_HANDLED;
+         }
++    }
++    if(dbus_message_has_interface(m,POINTER_IFACE)) {
++        if(retiring||initializing){error(m,"org.freedesktop.a11y.ServiceRetired","service retired");return DBUS_HANDLER_RESULT_HANDLED;}
++        if(!registered(sender)){error(m,DBUS_ERROR_ACCESS_DENIED,"caller requires its registration");return DBUS_HANDLER_RESULT_HANDLED;}
++        if(!dbus_message_has_member(m,"QueryPointer")||!dbus_message_has_signature(m,"")){error(m,DBUS_ERROR_INVALID_ARGS,"unknown pointer method/signature");return DBUS_HANDLER_RESULT_HANDLED;}
++        queryPointer(m,sender);return DBUS_HANDLER_RESULT_HANDLED;
+     }
+     if(!dbus_message_has_interface(m,IFACE)) {error(m,DBUS_ERROR_UNKNOWN_INTERFACE,"keyboard-only staged service");return DBUS_HANDLER_RESULT_HANDLED;}
+     if(retiring||initializing){error(m,"org.freedesktop.a11y.ServiceRetired","service incarnation is not accepting subscriptions");return DBUS_HANDLER_RESULT_HANDLED;}
+@@ -267,11 +291,15 @@
+ }
+ int poll(void*) {
+     if(!bus)return 0;
+-    if(!dbus_connection_read_write(bus,0)||!dbus_connection_get_is_connected(bus))policy.stop();
++    if(!dbus_connection_read_write(bus,0)||!dbus_connection_get_is_connected(bus)){policy.stop();pointerRetire();}
+     else for(unsigned int budget=0;budget<32&&dbus_connection_get_dispatch_status(bus)==DBUS_DISPATCH_DATA_REMAINS;++budget)dbus_connection_dispatch(bus);
++    // Do not finalize an asynchronous AX reply ahead of already queued owner
++    // changes when this tick's bounded session dispatch budget was exhausted.
++    if(dbus_connection_get_dispatch_status(bus)!=DBUS_DISPATCH_DATA_REMAINS)pollPointers();
+     wl_event_source_timer_update(timer,5);return 0;
+ }
+ void cleanup() {
++    pointerCleanup();
+     if(timer){wl_event_source_remove(timer);timer=nullptr;}
+     if(bus){dbus_connection_remove_filter(bus,dispatch,nullptr);dbus_connection_close(bus);dbus_connection_unref(bus);bus=nullptr;}
+     policy.stop();devices.clear();registrations.clear();
+@@ -350,20 +378,23 @@
+                 dbus_connection_dispatch(bus);
+             }
+         } while(dbus_connection_read_write(bus,0)&&dbus_connection_get_dispatch_status(bus)==DBUS_DISPATCH_DATA_REMAINS);
++        reconcilePointerOwners();
++        connectAccessibility();
+         const int result=dbus_bus_request_name(bus,"org.freedesktop.a11y.Manager",DBUS_NAME_FLAG_DO_NOT_QUEUE,&err);
+         if(result!=DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER)throw std::runtime_error("manager already owned or unavailable");
+         initializing=false;
+         hook(pressedHook,"_ZN9IKeyboard13updatePressedEjb",reinterpret_cast<void*>(onPressed));
+         hook(keyHook,"_ZN13CInputManager13onKeyboardKeyERKN9IKeyboard9SKeyEventEN9Hyprutils6Memory14CSharedPointerIS0_EE",reinterpret_cast<void*>(onKey));
+         hook(maskHook,"_ZN9IKeyboard15updateModifiersEjjjj",reinterpret_cast<void*>(onMask));
++        hook(motionHook,"_ZN7Pointer15CPointerManager13onCursorMovedEv",reinterpret_cast<void*>(observeMotion));
+         timer=wl_event_loop_add_timer(g_pCompositor->m_wlEventLoop,poll,nullptr);
+         if(!timer)throw std::runtime_error("Wayland dispatch timer allocation");
+         wl_event_source_timer_update(timer,5);
+     } catch(...) {
+-        for(auto* entry:{pressedHook,keyHook,maskHook})if(entry)HyprlandAPI::removeFunctionHook(handle,entry);
+-        pressedHook=keyHook=maskHook=nullptr;cleanup();throw;
+-    }
+-    return {"keyboard-monitor-private","Exact ABI keyboard monitor isolated candidate","local parity QA","0.6-private-retirement"};
++        for(auto* entry:{pressedHook,keyHook,maskHook,motionHook})if(entry)HyprlandAPI::removeFunctionHook(handle,entry);
++        pressedHook=keyHook=maskHook=motionHook=nullptr;cleanup();throw;
++    }
++    return {"keyboard-monitor-private","Exact ABI keyboard monitor isolated candidate","local parity QA","0.7-private-pointer"};
+ }
+ APICALL EXPORT void PLUGIN_EXIT() {
+     // PrepareUnload is the normal quiescence precondition. Accepted keys stay

@@ -1,0 +1,14 @@
+
+  readonly_registry_test
+    ok healthyParallelQueriesHaveDistinctRetainedRowsTest passed 1 test(s)
+    ok oneRefusalCannotConsumeOtherQueryDataTest passed 1 test(s)
+    ok refusalBlocksNewConnectionUntilDurableClosureTest passed 1 test(s)
+    ok failedPublicationLatchesWholeServiceFaultTest passed 1 test(s)
+    ok retainedCapacityCannotForgetClosedRowsTest passed 1 test(s)
+    ok completedConnectionIDCannotBeReusedTest passed 1 test(s)
+    ok physicalClosureCannotReplacePublicationTest passed 1 test(s)
+    ok missingPerConnectionProofCannotReturnTest passed 1 test(s)
+    ok refusedRowNeverReturnsAfterPublicationTest passed 1 test(s)
+    ok registrationFaultCannotConnectTest passed 1 test(s)
+
+  10 passing (922ms)

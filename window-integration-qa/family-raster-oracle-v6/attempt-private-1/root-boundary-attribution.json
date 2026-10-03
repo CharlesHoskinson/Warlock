@@ -1,0 +1,449 @@
+{
+  "scope": "Held diagnostic producer readback before matching accepted own swaps; no cadence/native transaction/physical proof",
+  "reportSHA256": "068788e56b66dba824a715cb40905f5da40fccf03081a14908991965edfc33ab",
+  "samples": [
+    {
+      "sample": "0-ORACLE-SECOND",
+      "exactRawRGBPlusOpaqueBlackComposition": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "0ce6b73cac797e61557655d619fcf34fb7d59fd635b00be76a1362155f18cee8",
+        "expectedSHA256": "0ce6b73cac797e61557655d619fcf34fb7d59fd635b00be76a1362155f18cee8"
+      },
+      "producerVersusOracle": {
+        "passed": false,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 7,
+        "badChannels": 8,
+        "maxChannelError": 2,
+        "firstFailures": [
+          {
+            "x": 48,
+            "y": 107,
+            "errors": [
+              2,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "x": 65,
+            "y": 107,
+            "errors": [
+              0,
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "x": 65,
+            "y": 108,
+            "errors": [
+              2,
+              1,
+              2,
+              0
+            ]
+          },
+          {
+            "x": 23,
+            "y": 109,
+            "errors": [
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "x": 23,
+            "y": 110,
+            "errors": [
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "x": 23,
+            "y": 111,
+            "errors": [
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "x": 23,
+            "y": 112,
+            "errors": [
+              2,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "actualSHA256": "a89b9216dbf99444bcb1ff65218ff622e6fb819937bfe1369d18e3db95bfc3d1",
+        "expectedSHA256": "875bbb8a143d61066cdcc674801b544a12e8ccb962d806e44d863d1a13f4ec0b"
+      },
+      "composedVersusOracle": {
+        "passed": false,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 7,
+        "badChannels": 8,
+        "maxChannelError": 2,
+        "firstFailures": [
+          {
+            "x": 48,
+            "y": 107,
+            "errors": [
+              2,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "x": 65,
+            "y": 107,
+            "errors": [
+              0,
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "x": 65,
+            "y": 108,
+            "errors": [
+              2,
+              1,
+              2,
+              0
+            ]
+          },
+          {
+            "x": 23,
+            "y": 109,
+            "errors": [
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "x": 23,
+            "y": 110,
+            "errors": [
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "x": 23,
+            "y": 111,
+            "errors": [
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "x": 23,
+            "y": 112,
+            "errors": [
+              2,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "actualSHA256": "0ce6b73cac797e61557655d619fcf34fb7d59fd635b00be76a1362155f18cee8",
+        "expectedSHA256": "0929b5abd9b8680987653c85ef3b27cba89c0856023d039326b3917394eb8de0"
+      },
+      "eglConfig": {
+        "alpha": 8,
+        "blue": 8,
+        "buffer": 32,
+        "colorBufferType": 12430,
+        "configId": 51,
+        "green": 8,
+        "nativeVisualId": 875713089,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "glBuffer": {
+        "alpha": 8,
+        "blue": 8,
+        "framebuffer": 0,
+        "green": 8,
+        "readFormat": 32993,
+        "readType": 5121,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "sameOracleFailuresAcrossBoundaries": true,
+      "readbackSHA256": "ad3071fb4b0304045f7a1d6faaa2471272efe15b906fd7e5a3899c121fd65cd0"
+    },
+    {
+      "sample": "0-WAYLAND-1",
+      "exactRawRGBPlusOpaqueBlackComposition": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "2f4de4ee257e960a099d8923df0c93bb852e637dede2f19ddb8e7173c6fef2f3",
+        "expectedSHA256": "2f4de4ee257e960a099d8923df0c93bb852e637dede2f19ddb8e7173c6fef2f3"
+      },
+      "producerVersusOracle": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0",
+        "expectedSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0"
+      },
+      "composedVersusOracle": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "2f4de4ee257e960a099d8923df0c93bb852e637dede2f19ddb8e7173c6fef2f3",
+        "expectedSHA256": "2f4de4ee257e960a099d8923df0c93bb852e637dede2f19ddb8e7173c6fef2f3"
+      },
+      "eglConfig": {
+        "alpha": 8,
+        "blue": 8,
+        "buffer": 32,
+        "colorBufferType": 12430,
+        "configId": 51,
+        "green": 8,
+        "nativeVisualId": 875713089,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "glBuffer": {
+        "alpha": 8,
+        "blue": 8,
+        "framebuffer": 0,
+        "green": 8,
+        "readFormat": 32993,
+        "readType": 5121,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "sameOracleFailuresAcrossBoundaries": true,
+      "readbackSHA256": "85af2282859120b4031d28267a049e960582dee43435863ff8c6061231d6e85d"
+    },
+    {
+      "sample": "1-ORACLE-SECOND",
+      "exactRawRGBPlusOpaqueBlackComposition": {
+        "passed": true,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "f53b7afe01e9d1298ddecfe3323beac019e6925f9476378df94ff9af379117b4",
+        "expectedSHA256": "f53b7afe01e9d1298ddecfe3323beac019e6925f9476378df94ff9af379117b4"
+      },
+      "producerVersusOracle": {
+        "passed": false,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 2,
+        "badChannels": 2,
+        "maxChannelError": 2,
+        "firstFailures": [
+          {
+            "x": 73,
+            "y": 166,
+            "errors": [
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "x": 57,
+            "y": 176,
+            "errors": [
+              0,
+              2,
+              1,
+              0
+            ]
+          }
+        ],
+        "actualSHA256": "2d40520747e858a18e857a7c065da5f39b640d87a6d4357a2c37ef322c7d92d8",
+        "expectedSHA256": "67bc54fdf089074395f098cbb14514f672279366fcd17a00dcbd5a25df6c0a56"
+      },
+      "composedVersusOracle": {
+        "passed": false,
+        "pixelsCompared": 172800,
+        "channelsCompared": 691200,
+        "tolerance": 1,
+        "badPixels": 2,
+        "badChannels": 2,
+        "maxChannelError": 2,
+        "firstFailures": [
+          {
+            "x": 73,
+            "y": 166,
+            "errors": [
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "x": 57,
+            "y": 176,
+            "errors": [
+              0,
+              2,
+              1,
+              0
+            ]
+          }
+        ],
+        "actualSHA256": "f53b7afe01e9d1298ddecfe3323beac019e6925f9476378df94ff9af379117b4",
+        "expectedSHA256": "d4e470307cda3f003374ca51b7a537b58a3e93aea2b2a906b55a287a23ea69f7"
+      },
+      "eglConfig": {
+        "alpha": 8,
+        "blue": 8,
+        "buffer": 32,
+        "colorBufferType": 12430,
+        "configId": 51,
+        "green": 8,
+        "nativeVisualId": 875713089,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "glBuffer": {
+        "alpha": 8,
+        "blue": 8,
+        "framebuffer": 0,
+        "green": 8,
+        "readFormat": 32993,
+        "readType": 5121,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "sameOracleFailuresAcrossBoundaries": true,
+      "readbackSHA256": "b97b0c7d220e7bc024aca8e4a26850cac50fe87767b8b836b5f36b4374fc7a77"
+    },
+    {
+      "sample": "1-WAYLAND-1",
+      "exactRawRGBPlusOpaqueBlackComposition": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "025771bd59e13eb2f055a2e3c16346466f869d87a10a3a93b10057877b74182b",
+        "expectedSHA256": "025771bd59e13eb2f055a2e3c16346466f869d87a10a3a93b10057877b74182b"
+      },
+      "producerVersusOracle": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 1,
+        "firstFailures": [],
+        "actualSHA256": "5b3d0fe17f31ab6ae8935c97d846cc0d5d538c7aa0ae38442e391b4860e13d8b",
+        "expectedSHA256": "c14a4b89ea64f91a355be874946eaaa70d6ae778eb67ff86679662f59e3d1449"
+      },
+      "composedVersusOracle": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 1,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 1,
+        "firstFailures": [],
+        "actualSHA256": "025771bd59e13eb2f055a2e3c16346466f869d87a10a3a93b10057877b74182b",
+        "expectedSHA256": "3d872bd29a6a5733d75dc81f861adf78cdbcae996a1c7e8eefe93619d5d27125"
+      },
+      "eglConfig": {
+        "alpha": 8,
+        "blue": 8,
+        "buffer": 32,
+        "colorBufferType": 12430,
+        "configId": 51,
+        "green": 8,
+        "nativeVisualId": 875713089,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "glBuffer": {
+        "alpha": 8,
+        "blue": 8,
+        "framebuffer": 0,
+        "green": 8,
+        "readFormat": 32993,
+        "readType": 5121,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "sameOracleFailuresAcrossBoundaries": true,
+      "readbackSHA256": "97d229a03be94ad0e6a81991bfc04c1d17e1d1c80d4497b12b9f4fa547dc7599"
+    }
+  ],
+  "allFourComposedImagesExactlyMatchRawRGBOverBlack": true,
+  "allFourRawAndComposedOracleFailureVectorsEqual": true,
+  "inference": "Retained scaled pixel discrepancies are present in producer RGBA8 readback before compositor composition. Compositor adds no RGB discrepancy in these four held scenes. Shader versus fixed-function sampling/blending versus readback conversion/oracle cause still requires separate attribution; no tolerance change or repair claimed."
+}

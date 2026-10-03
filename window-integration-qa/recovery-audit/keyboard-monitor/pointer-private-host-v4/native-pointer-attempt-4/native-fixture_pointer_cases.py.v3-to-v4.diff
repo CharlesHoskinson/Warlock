@@ -1,0 +1,53 @@
+--- V3/native-fixture/pointer_cases.py
++++ V4/native-fixture/pointer_cases.py
+@@ -8,6 +8,11 @@
+ _geometry_spec=importlib.util.spec_from_file_location('_owned_pointer_popup_geometry',_geometry_path)
+ _geometry=importlib.util.module_from_spec(_geometry_spec);_geometry_spec.loader.exec_module(_geometry)
+ ready_popup,popup_target=_geometry.ready_popup,_geometry.popup_target
++_ax_path=Path(__file__).resolve().parent.parent/'ax_wire_trace.py'
++assert _ax_path.is_file() and not _ax_path.is_symlink() and _ax_path.stat().st_uid==os.getuid()
++_ax_spec=importlib.util.spec_from_file_location('_owned_private_ax_wire',_ax_path)
++_ax_wire=importlib.util.module_from_spec(_ax_spec);_ax_spec.loader.exec_module(_ax_wire)
++signed_query_evidence=_ax_wire.signed_query_evidence
+ 
+ def run(c):
+     here,env,reader_root=c['here'],c['env'],c['reader_root']
+@@ -28,6 +33,9 @@
+         "type='method_call',interface='org.freedesktop.DBus',member='ReleaseName'",
+         "type='method_call',interface='org.freedesktop.DBus',member='GetNameOwner'",
+         "type='method_return'"],env,'pointer-wire-monitor')
++    c['launch'](['dbus-monitor','--address',c['ax_address'],
++        "type='method_call',interface='org.a11y.atspi.Component',member='GetAccessibleAtPoint'",
++        "type='method_return'"],env,'pointer-ax-wire-monitor')
+     def read_json(path):
+         try:return json.loads(path.read_text())
+         except (OSError,json.JSONDecodeError):return {}
+@@ -258,7 +266,7 @@
+     window=native_window('A');px,py=popup_target(window,popup)
+     trace('actual-allocated-popup-target',popup=popup,window=window,target=[px,py])
+     check('popup target uses allocated real toolkit child',ready_popup(popup) and [px,py]!=window['at'],popup=popup,window=window,target=[px,py])
+-    start=time.monotonic();move(px,py);popup_cursor=data('cursorpos')
++    popup_wall=time.time();start=time.monotonic();move(px,py);popup_cursor=data('cursorpos')
+     raw_position=ctl('repl',"local p=hl.get_cursor_pos(); return string.format('%.17g,%.17g',p.x,p.y)")
+     double_cursor=[float(v) for v in raw_position.split(',')]
+     trace('actual-popup-cursor-after-input',requested=[px,py],cursorFloored=popup_cursor,cursorDouble=double_cursor,start=start)
+@@ -268,6 +276,19 @@
+     popup_item=wait(lambda:[e for e in events(event_path) if e.get('time',0)>=start and e.get('event')=='actual-public-current-item' and e.get('accessible',{}).get('name')=='Actual popup target A'],'actual Orca popup AX child',15)
+     check('actual popup origin maps to parent AX frame and real child',match(popup_query,frame_a) and bool(popup_hit and popup_item),query=popup_query,toolkit=popup_hit,reader=popup_item,popup=popup)
+     check('outside-parent popup preserves negative logical client coordinate',popup_query['value'][2]<0,query=popup_query)
++    reader_ax=wait(lambda:next((r for r in ax() if r.get('pid')==reader.pid and r.get('app_bus')),None),'actual reader AX bus identity')
++    raw_popup=[e for e in events(event_path) if e.get('time',0)>=start and e.get('event')=='actual-public-pointer-moved'
++        and e.get('accessible',{}).get('object_path')==frame_a['object_path'] and e.get('x')==int(popup_query['value'][1]) and e.get('y')==(int(popup_query['value'][2])&0xffffffff)]
++    check('actual official popup signal retains unsigned raw negative encoding',bool(raw_popup),events=raw_popup)
++    actual_item=popup_item[-1]['accessible']
++    signed_ax=wait(lambda:signed_query_evidence(here/'pointer-ax-wire-monitor.log',after=popup_wall,
++        reader_bus=reader_ax['app_bus'],app_bus=frame_a['app_bus'],x=int(popup_query['value'][1]),y=int(popup_query['value'][2]),item_path=actual_item['object_path']),
++        'actual original Orca signed WINDOW query and exact popup AX child reply',15)
++    check('same official reader signal reaches signed AX query and actual popup child',bool(signed_ax),wire=signed_ax,readerAX=reader_ax,item=actual_item)
++    popup_heard=wait(lambda:[e for e in events(speech) if e.get('time',0)>=start and 'actual popup target a' in e.get('text','').lower()],
++        'actual Orca popup child spoken',10)
++    check('actual Orca presents and speaks the negative-origin popup child',bool(popup_heard),utterances=popup_heard)
++
+     request(peers['A']['process'],'close-popover')
+     check('real public disable succeeds',set_mouse(False) is True);start=time.monotonic();move(*target('B'));time.sleep(.25)
+     check('disabled reviewer exposes no current item or new item event',not read_json(state_path)['mouseEnabled'] and read_json(state_path)['currentItem'] is None and not any(e.get('event')=='actual-public-current-item' and e.get('time',0)>=start for e in events(event_path)))

@@ -1,0 +1,52 @@
+{
+  "result": "pass",
+  "named": 10,
+  "samples": 2000,
+  "steps": 100,
+  "qmlAndRunnerUnchangedExactV14": true,
+  "sourceHashes": {
+    "run_native.py": "c9ea8e839ebf7b31cd29f94c6e90bc64cc7f88cdab417a029cf3a47b8d649af7",
+    "qs_lifecycle.py": "0f9425d1ba2c6890e5cb7f7fa02dbeff6be688ac69be625fc063d8e8d1d863fd",
+    "private_shell.py": "96a4a83b866badaa92b8872c96c949ff810e01841462aa018326c3cbb31152a8",
+    "payload-manifest.json": "64b6d4f336fd365dd61693cea783bed976d2c8e3395d9204648353c88eb4f9fb",
+    "payload/home/.config/omarchy/plugins/hoskinson.windows/widget_v65/Windows.qml": "70cfcbe3f55250277705492e932fe9e4260ce9903f389ffdb67b6a2141afdb0d"
+  },
+  "records": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/terminal_process_receipts.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/terminal_process_receipts_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  terminal_process_receipts_test\n    ok actualRequestStartExitRequiredTest passed 1 test(s)\n    ok failedToStartCannotInferNormalFromNotRunningTest passed 1 test(s)\n    ok queuedActionCanStartAfterQuiesceWithOriginalBudgetTest passed 1 test(s)\n    ok freshPollingAfterQuiesceRefusesTest passed 1 test(s)\n    ok newQueuedActionAfterQuiesceRefusesTest passed 1 test(s)\n    ok wrongOrDuplicateGenerationCannotBorrowExitTest passed 1 test(s)\n    ok normalHistoricalReceiptCannotCloseNewRequestTest passed 1 test(s)\n    ok exit120IsNeverNormalCompletionTest passed 1 test(s)\n    ok identityOrEpochChangeRevokesDrainTest passed 1 test(s)\n    ok resetCannotEraseReceiptFailureTest passed 1 test(s)\n\n  10 passing (356ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v15/terminal_process_receipts.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (2035ms at 983 traces/second).\nUse --seed=0x1383566 --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "nativeLaunch": false
+}

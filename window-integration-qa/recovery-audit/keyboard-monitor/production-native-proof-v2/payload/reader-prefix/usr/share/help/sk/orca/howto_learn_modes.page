@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_learn_modes" xml:lang="sk">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_keyboard_layout"/>
+    <title type="sort">5. Režim učenia</title>
+    <desc>Objavovanie príkazov <app>Orca</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Režim učenia</title>
+  <p>V režime učenia <app>Orca</app> oznámi každú stlačenú klávesu spolu s prípadným priradeným príkazom <app>Orca</app>. V tomto režime si môžete tiež zobraziť zoznam všetkých dostupných skratiek a príkazov <app>Orca</app>.</p>
+  <steps>
+    <title>Používanie režimu učenia</title>
+    <item>
+      <p>Prejdite do režimu učenia stlačením <keyseq><key>Modifikátor Orca</key> <key>H</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Stlačte ľubovoľný kláves alebo kombináciu. <app>Orca</app> oznámi klávesy a akýkoľvek priradený príkaz.</p>
+    </item>
+    <item>
+      <p>Stlačením <key>Esc</key> opustíte režim učenia.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Získanie zoznamu skratiek</title>
+    <item>
+      <p>Prejdite do režimu učenia stlačením <keyseq><key>Modifikátor Orca</key> <key>H</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Stlačte <key>F2</key>, ak chcete zoznam skratiek platných pre celú aplikáciu <app>Orca</app>, alebo stlačte <key>F3</key>, ak chcete zoznam skratiek špecifických pre aplikáciu s fokusom.</p>
+    </item>
+    <item>
+      <p>Stlačením <key>Hore</key> alebo <key>Dole</key> preskúmate obsah zoznamu.</p>
+    </item>
+    <item>
+      <p>Stlačením <key>Esc</key> opustíte zoznam.</p>
+    </item>
+  </steps>
+</page>

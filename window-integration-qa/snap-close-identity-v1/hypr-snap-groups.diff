@@ -1,0 +1,32 @@
+--- /home/hoskinson/.local/bin/hypr-snap-groups
++++ window-integration-qa/snap-close-identity-v1/hypr-snap-groups
+@@ -207,9 +207,18 @@
+                   w['address'] not in state['snapped']]
+     return {'source': address, 'zones': zones, 'candidates': candidates}
+ 
++def forget_closed(state, address, stable_id, pid):
++    """Retire only the captured closed lifetime; never a current address alias."""
++    member = state['snapped'].get(address)
++    expected = member.get('identity') if isinstance(member, dict) else None
++    if not isinstance(expected, list) or len(expected) != 4 or expected[0] != address or expected[1] != pid or expected[3] != stable_id:
++        return False
++    del state['snapped'][address]
++    return True
++
+ def main():
+     parser = argparse.ArgumentParser(description=__doc__)
+-    parser.add_argument('command', choices=['list', 'record', 'unsnap', 'sync', 'recall', 'forget', 'assist-data', 'select', 'resize', 'hydrate'])
++    parser.add_argument('command', choices=['list', 'record', 'unsnap', 'sync', 'recall', 'forget', 'assist-data', 'select', 'resize', 'hydrate', 'forget-closed'])
+     parser.add_argument('args', nargs='*')
+     parser.add_argument('--json', action='store_true')
+     ns = parser.parse_args()
+@@ -242,6 +251,9 @@
+                     zone = member.get('zone')
+                     suffix = f',"{zone}"' if zone in ZONES else ''
+                     ctl('eval', f'hypr_snap_hydrate("{a}",{normal[0]},{normal[1]}{position}{suffix})')
++        elif ns.command == 'forget-closed' and len(args) == 3 and valid_address(args[0]) and re.fullmatch(r'[0-9a-f]+', args[1]) and re.fullmatch(r'[1-9][0-9]*', args[2]):
++            output = {'removed': forget_closed(state, args[0], args[1], int(args[2]))}
++            sync(state, windows)
+         elif ns.command == 'unsnap' and len(args) == 1:
+             state['snapped'].pop(args[0], None)
+             sync(state, windows)

@@ -1,0 +1,5 @@
+#!/bin/bash
+# Pin the title bar's own window, even if focus changes before this runs.
+address=${1:-}
+[[ $address =~ ^0x[[:xdigit:]]+$ ]] || exit 2
+exec hyprctl eval "hypr_pin_toggle(\"$address\")" >/dev/null

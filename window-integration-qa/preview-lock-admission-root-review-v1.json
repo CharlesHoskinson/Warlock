@@ -1,0 +1,175 @@
+{
+  "updatedUTC": "2026-10-02T13:02:48.174365+00:00",
+  "result": "real preview contention reproduction accepted; admission correction authorized with specified model/source corrections",
+  "handoffSHA256": "2eeeb2a2c62d7382ab8f5087affecb717581288b2f9e84ff69820900afc5acba",
+  "verifiedInputs": {
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/ADMISSION_CONTRACT.md": {
+      "sha256": "f4490b2947477b316daeb8d9dfa7299f215e21a9deb8274d7c69bd75d56daea8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission.qnt": {
+      "sha256": "67bcc45e867cda285d2e10be56c803a608d9cf98ac232ba1c627efc0c0eb27ee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/preview_admission_test.qnt": {
+      "sha256": "e7db247cec7500aa1e8c7f6db4c4f4dfd5bb4d6125e08cc30829c45b49edddc5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/formal_gate.py": {
+      "sha256": "f167ccc9dd3f7cbe8ac4ec2d811cbcc2d666f7659fdf68b2a4b4c8fb3905c421",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/intended-source-inventory-v1.json": {
+      "sha256": "862ffb57720603a47fedb29e35474722d7ce51f16f6d559f7a3957809aa69d38",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/formal_gate_v2.py": {
+      "sha256": "74e8713ce17a5cc6e9e81e517a5c02ee09d67978de9012a6596b80157d886a2b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/formal_gate_v3.py": {
+      "sha256": "0837cd12a9312416930127cbc2f7147b9c805bc05635854c562287bd8d0698a6",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/formal-before-source-v1/check-0.log": {
+      "sha256": "531ec77348ae9b6d0195ab8479cc0fb21a30e223da10918b8a3b9a3058182297",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/formal-before-source-v1/report.json": {
+      "sha256": "173753d56f826a01529725da73531599549aa695545f02d597437f56d9ba19a4",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/retained-parser-epoch-v1/preview_admission.qnt": {
+      "sha256": "8cceede721cd03d3ca1c1c44b4c5ebe06371d79795a31d88d63c206b85225201",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/retained-parser-epoch-v1/preview_admission_test.qnt": {
+      "sha256": "b0c4c6c0edbc4582b4bed870a9dc8601e647d8b3258001eeddcfd4548feb5693",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/formal-before-source-v2/check-0.log": {
+      "sha256": "47b5648a8d7ca99ad508f9d1af404e27c1bddbf3f6236179fca8c4fde18f1b11",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/formal-before-source-v2/report.json": {
+      "sha256": "dce0ede30c3c28ff6c2aa3d576b20f2e58b732d78059d634f88b8353bf7f94c4",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/retained-check-epoch-v2/preview_admission.qnt": {
+      "sha256": "67bcc45e867cda285d2e10be56c803a608d9cf98ac232ba1c627efc0c0eb27ee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/retained-check-epoch-v2/preview_admission_test.qnt": {
+      "sha256": "a1d430751e50627481987324f3ce21106e5a323c58598661c96b9ffb58ffaf84",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/formal-before-source-v3/check-0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/formal-before-source-v3/check-1.log": {
+      "sha256": "2a83662ff9fec29d251325bc00852045e09ec9490acb0e0c1267b68ac54ae73b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/formal-before-source-v3/check-2.log": {
+      "sha256": "4eff9e86f4ce7da39039ce84d533cf69904780465b44ff2eafa80882cea25c7b",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/formal-before-source-v3/report.json": {
+      "sha256": "445764359aff65c583401c97274b0ff10c4670f62af84a86254ba54f5840c099",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/contention_replay.py": {
+      "sha256": "8d104a3a2378a331af03d82999626597b855cae1b3487bd346e68d9e56d38ad3",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/contention-replay.json": {
+      "sha256": "e2b4709ebec0646d3ed6fbc75aa222760976a8a8ca6a693e2590ca59f837c225",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/contention_replay_v2.py": {
+      "sha256": "bca00ca46d2b2821059b531e1452a403217d2657541c7a76f79c19eec202eb81",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/contention-replay-v2.json": {
+      "sha256": "e2b4709ebec0646d3ed6fbc75aa222760976a8a8ca6a693e2590ca59f837c225",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/contention_replay_v3.py": {
+      "sha256": "5e4f3f4d824186394f001107bd0b1bf36b3821f33eb06ecb702de497cb4ea626",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/contention-replay-v3.json": {
+      "sha256": "52523f2cc0edeca9865d51403950a8ee12f36e45091f51ab9269e5efcd219741",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/actual-failure-replay-v1.json": {
+      "sha256": "f1966ed8d1416ae20a42bbce6ce5f264d7b690907cf5118c3c04d746c2297efb",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/readonly_lock_replay.py": {
+      "sha256": "cf49c23c056e0570e3b5ba2c829c73b1f09d53fa5c120e72d4826e3429dff242",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/readonly-lock-replay-v1.json": {
+      "sha256": "0a33cba9fa4f94c12be60e95cb24728a9e17c0eb3ec14a610c6c52853beb2ec9",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/terminal-binding-and-budget-addendum-v1.json": {
+      "sha256": "457bcb55431219282da0fd6dcd81b2dc131205774cc25632a0a329b88245a069",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/root-failure-audit-v1.json": {
+      "sha256": "fc14af95831965806afa1922df034cbbc47bb07102471ef1a590c5bf42d64c32",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/batch_preview.py": {
+      "sha256": "9c8d7a4b96a834e16987a9acb6467c5eb2ed16256891199b1602d82097ecd250",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/native_desktop.py": {
+      "sha256": "31ace97dda5342519aa749c4dcd01dbd70b425b79b507639a543cf9a2c00ba19",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/scene_controller.py": {
+      "sha256": "3b47325e7e86b06492ef59576159482c6036297aeafdcb46875cf590d1844657",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/payload/home/.local/bin/hypr-window-preview": {
+      "sha256": "123206521803a61fbcef58abb25922b9d53bbdae0a90e1d408e9d6d58f31d177",
+      "mode": 448
+    },
+    "/home/hoskinson/window-integration-qa/readonly-reservation-contention-root-v1/report.json": {
+      "sha256": "40b713c814021727c684b924b88b7864c49d02c9b1edb4a0d9a13908803197d1",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/preview-lock-admission-design-v1/source-handoff-v1.json": {
+      "sha256": "2eeeb2a2c62d7382ab8f5087affecb717581288b2f9e84ff69820900afc5acba",
+      "mode": 384
+    }
+  },
+  "scope": {
+    "GUI": false,
+    "nativeFeatureAccepted": false,
+    "runtimeEditedByRoot": false,
+    "formalCases": 29,
+    "formalTraces": 2000,
+    "formalScope": "admission and temporal receipt checks; launch/publication/order coverage requires precise correction"
+  },
+  "sourceFindings": [
+    "Actual unchanged production writer truncates exact per-address lock then takes nonblocking flock; batch takes same inode nonblocking and correctly reproduces errno11.",
+    "Replay retains actor renderer registration, three pending sources and no PNG helper after refusal; after real writer normal completion original batch publishes six PNGs; renderer0 and Keeper normalStop true.",
+    "Root actual .6s readonly reservation-lock contention proves a reachable pre-connect deadline refusal; the same .6s request succeeds after lock release without deleting original refusal.",
+    "Native actual failure lock holder/callsite and row33 cause remain unproved."
+  ],
+  "implementation": {
+    "authorized": "fresh isolated derivative retaining original38/fault34/1s helper/.6s query/2s received deadline and standalone immediate busy refusal",
+    "corrections": [
+      "Rename admission timestamp; represent actual helper launch and cache publication separately.",
+      "Model stable sorted address order and release every partial address lock before retry.",
+      "Current receipt and original immutable deadline at actual launch/publication boundaries; helper ownership persists through expiry until actual normal closure.",
+      "Lock identity by exact device/inode/type/owner/current nofollow path; ordinary writer metadata truncation alone does not indicate inode replacement."
+    ]
+  },
+  "inputsSealedUnchanged": true
+}

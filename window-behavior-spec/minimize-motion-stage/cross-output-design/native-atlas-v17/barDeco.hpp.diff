@@ -1,0 +1,19 @@
+--- frozen-v16/barDeco.hpp
++++ staged-v17/barDeco.hpp
+@@ -13,6 +13,7 @@
+ #include <hyprland/src/helpers/signal/Signal.hpp>
+ #include <hyprland/src/managers/eventLoop/EventLoopTimer.hpp>
+ #include "globals.hpp"
++#include "captionCache.hpp"
+ 
+ #define private public
+ #include <hyprland/src/managers/input/InputManager.hpp>
+@@ -62,6 +63,8 @@
+     CBox                       m_bAssignedBox;
+ 
+     SP<Render::ITexture>       m_pTextTex;
++    std::optional<CaptionCache::TitleKey> m_titleRasterKey;
++    std::vector<CaptionCache::Raster<CaptionCache::IconKey, SP<Render::ITexture>>> m_iconRasters;
+ 
+     bool                       m_bWindowSizeChanged = false;
+     bool                       m_hidden             = false;

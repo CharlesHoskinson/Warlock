@@ -1,0 +1,97 @@
+{
+  "result": "pass",
+  "models": 3,
+  "named": 35,
+  "samplesPerModel": 2000,
+  "steps": 100,
+  "seed": 20261002,
+  "nativeLaunch": false,
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_keyboard_test.qnt",
+        "--seed=20261002"
+      ],
+      "returncode": 0,
+      "stdout": "\n  physical_keyboard_test\n    ok planBeforeConnectionRequiredTest passed 1 test(s)\n    ok denseEscapeAliasRefusedTest passed 1 test(s)\n    ok invalidTextNoSendTest passed 1 test(s)\n    ok peerMismatchNoSendTest passed 1 test(s)\n    ok changedLifetimeNoSendTest passed 1 test(s)\n    ok keymapBeforePressTest passed 1 test(s)\n    ok missingKeymapAckNoSendTest passed 1 test(s)\n    ok exactPairOrderTest passed 1 test(s)\n    ok duplicatePressRefusedTest passed 1 test(s)\n    ok releaseWithoutPressRefusedTest passed 1 test(s)\n    ok advanceHeldRefusedTest passed 1 test(s)\n    ok partialFailureNeverRetriesTest passed 1 test(s)\n    ok partialHoldFailureSendsNoFurtherReleaseTest passed 1 test(s)\n    ok finishCannotInventMissingCharacterTest passed 1 test(s)\n    ok exactlyElevenPairsCompleteOriginalPlanTest passed 1 test(s)\n\n  15 passing (2420ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_keyboard.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=0"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_code_test.qnt",
+        "--seed=20261002"
+      ],
+      "returncode": 0,
+      "stdout": "\n  physical_code_test\n    ok exactMinusPhysicalCodeTest passed 1 test(s)\n    ok denseFirstEscapeAliasRefusedTest passed 1 test(s)\n    ok unknownLogicalSymbolRefusedTest passed 1 test(s)\n    ok xkbOffsetMismatchRefusedTest passed 1 test(s)\n    ok wrongPhysicalNameRefusedTest passed 1 test(s)\n    ok modifiersRefusedTest passed 1 test(s)\n    ok layoutMismatchRefusedTest passed 1 test(s)\n    ok exactLeftPhysicalCodeTest passed 1 test(s)\n    ok negativeWireRefusedTest passed 1 test(s)\n    ok zeroWireRefusedTest passed 1 test(s)\n\n  10 passing (342ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_code.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=0"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_owner_test.qnt",
+        "--seed=20261002"
+      ],
+      "returncode": 0,
+      "stdout": "\n  physical_owner_test\n    ok completeTest passed 1 test(s)\n    ok noBeforeTest passed 1 test(s)\n    ok noAfterTest passed 1 test(s)\n    ok wrongSeatTest passed 1 test(s)\n    ok wrongCoreTest passed 1 test(s)\n    ok noSurfaceTest passed 1 test(s)\n    ok changedLifeTest passed 1 test(s)\n    ok failedExitTest passed 1 test(s)\n    ok noRetryTest passed 1 test(s)\n    ok replacedSelectorTest passed 1 test(s)\n\n  10 passing (646ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_owner.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=0"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "sources": {
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_keyboard.qnt": "474132e42ac61c7ef42f7b2438a4f86e0c21a166f6c2defa0039f55dd4bca5d2",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_keyboard_test.qnt": "719bca4e3327d739871b6d52e3aca49b0123ee91d6fc583fbb0f5432350398fa",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_code.qnt": "4118fe7a146478e8c70c741bdf578d3232ace1d2662d566d72eaf49a99c35e46",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_code_test.qnt": "b8b61accbf270be8980c4006b9a81960ef3e8fd363960c7e22eac5f815950513",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_owner.qnt": "ad7d89c7ffe363400ba0c770b87a562ef09560d45cec1238a00255d2b5601a85",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v20/physical_owner_test.qnt": "818daac547a78b77a0319eb8a3a3316d0117feadcac6c2601879d4e6faafdd51"
+  }
+}

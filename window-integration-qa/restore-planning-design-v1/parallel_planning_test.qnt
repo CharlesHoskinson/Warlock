@@ -1,0 +1,28 @@
+module parallel_planning_test {
+ import parallel_planning.* from "./parallel_planning"
+ action check(v:bool):bool=all{assert(v),s'=s}
+ action plans=fire(Start(0)).then(fire(Start(1))).then(fire(Start(2))).then(fire(Done(2,true))).then(fire(Done(0,true))).then(fire(Done(1,true))).then(fire(Collect))
+ action pair=fire(AdmitMember(true)).then(fire(Dispatch)).then(fire(Return(true))).then(fire(Dispatch)).then(fire(Return(true)))
+ action focus=pair.then(pair).then(pair)
+ action refreshed=fire(Refresh).then(fire(Refresh)).then(fire(Refresh))
+ run outOfOrderPlansKeepSixOrderTest=init.then(plans).then(focus).then(refreshed).then(fire(Seed)).then(check(s.effects==List(0,1,2,3,4,5) and s.seeded and allProps))
+ run fourthWorkerRefusedTest=init.then(fire(Start(0))).then(fire(Start(1))).then(fire(Start(2))).then(fire(Start(3))).then(check(s.running==Set(0,1,2) and allProps))
+ run duplicateWorkerRefusedTest=init.then(fire(Start(0))).then(fire(Start(0))).then(check(s.running==Set(0)))
+ run partialPlansNeverArmTest=init.then(fire(Start(0))).then(fire(Done(0,true))).then(fire(Collect)).then(fire(AdmitMember(true))).then(fire(Dispatch)).then(check(s.phase==Refused and s.effects==List()))
+ run collectLiveRequiresDrainTest=init.then(fire(Start(0))).then(fire(Collect)).then(check(s.phase==Draining and s.running==Set(0) and s.failed)).then(fire(Done(0,true))).then(fire(Collect)).then(check(s.phase==Refused and s.running==Set()))
+ run failedWorkerCannotBecomeGoodTest=init.then(fire(Start(0))).then(fire(Done(0,false))).then(fire(Done(0,true))).then(fire(Collect)).then(check(s.phase==Refused and not(s.valid.contains(0))))
+ run cancelBeforeStartTest=init.then(fire(Cancel)).then(fire(Start(0))).then(check(s.running==Set() and s.effects==List()))
+ run cancelDuringQueryNeedsDrainTest=init.then(fire(Start(0))).then(fire(Cancel)).then(fire(Done(0,true))).then(fire(Collect)).then(check(s.done==Set(0) and s.valid==Set() and s.phase==Refused))
+ run deadlineBeforeStartTest=init.then(fire(Tick(20))).then(fire(Start(0))).then(check(s.running==Set() and s.deadline==20))
+ run deadlineDuringQueryTest=init.then(fire(Start(0))).then(fire(Tick(20))).then(fire(Done(0,true))).then(fire(Collect)).then(check(s.phase==Refused and s.done==Set(0)))
+ run deadlineAtCollectTest=init.then(plans).then(fire(Tick(20))).then(fire(Collect)).then(check(s.phase==Refused and s.deadline==20))
+ run cancellationAfterPlansStopsEffectsTest=init.then(plans).then(fire(Cancel)).then(fire(AdmitMember(true))).then(fire(Dispatch)).then(check(s.effects==List() and not(s.active)))
+ run storedSourceLifetimeChangeRefusesAtMemberTest=init.then(plans).then(fire(ChangeMaterial)).then(fire(AdmitMember(true))).then(fire(Dispatch)).then(check(s.phase==Refused and s.effects==List()))
+ run secondMemberRefusalRetainsPrefixTest=init.then(plans).then(pair).then(fire(AdmitMember(false))).then(fire(Dispatch)).then(check(s.effects==List(0,1) and s.phase==Refused))
+ run unknownNativeReturnRemainsQuarantinedTest=init.then(plans).then(fire(AdmitMember(true))).then(fire(Dispatch)).then(fire(Return(false))).then(fire(GroupGone)).then(fire(Seed)).then(check(s.phase==Uncertain and s.uncertain and not(s.seeded)))
+ run nativeCompletionAfterDeadlineNotSeedTest=init.then(plans).then(fire(AdmitMember(true))).then(fire(Dispatch)).then(fire(Tick(20))).then(fire(Return(true))).then(check(s.effects==List(0) and s.deadline==20)).then(fire(Seed)).then(check(not(s.seeded)))
+ run originalAtomicLoopCrossesDeadlineNoSeedTest=init.then(plans).then(fire(Tick(20))).then(focus).then(refreshed).then(fire(Seed)).then(check(s.effects.length()==6 and s.refreshes==3 and not(s.seeded)))
+ run exactThreeRefreshesTest=init.then(plans).then(focus).then(fire(Refresh)).then(fire(Refresh)).then(fire(Seed)).then(check(not(s.seeded))).then(fire(Refresh)).then(fire(Refresh)).then(check(s.refreshes==3))
+ run monitorErrorRetainsOwnedUnknownTest=init.then(plans).then(fire(AdmitMember(true))).then(fire(Dispatch)).then(fire(Return(false))).then(check(s.uncertain and not(s.seeded)))
+ run completedPrefixDoesNotAuthorizePartialSeedTest=init.then(plans).then(pair).then(fire(Seed)).then(check(s.effects==List(0,1) and not(s.seeded)))
+}

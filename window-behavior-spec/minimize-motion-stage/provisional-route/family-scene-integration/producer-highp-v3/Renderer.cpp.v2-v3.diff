@@ -1,0 +1,22 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-no-dither-v2/Renderer.cpp
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-highp-v3/Renderer.cpp
+@@ -75,8 +75,17 @@
+     }
+     void initializeShader(){
+         if(shader){if(!backendSupported)throw std::runtime_error("unreviewed EGL commit backend");return;}
+-        GLuint vertex=compile(GL_VERTEX_SHADER,"attribute vec2 position;attribute vec2 uv;varying vec2 tex;void main(){tex=uv;gl_Position=vec4(position,0.,1.);}");
+-        GLuint fragment=compile(GL_FRAGMENT_SHADER,"precision mediump float;uniform sampler2D atlas;varying vec2 tex;void main(){gl_FragColor=texture2D(atlas,tex);}");
++        QJsonArray precisionRecords;bool precisionSupported=true;
++        for(const auto stage:{GL_VERTEX_SHADER,GL_FRAGMENT_SHADER})for(const auto kind:{GL_LOW_FLOAT,GL_MEDIUM_FLOAT,GL_HIGH_FLOAT}){
++            GLint range[2]={0,0},bits=0;glGetShaderPrecisionFormat(stage,kind,range,&bits);
++            precisionRecords.append(QJsonObject{{"stage",stage==GL_VERTEX_SHADER?"vertex":"fragment"},{"kind",kind==GL_HIGH_FLOAT?"high":kind==GL_MEDIUM_FLOAT?"medium":"low"},{"rangeMin",range[0]},{"rangeMax",range[1]},{"precisionBits",bits}});
++            if(kind==GL_HIGH_FLOAT&&(bits<23||range[0]<127||range[1]<127))precisionSupported=false;
++        }
++        const auto precisionError=glGetError();
++        emitEvent({{"event","shaderPrecision"},{"observed",precisionRecords},{"error",double(precisionError)},{"supported",precisionSupported&&precisionError==GL_NO_ERROR},{"pixelProof",false}});
++        if(!precisionSupported||precisionError!=GL_NO_ERROR)throw std::runtime_error("required actual highp shader precision unavailable; no source upload");
++        GLuint vertex=compile(GL_VERTEX_SHADER,"precision highp float;attribute highp vec2 position;attribute highp vec2 uv;varying highp vec2 tex;void main(){tex=uv;gl_Position=vec4(position,0.,1.);}");
++        GLuint fragment=compile(GL_FRAGMENT_SHADER,"precision highp float;uniform highp sampler2D atlas;varying highp vec2 tex;void main(){gl_FragColor=texture2D(atlas,tex);}");
+         shader=glCreateProgram();glAttachShader(shader,vertex);glAttachShader(shader,fragment);glLinkProgram(shader);glDeleteShader(vertex);glDeleteShader(fragment);
+         GLint ok=0;glGetProgramiv(shader,GL_LINK_STATUS,&ok);if(!ok)throw std::runtime_error("GPU shader linking failed");
+         positionLocation=glGetAttribLocation(shader,"position");uvLocation=glGetAttribLocation(shader,"uv");

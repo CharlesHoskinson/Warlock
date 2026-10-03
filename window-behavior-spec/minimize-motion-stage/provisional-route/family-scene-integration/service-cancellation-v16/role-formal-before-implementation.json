@@ -1,0 +1,52 @@
+{
+  "formalBeforeRoleRuntimeChanges": true,
+  "nativeLaunch": false,
+  "named": 10,
+  "samples": 2000,
+  "maxSteps": 100,
+  "sourceSHA256": {
+    "ACTOR_ROLE_CONTRACT.md": "c79f713f6b02c9caddc31589f12f341ac8d033ba6b1a7e980222548cb0a5fdfe",
+    "actor_role.qnt": "c1eb13bc961c2ffaeaff8fcc9d49e329f779a3c8563c534fd42a3b5c2fcb6932",
+    "actor_role_test.qnt": "d22b9e8e91878c06570fb670e427e5ea07e3e717901d20b8ab38629366706e84"
+  },
+  "runtimeBeforeRefinement": {
+    "keeper_actor_ledger.py": "b7aca0276a53969c5f17e96d130e764992eaa19e18f88a03737efcd28eafba34",
+    "helper_keeper.py": "1e2c3bad2bc4d10c2b4bd6353b4cdabf267d06bce8c48c734ce30620ad060dec",
+    "helper_supervisor.py": "91628fb829a907ff5be7dc466c1640484e2b04012bae02e9fe366d24bdb9dd07"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "actor_role_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "actor_role_test.qnt",
+        "--backend=rust",
+        "--seed=202610020116"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "actor_role.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=202610020116",
+        "--verbosity=0"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "completedNs": 1790914895233852033
+}

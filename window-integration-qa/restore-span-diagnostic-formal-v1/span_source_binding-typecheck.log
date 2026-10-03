@@ -1,0 +1,15 @@
+
+ Error [QNT404]: Name 'match' not found
+
+  at /home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v1/span_source_binding.qnt:6:32
+  6:  action fire(e:Event):bool={s'=match e {
+                                    ^^^^^
+
+
+ Error [QNT404]: Name 'allProps' not found
+
+  at /home/hoskinson/window-integration-qa/restore-span-diagnostic-design-v1/span_source_binding_test.qnt:6:105
+  6:  run genuineExactCodeProjectionTest=ready.then(fire(Call(true))).then(finish).then(check(s.complete and allProps))
+                                                                                                             ^^^^^^^^
+
+error: parsing failed

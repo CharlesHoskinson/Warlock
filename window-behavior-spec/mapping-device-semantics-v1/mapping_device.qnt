@@ -1,0 +1,111 @@
+module mapping_device {
+ val Fields=Set("consumer","start","parent","group","uid","exe","argv","cgroup","namespace","fdAllocation","fdDevice","inode","fullMode","gid","nlink","size","mtime","flags","fdTarget","mountID","mountLine","subvolume","hash","mapRange","mapOffset","mapProtection","mapDevice","mapInode","mapPath","mapFilesTarget")
+ val Faults=Set("notBtrfs","missingStatxMask","missingMount","ambiguousMount","wrongMountDevice","wrongSubvolume","wrongMapInode","wrongFDDevice","wrongFullMode","wrongHash","deletedMapping","missingMapFiles","refusedReadlink","OPath","writableFD","changedIdentity","changedVMA","changedMountNamespace","missingDeclaredSource")
+ type State={id:str->int,before:str->int,after:str->int,epoch:int,beforeEpoch:int,afterEpoch:int,beforeSeen:bool,afterSeen:bool,valid:bool,accepted:bool,nativeWrites:int}
+ type Event=Before|After|Verify|Change(str)|Fault(str)|Diagnostic|NewEpoch
+ var s:State
+ action init=s'={id:Fields.mapBy(f=>1),before:Fields.mapBy(f=>0),after:Fields.mapBy(f=>0),epoch:1,beforeEpoch:0,afterEpoch:0,beforeSeen:false,afterSeen:false,valid:true,accepted:false,nativeWrites:0}
+ pure def usable(a:State):bool=all{a.valid,a.beforeSeen,a.afterSeen,a.before==a.after,a.before==a.id,a.beforeEpoch==a.epoch,a.afterEpoch==a.epoch}
+ action fire(e:Event):bool={
+ val b={...s,accepted:false}
+ s'=match e {
+ |Before=>{...b,before:s.id,beforeEpoch:s.epoch,beforeSeen:true,afterSeen:false}
+ |After=>{...b,after:s.id,afterEpoch:s.epoch,afterSeen:true}
+ |Verify=>{...b,accepted:usable(s)}
+ |Change(f)=>{...b,id:s.id.set(f,s.id.get(f)+1)}
+ |Fault(f)=>{...b,valid:false}
+ |Diagnostic=>b
+ |NewEpoch=>{...b,epoch:s.epoch+1,beforeSeen:false,afterSeen:false}
+ }
+ }
+ val allProps=all{not(s.accepted)or usable(s),s.nativeWrites==0}
+ action step=nondet e=Set(Before,After,Verify,Diagnostic,NewEpoch).union(Fields.map(f=>Change(f))).union(Faults.map(f=>Fault(f))).oneOf();fire(e)
+ action check(v:bool):bool=all{assert(v),s'=s}
+ action before=fire(Before)
+ action after=fire(After)
+ action verify=fire(Verify)
+ run exactBoundedBtrfsAgreementTest=init.then(before).then(after).then(verify).then(check(s.accepted))
+ run afterWithoutBeforeTest=init.then(after).then(verify).then(check(not(s.accepted)))
+ run beforeWithoutAfterTest=init.then(before).then(verify).then(check(not(s.accepted)))
+ run diagnosticNoAuthorityTest=init.then(fire(Diagnostic)).then(verify).then(check(not(s.accepted)))
+ run staleEpochTest=init.then(before).then(after).then(fire(NewEpoch)).then(verify).then(check(not(s.accepted)))
+ run consumerReplacementDuringReadTest=init.then(before).then(fire(Change("consumer"))).then(after).then(verify).then(check(not(s.accepted)))
+ run consumerReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("consumer"))).then(verify).then(check(not(s.accepted)))
+ run startReplacementDuringReadTest=init.then(before).then(fire(Change("start"))).then(after).then(verify).then(check(not(s.accepted)))
+ run startReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("start"))).then(verify).then(check(not(s.accepted)))
+ run parentReplacementDuringReadTest=init.then(before).then(fire(Change("parent"))).then(after).then(verify).then(check(not(s.accepted)))
+ run parentReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("parent"))).then(verify).then(check(not(s.accepted)))
+ run groupReplacementDuringReadTest=init.then(before).then(fire(Change("group"))).then(after).then(verify).then(check(not(s.accepted)))
+ run groupReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("group"))).then(verify).then(check(not(s.accepted)))
+ run uidReplacementDuringReadTest=init.then(before).then(fire(Change("uid"))).then(after).then(verify).then(check(not(s.accepted)))
+ run uidReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("uid"))).then(verify).then(check(not(s.accepted)))
+ run exeReplacementDuringReadTest=init.then(before).then(fire(Change("exe"))).then(after).then(verify).then(check(not(s.accepted)))
+ run exeReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("exe"))).then(verify).then(check(not(s.accepted)))
+ run argvReplacementDuringReadTest=init.then(before).then(fire(Change("argv"))).then(after).then(verify).then(check(not(s.accepted)))
+ run argvReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("argv"))).then(verify).then(check(not(s.accepted)))
+ run cgroupReplacementDuringReadTest=init.then(before).then(fire(Change("cgroup"))).then(after).then(verify).then(check(not(s.accepted)))
+ run cgroupReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("cgroup"))).then(verify).then(check(not(s.accepted)))
+ run namespaceReplacementDuringReadTest=init.then(before).then(fire(Change("namespace"))).then(after).then(verify).then(check(not(s.accepted)))
+ run namespaceReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("namespace"))).then(verify).then(check(not(s.accepted)))
+ run fdAllocationReplacementDuringReadTest=init.then(before).then(fire(Change("fdAllocation"))).then(after).then(verify).then(check(not(s.accepted)))
+ run fdAllocationReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("fdAllocation"))).then(verify).then(check(not(s.accepted)))
+ run fdDeviceReplacementDuringReadTest=init.then(before).then(fire(Change("fdDevice"))).then(after).then(verify).then(check(not(s.accepted)))
+ run fdDeviceReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("fdDevice"))).then(verify).then(check(not(s.accepted)))
+ run inodeReplacementDuringReadTest=init.then(before).then(fire(Change("inode"))).then(after).then(verify).then(check(not(s.accepted)))
+ run inodeReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("inode"))).then(verify).then(check(not(s.accepted)))
+ run fullModeReplacementDuringReadTest=init.then(before).then(fire(Change("fullMode"))).then(after).then(verify).then(check(not(s.accepted)))
+ run fullModeReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("fullMode"))).then(verify).then(check(not(s.accepted)))
+ run gidReplacementDuringReadTest=init.then(before).then(fire(Change("gid"))).then(after).then(verify).then(check(not(s.accepted)))
+ run gidReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("gid"))).then(verify).then(check(not(s.accepted)))
+ run nlinkReplacementDuringReadTest=init.then(before).then(fire(Change("nlink"))).then(after).then(verify).then(check(not(s.accepted)))
+ run nlinkReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("nlink"))).then(verify).then(check(not(s.accepted)))
+ run sizeReplacementDuringReadTest=init.then(before).then(fire(Change("size"))).then(after).then(verify).then(check(not(s.accepted)))
+ run sizeReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("size"))).then(verify).then(check(not(s.accepted)))
+ run mtimeReplacementDuringReadTest=init.then(before).then(fire(Change("mtime"))).then(after).then(verify).then(check(not(s.accepted)))
+ run mtimeReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("mtime"))).then(verify).then(check(not(s.accepted)))
+ run flagsReplacementDuringReadTest=init.then(before).then(fire(Change("flags"))).then(after).then(verify).then(check(not(s.accepted)))
+ run flagsReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("flags"))).then(verify).then(check(not(s.accepted)))
+ run fdTargetReplacementDuringReadTest=init.then(before).then(fire(Change("fdTarget"))).then(after).then(verify).then(check(not(s.accepted)))
+ run fdTargetReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("fdTarget"))).then(verify).then(check(not(s.accepted)))
+ run mountIDReplacementDuringReadTest=init.then(before).then(fire(Change("mountID"))).then(after).then(verify).then(check(not(s.accepted)))
+ run mountIDReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("mountID"))).then(verify).then(check(not(s.accepted)))
+ run mountLineReplacementDuringReadTest=init.then(before).then(fire(Change("mountLine"))).then(after).then(verify).then(check(not(s.accepted)))
+ run mountLineReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("mountLine"))).then(verify).then(check(not(s.accepted)))
+ run subvolumeReplacementDuringReadTest=init.then(before).then(fire(Change("subvolume"))).then(after).then(verify).then(check(not(s.accepted)))
+ run subvolumeReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("subvolume"))).then(verify).then(check(not(s.accepted)))
+ run hashReplacementDuringReadTest=init.then(before).then(fire(Change("hash"))).then(after).then(verify).then(check(not(s.accepted)))
+ run hashReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("hash"))).then(verify).then(check(not(s.accepted)))
+ run mapRangeReplacementDuringReadTest=init.then(before).then(fire(Change("mapRange"))).then(after).then(verify).then(check(not(s.accepted)))
+ run mapRangeReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("mapRange"))).then(verify).then(check(not(s.accepted)))
+ run mapOffsetReplacementDuringReadTest=init.then(before).then(fire(Change("mapOffset"))).then(after).then(verify).then(check(not(s.accepted)))
+ run mapOffsetReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("mapOffset"))).then(verify).then(check(not(s.accepted)))
+ run mapProtectionReplacementDuringReadTest=init.then(before).then(fire(Change("mapProtection"))).then(after).then(verify).then(check(not(s.accepted)))
+ run mapProtectionReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("mapProtection"))).then(verify).then(check(not(s.accepted)))
+ run mapDeviceReplacementDuringReadTest=init.then(before).then(fire(Change("mapDevice"))).then(after).then(verify).then(check(not(s.accepted)))
+ run mapDeviceReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("mapDevice"))).then(verify).then(check(not(s.accepted)))
+ run mapInodeReplacementDuringReadTest=init.then(before).then(fire(Change("mapInode"))).then(after).then(verify).then(check(not(s.accepted)))
+ run mapInodeReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("mapInode"))).then(verify).then(check(not(s.accepted)))
+ run mapPathReplacementDuringReadTest=init.then(before).then(fire(Change("mapPath"))).then(after).then(verify).then(check(not(s.accepted)))
+ run mapPathReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("mapPath"))).then(verify).then(check(not(s.accepted)))
+ run mapFilesTargetReplacementDuringReadTest=init.then(before).then(fire(Change("mapFilesTarget"))).then(after).then(verify).then(check(not(s.accepted)))
+ run mapFilesTargetReplacementAfterReadTest=init.then(before).then(after).then(verify).then(fire(Change("mapFilesTarget"))).then(verify).then(check(not(s.accepted)))
+ run notBtrfsRefusalTest=init.then(before).then(fire(Fault("notBtrfs"))).then(after).then(verify).then(check(not(s.accepted)))
+ run missingStatxMaskRefusalTest=init.then(before).then(fire(Fault("missingStatxMask"))).then(after).then(verify).then(check(not(s.accepted)))
+ run missingMountRefusalTest=init.then(before).then(fire(Fault("missingMount"))).then(after).then(verify).then(check(not(s.accepted)))
+ run ambiguousMountRefusalTest=init.then(before).then(fire(Fault("ambiguousMount"))).then(after).then(verify).then(check(not(s.accepted)))
+ run wrongMountDeviceRefusalTest=init.then(before).then(fire(Fault("wrongMountDevice"))).then(after).then(verify).then(check(not(s.accepted)))
+ run wrongSubvolumeRefusalTest=init.then(before).then(fire(Fault("wrongSubvolume"))).then(after).then(verify).then(check(not(s.accepted)))
+ run wrongMapInodeRefusalTest=init.then(before).then(fire(Fault("wrongMapInode"))).then(after).then(verify).then(check(not(s.accepted)))
+ run wrongFDDeviceRefusalTest=init.then(before).then(fire(Fault("wrongFDDevice"))).then(after).then(verify).then(check(not(s.accepted)))
+ run wrongFullModeRefusalTest=init.then(before).then(fire(Fault("wrongFullMode"))).then(after).then(verify).then(check(not(s.accepted)))
+ run wrongHashRefusalTest=init.then(before).then(fire(Fault("wrongHash"))).then(after).then(verify).then(check(not(s.accepted)))
+ run deletedMappingRefusalTest=init.then(before).then(fire(Fault("deletedMapping"))).then(after).then(verify).then(check(not(s.accepted)))
+ run missingMapFilesRefusalTest=init.then(before).then(fire(Fault("missingMapFiles"))).then(after).then(verify).then(check(not(s.accepted)))
+ run refusedReadlinkRefusalTest=init.then(before).then(fire(Fault("refusedReadlink"))).then(after).then(verify).then(check(not(s.accepted)))
+ run OPathRefusalTest=init.then(before).then(fire(Fault("OPath"))).then(after).then(verify).then(check(not(s.accepted)))
+ run writableFDRefusalTest=init.then(before).then(fire(Fault("writableFD"))).then(after).then(verify).then(check(not(s.accepted)))
+ run changedIdentityRefusalTest=init.then(before).then(fire(Fault("changedIdentity"))).then(after).then(verify).then(check(not(s.accepted)))
+ run changedVMARefusalTest=init.then(before).then(fire(Fault("changedVMA"))).then(after).then(verify).then(check(not(s.accepted)))
+ run changedMountNamespaceRefusalTest=init.then(before).then(fire(Fault("changedMountNamespace"))).then(after).then(verify).then(check(not(s.accepted)))
+ run missingDeclaredSourceRefusalTest=init.then(before).then(fire(Fault("missingDeclaredSource"))).then(after).then(verify).then(check(not(s.accepted)))
+}

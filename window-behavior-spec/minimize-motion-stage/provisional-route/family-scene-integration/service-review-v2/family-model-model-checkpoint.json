@@ -1,0 +1,46 @@
+{
+  "scope": "abstract next family-scene contract; implementation/native integration absent",
+  "namedScenarios": 9,
+  "samples": 2000,
+  "maxSteps": 100,
+  "results": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_scene_test.qnt"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/typecheck.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_scene_test.qnt"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/named.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_scene.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--verbosity=1"
+      ],
+      "exit": 0,
+      "log": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/random.log"
+    }
+  ],
+  "sources": {
+    "CONTRACT.md": "54314ca2db6f5c51d131a6994938bd50f781d1ecb06c4e0301ea5e01cd742451",
+    "family_scene.qnt": "7b1fd7739efeff5925751fd2ca12977b832ddca044cb08de17bc1005c455f1f1",
+    "family_scene_test.qnt": "d8b1b2927f1fd3d2100af0cbc7ecf45677b4a00801198933f3e81644ed2ce674"
+  },
+  "nativeTested": false,
+  "currentOwnedV3SourcesModified": false
+}

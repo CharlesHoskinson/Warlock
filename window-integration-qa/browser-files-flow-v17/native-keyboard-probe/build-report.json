@@ -1,0 +1,47 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-e9c769930e694f849a58a422bbc6b7a5.scope",
+    "coreLimit": 1
+  },
+  "coreLimits": [
+    1,
+    1
+  ],
+  "command": [
+    "c++",
+    "-std=c++23",
+    "-shared",
+    "-fPIC",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-MMD",
+    "-MF",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v6/native-probe/probe.d",
+    "-I/usr/include/hyprland/protocols",
+    "-I/usr/include/hyprland",
+    "-I/usr/include/hyprland/src",
+    "-I/usr/include/libdrm",
+    "-I/usr/include/cairo",
+    "-I/usr/include/freetype2",
+    "-I/usr/include/libpng16",
+    "-I/usr/include/pixman-1",
+    "-I/usr/include/libei-1.0",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v6/native-probe/probe.cpp",
+    "-o",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-v6/native-probe/libqt-modal-probe.so"
+  ],
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "sourceDependencies": [
+    {
+      "path": "/home/hoskinson/window-integration-qa/qt-modal-private-v6/native-probe/probe.cpp",
+      "sha256": "5d4ddef10167d504d3fc1204a6941082684395f985706acf9579a2da25d1c622"
+    }
+  ],
+  "binarySHA256": "2ac6172b92384fb118f47947895233844682b1ac7a75d739749e987d43e60a19",
+  "nativeLoaded": false
+}

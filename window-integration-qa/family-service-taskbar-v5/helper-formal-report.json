@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v5/helper_lifecycle.qnt"
+      ],
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v5/helper_lifecycle.qnt",
+        "--max-samples",
+        "100"
+      ],
+      "exitCode": 0,
+      "output": "\n  helper_lifecycle\n    ok startedCannotUnloadTest passed 100 test(s)\n    ok failedCannotUnloadTest passed 100 test(s)\n    ok completedPrefixCannotUnloadTest passed 100 test(s)\n    ok allNormalCanUnloadTest passed 100 test(s)\n\n  4 passing (37ms)\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/family-service-taskbar-v5/helper_lifecycle.qnt",
+        "--invariant",
+        "invariant",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20261001",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "output": "[ok] No violation found (737ms at 2714 traces/second).\nUse --seed=0x1460100 --backend=rust to reproduce.\n"
+    }
+  ],
+  "named": 4,
+  "samples": 2000,
+  "steps": 100,
+  "seed": 20261001,
+  "specSHA256": "07311ce0b703e780ae1eb74292631083795cc8280c4a42fc4ca13deece236727",
+  "nativeAccepted": false
+}

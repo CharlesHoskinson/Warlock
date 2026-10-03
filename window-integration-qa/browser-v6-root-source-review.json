@@ -1,0 +1,27 @@
+{
+  "updatedUTC": "2026-10-01T22:56:06.795087+00:00",
+  "manifestSHA256": "77faa162955c71d9c18fc86ffdff991a7bfefdebd5c58ad4935917c1495584ae",
+  "all40086BytesModes13758LinksPreflightPass": true,
+  "unchangedGuards": [
+    "run_native.py",
+    "browser_exec.py",
+    "runtime_inputs.py",
+    "bus_authority.py",
+    "cdp_readonly.py",
+    "network_guard.py",
+    "process_evidence.py",
+    "main_observations.py",
+    "main_observer.py",
+    "private_bus_host.py"
+  ],
+  "sourceStageReviewSHA256": "650e0ffe8c6ee89758fbd4ca149baf70812feef75b2c7d1c1954f509ccf7d38f",
+  "reviewed": [
+    "pinned NSS modules/config plus readonly ELF loader trace closure; no full V5actualmaps inferred",
+    "allownedrawmaps/read/lifetime errors persisted before strictunchangedmapping predicate",
+    "everyvalidation outcome saved infinally; malformed/unreadable/newcode stillrefuses",
+    "actualprivate bus PIDbinding/renderer sandbox/netns/realinput/main18/normalclientunload guards unchanged"
+  ],
+  "nativeAccepted": false,
+  "mainWrites": false,
+  "productionAccepted": false
+}

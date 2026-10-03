@@ -1,0 +1,63 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7b535092db4242e2adba8bdcbf3e8c4a.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/test_observations.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_actual_group_insert_positive (__main__.Oracle.test_actual_group_insert_positive) ... ok\ntest_competing_grab_refused (__main__.Oracle.test_competing_grab_refused) ... ok\ntest_core_captured_exact (__main__.Oracle.test_core_captured_exact) ... ok\ntest_core_held_blocks_release (__main__.Oracle.test_core_held_blocks_release) ... ok\ntest_fake_retirement_release_refused (__main__.Oracle.test_fake_retirement_release_refused) ... ok\ntest_genuine_release_quiescent (__main__.Oracle.test_genuine_release_quiescent) ... ok\ntest_lifetime_mismatch_refused (__main__.Oracle.test_lifetime_mismatch_refused) ... ok\ntest_no_group_insert_refused (__main__.Oracle.test_no_group_insert_refused) ... ok\ntest_nonrelease_focus_theft_refused (__main__.Oracle.test_nonrelease_focus_theft_refused) ... ok\ntest_nonrelease_group_mutation_refused (__main__.Oracle.test_nonrelease_group_mutation_refused) ... ok\ntest_retire_held_signal_preserved (__main__.Oracle.test_retire_held_signal_preserved) ... ok\ntest_retire_target_not_clear_refused (__main__.Oracle.test_retire_target_not_clear_refused) ... ok\ntest_signal_held_blocks_release (__main__.Oracle.test_signal_held_blocks_release) ... ok\ntest_wrong_held_button_refused (__main__.Oracle.test_wrong_held_button_refused) ... ok\ntest_wrong_lifetime_group_insert_refused (__main__.Oracle.test_wrong_lifetime_group_insert_refused) ... ok\ntest_wrong_mode_refused (__main__.Oracle.test_wrong_mode_refused) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/interruption_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  interruption_test\n    ok heldMoveCrossesIndependentPeerTest passed 1 test(s)\n    ok heldResizeCrossesIndependentPeerTest passed 1 test(s)\n    ok blockedAncestorHasNoCaptureTest passed 1 test(s)\n    ok escapeBeforeFirstMotionTest passed 1 test(s)\n    ok escapeMovedCaptionRestoresPressRectTest passed 1 test(s)\n    ok escapeResizeRestoresPressRectRequiredTest passed 1 test(s)\n    ok cancelledHeldPressCannotRecaptureTest passed 1 test(s)\n    ok reloadMoveRetiresOldGenerationTest passed 1 test(s)\n    ok reloadResizeRetiresCaptureRequiredTest passed 1 test(s)\n    ok latestGeometryMixedPinsPreviewRestoreTest passed 1 test(s)\n    ok newerPinIntentSurvivesCancellationTest passed 1 test(s)\n    ok newerPinIntentSurvivesRestoreTest passed 1 test(s)\n    ok closedCapturedDialogNewLifetimeRejectsMotionTest passed 1 test(s)\n    ok staleMinimizedPreviewCannotRestoreNewLifetimeTest passed 1 test(s)\n    ok currentGenerationStillActionableAfterReloadsTest passed 1 test(s)\n    ok escapeCannotDropIntoPeerGroupTest passed 1 test(s)\n    ok reloadCannotDropIntoPeerGroupTest passed 1 test(s)\n    ok minimizeRetirementCannotDropIntoPeerGroupTest passed 1 test(s)\n    ok genuineReleaseKeepsGroupDropTest passed 1 test(s)\n\n  19 passing (3147ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v1/interruption.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20260930",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (2530ms at 791 traces/second).\nUse --seed=0x13b41fa --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sourceChecks": {
+    "probeControllerBorrowedNotUniqueCopied": true,
+    "publicRawSignalHeldIdsDistinctFromCoreBool": true,
+    "noPrivateAccessMacro": true,
+    "probeHasNoMutatingHooksDragCalls": true,
+    "actualExactTargetModesGroupsExposed": true,
+    "coreKeyboardCancelsTargetBeforeKeybindHandling": true,
+    "pythonParses": true
+  },
+  "oracleTests": 16,
+  "formalNamedScenarios": 19,
+  "formalSamples": 2000,
+  "formalSteps": 100,
+  "requestedSeed": 20260930,
+  "candidateNativeBlocked": true,
+  "candidateNativeBlockReason": "Root observed V20 idle retire_gesture_current SIGABRT in CWeakPointer ownership; fresh V5/V21 required",
+  "nativeFixtureLaunched": false,
+  "nativeLoaded": false,
+  "probeCompiledOnly": true,
+  "wrapperFrozen": false
+}

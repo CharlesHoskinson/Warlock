@@ -1,0 +1,20 @@
+{
+  "updatedUTC": "2026-10-02T01:40:52.361276+00:00",
+  "contractSHA256": "7eb2d9614f5ff2fbe1a685f58c50481675076c4e0431ccd45972a0cc0d5197a0",
+  "modelSHA256": "1b9beea695a02226042409ab235f0fd55e51e0d5cc53fd87590d742700eee13d",
+  "checkpointSHA256": "5d1a6d2a1117c1ed5a8bc439c224cff89e99c546d28bdd644b3ffeef533afdf0",
+  "runtimeExactFrozenV7": {
+    "helper_observer.py": "4f19c27d8ab7c5f210544156855cc29e5221e32fd6967065d972fb0315322809",
+    "helper_setup.py": "a83583a15fd35bb8cb3b3ed79a43065f1e95c4cfff18b7c60a44f9a81b46224b",
+    "evaluation_setup.py": "68a3176799add29342f52f4f13ce7c4e9019f2e580f9f44053af77794c223866",
+    "held_route.py": "8e95f83d85308afc0ae43c81f2133cbf556f932687a23ccfb1306726aba6e3f2",
+    "run_native.py": "0c2a725547c108e5dea83ef7662ca47f9e2c222e52a29d5863bc6b23af5a982b",
+    "held_controller.py": "e0d0195ac05cf02525557cf28f8747e3a82cab60c8bff545f8516f07759383af",
+    "observations.py": "13818450d5bdfd6e5644ad32d397617b210ef9090584067c2135c40aed714384"
+  },
+  "reviewPassed": true,
+  "reviewScope": "Formal extra ordinal persists; permanent boundary violation blocks feature/terminal tickets and combined normal retirement, including late revocation. Existing known-boundary failed-feature cleanup preserved. Runtime guards and budgets exact frozen V7.",
+  "nativeAuthorized": false,
+  "pending": "Final collector/source closure, independent auditor tests, freeze/preflight and root native grant",
+  "mainWrites": false
+}

@@ -1,0 +1,26 @@
+
+(orca:3140628): dbind-WARNING **: 00:33:45.313: QueryPointer failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownInterface: keyboard-only staged service
+
+(orca:3140628): dbind-WARNING **: 00:33:45.365: Couldn't get application list: Could not activate remote peer 'org.a11y.atspi.Registry': unit failed
+/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/ax_utilities_application.py:143: Warning: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+  desktop = Atspi.get_desktop(0)
+
+(orca:3140628): dbind-WARNING **: 00:33:45.366: AT-SPI: Error in GetItems, sender=org.freedesktop.DBus, error=Could not activate remote peer 'org.a11y.atspi.Registry': unit failed
+
+** (orca:3140628): WARNING **: 00:33:45.435: AT-SPI: Could not obtain desktop path or name
+
+
+** (orca:3140628): WARNING **: 00:33:45.436: atk-bridge: GetRegisteredEvents returned message with unknown signature
+
+** (orca:3140628): WARNING **: 00:33:45.436: atk-bridge: get_device_events_reply: unknown signature
+Traceback (most recent call last):
+  File "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/orca.py", line 182, in _glib_shutdown_handler
+    shutdown()
+    ~~~~~~~~^^
+  File "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/orca.py", line 133, in shutdown
+    clipboard.get_presenter().deactivate()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/clipboard.py", line 460, in deactivate
+    self._event_listener.deregister("object:text-changed")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+gi.repository.GLib.GError: atspi_error: Could not activate remote peer 'org.a11y.atspi.Registry': unit failed (1)

@@ -1,0 +1,244 @@
+{
+  "version": "family-service-v6-offline",
+  "productionChanged": false,
+  "nativeLaunch": false,
+  "pythonTests": 62,
+  "quintNamedScenarios": 37,
+  "quintModels": 6,
+  "quintSamplesPerModel": 2000,
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_scene_manager.py",
+        "test_pipe_transport.py",
+        "test_scene_controller.py",
+        "test_capture_lease.py",
+        "test_ingress_context.py",
+        "test_socket_frontend.py",
+        "test_context_provider.py",
+        "test_snapshot_cache.py"
+      ],
+      "exitCode": 0,
+      "log": "check-00.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_scene_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-01.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_scene_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-02.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_scene.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-03.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_destination_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-04.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_destination_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-05.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_destination.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-06.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "transport_dispatch_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-07.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "transport_dispatch_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-08.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "transport_dispatch.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-09.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-10.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-11.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_registry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-12.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "ingress_context_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-13.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "ingress_context_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-14.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "ingress_context.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-15.log"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "persistent_atlas_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-16.log"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "persistent_atlas_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "check-17.log"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "persistent_atlas.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "check-18.log"
+    }
+  ],
+  "changed": [
+    {
+      "name": "native_desktop.py",
+      "kind": "modified",
+      "diff": "native_desktop.py.v5-v6.diff"
+    },
+    {
+      "name": "CONTRACT.md",
+      "kind": "modified",
+      "diff": "CONTRACT.md.v5-v6.diff"
+    },
+    {
+      "name": "snapshot_cache.py",
+      "kind": "added"
+    },
+    {
+      "name": "test_snapshot_cache.py",
+      "kind": "added"
+    },
+    {
+      "name": "persistent_atlas.qnt",
+      "kind": "added"
+    },
+    {
+      "name": "persistent_atlas_test.qnt",
+      "kind": "added"
+    }
+  ],
+  "scope": "Optional shared exact-identity/compositor-session persistent snapshot cache, immutable digest image + atomic durable metadata pointer, complete-observation janitor preserving live minimized pairs, adapter pre-return lease cleanup. Native image capture primitive mocked in adapter ownership tests; actual PNG files/pair locking/replacement tested. No whole-raster/native-service/presentation cadence acceptance; daemon/recovery/retry/atomic scene replacement remain open."
+}

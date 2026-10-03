@@ -1,0 +1,327 @@
+{
+  "observation": {
+    "allReadFormatBytesEqual": true,
+    "bufferHeight": 240,
+    "bufferWidth": 320,
+    "controls": [
+      {
+        "index": 0,
+        "premultipliedRGBA": [
+          100,
+          50,
+          25,
+          255
+        ]
+      },
+      {
+        "index": 1,
+        "premultipliedRGBA": [
+          10,
+          0,
+          0,
+          128
+        ]
+      }
+    ],
+    "digest": "d45172e4e886cc71d3c9bf9a60c1db64721b80eb605ccda8663a78a329a05a9b",
+    "encoding": "premultiplied-RGBA8-top-left",
+    "event": "ownedCausalReadback",
+    "generation": 13,
+    "kind": "constant-control",
+    "logicalOutput": {
+      "height": 240,
+      "width": 320,
+      "x": 0,
+      "y": 0
+    },
+    "members": [
+      {
+        "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+        "pid": 1051851,
+        "rectangle": {
+          "height": 80,
+          "width": 96,
+          "x": 272,
+          "y": 32
+        },
+        "stableId": "abc1"
+      },
+      {
+        "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+        "pid": 1051852,
+        "rectangle": {
+          "height": 48,
+          "width": 72,
+          "x": 304,
+          "y": 56
+        },
+        "stableId": "abc2"
+      },
+      {
+        "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+        "pid": 1051853,
+        "rectangle": {
+          "height": 32,
+          "width": 48,
+          "x": 328,
+          "y": 68
+        },
+        "stableId": "abc3"
+      }
+    ],
+    "nativeAuthority": false,
+    "nativeBytesSHA256": "d205bd2b61c8f6633b1ba05c63aef6e3ec47822e330a11c37b58afdd860cf37a",
+    "nativeFormat": 32993,
+    "nativeRGBAFilename": "causal-1-13-1-native-rgba.png",
+    "nativeRGBASHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4",
+    "nativeType": 5121,
+    "output": "WAYLAND-1",
+    "pid": 1051851,
+    "prefixCount": 0,
+    "prefixMembers": [],
+    "presentationProof": false,
+    "progress": 0,
+    "readError": 0,
+    "rgbaFilename": "causal-1-13-1-rgba.png",
+    "rgbaSHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4",
+    "sequence": "1",
+    "stableId": "abc1",
+    "token": "abcdef123456-1"
+  },
+  "comparison": {
+    "nativeAuthority": false,
+    "presentationProofForPrefix": false,
+    "fullRGBACompared": true,
+    "readFormatCompleteEquality": true,
+    "RGBA": {
+      "passed": true,
+      "pixelsCompared": 76800,
+      "channelsCompared": 307200,
+      "tolerance": 0,
+      "badPixels": 0,
+      "badChannels": 0,
+      "maxChannelError": 0,
+      "firstFailures": [],
+      "actualSHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4",
+      "expectedSHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4"
+    },
+    "nativeRGBA": {
+      "passed": true,
+      "pixelsCompared": 76800,
+      "channelsCompared": 307200,
+      "tolerance": 0,
+      "badPixels": 0,
+      "badChannels": 0,
+      "maxChannelError": 0,
+      "firstFailures": [],
+      "actualSHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4",
+      "expectedSHA256": "8e7501ff2d0ad9c02161098f2d3137a9dc804ae1aba9b465e6d417db78c482a4"
+    },
+    "tolerance": 0
+  },
+  "binding": {
+    "fullReadback": {
+      "bufferHeight": 240,
+      "bufferWidth": 320,
+      "digest": "d45172e4e886cc71d3c9bf9a60c1db64721b80eb605ccda8663a78a329a05a9b",
+      "eglConfig": {
+        "alpha": 8,
+        "blue": 8,
+        "buffer": 32,
+        "colorBufferType": 12430,
+        "configId": 51,
+        "green": 8,
+        "nativeVisualId": 875713089,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "eglSurface": {
+        "height": 240,
+        "width": 320
+      },
+      "encoding": "premultiplied-RGBA8-top-left",
+      "event": "ownedFramebufferReadback",
+      "filename": "owned-1-13.png",
+      "generation": 13,
+      "glBuffer": {
+        "alpha": 8,
+        "blue": 8,
+        "framebuffer": 0,
+        "green": 8,
+        "readFormat": 32993,
+        "readType": 5121,
+        "red": 8,
+        "sampleBuffers": 0,
+        "samples": 0
+      },
+      "members": [
+        {
+          "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+          "pid": 1051851,
+          "rectangle": {
+            "height": 80,
+            "width": 96,
+            "x": 272,
+            "y": 32
+          },
+          "stableId": "abc1"
+        },
+        {
+          "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+          "pid": 1051852,
+          "rectangle": {
+            "height": 48,
+            "width": 72,
+            "x": 304,
+            "y": 56
+          },
+          "stableId": "abc2"
+        },
+        {
+          "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+          "pid": 1051853,
+          "rectangle": {
+            "height": 32,
+            "width": 48,
+            "x": 328,
+            "y": 68
+          },
+          "stableId": "abc3"
+        }
+      ],
+      "nativeAuthority": false,
+      "output": "WAYLAND-1",
+      "pid": 1051851,
+      "presentationProof": false,
+      "progress": 0,
+      "rawSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0",
+      "readError": 0,
+      "sequence": "1",
+      "stableId": "abc1",
+      "token": "abcdef123456-1"
+    },
+    "swap": {
+      "batchNs": "95344789152773",
+      "bufferHeight": 240,
+      "bufferWidth": 320,
+      "digest": "d45172e4e886cc71d3c9bf9a60c1db64721b80eb605ccda8663a78a329a05a9b",
+      "drawDoneNs": "95344800294890",
+      "drawStartedNs": "95344789153012",
+      "event": "swap",
+      "generation": 13,
+      "lastFrameCallbackNs": "95344777914765",
+      "members": [
+        {
+          "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+          "pid": 1051851,
+          "rectangle": {
+            "height": 80,
+            "width": 96,
+            "x": 272,
+            "y": 32
+          },
+          "stableId": "abc1"
+        },
+        {
+          "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+          "pid": 1051852,
+          "rectangle": {
+            "height": 48,
+            "width": 72,
+            "x": 304,
+            "y": 56
+          },
+          "stableId": "abc2"
+        },
+        {
+          "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+          "pid": 1051853,
+          "rectangle": {
+            "height": 32,
+            "width": 48,
+            "x": 328,
+            "y": 68
+          },
+          "stableId": "abc3"
+        }
+      ],
+      "output": "WAYLAND-1",
+      "pid": 1051851,
+      "progress": 0,
+      "rectangle": {
+        "height": 80,
+        "width": 104,
+        "x": 272,
+        "y": 32
+      },
+      "sequence": "1",
+      "stableId": "abc1",
+      "success": true,
+      "swapReturnedNs": "95344992380986",
+      "swapStartedNs": "95344992339455",
+      "token": "abcdef123456-1",
+      "uploadCount": 3
+    },
+    "presented": {
+      "accepted": true,
+      "bufferHeight": 240,
+      "bufferWidth": 320,
+      "digest": "d45172e4e886cc71d3c9bf9a60c1db64721b80eb605ccda8663a78a329a05a9b",
+      "endpoint": false,
+      "event": "presented",
+      "feedbackDeliveredNs": "95345210551909",
+      "generation": 13,
+      "members": [
+        {
+          "digest": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+          "pid": 1051851,
+          "rectangle": {
+            "height": 80,
+            "width": 96,
+            "x": 272,
+            "y": 32
+          },
+          "stableId": "abc1"
+        },
+        {
+          "digest": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+          "pid": 1051852,
+          "rectangle": {
+            "height": 48,
+            "width": 72,
+            "x": 304,
+            "y": 56
+          },
+          "stableId": "abc2"
+        },
+        {
+          "digest": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+          "pid": 1051853,
+          "rectangle": {
+            "height": 32,
+            "width": 48,
+            "x": 328,
+            "y": 68
+          },
+          "stableId": "abc3"
+        }
+      ],
+      "output": "WAYLAND-1",
+      "outputSequence": "0",
+      "pid": 1051851,
+      "progress": 0,
+      "rectangle": {
+        "height": 80,
+        "width": 104,
+        "x": 272,
+        "y": 32
+      },
+      "sequence": "1",
+      "stableId": "abc1",
+      "submittedNs": "95344800296017",
+      "timestampNs": "95345003373162",
+      "token": "abcdef123456-1"
+    }
+  }
+}

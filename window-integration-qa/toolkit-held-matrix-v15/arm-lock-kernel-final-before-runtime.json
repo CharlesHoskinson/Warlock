@@ -1,0 +1,12 @@
+{
+  "result": "pass",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "test_actual_held_lock_expires_without_acquisition (test_arm_lock_candidate.BoundedArmLock.test_actual_held_lock_expires_without_acquisition) ... ok\ntest_actual_release_allows_acquire_with_same_deadline (test_arm_lock_candidate.BoundedArmLock.test_actual_release_allows_acquire_with_same_deadline) ... ok\ntest_expired_before_open_is_refused (test_arm_lock_candidate.BoundedArmLock.test_expired_before_open_is_refused) ... ok\ntest_expiry_inside_lock_refuses_publication_and_releases (test_arm_lock_candidate.BoundedArmLock.test_expiry_inside_lock_refuses_publication_and_releases) ... ok\ntest_inode_replacement_before_lock_is_refused (test_arm_lock_candidate.BoundedArmLock.test_inode_replacement_before_lock_is_refused) ... ok\ntest_original_blocking_flock_can_overrun_budget (test_arm_lock_candidate.BoundedArmLock.test_original_blocking_flock_can_overrun_budget) ... ok\ntest_unknown_flock_error_is_hard_refusal (test_arm_lock_candidate.BoundedArmLock.test_unknown_flock_error_is_hard_refusal) ... ok\ntest_wrong_mode_is_hard_refusal (test_arm_lock_candidate.BoundedArmLock.test_wrong_mode_is_hard_refusal) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.359s\n\nOK\n",
+  "formalSHA256": "783d2e145bda0547b3e5e944274f09a3c7fef6484881f94b0a5c1e384481eba8",
+  "actualKernel": true,
+  "runtimeUnchangedExactV14": true,
+  "candidateSHA256": "d92cbc195d8326d98c7853271981eb0423c7198f235d852bb9fc3719caa8331c",
+  "testSHA256": "e6bcd9cac9a5bd507d9f75e9c7fbd320be53253e257008a89ac17263f9f0073a",
+  "nativeLaunch": false
+}

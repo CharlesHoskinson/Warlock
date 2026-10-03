@@ -1,0 +1,119 @@
+{
+  "kind": "independent-root-source-review",
+  "updatedUTC": "2026-10-02T11:52:17.697746+00:00",
+  "result": "formal-renderer-design-verified-focus-and-normal-stop-refinements-required",
+  "runtimeApproval": false,
+  "nativeApproval": false,
+  "sourceInputs": {
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/formal-before-pairing-v2/report.json": {
+      "sha256": "2520644019977d307b34654579273eca10b284512d38972b6f2fd8b13d6478cc",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/renderer_collector_binding.qnt": {
+      "sha256": "c02ef8b9350f7173d2682e446ff2c9edec581ddaf5206981ca3cb02168440fc5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/renderer_collector_binding_test.qnt": {
+      "sha256": "c2c4e5d3cc6e8111e170a0015ce9023a0f7f923335a98b97dcf0a4713668321d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-renderer-binding-design-v1/RENDERER_COLLECTOR_BINDING_CONTRACT.md": {
+      "sha256": "bb7faa7ec949d1b74141183e25eaffc97d97b15f2bc991dcf88727f06910c966",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/MAXIMIZED_PIN_CONTRACT.md": {
+      "sha256": "16a4d86b8cbc8fa6cf6239ba80250d47f6d3ddb2433ff42801d188cc47956587",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/MODEL_FIELD_MAPPING.md": {
+      "sha256": "eee216f180d627301125260e6d73002af6c7ebb7c1163ed2fbb6e18ed18c4552",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/SOURCE_MAPPING.md": {
+      "sha256": "ac78e008c6dacfd94d9f8d5a3a7bac8d273b3aa818d2bbeca2123076c0d15fc5",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/max_pin.qnt": {
+      "sha256": "d48fde39d4682ba24ae70075a3a0e91493d2f2eaf602e024d613f67a6ff0351b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/modal_focus.qnt": {
+      "sha256": "508ce510c49c4ecddf7e1cbfa26e457bfb7437e70f2aa8a6dffc6b0881ee38e4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/modal_focus_test.qnt": {
+      "sha256": "e5abe8c376641465f732ea38d291b56b64d3a5a03924589a0d9b843b54180c5d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v1-design/primary/src/desktop/state/FocusState.cpp": {
+      "sha256": "9b971362bba97f200f0ef786237deed6b7b863066590d243cac11787e2a56ebd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v8/service_observer.py": {
+      "sha256": "9ea62c79ef8eca627df3d588a9f4d61022d58403124ecd8f98c5d85698a1a98b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/service_runtime.py": {
+      "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/scene_manager.py": {
+      "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/native_runtime.py": {
+      "sha256": "2179e2a30c880d5ad88b5ae19b370485ac886979ba8834f182ddcfb59b2006d1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v24/helper_supervisor.py": {
+      "sha256": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+      "mode": 420
+    }
+  },
+  "rendererProof": {
+    "named": 34,
+    "randomSamples": 2000,
+    "steps": 100,
+    "reportSHA256": "2520644019977d307b34654579273eca10b284512d38972b6f2fd8b13d6478cc",
+    "everyLoggedCommandExitedZero": true,
+    "allModelAndLogHashesVerified": true,
+    "scope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-daf825c91e9c4302af6a09c71764239e.scope",
+      "coreLimit": 1
+    }
+  },
+  "verifiedShutdownOrder": [
+    "RuntimeService.run finally close",
+    "manager.close drains retained actor transports and resources",
+    "NativeFactory.close refuses uncertain jobs then Keeper.stop",
+    "Keeper.stop checks actual code0 and terminal.normalStop",
+    "RuntimeService.close releases lease only after successful closure",
+    "service_observer archive_final follows service.run"
+  ],
+  "findings": [
+    {
+      "id": "ordinary-and-unrelated-focus",
+      "evidence": "modal_focus chosen always selects child2 or nested3 and allProps prohibits root1; native fullWindowFocus also serves ordinary and unrelated windows",
+      "required": "Add ordinary owner without modals and unrelated owner while another family has modals; preserve native focus policies."
+    },
+    {
+      "id": "native-seat-partial-acceptance",
+      "evidence": "FocusState.rawWindowFocus assigns m_focusWindow before rawSurfaceFocus; rawSurfaceFocus can refuse Seat grab/session lock or fail to set keyboard focus without a keyboard. Model Commit currently sets core and Seat atomically.",
+      "required": "Model actual partial core change with Seat refusal; deny accepted result and all follow-up without rollback; authenticate exact actual core owner, Seat surface and keyboard."
+    },
+    {
+      "id": "keeper-normal-close",
+      "evidence": "Keeper.abort also sets closed and can return0. Those two fields alone cannot distinguish actual normal stop.",
+      "required": "Witness exact actual terminal.normalStop True in intended terminal observer; retain independent original helper/resource gates."
+    }
+  ],
+  "agentResponses": {
+    "motion": "Accepted refinements; retaining earlier design/proofs and adding cases before stable packet.",
+    "integration": "Stable formal v2; exact intended diff being prepared outside all runtime stages. Normal-stop finding delivered."
+  },
+  "limitations": [
+    "Static source and retained proof review only.",
+    "No new native run or main desktop modification.",
+    "Core model is still being refined; no implementation approval from this record."
+  ]
+}

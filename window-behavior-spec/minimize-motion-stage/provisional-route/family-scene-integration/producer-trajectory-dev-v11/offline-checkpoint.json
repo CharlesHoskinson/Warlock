@@ -1,0 +1,75 @@
+{
+  "updatedUTC": "2026-10-01T23:26:29.677699+00:00",
+  "result": "isolated-primitive-pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/trajectory.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  trajectory\n    ok initialZeroVelocityTest passed 1 test(s)\n    ok reversedOriginVelocityTest passed 1 test(s)\n    ok reversedPositiveDimensionTest passed 1 test(s)\n    ok endpointZeroVelocityTest passed 1 test(s)\n    ok unchangedEndpointTest passed 1 test(s)\n\n  5 passing (38ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/trajectory.qnt",
+        "--invariant=invariant",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (3162ms at 633 traces/second).\nUse --seed=0x149b6ca --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/test-trajectory"
+      ],
+      "returncode": 0,
+      "stdout": "{\"result\":\"pass\",\"numericChecks\":2012018,\"randomFamilies\":2000,\"nativeAccepted\":false}\n",
+      "stderr": ""
+    }
+  ],
+  "namedScenarios": 5,
+  "traces": 2000,
+  "maxSteps": 100,
+  "randomNumericFamilies": 2000,
+  "numericChecks": 2012018,
+  "sourceHashes": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/CONTRACT.md": "1ec26ea19f9941be22f8f5135648e2e075489b0579fcf70de834d32d63d13585",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/ContinuousTrajectory.hpp": "5c9a4e0f4f5560d825886199229a3e93cfd95c0a192481e139702e3fbe7fa6eb",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/trajectory.qnt": "7a705ee9ddbb5b7697b0eaacab60fa1373a323014caf0951fd00549d0b77bb6e",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/test_trajectory.cpp": "66c092e6b035465360386921d5c93d0386056fab970610d385e9f029bcd699ce",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/trajectory.preparation-failed.txt": "2c536f1aa958d31e3390406c3ba7fdc80faa6689ba80e5d925ff82e1c70ad547",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/formal-preparation-failure.json": "35ca444c484c348d309ebb452f5914b4c4df4592b3d9e5368da04a0e68e56108",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/test-trajectory": "4781e7646cf869a052ca5f11abad18e79e3db4caf1a20b366f71edfa0e10c69c",
+    "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/root-velocity-audit.json": "653584decc72093dd3854186d23b7256d573181bc504e43fbace6e87a977f723"
+  },
+  "sourceModes": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/CONTRACT.md": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/ContinuousTrajectory.hpp": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/trajectory.qnt": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/test_trajectory.cpp": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/trajectory.preparation-failed.txt": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/formal-preparation-failure.json": 420,
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v11/test-trajectory": 493,
+    "/home/hoskinson/window-integration-qa/family-continuous-reversal-v3/attempt-1/root-velocity-audit.json": 384
+  },
+  "sourceContract": "Carry exact displayed rectangle and analytic velocity together; shared safe duration; zero endpoint velocity; positive dimensions",
+  "remaining": [
+    "Independent source review",
+    "Integrate with immutable accepted per-output frame derivatives and exact family order",
+    "Preserve diagnostic static sampler/original raster oracle",
+    "Native default/reversal/reduced/mixedoutput cadence and lifecycle QA"
+  ],
+  "rendererIntegrated": false,
+  "nativeAccepted": false,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false
+}

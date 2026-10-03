@@ -1,0 +1,1606 @@
+[1;32mDEBUG [0m]: User-specified config location: '/run/user/1000/wqa/0763/hyprland.lua'
+Welcome to Hyprland!
+
+                                                  
+                     YY    UJ                     
+                    YYY    UUJ                    
+                   XXXY    UUUU                   
+                  zXXXX    UUUUU                  
+                zzzzX        UUUUJ                
+               cczzz          UUUUJ               
+             vccccz            UUUUUJ             
+            vvcccc              UUUUUJ            
+           vvvvv                  UUUUJ           
+          uuuvv                    UUUUJ          
+         uuuuu                      UUUUU         
+        nnnuu                        UUUUU        
+       nnnnn                          YUUUU       
+       xxnn                            YUUU       
+       xxxn                            YYUU       
+      xxxx                              YYUU      
+      rxxx                              YYYY      
+      rrrx                              YYYY      
+       rrrx                            XXXY       
+       rrrr                            XXXX       
+        rrrr                          zzXX        
+         rrrr                        zzzz         
+          rrrrr                    ccczz          
+           rrrrrx                vccccc           
+             rrrrxxxx        uuvvvvvc             
+                rrxxxxxxnnnnuuuuuv                
+                    xxxxxnnnnu                    
+
+
+
+[1;33mWARN [0m]: Failed to change process scheduling strategy
+DEBUG ]: Old rlimit: soft -> 65536, hard -> 524288
+DEBUG ]: New rlimit: soft -> 524288, hard -> 524288
+WARN ]: WARNING: Hyprland is being launched without start-hyprland. This is highly advised against.
+DEBUG ]: Creating the EventLoopManager!
+DEBUG ]: Creating the KeybindManager!
+DEBUG ]: Creating the AnimationManager!
+DEBUG ]: Creating the DynamicPermissionManager!
+DEBUG ]: Creating the MonitorState!
+DEBUG ]: Creating the WorkspaceState!
+DEBUG ]: Creating the ConfigManager!
+DEBUG ]: [cfg] Config is either explicit or special.
+DEBUG ]: [cfg] Config is lua, loading lua mgr
+DEBUG ]: Creating the Error Overlay!
+DEBUG ]: Creating the LayoutManager!
+DEBUG ]: Creating the TokenManager!
+DEBUG ]: Creating the EventManager!
+DEBUG ]: Creating the PointerManager!
+DEBUG ]: Creating the AsyncResourceGatherer!
+[1;32mDEBUG [0mfrom aquamarine ]: Creating an Aquamarine backend!
+[1;32mDEBUG [0mfrom aquamarine ]: Private AQ_BACKENDS=wayland: mandatory parent, no DRM or libseat backend
+[1;32mDEBUG [0mfrom aquamarine ]: Starting the Aquamarine backend!
+[1;32mDEBUG [0mfrom aquamarine ]: Starting the Wayland backend!
+[1;32mDEBUG [0mfrom aquamarine ]: Connected to a wayland compositor: Hyprland
+[1;32mDEBUG [0mfrom aquamarine ]: Got registry at 0x5646fd6238c0
+[1;32mDEBUG [0mfrom aquamarine ]: New wayland keyboard wl_keyboard
+[1;32mDEBUG [0mfrom aquamarine ]: New wayland pointer wl_pointer
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got main device
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got node /dev/dri/renderD129
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got done
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: opened node /dev/dri/renderD129 with fd 16
+[1;32mDEBUG [0mfrom aquamarine ]: Output WAYLAND-1: initialized
+[1;32mDEBUG [0mfrom aquamarine ]: reopenDRMNode: opening node /dev/dri/renderD129
+[1;32mDEBUG [0mfrom aquamarine ]: Created a GBM allocator with drm fd 17
+[1;32mDEBUG [0m]: Instance Signature: efb50993780079460b0cbed1363e2166a2de1d9f_1790975053_470609001
+[1;32mDEBUG [0m]: Runtime directory: /run/user/1000/wqa/0763/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790975053_470609001
+[1;32mDEBUG [0m]: Hyprland PID: 758314
+[1;32mDEBUG [0m]: ===== SYSTEM INFO: =====
+[1;32mDEBUG [0m]: Hyprland 0.56.2 built from branch  at commit efb50993780079460b0cbed1363e2166a2de1d9f dirty ([gha] Nix: update inputs).
+Date: Wed Aug 5 08:13:21 2026
+Tag: v0.56.2, commits: 7661
+
+Libraries:
+Hyprgraphics: built against 0.5.1, system has 0.5.1
+Hyprutils: built against 0.14.2, system has 0.14.2
+Hyprcursor: built against 0.1.13, system has 0.1.13
+Hyprlang: built against 0.6.8, system has 0.6.8
+Aquamarine: built against 0.15.0, system has 0.15.0
+
+Version ABI string: efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6
+no flags were set
+
+
+System Information:
+System name: Linux
+Node name: hosk
+Release: 7.2.7-1-omarchy
+Version: #1 SMP PREEMPT_DYNAMIC Sun, 27 Sep 2026 22:42:08 +0000
+
+Libraries:
+Hyprgraphics: built against 0.5.1, system has 0.5.1
+Hyprutils: built against 0.14.2, system has 0.14.2
+Hyprcursor: built against 0.1.13, system has 0.1.13
+Hyprlang: built against 0.6.8, system has 0.6.8
+Aquamarine: built against 0.15.0, system has 0.15.0
+
+
+
+GPU information: 
+00:02.0 VGA compatible controller [0300]: Intel Corporation Arrow Lake-S [Intel Graphics] [8086:7d67] (rev 06) (prog-if 00 [VGA controller])
+02:00.0 VGA compatible controller [0300]: NVIDIA Corporation GB203M / GN22-X11 [GeForce RTX 5090 Max-Q / Mobile] [10de:2c58] (rev a1) (prog-if 00 [VGA controller])
+80:14.5 Non-VGA unclassified device [0000]: Intel Corporation Device [8086:7f2f] (rev 10)
+NVRM version: NVIDIA UNIX Open Kernel Module for x86_64  615.71.09  Release Build  (root@archiso)  
+
+
+os-release: NAME="Omarchy"
+PRETTY_NAME="Omarchy"
+ID=omarchy
+ID_LIKE=arch
+BUILD_ID="4.0.4.legion"
+VERSION_ID="4.0.4.legion"
+ANSI_COLOR="38;2;158;206;106"
+HOME_URL="https://omarchy.org/"
+DOCUMENTATION_URL="https://learn.omacom.io/2/the-omarchy-manual"
+SUPPORT_URL="https://discord.gg/tXFUdasqhY"
+BUG_REPORT_URL="https://github.com/basecamp/omarchy/issues"
+LOGO=omarchy
+
+
+plugins:
+	unknown: not runtime
+
+Backend: sessionless
+
+Monitor info:
+
+State:
+
+configProvider: lua
+backend: wayland
+
+
+
+[1;32mDEBUG [0m]: ========================
+[1;32mDEBUG [0m]: 
+
+
+[1;32mDEBUG [0m]: If you are crashing, or encounter any bugs, please consult https://wiki.hypr.land/Crashes-and-Bugs/
+
+
+[1;32mDEBUG [0m]: 
+Current splash: i hypr therefore i land
+
+
+[1;32mDEBUG [0m]: Running on DRMFD: 16
+[1;32mDEBUG [0m]: Using RENDERNODEFD: 16
+[1;32mDEBUG [0m]: DRM DisplayNode syncobj timeline support: yes
+[1;32mDEBUG [0m]: DRM RenderNode syncobj timeline support: yes
+[1;32mDEBUG [0m]: wl_display_add_socket for wayland-1 succeeded with 0
+[1;32mDEBUG [0m]: Creating the CHyprOpenGLImpl!
+[1;32mDEBUG [0m]: Supported EGL global extensions: (16) EGL_EXT_device_base EGL_EXT_device_enumeration EGL_EXT_device_query EGL_EXT_platform_base EGL_KHR_client_get_all_proc_addresses EGL_EXT_client_extensions EGL_KHR_debug EGL_EXT_platform_device EGL_EXT_explicit_device EGL_EXT_platform_wayland EGL_KHR_platform_wayland EGL_EXT_platform_x11 EGL_KHR_platform_x11 EGL_EXT_platform_xcb EGL_MESA_platform_gbm EGL_KHR_platform_gbm EGL_MESA_platform_surfaceless
+[1;32mDEBUG [0m]: eglDeviceFromDRMFD: Using device /dev/dri/card0
+[1;32mDEBUG [0m]: EGL: IMG_context_priority supported, requesting high
+[1;32mDEBUG [0m]: EGL: EXT_create_context_robustness supported, requesting lose on reset
+[1;32mDEBUG [0m]: EGL: Using KHR_context_flush_control
+[1;32mDEBUG [0m]: EGL: Got a high priority context
+[1;32mDEBUG [0m]: Creating the Hypr OpenGL Renderer!
+[1;32mDEBUG [0m]: Using: OpenGL ES 3.2 Mesa 26.2.2-arch1.1
+[1;32mDEBUG [0m]: Vendor: Intel
+[1;32mDEBUG [0m]: Renderer: Mesa Intel(R) Graphics (ARL)
+[1;32mDEBUG [0m]: Supported extensions: (167) GL_EXT_blend_minmax GL_EXT_multi_draw_arrays GL_EXT_texture_filter_anisotropic GL_EXT_texture_compression_s3tc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_format_BGRA8888 GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth24 GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_mapbuffer GL_OES_rgb8_rgba8 GL_OES_standard_derivatives GL_OES_stencil8 GL_OES_texture_3D GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_vertex_half_float GL_EXT_draw_instanced GL_EXT_texture_sRGB_decode GL_OES_EGL_image GL_OES_depth_texture GL_AMD_performance_monitor GL_OES_packed_depth_stencil GL_EXT_texture_type_2_10_10_10_REV GL_NV_conditional_render GL_OES_get_program_binary GL_APPLE_texture_max_level GL_EXT_discard_framebuffer GL_EXT_read_format_bgra GL_EXT_texture_storage GL_NV_pack_subimage GL_NV_texture_barrier GL_EXT_frag_depth GL_NV_fbo_color_attachments GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_array_object GL_OES_viewport_array GL_ANGLE_pack_reverse_row_order GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_EXT_occlusion_query_boolean GL_EXT_robustness GL_EXT_sRGB GL_EXT_texture_rg GL_EXT_unpack_subimage GL_NV_draw_buffers GL_NV_read_buffer GL_NV_read_depth GL_NV_read_depth_stencil GL_NV_read_stencil GL_APPLE_sync GL_EXT_draw_buffers GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_shadow_samplers GL_KHR_debug GL_KHR_robustness GL_KHR_texture_compression_astc_ldr GL_NV_generate_mipmap_sRGB GL_NV_pixel_buffer_object GL_OES_depth_texture_cube_map GL_OES_required_internalformat GL_OES_surfaceless_context GL_EXT_color_buffer_float GL_EXT_debug_label GL_EXT_sRGB_write_control GL_EXT_separate_shader_objects GL_EXT_shader_framebuffer_fetch GL_EXT_shader_group_vote GL_EXT_shader_implicit_conversions GL_EXT_shader_integer_mix GL_EXT_tessellation_point_size GL_EXT_tessellation_shader GL_INTEL_conservative_rasterization GL_INTEL_performance_query GL_ANDROID_extension_pack_es31a GL_EXT_base_instance GL_EXT_compressed_ETC1_RGB8_sub_texture GL_EXT_copy_image GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_gpu_shader5 GL_EXT_multi_draw_indirect GL_EXT_polygon_offset_clamp GL_EXT_primitive_bounding_box GL_EXT_render_snorm GL_EXT_shader_io_blocks GL_EXT_texture_border_clamp GL_EXT_texture_buffer GL_EXT_texture_cube_map_array GL_EXT_texture_norm16 GL_EXT_texture_view GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_KHR_context_flush_control GL_KHR_robust_buffer_access_behavior GL_NV_image_formats GL_NV_shader_noperspective_interpolation GL_OES_copy_image GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_gpu_shader5 GL_OES_primitive_bounding_box GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_io_blocks GL_OES_shader_multisample_interpolation GL_OES_tessellation_point_size GL_OES_tessellation_shader GL_OES_texture_border_clamp GL_OES_texture_buffer GL_OES_texture_cube_map_array GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_texture_view GL_EXT_blend_func_extended GL_EXT_buffer_storage GL_EXT_float_blend GL_EXT_geometry_point_size GL_EXT_geometry_shader GL_EXT_shader_samples_identical GL_EXT_texture_sRGB_R8 GL_KHR_no_error GL_KHR_texture_compression_astc_sliced_3d GL_NV_fragment_shader_interlock GL_OES_EGL_image_external_essl3 GL_OES_geometry_point_size GL_OES_geometry_shader GL_OES_shader_image_atomic GL_EXT_clear_texture GL_EXT_clip_cull_distance GL_EXT_conservative_depth GL_EXT_disjoint_timer_query GL_EXT_texture_compression_s3tc_srgb GL_MESA_shader_integer_functions GL_EXT_clip_control GL_EXT_color_buffer_half_float GL_EXT_memory_object GL_EXT_memory_object_fd GL_EXT_semaphore GL_EXT_semaphore_fd GL_EXT_texture_compression_bptc GL_EXT_texture_mirror_clamp_to_edge GL_KHR_parallel_shader_compile GL_NV_alpha_to_coverage_dither_control GL_EXT_EGL_image_storage GL_EXT_shader_framebuffer_fetch_non_coherent GL_EXT_texture_shadow_lod GL_INTEL_blackhole_render GL_MESA_framebuffer_flip_y GL_NV_compute_shader_derivatives GL_EXT_demote_to_helper_invocation GL_EXT_depth_clamp GL_EXT_texture_query_lod GL_KHR_shader_subgroup GL_MESA_sampler_objects GL_EXT_EGL_image_storage_compression GL_EXT_texture_storage_compression GL_MESA_bgra GL_MESA_texture_const_bandwidth GL_EXT_shader_clock 
+[1;32mDEBUG [0m]: Supported EGL display extensions: (33) EGL_ANDROID_blob_cache EGL_ANDROID_native_fence_sync EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_IMG_context_priority EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_partial_update EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_image_dma_buf_export EGL_MESA_query_driver EGL_MESA_x11_native_visual_id 
+[1;32mDEBUG [0m]: Supported DMA-BUF formats:
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AB4H (0x48344241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XB4H (0x48344258)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AB48 (0x38344241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XB48 (0x38344258)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AR30 (0x30335241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XR30 (0x30335258)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AB30 (0x30334241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XB30 (0x30334258)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AR24 (0x34325241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AB24 (0x34324241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XR24 (0x34325258)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XB24 (0x34324258)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AR15 (0x35315241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AR12 (0x32315241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format RG16 (0x36314752)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format R8 (0x20203852)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format R16 (0x20363152)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format GR88 (0x38385247)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format GR32 (0x32335247)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format R  H (0x48202052)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format R  F (0x46202052)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format GR H (0x48205247)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format GR F (0x46205247)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AB8F (0x46384241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YUV9 (0x39565559)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YU11 (0x31315559)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YU12 (0x32315559)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YU16 (0x36315559)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YU24 (0x34325559)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YVU9 (0x39555659)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YV11 (0x31315659)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YV12 (0x32315659)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YV16 (0x36315659)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YV24 (0x34325659)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S010 (0x30313053)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S210 (0x30313253)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S410 (0x30313453)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S012 (0x32313053)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S212 (0x32313253)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S412 (0x32313453)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S016 (0x36313053)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S216 (0x36313253)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S416 (0x36313453)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format NV12 (0x3231564e)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format NV21 (0x3132564e)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format P010 (0x30313050)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format P012 (0x32313050)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format P016 (0x36313050)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format P030 (0x30333050)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format NV16 (0x3631564e)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format NV61 (0x3136564e)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format NV24 (0x3432564e)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format NV42 (0x3234564e)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AYUV (0x56555941)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XYUV (0x56555958)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format Y410 (0x30313459)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format Y412 (0x32313459)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format Y416 (0x36313459)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YUYV (0x56595559)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YVYU (0x55595659)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format UYVY (0x59565955)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format VYUY (0x59555956)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format Y210 (0x30313259)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format Y212 (0x32313259)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format Y216 (0x36313259)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: 65 formats found in total. Some modifiers may be omitted as they are external-only.
+[1;32mDEBUG [0m]: Creating the HyprRenderer!
+[1;32mDEBUG [0m]: Aq backend has no session, omitting full DRM node checks
+[1;32mDEBUG [0m]: Primary DRM driver information: i915 v1.6.0 from 0 description Intel Graphics
+[1;32mDEBUG [0m]: Creating the ProtocolManager!
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [WLSeat]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [WLDataDevice]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [WLCompositor]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [WLSubcompositor]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [WLSHM]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [Viewporter]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [TearingControl]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [FractionalScale]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGOutput]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [CursorShape]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [IdleInhibit]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [RelativePointer]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGDecoration]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [AlphaModifier]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [GammaControl]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ForeignToplevel]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [PointerGestures]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ForeignToplevelWlr]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ShortcutsInhibit]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [TextInputV1]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [TextInputV3]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [PointerConstraints]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [OutputPower]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGActivation]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [IdleNotify]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [IdleNotify]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [SessionLock]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [IMEv2]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [VirtualKeyboard]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [VirtualPointer]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [OutputManagement]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ServerDecorationKDE]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [FocusGrab]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [TabletV2]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [LayerShell]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [Presentation]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGShell]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [DataDeviceWlr]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [PrimarySelection]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XWaylandShell]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ToplevelMapping]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [GlobalShortcuts]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGDialog]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [SinglePixel]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [SecurityContext]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [CTMControl]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [InputCapture]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [HyprlandSurface]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ContentType]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGTag]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGBell]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [Hotkey]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ExtWorkspace]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ExtDataDevice]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [PointerWarp]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [Fifo]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGForeignExporter]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGForeignImporter]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [BackgroundEffect]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [CommitTiming]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [Screencopy]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ToplevelExport]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [OutputImageCaptureSource]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ForeignToplevelImageCaptureSource]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ImageCopyCapture]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ColorManagement]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [MesaDRM]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [LinuxDMABUF]
+[1;32mDEBUG [0m]: Creating the SeatManager!
+[1;32mDEBUG [0m]: Creating the SessionLockManager!
+[1;32mDEBUG [0m]: Creating CHyprCtl
+[1;32mDEBUG [0m]: Hypr socket started at /run/user/1000/wqa/0763/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790975053_470609001/.socket.sock
+[1;32mDEBUG [0m]: Creating the InputManager!
+[1;32mDEBUG [0m]: Creating the XWaylandManager!
+[1;32mDEBUG [0m]: Creating the Debug Overlay!
+[1;32mDEBUG [0m]: Creating the NotificationOverlay!
+[1;32mDEBUG [0m]: Creating the PluginSystem!
+[1;32mDEBUG [0m]: Creating the DecorationPositioner!
+[1;32mDEBUG [0m]: Creating the CursorManager!
+[1;32mDEBUG [0m]: [hc] CHyprcursorManager: attempting to find theme from env
+[1;32mDEBUG [0m]: [hc] themeNameFromEnv: env unset
+[1;32mDEBUG [0m]: [hc] CHyprcursorManager: attempting to find any theme
+[1;32mDEBUG [0m]: [hc] CHyprcursorManager: no themes matched
+[1;31mERR [0m]: Hyprcursor failed loading theme "", falling back to Xcursor.
+[1;32mDEBUG [0m]: XCursor scanning theme default
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/default/index.theme
+[1;32mDEBUG [0m]: XCursor theme default inherits Adwaita
+[1;32mDEBUG [0m]: XCursor scanning theme Adwaita
+[1;32mDEBUG [0m]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits AdwaitaLegacy
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits hicolor
+[1;32mDEBUG [0m]: XCursor scanning theme Adwaita
+[1;32mDEBUG [0m]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits AdwaitaLegacy
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits hicolor
+[1;32mDEBUG [0m]: XCursor scanning theme AdwaitaLegacy
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/AdwaitaLegacy/index.theme
+[1;32mDEBUG [0m]: XCursor theme AdwaitaLegacy inherits hicolor
+[1;32mDEBUG [0m]: XCursor scanning theme hicolor
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/hicolor/index.theme
+[1;32mDEBUG [0m]: XCursor already has a shape default loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape context-menu loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape help loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape pointer loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape progress loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape wait loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name plus, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape crosshair loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape text loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape vertical-text loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-link, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape move loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-none, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name crossed_circle, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape grab loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape grabbing loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape e-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape n-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape ne-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape nw-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape s-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape se-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape sw-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape w-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape ew-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape ns-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape nesw-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape nwse-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape col-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape row-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape all-scroll loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape zoom-in loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape zoom-out loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape all-resize loaded, skipping
+[1;32mDEBUG [0m]: [hc] CHyprcursorManager: attempting to find theme from env
+[1;32mDEBUG [0m]: [hc] themeNameFromEnv: env unset
+[1;32mDEBUG [0m]: [hc] CHyprcursorManager: attempting to find any theme
+[1;32mDEBUG [0m]: [hc] CHyprcursorManager: no themes matched
+[1;31mERR [0m]: Hyprcursor failed loading theme "", falling back to Xcursor.
+[1;32mDEBUG [0m]: XCursor scanning theme default
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/default/index.theme
+[1;32mDEBUG [0m]: XCursor theme default inherits Adwaita
+[1;32mDEBUG [0m]: XCursor scanning theme Adwaita
+[1;32mDEBUG [0m]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits AdwaitaLegacy
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits hicolor
+[1;32mDEBUG [0m]: XCursor scanning theme Adwaita
+[1;32mDEBUG [0m]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits AdwaitaLegacy
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits hicolor
+[1;32mDEBUG [0m]: XCursor scanning theme AdwaitaLegacy
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/AdwaitaLegacy/index.theme
+[1;32mDEBUG [0m]: XCursor theme AdwaitaLegacy inherits hicolor
+[1;32mDEBUG [0m]: XCursor scanning theme hicolor
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/hicolor/index.theme
+[1;32mDEBUG [0m]: XCursor already has a shape default loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape context-menu loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape help loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape pointer loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape progress loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape wait loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name plus, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape crosshair loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape text loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape vertical-text loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-link, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape move loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-none, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name crossed_circle, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape grab loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape grabbing loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape e-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape n-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape ne-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape nw-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape s-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape se-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape sw-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape w-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape ew-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape ns-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape nesw-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape nwse-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape col-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape row-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape all-scroll loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape zoom-in loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape zoom-out loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape all-resize loaded, skipping
+[1;32mDEBUG [0m]: Creating the VersionKeeper!
+[1;32mDEBUG [0m]: FsUtils::getDataHome: no hyprland data home, creating.
+[1;32mDEBUG [0m]: Creating the DonationNag!
+[1;32mDEBUG [0m]: Creating the WelcomeManager!
+[1;32mDEBUG [0m]: [welcome] skipping, not autogen
+[1;32mDEBUG [0m]: Creating the ANRManager!
+[1;32mDEBUG [0m]: Starting XWayland
+[1;32mDEBUG [0m]: XWayland has been disabled, cleaning up...
+[1;32mDEBUG [0m]: Hyprland init finished.
+[1;32mDEBUG [0m]: Running on WAYLAND_DISPLAY: wayland-1
+[1;32mDEBUG [0m]: Hyprland is ready, running the event loop!
+[1;32mDEBUG [0mfrom aquamarine ]: backend: poll fd 14 for implementation wayland
+[1;32mDEBUG [0mfrom aquamarine ]: backend: poll fd 12 for implementation headless
+[1;32mDEBUG [0mfrom aquamarine ]: backend: poll fd 13 for idle
+[1;32mDEBUG [0mfrom aquamarine ]: Output WAYLAND-1: wm_capabilities received
+[1;32mDEBUG [0mfrom aquamarine ]: Output WAYLAND-1: stage toplevel configure 1600x1000 until surface ACK
+[1;32mDEBUG [0mfrom aquamarine ]: Output WAYLAND-1: configure surface with 1
+[1;32mDEBUG [0m]: New aquamarine keyboard with name wl_keyboard
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+[1;32mDEBUG [0m]: Updating keyboard 5646fd82ebd0's translation state from a provided keymap
+[1;32mDEBUG [0m]: xkb: LED index 0 (name Num Lock) got index 1
+[1;32mDEBUG [0m]: xkb: LED index 1 (name Caps Lock) got index 0
+[1;32mDEBUG [0m]: xkb: LED index 2 (name Scroll Lock) got index 2
+[1;32mDEBUG [0m]: xkb: Mod index 0 (name Shift) got index 0
+[1;32mDEBUG [0m]: xkb: Mod index 1 (name Lock) got index 1
+[1;32mDEBUG [0m]: xkb: Mod index 2 (name Control) got index 2
+[1;32mDEBUG [0m]: xkb: Mod index 3 (name Mod1) got index 3
+[1;32mDEBUG [0m]: xkb: Mod index 4 (name Mod2) got index 4
+[1;32mDEBUG [0m]: xkb: Mod index 5 (name Mod3) got index 5
+[1;32mDEBUG [0m]: xkb: Mod index 6 (name Mod4) got index 6
+[1;32mDEBUG [0m]: xkb: Mod index 7 (name Mod5) got index 7
+[1;32mDEBUG [0m]: Updating keymap fd for keyboard wl_keyboard
+[1;32mDEBUG [0m]: Updated keymap fd to 40, keymap V1 to: 42
+[1;32mDEBUG [0m]: Set the keyboard layout to us and variant to  for keyboard "wl_keyboard"
+[1;32mDEBUG [0m]: New keyboard created, pointers Hypr: 5646fd82ebd0 and AQ: 5646fd62dda0
+[1;32mDEBUG [0m]: New aquamarine pointer with name wl_pointer
+[1;32mDEBUG [0m]: Attached pointer wl_pointer to global
+[1;32mDEBUG [0m]: New mouse created, pointer AQ: 5646fd62e200
+[1;32mDEBUG [0m]: New aquamarine output with name WAYLAND-1
+[1;32mDEBUG [0m]: [CMonitorStateTracker] New monitor: WAYLAND-1
+[1;32mDEBUG [0m]: Applying monitor rule for WAYLAND-1
+[1;31mERR [0m]: Monitor WAYLAND-1 has NO PREFERRED MODE
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1600, y: 1000] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1600, y: 1000] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1600, y: 1000] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: Swapchain: Reconfigured a swapchain to [Vector2D: x: 1600, y: 1000] XR24 of length 3
+[1;32mDEBUG [0m]: CMonitorState::ensureBufferPresent: no buffer or mismatched format, attaching one from the swapchain for modeset being possible
+[1;32mDEBUG [0m]: Monitor WAYLAND-1: requested 1600x1000@60.00Hz, using custom mode 1600x1000@0.00Hz
+[1;32mDEBUG [0m]: output WAYLAND-1 succeeded basic test on format DRM_FORMAT_XRGB8888
+[1;32mDEBUG [0m]: Starting ScreenshareManager
+[1;32mDEBUG [0m]: Monitor WAYLAND-1 -> destroyed all render data
+[1;32mDEBUG [0m]: CMonitor::updateVCGTRamps: skipping, no gamma ramp for output
+[1;32mDEBUG [0m]: Monitor WAYLAND-1 data dump: res 1600x1000@60.00Hz, scale 1.00, transform 0, pos -1x-1, 10b 0
+[1;33mWARN [0mfrom aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+[1;32mDEBUG [0m]: Added new monitor with name WAYLAND-1 at [-1, -1] with size [1600, 1000], pointer 5646fd62e610
+[1;32mDEBUG [0m]: New monitor: WORKSPACEID 1, exists: 0
+[1;32mDEBUG [0m]: checking if we have seen this monitor before: WAYLAND-1
+[1;32mDEBUG [0m]: Monitor WAYLAND-1 was not on any workspace
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Automatically selected format AR24 for new GBM buffer
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 24, y: 24] and format AR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Automatically selected format AR24 for new GBM buffer
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 24, y: 24] and format AR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: Swapchain: Reconfigured a swapchain to [Vector2D: x: 24, y: 24] AR24 of length 2
+[1;32mDEBUG [0m]: Framebuffer "Monitor WAYLAND-1 blur FB" created, status 36053
+[1;32mDEBUG [0m]: Shaders initialized successfully.
+[1;31mERR [0m]: getConvertedColor: failed to get image description
+[1;32mDEBUG [0m]: compiling feature set 1 for surface.frag
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [WLOutput (WAYLAND-1)]
+[1;32mDEBUG [0m]: arrangeMonitors: 1 to arrange
+[1;32mDEBUG [0m]: arrangeMonitors: WAYLAND-1 explicit [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: WAYLAND-1 xwayland [0, 0]
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;31mERR [0m]: getConvertedColor: failed to get image description
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Not applying config to keyboard, it did not change.
+[1;33mWARN [0m]: [FallbackStateKeeper] Start fired, removing fallback timer
+[1;32mDEBUG [0m]: Framebuffer "Monitor WAYLAND-1 workbuffer" created, status 36053
+[1;32mDEBUG [0m]: compiling feature set 0 for passthru.frag
+[1;33mWARN [0mfrom aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+[1;33mWARN [0m]: FIXME: color management protocol is enabled and outputs changed, check preferred image description changes
+[1;32mDEBUG [0mfrom aquamarine ]: Output WAYLAND-1: stage toplevel configure 1600x1000 until surface ACK
+[1;32mDEBUG [0mfrom aquamarine ]: Output WAYLAND-1: configure surface with 3
+[1;32mDEBUG [0mfrom aquamarine ]: [wayland] focus changed: WAYLAND-1
+[1;33mWARN [0mfrom aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 757674
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758474
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 757674
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758919
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758920
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758921
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758923
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758924
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758953
+[1;32mDEBUG [0m]: [CWLSeatProtocol] New seat resource bound at 5646fe31cef0
+[1;32mDEBUG [0m]: [CWLDataDeviceProtocol] New datamgr resource bound at 5646fd8cde60
+[1;32mDEBUG [0m]: [CWLDataDeviceManagerResource] New data device bound at 5646fd8cc010
+[1;32mDEBUG [0m]: [CPrimarySelectionProtocol] New primary_seletion_manager at 5646fd8cdf80
+[1;32mDEBUG [0m]: [CPrimarySelectionManager] New primary selection data device bound at 5646fd8bc4a0
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 5646fe393b10 (not xwayland)
+[1;32mDEBUG [0m]: [CXDGShellProtocol] New xdg_wm_base at 5646fe3433d0
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_surface with id 33 at 5646fe505b10
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 36 at 5646fe3438a0
+[1;32mDEBUG [0m]: [CXDGWMBase] New xdg_surface at 5646fe46ee60
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fe3433d0 gets a toplevel 5646fd6c7650
+[1;32mDEBUG [0m]: CWLSurface 5646fe506330 called init()
+[1;32mDEBUG [0m]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+[1;32mDEBUG [0m]: Window 5646fe528150 set title to Qt WindowModal QA owner
+[1;32mDEBUG [0m]: Window 5646fe528150 set class to qt-window-modal-fixture
+[1;32mDEBUG [0m]: Layout predicts size [Vector2D: x: 1600, y: 1000] for [Window 5646fe528150: title: "Qt WindowModal QA owner"]
+[1;32mDEBUG [0m]: [CXDGActivationToken] assigned new xdg-activation token ebb03626-b3b1-4748-99cf-6a08c7cafccb
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_surface with id 41 at 5646fe531d50
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 44 at 5646fe532700
+[1;32mDEBUG [0m]: [CXDGWMBase] New xdg_surface at 5646fe392270
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fe3433d0 gets a toplevel 5646fe5362e0
+[1;32mDEBUG [0m]: CWLSurface 5646fe505370 called init()
+[1;32mDEBUG [0m]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+[1;32mDEBUG [0m]: Window 5646fe536610 set title to Qt WindowModal QA peer
+[1;32mDEBUG [0m]: Window 5646fe536610 set class to qt-window-modal-fixture
+[1;32mDEBUG [0m]: Layout predicts size [Vector2D: x: 1600, y: 1000] for [Window 5646fe536610: title: "Qt WindowModal QA peer"]
+[1;32mDEBUG [0m]: [CXDGActivationToken] assigned new xdg-activation token 940fd659-d0ce-4b89-ace2-9e1ebb0cadd2
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fe46ee60 requests geometry 0x0 1600x1000
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 44 at 5646fe534d00
+[1;32mDEBUG [0m]: Set keyboard focus to surface 5646fe505b10, with [Window 5646fe528150: title: "Qt WindowModal QA owner"]
+[1;32mDEBUG [0m]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+[1;32mDEBUG [0m]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 21.00000], window size: [1558.00000, 958.00000]
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fe392270 requests geometry 0x0 1600x1000
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 51 at 5646fe4e5710
+[1;32mDEBUG [0m]: Set keyboard focus to surface 5646fe531d50, with [Window 5646fe536610: title: "Qt WindowModal QA peer"]
+[1;32mDEBUG [0m]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+[1;32mDEBUG [0m]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 21.00000], window size: [773.00000, 958.00000]
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758957
+[1;32mDEBUG [0m]: Framebuffer "Monitor WAYLAND-1 workbuffer" created, status 36053
+[1;32mDEBUG [0m]: compiling feature set 16 for shadow.frag
+[1;32mDEBUG [0m]: compiling feature set 0 for surface.frag
+[1;32mDEBUG [0m]: compiling feature set 8 for border.frag
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758958
+[1;32mDEBUG [0m]: cursorImage request: shape 1 -> default
+[1;31mERR [0m]: getConvertedColor: failed to get image description
+[1;32mDEBUG [0m]: cursorImage request: shape 1 -> default
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fe46ee60 requests geometry 0x0 773x958
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 62 at 5646fe7eaee0
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fe392270 requests geometry 0x0 773x958
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 67 at 5646fd908840
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758972
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758982
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758983
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758984
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fe392270 requests geometry 0x0 1558x958
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 54 at 5646fe4c9290
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758985
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fe46ee60 requests geometry 0x0 1600x1000
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 70 at 5646fe534e00
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758986
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758987
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758988
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758989
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758990
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758991
+[1;32mDEBUG [0m]: Removing last node (dwindle)
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fe46ee60 requests geometry 0x0 620x420
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 68 at 5646fe614ae0
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758992
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fe392270 requests geometry 0x0 620x420
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 65 at 5646fee37330
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758993
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758994
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 758999
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 759001
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 759006
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 759007
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 759008
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 759009
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 759010
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 759011
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 759012
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 759018
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 759019
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 759020
+[1;32mDEBUG [0m]: getAddressForTrampo: Allocating new page for hooks
+[1;32mDEBUG [0m]: seekNewPageAddr: page 0x5646c158c000 - 0x5646c1761000
+[1;32mDEBUG [0m]: seekNewPageAddr: page 0x5646c1761000 - 0x5646c21fe000
+[1;32mDEBUG [0m]: seekNewPageAddr: Anchored to hyprland at 0x5646c1761000
+[1;32mDEBUG [0m]: seekNewPageAddr: page 0x5646c21fe000 - 0x5646c2425000
+[1;32mDEBUG [0m]: seekNewPageAddr: page 0x5646c2425000 - 0x5646c2447000
+[1;32mDEBUG [0m]: seekNewPageAddr: page 0x5646c2447000 - 0x5646c2513000
+[1;32mDEBUG [0m]: seekNewPageAddr: page 0x5646c2513000 - 0x5646c2523000
+[1;32mDEBUG [0m]: seekNewPageAddr: page 0x5646fd53c000 - 0x564700dbc000
+[1;32mDEBUG [0m]: seekNewPageAddr: found gap: 0x5646c2523000-0x5646fd53c000 (989958144 bytes)
+[1;32mDEBUG [0m]: Attempted to allocate 0x5646c2523000, got 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523000 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523020 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523040 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523060 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523080 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c25230a0 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c25230c0 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c25230e0 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523100 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523120 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523140 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523160 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523180 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c25231a0 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c25231c0 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c25231e0 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523200 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523220 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523240 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523260 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c2523280 for page at 0x5646c2523000
+[1;32mDEBUG [0m]: getAddressForTrampo: Returning addr 0x5646c25232a0 for page at 0x5646c2523000
+[1;32mDEBUG [0m]:  [PluginSystem] Plugin hyprbars loaded. Handle: 5646feb42710, path: "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/plugin/hyprbars-native-max-core-v2-candidate.so", author: "Vaxry", description: "A plugin to add title bars to windows.", version: "1.0"
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Not applying config to keyboard, it did not change.
+[1;32mDEBUG [0m]: compiling feature set 0 for quad.frag
+[1;32mDEBUG [0m]: compiling feature set 8 for quad.frag
+[1;31mERR [0m]: CConfigWatcher: got an event for wd 1 which we don't have?!
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 759607
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 759609
+[1;32mDEBUG [0m]:  [PluginSystem] Plugin qt_modal_probe loaded. Handle: 5646fe753d10, path: "/home/hoskinson/window-integration-qa/pin-maximized-native-v1/readonly-probe/libqt-modal-probe.so", author: "QA", description: "Private read-only Qt modal QA observation", version: "1"
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Not applying config to keyboard, it did not change.
+[1;32mDEBUG [0m]: Framebuffer "Monitor WAYLAND-1 workbuffer" created, status 36053
+[1;31mERR [0m]: CConfigWatcher: got an event for wd 2 which we don't have?!
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760052
+[1;32mDEBUG [0m]: [CVirtualPointerProtocol] New VPointer at id 3
+[1;32mDEBUG [0m]: Attached pointer unknown-device to global
+[1;32mDEBUG [0m]: New virtual mouse created
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760054
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760055
+[1;32mDEBUG [0m]: Framebuffer "Monitor WAYLAND-1 workbuffer" created, status 36053
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760057
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760058
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760059
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760060
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760061
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760062
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760063
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760064
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760065
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760066
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760067
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760068
+[1;31mERR [0m]: getConvertedColor: failed to get image description
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760069
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760070
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760071
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760072
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760073
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760074
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760075
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760076
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760077
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760078
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760079
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760080
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760081
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760082
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760083
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760084
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760085
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760086
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760087
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760088
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760089
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760090
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760091
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760092
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760093
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760094
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760096
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760097
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760098
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760099
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760100
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760101
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760102
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760103
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760104
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760105
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760106
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760109
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760111
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760112
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760114
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760115
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760116
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760117
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760118
+[1;32mDEBUG [0m]: [CWLSeatProtocol] New seat resource bound at 7715f0069280
+[1;32mDEBUG [0m]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "hl-virtual-keyboard-physical-keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+[1;32mDEBUG [0m]: Updating keyboard 5646fe828b20's translation state from a provided keymap
+[1;32mDEBUG [0m]: xkb: LED index 0 (name Num Lock) got index 1
+[1;32mDEBUG [0m]: xkb: LED index 1 (name Caps Lock) got index 0
+[1;32mDEBUG [0m]: xkb: LED index 2 (name Scroll Lock) got index 2
+[1;32mDEBUG [0m]: xkb: Mod index 0 (name Shift) got index 0
+[1;32mDEBUG [0m]: xkb: Mod index 1 (name Lock) got index 1
+[1;32mDEBUG [0m]: xkb: Mod index 2 (name Control) got index 2
+[1;32mDEBUG [0m]: xkb: Mod index 3 (name Mod1) got index 3
+[1;32mDEBUG [0m]: xkb: Mod index 4 (name Mod2) got index 4
+[1;32mDEBUG [0m]: xkb: Mod index 5 (name Mod3) got index 5
+[1;32mDEBUG [0m]: xkb: Mod index 6 (name Mod4) got index 6
+[1;32mDEBUG [0m]: xkb: Mod index 7 (name Mod5) got index 7
+[1;32mDEBUG [0m]: Updating keymap fd for keyboard hl-virtual-keyboard-physical-keyboard
+[1;32mDEBUG [0m]: Updated keymap fd to 67, keymap V1 to: 69
+[1;32mDEBUG [0m]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-physical-keyboard"
+[1;32mDEBUG [0m]: New virtual keyboard created at 5646fe828b20
+[1;32mDEBUG [0m]: Updating keyboard 5646fe828b20's translation state from a provided keymap
+[1;32mDEBUG [0m]: Updating keymap fd for keyboard hl-virtual-keyboard-physical-keyboard
+[1;32mDEBUG [0m]: Updated keymap fd to 67, keymap V1 to: 69
+[1;32mDEBUG [0m]: Keybind triggered, calling dispatcher (64, , 112, __lua)
+[1;32mDEBUG [0m]: Keyboard at 5646fe828b20 removed
+[1;32mDEBUG [0m]: Destroyed keyboard 5646fe828b20
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760124
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760127
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760134
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760137
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760142
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760146
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760149
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760150
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760151
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760152
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760153
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760154
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760155
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760156
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760157
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760158
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760159
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760160
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760161
+[1;32mDEBUG [0m]: [CWLSeatProtocol] New seat resource bound at 5646fe4d3c60
+[1;32mDEBUG [0m]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "hl-virtual-keyboard-physical-keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+[1;32mDEBUG [0m]: Updating keyboard 5646fe828b20's translation state from a provided keymap
+[1;32mDEBUG [0m]: xkb: LED index 0 (name Num Lock) got index 1
+[1;32mDEBUG [0m]: xkb: LED index 1 (name Caps Lock) got index 0
+[1;32mDEBUG [0m]: xkb: LED index 2 (name Scroll Lock) got index 2
+[1;32mDEBUG [0m]: xkb: Mod index 0 (name Shift) got index 0
+[1;32mDEBUG [0m]: xkb: Mod index 1 (name Lock) got index 1
+[1;32mDEBUG [0m]: xkb: Mod index 2 (name Control) got index 2
+[1;32mDEBUG [0m]: xkb: Mod index 3 (name Mod1) got index 3
+[1;32mDEBUG [0m]: xkb: Mod index 4 (name Mod2) got index 4
+[1;32mDEBUG [0m]: xkb: Mod index 5 (name Mod3) got index 5
+[1;32mDEBUG [0m]: xkb: Mod index 6 (name Mod4) got index 6
+[1;32mDEBUG [0m]: xkb: Mod index 7 (name Mod5) got index 7
+[1;32mDEBUG [0m]: Updating keymap fd for keyboard hl-virtual-keyboard-physical-keyboard
+[1;32mDEBUG [0m]: Updated keymap fd to 67, keymap V1 to: 69
+[1;32mDEBUG [0m]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-physical-keyboard"
+[1;32mDEBUG [0m]: New virtual keyboard created at 5646fe828b20
+[1;32mDEBUG [0m]: Updating keyboard 5646fe828b20's translation state from a provided keymap
+[1;32mDEBUG [0m]: Updating keymap fd for keyboard hl-virtual-keyboard-physical-keyboard
+[1;32mDEBUG [0m]: Updated keymap fd to 67, keymap V1 to: 69
+[1;32mDEBUG [0m]: Keybind triggered, calling dispatcher (68, , 116, __lua)
+[1;32mDEBUG [0m]: Keyboard at 5646fe828b20 removed
+[1;32mDEBUG [0m]: Destroyed keyboard 5646fe828b20
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760187
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760188
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760189
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760190
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760191
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760192
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760193
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760194
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760195
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760196
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760197
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760198
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760201
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760203
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760205
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760206
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760207
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760208
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760209
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760210
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760211
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760214
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760215
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760216
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760217
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760218
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760219
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_surface with id 68 at 5646fe81e550
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 65 at 5646fe859ea0
+[1;32mDEBUG [0m]: [CXDGWMBase] New xdg_surface at 5646fec52bd0
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fe3433d0 gets a toplevel 5646fe61bbc0
+[1;32mDEBUG [0m]: CWLSurface 5646fed54220 called init()
+[1;32mDEBUG [0m]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+[1;32mDEBUG [0m]: [CXDGToplevelResource] Toplevel 5646fe61bbc0 sets parent to 5646fd6c7650
+[1;32mDEBUG [0m]: Window 5646fe4c4b80 set title to Qt WindowModal QA child
+[1;32mDEBUG [0m]: Window 5646fe4c4b80 set class to qt-window-modal-fixture
+[1;32mDEBUG [0m]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 5646fe4c4b80: title: "Qt WindowModal QA child"]
+[1;32mDEBUG [0m]: [CXDGActivationToken] assigned new xdg-activation token 0b4ee16e-9158-490c-b8b2-ec33b8f7b2aa
+[1;32mDEBUG [0m]: compiling feature set 4 for surface.frag
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fec52bd0 requests geometry 0x0 320x180
+[1;32mDEBUG [0m]: Set keyboard focus to surface 5646fe81e550, with [Window 5646fe4c4b80: title: "Qt WindowModal QA child"]
+[1;32mDEBUG [0m]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+[1;32mDEBUG [0m]: Map request dispatched, monitor WAYLAND-1, window pos: [290.00000, 300.00000], window size: [320.00000, 180.00000]
+[1;32mDEBUG [0m]: cursorImage request: shape 1 -> default
+[1;31mERR [0m]: getConvertedColor: failed to get image description
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760220
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760221
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760222
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760223
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760225
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760226
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760227
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_surface with id 52 at 5646fe5c2970
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 59 at 5646fecf3d20
+[1;32mDEBUG [0m]: [CXDGWMBase] New xdg_surface at 5646fec533f0
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fe3433d0 gets a toplevel 5646fe632ec0
+[1;32mDEBUG [0m]: CWLSurface 5646fd8313d0 called init()
+[1;32mDEBUG [0m]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+[1;32mDEBUG [0m]: [CXDGToplevelResource] Toplevel 5646fe632ec0 sets parent to 5646fe61bbc0
+[1;32mDEBUG [0m]: Window 5646fe582750 set title to Qt WindowModal QA nested
+[1;32mDEBUG [0m]: Window 5646fe582750 set class to qt-window-modal-fixture
+[1;32mDEBUG [0m]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 5646fe582750: title: "Qt WindowModal QA nested"]
+[1;32mDEBUG [0m]: [CXDGActivationToken] assigned new xdg-activation token 9bf3a265-bf80-4e6f-bf69-fb4816828da6
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fec533f0 requests geometry 0x0 320x180
+[1;32mDEBUG [0m]: Set keyboard focus to surface 5646fe5c2970, with [Window 5646fe582750: title: "Qt WindowModal QA nested"]
+[1;32mDEBUG [0m]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+[1;32mDEBUG [0m]: Map request dispatched, monitor WAYLAND-1, window pos: [370.00000, 300.00000], window size: [320.00000, 180.00000]
+[1;32mDEBUG [0m]: cursorImage request: shape 1 -> default
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760229
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760232
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760234
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fec533f0 requests geometry 0x0 240x140
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 40 at 5646fe4b9e10
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760236
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760237
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760238
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760239
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760240
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760241
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760242
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760243
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760245
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760247
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760248
+[1;32mDEBUG [0m]: Set keyboard focus to surface 5646fe531d50, with [Window 5646fe536610: title: "Qt WindowModal QA peer"]
+[1;32mDEBUG [0m]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+[1;32mDEBUG [0m]: cursorImage request: shape 1 -> default
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760249
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760250
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760251
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760252
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760253
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760254
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760255
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760256
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760257
+[1;32mDEBUG [0m]: Set keyboard focus to surface 5646fe5c2970, with [Window 5646fe582750: title: "Qt WindowModal QA nested"]
+[1;32mDEBUG [0m]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+[1;32mDEBUG [0m]: cursorImage request: shape 1 -> default
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760258
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760259
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760260
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760261
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760262
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760263
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760264
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760265
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760266
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760267
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760268
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760269
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760270
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760271
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760272
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760273
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760276
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760278
+[1;32mDEBUG [0m]: [CWLSeatProtocol] New seat resource bound at 5646fe319d40
+[1;32mDEBUG [0m]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "hl-virtual-keyboard-physical-keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+[1;32mDEBUG [0m]: Updating keyboard 5646fe828b20's translation state from a provided keymap
+[1;32mDEBUG [0m]: xkb: LED index 0 (name Num Lock) got index 1
+[1;32mDEBUG [0m]: xkb: LED index 1 (name Caps Lock) got index 0
+[1;32mDEBUG [0m]: xkb: LED index 2 (name Scroll Lock) got index 2
+[1;32mDEBUG [0m]: xkb: Mod index 0 (name Shift) got index 0
+[1;32mDEBUG [0m]: xkb: Mod index 1 (name Lock) got index 1
+[1;32mDEBUG [0m]: xkb: Mod index 2 (name Control) got index 2
+[1;32mDEBUG [0m]: xkb: Mod index 3 (name Mod1) got index 3
+[1;32mDEBUG [0m]: xkb: Mod index 4 (name Mod2) got index 4
+[1;32mDEBUG [0m]: xkb: Mod index 5 (name Mod3) got index 5
+[1;32mDEBUG [0m]: xkb: Mod index 6 (name Mod4) got index 6
+[1;32mDEBUG [0m]: xkb: Mod index 7 (name Mod5) got index 7
+[1;32mDEBUG [0m]: Updating keymap fd for keyboard hl-virtual-keyboard-physical-keyboard
+[1;32mDEBUG [0m]: Updated keymap fd to 70, keymap V1 to: 72
+[1;32mDEBUG [0m]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-physical-keyboard"
+[1;32mDEBUG [0m]: New virtual keyboard created at 5646fe828b20
+[1;32mDEBUG [0m]: Updating keyboard 5646fe828b20's translation state from a provided keymap
+[1;32mDEBUG [0m]: Updating keymap fd for keyboard hl-virtual-keyboard-physical-keyboard
+[1;32mDEBUG [0m]: Updated keymap fd to 70, keymap V1 to: 72
+[1;32mDEBUG [0m]: Keybind triggered, calling dispatcher (64, , 112, __lua)
+[1;32mDEBUG [0m]: Keyboard at 5646fe828b20 removed
+[1;32mDEBUG [0m]: Destroyed keyboard 5646fe828b20
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760280
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760281
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760284
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760285
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760286
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760287
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760288
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760289
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760290
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760291
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760292
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760293
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760294
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760295
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760296
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760297
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760298
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760299
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760300
+[1;32mDEBUG [0m]: [CWLSeatProtocol] New seat resource bound at 5646fe704720
+[1;32mDEBUG [0m]: [CVirtualKeyboardProtocol] New VKeyboard at id 3
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "hl-virtual-keyboard-physical-keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+[1;32mDEBUG [0m]: Updating keyboard 5646fe828b20's translation state from a provided keymap
+[1;32mDEBUG [0m]: xkb: LED index 0 (name Num Lock) got index 1
+[1;32mDEBUG [0m]: xkb: LED index 1 (name Caps Lock) got index 0
+[1;32mDEBUG [0m]: xkb: LED index 2 (name Scroll Lock) got index 2
+[1;32mDEBUG [0m]: xkb: Mod index 0 (name Shift) got index 0
+[1;32mDEBUG [0m]: xkb: Mod index 1 (name Lock) got index 1
+[1;32mDEBUG [0m]: xkb: Mod index 2 (name Control) got index 2
+[1;32mDEBUG [0m]: xkb: Mod index 3 (name Mod1) got index 3
+[1;32mDEBUG [0m]: xkb: Mod index 4 (name Mod2) got index 4
+[1;32mDEBUG [0m]: xkb: Mod index 5 (name Mod3) got index 5
+[1;32mDEBUG [0m]: xkb: Mod index 6 (name Mod4) got index 6
+[1;32mDEBUG [0m]: xkb: Mod index 7 (name Mod5) got index 7
+[1;32mDEBUG [0m]: Updating keymap fd for keyboard hl-virtual-keyboard-physical-keyboard
+[1;32mDEBUG [0m]: Updated keymap fd to 70, keymap V1 to: 72
+[1;32mDEBUG [0m]: Set the keyboard layout to us and variant to  for keyboard "hl-virtual-keyboard-physical-keyboard"
+[1;32mDEBUG [0m]: New virtual keyboard created at 5646fe828b20
+[1;32mDEBUG [0m]: Updating keyboard 5646fe828b20's translation state from a provided keymap
+[1;32mDEBUG [0m]: Updating keymap fd for keyboard hl-virtual-keyboard-physical-keyboard
+[1;32mDEBUG [0m]: Updated keymap fd to 70, keymap V1 to: 72
+[1;32mDEBUG [0m]: Keybind triggered, calling dispatcher (68, , 116, __lua)
+[1;32mDEBUG [0m]: Keyboard at 5646fe828b20 removed
+[1;32mDEBUG [0m]: Destroyed keyboard 5646fe828b20
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760302
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760303
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760304
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760305
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760306
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760307
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760308
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760309
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760310
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760311
+[1;32mDEBUG [0m]: [Window 5646fe582750: title: "Qt WindowModal QA nested", class: qt-window-modal-fixture] unmapped
+[1;32mDEBUG [0m]: renderer: making a snapshot of 5646fe582750
+[1;32mDEBUG [0m]: Framebuffer "window snapshot" created, status 36053
+[1;32mDEBUG [0m]: renderer: cleared a snapshot of 5646fe582750
+[1;32mDEBUG [0m]: renderer: rendered a snapshot of 5646fe582750
+[1;32mDEBUG [0m]: renderer: made a snapshot of 5646fe582750
+[1;33mWARN [0m]: ITarget: assignToSpace with a null space?
+[1;32mDEBUG [0m]: On closed window, new focused candidate is [Window 5646fe536610: title: "Qt WindowModal QA peer"]
+[1;32mDEBUG [0m]: Set keyboard focus to surface 5646fe531d50, with [Window 5646fe536610: title: "Qt WindowModal QA peer"]
+[1;32mDEBUG [0m]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+[1;32mDEBUG [0m]: [Window 5646fe582750: title: "Qt WindowModal QA nested", class: qt-window-modal-fixture] destroyed, queueing.
+[1;32mDEBUG [0m]: CWLSurface 5646fd8313d0 called destroy()
+[1;32mDEBUG [0m]: Cleanup: removed 1 fadeouts
+[1;32mDEBUG [0m]: cursorImage request: shape 1 -> default
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760312
+[1;32mDEBUG [0m]: [Window 5646fe4c4b80: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] unmapped
+[1;32mDEBUG [0m]: renderer: making a snapshot of 5646fe4c4b80
+[1;32mDEBUG [0m]: Framebuffer "window snapshot" created, status 36053
+[1;32mDEBUG [0m]: renderer: cleared a snapshot of 5646fe4c4b80
+[1;32mDEBUG [0m]: renderer: rendered a snapshot of 5646fe4c4b80
+[1;32mDEBUG [0m]: renderer: made a snapshot of 5646fe4c4b80
+[1;33mWARN [0m]: ITarget: assignToSpace with a null space?
+[1;32mDEBUG [0m]: Unmapped was not focused, ignoring a refocus.
+[1;32mDEBUG [0m]: [Window 5646fe4c4b80: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] destroyed, queueing.
+[1;32mDEBUG [0m]: CWLSurface 5646fed54220 called destroy()
+[1;32mDEBUG [0m]: Cleanup: removed 1 fadeouts
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760327
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_surface with id 65 at 5646fe6a9a20
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 64 at 5646fe75f600
+[1;32mDEBUG [0m]: [CXDGWMBase] New xdg_surface at 5646fec52bd0
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fe3433d0 gets a toplevel 5646fe61bbc0
+[1;32mDEBUG [0m]: CWLSurface 5646fe7078c0 called init()
+[1;32mDEBUG [0m]: [CXDGDecoration] setMode: MODE_SERVER_SIDE. Sending MODE_SERVER_SIDE as reply.
+[1;32mDEBUG [0m]: [CXDGToplevelResource] Toplevel 5646fe61bbc0 sets parent to 5646fd6c7650
+[1;32mDEBUG [0m]: Window 5646fe4c4b80 set title to Qt WindowModal QA child
+[1;32mDEBUG [0m]: Window 5646fe4c4b80 set class to qt-window-modal-fixture
+[1;32mDEBUG [0m]: Layout predicts size [Vector2D: x: 0, y: 0] for [Window 5646fe4c4b80: title: "Qt WindowModal QA child"]
+[1;32mDEBUG [0m]: [CXDGActivationToken] assigned new xdg-activation token 3421f207-8b55-44c5-be55-45fbe15fd1a0
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760333
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760334
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760337
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760339
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760341
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760343
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760344
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760345
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760374
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760404
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760415
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760441
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760451
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760467
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 5646fec52bd0 requests geometry 0x0 320x180
+[1;32mDEBUG [0m]: Set keyboard focus to surface 5646fe6a9a20, with [Window 5646fe4c4b80: title: "Qt WindowModal QA child"]
+[1;32mDEBUG [0m]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+[1;32mDEBUG [0m]: Map request dispatched, monitor WAYLAND-1, window pos: [290.00000, 300.00000], window size: [320.00000, 180.00000]
+[1;32mDEBUG [0m]: cursorImage request: shape 1 -> default
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760518
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760519
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760522
+[1;32mDEBUG [0m]: [Window 5646fe4c4b80: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] unmapped
+[1;32mDEBUG [0m]: renderer: making a snapshot of 5646fe4c4b80
+[1;32mDEBUG [0m]: Framebuffer "window snapshot" created, status 36053
+[1;32mDEBUG [0m]: renderer: cleared a snapshot of 5646fe4c4b80
+[1;32mDEBUG [0m]: renderer: rendered a snapshot of 5646fe4c4b80
+[1;32mDEBUG [0m]: renderer: made a snapshot of 5646fe4c4b80
+[1;33mWARN [0m]: ITarget: assignToSpace with a null space?
+[1;32mDEBUG [0m]: On closed window, new focused candidate is [Window 5646fe536610: title: "Qt WindowModal QA peer"]
+[1;32mDEBUG [0m]: Set keyboard focus to surface 5646fe531d50, with [Window 5646fe536610: title: "Qt WindowModal QA peer"]
+[1;32mDEBUG [0m]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+[1;32mDEBUG [0m]: [Window 5646fe4c4b80: title: "Qt WindowModal QA child", class: qt-window-modal-fixture] destroyed, queueing.
+[1;32mDEBUG [0m]: CWLSurface 5646fe7078c0 called destroy()
+[1;32mDEBUG [0m]: Cleanup: removed 1 fadeouts
+[1;32mDEBUG [0m]: cursorImage request: shape 1 -> default
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760541
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760544
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760552
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760558
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760569
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760575
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760576
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760577
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760578
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760579
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760580
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760581
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760582
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760583
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760584
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760588
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760596
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760599
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760625
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760631
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760632
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760633
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760637
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760640
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760651
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760653
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760655
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760656
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760657
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760659
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760660
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760661
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760663
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760665
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760666
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760667
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760672
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760674
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760683
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760686
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760693
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760696
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760700
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760705
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760735
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760739
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760744
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760749
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760754
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760758
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760762
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Not applying config to keyboard, it did not change.
+[1;31mERR [0m]: CConfigWatcher: got an event for wd 3 which we don't have?!
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760769
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760777
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760779
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760785
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760788
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760791
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760792
+[1;32mDEBUG [0m]: Pointer at 5646fe4bb610 removed
+[1;32mDEBUG [0m]: [Window 5646fe536610: title: "Qt WindowModal QA peer", class: qt-window-modal-fixture] unmapped
+[1;32mDEBUG [0m]: renderer: making a snapshot of 5646fe536610
+[1;32mDEBUG [0m]: Framebuffer "window snapshot" created, status 36053
+[1;32mDEBUG [0m]: renderer: cleared a snapshot of 5646fe536610
+[1;32mDEBUG [0m]: renderer: rendered a snapshot of 5646fe536610
+[1;32mDEBUG [0m]: renderer: made a snapshot of 5646fe536610
+[1;33mWARN [0m]: ITarget: assignToSpace with a null space?
+[1;32mDEBUG [0m]: On closed window, new focused candidate is [Window 5646fe528150: title: "Qt WindowModal QA owner"]
+[1;32mDEBUG [0m]: Set keyboard focus to surface 5646fe505b10, with [Window 5646fe528150: title: "Qt WindowModal QA owner"]
+[1;32mDEBUG [0m]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+[1;32mDEBUG [0m]: [Window 5646fe536610: title: "Qt WindowModal QA peer", class: qt-window-modal-fixture] destroyed, queueing.
+[1;32mDEBUG [0m]: CWLSurface 5646fe505370 called destroy()
+[1;32mDEBUG [0m]: [Window 5646fe528150: title: "Qt WindowModal QA owner", class: qt-window-modal-fixture] unmapped
+[1;32mDEBUG [0m]: renderer: making a snapshot of 5646fe528150
+[1;32mDEBUG [0m]: Framebuffer "window snapshot" created, status 36053
+[1;32mDEBUG [0m]: renderer: cleared a snapshot of 5646fe528150
+[1;32mDEBUG [0m]: renderer: rendered a snapshot of 5646fe528150
+[1;32mDEBUG [0m]: renderer: made a snapshot of 5646fe528150
+[1;33mWARN [0m]: ITarget: assignToSpace with a null space?
+[1;32mDEBUG [0m]: On closed window, new focused candidate is [Window nullptr]
+[1;31mERR [0m]: getConvertedColor: failed to get image description
+[1;32mDEBUG [0m]: [Window 5646fe528150: title: "Qt WindowModal QA owner", class: qt-window-modal-fixture] destroyed, queueing.
+[1;32mDEBUG [0m]: CWLSurface 5646fe506330 called destroy()
+[1;32mDEBUG [0m]: Cleanup: removed 2 fadeouts
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760821
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760850
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760857
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760860
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760866
+[1;32mDEBUG [0m]:  [PluginSystem] Plugin qt_modal_probe unloaded.
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Not applying config to keyboard, it did not change.
+[1;31mERR [0m]: CConfigWatcher: got an event for wd 4 which we don't have?!
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760868
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760877
+[1;31mERR [0m]: failed to unregister plugin event for lua hyprbars.drag_start: event not found.
+[1;31mERR [0m]: failed to unregister plugin event for lua hyprbars.drag_finish: event not found.
+[1;31mERR [0m]: failed to unregister plugin event for lua hyprbars.drag_retire_current: event not found.
+[1;32mDEBUG [0m]:  [PluginSystem] Plugin hyprbars unloaded.
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Not applying config to keyboard, it did not change.
+[1;31mERR [0m]: CConfigWatcher: got an event for wd 5 which we don't have?!
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 760883
+[1;32mDEBUG [0m]: Hyprland received signal 15
+[1;32mDEBUG [0m]: Hyprland is stopping!
+[1;32mDEBUG [0m]: Kicked off the event loop! :(
+[1;32mDEBUG [0m]: Monitor WAYLAND-1 -> destroyed all render data
+[1;32mDEBUG [0m]: Destroying workspace ID 1
+[1;32mDEBUG [0m]: Hyprland has reached the end.

@@ -1,0 +1,20 @@
+--- V4/ProcessRegistry.hpp
++++ V5/ProcessRegistry.hpp
+@@ -51,7 +51,7 @@
+  void drainFaults();
+  std::shared_ptr<Invocation>find(QObject*,uint64_t);
+  void event(QObject*,uint64_t,int,int code=0,QProcess::ExitStatus=QProcess::NormalExit);
+- void finishJob(const std::shared_ptr<Invocation>&);
++ void finishJob(const std::shared_ptr<Invocation>&,bool nativeNotification=false);
+  void stable(const std::shared_ptr<Invocation>&,bool current);
+  bool lifecycle(const std::shared_ptr<Invocation>&);
+ public:
+@@ -60,6 +60,8 @@
+  uint64_t arm(ProcessArm);
+  QVariantMap state(QObject*);
+  QVariantMap terminalInventory();
++ // Guarded readonly C++ CPU diagnostic only, never a QML/Provider API.
++ QPointer<QObject> diagnosticWorker(QObject*,uint64_t);
+  void cancel(QObject*);
+  static ProcessRegistry&shared();
+  // Readonly callback used by the native Qt signal relay. Exact mismatched

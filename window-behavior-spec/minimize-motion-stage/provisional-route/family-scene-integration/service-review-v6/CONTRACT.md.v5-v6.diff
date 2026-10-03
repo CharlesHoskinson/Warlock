@@ -1,0 +1,27 @@
+--- frozen-v5/CONTRACT.md
++++ review-v6/CONTRACT.md
+@@ -168,3 +168,24 @@
+ Native windows keep the last committed state and exact geometry. Failure is
+ observable, never reported as completed minimize/restore. Initial unknown peers
+ are still reconciled only by the fresh native graph when preparation proceeds.
++
++## Persistent exact-identity capture cache
++
++Temporary epoch PNG ownership and persistent minimized atlas ownership are
++separate. A private shared cache binds its exact stable ID/PID/address, native
++client size, whole rectangle/insets, actual PNG dimensions and digest. Each pair
++is read and published under one private cache lock. A new actor may import that pair
++only after metadata/pixels and the currently live native identity/geometry agree.
++A same-address reused ID/PID, corrupted/replaced PNG or incomplete pair cannot
++provide restored pixels. Normal actor shutdown may remove its temporary epoch
++PNGs, while the persistent cache survives for currently minimized exact IDs.
++
++A successful capture that later fails within the adapter itself also owns its
++created epoch PNG. Adapter failures remove only that operation's private epoch
++files; they cannot leave a partial capture outside the controller's source lease.
++
++Cache publication uses immutable digest-named PNGs and one atomically replaced
++metadata pointer. Failure before pointer commit leaves the prior complete cache
++restorable; failed publication does not replace an in-use immutable image. The
++pointer's basename must match the exact identity and digest, preventing traversal
++or a same-byte unrelated path from acquiring cached source provenance.

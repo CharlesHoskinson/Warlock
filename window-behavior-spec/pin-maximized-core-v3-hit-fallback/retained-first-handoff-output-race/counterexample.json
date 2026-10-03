@@ -1,0 +1,9 @@
+{
+  "nativeExecuted": false,
+  "checked": 4579,
+  "mismatches": [
+    "final-handoff-v3.log"
+  ],
+  "cause": "Tool output redirected into packet was inventoried before final print appended bytes; output capture must be outside the packet.",
+  "runtimeSourceAndBuildUnchanged": true
+}

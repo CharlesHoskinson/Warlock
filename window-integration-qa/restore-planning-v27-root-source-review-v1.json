@@ -1,0 +1,21 @@
+{
+  "result": "pass",
+  "sourceReady": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-restore-planning-v27/source-ready-v27.json",
+  "sourceReadySHA256": "e2ae883d241edf4c8c38cc00185bf07f0310d766de366100b797e70ff279747a",
+  "actualCompleteInventoryVerified": true,
+  "inputs": 21219,
+  "links": 287,
+  "original106CommandsIndependentlyCompared": true,
+  "inheritedSources": 198,
+  "unchangedSources": 196,
+  "reviewedChanges": [
+    "native_desktop.py",
+    "scene_controller.py"
+  ],
+  "reviewedFocusedKernelCases": 15,
+  "reviewedQuintDesignCases": 24,
+  "originalDeadlinesUnchanged": true,
+  "emptyPlanRegressionCounterexamplePreserved": true,
+  "nativeAccepted": false,
+  "reviewScope": "Exact V4 patch, bounded read-only planning and normal worker drainage; original atomic effect sequence, lifetime/material guards, unknown job and visible endpoint semantics retained."
+}

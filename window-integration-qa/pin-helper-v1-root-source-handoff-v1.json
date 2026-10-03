@@ -1,0 +1,38 @@
+{
+  "result": "source-reviewed",
+  "helper": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/pin_helper.py",
+  "helperSHA256": "30cf295bbc3032b10996e9b6db7c602f6044d38cf73d4eb6ef917e72dd80f0f2",
+  "helperMode": 448,
+  "cpuCheckpoint": "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin-helper-v1/root-cpu-kernel-checkpoint-v2.json",
+  "cpuCheckpointSHA256": "88b19a0d8ed99b8d6531b1beeb45e3e0c01664dd543449e1bec56a1cc680bf15",
+  "cpuKernelTests": 32,
+  "seededMalformedProjectionMutations": 1000,
+  "formalNamedBeforeRuntime": 26,
+  "formalModels": 2,
+  "formalSamplesPerModel": 2000,
+  "formalSteps": 100,
+  "parentHelperUnchanged": true,
+  "requiredConfigAddition": "interpreter:{path:resolved /proc/self/exe,sha256:actual executable SHA256}",
+  "requiredFinalKernelArgv": [
+    "/usr/bin/python3",
+    "-I",
+    "-S",
+    "<exact private helper entry>",
+    "toggle",
+    "<exact captured JSON token>"
+  ],
+  "workingShebang": "/usr/bin/env -S /usr/bin/python3 -I -S",
+  "mustFreezeBeforeNative": [
+    "entry/helper bytes and mode",
+    "/usr/bin/env",
+    "/usr/bin/python3 symlink and resolved interpreter",
+    "actual imported stdlib/loader sources and dependency links",
+    "registered requester/compositor argv/executable/environment/cgroup/source",
+    "exact native module bytes/mode and actual mapped inode"
+  ],
+  "nativePluginExecuted": false,
+  "nativePinEffectProved": false,
+  "syntheticRepliesOnly": true,
+  "mainWrites": false,
+  "fullWindowsParityAccepted": false
+}

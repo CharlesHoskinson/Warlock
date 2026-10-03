@@ -1,0 +1,24 @@
+{
+  "result": "pass",
+  "testCount": 23,
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": ".......................\n----------------------------------------------------------------------\nRan 23 tests in 0.009s\n\nOK\n",
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-9c2f68c68a244ae381403047b559f0dc.scope",
+    "coreLimit": 1
+  },
+  "coreLimits": [
+    1,
+    1
+  ],
+  "nativeCompositorLaunch": false,
+  "realSocketFixture": "Owned QA runtime Unix stream, actual SO_PEERCRED/read/EOF, synthetic Python server; no real Hyprland startup",
+  "sourceHashes": {
+    "/home/hoskinson/window-integration-qa/private-weston-aq-host-v4/weston_host.py": "b835325fd00e0ccdc2336a35d5eebc6473042e8e0c2d538b2fa163af7f1b9023",
+    "/home/hoskinson/window-integration-qa/private-weston-aq-host-v4/test_ipc_readiness.py": "cf69c2b1c1e034b746a71fce579da7a83e5c665c06900cc97175ba9768fb8945",
+    "/home/hoskinson/window-integration-qa/private-weston-aq-host-v4/test_host_adapter.py": "8d5ea3d7f61ff7860c3a9b778e58c3e90b065b715808c7a0b96ce3668c35609b",
+    "/home/hoskinson/window-integration-qa/private-weston-aq-host-v4/CONTRACT.md": "c1b3482213e68022ff80b7f9b827236cfdfa2d6a8338cc312aadebb4880b89e1",
+    "/home/hoskinson/window-integration-qa/private-weston-aq-host-v4/run_offline.py": "b0903aaf295c34d9979e094783d1843c20ce43a83c3b6c54920597cc5ddec9a2"
+  }
+}

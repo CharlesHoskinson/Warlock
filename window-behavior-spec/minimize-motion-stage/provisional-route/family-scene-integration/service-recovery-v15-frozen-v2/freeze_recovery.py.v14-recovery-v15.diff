@@ -1,0 +1,69 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v14/freeze_recovery.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v15-frozen-v2/freeze_recovery.py
+@@ -1,4 +1,4 @@
+-"""Freeze recovery V14 only after complete offline proof; never launches GUI."""
++"""Freeze recovery V15 only after complete offline proof; never launches GUI."""
+ import difflib
+ import hashlib
+ import json
+@@ -10,15 +10,15 @@
+ 
+ HERE=Path(__file__).resolve().parent
+ BASE=HERE.parent
+-V13=BASE/'service-responsive-v13/manifest-responsive-v13.json'
+-V13_SHA='2a2aac11a562bae6b98c254f77384ffc505e05fb9e881b5f0936386d0f27467a'
++V13=BASE/'service-recovery-v14/manifest-recovery-v14.json'
++V13_SHA='8aa464f75e6ca12a44efd9098b05483245763416145e2190e8d48d04ca926a0a'
+ ACCEPTED=Path('/home/hoskinson/window-integration-qa/family-continuous-reversal-v3')
+ BASELINE_SHA='09ecd52991db0581e1dfb5b777b37a8ae50a925b982be29304193485b8a20aee'
+ 
+ def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+ 
+ def main():
+-    target=HERE/'manifest-recovery-v14.json';checkpoint=HERE/'checkpoint-recovery-v14.json'
++    target=HERE/'manifest-recovery-v15.json';checkpoint=HERE/'checkpoint-recovery-v15.json'
+     if target.exists() or checkpoint.exists():raise SystemExit('fresh freeze required')
+     inputs={};modes={};links={}
+     def add(path,expected=None,mode=None):
+@@ -38,7 +38,7 @@
+             if os.readlink(selected)!=value:raise SystemExit('immutable link changed: '+name)
+             links[str(selected)]=value
+         return packet
+-    inherited=inherit(V13,V13_SHA,'links');add(V13.with_name('checkpoint-responsive-v13.json'))
++    inherited=inherit(V13,V13_SHA,'links');add(V13.with_name('checkpoint-recovery-v14.json'))
+     baseline=inherit(ACCEPTED/'frozen-inputs.json',BASELINE_SHA,'symlinks')
+     for path in (ACCEPTED/'attempt-1').rglob('*'):
+         if path.is_file():add(path)
+@@ -67,14 +67,14 @@
+     for name in ('/usr/include/linux/pidfd.h','/usr/include/sys/pidfd.h','/usr/include/linux/seccomp.h','/usr/include/linux/filter.h','/usr/include/linux/sched.h'):
+         add(name)
+     report=json.loads((HERE/'offline-checkpoint.json').read_text())
+-    if (report['pythonTests'],report['quintNamedScenarios'],report['quintModels'])!=(259,141,20) or not report['sourceUnchangedDuringProof']:raise SystemExit('complete proof counts/source differ')
++    if (report['pythonTests'],report['quintNamedScenarios'],report['quintModels'])!=(288,170,21) or not report['sourceUnchangedDuringProof']:raise SystemExit('complete proof counts/source differ')
+     for name,digest in report['sourceSHA256'].items():add(name,digest)
+     changed=[];new=[]
+     for path in sorted(HERE.iterdir()):
+         if not path.is_file() or path.suffix not in ('.py','.md','.qnt'):continue
+         previous=V13.parent/path.name
+         if previous.exists() and previous.read_bytes()!=path.read_bytes():
+-            changed.append(path.name);difference=HERE/(path.name+'.v13-recovery-v14.diff')
++            changed.append(path.name);difference=HERE/(path.name+'.v14-recovery-v15.diff')
+             difference.write_text(''.join(difflib.unified_diff(previous.read_text().splitlines(True),path.read_text().splitlines(True),fromfile=str(previous),tofile=str(path))))
+         elif not previous.exists():new.append(path.name)
+     for path in HERE.rglob('*'):
+@@ -84,12 +84,12 @@
+     for name,value in links.items():
+         if os.readlink(name)!=value:raise SystemExit('closure link changed before freeze: '+name)
+     packet={'scope':'fresh recovery source candidate; native restart/quarantine campaign required','nativeLaunch':False,'headlessCpuKernelTests':True,'nativeAccepted':False,'mainChanged':False,'productionDeployed':False,
+-        'responsiveBaseManifest':str(V13),'responsiveBaseManifestSHA256':V13_SHA,'allFrozenV13InputsPreserved':True,
++        'recoveryBaseManifest':str(V13),'recoveryBaseManifestSHA256':V13_SHA,'allFrozenV14InputsPreserved':True,
+         'acceptedBaseline':str(ACCEPTED),'acceptedBaselineManifestSHA256':BASELINE_SHA,'retainedOriginalStrictReversalAndRasterOracles':True,
+         'pairedManifest':inherited['pairedManifest'],'pairedManifestSHA256':inherited['pairedManifestSHA256'],'pairedNativeSHA256':inherited['pairedNativeSHA256'],
+         'producerManifest':inherited['producerManifest'],'producerManifestSHA256':inherited['producerManifestSHA256'],'producer':inherited['producer'],'producerSHA256':inherited['producerSHA256'],
+-        'changedExistingSources':changed,'newSemanticSources':new,'explicitCancellationImplemented':False,'uncertainNativeCallsQuarantine':True,'legacyUnresolvedJournalsRefused':True,
+-        'requiredNative':['exact gated keeper/isolated job registrations and complete source closure','ordinary baseline/cache/preview/retirement and original strict interior reversals','service death while gated/presenting followed by old exact group and directory closure','restart from returned member results and repeated recovery crash without re-toggling','unfinished native export/effect and missing proof quarantine, no success or API bind','all main preservation and complete actual lifecycle/source/mode/link/process/runtime/transport proof'],
++        'changedExistingSources':changed,'newSemanticSources':new,'staleFamilyCancellationImplemented':True,'currentUserCancellationIngressImplemented':False,'interruptionReducedMotionCancellationIngressImplemented':False,'uncertainNativeCallsQuarantine':True,'legacyUnresolvedJournalsRefused':True,
++        'requiredNative':['exact gated keeper/isolated job registrations and complete source closure','ordinary baseline/cache/preview/retirement and original strict interior reversals','service death while gated/presenting followed by old exact group and directory closure','restart from returned member results and repeated recovery crash without re-toggling','definite stale/closed/reused/unmapped whole-family cancellation durably acknowledged before source disposal with no window writes','repeated cancelled restart with new exact lease owner, fresh complete member/native context and normal helper closure','unfinished native export/effect and missing proof quarantine, no success or API bind','all main preservation and complete actual lifecycle/source/mode/link/process/runtime/transport proof'],
+         'inputs':dict(sorted(inputs.items())),'inputModes':dict(sorted(modes.items())),'links':dict(sorted(links.items()))}
+     target.write_text(json.dumps(packet,indent=2)+'\n')
+     checkpoint.write_text(json.dumps({'manifest':str(target),'manifestSHA256':sha(target),'inputCount':len(inputs),'modeCount':len(modes),'linkCount':len(links),'offline':report,'currentStageFrozen':True,'nativeAccepted':False,'mainChanged':False},indent=2)+'\n')

@@ -1,0 +1,23 @@
+test_failed_durability_latches_after_memory_transition (test_actor_ledger.ActorLedgerFaultTests.test_failed_durability_latches_after_memory_transition) ... ok
+test_uncertainty_cannot_be_cleared_by_matching_return (test_actor_ledger.ActorLedgerFaultTests.test_uncertainty_cannot_be_cleared_by_matching_return) ... ok
+test_complete_group_does_not_prove_native_semantic_return (test_actor_ledger.ActorLedgerKernelTests.test_complete_group_does_not_prove_native_semantic_return) ... ok
+test_frozen_actor_new_gate_refused_other_actor_still_runs (test_actor_ledger.ActorLedgerKernelTests.test_frozen_actor_new_gate_refused_other_actor_still_runs) ... ok
+test_new_current_receipt_revokes_existing_witness (test_actor_ledger.ActorLedgerKernelTests.test_new_current_receipt_revokes_existing_witness) ... ok
+test_owner_nonce_replacement_refuses_without_whole_keeper_stop (test_actor_ledger.ActorLedgerKernelTests.test_owner_nonce_replacement_refuses_without_whole_keeper_stop) ... ok
+test_selected_actor_attests_while_other_actor_group_stays_live (test_actor_ledger.ActorLedgerKernelTests.test_selected_actor_attests_while_other_actor_group_stays_live) ... ok
+test_service_durable_actor_history_precedes_actual_release (test_actor_ledger.ActorLedgerKernelTests.test_service_durable_actor_history_precedes_actual_release) ... ok
+test_control_eof_retires_exact_running_job (test_helper_supervisor.SupervisorTests.test_control_eof_retires_exact_running_job) ... ok
+test_durable_registration_precedes_exec_and_normal_completion (test_helper_supervisor.SupervisorTests.test_durable_registration_precedes_exec_and_normal_completion) ... ok
+test_gate_refuses_exec_when_durable_job_write_fails (test_helper_supervisor.SupervisorTests.test_gate_refuses_exec_when_durable_job_write_fails) ... ok
+test_replaced_terminal_root_refuses (test_helper_supervisor.SupervisorTests.test_replaced_terminal_root_refuses) ... ok
+test_actual_sender_credentials_and_descriptor (test_helper_keeper.KeeperTests.test_actual_sender_credentials_and_descriptor) ... ok
+test_forked_inherited_socket_cannot_claim_parent_credentials (test_helper_keeper.KeeperTests.test_forked_inherited_socket_cannot_claim_parent_credentials) ... ok
+test_group_descriptor_still_addresses_children_after_leader_reaped (test_helper_keeper.KeeperTests.test_group_descriptor_still_addresses_children_after_leader_reaped) ... ok
+test_terminal_requires_exact_private_directory (test_helper_keeper.KeeperTests.test_terminal_requires_exact_private_directory) ... ok
+test_truncated_extra_descriptors_refused_without_leak (test_helper_keeper.KeeperTests.test_truncated_extra_descriptors_refused_without_leak) ... ok
+test_wrong_exact_peer_refused (test_helper_keeper.KeeperTests.test_wrong_exact_peer_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 2.371s
+
+OK

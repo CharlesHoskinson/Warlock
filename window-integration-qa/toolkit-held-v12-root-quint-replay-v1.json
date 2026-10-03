@@ -1,0 +1,42 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/process_observation.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/process_observation_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  process_observation_test\n    ok sameExactLiveTest passed 1 test(s)\n    ok reusedExactLifetimeGoneTest passed 1 test(s)\n    ok selectedEnoentGoneTest passed 1 test(s)\n    ok selectedEsrchGoneTest passed 1 test(s)\n    ok unknownErrnoRefusesTest passed 1 test(s)\n    ok permissionErrorRefusesTest passed 1 test(s)\n    ok ioErrorRefusesTest passed 1 test(s)\n    ok unknownMalformedIdentityRefusesTest passed 1 test(s)\n    ok freshRegistrationEsrchStrictTest passed 1 test(s)\n    ok freshRegistrationEnoentStrictTest passed 1 test(s)\n    ok unregisteredObservationCannotAuthorizeTest passed 1 test(s)\n    ok disappearanceIsNotNormalExitTest passed 1 test(s)\n    ok missingTerminalCannotAuthorizeTest passed 1 test(s)\n    ok duplicateTerminalCannotAuthorizeTest passed 1 test(s)\n    ok priorUnknownCannotBeErasedTest passed 1 test(s)\n\n  15 passing (671ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/process_observation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261002",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (1494ms at 1339 traces/second).\nUse --seed=0x13e4f1e --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "modelSHA256": "967da5ec51274c5597079a977e28b68f3aed9123d386bd1778280aec9a96f6f0",
+  "nativeLaunched": false
+}

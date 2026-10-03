@@ -1,0 +1,11 @@
+{
+  "installedQtCoreVersion": "6.11.2",
+  "upstreamTaggedSource": "https://raw.githubusercontent.com/qt/qtbase/v6.11.2/src/corelib/kernel/qobject.cpp",
+  "sourceSHA256": "396927dd215757ff01a1fccf3f2f5ae52d7d7df09307e4b3b2d7db38d2addb6e",
+  "officialDocumentation": "https://doc.qt.io/qt-6.11/qobject.html#disconnectNotify",
+  "analysis": "Tagged removeConnection holds sender and receiver signalSlotMutex through disconnectNotify. Tagged doActivate on a foreign emitting thread acquires receiver signalSlotMutex for its thread observation before selecting even a Direct connection. A collector using the same relay can therefore wait on the receiver lock held by the disconnection while a joining owner waits for that collector. This explains why the initial join inside notify is unsafe and why the proposed join belongs after disconnect returns.",
+  "actualFailedStackObserved": false,
+  "installedBinaryTaggedSourceEquivalenceProven": false,
+  "failedRuntimeLockCycleConfirmed": false,
+  "limits": "Version matches installed metadata; exact installed mutex owners/backtraces were not observed before actor disappearance. This is primary-source explanation of a possible lock cycle, not recovered runtime stack proof."
+}

@@ -1,0 +1,29 @@
+--- V4/native-fixture/pointer_cases.py
++++ V5/native-fixture/pointer_cases.py
+@@ -138,6 +138,7 @@
+     ctl('plugin','load',c['lib'])
+     official=wait(lambda:r if (r:=read_json(state_path)).get('backend')=='AtspiDeviceA11yManager' and r.get('epoch')==r.get('appliedEpoch') else None,'actual reader pointer Manager epoch',20)
+     check('real compat reader reconstructs public device and capabilities',any(x.get('event')=='pointer-capability-probed' and x.get('capable') for x in events(event_path)),reader=official)
++    check('actual pointer reader uses scoped local GIO VFS',official.get('vfsType')=='GLocalVfs',vfsType=official.get('vfsType'))
+     saved_commands=official['commands']
+     peers={};gtk_env={**env,'GDK_BACKEND':'wayland','GTK_A11Y':'atspi'}
+     for tag,x in (('A',48),('B',520)):
+@@ -147,6 +148,7 @@
+         ctl('dispatch','hl.dsp.window.resize({x=360,y=240,window='+json.dumps('address:'+window['address'])+'})')
+         ctl('dispatch','hl.dsp.window.move({x='+str(x)+',y=80,window='+json.dumps('address:'+window['address'])+'})')
+         wait(lambda:read_json(layout).get('windows',[{}])[0].get('button'),'actual GTK allocation '+tag)
++        check('actual GTK peer '+tag+' uses scoped local GIO VFS',read_json(layout).get('vfsType')=='GLocalVfs',layout=read_json(layout))
+         peers[tag]=dict(process=process,layout=layout,window=window)
+     def native_window(tag):return next(w for w in data('clients') if w['pid']==peers[tag]['process'].pid and 'second' not in w['title'])
+     def ax():return json.loads(subprocess.check_output(['python3',here/'native-fixture/ax_observe.py'],env=env,text=True,stderr=subprocess.PIPE,timeout=8))
+@@ -312,7 +314,9 @@
+     set_mouse(False)
+     pointer.stdin.close();pointer.wait(timeout=5)
+     keyboard.stdin.close();keyboard.wait(timeout=5)
+-    for tag in ('A','B'):request(peers[tag]['process'],'exit');peers[tag]['process'].wait(timeout=5)
++    for tag in ('A','B'):
++        exit_reply=request(peers[tag]['process'],'exit');exit_code=peers[tag]['process'].wait(timeout=5)
++        check('actual GTK peer '+tag+' acknowledges exit and exits zero',exit_reply.get('pass_') is True and exit_reply.get('operation')=='exit' and exit_code==0,reply=exit_reply,exitCode=exit_code)
+     for p in (a,b):request(p,'exit');p.wait(timeout=5)
+     c['pid_stop'](reader)
+     check('final genuine quiescent private unload',manager('PrepareUnload') is True);ctl('plugin','unload',c['lib'])

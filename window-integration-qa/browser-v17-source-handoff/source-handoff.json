@@ -1,0 +1,59 @@
+{
+  "result": "pass",
+  "freshPacket": "/home/hoskinson/window-integration-qa/browser-files-flow-v17/frozen-inputs.json",
+  "manifestSHA256": "ffb189fca1eea2808085a00e45c9fcc032b77726789261c1af9de966a1b1f8f2",
+  "sourceReadySHA256": "2f4934ab8926749f82f5e479de4d130d9d5fe1ac79989c761974b898b46782fc",
+  "inputBytesAndModes": 42223,
+  "symlinks": 13770,
+  "inheritedV16RecordsByteModeExact": 41827,
+  "inheritedV16LinksExact": 13770,
+  "stageSourceReadyRecordsExact": 392,
+  "offline": {
+    "aggregatePython": 288,
+    "namedQuint": 237,
+    "models": 14,
+    "tracesPerModel": 2000,
+    "maxSteps": 100,
+    "sourceUnchanged": true,
+    "reportSHA256": "c557c414bd81a601c6e4945c9eb7b0548ccea211f189c431cd9606eac29b78e4"
+  },
+  "testCategories": {
+    "newUnprojectedCollectorTests": 26,
+    "collectorBehaviorTests": 19,
+    "collectorSourceTests": 7,
+    "newProbeSourceAndCompiledAbiTests": 8,
+    "inheritedProjectedTests": 64,
+    "projectedTestsAreB17BehaviorAcceptance": false,
+    "allTestsAreNativeDeliveryProof": false
+  },
+  "formalBeforeImplementationSHA256": "29ff2b6cde55019cf0595423cc9dc296240f075e2b516614798310d9544774f4",
+  "probe": {
+    "manifestSHA256": "b740f65c7a97513b8bb2a1b62b9d42fa0962bd20812d52572849b015c8c38d53",
+    "inputs": 3701,
+    "symlinks": 103,
+    "binarySHA256": "e668cd6ed59f1c2eecc86aa0ee54032b230b9c6a70d9a30985167ac23d5b2b71",
+    "sourceDependencies": 600,
+    "nativeLoaded": false,
+    "originalStateAndButtonListenerExact": true,
+    "keyEventIsFinalDeliveryProof": false,
+    "seatSymbolIsEventSourceKeyboardProof": false
+  },
+  "preflightTerminal": 0,
+  "preflightSHA256": "adc2427975b41ee2d6c10f5b00bd282610e54a29447f5337346368a12c477260",
+  "original15ASTExact": true,
+  "originalContinuationEqualityExact": true,
+  "allProductQmlAndCdpExact": true,
+  "actualBrowserFilesAccepted": false,
+  "nativeExecuted": false,
+  "mainWrites": false,
+  "command": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v17/run_native.py",
+    "--attempt",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v17/attempt-1"
+  ],
+  "pending": "Root complete source/closure/crash handoff review and exclusive native original15/all18main/normal lifecycle run; no actual delivery cause yet established"
+}

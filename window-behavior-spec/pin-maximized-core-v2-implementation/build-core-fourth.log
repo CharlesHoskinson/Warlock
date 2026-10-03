@@ -1,0 +1,22 @@
+[  0%] Generating Lua API stubs for LuaLS
+[  1%] Built target libudis86
+[  2%] Built target hyprctl
+[lua-stubs] unchanged: /home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/meta/hl.meta.lua
+[  3%] Built target start-hyprland
+[  3%] Built target generate-lua-stubs
+[  3%] Building CXX object CMakeFiles/hyprland_lib.dir/cmake_pch.hxx.gch
+[  3%] Building CXX object CMakeFiles/hyprland_lib.dir/src/Compositor.cpp.o
+[  3%] Building CXX object CMakeFiles/hyprland_lib.dir/src/animation/AnimationManager.cpp.o
+[  4%] Building CXX object CMakeFiles/hyprland_lib.dir/src/animation/WorkspaceAnimationController.cpp.o
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/animation/WorkspaceAnimationController.cpp:1:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/animation/../desktop/state/pin/NativePinState.hpp:39:20: error: ‘CAlgorithm’ is not a member of ‘Layout’
+   39 |         SP<Layout::CAlgorithm> sourceAlgorithm;
+      |                    ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v2-implementation/core/src/animation/../desktop/state/pin/NativePinState.hpp:39:30: error: template argument 1 is invalid
+   39 |         SP<Layout::CAlgorithm> sourceAlgorithm;
+      |                              ^
+cc1plus: note: unrecognized command-line option ‘-Wno-gnu-zero-variadic-macro-arguments’ may have been intended to silence earlier diagnostics
+make[2]: *** [CMakeFiles/hyprland_lib.dir/build.make:576: CMakeFiles/hyprland_lib.dir/src/animation/WorkspaceAnimationController.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1150: CMakeFiles/hyprland_lib.dir/all] Error 2
+make: *** [Makefile:166: all] Error 2

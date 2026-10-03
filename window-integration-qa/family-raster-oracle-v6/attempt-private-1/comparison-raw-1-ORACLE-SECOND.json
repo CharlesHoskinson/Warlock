@@ -1,0 +1,33 @@
+{
+  "passed": false,
+  "pixelsCompared": 172800,
+  "channelsCompared": 691200,
+  "tolerance": 1,
+  "badPixels": 2,
+  "badChannels": 2,
+  "maxChannelError": 2,
+  "firstFailures": [
+    {
+      "x": 73,
+      "y": 166,
+      "errors": [
+        2,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "x": 57,
+      "y": 176,
+      "errors": [
+        0,
+        2,
+        1,
+        0
+      ]
+    }
+  ],
+  "actualSHA256": "2d40520747e858a18e857a7c065da5f39b640d87a6d4357a2c37ef322c7d92d8",
+  "expectedSHA256": "67bc54fdf089074395f098cbb14514f672279366fcd17a00dcbd5a25df6c0a56"
+}

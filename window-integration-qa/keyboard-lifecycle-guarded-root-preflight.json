@@ -1,0 +1,53 @@
+{
+  "manifestSHA256": "7d80172526752827e8efb7c7d5698a4fe37ee4d163c8070f43484ea2c9deb492",
+  "manifest": {
+    "kind": "fresh private v6a guarded lifecycle stage",
+    "mainDeployment": false,
+    "nativeLifecycleProved": false,
+    "formalTests": 6,
+    "formalSamples": 2000,
+    "formalSteps": 100,
+    "adapterControlFlowTests": 6,
+    "restorationChecks": 14,
+    "preservationTests": 4,
+    "freezeTests": 2,
+    "dependencies": {
+      "service_lifecycle.qnt": "ec601bb5f2d85a69daf835771913aa9b1dd8a25ab8aa0afc1d0df9e36825a10c",
+      "service_lifecycle_test.qnt": "353800412b487db636e684041ab64c7e953689de6d428b39de3c003e181c94c5",
+      "SERVICE_CONTRACT.md": "b83bc1abc925acc6ef6fea8384e142ca5f2351a0aa77b38da6a433c0d217f1db",
+      "reader_reconnect.py": "44104e35161517de9ad56e567f41badecfcdc5063cb0e2adfcf3c8176735712f",
+      "reader_reconnect_test.py": "d417218c8e7d390f67c4c24d20e21e467dfe217cfe63d38fa321deffe1168d35",
+      "reconnect_reader_entry.py": "f5d3de1a9d02302d17bbcbeafcbcae130629a02a14d904d648a0b0c18b8cdea6",
+      "native_probe_lifecycle_guarded.py": "08e04e3f259852a2cb7ce641bab07842f34fcf759419d818530af351d1fa8f64",
+      "native-fixture/lifecycle_cases.py": "08ffb5fa082f98cd6b7e775a1ca94f8dca257ae4e7bee8e2f5654a0f2a320940",
+      "native-fixture/lifecycle_client.py": "e3ad765e3d2ff73cac4c11ab255ead581e373326fb8b477a1a7bcfab4a52ce43",
+      "native/plugin-v6a.cpp": "1c8052b4d13b3287e4fe508a57b829e7f45dd7239acaf405935f5fc15aa10f04",
+      "native/libkeyboard-monitor-private-v6a.so": "974c1ad68e3fa8aa90afb08445c393590b034c2e7f4678e19c4f898f5bc85449",
+      "native/key_policy.hpp": "4d6fa06baea24fdac69069a4ccfa02c62827359bc94f9027ff0bab4ac8c80983",
+      "native/xkb_helpers.hpp": "8e084f002f82d996ad44dc100f01ba9e33e763189ba6872890f722b60d96b895",
+      "native-fixture/native-input": "0da1f97985ff94579b7a52a9a344d0f72ce801147fc61ab9cf1a9e84145d4e48",
+      "native-fixture/native-input.c": "6f7c96842d2230a7100e2cdb79d49a42e54196c1f2bc5d1f623b737ed99e9791",
+      "LIFECYCLE_GUARDED_REVIEW.md": "a5dd33ea35450ddfdfd1456951784c3eb971f69b3cb9c92da67fe8b554a27de3",
+      "native/v6-to-v6a.diff": "deedcf08be8c7d16b7aecfefcf7363da7952f3cffad0edfcd9e5efdfe8cf9944",
+      "lifecycle_preservation.py": "c579d169e9b7093331fd4b78d015cc9fbbcd38c9ceb3772aef1bd0f5056fc54d",
+      "lifecycle_preservation_test.py": "68c0b3b5047d5032937f98eacb3f8358a020b903d9a66a16515d3ad77e9d3f6a",
+      "lifecycle_freeze_test.py": "71cd677a86163bb02b379c2e164f74bbd5eda25a1c0c68219e77774e15424dec"
+    },
+    "externalDependencies": {
+      "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/bin/orca": "fff9be47907c68db0a708b2beb301738a01ee548afa7b5135b398a247043be63",
+      "/home/hoskinson/window-integration-qa/orca-reader/data/orca/orca-customizations.py": "2695588930b6093a52a025934424d1f8f72e833e9922d296debe9dbcbc0b70eb",
+      "/home/hoskinson/window-integration-qa/orca-reader/legacy_keygrab_compat.py": "e8c3e9759d54038ecea0a51edbdd194d7942d5f241ee6e39407f64f8b4c46b0a",
+      "/home/hoskinson/window-integration-qa/orca-reader/silent_factory.py": "cd5d8c3ed299662b9bb2d719231168f99834a348cd4bc405b8ebb65693705270",
+      "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/ax_device_manager.py": "722845f017bbaefbcaccfb82de6e0138f231ce4d3104bc59f0135f4e50215942",
+      "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/input_event_manager.py": "82690ab2f5bf124824ae2852478012b50b6679151585ac543fe31ef54db49fef",
+      "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/command_manager.py": "fe48cf41fcc4c55a5a0bb7f9e4a35350d6c850365d8368c7991adfa06381a39d",
+      "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/keybindings.py": "6dea8ea7206b3c52ce5ccba12c0386a7199610d4f77c9812c1fa43d0bf3dd5b2",
+      "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/orca_modifier_manager.py": "f2dba51f45610e3c2261a16eac00a8144bdeb4d54efce34bdd19ec4172ef4418",
+      "/home/hoskinson/window-integration-qa/orca-reader/prefix/usr/lib/python3.14/site-packages/orca/learn_mode_presenter.py": "d583360690b8c8935591925161fb193bec12e5d93472a6964fa4179bc9409d02",
+      "/usr/lib/libatspi.so.0.0.1": "999a75bb6f7c3d5fb962671936faea7471f0728ed4cf7f0ea81fefc544e7071b",
+      "/usr/lib/girepository-1.0/Atspi-2.0.typelib": "102b98b6e1d6a37731c602b7c045bec4ebeca61a2f00c5cf5a266191f110873d",
+      "/usr/bin/Hyprland": "da8fcacf347bcbed83edc40108c6e2298da095e22246bd764e9bb382786cebb2"
+    }
+  },
+  "preservationMatchesAccepted": true
+}

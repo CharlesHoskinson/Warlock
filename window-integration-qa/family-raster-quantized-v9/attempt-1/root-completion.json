@@ -1,0 +1,84 @@
+{
+  "updatedUTC": "2026-10-01T21:36:55.235887+00:00",
+  "checks": {
+    "all3649FrozenInputsExact": true,
+    "all1286ProducerModesExact": true,
+    "all55LinksExact": true,
+    "all15MainPreservation": true,
+    "allHostPIDStartGone": true,
+    "producerNormalZeroGone": true,
+    "runtimeGone": true,
+    "noUnexpectedDescendantsOrCleanupErrors": true,
+    "mandatoryParentTransportHealthy": true,
+    "twoReachedImagesIndependentlyReplayed": true,
+    "actualPrimaryConfigurationIndependentlyBound": true
+  },
+  "allIndependentSafetySourceAndReachedEvidenceChecks": true,
+  "reportSHA256": "a525a60d59c9e9f03f772329598b9111dfdabbc0687be69d217786404c16fe19",
+  "manifestSHA256": "d68d1d21584497679aa2482c5dc1e9a886779640d270f4fe79c030b717b7bfb9",
+  "replayedComparisons": [
+    {
+      "kind": "raw",
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0",
+        "expectedSHA256": "a20dc7920a2ce6047d6b420a0537a2e0a1c0a219c924e52ee610798273b868a0"
+      }
+    },
+    {
+      "kind": "composed",
+      "comparison": {
+        "passed": true,
+        "pixelsCompared": 76800,
+        "channelsCompared": 307200,
+        "tolerance": 0,
+        "badPixels": 0,
+        "badChannels": 0,
+        "maxChannelError": 0,
+        "firstFailures": [],
+        "actualSHA256": "2f4de4ee257e960a099d8923df0c93bb852e637dede2f19ddb8e7173c6fef2f3",
+        "expectedSHA256": "2f4de4ee257e960a099d8923df0c93bb852e637dede2f19ddb8e7173c6fef2f3"
+      }
+    }
+  ],
+  "actualConfiguration": {
+    "policy": "per-layer-explicit-over-nearest-rgba8-v1",
+    "sequence": "1",
+    "output": "WAYLAND-1",
+    "generation": 13,
+    "familyPassCount": 3,
+    "controlPassCount": 6,
+    "actualConfigurationGate": true,
+    "sampling": {
+      "policy": "four-nearest-centers-highp-bilinear-v1",
+      "familyTextureCount": 3,
+      "controlTextureCount": 3,
+      "actualGetterGate": true,
+      "pixelProof": false,
+      "nativeAuthority": false
+    },
+    "pixelProof": false,
+    "nativeAuthority": false
+  },
+  "actualReachedGates": 21,
+  "failure": {
+    "message": "ValueError('actual queried supported native pair differs')",
+    "actualIntermediateNativeFormat": 6408,
+    "actualDefaultNativeFormat": 32993,
+    "type": 5121,
+    "pairGuardRelaxed": false
+  },
+  "rasterAccepted": false,
+  "full44ImagesAccepted": false,
+  "physicalCadenceAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false
+}

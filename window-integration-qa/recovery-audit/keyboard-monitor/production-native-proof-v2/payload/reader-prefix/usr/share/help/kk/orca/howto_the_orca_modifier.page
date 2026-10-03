@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_the_orca_modifier" xml:lang="kk">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_learn_modes"/>
+    <title type="sort">3. Orca модификаторы</title>
+    <desc><key>Shift</key>, <key>Ctrl</key> және <key>Alt</key> сияқты жұмыс істейтін перне</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Orca модификаторы</title>
+  <p>Orca-да <key>Shift</key>, <key>Ctrl</key> және <key>Alt</key> сияқты жұмыс істейтін арнайы модификатор пернесі бар. Ол арнайы <app>Orca</app> командаларын орындауға және оны сіз қол жеткізетін қолданбалардың командаларымен қайшылықтар тудырмай жасауға арналған.</p>
+  <p>"Orca модификаторы" қай пернеге тағайындалатыны әдепкі бойынша <app>Orca</app>-ның Ноутбук пернетақта жаймасын немесе оның Жұмыс үстелі пернетақта жаймасын пайдалануыңызға байланысты болады:</p>
+  <list>
+    <item>
+      <p>Егер сіз Ноутбук жаймасын пайдалансаңыз, әдепкі Orca модификаторы <key>CapsLock</key> болады</p>
+    </item>
+    <item>
+      <p>Егер сіз Жұмыс үстелі жаймасын пайдалансаңыз, Orca модификаторы <key>Insert</key> және <key>KP_Insert</key> пернелері болады, соңғысы <key>KP_0</key> пернесімен бірдей.</p>
+    </item>
+  </list>
+  <p>Егер сіз ағымдағы пернетақта жаймасын сақтап, бірақ басқа модификатор пернесін таңдағыңыз келсе, оны келесі қадамдарды орындау арқылы жасай аласыз:</p>
+  <steps>
+    <title>Orca модификаторын өзгерту</title>
+    <item>
+      <p><keyseq><key>Orca модификаторы</key><key>Бос орын</key></keyseq> пернелерін басу арқылы <link xref="preferences">Orca баптаулары</link> сұхбат терезесіне өтіңіз. Сонымен қатар, сіз Orca-ны терминалдан ашық баптаулар сұхбат терезесімен бастай аласыз: <cmd>orca -s</cmd> теріп, <key>Return</key> пернесін басыңыз.</p>
+    </item>
+    <item>
+      <p><gui>Пернелер тіркесімдері</gui> бетіне өтіңіз.</p>
+    </item>
+    <item>
+      <p><gui>Экрандық диктордың модификатор пернелері</gui> құрама тізіміне өтіңіз.</p>
+    </item>
+    <item>
+      <p>Бағдаршамен қажетті модификаторға өтіңіз. Қолжетімді опциялар:</p>
+      <list>
+        <item><p>Insert, KP_Insert</p></item>
+        <item><p>KP_Insert</p></item>
+        <item><p>Insert</p></item>
+        <item><p>Caps_Lock</p></item>
+      </list>
+    </item>
+    <item><p><gui>Іске асыру</gui> батырмасын басыңыз.</p></item>
+  </steps>
+</page>

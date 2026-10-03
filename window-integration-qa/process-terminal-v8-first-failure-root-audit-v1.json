@@ -1,0 +1,20 @@
+{
+  "schema": "root-terminal-v8-first-failure-audit-v1",
+  "observedUTC": "2026-10-02T23:01:32.289373+00:00",
+  "handoffSHA256": "27afb2961ea36447e19debc22e9f204fab6c20bbbd7d424514ee102f1a31be0a",
+  "inputCount": 1215,
+  "inputModeCount": 1215,
+  "allInputsMatch": true,
+  "mismatches": [],
+  "actorObservedGone": true,
+  "runtimeObservedGone": true,
+  "actualBuildClaimRetained": true,
+  "actualQCoreLifecycleCheckCount": 46,
+  "disconnectAccepted": false,
+  "normalCleanupAccepted": false,
+  "disappearanceMechanismObserved": false,
+  "baselineBeforeHookAccepted": false,
+  "reliabilityAccepted": false,
+  "GUI": false,
+  "limit": "All retained bytes/modes independently compared. Actor/runtime disappearance is read-only observation, not normal-exit or causal proof. First runner omitted partial stdout/config/receipts; no source control-flow inference fills that gap."
+}

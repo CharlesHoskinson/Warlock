@@ -1,0 +1,45 @@
+{
+  "scope": "Offline family service transaction/native adapter/persistent transport candidate only; not installed/native-tested. Captured context equivalence is internal caller trust and requires production context provider validation before deployment.",
+  "pythonTests": 20,
+  "formalCases": {
+    "familyScene": 9,
+    "familyDestination": 4
+  },
+  "modelSamples": {
+    "familyScene": 2000,
+    "familyDestination": 2000
+  },
+  "baseProductionSHA256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+  "inputs": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/scene_controller.py": "447d71e6c7451b994b490ff870fbf335fd09e749ee4fcf602eaa207a0e8053c3",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/pipe_transport.py": "6eebe9b189f82ad65c4730e635c207f64216c37b28839ac9a7279ac977bd4439",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/native_desktop.py": "4189eedb5bc9369d4fa66697ad740cb447a43576c4a075aafc5d7ca54d6313e4",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/production_motion_6d9.py": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/test_scene_controller.py": "b31283b2bbf87f06059b1f8111705eff9fe9b6de713807f7e2a26e7d6fbf4026",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/test_pipe_transport.py": "4ae31d33f18d7baff8af91c727e07b791c8abdc203035ec75ac1575e71b373d8",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/CONTRACT.md": "84105d48f66ca5d2b984f6f2775181085b80f3107c884e041b93ff5c63e4061a",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/family_scene.qnt": "7b1fd7739efeff5925751fd2ca12977b832ddca044cb08de17bc1005c455f1f1",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/family_scene_test.qnt": "d8b1b2927f1fd3d2100af0cbc7ecf45677b4a00801198933f3e81644ed2ce674",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/family_destination.qnt": "6e7c0df9e7816fa620c13990da70fccb4367bfdb54575e343350cb1ff4a1fd83",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/family_destination_test.qnt": "f7b286ce9443b69cd2ada54a0e4e1aee007ee024a8583aa9536f7455e20176ee",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/destination-scenarios.log": "c41bcf5ca9378f523afb55a3794e9ef1fe6d95be6202c4e1359a4ac351f89778",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/destination-samples.log": "b3a9af174feee973003378716d66bdac99ad2c3b425bf9add199733f6e0f30b3",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/python-tests.log": "ec58e702692b9460ad1f946d459eac00e9cfb00d006d2934689f3c705d3f5877",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/family-model-model-checkpoint.json": "8e16f246c171f0221a9f5876f1090487f9ebd95b3ef6a350f171769476a48f56",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/family-model-typecheck.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/family-model-named.log": "fae44490e7addfd18255a81fb0658b7fbe7d64959d38f90b02e388e41e75cd77",
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v2/family-model-random.log": "a3f3a83759d97dcd1e634d2cfa59d3a7d9914eac099e7fb59d3f2f0bbd45750a"
+  },
+  "repairedCounterexamples": [
+    "obsolete restore after fresh cannot select destination",
+    "same identity supersedes initial memberless lookup"
+  ],
+  "knownRemaining": [
+    "atomic membership/geometry replacement while moving",
+    "multiple-family service manager/production frontend binding",
+    "authoritative context version provider",
+    "daemon lifecycle/recovery integration",
+    "real taskbar/endpoints/full pixel/cadence/family native tests"
+  ],
+  "modelEvidence": "Retained exact unchanged family qnt sources match original model checkpoint; destination model/scenarios are newly tested."
+}

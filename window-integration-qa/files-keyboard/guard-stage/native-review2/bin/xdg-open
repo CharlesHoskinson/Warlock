@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import hashlib,json,os,sys
+p=Path(sys.argv[1]).resolve();home=Path(os.environ["HOME"]).resolve()
+assert home in p.parents and p.is_file(),"Opener is restricted to fixture files"
+with open(os.environ["FILES_QA_OPEN_LOG"],"a") as out:out.write(json.dumps({"path":str(p),"sha256":hashlib.sha256(p.read_bytes()).hexdigest()})+"\n")

@@ -1,0 +1,64 @@
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/plugins/PluginAPI.hpp:23,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/readonly-probe/probe.cpp:2:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/plugins/../helpers/Color.hpp: In member function ‘CHyprColor CHyprColor::operator-(const CHyprColor&) const’:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/plugins/../helpers/Color.hpp:28:44: error: unused parameter ‘c2’ [-Werror=unused-parameter]
+   28 |     CHyprColor operator-(const CHyprColor& c2) const {
+      |                          ~~~~~~~~~~~~~~~~~~^~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/plugins/../helpers/Color.hpp: In member function ‘CHyprColor CHyprColor::operator+(const CHyprColor&) const’:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/plugins/../helpers/Color.hpp:33:44: error: unused parameter ‘c2’ [-Werror=unused-parameter]
+   33 |     CHyprColor operator+(const CHyprColor& c2) const {
+      |                          ~~~~~~~~~~~~~~~~~~^~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/plugins/../helpers/Color.hpp: In member function ‘CHyprColor CHyprColor::operator*(const float&) const’:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/plugins/../helpers/Color.hpp:38:39: error: unused parameter ‘c2’ [-Werror=unused-parameter]
+   38 |     CHyprColor operator*(const float& c2) const {
+      |                          ~~~~~~~~~~~~~^~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../Texture.hpp:4,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../Framebuffer.hpp:5,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/Transformer.hpp:5,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/Window.hpp:15,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-collector-v1-proposal/readonly-probe/probe.cpp:7:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp: At global scope:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:395:5: error: missing initializer for member ‘NColorManagement::SImageDescription::rawICC’ [-Werror=missing-field-initializers]
+  395 |     });
+      |     ^
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:395:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringPrimaries’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:395:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringLuminances’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:395:5: error: missing initializer for member ‘NColorManagement::SImageDescription::icc’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:403:5: error: missing initializer for member ‘NColorManagement::SImageDescription::rawICC’ [-Werror=missing-field-initializers]
+  403 |     });
+      |     ^
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:403:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringPrimaries’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:403:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringLuminances’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:403:5: error: missing initializer for member ‘NColorManagement::SImageDescription::icc’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:411:5: error: missing initializer for member ‘NColorManagement::SImageDescription::rawICC’ [-Werror=missing-field-initializers]
+  411 |     });
+      |     ^
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:411:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringPrimaries’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:411:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringLuminances’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:411:5: error: missing initializer for member ‘NColorManagement::SImageDescription::icc’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:420:5: error: missing initializer for member ‘NColorManagement::SImageDescription::rawICC’ [-Werror=missing-field-initializers]
+  420 |     });
+      |     ^
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:420:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringPrimaries’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:420:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringLuminances’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:420:5: error: missing initializer for member ‘NColorManagement::SImageDescription::icc’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:429:5: error: missing initializer for member ‘NColorManagement::SImageDescription::rawICC’ [-Werror=missing-field-initializers]
+  429 |     });
+      |     ^
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:429:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringPrimaries’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:429:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringLuminances’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:429:5: error: missing initializer for member ‘NColorManagement::SImageDescription::icc’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:437:5: error: missing initializer for member ‘NColorManagement::SImageDescription::rawICC’ [-Werror=missing-field-initializers]
+  437 |     });
+      |     ^
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:437:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringPrimaries’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:437:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringLuminances’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:437:5: error: missing initializer for member ‘NColorManagement::SImageDescription::icc’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:448:5: error: missing initializer for member ‘NColorManagement::SImageDescription::rawICC’ [-Werror=missing-field-initializers]
+  448 |     });
+      |     ^
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:448:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringPrimaries’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:448:5: error: missing initializer for member ‘NColorManagement::SImageDescription::luminances’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:448:5: error: missing initializer for member ‘NColorManagement::SImageDescription::masteringLuminances’ [-Werror=missing-field-initializers]
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:448:5: error: missing initializer for member ‘NColorManagement::SImageDescription::icc’ [-Werror=missing-field-initializers]
+cc1plus: all warnings being treated as errors

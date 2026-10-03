@@ -1,0 +1,11 @@
+--- /home/hoskinson/window-behavior-spec/qml-process-provider-v6-source-retirement/cpu_registry_product_negatives.cpp
++++ /home/hoskinson/window-behavior-spec/qml-process-provider-v7-fault-projection/cpu_registry_product_negatives.cpp
+@@ -29,7 +29,7 @@
+  }else if(scenario=="duplicate-worker-notification"){
+   const auto watcher=observer.diagnosticWorker(&c.process,lease);record("actual registered watcher allocation selected",!watcher.isNull());record("first exact current watcher signal emitted",QMetaObject::invokeMethod(watcher.data(),"finished",Qt::DirectConnection));record("second exact current watcher signal emitted",QMetaObject::invokeMethod(watcher.data(),"finished",Qt::DirectConnection));const auto after=observer.state(&c.process);negativeEvidence={{"after",after}};record("duplicate current native watcher notification denies authority and normal closure",after["fault"].toBool()&&!after["kernelBound"].toBool()&&!after["complete"].toBool()&&!after["normalLifecycle"].toBool());
+  }else if(scenario=="duplicate-eof"){
+-  emit c.out.streamFinished();const auto after=observer.state(&c.process);record("actual native collector duplicate current EOF faults",after["fault"].toBool()&&!after["complete"].toBool()&&!after["normalLifecycle"].toBool());
++  emit c.out.streamFinished();const auto after=observer.state(&c.process);negativeEvidence={{"before",state},{"after",after}};record("actual native collector duplicate current EOF clears current authority",after["fault"].toBool()&&!after["kernelBound"].toBool()&&!after["complete"].toBool()&&!after["normalLifecycle"].toBool()&&after["historicalKernelProof"].toBool());
+  }else if(scenario=="duplicate-start"){
+   emit c.process.started();const auto after=observer.state(&c.process);record("actual native Process duplicate current Started faults",after["fault"].toBool()&&!after["complete"].toBool());
+  }else if(scenario=="source-replacement"){

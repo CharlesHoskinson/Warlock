@@ -1,0 +1,16 @@
+
+  legacy_fixture_ready_test
+    ok emptyKernelDataNeverReadyTest passed 1 test(s)
+    ok emptyThenFreshFullVerificationTest passed 1 test(s)
+    ok nonemptyMismatchLatchesTest passed 1 test(s)
+    ok argvMismatchRefusesTest passed 1 test(s)
+    ok sourceReplacementRefusesTest passed 1 test(s)
+    ok descriptorReplacementRefusesTest passed 1 test(s)
+    ok reusedLifetimeRefusesTest passed 1 test(s)
+    ok absoluteDeadlineRefusesLaterReadyTest passed 1 test(s)
+    ok unknownKernelErrorRefusesTest passed 1 test(s)
+    ok readyCannotReplaceExistingFullGuardTest passed 1 test(s)
+    ok initialKernelNonemptyDataCannotBeSelectedWitnessTest passed 1 test(s)
+    ok gateReadPhaseMandatoryBeforeInitialWitnessTest passed 1 test(s)
+
+  12 passing (970ms)

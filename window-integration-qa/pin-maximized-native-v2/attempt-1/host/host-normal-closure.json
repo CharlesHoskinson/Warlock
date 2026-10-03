@@ -1,0 +1,455 @@
+{
+  "rows": [
+    {
+      "pid": 914274,
+      "start": "19916994",
+      "pgid": 914274,
+      "name": "privateBus",
+      "command": [
+        "/usr/bin/dbus-daemon",
+        "--session",
+        "--nofork",
+        "--address=unix:path=/run/user/1000/wqa/1396/bus"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/host/privateBus.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [
+        {
+          "pid": 914274,
+          "signal": 15,
+          "sent": true,
+          "error": null
+        }
+      ],
+      "stopError": null
+    },
+    {
+      "pid": 914275,
+      "start": "19916997",
+      "pgid": 914275,
+      "name": "weston",
+      "command": [
+        "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston",
+        "--backend=headless",
+        "--renderer=gl",
+        "--shell=kiosk-shell.so",
+        "--fake-seat",
+        "--no-config",
+        "--socket=weston-host",
+        "--width=1600",
+        "--height=1000",
+        "--scale=1",
+        "--idle-time=0",
+        "--log=/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/host/weston-renderer.log"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/host/weston.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [
+        {
+          "pid": 914275,
+          "signal": 15,
+          "sent": true,
+          "error": null
+        }
+      ],
+      "stopError": null
+    },
+    {
+      "pid": 914384,
+      "start": "19917143",
+      "pgid": 914384,
+      "name": "hyprland",
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/build-core-make/Hyprland",
+        "--config",
+        "/run/user/1000/wqa/1396/hyprland.lua"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/host/hyprland.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [
+        {
+          "pid": 914384,
+          "signal": 15,
+          "sent": true,
+          "error": null
+        }
+      ],
+      "stopError": null
+    },
+    {
+      "pid": 915091,
+      "start": "19917945",
+      "pgid": 915091,
+      "name": "pin-legacy-qt",
+      "command": [
+        "/home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture",
+        "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/native"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/host/pin-legacy-qt.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 916385,
+      "start": "19919307",
+      "pgid": 916385,
+      "name": "pin-pointer",
+      "command": [
+        "/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer",
+        "1600",
+        "1000"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/native/pointer.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 916469,
+      "start": "19919348",
+      "pgid": 916469,
+      "name": "pin-chord-3",
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--chord",
+        "super-p"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/host/pin-chord-3.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 916515,
+      "start": "19919371",
+      "pgid": 916515,
+      "name": "pin-chord-4",
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--chord",
+        "super-ctrl-t"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/host/pin-chord-4.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 916615,
+      "start": "19919453",
+      "pgid": 916615,
+      "name": "pin-chord-5",
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--chord",
+        "super-p"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/host/pin-chord-5.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    },
+    {
+      "pid": 916685,
+      "start": "19919480",
+      "pgid": 916685,
+      "name": "pin-chord-6",
+      "command": [
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+        "--chord",
+        "super-ctrl-t"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/host/pin-chord-6.log",
+      "registeredExact": true,
+      "reaped": true,
+      "returncode": 0,
+      "signals": [],
+      "stopError": null
+    }
+  ],
+  "registeredStopOrder": [
+    "pin-chord-6",
+    "pin-chord-5",
+    "pin-chord-4",
+    "pin-chord-3",
+    "pin-pointer",
+    "pin-legacy-qt",
+    "hyprland",
+    "weston",
+    "privateBus"
+  ],
+  "closeError": null,
+  "originalStopSeconds": 4,
+  "originalWaitSeconds": 4,
+  "scope": "observed host closure only; named bus termination distinguished",
+  "clientClosureBinding": {
+    "ok": true,
+    "error": null,
+    "beforeDelegatedClose": true,
+    "rows": [
+      {
+        "name": "pin-legacy-qt",
+        "pid": 915091,
+        "start": "19917945",
+        "pgid": 915091,
+        "command": [
+          "/home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture",
+          "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/native"
+        ],
+        "registeredExact": true,
+        "returncode": 0,
+        "gone": true
+      },
+      {
+        "name": "pin-pointer",
+        "pid": 916385,
+        "start": "19919307",
+        "pgid": 916385,
+        "command": [
+          "/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer",
+          "1600",
+          "1000"
+        ],
+        "registeredExact": true,
+        "returncode": 0,
+        "gone": true
+      },
+      {
+        "name": "pin-chord-3",
+        "pid": 916469,
+        "start": "19919348",
+        "pgid": 916469,
+        "command": [
+          "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+          "--chord",
+          "super-p"
+        ],
+        "registeredExact": true,
+        "returncode": 0,
+        "gone": true
+      },
+      {
+        "name": "pin-chord-4",
+        "pid": 916515,
+        "start": "19919371",
+        "pgid": 916515,
+        "command": [
+          "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+          "--chord",
+          "super-ctrl-t"
+        ],
+        "registeredExact": true,
+        "returncode": 0,
+        "gone": true
+      },
+      {
+        "name": "pin-chord-5",
+        "pid": 916615,
+        "start": "19919453",
+        "pgid": 916615,
+        "command": [
+          "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+          "--chord",
+          "super-p"
+        ],
+        "registeredExact": true,
+        "returncode": 0,
+        "gone": true
+      },
+      {
+        "name": "pin-chord-6",
+        "pid": 916685,
+        "start": "19919480",
+        "pgid": 916685,
+        "command": [
+          "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+          "--chord",
+          "super-ctrl-t"
+        ],
+        "registeredExact": true,
+        "returncode": 0,
+        "gone": true
+      }
+    ],
+    "sources": {
+      "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/native_cases.py": {
+        "sha256": "b990755e84ccb3d3f10ee17d51ec0bcfd1b45cfb66530ff5c53a1e4bb785dfe2",
+        "mode": 420
+      },
+      "/home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture": {
+        "sha256": "fb73af7e53e1805ba953a3050acdaeb58b3cf8e0d9588c508fe761c767dd534e",
+        "mode": 493
+      },
+      "/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer": {
+        "sha256": "b092c3369d88b4d61fce80607614a5ec02258e0b774f0b10504a23385cb24434",
+        "mode": 493
+      },
+      "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard": {
+        "sha256": "9a4409e5f00efe5a0f6bf570b00d28c57579f892fa99e6cea276b80d51f17820",
+        "mode": 493
+      }
+    },
+    "caseReport": "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/native/cases.json",
+    "caseReportSHA256": "b73df4e7c14f35e5981ad3e56f54ab361b1e1d85913886b9284472b50d428cb2",
+    "rawArtifact": "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/host/client-closure-cases.json",
+    "rawArtifactSHA256": "b73df4e7c14f35e5981ad3e56f54ab361b1e1d85913886b9284472b50d428cb2",
+    "rawPersisted": true,
+    "bindings": [
+      {
+        "name": "pin-legacy-qt",
+        "pid": 915091,
+        "start": "19917945",
+        "pgid": 915091,
+        "command": [
+          "/home/hoskinson/window-integration-qa/qt-modal-private-v9/build-v7/qt-window-modal-fixture",
+          "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/attempt-1/native"
+        ],
+        "executableSHA256": "fb73af7e53e1805ba953a3050acdaeb58b3cf8e0d9588c508fe761c767dd534e",
+        "sourceMode": 493,
+        "receipt": {
+          "pid": 915091,
+          "forced": false,
+          "exitCode": 0,
+          "gone": true
+        }
+      },
+      {
+        "name": "pin-pointer",
+        "pid": 916385,
+        "start": "19919307",
+        "pgid": 916385,
+        "command": [
+          "/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer",
+          "1600",
+          "1000"
+        ],
+        "executableSHA256": "b092c3369d88b4d61fce80607614a5ec02258e0b774f0b10504a23385cb24434",
+        "sourceMode": 493,
+        "receipt": {
+          "pid": 916385,
+          "forced": false,
+          "exitCode": 0,
+          "gone": true
+        }
+      },
+      {
+        "name": "pin-chord-3",
+        "pid": 916469,
+        "start": "19919348",
+        "pgid": 916469,
+        "command": [
+          "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+          "--chord",
+          "super-p"
+        ],
+        "executableSHA256": "9a4409e5f00efe5a0f6bf570b00d28c57579f892fa99e6cea276b80d51f17820",
+        "sourceMode": 493,
+        "receipt": {
+          "pid": 916469,
+          "start": "19919348",
+          "argv": [
+            "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+            "--chord",
+            "super-p"
+          ],
+          "exitCode": 0,
+          "executableSHA256": "9a4409e5f00efe5a0f6bf570b00d28c57579f892fa99e6cea276b80d51f17820",
+          "gone": true
+        }
+      },
+      {
+        "name": "pin-chord-4",
+        "pid": 916515,
+        "start": "19919371",
+        "pgid": 916515,
+        "command": [
+          "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+          "--chord",
+          "super-ctrl-t"
+        ],
+        "executableSHA256": "9a4409e5f00efe5a0f6bf570b00d28c57579f892fa99e6cea276b80d51f17820",
+        "sourceMode": 493,
+        "receipt": {
+          "pid": 916515,
+          "start": "19919371",
+          "argv": [
+            "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+            "--chord",
+            "super-ctrl-t"
+          ],
+          "exitCode": 0,
+          "executableSHA256": "9a4409e5f00efe5a0f6bf570b00d28c57579f892fa99e6cea276b80d51f17820",
+          "gone": true
+        }
+      },
+      {
+        "name": "pin-chord-5",
+        "pid": 916615,
+        "start": "19919453",
+        "pgid": 916615,
+        "command": [
+          "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+          "--chord",
+          "super-p"
+        ],
+        "executableSHA256": "9a4409e5f00efe5a0f6bf570b00d28c57579f892fa99e6cea276b80d51f17820",
+        "sourceMode": 493,
+        "receipt": {
+          "pid": 916615,
+          "start": "19919453",
+          "argv": [
+            "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+            "--chord",
+            "super-p"
+          ],
+          "exitCode": 0,
+          "executableSHA256": "9a4409e5f00efe5a0f6bf570b00d28c57579f892fa99e6cea276b80d51f17820",
+          "gone": true
+        }
+      },
+      {
+        "name": "pin-chord-6",
+        "pid": 916685,
+        "start": "19919480",
+        "pgid": 916685,
+        "command": [
+          "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+          "--chord",
+          "super-ctrl-t"
+        ],
+        "executableSHA256": "9a4409e5f00efe5a0f6bf570b00d28c57579f892fa99e6cea276b80d51f17820",
+        "sourceMode": 493,
+        "receipt": {
+          "pid": 916685,
+          "start": "19919480",
+          "argv": [
+            "/home/hoskinson/window-behavior-spec/pin-lifetime-v3/keyboard-chords/physical-keyboard",
+            "--chord",
+            "super-ctrl-t"
+          ],
+          "exitCode": 0,
+          "executableSHA256": "9a4409e5f00efe5a0f6bf570b00d28c57579f892fa99e6cea276b80d51f17820",
+          "gone": true
+        }
+      }
+    ]
+  },
+  "normal": true
+}

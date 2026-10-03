@@ -1,0 +1,73 @@
+{
+  "modelSHA256": "b94e53cc84fc29b51c53204ab6bf5cdbe7abf41d30193d64ed84dc5e31a9cbba",
+  "selectedTests": [
+    "ignoredProtectedOldCounterexample",
+    "ignoredProtectedFallsThrough",
+    "inputRefusalDoesNotReviveProtected",
+    "outsideProtectedUsesEligibleOrdinary",
+    "nofocusOrdinaryStillRefuses",
+    "ordinaryMaxConserved",
+    "exclusiveConserved",
+    "noFullscreenConserved",
+    "skipPriorityConserved",
+    "onlyPriorityConserved",
+    "floatingOnlyConserved",
+    "protectedBandWinnerPreserved",
+    "protectedTiledPointerOldCounterexample",
+    "protectedTiledPointerWinnerPreserved",
+    "nullProtectedPointerRemainsNull",
+    "ordinaryMaxPointerConserved",
+    "exclusivePointerConserved",
+    "protectedExclusivePriorityConserved",
+    "protectedExclusivePointerConserved",
+    "layerPriorityPreserved",
+    "ordinaryMaxProtectedTiledOldCounterexample",
+    "ordinaryMaxProtectedTiledWinnerPreserved",
+    "specialWorkspaceSelectionConserved",
+    "ordinaryAllowedFloatingConserved"
+  ],
+  "namedCount": 24,
+  "nativeExecuted": false,
+  "productRuntimeEdited": false,
+  "commands": [
+    {
+      "argv": [
+        "quint",
+        "typecheck",
+        "hit_fallback.qnt"
+      ],
+      "exitCode": 0,
+      "elapsed": 2.391611497005215,
+      "log": "formal-final-v3-0.log",
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "quint",
+        "test",
+        "hit_fallback.qnt",
+        "--max-samples=1",
+        "--match",
+        "^(ignoredProtectedOldCounterexample|ignoredProtectedFallsThrough|inputRefusalDoesNotReviveProtected|outsideProtectedUsesEligibleOrdinary|nofocusOrdinaryStillRefuses|ordinaryMaxConserved|exclusiveConserved|noFullscreenConserved|skipPriorityConserved|onlyPriorityConserved|floatingOnlyConserved|protectedBandWinnerPreserved|protectedTiledPointerOldCounterexample|protectedTiledPointerWinnerPreserved|nullProtectedPointerRemainsNull|ordinaryMaxPointerConserved|exclusivePointerConserved|protectedExclusivePriorityConserved|protectedExclusivePointerConserved|layerPriorityPreserved|ordinaryMaxProtectedTiledOldCounterexample|ordinaryMaxProtectedTiledWinnerPreserved|specialWorkspaceSelectionConserved|ordinaryAllowedFloatingConserved)$"
+      ],
+      "exitCode": 0,
+      "elapsed": 4.165499141003238,
+      "log": "formal-final-v3-1.log",
+      "logSHA256": "90aaf060b754f65564be676dfacf2fe09cdded4e8f36cf5ec54d8fac1579ea3d"
+    },
+    {
+      "argv": [
+        "quint",
+        "run",
+        "hit_fallback.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100"
+      ],
+      "exitCode": 0,
+      "elapsed": 3.651336390990764,
+      "log": "formal-final-v3-2.log",
+      "logSHA256": "57b519cf896a9fb54f2b1a5df50c62ca057885335af11beccf4a5db1976298f8"
+    }
+  ]
+}

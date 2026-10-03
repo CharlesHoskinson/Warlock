@@ -1,0 +1,26 @@
+--- /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v2/native-fixture/native-input.c	2026-10-01 01:07:25.559300056 -0600
++++ /home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/pointer-private-host-v3/native-fixture/native-input.c	2026-10-01 08:24:57.809685037 -0600
+@@ -11,6 +11,7 @@
+ #include <xkbcommon/xkbcommon.h>
+ #include "virtual-keyboard-client.h"
+ #include "input-method-client.h"
++#include "private-producer-guard.h"
+ #pragma GCC diagnostic ignored "-Wunused-parameter"
+ 
+ static struct wl_display *display;
+@@ -76,11 +77,10 @@
+ }
+ static int create(struct Device *device){if(device->keyboard)return -1;device->keyboard=zwp_virtual_keyboard_manager_v1_create_virtual_keyboard(manager,seat);return replace_map(device,"us","");}
+ int main(void){
+-    const char *runtime=getenv("XDG_RUNTIME_DIR"),*socket=getenv("WAYLAND_DISPLAY");struct stat status;
+-    if(!runtime||strncmp(runtime,"/tmp/kbn-",9)||stat(runtime,&status)||(status.st_mode&0777)!=0700||status.st_uid!=getuid()||!socket||strchr(socket,'/'))return 20;
+-    display=wl_display_connect(NULL);if(!display)return 2;
+-    struct wl_registry *registry=wl_display_get_registry(display);wl_registry_add_listener(registry,&registry_listener,NULL);if(roundtrip()||!manager||!seat)return 3;
+-    if(create(&devices[0]))return 4;
++    int fd=private_producer_connect();if(fd<0)return 20;
++    display=wl_display_connect_to_fd(fd);if(!display){fprintf(stderr,"private keyboard Wayland connection failed\n");return 2;}
++    struct wl_registry *registry=wl_display_get_registry(display);wl_registry_add_listener(registry,&registry_listener,NULL);if(roundtrip()||!manager||!seat){fprintf(stderr,"private keyboard registry/seat/manager unavailable\n");return 3;}
++    if(create(&devices[0])){fprintf(stderr,"private keyboard initial device/keymap failed\n");return 4;}
+     char line[200],layout[50],options[80],operation[20];unsigned a,b,c,d;int result=0;
+     while(fgets(line,sizeof(line),stdin)){
+         struct Device *device=&devices[selected];

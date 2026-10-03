@@ -1,0 +1,46 @@
+--- before-scoped/SourceAliases.hpp
++++ current/SourceAliases.hpp
+@@ -0,0 +1,43 @@
++#pragma once
++#include "Lifetime.hpp"
++#include <QStringList>
++#include <map>
++#include <set>
++#include <deque>
++namespace Lifetime {
++// Immutable literal-reference analysis only. No filesystem or live proof cache.
++class SourceAliases final {
++ using Names=std::set<QString>;
++ std::map<QString,QString> literals;
++ std::map<QString,Names> targetChains;
++ Names launchAliases;
++ std::pair<QString,Names> resolve(const QString&path)const {
++  if(!path.startsWith('/'))throw Refused("Absolute frozen reference required");
++  std::deque<QString>todo;for(const auto&p:path.split('/'))todo.push_back(p);QStringList parts;Names seen;
++  while(!todo.empty()){
++   const auto item=todo.front();todo.pop_front();if(item.isEmpty()||item==".")continue;
++   if(item==".."){if(parts.empty())throw Refused("Frozen reference escapes root");parts.removeLast();continue;}
++   const auto spelling='/'+(parts+QStringList{item}).join('/');const auto found=literals.find(spelling);
++   if(found==literals.end()){parts.push_back(item);continue;}
++   if(seen.contains(spelling)||seen.size()>=40||found->second.isEmpty())throw Refused("Frozen declared reference unresolved/cyclic/empty");
++   seen.insert(spelling);if(found->second.startsWith('/'))parts.clear();const auto expansion=found->second.split('/');for(auto i=expansion.crbegin();i!=expansion.crend();++i)todo.push_front(*i);
++  }
++  return {'/'+parts.join('/'),seen};
++ }
++public:
++ SourceAliases(const std::map<QString,QString>&links,const QStringList&launchers):literals(links){
++  // Every declared alias must resolve before arm; never silently omit unresolved graph.
++  for(const auto&[alias,_]:literals){const auto [target,chain]=resolve(alias);auto&saved=targetChains[target];saved.insert(chain.begin(),chain.end());}
++  for(const auto&entry:launchers){const auto [_,chain]=resolve(entry);launchAliases.insert(chain.begin(),chain.end());}
++ }
++ Names select(const Names&images)const {
++  auto selected=launchAliases;
++  for(const auto&image:images){const auto [terminal,chain]=resolve(image);if(terminal!=image)throw Refused("Selected image not canonical in frozen reference");selected.insert(chain.begin(),chain.end());QString ancestor=image;
++   for(;;){if(const auto it=targetChains.find(ancestor);it!=targetChains.end())selected.insert(it->second.begin(),it->second.end());if(ancestor=="/")break;const auto slash=ancestor.lastIndexOf('/');ancestor=slash==0?QString("/"):ancestor.left(slash);}
++  }
++  return selected;
++ }
++ const QString&target(const QString&alias)const{return literals.at(alias);}
++ size_t declaredCount()const{return literals.size();}
++};
++}

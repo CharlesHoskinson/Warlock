@@ -1,0 +1,46 @@
+{
+  "formalBeforeHelperRestartEdits": true,
+  "nativeLaunch": false,
+  "named": 6,
+  "samples": 2000,
+  "maxSteps": 100,
+  "sourceSHA256": {
+    "helper_setup.py": "022187652c255877e84d82e19b4f43ec1e92ae827d095273ff4b09e9c26f7756",
+    "service_restart.qnt": "51812ecb7de0ef512f5b99e9ea20142aa993f1740b373fd0d239ea5cdf695973",
+    "service_restart_test.qnt": "e9cecc3e907991cc136eb4ac5d601f8ca733cee151c0b27b05e76bc1f7824677"
+  },
+  "checks": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "service_restart_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "service_restart_test.qnt",
+        "--backend=rust",
+        "--seed=2026100117"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "service_restart.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=2026100117",
+        "--verbosity=0"
+      ],
+      "exitCode": 0
+    }
+  ]
+}

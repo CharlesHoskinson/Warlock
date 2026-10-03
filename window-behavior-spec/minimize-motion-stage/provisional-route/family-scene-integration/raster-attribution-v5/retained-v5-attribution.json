@@ -1,0 +1,105 @@
+{
+  "experiment": "actual explicit highp float/varying/sampler plus precision inspection",
+  "actualNativeResult": "fail",
+  "reportSHA256": "ee8f259bc0b28662739d6b41275218700a47e4bc789476cef32853a72779513d",
+  "comparisons": {
+    "comparison-0-WAYLAND-1.json": {
+      "passed": true,
+      "pixelsCompared": 76800,
+      "channelsCompared": 307200,
+      "tolerance": 0,
+      "badPixels": 0,
+      "badChannels": 0,
+      "maxChannelError": 0,
+      "firstFailures": [],
+      "actualSHA256": "2f4de4ee257e960a099d8923df0c93bb852e637dede2f19ddb8e7173c6fef2f3",
+      "expectedSHA256": "2f4de4ee257e960a099d8923df0c93bb852e637dede2f19ddb8e7173c6fef2f3"
+    },
+    "comparison-0-ORACLE-SECOND.json": {
+      "passed": false,
+      "pixelsCompared": 172800,
+      "channelsCompared": 691200,
+      "tolerance": 1,
+      "badPixels": 7,
+      "badChannels": 8,
+      "maxChannelError": 2,
+      "firstFailures": [
+        {
+          "x": 48,
+          "y": 107,
+          "errors": [
+            2,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "x": 65,
+          "y": 107,
+          "errors": [
+            0,
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "x": 65,
+          "y": 108,
+          "errors": [
+            2,
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "x": 23,
+          "y": 109,
+          "errors": [
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "x": 23,
+          "y": 110,
+          "errors": [
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "x": 23,
+          "y": 111,
+          "errors": [
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "x": 23,
+          "y": 112,
+          "errors": [
+            2,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "actualSHA256": "0ce6b73cac797e61557655d619fcf34fb7d59fd635b00be76a1362155f18cee8",
+      "expectedSHA256": "0929b5abd9b8680987653c85ef3b27cba89c0856023d039326b3917394eb8de0"
+    }
+  },
+  "causalConclusion": "Actual V5 decoded screenshot is identical to V4 and same seven failed coordinates/eight channels/max2 persist. Explicit highp with observed 23-bit range127 stages does not repair these errors. Readback is next boundary inspection; no shader/filter/oracle changes justified yet.",
+  "sourceInputsRemainFrozen": true,
+  "nativeRunByRoot": true
+}

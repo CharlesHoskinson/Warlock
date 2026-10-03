@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "hoskinson.files",
+  "name": "Files",
+  "version": "1.0.0",
+  "author": "hoskinson",
+  "license": "MIT",
+  "description": "Launcher for the Files explorer (~/.local/share/omarchy-files).",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "icon/FilesButton.qml"
+  },
+  "barWidget": {
+    "displayName": "Files",
+    "description": "Opens the Files explorer. Left click: Home. Right click: Recent activity.",
+    "category": "Apps",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}

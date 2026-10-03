@@ -1,0 +1,14 @@
+--- failedV1/x11_authority.py
++++ freshV2/x11_authority.py
+@@ -79,7 +79,10 @@
+  runtime=verify_runtime(Path(os.environ['XDG_RUNTIME_DIR']));control=runtime/'x11-control.json';private_file(control)
+  row=json.loads(control.read_text());config=runtime/'hyprland.lua';private_file(config)
+  if sha(config)!=row['configSHA256']:raise RuntimeError('private compositor config changed')
+- private_file(runtime/'bin/Xwayland',0o700)
++ private_file(runtime/'bin/Xwayland',0o755)
++ for directory in (runtime,runtime/'bin'):
++  info=directory.lstat()
++  if not stat.S_ISDIR(info.st_mode) or info.st_uid!=os.getuid() or stat.S_IMODE(info.st_mode)!=0o700:raise RuntimeError('private launcher parent directory changed')
+  if sha(runtime/'bin/Xwayland')!=row['launcherSHA256']:raise RuntimeError('private PATH launcher changed')
+  display,fds=parse_args(sys.argv[1:]);parent=process(os.getppid());pargs=argv(parent['pid'])
+  if Path('/proc/'+str(parent['pid'])+'/exe').resolve()!=Path('/usr/bin/Hyprland') or pargs!=['/usr/bin/Hyprland','--config',str(config)]:raise RuntimeError('Xwayland requires exact private Hyprland parent')

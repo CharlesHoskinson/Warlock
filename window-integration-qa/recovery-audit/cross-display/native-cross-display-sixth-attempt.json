@@ -1,0 +1,1958 @@
+{
+  "checks": [
+    {
+      "name": "actual FileList copy target",
+      "pass_": true,
+      "event": {
+        "event": "drop",
+        "nativeType": "Gdk.FileList",
+        "uris": [
+          "file:///tmp/native-cross-display-w7vux2r3/copy%20payload%20with%20spaces.bin"
+        ],
+        "bytes": 262166,
+        "sha256": "b002780c5fbf3b1cef1fab39ab213606e0c342175f95fbf01d59a87fbd3819f2",
+        "copy": "/tmp/native-cross-display-w7vux2r3/target-copies/received-52808131181784.bin",
+        "x": 200.0,
+        "y": 130.0,
+        "time": 52808.131429528
+      }
+    },
+    {
+      "name": "direct cross-display baseline owns destination output",
+      "pass_": true
+    },
+    {
+      "name": "leave remote taskbar before dwell preserves minimized target",
+      "pass_": true
+    },
+    {
+      "name": "remote singleton restore retains destination identity and display",
+      "pass_": true
+    },
+    {
+      "name": "actual FileList copy target",
+      "pass_": true,
+      "event": {
+        "event": "drop",
+        "nativeType": "Gdk.FileList",
+        "uris": [
+          "file:///tmp/native-cross-display-w7vux2r3/copy%20payload%20with%20spaces.bin"
+        ],
+        "bytes": 262166,
+        "sha256": "b002780c5fbf3b1cef1fab39ab213606e0c342175f95fbf01d59a87fbd3819f2",
+        "copy": "/tmp/native-cross-display-w7vux2r3/target-copies/received-52815212904958.bin",
+        "x": 200.0,
+        "y": 130.0,
+        "time": 52815.213093854
+      }
+    },
+    {
+      "name": "remote group chooser preserves both minimized destinations",
+      "pass_": true,
+      "chooser": {
+        "screenName": "WINDOW-PARITY-FILE-DRAG-QA",
+        "monitorGeometry": {
+          "x": 1600,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "barOffset": {
+          "x": 0,
+          "y": 0
+        },
+        "barSize": {
+          "width": 1280,
+          "height": 26
+        },
+        "fileDragActive": true,
+        "fileDragOnTaskbar": true,
+        "fileDragStamp": 52819285,
+        "filePreviewKey": "",
+        "dropSize": [
+          38,
+          26
+        ],
+        "dragEntries": 5,
+        "dragGroupKey": "class:org.omarchy.crossdragtargetqa",
+        "dragActivated": false,
+        "taskbarItems": [
+          {
+            "key": "class:org.omarchy.crossdragtargetqa",
+            "x": 166.5,
+            "y": 0,
+            "width": 38,
+            "height": 26,
+            "windows": [
+              "0x5a02b0a59f50",
+              "0x5a02af304020"
+            ]
+          }
+        ],
+        "previewItems": [
+          {
+            "address": "0x5a02b0a59f50",
+            "x": 42,
+            "y": 70,
+            "width": 288,
+            "height": 149
+          },
+          {
+            "address": "0x5a02af304020",
+            "x": 42,
+            "y": 225,
+            "width": 288,
+            "height": 149
+          }
+        ],
+        "groups": 1,
+        "wheelEvents": 0,
+        "currentMonitor": 1,
+        "selectedWindowIndex": 0,
+        "popupScrollY": 0,
+        "popupViewportHeight": 322,
+        "popupContentHeight": 327,
+        "menuLabels": [
+          "Restore all 2 windows",
+          "Pin another application\u2026",
+          "Combine: Always",
+          "Combine: When taskbar is full",
+          "Combine: Never",
+          "Show windows on all displays",
+          "Show windows on this display",
+          "Taskbar: Current desktop",
+          "Taskbar: All desktops",
+          "Alt+Tab: Current desktop",
+          "Alt+Tab: All desktops"
+        ],
+        "currentDesktop": "2",
+        "indicators": [
+          {
+            "key": "class:org.omarchy.crossdragtargetqa",
+            "windows": [
+              "0x5a02b0a59f50",
+              "0x5a02af304020"
+            ],
+            "launcher": {},
+            "urgent": false
+          }
+        ],
+        "popupOpen": true,
+        "popupIndex": 0,
+        "menuMode": false,
+        "keyboardMode": false,
+        "keyboardFocus": false,
+        "combineMode": "always",
+        "displayMode": "monitor",
+        "desktopScope": "all",
+        "switcherScope": "current"
+      }
+    },
+    {
+      "name": "remote preview restores exact peer only",
+      "pass_": true
+    },
+    {
+      "name": "actual FileList copy peer",
+      "pass_": true,
+      "event": {
+        "event": "drop",
+        "nativeType": "Gdk.FileList",
+        "uris": [
+          "file:///tmp/native-cross-display-w7vux2r3/copy%20payload%20with%20spaces.bin"
+        ],
+        "bytes": 262166,
+        "sha256": "b002780c5fbf3b1cef1fab39ab213606e0c342175f95fbf01d59a87fbd3819f2",
+        "copy": "/tmp/native-cross-display-w7vux2r3/peer-copies/received-52821576437934.bin",
+        "x": 200.1328125,
+        "y": 130.0,
+        "time": 52821.576666876
+      }
+    },
+    {
+      "name": "cancel preserves minimized destinations and clears remote hover",
+      "pass_": true
+    }
+  ],
+  "kind": "native physical plus temporary headless output; no physical hotplug claim",
+  "before": {
+    "monitors": [
+      {
+        "id": 0,
+        "name": "eDP-2",
+        "description": "Samsung Display Corp. ATNA60HU01-0",
+        "make": "Samsung Display Corp.",
+        "model": "ATNA60HU01-0 ",
+        "serial": "",
+        "width": 2560,
+        "height": 1600,
+        "physicalWidth": 340,
+        "physicalHeight": 220,
+        "refreshRate": 240.0,
+        "x": 0,
+        "y": 0,
+        "activeWorkspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "specialWorkspace": {
+          "id": 0,
+          "name": ""
+        },
+        "reserved": [
+          0,
+          26,
+          0,
+          0
+        ],
+        "scale": 1.6,
+        "transform": 0,
+        "focused": true,
+        "dpmsStatus": true,
+        "vrr": false,
+        "solitary": "0",
+        "solitaryBlockedBy": [
+          "WINDOWED",
+          "CANDIDATE"
+        ],
+        "activelyTearing": false,
+        "tearingBlockedBy": [
+          "NOT_TORN",
+          "USER",
+          "CANDIDATE"
+        ],
+        "directScanoutTo": "0",
+        "directScanoutBlockedBy": [
+          "USER",
+          "SW",
+          "CANDIDATE"
+        ],
+        "disabled": false,
+        "currentFormat": "XRGB8888",
+        "mirrorOf": "none",
+        "availableModes": [
+          "2560x1600@240.00Hz",
+          "2560x1600@60.00Hz"
+        ],
+        "colorManagementPreset": "srgb",
+        "sdrBrightness": 1,
+        "sdrSaturation": 1,
+        "sdrMinLuminance": 0.2,
+        "sdrMaxLuminance": 80,
+        "hardwareCursorsInUse": false
+      }
+    ],
+    "clients": [
+      [
+        "0x5a02aee429f0",
+        4007,
+        "18000005"
+      ],
+      [
+        "0x5a02b0cc9280",
+        4311,
+        "18000006"
+      ],
+      [
+        "0x5a02afd20bd0",
+        361074,
+        "18000076"
+      ],
+      [
+        "0x5a02afa13e90",
+        252010,
+        "1800006a"
+      ]
+    ],
+    "focus": [
+      "0x5a02afa13e90",
+      252010,
+      "1800006a"
+    ],
+    "cursor": {
+      "x": 527,
+      "y": 539
+    },
+    "a11y": {
+      "exists": true,
+      "dev": 84,
+      "inode": 91312,
+      "connects": true
+    },
+    "catalogHashes": {
+      "/home/hoskinson/.config/omarchy/virtual-desktops.json": "66b06cbd906fff7a6e0cfcca616a9ef70d26b57ca3529d578d0972325fd01fd0",
+      "/home/hoskinson/.config/omarchy/taskbar-settings.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-order.json": null,
+      "/home/hoskinson/.config/omarchy/taskbar-session-order.json": "09c3f0bfbd9ad53dc69d7e74f3146e47dfb6fca54f846713fa31f8cdb1160fbf"
+    }
+  },
+  "dropDiagnostics": [
+    {
+      "before": {
+        "address": "0x5a02b0a59f50",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          1800,
+          200
+        ],
+        "size": [
+          400,
+          260
+        ],
+        "workspace": {
+          "id": 2,
+          "name": "2"
+        },
+        "floating": true,
+        "monitor": 1,
+        "class": "org.omarchy.CrossDragTargetQA",
+        "title": "File drag QA target",
+        "initialClass": "org.omarchy.CrossDragTargetQA",
+        "initialTitle": "File drag QA target",
+        "pid": 2769809,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "180003c0"
+      },
+      "move": [
+        2000,
+        330
+      ],
+      "cursorBefore": {
+        "x": 739,
+        "y": 580
+      },
+      "statesBefore": [
+        {
+          "screenName": "eDP-2",
+          "monitorGeometry": {
+            "x": 0,
+            "y": 0,
+            "width": 1600,
+            "height": 1000
+          },
+          "barOffset": {
+            "x": 0,
+            "y": 0
+          },
+          "barSize": {
+            "width": 1600,
+            "height": 26
+          },
+          "fileDragActive": true,
+          "fileDragOnTaskbar": false,
+          "fileDragStamp": 52806969,
+          "filePreviewKey": "",
+          "dropSize": [
+            120,
+            26
+          ],
+          "dragEntries": 0,
+          "dragGroupKey": "",
+          "dragActivated": false,
+          "taskbarItems": [
+            {
+              "key": "brave-browser",
+              "x": 166.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02b0cc9280"
+              ]
+            },
+            {
+              "key": "foot",
+              "x": 207.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02aee429f0",
+                "0x5a02afd20bd0",
+                "0x5a02afa13e90"
+              ]
+            },
+            {
+              "key": "class:org.omarchy.crossdragsourceqa",
+              "x": 248.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02afecf4e0"
+              ]
+            }
+          ],
+          "previewItems": [],
+          "groups": 3,
+          "wheelEvents": 0,
+          "currentMonitor": 0,
+          "selectedWindowIndex": 0,
+          "popupScrollY": 0,
+          "popupViewportHeight": 167,
+          "popupContentHeight": 0,
+          "menuLabels": [],
+          "currentDesktop": "1",
+          "indicators": [
+            {
+              "key": "brave-browser",
+              "windows": [
+                "0x5a02b0cc9280"
+              ],
+              "launcher": {},
+              "urgent": false
+            },
+            {
+              "key": "foot",
+              "windows": [
+                "0x5a02aee429f0",
+                "0x5a02afd20bd0",
+                "0x5a02afa13e90"
+              ],
+              "launcher": {},
+              "urgent": false
+            },
+            {
+              "key": "class:org.omarchy.crossdragsourceqa",
+              "windows": [
+                "0x5a02afecf4e0"
+              ],
+              "launcher": {},
+              "urgent": false
+            }
+          ],
+          "popupOpen": false,
+          "popupIndex": -1,
+          "menuMode": false,
+          "keyboardMode": false,
+          "keyboardFocus": false,
+          "combineMode": "always",
+          "displayMode": "monitor",
+          "desktopScope": "all",
+          "switcherScope": "current"
+        },
+        {
+          "screenName": "WINDOW-PARITY-FILE-DRAG-QA",
+          "monitorGeometry": {
+            "x": 1600,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          },
+          "barOffset": {
+            "x": 0,
+            "y": 0
+          },
+          "barSize": {
+            "width": 1280,
+            "height": 26
+          },
+          "fileDragActive": true,
+          "fileDragOnTaskbar": false,
+          "fileDragStamp": 52806969,
+          "filePreviewKey": "",
+          "dropSize": [
+            38,
+            26
+          ],
+          "dragEntries": 0,
+          "dragGroupKey": "",
+          "dragActivated": false,
+          "taskbarItems": [
+            {
+              "key": "class:org.omarchy.crossdragtargetqa",
+              "x": 166.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02b0a59f50"
+              ]
+            }
+          ],
+          "previewItems": [],
+          "groups": 1,
+          "wheelEvents": 0,
+          "currentMonitor": 1,
+          "selectedWindowIndex": 0,
+          "popupScrollY": 0,
+          "popupViewportHeight": 167,
+          "popupContentHeight": 0,
+          "menuLabels": [],
+          "currentDesktop": "1",
+          "indicators": [
+            {
+              "key": "class:org.omarchy.crossdragtargetqa",
+              "windows": [
+                "0x5a02b0a59f50"
+              ],
+              "launcher": {},
+              "urgent": false
+            }
+          ],
+          "popupOpen": false,
+          "popupIndex": -1,
+          "menuMode": false,
+          "keyboardMode": false,
+          "keyboardFocus": false,
+          "combineMode": "always",
+          "displayMode": "monitor",
+          "desktopScope": "all",
+          "switcherScope": "current"
+        }
+      ],
+      "motionBefore": [],
+      "cursor": {
+        "x": 2000,
+        "y": 330
+      },
+      "statesUnderPointer": [
+        {
+          "screenName": "eDP-2",
+          "monitorGeometry": {
+            "x": 0,
+            "y": 0,
+            "width": 1600,
+            "height": 1000
+          },
+          "barOffset": {
+            "x": 0,
+            "y": 0
+          },
+          "barSize": {
+            "width": 1600,
+            "height": 26
+          },
+          "fileDragActive": true,
+          "fileDragOnTaskbar": false,
+          "fileDragStamp": 52808069,
+          "filePreviewKey": "",
+          "dropSize": [
+            120,
+            26
+          ],
+          "dragEntries": 0,
+          "dragGroupKey": "",
+          "dragActivated": false,
+          "taskbarItems": [
+            {
+              "key": "brave-browser",
+              "x": 166.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02b0cc9280"
+              ]
+            },
+            {
+              "key": "foot",
+              "x": 207.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02aee429f0",
+                "0x5a02afd20bd0",
+                "0x5a02afa13e90"
+              ]
+            },
+            {
+              "key": "class:org.omarchy.crossdragsourceqa",
+              "x": 248.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02afecf4e0"
+              ]
+            }
+          ],
+          "previewItems": [],
+          "groups": 3,
+          "wheelEvents": 0,
+          "currentMonitor": 0,
+          "selectedWindowIndex": 0,
+          "popupScrollY": 0,
+          "popupViewportHeight": 167,
+          "popupContentHeight": 0,
+          "menuLabels": [],
+          "currentDesktop": "2",
+          "indicators": [
+            {
+              "key": "brave-browser",
+              "windows": [
+                "0x5a02b0cc9280"
+              ],
+              "launcher": {},
+              "urgent": false
+            },
+            {
+              "key": "foot",
+              "windows": [
+                "0x5a02aee429f0",
+                "0x5a02afd20bd0",
+                "0x5a02afa13e90"
+              ],
+              "launcher": {},
+              "urgent": false
+            },
+            {
+              "key": "class:org.omarchy.crossdragsourceqa",
+              "windows": [
+                "0x5a02afecf4e0"
+              ],
+              "launcher": {},
+              "urgent": false
+            }
+          ],
+          "popupOpen": false,
+          "popupIndex": -1,
+          "menuMode": false,
+          "keyboardMode": false,
+          "keyboardFocus": false,
+          "combineMode": "always",
+          "displayMode": "monitor",
+          "desktopScope": "all",
+          "switcherScope": "current"
+        },
+        {
+          "screenName": "WINDOW-PARITY-FILE-DRAG-QA",
+          "monitorGeometry": {
+            "x": 1600,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          },
+          "barOffset": {
+            "x": 0,
+            "y": 0
+          },
+          "barSize": {
+            "width": 1280,
+            "height": 26
+          },
+          "fileDragActive": true,
+          "fileDragOnTaskbar": false,
+          "fileDragStamp": 52808069,
+          "filePreviewKey": "",
+          "dropSize": [
+            38,
+            26
+          ],
+          "dragEntries": 0,
+          "dragGroupKey": "",
+          "dragActivated": false,
+          "taskbarItems": [
+            {
+              "key": "class:org.omarchy.crossdragtargetqa",
+              "x": 166.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02b0a59f50"
+              ]
+            }
+          ],
+          "previewItems": [],
+          "groups": 1,
+          "wheelEvents": 0,
+          "currentMonitor": 1,
+          "selectedWindowIndex": 0,
+          "popupScrollY": 0,
+          "popupViewportHeight": 167,
+          "popupContentHeight": 0,
+          "menuLabels": [],
+          "currentDesktop": "2",
+          "indicators": [
+            {
+              "key": "class:org.omarchy.crossdragtargetqa",
+              "windows": [
+                "0x5a02b0a59f50"
+              ],
+              "launcher": {},
+              "urgent": false
+            }
+          ],
+          "popupOpen": false,
+          "popupIndex": -1,
+          "menuMode": false,
+          "keyboardMode": false,
+          "keyboardFocus": false,
+          "combineMode": "always",
+          "displayMode": "monitor",
+          "desktopScope": "all",
+          "switcherScope": "current"
+        }
+      ],
+      "windowUnderPointer": {
+        "address": "0x5a02b0a59f50",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          1800,
+          200
+        ],
+        "size": [
+          400,
+          260
+        ],
+        "workspace": {
+          "id": 2,
+          "name": "2"
+        },
+        "floating": true,
+        "monitor": 1,
+        "class": "org.omarchy.CrossDragTargetQA",
+        "title": "File drag QA target",
+        "initialClass": "org.omarchy.CrossDragTargetQA",
+        "initialTitle": "File drag QA target",
+        "pid": 2769809,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "180003c0"
+      },
+      "nativeDrag": "ok"
+    },
+    {
+      "before": {
+        "address": "0x5a02b0a59f50",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          1800,
+          200
+        ],
+        "size": [
+          400,
+          260
+        ],
+        "workspace": {
+          "id": 2,
+          "name": "2"
+        },
+        "floating": true,
+        "monitor": 1,
+        "class": "org.omarchy.CrossDragTargetQA",
+        "title": "File drag QA target",
+        "initialClass": "org.omarchy.CrossDragTargetQA",
+        "initialTitle": "File drag QA target",
+        "pid": 2769809,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "180003c0"
+      },
+      "move": [
+        2000,
+        330
+      ],
+      "cursorBefore": {
+        "x": 2000,
+        "y": 330
+      },
+      "statesBefore": [
+        {
+          "screenName": "eDP-2",
+          "monitorGeometry": {
+            "x": 0,
+            "y": 0,
+            "width": 1600,
+            "height": 1000
+          },
+          "barOffset": {
+            "x": 0,
+            "y": 0
+          },
+          "barSize": {
+            "width": 1600,
+            "height": 26
+          },
+          "fileDragActive": true,
+          "fileDragOnTaskbar": false,
+          "fileDragStamp": 52814279,
+          "filePreviewKey": "",
+          "dropSize": [
+            120,
+            26
+          ],
+          "dragEntries": 0,
+          "dragGroupKey": "",
+          "dragActivated": false,
+          "taskbarItems": [
+            {
+              "key": "brave-browser",
+              "x": 166.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02b0cc9280"
+              ]
+            },
+            {
+              "key": "foot",
+              "x": 207.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02aee429f0",
+                "0x5a02afd20bd0",
+                "0x5a02afa13e90"
+              ]
+            },
+            {
+              "key": "class:org.omarchy.crossdragsourceqa",
+              "x": 248.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02afecf4e0"
+              ]
+            }
+          ],
+          "previewItems": [],
+          "groups": 3,
+          "wheelEvents": 0,
+          "currentMonitor": 0,
+          "selectedWindowIndex": 0,
+          "popupScrollY": 0,
+          "popupViewportHeight": 167,
+          "popupContentHeight": 0,
+          "menuLabels": [],
+          "currentDesktop": "2",
+          "indicators": [
+            {
+              "key": "brave-browser",
+              "windows": [
+                "0x5a02b0cc9280"
+              ],
+              "launcher": {},
+              "urgent": false
+            },
+            {
+              "key": "foot",
+              "windows": [
+                "0x5a02aee429f0",
+                "0x5a02afd20bd0",
+                "0x5a02afa13e90"
+              ],
+              "launcher": {},
+              "urgent": false
+            },
+            {
+              "key": "class:org.omarchy.crossdragsourceqa",
+              "windows": [
+                "0x5a02afecf4e0"
+              ],
+              "launcher": {},
+              "urgent": false
+            }
+          ],
+          "popupOpen": false,
+          "popupIndex": -1,
+          "menuMode": false,
+          "keyboardMode": false,
+          "keyboardFocus": false,
+          "combineMode": "always",
+          "displayMode": "monitor",
+          "desktopScope": "all",
+          "switcherScope": "current"
+        },
+        {
+          "screenName": "WINDOW-PARITY-FILE-DRAG-QA",
+          "monitorGeometry": {
+            "x": 1600,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          },
+          "barOffset": {
+            "x": 0,
+            "y": 0
+          },
+          "barSize": {
+            "width": 1280,
+            "height": 26
+          },
+          "fileDragActive": true,
+          "fileDragOnTaskbar": false,
+          "fileDragStamp": 52814279,
+          "filePreviewKey": "",
+          "dropSize": [
+            38,
+            26
+          ],
+          "dragEntries": 4,
+          "dragGroupKey": "",
+          "dragActivated": true,
+          "taskbarItems": [
+            {
+              "key": "class:org.omarchy.crossdragtargetqa",
+              "x": 166.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02b0a59f50"
+              ]
+            }
+          ],
+          "previewItems": [
+            {
+              "address": "0x5a02b0a59f50",
+              "x": 0,
+              "y": 0,
+              "width": 288,
+              "height": 149
+            }
+          ],
+          "groups": 1,
+          "wheelEvents": 0,
+          "currentMonitor": 1,
+          "selectedWindowIndex": 0,
+          "popupScrollY": 0,
+          "popupViewportHeight": 167,
+          "popupContentHeight": 172,
+          "menuLabels": [
+            "Pin another application\u2026",
+            "Combine: Always",
+            "Combine: When taskbar is full",
+            "Combine: Never",
+            "Show windows on all displays",
+            "Show windows on this display",
+            "Taskbar: Current desktop",
+            "Taskbar: All desktops",
+            "Alt+Tab: Current desktop",
+            "Alt+Tab: All desktops"
+          ],
+          "currentDesktop": "2",
+          "indicators": [
+            {
+              "key": "class:org.omarchy.crossdragtargetqa",
+              "windows": [
+                "0x5a02b0a59f50"
+              ],
+              "launcher": {},
+              "urgent": false
+            }
+          ],
+          "popupOpen": false,
+          "popupIndex": 0,
+          "menuMode": false,
+          "keyboardMode": false,
+          "keyboardFocus": false,
+          "combineMode": "always",
+          "displayMode": "monitor",
+          "desktopScope": "all",
+          "switcherScope": "current"
+        }
+      ],
+      "motionBefore": [],
+      "cursor": {
+        "x": 2000,
+        "y": 330
+      },
+      "statesUnderPointer": [
+        {
+          "screenName": "eDP-2",
+          "monitorGeometry": {
+            "x": 0,
+            "y": 0,
+            "width": 1600,
+            "height": 1000
+          },
+          "barOffset": {
+            "x": 0,
+            "y": 0
+          },
+          "barSize": {
+            "width": 1600,
+            "height": 26
+          },
+          "fileDragActive": true,
+          "fileDragOnTaskbar": false,
+          "fileDragStamp": 52814879,
+          "filePreviewKey": "",
+          "dropSize": [
+            120,
+            26
+          ],
+          "dragEntries": 0,
+          "dragGroupKey": "",
+          "dragActivated": false,
+          "taskbarItems": [
+            {
+              "key": "brave-browser",
+              "x": 166.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02b0cc9280"
+              ]
+            },
+            {
+              "key": "foot",
+              "x": 207.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02aee429f0",
+                "0x5a02afd20bd0",
+                "0x5a02afa13e90"
+              ]
+            },
+            {
+              "key": "class:org.omarchy.crossdragsourceqa",
+              "x": 248.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02afecf4e0"
+              ]
+            }
+          ],
+          "previewItems": [],
+          "groups": 3,
+          "wheelEvents": 0,
+          "currentMonitor": 0,
+          "selectedWindowIndex": 0,
+          "popupScrollY": 0,
+          "popupViewportHeight": 167,
+          "popupContentHeight": 0,
+          "menuLabels": [],
+          "currentDesktop": "2",
+          "indicators": [
+            {
+              "key": "brave-browser",
+              "windows": [
+                "0x5a02b0cc9280"
+              ],
+              "launcher": {},
+              "urgent": false
+            },
+            {
+              "key": "foot",
+              "windows": [
+                "0x5a02aee429f0",
+                "0x5a02afd20bd0",
+                "0x5a02afa13e90"
+              ],
+              "launcher": {},
+              "urgent": false
+            },
+            {
+              "key": "class:org.omarchy.crossdragsourceqa",
+              "windows": [
+                "0x5a02afecf4e0"
+              ],
+              "launcher": {},
+              "urgent": false
+            }
+          ],
+          "popupOpen": false,
+          "popupIndex": -1,
+          "menuMode": false,
+          "keyboardMode": false,
+          "keyboardFocus": false,
+          "combineMode": "always",
+          "displayMode": "monitor",
+          "desktopScope": "all",
+          "switcherScope": "current"
+        },
+        {
+          "screenName": "WINDOW-PARITY-FILE-DRAG-QA",
+          "monitorGeometry": {
+            "x": 1600,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          },
+          "barOffset": {
+            "x": 0,
+            "y": 0
+          },
+          "barSize": {
+            "width": 1280,
+            "height": 26
+          },
+          "fileDragActive": true,
+          "fileDragOnTaskbar": false,
+          "fileDragStamp": 52814879,
+          "filePreviewKey": "",
+          "dropSize": [
+            38,
+            26
+          ],
+          "dragEntries": 4,
+          "dragGroupKey": "",
+          "dragActivated": true,
+          "taskbarItems": [
+            {
+              "key": "class:org.omarchy.crossdragtargetqa",
+              "x": 166.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02b0a59f50"
+              ]
+            }
+          ],
+          "previewItems": [
+            {
+              "address": "0x5a02b0a59f50",
+              "x": 0,
+              "y": 0,
+              "width": 288,
+              "height": 149
+            }
+          ],
+          "groups": 1,
+          "wheelEvents": 0,
+          "currentMonitor": 1,
+          "selectedWindowIndex": 0,
+          "popupScrollY": 0,
+          "popupViewportHeight": 167,
+          "popupContentHeight": 172,
+          "menuLabels": [
+            "Pin another application\u2026",
+            "Combine: Always",
+            "Combine: When taskbar is full",
+            "Combine: Never",
+            "Show windows on all displays",
+            "Show windows on this display",
+            "Taskbar: Current desktop",
+            "Taskbar: All desktops",
+            "Alt+Tab: Current desktop",
+            "Alt+Tab: All desktops"
+          ],
+          "currentDesktop": "2",
+          "indicators": [
+            {
+              "key": "class:org.omarchy.crossdragtargetqa",
+              "windows": [
+                "0x5a02b0a59f50"
+              ],
+              "launcher": {},
+              "urgent": false
+            }
+          ],
+          "popupOpen": false,
+          "popupIndex": 0,
+          "menuMode": false,
+          "keyboardMode": false,
+          "keyboardFocus": false,
+          "combineMode": "always",
+          "displayMode": "monitor",
+          "desktopScope": "all",
+          "switcherScope": "current"
+        }
+      ],
+      "windowUnderPointer": {
+        "address": "0x5a02b0a59f50",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          1800,
+          200
+        ],
+        "size": [
+          400,
+          260
+        ],
+        "workspace": {
+          "id": 2,
+          "name": "2"
+        },
+        "floating": true,
+        "monitor": 1,
+        "class": "org.omarchy.CrossDragTargetQA",
+        "title": "File drag QA target",
+        "initialClass": "org.omarchy.CrossDragTargetQA",
+        "initialTitle": "File drag QA target",
+        "pid": 2769809,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "180003c0"
+      },
+      "nativeDrag": "ok"
+    },
+    {
+      "before": {
+        "address": "0x5a02af304020",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          1800,
+          200
+        ],
+        "size": [
+          400,
+          260
+        ],
+        "workspace": {
+          "id": 2,
+          "name": "2"
+        },
+        "floating": true,
+        "monitor": 1,
+        "class": "org.omarchy.CrossDragTargetQA",
+        "title": "File drag QA peer",
+        "initialClass": "org.omarchy.CrossDragTargetQA",
+        "initialTitle": "File drag QA peer",
+        "pid": 2773117,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "180003c2"
+      },
+      "move": [
+        2000,
+        330
+      ],
+      "cursorBefore": {
+        "x": 2000,
+        "y": 330
+      },
+      "statesBefore": [
+        {
+          "screenName": "eDP-2",
+          "monitorGeometry": {
+            "x": 0,
+            "y": 0,
+            "width": 1600,
+            "height": 1000
+          },
+          "barOffset": {
+            "x": 0,
+            "y": 0
+          },
+          "barSize": {
+            "width": 1600,
+            "height": 26
+          },
+          "fileDragActive": true,
+          "fileDragOnTaskbar": false,
+          "fileDragStamp": 52820586,
+          "filePreviewKey": "",
+          "dropSize": [
+            120,
+            26
+          ],
+          "dragEntries": 0,
+          "dragGroupKey": "",
+          "dragActivated": false,
+          "taskbarItems": [
+            {
+              "key": "brave-browser",
+              "x": 166.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02b0cc9280"
+              ]
+            },
+            {
+              "key": "foot",
+              "x": 207.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02aee429f0",
+                "0x5a02afd20bd0",
+                "0x5a02afa13e90"
+              ]
+            },
+            {
+              "key": "class:org.omarchy.crossdragsourceqa",
+              "x": 248.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02afecf4e0"
+              ]
+            }
+          ],
+          "previewItems": [],
+          "groups": 3,
+          "wheelEvents": 0,
+          "currentMonitor": 0,
+          "selectedWindowIndex": 0,
+          "popupScrollY": 0,
+          "popupViewportHeight": 167,
+          "popupContentHeight": 0,
+          "menuLabels": [],
+          "currentDesktop": "2",
+          "indicators": [
+            {
+              "key": "brave-browser",
+              "windows": [
+                "0x5a02b0cc9280"
+              ],
+              "launcher": {},
+              "urgent": false
+            },
+            {
+              "key": "foot",
+              "windows": [
+                "0x5a02aee429f0",
+                "0x5a02afd20bd0",
+                "0x5a02afa13e90"
+              ],
+              "launcher": {},
+              "urgent": false
+            },
+            {
+              "key": "class:org.omarchy.crossdragsourceqa",
+              "windows": [
+                "0x5a02afecf4e0"
+              ],
+              "launcher": {},
+              "urgent": false
+            }
+          ],
+          "popupOpen": false,
+          "popupIndex": -1,
+          "menuMode": false,
+          "keyboardMode": false,
+          "keyboardFocus": false,
+          "combineMode": "always",
+          "displayMode": "monitor",
+          "desktopScope": "all",
+          "switcherScope": "current"
+        },
+        {
+          "screenName": "WINDOW-PARITY-FILE-DRAG-QA",
+          "monitorGeometry": {
+            "x": 1600,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          },
+          "barOffset": {
+            "x": 0,
+            "y": 0
+          },
+          "barSize": {
+            "width": 1280,
+            "height": 26
+          },
+          "fileDragActive": true,
+          "fileDragOnTaskbar": false,
+          "fileDragStamp": 52820586,
+          "filePreviewKey": "",
+          "dropSize": [
+            38,
+            26
+          ],
+          "dragEntries": 5,
+          "dragGroupKey": "",
+          "dragActivated": true,
+          "taskbarItems": [
+            {
+              "key": "class:org.omarchy.crossdragtargetqa",
+              "x": 166.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02b0a59f50",
+                "0x5a02af304020"
+              ]
+            }
+          ],
+          "previewItems": [
+            {
+              "address": "0x5a02b0a59f50",
+              "x": 0,
+              "y": 0,
+              "width": 288,
+              "height": 149
+            },
+            {
+              "address": "0x5a02af304020",
+              "x": 0,
+              "y": 0,
+              "width": 288,
+              "height": 149
+            }
+          ],
+          "groups": 1,
+          "wheelEvents": 0,
+          "currentMonitor": 1,
+          "selectedWindowIndex": 0,
+          "popupScrollY": 0,
+          "popupViewportHeight": 322,
+          "popupContentHeight": 327,
+          "menuLabels": [
+            "Restore all 2 windows",
+            "Pin another application\u2026",
+            "Combine: Always",
+            "Combine: When taskbar is full",
+            "Combine: Never",
+            "Show windows on all displays",
+            "Show windows on this display",
+            "Taskbar: Current desktop",
+            "Taskbar: All desktops",
+            "Alt+Tab: Current desktop",
+            "Alt+Tab: All desktops"
+          ],
+          "currentDesktop": "2",
+          "indicators": [
+            {
+              "key": "class:org.omarchy.crossdragtargetqa",
+              "windows": [
+                "0x5a02b0a59f50",
+                "0x5a02af304020"
+              ],
+              "launcher": {},
+              "urgent": false
+            }
+          ],
+          "popupOpen": false,
+          "popupIndex": 0,
+          "menuMode": false,
+          "keyboardMode": false,
+          "keyboardFocus": false,
+          "combineMode": "always",
+          "displayMode": "monitor",
+          "desktopScope": "all",
+          "switcherScope": "current"
+        }
+      ],
+      "motionBefore": [],
+      "cursor": {
+        "x": 2000,
+        "y": 330
+      },
+      "statesUnderPointer": [
+        {
+          "screenName": "eDP-2",
+          "monitorGeometry": {
+            "x": 0,
+            "y": 0,
+            "width": 1600,
+            "height": 1000
+          },
+          "barOffset": {
+            "x": 0,
+            "y": 0
+          },
+          "barSize": {
+            "width": 1600,
+            "height": 26
+          },
+          "fileDragActive": true,
+          "fileDragOnTaskbar": false,
+          "fileDragStamp": 52821488,
+          "filePreviewKey": "",
+          "dropSize": [
+            120,
+            26
+          ],
+          "dragEntries": 0,
+          "dragGroupKey": "",
+          "dragActivated": false,
+          "taskbarItems": [
+            {
+              "key": "brave-browser",
+              "x": 166.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02b0cc9280"
+              ]
+            },
+            {
+              "key": "foot",
+              "x": 207.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02aee429f0",
+                "0x5a02afd20bd0",
+                "0x5a02afa13e90"
+              ]
+            },
+            {
+              "key": "class:org.omarchy.crossdragsourceqa",
+              "x": 248.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02afecf4e0"
+              ]
+            }
+          ],
+          "previewItems": [],
+          "groups": 3,
+          "wheelEvents": 0,
+          "currentMonitor": 0,
+          "selectedWindowIndex": 0,
+          "popupScrollY": 0,
+          "popupViewportHeight": 167,
+          "popupContentHeight": 0,
+          "menuLabels": [],
+          "currentDesktop": "2",
+          "indicators": [
+            {
+              "key": "brave-browser",
+              "windows": [
+                "0x5a02b0cc9280"
+              ],
+              "launcher": {},
+              "urgent": false
+            },
+            {
+              "key": "foot",
+              "windows": [
+                "0x5a02aee429f0",
+                "0x5a02afd20bd0",
+                "0x5a02afa13e90"
+              ],
+              "launcher": {},
+              "urgent": false
+            },
+            {
+              "key": "class:org.omarchy.crossdragsourceqa",
+              "windows": [
+                "0x5a02afecf4e0"
+              ],
+              "launcher": {},
+              "urgent": false
+            }
+          ],
+          "popupOpen": false,
+          "popupIndex": -1,
+          "menuMode": false,
+          "keyboardMode": false,
+          "keyboardFocus": false,
+          "combineMode": "always",
+          "displayMode": "monitor",
+          "desktopScope": "all",
+          "switcherScope": "current"
+        },
+        {
+          "screenName": "WINDOW-PARITY-FILE-DRAG-QA",
+          "monitorGeometry": {
+            "x": 1600,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          },
+          "barOffset": {
+            "x": 0,
+            "y": 0
+          },
+          "barSize": {
+            "width": 1280,
+            "height": 26
+          },
+          "fileDragActive": true,
+          "fileDragOnTaskbar": false,
+          "fileDragStamp": 52821488,
+          "filePreviewKey": "",
+          "dropSize": [
+            38,
+            26
+          ],
+          "dragEntries": 5,
+          "dragGroupKey": "",
+          "dragActivated": true,
+          "taskbarItems": [
+            {
+              "key": "class:org.omarchy.crossdragtargetqa",
+              "x": 166.5,
+              "y": 0,
+              "width": 38,
+              "height": 26,
+              "windows": [
+                "0x5a02b0a59f50",
+                "0x5a02af304020"
+              ]
+            }
+          ],
+          "previewItems": [
+            {
+              "address": "0x5a02b0a59f50",
+              "x": 0,
+              "y": 0,
+              "width": 288,
+              "height": 149
+            },
+            {
+              "address": "0x5a02af304020",
+              "x": 0,
+              "y": 0,
+              "width": 288,
+              "height": 149
+            }
+          ],
+          "groups": 1,
+          "wheelEvents": 0,
+          "currentMonitor": 1,
+          "selectedWindowIndex": 0,
+          "popupScrollY": 0,
+          "popupViewportHeight": 322,
+          "popupContentHeight": 327,
+          "menuLabels": [
+            "Restore all 2 windows",
+            "Pin another application\u2026",
+            "Combine: Always",
+            "Combine: When taskbar is full",
+            "Combine: Never",
+            "Show windows on all displays",
+            "Show windows on this display",
+            "Taskbar: Current desktop",
+            "Taskbar: All desktops",
+            "Alt+Tab: Current desktop",
+            "Alt+Tab: All desktops"
+          ],
+          "currentDesktop": "2",
+          "indicators": [
+            {
+              "key": "class:org.omarchy.crossdragtargetqa",
+              "windows": [
+                "0x5a02b0a59f50",
+                "0x5a02af304020"
+              ],
+              "launcher": {},
+              "urgent": false
+            }
+          ],
+          "popupOpen": false,
+          "popupIndex": 0,
+          "menuMode": false,
+          "keyboardMode": false,
+          "keyboardFocus": false,
+          "combineMode": "always",
+          "displayMode": "monitor",
+          "desktopScope": "all",
+          "switcherScope": "current"
+        }
+      ],
+      "windowUnderPointer": {
+        "address": "0x5a02af304020",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          1800,
+          200
+        ],
+        "size": [
+          400,
+          260
+        ],
+        "workspace": {
+          "id": 2,
+          "name": "2"
+        },
+        "floating": true,
+        "monitor": 1,
+        "class": "org.omarchy.CrossDragTargetQA",
+        "title": "File drag QA peer",
+        "initialClass": "org.omarchy.CrossDragTargetQA",
+        "initialTitle": "File drag QA peer",
+        "pid": 2773117,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "180003c2"
+      },
+      "nativeDrag": "ok"
+    }
+  ],
+  "result": "fail",
+  "error": "AssertionError('native drag relay active')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/cross-display/native_cross_display.py\", line 184, in perform\n    self.start();self.send(f'move {tx} {ty}\\nsleep 650\\n')\n    ~~~~~~~~~~^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/cross-display/native_cross_display.py\", line 80, in start\n    wait(lambda:any(s.get('fileDragActive') for s in self.states()),'native drag relay active')\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/window-integration-qa/recovery-audit/cross-display/native_cross_display.py\", line 34, in wait\n    raise AssertionError(label)\nAssertionError: native drag relay active\n",
+  "events": {
+    "source": [
+      {
+        "event": "begin",
+        "time": 52806.870332078
+      },
+      {
+        "event": "end",
+        "delete": false,
+        "time": 52808.131777673
+      },
+      {
+        "event": "begin",
+        "time": 52809.39030743
+      },
+      {
+        "event": "cancel",
+        "reason": "2",
+        "time": 52811.4444451
+      },
+      {
+        "event": "end",
+        "delete": false,
+        "time": 52811.444506835
+      },
+      {
+        "event": "begin",
+        "time": 52811.953455874
+      },
+      {
+        "event": "end",
+        "delete": false,
+        "time": 52815.213602297
+      },
+      {
+        "event": "begin",
+        "time": 52817.693302835
+      },
+      {
+        "event": "end",
+        "delete": false,
+        "time": 52821.5771259
+      },
+      {
+        "event": "begin",
+        "time": 52822.750314495
+      },
+      {
+        "event": "cancel",
+        "reason": "2",
+        "time": 52824.203319689
+      },
+      {
+        "event": "end",
+        "delete": false,
+        "time": 52824.203377875
+      }
+    ],
+    "source2": [],
+    "target": [
+      {
+        "event": "enter",
+        "x": 0.0,
+        "y": 0.0,
+        "time": 52807.300314976
+      },
+      {
+        "event": "leave",
+        "time": 52808.126777859
+      },
+      {
+        "event": "drop",
+        "nativeType": "Gdk.FileList",
+        "uris": [
+          "file:///tmp/native-cross-display-w7vux2r3/copy%20payload%20with%20spaces.bin"
+        ],
+        "bytes": 262166,
+        "sha256": "b002780c5fbf3b1cef1fab39ab213606e0c342175f95fbf01d59a87fbd3819f2",
+        "copy": "/tmp/native-cross-display-w7vux2r3/target-copies/received-52808131181784.bin",
+        "x": 200.0,
+        "y": 130.0,
+        "time": 52808.131429528
+      },
+      {
+        "event": "enter",
+        "x": 0.0,
+        "y": 0.0,
+        "time": 52814.499915665
+      },
+      {
+        "event": "leave",
+        "time": 52815.209372682
+      },
+      {
+        "event": "drop",
+        "nativeType": "Gdk.FileList",
+        "uris": [
+          "file:///tmp/native-cross-display-w7vux2r3/copy%20payload%20with%20spaces.bin"
+        ],
+        "bytes": 262166,
+        "sha256": "b002780c5fbf3b1cef1fab39ab213606e0c342175f95fbf01d59a87fbd3819f2",
+        "copy": "/tmp/native-cross-display-w7vux2r3/target-copies/received-52815212904958.bin",
+        "x": 200.0,
+        "y": 130.0,
+        "time": 52815.213093854
+      }
+    ],
+    "peer": [
+      {
+        "event": "enter",
+        "x": 0.0,
+        "y": 0.0,
+        "time": 52820.744499659
+      },
+      {
+        "event": "leave",
+        "time": 52821.571931242
+      },
+      {
+        "event": "drop",
+        "nativeType": "Gdk.FileList",
+        "uris": [
+          "file:///tmp/native-cross-display-w7vux2r3/copy%20payload%20with%20spaces.bin"
+        ],
+        "bytes": 262166,
+        "sha256": "b002780c5fbf3b1cef1fab39ab213606e0c342175f95fbf01d59a87fbd3819f2",
+        "copy": "/tmp/native-cross-display-w7vux2r3/peer-copies/received-52821576437934.bin",
+        "x": 200.1328125,
+        "y": 130.0,
+        "time": 52821.576666876
+      }
+    ]
+  },
+  "restoration": {
+    "clientIdentities": true,
+    "clientWorkspaceAndPinned": true,
+    "outputs": true,
+    "catalogBytes": true,
+    "focus": true,
+    "cursor": true,
+    "a11y": true,
+    "dragCleared": true,
+    "configErrors": true,
+    "fixtureProcessesExited": true,
+    "clientGeometry": true
+  },
+  "gtkErrors": "",
+  "diagnosticEmptyRetries": [
+    {
+      "method": "stateAll",
+      "response": "Target not found.",
+      "time": 52809.747999611
+    },
+    {
+      "method": "stateAll",
+      "response": "Target not found.",
+      "time": 52823.108398235
+    },
+    {
+      "method": "stateAll",
+      "response": "Target not found.",
+      "time": 52823.227187254
+    }
+  ]
+}

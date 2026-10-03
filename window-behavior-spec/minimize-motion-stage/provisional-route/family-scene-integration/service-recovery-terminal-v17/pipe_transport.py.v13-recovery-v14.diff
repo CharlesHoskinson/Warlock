@@ -1,0 +1,34 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-responsive-v13/pipe_transport.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-recovery-v14/pipe_transport.py
+@@ -6,9 +6,18 @@
+ import time
+ 
+ class PipeTransport:
+-    def __init__(self, executable, *, env, failure, pass_fds=()):
+-        self.process=subprocess.Popen([str(executable)],env=env,stdin=subprocess.PIPE,
+-            stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,bufsize=1,pass_fds=pass_fds)
++    def __init__(self, executable, *, env, failure, pass_fds=(), launch_record=None, keeper=None, actor=None):
++        self.owned_launch=None
++        if keeper is not None:
++            from owned_launch import OwnedLaunch
++            match=__import__('re').fullmatch('/proc/self/fd/([0-9]+)',str(executable))
++            if match is None or int(match[1]) not in pass_fds:raise ValueError('selected sealed renderer descriptor required')
++            self.owned_launch=OwnedLaunch([str(executable)],env=env,keeper=keeper,kind='renderer',actor=actor,executable_fd=int(match[1]),record=launch_record,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,bufsize=1,pass_fds=pass_fds)
++            self.process=self.owned_launch.process
++        elif launch_record is None:
++            self.process=subprocess.Popen([str(executable)],env=env,stdin=subprocess.PIPE,
++                stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,bufsize=1,pass_fds=pass_fds)
++        else:raise ValueError('durable native renderer launch requires exact descriptor keeper')
+         self.failure=failure
+         self.callback=lambda event:None
+         self.lock=threading.Lock()
+@@ -134,6 +143,9 @@
+         self.threads[0].join(timeout=.2)
+         if code!=0:problems.append('renderer failed normal shutdown: '+str(code))
+         if self.failed:problems.append('renderer transport had already failed')
++        if self.owned_launch:
++            try:self.owned_launch.complete()
++            except Exception as error:problems.append('exact renderer group completion: '+str(error))
+         self.closed=True
+         if problems:
+             self.failed=True

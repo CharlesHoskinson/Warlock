@@ -1,0 +1,285 @@
+{
+  "updatedUTC": "2026-10-01T22:03:29.536018+00:00",
+  "reportSHA256": "7c5a1b971871cbb0ed9b59476c32c9f86caa84ed5aec1a98f10f18c0efa7720f",
+  "originalRootAuditSHA256": "ee9bb6176c5c88a254e404c882fc345b9ead515a55aebd11c83aa8ab009c9fbc",
+  "transportSHA256": "3efa9af32eece8dddf2a1e91d1520ebacc3e30b9cbcceb28f6e5bd5e1d20caad",
+  "verifierSHA256": "7a2d4d7d8c8e18e5cb96bb9989fbfb86ef248c501936c09c3f9e5fd967d9afc8",
+  "allIndependentSafetySourceAndCleanupChecks": true,
+  "all61NativeChecksPass": true,
+  "actualExactNormalRetirementAndUnload": true,
+  "unloadWitnesses": [
+    {
+      "unloadIndex": 76,
+      "identity": {
+        "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+        "packageID": "omarchy-a11y-prod-v2",
+        "incarnation": "bd7f5c06eff6a324b40c6bf1e43e853d53ca9bb4e0312265e6c7b532f1de0dc8",
+        "managerOwner": ":1.13"
+      },
+      "prepareReady": true,
+      "exactArtifactUnloadReply": "ok",
+      "moduleAbsentAfter": true,
+      "transportRows": [
+        {
+          "start": 102402.169321169,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "repl",
+            "return hl.plugin.omarchy_a11y.identity()"
+          ],
+          "result": "{\"instance\":\"efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238\",\"packageID\":\"omarchy-a11y-prod-v2\",\"incarnation\":\"bd7f5c06eff6a324b40c6bf1e43e853d53ca9bb4e0312265e6c7b532f1de0dc8\",\"managerOwner\":\":1.13\"}",
+          "end": 102402.172773611
+        },
+        {
+          "start": 102402.173713823,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "repl",
+            "return hl.plugin.omarchy_a11y.prepare_unload(\"efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238\",\"omarchy-a11y-prod-v2\",\"bd7f5c06eff6a324b40c6bf1e43e853d53ca9bb4e0312265e6c7b532f1de0dc8\")"
+          ],
+          "result": "{\"instance\":\"efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238\",\"packageID\":\"omarchy-a11y-prod-v2\",\"incarnation\":\"bd7f5c06eff6a324b40c6bf1e43e853d53ca9bb4e0312265e6c7b532f1de0dc8\",\"managerOwner\":\":1.13\",\"ready\":true}",
+          "end": 102402.17685697
+        },
+        {
+          "start": 102402.180189971,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "-j",
+            "plugin",
+            "list"
+          ],
+          "result": "[\n{\n    \"name\": \"omarchy-a11y-monitor\",\n    \"author\": \"Omarchy Orca compatibility\",\n    \"handle\": \"59b69e65e730\",\n    \"version\": \"0.8-production-v2\",\n    \"description\": \"Exact ABI native accessibility monitor; explicit reader subscriptions\"\n}]",
+          "end": 102402.183012737
+        },
+        {
+          "start": 102402.184686674,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "repl",
+            "return hl.plugin.omarchy_a11y.identity()"
+          ],
+          "result": "{\"instance\":\"efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238\",\"packageID\":\"omarchy-a11y-prod-v2\",\"incarnation\":\"bd7f5c06eff6a324b40c6bf1e43e853d53ca9bb4e0312265e6c7b532f1de0dc8\",\"managerOwner\":\":1.13\"}",
+          "end": 102402.187717661
+        },
+        {
+          "start": 102402.188451047,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "plugin",
+            "unload",
+            "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v4/native-maintenance-attempt-1/payload/native/libomarchy-a11y-prod-v2.so"
+          ],
+          "result": "ok",
+          "end": 102402.19184594
+        },
+        {
+          "start": 102402.194548828,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "-j",
+            "plugin",
+            "list"
+          ],
+          "result": "[]",
+          "end": 102402.197596227
+        }
+      ]
+    },
+    {
+      "unloadIndex": 87,
+      "identity": {
+        "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+        "packageID": "omarchy-a11y-prod-v2",
+        "incarnation": "3062624cf29c76e15a200a670379e9dfea78b9981a8d93234d0c0631b5a6e968",
+        "managerOwner": ":1.21"
+      },
+      "prepareReady": true,
+      "exactArtifactUnloadReply": "ok",
+      "moduleAbsentAfter": true,
+      "transportRows": [
+        {
+          "start": 102404.318327549,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "repl",
+            "return hl.plugin.omarchy_a11y.identity()"
+          ],
+          "result": "{\"instance\":\"efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238\",\"packageID\":\"omarchy-a11y-prod-v2\",\"incarnation\":\"3062624cf29c76e15a200a670379e9dfea78b9981a8d93234d0c0631b5a6e968\",\"managerOwner\":\":1.21\"}",
+          "end": 102404.322352156
+        },
+        {
+          "start": 102404.32390474,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "repl",
+            "return hl.plugin.omarchy_a11y.prepare_unload(\"efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238\",\"omarchy-a11y-prod-v2\",\"3062624cf29c76e15a200a670379e9dfea78b9981a8d93234d0c0631b5a6e968\")"
+          ],
+          "result": "{\"instance\":\"efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238\",\"packageID\":\"omarchy-a11y-prod-v2\",\"incarnation\":\"3062624cf29c76e15a200a670379e9dfea78b9981a8d93234d0c0631b5a6e968\",\"managerOwner\":\":1.21\",\"ready\":true}",
+          "end": 102404.328390267
+        },
+        {
+          "start": 102404.333827531,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "-j",
+            "plugin",
+            "list"
+          ],
+          "result": "[\n{\n    \"name\": \"omarchy-a11y-monitor\",\n    \"author\": \"Omarchy Orca compatibility\",\n    \"handle\": \"59b69d273960\",\n    \"version\": \"0.8-production-v2\",\n    \"description\": \"Exact ABI native accessibility monitor; explicit reader subscriptions\"\n}]",
+          "end": 102404.339150093
+        },
+        {
+          "start": 102404.3415218,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "repl",
+            "return hl.plugin.omarchy_a11y.identity()"
+          ],
+          "result": "{\"instance\":\"efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238\",\"packageID\":\"omarchy-a11y-prod-v2\",\"incarnation\":\"3062624cf29c76e15a200a670379e9dfea78b9981a8d93234d0c0631b5a6e968\",\"managerOwner\":\":1.21\"}",
+          "end": 102404.346372075
+        },
+        {
+          "start": 102404.347829652,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "plugin",
+            "unload",
+            "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v4/native-maintenance-attempt-1/payload/native/libomarchy-a11y-prod-v2.so"
+          ],
+          "result": "ok",
+          "end": 102404.352654622
+        },
+        {
+          "start": 102404.355459741,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "-j",
+            "plugin",
+            "list"
+          ],
+          "result": "[]",
+          "end": 102404.3596001
+        }
+      ]
+    },
+    {
+      "unloadIndex": 98,
+      "identity": {
+        "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+        "packageID": "omarchy-a11y-prod-v2",
+        "incarnation": "a7d4b81a05e3e50a52a7491a4530d5b641383cd39e5ddb73e8b4416735180476",
+        "managerOwner": ":1.25"
+      },
+      "prepareReady": true,
+      "exactArtifactUnloadReply": "ok",
+      "moduleAbsentAfter": true,
+      "transportRows": [
+        {
+          "start": 102405.186533949,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "repl",
+            "return hl.plugin.omarchy_a11y.identity()"
+          ],
+          "result": "{\"instance\":\"efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238\",\"packageID\":\"omarchy-a11y-prod-v2\",\"incarnation\":\"a7d4b81a05e3e50a52a7491a4530d5b641383cd39e5ddb73e8b4416735180476\",\"managerOwner\":\":1.25\"}",
+          "end": 102405.190315735
+        },
+        {
+          "start": 102405.191538575,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "repl",
+            "return hl.plugin.omarchy_a11y.prepare_unload(\"efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238\",\"omarchy-a11y-prod-v2\",\"a7d4b81a05e3e50a52a7491a4530d5b641383cd39e5ddb73e8b4416735180476\")"
+          ],
+          "result": "{\"instance\":\"efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238\",\"packageID\":\"omarchy-a11y-prod-v2\",\"incarnation\":\"a7d4b81a05e3e50a52a7491a4530d5b641383cd39e5ddb73e8b4416735180476\",\"managerOwner\":\":1.25\",\"ready\":true}",
+          "end": 102405.194971705
+        },
+        {
+          "start": 102405.1991675,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "-j",
+            "plugin",
+            "list"
+          ],
+          "result": "[\n{\n    \"name\": \"omarchy-a11y-monitor\",\n    \"author\": \"Omarchy Orca compatibility\",\n    \"handle\": \"59b69d4b98b0\",\n    \"version\": \"0.8-production-v2\",\n    \"description\": \"Exact ABI native accessibility monitor; explicit reader subscriptions\"\n}]",
+          "end": 102405.202727992
+        },
+        {
+          "start": 102405.204084059,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "repl",
+            "return hl.plugin.omarchy_a11y.identity()"
+          ],
+          "result": "{\"instance\":\"efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238\",\"packageID\":\"omarchy-a11y-prod-v2\",\"incarnation\":\"a7d4b81a05e3e50a52a7491a4530d5b641383cd39e5ddb73e8b4416735180476\",\"managerOwner\":\":1.25\"}",
+          "end": 102405.20797042
+        },
+        {
+          "start": 102405.20887542,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "plugin",
+            "unload",
+            "/home/hoskinson/window-integration-qa/recovery-audit/keyboard-monitor/production-native-proof-v4/native-maintenance-attempt-1/payload/native/libomarchy-a11y-prod-v2.so"
+          ],
+          "result": "ok",
+          "end": 102405.212443765
+        },
+        {
+          "start": 102405.215056889,
+          "arguments": [
+            "hyprctl",
+            "-i",
+            "efb50993780079460b0cbed1363e2166a2de1d9f_1790892044_1245959238",
+            "-j",
+            "plugin",
+            "list"
+          ],
+          "result": "[]",
+          "end": 102405.218569322
+        }
+      ]
+    }
+  ],
+  "privateMaintenanceAccepted": true,
+  "productionAccepted": false,
+  "physicalHardwareAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "mainGUIWrites": false,
+  "mainRestorationWrites": false
+}

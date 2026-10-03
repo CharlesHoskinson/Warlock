@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
+mkdir -p qa-traces
+for spec in window.qnt window_test.qnt desktop.qnt desktop_test.qnt navigation.qnt navigation_test.qnt launcher.qnt launcher_test.qnt taskbar_menu.qnt taskbar_menu_test.qnt monitor_owner.qnt monitor_owner_test.qnt pointer_focus.qnt pointer_focus_test.qnt native_drag.qnt native_drag_test.qnt drag_hover.qnt drag_hover_test.qnt drag_relay.qnt drag_relay_test.qnt modal_pointer.qnt modal_pointer_test.qnt modal_stack.qnt modal_stack_test.qnt caption_drag.qnt caption_drag_test.qnt accessibility.qnt accessibility_test.qnt motion.qnt motion_test.qnt minimize_motion.qnt minimize_motion_test.qnt session_recovery.qnt session_recovery_test.qnt; do
+  quint typecheck "$spec"
+done
+quint test window_test.qnt --verbosity 1
+quint test desktop_test.qnt --verbosity 1 --out-itf 'qa-traces/desktop-test-{test}-{seq}.itf.json'
+quint test navigation_test.qnt --verbosity 1 --out-itf 'qa-traces/navigation-test-{test}-{seq}.itf.json'
+quint test launcher_test.qnt --verbosity 1
+quint test taskbar_menu_test.qnt --verbosity 1
+quint test monitor_owner_test.qnt --verbosity 1
+quint test pointer_focus_test.qnt --verbosity 1
+quint test native_drag_test.qnt --verbosity 1
+quint test drag_hover_test.qnt --verbosity 1
+quint test drag_relay_test.qnt --verbosity 1
+quint test modal_pointer_test.qnt --verbosity 1
+quint test modal_stack_test.qnt --verbosity 1
+quint test caption_drag_test.qnt --verbosity 1
+quint test accessibility_test.qnt --verbosity 1
+quint test motion_test.qnt --verbosity 1
+quint typecheck minimize_commit.qnt
+quint typecheck minimize_commit_test.qnt
+quint typecheck whole_snapshot.qnt
+quint typecheck whole_snapshot_test.qnt
+quint typecheck attention_target.qnt
+quint typecheck attention_target_test.qnt
+quint typecheck freeze_contract.qnt
+quint typecheck freeze_contract_test.qnt
+quint typecheck responsive_layout.qnt
+quint typecheck responsive_layout_test.qnt
+quint typecheck family_scope.qnt
+quint typecheck family_scope_test.qnt
+quint typecheck family_commit_order.qnt
+quint typecheck family_commit_order_test.qnt
+quint typecheck stop_contract.qnt
+quint typecheck stop_contract_test.qnt
+quint test minimize_motion_test.qnt --verbosity 1
+quint test minimize_commit_test.qnt --verbosity 1
+quint test whole_snapshot_test.qnt --verbosity 1
+quint test attention_target_test.qnt --verbosity 1
+quint test freeze_contract_test.qnt --verbosity 1
+quint test responsive_layout_test.qnt --verbosity 1
+quint test family_scope_test.qnt --verbosity 1
+quint test family_commit_order_test.qnt --verbosity 1
+quint test stop_contract_test.qnt --verbosity 1
+quint test session_recovery_test.qnt --verbosity 1
+quint run window.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run desktop.qnt --invariant allProps --max-steps 150 --max-samples 2000 --seed 20260930 --verbosity 1 --out-itf 'qa-traces/desktop-{seq}.itf.json' --n-traces 30
+quint run navigation.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1 --out-itf 'qa-traces/navigation-{seq}.itf.json' --n-traces 10
+quint run launcher.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1 --out-itf 'qa-traces/launcher-{seq}.itf.json' --n-traces 20
+quint run taskbar_menu.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run monitor_owner.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1 --out-itf 'qa-traces/monitor-owner-{seq}.itf.json' --n-traces 20
+quint run pointer_focus.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run native_drag.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run drag_hover.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run drag_relay.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run modal_pointer.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run modal_stack.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run caption_drag.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run accessibility.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1 --out-itf 'qa-traces/accessibility-{seq}.itf.json' --n-traces 10
+quint run motion.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1 --out-itf 'qa-traces/motion-{seq}.itf.json' --n-traces 10
+quint run minimize_motion.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run session_recovery.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1 --out-itf '/home/hoskinson/window-integration-qa/recovery-audit/session-traces/session-{seq}.itf.json' --n-traces 10
+quint run minimize_commit.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1 --out-itf 'qa-traces/minimize-commit-{seq}.itf.json' --n-traces 30
+quint run whole_snapshot.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run attention_target.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run freeze_contract.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run responsive_layout.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run family_scope.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run family_commit_order.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+quint run stop_contract.qnt --invariant allProps --max-steps 100 --max-samples 2000 --seed 20260930 --verbosity 1
+python3 mbt_minimize_commit.py
+node test_drag_relay.js
+python3 mbt_launcher.py
+python3 mbt_desktop.py
+python3 mbt_monitor_owner.py
+python3 test_layouts.py
+python3 test_desktop_scope.py
+python3 test_family_state.py
+python3 test_group_resize.py
+lua fuzz_snap.lua "${SNAP_SOURCE:-$HOME/.config/hypr/snap.lua}"
+lua test_pin.lua "${PIN_SOURCE:-$HOME/.config/hypr/pin.lua}"
+python3 /home/hoskinson/window-integration-qa/test_windowctl.py
+python3 /home/hoskinson/window-integration-qa/test_files_summon.py
+python3 /home/hoskinson/window-integration-qa/test_desktop_identity.py
+python3 /home/hoskinson/window-integration-qa/fuzz_desktops.py
+python3 "$HOME/.local/share/hypr-taskbar/test_backend.py"
+
+# Recovery and motion replay use installed sources. The motion runner freezes
+# helper/widget bytes and records their hashes before exercising offline doubles.
+python3 /home/hoskinson/window-integration-qa/recovery-audit/mbt_session_recovery.py
+python3 /home/hoskinson/window-integration-qa/recovery-audit/test_snap_session.py
+python3 /home/hoskinson/window-integration-qa/recovery-audit/test_attention_recovery.py
+ATTENTION_SELECTION_HELPER="$HOME/.local/bin/hypr-taskbar-attention" python3 /home/hoskinson/window-integration-qa/recovery-audit/attention-selection/test_target_selection.py
+python3 minimize-motion-stage/stop-on-836/check_offline.py --helpers "$HOME/.local/bin" --widget "$HOME/.config/omarchy/plugins/hoskinson.windows/widget_v65" --report minimize-motion-stage/stop-on-836/installed-offline-report.json
+python3 /home/hoskinson/window-integration-qa/motion-probe/test_analyze.py

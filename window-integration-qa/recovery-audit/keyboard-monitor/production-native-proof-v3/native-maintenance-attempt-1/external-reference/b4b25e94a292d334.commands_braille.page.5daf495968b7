@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="commands_braille" xml:lang="id">
+  <info>
+    <link type="next" xref="commands_reading"/>
+    <link type="guide" xref="commands#speech_braille"/>
+    <link type="seealso" xref="preferences_braille"/>
+    <title type="sort">2. Braille</title>
+    <title type="link">Braille</title>
+    <desc>Executable perintah pada tampilan Braille</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020, 2025.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Perintah Braille</title>
+  <p>Perintah berikut memungkinkan Anda mengontrol <app>Orca</app> dari layar Braille yang dapat dimuat ulang, bukan papan ketik:</p>
+  <list>
+    <item><p>Pan braille display to the left: Line Left</p></item>
+    <item><p>Pan braille display to the right: Line Right</p></item>
+    <item><p>Toggle flat review mode: Freeze</p></item>
+    <item><p>Review the word above: Line Up</p></item>
+    <item><p>Review the word below: Line Down</p></item>
+    <item><p>Tinjau kiri bawah: Kanan Bawah</p></item>
+    <item><p>Tinjau posisi rumah: Kiri Atas</p></item>
+    <item><p>Contracted braille: Six Dots</p></item>
+    <item><p>Menandai awal dari pilihan teks: Mulai Potong</p></item>
+    <item><p>Menandai akhir dari pilihan teks: Potong Baris</p></item>
+    <item><p>Processes a cursor routing key: Cursor Routing</p></item>
+    <item><p>Kembali ke objek dengan fokus papan tik: Posisi Kursor</p></item>
+  </list>
+</page>

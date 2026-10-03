@@ -1,0 +1,97 @@
+#pragma once
+#include <QByteArray>
+#include <QCryptographicHash>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <cstdio>
+#include <cstdlib>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <fcntl.h>
+#include <linux/fs.h>
+#include <sys/ioctl.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <sys/sysmacros.h>
+#include <unistd.h>
+namespace OwnedRoute {
+struct MaterialMap {
+ uint64_t start=0,end=0,inode=0;unsigned major=0,minor=0;
+ std::string name,buildId,error;
+ QJsonObject json()const{return {{"start",QString::number(start,16)},{"end",QString::number(end,16)},{"inode",QString::number(inode)},{"device",QString::number(major,16)+":"+QString::number(minor,16)},{"path",QString::fromStdString(name)},{"buildId",QString::fromStdString(buildId)},{"error",QString::fromStdString(error)}};}
+};
+struct MaterialProof {
+ bool matches=false;std::string path,canonical,actualHash,expectedHash,expectedBuildId,error;
+ uint64_t inode=0;unsigned statMajor=0,statMinor=0;MaterialMap probe;std::vector<MaterialMap> maps;
+ QJsonObject json()const{QJsonArray entries;for(const auto& m:maps)entries.append(m.json());return {{"matches",matches},{"path",QString::fromStdString(path)},{"canonical",QString::fromStdString(canonical)},{"statInode",QString::number(inode)},{"statDevice",QString::number(statMajor,16)+":"+QString::number(statMinor,16)},{"actualHash",QString::fromStdString(actualHash)},{"expectedHash",QString::fromStdString(expectedHash)},{"expectedBuildId",QString::fromStdString(expectedBuildId)},{"probe",probe.json()},{"existingMaps",entries},{"error",QString::fromStdString(error)}};}
+};
+struct MaterialFD{int fd=-1;~MaterialFD(){if(fd>=0)close(fd);}};
+inline MaterialMap queryMaterialMap(int fd,uint64_t address){
+ MaterialMap r;char name[4096]{};unsigned char build[64]{};procmap_query q{};
+ q.size=sizeof(q);q.query_addr=address;q.query_flags=PROCMAP_QUERY_FILE_BACKED_VMA;
+ q.vma_name_size=sizeof(name);q.vma_name_addr=reinterpret_cast<uintptr_t>(name);
+ q.build_id_size=sizeof(build);q.build_id_addr=reinterpret_cast<uintptr_t>(build);
+ if(ioctl(fd,PROCMAP_QUERY,&q)){r.error="PROCMAP_QUERY errno "+std::to_string(errno);return r;}
+ r.start=q.vma_start;r.end=q.vma_end;r.inode=q.inode;r.major=q.dev_major;r.minor=q.dev_minor;
+ if(!q.vma_name_size||q.vma_name_size>sizeof(name)||name[q.vma_name_size-1]){r.error="missing/partial map path";return r;}
+ r.name=name;
+ if(q.build_id_size>sizeof(build)){r.error="partial build ID";return r;}
+ r.buildId=QByteArray(reinterpret_cast<const char*>(build),q.build_id_size).toHex().toStdString();
+ return r;
+}
+inline MaterialProof inspectMappedMaterial(const std::string& path,const std::string& expected,const std::string& expectedBuildId="") {
+ MaterialProof r;r.path=path;r.expectedHash=expected;r.expectedBuildId=expectedBuildId;
+ char* resolved=realpath(path.c_str(),nullptr);if(!resolved){r.error="realpath errno "+std::to_string(errno);return r;}
+ r.canonical=resolved;free(resolved);
+ MaterialFD file{open(r.canonical.c_str(),O_RDONLY|O_CLOEXEC|O_NOFOLLOW)};if(file.fd<0){r.error="open errno "+std::to_string(errno);return r;}
+ struct stat st{};
+ if(fstat(file.fd,&st)||!S_ISREG(st.st_mode)||st.st_size<=0||st.st_size>134217728){r.error="invalid regular material extent";return r;}
+ r.inode=st.st_ino;r.statMajor=major(st.st_dev);r.statMinor=minor(st.st_dev);
+ // Freeze original candidates before creating the fd probe; never promote probe.
+ std::ifstream existing("/proc/self/maps");std::string line;unsigned lines=0;
+ if(!existing){r.error="existing maps unavailable";return r;}
+ while(std::getline(existing,line)) {
+  if(++lines>4096){r.error="map iteration bound";return r;}
+  std::istringstream fields(line);std::string address,permissions,offset,device,inode,name;
+  if(!(fields>>address>>permissions>>offset>>device>>inode))continue;
+  std::getline(fields,name);name.erase(0,name.find_first_not_of(' '));
+  if(name!=r.canonical)continue;MaterialMap m;m.name=name;
+  auto dash=address.find('-');if(dash==std::string::npos){r.error="invalid map range";return r;}
+  try{m.start=std::stoull(address.substr(0,dash),nullptr,16);m.end=std::stoull(address.substr(dash+1),nullptr,16);m.inode=std::stoull(inode);}catch(...){r.error="invalid map identity";return r;}
+  if(m.end<=m.start||std::sscanf(device.c_str(),"%x:%x",&m.major,&m.minor)!=2){r.error="invalid map range/device";return r;}
+  r.maps.push_back(m);if(r.maps.size()>64){r.error="matching map bound";return r;}
+ }
+ if(r.maps.empty()){r.error="material not already mapped";return r;}
+ QCryptographicHash hash(QCryptographicHash::Sha256);char buffer[65536];ssize_t n=0;
+ while((n=read(file.fd,buffer,sizeof(buffer)))>0)hash.addData(QByteArrayView(buffer,n));
+ if(n<0){r.error="hash read errno "+std::to_string(errno);return r;}
+ r.actualHash=hash.result().toHex().toStdString();if(r.actualHash!=expected){r.error="material hash mismatch";return r;}
+ MaterialFD maps{open("/proc/self/maps",O_RDONLY|O_CLOEXEC)};if(maps.fd<0){r.error="maps ioctl open errno "+std::to_string(errno);return r;}
+ const auto page=sysconf(_SC_PAGESIZE);if(page<=0||page>65536){r.error="unsupported mapping page extent";return r;}
+ const size_t length=std::min<uint64_t>(st.st_size,4096);
+ void* address=mmap(nullptr,length,PROT_READ,MAP_PRIVATE,file.fd,0);
+ if(address==MAP_FAILED){r.error="fd probe mmap errno "+std::to_string(errno);return r;}
+ struct Unmap{void* p;size_t size;~Unmap(){munmap(p,size);}}probeGuard{address,length};
+ r.probe=queryMaterialMap(maps.fd,reinterpret_cast<uintptr_t>(address));
+ if(!r.probe.error.empty()){r.error=r.probe.error;return r;}
+ if(r.probe.name!=r.canonical||r.probe.inode!=r.inode||r.probe.start!=reinterpret_cast<uintptr_t>(address)||r.probe.end-r.probe.start!=((length+page-1)/page)*page){r.error="fd probe identity/range mismatch";return r;}
+ if(!expectedBuildId.empty()&&(r.probe.buildId.empty()||r.probe.buildId!=expectedBuildId)){r.error="fd probe missing/mismatched pinned ELF build ID";return r;}
+ bool complete=true;
+ for(auto& m:r.maps){
+  auto q=queryMaterialMap(maps.fd,m.start);
+  if(!q.error.empty()||q.start!=m.start||q.end!=m.end||q.name!=m.name||q.inode!=m.inode||q.major!=m.major||q.minor!=m.minor){m.error="existing mapping changed/query failed: "+q.error;complete=false;continue;}
+  m.buildId=q.buildId;
+  if(q.inode!=r.probe.inode||q.major!=r.probe.major||q.minor!=r.probe.minor||q.name!=r.probe.name||q.buildId!=r.probe.buildId){m.error="mapped object does not match hashed fd proof";complete=false;}
+  if(!expectedBuildId.empty()&&(q.buildId.empty()||q.buildId!=expectedBuildId)){m.error="missing/mismatched pinned ELF build ID";complete=false;}
+ }
+ struct stat after{};
+ if(fstat(file.fd,&after)||after.st_ino!=st.st_ino||after.st_dev!=st.st_dev||after.st_size!=st.st_size||after.st_mtim.tv_sec!=st.st_mtim.tv_sec||after.st_mtim.tv_nsec!=st.st_mtim.tv_nsec||after.st_ctim.tv_sec!=st.st_ctim.tv_sec||after.st_ctim.tv_nsec!=st.st_ctim.tv_nsec){r.error="material changed during proof";return r;}
+ r.matches=complete;if(!complete)r.error="existing material identity did not match hashed fd";return r;
+}
+inline bool mappedMaterialMatches(const std::string& path,const std::string& expected){return inspectMappedMaterial(path,expected).matches;}
+inline std::vector<MaterialProof> installedMesaMaterialProofs(){return {
+ inspectMappedMaterial("/usr/lib/libgallium-26.2.2-arch1.1.so","d7d313070226982467fd8984d943d84c7adeaf290b1705de7bf227fca3b392da","58549bc5c66cecb4a3972fe621d5756abbe548d6"),
+ inspectMappedMaterial("/usr/lib/libEGL_mesa.so.0","15c06ccfe5054c95059f2526a284b8fb2d10c9000bbec20c531eb9d6815abc6d","6ad4e0b5ae2f9cdbe170279153a3362fd2b7daac")};}
+}

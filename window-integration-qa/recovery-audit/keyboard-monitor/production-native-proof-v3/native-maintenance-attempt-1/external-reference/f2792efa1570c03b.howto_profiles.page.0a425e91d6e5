@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_profiles" xml:lang="sr">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_documents"/>
+    <title type="sort">9. Профили</title>
+    <desc>Одржавање више конфигурација</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Профили</title>
+  <p>Оркини профили вам омогућавају да сачувате и учитате више конфигурација како бисте могли брзо да приступите подешавањима која су вам потребна.</p>
+  <steps>
+    <title>Чување новог профила</title>
+    <item>
+      <p>Отворите прозорче <link xref="preferences">Оркиних поставки</link>.</p>
+    </item>
+    <item>
+      <p>Измените подешавања која желите.</p>
+    </item>
+    <item>
+      <p>На страници <gui>Опште</gui>, притисните дугме <gui>Сачувај као</gui>.</p>
+    </item>
+    <item>
+      <p>Унесите назив новог профила у прозорчету <gui>Сачувај профил као</gui>.</p>
+    </item>
+    <item>
+      <p>Притисните дугме <gui>У реду</gui> у прозорчету <gui>Сачувај профил као</gui>.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Учитавање постојећег профила</title>
+    <item>
+      <p>Отворите прозорче <link xref="preferences">Оркиних поставки</link>.</p>
+    </item>
+    <item>
+      <p>На страници <gui>Опште</gui>, изаберите профил за учитавање из падајуће листе <gui>Активни профил</gui>.</p>
+    </item>
+    <item>
+      <p>Притисните дугме <gui>Учитај</gui>.</p>
+    </item>
+    <item>
+      <p>Бићете упитани за потврду. Притисните дугме <gui>Да</gui>.</p>
+    </item>
+    <item>
+      <p>Притисните дугме <gui>У реду</gui>.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Мењање постојећег профила</title>
+    <item>
+      <p>Пратите горе описане кораке да бисте учитали профил који желите да измените.</p>
+    </item>
+    <item>
+      <p>Пратите горе описане кораке да бисте сачували нови профил.</p>
+    </item>
+    <item>
+      <p>Када будете упитани за назив новог профила, унесите исти назив као и за тренутни профил. Када притиснете дугме <gui>У реду</gui>, бићете обавештени да постоји сукоб у називу.</p>
+    </item>
+    <item>
+      <p>Притисните дугме <gui>Да</gui> да бисте потврдили да желите да препишете постојећи профил новим подешавањима.</p>
+    </item>
+  </steps>
+  <steps>
+    <title>Мењање <gui>Почетног профила</gui></title>
+    <item>
+      <p>Отворите прозорче <link xref="preferences">Оркиних поставки</link>.</p>
+    </item>
+    <item>
+      <p>На страници <gui>Опште</gui>, изаберите профил за учитавање из комбинованог оквира <gui>Почетни профил</gui>.</p>
+    </item>
+    <item>
+      <p>Притисните дугме <gui>У реду</gui>. Следећи пут када покренете <app>Орку</app>, користиће се новоизабрани профил.</p>
+    </item>
+  </steps>
+</page>

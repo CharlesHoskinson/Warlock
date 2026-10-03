@@ -1,0 +1,445 @@
+{
+  "result": "failure preserved; retained evidence consistent",
+  "nativeFeatureAccepted": false,
+  "all38Accepted": false,
+  "fault34Authorized": false,
+  "checksReached": 11,
+  "checksPassed": 11,
+  "checksUnreached": 27,
+  "primary": {
+    "failure": "[Errno 11] Resource temporarily unavailable",
+    "profile": {
+      "receivedNs": 154923971789183,
+      "reservedNs": 154923971789785,
+      "ingressCommand": "minimize",
+      "contextPending": false,
+      "managerReceipt": 1,
+      "metadataStartNs": 154923974151174,
+      "gestureRetirementScope": [
+        [
+          "0x590d58ac9bb0",
+          "18000000",
+          1807021
+        ],
+        [
+          "0x590d58cb7bf0",
+          "18000002",
+          1807021
+        ],
+        [
+          "0x590d591a1b30",
+          "18000003",
+          1807021
+        ]
+      ],
+      "gestureRetirementStartNs": 154924043526989,
+      "gestureRetirementReply": [
+        {
+          "identity": [
+            "0x590d58ac9bb0",
+            "18000000",
+            1807021
+          ],
+          "retired": false
+        },
+        {
+          "identity": [
+            "0x590d58cb7bf0",
+            "18000002",
+            1807021
+          ],
+          "retired": false
+        },
+        {
+          "identity": [
+            "0x590d591a1b30",
+            "18000003",
+            1807021
+          ],
+          "retired": false
+        }
+      ],
+      "gestureRetirementFreshNs": 154924219153701,
+      "postRetirementFamily": [
+        {
+          "address": "0x590d58ac9bb0",
+          "stableId": "18000000",
+          "pid": 1807021,
+          "at": [
+            100,
+            250
+          ],
+          "size": [
+            460,
+            300
+          ],
+          "pinned": false,
+          "floating": true,
+          "fullscreen": 0,
+          "parent": "",
+          "parentStableId": "",
+          "modal": false
+        },
+        {
+          "address": "0x590d58cb7bf0",
+          "stableId": "18000002",
+          "pid": 1807021,
+          "at": [
+            260,
+            310
+          ],
+          "size": [
+            320,
+            180
+          ],
+          "pinned": false,
+          "floating": true,
+          "fullscreen": 0,
+          "parent": "0x590d58ac9bb0",
+          "parentStableId": "18000000",
+          "modal": true
+        },
+        {
+          "address": "0x590d591a1b30",
+          "stableId": "18000003",
+          "pid": 1807021,
+          "at": [
+            330,
+            350
+          ],
+          "size": [
+            240,
+            140
+          ],
+          "pinned": false,
+          "floating": true,
+          "fullscreen": 0,
+          "parent": "0x590d58cb7bf0",
+          "parentStableId": "18000002",
+          "modal": true
+        }
+      ],
+      "resolvedDirection": "minimize",
+      "familyDrawEvidence": {
+        "attempts": 1,
+        "native": [
+          {
+            "address": "0x590d58ac9bb0",
+            "stableId": "18000000",
+            "pid": 1807021,
+            "parent": "",
+            "parentStableId": "",
+            "modal": false
+          },
+          {
+            "address": "0x590d58acd920",
+            "stableId": "18000001",
+            "pid": 1807021,
+            "parent": "",
+            "parentStableId": "",
+            "modal": false
+          },
+          {
+            "address": "0x590d58cb7bf0",
+            "stableId": "18000002",
+            "pid": 1807021,
+            "parent": "0x590d58ac9bb0",
+            "parentStableId": "18000000",
+            "modal": true
+          },
+          {
+            "address": "0x590d591a1b30",
+            "stableId": "18000003",
+            "pid": 1807021,
+            "parent": "0x590d58cb7bf0",
+            "parentStableId": "18000002",
+            "modal": true
+          }
+        ],
+        "members": [
+          [
+            "0x590d58ac9bb0",
+            "18000000",
+            1807021
+          ],
+          [
+            "0x590d591a1b30",
+            "18000003",
+            1807021
+          ],
+          [
+            "0x590d58cb7bf0",
+            "18000002",
+            1807021
+          ]
+        ],
+        "focus": [
+          "0x590d591a1b30",
+          "18000003",
+          1807021
+        ],
+        "drawOrder": [
+          [
+            "0x590d58ac9bb0",
+            "18000000",
+            1807021
+          ],
+          [
+            "0x590d58cb7bf0",
+            "18000002",
+            1807021
+          ],
+          [
+            "0x590d591a1b30",
+            "18000003",
+            1807021
+          ]
+        ],
+        "paintWitness": "WindowState-vector+native-render-plane+ancestor-constraints",
+        "activePaintIdentity": null
+      },
+      "metadataValidatedNs": 154924222390818,
+      "failure": "[Errno 11] Resource temporarily unavailable",
+      "cleanupQueuedNs": 154927048761656,
+      "settlementReason": "request rejected: [Errno 11] Resource temporarily unavailable",
+      "cleanupAckNs": 154927052213497
+    },
+    "sources": [],
+    "validated": true,
+    "visual": false,
+    "running": false,
+    "ready": false,
+    "rendererEvents": {
+      "shaderPrecision": 1,
+      "samplingExperiment": 1,
+      "quantizedOverExperiment": 1,
+      "rasterPathSelected": 1,
+      "renderPipelineSelected": 1,
+      "backendObserved": 1,
+      "rasterState": 1,
+      "gpu": 1,
+      "outputs": 1
+    },
+    "capturedFiles": [
+      {
+        "role": "atlas",
+        "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-epochs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png",
+        "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+        "bytes": 6280
+      },
+      {
+        "role": "atlas",
+        "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-epochs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png",
+        "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+        "bytes": 5626
+      },
+      {
+        "role": "atlas",
+        "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-epochs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png",
+        "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+        "bytes": 5615
+      },
+      {
+        "role": "cache",
+        "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/4e10930e38bbf42fec14f5856635cdac4a9e2e2978b37de02a106cb00961d34f.json",
+        "sha256": "4e10930e38bbf42fec14f5856635cdac4a9e2e2978b37de02a106cb00961d34f",
+        "bytes": 569
+      },
+      {
+        "role": "cache",
+        "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8.png",
+        "sha256": "86bd94f118d80675473afb4305f7f64540e3060031e3aa7cdbbf8d2a1790aab8",
+        "bytes": 6280
+      },
+      {
+        "role": "cache",
+        "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/a3de8088213f73a848b4175cb18717fc6355c45da1379b8c6b203ca74482a3bd.json",
+        "sha256": "a3de8088213f73a848b4175cb18717fc6355c45da1379b8c6b203ca74482a3bd",
+        "bytes": 570
+      },
+      {
+        "role": "cache",
+        "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c.png",
+        "sha256": "26bb438173fa58b626c26028bf38be7ba53bf9b3e7a454e965c24ecec0cd098c",
+        "bytes": 5626
+      },
+      {
+        "role": "cache",
+        "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/3da4e853e3735c0bb3eb570b294aca0fa1fec6f064d9f734bbb9d6d331542bb6.json",
+        "sha256": "3da4e853e3735c0bb3eb570b294aca0fa1fec6f064d9f734bbb9d6d331542bb6",
+        "bytes": 570
+      },
+      {
+        "role": "cache",
+        "path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-cache-pairs/a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070.png",
+        "sha256": "a0304966dabe304f8a3c4c52543ee8e6601aed1a26cae45b8c536d3414aaa070",
+        "bytes": 5615
+      }
+    ],
+    "rendererSeedUploadPresentationAbsent": true
+  },
+  "secondary": {
+    "terminalBindingErrors": [
+      {
+        "type": "ValueError",
+        "message": "complete closed actual query proof required"
+      }
+    ],
+    "readonlyHistoryCount": 35,
+    "readonlyRefusals": [
+      {
+        "index": 33,
+        "elapsedNs": 598541604,
+        "id": "a6ac9f6437054acaa5960d15c73380fa",
+        "actor": null,
+        "thread": 1808026,
+        "fd": 6,
+        "fdIdentity": [
+          10,
+          34167862
+        ],
+        "issuerSHA256": "4435668e24193c94a3dd59de9bfe6e594676629f35cdd534729aa36cf676db4e",
+        "request": "j/clients",
+        "requestSHA256": "66d16c925d00a3a1e5cd88ffff6e0b87ca378d8a6a28cd90c05732aa1f0387d7",
+        "registeredNs": 154926490903513,
+        "closed": true,
+        "published": true,
+        "outcome": "refused",
+        "evidence": {
+          "completeServerEOF": false,
+          "replyBytes": 0,
+          "replySHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "peer": null,
+          "socketIdentity": [
+            84,
+            486799
+          ]
+        },
+        "error": {
+          "type": "TimeoutError",
+          "message": "read-only complete reply absolute deadline"
+        },
+        "finishedNs": 154927089445117
+      }
+    ],
+    "serviceEvidenceFilePresent": false,
+    "serviceExit": {
+      "pid": 1807648,
+      "start": "16704220",
+      "exitCode": 1,
+      "gone": true,
+      "error": "RuntimeError('Owned client did not exit normally')"
+    },
+    "harnessQueryCount": 0,
+    "harnessSnapshotSourceOrder": "native_integration.py659 capture/seed mandatory gate precedes harness snapshot line673; expected one remains unmet"
+  },
+  "helpers": {
+    "started": 20,
+    "terminal": 18,
+    "refused": 0,
+    "nonzero": [],
+    "missingTerminals": [
+      {
+        "identity": [
+          1809442,
+          "16704807"
+        ],
+        "operation": "forget-closed:0x590d58ac9bb0:18000000:1807021"
+      },
+      {
+        "identity": [
+          1809443,
+          "16704808"
+        ],
+        "operation": "forget-closed:0x590d58acd920:18000001:1807021"
+      }
+    ],
+    "allArchivedProcessesGone": false,
+    "completeArchivedEOF": true,
+    "parseErrors": [],
+    "normalLifecycleAccepted": false,
+    "strictExpectedWorkloadResult": "fail",
+    "strictExpectedWorkloadReason": "Exactly one harness query required"
+  },
+  "retirement": {
+    "actor": 1,
+    "timeNs": 154927178192667,
+    "root": "/run/user/1000/wqa/92e5/hypr-window-motion/qa-family-service/actors/actor-1-18c7948a5c5843a8962f82d460cc7409",
+    "actorDirectoryGone": true,
+    "originalRetirementDelegatedOnce": true,
+    "productRegistryRemoved": true,
+    "observedControllerBindings": 1,
+    "rendererClosed": true,
+    "rendererExitCode": 0
+  },
+  "mainPreservation": {
+    "allStableClientFields": true,
+    "originalFocus": true,
+    "originalCursor": true,
+    "originalLayers": true,
+    "typedClipboardAndPrimary": true,
+    "a11ySocketFlagsAndReaderEnabled": true,
+    "outputs": true,
+    "plugins": true,
+    "keyboardStates": true,
+    "fourCatalogNaturalBytes": true,
+    "dashboardBytes": true,
+    "originalFilesProcess": true,
+    "originalFilesPublicState": true,
+    "originalFilesFullUi": true,
+    "originalFilesVisibility": true
+  },
+  "normalNativeUnload": true,
+  "clientCleanup": {
+    "family-service": {
+      "pid": 1807648,
+      "start": "16704220",
+      "exitCode": 1,
+      "gone": true,
+      "error": "RuntimeError('Owned client did not exit normally')"
+    },
+    "qt-fixture": {
+      "pid": 1807021,
+      "start": "16703912",
+      "exitCode": 0,
+      "gone": true
+    },
+    "taskbar-shell": {
+      "pid": 1806182,
+      "start": "16703547",
+      "selectedInstance": {
+        "config_path": "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/payload/omarchy/shell/shell.qml",
+        "id": "qnp212o5amt",
+        "launch_time": "2026-10-02T06:36:02",
+        "pid": 1806182,
+        "shell_id": "1c334933998401ed1315582245a58d9d"
+      },
+      "exitCode": 0,
+      "gone": true
+    }
+  },
+  "allFrozenInputsExactRecorded": true,
+  "normalHostExitAccepted": false,
+  "reachableContendedWriterCounterexample": {
+    "path": "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/contention-replay-v3.json",
+    "sha256": "52523f2cc0edeca9865d51403950a8ee12f36e45091f51ab9269e5efcd219741",
+    "result": "pass",
+    "limitation": "native attempt exact exception site and contemporaneous lock holder not established"
+  },
+  "frozenManifestSHA256": "1820c23f20e585411a6245b23fb373b2119342ea441dce5dbcbb4000227b0444",
+  "inputSHA256": {
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/report.json": "80abf0ed65ff1f8e5e0f5ba69e76caaa2ec9a3f2478a4f8319efc576556455c7",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/service-retirement-1.json": "02ff8ddcf07872b8f1f543620ea6eed58ab56bfdcdfa42f059259f00a20c9d73",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/actual-terminal-binding.json": "b6520d7f120e25a7b997e9072e31bbb1a4723cc464524aea0ff8c012cde2c85c",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/actual-terminal-binding-confirmation.json": "262167b0ed66be1e8ffa2bdd6fa5c87e31859f93b96062934c0ca8022e4a45ed",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/completed-helpers.json": "62b53ef872b9ccc1cff291115ada41c20f5515459f195db4640e2596267b068c",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/terminal-helpers/archive.json": "521227a07b492c08c62d7d5f4180285b80a578878e5fc3d90e5552c80fe2db71",
+    "/home/hoskinson/window-integration-qa/family-preparation-thumbnail-v9/attempt-baseline-1/terminal-helpers/helper-events.jsonl": "81af1d4908009e54237424bd25ad82cf9cacb58efc59a94c0473909fd102b0aa",
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/contention_replay.py": "8d104a3a2378a331af03d82999626597b855cae1b3487bd346e68d9e56d38ad3",
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/contention_replay_v2.py": "bca00ca46d2b2821059b531e1452a403217d2657541c7a76f79c19eec202eb81",
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/contention_replay_v3.py": "5e4f3f4d824186394f001107bd0b1bf36b3821f33eb06ecb702de497cb4ea626",
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/contention-replay.json": "e2b4709ebec0646d3ed6fbc75aa222760976a8a8ca6a693e2590ca59f837c225",
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/contention-replay-v2.json": "e2b4709ebec0646d3ed6fbc75aa222760976a8a8ca6a693e2590ca59f837c225",
+    "/home/hoskinson/window-integration-qa/thumbnail-v9-agent-baseline-failure-v1/contention-replay-v3.json": "52523f2cc0edeca9865d51403950a8ee12f36e45091f51ab9269e5efcd219741"
+  }
+}

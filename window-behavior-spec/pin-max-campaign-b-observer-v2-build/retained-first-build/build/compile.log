@@ -1,0 +1,1066 @@
+In file included from /usr/include/hyprland/src/layout/algorithm/Algorithm.hpp:3,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/fullscreen/handler/FullscreenHandler.hpp:5,
+                 from /home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v1-build/src/campaign_b_observer.cpp:16:
+/usr/include/hyprland/src/helpers/math/Math.hpp:13:30: error: redefinition of ‘constexpr const Hyprutils::Math::Vector2D Math::VECTOR2D_MAX’
+   13 |     constexpr const Vector2D VECTOR2D_MAX = {std::numeric_limits<double>::max(), std::numeric_limits<double>::max()};
+      |                              ^~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/SharedDefs.hpp:3,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/plugins/PluginAPI.hpp:25,
+                 from /home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v1-build/src/campaign_b_observer.cpp:2:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/math/Math.hpp:13:30: note: ‘constexpr const Hyprutils::Math::Vector2D Math::VECTOR2D_MAX’ previously defined here
+   13 |     constexpr const Vector2D VECTOR2D_MAX = {std::numeric_limits<double>::max(), std::numeric_limits<double>::max()};
+      |                              ^~~~~~~~~~~~
+In file included from /usr/include/hyprland/src/layout/algorithm/Algorithm.hpp:4:
+/usr/include/hyprland/src/helpers/math/Direction.hpp:6:10: error: multiple definition of ‘enum Math::eDirection’
+    6 |     enum eDirection : int8_t {
+      |          ^~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/WindowQuery.hpp:4,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/WindowState.hpp:6,
+                 from /home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v1-build/src/campaign_b_observer.cpp:3:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/math/Direction.hpp:6:10: note: previous definition here
+    6 |     enum eDirection : int8_t {
+      |          ^~~~~~~~~~
+/usr/include/hyprland/src/helpers/math/Direction.hpp:14:23: error: redefinition of ‘Math::eDirection Math::fromChar(char)’
+   14 |     inline eDirection fromChar(char x) {
+      |                       ^~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/math/Direction.hpp:14:23: note: ‘Math::eDirection Math::fromChar(char)’ previously defined here
+   14 |     inline eDirection fromChar(char x) {
+      |                       ^~~~~~~~
+/usr/include/hyprland/src/helpers/math/Direction.hpp:26:24: error: redefinition of ‘const char* Math::toString(eDirection)’
+   26 |     inline const char* toString(eDirection d) {
+      |                        ^~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/math/Direction.hpp:26:24: note: ‘const char* Math::toString(eDirection)’ previously defined here
+   26 |     inline const char* toString(eDirection d) {
+      |                        ^~~~~~~~
+In file included from /usr/include/hyprland/src/includes.hpp:30,
+                 from /usr/include/hyprland/src/defines.hpp:3,
+                 from /usr/include/hyprland/src/managers/input/InputManager.hpp:3,
+                 from /usr/include/hyprland/src/layout/LayoutManager.hpp:5,
+                 from /usr/include/hyprland/src/layout/algorithm/Algorithm.hpp:7:
+/usr/include/hyprland/src/SharedDefs.hpp:10:6: error: multiple definition of ‘enum eIcons’
+   10 | enum eIcons : uint8_t {
+      |      ^~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/SharedDefs.hpp:10:6: note: previous definition here
+   10 | enum eIcons : uint8_t {
+      |      ^~~~~~
+/usr/include/hyprland/src/SharedDefs.hpp:20:6: error: multiple definition of ‘enum eRenderStage’
+   20 | enum eRenderStage : uint8_t {
+      |      ^~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/SharedDefs.hpp:20:6: note: previous definition here
+   20 | enum eRenderStage : uint8_t {
+      |      ^~~~~~~~~~~~
+/usr/include/hyprland/src/SharedDefs.hpp:33:6: error: multiple definition of ‘enum eInputType’
+   33 | enum eInputType : uint8_t {
+      |      ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/SharedDefs.hpp:33:6: note: previous definition here
+   33 | enum eInputType : uint8_t {
+      |      ^~~~~~~~~~
+/usr/include/hyprland/src/SharedDefs.hpp:41:6: error: multiple definition of ‘enum eHyprCtlOutputFormat’
+   41 | enum eHyprCtlOutputFormat : uint8_t {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/SharedDefs.hpp:41:6: note: previous definition here
+   41 | enum eHyprCtlOutputFormat : uint8_t {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/SharedDefs.hpp:46:8: error: redefinition of ‘struct SHyprCtlCommand’
+   46 | struct SHyprCtlCommand {
+      |        ^~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/SharedDefs.hpp:46:8: note: previous definition of ‘struct SHyprCtlCommand’
+   46 | struct SHyprCtlCommand {
+      |        ^~~~~~~~~~~~~~~
+/usr/include/hyprland/src/SharedDefs.hpp:52:8: error: redefinition of ‘struct SDispatchResult’
+   52 | struct SDispatchResult {
+      |        ^~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/SharedDefs.hpp:52:8: note: previous definition of ‘struct SDispatchResult’
+   52 | struct SDispatchResult {
+      |        ^~~~~~~~~~~~~~~
+In file included from /usr/include/hyprland/src/defines.hpp:4:
+/usr/include/hyprland/src/debug/log/Logger.hpp:10:11: error: redefinition of ‘class Log::CLogger’
+   10 |     class CLogger {
+      |           ^~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/macros.hpp:10,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/Color.hpp:5,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/plugins/PluginAPI.hpp:23:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/debug/log/Logger.hpp:10:11: note: previous definition of ‘class Log::CLogger’
+   10 |     class CLogger {
+      |           ^~~~~~~
+/usr/include/hyprland/src/debug/log/Logger.hpp:46:24: error: redefinition of ‘UP<Log::CLogger> Log::logger’
+   46 |     inline UP<CLogger> logger = makeUnique<CLogger>();
+      |                        ^~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/debug/log/Logger.hpp:46:24: note: ‘UP<Log::CLogger> Log::logger’ previously declared here
+   46 |     inline UP<CLogger> logger = makeUnique<CLogger>();
+      |                        ^~~~~~
+/usr/include/hyprland/src/debug/log/Logger.hpp:49:54: error: redefinition of ‘constexpr const Hyprutils::CLI::eLogLevel Log::DEBUG’
+   49 |     inline constexpr const Hyprutils::CLI::eLogLevel DEBUG = Hyprutils::CLI::LOG_DEBUG;
+      |                                                      ^~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/debug/log/Logger.hpp:49:54: note: ‘constexpr const Hyprutils::CLI::eLogLevel Log::DEBUG’ previously defined here
+   49 |     inline constexpr const Hyprutils::CLI::eLogLevel DEBUG = Hyprutils::CLI::LOG_DEBUG;
+      |                                                      ^~~~~
+/usr/include/hyprland/src/debug/log/Logger.hpp:50:54: error: redefinition of ‘constexpr const Hyprutils::CLI::eLogLevel Log::WARN’
+   50 |     inline constexpr const Hyprutils::CLI::eLogLevel WARN  = Hyprutils::CLI::LOG_WARN;
+      |                                                      ^~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/debug/log/Logger.hpp:50:54: note: ‘constexpr const Hyprutils::CLI::eLogLevel Log::WARN’ previously defined here
+   50 |     inline constexpr const Hyprutils::CLI::eLogLevel WARN  = Hyprutils::CLI::LOG_WARN;
+      |                                                      ^~~~
+/usr/include/hyprland/src/debug/log/Logger.hpp:51:54: error: redefinition of ‘constexpr const Hyprutils::CLI::eLogLevel Log::ERR’
+   51 |     inline constexpr const Hyprutils::CLI::eLogLevel ERR   = Hyprutils::CLI::LOG_ERR;
+      |                                                      ^~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/debug/log/Logger.hpp:51:54: note: ‘constexpr const Hyprutils::CLI::eLogLevel Log::ERR’ previously defined here
+   51 |     inline constexpr const Hyprutils::CLI::eLogLevel ERR   = Hyprutils::CLI::LOG_ERR;
+      |                                                      ^~~
+/usr/include/hyprland/src/debug/log/Logger.hpp:52:54: error: redefinition of ‘constexpr const Hyprutils::CLI::eLogLevel Log::CRIT’
+   52 |     inline constexpr const Hyprutils::CLI::eLogLevel CRIT  = Hyprutils::CLI::LOG_CRIT;
+      |                                                      ^~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/debug/log/Logger.hpp:52:54: note: ‘constexpr const Hyprutils::CLI::eLogLevel Log::CRIT’ previously defined here
+   52 |     inline constexpr const Hyprutils::CLI::eLogLevel CRIT  = Hyprutils::CLI::LOG_CRIT;
+      |                                                      ^~~~
+/usr/include/hyprland/src/debug/log/Logger.hpp:53:54: error: redefinition of ‘constexpr const Hyprutils::CLI::eLogLevel Log::INFO’
+   53 |     inline constexpr const Hyprutils::CLI::eLogLevel INFO  = Hyprutils::CLI::LOG_DEBUG;
+      |                                                      ^~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/debug/log/Logger.hpp:53:54: note: ‘constexpr const Hyprutils::CLI::eLogLevel Log::INFO’ previously defined here
+   53 |     inline constexpr const Hyprutils::CLI::eLogLevel INFO  = Hyprutils::CLI::LOG_DEBUG;
+      |                                                      ^~~~
+/usr/include/hyprland/src/debug/log/Logger.hpp:54:54: error: redefinition of ‘constexpr const Hyprutils::CLI::eLogLevel Log::TRACE’
+   54 |     inline constexpr const Hyprutils::CLI::eLogLevel TRACE = Hyprutils::CLI::LOG_TRACE;
+      |                                                      ^~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/debug/log/Logger.hpp:54:54: note: ‘constexpr const Hyprutils::CLI::eLogLevel Log::TRACE’ previously defined here
+   54 |     inline constexpr const Hyprutils::CLI::eLogLevel TRACE = Hyprutils::CLI::LOG_TRACE;
+      |                                                      ^~~~~
+In file included from /usr/include/hyprland/src/helpers/Color.hpp:5,
+                 from /usr/include/hyprland/src/defines.hpp:5:
+/usr/include/hyprland/src/macros.hpp:47:38: error: redefinition of ‘template<class ... Args> void assertImpl(int, std::string_view, std::format_string<_Args ...>, Args&& ...)’
+   47 | [[gnu::noinline]] [[gnu::cold]] void assertImpl(int line, std::string_view filename, std::format_string<Args...> reason, Args&&... args) {
+      |                                      ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/macros.hpp:47:38: note: ‘template<class ... Args> void assertImpl(int, std::string_view, std::format_string<_Args ...>, Args&& ...)’ previously declared here
+   47 | [[gnu::noinline]] [[gnu::cold]] void assertImpl(int line, std::string_view filename, std::format_string<Args...> reason, Args&&... args) {
+      |                                      ^~~~~~~~~~
+/usr/include/hyprland/src/helpers/Color.hpp:7:7: error: redefinition of ‘class CHyprColor’
+    7 | class CHyprColor {
+      |       ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/Color.hpp:7:7: note: previous definition of ‘class CHyprColor’
+    7 | class CHyprColor {
+      |       ^~~~~~~~~~
+/usr/include/hyprland/src/helpers/Color.hpp:51:29: error: redefinition of ‘const CHyprColor Colors::WHITE’
+   51 |     inline const CHyprColor WHITE      = CHyprColor(1.F, 1.F, 1.F, 1.F);
+      |                             ^~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/Color.hpp:51:29: note: ‘const CHyprColor Colors::WHITE’ previously declared here
+   51 |     inline const CHyprColor WHITE      = CHyprColor(1.F, 1.F, 1.F, 1.F);
+      |                             ^~~~~
+/usr/include/hyprland/src/helpers/Color.hpp:52:29: error: redefinition of ‘const CHyprColor Colors::GREEN’
+   52 |     inline const CHyprColor GREEN      = CHyprColor(0.F, 1.F, 0.F, 1.F);
+      |                             ^~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/Color.hpp:52:29: note: ‘const CHyprColor Colors::GREEN’ previously declared here
+   52 |     inline const CHyprColor GREEN      = CHyprColor(0.F, 1.F, 0.F, 1.F);
+      |                             ^~~~~
+/usr/include/hyprland/src/helpers/Color.hpp:53:29: error: redefinition of ‘const CHyprColor Colors::BLUE’
+   53 |     inline const CHyprColor BLUE       = CHyprColor(0.F, 0.F, 1.F, 1.F);
+      |                             ^~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/Color.hpp:53:29: note: ‘const CHyprColor Colors::BLUE’ previously declared here
+   53 |     inline const CHyprColor BLUE       = CHyprColor(0.F, 0.F, 1.F, 1.F);
+      |                             ^~~~
+/usr/include/hyprland/src/helpers/Color.hpp:54:29: error: redefinition of ‘const CHyprColor Colors::RED’
+   54 |     inline const CHyprColor RED        = CHyprColor(1.F, 0.F, 0.F, 1.F);
+      |                             ^~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/Color.hpp:54:29: note: ‘const CHyprColor Colors::RED’ previously declared here
+   54 |     inline const CHyprColor RED        = CHyprColor(1.F, 0.F, 0.F, 1.F);
+      |                             ^~~
+/usr/include/hyprland/src/helpers/Color.hpp:55:29: error: redefinition of ‘const CHyprColor Colors::ORANGE’
+   55 |     inline const CHyprColor ORANGE     = CHyprColor(1.F, 0.5F, 0.F, 1.F);
+      |                             ^~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/Color.hpp:55:29: note: ‘const CHyprColor Colors::ORANGE’ previously declared here
+   55 |     inline const CHyprColor ORANGE     = CHyprColor(1.F, 0.5F, 0.F, 1.F);
+      |                             ^~~~~~
+/usr/include/hyprland/src/helpers/Color.hpp:56:29: error: redefinition of ‘const CHyprColor Colors::YELLOW’
+   56 |     inline const CHyprColor YELLOW     = CHyprColor(1.F, 1.F, 0.F, 1.F);
+      |                             ^~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/Color.hpp:56:29: note: ‘const CHyprColor Colors::YELLOW’ previously declared here
+   56 |     inline const CHyprColor YELLOW     = CHyprColor(1.F, 1.F, 0.F, 1.F);
+      |                             ^~~~~~
+/usr/include/hyprland/src/helpers/Color.hpp:57:29: error: redefinition of ‘const CHyprColor Colors::MAGENTA’
+   57 |     inline const CHyprColor MAGENTA    = CHyprColor(1.F, 0.F, 1.F, 1.F);
+      |                             ^~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/Color.hpp:57:29: note: ‘const CHyprColor Colors::MAGENTA’ previously declared here
+   57 |     inline const CHyprColor MAGENTA    = CHyprColor(1.F, 0.F, 1.F, 1.F);
+      |                             ^~~~~~~
+/usr/include/hyprland/src/helpers/Color.hpp:58:29: error: redefinition of ‘const CHyprColor Colors::PURPLE’
+   58 |     inline const CHyprColor PURPLE     = CHyprColor(0.5F, 0.F, 0.5F, 1.F);
+      |                             ^~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/Color.hpp:58:29: note: ‘const CHyprColor Colors::PURPLE’ previously declared here
+   58 |     inline const CHyprColor PURPLE     = CHyprColor(0.5F, 0.F, 0.5F, 1.F);
+      |                             ^~~~~~
+/usr/include/hyprland/src/helpers/Color.hpp:59:29: error: redefinition of ‘const CHyprColor Colors::LIME’
+   59 |     inline const CHyprColor LIME       = CHyprColor(0.5F, 1.F, 0.1F, 1.F);
+      |                             ^~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/Color.hpp:59:29: note: ‘const CHyprColor Colors::LIME’ previously declared here
+   59 |     inline const CHyprColor LIME       = CHyprColor(0.5F, 1.F, 0.1F, 1.F);
+      |                             ^~~~
+/usr/include/hyprland/src/helpers/Color.hpp:60:29: error: redefinition of ‘const CHyprColor Colors::LIGHT_BLUE’
+   60 |     inline const CHyprColor LIGHT_BLUE = CHyprColor(0.1F, 1.F, 1.F, 1.F);
+      |                             ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/Color.hpp:60:29: note: ‘const CHyprColor Colors::LIGHT_BLUE’ previously declared here
+   60 |     inline const CHyprColor LIGHT_BLUE = CHyprColor(0.1F, 1.F, 1.F, 1.F);
+      |                             ^~~~~~~~~~
+/usr/include/hyprland/src/helpers/Color.hpp:61:29: error: redefinition of ‘const CHyprColor Colors::BLACK’
+   61 |     inline const CHyprColor BLACK      = CHyprColor(0.F, 0.F, 0.F, 1.F);
+      |                             ^~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/Color.hpp:61:29: note: ‘const CHyprColor Colors::BLACK’ previously declared here
+   61 |     inline const CHyprColor BLACK      = CHyprColor(0.F, 0.F, 0.F, 1.F);
+      |                             ^~~~~
+In file included from /usr/include/hyprland/src/desktop/view/Subsurface.hpp:5,
+                 from /usr/include/hyprland/src/helpers/WLClasses.hpp:4,
+                 from /usr/include/hyprland/src/managers/input/InputManager.hpp:6:
+/usr/include/hyprland/src/desktop/view/WLSurface.hpp:15:11: error: redefinition of ‘class Desktop::View::CWLSurface’
+   15 |     class CWLSurface {
+      |           ^~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/View.hpp:3,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/event/EventBus.hpp:13,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/plugins/PluginAPI.hpp:29:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/WLSurface.hpp:15:11: note: previous definition of ‘class Desktop::View::CWLSurface’
+   15 |     class CWLSurface {
+      |           ^~~~~~~~~~
+In file included from /usr/include/hyprland/src/desktop/view/Subsurface.hpp:6:
+/usr/include/hyprland/src/desktop/view/View.hpp:9:10: error: multiple definition of ‘enum Desktop::View::eViewType’
+    9 |     enum eViewType : uint8_t {
+      |          ^~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/View.hpp:9:10: note: previous definition here
+    9 |     enum eViewType : uint8_t {
+      |          ^~~~~~~~~
+/usr/include/hyprland/src/desktop/view/View.hpp:17:11: error: redefinition of ‘class Desktop::View::IView’
+   17 |     class IView {
+      |           ^~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/View.hpp:17:11: note: previous definition of ‘class Desktop::View::IView’
+   17 |     class IView {
+      |           ^~~~~
+In file included from /usr/include/hyprland/src/desktop/view/Subsurface.hpp:7:
+/usr/include/hyprland/src/desktop/view/types/Geometric.hpp:10:11: error: redefinition of ‘class Desktop::View::IGeometric’
+   10 |     class IGeometric {
+      |           ^~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Subsurface.hpp:7,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Popup.hpp:6,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Window.hpp:18,
+                 from /home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v1-build/src/campaign_b_observer.cpp:7:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/types/Geometric.hpp:10:11: note: previous definition of ‘class Desktop::View::IGeometric’
+   10 |     class IGeometric {
+      |           ^~~~~~~~~~
+/usr/include/hyprland/src/desktop/view/Subsurface.hpp:13:11: error: redefinition of ‘class Desktop::View::CSubsurface’
+   13 |     class CSubsurface : public virtual IView, public virtual IGeometric {
+      |           ^~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Subsurface.hpp:13:11: note: previous definition of ‘class Desktop::View::CSubsurface’
+   13 |     class CSubsurface : public virtual IView, public virtual IGeometric {
+      |           ^~~~~~~~~~~
+In file included from /usr/include/hyprland/src/desktop/types/MultiAnimatedVariable.hpp:7,
+                 from /usr/include/hyprland/src/desktop/view/types/AlphaModifiable.hpp:3,
+                 from /usr/include/hyprland/src/desktop/view/Popup.hpp:9,
+                 from /usr/include/hyprland/src/helpers/WLClasses.hpp:5:
+/usr/include/hyprland/src/helpers/AnimatedVariable.hpp:9:6: error: multiple definition of ‘enum eAVarDamagePolicy’
+    9 | enum eAVarDamagePolicy : int8_t {
+      |      ^~~~~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/Workspace.hpp:3,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/target/Target.hpp:5,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/pin/NativePinState.hpp:4,
+                 from /home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v1-build/src/campaign_b_observer.cpp:6:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/AnimatedVariable.hpp:9:6: note: previous definition here
+    9 | enum eAVarDamagePolicy : int8_t {
+      |      ^~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/AnimatedVariable.hpp:17:6: error: multiple definition of ‘enum eAnimatedVarType’
+   17 | enum eAnimatedVarType : int8_t {
+      |      ^~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/AnimatedVariable.hpp:17:6: note: previous definition here
+   17 | enum eAnimatedVarType : int8_t {
+      |      ^~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/AnimatedVariable.hpp:27:8: error: redefinition of ‘struct STypeToAnimatedVarType_t<T>’
+   27 | struct STypeToAnimatedVarType_t {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/AnimatedVariable.hpp:27:8: note: previous definition of ‘struct STypeToAnimatedVarType_t<T>’
+   27 | struct STypeToAnimatedVarType_t {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/AnimatedVariable.hpp:32:8: error: redefinition of ‘struct STypeToAnimatedVarType_t<float>’
+   32 | struct STypeToAnimatedVarType_t<float> {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/AnimatedVariable.hpp:32:8: note: previous definition of ‘struct STypeToAnimatedVarType_t<float>’
+   32 | struct STypeToAnimatedVarType_t<float> {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/AnimatedVariable.hpp:37:8: error: redefinition of ‘struct STypeToAnimatedVarType_t<Hyprutils::Math::Vector2D>’
+   37 | struct STypeToAnimatedVarType_t<Vector2D> {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/AnimatedVariable.hpp:37:8: note: previous definition of ‘struct STypeToAnimatedVarType_t<Hyprutils::Math::Vector2D>’
+   37 | struct STypeToAnimatedVarType_t<Vector2D> {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/AnimatedVariable.hpp:42:8: error: redefinition of ‘struct STypeToAnimatedVarType_t<CHyprColor>’
+   42 | struct STypeToAnimatedVarType_t<CHyprColor> {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/AnimatedVariable.hpp:42:8: note: previous definition of ‘struct STypeToAnimatedVarType_t<CHyprColor>’
+   42 | struct STypeToAnimatedVarType_t<CHyprColor> {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/AnimatedVariable.hpp:47:35: error: redefinition of ‘template<class T> constexpr const eAnimatedVarType typeToeAnimatedVarType’
+   47 | inline constexpr eAnimatedVarType typeToeAnimatedVarType = STypeToAnimatedVarType_t<T>::value;
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/AnimatedVariable.hpp:47:35: note: ‘template<class T> constexpr const eAnimatedVarType typeToeAnimatedVarType<T>’ previously declared here
+   47 | inline constexpr eAnimatedVarType typeToeAnimatedVarType = STypeToAnimatedVarType_t<T>::value;
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/AnimatedVariable.hpp:51:9: error: redefinition of ‘template<class T, class ... U> concept OneOf’
+   51 | concept OneOf = (... or std::same_as<T, U>);
+      |         ^~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/AnimatedVariable.hpp:51:9: note: ‘template<class T, class ... U> concept OneOf’ previously declared here
+   51 | concept OneOf = (... or std::same_as<T, U>);
+      |         ^~~~~
+/usr/include/hyprland/src/helpers/AnimatedVariable.hpp:57:9: error: redefinition of ‘template<class T> concept Animable’
+   57 | concept Animable = OneOf<T, Vector2D, float, CHyprColor>;
+      |         ^~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/AnimatedVariable.hpp:57:9: note: ‘template<class T> concept Animable’ previously declared here
+   57 | concept Animable = OneOf<T, Vector2D, float, CHyprColor>;
+      |         ^~~~~~~~
+/usr/include/hyprland/src/helpers/AnimatedVariable.hpp:59:8: error: redefinition of ‘struct SAnimationContext’
+   59 | struct SAnimationContext {
+      |        ^~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/AnimatedVariable.hpp:59:8: note: previous definition of ‘struct SAnimationContext’
+   59 | struct SAnimationContext {
+      |        ^~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/desktop/types/MultiAnimatedVariable.hpp:12:12: error: redefinition of ‘struct Desktop::Types::SAddOperation<T>’
+   12 |     struct SAddOperation {
+      |            ^~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Window.hpp:17:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/types/MultiAnimatedVariable.hpp:12:12: note: previous definition of ‘struct Desktop::Types::SAddOperation<T>’
+   12 |     struct SAddOperation {
+      |            ^~~~~~~~~~~~~
+/usr/include/hyprland/src/desktop/types/MultiAnimatedVariable.hpp:23:12: error: redefinition of ‘struct Desktop::Types::SMultiplyOperation<T>’
+   23 |     struct SMultiplyOperation {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/types/MultiAnimatedVariable.hpp:23:12: note: previous definition of ‘struct Desktop::Types::SMultiplyOperation<T>’
+   23 |     struct SMultiplyOperation {
+      |            ^~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/desktop/types/MultiAnimatedVariable.hpp:33:47: error: redefinition of default argument for ‘class Operation’
+   33 |     template <Animable VarType, typename Key, typename Operation = SMultiplyOperation<VarType>>
+      |                                               ^~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/types/MultiAnimatedVariable.hpp:33:47: note: original definition appeared here
+   33 |     template <Animable VarType, typename Key, typename Operation = SMultiplyOperation<VarType>>
+      |                                               ^~~~~~~~
+/usr/include/hyprland/src/desktop/view/types/AlphaModifiable.hpp:9:11: error: redefinition of ‘class Desktop::View::IAlphaModifiable’
+    9 |     class IAlphaModifiable {
+      |           ^~~~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Popup.hpp:9:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/types/AlphaModifiable.hpp:9:11: note: previous definition of ‘class Desktop::View::IAlphaModifiable’
+    9 |     class IAlphaModifiable {
+      |           ^~~~~~~~~~~~~~~~
+In file included from /usr/include/hyprland/src/desktop/view/animationControllers/PopupAnimationController.hpp:3,
+                 from /usr/include/hyprland/src/desktop/view/Popup.hpp:10:
+/usr/include/hyprland/src/animation/controller/ViewAnimationController.hpp:7:12: error: redefinition of ‘struct Animation::SAnimatedMovement<T>’
+    7 |     struct SAnimatedMovement {
+      |            ^~~~~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/animationControllers/PopupAnimationController.hpp:3,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Popup.hpp:10:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/animation/controller/ViewAnimationController.hpp:7:12: note: previous definition of ‘struct Animation::SAnimatedMovement<T>’
+    7 |     struct SAnimatedMovement {
+      |            ^~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/animation/controller/ViewAnimationController.hpp:12:12: error: redefinition of ‘struct Animation::SViewAnimationContext’
+   12 |     struct SViewAnimationContext {
+      |            ^~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/animation/controller/ViewAnimationController.hpp:12:12: note: previous definition of ‘struct Animation::SViewAnimationContext’
+   12 |     struct SViewAnimationContext {
+      |            ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/animation/controller/ViewAnimationController.hpp:17:11: error: redefinition of ‘class Animation::IViewAnimationController’
+   17 |     class IViewAnimationController {
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/animation/controller/ViewAnimationController.hpp:17:11: note: previous definition of ‘class Animation::IViewAnimationController’
+   17 |     class IViewAnimationController {
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/desktop/view/animationControllers/PopupAnimationController.hpp:8:11: error: redefinition of ‘class Desktop::View::CPopupAnimationController’
+    8 |     class CPopupAnimationController : public Animation::IViewAnimationController {
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/animationControllers/PopupAnimationController.hpp:8:11: note: previous definition of ‘class Desktop::View::CPopupAnimationController’
+    8 |     class CPopupAnimationController : public Animation::IViewAnimationController {
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/hyprland/src/render/Texture.hpp:4,
+                 from /usr/include/hyprland/src/render/Framebuffer.hpp:5,
+                 from /usr/include/hyprland/src/desktop/view/Popup.hpp:14:
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:29:10: error: multiple definition of ‘enum NColorManagement::eNoShader’
+   29 |     enum eNoShader : uint8_t {
+      |          ^~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/render/Texture.hpp:4,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/render/Framebuffer.hpp:5,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/render/transformer/Transformer.hpp:5,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Window.hpp:15:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:29:10: note: previous definition here
+   29 |     enum eNoShader : uint8_t {
+      |          ^~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:36:10: error: multiple definition of ‘enum NColorManagement::ePrimaries’
+   36 |     enum ePrimaries : uint8_t {
+      |          ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:36:10: note: previous definition here
+   36 |     enum ePrimaries : uint8_t {
+      |          ^~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:49:10: error: multiple definition of ‘enum NColorManagement::eTransferFunction’
+   49 |     enum eTransferFunction : uint8_t {
+      |          ^~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:49:10: note: previous definition here
+   49 |     enum eTransferFunction : uint8_t {
+      |          ^~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:68:38: error: redefinition of ‘wpColorManagerV1Primaries NColorManagement::convertPrimaries(ePrimaries)’
+   68 |     inline wpColorManagerV1Primaries convertPrimaries(ePrimaries primaries) {
+      |                                      ^~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:68:38: note: ‘wpColorManagerV1Primaries NColorManagement::convertPrimaries(ePrimaries)’ previously defined here
+   68 |     inline wpColorManagerV1Primaries convertPrimaries(ePrimaries primaries) {
+      |                                      ^~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:71:23: error: redefinition of ‘NColorManagement::ePrimaries NColorManagement::convertPrimaries(wpColorManagerV1Primaries)’
+   71 |     inline ePrimaries convertPrimaries(wpColorManagerV1Primaries primaries) {
+      |                       ^~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:71:23: note: ‘NColorManagement::ePrimaries NColorManagement::convertPrimaries(wpColorManagerV1Primaries)’ previously defined here
+   71 |     inline ePrimaries convertPrimaries(wpColorManagerV1Primaries primaries) {
+      |                       ^~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:74:45: error: redefinition of ‘wpColorManagerV1TransferFunction NColorManagement::convertTransferFunction(eTransferFunction, bool)’
+   74 |     inline wpColorManagerV1TransferFunction convertTransferFunction(eTransferFunction tf, bool useV1SRGB = true) {
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:74:45: note: ‘wpColorManagerV1TransferFunction NColorManagement::convertTransferFunction(eTransferFunction, bool)’ previously defined here
+   74 |     inline wpColorManagerV1TransferFunction convertTransferFunction(eTransferFunction tf, bool useV1SRGB = true) {
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:85:30: error: redefinition of ‘NColorManagement::eTransferFunction NColorManagement::convertTransferFunction(wpColorManagerV1TransferFunction)’
+   85 |     inline eTransferFunction convertTransferFunction(wpColorManagerV1TransferFunction tf) {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:85:30: note: ‘NColorManagement::eTransferFunction NColorManagement::convertTransferFunction(wpColorManagerV1TransferFunction)’ previously defined here
+   85 |     inline eTransferFunction convertTransferFunction(wpColorManagerV1TransferFunction tf) {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:91:24: error: redefinition of ‘std::string NColorManagement::tfToString(eTransferFunction)’
+   91 |     inline std::string tfToString(eTransferFunction tf) {
+      |                        ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:91:24: note: ‘std::string NColorManagement::tfToString(eTransferFunction)’ previously defined here
+   91 |     inline std::string tfToString(eTransferFunction tf) {
+      |                        ^~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:115:27: error: conflicting declaration ‘const auto NColorManagement::NColorPrimaries::BT709’
+  115 |         inline const auto BT709 = SPCPRimaries{
+      |                           ^~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:115:27: note: previous declaration as ‘const Hyprgraphics::SPCPRimaries NColorManagement::NColorPrimaries::BT709’
+  115 |         inline const auto BT709 = SPCPRimaries{
+      |                           ^~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:122:27: error: conflicting declaration ‘const auto NColorManagement::NColorPrimaries::DEFAULT_PRIMARIES’
+  122 |         inline const auto DEFAULT_PRIMARIES = BT709;
+      |                           ^~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:122:27: note: previous declaration as ‘const Hyprgraphics::SPCPRimaries NColorManagement::NColorPrimaries::DEFAULT_PRIMARIES’
+  122 |         inline const auto DEFAULT_PRIMARIES = BT709;
+      |                           ^~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:124:27: error: conflicting declaration ‘const auto NColorManagement::NColorPrimaries::PAL_M’
+  124 |         inline const auto PAL_M = SPCPRimaries{
+      |                           ^~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:124:27: note: previous declaration as ‘const Hyprgraphics::SPCPRimaries NColorManagement::NColorPrimaries::PAL_M’
+  124 |         inline const auto PAL_M = SPCPRimaries{
+      |                           ^~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:131:27: error: conflicting declaration ‘const auto NColorManagement::NColorPrimaries::PAL’
+  131 |         inline const auto PAL = SPCPRimaries{
+      |                           ^~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:131:27: note: previous declaration as ‘const Hyprgraphics::SPCPRimaries NColorManagement::NColorPrimaries::PAL’
+  131 |         inline const auto PAL = SPCPRimaries{
+      |                           ^~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:138:27: error: conflicting declaration ‘const auto NColorManagement::NColorPrimaries::NTSC’
+  138 |         inline const auto NTSC = SPCPRimaries{
+      |                           ^~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:138:27: note: previous declaration as ‘const Hyprgraphics::SPCPRimaries NColorManagement::NColorPrimaries::NTSC’
+  138 |         inline const auto NTSC = SPCPRimaries{
+      |                           ^~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:145:27: error: conflicting declaration ‘const auto NColorManagement::NColorPrimaries::GENERIC_FILM’
+  145 |         inline const auto GENERIC_FILM = SPCPRimaries{
+      |                           ^~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:145:27: note: previous declaration as ‘const Hyprgraphics::SPCPRimaries NColorManagement::NColorPrimaries::GENERIC_FILM’
+  145 |         inline const auto GENERIC_FILM = SPCPRimaries{
+      |                           ^~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:152:27: error: conflicting declaration ‘const auto NColorManagement::NColorPrimaries::BT2020’
+  152 |         inline const auto BT2020 = SPCPRimaries{
+      |                           ^~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:152:27: note: previous declaration as ‘const Hyprgraphics::SPCPRimaries NColorManagement::NColorPrimaries::BT2020’
+  152 |         inline const auto BT2020 = SPCPRimaries{
+      |                           ^~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:159:27: error: conflicting declaration ‘const auto NColorManagement::NColorPrimaries::CIE1931_XYZ’
+  159 |         inline const auto CIE1931_XYZ = SPCPRimaries{
+      |                           ^~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:159:27: note: previous declaration as ‘const Hyprgraphics::SPCPRimaries NColorManagement::NColorPrimaries::CIE1931_XYZ’
+  159 |         inline const auto CIE1931_XYZ = SPCPRimaries{
+      |                           ^~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:166:27: error: conflicting declaration ‘const auto NColorManagement::NColorPrimaries::DCI_P3’
+  166 |         inline const auto DCI_P3 = SPCPRimaries{
+      |                           ^~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:166:27: note: previous declaration as ‘const Hyprgraphics::SPCPRimaries NColorManagement::NColorPrimaries::DCI_P3’
+  166 |         inline const auto DCI_P3 = SPCPRimaries{
+      |                           ^~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:173:27: error: conflicting declaration ‘const auto NColorManagement::NColorPrimaries::DISPLAY_P3’
+  173 |         inline const auto DISPLAY_P3 = SPCPRimaries{
+      |                           ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:173:27: note: previous declaration as ‘const Hyprgraphics::SPCPRimaries NColorManagement::NColorPrimaries::DISPLAY_P3’
+  173 |         inline const auto DISPLAY_P3 = SPCPRimaries{
+      |                           ^~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:180:27: error: conflicting declaration ‘const auto NColorManagement::NColorPrimaries::ADOBE_RGB’
+  180 |         inline const auto ADOBE_RGB = SPCPRimaries{
+      |                           ^~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:180:27: note: previous declaration as ‘const Hyprgraphics::SPCPRimaries NColorManagement::NColorPrimaries::ADOBE_RGB’
+  180 |         inline const auto ADOBE_RGB = SPCPRimaries{
+      |                           ^~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:188:12: error: redefinition of ‘struct NColorManagement::SVCGTTable16’
+  188 |     struct SVCGTTable16 {
+      |            ^~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:188:12: note: previous definition of ‘struct NColorManagement::SVCGTTable16’
+  188 |     struct SVCGTTable16 {
+      |            ^~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:199:11: error: redefinition of ‘class NColorManagement::CPrimaries’
+  199 |     class CPrimaries {
+      |           ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:199:11: note: previous definition of ‘class NColorManagement::CPrimaries’
+  199 |     class CPrimaries {
+      |           ^~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:219:12: error: redefinition of ‘struct NColorManagement::SImageDescription’
+  219 |     struct SImageDescription {
+      |            ^~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:219:12: note: previous definition of ‘struct NColorManagement::SImageDescription’
+  219 |     struct SImageDescription {
+      |            ^~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:341:11: error: redefinition of ‘class NColorManagement::CImageDescription’
+  341 |     class CImageDescription {
+      |           ^~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:341:11: note: previous definition of ‘class NColorManagement::CImageDescription’
+  341 |     class CImageDescription {
+      |           ^~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:361:11: error: redefinition of ‘union NColorManagement::RGBAColor’
+  361 |     union RGBAColor {
+      |           ^~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:361:11: note: previous definition of ‘union NColorManagement::RGBAColor’
+  361 |     union RGBAColor {
+      |           ^~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:389:23: error: conflicting declaration ‘const auto NColorManagement::DEFAULT_GAMMA22_IMAGE_DESCRIPTION’
+  389 |     inline const auto DEFAULT_GAMMA22_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:389:23: note: previous declaration as ‘const Hyprutils::Memory::CWeakPointer<const NColorManagement::CImageDescription> NColorManagement::DEFAULT_GAMMA22_IMAGE_DESCRIPTION’
+  389 |     inline const auto DEFAULT_GAMMA22_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:397:23: error: conflicting declaration ‘const auto NColorManagement::DEFAULT_SRGB_IMAGE_DESCRIPTION’
+  397 |     inline const auto DEFAULT_SRGB_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:397:23: note: previous declaration as ‘const Hyprutils::Memory::CWeakPointer<const NColorManagement::CImageDescription> NColorManagement::DEFAULT_SRGB_IMAGE_DESCRIPTION’
+  397 |     inline const auto DEFAULT_SRGB_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:405:23: error: conflicting declaration ‘const auto NColorManagement::DEFAULT_HDR_IMAGE_DESCRIPTION’
+  405 |     inline const auto DEFAULT_HDR_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:405:23: note: previous declaration as ‘const Hyprutils::Memory::CWeakPointer<const NColorManagement::CImageDescription> NColorManagement::DEFAULT_HDR_IMAGE_DESCRIPTION’
+  405 |     inline const auto DEFAULT_HDR_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:413:23: error: conflicting declaration ‘const auto NColorManagement::SCRGB_IMAGE_DESCRIPTION’
+  413 |     inline const auto SCRGB_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:413:23: note: previous declaration as ‘const Hyprutils::Memory::CWeakPointer<const NColorManagement::CImageDescription> NColorManagement::SCRGB_IMAGE_DESCRIPTION’
+  413 |     inline const auto SCRGB_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:422:23: error: conflicting declaration ‘const auto NColorManagement::BT2100_IMAGE_DESCRIPTION’
+  422 |     inline const auto BT2100_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:422:23: note: previous declaration as ‘const Hyprutils::Memory::CWeakPointer<const NColorManagement::CImageDescription> NColorManagement::BT2100_IMAGE_DESCRIPTION’
+  422 |     inline const auto BT2100_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:431:23: error: conflicting declaration ‘const auto NColorManagement::LINEAR_IMAGE_DESCRIPTION’
+  431 |     inline const auto LINEAR_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:431:23: note: previous declaration as ‘const Hyprutils::Memory::CWeakPointer<const NColorManagement::CImageDescription> NColorManagement::LINEAR_IMAGE_DESCRIPTION’
+  431 |     inline const auto LINEAR_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:443:23: error: conflicting declaration ‘const auto NColorManagement::LINEAR_NN_IMAGE_DESCRIPTION’
+  443 |     inline const auto LINEAR_NN_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:443:23: note: previous declaration as ‘const Hyprutils::Memory::CWeakPointer<const NColorManagement::CImageDescription> NColorManagement::LINEAR_NN_IMAGE_DESCRIPTION’
+  443 |     inline const auto LINEAR_NN_IMAGE_DESCRIPTION = CImageDescription::from(SImageDescription{
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:452:13: error: redefinition of ‘struct std::formatter<Hyprgraphics::SPCPRimaries, CharT>’
+  452 | struct std::formatter<Hyprgraphics::SPCPRimaries, CharT> : std::formatter<CharT> {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:452:13: note: previous definition of ‘struct std::formatter<Hyprgraphics::SPCPRimaries, CharT>’
+  452 | struct std::formatter<Hyprgraphics::SPCPRimaries, CharT> : std::formatter<CharT> {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:461:13: error: redefinition of ‘struct std::formatter<NColorManagement::SImageDescription::SPCLuminances, CharT>’
+  461 | struct std::formatter<NColorManagement::SImageDescription::SPCLuminances, CharT> : std::formatter<CharT> {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:461:13: note: previous definition of ‘struct std::formatter<NColorManagement::SImageDescription::SPCLuminances, CharT>’
+  461 | struct std::formatter<NColorManagement::SImageDescription::SPCLuminances, CharT> : std::formatter<CharT> {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/cm/ColorManagement.hpp:469:13: error: redefinition of ‘struct std::formatter<NColorManagement::SImageDescription, CharT>’
+  469 | struct std::formatter<NColorManagement::SImageDescription, CharT> : std::formatter<CharT> {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/cm/ColorManagement.hpp:469:13: note: previous definition of ‘struct std::formatter<NColorManagement::SImageDescription, CharT>’
+  469 | struct std::formatter<NColorManagement::SImageDescription, CharT> : std::formatter<CharT> {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/render/Texture.hpp:13:10: error: multiple definition of ‘enum Render::eTextureType’
+   13 |     enum eTextureType : int8_t {
+      |          ^~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/render/Texture.hpp:13:10: note: previous definition here
+   13 |     enum eTextureType : int8_t {
+      |          ^~~~~~~~~~~~
+/usr/include/hyprland/src/render/Texture.hpp:21:11: error: redefinition of ‘class Render::ITexture’
+   21 |     class ITexture {
+      |           ^~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/render/Texture.hpp:21:11: note: previous definition of ‘class Render::ITexture’
+   21 |     class ITexture {
+      |           ^~~~~~~~
+/usr/include/hyprland/src/render/Framebuffer.hpp:13:11: error: redefinition of ‘class Render::IFramebuffer’
+   13 |     class IFramebuffer {
+      |           ^~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/render/Framebuffer.hpp:13:11: note: previous definition of ‘class Render::IFramebuffer’
+   13 |     class IFramebuffer {
+      |           ^~~~~~~~~~~~
+/usr/include/hyprland/src/desktop/view/Popup.hpp:20:10: error: multiple definition of ‘enum Desktop::View::ePopupAlpha’
+   20 |     enum ePopupAlpha : uint8_t {
+      |          ^~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Popup.hpp:20:10: note: previous definition here
+   20 |     enum ePopupAlpha : uint8_t {
+      |          ^~~~~~~~~~~
+/usr/include/hyprland/src/desktop/view/Popup.hpp:26:11: error: redefinition of ‘class Desktop::View::CPopup’
+   26 |     class CPopup : public virtual IView, public virtual IGeometric, public virtual IAlphaModifiable {
+      |           ^~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Popup.hpp:26:11: note: previous definition of ‘class Desktop::View::CPopup’
+   26 |     class CPopup : public virtual IView, public virtual IGeometric, public virtual IAlphaModifiable {
+      |           ^~~~~~
+/usr/include/hyprland/src/helpers/WLClasses.hpp:18:8: error: redefinition of ‘struct SSwitchDevice’
+   18 | struct SSwitchDevice {
+      |        ^~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.hpp:6,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/LayoutManager.hpp:5,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/Algorithm.hpp:7,
+                 from /home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v1-build/src/campaign_b_observer.cpp:10:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/WLClasses.hpp:18:8: note: previous definition of ‘struct SSwitchDevice’
+   18 | struct SSwitchDevice {
+      |        ^~~~~~~~~~~~~
+In file included from /usr/include/hyprland/src/managers/input/InputManager.hpp:7:
+/usr/include/hyprland/src/helpers/time/Timer.hpp:5:7: error: redefinition of ‘class CTimer’
+    5 | class CTimer {
+      |       ^~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.hpp:7:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/time/Timer.hpp:5:7: note: previous definition of ‘class CTimer’
+    5 | class CTimer {
+      |       ^~~~~~
+In file included from /usr/include/hyprland/src/managers/input/InputMethodRelay.hpp:7,
+                 from /usr/include/hyprland/src/managers/input/InputManager.hpp:8:
+/usr/include/hyprland/src/managers/input/TextInput.hpp:14:7: error: redefinition of ‘class CTextInput’
+   14 | class CTextInput {
+      |       ^~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputMethodRelay.hpp:7,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.hpp:8:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/TextInput.hpp:14:7: note: previous definition of ‘class CTextInput’
+   14 | class CTextInput {
+      |       ^~~~~~~~~~
+In file included from /usr/include/hyprland/src/managers/input/InputMethodRelay.hpp:8:
+/usr/include/hyprland/src/managers/input/InputMethodPopup.hpp:10:7: error: redefinition of ‘class CInputPopup’
+   10 | class CInputPopup {
+      |       ^~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputMethodRelay.hpp:8:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputMethodPopup.hpp:10:7: note: previous definition of ‘class CInputPopup’
+   10 | class CInputPopup {
+      |       ^~~~~~~~~~~
+/usr/include/hyprland/src/managers/input/InputMethodRelay.hpp:18:7: error: redefinition of ‘class CInputMethodRelay’
+   18 | class CInputMethodRelay {
+      |       ^~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputMethodRelay.hpp:18:7: note: previous definition of ‘class CInputMethodRelay’
+   18 | class CInputMethodRelay {
+      |       ^~~~~~~~~~~~~~~~~
+In file included from /usr/include/hyprland/src/devices/IPointer.hpp:3,
+                 from /usr/include/hyprland/src/managers/input/InputManager.hpp:11:
+/usr/include/hyprland/src/devices/IHID.hpp:8:6: error: multiple definition of ‘enum eHIDCapabilityType’
+    8 | enum eHIDCapabilityType : uint8_t {
+      |      ^~~~~~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/devices/IPointer.hpp:3,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/event/EventBus.hpp:7:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/devices/IHID.hpp:8:6: note: previous definition here
+    8 | enum eHIDCapabilityType : uint8_t {
+      |      ^~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/devices/IHID.hpp:15:6: error: multiple definition of ‘enum eHIDType’
+   15 | enum eHIDType : uint8_t {
+      |      ^~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/devices/IHID.hpp:15:6: note: previous definition here
+   15 | enum eHIDType : uint8_t {
+      |      ^~~~~~~~
+/usr/include/hyprland/src/devices/IHID.hpp:29:7: error: redefinition of ‘class IHID’
+   29 | class IHID {
+      |       ^~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/devices/IHID.hpp:29:7: note: previous definition of ‘class IHID’
+   29 | class IHID {
+      |       ^~~~
+/usr/include/hyprland/src/devices/IPointer.hpp:12:7: error: redefinition of ‘class IPointer’
+   12 | class IPointer : public IHID {
+      |       ^~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/devices/IPointer.hpp:12:7: note: previous definition of ‘class IPointer’
+   12 | class IPointer : public IHID {
+      |       ^~~~~~~~
+In file included from /usr/include/hyprland/src/managers/input/InputManager.hpp:12:
+/usr/include/hyprland/src/devices/ITouch.hpp:9:7: error: redefinition of ‘class ITouch’
+    9 | class ITouch : public IHID {
+      |       ^~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/event/EventBus.hpp:10:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/devices/ITouch.hpp:9:7: note: previous definition of ‘class ITouch’
+    9 | class ITouch : public IHID {
+      |       ^~~~~~
+In file included from /usr/include/hyprland/src/managers/input/InputManager.hpp:13:
+/usr/include/hyprland/src/devices/IKeyboard.hpp:13:6: error: multiple definition of ‘enum eKeyboardModifiers’
+   13 | enum eKeyboardModifiers {
+      |      ^~~~~~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/event/EventBus.hpp:8:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/devices/IKeyboard.hpp:13:6: note: previous definition here
+   13 | enum eKeyboardModifiers {
+      |      ^~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/devices/IKeyboard.hpp:24:7: error: redefinition of ‘class IKeyboard’
+   24 | class IKeyboard : public IHID {
+      |       ^~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/devices/IKeyboard.hpp:24:7: note: previous definition of ‘class IKeyboard’
+   24 | class IKeyboard : public IHID {
+      |       ^~~~~~~~~
+In file included from /usr/include/hyprland/src/managers/input/InputManager.hpp:14:
+/usr/include/hyprland/src/devices/Tablet.hpp:20:7: error: redefinition of ‘class CTablet’
+   20 | class CTablet : public IHID {
+      |       ^~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/event/EventBus.hpp:9:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/devices/Tablet.hpp:20:7: note: previous definition of ‘class CTablet’
+   20 | class CTablet : public IHID {
+      |       ^~~~~~~
+/usr/include/hyprland/src/devices/Tablet.hpp:113:7: error: redefinition of ‘class CTabletPad’
+  113 | class CTabletPad : public IHID {
+      |       ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/devices/Tablet.hpp:113:7: note: previous definition of ‘class CTabletPad’
+  113 | class CTabletPad : public IHID {
+      |       ^~~~~~~~~~
+/usr/include/hyprland/src/devices/Tablet.hpp:170:7: error: redefinition of ‘class CTabletTool’
+  170 | class CTabletTool : public IHID {
+      |       ^~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/devices/Tablet.hpp:170:7: note: previous definition of ‘class CTabletTool’
+  170 | class CTabletTool : public IHID {
+      |       ^~~~~~~~~~~
+In file included from /usr/include/hyprland/src/managers/SessionLockManager.hpp:6,
+                 from /usr/include/hyprland/src/managers/input/InputManager.hpp:15:
+/usr/include/hyprland/src/managers/eventLoop/EventLoopTimer.hpp:10:7: error: redefinition of ‘class CEventLoopTimer’
+   10 | class CEventLoopTimer {
+      |       ^~~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/SessionLockManager.hpp:6,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.hpp:15:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/eventLoop/EventLoopTimer.hpp:10:7: note: previous definition of ‘class CEventLoopTimer’
+   10 | class CEventLoopTimer {
+      |       ^~~~~~~~~~~~~~~
+/usr/include/hyprland/src/managers/SessionLockManager.hpp:19:8: error: redefinition of ‘struct SSessionLockSurface’
+   19 | struct SSessionLockSurface {
+      |        ^~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/SessionLockManager.hpp:19:8: note: previous definition of ‘struct SSessionLockSurface’
+   19 | struct SSessionLockSurface {
+      |        ^~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/managers/SessionLockManager.hpp:36:8: error: redefinition of ‘struct SSessionLock’
+   36 | struct SSessionLock {
+      |        ^~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/SessionLockManager.hpp:36:8: note: previous definition of ‘struct SSessionLock’
+   36 | struct SSessionLock {
+      |        ^~~~~~~~~~~~
+/usr/include/hyprland/src/managers/SessionLockManager.hpp:54:7: error: redefinition of ‘class CSessionLockManager’
+   54 | class CSessionLockManager {
+      |       ^~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/SessionLockManager.hpp:54:7: note: previous definition of ‘class CSessionLockManager’
+   54 | class CSessionLockManager {
+      |       ^~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/managers/SessionLockManager.hpp:93:32: error: redefinition of ‘UP<CSessionLockManager> g_pSessionLockManager’
+   93 | inline UP<CSessionLockManager> g_pSessionLockManager;
+      |                                ^~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/SessionLockManager.hpp:93:32: note: ‘UP<CSessionLockManager> g_pSessionLockManager’ previously defined here
+   93 | inline UP<CSessionLockManager> g_pSessionLockManager;
+      |                                ^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/hyprland/src/managers/SeatManager.hpp:7,
+                 from /usr/include/hyprland/src/managers/input/InputManager.hpp:16:
+/usr/include/hyprland/src/protocols/types/DataDevice.hpp:18:6: error: multiple definition of ‘enum eDataSourceType’
+   18 | enum eDataSourceType : uint8_t {
+      |      ^~~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/SeatManager.hpp:7,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.hpp:16:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/protocols/types/DataDevice.hpp:18:6: note: previous definition here
+   18 | enum eDataSourceType : uint8_t {
+      |      ^~~~~~~~~~~~~~~
+/usr/include/hyprland/src/protocols/types/DataDevice.hpp:23:7: error: redefinition of ‘class IDataSource’
+   23 | class IDataSource {
+      |       ^~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/protocols/types/DataDevice.hpp:23:7: note: previous definition of ‘class IDataSource’
+   23 | class IDataSource {
+      |       ^~~~~~~~~~~
+/usr/include/hyprland/src/protocols/types/DataDevice.hpp:51:7: error: redefinition of ‘class IDataOffer’
+   51 | class IDataOffer {
+      |       ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/protocols/types/DataDevice.hpp:51:7: note: previous definition of ‘class IDataOffer’
+   51 | class IDataOffer {
+      |       ^~~~~~~~~~
+/usr/include/hyprland/src/protocols/types/DataDevice.hpp:63:7: error: redefinition of ‘class IDataDevice’
+   63 | class IDataDevice {
+      |       ^~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/protocols/types/DataDevice.hpp:63:7: note: previous definition of ‘class IDataDevice’
+   63 | class IDataDevice {
+      |       ^~~~~~~~~~~
+/usr/include/hyprland/src/managers/SeatManager.hpp:10:18: error: redefinition of ‘constexpr const size_t MAX_SERIAL_STORE_LEN’
+   10 | constexpr size_t MAX_SERIAL_STORE_LEN = 100;
+      |                  ^~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/SeatManager.hpp:10:18: note: ‘constexpr const size_t MAX_SERIAL_STORE_LEN’ previously defined here
+   10 | constexpr size_t MAX_SERIAL_STORE_LEN = 100;
+      |                  ^~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/managers/SeatManager.hpp:28:7: error: redefinition of ‘class CSeatGrab’
+   28 | class CSeatGrab {
+      |       ^~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/SeatManager.hpp:28:7: note: previous definition of ‘class CSeatGrab’
+   28 | class CSeatGrab {
+      |       ^~~~~~~~~
+/usr/include/hyprland/src/managers/SeatManager.hpp:45:7: error: redefinition of ‘class CSeatManager’
+   45 | class CSeatManager {
+      |       ^~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/SeatManager.hpp:45:7: note: previous definition of ‘class CSeatManager’
+   45 | class CSeatManager {
+      |       ^~~~~~~~~~~~
+/usr/include/hyprland/src/managers/SeatManager.hpp:173:25: error: redefinition of ‘UP<CSeatManager> g_pSeatManager’
+  173 | inline UP<CSeatManager> g_pSeatManager;
+      |                         ^~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/SeatManager.hpp:173:25: note: ‘UP<CSeatManager> g_pSeatManager’ previously defined here
+  173 | inline UP<CSeatManager> g_pSeatManager;
+      |                         ^~~~~~~~~~~~~~
+/usr/include/hyprland/src/managers/input/InputManager.hpp:32:6: error: multiple definition of ‘enum eClickBehaviorMode’
+   32 | enum eClickBehaviorMode : uint8_t {
+      |      ^~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.hpp:32:6: note: previous definition here
+   32 | enum eClickBehaviorMode : uint8_t {
+      |      ^~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/managers/input/InputManager.hpp:37:6: error: multiple definition of ‘enum eMouseBindMode’
+   37 | enum eMouseBindMode : int8_t {
+      |      ^~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.hpp:37:6: note: previous definition here
+   37 | enum eMouseBindMode : int8_t {
+      |      ^~~~~~~~~~~~~~
+/usr/include/hyprland/src/managers/input/InputManager.hpp:45:6: error: multiple definition of ‘enum eBorderIconDirection’
+   45 | enum eBorderIconDirection : uint8_t {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.hpp:45:6: note: previous definition here
+   45 | enum eBorderIconDirection : uint8_t {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/managers/input/InputManager.hpp:57:8: error: redefinition of ‘struct STouchData’
+   57 | struct STouchData {
+      |        ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.hpp:57:8: note: previous definition of ‘struct STouchData’
+   57 | struct STouchData {
+      |        ^~~~~~~~~~
+/usr/include/hyprland/src/managers/input/InputManager.hpp:67:20: error: redefinition of ‘const float MATRICES [8][6]’
+   67 | static const float MATRICES[8][6] = {{// normal
+      |                    ^~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.hpp:67:20: note: ‘const float MATRICES [8][6]’ previously defined here
+   67 | static const float MATRICES[8][6] = {{// normal
+      |                    ^~~~~~~~
+/usr/include/hyprland/src/managers/input/InputManager.hpp:86:7: error: redefinition of ‘class CInputManager’
+   86 | class CInputManager {
+      |       ^~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.hpp:86:7: note: previous definition of ‘class CInputManager’
+   86 | class CInputManager {
+      |       ^~~~~~~~~~~~~
+/usr/include/hyprland/src/managers/input/InputManager.hpp:313:26: error: redefinition of ‘UP<CInputManager> g_pInputManager’
+  313 | inline UP<CInputManager> g_pInputManager;
+      |                          ^~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/input/InputManager.hpp:313:26: note: ‘UP<CInputManager> g_pInputManager’ previously defined here
+  313 | inline UP<CInputManager> g_pInputManager;
+      |                          ^~~~~~~~~~~~~~~
+In file included from /usr/include/hyprland/src/layout/LayoutManager.hpp:6:
+/usr/include/hyprland/src/config/shared/ConfigErrors.hpp:9:16: error: multiple definition of ‘enum class Config::eConfigErrorLevel’
+    9 |     enum class eConfigErrorLevel : uint8_t {
+      |                ^~~~~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/LayoutManager.hpp:6:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/config/shared/ConfigErrors.hpp:9:16: note: previous definition here
+    9 |     enum class eConfigErrorLevel : uint8_t {
+      |                ^~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/config/shared/ConfigErrors.hpp:16:16: error: multiple definition of ‘enum class Config::eConfigErrorCode’
+   16 |     enum class eConfigErrorCode : uint8_t {
+      |                ^~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/config/shared/ConfigErrors.hpp:16:16: note: previous definition here
+   16 |     enum class eConfigErrorCode : uint8_t {
+      |                ^~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/config/shared/ConfigErrors.hpp:28:12: error: redefinition of ‘struct Config::SConfigError’
+   28 |     struct SConfigError {
+      |            ^~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/config/shared/ConfigErrors.hpp:28:12: note: previous definition of ‘struct Config::SConfigError’
+   28 |     struct SConfigError {
+      |            ^~~~~~~~~~~~
+/usr/include/hyprland/src/config/shared/ConfigErrors.hpp:40:24: error: redefinition of ‘const char* Config::toString(eConfigErrorLevel)’
+   40 |     inline const char* toString(eConfigErrorLevel level) {
+      |                        ^~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/config/shared/ConfigErrors.hpp:40:24: note: ‘const char* Config::toString(eConfigErrorLevel)’ previously defined here
+   40 |     inline const char* toString(eConfigErrorLevel level) {
+      |                        ^~~~~~~~
+/usr/include/hyprland/src/config/shared/ConfigErrors.hpp:50:24: error: redefinition of ‘const char* Config::toString(eConfigErrorCode)’
+   50 |     inline const char* toString(eConfigErrorCode code) {
+      |                        ^~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/config/shared/ConfigErrors.hpp:50:24: note: ‘const char* Config::toString(eConfigErrorCode)’ previously defined here
+   50 |     inline const char* toString(eConfigErrorCode code) {
+      |                        ^~~~~~~~
+/usr/include/hyprland/src/config/shared/ConfigErrors.hpp:65:42: error: redefinition of ‘std::unexpected<Config::SConfigError> Config::configError(std::string, eConfigErrorLevel, eConfigErrorCode)’
+   65 |     inline std::unexpected<SConfigError> configError(std::string message, eConfigErrorLevel level = eConfigErrorLevel::ERROR, eConfigErrorCode code = eConfigErrorCode::UNKNOWN) {
+      |                                          ^~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/config/shared/ConfigErrors.hpp:65:42: note: ‘std::unexpected<Config::SConfigError> Config::configError(std::string, eConfigErrorLevel, eConfigErrorCode)’ previously defined here
+   65 |     inline std::unexpected<SConfigError> configError(std::string message, eConfigErrorLevel level = eConfigErrorLevel::ERROR, eConfigErrorCode code = eConfigErrorCode::UNKNOWN) {
+      |                                          ^~~~~~~~~~~
+In file included from /usr/include/hyprland/src/desktop/Workspace.hpp:7,
+                 from /usr/include/hyprland/src/layout/target/Target.hpp:5,
+                 from /usr/include/hyprland/src/layout/supplementary/DragController.hpp:3,
+                 from /usr/include/hyprland/src/layout/LayoutManager.hpp:8:
+/usr/include/hyprland/src/helpers/MiscFunctions.hpp:13:8: error: redefinition of ‘struct SCallstackFrameInfo’
+   13 | struct SCallstackFrameInfo {
+      |        ^~~~~~~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/Workspace.hpp:7:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/MiscFunctions.hpp:13:8: note: previous definition of ‘struct SCallstackFrameInfo’
+   13 | struct SCallstackFrameInfo {
+      |        ^~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/MiscFunctions.hpp:18:8: error: redefinition of ‘struct SWorkspaceIDName’
+   18 | struct SWorkspaceIDName {
+      |        ^~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/MiscFunctions.hpp:18:8: note: previous definition of ‘struct SWorkspaceIDName’
+   18 | struct SWorkspaceIDName {
+      |        ^~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/helpers/MiscFunctions.hpp:48:55: error: redefinition of ‘template<class ... Args> std::string getFormat(std::format_string<_Args ...>, Args&& ...)’
+   48 | [[deprecated("use std::format instead")]] std::string getFormat(std::format_string<Args...> fmt, Args&&... args) {
+      |                                                       ^~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/helpers/MiscFunctions.hpp:48:55: note: ‘template<class ... Args> std::string getFormat(std::format_string<_Args ...>, Args&& ...)’ previously declared here
+   48 | [[deprecated("use std::format instead")]] std::string getFormat(std::format_string<Args...> fmt, Args&&... args) {
+      |                                                       ^~~~~~~~~
+/usr/include/hyprland/src/desktop/Workspace.hpp:14:7: error: redefinition of ‘class CWorkspace’
+   14 | class CWorkspace {
+      |       ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/Workspace.hpp:14:7: note: previous definition of ‘class CWorkspace’
+   14 | class CWorkspace {
+      |       ^~~~~~~~~~
+/usr/include/hyprland/src/desktop/Workspace.hpp:94:13: error: redefinition of ‘bool valid(const PHLWORKSPACE&)’
+   94 | inline bool valid(const PHLWORKSPACE& ref) {
+      |             ^~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/Workspace.hpp:94:13: note: ‘bool valid(const PHLWORKSPACE&)’ previously defined here
+   94 | inline bool valid(const PHLWORKSPACE& ref) {
+      |             ^~~~~
+/usr/include/hyprland/src/layout/target/Target.hpp:11:10: error: multiple definition of ‘enum Layout::eTargetType’
+   11 |     enum eTargetType : uint8_t {
+      |          ^~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/target/Target.hpp:11:10: note: previous definition here
+   11 |     enum eTargetType : uint8_t {
+      |          ^~~~~~~~~~~
+/usr/include/hyprland/src/layout/target/Target.hpp:16:10: error: multiple definition of ‘enum Layout::eGeometryFailure’
+   16 |     enum eGeometryFailure : uint8_t {
+      |          ^~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/target/Target.hpp:16:10: note: previous definition here
+   16 |     enum eGeometryFailure : uint8_t {
+      |          ^~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/layout/target/Target.hpp:21:10: error: multiple definition of ‘enum Layout::eTargetUpdateFlags’
+   21 |     enum eTargetUpdateFlags : uint8_t {
+      |          ^~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/target/Target.hpp:21:10: note: previous definition here
+   21 |     enum eTargetUpdateFlags : uint8_t {
+      |          ^~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/layout/target/Target.hpp:28:12: error: redefinition of ‘struct Layout::SGeometryRequested’
+   28 |     struct SGeometryRequested {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/target/Target.hpp:28:12: note: previous definition of ‘struct Layout::SGeometryRequested’
+   28 |     struct SGeometryRequested {
+      |            ^~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/layout/target/Target.hpp:33:12: error: redefinition of ‘struct Layout::STargetBox’
+   33 |     struct STargetBox {
+      |            ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/target/Target.hpp:33:12: note: previous definition of ‘struct Layout::STargetBox’
+   33 |     struct STargetBox {
+      |            ^~~~~~~~~~
+/usr/include/hyprland/src/layout/target/Target.hpp:38:11: error: redefinition of ‘class Layout::ITarget’
+   38 |     class ITarget {
+      |           ^~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/target/Target.hpp:38:11: note: previous definition of ‘class Layout::ITarget’
+   38 |     class ITarget {
+      |           ^~~~~~~
+/usr/include/hyprland/src/layout/supplementary/DragController.hpp:16:11: error: redefinition of ‘class Layout::Supplementary::CDragStateController’
+   16 |     class CDragStateController {
+      |           ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/LayoutManager.hpp:8:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/supplementary/DragController.hpp:16:11: note: previous definition of ‘class Layout::Supplementary::CDragStateController’
+   16 |     class CDragStateController {
+      |           ^~~~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/layout/LayoutManager.hpp:17:10: error: multiple definition of ‘enum Layout::eRectCorner’
+   17 |     enum eRectCorner : uint8_t {
+      |          ^~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/LayoutManager.hpp:17:10: note: previous definition here
+   17 |     enum eRectCorner : uint8_t {
+      |          ^~~~~~~~~~~
+/usr/include/hyprland/src/layout/LayoutManager.hpp:29:17: error: redefinition of ‘bool Layout::edgeTop(int)’
+   29 |     inline bool edgeTop(int corner) {
+      |                 ^~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/LayoutManager.hpp:29:17: note: ‘bool Layout::edgeTop(int)’ previously defined here
+   29 |     inline bool edgeTop(int corner) {
+      |                 ^~~~~~~
+/usr/include/hyprland/src/layout/LayoutManager.hpp:33:17: error: redefinition of ‘bool Layout::edgeBottom(int)’
+   33 |     inline bool edgeBottom(int corner) {
+      |                 ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/LayoutManager.hpp:33:17: note: ‘bool Layout::edgeBottom(int)’ previously defined here
+   33 |     inline bool edgeBottom(int corner) {
+      |                 ^~~~~~~~~~
+/usr/include/hyprland/src/layout/LayoutManager.hpp:37:17: error: redefinition of ‘bool Layout::edgeLeft(int)’
+   37 |     inline bool edgeLeft(int corner) {
+      |                 ^~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/LayoutManager.hpp:37:17: note: ‘bool Layout::edgeLeft(int)’ previously defined here
+   37 |     inline bool edgeLeft(int corner) {
+      |                 ^~~~~~~~
+/usr/include/hyprland/src/layout/LayoutManager.hpp:41:17: error: redefinition of ‘bool Layout::edgeRight(int)’
+   41 |     inline bool edgeRight(int corner) {
+      |                 ^~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/LayoutManager.hpp:41:17: note: ‘bool Layout::edgeRight(int)’ previously defined here
+   41 |     inline bool edgeRight(int corner) {
+      |                 ^~~~~~~~~
+/usr/include/hyprland/src/layout/LayoutManager.hpp:45:24: error: redefinition of ‘Layout::eRectCorner Layout::cornerFromBox(const Hyprutils::Math::CBox&, const Hyprutils::Math::Vector2D&)’
+   45 |     inline eRectCorner cornerFromBox(const CBox& box, const Vector2D& pos) {
+      |                        ^~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/LayoutManager.hpp:45:24: note: ‘Layout::eRectCorner Layout::cornerFromBox(const Hyprutils::Math::CBox&, const Hyprutils::Math::Vector2D&)’ previously defined here
+   45 |     inline eRectCorner cornerFromBox(const CBox& box, const Vector2D& pos) {
+      |                        ^~~~~~~~~~~~~
+/usr/include/hyprland/src/layout/LayoutManager.hpp:53:10: error: multiple definition of ‘enum Layout::eSnapEdge’
+   53 |     enum eSnapEdge : uint8_t {
+      |          ^~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/LayoutManager.hpp:53:10: note: previous definition here
+   53 |     enum eSnapEdge : uint8_t {
+      |          ^~~~~~~~~
+/usr/include/hyprland/src/layout/LayoutManager.hpp:61:11: error: redefinition of ‘class Layout::CLayoutManager’
+   61 |     class CLayoutManager {
+      |           ^~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/LayoutManager.hpp:61:11: note: previous definition of ‘class Layout::CLayoutManager’
+   61 |     class CLayoutManager {
+      |           ^~~~~~~~~~~~~~
+/usr/include/hyprland/src/layout/LayoutManager.hpp:111:35: error: redefinition of ‘UP<Layout::CLayoutManager> g_layoutManager’
+  111 | inline UP<Layout::CLayoutManager> g_layoutManager;
+      |                                   ^~~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/LayoutManager.hpp:111:35: note: ‘UP<Layout::CLayoutManager> g_layoutManager’ previously defined here
+  111 | inline UP<Layout::CLayoutManager> g_layoutManager;
+      |                                   ^~~~~~~~~~~~~~~
+In file included from /usr/include/hyprland/src/layout/algorithm/Algorithm.hpp:8:
+/usr/include/hyprland/src/layout/space/Space.hpp:16:10: error: multiple definition of ‘enum Layout::eRecalculateReason’
+   16 |     enum eRecalculateReason : uint8_t {
+      |          ^~~~~~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/Algorithm.hpp:8:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/space/Space.hpp:16:10: note: previous definition here
+   16 |     enum eRecalculateReason : uint8_t {
+      |          ^~~~~~~~~~~~~~~~~~
+/usr/include/hyprland/src/layout/space/Space.hpp:31:11: error: redefinition of ‘class Layout::CSpace’
+   31 |     class CSpace {
+      |           ^~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/space/Space.hpp:31:11: note: previous definition of ‘class Layout::CSpace’
+   31 |     class CSpace {
+      |           ^~~~~~
+/usr/include/hyprland/src/layout/algorithm/Algorithm.hpp:19:11: error: redefinition of ‘class Layout::CAlgorithm’
+   19 |     class CAlgorithm {
+      |           ^~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/Algorithm.hpp:19:11: note: previous definition of ‘class Layout::CAlgorithm’
+   19 |     class CAlgorithm {
+      |           ^~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/fullscreen/handler/FullscreenHandler.hpp:6:
+/usr/include/hyprland/src/layout/algorithm/ModeAlgorithm.hpp:19:11: error: redefinition of ‘class Layout::IModeAlgorithm’
+   19 |     class IModeAlgorithm {
+      |           ^~~~~~~~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/TiledAlgorithm.hpp:6,
+                 from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/tiled/scrolling/ScrollingAlgorithm.hpp:3,
+                 from /home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v1-build/src/campaign_b_observer.cpp:11:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/algorithm/ModeAlgorithm.hpp:19:11: note: previous definition of ‘class Layout::IModeAlgorithm’
+   19 |     class IModeAlgorithm {
+      |           ^~~~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v1-build/src/campaign_b_observer.cpp: In function ‘Json snapshot(const PHLWINDOW&)’:
+/home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v1-build/src/campaign_b_observer.cpp:221:64: error: ‘WP<Fullscreen::IFullscreenHandler> Fullscreen::CFullscreenController::getFsHandler(PHLWINDOW, std::optional<bool>)’ is private within this context
+  221 |     const auto handler = Fullscreen::controller()->getFsHandler(window);
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+In file included from /home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/pin/NativePinState.hpp:5:
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/fullscreen/FullscreenController.hpp:110:33: note: declared private here
+  110 |         WP<IFullscreenHandler>  getFsHandler(const PHLWINDOW window, std::optional<bool> layoutHandled = std::nullopt);
+      |                                 ^~~~~~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-max-campaign-b-observer-v1-build/src/campaign_b_observer.cpp:281:68: error: ‘WP<Fullscreen::IFullscreenHandler> Fullscreen::CFullscreenController::getFsHandler(PHLWINDOW, std::optional<bool>)’ is private within this context
+  281 |     const auto postHandler = Fullscreen::controller()->getFsHandler(window);
+      |                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/managers/fullscreen/FullscreenController.hpp:110:33: note: declared private here
+  110 |         WP<IFullscreenHandler>  getFsHandler(const PHLWINDOW window, std::optional<bool> layoutHandled = std::nullopt);
+      |                                 ^~~~~~~~~~~~

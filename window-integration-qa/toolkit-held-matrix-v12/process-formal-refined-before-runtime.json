@@ -1,0 +1,52 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-aeeaec741b3a4003934f93c199b835a2.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/process_observation.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/process_observation_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  process_observation_test\n    ok sameExactLiveTest passed 1 test(s)\n    ok reusedExactLifetimeGoneTest passed 1 test(s)\n    ok selectedEnoentGoneTest passed 1 test(s)\n    ok selectedEsrchGoneTest passed 1 test(s)\n    ok unknownErrnoRefusesTest passed 1 test(s)\n    ok permissionErrorRefusesTest passed 1 test(s)\n    ok ioErrorRefusesTest passed 1 test(s)\n    ok unknownMalformedIdentityRefusesTest passed 1 test(s)\n    ok freshRegistrationEsrchStrictTest passed 1 test(s)\n    ok freshRegistrationEnoentStrictTest passed 1 test(s)\n    ok unregisteredObservationCannotAuthorizeTest passed 1 test(s)\n    ok disappearanceIsNotNormalExitTest passed 1 test(s)\n    ok missingTerminalCannotAuthorizeTest passed 1 test(s)\n    ok duplicateTerminalCannotAuthorizeTest passed 1 test(s)\n    ok priorUnknownCannotBeErasedTest passed 1 test(s)\n\n  15 passing (560ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/process_observation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (1431ms at 1398 traces/second).\nUse --seed=0x13e4f1d --backend=rust to reproduce.\n",
+      "stderr": ""
+    }
+  ],
+  "sources": {
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/helper_observer.py": "5d31aeff84ed68f8fe30e02c27394155f4efebac030ce7290262a1772ca5b1d8",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/process_observation.qnt": "967da5ec51274c5597079a977e28b68f3aed9123d386bd1778280aec9a96f6f0",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/process_observation_test.qnt": "7c36fd87cb2a1b61893525673b71b5188e49acd1156d68336118e1ac5ca00358",
+    "/home/hoskinson/window-integration-qa/toolkit-held-matrix-v12/PROCESS_OBSERVATION_CONTRACT.md": "2d253e7c746b8ea747386fc28274f9704d2f11e7975ee7174158db086c50e772"
+  },
+  "nativeLaunch": false,
+  "runtimeChanged": false
+}

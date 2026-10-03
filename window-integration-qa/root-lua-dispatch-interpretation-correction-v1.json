@@ -1,0 +1,15 @@
+{
+  "schema": "root-dispatch-interpretation-correction-v1",
+  "observedUTC": "2026-10-02T23:42:12.556951+00:00",
+  "owningSource": "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/debug/HyprCtl.cpp",
+  "owningSourceSHA256": "798b7c6c4c1684557842463d46ac99c96629be4179e0e461dca77670247b91fa",
+  "sourceLines": {
+    "dispatchRequest": 1126,
+    "CONFIG_LUA": 1130,
+    "hlDispatchEvalWrapper": 1132
+  },
+  "correction": "Owning CONFIG_LUA supports Lua dispatcher expressions via dispatch. Earlier root claim that these are unknown dispatcher names was incorrect. New explicit repl typed result validation remains valid; old legacy string setprop under Lua requires replacement.",
+  "actualBFailure": "Unchanged host QA-prefix guard rejected SPEC path before process launch. No product defect or native behavior outcome inferred.",
+  "mainChanged": false,
+  "productChanged": false
+}

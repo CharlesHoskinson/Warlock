@@ -1,0 +1,219 @@
+{
+  "scope": "read-only immutable V10 first-divergent-prefix attribution; no native/GPU launch or new pixel acceptance",
+  "comparison": {
+    "passed": false,
+    "pixelsCompared": 172800,
+    "channelsCompared": 691200,
+    "tolerance": 1,
+    "badPixels": 83,
+    "badChannels": 223,
+    "maxChannelError": 255,
+    "firstFailures": [
+      {
+        "x": 20,
+        "y": 157,
+        "errors": [
+          22,
+          27,
+          4,
+          0
+        ]
+      },
+      {
+        "x": 21,
+        "y": 157,
+        "errors": [
+          24,
+          28,
+          4,
+          0
+        ]
+      },
+      {
+        "x": 22,
+        "y": 157,
+        "errors": [
+          24,
+          28,
+          4,
+          0
+        ]
+      },
+      {
+        "x": 23,
+        "y": 157,
+        "errors": [
+          24,
+          28,
+          4,
+          0
+        ]
+      },
+      {
+        "x": 24,
+        "y": 157,
+        "errors": [
+          24,
+          28,
+          4,
+          0
+        ]
+      },
+      {
+        "x": 25,
+        "y": 157,
+        "errors": [
+          24,
+          28,
+          4,
+          0
+        ]
+      },
+      {
+        "x": 26,
+        "y": 157,
+        "errors": [
+          24,
+          28,
+          4,
+          0
+        ]
+      },
+      {
+        "x": 27,
+        "y": 157,
+        "errors": [
+          24,
+          28,
+          4,
+          0
+        ]
+      },
+      {
+        "x": 28,
+        "y": 157,
+        "errors": [
+          21,
+          28,
+          4,
+          0
+        ]
+      },
+      {
+        "x": 29,
+        "y": 157,
+        "errors": [
+          6,
+          54,
+          0,
+          0
+        ]
+      },
+      {
+        "x": 30,
+        "y": 157,
+        "errors": [
+          8,
+          68,
+          0,
+          0
+        ]
+      },
+      {
+        "x": 31,
+        "y": 157,
+        "errors": [
+          8,
+          68,
+          0,
+          0
+        ]
+      },
+      {
+        "x": 32,
+        "y": 157,
+        "errors": [
+          8,
+          68,
+          0,
+          0
+        ]
+      },
+      {
+        "x": 33,
+        "y": 157,
+        "errors": [
+          8,
+          68,
+          0,
+          0
+        ]
+      },
+      {
+        "x": 34,
+        "y": 157,
+        "errors": [
+          8,
+          68,
+          0,
+          0
+        ]
+      },
+      {
+        "x": 35,
+        "y": 157,
+        "errors": [
+          8,
+          68,
+          0,
+          0
+        ]
+      }
+    ],
+    "actualSHA256": "a8bd306e227665da7a919b9555ce4fc2e893d9f67c179b409ceb64d1e69f3c9e",
+    "expectedSHA256": "cebd4a226263b01427bcff23b732d5b2ebb943d7d85949dc133ce5d292c4934b"
+  },
+  "firstDivergentPrefix": 2,
+  "firstDivergentOutput": "ORACLE-SECOND",
+  "progress": 0.35,
+  "badRows": {
+    "157": 83
+  },
+  "badXRange": [
+    20,
+    102
+  ],
+  "allBadPixelsEqualPreviousPrefix": true,
+  "childRectangle": {
+    "height": 38.2,
+    "width": 55.2,
+    "x": 333.4,
+    "y": 105
+  },
+  "childProjectedTopEdge": 157.5,
+  "candidateCoverageBounds": [
+    20,
+    157,
+    103,
+    215
+  ],
+  "originalOracleUnchanged": true,
+  "originalToleranceUnchanged": true,
+  "conclusion": "child top half-center row omitted by polygon raster coverage; all other prefix2 pixels satisfy original tolerance",
+  "remaining": "fresh actual unchanged full 44-image native campaign for explicit coverage candidate",
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v10/attempt-1/fixture-1-ORACLE-SECOND.json": "d6e57be07b84f11a5cedb7ecff17a6ceb9902785a77b7818a033a65c4721e298",
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v10/attempt-1/causal-1-ORACLE-SECOND-0.json": "afc203b5ea25376bfa8305e3ab046e720280a82996c22b0881b29d57b65e726d",
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v10/attempt-1/causal-1-ORACLE-SECOND-1.json": "ec8d11ef6d14d0d761a1b0ca366450d22214327545dee6cbf56497d866c38e8d",
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v10/attempt-1/causal-1-ORACLE-SECOND-2.json": "45d6fc74adbaab9dbc8e5cdb5580013a6fe6c1a4ef214b706c215fde94eb03f5",
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v10/attempt-1/report.json": "fcd0d89197e1be700c479ce8b4f48a15c177c7526a038f74c517cb096a0f5bc8",
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v10/attempt-1/producer-events.jsonl": "172ec352872af7227e280291a8275b561818beca47737a8bf78481935f140c72",
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v10/raster_oracle.py": "3a542d7de3376c7bfce276dbc18efc9134a6ab9ae0b3e235d4b58af7c0b01602",
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v10/attempt-1/member-0.png": "43709a18f15d48b4ff8cc8c8a52c7608d5fc337399eb70e58069ee8ca0a944bd",
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v10/attempt-1/member-1.png": "ec1184c6589830cf61fe68e648f635ae0ca651994d83c7f962fda42e8843e290",
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v10/attempt-1/member-2.png": "3ecf26ef8b42e57e79f9b2ee738f1c0f69734ef9f40ad6b3127350d12df12752",
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v10/attempt-1/owned-readbacks/causal-763-14-1-rgba.png": "5efca6f9ab05877b2949b14b888dfebf461b83bca6572bf631421ecc1a3d0bfb",
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v10/attempt-1/owned-readbacks/causal-763-14-0-rgba.png": "e4c5273d33b3afbd3bcd2ea8bb01017805b94fe1ee770d981c9d9b9e374f9838",
+    "/home/hoskinson/window-integration-qa/family-raster-default-readback-v10/attempt-1/owned-readbacks/causal-763-14-1-native-rgba.png": "5efca6f9ab05877b2949b14b888dfebf461b83bca6572bf631421ecc1a3d0bfb"
+  }
+}

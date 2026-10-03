@@ -1,0 +1,29 @@
+{
+  "result": "source-reviewed",
+  "updatedUTC": "2026-10-02T05:20:24.873936+00:00",
+  "manifestSHA256": "a470821ed03bdf574dfe1c3179ecc242ecdc4656b854deaff927ec2bf3fb8b18",
+  "sourceHandoffSHA256": "991b413533f7684769caec1b38abd239bc110ed628d8d66038593eb75fc27385",
+  "rootClosureReviewSHA256": "0eb83968a6c4708de26fe27aa3007721c6f4a51a5b16bd82d583af53e58bcf5c",
+  "rootQuintReviewSHA256": "e65f396921823425299bdf63c5f81138714f4db89db0bb05af8dcb63fda42d9a",
+  "rootActualFocusedCpuKernelTests": 33,
+  "rootNamedQuint": 35,
+  "rootModels": 3,
+  "rootSamplesPerModel": 2000,
+  "rootPreflightTerminal": 0,
+  "reviewed": "Entire physical keyboard C driver/plan, unprojected owner evidence, exact private_session diff, source inverse, model bodies, contract and final handoff; original15/18 safety/feature gates unchanged",
+  "nativeAuthorized": true,
+  "rootSoleSerialGuiOwner": true,
+  "mainWritesAuthorized": false,
+  "crashHandoffAllFiveApplied": true,
+  "nativeSuccessAccepted": false,
+  "fullWindowsParityAccepted": false,
+  "exactCommand": [
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v20/run_native.py",
+    "--attempt",
+    "/home/hoskinson/window-integration-qa/browser-files-flow-v20/attempt-1"
+  ]
+}

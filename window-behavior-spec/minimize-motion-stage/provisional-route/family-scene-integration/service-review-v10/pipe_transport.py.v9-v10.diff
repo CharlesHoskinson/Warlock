@@ -1,0 +1,14 @@
+--- service-review-v9/pipe_transport.py
++++ service-review-v10/pipe_transport.py
+@@ -6,9 +6,9 @@
+ import time
+ 
+ class PipeTransport:
+-    def __init__(self, executable, *, env, failure):
++    def __init__(self, executable, *, env, failure, pass_fds=()):
+         self.process=subprocess.Popen([str(executable)],env=env,stdin=subprocess.PIPE,
+-            stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,bufsize=1)
++            stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,bufsize=1,pass_fds=pass_fds)
+         self.failure=failure
+         self.callback=lambda event:None
+         self.lock=threading.Lock()

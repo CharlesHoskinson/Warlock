@@ -1,0 +1,11 @@
+--- retainedV3/private_shell.py
++++ freshV4/private_shell.py
+@@ -179,7 +179,7 @@
+                XDG_STATE_HOME=str(home / '.local/state'),
+                XDG_CACHE_HOME=str(home / 'xdg-cache'),
+                PATH=str(home / '.local/bin') + ':' + str(B / 'payload/omarchy/bin') + ':/usr/bin',
+-               QT_QPA_PLATFORM='wayland', GSETTINGS_BACKEND='memory',
++               QT_QPA_PLATFORM='wayland', QT_NO_XDG_DESKTOP_PORTAL='1', GSETTINGS_BACKEND='memory',
+                GDK_DEBUG='no-portals', GIO_USE_VFS='local',
+                PYTHONDONTWRITEBYTECODE='1')
+     return env

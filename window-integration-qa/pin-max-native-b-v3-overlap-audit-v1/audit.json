@@ -1,0 +1,141 @@
+{
+  "scope": "read-only actual B07 overlap refusal before query/click; no new execution",
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v3/frozen-inputs.json": {
+      "sha256": "58a26254c59faef87f42b2647a2c0e19385a97c24b80cbecd5bb7de77482a44c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v3/attempt-1/report.json": {
+      "sha256": "3b813f65cb8dad718cf2c1a598a5f41c7bde14d385db7c18bfc771500eb895fc",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v3/attempt-1/native/campaign-b-trace.json": {
+      "sha256": "b48ca945f0d58d1735566bbcfa1686a112c131d59e6dcbda867c84d430ec99a1",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v3/controller/minimal_controller.py": {
+      "sha256": "7d57856db44bc38fca71600854a34ee5320349cefe31412a566c3061721826f6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/pin-max-native-b-v3-root-failure-v1.json": {
+      "sha256": "5da374745d052fe43001631ac4e36782dc52ea6c0d556b45604525f2ec0e5bb4",
+      "mode": 384
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/target/Target.cpp": {
+      "sha256": "4c1b0353e5c03b6411860a5e34283c90bc5d5a3f0227f97df55fca430aa6b87e",
+      "mode": 436
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/layout/target/WindowTarget.cpp": {
+      "sha256": "3659b24a2d5d7c3f2f2bddcb0dca438c7cb7adfe18c063c89588d333bfeab8dd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/Window.cpp": {
+      "sha256": "6ee11dd9a94c2d5f592d2ccdd25f49bd37e4b1f6ac6b79da10b4f499f6b4483a",
+      "mode": 436
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/view/WLSurface.cpp": {
+      "sha256": "ac33b908ea8e4e01c9d25f09b6c54b3ab0ac3f3c19479872076eb55a2cef43ea",
+      "mode": 436
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/desktop/state/ViewHitTester.cpp": {
+      "sha256": "c5a9dc872c0fad54fe124b5280f6fa6ad00c5bd21ff7da569a4a1eec14e4f9bb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/src/render/Renderer.cpp": {
+      "sha256": "82622c263d91f436773784d2655bd27fa30dbf7b3770e00524e38bc3e5c5b3f8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/pin-maximized-native-v2/readonly-probe/probe.cpp": {
+      "sha256": "5918fb08acdf14a53b640fd4f2a44c680cb9cf784d8cf967ef3300e0f3c7037d",
+      "mode": 420
+    }
+  },
+  "selectedIndices": [
+    687,
+    690,
+    692,
+    694,
+    699,
+    703,
+    706,
+    707,
+    708
+  ],
+  "ownerCurrentSurface": {
+    "address": "0x5919592d0fa0",
+    "stableId": "1800000c",
+    "pid": 1904874,
+    "modal": false,
+    "mapped": true,
+    "hidden": false,
+    "acceptsInput": true,
+    "surfaceBox": [
+      806,
+      45,
+      773,
+      934
+    ]
+  },
+  "peerCurrentSurface": {
+    "address": "0x591958e18b70",
+    "stableId": "1800000d",
+    "pid": 1904874,
+    "modal": false,
+    "mapped": true,
+    "hidden": false,
+    "acceptsInput": true,
+    "surfaceBox": [
+      21,
+      45,
+      1558,
+      934
+    ]
+  },
+  "ownerButtonBox": [
+    817,
+    501,
+    751,
+    22
+  ],
+  "peerButtonBox": [
+    32,
+    501,
+    1536,
+    22
+  ],
+  "sourceDerivedExactIntegerPoint": [
+    1192,
+    512
+  ],
+  "pointInsideBothCurrentButtons": true,
+  "pointInsideCurrentPeerSurface": true,
+  "peerOwningLogicalBox": [
+    "20",
+    "20",
+    "1560",
+    "960"
+  ],
+  "peerOwningVisualOverride": [
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "sourceMeaning": "visualBox empty means absent visual override, not displayed window geometry",
+  "sourceMapping": [
+    "Target.cpp16\u201317 CBox overload initializes logicalBox only",
+    "WindowTarget.cpp99/120 empty visualBox substitutes nodeBox before reserved-area setBox",
+    "observer264/265 projects raw target snapshot, not window current surface",
+    "old probe39 reads wlSurface.getSurfaceBoxGlobal",
+    "WLSurface180\u2192view.surfaceLogicalBox\u2192Window243 main surface box",
+    "ViewHitTester protected hit uses Window.getWindowBoxUnified\u2192geometricBox(GEOMETRIC_CURRENT)",
+    "Renderer563/567 position/size GEOMETRIC_CURRENT, no pixel/render proof inferred"
+  ],
+  "classification": "QA overlap operand used optional override sentinel; actual current raw surface and Qt callback rectangles overlap",
+  "logicalFallbackProposed": false,
+  "fixtureGeometryCompensationProposed": false,
+  "queryCallbackSeatAccepted": false,
+  "B07StillNativeUnaccepted": true,
+  "noProductBugClaim": true,
+  "nativeExecuted": false
+}

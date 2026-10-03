@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="eu">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_setting_up_orca"/>
+    <title type="sort">1. Ongi etorri Orca aplikaziora</title>
+    <desc><app>Orca</app> pantaila-irakurlearen ongietorria</desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Ongi etorri Orca aplikaziora</title>
+  <p><app>Orca</app> aplikazioa kode irekiko pantaila-irakurle zalu eta hedagarria da, ahotsaren eta braille lengoaiaren bidez mahaigain grafikoa atzitzeko modua eskaintzen duena.</p>
+  <p>
+    <app>Orca</app> works with applications and toolkits that support
+    the Assistive Technology Service Provider Interface (AT-SPI), which
+    is the primary assistive technology infrastructure for Linux and
+    Solaris. Applications and toolkits supporting the AT-SPI include
+    Gtk+, Qt, Java Swing, LibreOffice, Gecko, WebKitGtk, and Chrome/Chromium.
+  </p>
+  <section id="launching">
+    <title><app>Orca</app> abiaraztea</title>
+    <p><app>Orca</app> abiarazteko:</p>
+    <list>
+      <item>
+        <p>
+          The method for configuring <app>Orca</app> to be launched
+          automatically as your preferred screen reader will depend upon
+          which desktop environment you use.
+        </p>
+      </item>
+      <item>
+        <p><app>Orca</app> GNOMEn aktibatu eta desaktibatzeko, sakatu <keyseq><key>Super</key><key>Alt</key><key>S</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Idatzi <cmd>orca</cmd>, gehi erabili nahi dituzun aukerako parametroak, terminal batean edo <gui>Exekutatu</gui> elkarrizketa-koadroan eta sakatu <key>Return</key>.</p>
+      </item>
+    </list>
+  </section>
+    <section id="loadtime">
+      <title>Karga-garaiko aukerak</title>
+      <p><app>Orca</app> terminal batean edo <gui>Exekutatu</gui> elkarrizketa-koadroan abiaraztean zehaztu daitezkeen aukerak honakoak dira:</p>
+      <list>
+        <item>
+          <p><cmd>-h</cmd>, <cmd>--help</cmd>: Erakutsi laguntza-mezua</p>
+        </item>
+        <item>
+          <p><cmd>-v</cmd>, <cmd>--version</cmd>: Erakutsi <app>Orca</app> aplikazioaren bertsioa</p>
+        </item>
+        <item>
+          <p><cmd>-s</cmd>, <cmd>--setup</cmd>: Konfiguratu erabiltzaile-hobespenak</p>
+        </item>
+        <item>
+          <p><cmd>-u</cmd>, <cmd>--user-prefs=<em>dirizena</em></cmd>: Erabili <em>dirizena</em> erabiltzaile-hobespenak gordetzeko ordezko direktorio gisa</p>
+        </item>
+        <item>
+          <p><cmd>-e</cmd>, <cmd>--enable=<em>aukera</em></cmd>: Behartu aukera erabiltzera, non <em>aukera</em> honakoetako bat den:</p>
+          <list>
+            <item><p><cmd>speech</cmd></p></item>
+            <item><p><cmd>braille</cmd></p></item>
+            <item><p><cmd>braille-monitor</cmd></p></item>
+          </list>
+        </item>
+        <item>
+          <p><cmd>-d</cmd>, <cmd>--disable=<em>aukera</em></cmd>: Eragotzi aukera erabiltzea, non <em>aukera</em> honakoetako bat den:</p>
+          <list>
+            <item><p><cmd>speech</cmd></p></item>
+            <item><p><cmd>braille</cmd></p></item>
+            <item><p><cmd>braille-monitor</cmd></p></item>
+          </list>
+        </item>
+        <item>
+            <p><cmd>-p</cmd>, <cmd>--profile=<em>fitxategi-izena</em></cmd>: Inportatu profil bat emandako <app>Orca</app> profil-fitxategi batetik</p>
+        </item>
+        <item>
+          <p><cmd>-r</cmd>, <cmd>--replace</cmd>: Ordeztu unean exekutatzen ari den <app>Orca</app> instantzia</p>
+        </item>
+        <item>
+          <p><cmd>-l</cmd>, <cmd>--list-apps</cmd>: Inprimatu exekutatzen ari diren aplikazio ezagunak</p>
+        </item>
+        <item>
+          <p><cmd>--debug</cmd>: Bidali arazketa-irteera debug-YYYY-MM-DD-HH:MM:SS.out fitxategira.</p>
+        </item>
+        <item>
+          <p><cmd>--debug-file=<em>fitxategi-izena</em></cmd>: Bidali arazketa-irteera zehaztutako fitxategira</p>
+        </item>
+      </list>
+    </section>
+
+</page>

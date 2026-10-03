@@ -1,0 +1,93 @@
+{
+  "updatedUTC": "2026-10-01T19:37:57.871214+00:00",
+  "reportSHA256": "dbf178401f62503bafb8ad0441f360f3078c5f3f0c216647be79c1ae728bfa38",
+  "frozenFileCount": 3823,
+  "frozenLinkCount": 176,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a4e95b6eb9564a25b490be0c3402317c.scope",
+    "coreLimit": 1
+  },
+  "independentChecks": {
+    "allFrozenFilesExact": true,
+    "allFrozenLinksExact": true,
+    "all18MainPreservationChecks": true,
+    "normalOwnedFixtureShutdown": true,
+    "normalOwnedProcessExitCodes": true,
+    "privateClientsGoneBeforeUnload": true,
+    "bothNativeModulesUnloadedNormally": true,
+    "allRecordedProcessIdentitiesGone": true,
+    "privateRuntimeGone": true,
+    "noCleanupErrorsOrUnexpectedSurvivors": true,
+    "archivedParentTransportHealthy": true,
+    "normalXwaylandDisconnectAndCredentialCleanup": true,
+    "privateDisplayArtifactsActuallyGone": true,
+    "actualAuthRefusalAndAcceptance": true,
+    "actualXcbLoaderAndAllToolkitGates": true
+  },
+  "allIndependentChecks": true,
+  "processes": [
+    {
+      "pid": 957312,
+      "start": "10584770",
+      "gone": true
+    },
+    {
+      "pid": 957313,
+      "start": "10584773",
+      "gone": true
+    },
+    {
+      "pid": 957329,
+      "start": "10584836",
+      "gone": true
+    },
+    {
+      "pid": 957730,
+      "start": "10585138",
+      "gone": true
+    },
+    {
+      "pid": 957817,
+      "start": "10585213",
+      "gone": true
+    },
+    {
+      "pid": 958456,
+      "start": "10585801",
+      "gone": true
+    },
+    {
+      "pid": 957346,
+      "start": "10584849",
+      "gone": true
+    },
+    {
+      "pid": 957346,
+      "start": "10584849",
+      "gone": true
+    },
+    {
+      "pid": 957312,
+      "start": "10584770",
+      "gone": true
+    },
+    {
+      "pid": 957313,
+      "start": "10584773",
+      "gone": true
+    }
+  ],
+  "archivedTransport": {
+    "passed": true,
+    "mandatoryMarker": true,
+    "configureHandlerObserved": true,
+    "forbiddenDiagnostics": []
+  },
+  "logHashes": {
+    "/home/hoskinson/window-integration-qa/qt-modal-private-x11-v2/attempt-1/host/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1790883375_283387591/hyprland.log": "d8a2b43b3551646303414f0e10cf3043ae686da7960c40e10e7e8e57e1c38524",
+    "/home/hoskinson/window-integration-qa/qt-modal-private-x11-v2/attempt-1/host/weston-renderer.log": "6fb5bbafe72276c7a1c6e0def87278b07365f206e612e81027ef585b63470580"
+  },
+  "toolkitAccepted": true,
+  "toolkitFailure": null,
+  "fullWindowsParityAccepted": false
+}

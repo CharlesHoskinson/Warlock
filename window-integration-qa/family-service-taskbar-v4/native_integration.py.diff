@@ -1,0 +1,128 @@
+--- retainedV3/native_integration.py
++++ freshV4/native_integration.py
+@@ -11,6 +11,7 @@
+ import json
+ import os
+ import signal
++import re
+ import subprocess
+ import sys
+ import time
+@@ -54,8 +55,15 @@
+                    json.loads(PRODUCER_PACKET.read_text())):
+         inputs.update(packet['inputs'])
+         links.update(packet.get('symlinks', {}))
++    old=QA/'family-service-taskbar-v3';old_packet=json.loads((old/'frozen-inputs.json').read_text())
++    for name,value in old_packet['inputs'].items():
++        if sha(name)!=value:raise ValueError('RetainedV3 input changed: '+name)
++        inputs[name]=value
++    links.update(old_packet['symlinks'])
++    for p in (old/'frozen-inputs.json',old/'attempt-1/report.json',old/'attempt-1/service-evidence.json',old/'attempt-1/host/privateBus.log'):
++        inputs[str(p)]=sha(p)
+     inputs.update({str(p): sha(p) for p in B.rglob('*')
+-                   if p.is_file() and not p.is_symlink() and p.name != 'frozen-inputs.json'})
++                   if p.is_file() and not p.is_symlink() and p.name != 'frozen-inputs.json' and '__pycache__' not in p.parts and not any(part.startswith('attempt-') for part in p.parts)})
+     for p in ('/usr/bin/quickshell', '/usr/bin/hyprctl', '/usr/bin/grim',
+               '/usr/bin/omarchy-shell'):
+         inputs[p] = sha(p)
+@@ -194,6 +202,10 @@
+                                                   'journalAfterACK': journal})
+         return answer
+ 
++    def visual_quiescent():
++        body=json.loads((service_root/'journal.json').read_text())['body']
++        return not body['scenes'] and not body['pending']
++
+     def accept_service_evidence():
+         evidence = json.loads((output / 'service-evidence.json').read_text())
+         check('Native service and every producer exit normally',
+@@ -202,7 +214,9 @@
+         history = [r for actor in evidence['records'] for r in actor['history']]
+         expected = {(str(original[n]['stableId']), original[n]['pid']) for n in names}
+         events = [e for t in evidence['transports'] for e in t['events']]
+-        caches = {r['sha256'] for r in evidence['retainedCache'] if r['name'].endswith('.png')}
++        retained=evidence['retainedEpochSources']
++        for row in retained:
++            if sha(row['retainedPath'])!=row['sha256']:raise ValueError('Retained actual epoch PNG changed')
+         for operation in ('minimize', 'restore'):
+             records = [r for r in history if r['operation'] == operation]
+             matches = []
+@@ -231,8 +245,11 @@
+                              and all(e.get(k) == presentation.get(k) for k in ('token', 'sequence', 'output', 'generation', 'members'))]
+                     if len(swaps) == 1:
+                         bound.append({'presentation': presentation, 'swap': swaps[0]})
+-                if authority and bound and all(s['digest'] in caches for s in record['sources']):
+-                    matches.append({'record': record, 'authorityEvents': authority, 'matchingPresentations': bound})
++                source_rows=[row for row in retained if row['source'].get('sceneToken')==token]
++                epoch_match=len(source_rows)==3 and all(any(row['source']==source and row['sha256']==source['digest'] for row in source_rows) for source in record['sources'])
++                uploads=all(any(e.get('event')=='uploaded' and e.get('digest')==source['digest'] and e.get('pixels')==source['pixels'] for e in events) for source in record['sources'])
++                if authority and bound and epoch_match and uploads:
++                    matches.append({'record': record, 'authorityEvents': authority, 'matchingPresentations': bound,'retainedEpochSources':source_rows,'actualUploadsMatched':uploads})
+             check('Exact complete family ' + operation + ' commits only from actual presentation',
+                   bool(matches), matches=matches)
+         check('Producer observed real complete IPC version before effects',
+@@ -322,8 +339,7 @@
+                 service_request('minimize', 'owner')
+                 wait(lambda: all(own(n)['workspace']['name'] == 'special:win-minimized' for n in names),
+                      'Actual complete native family minimize')
+-                wait(lambda: not json.loads((service_root / 'journal.json').read_text())['body']['scenes']
+-                     and not json.loads((service_root / 'journal.json').read_text())['body']['pending'],
++                wait(visual_quiescent,
+                      'Baseline minimize actual visual cleanup completes before restore')
+                 fields = ('address', 'stableId', 'pid', 'at', 'size', 'workspace', 'pinned')
+                 check('Independent same-process peer unchanged by family minimize',
+@@ -337,6 +353,7 @@
+                 service_request('restore', 'owner')
+                 wait(lambda: all(own(n)['workspace']['name'] == original[n]['workspace']['name'] for n in names),
+                      'Actual complete native family restore')
++                wait(visual_quiescent,'Baseline restore actual visual cleanup completes before normal service stop')
+                 check('Restored family exact geometry pin and deepest modal focus',
+                       all(own(n)['at'] == original[n]['at'] and own(n)['size'] == original[n]['size'] and own(n)['pinned'] == original[n]['pinned'] for n in names)
+                       and session.data('activewindow')['stableId'] == original['nested']['stableId'])
+@@ -360,11 +377,15 @@
+                             elif label == 'qt-fixture':
+                                 command('quit')
+                             else:
+-                                subprocess.run(['/usr/bin/qs', 'kill', '--pid', str(process.pid), '-p', str(B / 'payload/omarchy/shell')],
++                                instances=json.loads(subprocess.check_output(['/usr/bin/qs','list','-a','-j'],env=env,text=True,timeout=5))
++                                exact=[item for item in instances if item.get('pid')==process.pid and Path(item.get('config_path','')).resolve()==(B/'payload/omarchy/shell/shell.qml').resolve()]
++                                if len(exact)!=1:raise RuntimeError('Exact owned shell PID/config instance required before normal close')
++                                row['selectedInstance']=exact[0]
++                                subprocess.run(['/usr/bin/qs', 'kill', '--pid', str(process.pid)],
+                                                env=env, timeout=5, check=True, capture_output=True, text=True)
+                             process.wait(timeout=8)
+-                        row['exitCode'] = process.poll()
+-                        if process.returncode != 0:
++                        row['exitCode'] = process.poll();row['gone']=not Path('/proc/'+str(process.pid)).exists()
++                        if process.returncode != 0 or not row['gone']:
+                             raise RuntimeError('Owned client did not exit normally')
+                     except Exception as error:
+                         row['error'] = repr(error)
+@@ -385,6 +406,11 @@
+                 report['clientsBeforeUnload'] = clients
+                 if clients:
+                     raise RuntimeError('Client cleanup failed; native unload refused')
++                bus_text=Path(session.evidence['privateBus']['log']).read_text()
++                activations=re.findall(r"Activating service name='([^']+)'",bus_text)
++                registered={row['pid'] for _,row in session.host.processes}
++                unexpected=[row for row in session.host.descendants() if row['pid'] not in registered]
++                check('Private bus activates no unexpected helper services',not activations and not unexpected,activations=activations,unexpectedDescendants=unexpected,logSHA256=sha(session.evidence['privateBus']['log']))
+                 if loaded:
+                     session.ctl('plugin', 'unload', str(PLUGIN))
+                     report['normalNativeUnload'] = session.data('plugin', 'list') == []
+@@ -395,6 +421,7 @@
+                 check('Actual mandatory parent transport healthy through clients-first teardown',
+                       transport['passed'], transport=transport,
+                       logHashes={str(p): sha(p) for p in host_logs})
++        if len(report['checks'])!=19 or not all(row['passed'] for row in report['checks']):raise RuntimeError('All19 expanded baseline gates required')
+         report['result'] = 'pass'
+     except BaseException:
+         report['error'] = traceback.format_exc(); report['result'] = 'fail'
+@@ -404,6 +431,7 @@
+         report['clientCleanup'] = cleanup; report['processes'] = process_records
+         if host:
+             report['hostEvidence'] = host.evidence
++            if host.evidence.get('unexpectedInnerDescendants') or host.evidence.get('remainingDescendants') or host.evidence.get('cleanupErrors') or not host.evidence.get('runtimeGone'):report['result']='fail'
+         if before:
+             try:
+                 comparison = qt.observer('compare', output / 'after-main', main_env,

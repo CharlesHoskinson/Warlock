@@ -1,0 +1,100 @@
+--- retainedV3/service_observer.py
++++ freshV4/service_observer.py
+@@ -1,12 +1,16 @@
+ """Run the exact staged native service and retain real events after shutdown.
+ 
+-The observer does not replace desktop/context/target/transport/native callbacks.
++The actual capture_source method is instrumented with a read-only delegate
++wrapper: it invokes the real capture once and returns its exact result unchanged.
++The copy perturbs timing, so no cadence acceptance is claimed. Context, target,
++transport and native commit authority remain delegated to the unchanged service.
+ No readback is requested. This evidence covers a private integrated route; it
+ cannot establish physical output cadence or the complete raster acceptance gate.
+ """
+ from pathlib import Path
+ import argparse
+ import dataclasses
++import copy
+ import hashlib
+ import importlib.util
+ import json
+@@ -14,6 +18,8 @@
+ import signal
+ import sys
+ import stat
++import threading
++import re
+ import traceback
+ 
+ QA = Path('/home/hoskinson/window-integration-qa')
+@@ -30,11 +36,48 @@
+     def __init__(self, *args, **kwargs):
+         super().__init__(*args, **kwargs)
+         self.observed_transports = []
++        self.observed_sources = []
++        self.source_lock = threading.Lock()
++        self.evidence_root = None
+ 
+     def __call__(self, number):
+         desktop, transport = super().__call__(number)
+         self.observed_transports.append((transport, process_start(transport.process.pid)))
++        real_capture = desktop.capture_source
++        def capture_and_observe(*args, **kwargs):
++            source = real_capture(*args, **kwargs)
++            self.retain_source(number, desktop.root, source)
++            return source
++        desktop.capture_source = capture_and_observe
+         return desktop, transport
++
++    def retain_source(self, actor, actor_root, source):
++        path=Path(source['path'])
++        if path.parent!=Path(actor_root) or re.fullmatch(r'[0-9a-f]{12}-[1-9][0-9]{0,14}\.png',path.name) is None:
++            raise ValueError('Actual epoch must belong to exact actor root')
++        if path.stem!=source['captureEpoch'] or re.fullmatch(r'[0-9a-f]{64}',source['digest']) is None:
++            raise ValueError('Actual epoch/digest authority mismatch')
++        descriptor=os.open(path,os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK)
++        try:
++            before=os.fstat(descriptor)
++            if not stat.S_ISREG(before.st_mode) or before.st_uid!=os.getuid() or before.st_mode&0o077 or not 33<=before.st_size<=268435456:
++                raise ValueError('Unsafe actual source image')
++            with os.fdopen(descriptor,'rb',closefd=False) as stream:data=stream.read(268435457)
++            after=os.fstat(descriptor);named=path.lstat()
++            captured=(before.st_dev,before.st_ino,before.st_size,before.st_mtime_ns,before.st_ctime_ns)
++            if captured!=(after.st_dev,after.st_ino,after.st_size,after.st_mtime_ns,after.st_ctime_ns) or captured!=(named.st_dev,named.st_ino,named.st_size,named.st_mtime_ns,named.st_ctime_ns) or not stat.S_ISREG(named.st_mode) or len(data)!=before.st_size or hashlib.sha256(data).hexdigest()!=source['digest']:
++                raise ValueError('Actual source bytes changed or mismatch declared digest')
++        finally:os.close(descriptor)
++        if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Actual source not PNG')
++        folder=self.evidence_root/'service-epochs';folder.mkdir(mode=0o700,exist_ok=True)
++        destination=folder/(source['digest']+'.png')
++        with self.source_lock:
++            if destination.exists():
++                if destination.is_symlink() or hashlib.sha256(destination.read_bytes()).hexdigest()!=source['digest']:raise ValueError('Retained actual epoch changed')
++            else:
++                with destination.open('xb') as output:output.write(data)
++                destination.chmod(0o600)
++            self.observed_sources.append({'actor':actor,'source':copy.deepcopy(source),'retainedPath':str(destination),'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'sourceIdentity':{'device':before.st_dev,'inode':before.st_ino,'size':before.st_size,'mtimeNs':before.st_mtime_ns,'ctimeNs':before.st_ctime_ns},'captureCallbackDelegatedOnce':True,'sourceResultUnchanged':True})
+ 
+ 
+ def main():
+@@ -58,6 +101,7 @@
+     factory = ObservedFactory(args.root, guard, producer=args.producer,
+                               producer_hash=args.producer_sha256,
+                               core=args.core, core_hash=args.core_sha256)
++    factory.evidence_root=evidence.parent
+     service = RuntimeService(args.root, args.session, factory, factory.context)
+     signal.signal(signal.SIGTERM, lambda *_: service.stop_requested.set())
+     signal.signal(signal.SIGINT, lambda *_: service.stop_requested.set())
+@@ -87,11 +131,12 @@
+            'serviceClosed': service.closed,
+            'compositorIPCProbe': guard.ipc_observation,
+            'records': records, 'transports': transports,
++           'retainedEpochSources':factory.observed_sources,
+            'nativeTargetOverrides': False,
+            'rasterAccepted': False, 'physicalCadenceAccepted': False}
+     # Exact persistent atlas bytes remain owned after temporary epoch cleanup.
+     # Retain them before the harness destroys its runtime; this is observation,
+-    # never a replacement texture or capture callback.
++    # never a replacement texture; the capture method instrumentation is described above.
+     cache = Path(args.root) / 'snapshot-cache'
+     retained = evidence.parent / 'service-atlases'
+     row['retainedCache'] = []

@@ -1,0 +1,57 @@
+--- /home/hoskinson/window-integration-qa/pin-frontend-composition-v2/frontend/PinWindowMenu.qml
++++ /home/hoskinson/window-integration-qa/pin-private-qs-native-v1/frontend-observation/PinWindowMenu.qml
+@@ -21,6 +21,8 @@
+     property real actionLease: 0
+     property bool capturePublished: false
+     property bool actionPublished: false
++    property var retirementObservations: []
++    property bool retirementObservationLost: false
+     property real captureNonce: 0
+     property var captureTarget: null
+     property bool captureExitSeen: false
+@@ -46,6 +48,11 @@
+                 visible:toggleButton.visible,enabled:toggleMouse.enabled,label:"Toggle pin"}:null};
+         projection.popupBefore=popupBefore;
+         projection.popupAfter=menuState.open?NativeLifetime.Lifetime.observePopup(root,toggleButton,pinPopup,Quickshell):null;
++        projection.processDiagnostics={captureLease:captureLease,actionLease:actionLease,
++            captureRunning:captureProcess.running,actionRunning:actionProcess.running,
++            capture:captureLease>0 && !captureProcess.running?actualState(captureProcess,captureLease):null,
++            action:actionLease>0 && !actionProcess.running?actualState(actionProcess,actionLease):null,
++            retirements:retirementObservations,retirementObservationLost:retirementObservationLost};
+         projection.engineBefore=engineBefore;
+         projection.engineAfter=NativeLifetime.Lifetime.engineScope();
+         return projection;
+@@ -59,9 +66,33 @@
+     function retirePrevious(process,out,err,lease) {
+         if(lease===0) return true;
+         var result=NativeLifetime.Lifetime.retireProcess(root,toggleButton,pinPopup,process,out,err,lease,Quickshell);
++        // Observation follows the actual public call and cannot replace it.
++        try {
++            if(retirementObservations.length>=32) retirementObservationLost=true;
++            else retirementObservations=retirementObservations.concat([{sequence:retirementObservations.length+1,
++                role:process===captureProcess?"capture":"toggle",lease:lease,result:result,
++                command:process.command,nonce:menuState.nonce}]);
++        } catch(diagnosticError) { retirementObservationLost=true; }
+         return result && !result.error && result.schema==="qml-pin-process-lifecycle-v1" &&
+             result.lease===lease && result.terminalRetired===true && result.normalLifecycle===true &&
+             result.current===false && result.kernelBound===false && result.complete===false;
++    }
++    function observeTypedRetirementRefusal(kind) {
++        if(actionLease<=0 || actionProcess.running || status!=="complete")
++            return {error:"Actual successful terminal action prerequisite missing"};
++        var before=actualState(actionProcess,actionLease);
++        if(before.error || before.complete!==true || before.normalLifecycle!==true)
++            return {error:"Actual terminal positive registration prerequisite missing"};
++        var argument;
++        if(kind==="boolean") argument=true;
++        else if(kind==="string") argument=String(actionLease);
++        else if(kind==="null") argument=null;
++        else if(kind==="wrong-collector") argument=actionLease;
++        else return {error:"Fixed malformed public observation required"};
++        var result=NativeLifetime.Lifetime.retireProcess(root,toggleButton,pinPopup,actionProcess,
++            kind==="wrong-collector"?actionErr:actionOut,actionErr,argument,Quickshell);
++        return {schema:"pin-public-typed-refusal-observation-v1",kind:kind,lease:actionLease,
++            before:before,result:result,after:actualState(actionProcess,actionLease)};
+     }
+     function armActual(process,out,err,role,originalJSON) {
+         var result=NativeLifetime.Lifetime.armProcess(root,toggleButton,pinPopup,process,out,err,role,originalJSON,Quickshell);

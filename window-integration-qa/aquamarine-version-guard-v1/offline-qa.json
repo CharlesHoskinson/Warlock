@@ -1,0 +1,52 @@
+{
+  "quintNamed": 5,
+  "quintRandomSamples": 2000,
+  "seed": 20461001,
+  "cppChecks": 72,
+  "runs": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "version_guard.qnt"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "version_guard.qnt",
+        "--seed=20461001",
+        "--max-samples=2000"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  version_guard\n    ok compositor5Binds5Test passed 1 test(s)\n    ok lowCompositorRefusesDamageBufferTest passed 1 test(s)\n    ok lowDmabufRefusesDefaultFeedbackTest passed 1 test(s)\n    ok futureVersionClampsToClientTest passed 1 test(s)\n    ok absentGlobalDoesNotBindTest passed 1 test(s)\n\n  5 passing (28ms)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "version_guard.qnt",
+        "--invariant=validBinding and truthfulRefusal",
+        "--seed=20461001",
+        "--max-samples=2000",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/hoskinson/window-integration-qa/aquamarine-version-guard-v1/test_version"
+      ],
+      "exitCode": 0,
+      "stdout": "72 actual C++ boundary/property checks PASS\n",
+      "stderr": ""
+    }
+  ]
+}

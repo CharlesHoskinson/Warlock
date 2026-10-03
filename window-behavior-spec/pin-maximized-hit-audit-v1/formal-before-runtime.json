@@ -1,0 +1,41 @@
+{
+  "modelSHA256": "264a9dc2672ca644a3fc3ac432e739bd8d7237e079e57916dba192c48afa9d76",
+  "selectedTests": [
+    "ignoredProtectedOldCounterexample",
+    "ignoredProtectedFallsThrough",
+    "inputRefusalDoesNotReviveProtected",
+    "outsideProtectedUsesEligibleOrdinary",
+    "nofocusOrdinaryStillRefuses",
+    "ordinaryMaxConserved",
+    "exclusiveConserved",
+    "noFullscreenConserved",
+    "skipPriorityConserved",
+    "onlyPriorityConserved",
+    "floatingOnlyConserved",
+    "protectedBandWinnerPreserved",
+    "protectedTiledPointerOldCounterexample",
+    "protectedTiledPointerWinnerPreserved",
+    "nullProtectedPointerRemainsNull",
+    "ordinaryMaxPointerConserved",
+    "exclusivePointerConserved",
+    "protectedExclusivePriorityConserved",
+    "protectedExclusivePointerConserved",
+    "layerPriorityPreserved"
+  ],
+  "namedCount": 20,
+  "nativeExecuted": false,
+  "productRuntimeEdited": false,
+  "commands": [
+    {
+      "argv": [
+        "quint",
+        "typecheck",
+        "hit_fallback.qnt"
+      ],
+      "exitCode": 1,
+      "elapsed": 3.1568867440219037,
+      "log": "formal-final-0.log",
+      "logSHA256": "70697eab62aeb1961ee83d5c11a2eee2dff5710e9e27c3030f033f8ae793bc0d"
+    }
+  ]
+}

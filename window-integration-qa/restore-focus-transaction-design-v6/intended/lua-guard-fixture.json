@@ -1,0 +1,128 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-28afae7553144040b5c04225b0f0e96d.scope",
+    "coreLimit": 1
+  },
+  "syntaxAndFixtureOnly": true,
+  "nativeLuaExecuted": false,
+  "runtimeApplied": false,
+  "interpreter": "/usr/bin/lua",
+  "interpreterSHA256": "3eab886a2dcd0f09362ed8fbd8f843b51bf0946270a87e48c46f9edb2e0d8dcb",
+  "expression": "local n=0; local ok=pcall(function() local w=hl.get_window(\"address:0x1\"); local m=hl.get_monitor(\"CPU-fixture-output\"); if not w or not m or w.address~=\"0x1\" or w.mapped~=true or w.pid~=1794930 or string.format(\"%x\",w.stable_id)~=\"1\" or m.name~=\"CPU-fixture-output\" or m.id~=0 or m.x~=0 or m.y~=0 or m.width~=1600 or m.height~=1000 or m.scale~=1.0 or m.transform~=0 then error(\"exact-focus-identity-output\") end; local r=hl.dispatch(hl.dsp.focus({ monitor = \"CPU-fixture-output\" })); if type(r)~=\"table\" or type(r.ok)~=\"boolean\" or not r.ok then error(\"focus-dispatch-refused\") end; n=n+1; local w=hl.get_window(\"address:0x1\"); local m=hl.get_monitor(\"CPU-fixture-output\"); if not w or not m or w.address~=\"0x1\" or w.mapped~=true or w.pid~=1794930 or string.format(\"%x\",w.stable_id)~=\"1\" or m.name~=\"CPU-fixture-output\" or m.id~=0 or m.x~=0 or m.y~=0 or m.width~=1600 or m.height~=1000 or m.scale~=1.0 or m.transform~=0 then error(\"exact-focus-identity-output\") end; local r=hl.dispatch(hl.dsp.focus({ workspace = \"1\" })); if type(r)~=\"table\" or type(r.ok)~=\"boolean\" or not r.ok then error(\"focus-dispatch-refused\") end; n=n+1; local w=hl.get_window(\"address:0x1\"); local m=hl.get_monitor(\"CPU-fixture-output\"); if not w or not m or w.address~=\"0x1\" or w.mapped~=true or w.pid~=1794930 or string.format(\"%x\",w.stable_id)~=\"1\" or m.name~=\"CPU-fixture-output\" or m.id~=0 or m.x~=0 or m.y~=0 or m.width~=1600 or m.height~=1000 or m.scale~=1.0 or m.transform~=0 then error(\"exact-focus-identity-output\") end; end); print(\"{\\\"nonce\\\":\\\"0123456789abcdef0123456789abcdef\\\",\\\"expected\\\":6,\\\"completed\\\":\"..n..',\"ok\":'..(ok and \"true\" or \"false\")..'}')",
+  "expressionSHA256": "89081ddccdc6987c484ed6edc96b650f192d5ebc038669b0c73c6b525327c49d",
+  "cases": [
+    {
+      "fault": "normal",
+      "argv": [
+        "/usr/bin/lua",
+        "-"
+      ],
+      "scriptSHA256": "77387bdefae151e7339c44e0967c749a282ca1063dfdf2e003b0645f0afa132b",
+      "exitCode": 0,
+      "stdout": "{\"nonce\":\"0123456789abcdef0123456789abcdef\",\"expected\":6,\"completed\":2,\"ok\":true}\n",
+      "effects": "monitor,workspace",
+      "expected": [
+        true,
+        2,
+        "monitor,workspace"
+      ]
+    },
+    {
+      "fault": "first-refused",
+      "argv": [
+        "/usr/bin/lua",
+        "-"
+      ],
+      "scriptSHA256": "07aa1f7aac8a4bea42c30596e010c6bde22f9a8a87ea875937dd368161ee6d80",
+      "exitCode": 0,
+      "stdout": "{\"nonce\":\"0123456789abcdef0123456789abcdef\",\"expected\":6,\"completed\":0,\"ok\":false}\n",
+      "effects": "monitor",
+      "expected": [
+        false,
+        0,
+        "monitor"
+      ]
+    },
+    {
+      "fault": "second-refused",
+      "argv": [
+        "/usr/bin/lua",
+        "-"
+      ],
+      "scriptSHA256": "3227dbff8026c59e50114d671f5de2ad55101745a17c4e6dc6047f4a0c41e910",
+      "exitCode": 0,
+      "stdout": "{\"nonce\":\"0123456789abcdef0123456789abcdef\",\"expected\":6,\"completed\":1,\"ok\":false}\n",
+      "effects": "monitor,workspace",
+      "expected": [
+        false,
+        1,
+        "monitor,workspace"
+      ]
+    },
+    {
+      "fault": "wrong-return-type",
+      "argv": [
+        "/usr/bin/lua",
+        "-"
+      ],
+      "scriptSHA256": "1138b8bd792eea1c3c697c1258d38d4ae6db4646b5f7c5bca931eedd413982f5",
+      "exitCode": 0,
+      "stdout": "{\"nonce\":\"0123456789abcdef0123456789abcdef\",\"expected\":6,\"completed\":0,\"ok\":false}\n",
+      "effects": "monitor",
+      "expected": [
+        false,
+        0,
+        "monitor"
+      ]
+    },
+    {
+      "fault": "reuse-before",
+      "argv": [
+        "/usr/bin/lua",
+        "-"
+      ],
+      "scriptSHA256": "300fbeda8191f5b864ea3bc2d65e1cc4731ca568eb65670470b9e133a61cfc5b",
+      "exitCode": 0,
+      "stdout": "{\"nonce\":\"0123456789abcdef0123456789abcdef\",\"expected\":6,\"completed\":0,\"ok\":false}\n",
+      "effects": "",
+      "expected": [
+        false,
+        0,
+        ""
+      ]
+    },
+    {
+      "fault": "reuse-between-effects",
+      "argv": [
+        "/usr/bin/lua",
+        "-"
+      ],
+      "scriptSHA256": "915c8ad751285c9e831553a7c74dbb14ed218fc7f5632b85d53ecebcc5d6aecb",
+      "exitCode": 0,
+      "stdout": "{\"nonce\":\"0123456789abcdef0123456789abcdef\",\"expected\":6,\"completed\":1,\"ok\":false}\n",
+      "effects": "monitor",
+      "expected": [
+        false,
+        1,
+        "monitor"
+      ]
+    },
+    {
+      "fault": "output-before",
+      "argv": [
+        "/usr/bin/lua",
+        "-"
+      ],
+      "scriptSHA256": "2fbb455fe15d2aa334aec0909af57b62e79a952f92746fdce7dd1259af87b389",
+      "exitCode": 0,
+      "stdout": "{\"nonce\":\"0123456789abcdef0123456789abcdef\",\"expected\":6,\"completed\":0,\"ok\":false}\n",
+      "effects": "",
+      "expected": [
+        false,
+        0,
+        ""
+      ]
+    }
+  ]
+}

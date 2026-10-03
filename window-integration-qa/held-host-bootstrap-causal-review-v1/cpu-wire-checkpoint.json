@@ -1,0 +1,26 @@
+{
+  "result": "fail",
+  "records": [
+    {
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap_wire_cpu.c",
+        "-lwayland-client",
+        "-o",
+        "/home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap-wire-cpu"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "/home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap_wire_cpu.c: In function \u2018queued_positive\u2019:\n/home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap_wire_cpu.c:28:2: error: this \u2018for\u2019 clause does not guard... [-Werror=misleading-indentation]\n   28 |  for(ssize_t i=0;i<n;i++)printf(\"%02x\",wire[i]);puts(\"\\\",\\\"noServerImplemented\\\":true,\\\"noNativeGUI\\\":true}\");\n      |  ^~~\n/home/hoskinson/window-integration-qa/held-host-bootstrap-causal-review-v1/bootstrap_wire_cpu.c:28:49: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018for\u2019\n   28 |  for(ssize_t i=0;i<n;i++)printf(\"%02x\",wire[i]);puts(\"\\\",\\\"noServerImplemented\\\":true,\\\"noNativeGUI\\\":true}\");\n      |                                                 ^~~~\ncc1: all warnings being treated as errors\n"
+    }
+  ],
+  "sourceSHA256": "c07d03d20a14aaf810b5ffcc7e37f0cedc7187ed46b5b6931db5053b003c5aaf",
+  "actualLibwaylandSHA256": "39c83ae7b73d22f18b4f81da14749c4535c304b7e62910a2f1aae682f279cc9d",
+  "failedActualCompositorWireCauseProved": false,
+  "nativeGUI": false
+}

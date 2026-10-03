@@ -1,0 +1,23 @@
+
+  keyboard_monitor_test
+    ok defaultReaderDisabledTypingAndShortcutPassTest passed 1 test(s)
+    ok watchDoesNotConsumeTest passed 1 test(s)
+    ok exactStrokeBalancedPressReleaseTest passed 1 test(s)
+    ok customModifierChordSuppressesToggleAndTypingTest passed 1 test(s)
+    ok secondStandaloneModifierTapPassesToggleTest passed 1 test(s)
+    ok modifierChordDisarmsDoubleTapTest passed 1 test(s)
+    ok ordinaryPressBetweenStandaloneTapsDisarmsTest passed 1 test(s)
+    ok delayedModifierTapStaysCapturedTest passed 1 test(s)
+    ok changedGrabDefinitionDisarmsDoubleTapTest passed 1 test(s)
+    ok clientIdentityChangeDisarmsDoubleTapTest passed 1 test(s)
+    ok clientDisconnectRetainsOnlyReleaseTombstoneTest passed 1 test(s)
+    ok preexistingClientPressStillReceivesReleaseUnderGrabTest passed 1 test(s)
+    ok fullGrabBlocksLockAndUngrabRetainsExactStrokeTest passed 1 test(s)
+    ok unauthorizedCallerCannotWatchOrGrabTest passed 1 test(s)
+    ok serviceStopFailsOpenForNewKeysTest passed 1 test(s)
+    ok registeredClientsRemainIndependentTest passed 1 test(s)
+    ok revokedPermissionRetainsSilentCapturedReleaseTest passed 1 test(s)
+    ok keymapReplacementKeepsCapturedReleaseTest passed 1 test(s)
+    ok deviceRemovalDropsOnlyRetiredRoutesTest passed 1 test(s)
+
+  19 passing (2456ms)

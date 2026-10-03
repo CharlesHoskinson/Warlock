@@ -1,0 +1,50 @@
+--- /home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v2/tests/test_controller_packet.py
++++ /home/hoskinson/window-integration-qa/pin-max-native-campaign-b-v3/tests/test_controller_packet.py
+@@ -109,4 +109,47 @@
+   import ast
+   tree=ast.parse((B/'controller/minimal_controller.py').read_text())
+   self.assertFalse(any(isinstance(n,ast.Call)and isinstance(n.func,ast.Attribute)and n.func.attr in {'Popen','ctl','launch','run_first_phase','load'}for statement in tree.body if not isinstance(statement,(ast.ClassDef,ast.FunctionDef))for n in ast.walk(statement)))
++class NativeMaxMarkerTests(unittest.TestCase):
++ # Executes the actual controller method with selected protocol observations.
++ # This CPU adapter cannot establish native reachability or MAX return.
++ def adapter(self,case='B04',fault=None):
++  obj=M.MinimalController.__new__(M.MinimalController);obj.decoder=type('D',(),{'exact':staticmethod(C.exact)})()
++  normal=dict(internalMode=0,clientMode=0,floating=case=='B05',logicalBox=['20','20','1560','960'],visualBox=['0','0','0','0'],restoreValid=True,restoreGeneration='1',restoreLogicalBox=['20','20','780','960'],restoreVisualBox=['20','20','780','960'],restoreFloating=case=='B05',restoreLayoutHandled=case=='B04',restoreTarget='target1',restoreLayoutTarget='layout1',restoreSpace='space1',restoreOrigin=False,restoreManaged=False,target='target1',space='space1',workspace={'id':1},output={'id':0})
++  maximum=dict(normal,internalMode=1,clientMode=1)
++  pinned=dict(maximum,restoreOrigin=True,restoreManaged=True);unpinned=dict(maximum,restoreOrigin=False,restoreManaged=True);final=copy.deepcopy(unpinned)
++  phases={'pin':pinned,'unpin':unpinned,'final':final}
++  if fault is not None:phase,field,value=fault;phases[phase][field]=value
++  snapshots=iter([{'body':normal},{'body':maximum},{'body':final},{'body':normal}]);calls=[];setups=[]
++  obj.capture=lambda actor:{'address':'0x1'};obj.snapshot=lambda captured:next(snapshots);obj.focus=lambda *a:None;obj.setup=lambda *a:setups.append(a);obj.wait=lambda label,f:f()
++  def pin(*args):
++   calls.append(args);first=len(calls)==1
++   return {'after':{'pinned':first}},{'owned':{'body':pinned if first else unpinned}}
++  obj.pin_titlebar=pin;obj.pin_keyboard=pin;obj.trace=[];obj.persist=lambda:None
++  return obj,calls,setups
++ def test_legitimate_exact_marker_transitions(self):
++  for case in ['B04','B05']:
++   with self.subTest(case=case):
++    obj,calls,setups=self.adapter(case);obj.native_max_case(case,{})
++    self.assertEqual(len(calls),2);self.assertEqual(len(setups),2)
++    self.assertIs(obj.trace[-1]['nativeMaxReturnObserved'],True)
++    self.assertIs(obj.trace[-1]['maximum']['restoreOrigin'],False)
++    self.assertIs(obj.trace[-1]['maximum']['restoreManaged'],False)
++ def test_incorrect_or_aliased_marker_refused_at_each_phase(self):
++  for phase in ['pin','unpin','final']:
++   for field in ['restoreOrigin','restoreManaged']:
++    expected=phase=='pin' if field=='restoreOrigin' else True
++    for value in [not expected,0,1,None,'true']:
++     with self.subTest(phase=phase,field=field,value=value):
++      obj,calls,setups=self.adapter(fault=(phase,field,value))
++      message='immediately after genuine '+phase if phase!='final' else 'at final observation'
++      with self.assertRaisesRegex(ValueError,message):obj.native_max_case('B04',{})
++      self.assertEqual(len(calls),1 if phase=='pin' else 2)
++      self.assertEqual(len(setups),1,'invalid markers must refuse before native MAX unset')
++ def test_later_client_mode_corruption_still_refused(self):
++  for phase in ['unpin','final']:
++   with self.subTest(phase=phase):
++    obj,calls,setups=self.adapter(fault=(phase,'clientMode',2))
++    with self.assertRaisesRegex(ValueError,'immediately after genuine unpin'if phase=='unpin'else'actual native mode/owning MAX conservation'):obj.native_max_case('B04',{})
++    self.assertEqual(len(calls),2);self.assertEqual(len(setups),1)
++
+ if __name__=='__main__':unittest.main(verbosity=2)

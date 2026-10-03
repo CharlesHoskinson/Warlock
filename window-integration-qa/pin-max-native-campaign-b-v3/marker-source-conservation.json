@@ -1,0 +1,56 @@
+{
+  "result": "pass",
+  "wholeControllerInverse": true,
+  "exactConservedFields": 18,
+  "exactMarkerPredicates": 3,
+  "allOriginal16TestBodiesExact": true,
+  "originalFirstPinCorruptionTestExact": true,
+  "unchangedRuntimeAndFormal": {
+    "run_native.py": {
+      "sha256": "2b2eb049b76a3af920b132f55c968ef0923210dc474f8cc43c2cb12001adc052",
+      "mode": 420
+    },
+    "host/candidate_host.py": {
+      "sha256": "d87216be25180ad6181228653a266ae0c281a599ca60354dbea5ab4ce6ba2928",
+      "mode": 420
+    },
+    "host/b_closure.py": {
+      "sha256": "d9ae436a1671656ee975acadc788947ebc4b9ce754869bf9912d5953882afb5b",
+      "mode": 420
+    },
+    "producer-registry/registry.py": {
+      "sha256": "d6f3676ed4bb6f10215adf9f74912ab590d2cd648806e3d9a72fedffbaa274af",
+      "mode": 420
+    },
+    "observer/decode_observation.py": {
+      "sha256": "ba8b169a941ce252a374f6dca048be99feb372f5ac88baab0ce558466b0e6a48",
+      "mode": 384
+    },
+    "producer_closure.qnt": {
+      "sha256": "80baba7aa866171269068baa2b94c1589c279e16d25ac6c32fae42052cb0af57",
+      "mode": 420
+    },
+    "producer-formal-before-classification-final.json": {
+      "sha256": "e6a5cc9920b38253773f9220e07d8cc2d42810c9e3099fa25a9f0fc72454075a",
+      "mode": 420
+    },
+    "producer-formal-final-0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    "producer-formal-final-1.log": {
+      "sha256": "1eab99bdfa8d3ccce70335ff3858494ba715e498c3c442da82d577c0dfa9e0d6",
+      "mode": 420
+    },
+    "producer-formal-final-2.log": {
+      "sha256": "d4a3108a311abd98fee137ae3b55959d6b2473ad53ee2880b7274a98dd8ffde6",
+      "mode": 420
+    },
+    "promotion_preflight.py": {
+      "sha256": "38bf7c73c75be67a4f05ddd18f4cbc3841d5717dcc6ee92ee97602b493f221f5",
+      "mode": 420
+    }
+  },
+  "sourceOnly": true,
+  "nativeExecuted": false
+}

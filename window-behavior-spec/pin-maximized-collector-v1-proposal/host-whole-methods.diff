@@ -1,0 +1,36 @@
+--- exact-host-methods-before
++++ exact-candidate-host-methods-proposed
+@@ -1,12 +1,12 @@
+     def launch(self,name,command,env=None):
+         if name=='hyprland':
+-            verify_inputs()
+-            if not command or str(command[0])!='/usr/bin/Hyprland' or env is None or env.get('AQ_BACKENDS')!='wayland':
++            verify_inputs(); verify_pair()
++            if not command or str(command[0])!=str(CORE) or env is None or env.get('AQ_BACKENDS')!='wayland':
+                 raise RuntimeError('Private library selection requires explicit reviewed child command/env')
+             selected=dict(env)
+             selected['LD_LIBRARY_PATH']=str(AQ/'prefix/lib')+':'+selected.get('LD_LIBRARY_PATH','')
+             self.evidence['privateAquamarine']['childLibraryPath']=selected['LD_LIBRARY_PATH']
+-            return super().launch(name,command,selected)
++            return original.PrivateWestonHost.launch(self,name,command,selected)
+         return super().launch(name,command,env)
+ 
+     def wait_socket(self,name,proc):
+@@ -18,7 +18,7 @@
+         runtime=original.qa.verify_runtime(self.runtime)
+         if len(parts)!=3 or parts[0]!='hypr' or not re.fullmatch(r'[A-Za-z0-9_]+',parts[1]) or Path(name).is_absolute():
+             raise RuntimeError('Invalid private IPC readiness path')
+-        records=[row for owned,row in self.processes if owned is proc and row.get('name')=='hyprland' and row.get('command',[None])[0]=='/usr/bin/Hyprland']
++        records=[row for owned,row in self.processes if owned is proc and row.get('name')=='hyprland' and row.get('command',[None])[0]==str(CORE)]
+         if len(records)!=1:
+             raise RuntimeError('IPC readiness requires exact registered child')
+         expected=records[0]
+@@ -77,7 +77,7 @@
+       self.evidence['sourceLuaSHA256']=hashlib.sha256(self.lua).hexdigest();self.evidence['xwaylandEnabled']=False
+       base,parent=nested_base(self.host)
+       self.evidence['parentSocket']=parent
+-      self.child=self.host.launch('hyprland',['/usr/bin/Hyprland','--config',str(config)],env=base)
++      self.child=self.host.launch('hyprland',[str(CORE),'--config',str(config)],env=base)
+       deadline=time.monotonic()+15;info=None
+       while time.monotonic()<deadline:
+        if self.child.poll() is not None:raise RuntimeError('private Hyprland exited '+str(self.child.returncode))

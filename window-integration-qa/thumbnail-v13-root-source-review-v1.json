@@ -1,0 +1,28 @@
+{
+  "result": "pass",
+  "readySHA256": "ae196e4e64a4c421b643254a333d30980d7483297d1924d98405ad00d9e464e0",
+  "handoffSHA256": "d90960669294c8219703b2e1d2454e154fc92a62ae54ecf7a26c2f0359dee6e3",
+  "inputsVerified": 22411,
+  "linksVerified": 287,
+  "inheritedLocalRegularFiles": 459,
+  "unchangedInheritedLocalRegularFiles": 458,
+  "changedCollectorSources": [
+    "service_observer.py"
+  ],
+  "exactApprovedObserverAndProfiler": true,
+  "originalCommandVectorsIndependentlyConserved": 43,
+  "proofSHA256": "cfe15e116d2cfb381a460ef5d9a0a758fbef6ce95d1d3a6c86acd1807a50bcb3",
+  "cpuTests": 179,
+  "namedScenarios": 217,
+  "formalModels": 15,
+  "commands": 46,
+  "completePredecessorAndV27Unions": true,
+  "originalBaselineRequired": 38,
+  "originalFaultsRequired": 34,
+  "timingPerturbed": true,
+  "diagnosticReturnEventProvesSuccess": false,
+  "deadlinesRunnerFaultsD3NativeTupleUnchanged": true,
+  "nativeAccepted": false,
+  "mainChanged": false,
+  "authorization": "freeze, verify, and one serial private causal baseline run; no production performance or full parity claim"
+}

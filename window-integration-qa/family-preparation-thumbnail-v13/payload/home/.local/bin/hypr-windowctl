@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -euo pipefail
+stage_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+export HYPR_WINDOWCTL_FRONTEND="$0"
+# Deployed helpers may live next to this entry point; staged copies do too.
+export HYPR_WINDOWCTL_CORE="${HYPR_WINDOWCTL_CORE:-$stage_dir/hypr-windowctl-core}"
+if [[ ${HYPR_WINDOWCTL_MOTION:-1} == 0 ]]; then
+  if [[ ${1:-} == activate ]]; then
+    active=$(hyprctl activewindow -j | jq -r '.address // empty')
+    address=${2:-$active}
+    [[ $address =~ ^0x[[:xdigit:]]+$ ]] || exit 2
+    window=$(hyprctl clients -j | jq -c --arg a "$address" '.[] | select(.address == $a)' | head -n 1)
+    [[ -n $window ]] || exit 3
+    identity=${3:-$(jq -r '.stableId // ""' <<<"$window")}
+    pid=${4:-$(jq -r '.pid // ""' <<<"$window")}
+    workspace=$(jq -r '.workspace.name // ""' <<<"$window")
+    operation=restore
+    if [[ $address == "$active" && $workspace != special:win-minimized && $workspace != special:scratchpad ]]; then operation=minimize; fi
+    exec "$HYPR_WINDOWCTL_CORE" "$operation" "$address" "$identity" "$pid"
+  fi
+  exec "$HYPR_WINDOWCTL_CORE" "$@"
+fi
+if [[ ${1:-} == minimize || ${1:-} == restore || ${1:-} == toggle || ${1:-} == activate ]]; then
+  exec python3 "$stage_dir/hypr-window-motion" request "$@"
+fi
+exec "$HYPR_WINDOWCTL_CORE" "$@"

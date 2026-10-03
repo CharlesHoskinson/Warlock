@@ -1,0 +1,56 @@
+{
+  "nativeExecuted": false,
+  "paths": [
+    {
+      "path": "core/src/desktop/state/ViewHitTester.cpp",
+      "before": {
+        "sha256": "f12f665083555db42a3ebbf21302734495b2e373cc9e6a21c84261c7b7771411",
+        "mode": 420
+      },
+      "after": {
+        "sha256": "c5a9dc872c0fad54fe124b5280f6fa6ad00c5bd21ff7da569a4a1eec14e4f9bb",
+        "mode": 420
+      },
+      "wholeInverse": "v2-inverses/core/src/desktop/state/ViewHitTester.cpp"
+    },
+    {
+      "path": "core/src/managers/input/InputManager.cpp",
+      "before": {
+        "sha256": "feedf32e2e3d23aeaed7a02ef4ab94be2d66f4b22873b3166026da1e9ece4765",
+        "mode": 436
+      },
+      "after": {
+        "sha256": "7de486a9f08d98fb5c8b0455043d4e527161ecb80618d92c6e8a498c593072a8",
+        "mode": 420
+      },
+      "wholeInverse": "v2-inverses/core/src/managers/input/InputManager.cpp"
+    },
+    {
+      "path": "core/src/desktop/state/pin/CorePolicyBuild.hpp",
+      "before": {
+        "sha256": "691aa6b310036f7706843eb71a60bce59b99227d61c1a1158d06d2a2d6fbb1f3",
+        "mode": 420
+      },
+      "after": {
+        "sha256": "57af8ee880e4401cc6c527a776dc67b63252933ff7d076c1200f5ea34369c6f0",
+        "mode": 420
+      },
+      "wholeInverse": "v2-inverses/core/src/desktop/state/pin/CorePolicyBuild.hpp"
+    },
+    {
+      "path": "helper/pin_helper.py",
+      "before": {
+        "sha256": "5f0bcadc96a760e809e857bc9025a42a45316facb410d2b9c3e5971e4d1e7507",
+        "mode": 448
+      },
+      "after": {
+        "sha256": "8d3b2987ef309e3e78302fc7620461ae426558911668429d767aa40232d4a2a3",
+        "mode": 448
+      },
+      "wholeInverse": "v2-inverses/helper/pin_helper.py"
+    }
+  ],
+  "rootApprovedTwoSiteDiff": "20ac41eb9cc238c24db7eee7630241dc424553ff00c80ce005d4eea404f9011b",
+  "corePolicyBuild": "59a1485d5f900db177414814bae9577898d687d17f2dc6a533ecec40a21590d3",
+  "otherRuntimeChangesAllowed": false
+}

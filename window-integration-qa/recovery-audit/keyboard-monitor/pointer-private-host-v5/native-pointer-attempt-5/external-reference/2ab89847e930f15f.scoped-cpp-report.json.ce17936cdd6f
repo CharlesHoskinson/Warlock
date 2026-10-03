@@ -1,0 +1,28 @@
+{
+  "result": "pass",
+  "scopeEvidence": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-44c84fb751dc4ad987d1f6012b0fb546.scope",
+    "coreLimit": 1
+  },
+  "inheritedCoreLimits": [
+    1,
+    1
+  ],
+  "tests": [
+    {
+      "binary": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/test_lifecycle-independent",
+      "sha256": "bcef797160e3ef2b046887b787db3414f2360ca11eff2892c36af6e5b158c171",
+      "exitCode": 0,
+      "stdout": "selection/lifecycle boundaries, staged sizes, reentrant-destruction/parent-loss helper states and 46656 exhaustive event traces passed\n",
+      "stderr": ""
+    },
+    {
+      "binary": "/home/hoskinson/window-integration-qa/aquamarine-nested-lifecycle-v1/test_version-independent",
+      "sha256": "370c9045e22abb7ef13c8f7f7e140544bb0ef113b27c83e76d42780c20200c65",
+      "exitCode": 0,
+      "stdout": "72 actual C++ boundary/property checks PASS\n",
+      "stderr": ""
+    }
+  ],
+  "nativeGuiLaunched": false
+}

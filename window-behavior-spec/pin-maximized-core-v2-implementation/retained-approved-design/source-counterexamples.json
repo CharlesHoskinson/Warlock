@@ -1,0 +1,123 @@
+{
+  "scope": "read-only primary source plus abstract model negatives, no native reproduction",
+  "checks": [
+    {
+      "name": "actualPinFloatingAndAnyFullscreenRefusal",
+      "path": "primary/src/config/shared/actions/ConfigActions.cpp",
+      "sha256": "a83abeb57175e65908d8d67ddc9802310134e5a4752fa3764f980401b48a7637",
+      "sourceLines": [
+        230
+      ],
+      "predicates": [
+        "!window->m_isFloating || Fullscreen::controller()->isFullscreen(window)"
+      ],
+      "boundedConsequence": "Native MAX must be accepted through a proper changed owning core API, not an unchanged PinAction call.",
+      "nativeExecution": false
+    },
+    {
+      "name": "preRawModalRefusal",
+      "path": "primary/src/desktop/state/FocusState.cpp",
+      "sha256": "9b971362bba97f200f0ef786237deed6b7b863066590d243cac11787e2a56ebd",
+      "sourceLines": [
+        73,
+        89,
+        93
+      ],
+      "predicates": [
+        "void CFocusState::fullWindowFocus",
+        "Refusing focus to window shadowed by modal dialog",
+        "rawWindowFocus(pWindow, reason, surface);"
+      ],
+      "boundedConsequence": "A rawWindowFocus-only hook cannot reroute the path rejected by preceding modal-parent guard.",
+      "nativeExecution": false
+    },
+    {
+      "name": "originalOwnerFollowups",
+      "path": "primary/src/config/shared/actions/ConfigActions.cpp",
+      "sha256": "a83abeb57175e65908d8d67ddc9802310134e5a4752fa3764f980401b48a7637",
+      "sourceLines": [
+        78,
+        81
+      ],
+      "predicates": [
+        "PWINDOWTOCHANGETO->warpCursor();",
+        "g_pInputManager->m_forcedFocus = PWINDOWTOCHANGETO;"
+      ],
+      "boundedConsequence": "Rerouted or refused fullWindowFocus does not rewrite caller local owner; original-owner followups need typed actual accepted target.",
+      "nativeExecution": false
+    },
+    {
+      "name": "legacyIndependentBitCopy",
+      "path": "primary/src/protocols/XDGShell.cpp",
+      "sha256": "d90b534c9097ab573f606c2dad4b5fab6dc31c4ca13240c43ef0bb74da7ed0c0",
+      "sourceLines": [
+        330,
+        567
+      ],
+      "predicates": [
+        "m_self->m_window->m_pinned = true;",
+        "createdWindow->m_pinned = true;"
+      ],
+      "boundedConsequence": "Effective protection and independent child pin intent are conflated by two real source writes.",
+      "nativeExecution": false
+    },
+    {
+      "name": "renderFloatingOnly",
+      "path": "primary/src/render/Renderer.cpp",
+      "sha256": "9af8a74e7dc42ba3c5532303b9bb4ee7c350d4cef2f2c8984e41f2a01b3bdd22",
+      "sourceLines": [
+        1221
+      ],
+      "predicates": [
+        "!w->m_pinned || !w->m_isFloating"
+      ],
+      "boundedConsequence": "Adding native tiled MAX pin alone omits protected owner from final pin pass.",
+      "nativeExecution": false
+    },
+    {
+      "name": "hitFloatingOnly",
+      "path": "primary/src/desktop/state/ViewHitTester.cpp",
+      "sha256": "1bcc02a03db80b0519e516b41b3e0d0e70df08d6aa50b006b6a4362854524a09",
+      "sourceLines": [
+        57,
+        57
+      ],
+      "predicates": [
+        "w->m_isFloating && w->m_isMapped",
+        "w->m_pinned"
+      ],
+      "boundedConsequence": "Final render band and native hit protection require matching nonfloating MAX policy.",
+      "nativeExecution": false
+    },
+    {
+      "name": "coreFocusPrecedesSeatAcceptance",
+      "path": "primary/src/desktop/state/FocusState.cpp",
+      "sha256": "9b971362bba97f200f0ef786237deed6b7b863066590d243cac11787e2a56ebd",
+      "sourceLines": [
+        179,
+        197
+      ],
+      "predicates": [
+        "m_focusWindow                             = pWindow;",
+        "rawSurfaceFocus(PWINDOWSURFACE, pWindow);"
+      ],
+      "boundedConsequence": "Core owner can change before native Seat acceptance; no atomically inferred owner+Seat success.",
+      "nativeExecution": false
+    },
+    {
+      "name": "surfaceRefusalOrMissingKeyboard",
+      "path": "primary/src/desktop/state/FocusState.cpp",
+      "sha256": "9b971362bba97f200f0ef786237deed6b7b863066590d243cac11787e2a56ebd",
+      "sourceLines": [
+        230,
+        250
+      ],
+      "predicates": [
+        "g_pSeatManager->m_seatGrab && !g_pSeatManager->m_seatGrab->accepts(pSurface)",
+        "if (g_pSeatManager->m_keyboard)"
+      ],
+      "boundedConsequence": "Seat refusal/lack of keyboard must retain partial actual observation and suppress success followup.",
+      "nativeExecution": false
+    }
+  ]
+}

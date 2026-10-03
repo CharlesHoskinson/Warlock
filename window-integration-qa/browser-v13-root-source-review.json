@@ -1,0 +1,47 @@
+{
+  "updatedUTC": "2026-10-02T01:12:48.053056+00:00",
+  "result": "root-source-review-awaiting-independent-runtime-review",
+  "inheritedFrozenV12Exact": true,
+  "all15OriginalFlowAndGuardsByteExact": true,
+  "all7OriginalModelsByteExact": true,
+  "reviewedChangedSources": {
+    "freeze_packet.py": "c1b3d1eef01703428892b53e2042a64114f31c74642c3ea07cb4ed285bce6886",
+    "runtime_metrics.qnt": "5359e84b1b4e5964c8e0eb8c80226151e7bea4e1ca52bcbe2860e62a9e2101ec",
+    "runtime_metrics_test.qnt": "b81d66b6a317639c72ae1b722e8306fb57fe1cadf8af197790b0a8c667efd6fe",
+    "owned_metrics_data.py": "563647132ff06cbacd40482d2eeac9cbfe34cd1892fb3c4b654f98e8c386bf50",
+    "test_owned_metrics_data.py": "f5ac69ee3e78f195a20a89e1038e3b2f011a413ee2ac9ff6f665bb965beeb452",
+    "metrics_offline.py": "bc6bf8358ecdc0e4f7f6be2f9bca6d1095576fec9c691fe49169ba32c0052602"
+  },
+  "newReviewedParentFunctions": [
+    "stat_record",
+    "directory_token",
+    "parent_observation"
+  ],
+  "unchangedInheritedHelperFunctions": [
+    "raw_record",
+    "error_record",
+    "directory",
+    "anchors",
+    "parse_mount",
+    "parse_fdinfo",
+    "fd_metadata",
+    "revoke",
+    "confirm",
+    "classification"
+  ],
+  "allInheritedRuntimeReconstructedOutsideApprovedParentChanges": true,
+  "formalBeforeRuntimeSHA256": "ee8a1b9cc9e0f3dd48ec85447475d57e6b588514b124d2b1e3b39052eb50a01c",
+  "independentModelReviewSHA256": "fa5e05a5addb6e2b97286e29668311387468ef7a3c38f08d1b8461b40e418e17",
+  "offlineReportSHA256": "1868c6ad98f2a93f8015e5f0c7b51d63cbcd866744f960b739970ede3956150b",
+  "offlineCommands": 28,
+  "pythonTests": 162,
+  "quintNamed": 139,
+  "models": 8,
+  "tracesPerModel": 2000,
+  "ownedComponentLookupAnchoredToExactProfileFD": true,
+  "allOriginalFDVMAIdentityCodeInputGatesPreserved": true,
+  "noHistoricalParentOrUnlinkActorClaim": true,
+  "nativeLaunched": false,
+  "mainWrites": false,
+  "nativeFeatureAccepted": false
+}

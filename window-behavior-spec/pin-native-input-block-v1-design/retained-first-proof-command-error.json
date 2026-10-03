@@ -1,0 +1,1 @@
+{"scope":"proof collector command syntax only, no Quint process started","error":"SyntaxError: expected 'else' after 'if' expression","sourceLine":"actualNamed=len(rows[1].get('actualPassedNames',[]))if len(rows)>1 else0","correction":"else 0 (required lexical whitespace)","modelChanged":false,"runtimeImplemented":false,"nativeExecuted":false}

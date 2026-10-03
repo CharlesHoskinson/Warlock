@@ -1,0 +1,91 @@
+--- /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v11/service_runtime.py
++++ /home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-review-v12/service_runtime.py
+@@ -75,7 +75,7 @@
+         if fd is not None:os.close(fd)
+         staging.unlink(missing_ok=True)
+ 
+-def unresolved(body):return bool(body and (body.get('pending') or body.get('scenes')))
++def unresolved(body):return bool(body and (body.get('pending') or body.get('scenes') or body.get('retiringActors')))
+ 
+ class RuntimeLease:
+     def __init__(self,root,session):
+@@ -128,7 +128,7 @@
+         if not isinstance(session,str) or not session:raise ValueError('explicit compositor session required')
+         self.lease=RuntimeLease(root,session);self.store=JournalStore(self.lease.root,session)
+         self.session=session;self.stop_requested=threading.Event();self.failure=None;self.closed=False;self.snapshot_serial=0
+-        self.manager=self.frontend=None
++        self.manager=self.frontend=None;self.housekeeping=None;self.housekeeping_errors=[]
+         try:
+             previous=self.store.read()
+             if previous:self.snapshot_serial=previous['snapshot']
+@@ -146,7 +146,7 @@
+     def snapshot(self):
+         m=self.manager
+         scenes=[]
+-        for a in m.actors:
++        for a in m.actors+m.retiring:
+             r=a.controller.current
+             if r:scenes.append({'actor':a.number,'token':r.token,'operation':r.operation,'requested':list(r.requested),
+                 'members':[list(key(w)) for w in r.members],'sources':r.sources,'context':r.context,
+@@ -155,7 +155,10 @@
+             'receipts':[[list(k),r] for k,r in sorted(m.receipts.items())],
+             'pending':[{'receipt':p['receipt'],'operation':p['command'],'captured':list(p['captured']),
+                 'scope':[list(k) for k in sorted(p['scope'])],'direction':asdict(p['direction']),'single':p['single']} for p in m.pending.values()],
+-            'scenes':scenes,'ingressHistory':m.ingress_history,'failure':self.failure}
++            'scenes':scenes,'ingressHistory':m.ingress_history,'failure':self.failure,
++            'liveActors':[a.number for a in m.actors],'retiringActors':[a.number for a in m.retiring],
++            'actorSerial':m.actor_serial,'actorLimit':m.max_actors,'managerClosed':m.closed,
++            'resourceErrors':m.resource_errors,'housekeepingErrors':self.housekeeping_errors}
+     def persist(self):
+         with self.manager.lock:
+             if self.manager.persistence_failed:raise RuntimeError('durable journal previously failed; native authority revoked')
+@@ -165,7 +168,19 @@
+                 self.failure='durable journal: '+str(error);self.manager.persistence_failed=True;self.manager.closed=True
+                 self.stop_requested.set()
+                 raise RuntimeError(self.failure) from error
+-    def start(self):self.frontend.start()
++    def housekeep(self):
++        while not self.stop_requested.wait(1):
++            for label,operation in (('cache',getattr(self.manager.factory,'housekeep',lambda:None)),('actors',self.manager.reap_idle)):
++                try:operation()
++                except Exception as error:
++                    with self.manager.lock:
++                        self.housekeeping_errors.append({'timeNs':time.monotonic_ns(),'operation':label,'error':str(error)})
++                        self.housekeeping_errors=self.housekeeping_errors[-128:]
++                        if not self.manager.persistence_failed:self.persist()
++    def start(self):
++        self.frontend.start()
++        self.housekeeping=threading.Thread(target=self.housekeep,name='motion-housekeeping',daemon=True)
++        self.housekeeping.start()
+     def run(self):
+         self.start()
+         try:
+@@ -176,12 +191,26 @@
+             if self.failure:raise RuntimeError(self.failure)
+             return
+         self.closed=True;errors=[]
+-        try:self.manager.close()
++        self.stop_requested.set()
++        if self.housekeeping:
++            self.housekeeping.join(timeout=8)
++            if self.housekeeping.is_alive():
++                self.failure='housekeeping did not stop normally; actor disposal and lease release refused'
++                with self.manager.lock:self.manager.closed=True
++                # API closes but actor/lease ownership remains quarantined. A
++                # caller may join the job and retry close; no success is implied.
++                self.frontend.close(close_manager=False)
++                self.closed=False
++                raise RuntimeError(self.failure)
++        try:self.manager.begin_close()
+         except Exception as error:errors.append(str(error))
+         try:self.frontend.close(close_manager=False)
+         except Exception as error:errors.append(str(error))
+-        try:self.lease.close()
++        try:self.manager.close()
+         except Exception as error:errors.append(str(error))
++        if not errors and not self.failure:
++            try:self.lease.close()
++            except Exception as error:errors.append(str(error))
+         if errors or self.failure:
+             self.failure='; '.join(([self.failure] if self.failure else [])+errors)
+             raise RuntimeError(self.failure)

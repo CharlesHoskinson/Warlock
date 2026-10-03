@@ -1,0 +1,19 @@
+
+  configure_lifecycle
+    ok initialCommitRefusedTest passed 1 test(s)
+    ok toplevelDoesNotPublishTest passed 1 test(s)
+    ok ackAloneDoesNotCommitTest passed 1 test(s)
+    ok acknowledgedPublicationAllowsBufferTest passed 1 test(s)
+    ok destroyedOutputCannotReappearTest passed 1 test(s)
+    ok repeatedConfigureStaysUsableTest passed 1 test(s)
+    ok publishedDestructionRefusesMoreTest passed 1 test(s)
+    ok ackThenDestroyedQueuedCallbackRefusedTest passed 1 test(s)
+    ok stateListenerDestructionRefusesFrameTest passed 1 test(s)
+    ok publishedThenDestroyedQueuedReconfigureRefusedTest passed 1 test(s)
+    ok idleFrameBeforeAnnouncementRefusedTest passed 1 test(s)
+    ok publishedFrameAndBufferRecordedSeparatelyTest passed 1 test(s)
+    ok parentLossBeforeAckInvalidatesQueuedWorkTest passed 1 test(s)
+    ok parentLossAfterAckRefusesAnnouncementTest passed 1 test(s)
+    ok publishedParentLossStopsBuffersFramesAndReconfigureTest passed 1 test(s)
+
+  15 passing (193ms)

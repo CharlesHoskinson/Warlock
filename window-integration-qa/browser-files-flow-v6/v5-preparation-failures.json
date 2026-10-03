@@ -1,0 +1,10 @@
+{
+  "nativeExecuted": false,
+  "failures": [
+    {
+      "source": "prepare_stage_review.py",
+      "error": "Inherited source check expected exact old unconditional kernel-range predicate text; updated to explicit Files strict predicate",
+      "fixedBeforeFreeze": true
+    }
+  ]
+}

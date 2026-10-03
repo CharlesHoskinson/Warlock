@@ -1,0 +1,76 @@
+{
+  "scope": "Actual raw Qt attached toggleAction signal on copied gallery Cell; offscreen/private D-Bus, no reader proof",
+  "observations": [
+    {
+      "context": "visible",
+      "peer": {
+        "class": "Cell_QMLTYPE_32_QML_44",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "subfolder",
+        "objectAlive": true,
+        "valid": true
+      },
+      "signalInvoked": "true",
+      "selectionBefore": [],
+      "selectionAfter": [
+        "subfolder"
+      ],
+      "changed": true
+    },
+    {
+      "context": "hidden",
+      "peer": {
+        "class": "Cell_QMLTYPE_32_QML_44",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": true,
+        "name": "subfolder",
+        "objectAlive": true,
+        "valid": true
+      },
+      "signalInvoked": "true",
+      "selectionBefore": [],
+      "selectionAfter": [],
+      "changed": false
+    },
+    {
+      "context": "disabled",
+      "peer": {
+        "class": "Cell_QMLTYPE_32_QML_44",
+        "disabled": true,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "subfolder",
+        "objectAlive": true,
+        "valid": true
+      },
+      "signalInvoked": "true",
+      "selectionBefore": [],
+      "selectionAfter": [],
+      "changed": false
+    },
+    {
+      "context": "modalBackground",
+      "peer": {
+        "class": "Cell_QMLTYPE_32_QML_44",
+        "disabled": false,
+        "hasActionInterface": true,
+        "interfaceFound": true,
+        "invisible": false,
+        "name": "subfolder",
+        "objectAlive": true,
+        "valid": true
+      },
+      "signalInvoked": "true",
+      "selectionBefore": [],
+      "selectionAfter": [],
+      "changed": false
+    }
+  ],
+  "exitCode": -15
+}

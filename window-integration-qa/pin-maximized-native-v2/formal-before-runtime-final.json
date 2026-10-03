@@ -1,0 +1,77 @@
+{
+  "modelSHA256": "fc86cc9f7bee303ee1b9b9c31b466bfc729ff4f3a826745d2c9780bc9f92ef9e",
+  "names": [
+    "actualRegisteredClosedClient",
+    "allSixKnownRoles",
+    "originalBaseRowsRemainRequired",
+    "arbitraryExtraRoleRefused",
+    "currentLifetimeReplacementRefused",
+    "commandReplacementRefused",
+    "executableReplacementRefused",
+    "runningBeforeDelegatedCloseRefused",
+    "kernelLifetimeNotGoneRefused",
+    "missingCleanupReceiptRefused",
+    "cleanupNonzeroRefused",
+    "clientTermIsNotNormal",
+    "clientKillIsNotNormal",
+    "clientSignalEvenZeroRefused",
+    "forcedCaseCleanupRefused",
+    "clientErrorRefused",
+    "missingReapRefused",
+    "missingCaseSourceRefused",
+    "missingBoundRawReportRefused",
+    "failedCaseCleanupRefused",
+    "duplicateRegistryRefused",
+    "missingRoleRefused",
+    "fullReverseRegistryRequired",
+    "beforeCloseObservationRequired",
+    "noNewStopSemantics",
+    "rawBeforePredicateRequired"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "quint",
+        "typecheck",
+        "client_closure.qnt"
+      ],
+      "returncode": 0,
+      "log": "formal-final-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "quint",
+        "test",
+        "client_closure.qnt",
+        "--match",
+        "^(actualRegisteredClosedClient|allSixKnownRoles|originalBaseRowsRemainRequired|arbitraryExtraRoleRefused|currentLifetimeReplacementRefused|commandReplacementRefused|executableReplacementRefused|runningBeforeDelegatedCloseRefused|kernelLifetimeNotGoneRefused|missingCleanupReceiptRefused|cleanupNonzeroRefused|clientTermIsNotNormal|clientKillIsNotNormal|clientSignalEvenZeroRefused|forcedCaseCleanupRefused|clientErrorRefused|missingReapRefused|missingCaseSourceRefused|missingBoundRawReportRefused|failedCaseCleanupRefused|duplicateRegistryRefused|missingRoleRefused|fullReverseRegistryRequired|beforeCloseObservationRequired|noNewStopSemantics|rawBeforePredicateRequired)$",
+        "--max-samples",
+        "1"
+      ],
+      "returncode": 0,
+      "log": "formal-final-1.log",
+      "sha256": "b1a063b4142234594638da26839e584665614ce623fa0c4dc6388e9a909f9fd4"
+    },
+    {
+      "argv": [
+        "quint",
+        "run",
+        "client_closure.qnt",
+        "--invariant",
+        "allProps",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "2201"
+      ],
+      "returncode": 0,
+      "log": "formal-final-2.log",
+      "sha256": "b12bdb71d48363dcbb05bafcda7798d59e7fdfb1b8173af116189b974a45548a"
+    }
+  ],
+  "runtimeUnmodified": true,
+  "allPass": true
+}

@@ -1,0 +1,48 @@
+{
+  "result": "pass",
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_action.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Running as unit: qa-harness-ae488fdfe1584ec383fc9dba1141b55d.scope; invocation ID: a5de015a94cd438d8a5e98986265f23e\n"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_action_test.qnt"
+      ],
+      "returncode": 0,
+      "stdout": "\n  pin_action_test\n    ok fullPinTest passed 1 test(s)\n    ok floatFailureVisiblePartialTest passed 1 test(s)\n    ok floatFailureBeforeMutationTest passed 1 test(s)\n    ok pinFailureRetainsFloatTest passed 1 test(s)\n    ok pinFailureAfterMutationTest passed 1 test(s)\n    ok raiseFailureRetainsActualPinTest passed 1 test(s)\n    ok raiseClosureCallbackRefusesSuccessTest passed 1 test(s)\n    ok raiseMinimizeCallbackKeepsPinIntentTest passed 1 test(s)\n    ok raiseReloadCallbackRefusesSuccessTest passed 1 test(s)\n    ok floatClosureCallbackRefusesPinTest passed 1 test(s)\n    ok floatMinimizeCallbackRefusesPinTest passed 1 test(s)\n    ok pinClosureCallbackRefusesRaiseTest passed 1 test(s)\n    ok sameOwnerReentryRefusedTest passed 1 test(s)\n    ok sameOwnerReentryDoesNotRedirectOuterIntentTest passed 1 test(s)\n    ok focusCannotRedirectOwnerTest passed 1 test(s)\n    ok independentlyPinnedPeerPreservedTest passed 1 test(s)\n    ok fullscreenRefusedBeforeFloatTest passed 1 test(s)\n    ok fullscreenCallbackAfterFloatRefusedTest passed 1 test(s)\n    ok staleAddressRefusedTest passed 1 test(s)\n    ok staleStableIdRefusedTest passed 1 test(s)\n    ok stalePidRefusedTest passed 1 test(s)\n    ok staleSessionRefusedTest passed 1 test(s)\n    ok reloadChangesEpochNotCompositorSessionTest passed 1 test(s)\n    ok closedReusedAddressOldIdentityRefusedTest passed 1 test(s)\n    ok partialActionNoSuccessfulFeedbackTest passed 1 test(s)\n    ok latestGenerationRejectsOldFeedbackTest passed 1 test(s)\n    ok reducedMotionRetiresFeedbackTest passed 1 test(s)\n    ok minimizeRetiresFeedbackAndKeepsIntentTest passed 1 test(s)\n    ok reloadRetiresFeedbackTest passed 1 test(s)\n    ok closeRetiresFeedbackTest passed 1 test(s)\n    ok unpinBeforeMinimizeRemainsUnpinnedTest passed 1 test(s)\n    ok sameAddressStablePidNewLifetimeOldTokenRefusedTest passed 1 test(s)\n    ok freshReusedLifetimeTokenAcceptedTest passed 1 test(s)\n    ok callbackPinIntentAfterFloatRefusesOverrideTest passed 1 test(s)\n    ok callbackTileAfterPinRefusesSuccessTest passed 1 test(s)\n    ok normalTransferPreservesCapturedLifetimeAndPeerTest passed 1 test(s)\n    ok specialTransferRefusesRemainingActionTest passed 1 test(s)\n    ok callbackCloseReuseBeforeFinishRejectsOldLeaseTest passed 1 test(s)\n    ok reducedNewOperationKeepsSuccessWithoutFeedbackTest passed 1 test(s)\n    ok unloadedPluginOldTokenRefusesSameCompositorTest passed 1 test(s)\n    ok unloadedPluginFreshTokenAcceptedTest passed 1 test(s)\n\n  41 passing (10392ms)\n",
+      "stderr": "Running as unit: qa-harness-e694f2f57a0d4998a0d919faba0ea964.scope; invocation ID: 255ea4fa927f4dee965b68e192de2283\n"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/window-behavior-spec/pin-lifetime-v2/pin_action.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=20261001",
+        "--verbosity=1"
+      ],
+      "returncode": 0,
+      "stdout": "[ok] No violation found (1764ms at 1134 traces/second).\nUse --seed=0x13b4241 --backend=rust to reproduce.\n",
+      "stderr": "Running as unit: qa-harness-9cddd6eb98bd4528a60b179810706021.scope; invocation ID: bb178eaa59fb48959e7bd15632fbe949\n"
+    }
+  ],
+  "nativeSourcesStillExactV23": true,
+  "modelsBeforeFurtherImplementation": true,
+  "nativeExecuted": false,
+  "sourceSHA256": {
+    "pin_action.qnt": "54d7f80b18b23e4b394d92e8dcdb1dbb6bec10d37654c25eec85a788a23c2a38",
+    "pin_action_test.qnt": "aab23f9cdc1802e5a55d4e27b24313d85b0112f023594bc9e9611b5016763857",
+    "PARTIAL_ACTION_CONTRACT.md": "efad51392af89b600a3459c857092fe89a5db299e21229b47d20e7380bdcbfb0"
+  }
+}

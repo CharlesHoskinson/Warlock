@@ -1,0 +1,35 @@
+{
+  "result": "pass",
+  "checks": [
+    {
+      "name": "all copied bytes/modes exact except declared collector/pair deltas",
+      "passed": true,
+      "copies": 45
+    },
+    {
+      "name": "runtime/test16/formal14 proof byte/mode conservation",
+      "passed": true
+    },
+    {
+      "name": "actual HERE/B/host constructor resolves promoted QA with no enter/launch",
+      "passed": true
+    },
+    {
+      "name": "exact original guard AST refuses oldSPEC/admitted newQA location",
+      "passed": true,
+      "primaryGuardSource": {
+        "sha256": "0bb343488eb4c04ef53af2550f01a35cc737888bfec797208431f799a28c5d27",
+        "mode": 420
+      },
+      "noEnter": true
+    },
+    {
+      "name": "actual completed pair/readelf exact and no new native grant",
+      "passed": true
+    }
+  ],
+  "noGUI": true,
+  "noHostEnter": true,
+  "noCandidateExecution": true,
+  "noNewSemanticProofNeeded": true
+}

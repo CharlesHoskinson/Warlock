@@ -1,0 +1,39 @@
+--- installed-widget65/WindowMotion.qml
++++ staged-widget66/WindowMotion.qml
+@@ -3,6 +3,8 @@
+ import Quickshell
+ import Quickshell.Wayland
+ import Quickshell.Io
++import "file:///home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/wayland-feedback"
++import "file:///home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/frame-telemetry"
+ 
+ // Pixels move; the native window's geometry is never used as a tween target.
+ PanelWindow {
+@@ -30,6 +32,13 @@
+     }
+     return ""
+   }
++  MotionPresentationProbe { id: presentationArchive }
++  function presentedFrames(after) { return presentationArchive.allFramesAfter(after || 0) }
++  function queuedFrames() {
++    var result=[]
++    Object.keys(objects).forEach(function(address) { result=result.concat(objects[address].queuedFrames()) })
++    return result
++  }
+   function visualState() {
+     return requests.map(function(r) {
+       var item=objects[r.identity[0]]
+@@ -167,6 +176,13 @@
+       fillMode: Image.Stretch
+       smooth: true
+       visible: status===Image.Ready
++      readonly property var observationFields: ({token:modelData.token,identity:modelData.identity,
++        digest:modelData.atlasDigest || "",output:modelData.target.screenName,rect:currentRect(),
++        progress:routeProgress,active:root.objects[modelData.identity[0]]===frame && frame.visible,
++        imageReady:status===Image.Ready,source:String(frame.source)})
++      MotionFrameProbe { id: queueProbe; observedItem: frame; frameData: frame.observationFields }
++      MotionPresentationProbe { id: presentProbe; observedItem: frame; frameData: frame.observationFields }
++      function queuedFrames() { return queueProbe.framesAfter(0) }
+       function currentRect() { return {x:x+originX,y:y+originY,width:width,height:height} }
+       function stop() { readiness.stop();tween.stop() }
+       function dispose() { stop();localTimeout.stop();if(previousFrame) {previousFrame.dispose();previousFrame=null};destroy() }

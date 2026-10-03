@@ -1,0 +1,48 @@
+{
+  "runtimeRefinementImplemented": false,
+  "sourceSha256": "c9d97e14c53f1d8fff03753464eb9941ac577b2d2eab74df4fda6a2153ddb12a",
+  "commands": [
+    {
+      "argv": [
+        "quint",
+        "typecheck",
+        "pin_transfer_refinement.qnt"
+      ],
+      "exitCode": 0,
+      "elapsed": 3.101555824279785,
+      "log": "proof/transfer-refinement-before-implementation-0.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "quint",
+        "test",
+        "pin_transfer_refinement.qnt",
+        "--max-samples=1",
+        "--match",
+        "^(staleReturnCannotPromote|changedGenerationCannotPromote|positiveTransfer|missingHandlerRetained|closeBeforeFinish|replaceBeforeFinish|staleOutputBeforeFinish|nativeRefusalRetained|staleReturnUnpin|failedTransferUnpin|closedUnpinRefused|replacedUnpinRefused|oldGenerationUnpinRefused|freshGenerationUnpin|wrongOwnerUnpinRefused|wrongTargetUnpinRefused|repeatUnpinNoFurtherWrite|changedGeometryNotRestored)$"
+      ],
+      "exitCode": 0,
+      "elapsed": 4.052832365036011,
+      "log": "proof/transfer-refinement-before-implementation-1.log",
+      "logSha256": "e62d72aa0771a6b103a3e1aa3d023e282982409c24dc15cae9f04a6252fd0ef6"
+    },
+    {
+      "argv": [
+        "quint",
+        "run",
+        "pin_transfer_refinement.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--seed=2026100241"
+      ],
+      "exitCode": 0,
+      "elapsed": 6.436680555343628,
+      "log": "proof/transfer-refinement-before-implementation-2.log",
+      "logSha256": "22de94005cfcfa75e49a212167a4aac78669041e17445547d711e9e31467e219"
+    }
+  ],
+  "passed": true,
+  "nativeAuthorized": false
+}

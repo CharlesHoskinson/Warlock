@@ -1,0 +1,79 @@
+{
+  "result": "fixture-design-ready",
+  "namedScenarios": 8,
+  "samples": 2000,
+  "steps": 100,
+  "formalSHA256": "bade034eebbbcb3be1ac7d32db52c301c8abf4fc55806c9a3651d81cd6b862ec",
+  "actualCounterexample": "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/actual-counterexample.json",
+  "counterexampleSHA256": "8a416fcac30a1cdb3251448b20c5b841b221ed04da807ec59e08c063b2033015",
+  "patchSHA256": "cba1e3c7b0fc8c6c2a97574eb33235646e1c2332ead624cd90b309c3312a3045",
+  "inputs": {
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/replay.py": {
+      "sha256": "ffffe2e16a9f49bfee67c735b3358da6f74beca4871f1f2ac59b89cff22e1167",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/CONTRACT.md": {
+      "sha256": "b28612a91d8658979ed7b247664b0d03ebf128b582076b975dce75ef5b19503d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/preseed_completion.qnt": {
+      "sha256": "abc00517792ee9b214b975c81a19217cfe2c33483df4567dc05ed0d3c83aef5e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/preseed_completion_test.qnt": {
+      "sha256": "edfb0313407785cc371b8ee392f32d26596a29f0f6eefa12a5d3e7501c56f50b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/actual-counterexample.json": {
+      "sha256": "8a416fcac30a1cdb3251448b20c5b841b221ed04da807ec59e08c063b2033015",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/test_preview_admission.py.proposed": {
+      "sha256": "b79ce5a60a3de2cf666ee78e45d9094ba436920660351a4959c45308d9cfd678",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/intended.patch": {
+      "sha256": "cba1e3c7b0fc8c6c2a97574eb33235646e1c2332ead624cd90b309c3312a3045",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/intended-source-map.json": {
+      "sha256": "b15a4003e45912d4b9531cba4e2253973c1d295370de45f9127626ec23f9cc5f",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/formal_gate.py": {
+      "sha256": "769408cdc7daede0421909537f0b91871e03484fa250d3a9bc65efde2aa264ab",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/formal-0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/formal-1.log": {
+      "sha256": "df875d00a8c2346c953697eb8993761ade54fb670fae678d1bb83b92dc1cf66c",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/formal-2.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-proof-source-v1/preseed-fixture-completion-design-v1/formal-before-runtime.json": {
+      "sha256": "bade034eebbbcb3be1ac7d32db52c301c8abf4fc55806c9a3651d81cd6b862ec",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-full-proof-v1/report.json": {
+      "sha256": "4f6ff6dc3a4759b594a17943f0f76a26b72d195f709054f3783375c9898c5c9a",
+      "mode": 384
+    },
+    "/home/hoskinson/window-integration-qa/housekeeping-admission-v26-full-proof-v1/check-00.log": {
+      "sha256": "5bbe3a8a02650529f53711485e3c98de8d057d858a38d8ad391565f990e45712",
+      "mode": 384
+    }
+  },
+  "inputCount": 15,
+  "runtimeChanged": false,
+  "fixtureApplied": false,
+  "originalFailed409EpochRetained": true,
+  "sameOriginalThreeSecondFixtureDeadline": true,
+  "sameOriginalTwoSecondProductDeadline": true,
+  "nativeAccepted": false
+}

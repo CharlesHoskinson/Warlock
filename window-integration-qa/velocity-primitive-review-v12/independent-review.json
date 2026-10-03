@@ -1,0 +1,48 @@
+{
+  "result": "pass-bounded-primitive-review",
+  "numericReplay": {
+    "checks": 2012523,
+    "randomFamilies": 2000,
+    "command": [
+      "/usr/bin/python3",
+      "/home/hoskinson/window-integration-qa/qa_run.py",
+      "--",
+      "/home/hoskinson/window-integration-qa/velocity-primitive-review-v12/numeric-replay"
+    ]
+  },
+  "additionalRepeatedFamily": {
+    "members": 64,
+    "turns": 40,
+    "exactOriginPairs": 2560,
+    "boundedSamples": 258560,
+    "v11CounterexamplesRefused": 2,
+    "command": [
+      "/usr/bin/python3",
+      "/home/hoskinson/window-integration-qa/qa_run.py",
+      "--",
+      "/home/hoskinson/window-integration-qa/velocity-primitive-review-v12/repeated-boundary"
+    ]
+  },
+  "sourceBefore": {
+    "root": "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/producer-trajectory-dev-v12",
+    "inputs": {
+      "ContinuousTrajectory.hpp": "46d352975357c3137a9e1411835684363f0ed57c1182636443147fdd0c49e181",
+      "test_trajectory.cpp": "2c34f737b51bfeb16921194a76046a158f914744b0f38bc0fa050fd304c8df38",
+      "CONTRACT.md": "c0820ea962044ac8c4635ffd41b44909fe4467ee30d987ae2941ac888e38adc9",
+      "trajectory.qnt": "caedc9718a18a706d3eca6f184305c2aa1dbeec234ab7f1c45a52e8893c164d1",
+      "offline-checkpoint.json": "215fef8dadfc0aaf867130811d416ed8235eb79dc5ff968135c81bcb85a51ff6"
+    },
+    "readOnlyRoot": true
+  },
+  "rootInputsAfterExact": {
+    "ContinuousTrajectory.hpp": true,
+    "test_trajectory.cpp": true,
+    "CONTRACT.md": true,
+    "trajectory.qnt": true,
+    "offline-checkpoint.json": true
+  },
+  "nativeAccepted": false,
+  "rendererIntegrationImplemented": false,
+  "v10RendererMutated": false,
+  "mathematicalReview": "Geometry hull a,a+D*v/3,b,b and derivative hull v,3*(b-control)/D,0 bounded by common duration lower/upper intersection; actual floating controls verified again. Empty intersection refuses before submission. This bounds admitted sample material but does not guarantee every future target has a feasible duration."
+}

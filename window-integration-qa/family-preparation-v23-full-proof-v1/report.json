@@ -1,0 +1,1947 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-d135d98bf9a34b21bcf10b13765019b3.scope",
+    "coreLimit": 1
+  },
+  "pythonTests": 359,
+  "quintNamedScenarios": 296,
+  "quintModels": 32,
+  "samplesPerModel": 2000,
+  "stepsPerSample": 100,
+  "sourceUnchangedDuringProof": true,
+  "sources": {
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/READONLY_IPC_CONTRACT.md": {
+      "sha256": "53e32adf0aa4840bd281e4d5174470db23e8ff396d3959e940295eedde1be827",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/readonly_ipc.qnt": {
+      "sha256": "17fe3940457938fc471c7517a232da49e0426b25a7bdf2c458293c1c1c857b71",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/readonly_ipc_test.qnt": {
+      "sha256": "a3c9dabcee08960b21b0c4fa05ac143b8cf650eca711ec65540e4bbb061a32cf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/readonly_registry.qnt": {
+      "sha256": "2200fe845c0d72807247ec3c8b2e120a68f24e546078669da1a34a1ff257e9f9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/readonly_registry_test.qnt": {
+      "sha256": "a3ded4b91f4ba4ebb495204f2473723ac4fb393afbfaf5ddfd86df6f39a364a9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/family_query.qnt": {
+      "sha256": "1bbf076049bdd54958c8590935ac93311159ac03a49cdfac922b61355d834d72",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/family_query_test.qnt": {
+      "sha256": "63572eab7dae3fdc1caea5b67456d9907e56c5357877a3394400c664145274cb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/context_provider.py": {
+      "sha256": "0e3daea910a49f44e63c6321859dd8598c4e610d16e1cc445070602e5bec1b78",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/direction.py": {
+      "sha256": "486f57b77d0d34fa8ef23f7906a4c8728c614beba6ebe4c267afe8e623c20c35",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/native_desktop.py": {
+      "sha256": "31ace97dda5342519aa749c4dcd01dbd70b425b79b507639a543cf9a2c00ba19",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/native_runtime.py": {
+      "sha256": "a690e79fcb1231debce7a66fe7712d31942db6301fce79bc92effaa453a35c73",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/pipe_transport.py": {
+      "sha256": "5065de11e56ddb3f5b753b457f685750dcdcad148b1306f00bb9b3a0519709c8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/production_motion_6d9.py": {
+      "sha256": "6d9a21114cfc9d8ed4a4669bb4c1a585375abd56bf27de2783e203926dcecbaa",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/runtime_fixture.py": {
+      "sha256": "385d01079b0607d9e6f4519d99cae1fda9f0438e5696b79e55273265a9ddfa8a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/scene_controller.py": {
+      "sha256": "3b47325e7e86b06492ef59576159482c6036297aeafdcb46875cf590d1844657",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/scene_manager.py": {
+      "sha256": "ca50d0268f701f61357a537959e8ae021adef57f66d6433388004ac812dfa96f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/service_runtime.py": {
+      "sha256": "236e09e09cd2476a46fcdf40d1b467a3ea27b125976f66874a5d7ce5fd8ccb2f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/snapshot_cache.py": {
+      "sha256": "21f0d47313c053964fd8e81736843d8b62ecadab5eee3ebba80ef5801e8bf8ee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/socket_frontend.py": {
+      "sha256": "0ea4c81cbf975104bb4ae17f9a8807f4af74a974a793a4b36a0aac7569c2647f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_capture_lease.py": {
+      "sha256": "e301c95d2fc7ac21fb91118493b9323f0acddfb89080251f91959ce74ad05607",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_context_provider.py": {
+      "sha256": "32fdddb492653f08a3bee1d2145903417f6a7fe90e3d0ad89469736672a2c950",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_ingress_context.py": {
+      "sha256": "04a7c158a2c430b3967da74366b3ac73a62d57b4c37fce93f50e1cb08b077e82",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_ipc_complete_probe.py": {
+      "sha256": "ba53f204516a3ca7a2d8764951d261a2aa4c0de2e47ca11fb881cac42546d62f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_native_runtime.py": {
+      "sha256": "75728cd42743ec3251e92ff4a2624760bf5472c070d50bb9ea22ae3ddd243140",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_pending_direction.py": {
+      "sha256": "c621906e5e6e4d7d4fb9ccd0cd81e25e48ff519868576a9a780ee7a00bbe2fea",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_pipe_transport.py": {
+      "sha256": "81b70b7035acb8241a53eaf9288901f17d31ac505be22dd9ac21935303ddfeb6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_receipt_visual.py": {
+      "sha256": "c0d4fa8fc4b063ab450a5ad18a043edbb3334487fd3a7a822c20841e8f7d952e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_scene_controller.py": {
+      "sha256": "22e97f7440ca476eb659f3e329e8123e6ab69c9f8edc913326c07f2895456bd6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_scene_manager.py": {
+      "sha256": "461f4740fe823791f7c0c2d0e9fc5d9e091744015bd621a0adf9e4f578dfc6d9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_service_runtime.py": {
+      "sha256": "a7149de0f8b6328696bfd86c02f7f72e616a3bd42a3c87efa5e420f88c57fe6c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_snapshot_cache.py": {
+      "sha256": "655003df776a41314101248404b2cf88c48ae054cb4b5f49a64852fb7a0e032a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_socket_frontend.py": {
+      "sha256": "f83912985eb7b4c0eea2b6e74e39b456ba4aad3a3e462ff7628abb0d7398773e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/family_order.py": {
+      "sha256": "0792d94a67ddb5b8181d54487b048b990a2cc879ece3d981ed30d4b0d4a2ec54",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_actor_resources.py": {
+      "sha256": "4a7c1bd0d507aad67821e6edf68cb4719647208027819b7152a623ab70d8c05b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_family_order.py": {
+      "sha256": "c08c2a8d0660204627aa671b347e7429f86e536cf7650ab62a4c98d267ad269b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_gesture_retirement.py": {
+      "sha256": "d1b8cac3bb3fcd14281703177a7c92ad79179170ad8696752d350d5237b11e7b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/check_offline.py": {
+      "sha256": "e10f5748574bfa87294cfa076ee86ee943ff43ae59a99f11ccc892745c76a30b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/recovery_intent.py": {
+      "sha256": "e725b6cc54d2268e81b9e52cd2c24e4632a2ec6f99b357872dadf90d76e2ce66",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_recovery_intent.py": {
+      "sha256": "a0f0e98c45c6bd480d1e52ba046299a23ee8feb5736cbc07b0bdbb3a110ccbb1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/recovery_resources.py": {
+      "sha256": "133edcf7b92aaa2f521af90922c571d1637ab8e8c9536a7cf57a6475fa18ce02",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/recovery_runtime.py": {
+      "sha256": "5c77942c9afdfbc87c8cc28a93d3285de191c66b1390d770859f22173cfae892",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/helper_keeper.py": {
+      "sha256": "c91aa65faaa04c8351af159000b14fa9f18f7db3a2151af2375a662ad3527252",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/helper_policy.py": {
+      "sha256": "6605947351bc1f986737dafefbd9faaceed7229a8f4152b5fcdf00a0cb0437c3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_helper_policy.py": {
+      "sha256": "2eb1a33831a29ffcbf210196f32ec9c57bec3b999b3367aea95c2a972db975ce",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_helper_keeper.py": {
+      "sha256": "13fca934e7766a777c3983f39924b990c0f08a0273adc5fb82e0f47efc7131bd",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/helper_supervisor.py": {
+      "sha256": "38feefbaa6236ebfea597825f6e5763a295476dd17c5dc0db19e8d178d5e5c8c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/owned_launch.py": {
+      "sha256": "1c68460b4f92869fbf211c69631b94387290abec4ed18d1f03a098fe4c25edbb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_helper_supervisor.py": {
+      "sha256": "203b8d0fe92158cb2f0661630a81ebc569c9602437d5e58a70bb24e83438b480",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/owned_commands.py": {
+      "sha256": "e5d96cc87092b8e7452a8cf50b638a1bbaface7369580fe3f210f458c1999eba",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_responsive_preparation.py": {
+      "sha256": "f79a3f2f6bb409c8fc6bc5943a6c54d1e79a8d39160a5b0449fe46f867e9497d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_split_destination.py": {
+      "sha256": "74a8edc4ec3c64e166e02c80d5a4713bd5171a6de62a5fa7754c39b2856c1041",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_owned_commands.py": {
+      "sha256": "6f6a8e4945d6c9a827563b2ea4a23a3804295401eeed29c4e7b7ebf98bd1e448",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_recovery_runtime.py": {
+      "sha256": "659ae465410feac5c53ff1e47991cca1a7ea7d4447594449b6cf92d19ca456c1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_recovery_resources.py": {
+      "sha256": "49dab4475036cd07596083be925b5f447078adc54a1122ec21f201dba4f6bce8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/timeout_adapter.py": {
+      "sha256": "14ccc4078364fdced5a8fa9a499567dd0e2eb592ff1b7f88ad38a39743e9e165",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_recovery_factory.py": {
+      "sha256": "ee35d43cce72ad7910995783a6e098e18f5e43a4434ca04d8c317d3e48136dc9",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/freeze_recovery.py": {
+      "sha256": "aee233e55edcf853a0f1604533b2a3046169bd82e5df3b9b6905b1ff9b0bc8cf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_runtime_lease.py": {
+      "sha256": "f23ffaba806f3530c3e9c0808c1931c8999c173a34cc1133749836969dbe6a6d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/recovery_cancel.py": {
+      "sha256": "8647a336a7b83ec5de7d60f63ccb0436f7b684f85879e43c7ae8f21ff499b219",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_recovery_cancel.py": {
+      "sha256": "c37e14e5b901ba1aeeb8648ae74cb72334f8c4d51ee5f4ace44900907891c4a1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_renderer_terminal.py": {
+      "sha256": "f3feb52b8c264224ca98d243ccb4d5dfcb823fd7d3e9c4bc5a89498112c0b083",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_family_query_concurrency.py": {
+      "sha256": "a345242b6e7cf850dfd46197dcd1f36793504444e18155c063adb8ae120009ab",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/family_destination.qnt": {
+      "sha256": "6e7c0df9e7816fa620c13990da70fccb4367bfdb54575e343350cb1ff4a1fd83",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/family_destination_test.qnt": {
+      "sha256": "f7b286ce9443b69cd2ada54a0e4e1aee007ee024a8583aa9536f7455e20176ee",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/family_registry.qnt": {
+      "sha256": "f5e9769df7bea01f167190a4b50b640bc2b409b6dc88efbdf63055dda7e43b49",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/family_registry_test.qnt": {
+      "sha256": "92c5c0854eb7616346f63353333f65590f77c9cc664b33d6c37bd14d95c6c637",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/family_scene.qnt": {
+      "sha256": "7b1fd7739efeff5925751fd2ca12977b832ddca044cb08de17bc1005c455f1f1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/family_scene_test.qnt": {
+      "sha256": "d8b1b2927f1fd3d2100af0cbc7ecf45677b4a00801198933f3e81644ed2ce674",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/ingress_context.qnt": {
+      "sha256": "702e7e2fcb3f9d63e3653afd73eafdfec85bf50cd24f2881ad4344a11e16f023",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/ingress_context_test.qnt": {
+      "sha256": "b828e3101cf1566ed45b7f454d6bcfa0af4a04cd3717ca3ff239760725214cd8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/ipc_guard.qnt": {
+      "sha256": "a6b974ffe4059d6e212fba2d4e613a58eaa00fbb8b623623197d6e17360e3046",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/ipc_guard_test.qnt": {
+      "sha256": "d3958dadcdb511c5b5542d1f99e530824bfc564ab1b152e3d66f38d58ed911f1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/native_composition.qnt": {
+      "sha256": "9f65bd2314f3dddf57565434610708bf8fdc61bd624d75d4de87735aa0171e65",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/native_composition_test.qnt": {
+      "sha256": "647cd0cebaed4cf463b57be33d1ba17dc7a0ef5b447c251b8904e72ef0fff807",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/pending_direction.qnt": {
+      "sha256": "ccd3b49807fa4b4063044edb5aae77c6b273ae9a7982e74eb22aaee4ff8d3b53",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/pending_direction_test.qnt": {
+      "sha256": "6c8a4cbc461e0a2d36417b2714a4306073d6046d0566b710f429633be2d84e12",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/persistent_atlas.qnt": {
+      "sha256": "789a8f3682d612091ab60e58f3a5e3f100f0b49556bd56a397284656f6e60934",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/persistent_atlas_test.qnt": {
+      "sha256": "e91850f4abde58f984e3dbd27042324ab87a0efb1c06ea6ffe53f0ab7b31a25d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/receipt_visual.qnt": {
+      "sha256": "359386bd7a4fc2aeb1ced50627f0e7240695e06cdff1c39a66a3c40fb714c309",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/receipt_visual_test.qnt": {
+      "sha256": "6a99b6accb257f828d364fdc3d05f5e0818658b63ab5e38e6d25a9a6e1959cc3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/runtime_lifecycle.qnt": {
+      "sha256": "d912775efd0da4e84700b2a85bd6f7d165525488f80ccecb06cd4a80633eae25",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/runtime_lifecycle_test.qnt": {
+      "sha256": "decd75fdf892d132f6657940cc15efb483f770115881fb30e64a68abae652f16",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/transport_dispatch.qnt": {
+      "sha256": "a4e2106254f26ae9ae3b303b64bba683323664732b6c9ab03c0f371756644ad0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/transport_dispatch_test.qnt": {
+      "sha256": "7762ae6395d615c792b14e13f3885947acfb47b287b8134e77de972b08c59b14",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/actor_resources.qnt": {
+      "sha256": "91cbcce02b1bbb4e17e179ef208ddf80e80df4685c6482b8cb61d5876cc2e317",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/actor_resources_test.qnt": {
+      "sha256": "c6461d117bf346cdad078513c4ccfb782a143737275a8b14e317b3f209ef595b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/family_order.qnt": {
+      "sha256": "a2d4be04904800cead8e7d06312338e983b7c9deb005484b0d7efe5bd1109d25",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/family_order_test.qnt": {
+      "sha256": "44222437bc25a1840d8451c0256fa4148430cdb34fde6f23f3ffe4d94f3beb3f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/gesture_capture.qnt": {
+      "sha256": "85ffe1d5570b350e59ab0dfb7e0c430b8e4577edcb0627b96ca01c9582dae8e1",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/gesture_capture_test.qnt": {
+      "sha256": "cdbfbc57878aa921346c4bb2c26055850f82d7fc87f3c06af1fb91bd6f0d6e1b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/native_recovery.qnt": {
+      "sha256": "51e763f2125f0caffe438861a891000eb9af31c40bd86c63e083dfa51d08d8cb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/native_recovery_test.qnt": {
+      "sha256": "ef7facf9ea92b7aecc60e476fbb659ea9d64e371cd2c35282ecd4b38bee4f804",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/recovery_ownership.qnt": {
+      "sha256": "d7a834da3c7747b4b48b68c5a8e0453465a571a2e47ffa4afa15ce816c795b8e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/recovery_ownership_test.qnt": {
+      "sha256": "12d8dcbf89537d88b5cb5031385e23c3d5a4a8b065544111a1c58aa7592420cf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/helper_closure.qnt": {
+      "sha256": "171908cb4db926ad371c0f0fa06317e908ff1326d73bdc32c70e7926294f1340",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/helper_closure_test.qnt": {
+      "sha256": "649f268b976bde8339c9f4da5c473a952f0569e07ecae0c3cd21badc4678640f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/recovery_constant.qnt": {
+      "sha256": "e2890690010c36e0a1783c3bbb8adc42b9efeaf9e8b1b110b8e556bc7635be08",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/recovery_constant_test.qnt": {
+      "sha256": "2134b3ad035549fbd28e716e35a2431868137313e00969b8cbdcb6cdea2e8882",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/responsive_preparation.qnt": {
+      "sha256": "146f2cbffa7ff4b8fa8ed10637343910b2051944376e5ab1c66dfeea8b9dbd0d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/responsive_preparation_test.qnt": {
+      "sha256": "660a0a9d12869e1950839c70a34329e32994d529cf340fbc4476821bd843365a",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/runtime_lease.qnt": {
+      "sha256": "d74f2fa8b561a60e378eea74cf7e1969c0ad9299262b9cee39c7ac5657f0dfb7",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/runtime_lease_test.qnt": {
+      "sha256": "622068ca229c8b50d457d1674bedd13b65d3c8431f58576fd470c9dfd9efc7f6",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/recovery_cancel.qnt": {
+      "sha256": "7986f30a1a3e1b8f8b0df069d33a97eee9461a61e6b3cf8a23286df2a84aab31",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/recovery_cancel_test.qnt": {
+      "sha256": "642dc742d8e7f41062c5cfcb7334054def008e771c20b04d9c038e38bd99394b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/renderer_terminal.qnt": {
+      "sha256": "24cd7c94cfb96e1ce629732607ae7db7dcb67bec250ed23fe4b8f01a7ef26ea8",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/renderer_terminal_test.qnt": {
+      "sha256": "10acec5bbbb533cb832219db42398aa80bdaea1c404901235b3efce40f7d3dae",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/freeze_family_query.py": {
+      "sha256": "52a7c70d58dc2088a6771b400cb81756c3e960b94ee45b7091f744642b3622ab",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/readonly_ipc.py": {
+      "sha256": "fbad549c1a9dda9d635d83008d0ce9861e392ece948c7b9654f6b0a0b6602f6b",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_readonly_ipc.py": {
+      "sha256": "ac6f67078081c4893ee2e49d7dcc4ad45a3b55ca7cee83d2c7654a133dc28820",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/FIXTURE_COMPLETION_CONTRACT.md": {
+      "sha256": "0a356f342826974207a16051796e4eb1d437fc98f54f98f8c35b4b86b0368685",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/fixture_completion.qnt": {
+      "sha256": "0b27a99e38a414dd593939a4c3c819ef7ad41bb733b94d5f7af760acc1127559",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/fixture_completion_test.qnt": {
+      "sha256": "bfc299ee6f62305406decd5fda1b11787632ab1ac86351ae00db40d79fc0ec9d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_frontend_completion.py": {
+      "sha256": "05e34a94adbed012df65e4962faba3a931d4b31f0974cdfbf8fe1efbec87edbc",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/LEGACY_FIXTURE_READINESS_CONTRACT.md": {
+      "sha256": "7631a7e4af9a9f2ef4e36ece47b1a2dc6ae302021d806e3d3b7c6aab1eab5757",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/legacy_fixture_ready.qnt": {
+      "sha256": "122a0bf01d3099727747923ea299e8bdf0d7901d4c3e39889e56b558c5464eeb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/legacy_fixture_ready_test.qnt": {
+      "sha256": "12627338c71ccd717207114acb4b74b076659d2154e856cc939f98334b941700",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/fixture_legacy_ready.py": {
+      "sha256": "6ec3ef9763ef7c90d5f9a1f942637545d8296aa72c2ea2c77be23c997f7ce23c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_legacy_fixture_ready.py": {
+      "sha256": "4f5af53c4c5468c2a6b3aeb6b77650ca68ef1981359f94c137584c5905a0ddd4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/freeze_readonly_ipc.py": {
+      "sha256": "5f2a5359acfc1674e18073f7a1cd95e1923e5f71cde672d355a804c2f066f65d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/ROOT_REVIEW_REQUEST.md": {
+      "sha256": "7c95fb89d982f8a66a0e000ff7d0917b64f16277e41887fe8687c93e768b670d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/FAMILY_PREPARATION_CONTRACT.md": {
+      "sha256": "5d5b34ac805f06a451c3f44a04d6f69655dae48586d0034ec5cd2d07896d9990",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/family_preparation.qnt": {
+      "sha256": "fe4f2f9f3100261b3f8fdacd7c3592fba41f422662efcb2aef2a1346f69579a3",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/family_preparation_test.qnt": {
+      "sha256": "e2f84153dc84c0ab098c54f320e5d30a3bc3ad10442745caf957d95a96d20f8e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/batch_preview_lease.qnt": {
+      "sha256": "07662bae473997625a6a16324dd4d0f66105d13ffa7334eed62d61a4d529ef5c",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/batch_preview_lease_test.qnt": {
+      "sha256": "25c4812d7daad857340e465a6477477c426b51853b793540ee5a36d99d491855",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_batch_preview.py": {
+      "sha256": "d0b53f8ee63fbc270b7dfafe554d0bffba0263796b23c4c079da051abb7ad88d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/batch_preview_lock.qnt": {
+      "sha256": "f947cc7dff32d2b199f61821555328e8d592ba817077f157ba97bbe80c1e6f6e",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/batch_preview_lock_test.qnt": {
+      "sha256": "be0478ca6da6f0fcebde884954659f8c7abb2f233aa6b5924c3c9d8762b628cf",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/check_family_preparation.py": {
+      "sha256": "64888a7f49dac4bd860284861c58101fcc512559a5fab6d8d7fa71694112785f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/capture_finalization.qnt": {
+      "sha256": "9f0fbab9da1df171ec049a1197c0f7063e3af7b52e388c3a5eb0f483ba6b2c54",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/capture_finalization_test.qnt": {
+      "sha256": "e962f27b93f618e2dde07c4bb1c23d3db9f99d648b92546c97b3d8e7faf1e139",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/BATCH_PREVIEW_REVIEW.md": {
+      "sha256": "72b2f4979e69c952618d7577570f0835edea54d1b5c9e62e2e177ee19c6be45f",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/freeze_family_preparation.py": {
+      "sha256": "071c69455bd31e47f65109377fabb59f4c62a4e9795ede2fa6d57a0cd1bb99b4",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/STAGING_RESERVATION_CONTRACT.md": {
+      "sha256": "e90f11646117b2f6aa1025070f0aa1d57518ee2a4a8ad896103c73025fa96eeb",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/staging_reservation.qnt": {
+      "sha256": "4021c8df0c3533000231e92512d01778b40215e7095a83effd4dc3b7e0ec031d",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/staging_reservation_test.qnt": {
+      "sha256": "f2576769c33aded43cd1def4ba82be977701c59ddc137d44ee2031e2ca672155",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/prove_staging_before_runtime.py": {
+      "sha256": "7268945341eb513bf4744bc90519f1f6d6e205ba5fc3f4d922830caa933225e0",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/batch_preview.py": {
+      "sha256": "875e9e25973458691607503a5293db423b8a6510dfc856f22c99a9121c6037de",
+      "mode": 420
+    },
+    "/home/hoskinson/window-behavior-spec/minimize-motion-stage/provisional-route/family-scene-integration/service-family-preparation-v23/test_staging_reservation.py": {
+      "sha256": "7dda912f6ec23375e4c3d892ec0226234dd6f25b8d267e6e39b69047e35c9708",
+      "mode": 420
+    }
+  },
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-00.log",
+      "sha256": "61dbf08b945ac422ef559267ec379809235aa47a5bc2495d7f9064ac4b6a17c6"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_scene_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_scene_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-02.log",
+      "sha256": "e7f5f3eaf8acfb9dc0951de6a74361fa491501e2ea5241dcf80c0070c3434f16"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_scene.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_destination_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-04.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_destination_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-05.log",
+      "sha256": "26739bf3d283032481a5066e19afd3cc1065c50e06939b6eced28f1dccbe31d9"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_destination.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-06.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "transport_dispatch_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-07.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "transport_dispatch_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-08.log",
+      "sha256": "56d0c82688ea856eabdbcff4ec0dc8b0bb3fb320dfd60190e022d2e312dc53ad"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "transport_dispatch.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-09.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-10.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_registry_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-11.log",
+      "sha256": "ae325f004bf258ea84bafe51813a01490e928a5a7d662961935cb41c1e9c09b0"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_registry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-12.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "ingress_context_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-13.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "ingress_context_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-14.log",
+      "sha256": "5b18127b9da060210b2ac170c1b296b55d33f77800f156c310faf37fa82b1797"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "ingress_context.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-15.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "persistent_atlas_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-16.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "persistent_atlas_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-17.log",
+      "sha256": "b4b8b11840d4541ed672d5b07721198068b0ebcd1817274bb5bf3210b84136a4"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "persistent_atlas.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-18.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "pending_direction_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-19.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "pending_direction_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-20.log",
+      "sha256": "149c537421b36ae378e9f89e46b7861eefd795387d5651430249971859e0bb76"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "pending_direction.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-21.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "runtime_lifecycle_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-22.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "runtime_lifecycle_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-23.log",
+      "sha256": "2bdc787f6989a66c1f844405866f398570f27dd6a6f758713685bbc97cbd8d44"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "runtime_lifecycle.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-24.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "receipt_visual_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-25.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "receipt_visual_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-26.log",
+      "sha256": "efb44f25ce5156d98b065fbc210ac01a89c1c3750ad6700694ee57bc668018b7"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "receipt_visual.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-27.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "native_composition_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-28.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "native_composition_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-29.log",
+      "sha256": "0cf470b2e4a777f5f25794d21a3fad512e6ccd545821d3e363efeb54f37c57d8"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "native_composition.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-30.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "ipc_guard_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-31.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "ipc_guard_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-32.log",
+      "sha256": "d7934c9def0a50f7c1532885776082e34259599e5c44c02a9c36e4088743fdfb"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "ipc_guard.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-33.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "actor_resources_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-34.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "actor_resources_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-35.log",
+      "sha256": "903b00db6edec2fa60ae6279e85a2a0c5bed1bd63d092ef720b9d719faca7f24"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "actor_resources.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-36.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_order_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-37.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_order_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-38.log",
+      "sha256": "1b70bf543ac6a220ba66a4fa78d3203afeb0213af3ae00e838215dd072d622c4"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_order.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-39.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "gesture_capture_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-40.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "gesture_capture_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-41.log",
+      "sha256": "01dd22b405daa8e422ea77b56f1746be477cc555f3f4fd02b00cdc84f10cdcba"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "gesture_capture.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-42.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "responsive_preparation_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-43.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "responsive_preparation_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-44.log",
+      "sha256": "d9229f952e1d2fee29b66248aa169cb07423e47a95c3967bd07fc83d8620c17d"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "responsive_preparation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-45.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "native_recovery_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-46.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "native_recovery_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-47.log",
+      "sha256": "c273281e2db178859acead2228a1874c85ff1b0acfe5737343a4260aa72ebb6a"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "native_recovery.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-48.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_ownership_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-49.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_ownership_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-50.log",
+      "sha256": "2dce4d3b37be8a7c80f446e2cfe0afcc90925fa90c0463947b33ee7b4fdc6716"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_ownership.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-51.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "helper_closure_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-52.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "helper_closure_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-53.log",
+      "sha256": "518af391ad0e59b1a4c32841cfaad775010f24c23375664357cfe0530dbc57cb"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "helper_closure.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-54.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_constant_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-55.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_constant_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-56.log",
+      "sha256": "4204de4d1e76b5b5140e53648541b44f775095029e63bf55dc906234ceee15f3"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_constant.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-57.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "runtime_lease_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-58.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "runtime_lease_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-59.log",
+      "sha256": "0793959514f6261ceb21d582705153c6feb8f380183caa400e4d4d97bfcc6dda"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "runtime_lease.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-60.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "recovery_cancel_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-61.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "recovery_cancel_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-62.log",
+      "sha256": "a055c861a608d9a7f4f734351f3e4c562bcd77526d1195b6dc31c4eb96d41f0c"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "recovery_cancel.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-63.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "renderer_terminal_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-64.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "renderer_terminal_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-65.log",
+      "sha256": "ee0ce4a803c1aa2b5de873ca813d51cd25fdc554965129704c8392dd0b388db3"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "renderer_terminal.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-66.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_query_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-67.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_query_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-68.log",
+      "sha256": "c6f65d09a5a8c625c74e02c461a24295c5291ba977e449e85d83f33f0822e170"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_query.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-69.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "readonly_ipc_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-70.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "readonly_ipc_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-71.log",
+      "sha256": "b6171791c3193a3ecace9746edd3d9238a9192c39b63837dbe6a1224f209e64d"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "readonly_ipc.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-72.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "readonly_registry_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-73.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "readonly_registry_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-74.log",
+      "sha256": "9b61278b21ee8e5f3afe8eefe2010afeb89911561cee066efc609e8f1c37630a"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "readonly_registry.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-75.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "fixture_completion_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-76.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "fixture_completion_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-77.log",
+      "sha256": "a7c8a850d3f912fa284d2595e1e092aa7bdf599b7e0f5abf486ea212f3edda9b"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "fixture_completion.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-78.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "legacy_fixture_ready_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-79.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "legacy_fixture_ready_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-80.log",
+      "sha256": "f90357c13e6c0f94280ca1f271a503445be2ff25d8f6d1c59ca9bd099c22d008"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "legacy_fixture_ready.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-81.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "family_preparation_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-82.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "family_preparation_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-83.log",
+      "sha256": "040d0180f384de35f13ea3644f5131b6b76a2e70d331782c5762645295fe2158"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "family_preparation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-84.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "batch_preview_lease_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-85.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "batch_preview_lease_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-86.log",
+      "sha256": "392868f484065a52888f35f368b06821a935cfc21185ed105a08049ea8a47c61"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "batch_preview_lease.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-87.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "batch_preview_lock_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-88.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "batch_preview_lock_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-89.log",
+      "sha256": "1b727769e9a0f40f6eb39a23777faffc4954e8eef2d84bb38f21ff890059a71f"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "batch_preview_lock.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-90.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "capture_finalization_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-91.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "capture_finalization_test.qnt",
+        "--backend=rust",
+        "--seed=20261004"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-92.log",
+      "sha256": "dcbaafce6cc5f4c44451324981175a39df9fa866bd74ee88b9ffa572c67da2e1"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "capture_finalization.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261004",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-93.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "staging_reservation_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-94.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "staging_reservation_test.qnt"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-95.log",
+      "sha256": "2a4827fe7cb21ef4cd73408f2d5579485022c97a0de78165a373154aca401211"
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "staging_reservation.qnt",
+        "--invariant=allProps",
+        "--max-samples=2000",
+        "--max-steps=100",
+        "--backend=rust",
+        "--seed=20261002",
+        "--verbosity=0"
+      ],
+      "exitCode": 0,
+      "log": "/home/hoskinson/window-integration-qa/family-preparation-v23-full-proof-v1/check-96.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "changedInheritedSources": [
+    "batch_preview.py"
+  ],
+  "inheritedExact": [
+    "READONLY_IPC_CONTRACT.md",
+    "readonly_ipc.qnt",
+    "readonly_ipc_test.qnt",
+    "readonly_registry.qnt",
+    "readonly_registry_test.qnt",
+    "family_query.qnt",
+    "family_query_test.qnt",
+    "context_provider.py",
+    "direction.py",
+    "native_desktop.py",
+    "native_runtime.py",
+    "pipe_transport.py",
+    "production_motion_6d9.py",
+    "runtime_fixture.py",
+    "scene_controller.py",
+    "scene_manager.py",
+    "service_runtime.py",
+    "snapshot_cache.py",
+    "socket_frontend.py",
+    "test_capture_lease.py",
+    "test_context_provider.py",
+    "test_ingress_context.py",
+    "test_ipc_complete_probe.py",
+    "test_native_runtime.py",
+    "test_pending_direction.py",
+    "test_pipe_transport.py",
+    "test_receipt_visual.py",
+    "test_scene_controller.py",
+    "test_scene_manager.py",
+    "test_service_runtime.py",
+    "test_snapshot_cache.py",
+    "test_socket_frontend.py",
+    "family_order.py",
+    "test_actor_resources.py",
+    "test_family_order.py",
+    "test_gesture_retirement.py",
+    "check_offline.py",
+    "recovery_intent.py",
+    "test_recovery_intent.py",
+    "recovery_resources.py",
+    "recovery_runtime.py",
+    "helper_keeper.py",
+    "helper_policy.py",
+    "test_helper_policy.py",
+    "test_helper_keeper.py",
+    "helper_supervisor.py",
+    "owned_launch.py",
+    "test_helper_supervisor.py",
+    "owned_commands.py",
+    "test_responsive_preparation.py",
+    "test_split_destination.py",
+    "test_owned_commands.py",
+    "test_recovery_runtime.py",
+    "test_recovery_resources.py",
+    "timeout_adapter.py",
+    "test_recovery_factory.py",
+    "freeze_recovery.py",
+    "test_runtime_lease.py",
+    "recovery_cancel.py",
+    "test_recovery_cancel.py",
+    "test_renderer_terminal.py",
+    "test_family_query_concurrency.py",
+    "family_destination.qnt",
+    "family_destination_test.qnt",
+    "family_registry.qnt",
+    "family_registry_test.qnt",
+    "family_scene.qnt",
+    "family_scene_test.qnt",
+    "ingress_context.qnt",
+    "ingress_context_test.qnt",
+    "ipc_guard.qnt",
+    "ipc_guard_test.qnt",
+    "native_composition.qnt",
+    "native_composition_test.qnt",
+    "pending_direction.qnt",
+    "pending_direction_test.qnt",
+    "persistent_atlas.qnt",
+    "persistent_atlas_test.qnt",
+    "receipt_visual.qnt",
+    "receipt_visual_test.qnt",
+    "runtime_lifecycle.qnt",
+    "runtime_lifecycle_test.qnt",
+    "transport_dispatch.qnt",
+    "transport_dispatch_test.qnt",
+    "actor_resources.qnt",
+    "actor_resources_test.qnt",
+    "family_order.qnt",
+    "family_order_test.qnt",
+    "gesture_capture.qnt",
+    "gesture_capture_test.qnt",
+    "native_recovery.qnt",
+    "native_recovery_test.qnt",
+    "recovery_ownership.qnt",
+    "recovery_ownership_test.qnt",
+    "helper_closure.qnt",
+    "helper_closure_test.qnt",
+    "recovery_constant.qnt",
+    "recovery_constant_test.qnt",
+    "responsive_preparation.qnt",
+    "responsive_preparation_test.qnt",
+    "runtime_lease.qnt",
+    "runtime_lease_test.qnt",
+    "recovery_cancel.qnt",
+    "recovery_cancel_test.qnt",
+    "renderer_terminal.qnt",
+    "renderer_terminal_test.qnt",
+    "freeze_family_query.py",
+    "readonly_ipc.py",
+    "test_readonly_ipc.py",
+    "FIXTURE_COMPLETION_CONTRACT.md",
+    "fixture_completion.qnt",
+    "fixture_completion_test.qnt",
+    "test_frontend_completion.py",
+    "LEGACY_FIXTURE_READINESS_CONTRACT.md",
+    "legacy_fixture_ready.qnt",
+    "legacy_fixture_ready_test.qnt",
+    "fixture_legacy_ready.py",
+    "test_legacy_fixture_ready.py",
+    "freeze_readonly_ipc.py",
+    "ROOT_REVIEW_REQUEST.md",
+    "FAMILY_PREPARATION_CONTRACT.md",
+    "family_preparation.qnt",
+    "family_preparation_test.qnt",
+    "batch_preview_lease.qnt",
+    "batch_preview_lease_test.qnt",
+    "test_batch_preview.py",
+    "batch_preview_lock.qnt",
+    "batch_preview_lock_test.qnt",
+    "check_family_preparation.py",
+    "capture_finalization.qnt",
+    "capture_finalization_test.qnt",
+    "BATCH_PREVIEW_REVIEW.md",
+    "freeze_family_preparation.py"
+  ],
+  "baseManifestSHA256": "e616b23b7c397cc767ce91e855a4520dd42311c97087797b332772ba63d1fc5e",
+  "elapsedSeconds": 342.41088581600343,
+  "nativeAccepted": false,
+  "mainChanged": false,
+  "originalDeadlineSeconds": 2,
+  "batchTargetAPISelected": false
+}

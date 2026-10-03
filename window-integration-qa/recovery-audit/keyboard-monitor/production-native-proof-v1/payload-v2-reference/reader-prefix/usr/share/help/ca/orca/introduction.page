@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="ca">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_setting_up_orca"/>
+    <title type="sort">1. Us donem la benvinguda a l'Orca</title>
+    <desc>Introducció al lector de pantalla <app>Orca</app></desc>
+    <credit type="author">
+      <name>Joanmarie Diggs</name>
+      <email>joanied@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  </info>
+  <title>Us donem la benvinguda a l'Orca</title>
+  <p>L'<app>Orca</app> és un lector de pantalla gratuït, de programari lliure, flexible i extensible que proporciona accés a l'escriptori gràfic a través de veu i braille refrescable.</p>
+  <p>L'<app>Orca</app> funciona amb aplicacions i jocs d'eines que suporten la interfície de proveïdor de serveis de tecnologia assistida (AT-SPI), que és la infraestructura de tecnologia assistida principal per a Linux i Solaris. Les aplicacions i jocs d'eines que admeten l'AT-SPI inclouen Gtk+, Qt, Java Swing, LibreOffice, Gecko, WebKitGtk i Chrome/Chromium.</p>
+  <section id="launching">
+    <title>Iniciar l'<app>Orca</app></title>
+    <p>Per iniciar l'<app>Orca</app>:</p>
+    <list>
+      <item>
+        <p>El mètode per configurar l'inici automàtic de l'<app>Orca</app> com el vostre lector de pantalla predeterminat dependrà de l'entorn d'escriptori que utilitzeu.</p>
+      </item>
+      <item>
+        <p>Per a activar i desactivar l'<app>Orca</app> al GNOME, premeu <keyseq><key>Super</key><key>Alt</key><key>S</key></keyseq>.</p>
+      </item>
+      <item>
+        <p>Escriviu <cmd>orca</cmd>, juntament amb qualsevol paràmetre opcional, en una finestra de terminal o dins del diàleg <gui>Executa</gui> i després premeu <key>Retorn</key>.</p>
+      </item>
+    </list>
+  </section>
+    <section id="loadtime">
+      <title>Opcions de l'hora de càrrega</title>
+      <p>Les següents opcions es poden especificar en llançar l'<app>Orca</app> en una finestra de terminal o dins del diàleg <gui>Executa</gui>:</p>
+      <list>
+        <item>
+          <p><cmd>-h</cmd>, <cmd>--help</cmd>: Mostra el missatge d'ajuda</p>
+        </item>
+        <item>
+          <p><cmd>-v</cmd>, <cmd>--version</cmd>: Mostra la versió de l'<app>Orca</app></p>
+        </item>
+        <item>
+          <p><cmd>-s</cmd>, <cmd>--setup</cmd>: Configura les preferències de l'usuari</p>
+        </item>
+        <item>
+          <p><cmd>-u</cmd>, <cmd>--user-prefs=<em>nomdeldirectori</em></cmd>: Utilitza <em>nomdeldirectori</em> com a directori alternatiu per a les preferències de l'usuari</p>
+        </item>
+        <item>
+          <p><cmd>-e</cmd>, <cmd>--enable=<em>opció</em></cmd>: Força l'ús de l'opció, on l'<em>opció</em>pot ser una de les següents:</p>
+          <list>
+            <item><p><cmd>speech</cmd></p></item>
+            <item><p><cmd>braille</cmd></p></item>
+            <item><p><cmd>braille-monitor</cmd></p></item>
+          </list>
+        </item>
+        <item>
+          <p>
+            <cmd>-d</cmd>, <cmd>--disable=<em>option</em></cmd>: Prevent the
+            use of an option, where the <em>option</em> can be one of the
+            following:
+          </p>
+          <list>
+            <item><p><cmd>speech</cmd></p></item>
+            <item><p><cmd>braille</cmd></p></item>
+            <item><p><cmd>braille-monitor</cmd></p></item>
+          </list>
+        </item>
+        <item>
+            <p>
+              <cmd>-p</cmd>, <cmd>--profile=<em>filename</em></cmd>:
+              Import a profile from a given <app>Orca</app> profile file
+            </p>
+        </item>
+        <item>
+          <p>
+            <cmd>-r</cmd>, <cmd>--replace</cmd>: Replace a currently-running <app>Orca</app>
+          </p>
+        </item>
+        <item>
+          <p>
+            <cmd>-l</cmd>, <cmd>--list-apps</cmd>: Print the known running
+            applications
+          </p>
+        </item>
+        <item>
+          <p>
+            <cmd>--debug</cmd>: Send debug output to debug-YYYY-MM-DD-HH:MM:SS.out
+          </p>
+        </item>
+        <item>
+          <p>
+            <cmd>--debug-file=<em>filename</em></cmd>: Send debug output to
+            the specified file
+          </p>
+        </item>
+      </list>
+    </section>
+
+</page>
